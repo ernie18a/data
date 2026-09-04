@@ -24,6 +24,7 @@ DETAIL_ORIGIN = "https://www.tradingview.com"
 SOURCE_ORIGIN = "https://pine-facade.tradingview.com"
 USER_AGENT = "Mozilla/5.0 (compatible; tradingviewscripts/0.2)"
 MARKER_PREFIX = "<!-- tradingview-pine-id: "
+VERSION_MARKER_PREFIX = "<!-- tradingview-pine-version: "
 FORMAT_MARKER = "<!-- tradingviewscripts-format: 1 -->"
 SOURCE_FENCE = "````"
 OUTPUT_DIR = Path("OUTPUT")
@@ -125,9 +126,17 @@ def complete_markdown(path: Path, script_id: str) -> bool:
     )
 
 
-def markdown(title: str, detail_url: str, script_id: str, description: str, source: str) -> str:
+def markdown(
+    title: str,
+    detail_url: str,
+    script_id: str,
+    version: str,
+    description: str,
+    source: str,
+) -> str:
     return (
         f"{MARKER_PREFIX}{script_id} -->\n"
+        f"{VERSION_MARKER_PREFIX}{version} -->\n"
         f"{FORMAT_MARKER}\n"
         f"# {title}\n\n"
         f"Source: {detail_url}\n\n"
@@ -137,29 +146,16 @@ def markdown(title: str, detail_url: str, script_id: str, description: str, sour
     )
 
 
-def load_index(output_dir: Path) -> dict[str, dict[str, str]]:
-    path = output_dir / "index.json"
-    if not path.is_file():
-        return {}
-    try:
-        entries = json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        return {}
-    return {
-        entry["pine_id"]: entry
-        for entry in entries
-        if isinstance(entry, dict) and isinstance(entry.get("pine_id"), str)
-    }
-
-
 def publication_id_from_url(url: str) -> str:
     return url.split("/script/", 1)[1].split("/", 1)[0].split("-", 1)[0]
 
 
-def recover_complete_entries(output_dir: Path, entries: dict[str, dict[str, str]]) -> None:
+def recover_complete_entries(output_dir: Path) -> dict[str, dict[str, str]]:
+    entries: dict[str, dict[str, str]] = {}
     for path in output_dir.glob("*.md"):
         content = path.read_text(encoding="utf-8")
         id_match = re.search(rf"{re.escape(MARKER_PREFIX)}([^ ]+) -->", content)
+        version_match = re.search(rf"{re.escape(VERSION_MARKER_PREFIX)}([^ ]*) -->", content)
         url_match = re.search(r"^Source: (https://www\.tradingview\.com/script/[^\n]+)$", content, re.M)
         title_match = re.search(r"^# (.+)$", content, re.M)
         if not id_match or not url_match or not title_match:
@@ -168,13 +164,23 @@ def recover_complete_entries(output_dir: Path, entries: dict[str, dict[str, str]
         if not complete_markdown(path, script_id):
             continue
         entries[script_id] = {
-            **entries.get(script_id, {}),
             "name": title_match.group(1),
             "file": path.name,
             "url": url_match.group(1),
             "pine_id": script_id,
-            "version": entries.get(script_id, {}).get("version", ""),
+            "version": version_match.group(1) if version_match else "",
         }
+    return entries
+
+
+def staging_path(target: Path) -> Path:
+    return target.with_name(f".{target.stem}.tmp{target.suffix}")
+
+
+def write_text_atomically(target: Path, content: str) -> None:
+    staged = staging_path(target)
+    staged.write_text(content, encoding="utf-8")
+    staged.replace(target)
 
 
 def save_index(output_dir: Path, entries: dict[str, dict[str, str]]) -> None:
@@ -184,13 +190,10 @@ def save_index(output_dir: Path, entries: dict[str, dict[str, str]]) -> None:
         if complete_markdown(output_dir / entry["file"], entry["pine_id"])
     ]
     valid_entries.sort(key=lambda entry: entry["file"])
-    temp_dir = Path("TMP")
-    temp_dir.mkdir(parents=True, exist_ok=True)
-    temp_path = temp_dir / "tradingviewscripts-index.json"
-    temp_path.write_text(
-        json.dumps(valid_entries, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    write_text_atomically(
+        output_dir / "index.json",
+        json.dumps(valid_entries, ensure_ascii=False, indent=2) + "\n",
     )
-    temp_path.replace(output_dir / "index.json")
 
 
 def wait_for_slot(last_request_at: float | None, delay: float) -> None:
@@ -221,12 +224,10 @@ def discover_all_urls(delay: float) -> list[str]:
 
 def crawl(output_dir: Path, delay: float) -> list[dict[str, str]]:
     output_dir.mkdir(parents=True, exist_ok=True)
-    entries = load_index(output_dir)
-    recover_complete_entries(output_dir, entries)
+    entries = recover_complete_entries(output_dir)
     completed_publications = {
         publication_id_from_url(entry["url"])
         for entry in entries.values()
-        if complete_markdown(output_dir / entry["file"], entry["pine_id"])
     }
     save_index(output_dir, entries)
     urls = discover_all_urls(delay)
@@ -263,9 +264,16 @@ def crawl(output_dir: Path, delay: float) -> list[dict[str, str]]:
                 filename = f"{clean_title(title, publication_id)}_{publication_id}.md"
                 target = output_dir / filename
 
-            target.write_text(
-                markdown(title, detail_url, script_id, publication_description(page_html), source),
-                encoding="utf-8",
+            write_text_atomically(
+                target,
+                markdown(
+                    title,
+                    detail_url,
+                    script_id,
+                    str(payload.get("version", "")),
+                    publication_description(page_html),
+                    source,
+                ),
             )
             entries[script_id] = {
                 "name": title,
