@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;90119358b79349dd8c1ca01b8e5d8baa -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Z-Score Probability Indicator
 

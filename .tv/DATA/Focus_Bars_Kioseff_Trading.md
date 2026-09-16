@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;476d976353d84805a9b87cd085c9c864 -->
+<!-- tradingview-pine-version: 6.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Focus Bars [Kioseff Trading]
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;7b70a66734e242e381cf0922661fcc9c -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Machine Learning Pivot Points (KNN) [SS]
 

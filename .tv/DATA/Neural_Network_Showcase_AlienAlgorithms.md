@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;ec6ae4fb57c84798a3735559fa62badc -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Neural Network Showcase | Alien_Algorithms
 

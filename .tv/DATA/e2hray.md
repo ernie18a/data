@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;b45c44a5e8e44abd95670ba1b4a675d9 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # e2hray
 

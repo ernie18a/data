@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;bbc3ff95ff2642df91242d4429e52d8f -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Volume and Price Z-Score [Multi-Asset] - By Leviathan
 

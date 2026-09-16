@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;c8f86bbd84cd4aaaad8ed57422aa4ec4 -->
+<!-- tradingview-pine-version: 17.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # hsvColor
 

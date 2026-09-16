@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;rOpaAmnJktU92aBdbPMb1k4XZH6NbMXK -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Quadratic Regression
 

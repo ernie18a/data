@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;mfpeBvtOH6Zcqe54ECLBthMZqWS2l21J -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # 72s: Adaptive Hull Moving Average+
 

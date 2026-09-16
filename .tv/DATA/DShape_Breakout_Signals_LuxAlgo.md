@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;8e799646d4634c989fc95cf7687457c5 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # D-Shape Breakout Signals [LuxAlgo]
 

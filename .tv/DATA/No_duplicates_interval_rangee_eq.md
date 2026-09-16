@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;ad03f434edc04a1bb835968f7f965ec9 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # No duplicates interval rangee  & eq
 

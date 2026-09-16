@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;U8G21hxTLANgokqNnyQa5MSgixOW2Ots -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Binomial Option Pricing Model
 

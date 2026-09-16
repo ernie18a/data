@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;EYxGe4WReoTZ3iTIO9l4efKCzvUNHYWY -->
+<!-- tradingview-pine-version: 7.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Spearman Rank Correlation Coefficient
 

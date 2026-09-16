@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;z4Yj46FVTXEYeBkRBgRimLzQ0rwZgg3O -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Delta-RSI Oscillator Strategy
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;YlblCbts4xOLxi0aeKaZ2Bz5I6efpBMH -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Stop loss and Take Profit in $$ example
 

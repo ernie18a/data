@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;65da8b31ff794420b1a4db46d8cd9c65 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Financials
 

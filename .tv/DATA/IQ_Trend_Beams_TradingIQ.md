@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;d27f40984ff94ffbbc7e3b5b1d04dcad -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # IQ Trend Beams [TradingIQ]
 

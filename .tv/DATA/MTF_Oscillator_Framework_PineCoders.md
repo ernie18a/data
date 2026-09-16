@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;8jaTc6L9rs236iaMSRPbHYlPXleWmDS2 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # MTF Oscillator Framework [PineCoders]
 

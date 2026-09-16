@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;06598e6fdca24fefa00dc7c6761c0d55 -->
+<!-- tradingview-pine-version: 7.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # pandas_ta
 

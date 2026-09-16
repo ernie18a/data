@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;MJXIhb9BzMwqPRn8merubYgR9QCo1yw0 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Pinescript - Common Label & Line Array Functions Library by RRB
 

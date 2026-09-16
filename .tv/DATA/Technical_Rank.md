@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;SO4ASax7aRrMPSXzi4HIp755lNTpAIs0 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Technical Rank
 

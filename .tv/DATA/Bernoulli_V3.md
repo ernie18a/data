@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;zM7CyCJ0PYO8v0EsTcFHVahfSfMgnATk -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Bernoulli - V3
 

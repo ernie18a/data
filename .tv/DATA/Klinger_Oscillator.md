@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;aca6867a9e37437e9c3faf48d8493d02 -->
+<!-- tradingview-pine-version: 9.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # + Klinger Oscillator
 

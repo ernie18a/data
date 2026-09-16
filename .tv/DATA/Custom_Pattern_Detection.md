@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;f8d911eea39d44db9401dfe7114f47bf -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Custom Pattern Detection
 

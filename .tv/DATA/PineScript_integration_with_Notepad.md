@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;3f200be257764ee9a2687f323b1d2f08 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # PineScript integration with Notepad++
 

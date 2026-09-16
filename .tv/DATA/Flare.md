@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;20f6edd4882d48838ecec474388a4d3b -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Flare
 

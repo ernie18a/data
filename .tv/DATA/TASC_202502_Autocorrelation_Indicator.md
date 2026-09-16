@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;594989e48420400a9ecdbcf7386e5df4 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # TASC 2025.02 Autocorrelation Indicator
 

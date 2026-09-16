@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;d3ac2616197047338e50a9727601f924 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # bench
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;03ee402b08194d1fbf974a98be58ccc2 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # MarketHolidays
 

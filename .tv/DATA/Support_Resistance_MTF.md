@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;NqwQ0xLeEEZ4WHX8lqLUMM5M9S47EICy -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Support Resistance MTF
 

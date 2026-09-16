@@ -1,176 +1,449 @@
-<!-- tradingview-pine-id: PUB;ef9ef6e0241b43f4832fee251a2a0c0d -->
+<!-- tradingview-pine-id: PUB;a96b5766a8e74f41a462198fae78fd2c -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # 🧬 EVA Ai + Liquidity Profile PRO 1.4.1 EN
 
-Source: https://www.tradingview.com/script/NOBAkK2E-eva-ai-poc-liquidity-smart-money-1-4-1-en/
+Source: https://www.tradingview.com/script/ADPEnnw7-eva-ai-poc-liquidity-smart-money/
 
 ## Description
 
-💎 EVA Ai + POC, Liquidity & Smart Money 1.4.1 PRO  EN — SEE WHERE THE MARKET ACCEPTED PRICE
+## Overview
 
-Volume bars below a chart tell you when activity happened. EVA Volume Profile PRO shows where it happened.
+**EVA Ai+ Volume Profile — POC, Value Area & Liquidity** is a market-structure and volume-distribution indicator designed to analyze where trading activity is concentrated across price.
 
-The indicator maps traded volume across price, calculates POC and the Value Area, detects HVN/LVN structure, tracks directional volume and builds confirmed BSL/SSL liquidity pools. The result is a clean auction map for traders who use Volume Profile, Smart Money concepts, market structure and liquidity analysis — without flooding the candles with heavy color.
+Its primary purpose is to combine price-based Volume Profile information with confirmed liquidity structure in one analytical framework.
 
-Use it for stocks, crypto and Forex, from scalping and intraday trading to swing analysis. AUTOPILOT adapts the lower timeframe, row density, node thresholds and liquidity-quality filters to the active chart.
+The script calculates a horizontal volume distribution, Point of Control (POC), Value Area, High-Volume Nodes (HVN), Low-Volume Nodes (LVN), directional volume estimates, and confirmed buy-side/sell-side liquidity pools.
 
-This is a market-reading tool, not a LONG/SHORT signal generator. Its job is to show where value sits, where price may accelerate and where confirmed liquidity remains active before you build a trade plan.
+These components are not intended to function as independent entry signals. They are combined to help answer a specific analytical question:
 
-━━━━━━━━━━━━━━━━━━━━
-⚡ CORE MARKET MAP
+**Where is price currently being accepted, where is participation relatively low, and where does confirmed unswept liquidity remain in relation to that auction structure?**
 
-• Volume Profile — horizontal volume distribution by price.
-• POC — the price row with the highest calculated volume.
-• Value Area — the price range containing the selected share of total volume; 70% is the standard target.
-• VAH / VAL — upper and lower Value Area boundaries.
-• HVN — high-volume acceptance nodes where price may slow, balance or retest.
-• LVN — low-volume rejection corridors where price can travel quickly.
-• Up / Down Volume — directional volume context classified from lower-timeframe candles.
-• Delta — the difference between classified Up Volume and Down Volume across the profile.
-• BSL / SSL — confirmed buy-side and sell-side liquidity pools around equal swing highs and lows.
-• Liquidity Quality Q — a quality score using relative volume, rejection wick and spacing between confirmations.
-• Nearest Targets — closest BSL, SSL, HVN and LVN with ATR distance and live state.
+The indicator does **not** generate automatic LONG or SHORT recommendations and does not execute trades.
 
-━━━━━━━━━━━━━━━━━━━━
-🗺 HOW TO READ THE CHART
+---
 
-START WITH VALUE
+## Purpose of the combined architecture
 
-Price between VAL and VAH is trading inside accepted value. This is usually a two-sided auction: POC attracts price, HVNs can hold rotation and the center of the profile often produces more noise than its edges.
+Volume Profile and liquidity analysis describe different aspects of market behavior.
 
-Holding above VAH signals price discovery above value. Holding below VAL signals price discovery below value. A single breakout is not enough on its own — watch whether the boundary survives a retest and whether directional volume supports the move.
+Volume Profile measures how the available volume data is distributed across price.
 
-READ THE POC
+Liquidity structure identifies confirmed areas around comparable swing highs and lows that have not yet been fully cleared according to the script's rules.
 
-The bright magenta POC marks the highest-volume price in the selected range. It acts as the profile’s center of gravity.
+EVA combines these concepts because either one viewed in isolation can omit relevant context.
 
-Price close to POC is usually balanced. Price far from POC may be building a new area of value or preparing a rotation back toward the old one. Context decides which path is active.
+For example:
 
-READ THE PROFILE SHAPE
+* POC and Value Area describe the center and boundaries of accepted value;
+* HVNs identify local concentrations of calculated participation;
+* LVNs identify comparatively low-volume regions;
+* directional volume provides context about the composition of the calculated profile;
+* confirmed BSL/SSL pools identify unresolved liquidity structures;
+* distance and quality calculations place those structures in relation to current volatility and price.
 
-Long horizontal rows represent heavier participation. Short rows show low acceptance.
+The intended result is a single auction map showing **value, participation, low-volume structure, and confirmed liquidity context together**.
 
-The main histogram uses a restrained neutral palette. A thin neon rail at the profile anchor shows row-level direction: teal for Up Volume dominance, pink for Down Volume dominance. Stronger imbalance produces a brighter rail without recoloring the entire histogram.
+This interaction is the principal reason these components are included in one script.
 
-HVN — ACCEPTANCE
+---
 
-Blue HVN zones mark local volume peaks. These are areas where the market previously agreed on price. Expect slower movement, consolidation, support/resistance behavior or repeated tests.
+## Volume Profile
 
-An HVN does not disappear after a touch. It represents completed volume structure, not uncollected stops.
+The script distributes the available volume across horizontal price rows within the active calculation range.
 
-LVN — REJECTION AND FAST TRAVEL
+The profile is intended to show where the selected market spent comparatively more or less trading activity.
 
-Amber LVN zones mark local volume valleys. Price spent less time there, so movement may accelerate through the corridor until it reaches the next HVN, Value Area boundary or active liquidity pool.
+### Point of Control — POC
 
-LVNs remain part of the calculated profile and update when the selected range changes.
+POC is the price row containing the largest amount of calculated profile volume.
 
-BSL / SSL — CONFIRMED LIQUIDITY
+It represents the highest-volume row of the current profile calculation.
 
-BSL appears above confirmed equal swing highs, where short stops and breakout liquidity can cluster. SSL appears below confirmed equal swing lows, where long stops and sell-side liquidity may sit.
+It should not be interpreted as an automatic support, resistance, entry, or reversal signal.
 
-A pool requires at least two comparable confirmed pivots and must pass the adaptive Q filter. The script does not print every high and low as “liquidity.”
+### Value Area
 
-Liquidity states:
+The Value Area contains the configured percentage of calculated profile volume surrounding the profile's primary volume concentration.
 
-• FRESH — confirmed and not yet tested.
-• TESTED — price entered the zone without completing the full sweep; the zone fades.
-• OFF — still calculated but outside the active ATR work radius, so it is hidden from the chart.
-• SWEPT — price cleared the far boundary; every drawing for that pool is deleted.
+A commonly used setting is 70%.
 
-━━━━━━━━━━━━━━━━━━━━
-📊 THE CALCULATED DASHBOARD
+The script displays:
 
-AUTOPILOT
-Shows whether adaptive mode is active and which lower timeframe is selected.
+* **VAH** — Value Area High;
+* **VAL** — Value Area Low.
 
-AUCTION
-Reports whether price is inside Value Area, above VAH or below VAL.
+Price inside the Value Area indicates that it is trading within the profile's calculated value region.
 
-RANGE / SOURCE
-Displays Visible Range, Session HD or Fixed Range and confirms whether calculations use chart candles or lower-timeframe data.
+Price above VAH or below VAL indicates that it is outside that region, but this condition alone does not imply continuation or reversal.
 
-ROWS × STEP
-Shows the actual number of profile rows and price increment. You always know the resolution behind the map.
+---
 
-UP / DOWN AND DELTA
-Displays directional volume shares and the net profile imbalance.
+## HVN and LVN structure
 
-POC / DIST
-Shows POC and the current price distance from it.
+### High-Volume Nodes — HVN
 
-NEAREST BSL / SSL
-Shows pool price, distance in ATR, Q score and FRESH, TESTED or OFF state.
+HVNs are local concentrations within the calculated profile where neighboring rows contain comparatively high volume.
 
-NEAREST HVN / LVN
-Locates the closest acceptance node and fast-travel corridor.
+They can be used to identify areas of previous acceptance or repeated participation.
 
-STRUCTURE
-Classifies the profile as upper concentration, lower concentration or balanced.
+Possible market behavior around an HVN can include rotation, consolidation, retesting, support/resistance behavior, or no meaningful reaction at all.
 
-STATUS
-Confirms developing mode, closed-bar mode or a safe data fallback.
+The script does not assume that an HVN must hold.
 
-━━━━━━━━━━━━━━━━━━━━
-⚙️ THREE VOLUME PROFILE MODES
+### Low-Volume Nodes — LVN
 
-VISIBLE RANGE
+LVNs are local low-volume regions between areas of greater calculated participation.
 
-Calculates only the candles currently visible on the screen. Zoom or scroll and the profile rebuilds around the market structure you are actually studying.
+They can highlight portions of the profile where historical acceptance was comparatively limited.
 
-SESSION HD
+Price may sometimes traverse these areas more quickly, but an LVN does not guarantee acceleration or determine direction.
 
-Creates a separate profile for each selected trading session. Useful for intraday POC, daily Value Area, opening rotations and session-based support/resistance.
+HVN and LVN structures remain components of the calculated profile and can change when the active profile range changes.
 
-FIXED RANGE
+---
 
-Measures one specific impulse, consolidation, breakout leg or accumulation range between two adjustable time markers.
+## Directional volume context
 
-━━━━━━━━━━━━━━━━━━━━
-🎯 PRACTICAL READING SCENARIOS
+When lower-timeframe data is available, the script classifies lower-timeframe volume according to candle direction and aggregates that information into the profile.
 
-BALANCED AUCTION
+The resulting values are displayed as:
 
-Price is inside Value Area and close to POC or an HVN. The market is accepting price. Chasing the middle of the profile offers less structural clarity than waiting for a reaction at VAH, VAL or a nearby liquidity zone.
+* Up Volume;
+* Down Volume;
+* Delta.
 
-BULLISH PRICE DISCOVERY
+**Delta in this indicator is the difference between the script's classified Up Volume and Down Volume.**
 
-Price holds above VAH, directional volume remains constructive and BSL is active overhead. The bullish auction remains valid while price accepts above value; a return below VAH weakens that read.
+It is important to distinguish this from exchange-level bid/ask order-flow delta.
 
-BEARISH PRICE DISCOVERY
+Pine Script does not provide the script with a complete historical exchange order book or universal historical bid/ask footprint data.
 
-Price holds below VAL, Down Volume expands and an SSL pool remains below. The bearish auction stays active until price regains the Value Area.
+Therefore, EVA does not claim to reconstruct those datasets.
 
-LVN TRAVEL
+Directional volume is an approximation derived from the available lower-timeframe OHLCV data.
 
-Price enters an LVN without opposing participation. The low-volume corridor may provide a faster route toward the next HVN, POC, VA boundary or liquidity target.
+---
 
-LIQUIDITY SWEEP
+## BSL and SSL liquidity structure
 
-Price clears the far edge of BSL or SSL and the pool disappears. The next question is acceptance or rejection: check candle response, volume, Delta and location relative to VAH/VAL. A sweep alone does not guarantee reversal.
+The liquidity component identifies confirmed structures around comparable pivot highs and lows.
 
-━━━━━━━━━━━━━━━━━━━━
-🧠 AUTOPILOT, LOWER TIMEFRAME DATA AND INTEGRITY
+### BSL — Buy-Side Liquidity
 
-AUTOPILOT adjusts lower-timeframe selection, row density, HVN/LVN thresholds, pivot sensitivity, pool width, minimum Q and the visible ATR radius. The developing profile updates as new confirmed microbars arrive.
+BSL structures are created above qualifying comparable swing highs.
 
-Lower-timeframe OHLCV improves price allocation inside each chart candle. If the requested intrabar history is unavailable or incomplete, EVA falls back to the complete chart-candle sample rather than silently using a truncated profile.
+### SSL — Sell-Side Liquidity
 
-The script uses the volume supplied by the active symbol’s data feed. On some markets, especially Forex, that may be tick volume. Pine Script cannot access a historical exchange order book or full bid/ask footprint, so EVA does not fabricate either one. The directional rail is an order-flow-style approximation derived from lower-timeframe candle direction.
+SSL structures are created below qualifying comparable swing lows.
 
-Confirmed BSL/SSL pools are created from closed pivot events and are not backfilled onto earlier bars. Visible Range and developing profiles recalculate when the viewport or incoming data changes — expected behavior for a dynamic Volume Profile, not a historical trading signal being rewritten.
+The script does not label every swing high or swing low as liquidity.
 
-━━━━━━━━━━━━━━━━━━━━
-⚠️ RISK NOTICE
+A liquidity structure requires multiple confirmed pivot observations that satisfy the script's similarity, spacing, volatility, and quality conditions.
 
-EVA Volume Profile PRO is an analytical TradingView indicator. It does not execute orders and is not financial advice. Markets involve risk. Every setup requires independent validation, position sizing and risk management.
+This filtering is intended to reduce the number of insignificant structures displayed on the chart.
 
-━━━━━━━━━━━━━━━━━━━━
-🔥 READY TO TURN THE LIQUIDITY MAP INTO A COMPLETE TRADE SCENARIO?
+Liquidity terminology in this script represents a technical model based on price structure. It does not imply direct observation of hidden orders or stop orders in an exchange order book.
 
-EVA AI Plus combines confirmed LONG/SHORT signals, Market Structure, Liquidity Sweeps, Smart Money context, Support/Resistance, Supply/Demand, Fair Value Gaps, Whale Volume, signal-quality filters, AI Advisor explanations, TP/SL, Trail, TP+ and internal statistics in one premium TradingView workspace.
+---
 
-Open EVA AI Plus, add it to your favorites and request access to the 7-day test drive:
-https://ru.tradingview.com/script/YPrFKpYL-eva-ai-plus-structure-and-liquidity-signals/
+## Liquidity Quality
+
+Each qualifying liquidity structure receives a quality value based on several measurable properties of the detected structure.
+
+Depending on the active configuration, these properties include factors such as:
+
+* relative volume;
+* rejection characteristics;
+* spacing between qualifying pivots;
+* volatility-adjusted geometry.
+
+The quality value is used for filtering and ranking detected structures.
+
+It is a relative analytical score created by this script. It is **not a probability of a profitable trade or a prediction that a liquidity level will be reached or swept**.
+
+---
+
+## Liquidity states
+
+Detected pools can move through several states.
+
+### FRESH
+
+The qualifying structure has been confirmed and has not yet met the script's test or sweep conditions.
+
+### TESTED
+
+Price has interacted with the structure according to the configured testing rules without completing the full sweep condition.
+
+### OFF
+
+The structure remains internally valid but falls outside the configured volatility-adjusted working radius and is therefore not displayed as an active nearby structure.
+
+### SWEPT
+
+Price has crossed the structure's defined far boundary.
+
+Once this condition is confirmed, the corresponding active pool drawings are removed.
+
+The state system prevents historical liquidity structures from remaining visually active after the script considers them resolved.
+
+---
+
+## Nearest structural references
+
+The dashboard identifies nearby calculated structures such as:
+
+* BSL;
+* SSL;
+* HVN;
+* LVN.
+
+Distances can be normalized using ATR so that the displayed distance is comparable across instruments with different nominal prices and volatility.
+
+These values describe **location**, not trade expectancy.
+
+A nearby BSL, SSL, HVN, or LVN should not be interpreted as a recommendation to enter a position.
+
+---
+
+## Profile modes
+
+The script supports several ways to define the profile range.
+
+### Visible Range
+
+The profile is calculated from the chart region used by the script's visible-range logic.
+
+Changing the visible chart area can therefore change the profile.
+
+This behavior is intentional.
+
+A Visible Range profile is dynamic and should not be interpreted as an immutable historical signal.
+
+### Session
+
+The profile is calculated using the selected session boundaries.
+
+This mode can be used to examine session-specific POC, Value Area, and volume distribution.
+
+### Fixed Range
+
+The profile is calculated between user-defined time boundaries.
+
+This mode can be used to inspect a specific impulse, consolidation, expansion, or other manually selected market segment.
+
+---
+
+## Adaptive configuration
+
+The optional adaptive mode adjusts selected calculation parameters according to chart conditions.
+
+Depending on configuration, this can include:
+
+* lower-timeframe selection;
+* profile row density;
+* HVN/LVN sensitivity;
+* pivot sensitivity;
+* liquidity-zone width;
+* minimum liquidity-quality threshold;
+* volatility-adjusted display radius.
+
+The purpose of this mode is to maintain usable analytical resolution across different chart timeframes and price scales.
+
+Adaptive configuration does not optimize for future profitability and does not predict future market direction.
+
+Users can disable adaptive behavior and use manual settings where required.
+
+---
+
+## Dashboard
+
+The dashboard summarizes the current calculated state of the indicator.
+
+Depending on the selected configuration, it can display:
+
+### Auction
+
+The location of current price relative to VAH, VAL, and the calculated Value Area.
+
+### Range / Source
+
+The active profile mode and the data source currently used by the calculation.
+
+### Rows × Step
+
+The effective number of price rows and the price increment represented by each row.
+
+### Up / Down / Delta
+
+The directional volume classification generated from the available data.
+
+### POC / Distance
+
+The current POC and price distance from it.
+
+### Nearest BSL / SSL
+
+The nearest qualifying liquidity structure together with distance, quality, and state.
+
+### Nearest HVN / LVN
+
+The nearest calculated high-volume and low-volume structures.
+
+### Structure
+
+A descriptive classification of the current volume distribution.
+
+### Status
+
+Information concerning the current calculation mode and available data.
+
+The dashboard summarizes calculated information; it does not produce trading instructions.
+
+---
+
+## How to interpret the map
+
+### Price inside Value Area
+
+Price inside VAH and VAL is trading within the profile's calculated value region.
+
+POC and HVNs can help locate concentrations of historical participation.
+
+This does not necessarily imply a ranging market or predict that price will remain inside the Value Area.
+
+### Price above VAH
+
+Price above VAH is outside the upper boundary of the calculated Value Area.
+
+Whether the move continues or returns into value depends on subsequent market behavior.
+
+VAH alone is not a breakout confirmation.
+
+### Price below VAL
+
+Price below VAL is outside the lower boundary of the calculated Value Area.
+
+VAL alone does not confirm bearish continuation.
+
+### Interaction with an LVN
+
+An LVN identifies a region of comparatively low calculated participation.
+
+It can be used to observe how price behaves when entering a low-volume region, but it does not guarantee rapid movement through that area.
+
+### Interaction with liquidity
+
+When price reaches a BSL or SSL structure, users can observe whether the level remains active, becomes tested, or satisfies the script's sweep condition.
+
+A sweep is a structural event only.
+
+**A liquidity sweep does not by itself imply a reversal or continuation.**
+
+---
+
+## Data handling and confirmation
+
+Where available, lower-timeframe OHLCV data is used to improve the allocation of volume within higher-timeframe chart candles.
+
+When the requested lower-timeframe sample is unavailable or insufficient for the selected calculation, the script can use its documented fallback calculation instead of presenting an incomplete lower-timeframe profile as if it were complete.
+
+Liquidity structures are based on confirmed pivot events.
+
+Because a pivot requires subsequent bars for confirmation, a newly confirmed liquidity structure can appear later than the historical bar on which the pivot itself occurred.
+
+The script does not interpret this confirmation delay as advance knowledge.
+
+Developing profiles can change as additional data arrives.
+
+Visible Range profiles can also change when the chart viewport changes.
+
+These behaviors are inherent to dynamic profile calculations and should not be interpreted as historical trade signals being rewritten.
+
+---
+
+## Originality and design rationale
+
+The script uses established analytical concepts such as Volume Profile, POC, Value Area, pivots, ATR normalization, and liquidity terminology.
+
+It does not claim that those individual concepts are proprietary.
+
+The distinctive functionality of this implementation is their integration into a unified state-based analytical system.
+
+Instead of independently displaying several unrelated indicators, EVA:
+
+1. builds a common price-row volume model;
+2. derives POC and Value Area from that same distribution;
+3. identifies local HVN/LVN structure within the profile;
+4. estimates directional volume from lower-timeframe data where available;
+5. independently confirms comparable pivot structures;
+6. applies volatility-, geometry-, and participation-based filtering to those structures;
+7. maintains lifecycle states for active liquidity pools;
+8. relates nearby volume and liquidity structures to current price using a common dashboard and normalized distance model;
+9. provides explicit fallback behavior when detailed source data is unavailable.
+
+The purpose of the integration is to provide one coherent representation of **auction value, relative participation, low-volume structure, and unresolved price-based liquidity** rather than a collection of independent signals.
+
+---
+
+## Why the source code is protected
+
+The source code is protected to preserve the implementation of the script's integrated profile construction, adaptive parameter logic, node-classification methods, liquidity-quality filtering, state transitions, data-fallback handling, and visualization architecture.
+
+Closed-source visibility is not intended to prevent users from understanding the indicator's behavior.
+
+This description therefore documents the script's purpose, inputs, main calculations, interpretation, data limitations, and expected dynamic behavior without exposing implementation-specific formulas and thresholds.
+
+---
+
+## Important limitations
+
+Users should understand the following limitations before using the indicator:
+
+* The script only has access to data supplied to Pine Script by TradingView and the active symbol's data provider.
+* Volume characteristics differ between markets and symbols.
+* On some Forex instruments, the available volume can represent tick volume rather than centralized exchange volume.
+* The script does not have access to a complete historical exchange order book.
+* It does not know the location of actual individual traders' stop orders.
+* BSL and SSL are price-structure models, not observations of hidden orders.
+* Directional volume is derived from available candle data and is not equivalent to true exchange bid/ask footprint delta.
+* Confirmed pivots necessarily introduce confirmation delay.
+* Visible Range calculations can change when the chart viewport changes.
+* Developing profiles can change as new bars or intrabars become available.
+* HVNs, LVNs, POC, VAH, VAL, BSL, and SSL do not predict future price behavior.
+* No individual component should be interpreted as a guaranteed support, resistance, breakout, reversal, entry, or target.
+* Different symbols, sessions, timeframes, and data feeds can produce materially different profile structures.
+
+---
+
+## Intended use
+
+EVA is intended as a **market-reading and contextual-analysis tool**.
+
+A typical workflow is:
+
+1. identify the current Value Area and POC;
+2. inspect the shape of the volume distribution;
+3. locate nearby HVN and LVN structures;
+4. identify confirmed active BSL and SSL structures;
+5. compare those structures with current price and volatility;
+6. observe subsequent price and volume behavior;
+7. perform an independent trade and risk assessment.
+
+The indicator deliberately does not convert this information into automatic LONG or SHORT instructions.
+
+---
+
+## Risk disclosure
+
+This script is an analytical indicator and does not execute orders.
+
+It does not provide financial advice, guarantee trading outcomes, or predict future market behavior.
+
+Historical structures and previous market reactions do not establish how price will behave in the future.
+
+Users remain responsible for independent analysis, position sizing, execution decisions, and risk management.
 
 ---
 

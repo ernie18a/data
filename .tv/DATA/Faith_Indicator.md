@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;iqm0QQ8h7ypMUiPWkepHx0QiXTn1GHVD -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Faith Indicator
 

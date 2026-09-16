@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;41c8a70412b549f0ad75bf269a1e978c -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # TASC 2026.04 A Synthetic Oscillator
 

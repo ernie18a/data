@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;b686d2ef0ab0401cb51185d433669d2c -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Liquidity Thermal Map [BigBeluga]
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;gpa65TEFCGVPq0SF3p3uE9LswgYCC1Kq -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Penrose Diagram 3D
 

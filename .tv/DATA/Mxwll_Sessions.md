@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;5b233a3c1f57477d9c087609b5898ce9 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Mxwll Sessions
 

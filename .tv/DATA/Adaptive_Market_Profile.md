@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;b65db12d071242348db3ade885d80e59 -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Adaptive Market Profile
 

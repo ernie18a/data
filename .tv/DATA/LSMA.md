@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;pxVKIpRWwp75bsQdMEw16ot0EuJbDLjV -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # LSMA
 

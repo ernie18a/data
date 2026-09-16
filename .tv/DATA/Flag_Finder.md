@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;631d94e2022746a681df09608bc96569 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Flag Finder
 

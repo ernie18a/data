@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;0999ba6cd86e4709ad54bfa93034f5db -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Bull Vs. Bear Market Intraday Sessions [Kioseff Trading]
 

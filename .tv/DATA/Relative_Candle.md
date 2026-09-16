@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;uOQsb3eWhWwOOQliqKkYauquRoKBEBhY -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Relative Candle
 

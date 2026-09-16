@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;8386abbb663b4f66abe43aa263eefffc -->
+<!-- tradingview-pine-version: 40.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Live Economic Calendar by toodegrees
 
@@ -148,7 +149,7 @@ Terms and Conditions
 // This Pine Script™ code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
 // © toodegrees
 import toodegrees/forex_factory_utility/17 as ffUtil
-import toodegrees/forex_factory_decoding/45 as ffDec
+import toodegrees/forex_factory_decoding/46 as ffDec
 
 //@version=6
 indicator("Live Economic Calendar by toodegrees"

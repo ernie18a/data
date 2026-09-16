@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;679aaa4df33d462ea8a93b8e183772a1 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Estimated Time At Price [Kioseff Trading]
 

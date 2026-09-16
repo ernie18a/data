@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;bx143aAD9qEmS3z6PLGc2eHjBQ00td37 -->
+<!-- tradingview-pine-version: 7.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # BEST Strategy Template
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;f6a00b223e18423daa3a006d74e21a2b -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # FunctionLinearRegression
 

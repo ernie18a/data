@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;raCfiLywFv42fRTVNdbQrNPZATU6KqOp -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Hurst Exponent [QuantNomad]
 

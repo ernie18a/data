@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;j0FuqqJKuUk0jdvGJnUa22rUR09oinvv -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Market EKG
 

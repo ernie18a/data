@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;NBOLc1UjIKuxR1GvpdezORPeqIhY7FpU -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Optimized Trend Tracker
 

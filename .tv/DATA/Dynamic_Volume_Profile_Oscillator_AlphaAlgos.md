@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;3f3114505bf64d7dae2ec48e0b8165a3 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Dynamic Volume Profile Oscillator | AlphaAlgos
 

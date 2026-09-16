@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;TDlqz0q9TN3WplzAuRuntvRAHNxL8gRh -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Machine Learning: Logistic Regression (v.3)
 

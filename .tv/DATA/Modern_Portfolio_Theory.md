@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;f053c9a219fb48798e19328e1282da1f -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Modern Portfolio Theory
 

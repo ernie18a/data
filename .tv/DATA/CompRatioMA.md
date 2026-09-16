@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;pOgLeMa347Zkml8worsHeXu8bvuxiHrh -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Comp_Ratio_MA
 

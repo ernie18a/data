@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;CKohWiMWTSey36vsQZT8tkKbm6eUkevU -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # `security()` revisited [PineCoders]
 

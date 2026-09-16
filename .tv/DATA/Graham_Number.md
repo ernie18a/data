@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;g4LDQgbBX5H43UA3jLelCe9JaHiNm3sj -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Graham Number
 

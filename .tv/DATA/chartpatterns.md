@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;752578f6d9454a5d92b267a72659c10f -->
+<!-- tradingview-pine-version: 10.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # chartpatterns
 

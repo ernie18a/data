@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;b1834ae235344b4e8bb45b12106b4d12 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # [MAD] Acceleration based dampened SMA projections
 

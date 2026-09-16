@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;589c0bf842c042e1818791998fb29e18 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Recession Warning Traffic Light
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;213cfb6fbb7648d5a064739e5666362f -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Solar System in 3D [Astro Tool w/ Zodiac] | Alien_Algorithms
 

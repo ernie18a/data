@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;ab500ae4e4254689acd9c7ceabb81bc7 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Tick CVD [Kioseff Trading]
 

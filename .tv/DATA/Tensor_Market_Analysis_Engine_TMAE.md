@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;5b07b4ba22b04937918d40cf49491ff4 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Tensor Market Analysis Engine (TMAE)
 

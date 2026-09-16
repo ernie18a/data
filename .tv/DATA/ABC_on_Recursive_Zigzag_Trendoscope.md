@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;d445c5b82a794a0095040c4910e63bc0 -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # ABC on Recursive Zigzag [Trendoscope]
 

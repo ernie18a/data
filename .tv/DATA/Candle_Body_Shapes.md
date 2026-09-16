@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;1b282bcdcb0642988f618bc301248af1 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Candle Body Shapes
 

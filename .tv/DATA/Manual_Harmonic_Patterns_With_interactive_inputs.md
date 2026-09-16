@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;585b713d148a47d5aa039ff8e5a69b1d -->
+<!-- tradingview-pine-version: 7.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Manual Harmonic Patterns - With interactive inputs
 

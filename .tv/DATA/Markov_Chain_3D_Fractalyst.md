@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;18a19d3c9ff249d3bdfb868a45234b57 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Markov Chain [3D] | Fractalyst
 

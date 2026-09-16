@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;be96682755554d4f9ffbd166330ab0c1 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Nasan Risk Score & Postion Size Estimator
 

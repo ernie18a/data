@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;aa1f1df5f3674130a549581bf813d403 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Breakout Volume Delta | Flux Charts
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;b364967d3305413da25281b5bb09bcff -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Intraday Intensity Modes
 

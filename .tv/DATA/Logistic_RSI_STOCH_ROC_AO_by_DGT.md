@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;aYY2rK1EEfduqs96jZfKFDKUPjZdL88Y -->
+<!-- tradingview-pine-version: 14.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Logistic RSI, STOCH, ROC, AO, ... by DGT
 

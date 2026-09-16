@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;404bf27f631f4578a758b92f319f6a9d -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # FINRA Daily Short Sale Volume
 

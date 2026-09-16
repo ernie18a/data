@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;51e982897e454937a346c5e7bfd2e933 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Per Bak Self-Organized Criticality
 

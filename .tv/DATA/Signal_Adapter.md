@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;e39a383d7c6246018f5bb73755b6e9f1 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Signal Adapter
 

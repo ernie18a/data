@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;u6LSAo1Ql3V9zP3HM6kYUYOmMWYjYScN -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Auto PitchFan, Fib Extension/Retracement and ZigZag by DGT
 

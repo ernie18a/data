@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;13c53f2018c640a093a7502d6a9333c4 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Volume Surprise [LuxAlgo]
 

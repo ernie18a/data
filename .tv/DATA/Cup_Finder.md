@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;OB71KkjD8BRhDzoaPMmAYXb2HkVoo9DO -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Cup Finder
 

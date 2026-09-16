@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;a31c376fda8d43ce918038bb9d86a800 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Machine Learning: kNN (New Approach)
 

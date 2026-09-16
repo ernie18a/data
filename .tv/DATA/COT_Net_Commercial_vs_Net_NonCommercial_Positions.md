@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;wlddKBI8MV78BZK2se6wZ5ndZD4BQ26e -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # COT Net Commercial vs Net Non-Commercial Positions
 

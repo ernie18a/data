@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;XICD2fw5rBFOnzZWoUAc0lDsJdQHW3YJ -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Nasdaq futures Day and night breakdown
 

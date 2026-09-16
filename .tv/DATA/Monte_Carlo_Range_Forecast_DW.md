@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;MlOYdQ7VcyN7IBFEfVkyUm9WH6cJVJZh -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Monte Carlo Range Forecast [DW]
 

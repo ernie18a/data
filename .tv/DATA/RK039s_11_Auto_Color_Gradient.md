@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;cSjg0Rmj7BwrFRevTQTkIdhC0EIYHQvt -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # RK&#039;s 11 - Auto Color Gradient
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;GZuyxTMfNF8c85RECLMxYpcF3GT2Tjf0 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Reversal finder
 

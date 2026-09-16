@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;cJORF9RciA2yjuVqrJO5ovXKLpBfS1JP -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Congestion Index by Katsanos
 

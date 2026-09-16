@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;85c2251ed6314862aeedfc6fea473800 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Volume X-ray [LucF]
 

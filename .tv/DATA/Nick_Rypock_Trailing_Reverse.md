@@ -1,8 +1,9 @@
 <!-- tradingview-pine-id: PUB;97xDaOdATRk86n6GcHQWebnIoVIzjD8e -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Nick Rypock Trailing Reverse
 
-Source: https://www.tradingview.com/script/XAscppNW-Nick-Rypock-Trailing-Reverse-NRTR/
+Source: https://www.tradingview.com/script/XAscppNW-Nick-Rypock-Trailing-Reverse-NRTR-everget/
 
 ## Description
 

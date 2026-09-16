@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;5d4a6bf71f96450a9d4cf51a8c61a537 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Pong
 

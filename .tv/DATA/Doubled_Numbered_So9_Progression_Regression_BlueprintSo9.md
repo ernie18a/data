@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;81d3e529a65c475c993f0efead0342fd -->
+<!-- tradingview-pine-version: 8.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Doubled Numbered So9 Progression | Regression - Blueprint_So9
 

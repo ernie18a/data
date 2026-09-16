@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;09c3bfe4dd324c1f9df746c6bf127bdb -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # OptiPine
 

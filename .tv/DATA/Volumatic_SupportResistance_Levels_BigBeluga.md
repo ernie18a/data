@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;b561ac4b0cde418a8867032604f4d41d -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Volumatic Support/Resistance Levels [BigBeluga]
 

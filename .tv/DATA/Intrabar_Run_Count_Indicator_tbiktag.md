@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;4ff95623714249b3850157366820b413 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Intrabar Run Count Indicator [tbiktag]
 

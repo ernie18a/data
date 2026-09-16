@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;3412a679d830478396eb32d4f9c3a31a -->
+<!-- tradingview-pine-version: 8.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Elastic Volume-Weighted Student-T Tension
 

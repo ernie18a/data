@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;wXLB80W4zNQB9zbK3LFGfca1IpfI5OgH -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Average Force
 

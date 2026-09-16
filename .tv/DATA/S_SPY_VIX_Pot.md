@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;2Pa37zt2JBHwvagXgmvwSi2dDnA8IvZd -->
+<!-- tradingview-pine-version: 8.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # S - SPY VIX Pot
 

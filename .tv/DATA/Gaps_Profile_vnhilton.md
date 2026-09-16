@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;f3df9ce82f034a028fc2bb1cbb8b4db5 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Gaps Profile [vnhilton]
 

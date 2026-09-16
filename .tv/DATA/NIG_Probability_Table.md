@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;b3973dfbd7eb45d3baa8ba57b37ab629 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # NIG Probability Table
 

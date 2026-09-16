@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;KDqKxqPHlw7KLPQS0eT3lxfYnconedyW -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Waindrops_v0.67beta
 

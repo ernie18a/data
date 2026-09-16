@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;aNe7sTvZNwWqm0dzk5O9TXKa6aKwzoJ0 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Distance to Demand Vector
 

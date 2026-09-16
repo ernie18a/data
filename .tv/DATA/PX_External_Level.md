@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;0K4qMVkwotqi64DIDJoVgdgUbLo1KwXI -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # [PX] External Level
 

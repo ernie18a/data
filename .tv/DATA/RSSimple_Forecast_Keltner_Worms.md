@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;zoB2iUfszKFfHRw7BufYSumOTtOSdvk7 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # [RS]Simple Forecast - Keltner Worms
 

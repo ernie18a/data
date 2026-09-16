@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;5xi4DbWeuIQrU0Fx6ZKiI2odDvIW9q2j -->
+<!-- tradingview-pine-version: 10.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Divergence for Many Indicators v4
 

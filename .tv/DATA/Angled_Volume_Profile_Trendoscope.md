@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;c4d2ca4647324422b584253978ff75d2 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Angled Volume Profile [Trendoscope®]
 

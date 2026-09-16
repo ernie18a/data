@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;2174489a808f40c98e3e1fc2012e8645 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Anchored VWAP Pinch & Handoff, Intervals, and Signals
 

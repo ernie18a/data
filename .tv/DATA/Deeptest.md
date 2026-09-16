@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;3b765ebd0705496983b30554c9946917 -->
+<!-- tradingview-pine-version: 15.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Deeptest
 

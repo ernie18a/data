@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;3d0adcd8588247bbadbc07068fc9d1ab -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # RSI Radar Multi Time Frame
 

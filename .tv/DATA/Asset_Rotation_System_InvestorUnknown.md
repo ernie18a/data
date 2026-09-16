@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;7f22da0169c641ab9f788d02a951975e -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Asset Rotation System [InvestorUnknown]
 

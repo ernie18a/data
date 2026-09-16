@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;b01c3c1741aa449581a1573f6cb7c0b2 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Fibonacci Sequence Circles [BigBeluga]
 

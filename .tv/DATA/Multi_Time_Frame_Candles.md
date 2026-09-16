@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;6BovDTHIqmh2ST7vEgsUnZg1hkmc8OvD -->
+<!-- tradingview-pine-version: 8.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Multi Time Frame Candles
 

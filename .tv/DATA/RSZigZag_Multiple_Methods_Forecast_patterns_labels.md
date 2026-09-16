@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;E4OqtTWeCw7VefcnG0JBu10TfjtjXsGs -->
+<!-- tradingview-pine-version: 6.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # [RS]ZigZag Multiple Methods - Forecast - patterns - labels
 

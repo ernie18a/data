@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;fce136c6338844529776ec19bbe63074 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Bjorgum Double Tap
 

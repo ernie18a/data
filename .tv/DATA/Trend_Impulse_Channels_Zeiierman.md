@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;a301e8735141418c86feb872d423f8ed -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Trend Impulse Channels (Zeiierman)
 

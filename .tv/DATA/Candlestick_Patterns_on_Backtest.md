@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;c85b9d3ec6e743949b2c66f40fedaaf6 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Candlestick Patterns on Backtest
 

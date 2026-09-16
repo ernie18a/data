@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;8d1a7398dfe74e90b61565306a76cb60 -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Time
 

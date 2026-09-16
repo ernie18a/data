@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;76ae6089244f4445b6dc2bd097148ffd -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Market Microstructure Analytics
 

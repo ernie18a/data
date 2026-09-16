@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;6e47e05b5aec4a9f9577acbefddfaf28 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Trend Volatility Index (TVI)
 

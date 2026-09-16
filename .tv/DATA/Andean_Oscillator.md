@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;7441081de58e4d2eaa5d9f6038caedec -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Andean Oscillator
 

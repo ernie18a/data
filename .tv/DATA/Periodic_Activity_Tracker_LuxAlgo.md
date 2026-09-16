@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;fbc09c5ea23f46988d3a2176b9380433 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Periodic Activity Tracker [LuxAlgo]
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;f84b8fc7c4c9460ca0c5245db3ca57fb -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Volume / Open Interest Footprint - By Leviathan
 

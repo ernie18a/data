@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;Mtdo06erQMaQfKQ0TPAau4dTyxAli38m -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Voss Predictor (A Peek Into the Future) - Dr. John Ehlers
 

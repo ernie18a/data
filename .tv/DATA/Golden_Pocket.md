@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;19c64ad839584033884cf784f56ee8eb -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Golden Pocket
 

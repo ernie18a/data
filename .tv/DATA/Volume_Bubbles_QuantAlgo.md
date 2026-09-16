@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;e246e0f9f1d14eadbe1fb35c1c2ec361 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Volume Bubbles [QuantAlgo]
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;f799214ad7f14c1ba35f5ce04ab7c640 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Whale Liquidity and Absorption Profile [AlgoAlpha]
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;070e1be7fb7a4272b6dbb357501f5219 -->
+<!-- tradingview-pine-version: 11.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Zigzag
 

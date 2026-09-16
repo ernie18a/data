@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;fe9368b0b7484387a3a48f17a72c8dc4 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Signs of the Times [LucF]
 

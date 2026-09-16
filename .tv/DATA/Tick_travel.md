@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;3e0324aeef334c24b40e3c74cdeb86ba -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Tick travel ⍗
 

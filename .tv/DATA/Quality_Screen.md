@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;AxYp8YDx06fLDES0QZgkKXwg4nYadEVP -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Quality Screen
 

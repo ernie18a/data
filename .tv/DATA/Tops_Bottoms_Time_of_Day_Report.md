@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;b89c52b8f15749168f2d09bdbaee4b60 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Tops & Bottoms - Time of Day Report
 

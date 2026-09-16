@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;99538a6403c44e36b2dcddddb0f51923 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # TASC 2021.11 (MADH) Moving Average Difference, Hann
 

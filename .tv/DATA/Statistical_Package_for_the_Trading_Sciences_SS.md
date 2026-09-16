@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;7c2779ea88ff401d9d075373cfa93b8f -->
+<!-- tradingview-pine-version: 7.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Statistical Package for the Trading Sciences [SS]
 

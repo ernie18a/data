@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;135d8955d3e64e86b99fef3cac9b699e -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Gann Box (Zeiierman)
 

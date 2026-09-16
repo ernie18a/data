@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;2553a00e00d14e88bc5ff5f0b9b556bf -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Log-Normal Price Forecast
 

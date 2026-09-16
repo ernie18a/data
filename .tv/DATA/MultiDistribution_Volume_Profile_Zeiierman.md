@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;093661aea74a4a8594fe5ec39960916b -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Multi-Distribution Volume Profile (Zeiierman)
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;aa781c2985c94e5fa6ac73007f60973a -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Smooth Theil-Sen
 

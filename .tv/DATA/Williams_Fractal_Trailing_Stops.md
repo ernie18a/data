@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;UOOIN5REYltZ0WpVSbj7GS3AYPKquHV3 -->
+<!-- tradingview-pine-version: 7.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Williams Fractal Trailing Stops
 

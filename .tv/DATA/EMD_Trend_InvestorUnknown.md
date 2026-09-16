@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;c063b3fd65f048abbfad7e6ba57a8d5b -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # EMD Trend [InvestorUnknown]
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;043320bb572a4bb08853f40189c57586 -->
+<!-- tradingview-pine-version: 6.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Rolling VWAP
 

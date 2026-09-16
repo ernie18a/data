@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;2c659ee0a8244e9db2a7fb7f98e98d5d -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Range Sentiment Profile [LuxAlgo]
 

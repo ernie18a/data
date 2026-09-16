@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;88979f879d8744e486037aefe8bfb1e0 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Machine Learning RSI | AI Classification & Ranking (Zeiierman)
 

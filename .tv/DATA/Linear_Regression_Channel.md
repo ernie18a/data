@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;jiDgL4o6Qxmpn0uOAMy46uK3NBhGDNhx -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Linear Regression Channel
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;04f908e6fe054335bbbd7f6961b60215 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Fair Value Gap Profile + Rolling POC [BigBeluga]
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;DdlMGMZvj815bZeUYAotHozrkGMgvoN2 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # (JS) Squeeze Pro Overlays
 

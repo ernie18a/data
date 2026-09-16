@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;3f76074646a14403992483c70d5566a3 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Supertrend Parameter Sensitivity 3D [LuxAlgo]
 

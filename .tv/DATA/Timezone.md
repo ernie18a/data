@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;6445ee9036e24cbb91d9c09f54cc9c9e -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Timezone
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;yRCMifZ88lRmBj1mmYPBt9DvCfJp5Tsi -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # RedK_Directional Index
 

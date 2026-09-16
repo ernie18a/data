@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;D6OTtB0QrCLQ1qLMQu9jnJ2GsvnujI5u -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Laguerre RSI
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;HXAeFLJAJkZaIve7LdKgzLIQqEsAdL15 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # inwCoin Martingale Strategy ( for Bitcoin )
 

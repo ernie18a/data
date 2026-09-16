@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;075e9e3932f14bfb84a6bac637195c07 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Traling.SL.Target
 

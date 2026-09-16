@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;ebb205ff839a4131b8bb2520d4bdd08f -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # WaveTrend 3D
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;71334fde50104861a55eb67eb63735d8 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Text
 

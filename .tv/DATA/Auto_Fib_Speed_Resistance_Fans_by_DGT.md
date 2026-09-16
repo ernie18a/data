@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;UEt48W4xh8s8Ij4V6JPgMslcirny3Fsf -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Auto Fib Speed Resistance Fans by DGT
 

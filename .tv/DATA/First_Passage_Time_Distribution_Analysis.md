@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;92c898b237ff4c3e800b1ffc2d8e6e66 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # First Passage Time - Distribution Analysis
 

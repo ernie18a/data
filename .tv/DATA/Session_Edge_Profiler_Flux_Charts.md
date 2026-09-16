@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;74d7271fe8b94ddf8ea8c8f59315d370 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Session Edge Profiler | Flux Charts
 

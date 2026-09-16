@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;0d8c6f7b3d1b4b409d2c88657b881dc1 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # MY:Aggregated Volume BTC:SPOT
 

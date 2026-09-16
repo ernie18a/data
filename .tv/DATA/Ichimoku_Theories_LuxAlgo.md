@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;15c00d3c02e04c1faa329cdd78d9c992 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Ichimoku Theories [LuxAlgo]
 

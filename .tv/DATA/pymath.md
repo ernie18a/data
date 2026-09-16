@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;6d1bb4f4672d48b8b6dcebc6cf988884 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # pymath
 
@@ -808,6 +809,93 @@ export method atan2(float self, float dx) =>
     else if dx < 0
         a += math.pi
     a
+
+
+// -------------------------------------------------------------------
+// 1️⃣  Single‑variable clamp (float & int)
+// -------------------------------------------------------------------
+
+// @function clamp: Restricts this float to the specified [min, max] range.
+// @param self (float) The input number to clamp.
+// @param min (float) The lower bound.
+// @param max (float) The upper bound.
+// @returns (float) The clamped value.
+export method clamp(float self, float min, float max) =>
+    math.max(min, math.min(max, self))
+
+// @function clamp: Restricts this integer to the specified [min, max] range.
+// @param self (int) The input number to clamp.
+// @param min (int) The lower bound.
+// @param max (int) The upper bound.
+// @returns (int) The clamped integer value.
+export method clamp(int self, int min, int max) =>
+    math.max(min, math.min(max, self))
+
+
+// -------------------------------------------------------------------
+// 2️⃣  Array‑clamp (plain for‑loop, no map)
+// -------------------------------------------------------------------
+
+// @function clamp: Creates a new array<float> with every element restricted to the [min, max] range.
+// @param self (array<float>) The input array to clamp.
+// @param min (float) The lower bound.
+// @param max (float) The upper bound.
+// @returns (array<float>) A new array containing the clamped values.
+export method clamp(array<float> self, float min, float max) =>
+    var array<float> result = array.new<float>(self.size())
+    for i = 0 to self.size() - 1
+        float v = self.get(i)
+        result.set(i, math.max(min, math.min(max, v)))
+    result
+
+// @function clamp: Creates a new array<int> with every element restricted to the [min, max] range.
+// @param self (array<int>) The input array to clamp.
+// @param min (int) The lower bound.
+// @param max (int) The upper bound.
+// @returns (array<int>) A new array containing the clamped values.
+export method clamp(array<int> self, int min, int max) =>
+    var array<int> result = array.new<int>(self.size())
+    for i = 0 to self.size() - 1
+        int v = self.get(i)
+        result.set(i, math.max(min, math.min(max, v)))
+    result
+
+
+// -------------------------------------------------------------------
+// 3️⃣  Matrix‑clamp (nested for‑loops, no map)
+// -------------------------------------------------------------------
+
+// @function clamp: Creates a new matrix<float> with every cell restricted to the [min, max] range.
+// @param self (matrix<float>) The input matrix to clamp.
+// @param min (float) The lower bound.
+// @param max (float) The upper bound.
+// @returns (matrix<float>) A new matrix containing the clamped values.
+export method clamp(matrix<float> self, float min, float max) =>
+    int rows = self.rows()
+    int cols = self.columns()
+    var matrix<float> result = matrix.new<float>(rows, cols)
+    for r = 0 to rows - 1
+        for c = 0 to cols - 1
+            float v = self.get(r, c)
+            result.set(r, c, math.max(min, math.min(max, v)))
+    result
+
+// @function clamp: Creates a new matrix<int> with every cell restricted to the [min, max] range.
+// @param self (matrix<int>) The input matrix to clamp.
+// @param min (int) The lower bound.
+// @param max (int) The upper bound.
+// @returns (matrix<int>) A new matrix containing the clamped values.
+export method clamp(matrix<int> self, int min, int max) =>
+    int rows = self.rows()
+    int cols = self.columns()
+    var matrix<int> result = matrix.new<int>(rows, cols)
+    for r = 0 to rows - 1
+        for c = 0 to cols - 1
+            int v = self.get(r, c)
+            result.set(r, c, math.max(min, math.min(max, v)))
+    result
+    
+
 
 // --- Implemented functions (not direct built-in wraps or different behavior) ---
 

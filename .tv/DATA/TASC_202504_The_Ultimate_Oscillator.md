@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;32d9d9bc22b24b9aaa0f0b0cb935ff22 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # TASC 2025.04 The Ultimate Oscillator
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;6cf36a7802554f93aeee0a651a825359 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # RedK Volume-Accelerated Directional Energy Ratio
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;7fd1d7961a8a465796a7c530b11307b6 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # TASC 2025.01 Linear Predictive Filters
 

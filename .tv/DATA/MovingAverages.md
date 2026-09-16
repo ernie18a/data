@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;a14282df0bc64631a69040fd96dd2465 -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # MovingAverages
 
@@ -438,7 +439,7 @@ export vwma(series float source, simple float length = na, series bool anchor = 
     // Update volume sum and weight
     var series float sum = 0
     sum := anchor ? volume : sum + volume
-    w = volume / sum
+    w = nz(volume / sum, 1)
 
     // Infinite VWMA
     if not valid_length
@@ -489,7 +490,7 @@ export vwma(series float source, simple float length = na, series bool anchor = 
             old_vol_b = max < bar ? vol.get(index) : 0
 
             // vwma(source, min)
-            f = volume / (sum - old_vol_b * shift)
+            f = nz(volume / (sum - old_vol_b * shift), 1)
             old_a = old_vol_a / (sum - old_vol_b - old_vol_a * shift)
             dif_a = (source - a) * f * (1 + old_a) - (old_src_a - a) * old_a - err_a
             err_a := a + dif_a - a - dif_a

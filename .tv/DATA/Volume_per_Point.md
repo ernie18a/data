@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;kD5LHkYsW8D6GAcsP1ZaZyeZIUghGrHc -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Volume per Point
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;23633f93d4b9475e91984963b66634f4 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Function - Sorted Indices
 

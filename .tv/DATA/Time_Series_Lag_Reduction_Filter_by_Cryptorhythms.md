@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;w61WKHWOgwMtL5dYYa8FmrUYcMoKDPzL -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Time Series Lag Reduction Filter by Cryptorhythms
 

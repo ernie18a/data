@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;265b5fa74bc64c099ba60a75a57df35d -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Swing Structure Forecast [BOSWaves]
 

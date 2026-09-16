@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;7fefd68aa2c34e87b6aeb14ffcdef6cf -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Keltner Center Of Gravity Channel Mutations Indicator
 

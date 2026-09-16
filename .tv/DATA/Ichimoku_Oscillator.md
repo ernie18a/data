@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;d2609bf133db4f95a3ede02de08af09f -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Ichimoku Oscillator
 

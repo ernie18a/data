@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;84c58fb9947d4713a23d145d97e74d28 -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Machine Learning Adaptive SuperTrend [AlgoAlpha]
 

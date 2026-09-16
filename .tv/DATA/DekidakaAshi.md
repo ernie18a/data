@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;41U11sEPVEyM5GhfQDBHrHL288fTOsEC -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Dekidaka-Ashi
 

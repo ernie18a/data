@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;Co4wPUee3QAm7uiWzePAoi5zJBW9eT2b -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Fancy Bollinger Bands [BigBitsIO]
 

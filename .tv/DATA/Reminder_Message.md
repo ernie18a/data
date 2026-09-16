@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;0w9H8mzV1NYVH7rFZZn70LXvS67aUA2H -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Reminder Message
 

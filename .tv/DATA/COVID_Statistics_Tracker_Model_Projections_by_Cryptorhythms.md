@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;ffIdOzfacWBGpNWWyC7HvWIwUGLOfqDm -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # 😷COVID Statistics Tracker & Model Projections by Cryptorhythms🤢
 

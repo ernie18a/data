@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;v196H0QrF32jHW4wpqhVTyBwctIedrlx -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # [LUX] Adjustable MA & Alternating Extremities
 

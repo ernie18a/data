@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;XkjXMyBfoYgQ0MIchqZ8bwNBzlMaqMCP -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Performance
 

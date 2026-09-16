@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;a1203ba93ca840b581ed0f2fbcf4f31c -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Gann o Maticus
 

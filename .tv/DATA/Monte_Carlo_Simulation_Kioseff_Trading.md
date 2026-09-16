@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;3ba6c6f519374988b3f0b6fe0505ae21 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Monte Carlo Simulation [Kioseff Trading]
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;d5d9af52038340ba816d31ddb384a3ae -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Logarithmic Moving Average (LMA) [QuantAlgo]
 

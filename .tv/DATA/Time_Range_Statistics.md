@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;QPr1AMRTpLg6oGg7SYXoA8dF6fntEGiV -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Time Range Statistics
 

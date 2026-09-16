@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;71a29148daa540918974b7a345527800 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Liquidity Sentiment Profile [LuxAlgo]
 

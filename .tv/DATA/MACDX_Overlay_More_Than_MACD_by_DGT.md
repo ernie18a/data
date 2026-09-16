@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;dca8752ffc6945a9b2909e9c31fa963a -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # MACD-X Overlay, More Than MACD by DGT
 

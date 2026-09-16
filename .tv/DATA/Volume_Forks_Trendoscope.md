@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;10220b8683974783b18340d23824e5d5 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Volume Forks [Trendoscope®]
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;485d5b6257a34600b7fa06e1689c3f38 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # [SS] Linear Modeler
 

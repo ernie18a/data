@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;17b9909e7fdb4913ac92adc56eea84a4 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Dynamic Volume Clusters with Retest Signals (Zeiierman)
 

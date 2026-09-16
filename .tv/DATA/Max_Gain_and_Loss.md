@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;Oc1opql4Z2sOc833mNztBYbjKDD21yhL -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Max Gain and Loss
 

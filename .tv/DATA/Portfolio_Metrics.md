@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;Iyy6mQA6ckr4GeK1YXpSGsIApjZsgmUS -->
+<!-- tradingview-pine-version: 10.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Portfolio Metrics
 

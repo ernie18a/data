@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;8dc2341311684048a062c31b10668cdd -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Multi Timeframe Volume Profiles [TradingIQ]
 

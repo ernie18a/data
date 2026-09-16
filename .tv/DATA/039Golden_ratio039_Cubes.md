@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;8EiBUWPwOTjmAEcd8fgHUv0yX0vob1xK -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # &#039;Golden ratio&#039; Cubes
 

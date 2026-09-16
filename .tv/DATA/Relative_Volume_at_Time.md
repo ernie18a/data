@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;gei8CBKbc5Ia3nG0NjgJ9kELSgad7QA0 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Relative Volume at Time
 

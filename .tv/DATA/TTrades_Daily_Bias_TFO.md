@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;dac6385683a34528b7c81ecb895ba075 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # TTrades Daily Bias [TFO]
 

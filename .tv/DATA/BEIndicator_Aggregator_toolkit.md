@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;2d4a7c311d664d35b02e168385a2bc63 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # BE-Indicator Aggregator toolkit
 

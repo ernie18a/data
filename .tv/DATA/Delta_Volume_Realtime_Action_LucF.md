@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;qcUK0SOdKz1UMja225BeyM9hbIQjMWcB -->
+<!-- tradingview-pine-version: 12.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Delta Volume Realtime Action [LucF]
 

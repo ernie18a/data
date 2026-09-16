@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;a02144ddefa447e68d653217c364693f -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Count
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;1a3525503519483996e955001638d6ac -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Open Interest Chart [LuxAlgo]
 

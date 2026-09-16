@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;e3ba0cfecd02415c8ab98fe0e4c10eb9 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Mxwll Suite
 

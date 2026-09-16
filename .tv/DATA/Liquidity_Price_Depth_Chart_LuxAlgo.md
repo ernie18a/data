@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;83bf8ca226264b6bbf724bbaf1106c02 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Liquidity Price Depth Chart [LuxAlgo]
 

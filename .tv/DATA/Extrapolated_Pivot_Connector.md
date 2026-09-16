@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;vROeQSQlNsz6xvzeE2beg18o10DaGkZR -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Extrapolated Pivot Connector
 

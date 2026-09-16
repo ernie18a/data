@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;1a040486489047b999a47d35768652ea -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Volume Analysis - Heatmap and Volume Profile
 

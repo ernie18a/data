@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;1d610cc4055240a1a01743b225c58ccf -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Deviation Trend Profile [BigBeluga]
 

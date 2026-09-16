@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;d30c3daa306e47289d71313e2302002f -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Market Cap Landscape 3D
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;f641bb2669fd415dbe86274ba2c8d90c -->
+<!-- tradingview-pine-version: 10.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Multi ZigZag Harmonic Patterns
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;2eccde8d8fb44f7287d91c53fec1664d -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Volume Spread Analysis IQ [TradingIQ]
 

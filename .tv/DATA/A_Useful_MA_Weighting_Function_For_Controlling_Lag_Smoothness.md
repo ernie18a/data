@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;3GFMrFyofZs1R11P5uY1cbkzsEPCqQDz -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # A Useful MA Weighting Function For Controlling Lag & Smoothness
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;e9de41c6d3bf4b55a019ab597fbb5ee5 -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Multi-Asset Performance [Spaghetti] - By Leviathan
 

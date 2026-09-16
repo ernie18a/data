@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;6uQpbb4cDDC9dO5VEN0MdrUwBZAFyMPe -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Separated Moving Average - evo
 

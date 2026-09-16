@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;0381f3f83ad24a7da34fc32c7f50fdd6 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Zig-Zag Volume Profile [Kioseff Trading]
 

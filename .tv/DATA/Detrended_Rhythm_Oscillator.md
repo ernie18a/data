@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;0ImliGmZ1ZHPiUYCI3OCWwJvRZT3AOFu -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Detrended Rhythm Oscillator
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;51ac6992a6b64ee68dce3da463c6fe28 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # TradingToolsLibrary
 

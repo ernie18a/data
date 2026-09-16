@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;136a840953a34353ac31d843e4e02e6d -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Drawdown Distribution Analysis (DDA) - Professional Risk Assessment
 

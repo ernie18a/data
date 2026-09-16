@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;02044cbd22bc4b9389f4e2443a6e7674 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # TASC 2026.03 One Percent A Week
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;2468f641250d416c9e3f372a6e75db74 -->
+<!-- tradingview-pine-version: 7.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Volume composition / Flowly Indicators
 

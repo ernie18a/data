@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;wqm2uKVGGJrUAyDcJHrdHDU14eCjxB2s -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Session Volume
 

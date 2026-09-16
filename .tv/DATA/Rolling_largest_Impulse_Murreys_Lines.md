@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;67bed4bd3d2d42b6b9b902000d7b29d0 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Rolling largest Impulse Murreys Lines
 

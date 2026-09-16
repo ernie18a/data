@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;807bfbf7b139432c86d7eec612ed1cb9 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Kalman D7
 

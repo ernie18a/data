@@ -1,0 +1,248 @@
+<!-- tradingview-pine-id: PUB;1f3d79bd9a6f40e7bf0eab252ea6d591 -->
+<!-- tradingview-pine-version: 4.0 -->
+<!-- tradingviewscripts-format: 1 -->
+# Auto Major Support & Resistance
+
+Source: https://www.tradingview.com/script/4oR3FyDo-Auto-Support-Resistance-Zones/
+
+## Description
+
+Auto Support & Resistance Zones (Horizontal Rays)
+
+This lightweight indicator automatically detects key structural swing highs and swing lows (fractals / pivot points) and projects them into the future as continuous horizontal rays. It draws both the primary pivot level and an adjustable shaded supply/demand zone around each structure.
+
+How It Works
+
+Fractal / Pivot Detection: Uses customizable left and right lookback lengths to confirm validated swing highs (resistance) and swing lows (support).
+
+Horizontal Rays: Levels automatically extend to the right across the chart, giving clear forward targets and reaction zones without cluttering historical candles.
+
+Zone Thickness: Rather than treating support and resistance as razor-thin lines, it allows users to specify a percentage-based threshold to capture realistic price action buffers.
+
+Memory Management: Dynamically prunes older, stale zones to keep your chart clean and maintain fast rendering speeds.
+
+Key Settings
+
+Pivot Lookback (Left / Right): Determines the sensitivity of the pivots. Higher numbers isolate major macro swing points; lower numbers identify short-term intraday pivots.
+
+Max Active Levels: Limits the total number of recent support and resistance zones actively displayed on the chart.
+
+Zone Thickness (%): Adjusts the height of the shaded reaction band above/below the central pivot line (set to 0 for single lines).
+
+Color Customization: Full control over ray and fill colors for both resistance and support levels.
+
+---
+
+## Source Code
+
+````pine
+//@version=6
+indicator("Auto Major Support & Resistance", overlay=true, max_lines_count=500)
+
+// --- Inputs ---
+grp_sr        = "Major Pivot & Retest Settings"
+prd           = input.int(12, title="Major Pivot Lookback", minval=3, maxval=50, group=grp_sr)
+minTouches    = input.int(1, title="Min Touches (1 = Major Swings Draw Instantly)", minval=1, maxval=5, group=grp_sr)
+tolerancePct  = input.float(1.5, title="Retest Zone Tolerance (%)", minval=0.2, step=0.1, group=grp_sr)
+minSpacingPct = input.float(2.5, title="Min Level Separation (%)", minval=0.5, step=0.5, group=grp_sr)
+maxActive     = input.int(8, title="Max Lines Each Side", minval=2, maxval=20, group=grp_sr)
+
+grp_style     = "Line Appearance & Softening"
+lineTransp    = input.int(40, title="Line Transparency (0-100)", minval=0, maxval=90, step=5, group=grp_style)
+linePattern   = input.string("Solid", title="Line Style", options=["Solid", "Dashed", "Dotted"], group=grp_style)
+colAbove      = input.color(#00f59b, title="Resistance Base Color (Above Price)", group=grp_style)
+colBelow      = input.color(#ff0d42, title="Support Base Color (Below Price)", group=grp_style)
+
+getStyle(string pattern) =>
+    switch pattern
+        "Dashed" => line.style_dashed
+        "Dotted" => line.style_dotted
+        => line.style_solid
+
+chosenStyle = getStyle(linePattern)
+cResFinal   = color.new(colAbove, lineTransp)
+cSupFinal   = color.new(colBelow, lineTransp)
+
+// --- Pivots ---
+pHigh = ta.pivothigh(high, prd, prd)
+pLow  = ta.pivotlow(low, prd, prd)
+
+type PivotLevel
+    float price
+    int   timeIdx
+    int   touches
+    line  rLine
+
+var PivotLevel[] highsPool = array.new<PivotLevel>()
+var PivotLevel[] lowsPool  = array.new<PivotLevel>()
+
+// Dedicated macro absolute extreme tracking
+var float macroPeakPrice = na
+var int   macroPeakTime  = na
+var float macroFloorPrice = na
+var int   macroFloorTime  = na
+
+isClose(float a, float b, float pct) =>
+    math.abs(a - b) / b * 100.0 <= pct
+
+// Process Swing Highs
+if not na(pHigh)
+    // Update absolute peak
+    if na(macroPeakPrice) or pHigh > macroPeakPrice
+        macroPeakPrice := pHigh
+        macroPeakTime  := time[prd]
+
+    bool merged = false
+    if array.size(highsPool) > 0
+        for i = 0 to array.size(highsPool) - 1
+            PivotLevel item = array.get(highsPool, i)
+            if isClose(pHigh, item.price, minSpacingPct)
+                item.touches += 1
+                merged := true
+                break
+    if not merged
+        array.push(highsPool, PivotLevel.new(pHigh, time[prd], 1, na))
+
+// Process Swing Lows
+if not na(pLow)
+    if na(macroFloorPrice) or pLow < macroFloorPrice
+        macroFloorPrice := pLow
+        macroFloorTime  := time[prd]
+
+    bool merged = false
+    if array.size(lowsPool) > 0
+        for i = 0 to array.size(lowsPool) - 1
+            PivotLevel item = array.get(lowsPool, i)
+            if isClose(pLow, item.price, minSpacingPct)
+                item.touches += 1
+                merged := true
+                break
+    if not merged
+        array.push(lowsPool, PivotLevel.new(pLow, time[prd], 1, na))
+
+// Incremental Retest Detection
+if array.size(highsPool) > 0
+    for i = 0 to array.size(highsPool) - 1
+        PivotLevel lvl = array.get(highsPool, i)
+        if high >= lvl.price * (1.0 - tolerancePct / 100.0) and high <= lvl.price * (1.0 + tolerancePct / 100.0)
+            lvl.touches += 1
+
+if array.size(lowsPool) > 0
+    for i = 0 to array.size(lowsPool) - 1
+        PivotLevel lvl = array.get(lowsPool, i)
+        if low <= lvl.price * (1.0 + tolerancePct / 100.0) and low >= lvl.price * (1.0 - tolerancePct / 100.0)
+            lvl.touches += 1
+
+// Maintain recent pools without discarding macro levels
+while array.size(highsPool) > 100
+    array.shift(highsPool)
+while array.size(lowsPool) > 100
+    array.shift(lowsPool)
+
+// --- Render on Last Bar ---
+var line[] activeLines = array.new_line()
+
+if barstate.islast
+    // Clear previously drawn lines
+    if array.size(activeLines) > 0
+        for i = 0 to array.size(activeLines) - 1
+            line.delete(array.get(activeLines, i))
+        array.clear(activeLines)
+
+    // Collect all candidate levels
+    var float[] candPrices = array.new_float()
+    var int[]   candTimes  = array.new_int()
+    array.clear(candPrices)
+    array.clear(candTimes)
+
+    // Add qualified highs
+    if array.size(highsPool) > 0
+        for i = 0 to array.size(highsPool) - 1
+            PivotLevel lvl = array.get(highsPool, i)
+            if lvl.touches >= minTouches
+                array.push(candPrices, lvl.price)
+                array.push(candTimes, lvl.timeIdx)
+
+    // Add qualified lows
+    if array.size(lowsPool) > 0
+        for i = 0 to array.size(lowsPool) - 1
+            PivotLevel lvl = array.get(lowsPool, i)
+            if lvl.touches >= minTouches
+                array.push(candPrices, lvl.price)
+                array.push(candTimes, lvl.timeIdx)
+
+    // Explicitly guarantee the macro top and macro bottom exist
+    if not na(macroPeakPrice)
+        array.push(candPrices, macroPeakPrice)
+        array.push(candTimes, macroPeakTime)
+    if not na(macroFloorPrice)
+        array.push(candPrices, macroFloorPrice)
+        array.push(candTimes, macroFloorTime)
+
+    // Separate above and below current close
+    var float[] resPrices = array.new_float()
+    var int[]   resTimes  = array.new_int()
+    var float[] supPrices = array.new_float()
+    var int[]   supTimes  = array.new_int()
+    array.clear(resPrices)
+    array.clear(resTimes)
+    array.clear(supPrices)
+    array.clear(supTimes)
+
+    if array.size(candPrices) > 0
+        for i = 0 to array.size(candPrices) - 1
+            float p = array.get(candPrices, i)
+            int   t = array.get(candTimes, i)
+            if p >= close
+                array.push(resPrices, p)
+                array.push(resTimes, t)
+            else
+                array.push(supPrices, p)
+                array.push(supTimes, t)
+
+    // Sort Resistance: ascending (closest above price -> highest peak)
+    if array.size(resPrices) > 1
+        for i = 0 to array.size(resPrices) - 2
+            for j = i + 1 to array.size(resPrices) - 1
+                if array.get(resPrices, i) > array.get(resPrices, j)
+                    float tp = array.get(resPrices, i)
+                    int   tt = array.get(resTimes, i)
+                    array.set(resPrices, i, array.get(resPrices, j))
+                    array.set(resTimes, i, array.get(resTimes, j))
+                    array.set(resPrices, j, tp)
+                    array.set(resTimes, j, tt)
+
+    // Sort Support: descending (closest below price -> lowest floor)
+    if array.size(supPrices) > 1
+        for i = 0 to array.size(supPrices) - 2
+            for j = i + 1 to array.size(supPrices) - 1
+                if array.get(supPrices, i) < array.get(supPrices, j)
+                    float tp = array.get(supPrices, i)
+                    int   tt = array.get(supTimes, i)
+                    array.set(supPrices, i, array.get(supPrices, j))
+                    array.set(supTimes, i, array.get(supTimes, j))
+                    array.set(supPrices, j, tp)
+                    array.set(supTimes, j, tt)
+
+    // Draw Resistance Rays (Overhead Green)
+    if array.size(resPrices) > 0
+        int drawRes = math.min(maxActive, array.size(resPrices))
+        for i = 0 to drawRes - 1
+            // Lock highest peak into the final slot
+            int idx = (i == drawRes - 1) ? array.size(resPrices) - 1 : i
+            float p = array.get(resPrices, idx)
+            int   t = array.get(resTimes, idx)
+            line l = line.new(x1=t, y1=p, x2=time, y2=p, xloc=xloc.bar_time, extend=extend.right, color=cResFinal, width=1, style=chosenStyle)
+            array.push(activeLines, l)
+
+    // Draw Support Rays (Underlying Red)
+    if array.size(supPrices) > 0
+        int drawSup = math.min(maxActive, array.size(supPrices))
+        for i = 0 to drawSup - 1
+            // Lock lowest floor into the final slot
+            int idx = (i == drawSup - 1) ? array.size(supPrices) - 1 : i
+            float p = array.get(supPrices, idx)
+            int   t = array.get(supTimes, idx)
+            line l = line.new(x1=t, y1=p, x2=time, y2=p, xloc=xloc.bar_time, extend=extend.right, color=cSupFinal, width=1, style=chosenStyle)
+            array.push(activeLines, l)
+````

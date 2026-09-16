@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;anfDPavOwksgu1En0WMWedyXle06i3xz -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Multi Time Frame Candles with Volume
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;e97de1097baa400aa6770ff5c3a7d168 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Treasury Yields Heatmap
 

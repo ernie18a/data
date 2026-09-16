@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;26f044005ed04d3282197b18e81ea831 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Annual Returns %
 

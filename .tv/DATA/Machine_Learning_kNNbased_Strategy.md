@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;lj1GjlbycbjU75bYEz6Hu2hKbx3vibGs -->
+<!-- tradingview-pine-version: 6.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Machine Learning: kNN-based Strategy
 

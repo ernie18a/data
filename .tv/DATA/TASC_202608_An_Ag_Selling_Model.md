@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;270bed499bf1478bb90dfcc10de129d3 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # TASC 2026.08 An Ag Selling Model
 

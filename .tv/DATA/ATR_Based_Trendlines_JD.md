@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;R4UDQ8nP1zXWE3GSzf86rHkYXiafK27r -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # ATR Based Trendlines - JD
 

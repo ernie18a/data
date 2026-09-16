@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;d750dbfa3b594b3aaf6ff52e5244ee90 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Lowest / Highest From Widget
 

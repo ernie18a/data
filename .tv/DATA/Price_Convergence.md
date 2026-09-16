@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;mRdXHnBaTsU5UYNt2fKriF7RSrTpod5e -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Price Convergence
 

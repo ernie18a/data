@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;1e355c7d1c7848e49447d2a6b1174ef2 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Color
 

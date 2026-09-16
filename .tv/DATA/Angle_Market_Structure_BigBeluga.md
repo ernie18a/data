@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;1786d01dcf6f4684939aa774679d0070 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Angle Market Structure [BigBeluga]
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;d4c9b72edafc4e369533754652848fa4 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Best SMA Finder
 

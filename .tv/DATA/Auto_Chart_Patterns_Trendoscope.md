@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;257dbd8cadff432c82aeb9a89ab05dc9 -->
+<!-- tradingview-pine-version: 12.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Auto Chart Patterns [Trendoscope®]
 

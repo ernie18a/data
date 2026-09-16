@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;40c3ad5b0fbe4ca487e7d24553b1f44f -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # CVD Profiles [TradingIQ]
 

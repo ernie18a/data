@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;38d39d2d6c4745beadc340130cbb09d9 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Momentum-based ZigZag
 

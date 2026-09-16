@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;b692712a50b6481a9d35f86d8a921db0 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Gann Square of 144
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;9b6a3084265a4b4ea2380231a49ceb98 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Neural Weight Oscillator (Zeiierman)
 

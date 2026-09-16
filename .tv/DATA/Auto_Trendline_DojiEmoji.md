@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;c21f83602cfe4200862c0b8433de3a5d -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Auto Trendline [DojiEmoji]
 

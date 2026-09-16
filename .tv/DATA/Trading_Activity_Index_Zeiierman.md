@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;e794c3fbe8ce460eaf7326861fbdbcbb -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Trading Activity Index (Zeiierman)
 

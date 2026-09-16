@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;8fdd37ba9d9e4047a881183dfc2e5a66 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # *Auto Backtest & Optimize Engine
 

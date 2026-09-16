@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;1Kbkbkp8MwMj0as2xV57LAOYNGWKt340 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # BEST Dollar Cost Average
 

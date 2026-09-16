@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;78417201f473432caa171b31dc4cad4a -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # ChartData
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;5d048de8a9a549d28580e13f670fca3a -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Dynamic RSI Regression Bands (Zeiierman)
 

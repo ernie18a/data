@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;685c436e98a34b458ef2e0c944748a0b -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Zigzag Candles
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;jqcJRFVgOvH4ByhPaz1WZQ9vcOpXHqY7 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # [RS]Simplistic Automatic Growth Models
 

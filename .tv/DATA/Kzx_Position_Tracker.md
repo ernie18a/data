@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;VWXlEdN0iB4LE5Ypk32r6p17TEjPNVpu -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Kzx | Position Tracker
 

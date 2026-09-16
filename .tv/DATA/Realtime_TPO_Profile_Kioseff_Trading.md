@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;85ee13febc8d49e397f4e36f34dcfd35 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Realtime TPO Profile [Kioseff Trading]
 

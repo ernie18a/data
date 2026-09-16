@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;108bcb4aadf440f0b9e83b06296a75bd -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Timeframe Loop
 

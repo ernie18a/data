@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;323f9e665b3c45e2ae7e89fa69bb98b9 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # TASC 2025.07 Laguerre Filters
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;e438d89a566c40d1a6a8207708cb758e -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Machine Learning Neural Network Engine
 

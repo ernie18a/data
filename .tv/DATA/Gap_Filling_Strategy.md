@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;u53wbRdbE1oWI0z2E7VA4s4p2ecu70zr -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Gap Filling Strategy
 

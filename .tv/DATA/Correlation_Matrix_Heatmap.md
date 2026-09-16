@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;rGEfO1jzxdk2Qh49kHYuEPte1uEE43HX -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Correlation Matrix Heatmap
 

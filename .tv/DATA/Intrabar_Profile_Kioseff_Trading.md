@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;f8b6df85e8cc440f84c04efb527f12fe -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Intrabar Profile [Kioseff Trading]
 

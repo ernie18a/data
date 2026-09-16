@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;7c2fce0a7f534418afed839d09c0350d -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # R:R Trading System Framework
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;E4vbQg2GTP2ABnzDTHTAXcS3yJOhYC3n -->
+<!-- tradingview-pine-version: 10.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Spread by
 

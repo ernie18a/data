@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;9056fd6b376f4954a069a61b4a01926b -->
+<!-- tradingview-pine-version: 7.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Volume Delta | OI Delta [Kioseff Trading]
 

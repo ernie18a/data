@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;538b39eae3bd49e69573b90855e47a94 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Mandelbrot-Fibonacci Cascade Vortex (MFCV)
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;5a36e877048747faba298d74c848cabc -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # {Gunzo} Market Trading Sessions (Sydney, Tokyo, London, New York)
 

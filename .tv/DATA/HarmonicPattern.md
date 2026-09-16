@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;2ac1f2c6fe894d779cbefc672f3834e9 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # HarmonicPattern
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;ed261fec20be4535a9c0c204f6543a27 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Bloomberg Financial Conditions Index (Proxy)
 

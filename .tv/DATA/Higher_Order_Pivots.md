@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;8PgdoVd3JQLBvxVYj7Pvr17adLyzUtBR -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Higher Order Pivots
 

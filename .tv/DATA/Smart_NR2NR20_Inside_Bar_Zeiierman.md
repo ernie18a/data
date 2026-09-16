@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;88b4788f097a4d5a84ad2f6ddce753c9 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Smart NR2–NR20 + Inside Bar (Zeiierman)
 

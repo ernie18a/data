@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;fff25d1fc2204733ad63617a623190f5 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Statistics • Chi Square • P-value • Significance
 

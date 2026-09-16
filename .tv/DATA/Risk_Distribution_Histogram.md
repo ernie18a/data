@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;91a46be5d6894c1db52a9de0b3de300d -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Risk Distribution Histogram
 

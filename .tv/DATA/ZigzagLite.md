@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;3339fbf8a7a049929a2af70291d74ab4 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # ZigzagLite
 

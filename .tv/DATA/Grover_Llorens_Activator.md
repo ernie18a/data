@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;yB853NRtwul7HDKUrPNaSa41C2CJKDa1 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Grover Llorens Activator
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;6idQRXg9Wp7zqrV2L7nUCK14zBQQE3ZP -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Uhl MA Crossover System
 

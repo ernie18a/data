@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;426f0c524dc541cf88ba72771cc77a41 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Hyperfork Matrix
 

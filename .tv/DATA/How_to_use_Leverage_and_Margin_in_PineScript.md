@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;47b27a98540744d582c6f11ea10d4fce -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # How to use Leverage and Margin in PineScript
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;5ZWiwDBPPu314yoi40Gny2nL4L1UVzHw -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Speedometer Toolbox
 

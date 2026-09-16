@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;cadbb4cd9a934f43bb6ce05010ec2b96 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # DeltaFlow Volume Profile [BigBeluga]
 

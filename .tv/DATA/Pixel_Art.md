@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;ZQKSqEewTCXqOePhRPpBNFYprqNewujt -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Pixel Art
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;goSN3PCtAkGCh8T3k00tRRqN7K6r887L -->
+<!-- tradingview-pine-version: 6.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Bitcoin Bullish Percent Index
 

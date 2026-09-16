@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;0c7b097ff0f9474dad76ac46c5df4bf0 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Musashi_Fractal_Dimension_v2
 

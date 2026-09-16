@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;cbec429c6d3e42d39f710cd4fac65e2a -->
+<!-- tradingview-pine-version: 7.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # MathConstants
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;6c12692ce4ef4acf9d3619dcbaba5038 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Trend Correlation Heatmap
 

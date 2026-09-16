@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;0f0428f95d8c480f9aab95b23fb36841 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # SmartPhase Analyzer
 

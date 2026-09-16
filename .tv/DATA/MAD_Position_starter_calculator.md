@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;7edab9cd00fa48588a43612b941d8b68 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # [MAD] Position starter & calculator
 

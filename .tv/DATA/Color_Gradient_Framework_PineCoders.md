@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;9ICIDOiMbFPC9FMp8dmVuBPa7MM8qRSQ -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Color Gradient Framework [PineCoders]
 

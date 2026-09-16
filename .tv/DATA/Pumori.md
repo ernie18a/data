@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;6d4006b89c2e4fbcb0551e6e00bfe691 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Pumori
 

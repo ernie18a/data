@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;ee1c40366aa04c40833829b8eca7c5df -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Intrabar Efficiency Ratio
 

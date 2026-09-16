@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;aea729456b7a44e09661b70ce9e4e987 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Volume Profile / Fixed Range
 

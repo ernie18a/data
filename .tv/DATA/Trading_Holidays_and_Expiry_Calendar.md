@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;54313dcd012340d694a89bdf5470638c -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Trading Holidays and Expiry Calendar
 

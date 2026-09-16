@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;YIjxzmbj0tXQ5hhNQUDP4ZtFnaoHqwB2 -->
+<!-- tradingview-pine-version: 12.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Black-Scholes Model
 

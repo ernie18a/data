@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;0JAQUFksLwlhTO8KYgTx9tMt7DhTpAaI -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Intraday Volume Swings
 

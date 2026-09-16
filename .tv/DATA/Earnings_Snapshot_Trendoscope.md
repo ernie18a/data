@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;049b342e307e4fb0b1ef8f9f2d48e219 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Earnings Snapshot [Trendoscope®]
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;a8e321b8a11b49029658c1bc642d034b -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # TASC 2026.05 The AutoTune Filter
 

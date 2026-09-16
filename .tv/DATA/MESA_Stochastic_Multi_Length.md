@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;f4645f38a7864ae3811623a41ac1ddab -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # MESA Stochastic Multi Length
 

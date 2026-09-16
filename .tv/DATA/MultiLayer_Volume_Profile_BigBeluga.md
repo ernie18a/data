@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;6373d74a197f4b6297f16edd72ab19c8 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Multi-Layer Volume Profile [BigBeluga]
 

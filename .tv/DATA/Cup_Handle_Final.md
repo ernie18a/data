@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;52c4ffd61d4f4657929e523bcb4bcb8e -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Cup & Handle Final
 

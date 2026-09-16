@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;d6d1232c88964789a958022d3aaa4fa9 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Session Bar/Candle Coloring
 

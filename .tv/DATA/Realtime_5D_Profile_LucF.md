@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;ebc1ccda96b940d4aa219ed014defe24 -->
+<!-- tradingview-pine-version: 6.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Realtime 5D Profile [LucF]
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;0E5VPtfiMH6Yv2Kztk4UzRTXzpmpBgoq -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Linear Correlation Oscillator
 

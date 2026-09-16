@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;SQI62bQhFI1j7VAnwQ5xjUkkE52WQ9xC -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # RedK_Portfolio Tracker v2
 

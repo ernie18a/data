@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;9c1ee606cbc24f5c81cb48aeeb796ad2 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Oscillator Scatterplot Analysis [Trendoscope®]
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;Tfrskfn4cGU1z36rflfHxAMyd6ogaqiN -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Tick Data Detailed
 

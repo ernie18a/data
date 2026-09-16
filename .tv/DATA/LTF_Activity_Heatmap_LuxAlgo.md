@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;bfc3f73fdd814dfcbe6966c3728035c0 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # LTF Activity Heatmap [LuxAlgo]
 

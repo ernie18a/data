@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;50d00008dfb14d0a846ac837250acd2b -->
+<!-- tradingview-pine-version: 14.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # DebugConsole
 

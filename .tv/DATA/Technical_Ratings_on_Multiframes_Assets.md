@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;pOChFLP8j7axZCKCgGyeILPqiZGTEOmD -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Technical Ratings on Multi-frames / Assets
 

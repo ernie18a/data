@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;c85c28c18a5649cdbf5f1c62cf4d3e18 -->
+<!-- tradingview-pine-version: 6.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Market sessions and Volume profile - By Leviathan
 

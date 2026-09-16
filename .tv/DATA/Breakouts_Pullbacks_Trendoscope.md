@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;40ba762ee34b40bba2a7c017aba42fe3 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Breakouts & Pullbacks [Trendoscope®]
 

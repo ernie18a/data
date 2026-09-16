@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;82e54baf76db4df79493b2287db52efe -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # PriceFormat
 

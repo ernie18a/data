@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;834771627eb54c0093ec50fb8ad22222 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # the Flasher
 

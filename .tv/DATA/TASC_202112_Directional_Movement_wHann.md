@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;56423896c25a45c09191237109e6b23a -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # TASC 2021.12 Directional Movement w/Hann
 

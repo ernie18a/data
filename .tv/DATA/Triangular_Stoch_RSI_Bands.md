@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;KLoV7N6lZOYeb308RRbOvIzeqVcJzCEW -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Triangular Stoch RSI Bands
 

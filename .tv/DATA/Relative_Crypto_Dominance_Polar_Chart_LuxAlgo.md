@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;da5bbee3abdc4e36949038ed7a9aa7f6 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Relative Crypto Dominance Polar Chart [LuxAlgo]
 

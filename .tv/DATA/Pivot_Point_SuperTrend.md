@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;HN4w1eNW3B9HP5oSa2MNMIHMYUqLPHUT -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Pivot Point SuperTrend
 

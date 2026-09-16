@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;fa948758017a45948ec2b0b40509ee12 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # FlowScope [Hapharmonic]
 

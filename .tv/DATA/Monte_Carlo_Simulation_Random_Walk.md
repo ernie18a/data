@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;DJv4dw1DryDE8FpJEBX5ybSMbHOg9zA1 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Monte Carlo Simulation - Random Walk
 

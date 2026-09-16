@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;8f7cafcbf049442c913d0eadb3531263 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # SuperTrend AI (Clustering) [LuxAlgo]
 

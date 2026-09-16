@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;b8acef574a45480586f38032bcba20f5 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Bear Market Probability Model
 

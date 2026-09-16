@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;c904837c16f243dba8ca6882b3368b34 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Options Max Pain Calculator [BackQuant]
 

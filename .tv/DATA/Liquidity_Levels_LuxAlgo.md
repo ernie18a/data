@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;a2e87fa64f2e4292bd9129776e04ca59 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Liquidity Levels [LuxAlgo]
 

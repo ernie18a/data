@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;b13dc7dfbaef4982bdabe4ad6c163e72 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # MathStatisticsKernelFunctions
 

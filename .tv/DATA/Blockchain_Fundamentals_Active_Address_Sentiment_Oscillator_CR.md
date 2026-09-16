@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;23cc13dbbdd248228ff2fddaf51403f2 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Blockchain Fundamentals: Active Address Sentiment Oscillator [CR]
 

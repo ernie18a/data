@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;489b7f9fa7ed4185886359bf3613e6f7 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # The Mayan Calendar
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;9PnpNIeEXvIG22MVPcyMQxoMO9NQkT7a -->
+<!-- tradingview-pine-version: 6.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Reflex & Trendflex
 

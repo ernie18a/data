@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;f3165c38840e4d6eb379d92c6392b149 -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # ATR OSC and Volume Screener
 

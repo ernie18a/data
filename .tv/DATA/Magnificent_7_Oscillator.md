@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;c9257db1ba5e46e9b6235f880f9ac7f0 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Magnificent 7 Oscillator
 

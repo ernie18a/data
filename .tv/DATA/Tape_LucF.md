@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;JGZZb2RO1QIb5kjUh6QjlmxqdGoGLg40 -->
+<!-- tradingview-pine-version: 9.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Tape [LucF]
 

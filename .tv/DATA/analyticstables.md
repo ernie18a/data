@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;19ad5cc0515d4e878b36224601d66a2d -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # analytics_tables
 

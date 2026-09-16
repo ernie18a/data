@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;f1bea47df24c4e6db15960b71d3d9338 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # real_time_candles
 

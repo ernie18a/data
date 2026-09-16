@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;fc24c638b7ea431a9d5be44403939c4a -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Advanced Fed Decision Forecast Model (AFDFM)
 

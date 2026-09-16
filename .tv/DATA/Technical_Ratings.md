@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;eNbFyHDmTIdGB7PEd6YGhJno5zhtmJdM -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Technical Ratings
 

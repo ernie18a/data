@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;8547f2836920461898baed02058e5030 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Dual-Phase Trend Regime Oscillator (Zeiierman)
 

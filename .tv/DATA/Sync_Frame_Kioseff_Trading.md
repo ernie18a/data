@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;35c6edb51d394dd1ae73e2f70389046e -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Sync Frame [Kioseff Trading]
 

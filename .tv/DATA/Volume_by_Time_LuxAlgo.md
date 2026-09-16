@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;a2daff770ece4336b451be4da12ce47e -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Volume by Time [LuxAlgo]
 

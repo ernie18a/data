@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;9a7344a1a95e415aa71dfd6d615fd048 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Smart Trader, Episode 03, by Ata Sabancı | Candles and Tradelines
 

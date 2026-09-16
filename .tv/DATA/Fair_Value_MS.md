@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;0b067f9bc137451498b38c9b0e18ae20 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Fair Value MS
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;61fc44c3cc6942aab0660e8d9ae0ef34 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Log Regression Oscillator Channel [BigBeluga]
 

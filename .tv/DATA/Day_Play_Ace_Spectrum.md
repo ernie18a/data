@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;b8zUQXQCYsCAdHLsgKXeBDoRwFGpPSsQ -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Day Play Ace Spectrum
 

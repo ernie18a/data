@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;fdb5565e9c9441a788f927bcfbb92d39 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # STD-Filtered, N-Pole Gaussian Filter [Loxx]
 

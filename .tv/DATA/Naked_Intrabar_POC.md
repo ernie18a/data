@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;7b1d307350174086bcf4b11b4b8f8d53 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Naked Intrabar POC
 

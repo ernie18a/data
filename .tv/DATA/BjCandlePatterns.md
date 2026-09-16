@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;9b020935d90040f08d0a0e9da5f3c186 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # BjCandlePatterns
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;6d3215f15f1a4f9fb5dd6b6cf80dc149 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Arbitrage Matrix [LuxAlgo]
 

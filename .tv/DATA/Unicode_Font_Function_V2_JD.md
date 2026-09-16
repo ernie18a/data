@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;Ng41LADhSsOW2m9WC6MAk9Fg3jxWK5l7 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Unicode Font Function V2 - JD
 

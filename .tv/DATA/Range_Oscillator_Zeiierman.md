@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;70de3a1107a9454d8bcef00543c8a45e -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Range Oscillator (Zeiierman)
 

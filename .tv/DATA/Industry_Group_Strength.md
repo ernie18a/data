@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;98928640eaf0453389ac2a7339e9f51f -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Industry Group Strength
 

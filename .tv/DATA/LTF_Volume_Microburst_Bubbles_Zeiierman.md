@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;ccf71b749a2c4e3a8977653a320cddcc -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # LTF Volume Microburst Bubbles (Zeiierman)
 
@@ -158,12 +159,12 @@ var string t32 = "Adds a subtle lower-pane background highlight whenever the cur
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}
 
 // ~~ Groups {
-var string gDet  = "1. Detection"
-var string gSess = "2. Sessions"
-var string gBub  = "3. Bubbles"
-var string gLvl  = "4. Levels"
-var string gStyle = "5. Styling"
-var string gView  = "6. Display"
+var string gDet  = "Detection"
+var string gSess = "Sessions"
+var string gBub  = "Bubbles"
+var string gLvl  = "Levels"
+var string gStyle = "Styling"
+var string gView  = "Display"
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}
 
 // ~~ Inputs {

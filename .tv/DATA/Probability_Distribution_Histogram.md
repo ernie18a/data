@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;28976b96f757499bad415bcdad730b16 -->
+<!-- tradingview-pine-version: 13.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Probability Distribution Histogram
 

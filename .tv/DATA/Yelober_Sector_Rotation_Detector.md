@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;31200fee1c52410a9803c9c3c7004282 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Yelober - Sector Rotation Detector
 

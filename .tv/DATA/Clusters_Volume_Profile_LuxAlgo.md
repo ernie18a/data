@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;3ef5dc913c8b4c26969b44b00797d184 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Clusters Volume Profile [LuxAlgo]
 

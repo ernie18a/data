@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;28b6b0520c9b45c597b96d7644327a89 -->
+<!-- tradingview-pine-version: 6.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Half Causal Estimator
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;073b755f02f54f97a6225245febac7a0 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Intersection Value Functions
 

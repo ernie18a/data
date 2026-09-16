@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;a475fb860d7147c28f16fc8146ca3c5e -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Zigzag Volume Bars
 

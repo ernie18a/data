@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;c729903ba1ec48d9b666af701c1ce797 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Volume Profile 3D (Zeiierman)
 

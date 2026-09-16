@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;KxLOsHBr8tKy8Op4ZjoXqbZrHKygL2tn -->
+<!-- tradingview-pine-version: 7.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Fancy Triple Moving Averages [BigBitsIO]
 

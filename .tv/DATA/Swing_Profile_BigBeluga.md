@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;f8ca6c42838a4cc5b2123e0fdab76f0b -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Swing Profile [BigBeluga]
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;02f5bb06126f471085239dbf9358d189 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Risk Management Chart
 

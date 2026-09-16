@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;6ae7fb75a28f489eb149af53147d32dd -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Prime Numbers
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;uNxzM3BCOJDC58GwWs2CvBRjoNudl2sM -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # BERLIN Range Index v1.1 | Bar color version
 

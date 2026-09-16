@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;f78e5af859ea41bcb074b6fb38398168 -->
+<!-- tradingview-pine-version: 18.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Earnings Price Move Cheat Sheet [Kioseff Trading]
 

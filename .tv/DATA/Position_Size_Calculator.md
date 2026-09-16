@@ -1,109 +1,222 @@
-<!-- tradingview-pine-id: PUB;543b51562cec4f47895555681f484baa -->
+<!-- tradingview-pine-id: PUB;98a997709c7943df83879f76f1083675 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Position Size Calculator
 
-Source: https://www.tradingview.com/script/JxJ38BXO-Position-Size-Calculator-Easy-Drag-Drop-Risk-Sizing/
+Source: https://www.tradingview.com/script/WzPXTa7w-Position-Size-Calculator/
 
 ## Description
 
-This tool tells you exactly how many contracts to enter based on how much you're willing to risk.
+POSITION SIZE CALCULATOR
 
-How it works:
+Calculating the exact number of shares to buy before entering a trade can be slow and distracting. This on-chart indicator does all the position sizing math for you in real time.
 
-Set your risk per trade (e.g. $200)
-Click the chart to place your stop and entry lines
-The calculator reads the distance in points and shows your contract count in a clean on-chart box
+Simply enter your total account balance, choose your preferred allocation percentages, and the script displays an on-screen table showing the exact amount to invest and the number of whole shares to buy.
 
-Features:
+WHAT IT DOES
 
-Drag & drop entry and stop lines — contracts update as you move them
-Auto-detects the contract's point value from the chart symbol (NQ = $20/pt, ES = $50/pt, etc.)
-Micro sizing mode: chart NQ, size in MNQ contracts
-Allowed overage setting: keep the extra contract when risk goes slightly over budget instead of dropping down
-Line expiry: after a set time (default 60 min) lines gray out and prompt you to re-place them, so you never size off stale levels
-Manual mode: type a stop distance in points instead of using lines
-Shows actual dollar risk at the chosen size
+- Automatic Share Sizing: Calculates whole shares to buy based on your capital and allocation percentages.
+- 3 Allocation Tiers: Configure 3 custom sizing options (e.g. 10%, 20%, 30%) to suit different trade setups.
+- Live or Manual Price:
+  - By default, it takes the confirmed close price of your chosen timeframe (e.g. 5-min, Daily).
+  - Or toggle "Manual Entry Price" to calculate sizes for planned limit orders.
+- Safe Math: Always rounds down to complete shares (math.floor) so you never exceed your intended risk.
+- Clean & Flexible Display: Fully customizable table position, color themes, and an option to hide the table outside regular market hours.
 
-Works on any symbol with a point value. Best suited to futures and micro futures.
+HOW TO USE IT
+
+1. Add the indicator to your chart.
+2. Open Settings (the gear icon on the indicator label):
+   - Account: Enter your total trading capital.
+   - Allocation Tiers: Set your allocation percentages for Tier 1, 2, and 3.
+   - Price Settings: Keep automatic close price detection, or check "Use Manual Entry Price" and type your limit price.
+3. Check the on-chart table:
+   - Find your desired tier column.
+   - Read the green highlighted number in the "Shares" row and place your order.
+
+CUSTOMIZATION OPTIONS
+
+- Show/Hide Investment Row: Display only the share count or include the cash value.
+- Hide When Market Closed: Automatically hides the table when the market is inactive to keep your charts clean.
+- Table Position: Move the table to any corner or side of your screen (Top-Right, Top-Left, Bottom-Right, etc.).
+- Colors: Adjust background, border, text, and highlight colors to fit dark or light charts.
+
+DISCLAIMER
+
+This script is a position sizing calculation tool and does not provide financial advice, buy/sell signals, or trade recommendations. Always manage your risk according to your personal trading plan.
 
 ---
 
 ## Source Code
 
 ````pine
+// This Pine Script® code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © taherbohari52
+
 //@version=6
-indicator("Position Size Calculator", overlay = true)
+indicator("Position Size Calculator", overlay=true)
 
-// ── Inputs ──────────────────────────────────────────────
-riskDollars = input.float(200.0, "Risk per trade ($)", minval = 1, step = 10)
-riskBuffer  = input.float(25.0,  "Allowed overage ($)", minval = 0, step = 5, tooltip = "How far past your risk you're willing to go before dropping a contract. E.g. risk 200 + overage 25: keeps the extra contract as long as total risk stays under 225.")
-stopMode    = input.string("Price line", "Stop input mode", options = ["Price line", "Manual points"], tooltip = "Price line: click the chart to place your stop, then drag the line to move it. Manual: type the stop distance below.")
-stopPrice   = input.price(0.0, "Stop price (click chart)", confirm = true)
-entryPrice  = input.price(0.0, "Entry price (click chart)", confirm = true)
-stopPtsMan  = input.float(25.0, "Stop loss (points, manual mode)", minval = 0.01, step = 0.25)
-sizeIn      = input.string("Micros (MNQ/MES)", "Size contracts in", options = ["This chart's contract", "Micros (MNQ/MES)"], tooltip = "Micros = 1/10 the value of the full-size contract. Lets you chart NQ but size in MNQ.")
-tablePos    = input.string("Top Right", "Table position", options = ["Top Right", "Top Left", "Bottom Right", "Bottom Left"])
+// ── Account ───────────────────────────────────────────────────────────────────
+i_balance     = input.float(500000.0, "Account Balance (₹)",
+     minval=1, step=1000, group="Account",
+     tooltip="Your total trading account balance in Rupees.")
 
-// ── Calculation ─────────────────────────────────────────
-// syminfo.pointvalue = $ per 1 point per contract (auto-detects: NQ=$20, MNQ=$2, ES=$50, MES=$5, etc.)
-useLine      = stopMode == "Price line" and stopPrice > 0
-hasEntry     = entryPrice > 0
-entryLevel   = entryPrice
-stopPoints   = useLine and hasEntry ? math.abs(entryLevel - stopPrice) : stopPtsMan
-useMicros    = sizeIn == "Micros (MNQ/MES)"
-pointValue   = useMicros ? syminfo.pointvalue / 10 : syminfo.pointvalue
-riskPerCtr   = stopPoints * pointValue
-contracts    = riskPerCtr > 0 ? math.floor((riskDollars + riskBuffer) / riskPerCtr) : 0
-actualRisk   = contracts * riskPerCtr
-overBudget   = actualRisk > riskDollars
-ctrLabel     = useMicros ? "MICRO CONTRACTS" : "CONTRACTS"
+// ── Allocation Tiers ──────────────────────────────────────────────────────────
+i_alloc1      = input.float(10.0, "Allocation % — Tier 1",
+     minval=0.01, maxval=100, step=0.5, group="Allocation Tiers",
+     tooltip="Percentage of account balance allocated to Tier 1 trade.")
+i_alloc2      = input.float(20.0, "Allocation % — Tier 2",
+     minval=0.01, maxval=100, step=0.5, group="Allocation Tiers",
+     tooltip="Percentage of account balance allocated to Tier 2 trade.")
+i_alloc3      = input.float(30.0, "Allocation % — Tier 3",
+     minval=0.01, maxval=100, step=0.5, group="Allocation Tiers",
+     tooltip="Percentage of account balance allocated to Tier 3 trade.")
 
-// ── Table ───────────────────────────────────────────────
-getPos(p) =>
-    p == "Top Right" ? position.top_right : p == "Top Left" ? position.top_left : p == "Bottom Right" ? position.bottom_right : position.bottom_left
+// ── Price Settings ────────────────────────────────────────────────────────────
+i_useManual   = input.bool(false, "Use Manual Entry Price",
+     group="Price Settings",
+     tooltip="Toggle ON to type the stock price manually. Toggle OFF to use the last completed candle close of the chosen timeframe.")
+i_manualPrice = input.float(100.0, "Manual Entry Price (₹)",
+     minval=0.01, step=0.05, group="Price Settings",
+     tooltip="Active only when 'Use Manual Entry Price' is ON.")
+i_tf          = input.timeframe("5", "Timeframe for Close Price",
+     group="Price Settings",
+     tooltip="When manual price is OFF, the indicator uses the closing price of the last completed candle of this timeframe. E.g. select 5 for 5-min close.")
 
-var table t = table.new(getPos(tablePos), 2, 7, border_width = 1, border_color = color.new(color.gray, 70))
+// ── Display ───────────────────────────────────────────────────────────────────
+i_showInv     = input.bool(true, "Show Investment Row",
+     group="Display",
+     tooltip="Toggle OFF to hide the investment amount row and show only shares.")
+i_hideMarketClosed = input.bool(false, "Hide Table When Market Closed",
+     group="Display",
+     tooltip="Toggle ON to automatically hide the table outside regular market hours.")
+i_tablePos    = input.string("top_right", "Table Position",
+     options=["top_right","top_left","top_center",
+              "bottom_right","bottom_left","bottom_center",
+              "middle_right","middle_left"],
+     group="Display")
 
-// ── Stop line + label on chart (price line mode) ────────
-var line  stopLn   = na
-var label stopLbl  = na
-var line  entryLn  = na
-var label entryLbl = na
-if barstate.islast and useLine
-    line.delete(stopLn)
-    label.delete(stopLbl)
-    line.delete(entryLn)
-    label.delete(entryLbl)
-    stopLn   := line.new(bar_index - 20, stopPrice, bar_index + 10, stopPrice, color = color.red, width = 2, style = line.style_dashed)
-    stopLbl  := label.new(bar_index + 10, stopPrice, "STOP  " + str.tostring(stopPoints, "#.##") + " pts  →  " + str.tostring(contracts) + (useMicros ? " micros" : " contracts"), style = label.style_label_left, color = color.new(color.red, 20), textcolor = color.white, size = size.normal)
-    if hasEntry
-        entryLn  := line.new(bar_index - 20, entryLevel, bar_index + 10, entryLevel, color = color.blue, width = 2, style = line.style_dashed)
-        entryLbl := label.new(bar_index + 10, entryLevel, "ENTRY", style = label.style_label_left, color = color.new(color.blue, 20), textcolor = color.white, size = size.small)
+// ── Colors ────────────────────────────────────────────────────────────────────
+i_colBg     = input.color(#0d2b5e,                "Background",       group="Colors",
+     tooltip="Base color for the table. Row cells are derived from this with slight transparency.")
+i_colText   = input.color(color.white,             "Text",             group="Colors")
+i_colLabel  = input.color(#90caf9,                 "Column Headers",   group="Colors")
+i_colShares = input.color(#69f0ae,                 "Shares Highlight", group="Colors")
+i_colBorder = input.color(color.new(#1e4fa8, 40),  "Border",           group="Colors")
+
+// ── Price Logic ───────────────────────────────────────────────────────────────
+// Fetches the closing price of the last *completed* candle of the chosen timeframe.
+// lookahead_off ensures only confirmed candle closes are used (no future leakage).
+tf_close    = request.security(syminfo.tickerid, i_tf, close, lookahead=barmerge.lookahead_off)
+entry_price = i_useManual ? i_manualPrice : tf_close
+
+// ── Position Size Calculations ────────────────────────────────────────────────
+inv1 = i_balance * i_alloc1 / 100
+inv2 = i_balance * i_alloc2 / 100
+inv3 = i_balance * i_alloc3 / 100
+
+// math.floor → whole shares only; guarded against zero/invalid price
+shares1 = entry_price > 0 ? math.floor(inv1 / entry_price) : 0.0
+shares2 = entry_price > 0 ? math.floor(inv2 / entry_price) : 0.0
+shares3 = entry_price > 0 ? math.floor(inv3 / entry_price) : 0.0
+
+// ── Derived Colors ───────────────────────────────────────────────────────────
+C_SUBHDR = i_colBg
+C_ROW_A  = color.new(i_colBg, 15)
+C_ROW_B  = color.new(i_colBg, 10)
+C_TEXT   = i_colText
+C_LABEL  = i_colLabel
+C_GREEN  = i_colShares
+C_BORDER = i_colBorder
+
+// ── Table: deleted and recreated on last bar so row count adjusts dynamically ──
+var table tbl = na
 
 if barstate.islast
-    okColor  = contracts > 0 ? color.new(#006600, 0) : color.new(color.red, 0)
-    bgHead   = color.new(color.aqua, 60)
-    bgCell   = color.new(color.silver, 40)
-    txt      = color.black
+    if not na(tbl)
+        table.delete(tbl)
 
-    table.cell(t, 0, 0, "POSITION SIZE", text_color = txt, bgcolor = bgHead, text_size = size.normal)
-    table.cell(t, 1, 0, syminfo.ticker + (useMicros ? " → micros" : ""), text_color = txt, bgcolor = bgHead, text_size = size.normal)
+    // Render only when market is open, or when the hide-when-closed toggle is OFF.
+    // timenow <= time_close: wall-clock time is still within the last bar's period → market active.
+    // When market is closed, time_close (last bar's end) is hours in the past → condition false.
+    is_market_active = timenow <= time_close
+    if not i_hideMarketClosed or is_market_active
+        tbl_pos = switch i_tablePos
+            "top_left"      => position.top_left
+            "top_center"    => position.top_center
+            "bottom_right"  => position.bottom_right
+            "bottom_left"   => position.bottom_left
+            "bottom_center" => position.bottom_center
+            "middle_right"  => position.middle_right
+            "middle_left"   => position.middle_left
+            =>                 position.top_right
 
-    table.cell(t, 0, 1, "Risk",           text_color = txt, bgcolor = bgCell, text_size = size.normal)
-    table.cell(t, 1, 1, "$" + str.tostring(riskDollars, "#.##"), text_color = txt, bgcolor = bgCell, text_size = size.normal)
+        // 4 cols; 3 rows base + 1 optional investment row
+        n_rows = i_showInv ? 4 : 3
+        tbl   := table.new(tbl_pos, 4, n_rows, border_width=1, border_color=C_BORDER)
 
-    table.cell(t, 0, 2, "Stop",           text_color = txt, bgcolor = bgCell, text_size = size.normal)
-    table.cell(t, 1, 2, str.tostring(stopPoints, "#.##") + " pts", text_color = txt, bgcolor = bgCell, text_size = size.normal)
+        // Row 0 — Entry price info
+        // Build a human-readable timeframe label:
+        //   ""    → Chart (empty string = match chart timeframe)
+        //   "30S" → "30 sec"  (seconds: strip trailing S, add " sec")
+        //   "1D"  → "Daily"   (also handles bare "D")
+        //   "1W"  → "Weekly"  (also handles bare "W")
+        //   "1M"  → "Monthly" (also handles bare "M")
+        //   "5"   → "5 min"   (pure numeric = minutes)
+        tf_label = i_tf == ""              ? "Chart" :
+                   str.contains(i_tf, "S") ? str.substring(i_tf, 0, str.length(i_tf) - 1) + " sec" :
+                   str.contains(i_tf, "D") ? "Daily" :
+                   str.contains(i_tf, "W") ? "Weekly" :
+                   str.contains(i_tf, "M") ? "Monthly" :
+                   i_tf + " min"
+        price_label = i_useManual
+             ? "Manual Entry: ₹" + str.tostring(entry_price, "#.00")
+             : "Entry (" + tf_label + " close): ₹" + str.tostring(entry_price, "#.00")
+        table.cell(tbl, 0, 0, price_label,
+             bgcolor=C_SUBHDR, text_color=C_LABEL,
+             text_size=size.small, text_halign=text.align_center)
+        table.merge_cells(tbl, 0, 0, 3, 0)
 
-    table.cell(t, 0, 3, "$/pt/contract",  text_color = txt, bgcolor = bgCell, text_size = size.normal)
-    table.cell(t, 1, 3, "$" + str.tostring(pointValue, "#.##"), text_color = txt, bgcolor = bgCell, text_size = size.normal)
+        // Row 1 — Column headers (just the allocation %)
+        table.cell(tbl, 0, 1, "",
+             bgcolor=C_ROW_B, text_color=C_LABEL, text_size=size.small)
+        table.cell(tbl, 1, 1, str.tostring(i_alloc1, "#.##") + "%",
+             bgcolor=C_ROW_B, text_color=C_LABEL,
+             text_size=size.small, text_halign=text.align_center)
+        table.cell(tbl, 2, 1, str.tostring(i_alloc2, "#.##") + "%",
+             bgcolor=C_ROW_B, text_color=C_LABEL,
+             text_size=size.small, text_halign=text.align_center)
+        table.cell(tbl, 3, 1, str.tostring(i_alloc3, "#.##") + "%",
+             bgcolor=C_ROW_B, text_color=C_LABEL,
+             text_size=size.small, text_halign=text.align_center)
 
-    table.cell(t, 0, 4, "Risk / contract", text_color = txt, bgcolor = bgCell, text_size = size.normal)
-    table.cell(t, 1, 4, "$" + str.tostring(riskPerCtr, "#.##"), text_color = txt, bgcolor = bgCell, text_size = size.normal)
+        // Row 2 (optional) — Investment amount
+        if i_showInv
+            table.cell(tbl, 0, 2, "Inv (₹)",
+                 bgcolor=C_ROW_A, text_color=C_TEXT,
+                 text_size=size.small, text_halign=text.align_left)
+            table.cell(tbl, 1, 2, "₹" + str.tostring(math.round(inv1), "###,###,###"),
+                 bgcolor=C_ROW_A, text_color=C_TEXT,
+                 text_size=size.small, text_halign=text.align_right)
+            table.cell(tbl, 2, 2, "₹" + str.tostring(math.round(inv2), "###,###,###"),
+                 bgcolor=C_ROW_A, text_color=C_TEXT,
+                 text_size=size.small, text_halign=text.align_right)
+            table.cell(tbl, 3, 2, "₹" + str.tostring(math.round(inv3), "###,###,###"),
+                 bgcolor=C_ROW_A, text_color=C_TEXT,
+                 text_size=size.small, text_halign=text.align_right)
 
-    table.cell(t, 0, 5, ctrLabel,         text_color = txt, bgcolor = bgHead, text_size = size.large)
-    table.cell(t, 1, 5, str.tostring(contracts) + (contracts == 0 ? " (stop too wide)" : ""), text_color = okColor, bgcolor = bgHead, text_size = size.large)
-
-    table.cell(t, 0, 6, "Actual risk",    text_color = txt, bgcolor = bgCell, text_size = size.normal)
-    table.cell(t, 1, 6, "$" + str.tostring(actualRisk, "#.##"), text_color = txt, bgcolor = bgCell, text_size = size.normal)
+        // Last row — Shares (index shifts when inv row is hidden)
+        r_shares = i_showInv ? 3 : 2
+        table.cell(tbl, 0, r_shares, "Shares",
+             bgcolor=C_ROW_B, text_color=C_TEXT,
+             text_size=size.small, text_halign=text.align_left)
+        table.cell(tbl, 1, r_shares, str.tostring(shares1, "#0"),
+             bgcolor=C_ROW_B, text_color=C_GREEN,
+             text_size=size.normal, text_halign=text.align_center)
+        table.cell(tbl, 2, r_shares, str.tostring(shares2, "#0"),
+             bgcolor=C_ROW_B, text_color=C_GREEN,
+             text_size=size.normal, text_halign=text.align_center)
+        table.cell(tbl, 3, r_shares, str.tostring(shares3, "#0"),
+             bgcolor=C_ROW_B, text_color=C_GREEN,
+             text_size=size.normal, text_halign=text.align_center)
 ````

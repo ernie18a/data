@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;7d3224fbd0864fc18ae6f7b0f67bba06 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # RSI Past
 

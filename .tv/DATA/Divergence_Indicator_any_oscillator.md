@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;NvyVoLa2RbLyjeqvnpBnPZg1S1uWQMPI -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Divergence Indicator (any oscillator)
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;20572cf632f4435b9eb2a5551b4f5768 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Market Structure Dashboard | Flux Charts
 

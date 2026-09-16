@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;929287ba90354c3ea9f54269b9381f56 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Kernel Regression Toolkit
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;ff1a0136336340f38e908eeb12ea33aa -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Volume Gaps & Imbalances (Zeiierman)
 

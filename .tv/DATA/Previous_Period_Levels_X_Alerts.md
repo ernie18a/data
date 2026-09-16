@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;3dzMIjkiPA9NmL24M6FgBzCj15xxV8En -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Previous Period Levels - X Alerts
 

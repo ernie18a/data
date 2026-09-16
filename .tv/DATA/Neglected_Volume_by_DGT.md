@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;FvJqumctetdFjTc3kvAdgJXrU6fkzHPt -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Neglected Volume by DGT
 

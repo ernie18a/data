@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;005f1fe5ec46477c829e6bdb00543018 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Pushing request.security
 

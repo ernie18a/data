@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;3ace55eba2e34d089aaae3be62fb9313 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Extreme Trend Reversal Points [HeWhoMustNotBeNamed]
 

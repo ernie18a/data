@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;YHSgyiu4561kVfOZnhWYESA0KRexrxmF -->
+<!-- tradingview-pine-version: 8.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Grid Bot Simulator
 

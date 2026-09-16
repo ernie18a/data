@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;f21271d524a54c039073dbb2e92b6030 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Volume Cluster Profile [VCP] (Zeiierman)
 

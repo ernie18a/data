@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;PlVkvOzmSyRqI9WwxMO8xZknmpVPyqK9 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Efficient Work [LucF]
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;k3Dauk1IL4P16oLVthQcGnYjCRKZ7i6I -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # MatrixLib
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;8RhQrXVBQaWeVJ4FYGdvjzazTNhk3Wkv -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Corona TrendFlex Oscillator - John Ehlers
 

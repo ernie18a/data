@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;887ed986d70d41fd8b02ba036e17506c -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # HTF Volume Spike & Imbalance Projection [LuxAlgo]
 

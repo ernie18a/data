@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;60a7600a9f394405a55ec44b45ca78d5 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # FunctionADF
 

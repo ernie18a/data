@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;78bc75f2651a404c8ae76468da4c8ec0 -->
+<!-- tradingview-pine-version: 9.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Volume Dots
 

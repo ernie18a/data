@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;063d1be18dda4ccbac3dce5f350efb62 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Bitcoin Monthly Seasonality [Alpha Extract]
 

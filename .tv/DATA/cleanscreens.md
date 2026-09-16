@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;3818c10caed64ffab92f2e7c5eff7de5 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # cleanscreens
 

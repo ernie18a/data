@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;02edd90dbf5d4e209b5697b96df720ef -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # KINSKI Volume Regression Trend
 

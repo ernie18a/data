@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;15530a9f97454187b4f662d64fae90da -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Dividend Calendar (Zeiierman)
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;6cJvbvJdGN35K2hwlOt635EqookPLfcW -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Moving Regression Prediction Bands
 

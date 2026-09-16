@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;6d419f128ff64434bafcb6c1e6473ab8 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Interactive ATR Stop Loss
 

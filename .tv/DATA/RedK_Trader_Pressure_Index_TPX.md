@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;naWKBJGnlagb8P1rU8JcndBSajR5DNbU -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # RedK Trader Pressure Index (TPX)
 

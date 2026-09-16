@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;b0e947fd20674cfcaa821fb6298e88d5 -->
+<!-- tradingview-pine-version: 6.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Volume Profile Auto [line] v2
 

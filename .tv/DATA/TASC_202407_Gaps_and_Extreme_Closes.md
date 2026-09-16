@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;c56d86db01ac401992600a91f27b843e -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # TASC 2024.07 Gaps and Extreme Closes
 

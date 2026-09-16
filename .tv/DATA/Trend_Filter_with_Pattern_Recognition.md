@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;403b0e4c65a94b79aae8fed85734633e -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Trend Filter with Pattern Recognition
 

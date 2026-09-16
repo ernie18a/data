@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;40e19d5635c6441ca92eb417807d925f -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Portfolio Performance
 

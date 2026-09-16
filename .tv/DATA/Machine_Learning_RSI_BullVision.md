@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;50b4566eddd04de3be2a3cb031dc4ebd -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 #  Machine Learning RSI ║ BullVision
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;cVtaZD1Bu35wyuIBp3qbu7IU8tDqWQXp -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # [crg] Responsive Linear Regression
 

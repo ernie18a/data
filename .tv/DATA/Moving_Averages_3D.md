@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;c08bc88a247f4e8eb690ef924149982b -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Moving Averages 3D
 

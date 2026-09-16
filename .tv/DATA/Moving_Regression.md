@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;bjc5YgMC0xzrxyKs10niswjnLJ1Vb1iM -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Moving Regression
 

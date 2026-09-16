@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;579c41b76d4d497ba94eccd958f0e96a -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Volatility Risk Premium
 

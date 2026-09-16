@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;62d8d38d0f6f4b5286216ffbc2d08891 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Higher Time Frame Chart Overlay
 

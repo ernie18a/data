@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;e34ee6d48a3442009b22dcfbd252dd52 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Directional Volume Shapes (Zeiierman)
 

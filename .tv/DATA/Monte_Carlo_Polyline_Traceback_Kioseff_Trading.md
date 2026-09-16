@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;12ac3890f1af4fa7867910c9bcbdc582 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Monte Carlo (Polyline Traceback) [Kioseff Trading]
 

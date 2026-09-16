@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;rIHacHZXgSE4yaAyofGctEl5Wa8MR7qt -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Combo Strategy 123 Reversal & Fractal Chaos Bands
 

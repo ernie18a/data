@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;m00hCBYMo14LVqq5wau6xKKEj2PUEEwM -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Volume Scale by Price (VSP)
 

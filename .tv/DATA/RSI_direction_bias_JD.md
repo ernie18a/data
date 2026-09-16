@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;s2GNh4m7XGboXmMwJlkpIuP1D7M9BEWl -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # RSI direction bias - JD
 

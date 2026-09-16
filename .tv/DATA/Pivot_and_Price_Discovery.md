@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;caad0c70855e4511813d465a66e9ffb9 -->
+<!-- tradingview-pine-version: 6.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Pivot and Price Discovery
 

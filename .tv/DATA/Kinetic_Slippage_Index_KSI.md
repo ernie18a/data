@@ -1,110 +1,51 @@
-<!-- tradingview-pine-id: PUB;b7a2804c03b64f30a32db58ddd2d0549 -->
+<!-- tradingview-pine-id: PUB;1f2eeb5c0a4e4b21958387277cf8c6d5 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Kinetic Slippage Index (KSI)
 
-Source: https://www.tradingview.com/script/2RrjPh4H-Kinetic-Slippage-Index-KSI/
+Source: https://www.tradingview.com/script/CUjAnbtS-Kinetic-Slippage-Index-KSI/
 
 ## Description
 
-//@version=6
-indicator("켈트너채널 50/2.8 다음봉 시가 알람", overlay=true)
+Overview
+The Kinetic Slippage Index (KSI) is an advanced volume-volatility oscillator designed to measure market efficiency—or the lack thereof. Inspired by order book microstructure and liquidity gaps, KSI calculates the "cost of price movement." It helps traders identify hidden institutional distribution, retail exhaustion, and high-probability false breakouts.
 
-//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// 설정
-//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-kcLength   = input.int(50, "켈트너채널 기간", minval=1)
-kcMultiple = input.float(2.8, "ATR 배수", minval=0.1, step=0.1)
-showSignal = input.bool(true, "차트에 신호 표시")
+Unlike standard momentum oscillators (RSI, Stochastic) that only track price speed, KSI analyzes how much raw volume was required to achieve a specific price range.
 
-//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// 켈트너채널 계산
-// 중심선: EMA 50
-// 채널 폭: ATR 50 × 2.8
-//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-basis = ta.ema(close, kcLength)
-atrValue = ta.atr(kcLength)
+The Theoretical Concept
+In a highly liquid and efficient market, large trading volumes are absorbed by dense limit orders, causing the price to move smoothly and tightly. 
 
-upperBand = basis + atrValue * kcMultiple
-lowerBand = basis - atrValue * kcMultiple
+However, when liquidity clears out (an "empty order book" or "liquidity vacuum"), even a small market order can cause a massive price jump. This phenomenon is called slippage. 
 
-//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// 조건봉 판정
-//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+KSI mathematically captures this by squaring the True Range and dividing it by the current Volume and its long-term EMA. 
+- High KSI: Price is flying or dropping fast, but on critically low volume. The market is "hollow."
+- Low KSI: Enormous volume is pouring in, but the price is compressed into tight bars. Heavy institutional absorption is taking place.
 
-// 숏 조건봉
-// 1. 고가가 상단선 터치
-// 2. 음봉
-// 3. 시가와 종가가 모두 상단선 아래
-shortSetup =
-     high >= upperBand and
-     close < open and
-     open < upperBand and
-     close < upperBand
+How to Trade with KSI (Key Use Cases)
 
-// 롱 조건봉
-// 1. 저가가 하단선 터치
-// 2. 양봉
-// 3. 시가와 종가가 모두 하단선 위
-longSetup =
-     low <= lowerBand and
-     close > open and
-     open > lowerBand and
-     close > lowerBand
+1. Fading False Breakouts (The "SPIKE" Signal)
+- Scenario: The price breaks out of a key resistance or support level, creating a new local high/low.
+- KSI Behavior: A purple "SPIKE" marker appears, meaning KSI has crossed above the critical threshold.
+- Interpretation: The breakout is happening on a "hollow" market without institutional backing. It is highly likely a liquidity hunt (stop-run).
+- Strategy: Look for a reversal pattern on the price chart and trade against the breakout (Fade).
 
-//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// 조건봉 다음 봉이 시작될 때 알람
-//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-shortAlert = barstate.isnew and shortSetup[1]
-longAlert  = barstate.isnew and longSetup[1]
+2. Trend Exhaustion & Climax
+- Scenario: The asset is in a strong, prolonged trend. Suddenly, a massive price bar occurs in the direction of the trend.
+- KSI Behavior: KSI prints a series of extreme high histogram bars or triggers a "SPIKE" alert.
+- Interpretation: This is a buying/selling climax (exhaustion). Smart money is withdrawing their limit orders, letting late retail buyers push the price into a vacuum right before the crash.
+- Strategy: Tighten trailing stops on current positions or prepare for a counter-trend setup.
 
-//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// 채널 표시
-//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-basisPlot = plot(basis, "중심선 EMA 50", color=color.orange)
-upperPlot = plot(upperBand, "켈트너 상단선", color=color.red)
-lowerPlot = plot(lowerBand, "켈트너 하단선", color=color.blue)
+3. Institutional Accumulation / Compression
+- Scenario: Price enters a tight, boring consolidation (flat).
+- KSI Behavior: The histogram bars turn red and get tightly compressed near the zero line, staying significantly below the orange Signal Line.
+- Interpretation: Huge trading volume is being injected, but the price isn't moving. Big players are quietly accumulating or distributing positions using iceberg orders. 
+- Strategy: Do not trade inside this zone. Prepare for a massive, explosive breakout. Wait for the KSI histogram to flip green and cross above the Signal Line to confirm the direction.
 
-fill(upperPlot, lowerPlot, color=color.new(color.gray, 92))
-
-//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// 신호 표시
-//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-plotshape(
-     showSignal and shortAlert,
-     title="숏 알람",
-     style=shape.labeldown,
-     location=location.abovebar,
-     color=color.red,
-     text="SHORT",
-     textcolor=color.white,
-     size=size.small
-)
-
-plotshape(
-     showSignal and longAlert,
-     title="롱 알람",
-     style=shape.labelup,
-     location=location.belowbar,
-     color=color.green,
-     text="LONG",
-     textcolor=color.white,
-     size=size.small
-)
-
-//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// TradingView 알람 조건
-//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-alertcondition(
-     shortAlert,
-     title="켈트너 숏 알람",
-     message="SHORT|{{ticker}}|{{interval}}|price={{open}}"
-)
-
-alertcondition(
-     longAlert,
-     title="켈트너 롱 알람",
-     message="LONG|{{ticker}}|{{interval}}|price={{open}}"
-)
+Inputs & Customization
+- ATR / Range Period (Default: 14): Controls the lookback window for measuring the price range.
+- Volume EMA Period (Default: 20): Smooths out volume to create a reliable benchmark for average liquidity.
+- Signal Line Period (Default: 9): An EMA of the KSI itself, used to detect shorter-term shifts in momentum (Green/Red histogram flips).
+- Spike Signal Level (Default: 50000): Critical value line for alerts.
 
 ---
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;152dc73c55cc41f2bd78e4eb24d0d5ed -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # [Pandora] Vast Volatility Treasure Trove
 

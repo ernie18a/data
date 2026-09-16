@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;ec44c9ba302742509692201feb7337a9 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # TASC 2022.06 Ehlers Loops
 

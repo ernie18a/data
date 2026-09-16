@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;2oaho9jA3rLsBLqfsenn6XL6oQAcv2S2 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Donchian Zig-Zag [LuxAlgo]
 

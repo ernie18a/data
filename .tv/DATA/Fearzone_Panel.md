@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;wcxgnPxYYbz1vXBkSYpOb56qtIqBUolT -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Fearzone Panel
 

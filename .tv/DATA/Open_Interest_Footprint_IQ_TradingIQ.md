@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;c7fad98f385448ca87d1b8b880287562 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Open Interest Footprint IQ [TradingIQ]
 

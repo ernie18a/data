@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;97463f6b52114c26a4cfe7feb17c005a -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # RKs Notepad++ Pine Script V5
 

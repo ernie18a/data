@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;7QB02zxrFZAquFsbxcXv1l076LmDp9w9 -->
+<!-- tradingview-pine-version: 7.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Moving Average Entanglement
 

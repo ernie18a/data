@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;e0901608ef74486cbece59a608ce0f3b -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Normalized Oscillators Spider Chart [LuxAlgo]
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;17bb8b8ff15b47e6b3305940789a2022 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # HH-LL ZZ
 

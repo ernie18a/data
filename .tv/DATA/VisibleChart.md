@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;34a6449880c84004b8d0026d2369b6e0 -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # VisibleChart
 

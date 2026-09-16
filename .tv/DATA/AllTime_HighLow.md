@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;7637d8c18f974659ae624c38b28ce68f -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # All-Time High/Low
 

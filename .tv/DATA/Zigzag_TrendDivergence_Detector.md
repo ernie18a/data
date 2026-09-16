@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;c3cf0489725d4f85981692df678b1606 -->
+<!-- tradingview-pine-version: 7.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Zigzag Trend/Divergence Detector
 

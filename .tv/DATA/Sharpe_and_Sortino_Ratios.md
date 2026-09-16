@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;9891cb9dfb3c41739ea14570ce58d81a -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Sharpe and Sortino Ratios
 

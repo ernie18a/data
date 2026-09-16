@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;7VzIgCo5xrB1kTHG3jk0ExNpBzaQEIxg -->
+<!-- tradingview-pine-version: 7.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Auto Pitchfork, Fib Retracement and Zig Zag by DGT
 

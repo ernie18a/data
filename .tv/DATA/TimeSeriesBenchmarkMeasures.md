@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;5bcdf31174794207bae5403e60501c8e -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # TimeSeriesBenchmarkMeasures
 

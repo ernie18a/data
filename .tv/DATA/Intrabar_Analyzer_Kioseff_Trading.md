@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;8b893e66aa1645398e9bc9223918debf -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Intrabar Analyzer [Kioseff Trading]
 

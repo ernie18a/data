@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;i5srGX3FvYvYllkJmZBzd40M1PweXurf -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Bayesian BBSMA Oscillator
 

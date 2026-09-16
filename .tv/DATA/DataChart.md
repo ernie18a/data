@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;343e4333430340d3bb8c8e26fde1dad9 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # DataChart
 

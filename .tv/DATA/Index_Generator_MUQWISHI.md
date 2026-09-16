@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;bcad13954d3a4c2d9431acf07eab51d9 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Index Generator [MUQWISHI]
 

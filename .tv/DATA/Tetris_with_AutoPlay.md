@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;485fbdfafc1a48f0abc6afed2786d275 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Tetris with Auto-Play
 

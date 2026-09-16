@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;885ed18fe2c14353ae57ef73235be4da -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Market Sessions - By Leviathan
 

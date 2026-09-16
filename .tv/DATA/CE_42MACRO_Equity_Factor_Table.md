@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;777d91bc05e6441886040e6e2a016bdb -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # 🌌 CE - 42MACRO Equity Factor Table 🌌
 

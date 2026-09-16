@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;4e761addec3a4b33b69db8d60cbd8592 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Bitcoin Power Law Clock [LuxAlgo]
 

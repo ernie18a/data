@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;c287cb08a48a4fa485921c44e49a34fe -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Periodic Linear Regressions [LuxAlgo]
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;58c2de87b6e14b9b8fe0b4c42d674e31 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Tick Statistics
 

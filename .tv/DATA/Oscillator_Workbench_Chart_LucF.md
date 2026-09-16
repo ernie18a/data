@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;93a820fb49bb4119bf57158f2c458b8a -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Oscillator Workbench — Chart [LucF]
 

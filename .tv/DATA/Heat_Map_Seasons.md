@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;53acdf3223424edab7c512f3cad54946 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Heat Map Seasons
 

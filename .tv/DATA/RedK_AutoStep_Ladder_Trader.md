@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;6f61934eb9534bc58037870e4954f86a -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # RedK Auto-Step Ladder Trader
 

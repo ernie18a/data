@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;02105ef94a7a4dc8bfa12ba63e5b87fe -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Similarity Search
 

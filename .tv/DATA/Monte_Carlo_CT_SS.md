@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;7e7d3fed2d9c4408bd6da7818dc48fd4 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Monte Carlo CT [SS]
 
@@ -118,33 +119,40 @@ Thanks for reading and checking it out!
 //                               ∂∂÷ ≥∂÷×∫!!! ∂i ≈∇>∇   :∂.√∇∫,∑× I∂-i,!.                             
 //                               ≈I±≈-÷+>±... ≈×±≈,l≠   ,≠.≈=!≠≠> . ,;>≈l                             
 //                               I: I i;;IIII I, ;I;IIII.I.Ii  I; .I<><I                              
-                                                                                         //@version=6
+//@version=6
 indicator("Monte Carlo CT [SS]", overlay = true, max_polylines_count = 10, max_labels_count = 10)
 
-// User inputs 
-grp_mc   = "Monte Carlo Settings"
-sims     = input.int(200, "Simulations", minval = 10, maxval = 500, group = grp_mc)
-forx     = input.int(50,  "Forecast Horizon", minval = 2, maxval = 500, group = grp_mc)
-back     = input.int(200, "Historical Lookback", group = grp_mc)
-showtbl  = input.bool(true, "Show Naive Bayes Table", group = grp_mc)
-grp_nb   = "Naive Bayes Settings"
-nb_train = input.int(500, "NB Train Lookback", group = grp_nb)
+// User inputs
+grp_mc     = "Monte Carlo Settings"
+sims       = input.int(200, "Simulations", minval = 10, maxval = 500, group = grp_mc)
+forx       = input.int(50,  "Forecast Horizon", minval = 2, maxval = 500, group = grp_mc)
+back       = input.int(200, "Historical Lookback", group = grp_mc)
+showtbl    = input.bool(true, "Show Naive Bayes Table", group = grp_mc)
 
-// Colours 
-pal_neon_bull = #00ffcc 
+grp_anchor = "Simulation Anchor"
+i_anchor   = input.time(timestamp("2024-01-01T00:00:00"), "Start Simulation At (click chart to set)", confirm = true, group = grp_anchor)
+
+grp_nb     = "Naive Bayes Settings"
+nb_train   = input.int(500, "NB Train Lookback", group = grp_nb)
+
+// Colours
+pal_neon_bull = #00ffcc
 pal_neon_bear = #ff00ff
 
-// PDF function for distribution 
-f_pdf(x, mean, variance) => 
+// PDF function for distribution
+f_pdf(x, mean, variance) =>
     float v = math.max(variance, 0.000001)
     (1 / math.sqrt(2 * math.pi * v)) * math.exp(-math.pow(x - mean, 2) / (2 * v))
 
-//Data 
+// Rolling returns window (always maintained, capped at `back` bars,
+// so whatever bar the anchor lands on already has up to `back` bars of history behind it)
 var float[] returns = array.new_float()
-if last_bar_index - bar_index <= back
+if bar_index > 0
     returns.push(math.log(close / close[1]))
+    if returns.size() > back
+        returns.shift()
 
-// Vola and Mom 
+// Vola and Mom
 float rel_vol  = nz(volume / ta.sma(volume, 50), 1.0)
 float momentum = ta.roc(close, 10)
 target = close > close[1] ? 1 : 0
@@ -162,21 +170,25 @@ main_sig  = main_prob > 0.5 ? 1 : 0
 
 f_label(pt_array, txt, clr) =>
     last_pt = array.get(pt_array, array.size(pt_array) - 1)
-    label.new(last_pt.index, last_pt.price, txt + ": " + str.tostring(last_pt.price, format.mintick), 
-        color=color.new(color.black, 100), 
-        textcolor=clr, 
-        style=label.style_label_left, 
+    label.new(last_pt.index, last_pt.price, txt + ": " + str.tostring(last_pt.price, format.mintick),
+        color=color.new(color.black, 100),
+        textcolor=clr,
+        style=label.style_label_left,
         size=size.small)
 
-
-// MC 
+// MC
 get_percentile(array<float> arr, float p) =>
     array<float> sorted = arr.copy()
     sorted.sort()
     idx = math.floor(p * (sorted.size() - 1))
     sorted.get(idx)
 
-if barstate.islastconfirmedhistory and returns.size() > 1
+// Fire once, on the first bar whose time reaches the user-selected anchor
+var bool mcDone     = false
+bool     isAnchorBar = not mcDone and time >= i_anchor and time[1] < i_anchor
+
+if isAnchorBar and returns.size() > 1
+    mcDone := true
     results = matrix.new<float>(forx, sims, close)
     avg_ret = returns.avg(), std_ret = returns.stdev()
 
@@ -186,7 +198,6 @@ if barstate.islastconfirmedhistory and returns.size() > 1
             z = math.sqrt(-2.0 * math.log(math.random(0.01, 0.99))) * math.cos(2.0 * math.pi * math.random(0.01, 0.99))
             cur_p *= math.exp(avg_ret + std_ret * z)
             results.set(t, s, cur_p)
-
 
     p95 = array.new<chart.point>(), p75 = array.new<chart.point>(), p50 = array.new<chart.point>()
     p25 = array.new<chart.point>(), p05 = array.new<chart.point>()
@@ -199,14 +210,12 @@ if barstate.islastconfirmedhistory and returns.size() > 1
         p25.push(chart.point.from_index(bar_index + t, get_percentile(col, 0.25)))
         p05.push(chart.point.from_index(bar_index + t, get_percentile(col, 0.05)))
 
-// Render Polylines (5 Total)
+    // Render Polylines (5 Total)
     polyline.new(p95, line_color = color.new(color.green, 0), line_width = 1, line_style = line.style_dashed)
     polyline.new(p75, line_color = color.new(color.green, 0), line_width = 2)
     polyline.new(p50, line_color = color.white,              line_width = 3) // Median
     polyline.new(p25, line_color = color.new(color.red, 0),   line_width = 2)
     polyline.new(p05, line_color = color.new(color.red, 0),   line_width = 1, line_style = line.style_dashed)
-
-
 
     f_label(p95, "95%", color.green)
     f_label(p75, "75%", color.green)
@@ -214,33 +223,26 @@ if barstate.islastconfirmedhistory and returns.size() > 1
     f_label(p25, "25%", color.red)
     f_label(p05, "05%", color.red)
 
-
-    if showtbl 
+    if showtbl
         var table statsTable = table.new(position.top_right, 2, 6, bgcolor=color.new(color.black, 20), border_width=1, border_color=color.gray)
-    
 
         table.cell(statsTable, 0, 0, "NB ANALYSIS", text_color=color.white, text_size=size.large)
         table.cell(statsTable, 1, 0, "STATUS",      text_color=color.white, text_size=size.large)
-    
 
         table.cell(statsTable, 0, 1, "Win Prob",    text_color=color.silver, text_halign=text.align_left)
         prob_color = main_prob > 0.5 ? color.new(color.green, 20) : color.new(color.red, 20)
         table.cell(statsTable, 1, 1, str.format("{0,number,#.#}%", main_prob * 100), bgcolor=prob_color, text_color=color.white)
-    
 
         mc_target = p50.get(forx-1).price
         table.cell(statsTable, 0, 2, "MC Median",   text_color=color.silver, text_halign=text.align_left)
         table.cell(statsTable, 1, 2, str.tostring(mc_target, format.mintick), text_color=color.white)
-    
 
         table.cell(statsTable, 0, 3, "Rel Volume",  text_color=color.silver, text_halign=text.align_left)
         table.cell(statsTable, 1, 3, str.tostring(rel_vol, "#.##"), text_color=color.white)
 
-
         table.cell(statsTable, 0, 4, "SIGNAL",      text_color=color.white,  text_halign=text.align_left)
         sig_color = main_sig == 1 ? color.green : color.red
         table.cell(statsTable, 1, 4, main_sig == 1 ? "LONG" : "SHORT", bgcolor=sig_color, text_color=color.black)
-
 
         table.cell(statsTable, 0, 5, "Confidence",  text_color=color.gray,   text_size=size.small)
         table.cell(statsTable, 1, 5, main_prob > 0.7 or main_prob < 0.3 ? "HIGH" : "MODERATE", text_color=color.gray, text_size=size.small)

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;2f7f055465ce4067a354e4668624cb7d -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Developing Market Profile
 

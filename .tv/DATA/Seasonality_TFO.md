@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;7b3d78cbd06342d898ad56c0faf9eaab -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Seasonality [TFO]
 

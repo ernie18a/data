@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;80da6d9ed9c1403d9a4c0dd865f3f490 -->
+<!-- tradingview-pine-version: 7.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Fair value bands / Flowly Indicators
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;5c7061572f2d45aea9d23d3b434d4481 -->
+<!-- tradingview-pine-version: 8.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Fourier Extrapolator of Price w/ Projection Forecast [Loxx]
 

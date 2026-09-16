@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;2294300b883341df98a4a7d7213579b3 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Wyckoff Schematic by Kingshuk Ghosh
 

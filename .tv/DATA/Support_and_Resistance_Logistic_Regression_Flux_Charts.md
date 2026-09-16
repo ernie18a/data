@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;9d844269d6c9493594d64c11b59ebb81 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Support and Resistance Logistic Regression | Flux Charts
 

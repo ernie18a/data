@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;80af7ccf6183453bbd07864e7e8f5947 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Cointegration Heatmap & Spread Table [EdgeTerminal]
 

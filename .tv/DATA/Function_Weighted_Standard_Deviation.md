@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;23e497566e764e79bd5a3893812c82f1 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Function - Weighted Standard Deviation
 

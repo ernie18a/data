@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;1aed39f150814433b22a7844749151ae -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Average Volume Profile
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;ff2ae4fdabcf4d7a8b5d4e11980aed4c -->
+<!-- tradingview-pine-version: 7.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Strength of Divergence Across Multiple Indicators
 

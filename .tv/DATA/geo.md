@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;6803c87445754fe89cab2942893582d1 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # geo
 

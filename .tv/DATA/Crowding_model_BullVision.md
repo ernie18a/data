@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;da484b0efba0419cabd6bec0ec0eb953 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 #  Crowding model ║ BullVision
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;dc7f26229fc64177b911f4d5e91ac60f -->
+<!-- tradingview-pine-version: 8.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Textmate Language for Pine Script v5 2023-05
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;ef7bedf86b0541d3b5c814e19dfc9cd8 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Volume Footprint [LuxAlgo]
 

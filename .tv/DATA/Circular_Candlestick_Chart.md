@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;2a53a2cabd5c43fea2f1a528c6c66fb1 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Circular Candlestick Chart
 

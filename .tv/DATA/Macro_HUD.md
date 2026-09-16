@@ -1,44 +1,52 @@
-<!-- tradingview-pine-id: PUB;45eff6f275d74389be78ca9f52459284 -->
+<!-- tradingview-pine-id: PUB;39462d3f21cf4ac6a87829b630dca978 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Macro HUD
 
-Source: https://www.tradingview.com/script/YRdjBtgK-MACRO-HUD/
+Source: https://www.tradingview.com/script/zKSXWFbB-Macro-HUD/
 
 ## Description
 
-MACRO HUD — macro context, on your chart
+Macro HUD is an on-chart panel that shows the macro context around the instrument you are trading, so you can read price with the broader backdrop in view rather than in isolation.
 
-Most indicators re-arrange the price you're already looking at. Macro HUD does the opposite: it puts the market's macro context on a single on-chart panel, so you're never reading price in isolation. It's a dashboard, not a signal generator.
- 
- 
-WHAT IT SHOWS
- 
-MACRO ENGINE — the dollar (DXY), US 10Y and 2Y yields, oil, and the VIX, each with its current value and a direction arrow. The VIX also carries a regime band: Calm / Normal / Stressed / Panic.
- 
-REGIME — two plain-language reads derived from the engine: a dollar read (bid / offered) and a risk read (risk-on / risk-off / mixed).
- 
-WATCHLIST — up to five instruments of your choice, each flagged Bull or Bear versus an EMA, so you can see the state of your whole watchlist at a glance. Defaults to gold, EUR/USD, GBP/USD, USD/JPY and the S&P 500 — change them to whatever you trade.
- 
-EVENT — an optional manual countdown. Type in your next few key releases (name plus date/time) and the panel shows whichever is soonest, turning red inside a "stand-down" window you set. Pine can't read the economic calendar, so this part is filled in by hand.
- 
- 
-HOW TO USE IT
- 
-Add it to any chart. Open the settings and point the symbols at feeds your plan supports, choose your watchlist instruments, and set the read timeframe — Daily by default, which gives the broad regime regardless of your chart timeframe. Everything else is automatic and updates live. Text colour is theme-aware, so it reads on light or dark charts.
- 
- 
-WHAT IT DOES NOT DO
- 
-It does not generate buy/sell signals, predict direction, or tell you what to do. It assembles context; the read — and the decision — stay yours. There are no performance claims here, by design.
- 
- 
-NOTES
- 
-Some data symbols (DXY, yields, VIX) depend on your TradingView data plan. If a row shows "n/a", open the settings and swap that symbol for one your plan supports — the tool handles missing symbols gracefully rather than breaking.
- 
-Open-source. Read the code, fork it, adapt it to your own workflow.
+Most indicators transform the price already on your chart into another form of the same price. Macro HUD does something different: it reads a set of other markets and presents their current state as context on a single panel, so you do not have to open several extra charts or an economic calendar to see the wider picture. It is a context dashboard, not a signal generator.
 
-MACRO HUD: "Built to support discretion, not replace it"
+What it shows
+The panel has four sections:
+
+[*]Macro engine — the US Dollar Index (DXY), the US 10-year and 2-year Treasury yields, crude oil, and the VIX. Each row shows its current value and a direction arrow measured over a lookback you set. The VIX row adds a volatility-regime band: Calm, Normal, Stressed, or Panic.
+[*]Regime — two plain-language reads derived from the rows above: a dollar read (bid or offered, from its recent direction) and a risk read (risk-on, risk-off, or mixed, from a chosen index's trend together with the VIX band).
+[*]Watchlist — up to five instruments of your choice, each labelled Bull or Bear depending on whether its price sits above or below a moving average, so you can see the directional state of a whole basket at a glance.
+[*]Event — an optional manual countdown to your next key economic releases. You enter the events yourself; the panel displays whichever is soonest and turns red inside a stand-down window you define.
+
+How it works
+Every value in the panel is requested from another symbol on a timeframe you choose (Daily by default) using request.security. The direction arrows compare the current value to the value a set number of bars earlier. The VIX band and the dollar and risk reads are simple threshold and trend rules applied to those requested values — the band uses fixed volatility thresholds, and the risk read combines an index's position relative to its moving average with the VIX band. The watchlist Bull/Bear flags compare each requested symbol's price to an EMA of its own price. The event countdown compares the current time to the timestamps you enter and shows the nearest upcoming one. Nothing in the panel is predictive; it reports the current state of external data.
+
+Why it is original, and why these parts are combined
+Macro HUD is not a single built-in republished, and it is not a mashup of overlapping signals. Each component answers a different question, and they are gathered together because a discretionary trader usually needs all of them at once before acting:
+
+[*]The macro engine answers "what is the broad backdrop?" — the dollar, rates, oil, and volatility.
+[*]The regime rows condense that backdrop into a plain read that can be absorbed at a glance.
+[*]The watchlist answers "what state is my basket in right now?" across several instruments without switching charts.
+[*]The event row answers "is it safe to act, or is a major release imminent?" — the one piece Pine cannot source on its own.
+
+The purpose of the combination is to assemble, on one panel, the external context a trader would otherwise gather from several separate windows plus an economic calendar. No component duplicates another; each covers a distinct part of the question "should I be looking at this market now, and with what lean?" That specific, purpose-built combination is what the script contributes.
+
+How to use it
+Add it to any chart. Open the settings and point the macro and watchlist symbols at instruments your data plan supports, set the read timeframe (Daily gives the broad regime regardless of your chart timeframe), and choose the EMA length used for the Bull/Bear flags. If you follow economic events, type your next few releases into the event slots. The panel then updates live. Panel text colour is theme-aware by default and can be forced to black or white.
+
+Limitations and things to be aware of
+
+[*]Pine cannot read the economic calendar or news, so the event slots are filled in by hand. If you do not maintain them, the event row simply shows that no event is set.
+[*]The direction arrows show short-term direction over your chosen lookback, not the absolute level. A market can show a down arrow while still being historically high, so read the arrow as recent drift, not position.
+[*]The regime reads are deliberately simple threshold and trend rules, not a proprietary model. They are a quick summary, not a forecast.
+[*]Some symbols (DXY, yields, VIX) depend on your TradingView data plan. If a row shows "n/a", open the settings and replace that symbol with one your plan provides. The script handles missing symbols without failing.
+[*]All values reflect the chosen read timeframe and update on that basis.
+
+Scope
+Macro HUD assembles context. It does not generate buy or sell signals, predict direction, or tell you what to do, and it makes no performance claims. The interpretation and every trading decision remain entirely yours.
+
+This script is open-source. The full Pine code is available on this page for anyone to read, verify, and build upon.
 
 ---
 

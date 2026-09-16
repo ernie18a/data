@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;b479566fb5794c7ca3b8158bacb6f5b7 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Fibonacci Time-Price Zones
 

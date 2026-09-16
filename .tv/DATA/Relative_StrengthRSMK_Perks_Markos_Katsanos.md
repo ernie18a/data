@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;f8sm8BBvNyFdDrmCkg8I6yZMytzk8tOf -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Relative Strength(RSMK) + Perks - Markos Katsanos
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;93d110473c3c4363a7ecd5f8b511a614 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Everything Bitcoin [Kioseff Trading]
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;BEJnu4Ey7wO69DKTewekgVFp8N6eCcL0 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Linear Continuation
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;cb16fa85234642fc9f01fb18abf84ee0 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # VIX Curve Pro - Real-Time Term Structure with Statistics
 

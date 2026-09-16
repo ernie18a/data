@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;fd0d849f9de74591b880f40b64df11c2 -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Multi Asset Similarity Matrix
 

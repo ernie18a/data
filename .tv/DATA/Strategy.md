@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;14081e4de550466186e1659ef249640e -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Strategy
 

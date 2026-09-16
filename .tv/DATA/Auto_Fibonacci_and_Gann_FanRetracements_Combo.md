@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;e764b93365ee4ba6873926bee036bade -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Auto Fibonacci and Gann Fan/Retracements Combo
 

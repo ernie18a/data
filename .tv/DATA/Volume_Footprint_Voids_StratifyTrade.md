@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;a29523ff015b4c85ae24d49c38ee29f1 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Volume Footprint Voids [StratifyTrade]
 

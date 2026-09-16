@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;7164e947879641f78397cde5aec9bfa4 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Multiple Frequency Volatility Correlation
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;35c95ee61cd24dd09da740176b372203 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Adaptive Trend Classification: Moving Averages [InvestorUnknown]
 

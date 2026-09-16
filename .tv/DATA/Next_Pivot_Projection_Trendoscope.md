@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;547f3a5fce524cdbbe42f37825815f57 -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Next Pivot Projection [Trendoscope]
 

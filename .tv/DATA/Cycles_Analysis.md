@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;622294b8619045eda16a66660bdf728e -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Cycles Analysis
 

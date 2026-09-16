@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;88572e7722f44221ba46404bc8468208 -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Numbers Renko 数字練行足
 

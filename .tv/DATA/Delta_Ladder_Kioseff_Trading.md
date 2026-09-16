@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;6afc58b73b28413097711c67c11b5b4c -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Delta Ladder [Kioseff Trading]
 

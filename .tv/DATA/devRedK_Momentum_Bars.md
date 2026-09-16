@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;3abf8ff794874c568487cb6c0fd94efc -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # [dev]RedK Momentum Bars
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;c6388de20b7b4c068127ad3b7518ddce -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Stop Loss Clustering (Breakouts) [Kioseff Trading]
 

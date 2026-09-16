@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;5546852563404331bd01c318ac7f6848 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # The Investment Clock Orbital Graph
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;17ec799bc11c4da0affab7fd13f38b62 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Dynamic Linear Regression Channels
 

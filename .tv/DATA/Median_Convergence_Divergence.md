@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;83a3e1c16c844d81a726d8f8e56965f9 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Median Convergence Divergence
 

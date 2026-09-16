@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;8f7fb38f4c2c4a89b4105e5fe0497d4f -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Unit Testing Framework
 

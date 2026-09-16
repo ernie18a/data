@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;ed8b057c344047fcb0319b75556fbaa7 -->
+<!-- tradingview-pine-version: 6.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Indicators Overlay
 

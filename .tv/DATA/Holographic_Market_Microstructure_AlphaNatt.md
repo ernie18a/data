@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;08e9430a2f294382a0219b51beadc053 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Holographic Market Microstructure | AlphaNatt
 

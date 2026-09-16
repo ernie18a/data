@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;4eba554427d74fa9b2a6f1e1353a6230 -->
+<!-- tradingview-pine-version: 53.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Template Trailing Strategy (Backtester)
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;if2xIrb5W3KsQwBDI5gfprP8lEVtB1e5 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # BTC difficulty adjustments
 

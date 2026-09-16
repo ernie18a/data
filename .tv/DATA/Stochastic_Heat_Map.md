@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;sHml2ddkaelZ3YyNvMo6USwUL8WOdjeG -->
+<!-- tradingview-pine-version: 12.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Stochastic Heat Map
 

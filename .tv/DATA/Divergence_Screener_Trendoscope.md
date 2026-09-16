@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;5bfc8355aa774a2c8d907157b10143cb -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Divergence Screener [Trendoscope®]
 

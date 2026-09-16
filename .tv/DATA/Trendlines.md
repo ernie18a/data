@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;43QQg9nDN0YPnyEWoGquJlspUe4BhKs5 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Trendlines
 

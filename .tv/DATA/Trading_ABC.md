@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;de42ad3e04354f0596d8a7ea22de6168 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Trading ABC
 

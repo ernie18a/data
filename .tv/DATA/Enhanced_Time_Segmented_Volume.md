@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;QTlxjSAaeL25I1c4igYQzqip0MYXnjFy -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Enhanced Time Segmented Volume
 

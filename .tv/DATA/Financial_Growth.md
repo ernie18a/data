@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;b2f267c58c994a7d99264bae9cce7e00 -->
+<!-- tradingview-pine-version: 6.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Financial Growth
 

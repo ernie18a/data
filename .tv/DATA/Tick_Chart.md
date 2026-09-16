@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;Fg8ggzLHVSInsJ4sTPzwztNyiEu6ZFfS -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Tick Chart
 

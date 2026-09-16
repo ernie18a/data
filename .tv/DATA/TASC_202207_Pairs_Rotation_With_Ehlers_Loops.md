@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;a44602832b534bb0801bbec899636b8c -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # TASC 2022.07 Pairs Rotation With Ehlers Loops
 

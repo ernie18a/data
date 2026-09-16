@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;832f2f0f408d4b12a4e431123767e3ac -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Trading Report Generator from CSV
 

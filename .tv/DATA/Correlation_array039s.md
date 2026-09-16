@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;TVDzWAQ9F7ytV7AIMe1mr48kvFyXystj -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Correlation [array&#039;s]
 

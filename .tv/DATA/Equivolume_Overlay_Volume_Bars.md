@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;51899a4ca8544e71bb19a624e899ace2 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Equivolume Overlay - Volume Bars
 

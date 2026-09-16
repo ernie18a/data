@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;nXVwH1Z3vvbASgij0c9td1jCtb7s5Cdq -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Linear Regression (All Data)
 

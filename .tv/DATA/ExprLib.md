@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;512abb219f94401787ae816cd7a51fa6 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # ExprLib
 

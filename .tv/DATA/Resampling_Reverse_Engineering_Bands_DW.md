@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;bwSYflEofTfulC4qTKhIxYbOtSvZOSVM -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Resampling Reverse Engineering Bands [DW]
 

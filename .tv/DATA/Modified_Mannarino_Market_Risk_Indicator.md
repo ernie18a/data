@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;79e63665c72d460ca87d14840026dc02 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Modified Mannarino Market Risk Indicator
 

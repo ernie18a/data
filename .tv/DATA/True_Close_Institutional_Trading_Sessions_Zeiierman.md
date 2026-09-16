@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;7150ebfb353b40eaa8927bd754097576 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # True Close – Institutional Trading Sessions (Zeiierman)
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;14b8b16db3ee4090819e0cdaaad5938a -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Relative Bandwidth Filter
 

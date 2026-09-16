@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;000efea20b6f40169a9cfb9841271a16 -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Market Sessions & Viewer Panel [By MUQWISHI]
 

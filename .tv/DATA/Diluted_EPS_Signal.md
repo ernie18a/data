@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;626d350a83824667950b73c5b9f0ad7e -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Diluted EPS Signal
 

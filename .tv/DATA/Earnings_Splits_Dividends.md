@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;BYIRGPneJMy5R04znqxsziGCkCQtGdZi -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Earnings, Splits, Dividends
 

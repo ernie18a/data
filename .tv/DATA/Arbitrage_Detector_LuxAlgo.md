@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;5fd196b4a7e446d1a6544c42135fad73 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Arbitrage Detector [LuxAlgo]
 

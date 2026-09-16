@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;2f445b41cd734bffb6546cb27c228568 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # RedK Effort Versus Results Explorer v3.0
 

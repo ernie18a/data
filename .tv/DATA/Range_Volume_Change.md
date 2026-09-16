@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;dd141162518849528980f8410d2b2228 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Range Volume Change
 

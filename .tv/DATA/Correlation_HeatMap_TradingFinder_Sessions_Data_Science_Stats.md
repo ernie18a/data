@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;16a8146e41174365804280134117a765 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Correlation HeatMap [TradingFinder] Sessions Data Science Stats
 

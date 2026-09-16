@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;afafa660d0f94af9b61dc0b0d08985f6 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Short Volume Stamper [Kioseff Trading]
 

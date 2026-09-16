@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;4526700d80844c95945989a46f30a2e8 -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # ✖ 𝗡𝘂𝗻𝗰𝗵𝘂𝗰𝗸𝘀
 

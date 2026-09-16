@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;fc8bf3ab198242d1b1393ee6110de982 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Augmented Dickey–Fuller (ADF) mean reversion test
 

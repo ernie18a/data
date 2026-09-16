@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;77c0f0012daa4ff09d68b6f3bed95a7f -->
+<!-- tradingview-pine-version: 14.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # ta
 

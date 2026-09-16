@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;R6wIMuiKQn0mLiH6wnelFjAxJqs6X6dS -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Max Drawdown Calculating Functions (Optimized)
 

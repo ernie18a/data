@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;0fca060bf4314e4bb29804c3361813d8 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Sector Rotation
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;72876ffec69e469faf3513841a5dd031 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # SimilarityMeasures
 

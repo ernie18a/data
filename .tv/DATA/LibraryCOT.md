@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;a4e34cf7e17d45beb9019b578af8b515 -->
+<!-- tradingview-pine-version: 6.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # LibraryCOT
 

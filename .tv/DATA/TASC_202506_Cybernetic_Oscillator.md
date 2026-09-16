@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;ca1ad56347524b069579822759e4bc85 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # TASC 2025.06 Cybernetic Oscillator
 

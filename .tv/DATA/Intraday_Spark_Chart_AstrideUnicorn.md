@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;7f41f4924459414e821f38f9938e908e -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Intraday Spark Chart [AstrideUnicorn]
 

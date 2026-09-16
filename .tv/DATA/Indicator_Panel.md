@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;iJGngbH7OufMCMdqh9AAYl0mbFkTEsCI -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Indicator Panel
 

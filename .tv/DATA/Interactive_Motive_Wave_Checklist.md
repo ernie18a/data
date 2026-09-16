@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;b88de26d7b254df0b0b84a75b19c5fdb -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Interactive Motive Wave Checklist
 

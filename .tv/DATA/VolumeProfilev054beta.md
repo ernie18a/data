@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;PNSKf75832zX8AsDV5fO2zuaBOt60Tqw -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Volume_Profile_v0.5.4beta
 

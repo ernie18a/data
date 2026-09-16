@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;KE6lhavF4ixFyCc580xEBlpS7Yb1FDj6 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Bar Balance [LucF]
 

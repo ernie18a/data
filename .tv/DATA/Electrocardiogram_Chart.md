@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;fce4383fb7f442ff9de5575da67a053b -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Electrocardiogram Chart
 

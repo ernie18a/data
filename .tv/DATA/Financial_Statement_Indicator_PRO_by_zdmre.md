@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;f4451529567a442bb694541c1431e393 -->
+<!-- tradingview-pine-version: 14.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Financial Statement Indicator PRO by zdmre
 

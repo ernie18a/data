@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;71dc373bc0a346e4a6f6cfee048365ce -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Delta Volume Channels [LucF]
 

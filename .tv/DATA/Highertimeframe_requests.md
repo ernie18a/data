@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;fdf308fa2abe46309c350fa8183ed3a0 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Higher-timeframe requests
 

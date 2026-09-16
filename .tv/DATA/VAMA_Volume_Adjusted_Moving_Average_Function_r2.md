@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;SbsoQvkekufRGuQKVuclT45aoPvnONzh -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # VAMA Volume Adjusted Moving Average Function r2
 

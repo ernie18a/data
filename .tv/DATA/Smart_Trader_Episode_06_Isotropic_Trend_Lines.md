@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;9f9e7a2557fc4547a4d8a9f75ec6ec54 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Smart Trader, Episode 06, Isotropic Trend Lines
 

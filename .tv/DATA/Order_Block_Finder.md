@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;fVSb3j0I87LvTzPKrQTY5hDUEdsGdnm6 -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Order Block Finder
 

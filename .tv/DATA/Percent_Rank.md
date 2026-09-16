@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;2bc3b124f9ab43eaba2fa85b584dcdac -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Percent Rank
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;8c2d234156044effa75d531d82b247b3 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Smart Money Breakout Channels [AlgoAlpha]
 

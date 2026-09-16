@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;e14f9745bf4141f3b414343b5de464f0 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Vector3
 

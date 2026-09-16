@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;WmROfgArR55ZPxo83XveLqxzUfseBUVG -->
+<!-- tradingview-pine-version: 8.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Outlier Detector with N-Sigma Confidence Intervals
 

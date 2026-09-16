@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;f3b2b078ce2e4a38b1d24ac2ddded758 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Minervini Qualifier
 

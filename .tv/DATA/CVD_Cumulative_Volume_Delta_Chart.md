@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;84da7a14bfe64823a1246e4d5b0f7c80 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # CVD - Cumulative Volume Delta (Chart)
 

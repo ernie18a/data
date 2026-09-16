@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;c1609dcceb9c45128727f2c22be9662e -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Volume Speed [MUQWISHI]
 

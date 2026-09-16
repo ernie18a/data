@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;ARv98nM6fj7BGObBShWYgBZtcRDsn7Cb -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # TA Information Panel
 

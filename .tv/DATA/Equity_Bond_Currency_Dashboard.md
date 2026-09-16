@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;3b76dabad42847cca2923ce6f9c2bd29 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Equity, Bond, Currency Dashboard
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;e77a7e595ef04d0bab233736e5c1f6ff -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Dynamic Swing Anchored VWAP (Zeiierman)
 

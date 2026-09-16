@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;3b96428a77714e5ca8d9b41ac5e9e460 -->
+<!-- tradingview-pine-version: 7.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Footprint IQ Pro [TradingIQ]
 

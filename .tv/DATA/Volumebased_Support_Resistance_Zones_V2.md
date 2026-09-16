@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;ad6964d5ee8b461eaaa38843902fac05 -->
+<!-- tradingview-pine-version: 14.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Volume-based Support & Resistance Zones V2
 

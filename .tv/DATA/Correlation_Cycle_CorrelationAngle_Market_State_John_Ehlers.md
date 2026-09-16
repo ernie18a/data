@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;E0DC1xBgkjFHQzfVPypF6whkaf7Mx3Hh -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Correlation Cycle, CorrelationAngle, Market State - John Ehlers
 

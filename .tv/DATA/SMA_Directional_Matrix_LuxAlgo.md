@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;0iQhmJ87BrPf8BshqK3wXBPkhIZIE3FG -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # SMA Directional Matrix [LuxAlgo]
 

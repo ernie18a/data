@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;ZadztSPXSveJqzozl96D2zgStDLZyDMm -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Swing High/Low Anchored Spiral
 

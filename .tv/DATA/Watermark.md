@@ -1,121 +1,82 @@
-<!-- tradingview-pine-id: PUB;78609e55a33247dfbdccfa7d924869f5 -->
+<!-- tradingview-pine-id: PUB;wOtYtilLJovR295jPxtgyX1BMAiXDSKX -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Watermark
 
-Source: https://www.tradingview.com/script/r2nwnaeA-Modern-Watermark/
+Source: https://www.tradingview.com/script/G0I0osGM-Watermark/
 
 ## Description
 
-Clean corner watermark for screenshots and posts. 
+Look in the lower-left corner of this chart. If you load the script on your chart, you will see how the watermark animates. You can personalize it in the script's "Settings/Inputs" tab to use it in your chart snapshots.
 
-Displays the ticker with its timeframe, plus the company name, industry, and optionally the sector and exchange — pulled automatically from the symbol, so nothing needs updating when you flip charts.
+Do keep in mind that if you use it when publishing ideas, videos or scripts, [House Rules](https://www.tradingview.com/?solution=43000591638) prohibit advertising on your chart.
 
-Adjustable position (all nine anchors), text sizes, colors, and transparency. 
+For Pine coders
+This script uses our new (https://www.tradingview.com/pine-script-docs/en/v4/essential/Tables.html#) feature in Pine to position a watermark on the chart, and the new [varip](https://www.tradingview.com/script/ppQxBISk-Using-varip-variables-PineCoders/) type of variable to animate it.
 
-Percentage-based side and top padding keeps the block off the chart edge and scales with your screen. 
-
-Monospace toggle for a terminal look, plus uppercase and blank-line spacing options. Sub-lines collapse automatically on symbols without description or industry data, so futures, forex, and crypto stay clean.
+[Look first. Then leap.](https://www.tradingview.com/athletes/)
 
 ---
 
 ## Source Code
 
 ````pine
-//@version=6
-indicator("Watermark", overlay = true)
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © TradingView
 
-// ================= Inputs =================
-grpC     = "Content"
-showDesc = input.bool(true,  "Company name", group = grpC)
-showInd  = input.bool(true,  "Industry",     group = grpC)
-showSec  = input.bool(false, "Sector",       group = grpC)
-showTF   = input.bool(true,  "Timeframe next to ticker", group = grpC)
-upper    = input.bool(false, "Uppercase sub-lines",      group = grpC)
-gapSub   = input.bool(true,  "Blank line between sub-lines", group = grpC)
+//@version=5
+indicator("Watermark", "", true)
 
-grpP    = "Padding"
-padLeft = input.float(3.0, "Side padding (% of chart width)",  minval = 0, maxval = 40, step = 0.5, group = grpP)
-padTop  = input.float(6.0, "Top padding (% of chart height)",  minval = 0, maxval = 40, step = 0.5, group = grpP)
-subInd  = input.int(2, "Sub-line indent (spaces)", minval = 0, maxval = 20, group = grpP)
+// Watermark
+// v2 2022.07.24
 
-grpS    = "Style"
-posIn   = input.string("Top Left", "Position", options = ["Top Left", "Top Center", "Top Right", "Middle Left", "Middle Center", "Middle Right", "Bottom Left", "Bottom Center", "Bottom Right"], group = grpS)
-symSize = input.string("huge",   "Ticker size",   options = ["tiny", "small", "normal", "large", "huge"], group = grpS)
-subSize = input.string("normal", "Sub-line size", options = ["tiny", "small", "normal", "large"], group = grpS)
-symCol  = input.color(color.new(#d1d4dc, 25), "Ticker color",   group = grpS)
-subCol  = input.color(color.new(#787b86, 20), "Sub-line color", group = grpS)
-mono    = input.bool(false, "Monospace", group = grpS)
+// This code was written using the recommendations from the Pine Script™ User Manual's Style Guide:
+//   https://www.tradingview.com/pine-script-docs/en/v5/writing/Style_guide.html
 
-// ================= Helpers =================
-posOf(string s) =>
-    s == "Top Left"      ? position.top_left      :
-     s == "Top Center"    ? position.top_center    :
-     s == "Top Right"     ? position.top_right     :
-     s == "Middle Left"   ? position.middle_left   :
-     s == "Middle Center" ? position.middle_center :
-     s == "Middle Right"  ? position.middle_right  :
-     s == "Bottom Left"   ? position.bottom_left   :
-     s == "Bottom Center" ? position.bottom_center : position.bottom_right
 
-szOf(string s) =>
-    s == "tiny" ? size.tiny : s == "small" ? size.small : s == "normal" ? size.normal : s == "large" ? size.large : size.huge
 
-tfFmt() =>
-    int m = timeframe.multiplier
-    string out = timeframe.period
-    if timeframe.isseconds
-        out := str.tostring(m) + "s"
-    else if timeframe.isminutes
-        out := m >= 60 and m % 60 == 0 ? str.tostring(int(m / 60)) + "H" : str.tostring(m) + "m"
-    else if timeframe.isdaily
-        out := str.tostring(m) + "D"
-    else if timeframe.isweekly
-        out := str.tostring(m) + "W"
-    else if timeframe.ismonthly
-        out := str.tostring(m) + "M"
-    out
+// ———————————————————— Constants and Inputs {
 
-ok(string s) =>
-    not na(s) and s != ""
 
-subTxt() =>
-    string sep = gapSub ? "\n\n" : "\n"
-    string ind = subInd > 0 ? str.repeat(" ", subInd) : ""
-    string t = ""
-    if showDesc and ok(syminfo.description)
-        t := ind + syminfo.description
-    if showInd and ok(syminfo.industry)
-        t := t == "" ? ind + syminfo.industry : t + sep + ind + syminfo.industry
-    if showSec and ok(syminfo.sector)
-        t := t == "" ? ind + syminfo.sector : t + sep + ind + syminfo.sector
-    upper ? str.upper(t) : t
 
-// ================= Layout =================
-isLeft   = str.contains(posIn, "Left")
-isRight  = str.contains(posIn, "Right")
-isBottom = str.contains(posIn, "Bottom")
+// ————— Constants
+color  WHITE = color.new(color.white, 30)
+color  BLUE  = color.new(color.blue, 50)
+string ST_1  = "I💙TradingView"
+string ST_2  = "I💚Pine"
 
-cPad  = isRight ? 1 : 0
-cTxt  = isRight ? 0 : 1
-rPad  = isBottom ? 2 : 0
-rHead = isBottom ? 0 : 1
-rSub  = isBottom ? 1 : 2
+// ————— Inputs
+string GRP1             = "═════════  Text Input  ══════════"
+string textInput1       = input.string(ST_1,     "Text 1",    group = GRP1) 
+string textInput2       = input.string(ST_2,     "Text 2",    group = GRP1, tooltip = "Clear 'Text 2' to prevent animation.")
 
-wPad  = isLeft or isRight ? padLeft : 0.0
-align = isRight ? text.align_right : text.align_left
-fam   = mono ? font.family_monospace : font.family_default
+string GRP2             = "════════ Information Box ═════════"
+string infoBoxSizeInput = input.string("small",  "Size",      inline = "21", group = GRP2, options = ["tiny", "small", "normal", "large", "huge", "auto"])
+string infoBoxYPosInput = input.string("bottom", "↕",         inline = "21", group = GRP2, options = ["top", "middle", "bottom"])
+string infoBoxXPosInput = input.string("left",   "↔",         inline = "21", group = GRP2, options = ["left", "center", "right"])
+int    heightInput      = input.int(3,           "Height",    inline = "22", minval = 1, maxval = 100, tooltip = "1-100")
+int    widthInput       = input.int(10,          "Width",     inline = "22", minval = 1, maxval = 100, tooltip = "1-100")
+color  textColorInput   = input.color(WHITE,     "Text")
+color  bgColorInput     = input.color(BLUE,      "Background")
+// }
 
-// ================= Render =================
-var table wm = table.new(posOf(posIn), 2, 3, frame_width = 0, border_width = 0)
 
+
+// ———————————————————— Visuals {
+
+
+// We use `var` to only initialize the table on the first bar.
+var table watermark = table.new(infoBoxYPosInput + "_" + infoBoxXPosInput, 1, 1)
+
+// We only populate the table on the last bar; it's more efficient.
 if barstate.islast
-    string head = syminfo.ticker + (showTF ? "," + tfFmt() : "")
-
-    table.cell(wm, cPad, rHead, "", width = wPad,  text_size = size.tiny)
-    table.cell(wm, cTxt, rPad,  "", height = padTop, text_size = size.tiny)
-    table.cell(wm, cPad, rPad,  "", width = wPad, height = padTop, text_size = size.tiny)
-    table.cell(wm, cPad, rSub,  "", width = wPad,  text_size = size.tiny)
-
-    table.cell(wm, cTxt, rHead, head, text_color = symCol, text_size = szOf(symSize), text_halign = align, text_font_family = fam, text_formatting = text.format_bold)
-    table.cell(wm, cTxt, rSub,  subTxt(), text_color = subCol, text_size = szOf(subSize), text_halign = align, text_font_family = fam, text_formatting = text.format_bold)
+    // This `varip` variable will preserve its value across realtime updates.
+    varip bool changeText = true
+    // Toggle this value on each update.
+    changeText := not changeText
+    // If there's a "Text 2" string in inputs and it's time to flip, change the text.
+    string txt = str.length(textInput2) != 0 and changeText ? textInput2 : textInput1
+    // Populate our table cell.
+    table.cell(watermark, 0, 0, txt, widthInput, heightInput, textColorInput, text_size = infoBoxSizeInput, bgcolor = bgColorInput)
+// }
 ````

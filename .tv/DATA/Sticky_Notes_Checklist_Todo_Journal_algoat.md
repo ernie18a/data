@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;eb70cf38f57f487bbad70a7f3ab50f47 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Sticky Notes, Checklist, To-do, Journal [algoat]
 

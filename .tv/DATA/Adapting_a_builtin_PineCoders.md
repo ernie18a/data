@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;bn2YRD56TqUmieQrAfhvwN199REAmfPD -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Adapting a built-in [PineCoders]
 

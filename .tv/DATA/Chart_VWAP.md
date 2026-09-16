@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;804099ca2f324ea4a7f896df3e326474 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Chart VWAP
 

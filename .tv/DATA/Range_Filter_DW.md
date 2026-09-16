@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;pshyCmQSqlUKsVQ4FrNUAuGkurQPg3ty -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Range Filter [DW]
 

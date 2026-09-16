@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;cRfMqgEB0GBchR9qGvBXhN6bdL0rBrcV -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Time of day / day of week Sigma Spike
 

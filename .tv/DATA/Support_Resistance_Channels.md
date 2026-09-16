@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;9xd5ljxt0JLwYqt32Ve0lnIiRC0Yj9Z2 -->
+<!-- tradingview-pine-version: 6.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Support Resistance Channels
 

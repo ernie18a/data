@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;a75877b2736b4c3bba516e268595479f -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # TASC 2025.11 The Points and Line Chart
 

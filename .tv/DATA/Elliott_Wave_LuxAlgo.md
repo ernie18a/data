@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;c2e3f3c9aba44ad9b81e1d5d44a45fc2 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Elliott Wave [LuxAlgo]
 

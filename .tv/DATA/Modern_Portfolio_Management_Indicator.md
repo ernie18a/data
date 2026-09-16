@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;3ccf81360ccf40e19bee0521120df557 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Modern Portfolio Management Indicator
 

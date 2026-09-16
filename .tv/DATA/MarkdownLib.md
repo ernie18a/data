@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;4a52977f636a4e39b55e0c4bf6be43dc -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # MarkdownLib
 

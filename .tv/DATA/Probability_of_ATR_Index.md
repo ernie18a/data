@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;RQIytRSurbASZndobLAth4QS00RoyyqD -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Probability of ATR Index
 

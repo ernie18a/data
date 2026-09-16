@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;jAarxd7972oLro2b70KOoRUqCjafc2km -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # RSI buy sell force ver 1 
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;8f868383ab3d43c98faba7767b72e544 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # MACD with HTF Panels [theUltimator5]
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;nTK2sHWDlBGsoTsTAAIcDRWWjDMzehe6 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Screener - Mean Reversion Channel
 

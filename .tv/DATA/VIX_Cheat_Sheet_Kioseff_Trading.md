@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;72c732574fd84bb1aa0cdba58bd2f29b -->
+<!-- tradingview-pine-version: 14.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # VIX Cheat Sheet [Kioseff Trading]
 

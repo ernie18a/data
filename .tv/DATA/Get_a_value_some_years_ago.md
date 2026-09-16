@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;cq88kgpKe44aJbgfhaJ18VCc2bJY2aO6 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Get a value some years ago
 

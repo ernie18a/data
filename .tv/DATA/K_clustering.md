@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;8e82f5aa4b0f4f9da1a6d8d09dab326f -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # K clustering
 

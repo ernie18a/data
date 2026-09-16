@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;c5150782cf534904996d58386f951456 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # TrendMaster Pro 2.3 with Alerts
 

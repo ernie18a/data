@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;WmJGJqp7vZSeNSHcWZiyFhcvKbwbiMgq -->
+<!-- tradingview-pine-version: 11.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Relative Strength of Volume Indicators by DGT
 
@@ -135,9 +136,8 @@ volx = switch volComp
 // Volume Histogram
 plot(bool(nzVolume) and volHist == 'Relative Volume' ? nzVolume / vAvg * size : na, 'Relative Volume (RVOL)', O > C ? color.new(#ef5350, 0) : color.new(#26a69a, 0), style = plot.style_columns, editable = false, display = display)
 plot(bool(nzVolume) and volHist == 'Relative Volume [4 Color]' ? nzVolume / vAvg * size : na, 'Relative Volume (RVOL · Context)', O > C ? nzVolume / vAvg * math.abs(size) > math.abs(rvAvg) ? color.new(#ef5350, 0) : color.new(color.gray, 25) : nzVolume / vAvg * math.abs(size) > math.abs(rvAvg) ? color.new(#26a69a, 0) : color.new(color.gray, 55), style = plot.style_columns, editable = false, display = display)
-plot(bool(nzVolume) and (volHist == 'Buying/Selling Volume [1]' or volHist == 'Buying/Selling Volume [2]') ? volHist == 'Buying/Selling Volume [1]' ? S + B : B : na, 'Buy-Side Volume', color.new(#26a69a, 0), style = plot.style_columns, editable = false, display = display)
-plot(bool(nzVolume) and (volHist == 'Buying/Selling Volume [1]' or volHist == 'Buying/Selling Volume [2]') ? volHist == 'Buying/Selling Volume [1]' ? S : -S : na, 'Sell-Side Volume', color.new(#ef5350, 0), style = plot.style_columns, editable = false, display = display)
-
+plot(bool(nzVolume) and (volHist == 'Buying / Selling Volume [Mode 1]' or volHist == 'Buying / Selling Volume [Mode 2]') ? volHist == 'Buying / Selling Volume [Mode 1]' ? S + B : B : na, 'Buy-Side Volume', color.new(#26a69a, 0), style = plot.style_columns, editable = false, display = display)
+plot(bool(nzVolume) and (volHist == 'Buying / Selling Volume [Mode 1]' or volHist == 'Buying / Selling Volume [Mode 2]') ? volHist == 'Buying / Selling Volume [Mode 1]' ? S : -S : na, 'Sell-Side Volume', color.new(#ef5350, 0), style = plot.style_columns, editable = false, display = display)
 // Histogram Companion
 plot(bool(nzVolume) and volHist != 'None' ? volx : na, 'Volume Companion', color.new(color.orange, 20), 2, display = display)
 

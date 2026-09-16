@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;VQW7dheiTX9SEvbGRM7XVlIqERV2AITs -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Function Polynomial Regression
 

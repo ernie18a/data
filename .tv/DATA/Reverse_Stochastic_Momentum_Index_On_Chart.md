@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;lcAyAeNEsA8mrA7Ac592PLWh6aHS5LeI -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Reverse Stochastic Momentum Index On Chart
 

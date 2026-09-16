@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;cw2cjgjJGSfOEGp1i58F0wyQnHOS4FdD -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Trend Following MAs 3D
 

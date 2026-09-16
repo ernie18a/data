@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;NLRx5KoTBJgEqhzzoiNhRnBSxYzLTS2D -->
+<!-- tradingview-pine-version: 8.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Delta Volume Columns Pro [LucF]
 

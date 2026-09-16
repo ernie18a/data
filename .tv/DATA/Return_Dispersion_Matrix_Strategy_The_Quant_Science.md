@@ -1,0 +1,186 @@
+<!-- tradingview-pine-id: PUB;ba4ce3147af44be0bcfa7cbb3a8a85b7 -->
+<!-- tradingview-pine-version: 1.0 -->
+<!-- tradingviewscripts-format: 1 -->
+# Return Dispersion Matrix Strategy [The Quant Science]
+
+Source: https://www.tradingview.com/script/vrrutnMb-Return-Dispersion-Matrix-Strategy-The-Quant-Science/
+
+## Description
+
+This is a simple buy and sell strategy developed using the Dispersion Return Matrix indicator.
+[image]https://www.tradingview.com/x/PUdprEi4/[/image]
+
+Before proceed, if you are new to Dispersion Return Matrix
+About Dispersion Return Matrix: [https://www.tradingview.com/script/ZN19COW6-Return-Dispersion-Matrix-The-Quant-Science/](https://www.tradingview.com/script/ZN19COW6-Return-Dispersion-Matrix-The-Quant-Science/)
+
+This strategy script highlights the potential of Pine Script, which makes it easy to incorporate quantitative ideas into your trading strategy. In this example, the algorithm decides which type of entry to choose based on the current market conditions. 
+
+[*]🚦🟢 When Quadrant Q1 is dominant, the market is in a strong trend phase and is suitable for trend-following and bullish breakout strategies. Strat will use a trend-following approach for entries in this market phase. 
+[*]🚦🟢 When Quadrant Q2 indicates a mean reverting market where buyers step in immediately when prices fall, suitable for accumulation strategies on pullbacks. In this phase, we will use RSI oversold entries. 
+[*]🚦❌ When Quadrants Q2 and Q3 dominate the market, no trading is conducted, as there are no trading opportunities for our strategy during this phase.
+
+What is it for?
+
+[*]To test the indicator's functionality within a trading strategy.
+[*]To demonstrate how to structure a trading strategy by integrating the Dispersion Return Matrix into your code.
+
+The algorithm monitors the market and trades only when quadrants Q1 and Q2 are the winners, ensuring that it trades during a favorable market condition. The algorithm never trades when Q3 and Q4 dominate the market.
+
+Depending on the winning quadrant, the algorithm applies two different entry strategies:
+
+[*]🏆Q1 Win: Trend following strategy
+🟢 Entry condition: closing price higher than the previous closing price and price above the 20-period SMA.
+[pine]trend_following_strat_entry = close > close[1] and close > sma [/pine]
+[*]🏆Q2 Win: Mean reverting strategy
+🟢 Entry Condition: The RSI(14) indicator crosses below the oversold level of 35.
+[pine]mean_revert_strat_entry = ta.crossunder(rsi, 35) [/pine]
+
+Exits are always calculated using a take-profit and a fixed percentage stop-loss. The take-profit and stop-loss values are calculated based on the entry price of the opening trade.
+The values set in the code are 🟢 5% for the take-profit and 🔴 15% for the stop-loss.
+[pine]tp = 5
+sl = 15[/pine]
+
+The capital used for trading is 10% of the initial capital.
+[pine]qty_order  := (strategy.initial_capital * 10)/100[/pine]
+
+Opens only one trade at a time.
+
+The algorithm highlights in white on the chart the market periods when Q3 and Q4 dominate the market, making it easy to assess the strategy's reliability in the past.
+[image]https://www.tradingview.com/x/9yntLlvN/[/image]
+
+---
+
+## Source Code
+
+````pine
+// This work is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International  
+// https://creativecommons.org/licenses/by-nc-sa/4.0/
+// © The Quant Science
+
+//@version=6
+strategy(
+     'Return Dispersion Matrix Strategy [The Quant Science]',
+     overlay = true,
+     default_qty_type = strategy.cash,
+     initial_capital = 100000,
+     pyramiding = 10,
+     currency = currency.USDT,
+     commission_type = strategy.commission.percent,
+     commission_value = 0.07,
+     slippage = 5,
+     process_orders_on_close = true,
+     close_entries_rule = "ANY"
+     )
+
+int data_points_visualization = input.int(50, 'Data Points', minval = 5, maxval = 450)
+
+float current_returns = (close - close[1]) / close[1] * 100.0
+float previous_returns = (close[1] - close[2]) / close[2] * 100.0
+
+var float[] returns_x = array.new<float>(0)
+var float[] returns_y = array.new<float>(0)
+
+returns_x.push(previous_returns)
+returns_y.push(current_returns)
+
+if returns_x.size() > data_points_visualization
+    array.shift(returns_x)
+    array.shift(returns_y)
+
+var int dominant_quadrant = 0
+var float q1_pct = 0.0
+var float q2_pct = 0.0
+var float q3_pct = 0.0
+var float q4_pct = 0.0
+
+if returns_x.size() > 0
+    int total_points = returns_y.size()
+    
+    int count_q1 = 0
+    int count_q2 = 0
+    int count_q3 = 0
+    int count_q4 = 0
+
+    for i = 0 to total_points - 1
+        float X = returns_x.get(i)
+        float Y = returns_y.get(i)
+        
+        if X >= 0 and Y >= 0
+            count_q1 += 1
+        else if X < 0 and Y >= 0
+            count_q2 += 1
+        else if X < 0 and Y < 0
+            count_q3 += 1
+        else if X >= 0 and Y < 0
+            count_q4 += 1
+
+    q1_pct := (count_q1 / float(total_points)) * 100.0
+    q2_pct := (count_q2 / float(total_points)) * 100.0
+    q3_pct := (count_q3 / float(total_points)) * 100.0
+    q4_pct := (count_q4 / float(total_points)) * 100.0
+
+    dominant_quadrant := 1
+    int max_val = count_q1
+
+    if count_q2 > max_val
+        max_val := count_q2
+        dominant_quadrant := 2
+    if count_q3 > max_val
+        max_val := count_q3
+        dominant_quadrant := 3
+    if count_q4 > max_val
+        max_val := count_q4
+        dominant_quadrant := 4
+
+trend_following_strat = dominant_quadrant == 1 
+mean_rev_strat = dominant_quadrant == 2
+no_trading = dominant_quadrant == 3 or dominant_quadrant == 4
+
+sma = ta.sma(close, 20)
+trend_following_strat_entry = close > close[1] and close > sma 
+rsi = ta.rsi(close, 14)
+mean_revert_strat_entry = ta.crossunder(rsi, 35) 
+
+var float init_price = 0
+var float qty_order = 0
+var float take_profit_level = 0
+var float stop_profit_level = 0
+
+tp = 5
+sl = 15
+
+if (trend_following_strat and trend_following_strat_entry and strategy.opentrades == 0)
+    init_price := close 
+    qty_order  := (strategy.initial_capital * 10)/100
+    strategy.entry(id="Open Trend Following", direction = strategy.long, qty = qty_order/init_price, limit = init_price)
+    take_profit_level := (init_price + ((init_price * tp)/100))
+    stop_profit_level := (init_price - ((init_price * sl)/100))
+
+tp_condition = ta.crossover(close, take_profit_level)
+sl_condition = ta.crossunder(close, stop_profit_level)
+
+if (tp_condition)
+    strategy.exit(id = "Take Profit Trend Following", from_entry = "Open Trend Following", qty_percent = 100, limit = take_profit_level)
+if (sl_condition)
+    strategy.exit(id = "Stop Loss Trend Following", from_entry = "Open Trend Following", qty_percent = 100, limit = stop_profit_level)
+
+var float take_profit_level_pull_back_strat = 0
+var float stop_profit_level_pull_back_strat = 0
+
+if (mean_revert_strat_entry and mean_rev_strat and strategy.opentrades == 0)
+    init_price := close 
+    qty_order  := (strategy.initial_capital * 50)/100
+    strategy.entry(id="Open Mean Revert", direction = strategy.long, qty = qty_order/init_price, limit = init_price)
+    take_profit_level_pull_back_strat := (init_price + ((init_price * tp)/100))
+    stop_profit_level_pull_back_strat := (init_price - ((init_price * sl)/100))
+
+tp_condition_pull_back_strat = ta.crossover(close, take_profit_level_pull_back_strat)
+sl_condition_pull_back_strat = ta.crossunder(close, stop_profit_level_pull_back_strat)
+
+if (tp_condition_pull_back_strat)
+    strategy.exit(id = "Take Profit Mean Revert", from_entry = "Open Mean Revert", qty_percent = 100, limit = take_profit_level_pull_back_strat)
+if (sl_condition_pull_back_strat)
+    strategy.exit(id = "Stop Loss Mean Revert", from_entry = "Open Mean Revert", qty_percent = 100, limit = stop_profit_level_pull_back_strat)
+
+bgcolor(no_trading ? color.new(color.white, 85) : na)
+````

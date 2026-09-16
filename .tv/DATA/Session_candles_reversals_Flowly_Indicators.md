@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;8e09a0b882aa4564a434e1a41179fa66 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Session candles & reversals / Flowly Indicators
 

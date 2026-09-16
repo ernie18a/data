@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;be08607f9e5e41a8a92dcb9ff4fe1ba8 -->
+<!-- tradingview-pine-version: 8.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Adaptive Candlestick Pattern Recognition System
 

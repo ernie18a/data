@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;7a9165bd509c4068bf6a14be567368ed -->
+<!-- tradingview-pine-version: 6.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Financials on Chart
 

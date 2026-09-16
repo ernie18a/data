@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;euT0woJ0jWenKyNnGZhnRjrQPf61bVmn -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Stepped trailing strategy example
 

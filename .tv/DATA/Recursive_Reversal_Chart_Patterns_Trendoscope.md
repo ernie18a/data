@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;c1da465c0af24a6d9f45bfaa1e602066 -->
+<!-- tradingview-pine-version: 7.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Recursive Reversal Chart Patterns [Trendoscope®]
 

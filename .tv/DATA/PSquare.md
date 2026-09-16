@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;MdNIn2TVdRdcPEgRAtvH0F3P9Wxmex2j -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # P-Square
 

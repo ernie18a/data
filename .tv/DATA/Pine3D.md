@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;52a52a65c3954293bfbf1a506b394c3d -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Pine3D
 

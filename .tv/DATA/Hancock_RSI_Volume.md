@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;wnV7v6VMJ1xrItsYrxztoR2NUJwLITeM -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Hancock - RSI Volume
 

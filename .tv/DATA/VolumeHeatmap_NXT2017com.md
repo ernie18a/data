@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;lsNQhrWRCrxGkZBCdivElgHUCnMIzLAH -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # VolumeHeatmap | NXT2017.com
 

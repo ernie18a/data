@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;SkBhZ1d0a0vyZcJjNrP3B2n6MkwxcmUL -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Sector Sigma
 

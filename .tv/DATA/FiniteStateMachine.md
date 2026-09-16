@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;d7c6070996dc46b0bfa0b6a1261b2eb9 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # FiniteStateMachine
 

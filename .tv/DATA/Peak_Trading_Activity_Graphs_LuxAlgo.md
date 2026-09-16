@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;b93df3ed4e9644c79b241a88c0d19c52 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Peak Trading Activity Graphs [LuxAlgo]
 

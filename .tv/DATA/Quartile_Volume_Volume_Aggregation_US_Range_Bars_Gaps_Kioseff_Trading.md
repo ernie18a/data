@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;80883dd889cd4ce68bd19dface128ce6 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # (Quartile Volume; Volume Aggregation; US Range Bars; Gaps) [Kioseff Trading]
 

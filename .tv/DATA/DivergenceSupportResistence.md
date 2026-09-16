@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;77173a1d672d4000b42448463ea78dac -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Divergence-Support/Resistence
 

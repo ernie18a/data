@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;jELdwvJibAscEamRwfeQDWeOsdQP0C7X -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # MM Fibonacci
 

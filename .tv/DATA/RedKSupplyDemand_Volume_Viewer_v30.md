@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;RwKzgMjrt0B7MSZW3rECelRlxG2urtuM -->
+<!-- tradingview-pine-version: 6.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # RedK_Supply/Demand Volume Viewer v3.0
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;b6c70b371de649f78a3061f5e161ad03 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Market Manipulation Index (MMI)
 

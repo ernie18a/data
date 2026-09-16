@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;hcEYzXcDhlDnvHlAGYJcM8ESsCSvhLaF -->
+<!-- tradingview-pine-version: 7.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # [RS]Bar Pattern Statistics Tool
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;NXPkhxTebtMHkGhrl7XAljXtkTUta9e2 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # TF Segmented Linear Regression
 

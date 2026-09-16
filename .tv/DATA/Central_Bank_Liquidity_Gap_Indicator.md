@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;19b5574bd1a045b68f53a21e9460c406 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Central Bank Liquidity Gap Indicator
 

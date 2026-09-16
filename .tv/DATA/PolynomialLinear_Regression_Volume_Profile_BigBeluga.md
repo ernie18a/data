@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;b65e42bf02624727a96585151deda877 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Polynomial/Linear Regression Volume Profile [BigBeluga]
 

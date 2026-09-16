@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;a90f1063e7ec4c6a916bd812bdae38ca -->
+<!-- tradingview-pine-version: 12.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Stochastic Momentum Index (SMI) of Money Flow Index (MFI)
 

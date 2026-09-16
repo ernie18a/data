@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;VLTZwszWR3bTAisOsKwjoOu1i4ZhapIA -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Equivolume Bars
 

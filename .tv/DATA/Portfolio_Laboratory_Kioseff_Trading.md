@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;5e0303e8c1a947a78d452918daa0c7e7 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Portfolio Laboratory [Kioseff Trading]
 

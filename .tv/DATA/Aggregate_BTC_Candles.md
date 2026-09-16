@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;zOBMzgRpus4LLvTUtp4c26hg90WN43Jq -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Aggregate BTC Candles
 

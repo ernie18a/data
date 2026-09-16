@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;a33c76ff89b94e22a54ebd5a620d890d -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # imlib
 

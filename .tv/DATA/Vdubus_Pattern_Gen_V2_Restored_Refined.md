@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;66dc68412e0548f4bd73df9177febb7b -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Vdubus Pattern Gen V2 [Restored & Refined]
 

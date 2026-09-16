@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;74ccf200a430478ead7e389c6fcfb6ea -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Simple Decision Matrix Classification Algorithm [SS]
 

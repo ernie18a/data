@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;526d8f8b73cc4722921406b137f12d86 -->
+<!-- tradingview-pine-version: 12.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Motion
 

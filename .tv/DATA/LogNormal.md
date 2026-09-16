@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;19b83d5f68a740ffb0d9dba8fdf24d6d -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # LogNormal
 

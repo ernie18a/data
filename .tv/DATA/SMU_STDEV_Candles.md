@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;qMD118DlIWzZI5roMqyrP5BYrCK6d04N -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # SMU STDEV Candles
 

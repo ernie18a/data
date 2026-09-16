@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;06d850eeae8e4f2d93046b5f295e175c -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Smart Trader, Episode 05, by Ata Sabanci — Concentric Candles & Aristotelian Cycloids
 

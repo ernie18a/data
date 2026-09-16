@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;3618b12a8f774c3b94a03205c3de3638 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Market Structure Volume Profiles [Kioseff Trading]
 

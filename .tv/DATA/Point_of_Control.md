@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;d80eed3e726a4142b9804f5aafc4a95b -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Point of Control
 

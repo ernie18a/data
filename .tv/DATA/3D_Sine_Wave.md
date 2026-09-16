@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;e647ca9eb5524ef9a701f02cce8f9983 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # 3D Sine Wave
 

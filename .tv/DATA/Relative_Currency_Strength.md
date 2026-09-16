@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;HFIaUMsUIbdIwWBXMcQN9sn4Y3Tymj7e -->
+<!-- tradingview-pine-version: 7.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Relative Currency Strength
 

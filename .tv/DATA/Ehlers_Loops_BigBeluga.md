@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;3d0e8496cc7845bbb8c8d568bf189217 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Ehlers Loops [BigBeluga]
 

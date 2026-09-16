@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;6wEi0chxVOS0qB6pQJqBBRZunetdvhnK -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Trend Type Indicator by BobRivera990
 

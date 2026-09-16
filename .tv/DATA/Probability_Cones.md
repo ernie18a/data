@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;e5479b2c0b624ceab4c8e6401f1e79d7 -->
+<!-- tradingview-pine-version: 10.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Probability Cones
 

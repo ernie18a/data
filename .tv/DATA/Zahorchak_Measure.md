@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;LlfWVG7VZFoyKNEaq6GsE0D2XoueWvaI -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Zahorchak Measure
 

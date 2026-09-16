@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;a3ee8b43a26b4080abb5d6fe1b037dcd -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Liquidity Void Detector (Zeiierman)
 

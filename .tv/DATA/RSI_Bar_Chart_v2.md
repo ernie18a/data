@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;jtwOfuQ4ukd2NAqZCMiiON1CbfjyWNOD -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # RSI Bar Chart v2
 

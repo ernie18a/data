@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;c2v4qk8DRQlQnOeuaowrmySj1a4Qy0sY -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Polynomial Regression Bands + Channel [DW]
 

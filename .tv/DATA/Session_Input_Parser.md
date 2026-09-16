@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;FYiKNkoW0Mi6VN4JHnIFZjc9vdA9a1oj -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Session Input Parser
 

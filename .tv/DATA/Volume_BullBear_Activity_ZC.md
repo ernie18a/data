@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;d887d7e7edc542feb69b56d30cc1272a -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Volume Bull/Bear Activity [ZC]
 

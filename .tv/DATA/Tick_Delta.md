@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;bLMMrGiC0nD9gvEbUNIiWpLjjjhOMuhl -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Tick Delta
 

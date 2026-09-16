@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;GdkmXaTINI8knwuCrctQD1pB5dFaRnyr -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Blackflag FTS
 

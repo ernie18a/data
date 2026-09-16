@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;2lteb6l2tkaWsLlOnbiNJpQEhIQXU34c -->
+<!-- tradingview-pine-version: 6.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Heatmap Volume [xdecow]
 

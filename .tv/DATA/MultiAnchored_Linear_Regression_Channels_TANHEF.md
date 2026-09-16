@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;89b2f7f2c4e14d5585488c468a7af718 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Multi-Anchored Linear Regression Channels [TANHEF]
 

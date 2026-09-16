@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;5hDe5CmfCj1HVXq3be9ZofjOdprNzGmI -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Fibonacci Auto Trend Scouter
 

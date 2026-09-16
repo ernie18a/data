@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;5a96b938b91d412781b5f2d35e64a23a -->
+<!-- tradingview-pine-version: 9.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Economic Calendar [DojiEmoji]
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;qVQSTywH5usglWBGbdAFPR5dOG5aJXfz -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # BERLIN Candles
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;ckgSq3I4CYTbgGF4qcBx8hRXOWpX8LuB -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # RSI cyclic smoothed
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;ccd86a8092244a54a635c1ba20a3f5bf -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Wolfe Scanner [Trendoscope®]
 

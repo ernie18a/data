@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;45fd01f8ae97439f8506d12ef7e40749 -->
+<!-- tradingview-pine-version: 9.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Bjorgum AutoTrail
 

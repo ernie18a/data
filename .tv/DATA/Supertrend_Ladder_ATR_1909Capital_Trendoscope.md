@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;c61e4a062a284871841f3bde06c57b3e -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Supertrend - Ladder ATR - 1909Capital [Trendoscope®]
 

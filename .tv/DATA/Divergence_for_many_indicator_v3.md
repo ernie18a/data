@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;32RglIImMggZoS8URUje26840e8Kj8Ac -->
+<!-- tradingview-pine-version: 13.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Divergence for many indicator v3
 

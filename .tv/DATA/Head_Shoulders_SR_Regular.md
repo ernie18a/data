@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;882635ff69464d078bef2ee0d08adeb3 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Head & Shoulders S/R Regular
 

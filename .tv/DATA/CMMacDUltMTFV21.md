@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;f9af35aecc5d410a8c5eced2aa5417df -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # _CM_MacD_Ult_MTF_V2.1
 

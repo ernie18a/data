@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;1d12cb9e79cf46a3b3b579ee21730207 -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Portfolio Backtester
 

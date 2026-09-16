@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;f9Aq9UQUZN1dY47QpVxTHsvJNcfdGdE7 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Reflex Oscillator - Dr. John Ehlers
 

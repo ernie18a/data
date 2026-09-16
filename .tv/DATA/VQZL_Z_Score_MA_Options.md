@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;YAN2G3PDEt6hZ85tyMUsSET8ausTpz95 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # VQZL Z Score + MA Options
 

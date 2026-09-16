@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;1d57cddd07dc47d0b5e55a8f66626c2b -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Multi-Ticker Anchored Candles
 

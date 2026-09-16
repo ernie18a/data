@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;9d1a51151a42494c88a5ed46d68a33e5 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # [XeL]:trimmedHarrellDavis.weighted.quantileEstimator.outlierAbsDeviations
 

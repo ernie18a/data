@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;efe2d5bcfec34de3a6bc888e255b937d -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # SimpleTrendlines
 

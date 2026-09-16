@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;832cde6d2a0646a5be95057e61d9fd5b -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Volume Rotor Clock [hapharmonic]
 

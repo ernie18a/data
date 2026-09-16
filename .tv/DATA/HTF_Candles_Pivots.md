@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;ddead80786504d46a18c1434615b51c1 -->
+<!-- tradingview-pine-version: 38.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # HTF Candles & Pivots
 

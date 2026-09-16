@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;0TkL9MDvZPz9nIgMgdSOcK9m5bkPijq1 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Function - Logistic Equation
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;2590687910d8445394340097cf50770b -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Chart Patterns Screener [Trendoscope®]
 

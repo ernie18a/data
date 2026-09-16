@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;94rkh4pBNidPI0OOznhEEQy87YdOKZRt -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # CME Equity Futures Price Limits
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;81f33fe72c1b4ae692bed7c06dc5f65a -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # PSv5 Color Magic and Chart Theme Simulator
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;62240b84315c4a4c8feed1c015cfbe13 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Risk-Adjusted Momentum Oscillator
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;310208d199cf48138da010725cb66349 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # BIN Based Support and Resistance [SS]
 

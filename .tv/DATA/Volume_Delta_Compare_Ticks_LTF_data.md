@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;62dd5b72451f47b784d7029311f4fda6 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Volume Delta Compare [Ticks ~ LTF data]
 

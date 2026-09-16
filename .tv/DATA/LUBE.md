@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;LybzQX9gYF6O4lzbC4tIzLF1Omml8yGc -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # LUBE
 

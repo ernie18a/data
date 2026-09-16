@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;b74788b7aa7146ecad34c590a001f8a8 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Breakout Probability (Expo)
 

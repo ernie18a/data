@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;bDX86JxdHUvIXFpndbvg2WfjWZcqC8tj -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Stochastic Weights - Basic [BigBitsIO]
 

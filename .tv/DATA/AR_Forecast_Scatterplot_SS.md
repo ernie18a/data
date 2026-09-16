@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;a4fcf72f984842d09a28368fd00bddac -->
+<!-- tradingview-pine-version: 8.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # AR Forecast Scatterplot [SS]
 

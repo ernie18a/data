@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;QyDEhGL8DBRp0dSHvun5TTcwgM2HiKVn -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Anti-Volume Stop Loss
 

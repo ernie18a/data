@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;Lgver9jSFMKT7PmoKxTehg4YCq295Sas -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Projection
 

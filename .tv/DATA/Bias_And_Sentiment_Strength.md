@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;5rsTPTLntJ1RZRTLFAPbiSD2uKfbC0Xw -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Bias And Sentiment Strength
 

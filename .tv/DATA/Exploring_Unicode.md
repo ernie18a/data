@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;plVY7bXmjnUhB8phGlswFi1sf7BeCSqj -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Exploring Unicode
 

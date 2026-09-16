@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;aa8220662718446aaba5a1e2c43e9ac3 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Time-of-Day/Session Performance Stats [QuantAlgo]
 

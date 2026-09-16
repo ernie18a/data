@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;4849a6f8dbc443a2a8ae220fe7d92783 -->
+<!-- tradingview-pine-version: 8.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # ErrorFunctions
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;oVW9DDhbtAhuXDDMleMk3Bes6VKcBifv -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Dynamic Money Flow
 

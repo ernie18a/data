@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;jN9HBNhynFqGOf4KrVcu2d0TU9g0jvGR -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # PMax Explorer
 

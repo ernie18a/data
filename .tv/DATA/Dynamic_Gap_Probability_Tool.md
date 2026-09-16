@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;4a9ce9caf95e453ebbcfd283423282c0 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Dynamic Gap Probability Tool
 

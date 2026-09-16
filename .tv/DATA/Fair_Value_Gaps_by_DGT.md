@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;bddd296a97e5457892a4f47c088cc699 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Fair Value Gaps by DGT
 

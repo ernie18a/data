@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;ee98274f9260484f93daaa6c60692c2a -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Daily Chess Puzzles [LuxAlgo]
 

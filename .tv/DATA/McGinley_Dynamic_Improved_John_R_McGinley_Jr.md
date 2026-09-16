@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;PRBcBYKD4K3zpkQEov76F8SqUYwcC6Le -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # McGinley Dynamic (Improved) - John R. McGinley, Jr.
 

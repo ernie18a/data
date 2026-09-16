@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;854458ba330042c5a7bd73ff39dbdf2e -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # T-Virus Sentiment [hapharmonic]
 

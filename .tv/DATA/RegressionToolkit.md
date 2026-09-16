@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;ca41d3393aa2450fb23a8cf21c89cf1e -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Regression_Toolkit
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;cf7752de8b4246fd8a8c97b35323ce7d -->
+<!-- tradingview-pine-version: 6.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Recursive Auto-Pitchfork [Trendoscope®]
 

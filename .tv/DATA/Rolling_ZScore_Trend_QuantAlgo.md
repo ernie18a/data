@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;5314a42dacec41d99ee904b93220f50f -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Rolling Z-Score Trend [QuantAlgo]
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;3ee3f3976fdc4c5b8078f075d928d8c9 -->
+<!-- tradingview-pine-version: 7.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Adaptive Volume Delta Map
 

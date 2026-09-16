@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;HZzMFSIxna33V3lOHB0BCSjQOuIqe8BE -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # security free MTF example - JD
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;763eafb5d10145cfbc795cc700306ff6 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Fast Fourier Transform (FFT) Filter
 

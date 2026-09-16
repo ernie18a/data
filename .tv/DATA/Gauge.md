@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;5fdf4403474c44e8929e10f56a0789bd -->
+<!-- tradingview-pine-version: 6.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Gauge
 

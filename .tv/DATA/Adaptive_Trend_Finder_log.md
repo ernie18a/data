@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;ba9f13f5202641d98be870489b624af2 -->
+<!-- tradingview-pine-version: 22.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Adaptive Trend Finder (log)
 

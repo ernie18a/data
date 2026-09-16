@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;AuVCpaVo2YGf4cxsVqp0LxAeJTWNB3yx -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Grid Like Strategy
 

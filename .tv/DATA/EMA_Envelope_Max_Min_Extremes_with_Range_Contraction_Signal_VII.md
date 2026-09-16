@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;lXhiurTwkfOocRzqBjKyh1TJNX5Y3PWj -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # EMA Envelope Max Min Extremes with Range Contraction Signal VII
 

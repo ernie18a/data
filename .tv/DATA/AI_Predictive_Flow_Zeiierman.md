@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;dba2006ff583470dbbe956447dff6b6c -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # AI Predictive Flow (Zeiierman)
 

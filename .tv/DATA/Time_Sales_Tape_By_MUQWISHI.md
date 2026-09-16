@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;d4e05769407d4bcda4f16ec5a69df766 -->
+<!-- tradingview-pine-version: 6.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Time & Sales (Tape) [By MUQWISHI]
 

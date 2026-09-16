@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;9f9f713bc85b431e84afe7178496ab62 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # LOWESS (Locally Weighted Scatterplot Smoothing) [ChartPrime]
 

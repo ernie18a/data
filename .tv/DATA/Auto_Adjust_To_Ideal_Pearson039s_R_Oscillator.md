@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;IhPzNIl5MSJ2uxuBq68jX0Yok7nKxWq4 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Auto Adjust To Ideal Pearson&#039;s R Oscillator
 

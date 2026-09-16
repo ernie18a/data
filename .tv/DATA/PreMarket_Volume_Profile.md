@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;C1onfnPS83Q5TrTc5g1Z2Ji2uVeIOjn8 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Pre-Market Volume Profile
 

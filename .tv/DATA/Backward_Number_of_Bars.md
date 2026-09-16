@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;uRXyFtGUi1dNuqSltJvo3792Jn2lwM61 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Backward Number of Bars
 

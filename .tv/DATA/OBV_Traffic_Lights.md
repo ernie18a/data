@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;PPOIw8gOeHAVavFnSwoHInFtxkF4yqSA -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # OBV Traffic Lights
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;21f5ec5277b24ce6bc8dfc3fdb3eda10 -->
+<!-- tradingview-pine-version: 6.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Machine Learning: Lorentzian Classification
 

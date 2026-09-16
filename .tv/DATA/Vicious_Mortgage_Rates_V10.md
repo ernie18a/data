@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;oBdDCOqXAF2XJvYyRl74CSMzJJP49OPH -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Vicious Mortgage Rates V1.0
 

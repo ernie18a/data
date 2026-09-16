@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;69ee1d26c5ad4ec2846decbfa8c1609b -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Expected Value Monte Carlo
 

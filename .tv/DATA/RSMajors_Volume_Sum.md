@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;0vm8c5CQ7mQAzZV6UseMSX9hskJweO9J -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # [RS]Majors Volume Sum
 

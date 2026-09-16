@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;673af938de22407db19c6c280007a724 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # EVaR Indicator and Position Sizing
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;UjXXg2L3tfQdRdqDX80Y4o0D0jD0xaeZ -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Renko RSI
 

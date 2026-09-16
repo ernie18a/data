@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;fb6471a4d9d84f8ebaf879ba690d6b23 -->
+<!-- tradingview-pine-version: 8.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # CVD - Cumulative Volume Delta Candles
 

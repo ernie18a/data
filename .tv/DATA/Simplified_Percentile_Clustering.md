@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;53c863aae2cd439a9d1a24612b29c3d3 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Simplified Percentile Clustering
 

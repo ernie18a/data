@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;92c559802790439b8e74c397f2dd8f21 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # RiskMetrics
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;3d8b91f226af41dfa36df2db1c21ae80 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Volume Profile, Pivot Anchored by DGT
 

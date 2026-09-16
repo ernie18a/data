@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;7f340ec4a24b4201ac7be3e89aa6e87e -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # ATAI Volume Pressure Analyzer V 1.3 — Pure Up/Down
 

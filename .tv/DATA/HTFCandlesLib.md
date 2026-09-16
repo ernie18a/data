@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;d6f32dd33dbd4895802cda7ef428244a -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # HTFCandlesLib
 

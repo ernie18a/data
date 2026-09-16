@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;e4d3f469067c41e3826740f0710ee152 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Synthetic VX3! & VX4! continuous /VX futures
 

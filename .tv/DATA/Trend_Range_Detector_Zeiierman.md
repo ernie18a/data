@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;56816eee0d9c436bbfe1ad4e20404c68 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Trend Range Detector (Zeiierman)
 

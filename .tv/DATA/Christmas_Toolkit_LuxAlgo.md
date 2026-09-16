@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;3be02d6caf6d4e53b60090919a85f2db -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Christmas Toolkit [LuxAlgo]
 

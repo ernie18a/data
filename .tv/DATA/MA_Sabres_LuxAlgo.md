@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;591a0eafa317404585a1bb85ee439571 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # MA Sabres [LuxAlgo]
 

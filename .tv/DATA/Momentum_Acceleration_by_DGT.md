@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;LLDfQly5a5pIeUmBtQP0Sxdh0SSioYYx -->
+<!-- tradingview-pine-version: 9.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Momentum Acceleration by DGT
 

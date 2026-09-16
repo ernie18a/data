@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;968a0b119b7b4f05979e0c668f5897e8 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # CAGR Custom Range
 

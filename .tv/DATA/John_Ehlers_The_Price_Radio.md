@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;MIpad8EDpyM5jl51q4BqEgN9USU2BlgP -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # John Ehlers - The Price Radio
 

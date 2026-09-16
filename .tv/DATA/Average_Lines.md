@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;4c7fd659f334436cb280bb8fe37e7929 -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Average Lines
 

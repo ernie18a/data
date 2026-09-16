@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;wzM7wUz6LQu6zEGB6yJdpjO6oX3Z4m4M -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # RedK Slow_Smooth WMA
 

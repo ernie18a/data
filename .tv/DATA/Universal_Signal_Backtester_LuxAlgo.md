@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;c7d751cfc105432da8e69c7b90add9a2 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Universal Signal Backtester [LuxAlgo]
 

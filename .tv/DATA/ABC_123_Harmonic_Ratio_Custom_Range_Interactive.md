@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;a22cc83ebd104525a0d53025bd9df378 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # ABC 123 Harmonic Ratio Custom Range Interactive
 

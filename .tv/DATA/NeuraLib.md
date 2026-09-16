@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;ea08d032f98f4b8fa50296a8a4eded6d -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # NeuraLib
 

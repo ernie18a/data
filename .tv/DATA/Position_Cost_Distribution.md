@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;1f40ac99dc3c4242b096b95c26330003 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Position Cost Distribution
 

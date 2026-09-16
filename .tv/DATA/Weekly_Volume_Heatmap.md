@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;38de992b0d1a477697f31da2760847e2 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # [Weekly Volume Heatmap]
 

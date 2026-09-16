@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;2ed4132549224de8a8dc7c23d90b6edc -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Asset Drift Model
 

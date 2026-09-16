@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;NYPHc8oGt0UgusQFGdWJhLi9hAJodUU3 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Function - simple* Markov Chain Monte Carlo Simulation (MCMC)
 

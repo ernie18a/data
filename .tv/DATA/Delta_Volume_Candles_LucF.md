@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;qADnaAfCPpBEGLqLJaMaVZrYTmlIHPGN -->
+<!-- tradingview-pine-version: 10.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Delta Volume Candles [LucF]
 

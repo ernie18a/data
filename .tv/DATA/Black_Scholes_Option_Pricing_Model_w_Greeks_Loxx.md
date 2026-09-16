@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;12d143e9b2d942babee332077b83ac87 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Black Scholes Option Pricing Model w/ Greeks [Loxx]
 

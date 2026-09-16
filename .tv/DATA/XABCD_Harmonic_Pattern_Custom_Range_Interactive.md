@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;d6b1323dc0b94115a23cc220aafe6b1f -->
+<!-- tradingview-pine-version: 9.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # XABCD Harmonic Pattern Custom Range Interactive
 

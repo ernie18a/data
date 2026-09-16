@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;881145d55cc44036a1cf29aa957981f1 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Fundamentals Graphing [Kioseff Trading]
 

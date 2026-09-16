@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;QqbruCN8qbU7qzmY13Z6QVLfLvoC0ATV -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Let it snow... [QuantNomad]
 

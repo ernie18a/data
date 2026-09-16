@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;78c9214b9ccc459bb6047860e3c60323 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # MathSpecialFunctionsConvolve1D
 

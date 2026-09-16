@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;7e009341f7ac4c4681bf3cbc823a3972 -->
+<!-- tradingview-pine-version: 6.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # RSI Impact Heat Map [Trendoscope]
 

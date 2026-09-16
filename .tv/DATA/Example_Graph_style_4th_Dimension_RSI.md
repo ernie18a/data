@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;IRw46xbQZvvHxOUoR4MOz3m67x80SiFJ -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Example: Graph style - 4th Dimension RSI
 

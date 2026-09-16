@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;27ZRICiAZXRHzvwxsU6rd7xFzHTyJJdy -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # How To Set Time Ranges
 

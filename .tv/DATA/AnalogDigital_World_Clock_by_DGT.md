@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;K3KHtfgrL8E45d8qD4gR70ukcVnDyWUa -->
+<!-- tradingview-pine-version: 13.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Analog/Digital World Clock by DGT
 

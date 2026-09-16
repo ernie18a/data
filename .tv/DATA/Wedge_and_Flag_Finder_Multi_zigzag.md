@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;9ab5e7d6c8904895b519c70c273ef1b4 -->
+<!-- tradingview-pine-version: 7.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Wedge and Flag Finder (Multi - zigzag)
 

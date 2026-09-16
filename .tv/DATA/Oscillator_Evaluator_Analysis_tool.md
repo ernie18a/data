@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;MnbbtDqO3DiMEsjSxabUloohSMmGS9nj -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Oscillator Evaluator (Analysis tool)
 

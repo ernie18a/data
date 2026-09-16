@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;Ts33bDEy4CQIFQYKAJUYwwUlUXRlAG2Y -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Built-in Kelly ratio for position sizing
 

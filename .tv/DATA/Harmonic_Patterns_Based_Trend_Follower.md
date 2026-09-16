@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;25fd41e032a249f1808ca44143d7ee26 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Harmonic Patterns Based Trend Follower
 

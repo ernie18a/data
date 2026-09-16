@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;ZT8ETlIbXoy3zMQtgrjcEPBS5lhQVMHB -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Vortex MTF
 

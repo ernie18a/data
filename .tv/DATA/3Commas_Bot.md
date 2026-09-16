@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;b3d1b9c1f597491390fb5eca58097871 -->
+<!-- tradingview-pine-version: 6.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # 3Commas Bot
 

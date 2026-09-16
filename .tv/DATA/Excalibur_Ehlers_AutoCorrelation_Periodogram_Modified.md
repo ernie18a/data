@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;d1eb259674e64b90ad951720bd35ac68 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # [Excalibur] Ehlers AutoCorrelation Periodogram Modified
 

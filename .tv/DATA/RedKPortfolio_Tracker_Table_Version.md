@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;44be7ed39c57445aa1d7c5a3924a72b9 -->
+<!-- tradingview-pine-version: 8.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # RedK_Portfolio Tracker [Table Version]
 

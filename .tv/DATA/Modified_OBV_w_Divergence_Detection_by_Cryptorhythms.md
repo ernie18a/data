@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;XxrBHoJtqgblrVUk0F6QrdsTMelrg16j -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Modified OBV w/ Divergence Detection by Cryptorhythms
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;cea91f5638a4411b9f69e56616990ec2 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # McDonald&#039;s Pattern [LuxAlgo]
 

@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;064fa165fa574f79b1ee770cd55c364c -->
+<!-- tradingview-pine-version: 6.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Commitment of Traders: Legacy Metrics
 

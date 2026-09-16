@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;f3bc76748b2b44e9838035ecc795b8af -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Dynamic Equity Allocation Model
 

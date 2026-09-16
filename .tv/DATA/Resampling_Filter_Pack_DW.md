@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;Rky7lG49cXaFfcK1in7Wx3InGIP38jXT -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Resampling Filter Pack [DW]
 

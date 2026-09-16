@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;61fc0dbb24854b5788c601d0f3a6818d -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # VWAP Price Channel
 

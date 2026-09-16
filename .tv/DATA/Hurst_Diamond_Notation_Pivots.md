@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;93fb1179cd834c2c8512c022190f7d7d -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Hurst Diamond Notation Pivots
 

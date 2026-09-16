@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;ZwDvNWBbFLMSp335oddyopegvufnr4iS -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Mawreez&#039; RSI Divergence Detector
 

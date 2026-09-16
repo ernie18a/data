@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;4dfef745f5124b08aa64dfd2daa0d56e -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Scatter Plot
 

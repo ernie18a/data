@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;03d8ec08b6664a5780f3d4c338fef535 -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Probability Grid [LuxAlgo]
 

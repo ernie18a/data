@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;K5XG42uHV9T8rm2NDrmoXKyzqI4YajYw -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Volatility Stop MTF
 

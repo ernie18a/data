@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;4b01e35c240b44d4ad703481234c238c -->
+<!-- tradingview-pine-version: 12.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Bjorgum Key Levels
 

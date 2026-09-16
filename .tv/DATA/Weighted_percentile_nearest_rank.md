@@ -1,4 +1,5 @@
 <!-- tradingview-pine-id: PUB;e51680d37704498c8aa1593131f0e1f2 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Weighted percentile nearest rank
 
