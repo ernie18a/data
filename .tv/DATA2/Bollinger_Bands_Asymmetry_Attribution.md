@@ -1,0 +1,2215 @@
+<!-- tradingview-pine-id: PUB;3eca79afca564eddb82f4f72392e8e51 -->
+<!-- tradingview-pine-version: 1.0 -->
+<!-- tradingviewscripts-format: 1 -->
+# Bollinger Bands Asymmetry Attribution
+
+Source: https://www.tradingview.com/script/gMYpaADz-Bollinger-Bands-Asymmetry-Attribution/
+
+## Description
+
+Bollinger Bands Asymmetry Attribution
+
+Overview
+
+Bollinger Bands Asymmetry Attribution is an open-source volatility-analysis overlay that studies how price dispersion is distributed above and below a selectable moving basis.
+
+A conventional Bollinger Bands calculation uses one standard deviation to place symmetric upper and lower bands around a moving average. This script takes a different approach. It separates basis-relative squared deviations into upper-side and lower-side components, attributes the resulting directional dispersion to observation frequency and conditional excursion severity, and then constructs independently stabilized upper and lower wings.
+
+The indicator is designed to answer questions such as:
+
+- Is current dispersion concentrated above or below the basis?
+- Is that asymmetry caused by price spending more observations on one side?
+- Is it caused by fewer but larger excursions on one side?
+- Are frequency and severity reinforcing each other or opposing each other?
+- Is directional dispersion currently shifting, and which component is producing that shift?
+- How stretched is the current source relative to the matching asymmetric wing?
+
+This is a descriptive market-structure and volatility tool. It is not a trading strategy, directional forecast, reversal model, or buy/sell signal generator.
+
+Core calculation
+
+For each bar, the script evaluates the selected Source over the Attribution Length around the current selected basis.
+
+For every observation in the rolling window:
+
+Deviation = Observation - Current basis
+
+Observations above the basis contribute to the upper squared-deviation mass.
+
+Observations below the basis contribute to the lower squared-deviation mass.
+
+Upper squared mass:
+
+Sum of squared deviations where Deviation > 0
+
+Lower squared mass:
+
+Sum of squared deviations where Deviation < 0
+
+The directional semivariances are then calculated across the entire observation window:
+
+Upper semivariance = Upper squared mass / N
+
+Lower semivariance = Lower squared mass / N
+
+where N is the total number of valid observations in the window.
+
+Frequency and severity attribution
+
+Each directional semivariance can be factored exactly into two components.
+
+For the upper side:
+
+Upper occupancy = Upper observation count / N
+
+Upper conditional severity =
+Upper squared mass / Upper observation count
+
+Upper semivariance =
+Upper occupancy x Upper conditional severity
+
+The same identity applies to the lower side.
+
+In the readout:
+
+F means observation frequency or occupancy.
+
+S means conditional squared-excursion severity.
+
+Frequency describes how often observations occurred on one side of the basis.
+
+Severity describes how large the squared excursions were when observations occurred on that side.
+
+This distinction allows two windows with similar directional semivariance to be interpreted differently.
+
+For example:
+
+- Frequent but relatively small upper deviations can produce upper-side dispersion.
+- A small number of very large upper deviations can produce a similar amount of upper-side dispersion.
+- Frequency and severity can both favor the same side.
+- Frequency can favor one side while severity favors the other.
+
+The raw mathematical identity is exact. For visual stability, the MASS, frequency, and severity diagnostics shown in the panel are smoothed independently. Therefore, the displayed smoothed values should be interpreted as stable diagnostics rather than as an algebraic identity between the visible numbers.
+
+What makes this script different
+
+The original contribution is not simply the use of different upper and lower band widths. Asymmetric volatility bands and directional semivariance concepts already exist.
+
+This script extends the analysis by connecting four related layers in one coherent framework:
+
+1. Directional dispersion mass
+
+It measures how total basis-relative squared dispersion is divided between the upper and lower sides.
+
+2. Level attribution
+
+It separates each side's directional semivariance into:
+
+- Observation frequency or occupancy
+- Conditional squared-excursion severity
+
+3. Mass Shift Attribution
+
+It decomposes the one-bar change in directional semivariance into:
+
+- A frequency-change contribution
+- A severity-change contribution
+
+4. Trader-facing geometry
+
+It connects those attribution measurements to independently stabilized asymmetric wings, side-normalized stretch, wing motion, transition markers, and alerts.
+
+The script does not combine unrelated oscillators, volume filters, trend scores, or multi-timeframe indicators. All principal outputs derive from the same basis-relative directional-dispersion framework.
+
+Asymmetric wing construction
+
+The primary upper and lower wings are not conventional symmetric Bollinger Bands.
+
+The script first calculates the conditional variance for each side. When one side contains only a small number of observations, its conditional variance can become unstable or overly dependent on one data point.
+
+To reduce this problem, the displayed geometry uses Sparse-Side Stabilization.
+
+A side with fewer observations is partially shrunk toward the pooled variance of the full rolling window. A side with more observations retains more of its own conditional variance.
+
+Conceptually:
+
+Stabilized side variance =
+Side weight x Side conditional variance
++
+(1 - Side weight) x Pooled variance
+
+The side weight increases with the number of observations on that side.
+
+The stabilized upper and lower variances are converted into wing distances using their square roots, the Wing Multiplier, and optional RMA smoothing.
+
+Upper wing = Basis + Stabilized upper distance
+
+Lower wing = Basis - Stabilized lower distance
+
+This stabilization affects the displayed wing geometry only. The underlying MASS, Frequency, Severity, and identity diagnostics remain based on the unshrunk directional statistics.
+
+The optional Classic Symmetric Reference displays a conventional SMA-centered standard-deviation envelope for comparison. It is disabled by default to keep the publication chart clear.
+
+Visual readout
+
+The compact panel is organized into seven rows.
+
+Header
+
+The header shows:
+
+- The script name
+- LIVE or CLOSE execution status
+- The current upper/lower dispersion-mass state
+
+Examples:
+
+UPPER MASS 60.2%
+
+LOWER MASS 58.7%
+
+MASS 51.0%/49.0%
+
+The percentages are smoothed directional semivariance shares. They are not probabilities, expected returns, price targets, or forecasts.
+
+MASS
+
+MASS shows how directional semivariance is divided between the upper and lower sides.
+
+The cyan value represents the upper share.
+
+The magenta value represents the lower share.
+
+The two displayed shares sum to 100%.
+
+A larger upper share means that observations above the basis currently account for more of the smoothed basis-relative squared dispersion. A larger lower share means that observations below the basis account for more.
+
+ATTRIB
+
+ATTRIB describes the composition of the current asymmetry.
+
+F = Observation frequency or occupancy
+
+S = Conditional squared-excursion severity
+
+The symbols have the following meanings:
+
+F▲ = Frequency favors the upper side
+
+F▼ = Frequency favors the lower side
+
+F· = No material frequency bias
+
+S▲ = Conditional severity favors the upper side
+
+S▼ = Conditional severity favors the lower side
+
+S· = No material severity bias
+
+S? = Severity cannot be compared because one side has too few observations
+
+The ATTRIB states are:
+
+Balanced
+
+Neither frequency nor severity exceeds the selected significance threshold.
+
+Frequency
+
+Observation frequency favors one side, while conditional severity is approximately balanced.
+
+Severity
+
+Conditional severity favors one side, while observation frequency is approximately balanced.
+
+Reinforced
+
+Frequency and severity favor the same side.
+
+Offset
+
+Frequency and severity favor opposite sides. One side may occur more often while the other side contains larger conditional excursions.
+
+Sparse
+
+One side does not contain enough observations for a reliable two-sided severity comparison.
+
+No dispersion
+
+The rolling window contains no meaningful basis-relative dispersion.
+
+Warming
+
+The required rolling history is not yet available.
+
+SHIFT
+
+SHIFT analyzes how directional dispersion changed from the previous bar to the current bar.
+
+For either side:
+
+Semivariance = Occupancy x Conditional severity
+
+The one-bar product change is decomposed as:
+
+Delta semivariance =
+Delta occupancy x Average conditional severity
++
+Delta conditional severity x Average occupancy
+
+This midpoint formulation allocates the interaction between occupancy and severity equally, avoiding dependence on whether frequency or severity is applied first.
+
+The script calculates this decomposition separately for the upper and lower sides, then evaluates the change in the upper-minus-lower directional semivariance difference.
+
+In the SHIFT row:
+
+F↑ means the frequency component is moving directional dispersion toward the upper side.
+
+F↓ means the frequency component is moving directional dispersion toward the lower side.
+
+S↑ means the severity component is moving directional dispersion toward the upper side.
+
+S↓ means the severity component is moving directional dispersion toward the lower side.
+
+A centered dot means the component is below the configured significance threshold.
+
+Possible SHIFT states include:
+
+Frequency upper or Frequency lower
+
+The occupancy-change component is dominant.
+
+Severity upper or Severity lower
+
+The conditional-severity-change component is dominant.
+
+Reinforced upper or Reinforced lower
+
+Frequency and severity changes are both moving directional dispersion toward the same side.
+
+Shared upper or Shared lower
+
+Both components contribute in the same net direction without one meeting the configured dominance ratio.
+
+Offset
+
+Frequency and severity changes oppose each other.
+
+Stable
+
+The net normalized directional mass shift is below the selected threshold.
+
+The displayed Delta value is normalized by the average total semivariance of the two compared windows. It is not a price percentage, return estimate, or directional probability.
+
+STRETCH
+
+STRETCH measures the current Source distance from the basis using the wing on the same side.
+
+When Source is above the basis:
+
+Stretch =
+(Source - Basis) / Upper wing distance
+
+When Source is below the basis:
+
+Stretch =
+-(Basis - Source) / Lower wing distance
+
+Interpretation:
+
++1.00x = Source is at the upper wing
+
+-1.00x = Source is at the lower wing
+
++0.50x = Source is halfway from the basis to the upper wing
+
+-0.50x = Source is halfway from the basis to the lower wing
+
+A value above +1.00x or below -1.00x means the selected Source is outside the corresponding asymmetric wing.
+
+Stretch does not predict continuation or reversal. It only reports the current location relative to the side-specific dispersion geometry.
+
+WINGS
+
+WINGS shows the one-bar movement of the stabilized upper and lower wing distances.
+
+U refers to the upper wing.
+
+D refers to the lower wing.
+
+Arrow meanings:
+
+↗ = Expanding beyond the selected Wing Motion Threshold
+
+↘ = Contracting beyond the selected Wing Motion Threshold
+
+→ = Approximately stable
+
+The ratio on the right is:
+
+Upper wing distance / Lower wing distance
+
+A ratio above 1.00 means the upper wing is wider.
+
+A ratio below 1.00 means the lower wing is wider.
+
+The ratio describes asymmetric geometry, not directional probability.
+
+NOW
+
+NOW reports the current side-normalized location or the most recent live transition preview.
+
+Possible location states include:
+
+- Upper outside
+- Upper edge
+- Upper half
+- On basis
+- Lower half
+- Lower edge
+- Lower outside
+
+The C value is the realized rolling containment percentage.
+
+Containment measures how often the selected Source was inside the displayed asymmetric wings over the configured Containment Lookback.
+
+This is a backward-looking realized statistic. It is not a guaranteed future coverage probability.
+
+How to use the indicator
+
+A practical reading sequence is:
+
+1. Read MASS
+
+Determine whether basis-relative squared dispersion is currently concentrated more heavily above or below the basis.
+
+2. Read ATTRIB
+
+Determine whether the current asymmetry is associated primarily with:
+
+- More observations on one side
+- Larger excursions on one side
+- Both factors reinforcing each other
+- Opposing frequency and severity effects
+- An insufficient side sample
+
+3. Read SHIFT
+
+Determine whether the directional dispersion difference is currently changing and whether frequency or severity is producing that change.
+
+4. Read STRETCH
+
+Locate the current Source relative to the corresponding asymmetric wing.
+
+5. Read WINGS
+
+Check whether the upper and lower dispersion envelopes are expanding, contracting, or remaining stable.
+
+6. Read NOW and containment
+
+Confirm the current location or transition and review how frequently the Source has historically remained inside the displayed wings.
+
+Example interpretations:
+
+UPPER MASS with Frequency attribution
+
+Observations have occurred above the basis more often, but upper-side conditional excursion severity is not materially larger.
+
+UPPER MASS with Severity attribution
+
+Upper-side observations may not be more frequent, but their conditional squared excursions are larger.
+
+UPPER MASS with Reinforced attribution
+
+Both observation frequency and conditional severity favor the upper side.
+
+UPPER MASS with Offset attribution
+
+One component favors the upper side while the other favors the lower side. The total upper mass reflects the net result.
+
+Upper mass with SHIFT moving lower
+
+The current level remains upper-dominant, but the latest window change is moving directional dispersion back toward the lower side.
+
+Balanced MASS with active SHIFT
+
+The current upper/lower mass level is near balance, but the most recent change is moving that balance toward one side.
+
+These readings provide context. They do not prescribe an entry, exit, stop, position size, or trade direction.
+
+Markers
+
+The script uses sparse transition markers rather than marking every bar outside a wing.
+
+Triangle above a bar
+
+The selected Source has moved from inside to outside the upper wing.
+
+Triangle below a bar
+
+The selected Source has moved from inside to outside the lower wing.
+
+Circle on an upper or lower wing
+
+The selected Source has returned inside after being outside that wing.
+
+Diamond on the basis
+
+The selected Source moved directly from outside one wing to outside the opposite wing. This is consolidated into one Cross-Wing Jump event so the same bar does not receive duplicate excursion and re-entry markers.
+
+Optional dominance markers
+
+These identify a confirmed transition into upper-mass or lower-mass dominance.
+
+Markers describe transitions across the calculated geometry. They are not buy or sell signals and do not imply that price will reverse, continue, or reach a target.
+
+Alerts
+
+Alert conditions are available for:
+
+- Upper asymmetric excursion started
+- Lower asymmetric excursion started
+- Upper asymmetric re-entry
+- Lower asymmetric re-entry
+- Direct cross-wing jump to the upper side
+- Direct cross-wing jump to the lower side
+- Upper semivariance-mass dominance started
+- Lower semivariance-mass dominance started
+
+Confirmed Events Only is enabled by default.
+
+With this setting enabled, markers and alerts wait for the bar to close. The asymmetric wings and visual readout continue to update during the forming bar.
+
+Main settings
+
+Source
+
+Selects the price or indicator series analyzed by the script.
+
+Attribution Length
+
+Sets the rolling observation window.
+
+Basis Type
+
+SMA is the conventional statistical-center setting.
+
+EMA, RMA, and WMA are provided as basis-relative research alternatives. When one of these alternatives is selected, the directional partial moments are measured around that selected moving basis rather than around the arithmetic sample mean.
+
+Wing Multiplier
+
+Scales the upper and lower stabilized wing distances.
+
+The multiplier is not a confidence level.
+
+Sparse-Side Stabilization
+
+Controls how strongly a side with few observations is shrunk toward pooled dispersion.
+
+A value of zero disables shrinkage when that side contains observations.
+
+Wing Smoothing
+
+Applies RMA smoothing to the displayed wing distances.
+
+Attribution Smoothing
+
+Smooths MASS, Frequency, and Severity diagnostics to reduce one-bar flicker.
+
+Dominance Entry and Release Thresholds
+
+Create hysteresis around the upper-mass, balanced, and lower-mass states.
+
+Minimum Observations Per Side
+
+Sets the minimum sample required on both sides before Severity is compared.
+
+Mass Shift Smoothing
+
+Smooths the Frequency and Severity components of the one-bar SHIFT calculation.
+
+Mass Shift Significance Threshold
+
+Controls when a SHIFT component is displayed as materially active.
+
+Mass Shift Driver Dominance Ratio
+
+Controls how much larger one component must be before it is classified as the dominant SHIFT driver.
+
+Edge Zone Starts At
+
+Defines when STRETCH is considered near an upper or lower wing.
+
+Containment Lookback
+
+Sets the rolling window for realized containment.
+
+Visual settings
+
+Allow the user to control wing visibility, split fills, the optional state rail, dominant-wing glow, classic symmetric reference, line widths, transparency, colors, readout position, text size, and price-axis clearance.
+
+Live-bar behavior
+
+The script does not request higher-timeframe data, use lookahead logic, or intentionally access future bars.
+
+Historical calculations use the chart's available data and the selected settings.
+
+During the current forming bar:
+
+- Wings can change
+- MASS can change
+- ATTRIB can change
+- SHIFT can change
+- STRETCH can change
+- WINGS can change
+- NOW can change
+
+This is normal real-time indicator behavior.
+
+When Confirmed Events Only is enabled, transition markers and alerts are recorded only after bar close. Disabling that setting allows intrabar events, which can appear and disappear before the bar closes.
+
+Data Window outputs
+
+The script provides research values in the Data Window, including:
+
+- Semivariance Mass Bias
+- Observation Frequency Bias
+- Conditional Severity Bias
+- Upper Semivariance Share
+- Lower Semivariance Share
+- Asymmetric Side-Normalized Stretch
+- Upper Stabilized Wing Distance
+- Lower Stabilized Wing Distance
+- Realized Envelope Containment
+- Side Sample Adequacy
+- Smoothed Directional Mass Shift
+- Flow Bridge Identity Residual
+
+The Flow Bridge Identity Residual allows users to inspect the numerical consistency of the raw one-bar frequency/severity decomposition. Small non-zero values can occur because of floating-point arithmetic.
+
+Limitations
+
+This indicator is backward-looking and descriptive. It does not estimate the probability of future price direction, reversals, breakouts, continuation, or profitability.
+
+The primary wings are not conventional Bollinger Bands and are not confidence intervals.
+
+The Wing Multiplier does not imply a 68%, 95%, or 99% probability range.
+
+Realized containment is calculated from past rolling observations and does not guarantee future containment.
+
+The rolling statistics compare historical observations with the current selected basis for each calculation window. They do not compare every historical observation with the basis value that existed on that historical bar.
+
+SMA provides the conventional arithmetic-center interpretation. EMA, RMA, and WMA create basis-relative research variants whose partial moments should not be interpreted as conventional sample semivariance around the arithmetic mean.
+
+Conditional Severity requires observations on both sides. When one side does not meet the configured minimum sample, the script displays Sparse and S? instead of treating the missing comparison as neutral evidence.
+
+Sparse-Side Stabilization intentionally modifies displayed wing geometry when a side has few observations. It does not modify the raw attribution statistics.
+
+Smoothing reduces visual noise but introduces lag.
+
+Results depend on the selected Source, length, basis, multiplier, thresholds, market, timeframe, and available data.
+
+For conventional interpretation, use standard time-based charts. Synthetic chart types can change the input price series and therefore change calculations and alerts.
+
+A movement outside a wing does not necessarily indicate overbought, oversold, exhaustion, breakout confirmation, reversal, or continuation.
+
+This indicator should be used as an analytical context tool alongside the user's own market structure, execution, and risk-management process.
+
+Open-source transparency
+
+The script is published open-source so users can inspect the calculations, verify the attribution identities, review the stabilization logic, study the Data Window outputs, and modify the available research settings.
+
+The indicator provides measurements and alerts only. It does not place orders, simulate performance, report a win rate, or guarantee trading results.
+
+---
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// ©SG_Group
+//@version=6
+indicator(
+     "Bollinger Bands Asymmetry Attribution",
+     shorttitle = "BB Attribution",
+     overlay = true,
+     behind_chart = true,
+     max_bars_back = 1100
+ )
+
+// =============================================================================
+// Groups
+// =============================================================================
+const string GROUP_CORE   = "1. Core Bands"
+const string GROUP_ATTRIB = "2. Asymmetry Attribution"
+const string GROUP_FLOW   = "3. Mass Shift Attribution"
+const string GROUP_LIVE   = "4. Live Behavior"
+const string GROUP_VISUAL = "5. Visual Design"
+const string GROUP_PANEL  = "6. Visual Readout"
+const string GROUP_EVENTS = "7. Markers and Alerts"
+
+// =============================================================================
+// Inputs: Core Bands
+// =============================================================================
+float sourceInput = input.source(
+     close,
+     "Source",
+     group = GROUP_CORE,
+     display = display.none,
+     tooltip = "Price series used by the basis, directional attribution, asymmetric wings, and live stretch calculation."
+ )
+
+int lengthInput = input.int(
+     20,
+     "Attribution length",
+     minval = 5,
+     maxval = 250,
+     group = GROUP_CORE,
+     display = display.none,
+     tooltip = "Rolling observation window. The script performs one directional-statistics pass across this window on every bar."
+ )
+
+string basisTypeInput = input.string(
+     "SMA",
+     "Basis type",
+     options = ["SMA", "EMA", "RMA", "WMA"],
+     group = GROUP_CORE,
+     display = display.none,
+     tooltip = "SMA is the conventional statistical center. EMA, RMA, and WMA are basis-referenced research alternatives."
+ )
+
+float multiplierInput = input.float(
+     2.0,
+     "Wing multiplier",
+     minval = 0.1,
+     maxval = 10.0,
+     step = 0.1,
+     group = GROUP_CORE,
+     display = display.none,
+     tooltip = "Scales the stabilized conditional root-mean-square excursion calculated independently above and below the basis."
+ )
+
+float shrinkageStrengthInput = input.float(
+     4.0,
+     "Sparse-side stabilization",
+     minval = 0.0,
+     maxval = 50.0,
+     step = 0.5,
+     group = GROUP_CORE,
+     display = display.none,
+     tooltip = "Shrinks a side with few observations toward pooled dispersion. Zero disables shrinkage when that side has observations."
+ )
+
+int wingSmoothingInput = input.int(
+     2,
+     "Wing smoothing",
+     minval = 1,
+     maxval = 20,
+     group = GROUP_CORE,
+     display = display.none,
+     tooltip = "RMA smoothing applied to upper and lower wing distances. One leaves the stabilized raw widths unchanged."
+ )
+
+bool showClassicReferenceInput = input.bool(
+     false,
+     "Show classic symmetric reference",
+     group = GROUP_CORE,
+     display = display.none,
+     tooltip = "Shows a thin conventional SMA-centered Bollinger reference for comparison. Disabled by default to preserve chart clarity."
+ )
+
+// =============================================================================
+// Inputs: Asymmetry Attribution
+// =============================================================================
+int attributionSmoothingInput = input.int(
+     3,
+     "Attribution smoothing",
+     minval = 1,
+     maxval = 30,
+     group = GROUP_ATTRIB,
+     display = display.none,
+     tooltip = "RMA smoothing for total mass, observation-frequency, and conditional-severity biases."
+ )
+
+float dominanceEnterInput = input.float(
+     12.0,
+     "Dominance entry threshold",
+     minval = 1.0,
+     maxval = 90.0,
+     step = 1.0,
+     group = GROUP_ATTRIB,
+     display = display.none,
+     tooltip = "Absolute smoothed semivariance-mass bias required to enter an upper- or lower-mass-dominant state."
+ )
+
+float dominanceReleaseInput = input.float(
+     7.0,
+     "Dominance release threshold",
+     minval = 0.0,
+     maxval = 89.0,
+     step = 1.0,
+     group = GROUP_ATTRIB,
+     display = display.none,
+     tooltip = "Hysteresis threshold that retains an established state through small counter-moves. It must remain below the entry threshold."
+ )
+
+float attributionDriverThresholdInput = input.float(
+     6.0,
+     "Driver significance threshold",
+     minval = 0.0,
+     maxval = 80.0,
+     step = 1.0,
+     group = GROUP_ATTRIB,
+     display = display.none,
+     tooltip = "Minimum absolute frequency or severity bias used to classify the source of directional asymmetry."
+ )
+
+int minimumSideObservationsInput = input.int(
+     3,
+     "Minimum observations per side",
+     minval = 1,
+     maxval = 25,
+     group = GROUP_ATTRIB,
+     display = display.none,
+     tooltip = "Minimum upper and lower observations required before conditional severity is compared. The effective requirement is capped at half the attribution window."
+ )
+
+int containmentLookbackInput = input.int(
+     100,
+     "Containment lookback",
+     minval = 10,
+     maxval = 1000,
+     group = GROUP_ATTRIB,
+     display = display.none,
+     tooltip = "Measures the realized percentage of selected Source observations contained by the displayed asymmetric wings."
+ )
+
+float edgeThresholdInput = input.float(
+     0.80,
+     "Edge zone starts at",
+     minval = 0.50,
+     maxval = 0.99,
+     step = 0.01,
+     group = GROUP_ATTRIB,
+     display = display.none,
+     tooltip = "A side-normalized stretch of 1.00 equals the corresponding wing. This setting defines the start of its edge zone."
+ )
+
+// =============================================================================
+// Inputs: Mass Shift Attribution
+// =============================================================================
+int flowSmoothingInput = input.int(
+     2,
+     "Mass shift smoothing",
+     minval = 1,
+     maxval = 20,
+     group = GROUP_FLOW,
+     display = display.none,
+     tooltip = "RMA smoothing for the order-neutral frequency and severity contributions to one-bar directional semivariance change."
+ )
+
+float flowSignificanceInput = input.float(
+     2.0,
+     "Mass shift significance threshold",
+     minval = 0.1,
+     maxval = 50.0,
+     step = 0.1,
+     group = GROUP_FLOW,
+     display = display.none,
+     tooltip = "Minimum normalized dispersion-shift score used to display an active frequency or severity flow component."
+ )
+
+float flowDominanceRatioInput = input.float(
+     1.25,
+     "Mass shift driver dominance ratio",
+     minval = 1.0,
+     maxval = 5.0,
+     step = 0.05,
+     group = GROUP_FLOW,
+     display = display.none,
+     tooltip = "How much larger one flow component must be before it is classified as the dominant driver of the current mass shift."
+ )
+
+// =============================================================================
+// Inputs: Live Behavior
+// =============================================================================
+bool confirmedEventsOnlyInput = input.bool(
+     true,
+     "Confirmed events only",
+     group = GROUP_LIVE,
+     display = display.none,
+     tooltip = "When enabled, chart markers and alert conditions wait for bar close. Wings and the visual readout continue to update on the live bar."
+ )
+
+float wingMotionThresholdInput = input.float(
+     0.50,
+     "Wing motion threshold %",
+     minval = 0.0,
+     maxval = 20.0,
+     step = 0.05,
+     group = GROUP_LIVE,
+     display = display.none,
+     tooltip = "Minimum one-bar percentage change before a wing is displayed as expanding or contracting."
+ )
+
+// =============================================================================
+// Inputs: Visual Design
+// =============================================================================
+bool showEnvelopeInput = input.bool(
+     true,
+     "Show asymmetric wings",
+     group = GROUP_VISUAL,
+     display = display.none
+ )
+
+bool showBasisInput = input.bool(
+     true,
+     "Show basis",
+     group = GROUP_VISUAL,
+     display = display.none
+ )
+
+bool showSplitFillInput = input.bool(
+     true,
+     "Show split upper/lower fill",
+     group = GROUP_VISUAL,
+     display = display.none,
+     tooltip = "Colors the two halves independently so directional wing geometry remains visible without covering candle bodies."
+ )
+
+bool showStateRailInput = input.bool(
+     false,
+     "Show state rail",
+     group = GROUP_VISUAL,
+     display = display.none,
+     tooltip = "Optional state-colored rail behind the basis. Disabled by default for a cleaner publication chart."
+ )
+
+bool showDominantWingGlowInput = input.bool(
+     true,
+     "Show dominant-wing glow",
+     group = GROUP_VISUAL,
+     display = display.none,
+     tooltip = "Adds a restrained translucent halo only to the wing matching the current semivariance-mass state."
+ )
+
+int envelopeLineWidthInput = input.int(
+     2,
+     "Wing line width",
+     minval = 1,
+     maxval = 5,
+     group = GROUP_VISUAL,
+     display = display.none
+ )
+
+int basisLineWidthInput = input.int(
+     2,
+     "Basis line width",
+     minval = 1,
+     maxval = 5,
+     group = GROUP_VISUAL,
+     display = display.none
+ )
+
+int stateRailWidthInput = input.int(
+     4,
+     "State rail width",
+     minval = 2,
+     maxval = 10,
+     group = GROUP_VISUAL,
+     display = display.none
+ )
+
+int dominantGlowWidthInput = input.int(
+     5,
+     "Dominant glow width",
+     minval = 2,
+     maxval = 12,
+     group = GROUP_VISUAL,
+     display = display.none
+ )
+
+int splitFillTransparencyInput = input.int(
+     94,
+     "Split fill transparency",
+     minval = 0,
+     maxval = 100,
+     group = GROUP_VISUAL,
+     display = display.none
+ )
+
+int stateRailTransparencyInput = input.int(
+     86,
+     "State rail transparency",
+     minval = 0,
+     maxval = 100,
+     group = GROUP_VISUAL,
+     display = display.none
+ )
+
+int dominantGlowTransparencyInput = input.int(
+     82,
+     "Dominant glow transparency",
+     minval = 0,
+     maxval = 100,
+     group = GROUP_VISUAL,
+     display = display.none
+ )
+
+color upperColorInput = input.color(
+     color.rgb(0, 229, 255),
+     "Upper wing",
+     inline = "wingColors",
+     group = GROUP_VISUAL,
+     display = display.none
+ )
+
+color lowerColorInput = input.color(
+     color.rgb(255, 77, 214),
+     "Lower wing",
+     inline = "wingColors",
+     group = GROUP_VISUAL,
+     display = display.none
+ )
+
+color basisColorInput = input.color(
+     color.rgb(255, 209, 102),
+     "Basis",
+     inline = "wingColors",
+     group = GROUP_VISUAL,
+     display = display.none
+ )
+
+color upsideStateColorInput = input.color(
+     color.rgb(88, 255, 148),
+     "Upper-mass state",
+     inline = "stateColors",
+     group = GROUP_VISUAL,
+     display = display.none
+ )
+
+color balancedStateColorInput = input.color(
+     color.rgb(178, 120, 255),
+     "Balanced state",
+     inline = "stateColors",
+     group = GROUP_VISUAL,
+     display = display.none
+ )
+
+color downsideStateColorInput = input.color(
+     color.rgb(255, 96, 121),
+     "Lower-mass state",
+     inline = "stateColors",
+     group = GROUP_VISUAL,
+     display = display.none
+ )
+
+color sparseStateColorInput = input.color(
+     color.rgb(255, 196, 74),
+     "Sparse-sample state",
+     group = GROUP_VISUAL,
+     display = display.none
+ )
+
+color classicReferenceColorInput = input.color(
+     color.rgb(153, 165, 190),
+     "Classic reference",
+     group = GROUP_VISUAL,
+     display = display.none
+ )
+
+// =============================================================================
+// Inputs: Visual Readout
+// =============================================================================
+string panelModeInput = input.string(
+     "Visual",
+     "Readout mode",
+     options = ["Off", "Visual"],
+     group = GROUP_PANEL,
+     display = display.none
+ )
+
+string panelPositionInput = input.string(
+     "Top right",
+     "Readout position",
+     options = [
+         "Top right",
+         "Middle right",
+         "Bottom right",
+         "Top left",
+         "Middle left",
+         "Bottom left"
+     ],
+     group = GROUP_PANEL,
+     display = display.none
+ )
+
+string panelTextSizeInput = input.string(
+     "Small",
+     "Readout text size",
+     options = ["Tiny", "Small", "Normal"],
+     group = GROUP_PANEL,
+     display = display.none
+ )
+
+int axisClearanceInput = input.int(
+     3,
+     "Axis label clearance %",
+     minval = 0,
+     maxval = 12,
+     step = 1,
+     group = GROUP_PANEL,
+     display = display.none,
+     tooltip = "Transparent clearance between an edge-anchored readout and TradingView price-scale labels. Content cells use automatic width so the panel remains compact."
+ )
+
+color panelBackgroundInput = input.color(
+     color.rgb(15, 18, 29),
+     "Readout background",
+     group = GROUP_PANEL,
+     display = display.none
+ )
+
+int panelTransparencyInput = input.int(
+     8,
+     "Readout transparency",
+     minval = 0,
+     maxval = 100,
+     group = GROUP_PANEL,
+     display = display.none
+ )
+
+color panelTextColorInput = input.color(
+     color.rgb(244, 247, 255),
+     "Readout text",
+     group = GROUP_PANEL,
+     display = display.none
+ )
+
+// =============================================================================
+// Inputs: Markers and Alerts
+// =============================================================================
+bool showExcursionMarkersInput = input.bool(
+     true,
+     "Show first outside excursion",
+     group = GROUP_EVENTS,
+     display = display.none,
+     tooltip = "Marks only the transition from inside to outside a wing, not every outside bar."
+ )
+
+bool showReentryMarkersInput = input.bool(
+     true,
+     "Show first re-entry",
+     group = GROUP_EVENTS,
+     display = display.none,
+     tooltip = "Marks only the first return inside after an outside excursion."
+ )
+
+bool showCrossWingJumpMarkersInput = input.bool(
+     true,
+     "Show direct cross-wing jump",
+     group = GROUP_EVENTS,
+     display = display.none,
+     tooltip = "Uses one diamond marker when a bar moves directly from outside one wing to outside the opposite wing, preventing duplicate excursion and re-entry markers on the same bar."
+ )
+
+bool showDominanceFlipMarkersInput = input.bool(
+     false,
+     "Show dominance-flip markers",
+     group = GROUP_EVENTS,
+     display = display.none,
+     tooltip = "Optional basis markers when the hysteresis state changes to upper- or lower-mass dominance."
+ )
+
+// =============================================================================
+// Validation
+// =============================================================================
+if barstate.isfirst and dominanceReleaseInput >= dominanceEnterInput
+    runtime.error("Dominance release threshold must be lower than the dominance entry threshold.")
+
+// =============================================================================
+// Utility functions
+// =============================================================================
+f_panel_position(string selected) =>
+    switch selected
+        "Middle right" => position.middle_right
+        "Bottom right" => position.bottom_right
+        "Top left" => position.top_left
+        "Middle left" => position.middle_left
+        "Bottom left" => position.bottom_left
+        => position.top_right
+
+f_text_size(string selected) =>
+    switch selected
+        "Tiny" => size.tiny
+        "Normal" => size.normal
+        => size.small
+
+f_percent(float value) =>
+    na(value) ? "n/a" : str.tostring(value, "#.0") + "%"
+
+f_signed_percent(float value) =>
+    na(value) ? "n/a" : (value > 0.0 ? "+" : "") + str.tostring(value, "#.0") + "%"
+
+f_signed_multiple(float value) =>
+    na(value) ? "n/a" : (value > 0.0 ? "+" : "") + str.tostring(value, "#.00") + "x"
+
+f_signed_number(float value) =>
+    string formattedValue = "n/a"
+    if not na(value)
+        if value > 999.0
+            formattedValue := ">+999"
+        else if value < -999.0
+            formattedValue := "<-999"
+        else
+            formattedValue := (value > 0.0 ? "+" : "") + str.tostring(value, "#.0")
+    formattedValue
+
+f_flow_arrow(float value, float threshold) =>
+    string flowArrowValue = "·"
+    if not na(value)
+        if value > threshold
+            flowArrowValue := "↑"
+        else if value < -threshold
+            flowArrowValue := "↓"
+    flowArrowValue
+
+f_meter(float value, int steps) =>
+    float boundedValue = math.max(0.0, math.min(100.0, nz(value, 0.0)))
+    int filledSteps = int(math.round(boundedValue * float(steps) / 100.0))
+    string meter = ""
+    for stepIndex = 1 to steps
+        meter += stepIndex <= filledSteps ? "■" : "·"
+    meter
+
+f_motion_arrow(float changePercent, float thresholdPercent) =>
+    string arrow = "·"
+    if not na(changePercent)
+        if changePercent > thresholdPercent
+            arrow := "↗"
+        else if changePercent < -thresholdPercent
+            arrow := "↘"
+        else
+            arrow := "→"
+    arrow
+
+f_location(float stretch, float edgeThreshold) =>
+    string locationIconValue = "◆"
+    string locationLabelValue = "Warming up"
+    if not na(stretch)
+        if stretch > 1.0
+            locationIconValue := "▲"
+            locationLabelValue := "Upper outside"
+        else if stretch < -1.0
+            locationIconValue := "▼"
+            locationLabelValue := "Lower outside"
+        else if stretch >= edgeThreshold
+            locationIconValue := "▲"
+            locationLabelValue := "Upper edge"
+        else if stretch <= -edgeThreshold
+            locationIconValue := "▼"
+            locationLabelValue := "Lower edge"
+        else if stretch > 0.0
+            locationIconValue := "△"
+            locationLabelValue := "Upper half"
+        else if stretch < 0.0
+            locationIconValue := "▽"
+            locationLabelValue := "Lower half"
+        else
+            locationIconValue := "◆"
+            locationLabelValue := "On basis"
+    [locationIconValue, locationLabelValue]
+
+// Split the current rolling window around the current selected basis.
+// The function returns squared excursion mass and observation counts for each side.
+f_split_directional_stats(float src, float basisValue, int len) =>
+    float upperSquaredMass = 0.0
+    float lowerSquaredMass = 0.0
+    int upperCount = 0
+    int lowerCount = 0
+    int neutralCount = 0
+    int actualCount = 0
+
+    for observationIndex = 0 to len - 1
+        float observation = src[observationIndex]
+        if not na(observation) and not na(basisValue)
+            actualCount += 1
+            float deviation = observation - basisValue
+            if deviation > 0.0
+                upperSquaredMass += deviation * deviation
+                upperCount += 1
+            else if deviation < 0.0
+                lowerSquaredMass += deviation * deviation
+                lowerCount += 1
+            else
+                neutralCount += 1
+
+    [
+         upperSquaredMass,
+         lowerSquaredMass,
+         upperCount,
+         lowerCount,
+         neutralCount,
+         actualCount
+     ]
+
+// =============================================================================
+// Basis and conventional reference
+// Every history-dependent ta.* call executes on every calculation before selection.
+// =============================================================================
+float smaBasis = ta.sma(sourceInput, lengthInput)
+float emaBasis = ta.ema(sourceInput, lengthInput)
+float rmaBasis = ta.rma(sourceInput, lengthInput)
+float wmaBasis = ta.wma(sourceInput, lengthInput)
+float symmetricReferenceDeviation = ta.stdev(sourceInput, lengthInput, true)
+
+float basis = switch basisTypeInput
+    "EMA" => emaBasis
+    "RMA" => rmaBasis
+    "WMA" => wmaBasis
+    => smaBasis
+
+// =============================================================================
+// Directional statistics and exact attribution identity
+// For either side with observations:
+// semivariance = all-window occupancy × conditional mean-square excursion.
+// =============================================================================
+[
+     rawUpperSquaredMass,
+     rawLowerSquaredMass,
+     rawUpperCount,
+     rawLowerCount,
+     rawNeutralCount,
+     rawActualCount
+ ] = f_split_directional_stats(sourceInput, basis, lengthInput)
+
+bool rawWindowReady =
+     not na(basis) and
+     rawActualCount == lengthInput
+
+float observationCount = rawWindowReady ? float(rawActualCount) : na
+float upperSquaredMass = rawWindowReady ? rawUpperSquaredMass : na
+float lowerSquaredMass = rawWindowReady ? rawLowerSquaredMass : na
+
+float pooledVariance =
+     rawWindowReady and observationCount > 0.0 ?
+     (upperSquaredMass + lowerSquaredMass) / observationCount :
+     na
+
+// A zero conditional variance is used only as the exact zero-mass convention
+// when a side has no observations. Geometry uses pooled fallback below.
+float upperConditionalVariance =
+     rawWindowReady and rawUpperCount > 0 ?
+     upperSquaredMass / float(rawUpperCount) :
+     0.0
+
+float lowerConditionalVariance =
+     rawWindowReady and rawLowerCount > 0 ?
+     lowerSquaredMass / float(rawLowerCount) :
+     0.0
+
+float upperOccupancyAll =
+     rawWindowReady and observationCount > 0.0 ?
+     float(rawUpperCount) / observationCount :
+     na
+
+float lowerOccupancyAll =
+     rawWindowReady and observationCount > 0.0 ?
+     float(rawLowerCount) / observationCount :
+     na
+
+float neutralOccupancyAll =
+     rawWindowReady and observationCount > 0.0 ?
+     float(rawNeutralCount) / observationCount :
+     na
+
+float upperSemivariance =
+     rawWindowReady and observationCount > 0.0 ?
+     upperSquaredMass / observationCount :
+     na
+
+float lowerSemivariance =
+     rawWindowReady and observationCount > 0.0 ?
+     lowerSquaredMass / observationCount :
+     na
+
+float upperIdentityResidual =
+     rawWindowReady ?
+     upperSemivariance - upperOccupancyAll * upperConditionalVariance :
+     na
+
+float lowerIdentityResidual =
+     rawWindowReady ?
+     lowerSemivariance - lowerOccupancyAll * lowerConditionalVariance :
+     na
+
+// =============================================================================
+// Sparse-side stabilization for displayed wing geometry
+// Attribution values above remain unshrunk and auditable.
+// =============================================================================
+float upperGeometrySeed =
+     rawWindowReady ?
+     (rawUpperCount > 0 ? upperConditionalVariance : pooledVariance) :
+     na
+
+float lowerGeometrySeed =
+     rawWindowReady ?
+     (rawLowerCount > 0 ? lowerConditionalVariance : pooledVariance) :
+     na
+
+float upperShrinkWeight =
+     rawWindowReady and rawUpperCount > 0 ?
+     (shrinkageStrengthInput == 0.0 ? 1.0 : float(rawUpperCount) / (float(rawUpperCount) + shrinkageStrengthInput)) :
+     0.0
+
+float lowerShrinkWeight =
+     rawWindowReady and rawLowerCount > 0 ?
+     (shrinkageStrengthInput == 0.0 ? 1.0 : float(rawLowerCount) / (float(rawLowerCount) + shrinkageStrengthInput)) :
+     0.0
+
+float stabilizedUpperVariance =
+     rawWindowReady ?
+     upperShrinkWeight * upperGeometrySeed + (1.0 - upperShrinkWeight) * pooledVariance :
+     na
+
+float stabilizedLowerVariance =
+     rawWindowReady ?
+     lowerShrinkWeight * lowerGeometrySeed + (1.0 - lowerShrinkWeight) * pooledVariance :
+     na
+
+float scaleFloor =
+     not na(basis) ?
+     math.max(syminfo.mintick, math.abs(basis) * 1e-10) :
+     syminfo.mintick
+
+float varianceFloor = scaleFloor * scaleFloor
+
+float rawUpperWidth =
+     rawWindowReady ?
+     math.sqrt(math.max(nz(stabilizedUpperVariance, 0.0), varianceFloor)) * multiplierInput :
+     na
+
+float rawLowerWidth =
+     rawWindowReady ?
+     math.sqrt(math.max(nz(stabilizedLowerVariance, 0.0), varianceFloor)) * multiplierInput :
+     na
+
+// Execute both smoothers on every bar for consistent historical and live behavior.
+float upperWidth = ta.rma(rawUpperWidth, wingSmoothingInput)
+float lowerWidth = ta.rma(rawLowerWidth, wingSmoothingInput)
+
+bool bandsReady =
+     rawWindowReady and
+     not na(upperWidth) and
+     not na(lowerWidth)
+
+float upperBand = bandsReady ? basis + upperWidth : na
+float lowerBand = bandsReady ? basis - lowerWidth : na
+float classicUpper = bandsReady and not na(smaBasis) and not na(symmetricReferenceDeviation) ? smaBasis + symmetricReferenceDeviation * multiplierInput : na
+float classicLower = bandsReady and not na(smaBasis) and not na(symmetricReferenceDeviation) ? smaBasis - symmetricReferenceDeviation * multiplierInput : na
+
+// =============================================================================
+// Three-axis asymmetry attribution
+// Mass answers which side contributes more total squared dispersion.
+// Frequency answers which side occurs more often across the whole window.
+// Severity answers which side has larger conditional squared excursions.
+// =============================================================================
+float totalSemivariance = upperSemivariance + lowerSemivariance
+
+float rawMassBias =
+     rawWindowReady and totalSemivariance > 0.0 ?
+     (upperSemivariance - lowerSemivariance) / totalSemivariance * 100.0 :
+     0.0
+
+float rawFrequencyBias =
+     rawWindowReady and observationCount > 0.0 ?
+     (float(rawUpperCount) - float(rawLowerCount)) / observationCount * 100.0 :
+     0.0
+
+float conditionalVarianceTotal = upperConditionalVariance + lowerConditionalVariance
+bool dispersionPresent = rawWindowReady and totalSemivariance > varianceFloor
+
+int maximumFeasibleSideObservations = math.max(1, int(math.floor(float(lengthInput) * 0.5)))
+int effectiveMinimumSideObservations = math.min(minimumSideObservationsInput, maximumFeasibleSideObservations)
+
+bool severityComparable =
+     rawWindowReady and
+     rawUpperCount >= effectiveMinimumSideObservations and
+     rawLowerCount >= effectiveMinimumSideObservations and
+     conditionalVarianceTotal > 0.0
+
+float rawSeverityBias =
+     severityComparable ?
+     (upperConditionalVariance - lowerConditionalVariance) / conditionalVarianceTotal * 100.0 :
+     na
+
+// Mass and frequency are always defined once the window is ready.
+float massBias = ta.rma(rawWindowReady ? rawMassBias : na, attributionSmoothingInput)
+float frequencyBias = ta.rma(rawWindowReady ? rawFrequencyBias : na, attributionSmoothingInput)
+
+// Reset the severity smoother whenever either side lacks the required sample.
+// This prevents a stale or artificial zero severity reading from being treated as evidence.
+var float severityBias = na
+float previousSeverityBias = severityBias[1]
+if severityComparable
+    if not severityComparable[1] or na(previousSeverityBias)
+        severityBias := rawSeverityBias
+    else
+        severityBias := previousSeverityBias + (rawSeverityBias - previousSeverityBias) / float(attributionSmoothingInput)
+else
+    severityBias := na
+
+float upperMassShare = dispersionPresent and not na(massBias) ? math.max(0.0, math.min(100.0, 50.0 + massBias * 0.5)) : na
+float lowerMassShare = dispersionPresent and not na(upperMassShare) ? 100.0 - upperMassShare : na
+
+float sampleAdequacyPercent =
+     rawWindowReady and effectiveMinimumSideObservations > 0 ?
+     math.min(100.0, float(math.min(rawUpperCount, rawLowerCount)) / float(effectiveMinimumSideObservations) * 100.0) :
+     na
+
+// =============================================================================
+// Stable dominance state with hysteresis
+// =============================================================================
+var int dominanceState = 0
+int previousDominanceState = nz(dominanceState[1], 0)
+bool analysisReady = bandsReady and dispersionPresent and not na(massBias) and not na(frequencyBias)
+
+if not analysisReady
+    dominanceState := 0
+else if massBias >= dominanceEnterInput
+    dominanceState := 1
+else if massBias <= -dominanceEnterInput
+    dominanceState := -1
+else if previousDominanceState == 1 and massBias > dominanceReleaseInput
+    dominanceState := 1
+else if previousDominanceState == -1 and massBias < -dominanceReleaseInput
+    dominanceState := -1
+else
+    dominanceState := 0
+
+string stateIcon = not bandsReady ? "…" : not dispersionPresent ? "—" : dominanceState == 1 ? "▲" : dominanceState == -1 ? "▼" : "◆"
+color stateColor = not bandsReady ? sparseStateColorInput : not dispersionPresent ? balancedStateColorInput : dominanceState == 1 ? upsideStateColorInput : dominanceState == -1 ? downsideStateColorInput : balancedStateColorInput
+
+// =============================================================================
+// Attribution source classification
+// =============================================================================
+int frequencyDirection =
+     frequencyBias > attributionDriverThresholdInput ? 1 :
+     frequencyBias < -attributionDriverThresholdInput ? -1 :
+     0
+
+int severityDirection =
+     severityComparable and severityBias > attributionDriverThresholdInput ? 1 :
+     severityComparable and severityBias < -attributionDriverThresholdInput ? -1 :
+     0
+
+string driverIcon = "◇"
+string driverGraphic = "F· S·"
+string driverText = "Balanced"
+color driverColor = balancedStateColorInput
+
+if not bandsReady
+    driverIcon := "…"
+    driverGraphic := "F? S?"
+    driverText := "Warming"
+    driverColor := sparseStateColorInput
+else if not dispersionPresent
+    driverIcon := "—"
+    driverGraphic := "F· S·"
+    driverText := "No dispersion"
+    driverColor := balancedStateColorInput
+else if not severityComparable
+    driverIcon := "!"
+    driverGraphic := frequencyDirection == 1 ? "F▲ S?" : frequencyDirection == -1 ? "F▼ S?" : "F· S?"
+    driverText := "Sparse"
+    driverColor := sparseStateColorInput
+else if frequencyDirection != 0 and severityDirection != 0 and frequencyDirection == severityDirection
+    driverIcon := "✦"
+    driverGraphic := frequencyDirection == 1 ? "F▲ S▲" : "F▼ S▼"
+    driverText := "Reinforced"
+    driverColor := frequencyDirection == 1 ? upsideStateColorInput : downsideStateColorInput
+else if frequencyDirection != 0 and severityDirection == 0
+    driverIcon := "●"
+    driverGraphic := frequencyDirection == 1 ? "F▲ S·" : "F▼ S·"
+    driverText := "Frequency"
+    driverColor := frequencyDirection == 1 ? upsideStateColorInput : downsideStateColorInput
+else if frequencyDirection == 0 and severityDirection != 0
+    driverIcon := "◆"
+    driverGraphic := severityDirection == 1 ? "F· S▲" : "F· S▼"
+    driverText := "Severity"
+    driverColor := severityDirection == 1 ? upsideStateColorInput : downsideStateColorInput
+else if frequencyDirection != 0 and severityDirection != 0 and frequencyDirection != severityDirection
+    driverIcon := "⇄"
+    driverGraphic := frequencyDirection == 1 ? "F▲ S▼" : "F▼ S▲"
+    driverText := "Offset"
+    driverColor := balancedStateColorInput
+
+// =============================================================================
+// Order-neutral attribution flow bridge
+// Each side obeys semivariance = occupancy × conditional severity.
+// The one-bar product change is split exactly between occupancy change and
+// severity change by assigning half of their interaction to each component.
+// =============================================================================
+bool flowRawReady =
+     rawWindowReady and
+     rawWindowReady[1] and
+     not na(upperOccupancyAll[1]) and
+     not na(lowerOccupancyAll[1])
+
+float upperFrequencyFlowRaw =
+     flowRawReady ?
+     (upperOccupancyAll - upperOccupancyAll[1]) * (upperConditionalVariance + upperConditionalVariance[1]) * 0.5 :
+     na
+
+float upperSeverityFlowRaw =
+     flowRawReady ?
+     (upperConditionalVariance - upperConditionalVariance[1]) * (upperOccupancyAll + upperOccupancyAll[1]) * 0.5 :
+     na
+
+float lowerFrequencyFlowRaw =
+     flowRawReady ?
+     (lowerOccupancyAll - lowerOccupancyAll[1]) * (lowerConditionalVariance + lowerConditionalVariance[1]) * 0.5 :
+     na
+
+float lowerSeverityFlowRaw =
+     flowRawReady ?
+     (lowerConditionalVariance - lowerConditionalVariance[1]) * (lowerOccupancyAll + lowerOccupancyAll[1]) * 0.5 :
+     na
+
+float directionalFrequencyFlowRaw =
+     flowRawReady ? upperFrequencyFlowRaw - lowerFrequencyFlowRaw : na
+
+float directionalSeverityFlowRaw =
+     flowRawReady ? upperSeverityFlowRaw - lowerSeverityFlowRaw : na
+
+float directionalSemivarianceDifference =
+     rawWindowReady ? upperSemivariance - lowerSemivariance : na
+
+float directionalMassChangeRaw =
+     flowRawReady ? directionalSemivarianceDifference - directionalSemivarianceDifference[1] : na
+
+float flowBridgeResidualRaw =
+     flowRawReady ? directionalMassChangeRaw - directionalFrequencyFlowRaw - directionalSeverityFlowRaw : na
+
+float flowNormalizationScale =
+     flowRawReady ?
+     math.max((totalSemivariance + totalSemivariance[1]) * 0.5, varianceFloor) :
+     na
+
+float normalizedFrequencyFlowRaw =
+     flowRawReady ? directionalFrequencyFlowRaw / flowNormalizationScale * 100.0 : na
+
+float normalizedSeverityFlowRaw =
+     flowRawReady ? directionalSeverityFlowRaw / flowNormalizationScale * 100.0 : na
+
+// Execute both flow smoothers on every calculation. Their sum remains the
+// displayed normalized directional-mass shift because the smoothing is linear.
+float frequencyFlow = ta.rma(normalizedFrequencyFlowRaw, flowSmoothingInput)
+float severityFlow = ta.rma(normalizedSeverityFlowRaw, flowSmoothingInput)
+float totalMassFlow = frequencyFlow + severityFlow
+bool flowDisplayReady = flowRawReady and not na(frequencyFlow) and not na(severityFlow)
+
+string frequencyFlowArrow = f_flow_arrow(frequencyFlow, flowSignificanceInput)
+string severityFlowArrow = f_flow_arrow(severityFlow, flowSignificanceInput)
+string flowGraphic = "F" + frequencyFlowArrow + " S" + severityFlowArrow
+
+bool frequencyFlowActive = flowDisplayReady and math.abs(frequencyFlow) > flowSignificanceInput
+bool severityFlowActive = flowDisplayReady and math.abs(severityFlow) > flowSignificanceInput
+int totalFlowDirection =
+     flowDisplayReady and totalMassFlow > flowSignificanceInput ? 1 :
+     flowDisplayReady and totalMassFlow < -flowSignificanceInput ? -1 :
+     0
+
+string flowIcon = "◆"
+string flowText = "Stable"
+color flowColor = balancedStateColorInput
+
+if not flowDisplayReady
+    flowIcon := "…"
+    flowText := "Warming"
+    flowColor := sparseStateColorInput
+else if not dispersionPresent and not dispersionPresent[1]
+    flowIcon := "—"
+    flowText := "No dispersion"
+    flowColor := balancedStateColorInput
+else if totalFlowDirection == 0 and frequencyFlowActive and severityFlowActive and frequencyFlow * severityFlow < 0.0
+    flowIcon := "⇄"
+    flowText := "Offset"
+    flowColor := balancedStateColorInput
+else if totalFlowDirection == 0
+    flowIcon := "◆"
+    flowText := "Stable"
+    flowColor := balancedStateColorInput
+else if frequencyFlowActive and severityFlowActive and frequencyFlow * severityFlow > 0.0
+    flowIcon := totalFlowDirection == 1 ? "⇈" : "⇊"
+    flowText := totalFlowDirection == 1 ? "Reinforced upper" : "Reinforced lower"
+    flowColor := totalFlowDirection == 1 ? upsideStateColorInput : downsideStateColorInput
+else if math.abs(frequencyFlow) >= math.abs(severityFlow) * flowDominanceRatioInput
+    flowIcon := "F"
+    flowText := totalFlowDirection == 1 ? "Frequency upper" : "Frequency lower"
+    flowColor := totalFlowDirection == 1 ? upsideStateColorInput : downsideStateColorInput
+else if math.abs(severityFlow) >= math.abs(frequencyFlow) * flowDominanceRatioInput
+    flowIcon := "S"
+    flowText := totalFlowDirection == 1 ? "Severity upper" : "Severity lower"
+    flowColor := totalFlowDirection == 1 ? upsideStateColorInput : downsideStateColorInput
+else
+    flowIcon := totalFlowDirection == 1 ? "↗" : "↘"
+    flowText := totalFlowDirection == 1 ? "Shared upper" : "Shared lower"
+    flowColor := totalFlowDirection == 1 ? upsideStateColorInput : downsideStateColorInput
+
+// =============================================================================
+// Live trader-facing diagnostics
+// =============================================================================
+float upperStretchDenominator = bandsReady ? math.max(upperWidth, scaleFloor) : na
+float lowerStretchDenominator = bandsReady ? math.max(lowerWidth, scaleFloor) : na
+
+float sideNormalizedStretch =
+     bandsReady ?
+     (sourceInput >= basis ?
+         (sourceInput - basis) / upperStretchDenominator :
+         -(basis - sourceInput) / lowerStretchDenominator) :
+     na
+
+float upperWingChangePercent =
+     bandsReady and not na(upperWidth[1]) and upperWidth[1] > 0.0 ?
+     (upperWidth / upperWidth[1] - 1.0) * 100.0 :
+     na
+
+float lowerWingChangePercent =
+     bandsReady and not na(lowerWidth[1]) and lowerWidth[1] > 0.0 ?
+     (lowerWidth / lowerWidth[1] - 1.0) * 100.0 :
+     na
+
+string upperMotionArrow = f_motion_arrow(upperWingChangePercent, wingMotionThresholdInput)
+string lowerMotionArrow = f_motion_arrow(lowerWingChangePercent, wingMotionThresholdInput)
+string wingMotionGraphic = "U" + upperMotionArrow + " D" + lowerMotionArrow
+
+float wingRatio =
+     bandsReady and lowerWidth > 0.0 ?
+     upperWidth / lowerWidth :
+     na
+
+float containmentObservation =
+     bandsReady ?
+     (sourceInput <= upperBand and sourceInput >= lowerBand ? 1.0 : 0.0) :
+     na
+
+// Execute containment smoothing on every bar, then gate the display to the current ready state.
+float containmentPercentCore = ta.sma(containmentObservation, containmentLookbackInput) * 100.0
+float containmentPercent = bandsReady ? containmentPercentCore : na
+
+[locationIcon, locationText] = f_location(sideNormalizedStretch, edgeThresholdInput)
+
+// =============================================================================
+// Sparse transition events
+// =============================================================================
+bool previousStretchReady = not na(sideNormalizedStretch[1])
+
+bool crossToUpperRaw =
+     bandsReady and
+     previousStretchReady and
+     sideNormalizedStretch > 1.0 and
+     sideNormalizedStretch[1] < -1.0
+
+bool crossToLowerRaw =
+     bandsReady and
+     previousStretchReady and
+     sideNormalizedStretch < -1.0 and
+     sideNormalizedStretch[1] > 1.0
+
+bool upperExcursionRaw =
+     bandsReady and
+     previousStretchReady and
+     not crossToUpperRaw and
+     sideNormalizedStretch > 1.0 and
+     sideNormalizedStretch[1] <= 1.0
+
+bool lowerExcursionRaw =
+     bandsReady and
+     previousStretchReady and
+     not crossToLowerRaw and
+     sideNormalizedStretch < -1.0 and
+     sideNormalizedStretch[1] >= -1.0
+
+bool upperReentryRaw =
+     bandsReady and
+     previousStretchReady and
+     not crossToLowerRaw and
+     sideNormalizedStretch <= 1.0 and
+     sideNormalizedStretch[1] > 1.0
+
+bool lowerReentryRaw =
+     bandsReady and
+     previousStretchReady and
+     not crossToUpperRaw and
+     sideNormalizedStretch >= -1.0 and
+     sideNormalizedStretch[1] < -1.0
+
+bool upsideDominanceFlipRaw =
+     analysisReady and
+     analysisReady[1] and
+     dominanceState == 1 and
+     previousDominanceState != 1
+
+bool downsideDominanceFlipRaw =
+     analysisReady and
+     analysisReady[1] and
+     dominanceState == -1 and
+     previousDominanceState != -1
+
+bool eventBarReady =
+     not confirmedEventsOnlyInput or
+     barstate.isconfirmed
+
+bool crossToUpperEvent = crossToUpperRaw and eventBarReady
+bool crossToLowerEvent = crossToLowerRaw and eventBarReady
+bool upperExcursionEvent = upperExcursionRaw and eventBarReady
+bool lowerExcursionEvent = lowerExcursionRaw and eventBarReady
+bool upperReentryEvent = upperReentryRaw and eventBarReady
+bool lowerReentryEvent = lowerReentryRaw and eventBarReady
+bool upsideDominanceFlipEvent = upsideDominanceFlipRaw and eventBarReady
+bool downsideDominanceFlipEvent = downsideDominanceFlipRaw and eventBarReady
+
+string nowIcon = locationIcon
+string nowText = locationText
+color nowColor = sideNormalizedStretch > 0.0 ? upperColorInput : sideNormalizedStretch < 0.0 ? lowerColorInput : balancedStateColorInput
+
+// The readout previews live transitions. Markers and alerts still obey the
+// confirmed-events setting above.
+if crossToUpperRaw
+    nowIcon := "◆"
+    nowText := "Crossed to upper"
+    nowColor := upperColorInput
+else if crossToLowerRaw
+    nowIcon := "◆"
+    nowText := "Crossed to lower"
+    nowColor := lowerColorInput
+else if upperExcursionRaw
+    nowIcon := "▲"
+    nowText := "Upper excursion"
+    nowColor := upperColorInput
+else if lowerExcursionRaw
+    nowIcon := "▼"
+    nowText := "Lower excursion"
+    nowColor := lowerColorInput
+else if upperReentryRaw
+    nowIcon := "↩"
+    nowText := "Upper re-entry"
+    nowColor := upperColorInput
+else if lowerReentryRaw
+    nowIcon := "↪"
+    nowText := "Lower re-entry"
+    nowColor := lowerColorInput
+else if upsideDominanceFlipRaw
+    nowIcon := "▲"
+    nowText := "Bias turned up"
+    nowColor := upsideStateColorInput
+else if downsideDominanceFlipRaw
+    nowIcon := "▼"
+    nowText := "Bias turned down"
+    nowColor := downsideStateColorInput
+
+// =============================================================================
+// Clean chart visuals
+// =============================================================================
+color upperFillColor = color.new(upperColorInput, splitFillTransparencyInput)
+color lowerFillColor = color.new(lowerColorInput, splitFillTransparencyInput)
+color stateRailColor = color.new(stateColor, stateRailTransparencyInput)
+color upperGlowColor = color.new(upperColorInput, dominantGlowTransparencyInput)
+color lowerGlowColor = color.new(lowerColorInput, dominantGlowTransparencyInput)
+color classicReferenceColor = color.new(classicReferenceColorInput, 68)
+
+plot(
+     showDominantWingGlowInput and dominanceState == 1 and bandsReady ? upperBand : na,
+     "Upper Dominant Wing Glow",
+     color = upperGlowColor,
+     linewidth = dominantGlowWidthInput,
+     editable = false,
+     display = display.pane
+ )
+
+plot(
+     showDominantWingGlowInput and dominanceState == -1 and bandsReady ? lowerBand : na,
+     "Lower Dominant Wing Glow",
+     color = lowerGlowColor,
+     linewidth = dominantGlowWidthInput,
+     editable = false,
+     display = display.pane
+ )
+
+plot(
+     showStateRailInput and bandsReady ? basis : na,
+     "Attribution State Rail",
+     color = stateRailColor,
+     linewidth = stateRailWidthInput,
+     style = plot.style_linebr,
+     editable = false,
+     display = display.pane
+ )
+
+plot(
+     showClassicReferenceInput and bandsReady ? classicUpper : na,
+     "Classic Upper Reference",
+     color = classicReferenceColor,
+     linewidth = 1,
+     editable = false,
+     display = display.pane
+ )
+
+plot(
+     showClassicReferenceInput and bandsReady ? classicLower : na,
+     "Classic Lower Reference",
+     color = classicReferenceColor,
+     linewidth = 1,
+     editable = false,
+     display = display.pane
+ )
+
+basisFillAnchor = plot(
+     showEnvelopeInput and bandsReady ? basis : na,
+     "Fill Basis Anchor",
+     color = na,
+     editable = false,
+     display = display.pane
+ )
+
+upperEnvelopePlot = plot(
+     showEnvelopeInput and bandsReady ? upperBand : na,
+     "Upper Attribution Wing",
+     color = upperColorInput,
+     linewidth = envelopeLineWidthInput,
+     editable = false,
+     display = display.pane
+ )
+
+lowerEnvelopePlot = plot(
+     showEnvelopeInput and bandsReady ? lowerBand : na,
+     "Lower Attribution Wing",
+     color = lowerColorInput,
+     linewidth = envelopeLineWidthInput,
+     editable = false,
+     display = display.pane
+ )
+
+fill(
+     upperEnvelopePlot,
+     basisFillAnchor,
+     color = showSplitFillInput ? upperFillColor : na,
+     title = "Upper Attribution Fill",
+     editable = false
+ )
+
+fill(
+     basisFillAnchor,
+     lowerEnvelopePlot,
+     color = showSplitFillInput ? lowerFillColor : na,
+     title = "Lower Attribution Fill",
+     editable = false
+ )
+
+plot(
+     showBasisInput and bandsReady ? basis : na,
+     "Basis",
+     color = basisColorInput,
+     linewidth = basisLineWidthInput,
+     editable = false,
+     display = display.pane
+ )
+
+// Only transition bars are marked; sustained outside bars do not repeat markers.
+plotshape(
+     showExcursionMarkersInput and upperExcursionEvent,
+     title = "Upper Excursion Started",
+     style = shape.triangleup,
+     location = location.abovebar,
+     color = upperColorInput,
+     size = size.tiny,
+     editable = false,
+     display = display.pane
+ )
+
+plotshape(
+     showExcursionMarkersInput and lowerExcursionEvent,
+     title = "Lower Excursion Started",
+     style = shape.triangledown,
+     location = location.belowbar,
+     color = lowerColorInput,
+     size = size.tiny,
+     editable = false,
+     display = display.pane
+ )
+
+plotshape(
+     showReentryMarkersInput and upperReentryEvent ? upperBand : na,
+     title = "Upper Re-entry",
+     style = shape.circle,
+     location = location.absolute,
+     color = upperColorInput,
+     size = size.tiny,
+     editable = false,
+     display = display.pane
+ )
+
+plotshape(
+     showReentryMarkersInput and lowerReentryEvent ? lowerBand : na,
+     title = "Lower Re-entry",
+     style = shape.circle,
+     location = location.absolute,
+     color = lowerColorInput,
+     size = size.tiny,
+     editable = false,
+     display = display.pane
+ )
+
+plotshape(
+     showCrossWingJumpMarkersInput and crossToUpperEvent ? basis : na,
+     title = "Direct Jump to Upper Wing",
+     style = shape.diamond,
+     location = location.absolute,
+     color = upperColorInput,
+     size = size.small,
+     editable = false,
+     display = display.pane
+ )
+
+plotshape(
+     showCrossWingJumpMarkersInput and crossToLowerEvent ? basis : na,
+     title = "Direct Jump to Lower Wing",
+     style = shape.diamond,
+     location = location.absolute,
+     color = lowerColorInput,
+     size = size.small,
+     editable = false,
+     display = display.pane
+ )
+
+plotshape(
+     showDominanceFlipMarkersInput and upsideDominanceFlipEvent ? basis : na,
+     title = "Upper Mass Dominance Started",
+     style = shape.diamond,
+     location = location.absolute,
+     color = upsideStateColorInput,
+     size = size.tiny,
+     editable = false,
+     display = display.pane
+ )
+
+plotshape(
+     showDominanceFlipMarkersInput and downsideDominanceFlipEvent ? basis : na,
+     title = "Lower Mass Dominance Started",
+     style = shape.diamond,
+     location = location.absolute,
+     color = downsideStateColorInput,
+     size = size.tiny,
+     editable = false,
+     display = display.pane
+ )
+
+// =============================================================================
+// Compact visual readout
+// Unicode symbols are confined to UI strings; the publication title is ASCII.
+// =============================================================================
+panelPosition = f_panel_position(panelPositionInput)
+panelTextSize = f_text_size(panelTextSizeInput)
+
+bool leftAnchored =
+     panelPositionInput == "Top left" or
+     panelPositionInput == "Middle left" or
+     panelPositionInput == "Bottom left"
+
+int spacerColumn = leftAnchored ? 0 : 4
+int iconColumn = leftAnchored ? 1 : 0
+int labelColumn = leftAnchored ? 2 : 1
+int graphicColumn = leftAnchored ? 3 : 2
+int valueColumn = leftAnchored ? 4 : 3
+
+color panelBackground = color.new(panelBackgroundInput, panelTransparencyInput)
+color headerBackground = color.new(stateColor, 58)
+color massIconBackground = color.new(stateColor, 78)
+color driverIconBackground = color.new(driverColor, 76)
+color flowIconBackground = color.new(flowColor, 76)
+color stretchColor = sideNormalizedStretch > 0.0 ? upperColorInput : sideNormalizedStretch < 0.0 ? lowerColorInput : balancedStateColorInput
+color stretchIconBackground = color.new(stretchColor, 76)
+color wingIconBackground = color.new(stateColor, 76)
+color nowIconBackground = color.new(nowColor, 76)
+
+string executionText = barstate.isrealtime and not barstate.isconfirmed ? "● LIVE" : "■ CLOSE"
+color executionColor = barstate.isrealtime and not barstate.isconfirmed ? color.rgb(98, 255, 174) : panelTextColorInput
+string stateValueText =
+     not bandsReady ? "MASS WARMING" :
+     not dispersionPresent ? "NO DISPERSION" :
+     dominanceState == 1 ? "UPPER MASS " + f_percent(upperMassShare) :
+     dominanceState == -1 ? "LOWER MASS " + f_percent(lowerMassShare) :
+     "MASS " + f_percent(upperMassShare) + "/" + f_percent(lowerMassShare)
+string upperMassGraphic = "▲" + f_meter(upperMassShare, 5) + " " + f_percent(upperMassShare)
+string lowerMassGraphic = "▼" + f_meter(lowerMassShare, 5) + " " + f_percent(lowerMassShare)
+string flowValueText =
+     not flowDisplayReady or (not dispersionPresent and not dispersionPresent[1]) ? "n/a" :
+     totalMassFlow > flowSignificanceInput ? "UΔ " + f_signed_number(totalMassFlow) :
+     totalMassFlow < -flowSignificanceInput ? "LΔ " + f_signed_number(totalMassFlow) :
+     "Δ " + f_signed_number(totalMassFlow)
+
+string massTooltip =
+     "Total directional semivariance mass. Upper and lower shares sum to 100%. This is a dispersion share, not a price forecast or expected return."
+
+string driverTooltip =
+     "ATTRIB decomposes each side's raw semivariance level into observation frequency (F) and conditional squared-excursion severity (S). " +
+     "Current values: F " + f_signed_percent(frequencyBias) + ", S " + (severityComparable ? f_signed_percent(severityBias) : "not comparable") + ". " +
+     "Side observations: upper " + str.tostring(rawUpperCount) + ", lower " + str.tostring(rawLowerCount) + "; required per side " + str.tostring(effectiveMinimumSideObservations) + ". " +
+     "The raw identity is exact; the displayed diagnostics are smoothed independently."
+
+string flowTooltip =
+     "SHIFT state: " + flowText + ". It attributes the one-bar change in directional semivariance mass. F is the order-neutral occupancy-change contribution and S is the conditional-severity-change contribution. " +
+     "Their raw sum exactly equals the directional mass change; the displayed values use linear RMA smoothing. UΔ moves dispersion mass toward the upper side and LΔ toward the lower side. Δ is normalized by average total semivariance and is not a price percentage."
+
+string stretchTooltip =
+     "Current source distance normalized by the matching asymmetric wing. +1.00x equals the upper wing and -1.00x equals the lower wing."
+
+string wingsTooltip =
+     "One-bar stabilized wing motion. Upper: " + f_signed_percent(upperWingChangePercent) +
+     ". Lower: " + f_signed_percent(lowerWingChangePercent) +
+     ". Ratio is upper width divided by lower width."
+
+string nowTooltip =
+     "Live location or transition preview. Direct moves from outside one wing to outside the opposite wing are consolidated into one cross-wing event. Markers and alerts are " +
+     (confirmedEventsOnlyInput ? "confirmed at bar close." : "allowed intrabar.") +
+     " Realized containment: " + f_percent(containmentPercent) + "."
+
+var table visualPanel = table.new(
+     panelPosition,
+     5,
+     7,
+     bgcolor = na,
+     frame_color = na,
+     frame_width = 0,
+     border_color = na,
+     border_width = 0
+ )
+
+if barstate.islast
+    table.clear(visualPanel, 0, 0, 4, 6)
+
+    if panelModeInput != "Off"
+        for panelRow = 0 to 6
+            table.cell(
+                 visualPanel,
+                 spacerColumn,
+                 panelRow,
+                 "",
+                 width = axisClearanceInput,
+                 bgcolor = na
+             )
+
+        // Header
+        table.cell(visualPanel, iconColumn, 0, stateIcon, text_color = stateColor, text_size = panelTextSize, text_halign = text.align_center, text_formatting = text.format_bold, bgcolor = headerBackground)
+        table.cell(visualPanel, labelColumn, 0, "BB ATTRIB", text_color = panelTextColorInput, text_size = panelTextSize, text_halign = text.align_left, text_formatting = text.format_bold, bgcolor = headerBackground, tooltip = "Bollinger Bands Asymmetry Attribution")
+        table.cell(visualPanel, graphicColumn, 0, executionText, text_color = executionColor, text_size = panelTextSize, text_halign = text.align_center, text_formatting = text.format_bold, bgcolor = headerBackground)
+        table.cell(visualPanel, valueColumn, 0, stateValueText, text_color = stateColor, text_size = panelTextSize, text_halign = text.align_right, text_formatting = text.format_bold, bgcolor = headerBackground)
+
+        // Combined upper/lower mass visualization
+        table.cell(visualPanel, iconColumn, 1, "◐", text_color = stateColor, text_size = panelTextSize, text_halign = text.align_center, text_formatting = text.format_bold, bgcolor = massIconBackground, tooltip = massTooltip)
+        table.cell(visualPanel, labelColumn, 1, "MASS", text_color = panelTextColorInput, text_size = panelTextSize, text_halign = text.align_left, bgcolor = panelBackground, tooltip = massTooltip)
+        table.cell(visualPanel, graphicColumn, 1, upperMassGraphic, text_color = upperColorInput, text_size = panelTextSize, text_halign = text.align_left, text_formatting = text.format_bold, bgcolor = panelBackground, tooltip = massTooltip)
+        table.cell(visualPanel, valueColumn, 1, lowerMassGraphic, text_color = lowerColorInput, text_size = panelTextSize, text_halign = text.align_right, text_formatting = text.format_bold, bgcolor = panelBackground, tooltip = massTooltip)
+
+        // Attribution composition
+        table.cell(visualPanel, iconColumn, 2, driverIcon, text_color = driverColor, text_size = panelTextSize, text_halign = text.align_center, text_formatting = text.format_bold, bgcolor = driverIconBackground, tooltip = driverTooltip)
+        table.cell(visualPanel, labelColumn, 2, "ATTRIB", text_color = panelTextColorInput, text_size = panelTextSize, text_halign = text.align_left, bgcolor = panelBackground, tooltip = driverTooltip)
+        table.cell(visualPanel, graphicColumn, 2, driverGraphic, text_color = driverColor, text_size = panelTextSize, text_halign = text.align_left, text_formatting = text.format_bold, bgcolor = panelBackground, tooltip = driverTooltip)
+        table.cell(visualPanel, valueColumn, 2, driverText, text_color = driverColor, text_size = panelTextSize, text_halign = text.align_right, bgcolor = panelBackground, tooltip = driverTooltip)
+
+        // Exact mass-shift attribution
+        table.cell(visualPanel, iconColumn, 3, flowIcon, text_color = flowColor, text_size = panelTextSize, text_halign = text.align_center, text_formatting = text.format_bold, bgcolor = flowIconBackground, tooltip = flowTooltip)
+        table.cell(visualPanel, labelColumn, 3, "SHIFT", text_color = panelTextColorInput, text_size = panelTextSize, text_halign = text.align_left, bgcolor = panelBackground, tooltip = flowTooltip)
+        table.cell(visualPanel, graphicColumn, 3, flowGraphic, text_color = flowColor, text_size = panelTextSize, text_halign = text.align_left, text_formatting = text.format_bold, bgcolor = panelBackground, tooltip = flowTooltip)
+        table.cell(visualPanel, valueColumn, 3, flowValueText, text_color = flowColor, text_size = panelTextSize, text_halign = text.align_right, text_formatting = text.format_bold, bgcolor = panelBackground, tooltip = flowTooltip)
+
+        // Live asymmetric stretch
+        table.cell(visualPanel, iconColumn, 4, "◎", text_color = stretchColor, text_size = panelTextSize, text_halign = text.align_center, text_formatting = text.format_bold, bgcolor = stretchIconBackground, tooltip = stretchTooltip)
+        table.cell(visualPanel, labelColumn, 4, "STRETCH", text_color = panelTextColorInput, text_size = panelTextSize, text_halign = text.align_left, bgcolor = panelBackground, tooltip = stretchTooltip)
+        table.cell(visualPanel, graphicColumn, 4, f_meter(math.min(math.abs(nz(sideNormalizedStretch, 0.0)), 1.0) * 100.0, 6), text_color = stretchColor, text_size = panelTextSize, text_halign = text.align_left, bgcolor = panelBackground, tooltip = stretchTooltip)
+        table.cell(visualPanel, valueColumn, 4, f_signed_multiple(sideNormalizedStretch), text_color = stretchColor, text_size = panelTextSize, text_halign = text.align_right, text_formatting = text.format_bold, bgcolor = panelBackground, tooltip = stretchTooltip)
+
+        // Wing motion
+        table.cell(visualPanel, iconColumn, 5, "⇅", text_color = stateColor, text_size = panelTextSize, text_halign = text.align_center, text_formatting = text.format_bold, bgcolor = wingIconBackground, tooltip = wingsTooltip)
+        table.cell(visualPanel, labelColumn, 5, "WINGS", text_color = panelTextColorInput, text_size = panelTextSize, text_halign = text.align_left, bgcolor = panelBackground, tooltip = wingsTooltip)
+        table.cell(visualPanel, graphicColumn, 5, wingMotionGraphic, text_color = stateColor, text_size = panelTextSize, text_halign = text.align_left, text_formatting = text.format_bold, bgcolor = panelBackground, tooltip = wingsTooltip)
+        table.cell(visualPanel, valueColumn, 5, na(wingRatio) ? "n/a" : str.tostring(wingRatio, "#.00") + "x", text_color = stateColor, text_size = panelTextSize, text_halign = text.align_right, bgcolor = panelBackground, tooltip = wingsTooltip)
+
+        // Current location/event
+        table.cell(visualPanel, iconColumn, 6, nowIcon, text_color = nowColor, text_size = panelTextSize, text_halign = text.align_center, text_formatting = text.format_bold, bgcolor = nowIconBackground, tooltip = nowTooltip)
+        table.cell(visualPanel, labelColumn, 6, "NOW", text_color = panelTextColorInput, text_size = panelTextSize, text_halign = text.align_left, bgcolor = panelBackground, tooltip = nowTooltip)
+        table.cell(visualPanel, graphicColumn, 6, nowText, text_color = nowColor, text_size = panelTextSize, text_halign = text.align_left, text_formatting = text.format_bold, bgcolor = panelBackground, tooltip = nowTooltip)
+        table.cell(visualPanel, valueColumn, 6, "C " + f_percent(containmentPercent), text_color = panelTextColorInput, text_size = panelTextSize, text_halign = text.align_right, bgcolor = panelBackground, tooltip = nowTooltip)
+
+// =============================================================================
+// Lean Data Window outputs
+// Plot-count budget is intentionally kept below TradingView's 64-count limit.
+// Detailed integrity diagnostics remain available in the visual readout tooltips
+// and the open-source calculations, while the most useful research series stay
+// exportable and usable as sources for other indicators.
+// =============================================================================
+plot(massBias, "Semivariance Mass Bias", editable = false, display = display.data_window)
+plot(frequencyBias, "Observation Frequency Bias", editable = false, display = display.data_window)
+plot(severityBias, "Conditional Severity Bias", editable = false, display = display.data_window)
+plot(upperMassShare, "Upper Semivariance Share", editable = false, display = display.data_window)
+plot(lowerMassShare, "Lower Semivariance Share", editable = false, display = display.data_window)
+plot(sideNormalizedStretch, "Asymmetric Side-Normalized Stretch", editable = false, display = display.data_window)
+plot(upperWidth, "Upper Stabilized Wing Distance", editable = false, display = display.data_window)
+plot(lowerWidth, "Lower Stabilized Wing Distance", editable = false, display = display.data_window)
+plot(containmentPercent, "Realized Envelope Containment", editable = false, display = display.data_window)
+plot(sampleAdequacyPercent, "Side Sample Adequacy", editable = false, display = display.data_window)
+plot(totalMassFlow, "Smoothed Directional Mass Shift", editable = false, display = display.data_window)
+plot(flowRawReady ? flowBridgeResidualRaw : na, "Flow Bridge Identity Residual", editable = false, display = display.data_window)
+
+// =============================================================================
+// Alerts: descriptive observations only
+// =============================================================================
+alertcondition(
+     upperExcursionEvent,
+     "Upper asymmetric excursion started",
+     "Price moved from inside to outside the upper attribution wing on {{ticker}} at {{interval}}."
+ )
+
+alertcondition(
+     lowerExcursionEvent,
+     "Lower asymmetric excursion started",
+     "Price moved from inside to outside the lower attribution wing on {{ticker}} at {{interval}}."
+ )
+
+alertcondition(
+     upperReentryEvent,
+     "Upper asymmetric re-entry",
+     "Price returned inside the upper attribution wing on {{ticker}} at {{interval}}."
+ )
+
+alertcondition(
+     lowerReentryEvent,
+     "Lower asymmetric re-entry",
+     "Price returned inside the lower attribution wing on {{ticker}} at {{interval}}."
+ )
+
+alertcondition(
+     crossToUpperEvent,
+     "Direct cross-wing jump to upper side",
+     "Price moved directly from outside the lower attribution wing to outside the upper attribution wing on {{ticker}} at {{interval}}."
+ )
+
+alertcondition(
+     crossToLowerEvent,
+     "Direct cross-wing jump to lower side",
+     "Price moved directly from outside the upper attribution wing to outside the lower attribution wing on {{ticker}} at {{interval}}."
+ )
+
+alertcondition(
+     upsideDominanceFlipEvent,
+     "Upper semivariance mass dominance started",
+     "The smoothed semivariance attribution state changed to upper-mass dominance on {{ticker}} at {{interval}}."
+ )
+
+alertcondition(
+     downsideDominanceFlipEvent,
+     "Lower semivariance mass dominance started",
+     "The smoothed semivariance attribution state changed to lower-mass dominance on {{ticker}} at {{interval}}."
+ )
+````
