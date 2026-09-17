@@ -13,7 +13,6 @@ import time
 import unicodedata
 import urllib.parse
 import urllib.request
-from html.parser import HTMLParser
 from pathlib import Path
 
 
@@ -52,25 +51,6 @@ def canonical_publication_url(url: str) -> str | None:
     return DETAIL_ORIGIN + parsed.path
 
 
-class PublicationLinkParser(HTMLParser):
-    def __init__(self) -> None:
-        super().__init__()
-        self.urls: dict[str, None] = {}
-
-    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
-        if tag != "a":
-            return
-        attributes = dict(attrs)
-        if attributes.get("data-qa-id") != "ui-lib-card-link-title":
-            return
-        href = attributes.get("href")
-        if href is None:
-            return
-        url = canonical_publication_url(href)
-        if url is not None:
-            self.urls[url] = None
-
-
 def validate_url(url: str) -> None:
     parsed = urllib.parse.urlparse(url)
     if parsed.scheme != "https":
@@ -87,10 +67,12 @@ def fetch(url: str) -> str:
 
 
 def publication_urls(page_html: str) -> list[str]:
-    parser = PublicationLinkParser()
-    parser.feed(page_html)
-    parser.close()
-    return list(parser.urls)
+    paths = re.findall(
+        r"/script/[A-Za-z0-9]{8}(?:-[A-Za-z0-9_-]+)?/",
+        page_html,
+    )
+    urls = (canonical_publication_url(path) for path in paths)
+    return list(dict.fromkeys(url for url in urls if url is not None))
 
 
 def last_page(page_html: str) -> int:
