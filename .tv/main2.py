@@ -46,7 +46,10 @@ def canonical_publication_url(url: str) -> str | None:
         return None
     if parsed.params or parsed.query or parsed.fragment:
         return None
-    if not re.fullmatch(r"/script/[A-Za-z0-9]{8}(?:-[A-Za-z0-9_-]+)?/", parsed.path):
+    parts = parsed.path.strip("/").split("/")
+    if len(parts) != 2 or parts[0] != "script":
+        return None
+    if not re.fullmatch(r"[A-Za-z0-9]{8}(?:-.+)?", parts[1]):
         return None
     return DETAIL_ORIGIN + parsed.path
 
@@ -67,10 +70,7 @@ def fetch(url: str) -> str:
 
 
 def publication_urls(page_html: str) -> list[str]:
-    paths = re.findall(
-        r"/script/[A-Za-z0-9]{8}(?:-[A-Za-z0-9_-]+)?/",
-        page_html,
-    )
+    paths = re.findall(r"/script/[^\"'<>\s?#]+/", page_html)
     urls = (canonical_publication_url(path) for path in paths)
     return list(dict.fromkeys(url for url in urls if url is not None))
 
@@ -85,15 +85,20 @@ def paginated_url(base_url: str, page: int) -> str:
 
 
 def pine_id(page_html: str) -> str | None:
-    match = re.search(
+    patterns = (
+        r'"script"\s*:\s*\{[^}]*?"script_id_part"\s*:\s*"PUB(?:%3B|;)([A-Za-z0-9]{32})"',
         r'"script_id_part"\s*:\s*"PUB(?:%3B|;)([A-Za-z0-9]{32})"',
-        page_html,
+        r'"scriptIdPart"\s*:\s*"PUB(?:%3B|;)([A-Za-z0-9]{32})"',
     )
-    return f"PUB;{match.group(1)}" if match else None
+    for pattern in patterns:
+        match = re.search(pattern, page_html)
+        if match:
+            return f"PUB;{match.group(1)}"
+    return None
 
 
 def pine_version(page_html: str) -> int:
-    match = re.search(r'"version_maj":(\d+)', page_html)
+    match = re.search(r'"version_maj"\s*:\s*(\d+)', page_html)
     return int(match.group(1)) if match else 1
 
 
