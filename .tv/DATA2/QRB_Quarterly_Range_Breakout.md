@@ -1,9 +1,9 @@
-<!-- tradingview-pine-id: PUB;9e081074f9364d7d9dc18ef928985f64 -->
-<!-- tradingview-pine-version: 3.0 -->
+<!-- tradingview-pine-id: PUB;723ef9965f634014b8118633fe6d616f -->
+<!-- tradingview-pine-version: 1.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # QRB - Quarterly Range Breakout
 
-Source: https://www.tradingview.com/script/deDaKCXu-QRB-Quarterly-Break-Range/
+Source: https://www.tradingview.com/script/MtEDCdUd-QRB-Quarterly-Range-Breakout/
 
 ## Description
 
@@ -184,6 +184,7 @@ QRB allows users to customize the appearance of each level, including:
 [*]Midpoint thickness
 [*]Previous Quarter Low color
 [*]Previous Quarter Low thickness
+[*]
 
 This allows the quarterly structure to remain visible without overwhelming the chart.
 
@@ -203,7 +204,7 @@ Current quarter = reaction to that range
 
 From there, the trader observes whether price accepts, rejects, breaks, retests, or rotates around those levels.
 
-Sometimes three well-defined levels can tell you more about market structure than twenty indicators ever could.
+"Sometimes three well-defined levels can tell you more about market structure than twenty indicators ever could."
 
 ---
 

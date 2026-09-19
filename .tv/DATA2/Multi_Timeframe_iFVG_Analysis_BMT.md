@@ -1,5 +1,5 @@
 <!-- tradingview-pine-id: PUB;09d972942d72410da7c96717aeefb0e0 -->
-<!-- tradingview-pine-version: 1.0 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Multi Timeframe (i)FVG Analysis [BMT]
 
@@ -85,6 +85,30 @@ Every higher timeframe is one request.security call. A gap on a higher timeframe
 // Add premium and discount zones
 // mitigate iFVGs based on H/L instead of close
 
+// version v0.4.0, 2026-09-17
+// Bias is now a preset over per-timeframe box types. Each row has +FVG / -FVG /
+// +iFVG / -iFVG ticks, named by the direction the box trades as, and the alerts follow
+// them; Neutral, Bullish and Bearish override the ticks and Custom reads them. The
+// old dropdown could not say "every gap on the chart timeframe, bearish gaps as
+// inversion candidates on the higher ones", which is the setup it was for, and Bullish
+// now means exactly that.
+// Duplicate timeframes draw once: when "chart" or "auto" lands on another row's
+// timeframe, or two fixed rows match, the earliest row wins (L1, then H1, H2, H3;
+// "Favor LTF" off lets an HTF beat L1). Only rows that are drawing count, so an Off
+// row blocks nothing; before, an Off HTF could switch L1 off.
+// Load time: boxes are rebuilt from the arrays on the last bar only. Every bar in the
+// lookback used to delete and redraw every box, and each higher-timeframe series was
+// rescanned up to 500 bars back on every chart bar; the buffers now fill as bars
+// arrive. The 300-bar lookback was never the cost.
+// Removed: the weekly session-open highlight and the counter-bias dim.
+// Defaults: L1 filter ATR 3.0; "Hide boxes lower than chart timeframe" on.
+// Fixed: L1 at 2H, 3H or 4H requested an invalid timeframe string.
+//
+// version v0.3.1, 2026-09-16
+// Overlapping gaps merge: a new FVG that overlaps an open one of the same direction by
+// more than half the smaller height widens that one instead of drawing a second box.
+// A roll splice on a back-adjusted contract showed the same range twice, a bar apart.
+//
 // version v0.3.0, 2026-09-13
 // Alerts: six alertcondition entries (FVG formed, inverted, first touch, per side, any
 // enabled timeframe) plus optional alert() messages naming the timeframe and levels.
@@ -131,10 +155,8 @@ bool isCustom = themeInput == "Custom"
 bool isDark = themeInput == "Dark" or ((themeInput == "Auto (chart)" or isCustom) and chartLuma <= 128)
 
 // Custom — seeded from the light palette so switching to it is a starting point, not a
-// blank. Six colours plus one number: the counter-bias dim is derived from the FVG
-// colours by adding transparency rather than chosen separately, so the two sides stay
-// tied to their live fills. The deleted-box colour comes from the label colour, since
-// it only shows under the debug toggle.
+// blank. Four fills, a border and a label colour. The deleted-box colour comes from
+// the label colour, since it only shows under the debug toggle.
 var g_custom = "Custom Colors"
 customBullFvgInput   = input.color(color.new(#00e676, 90), group=g_custom, title="FVG",    inline="c_fvg",    active=isCustom)
 customBearFvgInput   = input.color(color.new(#f23645, 90), group=g_custom, title="",       inline="c_fvg",    active=isCustom)
@@ -144,8 +166,6 @@ customBorderInput    = input.color(color.new(#000000, 100), group=g_custom, titl
      tooltip="Bullish then bearish on each row. A fully transparent border means none.")
 customBorderWidthInput = input.int(1, group=g_custom, title="width", minval=0, maxval=3, inline="c_border", active=isCustom)
 customLabelInput     = input.color(color.black, group=g_custom, title="Label", active=isCustom)
-customDimInput       = input.int(4, group=g_custom, title="Counter-bias dim (extra transparency)", minval=0, maxval=50, active=isCustom,
-     tooltip="Added to the FVG colors' transparency for boxes that run against the Bias input.")
 
 // Light — traditional, as it was
 color lightBullFvgColor    = color.new(#00e676, 90)
@@ -158,8 +178,6 @@ int   lightFvgBorderWidth  = 0
 int   lightIfvgBorderWidth = 0
 color lightLabelColor      = color.black
 color lightMfvgColor       = color.new(#b8b8b8, 80)
-color lightDimBullColor    = color.new(#00e676, 94)   // counter-bias FVG, an inversion candidate
-color lightDimBearColor    = color.new(#f23645, 94)
 
 // Dark — ES1! chart theme
 color darkBullFvgColor     = color.new(#66B97C, 91)   // theme long zone  -> luma 37.2
@@ -172,12 +190,8 @@ int   darkFvgBorderWidth   = 1
 int   darkIfvgBorderWidth  = 1
 color darkLabelColor       = #8B92A0                  // theme axis text
 color darkMfvgColor        = color.new(#9AA0AC, 91)   // -> luma 36.9
-color darkDimBullColor     = color.new(#66B97C, 93)   // counter-bias FVG, a step under the live fill
-color darkDimBearColor     = color.new(#B26767, 89)   // alpha differs so the two sides match in luma
 
 // Custom, derived
-color customDimBullColor   = color.new(customBullFvgInput, math.min(100, color.t(customBullFvgInput) + customDimInput))
-color customDimBearColor   = color.new(customBearFvgInput, math.min(100, color.t(customBearFvgInput) + customDimInput))
 color customMfvgColor      = color.new(customLabelInput, 91)
 bool  customHasBorder      = color.t(customBorderInput) < 100 and customBorderWidthInput > 0
 
@@ -192,18 +206,11 @@ int   themeFvgBorderWidth  = isCustom ? (customHasBorder ? customBorderWidthInpu
 int   themeIfvgBorderWidth = isCustom ? (customHasBorder ? customBorderWidthInput : 0) : isDark ? darkIfvgBorderWidth : lightIfvgBorderWidth
 color themeLabelColor      = isCustom ? customLabelInput    : isDark ? darkLabelColor      : lightLabelColor
 color themeMfvgColor       = isCustom ? customMfvgColor     : isDark ? darkMfvgColor       : lightMfvgColor
-color themeDimBullColor    = isCustom ? customDimBullColor  : isDark ? darkDimBullColor    : lightDimBullColor
-color themeDimBearColor    = isCustom ? customDimBearColor  : isDark ? darkDimBearColor    : lightDimBearColor
 string themeFvgBorderStyle  = line.style_solid
 string themeIfvgBorderStyle = line.style_solid
 //}
 
 // --------------------- User Defined Types { ----------------------------- \\
-enum HtfBiasType
-    Neutral  = "Neutral"
-    Bullish  = "Bullish"
-    Bearish = "Bearish"
-
 enum FvgFillType
     fvgFillClose  = "Close"
     fvgFillWick = "High/Low"
@@ -227,8 +234,6 @@ type BoxConfigType
     color fvgBorderColor = na
     color ifvgBorderColor = na
     color mfvgColor = na
-    color dimBullColor = na
-    color dimBearColor = na
     bool useMitigatedIfvgColor = true
     int fvgBorderWidth = 0
     string fvgBorderStyle = na
@@ -279,6 +284,13 @@ type TfFvgType
     FvgDisplayType fvgDisplayType
     bool showFvg = false
     bool showIfvg = false
+    // The box types drawn and alerted on, named by the direction the box trades as.
+    // An iFVG runs opposite to the FVG it came from, so showBullIfvg reads gaps whose
+    // isBullish is false.
+    bool showBullFvg = false
+    bool showBearFvg = false
+    bool showBullIfvg = false
+    bool showBearIfvg = false
     bool showMfvg = false
     bool extendFvg = false
     int idCount = 0
@@ -301,52 +313,101 @@ type TfFvgType
 //}
 
 // --------------------- User Inputs { ----------------------------- \\
-var g_bias = "Bias Settings"
-biasInput = input.enum(HtfBiasType.Neutral, group=g_bias, title="Bias",
-     tooltip="Filters what is drawn and which alerts fire; every box is still tracked underneath, since a counter-bias FVG is the one that may invert your way.\n\nBullish: bullish FVGs and bullish iFVGs drawn normally, bearish FVGs dimmed as inversion candidates, bearish iFVGs hidden. Alerts: bullish FVG formed, bearish FVG inverted, price entered bullish FVG.\n\nBearish: the mirror.\n\nNeutral: everything. The alert dialog always lists all six conditions; bias just keeps the wrong-way ones from firing.")
-// Direction of interest, read by the two display passes and the alert block. Detection
-// and mitigation never look at it.
-bool biasBull = biasInput == HtfBiasType.Bullish
-bool biasBear = biasInput == HtfBiasType.Bearish
-
 var g_tf = "Timeframe Settings"
-ltfOnlyInput = input.bool(false, "Show LTF Only", group=g_tf,
-     tooltip="Enable to ignore HTFs.\n\nEach row below reads: timeframe, which box types to draw, the display filter, then N. Off on the second dropdown skips that timeframe entirely, including its data request.\n\nFilter — All: every box. N: the newest N per side. ATR: only boxes within N ATRs of the current price, measured with that timeframe's own ATR(14).")
+// The dropdown covers the everyday case in one click; the ticks cover the rest. Pine
+// cannot make a dropdown rewrite the tick boxes, so Neutral, Bullish and Bearish
+// override the ticks (they stay as left) and Custom reads them.
+biasInput = input.string("Neutral", "Bias", group=g_tf, options=["Neutral", "Bullish", "Bearish", "Custom"],
+     tooltip="Which gap types each row draws and alerts on.\n\nNeutral: every type on every row.\n\nBullish: every type on L1, where the gaps to enter from are; only -FVG and +iFVG on H1 to H3, since a bearish higher-timeframe gap above price is the inversion candidate and, once price closes above it, a +iFVG to buy against.\n\nBearish: the mirror, +FVG and -iFVG on H1 to H3.\n\nCustom: the tick rows under each timeframe decide. They are ignored under the other three and keep whatever you set.")
+bool biasCustom = biasInput == "Custom"
+bool biasBull = biasInput == "Bullish"
+bool biasBear = biasInput == "Bearish"
 
-ltf1TfInput = input.string("chart", group=g_tf, title="L1", options=["chart", "30S", "1", "2", "3", "5", "7", "10", "15", "30", "45", "90", "1H", "2H", "3H", "4H", "1D", "1W"], inline="ltf1_timeframe_settings")
-ltf1ShowInput = input.string("Both", group=g_tf, title="", options=["Both", "FVG", "iFVG", "Off"], inline="ltf1_timeframe_settings")
-ltf1FilterModeInput = input.string("All", group=g_tf, title="", options=["All", "N", "ATR"], inline="ltf1_timeframe_settings")
-ltf1FvgNFilterInput = input.float(10, "", group=g_tf, minval=0, maxval=100, step=0.5, inline="ltf1_timeframe_settings")
-ltf1ShowFvgsInput = ltf1ShowInput == "Both" or ltf1ShowInput == "FVG"
-ltf1ShowIfvgsInput = ltf1ShowInput == "Both" or ltf1ShowInput == "iFVG"
+ltfOnlyInput = input.bool(false, "Show LTF Only", group=g_tf,
+     tooltip="Enable to ignore HTFs.\n\nTwo rows per timeframe. The first: an on switch, the timeframe, the display filter, then N. The second, read when Bias is Custom: which box types to draw and alert on, named by the direction the box trades as. +FVG and -FVG are bullish and bearish gaps. +iFVG is a bearish FVG that price closed above, now support; -iFVG is a bullish FVG that price closed below, now resistance. Every gap is still tracked whatever is ticked, since an unticked -FVG is what becomes a ticked +iFVG.\n\nFilter. All: every box. N: the newest N per side. ATR: only boxes within N ATRs of the current price, measured with that timeframe's own ATR(14).\n\nWhen two rows resolve to the same timeframe (chart, auto, or two matching fixed rows) only the earliest draws: L1, then H1, H2, H3.")
+
+// Each timeframe is two inline rows: the switch, timeframe, filter and N, then the
+// four box-type ticks, read under Custom bias. The ticks default on so Custom starts
+// from everything.
+// Each first-row input is gated on that row's switch and nothing else, and each tick
+// on the Bias dropdown being Custom and nothing else. The settings dialog evaluates
+// `active` itself and does not follow a chain: gating the H1 switch on "Show LTF Only"
+// left the row's own inputs grey with the switch ticked, and a two-input `and` did
+// the same. So "Show LTF Only" greys nothing (it still switches the HTFs off in the
+// enable logic below), and a tick is not greyed by its row switch.
+htfTypesTip = "Which gap types this timeframe draws and alerts on, named by the direction the box trades as. Read when Bias is Custom; the Bullish and Bearish presets set these for you.\n\nFor long entries the higher timeframes are where you want -FVG and +iFVG: a bearish gap above price is the inversion candidate, and once price closes above it, it is a +iFVG, support to buy against. Untick +FVG and -iFVG here and keep them ticked on L1, where the bullish gaps to enter from are. Short entries are the mirror: +FVG and -iFVG up here, -FVG and -iFVG on L1."
+ltf1OnInput = input.bool(true, "L1", group=g_tf, inline="ltf1_tf")
+ltf1TfInput = input.string("chart", "", group=g_tf, options=["chart", "30S", "1", "2", "3", "5", "7", "10", "15", "30", "45", "90", "1H", "2H", "3H", "4H", "1D", "1W"], inline="ltf1_tf", active=ltf1OnInput)
+ltf1FilterModeInput = input.string("ATR", "", group=g_tf, options=["All", "N", "ATR"], inline="ltf1_tf", active=ltf1OnInput)
+ltf1FvgNFilterInput = input.float(3, "", group=g_tf, minval=0, maxval=100, step=0.5, inline="ltf1_tf", active=ltf1OnInput)
+ltf1BullFvgInput  = input.bool(true, "+FVG",  group=g_tf, inline="ltf1_types", active=biasCustom)
+ltf1BearFvgInput  = input.bool(true, "-FVG",  group=g_tf, inline="ltf1_types", active=biasCustom)
+ltf1BullIfvgInput = input.bool(true, "+iFVG", group=g_tf, inline="ltf1_types", active=biasCustom)
+ltf1BearIfvgInput = input.bool(true, "-iFVG", group=g_tf, inline="ltf1_types", active=biasCustom)
+// L1 draws every type under the three presets: the chart timeframe is entry scale,
+// where a counter-bias gap is still a candidate worth seeing.
+ltf1BullFvg  = biasCustom ? ltf1BullFvgInput  : true
+ltf1BearFvg  = biasCustom ? ltf1BearFvgInput  : true
+ltf1BullIfvg = biasCustom ? ltf1BullIfvgInput : true
+ltf1BearIfvg = biasCustom ? ltf1BearIfvgInput : true
+ltf1ShowFvgsInput = ltf1OnInput and (ltf1BullFvg or ltf1BearFvg)
+ltf1ShowIfvgsInput = ltf1OnInput and (ltf1BullIfvg or ltf1BearIfvg)
 ltf1EnableInput = ltf1ShowFvgsInput or ltf1ShowIfvgsInput
 
-htf1TfInput = input.string("15", group=g_tf, title="H1", options=["auto", "chart", "1", "2", "15", "1H", "2H", "4H", "1D", "1W", "1M"], inline="htf1_timeframe_settings", active=not ltfOnlyInput)
-htf1ShowInput = input.string("Off", group=g_tf, title="", options=["Both", "FVG", "iFVG", "Off"], inline="htf1_timeframe_settings", active=not ltfOnlyInput)
-htf1FilterModeInput = input.string("N", group=g_tf, title="", options=["All", "N", "ATR"], inline="htf1_timeframe_settings", active=not ltfOnlyInput)
-htf1FvgNFilterInput = input.float(2, "", group=g_tf, minval=0, maxval=100, step=0.5, inline="htf1_timeframe_settings", active=not ltfOnlyInput)
-htf1ShowFvgsInput = htf1ShowInput == "Both" or htf1ShowInput == "FVG"
-htf1ShowIfvgsInput = htf1ShowInput == "Both" or htf1ShowInput == "iFVG"
-htf1EnableInput = not ltfOnlyInput and (htf1ShowFvgsInput or htf1ShowIfvgsInput)
+htf1OnInput = input.bool(false, "H1", group=g_tf, inline="htf1_tf")
+htf1Active = not ltfOnlyInput and htf1OnInput
+htf1TfInput = input.string("15", "", group=g_tf, options=["auto", "chart", "1", "2", "15", "1H", "2H", "4H", "1D", "1W", "1M"], inline="htf1_tf", active=htf1OnInput)
+htf1FilterModeInput = input.string("N", "", group=g_tf, options=["All", "N", "ATR"], inline="htf1_tf", active=htf1OnInput)
+htf1FvgNFilterInput = input.float(2, "", group=g_tf, minval=0, maxval=100, step=0.5, inline="htf1_tf", active=htf1OnInput)
+htf1BullFvgInput  = input.bool(true, "+FVG",  group=g_tf, inline="htf1_types", active=biasCustom)
+htf1BearFvgInput  = input.bool(true, "-FVG",  group=g_tf, inline="htf1_types", active=biasCustom)
+htf1BullIfvgInput = input.bool(true, "+iFVG", group=g_tf, inline="htf1_types", active=biasCustom)
+htf1BearIfvgInput = input.bool(true, "-iFVG", group=g_tf, inline="htf1_types", active=biasCustom, tooltip=htfTypesTip)
+// Bullish keeps -FVG and +iFVG on the higher timeframes, Bearish +FVG and -iFVG.
+htf1BullFvg  = biasCustom ? htf1BullFvgInput  : not biasBull
+htf1BearFvg  = biasCustom ? htf1BearFvgInput  : not biasBear
+htf1BullIfvg = biasCustom ? htf1BullIfvgInput : not biasBear
+htf1BearIfvg = biasCustom ? htf1BearIfvgInput : not biasBull
+htf1ShowFvgsInput = htf1Active and (htf1BullFvg or htf1BearFvg)
+htf1ShowIfvgsInput = htf1Active and (htf1BullIfvg or htf1BearIfvg)
+htf1EnableInput = htf1ShowFvgsInput or htf1ShowIfvgsInput
 
-htf2TfInput = input.string("1H", group=g_tf, title="H2", options=["auto", "chart", "1", "2", "15", "1H", "2H", "4H", "1D", "1W", "1M"], inline="htf2_timeframe_settings", active=not ltfOnlyInput)
-htf2ShowInput = input.string("Off", group=g_tf, title="", options=["Both", "FVG", "iFVG", "Off"], inline="htf2_timeframe_settings", active=not ltfOnlyInput)
-htf2FilterModeInput = input.string("N", group=g_tf, title="", options=["All", "N", "ATR"], inline="htf2_timeframe_settings", active=not ltfOnlyInput)
-htf2FvgNFilterInput = input.float(2, "", group=g_tf, minval=0, maxval=100, step=0.5, inline="htf2_timeframe_settings", active=not ltfOnlyInput)
-htf2ShowFvgsInput = htf2ShowInput == "Both" or htf2ShowInput == "FVG"
-htf2ShowIfvgsInput = htf2ShowInput == "Both" or htf2ShowInput == "iFVG"
-htf2EnableInput = not ltfOnlyInput and (htf2ShowFvgsInput or htf2ShowIfvgsInput)
+htf2OnInput = input.bool(false, "H2", group=g_tf, inline="htf2_tf")
+htf2Active = not ltfOnlyInput and htf2OnInput
+htf2TfInput = input.string("1H", "", group=g_tf, options=["auto", "chart", "1", "2", "15", "1H", "2H", "4H", "1D", "1W", "1M"], inline="htf2_tf", active=htf2OnInput)
+htf2FilterModeInput = input.string("N", "", group=g_tf, options=["All", "N", "ATR"], inline="htf2_tf", active=htf2OnInput)
+htf2FvgNFilterInput = input.float(2, "", group=g_tf, minval=0, maxval=100, step=0.5, inline="htf2_tf", active=htf2OnInput)
+htf2BullFvgInput  = input.bool(true, "+FVG",  group=g_tf, inline="htf2_types", active=biasCustom)
+htf2BearFvgInput  = input.bool(true, "-FVG",  group=g_tf, inline="htf2_types", active=biasCustom)
+htf2BullIfvgInput = input.bool(true, "+iFVG", group=g_tf, inline="htf2_types", active=biasCustom)
+htf2BearIfvgInput = input.bool(true, "-iFVG", group=g_tf, inline="htf2_types", active=biasCustom, tooltip=htfTypesTip)
+htf2BullFvg  = biasCustom ? htf2BullFvgInput  : not biasBull
+htf2BearFvg  = biasCustom ? htf2BearFvgInput  : not biasBear
+htf2BullIfvg = biasCustom ? htf2BullIfvgInput : not biasBear
+htf2BearIfvg = biasCustom ? htf2BearIfvgInput : not biasBull
+htf2ShowFvgsInput = htf2Active and (htf2BullFvg or htf2BearFvg)
+htf2ShowIfvgsInput = htf2Active and (htf2BullIfvg or htf2BearIfvg)
+htf2EnableInput = htf2ShowFvgsInput or htf2ShowIfvgsInput
 
-htf3TfInput = input.string("4H", group=g_tf, title="H3", options=["auto", "chart", "1", "2", "15", "1H", "2H", "4H", "1D", "1W", "1M"], inline="htf3_timeframe_settings", active=not ltfOnlyInput)
-htf3ShowInput = input.string("Off", group=g_tf, title="", options=["Both", "FVG", "iFVG", "Off"], inline="htf3_timeframe_settings", active=not ltfOnlyInput)
-htf3FilterModeInput = input.string("N", group=g_tf, title="", options=["All", "N", "ATR"], inline="htf3_timeframe_settings", active=not ltfOnlyInput)
-htf3FvgNFilterInput = input.float(1, "", group=g_tf, minval=0, maxval=100, step=0.5, inline="htf3_timeframe_settings", active=not ltfOnlyInput)
-htf3ShowFvgsInput = htf3ShowInput == "Both" or htf3ShowInput == "FVG"
-htf3ShowIfvgsInput = htf3ShowInput == "Both" or htf3ShowInput == "iFVG"
-htf3EnableInput = not ltfOnlyInput and (htf3ShowFvgsInput or htf3ShowIfvgsInput)
+htf3OnInput = input.bool(false, "H3", group=g_tf, inline="htf3_tf")
+htf3Active = not ltfOnlyInput and htf3OnInput
+htf3TfInput = input.string("4H", "", group=g_tf, options=["auto", "chart", "1", "2", "15", "1H", "2H", "4H", "1D", "1W", "1M"], inline="htf3_tf", active=htf3OnInput)
+htf3FilterModeInput = input.string("N", "", group=g_tf, options=["All", "N", "ATR"], inline="htf3_tf", active=htf3OnInput)
+htf3FvgNFilterInput = input.float(1, "", group=g_tf, minval=0, maxval=100, step=0.5, inline="htf3_tf", active=htf3OnInput)
+htf3BullFvgInput  = input.bool(true, "+FVG",  group=g_tf, inline="htf3_types", active=biasCustom)
+htf3BearFvgInput  = input.bool(true, "-FVG",  group=g_tf, inline="htf3_types", active=biasCustom)
+htf3BullIfvgInput = input.bool(true, "+iFVG", group=g_tf, inline="htf3_types", active=biasCustom)
+htf3BearIfvgInput = input.bool(true, "-iFVG", group=g_tf, inline="htf3_types", active=biasCustom, tooltip=htfTypesTip)
+htf3BullFvg  = biasCustom ? htf3BullFvgInput  : not biasBull
+htf3BearFvg  = biasCustom ? htf3BearFvgInput  : not biasBear
+htf3BullIfvg = biasCustom ? htf3BullIfvgInput : not biasBear
+htf3BearIfvg = biasCustom ? htf3BearIfvgInput : not biasBull
+htf3ShowFvgsInput = htf3Active and (htf3BullFvg or htf3BearFvg)
+htf3ShowIfvgsInput = htf3Active and (htf3BullIfvg or htf3BearIfvg)
+htf3EnableInput = htf3ShowFvgsInput or htf3ShowIfvgsInput
 
-hideLowerThanChartTfBoxes = input.bool(false, group=g_tf, title="Hide boxes lower than chart timeframe.", tooltip="Useful when looking at big picture context on a high TF", active=not ltfOnlyInput)
-favorLtfOverHtfWhenEqualTfsInput = input.bool(true, group=g_tf, title="Favor LTF boxes over identical HTF", tooltip="Enable to display LTF boxes and ingnore HTF boxes when the LTF and a HTF have identical TFs.", active=not ltfOnlyInput)
+hideLowerThanChartTfBoxes = input.bool(true, group=g_tf, title="Hide boxes lower than chart timeframe", tooltip="A row set below the chart timeframe is skipped, including its data request. Useful when looking at big picture context on a high TF.", active=not ltfOnlyInput)
+favorLtfOverHtfWhenEqualTfsInput = input.bool(true, group=g_tf, title="Favor LTF boxes over identical HTF", tooltip="When L1 and an HTF resolve to the same timeframe, draw L1 and skip the HTF. Disable to draw the HTF instead. Two HTFs that match always draw the earlier one.", active=not ltfOnlyInput)
 
 var g_box = "______________ Box Settings ______________"
 ltfExtendFvgBoxesInput = input.bool(false, group=g_box, title="Extend LTF Boxes", inline="extend")
@@ -373,14 +434,6 @@ htfBoxLengthInput = input.int(20, group=g_fvg, title="HTF Box Length", inline="i
 // chart bars it is the same 20 bars whatever the source timeframe.
 baseHtfBoxLengthOnChartTfInput = input.bool(true, group=g_fvg, title="Box length based on the visible chart's TF instead of the FVG's TF.", tooltip="When enabled HTF box length is based on the chart's TF. When disabled the box length is based on the HTF resulting in a longer box", active=not ltfOnlyInput)
 waitForCloseInput = input.bool(false, group=g_fvg, title="Wait for bar close to identify FVG")
-
-var g_weeklySession = "Weekly Session Highlight"
-isSunday = dayofweek(time(timeframe.period)) == dayofweek.sunday
-isInHighlightRange = hour(time(timeframe.period, "America/New_York")) == (syminfo.root == "GC" ? 19 : 17)
-highlightWeekOpenInput = input.bool(false, group=g_weeklySession, title="Highlight Weekly Session Open")
-highlightColor = input.color(color.new(#2aa198, 95), group=g_weeklySession, title="Highlight Color")
-weeklySessionOpenColor = isSunday and isInHighlightRange and highlightWeekOpenInput ? highlightColor : na
-bgcolor(weeklySessionOpenColor)
 
 var g_sts = "Status Table Settings"
 showPrimaryStatsInput = ltf1ShowFvgsInput or htf1ShowFvgsInput or htf2ShowFvgsInput or htf3ShowFvgsInput //input.bool(true, group=g_sts, title="Show LTF iFVG and HTF FVG count")
@@ -447,34 +500,10 @@ parseHtfInput(string tfStr, string ltfPeriod=timeframe.period) =>
             // convert our input of hours to TradingView's hour convention of being in minutes (ie there is no 1H timeframe it is 60
             "1H" => "60"
             "2H" => "120"
+            "3H" => "180"
             "4H" => "240"
             => tf
     tf
-
-htfIsMinutes(string tfStr, string ltfPeriod=timeframe.period) =>
-    bool isMinutes = false
-    if tfStr == "auto"
-        isMinutes := switch ltfPeriod
-            "30S" => true // 5 Min
-            "1" => true // 15 Min
-            "2" => true // 15 Min
-            "3" => true // 15 Min
-            "4" => true // 15 Min
-            "5" => true // 60 Min
-            "6" => true // 60 Min
-            "7" => true // 60 Min
-            "8" => true // 120 Min
-            "9" => true // 120 Min
-            "10" => true // 120 Min
-            "15" => true // 240 Min
-            "20" => true // 240 Min
-            "30" => true // 240 Min
-            "45" => true // 240 Min
-            "60" => false
-            "D" => false
-            "W" => false
-            => false
-    isMinutes
 
 // Parsed rather than looked up. The switch this replaces had no case for 1S, 5S, 10S,
 // 15S, 3D, 2W, 3M and friends and returned 0 for them, which then divided by zero in
@@ -525,29 +554,6 @@ createBox(FvgType fvg, string labelStr, LabelConfigType labelCfg, color boxColor
          text=labelStr, text_color=textColor, text_halign=labelCfg.hAlignment, text_valign=text.align_center, text_size=labelCfg.size,
          border_color=borderColor, border_width=borderWidth, border_style=borderStyle, bgcolor=boxColor)
 
-getLastNaValues(int series, int n) =>
-    int[] lastNonNaValues = array.new_int(0)
-    int nonNaCount = 0
-
-    for i = 0 to math.min(bar_index, 500)
-        if not na(series[i])
-            array.push(lastNonNaValues, series[i])
-            nonNaCount += 1
-            if nonNaCount == n
-                break
-    lastNonNaValues
-
-getLastNaValues(float series, int n) =>
-    float[] lastNonNaValues = array.new_float(0)
-    int nonNaCount = 0
-
-    for i = 0 to math.min(bar_index, 500)
-        if not na(series[i])
-            array.push(lastNonNaValues, series[i])
-            nonNaCount += 1
-            if nonNaCount == n
-                break
-    lastNonNaValues
 //}
 
 // --------------------- FVG Helpers { ----------------------------- \\
@@ -656,16 +662,12 @@ displaySelectFvgBoxes(TfFvgType tfData, int chartTfSeconds, bool useMidLine=fals
                     bool nearPrice = displayAtr and withinAtrs(fvg, tfData.atr, tfData.fvgDisplayNAtrs)
                     labelStr = tfData.labelConfig.showLabels ? tfData.name + (showFvgId ? " " + str.tostring(fvg.id) + " " : "") + " FVG" : ""
                     borderColor = tfData.boxConfig.fvgBorderColor
-                    // A counter-bias FVG is the inversion candidate the bias is waiting
-                    // on, so it dims instead of disappearing.
-                    color bullFill = biasBear ? tfData.boxConfig.dimBullColor : tfData.boxConfig.bullColor
-                    color bearFill = biasBull ? tfData.boxConfig.dimBearColor : tfData.boxConfig.bearColor
-                    if fvg.isBullish and (displayAll or nearPrice or (displayN and bullishCount < tfData.fvgDisplayNClosest))
+                    if fvg.isBullish and tfData.showBullFvg and (displayAll or nearPrice or (displayN and bullishCount < tfData.fvgDisplayNClosest))
                         bullishCount += 1
-                        tfData.fvgBoxArray.unshift(createBox(fvg, labelStr, tfData.labelConfig, bullFill, borderColor, tfData.boxConfig.fvgBorderWidth, tfData.boxConfig.fvgBorderStyle, useMidLine, themeLabelColor))
-                    else if not fvg.isBullish and (displayAll or nearPrice or (displayN and bearishCount < tfData.fvgDisplayNClosest))
+                        tfData.fvgBoxArray.unshift(createBox(fvg, labelStr, tfData.labelConfig, tfData.boxConfig.bullColor, borderColor, tfData.boxConfig.fvgBorderWidth, tfData.boxConfig.fvgBorderStyle, useMidLine, themeLabelColor))
+                    else if not fvg.isBullish and tfData.showBearFvg and (displayAll or nearPrice or (displayN and bearishCount < tfData.fvgDisplayNClosest))
                         bearishCount += 1
-                        tfData.fvgBoxArray.unshift(createBox(fvg, labelStr, tfData.labelConfig, bearFill, borderColor, tfData.boxConfig.fvgBorderWidth, tfData.boxConfig.fvgBorderStyle, useMidLine, themeLabelColor))
+                        tfData.fvgBoxArray.unshift(createBox(fvg, labelStr, tfData.labelConfig, tfData.boxConfig.bearColor, borderColor, tfData.boxConfig.fvgBorderWidth, tfData.boxConfig.fvgBorderStyle, useMidLine, themeLabelColor))
     tfData
 
 displaySelectIfvgBoxes(TfFvgType tfData, bool showFvgId=false) =>
@@ -690,9 +692,9 @@ displaySelectIfvgBoxes(TfFvgType tfData, bool showFvgId=false) =>
             for i = 0 to sortedFvgArray.size() - 1
                 ifvg = sortedFvgArray.get(i)
                 // isBullish is the ORIGINAL gap's direction: a bullish FVG that inverted
-                // is now a bearish iFVG, which a bullish bias does not want to see.
-                bool counterBias = (biasBull and ifvg.isBullish) or (biasBear and not ifvg.isBullish)
-                if not ifvg.isMitigated and not counterBias
+                // is now a bearish iFVG, so the -iFVG tick is the one that shows it.
+                bool wanted = ifvg.isBullish ? tfData.showBearIfvg : tfData.showBullIfvg
+                if not ifvg.isMitigated and wanted
                     bool nearPrice = displayAtr and withinAtrs(ifvg, tfData.atr, tfData.fvgDisplayNAtrs)
                     ifvgColor = ifvg.isBullish ? tfData.boxConfig.bearIfvgColor : tfData.boxConfig.bullIfvgColor
                     labelStr = tfData.labelConfig.showLabels ? tfData.name + (showFvgId ? " " + str.tostring(ifvg.id) + " " : "") + " iFVG" : ""
@@ -741,7 +743,25 @@ findFvgs(TfFvgType tfData, int chartTfSeconds) =>
             boxLengthTimeReference = baseHtfBoxLengthOnChartTfInput ? chartTfSeconds : tfData.tfSeconds
             newFvg.endTime := tfData.extendFvg ? last_bar_time + maxMsecPastLastBar : newFvg.startTime + (tfData.boxConfig.boxLength * boxLengthTimeReference * 1000)
             newFvg.endTime := math.min(last_bar_time + maxMsecPastLastBar, newFvg.endTime)
-            if newFvg.t != tfData.t
+            // A gap wide enough to span several three-bar windows is detected on
+            // consecutive bars with nearly the same top and bottom (a roll splice on a
+            // back-adjusted contract does it every time; any large gap can). Detection
+            // time alone let both through, so the same range drew twice, a bar apart.
+            // A new gap that overlaps an open gap of the same direction by more than
+            // half of the smaller height is merged into it: the open gap's bounds grow
+            // to the union, nothing new is drawn.
+            bool merged = false
+            if tfData.fvgArray.size() > 0
+                for k = 0 to tfData.fvgArray.size() - 1
+                    existing = tfData.fvgArray.get(k)
+                    if not merged and existing.isBullish == newFvg.isBullish and not existing.isInversed and not existing.isMitigated
+                        float overlap = math.min(existing.max, newFvg.max) - math.max(existing.min, newFvg.min)
+                        float smaller = math.min(existing.max - existing.min, newFvg.max - newFvg.min)
+                        if smaller > 0 and overlap > 0.5 * smaller
+                            existing.max := math.max(existing.max, newFvg.max)
+                            existing.min := math.min(existing.min, newFvg.min)
+                            merged := true
+            if newFvg.t != tfData.t and not merged
                 tfData.idCount += 1
                 tfData.t := newFvg.t
                 tfData.fvgArray.unshift(newFvg)
@@ -856,7 +876,7 @@ int htfStartBarIndex = last_bar_index - htfLookbackLengthInLtfBars
 //}
 
 // --------------------- Data { ----------------------------- \\
-initLtfTfFvgTypeData(string name, string tfInput, FvgDisplayType displayType, float nFilter, bool _showFvg, bool _showIfvg) =>
+initLtfTfFvgTypeData(string name, string tfInput, FvgDisplayType displayType, float nFilter, bool _bullFvg, bool _bearFvg, bool _bullIfvg, bool _bearIfvg) =>
     TfFvgType tfFvg = TfFvgType.new(
          name = "",
          labelConfig = LabelConfigType.new(
@@ -870,8 +890,6 @@ initLtfTfFvgTypeData(string name, string tfInput, FvgDisplayType displayType, fl
              bullIfvgColor = themeBullIfvgColor,
              bearIfvgColor = themeBearIfvgColor,
              mfvgColor = themeMfvgColor,
-             dimBullColor = themeDimBullColor,
-             dimBearColor = themeDimBearColor,
              useMitigatedIfvgColor = useMitigatedIfvgColorInput,
              fvgBorderColor = themeFvgBorderColor,
              fvgBorderWidth = themeFvgBorderWidth,
@@ -900,19 +918,25 @@ initLtfTfFvgTypeData(string name, string tfInput, FvgDisplayType displayType, fl
          fvgDisplayType = displayType,
          fvgDisplayNClosest = int(nFilter),
          fvgDisplayNAtrs = nFilter,
-         showFvg = _showFvg,
-         showIfvg = _showIfvg,
+         showFvg = _bullFvg or _bearFvg,
+         showIfvg = _bullIfvg or _bearIfvg,
+         showBullFvg = _bullFvg,
+         showBearFvg = _bearFvg,
+         showBullIfvg = _bullIfvg,
+         showBearIfvg = _bearIfvg,
          showMfvg = ltfShowMfvgInput,
          extendFvg = ltfExtendFvgBoxesInput,
          idCount = 0)
 
-    tfFvg.tfPeriod := tfInput == "chart" ? timeframe.period : tfInput == "1H" ? "60" : tfInput
+    // parseHtfInput maps the hour options to the minute strings request.security takes;
+    // "2H", "3H" and "4H" used to go through raw and fail the request.
+    tfFvg.tfPeriod := parseHtfInput(tfInput)
     tfFvg.tfSeconds := tfInput == "chart" ? timeframe.in_seconds() : tfInSeconds(tfFvg.tfPeriod)
     tfFvg.waitForClose := waitForCloseInput and tfInput == "chart"
     tfFvg.name := name +  parseTimeframe(tfFvg.tfPeriod)
     tfFvg
 
-initHtfTfFvgTypeData(string name, string tfInput, BoxConfigType _boxConfig, FvgDisplayType displayType, float nFilter, bool _showFvg, bool _showIfvg) =>
+initHtfTfFvgTypeData(string name, string tfInput, BoxConfigType _boxConfig, FvgDisplayType displayType, float nFilter, bool _bullFvg, bool _bearFvg, bool _bullIfvg, bool _bearIfvg) =>
     TfFvgType tfFvg = TfFvgType.new(
          name = "",
          labelConfig = LabelConfigType.new(
@@ -941,8 +965,12 @@ initHtfTfFvgTypeData(string name, string tfInput, BoxConfigType _boxConfig, FvgD
          fvgDisplayType = displayType,
          fvgDisplayNClosest = int(nFilter),
          fvgDisplayNAtrs = nFilter,
-         showFvg = _showFvg,
-         showIfvg = _showIfvg,
+         showFvg = _bullFvg or _bearFvg,
+         showIfvg = _bullIfvg or _bearIfvg,
+         showBullFvg = _bullFvg,
+         showBearFvg = _bearFvg,
+         showBullIfvg = _bullIfvg,
+         showBearIfvg = _bearIfvg,
          showMfvg = htfShowMfvgInput,
          extendFvg = htfExtendFvgBoxesInput,
          idCount = 0)
@@ -963,8 +991,6 @@ makeHtfBoxConfig() =>
          bullIfvgColor = themeBullIfvgColor,
          bearIfvgColor = themeBearIfvgColor,
          mfvgColor = themeMfvgColor,
-         dimBullColor = themeDimBullColor,
-         dimBearColor = themeDimBearColor,
          useMitigatedIfvgColor = useMitigatedIfvgColorInput,
          fvgBorderColor = themeFvgBorderColor,
          fvgBorderWidth = themeFvgBorderWidth,
@@ -975,19 +1001,19 @@ makeHtfBoxConfig() =>
 
 bool tfInLabels = false
 displayType = toDisplayType(ltf1FilterModeInput)
-var ltf1 = initLtfTfFvgTypeData(tfInLabels ? "LTF " : "", ltf1TfInput, displayType, ltf1FvgNFilterInput, ltf1ShowFvgsInput, ltf1ShowIfvgsInput)
+var ltf1 = initLtfTfFvgTypeData(tfInLabels ? "LTF " : "", ltf1TfInput, displayType, ltf1FvgNFilterInput, ltf1BullFvg, ltf1BearFvg, ltf1BullIfvg, ltf1BearIfvg)
 
 displayType := toDisplayType(htf1FilterModeInput)
 var htf1BoxConfig = makeHtfBoxConfig()
-var htf1 = initHtfTfFvgTypeData(tfInLabels ? "HTF " : "", parseHtfInput(htf1TfInput), htf1BoxConfig, displayType, htf1FvgNFilterInput, htf1ShowFvgsInput, htf1ShowIfvgsInput)
+var htf1 = initHtfTfFvgTypeData(tfInLabels ? "HTF " : "", parseHtfInput(htf1TfInput), htf1BoxConfig, displayType, htf1FvgNFilterInput, htf1BullFvg, htf1BearFvg, htf1BullIfvg, htf1BearIfvg)
 
 displayType := toDisplayType(htf2FilterModeInput)
 var htf2BoxConfig = makeHtfBoxConfig()
-var htf2 = initHtfTfFvgTypeData(tfInLabels ? "HTF2 " : "", parseHtfInput(htf2TfInput), htf2BoxConfig, displayType, htf2FvgNFilterInput, htf2ShowFvgsInput, htf2ShowIfvgsInput)
+var htf2 = initHtfTfFvgTypeData(tfInLabels ? "HTF2 " : "", parseHtfInput(htf2TfInput), htf2BoxConfig, displayType, htf2FvgNFilterInput, htf2BullFvg, htf2BearFvg, htf2BullIfvg, htf2BearIfvg)
 
 displayType := toDisplayType(htf3FilterModeInput)
 var htf3BoxConfig = makeHtfBoxConfig()
-var htf3 = initHtfTfFvgTypeData(tfInLabels ? "HTF3 " : "", parseHtfInput(htf3TfInput), htf3BoxConfig, displayType, htf3FvgNFilterInput, htf3ShowFvgsInput, htf3ShowIfvgsInput)
+var htf3 = initHtfTfFvgTypeData(tfInLabels ? "HTF3 " : "", parseHtfInput(htf3TfInput), htf3BoxConfig, displayType, htf3FvgNFilterInput, htf3BullFvg, htf3BearFvg, htf3BullIfvg, htf3BearIfvg)
 //}
 
 // Calculate max bar index for different timeframes
@@ -997,87 +1023,104 @@ withinHtfMaxBarIndexHistory = bar_index >= htfStartBarIndex
 float chartAtr = ta.atr(ATR_LENGTH)
 
 // --------------------- Collect TF Data { ----------------------------- \\
-ltfDuplicatesHtf = ltf1.tfSeconds == htf1.tfSeconds or ltf1.tfSeconds == htf2.tfSeconds or ltf1.tfSeconds == htf3.tfSeconds
-ltf1Enable = ltf1EnableInput and (not hideLowerThanChartTfBoxes or (hideLowerThanChartTfBoxes and ltf1.tfSeconds >= chartTfSeconds))
-ltf1Enable := ltf1Enable and (favorLtfOverHtfWhenEqualTfsInput or ltfOnlyInput or (not favorLtfOverHtfWhenEqualTfsInput and not ltfDuplicatesHtf))
+// Which rows draw. Base: the row's own switches and the lower-than-chart hide. Then
+// duplicates: "chart" or "auto" can land on another row's timeframe, two fixed rows
+// can match, and drawing both put the same box on the chart twice. The earliest row
+// wins, L1 then H1, H2, H3, except that "Favor LTF" off lets an HTF beat L1. Only a
+// row that is itself drawing counts as a duplicate: an Off row blocks nothing, where
+// before an Off HTF on L1's timeframe could switch L1 off with "Favor LTF" disabled.
+sameTf(int a, int b) => a > 0 and a == b
+bool ltf1Base = ltf1EnableInput and (not hideLowerThanChartTfBoxes or ltf1.tfSeconds >= chartTfSeconds)
+bool htf1Base = htf1EnableInput and (not hideLowerThanChartTfBoxes or htf1.tfSeconds >= chartTfSeconds)
+bool htf2Base = htf2EnableInput and (not hideLowerThanChartTfBoxes or htf2.tfSeconds >= chartTfSeconds)
+bool htf3Base = htf3EnableInput and (not hideLowerThanChartTfBoxes or htf3.tfSeconds >= chartTfSeconds)
+bool ltf1DupHtf = (htf1Base and sameTf(ltf1.tfSeconds, htf1.tfSeconds)) or (htf2Base and sameTf(ltf1.tfSeconds, htf2.tfSeconds)) or (htf3Base and sameTf(ltf1.tfSeconds, htf3.tfSeconds))
+bool ltf1Enable = ltf1Base and (favorLtfOverHtfWhenEqualTfsInput or not ltf1DupHtf)
+bool htf1Enable = htf1Base and not (ltf1Enable and sameTf(htf1.tfSeconds, ltf1.tfSeconds))
+bool htf2Enable = htf2Base and not (ltf1Enable and sameTf(htf2.tfSeconds, ltf1.tfSeconds)) and not (htf1Enable and sameTf(htf2.tfSeconds, htf1.tfSeconds))
+bool htf3Enable = htf3Base and not (ltf1Enable and sameTf(htf3.tfSeconds, ltf1.tfSeconds)) and not (htf1Enable and sameTf(htf3.tfSeconds, htf1.tfSeconds)) and not (htf2Enable and sameTf(htf3.tfSeconds, htf2.tfSeconds))
+
+// The newest three bars of a timeframe, index 0 the newest, filled as they arrive.
+// With gaps_on a higher timeframe's request is na between its closes, so most chart
+// bars push nothing. This replaced a rescan of up to 500 bars of history for each of
+// four series on every chart bar, which was the second-largest share of the load time
+// and also starved any timeframe more than 500 chart bars long of its third bar.
+// Realtime ticks roll the arrays back with the bar, so a tick never pushes twice.
+pushTfBar(TfFvgType d, float lo, float hi, float cl, int t, float atr) =>
+    if not na(lo)
+        d.filteredLow.unshift(lo)
+        d.filteredHigh.unshift(hi)
+        d.filteredClose.unshift(cl)
+        d.filteredRequestTime.unshift(t)
+        if d.filteredLow.size() > 3
+            d.filteredLow.pop()
+            d.filteredHigh.pop()
+            d.filteredClose.pop()
+            d.filteredRequestTime.pop()
+    if not na(atr)
+        d.atr := atr
+    d
+
 if ltf1Enable
     [ltf1Low, ltf1High, ltf1Close, ltf1SecurityRequestTime, ltf1AtrSeries] = request.security(syminfo.tickerid, ltf1.tfPeriod, [low, high, close, time, ta.atr(ATR_LENGTH)], gaps=barmerge.gaps_on)
-    ltf1.filteredLow := getLastNaValues(ltf1Low, 3)
-    ltf1.filteredHigh := getLastNaValues(ltf1High, 3)
-    ltf1.filteredClose := getLastNaValues(ltf1Close, 3)
-    ltf1.filteredRequestTime := getLastNaValues(ltf1SecurityRequestTime, 3)
-    ltf1AtrValues = getLastNaValues(ltf1AtrSeries, 1)
-    ltf1.atr := ltf1AtrValues.size() > 0 ? ltf1AtrValues.get(0) : na
+    pushTfBar(ltf1, ltf1Low, ltf1High, ltf1Close, ltf1SecurityRequestTime, ltf1AtrSeries)
 
-htf1Enable = htf1EnableInput and (not hideLowerThanChartTfBoxes or (hideLowerThanChartTfBoxes and htf1.tfSeconds >= chartTfSeconds))
-htf1DuplicatesLtf1 = htf1.tfSeconds == ltf1.tfSeconds
-htf1Enable := htf1Enable and (not favorLtfOverHtfWhenEqualTfsInput or (favorLtfOverHtfWhenEqualTfsInput and not htf1DuplicatesLtf1))
 if htf1Enable
     [htf1Low, htf1High, htf1Close, htf1SecurityRequestTime, htf1AtrSeries] = request.security(syminfo.tickerid, htf1.tfPeriod, [low, high, close, time, ta.atr(ATR_LENGTH)], gaps=barmerge.gaps_on)
-    htf1.filteredLow := getLastNaValues(htf1Low, 3)
-    htf1.filteredHigh := getLastNaValues(htf1High, 3)
-    htf1.filteredClose := getLastNaValues(htf1Close, 3)
-    htf1.filteredRequestTime := getLastNaValues(htf1SecurityRequestTime, 3)
-    htf1AtrValues = getLastNaValues(htf1AtrSeries, 1)
-    htf1.atr := htf1AtrValues.size() > 0 ? htf1AtrValues.get(0) : na
+    pushTfBar(htf1, htf1Low, htf1High, htf1Close, htf1SecurityRequestTime, htf1AtrSeries)
 
-htf2Enable = htf2EnableInput and (not hideLowerThanChartTfBoxes or (hideLowerThanChartTfBoxes and htf2.tfSeconds >= chartTfSeconds))
-htf2DuplicatesLtf1 = htf2.tfSeconds == ltf1.tfSeconds
-htf2Enable := htf2Enable and (not favorLtfOverHtfWhenEqualTfsInput or (favorLtfOverHtfWhenEqualTfsInput and not htf2DuplicatesLtf1))
 if htf2Enable
     [htf2Low, htf2High, htf2Close, htf2SecurityRequestTime, htf2AtrSeries] = request.security(syminfo.tickerid, htf2.tfPeriod, [low, high, close, time, ta.atr(ATR_LENGTH)], gaps=barmerge.gaps_on)
-    htf2.filteredLow := getLastNaValues(htf2Low, 3)
-    htf2.filteredHigh := getLastNaValues(htf2High, 3)
-    htf2.filteredClose := getLastNaValues(htf2Close, 3)
-    htf2.filteredRequestTime := getLastNaValues(htf2SecurityRequestTime, 3)
-    htf2AtrValues = getLastNaValues(htf2AtrSeries, 1)
-    htf2.atr := htf2AtrValues.size() > 0 ? htf2AtrValues.get(0) : na
+    pushTfBar(htf2, htf2Low, htf2High, htf2Close, htf2SecurityRequestTime, htf2AtrSeries)
 
-htf3Enable = htf3EnableInput and (not hideLowerThanChartTfBoxes or (hideLowerThanChartTfBoxes and htf3.tfSeconds >= chartTfSeconds))
-htf3DuplicatesLtf1 = htf3.tfSeconds == ltf1.tfSeconds
-htf3Enable := htf3Enable and (not favorLtfOverHtfWhenEqualTfsInput or (favorLtfOverHtfWhenEqualTfsInput and not htf3DuplicatesLtf1))
 if htf3Enable
     [htf3Low, htf3High, htf3Close, htf3SecurityRequestTime, htf3AtrSeries] = request.security(syminfo.tickerid, htf3.tfPeriod, [low, high, close, time, ta.atr(ATR_LENGTH)], gaps=barmerge.gaps_on)
-    htf3.filteredLow := getLastNaValues(htf3Low, 3)
-    htf3.filteredHigh := getLastNaValues(htf3High, 3)
-    htf3.filteredClose := getLastNaValues(htf3Close, 3)
-    htf3.filteredRequestTime := getLastNaValues(htf3SecurityRequestTime, 3)
-    htf3AtrValues = getLastNaValues(htf3AtrSeries, 1)
-    htf3.atr := htf3AtrValues.size() > 0 ? htf3AtrValues.get(0) : na
+    pushTfBar(htf3, htf3Low, htf3High, htf3Close, htf3SecurityRequestTime, htf3AtrSeries)
 //}
 
 bool showBoxIds = false
+// Tracking runs on every bar in the lookback; drawing runs on the last bar only. The
+// two display passes rebuild every box from the arrays, so a redraw on a historical
+// bar was thrown away by the next bar's redraw, and on a 5-minute chart with a 4H row
+// that was every box deleted and recreated some fourteen thousand times. This was
+// where the load time went; the lookback length was not.
+bool drawNow = barstate.islast
+
 clearEvents(ltf1)
 if withinLtfMaxBarIndexHistory and ltf1Enable
     findFvgs(ltf1, chartTfSeconds)
     mitigateFvgs(ltf1, showBoxIds)
     touchFvgs(ltf1)
-    displaySelectFvgBoxes(ltf1, chartTfSeconds, ltfShowFvgMidLineInput, showBoxIds)
-    displaySelectIfvgBoxes(ltf1, showBoxIds)
+    if drawNow
+        displaySelectFvgBoxes(ltf1, chartTfSeconds, ltfShowFvgMidLineInput, showBoxIds)
+        displaySelectIfvgBoxes(ltf1, showBoxIds)
 
 clearEvents(htf1)
 if withinHtfMaxBarIndexHistory and htf1Enable
     findFvgs(htf1, chartTfSeconds)
     mitigateFvgs(htf1, showBoxIds)
     touchFvgs(htf1)
-    displaySelectFvgBoxes(htf1, chartTfSeconds, htfShowFvgMidLineInput, showBoxIds)
-    displaySelectIfvgBoxes(htf1, showBoxIds)
+    if drawNow
+        displaySelectFvgBoxes(htf1, chartTfSeconds, htfShowFvgMidLineInput, showBoxIds)
+        displaySelectIfvgBoxes(htf1, showBoxIds)
 
 clearEvents(htf2)
 if withinHtfMaxBarIndexHistory and htf2Enable
     findFvgs(htf2, chartTfSeconds)
     mitigateFvgs(htf2, showBoxIds)
     touchFvgs(htf2)
-    displaySelectFvgBoxes(htf2, chartTfSeconds, htfShowFvgMidLineInput, showBoxIds)
-    displaySelectIfvgBoxes(htf2, showBoxIds)
+    if drawNow
+        displaySelectFvgBoxes(htf2, chartTfSeconds, htfShowFvgMidLineInput, showBoxIds)
+        displaySelectIfvgBoxes(htf2, showBoxIds)
 
 clearEvents(htf3)
 if withinHtfMaxBarIndexHistory and htf3Enable
     findFvgs(htf3, chartTfSeconds)
     mitigateFvgs(htf3, showBoxIds)
     touchFvgs(htf3)
-    displaySelectFvgBoxes(htf3,  chartTfSeconds, htfShowFvgMidLineInput, showBoxIds)
-    displaySelectIfvgBoxes(htf3, showBoxIds)
+    if drawNow
+        displaySelectFvgBoxes(htf3, chartTfSeconds, htfShowFvgMidLineInput, showBoxIds)
+        displaySelectIfvgBoxes(htf3, showBoxIds)
 
 // --------------------- Update Status Table { ----------------------------- \\
 fillStatusTableCell(table _table, int _col, int _row, string _text, color _bgcolor=color.white, color _txtcolor=color.black, string _text_size=size.auto) =>
@@ -1085,6 +1128,44 @@ fillStatusTableCell(table _table, int _col, int _row, string _text, color _bgcol
 
 getDisplayTypeStr(string mode, float n) =>
     mode == "All" ? "-" : mode == "ATR" ? str.tostring(n) + "a" : str.tostring(int(n))
+
+// Why a switched-on row is not drawing, shown in its Filter column: "< chart" when the
+// lower-than-chart hide skipped it, "dup" when an earlier row resolved to the same
+// timeframe. Empty when it draws.
+skipReason(bool enabledInput, bool base, bool enabled) =>
+    not enabledInput ? "" : not base ? "< chart" : not enabled ? "dup" : ""
+
+// "auto" and "chart" show what they resolved to; a fixed row shows the input.
+tfLabel(string tfInput, TfFvgType d) =>
+    tfInput == "auto" or tfInput == "chart" ? d.name : tfInput
+
+// One row per timeframe. Counts fill only for the ticked box types, and only while
+// the row draws. Returns the next free row.
+statusRow(table tbl, int row, string rowName, string tfStr, string filterStr, string skip, TfFvgType d, color bg, color txt) =>
+    fillStatusTableCell(tbl, 0, row, rowName, bg, txt, statusTableFontSizeOption)
+    fillStatusTableCell(tbl, 1, row, tfStr, bg, txt, statusTableFontSizeOption)
+    fillStatusTableCell(tbl, 2, row, skip == "" ? filterStr : skip, bg, txt, statusTableFontSizeOption)
+    bool live = skip == ""
+    int col = 3
+    if showPrimaryStatsInput
+        if live and d.showBullFvg
+            fillStatusTableCell(tbl, col, row, str.tostring(d.bullFvgCount), d.boxConfig.bullColor, txt, statusTableFontSizeOption)
+        if live and d.showBearFvg
+            fillStatusTableCell(tbl, col + 1, row, str.tostring(d.bearFvgCount), d.boxConfig.bearColor, txt, statusTableFontSizeOption)
+        col += 2
+    if showSecondaryStatsInput
+        // The counters carry the ORIGINAL gap's direction: bearIfvgCount is bearish FVGs
+        // that inverted, now bullish iFVGs, in the bull iFVG colour and listed first so
+        // the pair reads bull, bear like the FVG pair beside it.
+        if live and d.showBullIfvg
+            fillStatusTableCell(tbl, col, row, str.tostring(d.bearIfvgCount), d.boxConfig.bullIfvgColor, txt, statusTableFontSizeOption)
+        if live and d.showBearIfvg
+            fillStatusTableCell(tbl, col + 1, row, str.tostring(d.bullIfvgCount), d.boxConfig.bearIfvgColor, txt, statusTableFontSizeOption)
+        col += 2
+    if showMitigatedStatsInput
+        fillStatusTableCell(tbl, col, row, str.tostring(d.bullMfvgCount), d.boxConfig.mfvgColor, txt, statusTableFontSizeOption)
+        fillStatusTableCell(tbl, col + 1, row, str.tostring(d.bearMfvgCount), d.boxConfig.mfvgColor, txt, statusTableFontSizeOption)
+    row + 1
 
 if statusTableLocationInput != "hidden"
     statusTableRows = 15
@@ -1097,15 +1178,10 @@ if statusTableLocationInput != "hidden"
     statusTable.set_frame_color(frameColor)
     statusTable.set_frame_width(1)
     row = 0
-    col = 2 + (showPrimaryStatsInput ? 2 : 0) + (showSecondaryStatsInput ? 2 : 0) + (showMitigatedStatsInput ? 2 : 0)
-    table.merge_cells(statusTable, 0, row, col, row)
-    biasColor = biasInput == HtfBiasType.Neutral ? color.new(color.gray, 90) : biasInput == HtfBiasType.Bullish ? ltf1.boxConfig.bullColor : ltf1.boxConfig.bearColor
-    fillStatusTableCell(statusTable, 0, row, "Bias: " + str.tostring(biasInput), biasColor, textColor, statusTableFontSizeOption)
-    row += 1
     fillStatusTableCell(statusTable, 0, row, "atr: " + str.tostring(math.round_to_mintick(chartAtr)), bgColor, textColor, "tiny")
     fillStatusTableCell(statusTable, 1, row, "TF", bgColor, textColor, statusTableFontSizeOption)
     fillStatusTableCell(statusTable, 2, row, "Filter", bgColor, textColor, statusTableFontSizeOption)
-    col := 3
+    col = 3
     if showPrimaryStatsInput
         table.merge_cells(statusTable, col, row, col+1, row)
         fillStatusTableCell(statusTable, col, row, "FVG", bgColor, textColor, statusTableFontSizeOption)
@@ -1121,103 +1197,34 @@ if statusTableLocationInput != "hidden"
 
     if barstate.islast
         if ltf1EnableInput
-            ltf1Str = ltf1TfInput //== "chart" ? timeframe.period + (timeframe.isminutes ? " min" : "") : ltf1TfInput
-            fillStatusTableCell(statusTable, 0, row, "LTF 1", bgColor, textColor, statusTableFontSizeOption)
-            fillStatusTableCell(statusTable, 1, row, ltf1Str, bgColor, textColor, statusTableFontSizeOption)
-            fillStatusTableCell(statusTable, 2, row, getDisplayTypeStr(ltf1FilterModeInput, ltf1FvgNFilterInput), bgColor, textColor, statusTableFontSizeOption)
-            col := 3
-            if showPrimaryStatsInput
-                if ltf1ShowFvgsInput
-                    fillStatusTableCell(statusTable, col, row, str.tostring(ltf1.bullFvgCount), ltf1.boxConfig.bullColor, textColor, statusTableFontSizeOption)
-                    fillStatusTableCell(statusTable, col+1, row, str.tostring(ltf1.bearFvgCount), ltf1.boxConfig.bearColor, textColor, statusTableFontSizeOption)
-                col += 2
-            if showSecondaryStatsInput
-                if ltf1ShowIfvgsInput
-                    fillStatusTableCell(statusTable, col, row, str.tostring(ltf1.bullIfvgCount), ltf1.boxConfig.bearIfvgColor, textColor, statusTableFontSizeOption)
-                    fillStatusTableCell(statusTable, col+1, row, str.tostring(ltf1.bearIfvgCount), ltf1.boxConfig.bullIfvgColor, textColor, statusTableFontSizeOption)
-                col += 2
-            if showMitigatedStatsInput
-                fillStatusTableCell(statusTable, col, row, str.tostring(ltf1.bullMfvgCount), ltf1.boxConfig.mfvgColor, textColor, statusTableFontSizeOption)
-                fillStatusTableCell(statusTable, col+1, row, str.tostring(ltf1.bearMfvgCount), ltf1.boxConfig.mfvgColor, textColor, statusTableFontSizeOption)
-            row += 1
-
+            row := statusRow(statusTable, row, "LTF 1", tfLabel(ltf1TfInput, ltf1), getDisplayTypeStr(ltf1FilterModeInput, ltf1FvgNFilterInput), skipReason(ltf1EnableInput, ltf1Base, ltf1Enable), ltf1, bgColor, textColor)
         if htf1EnableInput
-            htf1Str = htf1TfInput == "auto" ? str.tostring(htf1.tfPeriod) : htf1TfInput == "chart" ? timeframe.period + (timeframe.isminutes ? " min" : "") : htf1TfInput
-            fillStatusTableCell(statusTable, 0, row, (htf1TfInput == "auto" ? "auto\n" : "") + "HTF 1", bgColor, textColor, statusTableFontSizeOption)
-            fillStatusTableCell(statusTable, 1, row, htf1Str, bgColor, textColor, statusTableFontSizeOption)
-            fillStatusTableCell(statusTable, 2, row, getDisplayTypeStr(htf1FilterModeInput, htf1FvgNFilterInput), bgColor, textColor, statusTableFontSizeOption)
-            col := 3
-            if showPrimaryStatsInput
-                if htf1ShowFvgsInput
-                    fillStatusTableCell(statusTable, col, row, str.tostring(htf1.bullFvgCount), htf1.boxConfig.bullColor, textColor, statusTableFontSizeOption)
-                    fillStatusTableCell(statusTable, col+1, row, str.tostring(htf1.bearFvgCount), htf1.boxConfig.bearColor, textColor, statusTableFontSizeOption)
-                col += 2
-            if showSecondaryStatsInput
-                if htf1ShowIfvgsInput
-                    fillStatusTableCell(statusTable, col, row, str.tostring(htf1.bullIfvgCount), htf1.boxConfig.bearIfvgColor, textColor, statusTableFontSizeOption)
-                    fillStatusTableCell(statusTable, col+1, row, str.tostring(htf1.bearIfvgCount), htf1.boxConfig.bullIfvgColor, textColor, statusTableFontSizeOption)
-                col += 2
-            if showMitigatedStatsInput
-                fillStatusTableCell(statusTable, col, row, str.tostring(htf1.bullMfvgCount), htf1.boxConfig.mfvgColor, textColor, statusTableFontSizeOption)
-                fillStatusTableCell(statusTable, col+1, row, str.tostring(htf1.bearMfvgCount), htf1.boxConfig.mfvgColor, textColor, statusTableFontSizeOption)
-            row += 1
-
+            row := statusRow(statusTable, row, (htf1TfInput == "auto" ? "auto\n" : "") + "HTF 1", tfLabel(htf1TfInput, htf1), getDisplayTypeStr(htf1FilterModeInput, htf1FvgNFilterInput), skipReason(htf1EnableInput, htf1Base, htf1Enable), htf1, bgColor, textColor)
         if htf2EnableInput
-            htf2Str = htf2TfInput == "auto" ? str.tostring(htf2.tfPeriod) + (htfIsMinutes(htf2TfInput) ? " min" : "") : htf2TfInput == "chart" ? timeframe.period + (timeframe.isminutes ? " min" : "") : htf2TfInput
-            fillStatusTableCell(statusTable, 0, row, (htf2TfInput == "auto" ? "auto\n" : "") + "HTF 2", bgColor, textColor, statusTableFontSizeOption)
-            fillStatusTableCell(statusTable, 1, row, htf2Str, bgColor, textColor, statusTableFontSizeOption)
-            fillStatusTableCell(statusTable, 2, row, getDisplayTypeStr(htf2FilterModeInput, htf2FvgNFilterInput), bgColor, textColor, statusTableFontSizeOption)
-            col := 3
-            if showPrimaryStatsInput
-                if htf2ShowFvgsInput
-                    fillStatusTableCell(statusTable, col, row, str.tostring(htf2.bullFvgCount), htf2.boxConfig.bullColor, textColor, statusTableFontSizeOption)
-                    fillStatusTableCell(statusTable, col+1, row, str.tostring(htf2.bearFvgCount), htf2.boxConfig.bearColor, textColor, statusTableFontSizeOption)
-                col += 2
-            if showSecondaryStatsInput
-                if htf2ShowIfvgsInput
-                    fillStatusTableCell(statusTable, col, row, str.tostring(htf2.bullIfvgCount), htf2.boxConfig.bearIfvgColor, textColor, statusTableFontSizeOption)
-                    fillStatusTableCell(statusTable, col+1, row, str.tostring(htf2.bearIfvgCount), htf2.boxConfig.bullIfvgColor, textColor, statusTableFontSizeOption)
-                col += 2
-            if showMitigatedStatsInput
-                fillStatusTableCell(statusTable, col, row, str.tostring(htf2.bullMfvgCount), htf2.boxConfig.mfvgColor, textColor, statusTableFontSizeOption)
-                fillStatusTableCell(statusTable, col+1, row, str.tostring(htf2.bearMfvgCount), htf2.boxConfig.mfvgColor, textColor, statusTableFontSizeOption)
-            row += 1
-
+            row := statusRow(statusTable, row, (htf2TfInput == "auto" ? "auto\n" : "") + "HTF 2", tfLabel(htf2TfInput, htf2), getDisplayTypeStr(htf2FilterModeInput, htf2FvgNFilterInput), skipReason(htf2EnableInput, htf2Base, htf2Enable), htf2, bgColor, textColor)
         if htf3EnableInput
-            htf3Str = htf3TfInput == "auto" ? str.tostring(htf3.tfPeriod) + (htfIsMinutes(htf3TfInput) ? " min" : "") : htf3TfInput == "chart" ? timeframe.period + (timeframe.isminutes ? " min" : "") : htf3TfInput
-            fillStatusTableCell(statusTable, 0, row, (htf3TfInput == "auto" ? "auto\n" : "") + "HTF 3", bgColor, textColor, statusTableFontSizeOption)
-            fillStatusTableCell(statusTable, 1, row, htf3Str, bgColor, textColor, statusTableFontSizeOption)
-            fillStatusTableCell(statusTable, 2, row, getDisplayTypeStr(htf3FilterModeInput, htf3FvgNFilterInput), bgColor, textColor, statusTableFontSizeOption)
-            col := 3
-            if showPrimaryStatsInput
-                if htf3ShowFvgsInput
-                    fillStatusTableCell(statusTable, col, row, str.tostring(htf3.bullFvgCount), htf3.boxConfig.bullColor, textColor, statusTableFontSizeOption)
-                    fillStatusTableCell(statusTable, col+1, row, str.tostring(htf3.bearFvgCount), htf3.boxConfig.bearColor, textColor, statusTableFontSizeOption)
-                col += 2
-            if showSecondaryStatsInput
-                if htf3ShowIfvgsInput
-                    fillStatusTableCell(statusTable, col, row, str.tostring(htf3.bullIfvgCount), htf3.boxConfig.bearIfvgColor, textColor, statusTableFontSizeOption)
-                    fillStatusTableCell(statusTable, col+1, row, str.tostring(htf3.bearIfvgCount), htf3.boxConfig.bullIfvgColor, textColor, statusTableFontSizeOption)
-                col += 2
-            if showMitigatedStatsInput
-                fillStatusTableCell(statusTable, col, row, str.tostring(htf3.bullMfvgCount), htf3.boxConfig.mfvgColor, textColor, statusTableFontSizeOption)
-                fillStatusTableCell(statusTable, col+1, row, str.tostring(htf3.bearMfvgCount), htf3.boxConfig.mfvgColor, textColor, statusTableFontSizeOption)
+            row := statusRow(statusTable, row, (htf3TfInput == "auto" ? "auto\n" : "") + "HTF 3", tfLabel(htf3TfInput, htf3), getDisplayTypeStr(htf3FilterModeInput, htf3FvgNFilterInput), skipReason(htf3EnableInput, htf3Base, htf3Enable), htf3, bgColor, textColor)
 //}
 
 // --------------------- Alerts { ----------------------------- \\
 // Six conditions for the alert dialog, each "any enabled timeframe". alertcondition
 // messages are constants, so they cannot name the timeframe; the alert() calls
 // below can, behind the input, for users who pick "Any alert() function call".
-// Bias gates: a bullish bias wants bullish gaps forming and being entered, and BEARISH
-// gaps inverting (into bullish iFVGs). The evInv flags carry the original direction.
-bool wantBullGap = not biasBear
-bool wantBearGap = not biasBull
-bool anyNewBull   = wantBullGap and ((ltf1Enable and ltf1.evNewBull)   or (htf1Enable and htf1.evNewBull)   or (htf2Enable and htf2.evNewBull)   or (htf3Enable and htf3.evNewBull))
-bool anyNewBear   = wantBearGap and ((ltf1Enable and ltf1.evNewBear)   or (htf1Enable and htf1.evNewBear)   or (htf2Enable and htf2.evNewBear)   or (htf3Enable and htf3.evNewBear))
-bool anyInvBull   = wantBearGap and ((ltf1Enable and ltf1.evInvBull)   or (htf1Enable and htf1.evInvBull)   or (htf2Enable and htf2.evInvBull)   or (htf3Enable and htf3.evInvBull))
-bool anyInvBear   = wantBullGap and ((ltf1Enable and ltf1.evInvBear)   or (htf1Enable and htf1.evInvBear)   or (htf2Enable and htf2.evInvBear)   or (htf3Enable and htf3.evInvBear))
-bool anyTouchBull = wantBullGap and ((ltf1Enable and ltf1.evTouchBull) or (htf1Enable and htf1.evTouchBull) or (htf2Enable and htf2.evTouchBull) or (htf3Enable and htf3.evTouchBull))
-bool anyTouchBear = wantBearGap and ((ltf1Enable and ltf1.evTouchBear) or (htf1Enable and htf1.evTouchBear) or (htf2Enable and htf2.evTouchBear) or (htf3Enable and htf3.evTouchBear))
+// An event fires only where its box type is ticked on that timeframe, so the alerts
+// follow the chart. A bearish FVG inverting is a +iFVG event, since that is what it
+// becomes; the evInv flags carry the ORIGINAL gap's direction.
+wantNewBull(TfFvgType d, bool on)   => on and d.showBullFvg  and d.evNewBull
+wantNewBear(TfFvgType d, bool on)   => on and d.showBearFvg  and d.evNewBear
+wantInvBull(TfFvgType d, bool on)   => on and d.showBearIfvg and d.evInvBull
+wantInvBear(TfFvgType d, bool on)   => on and d.showBullIfvg and d.evInvBear
+wantTouchBull(TfFvgType d, bool on) => on and d.showBullFvg  and d.evTouchBull
+wantTouchBear(TfFvgType d, bool on) => on and d.showBearFvg  and d.evTouchBear
+bool anyNewBull   = wantNewBull(ltf1, ltf1Enable)   or wantNewBull(htf1, htf1Enable)   or wantNewBull(htf2, htf2Enable)   or wantNewBull(htf3, htf3Enable)
+bool anyNewBear   = wantNewBear(ltf1, ltf1Enable)   or wantNewBear(htf1, htf1Enable)   or wantNewBear(htf2, htf2Enable)   or wantNewBear(htf3, htf3Enable)
+bool anyInvBull   = wantInvBull(ltf1, ltf1Enable)   or wantInvBull(htf1, htf1Enable)   or wantInvBull(htf2, htf2Enable)   or wantInvBull(htf3, htf3Enable)
+bool anyInvBear   = wantInvBear(ltf1, ltf1Enable)   or wantInvBear(htf1, htf1Enable)   or wantInvBear(htf2, htf2Enable)   or wantInvBear(htf3, htf3Enable)
+bool anyTouchBull = wantTouchBull(ltf1, ltf1Enable) or wantTouchBull(htf1, htf1Enable) or wantTouchBull(htf2, htf2Enable) or wantTouchBull(htf3, htf3Enable)
+bool anyTouchBear = wantTouchBear(ltf1, ltf1Enable) or wantTouchBear(htf1, htf1Enable) or wantTouchBear(htf2, htf2Enable) or wantTouchBear(htf3, htf3Enable)
 
 alertcondition(anyNewBull,   "Bullish FVG formed",          "{{ticker}}: bullish FVG formed")
 alertcondition(anyNewBear,   "Bearish FVG formed",          "{{ticker}}: bearish FVG formed")
@@ -1232,17 +1239,17 @@ levelsStr(float top, float bottom) =>
 fireAlerts(TfFvgType tfData, bool enabled) =>
     if enabled
         string prefix = syminfo.ticker + " " + tfData.name + ": "
-        if tfData.evNewBull and wantBullGap
+        if wantNewBull(tfData, enabled)
             alert(prefix + "bullish FVG formed, " + levelsStr(tfData.evNewTop, tfData.evNewBottom), alert.freq_once_per_bar)
-        if tfData.evNewBear and wantBearGap
+        if wantNewBear(tfData, enabled)
             alert(prefix + "bearish FVG formed, " + levelsStr(tfData.evNewTop, tfData.evNewBottom), alert.freq_once_per_bar)
-        if tfData.evInvBull and wantBearGap
+        if wantInvBull(tfData, enabled)
             alert(prefix + "bullish FVG inverted to bearish iFVG, " + levelsStr(tfData.evInvTop, tfData.evInvBottom), alert.freq_once_per_bar)
-        if tfData.evInvBear and wantBullGap
+        if wantInvBear(tfData, enabled)
             alert(prefix + "bearish FVG inverted to bullish iFVG, " + levelsStr(tfData.evInvTop, tfData.evInvBottom), alert.freq_once_per_bar)
-        if tfData.evTouchBull and wantBullGap
+        if wantTouchBull(tfData, enabled)
             alert(prefix + "price entered bullish FVG, " + levelsStr(tfData.evTouchTop, tfData.evTouchBottom), alert.freq_once_per_bar)
-        if tfData.evTouchBear and wantBearGap
+        if wantTouchBear(tfData, enabled)
             alert(prefix + "price entered bearish FVG, " + levelsStr(tfData.evTouchTop, tfData.evTouchBottom), alert.freq_once_per_bar)
 
 if alertMessagesInput

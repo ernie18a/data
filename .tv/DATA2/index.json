@@ -7,17 +7,17 @@
     "version": "1.0"
   },
   {
+    "name": "0DTE Move Study [SPX] v19.1.0",
+    "file": "0DTE_Move_Study_SPX_v1910.md",
+    "url": "https://www.tradingview.com/script/nNvJ60vX/",
+    "pine_id": "PUB;6dd2195ec000490db001c4fb93f80c4a",
+    "version": "1.0"
+  },
+  {
     "name": "1M IFVG Execution - V4.1 First Active",
     "file": "1M_IFVG_Execution_V41_First_Active.md",
     "url": "https://www.tradingview.com/script/b3V3DVw0-1M-IFVG-Execution-V4-1-First-Active/",
     "pine_id": "PUB;b9522085686145feb8378ddd9ac4d56a",
-    "version": "1.0"
-  },
-  {
-    "name": "204 Haftalik BTC Dongu Haritasi v6",
-    "file": "204_Haftalik_BTC_Dongu_Haritasi_v6.md",
-    "url": "https://www.tradingview.com/script/NvtrGAWm/",
-    "pine_id": "PUB;26ed621df6474cb28335eb2fca44d6d0",
     "version": "1.0"
   },
   {
@@ -56,6 +56,13 @@
     "version": "6.0"
   },
   {
+    "name": "3D Candles & Volume [Afnan]",
+    "file": "3D_Candles_Volume_Afnan.md",
+    "url": "https://www.tradingview.com/script/HTokbkxX-3D-Candles-Volume-Afnan/",
+    "pine_id": "PUB;853738bedf364e79be909beb4618512d",
+    "version": "1.0"
+  },
+  {
     "name": "3D Engine",
     "file": "3D_Engine.md",
     "url": "https://www.tradingview.com/script/gaTNbZEC-3D-Engine-Overlay/",
@@ -84,11 +91,32 @@
     "version": "1.0"
   },
   {
+    "name": "3 Candle Manipulation",
+    "file": "3_Candle_Manipulation.md",
+    "url": "https://www.tradingview.com/script/ee2X40CI-3-Candle-Manipulation/",
+    "pine_id": "PUB;58d5dce4ffa54d248ea935d4f0eb864b",
+    "version": "1.0"
+  },
+  {
     "name": "3 EMA + HH/LL Structure Break PRO v2",
     "file": "3_EMA_HHLL_Structure_Break_PRO_v2.md",
     "url": "https://www.tradingview.com/script/MASmzuAI-3-EMA-HH-LL-Structure-Break-Trend-and-Structure-combined-v2/",
     "pine_id": "PUB;70a5fa711d9c456cb646e929dc325980",
     "version": "1.0"
+  },
+  {
+    "name": "4H Close Dots",
+    "file": "4H_Close_Dots.md",
+    "url": "https://www.tradingview.com/script/bnk2D7Cm/",
+    "pine_id": "PUB;4ad598ebd1a649d4a447fe03f96a660b",
+    "version": "2.0"
+  },
+  {
+    "name": "4H Unmitigated Gaps",
+    "file": "4H_Unmitigated_Gaps.md",
+    "url": "https://www.tradingview.com/script/HMOTcyt6-4H-Unmitigated-Gaps/",
+    "pine_id": "PUB;ec77e52bb7cd4ec59ce29ec9ee40e272",
+    "version": "3.0"
   },
   {
     "name": "50% Retrace of Previous HTF Candles",
@@ -119,10 +147,24 @@
     "version": "1.0"
   },
   {
+    "name": "5-Minute Bias + Level + Reaction Breakout Scalp",
+    "file": "5Minute_Bias_Level_Reaction_Breakout_Scalp.md",
+    "url": "https://www.tradingview.com/script/MKzMC6mW-5-Minute-Bias-Level-Reaction-Breakout-Scalp/",
+    "pine_id": "PUB;507f080db40148e485fd4728878e068d",
+    "version": "1.0"
+  },
+  {
     "name": "6/7 Currency Breakout + 4/7 Hold",
     "file": "67_Currency_Breakout_47_Hold.md",
     "url": "https://www.tradingview.com/script/qNpQ9GYs-6-7-Currency-Breakout-4-7-Hold/",
     "pine_id": "PUB;607fa037f9e841d98368720be87a1e69",
+    "version": "1.0"
+  },
+  {
+    "name": "6H Profile Candles — WAT",
+    "file": "6H_Profile_Candles_WAT.md",
+    "url": "https://www.tradingview.com/script/enZm3cyv-6H-Profile-Candles/",
+    "pine_id": "PUB;4aa76c19e1cf40bca96f641555cb6eb7",
     "version": "1.0"
   },
   {
@@ -131,6 +173,13 @@
     "url": "https://www.tradingview.com/script/ls42zPSE-72s-Adaptive-Hull-Moving-Average/",
     "pine_id": "PUB;mfpeBvtOH6Zcqe54ECLBthMZqWS2l21J",
     "version": "5.0"
+  },
+  {
+    "name": "784 Market Seasonality Calendar",
+    "file": "784_Market_Seasonality_Calendar.md",
+    "url": "https://www.tradingview.com/script/2QHxiVSp-Market-Seasonality-Calendar/",
+    "pine_id": "PUB;84e18ceebd9d45028bc53baf0ce53d1e",
+    "version": "1.0"
   },
   {
     "name": "ABC 123 Harmonic Ratio Custom Range Interactive",
@@ -158,6 +207,13 @@
     "file": "ADRATR.md",
     "url": "https://www.tradingview.com/script/Sb3ED0pz-ADR-ATR-QM-style/",
     "pine_id": "PUB;481abecdae76495883b1b1939b46afae",
+    "version": "1.0"
+  },
+  {
+    "name": "ADR + Daily Stats",
+    "file": "ADR_Daily_Stats.md",
+    "url": "https://www.tradingview.com/script/BBEwa8Jr-Daily-Stock-Stats-ADR-Levels-Liquidity/",
+    "pine_id": "PUB;9e6af7fcd4b54bacba49a81b873ea7df",
     "version": "1.0"
   },
   {
@@ -200,13 +256,6 @@
     "file": "AMD_Structure_Map_AxeAlgo.md",
     "url": "https://www.tradingview.com/script/lO7P6hjm-AMD-Structure-Map-AxeAlgo/",
     "pine_id": "PUB;4fbdad62e0c84fb7a6e51ef358855942",
-    "version": "1.0"
-  },
-  {
-    "name": "AM - 7h Session Candles",
-    "file": "AM_7h_Session_Candles.md",
-    "url": "https://www.tradingview.com/script/MXeLV0hq-AM-7h-Session-Candles/",
-    "pine_id": "PUB;5395becb9c0c46a497aee9511fbf8ae8",
     "version": "1.0"
   },
   {
@@ -270,6 +319,13 @@
     "file": "ATKDEF_Temporal_Session_Sweep_Hunt_Timeworks.md",
     "url": "https://www.tradingview.com/script/OkgSiHyi/",
     "pine_id": "PUB;b8d8abf162554740a25ee731a071e5ba",
+    "version": "1.0"
+  },
+  {
+    "name": "ATK/DEF — Temporal Session Swing State Engine",
+    "file": "ATKDEF_Temporal_Session_Swing_State_Engine.md",
+    "url": "https://www.tradingview.com/script/uoMTJNzs/",
+    "pine_id": "PUB;ba3f86b39dae4d3c864f7d2cdc0bb9cb",
     "version": "1.0"
   },
   {
@@ -392,13 +448,6 @@
     "version": "1.0"
   },
   {
-    "name": "Acceptance-Retest indicator",
-    "file": "AcceptanceRetest_indicator.md",
-    "url": "https://www.tradingview.com/script/KsBKik8k-Acceptance-Retest-indicator/",
-    "pine_id": "PUB;6db6a521810f4ac8b634833657172750",
-    "version": "1.0"
-  },
-  {
     "name": "Accumulation / Distribution Density (VD)",
     "file": "Accumulation_Distribution_Density_VD.md",
     "url": "https://www.tradingview.com/script/olfpEvv8/",
@@ -420,6 +469,13 @@
     "version": "2.0"
   },
   {
+    "name": "Adaptive Candlestick Context Scanner v1.1",
+    "file": "Adaptive_Candlestick_Context_Scanner_v11.md",
+    "url": "https://www.tradingview.com/script/gUWghKzO-Adaptive-Candlestick-Context-Scanner/",
+    "pine_id": "PUB;bd38d589ba8243a7bce525cc92bd5a18",
+    "version": "1.0"
+  },
+  {
     "name": "Adaptive Candlestick Pattern Recognition System",
     "file": "Adaptive_Candlestick_Pattern_Recognition_System.md",
     "url": "https://www.tradingview.com/script/5FQgMCiO-Adaptive-Candlestick-Pattern-Recognition-System/",
@@ -439,6 +495,20 @@
     "url": "https://www.tradingview.com/script/jcXOsBBf-Adaptive-Hurst-Cycle-Engine-SpokoStocks/",
     "pine_id": "PUB;7a1bce615bd54d3e8294e3e1c5e6776f",
     "version": "2.0"
+  },
+  {
+    "name": "Adaptive Market Acceptance Profile",
+    "file": "Adaptive_Market_Acceptance_Profile.md",
+    "url": "https://www.tradingview.com/script/Wxdvf9wW-Adaptive-Market-Acceptance-Profile/",
+    "pine_id": "PUB;35b4cf3b74124f449c9787123e056467",
+    "version": "1.0"
+  },
+  {
+    "name": "Adaptive Market Commitment & Failure Engine",
+    "file": "Adaptive_Market_Commitment_Failure_Engine.md",
+    "url": "https://www.tradingview.com/script/E4JOyZuX-Adaptive-Market-Commitment-Failure-Engine/",
+    "pine_id": "PUB;c2c920bc891641f1a4fd98374f7a0a9f",
+    "version": "1.0"
   },
   {
     "name": "Adaptive Market Profile",
@@ -469,6 +539,13 @@
     "version": "1.0"
   },
   {
+    "name": "Adaptive Opening Range Context Engine",
+    "file": "Adaptive_Opening_Range_Context_Engine.md",
+    "url": "https://www.tradingview.com/script/mIn8v7O8-Adaptive-Opening-Range-Context-Engine/",
+    "pine_id": "PUB;94cea085c2b249f4a89a358f7c7db39e",
+    "version": "1.0"
+  },
+  {
     "name": "Adaptive Pivot Trend Levels [ChartPrime]",
     "file": "Adaptive_Pivot_Trend_Levels_ChartPrime.md",
     "url": "https://www.tradingview.com/script/mDGDURJN-Adaptive-Pivot-Trend-Levels-ChartPrime/",
@@ -483,10 +560,17 @@
     "version": "1.0"
   },
   {
-    "name": "Adaptive T3 Hull [BackQuant]",
-    "file": "Adaptive_T3_Hull_BackQuant.md",
-    "url": "https://www.tradingview.com/script/to9JMbUI-Adaptive-T3-Hull-BackQuant/",
-    "pine_id": "PUB;fc16431c5d044f97b847696942c09080",
+    "name": "Adaptive Statistical Location + Pressure Engine V1",
+    "file": "Adaptive_Statistical_Location_Pressure_Engine_V1.md",
+    "url": "https://www.tradingview.com/script/at8Eo2Up-Adaptive-Statistical-Location-Pressure-Engine-V1/",
+    "pine_id": "PUB;f0a4e21f215549a8b4246a89c08f2339",
+    "version": "1.0"
+  },
+  {
+    "name": "Adaptive Structural Liquidity Map",
+    "file": "Adaptive_Structural_Liquidity_Map.md",
+    "url": "https://www.tradingview.com/script/xAWJYg32-Adaptive-Structural-Liquidity-Map/",
+    "pine_id": "PUB;4cfa33504ea84069975da73860adb6aa",
     "version": "1.0"
   },
   {
@@ -509,6 +593,13 @@
     "url": "https://www.tradingview.com/script/ZXxJiYij-Adaptive-Volume-Delta-Map/",
     "pine_id": "PUB;3ee3f3976fdc4c5b8078f075d928d8c9",
     "version": "7.0"
+  },
+  {
+    "name": "Adaptive Volume Profile v1.5 • Extended Hours",
+    "file": "Adaptive_Volume_Profile_v15_Extended_Hours.md",
+    "url": "https://www.tradingview.com/script/i8IAjLKw-Adaptive-Volume-Profile-v1-5/",
+    "pine_id": "PUB;e1eb32d55e464b4d9ef1bb2944d18178",
+    "version": "1.0"
   },
   {
     "name": "Advanced Fed Decision Forecast Model (AFDFM)",
@@ -588,13 +679,6 @@
     "version": "4.0"
   },
   {
-    "name": "AlphaVault - Iron Turtle 1D v2.00",
-    "file": "AlphaVault_Iron_Turtle_1D_v200.md",
-    "url": "https://www.tradingview.com/script/jVO15KW9-AlphaVault-Iron-Turtle-1D-v2-00/",
-    "pine_id": "PUB;639b2cd562ea4e1494251f1b96400d13",
-    "version": "1.0"
-  },
-  {
     "name": "Alpha Scalper Quantum",
     "file": "Alpha_Scalper_Quantum.md",
     "url": "https://www.tradingview.com/script/zq3I2bwS-Alpha-Scalper-Quantum/",
@@ -651,6 +735,13 @@
     "version": "3.0"
   },
   {
+    "name": "AntiGravity Risk Pro v2 | Futures Sizing",
+    "file": "AntiGravity_Risk_Pro_v2_Futures_Sizing.md",
+    "url": "https://www.tradingview.com/script/DfJyHISD-Ultimate-Position-Sizing-Tool/",
+    "pine_id": "PUB;475a91a96ba940f295149dc172398696",
+    "version": "1.0"
+  },
+  {
     "name": "AntiVestor - Top &#039;n Tail Zones",
     "file": "AntiVestor_Top_039n_Tail_Zones.md",
     "url": "https://www.tradingview.com/script/8VsCUqIW-AntiVestor-Top-n-Tail-Zones/",
@@ -683,6 +774,13 @@
     "file": "Arbitrage_Matrix_LuxAlgo.md",
     "url": "https://www.tradingview.com/script/Htj7V7sx-Arbitrage-Matrix-LuxAlgo/",
     "pine_id": "PUB;6d3215f15f1a4f9fb5dd6b6cf80dc149",
+    "version": "1.0"
+  },
+  {
+    "name": "Asia + London + NY Open + Market Structure",
+    "file": "Asia_London_NY_Open_Market_Structure.md",
+    "url": "https://www.tradingview.com/script/hW1ygB6X-NINETHOUSBITCH/",
+    "pine_id": "PUB;3ed6f7ef63284612a6077c79bca747bd",
     "version": "1.0"
   },
   {
@@ -833,6 +931,13 @@
     "version": "4.0"
   },
   {
+    "name": "Auto Parallel Channel",
+    "file": "Auto_Parallel_Channel.md",
+    "url": "https://www.tradingview.com/script/WQUDhIl5-Auto-Parallel-Channel-Ascending-Descending/",
+    "pine_id": "PUB;89158fc58e3f4334b9468c1439d0125f",
+    "version": "1.0"
+  },
+  {
     "name": "Auto PitchFan, Fib Extension/Retracement and ZigZag by DGT",
     "file": "Auto_PitchFan_Fib_ExtensionRetracement_and_ZigZag_by_DGT.md",
     "url": "https://www.tradingview.com/script/17xrXGad-Auto-PitchFan-Fib-Extension-Retracement-and-ZigZag-by-DGT/",
@@ -875,6 +980,13 @@
     "version": "5.0"
   },
   {
+    "name": "Auto Trendlines [ITA]",
+    "file": "Auto_Trendlines_ITA.md",
+    "url": "https://www.tradingview.com/script/Ua3UiZWQ-Auto-Trendlines-ITA/",
+    "pine_id": "PUB;9c4ccb93651242c2bb4227726427ca75",
+    "version": "1.0"
+  },
+  {
     "name": "Average Force",
     "file": "Average_Force.md",
     "url": "https://www.tradingview.com/script/5v1UnBrN-Average-Force/",
@@ -901,6 +1013,13 @@
     "url": "https://www.tradingview.com/script/dQ9Wjj11-Average-Volume-Profile/",
     "pine_id": "PUB;1aed39f150814433b22a7844749151ae",
     "version": "2.0"
+  },
+  {
+    "name": "Azrael Dealer Map (SPX Pattern)",
+    "file": "Azrael_Dealer_Map_SPX_Pattern.md",
+    "url": "https://www.tradingview.com/script/GCiT2JW8-Azrael-Dealer-Map-SPX-Pattern/",
+    "pine_id": "PUB;560ec2d42b6b41cc9b82650501e58250",
+    "version": "1.0"
   },
   {
     "name": "B8 Ultimate v2",
@@ -1029,6 +1148,13 @@
     "version": "2.0"
   },
   {
+    "name": "Bank Math 2.0 - Custom Time Close",
+    "file": "Bank_Math_20_Custom_Time_Close.md",
+    "url": "https://www.tradingview.com/script/8nG6G7mn-Bank-Math-2-0-Custom-Time-Close/",
+    "pine_id": "PUB;d5acc3f985f646ce88e2b071c799713e",
+    "version": "1.0"
+  },
+  {
     "name": "Bar Balance [LucF]",
     "file": "Bar_Balance_LucF.md",
     "url": "https://www.tradingview.com/script/lcgCwWwI-Bar-Balance-LucF/",
@@ -1055,13 +1181,6 @@
     "url": "https://www.tradingview.com/script/bvYZ1CdF-Bernoulli-Process-Binary-Entropy-Function/",
     "pine_id": "PUB;zM7CyCJ0PYO8v0EsTcFHVahfSfMgnATk",
     "version": "5.0"
-  },
-  {
-    "name": "Best ORB Strategy Detector + Entry Finder",
-    "file": "Best_ORB_Strategy_Detector_Entry_Finder.md",
-    "url": "https://www.tradingview.com/script/z952ZVGe-Best-ORB-Strategy-Detector-Entry-Finder/",
-    "pine_id": "PUB;3485dd05958b49af932894a70734b7ca",
-    "version": "1.0"
   },
   {
     "name": "Best SMA Finder",
@@ -1197,13 +1316,6 @@
     "version": "1.0"
   },
   {
-    "name": "Bob Clean Signals",
-    "file": "Bob_Clean_Signals.md",
-    "url": "https://www.tradingview.com/script/UVHUdFl6-Bob-Clean-Signals/",
-    "pine_id": "PUB;8f48ec406eb540eebeefa29efe3f38eb",
-    "version": "1.0"
-  },
-  {
     "name": "Body ZigZag + HTF Sweeps",
     "file": "Body_ZigZag_HTF_Sweeps.md",
     "url": "https://www.tradingview.com/script/2EdkRmfX-Market-Structure-Shift-and-CRT/",
@@ -1229,6 +1341,13 @@
     "file": "Bollinger_Bands_MTF_x2_4_SMAs_VWAP.md",
     "url": "https://www.tradingview.com/script/WGFyTYIy-Bollinger-Bands-MTF-x2-4-SMAs-VWAP/",
     "pine_id": "PUB;575c265421aa491582942152c689879a",
+    "version": "1.0"
+  },
+  {
+    "name": "Bolly Breakout Alerts",
+    "file": "Bolly_Breakout_Alerts.md",
+    "url": "https://www.tradingview.com/script/ct64gYMM-Bolly-Breakout-Alerts/",
+    "pine_id": "PUB;8397f5a99b084804b9bbf6ca38979de7",
     "version": "1.0"
   },
   {
@@ -1344,18 +1463,18 @@
     "version": "1.0"
   },
   {
-    "name": "Buyer vs Seller Control & Path of Least Resistance (MTF)",
-    "file": "Buyer_vs_Seller_Control_Path_of_Least_Resistance_MTF.md",
-    "url": "https://www.tradingview.com/script/I8Tv43WR-Buyer-vs-Seller-Control-Path-of-Least-Resistance-MTF/",
-    "pine_id": "PUB;553ddb099ed642e9beb15c4de27053a5",
-    "version": "2.0"
-  },
-  {
     "name": "CAGR Custom Range",
     "file": "CAGR_Custom_Range.md",
     "url": "https://www.tradingview.com/script/SkmMrMe0-CAGR-Custom-Range/",
     "pine_id": "PUB;968a0b119b7b4f05979e0c668f5897e8",
     "version": "2.0"
+  },
+  {
+    "name": "CBC Flip - Volume Profile Context",
+    "file": "CBC_Flip_Volume_Profile_Context.md",
+    "url": "https://www.tradingview.com/script/bOmPpJi1-CBC-Flip-Volume-Profile-Context/",
+    "pine_id": "PUB;a12f6e1278094aaa92fdf722b21a095b",
+    "version": "1.0"
   },
   {
     "name": "CCI Divergence Volume Breakout [josseliani]",
@@ -1491,6 +1610,20 @@
     "version": "1.0"
   },
   {
+    "name": "CPI Strat - Points, Levels & Sentiment",
+    "file": "CPI_Strat_Points_Levels_Sentiment.md",
+    "url": "https://www.tradingview.com/script/lfm4QvNT-CPI-Strat-Points-Levels-Sentiment/",
+    "pine_id": "PUB;063481c499b34b3b9f1b204d38ed7663",
+    "version": "3.0"
+  },
+  {
+    "name": "C-Power",
+    "file": "CPower.md",
+    "url": "https://www.tradingview.com/script/d4dVjcDw/",
+    "pine_id": "PUB;c6fc5aa675f04b008097bef41abdca73",
+    "version": "1.0"
+  },
+  {
     "name": "CRT",
     "file": "CRT.md",
     "url": "https://www.tradingview.com/script/x7oQy4VG/",
@@ -1530,6 +1663,13 @@
     "file": "CUPANG_SMCRTM_Flag_Limit_Balanced_Smart_Filter.md",
     "url": "https://www.tradingview.com/script/oWykbVpk/",
     "pine_id": "PUB;0740aeac4f4c4b10b90d0963ff2820cf",
+    "version": "1.0"
+  },
+  {
+    "name": "CU Sessions & Levels",
+    "file": "CU_Sessions_Levels.md",
+    "url": "https://www.tradingview.com/script/CmlDUVcR-CU-Sessions-Levels/",
+    "pine_id": "PUB;301859bf17d542a0abd3118135382645",
     "version": "1.0"
   },
   {
@@ -1589,13 +1729,6 @@
     "version": "2.0"
   },
   {
-    "name": "Candle 50% Level",
-    "file": "Candle_50_Level.md",
-    "url": "https://www.tradingview.com/script/HuLF1iGW-Candle-50-Level/",
-    "pine_id": "PUB;3c914b596fdb42de920be1bca20763d3",
-    "version": "1.0"
-  },
-  {
     "name": "Candle Body Shapes",
     "file": "Candle_Body_Shapes.md",
     "url": "https://www.tradingview.com/script/vY7SIFia-Candle-Body-Shapes/",
@@ -1652,13 +1785,6 @@
     "version": "4.0"
   },
   {
-    "name": "Capital Breakdown: MIF Sniper",
-    "file": "Capital_Breakdown_MIF_Sniper.md",
-    "url": "https://www.tradingview.com/script/kQqhyTJs-Capital-Breakdown-MIF-Sniper/",
-    "pine_id": "PUB;dfd1c8e564a943868a216f38f0a44201",
-    "version": "1.0"
-  },
-  {
     "name": "Capital Trade | Body Fractals",
     "file": "Capital_Trade_Body_Fractals.md",
     "url": "https://www.tradingview.com/script/N8Jae7pu-capital-trade-body-fractals/",
@@ -1677,7 +1803,7 @@
     "file": "CatalystCalendarData.md",
     "url": "https://www.tradingview.com/script/JaxGqEl9-CatalystCalendarData/",
     "pine_id": "PUB;582eb7a66afb40cf813b4989fc962cb2",
-    "version": "1.0"
+    "version": "2.0"
   },
   {
     "name": "Central Bank Liquidity Gap Indicator",
@@ -1750,6 +1876,13 @@
     "version": "2.0"
   },
   {
+    "name": "Chop Guard - Ranging Market Filter",
+    "file": "Chop_Guard_Ranging_Market_Filter.md",
+    "url": "https://www.tradingview.com/script/jwo1teeD-Chop-Guard-Ranging-Market-Filter/",
+    "pine_id": "PUB;3a257a86b6214be68a2d012fd53b244a",
+    "version": "1.0"
+  },
+  {
     "name": "Christmas Toolkit [LuxAlgo]",
     "file": "Christmas_Toolkit_LuxAlgo.md",
     "url": "https://www.tradingview.com/script/k6XcSuxO-Christmas-Toolkit-LuxAlgo/",
@@ -1775,13 +1908,6 @@
     "file": "Circular_Candlestick_Chart.md",
     "url": "https://www.tradingview.com/script/3BjFD0A2-Circular-Candlestick-Chart/",
     "pine_id": "PUB;2a53a2cabd5c43fea2f1a528c6c66fb1",
-    "version": "1.0"
-  },
-  {
-    "name": "Classical Auto Chart Patterns [AFD]",
-    "file": "Classical_Auto_Chart_Patterns_AFD.md",
-    "url": "https://www.tradingview.com/script/g5uim9n5-Classical-Auto-Chart-Patterns-AFD/",
-    "pine_id": "PUB;aa5197d6cb6c4ca58177db9bc1bb4664",
     "version": "1.0"
   },
   {
@@ -1904,13 +2030,6 @@
     "version": "1.0"
   },
   {
-    "name": "Composite Index-L (Momentum Lifecycle)",
-    "file": "Composite_IndexL_Momentum_Lifecycle.md",
-    "url": "https://www.tradingview.com/script/vEKl7VJy-Composite-Index-L-Momentum-Lifecycle/",
-    "pine_id": "PUB;4939fa32e0134959ad37483eab697f14",
-    "version": "1.0"
-  },
-  {
     "name": "Composite Institutional MA (CIMA)",
     "file": "Composite_Institutional_MA_CIMA.md",
     "url": "https://www.tradingview.com/script/AuDovMOj-Composite-Institutional-Moving-Average-CIMA/",
@@ -1943,13 +2062,6 @@
     "file": "Congestion_Index_by_Katsanos.md",
     "url": "https://www.tradingview.com/script/V7e88j8Y/",
     "pine_id": "PUB;cJORF9RciA2yjuVqrJO5ovXKLpBfS1JP",
-    "version": "1.0"
-  },
-  {
-    "name": "Consecutive Trend Counter",
-    "file": "Consecutive_Trend_Counter.md",
-    "url": "https://www.tradingview.com/script/g7atFlfj-Consecutive-Trend-Counter-Achira-Meegasthanne/",
-    "pine_id": "PUB;b9818553a949414499b4dd482bb05f73",
     "version": "1.0"
   },
   {
@@ -2079,13 +2191,6 @@
     "version": "1.0"
   },
   {
-    "name": "Cross Asset Relative Strength Matrix [Pineify]",
-    "file": "Cross_Asset_Relative_Strength_Matrix_Pineify.md",
-    "url": "https://www.tradingview.com/script/UL0fNWQ3-Cross-Asset-Relative-Strength-Matrix-Pineify/",
-    "pine_id": "PUB;aaa734fea7b94d1ab2f06d8bf95be744",
-    "version": "1.0"
-  },
-  {
     "name": "Crossover Whipsaw Guard",
     "file": "Crossover_Whipsaw_Guard.md",
     "url": "https://www.tradingview.com/script/QUD0WnBa/",
@@ -2170,6 +2275,13 @@
     "version": "2.0"
   },
   {
+    "name": "Cup and Handle Pattern [DJYYLAB]",
+    "file": "Cup_and_Handle_Pattern_DJYYLAB.md",
+    "url": "https://www.tradingview.com/script/T6FnFwbo-Cup-and-Handle-Pattern-DJYYLAB/",
+    "pine_id": "PUB;8c54436eb53f46e5a83e7654c0f20b08",
+    "version": "1.0"
+  },
+  {
     "name": "Currency Strength Meter",
     "file": "Currency_Strength_Meter.md",
     "url": "https://www.tradingview.com/script/3fZlV1RT-Currency-Strength-Meter-Relative-Strength/",
@@ -2212,20 +2324,6 @@
     "version": "1.0"
   },
   {
-    "name": "Cycle Counter with Phase and Next-Low Projection",
-    "file": "Cycle_Counter_with_Phase_and_NextLow_Projection.md",
-    "url": "https://www.tradingview.com/script/Z2cwzfML-Cycle-Counter-with-Phase-and-Next-Low-Projection/",
-    "pine_id": "PUB;e6f14f21d0544866a7094b7e60e9e907",
-    "version": "2.0"
-  },
-  {
-    "name": "Cycle Grid",
-    "file": "Cycle_Grid.md",
-    "url": "https://www.tradingview.com/script/qZCznS2P-Cycle-Grid/",
-    "pine_id": "PUB;e5f0ba762e2548ba8b59cd9a779e8475",
-    "version": "1.0"
-  },
-  {
     "name": "Cycles Analysis",
     "file": "Cycles_Analysis.md",
     "url": "https://www.tradingview.com/script/fqnXJggs-Cycles-Analysis/",
@@ -2261,17 +2359,24 @@
     "version": "2.0"
   },
   {
-    "name": "DISTANCE % PH-PL MTF Dashboard ",
-    "file": "DISTANCE_PHPL_MTF_Dashboard.md",
-    "url": "https://www.tradingview.com/script/Rmc1P15l-DISTANCE-PH-PL-MTF-Dashboard/",
-    "pine_id": "PUB;72e803568e5f47b2abda64502ecb6c59",
-    "version": "1.0"
-  },
-  {
     "name": "DMP Buy Point % Levels",
     "file": "DMP_Buy_Point_Levels.md",
     "url": "https://www.tradingview.com/script/ohdaMbDI-Buy-Point-Levels/",
     "pine_id": "PUB;d955c640a75b45d7828b2b417ab0dfbb",
+    "version": "1.0"
+  },
+  {
+    "name": "DOL Narrative Map [Yousif]",
+    "file": "DOL_Narrative_Map_Yousif.md",
+    "url": "https://www.tradingview.com/script/mS1Ef4Ay-DOL-Narrative-Map-Yousif/",
+    "pine_id": "PUB;ae79da31183e4d33a5beb11f3fd20bb9",
+    "version": "1.0"
+  },
+  {
+    "name": "DOL Narrative Map [Yousif]",
+    "file": "DOL_Narrative_Map_Yousif_stvDjEZN.md",
+    "url": "https://www.tradingview.com/script/stvDjEZN-DOL-Narrative-Map-Yousif/",
+    "pine_id": "PUB;da50a3ba1ccc4bfd8e04c0c5df23e731",
     "version": "1.0"
   },
   {
@@ -2282,6 +2387,13 @@
     "version": "1.0"
   },
   {
+    "name": "DVOL/(UVOL+DVOL) 5min INTRADAY",
+    "file": "DVOLUVOLDVOL_5min_INTRADAY.md",
+    "url": "https://www.tradingview.com/script/GoHaI94x-DVOL-UVOL-DVOL-5min-INTRADAY/",
+    "pine_id": "PUB;be5574290ea24b51944d998e586b19db",
+    "version": "3.0"
+  },
+  {
     "name": "Daily + 4H + 1H FVG / IFVG — Merged",
     "file": "Daily_4H_1H_FVG_IFVG_Merged.md",
     "url": "https://www.tradingview.com/script/6BjmUGRY-FVG-IFVG-ICT-1H-4H-Daily/",
@@ -2289,10 +2401,10 @@
     "version": "1.0"
   },
   {
-    "name": "Daily BB (Historical Plotting with RTH/ETH/24H)",
-    "file": "Daily_BB_Historical_Plotting_with_RTHETH24H.md",
-    "url": "https://www.tradingview.com/script/gCwZe6Vs-Daily-BB-Historical-Plotting-with-RTH-ETH-24H/",
-    "pine_id": "PUB;4e262d44b5cc408db872a87656cae970",
+    "name": "Daily Bias Intelligence [tradewsamet]",
+    "file": "Daily_Bias_Intelligence_tradewsamet.md",
+    "url": "https://www.tradingview.com/script/P7KL9jsd-Daily-Bias-Intelligence-tradewsamet/",
+    "pine_id": "PUB;f579b1e811cb4bdb94767155fb6498a1",
     "version": "1.0"
   },
   {
@@ -2331,6 +2443,13 @@
     "version": "1.0"
   },
   {
+    "name": "Daily Swing Trader PRO v3.2 - Theme Safe",
+    "file": "Daily_Swing_Trader_PRO_v32_Theme_Safe.md",
+    "url": "https://www.tradingview.com/script/oXk5vq2A-Daily-Swing-Trader-PRO-v3-2/",
+    "pine_id": "PUB;2087c13a8de54222ad9f24e217de0a49",
+    "version": "1.0"
+  },
+  {
     "name": "Dan&#039;s Multi Anchored VWAP",
     "file": "Dan039s_Multi_Anchored_VWAP.md",
     "url": "https://www.tradingview.com/script/ruOt6gtU-Multi-Anchored-VWAP-Automatic-Session-and-Custom-Anchors/",
@@ -2342,6 +2461,20 @@
     "file": "DataChart.md",
     "url": "https://www.tradingview.com/script/ZWIR7vNo-DataChart/",
     "pine_id": "PUB;343e4333430340d3bb8c8e26fde1dad9",
+    "version": "1.0"
+  },
+  {
+    "name": "Date Range High/Low Box-JB",
+    "file": "Date_Range_HighLow_BoxJB.md",
+    "url": "https://www.tradingview.com/script/Mf9krktk-Date-Range-High-Low-Box-JB/",
+    "pine_id": "PUB;a77d44a42848446dad0cd73ac3043e44",
+    "version": "1.0"
+  },
+  {
+    "name": "Date Range High/Low Lines - JB",
+    "file": "Date_Range_HighLow_Lines_JB.md",
+    "url": "https://www.tradingview.com/script/54ZGb6cK-Date-Range-High-Low-Lines-JB/",
+    "pine_id": "PUB;f070f57230e349588018988f10f2a053",
     "version": "1.0"
   },
   {
@@ -2363,13 +2496,6 @@
     "file": "Daybreak_Strategy.md",
     "url": "https://www.tradingview.com/script/MtKHXU6w-Daybreak-Strategy-Achira-Meegasthanne/",
     "pine_id": "PUB;69334cf7100d4ea6bc5a587f8b0b578c",
-    "version": "1.0"
-  },
-  {
-    "name": "Dealer Gamma Regime Proxy",
-    "file": "Dealer_Gamma_Regime_Proxy.md",
-    "url": "https://www.tradingview.com/script/q7T7jDH1-Dealer-Gamma-Regime-Proxy/",
-    "pine_id": "PUB;70e2a98e61344d91b4bb9e65b2bb21b8",
     "version": "1.0"
   },
   {
@@ -2422,6 +2548,20 @@
     "version": "5.0"
   },
   {
+    "name": "Delta Absorption",
+    "file": "Delta_Absorption.md",
+    "url": "https://www.tradingview.com/script/SrtMeFGj-Delta-Absorption/",
+    "pine_id": "PUB;b31f68d3582249d6b4d2e1bb22a04cb6",
+    "version": "1.0"
+  },
+  {
+    "name": "Delta Agression",
+    "file": "Delta_Agression.md",
+    "url": "https://www.tradingview.com/script/n2jovM3Z-Delta-Agression/",
+    "pine_id": "PUB;8526961672f54a6c80e1b754f085b1b0",
+    "version": "2.0"
+  },
+  {
     "name": "Delta Ladder [Kioseff Trading]",
     "file": "Delta_Ladder_Kioseff_Trading.md",
     "url": "https://www.tradingview.com/script/EkBUz93v-Delta-Ladder-Kioseff-Trading/",
@@ -2469,13 +2609,6 @@
     "url": "https://www.tradingview.com/script/Xh8tLDTe-Realtime-Delta-Volume-Action-LucF/",
     "pine_id": "PUB;qcUK0SOdKz1UMja225BeyM9hbIQjMWcB",
     "version": "12.0"
-  },
-  {
-    "name": "Delta by Price [SVP Style]",
-    "file": "Delta_by_Price_SVP_Style.md",
-    "url": "https://www.tradingview.com/script/pFBYCDUA-Delta-by-Price-SVP-Style/",
-    "pine_id": "PUB;a62681ec9d914750b59ab107cd7cf7d8",
-    "version": "1.0"
   },
   {
     "name": "Detrended Rhythm Oscillator",
@@ -2597,13 +2730,6 @@
     "version": "2.0"
   },
   {
-    "name": "Dominant Cycle Harmonic Lock [FibonacciFlux]",
-    "file": "Dominant_Cycle_Harmonic_Lock_FibonacciFlux.md",
-    "url": "https://www.tradingview.com/script/iCIj2o7H-Dominant-Cycle-Harmonic-Lock-FibonacciFlux/",
-    "pine_id": "PUB;fc39012dc9a347abbf6abf6949d0bddc",
-    "version": "1.0"
-  },
-  {
     "name": "Donchian Zig-Zag [LuxAlgo]",
     "file": "Donchian_ZigZag_LuxAlgo.md",
     "url": "https://www.tradingview.com/script/Nj6CMJkP-Donchian-Zig-Zag-LuxAlgo/",
@@ -2637,13 +2763,6 @@
     "url": "https://www.tradingview.com/script/dh3Cpnga-Doubled-Numbered-Square-of-Nine-Progression-Regression/",
     "pine_id": "PUB;81d3e529a65c475c993f0efead0342fd",
     "version": "8.0"
-  },
-  {
-    "name": "Dow Theory Market Structure Pro",
-    "file": "Dow_Theory_Market_Structure_Pro.md",
-    "url": "https://www.tradingview.com/script/1mry29TH-Dow-Theory-Market-Structure-Pro/",
-    "pine_id": "PUB;2cb784d0baf740da91120e51e4dbcf00",
-    "version": "1.0"
   },
   {
     "name": "Dow Theory + O&#039;Neil Trend Manager",
@@ -2758,13 +2877,6 @@
     "version": "1.0"
   },
   {
-    "name": "Dynamic Opening Drive Scoreboard v4.4.2",
-    "file": "Dynamic_Opening_Drive_Scoreboard_v442.md",
-    "url": "https://www.tradingview.com/script/Z1JPXTIB-Dynamic-Opening-Drive-Scoreboard-v4-4-2/",
-    "pine_id": "PUB;3ee8144fc31044d4bd48690e298141d5",
-    "version": "1.0"
-  },
-  {
     "name": "Dynamic RSI Regression Bands (Zeiierman)",
     "file": "Dynamic_RSI_Regression_Bands_Zeiierman.md",
     "url": "https://www.tradingview.com/script/h4xuU8kN-Dynamic-RSI-Regression-Bands-Zeiierman/",
@@ -2821,6 +2933,13 @@
     "version": "1.0"
   },
   {
+    "name": "EMA 9/20 Ribbon",
+    "file": "EMA_920_Ribbon.md",
+    "url": "https://www.tradingview.com/script/Y4dESBru-EMA-9-20-Ribbon/",
+    "pine_id": "PUB;646cecd0dbde4a65972052893d3492e4",
+    "version": "1.0"
+  },
+  {
     "name": "EMA Cloud [PhantomCipher]",
     "file": "EMA_Cloud_PhantomCipher.md",
     "url": "https://www.tradingview.com/script/C4qHyn8A-EMA-Cloud-PhantomCipher/",
@@ -2860,13 +2979,6 @@
     "file": "EMA_RSI_VWAP_Targets.md",
     "url": "https://www.tradingview.com/script/lCYXHUx0-EMA-RSI-VWAP-Targets/",
     "pine_id": "PUB;84b342a40f854f728b5737d2fefa58a2",
-    "version": "1.0"
-  },
-  {
-    "name": "EMA Ribbon Fan Angle Strategy",
-    "file": "EMA_Ribbon_Fan_Angle_Strategy.md",
-    "url": "https://www.tradingview.com/script/X0F9OE4L-Gradient-Ribbon-EMA-Ribbon-Slope-Acceleration-System/",
-    "pine_id": "PUB;a69e6b01d8e542cdac7e1c4c7a55ac73",
     "version": "1.0"
   },
   {
@@ -3129,13 +3241,6 @@
     "version": "1.0"
   },
   {
-    "name": "Equal Highs and Lows with Relative [CantoLab]",
-    "file": "Equal_Highs_and_Lows_with_Relative_CantoLab.md",
-    "url": "https://www.tradingview.com/script/3BeHr2qT-Equal-Highs-and-Lows-with-Relative-CantoLab/",
-    "pine_id": "PUB;4077df9d58c94eedaa123b5b00677b74",
-    "version": "3.0"
-  },
-  {
     "name": "Equalhigh — EMA Signature v2",
     "file": "Equalhigh_EMA_Signature_v2.md",
     "url": "https://www.tradingview.com/script/Eg1J5JUh-Equalhigh-EMA-Signature/",
@@ -3297,6 +3402,48 @@
     "version": "2.0"
   },
   {
+    "name": "FLD&#039;s - Future Lines of Demarcation",
+    "file": "FLD039s_Future_Lines_of_Demarcation.md",
+    "url": "https://www.tradingview.com/script/wYNDpT7E-FLD-s-Future-Lines-of-Demarcation/",
+    "pine_id": "PUB;42535daa496047e78a9ab574f014bc72",
+    "version": "1.0"
+  },
+  {
+    "name": "FT_TV_Cond",
+    "file": "FTTVCond.md",
+    "url": "https://www.tradingview.com/script/S9e4GfDb-FT-TV-Cond/",
+    "pine_id": "PUB;45cf1936a5764434bcb3a4ab5276644d",
+    "version": "1.0"
+  },
+  {
+    "name": "FT_TV_EL",
+    "file": "FTTVEL.md",
+    "url": "https://www.tradingview.com/script/womXcQs4-FT-TV-EL/",
+    "pine_id": "PUB;fae2d4abd26348178cd2b8b53925699a",
+    "version": "1.0"
+  },
+  {
+    "name": "FT_TV_MR",
+    "file": "FTTVMR.md",
+    "url": "https://www.tradingview.com/script/YzIfnua1-FT-TV-MR/",
+    "pine_id": "PUB;8d9c9161438b44208ff189945a66dcdd",
+    "version": "1.0"
+  },
+  {
+    "name": "FT_TV_OHLC",
+    "file": "FTTVOHLC.md",
+    "url": "https://www.tradingview.com/script/3NLOZebz-FT-TV-OHLC/",
+    "pine_id": "PUB;024ab0ed580149f4b7267d03803943ad",
+    "version": "1.0"
+  },
+  {
+    "name": "FT_TV_lib",
+    "file": "FTTVlib.md",
+    "url": "https://www.tradingview.com/script/su5UfvQs-FT-TV-lib/",
+    "pine_id": "PUB;04a3d3e0a9c14e68ba719586ec4d767f",
+    "version": "1.0"
+  },
+  {
     "name": "FVG Atlas",
     "file": "FVG_Atlas.md",
     "url": "https://www.tradingview.com/script/o5MqBr2c-FVG-Atlas/",
@@ -3308,6 +3455,13 @@
     "file": "FVG_Detector_UDT_CantoLab.md",
     "url": "https://www.tradingview.com/script/BoXuXgzt-FVG-Detector-UDT-CantoLab/",
     "pine_id": "PUB;0cbd72897e374593b671ccc3b35d4eb4",
+    "version": "1.0"
+  },
+  {
+    "name": "FVG & IFVG Pro",
+    "file": "FVG_IFVG_Pro.md",
+    "url": "https://www.tradingview.com/script/PqN9ejOj-FVG-IFVG-Pro-MTF-Fair-Value-Gap-and-Inverse-Fair-Value-Gap/",
+    "pine_id": "PUB;77cc63ea48fe45ada18a8e5281f537b6",
     "version": "1.0"
   },
   {
@@ -3332,10 +3486,10 @@
     "version": "1.0"
   },
   {
-    "name": "Fabio Delta Volume Profile",
-    "file": "Fabio_Delta_Volume_Profile.md",
-    "url": "https://www.tradingview.com/script/6UCFG4mz-Fabio-Delta-Volume-Profile/",
-    "pine_id": "PUB;298cbe2749c44f3e9c08a1cda6b456b7",
+    "name": "Fade Setup Overlays",
+    "file": "Fade_Setup_Overlays.md",
+    "url": "https://www.tradingview.com/script/0KdNbdj1-Fade-Setup-Overlays/",
+    "pine_id": "PUB;702b28b6ad0845989659fe0e03960068",
     "version": "1.0"
   },
   {
@@ -3343,6 +3497,13 @@
     "file": "Failed_Auction_Detector_v2.md",
     "url": "https://www.tradingview.com/script/rDboLLir-Failed-Auction-Detector/",
     "pine_id": "PUB;981490bf8d804fe6ac0646aa60407e0d",
+    "version": "1.0"
+  },
+  {
+    "name": "Fair Value Box John ",
+    "file": "Fair_Value_Box_John.md",
+    "url": "https://www.tradingview.com/script/HbBce4su-Fair-Value-Box-John/",
+    "pine_id": "PUB;a9660c243ad747bda37f4abab31ac74b",
     "version": "1.0"
   },
   {
@@ -3437,18 +3598,18 @@
     "version": "1.0"
   },
   {
+    "name": "Fib Grid Bias & Breakout",
+    "file": "Fib_Grid_Bias_Breakout.md",
+    "url": "https://www.tradingview.com/script/N6TCN6Bd-Fib-Grid-Bias-Breakout/",
+    "pine_id": "PUB;87fd975cad3f431cb5a3bc08ad3e2ef2",
+    "version": "2.0"
+  },
+  {
     "name": "Fibonacci Auto Trend Scouter",
     "file": "Fibonacci_Auto_Trend_Scouter.md",
     "url": "https://www.tradingview.com/script/9GviCznG-SK-Fibonacci-Auto-Trend-Scouter/",
     "pine_id": "PUB;5hDe5CmfCj1HVXq3be9ZofjOdprNzGmI",
     "version": "5.0"
-  },
-  {
-    "name": "Fibonacci Retracement Depth & Retest Grid - Swing High Low",
-    "file": "Fibonacci_Retracement_Depth_Retest_Grid_Swing_High_Low.md",
-    "url": "https://www.tradingview.com/script/SqK5NBqp-Fibonacci-Retracement-Depth-Retest-Grid-Swing-High-Low/",
-    "pine_id": "PUB;22796e7c1e554da08f1d48996a5f6d99",
-    "version": "1.0"
   },
   {
     "name": "Fibonacci Sequence Circles [BigBeluga]",
@@ -3518,13 +3679,20 @@
     "file": "Fisher_Transform_Turning_Points_RC_Tools.md",
     "url": "https://www.tradingview.com/script/Q3LUoyAA-Fisher-Transform-Turning-Points-RC-Tools/",
     "pine_id": "PUB;6ca5bdbae11f4866b29b136f0ef01054",
-    "version": "1.0"
+    "version": "2.0"
   },
   {
     "name": "Five Session",
     "file": "Five_Session.md",
     "url": "https://www.tradingview.com/script/0MkTpgx6-Five-Session-by-Mach0/",
     "pine_id": "PUB;cd56ae782c60454684d32305ca433170",
+    "version": "1.0"
+  },
+  {
+    "name": "Fixed Range Volume Delta",
+    "file": "Fixed_Range_Volume_Delta.md",
+    "url": "https://www.tradingview.com/script/qLCgJTYm-Fixed-Range-Volume-Delta-By-Sarojh/",
+    "pine_id": "PUB;40a646e3429340af86cb425a3d1db21a",
     "version": "1.0"
   },
   {
@@ -3584,10 +3752,17 @@
     "version": "7.0"
   },
   {
-    "name": "Forward Valuation Targets",
-    "file": "Forward_Valuation_Targets.md",
-    "url": "https://www.tradingview.com/script/7Ii3OdUx/",
-    "pine_id": "PUB;37b2a811a68d49869d67c40f626b1d2b",
+    "name": "Forward Move Profile [AlgoNorth]",
+    "file": "Forward_Move_Profile_AlgoNorth.md",
+    "url": "https://www.tradingview.com/script/AtVPYDbk-Forward-Move-Profile-AlgoNorth/",
+    "pine_id": "PUB;6924447fbe6a45adbf726ee5865d30c4",
+    "version": "1.0"
+  },
+  {
+    "name": "Forward P/E Rolling Z-Score",
+    "file": "Forward_PE_Rolling_ZScore.md",
+    "url": "https://www.tradingview.com/script/j5vd8OQw-Forward-P-E-Rolling-Z-Score/",
+    "pine_id": "PUB;88925b9c44ba4092a5ea1f086778bf7c",
     "version": "1.0"
   },
   {
@@ -3689,13 +3864,6 @@
     "version": "3.0"
   },
   {
-    "name": "Funding Stress — SOFR vs EFFR & IORB",
-    "file": "Funding_Stress_SOFR_vs_EFFR_IORB.md",
-    "url": "https://www.tradingview.com/script/7Abp03kH-Funding-Stress-SOFR-vs-EFFR-IORB/",
-    "pine_id": "PUB;9be305b24a4648ff8b918ab2797ddcf9",
-    "version": "1.0"
-  },
-  {
     "name": "Futures Settlement [DigitalD] - Labeled",
     "file": "Futures_Settlement_DigitalD_Labeled.md",
     "url": "https://www.tradingview.com/script/aI7l7BB3-Futures-Settlement-DigitalD-Labeled/",
@@ -3724,11 +3892,25 @@
     "version": "3.0"
   },
   {
-    "name": "GM Institutional Levels v2.2 - Multi Market",
-    "file": "GM_Institutional_Levels_v22_Multi_Market.md",
+    "name": "GM Institutional Levels v2.6 - Auto Multi Market",
+    "file": "GM_Institutional_Levels_v26_Auto_Multi_Market.md",
     "url": "https://www.tradingview.com/script/ry7ZH6VE-GM-Institutional-Levels/",
     "pine_id": "PUB;d52f54043c4e44c0be48bd90dbc135b7",
-    "version": "3.0"
+    "version": "4.0"
+  },
+  {
+    "name": "GM VWAP Reversal - Candle Confirmation",
+    "file": "GM_VWAP_Reversal_Candle_Confirmation.md",
+    "url": "https://www.tradingview.com/script/qTPMZVMq-GM-VWAP-Reversal-Candle-Confirmation/",
+    "pine_id": "PUB;ee2c5cd9ed3a4f8e83a955c7cc0ea141",
+    "version": "1.0"
+  },
+  {
+    "name": "Gamma Dealer (GEX) Flow",
+    "file": "Gamma_Dealer_GEX_Flow.md",
+    "url": "https://www.tradingview.com/script/eJxlAbkK-Gamma-Dealer-GEX-Flow/",
+    "pine_id": "PUB;3608af0159c44abfae65a8117d466547",
+    "version": "1.0"
   },
   {
     "name": "Gamma Pressure",
@@ -3763,6 +3945,20 @@
     "file": "Gann_o_Maticus.md",
     "url": "https://www.tradingview.com/script/UVBy6VlF-MAD-Gann-o-Maticus/",
     "pine_id": "PUB;a1203ba93ca840b581ed0f2fbcf4f31c",
+    "version": "1.0"
+  },
+  {
+    "name": "Gap Acceptance Guard",
+    "file": "Gap_Acceptance_Guard.md",
+    "url": "https://www.tradingview.com/script/fywgv2jk/",
+    "pine_id": "PUB;7d7a951b4d5b4133b66860e461283028",
+    "version": "1.0"
+  },
+  {
+    "name": "Gap Fill Engine [ES/NQ]",
+    "file": "Gap_Fill_Engine_ESNQ.md",
+    "url": "https://www.tradingview.com/script/7BvtpuGK-Gap-Fill-Engine-ES-NQ/",
+    "pine_id": "PUB;a08439cfbbb14ef28417c9bc17fa5e52",
     "version": "1.0"
   },
   {
@@ -3871,6 +4067,13 @@
     "version": "1.0"
   },
   {
+    "name": "Gova&#039;s WSA Screener",
+    "file": "Gova039s_WSA_Screener.md",
+    "url": "https://www.tradingview.com/script/4XMv68nQ-Gova-s-WSA-Screener/",
+    "pine_id": "PUB;374799e0e61c400aab096fff89d541d3",
+    "version": "1.0"
+  },
+  {
     "name": "Graham Number",
     "file": "Graham_Number.md",
     "url": "https://www.tradingview.com/script/4YK3z13s-graham-number/",
@@ -3906,13 +4109,6 @@
     "version": "1.0"
   },
   {
-    "name": "Guassian Filtered TEWMA - [JTCAPITAL]",
-    "file": "Guassian_Filtered_TEWMA_JTCAPITAL.md",
-    "url": "https://www.tradingview.com/script/R9rxW2u2-Guassian-Filtered-TEWMA-JTCAPITAL/",
-    "pine_id": "PUB;eac978b23b2942cdac56eec8480a6c46",
-    "version": "1.0"
-  },
-  {
     "name": "{Gunzo} Market Trading Sessions (Sydney, Tokyo, London, New York)",
     "file": "Gunzo_Market_Trading_Sessions_Sydney_Tokyo_London_New_York.md",
     "url": "https://www.tradingview.com/script/ItaQLrXM/",
@@ -3941,24 +4137,10 @@
     "version": "4.0"
   },
   {
-    "name": "HARSI Fisher Transform & Divergence",
-    "file": "HARSI_Fisher_Transform_Divergence.md",
-    "url": "https://www.tradingview.com/script/tjwslEiX/",
-    "pine_id": "PUB;0b8e6227c4cb4159a436fed672554186",
-    "version": "1.0"
-  },
-  {
     "name": "HDSXN | TO · OP",
     "file": "HDSXN_TO_OP.md",
     "url": "https://www.tradingview.com/script/9lGPRB9u/",
     "pine_id": "PUB;e4328694be9e441a9ad130eb2a8a5539",
-    "version": "1.0"
-  },
-  {
-    "name": "HERTZ ORDER BLOCK V1.11 · ACTIVE OB MARKET BIAS PANEL 5M",
-    "file": "HERTZ_ORDER_BLOCK_V111_ACTIVE_OB_MARKET_BIAS_PANEL_5M.md",
-    "url": "https://www.tradingview.com/script/WDn8TMEP/",
-    "pine_id": "PUB;e54110c1171c4efc83c2e682ef4a806e",
     "version": "1.0"
   },
   {
@@ -4074,13 +4256,6 @@
     "version": "1.0"
   },
   {
-    "name": "HTF Zones D1 H3 H1",
-    "file": "HTF_Zones_D1_H3_H1.md",
-    "url": "https://www.tradingview.com/script/oUeyP8Vi-htf-zones-d1-h3-h1/",
-    "pine_id": "PUB;d2b1d25cc63a413ba06e942cf4bd6bd3",
-    "version": "1.0"
-  },
-  {
     "name": "Half Causal Estimator",
     "file": "Half_Causal_Estimator.md",
     "url": "https://www.tradingview.com/script/QETnobDk-Half-Causal-Estimator/",
@@ -4179,17 +4354,10 @@
     "version": "2.0"
   },
   {
-    "name": "Highest Volume Candle @MaxMaserati",
-    "file": "Highest_Volume_Candle_MaxMaserati.md",
-    "url": "https://www.tradingview.com/script/XEFQonB1-Highest-Volume-Candle-MaxMaserati/",
-    "pine_id": "PUB;57d20e08b48740a590ef5485582aa051",
-    "version": "1.0"
-  },
-  {
-    "name": "Hindsight Gap - swing levels",
-    "file": "Hindsight_Gap_swing_levels.md",
-    "url": "https://www.tradingview.com/script/ohmCeQvb-hindsight-gap-swing-levels/",
-    "pine_id": "PUB;49358742f8a14df69161bee1c9329609",
+    "name": "Historical Context Levels - Prototype",
+    "file": "Historical_Context_Levels_Prototype.md",
+    "url": "https://www.tradingview.com/script/cMGVeu7u-Historical-Context-Levels/",
+    "pine_id": "PUB;fdd02da5c37e40f1b279694e7f8bbf5c",
     "version": "1.0"
   },
   {
@@ -4204,6 +4372,13 @@
     "file": "Hourly_Alpha_Profile_Terminal_The_Quant_Science.md",
     "url": "https://www.tradingview.com/script/qRYFrOJy-Hourly-Alpha-Profile-Terminal-The-Quant-Science/",
     "pine_id": "PUB;0237bddd93e7445f9ccb2dca475f9097",
+    "version": "1.0"
+  },
+  {
+    "name": "Hourly Volatility Heatmap [ZynAlgo]",
+    "file": "Hourly_Volatility_Heatmap_ZynAlgo.md",
+    "url": "https://www.tradingview.com/script/WBihaRmS-Hourly-Volatility-Heatmap-ZynAlgo/",
+    "pine_id": "PUB;bebee7c68f504a24bb5c5090c2219066",
     "version": "1.0"
   },
   {
@@ -4246,7 +4421,7 @@
     "file": "Hurst_Exponent_Regime_RC_Tools.md",
     "url": "https://www.tradingview.com/script/rRaGrzof-Hurst-Exponent-Regime-RC-Tools/",
     "pine_id": "PUB;8dffdb64dd424cc1866f6b53f7b2b771",
-    "version": "1.0"
+    "version": "2.0"
   },
   {
     "name": "Hyperfork Matrix",
@@ -4267,20 +4442,6 @@
     "file": "IB_HighMidLow_Break_Fib_steveniscu.md",
     "url": "https://www.tradingview.com/script/T1AadQ7m-IB-FIB-CUCAP/",
     "pine_id": "PUB;be4ee572ce4547bb86be86ced914d43b",
-    "version": "1.0"
-  },
-  {
-    "name": "ICT 15M Liquidity -&gt; 5M Entry + Price",
-    "file": "ICT_15M_Liquidity_gt_5M_Entry_Price.md",
-    "url": "https://www.tradingview.com/script/68e7iNCJ-ICT-15M-Liquidity-5M-Entry-Price/",
-    "pine_id": "PUB;aade211f10d14f36a0a100fa07e6bea6",
-    "version": "1.0"
-  },
-  {
-    "name": "ICT 7-9 AM Premarket Graded Range + Signals",
-    "file": "ICT_79_AM_Premarket_Graded_Range_Signals.md",
-    "url": "https://www.tradingview.com/script/tOjQ5Tn2-ICT-7-9-AM-Premarket-Graded-Range-Signals/",
-    "pine_id": "PUB;1e062a05e5044c11b496eeaffc9e3e7c",
     "version": "1.0"
   },
   {
@@ -4312,10 +4473,10 @@
     "version": "1.0"
   },
   {
-    "name": "ICT Everything v2",
-    "file": "ICT_Everything_v2.md",
-    "url": "https://www.tradingview.com/script/Isn8Ma7q-ICT-Everything-v2/",
-    "pine_id": "PUB;0738d458c62b41079a07131847cb318c",
+    "name": "ICT & FVG [UgurTash]",
+    "file": "ICT_FVG_UgurTash.md",
+    "url": "https://www.tradingview.com/script/9A4AkxQY-ICT-FVG-UgurTash/",
+    "pine_id": "PUB;8d472d08145b403a84e1e4cf14087986",
     "version": "1.0"
   },
   {
@@ -4347,6 +4508,13 @@
     "version": "1.0"
   },
   {
+    "name": "ICT Setup 05 [TradingFinder] Liquidity Sweep & OB Retest",
+    "file": "ICT_Setup_05_TradingFinder_Liquidity_Sweep_OB_Retest.md",
+    "url": "https://www.tradingview.com/script/5qXfyxql-ICT-Setup-05-TradingFinder-Liquidity-Sweep-OB-Retest/",
+    "pine_id": "PUB;e1b256d9e8c04a72a36fa2d1de595a49",
+    "version": "1.0"
+  },
+  {
     "name": "ICT Silver Bullet",
     "file": "ICT_Silver_Bullet.md",
     "url": "https://www.tradingview.com/script/yxRodYFg-ICT-Silver-Bullet/",
@@ -4358,6 +4526,13 @@
     "file": "ICT_Unicorn_Model_Clean_Pro.md",
     "url": "https://www.tradingview.com/script/wai5wdMl-ICT-Unicorn-Model-Clean-Pro-2026-dbarda/",
     "pine_id": "PUB;e23c65c50ba547f9867f25851e8eaff8",
+    "version": "1.0"
+  },
+  {
+    "name": "ICone v1",
+    "file": "ICone_v1.md",
+    "url": "https://www.tradingview.com/script/wQ1dtwbW-ICone-buy-and-sell-with-smc/",
+    "pine_id": "PUB;4bced4016de046329f8191f476740bd2",
     "version": "1.0"
   },
   {
@@ -4403,6 +4578,20 @@
     "version": "1.0"
   },
   {
+    "name": "Ichimoku 5 Rules Backtest",
+    "file": "Ichimoku_5_Rules_Backtest.md",
+    "url": "https://www.tradingview.com/script/oG5a3MJU/",
+    "pine_id": "PUB;2337e19d66214f918a438f97a08d5094",
+    "version": "1.0"
+  },
+  {
+    "name": "Ichimoku Kinko Hyo (一目均衡表)",
+    "file": "Ichimoku_Kinko_Hyo.md",
+    "url": "https://www.tradingview.com/script/HG385dBY-Ichimoku-Kink%C5%8D-hy%C5%8D-%E7%9B%AE%E5%9D%87%E8%A1%A1%E8%A1%A8/",
+    "pine_id": "PUB;a8a2aa10346348f7a92270fc5d2c2dde",
+    "version": "28.0"
+  },
+  {
     "name": "Ichimoku Oscillator",
     "file": "Ichimoku_Oscillator.md",
     "url": "https://www.tradingview.com/script/ypZ7TSjN-Ichimoku-Oscillator/",
@@ -4424,17 +4613,17 @@
     "version": "1.0"
   },
   {
-    "name": "Imbalance Concept",
-    "file": "Imbalance_Concept.md",
-    "url": "https://www.tradingview.com/script/RZfe2IgZ-Imbalance-Concept-Achira-Meegasthanne/",
-    "pine_id": "PUB;7f617103be75490c9f6edbcfcd356435",
-    "version": "1.0"
-  },
-  {
     "name": "Implied Market Structure",
     "file": "Implied_Market_Structure.md",
     "url": "https://www.tradingview.com/script/sMhnCi0K-Implied-Market-Structure/",
     "pine_id": "PUB;bc3433f6aabb466686c93613a18b4c46",
+    "version": "1.0"
+  },
+  {
+    "name": "Impulse Candle Acceptance Guard",
+    "file": "Impulse_Candle_Acceptance_Guard.md",
+    "url": "https://www.tradingview.com/script/G0S8oBrv/",
+    "pine_id": "PUB;9b9721cb58d44d8183e05f1044f2bb11",
     "version": "1.0"
   },
   {
@@ -4457,6 +4646,13 @@
     "url": "https://www.tradingview.com/script/EyHkVAVH-Index-Generator-By-MUQWISHI/",
     "pine_id": "PUB;bcad13954d3a4c2d9431acf07eab51d9",
     "version": "2.0"
+  },
+  {
+    "name": "Index Lead Lag [BMT]",
+    "file": "Index_Lead_Lag_BMT.md",
+    "url": "https://www.tradingview.com/script/hiNTuCKZ-Index-Lead-Lag-BMT/",
+    "pine_id": "PUB;b6791d10d2544c2fb3c8e8528c08bbd4",
+    "version": "4.0"
   },
   {
     "name": "Indicator Panel",
@@ -4487,6 +4683,13 @@
     "version": "4.0"
   },
   {
+    "name": "Inicio del Día - TrigosFX",
+    "file": "Inicio_del_Dia_TrigosFX.md",
+    "url": "https://www.tradingview.com/script/nK6YUtc5/",
+    "pine_id": "PUB;962eda5a126a4cfcb2e12d7d394f007c",
+    "version": "1.0"
+  },
+  {
     "name": "Initial Balance Auction Intelligence by DGT",
     "file": "Initial_Balance_Auction_Intelligence_by_DGT.md",
     "url": "https://www.tradingview.com/script/ks2QGulb-Initial-Balance-Auction-Intelligence-by-DGT/",
@@ -4498,20 +4701,6 @@
     "file": "Inside_Bar_scriptedge.md",
     "url": "https://www.tradingview.com/script/lkPzIYiY-Inside-Bar-scriptedge/",
     "pine_id": "PUB;76c3652422f44e81b661108d776773d3",
-    "version": "1.0"
-  },
-  {
-    "name": "Institutional Asset Quality Radar [BigBeluga]",
-    "file": "Institutional_Asset_Quality_Radar_BigBeluga.md",
-    "url": "https://www.tradingview.com/script/uy5z2rZC-Institutional-Asset-Quality-Radar-BigBeluga/",
-    "pine_id": "PUB;720033f3798c4413acd208692d736f3d",
-    "version": "1.0"
-  },
-  {
-    "name": "Institutional Breadth & Momentum Panel (ADD & TICK)",
-    "file": "Institutional_Breadth_Momentum_Panel_ADD_TICK.md",
-    "url": "https://www.tradingview.com/script/QEwrfO20-Institutional-Breadth-Momentum-Panel-ADD-TICK/",
-    "pine_id": "PUB;ad9c7af4c59e433f9963700c9360dbc1",
     "version": "1.0"
   },
   {
@@ -4547,13 +4736,6 @@
     "file": "Interactive_Motive_Wave_Checklist.md",
     "url": "https://www.tradingview.com/script/ypAxpurY-Interactive-Motive-Wave-Checklist/",
     "pine_id": "PUB;b88de26d7b254df0b0b84a75b19c5fdb",
-    "version": "2.0"
-  },
-  {
-    "name": "Interest Rate Differential & Comparison",
-    "file": "Interest_Rate_Differential_Comparison.md",
-    "url": "https://www.tradingview.com/script/3NhPypxj/",
-    "pine_id": "PUB;22cdcd5d555e44578dda88d3ac768236",
     "version": "2.0"
   },
   {
@@ -4620,18 +4802,18 @@
     "version": "1.0"
   },
   {
-    "name": "Intraday Price Action Toolkit for Scalping [MaximoPartners]",
-    "file": "Intraday_Price_Action_Toolkit_for_Scalping_MaximoPartners.md",
+    "name": "Intraday Price Action [MaximoPartners]",
+    "file": "Intraday_Price_Action_MaximoPartners.md",
     "url": "https://www.tradingview.com/script/HUo594K8-Intraday-Price-Action-MaximoPartners/",
     "pine_id": "PUB;c116ecb5593e4d2da958de9bfef26af3",
-    "version": "1.0"
+    "version": "2.0"
   },
   {
     "name": "Intraday Pullback Sniper (BB, Stoch RSI, Liquidity, HTF, Structure, Sessions)",
     "file": "Intraday_Pullback_Sniper_BB_Stoch_RSI_Liquidity_HTF_Structure_Sessions.md",
     "url": "https://www.tradingview.com/script/R21J4eXT-Intraday-Pullback-Sniper-BB-Stoch-RSI-Liquidity-HTF/",
     "pine_id": "PUB;0c552f5be8464a4f98a86c5121077b4a",
-    "version": "3.0"
+    "version": "4.0"
   },
   {
     "name": "Intraday Relative Volume+",
@@ -4652,6 +4834,13 @@
     "file": "Intraday_Volume_Swings.md",
     "url": "https://www.tradingview.com/script/dFY6oRQi-Intraday-Volume-Swings/",
     "pine_id": "PUB;0JAQUFksLwlhTO8KYgTx9tMt7DhTpAaI",
+    "version": "1.0"
+  },
+  {
+    "name": "Inverse Fisher Transform on ADX DI (Directional Acceptance)",
+    "file": "Inverse_Fisher_Transform_on_ADX_DI_Directional_Acceptance.md",
+    "url": "https://www.tradingview.com/script/EPyog179-Inverse-Fisher-Transform-on-ADX-DI-Directional-Acceptance/",
+    "pine_id": "PUB;4363e4c8119c4841b5eccec3a104d66f",
     "version": "1.0"
   },
   {
@@ -4704,24 +4893,17 @@
     "version": "1.0"
   },
   {
-    "name": "Jurik Trend Ribbon [QuantAlgo]",
-    "file": "Jurik_Trend_Ribbon_QuantAlgo.md",
-    "url": "https://www.tradingview.com/script/Cq3tMzy9-Jurik-Trend-Ribbon-QuantAlgo/",
-    "pine_id": "PUB;44afa506110847618b0703ae83a56f10",
-    "version": "1.0"
+    "name": "KAIROS Lite v1.5 PF1 | 1 Minute",
+    "file": "KAIROS_Lite_v15_PF1_1_Minute.md",
+    "url": "https://www.tradingview.com/script/wdTp5FFR-KAIROS-Lite-1m-Baseline/",
+    "pine_id": "PUB;782a8b1d93cc40e88e2a94bd417b4551",
+    "version": "2.0"
   },
   {
     "name": "KAI LINES",
     "file": "KAI_LINES.md",
     "url": "https://www.tradingview.com/script/TfNG2Jj4-KAI-LINES/",
     "pine_id": "PUB;e2d1b88d92a742b9a3d8a07f6ca7b062",
-    "version": "1.0"
-  },
-  {
-    "name": "KAMA H — TheurgyLabs",
-    "file": "KAMA_H_TheurgyLabs.md",
-    "url": "https://www.tradingview.com/script/SHjQ67kE-KAMA-H/",
-    "pine_id": "PUB;589d7fa2c3d24baeaadea28328685f72",
     "version": "1.0"
   },
   {
@@ -4743,13 +4925,6 @@
     "file": "KIRON_Universal_Pattern_Engine_Clean_Build.md",
     "url": "https://www.tradingview.com/script/dYZVyZoV-KIRON-Universal-Pattern-Engine/",
     "pine_id": "PUB;df7ef031345b4ab5b174184760290404",
-    "version": "1.0"
-  },
-  {
-    "name": "KRV Adaptive Structure Canvas v1.2 — Trend / Levels / Patterns",
-    "file": "KRV_Adaptive_Structure_Canvas_v12_Trend_Levels_Patterns.md",
-    "url": "https://www.tradingview.com/script/OYcfgrPs-KRV-Adaptive-Structure-Canvas-v1-2-Trend-Levels-Patterns/",
-    "pine_id": "PUB;b865276b3c3c447bb8fe43a7c44ac060",
     "version": "1.0"
   },
   {
@@ -4778,6 +4953,13 @@
     "file": "Keltner_Center_Of_Gravity_Channel_Mutations_Indicator.md",
     "url": "https://www.tradingview.com/script/sZvBR1Vq-KCGmut/",
     "pine_id": "PUB;7fefd68aa2c34e87b6aeb14ffcdef6cf",
+    "version": "1.0"
+  },
+  {
+    "name": "Keltner Channel Structure",
+    "file": "Keltner_Channel_Structure.md",
+    "url": "https://www.tradingview.com/script/lhDsj0To-Keltner-Channel-Structure/",
+    "pine_id": "PUB;fe6df76a49fe4bf1bc90269e2130866a",
     "version": "1.0"
   },
   {
@@ -4821,13 +5003,6 @@
     "url": "https://www.tradingview.com/script/PJFVUn6a-Key-Levels-by-fehzy/",
     "pine_id": "PUB;e0748bed33f142e38f88d9f82fd78353",
     "version": "1.0"
-  },
-  {
-    "name": "Key Levels - PDH/L, PWH/L, London, Asia, Lunch",
-    "file": "Key_Levels_PDHL_PWHL_London_Asia_Lunch.md",
-    "url": "https://www.tradingview.com/script/L8QApcy1-Maverick-Trader-Key-Levels-PDH-L-PWH-L-London-Asia/",
-    "pine_id": "PUB;13de9e8ca7f04f8b8df7be43c2cf4549",
-    "version": "3.0"
   },
   {
     "name": "Key Levels v6",
@@ -4907,6 +5082,13 @@
     "version": "1.0"
   },
   {
+    "name": "LG9k StochSlow Zone-Cross (tiered)",
+    "file": "LG9k_StochSlow_ZoneCross_tiered.md",
+    "url": "https://www.tradingview.com/script/1jtVJlku-LG9k-StochSlow-Zone-Cross-tiered/",
+    "pine_id": "PUB;2649f58f72064d038bc10aaf62dd001d",
+    "version": "1.0"
+  },
+  {
     "name": "LOD Reversal Scanner",
     "file": "LOD_Reversal_Scanner.md",
     "url": "https://www.tradingview.com/script/fFwwig9U-CB-LOD-Reversal/",
@@ -4968,6 +5150,13 @@
     "url": "https://www.tradingview.com/script/B094baNp-Laguerre-RSI/",
     "pine_id": "PUB;D6OTtB0QrCLQ1qLMQu9jnJ2GsvnujI5u",
     "version": "3.0"
+  },
+  {
+    "name": "Langlands-Operadic Möbius Vortex (LOMV)",
+    "file": "LanglandsOperadic_Mobius_Vortex_LOMV.md",
+    "url": "https://www.tradingview.com/script/rXrAfveF-Langlands-Operadic-M%C3%B6bius-Vortex-LOMV/",
+    "pine_id": "PUB;0ab927447126490684a45bf942d7d5fa",
+    "version": "1.0"
   },
   {
     "name": "Let it snow... [QuantNomad]",
@@ -5061,13 +5250,6 @@
     "version": "2.0"
   },
   {
-    "name": "Linearity V1.0",
-    "file": "Linearity_V10.md",
-    "url": "https://www.tradingview.com/script/Y2GaXNMi-Linearity-V1-0/",
-    "pine_id": "PUB;d53a8d1f94464c8894a2c6faede71bed",
-    "version": "1.0"
-  },
-  {
     "name": "LiqSweep+iFVG",
     "file": "LiqSweepiFVG.md",
     "url": "https://www.tradingview.com/script/NsebZ0O6-LiqSweep-iFVG-indicator/",
@@ -5089,10 +5271,24 @@
     "version": "1.0"
   },
   {
+    "name": "Liquidity Dynamics Structure Engine",
+    "file": "Liquidity_Dynamics_Structure_Engine.md",
+    "url": "https://www.tradingview.com/script/0s5qcI5u-Liquidity-Dynamics-Structure-Engine/",
+    "pine_id": "PUB;268e48c120fe47df96bcf96834fc29a1",
+    "version": "1.0"
+  },
+  {
     "name": "Liquidity & FVG Engine MTF [Pro]",
     "file": "Liquidity_FVG_Engine_MTF_Pro.md",
     "url": "https://www.tradingview.com/script/nexhk00O/",
     "pine_id": "PUB;901fbd84ff944aecb8a228d1c80ac2d4",
+    "version": "1.0"
+  },
+  {
+    "name": "Liquidity Heatmap & Sweep Radar",
+    "file": "Liquidity_Heatmap_Sweep_Radar.md",
+    "url": "https://www.tradingview.com/script/Bhfc7tZ9-Liquidity-Heatmap-Sweep-Radar/",
+    "pine_id": "PUB;f00bde0383c941fc85244e18f5240c7f",
     "version": "1.0"
   },
   {
@@ -5101,13 +5297,6 @@
     "url": "https://www.tradingview.com/script/3C7bqZb3-Liquidity-Label-above-Bar/",
     "pine_id": "PUB;fd70fdecb2494c3493e7ba52235520ab",
     "version": "2.0"
-  },
-  {
-    "name": "Liquidity Levels",
-    "file": "Liquidity_Levels.md",
-    "url": "https://www.tradingview.com/script/fPh1mr3r-Liquidity-Levels/",
-    "pine_id": "PUB;b72515f6e8794a188305698fa3510e8a",
-    "version": "1.0"
   },
   {
     "name": "Liquidity Levels [LuxAlgo]",
@@ -5159,10 +5348,10 @@
     "version": "1.0"
   },
   {
-    "name": "Liquidity Sweep Buy/Sell [v6]",
-    "file": "Liquidity_Sweep_BuySell_v6.md",
-    "url": "https://www.tradingview.com/script/Ct8gfKX3-Liquidity-Sweep-Buy-Sell-v6/",
-    "pine_id": "PUB;2641ac81e3024cde9fc6d3ff552785a7",
+    "name": "Liquidity Sweep + CISD + FVG Reversal",
+    "file": "Liquidity_Sweep_CISD_FVG_Reversal.md",
+    "url": "https://www.tradingview.com/script/Jtn829St-Liquidity-Sweep-CISD-FVG-Reversal/",
+    "pine_id": "PUB;fb188aabe4a04b7faed09295191ed492",
     "version": "1.0"
   },
   {
@@ -5177,6 +5366,13 @@
     "file": "Liquidity_Sweep_Detector_ICT_ReubenMiles.md",
     "url": "https://www.tradingview.com/script/VJPjULd2-Liquidity-Sweep-Detector-ICT-ReubenMiles/",
     "pine_id": "PUB;523258f364b9490aad8d9d5590660cbd",
+    "version": "1.0"
+  },
+  {
+    "name": "Liquidity Sweep Follow-Through Guard",
+    "file": "Liquidity_Sweep_FollowThrough_Guard.md",
+    "url": "https://www.tradingview.com/script/amsooCqF/",
+    "pine_id": "PUB;bd8c8577ce7645e7861fe7678d0e9014",
     "version": "1.0"
   },
   {
@@ -5236,13 +5432,6 @@
     "version": "2.0"
   },
   {
-    "name": "LoD Split Exit & Position Sizer",
-    "file": "LoD_Split_Exit_Position_Sizer.md",
-    "url": "https://www.tradingview.com/script/hnlztnxl/",
-    "pine_id": "PUB;a43d3150d1954fe6819e1c1624334936",
-    "version": "1.0"
-  },
-  {
     "name": "Local Levels (Cascade + Filters)",
     "file": "Local_Levels_Cascade_Filters.md",
     "url": "https://www.tradingview.com/script/rbAGPghT-local-levels-cascade-filters/",
@@ -5299,6 +5488,13 @@
     "version": "14.0"
   },
   {
+    "name": "Lorentzian Classifier AI - Prediction Accuracy Tracker [Dots3Red]",
+    "file": "Lorentzian_Classifier_AI_Prediction_Accuracy_Tracker_Dots3Red.md",
+    "url": "https://www.tradingview.com/script/vkXKFpqB-Lorentzian-Classifier-AI-Prediction-Accuracy-Dots3Red/",
+    "pine_id": "PUB;5bff9fd698a94b81bfb8795daa681af9",
+    "version": "1.0"
+  },
+  {
     "name": "Lowest / Highest From Widget",
     "file": "Lowest_Highest_From_Widget.md",
     "url": "https://www.tradingview.com/script/QyPmcjKa-Lowest-Highest-From-Widget/",
@@ -5318,13 +5514,6 @@
     "url": "https://www.tradingview.com/script/zCJVpgKl/",
     "pine_id": "PUB;caf119fe7098431aabb183dc15e64a0d",
     "version": "1.0"
-  },
-  {
-    "name": "M1D — Overnight Range & Trend-Day Probability",
-    "file": "M1D_Overnight_Range_TrendDay_Probability.md",
-    "url": "https://www.tradingview.com/script/mOIFHBMY-Overnight-Range-Trend-Day-Probability/",
-    "pine_id": "PUB;330571906a5b43b6a4ba45aa9d73bca4",
-    "version": "2.0"
   },
   {
     "name": "MACD-X Overlay, More Than MACD by DGT",
@@ -5467,13 +5656,6 @@
     "version": "1.0"
   },
   {
-    "name": "MGC Precision Scalper (3-Min)",
-    "file": "MGC_Precision_Scalper_3Min.md",
-    "url": "https://www.tradingview.com/script/HS1hPk9f-MGC-Precision-Scalper-3-Min/",
-    "pine_id": "PUB;a583c07c2da94d148f367707ec5c6529",
-    "version": "1.0"
-  },
-  {
     "name": "MICRO SOM",
     "file": "MICRO_SOM.md",
     "url": "https://www.tradingview.com/script/WrwdNkrH-MICRO-SOM/",
@@ -5516,24 +5698,17 @@
     "version": "1.0"
   },
   {
+    "name": "MSX Harmonic Pro",
+    "file": "MSX_Harmonic_Pro.md",
+    "url": "https://www.tradingview.com/script/Ww3aoTN9-MSX-Harmonic-Pro/",
+    "pine_id": "PUB;d896c8b9232848cd9683bce235393ea3",
+    "version": "1.0"
+  },
+  {
     "name": "MSnR Double Breakout Level",
     "file": "MSnR_Double_Breakout_Level.md",
     "url": "https://www.tradingview.com/script/0jssxZUC-MSnR-Double-Breakout-Level/",
     "pine_id": "PUB;84b6b2d8f892488baa1094db31307c17",
-    "version": "1.0"
-  },
-  {
-    "name": "MTF ATR Stop Loss Lines",
-    "file": "MTF_ATR_Stop_Loss_Lines.md",
-    "url": "https://www.tradingview.com/script/FKRcDZrn/",
-    "pine_id": "PUB;8fdc19e0f74746108a444735241a9341",
-    "version": "1.0"
-  },
-  {
-    "name": "MTF Hilbert Quadrature Phase-Lock [FibonacciFlux]",
-    "file": "MTF_Hilbert_Quadrature_PhaseLock_FibonacciFlux.md",
-    "url": "https://www.tradingview.com/script/LnE2tzl4-MTF-Hilbert-Quadrature-Phase-Lock-FibonacciFlux/",
-    "pine_id": "PUB;ea79e66f4cce4c5e9f5020b69329a269",
     "version": "1.0"
   },
   {
@@ -5607,34 +5782,6 @@
     "version": "1.0"
   },
   {
-    "name": "MYND Confluence Compass v2.2",
-    "file": "MYND_Confluence_Compass_v22.md",
-    "url": "https://www.tradingview.com/script/JWC6w6VR-MYND-Confluence-Compass-v2-2/",
-    "pine_id": "PUB;c207e53a9c4946b6a57f3e1d190df6ab",
-    "version": "1.0"
-  },
-  {
-    "name": "MYND Fractal Support/Resistance Density Map [v1.4]",
-    "file": "MYND_Fractal_SupportResistance_Density_Map_v14.md",
-    "url": "https://www.tradingview.com/script/SCcF4BlS-MYND-Fractal-Support-Resistance-Density-Map-v1-4/",
-    "pine_id": "PUB;1101d3f02fbd4bd693666f9538cd12ea",
-    "version": "1.0"
-  },
-  {
-    "name": "MYND Risk-Based Position Size Calculator [v1.5]",
-    "file": "MYND_RiskBased_Position_Size_Calculator_v15.md",
-    "url": "https://www.tradingview.com/script/dyQbUVmQ-MYND-Risk-Based-Position-Size-Calculator-v1-5/",
-    "pine_id": "PUB;2d83c0d7a1f543b6825c64c4dda68f16",
-    "version": "1.0"
-  },
-  {
-    "name": "MYND Structure Shift v1.3",
-    "file": "MYND_Structure_Shift_v13.md",
-    "url": "https://www.tradingview.com/script/QG1psDXa-MYND-Structure-Shift-v1-3/",
-    "pine_id": "PUB;c817c33f109a48a88552b45979ce4e39",
-    "version": "1.0"
-  },
-  {
     "name": "Machine Learning Adaptive SuperTrend [AlgoAlpha]",
     "file": "Machine_Learning_Adaptive_SuperTrend_AlgoAlpha.md",
     "url": "https://www.tradingview.com/script/CLk71Qgy-Machine-Learning-Adaptive-SuperTrend-AlgoAlpha/",
@@ -5684,13 +5831,6 @@
     "version": "1.0"
   },
   {
-    "name": "Machine Learning Signal Statistics: kNN Win Rate vs Random Entries",
-    "file": "Machine_Learning_Signal_Statistics_kNN_Win_Rate_vs_Random_Entries.md",
-    "url": "https://www.tradingview.com/script/XuIlozD8-Machine-Learning-Statistics-kNN-Win-Rate-vs-Random-Entries/",
-    "pine_id": "PUB;6b3b5472532f4dc29e0ff4c4e4e4d692",
-    "version": "1.0"
-  },
-  {
     "name": "Machine Learning: kNN (New Approach)",
     "file": "Machine_Learning_kNN_New_Approach.md",
     "url": "https://www.tradingview.com/script/3lZg4gmr-Machine-Learning-kNN-New-Approach/",
@@ -5726,24 +5866,10 @@
     "version": "2.0"
   },
   {
-    "name": "Macro Regime Engine - Institutional Dashboard",
-    "file": "Macro_Regime_Engine_Institutional_Dashboard.md",
-    "url": "https://www.tradingview.com/script/r4XpSxTc-Macro-Regime-Engine-Institutional-Dashboard/",
-    "pine_id": "PUB;dbbd6e939003488dbcbc9e2da12d9ac3",
-    "version": "1.0"
-  },
-  {
     "name": "Macro Risk Sentinel",
     "file": "Macro_Risk_Sentinel.md",
     "url": "https://www.tradingview.com/script/r1FK19DI/",
     "pine_id": "PUB;3dc553164c7446918e5a4279b9342e68",
-    "version": "1.0"
-  },
-  {
-    "name": "Macro Supersector Matrix & Stock Alignment Dashboard",
-    "file": "Macro_Supersector_Matrix_Stock_Alignment_Dashboard.md",
-    "url": "https://www.tradingview.com/script/nIR9N4st-Macro-Supersector-Matrix-Stock-Alignment-Dashboard/",
-    "pine_id": "PUB;93e6a0bffaf14806811af7a2148e6214",
     "version": "1.0"
   },
   {
@@ -5758,13 +5884,6 @@
     "file": "MandelbrotFibonacci_Cascade_Vortex_MFCV.md",
     "url": "https://www.tradingview.com/script/PkfLCPYI-Mandelbrot-Fibonacci-Cascade-Vortex-MFCV/",
     "pine_id": "PUB;538b39eae3bd49e69573b90855e47a94",
-    "version": "1.0"
-  },
-  {
-    "name": "Manipulation Zone",
-    "file": "Manipulation_Zone.md",
-    "url": "https://www.tradingview.com/script/CIR6XKaF-Manipulation-Zone-Achira-Meegasthanne/",
-    "pine_id": "PUB;193ed9daa5824bf39d0bdaef93ecfd6c",
     "version": "1.0"
   },
   {
@@ -5894,6 +6013,13 @@
     "version": "1.0"
   },
   {
+    "name": "Market Regime Engine",
+    "file": "Market_Regime_Engine.md",
+    "url": "https://www.tradingview.com/script/MIEZDvM9-Market-Regime-Engine/",
+    "pine_id": "PUB;fe9c2088757b4296a71af4e2714388b9",
+    "version": "1.0"
+  },
+  {
     "name": "Market Regime Engine v1.0",
     "file": "Market_Regime_Engine_v10.md",
     "url": "https://www.tradingview.com/script/Nr5RMcSh-Market-Regime-Engine/",
@@ -5927,13 +6053,6 @@
     "url": "https://www.tradingview.com/script/htAF8NF9-Market-Sessions-Viewer-Panel-By-MUQWISHI/",
     "pine_id": "PUB;000efea20b6f40169a9cfb9841271a16",
     "version": "5.0"
-  },
-  {
-    "name": "Market State Router [Permutation + Eigenstructure]",
-    "file": "Market_State_Router_Permutation_Eigenstructure.md",
-    "url": "https://www.tradingview.com/script/UF3lTBqJ-Market-State-Router-Permutation-Eigenstructure/",
-    "pine_id": "PUB;5a8e61a38dc345acb1b0fc02db8a98fd",
-    "version": "1.0"
   },
   {
     "name": "Market Stats Panel [Daveatt]",
@@ -5985,6 +6104,13 @@
     "version": "1.0"
   },
   {
+    "name": "Market Structure & Momentum [India Chart School]",
+    "file": "Market_Structure_Momentum_India_Chart_School.md",
+    "url": "https://www.tradingview.com/script/GpDx0ZIA-Market-Structure-Momentum-India-Chart-School/",
+    "pine_id": "PUB;8afd692229d2477eac30c0a98afffd03",
+    "version": "1.0"
+  },
+  {
     "name": "Market Structure Volume Profiles [Kioseff Trading]",
     "file": "Market_Structure_Volume_Profiles_Kioseff_Trading.md",
     "url": "https://www.tradingview.com/script/shy8kACw-Market-Structure-Volume-Profiles-Kioseff-Trading/",
@@ -6031,20 +6157,6 @@
     "file": "Master_Line_Plus_MultiMA_Consensus.md",
     "url": "https://www.tradingview.com/script/zv91H545-Master-Line-Plus-Multi-MA-Consensus/",
     "pine_id": "PUB;7f443a75fda84bbc981751dcb24170cf",
-    "version": "1.0"
-  },
-  {
-    "name": "Master Swing Confluence System",
-    "file": "Master_Swing_Confluence_System.md",
-    "url": "https://www.tradingview.com/script/DHyfjfPx-Multi-Confirmation-Swing-Indicator/",
-    "pine_id": "PUB;1e95a5cab5894c63a633f0a52cb9611e",
-    "version": "1.0"
-  },
-  {
-    "name": "Master Weekly Vector Forex",
-    "file": "Master_Weekly_Vector_Forex.md",
-    "url": "https://www.tradingview.com/script/v4lfPK1D-Master-Weekly-Vector-Forex/",
-    "pine_id": "PUB;ea4f8b7490564a6280db64ca6493315d",
     "version": "1.0"
   },
   {
@@ -6258,6 +6370,13 @@
     "version": "1.0"
   },
   {
+    "name": "Momentum Core [MasterTonyTA]",
+    "file": "Momentum_Core_MasterTonyTA.md",
+    "url": "https://www.tradingview.com/script/5xoD3UVb-Momentum-Core-MasterTonyTA/",
+    "pine_id": "PUB;9440e4988145448ba9fbb4406dc39ef1",
+    "version": "1.0"
+  },
+  {
     "name": "Momentum Peak Breakout-Pro [Saheewin]",
     "file": "Momentum_Peak_BreakoutPro_Saheewin.md",
     "url": "https://www.tradingview.com/script/oE55X9Fa-Momentum-Peak-Breakout-Pro-Saheewin/",
@@ -6440,13 +6559,6 @@
     "version": "1.0"
   },
   {
-    "name": "Multi-Factor Reversal Confluence — All-in-One",
-    "file": "MultiFactor_Reversal_Confluence_AllinOne.md",
-    "url": "https://www.tradingview.com/script/N3G4P1ig-Multi-Factor-Reversal-Confluence-All-in-One/",
-    "pine_id": "PUB;1cc66dbdc0a343369ccdfd2e0bba89c2",
-    "version": "1.0"
-  },
-  {
     "name": "Multi-HTF Candle Dashboard [Quantum Edge]",
     "file": "MultiHTF_Candle_Dashboard_Quantum_Edge.md",
     "url": "https://www.tradingview.com/script/qfvSNrla-HTF-Candle-Projection-Dashboard-Quantum-Edge/",
@@ -6461,11 +6573,11 @@
     "version": "1.0"
   },
   {
-    "name": "Multi-Period ATR Dashboard",
-    "file": "MultiPeriod_ATR_Dashboard.md",
-    "url": "https://www.tradingview.com/script/IFPMrreo-Multi-Period-ATR-Dashboard/",
-    "pine_id": "PUB;0dd0acb2cb7b448db2a75da1e4f3f4d4",
-    "version": "2.0"
+    "name": "Multi-ORB [4 Sessions]",
+    "file": "MultiORB_4_Sessions.md",
+    "url": "https://www.tradingview.com/script/vmikwJDs-Multi-ORB-4-Sessions/",
+    "pine_id": "PUB;ce2abca975fd4f7bad7af53c5f819e71",
+    "version": "1.0"
   },
   {
     "name": "Multi-Ticker Anchored Candles",
@@ -6531,6 +6643,13 @@
     "version": "1.0"
   },
   {
+    "name": "Multi-Timeframe Volume Profile & Orderflow Levels",
+    "file": "MultiTimeframe_Volume_Profile_Orderflow_Levels.md",
+    "url": "https://www.tradingview.com/script/IxH5cJdA-Multi-Timeframe-Volume-Profile-Orderflow-Levels/",
+    "pine_id": "PUB;834b1762b3404430bce2c272bb778410",
+    "version": "1.0"
+  },
+  {
     "name": "Multi Asset Similarity Matrix",
     "file": "Multi_Asset_Similarity_Matrix.md",
     "url": "https://www.tradingview.com/script/cOjScAAA-Multi-Asset-Similarity-Matrix/",
@@ -6552,10 +6671,10 @@
     "version": "1.0"
   },
   {
-    "name": "Multi Symbol Participation Pulse [Pineify]",
-    "file": "Multi_Symbol_Participation_Pulse_Pineify.md",
-    "url": "https://www.tradingview.com/script/283CExyp-Multi-Symbol-Participation-Pulse-Pineify/",
-    "pine_id": "PUB;3ce0f19b63f249fe829bb653d7657428",
+    "name": "Multi Session ORB",
+    "file": "Multi_Session_ORB.md",
+    "url": "https://www.tradingview.com/script/WQK57Z0y-Multi-Session-ORB/",
+    "pine_id": "PUB;07ff8fcd5a0642b68be20c3e95d2649e",
     "version": "1.0"
   },
   {
@@ -6591,7 +6710,7 @@
     "file": "Multi_Timeframe_iFVG_Analysis_BMT.md",
     "url": "https://www.tradingview.com/script/37l2XoT9-Multi-Timeframe-i-FVG-Analysis-BMT/",
     "pine_id": "PUB;09d972942d72410da7c96717aeefb0e0",
-    "version": "1.0"
+    "version": "2.0"
   },
   {
     "name": "Multi ZigZag Harmonic Patterns",
@@ -6685,38 +6804,10 @@
     "version": "2.0"
   },
   {
-    "name": "NQ Psychological Levels",
-    "file": "NQ_Psychological_Levels.md",
-    "url": "https://www.tradingview.com/script/29H8UVHp-NQ-Psychological-Levels/",
-    "pine_id": "PUB;457b17edf64f4e33a0bb4f4f08895fb1",
-    "version": "1.0"
-  },
-  {
-    "name": "NRTR Adaptive Trailing Reverse [MarkitTick]",
-    "file": "NRTR_Adaptive_Trailing_Reverse_MarkitTick.md",
-    "url": "https://www.tradingview.com/script/txN4hMDM-NRTR-Adaptive-Trailing-Reverse-MarkitTick/",
-    "pine_id": "PUB;459eda910145405fb02cbfd81b16ca74",
-    "version": "1.0"
-  },
-  {
-    "name": "NX Flow",
-    "file": "NX_Flow.md",
-    "url": "https://www.tradingview.com/script/0CSha3nK/",
-    "pine_id": "PUB;363b0cbb08d4487aacf6810fcc3df5b7",
-    "version": "1.0"
-  },
-  {
     "name": "NY Macro Status",
     "file": "NY_Macro_Status.md",
     "url": "https://www.tradingview.com/script/cgCfwdLs-NY-Macro-Status/",
     "pine_id": "PUB;be21000aa8064e9bbe7d29baf4e29828",
-    "version": "1.0"
-  },
-  {
-    "name": "Naive Synthetic GEX & Midday Breakout",
-    "file": "Naive_Synthetic_GEX_Midday_Breakout.md",
-    "url": "https://www.tradingview.com/script/UwCS7X01-Naive-Synthetic-GEX-Midday-Breakout/",
-    "pine_id": "PUB;6bce2480051445918f7010c4108aacc3",
     "version": "1.0"
   },
   {
@@ -6769,13 +6860,6 @@
     "version": "2.0"
   },
   {
-    "name": "New Highs/Lows Market Breadth",
-    "file": "New_HighsLows_Market_Breadth.md",
-    "url": "https://www.tradingview.com/script/aeLgOovL-New-Highs-Lows-Market-Breadth/",
-    "pine_id": "PUB;1c3db0c19a334cd6812c19207ac69304",
-    "version": "1.0"
-  },
-  {
     "name": "New Highs - New Lows (NYSE & Nasdaq) [TradeThink]",
     "file": "New_Highs_New_Lows_NYSE_Nasdaq_TradeThink.md",
     "url": "https://www.tradingview.com/script/1eELX40U-New-Highs-New-Lows-NYSE-Nasdaq-TradeThink/",
@@ -6822,6 +6906,13 @@
     "file": "Normalized_SPMA_NAL.md",
     "url": "https://www.tradingview.com/script/uxjZW9Os-Normalized-SPMA-NAL/",
     "pine_id": "PUB;6beee011c6ab417b9ff55c00a5f2a242",
+    "version": "1.0"
+  },
+  {
+    "name": "North AMD PD Map 12.9",
+    "file": "North_AMD_PD_Map_129.md",
+    "url": "https://www.tradingview.com/script/nR0sPyjB-North-AMD-PD-Map-12-9/",
+    "pine_id": "PUB;42b875d3ba2c47b59fc88b18dce07e0c",
     "version": "1.0"
   },
   {
@@ -6916,11 +7007,11 @@
     "version": "1.0"
   },
   {
-    "name": "OSF",
-    "file": "OSF.md",
-    "url": "https://www.tradingview.com/script/K4zaGkLy-OSF/",
-    "pine_id": "PUB;1b3fe342ff0e41ccb8d1c5a753b68446",
-    "version": "1.0"
+    "name": "ORB Visualizer NSE",
+    "file": "ORB_Visualizer_NSE.md",
+    "url": "https://www.tradingview.com/script/vUHHSles-ORB-Visualizer-NSE/",
+    "pine_id": "PUB;ffafcea01b804dacbac4e9097969d982",
+    "version": "3.0"
   },
   {
     "name": "OSOK Opening Times",
@@ -6928,13 +7019,6 @@
     "url": "https://www.tradingview.com/script/pW6Z0vXS-OSOK-Opening-Times/",
     "pine_id": "PUB;64f463fb86df4b938dd27bc58eccb784",
     "version": "1.0"
-  },
-  {
-    "name": "OTEFibWick",
-    "file": "OTEFibWick.md",
-    "url": "https://www.tradingview.com/script/sAobkjMZ/",
-    "pine_id": "PUB;0b05bc5c83364059994722164c0b3202",
-    "version": "3.0"
   },
   {
     "name": "Oleg Algo",
@@ -7070,13 +7154,6 @@
     "version": "1.0"
   },
   {
-    "name": "Order Blocks Graded [ITA]",
-    "file": "Order_Blocks_Graded_ITA.md",
-    "url": "https://www.tradingview.com/script/Q8SvycX7-Order-Blocks-Graded-ITA/",
-    "pine_id": "PUB;666c33f0e4394b2ea938c92d22a78c47",
-    "version": "1.0"
-  },
-  {
     "name": "Order Chain [Kioseff Trading]",
     "file": "Order_Chain_Kioseff_Trading.md",
     "url": "https://www.tradingview.com/script/JNCGeDj7-Order-Chain-Kioseff-Trading/",
@@ -7133,10 +7210,10 @@
     "version": "1.0"
   },
   {
-    "name": "OzzY Indicator",
-    "file": "OzzY_Indicator.md",
-    "url": "https://www.tradingview.com/script/bT9utZF3-OzzY-Indicator/",
-    "pine_id": "PUB;5478c013d8644f70b2957cc8440b414c",
+    "name": "PA Patterns Strategy v2",
+    "file": "PA_Patterns_Strategy_v2.md",
+    "url": "https://www.tradingview.com/script/OqjKbuRp-Patterns-Strategy-v1/",
+    "pine_id": "PUB;76a4a4cb432749079917fb383231f1f4",
     "version": "1.0"
   },
   {
@@ -7189,6 +7266,13 @@
     "version": "1.0"
   },
   {
+    "name": "PRO TREND BOX",
+    "file": "PRO_TREND_BOX.md",
+    "url": "https://www.tradingview.com/script/BYXt4sTy-PRO-TREND-BOX/",
+    "pine_id": "PUB;896656b133864e018a38d6fbf689584f",
+    "version": "1.0"
+  },
+  {
     "name": "P-Square",
     "file": "PSquare.md",
     "url": "https://www.tradingview.com/script/iF0JGsN1-P-Square-Estimation-of-the-Nth-percentile-of-a-series/",
@@ -7207,6 +7291,13 @@
     "file": "PVSRA_Auto_PhantomCipher.md",
     "url": "https://www.tradingview.com/script/jZR20JlW-PVSRA-Auto-PhantomCipher/",
     "pine_id": "PUB;6db047bf184b4e4f9b867d4eeab3e827",
+    "version": "1.0"
+  },
+  {
+    "name": "PVT Cross Tracker",
+    "file": "PVT_Cross_Tracker.md",
+    "url": "https://www.tradingview.com/script/fspw4XAR-PVT-Cross-Tracker/",
+    "pine_id": "PUB;de3a473ce3d2427a8bfc8766aae24fe4",
     "version": "1.0"
   },
   {
@@ -7329,13 +7420,6 @@
     "version": "1.0"
   },
   {
-    "name": "Phase Space Quadrant Dashboard [FibonacciFlux]",
-    "file": "Phase_Space_Quadrant_Dashboard_FibonacciFlux.md",
-    "url": "https://www.tradingview.com/script/1DmFbXWk-Phase-Space-Quadrant-Dashboard-FibonacciFlux/",
-    "pine_id": "PUB;1bf9159710cc43358241f53552095764",
-    "version": "1.0"
-  },
-  {
     "name": "Phil RTH Gap 50% + Statistics Dashboard",
     "file": "Phil_RTH_Gap_50_Statistics_Dashboard.md",
     "url": "https://www.tradingview.com/script/p1LAy1U9/",
@@ -7375,6 +7459,20 @@
     "file": "Pinescript_Common_Label_Line_Array_Functions_Library_by_RRB.md",
     "url": "https://www.tradingview.com/script/0QhNIUtt-Pinescript-Common-Label-Line-Array-Functions-Library-by-RRB/",
     "pine_id": "PUB;MJXIhb9BzMwqPRn8merubYgR9QCo1yw0",
+    "version": "1.0"
+  },
+  {
+    "name": "PipSchool",
+    "file": "PipSchool.md",
+    "url": "https://www.tradingview.com/script/7yA77815-PipSchool/",
+    "pine_id": "PUB;7b0cc64096624efb960a999e68a3855b",
+    "version": "1.0"
+  },
+  {
+    "name": "PipSchool",
+    "file": "PipSchool_LoXMFbNO.md",
+    "url": "https://www.tradingview.com/script/LoXMFbNO-PipSchool/",
+    "pine_id": "PUB;4e89d1b4211f4025af46c2715c5e6cc7",
     "version": "1.0"
   },
   {
@@ -7567,17 +7665,24 @@
     "version": "1.0"
   },
   {
-    "name": "Premkt 5 15 30 Min",
-    "file": "Premkt_5_15_30_Min.md",
-    "url": "https://www.tradingview.com/script/M92vyyv2-Premkt-5-15-30-Min/",
-    "pine_id": "PUB;44311d7ea6684c96846add3ca1878ad9",
-    "version": "3.0"
-  },
-  {
     "name": "Pressure Delta",
     "file": "Pressure_Delta.md",
     "url": "https://www.tradingview.com/script/M2EkLc09-Pressure-Delta/",
     "pine_id": "PUB;819219f9d89f45d3b50fb3c68b4a3308",
+    "version": "1.0"
+  },
+  {
+    "name": "Pressure Release Confirmation Engine [PhenLabs]",
+    "file": "Pressure_Release_Confirmation_Engine_PhenLabs.md",
+    "url": "https://www.tradingview.com/script/jEfe7BLy-Pressure-Release-Confirmation-Engine-PhenLabs/",
+    "pine_id": "PUB;b9f3bcde151044f49a61e56664ec25d0",
+    "version": "1.0"
+  },
+  {
+    "name": "PrevQtr sqrtRange -&gt; Anchor Open Levels",
+    "file": "PrevQtr_sqrtRange_gt_Anchor_Open_Levels.md",
+    "url": "https://www.tradingview.com/script/Yk0zKkWz-PrevQtr-sqrtRange-Anchor-Open-Levels/",
+    "pine_id": "PUB;957a8d7353a6472ea56aacb818764c49",
     "version": "1.0"
   },
   {
@@ -7588,10 +7693,24 @@
     "version": "4.0"
   },
   {
+    "name": "Previous Day High / Low",
+    "file": "Previous_Day_High_Low.md",
+    "url": "https://www.tradingview.com/script/kTNrgBPr-Previous-Day-High-Low-PDH-PDL-Dated/",
+    "pine_id": "PUB;9187a0dea9a34338af4a781286ec47ed",
+    "version": "1.0"
+  },
+  {
     "name": "Previous Day Levels & BOS (v4.0.0)",
     "file": "Previous_Day_Levels_BOS_v400.md",
     "url": "https://www.tradingview.com/script/crEzgK7L-Previous-Day-Levels-BOS-v4-0-0/",
     "pine_id": "PUB;9602cb6704f8404ab5d6dd41c70302f4",
+    "version": "1.0"
+  },
+  {
+    "name": "Previous Day OHLC Levels",
+    "file": "Previous_Day_OHLC_Levels.md",
+    "url": "https://www.tradingview.com/script/sRmpQLwK-Previous-Day-OHLC-Levels/",
+    "pine_id": "PUB;df3d18cbce1f4b9c8f0348c74929e3e8",
     "version": "1.0"
   },
   {
@@ -7623,24 +7742,17 @@
     "version": "1.0"
   },
   {
+    "name": "Price Action S/R Master - B R-B E",
+    "file": "Price_Action_SR_Master_B_RB_E.md",
+    "url": "https://www.tradingview.com/script/MmCnFomg-Price-Action-Support-and-resistance/",
+    "pine_id": "PUB;6709a6607d7444b5b3c65230ea1f1367",
+    "version": "1.0"
+  },
+  {
     "name": "Price Convergence",
     "file": "Price_Convergence.md",
     "url": "https://www.tradingview.com/script/FK25igs7-Price-Convergence/",
     "pine_id": "PUB;mRdXHnBaTsU5UYNt2fKriF7RSrTpod5e",
-    "version": "1.0"
-  },
-  {
-    "name": "Price Gravity Research Engine v1.1",
-    "file": "Price_Gravity_Research_Engine_v11.md",
-    "url": "https://www.tradingview.com/script/AK9LhhVq-Price-Gravity-Research-Engine-Effort-and-Displacement/",
-    "pine_id": "PUB;7abb56b985164b5480ba76479c515199",
-    "version": "1.0"
-  },
-  {
-    "name": "Price Gravity Research Engine v1.1",
-    "file": "Price_Gravity_Research_Engine_v11_QLx04ung.md",
-    "url": "https://www.tradingview.com/script/QLx04ung-Price-Gravity-Research-Engine-Effort-Displacement/",
-    "pine_id": "PUB;ec89dd292d5d4b9fa6380c8e0ce4c2c2",
     "version": "1.0"
   },
   {
@@ -7655,13 +7767,6 @@
     "file": "Prime_Structure_Bias.md",
     "url": "https://www.tradingview.com/script/G1jZaygO-Prime-Structure-Bias/",
     "pine_id": "PUB;a320cae9e0a24486846cf275c38e9538",
-    "version": "1.0"
-  },
-  {
-    "name": "Prism [vault]",
-    "file": "Prism_vault.md",
-    "url": "https://www.tradingview.com/script/n2lwjCfw-Prism-vault/",
-    "pine_id": "PUB;9ae40d60c7d24f9284018e747c31d2ef",
     "version": "1.0"
   },
   {
@@ -7697,13 +7802,6 @@
     "file": "Projection.md",
     "url": "https://www.tradingview.com/script/ONEeyHXe-Projection/",
     "pine_id": "PUB;Lgver9jSFMKT7PmoKxTehg4YCq295Sas",
-    "version": "1.0"
-  },
-  {
-    "name": "Psychological Levels + PDH/PDL + PWH/PWL",
-    "file": "Psychological_Levels_PDHPDL_PWHPWL.md",
-    "url": "https://www.tradingview.com/script/c3HlGggw/",
-    "pine_id": "PUB;42965b2582704dae9f826afc98a45ae3",
     "version": "1.0"
   },
   {
@@ -7751,9 +7849,23 @@
   {
     "name": "QRB - Quarterly Range Breakout",
     "file": "QRB_Quarterly_Range_Breakout.md",
+    "url": "https://www.tradingview.com/script/MtEDCdUd-QRB-Quarterly-Range-Breakout/",
+    "pine_id": "PUB;723ef9965f634014b8118633fe6d616f",
+    "version": "1.0"
+  },
+  {
+    "name": "QRB - Quarterly Range Breakout",
+    "file": "QRB_Quarterly_Range_Breakout_deDaKCXu.md",
     "url": "https://www.tradingview.com/script/deDaKCXu-QRB-Quarterly-Break-Range/",
     "pine_id": "PUB;9e081074f9364d7d9dc18ef928985f64",
     "version": "3.0"
+  },
+  {
+    "name": "Quad Stochastic Divergence Toolkit",
+    "file": "Quad_Stochastic_Divergence_Toolkit.md",
+    "url": "https://www.tradingview.com/script/cOSORwbj-Quad-Stochastic-Divergence-Toolkit/",
+    "pine_id": "PUB;63e2f4a658694f328314ffa30c9ef77e",
+    "version": "1.0"
   },
   {
     "name": "Quadratic Regression",
@@ -7770,20 +7882,6 @@
     "version": "5.0"
   },
   {
-    "name": "QuantMathematics",
-    "file": "QuantMathematics.md",
-    "url": "https://www.tradingview.com/script/KSfH7UR1-QuantMathematics-Achira-Meegasthanne/",
-    "pine_id": "PUB;ad4f795d63f24b6f9fc5b0a41245d7b6",
-    "version": "1.0"
-  },
-  {
-    "name": "Quantitative Monthly Seasonality Dashboard",
-    "file": "Quantitative_Monthly_Seasonality_Dashboard.md",
-    "url": "https://www.tradingview.com/script/GtPup8IK-Quantitative-Monthly-Seasonality-Dashboard/",
-    "pine_id": "PUB;077d76cf12b349348f0ea34389de8b99",
-    "version": "1.0"
-  },
-  {
     "name": "Quantitative Seasonality Multi-Period Dashboard",
     "file": "Quantitative_Seasonality_MultiPeriod_Dashboard.md",
     "url": "https://www.tradingview.com/script/5i5F97TR-Quantitative-Monthly-Seasonality-Dashboard-V2/",
@@ -7796,6 +7894,13 @@
     "url": "https://www.tradingview.com/script/oq1Ju4Ha-QuantumForexTrader-SniperFusion-Strategy-v2/",
     "pine_id": "PUB;15c10ad954894395b97fa07c4769591c",
     "version": "1.0"
+  },
+  {
+    "name": "Quantum STS Lite",
+    "file": "Quantum_STS_Lite.md",
+    "url": "https://www.tradingview.com/script/2zKsGezl-Quantum-STS-Lite/",
+    "pine_id": "PUB;7a63a9c21214432fab5e56308b10b2af",
+    "version": "2.0"
   },
   {
     "name": "Quantum Trend Runtime - MTF Price Action [TrendRuntime]",
@@ -7812,6 +7917,13 @@
     "version": "3.0"
   },
   {
+    "name": "Quarterly Range Breakout with Targets",
+    "file": "Quarterly_Range_Breakout_with_Targets.md",
+    "url": "https://www.tradingview.com/script/BVDP21OU-Quarterly-Range-Breakout-with-Targets/",
+    "pine_id": "PUB;27b07e7162ce4d73b306d994905e014b",
+    "version": "1.0"
+  },
+  {
     "name": "(Quartile Volume; Volume Aggregation; US Range Bars; Gaps) [Kioseff Trading]",
     "file": "Quartile_Volume_Volume_Aggregation_US_Range_Bars_Gaps_Kioseff_Trading.md",
     "url": "https://www.tradingview.com/script/DF63CmXh-Quartile-Vol-Vol-Aggregation-Range-US-Bars-Gaps-Kioseff/",
@@ -7823,28 +7935,21 @@
     "file": "RC_Tools_Divergence_Detector.md",
     "url": "https://www.tradingview.com/script/44svbESb-RC-Tools-Divergence-Detector/",
     "pine_id": "PUB;98b3ab1b37ab46c4aa652670af7ee9fa",
-    "version": "1.0"
+    "version": "2.0"
   },
   {
     "name": "RC Tools - Mann-Kendall Trend Significance",
     "file": "RC_Tools_MannKendall_Trend_Significance.md",
     "url": "https://www.tradingview.com/script/vbgeMN5N-Mann-Kendall-Trend-Significance-RC-Tools/",
     "pine_id": "PUB;0fc278aecaec42cfb3b4e5dad5ce1fef",
-    "version": "1.0"
+    "version": "2.0"
   },
   {
     "name": "RC Tools - Mean-Reversion Half-Life",
     "file": "RC_Tools_MeanReversion_HalfLife.md",
     "url": "https://www.tradingview.com/script/37cMMsU1-Mean-Reversion-Half-Life-RC-Tools/",
     "pine_id": "PUB;188e079f703d403db22a2a638bf4f306",
-    "version": "1.0"
-  },
-  {
-    "name": "RIO KUBERA DOT SETUP",
-    "file": "RIO_KUBERA_DOT_SETUP.md",
-    "url": "https://www.tradingview.com/script/MPOs6QQ2-RIO-KUBERA-DOT-SETUP/",
-    "pine_id": "PUB;0926220cef5e431288bf496dad45f7ba",
-    "version": "1.0"
+    "version": "2.0"
   },
   {
     "name": "RK&#039;s 11 - Auto Color Gradient",
@@ -7889,13 +7994,6 @@
     "version": "2.0"
   },
   {
-    "name": "RSI-50 Step Line",
-    "file": "RSI50_Step_Line.md",
-    "url": "https://www.tradingview.com/script/hvp1bb7Z-RSI-50-Step-Line/",
-    "pine_id": "PUB;92b0578d5f47491bbb533150614b4b5a",
-    "version": "2.0"
-  },
-  {
     "name": "RSI_MATRIX",
     "file": "RSIMATRIX.md",
     "url": "https://www.tradingview.com/script/PV6cfnjI/",
@@ -7903,18 +8001,18 @@
     "version": "2.0"
   },
   {
-    "name": "RSI-Quadrature Phase Fusion [FibonacciFlux]",
-    "file": "RSIQuadrature_Phase_Fusion_FibonacciFlux.md",
-    "url": "https://www.tradingview.com/script/w2Sy6BGX-RSI-Quadrature-Phase-Fusion-FibonacciFlux/",
-    "pine_id": "PUB;c1fa3531d07e4908a7dc31f7a5e7183a",
-    "version": "1.0"
-  },
-  {
     "name": "RSI Bar Chart v2",
     "file": "RSI_Bar_Chart_v2.md",
     "url": "https://www.tradingview.com/script/JLrxIM5v-RSI-Bar-Chart/",
     "pine_id": "PUB;jtwOfuQ4ukd2NAqZCMiiON1CbfjyWNOD",
     "version": "5.0"
+  },
+  {
+    "name": "RSI Bullish Divergence (Oversold) Breakout",
+    "file": "RSI_Bullish_Divergence_Oversold_Breakout.md",
+    "url": "https://www.tradingview.com/script/Qg1Jra51-RSI-Bullish-Divergence-Oversold-Breakout/",
+    "pine_id": "PUB;cc3932e5888240afaab4d8638022e9b1",
+    "version": "1.0"
   },
   {
     "name": "RSI Divergence Confirmation",
@@ -7959,13 +8057,6 @@
     "version": "1.0"
   },
   {
-    "name": "RSI Range Compression (Momentum Coil Breakout)",
-    "file": "RSI_Range_Compression_Momentum_Coil_Breakout.md",
-    "url": "https://www.tradingview.com/script/dwgn7hrE-Coil-Breaker-RSI-Range-Compression/",
-    "pine_id": "PUB;348bd597ed364574839a3ae2884340fa",
-    "version": "1.0"
-  },
-  {
     "name": "RSI + S/R + FVG + BOS + CHoCH Setup",
     "file": "RSI_SR_FVG_BOS_CHoCH_Setup.md",
     "url": "https://www.tradingview.com/script/L4g13PVw-RSI-S-R-FVG-BOS-CHoCH-Setup/",
@@ -7973,10 +8064,10 @@
     "version": "1.0"
   },
   {
-    "name": "RSI Zone Step Lines",
-    "file": "RSI_Zone_Step_Lines.md",
-    "url": "https://www.tradingview.com/script/tmQKPi4G-RSI-Zone-Step-Lines/",
-    "pine_id": "PUB;6327ac8400944ebcbd63f46adf684eab",
+    "name": "RSI Signals Entries",
+    "file": "RSI_Signals_Entries.md",
+    "url": "https://www.tradingview.com/script/MXaEHFCb-RSI-Signals-Entries/",
+    "pine_id": "PUB;8cfebc3bf30e4aacbcd660357f036453",
     "version": "1.0"
   },
   {
@@ -8005,13 +8096,6 @@
     "file": "RSI_with_Bollinger_Bands.md",
     "url": "https://www.tradingview.com/script/5Nje4Zof-RSI-with-Bollinger-Bands/",
     "pine_id": "PUB;3051377e2d424f299af4d7f565574f52",
-    "version": "1.0"
-  },
-  {
-    "name": "RSI with Divergences - Optimized",
-    "file": "RSI_with_Divergences_Optimized.md",
-    "url": "https://www.tradingview.com/script/hekLAfwK-davidev-RSI-with-Divergences/",
-    "pine_id": "PUB;bd56302823b447f9866abdd03668dbba",
     "version": "1.0"
   },
   {
@@ -8057,6 +8141,13 @@
     "version": "7.0"
   },
   {
+    "name": "RTH Gaps and Expected Move",
+    "file": "RTH_Gaps_and_Expected_Move.md",
+    "url": "https://www.tradingview.com/script/24mEB1wA-RTH-Gaps-and-Expected-Move/",
+    "pine_id": "PUB;2a0a73cb963f44658c04917c2576c7ed",
+    "version": "2.0"
+  },
+  {
     "name": "RVOL Candles | Falcon AI",
     "file": "RVOL_Candles_Falcon_AI.md",
     "url": "https://www.tradingview.com/script/ybycOQyx-RVOL-Candles-Falcon-AI/",
@@ -8085,11 +8176,18 @@
     "version": "1.0"
   },
   {
-    "name": "Range Compression Percentile - Hour Ranked",
-    "file": "Range_Compression_Percentile_Hour_Ranked.md",
-    "url": "https://www.tradingview.com/script/rtnp7iJr/",
-    "pine_id": "PUB;ad72c44c0ea94fe58e4fb693a43f8b59",
+    "name": "Range Compression Z-Score Research",
+    "file": "Range_Compression_ZScore_Research.md",
+    "url": "https://www.tradingview.com/script/Ip6Tgrl9-Range-Compression-Z-Score-Research/",
+    "pine_id": "PUB;f590da38ce7b4894bf79356d8416bad0",
     "version": "1.0"
+  },
+  {
+    "name": "Range Detector [NJ]",
+    "file": "Range_Detector_NJ.md",
+    "url": "https://www.tradingview.com/script/pB6xqZvV-Range-Detector-NJ/",
+    "pine_id": "PUB;fdd9b4383c8148b2929a075c687ca137",
+    "version": "2.0"
   },
   {
     "name": "Range Filter [DW]",
@@ -8237,6 +8335,13 @@
     "url": "https://www.tradingview.com/script/I5qJDPxT-RedK-EVEREX-Effort-Versus-Results-Explorer/",
     "pine_id": "PUB;2f445b41cd734bffb6546cb27c228568",
     "version": "4.0"
+  },
+  {
+    "name": "RedK Multi-Modal TrailingStop v1.0",
+    "file": "RedK_MultiModal_TrailingStop_v10.md",
+    "url": "https://www.tradingview.com/script/ZxCXrnij-RedK-Multi-Modal-TrailingStop-RedK-MMTStop/",
+    "pine_id": "PUB;be8f3d9e32ca46e1b5d042f8f159d73a",
+    "version": "1.0"
   },
   {
     "name": "RedK Slow_Smooth WMA",
@@ -8575,25 +8680,11 @@
     "version": "1.0"
   },
   {
-    "name": "Round Number Nearest Level",
-    "file": "Round_Number_Nearest_Level.md",
-    "url": "https://www.tradingview.com/script/eXVH2IfA-Round-Number-Nearest-Level/",
-    "pine_id": "PUB;ffc37b37bc7a469c9dd80766c804e053",
-    "version": "1.0"
-  },
-  {
     "name": "Run-Length Base Rate Gauge [BSL]",
     "file": "RunLength_Base_Rate_Gauge_BSL.md",
     "url": "https://www.tradingview.com/script/6Gk3N6S2-Run-Length-Base-Rate-Gauge-BSL/",
     "pine_id": "PUB;f9f2fefa7db94555a76906bb9ccd2b2d",
     "version": "1.0"
-  },
-  {
-    "name": "Rv-Div - Regular Divergence (Daily)",
-    "file": "RvDiv_Regular_Divergence_Daily.md",
-    "url": "https://www.tradingview.com/script/WMnrpv3h/",
-    "pine_id": "PUB;7564c920c8a54bcb8198130270a60983",
-    "version": "3.0"
   },
   {
     "name": "SAMS Early Morning Range - With Rumer Box",
@@ -8642,13 +8733,6 @@
     "file": "SHM_DualWMA_Momentum_Oscillator.md",
     "url": "https://www.tradingview.com/script/2dfGFrVX-SHM-Dual-WMA-Momentum-Oscillator/",
     "pine_id": "PUB;e4e54c05a6494ccfaaeeda8760b217ee",
-    "version": "1.0"
-  },
-  {
-    "name": "SHM Dual-WMA Momentum Oscillator",
-    "file": "SHM_DualWMA_Momentum_Oscillator_bvCXqWB7.md",
-    "url": "https://www.tradingview.com/script/bvCXqWB7-SHM-8-0-Dual-WMA-Momentum-Oscillator/",
-    "pine_id": "PUB;ed23cfcc5af0467abd3743bf98998968",
     "version": "1.0"
   },
   {
@@ -8771,6 +8855,13 @@
     "version": "3.0"
   },
   {
+    "name": "SPX Dealer MAP",
+    "file": "SPX_Dealer_MAP.md",
+    "url": "https://www.tradingview.com/script/zVFiQBiQ-INDEX-Dashboard-Round-Number-Magnet/",
+    "pine_id": "PUB;d9f62bac4a364dd4af590954985909a4",
+    "version": "1.0"
+  },
+  {
     "name": "SPY Position Helper v1",
     "file": "SPY_Position_Helper_v1.md",
     "url": "https://www.tradingview.com/script/AC5HkrwL-SPY-Position-Helper-v1/",
@@ -8820,11 +8911,18 @@
     "version": "1.0"
   },
   {
+    "name": "STP Flip",
+    "file": "STP_Flip.md",
+    "url": "https://www.tradingview.com/script/YVnhptce-STP-Flip-Anti-Whipsaw-Modified-Always-In-Overnight-Strategy/",
+    "pine_id": "PUB;5d3898e9e4604bd4955baee27d190719",
+    "version": "1.0"
+  },
+  {
     "name": "STP Top 10 Large Move Radar",
     "file": "STP_Top_10_Large_Move_Radar.md",
     "url": "https://www.tradingview.com/script/cegbgJXd-STP-Top-10-Trade-Opportunity-Scanner-Screener/",
     "pine_id": "PUB;b567366769e141e793039e9b20011119",
-    "version": "4.0"
+    "version": "5.0"
   },
   {
     "name": "STP Trade Idea Analysis",
@@ -8838,7 +8936,7 @@
     "file": "STRYK_MOMENTUM.md",
     "url": "https://www.tradingview.com/script/913LZp7V-STRYK-MOMENTUM/",
     "pine_id": "PUB;90ceb583408541eb8b7463d1e7a83094",
-    "version": "5.0"
+    "version": "6.0"
   },
   {
     "name": "SW_WickAvg2 - Wick Averages (One Box Per Bar)",
@@ -8855,10 +8953,10 @@
     "version": "8.0"
   },
   {
-    "name": "SachinRkGandhi India VIX Live",
-    "file": "SachinRkGandhi_India_VIX_Live.md",
-    "url": "https://www.tradingview.com/script/UlcXXN9x-SachinRkGandhi-India-VIX-Live/",
-    "pine_id": "PUB;008a53e8024249eebeeb835f8028db18",
+    "name": "SadashiTrading Gap Analyzer",
+    "file": "SadashiTrading_Gap_Analyzer.md",
+    "url": "https://www.tradingview.com/script/okVopjma-SadashiTrading-Gap-Analyzer/",
+    "pine_id": "PUB;0073ce43f0b4436898cf93d75096ba8c",
     "version": "1.0"
   },
   {
@@ -8887,13 +8985,6 @@
     "file": "Scalp_FVG_SMC_Mourad.md",
     "url": "https://www.tradingview.com/script/qS8UYoJs/",
     "pine_id": "PUB;8e69b2f7552444c8bddea370832178cb",
-    "version": "1.0"
-  },
-  {
-    "name": "Scalp Lite + CHoCH",
-    "file": "Scalp_Lite_CHoCH.md",
-    "url": "https://www.tradingview.com/script/NFJfISiw-Scalp-Lite-CHoCH/",
-    "pine_id": "PUB;948d95665e9b46feb705f990628e7d07",
     "version": "1.0"
   },
   {
@@ -8967,6 +9058,13 @@
     "version": "1.0"
   },
   {
+    "name": "Sequentially Filtered Moving Average MTF 3.2",
+    "file": "Sequentially_Filtered_Moving_Average_MTF_32.md",
+    "url": "https://www.tradingview.com/script/fdJ7mtY4-Sequentially-Filtered-Moving-Average-MTF-3-2/",
+    "pine_id": "PUB;7cb9dd6d62fd4734b035d3a57f2a5016",
+    "version": "1.0"
+  },
+  {
     "name": "Session Atlas · Quant / Flow",
     "file": "Session_Atlas_Quant_Flow.md",
     "url": "https://www.tradingview.com/script/OpANArMJ-DELTA-SIGMA-heatmap-Quant-Flow/",
@@ -9034,13 +9132,13 @@
     "file": "Session_Open_Line.md",
     "url": "https://www.tradingview.com/script/YECX6MR7/",
     "pine_id": "PUB;1fb79081339c4d07b23974027b1ad75f",
-    "version": "1.0"
+    "version": "2.0"
   },
   {
-    "name": "Session Sweep Concept",
-    "file": "Session_Sweep_Concept.md",
-    "url": "https://www.tradingview.com/script/KBPImUAs-Session-Sweep-Concept-Achira-Meegasthanne/",
-    "pine_id": "PUB;cad103d248fb421d9294790cd6e4f6aa",
+    "name": "Session Range & Volatility Monitor",
+    "file": "Session_Range_Volatility_Monitor.md",
+    "url": "https://www.tradingview.com/script/DbGQL9P9-Session-Range-Volatility-Monitor/",
+    "pine_id": "PUB;176c3742c9574f21be31597c2665f039",
     "version": "1.0"
   },
   {
@@ -9142,13 +9240,6 @@
     "version": "1.0"
   },
   {
-    "name": "Signal Pro 6.1",
-    "file": "Signal_Pro_61.md",
-    "url": "https://www.tradingview.com/script/TMCb1dcJ-Signal-Pro-6-1/",
-    "pine_id": "PUB;62f3cfbfd7694c38a9b4176c052a7a9c",
-    "version": "1.0"
-  },
-  {
     "name": "Signs of the Times [LucF]",
     "file": "Signs_of_the_Times_LucF.md",
     "url": "https://www.tradingview.com/script/ZKF0qji2-Signs-of-the-Times-LucF/",
@@ -9191,6 +9282,20 @@
     "version": "1.0"
   },
   {
+    "name": "Simple Stop Loss (Swing based with ATR protection)",
+    "file": "Simple_Stop_Loss_Swing_based_with_ATR_protection.md",
+    "url": "https://www.tradingview.com/script/KiF0PBLm-Simple-Swing-Stop-Loss-with-ATR-Buffer/",
+    "pine_id": "PUB;ce3762b08bff493ab52ebb042dca041b",
+    "version": "1.0"
+  },
+  {
+    "name": "Simple Support & Resistance (Multi-Timeframe filter)",
+    "file": "Simple_Support_Resistance_MultiTimeframe_filter.md",
+    "url": "https://www.tradingview.com/script/JfUvPW7f-Simple-Support-Resistance-Multi-Timeframe-filter/",
+    "pine_id": "PUB;079c0f5e0e434644ae65c14f08867885",
+    "version": "1.0"
+  },
+  {
     "name": "Simplified Percentile Clustering",
     "file": "Simplified_Percentile_Clustering.md",
     "url": "https://www.tradingview.com/script/mdGJq4j5-Simplified-Percentile-Clustering/",
@@ -9219,10 +9324,10 @@
     "version": "1.0"
   },
   {
-    "name": "Smart Gaussian Channel - Band & Breakout Statistics [Dots3Red]",
-    "file": "Smart_Gaussian_Channel_Band_Breakout_Statistics_Dots3Red.md",
-    "url": "https://www.tradingview.com/script/iINHzWlt-Smart-Gaussian-Channel-Band-Breakout-Statistics-Dots3Red/",
-    "pine_id": "PUB;b2e12625cace42aab85588525e4002c0",
+    "name": "Smart Money Auto Analysis",
+    "file": "Smart_Money_Auto_Analysis.md",
+    "url": "https://www.tradingview.com/script/ftibxlCG-Smart-Money-Auto-Analysis/",
+    "pine_id": "PUB;020505a38bf0403389584ef314aa8adc",
     "version": "1.0"
   },
   {
@@ -9366,13 +9471,6 @@
     "version": "2.0"
   },
   {
-    "name": "Stablecoin Dominance Sniper v1 [Alex Ko]",
-    "file": "Stablecoin_Dominance_Sniper_v1_Alex_Ko.md",
-    "url": "https://www.tradingview.com/script/396nrKsn-stablecoin-dominance-sniper-v1-alex-ko/",
-    "pine_id": "PUB;ae2543c8d2f0449aa4b69237eb436c92",
-    "version": "2.0"
-  },
-  {
     "name": "Stacked EMA Alerts",
     "file": "Stacked_EMA_Alerts.md",
     "url": "https://www.tradingview.com/script/8azhgEYV-Stacked-EMA-Alerts/",
@@ -9471,13 +9569,6 @@
     "version": "1.0"
   },
   {
-    "name": "Stockbee Anticipation Setup",
-    "file": "Stockbee_Anticipation_Setup.md",
-    "url": "https://www.tradingview.com/script/CbsQhoDn-Stockbee-Anticipation-Setup/",
-    "pine_id": "PUB;07567bd7803d424a8267b26dc642469a",
-    "version": "1.0"
-  },
-  {
     "name": "Stop Loss Clustering (Breakouts) [Kioseff Trading]",
     "file": "Stop_Loss_Clustering_Breakouts_Kioseff_Trading.md",
     "url": "https://www.tradingview.com/script/CJX3k6l2-Stop-Loss-Cascades-Breakouts-Kioseff-Trading/",
@@ -9548,6 +9639,13 @@
     "version": "1.0"
   },
   {
+    "name": "Strong Contrarian Zones",
+    "file": "Strong_Contrarian_Zones.md",
+    "url": "https://www.tradingview.com/script/I6gfgjP6-Strong-Contrarian-Zones-ProjectSyndicate/",
+    "pine_id": "PUB;a2a130a78c014c7fbdba0434e7ccda8d",
+    "version": "1.0"
+  },
+  {
     "name": "Strong EMA Dev + 13/48 Cross Signals (Long & Short)",
     "file": "Strong_EMA_Dev_1348_Cross_Signals_Long_Short.md",
     "url": "https://www.tradingview.com/script/oTaLh6V6-Strong-EMA-Dev-13-48-Cross-Signals-Long-Short/",
@@ -9562,10 +9660,24 @@
     "version": "1.0"
   },
   {
+    "name": "Strong H4 Gold Reach Matrix",
+    "file": "Strong_H4_Gold_Reach_Matrix.md",
+    "url": "https://www.tradingview.com/script/QoRqOoss-Strong-H4-Gold-Reach-Matrix-ProjectSyndicate/",
+    "pine_id": "PUB;4791ff08ddc044369182c6420a0acb94",
+    "version": "1.0"
+  },
+  {
     "name": "Structure-Anchored VWAP [WillyAlgoTrader]",
     "file": "StructureAnchored_VWAP_WillyAlgoTrader.md",
     "url": "https://www.tradingview.com/script/E31jKiTS-Structure-Anchored-VWAP-WillyAlgoTrader/",
     "pine_id": "PUB;aea6e138cb7b4bd4b5d323368027db9c",
+    "version": "1.0"
+  },
+  {
+    "name": "Structure Break Volume Profile",
+    "file": "Structure_Break_Volume_Profile.md",
+    "url": "https://www.tradingview.com/script/IRVjfwl7-Structure-Break-Volume-Profile/",
+    "pine_id": "PUB;caa9d840a8de48419e9d189ea8f981db",
     "version": "1.0"
   },
   {
@@ -9653,6 +9765,13 @@
     "version": "6.0"
   },
   {
+    "name": "Support Resistance Confluence Zones [AxeAlgo]",
+    "file": "Support_Resistance_Confluence_Zones_AxeAlgo.md",
+    "url": "https://www.tradingview.com/script/ZMXrP8cV-Support-Resistance-Confluence-Zones-AxeAlgo/",
+    "pine_id": "PUB;c75962b12c774e2aa491cd2142b0e7bf",
+    "version": "3.0"
+  },
+  {
     "name": "Support Resistance MTF",
     "file": "Support_Resistance_MTF.md",
     "url": "https://www.tradingview.com/script/E9l1xAQd-Support-Resistance-MTF/",
@@ -9667,11 +9786,11 @@
     "version": "1.0"
   },
   {
-    "name": "Sweep-Reclaim Dashboard Entry Exit SL",
-    "file": "SweepReclaim_Dashboard_Entry_Exit_SL.md",
-    "url": "https://www.tradingview.com/script/mYbTpDQ1-Sweep-Reclaim-Dashboard-Entry-Alert/",
-    "pine_id": "PUB;3800d0eae7c9431a81977b62617462a7",
-    "version": "2.0"
+    "name": "Suspension Block Finder",
+    "file": "Suspension_Block_Finder.md",
+    "url": "https://www.tradingview.com/script/RK967qrK-Suspension-Block-Finder/",
+    "pine_id": "PUB;00449c5ba1434caeb8fe18726c495fac",
+    "version": "1.0"
   },
   {
     "name": "Sweep IFVG (M1D)",
@@ -9748,7 +9867,7 @@
     "file": "Symbol_vs_NQ_BMT.md",
     "url": "https://www.tradingview.com/script/EIgE2f5Q-Symbol-vs-NQ-BMT/",
     "pine_id": "PUB;85114d15d7694a0ea3e3b66f567cbbc4",
-    "version": "2.0"
+    "version": "3.0"
   },
   {
     "name": "Sync Frame [Kioseff Trading]",
@@ -9996,6 +10115,13 @@
     "version": "2.0"
   },
   {
+    "name": "TTW",
+    "file": "TTW.md",
+    "url": "https://www.tradingview.com/script/KLlqFdYp-Day-Session-Separator-for-TTW/",
+    "pine_id": "PUB;6ab0a1d1233b4eebbf11479bd76d214c",
+    "version": "1.0"
+  },
+  {
     "name": "TTrades Daily Bias [TFO]",
     "file": "TTrades_Daily_Bias_TFO.md",
     "url": "https://www.tradingview.com/script/xdwgV3Fx-TTrades-Daily-Bias-TFO/",
@@ -10031,10 +10157,10 @@
     "version": "1.0"
   },
   {
-    "name": "Taught to Trade - Configurable Stochastics",
-    "file": "Taught_to_Trade_Configurable_Stochastics.md",
-    "url": "https://www.tradingview.com/script/EikJr97k-Taught-to-Trade-Configurable-Stochastics/",
-    "pine_id": "PUB;ab3ec322e9eb4330a8f3231d53323702",
+    "name": "Taught to Trade - Cost Hurdle",
+    "file": "Taught_to_Trade_Cost_Hurdle.md",
+    "url": "https://www.tradingview.com/script/yfw8wzma-Taught-to-Trade-Cost-Hurdle/",
+    "pine_id": "PUB;d52b2e08e9da4b7e9a9b6273b12a0c1f",
     "version": "1.0"
   },
   {
@@ -10042,13 +10168,6 @@
     "file": "Taught_to_Trade_Regime_Tercile_Dashboard.md",
     "url": "https://www.tradingview.com/script/dsPXgFSZ-Taught-to-Trade-Regime-Tercile-Dashboard/",
     "pine_id": "PUB;e07d3f00059f42c1b90ad6a265a9cc1c",
-    "version": "1.0"
-  },
-  {
-    "name": "Taught to Trade — Volatility Scanner (ATR%)",
-    "file": "Taught_to_Trade_Volatility_Scanner_ATR.md",
-    "url": "https://www.tradingview.com/script/oSkPJDdQ-Taught-to-Trade-Volatility-Scanner-ATR/",
-    "pine_id": "PUB;a499f89c6def4d58939735f934cc0c2b",
     "version": "1.0"
   },
   {
@@ -10094,13 +10213,6 @@
     "version": "2.0"
   },
   {
-    "name": "Terminator Session Extremes",
-    "file": "Terminator_Session_Extremes.md",
-    "url": "https://www.tradingview.com/script/M7D0TNnl-Terminator-Session-Extremes/",
-    "pine_id": "PUB;5d76fe5eea284e908cf7e8230c0cd5da",
-    "version": "1.0"
-  },
-  {
     "name": "Tetris with Auto-Play",
     "file": "Tetris_with_AutoPlay.md",
     "url": "https://www.tradingview.com/script/vau4Jd2L-Tetris-with-Auto-Play/",
@@ -10120,13 +10232,6 @@
     "url": "https://www.tradingview.com/script/O6LCkLTf-Textmate-Language-for-Pine-Script-v5-2023-05/",
     "pine_id": "PUB;dc7f26229fc64177b911f4d5e91ac60f",
     "version": "8.0"
-  },
-  {
-    "name": "TheStratGrammar",
-    "file": "TheStratGrammar.md",
-    "url": "https://www.tradingview.com/script/fyVsfy8l-TheStrat-Grammar-Objective-Bar-State-Definitions-and-Notation/",
-    "pine_id": "PUB;c30011398ebd4715a1a7d908a2ddcc4c",
-    "version": "1.0"
   },
   {
     "name": "TheStrat Command Center v2.0",
@@ -10266,7 +10371,7 @@
     "file": "Tidemarks_Session_Levels_VWAP.md",
     "url": "https://www.tradingview.com/script/wKqPzNwi-Tidemarks-Session-Levels-VWAP/",
     "pine_id": "PUB;c02103206f564ccb8cd77a63fec10d25",
-    "version": "3.0"
+    "version": "4.0"
   },
   {
     "name": "Tien Sanh - ABX V14 UNIVERSAL",
@@ -10288,6 +10393,13 @@
     "url": "https://www.tradingview.com/script/IiPJ0Kjz-TimeSeriesBenchmarkMeasures/",
     "pine_id": "PUB;5bcdf31174794207bae5403e60501c8e",
     "version": "1.0"
+  },
+  {
+    "name": "Time Clusters - Range Projection (Fixed Capture)",
+    "file": "Time_Clusters_Range_Projection_Fixed_Capture.md",
+    "url": "https://www.tradingview.com/script/uAptT5UY-Time-Clusters-Range-Projection-Fixed-Capture/",
+    "pine_id": "PUB;bf7c2d13391c414cbef742ee0f986d85",
+    "version": "2.0"
   },
   {
     "name": "Time Range Statistics",
@@ -10353,13 +10465,6 @@
     "version": "1.0"
   },
   {
-    "name": "Tokir Solkar quarter theory",
-    "file": "Tokir_Solkar_quarter_theory.md",
-    "url": "https://www.tradingview.com/script/QPyTONhK-quarter-theory-shortcut/",
-    "pine_id": "PUB;28410016a61b4db3824b4da7e3237114",
-    "version": "1.0"
-  },
-  {
     "name": "Top Strategy Finder [SpokoStocks]",
     "file": "Top_Strategy_Finder_SpokoStocks.md",
     "url": "https://www.tradingview.com/script/hGDbnWBw-Top-Strategy-Finder-SpokoStocks/",
@@ -10371,6 +10476,13 @@
     "file": "Tops_Bottoms_Time_of_Day_Report.md",
     "url": "https://www.tradingview.com/script/ucux0RJL-Tops-Bottoms-Time-of-Day-Report/",
     "pine_id": "PUB;b89c52b8f15749168f2d09bdbaee4b60",
+    "version": "2.0"
+  },
+  {
+    "name": "TradeBee Info Labels",
+    "file": "TradeBee_Info_Labels.md",
+    "url": "https://www.tradingview.com/script/zhM3zC7Y-TradeBee-Info-Labels/",
+    "pine_id": "PUB;a98e694fa5f646d690995e6c65ea5b4c",
     "version": "2.0"
   },
   {
@@ -10400,6 +10512,13 @@
     "url": "https://www.tradingview.com/script/IJx0gY6e-Trade-Management/",
     "pine_id": "PUB;83ed736bf38c4adabe2c20a5436b10ee",
     "version": "2.0"
+  },
+  {
+    "name": "Trade Prime - Fluid Trend Indicator",
+    "file": "Trade_Prime_Fluid_Trend_Indicator.md",
+    "url": "https://www.tradingview.com/script/vYtaQSOp-Trade-Prime-Fluid-Trend-Indicator/",
+    "pine_id": "PUB;0e29d160970f41d6b5b8b109326011dc",
+    "version": "1.0"
   },
   {
     "name": "TradingFlow: Market Cycle MA (MCMA) v1.3.0",
@@ -10528,13 +10647,6 @@
     "version": "2.0"
   },
   {
-    "name": "Trend Conviction Divergence [ZynAlgo]",
-    "file": "Trend_Conviction_Divergence_ZynAlgo.md",
-    "url": "https://www.tradingview.com/script/TKB5vLDl-Trend-Conviction-Divergence-ZynAlgo/",
-    "pine_id": "PUB;bd55afe6c256463bb3e6918abc6c3c12",
-    "version": "1.0"
-  },
-  {
     "name": "Trend Correlation Heatmap",
     "file": "Trend_Correlation_Heatmap.md",
     "url": "https://www.tradingview.com/script/96Cld5iS-Trend-Correlation-Heatmap/",
@@ -10577,13 +10689,6 @@
     "version": "2.0"
   },
   {
-    "name": "Trend Following SuperSmoother - Accumulation Zones [JW]:",
-    "file": "Trend_Following_SuperSmoother_Accumulation_Zones_JW.md",
-    "url": "https://www.tradingview.com/script/TqSghoTD-Trend-Following-SuperSmoother-Accumulation-Zones-JW/",
-    "pine_id": "PUB;718c53e3607243c193905949e57ca43c",
-    "version": "2.0"
-  },
-  {
     "name": "Trend Impulse Channels (Zeiierman)",
     "file": "Trend_Impulse_Channels_Zeiierman.md",
     "url": "https://www.tradingview.com/script/d3IaFa7c-Trend-Impulse-Channels-Zeiierman/",
@@ -10596,6 +10701,13 @@
     "url": "https://www.tradingview.com/script/GsRqNT8Q-Trend-Line-Methods-TLM/",
     "pine_id": "PUB;be7bb91b135a45fa81ec6a7b4fa4ac4d",
     "version": "2.0"
+  },
+  {
+    "name": "Trend & Pullback %",
+    "file": "Trend_Pullback.md",
+    "url": "https://www.tradingview.com/script/c918gAXa-Trend-Pullback/",
+    "pine_id": "PUB;b38518157df944568497ce2c402ae60e",
+    "version": "1.0"
   },
   {
     "name": "Trend Pullback Guard",
@@ -10626,13 +10738,6 @@
     "version": "1.0"
   },
   {
-    "name": "Trend Signal A (v2.3) - 1D Trend + 1H Cross",
-    "file": "Trend_Signal_A_v23_1D_Trend_1H_Cross.md",
-    "url": "https://www.tradingview.com/script/y8NNCFbK-Trend-Signal-A-v2-3-1D-Trend-1H-Cross/",
-    "pine_id": "PUB;29909e0f19dc40c5848422990d2260dc",
-    "version": "1.0"
-  },
-  {
     "name": "Trend Survival Matrix",
     "file": "Trend_Survival_Matrix.md",
     "url": "https://www.tradingview.com/script/5D9CDnIR-Trend-Survival-Matrix/",
@@ -10645,13 +10750,6 @@
     "url": "https://www.tradingview.com/script/tnQ7FvvW-Trend-Target-Ribbon-BOSWaves/",
     "pine_id": "PUB;9ba1c817ad4f49a1870aaf877d6836de",
     "version": "1.0"
-  },
-  {
-    "name": "Trend Template Radar (Free)",
-    "file": "Trend_Template_Radar_Free.md",
-    "url": "https://www.tradingview.com/script/IlPWFfCB/",
-    "pine_id": "PUB;139825e3a36f4b859eba646d6ac3922d",
-    "version": "3.0"
   },
   {
     "name": "Trend Type Indicator by BobRivera990",
@@ -10686,6 +10784,13 @@
     "file": "Trendline_Indicator_with_Dynamic_Breakpoint_Tracking.md",
     "url": "https://www.tradingview.com/script/XTkE2MMz-Trendline-Indicator-with-Dynamic-Breakpoint-Tracking/",
     "pine_id": "PUB;a6851267a7e54d29ad1dec20e56e16ae",
+    "version": "1.0"
+  },
+  {
+    "name": "Trendline X-RAY — MTF Wedges & Channels",
+    "file": "Trendline_XRAY_MTF_Wedges_Channels.md",
+    "url": "https://www.tradingview.com/script/mV9GYfp1-Trendline-X-RAY/",
+    "pine_id": "PUB;29f1ec476cf0478fb395467074035be1",
     "version": "1.0"
   },
   {
@@ -10724,17 +10829,10 @@
     "version": "1.0"
   },
   {
-    "name": "Triple VWAP - Session Weekly Monthly",
-    "file": "Triple_VWAP_Session_Weekly_Monthly.md",
-    "url": "https://www.tradingview.com/script/dNHPV0gX-Triple-VWAP-Session-Weekly-Monthly/",
-    "pine_id": "PUB;c67a231e502d4facbab8217994529119",
-    "version": "1.0"
-  },
-  {
-    "name": "Trishul",
-    "file": "Trishul.md",
-    "url": "https://www.tradingview.com/script/lgNhcbwD-Three-Drives-Pivot-Scanner-Trishul/",
-    "pine_id": "PUB;d034bf20a47742729dee9a3aee198d95",
+    "name": "Triple EMA + MTF Supertrend Confluence",
+    "file": "Triple_EMA_MTF_Supertrend_Confluence.md",
+    "url": "https://www.tradingview.com/script/GBBSlsu5-Triple-EMA-MTF-Supertrend-Confluence/",
+    "pine_id": "PUB;3f431b50a3c64fbb9713f8853e5043fa",
     "version": "1.0"
   },
   {
@@ -10885,13 +10983,6 @@
     "version": "1.0"
   },
   {
-    "name": "VIX Seasonal Analog Composite",
-    "file": "VIX_Seasonal_Analog_Composite.md",
-    "url": "https://www.tradingview.com/script/tE4gb7rF-VIX-Seasonal-Analog-Composite/",
-    "pine_id": "PUB;ac0a6ca10e2243f49ade878210713d98",
-    "version": "1.0"
-  },
-  {
     "name": "VIX Term Structure",
     "file": "VIX_Term_Structure.md",
     "url": "https://www.tradingview.com/script/3BQ5rtnq-VIX-Term-Structure/",
@@ -10927,6 +11018,13 @@
     "version": "1.0"
   },
   {
+    "name": "VT VWAP Suite [ValieTrades]",
+    "file": "VT_VWAP_Suite_ValieTrades.md",
+    "url": "https://www.tradingview.com/script/0Bimzlvt/",
+    "pine_id": "PUB;879edfe67770473790a2318ab44d9b48",
+    "version": "1.0"
+  },
+  {
     "name": "VWAP AI - Statistical Bands & Touch Stats [Dots3Red]",
     "file": "VWAP_AI_Statistical_Bands_Touch_Stats_Dots3Red.md",
     "url": "https://www.tradingview.com/script/Vs7khoJl-VWAP-AI-Statistical-Bands-Touch-Stats-Dots3Red/",
@@ -10945,6 +11043,13 @@
     "file": "VWAP_Delta.md",
     "url": "https://www.tradingview.com/script/94mLUhIV-VWAP-Delta/",
     "pine_id": "PUB;c5d40905fdf74ef9bcc8e91d9922a30f",
+    "version": "1.0"
+  },
+  {
+    "name": "VWAP + EMAs + Levels (ATR / Premarket / Yesterday)",
+    "file": "VWAP_EMAs_Levels_ATR_Premarket_Yesterday.md",
+    "url": "https://www.tradingview.com/script/BHKiSgKP-VWAP-EMAs-Levels-ATR-Premarket-Yesterday/",
+    "pine_id": "PUB;cc7be8c483e64dd6ab3913d57d7067f8",
     "version": "1.0"
   },
   {
@@ -10973,7 +11078,7 @@
     "file": "VWAP_VWMA_Dashboard.md",
     "url": "https://www.tradingview.com/script/dCThbLyv/",
     "pine_id": "PUB;affd6051fb654f43a3f4e9d70ca1397f",
-    "version": "4.0"
+    "version": "5.0"
   },
   {
     "name": "VWAP Z-Score Oscillator",
@@ -10988,6 +11093,20 @@
     "url": "https://www.tradingview.com/script/vU3e9uxG-Anchored-VWAP-w-4-StDev-Pip-ATR-Bands/",
     "pine_id": "PUB;abf4e1ee0cc043be838e1c609d5fe379",
     "version": "2.0"
+  },
+  {
+    "name": "Valid Highs & Lows (Structure Break)",
+    "file": "Valid_Highs_Lows_Structure_Break.md",
+    "url": "https://www.tradingview.com/script/G7pH1aM2/",
+    "pine_id": "PUB;978b1148dd5e40ab8416dd02821dd246",
+    "version": "1.0"
+  },
+  {
+    "name": "VantaGate Reversal Map v1.0",
+    "file": "VantaGate_Reversal_Map_v10.md",
+    "url": "https://www.tradingview.com/script/dd0RxHTI-VantaGate-Reversal-Map-v1-0/",
+    "pine_id": "PUB;859f7725808f4d20ad1c2b1a0540a148",
+    "version": "1.0"
   },
   {
     "name": "Variance-Weighted Regression Trend [BackQuant]",
@@ -11030,6 +11149,13 @@
     "url": "https://www.tradingview.com/script/wXa4RrdZ-Session-Range-Expansion/",
     "pine_id": "PUB;eb9f348c28a041369afb95210457cfbf",
     "version": "1.0"
+  },
+  {
+    "name": "Vertical Lines & Range High/Low (07:00-09:00)",
+    "file": "Vertical_Lines_Range_HighLow_07000900.md",
+    "url": "https://www.tradingview.com/script/1QoCWOuE-P2F-Pre-Market-High-and-Low/",
+    "pine_id": "PUB;7d4104f54e5d4a66a53d4645f6160552",
+    "version": "2.0"
   },
   {
     "name": "Vicious Mortgage Rates V1.0",
@@ -11277,13 +11403,6 @@
     "version": "9.0"
   },
   {
-    "name": "Volume Evidence Dashboard v2",
-    "file": "Volume_Evidence_Dashboard_v2.md",
-    "url": "https://www.tradingview.com/script/oizFDff1-Volume-accumulation-distribution-dashboard/",
-    "pine_id": "PUB;42c59f1f6eaf4eb9bb2a13788830c8d3",
-    "version": "2.0"
-  },
-  {
     "name": "Volume Footprint [LuxAlgo]",
     "file": "Volume_Footprint_LuxAlgo.md",
     "url": "https://www.tradingview.com/script/cdU6E9rm-Volume-Footprint-LuxAlgo/",
@@ -11431,6 +11550,13 @@
     "version": "5.0"
   },
   {
+    "name": "Volume Spike Radar [AxeAlgo]",
+    "file": "Volume_Spike_Radar_AxeAlgo.md",
+    "url": "https://www.tradingview.com/script/pb8eP2w6-Volume-Spike-Radar-AxeAlgo/",
+    "pine_id": "PUB;3ee11b3cfafa4473a25e940188fbdcf0",
+    "version": "2.0"
+  },
+  {
     "name": "Volume Spread Analysis IQ [TradingIQ]",
     "file": "Volume_Spread_Analysis_IQ_TradingIQ.md",
     "url": "https://www.tradingview.com/script/9MpC4ifP-Volume-Spread-Analysis-IQ-TradingIQ/",
@@ -11508,6 +11634,13 @@
     "version": "3.0"
   },
   {
+    "name": "Vortex Trend Crossover [RC Tools]",
+    "file": "Vortex_Trend_Crossover_RC_Tools.md",
+    "url": "https://www.tradingview.com/script/eKppSy5c-Vortex-Trend-Crossover-RC-Tools/",
+    "pine_id": "PUB;9d15a7fa274a4ad9a5a14556bc5df3de",
+    "version": "1.0"
+  },
+  {
     "name": "Voss Predictor (A Peek Into the Future) - Dr. John Ehlers",
     "file": "Voss_Predictor_A_Peek_Into_the_Future_Dr_John_Ehlers.md",
     "url": "https://www.tradingview.com/script/ekkb1vlg-Voss-Predictor-A-Peek-Into-the-Future-Dr-John-Ehlers/",
@@ -11571,6 +11704,13 @@
     "version": "1.0"
   },
   {
+    "name": "Weekly Hammer Reversal Scanner V2",
+    "file": "Weekly_Hammer_Reversal_Scanner_V2.md",
+    "url": "https://www.tradingview.com/script/GeFCtSmX-Weekly-Hammer-Reversal-Scanner-V2/",
+    "pine_id": "PUB;b3dba72cd45d4471b50b910a7d43d615",
+    "version": "1.0"
+  },
+  {
     "name": "Weekly Midnight Lines",
     "file": "Weekly_Midnight_Lines.md",
     "url": "https://www.tradingview.com/script/4OFT6hdC-Weekly-Midnight-Lines/",
@@ -11604,6 +11744,13 @@
     "url": "https://www.tradingview.com/script/cWm8UcfQ-Whale-Liquidity-and-Absorption-Profile-AlgoAlpha/",
     "pine_id": "PUB;f799214ad7f14c1ba35f5ce04ab7c640",
     "version": "2.0"
+  },
+  {
+    "name": "Wick Hunter",
+    "file": "Wick_Hunter.md",
+    "url": "https://www.tradingview.com/script/G2qnEffj-Wick-Hunter/",
+    "pine_id": "PUB;2e6bc65e84d54f2dac26b81435cef0a9",
+    "version": "3.0"
   },
   {
     "name": "Wick Sequence Breakout",
@@ -11676,13 +11823,6 @@
     "version": "1.0"
   },
   {
-    "name": "XAUUSD Psychological Levels",
-    "file": "XAUUSD_Psychological_Levels.md",
-    "url": "https://www.tradingview.com/script/cx9Y0Jd7/",
-    "pine_id": "PUB;ae504ae481cd424fa0a087d04907307d",
-    "version": "1.0"
-  },
-  {
     "name": "XGBoostMini",
     "file": "XGBoostMini.md",
     "url": "https://www.tradingview.com/script/SQ2QIdN6-XGBoostMini/",
@@ -11694,14 +11834,14 @@
     "file": "XGBoost_Mini_Strategy_The_Quant_Science.md",
     "url": "https://www.tradingview.com/script/69ZFfJ5L-XGBoost-Mini-Strategy-The-Quant-Science/",
     "pine_id": "PUB;ff7254d98ef349e795fbc38e0ebce119",
-    "version": "1.0"
+    "version": "2.0"
   },
   {
     "name": "XZ_AE_Reference_Content",
     "file": "XZAEReferenceContent.md",
     "url": "https://www.tradingview.com/script/Fftvo16d-XZ-AE-Reference-Content/",
     "pine_id": "PUB;63bfe5330edf4a258e3f13a9e7130a29",
-    "version": "12.0"
+    "version": "17.0"
   },
   {
     "name": "XZ_Core_Utilities",
@@ -11725,53 +11865,11 @@
     "version": "3.0"
   },
   {
-    "name": "XZ_SD_Alerts",
-    "file": "XZSDAlerts.md",
-    "url": "https://www.tradingview.com/script/9MCdylu0-XZ-SD-Alerts/",
-    "pine_id": "PUB;54a6853574294794a051c8cbd81a7417",
-    "version": "2.0"
-  },
-  {
-    "name": "XZ_SD_Research",
-    "file": "XZSDResearch.md",
-    "url": "https://www.tradingview.com/script/vpYBNOS7-XZ-S-D-Research/",
-    "pine_id": "PUB;4e63b898904b4f719b9d8afcb46ae2a2",
-    "version": "7.0"
-  },
-  {
-    "name": "XZ_SD_Research_Dashboard",
-    "file": "XZSDResearchDashboard.md",
-    "url": "https://www.tradingview.com/script/ybs20Klm-XZ-SD-Research-Dashboard/",
-    "pine_id": "PUB;047244bfe4ac49ddb7c350947c968275",
-    "version": "6.0"
-  },
-  {
-    "name": "XZ_SD_Session_Context",
-    "file": "XZSDSessionContext.md",
-    "url": "https://www.tradingview.com/script/ZSbwbHSw-XZ-SD-Session-Context/",
-    "pine_id": "PUB;ed77eed1de29439e85d00b2d3212966b",
-    "version": "2.0"
-  },
-  {
-    "name": "XZ_SD_UI",
-    "file": "XZSDUI.md",
-    "url": "https://www.tradingview.com/script/RP9J3AGU-XZ-SD-UI/",
-    "pine_id": "PUB;d8c1796453e2487e8efbc794e8eca0b9",
-    "version": "8.0"
-  },
-  {
-    "name": "XZ_Session_Authority",
-    "file": "XZSessionAuthority.md",
-    "url": "https://www.tradingview.com/script/6QkVzyv5-XZ-Session-Core/",
-    "pine_id": "PUB;df993a28207244a0887874c749ebeeea",
-    "version": "4.0"
-  },
-  {
     "name": "XZ_Table_Primitives",
     "file": "XZTablePrimitives.md",
     "url": "https://www.tradingview.com/script/592r4vCs-XZ-Table-Primitives/",
     "pine_id": "PUB;ec18f9439b25436aada937e94156dc38",
-    "version": "2.0"
+    "version": "3.0"
   },
   {
     "name": "XauLabs — BOS / CHoCH",
@@ -11786,20 +11884,6 @@
     "url": "https://www.tradingview.com/script/iiNI8Ml2-Weighted-Harrell-Davis-Quantile-Estimator-with-AbsoluteDeviation/",
     "pine_id": "PUB;9d1a51151a42494c88a5ed46d68a33e5",
     "version": "3.0"
-  },
-  {
-    "name": "YH / YL / YC (Live)",
-    "file": "YH_YL_YC_Live.md",
-    "url": "https://www.tradingview.com/script/1D9tDBHa-YH-YL-YC-Live-Improved/",
-    "pine_id": "PUB;3084e10d49bd4a46967cd9c723d94bb1",
-    "version": "1.0"
-  },
-  {
-    "name": "Yearly & January High/Low + Midpoints",
-    "file": "Yearly_January_HighLow_Midpoints.md",
-    "url": "https://www.tradingview.com/script/FcIErkXf-Yearly-January-High-Low-Midpoints/",
-    "pine_id": "PUB;733829186ea645c9b6a111933497665c",
-    "version": "1.0"
   },
   {
     "name": "Yelober - Sector Rotation Detector",
@@ -11862,7 +11946,7 @@
     "file": "Zebra_Grid_Time_Verticals.md",
     "url": "https://www.tradingview.com/script/Xw0EWmsU-Zebra-Grid-Time-Verticals/",
     "pine_id": "PUB;bbe5dd1ca11f4d5ba16096e98fbe49b7",
-    "version": "1.0"
+    "version": "2.0"
   },
   {
     "name": "Zeiierman Bands (Zeiierman)",
@@ -11961,6 +12045,13 @@
     "url": "https://www.tradingview.com/script/umYGvOiu-ZoneKit/",
     "pine_id": "PUB;87bb22ce37794c0aac7530ec30466ddd",
     "version": "3.0"
+  },
+  {
+    "name": "Сalculation a position size based on risk",
+    "file": "alculation_a_position_size_based_on_risk.md",
+    "url": "https://www.tradingview.com/script/hoCPm5UY-%D0%A1alculation-a-position-size-based-on-risk/",
+    "pine_id": "PUB;efEjn1YmejfPoak2mE1CDEA57Kp8BHlC",
+    "version": "1.0"
   },
   {
     "name": "analytics_tables",
@@ -12082,13 +12173,6 @@
     "version": "1.0"
   },
   {
-    "name": "iNaka Market Structure",
-    "file": "iNaka_Market_Structure.md",
-    "url": "https://www.tradingview.com/script/CGHdUL59-iNaka-Market-Structure/",
-    "pine_id": "PUB;06bbf309f86848d2907073b45543e3f2",
-    "version": "1.0"
-  },
-  {
     "name": "imlib",
     "file": "imlib.md",
     "url": "https://www.tradingview.com/script/7MP89RMJ-imlib/",
@@ -12110,39 +12194,11 @@
     "version": "1.0"
   },
   {
-    "name": "k-NN Lorentzian Supervised Learning [The Quant Science]",
-    "file": "kNN_Lorentzian_Supervised_Learning_The_Quant_Science.md",
-    "url": "https://www.tradingview.com/script/d6fBXXZa-k-NN-Lorentzian-Supervised-Learning-The-Quant-Science/",
-    "pine_id": "PUB;550bdca3f6b846b29eab3d738c616472",
-    "version": "2.0"
-  },
-  {
     "name": "mbedaiwi — Market Structure & Price Action [v5.4]",
     "file": "mbedaiwi_Market_Structure_Price_Action_v54.md",
     "url": "https://www.tradingview.com/script/3Kr8y3IN-Mbedaiwi-Market-Structure-and-Price-Action/",
     "pine_id": "PUB;be798b49b5df4d1aaba172c497dd5db3",
     "version": "1.0"
-  },
-  {
-    "name": "ml_calib",
-    "file": "mlcalib.md",
-    "url": "https://www.tradingview.com/script/XyQekeKp-ml-calib/",
-    "pine_id": "PUB;9d9315166b064e6ea576cd8e417e2dbb",
-    "version": "2.0"
-  },
-  {
-    "name": "ml_dsp",
-    "file": "mldsp.md",
-    "url": "https://www.tradingview.com/script/dVg5yadr-ml-dsp-Ehlers-DSP-smoothing-toolkit/",
-    "pine_id": "PUB;bef5c7c649344d99a40d74875bcc531d",
-    "version": "3.0"
-  },
-  {
-    "name": "ml_flow",
-    "file": "mlflow.md",
-    "url": "https://www.tradingview.com/script/9PqnB9Zp-ml-flow/",
-    "pine_id": "PUB;8ec2673cc72b47b1ae2bde97f419e880",
-    "version": "2.0"
   },
   {
     "name": "ml_india",
@@ -12157,27 +12213,6 @@
     "url": "https://www.tradingview.com/script/guYsgptu-ml-knn/",
     "pine_id": "PUB;3641f494fdee416b8d830a1f163c1dd1",
     "version": "1.0"
-  },
-  {
-    "name": "ml_robuststats",
-    "file": "mlrobuststats.md",
-    "url": "https://www.tradingview.com/script/Vas4I7IB-ml-robuststats/",
-    "pine_id": "PUB;6f65b2d6c6644abf858b1c23e2bf268c",
-    "version": "3.0"
-  },
-  {
-    "name": "ml_session",
-    "file": "mlsession.md",
-    "url": "https://www.tradingview.com/script/YmdSzuIx-ml-session/",
-    "pine_id": "PUB;49bec9ab499e4e1f853de5a27b3bbb29",
-    "version": "2.0"
-  },
-  {
-    "name": "ml_vsa",
-    "file": "mlvsa.md",
-    "url": "https://www.tradingview.com/script/HXOgXfMr-ml-vsa/",
-    "pine_id": "PUB;648d4ea6b0d8402cabbfc5ecd1182146",
-    "version": "2.0"
   },
   {
     "name": "ml_weights",

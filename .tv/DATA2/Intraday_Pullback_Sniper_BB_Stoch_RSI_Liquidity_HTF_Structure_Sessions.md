@@ -1,5 +1,5 @@
 <!-- tradingview-pine-id: PUB;0c552f5be8464a4f98a86c5121077b4a -->
-<!-- tradingview-pine-version: 3.0 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Intraday Pullback Sniper (BB, Stoch RSI, Liquidity, HTF, Structure, Sessions)
 
@@ -160,7 +160,7 @@ g0 = "0 · Read me first"
 note1 = input.string("Put the chart on 5 minutes", "Chart timeframe", options = ["Put the chart on 5 minutes"], group = g0, tooltip = "The chart MUST run on the Setup Timeframe set below, which is 5 minutes by default.\n\nBollinger Bands, Stoch RSI and the setup detection are calculated on the chart timeframe. The entry structure is pulled from real lower-timeframe candles inside each chart candle, and the bias is pulled from above, so you see all three levels at once without switching charts.\n\nOther combinations are fine as long as you keep the rule: chart = setup timeframe, entry timeframe below it. For example a 15m chart with a 1H bias and 5m entry structure.")
 note2 = input.string("Signal only, no trade management", "Scope", options = ["Signal only, no trade management"], group = g0, tooltip = "This indicator marks setups and entry signals. It deliberately does not draw stops, targets or risk-reward levels, and it does not simulate a position.\n\nSignals appear at the close of a chart candle, never intrabar. That is what keeps them free of repainting.\n\nThe script itself sits in its own pane below the chart, which is where the Stoch RSI is plotted. Everything that belongs to price is drawn onto the chart from there. One consequence is worth knowing: TradingView ties a table to the pane its script runs in, so the status table appears in the lower pane, not on the chart. Drag the divider between the two panes if it needs more room.")
 
-note3 = input.string("What the labels on the chart mean", "Glossary", options = ["What the labels on the chart mean"], group = g0, tooltip = "SWING LABELS\nHH Higher High - a high above the previous high.\nHL Higher Low - a low above the previous low. HH plus HL is a rising structure.\nLH Lower High, LL Lower Low - the mirror image, a falling structure.\n\nSTRUCTURE BREAKS\nA break is a close beyond the last confirmed swing point.\nBOS Break of Structure - the break continues the direction that was already in place.\nCHOCH Change of Character - the break goes against it and is the first hint of a turn.\nMSB Market Structure Break - the umbrella term; every BOS and every CHOCH is one.\nThe timeframe is always appended, for example 'MSB BOS 1H'.\n\nLIQUIDITY LEVELS\nThe name has three parts: source, side, rank.\nPDH and PDL are yesterday's high and low.\nOtherwise the timeframe comes first, then the side, then the rank counted outwards from price.\nBSL, buy-side liquidity, sits above old highs: the buy orders of everyone who is short, plus the stops above.\nSSL, sell-side liquidity, sits below old lows.\n'15m BSL2' is therefore the second-nearest untaken buy-side pool of the 15-minute chart above the current price.\n\nSIGNIFICANT AND SIMPLE\nUpper-case names on a thicker line are SIGNIFICANT levels: the market has already proven it had to respect them. For a low that means the high it came from was later exceeded by a higher high - buyers pushed past the previous peak, so the low behind them held. Mirrored for a high.\nLower-case names on a thinner line are SIMPLE levels: real turning points, but ones the market has not yet had to defend. They can still be hit, they just carry less weight.\nThe two are counted separately, so BSL1 and bsl1 can both exist at the same time.\nThe short form H2 and L2 can be chosen instead in the liquidity settings.\nRanking is by distance, not by age, so a level can move from H2 to H1 when the one in front of it is cleared.\n'swept' behind the name means price ran through the level and closed back on the old side - the orders resting there have been taken.\n\nMARKERS\nA small dot below or above a candle marks an armed setup. A larger dot marks a candle where every enabled condition was met. Below the candle means a long context, above it a short one.\nThere is deliberately no written buy or sell instruction: the dot tells you a condition is complete, not that this is the moment to enter.")
+note3 = input.string("What the labels on the chart mean", "Glossary", options = ["What the labels on the chart mean"], group = g0, tooltip = "SWING LABELS\nHH Higher High - a high above the previous high.\nHL Higher Low - a low above the previous low. HH plus HL is a rising structure.\nLH Lower High, LL Lower Low - the mirror image, a falling structure.\n\nSTRUCTURE BREAKS\nA break is a close beyond the last confirmed swing point.\nBOS Break of Structure - the break continues the direction that was already in place.\nCHOCH Change of Character - the break goes against it and is the first hint of a turn.\nMSB Market Structure Break - the umbrella term; every BOS and every CHOCH is one.\nThe timeframe is always appended, for example 'MSB BOS 1H'.\n\nLIQUIDITY LEVELS\nThe name has three parts: source, side, rank.\nPDH and PDL are yesterday's high and low.\nOtherwise the timeframe comes first, then the side, then the rank counted outwards from price.\nBSL, buy-side liquidity, sits above old highs: the buy orders of everyone who is short, plus the stops above.\nSSL, sell-side liquidity, sits below old lows.\n'15m BSL2' is therefore the second-nearest untaken buy-side pool of the 15-minute chart above the current price.\nWhen the same level is found on several enabled timeframes at once, they are merged into one line and the name lists every timeframe that produced it, for example '15m+1H BSL2' - the rank then counts across all timeframes together, not per timeframe.\n\nSIGNIFICANT AND SIMPLE\nUpper-case names on a thicker line are SIGNIFICANT levels: the market has already proven it had to respect them. For a low that means the high it came from was later exceeded by a higher high - buyers pushed past the previous peak, so the low behind them held. Mirrored for a high.\nLower-case names on a thinner line are SIMPLE levels: real turning points, but ones the market has not yet had to defend. They can still be hit, they just carry less weight.\nThe two are counted separately, so BSL1 and bsl1 can both exist at the same time.\nThe short form H2 and L2 can be chosen instead in the liquidity settings.\nRanking is by distance, not by age, so a level can move from H2 to H1 when the one in front of it is cleared.\n'swept' behind the name means price ran through the level and closed back on the old side - the orders resting there have been taken. Once a level has been swept it is kept on the chart for good, dimmed or in its side colour depending on the display settings, even if a nearer level would otherwise have pushed it out of the ranking.\n\nCONFLUENCE COUNTER\nThe seven abbreviations in the status table, and what each of them stands for.\nBIAS the higher-timeframe direction agrees.\nRSI the Stoch RSI was at its extreme within its lookback.\nBB the candle touched a band and closed back inside the half that faces it.\nSTR the structure of the entry timeframe has confirmed - Higher Low plus Higher High for a long, Lower High plus Lower Low for a short.\nLIQ a liquidity level was swept recently.\nOB price is sitting inside an order block or breaker of that side.\nSES one of the enabled sessions is open.\nOf these, BB and STR together with a running setup are the ones a signal actually requires. The other five are support: they can all be missing and a signal still appears, or all be present without one, because a signal also needs its conditions in the right order.\n\nMARKERS\nA small dot below or above a candle marks an armed setup. A larger dot marks a candle where every enabled condition was met. Below the candle means a long context, above it a short one.\nThere is deliberately no written buy or sell instruction: the dot tells you a condition is complete, not that this is the moment to enter.")
 
 note4 = input.string("How to set up alerts", "Alerts", options = ["How to set up alerts"], group = g0, tooltip = "HOW TO SET AN ALERT\nRight-click the chart, Add alert, and under Condition pick this indicator by name. The second dropdown then lists everything it can fire on.\n\nFOR THE SIGNAL - the large dot\nPick 'Any alert() function call' and set the trigger to 'Once Per Bar Close'. One alert covers long and short, and the message is written by the indicator: symbol, direction, price, bias, setup direction, state of the entry structure, whether a sweep was present, and the session.\n\nIf you would rather have them apart, pick 'SNIPER LONG' or 'SNIPER SHORT' instead and create two alerts. The text is then fixed and short, but you can route each direction differently.\n\nEVERYTHING ELSE ON THE LIST\nLong Setup and Short Setup fire on the small dot. They come far more often than signals - set them separately or not at all, otherwise the one that matters drowns in the noise.\nBullish and Bearish Liquidity Sweep fire when a level is taken.\nBullish and Bearish BOS, CHOCH and MSB fire on structure breaks of the chart timeframe.\n\nALWAYS USE 'ONCE PER BAR CLOSE'\nThe indicator only evaluates at the close of a candle, so any other trigger cannot make an alert arrive earlier - it would only check more often for nothing. This is also what keeps the alert consistent with what you see on the chart.")
 
@@ -223,16 +223,18 @@ use15m    = input.bool(true, "15m Swings", group = g7, tooltip = "Swing highs an
 use30m    = input.bool(false, "30m Swings", group = g7, tooltip = "Swing highs and lows of the 30-minute chart. A step coarser than 15m, reached less often but with more weight behind it.\n\nLabelled with the prefix 30m, so '30m BSL1' is the nearest untaken buy-side pool of the 30-minute chart above price.\n\nBSL means buy-side liquidity and sits ABOVE old highs - the buy orders of everyone who is short, plus the stops above. SSL means sell-side liquidity and sits BELOW old lows. The short form H and L can be chosen instead under Level naming.")
 use1H     = input.bool(true, "1H Swings", group = g7, tooltip = "Swing highs and lows of the 1-hour chart.\n\nLabelled with the prefix 1H, so '1H BSL1' is the nearest untaken buy-side pool of the 1-hour chart above price.\n\nBSL means buy-side liquidity and sits ABOVE old highs - the buy orders of everyone who is short, plus the stops above. SSL means sell-side liquidity and sits BELOW old lows. The short form H and L can be chosen instead under Level naming.")
 use4H     = input.bool(false, "4H Swings", group = g7, tooltip = "Swing highs and lows of the 4-hour chart. Big targets that are hit rarely, mostly useful as context.\n\nLabelled with the prefix 4H, so '4H BSL1' is the nearest untaken buy-side pool of the 4-hour chart above price.\n\nBSL means buy-side liquidity and sits ABOVE old highs - the buy orders of everyone who is short, plus the stops above. SSL means sell-side liquidity and sits BELOW old lows. The short form H and L can be chosen instead under Level naming.")
+use1D     = input.bool(false, "1D Swings", group = g7, tooltip = "Swing highs and lows of the daily chart. The largest and least frequent levels this indicator offers, held over many sessions.\n\nLabelled with the prefix 1D, so '1D BSL1' is the nearest untaken buy-side pool of the daily chart above price. Different from Previous Day High/Low above: that setting is always exactly yesterday's high and low, this one is genuine swing pivots of the daily chart which can be many days old.\n\nBSL means buy-side liquidity and sits ABOVE old highs - the buy orders of everyone who is short, plus the stops above. SSL means sell-side liquidity and sits BELOW old lows. The short form H and L can be chosen instead under Level naming.")
+use1W     = input.bool(false, "1W Swings", group = g7, tooltip = "Swing highs and lows of the weekly chart. The broadest context this indicator offers, months old in most cases.\n\nLabelled with the prefix 1W, so '1W BSL1' is the nearest untaken buy-side pool of the weekly chart above price.\n\nBSL means buy-side liquidity and sits ABOVE old highs - the buy orders of everyone who is short, plus the stops above. SSL means sell-side liquidity and sits BELOW old lows. The short form H and L can be chosen instead under Level naming.")
 lvlNaming = input.string("Buy-side / Sell-side", "Level naming", options = ["Buy-side / Sell-side", "High / Low"], group = g7, tooltip = "How the levels are named on the chart.\n\nBuy-side / Sell-side: the established terms. Liquidity resting above highs is buy-side liquidity, because it is the buy orders of everyone who is short plus the stops above. Below lows it is sell-side liquidity. '15m BSL2' is therefore the second-nearest untaken buy-side pool of the 15-minute chart.\n\nHigh / Low: the shorter form, '15m H2' and '15m L2'. Compact, but an H alone reads as 'high' and does not say that liquidity is sitting there.\n\nPDH and PDL keep their names either way, they are the standard abbreviations for yesterday's high and low.")
-nLvl      = input.int(3, "Levels per direction and TF (1-5)", minval = 1, maxval = 5, group = g7, tooltip = "How many levels per direction and timeframe are kept, counted outwards from price - and counted separately for each kind. With both kinds shown, 5 can therefore mean ten lines per direction and timeframe.\n\nThe number appears in the label: BSL1 is the nearest untaken significant pool above price, BSL2 the next behind it. Lower-case bsl1 and ssl1 are the simple ones, numbered in their own series.\n\nThe rank goes by distance, not by age, so a level moves up once the one in front of it is cleared.\n\nThe cap of 5 exists to keep the total number of drawings under the limit TradingView allows per script.")
-sweepLB   = input.int(10, "Sweep validity (chart bars)", minval = 1, group = g7, tooltip = "A sweep is price running through a level and closing back on the side it came from - a stop hunt rather than a real break.\n\nThis setting is how long a sweep counts as RECENT for the entry condition: with 10, price may have pierced the level up to ten candles ago and the sweep still counts towards a signal. A stop hunt from two hours ago says nothing about the current candle.\n\nIt does not affect the display. Once a level has been swept it keeps the word 'swept' in its label for as long as the level exists, because the orders resting there have been taken and that does not undo itself when price walks away again.")
+nLvl      = input.int(3, "Levels per direction (1-5)", minval = 1, maxval = 5, group = g7, tooltip = "How many levels per direction are kept, counted outwards from price - and counted separately for each kind. With both kinds shown, 5 can therefore mean ten lines per direction.\n\nThe number appears in the label: BSL1 is the nearest untaken significant pool above price, BSL2 the next behind it. Lower-case bsl1 and ssl1 are the simple ones, numbered in their own series.\n\nThe rank goes by distance, not by age, so a level moves up once the one in front of it is cleared. When the same level shows up on several enabled timeframes at once they count as ONE level for this limit, not one per timeframe.\n\nThe cap of 5 exists to keep the total number of drawings under the limit TradingView allows per script.")
+sweepLB   = input.int(10, "Sweep validity (chart bars)", minval = 1, group = g7, tooltip = "A sweep is price running through a level and closing back on the side it came from - a stop hunt rather than a real break.\n\nThis setting is how long a sweep counts as RECENT for the entry condition: with 10, price may have pierced the level up to ten candles ago and the sweep still counts towards a signal. A stop hunt from two hours ago says nothing about the current candle.\n\nIt does not affect the display. Once a level has been swept it keeps the word 'swept' in its label and stays on the chart for good, because the orders resting there have been taken and that does not undo itself when price walks away again - it no longer needs to stay inside the top ranking to remain visible.")
 liqPrice  = input.string("Swept only", "Price in the label", options = ["Off", "Swept only", "All levels"], group = g7, tooltip = "Adds the price of the level behind its name.\n\nSwept only: just the levels that have already been swept. Those are the ones you tend to look up afterwards - where exactly was the stop hunt - while the untested levels stay short and readable.\n\nAll levels: every line carries its price. Useful when you are working the numbers, but it makes the labels noticeably wider, so they will step aside from each other more often.\n\nOff: names only.")
 sigGap    = input.int(12, "Gap width (bars)", minval = 4, maxval = 60, group = g7, inline = "sig", tooltip = "Breaks the line of a significant level open near its origin and writes 'significant liquidity' into the gap, so the text sits on the line instead of next to it.\n\nThis row: the checkbox, and how wide the gap is in candles. Pine cannot measure how much room a text needs - it depends on your zoom - so the gap is set by hand. Too narrow and the text spills over the line ends, too wide and the line looks cut in half.\n\nOn a level that is still too short for a break, the line stays whole and the text is left out.\n\nSimple levels are never broken; the thinner line without text is what tells them apart.")
 sigLabel  = input.bool(true, "Label significant levels", group = g7, inline = "sig", tooltip = "Breaks the line of a significant level open near its origin and writes 'significant liquidity' into the gap, so the text sits on the line instead of next to it.\n\nThis row: the checkbox, and how wide the gap is in candles. Pine cannot measure how much room a text needs - it depends on your zoom - so the gap is set by hand. Too narrow and the text spills over the line ends, too wide and the line looks cut in half.\n\nOn a level that is still too short for a break, the line stays whole and the text is left out.\n\nSimple levels are never broken; the thinner line without text is what tells them apart.")
 liqLblGap = input.float(0.3, "Min. label spacing (x ATR)", minval = 0.0, maxval = 3.0, step = 0.1, group = g7, tooltip = "Two levels can sit so close together that their names would be printed on top of each other. When the vertical gap between them is smaller than this, the second name is moved to the left along its own line instead, so both stay readable.\n\nMeasured in ATR so it scales with the instrument. Raise it if names still collide, lower it if they are pushed apart too eagerly.")
 showLiq   = input.bool(true, "Draw liquidity levels", group = g7, tooltip = "Draws the levels as horizontal lines, each labelled with source, direction and rank - for example '1H SSL1' for the nearest untaken sell-side pool of the 1-hour chart, or 'PDH' for yesterday's high.\n\nEach line starts at the candle whose high or low created the level and runs to the current candle, so you see where it came from and how long it has been holding.")
-sweptShow = input.bool(true, "Show swept levels", group = g7, inline = "lqsw1", tooltip = "What happens to a level after price has swept it - each part is set on its own, so any combination is possible.\n\nShow: the swept level stays on the chart. Off hides it entirely.\n\nColour: Dimmed uses the muted colour next to it, Side colour keeps the pink or turquoise of its side. Dimmed together with a dotted style is the quiet variant - still there, no longer competing for attention.")
-sweptCol  = input.string("Side colour", "Colour", options = ["Side colour", "Dimmed"], group = g7, inline = "lqsw1", tooltip = "What happens to a level after price has swept it - each part is set on its own, so any combination is possible.\n\nShow: the swept level stays on the chart. Off hides it entirely.\n\nColour: Dimmed uses the muted colour next to it, Side colour keeps the pink or turquoise of its side. Dimmed together with a dotted style is the quiet variant - still there, no longer competing for attention.")
+sweptShow = input.bool(true, "Show swept levels", group = g7, inline = "lqsw1", tooltip = "What happens to a level after price has swept it - each part is set on its own, so any combination is possible.\n\nShow: the swept level stays on the chart for good, independent of whether it would still make the current ranking. Off hides it entirely.\n\nColour: Dimmed uses the muted colour next to it, Side colour keeps the pink or turquoise of its side. Dimmed together with a dotted style is the quiet variant - still there, no longer competing for attention.")
+sweptCol  = input.string("Side colour", "Colour", options = ["Side colour", "Dimmed"], group = g7, inline = "lqsw1", tooltip = "What happens to a level after price has swept it - each part is set on its own, so any combination is possible.\n\nShow: the swept level stays on the chart for good, independent of whether it would still make the current ranking. Off hides it entirely.\n\nColour: Dimmed uses the muted colour next to it, Side colour keeps the pink or turquoise of its side. Dimmed together with a dotted style is the quiet variant - still there, no longer competing for attention.")
 sweptEnd  = input.string("Stop at the sweep", "Line ends", options = ["Stop at the sweep", "Extend to now"], group = g7, tooltip = "Where the line of a swept level stops.\n\nStop at the sweep: the line ends on the candle that took the level. It documents what happened without running on through the rest of the chart.\n\nExtend to now: the line keeps running to the current candle like an untaken level.")
 liqColHigh  = input.color(#EF5350, "High", group = g7, inline = "lq1", tooltip = "Colours of the liquidity levels.\n\nThis row: an untested pool ABOVE price, an untested pool BELOW price, and the colour a level takes once it has been swept.\n\nAbove price the pool is buy-side liquidity, labelled BSL: the buy orders of everyone who is short, plus the stops above old highs. Below price it is sell-side liquidity, labelled SSL. Under Level naming you can switch to the short form H and L instead.\n\nPine only accepts whole pixels for line thickness, so if the untested lines are still too heavy, reduce them through the transparency slider in these colour pickers rather than the width.")
 liqColLow   = input.color(#26A69A, "Low", group = g7, inline = "lq1", tooltip = "Colours of the liquidity levels.\n\nThis row: an untested pool ABOVE price, an untested pool BELOW price, and the colour a level takes once it has been swept.\n\nAbove price the pool is buy-side liquidity, labelled BSL: the buy orders of everyone who is short, plus the stops above old highs. Below price it is sell-side liquidity, labelled SSL. Under Level naming you can switch to the short form H and L instead.\n\nPine only accepts whole pixels for line thickness, so if the untested lines are still too heavy, reduce them through the transparency slider in these colour pickers rather than the width.")
@@ -304,7 +306,7 @@ maxHours  = input.float(2.0, "", minval = 0.25, maxval = 24.0, step = 0.25, grou
 sessNameOn = input.bool(true, "Name the boxes", group = g9, inline = "sn", tooltip = "Writes the name of the session into the bottom right corner of its box, so a box is identifiable without counting hours or checking the clock.\n\nThe name follows the lower right corner while the session runs, which means it also marks the lowest point the session has made so far.\n\nThis row: the checkbox and the font size.")
 sessNameSz = input.string("Small", "", options = ["Tiny", "Small", "Normal", "Large"], group = g9, inline = "sn", tooltip = "Writes the name of the session into the bottom right corner of its box, so a box is identifiable without counting hours or checking the clock.\n\nThe name follows the lower right corner while the session runs, which means it also marks the lowest point the session has made so far.\n\nThis row: the checkbox and the font size.")
 sessBoxSpan= input.string("Tradeable window", "Boxes span", options = ["Tradeable window", "Full session"], group = g9, tooltip = "What the session boxes are drawn around.\n\nTradeable window: only the part that Max. trading hours leaves open. The frame then shows exactly where a signal may appear.\n\nFull session: the complete exchange hours from the fields above, regardless of the limiter. The frame becomes pure context - you see the whole session and its high and low, while signals are still restricted to the opening hours.\n\nThe signal filter itself is not affected by this setting, only the drawing.")
-sessShow  = input.bool(true, "Show sessions in chart", group = g9, tooltip = "Draws each enabled session as a box on the price chart, from its first candle to its last, sized to the high and low the session made.\n\nThat frame is worth having on its own: the high and low of a session are among the most watched levels of the day, and you can see at a glance whether the current move is still inside the range of its session or has already left it.")
+sessShow  = input.bool(false, "Show sessions in chart", group = g9, tooltip = "Draws each enabled session as a box on the price chart, from its first candle to its last, sized to the high and low the session made.\n\nThat frame is worth having on its own: the high and low of a session are among the most watched levels of the day, and you can see at a glance whether the current move is still inside the range of its session or has already left it.")
 sessColL  = input.color(#2962FF, "London", group = g9, inline = "sb1", tooltip = "Colour of each session box.\n\nThis row: London, New York, Tokyo. The transparency of the fill and of the border is set separately below, so the same hue can be used quietly in the background and clearly on the frame.")
 sessColN  = input.color(#FF9800, "New York", group = g9, inline = "sb1", tooltip = "Colour of each session box.\n\nThis row: London, New York, Tokyo. The transparency of the fill and of the border is set separately below, so the same hue can be used quietly in the background and clearly on the frame.")
 sessColA  = input.color(#AB47BC, "Tokyo", group = g9, inline = "sb1", tooltip = "Colour of each session box.\n\nThis row: London, New York, Tokyo. The transparency of the fill and of the border is set separately below, so the same hue can be used quietly in the background and clearly on the frame.")
@@ -382,6 +384,16 @@ oscBiasTr = input.color(color.new(#FFA726, 65), "", group = g13, inline = "os4",
 oscBiasDn = input.color(color.new(#EF5350, 65), "", group = g13, inline = "os4", tooltip = "Tints the whole pane with the bias, using the source chosen in group 2.\n\nThis answers the same question a money-flow background answers in the all-in-one oscillators - who is in control of the bigger picture - but from data we already have rather than from volume, which is unreliable on CFD and forex feeds anyway.\n\nThe third colour marks the state where structure and average disagree: the structure has already turned while price is still on the wrong side of the average. With Strict Bias on, that is when the old direction stops producing signals.\n\nThis row: the checkbox, then the bullish tint, the bearish tint and the tint while they disagree.")
 oscSignal = input.bool(true, "Repeat signal markers here", group = g13, tooltip = "Repeats the signal marker from the price chart inside this pane, drawn on the K line at the moment every enabled condition is met.\n\nWhile you are trading you often watch the oscillator rather than the candles, and a signal that only appears up on the chart is easy to miss. It is deliberately larger than the extreme dots at the edges - those mark a condition, this one marks a complete signal.")
 oscStrip  = input.bool(true, "Setup strip at the bottom", group = g13, tooltip = "A coloured strip along the bottom edge of the pane for as long as a setup is armed and waiting for its entry, green for long and red for short.\n\nIt starts on the same candle as the small dot on the chart, so the beginning tells you nothing new. The value is in the length and the end: the strip is the countdown of the setup.\n\nEnds together with a large dot - the setup converted into a signal. Ends without one - it expired unused, and the conditions have to build up again from scratch. Runs unusually long - price keeps rejecting at the band and re-arming the setup.")
+
+g14 = "14 · Liquidity Distance Band"
+ldbOn      = input.bool(true, "Show liquidity distance band", group = g14, tooltip = "Two boxes running live at the current price, out to the right where the liquidity lines end: one from price up to the nearest untaken liquidity above it, one from price down to the nearest untaken liquidity below it.\n\nBoth are rebuilt on every tick, so their edges move as price moves and jump the moment a nearer level takes over - for example the instant a level gets swept and the next one behind it becomes the nearest.\n\nIndependent of 'Draw liquidity levels' above: the band uses whichever levels are currently enabled as sources, whether or not their own lines are shown.")
+ldbShowPx   = input.bool(true, "Price units", group = g14, inline = "ldbu", tooltip = "Which measurements are shown on each box. Any combination, or all three together.\n\nPrice units and Pips sit at the outer edge, next to each other - price units is the plain price distance from the current close to that level, pips is the same distance divided by the instrument's minimum tick, so it reads as a plain point/pip count instead of a price.\n\nPercent sits on its own, centred inside the box: the share of the whole open range between the two levels, so the upside and downside figures always add up to 100% - how the current price sits between them, not a percentage of price itself.")
+ldbShowPips = input.bool(true, "Pips", group = g14, inline = "ldbu", tooltip = "Which measurements are shown on each box. Any combination, or all three together.\n\nPrice units and Pips sit at the outer edge, next to each other - price units is the plain price distance from the current close to that level, pips is the same distance divided by the instrument's minimum tick, so it reads as a plain point/pip count instead of a price.\n\nPercent sits on its own, centred inside the box: the share of the whole open range between the two levels, so the upside and downside figures always add up to 100% - how the current price sits between them, not a percentage of price itself.")
+ldbShowPct  = input.bool(true, "Percent", group = g14, inline = "ldbu", tooltip = "Which measurements are shown on each box. Any combination, or all three together.\n\nPrice units and Pips sit at the outer edge, next to each other - price units is the plain price distance from the current close to that level, pips is the same distance divided by the instrument's minimum tick, so it reads as a plain point/pip count instead of a price.\n\nPercent sits on its own, centred inside the box: the share of the whole open range between the two levels, so the upside and downside figures always add up to 100% - how the current price sits between them, not a percentage of price itself.")
+ldbColUp   = input.color(color.new(color.red, 55), "To upside liquidity", group = g14, inline = "ldb1", tooltip = "Colour of each box - the one running up to the nearest liquidity above price, and the one running down to the nearest liquidity below it - used both for the border and, more transparently, for the fill. The border width applies to both.")
+ldbColDn   = input.color(color.new(color.lime, 55), "To downside liquidity", group = g14, inline = "ldb2", tooltip = "Colour of each box - the one running up to the nearest liquidity above price, and the one running down to the nearest liquidity below it - used both for the border and, more transparently, for the fill. The border width applies to both.")
+ldbWidth   = input.int(1, "Border width", minval = 1, maxval = 5, group = g14, inline = "ldb2", tooltip = "Colour of each box - the one running up to the nearest liquidity above price, and the one running down to the nearest liquidity below it - used both for the border and, more transparently, for the fill. The border width applies to both.")
+ldbBoxW    = input.int(8, "Box width (bars)", minval = 1, maxval = 100, group = g14, tooltip = "How wide the two boxes are, measured in chart bars - not their border thickness, which is set above, but how far the box stretches horizontally.\n\nBoth boxes share this width and sit at the same fixed distance to the right of price, past where the liquidity lines and their labels end.")
 
 // =============================================================================
 // 2 · HELPERS
@@ -795,6 +807,8 @@ LiqSet lq15 = request.security(syminfo.tickerid, "15", f_liquidity(liqLenEff, sw
 LiqSet lq30 = request.security(syminfo.tickerid, "30", f_liquidity(liqLenEff, swDevMode, swDevVal, swBack, swAtrLen), lookahead = barmerge.lookahead_off)
 LiqSet lq60 = request.security(syminfo.tickerid, "60", f_liquidity(liqLenEff, swDevMode, swDevVal, swBack, swAtrLen), lookahead = barmerge.lookahead_off)
 LiqSet lq240 = request.security(syminfo.tickerid, "240", f_liquidity(liqLenEff, swDevMode, swDevVal, swBack, swAtrLen), lookahead = barmerge.lookahead_off)
+LiqSet lq1D = request.security(syminfo.tickerid, "D", f_liquidity(liqLenEff, swDevMode, swDevVal, swBack, swAtrLen), lookahead = barmerge.lookahead_off)
+LiqSet lq1W = request.security(syminfo.tickerid, "W", f_liquidity(liqLenEff, swDevMode, swDevVal, swBack, swAtrLen), lookahead = barmerge.lookahead_off)
 
 LiqSet lqC = f_liquidity(liqLenEff, swDevMode, swDevVal, swBack, swAtrLen)
 
@@ -839,54 +853,183 @@ highestN = ta.highest(high, sweepLB)
 f_sweptLow(float lv)  => not na(lv) and lowestN  < lv and close > lv
 f_sweptHigh(float lv) => not na(lv) and highestN > lv and close < lv
 
-highLv = array.new<float>()
-highNm = array.new<string>()
-highTm = array.new<int>()
-highSg = array.new<int>()
-lowLv  = array.new<float>()
-lowNm  = array.new<string>()
-lowTm  = array.new<int>()
-lowSg  = array.new<int>()
+// Raw candidates from every enabled timeframe, collected before merging. A
+// separate temporary set per side, cleared and rebuilt every bar - identical
+// levels found on several timeframes at once are folded into one entry further
+// down, instead of drawing one line per timeframe on top of each other.
+array<float>  candHiPx = array.new<float>()
+array<int>    candHiTm = array.new<int>()
+array<int>    candHiSg = array.new<int>()
+array<string> candHiTf = array.new<string>()
+array<float>  candLoPx = array.new<float>()
+array<int>    candLoTm = array.new<int>()
+array<int>    candLoSg = array.new<int>()
+array<string> candLoTf = array.new<string>()
+
+f_collect(LiqSet L, string tf) =>
+    if not na(L)
+        // paired arrays (price + its origin-time) can arrive with mismatched
+        // sizes on very early bars once a UDT with array fields has crossed a
+        // request.security() boundary - bound every loop to the SMALLER of the
+        // two so a short array can never be indexed past its own end
+        int nhs = math.min(array.size(L.hiS), array.size(L.hiSt))
+        if nhs > 0
+            for i = 0 to nhs - 1
+                array.push(candHiPx, array.get(L.hiS, i))
+                array.push(candHiTm, array.get(L.hiSt, i))
+                array.push(candHiSg, 1)
+                array.push(candHiTf, tf)
+        int nls = math.min(array.size(L.loS), array.size(L.loSt))
+        if nls > 0
+            for i = 0 to nls - 1
+                array.push(candLoPx, array.get(L.loS, i))
+                array.push(candLoTm, array.get(L.loSt, i))
+                array.push(candLoSg, 1)
+                array.push(candLoTf, tf)
+        if liqKind == "Significant and simple"
+            int nhn = math.min(array.size(L.hiN), array.size(L.hiNt))
+            if nhn > 0
+                for i = 0 to nhn - 1
+                    array.push(candHiPx, array.get(L.hiN, i))
+                    array.push(candHiTm, array.get(L.hiNt, i))
+                    array.push(candHiSg, 0)
+                    array.push(candHiTf, tf)
+            int nln = math.min(array.size(L.loN), array.size(L.loNt))
+            if nln > 0
+                for i = 0 to nln - 1
+                    array.push(candLoPx, array.get(L.loN, i))
+                    array.push(candLoTm, array.get(L.loNt, i))
+                    array.push(candLoSg, 0)
+                    array.push(candLoTf, tf)
+
+if useChart
+    f_collect(lqC, setupLbl)
+if use15m
+    f_collect(lq15, "15m")
+if use30m
+    f_collect(lq30, "30m")
+if use1H
+    f_collect(lq60, "1H")
+if use4H
+    f_collect(lq240, "4H")
+if use1D
+    f_collect(lq1D, "1D")
+if use1W
+    f_collect(lq1W, "1W")
+
+// Fold candidates whose price matches within half a tick into one entry: the
+// origin time becomes the earliest of the merged group (the level has existed
+// since then, whichever timeframe first revealed it) and the name lists every
+// timeframe that produced it, joined with "+". A level counts as significant if
+// ANY of the merged timeframes flagged it as such.
+f_mergeSide(array<float> px, array<int> tm, array<int> sg, array<string> tf) =>
+    array<float>  mPx = array.new<float>()
+    array<int>    mTm = array.new<int>()
+    array<int>    mSg = array.new<int>()
+    array<string> mTf = array.new<string>()
+    // defensive backstop: take the SMALLEST of the four parallel arrays rather
+    // than assuming they all match px's size, so a stray desync upstream can
+    // never cause an out-of-bounds read here
+    int n = array.size(px)
+    n := math.min(n, array.size(tm))
+    n := math.min(n, array.size(sg))
+    n := math.min(n, array.size(tf))
+    array<bool> used = array.new<bool>(n, false)
+    float tol = syminfo.mintick * 0.5
+    if n > 0
+        for i = 0 to n - 1
+            if not array.get(used, i)
+                float  p0 = array.get(px, i)
+                int    t0 = array.get(tm, i)
+                int    s0 = array.get(sg, i)
+                string tfList = array.get(tf, i)
+                array.set(used, i, true)
+                // Pine's `for` loop, when its start exceeds its end, silently
+                // counts DOWN instead of skipping - so on the very last index
+                // (i = n-1) "for j = i+1 to n-1" would otherwise still fire
+                // once with j = n, one past the array's end. Guard it explicitly.
+                if i < n - 1
+                    for j = i + 1 to n - 1
+                        if not array.get(used, j) and math.abs(array.get(px, j) - p0) <= tol
+                            array.set(used, j, true)
+                            t0 := math.min(t0, array.get(tm, j))
+                            s0 := math.max(s0, array.get(sg, j))
+                            tfList := tfList + "+" + array.get(tf, j)
+                array.push(mPx, p0)
+                array.push(mTm, t0)
+                array.push(mSg, s0)
+                array.push(mTf, tfList)
+    [mPx, mTm, mSg, mTf]
+
+// Sorts the merged candidates by distance to price (ascending for highs above
+// price, descending for lows below it) and assigns the rank number, separately
+// for significant and simple, capped at nLvl each - exactly like the old
+// per-timeframe cap, just applied once across the merged set instead of once
+// per timeframe.
+f_finalizeSide(array<float> mPx, array<int> mTm, array<int> mSg, array<string> mTf, simple bool isHigh, simple string tok) =>
+    array<float>  fPx = array.new<float>()
+    array<int>    fTm = array.new<int>()
+    array<int>    fSg = array.new<int>()
+    array<string> fNm = array.new<string>()
+    int n = array.size(mPx)
+    if n > 0
+        array<int> idxArr = array.new<int>()
+        for i = 0 to n - 1
+            array.push(idxArr, i)
+        // same guard as in f_mergeSide: with fewer than 2 elements there is
+        // nothing to sort, and "for a = 0 to n - 2" would otherwise run once
+        // with a bogus descending step when n - 2 is negative
+        if n > 1
+            for a = 0 to n - 2
+                int best = a
+                for b = a + 1 to n - 1
+                    float pb     = array.get(mPx, array.get(idxArr, b))
+                    float pBest  = array.get(mPx, array.get(idxArr, best))
+                    bool  better = isHigh ? pb < pBest : pb > pBest
+                    if better
+                        best := b
+                if best != a
+                    int tmp = array.get(idxArr, a)
+                    array.set(idxArr, a, array.get(idxArr, best))
+                    array.set(idxArr, best, tmp)
+        int rankSig = 0
+        int rankSim = 0
+        for k = 0 to n - 1
+            int ix  = array.get(idxArr, k)
+            int sgv = array.get(mSg, ix)
+            if sgv == 1
+                if rankSig < nLvl
+                    rankSig += 1
+                    array.push(fPx, array.get(mPx, ix))
+                    array.push(fTm, array.get(mTm, ix))
+                    array.push(fSg, 1)
+                    array.push(fNm, array.get(mTf, ix) + tok + str.tostring(rankSig))
+            else
+                if rankSim < nLvl
+                    rankSim += 1
+                    array.push(fPx, array.get(mPx, ix))
+                    array.push(fTm, array.get(mTm, ix))
+                    array.push(fSg, 0)
+                    array.push(fNm, array.get(mTf, ix) + str.lower(tok) + str.tostring(rankSim))
+    [fPx, fTm, fSg, fNm]
 
 hTok = lvlNaming == "High / Low" ? " H" : " BSL"
 lTok = lvlNaming == "High / Low" ? " L" : " SSL"
 
-f_addLv(LiqSet L, string nm) =>
-    if not na(L)
-        // significant first, then the simple ones if they are wanted at all;
-        // each kind is numbered in its own series and marked by its case
-        int nhs = math.min(nLvl, array.size(L.hiS))
-        if nhs > 0
-            for i = 0 to nhs - 1
-                array.push(highLv, array.get(L.hiS, i))
-                array.push(highNm, nm + hTok + str.tostring(i + 1))
-                array.push(highTm, array.get(L.hiSt, i))
-                array.push(highSg, 1)
-        int nls = math.min(nLvl, array.size(L.loS))
-        if nls > 0
-            for i = 0 to nls - 1
-                array.push(lowLv, array.get(L.loS, i))
-                array.push(lowNm, nm + lTok + str.tostring(i + 1))
-                array.push(lowTm, array.get(L.loSt, i))
-                array.push(lowSg, 1)
-        if liqKind == "Significant and simple"
-            int nhn = math.min(nLvl, array.size(L.hiN))
-            if nhn > 0
-                for i = 0 to nhn - 1
-                    array.push(highLv, array.get(L.hiN, i))
-                    array.push(highNm, nm + str.lower(hTok) + str.tostring(i + 1))
-                    array.push(highTm, array.get(L.hiNt, i))
-                    array.push(highSg, 0)
-            int nln = math.min(nLvl, array.size(L.loN))
-            if nln > 0
-                for i = 0 to nln - 1
-                    array.push(lowLv, array.get(L.loN, i))
-                    array.push(lowNm, nm + str.lower(lTok) + str.tostring(i + 1))
-                    array.push(lowTm, array.get(L.loNt, i))
-                    array.push(lowSg, 0)
+[hPxM, hTmM, hSgM, hTfM] = f_mergeSide(candHiPx, candHiTm, candHiSg, candHiTf)
+[lPxM, lTmM, lSgM, lTfM] = f_mergeSide(candLoPx, candLoTm, candLoSg, candLoTf)
+[fHiPx, fHiTm, fHiSg, fHiNm] = f_finalizeSide(hPxM, hTmM, hSgM, hTfM, true, hTok)
+[fLoPx, fLoTm, fLoSg, fLoNm] = f_finalizeSide(lPxM, lTmM, lSgM, lTfM, false, lTok)
 
-if useChart
-    f_addLv(lqC, setupLbl)
+highLv = fHiPx
+highTm = fHiTm
+highSg = fHiSg
+highNm = fHiNm
+lowLv  = fLoPx
+lowTm  = fLoTm
+lowSg  = fLoSg
+lowNm  = fLoNm
+
 if usePD
     // the daily levels are significant by definition - a whole session was
     // traded against them - so they always get the thicker line
@@ -898,14 +1041,44 @@ if usePD
     array.push(lowNm, "PDL")
     array.push(lowTm, pdLt)
     array.push(lowSg, 1)
-if use15m
-    f_addLv(lq15, "15m")
-if use30m
-    f_addLv(lq30, "30m")
-if use1H
-    f_addLv(lq60, "1H")
-if use4H
-    f_addLv(lq240, "4H")
+
+// Archive of levels that have been swept at least once. Kept independently of
+// the current ranking above, so a level does not vanish from the chart the
+// moment a nearer level takes its place in the top-nLvl list - once swept it
+// stays, dimmed/dotted per the display settings, for as long as the archive
+// holds it (capped like the other rolling stores in this script).
+var array<float>  sweptArchHiPx = array.new<float>()
+var array<int>    sweptArchHiOT = array.new<int>()
+var array<string> sweptArchHiNm = array.new<string>()
+var array<int>    sweptArchHiSg = array.new<int>()
+var array<float>  sweptArchLoPx = array.new<float>()
+var array<int>    sweptArchLoOT = array.new<int>()
+var array<string> sweptArchLoNm = array.new<string>()
+var array<int>    sweptArchLoSg = array.new<int>()
+
+f_archiveHigh(float lv, int ot, string nm, int sg) =>
+    if array.indexof(sweptArchHiPx, lv) < 0
+        array.push(sweptArchHiPx, lv)
+        array.push(sweptArchHiOT, ot)
+        array.push(sweptArchHiNm, nm)
+        array.push(sweptArchHiSg, sg)
+        if array.size(sweptArchHiPx) > 40
+            array.shift(sweptArchHiPx)
+            array.shift(sweptArchHiOT)
+            array.shift(sweptArchHiNm)
+            array.shift(sweptArchHiSg)
+
+f_archiveLow(float lv, int ot, string nm, int sg) =>
+    if array.indexof(sweptArchLoPx, lv) < 0
+        array.push(sweptArchLoPx, lv)
+        array.push(sweptArchLoOT, ot)
+        array.push(sweptArchLoNm, nm)
+        array.push(sweptArchLoSg, sg)
+        if array.size(sweptArchLoPx) > 40
+            array.shift(sweptArchLoPx)
+            array.shift(sweptArchLoOT)
+            array.shift(sweptArchLoNm)
+            array.shift(sweptArchLoSg)
 
 // Two different questions are asked about the same event, and they need two
 // different answers.
@@ -914,28 +1087,33 @@ if use4H
 //   For the DISPLAY it is a property of the level: once it has been swept it
 //   stays swept until the level is removed, because the orders that were sitting
 //   there have been taken and that does not undo itself when price walks away.
-// The lists below remember which levels have been through it.
-var array<float> sweptHiMem = array.new<float>()
-var array<int>   sweptHiTm  = array.new<int>()
+// The lists below remember which levels have been through it, and the archive
+// functions above additionally keep a permanent copy - name, side and origin
+// time as they stood at the moment of the sweep - so it can still be drawn even
+// once the level itself has fallen out of the current ranking.
 var array<float> sweptLoMem = array.new<float>()
 var array<int>   sweptLoTm  = array.new<int>()
+var array<float> sweptHiMem = array.new<float>()
+var array<int>   sweptHiTm  = array.new<int>()
 
-f_wasSweptLow(float lv) =>
+f_wasSweptLow(float lv, int ot, string nm, int sg) =>
     if f_sweptLow(lv) and array.indexof(sweptLoMem, lv) < 0
         array.push(sweptLoMem, lv)
         array.push(sweptLoTm, time)
         if array.size(sweptLoMem) > 60
             array.shift(sweptLoMem)
             array.shift(sweptLoTm)
+        f_archiveLow(lv, ot, nm, sg)
     array.indexof(sweptLoMem, lv) >= 0
 
-f_wasSweptHigh(float lv) =>
+f_wasSweptHigh(float lv, int ot, string nm, int sg) =>
     if f_sweptHigh(lv) and array.indexof(sweptHiMem, lv) < 0
         array.push(sweptHiMem, lv)
         array.push(sweptHiTm, time)
         if array.size(sweptHiMem) > 60
             array.shift(sweptHiMem)
             array.shift(sweptHiTm)
+        f_archiveHigh(lv, ot, nm, sg)
     array.indexof(sweptHiMem, lv) >= 0
 
 // when the level was taken, so its line can stop there instead of running on
@@ -956,7 +1134,7 @@ string bearSweepNm = ""
 if array.size(lowLv) > 0
     for i = 0 to array.size(lowLv) - 1
         float lvl = array.get(lowLv, i)
-        bool  mem = f_wasSweptLow(lvl)   // records the event, evaluated every bar
+        bool  mem = f_wasSweptLow(lvl, array.get(lowTm, i), array.get(lowNm, i), array.get(lowSg, i))   // records the event, evaluated every bar
         if f_sweptLow(lvl)
             bullSweep := true
             if array.get(lowSg, i) == 1
@@ -965,12 +1143,51 @@ if array.size(lowLv) > 0
 if array.size(highLv) > 0
     for i = 0 to array.size(highLv) - 1
         float lvh = array.get(highLv, i)
-        bool  memh = f_wasSweptHigh(lvh)
+        bool  memh = f_wasSweptHigh(lvh, array.get(highTm, i), array.get(highNm, i), array.get(highSg, i))
         if f_sweptHigh(lvh)
             bearSweep := true
             if array.get(highSg, i) == 1
                 bearSweepSig := true
             bearSweepNm := bearSweepNm == "" ? array.get(highNm, i) : bearSweepNm
+
+// Merge the archived swept levels back into the display lists for anything not
+// already present in the current ranking - this is what keeps an old, swept
+// level on the chart after a nearer level has taken its spot in the top-nLvl.
+// Only affects the DISPLAY arrays; bullSweep/bearSweep above are already final.
+f_mergeArchiveHigh() =>
+    if sweptShow and array.size(sweptArchHiPx) > 0
+        float tol = syminfo.mintick * 0.5
+        for i = 0 to array.size(sweptArchHiPx) - 1
+            float av = array.get(sweptArchHiPx, i)
+            bool present = false
+            if array.size(highLv) > 0
+                for j = 0 to array.size(highLv) - 1
+                    if math.abs(array.get(highLv, j) - av) <= tol
+                        present := true
+            if not present
+                array.push(highLv, av)
+                array.push(highNm, array.get(sweptArchHiNm, i))
+                array.push(highTm, array.get(sweptArchHiOT, i))
+                array.push(highSg, array.get(sweptArchHiSg, i))
+
+f_mergeArchiveLow() =>
+    if sweptShow and array.size(sweptArchLoPx) > 0
+        float tol = syminfo.mintick * 0.5
+        for i = 0 to array.size(sweptArchLoPx) - 1
+            float av = array.get(sweptArchLoPx, i)
+            bool present = false
+            if array.size(lowLv) > 0
+                for j = 0 to array.size(lowLv) - 1
+                    if math.abs(array.get(lowLv, j) - av) <= tol
+                        present := true
+            if not present
+                array.push(lowLv, av)
+                array.push(lowNm, array.get(sweptArchLoNm, i))
+                array.push(lowTm, array.get(sweptArchLoOT, i))
+                array.push(lowSg, array.get(sweptArchLoSg, i))
+
+f_mergeArchiveHigh()
+f_mergeArchiveLow()
 
 // =============================================================================
 // 6 · ENTRY-TIMEFRAME STRUCTURE
@@ -1866,7 +2083,7 @@ if barstate.islast
                 float lv = array.get(highLv, i)
                 int   tm = f_exactHigh(lv, array.get(highTm, i))
                 if not na(lv) and not na(tm)
-                    bool sw = f_wasSweptHigh(lv)
+                    bool sw = f_wasSweptHigh(lv, array.get(highTm, i), array.get(highNm, i), array.get(highSg, i))
                     bool sg = array.get(highSg, i) == 1
                     if not sw or sweptShow
                         color col = sw ? (sweptCol == "Side colour" ? liqColHigh : liqColSwept) : liqColHigh
@@ -1891,7 +2108,7 @@ if barstate.islast
                 float lv2 = array.get(lowLv, i)
                 int   tm2 = f_exactLow(lv2, array.get(lowTm, i))
                 if not na(lv2) and not na(tm2)
-                    bool sw2 = f_wasSweptLow(lv2)
+                    bool sw2 = f_wasSweptLow(lv2, array.get(lowTm, i), array.get(lowNm, i), array.get(lowSg, i))
                     bool sg2 = array.get(lowSg, i) == 1
                     if not sw2 or sweptShow
                         color col2 = sw2 ? (sweptCol == "Side colour" ? liqColLow : liqColSwept) : liqColLow
@@ -1937,6 +2154,94 @@ if barstate.islast
                     int xMin = array.get(nmTm, best)
                     label lb = label.new(math.max(x, xMin), bestPx, array.get(nmTx, best), xloc = xloc.bar_time, style = label.style_none, textcolor = array.get(nmCo, best), size = f_size(liqTextSize), force_overlay = true)
                     array.push(liqLbls, lb)
+
+// =============================================================================
+// 11a · LIQUIDITY DISTANCE BAND
+// -----------------------------------------------------------------------------
+// A box between the nearest untaken level above price and the nearest untaken
+// level below it, rebuilt every tick like the liquidity lines themselves - the
+// box top and bottom therefore move live with price, and jump the instant a
+// nearer level takes over (typically because the previous nearest one got
+// swept). Reads highLv/lowLv directly, so it always matches whichever timeframe
+// sources are enabled above, independent of the "Draw liquidity levels" toggle.
+// =============================================================================
+var box   ldbBoxUp = na
+var box   ldbBoxDn = na
+var label ldbLblUp = na
+var label ldbLblDn = na
+var label ldbPctUp = na
+var label ldbPctDn = na
+
+// price units and pips at the edge; percent gets its own centred label further down
+f_ldbText(float dist) =>
+    string out = ""
+    if ldbShowPx
+        out := str.tostring(dist, format.mintick)
+    if ldbShowPips
+        string p = str.tostring(math.round(dist / syminfo.mintick), "#") + " pips"
+        out := out == "" ? p : out + "  ·  " + p
+    out
+
+if barstate.islast
+    if not na(ldbBoxUp)
+        box.delete(ldbBoxUp)
+        ldbBoxUp := na
+    if not na(ldbBoxDn)
+        box.delete(ldbBoxDn)
+        ldbBoxDn := na
+    if not na(ldbLblUp)
+        label.delete(ldbLblUp)
+        ldbLblUp := na
+    if not na(ldbLblDn)
+        label.delete(ldbLblDn)
+        ldbLblDn := na
+    if not na(ldbPctUp)
+        label.delete(ldbPctUp)
+        ldbPctUp := na
+    if not na(ldbPctDn)
+        label.delete(ldbPctDn)
+        ldbPctDn := na
+    if ldbOn
+        float ldbUp = na
+        float ldbDn = na
+        // a level that has already been swept no longer has real orders
+        // resting on it, so it is skipped here even though it is still drawn
+        // (dimmed) on the chart - otherwise a level swept moments ago, often
+        // very close to price, gets mistaken for the nearest OPEN liquidity
+        if array.size(highLv) > 0
+            for i = 0 to array.size(highLv) - 1
+                float v = array.get(highLv, i)
+                if v > close and array.indexof(sweptHiMem, v) < 0 and (na(ldbUp) or v < ldbUp)
+                    ldbUp := v
+        if array.size(lowLv) > 0
+            for i = 0 to array.size(lowLv) - 1
+                float v2 = array.get(lowLv, i)
+                if v2 < close and array.indexof(sweptLoMem, v2) < 0 and (na(ldbDn) or v2 > ldbDn)
+                    ldbDn := v2
+        // pushed out to the right, past where the liquidity lines and their
+        // labels end (xR there is time + 12 chart bars), so the band sits
+        // clear of price and clear of the level names, not on top of either
+        int xL4 = time + 14 * chartSec * 1000
+        int xR4 = xL4 + ldbBoxW * chartSec * 1000
+        int xMid = xL4 + (xR4 - xL4) / 2
+        // percent is the share of the whole open range between the two
+        // levels, so the two figures always add up to 100% - not a percentage
+        // of price, which wouldn't relate the two sides to each other at all
+        float ldbSpan = (not na(ldbUp) and not na(ldbDn)) ? ldbUp - ldbDn : na
+        if not na(ldbUp)
+            float dUp = ldbUp - close
+            float pUp = (not na(ldbSpan) and ldbSpan != 0) ? dUp / ldbSpan * 100 : na
+            ldbBoxUp := box.new(xL4, ldbUp, xR4, close, xloc = xloc.bar_time, border_color = ldbColUp, border_width = ldbWidth, bgcolor = color.new(ldbColUp, 78), force_overlay = true)
+            ldbLblUp := label.new(xR4, ldbUp, f_ldbText(dUp), xloc = xloc.bar_time, style = label.style_label_left, color = color.new(color.white, 100), textcolor = ldbColUp, size = f_size(liqTextSize), force_overlay = true)
+            if ldbShowPct and not na(pUp)
+                ldbPctUp := label.new(xMid, (ldbUp + close) / 2, str.tostring(pUp, "#.##") + "%", xloc = xloc.bar_time, style = label.style_label_center, color = color.new(color.white, 100), textcolor = ldbColUp, size = f_size(liqTextSize), force_overlay = true)
+        if not na(ldbDn)
+            float dDn = close - ldbDn
+            float pDn = (not na(ldbSpan) and ldbSpan != 0) ? dDn / ldbSpan * 100 : na
+            ldbBoxDn := box.new(xL4, close, xR4, ldbDn, xloc = xloc.bar_time, border_color = ldbColDn, border_width = ldbWidth, bgcolor = color.new(ldbColDn, 78), force_overlay = true)
+            ldbLblDn := label.new(xR4, ldbDn, f_ldbText(dDn), xloc = xloc.bar_time, style = label.style_label_left, color = color.new(color.white, 100), textcolor = ldbColDn, size = f_size(liqTextSize), force_overlay = true)
+            if ldbShowPct and not na(pDn)
+                ldbPctDn := label.new(xMid, (close + ldbDn) / 2, str.tostring(pDn, "#.##") + "%", xloc = xloc.bar_time, style = label.style_label_center, color = color.new(color.white, 100), textcolor = ldbColDn, size = f_size(liqTextSize), force_overlay = true)
 
 // =============================================================================
 // 11b · BRING SHORT LINES TO THE FRONT

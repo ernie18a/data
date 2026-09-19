@@ -1,5 +1,5 @@
 <!-- tradingview-pine-id: PUB;6ca5bdbae11f4866b29b136f0ef01054 -->
-<!-- tradingview-pine-version: 1.0 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Fisher Transform Turning Points [RC Tools]
 
@@ -98,10 +98,6 @@ length = input.int(10, "Length", minval=5, maxval=100, step=1, group="Fisher Tra
 bool   showLiveTable = input.bool(true, "Show Live/Confirmed Table", group="Tables")
 string livePos       = input.string("Top Middle", "Live/Confirmed Table Position", options=["Top Right","Top Middle","Top Left","Bottom Right","Bottom Middle","Bottom Left"], group="Tables")
 
-int    fwdBars   = input.int(20, "Forward Return Window (bars)", minval=1, group="Tables")
-bool   showTable = input.bool(true, "Show Base-Rate Table", group="Tables")
-string tablePos  = input.string("Top Right", "Base-Rate Table Position", options=["Top Right","Top Middle","Top Left","Bottom Right","Bottom Middle","Bottom Left"], group="Tables")
-
 color colBull        = input.color(color.new(color.lime, 60), "Bullish (Fish > 0)", group="Colours")
 color colBear        = input.color(color.new(color.red,  60), "Bearish (Fish < 0)", group="Colours")
 bool  paintPaneChart = input.bool(true, "Paint Pane Background", group="Colours",
@@ -182,32 +178,6 @@ if barstate.isconfirmed
 
 
 // ─────────────────────────────────────────────────────────────────────────────
-// HISTORICAL BASE RATES
-// Forward N-bar return, attributed back to whichever state was active N bars
-// ago — same approach as the Regime Classifier's and CUSUM's base-rate tables.
-// ─────────────────────────────────────────────────────────────────────────────
-var float[] sumRet = array.new_float(2, 0.0)
-var int[]   cnt    = array.new_int(2, 0)
-var int[]   winCnt = array.new_int(2, 0)
-
-if barstate.isconfirmed and bar_index >= fwdBars and not na(currentState[fwdBars])
-    int idxState = currentState[fwdBars]
-    float fwdRet = close / close[fwdBars] - 1
-    array.set(sumRet, idxState, array.get(sumRet, idxState) + fwdRet)
-    array.set(cnt,    idxState, array.get(cnt, idxState) + 1)
-    if fwdRet > 0
-        array.set(winCnt, idxState, array.get(winCnt, idxState) + 1)
-
-avgRet(idx) =>
-    int nCnt = array.get(cnt, idx)
-    nCnt > 0 ? array.get(sumRet, idx) / nCnt * 100 : na
-
-winRate(idx) =>
-    int nCnt = array.get(cnt, idx)
-    nCnt > 0 ? array.get(winCnt, idx) / nCnt * 100 : na
-
-
-// ─────────────────────────────────────────────────────────────────────────────
 // PLOTS
 // ─────────────────────────────────────────────────────────────────────────────
 plot(fish, "Fish", color=liveHistColor, style=plot.style_columns, linewidth=2)
@@ -258,24 +228,6 @@ if showLiveTable and barstate.islast
     table.cell(lt, 0, 5, "⚠ Live can change until close — trade off Confirmed only", text_color=color.white, bgcolor=color.new(color.orange, 65), text_halign=text.align_left, text_size=size.small)
     table.merge_cells(lt, 0, 5, 1, 5)
 
-// ── Table 2: Historical base-rate statistics ──────────────────────────────────
-if showTable and barstate.islast
-    var table st = table.new(getPosition(tablePos), 3, 3,
-         bgcolor=color.new(color.black, 15), border_width=1, border_color=color.gray,
-         frame_color=color.gray, frame_width=1)
-
-    table.cell(st, 0, 0, "State", text_color=color.gray, text_size=size.small)
-    table.cell(st, 1, 0, "Avg Fwd " + str.tostring(fwdBars) + "-bar %", text_color=color.gray, text_size=size.small)
-    table.cell(st, 2, 0, "Win Rate %", text_color=color.gray, text_size=size.small)
-
-    table.cell(st, 0, 1, "Bullish", text_color=colBull, text_size=size.small)
-    table.cell(st, 1, 1, na(avgRet(1)) ? "—" : str.tostring(avgRet(1), "#.##"), text_color=color.white, text_size=size.small)
-    table.cell(st, 2, 1, na(winRate(1)) ? "—" : str.tostring(winRate(1), "#.#"), text_color=color.white, text_size=size.small)
-
-    table.cell(st, 0, 2, "Bearish", text_color=colBear, text_size=size.small)
-    table.cell(st, 1, 2, na(avgRet(0)) ? "—" : str.tostring(avgRet(0), "#.##"), text_color=color.white, text_size=size.small)
-    table.cell(st, 2, 2, na(winRate(0)) ? "—" : str.tostring(winRate(0), "#.#"), text_color=color.white, text_size=size.small)
-
 
 // ─────────────────────────────────────────────────────────────────────────────
 // LIMITATIONS (see published description for the full-length version)
@@ -292,9 +244,7 @@ if showTable and barstate.islast
 //   slower to reflect a genuine change.
 // - The 4-colour momentum state (Expansion/Slowdown/Contraction/Recovery) is
 //   a cosmetic diagnostic layered on top of Fish's bar-to-bar change — it
-//   does not affect the Vote or the tables' classification.
-// - Historical base-rate stats need a meaningful sample count (check N)
-//   before being trusted.
+//   does not affect the Vote or the table's classification.
 // - This script does NOT repaint. All classification updates on confirmed
 //   bar close only.
 // ─────────────────────────────────────────────────────────────────────────────

@@ -1,0 +1,655 @@
+<!-- tradingview-pine-id: PUB;2e6bc65e84d54f2dac26b81435cef0a9 -->
+<!-- tradingview-pine-version: 3.0 -->
+<!-- tradingviewscripts-format: 1 -->
+# Wick Hunter
+
+Source: https://www.tradingview.com/script/G2qnEffj-Wick-Hunter/
+
+## Description
+
+Wick Hunter is an open-source price-action indicator designed to identify contextually significant rejection wicks while filtering out many of the smaller or lower-quality wicks that occur during normal market noise.
+
+The purpose of the script is not simply to mark candles with long wicks. Wick size by itself can be misleading, especially during consolidation or strong directional moves. Wick Hunter evaluates the wick together with its size, candle structure, recent volatility, prevailing trend, and surrounding liquidity context before displaying a signal.
+
+The indicator uses three related types of wick behavior:
+
+TREND-CONTINUATION REJECTION
+
+In a strong directional move, Wick Hunter looks for meaningful pullback wicks that reject back in the direction of the prevailing trend. This helps prevent the script from treating every countertrend wick as a reversal.
+
+LIQUIDITY SWEEP/RECLAIM
+
+The script can identify wicks that trade beyond a confirmed swing level and then reclaim that level. These signals represent rejection after liquidity has been taken rather than an isolated candle pattern.
+
+EXTREME WICK EVENTS
+
+Exceptionally large wicks relative to ATR and recent wick behavior can qualify as significant even when they do not fit a normal continuation setup. This is intended to capture unusually aggressive rejection or displacement. The script does not detect scheduled news events; it detects the resulting price behavior.
+
+All three setup types serve the same purpose: determining whether a wick is significant enough to deserve attention. They are not separate indicators combined for additional features.
+
+Wick Hunter also calculates an internal Wick Quality Score. The score considers actual wick size relative to ATR, wick size relative to recent wicks, how much of the candle is occupied by the wick, the quality of the rejection close, the candle’s size relative to recent price action, and the size of the opposing wick. Signals must meet the required quality threshold before appearing.
+
+A moderate consolidation filter is also included. When price is trading inside a compressed range, Wick Hunter suppresses many middle-of-range wick signals while still allowing meaningful rejection near the edges of the range, confirmed liquidity sweeps, and unusually extreme wicks. This filter exists specifically to reduce low-value signals during sideways price action.
+
+SIGNAL INTERPRETATION
+
+A green upward marker indicates a significant lower-wick rejection.
+
+A red downward marker indicates a significant upper-wick rejection.
+
+The accompanying “Significant Wick” label identifies the qualifying candle. Nearby text labels may be suppressed to prevent visual overlap, but valid signal arrows remain visible.
+
+Wick Hunter can display signals on all chart timeframes, but 15-minute and higher timeframes are recommended. The filtering logic was developed with intraday and higher-timeframe price action in mind, and lower timeframes may contain more noise and more frequent short-lived wick behavior. Users can adjust the thresholds to suit different markets and timeframes.
+
+On live candles, Wick Hunter evaluates conditions as price develops and locks a signal once its criteria are satisfied. Historical candles are evaluated using their completed OHLC data, which can result in differences between intrabar behavior and a fully reloaded historical chart.
+
+Wick Hunter includes alert conditions for bullish and bearish Significant Wick signals.
+
+This indicator is intended as a price-action analysis tool and should not be treated as a complete trading system by itself. Market context, execution, risk management, and independent analysis remain important.
+
+SOURCE VISIBILITY
+
+Open-source. The Pine Script code is publicly available so users can inspect how the indicator works.
+
+---
+
+## Source Code
+
+````pine
+//@version=6
+indicator("Wick Hunter", shorttitle="Wick Hunter", overlay=true, max_labels_count=500)
+
+// ============================================================================
+// WICK HUNTER
+//
+// FREE / OPEN-SOURCE INDICATOR
+//
+// PURPOSE
+// • Identify genuinely meaningful rejection wicks.
+// • Keep signals trend-aware.
+// • Avoid low-value signals inside consolidation/chop.
+// • Keep the chart visually clean.
+//
+// SIGNAL TYPES USED INTERNALLY
+// 1) Trend-continuation rejection
+// 2) Confirmed liquidity sweep / reclaim
+// 3) Extreme abnormal wick
+//
+// VISUAL RULES
+// • Every valid signal gets an arrow.
+// • Arrows stay close to the signal candle.
+// • Text labels use the signal candle itself for vertical placement.
+// • If another text label is too close horizontally, the new text label is
+//   suppressed instead of being stacked or pushed into awkward lanes.
+//
+// SIGNALS RUN ON ALL TIMEFRAMES.
+// Defaults remain tuned with 15-minute use in mind.
+//
+// REALTIME / HISTORICAL BEHAVIOR
+// • No signal latching.
+// • On a live candle, a signal exists only while the CURRENT candle state
+//   satisfies all Wick Hunter criteria.
+// • If the candle changes and no longer qualifies, the signal disappears.
+// • If it qualifies again before close, the signal reappears.
+// • Historical bars show signals only when their FINAL OHLC satisfies criteria.
+// ============================================================================
+
+// ============================================================================
+// INPUTS — WICK QUALITY
+// ============================================================================
+groupQuality = "Wick Quality"
+
+relativeLookback   = input.int(40, "Relative Wick Lookback", minval=10, maxval=250, group=groupQuality)
+rangeLookback      = input.int(30, "Candle Range Lookback", minval=10, maxval=250, group=groupQuality)
+
+minQualityScore    = input.float(76.0, "Minimum Wick Quality Score", minval=50.0, maxval=100.0, step=1.0, group=groupQuality)
+
+minCandleRangeATR  = input.float(0.60, "Minimum Candle Range vs ATR", minval=0.10, maxval=3.00, step=0.05, group=groupQuality)
+minWickLengthATR   = input.float(0.32, "Minimum Wick Length vs ATR", minval=0.05, maxval=2.00, step=0.05, group=groupQuality)
+minWickPctRange    = input.float(0.45, "Minimum Wick % of Candle Range", minval=0.10, maxval=0.95, step=0.05, group=groupQuality)
+minWickBodyRatio   = input.float(1.40, "Minimum Wick : Body Ratio", minval=0.25, maxval=10.0, step=0.05, group=groupQuality)
+maxOppositeWickPct = input.float(0.30, "Maximum Opposite Wick % of Range", minval=0.00, maxval=0.80, step=0.01, group=groupQuality)
+
+// ============================================================================
+// INPUTS — TREND ENGINE
+// ============================================================================
+groupTrend = "Trend Context"
+
+fastTrendLength        = input.int(20, "Fast Trend EMA", minval=2, maxval=200, group=groupTrend)
+slowTrendLength        = input.int(50, "Slow Trend EMA", minval=5, maxval=300, group=groupTrend)
+trendSlopeBars         = input.int(3, "Trend Slope Bars", minval=1, maxval=20, group=groupTrend)
+minTrendSeparationATR  = input.float(0.12, "Minimum EMA Separation (ATR)", minval=0.00, maxval=1.00, step=0.01, group=groupTrend)
+
+trendSwingLength       = input.int(4, "Structure Swing Strength", minval=1, maxval=20, group=groupTrend)
+
+// ============================================================================
+// INPUTS — CONTINUATION SETUP
+// ============================================================================
+groupContinuation = "Trend Continuation"
+
+continuationEMAAllowanceATR = input.float(0.18, "Fast EMA Touch Allowance (ATR)", minval=0.00, maxval=1.00, step=0.01, group=groupContinuation)
+continuationMaxDepthATR     = input.float(0.20, "Maximum Penetration Beyond Slow EMA (ATR)", minval=0.00, maxval=1.50, step=0.05, group=groupContinuation)
+continuationMinScore        = input.float(74.0, "Minimum Continuation Score", minval=50.0, maxval=100.0, step=1.0, group=groupContinuation)
+
+// ============================================================================
+// INPUTS — LIQUIDITY SWEEP
+// ============================================================================
+groupSweep = "Liquidity Sweep"
+
+sweepSwingLength   = input.int(3, "Sweep Swing Strength", minval=1, maxval=20, group=groupSweep)
+minSweepTicks      = input.int(1, "Minimum Sweep Distance (Ticks)", minval=0, maxval=100, group=groupSweep)
+maxSweepATR        = input.float(0.80, "Maximum Sweep Distance (ATR)", minval=0.05, maxval=3.00, step=0.05, group=groupSweep)
+sweepMinScore      = input.float(76.0, "Minimum Sweep Score", minval=50.0, maxval=100.0, step=1.0, group=groupSweep)
+
+// ============================================================================
+// INPUTS — EXTREME WICK
+// ============================================================================
+groupExtreme = "Extreme Wick"
+
+extremeWickATR      = input.float(1.15, "Extreme Wick Minimum ATR", minval=0.25, maxval=5.00, step=0.05, group=groupExtreme)
+extremeRelativeMult = input.float(2.80, "Extreme Wick vs Average Multiplier", minval=1.00, maxval=10.00, step=0.10, group=groupExtreme)
+extremeWickPct      = input.float(0.62, "Extreme Wick % of Candle Range", minval=0.30, maxval=0.95, step=0.01, group=groupExtreme)
+extremeMinScore     = input.float(80.0, "Minimum Extreme Wick Score", minval=50.0, maxval=100.0, step=1.0, group=groupExtreme)
+
+// ============================================================================
+// INPUTS — MODERATE CONSOLIDATION FILTER
+// ============================================================================
+groupConsolidation = "Consolidation Filter"
+
+useConsolidationFilter = input.bool(true, "Filter Wicks Inside Consolidation", group=groupConsolidation)
+consolidationLookback  = input.int(10, "Consolidation Lookback", minval=5, maxval=30, group=groupConsolidation)
+maxConsolidationATR    = input.float(2.20, "Maximum Consolidation Range (ATR)", minval=0.50, maxval=6.00, step=0.10, group=groupConsolidation)
+edgeZonePct            = input.float(0.25, "Allowed Edge Zone %", minval=0.10, maxval=0.45, step=0.05, group=groupConsolidation)
+
+// ============================================================================
+// INPUTS — SPACING / VISUALS
+// ============================================================================
+groupSpacing = "Signal Spacing"
+
+minimumSameSideSpacing = input.int(4, "Minimum Bars Between Same-Side Signals", minval=0, maxval=50, group=groupSpacing)
+
+groupVisual = "Visuals"
+
+showTextLabel       = input.bool(true, "Show Significant Wick Label", group=groupVisual)
+textCollisionBars   = input.int(5, "Minimum Bars Between Any Text Labels", minval=0, maxval=20, group=groupVisual)
+
+// ============================================================================
+// COLORS
+// ============================================================================
+bearColor = color.rgb(235, 72, 84)
+bullColor = color.rgb(45, 190, 120)
+whiteText = color.white
+
+// ============================================================================
+// CANDLE MEASUREMENTS
+// ============================================================================
+rng = high - low
+safeRange = math.max(rng, syminfo.mintick)
+
+body = math.abs(close - open)
+safeBody = math.max(body, syminfo.mintick)
+
+upperWick = high - math.max(open, close)
+lowerWick = math.min(open, close) - low
+
+upperWickPct = upperWick / safeRange
+lowerWickPct = lowerWick / safeRange
+
+upperBodyRatio = upperWick / safeBody
+lowerBodyRatio = lowerWick / safeBody
+
+closePos = (close - low) / safeRange
+
+avgUpperWick = ta.sma(upperWick, relativeLookback)
+avgLowerWick = ta.sma(lowerWick, relativeLookback)
+avgRange = ta.sma(safeRange, rangeLookback)
+
+upperRelative = avgUpperWick > 0 ? upperWick / avgUpperWick : 0.0
+lowerRelative = avgLowerWick > 0 ? lowerWick / avgLowerWick : 0.0
+
+atr = ta.atr(14)
+
+baselineATR = nz(atr[1], atr)
+baselineAvgRange = nz(avgRange[1], avgRange)
+
+// ============================================================================
+// BASIC QUALITY GATE
+// ============================================================================
+bearBasicPass =
+     safeRange >= baselineATR * minCandleRangeATR and
+     upperWick >= baselineATR * minWickLengthATR and
+     upperWickPct >= minWickPctRange and
+     upperBodyRatio >= minWickBodyRatio and
+     lowerWickPct <= maxOppositeWickPct
+
+bullBasicPass =
+     safeRange >= baselineATR * minCandleRangeATR and
+     lowerWick >= baselineATR * minWickLengthATR and
+     lowerWickPct >= minWickPctRange and
+     lowerBodyRatio >= minWickBodyRatio and
+     upperWickPct <= maxOppositeWickPct
+
+// ============================================================================
+// HIDDEN WICK QUALITY SCORE — 0 TO 100
+// ============================================================================
+bearSizeScore =
+     math.min(25.0, (upperWick / math.max(baselineATR * 0.75, syminfo.mintick)) * 25.0)
+
+bullSizeScore =
+     math.min(25.0, (lowerWick / math.max(baselineATR * 0.75, syminfo.mintick)) * 25.0)
+
+bearRelativeScore =
+     math.min(20.0, (upperRelative / 2.25) * 20.0)
+
+bullRelativeScore =
+     math.min(20.0, (lowerRelative / 2.25) * 20.0)
+
+bearDominanceScore =
+     math.min(20.0, (upperWickPct / 0.65) * 20.0)
+
+bullDominanceScore =
+     math.min(20.0, (lowerWickPct / 0.65) * 20.0)
+
+bearCloseScore =
+     math.max(0.0, math.min(15.0, (1.0 - closePos) * 20.0))
+
+bullCloseScore =
+     math.max(0.0, math.min(15.0, closePos * 20.0))
+
+rangeRelative =
+     baselineAvgRange > 0 ? safeRange / baselineAvgRange : 0.0
+
+rangeScore =
+     math.min(10.0, (rangeRelative / 1.20) * 10.0)
+
+bearCleanScore =
+     math.max(0.0, 10.0 * (1.0 - math.min(1.0, lowerWickPct / 0.35)))
+
+bullCleanScore =
+     math.max(0.0, 10.0 * (1.0 - math.min(1.0, upperWickPct / 0.35)))
+
+bearQuality =
+     bearSizeScore +
+     bearRelativeScore +
+     bearDominanceScore +
+     bearCloseScore +
+     rangeScore +
+     bearCleanScore
+
+bullQuality =
+     bullSizeScore +
+     bullRelativeScore +
+     bullDominanceScore +
+     bullCloseScore +
+     rangeScore +
+     bullCleanScore
+
+// ============================================================================
+// TREND ENGINE
+// ============================================================================
+fastEMA = ta.ema(close, fastTrendLength)
+slowEMA = ta.ema(close, slowTrendLength)
+
+fastRising = fastEMA > fastEMA[trendSlopeBars]
+fastFalling = fastEMA < fastEMA[trendSlopeBars]
+
+slowRising = slowEMA >= slowEMA[trendSlopeBars]
+slowFalling = slowEMA <= slowEMA[trendSlopeBars]
+
+emaSeparationATR =
+     baselineATR > 0 ? math.abs(fastEMA - slowEMA) / baselineATR : 0.0
+
+strongUptrend =
+     fastEMA > slowEMA and
+     fastRising and
+     slowRising and
+     emaSeparationATR >= minTrendSeparationATR and
+     close > slowEMA
+
+strongDowntrend =
+     fastEMA < slowEMA and
+     fastFalling and
+     slowFalling and
+     emaSeparationATR >= minTrendSeparationATR and
+     close < slowEMA
+
+// ============================================================================
+// STRUCTURE BACKUP
+// ============================================================================
+trendPH = ta.pivothigh(high, trendSwingLength, trendSwingLength)
+trendPL = ta.pivotlow(low, trendSwingLength, trendSwingLength)
+
+var float lastTrendHigh = na
+var float prevTrendHigh = na
+var float lastTrendLow = na
+var float prevTrendLow = na
+
+if not na(trendPH)
+    prevTrendHigh := lastTrendHigh
+    lastTrendHigh := trendPH
+
+if not na(trendPL)
+    prevTrendLow := lastTrendLow
+    lastTrendLow := trendPL
+
+hasTrendStructure =
+     not na(lastTrendHigh) and
+     not na(prevTrendHigh) and
+     not na(lastTrendLow) and
+     not na(prevTrendLow)
+
+structureUp =
+     hasTrendStructure and
+     lastTrendHigh > prevTrendHigh and
+     lastTrendLow > prevTrendLow
+
+structureDown =
+     hasTrendStructure and
+     lastTrendHigh < prevTrendHigh and
+     lastTrendLow < prevTrendLow
+
+structureBias =
+     structureUp ? 1 :
+     structureDown ? -1 :
+     0
+
+effectiveTrend =
+     strongUptrend ? 1 :
+     strongDowntrend ? -1 :
+     structureBias
+
+// ============================================================================
+// LIQUIDITY SWEEPS
+// ============================================================================
+sweepPH = ta.pivothigh(high, sweepSwingLength, sweepSwingLength)
+sweepPL = ta.pivotlow(low, sweepSwingLength, sweepSwingLength)
+
+var float lastSweepHigh = na
+var float lastSweepLow = na
+
+if not na(sweepPH)
+    lastSweepHigh := sweepPH
+
+if not na(sweepPL)
+    lastSweepLow := sweepPL
+
+minSweepDistance = syminfo.mintick * minSweepTicks
+
+bearSweep =
+     not na(lastSweepHigh) and
+     high >= lastSweepHigh + minSweepDistance and
+     close < lastSweepHigh and
+     (high - lastSweepHigh) <= baselineATR * maxSweepATR
+
+bullSweep =
+     not na(lastSweepLow) and
+     low <= lastSweepLow - minSweepDistance and
+     close > lastSweepLow and
+     (lastSweepLow - low) <= baselineATR * maxSweepATR
+
+// ============================================================================
+// SETUP 1 — TREND CONTINUATION
+// ============================================================================
+emaAllowance =
+     baselineATR * continuationEMAAllowanceATR
+
+slowDepth =
+     baselineATR * continuationMaxDepthATR
+
+bullContinuationLocation =
+     strongUptrend and
+     low <= fastEMA + emaAllowance and
+     low >= slowEMA - slowDepth and
+     close >= fastEMA
+
+bearContinuationLocation =
+     strongDowntrend and
+     high >= fastEMA - emaAllowance and
+     high <= slowEMA + slowDepth and
+     close <= fastEMA
+
+bullContinuation =
+     bullBasicPass and
+     bullQuality >= continuationMinScore and
+     bullContinuationLocation
+
+bearContinuation =
+     bearBasicPass and
+     bearQuality >= continuationMinScore and
+     bearContinuationLocation
+
+// ============================================================================
+// SETUP 2 — LIQUIDITY SWEEP / RECLAIM
+// ============================================================================
+bullSweepTrendPass =
+     not strongDowntrend or
+     close > fastEMA
+
+bearSweepTrendPass =
+     not strongUptrend or
+     close < fastEMA
+
+bullSweepSetup =
+     bullBasicPass and
+     bullQuality >= sweepMinScore and
+     bullSweep and
+     bullSweepTrendPass
+
+bearSweepSetup =
+     bearBasicPass and
+     bearQuality >= sweepMinScore and
+     bearSweep and
+     bearSweepTrendPass
+
+// ============================================================================
+// SETUP 3 — EXTREME WICK
+// ============================================================================
+bullExtremeRaw =
+     lowerWick >= baselineATR * extremeWickATR and
+     lowerRelative >= extremeRelativeMult and
+     lowerWickPct >= extremeWickPct and
+     bullQuality >= extremeMinScore
+
+bearExtremeRaw =
+     upperWick >= baselineATR * extremeWickATR and
+     upperRelative >= extremeRelativeMult and
+     upperWickPct >= extremeWickPct and
+     bearQuality >= extremeMinScore
+
+bullExtremeTrendPass =
+     not strongDowntrend or
+     close > fastEMA
+
+bearExtremeTrendPass =
+     not strongUptrend or
+     close < fastEMA
+
+bullExtreme =
+     bullExtremeRaw and
+     bullExtremeTrendPass
+
+bearExtreme =
+     bearExtremeRaw and
+     bearExtremeTrendPass
+
+// ============================================================================
+// MODERATE CONSOLIDATION FILTER
+// ============================================================================
+// This is intentionally NOT a full consolidation indicator.
+//
+// It only asks:
+// "Is price compressed enough that a wick in the middle of the range is
+// probably just chop?"
+//
+// If yes:
+// • Bearish signals are allowed near the TOP edge.
+// • Bullish signals are allowed near the BOTTOM edge.
+// • Middle-of-range wick signals are suppressed.
+// • Extreme wicks and confirmed liquidity sweeps are still allowed.
+
+consolidationHigh =
+     ta.highest(high, consolidationLookback)
+
+consolidationLow =
+     ta.lowest(low, consolidationLookback)
+
+consolidationRange =
+     consolidationHigh - consolidationLow
+
+isConsolidating =
+     useConsolidationFilter and
+     baselineATR > 0 and
+     consolidationRange <= baselineATR * maxConsolidationATR
+
+rangePosition =
+     consolidationRange > syminfo.mintick
+         ? (close - consolidationLow) / consolidationRange
+         : 0.50
+
+bearAtRangeEdge =
+     rangePosition >= 1.0 - edgeZonePct or
+     high >= consolidationHigh - baselineATR * 0.05
+
+bullAtRangeEdge =
+     rangePosition <= edgeZonePct or
+     low <= consolidationLow + baselineATR * 0.05
+
+bearConsolidationPass =
+     not isConsolidating or
+     bearAtRangeEdge or
+     bearSweepSetup or
+     bearExtreme
+
+bullConsolidationPass =
+     not isConsolidating or
+     bullAtRangeEdge or
+     bullSweepSetup or
+     bullExtreme
+
+// ============================================================================
+// FINAL SIGNAL
+// ============================================================================
+bullCandidateNow =
+     bullQuality >= minQualityScore and
+     (bullContinuation or bullSweepSetup or bullExtreme) and
+     bullConsolidationPass
+
+bearCandidateNow =
+     bearQuality >= minQualityScore and
+     (bearContinuation or bearSweepSetup or bearExtreme) and
+     bearConsolidationPass
+
+// ============================================================================
+// DETERMINISTIC SIGNAL SPACING
+// ============================================================================
+// Spacing depends only on completed PRIOR bars.
+// Nothing is latched when the current realtime candle qualifies.
+//
+// current criteria true  -> signal visible
+// current criteria false -> signal disappears
+
+bearBarsSincePriorCandidate = ta.barssince(bearCandidateNow[1])
+bullBarsSincePriorCandidate = ta.barssince(bullCandidateNow[1])
+
+bearSpacingPass =
+     minimumSameSideSpacing == 0 or
+     na(bearBarsSincePriorCandidate) or
+     bearBarsSincePriorCandidate >= minimumSameSideSpacing - 1
+
+bullSpacingPass =
+     minimumSameSideSpacing == 0 or
+     na(bullBarsSincePriorCandidate) or
+     bullBarsSincePriorCandidate >= minimumSameSideSpacing - 1
+
+bearSignal =
+     bearCandidateNow and
+     bearSpacingPass
+
+bullSignal =
+     bullCandidateNow and
+     bullSpacingPass
+
+// ============================================================================
+// ARROWS — DIRECTLY FOLLOW CURRENT CRITERIA
+// ============================================================================
+plotshape(
+     bearSignal,
+     title="Bearish Significant Wick",
+     style=shape.triangledown,
+     location=location.abovebar,
+     color=bearColor,
+     size=size.tiny)
+
+plotshape(
+     bullSignal,
+     title="Bullish Significant Wick",
+     style=shape.triangleup,
+     location=location.belowbar,
+     color=bullColor,
+     size=size.tiny)
+
+// ============================================================================
+// DETERMINISTIC TEXT COLLISION CONTROL
+// ============================================================================
+// Text also follows the current live signal. Because plotshape() is used
+// instead of persistent label.new() objects, text disappears if the live
+// candle stops qualifying.
+
+anySignal = bearSignal or bullSignal
+barsSincePriorAnySignal = ta.barssince(anySignal[1])
+
+textSpacingPass =
+     textCollisionBars == 0 or
+     na(barsSincePriorAnySignal) or
+     barsSincePriorAnySignal >= textCollisionBars - 1
+
+bearTextSignal =
+     showTextLabel and
+     bearSignal and
+     textSpacingPass
+
+bullTextSignal =
+     showTextLabel and
+     bullSignal and
+     textSpacingPass
+
+// Preserve the original Wick Hunter label appearance exactly.
+// Pine rolls back drawings created on the open realtime bar before each
+// intrabar recalculation, so these labels still disappear automatically
+// whenever the CURRENT candle no longer satisfies the signal criteria.
+
+if bearTextSignal
+    label.new(
+         bar_index,
+         high,
+         "Significant Wick",
+         yloc=yloc.abovebar,
+         style=label.style_label_down,
+         color=bearColor,
+         textcolor=whiteText,
+         size=size.tiny)
+
+if bullTextSignal
+    label.new(
+         bar_index,
+         low,
+         "Significant Wick",
+         yloc=yloc.belowbar,
+         style=label.style_label_up,
+         color=bullColor,
+         textcolor=whiteText,
+         size=size.tiny)
+
+// ============================================================================
+// ALERTS
+// ============================================================================
+alertcondition(
+     bearSignal,
+     "Wick Hunter — Bearish Significant Wick",
+     "Second Bell Wick Hunter detected a bearish Significant Wick.")
+
+alertcondition(
+     bullSignal,
+     "Wick Hunter — Bullish Significant Wick",
+     "Second Bell Wick Hunter detected a bullish Significant Wick.")
+````

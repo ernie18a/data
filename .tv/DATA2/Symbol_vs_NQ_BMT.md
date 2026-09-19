@@ -1,5 +1,5 @@
 <!-- tradingview-pine-id: PUB;85114d15d7694a0ea3e3b66f567cbbc4 -->
-<!-- tradingview-pine-version: 2.0 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Symbol vs NQ [BMT]
 
@@ -59,13 +59,20 @@ Futures (NQ1!, with ES1! for the NQ regime) intraday, where the cash index has n
 // This Pine Script® code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
 // © matt_spinola
 
-// version v1.0.0, 2026-09-15
+// version v1.1.0, 2026-09-16
 // The chart-symbol read that lived inside Index Lead Lag [BMT] through v2.2.0, as its own
-// overlay. The anchor block (Measure, the period-open reads, RTH open, the swing extremes,
-// Fixed date, the anchor-sized beta window) is copied from index_lead_lag.pine v2.3.0 rather
-// than shared through a library, so the two scripts carry no version dependency; when the
-// anchor logic changes there, change it here in the same commit. Publish text in
-// symbol_vs_nq.publish.md.
+// overlay. v1.0.1 fixes the one-bar lag of the cash index on daily stock charts, adds the
+// alpha-day boxes, and trims the inputs; v1.0.2 keeps session-gap bars out of the intraday
+// beta and sigma fits, withholds the tint where NQ is not a benchmark for the name, and
+// puts the state in words in the table, and drops the swing and Fixed date measures;
+// v1.1.0 adds the held-up marker, the raw "flat or up while NQ is down" read. The
+// anchor block (Measure, the period-open reads, RTH open, the anchor-sized beta window) is
+// copied from index_lead_lag.pine v2.3.0 rather than shared through a library, so the two
+// scripts carry no version dependency; when the anchor logic changes there, change it here
+// in the same commit. The pane's swing and Fixed date measures are deliberately NOT here:
+// this script asks about the current session, week or month, and a long arbitrary anchor
+// made the profile degenerate, the confirmation trivial and the beta window years wide.
+// Publish text in symbol_vs_nq.publish.md.
 
 //@version=6
 indicator("Symbol vs NQ [BMT]", shorttitle="Sym vs NQ [BMT]", overlay=true, max_bars_back=5000, max_labels_count=500, max_boxes_count=500)
@@ -95,8 +102,8 @@ indicator("Symbol vs NQ [BMT]", shorttitle="Sym vs NQ [BMT]", overlay=true, max_
 // --------------------- Inputs { ----------------------------- \\
 var g_ref = "Reference"
 measureInput = input.string("Auto", "Measure", group=g_ref,
-     options=["Auto", "Session open", "RTH open", "Prior close", "Week open", "Month open", "Quarter open", "NQ swing low", "NQ swing high", "Fixed date"],
-     tooltip="Percent change from a shared anchor.\nAuto: picks one from the chart timeframe, so you are not resetting this every time you switch charts. Under an hour it uses the session open; intraday above that, the week; on a daily chart, the month; higher, the quarter. The Ref cell shows what it resolved to.\nSession open: the open of the current daily bar. On CME index futures that is the 18:00 ET Globex open, so the overnight is inside the measure.\nRTH open: the open of the first bar of the cash session (09:30 ET by default), so it reads as who is leading today's cash tape with the overnight left out. Overnight bars measure from the last cash open; on a daily or higher chart it is the same as Session open.\nPrior close: the prior daily bar's close. On futures that is the 17:00 ET settlement, one maintenance hour before Session open; on a stock the gap between this and Session open is the overnight move.\nWeek open / Month open / Quarter open: the open of the current week, month or quarter. Each resets on that boundary, so the pane reads as leadership within the period to date.\nNQ swing low / high: the lowest low or highest high NQ has printed in the range you are looking at. The name is measured from that same bar, so it reads as 'since the Nasdaq turned, has this name done more than its beta?'. NQ rather than the name's own low on purpose: a name measured from its own low is at its minimum there by construction, which flatters every residual. Pan or zoom and it re-resolves to the new view. The vertical line marks where it sits.\nFixed date: the date picked below. Does not reset.")
+     options=["Auto", "Session open", "RTH open", "Prior close", "Week open", "Month open", "Quarter open"],
+     tooltip="Percent change from a shared anchor.\nAuto: picks one from the chart timeframe, so you are not resetting this every time you switch charts. Under an hour it uses the session open; intraday above that, the week; on a daily chart, the month; higher, the quarter. The Ref cell shows what it resolved to.\nSession open: the open of the current daily bar. On CME index futures that is the 18:00 ET Globex open, so the overnight is inside the measure.\nRTH open: the open of the first bar of the cash session (09:30 ET by default), so it reads as who is leading today's cash tape with the overnight left out. Overnight bars measure from the last cash open; on a daily or higher chart it is the same as Session open.\nPrior close: the prior daily bar's close. On futures that is the 17:00 ET settlement, one maintenance hour before Session open; on a stock the gap between this and Session open is the overnight move.\nWeek open / Month open / Quarter open: the open of the current week, month or quarter. Each resets on that boundary, so the pane reads as leadership within the period to date.")
 // Auto resolves against the chart's own timeframe. The useful window is roughly a few
 // dozen bars: a session open on a 4h chart is six bars and says nothing, while a
 // session open on a 1m chart is a full day of them. So the anchor scales with the bar.
@@ -107,7 +114,7 @@ measureInput = input.string("Auto", "Measure", group=g_ref,
 // rules out both the resolved value and any compound test.
 //
 // It costs nothing here. Auto only ever resolves to a period open, so under Auto none
-// of the sub-controls apply and greying all of them is the right answer anyway.
+// of the sub-controls apply and graying all of them is the right answer anyway.
 int chartSeconds = timeframe.in_seconds()
 string autoMeasure = chartSeconds < 3600 ? "Session open" : chartSeconds < 86400 ? "Week open" : chartSeconds == 86400 ? "Month open" : "Quarter open"
 string activeMeasure = measureInput == "Auto" ? autoMeasure : measureInput
@@ -115,19 +122,16 @@ sourceInput = input.string("Auto", "NQ source", group=g_ref, options=["Auto", "F
      tooltip="Futures: NQ1! (and ES1! for the NQ regime), the back-adjusted continuous contracts. Right intraday, where the cash index has no overnight bars, but back-adjustment shifts the series by its roll gaps, so over many months its percent change drifts a few points from the cash index.\nCash index: NDX (and SPX). Exact over any horizon, but only trades the cash session, so intraday charts lose the overnight.\nAuto: futures on intraday charts, cash on daily and above. The Ref cell says which is in use.\n\nThe same choice as Index Lead Lag's Index source, so the two scripts read the same series when both are on the chart.")
 rthSessionInput = input.session("0930-1600", "RTH session", group=g_ref, active=measureInput == "RTH open",
      tooltip="Used by the RTH open measure: the cash session, in New York time. The anchor is the open of the first chart bar inside it each day.")
-int startBar = input.time(timestamp("2026-01-01"), "Fixed date anchor", group=g_ref, active=measureInput == "Fixed date",
-     tooltip="Used only when Measure is Fixed date. Set with the date and time picker. A date before the loaded history anchors at the first bar loaded, and the Ref cell marks it with !.")
-// A date picker, not click-a-bar: click-a-bar means confirm=true, which makes TradingView
-// demand a bar selection every single time the indicator is added, for a field the
-// default settings never read.
 
 var g_disp = "Display"
 chartTintInput = input.bool(true, title="Tint chart", group=g_disp,
-     tooltip="Paints the price chart's background green while the chart symbol sits above the path its NQ-beta implies by more than the threshold, and red while it sits below it by more than that. The test is on the gap between the name's move and beta x NQ's move, not on the beta itself.\n\nIt answers \"is this name outperforming the Nasdaq after allowing for how much more it moves than the Nasdaq does?\" Green stretches are the name adding something of its own; red stretches are it rising less than its beta alone would have delivered.\n\nA STRONGER green marks a confirmed lead: the name at a period high NQ has not made. Beating its beta while quiet is a read that inverts in a panic (in September 2008 the names that had not yet fallen were the best shorts), so the faint green is a state whose sign you do not know, and the strong green is the one that held in both regimes.\n\nNeutral is left untinted on purpose: otherwise the chart is always coloured and none of it means anything.")
+     tooltip="Paints the price chart's background green while the chart symbol sits above the path its NQ-beta implies by more than the threshold, and red while it sits below it by more than that. The test is on the gap between the name's move and beta x NQ's move, not on the beta itself.\n\nIt answers \"is this name outperforming the Nasdaq after allowing for how much more it moves than the Nasdaq does?\" Green stretches are the name adding something of its own; red stretches are it rising less than its beta alone would have delivered.\n\nA STRONGER green marks a confirmed lead: the name at a period high NQ has not made. Beating its beta while quiet is a read that inverts in a panic (in September 2008 the names that had not yet fallen were the best shorts), so the faint green is a state whose sign you do not know, and the strong green is the one that held in both regimes.\n\nNeutral is left untinted on purpose: otherwise the chart is always colored and none of it means anything.")
 threshInput = input.float(1.0, title="Threshold (σ)", group=g_disp, minval=0.0, maxval=4.0, step=0.25,
-     tooltip="How far the name has to sit from the path beta x NQ implies, in standard deviations of where it could have drifted by chance by this point in the period, before the tint and the table call it leading or lagging. Green also needs four consecutive bars above it before it paints, and drops as soon as the residual is back at zero; red is immediate.\n\nThe sigma is measured on the name's own per-bar residual, so 1.0 means the same thing for a stock as it does for NQ even though the stock moves several times as far. Lower it and the tint fills in more of the chart, but under pure chance 0.5 already colours about six bars in ten. Raise it to keep only the runs that stand out.")
-markerSizeInput = input.string("tiny", title="Confirmed lead marker", group=g_disp, options=["off", "tiny", "small", "normal", "large"],
-     tooltip="Off, or a green triangle at one of four sizes under each bar where the lead is confirmed: the name beating its NQ-beta AND at a period high NQ has not made. Hover one for the reading. The tint carries the same state as its stronger green; the marker is for when the tint is off, or when you want the exact bars.")
+     tooltip="How far the name has to sit from the path beta x NQ implies, in standard deviations of where it could have drifted by chance by this point in the period, before the tint and the table call it leading or lagging. Green also needs four consecutive bars above it before it paints, and drops as soon as the residual is back at zero; red is immediate.\n\nThe sigma is measured on the name's own per-bar residual, so 1.0 means the same thing for a stock as it does for NQ even though the stock moves several times as far. Lower it and the tint fills in more of the chart, but under pure chance 0.5 already colors about six bars in ten. Raise it to keep only the runs that stand out.")
+markerSizeInput = input.string("tiny", title="Markers", group=g_disp, options=["off", "tiny", "small", "normal", "large"],
+     tooltip="Off, or the two markers at one of four sizes under the bar.\n\nGreen triangle: a confirmed lead, the name beating its NQ-beta AND at a period high NQ has not made. The tint carries the same state as its stronger green; the marker is for when the tint is off, or when you want the exact bars.\n\nGreen diamond: held up, the name flat or up since the anchor while NQ is meaningfully down (by more than the threshold, in NQ's own sigma). No beta in this one: it is the plain read of a stock that refuses to go down when the market gives it a reason to, and it shows even where NQ is not a benchmark for the name.\n\nHover either for the reading.")
+heldUpInput = input.bool(true, title="Held up marker", group=g_disp,
+     tooltip="The diamond. Off keeps only the confirmed-lead triangle.")
 // Two glyphs make one ladder. The label triangle SHAPE bottoms out well above the ▴
 // character (its tiny sat on the bars), so the first three steps are the character at
 // size.small, normal and large (at size.tiny it is a dot) and only the last is the
@@ -141,7 +145,7 @@ markerSize = switch markerSizeInput
     => size.small
 alphaBoxInput = input.bool(false, title="Box alpha days", group=g_disp,
      tooltip="Outlines the days the stock produced alpha of its own: green for outperformance against beta x NQ, red for underperformance, beyond what its daily noise could explain.\n\nAgainst beta x NQ, not against NQ: a beta-2 name on a day NQ rises 1% is expected to rise 2%, and rising 1.5% is a red-box candidate even though it beat the index. Beyond what noise could explain means two standard deviations of the stock's own daily swings, so a quiet name earns a box on a small move and a wild one needs a big move, and a box means the same thing on any name.\n\nThe tint adds these days up since the anchor and smooths them over, so one huge day inside a lagging stretch, or a bad day inside a leading one, shows up nowhere else. Hover the bar and read Bar alpha in the data window for the size.")
-tableLocationInput = input.string("Hidden", title="Status table", group=g_disp,
+tableLocationInput = input.string("Bottom right", title="Status table", group=g_disp,
      options=["Hidden", "Top left", "Middle left", "Bottom left", "Top right", "Middle right", "Bottom right"])
 bool showTableInput = tableLocationInput != "Hidden"
 tablePosition = switch tableLocationInput
@@ -162,27 +166,9 @@ tableFontSizeOption = switch tableFontSizeInput
 // in the settings dialog, and a picker that does nothing while the table is hidden
 // costs nothing enabled.
 // The persistence count below is a constant rather than an input, after CARS.
-bool usesDate = activeMeasure == "Fixed date"
-bool usesSwingLow = activeMeasure == "NQ swing low"
-bool usesSwingHigh = activeMeasure == "NQ swing high"
-bool usesSwing = usesSwingLow or usesSwingHigh
 bool usesRth = activeMeasure == "RTH open"
 //}
 
-// --------------------- Fixed-date anchor { ----------------------------- \\
-// Only Fixed date needs a bar offset, so it is the only measure that can run past the
-// history buffer. First bar at or after the anchor: if the date predates the loaded
-// history this lands on bar 0 rather than never resolving.
-getBarIndexSinceTime(t) =>
-    var int foundBar = na
-    if na(foundBar) and time >= t
-        foundBar := bar_index
-    foundBar
-
-// input.time defaults have to be constants, so the literal date below goes stale. There
-// used to be an "anchor at current session" checkbox to make the stale default usable,
-// but that only restated Session open (one bar worse: the first bar's close rather than
-// the daily open), so Fixed date now means the date, and a stale date lands on bar 0.
 
 // Hoisted out of the conditions below on purpose. v6 short-circuits or, so
 // "na(dayStartBar) or ta.change(...)" would skip ta.change on the first bar, and a
@@ -219,21 +205,11 @@ if na(quarterStartBar) or newQuarter
     quarterLen := na(quarterStartBar) ? na : bar_index - quarterStartBar
     quarterStartBar := bar_index
 
-int MAX_LOOKBACK = 4900
-
-// Called unconditionally, not inside the ternary below. getBarIndexSinceTime holds a
-// var that latches the first bar at or after the anchor date, and a function carrying
-// var state has to run on every bar to latch correctly; burying it in a branch is the
-// same trap as putting a ta.* call inside an if.
-int fixedAnchorBar = getBarIndexSinceTime(startBar)
-int offsetBarIndex = fixedAnchorBar
 //}
 
 // --------------------- Data { ----------------------------- \\
-// NQ is the benchmark, and the swing anchors are NQ's extremes: the question is what the
-// name did since the Nasdaq turned, and anchoring on the name's own low would put it at
-// its minimum by construction. ES is here for one thing only, NQ's own state against
-// it, which the conditional profile needs.
+// NQ is the benchmark. ES is here for one thing only, NQ's own state against it, which
+// the conditional profile needs.
 bool useCash = sourceInput == "Cash index" or (sourceInput == "Auto" and not timeframe.isintraday)
 string NQ_SYM = useCash ? "NASDAQ:NDX" : "NQ1!"
 string ES_SYM = useCash ? "SP:SPX"     : "ES1!"
@@ -252,7 +228,7 @@ f_periodOpen(string sym, string tf) =>
 // chart symbol's beta to NQ came out at -0.05 against a true 1.8. On the same
 // timeframe lookahead on is the bar's own close, nothing from the future, and the
 // realtime bar is the developing value either way.
-[nqClose, nqHigh, nqLow, nqOpen] = request.security(NQ_SYM, timeframe.period, [close, high, low, open], lookahead=barmerge.lookahead_on)
+[nqClose, nqOpen] = request.security(NQ_SYM, timeframe.period, [close, open], lookahead=barmerge.lookahead_on)
 [esClose, esOpen] = request.security(ES_SYM, timeframe.period, [close, open], lookahead=barmerge.lookahead_on)
 
 // RTH open: the open of the first chart bar inside the cash session, held through the
@@ -285,48 +261,16 @@ nqQtrOpen    = f_periodOpen(NQ_SYM, "3M")
 esQtrOpen    = f_periodOpen(ES_SYM, "3M")
 symQtrOpen   = f_periodOpen(syminfo.tickerid, "3M")
 
-// The extreme of what you are actually looking at, rather than a pivot you have to
-// tune. Referencing chart.left_visible_bar_time makes TradingView recalculate the whole
-// script whenever you pan or zoom, which is what keeps the anchor in step with the view.
-//
-// Running rather than final: at any bar the anchor is the most extreme NQ print since
-// the left edge up to THAT bar, so the series reads as "how far from the running
-// extreme are we". At the right edge that is the visible extreme, which is the number
-// you are actually looking for.
-//
-// This also removes the confirmation lag. A pivot could not be known until its right
-// bars had printed, so the marker sat to the right of the low it described; a running
-// extreme is known the moment it happens.
-bool inView = not na(chart.left_visible_bar_time) and time >= chart.left_visible_bar_time
-var float visExtreme = na
-var int visExtremeBar = na
-if inView and usesSwingLow and (na(visExtreme) or nqLow < visExtreme)
-    visExtreme := nqLow
-    visExtremeBar := bar_index
-if inView and usesSwingHigh and (na(visExtreme) or nqHigh > visExtreme)
-    visExtreme := nqHigh
-    visExtremeBar := bar_index
 
-int swingOffset = na(visExtremeBar) ? na : bar_index - visExtremeBar
-int rawLookback = usesDate ? bar_index - offsetBarIndex : usesSwing ? swingOffset : na
-int lookback = na(rawLookback) ? na : math.min(math.max(rawLookback, 1), MAX_LOOKBACK)
-bool lookbackCapped = usesDate and not na(rawLookback) and rawLookback > MAX_LOOKBACK
-
-// The offset close for the bar-counted measures. Taken at top level so the history operator applies
-// to a real series rather than a function parameter.
-float nqOffsetClose  = na(lookback) ? na : nqClose[lookback]
-float esOffsetClose  = na(lookback) ? na : esClose[lookback]
-float symOffsetClose = na(lookback) ? na : close[lookback]
-
-f_anchor(float dayOpen, float rthOpen, float prevClose, float weekOpen, float monthOpen, float qtrOpen, float offsetClose) =>
-    activeMeasure == "Session open" ? dayOpen : usesRth ? (timeframe.isintraday ? rthOpen : dayOpen) : activeMeasure == "Prior close" ? prevClose : activeMeasure == "Week open" ? weekOpen : activeMeasure == "Month open" ? monthOpen : activeMeasure == "Quarter open" ? qtrOpen : offsetClose
+f_anchor(float dayOpen, float rthOpen, float prevClose, float weekOpen, float monthOpen, float qtrOpen) =>
+    activeMeasure == "Session open" ? dayOpen : usesRth ? (timeframe.isintraday ? rthOpen : dayOpen) : activeMeasure == "Prior close" ? prevClose : activeMeasure == "Week open" ? weekOpen : activeMeasure == "Month open" ? monthOpen : qtrOpen
 
 f_pct(float c, float anchor) =>
     na(anchor) or anchor == 0 ? na : (c - anchor) / anchor * 100
 
-float nqRaw  = f_pct(nqClose, f_anchor(nqDayOpen,  nqRthOpen,  nqPrevClose,  nqWeekOpen,  nqMonthOpen,  nqQtrOpen,  nqOffsetClose))
-float esRaw  = f_pct(esClose, f_anchor(esDayOpen,  esRthOpen,  esPrevClose,  esWeekOpen,  esMonthOpen,  esQtrOpen,  esOffsetClose))
-float symRaw = f_pct(close,   f_anchor(symDayOpen, symRthOpen, symPrevClose, symWeekOpen, symMonthOpen, symQtrOpen, symOffsetClose))
+float nqRaw  = f_pct(nqClose, f_anchor(nqDayOpen,  nqRthOpen,  nqPrevClose,  nqWeekOpen,  nqMonthOpen,  nqQtrOpen))
+float esRaw  = f_pct(esClose, f_anchor(esDayOpen,  esRthOpen,  esPrevClose,  esWeekOpen,  esMonthOpen,  esQtrOpen))
+float symRaw = f_pct(close,   f_anchor(symDayOpen, symRthOpen, symPrevClose, symWeekOpen, symMonthOpen, symQtrOpen))
 
 // Where the measurement starts, for every measure and not just the bar-counted ones.
 // The period anchors are read as prices, so their bar has to be recovered separately
@@ -337,8 +281,7 @@ int anchorBar = switch
     activeMeasure == "Prior close"  => na(dayStartBar) ? na : dayStartBar - 1
     activeMeasure == "Week open"    => weekStartBar
     activeMeasure == "Month open"   => monthStartBar
-    activeMeasure == "Quarter open" => quarterStartBar
-    => na(lookback) ? na : bar_index - lookback
+    => quarterStartBar
 
 // Bars elapsed since it. Floored at 1: on the anchor bar itself the residual is
 // zero anyway, and a zero scale would divide by zero rather than read as neutral.
@@ -349,34 +292,33 @@ int barsSinceAnchor = na(anchorBar) ? na : math.max(bar_index - anchorBar, 1)
 // a few hours on a 5m chart and four months on a daily one, and on a long anchor the
 // beta's own estimation error, times the size of the ES move, swamped the residual.
 // So the window is a fixed number of ANCHOR PERIODS: four sessions for a session
-// anchor, four months for a month anchor, four times the span for a swing or a date.
+// anchor, four months for a month anchor.
 // Beta is then always fitted at the horizon it is subtracted over, and the estimate
 // tightens as the anchor lengthens instead of staying at 90 while the move it scales
 // grows.
 //
-// Four periods, because on a daily chart with the month anchor that is 84 bars, the
-// same neighbourhood as the 90 this replaces; the standard error of an OLS beta falls
+// Four periods on daily and above, because with the month anchor that is 84 bars, the
+// same neighborhood as the 90 this replaces; the standard error of an OLS beta falls
 // with the square root of the sample, so more periods buy little and cost history.
+// Eight intraday. Bar returns there are far noisier relative to the index than daily
+// ones (DELL against NQ correlates about 0.3 on 15m bars against 0.6 on dailies), so
+// four sessions leaves a standard error near half the beta; eight halves the variance
+// for a window that is still only a week and a half, and the session-gap exclusion
+// keeps the extra sessions from adding more overnight bars to the fit.
 // The floor keeps a thin OLS honest where a period is a handful of bars (a daily
 // chart on a session anchor, a weekly chart on the quarter); the cap keeps a 1m chart
 // inside the history buffer (max_bars_back 5000), at a session and a half there.
 //
-// It does NOT make the residual trustworthy over a long anchor. A wider window shrinks
-// the estimation error; it cannot fix a beta that has itself drifted over the year.
-// Over anchors months back, read the raw move against NQ's raw move instead.
 //
 // Session length is the mean of the last five completed sessions from the day-start
 // ring, so one holiday half-day moves the window by a tenth rather than halving it.
 float sessionBars = dayStarts.size() > 5 ? (dayStarts.get(0) - dayStarts.get(5)) / 5.0 : 1.0
-float spanBars = na(anchorBar) ? sessionBars : math.max(last_bar_index - anchorBar, sessionBars)
 float periodBars = switch
     activeMeasure == "Week open"    => na(weekLen)    ? 5  * sessionBars : weekLen
     activeMeasure == "Month open"   => na(monthLen)   ? 21 * sessionBars : monthLen
     activeMeasure == "Quarter open" => na(quarterLen) ? 63 * sessionBars : quarterLen
-    usesSwing                       => spanBars
-    usesDate                        => spanBars
     => sessionBars
-int BETA_PERIODS = 4
+int BETA_PERIODS = timeframe.isintraday ? 8 : 4
 int betaLen = math.min(math.max(math.round(BETA_PERIODS * periodBars), 60), 2000)
 //}
 
@@ -390,23 +332,49 @@ int betaLen = math.min(math.max(math.round(BETA_PERIODS * periodBars), 60), 2000
 // it biases exactly the outliers the sigma test exists to catch: a genuine outlier
 // drags its own beta toward itself and partly explains itself away. Same offset, and
 // same reasoning, as the beta in agi/indicators/cars.pine and in Index Lead Lag.
-f_beta(float rx, float rm, int len) =>
+// Returns the slope and the correlation of the same fit. The correlation is what says
+// whether NQ is a benchmark for this name at all: beta is slope times correlation, so
+// a small beta can be a well-explained low-volatility name, while a beta of 1 fitted at
+// correlation 0.1 explains nothing. The gate below reads the correlation.
+f_fit(float rx, float rm, int len) =>
     float x = rx[1]
     float m = rm[1]
     float mx = ta.sma(m, len)
     float my = ta.sma(x, len)
     float cov = ta.sma(m * x, len) - mx * my
     float vr  = ta.sma(m * m, len) - mx * mx
-    na(vr) or vr == 0 ? na : cov / vr
+    float vx  = ta.sma(x * x, len) - my * my
+    float b = na(vr) or vr == 0 ? na : cov / vr
+    float r = na(vr) or na(vx) or vr <= 0 or vx <= 0 ? na : cov / math.sqrt(vr * vx)
+    [b, r]
 
 float nqRet  = na(nqClose[1]) or nqClose[1] == 0 ? na : nqClose / nqClose[1] - 1
 float esRet  = na(esClose[1]) or esClose[1] == 0 ? na : esClose / esClose[1] - 1
 float symRet = na(close[1])   or close[1]   == 0 ? na : close / close[1] - 1
 
+// Session-gap bars are left out of the fits. On an intraday stock chart the first bar
+// of the day carries the whole overnight move, for the name and for NQ alike: on a 15m
+// chart that is a 16-hour return sitting in a regression of 15-minute returns, ten
+// times their size, and with four of them in a four-session window they set the beta.
+// Measured on DELL 15m, 2026-09-15: beta 3.1 with the 09:30 bars in, 1.0 with them out,
+// and the script read 4.0. The per-bar sigma behind the threshold inflates the same
+// way. So a bar whose time step is more than 1.5x the chart timeframe contributes a
+// zero return to the beta and sigma fits (a zero rather than na, so the window stays
+// whole; it shrinks the variance by a bar in twenty-six, which is nothing next to the
+// gap). Intraday only: on a daily chart a weekend is a normal daily return. The gap
+// stays in the anchored move, since it is genuinely part of "since the open", so a
+// big gap shows up as an alpha day against the intraday noise rather than being
+// absorbed into the beta. On a futures chart this also drops the bar after the
+// maintenance hour, which is the same kind of return.
+bool gapBar = timeframe.isintraday and not na(time[1]) and (time - time[1]) > timeframe.in_seconds() * 1500
+float symRetFit = gapBar ? 0.0 : symRet
+float nqRetFit  = gapBar ? 0.0 : nqRet
+float esRetFit  = gapBar ? 0.0 : esRet
+
 // The name against NQ, and NQ against ES. The second exists only for the regime the
 // profile conditions on.
-float symBeta = f_beta(symRet, nqRet, betaLen)
-float nqBeta  = f_beta(nqRet,  esRet, betaLen)
+[symBeta, symCorr] = f_fit(symRetFit, nqRetFit, betaLen)
+[nqBeta, nqCorr]   = f_fit(nqRetFit,  esRetFit, betaLen)
 float symResidual = na(symBeta) or na(symRaw) or na(nqRaw) ? na : symRaw - symBeta * nqRaw
 float nqResidual  = na(nqBeta)  or na(nqRaw)  or na(esRaw) ? na : nqRaw  - nqBeta  * esRaw
 
@@ -425,10 +393,9 @@ float nqResidual  = na(nqBeta)  or na(nqRaw)  or na(esRaw) ? na : nqRaw  - nqBet
 // The anchored residual is a running sum of per-bar residuals. Under the null (no
 // persistent lead or lag) that sum is a driftless random walk, whose spread at step k
 // is sigma_bar * sqrt(k). Dividing by THAT makes the threshold mean one thing at every
-// point in the period. It also generalises to all nine measures: slot-matching against
+// point in the period. It also generalizes to every measure: slot-matching against
 // the same bar of prior sessions would handle the intraday volatility smile too, but
-// only the session anchor repeats, and the swing anchors, where k runs from three
-// bars to three hundred and the bias is worst, have no slots at all.
+// only the session anchor repeats.
 //
 // sigma_bar is measured on the ONE-BAR residual, which is stationary and so can be
 // pooled honestly. The anchored one could not.
@@ -442,7 +409,10 @@ float nqResidual  = na(nqBeta)  or na(nqRaw)  or na(esRaw) ? na : nqRaw  - nqBet
 // NOT cancel here: the numerator and the scale have to be in the same unit, and
 // mixing them inflates every z by exactly 100x, which puts the threshold below the
 // noise floor and marks every bar.
-float symBarResid = na(symBeta) or na(symRet) or na(nqRet) ? na : (symRet - symBeta * nqRet) * 100
+float symBarResid = na(symBeta) or na(symRet) or na(nqRet) ? na : (symRetFit - symBeta * nqRetFit) * 100
+// The bar's actual one-bar residual, gap included, for the alpha-day boxes: scored
+// against the intraday sigma above, which is how an overnight gap gets its box.
+float symBarResidRaw = na(symBeta) or na(symRet) or na(nqRet) ? na : (symRet - symBeta * nqRet) * 100
 float symBarSigma = ta.stdev(symBarResid, betaLen)
 float symScale = na(symBarSigma) or na(barsSinceAnchor) ? na : symBarSigma * math.sqrt(barsSinceAnchor)
 float symResidZUndamped = na(symScale) or symScale == 0 or na(symResidual) ? na : symResidual / symScale
@@ -495,8 +465,39 @@ bool symLag  = not na(symResidZ) and symResidZ < -threshInput
 // screen that omits recent IPOs reads them as weak). The table says which.
 bool measurable = not na(symBeta)
 
+// No NQ link. The residual means "alpha against NQ" only while NQ explains a
+// meaningful share of the name's variance; below a correlation of 0.3 (R-squared
+// under a tenth) the beta is noise around zero, the residual is the raw move, and the
+// tint would be a trend meter wearing a relative-strength label. Measured on the
+// same day: Lilly at 0.15 over two years with a beta that flipped sign twice, a
+// managed-futures ETF near zero, bitcoin at about 0.3, DELL at 0.6. In this state the
+// tint, the confirmed markers and the alpha-day boxes are withheld, the table says
+// so, and the numbers stay: on such a name they are an honest trend read, and the
+// profile is where "does not need NQ" lives with a real sample. A negative
+// correlation is no link too.
+//
+// Tested on its OWN window, two years of daily bars, not the beta window. The link is
+// a structural property of the name and the anchor-sized window is hostage to whatever
+// sits in it: GitLab read 0.09 over 84 bars and 0.17 over a year (a year in which it
+// traded on its own news, not an outlier effect: dropping its ten biggest days leaves
+// 0.14), and 0.38 over two years, which is what "a Nasdaq name" means. Lilly is 0.15
+// over the same two years, a managed-futures ETF near zero, DELL 0.52, bitcoin 0.44.
+// Intraday, where two years is out of reach, the larger of the beta window and 1000
+// bars, capped with the beta window at 2000. The beta itself stays on the anchor-sized
+// window; only the yes/no is long-run.
+// And the mirror case: a correlation near 1 means the symbol IS NQ (the future, QQQ,
+// a leveraged tracker), and the residual is basis, tracking error or leverage decay
+// scaled by a noise so small that the cost of carry cleared a sigma in some months and
+// painted NQ1! as lagging the cash index. Withheld the same way, header "tracks NQ".
+float LINK_MIN_CORR = 0.3
+float TRACKS_CORR   = 0.95
+int linkLen = math.min(math.max(betaLen, timeframe.isintraday ? 1000 : 504), 2000)
+[linkBeta, linkCorr] = f_fit(symRetFit, nqRetFit, linkLen)
+bool tracksNq = measurable and not na(linkCorr) and linkCorr >= TRACKS_CORR
+bool noLink = measurable and not na(linkCorr) and (linkCorr < LINK_MIN_CORR or tracksNq)
+
 // NQ's own state against its ES beta, the same test, for the profile.
-float nqBarResid = na(nqBeta) or na(nqRet) or na(esRet) ? na : (nqRet - nqBeta * esRet) * 100
+float nqBarResid = na(nqBeta) or na(nqRet) or na(esRet) ? na : (nqRetFit - nqBeta * esRetFit) * 100
 float nqBarSigma = ta.stdev(nqBarResid, betaLen)
 float nqScale = na(nqBarSigma) or na(barsSinceAnchor) ? na : nqBarSigma * math.sqrt(barsSinceAnchor)
 float nqResidZ = na(nqScale) or nqScale == 0 or na(nqResidual) ? na : nqResidual / nqScale
@@ -519,12 +520,31 @@ bool nqLag  = not na(nqResidZ) and nqResidZ < -threshInput
 // No mirror on the lag side. The rule is about the not-yet-fallen cohort specifically;
 // inventing the short-side symmetry would be going past what the source says.
 //
-// ta.highest takes a series length, so one window covers every anchor:
-// rolling for the swing extremes, fixed for the period opens and the date.
+// ta.highest takes a series length, so one window covers every anchor period.
 int confirmLen = na(barsSinceAnchor) ? 1 : math.min(barsSinceAnchor, 4999)
 float symPeriodHigh = ta.highest(close, confirmLen)
 float nqPeriodHigh  = ta.highest(nqClose, confirmLen)
 bool symConfirmed = symLead and not na(barsSinceAnchor) and close >= symPeriodHigh and nqClose < nqPeriodHigh
+
+// Held up: the name flat or up since the anchor while NQ is down by more than the
+// threshold, in NQ's OWN sigma (its raw per-bar noise times sqrt of bars since the
+// anchor, the same yardstick the residual uses). The discretionary version of relative
+// strength, the stock that refuses to go down when the market gives it an excuse to.
+// No beta in it on purpose: the residual already scores the beta-adjusted read, and a
+// low-beta name that holds flat through a selloff is "near β" there while being
+// exactly what a trader means by holding up. For the same reason it is not withheld
+// on a weak NQ link; it only needs the link not to be inverse (an inverse fund is up
+// whenever NQ is down, which is not holding up) and the symbol not to be NQ itself.
+// No persistence gate, unlike the lead. NQ down a full sigma of its own drift is the
+// filter, and the sqrt(k) scaling already covers the bars right after the anchor.
+// Measured on 27 months of daily bars (six names, month anchor, 2026-09-16): with the
+// lead's four-bar gate on top this fired on one to four bars per name in the whole
+// span, one episode each; without it, 10 to 29 bars in 5 to 15 episodes, a few times a
+// year, which is what the read is for.
+float nqRawBarSigma = ta.stdev(nqRetFit * 100, betaLen)
+float nqRawScale = na(nqRawBarSigma) or na(barsSinceAnchor) ? na : nqRawBarSigma * math.sqrt(barsSinceAnchor)
+bool nqDown = not na(nqRawScale) and nqRawScale > 0 and not na(nqRaw) and nqRaw <= -threshInput * nqRawScale
+bool symHeldUp = nqDown and not na(symRaw) and symRaw >= 0 and not na(linkCorr) and linkCorr > 0 and not tracksNq
 
 // Conditional profile: what the symbol has averaged while NQ was leading its own beta,
 // versus while NQ was lagging it. A wide gap says the name rides megacap leadership;
@@ -547,7 +567,7 @@ if not na(symResidual) and nqLag
     symAvgOnNqLag := na(symAvgOnNqLag) ? symResidual : symAvgOnNqLag + (symResidual - symAvgOnNqLag) / math.min(symCntOnNqLag, PROFILE_N)
 //}
 
-// --------------------- Colours { ----------------------------- \\
+// --------------------- Colors { ----------------------------- \\
 chartLuma = 0.2126 * color.r(chart.bg_color) + 0.7152 * color.g(chart.bg_color) + 0.0722 * color.b(chart.bg_color)
 bool isDark = chartLuma <= 128
 
@@ -563,7 +583,7 @@ tintConfirm = color.new(isDark ? #5BC08A : #1E8355, isDark ? 85 : 86)
 
 // Marker and table greens and reds. Green is set well brighter than red (167 against
 // 136 raw) because hue is the only thing separating lead from lag and red-green is the
-// axis that collapses for colour deficiency; the pair survives in greyscale.
+// axis that collapses for color deficiency; the pair survives in grayscale.
 calmColor = isDark ? #5BC08A : #1E8355   // lead,  luma 167 dark / 106 light
 warnColor = isDark ? #DE7078 : #B03B42   // lag,   luma 136 dark /  84 light
 tblDimColor = isDark ? #C3CAD6 : #3F444B
@@ -583,17 +603,16 @@ resetColor  = color.new(isDark ? #4A72AE : #2F5FA8, 30)
 // --------------------- Drawing { ----------------------------- \\
 // Green while the name is beating the path its NQ-beta implies by more than the
 // threshold (with the persistence gate above), red while it is missing it, nothing
-// between: a chart that is always coloured means nothing. The stronger green is the
+// between: a chart that is always colored means nothing. The stronger green is the
 // confirmed lead. Faint on purpose, about 12 luma off the canvas, matched on luma
 // rather than transparency so neither side reads stronger.
-color chartTint = not chartTintInput ? na : symConfirmed ? tintConfirm : symLead ? tintLead : symLag ? tintLag : na
+color chartTint = not chartTintInput or noLink ? na : symConfirmed ? tintConfirm : symLead ? tintLead : symLag ? tintLag : na
 
 bgcolor(chartTint, title="Symbol vs NQ-beta")
 
 // The bars that WERE anchors: each session, week, month or quarter open as the measure
-// dictates, or the swing extreme, as a tick on the bottom edge. Fixed date is excluded:
-// it has exactly one anchor, and the solid line below marks it.
-bool markBar = usesSwing ? (not na(visExtremeBar) and visExtremeBar == bar_index) : usesDate ? false : activeMeasure == "Quarter open" ? newQuarter : activeMeasure == "Month open" ? newMonth : activeMeasure == "Week open" ? newWeek : usesRth and timeframe.isintraday ? rthStart : newDay
+// dictates, as a tick on the bottom edge.
+bool markBar = activeMeasure == "Quarter open" ? newQuarter : activeMeasure == "Month open" ? newMonth : activeMeasure == "Week open" ? newWeek : usesRth and timeframe.isintraday ? rthStart : newDay
 plotshape(markBar, title="Anchor resets", style=shape.square, location=location.bottom, color=resetColor, size=size.tiny)
 
 // Confirmed leads as labels rather than plotshape, so each carries a hover reading.
@@ -608,9 +627,14 @@ bool labelInView = not na(chart.left_visible_bar_time) and time >= chart.left_vi
 // an explicit gap of a third of an ATR under the bar instead. The character is not
 // anchored that way and sits clear on its own.
 float markerGap = ta.atr(14) * 0.35
-if showMarkers and symConfirmed and labelInView
+if showMarkers and symConfirmed and not noLink and labelInView
     label.new(bar_index, markerIsShape ? low - markerGap : low, markerIsShape ? "" : "▴", style=markerIsShape ? label.style_triangleup : label.style_none, yloc=markerIsShape ? yloc.price : yloc.belowbar, color=calmColor, textcolor=calmColor, size=markerSize,
          tooltip=syminfo.ticker + " leading its NQ-beta, confirmed" + f_sigma(symResidZ) + "\nAt a period high NQ has not made: the upside leg that holds in both regimes.")
+// Held up, as a diamond under the bar. When the same bar is a confirmed lead the
+// triangle is drawn alone: the two would stack, and confirmed is the stronger read.
+if showMarkers and heldUpInput and symHeldUp and labelInView and not (symConfirmed and not noLink)
+    label.new(bar_index, markerIsShape ? low - markerGap : low, markerIsShape ? "" : "◆", style=markerIsShape ? label.style_diamond : label.style_none, yloc=markerIsShape ? yloc.price : yloc.belowbar, color=calmColor, textcolor=calmColor, size=markerSize,
+         tooltip=syminfo.ticker + " held up: " + (symRaw >= 0 ? "+" : "") + str.tostring(symRaw, "0.00") + "% since the anchor while NQ is " + str.tostring(nqRaw, "0.00") + "%\nFlat or up while the market is down: the plain read, no beta in it.")
 
 // Alpha days: the one-bar residual against its own noise, boxed. The box is drawn for
 // the PREVIOUS bar, once both its neighbours' times are known, so its edges sit at the
@@ -621,17 +645,16 @@ if showMarkers and symConfirmed and labelInView
 // view, and past max_boxes_count Pine drops the oldest first. No input for the 2σ;
 // it is an outlier definition, not a tuning.
 float ALPHA_BOX_SIGMA = 2.0
-float barZ = na(symBarSigma) or symBarSigma == 0 or na(symBarResid) ? na : symBarResid / symBarSigma
+float barZ = na(symBarSigma) or symBarSigma == 0 or na(symBarResidRaw) ? na : symBarResidRaw / symBarSigma
 bool alphaUp = not na(barZ) and barZ >=  ALPHA_BOX_SIGMA
 bool alphaDn = not na(barZ) and barZ <= -ALPHA_BOX_SIGMA
-if alphaBoxInput and labelInView
+if alphaBoxInput and not noLink and labelInView
     if alphaUp[1] or alphaDn[1]
         box.new(math.round((time[2] + time[1]) / 2), high[1], math.round((time[1] + time) / 2), low[1], xloc=xloc.bar_time, border_color=alphaUp[1] ? calmColor : warnColor, bgcolor=na, border_width=1)
     if barstate.islast and (alphaUp or alphaDn)
         box.new(math.round((time[1] + time) / 2), high, time + math.round((time_close - time) / 2), low, xloc=xloc.bar_time, border_color=alphaUp ? calmColor : warnColor, bgcolor=na, border_width=1)
 
-// The anchor bar. One vertical line, redrawn on the last bar because the swing and
-// Fixed date anchors can move with the view.
+// The anchor bar. One vertical line, redrawn on the last bar.
 var line anchorLine = na
 if barstate.islast
     line.delete(anchorLine)
@@ -640,12 +663,16 @@ if barstate.islast
 plot(symRaw,      title="Symbol move (%)",          precision=2, display=display.data_window)
 plot(nqRaw,       title="NQ move (%)",              precision=2, display=display.data_window)
 plot(symBeta,     title="Beta to NQ",               precision=2, display=display.data_window)
+plot(symCorr,     title="Correlation to NQ",        precision=2, display=display.data_window)
+plot(linkCorr,    title="Correlation to NQ, 2y",    precision=2, display=display.data_window)
 plot(symResidual, title="Residual vs NQ-beta",      precision=2, display=display.data_window)
 plot(symResidZ,   title="Residual (σ)",             precision=2, display=display.status_line)
 plot(symResidZUndamped, title="Residual undamped (σ)", precision=2, display=display.data_window)
 plot(barZ,        title="Bar alpha (σ)",             precision=2, display=display.data_window)
+plot(symHeldUp ? 1 : 0, title="Held up",             precision=0, display=display.data_window)
 plot(dailyMa,     title="50-day average (daily)",   precision=2, display=display.data_window)
 plot(nqResidZ,    title="NQ residual vs ES (σ)",    precision=2, display=display.data_window)
+plot(nqCorr,      title="NQ correlation to ES",     precision=2, display=display.data_window)
 plot(betaLen,     title="Beta window bars",         precision=0, display=display.data_window)
 plot(symAvgOnNqLead, title="Avg residual when NQ leads", precision=2, display=display.data_window)
 plot(symAvgOnNqLag,  title="Avg residual when NQ lags",  precision=2, display=display.data_window)
@@ -663,20 +690,25 @@ f_num(float v) =>
     na(v) ? "-" : str.tostring(v, "0.00")
 
 if barstate.islast and showTableInput
-    string symTip = "The chart symbol against NQ. Ticker, then its move from the " + activeMeasure + " anchor in percent, then its beta to NQ over the last " + str.tostring(betaLen) + " bars (four anchor periods).\n\nThe ticker turns green when the lead is CONFIRMED: the name at a period high NQ has not made. Beating its beta while merely quiet is a read that inverts by regime (in September 2008 the not-yet-fallen names were the best shorts), so the upside leg is the half that survives both; an unconfirmed lead is not nothing, it is a sign you cannot yet read."
+    string symTip = "How to read this table: the header of the second column is the state in words (confirmed, leading, held up, lagging, near beta, no NQ link, or tracks NQ); under it the residual and its sigma. Green ticker means the lead is confirmed. Everything else is context.\n\nThe chart symbol against NQ. Ticker, then its move from the " + activeMeasure + " anchor in percent, then its beta to NQ over the last " + str.tostring(betaLen) + " bars (four anchor periods on a daily chart, eight intraday) and, as r, its correlation to NQ over the last " + str.tostring(linkLen) + " bars. The link test uses two years of bars, whatever the anchor: under 0.3 there, NQ is not a benchmark for this name and the tint is withheld; at 0.95 and above the symbol is NQ itself or a tracker, and it is withheld too.\n\nThe ticker turns green when the lead is CONFIRMED: the name at a period high NQ has not made. Beating its beta while merely quiet is a read that inverts by regime (in September 2008 the not-yet-fallen names were the best shorts), so the upside leg is the half that survives both; an unconfirmed lead is not nothing, it is a sign you cannot yet read."
     string residTip = measurable
-         ? "Residual: the name's move minus beta x NQ's move over the same stretch, then that residual in standard deviations of where it could have drifted by chance by this point in the period (per-bar noise times the square root of bars since the anchor).\n\nZero means it moved exactly as its beta implies. Above the threshold is the name adding something of its own; below is it rising less than its beta alone would have delivered.\n\nGreen needs " + str.tostring(ON_BARS) + " consecutive bars above the threshold and drops the moment the residual is back at zero; red is immediate. Stairs up, elevator down." + (damped ? "\n\nDAMPED: the name is under its 50-day, so this positive reading is 70% of the undamped " + str.tostring(symResidZUndamped, "0.0") + "σ." : "")
+         ? "Residual: the name's move minus beta x NQ's move over the same stretch, then that residual in standard deviations of where it could have drifted by chance by this point in the period (per-bar noise times the square root of bars since the anchor).\n\nZero means it moved exactly as its beta implies. Above the threshold is the name adding something of its own; below is it rising less than its beta alone would have delivered.\n\nGreen needs " + str.tostring(ON_BARS) + " consecutive bars above the threshold and drops the moment the residual is back at zero; red is immediate. Stairs up, elevator down.\n\nHELD UP is the one state here with no beta in it: the name flat or up since the anchor while NQ is down by more than the threshold in its own sigma. A stock that refuses to go down when the market gives it a reason to. No persistence gate on this one, and it shows even where NQ is not a benchmark for the name." + (tracksNq ? "\n\nTRACKS NQ: the correlation over the last " + str.tostring(linkLen) + " bars is " + str.tostring(linkCorr, "0.00") + ", so this symbol is NQ or something that tracks it, and the residual is basis, tracking error or leverage decay, not alpha. The tint, markers and boxes are withheld; for an index, use Index Lead Lag." : noLink ? "\n\nNO NQ LINK: the correlation over the last " + str.tostring(linkLen) + " bars is " + str.tostring(linkCorr, "0.00") + ", under 0.3, so NQ explains little of this name and the residual is close to its raw move. Read the numbers as a trend read, not as relative strength; the tint, markers and boxes are withheld until the link returns." : "") + (damped ? "\n\nDAMPED: the name is under its 50-day, so this positive reading is 70% of the undamped " + str.tostring(symResidZUndamped, "0.0") + "σ." : "")
          : "Not measurable yet: " + str.tostring(bar_index + 1) + " bars loaded against a beta window of " + str.tostring(betaLen) + ". A name that cannot be measured is not a weak name; wait for the window to fill, or use a smaller anchor period, which shrinks the window."
     string nqTip = "NQ's own move from the same anchor, and its state against ITS beta to ES: whether the Nasdaq is itself leading, lagging or near the move its beta to the S&P implies. Context for the profile cells."
     string profTip = "Regime profile: what this name's residual has averaged while NQ was LEADING its beta to ES, and while NQ was LAGGING it (about the last " + str.tostring(PROFILE_N) + " qualifying bars of each; the count is the bars seen).\n\nThat answers \"does this name need megacap leadership to work?\" A wide gap means it rides the regime and you should care what NQ is doing. Two similar numbers mean it trades on its own and NQ's state tells you nothing about it."
-    string refTip = "The anchor both series are measured from: " + activeMeasure + ".\n\nSource: " + (useCash ? "cash index (NDX, with SPX for the NQ regime)" : "continuous futures (NQ1!, with ES1! for the NQ regime)") + ".\n\nThe vertical line marks the anchor bar. The period anchors are the same bars Index Lead Lag uses; the swing anchors are NQ's extremes where that script uses ES's."
+    string refTip = "The anchor both series are measured from: " + activeMeasure + ".\n\nSource: " + (useCash ? "cash index (NDX, with SPX for the NQ regime)" : "continuous futures (NQ1!, with ES1! for the NQ regime)") + ".\n\nThe vertical line marks the anchor bar, the same bar Index Lead Lag uses for the same measure."
 
-    f_cell(0, 0, syminfo.ticker, symConfirmed ? calmColor : tblDimColor, symTip)
+    f_cell(0, 0, syminfo.ticker, symConfirmed and not noLink ? calmColor : tblDimColor, symTip)
     f_cell(0, 1, f_num(symRaw), tblDimColor, symTip)
-    f_cell(0, 2, measurable ? "β" + str.tostring(symBeta, "0.0") : str.tostring(bar_index + 1) + "/" + str.tostring(betaLen) + "b", tblDimColor, measurable ? symTip : residTip)
+    f_cell(0, 2, measurable ? "β" + str.tostring(symBeta, "0.0") + " r" + str.tostring(na(linkCorr) ? symCorr : linkCorr, "0.0") : str.tostring(bar_index + 1) + "/" + str.tostring(betaLen) + "b", tblDimColor, measurable ? symTip : residTip)
 
-    color stateColor = symLead ? calmColor : symLag ? warnColor : tblDimColor
-    f_cell(1, 0, "vs β", stateColor, residTip)
+    // The state in words, so the table reads without the legend: the color alone
+    // was asking the reader to know that green on this cell means lead.
+    // Held up outranks near β and the no-link header (it is a raw read, valid without
+    // a link) and sits under leading, where the marker still carries it.
+    string stateWord = not measurable ? "vs β" : tracksNq ? "tracks NQ" : symHeldUp and noLink ? "held up" : noLink ? "no NQ link" : symConfirmed ? "confirmed" : symLead ? "leading" : symHeldUp ? "held up" : symLag ? "lagging" : "near β"
+    color stateColor = stateWord == "confirmed" or stateWord == "leading" or stateWord == "held up" ? calmColor : stateWord == "lagging" ? warnColor : tblDimColor
+    f_cell(1, 0, stateWord, stateColor, residTip)
     f_cell(1, 1, measurable ? f_num(symResidual) : "n/a", stateColor, residTip)
     f_cell(1, 2, na(symResidZ) ? "" : (symResidZ > 0 ? "+" : "") + str.tostring(symResidZ, "0.0") + "σ", stateColor, residTip)
 
@@ -690,7 +722,7 @@ if barstate.islast and showTableInput
 
     // Short forms so this cell does not stretch the strip
     string autoTag = measureInput == "Auto" ? "~" : ""
-    string refText = autoTag + (activeMeasure == "Session open" ? "Session" : usesRth ? (timeframe.isintraday ? "RTH" : "Session") : activeMeasure == "Prior close" ? "Prev cl" : activeMeasure == "Week open" ? "Week" : activeMeasure == "Month open" ? "Month" : activeMeasure == "Quarter open" ? "Quarter" : usesSwingLow ? "SwLo " + str.tostring(lookback) + "b" : usesSwingHigh ? "SwHi " + str.tostring(lookback) + "b" : "Date " + str.tostring(lookback) + "b" + (lookbackCapped ? "!" : ""))
+    string refText = autoTag + (activeMeasure == "Session open" ? "Session" : usesRth ? (timeframe.isintraday ? "RTH" : "Session") : activeMeasure == "Prior close" ? "Prev cl" : activeMeasure == "Week open" ? "Week" : activeMeasure == "Month open" ? "Month" : activeMeasure == "Quarter open" ? "Quarter" : "Quarter")
     f_cell(4, 0, "Ref", tblDimColor, refTip)
     f_cell(4, 1, refText, tblDimColor, refTip)
     f_cell(4, 2, useCash ? "cash" : "futures", tblDimColor, refTip)

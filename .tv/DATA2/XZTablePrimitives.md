@@ -1,5 +1,5 @@
 <!-- tradingview-pine-id: PUB;ec18f9439b25436aada937e94156dc38 -->
-<!-- tradingview-pine-version: 2.0 -->
+<!-- tradingview-pine-version: 3.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # XZ_Table_Primitives
 
@@ -108,15 +108,16 @@ mergedSection(id, row, firstColumn, lastColumn, sectionText, textColor, backgrou
 ````pine
 // This Pine Script® code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
 // © Steel-Sovereign
-
 //@version=6
-//@description Generic Pine table construction and cell-rendering primitives for XZ scripts. Contains no trading methodology or analytical authority.
-library("XZ_Table_Primitives", true)
 
-//@function Resolves a normalized position key to a Pine table position.
-//@param key Position key: top_left, top_center, top_right, middle_left, middle_center, middle_right, bottom_left, bottom_center or bottom_right.
-//@returns Pine position constant.
-export resolvePosition(string key) =>
+//@description XZ Table Primitives v3. Generic Pine table construction and cell-rendering primitives for XZ scripts. Contains no trading methodology or analytical authority. v3 adds column-offset decoder rendering while retaining the documented v1/v2 public API.
+library("XZ_Table_Primitives", false)
+
+//==============================================================================
+// RESOLUTION
+//==============================================================================
+
+export resolvePosition(simple string key) =>
     switch key
         "top_left" => position.top_left
         "top_center" => position.top_center
@@ -128,208 +129,129 @@ export resolvePosition(string key) =>
         "bottom_center" => position.bottom_center
         => position.bottom_right
 
-//@function Resolves a normalized text-size key to a Pine size constant.
-//@param key Text-size key: tiny, small, normal, large or huge.
-//@returns Pine size constant.
-export resolveTextSize(string key) =>
-    switch str.lower(key)
+export resolveTextSize(simple string key) =>
+    switch key
         "tiny" => size.tiny
         "small" => size.small
         "large" => size.large
         "huge" => size.huge
         => size.normal
 
-//@function Creates a table using caller-supplied presentation values.
-//@param positionKey Normalized table position key.
-//@param columns Number of columns.
-//@param rows Number of rows.
-//@param backgroundColor Table background color.
-//@param frameColor Table frame color.
-//@param frameWidth Table frame width.
-//@returns New table handle.
-export create(
-     string positionKey,
-     int columns,
-     int rows,
-     color backgroundColor,
-     color frameColor,
-     int frameWidth
- ) =>
-    table.new(
-         resolvePosition(positionKey),
-         columns,
-         rows,
-         bgcolor=backgroundColor,
-         frame_color=frameColor,
-         frame_width=frameWidth
-     )
+//==============================================================================
+// TABLE LIFECYCLE
+//==============================================================================
 
-//@function Clears a rectangular region of an existing table.
-//@param id Table handle.
-//@param firstColumn First column index.
-//@param firstRow First row index.
-//@param lastColumn Last column index.
-//@param lastRow Last row index.
-//@returns True after clearing.
-export clearRegion(table id, int firstColumn, int firstRow, int lastColumn, int lastRow) =>
-    table.clear(id, firstColumn, firstRow, lastColumn, lastRow)
-    true
-
-//@function Writes one fully specified table cell.
-//@param id Table handle.
-//@param column Column index.
-//@param row Row index.
-//@param cellText Cell text.
-//@param textColor Text color.
-//@param backgroundColor Cell background color.
-//@param textSize Pine text size constant.
-//@param horizontalAlign Pine text alignment constant.
-//@param tooltipText Cell tooltip text.
-//@returns True after writing.
-export cell(
-     table id,
-     int column,
-     int row,
-     string cellText,
-     color textColor,
-     color backgroundColor,
-     string textSize,
-     string horizontalAlign,
-     string tooltipText
- ) =>
-    table.cell(
-         id,
-         column,
-         row,
-         cellText,
-         text_color=textColor,
-         bgcolor=backgroundColor,
-         text_size=textSize,
-         text_halign=horizontalAlign,
-         tooltip=tooltipText
-     )
-    true
-
-//@function Writes one two-column label/value row.
-//@param id Table handle.
-//@param row Row index.
-//@param labelText Left-cell text.
-//@param valueText Right-cell text.
-//@param labelColor Left text color.
-//@param valueColor Right text color.
-//@param backgroundColor Shared cell background color.
-//@param textSize Shared Pine text size constant.
-//@param labelTooltip Left-cell tooltip.
-//@param valueTooltip Right-cell tooltip.
-//@returns True after writing both cells.
-export twoColumnRow(
-     table id,
-     int row,
-     string labelText,
-     string valueText,
-     color labelColor,
-     color valueColor,
-     color backgroundColor,
-     string textSize,
-     string labelTooltip,
-     string valueTooltip
- ) =>
-    cell(id, 0, row, labelText, labelColor, backgroundColor, textSize, text.align_left, labelTooltip)
-    cell(id, 1, row, valueText, valueColor, backgroundColor, textSize, text.align_right, valueTooltip)
-    true
-
-//@function Writes one two-column header/decoder row.
-//@param id Table handle.
-//@param row Row index.
-//@param leftText Left-cell text.
-//@param rightText Right-cell text.
-//@param leftColor Left text color.
-//@param rightColor Right text color.
-//@param backgroundColor Shared background color.
-//@param textSize Shared Pine text size constant.
-//@param leftTooltip Left-cell tooltip.
-//@param rightTooltip Right-cell tooltip.
-//@returns True after writing both cells.
-export twoColumnHeader(
-     table id,
-     int row,
-     string leftText,
-     string rightText,
-     color leftColor,
-     color rightColor,
-     color backgroundColor,
-     string textSize,
-     string leftTooltip,
-     string rightTooltip
- ) =>
-    cell(id, 0, row, leftText, leftColor, backgroundColor, textSize, text.align_left, leftTooltip)
-    cell(id, 1, row, rightText, rightColor, backgroundColor, textSize, text.align_right, rightTooltip)
-    true
-
-//@function Writes one merged full-width section row.
-//@param id Table handle.
-//@param row Row index.
-//@param firstColumn First column to merge.
-//@param lastColumn Last column to merge.
-//@param sectionText Section text.
-//@param textColor Text color.
-//@param backgroundColor Cell background color.
-//@param textSize Pine text size constant.
-//@param tooltipText Cell tooltip.
-//@returns True after writing and merging.
-export mergedSection(
-     table id,
-     int row,
-     int firstColumn,
-     int lastColumn,
-     string sectionText,
-     color textColor,
-     color backgroundColor,
-     string textSize,
-     string tooltipText
- ) =>
-    table.cell(
-         id,
-         firstColumn,
-         row,
-         sectionText,
-         text_color=textColor,
-         bgcolor=backgroundColor,
-         text_size=textSize,
-         text_halign=text.align_left,
-         tooltip=tooltipText
-     )
-    table.merge_cells(id, firstColumn, row, lastColumn, row)
-    true
-
-//@function Creates a table with matching frame and border styling.
-export createStyled(
-     string positionKey, int columns, int rows,
-     color backgroundColor, color lineColor, bool showLines
- ) =>
+export create(simple string positionKey, int columns, int rows, color backgroundColor, color frameColor, int frameWidth) =>
     table.new(
          resolvePosition(positionKey), columns, rows,
-         bgcolor=backgroundColor,
-         frame_color=lineColor, frame_width=showLines ? 1 : 0,
-         border_color=lineColor, border_width=showLines ? 1 : 0
+         bgcolor = backgroundColor,
+         frame_color = frameColor,
+         frame_width = frameWidth
      )
 
-//@function Deletes a table when present.
+export createStyled(simple string positionKey, int columns, int rows, color backgroundColor, color lineColor, bool showLines) =>
+    table.new(
+         resolvePosition(positionKey), columns, rows,
+         bgcolor = backgroundColor,
+         frame_color = showLines ? lineColor : na,
+         frame_width = showLines ? 1 : 0,
+         border_color = showLines ? lineColor : na,
+         border_width = showLines ? 1 : 0
+     )
+
 export deleteTable(table id) =>
     if not na(id)
         table.delete(id)
     true
 
-//@function Renders code/term decoder rows with tooltip only on the code cell.
+export clearRegion(table id, int firstColumn, int firstRow, int lastColumn, int lastRow) =>
+    if not na(id)
+        table.clear(id, firstColumn, firstRow, lastColumn, lastRow)
+    true
+
+//==============================================================================
+// CELLS
+//==============================================================================
+
+export cell(
+     table id, int column, int row, string cellText,
+     color textColor, color backgroundColor, string textSize,
+     string horizontalAlign, string tooltipText
+ ) =>
+    if not na(id)
+        table.cell(
+             id, column, row, cellText,
+             text_color = textColor,
+             bgcolor = backgroundColor,
+             text_size = textSize,
+             text_halign = horizontalAlign,
+             tooltip = tooltipText
+         )
+    true
+
+export twoColumnRow(
+     table id, int row, string labelText, string valueText,
+     color labelColor, color valueColor, color backgroundColor, string textSize,
+     string labelTooltip, string valueTooltip
+ ) =>
+    cell(id, 0, row, labelText, labelColor, backgroundColor, textSize, text.align_left, labelTooltip)
+    cell(id, 1, row, valueText, valueColor, backgroundColor, textSize, text.align_left, valueTooltip)
+    true
+
+export twoColumnHeader(
+     table id, int row, string leftText, string rightText,
+     color leftColor, color rightColor, color backgroundColor, string textSize,
+     string leftTooltip, string rightTooltip
+ ) =>
+    cell(id, 0, row, leftText, leftColor, backgroundColor, textSize, text.align_left, leftTooltip)
+    cell(id, 1, row, rightText, rightColor, backgroundColor, textSize, text.align_left, rightTooltip)
+    true
+
+export mergedSection(
+     table id, int row, int firstColumn, int lastColumn,
+     string sectionText, color textColor, color backgroundColor,
+     string textSize, string tooltipText
+ ) =>
+    if not na(id)
+        table.merge_cells(id, firstColumn, row, lastColumn, row)
+        table.cell(
+             id, firstColumn, row, sectionText,
+             text_color = textColor,
+             bgcolor = backgroundColor,
+             text_size = textSize,
+             text_halign = text.align_left,
+             tooltip = tooltipText
+         )
+    true
+
+//==============================================================================
+// DECODER ROWS
+//==============================================================================
+
+decoderRowsImpl(
+     table id, int startColumn, int startRow,
+     array<string> codes, array<string> terms, array<string> tooltips,
+     color accentColor, color textColor, color backgroundColor, string textSize
+ ) =>
+    int count = math.min(array.size(codes), math.min(array.size(terms), array.size(tooltips)))
+    if count > 0
+        for i = 0 to count - 1
+            int row = startRow + i
+            cell(id, startColumn, row, array.get(codes, i), accentColor, backgroundColor, textSize, text.align_left, array.get(tooltips, i))
+            cell(id, startColumn + 1, row, array.get(terms, i), textColor, backgroundColor, textSize, text.align_left, "")
+    true
+
 export decoderRows(
      table id, int startRow,
      array<string> codes, array<string> terms, array<string> tooltips,
      color accentColor, color textColor, color backgroundColor, string textSize
  ) =>
-    int n = math.min(array.size(codes), math.min(array.size(terms), array.size(tooltips)))
-    if n > 0
-        for i = 0 to n - 1
-            cell(id, 0, startRow + i, array.get(codes, i), accentColor, backgroundColor, textSize, text.align_left, array.get(tooltips, i))
-            cell(id, 1, startRow + i, array.get(terms, i), textColor, backgroundColor, textSize, text.align_left, "")
-    startRow + n
+    decoderRowsImpl(id, 0, startRow, codes, terms, tooltips, accentColor, textColor, backgroundColor, textSize)
+
+export decoderRowsAt(
+     table id, int startColumn, int startRow,
+     array<string> codes, array<string> terms, array<string> tooltips,
+     color accentColor, color textColor, color backgroundColor, string textSize
+ ) =>
+    decoderRowsImpl(id, startColumn, startRow, codes, terms, tooltips, accentColor, textColor, backgroundColor, textSize)
 ````

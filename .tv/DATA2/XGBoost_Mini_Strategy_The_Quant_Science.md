@@ -1,5 +1,5 @@
 <!-- tradingview-pine-id: PUB;ff7254d98ef349e795fbc38e0ebce119 -->
-<!-- tradingview-pine-version: 1.0 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # XGBoost Mini Strategy [The Quant Science]
 
@@ -77,7 +77,7 @@ The strategy demonstrates solid quantitative metrics: a low drawdown, a good pro
 //@version=6
 strategy(
      "XGBoost Mini Strategy [The Quant Science]",
-     overlay = true,
+     overlay = false,
      default_qty_type = strategy.cash,
      initial_capital = 10000,
      default_qty_value = 500,
@@ -156,6 +156,24 @@ if close_cond
     strategy.close("XGB-Mini")
 
 float ts_ticks = (close * (1.0 / 100.0)) / syminfo.mintick
+
 if strategy.position_size > 0
     strategy.exit(id = "Trailing Exit", from_entry = "XGB-Mini", trail_offset = ts_ticks, trail_points = 0)
+
+hline(0.50, title="Neutral Midline", color=#bcbcbe59, linestyle=hline.style_dotted)
+h_upper = hline(i_threshold, title="Upper Threshold", color=color.new(#00ff00, 35), linestyle=hline.style_dashed)
+h_lower = hline(1.0 - i_threshold, title="Lower Threshold", color=color.new(#ff0000, 35), linestyle=hline.style_dashed)
+
+color line_col = prob >= i_threshold ? #00ff00 : prob <= (1.0 - i_threshold) ? #ff0000 : #bcbcbe59
+
+p_prob = plot(prob, title="Main Probability Line", color=line_col, linewidth=2, style=plot.style_line)
+p_mid  = plot(0.50, title="Zero Baseline", display=display.none)
+
+fill(p_prob, p_mid, color=color.new(line_col, 88), title="Probability Momentum Fill")
+plot(prob, title="Glow Outer Layer", color=color.new(line_col, 75), linewidth=5, style=plot.style_line)
+
+plotshape(long_cond and strategy.opentrades==0, title="Long Entry Signal", style=shape.circle, location=location.bottom, color=#00ff00, size=size.tiny, text="[XGB]", textcolor=#00ff00)
+plotshape(close_cond and strategy.opentrades==1, title="Model Exit Signal", style=shape.circle, location=location.top, color=#ff0000, size=size.tiny, text="[XGB]", textcolor=#ff0000)
+
+bgcolor(prob > i_threshold ? color.new(#00ff00, 95) : prob < (1.0 - i_threshold) ? color.new(#ff0000, 95) : na, title="Zone Background Highlight")
 ````

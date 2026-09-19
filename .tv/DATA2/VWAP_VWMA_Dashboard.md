@@ -1,5 +1,5 @@
 <!-- tradingview-pine-id: PUB;affd6051fb654f43a3f4e9d70ca1397f -->
-<!-- tradingview-pine-version: 4.0 -->
+<!-- tradingview-pine-version: 5.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # VWAP & VWMA Dashboard
 
@@ -36,7 +36,7 @@ Clean Chart (Custom UI): You control the visual output. Choose in the settings b
 
 //@version=6
 
-indicator("VWAP & VWMA Dashboard", "VWAP_Dashboard CVD/VWMA", overlay=true)
+indicator("VWAP & VWMA Dashboard", "VWAP-Dashboard CVD/VWMA", overlay=true)
 
 // ---------------------------------------------------- EINSTELLUNGEN ----------------------------------------------------
 
@@ -126,7 +126,8 @@ breakingLower = falling and (c < lo or (c[1] < anchoredLo and c < l[1] and o < a
 var bool resetHiAnchor = false
 var bool resetLoAnchor = false
 
-if newSess1
+// KORREKTUR: newSess2 (00:01 Uhr) nutzen statt newSess1 (15:30 Uhr)
+if newSess2
     hiSessionCount += 1
     loSessionCount += 1
 
@@ -152,12 +153,49 @@ else if breakingLower
 else
     resetLoAnchor := false
 
-resetHiAnchorDelayed = resetHiAnchor[1] == true
-resetLoAnchorDelayed = resetLoAnchor[1] == true
+// Manuelle VWAP-Akkumulation
+var float pvHi = 0.0
+var float volHi = 0.0
+var float pvLo = 0.0
+var float volLo = 0.0
 
-anchoredHi := ta.vwap(hlc3, resetHiAnchorDelayed)
-anchoredLo := ta.vwap(hlc3, resetLoAnchorDelayed)
+// Reset mit newSess2 (0 Uhr) ODER bei Breakout
+bool doResetHi = newSess2 or resetHiAnchor
+bool doResetLo = newSess2 or resetLoAnchor
+
+if doResetHi
+    pvHi  := hlc3 * v
+    volHi := v
+else
+    pvHi  += hlc3 * v
+    volHi += v
+
+if doResetLo
+    pvLo  := hlc3 * v
+    volLo := v
+else
+    pvLo  += hlc3 * v
+    volLo += v
+
+anchoredHi := volHi != 0 ? pvHi / volHi : na
+anchoredLo := volLo != 0 ? pvLo / volLo : na
+
 v_mid = (anchoredHi + anchoredLo) / 2.0
+
+
+
+
+// Direkte Auswertung ohne die [1]-Verzögerung für den Session-Start:
+isResetHi = resetHiAnchor or newSess2
+isResetLo = resetLoAnchor or newSess2
+
+//anchoredHi := ta.vwap(hlc3, resetHiAnchorDelayed)   
+
+//anchoredLo := ta.vwap(hlc3, resetLoAnchorDelayed)
+anchoredHi  := request.security(syminfo.tickerid, "1", ta.vwap(hlc3, isResetHi)  , barmerge.gaps_off, barmerge.lookahead_off)
+anchoredLo  := request.security(syminfo.tickerid, "1", ta.vwap(hlc3, isResetLo)  , barmerge.gaps_off, barmerge.lookahead_off)
+
+
 
 // ---------------------------------------------------- STATUS & BACKGROUND ----------------------------------------------------
 
@@ -177,8 +215,8 @@ int bull_count = (vwma_bull ? 1 : 0) + (vwap1_bull ? 1 : 0) + (vwap2_bull ? 1 : 
 
 
 plot(v_vwma,  "VWMA 22",      color=cVWMA,   linewidth=2)
-plot(v_vwap1, "Session VWAP 1", color=cVWAP1, linewidth=2)
-plot(v_vwap2, "Session VWAP 2", color=cVWAP2, linewidth=2)
+plot(in_sess1 ? v_vwap1 : na, "Session VWAP 1", color=cVWAP1, linewidth=2, style=plot.style_linebr)
+plot(in_sess2 ? v_vwap2 : na, "Session VWAP 2", color=cVWAP2, linewidth=2, style=plot.style_linebr)
 plot(v_mid,   "Middle Line", color=cMid,    linewidth=2)
 
 
@@ -202,15 +240,25 @@ cvdMa = ta.sma(nz(cvd), periodMa)
 // Plotting
 customColor = nz(cvd) > nz(cvdMa)
 bg_transp = input.int(95, "Hintergrund Transparenz", minval=0, maxval=100)
-c_long    = input.color(color.green,  "Farbe Long")
-c_short   = input.color(color.red,    "Farbe Short")
-c_neutral = input.color(color.yellow, "Farbe Neutral/Konflikt")
+c_long    = input.color(color.rgb(76, 144, 175),  "Farbe Long")
+c_short   = input.color(color.rgb(255, 0, 85),    "Farbe Short")
+c_neutral = input.color(color.rgb(255, 255, 255), "Farbe Neutral/Konflikt")
 
+// 1. Input für die Anzahl der einzufärbenden Kerzen hinzufügen
+lookback_bars = input.int(100, title="Anzahl einzufärbender Kerzen", minval=1)
 
-color bg_color = 
+// 2. Prüfen, ob die aktuelle Kerze innerhalb des Bereichs liegt
+is_in_range = (last_bar_index - bar_index) < lookback_bars
+
+// 3. Farb-Logik erweitern: Wenn außerhalb des Bereichs, dann transparent (na)
+color bg_color = is_in_range ? (
    bull_count >= 3 ? (customColor ? color.new(c_long, bg_transp) : color.new(c_neutral, bg_transp)) : 
    bull_count <= 1 ? (not customColor ? color.new(c_short, bg_transp) : color.new(c_neutral, bg_transp)) : 
    customColor ? color.new(c_long, bg_transp) : color.new(c_short, bg_transp)
+   ) : color(na)
+
+// 4. Anwendung im Chart
+bgcolor(bg_color)
 
 display_mode = input.string("Background", title="Anzeige-Stil CVD", options=["Background", "Band Top", "Band Bottom"])
 

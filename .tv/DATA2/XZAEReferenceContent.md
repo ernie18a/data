@@ -1,5 +1,5 @@
 <!-- tradingview-pine-id: PUB;63bfe5330edf4a258e3f13a9e7130a29 -->
-<!-- tradingview-pine-version: 12.0 -->
+<!-- tradingview-pine-version: 17.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # XZ_AE_Reference_Content
 
@@ -53,7 +53,7 @@ library("XZ_AE_Reference_Content", overlay = true)
 // @function Full XZ AE Quick Read onboarding body.
 // @returns User-visible Quick Read text.
 export quickReadBody() =>
-    "WHAT IT MAPS\nXZ AE maps source-owned auction hypotheses and validated Ranges from confirmed\nXZ structure and Swing-associated S&D. It separates analytical existence from\nwhat is currently drawn, focused or archived on the chart.\n\nSOURCE AUTHORITY\nThe selected Auction Source Timeframe owns pivots, S&D, Candidates, qualification,\nRanges and lineages within AE's 100,000-source-bar replay budget. The host chart\ntimeframe is a presentation view only within the supported Source ≥ Chart domain.\n\nCANDIDATE → RANGE\nOpposite confirmed Trend Swings form a pure T↔T Candidate (C#). That pair is a\nstructural hypothesis, not yet a Range. A Candidate becomes R# only after the selected Qualification Policy is satisfied\ncoherently.\n\nQUALIFICATION\nStructural Pair is mandatory. Pair Auction uses defended pair Price Action (PA) + pair-relative rotation.\nStructural Containment independently uses defense + a later canonical pivot rotating inside\nthe older Candidate. Policy selects Pair, Structural, Either or Both. Later pivots may still\nform new structures; they never redefine Pair Rotation.\n\nCHOP AUTHORITY\nPair Auction ignores Chop Authority. Structural Containment accepts Trend pivots always and\nChop pivots only when Integrated. Sidewalled Chop remains retained through L# research.\n\nSESSION CONTEXT\nSelected canonical sessions add bounded H-L context and per-session Status relationships.\nHover SYD/TYO/LDN/NY for occurrence timing, range activity, AE overlap/excursion and prior-same-session comparison.\n\nLIFECYCLE & AUDIT\nCandidates, validated Ranges and precautionary lineages retain their own lifecycle\nand provenance. Chart hovers report object-specific forensic facts; Quick Read\nexplains methodology, while the Glossary decodes terminology."
+    "WHAT IT MAPS\nXZ AE maps source-owned auction hypotheses and validated Ranges from confirmed\nXZ structure and Swing-associated S&D. It separates analytical existence from\nwhat is currently drawn, focused or archived on the chart.\n\nSOURCE AUTHORITY\nThe selected Auction Source Timeframe owns pivots, S&D, Candidates, qualification,\nRanges and lineages within AE's 100,000-source-bar replay budget. The host chart\ntimeframe is a presentation view only within the supported Source ≥ Chart domain.\n\nCANDIDATE → RANGE\nOpposite confirmed Trend Swings form a pure T↔T Candidate (C#). That pair is a\nstructural hypothesis, not yet a Range. A Candidate becomes R# only after the selected Qualification Policy is satisfied\ncoherently.\n\nQUALIFICATION\nEvery C# is a T↔T Structural Pair by construction. Pair Auction uses defended pair Price Action (PA) + pair-relative rotation.\nStructural Containment independently uses defense + a later canonical pivot rotating inside\nthe older Candidate. Policy selects Pair, Structural, Either or Both. Later pivots may still\nform new structures; they never redefine Pair Rotation.\n\nCHOP AUTHORITY\nPair Auction ignores Chop Authority. Structural Containment accepts Trend pivots always and\nChop pivots only when Integrated. Sidewalled Chop remains retained through L# research.\n\nSESSION CONTEXT\nSelected canonical sessions add bounded H-L context and per-session Status relationships.\nHover SYD/TYO/LDN/NY for occurrence timing, session H-L geometry/time progress, AE overlap/excursion and prior-same-session comparison.\n\nLIFECYCLE & AUDIT\nCandidates, validated Ranges and precautionary lineages retain their own lifecycle\nand provenance. Chart hovers report object-specific forensic facts; Quick Read\nexplains methodology, while the Glossary decodes terminology."
 
 // @function Quick Read title-cell hover.
 // @returns User-visible title tooltip.
@@ -64,6 +64,9 @@ export quickReadTitleTip() =>
 // @returns User-visible methodology/invariance tooltip.
 export quickReadBodyTip() =>
     "XZ SOURCE REGISTRY INVARIANCE: for the same symbol, Auction Source Timeframe and methodology settings, the analytical C#/R#/L# registry is identical across supported host chart timeframes. Focus, display limits, visual archive visibility, Nearest PA Geometry and table settings never create, delete, validate or otherwise redefine analytical objects or lifecycle."
+
+export const int GLOSSARY_COUNT = 42
+export const int GLOSSARY_SPLIT = 21
 
 // @function Compact Glossary code for a zero-based entry index.
 // @param i Zero-based glossary index.
@@ -98,22 +101,20 @@ export glossaryCode(int i) =>
         25 => "V↑ / V↓"
         26 => "BO↑ / BO↓"
         27 => "Arc"
-        28 => "Ar1"
-        29 => "Ar2"
-        30 => "Re#"
-        31 => "OCh"
-        32 => "OD"
-        33 => "PE"
-        34 => "P#"
-        35 => "ChRO / ChInt"
-        36 => "Act"
-        37 => "Lkd"
-        38 => "EndT"
-        39 => "Sup"
-        40 => "Fail"
-        41 => "SYD/TYO/LDN/NY"
-        42 => "Live / Last"
-        43 => "Sess H-L"
+        28 => "Re#"
+        29 => "OCh"
+        30 => "OD"
+        31 => "PE"
+        32 => "P#"
+        33 => "ChRO / ChInt"
+        34 => "Act"
+        35 => "Lkd"
+        36 => "EndT"
+        37 => "Sup"
+        38 => "Fail"
+        39 => "SYD/TYO/LDN/NY"
+        40 => "Live / Last"
+        41 => "Sess H-L"
         => ""
 
 // @function Unabbreviated Glossary term for a zero-based entry index.
@@ -149,22 +150,20 @@ export glossaryTerm(int i) =>
         25 => "Upper / Lower Boundary Violation"
         26 => "Upper / Lower Breakout Developing"
         27 => "Visual Archive"
-        28 => "First Archive Evidence"
-        29 => "Second Archive Evidence"
-        30 => "Reactivation Count"
-        31 => "Origin-Chop"
-        32 => "Origin Defense"
-        33 => "Precautionary Event Count"
-        34 => "Precautionary Boundary Layer"
-        35 => "Chop Research Only / Integrated"
-        36 => "Active Lineage"
-        37 => "Locked Lineage"
-        38 => "Ended by Trend"
-        39 => "Superseded Lineage"
-        40 => "Origin Failed"
-        41 => "Canonical Session Codes"
-        42 => "Developing / Most Recent Completed Session"
-        43 => "Session High-Low Context"
+        28 => "Reactivation Count"
+        29 => "Origin-Chop"
+        30 => "Origin Defense"
+        31 => "Precautionary Event Count"
+        32 => "Precautionary Boundary Layer"
+        33 => "Chop Research Only / Integrated"
+        34 => "Active Lineage"
+        35 => "Locked Lineage"
+        36 => "Ended by Trend"
+        37 => "Superseded Lineage"
+        38 => "Origin Failed"
+        39 => "Canonical Session Codes"
+        40 => "Developing / Most Recent Completed Session"
+        41 => "Session High-Low Context"
         => ""
 
 // @function Full Glossary hover definition for a zero-based entry index.
@@ -188,10 +187,10 @@ export glossaryTip(int i) =>
         13 => "Independent qualification from coherent defense plus a later eligible canonical pivot rotating inside the older Candidate."
         14 => "Qualification Policy codes. E = Either Method; B = Both Methods. Policy controls promotion authority while Pair Auction and Structural Containment continue to be observed for audit/Research."
         15 => "Compact qualification code for coherent defense evidence used by Structural Containment."
-        16 => "Optional qualification evidence: boundary test followed by a later confirmed source close back inside Candidate geometry."
+        16 => "Optional Pair Auction evidence: a post-completion boundary test plus a completed source close back inside Candidate geometry. Test, defense/reclaim and rotation may be established on the same completed source bar."
         17 => "Optional qualification evidence based on interaction with the relevant Swing-associated Supply/Demand territory and confirmed recovery."
-        18 => "Enabled minimum pair-relative post-defense rotation requirements. Rotation is measured through the immutable Candidate geometry and never requires a later Trend/Chop pivot."
-        19 => "Measured pair-relative post-defense rotation evidence actually achieved from either defended side."
+        18 => "Enabled minimum pair-relative defended-side rotation requirements. Rotation is measured through the immutable Candidate geometry and may be established on the defense bar itself; no later Trend/Chop pivot is required."
+        19 => "Measured pair-relative defended-side rotation evidence actually achieved from either defended side, including qualifying movement on the completed defense bar itself."
         20 => "Optional requirement/evidence that both Candidate boundaries complete sequential defense/reclaim episodes."
         21 => "Retained C# that has neither validated nor formally failed/superseded."
         22 => "Candidate lifecycle state indicating promotion into validated Range authority. Distinct from R# V↑/V↓ boundary-violation codes."
@@ -200,23 +199,52 @@ export glossaryTip(int i) =>
         25 => "R# activity state showing confirmed violation development through the upper or lower boundary. Distinct from Candidate V = Validated."
         26 => "R# inactive/breakout-development state through the upper or lower side."
         27 => "Retained R# is visually archived; analytical history is not deleted."
-        28 => "First objective archive-evidence stage in the current Range archive lifecycle."
-        29 => "Second objective archive-evidence stage in the current Range archive lifecycle."
-        30 => "Number of retained R# reactivations after prior lifecycle displacement."
-        31 => "Integrated Trend-origin→Chop Range genesis pathway. Sidewalled Chop Authority blocks this pathway from main R# authority."
-        32 => "Origin-side defense evidence used by the Integrated Origin-Chop pathway."
-        33 => "Number of retained precautionary boundary-transition events across L# history."
-        34 => "P0 = lineage waiting for its first Chop boundary. P1+ = retained Chop boundary layers as the lineage develops."
-        35 => "Compact Status codes for the selected Chop Authority mode."
-        36 => "L# remains open and continues to observe Chop development."
-        37 => "L# reached its retained lock condition."
-        38 => "L# was ended by later confirmed Trend structure."
-        39 => "L# was superseded by a later retained lineage/structural development."
-        40 => "L# origin-side structural condition formally failed."
-        41 => "Canonical Sydney, Tokyo, London and New York identifiers under the selected Session Standard. On-chart codes are hover targets when Session Codes are enabled."
-        42 => "Live means the session occurrence is developing now. Last means Status is showing that selected session’s most recent completed retained occurrence."
-        43 => "Bounded developing/completed session High-Low envelope used for descriptive chart and forensic context. It is not automatically support/resistance or an AE qualification condition."
+        28 => "Number of retained R# reactivations after prior lifecycle displacement."
+        29 => "Integrated Trend-origin→Chop Range genesis pathway. Sidewalled Chop Authority blocks this pathway from main R# authority."
+        30 => "Origin-side defense evidence used by the Integrated Origin-Chop pathway."
+        31 => "Number of retained precautionary boundary-transition events across L# history."
+        32 => "P0 = lineage waiting for its first Chop boundary. P1+ = retained Chop boundary layers as the lineage develops."
+        33 => "Compact Status codes for the selected Chop Authority mode."
+        34 => "L# remains open and continues to observe Chop development."
+        35 => "L# reached its retained lock condition."
+        36 => "L# was ended by later confirmed Trend structure."
+        37 => "L# was superseded by a later retained lineage/structural development."
+        38 => "L# origin-side structural condition formally failed."
+        39 => "Canonical Sydney, Tokyo, London and New York identifiers under the selected Session Standard. On-chart codes are hover targets when Session Codes are enabled."
+        40 => "Live means the session occurrence is developing now. Last means Status is showing that selected session’s most recent completed retained occurrence."
+        41 => "Bounded developing/completed session High-Low envelope used for descriptive chart and forensic context. It is not automatically support/resistance or an AE qualification condition."
         => ""
+
+
+export glossaryCodes(int startIndex, int count) =>
+    array<string> result = array.new<string>()
+    int safeCount = math.max(0, count)
+    if safeCount > 0
+        for offset = 0 to safeCount - 1
+            int i = startIndex + offset
+            if i >= 0 and i < GLOSSARY_COUNT
+                array.push(result, glossaryCode(i))
+    result
+
+export glossaryTerms(int startIndex, int count) =>
+    array<string> result = array.new<string>()
+    int safeCount = math.max(0, count)
+    if safeCount > 0
+        for offset = 0 to safeCount - 1
+            int i = startIndex + offset
+            if i >= 0 and i < GLOSSARY_COUNT
+                array.push(result, glossaryTerm(i))
+    result
+
+export glossaryTips(int startIndex, int count) =>
+    array<string> result = array.new<string>()
+    int safeCount = math.max(0, count)
+    if safeCount > 0
+        for offset = 0 to safeCount - 1
+            int i = startIndex + offset
+            if i >= 0 and i < GLOSSARY_COUNT
+                array.push(result, glossaryTip(i))
+    result
 
 //==============================================================================
 // USER-VISIBLE SETTINGS HELP
@@ -229,8 +257,8 @@ export const string TT_AUCTION_SOURCE_TIMEFRAME = "Authoritative timeframe for t
 export const string TT_CHOP_AUTHORITY_MODE = "Controls Chop authority, not Chop observation. Research Only · Sidewalled retains CSH/CSL and L# research but blocks Origin-Chop promotion. Pair Auction is unaffected. Structural Containment always accepts Trend pivots and accepts Chop pivots only when Integrated."
 export const string TT_QUALIFICATION_POLICY = "Pair Auction uses the Candidate's own defended Price Action (PA) and pair-relative rotation. Structural Containment uses coherent defense plus a later eligible canonical pivot rotating inside the older Candidate. Either promotes on the first method; Both requires both. Policy controls promotion authority only; both methods continue to be observed and retained for audit and Research evidence."
 export const string TT_STRUCTURAL_CONTAINMENT_DEPTH = "After coherent Candidate defense, a later canonical pivot must rotate away by at least this share of the Candidate's 0–100 geometry while remaining inside its external S&D envelope. Trend pivots always count; Chop pivots count only when Integrated."
-export const string TT_REQUIRE_BOUNDARY_RECLAIM = "Pair Auction only. Requires a post-completion test of either close-defined 0%/100% boundary followed by a later confirmed source close back inside the Candidate."
-export const string TT_REQUIRE_ZONE_DEFENSE = "Pair Auction only. Requires the defended side to trade beyond its close-defined anchor into the associated Swing Supply/Demand territory and subsequently close back inside the Candidate."
+export const string TT_REQUIRE_BOUNDARY_RECLAIM = "Pair Auction only. Requires a post-completion test of either close-defined 0%/100% boundary and a completed source close back inside the Candidate. The test, associated S&D interaction, reclaim/defense and qualifying Pair Rotation may all be established by the same completed source bar; exact intrabar ordering is not required."
+export const string TT_REQUIRE_ZONE_DEFENSE = "Pair Auction only. Requires the defended side to trade beyond its close-defined anchor into the associated Swing Supply/Demand territory and complete a source close back inside the Candidate. The S&D interaction and recovery/defense may occur on the same completed source bar."
 export const string TT_REQUIRE_ROTATION25 = "Pair Auction only. Requires at least one coherently defended Candidate side to rotate PA at least 25% through that Candidate's immutable close-defined 0–100 geometry. No later Trend/Chop pivot is required."
 export const string TT_REQUIRE_ROTATION50 = "Pair Auction only. Requires at least one coherently defended Candidate side to rotate PA at least 50% through the immutable 0–100 geometry. The observed path therefore also passed 25%."
 export const string TT_REQUIRE_ROTATION75 = "Pair Auction only. Requires at least one coherently defended Candidate side to rotate PA at least 75% through the immutable 0–100 geometry."
@@ -239,11 +267,11 @@ export const string TT_PRIMARY_RANGE_FOCUS = "Focus-substitution policy only. Th
 export const string TT_FOCUSED_RANGE_IDS = "Comma-separated retained R# values, e.g. 37,39,42. Every valid ID receives display-allocation priority and detailed focus treatment; only up to Max Validated Ranges Displayed (allowed 0–20) can render. The first listed valid ID is the lead focus where ordering matters. Leave blank for no manual Range focus. Presentation only; focus never changes analytical authority."
 export const string TT_FOCUSED_CANDIDATE_IDS = "Comma-separated retained C# values, e.g. 101,102. Every valid ID receives display-allocation priority and detailed focus treatment; only up to Max Candidates Displayed (allowed 0–10) can render. The first listed valid ID is the lead focus where ordering matters. Leave blank for no manual Candidate focus. Presentation only; focus never validates a Candidate or changes authority."
 export const string TT_MUTE_NON_FOCUS_DURING_MANUAL_FOCUS = "When one or more valid R#/C# focus IDs are entered, keep those focused objects detailed while strongly fading other displayed Range/Candidate quartiles, S&D zones, Range frames and audit tags. Context remains visible and interactive; analytical state is unchanged."
-export const string TT_HISTORICAL_RANGE_DISPLAY = "Automatic R# selector after focused IDs receive priority. Range Hierarchy = operational/local R# → materially enclosing Ranges → formal parent/children → optional strongest pure T↔T R# → newest distinct backfill. Current + Parents = operational R# plus its retained parent chain. Visible Window = newest retained Ranges whose qualifying pivot pair overlaps the visible chart window; archived history is intentionally discoverable. Recent Eligible = newest non-inactive eligible Ranges. All Eligible = retained eligible history, newest-first unless Study Start is enabled. Focus Only = focused IDs only. All modes remain subject to Max Validated Ranges Displayed."
+export const string TT_HISTORICAL_RANGE_DISPLAY = "Automatic R# selector after focused IDs receive priority. Range Hierarchy = operational/local R# → materially enclosing Ranges → formal parent/children → optional strongest pure T↔T R# → newest distinct backfill. Current + Parents = operational R# plus its retained parent chain. Visible Window = newest retained Ranges whose defining Trend-pivot pair overlaps the visible chart window; archived history is intentionally discoverable. Recent Eligible = newest non-inactive eligible Ranges. All Eligible = retained eligible history, newest-first unless Study Start is enabled. Focus Only = focused IDs only. All modes remain subject to Max Validated Ranges Displayed."
 export const string TT_VALIDATED_RANGE_DISPLAY_LIMIT = "Hard chart cap for validated Ranges. Allowed 0–20 · default 3. 0 hides all validated Range geometry. Focused Range IDs receive slots first; the selected automatic Range scope fills only remaining capacity. Presentation only."
 export const string TT_SHOW_TIGHTEST_PA_BRACKET = "Presentation override showing the nearest eligible retained validated-Range quartile below and above live Price Action (PA), while explicit Focused R#/C# objects remain available as the study layer. NPA lines render as the live-context layer; their tags face inward from the live edge so they do not cover focused structural endpoint/quartile labels at coincident prices."
 export const string TT_INCLUDE_STRONGEST_VALIDATED_RANGE = "Range Hierarchy helper. Strongest retained pure T↔T R# is considered only after operational/local and explicit hierarchy-relevance context (nearest enclosing Ranges, formal parent and direct children). It may fill spare capacity but never evicts those more locally relevant hierarchy members. Strength uses retained qualification evidence, then deepest Pair Auction rotation, then qualification recency."
-export const string TT_SHOW_OPERATIONAL_FOCUS_RANGE = "Allows the current operational Auction Range to use an automatic validated-Range display slot. Focused Range IDs retain allocation priority when the display cap is full. Exceptions: Focus Only ignores the operational pin; Visible Window includes the operational R# only when its qualifying pivot pair overlaps the visible window; All Eligible + Study Start lets the manual historical allocation own the automatic slots instead of forcing the operational R#. Analytical authority continues regardless."
+export const string TT_SHOW_OPERATIONAL_FOCUS_RANGE = "Allows the current operational Auction Range to use an automatic validated-Range display slot. Focused Range IDs retain allocation priority when the display cap is full. Exceptions: Focus Only ignores the operational pin; Visible Window includes the operational R# only when its defining Trend-pivot pair overlaps the visible window; All Eligible + Study Start lets the manual historical allocation own the automatic slots instead of forcing the operational R#. Analytical authority continues regardless."
 export const string TT_HIDE_VISUALLY_ARCHIVED_RANGES = "ON suppresses visually archived Ranges from normal automatic selectors. Visible Window is the deliberate exception because it is a historical discovery view and can expose archived retained history. Focused Range IDs can also force retained archived Ranges into display. Archive evidence is always calculated."
 export const string TT_USE_RANGE_STUDY_START_DATE = "Historical research helper for dense assets. In All Eligible mode, automatic Range allocation begins at the first retained Range whose structural completion is on/after the selected date and fills forward up to Max Validated Ranges. Focused Range IDs bypass this filter."
 export const string TT_RANGE_STUDY_START_DATE = "UTC start anchor for All Eligible historical study allocation. The Max Validated Ranges cap (allowed 0–20 · default 3) counts forward from this date instead of always taking the newest retained Ranges."
@@ -251,18 +279,18 @@ export const string TT_CANDIDATE_DISPLAY_MODE = "Automatic T↔T Candidate selec
 export const string TT_CANDIDATE_DISPLAY_LIMIT = "Hard chart cap for T↔T Candidates. Allowed 0–10 · default 1. Default 1 preserves one explicit focused-C# study slot even though automatic Candidate Display Scope defaults Off. 0 hides all Candidate geometry including focused IDs. Focused Candidate IDs receive slots first; automatic scope fills only remaining capacity. Presentation only."
 export const string TT_SHOW_WAITING_ORIGIN = "Shows the associated source-timeframe Trend-Swing Supply/Demand zone after a TSH/TSL confirms while no opposite Auction boundary exists yet. Show Associated S&D Zones is the master zone-visibility switch and must also be On. No Fib is drawn until two valid boundaries exist."
 export const string TT_SHOW_PRECAUTIONARY_DEVELOPMENT = "Display-only master for retained precautionary L# geometry. The engine always observes/calculates L# regardless of this switch or Chop Authority. OFF is the clean-chart default and does not mean Integrated Chop forces L# display On."
-export const string TT_PRECAUTIONARY_DISPLAY_MODE = "Selects one retained Trend-origin→Chop L# for display. Off = none. Latest Active = newest open lineage. Latest Registry = newest retained lineage with at least P1, including terminal states. Latest Locked = newest locked lineage. Selected Lineage ID = requested retained L#; ID 0 falls back to Latest Active. Display choice never changes lineage observation, retention or Chop Authority."
+export const string TT_PRECAUTIONARY_DISPLAY_MODE = "Selects which retained Trend-origin→Chop L# is drawn when Show Precautionary Lineage Development is enabled. Latest Active = newest open lineage. Latest Registry = newest retained lineage with at least P1, including terminal states. Latest Locked = newest locked lineage. Selected Lineage ID = requested retained L#; ID 0 falls back to Latest Active. The master switch owns visibility; this selector never changes lineage observation, retention or Chop Authority."
 export const string TT_INSPECT_PRECAUTIONARY_LINEAGE_ID = "Enter the retained L# to display when Precautionary Lineage Display is Selected Lineage ID. Minimum 0; 0 falls back to Latest Active. Positive values are retained L# IDs and are not capped by this input."
-export const string TT_PRECAUTIONARY_GEOMETRY_DETAIL = "Controls only the selected Chop lineage drawing. The lineage engine always calculates."
+export const string TT_PRECAUTIONARY_GEOMETRY_DETAIL = "Controls only the selected L# drawing. Boundaries + Zones shows the 0%/100% lineage structure with its associated origin/boundary S&D zones while suppressing internal quartiles. Full Quartiles shows 0/25/50/75/100 geometry plus associated zones. Zones Only shows only the associated S&D zones. Presentation only; retained L# state and lifecycle continue calculating regardless."
 export const string TT_SHOW_ASSOCIATED_ZONES = "Master visibility switch for canonical Swing-associated Supply/Demand zones related to displayed R#/C#/L# objects, including the waiting Trend-Swing origin zone. Shared structural zones can participate in more than one retained object. Presentation only."
-export const string TT_ZONE_TAG_DISPLAY_MODE = "Audit Tag is the default compact ownership surface at the right/end of each displayed S&D zone: e.g. R#35 · D or C#47 · S. The tag faces inward over the zone so structural R#/C# quartile/endpoints keep a separate outside-right label lane on narrow charts. Hovering the tag reports canonical S&D origin plus retained object relationships using that Swing-associated zone. Compact Text keeps the larger two-line ownership decoder at the object origin. Off removes zone tags."
+export const string TT_ZONE_TAG_DISPLAY_MODE = "Audit Tag is the default compact ownership surface for each canonical S&D zone. Shared zones render one tag only: one owner appears as R#68 · S; two same-family owners compact to R#68/67 · S; larger or mixed ownership sets remain compact and the hover lists every retained C#/R#/L# relationship individually. Audit Tags sit at the zone midpoint and face inward from the right/end edge. Compact Text uses the same canonical-zone deduplication at the object origin. Off removes zone tags."
 export const string TT_SHOW_QUARTILE_LABELS = "Shows labels on every currently focused Range and Candidate. Structural 0% and 100% endpoint tags carry the owning R#/C# ID and act as the forensic hover surface when Chart Audit Tooltips are enabled; 25/50/75 remain geometry decoders. Focused quartile/endpoint labels own the outside-right lane, while S&D/NPA tags use inward-facing lanes to reduce narrow/mobile collisions."
 export const string TT_SHOW_VALIDATED_RANGE_FRAMES = "Optional line-only Range frame. Adds faint dashed left/right rails; the existing 0%/100% Range boundaries form the horizontal edges. Uses no box and no fill, so there is no full-area Range hover surface. R# identity/audit remains on the endpoint tags. Presentation only."
 export const string TT_SHOW_CHART_AUDIT_TOOLTIPS = "Master switch for chart-side forensic hover data. Focused R#/C# 0%/100% tags, NPA tags and S&D ownership tags become their own hover surfaces; L# keeps its independent icon-only audit fallback; Range-pair Trend-pivot discovery icons remain separately controlled below. Label lanes are separated by role to reduce narrow/mobile collisions."
 export const string TT_AUDIT_DISTANCE_UNIT = "Controls absolute geometry-distance units used in chart and Status audit telemetry. Auto uses Ticks for futures and Points for all other instrument types. Points = raw price difference. Ticks = raw price difference divided by the symbol's minimum tick. Formatting only."
 export const string TT_SHOW_RANGE_PAIR_PIVOT_AUDIT_ICONS = "Audit/discovery overlay. Shows tiny ⓘ discovery targets on retained Trend pivots that participate in T↔T Candidates, even when related geometry is hidden. ‘Range-pair pivot’ means the Swing participates in range-classification geometry; it does not mean the pivot itself has qualified a Range. Hover to see every retained C# and R# relationship using that pivot. Newest retained relationships are allocated first up to the Pivot Audit Icon Limit. ON by default for direct historical discovery."
 export const string TT_MAX_RANGE_PAIR_PIVOT_AUDIT_ICONS = "Presentation/performance cap for Range-Pair Pivot Audit icons. Allowed 20–300 · default 200. Newest retained T↔T relationships are traversed first and unique pivots are allocated until this limit is reached. This does not limit the C#/R# registry or the relationships reported by any allocated pivot tooltip."
-export const string TT_SHOW_PIVOT_PAIR_LINKS = "Optional finite diagonal pair decoder. OFF by default."
+export const string TT_SHOW_PIVOT_PAIR_LINKS = "Draws a finite dotted decoder between the two pivots defining displayed C#/R# geometry. A midpoint label identifies the owning C#/R# and carries that object’s forensic hover when Chart Audit Tooltips are enabled. Useful independently as a compact structural-origin decoder or alongside Candidate/Range geometry to distinguish overlapping objects by their defining pivot pair. Presentation only: the finite connector is not a projected trendline, support/resistance, or qualification input. OFF by default."
 export const string TT_AUTO_DEDUPLICATE_DISPLAY = "Suppresses materially coincident automatic presentation geometry in hierarchy/recent Range context and automatic Candidate/Lineage rendering. Explicit focused/selected IDs bypass deduplication. Discovery-oriented Range modes Visible Window and All Eligible intentionally preserve retained historical records rather than deduplicating their allocation. Analytical records are never merged."
 export const string TT_DEDUP_TOLERANCE_PCT = "Near-duplicate threshold for BOTH 0% and 100% relative to the larger geometry width. Allowed 0–10% · step 0.25% · default 2%."
 export const string TT_USE_UNIFIED_COLOR = "Optional chart-object override. When enabled, XZ AE Range/Candidate/Lineage geometry and associated Supply/Demand hues derive from Unified Color while transparency, width, line style, lifecycle fade, focus fade and visibility remain intact. It never changes auction calculations, registry state, Research data, or any table palette."
@@ -275,9 +303,9 @@ export const string TT_PRECAUTIONARY_TRANSPARENCY = "Transparency applied to dis
 export const string TT_ZONE_TRANSPARENCY = "Transparency of active associated S&D zones. Allowed 50–98% · default 86%. 50% is the most opaque selectable value; 98% is the most transparent."
 export const string TT_CONSUMED_ZONE_TRANSPARENCY = "Transparency of consumed associated S&D zones retained for R#/C#/L# context. Allowed 70–100% · default 94%. 70% is the most opaque selectable value; 100% is fully transparent."
 export const string TT_SHOW_RESEARCH_LAB = "Optional objective XZ Auction Engine research table. OFF by default. It studies retained C# qualification, R# lifecycle and L# Chop-lineage behaviour from the source-owned registry. It never creates Candidates, validates Ranges, changes Chop Authority, produces trade outcomes or alters chart display allocation."
-export const string TT_RESEARCH_SECTION = "Candidate Qualification studies C# lifecycle, latency, first defense, promotion method and Pair Auction rotation. Range Lifecycle studies R# genesis/lifecycle/hierarchy. Chop Lineages studies retained L# development and outcomes."
+export const string TT_RESEARCH_SECTION = "Candidate Qualification studies C# lifecycle, latency, first defense, promotion method and Pair Auction rotation. Range Lifecycle studies R# genesis/lifecycle/hierarchy. Chop Lineages studies retained L# development and outcomes. All Sections displays all three Research sections together in the same table."
 export const string TT_RESEARCH_STATISTIC_MODE = "Chooses Median or Mean for sampled qualification latency, Range archive latency, Range height, lineage layer and lineage resolution-time observations. Median is the XZ default because unusually long-lived auction structures can distort arithmetic averages."
-export const string TT_RESEARCH_TABLE_POSITION = "Screen position of the optional XZ AE Research Lab. Bottom-left follows the XZ suite convention because Quick Read is temporary onboarding. If both are enabled at the same anchor, disable Quick Read or move one table."
+export const string TT_RESEARCH_TABLE_POSITION = "Sets the Research Lab screen anchor. Bottom-left is the XZ default. If multiple XZ tables are enabled at the same anchor, they may overlap; move one table to a different position."
 export const string TT_RESEARCH_TEXT_SIZE = "Text size used by the XZ AE Research Lab."
 export const string TT_RESEARCH_BG_COLOR = "Background colour of the Research Lab. Defaults to XZ graphite #1E222D."
 export const string TT_RESEARCH_TEXT_COLOR = "Neutral text colour used for Research labels and ordinary calculated values."
@@ -285,8 +313,8 @@ export const string TT_RESEARCH_ACCENT_COLOR = "XZ suite accent used for the Res
 export const string TT_RESEARCH_SHOW_LINES = "Shows the Research Lab frame and cell borders. ON is the XZ suite default."
 export const string TT_RESEARCH_LINE_COLOR = "Neutral graphite colour used by the Research Lab frame and cell borders."
 export const string TT_SHOW_STATUS_TABLE = "Master visibility switch for the compact XZ AE operational Status table. OFF is the AE clean-chart default. Turning it OFF hides only the table; source-owned calculations, chart drawings, Research and audit surfaces continue normally."
-export const string TT_STATUS_TABLE_MODE = "Expanded is the forensic operating view: Source, Authority, Qualification, Geometry, Registry, Display Allocation, Focus, Chop Authority and effective Audit state. Collapsed becomes a one-row glance strip with XZ AE, Source, current Authority and compact Qualification policy/evidence. Both are presentation-only."
-export const string TT_STATUS_TABLE_POSITION = "Screen position of the XZ AE operational Status table. Top-right is the XZ suite default."
+export const string TT_STATUS_TABLE_MODE = "Expanded is the forensic operating view: Source, Authority, Qualification, Geometry, Registry, Display Allocation, Focus, Chop Authority, one contextual row for each selected canonical session, and effective Audit state. Session rows are descriptive/forensic context only. Collapsed becomes a one-row glance strip with XZ AE, Source, current Authority and compact Qualification policy/evidence. Both are presentation-only."
+export const string TT_STATUS_TABLE_POSITION = "Sets the Status table screen anchor. Top-right is the XZ default. If multiple XZ tables are enabled at the same anchor, they may overlap; move one table to a different position."
 export const string TT_STATUS_TEXT_SIZE = "Text size used by the XZ AE Status table."
 export const string TT_STATUS_BG_COLOR = "Background colour of the Status table. Defaults to XZ graphite #1E222D."
 export const string TT_STATUS_TEXT_COLOR = "Neutral text colour used for Status labels and ordinary contextual values."
@@ -294,20 +322,47 @@ export const string TT_STATUS_ACCENT_COLOR = "XZ suite accent used for Status ti
 export const string TT_STATUS_SHOW_LINES = "Shows the Status table frame and cell borders. ON is the XZ suite default."
 export const string TT_STATUS_LINE_COLOR = "Neutral graphite colour used by the Status table frame and cell borders."
 export const string TT_SHOW_QUICK_READ = "Optional XZ Auction Engine onboarding guide. OFF by default in AE. It explains source authority, Candidate→Range progression, qualification, Chop Authority and lifecycle/display separation. Informational only."
-export const string TT_QUICK_READ_POSITION = "Screen position of the optional XZ AE Quick Read."
+export const string TT_QUICK_READ_POSITION = "Sets the Quick Read screen anchor. Bottom-left is the XZ default. If multiple XZ tables are enabled at the same anchor, they may overlap; move one table to a different position."
 export const string TT_QUICK_READ_TEXT_SIZE = "Text size used only by the XZ AE Quick Read table."
 export const string TT_QUICK_READ_BG_COLOR = "Background colour of the Quick Read. Defaults to XZ graphite #1E222D."
 export const string TT_QUICK_READ_TEXT_COLOR = "Neutral body-text colour used by Quick Read. The title retains the XZ Gold suite accent."
 export const string TT_QUICK_READ_SHOW_LINES = "Shows the Quick Read frame and cell borders. ON is the XZ suite default."
 export const string TT_QUICK_READ_LINE_COLOR = "Neutral graphite colour used by the Quick Read frame and cell borders."
 export const string TT_SHOW_GLOSSARY = "Shows the compact XZ AE code → unabbreviated-term decoder. Longer definitions live only on the compact code cell. OFF by default."
-export const string TT_GLOSSARY_POSITION = "Screen position of the optional XZ AE Glossary."
+export const string TT_GLOSSARY_POSITION = "Sets the Glossary screen anchor. Bottom-right is the XZ default. If multiple XZ tables are enabled at the same anchor, they may overlap; move one table to a different position."
 export const string TT_GLOSSARY_TEXT_SIZE = "Text size used by the compact XZ AE Glossary."
 export const string TT_GLOSSARY_BG_COLOR = "Background colour of the Glossary. Defaults to XZ graphite #1E222D."
 export const string TT_GLOSSARY_TEXT_COLOR = "Neutral colour used for unabbreviated Glossary terms."
 export const string TT_GLOSSARY_ACCENT_COLOR = "XZ suite accent used for Glossary codes and title. Independent of chart-object Unified Color."
 export const string TT_GLOSSARY_SHOW_LINES = "Shows the Glossary frame and cell borders."
 export const string TT_GLOSSARY_LINE_COLOR = "Neutral graphite colour used by the Glossary frame and cell borders."
+
+
+export statusRegistryText(int rangeCount, int candidateCount, int lineageCount) =>
+    "R " + str.tostring(rangeCount) + " · C " + str.tostring(candidateCount) + " · L " + str.tostring(lineageCount)
+
+export statusDisplayAllocationText(int rangeCount, int candidateCount, bool lineageDisplayed) =>
+    "R " + str.tostring(rangeCount) + " · C " + str.tostring(candidateCount) + (lineageDisplayed ? " · L 1" : " · L 0")
+
+export statusFocusText(int leadRangeId, string focusedRangeIds, int leadCandidateId, string focusedCandidateIds) =>
+    "R " + (leadRangeId > 0 ? focusedRangeIds : "—") + " · C " + (leadCandidateId > 0 ? focusedCandidateIds : "—")
+
+export statusChopText(bool sidewalled, int precautionaryEventCount) =>
+    (sidewalled ? "ChRO" : "ChInt") + " · PE " + str.tostring(precautionaryEventCount)
+
+export statusQualificationText(bool originChopAuthority, string requirementsCode, string observedCode) =>
+    originChopAuthority ? "Req OD · Obs OD" : "Req " + requirementsCode + " · Obs " + observedCode
+
+export statusQualificationPolicyCode(string qualificationPolicy) =>
+    qualificationPolicy == "Pair Auction Only" ? "P" :
+     qualificationPolicy == "Structural Containment Only" ? "SC" :
+     qualificationPolicy == "Both Methods" ? "B" : "E"
+
+export statusCollapsedQualificationText(bool originChopAuthority, string policyCode, string observedCode) =>
+    originChopAuthority ? "OD" : policyCode + " · " + observedCode
+
+export statusAuditText(bool chartHoverEnabled, bool pivotAuditEnabled) =>
+    (chartHoverEnabled ? "Hover On" : "Hover Off") + " · " + (pivotAuditEnabled ? "Pivot ⓘ On" : "Pivot ⓘ Off")
 
 //==============================================================================
 // USER-VISIBLE TABLE / REFERENCE COPY
@@ -318,9 +373,9 @@ export const string TT_GLOSSARY_LINE_COLOR = "Neutral graphite colour used by th
 export const string RS_HEADER_LEFT_TIP = "Objective descriptive observations from the source-owned C#/R#/L# registry snapshot within the 100,000-source-bar replay budget. Display scope, focus IDs, visual archive visibility and chart timeframe do not filter these statistics."
 export const string RS_HEADER_RIGHT_TIP = "Research observes retained auction history only. It never creates analytical authority, changes qualification, alters Chop Authority or produces trade-performance statistics."
 export const string RS_CANDIDATE_LABELS = "C# Studied¦C# State Mix¦Resolved Conversion¦¦First Defense Side¦Promotion Method¦Observed Pair Rotation Reach¦Two-Sided Defense"
-export const string RS_CANDIDATE_TIPS = "Total retained pure T↔T Candidate records in the source-owned registry. Displayed Candidate scope does not filter this sample.¦AQ = awaiting qualification · V = validated · X = formally failed/superseded. These are retained lifecycle states, not display states.¦Validated share of resolved Candidates only: V / (V + X). Awaiting Candidates are excluded. Descriptive only; not a trade win rate.¦Selected Median/Mean completion→validation time across validated pure T↔T Candidates only.¦First coherent Candidate defense: L = lower · U = upper · — = none recorded. Same-candle two-sided traversal is deliberately ambiguous and cannot earn first defense.¦Promotion provenance: P = Pair Auction · SC = Structural Containment · B = Both.¦Cumulative D25/D50/D75 Pair Auction rotation reach, independent of later pivot classification.¦Candidates whose retained Pair Auction evidence reached two-sided defense."
+export const string RS_CANDIDATE_TIPS = "Total retained pure T↔T Candidate records in the source-owned registry. Displayed Candidate scope does not filter this sample.¦AQ = awaiting qualification · V = validated · X = formally failed/superseded. These are retained lifecycle states, not display states.¦Validated share of resolved Candidates only: V / (V + X). Awaiting Candidates are excluded. Descriptive only; not a trade win rate.¦Selected Median/Mean completion→validation time across validated pure T↔T Candidates only.¦First coherent Candidate defense: L = lower · U = upper · — = none recorded. A same-source-bar full traversal may establish the coherent first defense from the completed close; Two-Sided Defense still requires a later distinct defense of the opposite side.¦Promotion provenance: P = Pair Auction · SC = Structural Containment · B = Both.¦Cumulative D25/D50/D75 Pair Auction rotation reach, independent of later pivot classification.¦Candidates whose retained Pair Auction evidence reached two-sided defense."
 export const string RS_RANGE_LABELS = "R# Studied¦Range Genesis¦Lifecycle Mix¦Hierarchy¦Reactivation¦¦"
-export const string RS_RANGE_TIPS = "Total retained validated Range records in the source-owned registry.¦T↔T = pure Trend-to-Trend genesis · OCh = Origin-Validated Chop genesis available through Integrated Chop Authority.¦A = Active · Viol = Violating · BO = Breakout Developing · Arc = Visually Archived. Bare V remains reserved for Candidate Validated.¦Root has no retained parentRangeId. Child has an explicit parent Range relationship.¦Ranges reactivated at least once, followed by total retained reactivation events.¦Selected Median/Mean definitive validation→visual archive elapsed time for archived Ranges only.¦Selected Median/Mean close-defined R# height as a percentage of the lower anchor."
+export const string RS_RANGE_TIPS = "Total retained validated Range records in the source-owned registry.¦T↔T = pure Trend-to-Trend genesis · OCh = Origin-Chop genesis available through Integrated Chop Authority.¦A = Active · Viol = Violating · BO = Breakout Developing · Arc = Visually Archived. Bare V remains reserved for Candidate Validated.¦Root has no retained parentRangeId. Child has an explicit parent Range relationship.¦Ranges reactivated at least once, followed by total retained reactivation events.¦Selected Median/Mean definitive validation→visual archive elapsed time for archived Ranges only.¦Selected Median/Mean close-defined R# height as a percentage of the lower anchor."
 export const string RS_LINEAGE_LABELS = "L# Studied¦L# State Mix¦Resolved Lock Share¦Retained P-Events¦¦Origin Retest¦"
 export const string RS_LINEAGE_TIPS = "Total retained Trend-origin→Chop precautionary lineages.¦Act = active · Lkd = locked · EndT = ended by later Trend structure · Sup = superseded · Fail = origin failure.¦Locked share of resolved lineages only. Active unresolved L# records are excluded. Descriptive control-group evidence only.¦Total retained P1→P2→… boundary-transition events across all L# lineages.¦Selected Median/Mean retained P-layer reached per lineage.¦Lineages that began an origin-side retest episode.¦Selected Median/Mean origin-confirmation→non-open-state elapsed time. Active lineages are excluded."
 
@@ -330,11 +385,11 @@ export const string ST_SOURCE_TIP = "Auction Source Timeframe and source-owned r
 export const string ST_QUALIFICATION_LABEL_TIP = "Req = selected Qualification Policy plus method-specific requirements. P = Pair Auction · SC = Structural Containment · E = Either · B = Both. Obs = method state plus retained evidence. OD = Origin Defense for Integrated Origin-Chop authority."
 export const string ST_GEOMETRY_LABEL_TIP = "Current operational/focused object pair and close-defined lower→upper geometry."
 export const string ST_REGISTRY_LABEL_TIP = "Retained source-owned registry counts within the 100,000-source-bar replay budget. R = validated Ranges · C = pure T↔T Candidates · L = precautionary Trend→Chop lineages."
-export const string ST_DISPLAY_LABEL_TIP = "Current chart allocation before geometry deduplication and Nearest-PA presentation overrides."
+export const string ST_DISPLAY_LABEL_TIP = "Current C#/R# objects selected for chart presentation after display-selection rules are applied. Final visible geometry may be reduced further by render-stage overlap/shared-geometry suppression or Nearest-PA presentation overrides."
 export const string ST_FOCUS_LABEL_TIP = "Explicit visual focus IDs and lead-focus ordering."
 export const string ST_CHOP_LABEL_TIP = "ChRO = Research Only · Sidewalled. ChInt = Integrated. PE = retained precautionary event count."
 export const string ST_AUDIT_LABEL_TIP = "Effective presentation/audit state. Pivot ⓘ is On only when both Chart Audit Tooltips and Pivot Audit Icons are enabled."
-export const string ST_AUTHORITY_LABEL_TIP = "Current operational Auction object/state."
+export const string ST_AUTHORITY_LABEL_TIP = "Effective AE object/state currently governing or being surfaced for the active context. Focus substitution may change which retained C#/R#/L# is reported here without altering the underlying registry record."
 export const string ST_QUALIFICATION_PREFIX = "Qualification policy/evidence. "
 export const string ST_RANGE_SCOPE_PREFIX = "Range scope: "
 export const string ST_CANDIDATE_SCOPE_PREFIX = "\nCandidate scope: "
@@ -476,7 +531,7 @@ export candidateStateSummary(bool failed, bool validated) =>
 // select authority, or calculate MS/S&D/Range methodology.
 
 export candidateDefenseRotationText(string lowDate, string lowRotation, string highDate, string highRotation) =>
-    "Lower: " + lowDate + " · post-defense rotation " + lowRotation + " | Upper: " + highDate + " · post-defense rotation " + highRotation
+    "Lower: " + lowDate + " · defended-side Pair rotation " + lowRotation + " | Upper: " + highDate + " · defended-side Pair rotation " + highRotation
 
 export candidateEpisodeText(int firstDefenseSide, string firstDefenseDate) =>
     firstDefenseSide == -1 ? "Lower-boundary defense · " + firstDefenseDate :
@@ -639,11 +694,25 @@ export pivotRelationshipTooltip(string pivotCode, string pivotDate, string pivot
      "\nPivot close anchor: " + pivotPrice +
      (str.length(relationships) > 0 ? "\n\nObject relationships\n\n" + relationships : "\n\nObject relationships: None")
 
-export zoneOwnershipTooltip(string zoneType, string originDate, string lowText, string highText, string displayedThroughId, string relationships) =>
+export zoneOwnerCompactCore(string firstId, string secondId, int ownerCount) =>
+    string result = firstId
+    if ownerCount >= 2 and str.length(secondId) > 0
+        string firstPrefix = str.length(firstId) >= 2 ? str.substring(firstId, 0, 2) : ""
+        string secondPrefix = str.length(secondId) >= 2 ? str.substring(secondId, 0, 2) : ""
+        string secondCompact = firstPrefix == secondPrefix and str.length(secondId) > 2 ? str.substring(secondId, 2, str.length(secondId)) : secondId
+        result += "/" + secondCompact
+    if ownerCount > 2
+        result += " +" + str.tostring(ownerCount - 2)
+    result
+
+export zoneOwnerTagText(string ownerCore, string zoneCode, string zoneRole, bool auditTagMode) =>
+    auditTagMode ? ownerCore + " · " + zoneCode : ownerCore + "\n" + zoneRole
+
+export zoneOwnershipTooltip(string zoneType, string originDate, string lowText, string highText, string ownerText, string relationships) =>
     zoneType + " S&D zone" +
      "\nS&D origin: " + originDate +
      "\nZone price: " + lowText + " → " + highText +
-     (str.length(displayedThroughId) > 0 ? "\nDisplayed through: " + displayedThroughId : "") +
+     (str.length(ownerText) > 0 ? "\nAssociated AE objects: " + ownerText : "") +
      (str.length(relationships) > 0 ? "\n\nObject relationships\n\n" + relationships : "\n\nObject relationships: None")
 
 export npaSourceBlock(string header, string pairText, string lowText, string highText, string heightText, string moveText, string livePositionText) =>
@@ -655,6 +724,17 @@ export npaTooltip(string sideText, string percentText, string priceText, string 
 //==============================================================================
 // SESSION FORENSIC PRESENTATION
 //==============================================================================
+export sessionDisplayColor(
+     int sessionIndex, bool useUnifiedColor, color unifiedColor,
+     color sydneyColor, color tokyoColor, color londonColor, color newYorkColor
+ ) =>
+    color baseColor =
+         sessionIndex == 0 ? sydneyColor :
+         sessionIndex == 1 ? tokyoColor :
+         sessionIndex == 2 ? londonColor :
+         newYorkColor
+    useUnifiedColor ? unifiedColor : baseColor
+
 // AE chooses the session occurrence and AE reference geometry first. These helpers only perform
 // generic coordinate arithmetic and render those already-decided facts as user-visible text.
 
@@ -762,18 +842,16 @@ export sessionForensicTooltip(
 //==============================================================================
 
 export const string TT_ENABLE_SESSION_CONTEXT = "Adds canonical XZ session/overlap context to AE presentation and forensic surfaces. Session context is descriptive only: it never creates, validates, ranks, archives or otherwise changes C#/R#/L#, XZ Market Structure, XZ Supply & Demand or Auction authority."
-export const string TT_SESSION_STANDARD = "Clock standard used only for descriptive AE session context. Market Centres (FX) uses the canonical Sydney/Tokyo/London/New York market-centre windows. Exchange Cash Hours uses each centre's canonical cash-session schedule, including the Tokyo lunch break. IANA timezone/DST authority comes from XZ Session Authority. Exchange Cash Hours does not infer exchange holidays or early closes on unrelated symbols."
+export const string TT_SESSION_STANDARD = "Selects the canonical clock schedule used by Session Context. Market Centres (FX) uses Sydney/Tokyo/London/New York market-centre windows. Exchange Cash Hours uses each centre's canonical cash-session schedule, including Tokyo’s lunch break. IANA timezone/DST handling comes from XZ Session Authority. Exchange Cash Hours does not infer exchange holidays or early closes on unrelated symbols."
 export const string ST_SESSION_LABEL_TIP = "Selected canonical session context. Live uses the current developing occurrence; Last uses that session’s most recent completed retained occurrence. Hover for detailed session/AE relationship telemetry."
 
-export sessionStatusTooltip(string standard, string contextText) =>
-    "Standard: " + standard + "\nContext: " + contextText + "\nClock authority: XZ Session Authority"
 //==============================================================================
 // AE SESSION RANGE CONTEXT — USER-VISIBLE COPY ONLY
 //==============================================================================
 
-export const string TT_SHOW_SESSION_RANGES = "Draws bounded developing/completed High-Low frames for the selected canonical sessions. Frames are descriptive chart context only; they never participate in Candidate qualification, Range authority, lifecycle, hierarchy, XZ Market Structure or XZ Supply & Demand decisions."
-export const string TT_SESSION_HISTORY_OCCURRENCES = "Maximum recent occurrences retained for each selected session in the chart context. Allowed 1–20 · Default 5. This is a display-history limit only and does not change analytical history."
-export const string TT_SESSION_SHOW_CODES = "Shows compact SYD/TYO/LDN/NY identifiers on Session High-Low frames. In AE the visible code itself is the hover target for that exact occurrence’s timing, H-L, activity metrics, current/focused AE relationship and prior-same-session comparison."
-export const string TT_SESSION_FRAME_TRANSPARENCY = "Transparency of Session High-Low frame presentation. Allowed 70–98 · Default 92. Higher values make session context quieter behind AE geometry."
-export const string TT_SESSION_MARKET_TOGGLE = "Selects this canonical market session for AE Session Context. The selection controls its Expanded Status row and, when Session High-Low Frames are enabled, its bounded chart frames. Selection never changes the canonical session clock or any AE/MS/S&D analytical state."
+export const string TT_SHOW_SESSION_RANGES = "Draws bounded developing and recent completed High-Low frames for the selected canonical sessions. Each frame is built from the retained occurrence window and can host the session-code forensic hover when Show Session Codes is enabled. Session History Occurrences controls completed-frame depth."
+export const string TT_SESSION_HISTORY_OCCURRENCES = "Maximum recent completed occurrences shown for each selected session in chart Session Context. Allowed 1–20 · Default 5. This controls displayed session-history depth only; it does not change the underlying retained session-window history."
+export const string TT_SESSION_SHOW_CODES = "Shows compact SYD/TYO/LDN/NY identifiers on Session High-Low frames. The visible code is the hover target for that exact occurrence’s timing, H-L, time progress, current PA location, current/focused AE relationship, overlap/excursion telemetry and prior-same-session comparison."
+export const string TT_SESSION_FRAME_TRANSPARENCY = "Controls only the visual transparency of Session High-Low frames. Allowed 70–98 · Default 92. Higher values make the bounded session geometry quieter behind AE structure; code-hover content is unchanged."
+export const string TT_SESSION_MARKET_TOGGLE = "Includes this canonical market in Session Context. Selection controls its Expanded Status row and, when Session High-Low Frames are enabled, its bounded developing/completed frames and session-code hover targets."
 ````

@@ -1,5 +1,5 @@
 <!-- tradingview-pine-id: PUB;90ceb583408541eb8b7463d1e7a83094 -->
-<!-- tradingview-pine-version: 5.0 -->
+<!-- tradingview-pine-version: 6.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # STRYK: MOMENTUM
 
@@ -419,6 +419,19 @@ boxLayout = input.string("Vertical", "Layout", options = ["Vertical", "Horizonta
      tooltip = "Vertical = label | value rows stacked down (default). Horizontal = one wide strip — labels across the top row, values beneath. Mobile = the same rows with abbreviated labels forced to Tiny size, wrapped into columns by the setting below so a phone box stays a compact grid.")
 boxWrap = input.int(5, "Mobile: rows per column (0 = off)", minval = 0, maxval = 30, group = G8,
      tooltip = "MOBILE LAYOUT ONLY: once a column fills with this many rows, the next rows start a new column to the right. 0 = single column. Vertical and Horizontal ignore this.")
+// — Bias engine (three engines scored: acceptance · structure · order flow) —
+biasHtf = input.string("4 hours", "HTF bias timeframe", options = ["1 hour", "2 hours", "4 hours", "1 day", "1 week", "1 month"], group = G8,
+     tooltip = "The higher timeframe the HTF Bias row is computed on — the same three engines (acceptance, structure, order flow) run on THAT timeframe's own bars and scored the same way. If it's below the chart timeframe it's lifted to the chart timeframe for that session.")
+biasLook = input.int(20, "Bias: lookback (bars)", minval = 5, maxval = 200, group = G8, inline = "bs1")
+biasMigK = input.int(3, "POC migration (bars)", minval = 1, maxval = 50, group = G8, inline = "bs1",
+     tooltip = "Lookback = bars in the order-flow score (recency-weighted, newest weight N … oldest 1) and in the HTF POC window. POC migration = how many bars back the HTF POC is compared against for the HTF acceptance vote. The chart-timeframe acceptance vote reuses the POC trend row.")
+biasWAcc = input.float(1.5, "Bias weights: acceptance", minval = 0.0, maxval = 3.0, step = 0.25, group = G8, inline = "bs2")
+biasWStr = input.float(1.0, "structure", minval = 0.0, maxval = 3.0, step = 0.25, group = G8, inline = "bs2")
+biasWFlow = input.float(1.0, "flow", minval = 0.0, maxval = 3.0, step = 0.25, group = G8, inline = "bs2",
+     tooltip = "Each engine votes +1 / 0 / −1 and is multiplied by its weight. Acceptance (which way volume is being accepted) carries the most by default because it can't be faked by one aggressive burst; structure is price truth; order flow is fastest and noisiest.")
+biasThresh = input.float(1.5, "Bias: BULL/BEAR threshold", minval = 0.5, maxval = 4.0, step = 0.25, group = G8, inline = "bs3")
+biasMixTh = input.float(0.15, "flow dead zone", minval = 0.01, maxval = 1.0, step = 0.05, group = G8, inline = "bs3",
+     tooltip = "Threshold = the weighted score at or beyond which the read is BULL (+) or BEAR (−); anything inside is CONSOLIDATION — sideways, or the engines disagreeing. Default 1.5 = acceptance plus one other engine, or structure and flow together. Flow dead zone = the order-flow score (in multiples of average |Δ|) inside which flow votes 0.")
 boxSqueezeLook = input.int(100, "Squeeze/compression lookback", minval = 20, maxval = 500, group = G8,
      tooltip = "Value-area width is percentile-ranked against its own history over this many bars. A LOW rank (tight relative to normal) flags a squeeze — the coiled state that tends to precede expansion, before price has actually broken out either way.")
 boxAbsorbAtr = input.float(0.3, "Absorption: max body (× ATR)", minval = 0.1, maxval = 1.0, step = 0.05, group = G8, inline = "abs")
@@ -1425,6 +1438,111 @@ color fuelColBox = fuelVal >= 0.6 ? colBull : fuelVal >= 0.3 ? colNeut : colBear
 color ptColBox = ptDir == 1 ? colBull : ptDir == -1 ? colBear : colNeut
 color structColBox = structDir == 1 ? colBull : structDir == -1 ? colBear : colNeut
 
+// ── Bias engine — acceptance · structure · order flow, scored ───────────────
+// Chart timeframe: acceptance = the POC trend row's direction, structure = the
+// latched Market-structure state, flow = recency-weighted chart-bar delta.
+// HTF: the same three computed on the selected timeframe's own bars inside one
+// request.security call. Agreement is the signal; disagreement reads as
+// CONSOLIDATION rather than being forced into a side.
+f_flowVote(float sc, float mixTh) =>
+    sc > mixTh ? 1 : sc < -mixTh ? -1 : 0
+f_biasScore(int a, int st, int fl) =>
+    float sc = a * biasWAcc + st * biasWStr + fl * biasWFlow
+    string lbl = sc >= biasThresh ? "BULL" : sc <= -biasThresh ? "BEAR" : "CONSOLIDATION"
+    [lbl, sc]
+f_voteGlyph(int v) =>
+    v == 1 ? "▲" : v == -1 ? "▼" : "▶"
+// chart-TF flow score: recency-weighted true delta, normalised by average |Δ|
+float bfWSum = 0.0
+float bfWTot = 0.0
+float bfAbs = 0.0
+for i = 0 to biasLook - 1
+    float d = nz(barDelta[i])
+    float w = biasLook - i
+    bfWSum += d * w
+    bfWTot += w
+    bfAbs += math.abs(d)
+bfAbs := bfAbs / biasLook
+float bfScore = bfAbs > 0 ? (bfWSum / bfWTot) / bfAbs : 0.0
+int biasAccV = ptDir
+int biasStrV = structDir
+int biasFlowV = f_flowVote(bfScore, biasMixTh)
+[biasLbl, biasSc] = f_biasScore(biasAccV, biasStrV, biasFlowV)
+string biasVotes = "A" + f_voteGlyph(biasAccV) + " S" + f_voteGlyph(biasStrV) + " F" + f_voteGlyph(biasFlowV)
+color biasCol = biasLbl == "BULL" ? colBull : biasLbl == "BEAR" ? colBear : colNeut
+
+// HTF votes, computed on the selected timeframe's own bars
+htfBiasVotes(simple int n, simple int migK, simple float mixTh, simple int pl) =>
+    // flow: recency-weighted bar-polarity delta on this context
+    float sv = close > open ? nz(volume) : close < open ? -nz(volume) : 0.0
+    float wSum = 0.0
+    float wTot = 0.0
+    float aAbs = 0.0
+    for i = 0 to n - 1
+        float d = nz(sv[i])
+        float w = n - i
+        wSum += d * w
+        wTot += w
+        aAbs += math.abs(d)
+    aAbs := aAbs / n
+    float sc = aAbs > 0 ? (wSum / wTot) / aAbs : 0.0
+    int flowV = sc > mixTh ? 1 : sc < -mixTh ? -1 : 0
+    // acceptance: POC over the last n bars (each bar's volume spread across its
+    // range, capped bins), compared against the same POC migK bars ago
+    map<int, float> prof = map.new<int, float>()
+    for i = 0 to n - 1
+        float hi = high[i]
+        float lo = low[i]
+        float vo = nz(volume[i])
+        if not na(hi) and not na(lo) and vo > 0
+            int bHi = math.round(hi / pocBinSize)
+            int bLo = math.round(lo / pocBinSize)
+            int span = math.max(1, bHi - bLo + 1)
+            int steps = math.min(span, 200)
+            float per = vo / steps
+            float stepSz = span * 1.0 / steps
+            for k = 0 to steps - 1
+                int b = bLo + math.round(k * stepSz)
+                map.put(prof, b, (map.contains(prof, b) ? map.get(prof, b) : 0.0) + per)
+    float bestV = 0.0
+    int bestB = na
+    array<int> pks = map.keys(prof)
+    for k in pks
+        float v = map.get(prof, k)
+        if v > bestV
+            bestV := v
+            bestB := k
+    float pocPx = na(bestB) ? na : bestB * pocBinSize
+    float pocPrev = pocPx[migK]
+    float atrH = ta.atr(14)
+    float mig = na(pocPx) or na(pocPrev) ? 0.0 : (pocPx - pocPrev) / math.max(syminfo.mintick, atrH)
+    int accV = mig > 0.1 ? 1 : mig < -0.1 ? -1 : 0
+    // structure: latched pivot state on this context
+    float ph = ta.pivothigh(pl, pl)
+    float plo = ta.pivotlow(pl, pl)
+    var float lph = na
+    var float lpl = na
+    var int sd = 0
+    if not na(ph)
+        lph := ph
+    if not na(plo)
+        lpl := plo
+    if not na(lph) and close > lph
+        sd := 1
+    if not na(lpl) and close < lpl
+        sd := -1
+    [accV, sd, flowV]
+string biasTfRaw = biasHtf == "1 hour" ? "60" : biasHtf == "2 hours" ? "120" : biasHtf == "4 hours" ? "240" : biasHtf == "1 day" ? "D" : biasHtf == "1 week" ? "W" : "M"
+string biasTfEff = timeframe.in_seconds(biasTfRaw) < chartSec ? timeframe.period : biasTfRaw
+[hbAccV, hbStrV, hbFlowV] = request.security(syminfo.tickerid, biasTfEff, htfBiasVotes(biasLook, biasMigK, biasMixTh, pivLen), lookahead = barmerge.lookahead_off)
+int hbAcc = nz(hbAccV, 0)
+int hbStr = nz(hbStrV, 0)
+int hbFlow = nz(hbFlowV, 0)
+[hbLbl, hbSc] = f_biasScore(hbAcc, hbStr, hbFlow)
+string hbVotes = "A" + f_voteGlyph(hbAcc) + " S" + f_voteGlyph(hbStr) + " F" + f_voteGlyph(hbFlow)
+color hbCol = hbLbl == "BULL" ? colBull : hbLbl == "BEAR" ? colBear : colNeut
+string hbTfLbl = biasHtf == "1 hour" ? "1H" : biasHtf == "2 hours" ? "2H" : biasHtf == "4 hours" ? "4H" : biasHtf == "1 day" ? "1D" : biasHtf == "1 week" ? "1W" : "1M"
+
 // rows are collected into arrays, then rendered by the chosen layout — the
 // same smart-wrap pattern as the ΔC info box. Table is rebuilt on the last bar.
 var table boxT = na
@@ -1446,6 +1564,8 @@ if mBox and barstate.islast
     array.push(bLbl, squeezeOn ? "⚡ SQUEEZE" : "VA width"), array.push(bSh, squeezeOn ? "⚡SQZ" : "VA"), array.push(bVal, squeezeOn ? "coiled" : str.tostring(math.round(vaWidthRank)) + "%ile"), array.push(bCol, squeezeOn ? #ffd166 : colNeut)
     array.push(bLbl, absorbOn ? "⚠ ABSORPTION" : "Absorption"), array.push(bSh, absorbOn ? "⚠ABS" : "Abs"), array.push(bVal, absorbOn ? "active" : " "), array.push(bCol, color.orange)
     array.push(bLbl, relTxt),          array.push(bSh, releaseShow ? (releaseDir == 1 ? "▲Rel" : "▼Rel") : "Rel"), array.push(bVal, releaseShow ? (releaseDir == 1 ? "up" : "down") : " "), array.push(bCol, relCol)
+    array.push(bLbl, "Bias"),          array.push(bSh, "Bias"),   array.push(bVal, biasLbl + "  " + biasVotes),                          array.push(bCol, biasCol)
+    array.push(bLbl, "HTF bias (" + hbTfLbl + ")"), array.push(bSh, "HTF " + hbTfLbl), array.push(bVal, hbLbl + "  " + hbVotes),         array.push(bCol, hbCol)
 
     int nB = array.size(bLbl)
     bool mobile = boxLayout == "Mobile"
@@ -1526,6 +1646,13 @@ bool aAbsorb = absorbOn and not absorbOn[1]
 // row 9 · Release: fired on this bar
 bool aRelUp = not na(releaseBar) and releaseBar == bar_index and releaseDir == 1
 bool aRelDn = not na(releaseBar) and releaseBar == bar_index and releaseDir == -1
+// rows 10-11 · Bias / HTF bias: read changes
+bool aBiasBull = biasLbl == "BULL" and biasLbl[1] != "BULL"
+bool aBiasBear = biasLbl == "BEAR" and biasLbl[1] != "BEAR"
+bool aBiasCons = biasLbl == "CONSOLIDATION" and biasLbl[1] != "CONSOLIDATION"
+bool aHbBull = hbLbl == "BULL" and hbLbl[1] != "BULL"
+bool aHbBear = hbLbl == "BEAR" and hbLbl[1] != "BEAR"
+bool aHbCons = hbLbl == "CONSOLIDATION" and hbLbl[1] != "CONSOLIDATION"
 
 if alertOk
     if aDeltaPos
@@ -1568,6 +1695,18 @@ if alertOk
         alert("STRYK:M ▲ RELEASE UP — closed above value with buying delta.", alert.freq_once_per_bar)
     if aRelDn
         alert("STRYK:M ▼ RELEASE DOWN — closed below value with selling delta.", alert.freq_once_per_bar)
+    if aBiasBull
+        alert("STRYK:M bias BULL (" + biasVotes + ").", alert.freq_once_per_bar)
+    if aBiasBear
+        alert("STRYK:M bias BEAR (" + biasVotes + ").", alert.freq_once_per_bar)
+    if aBiasCons
+        alert("STRYK:M bias CONSOLIDATION (" + biasVotes + ").", alert.freq_once_per_bar)
+    if aHbBull
+        alert("STRYK:M HTF bias (" + hbTfLbl + ") BULL (" + hbVotes + ").", alert.freq_once_per_bar)
+    if aHbBear
+        alert("STRYK:M HTF bias (" + hbTfLbl + ") BEAR (" + hbVotes + ").", alert.freq_once_per_bar)
+    if aHbCons
+        alert("STRYK:M HTF bias (" + hbTfLbl + ") CONSOLIDATION (" + hbVotes + ").", alert.freq_once_per_bar)
 
 alertcondition(aDeltaPos and mAlerts,   "Δ — flipped positive",      "STRYK:M {{ticker}} {{interval}} — Δ flipped positive at {{close}}.")
 alertcondition(aDeltaNeg and mAlerts,   "Δ — flipped negative",      "STRYK:M {{ticker}} {{interval}} — Δ flipped negative at {{close}}.")
@@ -1590,6 +1729,12 @@ alertcondition(aAbsorb and mAlerts,     "⚠ Absorption",              "STRYK:M 
 alertcondition(aRelUp and mAlerts,      "▲ Release — up",            "STRYK:M {{ticker}} {{interval}} — release up at {{close}}.")
 alertcondition(aRelDn and mAlerts,      "▼ Release — down",          "STRYK:M {{ticker}} {{interval}} — release down at {{close}}.")
 alertcondition((aRelUp or aRelDn) and mAlerts, "Release — either side", "STRYK:M {{ticker}} {{interval}} — release at {{close}}.")
+alertcondition(aBiasBull and mAlerts, "Bias — BULL",          "STRYK:M {{ticker}} {{interval}} — bias turned BULL at {{close}}.")
+alertcondition(aBiasBear and mAlerts, "Bias — BEAR",          "STRYK:M {{ticker}} {{interval}} — bias turned BEAR at {{close}}.")
+alertcondition(aBiasCons and mAlerts, "Bias — CONSOLIDATION", "STRYK:M {{ticker}} {{interval}} — bias turned CONSOLIDATION at {{close}}.")
+alertcondition(aHbBull and mAlerts,   "HTF bias — BULL",      "STRYK:M {{ticker}} {{interval}} — HTF bias turned BULL at {{close}}.")
+alertcondition(aHbBear and mAlerts,   "HTF bias — BEAR",      "STRYK:M {{ticker}} {{interval}} — HTF bias turned BEAR at {{close}}.")
+alertcondition(aHbCons and mAlerts,   "HTF bias — CONSOLIDATION", "STRYK:M {{ticker}} {{interval}} — HTF bias turned CONSOLIDATION at {{close}}.")
 
 // ── Plots ────────────────────────────────────────────────────────────────────
 plot(mVwap and showB3 ? rvwapS + multB3 * rsdS : na, "VWAP +3σ", color = bandCol3, linewidth = bandWidth)

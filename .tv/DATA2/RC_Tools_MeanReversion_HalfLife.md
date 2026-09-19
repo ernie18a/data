@@ -1,5 +1,5 @@
 <!-- tradingview-pine-id: PUB;188e079f703d403db22a2a638bf4f306 -->
-<!-- tradingview-pine-version: 1.0 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # RC Tools - Mean-Reversion Half-Life
 
@@ -108,9 +108,8 @@ smoothLen  = input.int(3, "Smoothing Length", minval=1, maxval=50, step=1, group
 smoothType = input.string("EMA", "Smoothing Type", options=["SMA", "EMA", "WMA", "RMA", "HMA"], group="Half-Life",
      tooltip="Moving-average family used to smooth the regression slope.")
 
-int    fwdBars   = input.int(20, "Forward Return Window (bars)", minval=1, group="Tables")
-bool   showTable = input.bool(true, "Show Base-Rate Table", group="Tables")
-string tablePos  = input.string("Top Right", "Base-Rate Table Position", options=["Top Right","Top Middle","Top Left","Bottom Right","Bottom Middle","Bottom Left"], group="Tables")
+bool   showTable = input.bool(true, "Show Status Table", group="Tables")
+string tablePos  = input.string("Top Right", "Status Table Position", options=["Top Right","Top Middle","Top Left","Bottom Right","Bottom Middle","Bottom Left"], group="Tables")
 
 color colFast         = input.color(color.new(color.aqua,   60), "Fast Mean-Reversion", group="Colours")
 color colSlow         = input.color(color.new(color.purple, 60), "Slow Mean-Reversion", group="Colours")
@@ -197,33 +196,6 @@ if barstate.isconfirmed
 
 
 // ─────────────────────────────────────────────────────────────────────────────
-// HISTORICAL BASE RATES
-// Forward N-bar return, attributed back to whichever state was active N bars
-// ago — same approach as the Regime Classifier's and Hurst's base-rate tables.
-// Three states this time (No Mean-Reversion / Slow / Fast).
-// ─────────────────────────────────────────────────────────────────────────────
-var float[] sumRet = array.new_float(3, 0.0)
-var int[]   cnt    = array.new_int(3, 0)
-var int[]   winCnt = array.new_int(3, 0)
-
-if barstate.isconfirmed and bar_index >= fwdBars and not na(currentState[fwdBars])
-    int idxState = currentState[fwdBars]
-    float fwdRet = close / close[fwdBars] - 1
-    array.set(sumRet, idxState, array.get(sumRet, idxState) + fwdRet)
-    array.set(cnt,    idxState, array.get(cnt, idxState) + 1)
-    if fwdRet > 0
-        array.set(winCnt, idxState, array.get(winCnt, idxState) + 1)
-
-avgRet(idx) =>
-    int nCnt = array.get(cnt, idx)
-    nCnt > 0 ? array.get(sumRet, idx) / nCnt * 100 : na
-
-winRate(idx) =>
-    int nCnt = array.get(cnt, idx)
-    nCnt > 0 ? array.get(winCnt, idx) / nCnt * 100 : na
-
-
-// ─────────────────────────────────────────────────────────────────────────────
 // PLOTS
 // ─────────────────────────────────────────────────────────────────────────────
 // Half-life is capped for display only — near a zero regression slope the raw
@@ -253,29 +225,13 @@ getPosition(p) =>
 halfLifeText = na(dispHalfLife) ? "—" : (dispHalfLife > dispCap ? ">" + str.tostring(dispCap, "#") : str.tostring(dispHalfLife, "#.#"))
 
 if showTable and barstate.islast
-    var table t = table.new(getPosition(tablePos), 3, 5,
+    var table t = table.new(getPosition(tablePos), 3, 1,
          bgcolor=color.new(color.black, 15), border_width=1, border_color=color.gray,
          frame_color=color.gray, frame_width=1)
 
     table.cell(t, 0, 0, "Mean-Reversion Half-Life", text_color=color.white, text_size=size.small, bgcolor=color.new(color.black, 0))
     table.cell(t, 1, 0, ready ? stateName(currentState) : "Warming up…", text_color=ready ? stateColor(currentState) : color.gray, text_size=size.small)
     table.cell(t, 2, 0, ready ? halfLifeText + " bars" : "", text_color=color.gray, text_size=size.small)
-
-    table.cell(t, 0, 1, "State", text_color=color.gray, text_size=size.small)
-    table.cell(t, 1, 1, "Avg Fwd " + str.tostring(fwdBars) + "-bar %", text_color=color.gray, text_size=size.small)
-    table.cell(t, 2, 1, "Win Rate %", text_color=color.gray, text_size=size.small)
-
-    table.cell(t, 0, 2, "Fast Mean-Reversion", text_color=colFast, text_size=size.small)
-    table.cell(t, 1, 2, na(avgRet(2)) ? "—" : str.tostring(avgRet(2), "#.##"), text_color=color.white, text_size=size.small)
-    table.cell(t, 2, 2, na(winRate(2)) ? "—" : str.tostring(winRate(2), "#.#"), text_color=color.white, text_size=size.small)
-
-    table.cell(t, 0, 3, "Slow Mean-Reversion", text_color=colSlow, text_size=size.small)
-    table.cell(t, 1, 3, na(avgRet(1)) ? "—" : str.tostring(avgRet(1), "#.##"), text_color=color.white, text_size=size.small)
-    table.cell(t, 2, 3, na(winRate(1)) ? "—" : str.tostring(winRate(1), "#.#"), text_color=color.white, text_size=size.small)
-
-    table.cell(t, 0, 4, "No Mean-Reversion", text_color=colNoReversion, text_size=size.small)
-    table.cell(t, 1, 4, na(avgRet(0)) ? "—" : str.tostring(avgRet(0), "#.##"), text_color=color.white, text_size=size.small)
-    table.cell(t, 2, 4, na(winRate(0)) ? "—" : str.tostring(winRate(0), "#.#"), text_color=color.white, text_size=size.small)
 
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -295,8 +251,6 @@ if showTable and barstate.islast
 //   the estimate until it fully rolls off.
 // - Shorter windows react faster but produce noisier, less reliable estimates;
 //   longer windows are more stable but slower to reflect a genuine change.
-// - Historical base-rate stats need a meaningful sample count (check N)
-//   before being trusted, especially for the less common states.
 // - This script does NOT repaint. All classification updates on confirmed
 //   bar close only.
 // ─────────────────────────────────────────────────────────────────────────────

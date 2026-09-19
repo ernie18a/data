@@ -1,0 +1,120 @@
+<!-- tradingview-pine-id: PUB;b38518157df944568497ce2c402ae60e -->
+<!-- tradingview-pine-version: 1.0 -->
+<!-- tradingviewscripts-format: 1 -->
+# Trend & Pullback %
+
+Source: https://www.tradingview.com/script/c918gAXa-Trend-Pullback/
+
+## Description
+
+Trend & Pullback %
+This indicator breaks price action into a simple sequence of legs — trend moves and pullbacks — and labels the percentage size of each one directly on the chart, so you can see at a glance how far the market ran before it corrected, and how far it corrected before resuming.
+
+How it works
+
+The script tracks consecutive candle direction to identify when a trend leg (green candles) is building and when it flips into a pullback leg (red candles).
+When direction reverses, the leg that just ended is closed out and labeled with its % move — measured from where that leg started to its extreme (the high for a trend leg, the low for a pullback).
+Each new leg always starts exactly where the previous one finished, so a pullback is measured from the prior trend's top, and the next trend leg is measured from that pullback's bottom — giving you a continuous, non-overlapping read of the swing structure.
+A live label on the current bar shows the running % of whatever leg is still forming.
+Separately, whenever N consecutive same-colored candles occur (default: 5, adjustable), a "Run" label shows the total % move across just that streak — useful for spotting momentum bursts independent of the broader swing.
+
+Inputs
+
+Consecutive candle count for run labels
+Toggle leg labels, run labels, and the live running-% label
+Minimum leg % filter (hides small/noisy legs)
+Custom colors for trend vs. pullback legs
+
+Notes
+
+Works on any symbol and timeframe.
+This is a visual/analytical tool for reading trend and pullback structure, not a buy/sell signal generator — use it alongside your own strategy and risk management.
+
+---
+
+## Source Code
+
+````pine
+//@version=6
+indicator("Trend & Pullback %", overlay=true, max_labels_count=500)
+
+// ── Inputs ─────────────────────────────────────────────────────────────
+streakLen     = input.int(5, "Consecutive Candle Count for Run Label", minval=2)
+showLegLabels = input.bool(true, "Show Leg (Trend/Pullback) % Labels")
+showRunLabels = input.bool(true, "Show Consecutive-Candle Run % Labels")
+showLiveLabel = input.bool(true, "Show Live Running % on Last Bar")
+minLegPct     = input.float(0.0, "Minimum Leg % to Label (filter noise)", minval=0.0, step=0.1)
+upColor       = input.color(color.new(color.teal, 0), "Trend Leg Color")
+downColor     = input.color(color.new(color.red, 0), "Pullback Leg Color")
+
+// ── Candle classification ─────────────────────────────────────────────
+isUp   = close > open
+isDown = close < open
+
+// ── State ──────────────────────────────────────────────────────────────
+var float pivotPrice   = na   // price where the CURRENT leg started
+var float extremePrice = na   // furthest price reached so far in the CURRENT leg
+var int   dir          = 0    // 1 = trend (up) leg, -1 = pullback (down) leg, 0 = undefined
+var int   consecUp     = 0
+var int   consecDown   = 0
+var float streakOpenUp   = na
+var float streakOpenDown = na
+
+candDir = isUp ? 1 : isDown ? -1 : dir  // doji keeps previous direction
+
+// ── Consecutive-candle streak tracking ───────────────────────────────
+if isUp
+    consecUp += 1
+    consecDown := 0
+    if consecUp == 1
+        streakOpenUp := open
+else if isDown
+    consecDown += 1
+    consecUp := 0
+    if consecDown == 1
+        streakOpenDown := open
+
+if showRunLabels and consecUp == streakLen
+    runPct = (close - streakOpenUp) / streakOpenUp * 100
+    label.new(bar_index, high, "Run " + (runPct >= 0 ? "+" : "") + str.tostring(runPct, "#.##") + "%",
+         style=label.style_label_down, color=color.new(color.lime, 0), textcolor=color.black, size=size.tiny)
+
+if showRunLabels and consecDown == streakLen
+    runPctD = (close - streakOpenDown) / streakOpenDown * 100
+    label.new(bar_index, low, "Run " + str.tostring(runPctD, "#.##") + "%",
+         style=label.style_label_up, color=color.new(color.orange, 0), textcolor=color.black, size=size.tiny)
+
+// ── Leg (swing) tracking: trend leg vs pullback leg ─────────────────
+if dir == 0
+    // first direction ever established
+    pivotPrice := candDir == 1 ? low : high
+    extremePrice := candDir == 1 ? high : low
+    dir := candDir
+else if candDir != dir
+    // direction just flipped -> the leg that was building just finished at extremePrice
+    legPct = (extremePrice - pivotPrice) / pivotPrice * 100
+    if showLegLabels and math.abs(legPct) >= minLegPct
+        label.new(bar_index[1], extremePrice,
+             (dir == 1 ? "Trend " : "Pullback ") + (legPct >= 0 ? "+" : "") + str.tostring(legPct, "#.##") + "%",
+             style = dir == 1 ? label.style_label_down : label.style_label_up,
+             color = dir == 1 ? upColor : downColor, textcolor = color.white, size = size.small)
+    // new leg starts from that extreme
+    pivotPrice := extremePrice
+    extremePrice := candDir == 1 ? high : low
+    dir := candDir
+else
+    // same direction continuing -> extend the extreme
+    extremePrice := dir == 1 ? math.max(extremePrice, high) : math.min(extremePrice, low)
+
+// ── Live running % of the leg currently building ─────────────────────
+livePct = dir == 1 ? (close - pivotPrice) / pivotPrice * 100 : dir == -1 ? (close - pivotPrice) / pivotPrice * 100 : na
+
+if showLiveLabel and barstate.islast and not na(livePct)
+    label.new(bar_index, close, (livePct >= 0 ? "+" : "") + str.tostring(livePct, "#.##") + "%",
+         style = dir == 1 ? label.style_label_left : label.style_label_left,
+         color = dir == 1 ? upColor : downColor, textcolor = color.white, size = size.normal,
+         xloc = xloc.bar_index)
+
+plot(livePct, title="Current Leg %", color = dir == 1 ? upColor : downColor, style = plot.style_line, linewidth = 2)
+hline(0, "Zero", color = color.new(color.gray, 60))
+````

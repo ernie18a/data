@@ -1,5 +1,5 @@
 <!-- tradingview-pine-id: PUB;8dffdb64dd424cc1866f6b53f7b2b771 -->
-<!-- tradingview-pine-version: 1.0 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Hurst Exponent Regime [RC Tools]
 
@@ -115,9 +115,8 @@ smoothLen  = input.int(3, "Smoothing Length", minval=1, maxval=50, step=1, group
 smoothType = input.string("EMA", "Smoothing Type", options=["SMA", "EMA", "WMA", "RMA", "HMA"], group="Hurst Exponent",
      tooltip="Moving-average family used to smooth H prior to the threshold check.")
 
-int    fwdBars   = input.int(20, "Forward Return Window (bars)", minval=1, group="Tables")
-bool   showTable = input.bool(true, "Show Base-Rate Table", group="Tables")
-string tablePos  = input.string("Top Right", "Base-Rate Table Position", options=["Top Right","Top Middle","Top Left","Bottom Right","Bottom Middle","Bottom Left"], group="Tables")
+bool   showTable = input.bool(true, "Show Status Table", group="Tables")
+string tablePos  = input.string("Top Right", "Status Table Position", options=["Top Right","Top Middle","Top Left","Bottom Right","Bottom Middle","Bottom Left"], group="Tables")
 
 color colTrend       = input.color(color.new(color.blue,   60), "Trending", group="Colours")
 color colMeanRevert  = input.color(color.new(color.orange, 60), "Mean-Reverting", group="Colours")
@@ -126,6 +125,7 @@ bool  paintPaneChart = input.bool(true, "Paint Pane Background", group="Colours"
      tooltip="Colours the background of this indicator's own pane (the one it opens on below the chart).")
 bool  paintMainChart = input.bool(false, "Paint Main Chart Background", group="Colours",
      tooltip="Uses force_overlay so the background also shows on the main price chart, even though this script lives in its own pane.")
+
 
 // ─────────────────────────────────────────────────────────────────────────────
 // HURST EXPONENT via RESCALED-RANGE (R/S) ANALYSIS
@@ -201,33 +201,6 @@ if barstate.isconfirmed
 
 
 // ─────────────────────────────────────────────────────────────────────────────
-// HISTORICAL BASE RATES
-// Forward N-bar return, attributed back to whichever state was active N bars
-// ago — same approach as the Regime Classifier's and Mann-Kendall's base-rate
-// tables. Three states this time (Mean-Reverting / Random Walk / Trending).
-// ─────────────────────────────────────────────────────────────────────────────
-var float[] sumRet = array.new_float(3, 0.0)
-var int[]   cnt    = array.new_int(3, 0)
-var int[]   winCnt = array.new_int(3, 0)
-
-if barstate.isconfirmed and bar_index >= fwdBars and not na(currentState[fwdBars])
-    int idxState = currentState[fwdBars]
-    float fwdRet = close / close[fwdBars] - 1
-    array.set(sumRet, idxState, array.get(sumRet, idxState) + fwdRet)
-    array.set(cnt,    idxState, array.get(cnt, idxState) + 1)
-    if fwdRet > 0
-        array.set(winCnt, idxState, array.get(winCnt, idxState) + 1)
-
-avgRet(idx) =>
-    int nCnt = array.get(cnt, idx)
-    nCnt > 0 ? array.get(sumRet, idx) / nCnt * 100 : na
-
-winRate(idx) =>
-    int nCnt = array.get(cnt, idx)
-    nCnt > 0 ? array.get(winCnt, idx) / nCnt * 100 : na
-
-
-// ─────────────────────────────────────────────────────────────────────────────
 // PLOTS
 // ─────────────────────────────────────────────────────────────────────────────
 plot(hSmooth, "Hurst Exponent (smoothed)", color=ready ? stateColor(currentState) : color.gray, style=plot.style_line, linewidth=2)
@@ -251,29 +224,13 @@ getPosition(p) =>
      p == "Bottom Left"   ? position.bottom_left : position.top_right
 
 if showTable and barstate.islast
-    var table t = table.new(getPosition(tablePos), 3, 5,
+    var table t = table.new(getPosition(tablePos), 3, 1,
          bgcolor=color.new(color.black, 15), border_width=1, border_color=color.gray,
          frame_color=color.gray, frame_width=1)
 
     table.cell(t, 0, 0, "Hurst Exponent Regime", text_color=color.white, text_size=size.small, bgcolor=color.new(color.black, 0))
     table.cell(t, 1, 0, ready ? stateName(currentState) : "Warming up…", text_color=ready ? stateColor(currentState) : color.gray, text_size=size.small)
     table.cell(t, 2, 0, ready ? str.tostring(streak) + " bars" : "", text_color=color.gray, text_size=size.small)
-
-    table.cell(t, 0, 1, "State", text_color=color.gray, text_size=size.small)
-    table.cell(t, 1, 1, "Avg Fwd " + str.tostring(fwdBars) + "-bar %", text_color=color.gray, text_size=size.small)
-    table.cell(t, 2, 1, "Win Rate %", text_color=color.gray, text_size=size.small)
-
-    table.cell(t, 0, 2, "Trending", text_color=colTrend, text_size=size.small)
-    table.cell(t, 1, 2, na(avgRet(2)) ? "—" : str.tostring(avgRet(2), "#.##"), text_color=color.white, text_size=size.small)
-    table.cell(t, 2, 2, na(winRate(2)) ? "—" : str.tostring(winRate(2), "#.#"), text_color=color.white, text_size=size.small)
-
-    table.cell(t, 0, 3, "Mean-Reverting", text_color=colMeanRevert, text_size=size.small)
-    table.cell(t, 1, 3, na(avgRet(0)) ? "—" : str.tostring(avgRet(0), "#.##"), text_color=color.white, text_size=size.small)
-    table.cell(t, 2, 3, na(winRate(0)) ? "—" : str.tostring(winRate(0), "#.#"), text_color=color.white, text_size=size.small)
-
-    table.cell(t, 0, 4, "Random Walk", text_color=colRandom, text_size=size.small)
-    table.cell(t, 1, 4, na(avgRet(1)) ? "—" : str.tostring(avgRet(1), "#.##"), text_color=color.white, text_size=size.small)
-    table.cell(t, 2, 4, na(winRate(1)) ? "—" : str.tostring(winRate(1), "#.#"), text_color=color.white, text_size=size.small)
 
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -291,8 +248,6 @@ if showTable and barstate.islast
 // - Shorter windows react faster but produce noisier, less reliable H
 //   estimates; longer windows are more stable but slower to reflect a
 //   genuine regime change.
-// - Historical base-rate stats need a meaningful sample count (check N)
-//   before being trusted, especially for the less common states.
 // - This script does NOT repaint. All classification updates on confirmed
 //   bar close only.
 // ─────────────────────────────────────────────────────────────────────────────

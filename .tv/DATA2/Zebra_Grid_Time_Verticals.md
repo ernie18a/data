@@ -1,5 +1,5 @@
 <!-- tradingview-pine-id: PUB;bbe5dd1ca11f4d5ba16096e98fbe49b7 -->
-<!-- tradingview-pine-version: 1.0 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Zebra Grid & Time Verticals
 
@@ -41,7 +41,6 @@ Custom Styling Options: Complete user control over horizontal step sizes, grid l
 // This Pine Script® code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
 // © KinetiCapital
 
-
 //@version=6
 indicator("Zebra Grid & Time Verticals", overlay=true, max_lines_count=500)
 
@@ -53,15 +52,17 @@ showZebra = input.bool(true, "Zebra Grid Intervals", inline = 'zebra', group=grp
 stepSize  = input.int(10, "", minval=1, inline = 'zebra', group=grp_zebra)
 gridCount = input.int(100, "Number of Grids", minval=1, inline = 'zebra2', group=grp_zebra)
 gridColor = input.color(color.new(color.gray, 30), "", inline = 'zebra2', group=grp_zebra)
-fillColor = input.color(color.rgb(54, 84, 123, 94), "", inline = 'zebra2', group=grp_zebra)
+fillColor = input.color(color.rgb(54, 84, 123, 92), "", inline = 'zebra2', group=grp_zebra)
+line_width_h = input.int(1, "", minval=1, maxval=4, inline = 'zebra2', group=grp_zebra)
 
-grp_vert   = "Vertical Time Intervals"
-showVerts  = input.bool(true, "Verticals", inline = 'VL', group=grp_vert)
-showFuture = true//input.bool(true, "Show Upcoming (+1) Future Line?", group=grp_vert)
-tf_input   = input.timeframe("15", "", inline = 'VL', group=grp_vert)
-line_color = input.color(color.new(color.gray, 50), "", inline = 'VL2', group=grp_vert)
-line_style = input.string("Solid", "", options=["Solid", "Dashed", "Dotted"], inline = 'VL2', group=grp_vert)
-line_width = input.int(2, "Width", minval=1, maxval=4, inline = 'VL2', group=grp_vert)
+grp_vert     = "Vertical Time Intervals"
+showVerts    = input.bool(true, "Verticals", inline = 'VL', group=grp_vert)
+showFuture   = input.bool(true, "Show Upcoming (+1) Future Line?", group=grp_vert)
+onlyFuturePast = input.bool(true, "Show Only Upcoming (+1) and Recent (-1) Verticals?", group=grp_vert)
+tf_input     = input.timeframe("15", "", inline = 'VL', group=grp_vert)
+line_color   = input.color(color.new(color.gray, 50), "", inline = 'VL2', group=grp_vert)
+line_style   = input.string("Solid", "", options=["Solid", "Dashed", "Dotted"], inline = 'VL2', group=grp_vert)
+line_width_v = input.int(1, "", minval=1, maxval=4, inline = 'VL2', group=grp_vert)
 
 // Map string selection to Pine Script line styles
 get_style(style) =>
@@ -87,22 +88,41 @@ if close >= upperBoundary or close <= lowerBoundary
     lowerBoundary := centerPrice - (gridCount * stepSize / 2)
 
 // =============================================================================
-// --- HISTORICAL VERTICAL TIME LINES ---
+// --- HISTORICAL & RECENT (-1) VERTICAL TIME LINES ---
 // =============================================================================
 bool is_new_period = ta.change(time(tf_input)) != 0
+var line lineRecentPast = na
 
-if showVerts and is_new_period
-    line.new(
-         x1 = bar_index, 
-         y1 = close, 
-         x2 = bar_index, 
-         y2 = close + 1, 
-         xloc = xloc.bar_index, 
-         extend = extend.both, 
-         color = line_color, 
-         style = get_style(line_style), 
-         width = line_width
-     )
+if showVerts
+    if onlyFuturePast
+        // Track and manage only the single most recently started period line
+        if is_new_period
+            line.delete(lineRecentPast)
+            lineRecentPast := line.new(
+                 x1 = bar_index, 
+                 y1 = close, 
+                 x2 = bar_index, 
+                 y2 = close + 1, 
+                 xloc = xloc.bar_index, 
+                 extend = extend.both, 
+                 color = line_color, 
+                 style = get_style(line_style), 
+                 width = line_width_v
+             )
+    else
+        // Draw all historical lines normally when toggle is OFF
+        if is_new_period
+            line.new(
+                 x1 = bar_index, 
+                 y1 = close, 
+                 x2 = bar_index, 
+                 y2 = close + 1, 
+                 xloc = xloc.bar_index, 
+                 extend = extend.both, 
+                 color = line_color, 
+                 style = get_style(line_style), 
+                 width = line_width_v
+             )
 
 // =============================================================================
 // --- UPCOMING (+1) FUTURE VERTICAL TIME LINE ---
@@ -127,7 +147,7 @@ if barstate.islast
                  extend = extend.both, 
                  color = line_color, 
                  style = get_style(line_style), 
-                 width = line_width
+                 width = line_width_v
              )
 
 // =============================================================================
@@ -151,7 +171,7 @@ if barstate.islast
             float topPrice = centerPrice + (i * stepSize)
             float botPrice = topPrice - stepSize
             
-            array.push(gridLines, line.new(bar_index[500], topPrice, bar_index, topPrice, xloc=xloc.bar_index, extend=extend.both, color=gridColor, width=1))
+            array.push(gridLines, line.new(bar_index[500], topPrice, bar_index, topPrice, xloc=xloc.bar_index, extend=extend.both, color=gridColor, width=line_width_h))
             
             if math.abs(i) % 2 == 0
                 array.push(gridBoxes, box.new(bar_index[1], topPrice, bar_index, botPrice, xloc=xloc.bar_index, extend=extend.both, bgcolor=fillColor, border_color=color.new(color.white, 100)))

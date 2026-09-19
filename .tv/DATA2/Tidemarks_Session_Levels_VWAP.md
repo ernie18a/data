@@ -1,5 +1,5 @@
 <!-- tradingview-pine-id: PUB;c02103206f564ccb8cd77a63fec10d25 -->
-<!-- tradingview-pine-version: 3.0 -->
+<!-- tradingview-pine-version: 4.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Tidemarks — Session Levels & VWAP
 
@@ -56,7 +56,8 @@ M_FULL = 'Latest, full width'
 //──────────────────────────── Display & history ────────────────────────────
 grpD = 'Display & history'
 modeOpt     = input.string(M_LAST, 'Level history', options = [M_HIST, M_LAST, M_FULL], group = grpD, display = display.none)
-historySessions = input.int(10, 'Sessions to retain', minval = 1, maxval = 60, group = grpD, display = display.none, tooltip = 'Retains archived segments by trading day. A separate 450-segment cap protects active lines within the drawing limit.')
+historySessions = input.int(10, 'Sessions to retain', minval = 1, maxval = 60, group = grpD, display = display.none, tooltip = 'Retains archived segments by trading day. A separate 420-segment cap protects active lines within the drawing limit.')
+endOnTouch = input.bool(false, 'End levels at first touch', group = grpD, tooltip = 'By default, a touched level changes to a transparent dotted line and stays extended. Enable this to stop it at the close of the first touching candle. A level is eligible starting with the candle after it appears.')
 
 //──────────────────────────── Session levels ────────────────────────────
 grpS = 'Session levels'
@@ -204,16 +205,27 @@ type Level
     string st
     int    wd
     line   ln
+    line   touchLn
     label  lb
+    label  touchLb
     float  price
     int    bornBar
+    int    bornTime
+    int    touchTime
+    int    touchLabelTime
+    float  touchLabelY
+    bool   touched = false
+
+usedLevelColor(color base) =>
+    color.new(base, 45)
 
 // Only archived objects enter this queue. Active objects never depend on garbage collection.
 var array<line> archived = array.new<line>()
 var array<int> archivedDay = array.new<int>()
 var array<color> archivedColors = array.new<color>()
 var int sessionNumber = 0
-bool newTradingDay = barstate.isfirst or ta.change(time_tradingday) != 0
+int tradingDayChange = ta.change(time_tradingday)
+bool newTradingDay = barstate.isfirst or tradingDayChange != 0
 if newTradingDay
     sessionNumber += 1
 
@@ -222,7 +234,7 @@ archiveLine(line id, color clr) =>
     archived.push(id)
     archivedDay.push(sessionNumber)
     archivedColors.push(clr)
-    if archived.size() > 450
+    if archived.size() > 420
         line.delete(archived.shift())
         archivedDay.shift()
         archivedColors.shift()
@@ -231,30 +243,56 @@ archiveLine(line id, color clr) =>
 method txt(Level lv) =>
     labelPrices and not na(lv.price) ? lv.tag + '  ' + str.tostring(lv.price, format.mintick) : lv.tag
 
+method displayTxt(Level lv) =>
+    lv.txt() + (lv.touched ? ' (touched)' : '')
+
 method retire(Level lv) =>
     if not na(lv.ln)
         if modeOpt == M_HIST
             archiveLine(lv.ln, lv.clr)
         else
             line.delete(lv.ln)
+    if not na(lv.touchLn)
+        if modeOpt == M_HIST
+            archiveLine(lv.touchLn, usedLevelColor(lv.clr))
+        else
+            line.delete(lv.touchLn)
     lv.ln := na
+    lv.touchLn := na
     lv.price := na
     lv.bornBar := na
+    lv.bornTime := na
+    lv.touchTime := na
+    lv.touchLabelTime := na
+    lv.touchLabelY := na
+    lv.touched := false
     true
 
 // A range invalidated by missing/straddling bars must not leave a history segment.
 method discard(Level lv) =>
     if not na(lv.ln)
         line.delete(lv.ln)
+    if not na(lv.touchLn)
+        line.delete(lv.touchLn)
     lv.ln := na
+    lv.touchLn := na
     lv.price := na
     lv.bornBar := na
+    lv.bornTime := na
+    lv.touchTime := na
+    lv.touchLabelTime := na
+    lv.touchLabelY := na
+    lv.touched := false
     true
 
 method start(Level lv, float p) =>
     if lv.show and not na(p)
-        lv.price := p
-        lv.bornBar := bar_index
+        if not na(lv.touchLn)
+            if modeOpt == M_HIST
+                archiveLine(lv.touchLn, usedLevelColor(lv.clr))
+            else
+                line.delete(lv.touchLn)
+            lv.touchLn := na
         if modeOpt == M_HIST or na(lv.ln)
             if not na(lv.ln)
                 archiveLine(lv.ln, lv.clr)
@@ -262,18 +300,46 @@ method start(Level lv, float p) =>
         else
             line.set_xy1(lv.ln, time, p)
             line.set_xy2(lv.ln, nz(time_close, time + 1), p)
+            line.set_color(lv.ln, lv.clr)
+            line.set_style(lv.ln, lv.st)
+            line.set_extend(lv.ln, modeOpt == M_FULL ? extend.both : extend.right)
+        lv.price := p
+        lv.bornBar := bar_index
+        lv.bornTime := time
+        lv.touchTime := na
+        lv.touchLabelTime := na
+        lv.touchLabelY := na
+        lv.touched := false
     true
 
 method track(Level lv, float p) =>
     if lv.show and not na(p)
         if na(lv.ln)
             lv.start(p)
+        else if lv.touched
+            if p != lv.price
+                lv.start(p)
+            else if not na(lv.touchLn)
+                line.set_x2(lv.touchLn, nz(time_close, time + 1))
         else
             line.set_x2(lv.ln, nz(time_close, time + 1))
             if p != lv.price
                 lv.price := p
+                lv.bornBar := bar_index
                 line.set_y1(lv.ln, p)
                 line.set_y2(lv.ln, p)
+            else if lv.bornBar < bar_index and low <= p and high >= p and barstate.isconfirmed
+                line.set_x2(lv.ln, nz(time_close, time + 1))
+                line.set_extend(lv.ln, modeOpt == M_FULL ? extend.left : extend.none)
+                lv.touchTime := nz(time_close, time + 1)
+                lv.touchLabelTime := int(math.round((lv.bornTime + lv.touchTime) * 0.5))
+                lv.touchLabelY := p + math.max((high - low) * 0.2, syminfo.mintick * 8)
+                if endOnTouch
+                    lv.touchLn := na
+                else
+                    int touchBarDuration = math.max(1, nz(time_close, time + 1) - time)
+                    lv.touchLn := line.new(lv.touchTime, p, lv.touchTime + touchBarDuration, p, xloc = xloc.bar_time, color = usedLevelColor(lv.clr), style = line.style_dotted, width = lv.wd, extend = extend.right)
+                lv.touched := true
     true
 
 method swing(Level lv, float p) =>
@@ -633,8 +699,8 @@ if timeframe.isintraday
 
 //──────────────────────────── Swing highs / lows (1H, 4H) ────────────────────────────
 // Last confirmed pivot on the higher timeframe. The [1] + lookahead_on pairing
-// returns the value as of the last *closed* HTF bar on every chart bar, so
-// history and real time agree and nothing repaints.
+// returns the value as of the last *closed* HTF bar. Apply it to drawings only
+// when the chart bar closes too, so a live lower-timeframe candle cannot move a swing.
 swingPair(int len) =>
     float sh = fixnan(ta.pivothigh(len, len))
     float sl = fixnan(ta.pivotlow(len, len))
@@ -651,10 +717,11 @@ float h1LoV = h1Ok ? h1LoRaw : na
 float h4HiV = h4Ok ? h4HiRaw : na
 float h4LoV = h4Ok ? h4LoRaw : na
 
-h1Hi.swing(h1HiV)
-h1Lo.swing(h1LoV)
-h4Hi.swing(h4HiV)
-h4Lo.swing(h4LoV)
+if barstate.isconfirmed
+    h1Hi.swing(h1HiV)
+    h1Lo.swing(h1LoV)
+    h4Hi.swing(h4HiV)
+    h4Lo.swing(h4LoV)
 
 //──────────────────────────── All-time high ────────────────────────────
 GetChartHighest() =>
@@ -685,13 +752,25 @@ if barstate.islast
         bool visible = lv.show and nearPrice(lv.price)
         if not na(lv.ln)
             line.set_color(lv.ln, visible ? lv.clr : color.new(lv.clr, 100))
+        if not na(lv.touchLn)
+            line.set_color(lv.touchLn, visible ? usedLevelColor(lv.clr) : color.new(lv.clr, 100))
         if not na(lv.lb)
             label.set_text(lv.lb, '')
+        if not na(lv.touchLb)
+            label.set_text(lv.touchLb, '')
         if showLabels and visible
-            if na(lv.lb)
-                lv.lb := label.new(bar_index, lv.price, '', color = color.new(color.black, 100), style = label.style_label_lower_left, textcolor = lv.clr, size = labelSize, textalign = text.align_left)
-            prices.push(lv.price)
-            idx.push(i)
+            if lv.touched and endOnTouch
+                if na(lv.touchLb)
+                    lv.touchLb := label.new(lv.touchLabelTime, lv.touchLabelY, '', xloc = xloc.bar_time, color = color.new(color.black, 10), style = label.style_label_down, textcolor = color.white, size = labelSize, textalign = text.align_left)
+                label.set_xy(lv.touchLb, lv.touchLabelTime, lv.touchLabelY)
+                label.set_color(lv.touchLb, color.new(color.black, 10))
+                label.set_textcolor(lv.touchLb, color.white)
+                label.set_text(lv.touchLb, lv.txt() + '  Touched')
+            else
+                if na(lv.lb)
+                    lv.lb := label.new(bar_index, lv.price, '', color = color.new(color.black, 100), style = label.style_label_lower_left, textcolor = lv.clr, size = labelSize, textalign = text.align_left)
+                prices.push(lv.price)
+                idx.push(i)
     float tol = math.abs(close) * overlapPct / 100
     float prev = na
     float groupPrice = na
@@ -702,13 +781,13 @@ if barstate.islast
         Level cur = levels.get(idx.get(k))
         bool sameGroup = mergeLabels and not na(groupPrice) and cur.price - groupPrice <= tol
         if sameGroup
-            merged += ' / ' + cur.txt()
+            merged += ' / ' + cur.displayTxt()
             label.set_text(leader.lb, merged)
         else
             slot := not na(prev) and cur.price - prev <= tol ? slot + 1 : 0
             leader := cur
             groupPrice := cur.price
-            merged := cur.txt()
+            merged := cur.displayTxt()
             label.set_xy(cur.lb, bar_index + math.min(500, labelOffset + slot * labelStep), cur.price)
             label.set_text(cur.lb, merged)
         prev := cur.price

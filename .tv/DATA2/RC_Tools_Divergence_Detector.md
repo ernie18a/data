@@ -1,5 +1,5 @@
 <!-- tradingview-pine-id: PUB;98b3ab1b37ab46c4aa652670af7ee9fa -->
-<!-- tradingview-pine-version: 1.0 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # RC Tools - Divergence Detector
 
@@ -109,10 +109,9 @@ float divergenceThresh = input.float(0.0, "Divergence Threshold", minval=-1.0, m
 int   priceDirLen     = input.int(5, "Price Direction Lookback", minval=1, group="Divergence",
      tooltip="Bars back used to judge whether price is currently rising or falling, to label a divergence bullish or bearish.")
 
-// ── Base-Rate Statistics ──────────────────────────────────────────────────────
-int    fwdBars   = input.int(20, "Forward Return Window (bars)", minval=1, group="Base-Rate Statistics")
-bool   showTable = input.bool(true, "Show Stats Table", group="Base-Rate Statistics")
-string tablePos  = input.string("Top Right", "Table Position", options=["Top Right","Top Left","Bottom Right","Bottom Left"], group="Base-Rate Statistics")
+// ── Table ──────────────────────────────────────────────────────────────────────
+bool   showTable = input.bool(true, "Show Stats Table", group="Table")
+string tablePos  = input.string("Top Right", "Table Position", options=["Top Right","Top Left","Bottom Right","Bottom Left"], group="Table")
 
 // ── Colours ────────────────────────────────────────────────────────────────────
 color colConfirmed = input.color(color.new(color.gray,   80), "Confirmed Trend",     group="Colours")
@@ -184,34 +183,6 @@ if barstate.isconfirmed
 
 
 // ─────────────────────────────────────────────────────────────────────────────
-// HISTORICAL BASE RATES
-// Forward N-bar return, attributed back to whichever state was active N bars
-// ago — same approach as the Regime Classifier's and Ribbon Concordance's
-// base-rate tables.
-// ─────────────────────────────────────────────────────────────────────────────
-var float[] sumRet = array.new_float(3, 0.0)
-var int[]   cnt    = array.new_int(3, 0)
-var int[]   winCnt = array.new_int(3, 0)
-
-if barstate.isconfirmed and bar_index >= fwdBars
-    int idxState = currentState[fwdBars]
-    if idxState <= 2
-        float fwdRet = close / close[fwdBars] - 1
-        array.set(sumRet, idxState, array.get(sumRet, idxState) + fwdRet)
-        array.set(cnt,    idxState, array.get(cnt, idxState) + 1)
-        if fwdRet > 0
-            array.set(winCnt, idxState, array.get(winCnt, idxState) + 1)
-
-avgRet(idx) =>
-    int n = array.get(cnt, idx)
-    n > 0 ? array.get(sumRet, idx) / n * 100 : na
-
-winRate(idx) =>
-    int n = array.get(cnt, idx)
-    n > 0 ? array.get(winCnt, idx) / n * 100 : na
-
-
-// ─────────────────────────────────────────────────────────────────────────────
 // PLOTS
 // ─────────────────────────────────────────────────────────────────────────────
 plot(dispCorr, "Price/Oscillator Correlation", color=color.new(color.yellow, 0), linewidth=2)
@@ -232,10 +203,8 @@ getPosition(p) =>
      p == "Bottom Right" ? position.bottom_right :
      p == "Bottom Left"  ? position.bottom_left : position.top_right
 
-fmt(v) => na(v) ? "—" : str.tostring(v, "#.##")
-
 if showTable and barstate.islast
-    var table t = table.new(getPosition(tablePos), 3, 5,
+    var table t = table.new(getPosition(tablePos), 3, 2,
          bgcolor=color.new(color.black, 15), border_width=1, border_color=color.gray,
          frame_color=color.gray, frame_width=1)
 
@@ -246,18 +215,6 @@ if showTable and barstate.islast
     table.cell(t, 0, 1, "Current", text_color=color.white, text_size=size.small)
     table.cell(t, 1, 1, warmedUp ? stateName(currentState) : "Warming up…", text_color=warmedUp ? stateColor(currentState) : color.gray, text_size=size.small)
     table.cell(t, 2, 1, warmedUp ? str.tostring(streak) + " bars" : "", text_color=color.gray, text_size=size.small)
-
-    table.cell(t, 0, 2, "State", text_color=color.gray, text_size=size.small)
-    table.cell(t, 1, 2, "Avg Fwd " + str.tostring(fwdBars) + "-bar %", text_color=color.gray, text_size=size.small)
-    table.cell(t, 2, 2, "Win Rate %", text_color=color.gray, text_size=size.small)
-
-    table.cell(t, 0, 3, "Bearish Div", text_color=colBearDiv, text_size=size.small)
-    table.cell(t, 1, 3, na(avgRet(1)) ? "—" : str.tostring(avgRet(1), "#.##"), text_color=color.white, text_size=size.small)
-    table.cell(t, 2, 3, na(winRate(1)) ? "—" : str.tostring(winRate(1), "#.#"), text_color=color.white, text_size=size.small)
-
-    table.cell(t, 0, 4, "Bullish Div", text_color=colBullDiv, text_size=size.small)
-    table.cell(t, 1, 4, na(avgRet(2)) ? "—" : str.tostring(avgRet(2), "#.##"), text_color=color.white, text_size=size.small)
-    table.cell(t, 2, 4, na(winRate(2)) ? "—" : str.tostring(winRate(2), "#.#"), text_color=color.white, text_size=size.small)
 
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -274,8 +231,6 @@ if showTable and barstate.islast
 // - Bullish/bearish labelling depends on a short price-direction lookback,
 //   which can flip near turning points independently of the correlation
 //   reading itself.
-// - Historical base-rate stats need a meaningful sample count (check N)
-//   before being trusted, especially for less common states.
 // - This script does NOT repaint. All classification updates on confirmed
 //   bar close only.
 // ─────────────────────────────────────────────────────────────────────────────

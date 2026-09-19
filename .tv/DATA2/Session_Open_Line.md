@@ -1,5 +1,5 @@
 <!-- tradingview-pine-id: PUB;1fb79081339c4d07b23974027b1ad75f -->
-<!-- tradingview-pine-version: 1.0 -->
+<!-- tradingview-pine-version: 2.0 -->
 <!-- tradingviewscripts-format: 1 -->
 # Session Open Line
 
@@ -139,8 +139,9 @@ The script exposes two hidden series, visible in the Data Window and usable as a
 // position' input decides where the label sits - above or below the line, or
 // behind its end - and the choice applies consistently to completed sessions
 // and to the ongoing one. During the ongoing session the value updates on
-// every bar. Line and label colors depend on the sign of the change, and the
-// whole session is shaded with the same color (can be turned off). Alerts
+// every bar. Line and label colors depend on the sign of the change - up,
+// down, or unchanged when the close sits exactly at the reference level - and
+// the whole session is shaded with the same color (can be turned off). Alerts
 // fire when the price crosses the line in either direction, and the
 // reference level plus the session change (%) are exposed as hidden series -
 // other scripts can use them as external sources. Works on intraday
@@ -154,6 +155,7 @@ showAbs = input.bool(false, 'Show change in instrument currency', group = 'Gener
 GRP = 'Appearance'
 upColor = input.color(#26A69A, 'Up color', group = GRP)
 downColor = input.color(#EF5350, 'Down color', group = GRP)
+flatColor = input.color(#787B86, 'Unchanged color', group = GRP, tooltip = 'Used when the close sits exactly at the reference level - neither a rise nor a fall. Happens on the first bar of a session opening at the previous close, and on illiquid instruments.')
 lineStyleName = input.string('Solid', 'Line style', options = ['Solid', 'Dashed', 'Dotted'], group = GRP)
 lineWidth = input.int(1, 'Line width', minval = 1, maxval = 4, group = GRP)
 textSizeName = input.string('Small', 'Text size', options = ['Auto', 'Tiny', 'Small', 'Normal', 'Large'], group = GRP)
@@ -162,6 +164,7 @@ GRP_BG = 'Session highlight'
 showBg = input.bool(true, 'Highlight the whole session', group = GRP_BG, tooltip = 'Fills the entire session with a single color, decided by where the price stands against the reference level.')
 bgUpColor = input.color(color.new(#26A69A, 90), 'Highlight up color', group = GRP_BG)
 bgDownColor = input.color(color.new(#EF5350, 90), 'Highlight down color', group = GRP_BG)
+bgFlatColor = input.color(color.new(#787B86, 90), 'Highlight unchanged color', group = GRP_BG)
 
 usePrevClose = refLevelName == 'Previous session close'
 
@@ -245,13 +248,13 @@ if timeframe.isintraday and (newSession or barstate.isfirst)
     sessionRef := usePrevClose ? close[1] : open
     lb := na
     if not na(sessionRef)
-        ln := line.new(bar_index, sessionRef, bar_index, sessionRef, xloc = xloc.bar_index, color = upColor, style = lineStyle, width = lineWidth)
+        ln := line.new(bar_index, sessionRef, bar_index, sessionRef, xloc = xloc.bar_index, color = flatColor, style = lineStyle, width = lineWidth)
         // One box per session instead of bgcolor(), which paints a single bar
         // and cannot be repainted later - a box spans the whole session and
         // keeps one color, corrected on every bar of that session. Box
         // 'extend' works on the time axis only, so the vertical coverage
         // comes from the bgTop/bgBottom bounds.
-        bg := showBg ? box.new(bar_index, bgTop, bar_index, bgBottom, xloc = xloc.bar_index, border_color = color.new(color.black, 100), bgcolor = bgUpColor) : na
+        bg := showBg ? box.new(bar_index, bgTop, bar_index, bgBottom, xloc = xloc.bar_index, border_color = color.new(color.black, 100), bgcolor = bgFlatColor) : na
     else
         ln := na
         bg := na
@@ -262,14 +265,17 @@ if timeframe.isintraday and (newSession or barstate.isfirst)
 // does.
 delta = close - sessionRef
 pct = sessionRef > 0 ? delta / sessionRef * 100 : na
-col = delta >= 0 ? upColor : downColor
+// Three states, not two: a close exactly at the reference level is neither a
+// rise nor a fall and gets its own neutral color instead of being folded into
+// one of them.
+col = delta > 0 ? upColor : delta < 0 ? downColor : flatColor
 
 if timeframe.isintraday and not na(ln)
     line.set_x2(ln, bar_index)
     line.set_color(ln, col)
     if not na(bg)
         box.set_right(bg, bar_index)
-        box.set_bgcolor(bg, delta >= 0 ? bgUpColor : bgDownColor)
+        box.set_bgcolor(bg, delta > 0 ? bgUpColor : delta < 0 ? bgDownColor : bgFlatColor)
     // The label follows the end of the line and updates on every bar of
     // the session.
     if showLabel
