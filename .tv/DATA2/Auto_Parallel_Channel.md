@@ -1,0 +1,167 @@
+<!-- tradingview-pine-id: PUB;89158fc58e3f4334b9468c1439d0125f -->
+<!-- tradingview-pine-version: 1.0 -->
+<!-- tradingviewscripts-format: 1 -->
+# Auto Parallel Channel
+
+Source: https://www.tradingview.com/script/WQUDhIl5-Auto-Parallel-Channel-Ascending-Descending/
+
+## Description
+
+What this does
+Automatically detects and draws a parallel price channel — ascending, descending, or flat — based on real swing pivots, rather than requiring you to draw trendlines by hand.
+
+Methodology
+
+[*]Detects alternating swing highs/lows (zigzag pivots), then looks for a same-type → opposite-type → same-type sequence (e.g. low-high-low) to anchor a channel: the base trendline runs through the two same-type pivots, and a parallel line is offset to touch the pivot in between.
+[*]Direction is color-coded from the base trendline's slope: green = ascending, orange = descending, aqua = flat/parallel.
+[*]Once formed, the channel locks in — it won't wobble or refit on every new minor pivot, only when it's actually broken by a decisive close beyond either boundary.
+[*]A built-in sanity check rejects channels whose width is unreasonably large relative to the instrument's recent ATR, so a single outlier wick can't distort the fit.
+[*]Works on any timeframe — tested particularly on 1H/2H/4H for spotting corrective structures, and on Daily/Weekly for larger trend channels.
+
+Settings
+
+[*]Pivot Left/Right Bars — pivot sensitivity (lower = more, smaller pivots; higher = fewer, larger ones)
+[*]Min Move % Between Pivots — filters out insignificant zigzag noise
+[*]Min Bars Between Anchor Pivots — avoids forming a channel from two anchor points that are too close together
+[*]Max Channel Width (x ATR) — the outlier-rejection sanity check described above
+[*]Break Buffer % — how far price must close beyond the channel before it's considered broken
+
+Alerts
+Fires when price breaks the channel upward or downward.
+
+Disclaimer
+This tool identifies a geometric pattern in price history — it does not predict future price movement. Always confirm with your own analysis and risk management. Not financial advice.
+
+---
+
+## Source Code
+
+````pine
+//@version=6
+indicator("Auto Parallel Channel", overlay=true, max_lines_count=10)
+
+// ================= INPUTS =================
+leftBars       = input.int(5, "Pivot Left Bars", minval=1, group="Pivots")
+rightBars      = input.int(5, "Pivot Right Bars", minval=1, group="Pivots")
+minMovePct     = input.float(1.0, "Min Move % Between Pivots", minval=0.1, step=0.1, group="Pivots")
+
+minSpanBars    = input.int(4, "Min Bars Between Anchor Pivots", minval=1, group="Channel")
+flatThreshPct  = input.float(0.05, "Flat Slope Threshold (%/bar)", minval=0.0, step=0.01, group="Channel")
+breakBufferPct = input.float(0.5, "Break Buffer %", minval=0.0, step=0.1, group="Channel")
+atrLen         = input.int(14, "ATR Length (channel width sanity check)", minval=1, group="Channel")
+maxWidthATRMult = input.float(6.0, "Max Channel Width (x ATR)", minval=1.0, step=0.5, group="Channel")
+
+// ================= ZIGZAG PIVOT COLLECTION =================
+var float[] pPrice = array.new_float()
+var int[]   pBar   = array.new_int()
+var int[]   pType  = array.new_int()   // 1 = high, -1 = low
+
+addPivot(price, ptype) =>
+    n0 = array.size(pType)
+    confirmedBar = bar_index - rightBars
+    if n0 == 0
+        array.push(pPrice, price)
+        array.push(pBar, confirmedBar)
+        array.push(pType, ptype)
+    else
+        lastType  = array.get(pType, n0 - 1)
+        lastPrice = array.get(pPrice, n0 - 1)
+        if ptype == lastType
+            if (ptype == 1 and price > lastPrice) or (ptype == -1 and price < lastPrice)
+                array.set(pPrice, n0 - 1, price)
+                array.set(pBar, n0 - 1, confirmedBar)
+        else
+            movePct = math.abs(price - lastPrice) / lastPrice * 100
+            if movePct >= minMovePct
+                array.push(pPrice, price)
+                array.push(pBar, confirmedBar)
+                array.push(pType, ptype)
+    true
+
+ph = ta.pivothigh(high, leftBars, rightBars)
+pl = ta.pivotlow(low, leftBars, rightBars)
+atrVal = ta.atr(atrLen)
+
+// ================= CHANNEL STATE =================
+var float chSlope     = na
+var float chBarFirst  = na
+var float chPriceFirst = na
+var float chOffset    = na
+var int   chDirType   = 0     // 1 = anchored on highs (descending/resistance base), -1 = anchored on lows (ascending/support base)
+var bool  chActive    = false
+var line  baseLine    = na
+var line  paraLine    = na
+
+brokeUp   = false
+brokeDown = false
+
+// ---- collect new pivots ----
+if not na(ph)
+    addPivot(ph, 1)
+if not na(pl)
+    addPivot(pl, -1)
+
+// ---- try to form a new channel only when none is currently active ----
+if not chActive and (not na(ph) or not na(pl))
+    n = array.size(pPrice)
+    if n >= 3
+        typeFirst = array.get(pType, n - 3)
+        typeMid   = array.get(pType, n - 2)
+        typeLast  = array.get(pType, n - 1)
+
+        if typeFirst == typeLast and typeMid != typeLast
+            barFirst   = array.get(pBar, n - 3)
+            barMid     = array.get(pBar, n - 2)
+            barLast    = array.get(pBar, n - 1)
+            priceFirst = array.get(pPrice, n - 3)
+            priceMid   = array.get(pPrice, n - 2)
+            priceLast  = array.get(pPrice, n - 1)
+
+            span = barLast - barFirst
+            if span >= minSpanBars
+                slope = (priceLast - priceFirst) / span
+                baseValAtMid = priceFirst + slope * (barMid - barFirst)
+                offset = priceMid - baseValAtMid
+                validChannel = (typeFirst == -1 and offset > 0) or (typeFirst == 1 and offset < 0)
+                widthOK = not na(atrVal) and atrVal > 0 and math.abs(offset) <= atrVal * maxWidthATRMult
+
+                if validChannel and widthOK
+                    chSlope      := slope
+                    chBarFirst   := barFirst
+                    chPriceFirst := priceFirst
+                    chOffset     := offset
+                    chDirType    := typeFirst
+                    chActive     := true
+
+                    slopePctPerBar = priceFirst != 0 ? slope / priceFirst * 100 : 0
+                    lineColor = math.abs(slopePctPerBar) < flatThreshPct ? color.aqua : (slope > 0 ? color.lime : color.orange)
+
+                    baseLine := line.new(barFirst, priceFirst, barLast, priceLast, color=lineColor, width=2, extend=extend.right)
+                    paraLine := line.new(barFirst, priceFirst + offset, barLast, priceLast + offset, color=lineColor, width=2, extend=extend.right)
+
+// ---- break check (every bar, only while a channel is active) ----
+if chActive
+    baseValNow = chPriceFirst + chSlope * (bar_index - chBarFirst)
+    paraValNow = baseValNow + chOffset
+    upperVal = math.max(baseValNow, paraValNow)
+    lowerVal = math.min(baseValNow, paraValNow)
+
+    if close > upperVal * (1 + breakBufferPct / 100)
+        brokeUp := true
+    else if close < lowerVal * (1 - breakBufferPct / 100)
+        brokeDown := true
+
+    if brokeUp or brokeDown
+        line.delete(baseLine)
+        line.delete(paraLine)
+        chActive     := false
+        chSlope      := na
+        chBarFirst   := na
+        chPriceFirst := na
+        chOffset     := na
+        chDirType    := 0
+
+// ================= ALERTS =================
+alertcondition(brokeUp, title="Channel Broken Upward", message="{{ticker}}: price broke above the auto-detected channel")
+alertcondition(brokeDown, title="Channel Broken Downward", message="{{ticker}}: price broke below the auto-detected channel")
+````

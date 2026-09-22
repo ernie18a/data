@@ -1,0 +1,60 @@
+<!-- tradingview-pine-id: PUB;efEjn1YmejfPoak2mE1CDEA57Kp8BHlC -->
+<!-- tradingview-pine-version: 1.0 -->
+<!-- tradingviewscripts-format: 1 -->
+# Сalculation a position size based on risk
+
+Source: https://www.tradingview.com/script/hoCPm5UY-%D0%A1alculation-a-position-size-based-on-risk/
+
+## Description
+
+This is an example how to calculate position size based on risk and stop loss for educational purpose.
+
+---
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © adolgov
+
+//@description This strategy shows how calculate position size from risk (%% from equity or absolute money value) and stop loss level (%% from entry price)
+// Important notes:
+//             1) we suppose that account currency is same as symbol currency
+//             2) leverage is 1:10 (this can be changed in the Settings dlg)
+
+//@version=4
+strategy("Сalculation a position size based on risk", overlay=true, margin_long=10, margin_short=10, currency = currency.NONE)
+
+percent2points(percent) =>
+    strategy.position_size !=0 ? strategy.position_avg_price * percent / 100 / syminfo.mintick : na
+
+percent2money(price, percent) =>
+    price * percent / 100 * syminfo.pointvalue
+    
+slPcnt = input(10, title = "Stop Loss %%")
+
+riskValue = input(2, title="Risk ", inline="risk", tooltip="Max risk for position")
+riskType = input("% from equity", title="", options=["% from equity", "$$"], inline="risk")
+
+calcPositionSize(entryPrice, slPercent) =>
+    risk = if riskType == "% from equity"
+        strategy.equity * riskValue / 100
+    else
+        riskValue
+    risk / percent2money(entryPrice, slPercent)
+
+qty = calcPositionSize(close, slPcnt)
+
+
+// random entry 
+longCondition = bar_index % 333 == 0
+if (longCondition)
+    strategy.entry("My Long Entry Id", strategy.long, qty = qty)
+shortCondition = bar_index % 444 == 0
+if (shortCondition)
+    strategy.entry("My Short Entry Id", strategy.short, qty = qty)
+
+// exit with stop loss
+slPts = percent2points(slPcnt)
+strategy.exit("x", loss = slPts)
+````

@@ -1,0 +1,269 @@
+<!-- tradingview-pine-id: PUB;d2e95318db074cb5a94540cbc29ccd40 -->
+<!-- tradingview-pine-version: 1.0 -->
+<!-- tradingviewscripts-format: 1 -->
+# Taught to Trade - Session Range & Value Area Map
+
+Source: https://www.tradingview.com/script/10y0liJB-Taught-to-Trade-Session-Range-Value-Area-Map/
+
+## Description
+
+🔵 OVERVIEW
+
+This marks three things on your chart, all of them facts about what already happened: where the previous session's volume actually traded, where that session's high and low were, and where the current session's first N minutes set their boundaries.
+
+Nothing here is a forecast. Drawing where price traded yesterday is a statement about yesterday. What you do with it is yours.
+
+🔵 WHAT IT DRAWS
+
+Prior session value area — the price band that contained a chosen share of the previous session's volume, built from a real volume-at-price profile rather than an approximation. You get the value area high, the value area low, and the point of control, which is simply the single price level that traded the most volume.
+
+Prior session high and low — the outer boundary of where the session went.
+
+Opening range — the high and low of the first N minutes of the current session, forming as the session develops.
+
+The value area is shaded so the band is readable at a glance, and a small table reports every level numerically along with the number of bars that went into the profile.
+
+🔵 HOW THE PROFILE IS BUILT
+
+The session's price range is divided into bins. Each bar's volume is distributed across every bin its high-low range touches, rather than dumped into a single bin at the close — so a wide bar contributes to the whole span it covered.
+
+The point of control is the heaviest bin. The value area then expands outward from it, taking whichever neighbouring bin holds more volume, until the chosen percentage of session volume is enclosed. That is the standard construction, implemented in the open where you can read it.
+
+🔵 HOW TO READ THE TABLE
+
+Prior VAH, POC and VAL are the previous session's value area. Prior high and low are its extremes. Open range is the current session's first N minutes.
+
+Bars in profile is the one people skip and shouldn't. It is the sample the profile was built from. On a 5-minute chart of a 09:30-16:00 session it should read 78. If it reads far less, you are looking at a partial session — a holiday, a half day, or the first session in your loaded history — and the levels are built on less than you think.
+
+🔵 WHAT THIS DOES NOT MEAN
+
+A level being drawn is not a prediction that price will react there. The value area describes where volume traded yesterday and nothing else. It carries no claim about tomorrow, and this script will never make one.
+
+The point of control is not support. It is the busiest price of a finished session. Whether that matters on the next touch is exactly the question the chart cannot answer for you.
+
+🔵 SETTINGS
+
+Session specification in exchange time, defaulting to 0930-1600. Use 0000-0000 for a 24-hour instrument, where the boundary becomes the exchange day roll. Opening range length in minutes. Value area percentage and profile resolution in bins. Individual toggles and colours for each element.
+
+Five alert conditions cover price crossing the prior value area high, the prior value area low, the prior point of control, and the opening range high and low. None fires on its own — you arm the ones you want in the alerts dialog. This script does not send buy or sell signals and never will.
+
+🔵 WHERE IT FAILS
+
+Intraday only. On a daily chart or above there is no session to profile, and the table says so rather than drawing something meaningless.
+
+The profile is volume-weighted, so it inherits whatever your data feed reports as volume. On instruments where volume is a proxy — most spot forex, some CFDs — the profile is built on a number that does not mean what it means elsewhere.
+
+A partial session produces a partial profile, silently, except for the bars count. Holidays, half days, and the oldest session in your loaded history all do this. Check the count.
+
+Bin resolution is a real choice, not a detail. More bins give a finer profile and a noisier point of control; fewer bins give a stable POC that may sit some distance from where volume actually concentrated. There is no correct number and this script does not pretend to know yours.
+
+The value area percentage is a convention. Seventy percent is common; it is not derived from anything. Change it and the band changes.
+
+A 24-hour instrument has no natural session boundary. Setting 0000-0000 gives you the exchange day roll, which is a real boundary for bookkeeping and an arbitrary one for price.
+
+The opening range is incomplete until N minutes have elapsed. Before that the lines are still moving.
+
+Session levels reset every session. This is deliberate — it is a session tool — but it means levels you were watching disappear at the boundary rather than persisting.
+
+Open source, so you can read every calculation rather than taking any of it on trust.
+
+Educational tool only, not investment advice. It does not predict anything and does not generate signals. Trading involves substantial risk of loss.
+
+---
+
+## Source Code
+
+````pine
+//@version=6
+// Taught to Trade - Session Range & Value Area Map
+//
+// The first decision-class tool in the suite. It marks structure that already happened:
+// where the previous session actually traded, where most of its volume changed hands,
+// and where the current session's first N minutes set their boundaries.
+//
+// Drawing where price traded yesterday is a fact, not a forecast. Nothing here predicts,
+// ranks or scores anything, and no buy/sell signal is sent. Alerts are conditions you arm.
+//
+// All series reads happen at top level. The conditional blocks touch only arrays and vars.
+indicator("Taught to Trade - Session Range & Value Area Map", shorttitle = "TT SESSION MAP",
+     overlay = true, max_bars_back = 5000, max_lines_count = 1)
+
+// ─────────────────────────────── Inputs ───────────────────────────────
+grpS = "Session"
+sessSpec = input.session("0930-1600", "Regular session", group = grpS,
+     tooltip = "Exchange time. Use 0000-0000 for a 24-hour instrument, in which case the session boundary is the exchange day roll.")
+orMin = input.int(30, "Opening range (minutes)", minval = 1, maxval = 480, group = grpS)
+
+grpV = "Value area"
+vaPct = input.float(70.0, "Value area (% of session volume)", minval = 50.0, maxval = 95.0, step = 5.0, group = grpV)
+binsIn = input.int(50, "Profile resolution (bins)", minval = 10, maxval = 200, group = grpV,
+     tooltip = "More bins give a finer profile and a noisier one. 50 is a common default.")
+
+grpD = "Draw"
+showVA = input.bool(true,  "Prior session value area (VAH / POC / VAL)", group = grpD)
+showHL = input.bool(true,  "Prior session high / low", group = grpD)
+showOR = input.bool(true,  "Opening range of the current session", group = grpD)
+shadeVA = input.bool(true, "Shade the value area", group = grpD)
+showTbl = input.bool(true, "Levels table", group = grpD)
+
+colVA  = input.color(color.new(#2F6FED, 0),  "Value area high / low", group = grpD, inline = "c1")
+colPOC = input.color(color.new(#F2A33C, 0),  "POC",                   group = grpD, inline = "c1")
+colHL  = input.color(color.new(#8A94A6, 0),  "Prior high / low",      group = grpD, inline = "c2")
+colOR  = input.color(color.new(#2E7D32, 0),  "Opening range",         group = grpD, inline = "c2")
+
+// ─────────────────────────── Session detection ───────────────────────────
+// Top-level series calls only.
+tIn      = time(timeframe.period, sessSpec)
+inSess   = not na(tIn)
+newSess  = inSess and not inSess[1]
+intraday = timeframe.isintraday
+
+// ─────────────────────────── Session accumulators ───────────────────────────
+var array<float> hiA = array.new<float>()
+var array<float> loA = array.new<float>()
+var array<float> vlA = array.new<float>()
+
+var float sH = na
+var float sL = na
+var int   sStart = na
+
+var float orH = na
+var float orL = na
+
+var float pVAH = na
+var float pPOC = na
+var float pVAL = na
+var float pHi  = na
+var float pLo  = na
+var int   pBars = 0
+
+// ─────────────────────────── Build and finalise ───────────────────────────
+if intraday and inSess
+    if newSess
+        // Finalise the session that just ended, from what was collected during it.
+        int n = array.size(vlA)
+        if n > 0 and not na(sH) and not na(sL) and sH > sL and n <= 20000
+            float binW = (sH - sL) / binsIn
+            array<float> prof = array.new<float>(binsIn, 0.0)
+            for i = 0 to n - 1
+                float bh = array.get(hiA, i)
+                float bl = array.get(loA, i)
+                float bv = array.get(vlA, i)
+                if bv > 0
+                    int i0 = math.max(0, math.min(binsIn - 1, int((bl - sL) / binW)))
+                    int i1 = math.max(0, math.min(binsIn - 1, int((bh - sL) / binW)))
+                    float per = bv / (i1 - i0 + 1)
+                    for j = i0 to i1
+                        array.set(prof, j, array.get(prof, j) + per)
+
+            float total = array.sum(prof)
+            if total > 0
+                int pocIdx = array.indexof(prof, array.max(prof))
+                float target = total * vaPct / 100.0
+                float acc = array.get(prof, pocIdx)
+                int loI = pocIdx
+                int hiI = pocIdx
+                while acc < target and (loI > 0 or hiI < binsIn - 1)
+                    float belowV = loI > 0 ? array.get(prof, loI - 1) : -1.0
+                    float aboveV = hiI < binsIn - 1 ? array.get(prof, hiI + 1) : -1.0
+                    if aboveV >= belowV
+                        hiI += 1
+                        acc += aboveV
+                    else
+                        loI -= 1
+                        acc += belowV
+                pPOC := sL + (pocIdx + 0.5) * binW
+                pVAL := sL + loI * binW
+                pVAH := sL + (hiI + 1) * binW
+                pHi  := sH
+                pLo  := sL
+                pBars := n
+
+        // Reset for the session that is starting.
+        array.clear(hiA)
+        array.clear(loA)
+        array.clear(vlA)
+        sH := high
+        sL := low
+        sStart := time
+        orH := na
+        orL := na
+    else
+        sH := math.max(nz(sH, high), high)
+        sL := math.min(nz(sL, low), low)
+
+    array.push(hiA, high)
+    array.push(loA, low)
+    array.push(vlA, nz(volume, 0.0))
+
+    // Opening range: bars whose open time falls inside the first orMin minutes.
+    if not na(sStart) and (time - sStart) < orMin * 60000
+        orH := na(orH) ? high : math.max(orH, high)
+        orL := na(orL) ? low  : math.min(orL, low)
+
+// ─────────────────────────── Draw ───────────────────────────
+bool live = intraday and inSess
+
+pVAHp = plot(live and showVA ? pVAH : na, "Prior value area high", color = colVA, linewidth = 1, style = plot.style_linebr)
+pVALp = plot(live and showVA ? pVAL : na, "Prior value area low",  color = colVA, linewidth = 1, style = plot.style_linebr)
+fill(pVAHp, pVALp, color = shadeVA and showVA ? color.new(#2F6FED, 92) : na, title = "Value area")
+
+plot(live and showVA ? pPOC : na, "Prior POC", color = colPOC, linewidth = 2, style = plot.style_linebr)
+plot(live and showHL ? pHi  : na, "Prior session high", color = colHL, linewidth = 1, style = plot.style_linebr)
+plot(live and showHL ? pLo  : na, "Prior session low",  color = colHL, linewidth = 1, style = plot.style_linebr)
+plot(live and showOR ? orH  : na, "Opening range high", color = colOR, linewidth = 1, style = plot.style_linebr)
+plot(live and showOR ? orL  : na, "Opening range low",  color = colOR, linewidth = 1, style = plot.style_linebr)
+
+// ─────────────────────────── Table ───────────────────────────
+bgCol  = color.new(#0E1526, 10)
+txtCol = color.new(#E6EAF2, 0)
+hdrCol = color.new(#2F6FED, 0)
+
+var table t = table.new(position.bottom_right, 2, 7, border_width = 1, border_color = color.new(#2F6FED, 70))
+
+f_num(float v) => na(v) ? "-" : str.tostring(v, format.mintick)
+f_row(int r, string k, string v, color kc) =>
+    table.cell(t, 0, r, k, text_color = txtCol, text_size = size.small, text_halign = text.align_left,  bgcolor = kc)
+    table.cell(t, 1, r, v, text_color = txtCol, text_size = size.small, text_halign = text.align_right, bgcolor = bgCol)
+
+if barstate.islast and showTbl
+    if not intraday
+        table.cell(t, 0, 0, "SESSION MAP", text_color = color.white, text_size = size.small, bgcolor = hdrCol)
+        table.cell(t, 1, 0, "intraday only", text_color = color.white, text_size = size.small, bgcolor = hdrCol)
+        f_row(1, "Timeframe", "needs an intraday chart", bgCol)
+    else
+        table.cell(t, 0, 0, "SESSION MAP", text_color = color.white, text_size = size.small, bgcolor = hdrCol)
+        table.cell(t, 1, 0, sessSpec, text_color = color.white, text_size = size.small, bgcolor = hdrCol)
+        f_row(1, "Prior VAH", f_num(pVAH), bgCol)
+        f_row(2, "Prior POC", f_num(pPOC), bgCol)
+        f_row(3, "Prior VAL", f_num(pVAL), bgCol)
+        f_row(4, "Prior high / low", na(pHi) or na(pLo) ? "-" : f_num(pHi) + " / " + f_num(pLo), bgCol)
+        f_row(5, "Open range", na(orH) or na(orL) ? "-" : f_num(orL) + " - " + f_num(orH), bgCol)
+        f_row(6, "Bars in profile", pBars > 0 ? str.tostring(pBars) : "-", bgCol)
+
+// ─────────────────── Alerts (conditions you arm yourself) ───────────────────
+// Every ta.* call is evaluated at top level on every bar and stored, so its history
+// stays consistent. Calling them inside the alertcondition expression would let the
+// short-circuit skip bars and quietly corrupt the crossover state.
+xUpVAH = ta.crossover(close, pVAH)
+xDnVAL = ta.crossunder(close, pVAL)
+xPOCcr = ta.cross(close, pPOC)
+xUpOR  = ta.crossover(close, orH)
+xDnOR  = ta.crossunder(close, orL)
+
+alertcondition(not na(pVAH) and xUpVAH,
+     title   = "Close crossed above the prior value area high",
+     message = "Session Map: close crossed above the prior session's value area high.")
+alertcondition(not na(pVAL) and xDnVAL,
+     title   = "Close crossed below the prior value area low",
+     message = "Session Map: close crossed below the prior session's value area low.")
+alertcondition(not na(pPOC) and xPOCcr,
+     title   = "Close crossed the prior POC",
+     message = "Session Map: close crossed the prior session's point of control.")
+alertcondition(not na(orH) and xUpOR,
+     title   = "Close crossed above the opening range high",
+     message = "Session Map: close crossed above the opening range high.")
+alertcondition(not na(orL) and xDnOR,
+     title   = "Close crossed below the opening range low",
+     message = "Session Map: close crossed below the opening range low.")
+````

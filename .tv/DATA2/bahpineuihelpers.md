@@ -1,0 +1,482 @@
+<!-- tradingview-pine-id: PUB;32187b6d9bc0476a81ad4cb0ca282bc8 -->
+<!-- tradingview-pine-version: 1.0 -->
+<!-- tradingviewscripts-format: 1 -->
+# bah_pine_ui_helpers
+
+Source: https://www.tradingview.com/script/M2zZQ7xT-BAH-Pine-UI-Helpers/
+
+## Description
+
+Generic presentation and utility library. It contains no trading logic: no thresholds, no scores, no weights, no qualification rules and no market decisions. It maps already-computed integer display codes to text and colours, formats a timeframe token, and provides textbook helpers (median of a sorted array, banker's rounding, nearest-first ordering, band distance) plus drawing-object cleanup and table-row rendering.
+
+Authorship: BAH. The author permits this library to be imported by the author's own protected / invite-only BAH scripts.
+
+Library  "bah_pine_ui_helpers"
+
+poiTypeLabel(code)
+  POI type code -> display name.
+  Parameters:
+    code (int): already-computed code
+  Returns: the display value
+
+permissionLabel(code)
+  permission code -> display text.
+  Parameters:
+    code (int): already-computed code
+  Returns: the display value
+
+lifecycleLabel(code)
+  lifecycle code -> display text.
+  Parameters:
+    code (int): already-computed code
+  Returns: the display value
+
+tierLabel(code)
+  strength tier code -> display text.
+  Parameters:
+    code (int): already-computed code
+  Returns: the display value
+
+directionLabel(code)
+  direction code -> display text.
+  Parameters:
+    code (int): already-computed code
+  Returns: the display value
+
+trendStateLabel(code)
+  trend-state code -> display text.
+  Parameters:
+    code (int): already-computed code
+  Returns: the display value
+
+regimeLabel(code)
+  regime code -> display text.
+  Parameters:
+    code (int): already-computed code
+  Returns: the display value
+
+momentumAccelLabel(code)
+  momentum-acceleration code -> display text.
+  Parameters:
+    code (int): already-computed code
+  Returns: the display value
+
+breakoutLabel(code)
+  breakout code -> display text.
+  Parameters:
+    code (int): already-computed code
+  Returns: the display value
+
+pullbackLabel(code)
+  pullback code -> display text.
+  Parameters:
+    code (int): already-computed code
+  Returns: the display value
+
+sessionLabel(code)
+  session code -> display text.
+  Parameters:
+    code (int): already-computed code
+  Returns: the display value
+
+volatilityLabel(code)
+  volatility code -> display text.
+  Parameters:
+    code (int): already-computed code
+  Returns: the display value
+
+alignmentLabel(code)
+  alignment code -> display text.
+  Parameters:
+    code (int): already-computed code
+  Returns: the display value
+
+terminalReasonLabel(code)
+  terminal-reason code -> display text.
+  Parameters:
+    code (int): already-computed code
+  Returns: the display value
+
+permissionColor(code)
+  permission code -> display colour.
+  Parameters:
+    code (int): already-computed code
+  Returns: the display value
+
+timeframeLabel(p)
+  raw timeframe token -> M1/M5/M15/H1/H4/D1/W1 vocabulary.
+  Parameters:
+    p (string): already-computed code
+  Returns: the display value
+
+clearLabels(a)
+  delete every label in an array and empty it.
+  Parameters:
+    a (array<label>)
+  Returns: see description
+
+clearLines(a)
+  delete every line in an array and empty it.
+  Parameters:
+    a (array<line>)
+  Returns: see description
+
+clearBoxes(a)
+  delete every box in an array and empty it.
+  Parameters:
+    a (array<box>)
+  Returns: see description
+
+renderRow(t, r, k, v)
+  render one key/value row of a two-column table.
+  Parameters:
+    t (table)
+    r (int)
+    k (string)
+    v (string)
+  Returns: see description
+
+nearestFirst(d, key, taken, n)
+  indices of the n smallest distances, ties broken by key.
+  Parameters:
+    d (array<float>)
+    key (array<int>)
+    taken (array<bool>)
+    n (int)
+  Returns: see description
+
+bankersRound(x)
+  round half to even (banker's rounding).
+  Parameters:
+    x (float)
+  Returns: see description
+
+medianOfSorted(sorted)
+  median of an already-sorted float array.
+  Parameters:
+    sorted (array<float>)
+  Returns: see description
+
+bandDistance(price, top, bottom)
+  distance from a price to a band, zero when inside it.
+  Parameters:
+    price (float)
+    top (float)
+    bottom (float)
+  Returns: the distance
+
+---
+
+## Source Code
+
+````pine
+//@version=6
+// =============================================================================
+// BAH generic Pine UI helpers -- PRESENTATION AND GENERIC ALGORITHMS ONLY.
+// -----------------------------------------------------------------------------
+// This library contains NO trading logic. It holds no threshold, no score, no
+// weight, no qualification rule and no market decision. It does two things:
+//
+//   1. maps already-computed integer display codes to the text and colours the
+//      scanner already prints on the chart, and formats a timeframe token;
+//   2. provides textbook generic algorithms (median of a sorted array,
+//      banker's rounding, nearest-first ordering) and drawing-object cleanup.
+//
+// It DECIDES nothing. It only DRAWS and FORMATS what the closed scanner has
+// already decided. Scanner constant names are inlined as integer literals so
+// the library carries none of the scanner's internal vocabulary.
+//
+// Copyright and authorship: BAH (this script's author).
+// The author permits this library to be imported by the author's own
+// protected / invite-only BAH scripts.
+// =============================================================================
+library("bah_pine_ui_helpers", overlay = true)
+
+// @function POI type code -> display name.
+// @param code already-computed code
+// @returns the display value
+export poiTypeLabel(int code) =>
+    switch code
+        1 => "BUY ORDER BLOCK"
+        2 => "SELL ORDER BLOCK"
+        3 => "BUY FVG"
+        4 => "SELL FVG"
+        5 => "BUY TO SELL CANDLE"
+        6 => "SELL TO BUY CANDLE"
+        7 => "BASE RALLY"
+        8 => "BASE DROP"
+        9 => "BULLISH PRESSURE WICK"
+        10 => "BEARISH PRESSURE WICK"
+        11 => "BULLISH ENGULFING"
+        12 => "BEARISH ENGULFING"
+        13 => "HAMMER"
+        14 => "SHOOTING STAR"
+        15 => "MORNING STAR"
+        16 => "EVENING STAR"
+        17 => "SUPPORT ZONE"
+        18 => "RESISTANCE ZONE"
+        => "UNKNOWN"
+
+// @function permission code -> display text.
+// @param code already-computed code
+// @returns the display value
+export permissionLabel(int code) =>
+    switch code
+        0 => "BUY BIAS"
+        1 => "SELL BIAS"
+        2 => "ALLOW (BOTH)"
+        3 => "COUNTER-TREND"
+        4 => "WATCH ONLY"
+        5 => "NO TRADE"
+        => "-"
+
+// @function lifecycle code -> display text.
+// @param code already-computed code
+// @returns the display value
+export lifecycleLabel(int code) =>
+    switch code
+        0 => "DETECTED"
+        1 => "STRUCTURAL"
+        3 => "POI VALIDATED"
+        4 => "TREND VALIDATED"
+        5 => "REGIME VALIDATED"
+        6 => "MOMENTUM VALIDATED"
+        7 => "LIQUIDITY VALIDATED"
+        => "-"
+
+// @function strength tier code -> display text.
+// @param code already-computed code
+// @returns the display value
+export tierLabel(int code) =>
+    switch code
+        2 => "STRONG"
+        1 => "STANDARD"
+        => "-"
+
+// @function direction code -> display text.
+// @param code already-computed code
+// @returns the display value
+export directionLabel(int code) =>
+    switch code
+        2 => "STRONG BULL"
+        1 => "BULLISH"
+        0 => "NEUTRAL"
+        -1 => "BEARISH"
+        -2 => "STRONG BEAR"
+        => "-"
+
+// @function trend-state code -> display text.
+// @param code already-computed code
+// @returns the display value
+export trendStateLabel(int code) =>
+    switch code
+        0 => "UNKNOWN"
+        1 => "FORMING"
+        2 => "TRENDING"
+        3 => "TRANSITION"
+        4 => "EXHAUSTING"
+        5 => "RANGE"
+        => "-"
+
+// @function regime code -> display text.
+// @param code already-computed code
+// @returns the display value
+export regimeLabel(int code) =>
+    switch code
+        0 => "UNCERTAIN"
+        1 => "TRANSITION"
+        2 => "TREND"
+        3 => "DECELERATION"
+        4 => "RANGE"
+        5 => "EXPANSION"
+        6 => "BREAKOUT PENDING"
+        7 => "COMPRESSION"
+        => "-"
+
+// @function momentum-acceleration code -> display text.
+// @param code already-computed code
+// @returns the display value
+export momentumAccelLabel(int code) =>
+    switch code
+        1 => "ACCELERATING"
+        0 => "STEADY"
+        -1 => "DECELERATING"
+        => "-"
+
+// @function breakout code -> display text.
+// @param code already-computed code
+// @returns the display value
+export breakoutLabel(int code) =>
+    switch code
+        1 => "WEAK BREAK"
+        2 => "VALID BREAK"
+        3 => "STRONG BREAK"
+        4 => "EXPLOSIVE BREAK"
+        5 => "FAILED BREAK"
+        => "NONE"
+
+// @function pullback code -> display text.
+// @param code already-computed code
+// @returns the display value
+export pullbackLabel(int code) =>
+    switch code
+        1 => "SHALLOW"
+        2 => "HEALTHY"
+        3 => "DEEP"
+        4 => "STRUCTURAL FAILURE"
+        => "NONE"
+
+// @function session code -> display text.
+// @param code already-computed code
+// @returns the display value
+export sessionLabel(int code) =>
+    switch code
+        0 => "ASIAN"
+        1 => "LONDON PRE-OPEN"
+        2 => "LONDON"
+        3 => "NEW YORK PRE-OPEN"
+        4 => "LONDON/NY OVERLAP"
+        5 => "NEW YORK"
+        6 => "POST NY"
+        => "-"
+
+// @function volatility code -> display text.
+// @param code already-computed code
+// @returns the display value
+export volatilityLabel(int code) =>
+    switch code
+        0 => "VERY LOW"
+        1 => "LOW"
+        2 => "NORMAL"
+        3 => "HIGH"
+        4 => "EXTREME"
+        => "-"
+
+// @function alignment code -> display text.
+// @param code already-computed code
+// @returns the display value
+export alignmentLabel(int code) =>
+    switch code
+        0 => "ALIGNED"
+        1 => "PARTIAL"
+        2 => "NEUTRAL"
+        3 => "COUNTER-TREND"
+        => "-"
+
+// @function terminal-reason code -> display text.
+// @param code already-computed code
+// @returns the display value
+export terminalReasonLabel(int code) =>
+    switch code
+        1 => "MITIGATED"
+        2 => "INVALIDATED"
+        3 => "PROMOTED_TO_ORDER_BLOCK"
+        => "NONE"
+
+// @function permission code -> display colour.
+// @param code already-computed code
+// @returns the display value
+export permissionColor(int code) =>
+    switch code
+        0 => color.lime
+        1 => color.red
+        2 => color.aqua
+        3 => color.orange
+        4 => color.yellow
+        => color.gray
+
+// @function raw timeframe token -> M1/M5/M15/H1/H4/D1/W1 vocabulary.
+// @param p already-computed code
+// @returns the display value
+export timeframeLabel(string p) =>
+    // Numeric first, calendar suffix second: TradingView hands a daily chart
+    // the token "1D" and an intraday chart a bare minute count, so both
+    // spellings have to be covered.
+    string outTf = "TF?"
+    float minsRaw = str.tonumber(p)
+    if not na(minsRaw) and minsRaw > 0
+        int mins = int(minsRaw)
+        outTf := mins < 60 ? "M" + str.tostring(mins) : mins < 1440 and mins % 60 == 0 ? "H" + str.tostring(int(mins / 60)) : mins == 1440 ? "D1" : "M" + str.tostring(mins)
+    else
+        int n = str.length(p)
+        string sfx = n > 0 ? str.substring(p, n - 1) : ""
+        float hdRaw = n > 1 ? str.tonumber(str.substring(p, 0, n - 1)) : 1.0
+        int hd = na(hdRaw) ? 0 : int(hdRaw)
+        if hd > 0
+            outTf := sfx == "D" ? "D" + str.tostring(hd) : sfx == "W" ? "W" + str.tostring(hd) : sfx == "M" ? "MN" + str.tostring(hd) : sfx == "S" ? "S" + str.tostring(hd) : "TF?"
+    outTf
+
+// @function delete every label in an array and empty it.
+// @returns see description
+export clearLabels(array<label> a) =>
+    if array.size(a) > 0
+        for i = 0 to array.size(a) - 1
+            label.delete(array.get(a, i))
+        array.clear(a)
+
+// @function delete every line in an array and empty it.
+// @returns see description
+export clearLines(array<line> a) =>
+    if array.size(a) > 0
+        for i = 0 to array.size(a) - 1
+            line.delete(array.get(a, i))
+        array.clear(a)
+
+// @function delete every box in an array and empty it.
+// @returns see description
+export clearBoxes(array<box> a) =>
+    if array.size(a) > 0
+        for i = 0 to array.size(a) - 1
+            box.delete(array.get(a, i))
+        array.clear(a)
+
+// @function render one key/value row of a two-column table.
+// @returns see description
+export renderRow(table t, int r, string k, string v) =>
+    table.cell(t, 0, r, k, text_size = size.tiny, text_halign = text.align_left, text_color = color.gray)
+    table.cell(t, 1, r, v, text_size = size.tiny, text_halign = text.align_right, text_color = color.white)
+
+// @function indices of the n smallest distances, ties broken by key.
+// @returns see description
+export nearestFirst(array<float> d, array<int> key, array<bool> taken, int n) =>
+    array<int> out = array.new<int>()
+    bool more = true
+    while more and array.size(out) < n
+        int b = -1
+        for [g, dg] in d
+            if not array.get(taken, g) and (b < 0 or dg < array.get(d, b) or (dg == array.get(d, b) and array.get(key, g) < array.get(key, b)))
+                b := g
+        more := b >= 0
+        if more
+            array.set(taken, b, true)
+            array.push(out, b)
+    out
+
+// @function round half to even (banker's rounding).
+// @returns see description
+export bankersRound(float x) =>
+    float fl = math.floor(x)
+    int ifl = int(fl)
+    float diff = x - fl
+    int result = ifl
+    if diff > 0.5
+        result := ifl + 1
+    else if diff == 0.5
+        result := ifl % 2 == 0 ? ifl : ifl + 1
+    result
+
+// @function median of an already-sorted float array.
+// @returns see description
+export medianOfSorted(array<float> sorted) =>
+    int n = array.size(sorted)
+    float out = 0.0
+    if n > 0
+        int mid = int(n / 2)
+        out := (n % 2 == 1) ? array.get(sorted, mid) : (array.get(sorted, mid - 1) + array.get(sorted, mid)) / 2.0
+    out
+
+// @function distance from a price to a band, zero when inside it.
+// @returns the distance
+export bandDistance(float price, float top, float bottom) =>
+    price < bottom ? bottom - price : price > top ? price - top : 0.0
+````
