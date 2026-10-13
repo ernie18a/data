@@ -1,0 +1,66 @@
+<!-- tradingview-pine-id: PUB;22d29b86c8f247fdb4552cddcf07e984 -->
+<!-- tradingviewscripts-format: 1 -->
+# EMA Distance MACD (50W / 200W)
+
+Source: https://www.tradingview.com/script/C5ObHRwf-Hot-Cold-50W-200W-EMA/
+
+## Description
+
+A MACD-style oscillator built from trend distance instead of raw EMAs. Instead of comparing two moving averages directly, it compares how far price has stretched from each one — surfacing whether short-term momentum is running ahead of or falling behind the long-term trend.
+
+• Line 1 (orange) — % distance from the 200-week EMA (long-term trend)
+• Line 2 (blue) — % distance from the 50-week EMA (short-term trend)
+• Histogram — the gap between the two lines, shaded like a classic MACD histogram (full color when the gap is widening, faded when it's contracting)
+
+A zero-line cross in the histogram marks a regime shift: short-term trend either breaking away from or collapsing back toward the long-term trend. Built-in alerts fire on both crossover directions.
+
+Like its companion script (200W EMA Heat), all math runs on weekly bars via request.security() regardless of chart timeframe, with an "Avoid Repaint" toggle (on by default) to keep historical values stable.
+
+Not financial advice — a momentum/regime tool meant to complement, not replace, your own analysis.
+
+---
+
+## Source Code
+
+````pine
+// This Pine Script code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © utkarshikha
+//@version=6
+indicator("EMA Distance MACD (50W / 200W)", shorttitle="EMA Dist MACD", overlay=false)
+// ───────────────────────────── Inputs ─────────────────────────────
+slowLen        = input.int(200, "Slow EMA Length (weekly bars)", minval=10, group="EMA Lengths")
+fastLen        = input.int(50,  "Fast EMA Length (weekly bars)", minval=5,  group="EMA Lengths")
+avoidRepaint   = input.bool(true, "Avoid Repaint (lag 1 confirmed weekly bar)", tooltip="When on, values are pulled from the last CLOSED weekly bar so nothing repaints, at the cost of being one week behind on the most recent reading. Turn off to see the live, unconfirmed current-week value (it will repaint intra-week).")
+line1Color     = input.color(#FF6D00, "Line 1 — 200W % Distance", group="Colors")
+line2Color     = input.color(#2962FF, "Line 2 — 50W % Distance",  group="Colors")
+histUpColor    = input.color(#26A69A, "Histogram (line1 > line2)", group="Colors")
+histDownColor  = input.color(#EF5350, "Histogram (line1 < line2)", group="Colors")
+// ───────────────────────────── Weekly calc (context-independent of chart TF) ─────────────────────────────
+f_weekly() =>
+    emaSlow   = ta.ema(close, slowLen)
+    emaFast   = ta.ema(close, fastLen)
+    pctSlow   = (close - emaSlow) / emaSlow * 100   // Line 1: distance from 200W EMA
+    pctFast   = (close - emaFast) / emaFast * 100   // Line 2: distance from 50W EMA
+    offsetIdx = avoidRepaint ? 1 : 0
+    [pctSlow[offsetIdx], pctFast[offsetIdx]]
+[line1, line2] = request.security(syminfo.tickerid, "W", f_weekly(), barmerge.gaps_off, barmerge.lookahead_off)
+// Histogram = distance between line1 and line2 (matches user's stated definition)
+hist = line1 - line2
+histColor = hist >= 0 ? (hist >= hist[1] ? color.new(histUpColor, 0) : color.new(histUpColor, 60)) : (hist <= hist[1] ? color.new(histDownColor, 0) : color.new(histDownColor, 60))
+// ───────────────────────────── Plots ─────────────────────────────
+plot(hist,  title="Histogram (Line1 - Line2)", style=plot.style_columns, color=histColor)
+plot(line1, title="Line 1 — 200W % Distance",  color=line1Color, linewidth=2)
+plot(line2, title="Line 2 — 50W % Distance",   color=line2Color, linewidth=2)
+hline(0, "Zero", color=color.new(color.gray, 50), linestyle=hline.style_dashed)
+// ───────────────────────────── Info table ─────────────────────────────
+var table infoTable = table.new(position.top_right, 1, 4, bgcolor=color.new(color.black, 80), border_width=1)
+if barstate.islast
+    regime = hist >= 0 ? "Short-term running HOT vs long-term" : "Short-term running COLD vs long-term"
+    table.cell(infoTable, 0, 0, syminfo.ticker, text_color=color.white, text_size=size.small)
+    table.cell(infoTable, 0, 1, "200W: " + str.tostring(line1, "#.##") + "%", text_color=line1Color, text_size=size.small)
+    table.cell(infoTable, 0, 2, "50W: " + str.tostring(line2, "#.##") + "%", text_color=line2Color, text_size=size.small)
+    table.cell(infoTable, 0, 3, regime, text_color=histColor, text_size=size.small)
+// ───────────────────────────── Alerts ─────────────────────────────
+alertcondition(hist >= 0 and hist[1] < 0, title="Bullish Regime Shift", message="{{ticker}}: 50W distance crossed above 200W distance — short-term trend accelerating away from long-term.")
+alertcondition(hist <= 0 and hist[1] > 0, title="Bearish Regime Shift", message="{{ticker}}: 50W distance crossed below 200W distance — short-term trend collapsing back toward/through long-term.")
+````
