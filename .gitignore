@@ -1,3 +1,7 @@
+!.[Ii][Nn][Pp][Uu][Tt]/.keep
+!.[Oo][Uu][Tt][Pp][Uu][Tt]/.keep
+![Ii][Nn][Pp][Uu][Tt]/.keep
+![Oo][Uu][Tt][Pp][Uu][Tt]/.keep
 **/.vscode/
 *.Identifier
 *.py[cod]
@@ -6,7 +10,6 @@
 *OUTPUT/
 *REFS/
 *TMP/
-TMP/
 *TRAIN/
 *log.txt
 .DS_Store
@@ -19,7 +22,10 @@ TMP/
 .claude/
 .env
 .env*
+.ruff_cache
+.ruff_cache/
 .venv/
+TMP/
 Thumbs.db
 [Ii][Nn][Pp][Uu][Tt]/
 [Oo][Uu][Tt][Pp][Uu][Tt]/
