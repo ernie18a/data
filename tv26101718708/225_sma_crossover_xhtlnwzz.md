@@ -1,0 +1,54 @@
+# 225 SMA Crossover
+
+- url: https://www.tradingview.com/script/XhTLnWZZ/
+- type: strategy
+- pine_id: PUB;056287bcee5a4633a190c1f48d6fc9f9
+- version: 1.0
+
+## Description
+
+Well-known strategy from Zahlengraf from the Mauerstrassenwetten subreddit for you to test yourself.
+
+You can change the length of the SMA and whether to trade long, short or both directions.
+
+## Source Code
+
+````pine
+//@version=5
+strategy("200SMA Strat", overlay=true, margin_long=100, margin_short=100, default_qty_type=strategy.percent_of_equity, default_qty_value=10)
+
+// === Eingaben ===
+smaLength = input.int(50, "SMA Länge", minval=1)
+tradeDirection = input.string("Both", "Handelsrichtung", options=["Long Only", "Short Only", "Both"])
+
+// === Berechnungen ===
+sma = ta.sma(close, smaLength)
+
+// === Signale ===
+longCondition  = ta.crossover(close, sma)
+shortCondition = ta.crossunder(close, sma)
+
+// === Strategielogik ===
+if tradeDirection == "Both"
+    if (longCondition)
+        strategy.entry("Long", strategy.long)
+    if (shortCondition)
+        strategy.entry("Short", strategy.short)
+
+if tradeDirection == "Long Only"
+    if (longCondition)
+        strategy.entry("Long", strategy.long)
+    if (shortCondition)
+        strategy.close("Long")
+
+if tradeDirection == "Short Only"
+    if (shortCondition)
+        strategy.entry("Short", strategy.short)
+    if (longCondition)
+        strategy.close("Short")
+
+// === Plot ===
+plot(sma, color=color.orange, title="SMA")
+plotshape(longCondition, title="Long Signal", color=color.new(color.green, 0), style=shape.triangleup, location=location.belowbar, size=size.small)
+plotshape(shortCondition, title="Short Signal", color=color.new(color.red, 0), style=shape.triangledown, location=location.abovebar, size=size.small)
+````

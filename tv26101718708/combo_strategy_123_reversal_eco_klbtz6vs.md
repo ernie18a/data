@@ -1,0 +1,120 @@
+# Combo Strategy 123 Reversal & ECO 
+
+- url: https://www.tradingview.com/script/klbtz6VS-Combo-Strategy-123-Reversal-ECO/
+- type: indicator
+- pine_id: PUB;iSSblP06LO08xhkVcglWemtxAY8nZsJv
+- version: 1.0
+
+## Description
+
+This is combo strategies for get a cumulative signal. 
+
+ First strategy
+ This System was created from the Book "How I Tripled My Money In The 
+ Futures Market" by Ulf Jensen, Page 183. This is reverse type of strategies.
+ The strategy buys at market, if close price is higher than the previous close 
+ during 2 days and the meaning of 9-days Stochastic Slow Oscillator is lower than 50. 
+ The strategy sells at market, if close price is lower than the previous close price 
+ during 2 days and the meaning of 9-days Stochastic Fast Oscillator is higher than 50.
+
+ Second strategy
+ We call this one the ECO for short, but it will be listed on the indicator list 
+ at W. Blau’s Ergodic Candlestick Oscillator. The ECO is a momentum indicator. 
+ It is based on candlestick bars, and takes into account the size and direction 
+ of the candlestick "body". We have found it to be a very good momentum indicator, 
+ and especially smooth, because it is unaffected by gaps in price, unlike many other 
+ momentum indicators.
+ We like to use this indicator as an additional trend confirmation tool, or as an 
+ alternate trend definition tool, in place of a weekly indicator. The simplest way 
+ of using the indicator is simply to define the trend based on which side of the "0" 
+ line the indicator is located on. If the indicator is above "0", then the trend is up. 
+ If the indicator is below "0" then the trend is down. You can add an additional 
+ qualifier by noting the "slope" of the indicator, and the crossing points of the slow 
+ and fast lines. Some like to use the slope alone to define trend direction. If the 
+ lines are sloping upward, the trend is up. Alternately, if the lines are sloping 
+ downward, the trend is down. In this view, the point where the lines "cross" is the 
+ point where the trend changes.
+ When the ECO is below the "0" line, the trend is down, and we are qualified only to 
+ sell on new short signals from the Hi-Lo Activator. In other words, when the ECO is 
+ above 0, we are not allowed to take short signals, and when the ECO is below 0, we 
+ are not allowed to take long signals. 
+
+ WARNING:
+ - For purpose educate only
+ - This script to change bars colors.
+
+## Source Code
+
+````pine
+//@version=4
+////////////////////////////////////////////////////////////
+//  Copyright by HPotter v1.0 15/04/2020
+// This is combo strategies for get a cumulative signal. 
+//
+// First strategy
+// This System was created from the Book "How I Tripled My Money In The 
+// Futures Market" by Ulf Jensen, Page 183. This is reverse type of strategies.
+// The strategy buys at market, if close price is higher than the previous close 
+// during 2 days and the meaning of 9-days Stochastic Slow Oscillator is lower than 50. 
+// The strategy sells at market, if close price is lower than the previous close price 
+// during 2 days and the meaning of 9-days Stochastic Fast Oscillator is higher than 50.
+//
+// Second strategy
+// We call this one the ECO for short, but it will be listed on the indicator list 
+// at W. Blau’s Ergodic Candlestick Oscillator. The ECO is a momentum indicator. 
+// It is based on candlestick bars, and takes into account the size and direction 
+// of the candlestick "body". We have found it to be a very good momentum indicator, 
+// and especially smooth, because it is unaffected by gaps in price, unlike many other 
+// momentum indicators.
+// We like to use this indicator as an additional trend confirmation tool, or as an 
+// alternate trend definition tool, in place of a weekly indicator. The simplest way 
+// of using the indicator is simply to define the trend based on which side of the "0" 
+// line the indicator is located on. If the indicator is above "0", then the trend is up. 
+// If the indicator is below "0" then the trend is down. You can add an additional 
+// qualifier by noting the "slope" of the indicator, and the crossing points of the slow 
+// and fast lines. Some like to use the slope alone to define trend direction. If the 
+// lines are sloping upward, the trend is up. Alternately, if the lines are sloping 
+// downward, the trend is down. In this view, the point where the lines "cross" is the 
+// point where the trend changes.
+// When the ECO is below the "0" line, the trend is down, and we are qualified only to 
+// sell on new short signals from the Hi-Lo Activator. In other words, when the ECO is 
+// above 0, we are not allowed to take short signals, and when the ECO is below 0, we 
+// are not allowed to take long signals. 
+//
+// WARNING:
+// - For purpose educate only
+// - This script to change bars colors.
+////////////////////////////////////////////////////////////
+Reversal123(Length, KSmoothing, DLength, Level) =>
+    vFast = sma(stoch(close, high, low, Length), KSmoothing) 
+    vSlow = sma(vFast, DLength)
+    pos = 0.0
+    pos := iff(close[2] < close[1] and close > close[1] and vFast < vSlow and vFast > Level, 1,
+	         iff(close[2] > close[1] and close < close[1] and vFast > vSlow and vFast < Level, -1, nz(pos[1], 0))) 
+	pos
+
+ECO(r,s) =>
+    pos = 0
+    xCO = close - open
+    xHL = high - low
+    xEMA = ema(ema(xCO, r), s)
+    xvEMA = ema(ema(xHL, r), s)
+    nRes = 100 * (xEMA / xvEMA)
+    pos := iff(nRes > 0, 1,
+	         iff(nRes <= 0, -1, nz(pos[1], 0))) 
+    pos
+
+study(title="Combo Strategy 123 Reversal & ECO Strategy", shorttitle="Combo", overlay = true)
+Length = input(14, minval=1)
+KSmoothing = input(1, minval=1)
+DLength = input(3, minval=1)
+Level = input(50, minval=1)
+//-------------------------
+r = input(32, minval=1)
+s = input(12, minval=1)
+posReversal123 = Reversal123(Length, KSmoothing, DLength, Level)
+posECO = ECO(r,s)
+pos = iff(posReversal123 == 1 and posECO == 1 , 1,
+	   iff(posReversal123 == -1 and posECO == -1, -1, 0)) 
+barcolor(pos == -1 ? #b50404: pos == 1 ? #079605 : #0536b3 )
+````

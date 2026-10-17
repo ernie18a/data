@@ -1,0 +1,35 @@
+# RSI with small Take Profit - Long-only
+
+- url: https://www.tradingview.com/script/bxkMXwb5-RSI-with-small-Take-Profit-Long-only/
+- type: strategy
+- pine_id: PUB;iJVRaiTyYJB6Edyp6ExgUbAexVe7fhVI
+- version: 1.0
+
+## Description
+
+This script open a long position when RSI < 30 and close the position after a small take profit. No stop loss but if you analyse List of Trades then you'll see that several position are closed for unknow reason.
+
+## Source Code
+
+````pine
+//@version=2
+
+strategy("Take Profit RSI Long-only| Fadior", shorttitle="Very simple RSI strategy", pyramiding=10, calc_on_order_fills=true, initial_capital=1000, default_qty_type=strategy.percent_of_equity, currency="USD", default_qty_value=10, overlay=true)
+ 
+len = input(9, minval=1, title="RSI Length") 
+threshLow = input(title="Treshold Low", type= integer,defval=30)
+TP = input(type=integer, defval=60)
+
+src = close
+  
+up = rma(max(change(src), 0), len)
+down = rma(-min(change(src), 0), len)
+rsi = down == 0 ? 100 : up == 0 ? 0 : 100 - (100 / (1 + up / down))
+
+
+longCondition = rsi < threshLow
+
+if (longCondition)
+    strategy.entry("Long", strategy.long) //, qty=10)
+    strategy.exit("Close Long", "Long", profit=TP)
+````

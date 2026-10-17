@@ -1,0 +1,37 @@
+# [STRATEGY]EMA 30/60 Cross Strategy
+
+- url: https://www.tradingview.com/script/ypGrOma7-STRATEGY-EMA-30-60-Cross-Strategy/
+- type: strategy
+- pine_id: PUB;GVADn21hoIY4R5jYQ5emEoum2Exdf84L
+- version: 1.0
+
+## Description
+
+strategy based on EMA 30/60 cross
+works best on 4hr timeframes & high-midcaps
+
+## Source Code
+
+````pine
+//@version=3
+//based on code by RicardoSantos
+strategy("[STRATEGY]EMA 30/60 Strategy", overlay=true, pyramiding=0, default_qty_type=strategy.percent_of_equity, default_qty_value=1.0, initial_capital=100000)
+FastEMA = input(30)
+SlowEMA = input(60)
+
+isinsession = not na(time('1'))
+price = open
+
+ma0 = ema(price, FastEMA)
+ma1 = ema(price, SlowEMA)
+plot(ma0, color=navy)
+plot(ma1, color=black)
+
+isbull = ma0 > ma1
+buy_condition = isinsession and isbull and not isbull[1]
+buy_exit_condition = ma0 <= ma1
+strategy.order("buy", strategy.long, 100, comment="buy", when=buy_condition)
+strategy.close(id='buy', when=buy_exit_condition)
+
+//plot(strategy.equity, title="equity", color=red, linewidth=2, style=areabr)
+````

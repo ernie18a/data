@@ -1,0 +1,201 @@
+# Bullish Lines: Four-State Classification
+
+- url: https://www.tradingview.com/script/XLY8V9jC-Bullish-Lines-Four-State-Classification/
+- type: indicator
+- pine_id: PUB;4549eb5946b34a5e87d41055984bab65
+- version: 2.0
+
+## Description
+
+A free, open-source companion to the book Reading the Lines by Simone Pozzi.
+
+  This indicator computes four smoothed moving averages (SMMA, Wilder smoothing, equivalent to Pine's ta.rma) on the HL2 midpoint of each candle, and labels every bar with
+  one of four states:
+
+  - Bullish (warm yellow): price above the slowest line, four lines stacked fast-on-top.
+  - Bearish (saturated blue): price below the slowest line, four lines stacked fast-on-bottom.
+  - Neutral-Yellow (paler amber): transitional, fast line above slow but middle lines mixed. The chart is warming.
+  - Neutral-Blue (sky blue): transitional, fast line below slow but middle lines mixed. The chart is cooling.
+
+  The classification algorithm is the same one used by the Bullish Lines platform at bullishlines.com. The platform publishes a daily classification across a tracked universe
+   of major crypto assets, with per-coin-calibrated SMMA lengths, and stamps every daily reading to the Bitcoin blockchain for verification.
+
+  The four SMMA length inputs in this script default to 0. Until you set them all to positive integers (≥ 2), the chart stays blank with a hint asking you to fill them in.
+  The platform's calibrated lengths are deliberately not bundled here — you choose your own.
+
+  Some public starting points (none of these are the platform's values):
+
+  - Textbook conventional: 20 / 50 / 100 / 200
+  - Tighter, more reactive: 8 / 13 / 21 / 34
+  - Looser, more stable: 50 / 100 / 150 / 250
+
+  Configured with the platform's lengths on HL2, on a chart with sufficient history (around 5× the slowest length, e.g. 150+ daily bars), this script reproduces the
+  platform's classification. A small numerical caveat on early-bar SMMA seeding is documented in the script header.
+
+  Four alertcondition entries fire on each state transition.
+
+  ---
+  Links
+
+  - 📘 Book: Reading the Lines by Simone Pozzi
+  - 🌐 Platform: https://bullishlines.com
+  - 📅 Today's classifications across the universe: https://bullishlines.com/today
+  - 🔍 Verify any historical classification against the Bitcoin record: https://bullishlines.com/proof
+  - 📜 Methodology: https://bullishlines.com/proof/methodology
+  - 💾 Source code: https://github.com/vitopod/four-state-pine
+
+  ---
+  MIT licence. Open source. Fork it. Modify it.
+
+  This is a non-personalised classification tool, not financial advice. Past results do not predict future performance.
+
+## Source Code
+
+````pine
+//@version=6
+// =====================================================================
+// BULLISH LINES — Four-State Classification (Pine Script v6)
+//
+// A free companion to the book Reading the Lines (Simone Pozzi, 2026).
+//
+//   Book:     reading-the-lines (2026)
+//   Platform: https://bullishlines.com/
+//   Source:   https://github.com/vitopod/four-state-pine
+//
+// What this script is:
+//   Four smoothed moving averages (SMMA) on the HL2 midpoint, with the
+//   exact same state-classification logic the Bullish Lines platform
+//   uses. Configured with the same SMMA lengths and source, on a chart
+//   with sufficient history (roughly 5x the slowest length, e.g. 150+
+//   daily bars), this script reproduces the platform's classification.
+//
+// Defaults:
+//   The four SMMA length inputs default to 0. The script will not
+//   classify or plot anything until you set them all to positive
+//   integers yourself. This is deliberate: the platform's calibrated
+//   values are not bundled with this script. You choose your own.
+//
+// Numerical note:
+//   This script uses Pine's standard Wilder smoothing (ta.rma), which
+//   seeds at bar (length - 1) with the SMA of the first `length` bars.
+//   The platform seeds at bar 0 with the same SMA value and then
+//   applies the recursive formula `prev * (L-1)/L + src/L` for every
+//   subsequent bar. The two converge with sufficient history;
+//   classifications can differ by one bar at marginal flip transitions
+//   where the lines are nearly touching.
+//
+// This is a non-personalised classification tool, not financial advice.
+// Past results do not predict future performance.
+//
+// MIT License.
+// =====================================================================
+
+indicator(title="Bullish Lines — Four-State Classification", shorttitle="BL 4-state", overlay=true)
+
+// ─────────────────────────────────────────────────────────────────────
+// INPUTS
+//
+// The four SMMA lengths. Defaults are 0 — you must set positive
+// integers (>= 2) before the script computes anything meaningful.
+// ─────────────────────────────────────────────────────────────────────
+len1 = input.int(0, title="SMMA 1 (fast)",         minval=0)
+len2 = input.int(0, title="SMMA 2 (mid, warmer)",  minval=0)
+len3 = input.int(0, title="SMMA 3 (mid, cooler)",  minval=0)
+len4 = input.int(0, title="SMMA 4 (slow)",         minval=0)
+
+src_choice = input.string("HL2", title="Source", options=["HL2", "CLOSE"])
+show_bg    = input.bool(true,  title="Tint background by state")
+show_fill  = input.bool(true,  title="Fill between fastest and slowest line")
+
+// All four lengths must be set (>= 2) before we classify or plot.
+configured = len1 >= 2 and len2 >= 2 and len3 >= 2 and len4 >= 2
+
+src = src_choice == "HL2" ? hl2 : close
+
+// ─────────────────────────────────────────────────────────────────────
+// SMMA — Wilder smoothing. Pine's ta.rma is the standard implementation.
+// Lengths are clamped to >= 2 so the calls are always valid; output is
+// suppressed (set to na) until the user has configured the four inputs.
+// ─────────────────────────────────────────────────────────────────────
+safe_len1 = math.max(2, len1)
+safe_len2 = math.max(2, len2)
+safe_len3 = math.max(2, len3)
+safe_len4 = math.max(2, len4)
+
+v1_raw = ta.rma(src, safe_len1)
+m1_raw = ta.rma(src, safe_len2)
+m2_raw = ta.rma(src, safe_len3)
+v2_raw = ta.rma(src, safe_len4)
+
+v1 = configured ? v1_raw : na
+m1 = configured ? m1_raw : na
+m2 = configured ? m2_raw : na
+v2 = configured ? v2_raw : na
+
+// ─────────────────────────────────────────────────────────────────────
+// Four-state classification — exact platform algorithm.
+// Source of truth: src/lib/indicator.ts in the bullishlines.com codebase.
+//
+//   mixed = (v1 < m1) != (v1 < v2) OR (m2 < v2) != (v1 < v2)
+//
+//   Bullish        = !mixed AND v1 >  v2
+//   Bearish        = !mixed AND v1 <= v2
+//   Neutral-Yellow =  mixed AND v1 >  v2
+//   Neutral-Blue   =  mixed AND v1 <= v2
+// ─────────────────────────────────────────────────────────────────────
+mixed = ((v1 < m1) != (v1 < v2)) or ((m2 < v2) != (v1 < v2))
+
+is_bullish        = not mixed and v1 > v2
+is_bearish        = not mixed and v1 <= v2
+is_neutral_yellow = mixed and v1 > v2
+is_neutral_blue   = mixed and v1 <= v2
+
+// ─────────────────────────────────────────────────────────────────────
+// Palette — the book's four-state colour vocabulary
+// ─────────────────────────────────────────────────────────────────────
+c_bullish        = color.rgb(243, 222, 44)   // warm yellow
+c_neutral_yellow = color.rgb(249, 234, 163)  // paler amber
+c_neutral_blue   = color.rgb(155, 181, 232)  // sky blue
+c_bearish        = color.rgb(30,  30,  247)  // saturated blue
+c_unconfigured   = color.gray
+
+state_color = not configured     ? c_unconfigured   :
+              is_bullish         ? c_bullish        :
+              is_bearish         ? c_bearish        :
+              is_neutral_yellow  ? c_neutral_yellow :
+              is_neutral_blue    ? c_neutral_blue   :
+                                   c_unconfigured
+
+// ─────────────────────────────────────────────────────────────────────
+// Plots
+// ─────────────────────────────────────────────────────────────────────
+p_fast  = plot(v1, title="SMMA 1 (fast)",        linewidth=2, color=state_color)
+p_mid_a = plot(m1, title="SMMA 2 (mid, warmer)", linewidth=2, color=state_color)
+p_mid_b = plot(m2, title="SMMA 3 (mid, cooler)", linewidth=2, color=state_color)
+p_slow  = plot(v2, title="SMMA 4 (slow)",        linewidth=2, color=state_color)
+
+fill(p_fast, p_slow, color=show_fill and configured ? color.new(state_color, 88) : na, title="State fill")
+
+bgcolor(show_bg and configured ? color.new(state_color, 92) : na, title="State background")
+
+// ─────────────────────────────────────────────────────────────────────
+// On-chart hint when not yet configured
+// ─────────────────────────────────────────────────────────────────────
+var label notice = na
+if barstate.islast
+    label.delete(notice)
+    notice := not configured ? label.new(bar_index, close, "Bullish Lines — set the four SMMA lengths in the indicator settings to begin.", style=label.style_label_left, color=color.new(color.gray, 60), textcolor=color.white, size=size.normal) : na
+
+// ─────────────────────────────────────────────────────────────────────
+// Transition alerts (fire only when configured)
+// ─────────────────────────────────────────────────────────────────────
+new_bullish        = configured and is_bullish        and not is_bullish[1]
+new_bearish        = configured and is_bearish        and not is_bearish[1]
+new_neutral_yellow = configured and is_neutral_yellow and not is_neutral_yellow[1]
+new_neutral_blue   = configured and is_neutral_blue   and not is_neutral_blue[1]
+
+alertcondition(new_bullish,        title="Flip to Bullish",        message="Bullish Lines: flip to Bullish.")
+alertcondition(new_bearish,        title="Flip to Bearish",        message="Bullish Lines: flip to Bearish.")
+alertcondition(new_neutral_yellow, title="Flip to Neutral-Yellow", message="Bullish Lines: flip to Neutral-Yellow.")
+alertcondition(new_neutral_blue,   title="Flip to Neutral-Blue",   message="Bullish Lines: flip to Neutral-Blue.")
+````

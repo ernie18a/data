@@ -1,0 +1,73 @@
+# RSI Trend Crypto
+
+- url: https://www.tradingview.com/script/Ru7qOVtp-RSI-Trend-Crypto/
+- type: strategy
+- pine_id: PUB;bOdyYhHRfq8o5mMrOSECfsoV6YzB14pX
+- version: 1.0
+
+## Description
+
+Dear community,
+
+Today I want to present you one of my favorite and simple trading bots: The RSI Trend.
+This bot is based on the RSI, which normally is used as a trend reversal indicator. However, here it’s used as a trend finding indicator, often with great success. This bot making long-only trades, which is quite successful in bull-markets like the one we’re currently in.
+
+In case you want to use an emergency exit for your trade, toggle the Emergency Exit parameter. During bull-markets it’s better in the long term to keep this option off.
+
+Currently the bot only makes one trade at a time (pyramiding = 1), for higher risk and higher rewards you can increase this parameter. More than 5 is not advised.
+
+I’ve optimized this bot on 15min time frame. It has some decent results for most cryptos on this TF, feel free to test this out.
+
+In case you want to hook this bot up to your exchange, feel free to edit the ALERT messages in the code.
+
+Default Trading Rules:
+Long: RSI crosses over 35
+Close Long: RSI crosses under 75
+Emergency Exit: RSI crosses under 10
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © FieryTrading
+
+//@version=4
+strategy("RSI Trend Crypto", overlay=false, pyramiding=1, commission_value=0.2, default_qty_type=strategy.percent_of_equity, default_qty_value=100)
+
+// Input
+UseEmergency = input(false, "Use Emergency Exit?")
+RSIlong = input(35, "RSI Long Cross")
+RSIclose = input(75, "RSI Close Position")
+Emergencyclose = input(10, "RSI Emergency Close Position")
+
+// RSI
+rsi = rsi(close, 14)
+
+// Conditions
+long = crossover(rsi, RSIlong)
+longclose = crossunder(rsi, RSIclose)
+emergency = crossunder(rsi, Emergencyclose)
+
+// Plots
+plot(rsi, color=color.white, linewidth=2)
+plot(RSIlong, color=color.green)
+plot(RSIclose, color=color.red)
+
+// Alert messages 
+// When using a bot remember to use "{{strategy.order.alert_message}}" in your alert
+// You can edit the alert message freely to suit your needs
+
+LongAlert = 'RSI Long Cross: LONG'
+CloseAlert = 'RSI Close Position'
+EmergencyAlert = 'RSI Emergency Close'
+
+// Strategy
+if long
+    strategy.entry("Long", strategy.long, alert_message=LongAlert)
+
+if longclose
+    strategy.close("Long", alert_message=CloseAlert)
+
+if emergency and UseEmergency==true
+    strategy.close("Long", alert_message=EmergencyAlert)
+````

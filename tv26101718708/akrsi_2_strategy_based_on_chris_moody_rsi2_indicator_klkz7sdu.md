@@ -1,0 +1,42 @@
+# AK_RSI 2 Strategy ( based on Chris Moody RSI(2) indicator )
+
+- url: https://www.tradingview.com/script/klkZ7SdU-AK-RSI-2-Strategy-based-on-Chris-Moody-RSI-2-indicator/
+- type: strategy
+- pine_id: PUB;1880
+- version: -1.0
+
+## Description
+
+Good Morning,
+
+Republishing this in the script section to make the code visible to everyone. This strategy is based on Chris Moody's RSi(2) indicator. Good success rate on SPY. Again, this is for educational purposes only . 
+
+cheers 
+
+Algo
+
+## Source Code
+
+````pine
+//@version=2
+// Algokid code v. 1.00 
+strategy("AK_RSI 2 Strategy", overlay=true)
+
+RS = rsi(close,2)
+
+ma5 = sma(close,5)
+ma200 = sma(close,200)
+
+
+longCondition = close > ma200 and close < ma5 and RS < 5
+
+
+if (longCondition)
+    strategy.entry("My Long Entry Id", strategy.long)
+strategy.close_all(when = close > ma5)
+
+shortCondition = close < ma200 and close > ma5 and RS > 90
+if (shortCondition)
+    strategy.entry("My Short Entry Id", strategy.short)
+strategy.close_all(when = close < ma5)
+````

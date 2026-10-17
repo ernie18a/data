@@ -1,0 +1,49 @@
+# Mou Value Areas
+
+- url: https://www.tradingview.com/script/pEsjPihO-Mou-Value-Areas/
+- type: strategy
+- pine_id: PUB;e5e1016b4d96400885f1974023369212
+- version: 1.0
+
+## Description
+
+Use in CORRELATION with KEY AREAS - its only CONFIRMATION tool
+
+May ONLY BUY when its GREEN and ONLY SELL when RED
+
+Helps prevent buying the top and selling the bottom. 
+
+Good for showing pullbacks during strong trends.
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © moumoose
+
+//@version=4
+strategy(title="Mou Value Areas", shorttitle="Mou Value Areas", overlay = true)
+
+MA1 = input(21, "Moving Average1 Lenght")
+MA2 = input(50, "Moving Average2 Lenght")
+MA3 = input(75, "Moving Average3 Lenght")
+HL = input(5, "Length", step = 1)
+
+MyMA1 = ema(close, MA1)
+MyMA2 = ema(close, MA2)
+MyMA3 = ema(close, MA3)
+
+plot(MyMA1, title= "EMA1", color=color.blue, linewidth = 2)
+plot(MyMA2, title="EMA2", color=color.yellow, linewidth = 1)
+plot(MyMA3, title="EMA3", color=color.red, linewidth = 1)
+
+UP = MyMA1[HL] - MyMA2[HL] <= MyMA1 - MyMA2
+DOWN = MyMA1[HL] - MyMA2[HL] >= MyMA1 - MyMA2
+bgcolor(UP ? color.new(color.red, 85) : na)
+bgcolor(DOWN ? color.new(color.green, 85) : na)
+
+//BULL = close - open > close[1] - open[1] and close > high[1] and DOWN
+//BEAR = open -close > open[1] - close [1] and close < low[1] and UP
+//plotshape(BULL, style=shape.arrowup, size = size.large, color = color.green )
+//plotshape(BEAR, style=shape.arrowdown, size = size.large, color = color.red)
+````

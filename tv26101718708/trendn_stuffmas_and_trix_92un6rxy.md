@@ -1,0 +1,43 @@
+# Trend'n Stuff_(MA's and Trix)
+
+- url: https://www.tradingview.com/script/92Un6RXY-Trend-n-Stuff-MA-s-and-Trix/
+- type: strategy
+- pine_id: PUB;WbMteQlXDQpk856fleaxIaGC7k01K5pe
+- version: 1.0
+
+## Description
+
+It's a  simple trend following system. Play with the setups. Works best on 30min and up timeframes. Look at the code for better understanding.
+
+## Source Code
+
+````pine
+//@version=3
+strategy("Trix simple", overlay=true)
+
+///_____________Made by Zan______//
+// All thanks to Nmike's Chat, go visit there lol, you'll learn a lot.//
+
+//Length setting
+lengtha = input(7, minval=1)
+lengtha1 = input(4, minval=1)
+Trix = 10000 * change(ema(ema(ema(log(close), lengtha), lengtha), lengtha)) // TRIX 5
+Trix1= 10000 * change(ema(ema(ema(log(close), lengtha1), lengtha1), lengtha1)) // TRIX 3
+bb = input(20)
+Middle_Band = sma(Trix, bb)
+sma68 = sma(close,68)
+ema13 = sma(close,13)
+
+
+
+longCondition = ema13>sma68 and Middle_Band>0 and Trix<Middle_Band
+if (longCondition)
+    strategy.entry("Buy", strategy.long, when = crossover(Trix1,Trix))
+    strategy.exit("Buy", when = cross(Trix,Middle_Band))
+    
+    
+shortCondition = ema13<sma68 and Middle_Band<0 and Trix>Middle_Band
+if (shortCondition)
+    strategy.entry("Sell", strategy.short, when = crossunder(Trix1,Trix))
+    strategy.exit("Sell",when = cross(Trix,Middle_Band))
+````

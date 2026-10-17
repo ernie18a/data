@@ -1,0 +1,45 @@
+# gaan ema crossover
+
+- url: https://www.tradingview.com/script/sgk71nkc-gaan-ema-crossover/
+- type: strategy
+- pine_id: PUB;pFBUTnGX0J0Ioxdyn16gKAB73IAITHPE
+- version: 1.0
+
+## Description
+
+gaan ema crossover
+
+## Source Code
+
+````pine
+//@version=4
+strategy("gaan ema crossover", overlay=true)
+t1 = time(timeframe.period, "1000-1500")
+ema9 = ema(close, 9)
+ema27 = ema(close, 27)
+ema81 = ema(close, 81)
+
+long = ema27 > ema81
+long2 = close > ema9
+
+short = ema27 <ema81
+short2 = close < ema9
+
+longexit = close < ema9
+shortexit = close > ema9
+
+plot(ema9, title="9", color=#00ff00, linewidth=3)
+plot(ema27, title="27", color=#11ff11, linewidth=3)
+plot(ema81, title="81", color=#22ff22, linewidth=3)
+
+if (t1==true)
+    if (long==true and long2==true)
+        strategy.entry("long", strategy.long, 75.0)
+
+
+if (t1==true)
+    if (short==true and short2==true)
+        strategy.entry("short", strategy.short, 75.0)
+        strategy.close("long", when = longexit )
+        strategy.close("short", when = shortexit)
+````

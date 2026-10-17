@@ -1,0 +1,43 @@
+# Crossing Ema 20:9 by Sedkur
+
+- url: https://www.tradingview.com/script/sKUOnN89-Crossing-Ema-20-9-by-Sedkur/
+- type: strategy
+- pine_id: PUB;2FgNij7Bw9AmHtQClcaTrY85Bic9d8SI
+- version: 4.0
+
+## Description
+
+Ema9 : Ema 20 crossing signals! On daily chart...
+
+## Source Code
+
+````pine
+//@version=4
+
+strategy (title="Crossing Ema 20:9 by Sedkur", overlay=false)
+
+src = close
+
+ema20 = ema(src, 20)
+ema9 = ema(src, 9)
+
+plot( ema20, color=color.orange, style=plot.style_line, title="EMA20", linewidth=2)
+plot( ema9, color=color.blue, style=plot.style_line, title="EMA9", linewidth=2)
+
+bullish = cross(ema9, ema20) and (ema9>ema20)?true:false
+bearish = cross(ema9, ema20) and (ema20>ema9)?true:false
+
+plotshape(bullish, style=shape.triangleup , location=location.belowbar, color=color.lime,size=size.tiny, title="Buy")
+plotshape(bearish, style=shape.triangledown , location=location.abovebar, color=color.red,size=size.tiny, title="Sell")
+
+alertcondition(bullish, title="Bullish", message="Buy Signal")
+alertcondition(bearish, title="Bearish", message="Sell Signal")
+
+
+
+if (bullish)
+    strategy.entry("buy", strategy.long, comment="buy", when = year>2016)
+if (bearish)
+    strategy.entry("sell", strategy.short, comment="sell", when = year>2016)
+//plot(strategy.equity)
+````

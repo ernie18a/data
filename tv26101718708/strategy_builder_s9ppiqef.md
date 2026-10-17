@@ -1,0 +1,282 @@
+# Strategy Builder
+
+- url: https://www.tradingview.com/script/s9PPiQef-Strategy-Builder/
+- type: strategy
+- pine_id: PUB;7afce01b551c46279f842f6aaf292295
+- version: 2.0
+
+## Description
+
+use external indicators on the chart as a source for a strategy. use 5 different triggers with drop down conditions. you can use any indicator that plots.
+
+
+I will amend info when I get more time. improvement suggestions or indicator combinations would be appreciated.
+
+## Source Code
+
+````pine
+// This Pine Script® code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © Bmaloney
+
+//@version=5
+strategy('Strategy Builder',
+     overlay=true, 
+     initial_capital=50, 
+     currency=currency.USDT,
+     default_qty_type=strategy.percent_of_equity, 
+     default_qty_value=100,
+     commission_type=strategy.commission.percent,
+     commission_value=0.05,
+     process_orders_on_close=true, 
+     calc_on_every_tick=false)
+
+//--------------------------------------
+// ========== Master / Combine ==========
+enableBuy  = input.bool(true, "Enable Buy Alerts")
+enableSell = input.bool(true, "Enable Sell Alerts")
+
+combineBuyMode  = input.string("All - same bar", "Combine Buy",  options=["Any","All - same bar","All - within bars"], group="Combine")
+combineSellMode = input.string("All - same bar", "Combine Sell", options=["Any","All - same bar","All - within bars"], group="Combine")
+withinBars      = input.int(3, "Lookback bars for 'All - within bars'", minval=1, group="Combine")
+onCloseOnly     = input.bool(true, "Trigger only on bar close", group="Combine")
+
+//--------------------------------------
+// ========== BUY slots ==========
+enableB1 = input.bool(true,  "Enable Buy Slot 1", group="Buy Conditions")
+b1s1 = input.source(close, "Src1", group="Buy Conditions", inline="B1")
+b1c  = input.string("Crossover", "Condition", options=["Crossover","Crossunder","Greater Than Previous","Less Than Previous","Greater Than","Less Than","Greater Than Value","Less Than Value","Equal","Not Equal"], group="Buy Conditions", inline="B1")
+b1s2 = input.source(close, "Src2", group="Buy Conditions", inline="B1")
+b1val = input.float(50.0, "Value", group="Buy Conditions", inline="B1")
+
+enableB2 = input.bool(false, "Enable Buy Slot 2", group="Buy Conditions")
+b2s1 = input.source(close, "Src1", group="Buy Conditions", inline="B2")
+b2c  = input.string("Crossover", "Condition", options=["Crossover","Crossunder","Greater Than Previous","Less Than Previous","Greater Than","Less Than","Greater Than Value","Less Than Value","Equal","Not Equal"], group="Buy Conditions", inline="B2")
+b2s2 = input.source(close, "Src2", group="Buy Conditions", inline="B2")
+b2val = input.float(50.0, "Value", group="Buy Conditions", inline="B2")
+
+enableB3 = input.bool(false, "Enable Buy Slot 3", group="Buy Conditions")
+b3s1 = input.source(close, "Src1", group="Buy Conditions", inline="B3")
+b3c  = input.string("Crossover", "Condition", options=["Crossover","Crossunder","Greater Than Previous","Less Than Previous","Greater Than","Less Than","Greater Than Value","Less Than Value","Equal","Not Equal"], group="Buy Conditions", inline="B3")
+b3s2 = input.source(close, "Src2", group="Buy Conditions", inline="B3")
+b3val = input.float(50.0, "Value", group="Buy Conditions", inline="B3")
+
+enableB4 = input.bool(false, "Enable Buy Slot 4", group="Buy Conditions")
+b4s1 = input.source(close, "Src1", group="Buy Conditions", inline="B4")
+b4c  = input.string("Crossover", "Condition", options=["Crossover","Crossunder","Greater Than Previous","Less Than Previous","Greater Than","Less Than","Greater Than Value","Less Than Value","Equal","Not Equal"], group="Buy Conditions", inline="B4")
+b4s2 = input.source(close, "Src2", group="Buy Conditions", inline="B4")
+b4val = input.float(50.0, "Value", group="Buy Conditions", inline="B4")
+
+enableB5 = input.bool(false, "Enable Buy Slot 5", group="Buy Conditions")
+b5s1 = input.source(close, "Src1", group="Buy Conditions", inline="B5")
+b5c  = input.string("Crossover", "Condition", options=["Crossover","Crossunder","Greater Than Previous","Less Than Previous","Greater Than","Less Than","Greater Than Value","Less Than Value","Equal","Not Equal"], group="Buy Conditions", inline="B5")
+b5s2 = input.source(close, "Src2", group="Buy Conditions", inline="B5")
+b5val = input.float(50.0, "Value", group="Buy Conditions", inline="B5")
+
+//--------------------------------------
+// ========== SELL slots ==========
+enableS1 = input.bool(true, "Enable Sell Slot 1", group="Sell Conditions")
+s1s1 = input.source(close, "Src1", group="Sell Conditions", inline="S1")
+s1c  = input.string("Crossunder", "Condition", options=["Crossover","Crossunder","Greater Than Previous","Less Than Previous","Greater Than","Less Than","Greater Than Value","Less Than Value","Equal","Not Equal"], group="Sell Conditions", inline="S1")
+s1s2 = input.source(close, "Src2", group="Sell Conditions", inline="S1")
+s1val = input.float(50.0, "Value", group="Sell Conditions", inline="S1")
+
+enableS2 = input.bool(false, "Enable Sell Slot 2", group="Sell Conditions")
+s2s1 = input.source(close, "Src1", group="Sell Conditions", inline="S2")
+s2c  = input.string("Crossunder", "Condition", options=["Crossover","Crossunder","Greater Than Previous","Less Than Previous","Greater Than","Less Than","Greater Than Value","Less Than Value","Equal","Not Equal"], group="Sell Conditions", inline="S2")
+s2s2 = input.source(close, "Src2", group="Sell Conditions", inline="S2")
+s2val = input.float(50.0, "Value", group="Sell Conditions", inline="S2")
+
+enableS3 = input.bool(false, "Enable Sell Slot 3", group="Sell Conditions")
+s3s1 = input.source(close, "Src1", group="Sell Conditions", inline="S3")
+s3c  = input.string("Crossunder", "Condition", options=["Crossover","Crossunder","Greater Than Previous","Less Than Previous","Greater Than","Less Than","Greater Than Value","Less Than Value","Equal","Not Equal"], group="Sell Conditions", inline="S3")
+s3s2 = input.source(close, "Src2", group="Sell Conditions", inline="S3")
+s3val = input.float(50.0, "Value", group="Sell Conditions", inline="S3")
+
+enableS4 = input.bool(false, "Enable Sell Slot 4", group="Sell Conditions")
+s4s1 = input.source(close, "Src1", group="Sell Conditions", inline="S4")
+s4c  = input.string("Crossunder", "Condition", options=["Crossover","Crossunder","Greater Than Previous","Less Than Previous","Greater Than","Less Than","Greater Than Value","Less Than Value","Equal","Not Equal"], group="Sell Conditions", inline="S4")
+s4s2 = input.source(close, "Src2", group="Sell Conditions", inline="S4")
+s4val = input.float(50.0, "Value", group="Sell Conditions", inline="S4")
+
+enableS5 = input.bool(false, "Enable Sell Slot 5", group="Sell Conditions")
+s5s1 = input.source(close, "Src1", group="Sell Conditions", inline="S5")
+s5c  = input.string("Crossunder", "Condition", options=["Crossover","Crossunder","Greater Than Previous","Less Than Previous","Greater Than","Less Than","Greater Than Value","Less Than Value","Equal","Not Equal"], group="Sell Conditions", inline="S5")
+s5s2 = input.source(close, "Src2", group="Sell Conditions", inline="S5")
+s5val = input.float(50.0, "Value", group="Sell Conditions", inline="S5")
+
+//--------------------------------------
+// ========== Condition evaluator ==========
+f_condition(srcA, cond, srcB, val) =>
+    if cond == "Crossover"
+        ta.crossover(srcA, srcB)
+    else if cond == "Crossunder"
+        ta.crossunder(srcA, srcB)
+    else if cond == "Greater Than Previous"
+        srcA > srcA[1]
+    else if cond == "Less Than Previous"
+        srcA < srcA[1]
+    else if cond == "Greater Than"
+        srcA > srcB
+    else if cond == "Less Than"
+        srcA < srcB
+    else if cond == "Greater Than Value"
+        srcA > val
+    else if cond == "Less Than Value"
+        srcA < val
+    else if cond == "Equal"
+        srcA == srcB
+    else if cond == "Not Equal"
+        srcA != srcB
+    else
+        false
+
+recentTrue(cond, bars) =>
+    not na(ta.barssince(cond)) and ta.barssince(cond) <= bars
+
+//--------------------------------------
+// ========== Evaluate slots ==========
+bb1 = enableB1 and f_condition(b1s1, b1c, b1s2, b1val)
+bb2 = enableB2 and f_condition(b2s1, b2c, b2s2, b2val)
+bb3 = enableB3 and f_condition(b3s1, b3c, b3s2, b3val)
+bb4 = enableB4 and f_condition(b4s1, b4c, b4s2, b4val)
+bb5 = enableB5 and f_condition(b5s1, b5c, b5s2, b5val)
+
+ss1 = enableS1 and f_condition(s1s1, s1c, s1s2, s1val)
+ss2 = enableS2 and f_condition(s2s1, s2c, s2s2, s2val)
+ss3 = enableS3 and f_condition(s3s1, s3c, s3s2, s3val)
+ss4 = enableS4 and f_condition(s4s1, s4c, s4s2, s4val)
+ss5 = enableS5 and f_condition(s5s1, s5c, s5s2, s5val)
+
+//--------------------------------------
+// ========== Combine helpers ==========
+combine_any(c1, c2, c3, c4, c5) =>
+    c1 or c2 or c3 or c4 or c5
+
+combine_all_samebar(c1, c2, c3, c4, c5, e1, e2, e3, e4, e5) =>
+    (not e1 or c1) and (not e2 or c2) and (not e3 or c3) and (not e4 or c4) and (not e5 or c5)
+
+combine_all_within(c1, c2, c3, c4, c5, e1, e2, e3, e4, e5, bars) =>
+    (not e1 or recentTrue(c1, bars)) and (not e2 or recentTrue(c2, bars)) and (not e3 or recentTrue(c3, bars)) and (not e4 or recentTrue(c4, bars)) and (not e5 or recentTrue(c5, bars))
+
+//--------------------------------------
+// ========== Build Buy/Sell combined ==========
+buyAny     = combine_any(bb1, bb2, bb3, bb4, bb5)
+buyAllSB   = combine_all_samebar(bb1, bb2, bb3, bb4, bb5, enableB1, enableB2, enableB3, enableB4, enableB5)
+buyAllWin  = combine_all_within(bb1, bb2, bb3, bb4, bb5, enableB1, enableB2, enableB3, enableB4, enableB5, withinBars)
+
+sellAny    = combine_any(ss1, ss2, ss3, ss4, ss5)
+sellAllSB  = combine_all_samebar(ss1, ss2, ss3, ss4, ss5, enableS1, enableS2, enableS3, enableS4, enableS5)
+sellAllWin = combine_all_within(ss1, ss2, ss3, ss4, ss5, enableS1, enableS2, enableS3, enableS4, enableS5, withinBars)
+
+buyPre  = enableBuy  and (combineBuyMode  == "Any" ? buyAny  : combineBuyMode  == "All - same bar" ? buyAllSB  : buyAllWin)
+sellPre = enableSell and (combineSellMode == "Any" ? sellAny : combineSellMode == "All - same bar" ? sellAllSB : sellAllWin)
+
+buyCond  = onCloseOnly ? (buyPre  and barstate.isconfirmed) : buyPre
+sellCond = onCloseOnly ? (sellPre and barstate.isconfirmed) : sellPre
+
+//--------------------------------------
+// Trade Entry Control
+//--------------------------------------
+oneTradeAtATime = input.bool(true, title="Wait for trade to close before opening new one")
+waitBars = input.int(0, title="Bars to Wait Before New Trade", minval=0)
+
+var int barsSinceLastTrade = na
+if not na(barsSinceLastTrade)
+    barsSinceLastTrade += 1
+if strategy.position_size != 0 and (strategy.position_size[1] == 0)
+    barsSinceLastTrade := 0
+if strategy.position_size == 0 and strategy.position_size[1] != 0
+    barsSinceLastTrade := 0
+
+long  = buyCond
+short = sellCond
+
+canTrade = na(barsSinceLastTrade) or barsSinceLastTrade >= waitBars
+
+if oneTradeAtATime
+    if strategy.position_size == 0 and canTrade
+        if long
+            strategy.entry("LONG", strategy.long)
+        if short
+            strategy.entry("SHORT", strategy.short)
+else
+    if canTrade
+        if long
+            strategy.entry("LONG", strategy.long)
+        if short
+            strategy.entry("SHORT", strategy.short)
+
+//--------------------------------------
+// Fixed Percent Stop Loss & Take Profit
+//--------------------------------------
+useStops = input.bool(true, title="Use Fixed SL/TP Exits")
+
+stopPer = input.float(1.0, title="Stop Loss %") / 100
+takePer = input.float(1.0, title="Take Profit %") / 100
+
+longStop  = strategy.position_avg_price * (1 - stopPer)
+shortStop = strategy.position_avg_price * (1 + stopPer)
+longTake  = strategy.position_avg_price * (1 + takePer)
+shortTake = strategy.position_avg_price * (1 - takePer)
+
+if useStops
+    if (strategy.position_size > 0)
+        strategy.exit("Close Long", stop=longStop, limit=longTake)
+    if (strategy.position_size < 0)
+        strategy.exit("Close Short", stop=shortStop, limit=shortTake)
+
+//--------------------------------------
+// CLOSE TRADE IF SIDEWAYS FOR X BARS
+//--------------------------------------
+useSidewaysClose = input.bool(true, title="Close trade if sideways for X bars?")
+sidewaysBars = input.int(10, title="Bars to wait before closing if sideways", minval=1)
+sidewaysThreshold = input.float(0.2, title="Max % change considered sideways", minval=0.01) / 100
+
+var float entryPrice = na
+var int barsInTrade = 0
+
+if strategy.position_size != 0
+    if na(entryPrice)
+        entryPrice := strategy.position_avg_price
+        barsInTrade := 0
+    else
+        barsInTrade += 1
+
+    change = math.abs(close - entryPrice) / entryPrice
+
+    if useSidewaysClose and barsInTrade >= sidewaysBars and change <= sidewaysThreshold
+        if strategy.position_size > 0
+            strategy.close("LONG", comment="Sideways Close Long")
+        if strategy.position_size < 0
+            strategy.close("SHORT", comment="Sideways Close Short")
+else
+    entryPrice := na
+    barsInTrade := 0
+
+//--------------------------------------
+// TRADE PROJECTION STYLE PLOTS
+//--------------------------------------
+var transpZone = 85
+
+isLong  = strategy.position_size > 0
+isShort = strategy.position_size < 0
+
+entryLongPlot = plot(isLong ? strategy.position_avg_price : na,
+     color=color.blue, linewidth=1, style=plot.style_linebr, title="Entry (Long)")
+longStopPlot  = plot(isLong ? longStop : na,
+     color=color.red, linewidth=1, style=plot.style_linebr, title="Long Stop")
+longTakePlot  = plot(isLong ? longTake : na,
+     color=color.green, linewidth=1, style=plot.style_linebr, title="Long Take")
+
+entryShortPlot = plot(isShort ? strategy.position_avg_price : na,
+     color=color.blue, linewidth=1, style=plot.style_linebr, title="Entry (Short)")
+shortStopPlot  = plot(isShort ? shortStop : na,
+     color=color.red, linewidth=1, style=plot.style_linebr, title="Short Stop")
+shortTakePlot  = plot(isShort ? shortTake : na,
+     color=color.green, linewidth=1, style=plot.style_linebr, title="Short Take")
+
+fill(entryLongPlot, longStopPlot,  color=color.new(color.red, transpZone),   title="Long Stop Zone",  fillgaps=false)
+fill(entryLongPlot, longTakePlot,  color=color.new(color.green, transpZone), title="Long Take Zone", fillgaps=false)
+fill(entryShortPlot, shortStopPlot, color=color.new(color.red, transpZone),  title="Short Stop Zone", fillgaps=false)
+fill(entryShortPlot, shortTakePlot, color=color.new(color.green, transpZone),title="Short Take Zone", fillgaps=false)
+````

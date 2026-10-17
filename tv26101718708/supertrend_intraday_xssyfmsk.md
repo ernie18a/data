@@ -1,0 +1,92 @@
+# Supertrend - Intraday
+
+- url: https://www.tradingview.com/script/XssYFmSK-Supertrend-Intraday/
+- type: strategy
+- pine_id: PUB;S6N0eoW67I3okJlylKoHIHcdSPRAZtlL
+- version: 3.0
+
+## Description
+
+[b]Supertrend Intraday Strategy[/b]
+
+Basic supertrend strategy purpose built for intraday trading. Users can define intraday session during which the strategy will run.
+Position is reversed when signal changes by using double quantity. Once the intraday session is over & if the position is open; it is squared off.
+
+[b]Parameters:[/b]
+[list]
+[*] Intraday Session - Defines the duration for which the strategy should execute.
+[*] Multiplier
+[*] ATR Period
+[/list]
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © Pritesh-StocksDeveloper
+ 
+//@version=5
+strategy("Supertrend - Intraday", overlay=true, calc_on_every_tick = false)
+ 
+// ********** Strategy inputs - Start **********
+ 
+// Used for intraday handling
+// Session value should be from market start to the time you want to square-off 
+// your intraday strategy
+// Important: The end time should be at least 2 minutes before the intraday
+// square-off time set by your broker
+var i_marketSession = input.session(title="Market session",
+     defval="0915-1455", confirm=true)
+ 
+var float i_multiplier = input.float(title = "Multiplier",
+     defval = 4, step = 0.1, confirm=true)
+ 
+var int i_atrPeriod = input.int(title = "ATR Period",
+     defval = 14, confirm=true)
+ 
+// ********** Strategy inputs - End **********
+ 
+ 
+// ********** Supporting functions - Start **********
+ 
+// A function to check whether the bar or period is in intraday session
+barInSession(sess) => time(timeframe.period, sess) != 0
+ 
+// ********** Supporting functions - End **********
+ 
+ 
+// ********** Strategy - Start **********
+ 
+[superTrend, dir] = ta.supertrend(i_multiplier, i_atrPeriod)
+ 
+colResistance = dir == 1 and dir == dir[1] ? color.new(color.red, 0) : color.new(color.red, 100)
+colSupport = dir == -1 and dir == dir[1] ? color.new(color.green, 0) : color.new(color.green, 100)
+ 
+plot(superTrend, color = colResistance, linewidth=2)
+plot(superTrend, color = colSupport, linewidth=2)
+ 
+// Long/short condition
+longCondition = close > superTrend
+shortCondition = close < superTrend
+ 
+// See if intraday session is active
+bool intradaySession = barInSession(i_marketSession)
+ 
+// Trade only if intraday session is active
+  
+// Long position
+// When longCondition and intradaySession both are true
+strategy.entry(id = "Long", direction = strategy.long, 
+     when = longCondition and intradaySession)
+  
+// Short position
+// When shortCondition and intradaySession both are true
+strategy.entry(id = "Short", direction = strategy.short, 
+     when = shortCondition and intradaySession)
+  
+// Square-off position (when session is over and position is open)
+squareOff = (not intradaySession) and (strategy.position_size != 0)
+strategy.close_all(when = squareOff, comment = "Square-off")
+ 
+// ********** Strategy - End **********
+````

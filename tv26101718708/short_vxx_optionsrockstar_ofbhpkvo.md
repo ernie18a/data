@@ -1,0 +1,36 @@
+# Short VXX - OptionsRockstar
+
+- url: https://www.tradingview.com/script/OfbHpKVo-Short-VXX-OptionsRockstar/
+- type: strategy
+- pine_id: PUB;1823
+- version: -1.0
+
+## Description
+
+Backtesting Script
+
+## Source Code
+
+````pine
+//@version=2
+strategy("Short VXX", overlay=true)
+fastLength = input(5, title="Fast SMA Length")
+slowLength = input(15, title="Slow SMA Length")
+atrLength = input(14, title="ATR Length")
+percentRisk = input(1, title="Percent Risk")
+startYear = input(2014, title="Start Year")
+price = close
+
+mafast = sma(price, fastLength)
+maslow = sma(price, slowLength)
+atr = atr(atrLength)
+risk = (percentRisk/100)
+contracts = (strategy.equity*risk)/(atr/4)
+
+plot(mafast, color=white)
+plot(maslow, color=blue)
+
+if(cross(mafast, maslow) and (mafast<maslow) and (year>=startYear))
+    strategy.entry("VXX Short", strategy.short, qty=(contracts), comment="VXX Short")
+strategy.exit("VXX Short", profit = atr*50, loss = atr*25, comment="VXX Exit")
+````

@@ -1,0 +1,51 @@
+# MM tester
+
+- url: https://www.tradingview.com/script/0oH3f6yZ/
+- type: strategy
+- pine_id: PUB;opSo2JwxzxPdgHBbeBA3MXXrvjkKjaoO
+- version: 1.0
+
+## Description
+
+You can test a two ema / sma strategy changing type of MM and length on settings.
+
+If you get a profitable combination you can share it in the comments :)
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © luisgzafra
+
+//@version=4
+strategy("MM tester", overlay=true)
+
+// Inputs
+
+//
+int ema1        = input(title="MM1", defval=14, minval=0)
+int ema2        = input(title="MM2", defval=28, minval=0)
+
+//
+tipo_MM         = input(title="MM type", options=["EMA", "SMA"], defval="EMA")
+
+//
+MM1             = tipo_MM == "EMA"? ema(close, ema1) : sma(close, ema1)
+MM2             = tipo_MM == "EMA"? ema(close, ema2) : sma(close, ema2)
+
+//
+plot            (MM1, color = color.black)
+plot            (MM2, color = MM1 > MM2? color.red : color.green, linewidth=2)
+
+//
+longCondition   = crossover(MM1, MM2)
+if (longCondition)
+    strategy.entry("My Long Entry Id", strategy.long)
+
+//
+shortCondition  = crossunder(MM1, MM2)
+if (shortCondition)
+    strategy.entry("My Short Entry Id", strategy.short)
+    
+// END
+````

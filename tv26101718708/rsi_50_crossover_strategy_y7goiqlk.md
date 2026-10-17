@@ -1,0 +1,67 @@
+# RSI 50 Crossover Strategy
+
+- url: https://www.tradingview.com/script/Y7GoIQlk-RSI-50-Crossover-Strategy/
+- type: strategy
+- pine_id: PUB;9eb615d98e1943b691ed6f78d10098aa
+- version: 1.0
+
+## Description
+
+Buy candle close above 50RSI
+Sell candle close below 50RSI
+
+## Source Code
+
+````pine
+// This Pine Script® code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © oumarovangelos
+
+//@version=5
+strategy("RSI 50 Crossover Strategy", overlay=true, margin_long=100, margin_short=100, initial_capital=10000)
+
+// Inputs
+rsiLength = input.int(14, "RSI Length")
+th_low = input.int(39, "Lower threshold (for visuals)")
+th_high = input.int(61, "Upper threshold (for visuals)")
+
+// RSI calculation
+rsi = ta.rsi(close, rsiLength)
+
+// --- Strategy Logic ---
+rsiCrossUp = ta.crossover(rsi, 50)
+rsiCrossDown = ta.crossunder(rsi, 50)
+
+// Entry and exit conditions
+if (rsiCrossUp)
+    strategy.entry("RSI Buy", strategy.long)
+if (rsiCrossDown)
+    strategy.close("RSI Buy")
+
+// Optional: Add short logic
+if (rsiCrossDown)
+    strategy.entry("RSI Sell", strategy.short)
+if (rsiCrossUp)
+    strategy.close("RSI Sell")
+
+// --- Visual Highlights ---
+var bool inRed = false
+var bool inGreen = false
+
+if (barstate.isconfirmed)
+    if (not inRed and rsi < th_low)
+        inRed := true
+    if (inRed and rsi > th_low)
+        inRed := false
+    if (not inGreen and rsi > th_high)
+        inGreen := true
+    if (inGreen and rsi < th_high)
+        inGreen := false
+
+bgcol = inRed ? color.new(color.red, 85) : inGreen ? color.new(color.green, 85) : na
+bgcolor(bgcol)
+barcol = inRed ? color.new(color.red, 70) : inGreen ? color.new(color.green, 70) : na
+barcolor(barcol)
+
+// Hidden RSI plot for reference
+plot(rsi, title="RSI", color=color.blue, display=display.none)
+````

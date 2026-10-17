@@ -1,0 +1,58 @@
+# Simply Stochastic Backtest
+
+- url: https://www.tradingview.com/script/ohf1AUDe-Simply-Stochastic-Backtest/
+- type: strategy
+- pine_id: PUB;YC9xDlRAVg6s4aRDzX5GgWFrRtYnEuay
+- version: 1.0
+
+## Description
+
+This back testing strategy generates a long trade at the Open of the following 
+ bar when the %K line crosses up UpBand line.
+ It generates a short trade at the Open of the following bar when the %K line 
+ crosses down DownBand line.
+
+ You can change long to short in the Input Settings
+ WARNING:
+ - For purpose educate only
+ - This script to change bars colors.
+
+## Source Code
+
+````pine
+//@version=2
+////////////////////////////////////////////////////////////
+//  Copyright by HPotter v1.0 05/10/2017
+// This back testing strategy generates a long trade at the Open of the following 
+// bar when the %K line crosses up UpBand line.
+// It generates a short trade at the Open of the following bar when the %K line 
+// crosses down DownBand line.
+//
+// You can change long to short in the Input Settings
+// WARNING:
+// - For purpose educate only
+// - This script to change bars colors.
+////////////////////////////////////////////////////////////
+strategy(title="Strategy Stochastic", shorttitle="Strategy Stochastic")
+Length = input(7, minval=1)
+DLength = input(3, minval=1)
+UpBand = input(20, minval=1)
+DownBand = input(80, minval=1)
+reverse = input(false, title="Trade reverse")
+hline(50, color=black, linestyle=dashed)
+hline(UpBand, color=red, linestyle=line)
+hline(DownBand, color=green, linestyle=line)
+vFast = stoch(close, high, low, Length)
+vSlow = sma(vFast, DLength)
+pos = iff(vFast > UpBand, 1,
+	   iff(vFast < DownBand, -1, nz(pos[1], 0))) 
+possig = iff(reverse and pos == 1, -1,
+          iff(reverse and pos == -1, 1, pos))	   
+if (possig == 1) 
+    strategy.entry("Long", strategy.long)
+if (possig == -1)
+    strategy.entry("Short", strategy.short)	   	    
+barcolor(possig == -1 ? red: possig == 1 ? green : blue )  
+plot(vSlow, color=blue, title="D")
+plot(vFast, color=red, title="K")
+````

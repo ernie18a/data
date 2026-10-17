@@ -1,0 +1,58 @@
+# Dhananjay Volatility stop strategy v1.0
+
+- url: https://www.tradingview.com/script/vARWQsCE-Dhananjay-Volatility-stop-strategy-v1-0/
+- type: strategy
+- pine_id: PUB;vbJHTrhmsq8BGALX9aTz43qdcJJqcoFx
+- version: 2.0
+
+## Description
+
+[image]https://www.tradingview.com/x/9r5AFr3B/[/image]
+
+Sharing one more strategy after getting good feedback on my earlier published strategy.
+
+This is simple volatility stop strategy where in we are using VStop as entry and exit point. 
+
+Again smart traders can add MA to decide the trend and can avoid trading in opposite direction of trend which will help them to minimize loss making trades. 
+
+There are more than 1 parameters which traders can use/change to make this strategy compatible to their instrument.  
+
+To understand what is VStop use google.com :-) 
+
+Looking forward to receiving feedback from all of you.
+
+## Source Code
+
+````pine
+//@version=2
+strategy("Dhananjay Volatility stop strategy v1.0", overlay=true)
+
+trenddecider = input(2)
+trend = ema(low,trenddecider)
+length = input(20)
+mult = input(1)
+atr_ = atr(length)
+max1 = max(nz(max_[1]), close)
+min1 = min(nz(min_[1]), close)
+is_uptrend_prev = nz(is_uptrend[1], true)
+stop = is_uptrend_prev ? max1 - mult * atr_ : min1 + mult * atr_
+vstop_prev = nz(vstop[1])
+vstop1 = is_uptrend_prev ? max(vstop_prev, stop) : min(vstop_prev, stop)
+is_uptrend = close - vstop1 >= 0
+is_trend_changed = is_uptrend != is_uptrend_prev
+max_ = is_trend_changed ? close : max1
+min_ = is_trend_changed ? close : min1
+vstop = is_trend_changed ? is_uptrend ? max_ - mult * atr_ : min_ + mult * atr_ : vstop1
+plot(vstop, color = is_uptrend ? green : red, style=line, linewidth=2)
+
+bearish = close < vstop
+bullish = close > vstop
+
+if  (bullish)
+    strategy.entry("long", strategy.long, comment="GOLong")
+    strategy.exit("long","strategy.long",comment="ExitLong",when=close<vstop)
+
+if (bearish)
+    strategy.entry("short", strategy.short, comment="GoShort")
+    strategy.exit("short","strategy.short",comment="ExitLong",when=close>vstop)
+````

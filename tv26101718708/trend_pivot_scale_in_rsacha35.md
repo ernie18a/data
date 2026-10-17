@@ -1,0 +1,170 @@
+# Trend Pivot Scale In
+
+- url: https://www.tradingview.com/script/rSachA35-Trend-Pivot-Scale-In/
+- type: strategy
+- pine_id: PUB;f95f238e2b6c4bd387e45d6d2b975fdd
+- version: 1.0
+
+## Description
+
+Finally decided to publish this one.
+
+A lot of testing, a lot of bad ideas thrown away, and more chart staring than I'd like to admit 😅
+
+This strategy focuses on trading with the trend, scaling into pullbacks, and letting statistics do the heavy lifting instead of emotions.
+
+No script is perfect, and I definitely encourage everyone to test it for themselves before using it anywhere near a live account.
+
+If you give it a try, let me know what you think. Feedback is always welcome.
+
+And if you find it useful, a 👍 Like or 🚀 Boost goes a long way.
+
+Best of luck out there, guys. 🍻
+
+## Source Code
+
+````pine
+//@version=6
+strategy("Trend Pivot Scale In", overlay=true, pyramiding=5)
+
+// INPUTS
+emaLen    = input.int(200, "EMA")
+pivotLen  = input.int(8, "Pivot Strength")
+adxLen    = input.int(14, "ADX")
+adxSmooth = input.int(14, "ADX Smooth")
+adxMin    = input.int(25, "Min ADX")
+atrLen    = input.int(14, "ATR")
+
+// EMA
+ema200 = ta.ema(close, emaLen)
+plot(ema200, color=color.orange, linewidth=2)
+
+// ADX + DI
+[diPlus, diMinus, adx] = ta.dmi(adxLen, adxSmooth)
+
+// TREND
+bullTrend = close > ema200 and diPlus > diMinus and adx > adxMin
+bearTrend = close < ema200 and diMinus > diPlus and adx > adxMin
+
+// PIVOTS
+pivotLow  = ta.pivotlow(low, pivotLen, pivotLen)
+pivotHigh = ta.pivothigh(high, pivotLen, pivotLen)
+
+// SIGNALS
+buySignal  = bullTrend and not na(pivotLow)
+sellSignal = bearTrend and not na(pivotHigh)
+
+// SCALE COUNTERS
+var int longAdds = 0
+var int shortAdds = 0
+
+if strategy.position_size == 0
+    longAdds := 0
+    shortAdds := 0
+
+// 10-10-20-40-80
+longCash =
+     longAdds == 0 ? 10 :
+     longAdds == 1 ? 10 :
+     longAdds == 2 ? 20 :
+     longAdds == 3 ? 40 :
+     80
+
+shortCash =
+     shortAdds == 0 ? 10 :
+     shortAdds == 1 ? 10 :
+     shortAdds == 2 ? 20 :
+     shortAdds == 3 ? 40 :
+     80
+
+// POSITION SIZE
+longQty = longCash / close
+shortQty = shortCash / close
+
+// ENTRIES
+// SCALE INTO LOSERS ONLY
+
+if buySignal and longAdds < 5 and strategy.position_size >= 0
+    if strategy.position_size == 0 or close < strategy.position_avg_price
+        strategy.entry(
+             "BUY " + str.tostring(longAdds + 1),
+             strategy.long,
+             qty = longQty)
+        longAdds += 1
+
+if sellSignal and shortAdds < 5 and strategy.position_size <= 0
+    if strategy.position_size == 0 or close > strategy.position_avg_price
+        strategy.entry(
+             "SELL " + str.tostring(shortAdds + 1),
+             strategy.short,
+             qty = shortQty)
+        shortAdds += 1
+
+// ATR
+atr = ta.atr(atrLen)
+
+// SMART TP
+float tpATR = 3.0
+
+if strategy.opentrades == 2
+    tpATR := 2.0
+
+if strategy.opentrades == 3
+    tpATR := 1.5
+
+if strategy.opentrades >= 4
+    tpATR := 1.2
+
+longTP = strategy.position_avg_price + atr * tpATR
+shortTP = strategy.position_avg_price - atr * tpATR
+
+// CLOSE WHOLE BASKET
+if strategy.position_size > 0
+    strategy.exit(
+         "LONG EXIT",
+         from_entry = "",
+         limit = longTP)
+
+if strategy.position_size < 0
+    strategy.exit(
+         "SHORT EXIT",
+         from_entry = "",
+         limit = shortTP)
+
+// SIGNALS
+plotshape(
+     buySignal,
+     style = shape.labelup,
+     location = location.belowbar,
+     color = color.lime,
+     text = "BUY",
+     textcolor = color.black)
+
+plotshape(
+     sellSignal,
+     style = shape.labeldown,
+     location = location.abovebar,
+     color = color.red,
+     text = "SELL",
+     textcolor = color.white)
+
+// TP LINES
+plot(
+     strategy.position_size > 0 ? longTP : na,
+     color = color.lime,
+     linewidth = 2,
+     style = plot.style_linebr)
+
+plot(
+     strategy.position_size < 0 ? shortTP : na,
+     color = color.aqua,
+     linewidth = 2,
+     style = plot.style_linebr)
+
+// ALERTS
+if buySignal
+    alert("BUY", alert.freq_once_per_bar_close)
+
+if sellSignal
+    alert("SELL", alert.freq_once_per_bar_close)
+````

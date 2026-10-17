@@ -1,0 +1,45 @@
+# [STRATEGY][RS]Roulette Martingale V0
+
+- url: https://www.tradingview.com/script/QbTJycMV-STRATEGY-RS-Roulette-Martingale-V0/
+- type: strategy
+- pine_id: PUB;2201
+- version: -1.0
+
+## Description
+
+a solid strategy all across the majors.
+double the profits :p
+
+WARNING: use at your own discretion.
+
+## Source Code
+
+````pine
+//@version=2
+strategy(title='[STRATEGY][RS]Roulette Martingale V0', shorttitle='RM', overlay=false, pyramiding=0, initial_capital=100000, currency=currency.USD)
+initial_trading_risk_vs_equity = input(0.1)
+maximum_risk_ratio_of_equity = input(0.5)
+take_profit_in_points = input(1000000)
+stop_loss_in_points = input(1000000)
+
+trade_session = input(title='Trade Session:', type=string, defval='0400-1500', confirm=false)
+istradingsession = not na(time('1', trade_session))
+bgcolor(istradingsession ? black : na, transp=50)
+
+base_trade_size = strategy.equity * initial_trading_risk_vs_equity
+direction = na(direction[1]) ? 1 : direction[1] == +1 and change(strategy.netprofit) < 0 ? -1 : direction[1] == -1 and change(strategy.netprofit) < 0 ? +1 : direction[1]
+
+condition_buy_entry = change(istradingsession) > 0 and direction > 0 //and track_buy_trades[1] > 0
+condition_sel_entry = change(istradingsession) > 0 and direction < 0 //and track_sel_trades[1] > 0
+
+track_buy_trades = na(track_buy_trades[1]) ? 1 : change(condition_buy_entry) > 0 ? track_buy_trades[1] + 1 : track_sel_trades[1] > 0 ? 0 : track_buy_trades[1]
+track_sel_trades = na(track_sel_trades[1]) ? 1 : change(condition_sel_entry) > 0 ? track_sel_trades[1] + 1 : track_buy_trades[1] > 0 ? 0 : track_sel_trades[1]
+plot(track_buy_trades)
+plot(0-track_sel_trades)
+
+adjusted_trade_size = min(strategy.equity*maximum_risk_ratio_of_equity, base_trade_size * (track_buy_trades+track_sel_trades))
+strategy.entry('buy', long=true, qty=adjusted_trade_size, when=condition_buy_entry)
+strategy.entry('sel', long=false, qty=adjusted_trade_size, when=condition_sel_entry)
+strategy.exit('exit buy', from_entry='buy', profit=take_profit_in_points, loss=stop_loss_in_points)
+strategy.close_all(when = not istradingsession)
+````

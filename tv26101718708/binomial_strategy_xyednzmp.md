@@ -1,0 +1,90 @@
+# Binomial Strategy
+
+- url: https://www.tradingview.com/script/xYEdNZmP-Binomial-Strategy/
+- type: strategy
+- pine_id: PUB;O9nDc2R3YopHgb8cK0yYZKZUjviQsf5N
+- version: 1.0
+
+## Description
+
+This script uses the Binomial distribution to enter trades. It calculates the cumulative distribution function for the last 20 bars, applies 2 EMAs to the CDF, and then goes long when the fast one crosses the slow one. [symbol="NASDAQ:QQQ"]NASDAQ:QQQ[/symbol]
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © pieroliviermarquis
+
+//@version=4
+strategy("Binomial Strategy", overlay=false, default_qty_type= strategy.percent_of_equity, default_qty_value= 100, slippage=1, initial_capital= 10000, calc_on_every_tick=true)
+
+
+factorial(length) =>
+    n = 1
+    if length != 0
+        for i = 1 to length
+            n := n * i
+    n
+
+
+binomial_pdf(success, trials, p) =>
+    q = 1-p
+    coef = factorial(trials) / (factorial(trials-success) * factorial(success))
+    pdf = coef * pow(p, success) * pow(q, trials-success)
+        
+        
+binomial_cdf(success, trials, p) =>
+    q = 1-p
+    cdf = 0.0
+    for i = 0 to success
+        cdf := cdf + binomial_pdf(i, trials, p)
+        
+
+up = close[0] > close[1] ? 1 : 0
+
+
+//long-term probabilities
+lt_lookback = 100
+lt_up_bars = sum(up, lt_lookback)
+prob = lt_up_bars/lt_lookback
+
+
+//lookback for cdf
+lookback = 20
+up_bars = sum(up, lookback)
+cdf = binomial_cdf(up_bars, lookback, prob)
+
+
+//ema on cdf
+ema1 = ema(cdf, 10)
+ema2 = ema(cdf, 20)
+
+
+plot(cdf*100)
+plot(ema1*100, color=color.red)
+plot(ema2*100, color=color.orange)
+
+
+buy = ema1 > ema2
+sell = ema1 < ema2
+
+
+//////////////////////Bar Colors//////////////////
+
+var color buy_or_sell = na
+
+if buy == true
+    buy_or_sell := #3BB3E4
+else if sell == true
+    buy_or_sell := #FF006E
+    
+barcolor(buy_or_sell)
+
+///////////////////////////Orders////////////////
+
+if buy
+    strategy.entry("Long", strategy.long, comment="")
+
+if sell
+    strategy.close("Long", comment="Sell")
+````

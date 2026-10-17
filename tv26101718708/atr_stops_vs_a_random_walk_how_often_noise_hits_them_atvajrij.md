@@ -1,0 +1,309 @@
+# ATR Stops vs a Random Walk: How Often Noise Hits Them
+
+- url: https://www.tradingview.com/script/ATVajrIj-ATR-Stops-vs-a-Random-Walk-How-Often-Noise-Hits-Them/
+- type: indicator
+- pine_id: PUB;40b7983eca5c42dca149888408b07caf
+- version: 1.0
+
+## Description
+
+WHAT IT DOES
+A stop placed a few ATRs from price is meant to sit outside the noise. This indicator counts how often price reaches it anyway, and compares that count with what a pure random walk of the same volatility would give. At regular entries that never overlap, it places a long stop and a short stop at 1, 1.5, 2 and 3 ATRs (defaults) from the close and checks the next N bars: the lows for the long stop, the highs for the short stop. For each multiple the table on the last bar shows the long, short and pooled hit rates with a 95% confidence interval, the random-walk rate, the difference in points and a verdict.
+
+WHAT IS ORIGINAL HERE
+ATR stop and trailing-stop tools draw levels; they do not say how often price reaches them, or would by chance. Here the chance has a closed form. For driftless Brownian motion in log price with volatility sigma per bar, the probability of touching a level at log distance d within N bars is 2 x Phi(-d / (sigma x sqrt(N))), by the reflection principle. Each resolved event gets that prediction from its own entry, ATR and sigma, so the measured rate and the random-walk rate come from the same bars. Pine has no normal distribution function, so Phi is built from the Abramowitz and Stegun 7.1.26 approximation of erf, with an error below 1e-7. A volatility row adds a check that does not depend on the stops: the expected range of a Brownian bar is about 1.6 sigma, so an ATR / sigma ratio far from 1.6 says the bars do not move like a random walk.
+
+HOW IT IS MEASURED
+- Entry: the close of a confirmed bar, once the ATR and the volatility window are ready. An event resolves N bars after its entry (20 by default), and the next one can start on that bar, so entries are at least N bars apart.
+- ATR: ta.atr(14) on the entry bar. Sigma: the sample standard deviation of the 100 one-bar log returns that end at the entry bar (defaults).
+- Stops: entry - k x ATR and entry + k x ATR; a hit is a touch by a low or a high of the N bars after the entry.
+- Prediction: d = log distance from the entry to the stop, rate = 2 x Phi(-d / (sigma x sqrt(N))), averaged over both sides of all events.
+- Interval: the event is the unit, because its long and short outcomes share the same bars.
+- Counters move only on confirmed bars; the event still open on the last bar is not counted. No request.security call.
+
+HOW TO USE IT
+1. Keep the defaults first, then set the horizon to the bars you would hold a position.
+2. Read the "difference" column: the pooled hit rate minus the random-walk rate, in points.
+3. Read the verdict: "like a random walk" when the random-walk rate lies inside the interval, "hit more than a random walk" when it lies below it, "hit less than a random walk" when it lies above it; "(small sample)" under 30 events.
+4. Read the volatility row: with an ATR / sigma ratio far from 1.6 the bars are not random-walk bars, and the verdicts reflect that too.
+5. Set Stop 1 to 0.1: that row should read near 100%. Set the horizon to 1: every row should be small.
+
+HOW TO READ THE TABLE
+Header: symbol, timeframe, ATR length, volatility window, horizon.
+One row per stop: events, long hit, short hit, pooled hit, 95% CI, random walk, difference, verdict.
+Volatility: mean ATR as % of price, mean sigma per bar, their ratio, the Brownian reference 1.60, confirmed bars and events.
+Last event: entry time, close, ATR, the lowest low and the highest high of its N bars in ATRs from the entry, and the open event that is not counted yet.
+
+LIMITATIONS
+- The null is a driftless random walk with a constant volatility per event. A trend, a change of volatility, mean reversion or fat tails can move the hit rates away from it; the verdict says that the chart differs, not why.
+- Sigma comes from 100 returns and has an error of about 7% of its own, which the interval does not include.
+- The ATR and sigma windows react to a change of volatility at different speeds.
+- A hit is a touch of the high or the low: no fills, slippage or costs, and no order between the long and the short stop.
+- Highs and lows carry the bid-ask bounce one way, closes with either sign; on thin symbols or low timeframes it inflates the ATR against sigma and the hits at tight stops.
+- Use standard candles; Heikin Ashi or Renko bars change the highs and lows.
+- Entries are spaced from the first loaded bar, so history depth, symbol and timeframe change the result. Counts, not a trading rule. Not financial advice.
+
+The chart shows BINANCE:BTCUSDT on the 1 hour timeframe with the default settings. The table is in the bottom right.
+
+## Source Code
+
+````pine
+//@version=6
+indicator("ATR Stops vs a Random Walk: How Often Noise Hits Them", shorttitle = "ATR-STOP-VS-RW", overlay = true, behind_chart = false)
+
+// ATR Stops vs a Random Walk
+// 1) Events: once the ATR and the volatility window are ready, an event starts at the close of a confirmed bar
+//    and lasts N bars (the horizon); the next one can start on the bar where it resolves, never earlier, so
+//    events never overlap.
+//    Each event keeps its entry (the close), the ATR of the entry bar, ta.atr(length), and sigma, the sample
+//    standard deviation of the 1-bar log returns over the V bars that end at the entry bar. Both are known at
+//    the close of the entry bar.
+// 2) Stops: four multiples k of the ATR, both sides at every event. Long stop = entry - k * ATR, hit when a low
+//    of the N bars after the entry reaches it; short stop = entry + k * ATR, hit when a high reaches it.
+// 3) Random-walk prediction per event, side and k: for driftless Brownian motion in log price with the event's
+//    sigma per bar, the chance of touching a level at log distance d within N bars is 2 * Phi(-d / (sigma *
+//    sqrt(N))), the reflection principle. Phi comes from the Abramowitz and Stegun 7.1.26 approximation of erf.
+// 4) On the last bar the table shows, per k: events, long, short and pooled hit rates, the pooled rate's 95%
+//    interval, the mean random-walk prediction, the difference in points and a verdict; then the mean ATR, the
+//    mean sigma and their ratio, about 1.6 when the bars behave like Brownian motion.
+// The result is a table of counts for this symbol on this chart, not a rule.
+
+// ───────────────────────── Inputs ─────────────────────────
+atrLen = input.int(14, "ATR length", minval = 1, group = "Stops", tooltip = "Length of ta.atr(length), read on the entry bar. The stops sit k ATRs from the entry close.")
+k1 = input.float(1.0, "Stop 1 (x ATR)", minval = 0.01, step = 0.1, group = "Stops", tooltip = "Multiple k of the ATR for the first row: long stop = entry - k * ATR, short stop = entry + k * ATR. Keep the four stops in ascending order so the rows read from the closest stop to the widest.")
+k2 = input.float(1.5, "Stop 2 (x ATR)", minval = 0.01, step = 0.1, group = "Stops", tooltip = "Multiple k of the ATR for the second row.")
+k3 = input.float(2.0, "Stop 3 (x ATR)", minval = 0.01, step = 0.1, group = "Stops", tooltip = "Multiple k of the ATR for the third row.")
+k4 = input.float(3.0, "Stop 4 (x ATR)", minval = 0.01, step = 0.1, group = "Stops", tooltip = "Multiple k of the ATR for the fourth row.")
+
+horizon = input.int(20, "Horizon N (bars)", minval = 1, maxval = 500, group = "Events", tooltip = "Bars after the entry on which the stops are checked: lows for the long stop, highs for the short stop. A new event can start only once the open one has resolved, so events never overlap.")
+
+volLen = input.int(100, "Volatility window V (bars)", minval = 10, maxval = 500, group = "Random walk", tooltip = "sigma = sample standard deviation of the 1-bar log returns over the V bars that end at the entry bar. The random-walk prediction uses it as the volatility per bar.")
+
+showMarks = input.bool(true, "Mark entries", group = "Display", tooltip = "A small circle below each entry bar.")
+tablePos = input.string("Bottom right", "Table position", options = ["Top right", "Bottom right", "Top left", "Bottom left"], group = "Display")
+textSize = input.string("Small", "Table text size", options = ["Tiny", "Small", "Normal"], group = "Display")
+
+// ───────────────────────── Series ─────────────────────────
+// Called on every bar at the global scope, so their internal history is complete. On the first bar close[1] is
+// na and so is the log return; ta.stdev ignores na values, and an event needs bar_index >= V, so its window
+// holds V real returns.
+float logRet = math.log(close / close[1])
+float atrNow = ta.atr(atrLen)
+float sigNow = ta.stdev(logRet, volLen, false)
+
+// ───────────────────────── Ledger state ─────────────────────────
+// Stop multiples, one row each, in input order.
+var array<float> ks = array.from(k1, k2, k3, k4)
+// Per row: long hits, short hits, events where both sides were hit (for the interval), and the sums of the
+// random-walk predictions for each side.
+var array<int> hitL = array.new<int>(4, 0)
+var array<int> hitS = array.new<int>(4, 0)
+var array<int> hitBoth = array.new<int>(4, 0)
+var array<float> predL = array.new<float>(4, 0.0)
+var array<float> predS = array.new<float>(4, 0.0)
+
+// Events resolved, bars counted, and the sums behind the volatility row: ATR as % of the entry, sigma in %.
+var int nEv = 0
+var int nBars = 0
+var float sumAtrPct = 0.0
+var float sumSigPct = 0.0
+
+// The open event: entry bar (na when none is open), its time, entry, ATR, sigma, and the lowest low and the
+// highest high of the bars after the entry. Both start at the entry close, which is above every long stop and
+// below every short stop, so the start value never decides a hit.
+var int evBar = int(na)
+var int evTime = int(na)
+var float evEntry = float(na)
+var float evAtr = float(na)
+var float evSig = float(na)
+var float evLow = float(na)
+var float evHigh = float(na)
+
+// The last resolved event, for the "Last event" row.
+var int lastTime = int(na)
+var float lastEntry = float(na)
+var float lastAtr = float(na)
+var float lastLow = float(na)
+var float lastHigh = float(na)
+
+// True on the bar where an event starts; the marker reads it.
+bool entryHere = false
+
+// Standard normal CDF. Abramowitz and Stegun, Handbook of Mathematical Functions (1964), formula 7.1.26: for
+// x >= 0, erf(x) = 1 - (a1 t + a2 t^2 + a3 t^3 + a4 t^4 + a5 t^5) exp(-x^2), t = 1 / (1 + p x), with an
+// absolute error of at most 1.5e-7. Phi(x) = (1 + erf(x / sqrt(2))) / 2, and erf(-x) = -erf(x), so the error on
+// Phi is at most 7.5e-8. tools/simulate_atr_stop.py checks it against math.erf.
+phi(float x) =>
+    float z = math.abs(x) / math.sqrt(2.0)
+    float t = 1.0 / (1.0 + 0.3275911 * z)
+    float erfZ = 1.0 - t * (0.254829592 + t * (-0.284496736 + t * (1.421413741 + t * (-1.453152027 + t * 1.061405429)))) * math.exp(-z * z)
+    x >= 0 ? 0.5 * (1.0 + erfZ) : 0.5 * (1.0 - erfZ)
+
+// Chance that driftless Brownian motion in log price touches a level at log distance d > 0 within N bars, with
+// sN = sigma per bar * sqrt(N): 2 * Phi(-d / sN), by the reflection principle.
+hitProb(float d, float sN) =>
+    2.0 * phi(-d / sN)
+
+// ───────────────────────── Ledger update ─────────────────────────
+// Everything counts on confirmed bars only: the high, the low and the close of the realtime bar are not final.
+// The order on a bar: the open event takes this bar's low and high; when its N bars are up it resolves; then,
+// with no event open and the ATR and the window ready, a new event starts at this close.
+if barstate.isconfirmed
+    nBars += 1
+    if not na(evBar)
+        evLow := math.min(evLow, low)
+        evHigh := math.max(evHigh, high)
+        if bar_index - evBar >= horizon
+            float sN = evSig * math.sqrt(horizon)
+            for i = 0 to 3
+                float k = array.get(ks, i)
+                float stopL = evEntry - k * evAtr
+                float stopS = evEntry + k * evAtr
+                bool hL = evLow <= stopL
+                bool hS = evHigh >= stopS
+                if hL
+                    array.set(hitL, i, array.get(hitL, i) + 1)
+                if hS
+                    array.set(hitS, i, array.get(hitS, i) + 1)
+                if hL and hS
+                    array.set(hitBoth, i, array.get(hitBoth, i) + 1)
+                // A long stop at or below zero cannot be reached by a positive price: its prediction is 0.
+                array.set(predL, i, array.get(predL, i) + (stopL > 0 ? hitProb(math.log(evEntry / stopL), sN) : 0.0))
+                array.set(predS, i, array.get(predS, i) + hitProb(math.log(stopS / evEntry), sN))
+            nEv += 1
+            sumAtrPct += evAtr / evEntry * 100
+            sumSigPct += evSig * 100
+            lastTime := evTime
+            lastEntry := evEntry
+            lastAtr := evAtr
+            lastLow := evLow
+            lastHigh := evHigh
+            evBar := int(na)
+    if na(evBar) and bar_index >= volLen and not na(atrNow) and not na(sigNow) and atrNow > 0 and sigNow > 0
+        evBar := bar_index
+        evTime := time
+        evEntry := close
+        evAtr := atrNow
+        evSig := sigNow
+        evLow := close
+        evHigh := close
+        entryHere := true
+
+// ───────────────────────── Marker ─────────────────────────
+plotshape(showMarks and entryHere, "Entry", style = shape.circle, location = location.belowbar, color = color.new(color.gray, 0), size = size.tiny, display = display.pane)
+
+// ───────────────────────── Table ─────────────────────────
+tPos = switch tablePos
+    "Top right" => position.top_right
+    "Bottom right" => position.bottom_right
+    "Top left" => position.top_left
+    => position.bottom_left
+
+tSize = switch textSize
+    "Tiny" => size.tiny
+    "Normal" => size.normal
+    => size.small
+
+// Nine columns: the row names and up to eight values. Nine rows: header, column titles, four stops, volatility,
+// last event, footer.
+var table tbl = table.new(tPos, 9, 9, border_width = 1)
+
+// Opaque cell colors blended from the chart background, so candles do not show through the table
+// on a light or a dark theme.
+cellBg = color.from_gradient(0.12, 0.0, 1.0, chart.bg_color, color.gray)
+hdrBg = color.from_gradient(0.30, 0.0, 1.0, chart.bg_color, color.gray)
+
+setCell(int col, int row, string txt, color bg = na, string align = text.align_center) =>
+    table.cell(tbl, col, row, txt, text_color = chart.fg_color, text_size = tSize, text_halign = align, bgcolor = na(bg) ? cellBg : bg)
+
+// "48.3%" from a rate in [0, 1], "n/a" when there is none.
+fmtRate(float r) =>
+    na(r) ? "n/a" : str.tostring(r * 100, "0.0") + "%"
+
+// "40.1% - 56.5%" from a rate and the half width of its interval, clipped to [0, 1], "n/a" when there is none.
+fmtCi(float p, float h) =>
+    na(p) ? "n/a" : fmtRate(math.max(p - h, 0)) + " - " + fmtRate(math.min(p + h, 1))
+
+// "+1.2 pts" or "-1.2 pts" from a signed difference in percentage points, "0.0 pts" when it rounds to zero,
+// "n/a" when there is none.
+fmtPts(float v) =>
+    na(v) ? "n/a" : math.abs(v) < 0.05 ? "0.0 pts" : (v > 0 ? "+" : "") + str.tostring(v, "0.0") + " pts"
+
+// "+0.92 ATR" or "-1.84 ATR" from a signed number of ATRs, "0.00 ATR" when it rounds to zero, "n/a" when there
+// is none.
+fmtAtr(float v) =>
+    na(v) ? "n/a" : math.abs(v) < 0.005 ? "0.00 ATR" : (v > 0 ? "+" : "") + str.tostring(v, "0.00") + " ATR"
+
+// The bar's open time in the chart symbol's exchange time, "n/a" when there is none.
+fmtTime(int t) =>
+    na(t) ? "n/a" : str.format_time(t, "yyyy-MM-dd HH:mm", syminfo.timezone)
+
+// Merged rows are merged once: merging cells that are already merged on every realtime tick is avoided.
+var bool merged = false
+
+if barstate.islast
+    setCell(0, 0, ticker.standard(syminfo.tickerid) + " · " + timeframe.period + " · ATR " + str.tostring(atrLen) + " · sigma over " + str.tostring(volLen) + " bars · horizon " + str.tostring(horizon) + " bars", hdrBg, text.align_left)
+    setCell(0, 1, "Stop", hdrBg, text.align_left)
+    setCell(1, 1, "events", hdrBg)
+    setCell(2, 1, "long hit", hdrBg)
+    setCell(3, 1, "short hit", hdrBg)
+    setCell(4, 1, "pooled hit", hdrBg)
+    setCell(5, 1, "95% CI", hdrBg)
+    setCell(6, 1, "random walk", hdrBg)
+    setCell(7, 1, "difference", hdrBg)
+    setCell(8, 1, "verdict", hdrBg, text.align_left)
+    for i = 0 to 3
+        int hl = array.get(hitL, i)
+        int hs = array.get(hitS, i)
+        float pL = nEv > 0 ? float(hl) / nEv : float(na)
+        float pS = nEv > 0 ? float(hs) / nEv : float(na)
+        float p = nEv > 0 ? float(hl + hs) / (2 * nEv) : float(na)
+        // The event is the unit of the interval: y = (long hit + short hit) / 2 per event keeps the dependence
+        // between the two sides of one event. Sum of y^2 = (long hits + short hits + 2 * both) / 4.
+        float ey2 = nEv > 0 ? float(hl + hs + 2 * array.get(hitBoth, i)) / (4 * nEv) : float(na)
+        float h = nEv > 0 ? 1.96 * math.sqrt(math.max(ey2 - p * p, 0) / nEv) : float(na)
+        float rw = nEv > 0 ? (array.get(predL, i) + array.get(predS, i)) / (2 * nEv) : float(na)
+        // Verdict: the random-walk rate against the pooled rate's interval. Inside it the stop is hit like a
+        // random walk; below its lower bound the stop is hit more than a random walk; above its upper bound, less.
+        string verdict = nEv == 0 ? "not enough events yet" : rw < p - h ? "hit more than a random walk" : rw > p + h ? "hit less than a random walk" : "like a random walk"
+        if nEv > 0 and nEv < 30
+            verdict += " (small sample)"
+        setCell(0, 2 + i, str.tostring(array.get(ks, i), "0.###") + " x ATR", na, text.align_left)
+        setCell(1, 2 + i, str.tostring(nEv, "#,##0"))
+        setCell(2, 2 + i, fmtRate(pL))
+        setCell(3, 2 + i, fmtRate(pS))
+        setCell(4, 2 + i, fmtRate(p))
+        setCell(5, 2 + i, fmtCi(p, h))
+        setCell(6, 2 + i, fmtRate(rw))
+        setCell(7, 2 + i, fmtPts((p - rw) * 100))
+        setCell(8, 2 + i, verdict, na, text.align_left)
+    float atrPct = nEv > 0 ? sumAtrPct / nEv : float(na)
+    float sigPct = nEv > 0 ? sumSigPct / nEv : float(na)
+    setCell(0, 6, "Volatility", na, text.align_left)
+    setCell(1, 6, "ATR " + (na(atrPct) ? "n/a" : str.tostring(atrPct, "0.00") + "%") + " of price")
+    setCell(2, 6, "sigma " + (na(sigPct) ? "n/a" : str.tostring(sigPct, "0.00") + "%") + " per bar")
+    setCell(3, 6, "ATR / sigma " + (na(atrPct) ? "n/a" : str.tostring(atrPct / sigPct, "0.00")))
+    setCell(4, 6, "Brownian bar 1.60")
+    setCell(5, 6, str.tostring(nBars, "#,##0") + " confirmed bars · " + str.tostring(nEv, "#,##0") + " events", na, text.align_left)
+    setCell(0, 7, "Last event", na, text.align_left)
+    setCell(1, 7, "entry " + fmtTime(lastTime))
+    setCell(2, 7, "close " + (na(lastEntry) ? "n/a" : str.tostring(lastEntry, format.mintick)))
+    setCell(3, 7, "ATR " + (na(lastAtr) ? "n/a" : str.tostring(lastAtr, format.mintick)))
+    setCell(4, 7, "low " + fmtAtr(na(lastAtr) ? float(na) : (lastLow - lastEntry) / lastAtr))
+    setCell(5, 7, "high " + fmtAtr(na(lastAtr) ? float(na) : (lastHigh - lastEntry) / lastAtr))
+    setCell(6, 7, na(evBar) ? "no open event" : "open event from " + fmtTime(evTime) + ", not counted", na, text.align_left)
+    setCell(0, 8, "Counts on confirmed bars. Not advice. Dates in the chart symbol's exchange time · " + syminfo.timezone, hdrBg, text.align_left)
+    for c = 1 to 8
+        setCell(c, 0, "", hdrBg)
+        setCell(c, 8, "", hdrBg)
+    for c = 6 to 8
+        setCell(c, 6, "")
+    for c = 7 to 8
+        setCell(c, 7, "")
+    if not merged
+        table.merge_cells(tbl, 0, 0, 8, 0)
+        table.merge_cells(tbl, 5, 6, 8, 6)
+        table.merge_cells(tbl, 6, 7, 8, 7)
+        table.merge_cells(tbl, 0, 8, 8, 8)
+        merged := true
+````

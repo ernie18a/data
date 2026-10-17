@@ -1,0 +1,66 @@
+# SPY - Daily Timeframe - 20% CAGR - High Risk/High Reward 
+
+- url: https://www.tradingview.com/script/QfY9ozPr-SPY-Daily-Timeframe-20-CAGR-High-Risk-High-Reward/
+- type: strategy
+- pine_id: PUB;3c4c9dba00274655ac22da5a72f79750
+- version: 1.0
+
+## Description
+
+Note: This best trades on SPY, ES, and SPX on the Daily Timeframe. This strategy has returned 20% CAGR over 85 years with a max drawdown of 44%! It currently uses 4x leverage so you can tune that however u please. Enjoy!
+
+## Source Code
+
+````pine
+//@version=5
+strategy("21 / 75 EMA Cross — Filtered Long Only",
+     overlay = true,
+     initial_capital = 10000,
+     pyramiding = 0,
+     calc_on_every_tick = false)
+
+// === Backtest start ===
+startYear  = input.int(1940, "Start Year")
+startTime  = timestamp(startYear, 1, 1, 0, 0)
+allowTrade = time >= startTime
+
+// === Inputs ===
+fastLen   = input.int(20, "Fast EMA")
+slowLen   = input.int(70, "Slow EMA")
+smoothLen = input.int(100, "Extra Smoothing")
+
+leverage = input.float(4.0, "Leverage", step = 0.1)
+stopPerc = input.float(10.0, "Hard Stop %")
+
+// === EMAs ===
+fast = ta.ema(ta.ema(close, fastLen), smoothLen)
+slow = ta.ema(ta.ema(close, slowLen), smoothLen)
+
+// === Cross detection ===
+bullCross = ta.crossover(fast, slow)
+bearCross = ta.crossunder(fast, slow)
+
+// === Entry / Exit ===
+enterLong = allowTrade and bullCross
+exitLong  = allowTrade and bearCross
+
+// === Size ===
+equity = math.max(strategy.equity, 0)
+qty = equity > 0 ? (equity * leverage) / close : 0
+
+// === Orders ===
+if enterLong and strategy.position_size == 0 and qty > 0
+    strategy.entry("Long", strategy.long, qty = qty)
+
+// === Stop ===
+stopPrice = strategy.position_avg_price * (1 - stopPerc / 100)
+strategy.exit("Stop", from_entry = "Long", stop = stopPrice)
+
+// === Trend exit ===
+if exitLong
+    strategy.close("Long")
+
+// === Plot ===
+plot(fast, color = color.green, linewidth = 2, title = "21 EMA")
+plot(slow, color = color.red, linewidth = 2, title = "75 EMA")
+````

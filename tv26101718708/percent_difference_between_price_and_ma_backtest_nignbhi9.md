@@ -1,0 +1,49 @@
+# Percent difference between price and MA Backtest
+
+- url: https://www.tradingview.com/script/nignBhI9-Percent-difference-between-price-and-MA-Backtest/
+- type: strategy
+- pine_id: PUB;rx8sCqBuocnfvZMckcVKpWxJeeeItvPh
+- version: 1.0
+
+## Description
+
+Percent difference between price and MA
+
+ You can change long to short in the Input Settings
+ WARNING:
+ - For purpose educate only
+ - This script to change bars colors.
+
+## Source Code
+
+````pine
+//@version=2
+////////////////////////////////////////////////////////////
+//  Copyright by HPotter v1.0 30/07/2018
+// Percent difference between price and MA
+//
+// You can change long to short in the Input Settings
+// WARNING:
+// - For purpose educate only
+// - This script to change bars colors.
+////////////////////////////////////////////////////////////
+strategy(title="Percent difference between price and MA Backtest")
+Length = input(14, minval=1)
+SellZone = input(0.54, minval=0.01, step = 0.01)
+BuyZone = input(0.03, minval=0.01, step = 0.01)
+reverse = input(false, title="Trade reverse")
+hline(BuyZone, color=green, linestyle=line)
+hline(SellZone, color=red, linestyle=line)
+xSMA = sma(close, Length)
+nRes = abs(close - xSMA) * 100 / close
+pos = iff(nRes < BuyZone, 1,
+       iff(nRes > SellZone, -1, nz(pos[1], 0))) 
+possig = iff(reverse and pos == 1, -1,
+          iff(reverse and pos == -1, 1, pos))	   
+if (possig == 1) 
+    strategy.entry("Long", strategy.long)
+if (possig == -1)
+    strategy.entry("Short", strategy.short)	   	    
+barcolor(possig == -1 ? red: possig == 1 ? green : blue ) 
+plot(nRes, color=blue, title="PD MA")
+````

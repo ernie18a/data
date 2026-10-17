@@ -1,0 +1,60 @@
+# anh Manh dep trai
+
+- url: https://www.tradingview.com/script/x8rkJOjn/
+- type: strategy
+- pine_id: PUB;0285363860cf48d9be71054f798965c9
+- version: 1.0
+
+## Description
+
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+
+## Source Code
+
+````pine
+// This Pine Script® code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © tinhuyen412
+
+//@version=6
+strategy("anh Manh dep trai", overlay = true)
+x = input.int(3, "Số nến xanh")
+n = input.int(5, "Nhập N")
+m = input.float(1.0, "Nhập M")
+
+var countGreen = 0
+
+countGreen := (open < close) ? countGreen + 1 : 0
+
+avgVal = ta.sma((open + low) / 2, n)
+
+var float stopLoss = na
+
+if (countGreen == x and strategy.position_size == 0)
+    strategy.entry("Buy", strategy.long)
+    stopLoss := avgVal
+
+if (strategy.position_size > 0)
+    stopLoss := stopLoss * (1 + m)
+
+if (strategy.position_size > 0)
+    strategy.exit("Exit Buy", from_entry="Buy", stop=stopLoss)
+
+plot(close)
+plot(stopLoss, color=color.red)
+````

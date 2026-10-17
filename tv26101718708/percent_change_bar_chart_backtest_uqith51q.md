@@ -1,0 +1,54 @@
+# Percent change bar chart Backtest
+
+- url: https://www.tradingview.com/script/uQiTH51q-Percent-change-bar-chart-Backtest/
+- type: strategy
+- pine_id: PUB;YljZYi82ScOWiz8ylci7mNFkE1YpaIIq
+- version: 1.0
+
+## Description
+
+This histogram displays price or % change from previous bar. 
+
+ You can change long to short in the Input Settings
+ WARNING:
+ - For purpose educate only
+ - This script to change bars colors.
+
+## Source Code
+
+````pine
+//@version=2
+////////////////////////////////////////////////////////////
+//  Copyright by HPotter v3.0 27/07/2018
+//
+//  This histogram displays price or % change from previous bar. 
+//
+// You can change long to short in the Input Settings
+// WARNING:
+// - For purpose educate only
+// - This script to change bars colors.
+////////////////////////////////////////////////////////////
+strategy(title="Percent change bar chart Backtest", precision = 2)
+input_barwidth = input(4, title="Bar Width")
+input_percentorprice = input(false, title="Price Change")
+input_barsback = input(1, title="Look Back")
+SellZone = input(-0.33, minval=0.01, step = 0.01)
+BuyZone = input(0.33, minval=0.01, step = 0.01)
+reverse = input(false, title="Trade reverse")
+hline(0, color=blue, linestyle=line)
+hline(BuyZone, color=green, linestyle=line)
+hline(SellZone, color=red, linestyle=line)
+xPrice = close
+xPrice1 = iff(input_percentorprice, xPrice - xPrice[input_barsback], ((xPrice - xPrice[input_barsback]) * 100)/ xPrice[input_barsback])
+colorg = iff(xPrice1 < 0, red, green)
+pos = iff(xPrice1 > BuyZone, 1,
+       iff(xPrice1 < SellZone, -1, nz(pos[1], 0))) 
+possig = iff(reverse and pos == 1, -1,
+          iff(reverse and pos == -1, 1, pos))	   
+if (possig == 1) 
+    strategy.entry("Long", strategy.long)
+if (possig == -1)
+    strategy.entry("Short", strategy.short)	   	    
+barcolor(possig == -1 ? red: possig == 1 ? green : blue ) 
+plot(xPrice1, color=colorg, style = histogram, linewidth = input_barwidth, title="Change")
+````

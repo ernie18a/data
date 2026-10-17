@@ -1,0 +1,66 @@
+# 5m SOL Scalper: HA + Lorentzian
+
+- url: https://www.tradingview.com/script/i6N7P04P-5m-SOL-Scalper-HA-Lorentzian/
+- type: strategy
+- pine_id: PUB;2dd9046993734f0abc0fe8425c31aaa7
+- version: 1.0
+
+## Description
+
+Shortened Smoothing (8 instead of 10): By reducing the haLen, the candles react roughly 20% faster to price reversals. This is critical on the 5m chart where a move can finish in just 3-4 candles.
+
+Linear Regression Lorentzian: Instead of a simple EMA, I used ta.linreg. This mimics the "prediction" aspect of the Lorentzian Classification on your screen, identifying the slope of the trend more accurately.
+
+Built-in Risk Management: * Take Profit (1.5%): Solana often "pumps" and then retraces quickly. This locks in gains.
+
+Stop Loss (0.8%): If the Lorentzian filter is wrong, this gets you out before a small pullback becomes a total trend reversal.
+
+## Source Code
+
+````pine
+//@version=5
+strategy("5m SOL Scalper: HA + Lorentzian", overlay=true, initial_capital=1000, default_qty_type=strategy.percent_of_equity, default_qty_value=20)
+
+// --- Optimized Inputs for 5m ---
+haLen      = input.int(8, title="HA Smoothing (Shortened for 5m)")
+lorWindow  = input.int(14, title="Lorentzian Lookback (Faster)")
+tp_percent = input.float(1.5, title="Take Profit %") / 100
+sl_percent = input.float(0.8, title="Stop Loss %") / 100
+
+// --- 1. Smoothed Heikin Ashi ---
+sOpen  = ta.ema(open, haLen)
+sHigh  = ta.ema(high, haLen)
+sLow   = ta.ema(low, haLen)
+sClose = ta.ema(close, haLen)
+
+var float haClose = 0.0
+haClose := (sOpen + sHigh + sLow + sClose) / 4
+var float haOpen = 0.0
+haOpen := na(haOpen[1]) ? (sOpen + sClose) / 2 : (haOpen[1] + haClose[1]) / 2
+
+haGreen = haClose > haOpen
+haRed   = haClose < haOpen
+
+// --- 2. Lorentzian Filter (Trend Intensity) ---
+// Measuring the "velocity" of price change over the lookback
+lorentzVelocity = ta.linreg(close - close[lorWindow], lorWindow, 0)
+lorentzBullish  = lorentzVelocity > 0
+lorentzBearish  = lorentzVelocity < 0
+
+// --- 3. Execution Logic ---
+longCondition  = ta.crossover(haClose, haOpen) and lorentzBullish
+shortCondition = ta.crossunder(haClose, haOpen) and lorentzBearish
+
+if (longCondition)
+    strategy.entry("Long", strategy.long)
+    strategy.exit("Exit Long", "Long", limit=close * (1 + tp_percent), stop=close * (1 - sl_percent))
+
+if (shortCondition)
+    strategy.entry("Short", strategy.short)
+    strategy.exit("Exit Short", "Short", limit=close * (1 - tp_percent), stop=close * (1 + sl_percent))
+
+// --- Visuals ---
+plotcandle(haOpen, sHigh, sLow, haClose, color=haGreen ? color.new(color.green, 50) : color.new(color.red, 50), title="SHA Candles")
+plotshape(longCondition, style=shape.triangleup, location=location.belowbar, color=color.green, size=size.small, text="BUY")
+plotshape(shortCondition, style=shape.triangledown, location=location.abovebar, color=color.red, size=size.small, text="SELL")
+````

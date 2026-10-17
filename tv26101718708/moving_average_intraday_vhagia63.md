@@ -1,0 +1,78 @@
+# Moving Average - Intraday
+
+- url: https://www.tradingview.com/script/VHagIA63-Moving-Average-Intraday/
+- type: strategy
+- pine_id: PUB;8qXdnnKiiX3OUUIxSiFVIxhHYgIhcoYz
+- version: 2.0
+
+## Description
+
+[b]Moving Average Intraday Strategy[/b]
+
+Basic moving average strategy purpose built for intraday trading. It uses two simple moving averages & takes a positions on crossover.
+Position is reversed when signal changes by using double quantity. Once the intraday session is over & if the position is open; it is squared off.
+Users can define intraday session during which the strategy will run.
+
+[b]Parameters:[/b]
+[list]
+[*] Intraday Session - Defines the duration for which the strategy should execute. 
+[*] Short Term Moving Average Period
+[*] Long Term Moving Average Period
+[/list]
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © Pritesh-StocksDeveloper
+
+//@version=5
+strategy("Moving Average - Intraday", shorttitle = "MA - Intraday", 
+     overlay=true, calc_on_every_tick = true)
+
+// Used for intraday handling
+// Session value should be from market start to the time you want to square-off 
+// your intraday strategy
+var i_marketSession = input.session(title="Market session", 
+     defval="0915-1455", confirm=true)
+
+// Short & Long moving avg. period
+var int i_shortPeriod = input.int(title = "Short MA Period", 
+     defval = 10, minval = 2, maxval = 20, confirm=true)
+var int i_longPeriod = input.int(title = "Long MA Period", 
+     defval = 40, minval = 3, maxval = 120, confirm=true)
+
+// A function to check whether the bar is in intraday session
+barInSession(sess) => time(timeframe.period, sess) != 0
+
+// Calculate moving averages
+shortAvg = ta.sma(close, i_shortPeriod)
+longAvg = ta.sma(close, i_longPeriod)
+
+// Plot moving averages
+plot(series = shortAvg, color = color.red, title = "Short MA", 
+     linewidth = 2)
+plot(series = longAvg, color = color.blue, title = "Long MA", 
+     linewidth = 2)
+
+// Long/short condition
+longCondition = ta.crossover(shortAvg, longAvg)
+shortCondition = ta.crossunder(shortAvg, longAvg)
+
+// See if intraday session is active
+bool intradaySession = barInSession(i_marketSession)
+
+// Trade only if intraday session is active
+
+// Long position
+strategy.entry(id = "Long", direction = strategy.long, 
+     when = longCondition and intradaySession)
+
+// Short position
+strategy.entry(id = "Short", direction = strategy.short, 
+     when = shortCondition and intradaySession)
+
+// Square-off position (when session is over and position is open)
+squareOff = (not intradaySession) and (strategy.position_size != 0)
+strategy.close_all(when = squareOff, comment = "Square-off")
+````

@@ -1,0 +1,58 @@
+# CMOaDisparity Index Backtest
+
+- url: https://www.tradingview.com/script/24Tew5Sw-CMOaDisparity-Index-Backtest/
+- type: strategy
+- pine_id: PUB;0zuXkjNJjsl1gdolfA9SDbLVcsPC1Hgt
+- version: 1.0
+
+## Description
+
+The related article is copyrighted materialfrom Stocks & Commodities Dec 2009
+ My strategy modification.
+
+ You can change long to short in the Input Settings
+ WARNING:
+ - For purpose educate only
+ - This script to change bars colors.
+
+## Source Code
+
+````pine
+//@version=2
+////////////////////////////////////////////////////////////
+//  Copyright by HPotter v1.0 31/06/2018
+// The related article is copyrighted materialfrom Stocks & Commodities Dec 2009
+// My strategy modification.
+//
+// You can change long to short in the Input Settings
+// WARNING:
+// - For purpose educate only
+// - This script to change bars colors.
+////////////////////////////////////////////////////////////
+strategy(title="CMOaDisparity Index Backtest")
+LengthFirst = input(200, minval=1)
+LengthSecond = input(50, minval=1)
+LengthThird = input(20, minval=1)
+ShowFirst = input(type=bool, defval=true)
+ShowSecond = input(type=bool, defval=true)
+ShowThird = input(type=bool, defval=true)
+reverse = input(false, title="Trade reverse")
+xEMAFirst = ema(close,LengthFirst)
+xEMASecond  = ema(close,LengthSecond)
+xEMAThird  = ema(close,LengthThird)
+xResFirst = 100 * (close - xEMAFirst) / close
+xResSecond = 100 * (close - xEMASecond) / close
+xResThird = 100 * (close - xEMAThird) / close
+pos = iff(xResThird > xResFirst, -1,
+       iff(xResThird < xResSecond, 1, nz(pos[1], 0))) 
+possig = iff(reverse and pos == 1, -1,
+          iff(reverse and pos == -1, 1, pos))	   
+if (possig == 1) 
+    strategy.entry("Long", strategy.long)
+if (possig == -1)
+    strategy.entry("Short", strategy.short)	   	    
+barcolor(possig == -1 ? red: possig == 1 ? green : blue ) 
+plot(ShowFirst ? xResFirst : na, color=red, title="DIX 1")
+plot(ShowSecond ? xResSecond : na, color=blue, title="DIX 2")
+plot(ShowThird ? xResThird : na, color=green, title="DIX 3")
+````

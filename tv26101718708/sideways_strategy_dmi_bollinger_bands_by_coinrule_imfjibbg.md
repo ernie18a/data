@@ -1,0 +1,93 @@
+# Sideways Strategy DMI + Bollinger Bands (by Coinrule)
+
+- url: https://www.tradingview.com/script/IMfJIbbG-Sideways-Strategy-DMI-Bollinger-Bands-by-Coinrule/
+- type: strategy
+- pine_id: PUB;ba64f316fdcf410895fd146d6912762b
+- version: 1.0
+
+## Description
+
+Markets don’t always trade in a clear direction. At a closer look, most of the time, they move sideways. [b]Relying on trend-following strategies all the time can thus lead to repeated false signals in such conditions.[/b]
+
+However, before you can safely trade sideways, you have to identify the most suitable market conditions. 
+
+The main features of such strategies are: 
+
+[list]
+[*] Short-term trades, with quick entries and quick exits
+[*] Slightly contrarian and mean-reversionary
+[*] Require some indicator that tells you it’s a sideways market
+[/list]
+
+This Sideways DMI + Bollinger Bands strategy incorporates such features to bring you a profitable alternative when the regular trend-following systems stop working.
+
+[b]ENTRY[/b] 
+
+1. The trading system requires confirmation for a sideways market from the Directional Movement Index (DMI) before you can start opening any trades. For this purpose, the strategy uses the absolute difference between positive and negative DMI, which must be lower than 20.
+
+2. To pick the right moment to buy, the strategy looks at the Bollinger Bands (BB). It enters the trade when the price crosses over the lower BB.
+
+
+[b]EXIT[/b] 
+
+The strategy then exits when the move has been exhausted. Generally, in sideways markets, the price should revert lower. The position is closed when the price crosses back down below the upper BB.
+
+
+The best time frame for this strategy based on our backtest is the 1-hr. Shorter timeframes can also work well on certain coins that are more volatile and trade sideways more often. However, as expected, these exhibit larger volatility in their returns. In general, this approach suits medium timeframes. A trading fee of 0.1% is taken into account. The fee is aligned to the base fee applied on Binance, which is the largest cryptocurrency exchange. 
+
+You can execute this strategy on your favourite exchange at coinrule.com.
+
+## Source Code
+
+````pine
+//@version=4
+strategy(shorttitle='Sideways Strategy DMI + Bollinger Bands',title='Sideways Strategy DMI + Bollinger Bands (by Coinrule)', overlay=true, initial_capital = 100, process_orders_on_close=true, default_qty_type = strategy.percent_of_equity, default_qty_value = 100, commission_type=strategy.commission.percent, commission_value=0.1)
+
+// Works on ETHUSD 3h, 1h, 2h, 4h
+
+//Backtest dates
+fromMonth = input(defval = 1,    title = "From Month",      type = input.integer, minval = 1, maxval = 12)
+fromDay   = input(defval = 1,    title = "From Day",        type = input.integer, minval = 1, maxval = 31)
+fromYear  = input(defval = 2021, title = "From Year",       type = input.integer, minval = 1970)
+thruMonth = input(defval = 12,    title = "Thru Month",      type = input.integer, minval = 1, maxval = 12)
+thruDay   = input(defval = 31,    title = "Thru Day",        type = input.integer, minval = 1, maxval = 31)
+thruYear  = input(defval = 2022, title = "Thru Year",       type = input.integer, minval = 1970)
+
+showDate  = input(defval = true, title = "Show Date Range", type = input.bool)
+
+start     = timestamp(fromYear, fromMonth, fromDay, 00, 00)        // backtest start window
+finish    = timestamp(thruYear, thruMonth, thruDay, 23, 59)        // backtest finish window
+window()  => time >= start and time <= finish ? true : false       // create function "within window of time"
+
+[pos_dm, neg_dm, adx] = dmi(14, 14)
+
+
+lengthBB = input(20, minval=1)
+src = input(close, title="Source")
+mult = input(2.0, minval=0.001, maxval=50, title="StdDev")
+basis = sma(src, lengthBB)
+dev = mult * stdev(src, lengthBB)
+upper = basis + dev
+lower = basis - dev
+offset = input(0, "Offset", type = input.integer, minval = -500, maxval = 500)
+
+sideways = (abs(pos_dm - neg_dm) < 20)
+
+
+
+//Stop_loss= ((input (3))/100)
+//Take_profit= ((input (2))/100)
+
+//longStopPrice  = strategy.position_avg_price * (1 - Stop_loss)
+//longTakeProfit = strategy.position_avg_price * (1 + Take_profit)
+
+//closeLong = close < longStopPrice or close > longTakeProfit or StopRSI
+
+
+//Entry 
+strategy.entry(id="long", long = true, when = sideways and (crossover(close, lower)) and window())
+
+
+//Exit
+strategy.close("long", when = (crossunder(close, upper)))
+````

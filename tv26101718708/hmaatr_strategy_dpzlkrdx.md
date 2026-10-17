@@ -1,0 +1,25 @@
+# HMA_ATR Strategy
+
+- url: https://www.tradingview.com/script/dpZLkrdx-HMA-ATR-Strategy/
+- type: strategy
+- pine_id: PUB;XfNXIKheY6NRZZLEwDjr6mwRHIN88f2O
+- version: 1.0
+
+## Description
+
+[b]ATR[/b] with [b]HMA[/b] experimental minimalist bot for [symbol="BINANCE:ETHBTC"]ETHBTC[/symbol].
+A strategy for use by Automated Algorithm systems.
+Different from normal ATR as it uses HMA for smoothing.
+[i]Example settings result shown here on chart include  commission  0.5%[/i]
+
+## Source Code
+
+````pine
+//@version=4
+strategy("HMA_ATR Strategy",shorttitle="HMAATR",overlay=true,default_qty_type=strategy.percent_of_equity,default_qty_value=50,commission_type=strategy.commission.percent,commission_value=0.5)
+length=input(9)
+numATRs=input(0.75,step=0.01)
+atrs=hma(tr,length)*numATRs
+strategy.entry("A buy",strategy.long,stop=open+atrs,comment = "buy",alert_message="buy")
+strategy.entry("A sell",strategy.short,stop=open-atrs,comment = "sell",alert_message="sell")
+````

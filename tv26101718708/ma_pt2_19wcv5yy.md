@@ -1,0 +1,33 @@
+# MA pt.2
+
+- url: https://www.tradingview.com/script/19WCv5yy-MA-pt-2/
+- type: strategy
+- pine_id: PUB;qu7k6bG0anxhWlq3HlF5PW9wFIvcNS0A
+- version: 1.0
+
+## Description
+
+Need all 3 :$
+
+## Source Code
+
+````pine
+//@version=2
+strategy("MA pt.2", overlay=true)
+change = change(close)
+gain = change >= 0 ? change : 0.0
+loss = change < 0 ? (-1) * change : 0.0
+avgGain = rma(gain, 14)
+avgLoss = rma(loss, 14)
+rs = avgGain / avgLoss
+rsi = 100 - (100 / (1 + rs))
+piriod = 720
+s8sma = sma(close, 8)
+s21sma = sma(close, 21)
+s50ema = ema(close, 50)
+s80ema = ema(close, 80)
+s200ema = ema(close, 200)
+s50sma = sma(close, 50)
+longCond = crossover(s8sma, s21sma) 
+plotshape(series=longCond, title="Long", style=shape.triangleup, location=location.belowbar, color=green, text="8/21", size=size.small)
+````

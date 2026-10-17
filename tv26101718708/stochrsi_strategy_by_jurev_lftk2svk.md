@@ -1,0 +1,50 @@
+# StochRSI Strategy by jurev
+
+- url: https://www.tradingview.com/script/lftk2Svk-StochRSI-Strategy-by-jurev/
+- type: strategy
+- pine_id: PUB;r6CQCz3KBPIBJtA6ZLq6t8FitZ3TPrho
+- version: 2.0
+
+## Description
+
+Simple strategy on Stochastic RSI, opens buy when K is undersold, and buys when K is overbought. You can experiment with SL and TP points to optimize profit.
+
+## Source Code
+
+````pine
+//@version= 2
+strategy("StochRSI by jurev", overlay=false)
+lengthrsi = input(10)
+overSold = input( 1 )
+overBought = input(99)
+
+call_trail_stop = input(300)
+call_trail_offset = input(0)
+call_sl = input(10000)
+
+price = ohlc4
+vrsi = rsi(price, lengthrsi)
+
+smoothK = input(3, minval=1)
+smoothD = input(3, minval=1)
+lengthRSI = input(14, minval=1)
+lengthStoch = input(14, minval=1)
+src = input(close, title="RSI Source")
+
+rsi1 = rsi(src, lengthRSI)
+k = sma(stoch(rsi1, rsi1, rsi1, lengthStoch), smoothK)
+d = sma(k, smoothD)
+
+
+plot( k, color=blue, linewidth=1, title="K")
+plot( d, color=red, linewidth=1, title="D")
+
+if (crossover(k, overSold) ) 
+    strategy.entry("BUY", strategy.long, stop=close, oca_name="TREND", oca_type=strategy.oca.cancel, comment="BUY")
+    strategy.exit("BUY EXIT", "BUY", trail_points=call_trail_stop, trail_offset=call_trail_offset, loss = call_sl)
+
+
+if (crossunder(k, overBought) ) 
+    strategy.entry("SELL", strategy.short,stop=close, oca_name="TREND", oca_type=strategy.oca.cancel, comment="SELL")
+    strategy.exit("SELL EXIT", "SELL", trail_points=call_trail_stop, trail_offset=call_trail_offset, loss = call_sl)
+````

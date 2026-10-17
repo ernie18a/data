@@ -1,0 +1,65 @@
+# Buy on 5 day low Strategy
+
+- url: https://www.tradingview.com/script/GGrDRHcU-Buy-on-5-day-low-Strategy/
+- type: strategy
+- pine_id: PUB;e364de824e7d48b5aaa59da9450ef7b9
+- version: 1.0
+
+## Description
+
+█ STRATEGY DESCRIPTION  
+The "Buy on 5 Day Low Strategy" is a mean-reversion strategy designed to identify potential buying opportunities when the price drops below the lowest low of the previous five days. It enters a long position when specific conditions are met and exits when the price exceeds the high of the previous day. This strategy is optimized for use on daily or higher timeframes.
+
+█ WHAT IS THE 5-DAY LOW?  
+The 5-Day Low is the lowest price observed over the last five days. This level is used as a reference to identify potential oversold conditions and reversal points.
+
+█ SIGNAL GENERATION  
+1. LONG ENTRY  
+A Buy Signal is triggered when:  
+[list]
+[*]The close price is below the lowest low of the previous five days (`close < _lowest[1]`).  
+[*]The signal occurs within the specified time window (between `Start Time` and `End Time`).  
+[/list]  
+
+2. EXIT CONDITION  
+[list]
+[*]A Sell Signal is generated when the current closing price exceeds the high of the previous day (`close > high[1]`). This indicates that the price has shown strength, potentially confirming the reversal and prompting the strategy to exit the position.  
+[/list]
+
+█ ADDITIONAL SETTINGS  
+[list]
+[*]Start Time and End Time: The time window during which the strategy is allowed to execute trades.  
+[/list]
+
+█ PERFORMANCE OVERVIEW  
+[list]
+[*]This strategy is designed for mean-reverting markets and performs best when the price frequently oscillates around key support levels.  
+[*]It is sensitive to oversold conditions, as indicated by the 5-Day Low, and overbought conditions, as indicated by the previous day's high.  
+[*]Backtesting results should be analyzed to optimize the strategy for specific instruments and market conditions.  
+[/list]
+
+## Source Code
+
+````pine
+// This Pine Script™ code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © Botnet101
+
+//@version=6
+strategy('Buy on 5 day low Strategy', overlay = true, initial_capital = 1000000, default_qty_value = 100, default_qty_type = strategy.percent_of_equity, process_orders_on_close = true, margin_long = 5, margin_short = 5, calc_on_every_tick = true)
+
+in_start_time = input.time(timestamp('1 Jan 2014'), title = 'Start Time', group = 'Time Settings')
+in_end_time = input.time(timestamp('1 Jan 2099'), title = 'End Time', group = 'Time Settings')
+in_window = time >= in_start_time and time <= in_end_time
+
+_lowest = ta.lowest(low, 5)
+
+buyCondition = close < _lowest[1]
+exitcondition = close > high[1]
+
+if buyCondition and in_window
+    strategy.entry('buy', strategy.long)
+if exitcondition
+    strategy.close_all()
+
+plot(_lowest[1], color = color.yellow)
+````

@@ -1,0 +1,42 @@
+# Connor's R3 Strategy
+
+- url: https://www.tradingview.com/script/JejchZcp-Connor-s-R3-Strategy/
+- type: strategy
+- pine_id: PUB;tXWHvAe3VRPDZLqTdQtYtR1n5kifd1sL
+- version: 1.0
+
+## Description
+
+Created based on Connor's R3 Strategy. However, the signal always appears on the next candle, where it should appear at the closing price of the same candle.
+
+## Source Code
+
+````pine
+//@version=3
+strategy("Connor's R3 Strategy", overlay=false, calc_on_every_tick=true)
+
+MAlength = input(200, "Simple Moving Average", minval=1, step=1)
+SMA = sma(close, MAlength)
+
+RSIlength = input(2, "Relative Strength Index", minval=1, step=1)
+RSI = rsi(close, RSIlength)
+
+Bcond = close > SMA and crossunder(RSI[2], 60) and crossunder(RSI, 10)
+Scond = close < SMA and crossover(RSI[2], 40) and crossover(RSI, 90)
+
+
+strategy.entry("Buy", strategy.long, oca_name="OuterRSI", oca_type=strategy.oca.cancel, comment="Buy", when=Bcond)
+strategy.close("Buy", when=crossover(RSI, 70))
+
+strategy.entry("Sell", strategy.short, oca_name="OuterRSI", oca_type=strategy.oca.cancel, comment="Sell", when=Scond)
+strategy.close("Sell", when=crossunder(RSI, 30))
+
+
+
+plot(RSI, title="RSI", style=line, linewidth=3, color=crossunder(RSI, 10) ? lime : crossover(RSI, 90) ? red : black)
+upperborder = plot(100, title="Upper Border", style=line, linewidth=2, color=black)
+lowerborder = plot(0, title="Lower Border", style=line, linewidth=2, color=black)
+upperline = plot(90, title="Upper Line", style=line, linewidth=2, color=silver)
+lowerline = plot(10, title="Lower Line", style=line, linewidth=2, color=silver)
+fill(upperline, lowerline, color=purple, transp=95)
+````

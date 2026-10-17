@@ -1,0 +1,71 @@
+# Chaloke System Strategy
+
+- url: https://www.tradingview.com/script/9ID5apv1/
+- type: strategy
+- pine_id: PUB;UZqZXLGLCtryZTqQ30OFUL1C1DQkosbl
+- version: 2.0
+
+## Description
+
+Chaloke System Strategy
+This is a trend indicator
+Atr and 3 moving averages are used
+Short 9-day moving average,Medium 15-day moving average,Calculated with a long 24-day moving average.
+Atr period : 5
+
+
+Sht,Mid,Lng calculation method is different
+
+Buying Strategy
+long = crossover(Sht,Mid) and close > Sht
+
+Selling Strategy
+short = crossunder(Sht, Lng ) or close < Lng
+
+Buy should be done when the barcolor turns green
+Sell ​​should be done when barcolor is red
+When the barcolor is black, there may be change.
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © ceyhun
+
+//@version=4
+strategy("Chaloke System Strategy",overlay=true)
+
+P1=input(9,title="ShortTerm Period")
+P2=input(15,title="MidTerm Period")
+P3=input(24,title="LongTerm Period")
+P4=input(5,title="Invesment Term")
+P5=input(5,title="ATR Period")
+Barcolor=input(true,title="Barcolor")
+
+Sm=2*P5/10
+ATRX=Sm*atr(P4)
+S=ema(close,P1)-ATRX
+M=ema(close,P2)-ATRX
+Lg=ema(close,P3)-ATRX
+
+Sht=iff(close==highest(close,3),S,ema(close[1],P1)-ATRX)
+Mid=iff(close==highest(close,3),M,ema(close[1],P2)-ATRX)
+Lng=iff(close==highest(close,3),Lg,ema(close[1],P3)-ATRX)
+
+colors=iff(Sht>Mid and close > Sht ,color.green,iff(close < Lng or Sht<Lng,color.red,color.black))
+
+plot(Sht,"Short",color=color.green,linewidth=2)
+plot(Mid,"Middle",color=color.black,linewidth=2)
+plot(Lng,"Long",color=color.red,linewidth=2)
+
+barcolor(Barcolor ? colors :na)
+   
+long =  crossover(Sht,Mid) and close > Sht
+short = crossunder(Sht,Lng) or close < Lng
+
+if long
+    strategy.entry("Long", strategy.long, comment="Long")
+    
+if short
+    strategy.entry("Short", strategy.short, comment="Short")
+````

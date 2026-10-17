@@ -1,0 +1,95 @@
+# Uraynium V3 Trading Strategy
+
+- url: https://www.tradingview.com/script/9CwY3698-Uraynium-V3-Trading-Strategy/
+- type: strategy
+- pine_id: PUB;FaV9AT6ZDT4t0qaYZIiEaen3uy9hGN71
+- version: 1.0
+
+## Description
+
+[image]https://www.tradingview.com/x/9TPpJEYI/[/image]
+for short term margin trading
+
+## Source Code
+
+````pine
+//@version=4
+strategy("Uraynium V3", overlay=false, pyramiding = 0, calc_on_every_tick=true, precision=1, currency="USD", default_qty_value=10, default_qty_type=strategy.cash,initial_capital=100,commission_type=strategy.commission.percent,commission_value=0.1) 
+// === INPUT BACKTEST RANGE ===
+FromMonth = input(defval = 1, title = "From Month", minval = 1, maxval = 12)
+FromDay   = input(defval = 1, title = "From Day", minval = 1, maxval = 31)
+FromYear  = input(defval = 2019, title = "From Year", minval = 2017)
+ToMonth   = input(defval = 1, title = "To Month", minval = 1, maxval = 12)
+ToDay     = input(defval = 1, title = "To Day", minval = 1, maxval = 31)
+ToYear    = input(defval = 2020, title = "To Year", minval = 2017)
+
+// === FUNCTION EXAMPLE ===
+start     = timestamp(FromYear, FromMonth, FromDay, 00, 00)  // backtest start window
+finish    = timestamp(ToYear, ToMonth, ToDay, 23, 59)        // backtest finish window
+inTimeframe()  => time >= start and time <= finish ? true : false // create function "within window of time"
+
+overSold      = input( 20 , minval = 1, title = "RSI Oversold")
+overBought    = input( 80 , minval = 1, title = "RSI Overbought")
+rsiLength     = input(14, minval = 1, title = "RSI Length")
+fastLength    = input(12, minval = 1, title = "MACD fast")
+slowlength    = input(26, minval = 1, title = "MACD slow")
+MACDLength    = input( 9, minval = 1, title = "MACD length")
+stopLoss      = input(   10, minval = 1, title = "Stop Loss (price %)")
+takeProfit    = input(   50, minval = 1, title = "Take Profit (price %)")
+triggerPosLvl = input(    2, minval = 1 ,title ="Take Position Threshold", type=input.float)
+src = close
+
+// === CALC ===
+
+stopLossValue        = close*(stopLoss/100)/syminfo.mintick
+takeProfitValue      = close*(takeProfit/100)/syminfo.mintick
+
+vrsi = rsi(src, rsiLength)
+//avgRSI = vrsi*0.5 + vrsi[1]*0.25 + vrsi[2]*0.125 + vrsi[3]*0.0625
+avgRSI = (4*vrsi + 3*vrsi + 2*vrsi[2] + vrsi[3])/10
+[macdLine, signalLine, histLine] = macd(src, fastLength, slowlength, MACDLength)
+
+
+MACDdelta         = signalLine - macdLine
+isMACDRunLong     = signalLine > macdLine
+isMACDRunShort    = macdLine < signalLine
+isMACDSwitchLong  = crossover(MACDdelta, 0)
+isMACDSwitchShort = crossunder(MACDdelta, 0)
+isMACDCross       = crossover(MACDdelta, 0) or crossunder(MACDdelta, 0)
+
+buySignal =  (histLine-histLine[1]) + (avgRSI - avgRSI[1])
+
+// === ACTION ===
+isPosLong    = strategy.position_size > 0
+isPosShort   = strategy.position_size < 0
+isNoMarginPos= strategy.position_size == 0
+entryLong  = (isNoMarginPos or isPosShort) and ( buySignal >  triggerPosLvl )
+entryShort = (isNoMarginPos or isPosLong ) and ( buySignal < -triggerPosLvl ) 
+
+if inTimeframe()
+    strategy.entry("Long" , strategy.long,  comment="Entry Long",  when=entryLong )
+    strategy.entry("Short", strategy.short, comment="Entry Short", when=entryShort)
+    strategy.entry("Long" , strategy.long,  comment="Switch Long", when=entryLong)
+    strategy.entry("Short", strategy.short, comment="Switch Short",when=entryShort)
+    strategy.exit("Stop (long SL/TP)",  loss=stopLossValue, profit=takeProfitValue, when=entryLong )  
+    strategy.exit("Stop (short SL/TP)", loss=stopLossValue, profit=takeProfitValue, when=entryShort)  
+    strategy.close("Long" , when=entryShort)
+    strategy.close("Short", when=entryLong)    
+
+// === DRAW ===
+posColor = isNoMarginPos ?  color.black : isPosLong ? color.green : color.red
+plot(100, color=posColor,style=plot.style_area, transp=90, histbase=0)
+        
+plot(buySignal+overBought, color=color.green)
+plot(50+macdLine/4, color=color.yellow)
+plot(50+signalLine/4, color=color.orange)
+histColor = histLine[1]-histLine > 0 ? color.red : color.green
+plot(overSold+histLine/2, color=histColor, style=plot.style_histogram, histbase=overSold, transp=50, linewidth=2)
+
+rsicolor = avgRSI>overBought ? color.red : avgRSI<overSold ? color.green : color.blue
+plot(avgRSI,color=rsicolor, linewidth=2)
+//plot(vrsi,color=color.purple, linewidth=2)
+hline(overBought, color=color.red)
+hline(overSold, color=color.green)
+hline(50, color=color.gray)
+````

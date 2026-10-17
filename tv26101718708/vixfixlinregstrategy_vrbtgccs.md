@@ -1,0 +1,105 @@
+# VixFixLinReg-Strategy
+
+- url: https://www.tradingview.com/script/VRbtGCcs-VixFixLinReg-Strategy/
+- type: strategy
+- pine_id: PUB;CpBxPD1gNnS6TI8Ix6DgruUXALzDKwt7
+- version: 1.0
+
+## Description
+
+This idea came up while discussing about strategies with one of the trading enthusiast from tradingview community.
+
+Strategy basically uses existing script of Vix Fix by Chris Moody:
+
+https://www.tradingview.com/script/og7JPrRA-CM-Williams-Vix-Fix-Finds-Market-Bottoms/
+
+VixFix is a great indicator for finding the market bottoms. But, sometimes it generates signal too early. But, we can apply linear regression on vix fix to find vix fix top to make timing much better. 
+
+[b]Entry condition: [/b]
+[list]
+[*] Wait for Vix fix bar to turn lime.
+[*] Once vix fix is turned lime, then wait for linear regression (shown below 0) to turn lime from green. This indicates VIX-Fix has started declining.
+[*] Go long once above two conditions are satisfied
+[/list]
+
+[b]Exit Condition:[/b]
+[list]
+[*] ATR Based Stop
+[*] Applied only if linear regression is green - which means VixFix rising.
+[/list]
+
+Note: This is ideal for identifying market bottom. May not yield good results on individual stocks.
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © HeWhoMustNotBeNamed
+
+//@version=4
+strategy("VixFixLinReg-Strategy", shorttitle="VixFixLinReg - Strategy",
+                     overlay=false, initial_capital = 100000, 
+                     default_qty_type = strategy.percent_of_equity, default_qty_value = 100, commission_type = strategy.commission.percent, pyramiding = 1, 
+                     commission_value = 0.01)
+pd = input(22, title="LookBack Period Standard Deviation High")
+bbl = input(20, title="Bolinger Band Length")
+mult = input(2.0    , minval=1, maxval=5, title="Bollinger Band Standard Devaition Up")
+lb = input(50  , title="Look Back Period Percentile High")
+ph = input(.85, title="Highest Percentile - 0.90=90%, 0.95=95%, 0.99=99%")
+pl = input(1.01, title="Lowest Percentile - 1.10=90%, 1.05=95%, 1.01=99%")
+hp = input(false, title="Show High Range - Based on Percentile and LookBack Period?")
+sd = input(false, title="Show Standard Deviation Line?")
+i_startTime = input(defval = timestamp("01 Jan 2010 00:00 +0000"), title = "Start Time", type = input.time)
+i_endTime = input(defval = timestamp("01 Jan 2099 00:00 +0000"), title = "End Time", type = input.time)
+inDateRange = time >= i_startTime and time <= i_endTime
+considerVIXFixClose = input(false)
+lengthKC=input(20, title="KC Length")
+multKC = input(1.5, title="KC MultFactor")
+
+atrLen = input(22)
+atrMult = input(5)
+initialStopBar = input(5)
+waitForCloseBeforeStop = input(true)
+f_getStop(atrLen, atrMult)=>
+    stop = strategy.position_size > 0 ? close - (atrMult * atr(atrLen)) : lowest(initialStopBar)
+    stop := strategy.position_size > 0 ? max(stop,nz(stop[1], stop)) : lowest(initialStopBar)
+    stop
+
+wvf = ((highest(close, pd)-low)/(highest(close, pd)))*100
+
+sDev = mult * stdev(wvf, bbl)
+midLine = sma(wvf, bbl)
+lowerBand = midLine - sDev
+upperBand = midLine + sDev
+
+rangeHigh = (highest(wvf, lb)) * ph
+rangeLow = (lowest(wvf, lb)) * pl
+
+
+col = wvf >= upperBand or wvf >= rangeHigh ? color.lime : color.gray
+
+val = linreg(wvf, pd, 0)
+absVal = abs(val)
+
+linRegColor = val>val[1]? (val > 0 ? color.green : color.orange): (val > 0 ? color.lime : color.red)
+plot(hp and rangeHigh ? rangeHigh : na, title="Range High Percentile", style=plot.style_line, linewidth=4, color=color.orange)
+plot(hp and rangeLow ? rangeLow : na, title="Range High Percentile", style=plot.style_line, linewidth=4, color=color.orange)
+plot(wvf, title="Williams Vix Fix", style=plot.style_histogram, linewidth = 4, color=col)
+plot(sd and upperBand ? upperBand : na, title="Upper Band", style=plot.style_line, linewidth = 3, color=color.aqua)
+
+plot(-absVal, title="Linear Regression", style=plot.style_histogram, linewidth=4, color=linRegColor)
+
+vixFixState = (col == color.lime) ? 1: 0
+vixFixState := strategy.position_size == 0? max(vixFixState, nz(vixFixState[1],0)) : vixFixState
+
+longCondition = (vixFixState == 1 and linRegColor == color.lime) and inDateRange
+exitLongCondition = (linRegColor == color.orange or linRegColor == color.red) and considerVIXFixClose
+
+stop = f_getStop(atrLen, atrMult)
+label_x = time+(60*60*24*1000*20) 
+myLabel = label.new(x=label_x, y=0, text="Stop : "+tostring(stop), xloc=xloc.bar_time, style=label.style_none, textcolor=color.black, size=size.normal)
+label.delete(myLabel[1])
+strategy.entry("Long", strategy.long, when=longCondition, oca_name="oca_buy", oca_type=strategy.oca.cancel)
+strategy.close("Long", when=exitLongCondition or (close < stop and waitForCloseBeforeStop and linRegColor == color.green))
+strategy.exit("ExitLong", "Long", stop = stop, when=not waitForCloseBeforeStop and linRegColor == color.green)
+````

@@ -1,0 +1,92 @@
+# [LunaOwl] Support Resistance Strategy V4
+
+- url: https://www.tradingview.com/script/dC2MG4Dj/
+- type: strategy
+- pine_id: PUB;5KIMTl46MdexM12mKF1zVFLOXoo7auN6
+- version: 3.0
+
+## Description
+
+作品: 支撐壓力策略
+
+A simple Support Resistance Breakthrough Strategy, the only difference is that it is PineScript @version=4. interested parties can use it as a reference.
+Its logic is simple, wish your all the best.
+
+一個簡單的支撐阻力突破策略，唯一的差異，在於它是PineScript第四版。有興趣的可以拿來當作參考，簡易的指標。祝你們順心。
+
+Support level refers to the support price that the exchange rate may encounter when it falls, so as to stop falling and stabilize the price.
+The corresponding concept is the resistance level, that is, the pressure that the exchange rate may encounter when it rises, thus reversing to a falling price.
+
+支撐位是指匯價在下跌時可能遇到的支撐價格，從而止跌回穩的價格，對應的概念是阻力位，也即匯價上漲時可能遇到的壓力，從而反轉為下跌的價格。
+
+## Source Code
+
+````pine
+//--------------------------*
+//-- This source code is subject to the terms of the Mozilla Public License 2.0
+//-- 開源代碼受Mozilla公眾授權條款2.0版規範, 網址是https://mozilla.org/MPL/2.0/
+//
+//@version=4
+//
+//  作品: [LunaOwl] 支撐壓力策略第4版
+//  英文: [LunaOwl] Support Resistance Strategy V4
+//
+////////////////////////////////
+//     ~~!!*(๑╹◡╹๑) **       //
+//  製作:  @LunaOwl 彭彭      //
+//  日期:  2019年03月05日     //
+//  修改:  2019年04月22日     //
+//  四版:  2020年06月16日     //
+//  發表:  2020年06月17日     //
+////////////////////////////////
+//
+//一個簡單的支撐阻力突破策略，唯一的差異在於它是PineScript第四版
+//#_____________________________
+
+//==設定策略==//
+
+strategy("[LunaOwl] 支撐壓力策略 [回測]",
+     shorttitle          = "支撐壓力策略 [回測]",
+     overlay             = true,
+     calc_on_order_fills = false,
+     calc_on_every_tick  = false,
+     pyramiding          = 0,
+     currency            = currency.NONE,
+     initial_capital     = 10000,
+     slippage            = 5,
+     default_qty_value   = 100,
+     default_qty_type    = strategy.percent_of_equity,
+     commission_type     = strategy.commission.percent,
+     commission_value    = 0.05
+     )
+
+//==設定輸入==//
+
+LB = input(50, title = "回溯期數", type = input.integer)
+button = input(true, title = "請問要繪製K線麼？", type = input.bool)
+
+//==支撐壓力線==//
+
+R = valuewhen(cross(sma(close, LB),close), highest(high, LB), 1)
+S = valuewhen(cross(close,sma(close, LB)),  lowest( low, LB), 1)
+
+plot(R, title = "壓力", color = color.green)
+plot(S, title = "支撐", color = color.red)
+
+//==定義輸出結果==//
+
+Trend_up = crossover(close, R) ? 1 : 0
+Trend_dn = crossunder(close, S) ? -1 : 0
+
+//==設定出場規則==//
+
+Enter = Trend_up ==  1 and Trend_up[1] == 0 ? Trend_up : na
+Exit  = Trend_dn == -1 and Trend_dn[1] == 0 ? Trend_dn : na
+strategy.entry("多", strategy.long, when = Enter)
+strategy.entry("空", strategy.short, when = Exit)
+
+//==繪製燭台==//
+
+Trend_col = R < close ? color.green : S > close ? color.red : color.orange
+barcolor(not button ? na : Trend_col, editable = true, title = "燭台顏色")
+````

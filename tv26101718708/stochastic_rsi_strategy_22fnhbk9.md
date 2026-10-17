@@ -1,0 +1,51 @@
+# Stochastic RSI Strategy
+
+- url: https://www.tradingview.com/script/22FnhBk9-Stochastic-RSI-Strategy/
+- type: strategy
+- pine_id: PUB;Cab4CibKfMHyAO6YBpxgMGUpSKlXbiKA
+- version: 1.0
+
+## Description
+
+This is an an adaption of [url=https://www.tradingview.com/script/drhpwAv6-binary-option-1-minute/]https://www.tradingview.com/script/drhpwAv6-binary-option-1-minute/[/url] Binary option 1 minute by Maxim Chechel to a strategy. I have had success with this on FCT/BTC on Poloniex.
+
+## Source Code
+
+````pine
+strategy(title="Stochastic RSI", shorttitle="Stoch RSI", overlay = true)
+Per = input(5, title="Length", minval=1)
+smoothK = input(3, minval=1)
+smoothD = input(3, minval=1)
+lengthRSI = input(14, minval=1)
+lengthStoch = input(14, minval=1)
+src = input(close, title="RSI Source")
+
+rsi1 = rsi(src, lengthRSI)
+K = sma(stoch(rsi1, rsi1, rsi1, lengthStoch), smoothK)
+D = sma(K, smoothD)
+
+
+rvi = sum(swma(close-open), Per)/sum(swma(high-low),Per)
+sig = swma(rvi)
+//plot(rvi, color=green, title="RVI")
+//plot(sig, color=red, title="Signal")
+
+//plot(K,  title="K")
+//plot(D,  title="D")
+Dn = K <= D  and K > 70 and rvi <= sig  and rvi[1] >= sig[1]
+Up= K >= D  and K < 30 and rvi >= sig  and rvi[1] <= sig[1]
+ARROW =  Up - Dn
+plotarrow(ARROW, title="Down Arrow",  colordown=red, transp=0, maxheight=10, minheight=10)
+plotarrow(ARROW, title="Up Arrow", colorup=lime,  transp=0, maxheight=10, minheight=10)
+long = crossover(Up, Dn)
+short = crossunder(Up, Dn)
+last_long = long ? time : nz(last_long[1])
+last_short = short ? time : nz(last_short[1])
+long_signal = crossover(last_long, last_short)
+short_signal = crossover(last_short, last_long)
+
+//plot(long_signal, "BUY", color=green)
+//plot(short_signal, "SELL", color=red)
+strategy.entry("BUY", strategy.long, when=long_signal)
+strategy.entry("SELL", strategy.short, when=short_signal)
+````

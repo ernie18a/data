@@ -1,0 +1,51 @@
+# Linear RSI
+
+- url: https://www.tradingview.com/script/ihrjYaKx-linear-rsi/
+- type: strategy
+- pine_id: PUB;6GhnATacmJ52PhKanRzldD1QqkU7euEU
+- version: 2.0
+
+## Description
+
+This is an attempt to create a strategy based on the previous post. The strategy, as before, is based on the RSI, which is calculated using linear regression, but with the addition of EMA. The crossing of EMA and RSI is a buy and sell signal. There are also two functions to buy (because I haven't decided which is really better), so please use checkbox to order which one you would like to use.
+
+## Source Code
+
+````pine
+//@version=4
+strategy("Linear RSI", default_qty_type=strategy.percent_of_equity, default_qty_value=100, commission_type=strategy.commission.percent, commission_value=0.075, currency='USD')
+
+startP = timestamp(input(2017, "Start Year"), input(12, "Month"), input(17, "Day"), 0, 0)
+end   = timestamp(input(9999, "End Year"),   input(1, "Month"),   input(1, "Day"),   0, 0)
+_testPeriod() =>
+    iff(time >= startP and time <= end, true, false)
+
+//inputs
+length = input(defval=50, minval=1, title="LR length")
+length2 = input(defval=21, minval=1, title="RSI length")
+ema_fast = input(defval=50, minval=1, title="EMA")
+lag = 0
+
+threshold = input(50)
+
+
+
+//rsi
+src = close
+Lr = linreg(src, length, lag)
+rsi = rsi(Lr, length2)
+ema = ema(rsi, ema_fast)
+
+plot(rsi, color = rsi > threshold ? color.green : rsi < threshold ? color.red : color.silver)
+plot(threshold, color=color.purple)
+plot(ema, color=color.blue)
+
+first_type = input(true, title="Use first logic?")
+second_type =  input(false, title="Use second logic?")
+
+long_condition = (first_type ? crossover(rsi, ema) and close > ema(close, 200) and _testPeriod() : false) or (second_type ? rsi > ema and rsi > threshold and close > ema(close, 200) and _testPeriod() : false)
+strategy.entry('BUY', strategy.long, when=long_condition)  
+ 
+short_condition = crossunder(rsi, ema) 
+strategy.close('BUY', when=short_condition)
+````

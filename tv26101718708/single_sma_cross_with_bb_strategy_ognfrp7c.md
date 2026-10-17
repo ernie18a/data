@@ -1,0 +1,51 @@
+# Single SMA cross with BB Strategy
+
+- url: https://www.tradingview.com/script/ogNFrp7C-Single-SMA-cross-with-BB-Strategy/
+- type: strategy
+- pine_id: PUB;3097
+- version: -1.0
+
+## Description
+
+This is a light weight code and strategy. I tuned it for NZDUSD on a 15 min chart. NZDUSD is a slow moving low volatility pair. A single SMA cross over + crossing a .9 BB + the single SMA is increasing. I will be manually trading this with alerts and once I have LUA down I will set it free with FXCM and see what it can do on it own. 
+
+** I use BB as a means of seeing momentum to continue gaining not as a reversal signal. 
+
+Please contact me with issues/questions
+
+## Source Code
+
+````pine
+//@version=2
+strategy(title="single sma cross", shorttitle="single sma cross",default_qty_type = strategy.percent_of_equity, default_qty_value = 100,overlay=true,currency="USD")
+s=input(title="s",defval=90,type=integer)
+p=input(title="p",type=float,defval=.9,step=.1)
+
+sa=sma(close,s)
+plot(sa,color=red,linewidth=3)
+band=stdev(close,s)*p
+plot(band+sa,color=lime,title="")
+plot(-band+sa,color=lime,title="")
+
+// ===Strategy Orders============================================= ========
+inpTakeProfit = input(defval = 0, title = "Take Profit", minval = 0)
+inpStopLoss = input(defval = 0, title = "Stop Loss", minval = 0)
+inpTrailStop = input(defval = 0, title = "Trailing Stop Loss", minval = 0)
+inpTrailOffset = input(defval = 0, title = "Trailing Stop Loss Offset", minval = 0)
+useTakeProfit = inpTakeProfit >= 1 ? inpTakeProfit : na
+useStopLoss = inpStopLoss >= 1 ? inpStopLoss : na
+useTrailStop = inpTrailStop >= 1 ? inpTrailStop : na
+useTrailOffset = inpTrailOffset >= 1 ? inpTrailOffset : na
+
+longCondition = crossover(close,sa+band) and rising(sa,5)
+shortCondition = crossunder(close,sa-band) and falling(sa,5)
+crossmid = cross(close,sa)
+
+
+strategy.entry(id = "Long", long=true, when = longCondition)
+strategy.close(id = "Long", when = shortCondition)
+strategy.entry(id = "Short", long=false, when = shortCondition)
+strategy.close(id = "Short", when = longCondition)
+strategy.exit("Exit Long", from_entry = "Long", profit = useTakeProfit, loss = useStopLoss, trail_points = useTrailStop, trail_offset = useTrailOffset, when=crossmid)
+strategy.exit("Exit Short", from_entry = "Short", profit = useTakeProfit, loss = useStopLoss, trail_points = useTrailStop, trail_offset = useTrailOffset, when=crossmid)
+````

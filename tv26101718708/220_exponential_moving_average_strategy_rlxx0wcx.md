@@ -1,0 +1,38 @@
+# 2/20 Exponential Moving Average Strategy
+
+- url: https://www.tradingview.com/script/rlXX0wcX-2-20-Exponential-Moving-Average-Strategy/
+- type: strategy
+- pine_id: PUB;gmKzh2kXSg30a5wo8GA8GsW3kdSSmxMi
+- version: 1.0
+
+## Description
+
+This indicator plots 2/20 exponential moving average. For the Mov 
+Avg X 2/20 Indicator, the EMA bar will be painted when the Alert criteria is met.
+
+Please, use it only for learning or paper trading. Do not for real trading.
+
+## Source Code
+
+````pine
+//@version=2
+////////////////////////////////////////////////////////////
+//  Copyright by HPotter v1.0 21/11/2016
+// This indicator plots 2/20 exponential moving average. For the Mov 
+// Avg X 2/20 Indicator, the EMA bar will be painted when the Alert criteria is met.
+////////////////////////////////////////////////////////////
+strategy(title="Strategy 2/20 Exponential Moving Average", overlay = true)
+Length = input(20, minval=1)
+xPrice = close
+xXA = ema(xPrice, Length)
+nHH = max(high, high[1])
+nLL = min(low, low[1])
+nXS = iff((nLL > xXA)or(nHH < xXA), nLL, nHH)
+pos = iff(nXS > close[1] , -1, iff(nXS < close[1] , 1, nz(pos[1], 0))) 
+if (pos == 1) 
+    strategy.entry("Long", strategy.long)
+if (pos == -1)
+    strategy.entry("Short", strategy.short)	    
+barcolor(pos == -1 ? red: pos == 1 ? green : blue )
+//plot(nXS, color=blue, title="XAverage")
+````

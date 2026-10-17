@@ -1,0 +1,48 @@
+# Gann Trend Oscillator Backtest
+
+- url: https://www.tradingview.com/script/IxCdFCjE-Gann-Trend-Oscillator-Backtest/
+- type: strategy
+- pine_id: PUB;DttCE2tR6NaHvPWlbQsRN4Y09dBaR0Hd
+- version: 1.0
+
+## Description
+
+The Gann Swing Oscillator has been adapted from Robert Krausz's book, 
+ "A W.D. Gann Treasure Discovered". The Gann Swing Oscillator helps 
+ define market swings. 
+
+ You can change long to short in the Input Settings
+ Please, use it only for learning or paper trading. Do not for real trading.
+
+## Source Code
+
+````pine
+//@version=2
+////////////////////////////////////////////////////////////
+//  Copyright by HPotter v1.0 19/06/2017
+// The Gann Swing Oscillator has been adapted from Robert Krausz's book, 
+// "A W.D. Gann Treasure Discovered". The Gann Swing Oscillator helps 
+// define market swings. 
+//
+// You can change long to short in the Input Settings
+// Please, use it only for learning or paper trading. Do not for real trading.
+////////////////////////////////////////////////////////////
+strategy(title="Gann Trend Oscillator")
+Length = input(3, minval=1)
+reverse = input(false, title="Trade reverse")
+hline(0, color=gray, linestyle=dashed)
+xHH = highest(close, Length)
+xLL = lowest(close, Length)
+xGSO = iff(xHH[2] > xHH[1] and xHH[0] > xHH[1], -1,
+         iff(xLL[2] < xLL[1] and xLL[0] < xLL[1], 1, nz(xGSO[1],0)))
+pos = iff(xGSO > 0, 1,
+	     iff(xGSO < 0, -1, nz(pos[1], 0))) 
+possig = iff(reverse and pos == 1, -1,
+          iff(reverse and pos == -1, 1, pos))	   
+if (possig == 1) 
+    strategy.entry("Long", strategy.long)
+if (possig == -1)
+    strategy.entry("Short", strategy.short)	   	    
+barcolor(possig == -1 ? red: possig == 1 ? green : blue )        
+plot(xGSO, color=blue, title="GTO")
+````

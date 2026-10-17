@@ -1,0 +1,3153 @@
+# Tatanka AMT Toolkit: Auction Market Structure
+
+- url: https://www.tradingview.com/script/DooQdrxQ-Tatanka-AMT-Toolkit-Auction-Market-Structure/
+- type: indicator
+- pine_id: PUB;54554fd5d83b42929469cce150d43089
+- version: 3.0
+
+## Description
+
+Tatanka AMT Toolkit puts a complete Auction Market Theory read on one chart. It is organized around the questions a Dalton-style read asks every session: Where is value? Is the market balanced or trending? Who is trapped? What is unfinished? Which reference prices matter? Where are my own levels?
+
+It is built for CME futures (index, energy and metals) on minute charts. Every session time is CME exchange time (Central). The script gives no buy or sell signals and no trade recommendations.
+
+WHY THESE PARTS ARE IN ONE SCRIPT
+An auction read is one process, not a stack of separate indicators. Prior value shows where the market opened relative to fair price. The initial balance and range extension show whether that open is being accepted. Overnight inventory and the late-day spike show who may be forced to act. Naked POCs, single prints and poor highs and lows show what the auction left unfinished. Here the parts share one session clock, one tick and row-size engine and one dashboard, so their numbers agree, and the day-type read uses them together. Every part can be switched off on its own.
+
+WHERE IS VALUE?
+- Developing volume profile for the session, week (default), month or year, built from 1-minute bars, with POC, VAH and VAL (68% value area by default). Optional high-volume "walls" from the same profile.
+- Prior-day POC, VAH and VAL from the RTH session.
+- Prior-month POC, VAH, VAL, high and low.
+- RTH VWAP anchored at the 8:30 CT open (off by default).
+
+BALANCED OR TRENDING?
+- Initial Balance (8:30-9:30 CT) with an optional midpoint.
+- Day type, updated through the session from IB width versus daily ATR, range extension, breaks of prior-day and overnight structure, and value migration: Trend Day, Normal Day, Normal Variation, Neutral Day (center or extreme) or Non-Trend Day. Before the auction develops it shows Gap Up, Gap Down or Developing.
+- Open location versus prior structure: above pdHigh, above pdVAH, inside value, below pdVAL or below pdLow.
+- 80% Rule: when the session opens outside the prior day's value area, the value area is shaded. Once price has held inside it for 60 minutes, the setup is marked confirmed.
+
+WHO IS TRAPPED?
+- Overnight inventory: the share of overnight bars that traded above or below the prior settlement. When the whole overnight session sat on one side, the settlement line is marked as a trap and the day type shows TRAP.
+- Late spike: the base of a breakout in the last 30 minutes of RTH (14:30-15:00 CT), with an alert when price comes back to test it.
+
+WHAT IS UNFINISHED?
+- Naked POCs (daily, weekly and monthly) that stay on the chart until price trades through them.
+- Single prints from a 30-minute TPO profile of the RTH session, with tails filtered out.
+- Poor highs and lows: a session extreme with two or more TPO periods at the same price.
+
+WHICH REFERENCE PRICES MATTER?
+- Overnight high and low (removed at 15:00 CT by default), previous day high and low, previous week high and low, previous month high and low, the weekly open (Sunday Globex) and the RTH open.
+
+WHERE ARE MY LEVELS?
+Paste your own levels into "Paste Levels Here" as one line: the date, the pivot, then any prices. Example:
+2026-10-05, 5500.00, 5510.00, 5525.00, 5490.00, 5475.00
+Prices above the pivot are drawn as resistance and prices below it as support, numbered outward from the pivot. Each level gets a zone sized by daily ATR or by ticks, flips color once price passes through it by a set ATR buffer, and can alert on crosses. The labeled form (Pivot Level / Resistance Levels / Support Levels lines) also works.
+
+DASHBOARD
+Session, day type, pivot bias (price versus your pasted pivot), overnight inventory, open location, daily ATR and ATR used, and 80% Rule status.
+
+ALERTS
+Optional alerts for crosses of your pasted levels, the IB, overnight high and low, RTH VWAP, prior-day high, low and value, prior-week and prior-month levels, the weekly open, and the developing POC, VAH and VAL, plus naked POC touches, spike-base tests, inventory traps and 80% Rule confirmation. A storm cap limits how many alerts fire per window. Note: a TradingView alert keeps the levels that were pasted when you created it, so re-create level alerts after pasting new levels. The other alerts update on their own.
+
+WHAT IS ORIGINAL
+- Volume profiles and naked POCs are built from 1-minute intrabar data, so they come out the same on any minute chart timeframe.
+- Profile Row Scale (Auto) sizes profile rows to the symbol's price, so the same script loads on ES, NQ, CL, GC and other symbols without per-symbol settings.
+- On continuous futures, the profiles switch to the new front contract once it out-trades the old one, instead of mixing two contracts' prices.
+- The day type is classified live during the session from Dalton's criteria (IB width versus daily ATR, range extension, breaks of prior-day and overnight structure, value migration), not labeled after the close.
+
+HOW TO USE
+1. Use a minute chart on a CME futures symbol and load enough history for the profile period you pick. A yearly profile needs a long history.
+2. Leave the session-time inputs at their defaults. They are CME exchange time (Central); set TradingView's chart timezone for local display instead. The script warns on the chart if a session input was changed.
+3. Profile Row Scale "Auto" sizes profile rows, naked POC bins and single-print blocks to the symbol's price, so NQ gets larger rows than ES without a separate mode. Pick a fixed scale if a symbol loads slowly.
+4. Turn sections on and off in the settings. Every section has its own lines, labels and alerts.
+
+LIMITATIONS
+- Profiles and naked POCs are built from 1-minute bars, so they approximate tick-level profiles.
+- TradingView allows 500 lines, 500 boxes and 500 labels per script; the oldest drawings are removed first.
+- On continuous contracts (for example ES1!), profiles switch to the new front contract once it out-trades the old one. During a roll week, TradingView's continuous symbol can still follow the expiring contract.
+- This is an analysis tool. It does not predict prices and gives no trade signals or recommendations.
+
+Open source under the Mozilla Public License 2.0.
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © Tatanka Trading LLC
+
+//@version=6
+indicator("Tatanka AMT Toolkit: Auction Market Structure", shorttitle="Tatanka AMT", overlay=true, max_lines_count=500, max_boxes_count=500, max_labels_count=500, max_bars_back=5000)
+
+// ============================================================================
+// MODULE PREFIX GLOSSARY
+// ============================================================================
+// Variables are prefixed by module. Use this map when reading unfamiliar code.
+//
+//   lvl_     Daily levels (pivot, resistance, support from the paste box)
+//   ib_      Initial Balance (first 30/60 min of RTH)
+//   amt_     Overnight range / Auction Market Theory (OVN high/low)
+//                 Historical naming — this is the OVN module, not broader AMT
+//   vwap_    RTH-anchored VWAP
+//   pd_      Previous day high/low lines
+//   cc_      Previous day value area (VAH/VAL/POC) — "closing composite"
+//   npoc_    Naked POCs: inputs, source bars and the shared f_npoc engine (daily/weekly/monthly)
+//   inv_     Inventory trap detection (settle imbalance)
+//   spike_   Late-day spike base detection
+//   sp_      Single prints and poor high/low structure
+//   mvp_     Monthly Volume Profile (developing month)
+//   m6_      Previous month VAH/VAL/POC (macro layer)
+//   macro_   Previous month display/alert toggles
+//   pb_      Session context for the dashboard (day type, pivot bias, inventory, ATR)
+//   tbl_     Dashboard table display
+//   alertcap_ Alert storm cap (rolling window)
+//   _sym_tag Symbol prefix for alert messages ([ES], [NQ], etc.)
+//
+// Input group letters use a different system (g_gen, g_lvl, g_ib, etc.)
+// matching the prefix where possible.
+// ============================================================================
+
+// ============================================================================
+// SESSION & TIME CONSTANTS
+// ============================================================================
+// Logic paths use named constants. Inputs keep their own defaults — change
+// inputs through the UI, change these only when the market's actual session
+// boundaries shift.
+string SESS_RTH       = "0830-1500"         // RTH / pit session (CST)
+string SESS_IB        = "0830-0930"         // Initial Balance window
+string SESS_FULL_DAY  = "1700-1500:123456"  // Globex-open to RTH-close, Mon-Fri
+string SESS_OVN       = "1700-0830:123456"  // Globex overnight session
+string AMT_VERSION    = "1.0.0"             // Shown in the dashboard header; keep in step with the NinjaTrader port
+// ============================================================================
+
+// ==========================================
+// --- GLOBAL HELPER FUNCTIONS ---
+// ==========================================
+is_new_bar(t) => ta.change(time(t)) != 0
+round_to_nearest(v, x) => math.round(v / x) * x
+
+// Gradient ramp: 0.0 at zero_at, 1.0 at full_at, linear between, clamped
+f_ramp(float val, float zero_at, float full_at) =>
+    float denom = full_at - zero_at
+    denom == 0.0 ? 0.0 : math.max(0.0, math.min(1.0, (val - zero_at) / denom))
+
+// Simple float clamp
+
+// Label Size Helper
+get_size(s) =>
+    s == "Tiny" ? size.tiny : s == "Small" ? size.small : s == "Normal" ? size.normal : s == "Large" ? size.large : s == "Huge" ? size.huge : size.auto
+
+// Label text color inputs default to transparent, which means "use the line's own color".
+f_txt(color _custom, color _auto) =>
+    color.t(_custom) >= 100 ? _auto : _custom
+const string TXT_TIP = "Transparent (the default) uses each line's own color. Pick any color to override."
+
+// Developing daily ATR without lookahead. The prior session's ATR (offset [1], so
+// lookahead_on can't leak future bars) is stepped forward with today's true range so
+// far: the same RMA update the daily ATR takes at the close. Matches the
+// NinjaTrader port's daily ATR.
+f_dev_atr(int len) =>
+    [_atrPrev, _closePrev] = request.security(syminfo.tickerid, "D", [ta.atr(len)[1], close[1]], lookahead=barmerge.lookahead_on)
+    var float _dh = na
+    var float _dl = na
+    if timeframe.change("D")
+        _dh := high
+        _dl := low
+    else
+        _dh := math.max(nz(_dh, high), high)
+        _dl := math.min(nz(_dl, low), low)
+    float _tr = na(_closePrev) ? _dh - _dl : math.max(_dh - _dl, math.abs(_dh - _closePrev), math.abs(_dl - _closePrev))
+    na(_atrPrev) ? na : (_atrPrev * (len - 1) + _tr) / len
+
+// Line Style Helper
+get_line_style(s) =>
+    s == "Solid" ? line.style_solid : s == "Dotted" ? line.style_dotted : line.style_dashed
+
+// Bond 32nds price formatter (ZN, ZB, ZF, ZT, UB)
+// Snaps to nearest valid tick, converts decimal → 32nds notation matching order entry
+// e.g. 111.77 → "111'245"   112.14 → "112'045"
+bool _is_bond = syminfo.root == "ZN" or syminfo.root == "ZB" or syminfo.root == "ZF" or syminfo.root == "ZT" or syminfo.root == "UB"
+
+f_fmt_price(float price) =>
+    string result = ""
+    if _is_bond
+        float snapped = math.round(price / syminfo.mintick) * syminfo.mintick
+        int whole = int(math.floor(snapped))
+        float rem = (snapped - whole) * 32.0
+        int ths = int(math.floor(rem))
+        float frac = rem - ths
+        int q = int(math.round(frac * 4))
+        if q >= 4
+            q := 0
+            ths += 1
+        if ths >= 32
+            ths := 0
+            whole += 1
+        string z = q == 0 ? "0" : q == 1 ? "2" : q == 2 ? "5" : q == 3 ? "7" : "0"
+        result := str.tostring(whole) + "'" + (ths < 10 ? "0" : "") + str.tostring(ths) + z
+    else
+        result := str.tostring(price, format.mintick)
+    result
+
+// Symbol tag prefix for all alert messages
+string _sym_tag = "[" + syminfo.ticker + "] "
+
+// --- ALERT SYSTEM ---
+// Storm cap wrappers (f_alert_bar, f_alert_close) are defined after the
+// alertcap_* inputs in group g_gen below, because Pine v6 requires all
+// identifiers referenced inside a function to be declared beforehand.
+//
+// ALERT FREQUENCY POLICY:
+// All alerts go through one of two wrappers:
+//   f_alert_bar(msg)    → alert.freq_once_per_bar        (fires on first true within bar)
+//   f_alert_close(msg)  → alert.freq_once_per_bar_close  (fires only on confirmed close)
+//
+// Current assignment by category:
+//   • Structural crossings (IB, OVN, VWAP, PDH/PDL, pdVA, nPOC, Dev, pmVA, pmPOC,
+//     Pivot, RES/SUPP, Spike, Inventory Trap) → f_alert_bar
+//   • 80% Rule Confirmed → f_alert_close
+
+// ==========================================
+// --- TYPES ---
+// ==========================================
+type SinglePrint
+    box     id
+    float   top
+    float   bottom
+    int     created_time
+
+type PoorLine
+    line    id
+    float   price
+    bool    is_high
+    int     created_time
+
+// ==========================================
+// --- INPUTS ---
+// ==========================================
+
+// TIMEZONE IS NOT SELECTABLE - DO NOT RE-ADD AS AN INPUT.
+// Every session string, hour input and time constant in this script is CME
+// exchange time (Central). The old dropdown did not translate them, it
+// shifted them: picking America/New_York made RTH run 0830-1500 ET, so
+// settlement captured at 3PM ET instead of 4PM.
+//
+// Settlement is one instant. 3PM Chicago, 4PM New York and 1PM Los Angeles
+// are the same moment. Logic stays anchored to CT; TradingView's own chart
+// timezone (clock, bottom-right of the chart) renders it on each user's
+// local clock. Nothing here needs converting.
+string u_tz = "America/Chicago"
+
+// Settings panel layout (same groups, order and names as the NinjaTrader port).
+g_gen = "1. Global Settings"
+g_lvl = "2. Daily Levels"
+g_pd = "3. Previous Day High/Low/Open"
+g_pdv = "4. Previous Day Value & 80% Rule"
+g_ovn = "5. Overnight High/Low"
+g_ib = "6. Initial Balance"
+g_vwap = "7. RTH VWAP"
+g_opens = "8. Daily & Weekly Open"
+g_pw = "9. Previous Week"
+g_pm = "10. Previous Month"
+g_mvp = "11. Volume Profile"
+g_walls = "12. Volume Profile Walls"
+g_sp = "13. TPO & Single Prints"
+g_npoc = "14. Naked POCs"
+g_inv = "15. Settlement & Inventory"
+g_spike = "16. Late Spike"
+g_tbl = "17. Dashboard"
+g_alerts = "18. Alerts"
+
+// --- 1. Global Settings ---
+row_scale_in = input.string("Auto", "Profile Row Scale", options=["Auto", "1x", "2x", "5x", "10x", "20x", "50x", "100x"], group=g_gen, tooltip="Sets how many ticks each profile row, naked POC bin and single-print block spans. Auto keeps rows near 0.0035% of price on a 1-2-5 ladder of ticks: ES, RTY, CL, GC 1x; YM 2x; NQ 5x; BTC spot 20x. Each bar then touches about as many rows as ES does, so any symbol loads. Pick a fixed scale if a symbol still loads slowly. The Row Size below is a floor.")
+tick_auto        = input.bool(true, "Auto Tick Size", group=g_gen, tooltip="Auto-detects a sensible base tick for the current instrument. ES/NQ/MES/MNQ use mintick (0.25). CL=0.05, NG=0.005, GC=0.50. Disable to set manually.")
+tick_manual_val  = input.float(0.25, "Manual Tick Size", minval=0.001, step=0.001, group=g_gen, tooltip="Only used when Auto Tick Size is OFF. Set the base tick for zones, profiles, TPO, and OVN.")
+layer_top_pick = input.string("Daily Levels (All)", "Force on Top", options=[
+ "Daily Levels (All)",
+ "Profile POC", "Profile VAH", "Profile VAL", 
+ "IB Midpoint", "IB High", "IB Low", 
+ "pdPOC", "Prev Day High", "Prev Day Low",
+ "OVN High", "OVN Low", 
+ "Prev Month VAH", "Prev Month VAL",
+ "Spike Base"
+ ], group=g_gen, tooltip="Select which line draws ON TOP of everything else to prevent visual clutter.")
+lbl_hide_all = input.bool(false, "Hide All Labels & Price Tags", group=g_gen, tooltip="Master switch. Hides every label, including IB and OVN labels, and the price-axis tags. Lines stay.")
+lbl_tags     = input.bool(true, "Show Price-Axis Tags", group=g_gen)
+tzguard_enable = input.bool(true, "Warn if Session Times Were Changed", group=g_gen, tooltip="Every session field and hour input in this indicator is CME EXCHANGE TIME (Central) and should be left at its default. Retyping them in your local timezone silently shifts every level. To see times on your own clock, change the CHART timezone in TradingView (the clock at the bottom-right of the chart) - not these fields. This warning prints on the chart if any session field no longer matches its exchange-time default.")
+
+// --- 2. Daily Levels ---
+lvl_text            = input.text_area(title="Paste Levels Here", defval="", confirm=true, group=g_lvl, tooltip="Paste the one-line paste line:\n2026-09-30, 5500, 5510, 5525, 5490, 5475\n(date, pivot, then prices; above the pivot = resistance, below = support)\n\nor the three-line block:\nPivot Level: 5500\nResistance Levels: 5510, 5525, 5540\nSupport Levels: 5490, 5475, 5460\n\nIf both are pasted, the paste line wins. Prices are comma-separated decimals.")
+lvl_showLine        = input.bool(true, "Show Level Lines", group=g_lvl, tooltip="Draws the level as a line at the exact price.")
+lvl_ip_color        = input.color(title="Pivot Color", defval=color.yellow, group=g_lvl)
+lvl_bull_color      = input.color(title="Resistance Color", defval=color.red, group=g_lvl)
+lvl_bear_color      = input.color(title="Support Color", defval=color.green, group=g_lvl)
+lvl_thickness       = input.int(1, "Line Width", group=g_lvl)
+lvl_style_in        = input.string("Dotted", "Line Style", options=["Solid", "Dashed", "Dotted"], group=g_lvl)
+lvl_color_flip      = input.bool(title="Flip Colors on Break (Res <-> Supp)", defval=true, group=g_lvl, tooltip="Changes resistance levels to support colors if price is above them, and vice versa.")
+lvl_flip_atr        = input.float(title="Flip ATR Buffer", defval=0.05, step=0.05, group=g_lvl, tooltip="Price must pass the level by this many ATRs to flip.")
+lvl_showZones       = input.bool(true, "Show Zones", group=g_lvl, tooltip="Draws a shaded zone above and below each level.")
+lvl_zone_mode       = input.string("ATR %", "Zone Size Mode", options=["ATR %", "Ticks"], group=g_lvl, tooltip="ATR % sizes the zone as a percentage of the 14-day ATR. Ticks uses a fixed number of ticks.")
+lvl_zone_atr_pct    = input.float(0.02, "Zone Width (ATR %)", minval=0.01, maxval=0.50, step=0.01, group=g_lvl, tooltip="Zone extends this percentage of the 14-day ATR above and below each level. 0.05 = 5%.")
+lvl_zoneWidthTicks  = input.int(8, "Zone Width (ticks above & below)", minval=1, maxval=200, group=g_lvl, tooltip="Only used when Zone Size Mode is set to Ticks.")
+lvl_zoneOpacity     = input.int(85, "Zone Transparency (0=solid, 100=clear)", minval=0, maxval=100, group=g_lvl)
+lvl_zone_style_in   = input.string("Solid", "Zone Border Style", options=["Solid", "Dashed", "Dotted"], group=g_lvl)
+lbl_levels   = input.bool(true, "Show Labels", group=g_lvl)
+lvl_text_size_opt   = input.string("large", "Label Size", options=["auto", "tiny", "small", "normal", "large", "huge"], group=g_lvl)
+lvl_x_offset        = input.int(40, "Label Offset", group=g_lvl, tooltip="How far to the right the labels appear.")
+lvl_txt_c           = input.color(color.new(color.white, 100), "Label Text Color", group=g_lvl, tooltip=TXT_TIP)
+lvl_alerts          = input.bool(false, "Enable Level Alerts", group=g_lvl, tooltip="A TradingView alert keeps the levels that were pasted when you created it. After pasting new levels, delete and re-create the alert. All other alerts in this indicator update automatically.")
+lvl_alert_ip        = input.bool(true, "Pivot Alerts", group=g_lvl)
+lvl_alert_bull      = input.bool(true, "Resistance Alerts", group=g_lvl)
+lvl_alert_bear      = input.bool(true, "Support Alerts", group=g_lvl)
+
+// --- 3. Previous Day High/Low/Open ---
+pd_enable    = input.bool(true, "Enable Prev Day Levels", group=g_pd)
+pd_use_rth   = input.bool(true, "Use Custom Session for High/Low", group=g_pd)
+pd_sess_time = input.session("0830-1500", "Custom Session Time (CT)", group=g_pd)
+pd_showH            = input.bool(true, "Show pdHigh", group=g_pd)
+pd_showL            = input.bool(true, "Show pdLow", group=g_pd)
+pd_showOpen         = input.bool(false, "Show pdOpen", group=g_pd)
+pd_high_c           = input.color(color.white, "pdHigh Color", group=g_pd)
+pd_low_c            = input.color(color.white, "pdLow Color", group=g_pd)
+pd_open_c           = input.color(color.blue, "pdOpen Color", group=g_pd)
+pd_high_width       = input.int(1, "pdHigh Width", group=g_pd)
+pd_low_width        = input.int(1, "pdLow Width", group=g_pd)
+pd_open_width       = input.int(1, "pdOpen Width", group=g_pd)
+pd_style_in         = input.string("Solid", "Line Style", options=["Solid", "Dashed", "Dotted"], group=g_pd)
+lbl_pd       = input.bool(true, "Show Labels", group=g_pd)
+pd_lb_size_in       = input.string("Normal", "Label Size", options=["Tiny", "Small", "Normal", "Large"], group=g_pd)
+pd_offset_val       = input.int(2, "Label Offset", group=g_pd)
+pd_txt_c            = input.color(color.new(color.white, 100), "Label Text Color", group=g_pd, tooltip=TXT_TIP)
+pd_alert_hl         = input.bool(true, "Alert High/Low Break", group=g_pd, tooltip="Alerts when price breaks yesterday's High or Low.")
+
+// --- 4. Previous Day Value & 80% Rule ---
+cc_enable           = input.bool(true, "Enable Prev Day Value & 80% Rule", group=g_pdv)
+cc_va_pct           = input.float(0.68, "Value Area %", minval=0.01, maxval=1.0, group=g_pdv)
+cc_sess_def         = input.session("0830-1500:23456", "RTH Session for VA (CT)", group=g_pdv, tooltip="Bars in this session build the prior-day value (pdPOC, pdVAH, pdVAL). Its first bar is the RTH open used by OPEN, the gap test and the 80% Rule.")
+pdv_show_poc        = input.bool(true, "Show pdPOC", group=g_pdv)
+pdv_show_vah        = input.bool(true, "Show pdVAH", group=g_pdv)
+pdv_show_val        = input.bool(true, "Show pdVAL", group=g_pdv)
+pd_poc_c            = input.color(color.white, "pdPOC Color", group=g_pdv)
+pd_vah_c            = input.color(color.new(color.purple, 50), "pdVAH Color", group=g_pdv)
+pd_val_c            = input.color(color.new(color.purple, 50), "pdVAL Color", group=g_pdv)
+cc_poc_width        = input.int(1, "pdPOC Width", group=g_pdv)
+cc_vah_width        = input.int(1, "pdVAH Width", group=g_pdv)
+cc_val_width        = input.int(1, "pdVAL Width", group=g_pdv)
+cc_poc_style_in     = input.string("Solid", "Line Style", options=["Solid", "Dashed", "Dotted"], group=g_pdv)
+lbl_pdv      = input.bool(true, "Show Labels", group=g_pdv)
+cc_lb_size_in       = input.string("Normal", "Label Size", options=["Tiny", "Small", "Normal", "Large"], group=g_pdv)
+cc_lb_offset        = input.int(2, "Label Offset", group=g_pdv)
+cc_txt_c            = input.color(color.new(color.white, 100), "Label Text Color", group=g_pdv, tooltip=TXT_TIP)
+cc_showFill         = input.bool(true, "Show 80% Rule Fill", group=g_pdv, tooltip="Shades prior-day value while the 80% Rule is active or confirmed. Display only: the rule, the dashboard row and the alert work either way.")
+cc_col_active       = input.color(color.new(color.purple, 93), "Fill: Active (Setup)", group=g_pdv)
+cc_col_conf         = input.color(color.new(#ea80fc, 93), "Fill: Confirmed (80%)", group=g_pdv)
+cc_alert_va         = input.bool(false, "Alert pdVAH/pdVAL/pdPOC Cross", group=g_pdv, tooltip="Alerts when price crosses Previous Day's Value Area High, Low, or POC.")
+cc_alert_80         = input.bool(true, "Alert 80% Rule Confirmed", group=g_pdv, tooltip="Fire alert when the 80% Rule setup is confirmed (price held inside value area for 60 minutes).")
+
+// --- 5. Overnight High/Low ---
+amt_enable          = input.bool(true, "Enable OVN High/Low", group=g_ovn, tooltip="Tracks the High and Low of the Globex session (5pm - 8:30am).")
+amt_sess            = input.session("1700-0830:123456", "OVN Session Time (CT)", group=g_ovn)
+amt_del_sess        = input.session("1500-1505", "Delete OVN Lines At (CT)", group=g_ovn, tooltip="Time to remove OVN lines from the chart to clean up.")
+amt_c_hi            = input.color(color.white, "High Color", group=g_ovn)
+amt_c_lo            = input.color(color.white, "Low Color", group=g_ovn)
+amt_width           = input.int(1, "Line Width", minval=1, group=g_ovn)
+amt_style_in        = input.string("Solid", "Line Style", options=["Solid", "Dashed", "Dotted"], group=g_ovn)
+amt_showLb          = input.bool(true, "Show Labels", group=g_ovn)
+amt_lb_size_in      = input.string("Normal", "Label Size", options=["Tiny", "Small", "Normal", "Large"], group=g_ovn)
+amt_offset          = input.int(2, "Label Offset", group=g_ovn)
+amt_c_txt_hi        = input.color(color.white, "High Label Text Color", group=g_ovn)
+amt_c_txt_lo        = input.color(color.white, "Low Label Text Color", group=g_ovn)
+amt_alert_ovn       = input.bool(true, "Alert OVN Break", group=g_ovn, tooltip="Alerts when price breaks the OVN High or Low during RTH.")
+
+// --- 6. Initial Balance ---
+ib_enable           = input.bool(true, "Enable IB", group=g_ib, tooltip="Master toggle for Initial Balance levels.")
+ib_session          = input.session("0830-0930", "IB Calc Period (CT)", group=g_ib, tooltip="First hour of RTH (typically).")
+ib_col_hi           = input.color(#ffcc80, "IB High Color", group=g_ib)
+ib_col_lo           = input.color(#ffcc80, "IB Low Color", group=g_ib)
+ib_lvl_width        = input.int(1, "Line Width", group=g_ib)
+ib_style_main       = input.string("Solid", "High/Low Style", options=["Solid", "Dashed", "Dotted"], group=g_ib)
+ib_show_mid         = input.bool(false, "Show IB Midpoint", group=g_ib)
+ib_col_mid          = input.color(#ffcc80, "Midpoint Color", group=g_ib)
+ib_style_int        = input.string("Dotted", "Midpoint Style", options=["Solid", "Dashed", "Dotted"], group=g_ib)
+ib_extend           = input.string("None", "Extend IB Levels", options=["Right", "Left", "Both", "None"], group=g_ib)
+ib_limit_ext        = input.bool(true, "Stop Extension at Time", group=g_ib)
+ib_stop_time        = input.session("0830-1515", "Stop Time (CT)", group=g_ib)
+ib_show_labels      = input.bool(true, "Show Labels", group=g_ib)
+ib_label_loc        = input.string("Right", "Label Location", options=["Left", "Right"], group=g_ib)
+ib_label_size       = input.string("Normal", "Label Size", options=["Auto", "Huge", "Large", "Normal", "Small", "Tiny"], group=g_ib)
+ib_lbl_offset       = input.int(0, "Label Offset", group=g_ib)
+ib_txt_c            = input.color(color.new(color.white, 100), "Label Text Color", group=g_ib, tooltip=TXT_TIP)
+ib_alert_ibh        = input.bool(true, "Alert IB High Cross", group=g_ib, tooltip="Fire alerts when price crosses IB High (up or down).")
+ib_alert_ibl        = input.bool(true, "Alert IB Low Cross", group=g_ib, tooltip="Fire alerts when price crosses IB Low (up or down).")
+ib_alert_time       = input.session("0830-1500", "Alert Window (CT)", group=g_ib, tooltip="Only fire IB alerts during this time window.")
+
+// --- 7. RTH VWAP ---
+vwap_enable         = input.bool(false, "Enable RTH VWAP", group=g_vwap, tooltip="Anchored VWAP starting at RTH Open.")
+vwap_start_h        = input.int(8, "Start Hour (CT)", minval=0, maxval=23, group=g_vwap)
+vwap_start_m        = input.int(30, "Start Minute", minval=0, maxval=59, group=g_vwap)
+vwap_end_h          = input.int(15, "End Hour (CT)", minval=0, maxval=23, group=g_vwap)
+vwap_end_m          = input.int(0, "End Minute", minval=0, maxval=59, group=g_vwap)
+vwap_col            = input.color(color.white, "Color", group=g_vwap)
+vwap_width          = input.int(2, "Width", group=g_vwap)
+vwap_style          = input.string("Solid", "Style", options=["Solid", "Dashed", "Dotted"], group=g_vwap)
+vwap_alert          = input.bool(false, "Alert VWAP Cross", group=g_vwap)
+
+// --- 8. Daily & Weekly Open ---
+cc_showOpen         = input.bool(false, "Show RTH Open (8:30)", group=g_opens)
+cc_c_open           = input.color(color.blue, "RTH Open Color", group=g_opens)
+cc_open_width       = input.int(1, "RTH Open Width", group=g_opens)
+cc_open_style       = input.string("Solid", "RTH Open Style", options=["Solid", "Dashed", "Dotted"], group=g_opens)
+wk_showOpen         = input.bool(true, "Show Weekly Open (Globex Sunday)", group=g_opens, tooltip="First tick traded at Sunday Globex open, using your OVN start hour.")
+wk_c_open           = input.color(color.white, "Weekly Open Color", group=g_opens)
+wk_open_width       = input.int(2, "Weekly Open Width", group=g_opens)
+wk_open_style       = input.string("Solid", "Weekly Open Style", options=["Solid", "Dashed", "Dotted"], group=g_opens)
+lbl_opens    = input.bool(true, "Show Labels", group=g_opens)
+cc_open_lb_size     = input.string("Normal", "RTH Open Label Size", options=["Tiny", "Small", "Normal", "Large", "Huge"], group=g_opens)
+cc_open_offset      = input.int(3, "RTH Open Label Offset", group=g_opens)
+wk_open_lb_size     = input.string("Normal", "Weekly Open Label Size", options=["Tiny", "Small", "Normal", "Large", "Huge"], group=g_opens)
+wk_open_offset      = input.int(2, "Weekly Open Label Offset", group=g_opens)
+opens_txt_c         = input.color(color.new(color.white, 100), "Label Text Color", group=g_opens, tooltip=TXT_TIP)
+wk_alert_open       = input.bool(true, "Alert Weekly Open Cross", group=g_opens, tooltip="Alerts when price crosses the weekly (Sunday Globex) open.")
+
+// --- 9. Previous Week ---
+pw_enable           = input.bool(true, "Enable Prev Week Levels", group=g_pw, tooltip="Displays the previous completed week's high and low.")
+pw_showH            = input.bool(true, "Show pwHigh", group=g_pw)
+pw_showL            = input.bool(true, "Show pwLow", group=g_pw)
+pw_col              = input.color(color.white, "Line Color", group=g_pw)
+pw_width            = input.int(2, "Line Width", group=g_pw)
+pw_style_in         = input.string("Solid", "Line Style", options=["Solid", "Dashed", "Dotted"], group=g_pw)
+lbl_pw       = input.bool(true, "Show Labels", group=g_pw)
+pw_lb_size_in       = input.string("Normal", "Label Size", options=["Tiny", "Small", "Normal", "Large"], group=g_pw)
+pw_offset           = input.int(2, "Label Offset", group=g_pw)
+pw_c_txt            = input.color(color.white, "Label Text Color", group=g_pw)
+pw_alert_hl         = input.bool(true, "Alert High/Low Break", group=g_pw, tooltip="Alerts when price crosses the prior week High or Low.")
+
+// --- 10. Previous Month ---
+macro_show_month = input.bool(true, "Show pmVAH/pmVAL", group=g_pm, tooltip="Displays the static VAH and VAL from the previous completed month.")
+macro_show_poc   = input.bool(true, "Show pmPOC", group=g_pm, tooltip="Displays the POC from the previous completed month.")
+macro_show_hl    = input.bool(true, "Show pmHigh/pmLow", group=g_pm, tooltip="Displays the high and low from the previous completed month.")
+macro_color      = input.color(color.white, "Line Color", group=g_pm)
+macro_width      = input.int(3, "Line Width", group=g_pm)
+macro_style      = input.string("Solid", "Line Style", options=["Solid", "Dashed", "Dotted"], group=g_pm)
+macro_poc_color  = input.color(color.white, "POC Color", group=g_pm)
+macro_poc_width  = input.int(3, "POC Width", group=g_pm)
+macro_poc_style  = input.string("Solid", "POC Style", options=["Solid", "Dashed", "Dotted"], group=g_pm)
+lbl_pm       = input.bool(true, "Show Labels", group=g_pm)
+macro_text_size  = input.string("Normal", "Label Size", options=["Tiny", "Small", "Normal", "Large"], group=g_pm)
+macro_offset     = input.int(2, "Label Offset", group=g_pm)
+macro_txt_c      = input.color(color.new(color.white, 100), "Label Text Color", group=g_pm, tooltip=TXT_TIP)
+macro_alert_lvl  = input.bool(true, "Alert Prev Month Cross", group=g_pm, tooltip="Trigger an alert when price crosses Previous Month VAH, VAL, or POC.")
+
+// --- 11. Volume Profile ---
+mvp_master          = input.bool(true, "Enable Volume Profile", group=g_mvp, tooltip="Master toggle — hides all profile visuals (polylines, walls, POC/VAH/VAL lines). Data still accumulates for alerts.")
+mvp_tf_mode         = input.string("Weekly", "Profile Period", options=["Session", "Weekly", "Monthly", "Yearly"], group=g_mvp, tooltip="Defines the timeframe for the main volume profile (e.g., Monthly Profile).")
+mvp_sess_time       = input.session("0830-1500", "Session Time (CT)", group=g_mvp)
+mvp_sess_dur        = input.float(6.5, "Session Duration (Hours)", group=g_mvp)
+mvp_calc_tf         = input.timeframe("1", "Calc Precision", group=g_mvp, tooltip="Lower timeframe used to calculate the profile. Lower = more precise but slower.")
+mvp_row_size        = input.float(0.25, "Row Size", minval=0.25, group=g_mvp, tooltip="Smallest row size of the volume profiles, in price. Profile Row Scale can make rows larger on symbols that move many ticks per bar.")
+mvp_val_pct         = input.float(68.0, "Value Area %", group=g_mvp)
+mvp_profile_width   = input.int(50, "Profile Width (Bars)", minval=10, maxval=500, group=g_mvp, tooltip="Maximum width of the volume profile in bars. Adjust based on your chart timeframe.")
+mvp_align_right     = input.bool(true, "Right Align", group=g_mvp)
+mvp_offset          = input.int(50, "Profile Offset (Bars)", minval=-200, maxval=200, group=g_mvp, tooltip="Shifts the profile histogram left or right. Positive = right, negative = left. Works with both alignments.")
+mvp_c_hist_va       = input.color(#78909c, "VA Histogram Color", group=g_mvp)
+mvp_hist_va_transp  = input.int(75, "VA Transparency", group=g_mvp)
+mvp_c_hist_out      = input.color(color.gray, "Outer Histogram Color", group=g_mvp)
+mvp_hist_out_transp = input.int(90, "Outer Transparency", group=g_mvp)
+mvp_show_poc        = input.bool(true, "Show POC", group=g_mvp)
+mvp_c_poc           = input.color(color.new(#78909c, 0), "POC Color", group=g_mvp)
+mvp_poc_width       = input.int(2, "POC Width", group=g_mvp)
+mvp_poc_style       = input.string("Solid", "POC Style", options=["Solid", "Dashed", "Dotted"], group=g_mvp)
+mvp_show_vah        = input.bool(true, "Show VAH", group=g_mvp)
+mvp_show_val        = input.bool(true, "Show VAL", group=g_mvp)
+mvp_c_levels        = input.color(color.gray, "VAH/VAL Color", group=g_mvp)
+mvp_lvl_width       = input.int(2, "VAH/VAL Width", group=g_mvp)
+mvp_lvl_style       = input.string("Solid", "VAH/VAL Style", options=["Solid", "Dashed", "Dotted"], group=g_mvp)
+lbl_dev      = input.bool(true, "Show Labels", group=g_mvp)
+mvp_lb_size         = input.string("Normal", "Label Size", options=["Tiny", "Small", "Normal", "Large", "Huge"], group=g_mvp)
+mvp_txt_c           = input.color(color.new(color.white, 100), "Label Text Color", group=g_mvp, tooltip=TXT_TIP)
+mvp_use_cur_alerts  = input.bool(true, "Enable Profile Alerts", group=g_mvp, tooltip="Alerts when price touches the developing profile POC, VAH, or VAL.")
+mvp_alert_time      = input.session("0830-1500", "Alert Window (CT)", group=g_mvp)
+
+// --- 12. Volume Profile Walls ---
+mvp_show_walls      = input.bool(false, "Show Walls", group=g_walls, tooltip="Shows High Volume Nodes as extended horizontal 'walls'.")
+mvp_c_wall_base     = input.color(color.new(#e6b300, 0), "Wall Color", group=g_walls)
+mvp_wall_transp     = input.int(25, "Wall Transparency", group=g_walls)
+mvp_w_wall          = input.int(1, "Wall Width", group=g_walls)
+mvp_wall_style      = input.string("Solid", "Wall Style", options=["Solid", "Dashed", "Dotted"], group=g_walls)
+mvp_extend_walls    = input.bool(true, "Extend Walls", group=g_walls)
+mvp_smooth_len      = input.int(2, "Smoothing", group=g_walls)
+mvp_min_wall_dist   = input.int(40, "Min Wall Distance (rows)", group=g_walls, tooltip="Minimum gap between walls, counted in profile rows.")
+mvp_use_auto_scale  = input.bool(true, "Use Auto-Scale Threshold", group=g_walls)
+mvp_scale_start     = input.float(2.0, "Start Mult", group=g_walls)
+mvp_scale_end       = input.float(1.5, "End Mult", group=g_walls)
+mvp_vol_mult        = input.float(2, "Fixed Mult", group=g_walls)
+
+// --- 13. TPO & Single Prints ---
+sp_rth_session      = input.session("0830-1500", "TPO Session (CT)", group=g_sp)
+sp_tpo_minutes      = input.int(30, "TPO Period (min)", minval=1, group=g_sp)
+sp_ticks_per_block  = input.int(1, "Ticks per Block", minval=1, group=g_sp)
+sp_min_ticks        = input.int(1, "Min Single Print Size (ticks)", group=g_sp, tooltip="Measured from the first to the last block of a single-print run, so the default of 1 needs at least two blocks: the Market Profile convention that a single print takes at least two TPO prices.")
+sp_filter_tails     = input.bool(true, "Filter Tails", group=g_sp)
+sp_tail_max         = input.int(15, "Max Tail Size", group=g_sp)
+sp_max_days         = input.int(10, "Max History Days", group=g_sp)
+sp_color_hist       = input.color(color.new(#ff9800, 90), "Single Print Color", group=g_sp)
+sp_border_c         = input.color(#ff9800, "Border Color", group=g_sp)
+sp_border_w         = input.int(0, "Border Width", minval=0, maxval=4, group=g_sp, tooltip="0 = no border.")
+sp_border_style     = input.string("Solid", "Border Style", options=["Solid", "Dashed", "Dotted"], group=g_sp)
+sp_show_poor        = input.bool(true, "Show Poor Highs/Lows", group=g_sp)
+sp_col_poor_h       = input.color(color.red, "Poor High Color", group=g_sp)
+sp_col_poor_l       = input.color(color.green, "Poor Low Color", group=g_sp)
+sp_poor_width       = input.int(2, "Poor H/L Width", group=g_sp)
+sp_poor_style_in    = input.string("Dotted", "Poor H/L Style", options=["Solid", "Dashed", "Dotted"], group=g_sp)
+lbl_poor     = input.bool(true, "Show Poor H/L Labels", group=g_sp)
+sp_poor_lb_size     = input.string("Small", "Label Size", options=["Tiny", "Small", "Normal", "Large", "Huge"], group=g_sp)
+sp_poor_txt_c       = input.color(color.new(color.white, 100), "Label Text Color", group=g_sp, tooltip=TXT_TIP)
+
+// --- 14. Naked POCs ---
+npoc_enable         = input.bool(true, "Enable nPOCs", group=g_npoc, tooltip="Tracks untouched POCs from previous days/weeks/months.")
+npoc_d_show         = input.bool(true, "Show Daily nPOC", group=g_npoc)
+npoc_w_show         = input.bool(true, "Show Weekly nPOC", group=g_npoc)
+npoc_m_show         = input.bool(true, "Show Monthly nPOC", group=g_npoc)
+npoc_c              = input.color(color.rgb(255, 192, 203), "Daily Color", group=g_npoc)
+npoc_c_w            = input.color(color.rgb(255, 192, 203), "Weekly Color", group=g_npoc)
+npoc_c_m            = input.color(color.rgb(255, 192, 203), "Monthly Color", group=g_npoc)
+npoc_w_d            = input.int(1, "Daily Width", group=g_npoc)
+npoc_w_w            = input.int(2, "Weekly Width", group=g_npoc)
+npoc_w_m            = input.int(3, "Monthly Width", group=g_npoc)
+npoc_style_in       = input.string("Solid", "Line Style", options=["Solid", "Dashed", "Dotted"], group=g_npoc)
+amt_vauto           = input.bool(true, "Auto Bin Size (tick)", group=g_npoc)
+amt_vres            = input.bool(false, "Use Manual Bin Size", group=g_npoc)
+amt_res_val         = input.float(0.25, "Manual Bin Size", minval=0.0001, group=g_npoc)
+lbl_npoc     = input.bool(true, "Show Labels", group=g_npoc)
+npoc_lb_size        = input.string("Small", "Label Size", options=["Tiny", "Small", "Normal", "Large", "Huge"], group=g_npoc)
+npoc_lb_offset      = input.int(2, "Label Offset", group=g_npoc)
+npoc_txt_c          = input.color(color.new(color.white, 100), "Label Text Color", group=g_npoc, tooltip=TXT_TIP)
+npoc_alert          = input.bool(true, "Alert nPOC Touch", group=g_npoc)
+
+// --- 15. Settlement & Inventory ---
+inv_enable          = input.bool(true, "Enable Inventory Trap Logic", group=g_inv, tooltip="Detects if market positioning is 100% net long or short relative to the settlement price.")
+inv_show_line       = input.bool(true, "Show Settlement Line", group=g_inv, tooltip="Show or hide the Settlement line on the chart. Alerts will still work if Logic is enabled.")
+inv_start_h         = input.int(17, "Globex Start Hour (CT)", minval=0, maxval=23, group=g_inv)
+inv_end_h           = input.int(8, "RTH Open Hour (CT)", minval=0, maxval=23, group=g_inv)
+inv_end_m           = input.int(30, "RTH Open Minute", minval=0, maxval=59, group=g_inv)
+inv_c_settle        = input.color(color.gray, "Settle Color", group=g_inv)
+inv_settle_width    = input.int(1, "Settle Line Width", group=g_inv)
+inv_settle_style    = input.string("Dashed", "Settle Line Style", options=["Solid", "Dashed", "Dotted"], group=g_inv)
+inv_c_trap          = input.color(color.new(#00FF00, 0), "Trap Color", group=g_inv)
+inv_width           = input.int(1, "Trap Line Width", group=g_inv)
+inv_style_in        = input.string("Dashed", "Trap Line Style", options=["Solid", "Dashed", "Dotted"], group=g_inv)
+inv_txt_trap        = input.string("TRAP ACTIVE", "Trap Text", group=g_inv)
+lbl_inv      = input.bool(true, "Show Labels", group=g_inv)
+inv_lb_size_in      = input.string("Normal", "Label Size", options=["Tiny", "Small", "Normal", "Large"], group=g_inv)
+inv_offset          = input.int(40, "Label Offset", group=g_inv)
+inv_txt_c           = input.color(color.new(color.white, 100), "Label Text Color", group=g_inv, tooltip="Transparent (the default) = black text on the colored tag.")
+inv_alert           = input.bool(true, "Alert Trap Detected", group=g_inv)
+
+// --- 16. Late Spike ---
+showSpike           = input.bool(true, "Show Late Spike", group=g_spike, tooltip="Marks the base of a late-day spike (breakout) from the last 30 minutes of trading.")
+spikeTimeRange      = input.session("1430-1500", "Spike Window (CT)", group=g_spike)
+spike_c_sup         = input.color(color.green, "Support Color", group=g_spike)
+spike_c_res         = input.color(color.red, "Resistance Color", group=g_spike)
+spike_width         = input.int(1, "Line Width", group=g_spike)
+spike_style         = input.string("Solid", "Line Style", options=["Solid", "Dashed", "Dotted"], group=g_spike)
+lbl_spike    = input.bool(true, "Show Labels", group=g_spike)
+spike_lbl_size      = input.string("Normal", "Label Size", options=["Tiny", "Small", "Normal", "Large"], group=g_spike)
+spike_offset        = input.int(15, "Label Offset", group=g_spike)
+spike_txt_c         = input.color(color.new(color.white, 100), "Label Text Color", group=g_spike, tooltip=TXT_TIP)
+spike_alert         = input.bool(true, "Alert Spike Base Test", group=g_spike, tooltip="Alerts when price retests the base of the spike.")
+
+// --- 17. Dashboard ---
+tbl_show         = input.bool(true, "Show Dashboard", group=g_tbl)
+tbl_pos          = input.string("Top Right", "Position", options=["Top Right", "Top Left", "Bottom Right", "Bottom Left", "Middle Right", "Middle Left"], group=g_tbl)
+tbl_size         = input.string("Normal", "Text Size", options=["Tiny", "Small", "Normal", "Large"], group=g_tbl)
+tbl_session      = input.session("0830-1500", "Table RTH Session (CT)", group=g_tbl)
+pb_track_session = input.session("0815-1500", "Context Tracking Session (CT)", group=g_tbl, tooltip="Used for background calculations (highs/lows/ATR).")
+pb_atr_len       = input.int(14, "Daily ATR Period", group=g_tbl)
+
+// --- 18. Alerts ---
+alertcap_enable     = input.bool(true, "Enable Alert Storm Cap", group=g_alerts, tooltip="Soft cap on total alerts within a rolling window to prevent webhook flooding. When the cap is hit, one warning alert fires and further alerts are suppressed until the window rolls forward.")
+alertcap_max        = input.int(30, "Max Alerts per Window", minval=5, maxval=200, group=g_alerts)
+alertcap_window_min = input.int(60, "Window (minutes)", minval=5, maxval=1440, group=g_alerts)
+
+// --- Effective Tick: auto-detect by instrument root, or use manual ---
+f_auto_tick() =>
+    string r = syminfo.root
+    float known = r == "CL" or r == "MCL" ? 0.05 :
+     r == "NG" or r == "QG"  ? 0.005 :
+     r == "GC" or r == "MGC" ? 0.50 :
+     r == "SI" or r == "SIL" ? 0.05 :
+     r == "HG" or r == "QC"  ? 0.005 :
+     r == "ZB" or r == "ZN"  ? 0.015625 :
+     r == "6E" or r == "M6E" ? 0.0005 :
+     r == "6J" or r == "M6J" ? 0.0000005 :
+     na
+    // Smart fallback for non-standard tickers (USTEC.F, US500, etc.)
+    // If price > 1000 and mintick < 0.1, the instrument is likely an index CFD/future
+    // with a very fine mintick that will choke the profile engine
+    float result = known
+    if na(result)
+        if close > 1000 and syminfo.mintick < 0.1
+            result := 0.25
+        else
+            result := syminfo.mintick
+    result
+
+float eff_tick = tick_auto ? f_auto_tick() : tick_manual_val
+
+// --- Prices follow the chart's back-adjustment (B-ADJ) setting ---
+// Requested series use the same prices as the chart. B-ADJ off (TradingView's default): the
+// prices that actually traded. Continuous symbols (ticker ends in "!") keep the real gap at each
+// roll, so profiles, naked POCs and prior day/week/month levels sit where the contracts traded,
+// like NinjaTrader on "Merge non back adjusted". B-ADJ on: everything is back-adjusted to the
+// current contract, like "Merge back adjusted". Explicit contracts fall through as a no-op.
+bool is_continuous = str.endswith(syminfo.ticker, "!") and syminfo.type == "futures"
+chart_sym = is_continuous ? ticker.modify(syminfo.tickerid, backadjustment = backadjustment.inherit) : syminfo.tickerid
+
+// --- Profile row scale ---
+// Auto keeps rows near 0.0035% of price, rounded to 1, 2 or 5 times a power of ten in ticks,
+// so a bar touches about as many rows on NQ, YM or BTC as on ES. The scale is set from the
+// last trade before each month starts, and every profile keeps the scale it started with, so
+// a scale change never mixes row sizes inside one profile. NinjaTrader uses the same rule.
+f_row_mult(float price) =>
+    int _m = 1
+    if row_scale_in != "Auto"
+        _m := int(nz(str.tonumber(str.replace(row_scale_in, "x", "")), 1))
+    else if not na(price) and price > 0 and eff_tick > 0
+        float _raw = price * 0.000035 / eff_tick
+        if _raw >= math.sqrt(2)
+            float _dec = math.pow(10, math.floor(math.log10(_raw)))
+            float _f = _raw / _dec
+            float _n = _f < math.sqrt(2) ? 1.0 : _f < math.sqrt(10) ? 2.0 : _f < math.sqrt(50) ? 5.0 : 10.0
+            _m := int(math.round(_n * _dec))
+    math.max(1, _m)
+
+var int row_mult = na
+bool row_new_month = is_new_bar("M")
+if na(row_mult) or row_new_month
+    row_mult := f_row_mult(nz(close[1], close))
+
+f_lbl_on(bool _group) =>
+    _group and not lbl_hide_all
+bool tags_on = lbl_tags and not lbl_hide_all
+
+// --- Storm cap state & wrappers ---
+// State is held in arrays (mutable inside functions in Pine v6).
+// _alertcap_warned_arr is a 1-element array used as a bool cell;
+// direct scalar reassignment of a var bool isn't allowed inside functions.
+var int[]  _alertcap_stamps      = array.new_int(0)
+var int[]  _alertcap_warned_arr  = array.from(0)   // [0]=0 not warned, 1 warned
+
+// Shared admission check. Returns true if the alert should fire this tick.
+// Also emits the warning alert on the first cap-breach after a clean window.
+f_alertcap_admit() =>
+    bool _ok = true
+    if alertcap_enable
+        int _win_ms = alertcap_window_min * 60 * 1000
+        int _cutoff = time - _win_ms
+        // Trim expired stamps (oldest first)
+        while array.size(_alertcap_stamps) > 0 and array.get(_alertcap_stamps, 0) < _cutoff
+            array.shift(_alertcap_stamps)
+        int _size = array.size(_alertcap_stamps)
+        // Reset warning latch once back under cap
+        if array.get(_alertcap_warned_arr, 0) == 1 and _size < alertcap_max
+            array.set(_alertcap_warned_arr, 0, 0)
+        if _size < alertcap_max
+            array.push(_alertcap_stamps, time)
+            _ok := true
+        else
+            if array.get(_alertcap_warned_arr, 0) == 0
+                array.set(_alertcap_warned_arr, 0, 1)
+                alert(_sym_tag + "⚠ Alert storm cap reached (" + str.tostring(alertcap_max) + "/" + str.tostring(alertcap_window_min) + "m) — suppressing further alerts", alert.freq_once_per_bar)
+            _ok := false
+    _ok
+
+// Fire at once-per-bar frequency (with cap).
+f_alert_bar(string msg) =>
+    if f_alertcap_admit()
+        alert(msg, alert.freq_once_per_bar)
+
+// Fire at once-per-bar-close frequency (with cap).
+f_alert_close(string msg) =>
+    if f_alertcap_admit()
+        alert(msg, alert.freq_once_per_bar_close)
+
+// ==========================================
+// --- GLOBAL PROFILE CALCULATION (GRAND UNIFICATION) ---
+// ==========================================
+calc_profile_stats(map<float, float> v_map, float va_pct) =>
+    array<float> prices = map.keys(v_map)
+    array<float> vols   = map.values(v_map)
+    float poc = 0.0, float vah = 0.0, float val = 0.0
+    if array.size(prices) > 0
+        float max_vol = 0.0
+        float total_vol = 0.0
+        for i = 0 to array.size(prices) - 1
+            float v = array.get(vols, i)
+            total_vol += v
+            if v > max_vol
+                max_vol := v
+                poc := array.get(prices, i)
+        
+        array.sort(prices)
+        int poc_idx = -1
+        for i = 0 to array.size(prices) - 1
+            if array.get(prices, i) == poc
+                poc_idx := i
+                break
+        
+        float final_pct = va_pct > 1.0 ? va_pct / 100.0 : va_pct
+        
+        float cur_va = max_vol
+        float tgt_va = total_vol * final_pct
+
+        int up = poc_idx
+        int dn = poc_idx
+        int max_idx = array.size(prices) - 1
+        
+        while cur_va < tgt_va
+            float v_up = (up < max_idx) ? map.get(v_map, array.get(prices, up + 1)) : 0.0
+            float v_dn = (dn > 0) ? map.get(v_map, array.get(prices, dn - 1)) : 0.0
+            if (up >= max_idx and dn <= 0) 
+                break
+            if (v_up >= v_dn and up < max_idx) or dn <= 0
+                up += 1
+                cur_va += v_up
+            else
+                dn -= 1
+                cur_va += v_dn
+        vah := array.get(prices, up)
+        val := array.get(prices, dn)
+    [poc, vah, val]
+
+// ==========================================
+// --- ROLL SOURCE (continuous futures) ---
+// ==========================================
+// TradingView keeps a continuous chart (ES1!) on the expiring contract until it expires, but
+// volume moves to the next contract on the roll date, about 8 days earlier. NinjaTrader rolls
+// on the roll date. Every volume profile (daily, main profile, prior month, naked POCs) reads
+// its bars from here: once the chart's underlying contract out-traded the continuous series on
+// the prior day, that contract's own bars; before that, the continuous series' own bars, which
+// follow the chart's B-ADJ setting (the current contract's bars are the same either way, since
+// back-adjustment is anchored to it). With B-ADJ off the roll keeps its real gap, as on
+// NinjaTrader with "Merge non back adjusted". On an explicit contract (ESZ2026) both are the
+// chart symbol, so nothing changes.
+string roll_cc_sym = is_continuous and not na(syminfo.current_contract) ? syminfo.current_contract : syminfo.tickerid
+float roll_vol_cc = request.security(roll_cc_sym, "D", volume[1], lookahead=barmerge.lookahead_on)
+float roll_vol_c1 = request.security(syminfo.tickerid, "D", volume[1], lookahead=barmerge.lookahead_on)
+bool roll_use_cc = is_continuous and nz(roll_vol_cc) > 0 and nz(roll_vol_cc) >= nz(roll_vol_c1)
+// Chart-timeframe bars. gaps_on: a bar the source didn't trade returns na instead of repeating
+// the last bar's volume.
+[roll_cc_h, roll_cc_l, roll_cc_v] = request.security(roll_cc_sym, timeframe.period, [high, low, volume], gaps=barmerge.gaps_on)
+[roll_c1_h, roll_c1_l, roll_c1_v] = request.security(chart_sym, timeframe.period, [high, low, volume], gaps=barmerge.gaps_on)
+float src_h = roll_use_cc ? roll_cc_h : roll_c1_h
+float src_l = roll_use_cc ? roll_cc_l : roll_c1_l
+float src_v = roll_use_cc ? roll_cc_v : roll_c1_v
+
+// ==========================================
+// --- REFACTOR 1: SHARED LTF DATA (PERFORMANCE) ---
+// ==========================================
+// Intrabar arrays come from both roll sources; each bar uses the one picked above.
+int _chart_sec = timeframe.in_seconds(timeframe.period)
+string shared_profile_tf = "1"
+bool shared_use_ltf = timeframe.in_seconds(timeframe.period) > timeframe.in_seconds(shared_profile_tf)
+float[] sh_cc_vol  = shared_use_ltf ? request.security_lower_tf(roll_cc_sym, shared_profile_tf, volume) : na
+float[] sh_cc_high = shared_use_ltf ? request.security_lower_tf(roll_cc_sym, shared_profile_tf, high) : na
+float[] sh_cc_low  = shared_use_ltf ? request.security_lower_tf(roll_cc_sym, shared_profile_tf, low) : na
+float[] sh_c1_vol  = shared_use_ltf ? request.security_lower_tf(chart_sym, shared_profile_tf, volume) : na
+float[] sh_c1_high = shared_use_ltf ? request.security_lower_tf(chart_sym, shared_profile_tf, high) : na
+float[] sh_c1_low  = shared_use_ltf ? request.security_lower_tf(chart_sym, shared_profile_tf, low) : na
+float[] shared_ltf_vol  = roll_use_cc ? sh_cc_vol  : sh_c1_vol
+float[] shared_ltf_high = roll_use_cc ? sh_cc_high : sh_c1_high
+float[] shared_ltf_low  = roll_use_cc ? sh_cc_low  : sh_c1_low
+
+bool mvp_needs_own_ltf = mvp_calc_tf != shared_profile_tf and timeframe.in_seconds(timeframe.period) > timeframe.in_seconds(mvp_calc_tf)
+float[] mvp_cc_vol  = mvp_needs_own_ltf ? request.security_lower_tf(roll_cc_sym, mvp_calc_tf, volume) : na
+float[] mvp_cc_high = mvp_needs_own_ltf ? request.security_lower_tf(roll_cc_sym, mvp_calc_tf, high) : na
+float[] mvp_cc_low  = mvp_needs_own_ltf ? request.security_lower_tf(roll_cc_sym, mvp_calc_tf, low) : na
+float[] mvp_c1_vol  = mvp_needs_own_ltf ? request.security_lower_tf(chart_sym, mvp_calc_tf, volume) : na
+float[] mvp_c1_high = mvp_needs_own_ltf ? request.security_lower_tf(chart_sym, mvp_calc_tf, high) : na
+float[] mvp_c1_low  = mvp_needs_own_ltf ? request.security_lower_tf(chart_sym, mvp_calc_tf, low) : na
+float[] mvp_own_vol  = roll_use_cc ? mvp_cc_vol  : mvp_c1_vol
+float[] mvp_own_high = roll_use_cc ? mvp_cc_high : mvp_c1_high
+float[] mvp_own_low  = roll_use_cc ? mvp_cc_low  : mvp_c1_low
+
+bool use_ltf        = shared_use_ltf or mvp_needs_own_ltf
+float[] ltf_vol     = mvp_needs_own_ltf ? mvp_own_vol  : shared_ltf_vol
+float[] ltf_high    = mvp_needs_own_ltf ? mvp_own_high : shared_ltf_high
+float[] ltf_low     = mvp_needs_own_ltf ? mvp_own_low  : shared_ltf_low
+
+// ==========================================
+// --- MODULE 1: IB + ALERTS LOGIC ---
+// ==========================================
+ib_inSession(sess) => not na(time(timeframe.period, sess, u_tz))
+
+var line ib_l_h = na, var line ib_l_l = na, var line ib_l_m = na
+var label ib_lb_h = na, var label ib_lb_l = na, var label ib_lb_m = na
+var float current_ib_high = na, var float current_ib_low = na
+var int ib_offset = 0
+
+ib_ins = ib_inSession(ib_session)
+ib_alert_active = ib_inSession(ib_alert_time)
+
+if ib_ins and not ib_ins[1]
+    current_ib_high := na, current_ib_low := na
+
+if ib_ins
+    ib_offset += 1
+
+if ib_enable and ib_ins[1] and not ib_ins
+    float h = high[1], float l = low[1]
+    for i=1 to ib_offset
+        if low[i] < l 
+            l := low[i]
+        if high[i] > h 
+            h := high[i]
+    float m = (h+l)/2
+    current_ib_high := h, current_ib_low := l
+
+    ib_ext_mode = ib_extend == "Right" ? extend.right : ib_extend == "Left" ? extend.left : ib_extend == "Both" ? extend.both : extend.none
+
+    ib_l_h := line.new(bar_index[ib_offset], h, bar_index, h, color=ib_col_hi, extend=ib_ext_mode, width=ib_lvl_width, style=get_line_style(ib_style_main))
+    ib_l_l := line.new(bar_index[ib_offset], l, bar_index, l, color=ib_col_lo, extend=ib_ext_mode, width=ib_lvl_width, style=get_line_style(ib_style_main))
+    if ib_show_mid
+        ib_l_m := line.new(bar_index[ib_offset], m, bar_index, m, color=ib_col_mid, style=get_line_style(ib_style_int), extend=ib_ext_mode, width=ib_lvl_width)
+
+    if ib_show_labels and not lbl_hide_all
+        int base_x = ib_label_loc == "Left" ? bar_index[ib_offset] : bar_index
+        int lx = base_x + ib_lbl_offset
+        
+        ib_lb_h := label.new(lx, h, "  IB High: "+f_fmt_price(h), style=label.style_none, color=color.new(color.white, 100), textcolor=f_txt(ib_txt_c, ib_col_hi), size=get_size(ib_label_size))
+        ib_lb_l := label.new(lx, l, "  IB Low: "+f_fmt_price(l), style=label.style_none, color=color.new(color.white, 100), textcolor=f_txt(ib_txt_c, ib_col_lo), size=get_size(ib_label_size))
+        if ib_show_mid
+            ib_lb_m := label.new(lx, m, "  IB Midpoint: "+f_fmt_price(m), style=label.style_none, color=color.new(color.white, 100), textcolor=f_txt(ib_txt_c, ib_col_mid), size=get_size(ib_label_size))
+
+    ib_offset := 0
+
+ib_can_ext = ib_limit_ext ? not na(time(timeframe.period, ib_stop_time, u_tz)) : true
+if ib_enable and (not ib_ins) and (not ib_ins[1]) and ib_can_ext
+    line.set_x2(ib_l_h, bar_index), line.set_x2(ib_l_l, bar_index)
+    if ib_show_mid
+        line.set_x2(ib_l_m, bar_index)
+    if ib_label_loc == "Right" and ib_show_labels and not lbl_hide_all
+        label.set_x(ib_lb_h, bar_index + ib_lbl_offset), label.set_x(ib_lb_l, bar_index + ib_lbl_offset)
+        if ib_show_mid
+            label.set_x(ib_lb_m, bar_index + ib_lbl_offset)
+
+bool ib_h_rollover = not na(current_ib_high) and not na(current_ib_high[1]) and current_ib_high != current_ib_high[1]
+bool ib_l_rollover = not na(current_ib_low) and not na(current_ib_low[1]) and current_ib_low != current_ib_low[1]
+// Cross checks run on every bar (not inside the alert conditions) so ta.cross* keeps its history.
+bool x_up_current_ib_high = ta.crossover(close, current_ib_high)
+bool ib_h_up = ib_enable and ib_alert_ibh and not ib_ins and ib_alert_active and not na(current_ib_high) and not ib_h_rollover and x_up_current_ib_high
+bool x_dn_current_ib_high = ta.crossunder(close, current_ib_high)
+bool ib_h_dn = ib_enable and ib_alert_ibh and not ib_ins and ib_alert_active and not na(current_ib_high) and not ib_h_rollover and x_dn_current_ib_high
+bool x_up_current_ib_low = ta.crossover(close, current_ib_low)
+bool ib_l_up = ib_enable and ib_alert_ibl and not ib_ins and ib_alert_active and not na(current_ib_low) and not ib_l_rollover and x_up_current_ib_low
+bool x_dn_current_ib_low = ta.crossunder(close, current_ib_low)
+bool ib_l_dn = ib_enable and ib_alert_ibl and not ib_ins and ib_alert_active and not na(current_ib_low) and not ib_l_rollover and x_dn_current_ib_low
+if ib_h_up
+    f_alert_bar(_sym_tag + "IBH Cross Up @ " + f_fmt_price(current_ib_high) + " | close " + f_fmt_price(close))
+if ib_h_dn
+    f_alert_bar(_sym_tag + "IBH Cross Down @ " + f_fmt_price(current_ib_high) + " | close " + f_fmt_price(close))
+if ib_l_up
+    f_alert_bar(_sym_tag + "IBL Cross Up @ " + f_fmt_price(current_ib_low) + " | close " + f_fmt_price(close))
+if ib_l_dn
+    f_alert_bar(_sym_tag + "IBL Cross Down @ " + f_fmt_price(current_ib_low) + " | close " + f_fmt_price(close))
+
+// ==========================================
+// --- MODULE 2: AMT STRUCTURE LOGIC ---
+// ==========================================
+amt_tick = amt_vauto ? eff_tick : (amt_vres ? amt_res_val : eff_tick)
+amt_step = amt_tick
+
+// 1. OVN High/Low
+var float amt_pmHigh = na, var float amt_pmLow = na
+amt_t_val = time(timeframe.period, amt_sess, u_tz)
+amt_inSess = not na(amt_t_val)
+amt_newSess = amt_inSess and not amt_inSess[1]
+
+if amt_enable
+    if amt_newSess
+        amt_pmHigh := high, amt_pmLow := low
+    else if amt_inSess
+        amt_pmHigh := math.max(amt_pmHigh, high), amt_pmLow := math.min(amt_pmLow, low)
+
+var line l_amtHigh = na, var line l_amtLow = na
+var label lb_amtHigh = na, var label lb_amtLow = na
+amt_sessEnd = not amt_inSess and amt_inSess[1]
+
+if amt_enable and amt_sessEnd
+    l_amtHigh := line.new(bar_index, amt_pmHigh, bar_index+amt_offset, amt_pmHigh, color=amt_c_hi, width=amt_width, style=get_line_style(amt_style_in))
+    l_amtLow := line.new(bar_index, amt_pmLow, bar_index+amt_offset, amt_pmLow, color=amt_c_lo, width=amt_width, style=get_line_style(amt_style_in))
+    if amt_showLb and not lbl_hide_all
+        lb_amtHigh := label.new(bar_index+amt_offset, amt_pmHigh, "OVN High: "+f_fmt_price(amt_pmHigh), style=label.style_label_left, textcolor=amt_c_txt_hi, color=color(na), size=get_size(amt_lb_size_in))
+        lb_amtLow := label.new(bar_index+amt_offset, amt_pmLow, "OVN Low: "+f_fmt_price(amt_pmLow), style=label.style_label_left, textcolor=amt_c_txt_lo, color=color(na), size=get_size(amt_lb_size_in))
+
+amt_del_t = time(timeframe.period, amt_del_sess + ":123456", u_tz)
+amt_is_del = not na(amt_del_t)
+if amt_enable and not amt_inSess and not amt_is_del and not na(l_amtHigh)
+    line.set_x2(l_amtHigh, bar_index+amt_offset), line.set_x2(l_amtLow, bar_index+amt_offset)
+    label.set_x(lb_amtHigh, bar_index+amt_offset), label.set_x(lb_amtLow, bar_index+amt_offset)
+if amt_is_del and not na(l_amtHigh)
+    line.delete(l_amtHigh), line.delete(l_amtLow), label.delete(lb_amtHigh), label.delete(lb_amtLow)
+    l_amtHigh := na, l_amtLow := na
+
+bool x_up_amt_pmHigh = ta.crossover(close, amt_pmHigh)
+bool x_dn_amt_pmHigh = ta.crossunder(close, amt_pmHigh)
+bool x_up_amt_pmLow = ta.crossover(close, amt_pmLow)
+bool x_dn_amt_pmLow = ta.crossunder(close, amt_pmLow)
+if amt_alert_ovn and not amt_inSess and not na(amt_pmHigh)
+    bool amt_h_rollover = not na(amt_pmHigh[1]) and amt_pmHigh != amt_pmHigh[1]
+    bool amt_l_rollover = not na(amt_pmLow[1])  and amt_pmLow  != amt_pmLow[1]
+    if not amt_h_rollover and x_up_amt_pmHigh
+        f_alert_bar(_sym_tag + "OVN High Cross Up @ " + f_fmt_price(amt_pmHigh) + " | close " + f_fmt_price(close))
+    if not amt_h_rollover and x_dn_amt_pmHigh
+        f_alert_bar(_sym_tag + "OVN High Cross Down @ " + f_fmt_price(amt_pmHigh) + " | close " + f_fmt_price(close))
+    if not amt_l_rollover and x_up_amt_pmLow
+        f_alert_bar(_sym_tag + "OVN Low Cross Up @ " + f_fmt_price(amt_pmLow) + " | close " + f_fmt_price(close))
+    if not amt_l_rollover and x_dn_amt_pmLow
+        f_alert_bar(_sym_tag + "OVN Low Cross Down @ " + f_fmt_price(amt_pmLow) + " | close " + f_fmt_price(close))
+
+// 2. RTH VWAP
+vwap_h_val = hour(time, u_tz), vwap_m_val = minute(time, u_tz)
+vwap_min = (vwap_h_val * 60) + vwap_m_val
+vwap_start_calc = (vwap_start_h * 60) + vwap_start_m
+vwap_end_calc = (vwap_end_h * 60) + vwap_end_m
+vwap_in_rth = (vwap_min >= vwap_start_calc) and (vwap_min < vwap_end_calc)
+
+var float v_sumSrc = 0.0, var float v_sumVol = 0.0
+if vwap_enable
+    if vwap_in_rth
+        if not vwap_in_rth[1]
+            v_sumSrc := 0.0, v_sumVol := 0.0
+        v_sumSrc += hlc3 * volume, v_sumVol += volume
+    else
+        v_sumSrc := 0.0, v_sumVol := 0.0
+vwap_val = (vwap_enable and vwap_in_rth and v_sumVol > 0) ? v_sumSrc / v_sumVol : na
+plot(vwap_val, "ES RTH VWAP", color=vwap_in_rth ? color.new(vwap_col, 50) : na, style=plot.style_linebr, linewidth=vwap_width, linestyle=vwap_style == "Dashed" ? plot.linestyle_dashed : vwap_style == "Dotted" ? plot.linestyle_dotted : plot.linestyle_solid)
+
+bool x_up_vwap_val = ta.crossover(close, vwap_val)
+bool x_dn_vwap_val = ta.crossunder(close, vwap_val)
+if vwap_alert and vwap_in_rth and not na(vwap_val)
+    bool vwap_rollover = not vwap_in_rth[1]
+    if not vwap_rollover and x_up_vwap_val
+        f_alert_bar(_sym_tag + "RTH VWAP Cross Up @ " + f_fmt_price(vwap_val) + " | close " + f_fmt_price(close))
+    if not vwap_rollover and x_dn_vwap_val
+        f_alert_bar(_sym_tag + "RTH VWAP Cross Down @ " + f_fmt_price(vwap_val) + " | close " + f_fmt_price(close))
+
+// 3. Prev Day Levels
+[d_high, d_low] = request.security(chart_sym, 'D', [high[1], low[1]], lookahead=barmerge.lookahead_on)
+
+// Previous week high/low + current week open (Globex Sunday open)
+[pw_High_val, pw_Low_val] = request.security(chart_sym, "W", [high[1], low[1]], lookahead=barmerge.lookahead_on)
+
+var float rth_h_curr = na, var float rth_l_curr = na
+var float rth_h_prev = na, var float rth_l_prev = na
+var float rth_open_curr = na, var float rth_open_prev = na
+
+bool in_sess = not na(time(timeframe.period, pd_sess_time))
+
+if in_sess
+    if not in_sess[1]
+        rth_h_curr := high
+        rth_l_curr := low
+        rth_open_curr := open
+    else
+        rth_h_curr := math.max(rth_h_curr, high)
+        rth_l_curr := math.min(rth_l_curr, low)
+
+if not in_sess and in_sess[1]
+    rth_h_prev := rth_h_curr
+    rth_l_prev := rth_l_curr
+    rth_open_prev := rth_open_curr
+
+pd_High = pd_use_rth ? (na(rth_h_prev) ? d_high : rth_h_prev) : d_high
+pd_Low  = pd_use_rth ? (na(rth_l_prev) ? d_low  : rth_l_prev) : d_low
+
+bool pd_in_full_day = not na(time(timeframe.period, SESS_FULL_DAY, u_tz))
+
+var line l_pdH = na, var line l_pdL = na
+var label lb_pdH = na, var label lb_pdL = na
+
+if pd_enable and amt_newSess
+    if pd_showH and not na(pd_High)
+        l_pdH := line.new(bar_index, pd_High, bar_index, pd_High, color=pd_high_c, style=get_line_style(pd_style_in), width=pd_high_width)
+    if pd_showL and not na(pd_Low)
+        l_pdL := line.new(bar_index, pd_Low, bar_index, pd_Low, color=pd_low_c, style=get_line_style(pd_style_in), width=pd_low_width)
+
+if pd_enable and pd_in_full_day and pd_showH and not na(l_pdH)
+    line.set_x2(l_pdH, bar_index)
+if pd_enable and pd_in_full_day and pd_showL and not na(l_pdL)
+    line.set_x2(l_pdL, bar_index)
+
+if barstate.islast
+    label.delete(lb_pdH), label.delete(lb_pdL)
+if pd_enable and barstate.islast and f_lbl_on(lbl_pd)
+    if pd_showH
+        lb_pdH := label.new(bar_index + pd_offset_val, pd_High, "pdHigh: " + f_fmt_price(pd_High), color=color(na), textcolor=f_txt(pd_txt_c, pd_high_c), style=label.style_label_left, size=get_size(pd_lb_size_in), textalign=text.align_right)
+    if pd_showL
+        lb_pdL := label.new(bar_index + pd_offset_val, pd_Low, "pdLow: " + f_fmt_price(pd_Low), color=color(na), textcolor=f_txt(pd_txt_c, pd_low_c), style=label.style_label_left, size=get_size(pd_lb_size_in), textalign=text.align_right) 
+
+// Previous Day Open
+var line l_pdOpen = na, var label lb_pdOpen = na
+
+if pd_enable and pd_showOpen and amt_newSess and not na(rth_open_prev)
+    l_pdOpen := line.new(bar_index, rth_open_prev, bar_index, rth_open_prev, color=pd_open_c, style=get_line_style(pd_style_in), width=pd_open_width)
+
+if pd_enable and pd_in_full_day and pd_showOpen and not na(l_pdOpen)
+    line.set_x2(l_pdOpen, bar_index)
+
+if barstate.islast
+    label.delete(lb_pdOpen)
+if pd_enable and pd_showOpen and barstate.islast and not na(rth_open_prev) and f_lbl_on(lbl_pd)
+    lb_pdOpen := label.new(bar_index + pd_offset_val, rth_open_prev, "pdOpen: " + f_fmt_price(rth_open_prev), color=color(na), textcolor=f_txt(pd_txt_c, pd_open_c), style=label.style_label_left, size=get_size(pd_lb_size_in), textalign=text.align_right)
+
+// Previous Week High/Low
+var line l_pwH = na, var line l_pwL = na
+var label lb_pwH = na, var label lb_pwL = na
+// pw lines: anchor at start of current week, draw forward to current bar (segment, no left extension)
+var int pw_anchor_t = na
+if is_new_bar("W")
+    pw_anchor_t := time
+int pw_x1 = nz(pw_anchor_t, time)
+if pw_enable and barstate.islast
+    line.delete(l_pwH[1]), label.delete(lb_pwH[1])
+    line.delete(l_pwL[1]), label.delete(lb_pwL[1])
+    if pw_showH and not na(pw_High_val)
+        l_pwH := line.new(pw_x1, pw_High_val, time, pw_High_val, xloc=xloc.bar_time, color=pw_col, style=get_line_style(pw_style_in), width=pw_width)
+    if pw_showH and not na(pw_High_val) and f_lbl_on(lbl_pw)
+        lb_pwH := label.new(bar_index + pw_offset, pw_High_val, "pwHigh: " + f_fmt_price(pw_High_val), color=color(na), textcolor=pw_c_txt, style=label.style_label_left, size=get_size(pw_lb_size_in), textalign=text.align_right)
+    if pw_showL and not na(pw_Low_val)
+        l_pwL := line.new(pw_x1, pw_Low_val, time, pw_Low_val, xloc=xloc.bar_time, color=pw_col, style=get_line_style(pw_style_in), width=pw_width)
+    if pw_showL and not na(pw_Low_val) and f_lbl_on(lbl_pw)
+        lb_pwL := label.new(bar_index + pw_offset, pw_Low_val, "pwLow: " + f_fmt_price(pw_Low_val), color=color(na), textcolor=pw_c_txt, style=label.style_label_left, size=get_size(pw_lb_size_in), textalign=text.align_right)
+
+bool x_up_pd_High = ta.crossover(close, pd_High)
+bool x_dn_pd_High = ta.crossunder(close, pd_High)
+bool x_up_pd_Low = ta.crossover(close, pd_Low)
+bool x_dn_pd_Low = ta.crossunder(close, pd_Low)
+if pd_alert_hl and not na(pd_High)
+    bool pd_h_rollover = not na(pd_High[1]) and pd_High != pd_High[1]
+    bool pd_l_rollover = not na(pd_Low[1])  and pd_Low  != pd_Low[1]
+    if not pd_h_rollover and x_up_pd_High
+        f_alert_bar(_sym_tag + "PDH Cross Up @ " + f_fmt_price(pd_High) + " | close " + f_fmt_price(close))
+    if not pd_h_rollover and x_dn_pd_High
+        f_alert_bar(_sym_tag + "PDH Cross Down @ " + f_fmt_price(pd_High) + " | close " + f_fmt_price(close))
+    if not pd_l_rollover and x_up_pd_Low
+        f_alert_bar(_sym_tag + "PDL Cross Up @ " + f_fmt_price(pd_Low) + " | close " + f_fmt_price(close))
+    if not pd_l_rollover and x_dn_pd_Low
+        f_alert_bar(_sym_tag + "PDL Cross Down @ " + f_fmt_price(pd_Low) + " | close " + f_fmt_price(close))
+
+bool x_up_pw_High_val = ta.crossover(close, pw_High_val)
+bool x_dn_pw_High_val = ta.crossunder(close, pw_High_val)
+bool x_up_pw_Low_val = ta.crossover(close, pw_Low_val)
+bool x_dn_pw_Low_val = ta.crossunder(close, pw_Low_val)
+if pw_alert_hl and not na(pw_High_val)
+    bool pw_h_rollover = not na(pw_High_val[1]) and pw_High_val != pw_High_val[1]
+    bool pw_l_rollover = not na(pw_Low_val[1])  and pw_Low_val  != pw_Low_val[1]
+    if not pw_h_rollover and x_up_pw_High_val
+        f_alert_bar(_sym_tag + "pwHigh Cross Up @ " + f_fmt_price(pw_High_val) + " | close " + f_fmt_price(close))
+    if not pw_h_rollover and x_dn_pw_High_val
+        f_alert_bar(_sym_tag + "pwHigh Cross Down @ " + f_fmt_price(pw_High_val) + " | close " + f_fmt_price(close))
+    if not pw_l_rollover and x_up_pw_Low_val
+        f_alert_bar(_sym_tag + "pwLow Cross Up @ " + f_fmt_price(pw_Low_val) + " | close " + f_fmt_price(close))
+    if not pw_l_rollover and x_dn_pw_Low_val
+        f_alert_bar(_sym_tag + "pwLow Cross Down @ " + f_fmt_price(pw_Low_val) + " | close " + f_fmt_price(close))
+
+// 4. CC VAH/VAL/POC (DAILY) - USES SHARED LTF DATA
+
+var cc_map = map.new<float, float>()
+var float cc_p_poc = na, var float cc_p_vah = na, var float cc_p_val = na
+
+if cc_enable
+    bool cc_is_new = is_new_bar("D")
+    if cc_is_new and map.size(cc_map) > 0
+        [cp, ch, cl] = calc_profile_stats(cc_map, cc_va_pct)
+        cc_p_poc := cp, cc_p_vah := ch, cc_p_val := cl
+        map.clear(cc_map)
+
+// RTH Open capture (always runs, not gated behind cc_enable — table needs this)
+cc_rth_time = time(timeframe.period, cc_sess_def, u_tz)
+cc_is_rth_start = not na(cc_rth_time) and na(cc_rth_time[1])
+var float cc_dOpen = na
+if is_new_bar("D")
+    cc_dOpen := na
+if cc_is_rth_start
+    cc_dOpen := open
+plot(cc_showOpen ? cc_dOpen : na, 'RTH Open (8:30 CST)', color=cc_c_open, linewidth=cc_open_width, style=plot.style_linebr, linestyle=cc_open_style == "Dashed" ? plot.linestyle_dashed : cc_open_style == "Dotted" ? plot.linestyle_dotted : plot.linestyle_solid)
+var label cc_dOpenLabel = na
+if barstate.islast
+    label.delete(cc_dOpenLabel)
+if barstate.islast and cc_showOpen and not na(cc_dOpen) and f_lbl_on(lbl_opens)
+    cc_dOpenLabel := label.new(bar_index + cc_open_offset, cc_dOpen, text='dOpen: ' + f_fmt_price(cc_dOpen), color=cc_c_open, textcolor=f_txt(opens_txt_c, cc_c_open), style=label.style_none, size=get_size(cc_open_lb_size), textalign=text.align_right)
+
+// Weekly Open — first tick at Sunday OVN session start (user-defined via OVN Session Time)
+var float wk_open_price = na
+bool wk_sunday_open = amt_newSess and dayofweek(time, u_tz) == dayofweek.sunday
+if wk_sunday_open
+    wk_open_price := open
+
+plot(wk_showOpen and not na(wk_open_price) ? wk_open_price : na, 'Weekly Open', color=wk_c_open, linewidth=wk_open_width, style=plot.style_linebr, linestyle=wk_open_style == "Dashed" ? plot.linestyle_dashed : wk_open_style == "Dotted" ? plot.linestyle_dotted : plot.linestyle_solid)
+
+bool x_up_wk_open_price = ta.crossover(close, wk_open_price)
+bool x_dn_wk_open_price = ta.crossunder(close, wk_open_price)
+if wk_alert_open and not na(wk_open_price)
+    bool wk_open_rollover = not na(wk_open_price[1]) and wk_open_price != wk_open_price[1]
+    if not wk_open_rollover and x_up_wk_open_price
+        f_alert_bar(_sym_tag + "Weekly Open Cross Up @ " + f_fmt_price(wk_open_price) + " | close " + f_fmt_price(close))
+    if not wk_open_rollover and x_dn_wk_open_price
+        f_alert_bar(_sym_tag + "Weekly Open Cross Down @ " + f_fmt_price(wk_open_price) + " | close " + f_fmt_price(close))
+var label wk_openLabel = na
+if barstate.islast
+    label.delete(wk_openLabel)
+if barstate.islast and wk_showOpen and not na(wk_open_price) and f_lbl_on(lbl_opens)
+    wk_openLabel := label.new(bar_index + wk_open_offset, wk_open_price, text='wkOpen: ' + f_fmt_price(wk_open_price), color=color(na), textcolor=f_txt(opens_txt_c, wk_c_open), style=label.style_label_left, size=get_size(wk_open_lb_size), textalign=text.align_right)
+
+cc_is_active = cc_enable and not na(cc_dOpen) and (cc_dOpen > cc_p_vah or cc_dOpen < cc_p_val)
+
+var int va_entry_ts = na
+var bool rule_80_confirmed = false
+
+cc_newbarSess = ta.change(time('D')) != 0 
+if cc_newbarSess
+    rule_80_confirmed := false
+    va_entry_ts := na
+
+bool is_inside_va = not na(cc_p_vah) and close < cc_p_vah and close > cc_p_val
+
+if cc_is_active and in_sess
+    if is_inside_va
+        if na(va_entry_ts)
+            va_entry_ts := time
+        if (time - va_entry_ts) >= (60 * 60 * 1000) and not rule_80_confirmed
+            rule_80_confirmed := true
+            if cc_alert_80
+                f_alert_close(_sym_tag + "80% Rule Confirmed | close " + f_fmt_price(close))
+    else
+        if not rule_80_confirmed
+            va_entry_ts := na
+
+// RTH session end: abandon incomplete 80% rule timer
+if not in_sess and in_sess[1] and not rule_80_confirmed
+    va_entry_ts := na
+
+cc_t_full_sess = time(timeframe.period, SESS_FULL_DAY, u_tz)
+cc_is_full = not na(cc_t_full_sess)
+cc_show_vah = (cc_enable and cc_is_full) ? cc_p_vah : na
+cc_show_val = (cc_enable and cc_is_full) ? cc_p_val : na
+
+p_vah = plot(cc_show_vah, "pdVAH", color=color.new(color.white, 100), style=plot.style_circles, linewidth=1)
+p_val = plot(cc_show_val, "pdVAL", color=color.new(color.white, 100), style=plot.style_circles, linewidth=1)
+
+color final_fill_col = not cc_showFill ? na : rule_80_confirmed ? cc_col_conf : cc_is_active ? cc_col_active : na
+
+fill(p_vah, p_val, final_fill_col)
+
+var line cc_poc_line = na
+var line cc_vah_line = na
+var line cc_val_line = na
+if cc_enable and cc_is_full and not cc_is_full[1]
+    cc_poc_line := na, cc_vah_line := na, cc_val_line := na
+    if pdv_show_poc
+        cc_poc_line := line.new(bar_index, cc_p_poc, bar_index, cc_p_poc, color=pd_poc_c, style=get_line_style(cc_poc_style_in), width=cc_poc_width)
+    if pdv_show_vah
+        cc_vah_line := line.new(bar_index, cc_p_vah, bar_index, cc_p_vah, color=pd_vah_c, style=get_line_style(cc_poc_style_in), width=cc_vah_width)
+    if pdv_show_val
+        cc_val_line := line.new(bar_index, cc_p_val, bar_index, cc_p_val, color=pd_val_c, style=get_line_style(cc_poc_style_in), width=cc_val_width)
+if cc_enable and cc_is_full
+    if not na(cc_poc_line)
+        line.set_x2(cc_poc_line, bar_index)
+    if not na(cc_vah_line)
+        line.set_x2(cc_vah_line, bar_index)
+    if not na(cc_val_line)
+        line.set_x2(cc_val_line, bar_index)
+var label lb_cc_vah = na, var label lb_cc_val = na, var label lb_cc_poc = na
+if barstate.islast
+    label.delete(lb_cc_vah), label.delete(lb_cc_val), label.delete(lb_cc_poc)
+if cc_enable and barstate.islast and cc_is_full and f_lbl_on(lbl_pdv)
+    if pdv_show_vah
+        lb_cc_vah := label.new(bar_index+cc_lb_offset, cc_p_vah, "pdVAH: "+f_fmt_price(cc_p_vah), color=color(na), textcolor=f_txt(cc_txt_c, pd_vah_c), style=label.style_label_left, size=get_size(cc_lb_size_in))
+    if pdv_show_val
+        lb_cc_val := label.new(bar_index+cc_lb_offset, cc_p_val, "pdVAL: "+f_fmt_price(cc_p_val), color=color(na), textcolor=f_txt(cc_txt_c, pd_val_c), style=label.style_label_left, size=get_size(cc_lb_size_in))
+    if pdv_show_poc
+        lb_cc_poc := label.new(bar_index+cc_lb_offset, cc_p_poc, "pdPOC: "+f_fmt_price(cc_p_poc), color=color(na), textcolor=f_txt(cc_txt_c, pd_poc_c), style=label.style_label_left, size=get_size(cc_lb_size_in))
+
+bool x_up_cc_p_vah = ta.crossover(close, cc_p_vah)
+bool x_dn_cc_p_vah = ta.crossunder(close, cc_p_vah)
+bool x_up_cc_p_val = ta.crossover(close, cc_p_val)
+bool x_dn_cc_p_val = ta.crossunder(close, cc_p_val)
+bool x_up_cc_p_poc = ta.crossover(close, cc_p_poc)
+bool x_dn_cc_p_poc = ta.crossunder(close, cc_p_poc)
+if cc_alert_va and not na(cc_p_vah)
+    bool cc_vah_rollover = not na(cc_p_vah[1]) and cc_p_vah != cc_p_vah[1]
+    bool cc_val_rollover = not na(cc_p_val[1]) and cc_p_val != cc_p_val[1]
+    bool cc_poc_rollover = not na(cc_p_poc[1]) and cc_p_poc != cc_p_poc[1]
+    if not cc_vah_rollover and x_up_cc_p_vah
+        f_alert_bar(_sym_tag + "pdVAH Cross Up @ " + f_fmt_price(cc_p_vah) + " | close " + f_fmt_price(close))
+    if not cc_vah_rollover and x_dn_cc_p_vah
+        f_alert_bar(_sym_tag + "pdVAH Cross Down @ " + f_fmt_price(cc_p_vah) + " | close " + f_fmt_price(close))
+    if not cc_val_rollover and x_up_cc_p_val
+        f_alert_bar(_sym_tag + "pdVAL Cross Up @ " + f_fmt_price(cc_p_val) + " | close " + f_fmt_price(close))
+    if not cc_val_rollover and x_dn_cc_p_val
+        f_alert_bar(_sym_tag + "pdVAL Cross Down @ " + f_fmt_price(cc_p_val) + " | close " + f_fmt_price(close))
+    if not cc_poc_rollover and x_up_cc_p_poc
+        f_alert_bar(_sym_tag + "pdPOC Cross Up @ " + f_fmt_price(cc_p_poc) + " | close " + f_fmt_price(close))
+    if not cc_poc_rollover and x_dn_cc_p_poc
+        f_alert_bar(_sym_tag + "pdPOC Cross Down @ " + f_fmt_price(cc_p_poc) + " | close " + f_fmt_price(close))
+
+// 5. Naked POCs (daily, weekly, monthly), built bin for bin like the NinjaTrader port, from the
+// roll-selected bars (see ROLL SOURCE).
+float npoc_h = src_h
+float npoc_l = src_l
+float npoc_v = src_v
+// The 1-minute bars inside each chart bar feed the profiles (the shared 1-minute arrays), so
+// nPOCs don't move with the chart timeframe. On a 1-minute chart the chart bars already are
+// 1-minute bars; where no intrabar history is available, the chart bar is the fallback (as in
+// NinjaTrader).
+float[] npoc_lh = shared_ltf_high
+float[] npoc_ll = shared_ltf_low
+float[] npoc_lv = shared_ltf_vol
+
+// Spread one bar's volume evenly from its low bin up to, not including, its high bin.
+f_npoc_add(map<int, float> _vol, float _h, float _l, float _v, float _step) =>
+    int _lo = int(math.floor(_l / _step + 0.5))
+    int _hi = int(math.floor(_h / _step + 0.5))
+    int _n = math.max(1, _hi - _lo)
+    float _per = nz(_v) / _n
+    for _k = _lo to _lo + _n - 1
+        map.put(_vol, _k, nz(map.get(_vol, _k)) + _per)
+    _n
+
+// One engine per period. Volume is keyed by absolute price bin, so a bar that gaps clear
+// of the running range (weekend open, roll) can't shift the profile. The first period in
+// loaded history is partial and never becomes an nPOC. Ties go to the bin that traded
+// first. A naked POC is removed the first time a bar trades through it.
+f_npoc(string _tf, bool _show, int _width, string _kind, color _col) =>
+    bool _new = is_new_bar(_tf)
+    var map<int, float> _vol = map.new<int, float>()
+    var bool _full = false
+    var float _step = na
+    var line[] _lines = array.new_line()
+    var float[] _pocs = array.new_float()
+    var label[] _lbls = array.new_label()
+    if npoc_enable and _show
+        if _new
+            if _full and map.size(_vol) > 0
+                int _best = 0
+                float _max = -1.0
+                for [_k, _x] in _vol
+                    if _x > _max
+                        _max := _x
+                        _best := _k
+                float _poc = _best * _step
+                array.push(_lines, line.new(time, _poc, time + 1, _poc, xloc=xloc.bar_time, color=_col, extend=extend.right, width=_width, style=get_line_style(npoc_style_in)))
+                array.push(_pocs, _poc)
+            _full := true
+            map.clear(_vol)
+        // Bin size for this period: base tick x the row scale in effect when it started.
+        if _new or na(_step)
+            _step := amt_step * row_mult
+        // Ternary, not "and": Pine evaluates both sides of "and", and array.size(na) errors.
+        bool _ltf = na(npoc_lv) ? false : array.size(npoc_lv) > 0
+        if _ltf
+            for j = 0 to array.size(npoc_lv) - 1
+                f_npoc_add(_vol, array.get(npoc_lh, j), array.get(npoc_ll, j), array.get(npoc_lv, j), _step)
+        else if not na(npoc_h) and not na(npoc_l)
+            f_npoc_add(_vol, npoc_h, npoc_l, npoc_v, _step)
+        if not na(npoc_h) and not na(npoc_l)
+            if array.size(_pocs) > 0
+                for i = array.size(_pocs) - 1 to 0
+                    float _p = array.get(_pocs, i)
+                    if _p >= npoc_l and _p <= npoc_h
+                        line.delete(array.get(_lines, i))
+                        array.remove(_lines, i)
+                        array.remove(_pocs, i)
+                        if npoc_alert
+                            f_alert_bar(_sym_tag + _kind + " nPOC Touch @ " + f_fmt_price(_p) + " | close " + f_fmt_price(close))
+    // Labels are rebuilt on the last bar only.
+    if barstate.islast
+        while array.size(_lbls) > 0
+            label.delete(array.pop(_lbls))
+        if npoc_enable and _show and f_lbl_on(lbl_npoc) and array.size(_pocs) > 0
+            for _p in _pocs
+                array.push(_lbls, label.new(bar_index + npoc_lb_offset, _p, _kind + " nPOC: " + f_fmt_price(_p), style=label.style_label_left, color=color(na), textcolor=f_txt(npoc_txt_c, _col), size=get_size(npoc_lb_size)))
+    array.size(_pocs)
+
+f_npoc("D", npoc_d_show, npoc_w_d, "Daily", npoc_c)
+f_npoc("W", npoc_w_show, npoc_w_w, "Weekly", npoc_c_w)
+f_npoc("M", npoc_m_show, npoc_w_m, "Monthly", npoc_c_m)
+
+// 6. Inventory Trap — Settlement capture via RTH session-end detection
+// Captures close of the last RTH bar (settlement price). No request.security needed.
+string inv_spike_tf = "1"
+bool inv_in_rth = not na(time(timeframe.period, SESS_RTH, u_tz))
+bool inv_rth_ended = not inv_in_rth and inv_in_rth[1]
+
+var float inv_fixedSettle = na
+var int inv_settleIdx = na
+var bool inv_trapLatched = false
+var bool inv_trapResolved = false
+
+// Capture settlement at RTH close — updates immediately, visible through Globex and next RTH
+if inv_rth_ended
+    inv_fixedSettle := close[1]
+    inv_settleIdx := bar_index
+    inv_trapLatched := false
+    inv_trapResolved := false
+
+inv_cstHour = hour(time, u_tz), inv_cstMinute = minute(time, u_tz)
+inv_isGlobex = (inv_cstHour >= inv_start_h or inv_cstHour < inv_end_h) or (inv_cstHour == inv_end_h and inv_cstMinute < inv_end_m)
+var int inv_barsAbove = 0, var int inv_barsBelow = 0, var int inv_totalBars = 0
+
+// Reset the counters, the trap latch and the trap alert when the overnight count starts (first bar of
+// the Globex window), so the prior night's counts can't carry into a new cycle. Matches NinjaTrader.
+var bool inv_alertFired = false
+if inv_isGlobex and not inv_isGlobex[1] and timeframe.isintraday
+    inv_barsAbove := 0, inv_barsBelow := 0, inv_totalBars := 0
+    inv_trapLatched := false
+    inv_trapResolved := false
+    inv_alertFired := false
+
+if inv_isGlobex and not na(inv_fixedSettle)
+    if low >= inv_fixedSettle
+        inv_barsAbove += 1
+    else if high <= inv_fixedSettle
+        inv_barsBelow += 1
+    inv_totalBars += 1
+
+inv_pctLong = inv_totalBars > 0 ? (inv_barsAbove / inv_totalBars) * 100 : 0
+inv_pctShort = inv_totalBars > 0 ? (inv_barsBelow / inv_totalBars) * 100 : 0
+inv_isImbalance = (inv_pctLong == 100 or inv_pctShort == 100)
+
+// Latch trap state once imbalance is detected; clear permanently for this cycle when
+// price TOUCHES the settlement line. The `inv_trapResolved` gate stops the latch from
+// re-arming off the stale (frozen) imbalance reading once RTH begins, so the trap
+// behaves identically in Globex and RTH.
+// The latch only arms while overnight bars are being counted.
+if inv_isGlobex and inv_isImbalance and not inv_trapResolved
+    inv_trapLatched := true
+bool inv_settleTouch = not na(inv_fixedSettle) and low <= inv_fixedSettle and high >= inv_fixedSettle
+if inv_trapLatched and inv_settleTouch
+    inv_trapLatched := false
+    inv_trapResolved := true
+
+var line inv_trapLine = na, var label inv_trapLabel = na
+
+inv_shouldShow = inv_enable and inv_show_line and not na(inv_fixedSettle)
+
+if inv_shouldShow and not na(inv_settleIdx)
+    line.delete(inv_trapLine), label.delete(inv_trapLabel)
+    inv_currColor = inv_trapLatched ? inv_c_trap : inv_c_settle
+    inv_txt_status = inv_trapLatched ? inv_txt_trap : "SETTLE"
+    inv_labelText = inv_txt_status + ": " + f_fmt_price(inv_fixedSettle)
+    
+    inv_trapLine := line.new(x1=inv_settleIdx, y1=inv_fixedSettle, x2=bar_index, y2=inv_fixedSettle, color=inv_currColor, width=inv_trapLatched ? inv_width : inv_settle_width, style=get_line_style(inv_trapLatched ? inv_style_in : inv_settle_style), extend=extend.right)
+    if f_lbl_on(lbl_inv)
+        inv_trapLabel := label.new(x=bar_index + inv_offset, y=inv_fixedSettle, text=inv_labelText, color=inv_currColor, textcolor=f_txt(inv_txt_c, color.black), style=label.style_label_left, size=get_size(inv_lb_size_in))
+else
+    line.delete(inv_trapLine), label.delete(inv_trapLabel)
+
+// Inventory Trap alert — fires on first bar at-or-after target time (inv_end_h:inv_end_m),
+// once per RTH session. Gated on inv_trapLatched so it matches the line/label: if price
+// has already touched the settlement line (trap resolved → label shows SETTLE), no alert.
+int _targetMin = inv_end_h * 60 + inv_end_m
+int _curMin    = inv_cstHour * 60 + inv_cstMinute
+if inv_alert and inv_enable and inv_trapLatched and not inv_alertFired and _curMin >= _targetMin and _curMin < _targetMin + 30
+    f_alert_bar(_sym_tag + "Inventory Trap Active @ " + f_fmt_price(inv_fixedSettle) + " | close " + f_fmt_price(close))
+    inv_alertFired := true
+
+// 7. Late Spike
+f_get_spike_close(_spike_session) =>
+    var float spike_close = na
+    bool in_window = not na(time(timeframe.period, _spike_session, u_tz))
+    bool window_end = not in_window and in_window[1]
+    if window_end
+        spike_close := close[1]
+    [spike_close, window_end]
+
+// lookahead_off: the 1-minute close is latched (var) inside the request, so the chart bar
+// that ends the window reads the same value on history and in realtime (no repaint).
+[spike_1m_close, spike_1m_end] = request.security(syminfo.tickerid, inv_spike_tf, f_get_spike_close(spikeTimeRange), lookahead=barmerge.lookahead_off)
+
+var line activeSpikeLine = na
+var label activeSpikeLabel = na
+var float activeSpikeLevel = na
+var color activeSpikeColor = na 
+
+var float d_high_pre = na
+var float d_low_pre = na
+var float d_high_frozen = na
+var float d_low_frozen = na
+
+bool inRTH = not na(time(timeframe.period, "0830-1500", u_tz))
+bool rthOpen = inRTH and not inRTH[1]
+
+if rthOpen
+    d_high_pre := high
+    d_low_pre := low
+    
+bool inSpikeWindow = not na(time(timeframe.period, spikeTimeRange, u_tz))
+bool isSpikeStart = inSpikeWindow and not inSpikeWindow[1]
+bool isSpikeEnd = not inSpikeWindow and inSpikeWindow[1]
+
+if inRTH and not inSpikeWindow
+    d_high_pre := math.max(nz(d_high_pre, high), high)
+    d_low_pre := math.min(nz(d_low_pre, low), low)
+
+var int spike_start_bar = na
+
+if isSpikeStart
+    d_high_frozen := d_high_pre
+    d_low_frozen := d_low_pre
+    spike_start_bar := bar_index
+
+var float last_spike_1m_close = na
+bool new_spike_close = not na(spike_1m_close) and (na(last_spike_1m_close) or spike_1m_close != last_spike_1m_close)
+
+if isSpikeEnd and showSpike and new_spike_close
+    last_spike_1m_close := spike_1m_close
+    
+    if not na(activeSpikeLine)
+        line.delete(activeSpikeLine), label.delete(activeSpikeLabel)
+        activeSpikeLine := na, activeSpikeLabel := na, activeSpikeLevel := na, activeSpikeColor := na
+    
+    float spikeClose = spike_1m_close
+    
+    bool isBullSpike = spikeClose > d_high_frozen
+    bool isBearSpike = spikeClose < d_low_frozen
+    
+    if isBullSpike or isBearSpike
+        activeSpikeLevel := isBullSpike ? d_high_frozen : d_low_frozen
+        color spikeCol = isBullSpike ? spike_c_sup : spike_c_res
+        activeSpikeColor := spikeCol
+        string spikeTxt = isBullSpike ? "Spike Base (Supp)" : "Spike Base (Res)"
+        
+        int x1 = nz(spike_start_bar, bar_index)
+        activeSpikeLine := line.new(x1, activeSpikeLevel, bar_index + spike_offset, activeSpikeLevel, color=spikeCol, width=spike_width, style=get_line_style(spike_style), extend=extend.none)
+        if f_lbl_on(lbl_spike)
+            activeSpikeLabel := label.new(bar_index + spike_offset, activeSpikeLevel, text=spikeTxt + ": " + f_fmt_price(activeSpikeLevel), color=color.new(color.white, 100), textcolor=f_txt(spike_txt_c, spikeCol), style=label.style_label_left, size=get_size(spike_lbl_size))
+
+if not na(activeSpikeLine)
+    line.set_x2(activeSpikeLine, bar_index + spike_offset)
+    if not na(activeSpikeLabel)
+        label.set_x(activeSpikeLabel, bar_index + spike_offset)
+    
+    if not inSpikeWindow
+        bool touched = (low <= activeSpikeLevel and high >= activeSpikeLevel)
+        if touched
+            line.delete(activeSpikeLine), label.delete(activeSpikeLabel)
+            if spike_alert
+                f_alert_bar(_sym_tag + "Spike Base Touch @ " + f_fmt_price(activeSpikeLevel) + " | close " + f_fmt_price(close))
+            activeSpikeLine := na, activeSpikeLabel := na, activeSpikeLevel := na, activeSpikeColor := na
+
+// ==========================================
+// --- MODULE 3: SINGLE PRINTS & POOR STRUCTURE ---
+// ==========================================
+var sp_historical_sps = array.new<SinglePrint>() 
+var sp_active_poor_lines = array.new<PoorLine>() 
+var sp_live_boxes = array.new<SinglePrint>() 
+var map<float, int> sp_period_hits = map.new<float, int>()        
+var map<float, int> sp_last_period_id = map.new<float, int>()     
+var map<float, int> sp_first_time_seen = map.new<float, int>() 
+var int sp_current_period_idx = 0
+
+float sp_tick_size = eff_tick
+float sp_block_size = sp_tick_size * sp_ticks_per_block * row_mult
+// Block size for the current session, fixed when the session starts.
+var float sp_block_cur = na
+
+sp_floor_price(float p) => 
+    math.floor(p / sp_block_cur) * sp_block_cur
+
+sp_is_in_session(string sess) => 
+    not na(time(timeframe.period, sess, u_tz))
+
+sp_get_exact_count(float target_price, float[] keys) =>
+    int total = 0
+    float epsilon = sp_tick_size * 0.1 
+    for p in keys
+        if math.abs(p - target_price) < epsilon
+            total += sp_period_hits.get(p)
+    total
+
+bool sp_session_active = sp_is_in_session(sp_rth_session)
+bool sp_new_session = sp_session_active and not sp_session_active[1]
+bool sp_session_ended = not sp_session_active and sp_session_active[1]
+
+if sp_new_session
+    sp_period_hits.clear()
+    sp_last_period_id.clear()
+    sp_first_time_seen.clear()
+    sp_current_period_idx := 0
+    while array.size(sp_live_boxes) > 0
+        SinglePrint sp = array.pop(sp_live_boxes)
+        box.delete(sp.id)
+if sp_new_session or na(sp_block_cur)
+    sp_block_cur := sp_block_size
+
+int sp_tpo_time_now = time(str.tostring(sp_tpo_minutes))
+bool sp_is_new_period = sp_tpo_time_now != sp_tpo_time_now[1]
+
+if sp_is_new_period and sp_session_active
+    sp_current_period_idx += 1
+
+if sp_session_active
+    float low_q = sp_floor_price(low)
+    float high_q = sp_floor_price(high)
+    for p = low_q to high_q by sp_block_cur
+        int last_pid = sp_last_period_id.contains(p) ? sp_last_period_id.get(p) : -1
+        if last_pid != sp_current_period_idx
+            int current_count = sp_period_hits.contains(p) ? sp_period_hits.get(p) : 0
+            sp_period_hits.put(p, current_count + 1)
+            sp_last_period_id.put(p, sp_current_period_idx)
+            if not sp_first_time_seen.contains(p)
+                sp_first_time_seen.put(p, time)
+
+if (sp_is_new_period and sp_session_active) or sp_session_ended
+    while array.size(sp_live_boxes) > 0
+        SinglePrint sp = array.pop(sp_live_boxes)
+        box.delete(sp.id)
+        
+    float[] all_prices = sp_period_hits.keys()
+    if array.size(all_prices) > 0
+        float s_hi = array.max(all_prices)
+        float s_lo = array.min(all_prices)
+        float[] candidates = array.new_float()
+        
+        for p in all_prices
+            if sp_period_hits.get(p) == 1
+                array.push(candidates, p)
+        
+        array.sort(candidates)
+        int cand_size = array.size(candidates)
+        if cand_size > 0
+            float[] cluster = array.new_float()
+            for i = 0 to cand_size - 1
+                float p = array.get(candidates, i)
+                array.push(cluster, p)
+                
+                bool is_last = (i == cand_size - 1)
+                bool break_gap = false
+                if not is_last
+                    float next_p = array.get(candidates, i + 1)
+                    if next_p > p + (sp_block_cur * 2) + (sp_tick_size/10)
+                        break_gap := true
+                
+                if is_last or break_gap
+                    float c_min = array.min(cluster)
+                    float c_max = array.max(cluster)
+                    float h_ticks = (c_max - c_min) / sp_tick_size
+                    bool touches = (c_min <= s_lo + (sp_tick_size/10)) or (c_max >= s_hi - (sp_tick_size/10))
+                    bool valid = h_ticks >= sp_min_ticks and (not (sp_filter_tails and touches and h_ticks < sp_tail_max))
+                    
+                    if valid
+                        for price in cluster
+                            int t = sp_first_time_seen.get(price)
+                            if sp_session_ended
+                                box bh = box.new(t, price + sp_block_cur, time, price, xloc=xloc.bar_time, border_color=sp_border_c, border_width=sp_border_w, border_style=get_line_style(sp_border_style), bgcolor=sp_color_hist)
+                                array.push(sp_historical_sps, SinglePrint.new(bh, price + sp_block_cur, price, time))
+                            else
+                                box bl = box.new(t, price + sp_block_cur, time, price, xloc=xloc.bar_time, border_color=sp_border_c, border_width=sp_border_w, border_style=get_line_style(sp_border_style), bgcolor=sp_color_hist)
+                                array.push(sp_live_boxes, SinglePrint.new(bl, price + sp_block_cur, price, time))
+                    array.clear(cluster)
+
+    if sp_show_poor and array.size(all_prices) > 0
+        float s_hi = array.max(all_prices)
+        float s_lo = array.min(all_prices)
+        
+        if sp_get_exact_count(s_hi, all_prices) >= 2
+            float ph_p = s_hi + sp_block_cur
+            bool exists = false
+            for pl in sp_active_poor_lines
+                if pl.is_high and math.abs(pl.price - ph_p) < (sp_tick_size * 2)
+                    exists := true
+            if not exists
+                line l = line.new(sp_first_time_seen.get(s_hi), ph_p, time, ph_p, xloc=xloc.bar_time, color=sp_col_poor_h, style=get_line_style(sp_poor_style_in), width=sp_poor_width)
+                array.push(sp_active_poor_lines, PoorLine.new(l, ph_p, true, time))
+
+        if sp_get_exact_count(s_lo, all_prices) >= 2
+            float pl_p = s_lo
+            bool exists = false
+            for pl in sp_active_poor_lines
+                if not pl.is_high and math.abs(pl.price - pl_p) < (sp_tick_size * 2)
+                    exists := true
+            if not exists
+                line l = line.new(sp_first_time_seen.get(s_lo), pl_p, time, pl_p, xloc=xloc.bar_time, color=sp_col_poor_l, style=get_line_style(sp_poor_style_in), width=sp_poor_width)
+                array.push(sp_active_poor_lines, PoorLine.new(l, pl_p, false, time))
+
+// --- MAINTENANCE ---
+if array.size(sp_historical_sps) > 0
+    float bar_h = high, float bar_l = low
+    int age_limit = sp_max_days * 86400000
+    for i = array.size(sp_historical_sps) - 1 to 0
+        SinglePrint sp = array.get(sp_historical_sps, i)
+        bool too_old = (time - sp.created_time) > age_limit
+        bool overlap = false
+        if not too_old and sp.top > bar_l and sp.bottom < bar_h
+            overlap := true
+        if overlap or too_old
+            box.delete(sp.id)
+            array.remove(sp_historical_sps, i)
+        else
+            box.set_right(sp.id, time + 60000*30)
+
+if array.size(sp_live_boxes) > 0
+    float bar_h2 = high, float bar_l2 = low
+    for i = array.size(sp_live_boxes) - 1 to 0
+        SinglePrint sp = array.get(sp_live_boxes, i)
+        bool overlap = (sp.top > bar_l2 and sp.bottom < bar_h2)
+        if overlap
+            box.delete(sp.id)
+            array.remove(sp_live_boxes, i)
+        else
+            box.set_right(sp.id, time + 60000*30)
+
+if array.size(sp_active_poor_lines) > 0
+    int age_limit2 = sp_max_days * 86400000
+    for i = array.size(sp_active_poor_lines) - 1 to 0
+        PoorLine pl = array.get(sp_active_poor_lines, i)
+        bool repaired = (pl.is_high and high > pl.price) or (not pl.is_high and low < pl.price)
+        bool too_old = (time - pl.created_time) > age_limit2
+        if repaired or too_old
+            line.delete(pl.id)
+            array.remove(sp_active_poor_lines, i)
+        else
+            line.set_x2(pl.id, time + 60000*30)
+
+var label[] sp_poor_labels = array.new_label()
+if barstate.islast
+    while array.size(sp_poor_labels) > 0
+        label.delete(array.pop(sp_poor_labels))
+    if sp_show_poor and f_lbl_on(lbl_poor) and array.size(sp_active_poor_lines) > 0
+        for pl in sp_active_poor_lines
+            color _pc = pl.is_high ? sp_col_poor_h : sp_col_poor_l
+            array.push(sp_poor_labels, label.new(time + 60000*30, pl.price, (pl.is_high ? "Poor High: " : "Poor Low: ") + f_fmt_price(pl.price), xloc=xloc.bar_time, style=label.style_label_left, color=color(na), textcolor=f_txt(sp_poor_txt_c, _pc), size=get_size(sp_poor_lb_size)))
+
+// ==========================================
+// --- MODULE 4: MONTHLY PROFILE LOGIC ---
+// ==========================================
+var mvp_volume_map = map.new<float, float>() 
+// Row size = tick x row scale, never below the Row Size input (the daily profile keeps the plain
+// Row Size at 1x, as before). The main profile keeps the row size it started with (mvp_step_cur);
+// the daily profile resets at the day start, which is the only place the scale can change.
+float mvp_tick_size = math.max(eff_tick * row_mult, mvp_row_size)
+float cc_bin_size   = row_mult > 1 ? math.max(mvp_row_size, eff_tick * row_mult) : mvp_row_size
+var float mvp_step_cur = na
+
+int cur_y = year(time, u_tz)
+int cur_m = month(time, u_tz)
+int cur_d = dayofmonth(time, u_tz)
+
+var int stored_anchor = 0 
+var int mvp_start_bar_idx = 0
+int current_anchor = 0
+
+if mvp_tf_mode == "Session"
+    bool in_sess_now = not na(time(timeframe.period, mvp_sess_time, u_tz))
+    bool in_sess_prev = not na(time(timeframe.period, mvp_sess_time, u_tz)[1])
+    if in_sess_now and not in_sess_prev
+        current_anchor := time
+    else
+        current_anchor := stored_anchor
+
+else if mvp_tf_mode == "Weekly"
+    // Anchor on the exchange weekly bar open (Sunday 17:00 CT Globex), NOT the
+    // calendar week boundary. weekofyear() rolls at midnight; is_new_bar("W")
+    // rolls at the futures week open, matching prev-week lines and weekly nPOC.
+    if is_new_bar("W")
+        current_anchor := time
+    else
+        current_anchor := stored_anchor
+
+else 
+    current_anchor := stored_anchor
+
+if bar_index == 0
+    stored_anchor := current_anchor
+    if mvp_tf_mode == "Session" and stored_anchor == 0
+        stored_anchor := time 
+
+bool should_clear = false
+
+if mvp_tf_mode == "Session" or mvp_tf_mode == "Weekly"
+    if current_anchor != stored_anchor
+        should_clear := true
+        stored_anchor := current_anchor
+else if mvp_tf_mode == "Monthly"
+    // Same fix as Weekly: roll on the exchange monthly bar open (first Globex
+    // session of the month), not the calendar 1st-of-month midnight. Matches
+    // monthly nPOC, which already uses is_new_bar("M").
+    if is_new_bar("M")
+        should_clear := true
+else if mvp_tf_mode == "Yearly"
+    // Roll on the first Globex session of the year, matching NinjaTrader.
+    if is_new_bar("12M")
+        should_clear := true
+
+type HistoricalProfile
+    array<float> prices
+    array<float> volumes  
+    float vah
+    float val
+    float poc
+    int end_bar_idx
+    float step
+
+var array<HistoricalProfile> mvp_historical_profiles = array.new<HistoricalProfile>()
+var int mvp_max_historical = 12
+
+if should_clear and map.size(mvp_volume_map) > 0
+    mvp_start_bar_idx := bar_index
+    [h_poc, h_vah, h_val] = calc_profile_stats(mvp_volume_map, mvp_val_pct)
+    
+    array<float> h_prices = map.keys(mvp_volume_map)
+    array.sort(h_prices)
+    
+    array<float> h_vols = array.new<float>()
+    for p in h_prices
+        array.push(h_vols, map.get(mvp_volume_map, p))
+    
+    HistoricalProfile hp = HistoricalProfile.new(h_prices, h_vols, h_vah, h_val, h_poc, bar_index, mvp_step_cur)
+    array.push(mvp_historical_profiles, hp)
+    
+    while array.size(mvp_historical_profiles) > mvp_max_historical
+        array.shift(mvp_historical_profiles)
+    
+    map.clear(mvp_volume_map)
+else if should_clear
+    mvp_start_bar_idx := bar_index
+    map.clear(mvp_volume_map)
+if should_clear or na(mvp_step_cur)
+    mvp_step_cur := mvp_tick_size
+
+bool mvp_in_session_window = true
+if mvp_tf_mode == "Session"
+    mvp_in_session_window := not na(time(timeframe.period, mvp_sess_time, u_tz))
+
+// ==========================================
+// --- PROFILE ACCUMULATION & DRAWING ---
+// ==========================================
+var float dev_poc_price = na
+var float dev_vah_price = na
+var float dev_val_price = na
+
+mvp_round_to_tick(float price, float size) => math.round(price / size) * size
+
+mvp_draw_walls_smoothed(map<float, float> v_map, float avg_vol, int start_t, int end_t, array<line> lines, float current_mult, bool is_hist) =>
+    if mvp_show_walls and array.size(lines) >= 0
+        array<float> prices = map.keys(v_map)
+        if array.size(prices) > 0
+            array.sort(prices) 
+            int size = array.size(prices)
+            if size > mvp_smooth_len + 1
+                float threshold = avg_vol * current_mult
+                array<float> smooth_vols = array.new_float(size, 0.0)
+                for i = 0 to size - 1
+                    float sum = 0.0
+                    int count = 0
+                    int half_len = int(mvp_smooth_len / 2)
+                    for j = -half_len to half_len
+                        int idx = i + j
+                        if idx >= 0 and idx < size
+                            sum += map.get(v_map, array.get(prices, idx))
+                            count += 1
+                    array.set(smooth_vols, i, sum / count)
+                bool in_structure = false
+                for i = 0 to size - 1
+                    float v = array.get(smooth_vols, i)
+                    float p = array.get(prices, i)
+                    bool is_structure = v > threshold
+                    bool draw_it = false
+                    float draw_price = na
+                    if is_structure and not in_structure
+                        draw_price := p
+                        draw_it := true
+                        in_structure := true
+                    else if not is_structure and in_structure
+                        float p_prev = array.get(prices, math.max(0, i - 1))
+                        draw_price := p_prev
+                        draw_it := true
+                        in_structure := false
+                    if draw_it
+                        bool skip = false
+                        if array.size(lines) > 0
+                            for k = 0 to array.size(lines) - 1
+                                line existing_l = array.get(lines, k)
+                                float existing_p = line.get_y1(existing_l)
+                                if math.abs(draw_price - existing_p) < (mvp_min_wall_dist * mvp_step_cur)
+                                    skip := true
+                                    break 
+                        if not skip
+                            extend_mode = (mvp_extend_walls and not is_hist) ? extend.right : extend.none
+                            l = line.new(start_t, draw_price, end_t, draw_price, color=color.new(mvp_c_wall_base, mvp_wall_transp), width=mvp_w_wall, style=get_line_style(mvp_wall_style), extend=extend_mode, xloc=xloc.bar_time)
+                            array.push(lines, l)
+
+mvp_draw_profile_polyline(int start_t, int end_t, map<float, float> v_map, float vah, float val, int max_bar_width, array<polyline> polys) =>
+    array<float> prices = map.keys(v_map)
+    if array.size(prices) > 0 
+        array.sort(prices)
+        float max_v = 0.0
+        for p in prices
+            max_v := math.max(max_v, map.get(v_map, p))
+        
+        float v_scale = max_bar_width / max_v
+        
+        array<int> widths = array.new<int>()
+        for p in prices
+            float v = map.get(v_map, p)
+            int bar_w = int(math.round(v * v_scale))
+            array.push(widths, math.max(bar_w, 0))
+        
+        int n = array.size(prices)
+        float half_tick = mvp_step_cur / 2
+        
+        int spine_x = (mvp_align_right ? bar_index : bar_index - max_bar_width) + mvp_offset
+        
+        array<chart.point> full_pts = array.new<chart.point>()
+        
+        float bot_price = array.get(prices, 0)
+        float top_price = array.get(prices, n - 1)
+        
+        if mvp_align_right
+            array.push(full_pts, chart.point.from_index(spine_x, bot_price - half_tick))
+            for i = 0 to n - 1
+                float p = array.get(prices, i)
+                int w = array.get(widths, i)
+                int x_left = spine_x - w
+                array.push(full_pts, chart.point.from_index(x_left, p - half_tick))
+                array.push(full_pts, chart.point.from_index(x_left, p + half_tick))
+            array.push(full_pts, chart.point.from_index(spine_x, top_price + half_tick))
+        else
+            array.push(full_pts, chart.point.from_index(spine_x, bot_price - half_tick))
+            for i = 0 to n - 1
+                float p = array.get(prices, i)
+                int w = array.get(widths, i)
+                int x_right = spine_x + w
+                array.push(full_pts, chart.point.from_index(x_right, p - half_tick))
+                array.push(full_pts, chart.point.from_index(x_right, p + half_tick))
+            array.push(full_pts, chart.point.from_index(spine_x, top_price + half_tick))
+        
+        if array.size(full_pts) >= 3
+            polyline pl_full = polyline.new(full_pts, closed=true, fill_color=color.new(mvp_c_hist_out, mvp_hist_out_transp), line_color=color.new(mvp_c_hist_out, mvp_hist_out_transp - 20), line_width=1)
+            array.push(polys, pl_full)
+        
+        int va_start = -1
+        int va_end = -1
+        for i = 0 to n - 1
+            float p = array.get(prices, i)
+            if p >= val and p <= vah
+                if va_start == -1
+                    va_start := i
+                va_end := i
+        
+        if va_start != -1 and va_end >= va_start
+            array<chart.point> va_pts = array.new<chart.point>()
+            
+            float va_bot = array.get(prices, va_start)
+            float va_top = array.get(prices, va_end)
+            
+            if mvp_align_right
+                array.push(va_pts, chart.point.from_index(spine_x, va_bot - half_tick))
+                for i = va_start to va_end
+                    float p = array.get(prices, i)
+                    int w = array.get(widths, i)
+                    int x_left = spine_x - w
+                    array.push(va_pts, chart.point.from_index(x_left, p - half_tick))
+                    array.push(va_pts, chart.point.from_index(x_left, p + half_tick))
+                array.push(va_pts, chart.point.from_index(spine_x, va_top + half_tick))
+            else
+                array.push(va_pts, chart.point.from_index(spine_x, va_bot - half_tick))
+                for i = va_start to va_end
+                    float p = array.get(prices, i)
+                    int w = array.get(widths, i)
+                    int x_right = spine_x + w
+                    array.push(va_pts, chart.point.from_index(x_right, p - half_tick))
+                    array.push(va_pts, chart.point.from_index(x_right, p + half_tick))
+                array.push(va_pts, chart.point.from_index(spine_x, va_top + half_tick))
+            
+            if array.size(va_pts) >= 3
+                polyline pl_va = polyline.new(va_pts, closed=true, fill_color=color.new(mvp_c_hist_va, mvp_hist_va_transp), line_color=na)
+                array.push(polys, pl_va)
+
+mvp_draw_historical_profile(HistoricalProfile hp, int max_bar_width, array<polyline> polys) =>
+    array<float> prices = hp.prices
+    array<float> volumes = hp.volumes
+    float vah = hp.vah
+    float val = hp.val
+    int spine_x = hp.end_bar_idx
+    float hp_step = na(hp.step) ? mvp_step_cur : hp.step
+    
+    if array.size(prices) > 0
+        float max_v = 0.0
+        for v in volumes
+            max_v := math.max(max_v, v)
+        
+        float v_scale = max_bar_width / max_v
+        
+        array<int> widths = array.new<int>()
+        for v in volumes
+            int bar_w = int(math.round(v * v_scale))
+            array.push(widths, math.max(bar_w, 0))
+        
+        int n = array.size(prices)
+        float half_tick = hp_step / 2
+        
+        float bot_price = array.get(prices, 0)
+        float top_price = array.get(prices, n - 1)
+        
+        array<chart.point> full_pts = array.new<chart.point>()
+        
+        if mvp_align_right
+            array.push(full_pts, chart.point.from_index(spine_x, bot_price - half_tick))
+            for i = 0 to n - 1
+                float p = array.get(prices, i)
+                int w = array.get(widths, i)
+                int x_left = spine_x - w
+                array.push(full_pts, chart.point.from_index(x_left, p - half_tick))
+                array.push(full_pts, chart.point.from_index(x_left, p + half_tick))
+            array.push(full_pts, chart.point.from_index(spine_x, top_price + half_tick))
+        else
+            array.push(full_pts, chart.point.from_index(spine_x, bot_price - half_tick))
+            for i = 0 to n - 1
+                float p = array.get(prices, i)
+                int w = array.get(widths, i)
+                int x_right = spine_x + w
+                array.push(full_pts, chart.point.from_index(x_right, p - half_tick))
+                array.push(full_pts, chart.point.from_index(x_right, p + half_tick))
+            array.push(full_pts, chart.point.from_index(spine_x, top_price + half_tick))
+        
+        if array.size(full_pts) >= 3
+            polyline pl_full = polyline.new(full_pts, closed=true, fill_color=color.new(mvp_c_hist_out, mvp_hist_out_transp), line_color=na)
+            array.push(polys, pl_full)
+        
+        int va_start = -1
+        int va_end = -1
+        for i = 0 to n - 1
+            float p = array.get(prices, i)
+            if p >= val and p <= vah
+                if va_start == -1
+                    va_start := i
+                va_end := i
+        
+        if va_start != -1 and va_end >= va_start
+            array<chart.point> va_pts = array.new<chart.point>()
+            float va_bot = array.get(prices, va_start)
+            float va_top = array.get(prices, va_end)
+            
+            if mvp_align_right
+                array.push(va_pts, chart.point.from_index(spine_x, va_bot - half_tick))
+                for i = va_start to va_end
+                    float p = array.get(prices, i)
+                    int w = array.get(widths, i)
+                    array.push(va_pts, chart.point.from_index(spine_x - w, p - half_tick))
+                    array.push(va_pts, chart.point.from_index(spine_x - w, p + half_tick))
+                array.push(va_pts, chart.point.from_index(spine_x, va_top + half_tick))
+            else
+                array.push(va_pts, chart.point.from_index(spine_x, va_bot - half_tick))
+                for i = va_start to va_end
+                    float p = array.get(prices, i)
+                    int w = array.get(widths, i)
+                    array.push(va_pts, chart.point.from_index(spine_x + w, p - half_tick))
+                    array.push(va_pts, chart.point.from_index(spine_x + w, p + half_tick))
+                array.push(va_pts, chart.point.from_index(spine_x, va_top + half_tick))
+            
+            if array.size(va_pts) >= 3
+                polyline pl_va = polyline.new(va_pts, closed=true, fill_color=color.new(mvp_c_hist_va, mvp_hist_va_transp), line_color=na)
+                array.push(polys, pl_va)
+
+// --- SHARED DATA ACCUMULATION (CC + MVP in single pass) ---
+// Prior-day value uses only bars inside the RTH Session for VA (08:30-15:00 CT by default), the Dalton convention.
+bool cc_va_bar = not na(cc_rth_time)
+if use_ltf
+    float[] _vol  = ltf_vol
+    float[] _high = ltf_high
+    float[] _low  = ltf_low
+    if not na(_vol)
+        if array.size(_vol) > 0
+            for i = 0 to array.size(_vol) - 1
+                float v = array.get(_vol, i), float h = array.get(_high, i), float l = array.get(_low, i)
+                if not na(v)
+                    if mvp_in_session_window
+                        float mh = mvp_round_to_tick(h, mvp_step_cur), float ml = mvp_round_to_tick(l, mvp_step_cur)
+                        int m_steps = int(math.min(200, math.max(1, math.round((mh - ml) / mvp_step_cur))))
+                        float m_vstep = v / m_steps
+                        for j = 0 to m_steps - 1
+                            float p = ml + j * mvp_step_cur
+                            float ex = map.get(mvp_volume_map, p)
+                            map.put(mvp_volume_map, p, na(ex) ? m_vstep : ex + m_vstep)
+                    if cc_enable and cc_va_bar
+                        float ch = math.round(h / cc_bin_size) * cc_bin_size
+                        float cl = math.round(l / cc_bin_size) * cc_bin_size
+                        int c_steps = int(math.min(200, math.max(1, math.round((ch - cl) / cc_bin_size))))
+                        float c_vstep = v / c_steps
+                        for j = 0 to c_steps - 1
+                            float p = cl + j * cc_bin_size
+                            float ex = map.get(cc_map, p)
+                            map.put(cc_map, p, na(ex) ? c_vstep : ex + c_vstep)
+else if not na(src_h) and not na(src_l)
+    // No intrabar data: the roll-selected chart bar itself.
+    if mvp_in_session_window
+        float mh = mvp_round_to_tick(src_h, mvp_step_cur), float ml = mvp_round_to_tick(src_l, mvp_step_cur)
+        int m_steps = int(math.min(200, math.max(1, math.round((mh - ml) / mvp_step_cur))))
+        float m_vstep = nz(src_v) / m_steps
+        for j = 0 to m_steps - 1
+            float p = ml + j * mvp_step_cur
+            float ex = map.get(mvp_volume_map, p)
+            map.put(mvp_volume_map, p, na(ex) ? m_vstep : ex + m_vstep)
+    if cc_enable and cc_va_bar
+        float ch = math.round(src_h / cc_bin_size) * cc_bin_size
+        float cl = math.round(src_l / cc_bin_size) * cc_bin_size
+        int c_steps = int(math.min(200, math.max(1, math.round((ch - cl) / cc_bin_size))))
+        float c_vstep = nz(src_v) / c_steps
+        for j = 0 to c_steps - 1
+            float p = cl + j * cc_bin_size
+            float ex = map.get(cc_map, p)
+            map.put(cc_map, p, na(ex) ? c_vstep : ex + c_vstep)
+
+// --- DRAW ACTIVE DEVELOPING PROFILE ---
+var array<polyline> mvp_cur_polylines = array.new<polyline>()
+var array<line> mvp_cur_lines = array.new<line>()
+var line mvp_cur_poc_l = na
+var line mvp_cur_vah_l = na
+var line mvp_cur_val_l = na
+var label mvp_lb_poc = na, var label mvp_lb_vah = na, var label mvp_lb_val = na
+
+if barstate.islast
+    label.delete(mvp_lb_poc), label.delete(mvp_lb_vah), label.delete(mvp_lb_val)
+    while array.size(mvp_cur_polylines) > 0
+        polyline.delete(array.pop(mvp_cur_polylines))
+    while array.size(mvp_cur_lines) > 0
+        line.delete(array.pop(mvp_cur_lines))
+    
+    [cpoc, cvah, cval] = calc_profile_stats(mvp_volume_map, mvp_val_pct)
+    float total_vol = 0.0
+    array<float> vols = map.values(mvp_volume_map)
+    if array.size(vols) > 0
+        for v in vols
+            total_vol += v
+    float cavg = total_vol / array.size(vols)
+
+    dev_poc_price := cpoc, dev_vah_price := cvah, dev_val_price := cval
+    
+    if mvp_master
+        float final_mult = mvp_vol_mult 
+        
+        int draw_start = stored_anchor
+        
+        if mvp_tf_mode == "Monthly"
+            draw_start := timestamp(u_tz, cur_y, cur_m, 1, 0, 0) - (7 * 60 * 60 * 1000)
+        
+        else if mvp_tf_mode == "Yearly"
+            draw_start := timestamp(u_tz, cur_y, 1, 1, 0, 0) - (7 * 60 * 60 * 1000)
+        
+        else if mvp_tf_mode == "Weekly"
+            int dow = dayofweek(time, u_tz)
+            int days_back = dow == 1 ? 0 : dow - 1
+            draw_start := timestamp(u_tz, cur_y, cur_m, cur_d - days_back, 17, 0)
+
+        int elapsed = time - draw_start
+        if elapsed <= 0
+            elapsed := 60000
+        
+        float duration = na
+        if mvp_tf_mode == "Session"
+            duration := mvp_sess_dur * 3600000 
+        else if mvp_tf_mode == "Weekly"
+            duration := 7.0 * 86400000 
+        else if mvp_tf_mode == "Monthly"
+            duration := 30.44 * 86400000 
+        else 
+            duration := 365.25 * 86400000 
+            
+        float progress = math.min(elapsed / duration, 1.0)
+        if mvp_use_auto_scale
+            final_mult := mvp_scale_start + progress * (mvp_scale_end - mvp_scale_start)
+
+        int max_bars_back = 4500
+        for hp in mvp_historical_profiles
+            if (bar_index - hp.end_bar_idx) < max_bars_back
+                mvp_draw_historical_profile(hp, mvp_profile_width, mvp_cur_polylines)
+
+        mvp_draw_profile_polyline(draw_start, time, mvp_volume_map, cvah, cval, mvp_profile_width, mvp_cur_polylines)
+        mvp_draw_walls_smoothed(mvp_volume_map, cavg, draw_start, time, mvp_cur_lines, final_mult, false)
+        
+        line.delete(mvp_cur_poc_l), line.delete(mvp_cur_vah_l), line.delete(mvp_cur_val_l)
+        int _mvp_end_x = bar_index + mvp_offset
+        int _mvp_safe_start = math.max(mvp_start_bar_idx, bar_index - 4500)
+        bool _dev_lbl = f_lbl_on(lbl_dev)
+        if mvp_show_poc
+            mvp_cur_poc_l := line.new(_mvp_safe_start, cpoc, _mvp_end_x, cpoc, color=mvp_c_poc, width=mvp_poc_width, style=get_line_style(mvp_poc_style), xloc=xloc.bar_index)
+            if _dev_lbl
+                mvp_lb_poc := label.new(_mvp_end_x, cpoc, "Developing POC: " + f_fmt_price(cpoc), style=label.style_label_left, color=color(na), textcolor=f_txt(mvp_txt_c, mvp_c_poc), size=get_size(mvp_lb_size))
+        if mvp_show_vah
+            mvp_cur_vah_l := line.new(_mvp_safe_start, cvah, _mvp_end_x, cvah, color=mvp_c_levels, width=mvp_lvl_width, style=get_line_style(mvp_lvl_style), xloc=xloc.bar_index)
+            if _dev_lbl
+                mvp_lb_vah := label.new(_mvp_end_x, cvah, "Developing VAH: " + f_fmt_price(cvah), style=label.style_label_left, color=color(na), textcolor=f_txt(mvp_txt_c, mvp_c_levels), size=get_size(mvp_lb_size))
+        if mvp_show_val
+            mvp_cur_val_l := line.new(_mvp_safe_start, cval, _mvp_end_x, cval, color=mvp_c_levels, width=mvp_lvl_width, style=get_line_style(mvp_lvl_style), xloc=xloc.bar_index)
+            if _dev_lbl
+                mvp_lb_val := label.new(_mvp_end_x, cval, "Developing VAL: " + f_fmt_price(cval), style=label.style_label_left, color=color(na), textcolor=f_txt(mvp_txt_c, mvp_c_levels), size=get_size(mvp_lb_size))
+
+mvp_in_time = not na(time(timeframe.period, mvp_alert_time, u_tz))
+bool x_up_dev_poc_price = ta.crossover(close, dev_poc_price)
+bool mvp_xu_poc = not na(dev_poc_price) and x_up_dev_poc_price and mvp_in_time
+bool x_dn_dev_poc_price = ta.crossunder(close, dev_poc_price)
+bool mvp_xd_poc = not na(dev_poc_price) and x_dn_dev_poc_price and mvp_in_time
+bool x_up_dev_vah_price = ta.crossover(close, dev_vah_price)
+bool mvp_xu_vah = not na(dev_vah_price) and x_up_dev_vah_price and mvp_in_time
+bool x_dn_dev_vah_price = ta.crossunder(close, dev_vah_price)
+bool mvp_xd_vah = not na(dev_vah_price) and x_dn_dev_vah_price and mvp_in_time
+bool x_up_dev_val_price = ta.crossover(close, dev_val_price)
+bool mvp_xu_val = not na(dev_val_price) and x_up_dev_val_price and mvp_in_time
+bool x_dn_dev_val_price = ta.crossunder(close, dev_val_price)
+bool mvp_xd_val = not na(dev_val_price) and x_dn_dev_val_price and mvp_in_time
+
+if mvp_use_cur_alerts
+    if mvp_xu_poc
+        f_alert_bar(_sym_tag + "Developing POC Cross Up @ " + f_fmt_price(dev_poc_price) + " | close " + f_fmt_price(close))
+    if mvp_xd_poc
+        f_alert_bar(_sym_tag + "Developing POC Cross Down @ " + f_fmt_price(dev_poc_price) + " | close " + f_fmt_price(close))
+    if mvp_xu_vah
+        f_alert_bar(_sym_tag + "Developing VAH Cross Up @ " + f_fmt_price(dev_vah_price) + " | close " + f_fmt_price(close))
+    if mvp_xd_vah
+        f_alert_bar(_sym_tag + "Developing VAH Cross Down @ " + f_fmt_price(dev_vah_price) + " | close " + f_fmt_price(close))
+    if mvp_xu_val
+        f_alert_bar(_sym_tag + "Developing VAL Cross Up @ " + f_fmt_price(dev_val_price) + " | close " + f_fmt_price(close))
+    if mvp_xd_val
+        f_alert_bar(_sym_tag + "Developing VAL Cross Down @ " + f_fmt_price(dev_val_price) + " | close " + f_fmt_price(close))
+
+// ==========================================
+// --- MODULE 5: DAILY LEVELS LOGIC ---
+// ==========================================
+float lvl_current_atr = f_dev_atr(14)
+float lvl_flip_buffer = nz(lvl_current_atr * lvl_flip_atr, 0)
+
+// Effective half-zone width (ATR-based or tick-based)
+float lvl_halfZone = lvl_zone_mode == "ATR %" ? nz(lvl_current_atr * lvl_zone_atr_pct, lvl_zoneWidthTicks * eff_tick) : lvl_zoneWidthTicks * eff_tick
+
+var float lvl_ipLevel = na
+var lvl_bullLevels = array.new<float>()
+var lvl_bearLevels = array.new<float>()
+var lvl_bullFlipped = array.new<bool>()
+var lvl_bearFlipped = array.new<bool>()
+var float lvl_prevClose = na
+
+var lvl_linesList = array.new<line>()
+var lvl_labelsList = array.new<label>()
+var lvl_colorsList = array.new<color>() 
+var lvl_linefillsList = array.new<linefill>()
+
+lvl_delete_all_objects() =>
+    if array.size(lvl_labelsList) > 0
+        for i = 0 to array.size(lvl_labelsList) - 1
+            label.delete(array.get(lvl_labelsList, i))
+        array.clear(lvl_labelsList)
+    if array.size(lvl_linesList) > 0
+        for i = 0 to array.size(lvl_linesList) - 1
+            line.delete(array.get(lvl_linesList, i))
+        array.clear(lvl_linesList)
+        array.clear(lvl_colorsList)
+    if array.size(lvl_linefillsList) > 0
+        for i = 0 to array.size(lvl_linefillsList) - 1
+            linefill.delete(array.get(lvl_linefillsList, i))
+        array.clear(lvl_linefillsList)
+
+lvl_get_label_size() => 
+    lvl_text_size_opt == "auto" ? size.auto : lvl_text_size_opt == "tiny" ? size.tiny : lvl_text_size_opt == "small" ? size.small : lvl_text_size_opt == "normal" ? size.normal : lvl_text_size_opt == "large" ? size.large : lvl_text_size_opt == "huge" ? size.huge : size.small
+
+lvl_create_label(_y, _text, _lvl_color) =>
+    label.new(x=bar_index, y=_y, xloc=xloc.bar_index, yloc=yloc.price, text="  " + _text, textalign=text.align_left, color=color.new(color.white, 100), style=label.style_none, textcolor=_lvl_color, size=lvl_get_label_size())
+
+lvl_draw_level(_price, _color, _labelText, _labelYOffset) =>
+    if lvl_showZones
+        float upperPrice = _price + lvl_halfZone
+        float lowerPrice = _price - lvl_halfZone
+        
+        line upperLine = line.new(x1=bar_index, y1=upperPrice, x2=bar_index + 1, y2=upperPrice, color=_color, width=1, style=get_line_style(lvl_zone_style_in), extend=extend.both)
+        line lowerLine = line.new(x1=bar_index, y1=lowerPrice, x2=bar_index + 1, y2=lowerPrice, color=_color, width=1, style=get_line_style(lvl_zone_style_in), extend=extend.both)
+        
+        array.push(lvl_linesList, upperLine)
+        array.push(lvl_linesList, lowerLine)
+        array.push(lvl_colorsList, _color)
+        array.push(lvl_colorsList, _color) 
+        
+        color fillColor = color.new(_color, lvl_zoneOpacity)
+        linefill lf = linefill.new(upperLine, lowerLine, fillColor)
+        array.push(lvl_linefillsList, lf)
+
+    if lvl_showLine
+        line l = line.new(x1=bar_index, y1=_price, x2=bar_index + 1, y2=_price, color=_color, width=lvl_thickness, style=get_line_style(lvl_style_in), extend=extend.both)
+        array.push(lvl_linesList, l)
+        array.push(lvl_colorsList, _color)
+        
+    if f_lbl_on(lbl_levels)
+        label lbl = lvl_create_label(_y=_price + _labelYOffset, _text=_labelText, _lvl_color=f_txt(lvl_txt_c, _color))
+        array.push(lvl_labelsList, lbl)
+
+// Update flip states with hysteresis (memory) on every bar
+if lvl_color_flip
+    if array.size(lvl_bullLevels) > 0
+        for i = 0 to array.size(lvl_bullLevels) - 1
+            float lvl = array.get(lvl_bullLevels, i)
+            bool isFlipped = array.get(lvl_bullFlipped, i)
+            if not isFlipped and close > lvl + lvl_flip_buffer
+                array.set(lvl_bullFlipped, i, true)
+            else if isFlipped and close < lvl - lvl_flip_buffer
+                array.set(lvl_bullFlipped, i, false)
+                
+    if array.size(lvl_bearLevels) > 0
+        for i = 0 to array.size(lvl_bearLevels) - 1
+            float lvl = array.get(lvl_bearLevels, i)
+            bool isFlipped = array.get(lvl_bearFlipped, i)
+            if not isFlipped and close < lvl - lvl_flip_buffer
+                array.set(lvl_bearFlipped, i, true)
+            else if isFlipped and close > lvl + lvl_flip_buffer
+                array.set(lvl_bearFlipped, i, false)
+
+draw_daily_levels() =>
+    lvl_delete_all_objects()
+    
+    // Centers text in the bottom half of the zone, or exactly on the line if zones are disabled
+    float lvl_labelYOffset = lvl_showZones ? -(lvl_halfZone / 2.0) : 0.0
+    
+    if not na(lvl_ipLevel)
+        lvl_draw_level(lvl_ipLevel, lvl_ip_color, 'PIVOT: ' + f_fmt_price(lvl_ipLevel), lvl_labelYOffset)
+    
+    if array.size(lvl_bullLevels) > 0
+        for i = 0 to array.size(lvl_bullLevels) - 1
+            level = array.get(lvl_bullLevels, i)
+            bool isFlipped = lvl_color_flip and array.get(lvl_bullFlipped, i)
+            color drawColor = isFlipped ? lvl_bear_color : lvl_bull_color
+            string drawText = isFlipped ? 'FLIPPED RES' + str.tostring(i + 1) + ': ' + f_fmt_price(level) : 'RES' + str.tostring(i + 1) + ': ' + f_fmt_price(level)
+            lvl_draw_level(level, drawColor, drawText, lvl_labelYOffset)
+    
+    if array.size(lvl_bearLevels) > 0
+        for i = 0 to array.size(lvl_bearLevels) - 1
+            level = array.get(lvl_bearLevels, i)
+            bool isFlipped = lvl_color_flip and array.get(lvl_bearFlipped, i)
+            color drawColor = isFlipped ? lvl_bull_color : lvl_bear_color
+            string drawText = isFlipped ? 'FLIPPED SUPP' + str.tostring(i + 1) + ': ' + f_fmt_price(level) : 'SUPP' + str.tostring(i + 1) + ': ' + f_fmt_price(level)
+            lvl_draw_level(level, drawColor, drawText, lvl_labelYOffset)
+
+    if array.size(lvl_labelsList) > 0
+        int safe_offset = lvl_x_offset > 500 ? 50 : lvl_x_offset
+        int new_x_position = last_bar_index + safe_offset
+        for i = 0 to array.size(lvl_labelsList) - 1
+            label lbl = array.get(lvl_labelsList, i)
+            label.set_x(lbl, new_x_position)
+
+var string lvl_prevLevelsText = ""
+var int lvl_parse_bar = -1
+if lvl_text != lvl_prevLevelsText
+    lvl_ipLevel := na
+    array.clear(lvl_bullLevels)
+    array.clear(lvl_bearLevels)
+    array.clear(lvl_bullFlipped)
+    array.clear(lvl_bearFlipped)
+    
+    if str.length(str.trim(lvl_text)) > 0
+        // One-line paste line: "YYYY-MM-DD, pivot, prices...".
+        // When present it wins over the labeled block, so pasting a whole message
+        // (title + labeled block + paste line) can't load the levels twice.
+        bool hasPaste = str.match(lvl_text, "\\d{4}-\\d{2}-\\d{2}\\s*,\\s*\\d") != ""
+        lines = str.split(lvl_text, '\n')
+        if array.size(lines) > 0
+            for i = 0 to array.size(lines) - 1
+                // Backticks come from copying a chat code block.
+                currentLine = str.trim(str.replace_all(array.get(lines, i), "`", ""))
+                
+                if hasPaste
+                    if str.match(currentLine, "^\\d{4}-\\d{2}-\\d{2}\\s*,") != ""
+                        // parts[0] = date, parts[1] = pivot; above the pivot = resistance, below = support
+                        pasteParts = str.split(currentLine, ',')
+                        float pastePivot = str.tonumber(str.trim(array.get(pasteParts, 1)))
+                        lvl_ipLevel := pastePivot
+                        if array.size(pasteParts) > 2 and not na(pastePivot)
+                            for j = 2 to array.size(pasteParts) - 1
+                                float pasteLevel = str.tonumber(str.trim(array.get(pasteParts, j)))
+                                if pasteLevel > pastePivot
+                                    array.push(lvl_bullLevels, pasteLevel)
+                                    array.push(lvl_bullFlipped, false)
+                                else if pasteLevel < pastePivot
+                                    array.push(lvl_bearLevels, pasteLevel)
+                                    array.push(lvl_bearFlipped, false)
+                else if str.contains(currentLine, 'Pivot Level:')
+                    ipLevelText = str.replace(currentLine, 'Pivot Level:', '')
+                    lvl_ipLevel := str.tonumber(str.trim(ipLevelText))
+                else if str.contains(currentLine, 'Resistance Levels:')
+                    bullLevelsText = str.replace(currentLine, 'Resistance Levels:', '')
+                    bullLevelsArray = str.split(bullLevelsText, ',')
+                    for j = 0 to array.size(bullLevelsArray) - 1
+                        levelText = str.trim(array.get(bullLevelsArray, j))
+                        level = str.tonumber(levelText)
+                        if not na(level)
+                            array.push(lvl_bullLevels, level)
+                            array.push(lvl_bullFlipped, false)
+                else if str.contains(currentLine, 'Support Levels:')
+                    bearLevelsText = str.replace(currentLine, 'Support Levels:', '')
+                    bearLevelsArray = str.split(bearLevelsText, ',')
+                    for j = 0 to array.size(bearLevelsArray) - 1
+                        levelText = str.trim(array.get(bearLevelsArray, j))
+                        level = str.tonumber(levelText)
+                        if not na(level)
+                            array.push(lvl_bearLevels, level)
+                            array.push(lvl_bearFlipped, false)
+        // Number R1/S1 outward from the pivot even if the paste line is out of order.
+        // Flip flags are all false right after parsing, so sorting the prices alone is safe.
+        if hasPaste
+            array.sort(lvl_bullLevels, order.ascending)
+            array.sort(lvl_bearLevels, order.descending)
+    
+    lvl_prevLevelsText := lvl_text
+    lvl_parse_bar := bar_index
+
+var int lvl_last_drawn_bar = -1
+var string lvl_last_drawn_text = ""
+if barstate.islast and (bar_index != lvl_last_drawn_bar or lvl_text != lvl_last_drawn_text)
+    draw_daily_levels()
+    lvl_last_drawn_bar := bar_index
+    lvl_last_drawn_text := lvl_text
+
+// --- DAILY LEVEL ALERTS (aggregated loop alerts, paste-bar guard) ---
+if lvl_alerts and not na(lvl_prevClose) and lvl_parse_bar != bar_index
+    // Pivot alert — single level, no loop issue
+    if lvl_alert_ip and not na(lvl_ipLevel)
+        bool pvt_up = lvl_prevClose <= lvl_ipLevel and close > lvl_ipLevel
+        bool pvt_dn = lvl_prevClose >= lvl_ipLevel and close < lvl_ipLevel
+        if pvt_up
+            f_alert_bar(_sym_tag + "Pivot Cross Up @ " + f_fmt_price(lvl_ipLevel) + " | close " + f_fmt_price(close))
+        if pvt_dn
+            f_alert_bar(_sym_tag + "Pivot Cross Down @ " + f_fmt_price(lvl_ipLevel) + " | close " + f_fmt_price(close))
+    
+    // Resistance alerts — collect Cross Up/Down for all levels, fire ONE aggregated alert
+    if lvl_alert_bull and array.size(lvl_bullLevels) > 0
+        string bull_msg = ""
+        for i = 0 to array.size(lvl_bullLevels) - 1
+            level = array.get(lvl_bullLevels, i)
+            levelName = "RES" + str.tostring(i + 1)
+            if lvl_prevClose <= level and close > level
+                bull_msg := bull_msg + (str.length(bull_msg) > 0 ? " | " : "") + levelName + " Cross Up @ " + f_fmt_price(level)
+            else if lvl_prevClose >= level and close < level
+                bull_msg := bull_msg + (str.length(bull_msg) > 0 ? " | " : "") + levelName + " Cross Down @ " + f_fmt_price(level)
+        if str.length(bull_msg) > 0
+            f_alert_bar(_sym_tag + bull_msg + " | close " + f_fmt_price(close))
+    
+    // Support alerts — collect Cross Up/Down for all levels, fire ONE aggregated alert
+    if lvl_alert_bear and array.size(lvl_bearLevels) > 0
+        string bear_msg = ""
+        for i = 0 to array.size(lvl_bearLevels) - 1
+            level = array.get(lvl_bearLevels, i)
+            levelName = "SUPP" + str.tostring(i + 1)
+            if lvl_prevClose <= level and close > level
+                bear_msg := bear_msg + (str.length(bear_msg) > 0 ? " | " : "") + levelName + " Cross Up @ " + f_fmt_price(level)
+            else if lvl_prevClose >= level and close < level
+                bear_msg := bear_msg + (str.length(bear_msg) > 0 ? " | " : "") + levelName + " Cross Down @ " + f_fmt_price(level)
+        if str.length(bear_msg) > 0
+            f_alert_bar(_sym_tag + bear_msg + " | close " + f_fmt_price(close))
+
+lvl_prevClose := close
+
+// ==========================================
+// --- MODULE 6: PREVIOUS MONTH VAH/VAL ---
+// ==========================================
+f_macro_engine(_row_size, _val_pct) =>
+    var map<float, float> m = map.new<float, float>()
+    var float _pvah = na, var float _pval = na, var float _ppoc = na
+    
+    bool new_m = is_new_bar("M")
+    
+    if new_m and map.size(m) > 0
+        [cp, cvah, cval] = calc_profile_stats(m, _val_pct)
+        _ppoc := cp, _pvah := cvah, _pval := cval
+        map.clear(m)
+        
+    float h_bin = math.round(high / _row_size) * _row_size
+    float l_bin = math.round(low / _row_size) * _row_size
+    int steps = int(math.min(200, math.max(1, math.round((h_bin - l_bin) / _row_size))))
+    float v_step = volume / steps
+    
+    for j = 0 to steps - 1
+        float p = l_bin + j * _row_size
+        float ex = map.get(m, p)
+        map.put(m, p, na(ex) ? v_step : ex + v_step)
+        
+    [_ppoc, _pvah, _pval]
+
+float m6_row = row_mult > 1 ? math.max(mvp_row_size, eff_tick * row_mult) : mvp_row_size
+string m6_tf = "30"
+// Fallback: the prior month from the continuous series' 30-minute bars (same prices as the chart).
+// It sees the whole month even when the chart hasn't loaded it, but uses the expiring contract
+// through roll week.
+[m6_c1_poc, m6_c1_vah, m6_c1_val] = request.security(chart_sym, m6_tf, f_macro_engine(m6_row, mvp_val_pct), lookahead=barmerge.lookahead_off)
+
+// Preferred: built like NinjaTrader. The roll-selected chart bars are merged into clock-aligned
+// 30-minute bars and each completed one is added to its month's profile (same bins and value
+// area as above). Used once the chart has loaded a whole month; not on charts above 30 minutes.
+int m6_tf_sec = timeframe.in_seconds(m6_tf)
+bool m6_chart_ok = timeframe.isintraday and _chart_sec <= m6_tf_sec and m6_tf_sec % _chart_sec == 0
+bool m6_new_m = is_new_bar("M") and bar_index > 0
+var map<float, float> m6_map = map.new<float, float>()
+var bool m6_month_full = false
+var bool m6_have = false
+var float m6_c_poc = na, var float m6_c_vah = na, var float m6_c_val = na
+var int m6_bk = na
+var float m6_row_cur = na
+var float m6_bh = na, var float m6_bl = na, var float m6_bv = 0.0
+
+f_m6_add(map<float, float> _m, float _h, float _l, float _v, float _row) =>
+    float h_bin = math.round(_h / _row) * _row
+    float l_bin = math.round(_l / _row) * _row
+    int steps = int(math.min(200, math.max(1, math.round((h_bin - l_bin) / _row))))
+    float v_step = _v / steps
+    for j = 0 to steps - 1
+        float p = l_bin + j * _row
+        float ex = map.get(_m, p)
+        map.put(_m, p, na(ex) ? v_step : ex + v_step)
+    steps
+
+if m6_chart_ok
+    int _bk = int(math.floor(time / (m6_tf_sec * 1000.0)))
+    bool _new_bk = na(m6_bk) or _bk != m6_bk or m6_new_m
+    // A new 30/60-minute bucket closes the previous one into its month.
+    if _new_bk
+        if not na(m6_bh)
+            f_m6_add(m6_map, m6_bh, m6_bl, m6_bv, m6_row_cur)
+        m6_bk := _bk
+        m6_bh := na, m6_bl := na, m6_bv := 0.0
+    // Month roll. The first month in loaded history is partial and never used.
+    if m6_new_m
+        m6_have := m6_month_full and map.size(m6_map) > 0
+        if m6_have
+            [_cp, _cvah, _cval] = calc_profile_stats(m6_map, mvp_val_pct)
+            m6_c_poc := _cp, m6_c_vah := _cvah, m6_c_val := _cval
+        m6_month_full := true
+        map.clear(m6_map)
+    if m6_new_m or na(m6_row_cur)
+        m6_row_cur := m6_row
+    if not na(src_h) and not na(src_l)
+        m6_bh := na(m6_bh) ? src_h : math.max(m6_bh, src_h)
+        m6_bl := na(m6_bl) ? src_l : math.min(m6_bl, src_l)
+        m6_bv += nz(src_v)
+
+float m6_prev_poc = m6_have ? m6_c_poc : m6_c1_poc
+float m6_prev_vah = m6_have ? m6_c_vah : m6_c1_vah
+float m6_prev_val = m6_have ? m6_c_val : m6_c1_val
+[m6_prev_high, m6_prev_low] = request.security(chart_sym, "M", [high[1], low[1]], lookahead=barmerge.lookahead_on)
+
+var line l_m6_vah  = line.new(na, na, na, na, xloc=xloc.bar_time, color=macro_color, width=macro_width, style=get_line_style(macro_style))
+var line l_m6_val  = line.new(na, na, na, na, xloc=xloc.bar_time, color=macro_color, width=macro_width, style=get_line_style(macro_style))
+var line l_m6_poc  = line.new(na, na, na, na, xloc=xloc.bar_time, color=macro_poc_color, width=macro_poc_width, style=get_line_style(macro_poc_style))
+var line l_m6_high = line.new(na, na, na, na, xloc=xloc.bar_time, color=macro_color, width=macro_width, style=get_line_style(macro_style))
+var line l_m6_low  = line.new(na, na, na, na, xloc=xloc.bar_time, color=macro_color, width=macro_width, style=get_line_style(macro_style))
+var label lb_m6_vah  = label.new(na, na, style=label.style_label_left, textcolor=macro_color, color=color(na), size=get_size(macro_text_size))
+var label lb_m6_val  = label.new(na, na, style=label.style_label_left, textcolor=macro_color, color=color(na), size=get_size(macro_text_size))
+var label lb_m6_poc  = label.new(na, na, style=label.style_label_left, textcolor=macro_poc_color, color=color(na), size=get_size(macro_text_size))
+var label lb_m6_high = label.new(na, na, style=label.style_label_left, textcolor=macro_color, color=color(na), size=get_size(macro_text_size))
+var label lb_m6_low  = label.new(na, na, style=label.style_label_left, textcolor=macro_color, color=color(na), size=get_size(macro_text_size))
+
+// pm lines: anchor at start of current month, draw forward to current bar (segment, no left extension)
+var int pm_anchor_t = na
+if is_new_bar("M")
+    pm_anchor_t := time
+int pm_x1 = nz(pm_anchor_t, time)
+
+if barstate.islast and macro_show_month and not na(m6_prev_vah)
+    line.set_xy1(l_m6_vah, pm_x1, m6_prev_vah)
+    line.set_xy2(l_m6_vah, time, m6_prev_vah)
+    line.set_xy1(l_m6_val, pm_x1, m6_prev_val)
+    line.set_xy2(l_m6_val, time, m6_prev_val)
+    
+    int lbl_x = last_bar_index + macro_offset
+    
+    label.set_xy(lb_m6_vah, lbl_x, m6_prev_vah)
+    label.set_text(lb_m6_vah, f_lbl_on(lbl_pm) ? "pmVAH: " + f_fmt_price(m6_prev_vah) : "")
+    
+    label.set_xy(lb_m6_val, lbl_x, m6_prev_val)
+    label.set_text(lb_m6_val, f_lbl_on(lbl_pm) ? "pmVAL: " + f_fmt_price(m6_prev_val) : "")
+    
+    line.set_color(l_m6_vah, macro_color)
+    line.set_width(l_m6_vah, macro_width)
+    line.set_style(l_m6_vah, get_line_style(macro_style))
+    label.set_textcolor(lb_m6_vah, f_txt(macro_txt_c, macro_color))
+    label.set_size(lb_m6_vah, get_size(macro_text_size))
+    
+    line.set_color(l_m6_val, macro_color)
+    line.set_width(l_m6_val, macro_width)
+    line.set_style(l_m6_val, get_line_style(macro_style))
+    label.set_textcolor(lb_m6_val, f_txt(macro_txt_c, macro_color))
+    label.set_size(lb_m6_val, get_size(macro_text_size))
+
+if barstate.islast and macro_show_hl and not na(m6_prev_high)
+    line.set_xy1(l_m6_high, pm_x1, m6_prev_high)
+    line.set_xy2(l_m6_high, time, m6_prev_high)
+    line.set_xy1(l_m6_low, pm_x1, m6_prev_low)
+    line.set_xy2(l_m6_low, time, m6_prev_low)
+
+    int lbl_x_hl = last_bar_index + macro_offset
+
+    label.set_xy(lb_m6_high, lbl_x_hl, m6_prev_high)
+    label.set_text(lb_m6_high, f_lbl_on(lbl_pm) ? "pmHigh: " + f_fmt_price(m6_prev_high) : "")
+
+    label.set_xy(lb_m6_low, lbl_x_hl, m6_prev_low)
+    label.set_text(lb_m6_low, f_lbl_on(lbl_pm) ? "pmLow: " + f_fmt_price(m6_prev_low) : "")
+
+    line.set_color(l_m6_high, macro_color)
+    line.set_width(l_m6_high, macro_width)
+    line.set_style(l_m6_high, get_line_style(macro_style))
+    label.set_textcolor(lb_m6_high, f_txt(macro_txt_c, macro_color))
+    label.set_size(lb_m6_high, get_size(macro_text_size))
+
+    line.set_color(l_m6_low, macro_color)
+    line.set_width(l_m6_low, macro_width)
+    line.set_style(l_m6_low, get_line_style(macro_style))
+    label.set_textcolor(lb_m6_low, f_txt(macro_txt_c, macro_color))
+    label.set_size(lb_m6_low, get_size(macro_text_size))
+
+if barstate.islast and macro_show_poc and not na(m6_prev_poc)
+    line.set_xy1(l_m6_poc, pm_x1, m6_prev_poc)
+    line.set_xy2(l_m6_poc, time, m6_prev_poc)
+
+    int lbl_x_poc = last_bar_index + macro_offset
+
+    label.set_xy(lb_m6_poc, lbl_x_poc, m6_prev_poc)
+    label.set_text(lb_m6_poc, f_lbl_on(lbl_pm) ? "pmPOC: " + f_fmt_price(m6_prev_poc) : "")
+
+    line.set_color(l_m6_poc, macro_poc_color)
+    line.set_width(l_m6_poc, macro_poc_width)
+    line.set_style(l_m6_poc, get_line_style(macro_poc_style))
+    label.set_textcolor(lb_m6_poc, f_txt(macro_txt_c, macro_poc_color))
+    label.set_size(lb_m6_poc, get_size(macro_text_size))
+
+bool x_up_m6_prev_vah = ta.crossover(close, m6_prev_vah)
+bool x_dn_m6_prev_vah = ta.crossunder(close, m6_prev_vah)
+bool x_up_m6_prev_val = ta.crossover(close, m6_prev_val)
+bool x_dn_m6_prev_val = ta.crossunder(close, m6_prev_val)
+if macro_alert_lvl and not na(m6_prev_vah)
+    bool m6_vah_rollover = not na(m6_prev_vah[1]) and m6_prev_vah != m6_prev_vah[1]
+    bool m6_val_rollover = not na(m6_prev_val[1]) and m6_prev_val != m6_prev_val[1]
+    if not m6_vah_rollover and x_up_m6_prev_vah
+        f_alert_bar(_sym_tag + "pmVAH Cross Up @ " + f_fmt_price(m6_prev_vah) + " | close " + f_fmt_price(close))
+    if not m6_vah_rollover and x_dn_m6_prev_vah
+        f_alert_bar(_sym_tag + "pmVAH Cross Down @ " + f_fmt_price(m6_prev_vah) + " | close " + f_fmt_price(close))
+    if not m6_val_rollover and x_up_m6_prev_val
+        f_alert_bar(_sym_tag + "pmVAL Cross Up @ " + f_fmt_price(m6_prev_val) + " | close " + f_fmt_price(close))
+    if not m6_val_rollover and x_dn_m6_prev_val
+        f_alert_bar(_sym_tag + "pmVAL Cross Down @ " + f_fmt_price(m6_prev_val) + " | close " + f_fmt_price(close))
+bool x_up_m6_prev_poc = ta.crossover(close, m6_prev_poc)
+bool x_dn_m6_prev_poc = ta.crossunder(close, m6_prev_poc)
+if macro_alert_lvl and not na(m6_prev_poc)
+    bool m6_poc_rollover = not na(m6_prev_poc[1]) and m6_prev_poc != m6_prev_poc[1]
+    if not m6_poc_rollover and x_up_m6_prev_poc
+        f_alert_bar(_sym_tag + "pmPOC Cross Up @ " + f_fmt_price(m6_prev_poc) + " | close " + f_fmt_price(close))
+    if not m6_poc_rollover and x_dn_m6_prev_poc
+        f_alert_bar(_sym_tag + "pmPOC Cross Down @ " + f_fmt_price(m6_prev_poc) + " | close " + f_fmt_price(close))
+
+bool x_up_m6_prev_high = ta.crossover(close, m6_prev_high)
+bool x_dn_m6_prev_high = ta.crossunder(close, m6_prev_high)
+bool x_up_m6_prev_low = ta.crossover(close, m6_prev_low)
+bool x_dn_m6_prev_low = ta.crossunder(close, m6_prev_low)
+if macro_alert_lvl and not na(m6_prev_high)
+    bool m6_high_rollover = not na(m6_prev_high[1]) and m6_prev_high != m6_prev_high[1]
+    bool m6_low_rollover  = not na(m6_prev_low[1])  and m6_prev_low  != m6_prev_low[1]
+    if not m6_high_rollover and x_up_m6_prev_high
+        f_alert_bar(_sym_tag + "pmHigh Cross Up @ " + f_fmt_price(m6_prev_high) + " | close " + f_fmt_price(close))
+    if not m6_high_rollover and x_dn_m6_prev_high
+        f_alert_bar(_sym_tag + "pmHigh Cross Down @ " + f_fmt_price(m6_prev_high) + " | close " + f_fmt_price(close))
+    if not m6_low_rollover and x_up_m6_prev_low
+        f_alert_bar(_sym_tag + "pmLow Cross Up @ " + f_fmt_price(m6_prev_low) + " | close " + f_fmt_price(close))
+    if not m6_low_rollover and x_dn_m6_prev_low
+        f_alert_bar(_sym_tag + "pmLow Cross Down @ " + f_fmt_price(m6_prev_low) + " | close " + f_fmt_price(close))
+
+// ==========================================
+// --- AXIS LABELS FOR CURRENT MONTH LEVELS ---
+// ==========================================
+plot(tags_on and mvp_master and mvp_show_poc and not na(dev_poc_price) ? dev_poc_price : na, "MVP POC Axis Label", color=mvp_c_poc, style=plot.style_circles, linewidth=1, trackprice=true, show_last=1, display=display.price_scale)
+
+// ==========================================
+// --- AXIS LABELS FOR OVN & PREV MONTH ---
+// ==========================================
+plot(tags_on and macro_show_month and not na(m6_prev_vah) ? m6_prev_vah : na, "pmVAH Axis", color=macro_color, style=plot.style_circles, linewidth=1, trackprice=true, show_last=1, display=display.price_scale)
+plot(tags_on and macro_show_month and not na(m6_prev_val) ? m6_prev_val : na, "pmVAL Axis", color=macro_color, style=plot.style_circles, linewidth=1, trackprice=true, show_last=1, display=display.price_scale)
+plot(tags_on and macro_show_poc and not na(m6_prev_poc) ? m6_prev_poc : na, "pmPOC Axis", color=macro_poc_color, style=plot.style_circles, linewidth=1, trackprice=true, show_last=1, display=display.price_scale)
+plot(tags_on and macro_show_hl and not na(m6_prev_high) ? m6_prev_high : na, "pmHigh Axis", color=macro_color, style=plot.style_circles, linewidth=1, trackprice=true, show_last=1, display=display.price_scale)
+plot(tags_on and macro_show_hl and not na(m6_prev_low) ? m6_prev_low : na, "pmLow Axis", color=macro_color, style=plot.style_circles, linewidth=1, trackprice=true, show_last=1, display=display.price_scale)
+
+// ==========================================
+// --- AXIS LABELS FOR PREV WEEK ---
+// ==========================================
+plot(tags_on and pw_enable and pw_showH and not na(pw_High_val) ? pw_High_val : na, "pwHigh Axis", color=pw_col, style=plot.style_circles, linewidth=1, trackprice=true, show_last=1, display=display.price_scale)
+plot(tags_on and pw_enable and pw_showL and not na(pw_Low_val) ? pw_Low_val : na, "pwLow Axis", color=pw_col, style=plot.style_circles, linewidth=1, trackprice=true, show_last=1, display=display.price_scale)
+
+// ==========================================
+// --- AXIS LABELS FOR PREV DAY & IB ---
+// ==========================================
+plot(tags_on and pd_enable and pd_showH and not na(pd_High) ? pd_High : na, "pdHigh Axis", color=pd_high_c, style=plot.style_circles, linewidth=1, trackprice=true, show_last=1, display=display.price_scale)
+plot(tags_on and pd_enable and pd_showL and not na(pd_Low) ? pd_Low : na, "pdLow Axis", color=pd_low_c, style=plot.style_circles, linewidth=1, trackprice=true, show_last=1, display=display.price_scale)
+// pdPOC/pdVAH/pdVAL axis labels removed — prices already visible via chart labels and p_vah/p_val fill plots
+
+plot(tags_on and ib_enable and not na(current_ib_high) ? current_ib_high : na, "IB High Axis", color=ib_col_hi, style=plot.style_circles, linewidth=1, trackprice=true, show_last=1, display=display.price_scale)
+plot(tags_on and ib_enable and not na(current_ib_low) ? current_ib_low : na, "IB Low Axis", color=ib_col_lo, style=plot.style_circles, linewidth=1, trackprice=true, show_last=1, display=display.price_scale)
+
+// ==========================================
+// --- MODULE 8: SESSION CONTEXT (DASHBOARD) ---
+// ==========================================
+// Day type, pivot bias, overnight inventory, open location, daily ATR and the
+// 80% rule for the dashboard. This free edition has no buy/sell signals.
+
+pb_daily_atr = f_dev_atr(pb_atr_len)
+// The day type compares the trading day's VWAP (from the 17:00 CT open) with the reference midpoint.
+// Calculated on every bar so the overnight session counts, matching NinjaTrader.
+float pb_day_vwap = ta.vwap(hlc3, timeframe.change("D"))
+float pb_atr = not na(pb_daily_atr) and pb_daily_atr > 0 ? pb_daily_atr : 1.0
+
+bool pb_in_session = not na(time(timeframe.period, pb_track_session, u_tz))
+bool pb_sess_start = pb_in_session and not pb_in_session[1]
+
+bool pb_first_hour = not na(time(timeframe.period, SESS_IB, u_tz))
+bool pb_past_first_hour = pb_in_session and not pb_first_hour
+
+var string pb_pivot_bias = "---"
+var color pb_pivot_col = color.gray
+
+if pb_in_session and not na(lvl_ipLevel)
+    float pvt_zone = pb_atr * 0.005
+    if close > lvl_ipLevel + pvt_zone
+        pb_pivot_bias := "BULLISH"
+        pb_pivot_col := color.green
+    else if close < lvl_ipLevel - pvt_zone
+        pb_pivot_bias := "BEARISH"
+        pb_pivot_col := color.red
+    else
+        pb_pivot_bias := "AT PIVOT"
+        pb_pivot_col := color.yellow
+
+var string pb_day_type   = "---"
+var color  pb_day_col    = color.gray
+var string pb_inv_status = "---"
+var color  pb_inv_col    = color.gray
+var string pb_inv_frozen = "---"
+var color  pb_inv_frozen_col = color.gray
+
+// OVN inventory status for the dashboard row.
+if inv_enable and inv_isImbalance
+    if inv_pctLong == 100
+        pb_inv_status := "TRAP LONG (100%)"
+        pb_inv_col    := #FF1744
+    else if inv_pctShort == 100
+        pb_inv_status := "TRAP SHORT (100%)"
+        pb_inv_col    := color.lime
+else if inv_enable and inv_totalBars > 0
+    if inv_pctLong > 60
+        pb_inv_status := "LONG (" + str.tostring(inv_pctLong, "#") + "%)"
+        pb_inv_col    := color.new(color.green, 30)
+    else if inv_pctShort > 60
+        pb_inv_status := "SHORT (" + str.tostring(inv_pctShort, "#") + "%)"
+        pb_inv_col    := color.new(color.red, 30)
+    else
+        pb_inv_status := "BALANCED"
+        pb_inv_col    := color.gray
+else
+    pb_inv_status := "---"
+    pb_inv_col    := color.gray
+
+var bool pb_is_trap = false
+var bool pb_gap_up  = false
+var bool pb_gap_down = false
+var bool pb_is_gap   = false
+var bool pb_outside_va_above = false
+var bool pb_outside_va_below = false
+var bool pb_is_80_setup = false
+
+var float day_high_cur = na
+var float day_low_cur  = na
+
+if pb_sess_start
+    pb_inv_frozen     := pb_inv_status
+    pb_inv_frozen_col := pb_inv_col
+
+// 3. DYNAMIC AMT CLASSIFICATION
+var bool auction_has_begun = false
+var float mem_upper       = na
+var float mem_lower       = na
+
+// Variables for One-Timeframing (OTF)
+var int otf_up_count = 0
+var int otf_dn_count = 0
+
+// Self-contained RTH tracker to fix compiling errors and ensure all-day tracking
+bool amt_rth_in_sess = not na(time(timeframe.period, SESS_RTH, u_tz))
+bool amt_rth_start   = amt_rth_in_sess and not amt_rth_in_sess[1]
+
+if amt_rth_start
+    auction_has_begun := false
+    mem_upper         := na
+    mem_lower         := na
+    otf_up_count      := 0
+    otf_dn_count      := 0
+
+    // Initialize day range at RTH open (not 08:15 pre-market)
+    day_high_cur := high
+    day_low_cur  := low
+
+    // Open location classification uses RTH open price
+    float open_price = not na(cc_dOpen) ? cc_dOpen : open
+
+    pb_is_trap := inv_enable and inv_isImbalance
+    pb_gap_up := not na(pd_High) and open_price > pd_High
+    pb_gap_down := not na(pd_Low) and open_price < pd_Low
+    pb_is_gap := pb_gap_up or pb_gap_down
+    pb_outside_va_above := not na(cc_p_vah) and open_price > cc_p_vah
+    pb_outside_va_below := not na(cc_p_val) and open_price < cc_p_val
+    pb_is_80_setup := pb_outside_va_above or pb_outside_va_below
+
+if amt_rth_in_sess
+    float ref_h = not na(current_ib_high) ? current_ib_high : amt_pmHigh
+    float ref_l = not na(current_ib_low)  ? current_ib_low  : amt_pmLow
+    
+    if not na(ref_h) and not na(ref_l)
+        mem_upper := ref_h
+        mem_lower := ref_l
+    
+    float use_h = not na(ref_h) ? ref_h : mem_upper
+    float use_l = not na(ref_l) ? ref_l : mem_lower
+    bool  can_calc = not na(use_h) and not na(use_l)
+
+    day_high_cur := math.max(nz(day_high_cur, high), high)
+    day_low_cur  := math.min(nz(day_low_cur, low), low)
+    float rng    = day_high_cur - day_low_cur
+
+    // AMT Step 1: Calculate IB Range and Multipliers
+    float ib_rng       = use_h - use_l
+    float ext_multiple = rng / nz(ib_rng, 1) 
+    float ib_mid       = (use_h + use_l) / 2
+
+    // AMT Step 2: Track One-Timeframing (OTF)
+    bool higher_low = low > low[1]
+    bool lower_high = high < high[1]
+    
+    otf_up_count := higher_low ? otf_up_count + 1 : 0
+    otf_dn_count := lower_high ? otf_dn_count + 1 : 0
+
+    // Adjust this threshold based on your chart timeframe (e.g., 5 for 5min, 2 for 30min)
+    int otf_threshold = 5 
+    bool is_otf_up    = otf_up_count >= otf_threshold
+    bool is_otf_dn    = otf_dn_count >= otf_threshold
+
+    // AMT Step 3: Track Value Migration
+    float daily_vwap        = pb_day_vwap
+    bool  value_migrated_up = daily_vwap > ib_mid
+    bool  value_migrated_dn = daily_vwap < ib_mid
+
+    // ═══════════════════════════════════════════════════════
+    // DALTON DAY TYPE CLASSIFICATION (Mind Over Markets)
+    // Inputs: IB width vs ATR, range extension, prior-day
+    // structural breaks, OVN breaks, OTF persistence,
+    // value migration, close position in range.
+    // ═══════════════════════════════════════════════════════
+    string candidate = "DEVELOPING"
+    color  c_color   = color.gray
+    bool   is_real   = false
+
+    if pb_is_trap
+        candidate := "TRAP"
+        c_color   := color.orange
+        is_real   := true
+    
+    else if can_calc
+        bool broke_up = day_high_cur > use_h
+        bool broke_dn = day_low_cur < use_l
+
+        // Close position in day range (0.0 = at low, 1.0 = at high)
+        float close_pct = rng > 0 ? (close - day_low_cur) / rng : 0.5
+
+        // IB width relative to ATR (Dalton: narrow base = easier to tip)
+        // No Normal Day call until the daily ATR is ready, matching NinjaTrader.
+        bool  ib_wide    = not na(pb_daily_atr) and pb_daily_atr > 0 and ib_rng / pb_daily_atr > 0.50
+
+        // Prior-day structural breaks (initiative OTF activity)
+        bool broke_pdH  = not na(pd_High) and day_high_cur > pd_High
+        bool broke_pdL  = not na(pd_Low) and day_low_cur < pd_Low
+        bool broke_ovnH = not na(amt_pmHigh) and day_high_cur > amt_pmHigh
+        bool broke_ovnL = not na(amt_pmLow) and day_low_cur < amt_pmLow
+
+        // Close relative to prior value area
+        bool close_below_val = not na(cc_p_val) and close < cc_p_val
+        bool close_above_vah = not na(cc_p_vah) and close > cc_p_vah
+
+        // Initiative: broke outside prior day range or OVN + confirmed by value
+        bool initiative_up = broke_pdH or (broke_ovnH and close_above_vah)
+        bool initiative_dn = broke_pdL or (broke_ovnL and close_below_val)
+
+        // Directional conviction composites
+        bool strong_up = broke_up and close_pct > 0.75 and value_migrated_up
+        bool strong_dn = broke_dn and close_pct < 0.25 and value_migrated_dn
+
+        // ── 1. TREND DAY ──
+        // Strongest conviction: directional close + structural break + extension
+        // Dalton: elongated profile, one-timeframing, close near extreme
+        bool trend_up = strong_up and (is_otf_up or initiative_up) and ext_multiple > 1.5
+        bool trend_dn = strong_dn and (is_otf_dn or initiative_dn) and ext_multiple > 1.5
+
+        // Fallback: massive extension + initiative break + close near extreme
+        // (catches sustained moves even without strict OTF count)
+        if not trend_up and initiative_up and close_pct > 0.80 and ext_multiple > 2.0
+            trend_up := true
+        if not trend_dn and initiative_dn and close_pct < 0.20 and ext_multiple > 2.0
+            trend_dn := true
+
+        if trend_dn
+            candidate := "Trend Day (Down)"
+            c_color   := color.red
+            is_real   := true
+
+        else if trend_up
+            candidate := "Trend Day (Up)"
+            c_color   := color.green
+            is_real   := true
+
+        // ── 2. NEUTRAL DAY ──
+        // Broke both IB extremes — classify by close location
+        // Dalton: Center (close near middle) vs Extreme (close near edge)
+        else if broke_up and broke_dn
+            if close_pct >= 0.65
+                candidate := "Neutral Extreme (Up)"
+                c_color   := color.new(color.green, 30)
+            else if close_pct <= 0.35
+                candidate := "Neutral Extreme (Down)"
+                c_color   := color.new(color.red, 30)
+            else
+                candidate := "Neutral Day (Center)"
+                c_color   := color.gray
+            is_real := true
+
+        // ── 3. NORMAL DAY ──
+        // Dalton: wide IB (OTF entered aggressively in first hour),
+        // range established early, minimal extension beyond IB
+        else if ib_wide and not broke_up and not broke_dn
+            candidate := "Normal Day"
+            c_color   := color.gray
+            is_real   := true
+
+        // ── 4. NORMAL VARIATION ──
+        // Single-sided IB break; direction confirmed by extension,
+        // structural breaks, or value migration
+        else if broke_up and not broke_dn
+            if initiative_up or ext_multiple > 1.2 or close_above_vah
+                candidate := "Normal Variation (Up)"
+                c_color   := color.lime
+            else
+                candidate := "Normal Day (Balance)"
+                c_color   := color.gray
+            is_real := true
+
+        else if broke_dn and not broke_up
+            if initiative_dn or ext_multiple > 1.2 or close_below_val
+                candidate := "Normal Variation (Down)"
+                c_color   := color.maroon
+            else
+                candidate := "Normal Day (Balance)"
+                c_color   := color.gray
+            is_real := true
+
+        // ── 5. NON-TREND DAY ──
+        // IB holding, no meaningful extension either direction
+        else if pb_past_first_hour or not na(current_ib_high)
+            candidate := "Non-Trend Day"
+            c_color   := color.gray
+            is_real   := true
+
+    if is_real
+        auction_has_begun := true
+
+    if auction_has_begun
+        if is_real
+            pb_day_type := candidate
+            pb_day_col  := c_color
+        else
+            pb_day_type := pb_day_type
+            pb_day_col  := pb_day_col
+    else
+        if pb_is_gap
+            pb_day_type := pb_gap_up ? "GAP UP" : "GAP DOWN"
+            pb_day_col  := pb_gap_up ? color.lime : #FF1744
+        else
+            pb_day_type := "DEVELOPING"
+            pb_day_col  := color.gray
+
+// ==========================================
+// TABLE: DAY TYPE + PIVOT + INVENTORY + OPEN LOC
+// ==========================================
+pb_get_pos(string s) =>
+    s == "Top Right" ? position.top_right :
+     s == "Top Left" ? position.top_left :
+     s == "Bottom Right" ? position.bottom_right :
+     s == "Bottom Left" ? position.bottom_left :
+     s == "Middle Right" ? position.middle_right :
+     position.middle_left
+
+pb_get_tbl_size(string s) =>
+    s == "Tiny" ? size.tiny : s == "Small" ? size.small : s == "Normal" ? size.normal : size.large
+
+// Table Session Tracking
+bool tbl_in_sess = not na(time(timeframe.period, tbl_session, u_tz))
+bool tbl_sess_start = tbl_in_sess and not tbl_in_sess[1]
+bool tbl_sess_end = not tbl_in_sess and tbl_in_sess[1]
+
+var float tbl_sess_high = na
+var float tbl_sess_low = na
+
+if tbl_sess_start
+    tbl_sess_high := high
+    tbl_sess_low := low
+else if tbl_in_sess
+    tbl_sess_high := math.max(nz(tbl_sess_high, high), high)
+    tbl_sess_low := math.min(nz(tbl_sess_low, low), low)
+
+if tbl_sess_end
+    tbl_sess_high := na
+    tbl_sess_low := na
+
+var table pb_table = table.new(pb_get_pos(tbl_pos), 2, 9, bgcolor=color.new(color.black, 20), border_width=1, border_color=color.new(color.gray, 60))
+
+// Draw Table
+if barstate.islast and tbl_show
+    string sz = pb_get_tbl_size(tbl_size)
+
+    // Determine current session label
+    string cur_session = "---"
+    color  cur_sess_col = color.gray
+    if tbl_in_sess
+        cur_session := "RTH"
+        cur_sess_col := color.lime
+    else if amt_inSess
+        cur_session := "OVN"
+        cur_sess_col := #00bcd4
+    else
+        cur_session := "CLOSED"
+        cur_sess_col := color.gray
+
+    // Row 0: header (name + version), Row 1: SESSION
+    table.cell(pb_table, 0, 0, "Tatanka AMT", text_color=color.white, text_size=sz, text_halign=text.align_left, bgcolor=#1e222d)
+    table.cell(pb_table, 1, 0, "v" + AMT_VERSION, text_color=#b2b5be, text_size=sz, text_halign=text.align_right, bgcolor=#1e222d)
+    table.cell(pb_table, 0, 1, "SESSION", text_color=color.white, text_size=sz, text_halign=text.align_left)
+    table.cell(pb_table, 1, 1, cur_session, text_color=cur_sess_col, text_size=sz, text_halign=text.align_right)
+
+    if tbl_in_sess
+        // Full table during RTH
+        table.cell(pb_table, 0, 2, "DAY TYPE", text_color=color.white, text_size=sz, text_halign=text.align_left)
+        table.cell(pb_table, 1, 2, pb_day_type, text_color=pb_day_col, text_size=sz, text_halign=text.align_right)
+
+        table.cell(pb_table, 0, 3, "PIVOT", text_color=color.white, text_size=sz, text_halign=text.align_left)
+        table.cell(pb_table, 1, 3, pb_pivot_bias, text_color=pb_pivot_col, text_size=sz, text_halign=text.align_right)
+
+        table.cell(pb_table, 0, 4, "OVN INVENTORY", text_color=color.white, text_size=sz, text_halign=text.align_left)
+        table.cell(pb_table, 1, 4, pb_inv_frozen, text_color=pb_inv_frozen_col, text_size=sz, text_halign=text.align_right)
+
+        string open_loc = "---"
+        color open_loc_col = color.gray
+        if not na(cc_dOpen) and not na(pd_High) and not na(pd_Low)
+            if cc_dOpen > pd_High
+                open_loc := "Above pdHigh"
+                open_loc_col := color.lime
+            else if cc_dOpen < pd_Low
+                open_loc := "Below pdLow"
+                open_loc_col := #FF1744
+            else if not na(cc_p_vah) and cc_dOpen > cc_p_vah
+                open_loc := "Above pdVAH"
+                open_loc_col := color.new(color.green, 30)
+            else if not na(cc_p_val) and cc_dOpen < cc_p_val
+                open_loc := "Below pdVAL"
+                open_loc_col := color.new(color.red, 30)
+            else if not na(cc_p_vah)
+                open_loc := "Inside Value"
+                open_loc_col := color.gray
+
+        table.cell(pb_table, 0, 5, "OPEN", text_color=color.white, text_size=sz, text_halign=text.align_left)
+        table.cell(pb_table, 1, 5, open_loc, text_color=open_loc_col, text_size=sz, text_halign=text.align_right)
+
+        table.cell(pb_table, 0, 6, "ATR(" + str.tostring(pb_atr_len) + ")", text_color=color.white, text_size=sz, text_halign=text.align_left)
+        table.cell(pb_table, 1, 6, na(pb_daily_atr) ? "---" : str.tostring(pb_daily_atr, "#.##"), text_color=color.gray, text_size=sz, text_halign=text.align_right)
+
+        float pb_sess_range = (not na(tbl_sess_high) and not na(tbl_sess_low)) ? tbl_sess_high - tbl_sess_low : 0.0
+        float pb_atr_used_pct = not na(pb_daily_atr) and pb_daily_atr > 0 ? (pb_sess_range / pb_daily_atr) * 100 : 0.0
+        color pb_atr_used_col = pb_atr_used_pct >= 100 ? #FF1744 : pb_atr_used_pct >= 75 ? color.orange : color.gray
+        table.cell(pb_table, 0, 7, "ATR USED", text_color=color.white, text_size=sz, text_halign=text.align_left)
+        table.cell(pb_table, 1, 7, str.tostring(pb_sess_range, "#.##") + " (" + str.tostring(pb_atr_used_pct, "#") + "%)", text_color=pb_atr_used_col, text_size=sz, text_halign=text.align_right)
+
+        string rule80_txt = "---"
+        color  rule80_col = color.gray
+        if cc_enable and pb_is_80_setup
+            if rule_80_confirmed
+                rule80_txt := "CONFIRMED"
+                rule80_col := color.new(#ea80fc, 0)
+            else if cc_is_active
+                rule80_txt := "ACTIVE"
+                rule80_col := color.orange
+            else
+                rule80_txt := "SETUP"
+                rule80_col := color.yellow
+        table.cell(pb_table, 0, 8, "80% RULE", text_color=color.white, text_size=sz, text_halign=text.align_left)
+        table.cell(pb_table, 1, 8, rule80_txt, text_color=rule80_col, text_size=sz, text_halign=text.align_right)
+
+    else
+        // OVN/Closed: labels visible, dashes for inactive values, live inventory
+        table.cell(pb_table, 0, 2, "DAY TYPE", text_color=color.white, text_size=sz, text_halign=text.align_left)
+        table.cell(pb_table, 1, 2, "---", text_color=color.gray, text_size=sz, text_halign=text.align_right)
+        table.cell(pb_table, 0, 3, "PIVOT", text_color=color.white, text_size=sz, text_halign=text.align_left)
+        table.cell(pb_table, 1, 3, "---", text_color=color.gray, text_size=sz, text_halign=text.align_right)
+        table.cell(pb_table, 0, 4, "OVN INVENTORY", text_color=color.white, text_size=sz, text_halign=text.align_left)
+        table.cell(pb_table, 1, 4, pb_inv_status, text_color=pb_inv_col, text_size=sz, text_halign=text.align_right)
+        table.cell(pb_table, 0, 5, "OPEN", text_color=color.white, text_size=sz, text_halign=text.align_left)
+        table.cell(pb_table, 1, 5, "---", text_color=color.gray, text_size=sz, text_halign=text.align_right)
+        table.cell(pb_table, 0, 6, "ATR(" + str.tostring(pb_atr_len) + ")", text_color=color.white, text_size=sz, text_halign=text.align_left)
+        table.cell(pb_table, 1, 6, "---", text_color=color.gray, text_size=sz, text_halign=text.align_right)
+        table.cell(pb_table, 0, 7, "ATR USED", text_color=color.white, text_size=sz, text_halign=text.align_left)
+        table.cell(pb_table, 1, 7, "---", text_color=color.gray, text_size=sz, text_halign=text.align_right)
+        table.cell(pb_table, 0, 8, "80% RULE", text_color=color.white, text_size=sz, text_halign=text.align_left)
+        table.cell(pb_table, 1, 8, "---", text_color=color.gray, text_size=sz, text_halign=text.align_right)
+
+// ==========================================
+// --- Z-ORDER RE-DRAW LOGIC ---
+// ==========================================
+// Only redraw when the user changes layer_top_pick or when a new bar arrives
+// (which is when a session-boundary line may have been newly drawn). Avoids
+// per-tick delete/recreate overhead on realtime bars.
+var int zorder_last_bar = -1
+var string zorder_last_pick = ""
+bool zorder_dirty = bar_index != zorder_last_bar or layer_top_pick != zorder_last_pick
+if barstate.islast and zorder_dirty
+    zorder_last_bar := bar_index
+    zorder_last_pick := layer_top_pick
+    if layer_top_pick == "Daily Levels (All)"
+        draw_daily_levels()
+
+    if layer_top_pick == "Profile POC" and not na(mvp_cur_poc_l)
+        float x1 = line.get_x1(mvp_cur_poc_l), float y1 = line.get_y1(mvp_cur_poc_l)
+        float x2 = line.get_x2(mvp_cur_poc_l), float y2 = line.get_y2(mvp_cur_poc_l)
+        line.delete(mvp_cur_poc_l)
+        mvp_cur_poc_l := line.new(int(x1), y1, int(x2), y2, xloc=xloc.bar_index, color=mvp_c_poc, width=mvp_poc_width, style=get_line_style(mvp_poc_style))
+
+    if layer_top_pick == "Profile VAH" and not na(mvp_cur_vah_l)
+        float x1 = line.get_x1(mvp_cur_vah_l), float y1 = line.get_y1(mvp_cur_vah_l)
+        float x2 = line.get_x2(mvp_cur_vah_l), float y2 = line.get_y2(mvp_cur_vah_l)
+        line.delete(mvp_cur_vah_l)
+        mvp_cur_vah_l := line.new(int(x1), y1, int(x2), y2, xloc=xloc.bar_index, color=mvp_c_levels, width=mvp_lvl_width, style=get_line_style(mvp_lvl_style))
+
+    if layer_top_pick == "Profile VAL" and not na(mvp_cur_val_l)
+        float x1 = line.get_x1(mvp_cur_val_l), float y1 = line.get_y1(mvp_cur_val_l)
+        float x2 = line.get_x2(mvp_cur_val_l), float y2 = line.get_y2(mvp_cur_val_l)
+        line.delete(mvp_cur_val_l)
+        mvp_cur_val_l := line.new(int(x1), y1, int(x2), y2, xloc=xloc.bar_index, color=mvp_c_levels, width=mvp_lvl_width, style=get_line_style(mvp_lvl_style))
+
+    if layer_top_pick == "IB Midpoint" and not na(ib_l_m)
+        float x1 = line.get_x1(ib_l_m), float y1 = line.get_y1(ib_l_m)
+        float x2 = line.get_x2(ib_l_m), float y2 = line.get_y2(ib_l_m)
+        line.delete(ib_l_m)
+        ib_l_m := line.new(int(x1), y1, int(x2), y2, xloc=xloc.bar_index, color=ib_col_mid, width=ib_lvl_width, style=get_line_style(ib_style_int))
+
+    if layer_top_pick == "IB High" and not na(ib_l_h)
+        float x1 = line.get_x1(ib_l_h), float y1 = line.get_y1(ib_l_h)
+        float x2 = line.get_x2(ib_l_h), float y2 = line.get_y2(ib_l_h)
+        line.delete(ib_l_h)
+        ib_l_h := line.new(int(x1), y1, int(x2), y2, xloc=xloc.bar_index, color=ib_col_hi, width=ib_lvl_width, style=get_line_style(ib_style_main))
+
+    if layer_top_pick == "IB Low" and not na(ib_l_l)
+        float x1 = line.get_x1(ib_l_l), float y1 = line.get_y1(ib_l_l)
+        float x2 = line.get_x2(ib_l_l), float y2 = line.get_y2(ib_l_l)
+        line.delete(ib_l_l)
+        ib_l_l := line.new(int(x1), y1, int(x2), y2, xloc=xloc.bar_index, color=ib_col_lo, width=ib_lvl_width, style=get_line_style(ib_style_main))
+
+    if layer_top_pick == "pdPOC" and not na(cc_poc_line)
+        float x1 = line.get_x1(cc_poc_line), float y1 = line.get_y1(cc_poc_line)
+        float x2 = line.get_x2(cc_poc_line), float y2 = line.get_y2(cc_poc_line)
+        line.delete(cc_poc_line)
+        cc_poc_line := line.new(int(x1), y1, int(x2), y2, xloc=xloc.bar_index, color=pd_poc_c, width=cc_poc_width, style=get_line_style(cc_poc_style_in))
+
+    if layer_top_pick == "Prev Day High" and not na(l_pdH)
+        float x1 = line.get_x1(l_pdH), float y1 = line.get_y1(l_pdH)
+        float x2 = line.get_x2(l_pdH), float y2 = line.get_y2(l_pdH)
+        line.delete(l_pdH)
+        l_pdH := line.new(int(x1), y1, int(x2), y2, xloc=xloc.bar_index, color=pd_high_c, width=pd_high_width, style=get_line_style(pd_style_in))
+
+    if layer_top_pick == "Prev Day Low" and not na(l_pdL)
+        float x1 = line.get_x1(l_pdL), float y1 = line.get_y1(l_pdL)
+        float x2 = line.get_x2(l_pdL), float y2 = line.get_y2(l_pdL)
+        line.delete(l_pdL)
+        l_pdL := line.new(int(x1), y1, int(x2), y2, xloc=xloc.bar_index, color=pd_low_c, width=pd_low_width, style=get_line_style(pd_style_in))
+
+    if layer_top_pick == "OVN High" and not na(l_amtHigh)
+        float x1 = line.get_x1(l_amtHigh), float y1 = line.get_y1(l_amtHigh)
+        float x2 = line.get_x2(l_amtHigh), float y2 = line.get_y2(l_amtHigh)
+        line.delete(l_amtHigh)
+        l_amtHigh := line.new(int(x1), y1, int(x2), y2, xloc=xloc.bar_index, color=amt_c_hi, width=amt_width, style=get_line_style(amt_style_in))
+
+    if layer_top_pick == "OVN Low" and not na(l_amtLow)
+        float x1 = line.get_x1(l_amtLow), float y1 = line.get_y1(l_amtLow)
+        float x2 = line.get_x2(l_amtLow), float y2 = line.get_y2(l_amtLow)
+        line.delete(l_amtLow)
+        l_amtLow := line.new(int(x1), y1, int(x2), y2, xloc=xloc.bar_index, color=amt_c_lo, width=amt_width, style=get_line_style(amt_style_in))
+
+    if layer_top_pick == "Prev Month VAH" and not na(l_m6_vah)
+        float x1 = line.get_x1(l_m6_vah), float y1 = line.get_y1(l_m6_vah)
+        float x2 = line.get_x2(l_m6_vah), float y2 = line.get_y2(l_m6_vah)
+        line.delete(l_m6_vah)
+        l_m6_vah := line.new(int(x1), y1, int(x2), y2, xloc=xloc.bar_time, color=macro_color, width=macro_width, style=get_line_style(macro_style))
+
+    if layer_top_pick == "Prev Month VAL" and not na(l_m6_val)
+        float x1 = line.get_x1(l_m6_val), float y1 = line.get_y1(l_m6_val)
+        float x2 = line.get_x2(l_m6_val), float y2 = line.get_y2(l_m6_val)
+        line.delete(l_m6_val)
+        l_m6_val := line.new(int(x1), y1, int(x2), y2, xloc=xloc.bar_time, color=macro_color, width=macro_width, style=get_line_style(macro_style))
+
+    if layer_top_pick == "Spike Base" and not na(activeSpikeLine)
+        float x1 = line.get_x1(activeSpikeLine), float y1 = line.get_y1(activeSpikeLine)
+        float x2 = line.get_x2(activeSpikeLine), float y2 = line.get_y2(activeSpikeLine)
+        line.delete(activeSpikeLine)
+        activeSpikeLine := line.new(int(x1), y1, int(x2), y2, xloc=xloc.bar_index, color=activeSpikeColor, width=spike_width, style=get_line_style(spike_style))
+
+// ==========================================
+// --- SESSION TIMEZONE GUARD ---
+// ==========================================
+// Every session field and hour input above is CME exchange time (Central).
+// Retyping them in a local timezone silently shifts every level: pdHigh/pdLow,
+// IB, OVN, TPO and the spike window all move together. Users
+// set their local clock via the TradingView CHART timezone, not these fields.
+// This compares each one to its exchange default and warns on any mismatch.
+f_tzguard() =>
+    array<string> _cur = array.from(mvp_sess_time, mvp_alert_time, ib_session, ib_alert_time, ib_stop_time, amt_sess, amt_del_sess, pd_sess_time, cc_sess_def, sp_rth_session, spikeTimeRange, pb_track_session, tbl_session)
+    array<string> _def = array.from("0830-1500", "0830-1500", "0830-0930", "0830-1500", "0830-1515", "1700-0830:123456", "1500-1505", "0830-1500", "0830-1500:23456", "0830-1500", "1430-1500", "0815-1500", "0830-1500")
+    array<string> _nm  = array.from("Session Time", "MVP Alert Time", "IB Calc Period", "IB Alert Window", "IB Stop Time", "OVN Session Time", "Delete OVN Lines At", "Custom Session Time", "RTH Session for VA", "SP RTH Session", "Spike Window", "Master Tracking Session", "Table RTH Session")
+    array<int>    _curN = array.from(vwap_start_h, vwap_start_m, vwap_end_h, vwap_end_m, inv_start_h, inv_end_h, inv_end_m)
+    array<int>    _defN = array.from(8, 30, 15, 0, 17, 8, 30)
+    array<string> _nmN  = array.from("VWAP Start H", "VWAP Start M", "VWAP End H", "VWAP End M", "Globex Start H", "RTH Open H", "RTH Open M")
+    string _bad = ""
+    int _n = 0
+    for i = 0 to array.size(_cur) - 1
+        if array.get(_cur, i) != array.get(_def, i)
+            _n += 1
+            if _n <= 3
+                _bad := _bad + (str.length(_bad) > 0 ? ", " : "") + array.get(_nm, i)
+    for i = 0 to array.size(_curN) - 1
+        if array.get(_curN, i) != array.get(_defN, i)
+            _n += 1
+            if _n <= 3
+                _bad := _bad + (str.length(_bad) > 0 ? ", " : "") + array.get(_nmN, i)
+    [_bad, _n]
+
+[_tz_bad, _tz_n] = f_tzguard()
+var label tz_warn_lbl = na
+if barstate.islast and tzguard_enable
+    label.delete(tz_warn_lbl)
+    if _tz_n > 0
+        string _tz_more = _tz_n > 3 ? ", +" + str.tostring(_tz_n - 3) + " more" : ""
+        string _tz_msg = "⚠ SESSION TIMES CHANGED (" + str.tostring(_tz_n) + ")" + "\nThese fields are EXCHANGE TIME (Central) - not your local time." + "\nChanged: " + _tz_bad + _tz_more + "\nFix: Settings > Defaults > Reset settings." + "\nFor your local clock, change the CHART timezone instead (clock, bottom-right)."
+        tz_warn_lbl := label.new(bar_index, low, _tz_msg, xloc=xloc.bar_index, yloc=yloc.price, style=label.style_label_up, color=color.new(color.red, 10), textcolor=color.white, size=size.normal, textalign=text.align_left)
+
+// ==========================================
+// --- TIMEFRAME WARNING ---
+// ==========================================
+// Indicator is designed for 1m-30m charts. IB (30m window), OVN, TPO, and single-print
+// logic break down on higher timeframes. Show a red warning on the last bar if TF > 30m.
+var label tf_warn_lbl = na
+if barstate.islast and timeframe.in_seconds(timeframe.period) > 1800
+    label.delete(tf_warn_lbl)
+    tf_warn_lbl := label.new(bar_index, high, "⚠ TF > 30m — IB / OVN / TPO reliability degraded", xloc=xloc.bar_index, yloc=yloc.price, style=label.style_label_down, color=color.red, textcolor=color.white, size=size.normal)
+````

@@ -1,0 +1,107 @@
+# RSI Divergence X Ichimoku Cloud X 200EMA
+
+- url: https://www.tradingview.com/script/IDBU7W3o-RSI-Divergence-X-Ichimoku-Cloud-X-200EMA/
+- type: strategy
+- pine_id: PUB;KpPH9A46BIaQ86StdQPwKGBMABt5o6cU
+- version: 1.0
+
+## Description
+
+Hi all,
+
+This script is a combination of the RSI Divergence Strategy combined with Ichimoku Cloud and 200 EMA .
+
+A long position is entered only when the RSI identifies a bullish divergence (either regular or hidden), and that the Ichimoku Cloud is above the 200 EMA . This is to ensure that there is a confirmation of a bullish trend before an entry.
+
+Similarly, a short position is entered only when the RSI identified a bearish divergence (either regular or hidden), and that the Ichimoku Cloud is below the 200 EMA . This is to ensure that there is a confirmation of a bearish trend before an entry.
+
+I find that this script works best on Intraday charts.
+
+This is just a simple script I built on my third attempt of backtesting strategies on TradingView. Do give it a go and let me know if you guys have any feedback or comments about it. Happy trading!
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © tradethrills
+
+//@version=4
+strategy("RSI Divergence X Ichimoku Cloud X 200EMA", overlay=true)
+
+//RSI Indicator
+len = input(defval=14, minval=1)
+src = input(defval=close)
+lbR = input(defval=5)
+lbL = input(defval=5)
+takeProfitLevellong = input(minval = 70, defval = 75)
+takeProfitLevelshort = input(minval = 30, defval = 25)
+
+rangeUpper = input(defval=60)
+rangeLower = input(defval=5)
+
+//200 EMA
+ema200 = ema(close, 200)
+
+//Ichimoku Cloud Indicator
+conversionPeriods = input(9, minval=1)
+basePeriods = input(26, minval=1)
+laggingSpan2Periods = input(52, minval=1)
+displacement = input(26, minval=1)
+
+donchian(len) => avg(lowest(len), highest(len))
+
+conversionLine = donchian(conversionPeriods)
+baseLine = donchian(basePeriods)
+leadLine1 = avg(conversionLine, baseLine)
+leadLine2 = donchian(laggingSpan2Periods)
+
+abovecloud =  max(leadLine1, leadLine2)
+belowcloud = min(leadLine1, leadLine2)
+
+//RSI Divergence Strategy
+
+osc = rsi(src, len)
+_inrange(cond) =>
+    bars = barssince(cond == true)
+    rangeLower <= bars and bars <= rangeUpper
+
+pricelowfound = na(pivotlow(osc, lbL, lbR)) ? false : true
+pricehighfound = na(pivothigh(osc, lbL, lbR)) ? false : true
+
+//Regular Bullish
+osc_higherlow = osc[lbR] > valuewhen(pricelowfound, osc[lbR], 1) and _inrange(pricelowfound[1])
+price_lowerlow = low[lbR] < valuewhen(pricelowfound, low[lbR], 1)
+
+bullCond = price_lowerlow and osc_higherlow and pricelowfound
+
+//Hidden Bullish
+osc_lowerlow = osc[lbR] < valuewhen(pricelowfound, osc[lbR], 1) and _inrange(pricelowfound[1])
+price_higherlow = low[lbR] > valuewhen(pricelowfound, low[lbR], 1)
+
+hiddenbullCond = price_higherlow and osc_lowerlow and pricelowfound
+
+//Regular Bearish
+osc_lowerhigh = osc[lbR] < valuewhen(pricehighfound, osc[lbR], 1) and _inrange(pricehighfound[1])
+price_higherhigh = high[lbR] > valuewhen(pricehighfound, high[lbR], 1)
+
+bearCond = price_higherhigh and osc_lowerhigh and pricehighfound
+
+//Hidden Bearish
+osc_higherhigh = osc[lbR] > valuewhen(pricehighfound, osc[lbR], 1) and _inrange(pricehighfound[1])
+price_lowerhigh = high[lbR] < valuewhen(pricehighfound, high[lbR], 1)
+
+hiddenbearCond = price_lowerhigh and osc_higherhigh and pricehighfound
+
+//Entry and Exit
+longCondition = (bullCond or hiddenbullCond) and (abovecloud > ema200)
+closelongCondition = crossover(osc, takeProfitLevellong) 
+
+shortCondition = (bearCond or hiddenbearCond) and (ema200 > belowcloud)
+closeshortCondition = crossover(osc, takeProfitLevelshort)
+
+strategy.entry("Long", strategy.long, 10000.0, when=longCondition)
+strategy.close("Long", when=closelongCondition)
+
+strategy.entry("Short", strategy.short, 10000.0, when=shortCondition)
+strategy.close("Short", when=closeshortCondition)
+````

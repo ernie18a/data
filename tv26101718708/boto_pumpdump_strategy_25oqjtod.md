@@ -1,0 +1,70 @@
+# [BoTo] Pump&Dump Strategy
+
+- url: https://www.tradingview.com/script/25oqJToD-BoTo-Pump-Dump-Strategy/
+- type: strategy
+- pine_id: PUB;9WAk41hx5nzNKpPiL0GuxANxJXDmtSl6
+- version: 1.0
+
+## Description
+
+This strategy uses only long positions. It isn't used short positions, it doesn't use marginal trade, it doesn't use a pyramiding.
+
+It is strategy uses only one indicator. Ourselves have constructed the indicator for cryptocurrencies. We called it 'Pump&Dump Ocsilator'. You can read as this indicator works here:
+
+https://www.tradingview.com/script/NFvx3jx0-BoTo-Pump-Dump-Oscillator/
+
+[b]Not usual stop[/b]
+
+Strategy uses 2 ways for closing of an unprofitable position. But it is possible to use only one way.
+
+[b]Way 1:[/b] if the indicator has distinguished a dump, then the long position needs to be closed when the candle is closed (for an example: to close a position when time 00:00 if you have chosen daily timeframe)
+
+[b]Way 2:[/b] the user himself chooses the size in settings of this script. Percent. If the user has chosen 100%, means isn't used absolutely. Because the price will never fall by 100%. If the user has chosen less than 100%, for example 5%, then the long position needs to be closed if the low of a candle was less than this price level of choosed stop-loss. But the position needs to be closed too when the candle is closed.
+
+[b]Strategy[/b]
+
+[b]A pump-signal:[/b] if the candle green and her body is 3 times more than norm
+[b]A dump-signal:[/b] on the contrary, if the candle red and her body is 3 times more than norm
+
+[b]For opening of a long position:[/b] it is necessary any pump-signal (if the position hasn't been open yet)
+[b]For closing of a long position:[/b] several ways:
+
+1) Or any dump-signal is necessary
+2) Or a stop-loss which was chosen by the user is necessary
+
+## Source Code
+
+````pine
+//@version=3
+strategy("[BoTo] Pump&Dump Strategy", shorttitle = "[BoTo] P&D Strategy", default_qty_type = strategy.percent_of_equity, default_qty_value = 100, pyramiding = 0)
+
+//Settings
+multiplier = input(3.0)
+length = input(100)
+stop = input(100.0, title = "Stop loss, %")
+
+//Indicator
+body = abs(close - open)
+sma = sma(body, length) * multiplier
+plot(body, color = gray, linewidth = 1, transp = 0, title = "Body")
+plot(sma, color = gray, style = area, linewidth = 0, transp = 90, title = "Avg.body * Multiplier")
+
+//Signals
+pump = body > sma and close > open
+dump = body > sma and close < open
+color = pump ? green : dump ? red : na
+bgcolor(color, transp = 0)
+
+//Stops
+size = strategy.position_size
+autostop = 0.0
+autostop := pump and size == 0 ? low : autostop[1]
+userstop = 0.0
+userstop := pump and size == 0 ? close - (close / 100 * stop) : userstop[1]
+
+//Strategy
+if pump
+    strategy.entry("Pump", strategy.long)
+if dump or low < autostop or low < userstop
+    strategy.close_all()
+````

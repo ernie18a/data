@@ -1,0 +1,125 @@
+# Combo Strategy 123 Reversal & Donchian Channel Width
+
+- url: https://www.tradingview.com/script/6CINmFVI-Combo-Strategy-123-Reversal-Donchian-Channel-Width/
+- type: indicator
+- pine_id: PUB;swj33PGbdEvJw7lqNCqWWUA2aFv0yqCH
+- version: 1.0
+
+## Description
+
+This is combo strategies for get a cumulative signal. 
+
+ First strategy
+ This System was created from the Book "How I Tripled My Money In The 
+ Futures Market" by Ulf Jensen, Page 183. This is reverse type of strategies.
+ The strategy buys at market, if close price is higher than the previous close 
+ during 2 days and the meaning of 9-days Stochastic Slow Oscillator is lower than 50. 
+ The strategy sells at market, if close price is lower than the previous close price 
+ during 2 days and the meaning of 9-days Stochastic Fast Oscillator is higher than 50.
+
+ Second strategy
+ The Donchian Channel was developed by Richard Donchian and it could be compared 
+ to the Bollinger Bands. When it comes to volatility analysis, the Donchian Channel 
+ Width was created in the same way as the Bollinger Bandwidth technical indicator was.
+
+ As was mentioned above the Donchian Channel Width is used in technical analysis to measure 
+ volatility. Volatility is one of the most important parameters in technical analysis. 
+ A price trend is not just about a price change. It is also about volume traded during this 
+ price change and volatility of a this price change. When a technical analyst focuses his/her 
+ attention solely on price analysis by ignoring volume and volatility, he/she only sees a part 
+ of a complete picture only. This could lead to a situation when a trader may miss something and 
+ lose money. Lets take a look at a simple example how volatility may help a trader:
+
+    Most of the price based technical indicators are lagging indicators.
+    When price moves on low volatility, it takes time for a price trend to change its direction and 
+ it could be ok to have some lag in an indicator.
+    When price moves on high volatility, a price trend changes its direction faster and stronger. 
+ An indicator's lag acceptable under low volatility could be financially suicidal now - Buy/Sell signals could be generated when it is already too late.
+
+ Another use of volatility - very popular one - it is to adapt a stop loss strategy to it:
+    Smaller stop-loss recommended in low volatility periods. If it is not done, a stop-loss could 
+ be generated when it is too late.
+    Bigger stop-loss recommended in high volatility periods. If it is not done, a stop-loss could 
+ be triggered too often and you may miss good trades.
+
+ WARNING:
+ - For purpose educate only
+ - This script to change bars colors.
+
+## Source Code
+
+````pine
+//@version=4
+////////////////////////////////////////////////////////////
+//  Copyright by HPotter v1.0 05/03/2020
+// This is combo strategies for get a cumulative signal. 
+//
+// First strategy
+// This System was created from the Book "How I Tripled My Money In The 
+// Futures Market" by Ulf Jensen, Page 183. This is reverse type of strategies.
+// The strategy buys at market, if close price is higher than the previous close 
+// during 2 days and the meaning of 9-days Stochastic Slow Oscillator is lower than 50. 
+// The strategy sells at market, if close price is lower than the previous close price 
+// during 2 days and the meaning of 9-days Stochastic Fast Oscillator is higher than 50.
+//
+// Second strategy
+// The Donchian Channel was developed by Richard Donchian and it could be compared 
+// to the Bollinger Bands. When it comes to volatility analysis, the Donchian Channel 
+// Width was created in the same way as the Bollinger Bandwidth technical indicator was.
+//
+// As was mentioned above the Donchian Channel Width is used in technical analysis to measure 
+// volatility. Volatility is one of the most important parameters in technical analysis. 
+// A price trend is not just about a price change. It is also about volume traded during this 
+// price change and volatility of a this price change. When a technical analyst focuses his/her 
+// attention solely on price analysis by ignoring volume and volatility, he/she only sees a part 
+// of a complete picture only. This could lead to a situation when a trader may miss something and 
+// lose money. Lets take a look at a simple example how volatility may help a trader:
+//
+//    Most of the price based technical indicators are lagging indicators.
+//    When price moves on low volatility, it takes time for a price trend to change its direction and 
+// it could be ok to have some lag in an indicator.
+//    When price moves on high volatility, a price trend changes its direction faster and stronger. 
+// An indicator's lag acceptable under low volatility could be financially suicidal now - Buy/Sell signals could be generated when it is already too late.
+//
+// Another use of volatility - very popular one - it is to adapt a stop loss strategy to it:
+//    Smaller stop-loss recommended in low volatility periods. If it is not done, a stop-loss could 
+// be generated when it is too late.
+//    Bigger stop-loss recommended in high volatility periods. If it is not done, a stop-loss could 
+// be triggered too often and you may miss good trades.
+//
+// WARNING:
+// - For purpose educate only
+// - This script to change bars colors.
+////////////////////////////////////////////////////////////
+Reversal123(Length, KSmoothing, DLength, Level) =>
+    vFast = sma(stoch(close, high, low, Length), KSmoothing) 
+    vSlow = sma(vFast, DLength)
+    pos = 0.0
+    pos := iff(close[2] < close[1] and close > close[1] and vFast < vSlow and vFast > Level, 1,
+	         iff(close[2] > close[1] and close < close[1] and vFast > vSlow and vFast < Level, -1, nz(pos[1], 0))) 
+	pos
+
+DCW(length, smoothe) =>
+    pos = 0.0
+    xUpper = highest(high, length)
+    xLower = lowest(low, length)
+    xDonchianWidth = xUpper - xLower
+    xSmoothed = sma(xDonchianWidth, smoothe)
+    pos := iff(xDonchianWidth > xSmoothed, -1,
+              iff(xDonchianWidth < xSmoothed, 1, nz(pos[1], 0))) 
+    pos
+
+study(title="Combo Strategy 123 Reversal & Donchian Channel Width", shorttitle="Combo", overlay = true)
+Length = input(14, minval=1)
+KSmoothing = input(1, minval=1)
+DLength = input(3, minval=1)
+Level = input(50, minval=1)
+//-------------------------
+LengthDCW = input(20, minval=1)
+SmootheSCW = input(22, minval=1)
+posReversal123 = Reversal123(Length, KSmoothing, DLength, Level)
+posDCW = DCW(LengthDCW, SmootheSCW)
+pos = iff(posReversal123 == 1 and posDCW == 1 , 1,
+	   iff(posReversal123 == -1 and posDCW == -1, -1, 0)) 
+barcolor(pos == -1 ? #b50404: pos == 1 ? #079605 : #0536b3 )
+````

@@ -1,0 +1,39 @@
+# 2EMA Strategy
+
+- url: https://www.tradingview.com/script/lcQvNRmy-2EMA-Strategy/
+- type: strategy
+- pine_id: PUB;J0NlQzpNE7py9YRje6q5RlgVldEIB44b
+- version: 1.0
+
+## Description
+
+Just a normal 2 EMA Cross Over
+
+## Source Code
+
+````pine
+//@version=3
+//study(title="2 Moving Average Exponential", shorttitle="2EMA", overlay=true)
+strategy("2ME Strategy", overlay=true)
+
+len = input(5, minval=1, title="Length")
+src = input(close, title="Source")
+out = ema(src, len)
+plot(out, title="EMA", color=blue)
+
+len2 = input(20, minval=1, title="Length2")
+src2 = input(close, title="Source2")
+out2 = ema(src2, len2)
+plot(out2, title="EMA2", color=orange)
+
+if (crossover(out, out2))
+    strategy.entry("MacdLE", strategy.long,when=strategy.position_size <= 0, comment="MacdLE")
+
+
+strategy.close("MacdLE", when = crossover(out2,out) )
+
+//if (crossunder(out2, out))
+//    strategy.entry("MacdSE", strategy.short, comment="MacdSE")
+    
+//plot(strategy.equity, title="equity", color=red, linewidth=2, style=areabr)
+````

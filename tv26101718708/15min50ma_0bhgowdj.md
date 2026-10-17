@@ -1,0 +1,31 @@
+# 15min50MA
+
+- url: https://www.tradingview.com/script/0BHGOwdj-15min50MA/
+- type: strategy
+- pine_id: PUB;rPnQpAUdIoWoZzNsf6bvsZg68jV1FD15
+- version: 1.0
+
+## Description
+
+15 min over 50 EMA
+
+## Source Code
+
+````pine
+//@version=4
+strategy("15min50MA", overlay=true)
+
+ema5=ema(close,5)
+ema13=ema(close,13)
+ema50=ema(close,50)
+price=close
+
+long = price > ema50
+short = strategy.openprofit >500
+
+strategy.entry ("long",strategy.long,1000,when=long)
+//strategy.entry ("short",strategy.short,1000,when=short)
+
+strategy.close("long",when=short)
+//strategy.close("short",when=long)
+````

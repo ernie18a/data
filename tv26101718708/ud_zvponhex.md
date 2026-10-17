@@ -1,0 +1,38 @@
+# U&D
+
+- url: https://www.tradingview.com/script/ZvpONhex-U-D/
+- type: strategy
+- pine_id: PUB;XznU1VfHINpNHYrprfQ0nY89v4LiEoiy
+- version: 1.0
+
+## Description
+
+if price has moved up since 1 to 3 candles ago = buy
+if price has moved down since 1 to 3 candles ago = sell
+has internal SL & TP
+tested on
+[symbol="BITFINEX:ETHUSD"]BITFINEX:ETHUSD[/symbol]
+[symbol="BITFINEX:BTCUSD"]BITFINEX:BTCUSD[/symbol]
+[symbol="BITFINEX:LTCUSD" ]BITFINEX:LTCUSD[/symbol]
+[symbol="BITFINEX:ETHBTC"]BITFINEX:ETHBTC[/symbol]
+  4 hour charts
+
+## Source Code
+
+````pine
+//@version=3
+strategy("U&D", overlay=true, default_qty_type=strategy.percent_of_equity, initial_capital=100000,default_qty_value=100, calc_on_order_fills=true, calc_on_every_tick=true)
+price=input(ohlc4,type=source,title="Price data")
+closelong = strategy.openprofit<strategy.equity-(strategy.equity*1.1) or strategy.openprofit>strategy.equity/7
+if (closelong)
+    strategy.close("U")
+closeshort = strategy.openprofit<strategy.equity-(strategy.equity*1.1) or strategy.openprofit>strategy.equity/7
+if (closeshort)
+    strategy.close("D")
+longCondition = price[1]>price[2] and price[2]>price[3] and price[3]<price[4]
+if (longCondition)
+    strategy.entry("U", strategy.long)
+shortCondition = price[1]<price[2] and price[2]<price[3] and price[3]>price[4]
+if (shortCondition)
+    strategy.entry("D", strategy.short)
+````

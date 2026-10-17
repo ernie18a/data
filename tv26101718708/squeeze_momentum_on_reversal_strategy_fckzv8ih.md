@@ -1,0 +1,67 @@
+# Squeeze Momentum on Reversal Strategy
+
+- url: https://www.tradingview.com/script/Fckzv8iH-Squeeze-Momentum-on-Reversal-Strategy/
+- type: strategy
+- pine_id: PUB;X9fXfLsG3xkz5xfQcW5nua3OQXOIfVUk
+- version: 1.0
+
+## Description
+
+** From the original work of LazyBear ** Thanks for his Squeeze Momentum indicator 
+
+This strategy gives acceptable result on EUR/USD - 1H chart with default parameters
+
+## Source Code
+
+````pine
+//
+// @author Odyssee
+// @version=2
+//
+strategy(shorttitle = "Squeeze MOM", title="Squeeze Momentum on Reversal Strategy", overlay=false)
+
+length = input(20, title="BB Length")
+mult = input(2.0,title="BB MultFactor")
+lengthKC=input(20, title="KC Length")
+multKC = input(1.5, title="KC MultFactor")
+strength = input(0.0018, title="Reversal Strength")
+
+useTrueRange = input(true, title="Use TrueRange (KC)", type=bool)
+
+// Calculate BB
+source = close
+basis = sma(source, length)
+dev = multKC * stdev(source, length)
+upperBB = basis + dev
+lowerBB = basis - dev
+
+// Calculate KC
+ma = sma(source, lengthKC)
+range = useTrueRange ? tr : (high - low)
+rangema = sma(range, lengthKC)
+upperKC = ma + rangema * multKC
+lowerKC = ma - rangema * multKC
+
+sqzOn  = (lowerBB > lowerKC) and (upperBB < upperKC)
+sqzOff = (lowerBB < lowerKC) and (upperBB > upperKC)
+noSqz  = (sqzOn == false) and (sqzOff == false)
+
+highest = highest(high, lengthKC)
+lowest = lowest(low, lengthKC)
+lastsma = sma(close,lengthKC)
+
+valin = linreg(source  -  avg(avg(highest, lowest), lastsma), lengthKC,0)
+
+bcolor = iff( valin > 0, iff( valin > nz(valin[1]), lime, green), iff( valin < nz(valin[1]), red, maroon))
+scolor = noSqz ? blue : sqzOn ? black : gray 
+plot(valin, color=bcolor, style=histogram, linewidth=4)
+plot(0, color=scolor, style=cross, linewidth=2)
+
+shortcondition = valin > strength and valin < nz(valin[1]) // line become green
+longcondition = valin < (strength*-1) and valin > nz(valin[1]) // line become maroon
+
+if(longcondition)
+    strategy.entry("BUY", strategy.long)
+if(shortcondition)
+    strategy.entry("SELL", strategy.short)
+````

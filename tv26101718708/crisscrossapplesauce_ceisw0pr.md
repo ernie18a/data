@@ -1,0 +1,32 @@
+# CrisscrossApplesauce
+
+- url: https://www.tradingview.com/script/CeiSW0pR-CrisscrossApplesauce/
+- type: strategy
+- pine_id: PUB;89z4eqzOMtT9Ch3unbaNsFuQVc5f5XmU
+- version: 1.0
+
+## Description
+
+5min scalp, for stocks
+
+## Source Code
+
+````pine
+//@version=3
+strategy("CrisscrossApplesauce", overlay= true)
+
+ema25 = ema(close,10)
+ema24 = ema(close,20)
+
+longCond = crossover(ema25, ema24)
+shortCond = crossunder(ema25,ema24)
+
+
+strategy.entry("long", true, 100000, when = longCond)
+strategy.entry("short", false, 100000, when = shortCond)
+strategy.exit("exit", "long", profit = 150, loss = 50)
+strategy.exit("exit", "short", profit = 150, loss = 50)
+
+plot(ema24, color=gray, linewidth = 1)
+plot(ema25, color=green, linewidth = 1)
+````

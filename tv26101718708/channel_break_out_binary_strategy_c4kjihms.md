@@ -1,0 +1,43 @@
+# Channel Break Out Binary Strategy
+
+- url: https://www.tradingview.com/script/c4KJIHMs-Channel-Break-Out-Binary-Strategy/
+- type: strategy
+- pine_id: PUB;apW63AyP8Nrz1Y1OaOuyq5i5y5mWoVz6
+- version: 1.0
+
+## Description
+
+I am learning pine script at the moment and this is my first attempt at creating an expire time based strategy for binary options based on a simple example like the built-in Channel Break Out Strategy.
+
+## Source Code
+
+````pine
+//@version=2
+strategy("ChannelBreakOutStrategy", overlay=true, currency="EUR")
+
+length = input(title="Length", type=integer, minval=1, maxval=1000, defval=197)
+timeframe = input(title="timeframe", type=integer, minval=1, defval=578)
+
+upBound = highest(high, length)
+downBound = lowest(low, length)
+
+// plot the channel
+up = plot(upBound, title="upper bound", color=green)
+down = plot(downBound, title="lower bound", color=red)
+fill(up, down, color=blue, transp=70)
+
+// upcond = close == (upBound + syminfo.mintick)
+// downcond = close == (downBound - syminfo.mintick)
+
+if (strategy.opentrades == 0)
+    if (not na(close[length]))
+        strategy.order("ChBrkLE", strategy.long, stop=upBound + syminfo.mintick, comment="ChBrkLE")
+        strategy.order("ChBrkSE", strategy.short, stop=downBound - syminfo.mintick, comment="ChBrkSE")
+
+bars = barssince(strategy.opentrades == 0)
+strategy.close_all(when=(bars>=timeframe))
+
+// strategy.close_all(when=(time))
+
+// plot(strategy.equity, title="equity", color=red, linewidth=2, style=areabr)
+````

@@ -1,0 +1,49 @@
+# Overbought/Oversold
+
+- url: https://www.tradingview.com/script/aUmBclT1-Overbought-Oversold/
+- type: strategy
+- pine_id: PUB;Tc3FueObgzHlQF8CZOR8CUzGZYHgdq2f
+- version: 1.0
+
+## Description
+
+Simple Overbought/Oversold indicator
+
+ You can change long to short in the Input Settings
+ WARNING:
+ - For purpose educate only
+ - This script to change bars colors.
+
+## Source Code
+
+````pine
+//@version=2
+////////////////////////////////////////////////////////////
+//  Copyright by HPotter v1.0 25/09/2017
+// Simple Overbought/Oversold indicator
+//
+// You can change long to short in the Input Settings
+// WARNING:
+// - For purpose educate only
+// - This script to change bars colors.
+////////////////////////////////////////////////////////////
+strategy(title="Overbought/Oversold", shorttitle="OB/OS")
+Length = input(10, minval=1)
+BuyBand = input(0.92, step = 0.01)
+SellBand = input(0.5, step = 0.01)
+reverse = input(false, title="Trade reverse")
+hline(BuyBand, color=green, linestyle=line)
+hline(SellBand, color=red, linestyle=line)
+xOBOS = stoch(close, high, low, Length)
+nRes = iff(close > close[Length], xOBOS / 100, (100 - xOBOS) / 100)
+pos = iff(nRes < SellBand, -1,
+	   iff(nRes > BuyBand, 1, nz(pos[1], 0))) 
+possig = iff(reverse and pos == 1, -1,
+          iff(reverse and pos == -1, 1, pos))	   
+if (possig == 1) 
+    strategy.entry("Long", strategy.long)
+if (possig == -1)
+    strategy.entry("Short", strategy.short)	   	    
+barcolor(possig == -1 ? red: possig == 1 ? green : blue ) 
+plot(nRes, color=blue, title="OB/OS")
+````

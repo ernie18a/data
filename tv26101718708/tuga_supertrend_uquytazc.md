@@ -1,0 +1,64 @@
+# Tuga Supertrend
+
+- url: https://www.tradingview.com/script/uquYTAZC/
+- type: strategy
+- pine_id: PUB;853b99f4dfba43aa9ab447f8938d4ce8
+- version: 1.0
+
+## Description
+
+Description
+This strategy uses the Supertrend indicator enhanced with commission and slippage filters to capture trends on the daily chart. It’s designed to work on any asset but is especially effective in markets with consistent movements.
+
+Use the date inputs to set the backtest period (default: from January 1, 2018, through today, June 30, 2025).
+
+The default input values are optimized for the daily chart. For other timeframes, adjust the parameters to suit the asset you’re testing.
+
+Release Notes
+June 30, 2025
+• Updated default backtest period to end on June 30, 2025.
+• Default commission adjusted to 0.1 %.
+• Slippage set to 3 ticks.
+• Default slippage set to 3 ticks.
+• Simplified the strategy name to “Tuga Supertrend”.
+
+
+Default Parameters
+
+Parameter	Default Value
+Supertrend Period	10
+Multiplier (Factor)	3
+Commission	0.1 %
+Slippage	3 ticks
+Start Date	January 1, 2018
+End Date	June 30, 2025
+
+## Source Code
+
+````pine
+//@version=6
+strategy("Tuga Supertrend", overlay=true, default_qty_type=strategy.percent_of_equity, default_qty_value=100, commission_type=strategy.commission.percent, commission_value=0.1, slippage=3)
+
+// — Date filters — 
+startDate = input.time(timestamp("2018-01-01 00:00"), "Start Date")
+endDate   = input.time(timestamp("2069-12-31 23:59"), "End Date")
+inWindow  = time >= startDate and time <= endDate
+
+// — Supertrend inputs —
+atrPeriod = input.int(10,      "ATR Length")
+factor    = input.float(3.0,   "Factor", step=0.01)
+
+// — Compute Supertrend —
+[supertrendValue, direction] = ta.supertrend(factor, atrPeriod)
+
+// — Entry / Exit logic (Long-only) —
+if inWindow
+    // when direction flips down → go long
+    if ta.change(direction) < 0
+        strategy.entry("Long", strategy.long)
+    // when direction flips up → close long
+    if ta.change(direction) > 0
+        strategy.close("Long")
+
+// — (No additional plots; indicator did not plot anything originally) —
+````

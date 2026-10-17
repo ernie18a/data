@@ -1,0 +1,71 @@
+# DEMA of DPD Strategy 
+
+- url: https://www.tradingview.com/script/NFRQtXRD-DEMA-of-DPD-Strategy/
+- type: strategy
+- pine_id: PUB;iHsFPldB6Na2NxlnCqqTXsQLxs5el3XG
+- version: 1.0
+
+## Description
+
+DPD response quickly and one of my followers wanted a smoothed version of DPD.
+
+I think taking DEMA of DPD is a good solution for that.
+
+## Source Code
+
+````pine
+//@version= 2
+strategy("DEMA of DPD Strategy ",shorttitle="DPD% DEMA " ,overlay=false)
+
+buyper =input(-2)
+sellper=input(2)
+
+demalen = input(50,title="Dema Length")
+
+e1= ema(close,demalen)
+e2=ema(e1,demalen)
+demaprice  =   2 * e1 - e2
+
+price=close
+demadifper =  ((price-demaprice)/price)*100
+
+
+OverDemaPer = input(1, title="Band for OverBought")
+UnderDemaPer= input(-1,title="Band for OverSold")
+
+band1 = hline(OverDemaPer)
+band0 = hline(UnderDemaPer)
+zeroline=0
+fill(band1, band0, color=green, transp=90)
+
+
+demalen2 = input(21,title="DEMA to Calculate dema of DPD")
+demaofdpd =ema(demadifper,demalen2)
+demaofdpd2 =ema(demaofdpd,demalen2)
+resultstrategy = 2*demaofdpd - demaofdpd2
+
+plot(resultstrategy,color=blue)
+
+
+yearfrom = input(2018)
+yearuntil =input(2019)
+monthfrom =input(6)
+monthuntil =input(12)
+dayfrom=input(1)
+dayuntil=input(31)
+
+
+
+if (  crossover(resultstrategy,buyper)  and   year >= yearfrom and year <= yearuntil and month>=monthfrom and month <=monthuntil and dayofmonth>=dayfrom and dayofmonth < dayuntil) 
+    strategy.entry("BUY", strategy.long, stop=close, oca_name="TREND", oca_type=strategy.oca.cancel, comment="BUY")
+    
+else
+    strategy.cancel(id="BUY")
+
+
+if ( crossunder(resultstrategy,sellper) and  year >= yearfrom and year <= yearuntil and month>=monthfrom and month <=monthuntil and dayofmonth>=dayfrom and dayofmonth < dayuntil ) 
+
+    strategy.entry("SELL", strategy.short,stop=close, oca_name="TREND", oca_type=strategy.oca.cancel, comment="SELL")
+else
+    strategy.cancel(id="SELL")
+````

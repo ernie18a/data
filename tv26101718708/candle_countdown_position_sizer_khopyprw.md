@@ -1,0 +1,264 @@
+# Candle Countdown & Position Sizer
+
+- url: https://www.tradingview.com/script/KHoPyPrw-Candle-Countdown-Position-Sizer/
+- type: indicator
+- pine_id: PUB;950f8454f2f042ec9c04c1295f43723b
+- version: 2.0
+
+## Description
+
+Candle Countdown & Position Sizer
+
+A compact on-chart table that keeps the two things a scalper checks most in one place: time and size.
+
+It shows:
+- Live clock with seconds, in the timezone you pick (Exchange, UTC, NY, London, Tokyo, Sydney).
+- Countdown to the next 1m, 5m and 15m candle — so you always know how long the current bar has left. Each row turns to your chosen alert color in the final seconds before the candle closes.
+- Suggested lot size based on ATR volatility, so your risk stays constant trade to trade.
+
+How the sizing works
+
+Tell it three things:
+- how many dollars you're willing to lose on the trade,
+- how wide your stop is, as a multiple of ATR (default 2× ATR),
+- the ATR length and smoothing (Wilder or exponential — default EMA 100).
+
+It computes the stop distance from current ATR and returns the lot size that caps your loss at that dollar amount if the stop is hit, rounded to a whole number. Flip on the debug toggle to also see the raw ATR and stop
+distance behind the calculation.
+
+Notes
+- Updates arrive on price ticks, so during very quiet periods the clock may skip a second.
+- Lot size uses the symbol's point value — always confirm it against your broker's contract specs before trading.
+- Candle countdowns are anchored to UTC and are exact for intraday timeframes on 24h markets.
+
+Not financial advice — a position-sizing aid. You are responsible for your own risk.
+
+## Source Code
+
+````pine
+//@version=6
+// ===================================
+// Candle Countdown & Position Sizer
+// ===================================
+// Author: Filipe Teixeira Amaral
+// Version: 2.1
+// Last Updated: July 2026
+//
+// Description:
+// An on-chart info table that shows the current time, live countdowns to the next
+// candle on the timeframes you choose, and an ATR-based position-size suggestion.
+// Tell it how much you are willing to risk — a fixed dollar amount or a percentage
+// of your account — and how wide your stop is (as a multiple of ATR), and it returns
+// the lot size that keeps the loss at that risk if the stop is hit.
+//
+// Features:
+// • Real-time clock with seconds, in the timezone of your choice
+// • Optional countdowns to the next candle on up to three timeframes you select,
+//   with an optional highlight alert
+// • ATR-based stop distance (configurable × ATR) in points; in % of Account
+//   mode it also shows the cash risked at the suggested lot size
+// • Risk sized as a fixed dollar amount or a percentage of account size
+// • Wilder (RMA) or exponential (EMA) ATR smoothing
+// • Suggested lot size from your risk budget, the stop distance and the symbol's
+//   point value
+//
+// Notes:
+// • Updates depend on incoming price ticks. During low-volume periods the table may
+//   not refresh every second.
+// • Lot size uses the symbol's point value (syminfo.pointvalue). Always confirm it
+//   against your broker's contract specs before trading.
+// • Countdowns are anchored to the Unix epoch (UTC): exact for intraday timeframes
+//   on 24h markets.
+// ===================================
+
+indicator('Candle Countdown & Position Sizer', overlay=true)
+
+// --- Display inputs -------------------------------------------------------
+
+timeZoneInput = input.string('Exchange', 'Timezone', options=['Exchange', 'UTC', 'America/New_York', 'Europe/London', 'Asia/Tokyo', 'Australia/Sydney'], group='Display')
+
+textColor      = input.color(color.white, 'Text Color',             group='Display')
+bgColor        = input.color(color.new(color.black, 20), 'Background Color', group='Display')
+blinkTextColor = input.color(color.black, 'Alert Text Color',       group='Display')
+blinkBgColor   = input.color(color.red,   'Alert Background Color',  group='Display')
+
+textSize      = input.string('normal',     'Text Size', options=['tiny', 'small', 'normal', 'large', 'huge', 'auto'], group='Display')
+tablePosition = input.string('top_right',  'Position',  options=['top_left', 'top_center', 'top_right', 'middle_left', 'middle_center', 'middle_right', 'bottom_left', 'bottom_center', 'bottom_right'], group='Display')
+
+// --- Countdown inputs -----------------------------------------------------
+
+showCountdowns = input.bool(true, 'Show Countdowns', group='Countdown')
+cdShow1 = input.bool(true,  'Timeframe 1', inline='cd1', group='Countdown')
+cdTf1   = input.timeframe('1',  '', inline='cd1', group='Countdown')
+cdShow2 = input.bool(true,  'Timeframe 2', inline='cd2', group='Countdown')
+cdTf2   = input.timeframe('5',  '', inline='cd2', group='Countdown')
+cdShow3 = input.bool(true,  'Timeframe 3', inline='cd3', group='Countdown')
+cdTf3   = input.timeframe('15', '', inline='cd3', group='Countdown')
+
+// --- Alert inputs ---------------------------------------------------------
+
+enableAlert     = input.bool(true, 'Highlight Countdown Before New Candle', group='Candle Alert')
+blinkSecondsStr = input.string('10 seconds', 'Alert Lead Time', options=['5 seconds', '10 seconds', '15 seconds', '30 seconds', '45 seconds', '1 minute', '2 minutes', '3 minutes', '5 minutes'], group='Candle Alert')
+
+// --- Risk inputs ----------------------------------------------------------
+
+riskMode    = input.string('Fixed $', 'Risk Mode', options=['Fixed $', '% of Account'], group='Position Sizing', tooltip='Fixed $: risk a set dollar amount per trade. % of Account: risk a percentage of your account size.')
+riskDollars = input.float(100.0, 'Risk Per Trade ($)', minval=0.0, step=10.0, group='Position Sizing', tooltip='Used when Risk Mode is Fixed $. Maximum amount you are willing to lose if the stop is hit.')
+accountSize = input.float(10000.0, 'Account Size ($)', minval=0.0, step=100.0, group='Position Sizing', tooltip='Used when Risk Mode is % of Account.')
+riskPercent = input.float(1.0, 'Risk Per Trade (%)', minval=0.0, step=0.1, group='Position Sizing', tooltip='Used when Risk Mode is % of Account. Percent of account size to risk per trade.')
+stopAtrMult = input.float(1.5, 'Stop Size (× ATR)', minval=0.0, step=0.1, group='Position Sizing', tooltip='Stop distance as a multiple of ATR. 1.5 means the stop sits 1.5×ATR away from entry.')
+atrLength   = input.int(5, 'ATR Length', minval=1, group='Position Sizing')
+atrType     = input.string('EMA (Exponential)', 'ATR Smoothing', options=['RMA (Wilder)', 'EMA (Exponential)'], group='Position Sizing', tooltip='RMA is the classic Wilder ATR. EMA reacts faster to recent volatility.')
+
+// --- String -> value lookups ----------------------------------------------
+
+getBlinkSeconds(timeStr) =>
+    switch timeStr
+        '5 seconds'  => 5
+        '10 seconds' => 10
+        '15 seconds' => 15
+        '30 seconds' => 30
+        '45 seconds' => 45
+        '1 minute'   => 60
+        '2 minutes'  => 120
+        '3 minutes'  => 180
+        '5 minutes'  => 300
+        => 10
+
+getTablePosition(pos) =>
+    switch pos
+        'top_left'      => position.top_left
+        'top_center'    => position.top_center
+        'top_right'     => position.top_right
+        'middle_left'   => position.middle_left
+        'middle_center' => position.middle_center
+        'middle_right'  => position.middle_right
+        'bottom_left'   => position.bottom_left
+        'bottom_center' => position.bottom_center
+        'bottom_right'  => position.bottom_right
+        => position.top_right
+
+getTextSize(sz) =>
+    switch sz
+        'tiny'   => size.tiny
+        'small'  => size.small
+        'normal' => size.normal
+        'large'  => size.large
+        'huge'   => size.huge
+        'auto'   => size.auto
+        => size.normal
+
+// --- Helpers --------------------------------------------------------------
+
+// Seconds left until the next candle of a timeframe of `tfSeconds` length.
+// Candle boundaries are anchored to the Unix epoch (UTC), so the result is
+// independent of the display timezone.
+secondsUntilCandle(tfSeconds) =>
+    tfSeconds - ((timenow / 1000) % tfSeconds)
+
+// Render seconds-left as M:SS (e.g. 43 -> "0:43", 612 -> "10:12").
+formatCountdown(secsLeft) =>
+    total = math.floor(secsLeft)
+    str.format('{0,number,0}:{1,number,00}', math.floor(total / 60), total % 60)
+
+// Short label for a timeframe string, e.g. "1" -> "1m", "60" -> "1h", "D" -> "1D".
+tfLabel(tf) =>
+    secs = timeframe.in_seconds(tf)
+    switch
+        secs % 86400 == 0 => str.tostring(int(secs / 86400)) + 'D'
+        secs % 3600  == 0 => str.tostring(int(secs / 3600))  + 'h'
+        secs % 60    == 0 => str.tostring(int(secs / 60))    + 'm'
+        => str.tostring(secs) + 's'
+
+// Normal vs alert colors for a value cell, returned as [textColor, bgColor].
+cellColors(blink) =>
+    [blink ? blinkTextColor : textColor, blink ? blinkBgColor : bgColor]
+
+// --- ATR & position sizing ------------------------------------------------
+
+// Effective dollars at risk per trade, whichever way it's expressed.
+riskAmount = riskMode == 'Fixed $' ? riskDollars : accountSize * riskPercent / 100.0
+
+// ta.* must run on every bar, so compute these in the global scope.
+trueRange = ta.tr(true)
+atrValue  = atrType == 'EMA (Exponential)' ? ta.ema(trueRange, atrLength) : ta.rma(trueRange, atrLength)
+
+stopDistance = stopAtrMult * atrValue              // stop width in price units
+riskPerLot   = stopDistance * syminfo.pointvalue   // dollar loss per 1 contract if stopped
+lotSize      = riskPerLot > 0 ? riskAmount / riskPerLot : na
+
+// --- Setup ----------------------------------------------------------------
+
+// "Exchange" means the chart symbol's own timezone
+tz = timeZoneInput == 'Exchange' ? syminfo.timezone : timeZoneInput
+
+blinkSeconds = getBlinkSeconds(blinkSecondsStr)
+txtSize      = getTextSize(textSize)
+
+// Max rows: clock + 3 countdowns + Lot + ATR + Stop + Cash. Unused rows stay
+// empty (and therefore invisible), so hidden countdowns leave no gaps.
+var table clkTable = table.new(getTablePosition(tablePosition), 2, 8, border_width=1, border_color=color.new(color.gray, 60))
+
+// Write one label/value row. The value cell can carry alert colors; the label
+// cell always uses the base colors.
+addRow(rowIdx, label, value, valTextColor, valBgColor) =>
+    table.cell(clkTable, 0, rowIdx, label, text_color=textColor, bgcolor=bgColor, text_size=txtSize, text_halign=text.align_left)
+    table.cell(clkTable, 1, rowIdx, value, text_color=valTextColor, bgcolor=valBgColor, text_size=txtSize, text_halign=text.align_right)
+
+// --- Render ---------------------------------------------------------------
+
+// Only the most recent bar carries the live table; older bars are skipped.
+if barstate.islast
+    now = timenow
+
+    clockStr = str.format('{0,number,00}:{1,number,00}:{2,number,00}', hour(now, tz), minute(now, tz), second(now, tz))
+
+    // Rows are filled top-to-bottom with a running index so hidden rows don't
+    // leave blanks.
+    int row = 0
+    addRow(row, 'Time', clockStr, textColor, bgColor)
+    row := row + 1
+
+    // Countdowns. Within the lead-time window a value switches to the alert
+    // colors and stays there (steady highlight, no blinking).
+    if showCountdowns
+        if cdShow1
+            cd = secondsUntilCandle(timeframe.in_seconds(cdTf1))
+            [tc, bc] = cellColors(enableAlert and cd <= blinkSeconds)
+            addRow(row, tfLabel(cdTf1), formatCountdown(cd), tc, bc)
+            row := row + 1
+        if cdShow2
+            cd = secondsUntilCandle(timeframe.in_seconds(cdTf2))
+            [tc, bc] = cellColors(enableAlert and cd <= blinkSeconds)
+            addRow(row, tfLabel(cdTf2), formatCountdown(cd), tc, bc)
+            row := row + 1
+        if cdShow3
+            cd = secondsUntilCandle(timeframe.in_seconds(cdTf3))
+            [tc, bc] = cellColors(enableAlert and cd <= blinkSeconds)
+            addRow(row, tfLabel(cdTf3), formatCountdown(cd), tc, bc)
+            row := row + 1
+
+    // Suggested lot size
+    lotStr = na(lotSize) ? '—' : str.tostring(math.round(lotSize), '#')
+    addRow(row, 'Lot', lotStr, textColor, bgColor)
+    row := row + 1
+
+    // Raw ATR (price units)
+    addRow(row, 'ATR', str.tostring(atrValue, format.mintick), textColor, bgColor)
+    row := row + 1
+
+    // Stop distance in price/points, labeled with its ATR multiple.
+    stopLabel = 'Stop ATR (' + str.tostring(stopAtrMult) + ')'
+    addRow(row, stopLabel, str.tostring(stopDistance, format.mintick), textColor, bgColor)
+    row := row + 1
+
+    // Cash actually at risk if the stop is hit, at the suggested (rounded) lots.
+    // Only meaningful in % of Account mode — in Fixed $ mode it just echoes the
+    // amount the user already typed in.
+    if riskMode == '% of Account'
+        lots    = na(lotSize) ? na : math.round(lotSize)
+        cash    = na(lots) ? na : lots * riskPerLot
+        cashStr = na(cash) ? '—' : '$' + str.tostring(cash, '0.##')
+        addRow(row, 'Stop Cash (' + str.tostring(riskPercent) + '%)', cashStr, textColor, bgColor)
+        row := row + 1
+````

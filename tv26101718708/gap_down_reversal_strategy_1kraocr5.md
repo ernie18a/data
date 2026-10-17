@@ -1,0 +1,79 @@
+# Gap Down Reversal Strategy
+
+- url: https://www.tradingview.com/script/1krAOcR5-Gap-Down-Reversal-Strategy/
+- type: strategy
+- pine_id: PUB;N8mQp8xx8yr0KG6qipFaJKWnaJdHhwvC
+- version: 3.0
+
+## Description
+
+A "Gap down Reversal" is when the current days candle, opens, below the prior days close, and "finishes up" on the day with the close greater than the open. This type of price action can provide traders with favorable entry points to trade long, as anyone who was short the prior day, can get squeezed or panic out of the trade as they would see profits erode quickly from the gap down at the open. 
+
+Strategy results are shown on SHOP with 10k starting capital and 10k per trade. The strategy enters at next days close after the gap down reversal fires off, and a 5% trailing stop order is also executed. This is important to understand when experimenting with different trailing stops on different symbols and observing results to find the most viable strategy. The discretionary trader may choose to enter at the close, or at the next days open, so understand results are not calculated for those entry points. 
+
+You also may alter the start date of the strategy, so you can include, or exclude certain dates. 
+
+Experiment with different stops and symbols! More volatile symbols most likely will need looser stops and Vice Versa. Concentrate on symbols in up trends, as "the dips" usually get consistently bought in these names, but hard reversals in downtrends can happen as well. 
+
+Any questions/concerns please let me know and happy trading.
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © RolandoSantos
+
+//@version=2
+
+strategy(title="Gap Down reversal strat", overlay=true, pyramiding=1, default_qty_type =  strategy.cash, default_qty_value = 10000, initial_capital = 10000 )
+
+/// Start date
+
+startDate = input(title="Start Date", defval=1, minval=1, maxval=31)
+startMonth = input(title="Start Month", defval=1, minval=1, maxval=12)
+startYear = input(title="Start Year", defval=2009, minval=1800, maxval=2100)
+
+
+// See if this bar's time happened on/after start date
+afterStartDate = (time >= timestamp(syminfo.timezone, startYear, startMonth, startDate, 0, 0))
+
+
+// Configure trail stop level with input options (optional)
+longTrailPerc = input(title="Trail Long Loss (%)",
+     type=float, minval=0.0, step=0.1, defval=5.0) * 0.01
+
+
+// Calculate trading conditions
+gap_d_r = close[1] < open[1] and open < low[1] and close > open
+
+
+// Plot Shapes
+plotshape(gap_d_r, style=shape.triangleup, location=location.belowbar)
+///plotshape(gap_u_r, style=shape.triangledown, location=location.abovebar)
+
+
+// Determine trail stop loss prices
+longStopPrice = 0.0   ///, shortStopPrice = 0.0
+
+longStopPrice := if (strategy.position_size > 0)
+    stopValue = open * (1 - longTrailPerc)
+    max(stopValue, longStopPrice[1])
+else
+    0
+
+
+// Plot stop loss values for confirmation
+plot(series=(strategy.position_size > 0) ? longStopPrice : na,
+     color=red, style=circles,
+     linewidth=1, title="Long Trail Stop")
+
+
+// Entry orders
+if (afterStartDate and gap_d_r)
+    strategy.entry(id="EL", long=true)
+
+
+// Exit orders for trail stop loss price
+if (strategy.position_size > 0)
+    strategy.exit(id="Stop out", stop=longStopPrice)
+````

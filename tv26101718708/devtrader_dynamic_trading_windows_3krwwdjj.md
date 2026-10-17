@@ -1,0 +1,692 @@
+# Devtrader Dynamic Trading Windows
+
+- url: https://www.tradingview.com/script/3kRWwdJJ-Devtrader-Dynamic-Trading-Windows/
+- type: indicator
+- pine_id: PUB;45d3a73cbbb64134839d38183dd46fbf
+- version: 4.0
+
+## Description
+
+Devtrader Dynamic Trading Windows
+
+Devtrader Dynamic Trading Windows is an intraday session-mapping tool designed to help traders visually mark their preferred trading windows directly on the chart.
+
+The indicator allows traders to configure multiple ticker-specific profiles and define custom time intervals for each symbol. When the chart symbol matches one of the configured profiles, the indicator automatically applies that ticker’s specific trading windows and draws vertical start/end markers on the chart.
+
+This is useful for traders who focus on specific instruments at specific times of day, such as index killzones, equity opening windows, futures session windows, or personal backtested execution periods.
+
+Main Features
+
+• Multiple ticker profiles
+Configure separate profiles for symbols such as GER40, NQ, UK100, INTC, or any custom ticker.
+
+• Ticker-aware behavior
+The indicator checks the active chart symbol and only displays the windows configured for the matching ticker profile.
+
+• Multiple intervals per ticker
+Each ticker profile can contain multiple editable time intervals, allowing traders to map different trading windows throughout the day.
+
+• Custom vertical lines
+Each interval draws vertical markers at the start and end of the configured window.
+
+• Fully editable line style
+Customize the color, width, and style of the vertical markers.
+
+• Editable labels
+Each interval can display custom labels such as “NQ Open”, “GER40 Main”, “London Window”, or any other preferred text.
+
+• Timezone support
+Each ticker profile has its own timezone setting, so the configured sessions can be interpreted correctly for the selected market.
+
+• Intraday-focused design
+The script is designed for intraday charts such as 1m, 5m, 15m, and similar timeframes.
+
+• Status label
+A small status label shows which ticker profile is currently active and which timezone is being used.
+
+How It Works
+
+1. Add the indicator to an intraday chart.
+2. Open the indicator settings.
+3. Enable the ticker profile you want to use.
+4. Set the ticker match text, for example:
+   - GER40
+   - NQ
+   - UK100
+   - INTC
+5. Define one or more session intervals.
+6. Customize the marker text, color, line width, and line style.
+7. When the chart symbol matches the profile, the indicator automatically draws the configured window markers.
+
+Example Use Cases
+
+• GER40 / DAX trading window:
+Mark the main execution window between 11:20 and 14:00.
+
+• NQ / Nasdaq futures trading window:
+Mark the New York open window and afternoon execution window.
+
+• UK100 trading window:
+Map the preferred London-session trading period.
+
+• Individual stocks:
+Mark opening range, momentum window, or preferred intraday execution periods for stocks such as INTC.
+
+Important Notes
+
+This indicator does not generate buy or sell signals.
+
+It does not predict price direction.
+
+It is not a strategy and does not place trades.
+
+Its purpose is to help traders stay disciplined by visually marking the exact periods when they prefer to focus, observe, or execute trades.
+
+Recommended Usage
+
+Use this indicator as part of a structured trading plan:
+
+• Define your best-performing execution windows.
+• Mark only the periods you have backtested or personally validated.
+• Avoid overtrading outside your planned windows.
+• Combine the window markers with your own market structure, liquidity, volume, price action, or strategy rules.
+• Review your trades later to see whether your best results come from specific time intervals.
+
+Why This Indicator Exists
+
+Many intraday traders perform better during specific market periods. For example, some traders prefer the London session, New York open, futures opening range, index killzones, or specific volatility windows.
+
+This tool was created to make those windows visible, consistent, and symbol-specific.
+
+Instead of manually remembering different time windows for each market, traders can configure them once and let the indicator automatically display the correct windows based on the active chart symbol.
+
+Best For
+
+• Intraday traders
+• Futures traders
+• Index traders
+• Stock traders
+• Killzone-based traders
+• Session-based traders
+• Traders who use backtested time windows
+• Traders who want more discipline around when they trade
+
+## Source Code
+
+````pine
+// This Pine Script® code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+//@version=6
+indicator(
+     "Devtrader Dynamic Trading Windows",
+     shorttitle = "Dynamic Trading Windows",
+     overlay = true,
+     max_lines_count = 500,
+     max_labels_count = 500
+ )
+
+// --- General Settings ---
+groupGeneral = "General Settings"
+showLabelsGlobal = input.bool(true, "Show Labels Globally", group = groupGeneral, tooltip = "Toggle all labels on/off.")
+lineExtendModeInput = input.string("Both", "Vertical Line Extend", options = ["Both", "None"], group = groupGeneral, tooltip = "Choose if lines should extend across the whole chart height.")
+maxHistoricalMarkers = input.int(300, "Maximum Historical Lines/Labels", minval = 50, maxval = 500, group = groupGeneral, tooltip = "Limit the number of objects on chart to maintain performance.")
+showCurrentProfileLabel = input.bool(false, "Show Status Label", group = groupGeneral, tooltip = "Shows which profile is currently active on the right side of the chart.")
+
+// Match the native Visibility tab captured on 2026-10-13 (display only).
+useConfiguredVisibility = input.bool(true, "Use Configured Interval Visibility", group = groupGeneral, tooltip = "Show on ticks, ranges, 1-59 seconds, and 1-12 minutes. Disable to draw on other intervals. TradingView's Visibility tab can further restrict display.")
+bool configuredChartVisible = not useConfiguredVisibility or timeframe.isticks or chart.is_range or (timeframe.isseconds and timeframe.multiplier <= 59) or (timeframe.isminutes and timeframe.multiplier <= 12)
+
+// --- Helper Functions ---
+f_symbolMatches(string configuredSymbol) =>
+    string normalizedConfigured = str.upper(str.trim(configuredSymbol))
+    string ticker = str.upper(syminfo.ticker)
+    string root = str.upper(syminfo.root)
+    string tickerId = str.upper(syminfo.tickerid)
+
+    normalizedConfigured != "" and (
+         ticker == normalizedConfigured or
+         root == normalizedConfigured or
+         str.contains(tickerId, normalizedConfigured)
+     )
+
+f_extendMode(string mode) =>
+    mode == "Both" ? extend.both : extend.none
+
+f_lineStyle(string styleText) =>
+    switch styleText
+        "Solid"  => line.style_solid
+        "Dashed" => line.style_dashed
+        "Dotted" => line.style_dotted
+        => line.style_dotted
+
+f_labelSize(string sizeText) =>
+    switch sizeText
+        "Tiny"   => size.tiny
+        "Small"  => size.small
+        "Normal" => size.normal
+        => size.small
+
+// --- Drawing Management ---
+var array<line> windowLines = array.new<line>()
+var array<label> windowLabels = array.new<label>()
+
+f_pushLimitedLine(line newLine, int maxCount) =>
+    if not na(newLine)
+        array.push(windowLines, newLine)
+        if array.size(windowLines) > maxCount
+            line.delete(array.shift(windowLines))
+
+f_pushLimitedLabel(label newLabel, int maxCount) =>
+    if not na(newLabel)
+        array.push(windowLabels, newLabel)
+        if array.size(windowLabels) > maxCount
+            label.delete(array.shift(windowLabels))
+
+f_drawVerticalMarker(
+     bool shouldDraw,
+     string markerText,
+     color lineColor,
+     int lineWidth,
+     string lineStyleText,
+     bool showLabel,
+     color labelTextColor,
+     string labelSizeText
+ ) =>
+    if shouldDraw and configuredChartVisible
+        line newLine = line.new(
+             bar_index,
+             low,
+             bar_index,
+             math.max(high, low + syminfo.mintick),
+             xloc = xloc.bar_index,
+             extend = f_extendMode(lineExtendModeInput),
+             color = lineColor,
+             style = f_lineStyle(lineStyleText),
+             width = lineWidth
+         )
+        f_pushLimitedLine(newLine, maxHistoricalMarkers)
+
+        if showLabelsGlobal and showLabel
+            label newLabel = label.new(
+                 bar_index,
+                 high,
+                 markerText,
+                 xloc = xloc.bar_index,
+                 yloc = yloc.price,
+                 style = label.style_label_down,
+                 textcolor = labelTextColor,
+                 color = color.new(lineColor, 75),
+                 size = f_labelSize(labelSizeText)
+             )
+            f_pushLimitedLabel(newLabel, maxHistoricalMarkers)
+
+f_processInterval(
+     bool tickerEnabled,
+     string tickerSymbol,
+     string tickerTimezone,
+     bool intervalEnabled,
+     string intervalSession,
+     string intervalText,
+     color intervalColor,
+     int intervalWidth,
+     string intervalStyle,
+     bool intervalShowLabel,
+     color intervalLabelColor,
+     string intervalLabelSize
+ ) =>
+    bool symbolOk = tickerEnabled and f_symbolMatches(tickerSymbol)
+    int sessionTime = time("", intervalSession, tickerTimezone)
+    bool inWindow = symbolOk and intervalEnabled and not na(sessionTime)
+    bool wasInWindow = symbolOk and intervalEnabled and not na(sessionTime[1])
+    bool windowStarted = inWindow and not wasInWindow
+    bool windowEnded = not inWindow and wasInWindow
+
+    f_drawVerticalMarker(
+        windowStarted,
+        intervalText + " START",
+        intervalColor,
+        intervalWidth,
+        intervalStyle,
+        intervalShowLabel,
+        intervalLabelColor,
+        intervalLabelSize
+    )
+
+    f_drawVerticalMarker(
+        windowEnded,
+        intervalText + " END",
+        intervalColor,
+        intervalWidth,
+        intervalStyle,
+        intervalShowLabel,
+        intervalLabelColor,
+        intervalLabelSize
+    )
+
+    symbolOk
+
+// --- Ticker Profiles ---
+
+// Note for Users: The session input is interpreted in the ticker profile timezone.
+// If you want to use a specific local time (e.g., Europe/Bucharest), update the Timezone input accordingly.
+
+// Ticker 1 - GER40
+groupT1 = "Ticker 1 - GER40"
+t1_en = input.bool(true, "Enable Ticker Profile", group = groupT1)
+t1_sym = input.string("GER", "Ticker Match Text", group = groupT1)
+t1_tz = input.string("Europe/Bucharest", "Timezone", group = groupT1)
+t1_i1_en = input.bool(true, "Int 1 Enabled", group = groupT1)
+t1_i1_ses = input.session("1015-1400", "Int 1 Session", group = groupT1)
+t1_i1_txt = input.string("GER40 Main", "Int 1 Label", group = groupT1)
+t1_i1_col = input.color(color.white, "Int 1 Color", group = groupT1)
+t1_i1_wid = input.int(1, "Int 1 Width", 1, 5, group = groupT1)
+t1_i1_sty = input.string("Dotted", "Int 1 Style", ["Solid", "Dashed", "Dotted"], group = groupT1)
+t1_i1_lbl = input.bool(false, "Int 1 Show Label", group = groupT1)
+t1_i1_lcol = input.color(color.white, "Int 1 Label Color", group = groupT1)
+t1_i1_lsiz = input.string("Small", "Int 1 Label Size", ["Tiny", "Small", "Normal"], group = groupT1)
+
+t1_i2_en = input.bool(true, "Int 2 Enabled", group = groupT1)
+t1_i2_ses = input.session("1645-1930", "Int 2 Session", group = groupT1)
+t1_i2_txt = input.string("GER40 Evening", "Int 2 Label", group = groupT1)
+t1_i2_col = input.color(color.white, "Int 2 Color", group = groupT1)
+t1_i2_wid = input.int(1, "Int 2 Width", 1, 5, group = groupT1)
+t1_i2_sty = input.string("Dotted", "Int 2 Style", ["Solid", "Dashed", "Dotted"], group = groupT1)
+t1_i2_lbl = input.bool(false, "Int 2 Show Label", group = groupT1)
+t1_i2_lcol = input.color(color.white, "Int 2 Label Color", group = groupT1)
+t1_i2_lsiz = input.string("Small", "Int 2 Label Size", ["Tiny", "Small", "Normal"], group = groupT1)
+
+t1_i3_en = input.bool(false, "Int 3 Enabled", group = groupT1)
+t1_i3_ses = input.session("0000-0000", "Int 3 Session", group = groupT1)
+t1_i3_txt = input.string("", "Int 3 Label", group = groupT1)
+t1_i3_col = input.color(#089981, "Int 3 Color", group = groupT1)
+t1_i3_wid = input.int(1, "Int 3 Width", 1, 5, group = groupT1)
+t1_i3_sty = input.string("Dotted", "Int 3 Style", ["Solid", "Dashed", "Dotted"], group = groupT1)
+t1_i3_lbl = input.bool(false, "Int 3 Show Label", group = groupT1)
+t1_i4_en = input.bool(false, "Int 4 Enabled", group = groupT1)
+t1_i4_ses = input.session("0000-0000", "Int 4 Session", group = groupT1)
+t1_i4_txt = input.string("", "Int 4 Label", group = groupT1)
+t1_i4_col = input.color(#089981, "Int 4 Color", group = groupT1)
+t1_i4_wid = input.int(1, "Int 4 Width", 1, 5, group = groupT1)
+t1_i4_sty = input.string("Dotted", "Int 4 Style", ["Solid", "Dashed", "Dotted"], group = groupT1)
+t1_i4_lbl = input.bool(false, "Int 4 Show Label", group = groupT1)
+
+// Ticker 2 - NQ
+groupT2 = "Ticker 2 - NQ"
+t2_en = input.bool(true, "Enable Ticker Profile", group = groupT2)
+t2_sym = input.string("NQ", "Ticker Match Text", group = groupT2)
+t2_tz = input.string("Europe/Bucharest", "Timezone", group = groupT2)
+t2_i1_en = input.bool(true, "Int 1 Enabled", group = groupT2)
+t2_i1_ses = input.session("1645-1830", "Int 1 Session", group = groupT2)
+t2_i1_txt = input.string("NQ Open", "Int 1 Label", group = groupT2)
+t2_i1_col = input.color(color.white, "Int 1 Color", group = groupT2)
+t2_i1_wid = input.int(3, "Int 1 Width", 1, 5, group = groupT2)
+t2_i1_sty = input.string("Dotted", "Int 1 Style", ["Solid", "Dashed", "Dotted"], group = groupT2)
+t2_i1_lbl = input.bool(false, "Int 1 Show Label", group = groupT2)
+t2_i1_lcol = input.color(color.white, "Int 1 Label Color", group = groupT2)
+t2_i1_lsiz = input.string("Small", "Int 1 Label Size", ["Tiny", "Small", "Normal"], group = groupT2)
+
+t2_i2_en = input.bool(true, "Int 2 Enabled", group = groupT2)
+t2_i2_ses = input.session("1915-2200", "Int 2 Session", group = groupT2)
+t2_i2_txt = input.string("NQ PM", "Int 2 Label", group = groupT2)
+t2_i2_col = input.color(color.white, "Int 2 Color", group = groupT2)
+t2_i2_wid = input.int(1, "Int 2 Width", 1, 5, group = groupT2)
+t2_i2_sty = input.string("Dotted", "Int 2 Style", ["Solid", "Dashed", "Dotted"], group = groupT2)
+t2_i2_lbl = input.bool(false, "Int 2 Show Label", group = groupT2)
+t2_i2_lcol = input.color(color.white, "Int 2 Label Color", group = groupT2)
+t2_i2_lsiz = input.string("Small", "Int 2 Label Size", ["Tiny", "Small", "Normal"], group = groupT2)
+
+t2_i3_en = input.bool(false, "Int 3 Enabled", group = groupT2)
+t2_i3_ses = input.session("0000-0000", "Int 3 Session", group = groupT2)
+t2_i3_txt = input.string("", "Int 3 Label", group = groupT2)
+t2_i3_col = input.color(#5b9cf6, "Int 3 Color", group = groupT2)
+t2_i3_wid = input.int(1, "Int 3 Width", 1, 5, group = groupT2)
+t2_i3_sty = input.string("Dotted", "Int 3 Style", ["Solid", "Dashed", "Dotted"], group = groupT2)
+t2_i3_lbl = input.bool(false, "Int 3 Show Label", group = groupT2)
+t2_i4_en = input.bool(false, "Int 4 Enabled", group = groupT2)
+t2_i4_ses = input.session("0000-0000", "Int 4 Session", group = groupT2)
+t2_i4_txt = input.string("", "Int 4 Label", group = groupT2)
+t2_i4_col = input.color(#5b9cf6, "Int 4 Color", group = groupT2)
+t2_i4_wid = input.int(1, "Int 4 Width", 1, 5, group = groupT2)
+t2_i4_sty = input.string("Dotted", "Int 4 Style", ["Solid", "Dashed", "Dotted"], group = groupT2)
+t2_i4_lbl = input.bool(false, "Int 4 Show Label", group = groupT2)
+
+// Ticker 3 - UK100
+groupT3 = "Ticker 3 - UK100"
+t3_en = input.bool(true, "Enable Ticker Profile", group = groupT3)
+t3_sym = input.string("UK100", "Ticker Match Text", group = groupT3)
+t3_tz = input.string("Europe/Bucharest", "Timezone", group = groupT3)
+t3_i1_en = input.bool(true, "Int 1 Enabled", group = groupT3)
+t3_i1_ses = input.session("1045-1445", "Int 1 Session", group = groupT3)
+t3_i1_txt = input.string("UK100 Main", "Int 1 Label", group = groupT3)
+t3_i1_col = input.color(color.white, "Int 1 Color", group = groupT3)
+t3_i1_wid = input.int(3, "Int 1 Width", 1, 5, group = groupT3)
+t3_i1_sty = input.string("Dotted", "Int 1 Style", ["Solid", "Dashed", "Dotted"], group = groupT3)
+t3_i1_lbl = input.bool(false, "Int 1 Show Label", group = groupT3)
+t3_i1_lcol = input.color(color.white, "Int 1 Label Color", group = groupT3)
+t3_i1_lsiz = input.string("Small", "Int 1 Label Size", ["Tiny", "Small", "Normal"], group = groupT3)
+t3_i2_en = input.bool(true, "Int 2 Enabled", group = groupT3)
+t3_i2_ses = input.session("1650-1945", "Int 2 Session", group = groupT3)
+t3_i2_txt = input.string("", "Int 2 Label", group = groupT3)
+t3_i2_col = input.color(color.white, "Int 2 Color", group = groupT3)
+t3_i2_wid = input.int(2, "Int 2 Width", 1, 5, group = groupT3)
+t3_i2_sty = input.string("Dotted", "Int 2 Style", ["Solid", "Dashed", "Dotted"], group = groupT3)
+t3_i2_lbl = input.bool(false, "Int 2 Show Label", group = groupT3)
+t3_i3_en = input.bool(false, "Int 3 Enabled", group = groupT3)
+t3_i3_ses = input.session("0000-0000", "Int 3 Session", group = groupT3)
+t3_i3_txt = input.string("", "Int 3 Label", group = groupT3)
+t3_i3_col = input.color(#f23645, "Int 3 Color", group = groupT3)
+t3_i3_wid = input.int(1, "Int 3 Width", 1, 5, group = groupT3)
+t3_i3_sty = input.string("Dotted", "Int 3 Style", ["Solid", "Dashed", "Dotted"], group = groupT3)
+t3_i3_lbl = input.bool(false, "Int 3 Show Label", group = groupT3)
+t3_i4_en = input.bool(false, "Int 4 Enabled", group = groupT3)
+t3_i4_ses = input.session("0000-0000", "Int 4 Session", group = groupT3)
+t3_i4_txt = input.string("", "Int 4 Label", group = groupT3)
+t3_i4_col = input.color(#f23645, "Int 4 Color", group = groupT3)
+t3_i4_wid = input.int(1, "Int 4 Width", 1, 5, group = groupT3)
+t3_i4_sty = input.string("Dotted", "Int 4 Style", ["Solid", "Dashed", "Dotted"], group = groupT3)
+t3_i4_lbl = input.bool(false, "Int 4 Show Label", group = groupT3)
+
+// Ticker 4 - INTC
+groupT4 = "Ticker 4 - INTC"
+t4_en = input.bool(true, "Enable Ticker Profile", group = groupT4)
+t4_sym = input.string("GBPUSD", "Ticker Match Text", group = groupT4)
+t4_tz = input.string("Europe/Bucharest", "Timezone", group = groupT4)
+t4_i1_en = input.bool(true, "Int 1 Enabled", group = groupT4)
+t4_i1_ses = input.session("0945-1415", "Int 1 Session", group = groupT4)
+t4_i1_txt = input.string("GU Open", "Int 1 Label", group = groupT4)
+t4_i1_col = input.color(color.white, "Int 1 Color", group = groupT4)
+t4_i1_wid = input.int(3, "Int 1 Width", 1, 5, group = groupT4)
+t4_i1_sty = input.string("Dotted", "Int 1 Style", ["Solid", "Dashed", "Dotted"], group = groupT4)
+t4_i1_lbl = input.bool(false, "Int 1 Show Label", group = groupT4)
+t4_i1_lcol = input.color(color.white, "Int 1 Label Color", group = groupT4)
+t4_i1_lsiz = input.string("Small", "Int 1 Label Size", ["Tiny", "Small", "Normal"], group = groupT4)
+t4_i2_en = input.bool(true, "Int 2 Enabled", group = groupT4)
+t4_i2_ses = input.session("1600-1715", "Int 2 Session", group = groupT4)
+t4_i2_txt = input.string("", "Int 2 Label", group = groupT4)
+t4_i2_col = input.color(color.white, "Int 2 Color", group = groupT4)
+t4_i2_wid = input.int(2, "Int 2 Width", 1, 5, group = groupT4)
+t4_i2_sty = input.string("Dotted", "Int 2 Style", ["Solid", "Dashed", "Dotted"], group = groupT4)
+t4_i2_lbl = input.bool(false, "Int 2 Show Label", group = groupT4)
+t4_i3_en = input.bool(false, "Int 3 Enabled", group = groupT4)
+t4_i3_ses = input.session("0000-0000", "Int 3 Session", group = groupT4)
+t4_i3_txt = input.string("", "Int 3 Label", group = groupT4)
+t4_i3_col = input.color(color.orange, "Int 3 Color", group = groupT4)
+t4_i3_wid = input.int(1, "Int 3 Width", 1, 5, group = groupT4)
+t4_i3_sty = input.string("Dotted", "Int 3 Style", ["Solid", "Dashed", "Dotted"], group = groupT4)
+t4_i3_lbl = input.bool(false, "Int 3 Show Label", group = groupT4)
+t4_i4_en = input.bool(false, "Int 4 Enabled", group = groupT4)
+t4_i4_ses = input.session("0000-0000", "Int 4 Session", group = groupT4)
+t4_i4_txt = input.string("", "Int 4 Label", group = groupT4)
+t4_i4_col = input.color(color.orange, "Int 4 Color", group = groupT4)
+t4_i4_wid = input.int(1, "Int 4 Width", 1, 5, group = groupT4)
+t4_i4_sty = input.string("Dotted", "Int 4 Style", ["Solid", "Dashed", "Dotted"], group = groupT4)
+t4_i4_lbl = input.bool(false, "Int 4 Show Label", group = groupT4)
+
+// Ticker 5
+groupT5 = "Ticker 5"
+t5_en = input.bool(false, "Enable Ticker Profile", group = groupT5)
+t5_sym = input.string("", "Ticker Match Text", group = groupT5)
+t5_tz = input.string("America/New_York", "Timezone", group = groupT5)
+t5_i1_en = input.bool(false, "Int 1 Enabled", group = groupT5)
+t5_i1_ses = input.session("0000-0000", "Int 1 Session", group = groupT5)
+t5_i1_txt = input.string("", "Int 1 Label", group = groupT5)
+t5_i1_col = input.color(color.gray, "Int 1 Color", group = groupT5)
+t5_i1_wid = input.int(1, "Int 1 Width", 1, 5, group = groupT5)
+t5_i1_sty = input.string("Dotted", "Int 1 Style", ["Solid", "Dashed", "Dotted"], group = groupT5)
+t5_i1_lbl = input.bool(false, "Int 1 Show Label", group = groupT5)
+t5_i1_lcol = input.color(color.white, "Int 1 Label Color", group = groupT5)
+t5_i1_lsiz = input.string("Small", "Int 1 Label Size", ["Tiny", "Small", "Normal"], group = groupT5)
+t5_i2_en = input.bool(false, "Int 2 Enabled", group = groupT5)
+t5_i2_ses = input.session("0000-0000", "Int 2 Session", group = groupT5)
+t5_i2_txt = input.string("", "Int 2 Label", group = groupT5)
+t5_i2_col = input.color(color.gray, "Int 2 Color", group = groupT5)
+t5_i2_wid = input.int(1, "Int 2 Width", 1, 5, group = groupT5)
+t5_i2_sty = input.string("Dotted", "Int 2 Style", ["Solid", "Dashed", "Dotted"], group = groupT5)
+t5_i2_lbl = input.bool(false, "Int 2 Show Label", group = groupT5)
+t5_i3_en = input.bool(false, "Int 3 Enabled", group = groupT5)
+t5_i3_ses = input.session("0000-0000", "Int 3 Session", group = groupT5)
+t5_i3_txt = input.string("", "Int 3 Label", group = groupT5)
+t5_i3_col = input.color(color.gray, "Int 3 Color", group = groupT5)
+t5_i3_wid = input.int(1, "Int 3 Width", 1, 5, group = groupT5)
+t5_i3_sty = input.string("Dotted", "Int 3 Style", ["Solid", "Dashed", "Dotted"], group = groupT5)
+t5_i3_lbl = input.bool(false, "Int 3 Show Label", group = groupT5)
+t5_i4_en = input.bool(false, "Int 4 Enabled", group = groupT5)
+t5_i4_ses = input.session("0000-0000", "Int 4 Session", group = groupT5)
+t5_i4_txt = input.string("", "Int 4 Label", group = groupT5)
+t5_i4_col = input.color(color.gray, "Int 4 Color", group = groupT5)
+t5_i4_wid = input.int(1, "Int 4 Width", 1, 5, group = groupT5)
+t5_i4_sty = input.string("Dotted", "Int 4 Style", ["Solid", "Dashed", "Dotted"], group = groupT5)
+t5_i4_lbl = input.bool(false, "Int 4 Show Label", group = groupT5)
+
+// Ticker 6
+groupT6 = "Ticker 6"
+t6_en = input.bool(false, "Enable Ticker Profile", group = groupT6)
+t6_sym = input.string("", "Ticker Match Text", group = groupT6)
+t6_tz = input.string("America/New_York", "Timezone", group = groupT6)
+t6_i1_en = input.bool(false, "Int 1 Enabled", group = groupT6)
+t6_i1_ses = input.session("0000-0000", "Int 1 Session", group = groupT6)
+t6_i1_txt = input.string("", "Int 1 Label", group = groupT6)
+t6_i1_col = input.color(color.gray, "Int 1 Color", group = groupT6)
+t6_i1_wid = input.int(1, "Int 1 Width", 1, 5, group = groupT6)
+t6_i1_sty = input.string("Dotted", "Int 1 Style", ["Solid", "Dashed", "Dotted"], group = groupT6)
+t6_i1_lbl = input.bool(false, "Int 1 Show Label", group = groupT6)
+t6_i1_lcol = input.color(color.white, "Int 1 Label Color", group = groupT6)
+t6_i1_lsiz = input.string("Small", "Int 1 Label Size", ["Tiny", "Small", "Normal"], group = groupT6)
+t6_i2_en = input.bool(false, "Int 2 Enabled", group = groupT6)
+t6_i2_ses = input.session("0000-0000", "Int 2 Session", group = groupT6)
+t6_i2_txt = input.string("", "Int 2 Label", group = groupT6)
+t6_i2_col = input.color(color.gray, "Int 2 Color", group = groupT6)
+t6_i2_wid = input.int(1, "Int 2 Width", 1, 5, group = groupT6)
+t6_i2_sty = input.string("Dotted", "Int 2 Style", ["Solid", "Dashed", "Dotted"], group = groupT6)
+t6_i2_lbl = input.bool(false, "Int 2 Show Label", group = groupT6)
+t6_i3_en = input.bool(false, "Int 3 Enabled", group = groupT6)
+t6_i3_ses = input.session("0000-0000", "Int 3 Session", group = groupT6)
+t6_i3_txt = input.string("", "Int 3 Label", group = groupT6)
+t6_i3_col = input.color(color.gray, "Int 3 Color", group = groupT6)
+t6_i3_wid = input.int(1, "Int 3 Width", 1, 5, group = groupT6)
+t6_i3_sty = input.string("Dotted", "Int 3 Style", ["Solid", "Dashed", "Dotted"], group = groupT6)
+t6_i3_lbl = input.bool(false, "Int 3 Show Label", group = groupT6)
+t6_i4_en = input.bool(false, "Int 4 Enabled", group = groupT6)
+t6_i4_ses = input.session("0000-0000", "Int 4 Session", group = groupT6)
+t6_i4_txt = input.string("", "Int 4 Label", group = groupT6)
+t6_i4_col = input.color(color.gray, "Int 4 Color", group = groupT6)
+t6_i4_wid = input.int(1, "Int 4 Width", 1, 5, group = groupT6)
+t6_i4_sty = input.string("Dotted", "Int 4 Style", ["Solid", "Dashed", "Dotted"], group = groupT6)
+t6_i4_lbl = input.bool(false, "Int 4 Show Label", group = groupT6)
+
+// Ticker 7
+groupT7 = "Ticker 7"
+t7_en = input.bool(false, "Enable Ticker Profile", group = groupT7)
+t7_sym = input.string("", "Ticker Match Text", group = groupT7)
+t7_tz = input.string("America/New_York", "Timezone", group = groupT7)
+t7_i1_en = input.bool(false, "Int 1 Enabled", group = groupT7)
+t7_i1_ses = input.session("0000-0000", "Int 1 Session", group = groupT7)
+t7_i1_txt = input.string("", "Int 1 Label", group = groupT7)
+t7_i1_col = input.color(color.gray, "Int 1 Color", group = groupT7)
+t7_i1_wid = input.int(1, "Int 1 Width", 1, 5, group = groupT7)
+t7_i1_sty = input.string("Dotted", "Int 1 Style", ["Solid", "Dashed", "Dotted"], group = groupT7)
+t7_i1_lbl = input.bool(false, "Int 1 Show Label", group = groupT7)
+t7_i1_lcol = input.color(color.white, "Int 1 Label Color", group = groupT7)
+t7_i1_lsiz = input.string("Small", "Int 1 Label Size", ["Tiny", "Small", "Normal"], group = groupT7)
+t7_i2_en = input.bool(false, "Int 2 Enabled", group = groupT7)
+t7_i2_ses = input.session("0000-0000", "Int 2 Session", group = groupT7)
+t7_i2_txt = input.string("", "Int 2 Label", group = groupT7)
+t7_i2_col = input.color(color.gray, "Int 2 Color", group = groupT7)
+t7_i2_wid = input.int(1, "Int 2 Width", 1, 5, group = groupT7)
+t7_i2_sty = input.string("Dotted", "Int 2 Style", ["Solid", "Dashed", "Dotted"], group = groupT7)
+t7_i2_lbl = input.bool(false, "Int 2 Show Label", group = groupT7)
+t7_i3_en = input.bool(false, "Int 3 Enabled", group = groupT7)
+t7_i3_ses = input.session("0000-0000", "Int 3 Session", group = groupT7)
+t7_i3_txt = input.string("", "Int 3 Label", group = groupT7)
+t7_i3_col = input.color(color.gray, "Int 3 Color", group = groupT7)
+t7_i3_wid = input.int(1, "Int 3 Width", 1, 5, group = groupT7)
+t7_i3_sty = input.string("Dotted", "Int 3 Style", ["Solid", "Dashed", "Dotted"], group = groupT7)
+t7_i3_lbl = input.bool(false, "Int 3 Show Label", group = groupT7)
+t7_i4_en = input.bool(false, "Int 4 Enabled", group = groupT7)
+t7_i4_ses = input.session("0000-0000", "Int 4 Session", group = groupT7)
+t7_i4_txt = input.string("", "Int 4 Label", group = groupT7)
+t7_i4_col = input.color(color.gray, "Int 4 Color", group = groupT7)
+t7_i4_wid = input.int(1, "Int 4 Width", 1, 5, group = groupT7)
+t7_i4_sty = input.string("Dotted", "Int 4 Style", ["Solid", "Dashed", "Dotted"], group = groupT7)
+t7_i4_lbl = input.bool(false, "Int 4 Show Label", group = groupT7)
+
+// Ticker 8
+groupT8 = "Ticker 8"
+t8_en = input.bool(false, "Enable Ticker Profile", group = groupT8)
+t8_sym = input.string("", "Ticker Match Text", group = groupT8)
+t8_tz = input.string("America/New_York", "Timezone", group = groupT8)
+t8_i1_en = input.bool(false, "Int 1 Enabled", group = groupT8)
+t8_i1_ses = input.session("0000-0000", "Int 1 Session", group = groupT8)
+t8_i1_txt = input.string("", "Int 1 Label", group = groupT8)
+t8_i1_col = input.color(color.gray, "Int 1 Color", group = groupT8)
+t8_i1_wid = input.int(1, "Int 1 Width", 1, 5, group = groupT8)
+t8_i1_sty = input.string("Dotted", "Int 1 Style", ["Solid", "Dashed", "Dotted"], group = groupT8)
+t8_i1_lbl = input.bool(false, "Int 1 Show Label", group = groupT8)
+t8_i1_lcol = input.color(color.white, "Int 1 Label Color", group = groupT8)
+t8_i1_lsiz = input.string("Small", "Int 1 Label Size", ["Tiny", "Small", "Normal"], group = groupT8)
+t8_i2_en = input.bool(false, "Int 2 Enabled", group = groupT8)
+t8_i2_ses = input.session("0000-0000", "Int 2 Session", group = groupT8)
+t8_i2_txt = input.string("", "Int 2 Label", group = groupT8)
+t8_i2_col = input.color(color.gray, "Int 2 Color", group = groupT8)
+t8_i2_wid = input.int(1, "Int 2 Width", 1, 5, group = groupT8)
+t8_i2_sty = input.string("Dotted", "Int 2 Style", ["Solid", "Dashed", "Dotted"], group = groupT8)
+t8_i2_lbl = input.bool(false, "Int 2 Show Label", group = groupT8)
+t8_i3_en = input.bool(false, "Int 3 Enabled", group = groupT8)
+t8_i3_ses = input.session("0000-0000", "Int 3 Session", group = groupT8)
+t8_i3_txt = input.string("", "Int 3 Label", group = groupT8)
+t8_i3_col = input.color(color.gray, "Int 3 Color", group = groupT8)
+t8_i3_wid = input.int(1, "Int 3 Width", 1, 5, group = groupT8)
+t8_i3_sty = input.string("Dotted", "Int 3 Style", ["Solid", "Dashed", "Dotted"], group = groupT8)
+t8_i3_lbl = input.bool(false, "Int 3 Show Label", group = groupT8)
+t8_i4_en = input.bool(false, "Int 4 Enabled", group = groupT8)
+t8_i4_ses = input.session("0000-0000", "Int 4 Session", group = groupT8)
+t8_i4_txt = input.string("", "Int 4 Label", group = groupT8)
+t8_i4_col = input.color(color.gray, "Int 4 Color", group = groupT8)
+t8_i4_wid = input.int(1, "Int 4 Width", 1, 5, group = groupT8)
+t8_i4_sty = input.string("Dotted", "Int 4 Style", ["Solid", "Dashed", "Dotted"], group = groupT8)
+t8_i4_lbl = input.bool(false, "Int 4 Show Label", group = groupT8)
+
+// --- Logic Execution ---
+
+var string matchedProfileName = "None"
+var string matchedProfileTZ = "N/A"
+var bool anyMatched = false
+
+// Processing all profiles and intervals
+// Profile 1
+bool t1Match1 = f_processInterval(t1_en, t1_sym, t1_tz, t1_i1_en, t1_i1_ses, t1_i1_txt, t1_i1_col, t1_i1_wid, t1_i1_sty, t1_i1_lbl, t1_i1_lcol, t1_i1_lsiz)
+bool t1Match2 = f_processInterval(t1_en, t1_sym, t1_tz, t1_i2_en, t1_i2_ses, t1_i2_txt, t1_i2_col, t1_i2_wid, t1_i2_sty, t1_i2_lbl, t1_i2_lcol, t1_i2_lsiz)
+bool t1Match3 = f_processInterval(t1_en, t1_sym, t1_tz, t1_i3_en, t1_i3_ses, t1_i3_txt, t1_i3_col, t1_i3_wid, t1_i3_sty, t1_i3_lbl, color.white, "Small")
+bool t1Match4 = f_processInterval(t1_en, t1_sym, t1_tz, t1_i4_en, t1_i4_ses, t1_i4_txt, t1_i4_col, t1_i4_wid, t1_i4_sty, t1_i4_lbl, color.white, "Small")
+bool t1Matched = t1Match1 or t1Match2 or t1Match3 or t1Match4
+if t1Matched
+    anyMatched := true
+    matchedProfileName := t1_sym
+    matchedProfileTZ := t1_tz
+
+// Profile 2
+bool t2Match1 = f_processInterval(t2_en, t2_sym, t2_tz, t2_i1_en, t2_i1_ses, t2_i1_txt, t2_i1_col, t2_i1_wid, t2_i1_sty, t2_i1_lbl, t2_i1_lcol, t2_i1_lsiz)
+bool t2Match2 = f_processInterval(t2_en, t2_sym, t2_tz, t2_i2_en, t2_i2_ses, t2_i2_txt, t2_i2_col, t2_i2_wid, t2_i2_sty, t2_i2_lbl, t2_i2_lcol, t2_i2_lsiz)
+bool t2Match3 = f_processInterval(t2_en, t2_sym, t2_tz, t2_i3_en, t2_i3_ses, t2_i3_txt, t2_i3_col, t2_i3_wid, t2_i3_sty, t2_i3_lbl, color.white, "Small")
+bool t2Match4 = f_processInterval(t2_en, t2_sym, t2_tz, t2_i4_en, t2_i4_ses, t2_i4_txt, t2_i4_col, t2_i4_wid, t2_i4_sty, t2_i4_lbl, color.white, "Small")
+bool t2Matched = t2Match1 or t2Match2 or t2Match3 or t2Match4
+if t2Matched
+    anyMatched := true
+    matchedProfileName := t2_sym
+    matchedProfileTZ := t2_tz
+
+// Profile 3
+bool t3Match1 = f_processInterval(t3_en, t3_sym, t3_tz, t3_i1_en, t3_i1_ses, t3_i1_txt, t3_i1_col, t3_i1_wid, t3_i1_sty, t3_i1_lbl, t3_i1_lcol, t3_i1_lsiz)
+bool t3Match2 = f_processInterval(t3_en, t3_sym, t3_tz, t3_i2_en, t3_i2_ses, t3_i2_txt, t3_i2_col, t3_i2_wid, t3_i2_sty, t3_i2_lbl, color.white, "Small")
+bool t3Match3 = f_processInterval(t3_en, t3_sym, t3_tz, t3_i3_en, t3_i3_ses, t3_i3_txt, t3_i3_col, t3_i3_wid, t3_i3_sty, t3_i3_lbl, color.white, "Small")
+bool t3Match4 = f_processInterval(t3_en, t3_sym, t3_tz, t3_i4_en, t3_i4_ses, t3_i4_txt, t3_i4_col, t3_i4_wid, t3_i4_sty, t3_i4_lbl, color.white, "Small")
+bool t3Matched = t3Match1 or t3Match2 or t3Match3 or t3Match4
+if t3Matched
+    anyMatched := true
+    matchedProfileName := t3_sym
+    matchedProfileTZ := t3_tz
+
+// Profile 4
+bool t4Match1 = f_processInterval(t4_en, t4_sym, t4_tz, t4_i1_en, t4_i1_ses, t4_i1_txt, t4_i1_col, t4_i1_wid, t4_i1_sty, t4_i1_lbl, t4_i1_lcol, t4_i1_lsiz)
+bool t4Match2 = f_processInterval(t4_en, t4_sym, t4_tz, t4_i2_en, t4_i2_ses, t4_i2_txt, t4_i2_col, t4_i2_wid, t4_i2_sty, t4_i2_lbl, color.white, "Small")
+bool t4Match3 = f_processInterval(t4_en, t4_sym, t4_tz, t4_i3_en, t4_i3_ses, t4_i3_txt, t4_i3_col, t4_i3_wid, t4_i3_sty, t4_i3_lbl, color.white, "Small")
+bool t4Match4 = f_processInterval(t4_en, t4_sym, t4_tz, t4_i4_en, t4_i4_ses, t4_i4_txt, t4_i4_col, t4_i4_wid, t4_i4_sty, t4_i4_lbl, color.white, "Small")
+bool t4Matched = t4Match1 or t4Match2 or t4Match3 or t4Match4
+if t4Matched
+    anyMatched := true
+    matchedProfileName := t4_sym
+    matchedProfileTZ := t4_tz
+
+// Profile 5
+bool t5Match1 = f_processInterval(t5_en, t5_sym, t5_tz, t5_i1_en, t5_i1_ses, t5_i1_txt, t5_i1_col, t5_i1_wid, t5_i1_sty, t5_i1_lbl, t5_i1_lcol, t5_i1_lsiz)
+bool t5Match2 = f_processInterval(t5_en, t5_sym, t5_tz, t5_i2_en, t5_i2_ses, t5_i2_txt, t5_i2_col, t5_i2_wid, t5_i2_sty, t5_i2_lbl, color.white, "Small")
+bool t5Match3 = f_processInterval(t5_en, t5_sym, t5_tz, t5_i3_en, t5_i3_ses, t5_i3_txt, t5_i3_col, t5_i3_wid, t5_i3_sty, t5_i3_lbl, color.white, "Small")
+bool t5Match4 = f_processInterval(t5_en, t5_sym, t5_tz, t5_i4_en, t5_i4_ses, t5_i4_txt, t5_i4_col, t5_i4_wid, t5_i4_sty, t5_i4_lbl, color.white, "Small")
+bool t5Matched = t5Match1 or t5Match2 or t5Match3 or t5Match4
+if t5Matched
+    anyMatched := true
+    matchedProfileName := t5_sym
+    matchedProfileTZ := t5_tz
+
+// Profile 6
+bool t6Match1 = f_processInterval(t6_en, t6_sym, t6_tz, t6_i1_en, t6_i1_ses, t6_i1_txt, t6_i1_col, t6_i1_wid, t6_i1_sty, t6_i1_lbl, t6_i1_lcol, t6_i1_lsiz)
+bool t6Match2 = f_processInterval(t6_en, t6_sym, t6_tz, t6_i2_en, t6_i2_ses, t6_i2_txt, t6_i2_col, t6_i2_wid, t6_i2_sty, t6_i2_lbl, color.white, "Small")
+bool t6Match3 = f_processInterval(t6_en, t6_sym, t6_tz, t6_i3_en, t6_i3_ses, t6_i3_txt, t6_i3_col, t6_i3_wid, t6_i3_sty, t6_i3_lbl, color.white, "Small")
+bool t6Match4 = f_processInterval(t6_en, t6_sym, t6_tz, t6_i4_en, t6_i4_ses, t6_i4_txt, t6_i4_col, t6_i4_wid, t6_i4_sty, t6_i4_lbl, color.white, "Small")
+bool t6Matched = t6Match1 or t6Match2 or t6Match3 or t6Match4
+if t6Matched
+    anyMatched := true
+    matchedProfileName := t6_sym
+    matchedProfileTZ := t6_tz
+
+// Profile 7
+bool t7Match1 = f_processInterval(t7_en, t7_sym, t7_tz, t7_i1_en, t7_i1_ses, t7_i1_txt, t7_i1_col, t7_i1_wid, t7_i1_sty, t7_i1_lbl, t7_i1_lcol, t7_i1_lsiz)
+bool t7Match2 = f_processInterval(t7_en, t7_sym, t7_tz, t7_i2_en, t7_i2_ses, t7_i2_txt, t7_i2_col, t7_i2_wid, t7_i2_sty, t7_i2_lbl, color.white, "Small")
+bool t7Match3 = f_processInterval(t7_en, t7_sym, t7_tz, t7_i3_en, t7_i3_ses, t7_i3_txt, t7_i3_col, t7_i3_wid, t7_i3_sty, t7_i3_lbl, color.white, "Small")
+bool t7Match4 = f_processInterval(t7_en, t7_sym, t7_tz, t7_i4_en, t7_i4_ses, t7_i4_txt, t7_i4_col, t7_i4_wid, t7_i4_sty, t7_i4_lbl, color.white, "Small")
+bool t7Matched = t7Match1 or t7Match2 or t7Match3 or t7Match4
+if t7Matched
+    anyMatched := true
+    matchedProfileName := t7_sym
+    matchedProfileTZ := t7_tz
+
+// Profile 8
+bool t8Match1 = f_processInterval(t8_en, t8_sym, t8_tz, t8_i1_en, t8_i1_ses, t8_i1_txt, t8_i1_col, t8_i1_wid, t8_i1_sty, t8_i1_lbl, t8_i1_lcol, t8_i1_lsiz)
+bool t8Match2 = f_processInterval(t8_en, t8_sym, t8_tz, t8_i2_en, t8_i2_ses, t8_i2_txt, t8_i2_col, t8_i2_wid, t8_i2_sty, t8_i2_lbl, color.white, "Small")
+bool t8Match3 = f_processInterval(t8_en, t8_sym, t8_tz, t8_i3_en, t8_i3_ses, t8_i3_txt, t8_i3_col, t8_i3_wid, t8_i3_sty, t8_i3_lbl, color.white, "Small")
+bool t8Match4 = f_processInterval(t8_en, t8_sym, t8_tz, t8_i4_en, t8_i4_ses, t8_i4_txt, t8_i4_col, t8_i4_wid, t8_i4_sty, t8_i4_lbl, color.white, "Small")
+bool t8Matched = t8Match1 or t8Match2 or t8Match3 or t8Match4
+if t8Matched
+    anyMatched := true
+    matchedProfileName := t8_sym
+    matchedProfileTZ := t8_tz
+
+// --- Status Label ---
+var label statusLabel = na
+if barstate.islast and showCurrentProfileLabel and configuredChartVisible
+    label.delete(statusLabel)
+
+    string labelTxt = ""
+    color labelBg = color.new(color.gray, 90)
+
+    if not timeframe.isintraday
+        labelTxt := "This indicator is designed for intraday charts.\nSwitch to 1m, 5m, 15m, etc. to see accurate trading windows."
+        labelBg := color.new(#f23645, 80)
+    else if anyMatched
+        labelTxt := "Window Profile: " + matchedProfileName + "\nTimezone: " + matchedProfileTZ
+        labelBg := color.new(#089981, 80)
+    else
+        labelTxt := "No ticker window profile matched"
+        labelBg := color.new(#f23645, 80)
+
+    statusLabel := label.new(
+         bar_index,
+         high,
+         labelTxt,
+         xloc = xloc.bar_index,
+         yloc = yloc.price,
+         style = label.style_label_left,
+         textcolor = chart.fg_color,
+         color = labelBg,
+         size = size.small
+     )
+````

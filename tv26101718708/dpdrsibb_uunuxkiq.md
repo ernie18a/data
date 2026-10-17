@@ -1,0 +1,95 @@
+# DPD+RSI+BB 
+
+- url: https://www.tradingview.com/script/uUNuXKIQ-DPD-RSI-BB/
+- type: strategy
+- pine_id: PUB;QTNVay5R5sQRf3gJZqaCgNktHATdBrK6
+- version: 2.0
+
+## Description
+
+Combination of DPD ,STOCHRSI and RSI indicators. Be careful for percantage selection to fit your candle size.
+
+## Source Code
+
+````pine
+//@version= 2
+strategy("DPD+RSI+BB ",overlay=true)
+price=close
+
+
+
+
+//############### DPD  #################
+
+
+buyper =input(-1,step=0.1)
+sellper=input(0,step=0.1)
+demalen = input(50,title="Dema Length")
+e1= ema(close,demalen)
+e2=ema(e1,demalen)
+demaprice  =   2 * e1 - e2
+demadifper =  ((price-demaprice)/price)*100
+
+
+//############## DPD #####################
+
+//############# RSI ####################
+
+
+lengthrsi = input(6)
+overSold = input( 20 )
+overBought = input( 60 )
+
+vrsi = rsi(price, lengthrsi)
+
+//########## RSI #######################
+
+//############### BB #################
+
+lengthbb = input(50, minval=1)
+multlow = input(1.5, minval=0.001, maxval=50,step=0.1)
+multup = input(1.5,minval=0.001,maxval=50,step=0.1)
+
+basisup = sma(close, lengthbb)
+basislow = sma(close, lengthbb)
+
+devup = multup * stdev(close, lengthbb)
+
+devlow = multlow*stdev(close,lengthbb)
+
+upperbb = basisup + devup
+lowerbb = basislow - devlow
+
+p1 = plot(upperbb, color=blue)
+p2 = plot(lowerbb, color=blue)
+fill(p1, p2)
+
+
+
+//########### BB ###################
+
+
+
+
+yearfrom = input(2018)
+yearuntil =input(2019)
+monthfrom =input(6)
+monthuntil =input(12)
+dayfrom=input(1)
+dayuntil=input(31)
+
+
+
+if (  (demadifper<buyper) and crossover(vrsi,overSold) and  (price < lowerbb) and   year >= yearfrom and year <= yearuntil and month>=monthfrom and month <=monthuntil and dayofmonth>=dayfrom and dayofmonth < dayuntil) 
+    strategy.entry("BUY", strategy.long, stop=close, oca_name="TREND", oca_type=strategy.oca.cancel, comment="BUY")
+    
+else
+    strategy.cancel(id="BUY")
+
+
+if (   price>upperbb and vrsi>overBought and demadifper>sellper   and  year >= yearfrom and year <= yearuntil and month>=monthfrom and month <=monthuntil and dayofmonth>=dayfrom and dayofmonth < dayuntil ) 
+
+    strategy.entry("SELL", strategy.short,stop=close, oca_name="TREND", oca_type=strategy.oca.cancel, comment="SELL")
+else
+    strategy.cancel(id="SELL")
+````

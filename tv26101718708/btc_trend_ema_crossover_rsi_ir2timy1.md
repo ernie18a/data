@@ -1,0 +1,100 @@
+# BTC Trend - EMA Crossover + RSI
+
+- url: https://www.tradingview.com/script/iR2tIMy1-BTC-Trend-EMA-Crossover-RSI/
+- type: strategy
+- pine_id: PUB;b3c8b0b5719145979dfba3567a59b371
+- version: 1.0
+
+## Description
+
+This strategy follows a classic trend-trading method using a combination of exponential moving averages (EMAs) and RSI momentum filtering.
+
+Entry Logic
+
+Long Entry:
+
+Fast EMA crosses above Slow EMA
+
+RSI(14) > 50 (bullish momentum confirmation)
+
+Short Entry:
+
+Fast EMA crosses below Slow EMA
+
+RSI(14) < 50 (bearish momentum confirmation)
+
+Exit Logic
+
+Long positions close if:
+
+Fast EMA crosses back below Slow EMA, or
+
+RSI drops below 45
+
+Short positions close if:
+
+Fast EMA crosses back above Slow EMA, or
+
+RSI rises above 55
+
+Purpose
+
+This script is designed for educational use to demonstrate:
+
+Trend-following logic
+
+Multi-indicator IF/THEN decision rules
+
+How to construct a complete algorithmic trading strategy in Pine Script
+
+Backtested on BTCUSD, 10-second timeframe, producing 763 trades in the selected date range.
+
+## Source Code
+
+````pine
+// BTC Trend Trading Strategy - EMA Crossover + RSI
+//@version=5
+strategy("BTC Trend - EMA Crossover + RSI", overlay=true, initial_capital=10000, default_qty_type=strategy.percent_of_equity, default_qty_value=10)
+
+// --- Inputs ---
+fastLen      = input.int(5,  "Fast EMA Length")
+slowLen      = input.int(13, "Slow EMA Length")
+rsiLen       = input.int(14, "RSI Length")
+allowShorts  = input.bool(true, "Allow Short Trades?")
+
+// --- Indicators ---
+fastEMA = ta.ema(close, fastLen)
+slowEMA = ta.ema(close, slowLen)
+rsi     = ta.rsi(close, rsiLen)
+
+// --- Entry Conditions ---
+// IF fast EMA crosses above slow EMA AND RSI > 50 THEN go long
+longEntry  = ta.crossover(fastEMA, slowEMA) and rsi > 50
+
+// IF fast EMA crosses below slow EMA AND RSI < 50 THEN go short
+shortEntry = allowShorts and ta.crossunder(fastEMA, slowEMA) and rsi < 50
+
+// --- Exit Conditions ---
+// Exit long if trend reverses or RSI weakens
+exitLong  = strategy.position_size > 0 and (ta.crossunder(fastEMA, slowEMA) or rsi < 45)
+
+// Exit short if trend reverses or RSI strengthens
+exitShort = strategy.position_size < 0 and (ta.crossover(fastEMA, slowEMA) or rsi > 55)
+
+// --- Orders ---
+if longEntry
+    strategy.entry("Long", strategy.long)
+
+if shortEntry
+    strategy.entry("Short", strategy.short)
+
+if exitLong
+    strategy.close("Long")
+
+if exitShort
+    strategy.close("Short")
+
+// --- Plot EMAs ---
+plot(fastEMA, "Fast EMA", color = color.yellow)
+plot(slowEMA, "Slow EMA", color = color.purple)
+````

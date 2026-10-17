@@ -1,0 +1,64 @@
+# Three moving average strategies
+
+- url: https://www.tradingview.com/script/sPAROdDQ/
+- type: strategy
+- pine_id: PUB;UcifeHoFxazcNOgaBAalNGLdqhQ0VGQA
+- version: 1.0
+
+## Description
+
+If the short term (Default 7) moving average cuts the medium term (default 25) moving average, BUY. Conversely, it generates the SELL signal. If the long term (Default 99) moving average cuts its short term moving average, Quick SELL. Conversely, it can be interpreted as Fast SELL. You can change the moving average and the number of days as you wish, and you can trade in the short or long term. I hope it was useful.
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © dadashkadir
+
+//@version=4
+strategy("Üç Hareketli Ortalama Str.", overlay=true, initial_capital=10000, commission_value=0.047, default_qty_type=strategy.percent_of_equity, default_qty_value=100, pyramiding=0, calc_on_order_fills=true)
+
+kisa = input(title = "Kısa Vade - Gün", defval = 7,  minval = 1)
+orta = input(title = "Orta Vade - Gün", defval = 25, minval = 1)
+uzun = input(title = "Uzun Vade - Gün", defval = 99, minval = 1)
+
+sma7  = sma(close, kisa)
+sma25 = sma(close, orta)
+sma99  = sma(close, uzun)
+
+alTrend  = plot (sma7, color=#2323F1, linewidth=2, title="Har.Ort. Kısa Vade", transp=0)
+satTrend = plot (sma25, color=#FF0C00, linewidth=3, title="Har.Ort. Orta Vade", transp=0)
+ort99    = plot (sma99, color=#DFB001, linewidth=3, title="Har.Ort. Uzun Vade", transp=0)
+
+zamanaralik = input (2020, title="Backtest Başlangıç Tarihi")
+
+al  = crossover (sma7, sma25) and zamanaralik <= year
+sat = crossover (sma25, sma7) and zamanaralik <= year
+
+hizlial = crossover (sma7, sma99) and zamanaralik <= year
+hizlisat = crossover (sma99, sma7) and zamanaralik <= year
+
+alkosul  = sma7 >= sma25
+satkosul = sma25 >= sma7
+
+hizlialkosul  = sma7 >= sma99
+hizlisatkosul = sma99 >= sma7
+
+plotshape(al,  title = "Buy",  text = 'Al',  style = shape.labelup,   location = location.belowbar, color= color.green, textcolor = color.white, transp = 0, size = size.tiny)
+plotshape(sat, title = "Sell", text = 'Sat', style = shape.labeldown, location = location.abovebar, color= color.red,   textcolor = color.white, transp = 0, size = size.tiny)
+
+plotshape(hizlial,  title = "Hızlı Al",  text = 'Hızlı Al',  style = shape.labelup,   location = location.belowbar, color= color.blue, textcolor = color.white, transp = 0, size = size.tiny)
+plotshape(hizlisat, title = "Hızlı Sat", text = 'Hızlı Sat', style = shape.labeldown, location = location.abovebar, color= #6106D6 , textcolor = color.white, transp = 0, size = size.tiny)
+
+fill (alTrend, satTrend, color = sma7 >= sma25? #4DFF00 : #FF0C00, transp=80, title="Al-Sat Aralığı")
+//fill (ort99, satTrend, color = sma7 >= sma25? #6106D6 : color.blue, transp=80, title="Hızlı Al-Sat Aralığı")
+
+if (al)
+    strategy.entry("LONG", strategy.long)
+if (sat)
+    strategy.entry("SHORT", strategy.short)
+//if (hizlial)
+//    strategy.entry("My Short Entry Id", strategy.long)
+//if (hizlisat)
+//    strategy.entry("My Short Entry Id", strategy.short)
+````

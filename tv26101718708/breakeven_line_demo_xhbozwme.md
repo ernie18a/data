@@ -1,0 +1,45 @@
+# Breakeven Line Demo
+
+- url: https://www.tradingview.com/script/XhBOZWmE-Breakeven-Line-Demo/
+- type: strategy
+- pine_id: PUB;ee51140b8e3e419c81c15635e770c494
+- version: 1.0
+
+## Description
+
+Plug the breakeven line code into the bottom of your strategy to get visualization of your breakeven price. Line is green when net position is long, red when net short and invisible when strategy is risk neutral. Most useful for strategies which use pyramiding (successive entries in same direction stacked upon each other) as it can be difficult to track where prices needs to return to to allow closing in profit. Disclaimer: the strategy logic is garbage do not use it. It is only there so you can see how Breakeven Line logic is implemented.
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © Eliza123123
+
+//@version=5
+strategy("Breakeven Line Demo", overlay=true, default_qty_type=strategy.percent_of_equity, default_qty_value = 0.27,
+ pyramiding=999, initial_capital=10000, commission_type=strategy.commission.percent, commission_value=0.00)
+
+// Generic signal (not a viable strategy don't use, just some code I wrote quick for demo purposes only)
+red = open > close, green = open < close
+sevenReds = red and red[1] and red[2] and red[3] and red[4] and red[5] and red[6]
+sevenGreens = green and green[1] and green[2] and green[3] and green[4] and green[5] and green[6]
+if sevenReds
+    strategy.entry('Buy', direction=strategy.long)
+if sevenGreens
+    strategy.entry('Sell', direction=strategy.short)
+if (hour == 5 and minute == 0 ) or (hour == 11 and minute == 0) or (hour == 17 and minute == 0 ) or (hour == 23 and minute == 0) 
+    strategy.close_all("Close")
+
+// Breakeven line for visualising breakeven price on stacked orders.  
+var breakEvenLine = 0.0
+if strategy.opentrades > 0 
+    breakEvenLine := strategy.position_avg_price
+else
+    breakEvenLine := 0.0
+color breakEvenLineColor = na
+if strategy.position_size > 0
+    breakEvenLineColor := #15FF00
+if strategy.position_size < 0
+    breakEvenLineColor := #FF000D
+plot(breakEvenLine, color = breakEvenLine and breakEvenLine[1] > 0 ? breakEvenLineColor : na, linewidth = 2, style = plot.style_circles)
+````

@@ -1,0 +1,49 @@
+# SMA Cross 5/50 with Trend Filter & Risk Management by JuggiD
+
+- url: https://www.tradingview.com/script/k7Rqqw0r/
+- type: strategy
+- pine_id: PUB;a9bc08b1d0194474afebf672eeff23f8
+- version: 1.0
+
+## Description
+
+The basic SMA (5/50) crossover strategy can be enhanced to improve profitability by adding filters and risk management. For example, a long entry is triggered only when the fast SMA (5) crosses above the slow SMA (50) **and** the price is above the SMA (200), ensuring trades align with the major trend. Similarly, a short entry requires the crossover confirmation plus the price staying below the SMA (200). To reduce false signals and protect capital, stop-loss and take-profit levels can be set automatically (e.g., 2% loss, 5% gain), while additional confirmation tools such as volume spikes, RSI above 50, or MACD momentum can be applied to validate stronger signals. This approach helps avoid whipsaws in sideways markets and allows trades to capture larger moves while minimizing downside risk.
+
+## Source Code
+
+````pine
+//@version=5
+strategy("SMA Cross 5/50 with Trend Filter & Risk Management", overlay=true, margin_long=100, margin_short=100)
+
+// กำหนดค่า SMA
+smaFast = ta.sma(close, 5)
+smaSlow = ta.sma(close, 50)
+smaTrend = ta.sma(close, 200)  // ตัวกรองแนวโน้มใหญ่
+
+// เงื่อนไข Buy/Sell
+longCondition  = ta.crossover(smaFast, smaSlow) and close > smaTrend
+shortCondition = ta.crossunder(smaFast, smaSlow) and close < smaTrend
+
+// Risk Management
+stopLossPerc = 0.02   // 2%
+takeProfitPerc = 0.05 // 5%
+
+// BUY
+if (longCondition)
+    strategy.entry("Long", strategy.long)
+    strategy.exit("Exit Long", "Long", stop = strategy.position_avg_price * (1 - stopLossPerc), limit = strategy.position_avg_price * (1 + takeProfitPerc))
+
+// SELL
+if (shortCondition)
+    strategy.entry("Short", strategy.short)
+    strategy.exit("Exit Short", "Short", stop = strategy.position_avg_price * (1 + stopLossPerc), limit = strategy.position_avg_price * (1 - takeProfitPerc))
+
+// Plot เส้น
+plot(smaFast, color=color.blue, title="SMA 5")
+plot(smaSlow, color=color.orange, title="SMA 50")
+plot(smaTrend, color=color.gray, title="SMA 200")
+
+// Plot สัญญาณ
+plotshape(longCondition,  title="Buy Signal",  location=location.belowbar, color=color.green, style=shape.labelup,   text="BUY")
+plotshape(shortCondition, title="Sell Signal", location=location.abovebar, color=color.red,   style=shape.labeldown, text="SELL")
+````

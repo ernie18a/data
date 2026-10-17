@@ -1,0 +1,45 @@
+# simple but effective
+
+- url: https://www.tradingview.com/script/jBvH2o3M-simple-but-effective/
+- type: strategy
+- pine_id: PUB;9UTL0CdG9auH4X12guZWUzMh8TihqepH
+- version: 1.0
+
+## Description
+
+A new strategy to 'play' with witch uses three moving average lines with user defined length. 
+
+default settings are
+Enter long when ma(3) (source = high)  crosses ma(9) (source = open)  
+Enter short when  ma(3) (source = low) crosses ma(9) (source = open)
+
+Enjoy:)
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © tucomprend
+
+//@version=4
+strategy("simple but effective", overlay=true)
+
+
+
+v1low = input(3, minval=1)
+v1high = input(3, minval=1)
+v2open = input(9, minval=1)
+
+
+plot (sma(open, v2open))
+plot (sma(high, v1high))
+plot (sma(low, v1low))
+
+longCondition = crossover(sma(high, v1high), sma(open, v2open))
+if (longCondition)
+    strategy.entry("My Long Entry Id", strategy.long)
+
+shortCondition = crossunder(sma(low, v1low), sma(open, v2open))
+if (shortCondition)
+    strategy.entry("My Short Entry Id", strategy.short)
+````

@@ -1,0 +1,41 @@
+# 2 and 2 Strategy
+
+- url: https://www.tradingview.com/script/VU69Uawd-2-and-2-Strategy/
+- type: strategy
+- pine_id: PUB;GA7NLCFVsqL4c0uHm1dsj7W6C6f1nIjY
+- version: 1.0
+
+## Description
+
+2 Moving Averages
+2 profit Targets
+29% in backtesting on daily USDCAD
+
+## Source Code
+
+````pine
+//@version=3
+strategy("MovingAVG2017", overlay=true, max_bars_back=850)
+
+
+emaLength = (100)
+smaWave = (200)
+
+emaFast = ema(close, emaLength)
+smaSurf = sma(close, smaWave)
+
+buyTime = (close > emaFast) and (emaFast > smaSurf)                  
+sellTime = (close < emaFast) and (emaFast < smaSurf)                        
+
+
+strategy.entry(id = "Buy Position", long = true, qty = 1000, when = buyTime)
+strategy.exit(id = "Buy Checkpoint", from_entry = "Buy Position", qty_percent = 30, profit = 1500)
+strategy.exit(id = "Closing Her Out", from_entry = "Buy Position", loss = 850, profit = 2600, when = (close < emaFast))
+    
+strategy.entry(id = "Sell Position", long = false, qty = 1000, when = sellTime)
+strategy.exit(id = "Sell Checkpoint", from_entry = "Sell Position", qty_percent = 30, profit = 1500)
+strategy.exit(id = "Closing Her Out", from_entry = "Sell Position", loss = 850, profit = 2600, when = (close > emaFast))
+
+plot(emaFast, color = blue)
+plot(smaSurf, color = green)
+````

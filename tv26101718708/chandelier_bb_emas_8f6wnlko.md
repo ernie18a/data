@@ -1,0 +1,111 @@
+# Chandelier + BB + EMAS
+
+- url: https://www.tradingview.com/script/8F6WNLkO/
+- type: strategy
+- pine_id: PUB;569353ace8d34fb588ce97008cd2db41
+- version: 2.0
+
+## Description
+
+In this strategy I am using the Emas  and bollinger bands'  width to determine the entry conditions:
+Objetive of emas: Determine the current market trend
+                      BB: Avoid low volatility market periods
+         Chandelier: Exit trades          
+Long Condition:
+Once the fast moving average turns above the slow ma is first signal
+Entry into the trade if the width crosses above the threshold set up by the user
+
+Short condition: Exact opposite to long condition
+
+Current idea is using an suppose capital of 1000 USD and paying commissions of 0.2%. 
+Educational purposes only at the time.
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © juanchez
+
+//@version=4
+strategy("CHI", overlay = true, close_entries_rule = "ANY")
+//Chandelier
+n = input(title= "highest high o lowest low period", defval= 22)
+f= input(title= "multiplicador", defval= 4)
+long = highest(high, n) - atr(n)*f
+short= lowest(low, n) + atr(n)*f
+plot(long, color= color.green, linewidth= 2, title= "Long Stop")
+plot(short, color= color.red, linewidth= 2, title= "Short Stop")
+
+//moving averages
+period= input(title= "moving averages period", defval= 50)
+period2= input(title= "moving averages period2", defval= 20)
+type= input(title= "moving averages type", options= ["sma", "ema"], defval= "ema")
+
+//moving average function
+mo(p, t) =>
+    if t == "sma"
+        sma(close[barstate.islast ? 1: 0], p)
+    else  if t== "ema"
+        ema(close[barstate.islast ? 1: 0], p)
+
+show= input(false, title= "Show EMAS")
+
+m= mo(period, type)
+m2= mo(period2, type)
+
+trend= m2 > m 
+
+plot(show?  m:na, title= "Slow MA", color = color.maroon, linewidth = 3)
+plot(show? m2: na, title= "Fast MA",linewidth= 3)
+
+
+//BOLLINGER BANDS ENTRIES
+bb1_period= input(title= "Bollinger bands 1 period", defval=40, minval=1)
+bb1_source=input(title="Bollinger band 1 source", defval=close)
+bb1_multi=input(title="Bollinger Bands 1 factor", defval=2, minval=1, step=0.1)
+show_bb1= input(title="Show Bollinger bands 1", defval=false)
+//BOLLINGER BANDS
+_bb(src, lenght, multi)=>
+    float moving_avg= sma(src[barstate.islast? 1: 0], lenght)
+    float deviation= stdev(src[barstate.islast? 1: 0], lenght)
+    float lowerband = moving_avg - deviation*multi
+    float upperband = moving_avg + deviation*multi
+    
+    [moving_avg, lowerband, upperband]
+    
+[bb1, lowerband1, upperband1]= _bb(bb1_source,  bb1_period, bb1_multi)
+
+//FIRST BAND    
+plot(show_bb1? bb1 : na, title="BB1 Moving average", linewidth= 3, color= color.fuchsia)
+plot(show_bb1? upperband1 : na, title="BB1 Upper Band", linewidth= 3, color= color.green)
+plot(show_bb1? lowerband1 : na, title="BB1 Lower Band", linewidth= 3, color= color.red)
+
+//BB's Width threshold 
+thresh= input(title= "widen %", defval= 9, minval = 0, step = 1, maxval= 100)
+
+widht= (upperband1 - lowerband1)/bb1
+roc= change(widht)/widht[1]*100
+cross=crossover(roc, thresh)
+
+// entry
+//long
+elong= input(true, title= "enable long")
+longcondition= m2 > m and cross and elong
+
+//short
+eshort= input(true, title= "enable short")
+shortcondition= m2 < m and cross and eshort
+
+
+plotshape(longcondition? true: false , location= location.belowbar, style= shape.labelup, size= size.small, color= color.green, text= "Buy", textcolor= color.white)
+plotshape(shortcondition? true: false , location= location.abovebar, style= shape.labeldown, size= size.small, color= color.red, text= "Sell", textcolor= color.white)
+
+out= crossunder(close, long)
+outt= crossover(close, short)
+
+strategy.entry("long", strategy.long, when = longcondition)
+strategy.close("long", when = out)
+
+strategy.entry("short", strategy.short, when = shortcondition)
+strategy.close("short", when = outt)
+````

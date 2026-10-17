@@ -1,0 +1,39 @@
+# SSL Channel Cross
+
+- url: https://www.tradingview.com/script/jds0DHEd-SSL-Channel-Cross/
+- type: strategy
+- pine_id: PUB;8cmrUFWmc2si0DOv0wkbDVmoElm6li8h
+- version: 1.0
+
+## Description
+
+SSL Channel crossover/crossunder long/short.
+
+## Source Code
+
+````pine
+//@version=4
+strategy("SSL Channel Cross", overlay=true)
+period=input(title="Period", defval=10)
+len=input(title="Period", defval=10)
+smaHigh=sma(high, len)
+smaLow=sma(low, len)
+Hlv = 0
+Hlv := close > smaHigh ? 1 : close < smaLow ? -1 : Hlv[1]
+sslDown = Hlv < 0 ? smaHigh: smaLow
+sslUp   = Hlv < 0 ? smaLow : smaHigh
+
+plot(sslDown, linewidth=2, color=color.red)
+plot(sslUp, linewidth=2, color=color.lime)
+
+longCondition = crossover(sslUp, sslDown)
+shortCondition = crossunder(sslUp, sslDown)
+
+if (longCondition)
+    strategy.close("Short", strategy.long)
+    strategy.entry("Long", strategy.long)
+    
+if (shortCondition)
+    strategy.close("Long", strategy.long)
+    strategy.entry("Short", strategy.short)
+````

@@ -1,0 +1,206 @@
+# Donchian Breakout with ATR Trailing Stop (Trend Following)
+
+- url: https://www.tradingview.com/script/NeEiwmDq-Donchian-Breakout-with-ATR-Trailing-Stop-Trend-Following/
+- type: strategy
+- pine_id: PUB;cd9b869c48ea4edf8ea97d45fbe80bc6
+- version: 1.0
+
+## Description
+
+A simple, transparent trend-following strategy: a classic Donchian
+(turtle) channel breakout with a single ATR-based trailing stop.
+It was deliberately built to be robust across markets rather than
+curve-fit to one — the same code and settings held up on both an
+equity index (DAX/GER40, 1h) and Bitcoin (BTCUSD, 4h), and across
+trailing multipliers of 2.5–3.5.
+
+HOW IT WORKS
+- Entry: goes long when price closes above the highest high of the
+  last N bars (default 20) while above the 200 EMA trend filter.
+  Short side is optional and off by default.
+- Exit: one ATR-based trailing stop (distance = ATR × multiplier,
+  default 2.5, fixed at entry). It serves as both the initial
+  protective stop and the trailing exit — cutting losses and letting
+  winners run, fully automatically. No separate exit signal needed.
+- Risk: size is derived from a fixed % risk per trade against the
+  stop distance (compounding), with optional risk and leverage caps.
+- Optional weekend-flat close for instruments with gap risk.
+
+HOW TO USE
+- Best on genuinely trending markets. Try it on your own instrument
+  and timeframe.
+- Tune the risk % to your own drawdown tolerance, and the ATR
+  multiplier to taste (2.5–3.5 behaved similarly — a good sign the
+  edge isn't fitted to one value).
+- Built-in alerts: the entry alert gives you the trailing-stop
+  distance to set on your broker; the trailing stop handles the exit.
+
+WHAT TO EXPECT — READ THIS
+- It's a breakout system, so win rate is LOW: ~40–45% is normal.
+  The edge is that winners are bigger than losers, not that you're
+  right often. Judge it by profit factor and drawdown, not win rate.
+- Expect long flat/drawdown periods in choppy, range-bound markets.
+  It performs when markets trend.
+- COSTS DECIDE EVERYTHING. Set your own broker's spread/commission
+  in the properties before trusting any result. Something that looks
+  great at zero cost can be break-even or worse once real spreads —
+  and, for leveraged CFDs, overnight financing — are included.
+  Results vary a lot by broker and instrument.
+
+NOTES
+- No repainting: entries use the prior bar's channel; the trailing
+  stop only ratchets in the trade's favor.
+- Not financial advice. Past backtest results do not guarantee
+  future performance. Always test on your own market, timeframe and
+  broker costs, and only risk what you can afford to lose.
+
+## Source Code
+
+````pine
+//@version=6
+// ════════════════════════════════════════════════════════════════
+//  ₿ BITCOIN (BTCUSD) · CAPITAL.COM · TRAILING v3 — FINÁLNA VERZIA
+//  ────────────────────────────────────────────────────────────────
+//  ⚠️  OBCHODOVAŤ NA CAPITAL.COM (USD účet)  —  inštrument BTCUSD
+//  ⏱️  TIMEFRAME: 4 hodiny
+//
+//  Set-and-forget: vstup na prerazení, výstup cez TRAILING STOP.
+//  Pri alerte otvor pozíciu a nastav trailing stop na vzdialenosť
+//  z alertu. Žiadny výstupný alert netreba.
+//
+//  Doladené: riziko 0,9 % → drawdown ~15 %, PF ~1,6 (9,5 roka dát,
+//  vrátane krachov 2018 aj 2022). Robustné naprieč trailMult.
+//  Náklady: spread 0,03 % + pozor na overnight (drží ~1,7 dňa).
+//  Krypto beží 24/7 — víkendový close je voliteľný (viď input).
+// ════════════════════════════════════════════════════════════════
+
+strategy("BTC BTCUSD · capital.com · Trailing v3 FINAL",
+     overlay              = true,
+     initial_capital      = 4000,
+     currency             = currency.USD,
+     default_qty_type     = strategy.fixed,
+     default_qty_value    = 1,
+     commission_type      = strategy.commission.percent,
+     commission_value     = 0.03,           // ~spread BTC na capital.com
+     pyramiding           = 0,
+     calc_on_every_tick   = false,
+     process_orders_on_close = true,
+     margin_long          = 50.0,           // krypto ~2x páka
+     margin_short         = 50.0)
+
+// ───────────────────── RISK ─────────────────────
+riskPct      = input.float(0.9, "Risk na obchod (%)", minval=0.1, maxval=10, step=0.1, group="Risk manažment")
+useEquity    = input.bool(true, "Risk z aktuálneho equity (compounding)",               group="Risk manažment")
+useRiskCap   = input.bool(false,"Použiť dolárový strop rizika",                          group="Risk manažment")
+riskCapUSD   = input.float(150, "Max riziko na obchod (USD)", minval=1, step=5,          group="Risk manažment")
+leverage     = input.int(2,     "Páka",                minval=1,                          group="Risk manažment")
+
+// ───────────────────── BREAKOUT ─────────────────────
+entryLen     = input.int(20, "Vstupný kanál (prerazenie N-bar maxima)", minval=2, group="Breakout")
+
+// ───────────────────── TREND FILTER ─────────────────────
+trendLen     = input.int(200, "Trendový filter EMA", minval=1, group="Trend filter")
+useTrendFilt = input.bool(true, "Obchoduj len v smere 200 EMA", group="Trend filter")
+
+// ───────────────────── TRAILING STOP ─────────────────────
+atrLen       = input.int(14,   "ATR perióda",                minval=1, group="Trailing stop")
+trailMult    = input.float(2.5,"Vzdialenosť trailingu (× ATR)", minval=0.1, step=0.1, group="Trailing stop")
+
+// ───────────────────── SMER ─────────────────────
+allowLong    = input.bool(true,  "Povoliť LONG",  group="Smer")
+allowShort   = input.bool(false, "Povoliť SHORT", group="Smer")
+
+// ───────────────────── VÍKEND ─────────────────────
+useWkndFlat  = input.bool(true, "Zatvoriť pozíciu pred víkendom (BTC beží 24/7 – voliteľné)", group="Víkend")
+friExitHr    = input.int(20, "Hodina zatvorenia v piatok (UTC)", minval=0, maxval=23, group="Víkend")
+
+// ───────────────────── INDIKÁTORY ─────────────────────
+upperEntry = ta.highest(high, entryLen)[1]
+lowerEntry = ta.lowest(low,  entryLen)[1]
+emaTrend   = ta.ema(close, trendLen)
+atr        = ta.atr(atrLen)
+
+trendUpOK = not useTrendFilt or close > emaTrend
+trendDnOK = not useTrendFilt or close < emaTrend
+isWkndClose = useWkndFlat and dayofweek(time, "UTC") == dayofweek.friday and hour(time, "UTC") >= friExitHr
+
+longSignal  = allowLong  and close > upperEntry and trendUpOK and not isWkndClose
+shortSignal = allowShort and close < lowerEntry and trendDnOK and not isWkndClose
+
+// ───────────────────── POSITION SIZING ─────────────────────
+capitalBase = useEquity ? strategy.equity : strategy.initial_capital
+riskAmount  = capitalBase * riskPct / 100.0
+riskAmount := useRiskCap ? math.min(riskAmount, riskCapUSD) : riskAmount
+slDist      = atr * trailMult
+qtyRaw      = slDist > 0 ? riskAmount / slDist : na
+maxQty      = capitalBase * leverage / close
+qty         = not na(qtyRaw) ? math.min(qtyRaw, maxQty) : na
+
+// ───────────────────── VSTUPY ─────────────────────
+if longSignal and strategy.position_size == 0 and not na(qty)
+    strategy.entry("Long", strategy.long, qty=qty)
+if shortSignal and strategy.position_size == 0 and not na(qty)
+    strategy.entry("Short", strategy.short, qty=qty)
+
+// ───────────────────── TRAILING STOP ─────────────────────
+var float trailDist = na
+var float trailStop = na
+
+longJustIn  = strategy.position_size > 0 and strategy.position_size[1] <= 0
+shortJustIn = strategy.position_size < 0 and strategy.position_size[1] >= 0
+
+if longJustIn
+    trailDist := slDist
+    trailStop := strategy.position_avg_price - trailDist
+else if strategy.position_size > 0
+    trailStop := math.max(trailStop, high - trailDist)
+
+if shortJustIn
+    trailDist := slDist
+    trailStop := strategy.position_avg_price + trailDist
+else if strategy.position_size < 0
+    trailStop := math.min(trailStop, low + trailDist)
+
+if strategy.position_size > 0
+    strategy.exit("Long exit",  from_entry="Long",  stop=trailStop)
+if strategy.position_size < 0
+    strategy.exit("Short exit", from_entry="Short", stop=trailStop)
+
+if strategy.position_size == 0
+    trailDist := na
+    trailStop := na
+
+// ───────────────────── ZATVORENIE PRED VÍKENDOM ─────────────────────
+if isWkndClose and strategy.position_size != 0
+    strategy.close_all(comment="Pred víkendom")
+
+// ───────────────────── ALERTY (naladené pre capital.com) ─────────────────────
+if longJustIn
+    alert("🟢 LONG · BTCUSD na capital.com (breakout, trailing)" +
+         "\nVstup ~" + str.tostring(strategy.position_avg_price, format.mintick) +
+         "\n➡️ TRAILING STOP: nastav vzdialenost " + str.tostring(slDist, format.mintick) + " USD" +
+         "\nVelkost (pri equity " + str.tostring(capitalBase, "#") + "): " + str.tostring(qty, "#.####") +
+         "  ·  riziko ~" + str.tostring(riskAmount, "#") + " USD (0,9%)" +
+         "\n⚠️ velkost prisposob 0,9% SVOJHO uctu / trailing vzdialenost" +
+         "\nVystup je AUTOMATICKY cez trailing stop — ziadny exit alert.",
+         alert.freq_once_per_bar_close)
+
+if shortJustIn
+    alert("🔴 SHORT · BTCUSD na capital.com (breakout, trailing)" +
+         "\nVstup ~" + str.tostring(strategy.position_avg_price, format.mintick) +
+         "\n➡️ TRAILING STOP: nastav vzdialenost " + str.tostring(slDist, format.mintick) + " USD" +
+         "\nVelkost (pri equity " + str.tostring(capitalBase, "#") + "): " + str.tostring(qty, "#.####") +
+         "  ·  riziko ~" + str.tostring(riskAmount, "#") + " USD (0,9%)" +
+         "\n⚠️ velkost prisposob 0,9% SVOJHO uctu / trailing vzdialenost" +
+         "\nVystup je AUTOMATICKY cez trailing stop — ziadny exit alert.",
+         alert.freq_once_per_bar_close)
+
+if isWkndClose and strategy.position_size != 0
+    alert("🗓️ ZATVORIT BTCUSD na capital.com pred vikendom — manualne zavri poziciu.", alert.freq_once_per_bar_close)
+
+// ───────────────────── VIZUALIZÁCIA ─────────────────────
+plot(emaTrend,   "200 EMA",      color=close > emaTrend ? color.new(color.green, 0) : color.new(color.red, 0), linewidth=2)
+plot(upperEntry, "Vstup kanál",  color=color.new(color.blue, 50))
+plot(strategy.position_size != 0 ? trailStop : na, "Trailing stop", color=color.new(color.orange, 0), style=plot.style_linebr, linewidth=2)
+plotshape(longSignal, title="Long breakout", style=shape.triangleup, location=location.belowbar, color=color.green, size=size.tiny)
+````

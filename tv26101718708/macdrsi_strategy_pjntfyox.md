@@ -1,0 +1,57 @@
+# MACD_RSI strategy
+
+- url: https://www.tradingview.com/script/pjNTFYox/
+- type: strategy
+- pine_id: PUB;3wVJQWgLPzkEke59EviAjaghbSzYmoIf
+- version: 1.0
+
+## Description
+
+Use three indicator to entry a position
+        EMA (20), MACD (12, 26, 20), RSI (14)
+        apply ema20 on rsi as signal line
+
+Entry long when
+        price above EMA20, MACD above signal line and RSI above signal line
+
+Entry short when
+         price below EMA20, MACD below signal line and RSI below signal line
+
+
+Study only, use it under your own risk.
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © fangdingjun
+
+//@version=4
+strategy("MACD_RSI strategy", overlay=false)
+
+_ema_len = input(20, title="EMA length")
+_macd_fast = input(12, title="MACD Fast")
+_macd_slow = input(26, title="MACD Slow")
+_macd_signal_len = input(20, title="MACD Signal length")
+_rsi_len = input(14, title="RSI length")
+_rsi_signal_len = input(20, title="RSI signal length")
+
+_ema = ema(close, _ema_len)
+
+_macd = ema(close, _macd_fast) - ema(close, _macd_slow)
+_macd_signal = ema(_macd, _macd_signal_len)
+
+_rsi = rsi(close, _rsi_len)
+_rsi_signal = ema(_rsi, _rsi_signal_len)
+
+plot(_rsi, color=color.orange)
+plot(_rsi_signal, color=color.purple)
+
+longCondition = close > _ema and _macd > _macd_signal and _rsi > _rsi_signal
+if (longCondition)
+    strategy.entry("Buy", strategy.long)
+
+shortCondition = close < _ema and _macd < _macd_signal and _rsi < _rsi_signal
+if (shortCondition)
+    strategy.entry("Sell", strategy.short)
+````

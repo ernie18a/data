@@ -1,0 +1,42 @@
+# Trend Reversal / Potential pressure
+
+- url: https://www.tradingview.com/script/w58JPHxf-Trend-Reversal-Potential-pressure/
+- type: strategy
+- pine_id: PUB;1c01PmfDLiJLIsqFW8DfrGuLdgSJfcBT
+- version: 2.0
+
+## Description
+
+This strategy looks for potential trend reversals by looking at hammer candles (defined in the is_hammer and is_stick functions). After getting confirmation a trade is open with determined SL/TP. ATR is used to justify the volatility. Fine-tune the parameters for your specific use case.
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © BardiaB2
+
+//@version=4
+strategy("TR", calc_on_every_tick=true)
+
+ATR=atr(7) * 1
+
+
+trendMA = ema(close, 500)
+is_trend_up = close>trendMA
+
+is_red(i) => (close[i] < open[i]) ? 1 : 0
+is_green(i) => is_red(i) ? 0 : 1
+
+is_hammer(i) => is_red(i) ? ((high[i]-close[i]) < (high[i]-low[i])/3 ) : ((high[i]-open[i]) < (high[i]-low[i])/3 )  
+is_stick(i)  => is_red(i) ? ((open[i]-low[i]) < (high[i]-low[i])/3 ) : ((close[i]-low[i]) < (high[i]-low[i])/3 )  
+
+
+
+if is_hammer(1) and is_red(2) and is_green(0) and close>close[1] and open[1]>open and low>low[1] and is_trend_up
+    strategy.entry("LE", strategy.long, 10000)
+    strategy.exit("TP/SL LE", "LE", stop = low[1]-ATR, limit=close+(high[1]-low[1])+ATR)
+
+if is_stick(1) and is_green(2) and is_red(0) and close<close[1] and open[1]<open and high<high[1] and (not is_trend_up)
+    strategy.entry("SE", strategy.short, 10000)
+    strategy.exit("TP/SL SE", "SE", stop = high[1]+ATR, limit=close-(high[1]-low[1])-ATR)
+````

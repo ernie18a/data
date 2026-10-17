@@ -1,0 +1,80 @@
+# Perfomance index Strategy
+
+- url: https://www.tradingview.com/script/4aT6Qe4s-Perfomance-index-Strategy/
+- type: indicator
+- pine_id: PUB;w0x4WJ1wW9IQVxVBflpUan9N4gatsmLm
+- version: 1.0
+
+## Description
+
+The Performance indicator or a more familiar term, KPI (key performance indicator), 
+ is an industry term that measures the performance. Generally used by organizations, 
+ they determine whether the company is successful or not, and the degree of success. 
+ It is used on a business’ different levels, to quantify the progress or regress of a 
+ department, of an employee or even of a certain program or activity. For a manager 
+ it’s extremely important to determine which KPIs are relevant for his activity, and 
+ what is important almost always depends on which department he wants to measure the 
+ performance for.  So the indicators set for the financial team will be different than 
+ the ones for the marketing department and so on.
+
+ Similar to the KPIs companies use to measure their performance on a monthly, quarterly 
+ and yearly basis, the stock market makes use of a performance indicator as well, although 
+ on the market, the performance index is calculated on a daily basis. The stock market 
+ performance indicates the direction of the stock market as a whole, or of a specific stock 
+ and gives traders an overall impression over the future security prices, helping them decide 
+ the best move. A change in the indicator gives information about future trends a stock could 
+ adopt, information about a sector or even on the whole economy. The financial sector is the 
+ most relevant department of the economy and the indicators provide information on its overall 
+ health, so when a stock price moves upwards, the indicators are a signal of good news. On the 
+ other hand, if the price of a particular stock decreases, that is because bad news about its 
+ performance are out and they generate negative signals to the market, causing the price to go 
+ downwards. One could state that the movement of the security prices and consequently, the movement 
+ of the indicators are an overall evaluation of a country’s economic trend.
+
+ WARNING:
+ - This script to change bars colors.
+
+## Source Code
+
+````pine
+//@version=2
+////////////////////////////////////////////////////////////
+//  Copyright by HPotter v1.0 22/03/2018
+// The Performance indicator or a more familiar term, KPI (key performance indicator), 
+// is an industry term that measures the performance. Generally used by organizations, 
+// they determine whether the company is successful or not, and the degree of success. 
+// It is used on a business’ different levels, to quantify the progress or regress of a 
+// department, of an employee or even of a certain program or activity. For a manager 
+// it’s extremely important to determine which KPIs are relevant for his activity, and 
+// what is important almost always depends on which department he wants to measure the 
+// performance for.  So the indicators set for the financial team will be different than 
+// the ones for the marketing department and so on.
+//
+// Similar to the KPIs companies use to measure their performance on a monthly, quarterly 
+// and yearly basis, the stock market makes use of a performance indicator as well, although 
+// on the market, the performance index is calculated on a daily basis. The stock market 
+// performance indicates the direction of the stock market as a whole, or of a specific stock 
+// and gives traders an overall impression over the future security prices, helping them decide 
+// the best move. A change in the indicator gives information about future trends a stock could 
+// adopt, information about a sector or even on the whole economy. The financial sector is the 
+// most relevant department of the economy and the indicators provide information on its overall 
+// health, so when a stock price moves upwards, the indicators are a signal of good news. On the 
+// other hand, if the price of a particular stock decreases, that is because bad news about its 
+// performance are out and they generate negative signals to the market, causing the price to go 
+// downwards. One could state that the movement of the security prices and consequently, the movement 
+// of the indicators are an overall evaluation of a country’s economic trend.
+//
+// WARNING:
+// - This script to change bars colors.
+////////////////////////////////////////////////////////////
+study(title="Perfomance index Strategy")
+Period = input(14, minval=1)
+xKPI = (close - close[Period]) * 100 / close[Period]
+clr = iff(xKPI > 0, green, red)
+p1 = plot(xKPI, color=blue, title="KPI")
+p2 = plot(0, color=blue, title="0")
+pos = iff(xKPI > 0, 1,
+       iff(xKPI < 0, -1, nz(pos[1], 0))) 
+barcolor(pos == -1 ? red: pos == 1 ? green : blue )
+fill(p1,p2,color=clr)
+````

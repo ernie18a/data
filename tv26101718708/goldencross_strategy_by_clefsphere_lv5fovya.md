@@ -1,0 +1,38 @@
+# GoldenCross Strategy by Clefsphere
+
+- url: https://www.tradingview.com/script/lv5FOVyA-GoldenCross-Strategy-by-Clefsphere/
+- type: strategy
+- pine_id: PUB;fddmjrIZOU86uqzd1dG4X8DdqKQF5n6o
+- version: 2.0
+
+## Description
+
+Golden cross when 50SMA crosses 200SMA.  Can be used for any market.  Day time frame is ideal.
+
+## Source Code
+
+````pine
+//@version=3
+strategy("GoldenCross Strategy by Clefsphere",overlay=true, initial_capital=10000,default_qty_type=strategy.percent_of_equity,default_qty_value=100)
+
+sma1Period = input(50, "Fast SMA Buy")
+sma2Period = input(200, "Slow SMA Buy")
+
+sma1val=sma(close,sma1Period)
+sma2val=sma(close,sma2Period)
+
+plot(sma1val,color=blue,linewidth=1)
+plot(sma2val,color=orange,linewidth=1)
+
+long=crossover(sma1val,sma2val)
+short=crossunder(sma1val,sma2val)
+
+
+if long
+    strategy.entry("buy",strategy.long)
+    
+if short
+    strategy.close("buy")
+        
+plot(low,color= sma1val > sma2val ? green:  red,style=columns,transp=90,linewidth=1)
+````

@@ -1,0 +1,56 @@
+# The Pivot Detector Oscillator Backtest
+
+- url: https://www.tradingview.com/script/qRR52Xu1-The-Pivot-Detector-Oscillator-Backtest/
+- type: strategy
+- pine_id: PUB;eX9k5TS3oxqUFXYPyOVwhaGndeCR9rn7
+- version: 1.0
+
+## Description
+
+The Pivot Detector Oscillator, by Giorgos E. Siligardos
+ The related article is copyrighted material from Stocks & Commodities 2009 Sep
+
+ You can change long to short in the Input Settings
+ WARNING:
+ - For purpose educate only
+ - This script to change bars colors.
+
+## Source Code
+
+````pine
+//@version=2
+////////////////////////////////////////////////////////////
+//  Copyright by HPotter v1.0 03/10/2017
+// The Pivot Detector Oscillator, by Giorgos E. Siligardos
+// The related article is copyrighted material from Stocks & Commodities 2009 Sep
+//
+// You can change long to short in the Input Settings
+// WARNING:
+// - For purpose educate only
+// - This script to change bars colors.
+////////////////////////////////////////////////////////////
+strategy(title="The Pivot Detector Oscillator, by Giorgos E. Siligardos")
+Length_MA = input(200, minval=1)
+Length_RSI = input(14, minval=1)
+UpBand = input(100, minval=1)
+DownBand = input(0)
+MidlleBand = input(50)
+reverse = input(false, title="Trade reverse")
+hline(MidlleBand, color=black, linestyle=dashed)
+hline(UpBand, color=red, linestyle=line)
+hline(DownBand, color=green, linestyle=line)
+xMA = sma(close, Length_MA)
+xRSI = rsi(close, Length_RSI)
+nRes = iff(close > xMA, (xRSI - 35) / (85-35), 
+         iff(close <= xMA, (xRSI - 20) / (70 - 20), 0))
+pos = iff(nRes * 100 > 50, 1,
+	   iff(nRes * 100 < 50, -1, nz(pos[1], 0))) 
+possig = iff(reverse and pos == 1, -1,
+          iff(reverse and pos == -1, 1, pos))	   
+if (possig == 1) 
+    strategy.entry("Long", strategy.long)
+if (possig == -1)
+    strategy.entry("Short", strategy.short)	   	    
+barcolor(possig == -1 ? red: possig == 1 ? green : blue )       
+plot(nRes * 100, color=blue, title="Pivot Detector Oscillator")
+````

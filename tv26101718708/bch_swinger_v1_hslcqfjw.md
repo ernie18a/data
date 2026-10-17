@@ -1,0 +1,75 @@
+# BCH Swinger v1
+
+- url: https://www.tradingview.com/script/HSLcqFJW-BCH-Swinger-v1/
+- type: strategy
+- pine_id: PUB;ymkIUR5JfnbENqAEqeIqx9lyyuNTi1yI
+- version: 1.0
+
+## Description
+
+BCHUSDT Trading Swinger
+
+## Source Code
+
+````pine
+//@version=2
+strategy("BCH Swinger v1", overlay=true, commission_value = 0.25, default_qty_type=strategy.percent_of_equity, default_qty_value = 100)
+
+/////////////////////////////////////////////////////////////
+//START - SET DATE RANGE
+
+// === BACKTEST RANGE ===
+FromMonth = input(defval = 1, title = "From Month", minval = 1)
+FromDay   = input(defval = 1, title = "From Day", minval = 1)
+FromYear  = input(defval = 2017, title = "From Year")
+ToMonth   = input(defval = 10, title = "To Month", minval = 1)
+ToDay     = input(defval = 01, title = "To Day", minval = 1)
+ToYear    = input(defval = 2020, title = "To Year")
+
+startDate = time > timestamp(FromYear, FromMonth, FromDay, 1, 1)
+endDate = time < timestamp(ToYear, ToMonth, ToDay, 23, 59)
+withinTimeRange = startDate and endDate
+
+/////////////////////////////////////////////////////////////
+//END - SET DATE RANGE
+
+
+
+/////////////////////////////////////////////////////////////
+//START - INDICATORS
+
+length = input(3)
+mult = input(1, minval = 0.01)
+atr_ = atr(length)
+max1 = max(nz(max_[1]), close)
+min1 = min(nz(min_[1]), close)
+is_uptrend_prev = nz(is_uptrend[1], true)
+stop = is_uptrend_prev ? max1 - mult * atr_ : min1 + mult * atr_
+vstop_prev = nz(vstop[1])
+vstop1 = is_uptrend_prev ? max(vstop_prev, stop) : min(vstop_prev, stop)
+is_uptrend = close - vstop1 >= 0
+is_trend_changed = is_uptrend != is_uptrend_prev
+max_ = is_trend_changed ? close : max1
+min_ = is_trend_changed ? close : min1
+vstop = is_trend_changed ? is_uptrend ? max_ - mult * atr_ : min_ + mult * atr_ : vstop1
+plot(vstop, color = is_uptrend ? yellow : red, style=circles, linewidth=2)
+
+/////////////////////////////////////////////////////////////
+//END - INDICATORS
+
+
+
+/////////////////////////////////////////////////////////////
+//START - TRADING RULES
+direction = input(defval=1, title = "Strategy Direction", type=integer, minval=-1, maxval=1)
+strategy.risk.allow_entry_in(direction == 0 ? strategy.direction.all : (direction < 0 ? strategy.direction.short : strategy.direction.long))
+
+condition1 = close > vstop and withinTimeRange
+condition2 = close < vstop and withinTimeRange
+
+strategy.entry("BUY", strategy.long, when = condition1)
+strategy.entry("SELL", strategy.short, when = condition2)
+
+/////////////////////////////////////////////////////////////
+//END - TRADING RULES
+````

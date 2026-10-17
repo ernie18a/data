@@ -1,0 +1,72 @@
+# Percentage Bands
+
+- url: https://www.tradingview.com/script/JbFpVOHr-Percentage-Bands/
+- type: strategy
+- pine_id: PUB;IGqJCLj8yAXnz9mfLlzAs6bP1ZvLnBpo
+- version: 1.0
+
+## Description
+
+A different version of bollinger bands,  I use percentage difference instead of standard deviation.
+
+## Source Code
+
+````pine
+//@version=3
+
+strategy(title = "Percentage Band", overlay = true)
+
+
+//////////////// BAND  ////////////////////////////
+price=close
+bandlength = input(50)
+bbupmult =input(2,step=0.1,title="Multiplier for Percent upper Band")
+bblowmult = input(2,step=0.1,title="Multiplier for Percent Lower  Band")
+
+basis =  sma(close,bandlength)
+
+devup =  (bbupmult*price)/100
+devlow = (bblowmult*price)/100
+
+upper = basis + devup
+lower = basis - devlow
+plot(basis, color=red)
+p1 = plot(upper, color=blue)
+p2 = plot(lower, color=blue)
+fill(p1, p2)
+
+
+
+/////////////////////////BAND  //////////////////////////
+
+
+// Conditions
+
+
+
+longCond = na
+sellCond = na
+longCond :=  crossover(price,lower)
+sellCond :=  crossunder(price,upper)
+
+
+
+
+monthfrom =input(6)
+monthuntil =input(12)
+dayfrom=input(1)
+dayuntil=input(31)
+
+
+
+if (  longCond    and  month>=monthfrom and month <=monthuntil and dayofmonth>=dayfrom and dayofmonth < dayuntil) 
+    strategy.entry("BUY", strategy.long, stop=close, oca_name="TREND", oca_type=strategy.oca.cancel, comment="BUY")
+    
+else
+    strategy.cancel(id="BUY")
+
+
+if ( sellCond   and month>=monthfrom and month <=monthuntil and dayofmonth>=dayfrom and dayofmonth < dayuntil ) 
+
+    strategy.close("BUY")
+````

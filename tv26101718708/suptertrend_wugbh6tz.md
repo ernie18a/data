@@ -1,0 +1,57 @@
+# SupterTrend 
+
+- url: https://www.tradingview.com/script/wugBh6Tz-SupterTrend/
+- type: strategy
+- pine_id: PUB;CTRleldvkhQnw9od6gaBrijLaQQvxKw4
+- version: 1.0
+
+## Description
+
+I created this script for basically two reasons 
+
+1. there is not simple suptertrend indicator available on tv rather you will find many fancy suptrend indicators with confusing other indicators and absurd background colors i dont know why some of the trader coders are obsessed with is using over the top color and designing phenomena.
+
+2.  I want to let people know about the accuracy of suptertrend indicator on multiple time frames i am plaining to create a backtesting tool for almost all Famous indicators so that specially new folks know what should they expect from any particular Indicator
+
+Also i added intraday filter to check the results for intrday signals . the sqaure off timings are for Indian markets only but you can edit the hours and minutes in the code for using other than indian markets. No need to do anything if you only want positional trading trading results
+
+## Source Code
+
+````pine
+//@version=4
+
+//@Gurjant_Singh IISMA-Indian Institute of stock Market Analysis 
+
+strategy("SupterTrend ", overlay=true, initial_capital=100000, default_qty_type=strategy.percent_of_equity, default_qty_value=300, calc_on_order_fills=false, calc_on_every_tick=false)
+
+
+
+
+mult = input(type=input.float, defval=3)
+len = input(type=input.integer, defval=5)
+[superTrend, dir] = supertrend(mult, len)
+
+
+
+plot(superTrend)
+
+intrady = input(false, "Do you want to exit intrday position", type = input.bool)
+
+IntraDay_SquareOff = minute >= 45 and hour >= 14
+
+
+
+buy = close > superTrend
+
+sell = close < superTrend
+
+if buy
+    strategy.entry("Buy", true)
+    
+if sell
+    strategy.entry("sell", false)
+
+if intrady and IntraDay_SquareOff
+    strategy.close("buy")
+    strategy.close("sell")
+````

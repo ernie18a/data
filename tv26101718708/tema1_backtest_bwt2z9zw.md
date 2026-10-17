@@ -1,0 +1,49 @@
+# TEMA1 Backtest
+
+- url: https://www.tradingview.com/script/BwT2z9zw-TEMA1-Backtest/
+- type: strategy
+- pine_id: PUB;pkrTpl0B9QrgMZ8Ebu0YfLjkwoGKKwQw
+- version: 1.0
+
+## Description
+
+This study plots the TEMA1 indicator. TEMA1 ia s triple MA (Moving Average),
+ and is calculated as 3*MA - (3*MA(MA)) + (MA(MA(MA)))
+
+ You can change long to short in the Input Settings
+ WARNING:
+ - For purpose educate only
+ - This script to change bars colors.
+
+## Source Code
+
+````pine
+//@version=2
+////////////////////////////////////////////////////////////
+//  Copyright by HPotter v1.0 14/08/2018
+// This study plots the TEMA1 indicator. TEMA1 ia s triple MA (Moving Average),
+// and is calculated as 3*MA - (3*MA(MA)) + (MA(MA(MA)))
+//
+// You can change long to short in the Input Settings
+// WARNING:
+// - For purpose educate only
+// - This script to change bars colors.
+////////////////////////////////////////////////////////////
+strategy(title="TEMA1 Backtest", shorttitle="TEMA", overlay = true )
+Length = input(26, minval=1)
+reverse = input(false, title="Trade reverse")
+xPrice = close
+xEMA1 = ema(xPrice, Length)
+xEMA2 = ema(xEMA1, Length)
+xEMA3 = ema(xEMA2, Length)
+nRes = 3 * xEMA1 - 3 * xEMA2 + xEMA3
+pos = iff(close > nRes, 1,
+       iff(close < nRes, -1, nz(pos[1], 0))) 
+possig = iff(reverse and pos == 1, -1,
+          iff(reverse and pos == -1, 1, pos))	   
+if (possig == 1) 
+    strategy.entry("Long", strategy.long)
+if (possig == -1)
+    strategy.entry("Short", strategy.short)	   	    
+barcolor(possig == -1 ? red: possig == 1 ? green : blue )
+````

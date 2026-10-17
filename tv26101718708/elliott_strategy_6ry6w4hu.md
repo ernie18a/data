@@ -1,0 +1,37 @@
+# Elliott strategy
+
+- url: https://www.tradingview.com/script/6Ry6W4hu-Elliott-strategy/
+- type: strategy
+- pine_id: PUB;OXJieGPiymsW2KnvpNRzmWkXXa8diWXn
+- version: 1.0
+
+## Description
+
+It uses Elliott teory to shift two moving averages 8 positions (based on 5-3 fractal), and the crossing is close to reversions. And it keeps an eye on RSI level to be sure it is on hot level to sell/buy
+
+## Source Code
+
+````pine
+//@version=3
+strategy("Elliott strategy", overlay=true)
+
+alta=ema(high,5)
+baixa=ema(low,5)
+baixa_off=offset(baixa,8)
+nivel_rsi_vende=(rsi(close,8)>=70)
+nivel_rsi_compra=(rsi(close,8)<=30)
+dif_curvas=(abs(alta-baixa_off)>=0.02)
+lucro=strategy.openprofit
+quantidade=abs(strategy.position_size) //quantas acoes temos
+
+nivel_lucro=(lucro>=0.05)
+
+
+longCondition = ((crossover(alta,baixa_off) and dif_curvas) or nivel_rsi_compra) and (quantidade<=2)
+if (longCondition)
+    strategy.entry("Compra", strategy.long)
+
+shortCondition = ((crossunder(alta,baixa_off) and dif_curvas) or (nivel_rsi_vende)) and (quantidade<=2)
+if (shortCondition)
+    strategy.entry("Vende", strategy.short)
+````

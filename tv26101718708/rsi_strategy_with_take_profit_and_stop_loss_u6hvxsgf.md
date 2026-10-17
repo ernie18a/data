@@ -1,0 +1,65 @@
+# RSI Strategy with Take Profit and Stop Loss
+
+- url: https://www.tradingview.com/script/U6HVxsgf-RSI-Strategy-with-Take-Profit-and-Stop-Loss/
+- type: strategy
+- pine_id: PUB;54a44f75cbda4c19a2c8bcaadf0e1335
+- version: 1.0
+
+## Description
+
+ok great start i came across igf you have any questions please ask
+
+## Source Code
+
+````pine
+//@version=5
+strategy("RSI Strategy with Take Profit and Stop Loss", overlay=true)
+
+// Input parameters
+length = input(50, title="RSI Length")
+overSold = input(30, title="Oversold Threshold")
+overBought = input(38, title="Overbought Threshold")
+
+// Stop loss amount
+stopLossAmount = 250
+
+// Define start and end trading times in EST
+startTradingHour = 10
+startTradingMinute = 30
+endTradingHour = 14
+endTradingMinute = 30
+
+// Convert trading times to UTC
+utcStartTime = timestamp(year, month, dayofmonth, startTradingHour - 5, startTradingMinute)
+utcEndTime = timestamp(year, month, dayofmonth, endTradingHour - 5, endTradingMinute)
+
+// Calculate RSI
+rsi = ta.rsi(close, length)
+
+// Entry conditions
+longCondition = ta.crossover(rsi, overSold)
+shortCondition = ta.crossunder(rsi, overBought)
+
+// Check if current time is within trading hours
+inTradingHours = (hour >= startTradingHour and minute >= startTradingMinute) or (hour <= endTradingHour and minute <= endTradingMinute)
+
+// Strategy logic
+if (not na(rsi) and inTradingHours)
+    if (longCondition)
+        // Calculate take profit level
+        takeProfitPrice = close + 100
+        stopLossPrice = close - stopLossAmount
+        strategy.entry("Buy", strategy.long, comment="RSI Oversold")
+        strategy.exit("TP", "Buy", limit=takeProfitPrice) // Set take profit
+        strategy.exit("SL", "Buy", stop=stopLossPrice) // Set stop loss
+    if (shortCondition)
+        // Calculate take profit level
+        takeProfitPrice = close - 100
+        stopLossPrice = close + stopLossAmount
+        strategy.entry("Sell", strategy.short, comment="RSI Overbought")
+        strategy.exit("TP", "Sell", limit=takeProfitPrice) // Set take profit
+        strategy.exit("SL", "Sell", stop=stopLossPrice) // Set stop loss
+
+// Plot RSI for visual reference
+plot(rsi, title="RSI", color=color.blue)
+````

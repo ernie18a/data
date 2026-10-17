@@ -1,0 +1,48 @@
+# RSI cross Strategy by alireza v1.1.1
+
+- url: https://www.tradingview.com/script/VPEc57Do-RSI-cross-Strategy-by-alireza-v1-1-1/
+- type: strategy
+- pine_id: PUB;9ff00a6b0f524550bc54c7a27f0e7996
+- version: 1.0
+
+## Description
+
+an script for buy and sell signals use it in 2h time
+
+## Source Code
+
+````pine
+//@version=5
+strategy("RSI cross Strategy by alireza v1.1.1", overlay=true)
+length1 = input( 25 )
+length2 = input( 100 )
+price = close
+
+
+vrsi1 = ta.rsi(price, length1)
+vrsi2 = ta.rsi(price, length2)
+
+GC = (close > open)
+RC = (open > close)
+
+HH = (close > close[2])
+LL = (close < close[2])
+
+
+
+
+cu = ta.crossover(vrsi1, vrsi2)
+cd = ta.crossunder(vrsi1, vrsi2)
+
+
+
+if (not na(vrsi1))
+	if (cu) 
+	    sll=price
+		strategy.entry("BUY", strategy.long )
+		strategy.exit("SL" , limit = sll )
+	if (cd)
+	    sls=price
+		strategy.entry("SELL", strategy.short )
+		strategy.exit("SL" , limit = sls )
+````

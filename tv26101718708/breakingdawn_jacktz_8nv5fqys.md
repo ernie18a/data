@@ -1,0 +1,53 @@
+# BreakingDawn [JackTz]
+
+- url: https://www.tradingview.com/script/8Nv5FqYs-BreakingDawn-JackTz/
+- type: strategy
+- pine_id: PUB;9vrOEhk3A618p34VzKt9VtaOUVqESYAf
+- version: 1.0
+
+## Description
+
+Designed for 4 hour charts - No repaint.
+
+BreakingDawn tries to anticipate the trend change before the actual break from one trend to another. This is an extenstion to WaveTrend from LazyBear.
+Cudos to LazyBear for his awesome WaveTrend script!
+
+//Jack
+
+## Source Code
+
+````pine
+//@version=4
+strategy("BreakingDawn [JackTz]", overlay = true)
+
+// WaveTrend [LazyBear]
+// ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+
+n1 = input(10, "Channel Length")
+n2 = input(21, "Average Length")
+ 
+WTfactor = input(4, title=" WTFactor")
+averageHlc3 = sum(hlc3, WTfactor) / WTfactor
+ap = averageHlc3 
+esa = ema(ap, n1)
+d = ema(abs(ap - esa), n1)
+ci = (ap - esa) / (0.015 * d)
+tci = ema(ci, n2)
+wt1 = tci
+wt2 = sma(wt1,4)
+wtAvg = wt1-wt2
+wtPeriodAvgVal = wtAvg * 45 + averageHlc3
+wtPeriodAvg2Val = wtAvg * 25 + averageHlc3
+
+buy = wtAvg[1] < wtAvg and wtAvg < close
+sell = wtAvg[1] > wtAvg
+
+fillColor = buy ? color.green : color.red
+control = plot(wtPeriodAvgVal, color = fillColor)
+signal = plot(wtPeriodAvg2Val, color = fillColor)
+fill(signal, control, color = fillColor)
+
+if year > 2016
+    strategy.entry("buy", strategy.long, when = buy)
+    strategy.close("buy",when = sell)
+````

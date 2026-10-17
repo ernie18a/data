@@ -1,0 +1,131 @@
+# Ichimoku Cloud with ADX (By Coinrule)
+
+- url: https://www.tradingview.com/script/je5bIJeR-Ichimoku-Cloud-with-ADX-By-Coinrule/
+- type: strategy
+- pine_id: PUB;32f652bffb624737b8068d732c0a3419
+- version: 1.0
+
+## Description
+
+The Ichimoku Cloud is a collection of technical indicators that show support and resistance levels, as well as momentum and trend direction. It does this by taking multiple averages and plotting them on a chart. It also uses these figures to compute a “cloud” that attempts to forecast where the price may find support or resistance in the future.
+
+The Ichimoku Cloud was developed by Goichi Hosoda, a Japanese journalist, and published in the late 1960s. It provides more data points than the standard candlestick chart. While it seems complicated at first glance, those familiar with how to read the charts often find it easy to understand with well-defined trading signals.
+
+The Ichimoku Cloud is composed of five lines or calculations, two of which comprise a cloud where the difference between the two lines is shaded in.
+The lines include a nine-period average, a 26-period average, an average of those two averages, a 52-period average, and a lagging closing price line.
+The cloud is a key part of the indicator. When the price is below the cloud, the trend is down. When the price is above the cloud, the trend is up.
+The above trend signals are strengthened if the cloud is moving in the same direction as the price. For example, during an uptrend, the top of the cloud is moving up, or during a downtrend, the bottom of the cloud is moving down.
+
+DMI is simple to interpret. When +DI > - DI, it means the price is trending up. On the other hand, when -DI > +DI , the trend is weak or moving on the downside. The ADX does not give an indication about the direction but about the strength of the trend.
+
+Typically values of ADX above 25 mean that the trend is steeply moving up or down, based on the -DI and +D positioning. This script aims to capture swings in the DMI, and thus, in the trend of the asset, using a contrarian approach.
+
+Trading on high values of ADX , the strategy tries to spot extremely oversold and overbought conditions. Values of ADX above 45 may suggest that the trend has overextended and is may be about to reverse.
+
+This strategy combines the Ichimoku Cloud with the ADX indicator to better enter trades.
+
+Long/Short orders are placed when these basic signals are triggered.
+
+Long Position:
+[list]
+[*]Tenkan-Sen is above the Kijun-Sen
+[*]Chikou-Span is above the close of 26 bars ago
+[*]Close is above the Kumo Cloud
+[*]MACD line crosses over the signal line
+[*]-DI is greater than +DI
+[*]ADX is greater than 45
+[/list]
+
+Short Position:
+[list]
+[*]Tenkan-Sen is below the Kijun-Sen
+[*]Chikou-Span is below the close of 26 bars ago
+[*]Close is below the Kumo Cloud
+[*]MACD line crosses under the signal line
+[*]+DI is greater than -DI
+[*]ADX is less than 45
+[/list]
+
+The script is backtested from 1 January 2022 and provides good returns.
+
+The strategy assumes each order is using 30% of the available coins to make the results more realistic and to simulate you only ran this strategy on 30% of your holdings. A trading fee of 0.1% is also taken into account and is aligned to the base fee applied on Binance.
+
+This script also works well on MATIC (15m timeframe), ETH (5m timeframe), and SOL (15m timeframe).
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © Coinrule
+
+//@version=5
+strategy('Ichimoku Cloud with ADX (By Coinrule)',
+         overlay=true,
+         initial_capital=1000,
+         process_orders_on_close=true,
+         default_qty_type=strategy.percent_of_equity,
+         default_qty_value=30,
+         commission_type=strategy.commission.percent,
+         commission_value=0.1)
+
+showDate = input(defval=true, title='Show Date Range')
+timePeriod = time >= timestamp(syminfo.timezone, 2022, 1, 1, 0, 0)
+
+
+// Stop Loss and Take Profit for Shorting
+Stop_loss = input(1) / 100
+Take_profit = input(5) / 100
+longStopPrice = strategy.position_avg_price * (1 - Stop_loss)
+longTakeProfit = strategy.position_avg_price * (1 + Take_profit)
+
+
+// Inputs
+ts_bars = input.int(9, minval=1, title='Tenkan-Sen Bars')
+ks_bars = input.int(26, minval=1, title='Kijun-Sen Bars')
+ssb_bars = input.int(52, minval=1, title='Senkou-Span B Bars')
+cs_offset = input.int(26, minval=1, title='Chikou-Span Offset')
+ss_offset = input.int(26, minval=1, title='Senkou-Span Offset')
+long_entry = input(true, title='Long Entry')
+short_entry = input(true, title='Short Entry')
+
+middle(len) => math.avg(ta.lowest(len), ta.highest(len))
+
+// Ichimoku Components
+tenkan = middle(ts_bars)
+kijun = middle(ks_bars)
+senkouA = math.avg(tenkan, kijun)
+senkouB = middle(ssb_bars)
+
+// Plot Ichimoku Kinko Hyo
+plot(tenkan, color=color.new(#0496ff, 0), title='Tenkan-Sen')
+plot(kijun, color=color.new(#991515, 0), title='Kijun-Sen')
+plot(close, offset=-cs_offset + 1, color=color.new(#459915, 0), title='Chikou-Span')
+sa = plot(senkouA, offset=ss_offset - 1, color=color.new(color.green, 0), title='Senkou-Span A')
+sb = plot(senkouB, offset=ss_offset - 1, color=color.new(color.red, 0), title='Senkou-Span B')
+fill(sa, sb, color=senkouA > senkouB ? color.green : color.red, title='Cloud color', transp=90)
+
+ss_high = math.max(senkouA[ss_offset - 1], senkouB[ss_offset - 1])
+ss_low = math.min(senkouA[ss_offset - 1], senkouB[ss_offset - 1])
+
+
+// ADX
+[pos_dm, neg_dm, avg_dm] = ta.dmi(14, 14)
+
+
+// Entry/Exit Signals
+tk_cross_bull = tenkan > kijun
+tk_cross_bear = tenkan < kijun
+cs_cross_bull = ta.mom(close, cs_offset - 1) > 0
+cs_cross_bear = ta.mom(close, cs_offset - 1) < 0
+price_above_kumo = close > ss_high
+price_below_kumo = close < ss_low
+
+bullish = tk_cross_bull and cs_cross_bull and price_above_kumo and avg_dm < 45 and pos_dm > neg_dm
+bearish = tk_cross_bear and cs_cross_bear and price_below_kumo and avg_dm > 45 and pos_dm < neg_dm
+
+strategy.entry('Long', strategy.long, when=bullish and long_entry and timePeriod)
+strategy.close('Long', when=bearish and not short_entry)
+
+strategy.entry('Short', strategy.short, when=bearish and short_entry and timePeriod)
+strategy.close('Short', when=bullish and not long_entry)
+````

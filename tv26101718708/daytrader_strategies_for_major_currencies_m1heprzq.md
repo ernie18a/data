@@ -1,0 +1,67 @@
+# Daytrader strategies for major currencies
+
+- url: https://www.tradingview.com/script/M1hEPrzQ-Daytrader-strategies-for-major-currencies/
+- type: strategy
+- pine_id: PUB;8kRhizhOgH5cilGTHohtIOxbbMBYkwvt
+- version: 1.0
+
+## Description
+
+Hello, 
+
+This technique is for those who want the most simple method that is almost fool-proof. It must be done only during the busiest trading hours, 3 am to 11 am EST. This method doesn't work in sideways markets, only in volatile trending markets.
+
+
+
+Indicators:
+ Ema 3 
+ MA 20 
+ Awesome Oscillator.
+
+
+Enter Long: when the red 3 EMA has crossed up through the middle band  at the same time, the AO should be approaching or crossing it's zero line, going up.
+
+
+Enter Short: when the red 3 EMA has crossed down through the middle band  at the same time, the AO should be approaching or crossing it's zero line, going down.
+
+
+In this strategy, both the entry and exit happen only during the london session.
+
+## Source Code
+
+````pine
+//@version=4
+//@author SoftKill21
+
+strategy(title="MA cross + AO", shorttitle="MA_AO")
+ao = sma(hl2,5) - sma(hl2,34)
+
+len = input(3, minval=1, title="Length")
+src = input(close, title="Source")
+out = ema(src, len)
+
+len1 = input(20, minval=1, title="Length")
+src1 = input(close, title="Source")
+out1 = sma(src1, len1)
+
+timeinrange(res, sess) => time(res, sess) != 0
+londopen = timeinrange(timeframe.period, "0300-1100") 
+nyopen = timeinrange(timeframe.period, "0800-1600") 
+
+longC = crossover(out,out1) and ao>0 and londopen
+shortC = crossunder(out,out1) and ao<0 and londopen
+
+invert = input(title="Reverse position ?", type=input.bool, defval=false)
+
+if(invert==false)
+    strategy.entry("LONG",1,when=longC)
+    strategy.entry("SHORT",0,when=shortC)
+
+
+
+if(invert==true)
+    strategy.entry("short",0,when=longC)
+    strategy.entry("long",1,when=shortC)
+    
+strategy.close_all(when= not (londopen))
+````

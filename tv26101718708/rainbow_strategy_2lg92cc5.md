@@ -1,0 +1,49 @@
+# Rainbow Strategy
+
+- url: https://www.tradingview.com/script/2LG92cC5-Rainbow-Strategy/
+- type: strategy
+- pine_id: PUB;61dHiVAEcypo1qWnDHqHKFimICycQOUd
+- version: 1.0
+
+## Description
+
+The strategy is based on the following idea:
+https://www.youtube.com/watch?v=0uZO0upxE1U
+
+Not a fan of this but no script was present to show this idea's performance.
+
+Best suitable for the 1-minute chart. You can change the ema values as per your needs.
+
+
+
+For Tips to continue :) -
+BTC: 1BjswGcRR6c23pka7qh5t5k56j46cuyyy2 
+ETH: 0x64fed71c9d6c931639c7ba4671aeb6b05e6b3781 
+LTC: LKT2ykQ8QSzzfTDB6Tnsf12xwYPjgq95h4
+
+## Source Code
+
+````pine
+//@author : SudeepBisht
+//@version=3
+strategy(title = "Rainbow Strategy", shorttitle = "Rainbow Strategy", overlay = true)
+
+ema_fast= input(6)
+ema_med=input(14)
+ema_slow=input(26)
+
+fastEMA = ema(close, ema_fast)
+medEMA = ema(close, ema_med)
+slowEMA = ema(close, ema_slow)
+
+plot(fastEMA, color=blue)
+plot(medEMA, color=yellow)
+plot(slowEMA, color=red)
+
+if (not na(fastEMA))
+    if(slowEMA<fastEMA and slowEMA<medEMA and crossunder(fastEMA,medEMA))
+        strategy.entry("RsiSE", strategy.short, comment="RsiSE")
+        
+    if(slowEMA>fastEMA and slowEMA>medEMA and crossover(fastEMA,medEMA))
+        strategy.entry("RsiLE", strategy.long, comment="RsiLE")
+````

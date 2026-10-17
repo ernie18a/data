@@ -1,0 +1,123 @@
+# Logo Watermark
+
+- url: https://www.tradingview.com/script/SZqo0bod/
+- type: indicator
+- pine_id: PUB;29f8ea72a0d54718ae28e719d93dcab2
+- version: 1.0
+
+## Description
+
+Con este Indicador puedes personalizar tus gráficos con el texto que quieras, o colocar tu nombre en un lateral, centrado o como prefieras.
+
+## Source Code
+
+````pine
+//
+// ACRTrader
+//@version=5
+
+//////////////////////////////
+//Logo Watermark//
+//////////////////////////////
+
+indicator("Logo Watermark", overlay=true) // Change name of indicator to change its text on the top left of the chart.
+
+//#region[FUNCTIONS]
+boxLoc(_loc) =>
+    loc = switch _loc
+        "Top-Left"      => position.top_left
+        "Top-Center"    => position.top_center
+        "Top-Right"     => position.top_right
+        "Middle-Left"   => position.middle_left
+        "Middle-Center" => position.middle_center
+        "Middle-Right"  => position.middle_right
+        "Bottom-Left"   => position.bottom_left
+        "Bottom-Center" => position.bottom_center
+        "Bottom-Right"  => position.bottom_right
+    loc
+
+_size(string _size, bool _l=false) =>
+    size = switch _size
+        "Tiny"   => not(_l) ? size.tiny   : size.small
+        "Small"  => not(_l) ? size.small  : size.normal
+        "Normal" => not(_l) ? size.normal : size.large
+        "Large"  => not(_l) ? size.large  : size.huge
+        "Huge"   => not(_l) ? size.huge   : size.huge
+    size
+//#endregion
+
+
+//#region[INPUTS]
+// QUOTE
+_showQuote =      input.bool(true,                      title="Show?",        inline='s1',   group="Quote")
+_color1    =     input.color(#000000,                 title='',             inline='s1',   group="Quote")
+_bgcolor1  =     input.color(#d1d4dc,                 title='',             inline='s1',   group="Quote")
+_showBrdr1 =      input.bool(false,                     title="Hide Border?", inline='s1',   group="Quote")
+_y1        =    input.string("Top",                     title="",             inline='s1.2', group="Quote", options=["Top","Middle","Bottom"])
+_x1        =    input.string("Center",                  title="",             inline='s1.2', group="Quote", options=["Left","Center","Right"])
+_size1     =    input.string("Normal",                  title="",             inline='s1.2', group="Quote", options=["Tiny","Small","Normal","Large","Huge"])
+_quoteTXT  = input.text_area("PUT YOUR TEXT", title="Quote Text:",  group="Quote")
+
+// SYMBOL INFO
+_showInfo  =      input.bool(true,         title="Show?",        inline='s2.1',      group="Symbol Info")
+_color2    =     input.color(#000000,    title='',             inline='s2.1',      group="Symbol Info")
+_bgcolor2  =     input.color(#d1d4dc,    title='',             inline='s2.1',      group="Symbol Info")
+_showBrdr2 =      input.bool(false,        title="Hide Border?", inline='s2.1',      group="Symbol Info")
+_y2        =    input.string("Top",        title="",             inline='s2.2',      group="Symbol Info", options=["Top","Middle","Bottom"])
+_x2        =    input.string("Right",      title="",             inline='s2.2',      group="Symbol Info", options=["Left","Center","Right"])
+_size2     =    input.string("Small",      title="",             inline='s2.2',      group="Symbol Info", options=["Tiny","Small","Normal","Large","Huge"])
+_showItext =      input.bool(true,         title="Text?",        inline='s2.3',      group="Symbol Info")
+_showIsym  =      input.bool(true,         title="Symbol?",      inline='s2.3',      group="Symbol Info")
+_showItf   =      input.bool(true,         title="Timeframe?",   inline='s2.3',      group="Symbol Info")
+_showIdate =      input.bool(false,        title="Date?",        inline='s2.3',      group="Symbol Info")
+_infoTXT   = input.text_area('PUT YOUR TEXT', title="Info Text:",   group="Symbol Info")
+//#endregion
+
+
+//#region[LOGIC]
+// TABLE LOCATION
+quoteLOC = boxLoc(_y1+"-"+_x1)
+infoLOC  = boxLoc(_y2+"-"+_x2)
+
+// SYMBOL INFO
+date     = str.tostring(dayofmonth(time_close)) + "/" + str.tostring(month(time_close)) + "/" + str.tostring(year(time_close))
+
+num_tf   = if timeframe.isminutes
+    if str.tonumber(timeframe.period) % 60 == 0
+        str.tostring(str.tonumber(timeframe.period)/60)
+    else 
+        timeframe.period
+else
+    timeframe.period
+
+text_tf  = if timeframe.isminutes
+    if str.tonumber(timeframe.period) % 60 == 0
+        "H" +" TIMEFRAME"
+    else 
+        "m" +" TIMEFRAME"
+else 
+    na +" TIMEFRAME"
+
+tf = num_tf + text_tf
+//#endregion 
+
+
+//#region[PLOT]
+// QUOTE
+if _showQuote
+    _quote = table.new(quoteLOC,1,1,frame_color=_color1,frame_width=_showBrdr1?0:1)
+    table.cell(_quote, 0, 0, _quoteTXT,text_color=_color1, text_size=_size(_size1),bgcolor=_bgcolor1)
+
+// SYMBOL INFO
+if _showInfo
+    _info = table.new(infoLOC,1,4,frame_color=_color2,frame_width=_showBrdr2?0:1)
+    if _showItext
+        table.cell(_info, 0, 0, _infoTXT,       text_color=_color2, text_halign="center", text_size=_size(_size2),       bgcolor=_bgcolor2)
+    if _showIsym
+        table.cell(_info, 0, 1, syminfo.ticker, text_color=_color2, text_halign="center", text_size=_size(_size2, true), bgcolor=_bgcolor2)
+    if _showItf
+        table.cell(_info, 0, 2, tf,             text_color=_color2, text_halign="center", text_size=_size(_size2),       bgcolor=_bgcolor2)
+    if _showIdate
+        table.cell(_info, 0, 3, date,           text_color=_color2, text_halign="center", text_size=_size(_size2),       bgcolor=_bgcolor2)
+//#endregion
+````

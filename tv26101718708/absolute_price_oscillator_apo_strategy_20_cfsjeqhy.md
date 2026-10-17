@@ -1,0 +1,62 @@
+# Absolute Price Oscillator (APO) Strategy 2.0
+
+- url: https://www.tradingview.com/script/cfsjeQhy-Absolute-Price-Oscillator-APO-Strategy-2-0/
+- type: indicator
+- pine_id: PUB;TVbJzOIAylG7pMcPuCzy9IfIto5HnWcU
+- version: 1.0
+
+## Description
+
+The Absolute Price Oscillator displays the difference between two exponential 
+ moving averages of a security's price and is expressed as an absolute value.
+ How this indicator works
+    APO crossing above zero is considered bullish, while crossing below zero is bearish.
+    A positive indicator value indicates an upward movement, while negative readings 
+      signal a downward trend.
+    Divergences form when a new high or low in price is not confirmed by the Absolute Price 
+      Oscillator (APO). A bullish divergence forms when price make a lower low, but the APO 
+      forms a higher low. This indicates less downward momentum that could foreshadow a bullish 
+      reversal. A bearish divergence forms when price makes a higher high, but the APO forms a 
+      lower high. This shows less upward momentum that could foreshadow a bearish reversal.
+
+ WARNING:
+ - This script to change bars colors.
+
+## Source Code
+
+````pine
+//@version=2
+////////////////////////////////////////////////////////////
+//  Copyright by HPotter v1.0 19/09/2018
+// The Absolute Price Oscillator displays the difference between two exponential 
+// moving averages of a security's price and is expressed as an absolute value.
+// How this indicator works
+//    APO crossing above zero is considered bullish, while crossing below zero is bearish.
+//    A positive indicator value indicates an upward movement, while negative readings 
+//      signal a downward trend.
+//    Divergences form when a new high or low in price is not confirmed by the Absolute Price 
+//      Oscillator (APO). A bullish divergence forms when price make a lower low, but the APO 
+//      forms a higher low. This indicates less downward momentum that could foreshadow a bullish 
+//      reversal. A bearish divergence forms when price makes a higher high, but the APO forms a 
+//      lower high. This shows less upward momentum that could foreshadow a bearish reversal.
+//
+// WARNING:
+// - This script to change bars colors.
+////////////////////////////////////////////////////////////
+study(title="Absolute Price Oscillator (APO) Strategy 2.0", shorttitle="APO")
+LengthShortEMA = input(10, minval=1)
+LengthLongEMA = input(20, minval=1)
+BuyZone = input(3, step = 0.01)
+SellZone = input(-3, step = 0.01)
+hline(BuyZone, color=green, linestyle=line)
+hline(SellZone, color=red, linestyle=line)
+hline(0, color=gray, linestyle=line)
+xPrice = close
+xShortEMA = ema(xPrice, LengthShortEMA)
+xLongEMA = ema(xPrice, LengthLongEMA)
+xAPO = xShortEMA - xLongEMA
+pos = iff(xAPO > BuyZone, 1,
+       iff(xAPO < SellZone, -1, nz(pos[1], 0))) 
+barcolor(pos == -1 ? red: pos == 1 ? green : blue )
+plot(xAPO, color=blue, title="APO")
+````

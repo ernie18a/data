@@ -1,0 +1,47 @@
+# Ichimoku TK Cross > EMA200 Crypto Strategy
+
+- url: https://www.tradingview.com/script/88TwdvFZ-Ichimoku-TK-Cross-EMA200-Crypto-Strategy/
+- type: strategy
+- pine_id: PUB;0eYx3wNGkZ7gY4LUPeo8tWbA7ecMYm8t
+- version: 1.0
+
+## Description
+
+Ichimoku strategy for cryptocurrency trading.
+
+Enters trades on bullish tenkan-kijun crosses when price is above 200 EMA which suggests a long-running bullish trend.
+
+## Source Code
+
+````pine
+//@version=3
+strategy(title="TK Cross > EMA200 Strat", shorttitle="TK Cross > EMA200 Strat", overlay=true)
+
+ema200 = ema(close, 200)
+conversionPeriods = input(20, minval=1, title="Conversion Line Periods"),
+basePeriods = input(60, minval=1, title="Base Line Periods")
+laggingSpan2Periods = input(120, minval=1, title="Lagging Span 2 Periods"),
+displacement = input(30, minval=1, title="Displacement")
+
+donchian(len) => avg(lowest(len), highest(len))
+
+conversionLine = donchian(conversionPeriods)
+baseLine = donchian(basePeriods)
+leadLine1 = avg(conversionLine, baseLine)
+leadLine2 = donchian(laggingSpan2Periods)
+
+plot(conversionLine, color=#0496ff, title="Conversion Line", linewidth=4)
+plot(baseLine, color=#991515, title="Base Line", linewidth=4)
+plot(close, offset = -displacement, color=#459915, title="Lagging Span")
+
+p1 = plot(leadLine1, offset = displacement, color=green,
+ title="Lead 1")
+p2 = plot(leadLine2, offset = displacement, color=red, 
+ title="Lead 2")
+fill(p1, p2, color = leadLine1 > leadLine2 ? green : red)
+
+plot(ema200, color=purple, linewidth=4)
+
+strategy.entry('tkcross', strategy.long, strategy.initial_capital / close, when=conversionLine>baseLine and close > ema200)
+strategy.close('tkcross', when=conversionLine<baseLine)
+````

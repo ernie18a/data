@@ -1,0 +1,65 @@
+# Updated Turtles
+
+- url: https://www.tradingview.com/script/rOA2PiZC-Updated-Turtles/
+- type: strategy
+- pine_id: PUB;GlMDFPqz1Cx9VH9EVKdeUGMijQ6OBGfC
+- version: 3.0
+
+## Description
+
+This script has been updated to prevent double orders (short/long) from occurring and modifying backtests results.
+
+This is an update to the script that was written a few years ago to prevent double longs/shorts from occurring and skewin backtesting results. Check out the updated indicator here and let me know what you think.
+
+I also added:
+
+- date range inputs if you want to do some backtesting on a particular set of dates.
+- the ability to toggle shorting
+
+## Source Code
+
+````pine
+//@version=3
+//oringinally coded by tmr0, modified by timchep
+//original idea from «Way of the Turtle: The Secret Methods that Turned Ordinary People into Legendary Traders» (2007) CURTIS FAITH
+strategy("Turtles", shorttitle = "Turtles", overlay=true, pyramiding=1, default_qty_type= strategy.percent_of_equity, default_qty_value = 100)
+//////////////////////////////////////////////////////////////////////
+// Component Code Start
+testStartYear = input(2011, "Backtest Start Year")
+testStartMonth = input(12, "Backtest Start Month")
+testStartDay = input(1, "Backtest Start Day")
+testPeriodStart = timestamp(testStartYear,testStartMonth,testStartDay,0,0)
+
+testStopYear = input(2030, "Backtest Stop Year")
+testStopMonth = input(12, "Backtest Stop Month")
+testStopDay = input(30, "Backtest Stop Day")
+testPeriodStop = timestamp(testStopYear,testStopMonth,testStopDay,0,0)
+
+// A switch to control background coloring of the test period
+testPeriodBackground = input(title="Color Background?", type=bool, defval=false)
+testPeriodBackgroundColor = testPeriodBackground and (time >= testPeriodStart) and (time <= testPeriodStop) ? #00FF00 : na
+bgcolor(testPeriodBackgroundColor, transp=97)
+
+testPeriod() =>
+    time >= testPeriodStart and time <= testPeriodStop ? true : false
+// Component Code Stop
+//////////////////////////////////////////////////////////////////////
+
+enterLong = input(26, minval=1)
+exitLong = input(10, minval=1)
+enterShort = input(26, minval=1)
+exitShort = input(10, minval=1)
+
+enterL = close > highest(enterLong)[1]
+enterS = close < lowest(enterShort)[1]
+
+exitL = close <= lowest(exitLong)[1] and not enterS
+exitS = close >= highest(exitShort)[1] and not enterL
+
+if testPeriod()
+    strategy.close("long", when = exitL) 
+    strategy.entry("long", strategy.long, when = enterL) 
+    
+    strategy.close("short", when = exitS)
+    strategy.entry("short", strategy.short, when = enterS)
+````

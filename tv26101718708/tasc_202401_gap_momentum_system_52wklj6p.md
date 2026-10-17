@@ -1,0 +1,79 @@
+# TASC 2024.01 Gap Momentum System
+
+- url: https://www.tradingview.com/script/52wKLj6P-TASC-2024-01-Gap-Momentum-System/
+- type: strategy
+- pine_id: PUB;34e22727a1be4a3ebf62de0e3413e9d9
+- version: 1.0
+
+## Description
+
+█ OVERVIEW
+
+[url=https://traders.com/Documentation/FEEDbk_docs/2024/01/TradersTips.html]TASC's January 2024 edition of Traders' Tips[/url] features an article titled “Gap Momentum” by Perry J. Kaufman. The article discusses how a trader might create a momentum strategy based on [url=https://www.investopedia.com/terms/g/gapping.asp]opening gap[/url] data. This script implements the Gap Momentum system presented therein.
+
+█ CONCEPTS
+
+In the article, Perry J. Kaufman introduces [b]Gap Momentum[/b] as a cumulative series constructed in the same way as [url=https://www.investopedia.com/terms/o/onbalancevolume.asp]On-Balance Volume (OBV)[/url], but using gap openings (today’s open minus yesterday’s close).
+
+To smoothen the resulting time series (i.e., obtain the "[i]signal line[/i]"), the author applies a [url=https://www.investopedia.com/terms/s/sma.asp]simple moving average[/url]. Subsequently, he proposes the following two trading rules for a long-only trading system:
+• Enter a long position when the signal line is moving higher.
+• Exit when the signal line is moving lower.
+
+█ CALCULATIONS
+
+The calculation of Gap Momentum involves the following steps:
+1. Calculate the ratio of the sum of positive gaps over the past N days to the sum of negative gaps (absolute values) over the same time period.
+2. Add the resulting gap ratio to the cumulative time series. This time series is the Gap Momentum.
+3. Keep moving forward, as in an N-day moving average.
+
+## Source Code
+
+````pine
+//  TASC Issue: January 2024 - Vol. 42, Issue 1
+//     Article: Gap Momentum Indicator
+//              Taking A Page From The On-Balance Volume
+//  Article By: Perry J. Kaufman
+//    Language: TradingView's Pine Script™ v5
+// Provided By: PineCoders, for tradingview.com
+
+
+//@version=5
+string title  = 'TASC 2024.01 Gap Momentum System'
+string stitle = 'GMS'
+strategy(title, stitle, false)
+
+
+int period       = input.int( 40,   'Period:')
+int signalPeriod = input.int( 20,   'Signal Period:')
+bool longOnly    = input.bool(true, 'Long Only:')
+
+
+float gap   = open - close[1]
+float gapUp = 0.0
+float gapDn = 0.0
+switch
+    gap > 0 => gapUp += gap
+    gap < 0 => gapDn -= gap
+
+
+float gapsUp   = math.sum(gapUp, period)
+float gapsDn   = math.sum(gapDn, period)
+float gapRatio = gapsDn == 0?1.0:100.0*gapsUp/gapsDn
+float signal   = ta.sma(gapRatio, signalPeriod)
+
+
+if strategy.opentrades <= 0 and signal > signal[1]
+    // buy at next open:
+    strategy.entry('long', strategy.long)
+else if strategy.opentrades > 0 and signal < signal[1]
+    if longOnly
+        // close all at next open:
+        strategy.close_all()
+    else
+        // sell at next open:
+        strategy.entry('short', strategy.short)
+
+
+plot(gapRatio, 'Gap Momentum', color.red,    2)
+plot(signal,   'Signal',       color.silver, 1)
+````

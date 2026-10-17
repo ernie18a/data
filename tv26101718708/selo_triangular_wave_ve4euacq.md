@@ -1,0 +1,46 @@
+# SELO Triangular Wave
+
+- url: https://www.tradingview.com/script/Ve4eUaCQ-SELO-Triangular-Wave/
+- type: strategy
+- pine_id: PUB;XvlAxbuWVTTLh9a2xuUdEdfgGnpb7wOA
+- version: 1.0
+
+## Description
+
+Based on master indicator creator @AlexGrovers scripts i just combined some of his work.
+Result depends on settings and pairs and is not forward tested yet although the backtest can give some good results.
+
+## Source Code
+
+````pine
+//@version=4
+strategy("SELO Triangular Wave", overlay=false)
+
+pi = 3.14159
+n = bar_index
+period = input(200, step = 1)
+amplitude = 1
+triangle = acos(sin(2*pi*1/period*n)*amplitude)
+
+
+length = input(247)
+//----
+x = n
+y = triangle - sma(triangle,length)
+ext = (y[length] + ((x-x[length])/(x[length*2]-x[length])) * (y[length*2] - y[length]))/2
+//----
+a = highest(highest(ext,length),length)
+b = lowest(lowest(ext,length),length)
+osc = (y - min(y,b))/(max(y,a) - min(y,b))
+
+osclow = input(0.1, step = 0.01)
+oschigh = input(0.9, step = 0.01)
+
+longCondition = crossunder(osc, osclow)
+if (longCondition)
+    strategy.entry("My Long Entry Id", strategy.long)
+
+shortCondition = crossover(osc, oschigh)
+if (shortCondition)
+    strategy.entry("My Short Entry Id", strategy.short)
+````

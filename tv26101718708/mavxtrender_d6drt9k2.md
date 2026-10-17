@@ -1,0 +1,78 @@
+# MavXtrender
+
+- url: https://www.tradingview.com/script/d6DRT9k2-MavXtrender/
+- type: strategy
+- pine_id: PUB;Laty3TVDHh2jRYkwK4G49o8CdAJEqSfi
+- version: 1.0
+
+## Description
+
+Converted the [url=https://www.tradingview.com/script/YHZimEz8-B-Xtrender-Puppytherapy/]B-Xtrender[/url] script from Puppytherapy into a strategy script.
+
+B-Xtrender was created by Bharat Jhunjhunwal and published in this [url=https://ifta.org/public/files/journal/d_ifta_journal_19.pdf]IFTA Journal[/url].
+
+I've added the following features:
+[list]
+[*]Ability to use factors instead of individual values for each parameter. This will allow you to quickly check different averages (5 vs 7 for example).
+[*]Defaults adjusted for crypto trading (7 days/week).
+[*]Switches to use either the short or long term indicator, or both.
+[*]Time window
+[/list]
+
+## Source Code
+
+````pine
+//@version=4
+//study("MavXtrender")
+strategy("MavXtrender", default_qty_type = strategy.percent_of_equity, default_qty_value = 100, pyramiding = 2)
+
+ShortTermSMA = input(7)
+ShortTermLMA = input(4)
+ShortTermRSI = input(2)
+
+LongTermMA  = input(4)
+LongTermRSI  = input(2)
+
+UseFactors = input(true)
+TradeShortTerm = input(true)
+TradeLongTerm = input(true)
+
+count = TradeShortTerm == true ? 1 : 0
+count := TradeLongTerm == true ? count + 1 : count
+// set position size
+Amount = strategy.equity / (close * count)
+
+ShortTermLMA := UseFactors == true ? round(ShortTermSMA * ShortTermLMA) : ShortTermLMA
+ShortTermRSI := UseFactors == true ? round(ShortTermSMA * ShortTermRSI) : ShortTermRSI
+LongTermMA := UseFactors == true ? round(ShortTermSMA * LongTermMA) : LongTermMA
+LongTermRSI := UseFactors == true ? round(ShortTermSMA * LongTermRSI) : LongTermRSI
+
+shortTermXtrender = rsi(ema(close, ShortTermSMA) - ema(close, ShortTermLMA), ShortTermRSI ) - 50
+longTermXtrender  = rsi( ema(close, LongTermMA), LongTermRSI ) - 50
+
+// === INPUT BACKTEST RANGE ===
+FromDay   = input(defval = 1, title = "From Day", minval = 1, maxval = 31)
+FromMonth = input(defval = 1, title = "From Month", minval = 1, maxval = 12)
+FromYear  = input(defval = 2018, title = "From Year", minval = 2012)
+ToDay     = input(defval = 1, title = "To Day", minval = 1, maxval = 31)
+ToMonth   = input(defval = 1, title = "To Month", minval = 1, maxval = 12)
+ToYear    = input(defval = 2020, title = "To Year", minval = 2012)
+
+// === FUNCTION EXAMPLE ===
+start     = timestamp(FromYear, FromMonth, FromDay, 00, 00)  // backtest start window
+finish    = timestamp(ToYear, ToMonth, ToDay, 23, 59)        // backtest finish window
+window()  => time >= start and time <= finish ? true : false // create function "within window of time"
+
+strategy.entry("ShortTerm", strategy.long, qty = Amount, when = window() and crossover(shortTermXtrender,0) and TradeShortTerm)
+strategy.entry("LongTerm", strategy.long, qty = Amount, when = window() and crossover(longTermXtrender,0) and TradeLongTerm)
+
+strategy.close("ShortTerm", when = crossunder(shortTermXtrender,0) or time > finish)
+strategy.close("LongTerm", when = crossunder(longTermXtrender,0) or time > finish)
+
+shortXtrenderCol = shortTermXtrender > 0 ? shortTermXtrender > shortTermXtrender[1] ? color.lime : #228B22 : shortTermXtrender > shortTermXtrender[1] ? color.red : #8B0000
+plot(shortTermXtrender, color=shortXtrenderCol, style=plot.style_columns, linewidth=1, title="B-Xtrender Osc. - Histogram", transp = 50)
+
+longXtrenderCol = longTermXtrender> 0 ? longTermXtrender > longTermXtrender[1] ? color.lime : #228B22 : longTermXtrender > longTermXtrender[1] ? color.red : #8B0000
+plot(longTermXtrender , color=longXtrenderCol, style=plot.style_histogram, linewidth=2, title="B-Xtrender Trend - Histogram", transp = 80)
+plot(longTermXtrender , color=color.white,     style=plot.style_line,      linewidth=1, title="B-Xtrender Trend - Line",      transp = 80)
+````

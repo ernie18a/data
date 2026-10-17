@@ -1,0 +1,50 @@
+# Stop loss and Take Profit in $$ example
+
+- url: https://www.tradingview.com/script/IHVPG6TS-Stop-loss-and-Take-Profit-in-example/
+- type: strategy
+- pine_id: PUB;YlblCbts4xOLxi0aeKaZ2Bz5I6efpBMH
+- version: 1.0
+
+## Description
+
+This is a simple exit example in $$ (symbol's currency) for [b]educational purpose[/b].
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © adolgov
+
+// @description
+// 
+
+//@version=4
+strategy("Stop loss and Take Profit in $$ example", overlay=true)
+
+// random entry condition
+
+longCondition = crossover(sma(close, 14), sma(close, 28))
+if (longCondition)
+    strategy.entry("My Long Entry Id", strategy.long)
+
+shortCondition = crossunder(sma(close, 14), sma(close, 28))
+if (shortCondition)
+    strategy.entry("My Short Entry Id", strategy.short)
+
+moneyToSLPoints(money) =>
+    strategy.position_size !=0 ? (money / syminfo.pointvalue / abs(strategy.position_size)) / syminfo.mintick : na
+
+p = moneyToSLPoints(input(200, title = "Take Profit $$"))
+l = moneyToSLPoints(input(100, title = "Stop Loss $$"))
+strategy.exit("x", profit = p, loss = l)
+
+// debug plots for visualize SL & TP levels
+pointsToPrice(pp) =>
+    na(pp) ? na : strategy.position_avg_price + pp * sign(strategy.position_size) * syminfo.mintick
+    
+pp = plot(pointsToPrice(p), style = plot.style_linebr )
+lp = plot(pointsToPrice(-l), style = plot.style_linebr )
+avg = plot( strategy.position_avg_price, style = plot.style_linebr )
+fill(pp, avg, color = color.green)
+fill(avg, lp, color = color.red)
+````

@@ -1,0 +1,61 @@
+# Fancy strategy alerts example [QuantNomad]
+
+- url: https://www.tradingview.com/script/biUvPKOz-Fancy-strategy-alerts-example-QuantNomad/
+- type: strategy
+- pine_id: PUB;9c3eGCm0gvXKNKKV6WQgYmm43JHr8OKl
+- version: 1.0
+
+## Description
+
+Alerts on strategies were introduced just recently in TradingView. 
+These alerts have an alert_message placeholder which allows you to compose in PineScript very complex alerts and insert quite a lot of information in them.
+This is just very simple example of how they can look like.
+
+## Source Code
+
+````pine
+//@version=4
+strategy("Fancy strategy alerts example", overlay = true)
+
+ma = sma(close, 20)
+plot(ma, color = color.red)
+
+long_entry = crossover(close,  ma)
+long_close = crossunder(close, ma)
+
+// RSI
+rsi = rsi(close, 7)
+
+// MACD
+[macdLine, signalLine, histLine] = macd(close, 12, 26, 9)
+
+// Compose alert message
+
+alert_msg =  
+             "Position: \n" +
+             "####################\n\n" +
+             "Close: "                  + tostring(close)                    + "\n"   + 
+             "Bars from prev signal:"   + tostring(barssince(long_entry[1])) + "\n"   + 
+             "Profit Target 1:"         + tostring(round(open * 1.01))       + "\n"   + 
+             "Profit Target 2:"         + tostring(round(open * 1.03))       + "\n"   +  
+             "Profit Target 3:"         + tostring(round(open * 1.05))       + "\n"   + 
+             "Stop Loss:"               + tostring(round(open * 0.95))       + "\n\n" + 
+             "Indicaotrs\n"             + 
+             "####################\n\n" + 
+             "MA Value: "               + tostring(ma)         + "\n"   +
+             "RSI: "                    + tostring(rsi)        + "\n"   + 
+             "MACD: "                   + tostring(macdLine)   + "\n"   + 
+             "MACD Signal: "            + tostring(signalLine) + "\n"   + 
+             "MACD Hist: "              + tostring(histLine)   + "\n\n" +
+             "More Fun Stuff\n"         + 
+             "####################\n\n" + 
+             "⏰⌚☝⚡✅😋😈😎😓😭🤡✈❌❤➚➘\n"+
+             "┌─────────────────┐\n" + 
+             "│                 │\n" + 
+             "│                 │\n" + 
+             "└─────────────────┘\n"
+             
+// Entry
+strategy.entry("long",  true, when = long_entry, alert_message = alert_msg)
+strategy.close("long", when = long_close, alert_message = "Close Long")
+````

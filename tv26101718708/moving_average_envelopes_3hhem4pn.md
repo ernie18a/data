@@ -1,0 +1,54 @@
+# Moving Average Envelopes
+
+- url: https://www.tradingview.com/script/3hHEM4pN-Moving-Average-Envelopes/
+- type: indicator
+- pine_id: PUB;387LDgxFw4RFHnwzea0EkMP6sG0RJLWS
+- version: 1.0
+
+## Description
+
+Moving Average Envelopes are percentage-based envelopes set above and 
+ below a moving average. The moving average, which forms the base for 
+ this indicator, can be a simple or exponential moving average. Each 
+ envelope is then set the same percentage above or below the moving average. 
+ This creates parallel bands that follow price action. With a moving average 
+ as the base, Moving Average Envelopes can be used as a trend following indicator. 
+ However, this indicator is not limited to just trend following. The envelopes 
+ can also be used to identify overbought and oversold levels when the trend is 
+ relatively flat. 
+
+ WARNING:
+ - This script to change bars colors.
+
+## Source Code
+
+````pine
+//@version=2
+////////////////////////////////////////////////////////////
+//  Copyright by HPotter v1.0 28/02/2018
+// Moving Average Envelopes are percentage-based envelopes set above and 
+// below a moving average. The moving average, which forms the base for 
+// this indicator, can be a simple or exponential moving average. Each 
+// envelope is then set the same percentage above or below the moving average. 
+// This creates parallel bands that follow price action. With a moving average 
+// as the base, Moving Average Envelopes can be used as a trend following indicator. 
+// However, this indicator is not limited to just trend following. The envelopes 
+// can also be used to identify overbought and oversold levels when the trend is 
+// relatively flat. 
+//
+// WARNING:
+// - This script to change bars colors.
+////////////////////////////////////////////////////////////
+study(title="Moving Average Envelopes", overlay = true)
+Length = input(14, minval=1)
+PercentShift = input(1, minval = 0.01, step = 0.01)
+xSMA = sma(close, Length)
+xHighBand = xSMA + (xSMA * PercentShift / 100)
+xLowBand = xSMA - (xSMA * PercentShift / 100)
+pos = iff(close > xHighBand, 1,
+       iff(close <xLowBand, -1, nz(pos[1], 0))) 
+barcolor(pos == -1 ? red: pos == 1 ? green : blue )
+plot(xSMA, color=blue, title="SMA")
+plot(xHighBand, color=red, title="High Band")
+plot(xLowBand, color=red, title="Low Band")
+````

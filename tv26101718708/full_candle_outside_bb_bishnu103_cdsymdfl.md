@@ -1,0 +1,194 @@
+# Full Candle Outside BB [Bishnu103]
+
+- url: https://www.tradingview.com/script/cdsymDFl-Full-Candle-Outside-BB-Bishnu103/
+- type: strategy
+- pine_id: PUB;PSpIyAOwEU1sLb6kMiq4bhuW0utwAmF9
+- version: 4.0
+
+## Description
+
+Bollinger band defines volatility range based on the current market condition. If a full candle is created outside BB then it is highly volatile and it may reverse to the mean, i.e. middle BB. 
+
+Buy - when a green candle is created below lower BB (alert candle) and price goes above high of it.
+Buy SL - low of alert candle
+Target 1 - middle band 
+Target 2- upper band
+
+Sell - when a red candle is cerated above upper BB (alert candle) and price goes below low of it
+Sell SL - high of alert candle 
+Target 1 - middle band 
+Target 2 - lower band
+
+************************************************************************************************************************************************************************************
+Disclaimer: This is in-progress strategy. I plan to work further and improve this. So please use this in the live market very carefully and based on your own risk factors.
+************************************************************************************************************************************************************************************
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © Bishnu103
+
+//@version=4
+strategy(title="Full Candle Outside BB [Bishnu103]",shorttitle="OUTSIDE BB",overlay=true,calc_on_every_tick=true,backtest_fill_limits_assumption=2)
+
+// ***********************************************************************************************************************
+// input variables
+buy_session         = input(title="Trade Session", type=input.session, defval="0915-1430")
+exit_inraday        = input(title="Exit Intraday?", type=input.bool, defval=true)
+entry_distance      = input(title="Entry distance from alert", minval=1, maxval=10, defval=3)
+show_bb_switch      = input(title="Show BB", type=input.bool, defval=true)
+risk_limit          = input(title="Risk Limit (%)", type=input.float, defval=1.5, minval=0.5, maxval=5.0, step=0.5)
+target_option       = input(title="Target Options", options=["BB","Profit %"], defval="Profit %")
+target_pct          = input(title="Profit (%)", type=input.float, defval=3.0, minval=0.5, maxval=10.0, step=0.5)
+//
+bbLength            = input(title="BB Length", minval=1, defval=20)
+bbStdDev            = input(title="BB StdDev", minval=1, defval=2)
+
+// ***********************************************************************************************************************
+// global variables
+long_entry          = false
+short_entry         = false
+long_exit           = false
+short_exit          = false
+
+// variable values available across candles
+var entry_price     = 0.0  
+var sl_price        = 0.0
+var exit_price_1    = 0.0
+var exit_price_2    = 0.0
+var candle_count    = 0
+var qty_hold        = 0.0
+
+// ***********************************************************************************************************************
+// function to return bollinger band values based on candle poition passed 
+getBB(pos) => [mBB, uBB, lBB] = bb(close[pos], bbLength, bbStdDev)
+
+// function returns true if current time is within intraday byuing session set in input
+BarInSession(sess) => time(timeframe.period, sess) != 0
+
+// ***********************************************************************************************************************
+// strategy
+//
+// get current bb value
+[mBB_0,uBB_0,lBB_0] = getBB(0)
+
+// check if full candle outside upper BB
+outside_uBB = low > uBB_0 and close <= open and (high > open or low < close)
+outside_lBB = high < lBB_0 and close >= open and (high > close or low < open)
+
+// check if SL greater than the risk limit % defined by user
+risk_in_limit = outside_uBB ? (high - low) < (low * (risk_limit/100)) : (outside_lBB ? (high - low) < (high * (risk_limit/100)) : false)
+
+// ***********************************************************************************************************************
+// entry conditions 
+long_entry   := outside_lBB and risk_in_limit
+short_entry  := outside_uBB and risk_in_limit
+
+// keep candle count since the alert generated so that order can be cancelled after N number of candle calling it out as invalid alert
+candle_count := candle_count + 1
+if long_entry or short_entry
+    candle_count    := 0
+
+// ***********************************************************************************************************************
+// risk management
+//
+// decide entry and sl price
+if long_entry
+    entry_price := high
+    
+if short_entry
+    entry_price := low
+    
+if long_entry
+    sl_price    := low
+    
+if short_entry
+    sl_price    := high
+
+// first exit is when price hits middle BB, gets updated for each candle based on it's middle BB value. second exit at upper/ lower band
+exit_price_1  := mBB_0
+//
+if strategy.position_size > 0
+    exit_price_2  := uBB_0
+if strategy.position_size < 0
+    exit_price_2  := lBB_0
+
+// ***********************************************************************************************************************
+// position sizing
+price = if close[0] > 25000
+    25000
+else
+    price = close[0]
+
+qty = round(25000/price)
+
+// ***********************************************************************************************************************
+// entry
+if long_entry and strategy.position_size == 0
+    strategy.order("BUY", strategy.long, qty, stop=entry_price, comment="BUY @ "+ tostring(entry_price))
+    qty_hold := qty
+
+if short_entry and strategy.position_size == 0
+    strategy.order("SELL", strategy.short, qty, stop=entry_price, comment="SELL @ "+ tostring(entry_price))
+    qty_hold := qty
+
+// cancel an order if N number of candles are completed after alert candle
+strategy.cancel_all(candle_count > (entry_distance-1))
+
+// if current time is outside byuing session then do not enter intraday trade
+strategy.cancel_all(timeframe.isintraday and not BarInSession(buy_session))
+
+// ***********************************************************************************************************************
+// exit
+if strategy.position_size > 0 and target_option == "BB"
+    mBB_qty = round(abs(strategy.position_size)/2)
+    strategy.cancel("EXIT at MBB", true)
+    strategy.cancel("EXIT at UBB", true)
+    strategy.cancel("EXIT at SL", true)
+    if qty_hold == abs(strategy.position_size)
+        strategy.order("EXIT at MBB", strategy.short, mBB_qty, limit=exit_price_1, comment="EXIT TG1 @ "+ tostring(exit_price_1))
+    if qty_hold != abs(strategy.position_size)
+        strategy.order("EXIT at UBB", strategy.short, abs(strategy.position_size), limit=exit_price_2, comment="EXIT TG2 @ "+ tostring(exit_price_2))
+    strategy.order("EXIT at SL",  strategy.short, abs(strategy.position_size), stop=sl_price,      comment="EXIT SL @ "+ tostring(sl_price))
+
+if strategy.position_size < 0 and target_option == "BB"
+    mBB_qty = round(abs(strategy.position_size)/2)
+    strategy.cancel("EXIT at MBB", true)
+    strategy.cancel("EXIT at LBB", true)
+    strategy.cancel("EXIT at SL", true)
+    if qty_hold == abs(strategy.position_size)
+        strategy.order("EXIT at MBB", strategy.long, mBB_qty, limit=exit_price_1, comment="EXIT TG1 @ "+ tostring(exit_price_1))
+    if qty_hold != abs(strategy.position_size)
+        strategy.order("EXIT at LBB", strategy.long, abs(strategy.position_size), limit=exit_price_2, comment="EXIT TG2 @ "+ tostring(exit_price_1))
+    strategy.order("EXIT at SL",  strategy.long, abs(strategy.position_size), stop=sl_price,    comment="EXIT SL @ "+ tostring(sl_price))
+
+if strategy.position_size > 0 and target_option == "Profit %"
+    exit_price_1 := entry_price + (entry_price * (target_pct/100))
+    strategy.order("EXIT at Target %", strategy.short, abs(strategy.position_size), limit=exit_price_1, comment="EXIT TG% @ "+ tostring(exit_price_1))
+    strategy.order("EXIT at SL",  strategy.short, abs(strategy.position_size), stop=sl_price,      comment="EXIT SL @ "+ tostring(sl_price))
+    
+if strategy.position_size < 0 and target_option == "Profit %"
+    exit_price_1 := entry_price - (entry_price * (target_pct/100))
+    strategy.order("EXIT at Target %", strategy.long, abs(strategy.position_size), limit=exit_price_1, comment="EXIT TG% @ "+ tostring(exit_price_1))
+    strategy.order("EXIT at SL",  strategy.long, abs(strategy.position_size), stop=sl_price,    comment="EXIT SL @ "+ tostring(sl_price))    
+
+//plot(qty_hold)
+
+// if intraday trade, close the trade at open of 15:15 candle
+exit_intraday_time = timestamp(syminfo.timezone,year,month,dayofmonth,15,14,0)
+if timeframe.isintraday and exit_inraday and time_close >= exit_intraday_time
+    strategy.cancel_all(true)
+    strategy.close("BUY",  when=strategy.position_size > 0, qty=strategy.position_size, comment="EXIT TM @ "+ tostring(close))
+    strategy.close("SELL", when=strategy.position_size < 0, qty=strategy.position_size, comment="EXIT TM @ "+ tostring(close))
+
+// ***********************************************************************************************************************
+// plots    
+//
+// plot BB
+[mBBp,uBBp,lBBp] = getBB(0)
+p_mBB = plot(show_bb_switch ? mBBp : na, color=color.teal)
+p_uBB = plot(show_bb_switch ? uBBp : na, color=color.teal)
+p_lBB = plot(show_bb_switch ? lBBp : na, color=color.teal)
+fill(p_uBB,p_lBB,color=color.teal,transp=95)
+````

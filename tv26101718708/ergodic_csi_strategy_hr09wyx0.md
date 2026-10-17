@@ -1,0 +1,76 @@
+# Ergodic CSI Strategy
+
+- url: https://www.tradingview.com/script/HR09wYx0-Ergodic-CSI-Strategy/
+- type: indicator
+- pine_id: PUB;lZmqw3Z9OXGamlc055dLZ4CDWbtVuFJ1
+- version: 1.0
+
+## Description
+
+This is one of the techniques described by William Blau in his book 
+ "Momentum, Direction and Divergence" (1995). If you like to learn more, 
+ we advise you to read this book. His book focuses on three key aspects 
+ of trading: momentum, direction and divergence. Blau, who was an electrical 
+ engineer before becoming a trader, thoroughly examines the relationship between 
+ price and momentum in step-by-step examples. From this grounding, he then looks 
+ at the deficiencies in other oscillators and introduces some innovative techniques, 
+ including a fresh twist on Stochastics. On directional issues, he analyzes the 
+ intricacies of ADX and offers a unique approach to help define trending and 
+ non-trending periods.
+ This indicator plots Ergotic CSI and smoothed Ergotic CSI to filter out noise. 
+
+ WARNING:
+  - This script to change bars colors.
+
+## Source Code
+
+````pine
+////////////////////////////////////////////////////////////
+//  Copyright by HPotter v1.0 20/06/2018
+// This is one of the techniques described by William Blau in his book 
+// "Momentum, Direction and Divergence" (1995). If you like to learn more, 
+// we advise you to read this book. His book focuses on three key aspects 
+// of trading: momentum, direction and divergence. Blau, who was an electrical 
+// engineer before becoming a trader, thoroughly examines the relationship between 
+// price and momentum in step-by-step examples. From this grounding, he then looks 
+// at the deficiencies in other oscillators and introduces some innovative techniques, 
+// including a fresh twist on Stochastics. On directional issues, he analyzes the 
+// intricacies of ADX and offers a unique approach to help define trending and 
+// non-trending periods.
+// This indicator plots Ergotic CSI and smoothed Ergotic CSI to filter out noise. 
+//
+// WARNING:
+//  - This script to change bars colors.
+////////////////////////////////////////////////////////////
+fADX(Len) =>
+    up = change(high)
+    down = -change(low)
+    trur = rma(tr, Len)
+    plus = fixnan(100 * rma(up > down and up > 0 ? up : 0, Len) / trur)
+    minus = fixnan(100 * rma(down > up and down > 0 ? down : 0, Len) / trur)
+    sum = plus + minus 
+    100 * rma(abs(plus - minus) / (sum == 0 ? 1 : sum), Len)
+
+study(title="Ergodic CSI Strategy")
+r = input(32, minval=1)
+Length = input(1, minval=1)
+BigPointValue = input(1.0, minval=0.00001)
+SmthLen = input(5, minval=1)
+SellZone = input(0.004, minval=0.00001)
+BuyZone = input(0.024, minval=0.001)
+hline(BuyZone, color=green, linestyle=line)
+hline(SellZone, color=red, linestyle=line)
+source = close
+K = 100 * (BigPointValue / sqrt(r) / (150 + 5))
+xTrueRange = atr(1) 
+xADX = fADX(Length)
+xADXR = (xADX + xADX[1]) * 0.5
+nRes = iff(Length + xTrueRange > 0, K * xADXR * xTrueRange / Length,0)
+xCSI = iff(close > 0,  nRes / close, 0)
+xSMA_CSI = sma(xCSI, SmthLen)
+pos = iff(xSMA_CSI > BuyZone, 1,
+       iff(xSMA_CSI <= SellZone, -1, nz(pos[1], 0))) 
+barcolor(pos == -1 ? red: pos == 1 ? green : blue )
+plot(xCSI, color=green, title="Ergodic CSI")
+plot(xSMA_CSI, color=red, title="SigLin")
+````

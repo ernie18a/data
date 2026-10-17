@@ -1,0 +1,62 @@
+# CCI High Performance long only
+
+- url: https://www.tradingview.com/script/kv56FhNp/
+- type: strategy
+- pine_id: PUB;7fcabd1953114981985f43006cff2f4e
+- version: 1.0
+
+## Description
+
+This strategy is based on the classic Commodity Channel Index and only works long.
+The system enters the market when this indicator is very low ( CCI <-150 or user-defined threshold) and as soon as it regains strength (i.e. CCI> CCI of the previous candle) with a filter on the "strength" of the prices themselves (i.e. the closing of the candle that provides the signal must be higher than a certain difference - fixed at 0.25% - at the opening of the candle itself).
+You exit the market when you either incur a stop loss or when the prices are above the upper band of the CCI.
+
+This system is used to have a high number of profitable operations (well over 50%) with little effort in terms of number of bars, rather than wanting to capture the actual duration of a trend. It is therefore recommended for those who "suffer to see the potential losses".
+
+## Source Code
+
+````pine
+//@version=5
+strategy(title='CCI High Performance long only', overlay=false, calc_on_order_fills=true, default_qty_type=strategy.percent_of_equity, default_qty_value=20, initial_capital=100000, currency=currency.EUR, commission_type=strategy.commission.cash_per_order, commission_value=50)
+src = input(close)
+length = input.int(20, title='Period', minval=1)
+lossp = input.float(8, title='Stop Loss percentage', minval=0.5, step=0.5)
+scart = input.float(0.25, title='Close of the signal bar higher than Open %', minval = 0)
+upperline = input.int(150, title='Upper Band', minval=0, step=10)
+lowline = input.int(-150, title='Low Band', maxval=0, step=10)
+
+
+// construction of CCI (not on close but in totalprice) and of bands
+ma = ta.sma(src, length)
+cci = (src - ma) / (0.015 * ta.dev(src, length))
+plot(cci, 'CCI', color=color.new(#996A15, 0))
+band1 = hline(upperline, 'Upper Band', color=#C0C0C0, linestyle=hline.style_dashed)
+band0 = hline(lowline, 'Lower Band', color=#C0C0C0, linestyle=hline.style_dashed)
+fill(band1, band0, color=color.new(#9C6E1B, 90), title='Background')
+// === INPUT BACKTEST RANGE ===
+fromMonth = input.int(defval = 1,    title = "From Month",  minval = 1, maxval = 12)
+fromDay   = input.int(defval = 1,    title = "From Day",    minval = 1, maxval = 31)
+fromYear  = input.int(defval = 2016, title = "From Year",   minval = 1970)
+thruMonth = input.int(defval = 1,    title = "Thru Month",  minval = 1, maxval = 12)
+thruDay   = input.int(defval = 1,    title = "Thru Day",    minval = 1, maxval = 31)
+thruYear  = input.int(defval = 2112, title = "Thru Year",   minval = 1970)
+// === FUNCTION EXAMPLE limit for backtest ===
+start     = timestamp(fromYear, fromMonth, fromDay, 00, 00)            // backtest start  window
+finish    = timestamp(thruYear, thruMonth, thruDay, 23, 59)            // backtest finish window
+window()  => time >= start and time <= finish ? true : false           // create function "within window of time"
+//ENTRY CONDITIONS
+
+// strategy: enter when CCI is under the low line and starts increasing. The filter is that the signal candle should mark a close higher than a x-percent
+// (0.25%) of the open
+// Exit when either when it reaches the target of a prices highest than high level of CCI or fixed stop loss (in percentage)
+scart_level = open * (1+scart/100)
+entryl = cci[1] < lowline[1] and cci > cci[1] and close > scart_level and window()
+exit1 = cci> upperline
+strategy.entry('Long', strategy.long, when=entryl)
+strategy.close('Long', when=exit1, comment='target')
+
+// money management (only stop loss)
+losspel = strategy.position_avg_price * (1 - lossp / 100)
+fixed_stop_long = close < losspel
+strategy.close('Long', when=fixed_stop_long, comment='Stop Loss')
+````

@@ -1,0 +1,60 @@
+# DI Crossing Daily Straregy HulkTrading
+
+- url: https://www.tradingview.com/script/pAsSZCGD-di-crossing-daily-straregy-hulktrading/
+- type: strategy
+- pine_id: PUB;70650df7fabf440d93aa869c0ad7ec06
+- version: 1.0
+
+## Description
+
+Simple strategy based on crossing DI+ and DI- and Average True Range.
+
+Long entry when DI+ crossover DI-
+Short entry when DI+ crossunder DI-
+
+Stop Loss and Take Profits based on Average True Range.
+Default values are 1*ATR(14) for stop loss and 2*ATR(14) for Take Profit.
+Risk reward 1 to 2 ratio.
+
+Recommended default values, but you can change it if you want.
+Recommended timeframe - 1D.
+
+Script was tested on BTCUSDT pair and have a 2.4 profit factor.
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © TheHulkTrading
+//@version=4
+strategy("DI Crossing Daily Straregy HulkTrading", overlay=true)
+// ATR Multiplier. Recommended values between 1..4
+atr_multiplier = input(1, minval=1, title="ATR Multiplier") 
+//Length of DI. Recommended default value = 14
+length = input(14, minval=1, title="Length di")
+up = change(high)
+down = -change(low)
+range = rma(tr, 14)
+
+//DI+ and DI- Calculations
+di_plus = fixnan(100 * rma(up > down and up > 0 ? up : 0, length) / range)
+di_minus = fixnan(100 * rma(down > up and down > 0 ? down : 0, length) / range)
+
+//Long and short conditions
+longCond = crossover(di_plus,di_minus)
+shortCond = crossunder(di_plus,di_minus) 
+
+
+//Stop levels and take profits
+stop_level_long = strategy.position_avg_price - atr_multiplier*atr(14)
+take_level_long = strategy.position_avg_price + 2*atr_multiplier*atr(14)
+stop_level_short = strategy.position_avg_price + atr_multiplier*atr(14)
+take_level_short = strategy.position_avg_price - 2*atr_multiplier*atr(14)
+
+
+//Entries and exits 
+strategy.entry("Long", strategy.long, when=longCond)
+strategy.exit("Close Long","Long", stop=stop_level_long, limit = take_level_long)
+strategy.entry("Short", strategy.short, when=shortCond)
+strategy.exit("Close Short","Short", stop=stop_level_short, limit = take_level_short)
+````
