@@ -1,0 +1,56 @@
+Real Author:
+Khlystov Vladimir
+The Expert Advisor opens an initial position in the current candle's direction and increases its volume if profit in points increases a threshold fixed in the EA inputs.
+The data on addings are stored in a string comment to a position in the following format:
+number of addings/last trade price/last trade volume
+.
+The initial position can be opened any time when the current candle's body exceeds the PriceStep threshold, as well as add to it when the threshold is exceeded at a new bar arrival.
+//+----------------------------------------------+
+//| Expert Advisor input parameters              |
+//+----------------------------------------------+
+input
+double
+MM=
+0.1
+;
+//Share of a deposit in an added deal
+input
+MarginMode MMMode=LOT;
+//lot value detection method
+input
+uint
+PriceStep=
+300
+;
+//price grid step in points for opening or adding to a position
+input
+uint
+PosTotal=
+10
+;
+//number of added trades
+input
+uint
+StopLoss_=
+1000
+;
+//stop loss in points
+input
+uint
+TakeProfit_=
+2000
+;
+//take profit in points
+input
+int
+Deviation_=
+10
+;
+//max price deviation in points
+Originally this EA has been written in MQL4 and was first published in the
+Code Base
+on 18.07.2016.
+Fig. 1. Examples of trades on the chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16868

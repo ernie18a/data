@@ -1,0 +1,26 @@
+UPDATED ON 21-MAY-2012:
+Below changes done in v1.1:
+1. Done bar adjustment. Now it looks at 2 previous bars for trend determination.
+2. Alert added.
+--------------------------------------------------------------
+MACFibo trading strategy was the winner of March's Best Forex Trading System Contest at babypips.com. This trading system uses 3 moving averages to determine trade opportunities and Fibonacci extensions to determine stoploss and profit targets.
+This is the indicator based on MACFibo trading strategy. More details about this strategy can be found
+here
+and babypips forum
+here
+.
+SHORT SIGNAL:
+When 5EMA crosses 20SMA down:
+Draw 2 points as below:
+POINT A; Candle close price that confirmed the downside crossover
+POINT B: highest price of the current wave prior to the crossover,
+Profit Target: @ 161.8 fibo level
+Stop Loss: maximum 38.2 (minimum @ 78.6) based on your risk appetite.
+Long SIGNAL:
+When 5EMA crosses 20SMA up:
+Draw 2 points as below:
+POINT A; Candle close price that confirmed the upside crossover
+POINT B: lowest price of the current wave prior to the crossover,
+Profit Target: @ 161.8 fibo level
+Stop Loss: maximum 38.2 (minimum @ 78.6) based on your risk appetite.
+Exit mechanism for losing trades, if stoploss yet to hit: if 5EMA cross 8SMA in direction opposite of your open trade.

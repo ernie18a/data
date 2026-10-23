@@ -1,0 +1,4 @@
+Backround:
+In “The Stochastic MACD Oscillator” of November 2019 issue of TASC, author Vitali Apirine introduces a new indicator created by combining the stochastic oscillator and the MACD. He describes the new indicator as a momentum oscillator and explains that it allows the trader to define overbought and oversold levels similar to the classic stochastic but based on the MACD.
+This is the metatrader 4 version of that indicator. Metatrader 5 version can be found here :
+Stochastic MACD

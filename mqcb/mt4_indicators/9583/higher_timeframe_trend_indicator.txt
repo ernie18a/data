@@ -1,0 +1,91 @@
+Description:
+This indicator displays the overall trend of a higher timeframe on the current (lower timeframe) chart as follows:
+If MA_1 < MA_2 < MA_3 < MA_4 on the higher timeframe MA proper order has been established and a down trend is in place. On the current, lower timeframe chart and red line will appear to indicate this. The red line is based on the PCI (Price Channel Index) indicator and can be used as a support line. If in inbuilt RSI indicator is enabled, any time the RSI goes in overbought territory an alert is given as a warning that a possible reversal is more likely i.e. lower timeframe trend resumes higher timeframe overall trend. Entering on a close below the red PCI support line is recommended. See example picture below.
+If MA_1 > MA_2 > MA_3 > MA_4 on the higher timeframe MA proper order has been established and a up trend is in place. On the current, lower timeframe chart and green line will appear to indicate this. The green line is based on the PCI (Price Channel Index) indicator and can be used as a resistance line. If in inbuilt RSI indicator is enabled, any time the RSI goes in oversold territory an alert is given as a warning that a possible reversal is more likely i.e. lower timeframe trend resumes higher timeframe overall trend. Entering on a close above the green PCI resistance line is recommended.
+A grey line indicates that no higher timeframe trend is present.
+Note: I recommend using the following timeframe combinations:
+Higher Timeframe: Current Timeframe:
+Daily 1hr
+4hr 15min
+1hr 5min
+5/15min 1min
+Image:
+Properties:
+extern
+int
+Upper_Timeframe =
+240
+;
+// Upper timeframe in minuter ex. 240 = 4hr
+extern
+int
+Upper_Timeframe_MA_1 =
+10
+;
+// MA_1 must be the fastest MA
+extern
+int
+Upper_Timeframe_MA_2 =
+20
+;
+extern
+int
+Upper_Timeframe_MA_3 =
+50
+;
+extern
+int
+Upper_Timeframe_MA_4 =
+100
+;
+// MA_4 must be the slowest MA
+extern
+bool
+RSI_Check_On =
+true
+;
+// Checks for RSI OverBought OverSold conditions
+extern
+bool
+RSI_Alert_On =
+true
+;
+// Audio alert for RSI OverBought OverSold conditions
+extern
+int
+RSI_Period =
+12
+;
+// RSI period
+extern
+int
+Upper_RSI_Limit =
+70
+;
+// Upper limit above which indicates overbought conditions
+extern
+int
+Lower_RSI_Limit =
+30
+;
+// Lower limit below which indicates oversold conditions
+extern
+int
+PCI_Period =
+5
+;
+// PCI period. ex.5 sets support line in down trend to lowest low from the past 5 bars
+extern
+int
+PCI_Shift =
+1
+;
+// PCI Shift, best set to 1
+extern
+double
+Entry_Buffer =
+0.0002
+;
+// Increases width of PCI channel by specified pips. i.e. lowers support line in down trend
+extern
+color Dot_Color = Blue;

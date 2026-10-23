@@ -1,0 +1,8 @@
+Normally if you have customized the standard Fibonacci levels tool and then reset to defaults for some reason, you need to enter all the customizations in again.
+These scripts can be customized, re-saved with different names for different strategies and then easily loaded without having to reinvent the wheel so to speak.
+The default verbose is just an example of how you may wish to customize them.
+There is a PDF available if you need more insight into how to work with these scripts.
+http://www.brooky-indicators.com/brooky-fibit-scripts-free-fibonacci-enhancement-tools/
+Cheers
+Brooky
+Example of Fibit Retracement Script

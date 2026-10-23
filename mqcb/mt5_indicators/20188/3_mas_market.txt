@@ -1,0 +1,13 @@
+Indicator that shows the current estimated state of the market based on a correlation of 3 Moving Averages.
+If using default settings, the colors are the following:
+Light green
+- trend up.
+Green
+- possible up trend start.
+Red
+- trend down.
+Orange
+- possible down trend start.
+Gray
+- choppy.
+The usual set of average types available (SMA, EMA, SMMA and LWMA) as well as the usual set of prices.

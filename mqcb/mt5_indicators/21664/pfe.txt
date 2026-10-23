@@ -1,0 +1,28 @@
+The Polarized Fractal Efficiency (PFE) indicator is designed for identifying trends.
+There are four input parameters:
+Fast ROC period
+- fast ROC (Rate of Change) calculation period;
+Slow ROC period
+- slow ROC (Rate of Change) calculation period;
+MA period
+- MA calculation period;
+PDS
+- oscillator scale factor.
+Calculations:
+PFE = EMA(B, MA period)
+where:
+If
+Close > Close[Slow ROC period]
+:
+B = 100.0 * Z
+Else:
+B = -100 * Z
+Z = Sqrt(LongROC * LongROC + 100) / (Sqrt(ShortROC * ShortROC+1) + PDS)
+LongROC = 100.0 * (Close / Close[Slow ROC period]-1)
+ShortROC = 100.0 * (Close / Close[Fast ROC period]-1)
+Interpretation:
+Oscillator value above zero - uptend;
+Oscillator value below zero - downtend.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21664

@@ -1,0 +1,3 @@
+The red color of the indicator shows that the previous candle is a negative candle and lime color indicates a positive candle.
+The red color of the numbers on the table "now" indicates that the movement of candle has reached the maximum movement, and lime color indicates that the movement reaches the average candle movement.
+To move the data table, press the key "M" for 1-2 seconds, after the key "M" was released, click the mouse on the desired area.

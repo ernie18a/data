@@ -1,0 +1,83 @@
+Real author:
+Martes
+Indicator Round_Levels_XN draws multiple "round" levels nearest to the current price above and below it.
+//+------------------------------------------------+
+//| Indicator input parameters                     |
+//+------------------------------------------------+
+input
+uint
+ZeroCount=
+2
+;
+//number of zeros for rounding
+input
+string
+levels_sirname=
+"Price_Level_1"
+;
+//label of levels
+input
+uint
+XNCount=
+3
+;
+//number of the iterations of the entire set of lines
+//----
+input
+color
+Up_level_color2=
+clrBlue
+;
+//color of the second upper level
+input
+STYLE Up_level_style2=SOLID_;
+//style of the second upper level
+input
+ENUM_WIDTH Up_level_width2=w_3;
+//width of the second upper level
+//----
+input
+color
+Up_level_color1=
+clrLime
+;
+//color of the first upper level
+input
+STYLE Up_level_style1=SOLID_;
+//style of the first upper level
+input
+ENUM_WIDTH Up_level_width1=w_3;
+//width of the first upper level
+//----
+input
+color
+Dn_level_color1=
+clrRed
+;
+//color of the first lower level
+input
+STYLE Dn_level_style1=SOLID_;
+//style of the first lower level
+input
+ENUM_WIDTH Dn_level_width1=w_3;
+//width of the first lower level
+//----
+input
+color
+Dn_level_color2=
+clrMagenta
+;
+//color of the second lower level
+input
+STYLE Dn_level_style2=SOLID_;
+//style of the second lower level
+input
+ENUM_WIDTH Dn_level_width2=w_3;
+//width of the second lower level
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on March 29, 2008.
+Fig1. Indicator Round_Levels_XN
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22806

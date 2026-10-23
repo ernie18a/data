@@ -1,0 +1,137 @@
+This MT5 indicator detects
+Crash market spike patterns
+using a specific
+3-candle formation
+:
+Red-Green-Red
+candle pattern (where red candles are strong spikes and the green is a middle retracement).
+When the pattern is found, it
+draws a box
+around the high/low of those 3 candles.
+It also plots a
+horizontal entry line
+at the
+middle candle’s open price
+.
+The line stays active until price returns to that level (mitigation).
+Once the
+entry price is hit (mitigated)
+, the entry line is replaced by a
+shorter fixed line
+from the pattern to the mitigation candle.
+It works on both
+historical and real-time candles
+.
+Visually helps identify potential
+return-to-zone trading opportunities
+.
+Input Name
+Description
+BoxColor
+Color of the zone box (default: Red).
+LineColor
+Color of the entry line (default: Dodger Blue).
+BoxWidth
+Thickness of the zone box border.
+LineWidth
+Thickness of the entry line.
+BoxStyle
+Style of the box border (solid, dashed, etc.).
+LineStyle
+Style of the entry line (solid, dashed, etc.).
+//==== Input Parameters ====
+input
+color
+BoxColor     =
+clrRed
+;
+input
+color
+LineColor    =
+clrDodgerBlue
+;
+input
+int
+BoxWidth     =
+2
+;
+input
+int
+LineWidth    =
+1
+;
+input
+ENUM_LINE_STYLE
+BoxStyle =
+STYLE_SOLID
+;
+input
+ENUM_LINE_STYLE
+LineStyle =
+STYLE_SOLID
+This indicator detects a
+specific bearish spike formation
+over 3 candles:
+Candle 1
+:
+Bearish (Red candle).
+Long wick.
+Body must be
+greater than 70%
+of the total candle range (i.e., a strong spike).
+Candle 2 (Middle)
+:
+Bullish (Green candle).
+Can be any size; just needs to be positive.
+Candle 3
+:
+Bearish again.
+Same condition as Candle 1: body > 70% of full range.
+When this pattern is found:
+It identifies a
+"supply zone"
+created by aggressive selling.
+A
+box
+is drawn around the high and low of the 3 candles.
+An
+entry line
+is drawn at the
+open price of the middle (green) candle
+, expecting price to return.
+Core Idea / Strategy Concept
+This tool is based on the
+Smart Money Concept (SMC)
+— particularly the idea of
+mitigation zones
+and
+supply/demand imbalances
+.
+After a
+strong bearish impulse
+, price often retraces back to the
+origin of the move
+(the middle candle).
+The indicator marks that area visually as a
+“mitigation zone”
+.
+Once price
+returns to this zone
+(entry line), it is considered
+"mitigated"
+, and a trader may look for re-entry or reaction.
+It
+removes the entry line
+after mitigation to keep the chart clean and optionally draws a
+shorter line to show mitigation
+.
+Practical Use:
+Look for
+return-to-box
+trades.
+Can be used for
+sell setups on Crash markets
+(or Boom with inversion).
+Works great in
+confluence with other indicators
+(like EMA, OBV, or order block confirmations).

@@ -1,0 +1,11 @@
+Real author:
+Nick A. Zhilin
+The channel is based on the prices extreme values for a period. Central line, upper and lower channel borders values are determined by calculation of the
+Pivot Points
+used as assumed support and resistance levels.
+This indicator was first implemented in MQL4 and published in
+CodeBase at mql4.com
+08.02.2008.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/781

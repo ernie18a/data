@@ -1,0 +1,6 @@
+Basics:
+The "eternal" question is if the fixed period smoothing / filtering / adapting should be improved or not. Probably the best question is what is it using for adapting and then the answer mainly depends on the quality of the "adapting method".
+This version:
+This is Variable Moving Average (VMA) that is using Adam Whites Vertical Horizontal Filter (VHF) for adapting. Since VHF is fairly good for market volatility detection, the results produced are acceptable too.
+Usage:
+You can use the color change as a signal. Or you can use two instances of this indicator (like the lower example) for crosses that then will serve as signals. In any case some experimenting with the parameters is advised before using it in trading decisions.

@@ -1,0 +1,17 @@
+The indicator plots the open prices of the bars as a line.
+The line color, width and style changed randomly every N=5 ticks. The width, color and style of a line can be defined using the preprocessor directives or using the
+PlotIndexSetInteger()
+function. The dynamic change of the line properties allows to create the "live" indicators that vary depending on the current state. Only one data buffer is needed for the
+DRAW_LINE
+style.
+The initial properties of the plot1 graphic plot are defined using the #
+property
+preprocessor directive, further these properties changed randomly (
+OnCalculate()
+function). The N variable is defined as input parameter, it can be changed using the "Properties" window.
+See also:
+The Drawing Styles in MQL5
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/330

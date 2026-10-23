@@ -1,0 +1,1 @@
+A simple indicator to draw vertical lines at specified time in the settings.

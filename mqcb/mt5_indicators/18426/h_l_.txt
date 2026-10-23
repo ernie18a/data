@@ -1,0 +1,10 @@
+Real author
+: unknown
+A redrawing channel having two upper and two lower borders. Its algorithm is similar to a zigzag.
+Originally this indicator was developed in MQL4 and was first published in the
+Code Base
+on 14.09.2007.
+Fig. 1. The H_L_ indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18426

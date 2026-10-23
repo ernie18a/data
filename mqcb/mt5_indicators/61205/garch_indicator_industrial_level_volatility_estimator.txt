@@ -1,0 +1,22 @@
+The
+Generalized AutoRegressive Conditional Heteroskedasticity (GARCH)
+volatility/volume indicator is based on the GARCH(1,1) recursion model, which is used in financial markets to forecast the volatility of the price action of financial assets. This statistical model is used in financial time series analysis where the variance of a time series is assumed to be autocorrelated and that the error term (difference between model prediction and what actually happens) has an autoregressive moving average process which can be modeled. The error term variation of financial markets is always irregular, hence the name
+heteroskedacticity
+.
+Financial institutions use the GARCH model as an estimator for the volatility of stocks, bonds and market indices. This indicator has been tested with Forex, commodities (XAUUSD) and crypto (BTCUSD).
+Input space:
+Gamma variable
+- constant term (unconditional variance)
+Alpha variable
+- ARCH coefficient (reaction to last shock)
+Beta variable
+- Generalized ARCH coefficient (persistence of past variance)
+Bar window
+- Amount of bars to include in rolling mean/std.
+Threshold scale
+- Default is 1.
+Lines:
+The cadet-blue line represent the GARCH one-step forecast values of the volatility (variance) for the next candle. This line is calculated using the GARCH(1,1) formula for volatility. During drastic return changes, the line spikes up and slowly decays back to its baseline, indicating a high volatile period.
+The red line represents the threshold for identifying high/low volatile periods. This allows for a two-line-cross signal identification for the trader, whilst also allowing expert advisors to easily identify highly volatile areas. The threshold scale can also be amplified.
+This indicator might not work as intended with M1, M5 timeframes.
+Learn more about the GARCH: https://www.investopedia.com/terms/g/garch.asp

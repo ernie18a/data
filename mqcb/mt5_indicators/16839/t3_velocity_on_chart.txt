@@ -1,0 +1,3 @@
+T3 velocity, now on chart version too.
+Be careful, because of the gradient colors, the velocity in the sub-window should be closely monitored too otherwise you can get a wrong impression, but I wanted to make this one so that we can have a sort of "all T3 velocity chart" sort of speaking.
+Also, this indicator shows how misleading some simplifications (like the color change, the trend changed) can be and that we always have to have the value of the indicator (past values included) in front of our eyes in order to draw a proper conclusion

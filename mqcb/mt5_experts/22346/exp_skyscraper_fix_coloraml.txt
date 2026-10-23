@@ -1,0 +1,19 @@
+Two independent trading systems applying
+Skyscraper_Fix
+and
+ColorAML
+indicators in a single EA. Trading signals are formed when a bar closes if a trend has changed (which is displayed by any of the two indicators changing its color).
+For the generated EA to operate correctly, the compiled files of the
+Skyscraper_Fix.ex5
+and
+ColorAML.ex5
+indicators should be present in the
+<terminal_data_directory>\MQL5\Indicators
+.
+Default Expert Advisor's input parameters have been used during tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. Examples of trades on the chart
+Testing results for GBPJPY H4 over the year 2017:
+Fig. 2. Test results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22346

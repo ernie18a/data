@@ -1,0 +1,25 @@
+The Strategy Tester cannot check what happens on a live chart: a terminal restart, Expert Advisors that start before the account is connected, a second copy of the same EA on another chart, the account history on the server, or a click on a chart button. This bench checks these automatically on a demo account and writes a PASS/FAIL report.
+Files
+LiveTestDriver.mq5
+: the test driver. It reads the phase (A, B or C) from MQL5\Files\LiveTestBench\phase.txt, runs the checks of that phase and closes the terminal with TerminalClose(). It refuses to run on anything but a demo account.
+ExampleDailyLock.mq5
+: the example EA under test, a daily loss lock that keeps its state in global variables, allows one copy per account (GlobalVariableSetOnCondition) and has an Unlock button.
+ExampleDailyLock_DemoTest.mq5
+: a demo-only build of the example. It defines DEMO_ONLY and includes the EA, so the source of the EA does not change.
+run_live_test.ps1
+(in the zip): a PowerShell launcher that writes a start-up configuration, starts the portable terminal for one phase and prints the report.
+Phases
+A
+: start, one copy per account, the lock, how fast a locked EA closes a new position. Ends by closing the terminal.
+B
+: after the restart: the chart is restored from the profile, the saved state is identical, the lock is still enforced, the day-start balance is rebuilt from the history.
+C
+: a person clicks Unlock on the chart. Chart objects ignore posted mouse messages, so this step needs a real click; the driver shows an instruction and waits up to 10 minutes.
+How to use
+Copy terminal64.exe to a new folder, start it with the /portable key and log in to a
+demo
+account with the password saved.
+Put the three .mq5 files in MQL5\Experts\LiveTestBench of that terminal and compile them.
+Close the terminal, then run: .\run_live_test.ps1 -Terminal "D:\MT5_demo" -Phase A , then B, then C.
+To test your own EA, add the demo-only check to its OnInit(), create a second file with #define DEMO_ONLY and #include, and change EA_NAME, EA_PATH, the inputs written by Attach() and the checks in the driver.
+A real run on a demo account passed 26 checks in three phases (picture 1). Phase C found a real bug in the first version of the example: after Unlock the EA locked again within the same second, because the loss of the day was still above the limit.

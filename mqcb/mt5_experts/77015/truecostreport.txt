@@ -1,0 +1,64 @@
+Cost is the one input to a trading system that is
+knowable exactly
+, and it is almost always estimated wrongly — always in the direction that flatters the strategy.
+This Expert Advisor measures what one round trip actually costs on
+your
+broker and
+your
+symbol: the live spread sampled from ticks, the swap for both sides including the triple-charge day, and the commission read from your own closed deals. Then it puts the number your tools are probably using next to it.
+It is
+strictly read-only
+. It never opens, closes or modifies a position.
+The measurement it exists for
+The usual source of a spread figure is the
+spread
+field of a price bar, because that is the one thing easy to reach from a script or a backtest. That field is a
+per-bar summary
+, not the quote at any instant.
+Measured on XAUUSD: the live spread was
+20 points across 60 consecutive readings
+while the M1 bar field had a median of
+6
+. A factor of 3.3.
+Anything built on that field inherits the error:
+A spread filter set to "skip the entry if spread > 15"
+never fires
+, because the number it reads is a third of the truth. It lets through precisely the moments it exists to block.
+A backtest charging that spread reports a system cheaper to run than the real one, and the gap grows with the number of trades — so it flatters high-frequency strategies most.
+The half that most simulators do not charge at all
+Swap. It is
+asymmetric
+— one side usually pays while the other collects — and one weekday is charged three times. On gold, per 0.01 lot per night, a real account gave
+−0.5842 long and +0.4098 short, with Wednesday tripled
+.
+On a system that holds positions overnight this is not a detail. A basket of four legs each way costs roughly 1.9 a night simply to exist, which over a year exceeds most of the edges people are trying to capture. MT5's own Strategy Tester charges swap; a great many custom simulators do not, and their results are wrong by the whole of it.
+Three things it does that a quick version would get wrong
+It counts distinct quotes, not just ticks.
+A feed that repeats the same value hundreds of times has been decimated somewhere, and a median over those repeats describes the decimation rather than the market. If fewer than five distinct quotes are seen, it says so.
+It refuses to measure a closed market.
+With the market shut the terminal keeps handing out the last tick it saw, so a sampling loop happily collects hundreds of identical readings of the frozen weekend quote — on the symbol this was written for, 50 points against a working-hours median of 20. The test uses the trap it documents:
+TimeCurrent()
+is the time of the last tick and freezes with the market, while
+TimeTradeServer()
+keeps running, so the gap between them is exactly how stale the quote is.
+Commission comes from your deals, not from a symbol property.
+Commission is an
+account
+term, not a symbol one: two accounts on the same broker and the same symbol can pay differently, and there is no field to read it from. Zero is a legitimate answer on a spread-only account, and is reported as zero rather than as unknown.
+Inputs
+Input
+Meaning
+InpSampleSeconds
+How long to sample the live spread. Longer is better on a quiet symbol.
+InpLots
+Lot size to price the cost for.
+InpBarsToCompare
+How many M1 bars to take the bar-field median from.
+InpDealDays
+Days of your own deals to read the commission from.
+On the swap mode.
+SYMBOL_SWAP_LONG and SYMBOL_SWAP_SHORT are quoted in whatever SYMBOL_SWAP_MODE says, and the modes are not interchangeable — reading a points value as if it were money produces a confident wrong number. Points and the deposit-currency modes are converted exactly; the interest and reopen modes depend on the position price and on the broker's year convention, so they are reported as
+not converted
+rather than guessed.
+What it does not do
+It does not model slippage, which cannot be measured without trading, and it says nothing about whether a strategy is viable. It measures the toll. What you carry over it is your business.

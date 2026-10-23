@@ -1,0 +1,4 @@
+The indicator shows the gaps between the closing price of the previous bar and the opening price of the current bar. The gap size in points is set in the SizeGAP external parameter. The indication is performed using arrows, with the consideration that most gaps are closed. That is, an arrow points in the direction opposite to the gap.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7763

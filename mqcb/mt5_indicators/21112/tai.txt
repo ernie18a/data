@@ -1,0 +1,19 @@
+TAI (Trend Analysis Index) is a simple trend indicator described by Adam White in the "Stocks & Commodities" magazine in August, 1992.
+The indicator has four configured parameters:
+MA Period
+- MA calculation period;
+MA Method
+- Moving Average calculation method;
+TAI Period
+- trend index calculation period;
+Applied price
+- price used for calculations.
+Calculation:
+TAI = (MA_Max - MA_Min) / Price*Point
+where:
+MA_Max, MA_Min - the highest and the lowest MA value over TAI Period
+MA = MA(Applied price, MA Method) - moving average with the MA Period and the MA Method calculation method
+Price = SMA(1, Applied price) - simple moving average with the Applied price
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21112

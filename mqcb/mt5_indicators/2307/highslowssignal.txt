@@ -1,0 +1,20 @@
+Real author:
+Robert Hill
+A semaphore signal indicator determining the moments of a directional price change on several bars, the number of bars is specified in the indicator input parameters:
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+uint
+HowManyCandles=
+3
+;
+// The number of candlesticks of a directed price change
+Both High and Low of a candlestick series are used in the analysis.
+This indicator was first implemented in MQL4 and published in
+CodeBase
+at mql4.com on 14.09.2007.
+Figure 1. The HighsLowsSignal indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2307

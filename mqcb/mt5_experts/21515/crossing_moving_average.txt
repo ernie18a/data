@@ -1,0 +1,77 @@
+The author of the idea
+:
+Scriptor
+MQL5 code author
+:
+barabashkakvn
+The EA only operates when a new bar appears. Position volume is always fixed and set in the
+Lots
+parameter.
+Stop Loss
+,
+Take Profit
+and
+Trailing Stop
+parameters can be disabled - to do this, set the appropriate value to "0.0". The last
+Trailing Step
+parameter - trailing step.
+Two Moving Averages (
+First
+and
+Second
+) are used. The crossing is defined in a very simple way (this is not the most accurate method, but it is the easiest one) - by analyzing the indicators values on two adjacent bars:
+//--- Buy Signal
+if
+(MA_First[
+1
+]>MA_Second[
+1
+]+ExtMA_MinimumDistance && MA_First[
+2
+]<MA_Second[
+2
+]-ExtMA_MinimumDistance)
+...
+//--- Sell signal
+if
+(MA_First[
+1
+]<MA_Second[
+1
+]-ExtMA_MinimumDistance && MA_First[
+2
+]>MA_Second[
+2
+]+ExtMA_MinimumDistance)
+...
+where:
+MA_First[1]
+-
+First
+indicator value on bar #1;
+MA_First[2]
+-
+First
+indicator value on bar #2;
+MA_Second[1]
+-
+Second
+indicator value on bar #1;
+MA_Second[2]
+-
+Second
+indicator value on bar #2;
+ExtMA_MinimumDistance
+- calculated parameter of the minimum distance between the indicators (
+Minimum distance between MA's
+). This parameter can be completely disabled: to do this, set the parameter to "0.0" in the inputs.
+Then each signal is checked by the filter using the
+Momentum
+indicator - the
+Momentum filter
+parameter override is checked.
+Visually, this looks as follows:
+Test on EURUSD M15:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21515

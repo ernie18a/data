@@ -1,0 +1,18 @@
+Update :
+Now it also calculates the commission on "end of test" result on Tester
+I was testing my Expert Advisor while i found that i have to calculate commission charged by my broker as well otherwise the profit shown by strategy could not be true, So i tried to use in built commission feature on Metatrader5 but this did not work!
+https://www.mql5.com/en/forum/372056
+So i decided to code this feature externally.
+This code can be used in your own expert advisor to calculate the commission (you may need to know programming)
+This EA works for testing Market Order, Limit Order, Stop Limit Order and Stop Market Order and same can be selected from SelectMode Input
+Fee in percentage can be added. Like my broker charges 0.04% commission so i added there
+After adding Entry, SL and TP you can run this EA on strategy tester
+On testing you can see i have total 4 deals executed
+For each deal, the commission should be calculated that is set on input : 0.04%
+Lets test in on excel
+As you can see for 0.1 qty its 1.2546 for Limit Buy Order and 1.284 for Take Profit Order
+so summing up 1.2546 + 1.284 = 2.5386
+and total trades are 2
+so 2.5386 *2 = 5.0772
+so at the end of Strategy Tester Report in Journal Tab, the Total Commission is Printed
+I hope this calculation method will help you testing your EA with more accurate profit when it excludes commissions which your broker charges

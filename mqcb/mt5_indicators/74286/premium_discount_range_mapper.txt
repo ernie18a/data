@@ -1,0 +1,14 @@
+Premium Discount Range Mapper
+is an educational MetaTrader 5 indicator for mapping a selected price range into Premium, Equilibrium and Discount areas.
+The purpose of the tool is to give traders a clean visual reference while studying market context. A trader can define the active range manually, or allow the indicator to calculate the range automatically from the selected lookback period.
+Once the range is defined, the indicator displays the upper part of the range as Premium, the middle level as Equilibrium, and the lower part as Discount. These areas are not trading signals by themselves. They are only visual reference zones for manual analysis.
+Main features:
+Premium area
+Equilibrium 50% level
+Discount area
+Range High and Range Low
+Optional 25% and 75% reference levels
+Manual or automatic range selection
+Input logic:
+If the manual range high and range low inputs are left at 0, the indicator uses the highest high and lowest low from the selected lookback period. If the user enters manual values, the indicator draws the zones from those custom levels.
+This indicator is intended for chart study and educational analysis. It does not place trades, does not provide buy or sell signals, does not predict market direction and does not guarantee results.

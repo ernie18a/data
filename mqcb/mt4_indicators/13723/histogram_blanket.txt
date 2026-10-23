@@ -1,0 +1,15 @@
+On a candlestick chart, you see more open and close market than all effort of the market in the period. This new representation helps to see charts in a new different way.
+Parameters:
+extern
+color
+ColorBull=
+clrGreen
+;
+//The color for Bull line and histogram
+extern
+color
+ColorBear=
+clrRed
+;
+//
+The color for Bear line and histogram

@@ -1,0 +1,2 @@
+Description:
+A very useful trend indicator based on the last 16 candles' highs & lows, plus an indication of favourable/unfavourable RSI in the direction of trend indicated.

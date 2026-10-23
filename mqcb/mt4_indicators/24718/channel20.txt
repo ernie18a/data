@@ -1,0 +1,4 @@
+Channel20  is very simple, but very useful, this idea is well known and I just write it.This indicator calculates the highest and the lowest rate of the last N candles (N is an input who is initially  20) this is very useful for detecting new tendencies if the rate break the Channel20 .
+the source code is divided in 2 parts
+the channel20 source code (indicator)
+the library wich includes the fuction used by the indicator

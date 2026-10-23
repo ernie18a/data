@@ -1,0 +1,5 @@
+In his TASC January 1994 article "Smoothing Data With Faster Moving Averages", Patrick Mulloy describes a MACD that does not use EMA for MACD calculation but uses DEMA (Double Exponential Moving Averages).
+According to him:
+Patrick Mulloy
+: By simply extracting the estimate for the non-time related coefficient B0 in the formal one-parameter double Exponential Moving Average used in time series forecasting, it has been shown to be an effective modified EMA with much faster response during fluctuations than the standard single EMA. In addition, the DEMA is not just a double EMA with twice the lag time of a single EMA, but rather it is a composite implementation of single and double EMAs producing another EMA with less lag than either of the original two. For general use, the more accurate but more complicated initialization formulas can be obviated and replaced with the simple use of the initial database value at time 0.
+So here is the MACD that is using DEMA fo calculation.

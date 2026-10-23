@@ -1,0 +1,30 @@
+Like
+Bar Based Stochastic
+, Tick Based Stochastic is a modified stochastic
+It has eight adjustable parameters:
+%K period
+- stochastic K line period
+%D period
+- stochastic D line period
+Slowing
+- slowing
+%K method
+- stochastic K line calculation method
+%D method
+- stochastic D line calculation method
+Applied price
+Overbought
+- overbought level
+Oversold
+- oversold level
+Calculation:
+K = MA(FastK, Slowing, %K method)
+D = MA(K, %D period, %D method)
+where:
+FastK = 100.0 * mins/maxes
+mins  = Applied price - minLow
+maxes = maxHigh - minLow
+minLow, maxHigh - low and high prices in the %K period range
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22113

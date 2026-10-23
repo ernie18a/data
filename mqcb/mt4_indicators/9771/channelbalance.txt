@@ -1,0 +1,5 @@
+Author:
+(c) 2010 Shon Shampain for Zen Cows Go Mu,
+http://www.zencowsgomu.com/
+.
+This indicator is based upon the Channels indicator. It calculates, percentagewise, whether price action is towards the top or bottom of the channel.

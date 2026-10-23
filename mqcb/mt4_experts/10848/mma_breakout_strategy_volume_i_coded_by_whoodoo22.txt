@@ -1,0 +1,35 @@
+Description:
+MMA_Breakout_strategy_Volume I - coded by WhooDoo22 (Multi Moving Average Breakout Strategy Volume I).
+Author:
+WhooDoo22.
+Strategy Instructions:
+Currency pair: EUR/USD.
+Time-frame: M30.
+(Be sure to run EA from years 2003.01.01-2012.06.01 and be sure to run strategy in strategy tester using "Open prices only" instead of "Every tick" to speed up testing)
+Strategy Explained:
+Strategy is based on the equation resistance over support (R/S) and the theory that the market moves in trends (containing smaller ranges) or consolidated horizontal movement (containing smaller ranges).
+Strategy Objective:
+Capture profits of trends and ranges.
+1. To capture small range profits, the EA uses small moving averages like an EMA period of 5 and an SMMA period of 25.
+2. To capture large trend profits, the EA uses larger moving averages such as an SMMA period of 50 and an SMMA period of 200.
+Strategy Open Signal:
+Open buy/sell order of 0.04 lots when SMMA period of 1 crosses above/below SMMA period of 200.
+Strategy Close Signal:
+Close buy/sell orders of 0.01 lots when SMMA period of 1 crosses back below/above slower moving averages of EMA 5, SMMA 25, SMMA 50, and SMMA 200.
+(partial order close function included )
+Strategy Strengths:
+1. Big Breakouts = Good signal for closing big profits for smaller moving averages of EMA 5 and SMMA 25.
+2. Strong Trends = Good signal for closing big profits for larger moving averages of SMMA 50 and SMMA 200.
+Strategy Weaknesses:
+1. Fake Outs = Bad signal for closing orders creating small losses. Remember, multiple small losses accumulate a large loss. Typically a large moving average of 200 in a consolidated horizontal movement where the moving average of 1 crosses above 200, then quickly crosses back below 200, then quickly back above 200 can give the EA bad signals. This type of market condition ( consolidated price movement) therefore can be a moving average crossover of 1 and 200 worst nightmare!
+Decrease Weakness to Increase Strength:
+If you choose to improve this strategy and use it to further improve your MQL4 education, you can incorporate the following two updates.
+1. Use an icustom indicator which draws multiple moving averages that adjust its moving averages to a certain period of bars in history ago (example: Multiple Moving Averages icustom indicator will count the last sixty bars and write its moving averages to "spear" through the ranges.)
+2. Adjust the order close functions to close orders more efficiently. (
+A.
+Sell order example. Sometimes when the SMMA 1 crosses below SMMA 200, the slower moving averages of 5,25, and 50 are still above the 200 moving average. The problem is this: If the SMMA 1 crosses back above the SMMA 200, only 0.01 lots are closed. This leaves 3/4ths of the orders open. This should be fixed so that all orders (0.04 lots) are closed when SMMA 1 crosses back above SMMA 200. The reason is to minimize losses. If orders 0.03 are left open, this means more loss (with a small possibility of profit).
+B.
+Incorporate a consolidated price movement filter to remove "Bad signals" in consolidated price movements. (Consider coding the EA to let it "wait" for a breakout during consolidated price movements, because breakouts are this strategy's strength )
+Credits:
+Me and the MQL4 community.
+Thank You!

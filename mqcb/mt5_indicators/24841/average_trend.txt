@@ -1,0 +1,4 @@
+Theory :
+The idea is simple : the indicator checks the slope of the (chosen type of) average. The longer the slope goes in one direction, the steeper the value of the indicator goes up or down. As soon as the slope changes, the step used for making steeper values is reset and it becomes less steep
+Usage :
+You can use the color change as signal

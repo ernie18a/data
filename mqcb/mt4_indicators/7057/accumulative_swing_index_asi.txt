@@ -1,0 +1,4 @@
+Accumulative Swing Index is an accumulative sum of values of swing indexes. ASI draws the "real" line of the market showing the comparative strength of the market and its direction. Support/resistance lines are drawn on a chart. Their break is interpreted as the indicator's signal.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7057

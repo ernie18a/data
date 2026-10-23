@@ -1,0 +1,16 @@
+The channel is calculated dynamically on each bar within a day. You can enter the hour and minute for the trading day beginning.
+The indicator has two input parameters:
+Hour of the beginning of the day
+- hour for the day beginning time;
+Minute of the beginning of the day
+- minute for the day beginning time.
+Note that on smaller timeframes the indicator needs some time for initial calculations.
+Fig.1 The M1 chart
+Fig.2 The M5 chart
+Fig.3 The M15 chart
+Fig.4 The M30 chart
+Fig.5 The H1 chart
+Fig.6 The H4 chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19802

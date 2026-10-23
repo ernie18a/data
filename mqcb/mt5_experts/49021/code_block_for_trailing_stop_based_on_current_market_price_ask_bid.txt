@@ -1,0 +1,251 @@
+This code block works if you use either a Stop Loss or Not.
+Requirements
+You need to include
+"Trade.mqh "
+to get access to the
+CTrade
+class which allows you to work with positions and orders.
+#include
+<Trade\Trade.mqh>
+// <<------------------------------------------ Include this "Trade.mqh" to access the CTrade Class
+You need to set an
+input parameter
+to adjust the trailing distance as you want. This is not necessary, but for convenient.
+input
+double
+Traling_Step =
+3.0
+;
+You need to define instance for
+CTrade
+class. the name can be any. It would be better to dine it after the
+OnInt
+event handler.
+Then you need to create an
+if statement
+to check if there any position has been running at the moment. This statement calls for
+Check_TrailingStop();
+function for
+every tick
+. This important because the EA should trail it
+sharp and smooth
+. Keep mind to put this statement at the
+top of the OnTick event handler
+to work properly.
+//+------------------------------------------------------------------+
+//| Expert initialization function                                   |
+//+------------------------------------------------------------------+
+int
+OnInit
+()
+  {
+//--- create timer
+EventSetTimer
+(
+60
+);
+//---
+return
+(
+INIT_SUCCEEDED
+);
+  }
+
+
+CTrade trade;
+// <<------------------------------------------ Declare the "CTrade" calss. you can replace "trade" win any name you want
+void
+OnTick
+()
+  {
+if
+(
+PositionsTotal
+() >
+0
+)
+// calls to trailing stop function for every tick if there is / are positions runing.
+{
+      Check_TralingStop(); 
+     } 
+     
+       
+  }
+You need to declare a custom function called
+Check_TrailingStop(); (
+in this case
+)
+to do the rest. You can use any name you want.
+The custom function loops through
+all the opened positions
+and trail them as your required distance.
+void
+Check_TralingStop()
+  {
+int
+totalPositions =
+PositionsTotal
+();
+for
+(
+int
+count =
+0
+; count < totalPositions; count++)
+     {
+ulong
+TicketNo =
+PositionGetTicket
+(count);
+// Get Position Ticket number using the 'index' of the position.
+if
+(
+PositionSelectByTicket
+(TicketNo))
+// Select a position using the ticket number (we already picked the tickt no.)
+{
+if
+(
+PositionGetInteger
+(
+POSITION_TYPE
+) ==
+POSITION_TYPE_BUY
+)
+// Check the position Type.
+{
+double
+openPrice =
+PositionGetDouble
+(
+POSITION_PRICE_OPEN
+);
+double
+stopLoss  =
+PositionGetDouble
+(
+POSITION_SL
+);
+// <<-------------------Get Position Current Stop Loss
+double
+takeProfit =
+PositionGetDouble
+(
+POSITION_TP
+);
+double
+bidPrice  =
+SymbolInfoDouble
+(
+_Symbol
+,
+SYMBOL_BID
+);
+ulong
+ticket =
+PositionGetTicket
+(count);
+double
+trailingLevel =
+NormalizeDouble
+(bidPrice - (Traling_Step *
+Point
+()),
+_Digits
+);
+if
+(stopLoss < openPrice)
+// No stop loss is true.
+{
+if
+(bidPrice > openPrice && trailingLevel > openPrice)
+// Runs only once per position. Sets the first SL.
+trade.PositionModify(ticket,trailingLevel,takeProfit);
+// Modify trailing Stop using "CTrade.trade"
+}
+if
+(bidPrice > openPrice && trailingLevel > stopLoss)
+// check trailing level is above the previos level.
+{
+               trade.PositionModify(ticket,trailingLevel,takeProfit);
+// Modify trailing Stop using "CTrade.trade"
+}
+
+           }
+if
+(
+PositionGetInteger
+(
+POSITION_TYPE
+) ==
+POSITION_TYPE_SELL
+)
+           {
+double
+openPrice =
+PositionGetDouble
+(
+POSITION_PRICE_OPEN
+);
+double
+stopLoss  =
+PositionGetDouble
+(
+POSITION_SL
+);
+double
+takeProfit =
+PositionGetDouble
+(
+POSITION_TP
+);
+double
+bidPrice  =
+SymbolInfoDouble
+(
+_Symbol
+,
+SYMBOL_BID
+);
+double
+askPrice  =
+SymbolInfoDouble
+(
+_Symbol
+,
+SYMBOL_ASK
+);
+ulong
+ticket =
+PositionGetTicket
+(count);
+double
+trailingLevel =
+NormalizeDouble
+(askPrice + (Traling_Step *
+Point
+()),
+_Digits
+);
+if
+(stopLoss < openPrice)
+// No stop loss is true.
+{
+if
+(askPrice < openPrice && trailingLevel < openPrice)
+// Runs only once per position. Sets the first SL.
+trade.PositionModify(ticket,trailingLevel,takeProfit);
+// Modify trailing Stop using "CTrade.trade"
+}
+if
+(askPrice < openPrice && trailingLevel < stopLoss)
+// check trailing level is above the previos level.
+{
+               trade.PositionModify(ticket,trailingLevel,takeProfit);
+// Modify trailing Stop using "CTrade.trade"
+}
+           }
+
+        }
+     }
+  }

@@ -1,0 +1,48 @@
+How It Works?  Let me explain like this (the concept is symple
+)
+:
+-  play GBPUSD as a
+BaseSymbol
+and if SMA is heading up;
+-  go long GBPUSD and hedge EURUSD short to reduce the risk but i also hedge USDCHF long too that's it;
+-  then due to the EA let me show an example;
+-  set the avilable hedge symbol to 3 , EURUSD-USDCHF-USDJPY as defalt if you dont want to hedge USDJPY just set
+"HedgeH3"
+to false but if you want to hedge USDJPY
+-  set
+"H3.followBase"
+to true (default) if you want to send order the
+same way
+of GBPUSD;
+-  set "H3.followBase" to false if you want to send order the
+opposite way
+of GBPUSD with
+"H3.LotsRatio"
+=2 ,as default, that will send the order
+twice
+in lot-size of GBPUSD.
+BUT
+the hedge of GBPUSD-USDJPY will execute only when the correlation between GBPUSD-USDJPY is pass the
+"H3.Expect.CorRelation"
+value.
+-  if you expect -0.90 they will be sent only when correlation is less than -0.90 and either;
+-  if you expect 0.90 they will be sent only when correlation is greater than 0.90 and dont worry each hedge work separately with
+MagicNo,MagicNo+1
+and
+MagicNo+2
+. So please change the "
+MagicNo
+" to something differrent like
+318
+if you want to play another pair as
+BaseSymbol.
+Last thing:
+-  each hedge will be closed when overall profit is greater than
+"Expect.Profit"
+and dont worry about the swap. This EA can auto calculate the profit from swap
+-  if your hedge can make profit from swap the EA will not mention swap only close hedge when reach
+"Expect.Profit";
+-  BUT if your hedge cant make profit from swap the ea will close hedge when total profit (real + swap) is reach
+"Expect.Profit".
+Because of this kind of EA can not test by backtesting so the result is still in forwardtesting process and i've got only this picture:
+Enjoy!

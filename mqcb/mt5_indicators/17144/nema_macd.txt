@@ -1,0 +1,13 @@
+Nema MACD indicator — that calculates MACD using the NEMA.
+Nema
+can calculate all the known variations (offspring) of EMA : EMA, DEMA,TEMA , ... DecEMA, ... and so on, up to "levels" or "depth" 50 (whatever name it would be).
+Some known depths :
+1 -> EMA
+2 -> DEMA
+3 -> TEMA
+....
+10 -> DecEMA
+....
+50 -> the maximal depth calculated by this indicator
+If the depth is set to 1, NEMA is equal to EMA , for depth 2 it is equal to DEMA  , for depth 3 it is equal to TEMA and so on ..., up to depth 50. For depth 1 the calculated MACD is equal to the original Gerald Appel MACD, for any other depth(s) it becomes different. The same depth of NEMA calculation is applied to fast, slow and signal calculation.
+Indicator is already coming with alerts and is multi time frame version.

@@ -1,0 +1,10 @@
+Real author:
+3172552 & KimIV
+A semaphore signal indicator that analyzes the last five bars.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 24.09.2007.
+Figure 1. The i-sig indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2219

@@ -1,0 +1,15 @@
+A simple and effective signal indicator for MetaTrader 5.
+This indicator combines two classic tools, the RSI and a Moving Average (MA), to identify trend-following signals. It is designed to be a clean, non-repainting visual tool, perfect for manual traders or as a signal source for an
+Expert Advisor (EA).
+STRATEGY LOGIC
+The indicator plots an arrow only when both conditions are met:
+Buy Signal (Blue Arrow):
+1.  The closing price is ABOVE the Moving Average (confirming the uptrend).
+2.  The RSI value is ABOVE level 50 (confirming bullish momentum).
+Sell Signal (Red Arrow):
+1.  The closing price is BELOW the Moving Average (confirming the downtrend).
+2.  The RSI value is BELOW level 50 (confirming bearish momentum).
+FEATURES
+- Clean, commented code.
+- All parameters (RSI Period, MA Period) are fully adjustable in the inputs.
+- Uses standard MT5 buffers for signals (ideal for use with iCustom() in an EA).

@@ -1,0 +1,29 @@
+The author of the idea
+:
+Scriptor
+,
+the author of the MQL5 code
+:
+barabashkakvn
+.
+The Expert Advisor places pending Buy Stop and Sell Stop orders. To place an order, the EA searches for the highest and lowest price within the given range of bars (set to 80 in this code). Buy Stop orders are placed at the highest price, Sell Stop are placed at the lowest one.
+The lifetime of pending orders lasts until the end of the current day. Once any of the pending orders triggers, all other orders are deleted.
+An example of operation on EURUSD,M5:
+Input Parameters
+Lots
+- the volume for pending orders
+Stop Loss (in pips)
+- Stop Loss value
+Take Profit (in pips)
+- Take Profit value
+Trailing Stop (in pips)
+- trailing value
+Trailing Step (in pips)
+- trailing step value
+Start hour
+- operation start hour
+End hour
+- operation end hour
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20149

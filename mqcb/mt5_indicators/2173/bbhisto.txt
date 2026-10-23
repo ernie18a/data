@@ -1,0 +1,15 @@
+Real author:
+Nick Bilak
+A trend indicator that uses the
+Standard Deviation
+.
+The author believes that it is one of the most interesting modifications of
+Bollinger Bands
+. It shows the standard deviation in the bar representation.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 01.01.2007.
+Figure 1. The bbhisto indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2173

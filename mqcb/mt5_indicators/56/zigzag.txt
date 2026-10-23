@@ -1,0 +1,7 @@
+The Zigzag indicator is a series of section lines connecting significant tops and bottoms at the price plot.
+Minimum price change parameter determines the percentage for the price to move in order to form a new "Zig" or "Zag" line. This indicator eliminates those changes on the plot we analyze that are less than the given value. Therefore, the Zigzag reflects significant changes only.
+In most cases, we use Zigzag to facilitate the perception of plots as it shows only the most important changes and turns. You can also reveal Elliot Waves and various figures on the plot with its aid.
+It is important to understand that the last section of the indicator may vary depending on the changes of data you analyze. This is one of those indicators, where a change of securities price can provoke a change of the previous value. This ability to correct its values by the following price changes makes Zigzag a perfect tool for analyzing price changes that have already happened. Therefore, you should not try to create a trade system basing on the Zigzag. It is more suitable for analyzing historical data than for making prognoses.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/56

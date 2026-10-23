@@ -1,0 +1,20 @@
+Author of the idea
+—
+Vitaly
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Trading based on indicators: iAlligator (Alligator), iFractals (Fractals). Martingale.
+From the author of the idea:
+In general, the idea is simple. As soon as the lines are grouped in a certain way, a signal is generated. Confirm using fractal, then as usual.
+All features can be disabled. That is, disable entry, exit by indicators, trailing, leave only the martingale, and you can thoughtlessly "mow the loot" before the arrival of Uncle Cole :))
+It shows good profit with drawdowns of 3-9% of the initial deposit during optimization with entries by Alligator and Fractal,trailing enabled and with martingale disabled.
+If necessary, it is possible to reduce the risks, limit the maximum lots, etc.
+Experiment yourselves - you will like it.
+From myself: try it on the M30 timeframe or higher.
+Testing results on EURUSD, H1, from 2016.01.29 to 2016.12.04:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17156

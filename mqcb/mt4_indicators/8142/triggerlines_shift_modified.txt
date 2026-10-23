@@ -1,0 +1,7 @@
+Indicator Triggerlines Shift Modified.
+Parameters:
+int Rperiod=20;
+int RperiodShift=0;
+int LSMA_Period=20;
+int LSMA_PeriodShift=0;
+Triggerlines Shift Modified

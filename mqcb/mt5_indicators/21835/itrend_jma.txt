@@ -1,0 +1,4 @@
+Very well known
+iTrend
+indicator but that uses JMA (Jurik Moving Average) for calculation.
+That makes it "faster" and smoother than the "regular" versions.

@@ -1,0 +1,10 @@
+A new version of indicator MACD Colored.
+Alert_On="ANY";
+EMail_Alert=true;
+Max_Alerts=3;
+Alert_Before_Minutes=15;
+Alert_Every_Minutes=5;
+ShowSignal=true;
+FontSize=8;
+FontColor=Silver;
+MACD_Colored_v103

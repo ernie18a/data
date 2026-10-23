@@ -1,0 +1,11 @@
+You can use this piece of code to set two different groups of volume and compare them.
+E.G (one minute chart example):
+If you set group 1 to 20.
+Group 1: The last 20 bars volume / 20  = You get the average of the last 20 bars.
+If you set group 2 to 60.
+Group 2: The 21th bar up to 60. (it means you will have 40 bars, not 60, if you want 60 you should set it to 80).
+Then, with the average of the last 20 bars and the average of the 21th to 60th bar you can subtract and see the difference between them, or even better, you can divide GROUP 1 / GROUP 2 and see how much the volume has increased.
+Such strategy is fantastic to trade breakouts or trend following.
+You can combine volume analysis with price action.
+So this is a very clean and simple piece of code, but valuable for the ones who are learning mql5 and want to improve their algo trading skills. Worth downloading for studies purposes.
+The return of the function will be called and displayed as a comment on the top of the chart.

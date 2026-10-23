@@ -1,0 +1,40 @@
+Smoothed Range Volume Ratio is an oscillator based on indicator
+Range_Volume_Ratio
+. It shows in a separate window, as a histogram, the candlestick size / tick volume ratios by two parameters:
+Difference between Open and Close;
+Difference between High and Low.
+It also displays a signal line plotted by the method of smoothing the histogram values.
+The color of the histogram columns can be displayed by two methods:
+By the value of the previous column. If the previous column is above the signal line, then the color is green. Otherwise, it is orange;
+One-color histogram - all columns are of one color.
+The indicator has four input parameters:
+Calculation type
+- type of calculations:
+Open/Close
+- difference between Open and Close;
+High/Low
+- difference between High and Low.
+Period
+- smoothing period of the signal line;
+MA Method
+- signal line calculation method;
+Colors setting
+- color settings:
+By previous bar position
+- histogram column color by the value of the previous column;
+One color
+- one color.
+Calculations:
+If the calculation type is Open/Close:
+RVR[i] = Abs(Open[i] - Close[i]) / Volume[i]
+If the calculation type is High/Low:
+RVR[i] = (High[i] - Low[i]) / Volume[i]
+where:
+Volume - the tick volume of the candlestick
+Signal = Moving average(RVR, Period, Method)
+Fig.1. Calculations by Open/Close, one color
+Fig.2. Calculations by Open/Close, the color by the value of the previous column
+Fig.3. Calculations by High/Low, the color by the value of the previous column
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20922

@@ -1,0 +1,4 @@
+Expert Advisor that moves Stop Loss according to Fibonacci retracements or expansions.
+This EA will not make any trade for you, it will only move the stoploss level of your trade according to fibo levels of an expansion or retracement that you place on the chart.
+To use it you just have to create an expansion or retracement and name it "FiboStop". The Stop Loss will be moved a little below or above 2 levels from where the price is.
+For example, if the price is above the 0.786 level, the stoploss will go just under the 0.5 level.

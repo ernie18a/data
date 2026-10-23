@@ -1,0 +1,10 @@
+Real author
+: MT-Coder
+Indicator AverageChangeCandle is a financial asset strength indicator that shows the price impulse. It allows you to know how volatile the market is. This version of the indicator calculates the price impulse for four timeseries (Open, High, Low, and Close) simultaneously and shows them as a candlestick chart.
+The indicator uses the SmoothAlgorithms.mqh library classes (copy it to <terminal_data_folder>\MQL5\Include). The classes were described in detail in the
+Averaging Price Series for Intermediate Calculations Without Using Additional Buffers
+article.
+Fig.1 Indicator AverageChangeCandle
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20675

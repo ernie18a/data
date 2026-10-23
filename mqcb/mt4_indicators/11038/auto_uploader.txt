@@ -1,0 +1,9 @@
+It's a basic script that uploads any open and pending trades to a webserver. The zip file contains an example in PHP and MySQL for saving and checking data.
+I used ghttp.mqh-s GET method in my httpget.mqh file.
+The scripts uploads any open or pending order on the terminal, in the given intervall (default is in every second),
+updates changing data like profit, or TP, or SL.
+Watches historical data for closing or cancelling orders, but only sends the modification if order is really cancelled or closed.
+It only starts to save data for currently open and pending orders, no historical data, but if position is closed then it will remain in db.
+It must be implemented as an indicator to work continually.
+It can be attached to any chart, it will scan for any open trades.
+Any improvement ideas are welcome!

@@ -1,0 +1,20 @@
+The indicator draws the Keltner Channel, which can be calculated using SMMA, EMA and LWMA. Channel borders are calculated based on High-Low or ATR.
+Smoothing periods for the central line and channel border lines are also configurable.
+It has six input parameters:
+Number of the periods to smooth the center line
+- central line smoothing period;
+Number of periods to smooth deviation
+- channel borders smoothing period;
+Factor which is used to apply the deviation
+- multiplier for expanding channel borders;
+The center line applied price
+- price used for calculating the central line (any of seven standard prices);
+The center line smoothing method
+- smoothing method (EMA, SMMA, LWMA);
+Variation Method
+- channel borders calculating method: High-Low or ATR. If ATR is selected, the
+Number of periods to smooth deviation
+parameter will be used for the ATR period.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19825

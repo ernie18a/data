@@ -1,0 +1,4 @@
+This indicator plots fibonacci channel on last swing high low that can be changed from input variable "ExtDepth"
+55 is a best parameter which is set by default. It plots a fibonacci channel with internal levels of 0.236, 0.382, 0.5, 0.618 and 0.786
+You can also change NUMB from input, which will change the trendline to previous swing high low
+These Internal levels are often used by price action traders

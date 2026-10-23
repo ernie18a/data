@@ -1,0 +1,1 @@
+Simple Trailing Stop EA with Trailing Steps and Trailing Start Point

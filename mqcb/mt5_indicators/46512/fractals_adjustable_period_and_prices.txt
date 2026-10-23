@@ -1,0 +1,6 @@
+MQL5 version of MQL4 indicator :
+https://www.mql5.com/en/code/25473
+One of the "classics" but with a twist - unlike the built in fractals indicator, this one allows you to :
+adjust the fractals period (the built in fractal indicator is using period 5)
+chose prices for high and low (might be useful in some cases - in extreme whipsaw market conditions, for example)
+PS: also, the way how fractals are calculated does not prevent having fractal up and fractal down at the same bar and that is a correct way how it should be calculated. Limiting it to just one fractal per bar is introducing a bias that has no mathematical cause

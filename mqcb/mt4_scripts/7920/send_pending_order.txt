@@ -1,0 +1,1 @@
+Send pending order - script sending SELL STOP pending order with expiration data and printing number of ticket.

@@ -1,0 +1,5 @@
+The indicator paints a candle in color corresponding to its direction once per day at a specified time.
+Fig. 1. Time_Candle_Custom indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22981

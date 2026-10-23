@@ -1,0 +1,12 @@
+Real author:
+konKop, GOODMAN, Mstera, af + wellx
+The wlxFractals indicator is designed for drawing Bill Williams' fractals, defining the number of significant bars to the left and to the right.
+The technical definition of Bill Williams' fractal is a series of at least five successive bars, in which there are two bars, before and after the highest maximum, that have lower maximums. The opposite configuration (series of five bars, in which before and after the lowest minimum there are two bars with higher minimums) is a sell fractal. On a chart, the fractals have the values of High and Low, and are indicated by upwards or downwards arrows.
+The signals of the wlxFractals indicator need to be filtered using the technical indicator Alligator. In other words, we should not conclude a buy deal if a fractal is located below the Alligator's teeth, and we should not conclude a sell deal if a fractal is located above the Alligator's Teeth. After the fractal signal is formed and is in force, which is determined by its position beyond the Alligator's Jaws, it remains a signal until it is hit, or until the appearance of a more recent fractal signal.
+The original wlxFractals indicator was developed in the MQL4 language and published in the
+CodeBase
+on 07.08.2006.
+Figure 1. The wlxFractals indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7034

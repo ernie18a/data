@@ -1,0 +1,19 @@
+The Expert Advisor was created to test the profitability of the
+strategy
+described by one of the Forum members.
+SPECIAL ATTENTION!!!
+This Expert Advisor is not created to evaluate the quality of the code and programming style, but only to test the strategy!!!!
+The essence of the algorithm of the Expert Advisor:
+At 15:00 Moscow time, automatically set pending orders Buy Stop and Sell Stop at a distance of 100 points (five digits) from the
+current price
+.
+For each pending order Stop Loss levels of 200 pips (five digits) are set at once. TakeProfit is not used.
+When one of two pending orders triggers, the second pending order is not deleted yet.
+If both pending orders have not triggered, the second pending order will be deleted at 16:00 Moscow time. 00 min. Moscow time
+they are
+deleted
+.
+If one or two pending orders worked, the open or open orders will be deleted at 16:00 Moscow time. 00 min. the open or open positions are closed regardless of their current profit or loss.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/47664

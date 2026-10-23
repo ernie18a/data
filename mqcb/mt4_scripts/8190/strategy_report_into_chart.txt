@@ -1,0 +1,9 @@
+STRATEGY REPORT INTO CHART
+Drawing all results from a strategy tester report file into a chart.
+Usually I use my script for backtesting of my strategy and checking within the chart.
+How to use it ?
+1) Load a file "StrategyTester.htm" into experts/files directory.
+2) Run this script on a appropriate chart.
+If all arrows are displayed in a wrong place with time shift, modify a variable Hour_shift. You can also change colors according to your background color.
+A result of this script can look like that :
+example

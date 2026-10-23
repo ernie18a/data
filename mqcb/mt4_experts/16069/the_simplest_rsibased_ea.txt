@@ -1,0 +1,5 @@
+Expert Advisor based on RSI. Sells at downward crossing of 70, buys at the upward crossing of 30.
+The levels, stop loss and take profit can be specified in the EA settings.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16069

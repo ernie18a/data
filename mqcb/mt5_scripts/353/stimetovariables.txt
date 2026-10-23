@@ -1,0 +1,7 @@
+The script converts the time, represented as
+datetime
+variable into the year, month, day, hour, minutes and seconds.
+It doen't uses MQL5 functions!
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/353

@@ -1,0 +1,12 @@
+MarketInfo is a simple information script for MetaTrader 5. It collects and logs key data for the current instrument: prices, spread, volatility (ATR), time remaining until the bar closes, statistics for N bars, and trend identification.
+Features:
+Displays the current Bid, Ask and spread in pips
+Displays the instrument’s specifications: minimum/maximum lot size, lot increment, number of digits
+Calculates the ATR (Average True Range) for the specified period
+Displays the time remaining until the current bar closes
+Collects statistics for N bars: high, low, average closing price, average volume, range
+Determines the current trend (upward, downward, sideways)
+Displays a comment directly on the chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/77415

@@ -1,0 +1,20 @@
+Indicator
+Sine Wave
+with the timeframe selection option available in input parameters, in form of a colored cloud.
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// The indicator chart period (timeframe)
+For indicator Sinewave_Cloud_HTF to operate, indicator
+Sinewave.ex5
+must be in the <terminal_data_directory>\MQL5\Indicators folder. Similarly, for indicator Sinewave2_Cloud_HTF to operate, indicator
+Sinewave2.ex5.
+must be in the <terminal_data_directory>\MQL5\Indicators folder. Both indicators use in their calculations the values of indicator
+CyclePeriod.ex5
+that must also be available in the folder.
+Fig.1. Indicators Sinewave_Cloud_HTF and Sinewave2_Cloud_HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20944

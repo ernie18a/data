@@ -1,0 +1,11 @@
+Theory :
+Based on the description from here :
+Advance-decline line
+the indicator counts advances and declines of the symbol it is applied to (instead of counting some other instruments, and that is why the "self" in the name comes. Seems to be useful in the "self" form too. Also, since the color change on the slope change alone is not too reliable a signal, this version is adding floating levels to assess the trend (and signals). You can use color changes on :
+slope change
+outer (floating) levels cross
+middle (floating) level cross
+Usage :
+You can use color changes as signals
+PS:
+the big picture" example

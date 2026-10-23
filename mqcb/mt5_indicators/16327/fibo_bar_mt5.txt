@@ -1,0 +1,11 @@
+The indicator draws Fibonacci levels based on the last bar. When a new bar appears, the levels are redrawn.
+Parameters
+Last Bar for Fibo — timeframe to look for the last bar;
+Upper color — color of upper lines;
+Main color — color of middle lines;
+Lower color — color of lower lines;
+Style lines — line style;
+Line Width — line width.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16327

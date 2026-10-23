@@ -1,0 +1,63 @@
+First Version
+An additional Indicator. It shows closed deals on the chart and current account statistics.
+It shows current account statistics and green labels for long positions, red for short positions and grey for close points.
+Also it draws a lines for deals from open to close with color depending on the position result (green for profitable trades and red for losses)
+I am using it to prepare trade reports. It is very useful for analysis, because it shows the trade results in a very useful form.
+The code has comments.
+After its delete from the chart it deletes all of the objects which has been created by indicator.
+An indicator has several parameters:
+DealMarkers = True; // Show deals
+DepoStats = True; // Show statistics
+clAccName = Silver; // Account name color
+clInfData = Gray; // Account Information color
+FontSize = 8; // Font size
+LeadingSpase = 9; // Spaces for alignment
+clLineProfit = Lime; // Color for profitable deals
+clLineLoss = Red; // Color for deals with losses
+clMarkerBuy = Lime; // Color for buy label
+clMarkerSell = Red; // Color for sell label
+clMarkerClose = Silver; // Color for close label
+PS. The author thanks
+KimIV
+and
+xrust
+Editor's remark:
+Note that it's a mirror translation of the
+original Russian version
+.
+If you have any questions to the author, suggestions or comments, it's better to post them
+there
+.
+If you have found this code useful for trading or educational purposes, don't forget to thank author.
+=============================================================================================================================================
+Version #4
+Fixed "zero divide" error
+Added Magic filter
+Added labels for non-closed positions
+TP&SL levels
+Lang switcher
+After its delete from the chart it deletes all of the objects which has been created by indicator.
+All parameters:
+Lang_Eng = True; // Englesh or not (Russian)
+DealMarkers = True; // Show deals
+DepoStats = True; // Show statistics
+ShowLive = True; // Show price markers for non closed deals
+MagicFilter = ""; // comma separated (without space) MagicNumbers to show deals with only selected Magics
+clAccName = Silver; // Account name color
+clInfData = Gray; // Account Information color
+FontSize = 8; // Font size
+DigitsLength = 9; // Length of digits (for alignment)
+PercentLength = 5; // // Length of Percent (for alignment)
+clLineProfit = Lime; // Color for profitable deals
+clLineLoss = Red; // Color for deals with losses
+clMarkerBuy = Lime; // Color for buy label
+clMarkerSell = Red; // Color for sell label
+clMarkerClose = Silver; // Color for close label
+Here "ShowLive = True". Can see TP&SL levels.
+One order closed by TP.
+Recomendations:
+in Account History use All History
+if use "ShowLive = True" turn off trade levels (Tools > Option > Charts > [ ] Show trade levels)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9322

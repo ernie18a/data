@@ -1,0 +1,10 @@
+The indicator is implemented on the basis of the standard CCI indicator. It draws three lines of different periods in one subwindow.:
+Red Line
+- period М1,
+Green Line
+- period Н1,
+Blue Line
+- period D1.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8455

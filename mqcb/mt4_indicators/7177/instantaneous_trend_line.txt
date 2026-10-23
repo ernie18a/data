@@ -1,0 +1,7 @@
+Author:
+Aborigen
+One of the indicators I recommend to novices as the entry indicator.
+One of the best methods for training the main precepts of trading (to set stops, not to set take profits, to let profit grow, to exit at flats and so on).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7177

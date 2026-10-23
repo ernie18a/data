@@ -1,0 +1,3 @@
+Description:
+This a bollinger band indicator with an extra deviation level.
+If you keep the period at 25 and deviations of 1.0 and 2.0, It will show you all your resistance and support lines. And also overbought and oversold levels.

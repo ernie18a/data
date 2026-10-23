@@ -1,0 +1,7 @@
+A variation of the Laguerre filter indicator.
+Instead of showing just one single value of the Laguerre filter, this indicator is showing all the intermediate steps that are used in Laguerre filter calculation. That way we can use it in more ways than the original indicator:
+Use it as a kind of support/resistance indicator.
+Use it as a kind of Stop Loss indicating values.
+Use it as an estimation of the strength of the trend (or ranging).
+And use it in the "classical" - trending way.
+Prices set is extended compared to built in prices. Gamma is used the way it was designed in the original

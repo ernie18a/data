@@ -1,0 +1,41 @@
+The author of the idea
+:
+Mark
+,
+the MQL5 code author
+:
+barabashkakvn
+.
+The Expert Advisor searches for position opening conditions only on a new bar (performs operations at the moment of new bar emergence), while
+Virtual Profit
+is controlled on every tick. When a condition for opening a position is found (a check is performed for the Base symbol on which the EA is running), the EA opens two positions at once: on the Base symbol and on the
+Hedge symbol
+.
+An example of launch on the USDJPY symbol, while the
+Hedge symbol
+is USDCHF:
+Input Parameters
+Lots
+- position volume for each symbol;
+Virtual Profit (in money)
+- profit (in money), after reaching which all positions will be closed;
+Hedge symbol
+- the second symbol;
+Fast Moving Average Parameters:
+MA Fast: averaging period;
+MA Fast: horizontal shift;
+MA Fast: smoothing type;
+MA Fast: type of price;
+MA Slow: averaging period.
+Slow Moving Average Parameters:
+MA Slow: horizontal shift;
+MA Slow: smoothing type;
+MA Slow: type of price.
+RSI Parameters:
+RSI: averaging period;
+RSI: type of price.
+magic number
+- unique identifier for the EA.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20222

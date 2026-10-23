@@ -1,0 +1,2 @@
+This indicator for draw an Arrows for buy & sell, it's Depends on ADX Indicator
+http://forum.m-e-c.biz/post397645-1.html

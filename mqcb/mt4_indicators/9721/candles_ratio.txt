@@ -1,0 +1,4 @@
+PeriodCN - count compared candles.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9721

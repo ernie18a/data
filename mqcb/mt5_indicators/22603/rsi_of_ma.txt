@@ -1,0 +1,22 @@
+RSI of MA is an exponentially smoothed RSI based on exponential moving average data.
+It has six input parameters:
+Source EMA period
+- initial EMA calculation period
+Source applied price
+- initial EMA calculation price
+RSI period
+- RSI calculation period
+EMA of RSI period
+- smoothing EMA period
+Overbought
+- overbought level
+Oversold
+- oversold level
+Calculation:
+RSIofMA = EMA(RSI, EMA of RSI period)
+where:
+RSI - RSI(SrcMA, RSI period)
+SrcMA - EMA(Source applied price, Source EMA period)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22603

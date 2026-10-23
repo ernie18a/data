@@ -1,0 +1,6 @@
+Many traders consider "round" levels (to be more exact, the levels, the vertical coordinate of which (in points) ends with "00") as the levels of resistance/support. Example: the levels of 1.5800 and 1.5900 for EURUSD. Indicator RoundLevels draws two "round" nearest levels above and below the current price level.
+The indicator is rather created to facilitate manual trading. It has 4 buffers that store the values of vertical coordinates of these levels. However, in this present realization, only the last value of each buffer has an exact sense.
+The external variable LineWidth says for the thickness of lines composing the "round" levels. The variable KeepTraces regulates whether to keep the buffer values calculated on the preceding candlesticks.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8015

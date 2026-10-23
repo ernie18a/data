@@ -1,0 +1,7 @@
+The indicator represents 8 lines that divide the price range into the different channels (regions). Usually, it is placed on the Ichimoku, but can be used with the separate Kijun-Tenkan+.mq4 indicator.
+A general description of the indicator and the description of the possibilities of its usage are given at the page:
+http://www.viac.ru/cd/159
+P.S. It is a new version dated 13/06/2006 - the error of drawing the channel in the future was corrected (it had the error for a bar).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8178

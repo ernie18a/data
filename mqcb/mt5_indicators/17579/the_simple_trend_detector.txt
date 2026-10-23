@@ -1,0 +1,10 @@
+Real author
+: BECEMAL
+A simple oscillator that uses the difference between candlestick open and close prices. The indicator is similar to RSI and DeMarker, but is more sensitive. Should be used similarly.
+This indicator was first implemented in MQL4 and published in the
+CodeBase
+on 26.07.2010.
+Fig1. The STD indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17579

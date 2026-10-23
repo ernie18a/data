@@ -1,0 +1,14 @@
+Period Extreme indicator.
+It has one configurable parameter:
+Period
+- calculation period
+It sets signal pointers if
+Close price exceeds High price in the Period range -
+green
+pointer of the maximum price per period
+Close price falls below the minimum price in the Period range -
+red
+pointer of the minimum price per period
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21414

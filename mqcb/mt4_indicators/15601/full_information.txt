@@ -1,0 +1,3 @@
+Description:
+Show full information: price, symbol, timeframe, date, time, spread, swap, stop out level, your name...
+Input window:

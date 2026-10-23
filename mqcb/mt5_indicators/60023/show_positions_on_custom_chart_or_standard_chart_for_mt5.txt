@@ -1,0 +1,6 @@
+This indicator is a utility that shows labelled trade levels on any chart. If you want to replace your native trade levels on a native chart, then turn off "Show trade levels" in your F8 Chart Properties and attach this indicator. If you want to show trade levels on a Custom Chart (where native trade levels cannot be shown), then simply attach this indicator.
+BaseSymbol - specify the Symbol from which the trade level data will be pulled--handy for unique Custom Symbols.
+TextBarsBack - specify the number of bars back in history from the current bar where the level labels will be drawn.
+Note: Although magic number is referenced in the code, it is not presently included in the trade lines.
+If you're running multiple EA's on the same Symbol, you can edit the code to show magic numbers and then run multiple instances of the indicator on one chart. You can also edit the font sizes and text spacing in the object properties as needed for different display resolutions.
+.

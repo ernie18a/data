@@ -1,0 +1,23 @@
+Fan Moving Averages with Average line is a moving average fan in the form of an oscillator in a separate window with the average line.
+Oscillator values oscillate with the +1/-1 range
+It has eight adjustable parameters:
+First MA period
+- first MA calculation period
+MA method
+- calculation method
+Applied price
+MA count
+- number of MAs in the fan
+Incremental method
+- method of incrementing MA period values:
+Addition
+Multiplication
+Coefficient of increment
+- increment ratio
+Smoothing period
+- middle line smoothing period
+Smoothing method
+- middle line calculation method
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22503

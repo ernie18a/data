@@ -1,0 +1,32 @@
+Breakeven Line Indicator
+is a MetaTrader indicator that calculates breakeven level based on all open positions and displays it on your chart as a horizontal line. Additionally, it will calculate the total number trades, the total number of lots, and the distance to the breakeven line in points and profit/loss. The indicator is available for both MT4 and MT5.
+You can press the
+Shift + B
+keyboard shortcut to hide or show the breakeven line. The indicator supports multiple input parameters to configure the calculations and the looks.
+Input parameters
+IgnoreLong
+(default = false) — if
+true
+, the indicator will ignore long positions and will only calculate the breakeven line based on short positions.
+IgnoreShort
+(default = false) — if
+true
+, the indicator will ignore short positions and will only calculate the breakeven line based on long positions.
+line_color_buy
+(default = clrTeal) — the color for the breakeven line when the total cumulative position is long.
+line_color_sell
+(default = clrPink) — the color for the breakeven line when the total cumulative position is short.
+line_color_neutral
+(default = clrSlateGray) — the color for the breakeven line when the total cumulative position is neutral.
+line_style
+(default = STYLE_SOLID) — the breakeven line style.
+line_width
+(default = 1) — the breakeven line width.
+font_color
+(default = clrSlateGray) — text color.
+font_size
+(default = 12) — text size.
+font_face
+(default = "Courier") — text font face.
+ObjectPrefix
+(default = "BEL") — the prefix for chart objects' names. It lets the indicator avoid conflicts with other chart tools.

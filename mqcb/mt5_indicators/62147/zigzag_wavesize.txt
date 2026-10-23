@@ -1,0 +1,26 @@
+Development of the previous version of
+ZigZag WaveSize MT4
+indicator
+Overall Improvements:
+Code adaptation for MetaTrader 5
+Optimised work with graphical objects
+New:
+Horizontal levels on extrema
+Selecting the type of levels: horizon/beams/sections
+Liquid levels filter (not broken by price)
+Breakout buffer: setting sensitivity to false breakouts
+Labels customisation and functionality: number, appearance, deleting old labels
+Structure breakdown alerts (BoS)
+Change of motion pattern alerts (ChoCH)
+Optimisation:
+Fix extremum update logic
+Dynamic update of new objects
+Load reduction when bars appear
+Centralised label system
+Fixes:
+Fixed array overruns
+Correct positioning of labels
+Removed duplicate parameters
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/62147

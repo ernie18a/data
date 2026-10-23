@@ -1,0 +1,7 @@
+Closing positions when reaching the
+Close all if Profit
+level. The overall profit on all positions is considered regardless of the symbol or magic number.
+A profit is calculated only when a new bar appears.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22827

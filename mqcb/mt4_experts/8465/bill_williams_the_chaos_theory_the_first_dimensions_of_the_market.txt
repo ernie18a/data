@@ -1,0 +1,26 @@
+Strategy Author:
+Bill Williams.
+EA Author:
+Electronic journal ForTrader.ru".
+Enter :
+The fractal for buying - a series of five consecutive bars in which two bars with lower maximums stand before the highest maximum and two - after it.
+The fractal for selling - a series of five consecutive bars in which two bars with the higher minimums stand before the lowest minimum and two - after it.
+The fractals for buying and selling may consist of the same bars.
+The fractals set the following signals:
+if a fractal for buying is above the Alligator's teeth (red line) then the pending order Buy Stop for opening the position should be placed one pips higher than the maixmum of the bar the fractal was formed at;
+if a fractal for selling is below the Alligator's teeth then the pending order Sell Stop should be placed one pips lower than the minimum of the bar the fractal was formed at.
+The fractals will be active either till the moment of their "defeat" or till the new fractal in the same direction appears (in this case the previous signal is cancelled and the pending order is taken away).
+It is critically important where the fractal was "defeated", i.e. which bar to enter the market at after the passage of fractal. If the bar is beyond the Alligator's teeth then such trade is allowed.
+Exit:
+The method of exiting the market that is sensitive to the price dynamics allows to fix the profit within the last 10 % of the trend taking about 80% of the movement (according to B. Williams).
+Bill Williams proposed several methods of placing the Stop Loss orders:
+If a trend exists at the market then you should close the positions if the bar crosses with its close price the Alligator's teeth (the red line).
+We use the Alligator's jaws (the green line) as a level for the Stop Loss order on an impetuous market. The market is considered to be impetuous if the inclination angle of the price is greater than the inclination angle of the green line. By this and the previous methods the Stop Loss order is moved to the level of the red or the green line of the next bar at the end of the current bar.
+We place the Stop Loss order after the appearance of the fifth consecutive bar in the green (red) zone (this method was considered above in the description of the zone trading).
+If a signal in the opposite direction appears then we close the opened position.
+Read the research of the pattern in the
+31-st issue
+of the electronic journal for traders.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8465

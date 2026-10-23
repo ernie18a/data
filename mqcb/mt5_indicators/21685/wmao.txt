@@ -1,0 +1,19 @@
+WMAO (Wilder's Moving Average Oscillator) - an oscillator based on
+Welles Wilder's Moving Average
+.
+The indicator has three input parameters:
+Fast WMA period
+- fast WMA calculation period;
+Slow WMA period
+- slow WMA calculation period;
+WMA applied price
+- price used for the calculation of both WMAs.
+Calculations:
+WMAO = FastWMA - SlowWMA
+where:
+FastWMA = WMA(WMA applied price, Fast WMA period)
+SlowWMA = WMA(WMA applied price, Slow WMA period)
+WMA = Wilders Moving Average
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21685

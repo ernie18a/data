@@ -1,0 +1,10 @@
+Real author:
+Luis Guilherme Damiani
+An MA-based trend filter in the form of a colored cloud.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 22.01.2008.
+Figure 1. The Instantaneous_TrendFilter indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1990

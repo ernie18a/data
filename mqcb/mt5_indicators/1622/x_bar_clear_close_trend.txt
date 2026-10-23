@@ -1,0 +1,11 @@
+To define the trend reversal, the indicator does not use any Moving Averages, or parameters connected with the distance passed by the price. The only criteria is the breakthrough of maximums / minimums of the previous bars.
+More particularly:
+reversal upwards is formed, if the current bar closing is higher than high of previous (x-1) bars.
+reversal downwards is formed, if the current bar closing is lower than low of previous (x-1) bars.
+EURUSD D1. The number of bars in the pattern is 10:
+Recommendations:
+The less the number of bars in the pattern, the more sensitive indicator. In my opinion, the reasonable range of values is from 3 to 15.
+As a variant of using: use the XBarClearCloseTrend indicator to determine the direction of the trend and any other instrument to determine the points of entry. It should be noted that the idea of creation of the indicator formed on the basis of the pattern which I used to define the points of entry / exit.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1622

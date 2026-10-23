@@ -1,0 +1,189 @@
+The indicator displays the vertical time grid with three hours step on a chart with intraday timeframe not exceeding H3. The indicator is also not displayed on H2.
+Indicator input parameters:
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+//---- general settings
+input
+string
+LinesSirname=
+"VGridLine_Intraday_X3"
+;
+// Line name
+input
+uint
+WeeklyTotal=
+4
+;
+// Number of weeks in history for indexing
+input
+uint
+FutureTotal=
+1
+;
+// Number of lines in future for indexing
+//---- settings for week bars
+input
+color
+Line_Color_W=Gold;
+// Week line color
+input
+STYLE Line_Style_W=SOLID_;
+// Week line style
+input
+ENUM_WIDTH Line_Width_W=w_5;
+// Week line width
+input
+bool
+SetBackground_W=
+true
+;
+// Week line background display
+input
+uint
+FutureTotal_W=
+1
+;
+// Number of lines in empty future history
+//---- settings for day bars
+input
+color
+Line_Color_D=Red;
+// Day line color
+input
+STYLE Line_Style_D=SOLID_;
+// Day line style
+input
+ENUM_WIDTH Line_Width_D=w_5;
+// Day line width
+input
+bool
+SetBackground_D=
+true
+;
+// Day lines background display
+//---- settings for intraday bars (3 hours)
+input
+color
+Line_Color_D1=Gray;
+// 3 hours line color
+input
+STYLE Line_Style_D1=DASHDOTDOT_;
+// 3 hours line style
+input
+ENUM_WIDTH Line_Width_D1=w_1;
+// 3 hours line width
+input
+bool
+SetBackground_D1=
+true
+;
+// 3 hours line background display
+//---- s
+ettings for intraday bars
+(6 hours)
+input
+color
+Line_Color_D2=Gray;
+// 6 hours line color
+input
+STYLE Line_Style_D2=SOLID_;
+// 6 hours line style
+input
+ENUM_WIDTH Line_Width_D2=w_2;
+// 6 hours line width
+input
+bool
+SetBackground_D2=
+true
+;
+// 6 h
+ours line background display
+/---- settings for intraday bars (9 hours)
+input
+color
+Line_Color_D3=Gray;
+// 9 hours line color
+input
+STYLE Line_Style_D3=DASHDOTDOT_;
+// 9 hours line style
+input
+ENUM_WIDTH Line_Width_D3=w_1;
+// 9 hours line width
+input
+bool
+SetBackground_D3=
+true
+;
+// 9 hours line background display
+//---- settings for intraday bars (12 hours)
+input
+color
+Line_Color_D4=Magenta;
+// 12 hours line color
+input
+STYLE Line_Style_D4=SOLID_;
+// 12 hours line style
+input
+ENUM_WIDTH Line_Width_D4=w_2;
+// 12 hours line width
+input
+bool
+SetBackground_D4=
+true
+;
+// 12 hours line background display
+//---- settings for intraday bars (15 hours)
+input
+color
+Line_Color_D5=Gray;
+// 15 hours line color
+input
+STYLE Line_Style_D5=DASHDOTDOT_;
+// 15 hours line style
+input
+ENUM_WIDTH Line_Width_D5=w_1;
+// 15 hours line width
+input
+bool
+SetBackground_D5=
+true
+;
+// 15 hours line background display
+//---- settings for intraday bars (18 hours)
+input
+color
+Line_Color_D6=Blue;
+// 18 hours line color
+input
+STYLE Line_Style_D6=SOLID_;
+// 18 hours line style
+input
+ENUM_WIDTH Line_Width_D6=w_2;
+// 18 hours line width
+input
+bool
+SetBackground_D6=
+true
+;
+// 18 hours line background display
+//---- settings for intraday bars (21 hours)
+input
+color
+Line_Color_D7=Gray;
+// 21 hours line color
+input
+STYLE Line_Style_D7=DASHDOTDOT_;
+// 21 hours line style
+input
+ENUM_WIDTH Line_Width_D7=w_1;
+// 21 hours line width
+input
+bool
+SetBackground_D7=
+true
+;
+// 21 hours line background display
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/621

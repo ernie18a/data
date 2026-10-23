@@ -1,0 +1,6 @@
+The indicator can be used at any time frames
+The Following input parameters can be easily changed:
+nPeriod = 13;
+Deviation = 1.618;
+MaShift = 0;
+Image:

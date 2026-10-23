@@ -1,0 +1,8 @@
+The indicator of the star sky on the black chart. It replaces the usual black background of the chart for the background of the star sky with falling and glittering stars.
+It extends the trade in the market by positive emotions.
+External parameters:
+CountStars
+- Number of stars
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1183

@@ -1,0 +1,7 @@
+Indicator  SHI_Channel_true shows Barishpolts' dynamic moving channels in the chart in automated mode.
+The indicator finds the neares (in terms of time) fractal in history, searches for the next one, and connects them with a line. Then it draws a parallel line on the maximal fractal on the opposite side. Then it draws a midline between these two lines.
+Parameters
+(in brackets - the default value of the parameter):
+BarsForFract(0) - Length of the fractal "arm".
+A classical fractal consists of five bars: an extremum and two bars ("arm" is equal to 2) by each side. However, the length of the "arm" can be increased. If the parameter is 0, the length of the "arm" depends on the chart time interval and is determined by the program automatically.
+The indicator works on all currency pairs and on all timeframes starting with М1.

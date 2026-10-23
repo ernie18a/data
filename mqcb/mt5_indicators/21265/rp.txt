@@ -1,0 +1,17 @@
+Indicator RP (Range Position) displays the price position within the range (from Low to High) reached over the previous N periods.
+It has four configurable parameters:
+Range period
+- range calculation period;
+First level
+- the first level;
+Second level
+- the second level;
+Third level
+- the third level.
+Calculations:
+RP = 100 * (Close - Min) / (Max - Min)
+where:
+Max, Min - the highest and the lowest prices within the Period
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21265

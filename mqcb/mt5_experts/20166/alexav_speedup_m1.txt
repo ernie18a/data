@@ -1,0 +1,14 @@
+The author of the idea
+:
+Scriptor
+,
+the author of the MQ5 code
+:
+barabashkakvn
+.
+The Expert Advisor opens two opposite positions at the moment of formation of a bar.
+One of the positions should be closed with Stop Loss, and the other one should close with profit with the help of the Trailing Stop function.
+When testing the Expert Advisor, check its parameters in two tick generation modes ("Every tick based on real ticks" and "Every tick"), because positions are only opened on a new bar, while the Trailing function works on every tick (the possibility of trailing is checked on every tick). An example of such a situation when testing on EURUSD, M1:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20166

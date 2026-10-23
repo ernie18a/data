@@ -1,0 +1,41 @@
+The real author:
+Dserg
+The indicator searches for 4 fractals located on one of the horizontal lines. Four most closely (horizontally) located fractals output as levels. The window of Nbars bars is used for calculation. The initial shift of the window is set by the input parameter of the Nfirst indicator. The minimum distance between the levels or fractals can be set.
+Input parameters:
+//+----------------------------------------------+
+//| Input parameters of the indicator            |
+//+----------------------------------------------+
+input
+int
+Nbars_=
+150
+;
+//The width of the window on which the levels are searched
+input
+int
+Nfirst=
+0
+;
+//Shift of the right bar for the window
+input
+double
+minDiff=
+300.0
+;
+//The minimum distance between levels in points
+input
+int
+minBars=
+5
+;
+//The minimum distance between fractals in bars
+Calculation of the indicator can take up to half a minute with a number of bars more than 200 in the calculation window! But despite the slowness of the indicator, it is quite promising and successful at work.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 23.02.2010.
+Links to the similar subjects
+https://www.mql5.com/ru/forum/124080
+Fig.1 The Dserg-PPZ indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1476

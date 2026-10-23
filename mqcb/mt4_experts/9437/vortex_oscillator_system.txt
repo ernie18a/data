@@ -1,0 +1,27 @@
+The Vortex Oscillator is an oscillator created by taking the difference between the VI+ and VI- lines of the Vortex Indicator and plotting the result as a histogram. The histogram oscillates around the zero line.
+This system incorporates several features that are absent from the Vortex Indicator System. With all options turned off, the system functions as a simple reversal system, closing out a long trade on a sell signal and reversing to short, and closing out a short trade on a buy signal and reversing to long. The options include using a Stop Loss and/or Take Profit for long trades, and using a Stop Loss and/or Take Profit for short trades. It also has separate settings for the thresholds at which the Vortex Oscillator flashes buy or sell signals. When these options are turned on, the system will exit a trade as appropriate, but will not enter a new trade until there is a buy or sell signal.
+I have tested the code to be sure it works as I have intended, and does indeed seem to work. However, I do not present this Expert Advisor as one that will be profitable. It is presented only as a foundation for further exploration of the Vortex Oscillator as a trading tool. My preliminary tests indicate that in its current form, it is NOT a profitable system.
+DISCLAIMER: This Expert Advisor is provided as-is, and NO representation is made that this system will be profitable in real trading with real money. It is provided solely for educational purposes. Do not use it to trade your real money account with real money unless and until you have tested it and adapted it to suit your risk tolerance and trading style.
+Important Note
+: You must have the
+Vortex Oscillator
+in your ...experts\indicators directory for this Expert Advisor to work, as it uses the
+iCustom()
+function to pull the values of the Vortex Oscillator.
+Revision: External variable names
+Use_Buy_Stop
+,
+Use_Sell_Stop
+,
+VO_Buy_Stop
+and
+VO_Sell_Stop
+have been updated to
+Use_Buy_StopLoss
+,
+Use_Sell_StopLoss
+,
+VO_Buy_StopLoss
+and
+VO_Sell_StopLoss
+, respectively, to avoid confusion as to their function.

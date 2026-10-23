@@ -1,0 +1,4 @@
+An oscillator with the signal lines that are received from the other pairs. It is intended to work with EURUSD on M1, the signals are synthesized from Yen and Franс, the summary mode is present, you can hide an unnecessary signal, MA methods and the price modes correspond with the description in the documentation.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8148

@@ -1,0 +1,16 @@
+Wildhog oscillator displays asset's overbought/oversold states, as well as searches for divergences. It works on any timeframe.
+The system is based on the last High, Low and Close eight bars.
+The indicator has three input parameters:
+Period
+- calculation period
+Overbought
+- overbought level
+Oversold
+- oversold level
+Calculation:
+Wildhog = 100 * (Close-Min) / (3 * (Max-Min)) + PrevWildhog
+where:
+Max, Min are the highest and lowest prices within the Period interval
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21393

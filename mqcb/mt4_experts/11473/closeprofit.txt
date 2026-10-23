@@ -1,0 +1,18 @@
+Close@Profit is an EA that close orders after defined profit or loss.
+You can define if to close only trades on current symbol or to close all orders on all symbols, to close only opened trades or also delete pending orders.
+Based on
+Close at Profit
+idea from
+Matus German
+but including Commissions, Swaps and changes in UI.
+Input variables
+UseProfitToClose = true; - if it is true the EA will close trades when the profit is greater than defined profit to close
+ProfitToClose = 100; - the defined profit in account currency, when close trades
+UseLossToClose = false; - if it is true the EA will close trades when the loss is greater than defined loss to close
+LossToClose = 100; - the defined loss in account currency, when close trades
+AllSymbols = true; - if it is true the EA closes trades on all symbols, if false- only on current symbol where EA is attached
+PendingOrders = true; - if it is true the EA closes also pending orders, on all symbols or current symbol depends on AllSymbols setting
+MaxSlippage = 3; - maximal allowed slippage in pip
+LegendColor = White; - color of label text
+VariablesColor = Gold; - color of variables
+FontSize = 8; - Font size

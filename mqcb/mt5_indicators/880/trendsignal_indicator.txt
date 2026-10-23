@@ -1,0 +1,4 @@
+After the huge success of my
+TrendSignal indicator for MetaTrader 4
+which being the top rated and the most downloaded over 90 K downloads, now I am making the same available for MetaTrader 5 enjoy.
+Use on higher time frame as 1H & 4H which yields lowest risk/reward where target could be as high 200+ pips.

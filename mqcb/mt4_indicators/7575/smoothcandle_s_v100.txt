@@ -1,0 +1,2 @@
+Author: Varus Henschke
+Indicator SmoothCandle S v1.00

@@ -1,0 +1,2 @@
+T3 velocity is not a velocity smoothed by T3 —  this is a completely new indicator that uses T3 to calculate velocity.
+Velocity as is is a much smoother momentum and using T3 makes it even smoother. It inlcudeds original Tim Tillson calculation as wel as the modified Fulks/Matulich calculation. Usual choice of 20 prices added and gradient coloring for easier momentum determination.

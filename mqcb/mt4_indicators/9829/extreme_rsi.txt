@@ -1,0 +1,3 @@
+Description:
+Draws arrows when RSI returns back from extreme zone.
+Expert advisor edition is in the codebase (Easiest RSI).

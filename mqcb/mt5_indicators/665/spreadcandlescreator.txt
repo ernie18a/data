@@ -1,0 +1,5 @@
+The indicator builds a candlestick chart consisting of floating spread current values in online mode.
+The main objective is observation of a definite broker spread changes. The indicator displays candlesticks online only, the candlestick chart is not saved and stored anywhere.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/665

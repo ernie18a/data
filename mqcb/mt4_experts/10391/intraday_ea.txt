@@ -1,0 +1,15 @@
+I have written the attached EA. I do not have a coding background and have been learning MQL4 for the last 2 weeks.
+I have managed to build the backbone of this EA using an MQL4 code builder which i then manually tweaked. I have run this on a back test but have not been having much success in getting the logic to enter and exit trades when I want them to execute.
+I basically have derived from a bollinger band system the following, on a standard 20,2,2 indicator based on a 15min chart:
+Where:
+A single buy is when the price goes
+below
+the band (20,2.4,2.4) and then the price retraces back to the (20,1,1) and the trade should take profit where also the SL can be manually set at say 100 pips, but i'd like to test this with maybe 50 pips.
+A single sell is when the price goes
+above
+the band (20,2.4,2.4) and then the price retraces back to the (20,1,1) and the trade should take profit where also the SL can be manually set at say 100 pips, but i'd like to test this with maybe 50 pips.
+The question:
+If you run the attached program you will find that sometimes the entry point in 1 bar in delay or more and sometimes the code misses the entry entirely.
+Is there anyone out there that has more experience than me and can help me out with this very frustrating issue. I would really appreciate any feedback.
+Many thanks
+Steve

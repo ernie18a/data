@@ -1,0 +1,71 @@
+Citation:
+Let's continue the Tartan's topic "50 pips a day", but slightly from the other side, as I see it.
+You can take the guaranteed 50-60-100 pips if you enter from the flat. Everybody has noticed a long time ago that when the price consolidates the movings interwine in a strap. A great movement ripens and I suggest to take and put in a pocket a part of this movement. I found the i-CA indicator instead of movings, it is more comfortable to place the stops after it and it is more demonstrative. May be it has some other advantages I didn't examine it deeply.
+At the request of mates from Alpari I drawn the quant of the EA e-CA-5 (uploaded) on a break through of one i-CA line. It seemed to me that one is too little for a guaranteed profit, so I added another two with different parameters. Now look what is the result.
+Attention:
+It works with the
+i-CA
+indicator.
+Input Parameters:
+extern
+double
+TakeProfit
+=
+60
+;
+extern
+int
+StopLoss
+=
+40
+;
+extern
+double
+Lots
+=
+0.1
+;
+extern
+int
+Trailing
+=
+0
+;
+extern
+int
+Step
+=
+0
+;
+extern
+int
+MA
+.
+Period
+=
+35
+;
+extern
+int
+MA
+.
+method
+=
+0
+;
+//MODE_SMA
+extern
+int
+sigma_b
+=
+5
+;
+extern
+int
+sigma_s
+=
+5
+;
+e-CA
+An Example of Working:
+Also see the attached Zip file.

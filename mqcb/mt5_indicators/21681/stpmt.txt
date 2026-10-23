@@ -1,0 +1,32 @@
+The STPMT (Medium Term Weighted Stochastics) indicator.
+The indicator has twenty six customizable parameters, of which 24 parameters are four similar blocks of parameters having six input values ​​for each of the four stochastics used for the calculation:
+Stochastic N %K period
+- the period of the K line of Stochastic N;
+Stochastic N %D period
+- the period of the D line of Stochastic N;
+Stochastic N Slowing
+- the slowdown period of Stochastic N;
+Stochastic N Method
+- the calculation method for Stochastic N;
+Stochastic N Price field
+- stochastic N calculation price type;
+Stochastic N Weight
+- the weight of stochastic N;
+...
+Signal line period
+- signal line period;
+Show components
+- show data of stochastic indicators used for calculation.
+Calculations:
+STPMT = (Stoch 1 Weight * St1 + Stoch 2 Weight * St2 + Stoch 3 Weight * St3 + Stoch 4 Weight * St4) / SumWeight
+where:
+SumWeight = Stochastic 1 Weight+Stochastic 2 Weight+Stochastic 3 Weight+Stochastic 4 Weight
+St1 = Stochastic(Stoch 1 Price field, Stoch 1 %K period, Stoch 1 %D period, Stoch 1 Slowing, Stoch 1 Method)
+St2 = Stochastic(Stoch 2 Price field, Stoch 2 %K period, Stoch 2 %D period, Stoch 2 Slowing, Stoch 2 Method)
+St3 = Stochastic(Stoch 3 Price field, Stoch 3 %K period, Stoch 3 %D period, Stoch 3 Slowing, Stoch 3 Method)
+St4 = Stochastic(Stoch 4 Price field, Stoch 4 %K period, Stoch 4 %D period, Stoch 4 Slowing, Stoch 4 Method)
+Fig. 1. Medium Term Weighted Stochastics
+Fig. 2. Medium Term Weighted Stochastics + data of Stochastics used
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21681

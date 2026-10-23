@@ -1,0 +1,38 @@
+The EA downloads the quote history of the current chart symbol and period by "pressing Home button". The method is based on the idea implemented in the
+s-Downloader от Talex
+script (
+CodeBase link
+).
+The main difference from s-Downloader is that only the bars of the current timeframe are downloaded up to the specified time. Personally, I find this more convenient since I conduct tests on a single TF (the one I usually work with).
+In this implementation, the EA is executed on a single start() iteration. This caused some difficulties with obtaining the number of bars in the chart window and the time of the first bar. Therefore, the EA takes these data from the global variables updated using the
+HistoryDownloaderI
+indicator (in the attachment). Actually, apart from updating the global variables, the indicator does nothing more :)
+The attachment contains the EA (
+HistoryDownloader.mq4
+), the indicator (
+HistoryDownloaderI.mq4
+) and the archive with both source codes + compiled files (
+HistoryDownloader.zip
+)
+How to use all that:
+Press Ctrl+О, check the maximum bars in history and on the chart;
+Open the chart window of a necessary symbol and select the TF the history is to be downloaded for;
+Disable auto scroll and set the scale to minimum ("zooming out" for as much as possible);
+Launch
+HistoryDownloaderI
+indicator on the chart;
+After that, launch the EA.
+EA parameters:
+datetime
+ToDate
+- date, up to which the quote history is downloaded
+int
+Timeout
+- chart update waiting period, in milliseconds. The default is 1 second (1000)
+int
+MaxFailsInARow
+- maximum number of consecutive unsuccessful attempts to "shift" the chart. The default is 10
+I made my best to comment the code in details. After all, this is my first publication in CodeBase.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9153

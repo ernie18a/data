@@ -1,0 +1,50 @@
+Author:
+Andrey N. Bolkonsky
+Stochastic Index (normalized smoothed q-period Stochastic) by William Blau, described in the book
+Momentum, Direction, and Divergence: Applying the Latest Momentum Indicators for Technical Analysis
+.
+The values of q-period smoothed Stochastic is normalized and mapped into the [0,+100] interval. It allows to determine the overbought/oversold of the market.
+WilliamBlau.mqh must be placed in
+terminal_data_folder
+\MQL5\Include\
+Blau_TStochI.mq5 must be placed in
+terminal_data_folder
+\MQL5\Indicators\
+Stochatic Index Indicator by William Blau
+Calculation:
+The Stochastic Index Indicator is calculated by formula:
+100 * EMA(EMA(EMA( price-LL(q) ,r),s),u)       100 * TStoch(price,q,r,s,u)
+TStochI(price,q,r,s,u) = ------------------------------------------------- = ----------------------------------
+EMA(EMA(EMA( HH(q)-LL(q) ,r),s),u)          EMA(EMA(EMA( HH(q)-LL(q) ,r),s),u)
+where:
+price - close price;
+q - number of bars, used in calculation;
+LL(q) - lowest price of the q bars;
+HH(q) - highest price of the q bars;
+stoch(q)=price-LL(q) - q-period Stochastic;
+TStoch(price,q,r,s,u) - triple smoothed q-period Stochastic;
+HH(q)-LL(q) - q-period price range;
+EMA(...,r) - first smoothing 1st smoothing-
+exponentially smoothed moving average
+with period r, applied to:
+q-period Stochastic;
+q-period Price Range;
+EMA(EMA(...,r),s) - 2nd smoothing - EMA of period s, applied to result of the 1st smoothing;
+EMA(EMA(EMA(...,r),s),u) - 3rd smoothing - EMA of period u, applied to result of the 2nd smoothing.
+if EMA(EMA(EMA(HH(q)-LL(q),r),s),u)=0, the TStochI(price,q,r,s,u)=0.
+Input parameters
+:
+q - period, used for the calculation of Stochastic (by default q=5);
+r - period of the 1st EMA, applied to Stochastic (by default r=20);
+s - period of the 2nd EMA, applied to result of the 1st smoothing (by default s=5);
+u - period of the 3rd EMA, applied to result of the 2nd smoothing (by default u=3);
+AppliedPrice -
+price type
+(by default AppliedPrice=PRICE_CLOSE).
+Note:
+q>0;
+r>0, s>0, u>0.  If r, s or u =1, smoothing is not used;
+Min. rates =(q-1+r+s+u-3+1).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/364

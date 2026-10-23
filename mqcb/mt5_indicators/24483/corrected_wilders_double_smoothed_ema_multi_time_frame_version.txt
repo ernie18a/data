@@ -1,0 +1,9 @@
+Theory :
+The original (with detailed description) was posted here :
+Corrected Wilder's Double Smoothed EMA
+. This version is adding multi time frame to the indicator. Multi time frames are having, apart from all the standard multi time frames that can be used in metatrader 5, 3 additional "time frames" :
+first higher time frame (first time frame higher than the current chart time frame)
+second higher time frame (second time frame higher than the current chart time frame)
+third higher time frame (third time frame higher than the current chart time frame)
+Usage :
+You can use color changes as signals

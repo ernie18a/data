@@ -1,0 +1,10 @@
+This indicator compares four types of regression (linear, quadratic, logarithmic and exponential) and chooses the one that best fits the data analyzed.
+This version:
+Fixed an error in calculating the standard deviation;
+Makes more use of the indicators of MQL4 standard library;
+Improved the functions of calculation of the regressions;
+Frees a buffer. It only uses 3 buffers now;
+Added a Comment parameter to enable/disable comments on the screen.
+The changes do not affect the indicator from the visual point of view, however, the values shown on screen are corrected.
+Previous version:
+Regression Analysis

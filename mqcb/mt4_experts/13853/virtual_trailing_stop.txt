@@ -1,0 +1,16 @@
+The virtual trailing stop can place stop loss, take profit and trail the order in a way that the stops are not visible to the broker, i.e. they are placed not in the dealing center, but on your computer, and no one is able to see your plans except for you and your computer.
+Apart from the invisibility, there is another useful thing: many brokers have very large spreads and levels for setting stops, so now these levels have no way of harming you, the expert simply ignores them.
+I suppose everything is clear with Stop Loss and Take Profit. Only the Trailing Stop will be described.
+The trailing stop is controlled by three variables:
+length of the trailing stop;
+minimum profit for the start;
+step of the trailing stop.
+The virtual stop loss follows the price at a distance of the trailing stop length. Minimum profit — when the virtual stop loss is to be placed. Step of the trailing stop — when the virtual stop loss is to be moved.
+Let the values of 5, 2 and 3 are set, respectively.
+Once the profit of the order reaches 7 points, the virtual stop loss moves to the order opening price plus 2 points of the minimum profit. Next, if the price goes 3 points in the direction of profit, the stop loss will be moved to 5 points of profit, and so on, following the price at the distance of 5 points. If the price pulls back to the stop level, the order will be closed.
+The trailing stops are shown as dotted lines.
+There are further development plans to add the ability to move the line by hand, so that the stops may be corrected during operation. There are also plans for adding support for the number of orders. Currently the Trailing Stop works properly only with 1 order per side. But despite that the Trailing Stop will not close losing positions, even if there are several orders placed on each direction.
+To have a better understanding of the Expert Advisor, it can be placed in the strategy tester and seen in action using the Visualization mode.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13853

@@ -1,0 +1,3 @@
+Description:
+Strategy is not using any indicator, just put buy order at high previous candle of H4, and have weird exit system. Risk balance is from free margin calculation.
+Suitable only for GBPUSD on H4 Time Frame

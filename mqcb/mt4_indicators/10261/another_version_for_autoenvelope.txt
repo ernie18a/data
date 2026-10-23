@@ -1,0 +1,2 @@
+Description:
+Another version for AutoEnvelope according to the format described by Dr. Alexander Elder in your book How To Take Profits, Cut Losses, and Benefit from Price Declines.

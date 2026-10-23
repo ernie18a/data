@@ -1,0 +1,18 @@
+AIS1 Trading Robot: Instruction
+Download:
+AIS1IE.TXT
+Download:
+AIS1IR.TXT
+AIS1 Trading Robot: Modification List
+AIS101 Trading Robot: Modification
+Date: 14.02.2009
+Download:
+AIS101.MQ4
+Download:
+AIS101.TXT
+AIS102 Trading Robot: Modification
+Date: 15.02.2009
+Download:
+AIS102.MQ4
+Download:
+AIS102.TXT

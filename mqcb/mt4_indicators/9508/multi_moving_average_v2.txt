@@ -1,0 +1,11 @@
+Author:
+Alex5757000
+Multi Moving Average v2 - is a new version of the indicator
+Multi Moving Average
+.
+New features:
+Multiple time frame analysis.
+Visual and sound alert when Moving Averages are moving in one direction.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9508

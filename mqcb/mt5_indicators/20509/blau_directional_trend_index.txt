@@ -1,0 +1,17 @@
+The William Blau Directional Trend Index indicator shows the William Blau directional trend indexes.
+It has six input parameters:
+Period
+- calculation period;
+First smoothing period
+- the initial smoothin period;
+Second smoothing period
+- the secondary smoothing period;
+Third smoothing period
+- the resulting smoothing period;
+Upper level
+- the overbought level;
+Lower level
+- the oversold level.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20509

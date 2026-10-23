@@ -1,0 +1,10 @@
+The indicator displays four lines of different colors.
+The white line (displayed with black color on the picture) is the МА with the period of 8, it is used just for demonstrativeness, displaying some average line of the trend.
+The next three lines show the speed of the trend on the current, closest larger and the next larger timeframe.
+The first line (color "Wheat") designates the calculation of the speed, based on the MA with the least period, and displays the rate of change of the trend on the current timeframe.
+The second line (color "DarkSeaGreen") is used to display on the current timeframe the rate of change of the trend in the closest larger timeframe.
+The third line (color "DarkSalmon") is used to display the tendency in the next larger timeframe.
+The bend of the indicator designates the change of the trend direction. It can be applied to any timeframe.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8230

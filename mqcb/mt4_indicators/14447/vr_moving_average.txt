@@ -1,0 +1,5 @@
+A simple classic Moving Average indicator with a color change depending on the direction.
+Provides more clear information on the current average price.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14447

@@ -1,0 +1,39 @@
+Real author
+: Mohit Marwaha
+The indicator shows a text block with the values ​​of the user defined
+DeMarker
+oscillator period for each timeframe. The size of the text block is customizable. You can also change the text font and disable the display of unused timeframes. The maximum number of simultaneously displayed indicators is ten. The color of the text block depends on the position of the DeMarker indicator relative to overbought and oversold zones, which are set in the indicator input parameters
+input
+double
+HighLevel=
+0.70
+;
+// overbought level
+input
+double
+LowLevel=
+0.30
+;
+// oversold level
+input
+color
+HighColor=
+clrBlue
+;
+// overbought color
+input
+color
+MiddleColor=
+clrGray
+;
+// no-trend color
+input
+color
+LowColor=
+clrMagenta
+;
+// oversold color
+Fig.1. The DeMarkerValues indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19322

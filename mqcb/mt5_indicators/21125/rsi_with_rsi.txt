@@ -1,0 +1,4 @@
+In his article
+Combining Rsi With Rsi
+, author Peter Konner describes the use of two different RSI calculations using different lengths to allow trading of retracements as well as longer-term positions. The five-week and 17-week RSI values are used for entry and exits while the 17-week RSI is used for trend direction as an entry filter in the retracement entries.
+This version of the indicator allows you to use any period combination on any timeframe, but keep in mind that the original was developed for the weekly timeframe.

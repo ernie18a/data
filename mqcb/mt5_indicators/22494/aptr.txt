@@ -1,0 +1,14 @@
+Average Percentage True Range indicator was described in Stock&Commodities (November 2015).
+It has one configurable parameter:
+Period
+- calculation period
+Calculation:
+APTR = 100.0 * SMA(PTR, Period)
+where:
+PTR = Max(s1,s2,s3)
+s1 = 2.0 * (High-Low) / (High+Low)
+s2 = 2.0 * (High-PrevClose) / (High+PrevClose)
+s3 = 2.0 * (Low-PrevClose) / (3.0*Low-Prevlose)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22494

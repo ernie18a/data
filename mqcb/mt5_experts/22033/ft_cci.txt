@@ -1,0 +1,19 @@
+The author of the idea
+-
+Yuri
+mq5 code author
+-
+barabashkakvn
+The EA opens/closes positions only when a new bar appears. Positions are not accompanied by stop loss (
+Stop Loss
+) and take profit (
+Take Profit
+), there is no position trailing.
+BUY open condition: CCI indicator exceeds
+CCI up level
+. SELL open condition: CCI indicator is less than
+CCI down level.
+Sample test on M15:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22033

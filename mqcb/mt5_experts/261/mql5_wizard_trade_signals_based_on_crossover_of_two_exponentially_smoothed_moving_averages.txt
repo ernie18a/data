@@ -1,0 +1,220 @@
+MQL5 Wizard
+allows to create the code of Expert Advisors automatically. See
+Creating Ready-Made Expert Advisors in MQL5 Wizard
+for the details.
+Here we will consider the strategy based on crossover of two exponentially smoothed Moving Averages (fast EMA and slow EMA). The strategy called
+"Signals based on crossover of two EMA"
+(when creating EA automatically in MQL5 Wizard).
+The trade signals:
+Buy: the Fast EMA crossovers upward the slow EMA
+Sell: the Fast EMA crossovers downward the slow EMA
+This strategy is implemented in CSignalCrossEMA class.
+Figure 1. Trade signals, based on crossover of two exponentially smoothed moving averages
+Trade Signals
+The trading strategy is implemented in CSignalCrossEMA class, it has some protected methods to simplify access to indicator values:
+double
+FastEMA(
+int
+ind)
+// returns the value of fast moving average of the bar
+double
+SlowEMA(
+int
+ind)
+// returns the value of slow moving average of the bar
+double
+StateEMA(
+int
+ind)
+// returns the difference between the fast and slow moving averages of the bar
+1. Open long position
+Conditions to open long position:
+StateEMA(1)>0 and StateEMA(2)<0: the Fast EMA has crossovered upward the slow EMA on the last completed bar.
+//+------------------------------------------------------------------+
+//| Checks conditions to open long position (buy)                    |
+//+------------------------------------------------------------------+
+bool
+CSignalCrossEMA::CheckOpenLong(
+double
+& price,
+double
+& sl,
+double
+& tp,datetime& expiration)
+  {
+if
+(!(StateEMA(
+2
+)<
+0
+&& StateEMA(
+1
+)>
+0
+))
+return
+(
+false
+);
+//---
+price=
+0.0
+;
+   sl   =
+0.0
+;
+   tp   =
+0.0
+;
+//---
+return
+(
+true
+);
+  }
+2. Close long position
+Conditions to close long position:
+StateEMA(1)<0 and StateEMA(2)>0: the Fast EMA has crossovered downward the slow EMA on the last completed bar.
+//+------------------------------------------------------------------+
+//| Checks conditions to close long position                         |
+//+------------------------------------------------------------------+
+bool
+CSignalCrossEMA::CheckCloseLong(
+double
+& price)
+  {
+if
+(!(StateEMA(
+2
+)>
+0
+&& StateEMA(
+1
+)<
+0
+))
+return
+(
+false
+);
+//---
+price=
+0.0
+;
+//---
+return
+(
+true
+);
+  }
+3. Open short position
+The conditions to open short position are the same as long position closing conditions.
+//+------------------------------------------------------------------+
+//| Checks conditions to open short position (sell)                  |
+//+------------------------------------------------------------------+
+bool
+CSignalCrossEMA::CheckOpenShort(
+double
+& price,
+double
+& sl,
+double
+& tp,datetime& expiration)
+  {
+if
+(!(StateEMA(
+2
+)>
+0
+&& StateEMA(
+1
+)<
+0
+))
+return
+(
+false
+);
+//---
+price=
+0.0
+;
+   sl   =
+0.0
+;
+   tp   =
+0.0
+;
+//---
+return
+(
+true
+);
+  }
+4. Close short position
+The conditions to close short position are the same as long position opening conditions.
+//+------------------------------------------------------------------+
+//| Checks conditions to close short position                        |
+//+------------------------------------------------------------------+
+bool
+CSignalCrossEMA::CheckCloseShort(
+double
+& price)
+  {
+if
+(!(StateEMA(
+2
+)<
+0
+&& StateEMA(
+1
+)>
+0
+))
+return
+(
+false
+);
+//---
+price=
+0.0
+;
+//---
+return
+(
+true
+);
+  }
+Creating Expert Advisor using MQL5 Wizard
+To create a trading robot based on the strategy you need to choose the signal properties as "
+Signals based on crossover of two EMA
+" in "Creating Ready-Made Expert Advisors" option of
+MQL5 Wizard
+:
+Figure 2. Choose "Signals, based on crossover of two EMA" in MQL5 Wizard
+The next you have to specify the needed
+trailing stop
+algorithm and
+money and risk management
+system. The code of Expert Advisor will be created automatically, you can compile it and test in
+Strategy Tester
+of MetaTrader 5 client terminal.
+In addition, the Standard library classes contains the "
+Signals based on crossover of two MA
+", implemented in the CSignalCrossMA class. The trading idea is similar, but it provides many additional features (specify types, shifts and averaging methods and use of Take Profit and Stop Loss levels).
+Figure 3.
+"Signals, based on crossover of two MA" in MQL5 Wizard
+Testing Results
+Let's consider backtesting of the Expert Advisor on historical data (EURUSD H1, testing period: 1.1.2010-05.01.2011,   FastPeriod=12, SlowPeriod=24).
+In creation of Expert Advisor we used the fixed volume (
+Trading Fixed Lot
+, 0.1), Trailing Stop algorithm is not used (
+Trailing not used
+).
+Figure 4. Historical backtesting results of the Expert Advisor, based on crossover of two EMA
+Attachments:
+The SignalCrossEMA.mqh with CSignalCrossEMA class must be paced to terminal_data_folder\MQL5\Include\Expert\Signal folder.
+The crossover_2ema.mq5 contains the code of the Expert Advisor, created using MQL5 Wizard.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/261

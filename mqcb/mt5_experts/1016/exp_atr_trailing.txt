@@ -1,0 +1,81 @@
+The Expert Advisor moves Stop Loss of the open position along the border of the channel built using ATR_Trailing. Stop Loss is modified only when the bar is changed based on the newly closed bar's data in case Stop Loss will be eventually pinned to the current price.
+The Expert Advisor provides a possibility to display the indicator used in it on the current chart directly from the Expert Advisor. There is no need to install the indicator on the chart manually. This is quite convenient, as the indicator is displayed on the chart automatically after the Expert Advisor is installed on the chart. This indicator always has input parameters identical to the Expert Advisor's ones.
+Below is the code allowing users to implement such a feature:
+//+------------------------------------------------------------------+
+//| Inclusion of CChart class in expert                              |
+//+------------------------------------------------------------------+
+#include <Charts\Chart.mqh>
+//---- declaration of a global variable as CChart type
+CChart cchart;
+//+------------------------------------------------------------------+
+//| Expert initialization function                                   |
+//+------------------------------------------------------------------+
+int
+OnInit
+()
+  {
+//---- getting handle of the ATR_Trailing indicator
+InpInd_Handle=
+iCustom
+(
+Symbol
+(),
+PERIOD_CURRENT
+,
+"ATR_Trailing"
+,Period_ATR,Sell_Factor,Buy_Factor);
+if
+(InpInd_Handle==
+INVALID_HANDLE
+)
+Print
+(
+" Failed to get handle of ATR_Trailing indicator"
+);
+//--- resetting error code to zero
+ResetLastError
+();
+//--- cchart object works with the current chart (ID=0) , the expert is attached to
+cchart.Attach(
+0
+);
+//---- adding of ATR_Trailing indicator on the chart
+if
+(!cchart.IndicatorAdd(
+0
+,InpInd_Handle))
+Print
+(
+" Failed to add ATR_Trailing indicator on the chart"
+);
+Expert Advisor input parameters:
+//+----------------------------------------------+
+//| Expert Advisor input parameters              |
+//+----------------------------------------------+
+input
+int
+Period_ATR=
+14
+;
+//АТR period
+input
+double
+Sell_Factor=
+2.0
+;
+input
+double
+Buy_Factor=
+2.0
+;
+input
+uint
+Deviation=
+10
+;
+//slippage
+Image:
+Exp_ATR_Trailing working chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1016

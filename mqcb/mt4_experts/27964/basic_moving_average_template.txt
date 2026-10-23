@@ -1,0 +1,1 @@
+Basic Moving Average template EA - Signals from Moving Average indicator and trades accordingly. It's a template to use for further study or develop as you like

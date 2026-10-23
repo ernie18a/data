@@ -1,0 +1,12 @@
+Power weighted moving average.
+The indicator has three input parameters:
+Period
+- calculation period
+Power
+Applied price
+Calculation:
+PWMA = SUM(Applied price(i) * (i^Power), Period) / SUM(i^Power, Period)
+If Power is 1, МА is identical to LWMA
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21415

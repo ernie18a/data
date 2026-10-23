@@ -1,0 +1,7 @@
+The
+Alligator
+of Bill Williams drawn in the zigzag form. The indicator can be calculated and set in a fixed timeframe.
+Fig.1 The iAlligator_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1110

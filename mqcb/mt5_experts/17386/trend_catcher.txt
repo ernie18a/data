@@ -1,0 +1,30 @@
+Author of idea
+—
+Dmitriy Epshteyn
+,
+author of MQL5 code
+—
+barabashkakvn
+.
+The Expert Advisor identifies trend based on three moving averages (with periods of 200, 50, 25 or other custom periods), and opens trades using the Parabolic SAR indicator. The EA uses martingale techniques, lot is calculated as percent of deposit depending on stop loss.
+The new version
+features the possibility to 1) select days to trade, 2) open orders at a reverse signal, 3) disable order closer by an opposite signal.
+Market Entry
+Buy: if the current price is above the Parabolic SAR point on the current candlestick, previous candle's close price is lower than the previous Parabolic SAR point, i.e. indicator values change; if the fast MA is above the slow MA; if the current price is above the second MA with another period, a buy order is opened.
+Sell: if the current price is below the Parabolic SAR point on the current candlestick, previous candle's close price is higher than the previous Parabolic SAR point, i.e. indicator values change; if the fast MA is below the slow MA; if the current price is below the second MA with another period, a sell order is opened.
+The Expert Advisor closes orders at an opposite signal.
+Stop Loss and Take Profit
+If Auto_SL = true, stop loss is calculated automatically and is set at the Parabolic SAR point. The SL_koef factor can be applied to multiply the distance in points between the order open price and the Parabolic SAR indicator point. Example: if there are 20 points between the order placing price and Parabolic SAR point, and SL_koef=2, the Stop Loss of the order will be equal to 40 points, if SL_koef=0.5, the Stop Loss will be equal to 10 points, etc.
+If Auto_SL = false, Stop Loss will be fixed and will be equal to the SL parameter in points.
+If Auto_TP = true, Take Profit is calculated automatically based on the Stop Loss value multiplied by TP_koef. Example: if TP_koef=2, Take Profit will be twice the estimated stop loss.
+If Auto_TP = false, Take Profit will be fixed and will be equal to the TP parameter in points.
+Lot and Martingale Settings
+The lot is calculated as % of deposit based on the Risk parameter and Stop Loss. Example: the account balance is 1000 dollars, Stop Loss is 100 points, if Risk = 1 (1% of deposit), we can lose 10 currency units, therefore lot will be 0.01, if Risk=10 lot will be equal to 0.1.
+If Martin = true, and the last trade was closed with a loss, the risk of the next trade will be multiplied by Koef.
+If Martin = false, the EA will calculated lot as % of current account balance.
+Breakeven and TrailingStop
+If the position has made Profit_Level points of profit, stop loss will be placed at SL_Plus profit points.
+If the position has made Profit_Level2 points of profit, Stop Loss will be trailed following the price, at a distance of TrailingStop2 points.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17386

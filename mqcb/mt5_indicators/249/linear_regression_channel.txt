@@ -1,0 +1,9 @@
+The indicator plots a channel using the linear regression model: y=b+a*x.
+When calculation of regression coefficients (a and b) it uses only completed bars. The number of bars should be greater than 2 (and less than total bars in history-1), it is specified in InChPeriod input parameter. The indicator values for the last (uncompleted) bar is calculated using the values of calculated regression coefficients.
+It's assumed, that:
+not less than 68.26% of price values are located between the "Up" and "Down" lines.
+not less than 95.44% of price values are located between the "High" and "Low" lines.
+The recalculation of the regression coefficient is performed when total bars in the history has changed, for example, for the case of a new bar.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/249

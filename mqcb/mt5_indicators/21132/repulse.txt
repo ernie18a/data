@@ -1,0 +1,4 @@
+The Repulse indicator measures and displays the bullish or bearish pressure associated with each price candlestick in the form of a curve.
+There is only one parameter: the repulse period. Indicator is internally using all 4 prices in calculations and that is the reason why the price can not be changed in calculation. Recommended usage is simple:
+Crossing the zero line up can be treated as buy signal.
+Crossing the zero line up can be treated as sell signal.

@@ -1,0 +1,43 @@
+Indicator Market Session displays on the price chart
+trading session in New york, London, Tokyo, and Sydney. You can specify the start and end hours of each trading session manually.
+It has eighteen adjustable parameters:
+Sidney session begin
+- Sydney trading session start hour
+Sidney session end
+- Sydney trading session end hour
+Sidney session color
+- Sydney trading session area color on the price chart
+Tokio session begin
+- Tokyo trading session start hour
+Tokio session end
+- Tokyo trading session end hour
+Tokio session color
+- Tokyo trading session area color on the price chart
+London session begin
+- London trading session start hour
+London session end
+- London trading session end hour
+London session color
+- London trading session area color on the price chart
+NewYork session begin
+- New York trading session start hour
+NewYork session end
+- New York trading session end hour
+NewYork session color
+- New York trading session area color on the price chart
+Session field height
+- trading session area height (in points) on the price chart
+Show session labels
+- show the names of trading sessions within the session area on the price chart (Yes/No)
+Font name
+- trading session label font name
+Font size
+- trading session label font size
+Font color
+- trading session label font color
+Show start-session lines
+- show the lines of each trading session start on the price chart (Yes/No)
+The indicator can only work on the charts with the timeframe of H1 or lower. As soon as you switch to a higher timeframe, the indicator will warn you and switch back to the hourly chart.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23523

@@ -1,0 +1,29 @@
+Buy a security (open BUY positions) at a lower price, sell (open SELL positions) at a higher price.
+In version 1.000, the Expert Advisor only trades one symbol (the "
+Symbol
+" parameter in input parameters).
+Basic position opening principle:
+If the profit of all BUY positions is less than the profit of all SELL positions, we can conclude that the current trend is downward, and open SELL.
+If the profit of all SELL positions is less than the profit of all BUY positions, we can conclude that the current trend is upward, and open BUY.
+if
+(profit_buys<profit_sells)
+// trend down
+m_trade.Buy(m_symbol.LotsMin(),m_symbol.Name());
+else
+if
+(profit_sells<profit_buys)
+// trend up
+m_trade.Sell(m_symbol.LotsMin(),m_symbol.Name());
+else
+if
+(profit_buys==
+0.0
+&& profit_sells==
+0.0
+)
+         m_trade.Buy(m_symbol.LotsMin(),m_symbol.Name());
+Testing results on EURUSD, H4:
+During long-term trends, deposit load greatly increases. This problem has not been solved yet.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18739

@@ -1,0 +1,3 @@
+Real author:
+mladen
+Draws a Triangular Moving Average on the chart.

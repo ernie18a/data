@@ -1,0 +1,17 @@
+Mt5 indicator alerts for bollinger band and envelope extremes occurring at the same time.
+Buy signal alerts occur when
+A bullish candle has formed below both the lower bollinger band and the lower envelope
+Bar must open and close below both these indicators.
+Sell signal occur when
+A bear bar is formed above the upper bollinger band and upper envelope
+Bar must open and close above these indicators.
+Inputs variable.
+Bollinger band period and deviation
+Envelope period and deviation
+Full alerts
+Push
+audible
+email
+This indicator draws arrows only buy and sell,
+does not draw bollinger and envelope onto the chart.
+https://www.mql5.com/en/users/paultraderone/seller

@@ -1,0 +1,2 @@
+This code can be used to draw triangles on chart . This is useful in program where you are detecting harmonic patterns and plotting the patterns in chart.
+The same principle can be extended to plot rhombus and parallelograms as well.

@@ -1,0 +1,17 @@
+Indicator Butterworth Moving Average - a moving average with smoothing using Butterworth filter.
+It has two configurable parameters:
+Period
+- calculation period
+Applied price
+- calculation price
+Calculations:
+ButtMA = p1 * Price + p2 * PrevButtMA - p3 * PrePrevButtMA
+where:
+Price = SMA(Applied price, 1)
+p1 = 2 / (1+Period)
+p2 = 2 * (1-Kf)
+p3 = (1-Kf) * (1-Kf)
+Kf = Sqrt(p1)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21338

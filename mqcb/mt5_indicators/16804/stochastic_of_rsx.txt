@@ -1,0 +1,3 @@
+Stochastic that is using rsx as an input for calculations.
+Stochastic that is good in enhancing the extremes of any value it is applied to, in this case is using what is known as "smoother rsi" (rsx is a smoother rsi but without adding lag). And in this case it is smoothly showing the current trend and over-bought and over-sold levels retracement (which in the case of this indicator is probably what should be monitored the most).
+Code uses generic stochastic calculation and also sets the coloring of the values according to the gradient color compared to the value of the stochastic n order to make the current trend determination (or change of the same) easier.

@@ -1,0 +1,16 @@
+Description:
+Display interactive HTML graph of the account balance inside the web browser.
+The included template html file uses the
+HighCharts
+JavaScript library from
+https://www.highcharts.com/
+Highcharts makes it easy for developers to set up interactive charts in their web pages.
+Make your data come alive
+How to use:
+Copy the files to the \Scripts folder
+Compile and run the script
+The web page should be displayed in your web browser.
+The generated html file can be located at "%userprofile%\AppData\Roaming\MetaQuotes\Terminal\Common\Files\Graph.htm"
+Tooltips showing the balance
+Zoom at specific points
+Other features:

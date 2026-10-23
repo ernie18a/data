@@ -1,0 +1,18 @@
+Three Bollinger Bands channels based on one moving average
+AbsolutelyNoLagLwma
+, drawn as a colored cloud, with the display of the last values as price labels and the possibility to round Bollinger levels up to a required number of digits. The number of digits to round is defined by the indicator's input variable
+Digit:
+input
+uint
+Digit=
+2
+;
+//Number of digits to round to
+The indicator uses the SmoothAlgorithms.mqh library classes. Working with them was described in details in article
+Averaging Price Series for Intermediate Calculations Without Using Additional Buffers
+.
+Fig 1. Indicator AbsolutelyNoLagLwma_BBx7_Cloud_Digit
+Fig. 2. Indicator AbsolutelyNoLagLwma_BBx7_Cloud_Digit
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21138

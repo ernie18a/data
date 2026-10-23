@@ -1,0 +1,18 @@
+Change in the display of graphical objects created by the strategy tester and simplification of the following visual analysis of the results. Without the need to edit the code of the Expert Advisor.
+It is an upgraded version of my old script
+Visual Аnalysis AfterTesting
+without flaws and with more intuitive behavior.
+How it works:
+The indicator reads graphical objects created by the strategy tester, keeping the names and coordinates. Thus there is no need to make changes to the Advisor itself. The ability to navigate orders is also preserved.
+ShowBuy — show buys.
+ShowSell — show sells.
+ShowWinners — show winning positions.
+ShowLosses — show losing positions.
+All 4 buttons can be combined with each other.
+Auxiliary buttons:
+StartPoint — show entry position.
+EndPoint — show exit position.
+Video:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14077

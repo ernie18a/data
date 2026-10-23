@@ -1,0 +1,4 @@
+Typical unnormalized oscillator displayed as a color histogram.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/763

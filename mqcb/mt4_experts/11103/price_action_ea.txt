@@ -1,0 +1,9 @@
+An amazing EA that does not use any indicator. Instead, it follows the price action. Tested from 18 August 1995 to 29th January 2014. It has managed to turn $10,000 to 11,958,183.37.
+Parameters:
+You can use the default parameters if your balance is $10,000. Change the lot size based on your current balance. Recommended lot size is 0.01 for each $100.
+Please test it on long period and let me know your feedback. I have update the code by initiating TradeType as 1.
+Here are more information about this EA:
+i noticed most people were confused about how this EA works. In fact, I was not ready to submit it for approval. I just noticed now, it has been approved.
+The logic behind this EA is very simple. During volatile market (usually 5 minutes after a major news), the market tends to go up and down number of times then moves strongly in one direction. If you use this EA during that time, the EA will open the first trade in the direction you decide say TradeType =1 which means long trade. If the market moves down 100 points (10 pips), then the system will close the long trade and open a short one. The EA keeps going up and down until the market take one direction. The danger is if moves up and down more than 5 times. Usual 5 or 10 minutes after a major news that market tends to trend in one direction. For sure do not start it before the release of the news and straight after its release because that it is the most volatile time in the market. Wait 5 or 10 minutes. Sometime you need to wait for the hour candle to close. This depends on how clear the impact of that news on the market. Agin, this EA should not be used with the market very slow and when trading volumes are very low.
+The EA proved that FX market was very trending in the period from 1995 until 2010. Then became more volatile.
+New update: Clean the code and added Trailing Stop.

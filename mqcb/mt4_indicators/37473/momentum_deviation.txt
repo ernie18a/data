@@ -1,0 +1,6 @@
+This is a variation on the standard deviation
+it is using momentum of price  (instead price itself) for calculation
+it is calculated in a way that it takes minimal CPU load
+As far as values are concerned, it is similar to standard deviation. Same as standard deviation it can calculate deviation of anything
+Recommendations:
+You can use it as any standard deviation indicator

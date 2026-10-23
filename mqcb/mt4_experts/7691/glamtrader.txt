@@ -1,0 +1,9 @@
+Author: Gideon Smolders
+Adviser GlamTrader. Uses indicator
+Laguerre
+.
+-------------------------
+Parameters of testing
+Symbol: EURUSD.
+Period: H1.
+Model: All tics.

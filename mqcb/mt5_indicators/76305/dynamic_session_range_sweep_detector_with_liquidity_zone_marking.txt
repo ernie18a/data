@@ -1,0 +1,69 @@
+Dynamic Session Range Sweep Detector
+The idea behind it
+Session ranges aren't just boxes to draw on a chart — they're liquidity. The Asian session prints a tight high-low, and once London or New York desks come online, price very often trades through that range on one side before reversing, sweeping out the stops sitting just beyond it. This indicator tracks that behaviour directly: it measures each session's range as it forms, locks it the moment the session closes, and then watches every bar afterward for a wick that pierces the locked level and closes back inside it. That close-back-inside condition is what qualifies a genuine sweep rather than an ordinary breakout, and it's the part most session-range tools on the Code Base skip entirely.
+It works on any symbol and timeframe, since session hours are defined as plain server-time inputs rather than hard-coded to one instrument. That said, it reads best on intraday charts —
+M5 to M30
+— where session-hour boundaries are resolved cleanly bar by bar. On higher timeframes a single bar can straddle a session boundary, which blurs exactly where the range locked in.
+How to interpret it
+The session windows
+—
+InpAsianStartHour/EndHour
+,
+InpLondonStartHour/EndHour
+, and
+InpNewYorkStartHour/EndHour
+, all server time. The indicator builds a running high/low for each session while its window is open.
+The locked range
+— the moment a session's end hour passes, its high/low is frozen and drawn as a rectangle on the chart. Everything after that point is compared against this fixed level, not a moving one.
+The sweep confirmation
+— a bar has to trade beyond the locked level by at least
+InpMinSweepPips
+and
+close back on the correct side of it. A down-arrow marks a swept high (bearish bias); an up-arrow marks a swept low (bullish bias). A break that closes beyond the level is a real breakout, not a sweep, and is deliberately left unmarked.
+The reaction zone
+— a shaded rectangle drawn
+InpSweepZoneBars
+wide from the sweep point, marking the area where reversal entries or stop placement typically cluster after a confirmed sweep.
+External variables (inputs)
+Input
+Default
+Purpose
+InpAsianStartHour / InpAsianEndHour
+0 / 7
+Window the Asian session range is measured over, broker/server time.
+InpLondonStartHour / InpLondonEndHour
+7 / 13
+Window the London session range is measured over.
+InpNewYorkStartHour / InpNewYorkEndHour
+13 / 21
+Window the New York session range is measured over.
+InpLookbackDays
+5
+How many days of session history the indicator draws and scans for sweeps. Kept small on purpose to limit chart-object clutter.
+InpMinSweepPips
+2.0
+Minimum penetration beyond a locked level, in pips, required before a wick counts as a sweep rather than noise sitting right at the edge.
+InpSweepZoneBars
+6
+Width, in bars, of the shaded reaction zone drawn after a confirmed sweep.
+InpShowSessionBoxes / InpShowSweepZones
+true / true
+Toggles for the session range rectangles and the shaded reaction zones independently.
+InpAlertOnSweep
+false
+Fires a terminal alert the moment a new sweep is confirmed.
+InpAsianBoxColor / InpLondonBoxColor / InpNewYorkBoxColor
+Silver / Gray / DimGray
+Border color for each session's locked-range rectangle, kept distinct so overlapping sessions stay readable.
+InpZoneColor
+Gainsboro
+Fill color of the shaded reaction zone.
+InpSweepUpArrowCode / InpSweepDownArrowCode
+233 / 234
+Wingdings codes for the bullish (swept-low) and bearish (swept-high) signal arrows.
+Recommended use
+Works on any symbol, but it's most meaningful on instruments that actually show session-based liquidity behaviour — major FX pairs and gold are the clearest examples. Check your broker's server time against the real Asian/London/New York opening hours before trusting the default hour inputs; the offset varies by broker and shifts with daylight-saving changes on each side, so a range that's supposed to lock at the London open can end up locking an hour early or late if the inputs aren't adjusted.
+Signals are non-repainting: a sweep is only marked once its confirmation bar has closed, so nothing drawn on the chart moves after the fact. On lower timeframes (M1–M5)
+InpMinSweepPips
+may need raising slightly, since spread noise right at a session edge can otherwise register as a sweep that isn't really one.
+Fig. 1. Locked Asian and London session ranges, with a confirmed bullish sweep of the Asian low and a confirmed bearish sweep of the London high, each marked with its reaction zone. Rendered in grayscale per the Code Base image guidelines.

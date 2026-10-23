@@ -1,0 +1,13 @@
+Use the Strategy Tester as simulator. Currently only market orders (BUY and SELL) are supported. Orders are set trough the use of scripts which gets executed by the EA. You can set an initial Stoploss/Takeprofit in the scripts and modify them afterward trough drag&drop of the the lines drawn by the EA. Very simple concept and easy to use.
+Use the VisualTrader-BUYScript to place a buy order and the VisualTrader-SELLScript to place a sell order.
+Then you can modify the TakeProfit and Stoploss trough drag&drop of the Green (TP) and Red(SL) lines
+Installation:
+Copy VisualTrader-SimulatorEdition.mq4 into: *YourMT4Directory*/experts/
+Copy VisualTrader-BUYScript.mq4 into: *YourMT4Directory*/experts/scripts/
+Copy VisualTrader-SELLScript.mq4 into: *YourMT4Directory*/experts/scripts/
+Restart Your Terminal
+Open StrategyTester
+Select VisualTrader-SimulatorEdition and choose your desiderated timeframe.
+Check
+Visual mode
+Press Start and trade.

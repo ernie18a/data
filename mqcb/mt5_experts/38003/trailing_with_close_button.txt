@@ -1,0 +1,31 @@
+This EA help you for
+1. Auto set the TP & SL by default parameter
+2. Auto trailing stop & step for any order that you place from any device
+3. Easy way to close all orders with button "Close All" for the
+Current Symbol
+How to use :
+1. Add this EA for any symbol
+2. Set the variable value that you need to TP, SL, Trailing & Closing the orders action
+3. This EA not based for specific Magic Number, then if you place the order on Mobile Device the order will be modify (SL,TP & Trailing) by EA
+NOTES:
+For Currency Symbols  the
+Values of SL,TP & Trailing is the normal pips
+Ex. EURUSD :  type with 1 is for 1 pips. Like this 1.000
+45
+- 1.000
+55
+Specially for XAUUSD must be equal x100
+Ex. XAUUSD :  type with 100 is for 100 pips. Like this 178
+5.01
+- 178
+6.01
+For Boom/Crash Synthetic Symbols :
+Boom/Crash 1000 : x5000
+Boom/Crash 500 : x100
+Thanks
+Send me coffee is very welcome & appreciate :)
+Setup:
+SAMPLING SETUP FOR XAUUSD
+SAMPLING SETUP FOR CURRENCY/ ex.EURUSD
+My Setup:
+Have a nice trade....

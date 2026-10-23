@@ -1,0 +1,1 @@
+Display the actual stored value of a floating-point number (float or double type), with very high precision up to 55 decimal digits. This helps to debug exact value of floating-point numbers for other MQL5 programs.

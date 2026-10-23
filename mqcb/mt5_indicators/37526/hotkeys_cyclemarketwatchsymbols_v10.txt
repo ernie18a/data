@@ -1,0 +1,6 @@
+cycles though market watch symbols, using hotkeys Comma and Period for prev/next symbol in market watch list
+if you want to change hotkey default keys use this site to find out keycode
+https://keycode.info/
+then change keycode number where says case 188 case 190 with your chosen keycodes
+Comma ',' =Prev Market Watch Symbol
+Period '.' =Next Market Watch Symbol

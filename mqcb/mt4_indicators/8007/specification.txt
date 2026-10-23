@@ -1,0 +1,26 @@
+It is sometimes necessary to display your information as a table or as a set of tabulated lines. There is no problem to simply display several lines in the main window, you should just use Comment(line_1,"\n",line_2,"\n"...). See example
+Comment2
+However, function
+Comment ()
+displays information only in the main chart window. But we sometimes may need to show it in an indicator subwindow. In this case, the following example may be useful.
+The indicator displays contract specification for a specific symbol. Function
+void
+PrepareInfo(
+string
+& array[][])
+fills the two-dimensional string array using function
+MarketInfo()
+. Then this array is displayed with the function
+void
+Show(
+string
+valueArray[][])
+This function is universal, so it can be used to display any two-dimensional arrays. Function
+void
+RefreshAccountInfo()
+is necessary to update information when switching between symbols, timeframes or accounts.
+All specification details are calculated and displayed only once, i.e., no updates are performed at every tick.
+Below is a use example:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8007

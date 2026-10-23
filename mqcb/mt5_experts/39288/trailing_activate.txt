@@ -1,0 +1,9 @@
+Assistant
+For trailing, a new parameter '
+Trailing activate if profit is >=
+' is used - this is essentially a breakeven for trailing. Trailing activates only after the position reaches profit in
+'
+Trailing activate if profit is >=
+' Points.
+Pic. 1.Trailing Activate
+The Expert Advisor works only on the current symbol, but has no restrictions on the Magic number. In this case, the adviser, when modifying a position, copies the Magic of this position.

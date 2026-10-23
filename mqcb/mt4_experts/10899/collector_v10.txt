@@ -1,0 +1,6 @@
+Collector is a system that buys by growing trend
+and sells by falling trend; the distance
+between next trade can be set. The distance is also the stop loss and take
+profit for the trade. If trade (buy) ends on a stop loss, the system opens another
+trade but in the opposite direction (sell) with a bigger take profit. The system also opens
+another new trade. So it stacks trades, and the trader decides when to close all trades.

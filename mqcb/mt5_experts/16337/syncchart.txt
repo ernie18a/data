@@ -1,0 +1,8 @@
+Synchronization of the bars displayed on all open charts of the terminal. Synchronization of charts if performed by timer. No DLL!
+Additional features:
+option to synchronize vertical lines
+disable synchronization when autotrading is disabled in the terminal;
+synchronization of chart type (bars/candlesticks/line chart), scale, shifting.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16337

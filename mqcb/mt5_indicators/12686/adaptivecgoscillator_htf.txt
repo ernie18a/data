@@ -1,0 +1,15 @@
+The
+AdaptiveCGOscillator
+indicator with the timeframe selection option available in the input parameters:
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Indicator chart period (timeframe)
+The indicator requires AdaptiveCGOscillator.mq5 and CyclePeriod.mq5 indicator files. Place them in <terminal_data_folder>\MQL5\Indicators.
+Fig.1. The AdaptiveCGOscillator_HTF indicator in the form of two lines
+Fig.2. The AdaptiveCGOscillator_Cloud_HTF indicator in the form of a colored cloud
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12686

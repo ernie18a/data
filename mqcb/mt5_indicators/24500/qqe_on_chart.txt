@@ -1,0 +1,4 @@
+Theory :
+QQE (Quantitative Qualitative Estimation) is a useful indicator. But sometimes it would be easier to check its performance if we had it directly against the prices - so that we can see exactly when the signals happen. This version is doing that
+Usage :
+You can use (one of 4 types of) color change as signal

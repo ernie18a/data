@@ -1,0 +1,6 @@
+Basics :
+It is less known that the JMA (Jurik Moving Average) is already an adaptive indicator (it is adapting using the usual market volatility monitoring mode). Hence making it adaptive "once more" is making it double adaptive, sort of speaking, but it seems that it (the "double adapting") is producing acceptable results (especially in time of high volatility)
+This version :
+Here we are using ATR (Average True Range) to make the JMA additionally adaptive. The ATR period is the same as the JMA period (there is no separate setting for that) so the usage of the indicator is as simple as it gets
+Usage :
+You can use the color of the slope as a signals for potential trend change

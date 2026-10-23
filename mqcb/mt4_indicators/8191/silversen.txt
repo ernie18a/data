@@ -1,0 +1,5 @@
+This line is parallel to the Kijun, but comparing to the Kijun-sen, that represents the half of the price range, i.e. 50%, the Silver-sen can be drawn at any level. The example of drawing the Kijun-sen and Silver-sen with the SSK=76.4% parameters is represented in the figure below.
+Similarly, it can be drawn forward on the specified number of periods.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8191

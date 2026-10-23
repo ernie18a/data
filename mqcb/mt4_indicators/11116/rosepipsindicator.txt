@@ -1,0 +1,4 @@
+Author:
+Louis Christian Stoltz
+This indicator will calculate pips wins and losses for any pair with a parsar and doji star trading strategy. You can see pip targets and losses and see if you can find a winning pair with this.
+5MIN charts are the best on current settings. Dont risk your account on this, there still high pip losses I see that are high risk. If you use micro lots then maybe its ok.

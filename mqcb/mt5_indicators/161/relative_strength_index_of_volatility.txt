@@ -1,0 +1,9 @@
+The
+Relative Strength Index
+, applied to standard deviation of price.
+It's a simple indicator allows to measure the volatility. It can be applied to determine flat zones by analysis of the
+Bollinger Bands
+narrowing and expanding.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/161

@@ -1,0 +1,14 @@
+The horizontal axis represents Renko sequence rather than time. The internal builder uses incoming BID ticks and the classic two-brick reversal rule. The Donchian Channel is causal: for each newly completed brick, the channel is calculated from the previous N completed Renko bricks only. The current brick is excluded from its own channel calculation.
+Inputs:
+- Brick Size — fixed Renko brick size in price units.
+- Donchian Period — number of previous completed Renko bricks used for the channel.
+Features:
+- classic fixed-size Renko built internally from ticks;
+- one CCanvas bitmap layer instead of hundreds of chart objects;
+- square Renko bricks;
+- stepped upper/lower Donchian boundaries plus channel midpoint;
+- no offline chart;
+- no custom symbol;
+- no DLL;
+- no external indicator dependency.
+This is an educational visualization example, not a trading system or a recommendation to trade Donchian breakouts.

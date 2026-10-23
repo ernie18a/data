@@ -1,0 +1,4 @@
+The idea is called up by the article: Б. Шлоссберг. Полосы Боллинджера на Форекс, "Forex Magazine", №75/26, июль 2005. (B. Shlossberg. Bollinger bands at Forex, "Forex Magazine", №75/26, July 2005.). As compared to the original code (WellxAMA), the calculation of AMA is written as the calculation of the ouput value of the adaptive integrator (by the way, it is where the value of the exponential moving average comes from) that allows us to recalculate only the last and the next to the last bar, or the last one only. The arrows on the chart represent signals. Their sense is the first AMA derivative on a single timeframe.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8282

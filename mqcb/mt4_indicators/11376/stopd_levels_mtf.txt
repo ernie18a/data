@@ -1,0 +1,6 @@
+Real author:
+Lawrence Chan
+It plots the STOPD Price Levels based on user specified timeframe (parameter Timeframe, D - daily, W - weekly, M - monthly, Q - quarterly, Y - yearly).
+The other parameters are there for customization of the price levels in case users like to experiment with other price expansion multiples.
+The indicator is suitable for use in any timeframes. It can also be used multiple times within one chart to overlay multiple timeframes (MTF) of STOPD Price Levels on the same chart. The price levels are more often than not where reactions would happen.
+STOPD is short form for Special Theory of Price Discovery.

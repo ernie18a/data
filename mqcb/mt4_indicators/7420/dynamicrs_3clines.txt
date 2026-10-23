@@ -1,0 +1,8 @@
+The fourth indicator of the series of indicators without averaging.
+What's new:
+Removed the period from the formation conditions. Now there are no input parameters!
+Changed the display mode of the indicator arrays. Now they are all displayed by different lines.
+Warning is the same as before: to make a decision on opening a position, it is necessary to wait for the completion of the bar, in which the yellow line moves between the trend lines. The decision should be made with the consideration of the trend on the higher timeframe.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7420

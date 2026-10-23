@@ -1,0 +1,17 @@
+The author of the idea
+:
+Victor Chebotariov
+MQL5 code author
+:
+barabashkakvn
+The EA is based on
+MAMy v3
+indicator and implements the following conditions:
+If MA Close exceeds MA (H+L+O+C)/4, while MA (H+L+O+C)/4 exceeds MA Open - BUY.
+If MA Close is less than MA (H+L+O+C)/4, while MA (H+L+O+C)/4 is less than MA Open - SELL.
+If MA Close exceeds MA (H+L+O+C)/4 - CLOSE SHORT POSITION.
+If MA Close is less than MA (H+L+O+C)/4 - CLOSE LONG POSITION.
+Example for EURUSD H1:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22578

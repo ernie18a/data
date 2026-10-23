@@ -1,0 +1,2 @@
+Rapid rsi (one variation of Cuttler's rsi) made adaptive in calculation additionaly smoothed with price pre-filtering using T3 for price pre-filtering.
+As a visual aid, gradient colors are added in order to make trend and momentum determination easier.

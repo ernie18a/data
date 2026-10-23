@@ -1,0 +1,36 @@
+The range indicator compares daily range (High - Low) to the range between days (Close - PrevClose).
+Where the intraday range is larger than the interday range, the indicator will have high values, which indicates the stop/end of the current trend;
+Where the indicator has low values, it means the potential start of a new trend.
+The indicator has seven configurable parameters:
+Period
+- calculation period;
+Smoothing
+- smoothing period;
+Method
+- calculation method;
+Level 1
+- values level 1;
+Level 2
+- values level 2;
+Level 3
+- values level 3;
+Level 4
+- values level 4;
+Calculation:
+RIND = MA(Range, Smoothing, Method)
+where:
+MA - moving average on the Range data with the Smoothing period and the Method calculation method
+If Max - Min > 0:
+Range = 100.0 * (Value - Min) / (Max - Min)
+otherwise:
+Range = 100.0 * (Value - Min)
+If Close > PrevClose:
+Value = TrueRange / (Close - PrevClose
+otherwise:
+Value = TrueRange
+Max, Min - the highest and the lowest Value within Period
+TrueRange = Maximum(High, PrevClose) - Minimum(Low, PrevClose)
+Maximum, Minimum - the highest and the lowest values of the two
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21110

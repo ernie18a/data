@@ -1,0 +1,17 @@
+RSI EA — trading based on overbought/oversold zones determined by the iRSI (Relative Strength Index, RSI) indicator.
+Author of the idea
+is
+Siti Latifah
+,
+author of the MQL5 code
+is
+barabashkakvn
+.
+The Expert Advisor will buy when the RSI indicator enters the oversold zone, and will sell when RSI enters the overbought zone.
+OpenBUY, OpenSELL — now you can configure only buy, only sell or both directions.
+CloseBySignal — you should set Stop Loss or Take Profit if ClosebySignal = false.
+An example of a buy signal:
+An example of a sell signal:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17284

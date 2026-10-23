@@ -1,0 +1,16 @@
+Parabolic SAR made as an oscillator.
+It has three configurable parameters:
+SAR step
+- step of Parabolic SAR
+SAR maximum
+- maximum Parabolic SAR
+Smoothing Period
+- smoothing period
+Calculations:
+SARH = SMA(CloseSAR, Smoothing Period)
+where:
+CloseSAR = Close - SAR
+SAR - Parabolic SAR(SAR step, SAR maximum)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21329

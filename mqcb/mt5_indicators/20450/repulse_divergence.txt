@@ -1,0 +1,22 @@
+The indicator shows values of
+Repulse
+in a separate window, searches for divergences between the indicator lines and the price, and displays these divergences. You can choose the Repulse indicator line to search divergences for.
+The indicator has three input parameters:
+Repulse period
+- Repulse oscillator calculation period;
+Signal period
+- Repulse signal line calculation period;
+Repulse line
+- Repulse indicator line to search divergences for:
+Main
+- oscillator line;
+Signal
+- signal line.
+The Repulse indicator is
+not required
+for a proper operation, since all calculations are performed inside the indicator.
+Fig.1. Divergence between the price and the oscillator line
+Fig.2. Divergence between the price and the signal line
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20450

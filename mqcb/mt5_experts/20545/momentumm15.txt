@@ -1,0 +1,15 @@
+Idea by
+:
+Sergey Deev
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+The EA trades on two indicators: iMA (Moving Average, MA) and iMomentum (Momentum). The EA also takes into consideration the Close prices of bar #1 and the Open prices of bar #0 at opening the positions, and the Close prices of bar #1 and the High prices of bar #0 and the Low prices of bar #0 at closing or trailing the positions.
+The EA works at the moment of forming a new bar only, and allows holding only one position in the market.
+In optimization, I recommend to use a genetic algorithm and the "1 minute OHLC" tick generation mode. An example of which parameters and within which timeframes can be searched in:
+Test on the USDJPY symbol, H1, with the parameters of their "Value" column (however, for better validation, this sing test was performed in the "Every tick based on reak ticks" tick generation mode).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20545

@@ -1,0 +1,3 @@
+This script lists current open orders with profit. The result is displayed in a message box.
+If there is at least one open order with profit, a report file is created in .txt format, in Files directory (<terminal_data_folder>/MQL4/Files/). The precise file name format is:
+report_open_orders_with_profit__[Account Name]__[Server Time].txt

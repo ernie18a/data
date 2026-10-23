@@ -1,0 +1,5 @@
+Green lines are High and Low of the indicator.
+Gray line is the middle of the last line.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8202

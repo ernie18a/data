@@ -1,0 +1,6 @@
+A simple indicator, which informs the trader about the appearance of "Bullish Engulfing" or "Bearish Engulfing" candlestick patterns on all timeframes.
+The program generates an alert with the message.
+The indicator is written as simple as possible and will be helpful for novice programmers.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14336

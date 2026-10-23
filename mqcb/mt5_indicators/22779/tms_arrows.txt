@@ -1,0 +1,37 @@
+TMS Arrows signal indicator. It is based on three indicators: Heiken Ashi, Stochastic and
+Traders Dynamic Index
+.
+The indicator has eight configurable parameters:
+TDI RSI period
+TDI RSI applied price
+TDI Volatility band period
+TDI RSI smoothing period
+TDI RSI smoothing method
+TDI Signal smoothing period
+TDI Signal smoothing method
+Signal point anchor
+:
+High/Low
+- on High and Low prices
+Open
+- on Open price
+The green bullish label is set if:
+The green TDI line crosses the red signal
+TDI
+line upwards
+Stochastic moves upwards
+1 st or 2 nd
+Heiken Ashi candle is bullish
+The red
+bearish
+signal label is placed if:
+The
+green TDI line crosses the red signal
+TDI line
+downwards
+Stochastic moves downwards
+1 st or 2 nd
+Heiken Ashi candle is bearish
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22779

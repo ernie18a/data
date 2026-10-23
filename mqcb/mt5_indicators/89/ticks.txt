@@ -1,0 +1,9 @@
+It's a simple example of the indicator, that show ticks in the separate subwindow.
+It uses the standard indicator's buffers, shifted by the
+PlotIndexSetInteger()
+function after each tick.
+Red line - Ask;
+Blue line - Bid.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/89

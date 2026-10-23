@@ -1,0 +1,12 @@
+Indicator Linear Regression Moving Average represents the linear-regression moving average.
+It has one input parameter:
+Period
+- calculation period
+Calculations:
+LRMA = 3.0 * LWMA - 2.0 * SMA
+where:
+LWMA - Linear Weighted Moving Average(Close, Period)
+SMA - Simple Moving Average(Close, Period)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23415

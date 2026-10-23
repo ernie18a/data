@@ -1,0 +1,2 @@
+Extended Ron Black's swing line indicator for MetaTrader 5 version.
+This version is a version that has multi time frame capabilities and all the usual set of alerts included

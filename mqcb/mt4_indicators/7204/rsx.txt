@@ -1,0 +1,2 @@
+Author: Nick Bilak
+Rsx indicator.

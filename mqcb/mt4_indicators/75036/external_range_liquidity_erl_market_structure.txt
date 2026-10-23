@@ -1,0 +1,38 @@
+External Range Liquidity ERL is a custom indicator for MetaTrader 4 designed specifically for traders utilizing Price Action and Smart Money Concepts. This indicator automatically maps the Market Structure and identifies areas where liquidity has been taken, known as a Liquidity Sweep.
+Through a dynamic swing scanning algorithm, ERL helps you read the price narrative on the chart with absolute clarity without the need to draw lines manually.
+How ERL Helps to Read Market Structure
+This indicator reads price movements and divides them into Swing High and Swing Low points, then provides automated labeling to define the current trend.
+Automated Trend Mapping:
+HH Higher High and HL Higher Low:
+Indicates a Bullish market structure.
+LH Lower High and LL Lower Low:
+Indicates a Bearish market structure.
+Liquidity Sweep Detection:
+This is the core feature of the ERL indicator. When the price breaks a previous swing level but fails to close beyond it, leaving only a wick and closing back inside the range, the indicator intelligently changes the label of that level to Sweep. This function is crucial for detecting potential Stop Hunts or Fake Breakouts, which often mark the beginning of a strong price reversal.
+Key Features
+Auto Market Structure Labeling:
+Real time mapping of HH, LH, LL, and HL directly on your chart.
+Smart Sweep Detection:
+Automatically identifies wick formations that grab liquidity from preceding swing levels.
+Clean Visuals:
+Displays horizontal projection lines at every swing point with adjustable lengths, ensuring your chart remains clutter free.
+Full Customization:
+You can easily adjust the swing period, line length, colors, line thickness, and text size to match your preferences.
+Highly Lightweight:
+Built with an efficient object management system, guaranteeing it will not slow down your trading terminal.
+Input Parameters
+InpSwingCandles Default 5:
+The number of candles on the left and right required to validate a Swing High or Swing Low. A higher value detects major market structures.
+InpMaxBarsToScan Default 200:
+The limit of historical bars scanned to maintain lightweight performance.
+InpLineLengthBars Default 15:
+The length of the horizontal projection line from the swing point, measured in bars.
+InpColorSwingHigh and Low:
+Color settings for Swing High resistance and Swing Low support lines and texts.
+InpLineStyle and Width:
+Customization for line styles such as dashed or solid and line thickness.
+InpTextFontSize and Shift:
+Settings for text size and its distance from the level line in pips.
+How to Use This Indicator
+Use the HH, HL, LH, and LL labels to confirm your daily directional bias for identifying buying or selling opportunities.
+Pay close attention when a label changes to Sweep. This acts as a high probability signal that liquidity has been cleared. Smart Money Concepts traders can use this moment to look for reversal entry setups on lower timeframes.

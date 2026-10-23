@@ -1,0 +1,25 @@
+Broker Execution Diagnostics MT5 is a read-only script for checking symbol settings that common ly cause invalid volume, invalid stops, and inconsistent risk calculations.
+What it reports
+Digits, point, trade tick size, and tick value
+Current spread in points
+Minimum, maximum, and step volume
+Conservatively normalized result for a requested volume
+Stops level and freeze level in points and price distance
+Trade mode and execution mode values
+Optional entry-to-Stop-Loss distance validation
+Optional OrderCalcProfit estimate in account currency
+Inputs
+InpRequestedVolume
+- volume to normalize against current broker rules.
+InpEntryPrice
+- optional hypothetical entry price.
+InpStopLossPrice
+- optional Stop Loss price used with the entry price.
+InpShowOnChart
+- also displays the report as a chart comment.
+How to use
+Compile the script in MetaEditor.
+Attach it to the symbol that needs diagnosis.
+Read the report in the Experts log or on the chart.
+Optionally supply entry and Stop Loss prices to inspect distance and estimated P/L.
+The script does not submit, modify, or delete orders. It is intended for MQL5 developers, EA testers, and traders who need a compact symbol-constraint report when diagnosing broker compatibility.

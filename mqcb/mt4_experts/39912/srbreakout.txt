@@ -1,0 +1,3 @@
+This EA is Designed to watch for support & resistance break on H4 & H1.
+All you need to do is setting up your charts on H1 Timeframe and then add the EA to the  chart.
+At the end just Give your phone's Meta Quote ID to the meta trader on your PC then Enjoy The lovely notifications of breakouts in H1,H4 and Moving cross

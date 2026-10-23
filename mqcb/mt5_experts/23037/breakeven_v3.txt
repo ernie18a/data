@@ -1,0 +1,10 @@
+The author of the idea
+-
+Dmitry Tolmachev
+mq5 code author
+-
+barabashkakvn
+The EA moves each position to breakeven.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23037

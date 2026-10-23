@@ -1,0 +1,5 @@
+The classical Stochastic Oscillator implemented as a histogram with a color indication of entering the overbought and oversold areas, as well as a colored cloud between the signal line and the oscillator to indicate the oscillator intersections.
+Fig.1. The Stochastic_Histogram indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14933

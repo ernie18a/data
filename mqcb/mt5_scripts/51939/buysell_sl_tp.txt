@@ -1,0 +1,3 @@
+script to open a buy andsell position at the current price in the MT5 window with a specified stop loss (in pips) and take profit (in pips) that are automatically set when the order is placed.
+the script does not display any dialog windows when running the script, so the script can capture the current price that is being displayed.
+on the initial script execution, the script uses the lot, take profit, and stop loss values ​​based on the values ​​specified in the script. They can then be modified through the global variable settings in the MT5 menu.

@@ -1,0 +1,12 @@
+This indicator is an oscillator calculated by the following formula:
+JPO = MA(close[period] - (close[period-1]/2 + close[period-2]/2)) - (0 - (close[period] - close[period-4]))
+The indicator has three input parameters:
+Period
+- calculation period;
+Method
+- calculation method;
+Smoothing
+- enable or disable smoothing (Yes/No).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20275

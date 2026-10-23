@@ -1,0 +1,5 @@
+This indicator present a main Moving Average line with input parameters maPeriod_1, maMethod_1 and maAppPrice_1.
+The second line will be a calculation of the Moving Average data of a first line with input parameters maPeriod_2, maMethod_2.
+The third line will be a calculation of the Moving Average data of a second line with input parameters maPeriod_3, maMethod_3.
+By the end of the day:
+https://www.youtube.com/watch?v=azT54OYmgRY

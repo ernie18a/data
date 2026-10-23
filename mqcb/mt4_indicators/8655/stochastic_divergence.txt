@@ -1,0 +1,7 @@
+Divergence based on a standard Stochastic with Alert and language selection.
+The Stochastic is not required to be present on the chart. However, if a standard Stochastic is attached, the divergence lines will be drawn both on the chart and in the indicator window, and the indicator will use the Stochastic settings.
+The solid line shows the classic divergence, the dotted line displays the reverse divergence.
+It is possible to change the line color (the ColorBull and ColorBear variables), and also set the output mode and language for a message when divergence occurs.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8655

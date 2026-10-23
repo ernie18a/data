@@ -1,0 +1,10 @@
+Theory :
+The original indicator (with more explanation) was published here :
+M-Oscillator.
+In it's original description the NGBaltic is stating that the M-Oscillator is oscillating between values +14 and -14, which is, unfortunately, not true. That is correct only for M-oscillator main period 14. All the other periods are producing different ranges. In this version, and in order to keep the original spirit of the indicator that is described by NGBaltic, this indicator IS oscillating in the +14 to -14 ranges (decided tio use that strange range simply because NGBaltic was mentioning it) and then significant (fixed) levels for signals can be used too. In that spirit in the extended version we do not have 3 types of color changes but 4 types of color change :
+color changes on slope change
+color change on level cross
+color changes on signal line cross
+color changes on zero line cross
+Usage :
+You can use color change as signal

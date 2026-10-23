@@ -1,0 +1,11 @@
+The William Blau Candlestick Momentum indicator shows the William Blau candlestick momentum.
+It has two input parameters:
+Period
+- calculation period;
+Applied price
+- price used for calculations.
+Calculations:
+Candlestick Momentum = Price - Price N Period before
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20508

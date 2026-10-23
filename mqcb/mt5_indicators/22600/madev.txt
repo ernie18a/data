@@ -1,0 +1,14 @@
+Deviation from MA displays values of maximum deviation between MA and the price.
+Frames are used to detect maximum values (as when searching for fractals). Signal pointers are set to maximum deviation within a frame.
+It has four inputs:
+Period
+- МА calculation period
+Method
+- МА calculation method
+Applied price
+- МА calculation price
+Frames
+- size of one frame, within which the search for a maximum deviation is performed
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22600

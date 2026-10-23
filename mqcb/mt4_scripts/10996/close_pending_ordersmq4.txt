@@ -1,0 +1,10 @@
+Author:
+ThinkTrustTrade
+Description:
+This script can close all your pending orders in your MT4, or you can select different pending orders.
+You can select:
+by order type: Limit Buy, Limit Sell, Stop Buy or Stop Sell;
+by magic number: close or skip all position with specified magic number
+by market instrument;
+and the combination of the above options
+You just need to drag the script to the chart and adjust the settings.

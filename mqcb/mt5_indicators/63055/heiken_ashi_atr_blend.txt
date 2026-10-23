@@ -1,0 +1,51 @@
+Features:
+ATR-smoothed Heiken Ashi candles drawn directly on the chart: blue for bullish, red for bearish.
+Large move: when the new Heiken Ashi close differs from the previous smoothed close by at least ATR x sensitivity, the candle snaps to the raw Heiken Ashi values.
+Small move: open and close are blended with the previous smoothed candle using the blend factor, so minor noise doesn't flip the candle colour.
+Fast EMA (default 20) and Slow EMA (default 50) plotted as trend-bias lines.
+Early-entry buy/sell arrows when the smoothed candle changes direction in line with the EMA bias:
+Buy signal: the smoothed candle turns bullish (previous candle was not), Fast EMA is above Slow EMA, and the two EMAs are still close together.
+Sell signal: the smoothed candle turns bearish (previous candle was not), Fast EMA is below Slow EMA, and the two EMAs are still close together.
+"Close together" is measured in ATR units, so the filter adapts to each symbol and timeframe automatically. Signals are skipped once the EMAs have spread far apart, which keeps entries focused on early moves instead of stretched trends.
+Buy arrows are placed below the candle and sell arrows above it, offset by a fraction of ATR so they don't overlap the candle.
+Popup and push-notification alerts, sent once per bar per direction, formatted as "SYMBOL TIMEFRAME - BUY signal" / "SELL signal".
+Built-in ATR and EMA calculations - no external indicators or includes required.
+Parameters:
+Parameter Name
+Description
+InpFastEMAPeriod
+Fast EMA period (default 20).
+InpSlowEMAPeriod
+Slow EMA period (default 50).
+InpATRPeriod
+ATR period (default 14). Used for the smoothing threshold, the EMA distance filter and the arrow offset.
+InpMultiplier
+Signal sensitivity (default 0.8). ATR multiple that decides when the smoothed candle snaps to the raw Heiken Ashi values. Lower values follow price more closely; higher values give a smoother, slower candle.
+InpBlendFactor
+Signal blend factor (default 0.3, range 0-1). Weight given to the new Heiken Ashi open/close when blending on small moves. Lower values smooth more; higher values react faster.
+InpMinEmaSeparationATR
+EMA distance filter (default 0.25). A signal only qualifies while the gap between Fast and Slow EMA is no larger than this many ATRs. Lower values are stricter and fire only when the EMAs are very tight; higher values allow signals in more developed trends.
+InpArrowOffsetATR
+Distance of the arrows from the candle, as a fraction of ATR (default 0.30).
+InpSignalsEnabled
+Enables or disables signal alerts (default true). Arrows are still drawn on the chart when this is off.
+InpPopupAlert
+Show a popup alert when a signal appears (default true).
+InpPushAlert
+Send a push notification to the mobile terminal when a signal appears (default false).
+Notes and Limitations:
+Signal only:
+This indicator does not place trades. It's for visual/analytical use - no order management, no SL/TP.
+Current bar behaviour:
+Signals on closed bars do not change. The current (still forming) bar is recalculated tick by tick, so an arrow on it can appear or disappear until the bar closes.
+Alert timing:
+Alerts are sent on the current bar as soon as the conditions are met, not at bar close, and only once per bar per direction.
+Heiken Ashi prices are calculated values:
+The smoothed candles do not show real traded prices. Use the standard price chart for entries, stop-loss and take-profit levels.
+Early-entry filter:
+Signals only fire while the EMAs are close together, so you will see fewer signals during strongly extended trends. This is by design.
+Single file:
+Uses the built-in ATR and EMA calculations - no external indicators or includes required. Works on any symbol and timeframe.
+Screenshots:
+Conclusion:
+If you like the clarity of Heiken Ashi but want fewer false colour flips, this indicator smooths the candles with an ATR-based filter, adds an EMA trend bias, and marks early entries with clean arrows and optional alerts - all in one self-contained file.

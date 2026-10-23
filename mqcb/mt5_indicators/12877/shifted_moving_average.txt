@@ -1,0 +1,6 @@
+Real author:
+angreeee, MetaQuotes Software Corp.
+Indicator is a modified version of
+Moving Average
+indicator.
+Besides standard horizontal bar shift, it allows user to also shift moving average vertically. Vertical shift is counted in Points.

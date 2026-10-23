@@ -1,0 +1,25 @@
+Trend Interruption Average displays three lines:
+the average number of consecutive rising candlestick Close prices (uptrend)
+the average number of consecutive falling candlestick Close prices (downtrend)
+the difference of these two streams
+It has two input parameters:
+Period
+- averaging period
+Method
+- averaging calculation method
+Calculation:
+Up = AvgUp
+Down = AvgDown
+Difference = AvgUp - AvgDown
+where:
+AvgUp - MA(Up, Period, Method)
+AvgDown - MA(Down, Period, Method)
+If Close > PrevClose
+Up = PrevUp+1
+Down = 0
+If Close < PrevClose
+Down = PrevDown+1
+Up = 0
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22922

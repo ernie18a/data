@@ -1,0 +1,7 @@
+Theory :
+It was created by M.H.Pee. The definition (in short) is the following :
+To calculate a 30-day trend intensity index (TII), follow these steps:
+Obtain the 60-day simple moving average by adding the closes for the past 60 days and dividing the result by 60.
+Find the deviation of each of the recent 30 closes from the 60-day moving average. The deviation is up if the close is above the moving average, and down when the close is below the average. Up deviation values are obtained by subtracting the moving average from the close, while down deviations are calculated by subtracting the close from the moving average. The TII allows you to find out what percentage of these deviations is up or down. For a 30-day TII , you should have 30 deviations from the 60-day moving average.
+Usage :
+You can use color changes as signals

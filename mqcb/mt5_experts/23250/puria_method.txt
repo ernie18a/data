@@ -1,0 +1,63 @@
+Idea
+by
+Sergey Deev
+mq5 code author
+-
+barabashkakvn
+A trading system based on the Puria method. It uses the fast iMA indicator (Moving Average, MA), two slow iMA indicators (Moving Average, MA) and one iMACD indicator (Moving Average Convergence/Divergence, MACD).
+If
+Use all ticks
+is set to "true", the EA will operate at every tick; if set to "false", the EA will operate only when a new bar appears. The EA opens only one position at a time, therefore it is able to work both on hedging and netting accounts.
+The main idea of the method is to open a sell position once the fast MA moves above two slow MAs and a confirmation from MACD is received. In this implementation, the minimum allowable value, by which the fast MA should be greater than slow ones, is used:
+if
+(((MA1
+#
+1
+- MA0
+#
+1
+)/m_symbol.Point()>
+0.5
+)
+&& ((MA2
+#
+1
+- MA0
+#
+1
+)/m_symbol.Point()>
+0.5
+))
+***
+if
+(((MA0
+#
+1
+- MA1
+#
+1
+)/m_symbol.Point()>
+0.5
+)
+&& ((MA0
+#
+1
+- MA2
+#
+1
+)/m_symbol.Point()>
+0.5
+))
+***
+Added partial closure, moving to breakeven upon reaching the minimum profit and calculation of initial lot size for a given risk.
+When the minimum profit specified in
+Minimum profit step
+is reached, part of the position is closed - the position volume (shown as
+N
+in the figure) is multiplied by
+Coefficient lot taking
+:
+EURUSD, M30 Testing:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23250

@@ -1,0 +1,12 @@
+NV (Natenberg's Volatility) - Sheldon Natenberg's historical volatility indicator.
+Historical volatility described by Sheldon Natenberg is defined as the standard deviation of logarithmic price changes measured at equal time intervals.
+The indicator has one input parameter:
+Period
+- indicator calculation period.
+Calculation:
+NV = StdDev(R, Period)
+where:
+R = Log(Close / PrevClose)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21107

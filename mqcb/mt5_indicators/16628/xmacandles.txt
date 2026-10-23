@@ -1,0 +1,9 @@
+XMA indicator in the form of candles.
+Candlesticks appear as a result of relevant price timeseries processed by the smoothing algorithm. In many situations, such approach may be more informative for the purpose of analysis.
+The indicator uses SmoothAlgorithms.mqh library classes (copy it to <terminal_data_folder>\MQL5\Include). The use of the classes was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Fig.1. XMACandles indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16628

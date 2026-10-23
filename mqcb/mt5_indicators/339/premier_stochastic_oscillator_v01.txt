@@ -1,0 +1,12 @@
+Real author:
+traderak20, based on article in TASC magazine by Lee Leibfarth (August 2008), see
+traders.com
+for the article (subscription required).
+For instructions on how to use the Premier Stochastic Oscillator see
+investopedia.com
+You can set the same parameters as for the normal
+Stochastic indicator
+, and for the period of the
+EMA
+used to calculate the Premier Stochastic Oscillator.
+Parameters can be set to show the oscillator as a histogram and/or a line, single-color or multi-color. You can add arrows to clearly show when the indicator is crossing the outer limits, this is especially useful when you are only using the line and not the histogram.

@@ -1,0 +1,5 @@
+The Stochastic Momentum Index (SMI) was developed by William Blau and was introduced in the January 1993 issue of Technical Analysis of Stocks & Commodities magazine.
+It incorporates an interesting twist on the popular Stochastic Oscillator. While the Stochastic Oscillator provides you with a value showing the distance the current close is relative to the recent x-period high/low range, the SMI shows you where the close is relative to the midpoint of the recent x-period high/low range.
+This version is doing the calculation in the same way as the original
+Stochastic Momentum Index
+, except in one very important part: instead of using EMA (Exponential Moving Average) for calculation, it is using T3. That produces a smoother result without adding any lag.

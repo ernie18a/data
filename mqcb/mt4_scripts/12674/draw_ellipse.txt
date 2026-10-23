@@ -1,0 +1,3 @@
+A script to simplify drawing Ellipses.
+Ellipses are great for identifying areas of interest. Drawing them can be time consuming so I created a script that will create an ellipse on window drop.
+The ellipse is created where you drop it, sized automatically, regardless of currency pair or timeframe. Much quicker and easier than the out of the box functionality.

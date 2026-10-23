@@ -1,0 +1,16 @@
+The
+ColorXPWMA_Digit
+indicator with the ability to change the indicator timeframe using the input parameters:
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// The indicator chart period (timeframe)
+For the indicator to operate, the
+ColorXPWMA_Digit.ex5
+indicator must be added to the <terminal_data_directory>\MQL5\Indicators folder.
+Fig. 1. The ColorXPWMA_Digit_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21719

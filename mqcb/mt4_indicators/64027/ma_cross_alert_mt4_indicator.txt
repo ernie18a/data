@@ -1,0 +1,108 @@
+What Is MA Cross Alert?
+MA Cross Alert
+is a custom MT4 indicator that solves one key problem: MetaTrader’s built-in Moving Average shows the line but has no way to
+alert you when price crosses it
+.
+This tool adds the missing feature by giving
+instant notifications
+whenever price moves
+above or below the MA line
+. It works for both
+trend-following strategies
+(trading with the trend) and
+reversal strategies
+(spotting breakouts against the trend).
+Why Is It Useful?
+With
+MA Cross Alert
+, you don’t have to sit in front of charts waiting for price to cross a moving average.
+It alerts you the moment it happens.
+It can draw
+arrows on the chart
+showing buy/sell signals at each crossover.
+It supports all major MA types:
+Simple (SMA), Exponential (EMA), Smoothed (SMMA), Linear Weighted (LWMA)
+.
+This makes it a flexible tool for both beginners and advanced traders who rely on MAs.
+Alerts & Notifications
+You can choose how you want to be notified:
+On-Screen Alerts
+– Pop-up messages in MT4.
+Mobile Push Notifications
+– Alerts sent directly to the MT4 mobile app.
+Email Notifications
+– Emails sent whenever a cross is detected.
+⚠️ Note: Mobile and email alerts require you to configure notifications in your MT4 platform settings.
+Signals on Chart
+In addition to alerts, the indicator can mark signals visually:
+Buy Arrow
+→ when price crosses
+above
+the MA.
+Sell Arrow
+→ when price crosses
+below
+the MA.
+Optional labels for reviewing past signals.
+This makes it easy to back-check signals and understand how often crosses happen.
+Input Parameters
+Moving Average Settings
+MA Method
+– Choose from SMA, EMA, SMMA, LWMA, or Hull MA.
+MA Period
+– Number of candles to calculate the average.
+Applied Price
+– Close, Open, High, Low, Median, Typical, or Weighted price.
+Signal Settings
+Candle To Use For Analysis
+–
+Current Candle:
+Triggers as soon as price touches/crosses the MA. (Fast but may repaint)
+Previous Candle:
+Confirms only after a candle closes across the MA. (Safer, fewer false signals)
+Ignore Same Candle Crosses
+– Filter out whipsaw signals caused by candles that open on one side and close on the other.
+Number Of Candles To Analyze
+– Limit checks to the most recent N candles for faster performance.
+Notifications
+Enable Notifications Feature
+– Master switch.
+Send Alert Notification
+– On-screen alerts.
+Send Notification To Mobile
+– Push notifications to your MT4 app.
+Send Notification Via Email
+– Email alerts when cross detected.
+Display Options
+Show Arrows On Cross
+– Draw buy/sell arrows.
+Show Signal Labels
+– Display labels with crossover info.
+Example Use Cases
+1. Trend Following Strategy
+A trader sets the 50 EMA as the base line.
+When price closes
+above
+the EMA, MA Cross Alert shows a
+Buy Arrow
+and sends an alert.
+When price closes
+below
+the EMA, it shows a
+Sell Arrow
+.
+✅ Useful for staying with the bigger trend.
+2. Reversal Strategy
+A trader uses the 200 SMA.
+When price crosses back
+below
+the 200 SMA, it signals a possible reversal.
+Alerts are sent instantly so the trader doesn’t miss the move.
+✅ Helps spot turning points at key levels.
+3. Multi-Timeframe Trading
+Set alerts on both the
+15M chart
+(short-term moves) and the
+H4 chart
+(big trend).
+✅ Aligning signals across timeframes gives stronger confirmation.

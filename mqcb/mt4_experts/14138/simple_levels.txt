@@ -1,0 +1,8 @@
+EA opens trades from support and resistance levels (trendline — element from a toolbar) which were set by a trader. The direction is selected by the arrows, graphically.
+Two options are available:
+Trade the move from the levels (arrows — up and down). If the open price is under the level, the EA will open the sell position when price crosses the level. The buy position has the opposite condition.
+Trade the crossing the levels (↕). If the open price is under the level, the EA will open the buy position when price crosses the level. The sell position has the opposite condition.
+Levels have different colors, according to their angle. Level is “off” if inappropriate arrows were set. In this case level is thin. If you want to make a horizontal level, move its second handle to the left from the first handle.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14138

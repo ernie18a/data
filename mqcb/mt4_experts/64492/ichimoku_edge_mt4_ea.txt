@@ -1,0 +1,44 @@
+Ichimoku Edge is based on the standard
+Ichimoku Kinko Hyo
+indicator with default settings. It generates Buy and Sell signals from the cross of the
+Chikou Span
+with the
+price
+, confirmed by the position of price and Chikou Span relative to the
+Kumo (cloud)
+.
+Backtest Results
+Strategy Logic
+A
+Buy
+signal occurs when the Chikou Span crosses the price from below, confirmed when both current price and Chikou are above the Kumo.
+A
+Sell
+signal occurs when the Chikou Span crosses the price from above, confirmed when both current price and Chikou are below the Kumo.
+All open trades close automatically when an opposite (reverse) signal appears.
+No fixed Stop Loss or Take Profit are used; exits rely entirely on signal reversals.
+Money Management
+Two position-sizing modes are supported:
+Fixed lot size
+— trades use a predefined volume.
+ATR-based sizing
+— dynamically adjusts lot size based on risk % or money value using the Average True Range indicator.
+Key Input Parameters
+Ichimoku Settings:
+Tenkan = 9
+Kijun = 26
+Senkou = 52
+Money Management:
+Lots – fixed position size.
+MM – enable ATR-based risk management.
+ATR_Period, ATR_Multiplier – ATR settings.
+Risk / MoneyRisk – percentage or fixed money risk.
+UseMoneyInsteadOfPercentage – switch between % or currency-based risk.
+UseEquityInsteadOfBalance – risk from equity instead of balance.
+LotDigits – precision for broker lot size.
+Miscellaneous:
+OrderComment – order label.
+Slippage – max slippage allowed.
+Magic – unique EA identifier.
+Notes
+This EA works best on higher timeframes and trending markets. For best results, test various Ichimoku and ATR settings before live use.

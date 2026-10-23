@@ -1,0 +1,1 @@
+Excellent Trend-Following system based on ATR.

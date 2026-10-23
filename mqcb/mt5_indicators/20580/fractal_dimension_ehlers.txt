@@ -1,0 +1,10 @@
+Based on the June 2010 issue of TASC article by John Ehlers and Rick Ways "Fractal Dimension As A Market Mode Sensor".
+Short descriptions of their interpretation of fractal dimension would be the following:
+Fractal dimension
+There is no argument that market prices are fractal. Price charts look similar regardless of time frame. If you remove the labels from a five-minute chart, a daily chart, and a weekly chart, you would have difficulty telling them apart. Fractal shapes are self-similar because they have the same roughness and sparseness regardless of time interval. This self-similarity can be defined by the fractal dimension that describes sparseness at all magnification levels.
+To determine the fractal dimension of a generalized pattern, we cover the pattern with a number
+N
+of small objects of several various sizes
+S
+. The relationship of the number of objects in two sets of sizes is:
+By it's nature, fractal dimension index indicator is not directional. Instead it is showing if there is a trend or not. If the value of the FDI is less than the target threshold, then there is no trend (the market is ranging). If the value is above that threshold then the market is trending.

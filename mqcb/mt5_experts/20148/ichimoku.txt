@@ -1,0 +1,61 @@
+The author of the idea
+:
+artem1985
+,
+the mq5 code author
+:
+barabashkakvn
+.
+BUY position opening rule:
+Tenkan-sen on bar #1 < Kijun-sen on bar #0
+AND
+Tenkan-sen on bar #0 >= Kijun-sen on bar #0
+AND
+Close of bar #0 > Senkou Span B on bar #0
+The following rule is applied for opening SELL positions (the difference from the BUY rule is
+marked with color
+):
+Tenkan-sen on bar #1
+>
+Kijun-sen on bar #0
+AND
+Tenkan-sen on bar #0
+<
+= Kijun-sen on bar #0
+AND
+Close of bar #0
+<
+Senkou Span B on bar #0.
+Test on EURUSD,D1:
+Input Parameters
+Lots
+- position volume;
+Stop Loss BUY
+(in pips) - stop loss of a BUY position;
+Take Profit BUY
+(in pips) - take profit of a BUY position;
+Stop Loss SELL
+(in pips) - stop loss of a SELL position;
+Take Profit SELL
+(in pips) - take profit of a SELL position;
+Trailing Stop BUY
+(in pips) - trailing stop of a BUY position;
+Trailing Stop SEL
+L (in pips) - trailing stop of a SELL position;
+Use trade hours
+- enable/disable the time filter;
+Start hour
+- operation start hour;
+End hour
+- operation end hour;
+Ichimoku: period of Tenkan-sen
+;
+Ichimoku: period of Kijun-sen
+;
+Ichimoku: period of Senkou Span B
+;
+magic number
+- Expert Advisor's unique identifier.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20148

@@ -1,0 +1,31 @@
+A simple arrow signal indicator based on the intersection of four moving averages with different calculation data.
+There are thirteen input parameters (three parameters for each of the four moving averages):
+First MA period
+- first MA calculation period
+First MA applied price
+- price used for the calculation of the first MA
+First MA method
+- first MA calculation method
+... Similar parameters are used for the second, third and fourth MA
+Use swing signals
+- use only the direction change signals (Yes/No) (*)
+Calculation:
+Up Arrow
+:
+MA1 > MA2 and MA3 > MA4
+Down Arrow
+:
+MA1 < MA2 and MA3 < MA4
+where:
+MA N - MA(MA N applied price, MA N period, MA N method)
+* If you set
+Use swing signals = Yes
+, the arrows will only appear when the signal direction changes,
+if
+Use swing signals = No
+, the indicator will show a color line of three dots (similar to that of Parabolic SAR) based on the largest-period MA prices, and only if the signal condition is met.
+Fig. 1. Use swing signals = Yes
+Fig. 2. Use swing signals = No
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21839

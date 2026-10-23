@@ -1,0 +1,49 @@
+Idea by
+:
+Scriptor
+MQL5 code author
+:
+barabashkakvn
+Arrays are averaged using the functions of the built-in
+MovingAverages.mqh
+library.
+The indicator consists of three indicator constructions:
+Fish
+, drawing style
+DRAW_COLOR_HISTOGRAM
+- a histogram of colored bars. The main indicator buffer calculated by one of
+Price Constants
+;
+Fish Aver
+, drawing style
+DRAW_LINE
+- a line with the specified color. Contains the
+Fish
+array, which is smoothed using simple averaging with the
+MA1period
+period;
+Fish Aver Aver
+, drawing style
+DRAW_LINE
+- a line with the specified color. Contains the
+Fish aver
+array, which is smoothed using linear weighted averaging with the
+MA2period
+period;
+Buy signals
+-
+Fish
+is below zero and is crossed by
+Fish Aver
+.
+Sell signals
+-
+Fish
+is above zero and is crossed by
+Fish Aver
+.
+Fish Aver Aver
+can be used either for a more conservative entry or as a position exit signal.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21767

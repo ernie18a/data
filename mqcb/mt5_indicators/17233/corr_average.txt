@@ -1,0 +1,14 @@
+This indicator is calculating 4 basic types of averages with an option to have "corrected" value of an average too.
+Even though at a first glance Dr.Uhl's method looks like and adaptive EMA, because of the way it corrects the values, it tends to give results very, very close to the original value when the correction is not active (in times of grater volatility). Because of that it is suitable for usage on a broad range of values (not just averages) without significant loss of the original value , but in this case averages are used.
+The 4 types of averages are the usual 5 basic type of averages. Where the indicator is extended largely is how it is calculated and how it can determine trend.
+If the correction period is set to <0, then there is no correction and in that case the value of the average is the same as the original average.
+If the correction period is set to 0 to 1 then the same period as the average period is used for correction.
+If the correction period is set to any value > 1 then that fixed period is used for correction.
+This indicator has floating levels (in order to add implicit conversion to a kind of oscillator and to make trend determination easier). Color (and trend state) change can be determined based on :
+Slope change
+Outer levels cross
+Middle level cross
+Original average value cross
+This indicator shows the value of the original average too. If the corrected value and the original value are crossed, their cross type is determining the trend state. It usually is a good indicator for trend and tends to have small number of false signals if not too fast (short) average period is used (to short periods in any case are tending to show noise instead to filter prices), so some compromise in the period used is advised. Normal averages periods that are usually used are working fairly well with this indicator — long periods also.
+The rest are the usual options (multi time frame and alerts) and they are clearly explained in the parameters so the usage should not be difficult.
+An example of a "larger look" usage of the above example

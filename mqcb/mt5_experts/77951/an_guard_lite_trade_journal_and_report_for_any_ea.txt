@@ -1,0 +1,25 @@
+AN Guard Lite
+A journal and a report for any Expert Advisor, or for your own manual trades. It only watches. It never opens, modifies or closes a position.
+What it writes:
+A CSV journal, one line per event: every position opened, every position closed, and why it closed (stop loss, take profit, closed by the broker, closed by a program, closed by hand), with the net result.
+A text report, written when you remove it from the chart: net profit, win rate, profit factor, average win and loss, expectancy per trade, drawdown, results month by month, and how far each trade ran before it closed.
+Why "how far it ran" matters:
+Two trades that both close at +2 are the same line in the standard report. One may have reached +0.2 R, the other +3 R. The report counts trades by the best gain they reached, in R (multiples of the initial risk), so you can see if your break even or trailing stop is cutting winners short.
+It also warns you when a position has no stop loss.
+Inputs:
+Scope: only the symbol of the chart, or all positions of the account.
+Only this magic number (0 = all).
+Journal file and report file base names.
+Write the CSV journal: on / off.
+Alert when a position has no stop loss: on / off.
+Notes:
+Attach it to one chart and leave it there.
+Works on any symbol and timeframe. It does not depend on them.
+The initial risk (R) is the first stop loss the program sees on the position. If your EA sets the stop a moment after the entry, that stop is used and a line in the journal says so. Without a stop loss the best gain cannot be measured, and the report says so.
+The result of each trade is net: profit plus swap, commission and fees.
+Files are written to the MQL5\Files folder of the terminal.
+The CSV journal and the report can be opened in Excel (read-only) while the program is running.
+On a netting account, adding to a position changes its average price. R is calculated from the price seen when the position was first noticed.
+Times are server times.
+Need automatic protection?
+A separate program, Prop Firm Loss Guard Pro (AN Guard Pro), is available in the Market. It closes all positions and deletes all pending orders before a daily loss limit or a maximum loss limit is reached, then locks the account. This free program only writes the journal and the report: it never opens, modifies or closes a position.

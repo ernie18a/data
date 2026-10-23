@@ -1,0 +1,6 @@
+Theory :
+People are using divergence in many way. Most of the methods are actually arbitrary (since the "extremes" are easily determined visually, while they are not as easily determined mathematically) and, when extremes mode is used, there must be some passed (closed) bars for confirmation of an extreme to use it for divergence checking
+This indicator :
+It is using linear regression channel applied bot on the indicator (RSI in this case) and on price. If the channel slope is not the same on RSI and on price, then the indicator draws the middle line on the linear regression channel using the color you set in the parameters. If the two channels are having the same slope, then the color used is the color for "regular" channels
+Usage :
+The same way as any divergence seeking indicator - as soon as you see the changed color of the channel middle line, you can take any action you usually do when there is a divergence. The only difference is that there is no need for confirmation bars since the linear regression channel does not need already closed bars for calculation and slope determining

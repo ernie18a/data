@@ -1,0 +1,8 @@
+This script
+closes all windows of selected symbol
+or
+all windows of any symbol
+. It's very useful when you are testing and there are too many open windows to close one by one.
+Recommendations:
+Select the inputs if you want to close all symbols or selected.
+Enjoy it!

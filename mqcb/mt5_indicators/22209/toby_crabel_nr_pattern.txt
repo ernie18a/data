@@ -1,0 +1,56 @@
+NR (Narrow Range Bar) pattern indicator by Toby Crabel with the ability to display WR (Wide Range Bar) patterns as well
+It has six input parameters:
+NR Method
+- patterns type:
+2NR
+3NR
+4NR
+8NR
+Custom
+Sample (NR Custom)
+- number of samples (if NR Method = Custom)
+Period (NR Custom)
+- calculation period (if NR Method = Custom)
+Show wide range bar
+- display Wide Range Bar patterns (red labels on a bar's High)
+Show narrow range bar
+- display Narrow Range Bar patterns (green labels on a bar's Low)
+Exclude current bar
+- exclude the current bar from search (Yes/No)
+2NR is the narrowest range from High to Low of any two-day period relative to any two-day period
+of the previous
+20 days
+3NR is the narrowest range from
+High
+to
+Low
+of any three-day period relative to any three-day period
+of the previous
+20 days
+4NR is the narrowest range from
+High
+to
+Low
+of any four-day period relative to any four-day period of the previous 40 days
+8NR is the narrowest range from
+High
+to
+Low
+of any eight-day period relative to any eight-day period
+of the previous
+40 days
+Custom
+is the narrowest range from
+High
+to
+Low
+of any
+Sample
+period relative to any
+Sample
+period
+for the previous
+Period days
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22209

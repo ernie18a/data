@@ -1,0 +1,14 @@
+//|A very simple Indicator banner showing Symbol Spread Equity Profit
+//|I use it every day in full chart mode so I don't have to open the terminal panel to check equity,
+//|and to see optimal spread to entry symbol trade. I consider it useful enough to share it with you.
+#property copyright     "Copyright 2024, MetaQuotes Ltd."
+#property link          "https://www.mql5.com"
+#property version       "1.01"
+#property description   "persinaru@gmail.com"
+#property description   "IP 2024 - free open source"
+#property description   "Symbol Spread Equity Profit Banner"
+#property description   ""
+#property description   "WARNING: Use this software at your own risk."
+#property description   "The creator of this script cannot be held responsible for any damage or loss,"
+#property description   "nor for happiness and euphoria on gains."
+#property strict

@@ -1,0 +1,5 @@
+Author: not specified
+Fast adaptive trend line is an estimate of the trend line.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7313

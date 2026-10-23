@@ -1,0 +1,11 @@
+The extended version of the
+ChannelsFIBO
+indicator which implements the selection of the reference distance (the distance considered 100% of the channel width at each individual bar):
+By the maximum shift of the price from the moving average.
+By the average shift of the price from the moving average.
+By the median shift of the price from the moving average.
+By the standard deviation (SD) of the price from the moving average.
+For example, when selecting reference distance "By SD", the channel will look the following way:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14749

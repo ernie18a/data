@@ -1,0 +1,169 @@
+XAUUSD (Gold) is a popular trading instrument in the forex market due to its high volatility and profit potential. However, major economic news events—such as Non-Farm Payrolls, Fed interest rate decisions, or European Central Bank announcements—can cause significant price spikes, posing risks to automated trading strategies. To manage these risks, a News Filter in an Expert Advisor (EA) can pause trading during high-impact news periods. In this article, I’ll show you how to create a simple News Filter for XAUUSD trading on MT5 and share a practical code example to get you started.
+Why Use a News Filter for XAUUSD Trading?
+News events related to USD, GBP, or EUR often lead to sharp movements in XAUUSD prices. For example, a Fed rate hike announcement might cause gold prices to drop rapidly, triggering stop-losses or unexpected losses in an automated trading system. A News Filter helps by:
+Pausing Trading:
+Temporarily halting trades before and after major news events to avoid volatility.
+Reducing Risk:
+Protecting your account from sudden market swings.
+Improving Consistency:
+Ensuring your EA trades only in stable market conditions.
+In the next section, I’ll provide a simple MQL5 code snippet to implement a News Filter for your XAUUSD trading strategy.
+//+------------------------------------------------------------------+
+//| Simple News Filter for XAUUSD Trading                            |
+//+------------------------------------------------------------------+
+#property
+copyright
+"Duy Van NGUY"
+#property
+link
+"
+https://www.mql5.com/en/users/wazatrader"
+#property
+version
+"1.00"
+input
+int
+MinutesBeforeNews =
+15
+;
+// Minutes before news to pause trading
+input
+int
+MinutesAfterNews  =
+15
+;
+// Minutes after news to resume trading
+// Simulated news times (for demo purposes, replace with real news data source)
+datetime
+newsTimes[] = {
+D'2025.05.07 14:30:00'
+};
+// Example: News at 14:30 on May 7, 2025
+//+------------------------------------------------------------------+
+//| Check if trading should be paused due to news                    |
+//+------------------------------------------------------------------+
+bool
+IsNewsTime()
+{
+datetime
+currentTime =
+TimeCurrent
+();
+for
+(
+int
+i =
+0
+; i <
+ArraySize
+(newsTimes); i++)
+   {
+datetime
+newsTime = newsTimes[i];
+datetime
+startPause = newsTime - MinutesBeforeNews *
+60
+;
+// Pause X minutes before news
+datetime
+endPause = newsTime + MinutesAfterNews *
+60
+;
+// Resume X minutes after news
+if
+(currentTime >= startPause && currentTime <= endPause)
+      {
+Print
+(
+"News Filter: Trading paused due to upcoming news at "
+, newsTime);
+return
+true
+;
+// Pause trading
+}
+   }
+return
+false
+;
+// Safe to trade
+}
+//+------------------------------------------------------------------+
+//| Expert initialization function                                   |
+//+------------------------------------------------------------------+
+int
+OnInit
+()
+{
+return
+(
+INIT_SUCCEEDED
+);
+}
+//+------------------------------------------------------------------+
+//| Expert tick function                                             |
+//+------------------------------------------------------------------+
+void
+OnTick
+()
+{
+if
+(IsNewsTime())
+   {
+return
+;
+// Skip trading during news time
+}
+// Add your XAUUSD trading logic here
+Print
+(
+"Safe to trade XAUUSD"
+);
+}
+//+------------------------------------------------------------------+
+//| Expert deinitialization function                                 |
+//+------------------------------------------------------------------+
+void
+OnDeinit
+(
+const
+int
+reason)
+{
+// Clean-up code if needed
+}
+//+------------------------------------------------------------------+
+Code Explanation
+Inputs:
+MinutesBeforeNews
+and
+MinutesAfterNews
+allow you to define the time window (in minutes) to pause trading before and after a news event.
+News Times:
+The
+newsTimes
+array contains predefined news event times (e.g., May 7, 2025, 14:30). In practice, you can replace this with a real news feed from an economic calendar API.
+Logic:
+The
+IsNewsTime()
+function compares the current time (
+TimeCurrent()
+) with the news event times. If the current time falls within the pause window, trading is halted.
+Usage:
+Integrate this filter into your EA by calling
+IsNewsTime()
+in the
+OnTick()
+function before executing any trades.
+Enhance Your XAUUSD Trading with XAU OneShot EA MT5
+While the code above provides a basic News Filter, you might want a more robust solution for XAUUSD trading. That’s why I developed
+XAU OneShot EA MT5
+, an Expert Advisor designed specifically for trading gold with advanced risk management. It includes:
+A built-in News Filter that pauses trading 15 minutes before and after major USD/GBP/EUR news events.
+Auto Break-Even and Trailing Stop to lock in profits.
+Partial Take Profit (closes 50% of the position) to secure gains while letting the rest run.
+A Daily Loss Limit to protect your account from excessive drawdowns.
+Conclusion
+Incorporating a News Filter into your XAUUSD trading strategy is a simple yet effective way to manage risks during volatile news periods. The code provided in this article can serve as a starting point for your EA development. For a more comprehensive solution, try
+XAU OneShot EA MT5
+to take your gold trading to the next level. Happy trading!

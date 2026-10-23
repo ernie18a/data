@@ -1,0 +1,3 @@
+Description:
+The idea is the same of the previous version except that now it tries to maximize the gain when profitable and allows to play with trailing stop and profit in order to close profitable orders even when stalled in "protected" condition trying to exit.
+A couple of examples (not optimized)

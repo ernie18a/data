@@ -1,0 +1,6 @@
+Simple script. When launched, it removes all auto-trading icons on the chart - arrows and lines connecting them.
+The script does not disable the display of trading history on the chart. That is, autotrading icons can appear on the chart again after some time, provided that this mode is activated for the chart (PCM menu):
+It can be used to quickly and temporarily delete all autotrade icons so that they do not take up space in the list of chart objects (Ctrl + B).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/63519

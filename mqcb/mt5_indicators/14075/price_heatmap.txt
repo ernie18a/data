@@ -1,0 +1,6 @@
+This indicator shows price heatmap using price histogram.
+Also, I've uploaded peak lines indicator (new version).
+Display:
+Heatmap — Continuous display of Price Histogram;
+Purple dot line — Peak Lines Indicator (using Long Term Price Histogram).
+Settings:

@@ -1,0 +1,8 @@
+Previous Candle Hi-Lo is used to check the last candle multi-timeframe position relative to the current price.
+Features
+This Indicator can be attached to any chart timeframe (MTF features).
+The calculation and color will be based on input color.
+Input Parameters
+Line style (default: dotted line).
+Line color.
+Please feel free to use and modify this code for your own use.

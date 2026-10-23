@@ -1,0 +1,14 @@
+Inputs of the EA:
+p - period for DeMark oscillator. It is optimized with the values from 3 to 100, step 1.
+tp - TakeProfit value in pips. It is optimized with the values from 10 to 100, step 1.
+sl - StopLoss value in pips. It is optimized with the values from 10 to 100, step 1.
+lots - volume of the first order and that of all orders to be opened after a profitable trade. This parameter is not optimized.
+mn - magic number. This parameter is not optimized.
+losseslimit - the limit of successive losing trades. This parameter is not optimized. If the amount of losing trades reaches this limit, the EA stops opening trades and sends an e-mail message.
+fastoptimize - fast optimization. This parameter is not optimized. If the value of this parameter is 'true', then the embedded system is optimized fast without capital management. The results obtained in the optimizer and in the tester may be different for fast optimization.
+The Ea works only for newly formed bars and open prices. There is no need to optimize it for every tick.
+С более подробным описанием принципа действия данного советника можно ознакомиться по ссылке:
+http://bigforex.biz/load/2-1-0-170
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7999

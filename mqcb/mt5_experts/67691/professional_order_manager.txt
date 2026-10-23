@@ -1,0 +1,44 @@
+Fox Wave Clean - Professional Order Manager
+Professional EA for efficient trade management with one-click position control. Clean design, powerful functionality.
+KEY FEATURES:
+🗑️
+Delete Pending Orders
+Removes all pending orders instantly
+Confirmation dialog before deletion
+Shows exact count of orders to be deleted
+✅
+Close Profit Positions
+Closes all positions in profit with one click
+Smart detection of profitable trades
+Secure confirmation before closing
+❌
+Close Loss Positions
+Closes all losing positions instantly
+Warning dialog for risk management
+Counts positions before execution
+📊
+Live Dashboard
+Real-time position statistics
+Pending orders count
+Profit/Loss positions tracking
+Total P/L display in account currency
+Clean, professional dark theme design
+BENEFITS:
+Save time with one-click management
+Reduce emotional trading decisions
+Professional-grade interface
+Safe operation with confirmations
+No manual position closing needed
+Perfect for scalpers and day traders
+TECHNICAL:
+MT5 compatible
+No DLL dependencies
+Lightweight and fast
+Works on all symbols and timeframes
+Customizable panel position
+PERFECT FOR:
+Active traders managing multiple positions
+Risk management automation
+Quick profit-taking strategies
+Emergency position management
+Professional trading setups

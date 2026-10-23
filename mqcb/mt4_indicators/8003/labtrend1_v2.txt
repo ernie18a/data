@@ -1,0 +1,2 @@
+Author: igorad
+labtrend1_v2 indicator.

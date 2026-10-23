@@ -1,0 +1,16 @@
+Hello
+This code is final implementation of A System: Championship 2008 trade strategy.
+Features:
+1. Advanced position management.
+2. Multi-currency.
+3. Multi-threads.
+Explanations of this code are planned in
+A System: Code
+topic.
+Best regards
+Ais
+==================================================
+Attention!
+This is a technological sample.
+You are using this code on your own risk.
+==================================================

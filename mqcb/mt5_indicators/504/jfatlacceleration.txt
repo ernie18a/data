@@ -1,0 +1,16 @@
+JFatlAcceleration measures the current trend acceleration. The indicator is calculated the following way:
+JFatlAcceleration=Momentum(JMA(Momentum(JMA(FATL(Price[bar])))))
+where:
+JMA
+- adaptive smoothing;
+Momentum
+- Momentum technical indicator;
+FATL
+- digital filter;
+Price[bar] - the current price of an analyzed financial asset at the bar with the "bar" index.
+ColorJFatlAcceleration uses SmoothAlgorithms.mqh library classes. The use of the classes was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/504

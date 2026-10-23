@@ -1,0 +1,17 @@
+The author of the idea
+-
+Scriptor
+mq5 code author
+-
+barabashkakvn
+Trading is based on three iMAs (Moving Average, MA). Two different indicators are compared for BUY and SELL. The necessary condition is a distance between indicators (
+Indentation between indicators
+) on a compared bar: the compared indicators should be separated from each other at the distance equal to
+Indentation between indicators
+/2.
+You can work on any timeframe. OnTick sends signals for verification with the
+Pause
+interval.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22122

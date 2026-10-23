@@ -1,0 +1,4 @@
+In general when you create an arrow on the chart, and then if you scroll the chart the location of the arrow will be changed.
+sometimes it will be very high above the bar and sometimes it will be very much below the bars.
+This is really confusing at time and not well visible.
+In order to address this issue, the attached code will ensure that the arrows created on the chart will appear statically on the chart.

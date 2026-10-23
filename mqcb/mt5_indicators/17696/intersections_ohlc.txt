@@ -1,0 +1,8 @@
+Intersections OHLC 1.000
+implements
+calculations of intersections of previous high and previous low
+.
+The indicator only performs calculations at the moment of a new emergence, no calculations inside the bar.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17696

@@ -1,0 +1,26 @@
+This Expert Advisor is rewritten from MQL4 and was originally published here
+https://www.mql5.com/en/code/8146
+by its author
+Reshetov
+.
+How It Works
+The direction for an entry is determined by the
+SAR
+indicator, provided that
+ADX
+is lower than the level specified. If the last trade was winning, a position can be opened in the direction of the last winning trade. If the last trade was losing, a position can be opened only in the direction opposite to that of the last trade.
+The image shows the performance of the Expert Advisor in the strategy tester's visual mode.
+Parameters
+Lots - Lot.
+MaximumRisk - Risk (it is used if Lots=0).
+StopLoss - Stop Loss in points.
+TakeProfit - Take Profit in points.
+SARStep - SAR step.
+SARMax - maximum SAR step.
+ADXPeriod - ADX period.
+ADXLevel - ADX level.
+Shift - The bar on which the indicator values are checked.
+BreakEven - Profit level of a position expressed in points in order to move the Stop Loss to the breakeven level. If the value is 0, the function is disabled.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1075

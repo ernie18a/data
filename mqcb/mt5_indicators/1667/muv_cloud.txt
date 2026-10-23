@@ -1,0 +1,13 @@
+The real author:
+svm-d
+The fast trends indicator drawn on the basis of two
+XMUV
+Moving Averages. In fact, as a result two lines of the indicator drawn on the basis of this Moving Average with SMA and EMA averagings respectively and led to the range of changes from -100 to +100 values are displayed.
+Off-scale of at least one of these two oscillators on -100 or 100 values indicates the presence of a strong trend in the corresponding direction. In this situation, the points of the corresponding color appear. The color of the cloud corresponds to the trend direction.
+Place the XMUV.ex5 compiled file to the terminal_data_folder\MQL5\Indicators. This indicator was first implemented in MQL4 and published in
+Code Base
+on 09.11.2008.
+Fig.1 The MUV_Cloud indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1667

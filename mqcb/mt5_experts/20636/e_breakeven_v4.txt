@@ -1,0 +1,20 @@
+Idea by
+:
+Dmitry Tolmachev
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+Assistant EA: It moves the positions to a breakeven, after which trailing is enabled.
+It only has three parameters
+Trailing Stop (in pips)
+- trailing;
+Trailing Step (in pips)
+- trailing step, which is also the level, to which the Stop Loss is moved to a breakeven;
+magic number
+- unique identifier for the EA.
+Examples below shows how to work with default parameters:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20636

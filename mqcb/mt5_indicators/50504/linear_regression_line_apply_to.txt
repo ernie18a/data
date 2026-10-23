@@ -1,0 +1,5 @@
+Not all indicators are suitable to have an option to be applied to another indicator data via mt5 designed / allowed options. Linear regression line (original that uses "simple" prices posted here :
+Linear Regression line
+) is one that is suitable
+We have regression channel as objects, but it needs to be constantly adjusted if we want it to follow new bars forming. Hence : here is the version that can be applied to another indicator(s)
+PS: examples do not show it, but the color of lines changes depending on the slope of the regression line

@@ -1,0 +1,15 @@
+The
+DeleteTradeArrows
+utility is designed to delete from the chart the arrow objects that mark transactions in the chart.
+How to use
+: Drop the transactions from the trading history onto the charts. If there are too many arrows, you can delete the excessive ones:
+Pending order arrows;
+From-the-specified-date order arrows;
+Upon-the-specified-date order arrows.
+It also suits for analyzing the trading history of the signal selected. To do so, go to the Signals tab in the terminal, select the appropriate one, and show the arrow objects using the
+Show in Chart
+command.
+The use of this utility is shown in the screenshot below. For convenience, the utility is implemented as an indicator - you can always refine the external parameters on the running indicator for restarting. If it were a script, you would have to start from the very beginning, namely: Select the interval limits for removing the objects.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20578

@@ -1,0 +1,10 @@
+Real author:
+MetaQuotes
+Virtually all important graphic patterns (tops, bottoms, breakthroughs, etc.) are accompanied by a sharp increase in trading volume. The speed indicator of volume change. It shows how quickly the volume changes.
+This indicator was first implemented in MQL4 and published in
+CodeBase
+on 08.02.2007.
+Figure 1. The VROC indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2427

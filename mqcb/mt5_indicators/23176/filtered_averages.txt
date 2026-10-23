@@ -1,0 +1,11 @@
+Theory:
+The indicator that is using self adjusting filter (published and described here :
+Filtered Price
+) but applied to one of the 4 types of averages :
+simple moving average (SMA)
+exponential moving average (EMA)
+smoothed moving average (SMMA)
+linear weighted moving average (LWMA)
+Filter size is the "size" of self adjusted deviations and can be fractional.
+Usage:
+You can use the color change as a signal.

@@ -1,0 +1,23 @@
+IdeaTrend is meant for checking a trend defining idea.
+The indicator has three input parameters:
+Period
+- calculation period;
+Method
+- calculation method;
+Threshold
+- trend direction threshold.
+Calculation:
+Idea = (MAH - MAC) / (MAC - MAL)
+where:
+MAH = MA(High, Period, Method)
+MAL = MA(Low, Period, Method)
+MAC = MA(Close, Period, Method)
+If the indicator histogram exceeds the Threshold line, the trend is considered downwards and the histogram columns are colored in
+red
+;
+If the indicator histogram is below the Threshold line, the trend is considered upwards and the histogram columns are colored in
+green
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21528

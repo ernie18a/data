@@ -1,0 +1,6 @@
+Tipu MACD EA is based MACD indicator that created by Gerald Appel in 1979.  MACD is a Momentum Oscillator, calculated by subtracting the two price moving averages calculated on the price. It is one of the simplest indicators that provides best of both trend and momentum.
+The standard version of MACD is included in MetaTrader4 platform.
+https://www.mql5.com/en/code/7774
+There are also variations of the MACD indicator.  One of them was created by Kaleem Haider
+https://www.mql5.com/en/code/18270
+Tipu MACD EA is a simple EA created to automate buy/sell orders based on the MACD indicator.  This EA is for educational purposes only and should be used at user own risk to trade.

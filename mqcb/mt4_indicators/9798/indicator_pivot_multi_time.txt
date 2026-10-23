@@ -1,0 +1,14 @@
+Author:
+Diego Alonso Vallejo Duque
+Descripción:
+Indicator that shows two resistance levels, 2 levels of support and pivot, they calculated the traditional way.
+The variable Last indicates the last bar to be analyzed, the time variable indicates the longer period to see
+1 - min
+2-5 min
+3-15 min
+4-30 minutes
+5-1 h
+6-4 h
+7-1 d
+8-1 w
+Image:

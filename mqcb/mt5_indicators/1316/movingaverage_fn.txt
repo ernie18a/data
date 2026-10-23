@@ -1,0 +1,15 @@
+The real author:
+Piboli
+This indicator is a Moving Average hybrid of digital and analog filtering. In fact, in this case we have a digital filter whose values ​​are smoothed by usual averaging algorithm.
+Digital filters coefficients are calculated using the Digital Filter Methods program
+http://fx.qrz.ru/
+. Low-pass filter cutting periods from 4 to 60 periods.
+Indicator's file uses the classes of the SmoothAlgorithms.mqh library. Working with that class was described in details in the article
+"Averaging price series for intermediate calculations without using additional buffers".
+This indicator was first implemented in MQL4 and published in
+Code Base
+on 22.04.2009.
+Fig.1 The Moving Average_FN indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1316

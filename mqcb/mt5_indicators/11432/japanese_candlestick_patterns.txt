@@ -1,0 +1,17 @@
+Real author:
+EarnForex.com, Based on MetaTrader 4 indicator by: Carl Sanders
+The indicator displays on charts the patterns created by the Japanese candlesticks.
+The indicator was found through a google search "Earnforex.com" and I've changed some colors. Not all patterns represent a change of direction of the market. I find it useful to display on the chart only HRM4 and SS4. Below is the specification of all patterns.
+It is possible to change colors and also enable or disable alerts.
+Bearish patterns:
+SS 2,3,4 = Shooting Star;
+E_star = Evening Star;
+E_Doji = Evening Doji Star;
+DCC = Dark Cloud Pattern;
+S_E = Bearish Engulfing Pattern.
+Bullish patterns:
+HRM 2,3,4 = Bullish Hammer;
+M_Star = Morning Star;
+M_Doji = Morning Doji Star;
+P_L = Piercing Line Pattern;
+L_E = Bullish Engulfing Pattern.

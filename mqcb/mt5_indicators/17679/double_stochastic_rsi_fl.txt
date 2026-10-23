@@ -1,0 +1,4 @@
+Double stochastic of RSI using floating levels instead of using fixed levels for overbought or oversold detection.
+In case when RSI period is set to <=1, you are going to get double stochastic.
+Additional smoothing of a results can be used (internally EMA is used for additional smoothing). The usual set of 22 custom prices types is available.
+PS: the indicator should not be confused with double smoothed stochastic. This is double stochastic and the results are different from the double smoothed stochastic indicator.

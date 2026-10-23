@@ -1,0 +1,36 @@
+MACD lines and histogram for the Impulse trading system.
+The idea:
+Histogram down (current value less than previous) and line (specified by
+Line
+input) does down, the histogram is
+red - long trades are prohibited;
+Histogram up (curerent value greater than previous) and line up, the histogram is
+green - short trades are prohibited;
+Histogram down and line up (or reverse case) histogram is
+grey -no restrictions;
+The
+Inertia
+is defined by
+Line
+input parameter:
+0 -
+MA(MAPeriod);
+1 -
+MACD
+line;
+2 -
+Signal
+signal line.
+Other input parameters:
+FastMA - Period of Fast Moving Average;
+SlowMA - Period of Slow Moving Average;
+SignalMA - Period of the Signal Line;
+MAPeriod - Period of Moving Average if Line = 0;
+MAMethod -
+Averaging Method
+(MODE_EMA by default);
+MAAppliedPrice -
+Applied Price
+(PRICE_CLOSE by default);
+Line - described above;
+DigitsInc - Precision format Digits + DigitsInc

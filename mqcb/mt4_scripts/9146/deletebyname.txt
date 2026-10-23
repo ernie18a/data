@@ -1,0 +1,12 @@
+The description:
+Clears the
+chart
+of all objects with the name beginning on the specified prefix:
+extern string PreName = "print a prefix";
+Using:
+For example, for fast removal numerous
+lines of trend it is necessary to specify "Trendline" (or "Trend") in property PreName.
+Standard names of these and other objects can be learned in property of these objects.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9146

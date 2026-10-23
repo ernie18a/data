@@ -1,0 +1,13 @@
+Script that contains both Stop Loss as Take Profit.
+Getting your choice only use stop loss or stop loss with take profit.
+Real author:
+Valdir Nogueira
+This script is recommended for robots that do not have stop loss, mainly scalpers and martingales.
+It will only affect the robots corresponding to the number entered in the Number of EA field.
+Below is description of the parameters:
+Parameters:
+Number of EA: Number yours robot used in the graphic.
+Stop Loss in Pips: Value of Stop Loss in Pips.
+Use Take Profit: Yes or No, you choose to use the option to add also Take Profit for your orders .
+Take Profit in Pips: If you use take profit is true, he had taken as the basis of the number Pips added to the field.
+Time of Execution, in seconds: Very important parameter, if your robot is scalper, which opens many transactions, set the seconds to a value of approximately 3 seconds. Always use the value greater than 1 second.

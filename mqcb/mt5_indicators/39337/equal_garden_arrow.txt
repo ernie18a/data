@@ -1,0 +1,8 @@
+Description of the indicator:
+Two indicator buffers (
+OBJ_ARROW
+):
+if the 'Close' price is higher than the iMA indicator - assign the value '2', if it is lower - the value '-2'
+if the 'main' line of the stochastic is less than 'Value Level #1' - assign the value '1',
+if the 'main' line of the stochastic is greater than 'Value Level #2' - assign the value '-1'
+Pic. 1. Equal garden Arrow ((iMA and iStochastic added manually for visualization)

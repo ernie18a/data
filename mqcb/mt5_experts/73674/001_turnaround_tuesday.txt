@@ -1,0 +1,88 @@
+Expert Advisor for testing the Turnaround Tuesday hypothesis.
+Strategy logic: if Monday closes below its open, a Buy position is opened at the start of Tuesday. If Monday closes above its open, a Sell position is opened. The trade is always taken against Monday's direction.
+An optional ATR filter can be applied, and Stop Loss / Take Profit levels can be calculated based on current market volatility.
+This EA was built as a research tool for testing calendar-based market effects and trading hypotheses.
+Parameters
+LotType
+- Position sizing method.
+Fixed Lot
+— fixed trade volume.
+% Risk from Start Balance
+— position size calculated from a predefined risk percentage.
+Lots
+- Fixed lot size used when Fixed Lot mode is selected.
+Risk
+- Risk per trade in percent. (Used only when risk-based position sizing is enabled.)
+ATR Filter
+FilterATR
+- Enables or disables the volatility filter.
+DailyATRPeriod
+- ATR period calculated on the daily timeframe.
+MinCheckDayATR
+- Minimum Monday range expressed as a multiple of ATR.
+Example:
+ATR = 100 points
+MinCheckDayATR = 1.5
+A trade will only be opened if Monday's range exceeds 150 points.
+Position Settings
+kDailyATR
+- Stop Loss distance expressed as a multiple of the daily ATR (
+0 disables Stop Loss
+).
+Example:
+ATR = 100 points
+kDailyATR = 0.5
+The Stop Loss will be placed 50 points away from the entry price.
+rrTP
+- Risk/Reward ratio used to calculate Take Profit (
+0 disables Take Profit
+).
+Example:
+Stop Loss = 50 points
+rrTP = 2.0
+The Take Profit will be placed 100 points away from the entry price.
+Close Position
+CloseHour -
+Hour when all open positions are force-closed.
+If neither Stop Loss nor Take Profit has been reached, the position will be closed at market price.
+MagicNumber
+- Unique identifier used for the EA's positions.
+Important Notes
+The EA analyzes daily candles regardless of the chart timeframe.
+Entry conditions are checked only when a new daily bar appears.
+ATR values are taken from the daily timeframe (PERIOD_D1).
+Only one position per symbol can be open at a time.
+All positions are force-closed at the hour specified in CloseHour.
+If Stop Loss is disabled (kDailyATR = 0), risk-based position sizing cannot be calculated. In this case, the minimum allowed lot size is used.
+Risk Calculation
+When using
+% Risk from Start Balance
+, position size is calculated from the account balance captured when the EA starts, not from the current account balance.
+This behavior is intentional and was designed to make strategy testing more consistent. Risk remains constant throughout the test and does not change as the balance grows or declines.
+If you prefer the traditional approach based on current balance or equity, the position sizing logic can be modified in the CalcLot() function.
+Backtest Results
+The strategy was tested on
+EURUSD, XAUUSD and SP500
+over the
+2016–2026
+period.
+The baseline version
+did not show a persistent edge:
+EURUSD:
+-1.3%
+XAUUSD:
+-2.3%
+SP500:
++0.03%
+After adding the
+ATR filter
+and position management rules, the results changed:
+XAUUSD:
++38%
+SP500:
++40%
+Maximum drawdown on SP500: 11%
+Full research report, equity curves and test results:
+https://www.mql5.com/en/blogs/post/770953
+Source code is open — feel free to modify it, test it on other instruments and build upon it.
+This EA was created to test trading hypotheses, not to trade real money without additional research and validation.

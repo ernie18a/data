@@ -1,0 +1,8 @@
+This indicator calculates the classic historical volatility of a financial asset.
+It was first implemented in MQL4 and published in Code Base at
+mql4.com
+23.09.2010.
+Fig.1 The HistVolatility Indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1061

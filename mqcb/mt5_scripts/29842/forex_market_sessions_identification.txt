@@ -1,0 +1,11 @@
+Features:
+Show main sessions: Sydney, Tokyo, London and New York.
+Highlight with colored rectangles.
+You can identify graphically sessions volatility.
+Parameters:
+Sessions opening hours (h as int): Sydney, Tokyo, London and New York.
+Sessions duration (h as int): Sydney, Tokyo, London and New York.
+Rectangle colors: Sydney, Tokyo, London and New York.
+Others:
+Do not highlight not finished sessions (i.e. current session).
+Script and not indicator / expert, which means that runs once and highlight past data only, do not return data, do not open trades.

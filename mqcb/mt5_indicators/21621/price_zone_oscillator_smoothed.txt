@@ -1,0 +1,4 @@
+One of the possible issues of the
+Price Zone Oscillator
+indicator is that the slope of it is tending to be "too fast".
+This version is an attempt to solve that issue. Here is a comparison of the two: the lag is minimal and the usability of the smoother values is obvious.

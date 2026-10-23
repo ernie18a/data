@@ -1,0 +1,7 @@
+The indicator paints candles going beyond the
+TimeZonePivots
+channel. Candlesticks outside the channel limits are marked with color according to the trend. Candlesticks with the trend have bright fill color, ones against the trend - dark fill color.
+Fig. 1. TimeZonePivotsOpenSystem
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22407

@@ -1,0 +1,19 @@
+CCI in MA is an indicator to change color in iMA if iCCI crosses level up (uptrend) or crosses level down (downtrend).
+It helps any trader to see the trend of pair.
+Parameters
+MA_Periods
+—Period for iMA.
+MA_Method
+— Method for iMA.
+CCI_Periods
+—Period for iCCI.
+CCI_ApliedPrice
+— Price used for iCCI.
+CCI_LevelsUp
+— Level iCCI for up trend.
+CCI_LevelsDN
+— Level iCCI for down trend.
+BarsCount
+— How many bars will show the line.
+ReverseSignals
+— Reverse up trend to down trend signals.

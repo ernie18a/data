@@ -1,0 +1,9 @@
+V (Volatility) Speed is an indicator that displays the current high-low (range) of each bar on the chart, and displays it in the data window below with a smoothed average of the past x(3) bars.
+3 is the default, the longer the period the more long term the value, in other words if you want a short term volatility indication to signal an increase in volatility, a lower number should be used.
+EES recommends using this indicator as a measure of volatility, and to signal an increase or decrease in volatility by watching the SMA.
+A cross up (when the SMA is below the V Speed line and crosses above it) of the SMA indicates a decrease in volatility and conversely, a cross down indicates an increase.
+The SMA values can be adjusted according to the specific pair and time frame used.
+V Speed can be referenced by strategies as an indication of volatility.
+The name speed is derived from the method to determine how ‘fast’ volatility is moving, specific to your pair.
+Monitoring the VIX is not necessarily appropriate.
+V speed also is a handy tool to display each bars high-low which is the range.

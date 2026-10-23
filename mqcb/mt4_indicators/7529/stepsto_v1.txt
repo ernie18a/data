@@ -1,0 +1,2 @@
+Author: igorad
+Indicator StepSto_v1.

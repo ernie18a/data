@@ -1,0 +1,10 @@
+Real author
+: Maloma
+A fractal based indicator.
+This indicator was first implemented in MQL4 and published in
+Code Base
+on 14.09.2007.
+Fig. 1. The FractalsmSignal6diapazon indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18470

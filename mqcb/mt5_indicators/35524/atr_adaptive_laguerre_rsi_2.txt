@@ -1,0 +1,7 @@
+The original of this indicator was posted here :
+ATR adaptive Laguerre RSI
+. But, since the metatrader 5 platform is evolving and changing a lot, and since we had enough time to learn some nuances, some optimization stuff can be done
+When we used metatrader 4 and some previous builds of metatrader 5, some basic rules of how to write the code that would run at optimal speed were the same for both trading platforms, like : no unnecessary looping, using built in functions, ... That is not like that any more. In a lot of cases, when using metatrader 5 one should avoid built in functions to get optimal speed of execution. The original of this indicator was using some such built in functions. This version is not using it any more : instead ATR is calculated internally.
+Recommendations:
+You can use this indicator as any other RSI like indicator : the color changes of the Laguerre RSI can be used as overbought / oversold states, or if you prefer it, as trend start states
+The easiest way to compare the execution speed is to use the profiler - you shall see the difference with your naked eye (regardless of the profiler stats)

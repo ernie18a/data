@@ -1,0 +1,12 @@
+Hello
+This code has two features:
+1. It shows risk management approach to the operation volume calculation.
+2. It shows difference between european and american methods of lot size definition.
+It is result of collaboration in "
+How do I calculate lot size?
+" topic.
+Thanks to all the participants
+.
+Best regards
+Ais
+Computing samples:

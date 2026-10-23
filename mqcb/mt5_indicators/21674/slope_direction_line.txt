@@ -1,0 +1,17 @@
+The Slope Direction Line indicator is displayed as a colored moving average line indicating the average market movement direction.
+The indicator has three input parameters:
+Period
+- calculation period;
+Method
+- calculation method;
+Applied price
+- price used for calculations.
+Calculations:
+SDL = MA(Vector, Sqrt(Period), Method)
+where:
+Vector = 2*MA2 - MA
+MA2 - MA(Applied price, Period/2, Method)
+MA - MA(Applied price, Period, Method)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21674

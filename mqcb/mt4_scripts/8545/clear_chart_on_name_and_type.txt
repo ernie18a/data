@@ -1,0 +1,38 @@
+CLEAR
+_
+CHART
+_
+ON
+_
+NAME
+_
+AND
+_
+TYPE
+script selectively clears the chart by the part of the name and/or by the type of the object.
+The lines, marks, texts, channles are accumulated on the chart.
+The experiments with the indicators leave thousands of graphic arrows.
+You can close and reopen the chart to clear it.
+Then you can apply a template to restore the settings.
+However all graphical objects will be erased.
+24 objects are appplied in
+MQL
+4
+. They are the vertical and horizontal lines, trend lines, channel lines, Fibo, etc.
+This srcipt has 25 parameters for the selective deleting.
+The selectivity is specified with the external parameters:
+First of all it is any part of the objects' names.
+For example:
+"#" will clear the graphical history of the trades.
+Then comes a bonus: the list of the objects that can be deleted using this script.
+All fields are inactive on default.
+Rules:
+1. if all fields are inactive, i.e. they are empty or equal to False
+then the screen will be cleared from all the objects
+, i.e. the script will delete all graphical objects if you don't modify its parameters.
+2. if you change even one parameter:
+- specify a part of the object's name: only the objects that contain that part will be deleted.
+- specify a type of the graphical objects: all the objects of that type will be deleted.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8545

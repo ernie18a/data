@@ -1,0 +1,9 @@
+This code has been used by
+notused
+as a template of the Expert Advisor for
+Automated Trading Championship 2010
+.
+You can use this file as a template for your Expert Advisor. Add your trading logic to compile it.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/200

@@ -1,0 +1,4 @@
+Indicator that signals about trend turns. Green circle means bull trend, the red ones is bear trend.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8344

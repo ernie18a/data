@@ -1,0 +1,6 @@
+Indicator that checks slopes of 5 (different period) averages and adds them up to show overall trend.
+Averages that can be used in this indicator are the:
+Simple Moving Average (SMA)
+Exponential Moving Average (EMA)
+Smoothed Moving Average (SMMA)
+Linear Weighted Moving Average (LWMA)

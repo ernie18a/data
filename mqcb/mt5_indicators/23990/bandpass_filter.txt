@@ -1,0 +1,5 @@
+Theory :
+Short description by John Ehlers :
+The objective in cycle mode is to filter out the unwanted components – both low frequency trends and the high frequency noise – and retain only the range of frequencies over the desired swing period . A filter for doing  this  is called a bandpass filter and the range of frequencies passed  is the filter’s bandwidth .
+Usage :
+You can use the color changes as signals

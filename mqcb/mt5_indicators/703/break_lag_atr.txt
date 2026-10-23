@@ -1,0 +1,7 @@
+A bit enhanced volatility indicator (
+ATR
+) for a specified period.
+A breakout is deemed to be genuine, if the body of a formed bar exceeds average true range (ATR). ABS (Close-Open) candlesticks body size is displayed as a histogram. Histogram green columns show volatility breakout as a histogram and can serve as signals for market entry/exit/position reversal or position volume increasing.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/703

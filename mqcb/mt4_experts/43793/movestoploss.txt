@@ -1,0 +1,13 @@
+==============================================================================================
+MoveStoploss upgrade:
+Fixed minor execution errors across different brokers and added detailed error descriptions.
+Added an option for ATR configuration.
+=============================================================================================
+Managing multiple open trades and constantly adjusting stop losses can be time-consuming.
+MoveStoploss
+automates the process, allowing you to focus on your trading strategy.
+The EA monitors open positions, including manual trades, and automatically trails stop losses using either a user-defined distance or an automatically calculated distance.
+It works across
+forex, commodities, cryptocurrencies, and stocks,
+on all timeframes. Enable Auto Trail for automatic distance calculation, or disable it to specify your preferred trailing distance.
+MoveStoploss — automate stop-loss management and trade with greater efficiency.

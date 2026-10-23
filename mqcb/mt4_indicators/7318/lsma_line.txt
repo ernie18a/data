@@ -1,0 +1,3 @@
+Author
+: not specified
+LSMA Line indicator.

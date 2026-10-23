@@ -1,0 +1,4 @@
+BMP Chart Wallpaper Background for MT5
+Add filename "background" with extension of file format in .bmp inside FILES Folder
+add the indicator on chart and enjoy your wallpaper.
+Added BMP_FIT or BMP_FILL options

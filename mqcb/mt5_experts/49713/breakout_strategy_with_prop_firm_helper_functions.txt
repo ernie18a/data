@@ -1,0 +1,194 @@
+Hello all,
+This is an update of the "
+Simple Yet Effective Breakout Strategy
+". In this code, I have added some helper functions for prop firm challenges.
+Generally, to pass a prop firm challenge, you need to satisfied three main criterias:
+Target profit
+Not violating maximum daily loss
+Not violating maximum loss
+In this code, I have included two functions check for "Target profit" and "Almost violating maximum daily loss" to automatically exit all positions and delete all pending orders. For "maximum loss" it really depends on your strategy and risk management so it won't be mentioned in this MQL5 Script.
+//+------------------------------------------------------------------+
+//| Prop Firm Helper Functions                                       |
+//+------------------------------------------------------------------+
+// Delete all pending orders and exit all positions
+void
+ClearAll(
+string
+message)
+{
+Comment
+(message);
+for
+(
+int
+i =
+OrdersTotal
+() -
+1
+; i >=
+0
+; i--)
+   {
+ulong
+orderTicket =
+OrderGetTicket
+(i);
+if
+(
+OrderSelect
+(orderTicket)) 
+      {
+         trade.OrderDelete(orderTicket);
+      }
+   }
+for
+(
+int
+i =
+PositionsTotal
+() -
+1
+; i >=
+0
+; i--)
+   {
+ulong
+posTicket =
+PositionGetTicket
+(i);
+      trade.PositionClose(posTicket);
+   }
+}
+// Check if we have achieved profit target
+bool
+isPassed()
+{
+return
+AccountInfoDouble
+(
+ACCOUNT_EQUITY
+) > PASS_CRITERIA;
+}
+// Check if we are about to violate maximum daily loss
+bool
+isDailyLimit()
+{
+MqlDateTime
+date_time;
+TimeToStruct
+(
+TimeCurrent
+(), date_time);
+int
+current_day = date_time.day, current_month = date_time.mon, current_year = date_time.year;
+// Current balance
+double
+current_balance =
+AccountInfoDouble
+(
+ACCOUNT_BALANCE
+);
+// Get today's closed trades PL
+HistorySelect
+(
+0
+,
+TimeCurrent
+());
+int
+orders =
+HistoryDealsTotal
+();
+double
+PL =
+0.0
+;
+for
+(
+int
+i = orders -
+1
+; i >=
+0
+; i--)
+   {
+ulong
+ticket=
+HistoryDealGetTicket
+(i);
+if
+(ticket==
+0
+)
+      {
+Print
+(
+"HistoryDealGetTicket failed, no trade history"
+);
+break
+;
+      }
+double
+profit =
+HistoryDealGetDouble
+(ticket,
+DEAL_PROFIT
+);
+if
+(profit !=
+0
+)
+      {
+// Get deal datetime
+MqlDateTime
+deal_time;
+TimeToStruct
+(
+HistoryDealGetInteger
+(ticket,
+DEAL_TIME
+), deal_time);
+// Check deal time
+if
+(deal_time.day == current_day && deal_time.mon == current_month && deal_time.year == current_year)
+         {
+            PL += profit;
+         }
+else
+break
+;
+      }
+   }
+double
+starting_balance = current_balance - PL;
+double
+current_equity   =
+AccountInfoDouble
+(
+ACCOUNT_EQUITY
+);
+return
+current_equity < starting_balance - DAILY_LOSS_LIMIT;
+}
+The parameters we need to specify are:
+input
+string
+dd =
+"-------------PROP FIRM CHALLENGE-----------------"
+;
+input
+bool
+isChallenge =
+false
+;
+input
+double
+PASS_CRITERIA =
+110100
+.;
+input
+double
+DAILY_LOSS_LIMIT =
+4500
+.;
+I hope you find values in this script.

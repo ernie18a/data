@@ -1,0 +1,22 @@
+ExMachina CandleTimer Lite - Free candle countdown timer for MetaTrader 5 with the ExMachina steel palette theme.
+Know exactly when the current candle closes. This lightweight indicator displays a real-time countdown directly on your chart, helping you time entries and exits with precision.
+COUNTDOWN PANEL - Three display modes to choose from:
+Digital Clock: Large countdown digits showing hours, minutes and seconds. Clear and readable at any chart zoom level.
+Progress Bar: Visual fill indicator with percentage. See at a glance how far the current candle has progressed.
+Both: Combined digital clock and progress bar for full awareness. Recommended mode.
+FLASH ALERT - In the last 10 seconds before candle close, the timer alternates between amber and red colors every second. This visual urgency signal is impossible to miss, even on a busy multi-chart setup. Can be toggled on or off.
+SOUND ALERT - Optional sound notification when a new bar forms. Never miss a candle close while reviewing another chart or timeframe.
+ELAPSED / REMAINING - Below the timer, a compact line shows both the elapsed time and the time left in human-readable format (e.g. "45m12s elapsed - 14m48s left").
+EXMACHINA STEEL THEME - Three chart theme modes:
+Full Theme: Deep space background with steel-palette candles, muted grid, and institutional color scheme. Transforms your chart into a clean, professional workspace.
+Opaque Only: Keeps your existing chart colours, only ensures the panel renders cleanly on top.
+No Theme: Zero chart modifications. The panel overlays your chart as-is.
+COLLAPSE / EXPAND - One-click toggle button in the title bar. Collapsed mode shows a compact 30-pixel strip with the brand name, symbol, timeframe, and a live countdown. Expands back to the full panel instantly. Minimizes chart footprint when you need screen space.
+LAYOUT - Panel side (right or left), margin from edge, Y offset, and panel width are all configurable through input parameters.
+Inputs: Panel Side, Margin, Y Offset, Panel Width, Chart Theme Mode, Timer Style (Digital/Progress/Both), Show Seconds, Flash Last 10s, Sound Alert.
+Works on all symbols and all timeframes. No DLLs. No external dependencies.
+Full version with 7 analytical panels (Candle, Spread, Volatility, Multi-Timeframe, Session, Statistics) available on the MQL5 Market.
+ExMachina Trading Systems - Precision before profit.
+Translated from French by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/fr/code/70112

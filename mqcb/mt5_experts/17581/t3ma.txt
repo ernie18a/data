@@ -1,0 +1,16 @@
+Author of the idea
+—
+Dmitry
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+The idea is based on the
+T3MA-ALARM
+indicator. The expert Advisor performs a Sell or a Buy operation when an arrow appears.
+You can configure to perform one or multiple trades at a time.
+Recommended for use on timeframes H1 and above.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17581

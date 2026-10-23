@@ -1,0 +1,9 @@
+Author:
+The Standard Deviation Channel is plotted on the basis of the Linear Regression Trend, representing a usual
+trendline
+drawn between two points on the price chart using the method of least squares.
+More
+...
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7576

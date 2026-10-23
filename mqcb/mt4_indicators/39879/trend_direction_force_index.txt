@@ -1,0 +1,1 @@
+Converted Trend Direction Force Index v2 - TDFI [wm] from TradingView to MQL4

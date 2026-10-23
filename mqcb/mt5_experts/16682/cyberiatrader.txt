@@ -1,0 +1,6 @@
+The author describes it as follows:
+This is a professional Expert Advisor for trading currencies with the spread of 2 points on one-minute timeframe. It is especially good on flat markets with good volumes. The EA features unique trading technologies: working with cross rates, auto lot calculation by a specified risk, working with multiple currencies, simulation period auto detection, auto correlating a stop loss value with the specified ratio of the market credibility, etc. The EA implements scalping and shadow stop loss definition technology.
+The EA makes from 100 to 300% per day with the default settings. Previously, the EA has been distributed by my company among commerce clients only. Now, I think, some of its ideas will be helpful for many traders. I do not recommend using this code on a real trading account. You may do that on flat markets, however, at your own risk.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16682

@@ -1,0 +1,6 @@
+Theory :
+One version of McClellan oscillator that does not use the slope change, but some levels (discontinued signal lines in this case) was published here :
+McClellan Oscillator Smoother with DSL
+. This version is using floating levels (as more flexible and that do not dpened on any fixed value of the indicator) instead
+Usage :
+You can use color changes as signals

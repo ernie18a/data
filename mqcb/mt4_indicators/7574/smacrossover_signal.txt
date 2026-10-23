@@ -1,0 +1,2 @@
+Author: Jason Robinson (jnrtrading)
+SMA Crossover Signal indicator.

@@ -1,0 +1,33 @@
+Description:
+This indicator compares four types of regression (linear, quadratic, logarithmic and exponential) and chooses the one that best fits the data analyzed.
+This analysis is done every time there is a new tick.
+// ---- inputs
+// dp_limiter  It should be >2 . If not it will be autoset to default value
+// endpos      Last value position to the right. It should be >0. If not it
+//             will be autoset to default value
+// record      [true] - record on; [false] - record off
+extern
+int
+dp_limiter   =
+100
+;
+// Number of data points
+extern
+int
+endpos       =
+0
+;
+// Last value position
+extern
+double
+multStdDev   =
+1.96
+;
+// Bands separation
+extern
+bool
+record       =
+false
+;
+// Record info into a file text
+In the left top corner of the chart four values are displayed. These values represent the dispersion of data regarding to its regression, so the smallest value indicates the best option. Additionally, the indicator allows recording these values into a text file for further analysis.

@@ -1,0 +1,150 @@
+Author of the idea
+—
+Ahmad Waddah Attar
+,
+author of thr MQL5 code
+—
+barabashkakvn
+.
+The Expert Advisor trades using pending Buy Limit (BuyLimit) and Sell Limit (SellLimit) orders.
+Once the price moves very close to the pending order
+:
+if
+(
+(m_symbol.
+Ask
+()-LastBuyLimitPrice)<=
+5
+*m_symbol.
+Point
+()
+)
+// FirstLot очень близко
+m_trade.BuyLimit(LastBuyLimitLot+IncLot,m_symbol.NormalizePrice(LastBuyLimitPrice-ExtStep));
+if
+(
+(LastSellLimitPrice-m_symbol.
+Bid
+())<=
+5
+*m_symbol.
+Point
+()
+)
+// FirstLot очень близко
+m_trade.SellLimit(LastBuyLimitLot+IncLot,m_symbol.NormalizePrice(LastSellLimitPrice+ExtStep));
+Place one more pending order
+.
+To get the last price of the placed order we use
+OnTradeTransaction
+():
+//+------------------------------------------------------------------+
+//| TradeTransaction function                                        |
+//+------------------------------------------------------------------+
+void
+OnTradeTransaction
+(
+const
+MqlTradeTransaction
+&trans,
+const
+MqlTradeRequest
+&request,
+const
+MqlTradeResult
+&result)
+{
+//--- Get the trade type as a value of the enumeration
+ENUM_TRADE_TRANSACTION_TYPE
+type=trans.type;
+Print
+(
+EnumToString
+(type));
+//--- if a deal — the result of deal adding to history
+if
+(type==
+TRADE_TRANSACTION_ORDER_ADD
+)
+{
+long
+order_type        =
+0
+;
+double
+order_price       =
+0.0
+;
+double
+order_volume      =
+0.0
+;
+string
+order_symbol      =
+""
+;
+long
+order_magic       =
+0
+;
+if
+(
+OrderSelect
+(trans.order))
+// Select pending orders
+{
+order_type=
+OrderGetInteger
+(
+ORDER_TYPE
+);
+order_price=
+OrderGetDouble
+(
+ORDER_PRICE_OPEN
+);
+order_volume=
+OrderGetDouble
+(
+ORDER_VOLUME_INITIAL
+);
+order_symbol=
+OrderGetString
+(
+ORDER_SYMBOL
+);
+order_magic=
+OrderGetInteger
+(
+ORDER_MAGIC
+);
+}
+else
+return
+;
+if
+(order_symbol==m_symbol.Name() && order_magic==m_magic)
+{
+if
+(order_type==
+ORDER_TYPE_BUY_LIMIT
+)
+{
+LastBuyLimitPrice=order_price;
+LastBuyLimitLot=order_volume;
+}
+if
+(order_type==
+ORDER_TYPE_SELL_LIMIT
+)
+{
+LastSellLimitPrice=order_price;
+LastSellLimitlLot=order_volume;
+}
+}
+}
+}
+Testing on EURUSD, M15 from 2015.06.07 to 2016.12.31 — "Every tick" mode, initial deposit 10000:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17339

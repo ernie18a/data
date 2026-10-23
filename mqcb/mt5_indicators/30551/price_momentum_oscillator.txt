@@ -1,0 +1,5 @@
+Description :
+In his article in August 2020 issue of TASC , “The Compare Price Momentum Oscillator (CPMO),” author Vitali Apirine reintroduces us to the DecisionPoint PMO originally developed by Carl Swenlin and presents a new way to use it to compare the relative momentum of two different securities.
+This is the PMO indicator
+Recommendations:
+Trading signals can be derived in a number of ways including momentum, signal line, and zero-line crossovers.

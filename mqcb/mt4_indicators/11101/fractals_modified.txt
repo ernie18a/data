@@ -1,0 +1,49 @@
+Description:
+This indicator is a small modification of classical
+Fractals Indicator
+.
+You can choose the number or left/right bars to have a new top or bottom as well a shift parameter.
+In the following chart you can see the indicator with parameter values:
+leftbars=10;
+rightbars=10;
+shift=0.
+The parameter leftbars/rightbars indicates the necessary number of bars to the left/right to have either a bottom or a top. Instead, the last parameter, shift, can be choosed to be 0 to have a good visualization of the top/bottom levels.
+However, in order to use this indicator it should be convinient to choose it as maximum between leftbars and rightbars. It is in this moment when the top/bottom is created.
+In the following chart you can see the same as before with parameters:
+leftbars=10;
+rightbars=10;
+shift=10.
+Remarks:
+I attached a new version of FractalsMod indicator. This new version only admits two external variables leftbars/rightbars. You can show here a chart with this indicator with parameter values:
+leftbars=10;
+rightbars=10;
+Note that the indicator is not defined for bars 0,...,rightbars. Therefore, in order to use this indicator in an EA you have to define either
+double
+FractalsUp =
+iCustom
+(
+NULL
+,
+0
+,
+"FractalsModv2"
+,leftbars,rightbars,
+0
+,rightbars+
+1
+);
+or
+double
+FractalsDown =
+iCustom
+(
+NULL
+,
+0
+,
+"FractalsModv2"
+,leftbars,rightbars,
+1
+,rightbars+
+1
+);

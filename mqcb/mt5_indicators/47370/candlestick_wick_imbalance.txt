@@ -1,0 +1,2 @@
+Comparison between upper wick and lower wick of a candle to find imbalance and plots an wingding
+User can define the multiplication in input field e.g. value of 2 means if upper wick is 2x of lower wick or if lower wick is 2x of upper wick then it plots a wingding on that side which wick area is greater than other wick area.

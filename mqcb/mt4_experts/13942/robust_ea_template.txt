@@ -1,0 +1,149 @@
+Real author:
+Inovance - https://www.inovancetech.com/
+A robust EA template to help correctly set take profit and stop loss levels, enter and exit positions, and handle terminal issues, such as crashes or disconnects.
+To use, input your entry conditions at the bottom of the EA in the "Long and Short Entry Conditions" section. Input your long conditions to return "1" if a long signal is generated in the "LongSignal()" function and your short conditions to return "-1" if a short signal is generated in the "ShortSignal()" function.
+A single Buy or Sell order will be placed if your conditions are met and no order will be placed if both long and short conditions are met. It will exit the trade if the take profit or stop loss is hit or if there is a signal in the opposite direction, in which case it will exit the existing trade and open a new one in the appropriate direction.
+EA Inputs
+"Long and Short Entry Conditions" section with example strategy shown (
+note:this is an arbitrary strategy for demonstration purposes only
+).
+//+------------------------------------------------------------------+
+//| Long and Short Entry Conditions                                  |
+//+------------------------------------------------------------------+
+int
+indCCI0period =
+14
+;
+// Indicator 1 period
+int
+indRSI1period =
+14
+;
+// Indicator 2 period
+//+------------------------------------------------------------------+
+//| Long Entry(Return "1" for long entry, "0" for no entry)          |
+//+------------------------------------------------------------------+
+int
+LongSignal()
+  {
+double
+CCI0 =
+iCCI
+(
+NULL
+,
+0
+,indCCI0period,
+PRICE_CLOSE
+,
+1
+);
+double
+RSI1 =
+iRSI
+(
+NULL
+,
+0
+,indRSI1period,
+PRICE_CLOSE
+,
+1
+);
+int
+match=
+0
+;
+if
+(CCI0>-
+200
+&& CCI0<=-
+150
+) match++;
+else
+if
+(CCI0>-
+100
+&& CCI0<=-
+50
+) match++;
+if
+(RSI1>
+0
+&& RSI1<=
+25
+) match++;
+if
+(match ==
+2
+)
+return
+1
+;
+return
+0
+;
+  }
+//+------------------------------------------------------------------+
+//| Short Entry(Return "-1" for long entry, "0" for no entry)        |
+//+------------------------------------------------------------------+
+int
+ShortSignal()
+  {
+double
+CCI0 =
+iCCI
+(
+NULL
+,
+0
+,indCCI0period,
+PRICE_CLOSE
+,
+1
+);
+double
+RSI1 =
+iRSI
+(
+NULL
+,
+0
+,indRSI1period,
+PRICE_CLOSE
+,
+1
+);
+int
+match=
+0
+;
+if
+(CCI0 >
+50
+&& CCI0 <=
+150
+) match++;
+if
+(RSI1 >
+80
+&& RSI1 <=
+100
+) match++;
+if
+(match ==
+2
+)
+return
+-
+1
+;
+return
+0
+;
+  }
+Recommendations:
+Works with 4- and 5- digit brokers.
+Always test on a demo account.
+Example strategy shown in template (
+note:this is an arbitrary strategy for demonstration purposes only).

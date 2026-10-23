@@ -1,0 +1,2 @@
+Hull moving average with arbitrary weights of calculation.
+When Hull power is set to 1 it is the same as regular Hull moving average. Any other value makes it different than the original Hull moving average. Power can be < 1 as well as > 0. If you set it to < 1 then you are "slowing" it down. If you set it to > 1, then you are "speeding" it up.

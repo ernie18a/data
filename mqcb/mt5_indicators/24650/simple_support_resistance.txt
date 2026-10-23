@@ -1,0 +1,6 @@
+Theory :
+This is a version of the intraday version (published here :
+Simple Intraday Support / Resistance
+) that allows you to show support resistance estimation for any time frame
+Usage :
+Like any support/resistance indicator

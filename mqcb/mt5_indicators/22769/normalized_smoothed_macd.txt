@@ -1,0 +1,11 @@
+Theory:
+MACD
+, short for
+moving average convergence/divergence
+, is a trading indicator used in technical analysis, created by Gerald Appel in the late 1970s. It is supposed to reveal changes in the strength, direction, momentum, and duration of a trend in a stock's price.
+The MACD indicator (or "oscillator") is a collection of three time series calculated from historical price data, most often the closing price. These three series are: the MACD series proper, the "signal" or "average" series, and the "divergence" series which is the difference between the two. The MACD series is the difference between a "fast" (short period) exponential moving average (EMA), and a "slow" (longer period) EMA of the price series. The average series is an EMA of the MACD series itself.
+This version:
+One possible thing it lacks, is probably to know the bounds. This version is adding that: a min/max based bounds.
+Usage:
+You can use the color change of the MACD (that roughly corresponds to the slope of the "regular" MACD) or color change of the signal line (that is changed when the signal line crosses the MACD line) as signals.
+PS: comparison of the "regular" MACD (lower) and this MACD (upper). The comparison should be made on the slope of the regular MACD and signal line crosses. Those changes are reflected as expected (almost exactly the same as the "regular" MACD - eventual miss can happen only due to smoothing of the normalized MACD). Zero crosses of the normalized MACD are happening on different places but that is to be expected and it seems that the new crosses are providing earlier warnings of trend changes than the regular MACD.

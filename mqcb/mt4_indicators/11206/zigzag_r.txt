@@ -1,0 +1,16 @@
+This version of Zigzag is a simple optimization of the old version of
+Zigzag.mq4
+, which hundreds of thousands of MetaTrader users have become accustomed to since the MT3 version (MQL2 language).
+Using the indicator without optimization made it difficult and time-consuming to test EAs using the values of the custom indicator Zigzag. The optimized version solves this problem.
+The first time, at the first launch, the indicator calculates the entire history. On subsequent calls, when new ticks arrive in real time or when used in the tester, the third extremum from the current time is located deep into the history and recalculation starts from it. If you want to start recalculation from the second extremum, change the value of the level variable, which determines the depth of recalculation:
+int
+level
+=
+3
+;
+// recounting's depth
+Zigzag R
+All external variable names have been retained for consistency reasons. In addition, the extremums hanging in the air, which were formed on minute time frames, have been removed.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11206

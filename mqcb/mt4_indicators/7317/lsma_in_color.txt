@@ -1,0 +1,4 @@
+Author: FX Sniper
+The indicator is build on the basis of moving averages. Its main feature is entering/leaving signal - the indicator's line is colored in a certain color signaling for the user to buy or to sell. The accuracy of the signal is very high. If even you don't enter the market using this indicator, it will ideally suit you to help close your positions.
+The indicator catches practically the entire trend. However, it is not very good at flat market. This is why, when closing a position by this indicator's signal, you will have the largest profit entering a "trend" position.
+Besides, when entering a position, you will always follow the trend. This high spot makes it even more attractive.

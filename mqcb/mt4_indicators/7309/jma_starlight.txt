@@ -1,0 +1,2 @@
+Author: Weld
+JMA StarLight indicator.

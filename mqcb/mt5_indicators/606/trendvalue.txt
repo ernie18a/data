@@ -1,0 +1,24 @@
+Real author:
+Ivan Kornilov
+The trend indicator made as NRTR (
+Nick Rypock Trailing Reverse
+).
+The indicator is very flexible, it can be configured for different tasks, for example, to receive market exit signals, or it may be combined with other indicators signals. It can be helpful in preventing from opening a position against a trend. It gives signals before
+МА
+crossing or
+MACD
+.
+ATR
+technical indicator values are used in the indicator, i.e., it becomes more sensitive during a flat, which is very convenient when the market exits a flat sharply or a breakout occurs. The indicator is set to 5 minutes by default.
+This indicator was first implemented in MQL4 and published in
+CodeBase
+at mql4.com 25.02.2010.
+Input parameters:
+period - moving averages period;
+shiftPercent - horizontal shift of the indicator in percents;
+ATRPeriod - ATR indicator period;
+ATRSensitivity - ATR sensitivity;
+shift - vertical shift of the indicator in bars.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/606

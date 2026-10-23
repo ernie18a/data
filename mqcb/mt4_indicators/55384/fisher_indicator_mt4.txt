@@ -1,0 +1,7 @@
+Fisher MetaTrader indicator
+— is quite a simple histogram indicator that detects the trend's direction and strength and signals about trend changes. It doesn't use any standard MT4/MT5 indicators in its code. Fisher bases its calculations on the maximum and minimum price levels from the previous periods, applying some advanced math calculations to the relations between the current price and the max/min prices. The indicator is available for both MT4 and MT5. This is a
+"repainting" indicator — it recalculates previous bars when a new bar arrives.
+Input parameters
+Period
+(default = 10) — the period in bars, on which to calculate the maximum and minimum. The higher is the value the fewer false trend change signals occur but the more this indicator lags.
+On the chart example above, you see that the upward trends are marked with the green histogram lines, while the downward trends are marked with the red lines. It is easy to trade with this indicator. You can close short positions and go long when the lines' color changes from red to green. You can close long positions and go short when the lines change from green to red. With the default period setting (10), it was very accurate on EUR/USD H1 chart. The problem is, you have to wait a few bars before acting on a signal because it may change due to repainting.

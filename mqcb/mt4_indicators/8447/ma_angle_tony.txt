@@ -1,0 +1,27 @@
+Indicator MAAngleTony.
+Input Parameters:
+extern
+int
+MAMode
+=
+1
+;
+extern
+int
+MAPeriod
+=
+34
+;
+extern
+int
+Price
+=
+0
+;
+extern
+double
+AngleMin
+=
+0.0020
+;
+MAAngle Tony

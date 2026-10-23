@@ -1,0 +1,2 @@
+This is the standard MACD indicator drawing two flat lines instead of a signal line. It allows you to detect and trade flat/range-bound markets.
+It's nothing fancy. I only created it to run some tests, but it might be useful to others.

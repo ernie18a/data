@@ -1,0 +1,4 @@
+As simple as it gets, channels based om high, low and ATR distances, Shows possible short term support / resistance or can be used as tp/sl in some trading systems
+Recommendations:
+in this form it is not meant to be used  signals
+instead it should be used for trends, support, resistance estimation, or, as told above, for TP or SL settings

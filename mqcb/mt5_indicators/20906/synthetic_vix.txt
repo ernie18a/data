@@ -1,0 +1,8 @@
+The Synthetic VIX indicator is based on Larry Williams' TASC article "Fix the VIX":
+When it comes to describing what markets do, Bernard Baruch said it best: "Markets fluctuate."
+That idea is embodied in the Chicago Board Options Exchange (CBOE) Volatility Index (VIX), which has become a very popular measure of market risk since it was introduced in 1993. The VIX, which is derived from the implied volatility of stock index options, is intended to represent traders' expectations of volatility over the next 30 days.
+Essentially, the VIX reflects investor fear — high readings are associated with high-volatility conditions (and market bottoms) while low readings are associated with low-volatility conditions (and market tops).
+Unfortunately, the VIX is calculated only for the S&P 500 Index, NASDAQ Composite Index, and the Dow Jones Industrial Average. What about other markets?
+Luckily, it is easy to duplicate the VIX for any market — Treasury bonds, gold, silver, soybeans, even individual stocks — with a simple formula.
+....
+PS: Synthetic VIX is not a directional indicator. It indicates the increase or decrease of volatility and it should be used as that.

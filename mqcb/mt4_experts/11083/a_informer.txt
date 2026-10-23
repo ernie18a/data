@@ -1,0 +1,12 @@
+It places Stop Loss and Take Profit at the specified distance. Displays the current status of open orders. For closing of the order it is enough to select and move the label to the left.
+In the settings you can set stop loss and take profit
+levels
+, trading pair, the accuracy of the representation of the lot and the amendment to display the current status of the position (sometimes creeps on another title)
+I advise you to facilities make multiple files, one for each trading pair.
+I have been trading
+a year
+with the assistant and honestly don't know how I got by without it. This is the last version in which the information is reduced to the minimum necessary, so as not to interfere with the actual trading.
+I will be glad if it helps. Good luck.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11083

@@ -1,0 +1,19 @@
+Modification of the
+Pending orders by time
+EA: now you can set either a permanent (
+Lots
+> 0 and
+Risk
+==0) or dynamic lot (
+Lots
+== 0 and
+Risk
+> 0). Added trailing.
+The Expert Advisor works with pending orders: it sets Buy Stop and Sell Stop at the specified time. Pending orders are set with the Stop Loss. The EA uses virtual Take Profit, i.e. it monitors open positions, and when the current position profit reaches Take Profit, the EA closes it by market.
+Operation features:
+The Expert Advisor works on timeframe BELOW "H1".
+For example, if the Expert Advisor works on the M15 timeframe, the EA will place pending orders four times within one hour: at [hour]:00 minutes, at [hour]:15, at [hour]:30 and at [hour]:45.
+Result on EURUSD, H30
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21939

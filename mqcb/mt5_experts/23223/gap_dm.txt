@@ -1,0 +1,10 @@
+Idea by
+-
+Vladimir Khlystov
+mq5 code author
+-
+barabashkakvn
+The Expert Advisor waits for a gap at the bar opening. If a gap is found (Close #1 - Open #0), the EA opens a position opposite to the gap. Configurable settings: Stop Loss, Take Profit, lot type: constant or dynamic (Money management) and the maximum number of open market positions.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23223

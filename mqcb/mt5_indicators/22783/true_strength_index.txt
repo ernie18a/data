@@ -1,0 +1,22 @@
+True Strength Index oscillator.
+It has four adjustable parameters:
+First smoothing period
+- primary smoothing period
+Second smoothing period
+- secondary smoothing period
+Overbought
+- overbought level
+Oversold
+- oversold level
+Calculations:
+TSI = 100.0 * UDM2 / ADM2
+where:
+UDM2 = EMA(UDM1, Second smoothing period)
+ADM2 = EMA(ADM1, Second smoothing period)
+UDM1 = EMA(UDM, First smoothing period)
+ADM1 = EMA(ADM, First smoothing period)
+UDM = Close - PrevClose
+ADM = ABS(UDM)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22783

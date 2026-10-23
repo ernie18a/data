@@ -1,0 +1,51 @@
+Strategy Author:
+FXRaider.
+EA Author:
+Yuriy. ForTrader.ru
+Last Versions:
+Here
+Three timeframes are used in the strategy (I'm a big fan of A. Elder, herein as well). W1, D1 and H4. Let's consider it in course.
+W1. Everything is simple here. Two MAs and my Awesome (in the attached archive). Why did I intrude into the code of Awesome and add the possibility of changing period? I just don't think that the standard values of the EMA in this indicator are optimal for the trading. But I like the representation of the indicator very much so I use it of all others. However, it appears more like the MACD hystogram, in this case. Decreased to 36%.
+Red MA:
+Period: 55
+Type of МА: Linear Weighted
+Apply to: Close
+Blue MA:
+Period: 21
+Type МА: Linear Weighted
+Apply to: Close
+Awesome - Per_1 - 8; Per_2 - 13.
+The calculation of the direction: everything is simple as a nuclear bomb. The "primary indicator" term is introduced in my strategy. The tendency is determined by it in the first place. It's two MAs on this timeframe, i.e. what they display is. If the blue one is higher than the red then the trend is up, if the blue one is lower than the red then the trend is down. Awesome is a an adjuvant indicator and if it shows the same thing it's good, if not - that's not terrible.
+I put the results of my observations in the table. When a coincidence by two indicators occurs on W1, as it is now, I write "up". If two MAs show "up" and Awesome shows "down" I write "up". But in both cases I would trade only up.
+D1. Here I have most of all indicators. As many as three of them. They are: t_ma (in the attached archive), Parabolic SAR (most standard) and my Awesome.
+t_ma is a moving average and another moving average from a moving average by a period of 6, in my case. I.e. we take the MA (I have the period of 34) and draw it. Then we take the MA for the last 6 bars and compute the average then draw it.
+It is the primary on this timeframe.
+Parabolic SAR is the trend indicator that I use for only one purpose - to place the stops. This indicator is secondary but if it deviates from t_ma I prohibit myself to trade on this currency pair (well the stops can't be placed).
+Awesome is described above. It is adjuvant on this timeframe, the periods are the same.
+The calculation of the direction: everything is simple here as a hydrogen bomb. The primary indicator is t_ma (blue and red lines). If the blue line is above the red one - up, if it is below - down. The I look at the SAR. If t_ma is up and SAR is down (i.e. the green dots are above the price chart) I wrtie "up" in the table, and I even don't look at the Awesome. The trading for me is impossible.
+If t_ma is up, SAR is up (i.e. the green dots are below the price chart) and Awesome is down (the red line on the hystogram), then I write "up" in the table and I can trade on rising in case up or up is on W1 as well.
+If t_ma is up, SAR is up and Awesome is up, then I write "up" in the table and that mean a coincidence by all three indicators. If up or up is on W1 I can trade on rising.
+After exploring the tendencies on W1 and D1 I proceed to H4. Primarily, I used H1, but Irina prompted me that I can get a lot of opportunities to estimate the market more rarely if I use H4. Thanks to her for that.
+H4. The indicators that I've already described above are used on this TF. They are: t_ma(34) and my Awesome (8,13).
+The calculation of signal: it is simple as the mechanism of the ballistic rocket.
+We see the applied t_ma and Awesome. The primary indicator is t_ma again. If t_ma is up and Awesome is down then I write "up" in the table. But at that the opening is performed only if both of the indicators have the same direction, because the H4 is the fastest one that I have and the entrance moments are searched almost like signals.
+In such a manner I have a right to buy if I have the following entries in the table:
+W1: up or up
+D1: up or up
+H4: up
+The pictures provided by me allow you to see how the results of observing EURUSD written in the table look like at the moment:
+W1: up
+D1: up
+H4(9:00) up
+Picture:
+System of FXRaider
+Advices:
+You need to optimize and test it on future. Not all of the parameters were optimized during the exploration.
+Try to pick the parameters for working on smaller periods.
+You need to reconsider the StopLoss.
+The description of the EA's parameters and the investigation of the FXRaider's strategy is available in the
+34-th issue of the journal
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8539

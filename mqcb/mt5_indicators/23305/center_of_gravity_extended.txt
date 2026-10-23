@@ -1,0 +1,11 @@
+Theory:
+The original (to the letter as described) version of Center of Gravity was published here :
+Center of Gravity - Ehlers.
+But, as described there, the original lacks what we could use as "significant level(s)" (not even zero can be used on the original version).
+This version:
+In this version a correction in the calculation is added that allows us to have the zero level as a "significant level". Due to that change, 3 color change methods are added in the options:
+color change on signal / trigger line cross (the default)
+color change on level zero cross
+color change on slope change
+Usage:
+Depending on the way you desire to use it (by setting the color change method) you can use that color change as a signal.

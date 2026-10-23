@@ -1,0 +1,10 @@
+This indicator is a variation of a well known WPR (Williams Percent Range) indicator.
+It is calculating a sort of 4 WPR values:
+WPR of Open.
+WPR of Close.
+WPR of High.
+WPR of Low.
+Those 4 values are then combined into "candles". The calculation is not using the original WPR calculation. Instead it is adjusted to be able to calculate these 4 values. As a result 2 significant levels are now available.
+Level 0 (which unlike the original WPR, can be crossed up in this version).
+Level -100 (which unlike the original WPR, can be crossed down in this version).
+That way, by observing the levels, possible overbought and oversold states can be assessed.

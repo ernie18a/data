@@ -1,0 +1,26 @@
+When volatility of the financial instrument became lower than some level, the long-,middle- and short-term strategies may lose profit and became unprofitable.
+It depends how long will this "calm" - during these periods you may use scalper strategies based on hourly volatility. To find the patterns of market behavior you need a tools.
+The
+Size Highs And Lows
+indicator shows the size of Highs and Lows and their values over the specified period (the values are calculated the same way as
+Price Channel
+indicator).
+Fig. 1. Size Highs And Lows indicator
+The values>0 at the histogram show the size of the Highs. The bullish bars are plotted with yellow color, the bearish bars are plotted with brown color.
+The values<0 at the histogram show the size of the Lows. Bearish bars are shown with light green, bullish bars are shown with green color.
+The idea became clear if you look at this with
+Break_Lag_ATR
+indicator:
+Fig. 2. Size Highs And Lows + Break Lag ATR indicators
+One can see on the figure above, the increased volatility persists some time after the breakdown of the volatility. That's the time for usage of the scalper robot. The only thing to find is the patterns :)
+Input parameters:
+The indicator has only 2 input parameters (periods):
+Parameter
+Value
+Period Max High
+30
+Period Max Low
+30
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/892

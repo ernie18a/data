@@ -1,0 +1,10 @@
+The real author:
+TheXpert
+The classic RSI with the colored signal levels. To the moments of time, when the RSI indicator is in oversold and overbought zones, there are change of the indicator color corresponding to the trend direction. The growing trend colors the indicator in lettuce green, the falling into the red one.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 17.03.2009.
+Fig.1 the ColorRSI indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1650

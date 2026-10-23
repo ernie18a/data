@@ -1,0 +1,22 @@
+Author:
+Rasoul Mojtahedzadeh
+This indicator is for those who would like to have
+H3
+,
+H6
+,
+H8
+and
+H12
+candle sticks on their
+H1
+charts
+. An input variable is considered to compensate the time difference between your brokers' server clock and GMT0. You can change the color of bearish, bullish and Doji candles as well.
+Here is a short description of each input variable task/purpose:
+TimeFrameInMinutes [Integer Variable]: Your desired time frame in minutes. For example, if you want to have H8 time frame, you set this variable to 480.
+UpCandleColor [Color Variable]: Bullish candles color.
+DownCandleColor [Color Variable]: Bearish candles color.
+DojiCandleColor [Color Variable]: Doji's candles color.
+BrokerHourDiffGMT [Integer Variable]: Your broker's time difference in GMT. For example, if your broker's server time starts a day at GMT +2, you set this variable to 2.
+NumCandlesToRedraw [Integer Variable]: The number of candle sticks you would like to be drawn.
+Width [Integer Value]: Tickness of candles.

@@ -1,0 +1,5 @@
+Description:
+This system allows you to progressively enter and exit the market, by allowing you to define several levels.
+Basically it first calculates the risk based upon the amount you defined in %.
+Then according to this risk and the amount of levels you defined calculates the position size of the different trades to send.
+You have two modes to place the exit levels, so it is up to you.

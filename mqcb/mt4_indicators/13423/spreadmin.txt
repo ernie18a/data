@@ -1,0 +1,14 @@
+The indicator is a histogram of the lowest/minimum spread only, given in a candle whilst the indicator has been running. Example scripts for placing buy or sell at the lowest spread are included.
+It is similar to other spread monitoring indicators. I wanted simple code and only the spread minimums to display because I only want to pay the lowest spread for trade.
+You can then use a script to place a trade and, for example, specify when current spread is equal or lower than the lowest spread in the previous candle. Probably best used on lower timeframes as otherwise you may wait for a long time to reach the minimum spread as required.
+I must acknowledge:
+getch
+https://www.mql5.com/en/code/9324
+https://www.mql5.com/en/code/939
+and similar.
+Also, found the error description function somewhere. Thanks.
+Recommendations:
+Make sure the indicator has been placed on chart and running for at least a couple of candles before executing the script.
+Use appropriate script or code to take trade when current spread is equal to or less than the minimum spread from the previous candle.
+See example scripts for placing buy or sell.
+I know the code is not perfect, please suggest improvements. Thanks!

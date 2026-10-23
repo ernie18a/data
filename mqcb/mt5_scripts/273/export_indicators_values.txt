@@ -1,0 +1,10 @@
+After searching for such script, I decided to create mine, and decided to share it with the MQL5 community.
+This script exports indicator's values to CSV File along with date and time (you can change the
+iCustom
+function parameters to change what indicator to export).
+Version 2:
+Enhanced code；
+Values are now exported as numbers in spreadsheets e.g Excel, so you can do calculation on them easily (no need to convert them to numbers in Excel);
+Script now asks for inputs : Indicator Directory and name + Indicator's Period. (see Attached picture);
+Exported file name is now looks like : e.g EURUSD_PERIOD_H1(RSI,14).
+Any suggestions are welcomed.

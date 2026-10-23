@@ -1,0 +1,1 @@
+Combine the Candle sticks and Market Profile indicator, show the price congestion zone of a candle stick.

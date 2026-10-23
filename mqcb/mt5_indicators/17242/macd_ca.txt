@@ -1,0 +1,8 @@
+"Step" or "corrected" macd (using the same method for correction that is used in averages).
+Corrected values tend to be good filters, but they should not be mixed with the filters we are using. The values for the "corrected" method are different from "filtered" values.
+For additional help, there is a choice of possible ways how the "trend" is found out:
+on slope change
+on zero line cross
+or on original macd value cross (in which case macd is used as a sort of a signal line)
+Also you can control if the "correction" is needed at all (by adjusting the "correction" period) when you can get the original MACD value displayed.
+With some experimenting a nice filter can be achieved and this way a probable new life to a good old macd can be added.

@@ -1,0 +1,20 @@
+Real Author:
+Khlystov Vladimir
+The simplest Expert Advisor based on RSI. Sells at a downward crossing of an oscillator overbought level, buys at an upward crossing of an oscillator oversold level. The entry signal is formed when a bar is closing if the level is crossed.
+Note that the TradeAlgorithms.mqh library file allows using Expert Advisors with brokers who offer
+nonzero spread
+and the option of setting Stop Loss and Take Profit
+together with position opening
+. You can download more variants of the library at the following link:
+Trade Algorithms
+.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Originally this EA has been written in MQL4 and was first published in the
+Code Base
+on 04.08.2016.
+Fig. 1. Examples of trades on the chart
+Testing results for 2015 at GBPUSD H4:
+Fig. 2. Testing results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16855

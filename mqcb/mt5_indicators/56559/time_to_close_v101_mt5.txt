@@ -1,0 +1,46 @@
+Time To Close MT5
+TimeToClose-v1.01
+is a chart indicator that displays real-time countdown to candle close with adaptive visual integration. I tried to make it simple, then polish it so it would work out of the box. Key features:
+Dynamic Color Adaptation:
+Text colour
+automatically matches your theme
+by the candle border colour or candle body colour based on candle direction (bullish/bearish/doji), maintaining visual consistency with your chart theme.
+Strategy Tester Optimization
+: Uses
+MQL_VISUAL_MODE
+detection to disable rendering in non-visual back-tests through
+EnableTextInVisualBacktest
+parameter, conserving system resources during optimisation.
+Multi-Timeframe Support
+: Automatically adjusts display format using
+PeriodSeconds()
+calculations for all time-frames from 1-minute to monthly
+Customizable Display
+: Configurable through:
+-
+TextFirstSeparator
+/
+TestSecondSeparator
+for spacing
+-
+FontSize
+and
+TextAnchorPoint
+positioning
+- Optional
+DateTime
+display via
+ShowTimeDate
+parameter (disabled by default)
+The indicator uses
+EventSetMillisecondTimer(1000)
+for precise 1-second updates while maintaining minimal CPU footprint through
+OnCalculate()
+optimisations. Visual elements are automatically removed during EA termination and refreshed after parameter changes.
+How to use it:
+Download
+Compile in MetaEditor5
+Run
+Black and White example:
+Colour example:
+Let me know if you find any bugs, optimisation ideas, or if you find it useful. Have a wonderful day!

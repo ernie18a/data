@@ -1,0 +1,66 @@
+Fine Clock. Displayed on all charts.
+Enumerations for an option to choose numerals using a mouse in the course of setting are described in include-files (files eIntNumbers.mqh and eFloatNumbers.mqh should be copied to
+terminal_data_folder
+\MQL5\Include\Enums\).
+File fineclock.mq5 should be copied to
+terminal_data_folder
+\MQL5\Experts, Presets (Presets.zip) should be unzipped to
+terminal_data_folder
+\MQL5\Presets\.
+Setting:
+input
+eTimeType      TimeType=TLocal;
+// Clock zone  - Optional : Local time zone, Server time zone, GMT
+input
+eClockFormats  Fmt= Seconds;
+// Display format : HH:MM:SS or HH:MM, 
+                                                    // in the second case the drawing is made once-per-minute (resource saving)
+input
+еMyCorners     Corner = CRL;
+// Corner of attachment
+input
+ePInt          X=
+170
+;
+// Horizontal shift
+input
+ePInt          Y =
+38
+;
+// Vertical shift
+input
+string
+FontName=
+"Magneto"
+;
+// Font
+input
+ePInt          FontSize=
+16
+;
+// Font size
+input
+color
+FontColor =
+clrDarkSlateGray
+;
+// Font color
+input
+color
+ShadowColor =
+clrDarkSeaGreen
+;
+// Shadow color
+input
+ePInt          SS=
+1
+;
+// Shadow shift
+input
+eFloat01       eSA=-
+12
+;
+// Shadow rotation
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/448

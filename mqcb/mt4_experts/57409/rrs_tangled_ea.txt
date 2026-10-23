@@ -1,0 +1,75 @@
+RRS Tangled EA is a cleaned and advanced version of
+RRS Chaotic EA
+and
+RRS Randomness in Nature EA
+. This EA randomly selects currency symbols, lot sizes, and order types for trading. It does not rely on technical indicators or fundamental analysis. Instead, it uses a
+Randomness in Nature
+approach to open trades. With proper settings such as
+Take Profit, Stop Loss, Trailing,
+and
+Risk Management
+, this EA can generate significant profits.
+This is a
+multi-currency
+or
+multi-asset
+EA, meaning that even if it is attached to a single currency pair chart, it can trade other currency pairs and manage all operations related to the trades it has opened.
+Variable
+Values
+Description
+minLot_Size
+Double Value
+Minimum lot size to ensure lot size randomness does not go below this value.
+maxLot_Size
+Double Value
+Maximum lot size to ensure lot size randomness does not exceed this value.
+StopLoss
+Int Value
+Set your stop loss value in points/pips (the smallest price movement unit for your asset).
+Set Stop Loss to
+0
+to disable it.
+TakeProfit
+Int Value
+Set your take profit value in points/pips.
+Set Take Profit to
+0
+to disable it.
+Trailing_Start
+Int Value (Points/Pips)
+Specify the number of pips from the open trade price at which trailing should begin.
+Set Trailing Start to
+0
+to disable the trailing operation.
+Trailing_Gap
+Int Value (Points/Pips)
+Set the gap in pips between the current market price and the trailing stop loss.
+Set Trailing Gap to
+0
+to disable the trailing operation.
+Risk_In_Money_Type
+FixedMoney, BalancePercentage
+FixedMoney:
+Closes all open trades when the negative floating reaches your specified amount.
+BalancePercentage:
+Automatically calculates based on your account balance and closes all trades once this limit is reached.
+Money_In_Risk
+Int Value
+If
+Risk_In_Money_Type
+is set to
+FixedMoney
+, enter the amount of money you can afford to lose.
+If set to
+BalancePercentage
+, the EA will automatically calculate the risk based on your account balance and close all trades when that limit is reached.
+Max_Spread
+Int Value (Points/Pips)
+Sets the maximum acceptable spread. If the current spread exceeds this value, the EA will not take a trade and will wait for the spread to return within the specified limit.
+Slippage
+Int Value (Points/Pips)
+Set the maximum allowed slippage for order execution.
+MaxOpenTrade
+Int Value
+Maximum number of open trades allowed
+Good Luck, Happy Trading!

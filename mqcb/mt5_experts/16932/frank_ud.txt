@@ -1,0 +1,22 @@
+Author of the idea
+—
+rsi
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Works only on the hedge accounts! Martin, martingale. Doubling the lot at loss.
+It starts by opening two opposite positions with the minimal lot. The "
+TakeProfit
+" and "
+StopLoss
+" levels of positions are set immediately.
+One of them becomes profitable, while the other, of course, losing. The profitable one is closed by TakeProfit, and the losing one is strengthened at the "
+Step
+" from the price. If the movement continues in the same direction, strengthen again. Sooner or later there will be a reversal. Each step of strengthening is performed using lot doubling, therefore after a reversal the last losing position will reach TakeProfit and cover everything with a positive result. Then everything is started from the beginning, open orders with the minimal lot.
+Working with this Expert Advisor requires a sufficiently large deposit, otherwise there may not be enough funds for all the necessary steps.
+Result of testing in "Every tick based on real ticks" mode, EURUSD M30, initial deposit - 100000, period from 2016.01.08 to 2016.11.17, optimization was not performed:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16932

@@ -1,0 +1,2 @@
+This indicator to detect length of candlestick. The length is calculate from high-low price. Value show is in percent
+Input Shift: for the length detection

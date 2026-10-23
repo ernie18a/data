@@ -1,0 +1,56 @@
+Explanation of the code and its application
+What is this code?
+This code is a
+custom optimisation function
+for the
+MetaTrader 5 Strategy Tester. It is not an Expert Advisor, indicator or script in the classical sense, but a special script for analysing test results.
+How the code works:
+1. Data collection
+Gets the history of trades from the tester
+Checks minimum requirements (at least 50 trades)
+Determines initial deposit and time periods
+2. Splits the data
+Splits trades into two periods:
+In-Sample (IS) - the first 70% of the testing period
+Out-of-Sample (OOS) - the last 30% of the period with a 1-day interval
+3. Calculation of metrics
+Calculates a set of metrics for both periods:
+Profitability and drawdown
+Sharpe and Sortino ratios
+Profit factor and probability of profitable transactions
+Statistical indicators (skewness, kurtosis)
+Special metrics (Serenity Ratio)
+4. Statistical analysis
+Compares IS and OOS distributions using the Kolmogorov-Smirnov test
+Checks normality of distributions using the Jarque-Bera test
+5. Strategy evaluation
+Creates a comprehensive strategy evaluation that takes into account:
+Profitability (30%)
+Consistency of results (30%)
+Risk-adjusted performance (25%)
+Statistical quality (15%)
+Where to use this code:
+1. strategy optimisation
+Place the code in the MQL5/Scripts/ folder.
+In the strategy tester, select "Custom optimisation criterion"
+Use this script to evaluate the results of optimisation
+2. Strategy validation
+Use to validate the stability of the strategy
+Analyse discrepancies between IS and OOS periods
+Identification of over-optimised strategies
+3. Comparison of strategies
+To objectively compare different strategies
+To rank strategies according to a comprehensive criterion
+Advantages of the approach:
+Minimising over-optimisation through data partitioning
+Comprehensive evaluation takes into account múltiples aspects of performance
+Statistical verification of the robustness of the results
+Automatic screening of non-viable strategies
+Important Notes:
+Requires a significant number of trades (at least 50)
+Need sufficient historical period to split into IS/OOS
+Code returns -DBL_MAX for strategies that do not pass minimum requirements
+This approach is particularly useful for traders and developers who want to take testing and optimising trading strategies seriously, minimising the risk of fitting to historical data.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/63121

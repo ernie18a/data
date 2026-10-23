@@ -1,0 +1,2 @@
+SBVolumeAvg is a Forex Indicator (MetaTrader 4) for calculating Average Volume on the Swing Bars by a ZigZag trend line that is bounded by two vertical lines.
+This indicator may be useful for traders who use the average daily trading volume strategy.

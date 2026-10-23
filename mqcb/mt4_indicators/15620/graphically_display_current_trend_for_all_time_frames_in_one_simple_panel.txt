@@ -1,0 +1,699 @@
+This is a graphical indicator based on slope-direction-trend indicator that has been published under several other forms.
+There has been several versions of this indicator published already but none that displayed all time frames in a single graphical panel on your screen.
+One can search
+https://www.mql5.com/en/search#!keyword=slope%20direction%20line
+to see multiple results.
+I have taken this indicator and made it into a graphical panel displaying all time frames and made a few slight modifications to the original code. One of them is that it allows the user to select the second moving average method used for smoothing. The original code used Linear Weighted for its second pass on the numbers whereas I give the user the option to choose the method for smoothing. When using Linear Weighted for both calculations, it makes the indicator too responsive and thus possibly giving false readings on the current trend. If we use Simple as the second averaging method we get a trend that is more indicative of where the price is going.
+Another change that I have made is the ability to not only get the direction of the trend (up, down or flat) but also get its value. I will talk about this in another article I plan on publishing shortly on how to use a double SlopeDirection indicator and create a Expert Advisor with it.
+But for now, let's take a quick look at the code. I first define all the object names I will use. The reason why this is good practice to do is that each time you put an object name between quotes, it allocates space in the program for it. So it they are defined once (by using a define statement) you only use up the space in your code once.
+// Define trend directions
+#define
+UPTREND
+1
+#define
+DOWNTREND         -
+1
+#define
+FLATTREND
+0
+// Define Objectcs
+#define
+TrendPanel
+"TrendPanel"
+#define
+InfoLine1
+"InfoLine1"
+#define
+InfoLine2
+"InfoLine2"
+#define
+TrendLabel
+"Trend:  M1  M5  M15  M30  H1  H4  D1  W1  MN"
+#define
+TrendUp
+"\233"
+#define
+TrendDown
+"\234"
+#define
+TrendFlat
+"\232"
+#define
+TrendUnknown
+"\251"
+#define
+StatObjectError
+"%s(%d) Failed to create '%s'.  Error = %d"
+Next, I define two arrays. One with the pixel position for each of the 9 time frames and the second with the time frames. These are defined as global variables.
+// Define global variables
+int
+TrendPosition[] = {
+44
+,
+64
+,
+88
+,
+114
+,
+136
+,
+156
+,
+174
+,
+194
+,
+216
+};
+int
+TrendPeriods[] = {
+PERIOD_M1
+,
+PERIOD_M5
+,
+PERIOD_M15
+,
+PERIOD_M30
+,
+PERIOD_H1
+,
+PERIOD_H4
+,
+PERIOD_D1
+,
+PERIOD_W1
+,
+PERIOD_MN1
+};
+Our indicator OnInit() function calls a function to create the panel and the objects within the panel. It also does a quick "Dumn Dumn" check on the bars used to calculate the trend. Less than 3 is kind of pointless.
+//+------------------------------------------------------------------+
+//| Custom indicator initialization function                         |
+//+------------------------------------------------------------------+
+int
+OnInit
+()
+{
+// Go create objects for indicator panel
+if
+(Create_Panel() && BarCount >=
+3
+)
+return
+(
+INIT_SUCCEEDED
+);
+else
+return
+(
+INIT_FAILED
+);
+}
+I will not get into details on how the GetTrend() function really works, there's already good documentation on this site for that. We'll just take a look at the graphical DisplayTrend() function.
+//+------------------------------------------------------------------+
+//| Display the current trend for all timeframes
+//+------------------------------------------------------------------+
+void
+DisplayTrend(
+void
+)
+{
+int
+i, cntr, Trend, LastTrend;
+string
+str;
+for
+(i=
+1
+; i<
+10
+; i++)
+   {
+      str =
+"Trend"
++
+DoubleToStr
+(i,
+0
+);
+      Trend = (
+int
+)GetTrend(TrendPeriods[i-
+1
+], BarCount, Method);
+if
+(Trend == FLATTREND)
+      {
+// I'm flat, find the last trend direction
+cntr =
+1
+;
+do
+{ 
+            LastTrend = (
+int
+)GetTrend(TrendPeriods[i-
+1
+], BarCount, Method,
+false
+, cntr++);
+         }
+while
+(LastTrend == Trend);
+ObjectSetText
+(str, TrendFlat,
+8
+,
+"WingDings"
+, (LastTrend == UPTREND ? Green : Red));
+ObjectSetInteger
+(
+0
+, str,
+OBJPROP_YDISTANCE
+,
+6
+);
+      }
+else
+{
+ObjectSetText
+(str, (Trend == UPTREND ? TrendUp : TrendDown),
+8
+,
+"WingDings"
+, (Trend == UPTREND ? Green : Red));
+ObjectSetInteger
+(
+0
+, str,
+OBJPROP_YDISTANCE
+,
+5
++ (Trend == UPTREND ?
+1
+: -
+1
+));
+      }
+   }
+}
+Basically, we simply loop thru the TrendPeriods[] array (to get all time frames) and set the trend arrow according to that time frame's trend direction. If the trend is flat, we find the first direction that is not flat to know where the trend was coming from in order to display the side arrow in the color of that direction.
+The Create_Panel() function in our OnInit() creates the objects anchored to the bottom left of the screens and uses TrendPosition[] to place the arrows in the right place.
+//+------------------------------------------------------------------+
+//| Create the trend panel in the bottom left of the screen
+//+------------------------------------------------------------------+
+bool
+Create_Panel(
+void
+)
+{
+int
+i;
+string
+str;
+// Create the trend indicator window
+if
+(
+ObjectCreate
+(TrendPanel,
+OBJ_RECTANGLE_LABEL
+,
+0
+,
+0
+,
+0
+))
+   {
+ObjectSetInteger
+(
+0
+, TrendPanel,
+OBJPROP_XDISTANCE
+,
+1
+);
+ObjectSetInteger
+(
+0
+, TrendPanel,
+OBJPROP_YDISTANCE
+,
+29
+);
+ObjectSetInteger
+(
+0
+, TrendPanel,
+OBJPROP_XSIZE
+,
+240
+);
+ObjectSetInteger
+(
+0
+, TrendPanel,
+OBJPROP_YSIZE
+,
+26
+);
+ObjectSetInteger
+(
+0
+, TrendPanel,
+OBJPROP_BGCOLOR
+, White);
+ObjectSetInteger
+(
+0
+, TrendPanel,
+OBJPROP_BORDER_TYPE
+,
+0
+);
+ObjectSetInteger
+(
+0
+, TrendPanel,
+OBJPROP_CORNER
+,
+CORNER_LEFT_LOWER
+);
+ObjectSetInteger
+(
+0
+, TrendPanel,
+OBJPROP_COLOR
+, Red);
+ObjectSetInteger
+(
+0
+, TrendPanel,
+OBJPROP_STYLE
+,
+STYLE_SOLID
+);
+ObjectSetInteger
+(
+0
+, TrendPanel,
+OBJPROP_WIDTH
+,
+2
+);
+ObjectSetInteger
+(
+0
+, TrendPanel,
+OBJPROP_BACK
+,
+false
+);
+ObjectSetInteger
+(
+0
+, TrendPanel,
+OBJPROP_SELECTABLE
+,
+false
+);
+ObjectSetInteger
+(
+0
+, TrendPanel,
+OBJPROP_SELECTED
+,
+false
+);
+ObjectSetInteger
+(
+0
+, TrendPanel,
+OBJPROP_HIDDEN
+,
+true
+);
+ObjectSetString
+(
+0
+, TrendPanel,
+OBJPROP_TOOLTIP
+,
+"\n"
+);
+   }
+else
+{
+PrintFormat
+(StatObjectError,
+__FUNCTION__
+,
+__LINE__
+, TrendPanel,
+GetLastError
+());
+return
+(
+false
+); }
+if
+(
+ObjectCreate
+(InfoLine1,
+OBJ_LABEL
+,
+0
+,
+0
+,
+0
+))
+   {
+ObjectSet
+(InfoLine1,
+OBJPROP_CORNER
+,
+CORNER_LEFT_LOWER
+);
+ObjectSet
+(InfoLine1,
+OBJPROP_XDISTANCE
+,
+6
+);
+ObjectSet
+(InfoLine1,
+OBJPROP_YDISTANCE
+,
+15
+);
+ObjectSetInteger
+(
+0
+, InfoLine1,
+OBJPROP_SELECTABLE
+,
+false
+);
+ObjectSetInteger
+(
+0
+, InfoLine1,
+OBJPROP_HIDDEN
+,
+true
+);
+ObjectSetString
+(
+0
+, InfoLine1,
+OBJPROP_TOOLTIP
+,
+"\n"
+);
+ObjectSetText
+(InfoLine1, TrendLabel,
+8
+,
+"Arial"
+, Black);
+   }
+else
+{
+PrintFormat
+(StatObjectError,
+__FUNCTION__
+,
+__LINE__
+, InfoLine1,
+GetLastError
+());
+return
+(
+false
+); }
+if
+(
+ObjectCreate
+(InfoLine2,
+OBJ_LABEL
+,
+0
+,
+0
+,
+0
+))
+   {
+ObjectSet
+(InfoLine2,
+OBJPROP_CORNER
+,
+CORNER_LEFT_LOWER
+);
+ObjectSet
+(InfoLine2,
+OBJPROP_XDISTANCE
+,
+6
+);
+ObjectSet
+(InfoLine2,
+OBJPROP_YDISTANCE
+,
+5
+);
+ObjectSetInteger
+(
+0
+, InfoLine2,
+OBJPROP_SELECTABLE
+,
+false
+);
+ObjectSetInteger
+(
+0
+, InfoLine2,
+OBJPROP_HIDDEN
+,
+true
+);
+ObjectSetString
+(
+0
+, InfoLine2,
+OBJPROP_TOOLTIP
+,
+"\n"
+);
+ObjectSetText
+(InfoLine2,
+" "
++
+DoubleToStr
+(BarCount,
+0
+) +
+" / "
++
+DoubleToStr
+(Method,
+0
+),
+8
+,
+"Arial"
+, Black);
+   }
+else
+{
+PrintFormat
+(StatObjectError,
+__FUNCTION__
+,
+__LINE__
+, InfoLine2,
+GetLastError
+());
+return
+(
+false
+); }
+// Create trend object and display current trend
+for
+(i=
+1
+; i<
+10
+; i++)
+   {
+      str =
+"Trend"
++
+DoubleToStr
+(i,
+0
+);
+if
+(
+ObjectCreate
+(str,
+OBJ_LABEL
+,
+0
+,
+0
+,
+0
+))
+      {
+ObjectSet
+(str,
+OBJPROP_CORNER
+,
+CORNER_LEFT_LOWER
+);
+ObjectSet
+(str,
+OBJPROP_XDISTANCE
+, TrendPosition[i-
+1
+]);
+ObjectSet
+(str,
+OBJPROP_YDISTANCE
+,
+5
+);
+ObjectSetInteger
+(
+0
+, str,
+OBJPROP_SELECTABLE
+,
+false
+);
+ObjectSetInteger
+(
+0
+, str,
+OBJPROP_HIDDEN
+,
+true
+);
+ObjectSetString
+(
+0
+, str,
+OBJPROP_TOOLTIP
+,
+"\n"
+);
+      }
+else
+{
+PrintFormat
+(StatObjectError,
+__FUNCTION__
+,
+__LINE__
+, str,
+GetLastError
+());
+return
+(
+false
+); }
+   }
+// Go display current trend
+DisplayTrend();
+// All good
+return
+(
+true
+);
+}
+This function will return TRUE if it succeeded in creating all the objects, or return FALSE if an error occurred creating an object. The nice thing is that the indicator will display in the EXPERT tab of your console the error code and the line number of the code where the error occurred.
+We also need to update the trend indicator for each new tick we receive. This is done by calling DisplayTrend() in our start() function.
+//+------------------------------------------------------------------+
+//| Custom indicator iteration function                              |
+//+------------------------------------------------------------------+
+int
+start()
+{
+// Display current trend for all timeframes
+DisplayTrend();
+return
+(
+0
+);
+}
+Lastly, we destroy all objects created by the indicator when we close the indicator.
+//+------------------------------------------------------------------+
+//| Deinitialization function                                        |
+//+------------------------------------------------------------------+
+void
+OnDeinit
+(
+const
+int
+reason)
+{
+// Delete indicator's objects
+if
+(
+ObjectFind
+(TrendPanel) >=
+0
+)
+ObjectDelete
+(TrendPanel);
+if
+(
+ObjectFind
+(InfoLine1) >=
+0
+)
+ObjectDelete
+(InfoLine1);
+if
+(
+ObjectFind
+(InfoLine2) >=
+0
+)
+ObjectDelete
+(InfoLine2);
+for
+(
+int
+i=
+1
+; i<
+10
+; i++)
+if
+(
+ObjectFind
+(
+"Trend"
++
+DoubleToStr
+(i,
+0
+)) >=
+0
+)
+ObjectDelete
+(
+"Trend"
++
+DoubleToStr
+(i,
+0
+));
+}
+That's basically it. You now have a nice indicator panel showing the current trend for all time frames in the lower left of your screen.
+Enjoy!

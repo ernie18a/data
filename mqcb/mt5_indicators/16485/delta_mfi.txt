@@ -1,0 +1,58 @@
+Real author:
+Tor
+Trend analyzer based on the difference of two MFI oscillators with different periods.
+The indicator will be useful for those who analyze two MFI indicators with different periods (fast and slow), their relative positions, as well as the location of the slow MFI relative to the specified level (for example, 50).
+That is, if the slow MFI is greater than 50, and the fast MFI is greater than the slow MFI — paint the histogram in overbought color.
+If the slow MFI is less than 50, and the fast MFI is less than the slow MFI — paint the histogram in oversold color.
+Al settings can be customized: colors, signal level (50), periods of the slow and fast MFI, histogram display type.
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+TypeGraph            TypeGr=Histogram;
+// Type graph
+input
+ENUM_APPLIED_VOLUME
+VolumeType=
+VOLUME_TICK
+;
+// volume
+//---
+input
+uint
+MFIPeriod1=
+14
+;
+// Fast MFI Period
+//---
+input
+uint
+MFIPeriod2=
+50
+;
+// Slow MFI Period
+//---
+input
+uint
+Level=
+50
+;
+// Signal Level
+//---
+input
+int
+Shift=
+0
+;
+// Horizontal indicator shift in bars
+The indicator has 5 buffers that can be used at your discretion.
+0 — Indicator buffer;
+1 — color indicator buffer with three color states;
+2 — RSI fast;
+3 — RSI slow;
+4 — Difference between two MFI (MACDMFI).
+Fig1. Full histogram of the Delta_MFI indicator
+Fig.2. Shortened histogram of the Delta_MFI indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16485

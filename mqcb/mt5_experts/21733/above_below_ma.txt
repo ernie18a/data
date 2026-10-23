@@ -1,0 +1,41 @@
+Idea by
+:
+Scriptor
+MQL5 code author
+:
+barabashkakvn
+How it works
+The Expert Advisor uses the iMA (Moving Average, MA) indicator. It compares the open price of bar #0 and the Moving Average values on bars #0 and #1. If there is already an open position in the direction of the new signal, this signal will be ignored. The Expert Advisor performs operation on every tick.
+Signals
+BUY opening signal
+: bar #0 Open price is
+below
+MA #0
+AND
+the
+ASK
+price is
+below
+MA #0
+AND
+MA #1 is
+below
+MA #0.
+SELL opening signal
+: bar #0 Open price is
+above
+MA #0
+AND
+the
+BID
+price is
+above
+than MA #0
+AND
+MA #1 is
+above
+MA #0.
+A position is closed when an opposite signal occurs, i.e. a SELL position will be closed upon the emergence of a BUY signal.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21733

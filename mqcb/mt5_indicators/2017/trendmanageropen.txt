@@ -1,0 +1,10 @@
+Real author:
+Matt Kennel
+A trend detecting indicator drawn in the form of a colored cloud.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 06.11.2007.
+Figure 1. The TrendManagerOpen manager
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2017

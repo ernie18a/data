@@ -1,0 +1,7 @@
+Indicator Tro_Range.
+You can view the description
+here
+.
+int Threshold=20;
+color CurrentBarColor=White;
+color ThresholdColor =Aqua;

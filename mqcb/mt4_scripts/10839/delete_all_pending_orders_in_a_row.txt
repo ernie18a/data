@@ -1,0 +1,2 @@
+Description:
+Jut drop the script on the required chart and it will close all pending orders of this symbol in a go.

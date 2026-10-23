@@ -1,0 +1,11 @@
+Yen Trader
+trades JPY Crosses (XXXJPY) where XXX is one of the major currencies (except USD which will be used as a reference currency).
+Based on the selected direction (R:Right or L:Left), the EA will detect Divergence or Convergence between a major pair and USDJPY, and trade the Yen Cross Pair based on that.
+Divergence/Convergence is detected using:
+Close Price a number of bars back
+Moving Average
+RSI
+CCI
+RVI
+Stop Loss, Take Profit, Profit Lock, Trailing Stop can be based on Pips or ATR multiples.
+The EA can be used for scalping as well as swing trading.

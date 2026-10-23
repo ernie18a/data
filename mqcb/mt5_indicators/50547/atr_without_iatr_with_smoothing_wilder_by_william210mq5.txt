@@ -1,0 +1,43 @@
+Good morning.
+If this code malfunctions for whatever reasons, forgetting or MQL5 upgrades, let me know so I can correct it, thank you
+You can find all my multi timeFrame indicator codes or not, in CodeBase or on the Marketplace, free or purchasable, by searching for "William210".
+Why this code?
+The Average True Range (ATR) indicator, developed by J. Welles Wilder in 1978, allows traders to measure the volatility of an asset by averaging the largest True Ranges over a given period. This information is valuable for understanding price movements and identifying trading opportunities.
+Remember that the original ATR indicator from 1978 did not include this smoothing.
+Wilder Smoothing was later introduced and helps smooth out fluctuations in the ATR indicator, making it easier to analyse. This is a simple moving average applied to ATR values, usually over a 14-period period.
+May this code help you
+Don't forget to put a star and ask me as a friend to be the first to be notified when my code is published in codebase or the marketplace
+I wrote other simple codes in CodeBase:
+I offer many of these indicators in the Marketplace, search for me "William210"
+Adaptative moving average using iama()
+Adx using iadx()
+Alligator using alligator()
+ATR using iatr(
+)
+The ATR is very useful for other indicators, such as SuperTrend which I offer in the marketplace
+Awesome oscillator without iao()
+Bollinger bands using ibands()
+Donchian channel
+Envelopes using ienvelopes()
+Ishimoku using iishimoku()
+Keltener channel
+MACD using imacd()
+Momentum using iMomentum()
+Moving average using ima(),
+using the native functions SimpleMA(), ExponentialMA(), SmoothedMA(), LinearWeightedMA()
+I
+offer many multi-timeframe smoothing options in the marketplace.
+Simple average => EMA, SMA, EMA, SMMA, LWMA
+Volume-weighted averages, VWMA, VEMA, EVWMA
+double and more exponential Average, DEMA
+RSI,
+with
+or
+not
+irsi()
+Stochastic using istochastic()
+If you have code ideas to help or serve as a basis, request it on this
+thread
+Translated from French by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/fr/code/50547

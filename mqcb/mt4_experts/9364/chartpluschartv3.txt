@@ -1,0 +1,18 @@
+ADDED:
+Added ability to run your own MQL script automatically in case of non-market quotations have place. To work correctly, your script Assign hot keys (alt-b).
+You should record the full names of the two MetaTrader
+windows
+in the file programs.txt. It allows the application know where to send the combination Alt + b. The example given the file programs.txt.
+After performing these steps, write the script that you would like to run in case of non-market quotations have place and copy it to the scripts of the second terminal (inscribed the second in programs.txt).
+The program is intended for logging of non-market quotations from brokerage companies with MetaTrader platform.
+The program works with two MetaTraders. Quotations from these two are transmitted through advisers Chart1.mq4 and Chart2.mq4 to external application.
+The external application controls the divergence of quotations, and when it reaches a user-specified value, and this divergence is observed within a user-specified time the program saves the charts as two bmp - images in the folder c:ChartPlusChar tHistory. One at the time the divergence has place, the second 5 minutes later.
+In the name of the bmp file there is time information when there was the divergence in the format: hour-minute-second.
+As a reference, of course, it is desirable to choose a firm with the highest renewal rate quotations, and with the best of their purity. These characteristics (demo accounts) at least 84 brokers with a platform MetaTrader measured and presented on the site.
+Of course, the difference in this case, may be a result of deviation from the market of any of the two brokers, but each fact can be checked separately.
+Unpack the archive to the root, then there will be the folder c: /ChartPlusChart in which 5 files: Chart1.mq4 Chart2.mq4 libSharedVarsDL Lv2.def SharedVarsDLLv2 . dll ChartPlusChart.exe
+You will need two MetaTrader platforms of two different brokerage firms. In both open the same currency pairs and run Chart1.mq4 adviser in the first one, and Chart2.mq4 in the second one. The advisers work with the DLL so it is necessary to allow the DLL in the "Tools" menu, "Options". Mark the next item: -Allow dll imports And remove the check mark from the item -Confirm dll function call All files, except for advisers should be in c: / ChartPlusChart
+Then run advisers are interested in the pair in both MetaTrader platforms. And run c:ChartPlusChar tChartPlusChart .exe.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9364

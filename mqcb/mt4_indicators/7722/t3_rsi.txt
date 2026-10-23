@@ -1,0 +1,2 @@
+Author: MojoFX
+Indicator T3 RSI.

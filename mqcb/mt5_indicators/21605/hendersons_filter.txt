@@ -1,0 +1,9 @@
+Henderson's Filter for MetaTrader 5. According to a brief description:
+What are the Henderson trend filters?
+The Henderson Filters are a widely used set of trend filters, or smoothers. They were initially derived by Robert Henderson (1916) for use in actuarial work. They are also used within the X-11 family of seasonal adjustment packages, e.g. X-12-ARIMA. The Henderson Filters can be used separately, for example, the Australian Bureau of Statistics uses them to calculate trend estimates from the seasonally adjusted estimates.
+The requirement used by Henderson to derive the filters was that they must follow a local cubic polynomial without distortion. The Henderson Filters are derived by minimizing the sum of squares of the third difference of the moving average series. Henderson's criteria ensures that when these filters are applied to third degree polynomials, the resulting smoothed output will fit exactly on these parabolas. The Henderson Filters are suitable for smoothing economic time series as they allow the cycles typical of the trend to pass through unchanged. They also have the property that they will eliminate almost all the irregular variations that are of very short frequencies of six months or less.
+The filter weights applied in the middle of a time series are symmetric, while the end filter weights are asymmetric. This is due to the standard end point problem where at the start and end of the series there is not enough data on either side of the data points to generate symmetric filter weights. In practice, the impact of this can be reduced by generating separate forecasts and then applying the symmetric filter weights, e.g. by using ARIMA methods.
+More information can be found
+here
+.
+PS: be aware that Henderson's filters are from a family of centered smoothers, i.e. they recalculate half period bars.

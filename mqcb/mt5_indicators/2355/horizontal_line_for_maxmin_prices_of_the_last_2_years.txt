@@ -1,0 +1,2 @@
+A user asked for an example code on how to draw an horizontal line for maximum and minimum prices of the last 2 years, see
+https://www.mql5.com/en/forum/21396

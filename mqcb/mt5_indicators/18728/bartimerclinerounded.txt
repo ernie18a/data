@@ -1,0 +1,17 @@
+Real author
+: Art Royal s.r.o.
+The
+BarTimer
+indicator implemented using the classes of libraries that were described in detail in the article
+"Custom indicators and infographics in CCanvas"
+, using current timeframe data. It provides the ratio between time elapsed since bar beginning and the duration of the entire bar in percent.
+To correctly compile the indicator, save the
+MQL5
+folder from the MQL5.zip archive to the the MetaTrader 5 terminal root folder.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 01.12.2008.
+Fig. 1. The BarTimerCLineRounded indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18728

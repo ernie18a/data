@@ -1,0 +1,17 @@
+This EA is supposed to trade news and high market spikes.
+Every trader knows that when something BIG occurs volumes increase significantly.. so i coded an ea to basically trade volume spikes. The EA will detect trend with a CCI and a candlestick filter. The EA will also use CCI to avoid overbought and oversold situations and will not enter the trade too late.
+How to use the EAs
+:
+Let' s say that at the beginning of the week you think that the EURUSD will face a difficult week.. so you open a EURUSD
+H4
+chart window and attach the
+Volume EA sell
+to the chart
+Otherwise you attach the
+Volume EA buy
+.
+Let's say you are uncertain. You open two H4 windows and attach both EAs.
+To improve/to do:
+Because i am not an expert coder i don't know how to join the two eas, and to add a function filter to just sell or buy.. some help will be appreciated. Also, I know that the code has some bugs, specially in the trailing stop section.
+The EA has a timeclose function, but does not have a true stoploss. I have not added a proper stop loss function because i don't know how to set a valid stoploss with a ECN broker. i will be glad if someone can code this too.
+If you have a good idea to further improve the code please submit it, everyone is welcome.

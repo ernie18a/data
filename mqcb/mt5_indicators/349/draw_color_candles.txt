@@ -1,0 +1,12 @@
+An example of indicator, that draws candlesticks for the specified instrument in a separate window.
+The color of candlesticks changes randomly every N ticks. The N parameter of indicator is made as external so that you can adjust it manually (the Inputs tab of indicator properties dialog box). Note, that initially there are 8 colors set for the plot1 graphical plotting using the
+#property
+compiler directive. Then, in the
+OnCalculate()
+function the color is chosen at random from predefined list.
+See also
+The Drawing Styles in MQL5
+article.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/349

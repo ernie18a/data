@@ -1,0 +1,7 @@
+In his article "The Hunt for Superior Signals – Two Moving Function Hybrids" (September 2005), William Rafter described the Moving Slope Rate Of Change. This is the MSROC as originally described.
+Instead of using just a change in price to calculate slope (as with Rate Of Change or "ROC"), the slope of a least-squares line is used to calculate MSROC. That produces a much smoother result than the regular ROC and that way the number of false signals is significantly decreasing compared to the ROC itself.
+This version is extending the
+basic version
+of the indicator. Instead of having only a fixed zero level as a criteria for trend change determination, this version adds floating (dynamic) level(s). The main advantage of the floating levels compared to the fixed zero level is its responsiveness and earlier detection of trend change (with much less noise than in cases when the slope of the MSROC is used) and is filtering out quite a lot of false signals along the way.
+Recommendations
+Use it is when the MSROC crosses floating level value (as a confirmation of trend direction change).

@@ -1,0 +1,2 @@
+This expert uses iDoubleChannel indicator.
+You can use to make backtesting to find best settings for indicator.

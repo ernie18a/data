@@ -1,0 +1,21 @@
+DNC Percentage oscillator displays a relative price position inside the
+Donchian channel
+in a separate window.
+It has two configurable parameters:
+Period
+- calculation period
+Analyze current bar
+- consider the value of the current bar in calculations (Yes/No)
+Calculation:
+Percentage = ((Close - Bottom) / (Top - Bottom)) * 100.0
+where:
+Top    = Max(High, Period)
+Bottom = Min(Low, Period)
+Fig. 1. DNC
+Percentage
+Fig. 2. DNC
+Percentage
+and Donchian channel
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22193

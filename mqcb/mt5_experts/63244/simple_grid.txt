@@ -1,0 +1,33 @@
+Simple_Grid is the simplest "grid" Expert Advisor. This Expert Advisor sets a grid of pending orders (either
+only stop
+or
+only limit
+orders) in both directions from the current price at a distance specified in the input parameters. The Expert Advisor has no Stop Loss. In the period from 23:30
+all pending orders that have not been "activated"
+are deleted, and a new grid of pending orders
+is set only after 4:00.
+In the input parameters of
+the
+Expert Advisor
+there is an opportunity to set:
+Pending orders grid step
+Distance from the current price to the first grid order
+Number of orders in one direction
+Select the type of pending orders
+(either
+only stop
+orders
+or
+only limit
+orders
+).
+Size of expected profit (Take Profit)
+Fixed lot size
+Magic number of the Expert Advisor
+ATTENTION
+!!! This Expert Advisor
+is not intended for trading on a real account and making profit
+!!!! The Expert Advisor was written by me while studying MQL5 programming language, now it is a little stylised (unnecessary comments are removed) and is intended only for placement in CodeBase.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/63244

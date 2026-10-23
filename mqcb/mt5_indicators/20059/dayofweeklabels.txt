@@ -1,0 +1,39 @@
+The indicator shows the names of the days of the week, as well as the beginning of each month and year as lines and text labels on the chart.
+The indicator has 31 input parameters:
+Show days
+- show days of the week;
+Show months
+- display months on the chart;
+Show years
+- display years on the chart;
+Name of Monday label
+- the display name for Monday;
+...
+Name of Sunday label
+- the display name for Sunday;
+Name of January label
+- the display name for January;
+...
+Name of December label
+- the display name for December;
+Day line color
+- the color of the line for the day of the week;
+Day line width
+- the width of the line for the day of the week;
+Day label color
+- the color of the label for the day of the week;
+Day label size
+- the font size for the text in a label for the day of the week;
+Month line color
+- the color of the month line;
+Month line width
+- the width of the month line;
+Month label color
+- the color of the month label;
+Month label size
+- the font size for the month label;
+Font name
+- the font name for all labels.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20059

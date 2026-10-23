@@ -1,0 +1,6 @@
+The Schaff Trend Cycle (STC) indicator is the product of combining Slow Stochastics and the Moving Average Convergence/Divergence (MACD). The MACD has a reputation as a trend indicator, but it's also notorious for lagging due to its slow responsive signal line. The improved signal line gives the STC its relevance as an early warning sign to detect currency trends.
+Unlike the original
+Schaff Trend Cycle
+, this version is using TEMA MACD for calculation, which makes it "faster" in determining (even compared to
+DEMA
+version) the trend changes and thus producing signals a few bars earlier.

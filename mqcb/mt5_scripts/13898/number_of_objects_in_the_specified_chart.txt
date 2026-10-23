@@ -1,0 +1,9 @@
+An example of implementation of counting different objects on a chart in all subwindows as well as in a particular subwindow.
+Settings:
+object type — one of the
+object types
+;
+window index — number of the sub-window (at value "-1" the search is conducted in all subwindows).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13898

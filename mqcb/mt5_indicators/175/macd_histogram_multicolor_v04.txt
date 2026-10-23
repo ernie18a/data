@@ -1,0 +1,25 @@
+Real author:
+traderak20, based on MACD.mq5 by MetaQuotes, Copyright 2009, MetaQuotes Software Corp.
+A
+MACD
+indicator with histogram to show the difference between the MACD and Signal lines.
+For the calculation of the MACD line you can choose from the usual price types. For the calculation of the Signal line yo can choose between
+SMA
+or
+EMA
+. The histogram can be switched between single and multi-color.
+Requires: MovingAverages.mqh
+(default include file in terminal_data_folder\MQL5\Include)
+Look in the source to switch on/off error messages:
+bool
+ShowErrorMessages=
+false
+;
+// turn on/off error messages for debugging
+Update history:
+Fixed bug with the colors of the histogram;
+2010 09 26: v03
+Added MODE_SMMA and MODE_LWMA as MA methods for Signal line;
+Made ENUM_APPLIED_PRICE the last input parameter on the list;
+2010 08 24: v02B
+Indicator first published;

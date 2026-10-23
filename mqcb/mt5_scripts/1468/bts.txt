@@ -1,0 +1,11 @@
+The script has two functions:
+bsearch()
+- a binary search
+tsearch()
+- a ternary search
+Comparing the speed of two types of search is performed.
+Test is performed 30 times on different arrays, the alert displays the result of each test and at the end the total time for each function.
+A ternary search is almost one and a half faster than a binary.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1468

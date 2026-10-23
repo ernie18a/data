@@ -1,0 +1,33 @@
+A modified indicator of Bill Williams' zone trading.
+In contrast to using standard Awesome Oscillator (AO) and Accelerator Oscillator (AC), this indicator allows setting the calculation price and period for the fast and slow MAs used for the AO calculation, the smoothing period and the method for AC calculation, as well as selecting the filter type - using two indicators or any of them separately.
+The indicator has six input parameters:
+AO Fast MA period
+- fast MA period for the AO calculation;
+AO Slow MA period
+- slow MA period for the AO calculation;
+AO Applied price
+- price of MA for AO calculation;
+AO Calculation method
+- method of MA for AO calculation;
+AC smoothing period
+- smoothing period for the AC calculation;
+Filter type
+:
+By AO and AC
+- filter zones both by AO and AC;
+By AO
+- filter zones by AO;
+By AC
+- filter zones by AC.
+The indicator is drawn in a separate window as a candlestick chart, colored depending on the zone:
+BUS zone is green
+SELL zone is red
+Neutral zone is gray
+The indicator is provided with four buffers and can be used inside an Expert Advisor:
+Buffer 0: Signal Up - has a non-empty value at the time of transition from non-bullish zone to a bullish one;
+Buffer 1: Signal Down - has a non-empty value at the time of transition from non-bearish zone to a bearish one;
+Buffer 2: Bullish zone - has a non-empty value on all bars of the bullish zone;
+Buffer 3: Bearish zone - has a non-empty value on all bars of the bearish zone.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20215

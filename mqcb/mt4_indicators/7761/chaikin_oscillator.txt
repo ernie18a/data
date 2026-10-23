@@ -1,0 +1,10 @@
+First, Chaikin Accumulation/Distribution (Volume Accumulation, VA) is calculated:
+VA = {[(Close - Low) - (High - Close)] / (High - Low)}*Volume
+Then Chaikin Oscillator is calculated:
+CHO = SMA(VA, m) - SMA(VA, n),
+where:
+m is the higher order of the average;
+n is the lower order of the average.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7761

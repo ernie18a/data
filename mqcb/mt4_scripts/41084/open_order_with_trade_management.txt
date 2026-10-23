@@ -1,0 +1,10 @@
+Open Your Order With This Simple Trade Management Script.
+You Can Open Any Type Of Market Order By Defining Your Inputs:
+Order Type
+Stop Loss (In Pips)
+Take Profit (In Pips)
+Lot Size
+Slippage
+Magic Number For Trade
+Price For Placing Pending Order
+Click On The Image To See An Example

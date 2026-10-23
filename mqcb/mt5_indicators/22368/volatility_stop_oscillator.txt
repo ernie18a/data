@@ -1,0 +1,22 @@
+Volatility indicator
+based on the article 10 Selling Tips by
+Thomas Bulkowski
+.
+It has two configurable parameters:
+Period
+- calculation period
+Multiplier
+- ratio of the line deviation from the price
+Calculation:
+VSO = Multiplier * Avg / Close
+where:
+Avg = SMA(High,Period) - SMA(Low,Period)
+It can be used with the
+Volatility Stop
+indicator.
+Fig. 1. Volatility Stop oscillator
+Fig. 2. Volatility Stop oscillator +
+Volatility Stop
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22368

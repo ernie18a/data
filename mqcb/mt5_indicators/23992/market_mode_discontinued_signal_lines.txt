@@ -1,0 +1,6 @@
+Theory :
+John Ehlers uses bandpass filter (originally published here :
+Bandpass Filter
+) to calculate what can be called a "market mode". The method used for that is to calculate an average of peaks and valleys and if the bandpass filter is above or bellow those levels, the market mode is determined with relative position to those levels. This version changes that and uses discontinued signal lines for significant levels instead.
+Usage :
+You can use the color change as signals

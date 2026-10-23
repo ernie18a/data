@@ -1,0 +1,10 @@
+Theory :
+MACD is, by definition calculated as a difference of fast and slow EMA (Exponential Moving Average). This versions allows you to :
+use one of the 4 basic types of averages for calculation :
+simple moving average
+exponential moving average
+smoothed moving average
+linear weighted moving average
+it is normalizing those macd values to -1 to +1 range
+Usage :
+You cans use color changes as signals

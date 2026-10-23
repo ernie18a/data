@@ -1,0 +1,2 @@
+Basic scripts tools for you guys to play around with basically they are order closers that are irrespective of chart and directed to look at the open orders in the Terminal Trade Section.
+- Cut Off All Orders : It closes all your open orders simultaneously.

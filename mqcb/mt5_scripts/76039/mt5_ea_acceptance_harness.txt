@@ -1,0 +1,13 @@
+MT5 EA Acceptance Harness
+is a small MQL5 script for checking a bounded entry-state contract with deterministic synthetic fixtures.
+The script runs eight cases: valid closed-bar entry, duplicate signal bar, open-bar rejection, cooldown rejection, cooldown elapsed, no signal, daily lock and new-day reset. It reports expected versus actual decisions and a final pass/fail count.
+Inputs
+InpWriteTextFile
+— optionally writes the report to the terminal Common\Files folder.
+InpPrintToExperts
+— optionally prints the report in the Experts log.
+InpFileName
+— report file name.
+Safety boundary
+The harness uses synthetic case data only. It does not read market or account data, and it never sends, modifies or closes an order. It checks only the included state-transition examples; it does not prove strategy quality, broker execution, profitability or live-account behavior.
+The attached source was compiled in MetaEditor with 0 errors and 0 warnings. Runtime results should be evaluated from the report produced in the user's own terminal.

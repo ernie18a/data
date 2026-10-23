@@ -1,0 +1,7 @@
+The Momentum indicator implemented in the form of a color histogram.
+Indicator Settings:
+Momentum Period
+- indicator period.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19128

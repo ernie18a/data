@@ -1,0 +1,20 @@
+Description:
+The indicator is based on the simple CCI.
+When its value crosses 100 from above, it sends a signal to sell.
+When its value crosses -100 from below, it sends a signal to buy.
+Everything is simple.
+It gives a good signals, of course there are some wrong, you can add some filter to filter them.
+Also you can open order for the each signal, with SL at 2-3 points higher/lower of the maximal/minimal price of the 2-3 previous candlesticks.
+Take Profit value can be set using your vision and greed :)
+Image:
+Editor's remark:
+Note that it's a mirror translation of the
+original Russian version
+.
+If you have any questions to the author, suggestions or comments, it's better to post them
+there
+.
+If you have found this code useful for trading or educational purposes, don't forget to thank author.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9365

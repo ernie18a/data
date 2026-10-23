@@ -1,0 +1,5 @@
+Author: Gep aka tartan
+Simple indicator with great potential for the analysis of data and its use.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7135

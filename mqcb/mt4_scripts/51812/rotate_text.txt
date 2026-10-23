@@ -1,0 +1,1 @@
+The script creates a text object on the chart that continuously rotates and changes its position based on price levels. While running, the text changes color and content depending on its position, adding a dynamic visual element to the chart. This can be particularly useful for traders who want to add annotations or dynamic markers directly to their charts.

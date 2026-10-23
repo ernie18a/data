@@ -1,0 +1,2 @@
+Figurelli Pivot Indicator, that calculates pivot points using Bulls/Bears influence
+Figurelli Pivot on chart indicator

@@ -1,0 +1,12 @@
+Real author:
+John Ehlers
+Laguerre indicator is an
+RSI indicator
+algorithm based on the Laguerre adaptive filter.
+It was created by John Ehlers - the expert who applied digital signals processing methods to futures trading.
+Technical Papers
+section of his web site contains plenty of examples of the method use.
+Laguerre indicator shows the overbought/oversold states of the market. It is recommended to buy when a price goes beyond the upper level and sell when it goes below the lower level. Center line breakout is also quite a strong signal for opening positions. Leaving overbought/oversold areas is yet another way to get trading signals using the indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/432

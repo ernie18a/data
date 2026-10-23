@@ -1,0 +1,7 @@
+Author:
+Tom Balfe
+Percentage Price Oscillator is calculated as the difference between the short and the long EMA, the obtained result being divided by the short EMA.
+It displays more precise signals of divergences between prices and the value of the oscillator.
+It emphasizes price extremums more precisely, it moves faster.
+Follows formula:
+(FastEMA-SlowEMA)/SlowEMA

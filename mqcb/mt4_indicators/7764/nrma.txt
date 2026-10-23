@@ -1,0 +1,11 @@
+NRMA is the famous indicator by Konstantin Kopyrkin, it produced numerous realizations of the indicator NRTR. In this variant we see a moving average (line) and trailing stops NRTR (points).
+Access to other intermediate Omega indicators (NRTR_Oscillator, NRatio, NRTR_DT) is available throug calls of
+iCustom
+(NULL,0,"NRMA",parameters,
+index_number
+, shift).
+More detailed information is on the
+author's website
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7764

@@ -1,0 +1,4 @@
+Theory :
+This version is made to show exactly what is the true nature of the EMA to SMA MACD. What you are seeing is the pure essence of the MACD and it makes it easy to visualize how exactly a MACD (any MACD) is actually calculated
+Usage :
+You can use color changes as signals

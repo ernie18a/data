@@ -1,0 +1,45 @@
+The "Test_ChartEvent.mq4" Expert Advisor is an example demonstrating the various types of ChartEvent: keyboard keys events, mouse click & move events, custom events. You can press the 'H' key for help and press the 'M' key to enter the MOUSE_MOVE event mode.
+The source code works both in MetaTrader 4 and MetaTrader 5.
+Function Prototype
+bool Obj_Create()
+bool Obj_Delete()
+bool Obj_Move(int hSens,int vSens)
+- moves an object.
+void Print_Info()
+- prints information about the objects.
+int MouseMove(int aXX,int aYY,string sState)
+- handles the mouse move event.
+Global Variables
+int gChartNo=0
+int gSubWinNo=0
+string gsObj_Name_selected="" - the name of currently selected object.
+Custom Events
+Three types of custom events are defined:
+#define cMyEvent_1 0
+#define cMyEvent_2 1
+#define cMyEvent_3_broadcast 2
+OnTimer() Function
+This function creates the custom ChartEvent periodically. And the function randomly generates these three custom events (cMyEvent_1, cMyEvent_2 and cMyEvent_3_broadcast). In particular, the cMyEvent_3_broadcast event is generated for all open chart windows.
+Example of class
+Class "CObjectMan" is created to handle the functionality for objects on a chart. Two instances (variables) of the class are declared: gObjectMan1 and gObjectMan2.
+The names of the Graphic Objects linked to these two instances are respectively: "Green Button" and "Yellow Button".
+Event Processing
+void OnChartEvent():
+The "CHARTEVENT_KEYDOWN" events:
+4 directional keys (arrows) or the 4 directional keys on the digital panel to move the selected object.
+'H': print the Help information (in expert log window).
+'I': print the positions information of two Objects.
+'M': active the MOUSE_MOVE event.
+Custom Events
+Print information about these events. Especially for the MyEvent_3_broadcast event.
+Object Events
+CHARTEVENT_OBJECT_CHANGE, CHARTEVENT_OBJECT_DRAG, CHARTEVENT_OBJECT_DELETE - print the corresponding object's name.
+CHARTEVENT_OBJECT_CLICK - print the name of object being clicked, select its name for moving by the direction keys.
+Mouse Events
+CHARTEVENT_CLICK - print the clicked bar's information: the prices (open, close) and the bar time.
+CHARTEVENT_MOUSE_MOVE (see: CHART_EVENT_MOUSE_MOVE) - print the information of the covered interval: number of bars, price variation.
+Demonstration
+You can perform the following tests:
+Click on one of the two objects (Buttons) to select and use the arrow keys to move the selected object.
+Click on graphic bar and see the information of the bar in the log tab (message).
+Press the 'M' key to enter the MOUSE_MOVE event mode. Press Ctrl+F to show the crosshair, then perform a drag'n'drop operation. If you do not see the log message, please change the input parameter: "iLogLevel".

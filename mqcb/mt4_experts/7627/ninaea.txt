@@ -1,0 +1,9 @@
+Author: emsjoflo
+The NinaEA Expert Advisor. Uses the indicators:
+NINA
+and
+0_IndInverse
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7627

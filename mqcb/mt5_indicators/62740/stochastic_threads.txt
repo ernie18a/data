@@ -1,0 +1,4 @@
+Overlaying multiple stochastics with different periods will help beginner traders.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/62740

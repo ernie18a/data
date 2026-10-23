@@ -1,0 +1,10 @@
+The real author:
+The author is unknown
+The smooth oscillator performed in the form of the color histogram. To great regret, the author of this shrewd indicator didn't leave any comments about details of his device. The indicator displays the current trends quite well. For a successful work the unique input parameter must have the lowest value.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 02.11.2007. In this version of the indicator I corrected one serious defect of the algorithm. The fact is that he oversaw the future to build his history. There was made the only correct solution to change this capacity to the opposite one and oversee the past.
+Fig.1 The PFE2 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1502

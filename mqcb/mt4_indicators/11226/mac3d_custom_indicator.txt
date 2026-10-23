@@ -1,0 +1,7 @@
+Author:
+Marco vd Heijden.
+This indicator draws a 3 Dimensional MAC3D ribbon on the chart, it clearly shows possible entry and exit signals when price goes above or drops below the user defined values.
+It also shows when the price is moving above or below global slow moving average settings.
+Also included are selectable Price Alerts, for example when a new High or a new Low is hit or when price crosses input MAC3D values.
+Finally the code allows you to set up some Chart features as well.
+I first made an image of what it needed to look like and then i wrote the code.

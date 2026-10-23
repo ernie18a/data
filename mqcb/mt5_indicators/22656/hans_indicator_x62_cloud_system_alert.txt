@@ -1,0 +1,16 @@
+An indicator of expanding time zone ranges with the background color filling and the midline of the
+Hans_Indicator
+range, capable of giving alerts and sending mail and Push messages at the time of breaking through the expanding of the range formed, with the number of price levels increased up to thirty-one. An input parameter has been added, which allows shifting the price grid from the channel center at the larger price changes of an asset.
+input
+uint
+Slip=
+0
+;
+// Shifting the coordinate grid vertically by PipsForEntryStep from the middle of the channel
+At the first start of the indicator, only the visual display of the following parameters is available on the
+Colors
+tab in its settings: Background filling of channels, six upper and six lower levels, and the midline and candles in the end of the list. Parameters of levels seven through thirty-two are set automatically, based on the settings of the preceding levels.
+Fig.1. Indicator Hans_Indicator_x62_Cloud_System_Alert
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22656

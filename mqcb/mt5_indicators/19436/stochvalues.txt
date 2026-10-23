@@ -1,0 +1,39 @@
+Real author
+: Mohit Marwaha
+The indicator shows a text block with the values ​​of the user defined
+Stochastic Oscillator
+period for each timeframe. The size of the text block is customizable. You can also change the text font and disable the display of unused timeframes. The maximum number of simultaneously displayed indicators is ten. The color of the text block depends on the position of Stochastic Oscillator relative to overbought and oversold zones, which are set in the indicator input parameters
+input
+uint
+HighLevel=
+80
+;
+// overbought level
+input
+uint
+LowLevel=
+20
+;
+// oversold level
+input
+color
+HighColor=
+clrLightSeaGreen
+;
+// overbought color
+input
+color
+MiddleColor=
+clrGray
+;
+// no-trend color
+input
+color
+LowColor=
+clrDeepPink
+;
+// oversold color
+Fig.1. The StochValues indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19436

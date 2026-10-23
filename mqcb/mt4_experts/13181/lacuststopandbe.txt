@@ -1,0 +1,22 @@
+This Expert Advisor is for manual trading only. It places Stop Loss and Take Profit for Buy, Sell, Buy Limit, Buy Stop, Sell Limit and Sell Stop orders. It contains Break Even and Trailing Stop function. Works with 4 and 5 digits brokers.
+Input Parameters:
+Stoploss: Stop Loss in pips.
+Takeprofit: Take Profit in pips.
+trailingstart: Distance from Open price in our favor. When trailing starts, if distance = 0, Trailing Stop starts immediately if price goes in our favor.
+trailingstop: Distance from current price in pips.
+breakevengain: Go to Break Even after reaching x pips in our favor.
+breakeven: Number of pips locked in profit.
+Example:
+We open a Buy order, the Expert Advisor on next tick sets the predefined Stop Loss and Take Profit values (40 pips SL and 200 pips TP). Price goes on our favor, reaching 25 pips in profit, the EA sets Break Even to +10 pips. Price goes upper, and our EA changes the Stop Loss value if position reaches +30 pips or more. Our trailing stop is 20 pips from actual price.
+Thank you for your opinions and comments. If somebody have a good idea to my Expert Advisor, please write a comment.
+New functions in version 3.1 :
+Percentofbalance
+— closes all opened orders if account profit reaches the x percent of balance.
+ProfitAmount
+— closes all opened orders if account profit reaches the specified amount, for example, 12 euros. It closes all opened orders, not only profitable.
+Orderprofit
+— closes order on actual pair if order profit reaches the specified amount, for example, 4 euros.
+Stealth mode
+— if true, EA only calculates the Stop Loss, Break Even, Trailing Stop and Take Profit values, controls these values, and if price reaches the SL or TP, closes the order. EA in this mode doesn't not send these values to the broker.
+I need somebody to test this EA in DEMO, because I don't have enough time for it.
+I need to test Stealth mode first.

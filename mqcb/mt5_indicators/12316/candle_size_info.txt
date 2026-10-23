@@ -1,0 +1,4 @@
+This simple indicator shows information about size of candle in pips, include size of the shadow.
+It's very useful too Binary Options operations.
+Recommendations:
+Binary Options Market.

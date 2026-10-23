@@ -1,0 +1,7 @@
+The real author:
+Nikolay Kositsin + lukas1
+The iSAR indicator's main advantage is that it is based on current price time series thanks to which it can be applied to the other indicators. For instance, here is a variant of applying this indicator to the iRVI oscillator:
+Fig.1 The ColorParabolic indicator applied on RVI.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1193

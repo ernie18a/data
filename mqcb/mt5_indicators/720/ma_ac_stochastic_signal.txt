@@ -1,0 +1,66 @@
+This indicator gives trend signals determined by
+Moving Average
+as color trapeziums (the color correlates with a trend direction) and integral market entry signals as color bars determined by
+Stochastic oscillator
+and Bill Williams'
+Accelerator
+.
+Indicator input parameters include
+Moving Average
+and
+Stochastic
+oscillator input parameters:
+//+-----------------------------------+
+//|
+Indicator input parameters
+|
+//+-----------------------------------+
+input
+int
+MA_Period=
+9
+;
+// MA period
+input
+ENUM_MA_METHOD
+MA_Method=
+MODE_SMA
+;
+// Smoothing method
+input
+ENUM_APPLIED_PRICE
+MA_Price=
+PRICE_CLOSE
+;
+// Prices calculation method
+input
+int
+STO_Period=
+5
+;
+//
+Stochastic period
+input
+int
+STO_Slowing=
+3
+;
+//
+Stochastic slowing
+input
+ENUM_MA_METHOD
+STO_Method=
+MODE_SMA
+;
+//
+Stochastic smoothing method
+input
+ENUM_STO_PRICE
+STO_Price=
+STO_LOWHIGH
+;
+//
+Stochastic prices calculation method
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/720

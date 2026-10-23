@@ -1,0 +1,5 @@
+Author: Nick Bilak
+The classic TTF with the T3 smoothing method and signal lines.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7377

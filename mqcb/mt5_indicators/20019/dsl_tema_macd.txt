@@ -1,0 +1,7 @@
+Variation of a long known and useful MACD indicator.
+This version is using:
+TEMA (Triple Exponential Moving Average) instead of using EMA (Exponential Moving Average) for MACD calculation
+DSL (Discontinued Signal Lines) and instead of using one signal line uses two. That way it sort of introduces levels as well as signal lines and, judging from tests, it seems to be better in avoiding false signals and it can be used in (short term) reversals detection.
+Combined, it is producing faster results than the regular (EMA using) MACD and even faster than the
+DSL - DEMA MACD
+and thus making it probably more suitable for scaling techniques.

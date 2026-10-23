@@ -1,0 +1,13 @@
+The script builds the
+Fibonacci Levels
+graphical object with the option of selecting the number of its segments for this feature to be realized, the following input parameter has been added to the external variables of the script:
+input
+uint
+FiboTotal=
+6
+;
+// Number of additional Fibo levels above or below
+Fig. 1. Results of script SetColorFiboLevels_Grand_xN
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23599

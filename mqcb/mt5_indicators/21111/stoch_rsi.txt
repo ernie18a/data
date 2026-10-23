@@ -1,0 +1,28 @@
+StochRSI (Stochastic Relative Strength Index) was developed Tushar Chande and Stanley Kroll in 1994. The developers aimed to increasing the sensitivity of RSI (Relative Strength Index), the disadvantage of which is fluctuation between boundary lines and no signals to open a position.
+The indicator has seven configurable parameters:
+RSI Period
+- RSI calculation period;
+Stoch Period
+- Stochastic calculation period;
+Stoch Slowing K
+- K line deceleration period;
+Stoch Slowing D
+- D line deceleration period;
+Applied price
+- the calculation price;
+Overbought
+- overbought level;
+Oversold
+- oversold level.
+Calculation:
+K = SMA(SKI, Stoch Slowing K)
+D = SMA(K, Stoch Slowing D)
+If Min != Max:
+SKI = 100.0 * (RSI - Min) / (Max - Min)
+otherwise:
+SKI = 100.0
+RSI = RSI(RSI Period, Applied price)
+Max, Min - the highest and the lowest value of RSI over Stoch Period
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21111

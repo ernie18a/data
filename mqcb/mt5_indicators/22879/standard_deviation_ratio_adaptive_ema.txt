@@ -1,0 +1,8 @@
+Theory:
+The Standard Deviation Ratio (SDR) was first presented as a technical indicator in the March 1992 edition of Technical Analysis of Stocks & Commodities magazine ‘Adapting Moving Averages To Market Volatility‘.  The author Tushar S. Chande, Ph.D. used it as the Volatility Index in the original version of his Volatility Index Dynamic Average (VIDYA) or Variable Moving Average (VMA).
+Based on that, here is an EMA that is using the SDR (Standard Deviation Ratio, published as a standalone indicator here :
+Standard Deviation Ratio
+) as a way to make it adaptive.
+Usage:
+It can be used as any regular average or you can use the slope change of the indicator as signal.
+PS: comparison of the ADR adaptive EMA (colored line) and regular EMA (gray line). Difference can be significant in some cases, but it mainly depends on market conditions. In any case, experimenting is advised before using it for trading decisions.

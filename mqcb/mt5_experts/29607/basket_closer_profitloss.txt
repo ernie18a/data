@@ -1,0 +1,8 @@
+Based on source file from Nikolay Kositsin, I modified this Expert into a Basket Profit/Loss Closer.
+This Expert can be used for Closing All Positions if reach selected conditions.
+Has 2 Separate in Closing Type (Profit/Loss):
+1. Close in Profit/Loss Percentage
+2. Close in Profit/Loss Money Sum
+Update:
+- Change the Closing Function.
+- Add simple display to see the Calculations.

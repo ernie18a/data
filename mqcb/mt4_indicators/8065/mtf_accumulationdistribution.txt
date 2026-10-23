@@ -1,0 +1,6 @@
+Author:
+forex-tsd.com
+The modified version of indicator
+Accumulation/distribution
+.
+Indicator MTF_Accumulation/distribution

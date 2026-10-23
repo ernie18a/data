@@ -1,0 +1,8 @@
+Timeframe indicator.
+Customizable timeboxes
+on any chart.
+Some examples:
+1./ Daily (D1) boxes on H1 chart.
+GG-TimeBox
+2./ Hourly (H1) boxes on M5 chart.
+GG-TimeBox

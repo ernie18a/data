@@ -1,0 +1,33 @@
+Author:
+Vladimir Hlystov
+The indicator doesn't draw the Elliott waves, but it helps you to define them.
+Lets consider how does it works:
+1. The WAVE. The first, you should draw any trend line using Fractals and define its name it in the following form : "1<space>*****", for exampe: "
+1 wave
+". After the first tick, or if you don't want to wait for it, update it using the right mouse button you will get the picture like this:
+The dotted line with rectange shows the estimated price movement, and if the wave has been defined correctly, the price will came into the estimated rectange. V is the average volume in the 1st wave.
+After that, we are waiting for the lower fractal and rename the dotted line to "
+2 wave
+" (note that the number and space after it are important). Now moving the end of that line on the next formed fractal (lower) and we will get the estimated price movement in the 3rd wave:
+(if you have moved the line to the bar without fractal, the indicator will inform you about it and will try to move the line by its own vision. If the line hasn't been moved by the indicator, you should move it on the fractal manually)
+After the price will reach rectangle (in our case we have the movement, the price moved upper than the estimated target), you should rename the dotted line to "
+3 wave
+" and remove it to the upper fractal. The result you will see looks as follows:
+The indicator informs us, that the average volume in the 3rd wave is always larger, than in the 1st wave.
+So it's possible that our wave definition was wrong.
+But anyway, we have reached the target estimated and we can continue.
+After the price will reach the estimated target and after the next fractal formation we rename the dotted line to "4 wave" and remove its end on the fractal:
+Further, we should wait for the upper fractal in the target estimated and draw the "a b c" retracement. Read the book "Trade Chaos" by Bill Williams for the details.
+Recommendations:
+The indicator "Fractals.mq4" (it also attached here) helps to draw of the first line. Don't place orders right after the fractal, its better to wait for the price movement in the directon estimated. Of course in such case the profit will be less, but the risk will be the same. I recommend to place Stop Loss as adviced by Bill Williams.
+Editor's remark:
+Note that it's a mirror translation of the
+original Russian version
+.
+If you have any questions to the author, suggestions or comments, it's better to post them
+there
+.
+If you have found this code useful for trading or educational purposes, don't forget to thank author.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9372

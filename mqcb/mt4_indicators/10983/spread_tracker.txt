@@ -1,0 +1,78 @@
+Tracking Variable Spreads with an Offline Chart
+Many brokers use variable spreads but sometimes it is not always apparent what the average values are and how they may change over a period of time.
+The attached
+Indicator
+code (Version 1.0 and 2.0), will track the
+Ask
+to
+Bid
+price spread and dump it in
+OHLC
+format to a standard
+History File
+, which can be opened and monitored in real-time as an
+Offline Chart
+. The
+Indicator
+code is not a true indicator in the original sense but rather a means of generating an
+Offline Chart
+of the
+OHLC
+data for the variable spread over time.
+Just attach the indicator to a
+M1 Chart
+and to generate an
+Offline Chart
+containing minute data of the spread. Alternatively, instead of a
+M1 Chart
+, you can use for example a
+H1 Chart
+and obtain hourly data for the spread.
+With the
+Offline Chart
+open, one could for example apply a simply moving average indicator in order to monitor the average spread over time.
+The Code uses DLL calls so remember to enable the "
+Allow DLL imports
+" option.
+NB! Please note, that you will have to wait for a full bar to complete before any data will be available in the
+Offline Chart
+. If you are using an H1 base chart for example, then you will have to wait a full hour before at least one bar is available in the
+Offline Chart
+.
+Update:
+Version 2.0 now has no need for a non-standard
+Time Frame
+as was the case in the first version. It now uses a
+Symbol Suffix
+instead while maintaining the same
+Time Frame
+of the original. Version 1.0 is still available for those that prefer it.
+Version 2.0 Instructions:
+Just attach the indicator to a
+Chart
+and select a
+Symbol Suffix
+for the
+Offline Chart
+containing spread data. This way, the
+Offline Chart
+will have the same
+Time Frame
+as the original but the
+Symbol Name
+will have the
+Symbol Suffix
+appended to both the
+Chart Name
+as well as the
+History File Name
+.
+Version 1.0 Instructions:
+Just attach the indicator to a
+Chart
+and select a non-standard
+Time Frame
+for the
+Offline Chart
+containing spread data.
+Example Offline Chart View:

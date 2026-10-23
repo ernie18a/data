@@ -1,0 +1,39 @@
+Hybrid Scalper is the Expert Advisor based on many indicators, best Performance with 5-digits broker, true ecn broker (spread: no more then 5 pips).
+Algorithm
+:
+Buy/Sell will be executed depending on
+Stochastic
+trend direction and
+RSI
+.
+Loss orders will be closed depending on RSI, profitable Orders will always survive (the SL/TP is modified).
+The details can be found in the code.
+Volatility
+:
+Expert decide if market is not stable using Bollinger Bands and will not trade during high volatility
+except if you set do not Stop expert during Market Volatility(false)
+Expert will not trade during
+at the end of each year
+except if you set do not Stop expert during Market Volatility(false)
+Extra features:
+Set Trading Days (example Monday Trade
+true,
+Tuesday Trade
+false
+etc...);
+Set Max spread, Ea will not work if spread exceeded;
+Magic Number for Strategy 1 (Main Strategy ) and Magic Number for Strategy 2 (Stop and reverse Strategy);
+You can disable stop and reverse strategy by setting "Allow stop and reverse" false;
+On each Chart where Expert is Running, Magic number 1 Number must differ from Magic Number 2;
+Show Account info, set to true to see some essential information on your chart (Name, Leverage, Equity, Magic Numbers);
+Enable push notification set to true to receive a push notification and an email on each trade including (Good time to go long/short symbol, spread, equity, etc...)'
+Send Saturday Report : Set to true , to receive each Saturday a report about Balance , equity, total profit/loss , Margin , Free Margin
+Recommendations:
+Unstable version, use only on demo account;
+Expert can make
+good profit
+in 3 to 4 years
+,
+and can also
+drain the entire account balance in 3 to 4 years;
+Take a look at the Graph.

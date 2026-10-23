@@ -1,0 +1,4 @@
+Description:
+Combines a strategy based on MA crossover with RSI and MACD confirmation by cmillion.
+Pretty simple: Enter when red or green bar appears and Exit when main line crosses zero line.
+Happy pipping :)

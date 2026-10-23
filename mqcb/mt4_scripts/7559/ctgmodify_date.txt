@@ -1,0 +1,14 @@
+The
+CTG-Modify Date
+script servers for
+fixing the chart with the consideration of the weekends, holidays and holes
+. It is necessary to extend the chart in order to correctly detect the calendar cycles and target areas.
+Features of the script:
+Date correction according to the calendar time:
+Filling the gaps with a line:
+Filling the gaps with bars:
+Changing the chart timeframe (period converter);
+Update of the modified chart in real time;
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7559

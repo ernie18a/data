@@ -1,0 +1,1 @@
+This script clear all SL and TP value on all opened orders.

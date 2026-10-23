@@ -1,0 +1,5 @@
+The Random Walk Index (RWI) is a technical indicator that attempts to determine if a stock's price movement is of random nature or a result of a statistically significant trend.
+The Random Walk Index attempts to determine when the market is in a strong uptrend or downtrend by measuring price ranges over N and how it differs from what would be expected by a random walk (randomly going up or down). The greater the range suggests a stronger trend. The RWI states that the shortest distance between two points is a straight line and the further prices stray from a straight line, implies the market is choppy and random in nature.
+Random Walk Index Formula
+The Random Walk Index determines if a security is in an uptrend or downtrend. For each period the RWI is computed by calculating the maximum of the following values for high periods:
+(HI - LO.n) / (ATR.1(n) * SQRT(n))

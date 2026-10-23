@@ -1,0 +1,12 @@
+What it writes
+One line per closed position, grouped by DEAL_POSITION_ID (works on hedging and netting accounts; tested on a hedging demo). Columns: ticket, symbol, direction, entry time, exit time, entry price, exit price, profit points, MFE points, MAE points, capture ratio, bars spanned, holding time.
+Inputs
+InpDias — how many days of history to read (365)
+InpSoEsteAtivo — only the chart symbol, or every symbol in history (false)
+InpTF — timeframe used to measure the excursions (current chart)
+InpArquivo — CSV file name in MQL5\Files
+Summary printed to the Experts log
+Trade count, won/lost, net result, median MFE and MAE of winners, median MAE of losers, median CAPTURE ratio, median bars per trade, the number of single-bar trades, and the number of trades that could not be measured because the terminal has no bars for that symbol any more (expired futures, for instance) — those are reported, not silently written as zero.
+Measurement limit
+Excursions are taken from the high and low of the bars each trade spanned on InpTF . The path inside a bar is unknown. If the bars column shows 1 for many trades, run it on a smaller timeframe.
+Shares TradeExcursion.mqh with the Trade Excursion indicator; the include goes in MQL5\Include .

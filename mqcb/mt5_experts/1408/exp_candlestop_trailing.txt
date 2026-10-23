@@ -1,0 +1,30 @@
+The Expert Advisor moves Stop Loss of the open position along the border of the channel built using
+CandleStop
+indicator. Stop Loss is modified only when the bar is changed based on the newly closed bar's data in case Stop Loss will be eventually pinned to the current price.
+The Expert Advisor provides a possibility to display the indicator used in it on the current chart directly from the Expert Advisor. There is no need to install the indicator on the chart manually. This is quite convenient, as the indicator is displayed on the chart automatically after the Expert Advisor is installed on the chart. This indicator always has input parameters identical to the Expert Advisor's ones.
+Input parameters for the Expert Advisor:
+//+----------------------------------------------+
+//| input parameters for the Expert Advisor      |
+//+----------------------------------------------+
+input
+uint
+UpTrailPeriods=
+5
+;
+//The period of search for high
+input
+uint
+DnTrailPeriods=
+5
+;
+//The period of search for low
+input
+uint
+Deviation=
+10
+;
+//slippage
+Fig.1 The Exp_CandleStop_Trailing Expert Advisor's working chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1408

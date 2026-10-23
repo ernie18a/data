@@ -1,0 +1,114 @@
+The Heiken Ashi Naive Expert Advisor is based on the Heiken Ashi candle chart system and uses the standard indicator of the same name. The «Naivete» of the trading system used is that it interprets only the two last candles of Heiken Ashi and does not use some complex analysis of patterns. The only «but» — the EA trades
+against
+the estimated trend direction, which is confirmed by the current state of the candlesticks.
+The greatest advantage of the EA is that it has no input parameters, which would need optimization or "adjustment" to fit the previous data. For better control of the funds, the position size calculation can be enabled, which is based on the ATR indicator.
+Calculation Rules
+The following rules are used in the calculation of the Heiken Ashi candlesticks:
+Open_HA = (previous Open_HA + previous Close_HA) / 2
+Close_HA = min(Minimum, Open_HA, Close_HA)
+High_HA = max(High, Open_HA, Close_HA)
+Low_HA = (Open + High + Low + Close) / 4
+where:
+Open_HA, High_HA, Low_HA and Close_HA are the levels of the Heiken Ashi candlesticks.
+Open + High + Low and Close are the levels of conventional candles.
+The levels of the initial Heiken Ashi candle are equal to respective levels of the simple candle.
+Trade Strategy:
+Heiken Ashi Naive uses a rather simple, yet not very obvious trading method.
+The following entry signals are used:
+Sell if the latest completed Heiken Ashi candle is bullish, its body is longer than previous candle's body, previous candle is also bullish, and latest candle has no lower wick.
+Buy if the latest completed Heiken Ashi candle is bearish, its body is longer than previous candle's body, previous candle is also bearish, and latest candle has no upper wick.
+If there exists an open position in an opposite direction when a signal arrives, the position is closed. If the position is in the same direction as the signal, the latter is ignored.
+The following exit signals are used to close the trades before the new entry signals appear:
+Exit the short position if the latest completed Heiken Ashi candle is bearish, the previous candle is also bearish, and latest candle has no upper wick.
+Exit the long position if the latest completed Heiken Ashi candle is bullish, the previous candle is also bullish, and latest candle has no lower wick.
+As you can see, the Expert Advisor uses the inverted logic in its trading strategy. It buys when the system points at a rather strong bearish trend, and it sells when it is a bullish rally according to Heiken Ashi. The point is to try to catch the reversals as early as possible.
+Input Parameters:
+Money management
+Lots
+(default = 0.1) — fixed base position size. Used when
+MM
+=
+false
+.
+MM
+(default = false) — if
+true
+, the position calculation based on the ATR indicator will be used.
+ATR_Period
+(default = 20) — the period of the ATR indicator, which is used for position size calculation. Works only if
+MM
+=
+true
+.
+ATR_Multiplier
+(default = 1) — value, by which the ATR indicator value will be multiplied. Works only if
+MM
+=
+true
+.
+Risk
+(default = 2) — risk tolerance in percentage of account balance/equity. Works only if
+MM
+=
+true
+. This parameter is ignored if
+UseMoneyInsteadOfPercentage
+=
+true
+.
+FixedBalance
+(default = 0) — if set to non-zero value, it is used instead of account balance/equity for position size calculation. Works only if
+MM
+=
+true
+.
+MoneyRisk
+(default = 0) — allowed risk in the account currency. Works only if
+MM
+=
+true
+. Requires
+UseMoneyInsteadOfPercentage
+to be set to
+true
+.
+UseMoneyInsteadOfPercentage
+(default = false) — if
+true
+, position size is calculated based on risk amount given in account currency (
+MoneyRisk
+) instead of balance/equity percentage risk (
+Risk
+). Works only if
+MM
+=
+true
+.
+UseEquityInsteadOfBalance
+(default = false) — if
+true
+, position size is calculated based on account equity instead of balance. Works only if
+MM
+=
+true
+. Ignored if
+UseMoneyInsteadOfPercentage
+=
+true
+.
+LotDigits
+(default = 2) — number of decimal places allowed by your broker in order volume. For example, if your broker allows trading micro lots (0.01), then this parameter should be set to 2. If your broker allows only mini lots (0.1) this parameter should be set to 1. Required only if
+MM
+=
+true
+.
+Miscellaneous
+OrderComment
+(default = "HAN") — the comment for opened positions.
+Slippage
+(default = 100) — maximum allowed slippage; in broker points.
+Magic
+(default = 152207122013) — the magic number to filter positions opened by this EA.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13191

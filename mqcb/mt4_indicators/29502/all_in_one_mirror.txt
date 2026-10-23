@@ -1,0 +1,12 @@
+This indicator is based on a code "MACD Mirror" published by the original author
+andy tjatur
+.
+Following modifications have been made:
+Converted indicator code to strict mode;
+Added a drop-down list of 4 base indicators to choose from (MACD, RSI, CCI, and Stochastic);
+Added optional alerts, email and push notifications which can be enabled / disabled from indicator inputs;
+Indicator and output buffer titles change according to chosen base indicator.
+Screenshots:
+Recommendations:
+Employ other means of fundamental and technical analysis, do not rely solely on this indicator to make trading decisions.
+Thank you for reading!

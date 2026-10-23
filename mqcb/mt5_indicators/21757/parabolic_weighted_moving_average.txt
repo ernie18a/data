@@ -1,0 +1,10 @@
+Linear Weighted Moving Average calculates the average by assigning different weights to every element it is using in calculation, but does it with simple linear weights. For example, in LWMA(10) first price (current) has the weight 10, previous 9, before that 8, and so on...
+This is a variation on it and the variation is that the weights can be changed to form a parabolic curve. It is done simply by using the
+Power
+parameter of this indicator.
+This indicator has 2 special cases: when power is 0, it is a Simple Moving Average (SMA), when it is 1 it is a Linear Weighted Moving Average (LWMA) and in between it is up to our imagination how do we call them.
+The bigger the
+Power
+parameter, the more weight is set to current price (it is faster). The smaller the
+Power
+parameter the slower is the moving average.

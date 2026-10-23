@@ -1,0 +1,21 @@
+It shows a brief information about all of the positions opened.
+It can be useful, if yours expert advisor trades many positions simultaneously.
+During the debug of my expert advisor I have found that there is a problem to analyse all of the positions opened. It can be solved in the following way:
+1) Positions should be grouped by direction
+2) Profit and Loss positions should be separated visually.
+3) The total profit/loss values of several positions should be grouped by direction
+So, I have developed a function that solves this problem.
+Image:
+The header contain: direction, number of positions with same direction, total volume, total profit. The same is for the positions.
+You can find the function in the file attached, maybe it can be useful.
+Editor's remark:
+Note that it's a mirror translation of the
+original Russian version
+.
+If you have any questions to the author, suggestions or comments, it's better to post them
+there
+.
+If you have found this code useful for trading or educational purposes, don't forget to thank author.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9283

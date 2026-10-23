@@ -1,0 +1,3 @@
+ADXm is a variation of a well known ADX indicator.
+Unlike the ADX indicator, which is directionless (the value of the ADX itself does not show the direction of the market, but is just showing if certain level(s) are reached), ADXm indicator is attempting to correct that and is showing the direction of the market trend too.
+This version is adding one more thing: in order to use the slope of the ADXm as a signal, ADXm is additionally smoothed using Jurik smoothing. That way the number of false signals is lessened and (since Jurik smoothing is very "fast" to react to value changes) the lag is minimal.

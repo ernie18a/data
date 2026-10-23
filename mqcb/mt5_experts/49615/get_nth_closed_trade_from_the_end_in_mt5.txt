@@ -1,0 +1,5 @@
+This particular expert advisor contains a very useful code which is often required by the developers. Most of the time , we need the last closed trade. But in this EA you can search a trade with any index.
+By active trade ,I mean market orders not pending orders
+if you pass 0 then it will fetch the most recent active trade
+If you pass 1 then it will fetch the trade before that and so on.
+We can filter  the trades based on symbol and magic number.

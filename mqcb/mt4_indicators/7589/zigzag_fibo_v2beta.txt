@@ -1,0 +1,2 @@
+Author: fukinagashi
+Indicator ZigZag with levels Fibo.

@@ -1,0 +1,3 @@
+Reverse Engineered RSI projects traditional RSI levels — 30, 50, and 70 — directly onto the price chart instead of the oscillator window.
+This lets traders see where RSI overbought, oversold, and equilibrium zones align with actual market prices,
+making it easier to spot precise support, resistance, and potential reversal levels without switching views or relying on hidden momentum data.

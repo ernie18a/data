@@ -1,0 +1,10 @@
+You can change Box size (in pips) and Reversal amount (in boxes). Any timeframe, any pair.
+By default: green mean "X" and red "O".
+For Better viewing use line graph and change from chart properties (F8) line graph color to "None".
+Bug report: If you refresh chart by adding older bars, then you need reload indicator (i.e switch timeframe and back). If anybody knows solution, you are welcome.
+P. S. Point & Figure charts works well with gann lines. In
+Picture 1
+is Gann fan with scale 5.0.
+P. P. S. WTF is Point & Figure...? Look at
+Investopedia.com
+Picture 1

@@ -1,0 +1,42 @@
+Bid-Ask Profile Dashboard for MT5
+This tool demonstrates how to build a real-time microstructure visualization panel directly on a MetaTrader 5 chart using the standard
+ChartObject
+GUI framework.
+The project implements a custom Bid-Ask monitoring dashboard that tracks consecutive tick price changes from incoming ticks and converts them into a simple yet informative market pressure histogram. A lightweight structure stores recent price updates and evaluates directional movement to estimate short-term buying or selling pressure.
+Key Features
+Fully custom GUI dashboard built with chart objects
+Real-time Bid and Ask price monitoring
+Consecutive price trend analysis with trend-strength decay
+Dynamic histogram bars representing market pressure
+Color-coded direction detection (buy vs sell pressure)
+Interactive close button for quick indicator removal
+Efficient tick-driven updates
+Developer Insights
+The source code also demonstrates practical techniques for:
+Building custom trading dashboards in MQL5
+Managing lightweight price buffers
+Implementing directional trend-strength logic with decay handling
+Creating reusable GUI helper functions
+Updating interface components efficiently in real time
+Testing Note
+The most
+reliable
+way
+to
+evaluate
+its
+behavior
+is
+by
+attaching
+it
+to
+a
+live
+chart
+with
+active
+market
+ticks
+.
+This project is well suited for developers interested in tick-level market analysis, trading dashboards, and custom interface development in MQL5.

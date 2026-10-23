@@ -1,0 +1,4 @@
+Maybe it will be useful for somebody. The calculation of the pi character is performed by the following formula:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8309

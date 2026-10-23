@@ -1,0 +1,8 @@
+The indicator was created by John Ehlers and described in his book "Cybernetic Analysis For Stocks And Futures", page 192. This is one of its many noise-cutting filters. Please read about it yourself.
+In the book by the same author "Cycle Analytics for Traders Advanced Technical Trading Concepts", page 32, another method of calculating the same indicator is given. You can get the code of the indicator containing both calculation methods, as well as versions of both indicators for MT4, through the author's
+Telegram channel
+. The link to the channel is in
+my profile
+and in the files with the source codes of this indicator. Don't forget to
+Subscribe
+.

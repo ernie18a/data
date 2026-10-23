@@ -1,0 +1,12 @@
+Most channel indicators tell you where the breakout level is. This one tells you how far away from it you are, right now, in a form you can act on.
+The panel shows, for both the upper and the lower channel edge:
+the level itself
+the distance from the current price, in the symbol's own price units
+the same distance expressed in ATR units
+a proximity bar that fills as price approaches the trigger
+Why the ATR column matters. A distance of 8 dollars from a breakout means something completely different in a quiet Asian session than it does during a news release.
+Dividing the distance by the current ATR makes the number comparable across sessions, across volatility regimes and across symbols. A reading of 0.30 ATR means the same thing on gold as it does on EURUSD.
+Colour coding:
+normal text : more than InpNearATR away (default 1.0 ATR)
+gold        : within InpNearATR
+orange red  : within InpVeryNearATR (default 0.5 ATR)

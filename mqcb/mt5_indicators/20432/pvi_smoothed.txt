@@ -1,0 +1,11 @@
+The SPVI indicator is a smoothed version of the
+Positive Volume Index
+.
+It has two parameters:
+Smoothing period
+;
+Signal line period
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20432

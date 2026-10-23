@@ -1,0 +1,39 @@
+The Dots indicator is based on an indicator developed by TrendLaboratory in 2006. The indicator shows current trend direction by placing colored dots on the main chart. Blue dots indicate an uptrend, red dots indicate a downtrend.
+The indicator's calculations are not based on the standart indicators of the MetaTrader platform. The calculation is based on cosine of a price change angle. The trader can set several input parameters of the indicator:
+//+-----------------------------------+
+//| Indicator input parameters        |
+//+-----------------------------------+
+input
+uint
+Length =
+10
+;
+// Depth of smoothing
+input
+uint
+Filter =
+0
+;
+// parameter allowing to filter price surges without adding display lags.
+input
+Applied_price_ IPC=PRICE_CLOSE_;
+// Applied price
+input
+int
+PriceShift=
+0
+;
+// Vertical indicator shift in points
+input
+int
+Shift=
+0
+;
+// Horizontal indicator shift in bars
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 09.06.2015.
+Fig.1. The Dots indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14265

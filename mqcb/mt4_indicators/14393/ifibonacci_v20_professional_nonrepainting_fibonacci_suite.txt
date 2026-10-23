@@ -1,0 +1,55 @@
+iFibonacci v2.0 – Professional Non-Repainting Fibonacci Suite
+🚀 THE LEGEND RETURNS: MAJOR UPDATE (January 2026)
+Completely Rewritten Engine | Zero Repainting | Professional Alerts
+iFibonacci v2.0
+is a massive evolution of the classic 2015 indicator. We have discarded the old external ZigZag dependency to build a proprietary
+"Reverse-Scan" Swing Engine
+that solves the biggest problem traders face: unreliable anchor points.
+Unlike the old version (and most standard Fibo indicators),
+v2.0 DOES NOT REPAINT.
+Once a swing is confirmed, your Fibonacci levels stay rock solid.
+🔥 Why Update to v2.0?
+Zero Repainting (New Engine):
+The old version relied on iCustom(ZigZag) , causing levels to shift. v2.0 uses a custom
+Reverse-Scan Algorithm
+. Once a High or Low is marked, it is locked forever.
+Peak-Climbing Logic:
+If consecutive highs occur, the engine intelligently keeps the
+highest
+one, ensuring the best possible anchor points.
+100% Safe (No DLLs):
+We removed the user32.dll dependency. The indicator is now safer, faster, and works on all VPS environments without enabling "Allow DLL Imports".
+Professional Alerts:
+Never miss a setup. Get instant notifications (Sound + Popup) when price touches any Fibonacci level (Retracement, Arc, Fan, etc.).
+"Pending Swing" Visuals:
+A unique feature showing "Ghost Markers" (hollow diamonds) for potential swings
+before
+they are confirmed, giving early insight without false signals.
+🛠️ Included Tools
+The indicator automatically draws the following tools based on verified market structure:
+Fibo Retracement:
+Standard levels + Extensions (127.2, 161.8).
+Fibo Arcs:
+Auto-scaled to chart dimensions (DLL-free).
+Fibo Fan:
+Accurate trend angles.
+Fibo Time Zones:
+Time-based cycle analysis (1, 2, 3, 5, 8...).
+Fibo Expansion:
+3-point projection targets.
+Market Structure:
+Auto-drawing of Daily, Weekly, and Monthly High/Low/Pivot lines with centered labels.
+⚙️ Key Parameters
+AutoSwingDepth:
+Automatically adjusts sensitivity based on the timeframe (e.g., deeper scans for D1, tighter for M5).
+ShowPendingSwing:
+Toggle the visual markers for unconfirmed highs/lows.
+AlertOnFiboTouch:
+Enable/Disable price touch alerts.
+ExtraLevels:
+Show additional Fibo levels (14.6, 23.6
+⚙️ Installation
+Download and install to your MQL4/Indicators  folder.
+Drag onto any chart.
+No DLL settings required.
+Credits: Original concept inspired by JimDandy, WHRoeder, and RaptorUK. v2.0 Rewritten by Awran5.

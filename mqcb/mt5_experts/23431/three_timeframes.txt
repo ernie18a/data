@@ -1,0 +1,13 @@
+Idea by:
+Zaur
+mq5 code by:
+barabashkakvn
+The EA works with indicators on different timeframes:
+iMACD (Moving Average Convergence/Divergence, MACD) - PERIOD_M5
+iAlligator (Alligator) - PERIOD_H4
+iRSI (Relative Strength Index, RSI) - PERIOD_H1
+MACD gives a signal, RSI checks the overbought/oversold level, and Alligator checks the trend.
+Position may only be opened, if there are no open positions and if the EA is within the allowed time interval. The time interval is managed by parameters "Use time control," "Start hour," and "End hour."
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23431

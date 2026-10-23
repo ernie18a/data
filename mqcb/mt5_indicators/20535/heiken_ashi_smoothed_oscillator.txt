@@ -1,0 +1,5 @@
+Extending the
+Heiken Ashi Oscillator
+.
+Heiken Ashi Oscillator tends to have a lot of signal. So many signals that sometimes it is impossible to use it reasonably in trading. This version is attempting to bring that into reasonable bounds.
+Instead of using the "regular" Heiken Ashi for oscillator calculations, this version is using the smoothed Heiken Ashi. That makes the number of false signals fall dramatically, and, when pre-smoothing is applied to Heiken Ashi, the lag is in acceptable bounds. That way it becomes a good trend assessment tool. Along with a signal line, you have multiple choices how to use this indicator in trading.

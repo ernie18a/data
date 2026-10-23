@@ -1,0 +1,21 @@
+Indicator ZigZag Oscillator displays in a separate chart window a colored histogram of the Close price distance from the ZigZag pivot point (break).
+It has four configurable parameters:
+ZigZag Depth
+- parameter ZigZag Depth
+ZigZag Deviation
+- parameter ZigZag Deviation
+ZigZag Backstep
+- parameter ZigZag Backstep
+ZigZag pivot point
+- pivot point to start calculating the distance from
+Calculations:
+ZZOsc = 100 * (Close - LastZZ) / LastZZ
+where:
+LastZZ - ZigZag price on the pivot point
+If the pivot point is equal to zero, then the counting will be started from the nearest left ZigZag break or from the end of its last ray.
+Fig. 1. ZigZag Oscillator + ZigZag, ZigZag pivot point = 0
+Fig. 2. ZigZag Oscillator + ZigZag, ZigZag pivot point = 1
+Fig. 3. ZigZag Oscillator + ZigZag, ZigZag pivot point = 2
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23420

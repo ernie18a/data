@@ -1,0 +1,5 @@
+The NRTR (Nick Rypock Trailing Reverse) indicator draws the base line (support and resistance) and a target line.
+Then the price exceeds the target, the position of the base line is changed in price movement direction, the minor price fluctuations are ignored. The cross of a base line means the change of the current trend, the base line position and target prices are changed. The support and target lines are plotted with blue color when uptrends (red color for downtrend)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/145

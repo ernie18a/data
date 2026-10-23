@@ -1,0 +1,8 @@
+Two moving averages calculated in percents are used for the indicator.
+RAVI = 100*(SMA(7) - SMA(65)) / SMA(65)
+T. Chand recommends the following information lines for the indicator: plus/minus 0.3 percent or plus/minus 0.1% (depending on the market). When the indicator crosses the upper information line upwards it is assumed that the rising trend has begun. When the indicator crosses the lower information line it is assumed that the descending trend has begun. The trend is said to be continuing as long as the RAVI line continues to rise. The descending trend is when the RAVI continus to decrease, correspondingly. As soon as the indicator begins to turn back to the zero line it is assumed that the trend has ended and the channel has begun. But if the indicator turns back again without passing the range between the information lines it is assumed that the trend has renewed.
+The suggested indicator itself is simple and it is alomost identical to the Price Oscillator and the MACD. The unique is the usage of the exponent of conergence-divergence of the rate as a trend pointer, drawing attention to the divergence and not the intersection of the moving averages.
+In this modification the regions of the bullish trend are marked with the green color, and the regions of the bearish trend are red. The regions without trend or the uncertainity regions are grey. The colors can be changed at user's will.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8650

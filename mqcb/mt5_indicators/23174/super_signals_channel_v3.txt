@@ -1,0 +1,9 @@
+Original author:
+Nick Bilak
+The
+Super_Signals_Channel_V3
+indicator with a colored filling of the channel and a middle line.
+Fig.1. The Super_Signals_Channel_V3 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23174

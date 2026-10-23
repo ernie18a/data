@@ -1,0 +1,28 @@
+It is a fact that:
+People react in a particular way to price explosions in a given market.
+Prices never go in a straight line, they move in trends.
+Sudden heavy movements often produce strong retracements.
+HawaiianTsunamiSurfer.mq5 combines the premises above in order to identify the price level that is most likely to be retracted when an exceptional wave appears in USD based pairs. It works well on AUDUSD, USDJPY and EURUSD, and with a lower performance on USDCHF and GBPUSD. This EA relies on Momentum indicator. There are no inputs to be changed because they have already been calculated and optimized so that they are transparent to the user. Those optimized inputs are inside the EA's code:
+// The following inputs are transparent to the user, they are optimized!
+// This EA is very sensible to inputs. Please, don't change them unless you are sure about what you do.
+int
+stopLoss =
+700
+;
+int
+takeProfit =
+500
+;
+double
+tsunamiStrength =
+0.24
+;
+double
+size =
+0.1
+;
+The figure below illustrates a tsunami retracement on AUDUSD when Momentum indicator is lower than 99.76.
+This is the EA's performance on USDJPY from 2009 to 2012, both included.
+Recommendations:
+Please, run your experiments on AUDUSD, USDJPY and EURUSD, observe the results obtained and draw your own conclusions.
+This robot has been developed exclusively for learning purposes, please, use it at your own risk.

@@ -1,0 +1,5 @@
+Description:
+This is my first indicator, share for everyone.
+YangTrader is a good indicator, it core is price moving and return, when the value crosses 15, maybe it's the best buy time and down cross 80 it's the sell time.
+I'm not good at English, maybe the description is unclear; But, if you need help, I think I can reply in Chinese.
+Image:

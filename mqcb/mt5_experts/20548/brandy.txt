@@ -1,0 +1,46 @@
+Idea by
+:
+Sergey
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+The EA uses two Moving Average indicators, those being the signals on the intersection of two MAs: Here, the slow indicator (MA "Open") is used for opening positions, and the fast one (MA "Close") is used for closing positions. The EA only operates when a new bar appears, the number of positions is not limited. Position trailing is possible.
+Inputs
+Lots
+- the volume of the position to be opened;
+Stop Loss (in pips)
+- Stop Loss;
+Take Profit (in pips)
+- Take Profit;
+Trailing Stop (in pips)
+- trailing;
+Trailing Step (in pips)
+- trailing step;
+MA "Close": averaging period
+- MA "Close" averaging period;
+MA "Close": horizontal shift
+- MA "Close" horizontal shift;
+MA "Close": smoothing type
+- MA "Close" averaging type;
+MA "Close": type of price
+- MA "Close" price type;
+MA "Close": bar closing position
+- MA "Close" bar number, from which the closing signal is taken;
+MA "Open": averaging period
+- MA "Open" averaging period;
+MA "Open": horizontal shift
+- MA "Open" horizontal shift;
+MA "Open": smoothing type
+- MA "Open" averaging type;
+MA "Open": type of price
+- MA "Open" price type;
+MA "Open": bar opening position
+- MA "Open" bar number, from which the closing signal is taken;
+magic number
+- unique identifier for the EA.
+Testing for several symbols on the H1 timeframe from 2018.01.01 to 2018.04.22, the default EA parameters:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20548

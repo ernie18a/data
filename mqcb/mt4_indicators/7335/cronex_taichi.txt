@@ -1,0 +1,13 @@
+I guess I am not the only one who has difficulties with making decisions when interpreting the Ichimoku values.
+The main idea if the formalization of the Ichimoku signals and identification of a potential flat/trend.
+Principle:
+Taichi - weighted average Tenkan+Kijun+SpanA+SpanB
+TaichiFor - weighted average SpanA+SpanB with Kijun shift
+Signal - moving average with Kijun period
+SSignal - moving average with Senkou period
+Flat - colors the flat zones
+Hopefully this will be useful to someone.
+Cronex Taichi
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7335

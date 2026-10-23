@@ -1,0 +1,6 @@
+This is an input and output indicator.
+Based on Target bands at
+https://www.best-metatrader-indicators.com/target-bands-indicator-mt4/
+Change Arrow for input information and Smile for output information.
+The image just like below:
+Free to enjoy it.

@@ -1,0 +1,48 @@
+Idea by
+:
+Scriptor
+MQL5 code author
+:
+barabashkakvn
+The Expert Advisor operates (opens positions and checks the possibility of closing) only at the moment of bar emergence. The trailing function operates (checks the possibility to move Stop Loss) on every tick.
+The volume of the opened position is equal to
+Lots
+.
+Stop Loss
+,
+Take Profit
+and
+Trailing Stop
+can be disabled by setting the appropriate parameter to "0.0".
+Trading system signals
+The EA compares the bar #1 Close price with the
+Signal bar
+Close price (the
+Signal bar
+value cannot be less than 2, otherwise it is considered to be an error and the EA is unloaded). The difference between the closing prices of these two bars should be greater than
+Minimum distance
+.
+Another restriction: a signal is generated when there are no open positions.
+Signals when
+Use reverse signals
+= false:
+BUY signal: close of bar #1 - close of bar #
+Signal bar
+>
+Minimum distance
+;
+SELL signal: close of bar #
+Signal bar
+- close of bar #1 >
+Minimum distance
+.
+If
+Use reverse signals
+= true, the generated signal is reversed.
+Position lifetime is also checked at a new bar emergence: if it reached
+Lifetime of the position
+bars, the position will be closed.
+An example of how the reverse of signals influences EURUSD, H1:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21774

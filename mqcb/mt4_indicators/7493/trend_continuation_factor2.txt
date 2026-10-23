@@ -1,0 +1,8 @@
+Author: Conversion only Doc Gaines
+Trends indicate an important component of the market. You should certainly be able to determine them. However, it is not enough just to determine the trend. It is also important to determine the direction of the current trend. Although trends help to earn more money in short periods of time, they also "help" to quickly lose them, if a position is opened against the market. To avoid such situations the author developed a "trend continuation factor" (TCF). This indicator is created to determine the trend and its direction.
+For a clearer understanding, read
+here
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7493

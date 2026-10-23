@@ -1,0 +1,6 @@
+Iin_MA_Signal
+indicator in NRTR form.
+Fig. 1. Iin_MA_Signal_NRTR
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21970

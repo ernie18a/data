@@ -1,0 +1,15 @@
+The script quickly open orders works on two types of order execution: Market Execution and Instant Execution
+For vybota type is a variable MarketExecution, if its value = false, then stop orders exhibited immediately when you open an order, but if true, then after the opening of a warrant script will work as long as no set stoploss and takeprofit.
+Another feature of this script is that it can calculate exhibited lot depending on the desired risk.
+For example, you are willing to risk 1% of their deposit: expose Risk = 1 and Lot = 0.0. The script will calculate a lot, where a warrant, closing on stoploss, lose only 1% of your money.
+The script can simultaneously open two divergent orders for this set SELL = true and BUY = true.
+Additional options:
+stoploss - level SL, if 0, then SL is not exposed (to determine the lot at% can not be null)
+takeprofit - level TP, if 0, then TP is not exposed
+Magic - the unique number of orders
+SELL - open order SELL
+BUY - open order BUY
+Lot - Order Quantity
+Risk - % which we are willing to risk, is applied at Lot = 0
+slippage - The maximum permissible deviation of the price for market orders
+MarketExecution - Putting stops on the next tick

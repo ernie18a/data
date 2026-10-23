@@ -1,0 +1,23 @@
+Information indicator Flat Trend is based on two standard indicators, ADX and Parabolic SAR, and uses colored marks to show the market state, based on the totality of data provided by the two indicators:
+DMI up, SAR up -
+green
+marks
+DMI up, SAR down -
+light green
+marks
+DMI down, SAR up -
+orange
+marks
+DMI down, SAR down -
+red
+marks
+It has four configurable parameters:
+SAR step
+- step of Parabolic SAR
+SAR max
+- maximum Parabolic SAR
+ADX period
+- ADX calculation period
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21318

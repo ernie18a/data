@@ -1,0 +1,13 @@
+Author:
+Gopal Krishan Doda
+Gives Buy, Sell and Exit signals based on EMA7, EMA14 and EMA21.
+Some Rules:
+Buy : When EMA7 > EMA14 and EMA7 > EMA21 and EMA14> EMA21
+Sell: When EMA21 > EMA7 and EMA21 > EMA14 and EMA14 > EMA7
+Also, shows lines on chart on gives signals.
+Shows no. of pips passed in bracket after giving signal.
+Works on all currency pairs and time frames.
+Recommendations:
+Always use stop-loss based on your risk-profile or by another indicator like Parabolic SAR.
+Cut your losses small & ride the profit long.
+Sample Image:

@@ -1,0 +1,41 @@
+This is my FIRST indicator!!! I know that there can be many indicators like this one here, but I wanted to make one by myself to learn how to do it. Anyway, I had to start with something, didn't I?!
+I think it might be helpful for newbies, since I am a newbie myself on the Forex (I started to trade in January 2008).
+The matter of the indicator is as follows: when the price approaches to the support/resistance line by 20, 10 and 5 points (these are default values that can be changed by desire), the indicator will produce
+one
+signal (Alert) if the price is located in the spaces before the trend line (20<=Price<10), (10<=Price<5), (5<=Price=0), but doesn't bury the user with signals at every tick. The only thing is that the indicator will produce several signals when the price moves from one space into another.
+It also shows the current distance from the price to the support/resistance line in the upper left corner (Comment).
+The following is contained by the signal:
+Range
+- distance from the price to the support/resistance line;
+Price
+- current price;
+TrendLine
+- current location of the support/resistance line.
+the following must be introduced in settings:
+PointsRange1
+- the first
+(largest)
+distance to the trend line, at which the signal will be produced;
+PointsRange2
+- the second
+(medium)
+distance to the trend line, at which the signal will be produced;
+PointsRange3
+- the third
+(small)
+distance to the trend line, at which the signal will be produced;
+IndexTrendLine
+- index,
+exactly the index
+of the trend line, which you can see in the list of objects.
+The values of distances 1, 2 and 3 must be introduced
+in decreasing order
+!!!
+Sorry if the description is too detailed. I try to make it clear for those who, like me, understands only a little or nothing about this stuff.
+If somebody has any ideas, suggestions or recommendations, please write to me, I'll be very glad!
+Indicator settings:
+Список объектов:
+Сигналы:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8201

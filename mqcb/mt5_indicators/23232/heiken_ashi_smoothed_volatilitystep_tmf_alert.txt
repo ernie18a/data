@@ -1,0 +1,36 @@
+The
+Heiken_Ashi_Smoothed_VolatilityStep_Alert
+indicator with the ability to highlight trading time zones, selected in the indicator input parameters. Such zones are shown in a different histogram color.
+input
+bool
+TimeTrade=
+true
+;
+//Enable highlighting of trading time zones
+input
+HOURS  StartH=ENUM_HOUR_4;
+//Trading start (hours)
+input
+MINUTS StartM=ENUM_MINUT_0;
+//Trading start (minutes)
+input
+HOURS  EndH=ENUM_HOUR_17;
+//Trading end (hours)
+input
+MINUTS EndM=ENUM_MINUT_59;
+//trading end (minutes)
+Histogram bars outside the trading time range are shown in pale gray; bars having the size greater that the trigger level
+input
+uint
+AlertLevel=
+150
+;
+// Trigger level
+within the range are shown in yellow; those below the trigger level have the steel gray color. Alerts, push notifications and emails are only sent during the marked trading sessions.
+The indicator uses SmoothAlgorithms.mqh library classes (copy it to terminal_data_folder\MQL5\Include). The use of the classes was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Fig.1. The Heiken_Ashi_Smoothed_VolatilityStep_tmf_Alert indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23232

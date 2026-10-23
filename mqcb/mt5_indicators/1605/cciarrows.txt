@@ -1,0 +1,7 @@
+The real author:
+EarnForex
+The semaphore signal indicator fixing moments of breakthrough of the zero level by the iCCI technical indicator and displaying these moments by color points.
+Fig.1 The CCIArrows indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1605

@@ -1,0 +1,4 @@
+Author: TraderSeven
+Adviser Firebird v0.60. Uses indicator
+MA
+.

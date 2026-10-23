@@ -1,0 +1,8 @@
+Real author:
+Hossein Nouri
+hsn.nouri@gmail.com
+An oscillator to help you confirm your Elliott waves counting (doesn't count the waves automatically)
+Different bar colors for noticing trend change
+Capable of drawing moving average in indicator's window
+All options are customizable
+Alert settings

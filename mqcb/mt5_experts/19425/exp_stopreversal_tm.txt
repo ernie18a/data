@@ -1,0 +1,34 @@
+The Exp_Stopreversal_Tm Expert Advisor is based on the signals of the
+Stopreversal
+indicator and is provided with the possibility to set a strict trading time interval.
+A signal is generated at the close of a bar if a colored indicator arrow has appeared.
+It is possible to specify trading time in input parameters to trade in the specified time interval:
+input
+bool
+TimeTrade=
+true
+;
+//Allow trading in the specified interval
+input
+HOURS  StartH=ENUM_HOUR_0;
+//Trading start (hours)
+input
+MINUTS StartM=ENUM_MINUT_0;
+//Trading start (minutes)
+input
+HOURS  EndH=ENUM_HOUR_23;
+//Trading end (hours)
+input
+MINUTS EndM=ENUM_MINUT_59;
+//Trading end (minutes)
+Two variables (hours and minutes) are provided for the operation start time, and two similar variables for the end time.
+Default settings enable the Expert Advisor to trade the whole trading session from 0:00, while all positions are closed at 23:59.
+If the start time is later than the specified end time, the Expert Advisor will close positions the next day, at the specified time.
+For a correct operation of the Expert Advisor, you should add the Stopreversal.ex5 compiled indicator file to <terminal_data_folder>\MQL5\Indicators.
+Default input parameters of the Expert Advisor were used during the tests shown below. Stop Loss and Take Profit were not used during testing.
+Fig.1. Examples of deals on the chart.
+Testing results for 2016 at USDJPY H1:
+Fig. 2. Testing results chart.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19425

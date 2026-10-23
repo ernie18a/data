@@ -1,0 +1,5 @@
+Author: FX Sniper and Robert Hill
+Modified LSMA_In_Color indicator. Added: usage of the applied price.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7478

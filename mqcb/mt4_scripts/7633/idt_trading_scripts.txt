@@ -1,0 +1,37 @@
+There are some scripts in zip archives which could be very usefull in intraday trading. With them you can respond  on market changes very quickly :
+IDT_buy_order
+IDT_buy_limit
+IDT_sell_order
+IDT_sell_limit
+These scripts set up values of take profit and stop loss automatically according to predefined values in global variables.
+********************
+IDT_close_profit_positions
+- This script closes all profit positions.
+IDT_more_profit
+- This script adds in all profit positions one point to take profit value.
+IDT_variables
+- This script sets up global variables. You need it to run only first time.
+*********************
+IDT_library
+- Contains all necessary scripts.
+*********************
+How to install :
+1) Load IDT_library.ex4 and
+IDT_library.mq4 into \experts\libraries directory.
+2) Load IDT_library.mqh into \experts\include directory.
+3) Load rest of files into \experts\scripts directory.
+4) In menu Terminal Settings — Expert Advisors Allow live trading and Allow DLL imports.
+5) Run script IDT_variables.
+6) Set up hot keys for IDT scripts.
+7) Set up global variable according to you wish.
+GLOBAL VARIABLES :
+profit
+= take profit(close position) when price is higher/deeper about profit points
+lost
+=stop loss(close position) when price is higher/deeper about lost points
+expiration
+=pending order expires in .... minutes
+maxrisk
+=maximum risk in % of your account
+skip
+=place pending order about skip value below or above buy/sell price (it is difference between actual and expected future price)

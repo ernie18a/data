@@ -1,0 +1,11 @@
+Real author:
+Mohammad Soubra
+This is a simple example EA for MetaTrader 4, it is my 2nd published code in this community.
+The main idea of this Expert Advisor is to trade by the basic concept of Stochastic oscillator in its basic parameters, with ability to change these parameters via the EA inputs.
+This EA is only for coders and who interested to learn Forex programming as a beginner. Use it only in Demo accounts or Strategy Tester. Don't use it in real trading.
+Recommendations:
+Don't use this EA in a real account.
+Feel free to modify the source code and share with all.
+Feel free to give me your comments.
+Use various settings/parameters in the "Inputs" tab as in the picture below to see different results.
+Enjoy.

@@ -1,0 +1,6 @@
+My version of plotting the DeMark lines, also draws channels in addition to the trend lines and targets. Added one more target (the third one defined as 1.62 of the inner extremum), added the signal cancellation when closing within the channel.
+The description of the parameters is in the code, if anyone is interested, they can figure it out.
+Demark Lines
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7364

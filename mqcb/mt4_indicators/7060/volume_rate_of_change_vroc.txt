@@ -1,0 +1,4 @@
+Practically all important chart elements (peaks, troughs, breaks, etc.) are accompanied with sharp increase in volume. The indicator of Volume Rate of Change shows how quickly the volume changes.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7060

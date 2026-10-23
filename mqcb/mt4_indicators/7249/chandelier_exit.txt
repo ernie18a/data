@@ -1,0 +1,6 @@
+Author
+: MQLService
+Chandelier Exit calculates the trailing stop based either on the maximum value of the maximum price or the maximum value of the close price over a specified period. The distance from the maximum point to the trailing stop is best calculated in ATR (Average True Range) units. However, it is possible to measure in monetary terms or in points of the contract value.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7249

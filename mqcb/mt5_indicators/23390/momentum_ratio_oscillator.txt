@@ -1,0 +1,5 @@
+Theory :
+The indicator is calculating a smoother value of momentum ratio (current value compare to previous value) using a series of ema calculations for smoothing. The result is a bit similar to some already existing indicators (like the volume zone or price zone oscillators), but that comes from the usage of the ema for smoothing (ema produces that "smooth step like" results when the values change suddenly) - the math used for those is completely different.
+Usage :
+In this version you can use either color changes or levels crosses (since the indicator is bound to 0 to 1 range) as signals
+The "big picture" example :

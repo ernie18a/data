@@ -1,0 +1,10 @@
+The real author:
+darmasdt
+The market volatility indicator. It calculates stop loss and draws price channel. According to the instructions the red line shows where to place stop loss when opening a new order in this place.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 19.10.2007.
+Fig.1 The channel_breakout_entry indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1451

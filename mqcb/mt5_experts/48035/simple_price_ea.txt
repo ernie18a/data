@@ -1,0 +1,4 @@
+The algorithm of the Expert Advisor is simple: the minimum and maximum price is searched for on the number of bars specified in the input parameters. As soon as one of the current Ask or Bid prices reaches these values, the corresponding position will be opened immediately. The Expert Advisor can open only one long or one short position. In the input parameters of the Expert Advisor there is only one setting - "Number of bars to analyse the price movement".
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/48035

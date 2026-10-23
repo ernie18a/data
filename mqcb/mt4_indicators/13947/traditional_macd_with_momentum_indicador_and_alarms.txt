@@ -1,0 +1,36 @@
+Real author:
+João Nunes @ neskk.com - 2015
+Traditional MACD indicator with a Momentum indicator and alarms. Allows customization of most of the parameters without having to dive into code.
+This is my MACD indicator, it has well structured code so even beginners can understand it and perhaps modify it. I've grabbed the Momentum idea from another indicator:
+https://www.mql5.com/en/code/11511
+.
+I wanted a traditional MACD indicator where:
+MACD line = FastEMA - SlowEMA
+Signal = 9-day EMA of MACD
+Histogram = MACD - Signal
+The Momentum line is calculated by comparing two MACD values with 10 bars in between. Then Momentum is passed into a Moving Average to make it smoother.
+Since MACD 0-crossovers and Momentum reversals can be important signals for traders, I've incorporated two alarms, one for each of the signals mentioned.
+Note:
+These 'alarms' actually are being printed on Experts tab, if you want alerts, just uncomment the respective lines in the code (instead of
+Print()
+function use
+Alert()
+).
+I wanted to make this indicator user friendly and customizable, so I've included a lot of parameters:
+BarsToProcess — Self explanatory.
+Note:
+This affects the ability for the graph to render different time frames, at 1000 you can go up to 1D!
+AppliedPrice — Price used to calculate MACD.
+PeriodFastEMA — Period used to calculate
+fast
+moving average.
+PeriodSlowEMA — Period used to calculate
+slow
+moving average.
+PeriodSignal — Period analyzed to calculate the signal line.
+SignalMA — Moving average method used to calculate the signal line.
+DeltaMomentum — Distance between the two points analyzed to calculate the Momentum.
+PeriodMomentum — Period analyzed to compute the moving average of the Momentum (Momentum smoothing).
+MomentumMA — Moving average method used to calculate the smoothed Momentum.
+AlarmZeroCrossover — Enables/Disables the alarm for MACD 0-crossovers.
+AlarmMomentumReverse — Enables/Disables the alarm for Momentum reversals.

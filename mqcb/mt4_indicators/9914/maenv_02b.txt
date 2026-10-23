@@ -1,0 +1,4 @@
+Optimistic trader may enter the market when the price crosses the aqua line.
+More reliable entry will be when the price crosses the blue line.
+When the price comes back and crosses the red line you can open a position in the course of price movements.
+This indicator designed for EURUSD, M5.

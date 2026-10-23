@@ -1,0 +1,4 @@
+The adviser in the time, given by the user, opens a market position, Buy, Sell or lock. As, it is possible to set closing of positions in the certain time, and Trailing of positions.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8929

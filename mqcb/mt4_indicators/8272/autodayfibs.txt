@@ -1,0 +1,15 @@
+AutomaticallyAdjustToToday (true/false)
+Determine whether to have the indicator
+automatically adjust to todays prices.
+TimeToAdjust (in 24 hour format 0-23)
+If AutomaticallyAdjustToToday is set
+to 'true' then you can determine at
+what time the fib lines switch to using
+todays prices instead of yesterday's.
+Works only for whole hours.
+DaysBackForHigh and DaysBackForLow
+If AutomaticallyAdjustToToday is set
+to 'false' then you can adjust the
+amount of days back to take the high
+and low readings from.
+The grey square is only to highlight here where the indicator on this particular chart is taking its reading from.

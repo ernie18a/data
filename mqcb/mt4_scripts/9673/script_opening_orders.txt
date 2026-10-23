@@ -1,0 +1,22 @@
+Sometimes you want to help the advisor and add the order, but that Advisor has its own Magic number needed to be placed orders with its number.
+Variables:
+stoploss
+- level exhibiting SL, if 0, then SL is not exposed
+takeprofit
+- level exhibiting TP, if 0, then TP is not exposed
+Magic
+- a unique order number
+SELL
+- open SELL order
+BUY
+- open BUY order
+Lot
+- Order Quantity
+slippage
+- the maximum deviation of the price for market orders
+The simultaneous installation of different directions of orders for this variable SELL BUY and set to true.
+When failures of connection or a sharp price movement will be exhibiting 10 attempts to place an order, after that the script stops.
+To run the script, drop it on the chart window and the menu will appear, select the options and type of the opened orders.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9673

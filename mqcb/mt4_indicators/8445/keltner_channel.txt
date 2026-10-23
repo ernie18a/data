@@ -1,0 +1,6 @@
+The Keltner Channel indicator locates the most important trends.
+The indicator is based on principles similar to those used in Envelopes and Bollinger Bands. The difference is in that instead of percentage (Envelopes) or standard deviations (Bollinger Bands), the average true range is used here. The upper band is calculated as the moving average plus the average, for N periods, true range. The lower band is the moving average minus the average true range.
+As a rule, the upper band detects that the market is overbought and that correction will most probably be down-directed. The lower band means that the market is oversold and that correction will most probably be up-directed.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8445

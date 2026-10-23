@@ -1,0 +1,11 @@
+The script downloads historical data (for the current symbol), available at trade server.
+The download progress is plotted using the CProgressBar class, proposed in
+The Price Histogram (Market Profile) and its implementation in MQL5
+article.
+In "Experts" tab of Toolbox window it prints the first date of the server history.
+If error it prints error code (see CheckLoadHistory in
+Organizing Data Access
+)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/302

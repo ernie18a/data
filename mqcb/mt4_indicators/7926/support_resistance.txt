@@ -1,0 +1,13 @@
+Below are two indicators:
+Support-Resistance Indicator, as its name says, is intended to detect and display Support/Resistance levels.
+The midline is the mean value between support and resistance.
+The indicator has an external parameter, it's its window width. Thus, you can see daily levels on a one-hour chart, if you set the window width to 24.
+SR-Rate Indicator shows the boarder the price is closer to.
+OneSideGaussian must be stored in \libraries.
+Of course, you should store the other two files in \indicators.
+To my opinion, they should be used all together only.
+I'm sorry for too few comments on it, but I'm sure that you can sort out 10 KB of simple code yourselves. Especially as because I tried to write in a good style, the names of variables correspond with their purposes.
+I'm looking forward to your ideas and opinions about this program. The more so because this is my first performance on this website.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7926

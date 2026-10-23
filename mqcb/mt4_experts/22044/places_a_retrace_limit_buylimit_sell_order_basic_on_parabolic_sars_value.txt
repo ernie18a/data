@@ -1,0 +1,14 @@
+Para_Retrace.mq4
+Copyright 2018 , raymondyeung.htc@gmail.com
+Speed Technology
+Description:
+Places a retrace limit Buy,Limit Sell Order
+basic on Parabolic Sars Value.
+Global Variables , Press function key "F3" Change
+"GMT_Time_Diff" : Diff. Eastern Time with Local Time
+"_ParaSL_SL"    : Stop Loss Pips
+"_ParaSL_TP"    : Take Profit Pips
+"_Para_Diff"    : Retrace Entry , Pips with Parabolic Sar Value
+Remark : Limit Sell ; Bid Price with Parabolic Sars Value
+Limit Buy  ; Ask Price with Parabolic Sars Value
+"_Para_lots"    : Lots

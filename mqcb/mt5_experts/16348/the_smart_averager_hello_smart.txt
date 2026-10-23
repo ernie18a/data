@@ -1,0 +1,74 @@
+The
+Hello Smart
+Expert Advisor averages losing positions. The
+BuySell
+trading direction is selected in the settings. Then, if the price goes in unfavorable direction, the EA opens an averaging order with a fixed volume of
+Lot
+at the
+Step
+distance specified in points. Once the EA accumulates positions of
+BigLot
+volume, the initial lot size increases by the
+Mnogitel
+coefficient. The position is closed upon reaching the
+Profit
+or
+Loss
+in the deposit currency. All EA operations are performed on the candle open prices.
+The EA has been optimized at the interval from 11.01.2013 to 12.09.2016 for the EURUSD currency pair, H1 and Н4 periods.
+Settings:
+input
+int
+BuySell     =
+1
+;
+// 1-Only Buy 2-Only Sell
+input
+int
+Step        =
+1000
+;
+// Step
+input
+double
+Lot      =
+0.1
+;
+// Volume
+input
+double
+BigLot   =
+0.5
+;
+// Big Lot
+input
+double
+MaxLots  =
+5
+;
+// Maximum lot
+input
+double
+Profit   =
+60
+;
+// Dollars Profit
+input
+double
+Loss     =
+5100
+;
+// Dollars Loss
+input
+double
+Mnogitel =
+10
+;
+// Lots Mnogitel
+Fig1. Results of the EA trading and optimization from 11.01.2013 to 12.09.2016. EURUSD, H1
+Fig.2. Results of the EA trading and optimization from 11.01.2013 to 12.09.2016. EURUSD, H4
+Tips:
+Recommended for use as a trading assistant and for developing your own strategies.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16348

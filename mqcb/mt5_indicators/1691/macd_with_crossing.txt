@@ -1,0 +1,10 @@
+The real author:
+mladen
+Variation on the MACD theme using the colored bars as the signals of entry and exit. The cloud color of the MACD corresponds to the trend direction.
+This indicator was first implemented in MQL4 and published in
+Code Base
+on 20.07.2008.
+Fig.1 The MACD_with_Crossing indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1691

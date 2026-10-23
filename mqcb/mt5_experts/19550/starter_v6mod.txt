@@ -1,0 +1,18 @@
+The author of the idea
+:
+John Smith
+,
+the mq5 code author
+:
+barabashkakvn
+.
+The following indicators are used:
+EMAAngle
+Laguerre RSI with Laguerre filter
+The Expert Advisor first checks the possibility to open BUY or SELL according to the EMAAngle indicator: the indicator value and the configured AngleThreshold parameter of the indicator are compared. If the indicator is below AngleThreshold, a Buy position can be opened. If it is above AngleThreshold, a Sell position can be opened.
+After that the EA checks other indicators, including 'Laguerre RSI with Laguerre filter', two Moving Averages and one CCI.
+Condition for opening a BUY position:
+The Expert Advisor had not been optimized, and testing on EURUSD, H1 was performed with the default values of indicators:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19550

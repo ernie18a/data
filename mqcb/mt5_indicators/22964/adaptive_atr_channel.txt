@@ -1,0 +1,9 @@
+Theory:
+In the December 2011 issue of TASC there is an article about "Adjustable bands Z test". According to the author, adjustable bands are calculated as:
+ABZ’ = MA (Efficacy ratio) + Stdev(Efficacy ratio)
+where the explanation for "Efficacy ratio" is the following:
+For the efficacy ratio, I use a ratio of the 34-day standard deviation for the long-term indicator over a six-day standard deviation for the short-term indicator.
+This version:
+Instead of using standard deviation ratio as adapting factor, this version is using Perry Kaufman's efficiency ratio. Also, instead of having standard deviation bands, this version is ATR bands. ATR in this version is adaptive too and is additionally smoothed in order to make the bands smoother. This way the indicator is somewhat similar to Keltner channel (in theory). But since all the components are calculated differently,it deserves a separate name.
+Usage:
+You can use it in a similar manner as Keltner channel is used.

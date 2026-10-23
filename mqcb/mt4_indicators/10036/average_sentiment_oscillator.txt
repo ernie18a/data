@@ -1,0 +1,15 @@
+Average Sentiment Oscillator
+Momentum oscillator of averaged bull/bear percentages.
+This is an improvement on the formula we used for the sentiment meter within FX Multimeter III. We suggest using it as a relatively accurate way to gauge the sentiment of a given period of candles, as a trend filter or for entry/exit signals.
+It's a combination of two algorithms, both essentially the same but applied in a different way. The first one analyzes the bullish/bearishness of each bar using OHLC prices then averages all percentages in the period group of bars (eg. 10) to give the final % value. The second one treats the period group of bars as one bar and then determines the sentiment percentage with the OHLC points of the group. The first one is noisy but more accurate in respect to intra-bar sentiment, whereas the second gives a smoother result and adds more weight to the range of price movement. They can be used separately as Mode 1 and Mode 2 in the indicator settings, or combined as Mode 0.
+Mode 1 - Intra-bar algorithm only - Leading
+Mode 2 - Group algorithm only - Lagging
+Combining the two formulas we get the following result, which is the default Mode 0.
+Mode 0 - Both algorithms - Balanced
+Usage:
+The blue line is Bulls %, red line is Bears %. As they are both percentages of 100, they mirror each other. The higher line is the dominating sentiment. The lines crossing the 50% centreline mark the shift of power between bulls and bears, and this often provides a good entry or exit signal, i.e. if the blue line closes above 50% on the last bar, Buy or exit Sell, if the red line closes above 50% on the last bar, Sell or exit Buy. These entries are better when average volume is high.
+It's also possible to see the relative strength of the swings/trend, i.e. a blue peak is higher than the preceding red one. A clear divergence can be seen in the picture as the second bullish peak registers as a lower strength on the oscillator but moved higher on the price chart. By setting up levels at the 70% and 30% mark the oscillator can also be used for trading overbought/oversold levels similar to a Stochastic or RSI. As is the rule with most indicators, a smaller period gives more leading signals and a larger period gives less false signals.
+Changing the fixed minimum and maximum values to 20 and 80 increases the oscillator width as pictured. Either of the lines can be hidden in the settings.
+Our website -
+www.fxtools.info
+UPDATE: Code error in first upload, now corrected.

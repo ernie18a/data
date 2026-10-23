@@ -1,0 +1,31 @@
+Real author:
+RickD
+The i-HighLow indicator draws a channel with the borders that correspond to the highest and lowest values of candlestick shadows for a specified number of bars with a vertical shift at the number of points defined by the indicator input parameters:
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+uint
+period=
+20
+;
+// The number of candlesticks for defining an extremum
+input
+uint
+Filter=
+50
+;
+// Width of the offset from a candlestick in points
+input
+int
+Shift=
+0
+;
+// Horizontal shift of the indicator in bars
+This indicator was first implemented in MQL4 and published in
+CodeBase
+on 21.05.2007.
+Figure 1. The i-HighLow indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2394

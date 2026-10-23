@@ -1,0 +1,9 @@
+This Expert Advisor (EA) demonstrates how to use the MQL5 Calendar to create an automated trading system that reacts to high-impact forex news events. The main goal of this code is educational: to teach traders and developers how to interact with the MQL5 Calendar to identify and trade around significant economic news releases, such as inflation data (CPI/PPI) or interest rate decisions.
+The EA uses the MQL5 Calendar functions to identify upcoming news events relevant to the symbol being traded. If a high-impact event is detected for the base or quote currency, the EA implements a breakout trading strategy by placing pending orders (Buy Stop and Sell Stop) above and below the current price. This approach aims to capture price movements driven by volatility from news releases.
+The EA provides several customizable inputs to adjust its behavior:
+Type: The user can select whether the EA should operate in trading mode, or alerts should be sent instead whenever a high impact news event is in the near future.
+Magic: Specifies the Magic number of the orders, if trading mode is selected.
+TPPoints: Take Profit points, only relevant if trading mode is selected.
+SLPoints: Stop Loss points, only relevant if trading mode is selected.
+Volume: The Volume used for the pending orders, only relevant if trading mode is selected.
+If you'd like to understand the code or the news in general and want to better understand how the calendar is structured in mql5, make sure to watch the youtube video I've made about it:

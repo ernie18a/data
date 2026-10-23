@@ -1,0 +1,10 @@
+Usually when Spearman rank is used, it is coupled with some fixed levels that, once when crossed, should indicate high "strength" of correlation (positive or negative, does not matter). This version is a Spearman rank correlation with an addition of floating levels to be used instead of using fixed level as a measure of high or low correlation ratio.
+Theory:
+A nonparametric (distribution-free) rank statistic proposed by Spearman in 1904 as a measure of the strength of the associations between two variables (Lehmann and D'Abrera 1998). The Spearman rank correlation coefficient can be used to give an
+R-estimate
+, and is a measure of monotone association that is used when the distribution of the data make Pearson's correlation coefficient undesirable or misleading.
+The Spearman rank correlation coefficient is defined by
+where is the difference in statistical rank of corresponding variables, and is an approximation to the exact correlation coefficient.
+Usage:
+You can use the color change as a signal.
+PS: the "big picture" example that can show why it seems that floating levels are adding to the estimation when Spearman rank is used.

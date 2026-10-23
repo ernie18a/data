@@ -1,0 +1,5 @@
+Envelope or channel lines are set parallel to the moving average (parallel to the slow MA if you use two MAs). The two channel lines must contain approximately 95% of all prices for the past two or three months on a daily chart, with only the extremes protruding outside.
+Channel lines provide attractive profit targets – sell longs near the upper line and cover shorts near the lower line.
+The auto envelope automatically sizes channels by calculating a standard deviation for the last
+n
+bars. It is designed to change value at most once a week (once a month on a weekly chart), making it suitable even for intra-day data (use the ‘Fixed channel size’ parameter to switch from one mode to the other).

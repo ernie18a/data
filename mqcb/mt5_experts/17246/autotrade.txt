@@ -1,0 +1,71 @@
+Two pending orders (BuyStop and SellStop) are placed with the specified expiration.
+Author of the idea
+—
+John Smith
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Operation Start
+Placing two pending orders:
+Then we expect operation with only one position — if two positions are opened for any reason, both of them should be
+deleted
+:
+//--- Control: the EA must work simultaneously with only one position
+if
+(total>
+1
+)
+{
+if
+(count_buy>
+1
+|| count_sell>
+1
+|| count_buy+count_sell>
+1
+)
+{
+CloseAllPositions();
+// Close all positions if anything goes wrong
+return
+;
+// Exit
+}
+}
+Managing the open position.
+First we check if minimum profit is reached. At the same time, the size of bar 1 must be less than "stabilization of points". If the condition is met, close the position and exit.
+if
+(m_position.Profit()>MinProfit &&
+MathAbs
+(
+iClose
+(
+1
+)-
+iOpen
+(
+1
+))<=ExtStabilization)
+{
+m_trade.PositionClose(m_position.Ticket());
+DeleteOrders(
+ORDER_TYPE_SELL_STOP
+);
+return
+;
+}
+Second check — checking simultaneously if absolute profit or loss is reached. If condition is met, close the position.
+if
+(m_position.Profit()>=AbsoluteFixation || m_position.Profit()<=-AbsoluteFixation)
+{
+m_trade.PositionClose(m_position.Ticket());
+DeleteOrders(
+ORDER_TYPE_SELL_STOP
+);
+}
+Results on  EURUSD, H1 from 2016.06.01 to 2016.12.21:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17246

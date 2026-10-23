@@ -1,0 +1,11 @@
+This is not my code, but a conversion from an MT5 code
+here
+There were requests for this to be converted to MT4.
+The formulae used are:
+Resistance 3 = High + 2*(Pivot - Low)
+Resistance 2 = Pivot + (R1 - S1)
+Resistance 1 = 2 * Pivot - Low
+Pivot Point = ( High + Close + Low )/3
+Support 1 = 2 * Pivot - High
+Support 2 = Pivot - (R1 - S1)
+Support 3 = Low - 2*(High - Pivot)

@@ -1,0 +1,14 @@
+This is an EA that increases the lot size after each profitable trade if it follows some losing trades.
+This is another version of martingale, since the EA tries to play and after-game hoping that the series of losses will be changed for a series of profits.
+EA Inputs:
+* p - period for DeMark oscillator. It is optimized with the values from 3 to 100, step 1.
+* tp - TP size in pips. It is optimized with the values from 10 to 100, step 1.
+* sl - SL size in pips. It is optimized with the values from 10 to 100, step 1.
+* lots - the volume of the first order and of all orders to be opened after a profitable trade. This input is not optimized.
+* mn - magic number. This input is not optimized.
+* losseslimit - the limit of successive losing trades. This input is not optimized. If the amount of losses reaches the limit, the EA stops opening new trades and sends an e-mail message.
+* fastoptimize - fast optimization. This input is not optimized. If the value of this parameter is 'true', then the fast optimization of the embedded trading system without money management takes place. At fast optimization, the results obtained from Optimizer and from Tester will be different.
+The EA works on only newly formed bars and open prices. There is no need to optimize it on every tick.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8001

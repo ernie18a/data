@@ -1,0 +1,45 @@
+This is an extended version of the script
+CalendarForDates.mq5
+presented in
+the algotrading book
+.
+Input variables allows you to specify a country code, a currenty code, and a time range to filter required records. If the inputs are left empty, a complete calendar can be requested (if the calendar is requested first time after the terminal started, it can take a while for downloading its base or even time out and produce no results - then please run the script once again).
+As a result, you'll get a CSV-file with calendar records with most important fields (not all fields are exported - feel free to adjust the source code according to your needs).
+Optionally, one can input a *.cal-file (archived copy of the calendar for specific time) created by the indicator
+CalendarMonitorCached.mq5
+also
+introduced in the book
+, which is now obsolete in favor of its extended version
+CalendarMonitorCachedTZ.mq5
+(recommended and required for the new feature, described next).
+The most interesting feature: the script demonstrates the usage of
+TimeServerDST.mqh
+for adjusting historical events' timestamps in accordance with the server's time zone changes in past, which are persistently reflected in candles' timestamps. This mode is enabled by settings the input
+FixCachedTimesBySymbolHistory
+to
+true
+.
+Saving events into CSV-files with and without the correction makes it easy to compare effects of time correction on the history.
+For proper usage of this feature, it's recommended to run the script on XAUUSD or EURUSD H1 charts. When used programmatically, these symbols should be passed to
+TimeServerDST
+'s functions.
+The same approach is used in the indicator
+CalendarMonitorCachedTZ.mq5
+for exporting time-corrected calendar events into archived cal-files, ready for loading from inside the tester, that ensures accurate backtests and optimizations of news robots.
+Range of dates in which the time corrections are performed is limited to the maximal number of bars on the chart for timeframe H1
+. This is the specificity of the empirical method used inside
+TimeServerDST.mqh
+.
+Let us consider a specific event type, preferably with a large impact on the market, such as a release of US Nonfarm Payrolls (NFP).
+On a European server with DST schedule (MQ Demo) it occurs at 14:30 in winter and at 15:30 in summer. On the screenshot below you can see side by side 2 versions of complete calendar history exported to CSV-files, with specific summer date 2023.08.04 in view. Both exports were performed on 8-th of November (winter, standard time), so GMT+2 offset was applied by default for all events, including summer of 2023 (and any other seasons and years as well). Without correction (shown at the right) the exported times for summer NFPs are 14:30. This is incorrect.
+After empirical autodetection of the server's time zone, which was in effect during the summer, the library performs calendar export with time correction (shown at the left). As a result, the summer NFPs are moved to 15:30, as it should be. You can take a look at the chart for this period to make sure that correction is appropriate.
+This specific case is not so dramatic, because the non-corrected announced time 14:30 goes before 15:30, so expert advisers could probably keep waiting for the news and open trades. But when the server time zone is switched to summer, all winter events registered in the calendar contain timestamps delayed by 1 hour (!).
+The stuff is still experimental. Feel free to send your feedback.
+Further research on an impact of time corrections on news trading is planned. Stay tuned.
+The attached mqh-files (
+CalendarFilter.mqh, CalendarCache.mqh, QuickSortStructT(Ref).mqh
+) contain bugfixes and improvements compared to their original versions from the book.
+04.10.2024 - added writing/reading server time zone offset into cal-files and csv-files.
+10.11.2024 - added an option to correct timestamps of events in the history in accordance to retrospective timezone changes of the server.
+11.11.2024 - small bugfix and refinement in CalendarCache.mqh and CalendarFilter.mqh.
+22.11.2024 - small bugfixes and improvements in CalendarCache.mqh.

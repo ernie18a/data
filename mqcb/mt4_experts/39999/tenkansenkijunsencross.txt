@@ -1,0 +1,7 @@
+If you are using ichimoku indicator and you are looking for Tenkan and Kijun Cross Then This EA is for you.
+How to Use it:
+After downloading the file compile it in your Meta Editor then  In your MT4 platform drag and drop it on your chart. Set the Timeframe according to your trading style Preference and  enjoy receiving notification.
+Notes:
+In the Dialog box of The EA you will find two parameters for specifying operational activity. Set those parameters in 24 Hr format starting from 0- 24 again according to your trading time.
+Make sure to set your Meta Quotes ID in the Notification Section of your MT4 platform.
+Enjoy Trading . Stay Gold and Sharp

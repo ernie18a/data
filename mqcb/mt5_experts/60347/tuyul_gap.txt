@@ -1,0 +1,40 @@
+EA Name:
+TuyulGAP.mq5
+Version:
+1.00
+Author:
+zvickyhac
+Platform:
+MetaTrader 5
+Strategy Type:
+End-of-week Gap Trading using Dynamic High/Low
+Description:
+TuyulGAP is an Expert Advisor (EA) developed for MetaTrader 5, designed to automate a gap trading strategy that targets potential price gaps at the beginning of the trading week. The EA places
+Buy Stop
+and
+Sell Stop
+pending orders based on the highest high and lowest low from a user-defined number of past candles (bars) on Friday night before the market closes.
+Key Features:
+Automatic Pending Orders:
+Places Buy Stop and Sell Stop orders above and below a dynamic price range derived from recent price action.
+Scheduled Execution:
+Active only on Friday at a specified time (default: 23:15 server time).
+Order Management:
+Automatically deletes pending orders on Monday and ensures only one order setup per week.
+Day and Time Filter:
+Ensures trading activity is restricted to specific day and hour settings.
+Profit Locking:
+Automatically closes positions that reach a specified profit target in USD.
+Simple Configuration:
+Input parameters include lot size, stop loss, magic number, max open trades, and secure profit target.
+Key Input Parameters:
+LotSize : Size of each trade.
+StopLoss : Stop loss in points.
+LookbackBars : Number of candles analyzed for determining high/low levels.
+SecureProfitTarget : USD profit threshold to close open positions.
+Notes:
+The EA is limited to one open trade at a time ( MaxOpenTrade = 1 ).
+No technical indicators are used.
+There is no built-in take profit or trailing stop, apart from secure profit closing logic.
+Use Case:
+This EA may be suitable for traders looking to automate weekend gap setups, with pending orders deployed before the market closes on Friday.

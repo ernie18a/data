@@ -1,0 +1,48 @@
+The author of the idea
+:
+Yury Reshetov
+,
+the mq5 code author
+:
+barabashkakvn
+.
+The EA calculates the direction and lot of a position to open. The calculation is optimized so that the EA will either quickly accumulate positive spreads and close with a profit, or if anything goes wrong the EA will hold a trade until the drawdown recovers. Drwadowns happen and sometimes last long. The EA does not use any indicators and performs calculations based on the last 60-bar history.
+The initial required deposit for default settings is $10000
+Timeframe: M1.
+Pairs should have a long-term positive correlation. The Expert Advisor cannot check if pairs are positively correlated.
+The pairs must have the same quote currency. For example, you can use EURUSD and GBPUSD, which have the same USD quote currency, as well as GBPJPY and CHFJPY having the same JPY quote currency. EURUSD and USDJPY cannot be used together, because they have different quote currencies, i.e. USD and JPY.
+Do not launch simultaneously two different Expert Advisors if at least one of their currency pairs match. The EA does not have a magic number. However, the magic number is not needed if you properly use the EA following the instructions, because you can easily find appropriate pairs for every Expert Advisor.
+Default settings allow selecting up to six pairs, which I found appropriate for testing on a demo account:
+Launch the EA on NZDJPY, write AUDJPY in the
+Second symbol
+parameter;
+Launch the EA on CHFJPY, write GBPJPY in the
+Second symbol
+parameter;
+Launch the EA on EURUSD, write GBPUSD in the
+Second symbol
+parameter;
+Launch the EA on USDJPY, write CADJPY in the
+Second symbol
+parameter.
+Input Parameters
+Second symbol
+- the second currency pair;
+Position volume for the current symbol
+- the volume of a position of the currency pair the EA is running on (the volume for the second pair specified in
+Second symbol
+will be calculated automatically);
+Profit
+- profit in the deposit currency, after reaching which the EA will close positions of both pairs.
+Note
+: The Expert Advisor is not all the time in the market. Therefore it can be running without opening any position for a long time.
+Brief Description of the EA Operation
+The EA waits until both correlated pairs move up in one area of 30 bars, and then move down in the second area. If the movement is only up or down in both areas, the EA does nothing and only adds the "Trend found" comment. If pairs move apart, i.e. there is a negative correlation between pairs, the EA will do nothing and will add the "Negative Correlation" comment.
+Once the upward movement and the downward movement are found and the two pairs correlate, an optimization is performed, i.e. a calculation is made targeting a profit in both areas regardless of trend direction (either up or down). The optimization includes selecting an optimal lot size for the second pair and deciding which pair should be the main one and which one should be used for hedging in the first area, i.e. selecting pairs for the long and the short position. After that positions on both pairs are opened in accordance with calculations. Once the profit reaches the value specified in the
+Profit
+parameters, both positions are automatically closed, and the EA repeats the algorithm.
+One pair is considered to be main and the other one is hedging for an uptrend. The main pair takes the profit and the hedging one protects against drawdown. In a downtrend the pairs change their roles. A hedging pair reduces the risk, though it reduces profit. But without hedging risk won't be limited in case of trend change.
+An additional check has been added, since the market makes a lot of false signals, which can mislead any EA. If the check result is negative, then the EA assumes it can have a loss and considers the direction to be wrong, so it writes a comment "False testimony". The additional check allows limiting drawdowns and reducing the possibility of having uncovered positions.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19402

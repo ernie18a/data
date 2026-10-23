@@ -1,0 +1,2 @@
+This EA check the close of last 5 candles to determine the trend and then places a buy trade.
+SL and TP can be set in the input.

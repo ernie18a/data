@@ -1,0 +1,5 @@
+The oscillator quickly finds out the trend stop and the start of sideways trend in horizontal interval, and vice versa. Aroon Oscillator is calculated as the difference of Aroon Up and Aroon Down. A strongly growing trend should be expected if the value of Aroon Oscillator exceeds 40 to 100. An evident sinking trend can be expected when the values of Aroon Oscillator are between -40 and -100.
+Making decisions when working with the Aroon Oscillator is clear and easy: buy, if the oscillator goes from negative to positive area, and sell, if vice versa.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8363

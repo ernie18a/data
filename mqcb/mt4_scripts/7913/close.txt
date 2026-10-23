@@ -1,0 +1,1 @@
+Close - script closing first market order if it is first in the list.

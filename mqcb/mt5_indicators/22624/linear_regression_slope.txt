@@ -1,0 +1,9 @@
+Linear regression slope oscillator displays the slope of the current linear model of the price for the selected period.
+It has one configurable parameter:
+Period
+- calculation period
+The indicator line value increase indicates an uptrend, while decrease shows a downward trend.
+In addition to the zero line crossing signals, the indicator displays some technical analysis patterns: double bottom, triple bottom, double top, triple top, head and shoulders, inverted head and shoulders. The indicator also displays divergences quite well.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22624

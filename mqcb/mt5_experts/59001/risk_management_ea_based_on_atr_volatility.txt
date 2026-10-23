@@ -1,0 +1,32 @@
+Key Features
+Smart Risk Management
+Automatic lot size calculation based on account risk percentage
+Maximum risk cap in monetary value
+Dynamic stop loss based on ATR volatility
+Lot normalization according to broker requirements (min/max/step)
+Technical Analysis
+Moving Average Crossover for entry signals
+ATR Volatility Filter for market volatility measurement
+Performance optimized - trades only on new bar formation
+Position verification to avoid duplicate trades
+Flexible Customization
+Risk selection by percentage or fixed value
+Enable/disable dynamic or static stop loss
+Adjustable MA and ATR periods
+Unique magic number for each strategy
+Detailed Monitoring
+Complete position sizing information logs
+Risk/reward display before order execution
+Clear error warnings with troubleshooting guidance
+Comprehensive reports on EA startup/shutdown
+Outstanding Advantages
+Capital safety: Never risks more than allowed
+100% automated: From analysis to order execution
+Optimized code: Minimizes lag, calculates only when needed
+Broker compliant: Checks stop levels and lot sizes
+User-friendly: Clear input parameters with descriptions
+Suitable For
+Traders prioritizing strict capital management
+Trading systems requiring dynamic position sizing
+Trend-following strategies with MA crossover
+Accounts wanting to control drawdown

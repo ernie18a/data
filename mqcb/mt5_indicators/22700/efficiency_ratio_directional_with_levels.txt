@@ -1,0 +1,6 @@
+Basics:
+The Efficiency Ratio (ER) was first presented by Perry Kaufman in his 1995 book ‘Smarter Trading‘. It is calculated by dividing the price change over a period by the absolute sum of the price movements that occurred to achieve that change. The resulting ratio ranges between 0 and 1 with higher values representing a more efficient or trending market. The Kaufman Efficiency Ratio is also know as Fractal Efficiency. It can be used as a filter to differentiate between trending conditions and sideways markets.
+This version:
+The original Efficiency ratio does not show the direction of the market. This version does that. Also, in order to identify market conditions self adjusting levels are added in order to make it easier to spot the change and current state of the market.
+Usage:
+You can use the color changes to assess market direction and trend changes.

@@ -1,0 +1,7 @@
+Developed by Manning Stoller in the early 1980s, the bands will contract and expand depending on the fluctuations in the average true range component.
+STARC (or Stoller Average Range Channels) bands are calculated to incorporate market volatility.
+The original Stoller formula is:
+Upper Band: SMA(6) + 2 * ATR(15)
+Lower Band: SMA(6) - 2 * ATR(15)
+The function of Starc Bands is different than other Bands based indicators.
+If price action rises to upper band there is a high risk to buy and a lower risk to sell. As inverse, if price action rises to lower band there is a high risk to sell and a lower risk to buy.

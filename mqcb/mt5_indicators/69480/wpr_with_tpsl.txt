@@ -1,0 +1,2 @@
+WPR indicator in chart window with TPSL
+The WPR indicator is very good and efficient to use. This time, I combined this WPR indicator by providing suitable positions for take profit and stop loss (TPSL) based on hi-lo.

@@ -1,0 +1,15 @@
+It draws the horizontal lines at the level of the last fractal upwards and downwards.
+List of external variables:
+extern int TimeFrame=0;//If=0, then the current TF, or TF in minutes, the levels of fractal will be taken from this TF;
+extern int Distanse=0;//The distance between the line and the fractal in points, if the value is negative then the shift is inside, if positive - outside;
+extern string FrApNam="Ap";//The name of the line that corresponds the fractal upwards;
+extern string FrDnNam="Dn";//The name of the line that corresponds the fractal downwards;
+extern color ClAp=Blue;//The color of the line that corresonds the fractal upwards;
+extern color ClDn=Red;//The color of the line that corresonds the fractal downwards;
+extern bool comment=true;//Permission to comment;
+The added version, changes:
+The separate distances for the top and the bottom line
+Removes the lines if the market position appears, the filtration by the magic number is possible.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8318

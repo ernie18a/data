@@ -1,0 +1,37 @@
+Description:
+It's very often there isn't enough time to check all chart timeframes and look for the best entry point, these indicators can be set in one window and not switching screens to see the whole picture together.
+RSI:
+Stoxastic:
+The Stoxastic and RSI indicators are extremely simple, they show the values of relevant indicators with a candle a higher period. The details can be examined further using indicators MA.
+Variables:
+Total variable for all three indicators timeframe. The valyes are:
+timeframe = January 1 minute
+timeframe = May 5 minutes
+timeframe = 15 15 minutes
+timeframe = 30 30 minutes
+timeframe = 60 1:00
+timeframe = 240 4:00
+timeframe = 1440 1 day
+timeframe = 10080 1 week
+timeframe = 43200 1 month
+For the case if there is a mistake in minutes, the indicator itself correct, and set the desired period. For all other variables as well as in the original versions of the indicators.
+Now back to MA.
+Partly applied_price it can serve for many functions.
+applied_price = 0 PRICE_CLOSE
+applied_price = 1 PRICE_OPEN
+applied_price = 2 PRICE_HIGH
+applied_price = 3 PRICE_LOW
+applied_price = 4 (high + low) / 2
+applied_price = 5 (high + low + close) / 3
+applied_price = 6 (high + low + close + close) / 4
+For example, if you put in the window with a period of less than H1 immediately 3 indicators with the following parameters:
+PeriodMA = 1; applied_price = 2; timeframe = 60;
+PeriodMA = a; applied_price = 3; timeframe = 1960;
+PeriodMA = 1; applied_price = 0; timeframe = 15;
+So we get an indicator showing the minimum and maximum hourly candles (green lines 1,2) and (Orange 3) shows the opening price of each 15-minute candles.
+By varying the parameters, you can create right combination of indicators that can you.
+Each indicator has two buffers. One is the main, which shows the value steps and support, a smoothing step.
+The possible applications of these indicators isn't restricted the ones described.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9680

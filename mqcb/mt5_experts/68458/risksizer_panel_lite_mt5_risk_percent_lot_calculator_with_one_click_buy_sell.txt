@@ -1,0 +1,84 @@
+RiskSizer Panel Lite (MT5) — Risk% Lot Calculator + One-Click BUY/SELL
+RiskSizer Panel Lite
+is a lightweight MT5 trading panel that helps you calculate an estimated lot size from a fixed
+risk percentage
+of your account balance, using
+two draggable horizontal lines
+on the chart as your SL/TP zone. It also includes
+one-click BUY/SELL
+execution for fast manual trading.
+Key Features
+Risk-based lot sizing
+by % of
+Account Balance
+.
+Two draggable chart lines
+(LOW / HIGH) to define your SL and TP levels quickly.
+One-click trading
+: BUY / SELL.
+Editable Risk%
+:
+Click the Risk% box and type your value
+Enter
+= Apply,
+Esc
+= Cancel
+Use
++
+and
+-
+buttons for quick adjustment (step size configurable)
+Live preview
+on the panel:
+Symbol
+Spread (points)
+Risk money (account currency)
+Calculated BUY lot / SELL lot
+LOW/HIGH line prices
+Reset
+button to restore default SL/TP line distances around current price.
+Optional
+Max Spread
+filter to block trades when spread is too high.
+How It Works
+The panel uses
+two horizontal lines
+on the chart:
+LOW line
+= lower price line
+HIGH line
+= higher price line
+BUY logic:
+Entry = Ask, SL = LOW line, TP = HIGH line (only if HIGH > Ask)
+SELL logic:
+Entry = Bid, SL = HIGH line, TP = LOW line (only if LOW < Bid)
+Inputs / Parameters
+Risk % per trade
+(InpRiskPercent)
+Risk step
+(InpRiskStep)
+Default SL points
+(InpDefaultSL_Points)
+Default TP points
+(InpDefaultTP_Points)
+Max spread (points)
+(InpMaxSpread_Points) — 0 disables the filter
+Deviation (points)
+(InpDeviation_Points)
+Magic number
+(InpMagic)
+UI refresh (ms)
+(InpUiRefreshMs)
+Notes
+This is a
+Lite
+tool designed for simplicity and fast manual execution.
+Risk is calculated from
+Account Balance
+(not Equity).
+Lot sizing engine is intentionally simplified
+(approximate calculation for universal symbols).
+Please test on a
+demo account
+before using on real accounts.
+If you find this utility helpful, feel free to leave feedback and suggestions.

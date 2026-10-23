@@ -1,0 +1,2 @@
+Indicator based on "Trading the Trend" article by Andrew Abraham published in TASC.
+There had been a lot of "reincarnations" and renamed versions of that system but since the indicator is quite good, it seemed as good to have the one coded exactly as the original article describes it. The usage is straight forward: signals are based on color changes.

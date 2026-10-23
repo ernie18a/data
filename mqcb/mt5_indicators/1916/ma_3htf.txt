@@ -1,0 +1,7 @@
+Three
+Moving Averages
+with three different timeframes on one chart.
+The MA_3HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1916

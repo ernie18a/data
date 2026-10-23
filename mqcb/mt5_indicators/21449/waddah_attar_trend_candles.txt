@@ -1,0 +1,12 @@
+The candle chart based on
+Waddah_Attar_Trend
+histograms calculated using the Open, High, Low and Close price series of the price chart.
+The indicator uses the
+SmoothAlgorithms.mqh
+library classes (copy it to <terminal_data_directory>\MQL5\Include), the detailed description of working with which was published in the
+Averaging price series for intermediate calculations without using additional buffers
+.
+Fig. 1. Waddah_Attar_Trend_Candles indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21449

@@ -1,0 +1,13 @@
+An indicator that draws the
+XPeriodCandle
+candlestick sizes in points.
+The candlesticks having their body sizes increasing by trend are drawn in bright colors. The candlesticks having their body sizes decreasing by trend are drawn in pale colors.
+The indicator uses the
+SmoothAlgorithms.mqh
+library classes. Working with them was described in details in article
+Averaging Price Series for Intermediate Calculations Without Using Additional Buffers
+.
+Fig 1. Indicator XPeriodCandleRange
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21140

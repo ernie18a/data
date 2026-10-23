@@ -1,0 +1,9 @@
+Description
+This is the Figurelli RSI automatic gain version, so input parameters is the same as original Welles Wilder RSI (i.e. period setup).
+The indicator figures out the gain value based in minimal and maximal values inside the sample and period programmed.
+Below two pictures for better understand the adjustment and the indicator using period 14 and period 30. Original Welles Wilder RSI (blue) is compared with Figurelli RSI (red) using the same periods.
+Image 1: example for period 14
+For period 14, the automatic adjustment for gain parameter was 1.4 (for EUR/USD H1). Note that Figurelli RSI (red) automatic gain adjustment indicates small differences in 30 or 70 reach points, so the gain is relevant even in smal periods.
+Image 2: example for period 300
+For period 300, the automatic adjustment for gain parameter was 6.7 (for EUR/USD H1). Note that Welles Wilder RSI (blue) will never reach levels 30 or 70 in long periods, compared with Figurelli RSI (red) using the same periods.
+Note that the indicator name has the Period and Gain values. For example, Figurelli RSI Auto (300, 6.7) indicates period 300 and gain 6.7 for picture above.

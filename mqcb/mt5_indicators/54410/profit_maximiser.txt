@@ -1,0 +1,10 @@
+Output :
+----------------------
+0 : SuperTrend
+1 : Direnc
+2 : Support
+3 : Trend
+----------------------
+Translated from Turkish by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/tr/code/54410

@@ -1,0 +1,21 @@
+A Colorful Fan of
+Moving Averages
+.
+Parameters:
+MAMethod
+- МА method;
+MAPrice
+- МА applied price;
+PeriodFrom
+- МА minimal period;
+PeriodStep
+- МА period step;
+Count
+- number of МАs (max value=512);
+Colors
+- number of colors (max value=6);
+Color_1, Color_2, Color_3, Color_4, Color_5, Color_6
+- colors.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/141

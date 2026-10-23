@@ -1,0 +1,5 @@
+The Trix oscillator that has an addition of on-chart support / resistance levels. You have two choices for color (and implicitly for SR levels) display :
+on zero line cross
+on slope direction change
+Usage :
+It can be used as any other Trix oscillator.

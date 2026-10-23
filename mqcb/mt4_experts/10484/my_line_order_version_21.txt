@@ -1,0 +1,195 @@
+Introduction
+This version has quite a few new feature, most noticeably the multiple orders.
+In this version it is only possible to close the order fully but with future versions I hope to add the ability to add into positions and close partial positions at set levels. Also one feature that I'm looking forward to add is the ability to set levels at certain indicator values (hopefully version 3).
+Default values
+extern
+string
+LO_PREFIX=
+"#"
+;
+// Name of lines = LO_PREFIX+TicketNumber()+Specialty
+extern
+double
+LO_LOTS=
+0.1
+;
+extern
+double
+LO_PIPPROFIT=
+30
+;
+extern
+double
+LO_PIPSTOPLOSS=
+20
+;
+extern
+double
+LO_PIPTRAIL=
+0
+;
+// This trail acts like the default MT4 trail, once you are in profit by this much then the trail will start
+extern
+bool
+LO_AUTO_INCLUDE_SL_TP =
+1
+;
+// If no values entered then default values used
+extern
+bool
+LO_CLOSE_ORDER_ON_DELETE =
+1
+;
+// Close order on deleting the main line else will re-create line next time
+extern
+int
+LO_ALARM=
+0
+;
+// 0 = No alarm, 1 = Alert, 2 = Email(Not implemented yet), 3 = Send file(Not implemented)
+extern
+bool
+LO_ECN=
+0
+;
+// Is the broker a ECN?
+extern
+int
+MAGIC_NUMBER = -
+1
+;
+// Set at -1 to apply to all currently open trades
+extern
+color
+LO_ORDER_CLR=
+Gray
+;
+// Colour of open price line
+extern
+int
+LO_ORDER_STYLE=
+STYLE_DASH
+;
+// Style of open price line
+extern
+color
+LO_STOPLOSS_CLR=
+Red
+;
+// Colour of order's stop loss
+extern
+int
+LO_STOPLOSS_STYLE=
+STYLE_DASHDOT
+;
+// Style of order's stop loss
+extern
+color
+LO_MOVE_STOPLOSS_CLR=
+Teal
+;
+// Colour of line which moves stoploss a specified stoploss when hit
+extern
+int
+LO_MOVE_STOPLOSS_STYLE=
+STYLE_DASHDOT
+;
+// Style of line which moves stoploss a specified stoploss when hit
+extern
+color
+LO_STOPLOSS_MOVE_CLR=
+Orange
+;
+// Colour of line to which to move stop loss to
+extern
+int
+LO_STOPLOSS_MOVE_STYLE=
+STYLE_DASHDOT
+;
+// Style of line to which to move stop loss to
+extern
+color
+LO_STOPLOSS_CLOSE_CLR=
+Red
+;
+// The colour of line which closes at a stop loss
+extern
+int
+LO_STOPLOSS_CLOSE_STYLE=
+STYLE_DASHDOT
+;
+// The style of line which closes at a stop loss
+extern
+color
+LO_TAKEPROFIT_CLR=
+Green
+;
+// Colour of the final take profit
+extern
+int
+LO_TAKEPROFIT_STYLE=
+STYLE_DASHDOT
+;
+// Style of line of final take profit
+extern
+color
+LO_TAKEPROFIT_MOVE_CLR=
+Green
+;
+// Colour of the move take profit
+extern
+int
+LO_TAKEPROFIT_MOVE_STYLE=
+STYLE_DASHDOT
+;
+// Style of the move take profit
+extern
+color
+LO_TAKEPROFIT_CLOSE_CLR=
+Green
+;
+// Colour of the close take profit
+extern
+int
+LO_TAKEPROFIT_CLOSE_STYLE=
+STYLE_DASHDOT
+;
+// Style of the close take profit
+Inital line name variables
+#buy = Open a buy market trade
+#sell = Open a sell market trade
+#buypend = Open a buy pending order at that price
+#sellpend = Open a sell pending order at that price
+Todo:
+#buytp = Open a buy market trade with the line as take profit
+Todo:
+#buysl = Open a buy market trade with line as stop loss
+Todo:
+#selltp = Open a sell market trade with the line as take profit
+Todo:
+#sellsl = Open a sell market trade with line as stop loss
+After trade variables(without quotes)
+"sl="
+= Stop loss in pips. Can have multiple orders. To have no stop loss use
+"N"
+"tp="
+= Stop loss in pips. Can have multiple orders. To have no take profit use
+"N"
+"ts="
+= Trailing stop in pips. Can have multiple orders
+"lo="
+= The lots which are open. (Todo: If changed then order modify the lots in order)
+"alarm"
+= For values view the comment on LO_ALARM
+How to use description
+The EA will fill out the description with the main order properties automatically depending on your current settings. If you move the horizontal lines then it will update the description with the new values. To make a multiple order, you need separate them using "," and to have it a set level it needs to be in the following format "value in pips@level you want the value to change" without any spaces in. You can make as many lines as you need.
+Definite updates
+Lot modification features from description and set levels
+Stop loss/take profit at indicator values with the ability to add or take away other indicators (I think I know how)
+Line alarms (Alarms which have nothing to do with and actual trade)
+Possible future updates
+Order cancels other orders
+Stop loss and take profit based on account size and trade profit
+If you have any problems or have any ideas which I can put in version 3 then comment here or PM me,
+Thanks.
+P.S. This version is by no means the last one, I'm working out bugs and adding new features weekly if not daily. I'll only be posting the latest version to the codebase every so often so if wish to have the latest version or find a bug which may have been fixed in a later version then message me and i'll send you the latest version. To me all feedback is good, tells me where things are going wrong. I'm going to try and make this EA as inclusive as possible and as bug free as possible.

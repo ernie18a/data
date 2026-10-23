@@ -1,0 +1,1 @@
+Volatility Pivot indicator calculates "pivots" (support/resistance lines) based on current symbol/timeframe Average True Range calculated volatility.

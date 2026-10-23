@@ -1,0 +1,46 @@
+Idea by
+:
+Scriptor
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+Working with pending orders Buy Stop and Sell Stop. A channel of two indicators iMA (Moving Average, MA).
+Input parameters
+Take Profit
+- Take Profit;
+Trailing Stop
+- trailing;
+Trailing Step
+- trailing step;
+Lots
+- lot size is set manually (a NECESSARY CONDITION:
+Risk
+must be equal to zero!);
+Risk
+- lot size is calculated automatically, in risk percents per trade (a NECESSARY CONDITION: "Lots" must be equal to zero!);
+Difference
+- offsets from the channel borders;
+Expert Every Tick
+- enable/disable working on every tick;
+MA PRICE_HIGH and PRICE_LOW: averaging period
+- indicators averaging period;
+MA PRICE_HIGH and PRICE_LOW: horizontal shift
+- indicators horizontal shift;
+MA PRICE_HIGH: smoothing type
+- averaging type for indicator calculated by High prices;
+MA PRICE_LOW: smoothing type
+- averaging type for indicator calculated by Low prices;
+magic number
+- unique identifier for the EA.
+Trading idea: Forming a channel of two indicators iMA (Moving Average, MA) - one based on prices PRICE_HIGH and another one on PRICE_LOW. Pending Buy Stop and Sell Stop orders are placed at the channel boarders. The calculation is on the break-through (catching a strong movement).
+The EA can work in modes: On every tick and only when a new bar appears. The mode is defined by parameter
+Expert Every Tick
+. An example of how parameter
+Expert Every Tick
+affects the EA operation, exemplified by EURUSD,D1:
+Please note that this strategy may have dead seasons, i.e., the times without any entrances, the period of no rollbacks for a currency pair:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20844

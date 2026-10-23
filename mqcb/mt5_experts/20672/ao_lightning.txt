@@ -1,0 +1,20 @@
+The EA uses indicator Awesome Oscillator. Orders are opened at each bar and cloased by group by the opposite signal. The indicator is calculated within the code to be able to change the periods for optimization.
+Buy signals
+: Where the histogram moves down and changes to red, and the second column is higher than the first one.
+Sell signal
+: Where the histogram moves up and changes to green, and the second column is lower than the first one.
+Inputs
+LotFixed
+- lot size;
+LotFromPercent
+- percent size to calculat the lot of free margin (if it is 0, it is disabled);
+Period_sma_slow
+- slow moving average period for calculating the AO indicator;
+Period_sma_fast
+- fast moving average period for calculating the AO indicator;
+Orders
+- the maximum number of orders to be placed.
+Testing on EURUSD, H1.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20672

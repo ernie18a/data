@@ -1,0 +1,8 @@
+Theory :
+This is an old idea : using the highest high and lowest low as support resistance.
+This version :
+It is combining two highest high & lowest low calculations. The "slow" channel formed that way is treated as the "trend" determining channel. The "fast" channel is is the short term channel drawn within the "main" longer term channel. That way you have a combination of fast and slow estimations of SR and short term trends within the current trend. Of course, the estimation of the trend is based on highest high & lowest low, and even though it does not repaint, it is to be used as any normal trend based on such values
+Usage :
+The "fast" channel  can be used for short term support resistance (or targets for exits - depending on your trading strategy). Same can be done using long term channel.
+PS:
+the "big picture" example

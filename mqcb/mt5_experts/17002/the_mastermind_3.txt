@@ -1,0 +1,55 @@
+Author of the idea
+—
+L.Bigger
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+The Expert Advisor processes signals from four iWPR indicators with different averaging periods: iWPR(26), iWPR(27), iWPR(29), iWPR(30). The OBJ_TEXT objects are displayed on the chart, keeps a log file.
+sig_buy=iWPRGet(handle_iWPR_26,
+0
+);
+sig_sell=iWPRGet(handle_iWPR_27,
+0
+);
+sig_high=iWPRGet(handle_iWPR_29,
+0
+);
+sig_low=iWPRGet(handle_iWPR_30,
+0
+);
+//Comment("sig_buy=",sig_buy," sig_sell=",sig_sell);
+if
+(sig_buy<-
+99.99
+&& sig_sell<-
+99.99
+&& sig_high<-
+99.99
+&& sig_low<-
+99.99
+)
+{
+BuyValue=
+1
+;
+}
+if
+(sig_buy>-
+0.01
+&& sig_sell>-
+0.01
+&& sig_high>-
+0.01
+&& sig_low>-
+0.01
+)
+{
+SellValue=
+1
+;
+}
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17002

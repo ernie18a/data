@@ -1,0 +1,16 @@
+The
+XFisher_org_v1_Zer
+indicator with the possibility to change the indicator timeframe using input parameters:
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// The indicator chart period (timeframe)
+For the indicator to operate, the
+XFisher_org_v1_Vol_Supr_Zer.ex5
+indicator must be added to the <terminal_data_directory>\MQL5\Indicators folder.
+Fig.1. The XFisher_org_v1_Vol_Supr_Zer_HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23287

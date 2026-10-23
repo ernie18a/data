@@ -1,0 +1,7 @@
+Williams' Percent Range Technical Indicator (%R) is a dynamic technical indicator, which determines whether the market is overbought/oversold. Williams' %R is very similar to the
+Stochastic Oscillator
+. The only difference is that %R has an upside down scale and the Stochastic Oscillator has internal smoothing.
+Indicator values ranging between -80% and -100% indicate that the market is oversold.
+Indicator values ranging between -0% and -20% indicate that the market is overbought.
+To show the indicator in this upside down fashion, one places a minus symbol before the Williams' Percent Range values (for example -30%). One should ignore the minus symbol when conducting the analysis.
+The DSL version of Williams' Percent Range does not use fixed levels for oversold and overbought levels, but is having a sort of dynamic (discontinued signal lines) calculated to identify those levels. That makes it a bit more responsive to market changes and volatile markets.

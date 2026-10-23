@@ -1,0 +1,8 @@
+Set grid distance.
+Open a long order for the price fall a grid distance, and o
+pen a short order for the price rise a grid distance.
+When the price rise two grid distance, close the position.
+The fund of frist time open position is one-tenth of the required for a grid, and then two-tenths, and so on.
+When the equity recaches the take profit of setting, close all positions and restart.
+The backtest of EOS/USDT in 2021/1/1-2021/8/31. The parameters use the default parameters in the code.
+The backtest of AUD/USD in 2021/1/1-2021/6/30.

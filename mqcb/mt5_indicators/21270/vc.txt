@@ -1,0 +1,16 @@
+Indicator VC (Volatility Channel by Larry Williams).
+It has one input parameter:
+Period
+- calculation period.
+Calculations:
+Top = Maximum(MaxT, T),
+Bottom = Minimum(MinB, B)
+where:
+T = 2 * Typical - High,
+B = 2 * Typical - Low,
+MinB = the lowest B value within the Period
+MaxT = the highest T value within the Period
+Typical = SMA(1, PRICE_TYPICAL)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21270

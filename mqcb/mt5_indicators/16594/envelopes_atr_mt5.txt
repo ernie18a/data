@@ -1,0 +1,21 @@
+This is a modified Envelopes indicator for measuring the price deviation. It displays the upper and lower borders of the price deviation from МА calculated considering the average volatility of the symbol according to ATR indicator.
+The deviation may be displayed as ATR deviation and standard МА deviation simultaneously.
+The indicator has been created upon
+BalueV
+user's request as part of the suggestion to develop a
+free indicator in this topic
+(in Russian). MetaTrader 5 version.
+Settings:
+ATR Period — ATR period for the indicator calculation.
+MA Period — MA period used to calculate the indicator. It is also used to calculate the standard Envelopes if the latter is enabled.
+MA Method — МА line type.
+MA Applied price — prices used to plot МА.
+Deviation % — deviation in % for the standard Envelopes.
+Envelopes Type — deviation type (only standard, only ATR, standard and ATR).
+Deviation % color down — standard deviation lower line color.
+Deviation % color up — standard deviation upper line color.
+Deviation ATR color down — ATR deviation lower line color.
+Deviation ATR color up — ATR deviation upper line color.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16594

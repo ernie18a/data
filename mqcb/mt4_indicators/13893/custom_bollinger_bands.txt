@@ -1,0 +1,17 @@
+Real author:
+The original code is from Bands.mq4 by MetaQuotes Software Corp.
+Bollinger Bands
+with customizable moving average method and applied price.
+Available moving average methods:
+Simple
+Exponential
+Smoothed
+Linear weighted
+Available applied prices:
+Close price
+Open price
+High price
+Low price
+Median price
+Typical price
+Weighted price

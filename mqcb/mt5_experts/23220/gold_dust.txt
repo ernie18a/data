@@ -1,0 +1,110 @@
+Idea by
+Yury Reshetov
+mq5 code author
+-
+barabashkakvn
+A Bit of Theory
+Many automated trading systems tend to over-optimize and over-fit results, that is, they are very well optimized in a certain historical data period, but if you then launch this optimized system to trade on a demo or real account, it may turn out to be losing, because trading signals will be close to random. This is connected with the non-stationary character of financial instruments, i.e. their statistical characteristics are instable.
+To determine the possibility of over-fitting, you may use the so called classical forward test, which is described in Robert Pardo's book [1]. The idea of the classical method is the following: select for a trading system two non-intersecting historical intervals. The trading system is optimized in one of the intervals, and a forward test with parameters optimized in the first interval is performed in the second one. If testing in the second (forward) historical interval is not successful, the trading system is considered to be subject to over-optimization and not appropriate for automated trading. If the forward test gives a positive result, then an additional analysis is performed to check the trading system behavior in the testing interval — such analysis allows identifying the system characteristics.
+But a system which could pass all tests described in Robert Pardo's book [1] practically does not exist. Therefore the author does not give any specific example. Optimization in one interval and forward testing in a different one, as well as further analysis of forward test does not provide any guarantee:
+An unsuccessful forward test in the second interval may discard a robust trading system. Actually, optimization algorithms are often looped at local extrememums and over-fit trading system parameters for such values.
+The analysis of forward testing results is practically useless, since if you take another independent interval, in which neither optimization nor testing has been performed yet, and perform additional analysis in this interval, the new analysis results will not coincide with the previous ones. The reason is the same, the non-stationary character of financial instruments. Moreover, a successful forward test in one independent interval may not be successful in any other. So, there is nothing to analyze in these cases.
+Since the classic method of checking trading systems has many drawbacks, I have developed and tested another one, which I think to be more reliable:
+Gold dust
+.
+The difference between the new and the classical methods is that the trading system optimization is performed not in one interval, but in two or more. As a result, we get different sets of trading system parameters for each interval. Some of them will be the same, others will differ. Probably, some of these parameter sets are over-optimized and others are not. This can be found out using forward tests.
+The forward test differs from the classical one in that it is performed using two or more optimized parameter sets, not using only one. The idea is the following: if a trading system with all the parameter sets gives an agreed trading buy or sell signal, an appropriate trade is performed. If the signals are different, i.e. there is inconsistency in trading signals produced by the system with different sets of parameters, the trading system does nothing until the next trading signal.
+What does this give?
+Here we need to decide on the trading system robustness. Trading systems can be potentially robust, i.e. with a higher than zero probability that they will pass the forward test in the classical method; and non-robust, i.e. with a very high probability of over-fitting.
+If the trading system is not robust, then by over-fitting it in two or more historical intervals, it can become robust if the over-fitted trading signals are consistent. I.e. if we filter signals for consistency, they can be then used for automated trading.
+If a trading system is more or less robust, a successful forward test in the trading signal consistency mode (fitted and non-fitted) can be a proof that one or more parameter sets obtained as a result of optimization in different historical data intervals, are not over-fitted and can be used for automated trading.
+We will not consider non-robust trading systems here, because even if their signals are filtered based on consistency, the results in non-optimized intervals are not stable enough to trade. Such trading systems are more suitable for experimenting.
+Let's proceed to a robust trading system, which is available in the attached file. The trading system is based on the future price direction forecast, which is implemented by selecting weight coefficients of an elementary single-layer neural network (a perceptron based on historical data) using the standard MetaTrader Strategy Tester genetic algorithm.
+Methods of optimization, testing and detection of robustness of the trading system parameters
+We will use EURUSD historical data for the previous 9 months or more, on the H1 timeframe. Let us divide the entire period into three independent intervals, three months each. The first interval will be used in the final testing, and the other two will be used for optimization on history. I combined two perceptrons into one trading system, so there is no need to launch the system each time separately.
+The Supervisor() switcher function in the EA code enables three EA operation mode, depending on the 'pass' input parameter:
+Optimization and testing of the first perceptron;
+Optimization and testing of the second perceptron;
+Filtering out contradictory values of the two perceptrons in the testing mode, without optimization.
+The following weight coefficients of the perceptrons are being optimized: x11, x12 … x42, as well as
+MA: averaging period
+and
+Stop Loss
+. The
+Stop Loss
+input parameter is constant for all intervals. This is the Stop Loss level of all open positions. Another input parameter
+MA: averaging period
+denotes the lag time period for the difference in open prices; it is also constant.
+Market entry is performed at the beginning of new bar formation, i.e. at bar open prices based on perceptron signals depending on the value of the
+pass
+parameter. Exit is only performed by Stop Loss. Optimization is performed using a genetic algorithm, which searches for the extreme values (i.e. the maximum balance in our case).
+To avoid the influence of margin call on the algorithm, the initial amount should be very large, for example $1,000,000.
+At the first phase
+, we need to determine the
+input values of the
+MA: averaging period
+and
+Stop Loss
+variables. For this purpose, we select the last two history intervals, i.e. from 6 months ago up to today. Set all parameters of perceptron weights from Start = 0 to Stop = 100, with a step of 10. Value of
+MA: averaging period
+from Start = 3 to Stop =100, with a step of 10; value of
+Stop Loss
+from Start = 10 to Stop =75, with a step of 10. Value
+pass
+= 1. Select the optimization parameters:
+x11
+,
+x21
+,
+x31
+,
+x41
+,
+MA: averaging period
+and
+Stop Loss
+. All other checkboxes should be disabled. Start optimization. After that set the input parameters values according to the best pass.
+The second phase
+. Optimizing first perceptron weights in the second historical data interval. Set the optimization date and time from 6 ago till 3 months ago. Remove checkboxes of
+MA: averaging period
+and
+Stop Loss
+. Start optimization. After that set the input parameters values according to the best pass. The
+pass
+value is still 1.
+The third phase
+. Optimizing second perceptron weights in the third historical data interval. Set the optimization date and time from 3 months ago up to today. Remove selection from the parameters
+x11
+,
+x21
+,
+x31
+,
+x41
+and select
+x12
+,
+x22
+,
+x32
+and
+x42
+. Other parameters should be disabled. Set
+pass
+=2. Start optimization. After that set the input parameters values according to the best pass.
+The fourth phase
+. The trading system has already been optimized for historic data over the past six months. Save the values of the input parameters to the configuration file. Set the
+pass
+input variable to 3. Now we need to check our system robustness, i.e. the probability that the input parameters were not over-fitted and that they can possibly show profit in non-optimized time periods. So now, we set dates from 9 to 6 months ago (no optimization was performed in this interval) and perform testing.
+If in mode 3 testing result is negative (losing), then we most probably found over-fitted coefficients of both perceptrons. In this case, we need to perform optimization again, to obtain other values of sl and p parameters at the first phase - the possible reason for the loss might be in these parameters. Another reason for the failure can be a small number of deals during the first and second optimization phases (there should be no less than 100 deals) — in this case the maximum Stop range for the sl parameter should be decreased.
+If the fourth phase was successful, then we can assume that either the first or the second perceptron, or even both of them can generate profit outside the optimization intervals and can therefore be used in trading. Now we need to choose the perceptron. To do this, we set the dates from 9 months ago to current day and run Expert Advisor tests in the modes of
+pass
+1 and 2.
+The mode with the better results is most probably the one less over-fitted and is considered to be suitable for trading. Switch the EA to this mode, save EA settings to a file. After that run the EA on a chart, set timeframe to H1 and load settings from a previously saved file.
+Of course, in order to make sure that this method of trading system robustness detection is really effective, all historical data intervals should be moved deeper into history in order to get one more additional interval and test our parameters set in this interval.
+The above method for determining trading system robustness is not simple. But it is much simpler and in most cases more reliable compared to the classical method described in Robert Pardo's book [1], since it eliminates the almost useless and resource-intensive trading system analysis after the forward test.
+List of References
+1. Robert Pardo. Design, Testing and Optimisation of Trading System. - Minax, 2002. - 224 pages. ISBN 5-902270-01-4
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23220

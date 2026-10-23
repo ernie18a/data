@@ -1,0 +1,8 @@
+The indicator can be used to analyze the state of two and more symbols simultaneously.
+The first visible chart bar is used as the starting point. The indicator functions are managed via chart buttons at the lower left corner. The input parameters can be used only during the first initialization of the indicator.
+Scale fix - fixed scale (automatic)
+Invert - symbol inversion
+Freeze - preserving the current state (also activated by double clicking the chart)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/987

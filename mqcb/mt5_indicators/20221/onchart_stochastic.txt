@@ -1,0 +1,22 @@
+The indicator draws on a price chart a stochastic with overbought/oversold zones.
+The indicator has eight configurable parameters:
+%K period
+- main line calculation period;
+%D period
+- signal line calculation period;
+Slowing
+- slowing period;
+Smoothing method
+;
+Price field
+- price used for the indicator calculation;
+Overbought
+- overbought level;
+Oversold
+- oversold level;
+ATR period
+.
+The ATR period affects the strength of the general impact of the price on stochastic lines.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20221

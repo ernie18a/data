@@ -1,0 +1,14 @@
+Real author:
+RickD
+This typical signal indicator is based on
+Stochastic oscillator
+and
+Fractals
+technical indicators. The indicator generates many false signals, it's necessary to filter them with some trend indicator.
+This indicator was first implemented in MQL4 and published in
+CodeBase at mql4.com
+15.03.2008.
+StoDiv indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/786

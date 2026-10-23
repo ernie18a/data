@@ -1,0 +1,24 @@
+A trading system based on the
+KWAN_RDP
+indicator signals. A signal is formed at the close of a bar, if the direction of the indicator movement (the indicator color) has changed.
+For the generated EA to operate correctly, the compiled
+KWAN_RDP.ex5
+indicator file must be in the
+<terminal_data_directory>\MQL5\Indicators
+folder.
+Note that library file
+TradeAlgorithms.mqh
+is designed for using EAs with the brokers that offer a
+nonzero spread
+and a possibility to set Stop Loss and Take Profit
+simultaneously with opening
+a position. You can download the other versions of this library at
+Trade Algorithms
+.
+The EA default input parameters were used in tests below. Stop Loss and Take Profit were not used in testing.
+Fig. 1. Example trades on the chart
+Test results for GBPJPY H4 over the year 2016:
+Fig. 2. Testing results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20670

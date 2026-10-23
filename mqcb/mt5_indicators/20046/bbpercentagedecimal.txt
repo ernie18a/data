@@ -1,0 +1,11 @@
+The indicator draws Bollinger Bands in a separate window in the form of an oscillator.
+There indicator has three adjustable parameters:
+Period
+- period;
+Bands Deviation
+- deviation;
+Applied price
+- price used for calculations.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20046

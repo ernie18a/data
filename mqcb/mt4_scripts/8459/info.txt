@@ -1,0 +1,4 @@
+It allows to enquire the spread, swap, minimum stop limit, price of a point and other useful information by any symbol:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8459

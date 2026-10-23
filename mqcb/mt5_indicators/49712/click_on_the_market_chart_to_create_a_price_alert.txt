@@ -1,0 +1,15 @@
+This an indicator which understands mouse click and keyboard press, and the purpose is to create alerts at the price that the market has not yet reached. It can be very helpful to be alerted when the price crosses a particular value. It can be used to validate theories in a trading system, or alert when key market prices are met.
+1. After loading the indicator on the chart, you will configure either a bearish or bullish alert depending on what kind of alert you need, and you may change the timezone for the alert. The software uses GMT+3 by default. You have the option to change it to GMT, GMT+1, or GMT+2.
+2. You have the option to make either a basic alert with the alert window, a push notification alert which alerts on the MT5 mobile app, or an email alert.
+3. To create the alert,
+simply left click on the chart
+. It is where you click where the alert will be created. The alert will lock after it is created.
+4. If you want to alter the position of the alert, press
+the up arrow key
+on the keyboard, and the alert will no longer be locked. You can now click somewhere else on the chart to alter the position of the alert.
+5. To reset the alert, you can open the indicator window and configure whether you need a bearish or bullish alert, similarly press the keyboard up arrow key to unlock it, and click on the chart to lock the alert in place again.
+The alerts are based on price crossing a future expected price
+The purpose of these kind of alerts is to validate your assumption on where the market is going
+These type of "price crossing value" alerts could already be created on the TradingView platform but not on MetaTrader
+EDIT:
+The updated version doesn't require you to configure whether it is a bearish or bullish alert, it applies logic instead to focus only on the crossover at the price threshold.

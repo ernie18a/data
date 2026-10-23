@@ -1,0 +1,35 @@
+A common adage in trading is that "all weekend gaps close." However, trading this anomaly without understanding the underlying statistics can lead to significant drawdowns. The Weekend Gap Statistics & Distribution Analyzer quantifies this behavior for any specific instrument and timeframe. It calculates exactly how often gaps close, how much profit you can reasonably expect, and critically, how much heat a trader must endure before the closure occurs.
+All metrics are displayed in a non-intrusive dashboard anchored to the lower-left corner of the chart. The display features dynamic contrast, automatically switching between light and dark text to ensure readability against any chart background.
+Key Features
+Multi-Timeframe Analysis:
+Breaks down statistics into three distinct periods: The Last 5 Gaps, The Last 12 Months, and All Available History.
+Reward vs. Risk Tracking:
+Simultaneously tracks Maximum Favorable Excursion (MFE) and Maximum Adverse Excursion (MAE) to give a complete picture of trade viability.
+Take Profit Predictor:
+Calculates the exact points reached by historical gaps to establish highly probable Take Profit targets.
+Stop Loss Optimizer:
+Calculates the historical drawdown of closed gaps to help you set mathematical Stop Losses that survive market noise.
+Smart UI:
+Uses a small, clean monospace font anchored to the lower-left corner, leaving your chart free for your actual trading analysis.
+Understanding the Dashboard Metrics
+The indicator categorizes historical data and displays the following data points for each period:
+Total & Closed Gaps:
+The absolute number of weekend gaps identified, alongside the count and percentage of gaps that successfully closed.
+Avg Size | Avg MFE | Avg MAE:
+The baseline averages. It shows the average opening Gap Size, the average Maximum Favorable Excursion (reward), and the average Maximum Adverse Excursion (risk/heat).
+TP Hit Rate (MFE >=):
+This metric analyzes all historical gaps and calculates the exact points reached by 95%, 70%, 50%, and 25% of them. If the 70% metric reads "85 pts," it means that 70% of the time, fading the gap yielded at least 85 points of profit.
+SL Survival (MAE <=):
+This metric analyzes only the gaps that successfully closed and tells you the maximum heat taken. If the 95% metric reads "200 pts," it means that 95% of gaps that successfully closed did so while taking 200 points of heat or less.
+Input Parameters
+Min Gap Size (in Points):
+The minimum required distance between Friday's close and Monday's open to register as a valid gap. This filters out negligible price differences. You must adjust this based on the asset class and the decimal precision of your broker (e.g., a 10-pip gap on a 5-digit broker is 100 points).
+Max History Bars to Scan:
+Limits the historical lookback period to preserve terminal memory and computational resources. The default is 100,000 bars.
+Practical Usage Guide
+1. Data-Driven Take Profit Targets
+Instead of blindly targeting the exact Friday close, you can now use the TP Hit Rate tiers. If an asset has a 95% hit rate of achieving 40 points in favorable excursion, you can confidently set a partial or full Take Profit at 40 points. You will know you have overwhelmingly high historical odds of the price reaching that level, even if the gap ultimately fails to close completely.
+2. Optimizing Stop Loss Placement
+By utilizing the SL Survival distributions, traders can place highly accurate stop losses. Standard averages can be heavily skewed by single, massive historical outliers. If you are fading a gap and your stop loss is placed well within the 95th percentile of historical adverse heat, you are statistically protecting your trade from premature stop-outs. Place stops just outside these percentile boundaries to give the trade adequate room to breathe without exposing your account to catastrophic outlier risk.
+3. Instrument Selection and Filtering
+Not all assets exhibit the same gap-reversion tendencies. Apply the indicator across a watchlist of currency pairs, indices, or commodities. If an instrument demonstrates a closure rate below a statistically viable threshold, or if the required adverse heat (MAE) is disproportionately large compared to the expected profit (MFE), traders can quantitatively exclude that asset from their gap-trading strategies.

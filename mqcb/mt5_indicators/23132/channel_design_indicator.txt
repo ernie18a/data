@@ -1,0 +1,35 @@
+Application
+The indicator can be utilized into any symbol or timeframe, there are no restrictions.
+Inputs
+For the creation of the channel are required the definition of two inputs:
+//--- input parameters
+input
+int
+barsChannel =
+200
+;
+// Channel creation length
+input
+int
+barsMulti   =
+5
+;
+// Channel bars to peak/valley
+The "barsChannel" input defines the length of the channel that will be created, or, in other words, the number of bars that composes the channel.
+The "barsMulti" input represents the amount of bars that are taken into account for the evaluation of peaks and valleys. The total number of bars that are considered in this evaluation is equal to 'barsMulti*2 + 1' (e.g. if barsMulti = 2, the total number of bars considered is 5).
+Figure 1. Parameterization
+Remarks
+Two indicator buffers are defined, one per trendline. The resistance buffer index is set as '0', while the support buffer index is set as '1'. Remember to consider this during the indicator reading process.
+//--- indicator buffers mapping
+SetIndexBuffer
+(
+0
+,resiBuffer,
+INDICATOR_DATA
+);
+SetIndexBuffer
+(
+1
+,suppBuffer,
+INDICATOR_DATA
+);

@@ -1,0 +1,4 @@
+The indicator that shows the difference between the open and the close prices of the previous and the last bars and also shows their direction.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8375

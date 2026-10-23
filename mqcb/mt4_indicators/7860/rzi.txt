@@ -1,0 +1,6 @@
+Description:
+This indicator considers only cooperative movements of aggressive and cautious players (high and low).
+Of course, the turning shapes of this indicator merit to be trusted to a larger extend.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7860

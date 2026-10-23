@@ -1,0 +1,15 @@
+Decycler Oscillator indicator is created based on "Decyclers" article by John F. Ehlers in the magazine "Technical Analysis of Stocks & Commodities" (September 2015).
+The indicator has three input parameters:
+HP period - high-frequency filter period
+Coefficient - adjustment ratio (for using two or more oscillators)
+Applied price - calculation price
+The oscillator eliminates strongly low-frequency components of the
+Simple Decycler
+indicator by using the Ehlers Highpass half-period filter and converting the output of the filter into an oscillator.
+The oscillator is calculated by counting the ratio of input data of the high-frequency filter to the price and then multiplying by the ratio equal to 1.0 by default
+Fig. 1. Decycler Oscillator
+Fig. 2. Decycler Oscillator +
+Simple Decycler
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22423

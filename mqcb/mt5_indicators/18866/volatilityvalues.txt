@@ -1,0 +1,8 @@
+Real author
+: Mohit Marwaha
+The indicator shows a text block with the values ​​of the user defined
+Volatility
+period for each timeframe. The size of the text block is customizable. You can also change the text font and disable the display of unused timeframes. The maximum number of simultaneously displayed indicators is ten.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18866

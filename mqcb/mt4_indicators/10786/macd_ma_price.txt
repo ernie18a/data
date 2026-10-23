@@ -1,0 +1,35 @@
+The standard MACD indicator is calculated by formulas:
+MACD = EMA(CLOSE, 12) - EMA(CLOSE, 26)
+SIGNAL = SMA(MACD, 9),
+where main line (MACD) is drawn on the exponential moving average (EMA), a signal line (SIGNAL) on the simple moving average (SMA), and applied price is limited to the closing price (CLOSE).
+The proposed indicator MACD MA Price is more elastic in input parameters. It will allow you to use other
+moving averages
+and standard spectrum of
+applied prices
+. This indicator is prepared based on
+MACD
+template.
+Taking into account additional input parameters in indicator MACD MA Price, formulas are as follow:
+MACD = MACD_MA_method (Applied_price, 12) - MACD_MA_method (Applied_price, 26)
+SIGNAL = Signal_MA_method (MACD, 9),
+For those who will want in formula (1) have possibility to select separate mode of moving average, an additional modification of the indicator MACD MA Price-2 is prepared:
+MACD = MACD_MA_method_1 (Applied_price, 12) - MACD_MA_method_2 (Applied_price, 26)
+SIGNAL = Signal_MA_method (MACD, 9),
+Input parameters:
+MACD_MA_method, MACD_MA_method_1, MACD_MA_method_2 и Signal_MA_method:
+0 - Simple moving average,
+1 - Exponential moving average,
+2 - Smoothed moving average,
+3 - Linear weighted moving average.
+Applied_price:
+0 - close price,
+1 - open price,
+2 - high price,
+3 - low price,
+4 - median price, (high+low)/2,
+5 - typical price, (high+low+close)/3,
+6 - weighted close price, (high+low+close+close)/4.
+After receiving suggestions, I prepared some additional modifications with colored histogram. Take them from zip-file with description of input parameters.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10786

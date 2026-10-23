@@ -1,0 +1,19 @@
+Real author:
+alexjou
+The HighestLowestRange (HLR) determines the relative price position in range of the several X bars ago. If price located at range bottom (in case of the new low), the indicator is equal to 0, if price position at the top of the range (in case of the new high), the indicator is equal to 1 (or 100%). If the price located in the middle of the range, the indicator is equal to 0.5 or 50%.
+Trade signals.
+The long position is opened when HLR overcomes the 0.8 level, the postion is reversed to short when HLR breakdowns the 0.2 level, in other words, the position is opened when the price is located in the upper or lower bounds (20%) of the price range. The indicator was tested with system, based on 40-day channel breakout.
+The HLR indicator and its use is described in
+"The countertrend HLR"
+article by
+Jose Cruset
+, Active Trader, Vol. 2 (see also
+Russian translation
+).
+This indicator was first implemented in MQL4 and published in
+Code Base
+25.01.2007.
+HighestLowestRange (HLR) indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/791

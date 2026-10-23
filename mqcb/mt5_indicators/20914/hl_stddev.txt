@@ -1,0 +1,13 @@
+The oscillator shows standard deviation calculated on the difference between the High and the Low.
+It has two input parameters:
+Period
+- standard deviation calculation period;
+Method
+- standard deviation calculation method.
+Calculations:
+HL_StdDev = Standard Deviation (HL)
+where:
+HL = High-Low
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20914

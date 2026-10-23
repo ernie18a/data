@@ -1,0 +1,3 @@
+This is simply an indicator that professionally instantiates a moving average, and makes the code very portable so that it can be copied and pasted into bigger indicator projects.
+It's educational code for beginners. In one script the moving average is calculated from oldest to newest data, in the series version the moving average is calculated from the most recent data to oldest data.
+The moving average is calculated in one function call inside OnCalculate. There is nothing amazing about this, it's just to create organization and portability. You can do this with any of the mql indicator functions.

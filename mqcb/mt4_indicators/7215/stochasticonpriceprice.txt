@@ -1,0 +1,5 @@
+Author: unknown
+A version of the Stochastic located right in the price window.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7215

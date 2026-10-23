@@ -1,0 +1,10 @@
+Real author:
+Brian Dee
+Trend indicator based on Average True Range and Standard Deviation. In fact, the chart shows ATR, StDev and the StDev averaging.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 12.07.2011.
+Fig.1. The SFX_TOR indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12907

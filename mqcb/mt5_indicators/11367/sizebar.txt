@@ -1,0 +1,10 @@
+Real author:
+zfs
+Indicator of bar sizes in points with due regard to spread and maximum one way movement only. The author recommends using it with other charts for finding relative size of bars out.
+This indicator was first implemented in MQL4 and published in
+CodeBase
+on September 30, 2012.
+Fig.1. SizeBar Indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11367

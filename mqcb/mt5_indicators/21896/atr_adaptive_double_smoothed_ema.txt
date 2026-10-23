@@ -1,0 +1,4 @@
+There a lot of ways how some indicators can be made adaptive instead of calculating fixed periods
+One, less known method, is to use normalized ATR (Average True Range) for making the calculation adaptive. And since double smoothed EMA (Double smoothed Exponential Moving Average - originally published here :
+Double Smoothed EMA
+) is a a good candidate for being adaptive (it allows fractional periods for calculation) and since it is known for producing smoothe results without adding lag, here is double smoothed EMA that is using ATR for adaptive double smoothed EMA calculations

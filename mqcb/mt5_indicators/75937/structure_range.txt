@@ -1,0 +1,23 @@
+Dashboard Stats Explained
+BUY
+: Displays how many Buy signals
+Paid
+(reached target TP) vs
+Loss
+(hit the 3-Grid SL) and their Buy Winrate %.
+SELL
+: Displays how many Sell signals
+Paid
+(reached target TP) vs
+Loss
+(hit the 3-Grid SL) and their Sell Winrate %.
+OVERALL WINRATE
+: Combined success percentage of all Buy & Sell signals across your chart history.
+InpRiskReward
+: You can change the target Risk:Reward ratio in indicator settings (eg
+1.0
+1:1 RR,
+1.5
+for 1:1.5
+2.0
+for 1:2 )

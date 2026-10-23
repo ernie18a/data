@@ -1,0 +1,9 @@
+==============================================================================================
+Multi_BreakEven upgrade:
+Fixed minor execution errors across different brokers and added detailed error descriptions.
+Added an option to filter trades by magic number.
+=============================================================================================
+Multi_BreakEven is a script file that enables setting multiple entry positions to breakeven, either through profit points or a target price, once the trade becomes favorable.
+This feature ensures that the investor safeguards their investment, allowing the trade to either reach the desired profit target or exit at the breakeven point.
+Traders can opt for the Pips method, which defaults to 100 points for a 5-digit broker, or the target price method for achieving breakeven.
+It's important to note that selecting the profit points method renders the target price ineffective, and vice versa.

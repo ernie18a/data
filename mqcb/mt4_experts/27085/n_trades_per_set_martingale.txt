@@ -1,0 +1,19 @@
+The EA does a set of N number of trades and then:
+This EA will scale up if all the trades were consec losses and will reset after
+a set with all consec wins has occurred.
+The set size is set by the parameter (N_trades_per_set)
+If any other lower number of consec wins or losses occur per a set, the EA will not change the lot size, but will just start the new set with the same lot size as the previous set.
+The idea is to increase the N_trades_per_set number higher to make the EA safer.
+Try to test on strategy tester with N number of say 3 and then increase this number if the EA fails.
+Some things it will depend on is the currency pair and the TP to SL ratio.
+A TP and SL of 50 pips (4 digit pips) will be a good starting point. 100 may work well too.
+The scale factor is the martingale scaling eg. 2x
+The equity/100 000 is the initial lot size eg. $1000 /100 000= 0.01 and $3000/ 100 000= 0.03 etc.
+USDJPY backtest no close on equity control points
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Second EA file: N trades per set martingale + close and reset on equity increase:
+has that extra parameter added. This EA seems more consistent and stable than the version with no close.
+Default setting is equity +10 (if equity is $10 more than previous highest equity, close trades and reset)
+Back test on USDJPY standard settings
+N trades per set martingale + close and reset on equity increase 2016 to 2019
+start eq $2000

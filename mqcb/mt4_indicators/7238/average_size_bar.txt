@@ -1,0 +1,2 @@
+Author: Ким Игорь В. aka KimIV
+Average Size Bar indicator.

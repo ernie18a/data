@@ -1,0 +1,4 @@
+Theory :
+As one of the way to filter rsi signals, averages are used. This version is using the "smoother" (sometimes, probably wrongly, called Jurik smoother) for filtering. To turn the filtering off, set the smoother period to <= 1
+Usage :
+You can use color changes for signals

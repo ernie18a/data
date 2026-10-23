@@ -1,0 +1,17 @@
+The indicator was first proposed by Mel Widner ("Technical Analysis of Stocks & Commodities" magazine, July 1995). Along with similar indicators, such as price channels, envelopes or Bollinger bands, it allows you to define the borders of price ranges.
+The indicator has one customizable parameter:
+Period
+- calculation period.
+Calculation:
+UpBand = Maximum(High, PrevHigh*SlopeHigh)
+DnBand = Minimum(Low, PrevLow*SlopeLow)
+where:
+SlopeHigh - regression line slope of High prices in the Period range;
+SlopeLow - regression line slope of Low prices in the Period range.
+Interpretation:
+When the price reaches the upper border, it is considered to be at the resistance level. The market is overbought;
+When the price is located on the lower border, the market is oversold.
+In order to sort out signals, use a a detrending oscillator to exclude the trend component, since overbought/oversold levels may be constantly updated by new prices during strong trends, which leads to false signals and losses.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21544

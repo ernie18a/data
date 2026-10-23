@@ -1,0 +1,5 @@
+This indicator will help visualize the bid and ask prices, making it easier to decide on trade entries and exits.
+A custom bid and ask line is created which is labelled and visually clear. It can be easy to mix up the lines if they have no label, so this will make the lines easier to see.
+A buy order will be executed immediately when it reaches the current ask price.
+A sell order will be executed immediately when it reaches the current bid price.
+It's helpful if you clearly see the ask line when you want to place a buy position, because you would rather to buy the market near the low of the candle and not near the high. A clearly labelled bid line will also help you to sell the market near the high of the candle instead of near the low.

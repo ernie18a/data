@@ -1,0 +1,12 @@
+Author: 4ebur
+The XOdiagram 1 indicator. It plots the Х0 charts by close prices.
+Input Parameters:
+BoxSize
+- box size in points
+ReversalBox
+- the number of boxes for reversal
+Candles
+- the number of candles for calculation
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7782

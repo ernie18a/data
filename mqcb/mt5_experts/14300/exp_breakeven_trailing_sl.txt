@@ -1,0 +1,19 @@
+The Exp_breakeven_trailing_SL Expert Advisor transfers to break-even and/or trails positions on every currency pairs or only on the current one.
+Adjustable parameters
+:
+1. symbol:
+The EA works only with current currency pair
+or with every positions.
+2. magic:
+the EA works with all magic numbers (set -1);
+only with positions opened by user (set magic to 0);
+or with positions opened by other Experts (set the corresponding magic).
+3. Next come the break-even and trail sizes. If the parameters are set to 0, then the function will not enabled.
+It is possible to choose break-even only, trail only, or both. If trail only is chosen, then the first Stop Loss transfer will be similar to break-even transfer.
+Break-even parameters: plus points — how far the price has to go into the green in order to move Stop Loss by a single step from opening price in step breakeven points
+Trail parameters: plus points — how far the price has to go into the green from opening price for negative Stop Loss, or from Stop Loss price, if it is in the green, in order to move Stop Loss by a single step in trailing step points.
+If plus points of the trail are set less than plus points of the break-even, then break-even is triggered first, trail is triggered later.
+Comments describe what is enabled — trail and/or break-even or all off, and also the the currency pair the Expert is working with.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14300

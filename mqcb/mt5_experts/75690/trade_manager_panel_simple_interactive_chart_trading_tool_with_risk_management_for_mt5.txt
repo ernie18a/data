@@ -1,0 +1,101 @@
+Trade Manager
+is a simple Expert Advisor (EA) designed for MetaTrader 5, tailored specifically for fast-paced traders and scalpers (such as Gold/XAUUSD traders). It bridges the gap between manual chart analysis and automated risk management by letting you visually manage entries, stop losses, and take profits directly on the chart using draggable horizontal lines.
+Key Features & How It Works
+1. Interactive GUI Panel
+Built using native MT5 graphic objects ( OBJ_RECTANGLE_LABEL , OBJ_BUTTON , etc.).
+Fully responsive and can be minimized or maximized instantly using the - / + toggle button on the top right.
+2. Drag & Drop Chart Setup
+Visualizes setup lines ( SETUP ENTRY , SETUP SL , SETUP TP ) directly on the chart.
+Dragging these lines in real-time automatically recalculates the Stop Loss, Take Profit ratio, or Pending Price based on your adjustments.
+3. Dual Mode Execution & Intelligent Pending Routing
+Supports two main operation modes:
+Execution (Market Order):
+Instantly places a Market Buy or Sell order at the current Bid/Ask price.
+Pending Order Mode:
+Places limit or stop orders. The EA
+automatically determines
+whether the order should be a
+Limit
+or a
+Stop
+based on the position of your SETUP ENTRY line (or manual input) relative to the current market price:
+For BUY Orders:
+Buy Limit:
+Placed
+below
+the market price (expecting price to retrace down, then bounce).
+Buy Stop:
+Placed
+above
+the market price (expecting price to break out upward).
+For SELL Orders:
+Sell Limit:
+Placed
+above
+the market price (expecting price to retrace up, then drop).
+Sell Stop:
+Placed
+below
+the market price (expecting price to break down through support).
+4. Flexible SL Engine (Points & ATR)
+Offers two Stop Loss calculation methods:
+Fixed Points
+or
+ATR Multiplier
+.
+Settings for
+Execution
+and
+Pending
+modes are completely separated, meaning changing your SL style in pending mode won't overwrite your market execution setup.
+5. Dynamic Risk-Based Lot Sizing
+Automatically computes the optimal position size based on your specified risk percentage ( Risk % ) of the account balance and the exact distance to your Stop Loss, respecting broker volume steps and min/max limits.
+6. State Persistence & Safety Features
+Global Variables:
+Saves all active inputs and configurations across timeframes and terminal restarts.
+Floating P/L Dashboard:
+Tracks active positions for the current symbol, displaying net profit in account currency and total points gained/lost in real-time.
+Quick Management:
+Includes one-click
+Close All
+for active positions and
+Del Pend
+for clearing all pending orders.
+How to Use
+Installation:
+Compile the .mq5 script in MetaEditor.
+Attach the EA to your desired chart symbol (e.g., XAUUSD, M1/M5 timeframe).
+Panel Configuration:
+Risk (%):
+Enter your per-trade risk tolerance (e.g., 0.5 for 0.5% of balance).
+Mode:
+Click the mode button to toggle between EXECUTION (Market) and PENDING .
+SL Mode:
+Choose between POINT or ATR calculation.
+SL Value & TP Ratio:
+Set your risk distance and reward multiplier (e.g., a TP Ratio of 2.0 sets your Take Profit at twice the distance of your Stop Loss).
+Placing Trades:
+Select your intended direction using the
+Preview
+button ( BUY or SELL ).
+For Market Orders:
+Click the main
+BUY
+or
+SELL
+buttons.
+For Pending Orders:
+Type your target price into the
+Entry Price
+field or drag the yellow SETUP ENTRY line directly to the desired price level on your chart, then click
+BUY
+or
+SELL
+.
+Managing Positions:
+Active positions will render line markers ( POS ENTRY , POS SL , POS TP ) directly on the chart.
+Use
+Close All
+to instantly liquidate all open trades for the symbol, or
+Del Pend
+to cancel all pending orders.

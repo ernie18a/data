@@ -1,0 +1,28 @@
+//+------------------------------------------------------------------+
+//| Multiple Buys and Sells ORDERS based on a currency pair strength.
+//+------------------------------------------------------------------+
+#property copyright     "Copyright 2024, MetaQuotes Ltd."
+#property link          "https://www.mql5.com"
+#property version       "1.01"
+#property description   "persinaru@gmail.com"
+#property description   "IP 2024 - free open source"
+#property description   "AUD CAD CHF EUR GBP JPY NZD USD SGD."
+#property description   ""
+#property description   "WARNING: Use this software at your own risk."
+#property description   "The creator of this script cannot be held responsible for any damage or loss."
+#property description   ""
+#property strict
+#property show_inputs
+#property script_show_inputs
+input double Lot = 0.01;
+input bool Buys      =  false;
+input bool Sells     =  false;
+input bool AUD    =  false;
+input bool CAD    =  false;
+input bool CHF    =  false;
+input bool EUR    =  false;
+input bool GBP    =  false;
+input bool JPY    =  false;
+input bool NZD    =  false;
+input bool USD    =  false;
+input bool SGD    =  false;

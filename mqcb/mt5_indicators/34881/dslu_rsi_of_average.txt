@@ -1,0 +1,7 @@
+This is a variation of discontinued signal line RSI of average (posted here :
+Dsl RSI of average
+) one step further
+The basis of discontinued signal line is that it is using certain levels (like 0 for cci or macd and 50 for rsi) that are assumed as "central levels" around which these oscillators should oscillate. That is all OK as long as we do not ask ourselves : why those levels when we are calculating the values using prices - without knowing the actual exact bull / bear volumes that could provide us with levels of significance. So, this version is changing that, and the dsl is not anchored around those assumed significant levels any more, but is adjusting itself all the time based on the change of the values of the calculated rsi
+Recommendations:
+Same recommendations apply to this one as the "regular" dsl RSI of averages
+Comparison bellow shows "regular" dsl RSI of averages - the upper, and non-anchored dsl RSI of averages - the lower. As it is obvious, the non-anchored is "faster" to pick up potential trend change

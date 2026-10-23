@@ -1,0 +1,8 @@
+The
+JCCX
+indicator implemented as a sequence of candlesticks. Candlesticks appear as a result of relevant price timeseries processed by the JCCX algorithm. In many situations, such approach may be more informative for the purpose of analysis.
+This indicator requires the compiled indicator file JCCX.ex5. Place it in <terminal_data_folder>\MQL5\Indicators.
+Fig.1. The JCCXCandle indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12821

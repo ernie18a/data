@@ -1,0 +1,41 @@
+Report generator:
+allows you to select data from history by a preset criterion;
+allows you to sort the displayed data by any field or by a group of fields;
+allows you to show/hide specific columns;
+additionally displays statistics on the selected orders and other parameters.
+The script can be launched in any window. The final file is created in the
+\experts\files
+directory under the name of
+AccountName_rep.htm
+. The area to be modified is marked with the following comments in the script code:
+// This may and must be modified
+// End of the area allowed to be modified
+For sorting, we use arrays
+SortBy
+and
+SortBy2
+. To sort orders by open time, you should write in the script body:
+int SortBy[] = {BY_OPENTIME};
+To sort orders by symbol and then by chart, you should write:
+int SortBy[] = {BY_SYMBOL, BY_PROFIT};
+The other array,
+SortBy2,
+is responsible for sorting direction (
+ASC, DESC
+). By default,
+ASC
+is used.
+The next version will sort orders first by symbol in the ascending direction and then by open time in the descending direction.
+int SortBy[] = {BY_SYMBOL, BY_OPENTIME};
+int SortBy2[] = {ASC, DESC};
+The method of
+Validate
+allows you to set a criterion to select data in history:
+return all orders:
+return (true);
+return only orders with positive profit:
+return (OrderProfit() > 0);
+return all orders for
+GBPUSD
+:
+return (OrderSymbol() == "GBPUSD");

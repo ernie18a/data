@@ -1,0 +1,20 @@
+This indicator places a compact information panel in the top-left corner of the
+chart (position is configurable) showing four key spread metrics updated on every
+tick:
+- Current spread in points and in pips
+- Session minimum spread (lowest recorded since attach)
+- Session maximum spread (highest recorded since attach)
+- Session average spread (running arithmetic mean)
+The current spread value changes color when it crosses a user-defined "wide spread"
+threshold. This is useful for identifying moments when execution costs are elevated
+- for example during news events, session opens, or low-liquidity periods.
+All statistics reset when the indicator is reattached or MetaTrader is restarted.
+Input Parameters:
+- Color Normal Spread: color displayed when spread is below the threshold (default: DodgerBlue)
+- Color Wide Spread: color displayed when spread meets or exceeds the threshold (default: OrangeRed)
+- Wide Spread Threshold (points): the point value above which the wide-spread color activates (default: 20)
+- Font Size: size of the display text (default: 10)
+- X Position: horizontal offset of the panel from the corner (default: 15)
+- Y Position: vertical offset of the panel from the corner (default: 20)
+The indicator uses OBJ_LABEL objects and does not paint any buffers on the price
+chart. It is compatible with all symbols and all timeframes.

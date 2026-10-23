@@ -1,0 +1,28 @@
+Reverse RSI Bands is an advanced custom indicator that reverse-engineers the Relative Strength Index (RSI) formula. It plots the exact price levels directly on your main chart, showing you precisely at what price the RSI will hit your specified overbought or oversold levels. This transforms the RSI from a lagging oscillator into a predictive price action tool.
+Unlike the traditional RSI, which is usually shown in a separate sub-window, this indicator displays the exact price thresholds on the chart. Traders can anticipate market extremes, set precise limit orders, and identify dynamic support or resistance zones before the oscillator reaches its actual target.
+This version uses precise algebraic deductions of the recursive Wilder Smoothing formula. It guarantees that the price levels match the standard MetaTrader 5 RSI exactly, calculating the required price for the current bar using the verified state of the previous bar to avoid repainting.
+Input Parameters:
+RSI Period:
+The lookback period for the RSI calculation (Default: 14).
+Overbought target RSI:
+The RSI level that defines the upper price band (Default: 70.0).
+Oversold target RSI:
+The RSI level that defines the lower price band (Default: 30.0).
+Applied Price:
+The price type used for calculations (Default: Close Price).
+Trading Recommendations:
+Symbol and Timeframe:
+Works on any pair, but recommended for major forex pairs like EURUSD or GBPUSD on H1 and H4 timeframes.
+Reversals:
+Look for price action to touch or pierce the Overbought (crimson) or Oversold (green) bands.
+Limit Orders:
+Place Buy Limit orders near the Oversold band and Sell Limit orders near the Overbought band.
+Credits & Open Source:
+This project was inspired by the original paper
+"The Revenge Of The Indicators Reverse Engineering RSI"
+published in Stocks & Commodities magazine in June, 2003 by Giorgos Siligardos. The initial MQL5 implementation idea was inspired by the
+Reverse_Engineering_RSI indicator by 'Scriptor'
+published in the MQL5 Code Base on 2018.07.09.
+This is a mathematically corrected and architecturally enhanced version. More details about the code improvements and open-source development can be found in the official repository:
+Reverse_RSI_Bands on MQL5 Algo Forge
+.

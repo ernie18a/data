@@ -1,0 +1,4 @@
+This indicator shows how much time remaining to the next bar opening. It provides automatic output string assembling depending on timeframe selected.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16729

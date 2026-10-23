@@ -1,0 +1,20 @@
+The Expert Advisor uses the values of two iMA (Moving Average, MA) indicators.
+Author of idea
+—
+Iurii Tokman
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Operation Principle
+2 SMA — fast and slow. The averaging period of the fast SMA is always less than that of the slow one.
+Also uses the following levels:
++ 250 points along Y
++ 500 points along Y
+- 250 points along Y
+- 500 points along Y
+Results:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17239

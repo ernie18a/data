@@ -1,0 +1,20 @@
+Moving average, as well as any other indicator, may be calculated on the basis of
+7 price constants
+only. The proposed modification of moving average will allow to calculate the indicator on the basis of any combination of 4 basic prices (close, open, high, low).
+Input parameters:
+MA_Period - period for calculation of indicator,
+MA_Shift - indicator's shift related to the chart,
+MA_Method - method of averaging (0 - SMA, 1 - EMA, 2 - SMMA, 3 - LWMA),
+Close_coef - coefficient of the use of CLOSE in individual price,
+Open_coef - coefficient of the use of OPEN in individual price,
+High_coef - coefficient of the use of HIGH in individual price,
+Low_coef - coefficient of the use of LOW in individual price.
+Examples:
+Calculate indicator by OPEN price: Close_coef = 0, Open_coef = 1, High_coef = 0, Low_coef = 0.
+Calculate indicator by WEIGHTED price: Close_coef = 2, Open_coef = 0, High_coef = 1, Low_coef = 1.
+Calculate indicator by individual price constant: Close_coef = 0, Open_coef = 7, High_coef = 25, Low_coef = 80. Price = (7*Open + 25*High + 80*Low)/112.
+So, the trader may draw moving average by any combination of 4 basic prices. In case if coefficient will be balow or equel zero, the appropriate price will not be used for calculation of individual price constant.
+Indicator Imp_MA
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10861

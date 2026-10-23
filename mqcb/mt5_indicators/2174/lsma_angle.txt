@@ -1,0 +1,15 @@
+Real author:
+LSMA_Angle
+A trend indicator drawn in the form of a histogram. When a trend is weak, the histogram is gray.
+The trigger threshold is determined by the value of the indicator input parameter:
+input
+int
+AngleTreshold=
+15
+;
+// Trigger threshold
+When the price change direction coincides with the histogram direction, the histogram is dark, otherwise it is bright.
+Figure 1. The LSMA_Angle indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2174

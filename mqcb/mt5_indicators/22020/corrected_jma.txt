@@ -1,0 +1,2 @@
+This is a variation of JMA (Jurik Moving Average) indicator.
+It uses the JMA to calculate prices deviations from the JMA and, if the changes are not significant, then the value is "flattened". That way we can easily see not just trends, but periods of flat trends too.

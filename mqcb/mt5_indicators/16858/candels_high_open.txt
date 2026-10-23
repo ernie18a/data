@@ -1,0 +1,73 @@
+The entire chain:
+SignalCandelsHighOpen
+indicator signal module, the EA based on the signals module —
+CandelsHighOpen
+.
+If the last three bars (the zero bar is not considered) are rising:
+(high[i+
+1
+]>high[i+
+2
+] && high[i+
+2
+]>high[i+
+3
+] &&
+high[i+
+3
+]>high[i+
+4
+] && open[i+
+1
+]>open[i+
+2
+] &&
+open[i+
+2
+]>open[i+
+3
+] && open[i+
+3
+]>open[i+
+4
+])
+means the indicator generates the "+1" signal.
+If the last three bars (the zero bar is not considered) are falling:
+(high[i+
+1
+]<high[i+
+2
+] && high[i+
+2
+]<high[i+
+3
+] &&
+high[i+
+3
+]<high[i+
+4
+] && open[i+
+1
+]<open[i+
+2
+] &&
+open[i+
+2
+]<open[i+
+3
+] && open[i+
+3
+]<open[i+
+4
+])
+means the indicator generates the "-1" signal.
+If the last three bars (the zero bar is not considered) are neither rising nor falling, the signal is "0".
+At the same time, the indicator has the
+Reverse signals
+parameter — false/true values change the signal sign:
+The module of trading signals based on Candels High Open is to be created in the near future (find out more on creating trading signal modules in the article "
+Create Your Own Trading Robot in 6 Steps!
+"). An Expert Advisor can be generated afterwards in MQL5 Wizard based on the trading signal module.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16858

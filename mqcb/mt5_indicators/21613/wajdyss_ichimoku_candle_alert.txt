@@ -1,0 +1,7 @@
+Wajdyss_Ichimoku_Candle
+indicator provides alerts, sends email and push notifications when the candles break through the Kijun Sen line (candle color changes to the opposite one).
+Fig. 1. wajdyss_Ichimoku_Candle_Alert indicator Channel breakthrough on the first bar
+Fig. 2. wajdyss_Ichimoku_Candle_Alert indicator. Activating an alert
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21613

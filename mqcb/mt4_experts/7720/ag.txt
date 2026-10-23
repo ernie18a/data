@@ -1,0 +1,74 @@
+I am a beginner in this business, and this is my first EA.
+Please rate it.
+Symbol
+EURUSD (Euro vs US Dollar)
+Period
+1 Hour (H1) 2005.01.03 01:00 - 2008.01.03 23:00 (2005.01.03 - 2008.01.04)
+Model
+Every tick (the most accurate mode based on the shortest available time frames)
+Parameters
+Lots=0.1; F_EMA=15; S_EMA=18; SMA=30; ORDER=6; chk=0;
+Bars in test
+19633
+Ticks modelled
+5262338
+Modelling quality
+90.00%
+Mismatched chart errors
+0
+Initial deposit
+3000.00
+Net profit
+22854.97
+Gross profit
+43365.44
+Gross loss
+-20510.47
+Profit factor
+2.11
+Expected payoff
+31.92
+Absolute drawdown
+1153.32
+Maximum drawdown
+3472.87 (13.71%)
+Relative drawdown
+58.63% (2763.44)
+Total trades
+716
+Short positions (won %)
+347 (54.18%)
+Long positions (won %)
+369 (59.89%)
+Profit trades (% of total)
+409 (57.12%)
+Loss Trades (% of total)
+307 (42.88%)
+Largest
+profit trade
+711.36
+loss trade
+-301.33
+Average
+profit trade
+106.03
+loss trade
+-66.81
+Maximum
+consecutive wins (profit in money)
+32 (3068.88)
+consecutive losses (loss in money)
+18 (-226.15)
+Maximal
+consecutive profit (count of wins)
+3922.42 (11)
+consecutive loss (count)
+-1528.27 (15)
+Average
+consecutive wins
+6
+consecutive losses
+5
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7720

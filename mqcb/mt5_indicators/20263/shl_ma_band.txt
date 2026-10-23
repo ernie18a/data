@@ -1,0 +1,14 @@
+The indicator is a variation of Bollinger Bands and Envelopes, based on two smoothed moving averages calculated by the Linear Regression method (LSMA
+Linear regression MA
+).
+This is a version of the
+HL_MA_Band
+indicator with an additional smoothing.
+It has two parameters:
+Period
+- LSMA calculation period;
+Method
+- LSMA smoothing method.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20263

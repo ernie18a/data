@@ -1,0 +1,11 @@
+Real author:
+RickD
+The i-OneThird indicator draws candlesticks that correspond to the bullish and bearish patterns (in the style of Heiken Ashi).
+The difference between High and Low of a candlestick is divided into 3 parts. The indicator determines the pattern by the way, which one third of the candlestick contains opening, and which one contains closing.
+This indicator was first implemented in MQL4 and published in
+CodeBase
+on 07.06.2007.
+Figure 1. The RickD indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2386

@@ -1,0 +1,2 @@
+Stochastic indicator is usually used in a combination with a signal line
+This one is using "normalized zones" instead in order to determine the trend and the "strength" of the remaining trend change. Some experimenting with parameters (especially with the normalization period) is recommended prior to using it in live trading

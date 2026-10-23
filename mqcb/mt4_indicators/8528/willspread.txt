@@ -1,0 +1,7 @@
+Larry Williams indicator. It considers the influence of the secondary market on the trading market.
+For the first time the indicator was suggested in the book by Larry Williams
+"Long-Term Secrets to Short-Term Trading"
+, the "A New Indicator for Short-Term Traders...Will-Tell", "Will-Spread..." chapters.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8528

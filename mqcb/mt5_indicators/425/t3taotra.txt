@@ -1,0 +1,20 @@
+Real author:
+Tim Tillson
+This elegant fan based on the five T3 moving averages strongly resembles
+Alligator of Bill Williams
+and is used for market analysis in a similar way.
+The indicator uses CT3 class of the SmoothAlgorithms.mqh library. The use of this class is described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+This indicator was first implemented in MQL4 and published in
+Code Base
+13.07.2006.
+The smoothalgorithms.mqh library must be placed to the
+terminal_data_folder
+\MQL5\Include.
+The t3taotra.mq5 indicator must be placed to the
+terminal_data_folder
+\MQL5\Indicators.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/425

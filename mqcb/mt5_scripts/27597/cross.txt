@@ -1,0 +1,44 @@
+Simple code for Candle Cross above or below Conditions..
+mt4 version:- https://www.mql5.com/en/code/27596
+Note: This is just a sample
+Main Function
+bool
+crossed[
+2
+];
+
+//+------------------------------------------------------------------+
+int OnInit()
+  {
+   for (int i = 0; i < ArraySize(crossed); i++)
+      crossed[i] = true;
+   return(INIT_SUCCEEDED);
+  }
+//+------------------------------------------------------------------+
+void OnTick()
+  {
+  if(CopyOpen(Symbol(), PERIOD_CURRENT, 0, 2, Open) <= 0) return;
+   ArraySetAsSeries(Open, true);
+//Your Buy condition
+if(Cross(0,Open[0] > Condition))
+     {
+
+....//your conditions//...
+     
+     }
+
+//Your Sellcondition
+if(Cross(1,Open[0] < Condition))
+     {
+
+....//your conditions//...
+     
+     }
+  }
+//+------------------------------------------------------------------+
+bool Cross(int i, bool condition) 
+  {
+   bool ret = condition && !crossed[i];
+   crossed[i] = condition;
+   return(ret);
+  }

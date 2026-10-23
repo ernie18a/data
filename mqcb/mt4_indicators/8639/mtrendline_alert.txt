@@ -1,0 +1,12 @@
+I propose you the MTrendLine alert indicator. It is a part of the code of the MTrendLine v2.2 EA,
+https://www.mql5.com/en/code/8618
+, you can use it either as an indicator or for working with the MTrendLine EA.
+It is a simple indicator that consists of four trend lines that show the distance between the trend line and the price via the numbers and that give the signals when the price goes for the specified number of points.
+The indicator consists of independent blocks and there is always a possibility to insert any block into another indicator or EA. And to change only the numbers (if you look through the differences in the blocks you'll understand) to make them not to hinder each other.
+How to use
+. If the TrendLine_1 or another TrendLine is set to Тrue, then the indicator itself will always display them on the chart. Permanently.
+If it is set to False then you need to put the trend line on the chart by yourself, enter the properties of the Trendline and change the numbers in its name (Trendline 3444567) to 1 (or 2, 3, 4) so it should look like Trendline 1 and that's all. This variant is more habitual and convenient for many traders.
+I do not pretend on the authorship and innovation. I wouldn't come out but some long time ago I wanted to have the indicator like this. I congratulate the traders with the coming holidays. Good luck!
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8639

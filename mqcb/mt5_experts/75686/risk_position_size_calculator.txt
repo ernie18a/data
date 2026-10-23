@@ -1,0 +1,51 @@
+Risk Position Size Calculator — Lot Size From Percentage Risk, Live On The Chart
+A chart tool that turns a fixed percentage risk and a stop-loss level into an exact lot size, priced in your account currency. Drag the Entry and Stop lines, and the panel recalculates the position size, the money at risk, the required margin and the target level in real time. It calculates and displays only — it never sends, modifies or closes an order.
+Features
+Risk-based position sizing
+— set a risk percentage and the lot size is solved for you, not guessed.
+Draggable Entry and Stop lines
+— move either line and every number updates instantly, even on weekends when no ticks arrive.
+Correct on any instrument
+— the stop is priced with
+OrderCalcProfit()
+for one lot, so the result comes back in account currency with the broker's own conversion rate. The naive "points × tick value" shortcut silently drifts on cross pairs, metals and CFDs; this does not.
+Money at risk shown in account currency
+— the panel reports the exact amount you stand to lose, not just a percentage.
+Required margin, reported not estimated
+— margin comes straight from
+OrderCalcMargin() , plus the free margin left after the trade.
+Take-profit level for a chosen reward:risk
+— set an R:R ratio and the target line and its cash value are drawn for you (set 0 to hide it).
+Rounds volume DOWN to the broker's step
+— rounding up would exceed the risk you declared, so it never does. If the result falls below the broker minimum, the panel says so explicitly instead of showing
+0.00 .
+Risk base selectable
+— balance, equity or free margin.
+Direction auto-detected
+— stop below entry means buy, above means sell; or force buy/sell manually.
+Configurable panel
+— corner, font size and colours.
+Single file, no dependencies, no external includes.
+Compiles with 0 errors and 0 warnings.
+How to use
+Attach the EA to any chart. Two solid lines (Entry, Stop) and one dotted line (Target) appear, along with a panel in the corner.
+Set
+Risk per trade (%)
+and the
+risk base
+(balance / equity / free margin) in the inputs.
+Drag the
+Stop
+line to where your invalidation is. Leave
+Entry
+on the market price, or switch entry source to a line you place yourself.
+Optionally set the
+reward:risk
+ratio — the Target line marks the matching take-profit level.
+Read the panel:
+Position size
+is the lot to trade, alongside the money at risk, required margin and target profit.
+Why use it
+Fixed-lot trading means your loss in cash changes every time your stop distance changes — a tight stop risks too little, a wide stop risks too much, and the number is invisible until the trade is already open. Risk-based sizing inverts that: you decide the loss you accept in account currency, and the lot size follows the stop. Same risk on every trade, regardless of instrument or stop width.
+Need a custom version or a full EA? Message me:
+click here.

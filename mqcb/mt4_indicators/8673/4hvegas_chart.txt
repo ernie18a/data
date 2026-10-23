@@ -1,0 +1,33 @@
+The indicator is similar to 4Hour
+Vegas Model
+.
+Input parameters:
+extern
+bool
+Alerts=
+true
+;
+extern
+bool
+PrintTags=
+True
+;
+extern
+bool
+LogTrades=
+False
+;
+extern
+int
+MA1=
+55
+;
+extern
+int
+MA2=
+8
+;
+4hvegas_chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8673

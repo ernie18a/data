@@ -1,0 +1,4 @@
+Author:
+mladen
+By means of these indicators, you can not switch the periods of the schedule in MetaTrader. As all the periods will be at you before eyes.
+Indicators All CCI, RSI, ADX

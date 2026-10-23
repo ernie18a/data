@@ -1,0 +1,30 @@
+Every Expert Advisor marks its trades with a magic number. Magic Number Scorecard groups the closed trades of the account by magic number, so you get one score line per EA (magic 0 = manual trades). It is a quick way to see which EA really earns, and which one only looks busy.
+For each magic number
+trades, wins, losses and win rate
+gross profit, gross loss and profit factor
+net profit and average trade
+best and worst trade
+maximum drawdown of its closed-trade equity curve
+symbols traded
+The table is printed in the Experts journal, shown on the chart, and written to a CSV file in MQL5\Files that opens in Excel. The rows are sorted by net profit.
+How the trades are counted
+A trade is a closed position. All of its deals are added up: profit, swap, commission (entry and exit) and fee. A position closed in parts counts as one trade.
+The owner of a position is the magic number of its opening deal, so an EA trade that you close by hand still counts for that EA.
+Positions that are still open, fully or partly, are left out.
+Inputs
+Input
+Default
+Meaning
+From / To
+2000.01.01 / 0
+history range, To = 0 means now
+Only this symbol
+empty
+empty = all symbols
+Write CSV file / CSV file name
+true / MagicScorecard.csv
+saved in MQL5\Files
+Show the table on the chart
+true
+false clears the chart comment
+Run the script on any chart. It only reads the account history and never trades.

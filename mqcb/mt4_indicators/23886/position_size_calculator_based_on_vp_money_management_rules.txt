@@ -1,0 +1,32 @@
+Version 2.0 Uploaded - Version 1.xx users please update risk %
+This indicator is based on the Money Management approach used by VP from nononsenseforex.com It uses ATR to calculate Stop Loss, Take Profit and Volume you should enter into a trade based on the percentage of your Equity you want to risk.
+Inputs Include :-
+ATR Periods
+Input Risk % eg enter the % *changed for Version 2
+Stop Loss Factor - calculate Stop Loss as 1.5 times the ATR from the current price
+Take Profit - calculate a Take Profit as a factor of ATR based on current price
+Font size and color
+Fixed ATR - leave it at 0 unless you want to lock the ATR value eg during a flash crash
+What is Displayed :-
+ATR(14):80pips - The ATR for the current Period in pips rather than points
+If you see "FIXED ATR" you have entered a value under input to override the ATR. Enter 0 as Fixed ATR to use a calculated ATR
+Equity:50,30.65GBP - Your current Equity and Account Currency
+Risk 1.0%:502GBP - The calculated Risk in your currency and counter currency
+Time Left:01:55:33 - How long before the current period closes
+Depending on if you will Buy or Sell the Stop Loss and Take Profit
+Buy SL:0.72654
+Buy TP:0.72814
+Sell SL:0.72997
+Sell TP:0.72129
+Base Corner 0 to 3 - Allow you to move Pos Size to a different corner of the screen
+0= Upper Left, 1=Upper Right, 2=Lower Left,3= Lower Right
+Volume:1.19 - This is the Lot size or "Volume" in the MT4 Order window
+**V2.00 UPGRADE NOTES**
+Firstly thank you to my fellow VP cousin for sending me the cleaned up display.
+Important  - You will need to reset the Risk size % eg for 2% enter 2.0 not 0.02
+Please feel free to add comments, and send me any bug you spot or suggested updates.
+Hope it helps!
+Change Log :-
+29th Dec 2018 - V1.01 fixes bug with Account Currency not being loaded when MT4 is reloaded or charts already loaded
+2nd Jan 2019 -V1.02 The actual fix to the bug (Thanks Warren.)
+17 Jan 2019 V2.00 Cleaned up output in particular on JPY pairs, Ability to change the corner of the screen and Fixed ATR

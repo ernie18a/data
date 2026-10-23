@@ -1,0 +1,1 @@
+This simple EA can Calculate each trade volume base on received TP and SL Prices and Risk percent of account in each trade.

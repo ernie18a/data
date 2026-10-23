@@ -1,0 +1,13 @@
+This is an upgraded version of dsl macd originally posted here :
+dsl macd
+Reasons for an upgrade :
+new builds of metatrader 5 require from time to time some code "refreshment" in order to be up to date regarding the way how code works
+this version is optimized as much as possible (suitable to EAs)
+options for some "fancier" display added
+Recommendations:
+the macd in this version can indicate 3 states
+state up
+state down
+neutral state
+you should experiment a bit with the dsl periods in order to get optimal states
+use color changes as possible signals

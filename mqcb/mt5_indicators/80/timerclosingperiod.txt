@@ -1,0 +1,10 @@
+An indicator can be useful for traders who are working on opening of the new candle, it prints the time to close of the current timeframe.
+If the timeframe is lower than H1, it also prints the time to close of the current hourly candle.
+While writing this indicator, I have created a class CTimer, it's located in file CTimer.mqh. It's very simple, you can use it if necessary in your own indicators and Expert Advisors.
+The button
+"enables" and "disables" the timer. The source of the indicator is located in two files, before its use, copy both them in the same folder.
+Original version:
+TimerClosingPeriod
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/80

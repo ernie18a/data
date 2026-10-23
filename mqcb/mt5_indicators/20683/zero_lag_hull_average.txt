@@ -1,0 +1,2 @@
+The Hull Moving Average (HMA), developed by Alan Hull, is an extremely fast and smooth Moving Average. In fact, the HMA almost eliminates lag altogether and manages to improve smoothing at the same time.
+This version makes that lag even lesser and still keeps the smoothing of the Hull Average thus making it even "faster". This is the zero lag variation of Hull Moving Average.

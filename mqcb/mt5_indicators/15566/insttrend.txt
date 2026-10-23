@@ -1,0 +1,7 @@
+Real author:
+John F. Ehlers
+The trend indicator drawn in the form of the colored cloud.
+Fig.1. InstTrend
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15566

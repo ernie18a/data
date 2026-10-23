@@ -1,0 +1,94 @@
+Since build 344 of the client terminal display of economic calendar news using special graphical objects (
+OBJ_EVENT
+) is added.
+A script that outputs as a demonstration of the Economic Calendar with current economic data, the date of the last major(Pink) event.
+Use the function
+datetime
+last_pink_event_date()
+//+------------------------------------------------------------------+
+//| The function returns the date of the last event                  |
+//| marked in pink (economic indicator                               |
+//| is less than expected).                                          |
+//+------------------------------------------------------------------+
+datetime
+last_pink_event_date()
+  {
+string
+name=
+""
+;
+int
+total=
+ObjectsTotal
+(
+0
+)-
+1
+;
+for
+(
+int
+i=total; i>=
+0
+; i --)
+     {
+      name=
+ObjectName
+(
+0
+,i);
+if
+(
+ObjectGetInteger
+(
+0
+,name,
+OBJPROP_TYPE
+,
+0
+)  !=
+109
+)
+continue
+;
+// Object type
+- Event
+if
+(
+ObjectGetInteger
+(
+0
+,name,
+OBJPROP_COLOR
+,
+0
+) != Pink)
+continue
+;
+//
+Object color - Pink
+datetime
+date=(
+datetime
+)
+StringSubstr
+(name,
+0
+,
+16
+);
+//
+Highlight the event date from the text string
+return
+(date);
+//
+return the date
+}
+return
+(
+0
+);
+  }
+Recommendations:
+On weekends there there are no data objects on the chart
+Special graphical objects are present and activated

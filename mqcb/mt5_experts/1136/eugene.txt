@@ -1,0 +1,20 @@
+The Expert Advisor is rewritten from MQL4, the author is
+Builder
+, the link to the source
+https://www.mql5.com/en/code/7873
+.
+How it works
+A buy is performed if high of the previous bar is higher and low of the current bar is higher than low of the previous bar and several additional checks with prices and time. Four last bars participate in the analysis. The reverse situation is for a sell.
+Part of the analysis performed on formed bars, the other part performed on forming bars. So testing can be performed only in every tick mode.
+Fig. 1 - The performance of the Expert Advisor in the strategy tester's visual mode is displayed in the image.
+Fig. 2 - Testing results at EURUSD H4 for the last month (09.2012).
+Fig. 1. Deals in tester.
+Fig. 2. The trading results of the Expert Advisor in the tester.
+Parameters
+Lots - lot; when 0, the MaxrR parameter is used.
+StopLoss - Stop Loss in points, 0 is without Stop Loss.
+TakeProfit - Take Profit in point, 0 is without Take Profit.
+InvertSignals - Invert the order of trading signals.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1136

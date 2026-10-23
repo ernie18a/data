@@ -1,0 +1,13 @@
+The channel is based on one of seven price types that can be selected in input parameters. If the price has moved from the previous day's value at a distance greater than the specified value, new channel levels should be drawn. Otherwise the same channel levels will be used.
+The indicator has two input parameters:
+Percent
+- percent to calculate the threshold distance; a new level will be drawn if this value is exceeded;
+Applied price
+- price used for calculating the channel.
+The percentage value depends on the timeframe, on which the indicator is running. So the lower the timeframe, the lower the price movements that are considered to be significant.
+Fig.1 Percentage 100, H4
+Fig.2 Percentage 50, H1
+Fig.3 Percentage 10, M5
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19796

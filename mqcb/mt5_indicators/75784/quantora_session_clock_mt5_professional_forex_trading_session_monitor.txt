@@ -1,0 +1,4 @@
+Quantora Session Clock MT5 is an indicator that tracks major trading sessions directly on the chart. It does not open or manage trades and is intended for informational use.
+The tool displays the current status of Sydney, Tokyo, London, and New York sessions, along with the remaining time until each session opens or closes. It also shows active sessions, overlaps, and basic timing information using a clear dashboard.
+You can adjust session hours, UTC offset, and enable alerts for session openings and closings. Popup, sound, and push notifications are supported.
+Suitable for traders who want a simple way to monitor global market sessions and improve timing decisions.

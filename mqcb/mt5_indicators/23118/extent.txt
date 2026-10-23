@@ -1,0 +1,70 @@
+Extent oscillator displays the difference between the moving average and the price as a colored histogram.
+It has four inputs:
+MA period
+- moving average calculation period
+MA type
+- moving average type
+Simple
+-
+simple moving average
+Exponential
+-
+exponential moving average
+Smoothed
+-
+smoothed moving average
+Linear-Weighted
+-
+linear weighted moving average
+Wilder Exponential
+-
+Welles Wilder's exponential moving average
+Sine-Weighted
+-
+sine-weighted moving average
+Triangular
+-
+triangular moving average
+Least Square
+-
+least square moving average (LSMA)
+Hull MA by Alan Hull
+-
+Hull's moving average (HMA)
+Zero-Lag Exponential
+-
+exponential moving average with the minimum delay
+Instantaneous Trendline by J.Ehlers
+-
+John Ehlers' trendline
+Moving Median
+-
+moving median
+Geometric Mean
+-
+moving average based on the geometric mean method
+Regularized EMA by Chris Satchwell
+-
+moving average based on Chris Satchwell's Regularized EMA method
+Integral of Linear Regression Slope
+-
+integral of linear regression slope (ILRS MA)
+Combination of LSMA and ILRS
+- moving average - combination of
+LSMA
+and
+ILRS
+methods
+Triangular MA generalized by J.Ehlers
+-
+John Ehlers' triangular moving average
+Volume-Weighted
+-
+volume-weighted moving average
+MA applied price
+- moving average calculation price
+Price for comparison
+- compared price
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23118

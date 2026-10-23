@@ -1,0 +1,10 @@
+Basics :
+Laguerre filter was described long time ago by John Ehlers in the "Time Warp - without Space Travel" document. It is not used a lot probably due to one "cryptic" parameter that is used " the "gamma" parameter. That parameter is the dumping factor of the low pass EMA filter. As you can see, it is clear why it is not widely understood what it does
+This version :
+Instead of using that parameter, this version is using what majority of traders are used to when it comes to "average like" indicators : the period. That way it can easily be used as any other average type indicator, and now you can use only two widely known parameters :
+the calculation period
+calculation period does not need to be integer
+you can use fractional calculation periods (just for the sake of experimenting use period 1.5, for example, and see how a very fast filter can still produce smooth results)
+the price (the usual set of prices)
+Usage :
+It period is made to "mimic" averages fairly well. Since this indicator is producing very smooth results (even for very short periods) it is a rather useful indicator.You can use color changes as signals

@@ -1,0 +1,14 @@
+Real author:
+Chester Keltner
+The indicator shows the Keltner Channel — a classic technical indicator developed by Chester Keltner in 1960. It may look similar to Bollinger Bands.
+It uses three chart lines: middle line is a 10-day simple moving average by typical prices ((high + low + close) / 3), upper and lower lines are formed by adding and subtracting the moving average of daily price range (difference between maximum and minimum) from the middle line. Therefore, it forms a channel based on volatility.
+Input Parameters:
+MA_Period (by default = 10)
+— period of moving average (middle line).
+Mode_MA (by default = MODE_SMA)
+— type of moving average (middle line).
+Price_Type (by default = PRICE_TYPICAL)
+— price type for moving average (middle line).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13258

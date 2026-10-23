@@ -1,0 +1,17 @@
+A good architecture is extendable, supportable, and reusable.
+Patterns help build hq systems.
+Patterns are proven to be good by experience.
+Patterns are generic solitions for software engineering challenges.
+Choose your pattern, don't invent it.
+Most patterns are designed to manage changes of the architecture.
+Most patterns incapsulate variable aspects of the systems.
+Developers know patterns and effectively communicate with each other.
+OOP CONCEPTS:
+Abstraction,
+Encapsulation,
+Polymorphism,
+Inheritance
+RULES:
+Encapsulate changes
+Composition is better than inheritance.
+Engineer with interfaces, not real classes.

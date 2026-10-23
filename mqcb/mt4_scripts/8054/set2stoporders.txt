@@ -1,0 +1,4 @@
+Placing two pending stop orders for breaking through some trade range, for example, before the important news are published.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8054

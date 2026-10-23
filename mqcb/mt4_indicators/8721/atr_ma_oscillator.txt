@@ -1,0 +1,4 @@
+Oscillator of the OsMA type but interpreted for the ATR oscillator. It is used as an additional signal (crossing 0) to exit the position with the maximum profit. Normalized for the current state of the EURUSD H4. It is possible to change the periods of ATR and signal line as well as the calculation methods for moving averages of ATR and signal line.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8721

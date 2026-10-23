@@ -1,0 +1,6 @@
+The
+TriX
+indicator in a candlestick form with the Keltner channel calculated relative to TriX averaging.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17480

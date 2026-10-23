@@ -1,0 +1,183 @@
+FMOneEA is a scalping Expert Advisor for MetaTrader 4. It works only on one hour timeframe (PERIOD_H1).
+FMOneEA calculation is based of ZigZag and MACD indicators on H1 timeframe. Caution: make sure that the ZigZag indicator is in the <terminal_data_folder>\MQL4\Indicators\. Hope it is useful.
+Default Property for FMOneEA is as follows, and the results of the Strategy Tester below use the default property.
+Last modify (update): 17/07/2015.
+Update (21/04/2015):
+Improved signal formula, to make it more accurate.
+Added Redemption function to Redemption Loss Order.
+Update (29/04/2015):
+Fixed code for Redemption and option for multiplication Lost Redemption.
+Improved codes for braking movement.
+Simplified signal formula.
+Update (26/05/2015):
+Fixed code for Lots Redemption.
+Increased the speed of the EA process.
+Improved code for the Trailing Stop and Trailing Profit.
+If setting: UseTrailingStop = True, AutoTrailingStop = True, and AutomaticTakeProfit = True, then, when Stop Loss is Trailing, Take Profit will be Trailing too, so Take Profit will be dynamic.
+Update (2/06/2015):
+Error correction in FM1Redemption() function.
+Added scripts to move Stop Loss to the BEP, if order is profit, before the Trailing Stop is done.
+Added Option for Maximum Lot Redemption (for multiplication Lots Redemption).
+Corrected signal calculation formula on the FMOneCalculation() function.
+Update (16/07/2015):
+Error correction for variable arrays timeframe because the array mat [4] was out of range (in update_5).
+Update (17/07/2015): (Update_07)
+Simplified the
+signal
+formula
+,
+without
+ZigZag
+indicator
+.
+Update (17/08/2015): (Update_08)
+Improvement of the program structure.
+Fixed bugs in open order.
+//--- User Input (Update_07 17/08/2015)
+input
+string
+FMOneEA =
+"Copyright © 2014 3RJ ~ Roy Philips-Jacobs"
+;
+input
+string
+FMOneEATF =
+"FMOneEA working on all Timeframes (M1 to MN1)"
+;
+input
+int
+FMOneEAPeriod =
+PERIOD_H4
+;
+// Recommended use on Timeframes H4 (PERIOD_H4)
+extern
+bool
+FridayTrade = True;
+// If True, EA will trade on Friday
+extern
+bool
+Redemption = True;
+// Allow to Redemption Loss Order
+input
+string
+OptimizationLots =
+"Set LotsOptimization=True"
+;
+extern
+bool
+LotsOptimization = True;
+// If True, Lots will be calculated by EA, default Lots size for optimization = 0.01"
+extern
+double
+Lots =
+0.01
+;
+// If LotsOptimization=False, Lots adjusted by user
+extern
+double
+LotsRedempt =
+2.0
+;
+// Value for redemption to multiplication Lots, default value 2.0
+extern
+double
+MaxLotsRedempt =
+4.0
+;
+// Maximum Value of Lots redemption for multiplication Lots, default 4 times of initial lots
+extern
+int
+MaxOpenOrder =
+12
+;
+// Maximum Allowed for Open Order (Maximum Pairs to Trade = 12 pairs)
+// PAIRS: EURAUD,AUDUSD,EURUSD,NZDUSD,GBPUSD,GBPAUD,XAUUSD,GBPJPY,EURJPY,USDJPY,USDCHF,USDCAD //
+input
+string
+AutomaticSystemTP =
+"Set AutomaticTakeProfit=True or False"
+;
+extern
+bool
+AutomaticTakeProfit = True;
+// TP will calculation by EA and Automatic TP by EA
+extern
+bool
+NoMinimumTakeProfit = True;
+// True or False -> If Set True, 100% TP by EA not use minimum TP.
+input
+string
+MinimumSystemTP =
+"If Set NoMinimumTakeProfit=False"
+;
+// TP by EA on minimum TP values
+extern
+double
+MinimumTP =
+10
+;
+// Minimum TP by EA on the AutomaticTakeProfit=True function, default value 10
+input
+string
+ManualSystemTP =
+"If Set AutomaticTakeProfit=False"
+;
+// TP by Terminal MT4 (same as manual trading)
+extern
+double
+TakeProfit =
+20
+;
+// TP by System, values can adjust by user, default value 20
+input
+string
+AutomaticSystemSL =
+"Set AutomaticStopLoss=True"
+;
+extern
+bool
+AutomaticStopLoss = True;
+// SL will calculation by EA
+input
+string
+ManualSystemSL =
+"If Set AutomaticStopLoss=False"
+;
+// SL values can be adjusted by user
+extern
+double
+StopLoss =
+157
+;
+// SL adjusted by user, default value 157
+extern
+bool
+UseTrailingStop = True;
+// Use Trailing Stop, True (Yes) or False (Not)
+extern
+bool
+AutoTrailingStop = True;
+// If Set True, 100% TS calculation by EA not use trailing stop value.
+extern
+double
+TrailingStop =
+14.0
+;
+// If Use Trailing Stop True, input Trailing Stop Value, default value 14
+extern
+double
+TrailingStopStep =
+1.0
+;
+// Input Trailing Stop Step Value (default 1.0)
+input
+string
+UsingSecureBEP =
+"Set UseSecureBEP == True or False"
+;
+//If  True, the EA will add BEP to secure order
+extern
+bool
+UseSecureBEP = False;
+// If  True, the EA will add BEP to secure your order
+Testing results:

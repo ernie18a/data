@@ -1,0 +1,59 @@
+The indicator shows the minimum price for the period specified in the input parameters of the indicator, taking into account the timeframe, in which the price was searched for.
+//+------------------------------------------------+
+//| Indicator input parameters                   |
+//+------------------------------------------------+
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Chart period for the timeseries
+input
+string
+level_name=
+"Price_LOWEST_LOW_VALUE_1"
+;
+// Level name
+input
+string
+level_comment=
+"Trigger level"
+;
+// A comment to the level
+input
+uint
+level_period=
+5
+;
+// Level search period
+input
+uint
+level_start=
+0
+;
+// The number of the starting bar
+input
+color
+level_color=
+clrMagenta
+;
+// Level color
+input
+ENUM_LINE_STYLE
+level_style=
+STYLE_SOLID
+;
+// The style of the trigger level
+input
+ENUM_WIDTH level_width=w_3;
+// The width of the trigger level
+input
+bool
+Deletelevel=
+true
+;
+// Deleting the level
+Figure 1. The LOWEST_LOW_VALUE_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2298

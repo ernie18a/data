@@ -1,0 +1,183 @@
+MQL5 Wizard
+allows to create the code of Expert Advisors automatically. See
+Creating Ready-Made Expert Advisors in MQL5 Wizard
+for the details.
+Here we will consider the trend strategy, based on three moving averages. The strategy called
+"Signals based on three EMA"
+. To determine the trend, it uses three exponentially smoothed moving averages: FastEMA, MediumEMA and SlowEMA.
+Trade signals:
+Buy signal: FastEMA>MediumEMA>SlowEMA (upward trend).
+Sell signal: FastEMA<MediumEMA<SlowEMA (downward trend).
+This strategy is implemented in CSignal3EMA class (the signal3ema.mqh must be placed to terminal_data_folder\MQL5\Include\Expert\Signal\Signal3EMA.mqh).
+Figure 1. Trade signals, based on three moving averages
+Trade Signals
+The trading strategy is implemented in CSignal3EMA class, it has some protected methods to simplify access to values of three moving averages (Fast, Medium, Slow):
+double
+FastEMA(
+int
+ind)
+// returns the value of Fast EMA of the bar
+double
+MediumEMA(
+int
+ind)
+// returns the value of Medium EMA of the bar
+double
+SlowEMA(
+int
+ind)
+// returns the value of Slow EMA of the bar
+The indicator values of the 0th (uncompleted) bar may change, so it's necessary to perform the checking of trade conditions using the completed (formed) bars data.
+1. Open long position
+The upward trend is determined by following condition: FastEMA>MediumEMA>SlowEMA:
+FastEMA(1)>MediumEMA(1): Fast EMA is higher than Medium EMA (last completed bar);
+MediumEMA(2)>SlowEMA(1): Medium EMA is higher than Slow EMA (last completed bar);
+//+------------------------------------------------------------------+
+//| Checks conditions to open long position (buy)                    |
+//+------------------------------------------------------------------+
+bool
+CSignal3EMA::CheckOpenLong(
+double
+& price,
+double
+& sl,
+double
+& tp,
+datetime
+& expiration)
+  {
+double
+medium=MediumEMA(
+1
+);
+//---
+price=
+0.0
+;
+   sl   =m_symbol.Ask()-m_stop_loss*m_adjusted_point;
+   tp   =m_symbol.Ask()+m_take_profit*m_adjusted_point;
+//--- checking for upward trend (on the last completed bar): FastEMA(1)>MediumEMA(1)>SlowEMA(1)
+return
+(FastEMA(
+1
+)>medium && medium>SlowEMA(
+1
+));
+  }
+2. Close long position
+The downward trend is determined by following condition: FastEMA<MediumEMA<SlowEMA:
+FastEMA(1)<MediumEMA(1): Fast EMA is lower than Medium EMA (last completed bar);
+MediumEMA(2)<SlowEMA(1): Medium EMA is lower than Slow EMA (last completed bar);
+//+------------------------------------------------------------------+
+//| Checks conditions to close long position                         |
+//+------------------------------------------------------------------+
+bool
+CSignal3EMA::CheckCloseLong(
+double
+& price)
+  {
+double
+medium=MediumEMA(
+1
+);
+//---
+price=
+0.0
+;
+//--- checking for downward trend (on the last completed bar): FastEMA(1)<MediumEMA(1)<SlowEMA(1)
+return
+(FastEMA(
+1
+)<medium && medium<SlowEMA(
+1
+));
+  }
+You may improve the closing of long position: it isn't necessary to wait for the downward trend, you may close long positions when flat, which can be determined by following conditions: FastEMA<MediumEMA>SlowEMA.
+3. Open short position
+//+------------------------------------------------------------------+
+//| Checks conditions to open short position (sell)                  |
+//+------------------------------------------------------------------+
+bool
+CSignal3EMA::CheckOpenShort(
+double
+& price,
+double
+& sl,
+double
+& tp,
+datetime
+& expiration)
+  {
+double
+medium=MediumEMA(
+1
+);
+//---
+price=
+0.0
+;
+   sl   =m_symbol.Bid()+m_stop_loss*m_adjusted_point;
+   tp   =m_symbol.Bid()-m_take_profit*m_adjusted_point;
+//--- checking for downward trend (on the last completed bar): FastEMA(1)<MediumEMA(1)<SlowEMA(1)
+return
+(FastEMA(
+1
+)<medium && medium<SlowEMA(
+1
+));
+
+  }
+4. Close short position
+//+------------------------------------------------------------------+
+//| Checks conditions to close short position                        |
+//+------------------------------------------------------------------+
+bool
+CSignal3EMA::CheckCloseShort(
+double
+& price)
+  {
+double
+medium=MediumEMA(
+1
+);
+//---
+price=
+0.0
+;
+//--- checking for upward trend (on the last completed bar): FastEMA(1)>MediumEMA(1)>SlowEMA(1)
+return
+(FastEMA(
+1
+)>medium && medium>SlowEMA(
+1
+));
+  }
+You may improve the closing of short position: it isn't necessary to wait for the upward trend, you may close short positions when flat, which can be determined by following conditions: FastEMA>MediumEMA<SlowEMA.
+Creating Expert Advisor using MQL5 Wizard
+To create a trading robot based on the strategy you need to choose the signal properties as "
+Signals based on three EMA
+" in "Creating Ready-Made Expert Advisors" option of
+MQL5 Wizard
+:
+Figure 2. Choose "Signals based on three EMA" in MQL5 Wizard
+The next you have to specify the needed
+trailing stop
+algorithm and
+money and risk management
+system. The code of Expert Advisor will be created automatically, you can compile it and test in
+Strategy Tester
+of MetaTrader 5 client terminal.
+Testing Results
+Let's consider backtesting of the Expert Advisor on historical data (EURUSD H1, testing period: 1.1.2010-05.01.2011,  FastPeriod=5, MediumPeriod=12, SlowPeriod=24, StopLoss=400, TakeProfit=900).
+In creation of Expert Advisor we used the fixed volume (
+Trading Fixed Lot
+, 0.1), Trailing Stop algorithm is not used (
+Trailing not used
+).
+Figure 3. Historical backtesting results of the Expert Advisor, based on three EMA
+Attachments:
+The Signal3EMA.mqh with CSignal3EMA class must be placed to terminal_data_folder\MQL5\Include\Expert\Signal.
+The threeema.mq5 file contains the code of the Expert Advisor, created using MQL5 Wizard.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/250

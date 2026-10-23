@@ -1,0 +1,6 @@
+Real author:
+Alexander Elder
+The indicator is based on the trading system "Elder's Triple Screen": we have 3 timeframes (windows) 1 - the highest, 2 - medium, 3 - the lowest or the current one. To avoid errors, it is not recommended to change their positions. The algorithm is based on a very simple principle: if MA grows on the specified timeframes (windows) - buy, if falls - sell.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1797

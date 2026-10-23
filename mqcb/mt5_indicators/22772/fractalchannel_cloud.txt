@@ -1,0 +1,10 @@
+Real author:
+TrendLaboratory Ltd.
+The channel based on fractals with the background filling inside the channel.
+This indicator was first written in MQL4 and published in the
+Code Base
+on November 1, 2007.
+Fig1. FractalChannel_Cloud indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22772

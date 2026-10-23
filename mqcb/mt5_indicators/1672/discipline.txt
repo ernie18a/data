@@ -1,0 +1,8 @@
+The Discipline trend reversal indicator. The indicator is represented by the histogram which color corresponds to the trend direction. The indicator generates signals for opening positions in the form of arrows and the signals of exit from the positions in the form of cross diamonds.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 18.10.2008.
+Fig.1 The Discipline indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1672

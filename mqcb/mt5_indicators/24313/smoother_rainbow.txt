@@ -1,0 +1,4 @@
+Theory :
+Simple indicator that is using a nice smoothing algorithm to display a rainbow. Set the step, price and display options, and that is all
+Usage :
+You can use it for overall trend estimation based on the slopes of each value

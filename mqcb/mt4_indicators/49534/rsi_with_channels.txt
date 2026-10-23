@@ -1,0 +1,4 @@
+This indicator promote new way of analyses signals from standard indicator named RSI.
+Main feature of RSI is level crossing signals. Usually 30 and 70.
+But it's bad relative to real market state. That's why i added dynamic levels for this indicator.
+By this way, signals efficiency become more powerful

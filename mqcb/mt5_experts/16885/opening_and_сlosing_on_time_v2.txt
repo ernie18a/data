@@ -1,0 +1,92 @@
+The EA opens and closes positions at a specified time. The condition is additionally checked:
+for Buy —
+if the fast iMA on the first bar exceeds the slow iMA
+if
+(iMAGet(handle_iMAFast,
+1
+)>iMAGet(handle_iMASlow,
+1
+))
+{
+if
+(!
+RefreshRates
+())
+return
+;
+price=m_symbol.
+Ask
+();
+if
+(Extm_sl>
+0.0
+)
+sl=m_symbol.
+Bid
+()-Extm_sl;
+if
+(Extm_tp>
+0.0
+)
+tp=m_symbol.
+Bid
+()+Extm_tp;
+m_trade.Buy(m_lots,InpSymbol,price,sl,tp);
+}
+for Sell —
+if the fast iMA on the first bar is less than the slow iMA
+if
+(iMAGet(handle_iMAFast,
+1
+)<iMAGet(handle_iMASlow,
+1
+))
+{
+if
+(!
+RefreshRates
+())
+return
+;
+price=m_symbol.
+Bid
+();
+if
+(Extm_sl>
+0.0
+)
+sl=m_symbol.
+Ask
+()+Extm_sl;
+if
+(Extm_tp>
+0.0
+)
+tp=m_symbol.
+Ask
+()-Extm_tp;
+m_trade.Sell(m_lots,InpSymbol,price,sl,tp);
+}
+Only HH:mm are considered in the inputs (time).
+Inputs:
+opening time (only HH:mm are considered)
+— position open time
+closing time (only HH:mm are considered)
+— position close time
+symbol
+— traded symbol
+volume transaction
+— position volume
+sell stop
+—
+stop loss level
+take profit
+—
+take profit level
+true -> Buy, false -> Sell
+— if "true", only "Buy" positions are opened; if "false", only "Sell" ones
+magic number
+— EA's magic number.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16885

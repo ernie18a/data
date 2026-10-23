@@ -1,0 +1,27 @@
+The indicator plots the vertical section for each bar between the Open and Close prices.
+The
+DRAW_HISTOGRAM2
+drawing style can be used for a drawing in a separate window and main chart window. It doesn't plot empty values, the empty indicator values must be specified explicitly. Two data buffers are needed for the
+DRAW_HISTOGRAM2
+style.
+The color, width and style of the histogram changed randomly each N ticks. In the
+OnInit()
+function, it chooses a day of the week (invisible_day), the indicator values of the bars of this week day will be filled with empty values (PLOT_EMPTY_VALUE=0):
+//--- define empty value
+PlotIndexSetDouble
+(plot_index_DRAW_SECTION,
+PLOT_EMPTY_VALUE
+,
+0
+);
+The initial properties of the plot1 graphic plot are defined using the #
+property
+preprocessor directive, further these properties changed randomly (
+OnCalculate()
+function).
+See also:
+The Drawing Styles in MQL5
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/333

@@ -1,0 +1,47 @@
+Real author:
+Shimodax
+The indicator of expanding time zone corridors
+with four corridors. A formed corridor is equal to four hours, while the corridor expansion is equal to sixteen hours.
+//+-----------------------------------------+
+//|  INDICATOR INPUT PARAMETERS             |
+//+-----------------------------------------+
+input
+uint
+LocalTimeZone=
+0
+;
+// start hour of the original corridor calculation
+input
+uint
+DestTimeZone=
+4
+;
+// corridor shift to the left in bars
+input
+uint
+PipsForEntry1=
+100
+;
+// expanding the boundaries of the first formed corridor in points
+input
+uint
+PipsForEntry2=
+200
+;
+// expanding the boundaries of the second formed corridor in points
+input
+uint
+PipsForEntry3=
+300
+;
+// expanding the boundaries of the third formed corridor in points
+input
+int
+Shift=
+0
+;
+// Horizontal indicator shift in bars
+Fig. 1. Hans_Indicator_x6
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22036

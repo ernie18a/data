@@ -1,0 +1,16 @@
+Author:
+Nks
+A Notifier for
+I-Regr
+Indicator, It alerts when Price Breaks Up or Down I-Regr lines.
+Recommendations:
+I-Regr Indicator
+ChangeLog:
+V3(20/3/2011):
+Removed
+Custom Sound Notification as it didn't work
+V2(15/3/2011):
+Added
+Custom Delay between Alarms
+Custom Notifier color chooser
+Custom I-Regr parameters

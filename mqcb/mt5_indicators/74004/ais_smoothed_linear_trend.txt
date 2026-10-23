@@ -1,0 +1,12 @@
+One of the main drawbacks of the simple moving average (SMA) is that it lags behind market trends. To reduce this lag, the average rate of price movement can be taken into account. The proposed indicator incorporates three different algorithms for measuring price. The central velocity provides a smoother value.
+Forward velocity is measured relative to the current bar. This makes the indicator more sensitive to recent price changes.
+Backward velocity is measured relative to the initial bar, which allows the history of price movements to be taken into account.
+Using any of the three options reduces lag. As a result, this indicator can be used as a replacement for the standard SMA.
+Indicator parameters:
+Type
+– a parameter allowing you to select the type of velocity measurement.
+iPeriod
+– the indicator’s period.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/74004

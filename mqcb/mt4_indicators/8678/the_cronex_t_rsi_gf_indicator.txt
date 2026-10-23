@@ -1,0 +1,12 @@
+Modification of the RSI indicator
+Changes:
+Changed the number of dimensions (specifically to simplify use in experts)
+The line of the main indicator is composed of 4 with period shifts
+Added a line of smoothing based on T3 (I do not remember whose algorithm it is)
+The signals are moved to separate buffers
+Placed BB on T3 to improve the clarity of changes
+Do not use it as a standalone trading tool, it is designed for confirmation of trend indicators.
+If it helps anyone to make profit, donations are welcome :-)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8678

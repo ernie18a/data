@@ -1,0 +1,8 @@
+Theory :
+There are different ways how traders are trying to determine if the market is trending or consolidating. One of the methods used is to compare standard deviation to average true range.
+when standard deviation value is greater than average true range, then the market is supposed to be trending
+when standard deviation value is less than average true range, then the market is supposed to be consolidating (ranging)
+This indicator is doing that.
+When the value of it is zero, then the market is in a "squeeze" mode (consolidating). When the value is different from 0, then it compares median price to average close and if it is above the average, it displays it as a trend up, and if it is bellow the average it displays it as a trend down (median is used as a "safer" choice to avoid too much signals)
+Usage :
+You can use color (or lack of color) as signals

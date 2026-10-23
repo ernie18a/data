@@ -1,0 +1,9 @@
+Original author:
+GoldnMoney
+A semaphore signal indicator that uses an algorithm based on crossovers of moving averages from the
+Ozymandias
+indicator.
+Fig. 1. The OzymandiasSign indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12563

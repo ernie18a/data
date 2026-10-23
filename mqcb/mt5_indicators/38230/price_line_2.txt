@@ -1,0 +1,6 @@
+1. Shows moving Last Price on Bid Line
+2. Daily percentage change
+3. Time based on Input selection to the Price Line : Local, GMT or Current
+4. Color for Bear and Bull can be set from indicator settings
+5. shows Time left on last closing candle (count down)
+6. Select font feature

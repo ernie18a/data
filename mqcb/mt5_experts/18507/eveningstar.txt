@@ -1,0 +1,23 @@
+The EveningStar Expert Advisor trades the "Evening Star" pattern. The below image shows an example of operation of the underlying indicator, while the EA does not draw anything on the chart.
+Lot is calculated based on the risk value as a percentage of free margin.
+For more information about the "Evening Star" pattern please see the
+EveningStar
+indicator code.
+Expert Advisor parameters:
+Evening Star
+- the type of position to open (Buy or Sell)
+Take Profit (in pips)
+Stop Loss (in pips)
+Risk in percent for a deal
+- risk per trade as percent of free margin
+Shift in bars (from 1 to 255)
+Gap. true -> gap is taken into account
+Candle 2 type. true -> type of candle 2 is taken into account
+Candle sizes. true -> candle sizes is taken into account
+true -> close opposite positions
+- handling of opposite positions
+magic number
+The EA only operates when a new bar appears.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18507

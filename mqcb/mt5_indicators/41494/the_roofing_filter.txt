@@ -1,0 +1,1 @@
+The Roofing Filter Indicator was created by John Ehlers ("Cycle Analytics for Traders" pg. 80 - 82). When the indicator crosses over its signal then it is a short term uptrend and when it crosses below its signal then it is a short term downtrend. Buy when the indicator line is green and sell when the indicator line turns red.

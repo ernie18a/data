@@ -1,0 +1,8 @@
+Do you want to see your total Profit Losses in pips instead of seeing it in points or in your deposit currency and regardless of volume? Well this very simple script allows you to do exactly that, see your current Profit or Losses in Pips. This is a
+utility script
+so it does not open close any trade. Tested only on FOREX.
+Once the script has executed you can see in the Experts Tab the following information:
+The total sum of all your Profit and Losses  in Pips
+The Profit  or Loss of each individual position in Pips
+The sum of just your Profit in Pips
+The sum of jus your Losses in Pips

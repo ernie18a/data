@@ -1,0 +1,24 @@
+The real author:
+LeMan
+In order to explain how to use the indicator the summary by Larry Williams book "Long-term secrets of short-term trading" was made.
+"Range is all distance traveled by active per a day, a week, a month, a year, also a second can be. Think of the range as the distance traveled by a price in any researched period.
+After small ranges follow big ranges, after big ranges follow small ranges. It is like a clockwork mechanism and the main key to a profitable short-term trade.
+No need for a fortuneteller to exaggerate the existing facts or make them fit. It is what it is, it always was and it always will be, we are continually receiving signal of profitable bars which are distinguished on a large range thanks to the earlier warnings from small ranges.
+An absolute truism in relation to days with big range: days of up directed big ranges are usually opened close to the minimum and are closed close to the maximum. Days of low directed big ranges are opened close to the high price value and are closed close to the low price value.
+It means that in your trade you should take into account two things. The first is if we go "up" in the day as we think a big range will be, don't search for the buy point lower than open price. Days of the big up directed ranges trade rarely and lower than day open price. It means that you shouldn't search for the possibility to buy essentially lower than open price.
+The same is if you think that you caught a tiger by the tail, exactly such a possibility gives a day with a larger range while price falls essentially lower than open price and the possibility of a big movement up is greatly reduced.
+It is a very important moment of comprehension the secrets of a profitable short-term trade. Don't drop it.
+Don't try to buy at high falling prices lower than open price.
+If a position is long (a Long) and price falls essentially lower than open price, then exit the market.
+Don't try to sell at big jumps higher than open price.
+If a position is short (a Short) and prices go essentially higher than open price, then exit the market.
+Sometimes you will see the days with a large range, walking on either side of open price, but this is the exception and not the rule.
+Don't try to argue with these rules, they reflect the laws of gravity."
+Larry Williams
+This indicator was first implemented in MQL4 and published in
+CodeBase in mql4.com
+on 26.04.2010.
+Fig.1 The Momemtum In Time indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1187

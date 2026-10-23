@@ -1,0 +1,41 @@
+Interactive On-Chart Risk Management & Execution Panel for MetaTrader 5
+This Expert Advisor provides an intuitive, high-performance Graphical User Interface (GUI) directly on your chart, designed to eliminate manual position-size calculation errors and speed up trade execution under fast market conditions.
+Key Features:
+Dynamic Equity-Based Risk Calculator:
+Automatically calculates exact lot sizes based on a user-defined risk percentage of the account equity and the active Stop Loss distance in pips.
+One-Click Order Execution:
+Instant
+BUY
+and
+SELL
+buttons that automatically attach Stop Loss and Take Profit levels upon order placement.
+Emergency & Management Tools:
+CLOSE ALL:
+Instantly liquidates all open positions associated with the Expert Advisor's Magic Number.
+SET BREAKEVEN:
+Automatically moves the Stop Loss of all winning positions to entry price to secure risk-free trades.
+Automated Trailing Stop Engine:
+Continuously monitors active trades in real-time, locking in profits as price advances according to custom distance and step parameters.
+Lightweight GUI:
+Built with clean native object functions for fast rendering and zero latency on chart ticks.
+Input Parameters:
+InpRiskPercent:
+Percentage of equity risked per trade (Default: 1.0% ).
+InpDefaultSLPips / InpDefaultTPPips:
+Default Stop Loss and Take Profit distances in pips.
+InpUseTrailing / InpTrailingStopPips / InpTrailingStepPips:
+Controls for the continuous trailing stop logic.
+InpPanelX / InpPanelY:
+Custom screen coordinates for panel placement.
+How to Use:
+Attach the Expert Advisor to any chart.
+The panel will automatically calculate the optimal lot size based on your equity and default Stop Loss.
+Click
+BUY
+or
+SELL
+to execute trades instantly, or use
+SET BREAKEVEN
+/
+CLOSE ALL
+to manage active market exposure with a single click.

@@ -1,0 +1,12 @@
+Hans_Indicator_x62_Cloud_System_Alert
+indicator with the level markup extended to the next session. The input parameter is added for extending the indicator level
+input
+bool
+Draw_Tail=
+true
+;
+// Allow extending levels to the session end
+Fig1. Hans_Indicator_x62_Cloud_System_Tail_Alert indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22831

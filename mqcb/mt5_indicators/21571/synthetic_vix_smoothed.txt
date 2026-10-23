@@ -1,0 +1,5 @@
+This is a smoothed version of
+Synthetic VIX
+.
+In order to make the volatility assessment easier, this indicator is producing smoothed results. Also, in order to avoid adding significant lag, the usual "trick" to avoid that lag is used: instead of smoothing the result (which, in this case would be smoothing the already calculated VIX) prices are smoothed prior to be used in calculation. JMA is used for that smoothing (as a very responsive smoothing way).
+PS: it was already mentioned in the original published code, but just in case - synthetic VIX is not a directional indicator. It indicates the increase or decrease of volatility and it should be used as that.

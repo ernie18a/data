@@ -1,0 +1,5 @@
+Author: sx ted
+One of the indicators that display the session times.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7179

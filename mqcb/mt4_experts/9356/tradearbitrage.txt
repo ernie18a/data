@@ -1,0 +1,175 @@
+Theory:
+Lets consider how does it work on EURUSD. Imagine that we have two synthetic pairs
+EURUSDx
+and
+EURUSDy
+.
+They have similar dynamics, so if we open two opposite positions on these pairs we will have a hedged position.
+Open: BUY
+EURUSDx
+and SELL
+EURUSDy
+. After some time we close these positions: SELL
+EURUSDx
+and BUY
+EURUSDy
+.
+Profit:
+Profit = (BIDx - ASKx) + (BIDy - ASKy) = (BIDx - ASKy) + (BIDy - ASKx)
+In the experssion presented above we know the value of the first bracket (BUY
+EURUSDx
+and SELL
+EURUSDy
+).
+The value of the second bracket is known after positions close (SELL
+EURUSDx
+and BUY
+EURUSDy
+)
+There are several cases with positive Profit values. One of them is:
+At open:
+BIDx > ASKy
+,
+At close:
+BIDy > ASKx
+.
+Practice:
+Trade-Arbitrage
+expert advisor uses it (you can modify for any other condition).
+In a realtime
+it looks for cases when
+BIDx > ASKy
+for
+ALL
+of the possible synthetic pairs (
+thousands
+cases) and opens the corresponding positions.
+It means that
+Trade-Arbitrage
+expert advisor
+is always has a multicurrency hedge
+.
+It creates the file
+ArbitrageStatistic.txt
+with sorted (by frequency) arbitrage cases.
+The file ArbitrageStatistic.txt
+If
+Monitoring is TRUE
+, the expert advisor adds some arbitrage details to file
+Arbitrage.txt.
+Arbitrage.txt with details
+The trading is performed with pairs, defined in the file
+Trade-Arbitrage.txt
+(the file location is:
+experts\files
+).
+Trade-Arbitrage.txt file example
+Also it logs some details for further analysis (deals, reasons, and results):
+Trade-Arbitrage advisor results (above), NettoTrading (left) and CheckMyArbitrage (right) script results
+The multicurrency hedge can be checked by using a cycled script
+CheckMyArbitrage
+.
+Input parameters:
+Currencies
+- currencies list used for synthetic pair.
+MinPips
+- minimal allowed (as arbitrage) difference in points (
+old
+) between
+BIDx
+and
+ASKy
+.
+SlipPage
+- slippage in pips allowed by
+broker
+for
+Market
+orders (different brokers have different values).
+Lock
+- locks are allowed (
+TRUE
+) or not (
+FALSE
+).
+Lots
+- Position volume for open/close.
+MaxLot
+-
+maximal
+lot allowed by broker (real).
+MinLot
+-
+minimal
+lot allowed by broker (real).
+Monitoring
+- log all of the arbitrage cases to file (
+TRUE
+) or not (
+FALSE
+). Loggint can take some time, that could be
+critical
+for the arbitrage.
+TimeToWrite
+- Log time period (in
+minutes
+) for arbitrage statistical data logging (
+ArbitrageStatistic.txt
+).
+Expert works correctly (it doesn't break multicurrency hedge):
+Trade order errors (
+Rejects
+etc).
+Partial execution (
+Partial Fills
+). Some of the brokers allow it.
+feature
+, with minimal possible Lot, allowed by broker (
+MinLot
+).
+if
+Lock = TRUE
+it uses a mininal trade orders
+минимально
+.
+It can prohibit lock cases (
+Lock = FALSE
+).
+Possible problems:
+The negative slippages and commissions are eating the profit.
+Long-term execution of trading orders, there are some cases when the other symbols prices are changed significantly
+Asynchronous
+processing of trade orders by broker.
+Small arbitrage time.
+Possible impovments:
+Limit orders use
+.
+Simultaneous send for various symbols (asynchronicity emulation) of trade orders from multiple terminals for one account.
+Time control of the broker
+asynchronicity
+.
+The collection and use of more statistical information for use by other
+MinPips
+conditions of arbitration. For example,
+BIDx - ASKy> SPREADx + SPREADy
+.
+The collection and use of statistical information about the time duration of the arbitrage.
+Priority of the Market-orders queue (for example, the symbol with the largest tick volume or symbol with extremal local price.
+Features:
+Multicurrency, so it cannot be used in strategy tester. It can be executed as script.
+The price history doesn't used. The arbitrage theory uses the market inefficiency (quote inefficiency), so the
+quotes
+nature
+is not important.
+Advisor works without losses.
+Editor's remark:
+Note that it's a mirror translation of the
+original Russian version
+.
+If you have any questions to the author, suggestions or comments, it's better to post them
+there
+.
+If you have found this code useful for trading or educational purposes, don't forget to thank author.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9356

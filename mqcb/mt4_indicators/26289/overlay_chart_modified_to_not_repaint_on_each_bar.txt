@@ -1,0 +1,14 @@
+image: Modified Overlay Chart USDJPY vs USDCHF (4hr chart)
+Function
+The Original Overlay Chart is used to have two currencies or 2 assets on 1 chart.
+The relative price of the one currency can be seen in terms on the other currency.
+For example, on the EURUSD chart, using this indicator, The USDCHF could be added and the USDCHF price will be shown in terms of EURUSD price.
+Use
+This could be useful for strategies that depend on the convergence or divergence of 2 currencies or assets. Some people informally refer to this as 'correlation' or 'arbitrage' or more formally 'co-integration' strategies or 'relative value'.
+Changes/updates/improvements
+The Original indicator will re-center its calculation on every bar, and hence the price will keep shifting up and down and so the historical relative values do not remain constant. This indicator was modified so that the 'center' or initial relative reference point stays fixed and does not update each bar. It will only update the initial center point (Re-initialize) when the indicator is reloaded or settings are changed. (The indicator does however show the changes of the current prices on the same chart, just to clarify).
+This indicator also paints for history far back, while the original does not. I may have also changed one or two other things in the original code, you can find the
+original code here
+.
+Inputs
+The SET CENTER input is which bar back in the history the indicator should use to be the fixed initial point to compare the 2 currencies or assets.

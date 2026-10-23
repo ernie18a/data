@@ -1,0 +1,4 @@
+The calculation:
+AggZ = (-1*(10-day z-score)+(200-day z-score))/2
+where z-score = (close - sma(closing prices over last n periods))/(standard deviation(closing prices over last n periods))
+buy above 0, sell below 0 as a basic strategy.

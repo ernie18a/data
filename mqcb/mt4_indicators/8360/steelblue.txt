@@ -1,0 +1,19 @@
+Indicator WolfWave. It is written on the basis of the ZigZag.
+extern
+int
+ExtDepth
+=
+12
+;
+extern
+int
+ExtDeviation
+=
+3
+;
+extern
+int
+ExtBackstep
+=
+2
+;

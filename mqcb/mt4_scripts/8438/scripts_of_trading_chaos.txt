@@ -1,0 +1,6 @@
+The information was taken from the book "Trading Chaos" by Bill Williams.
+The first script determines the type of the bar according to Bill's theory and the names invented by him.
+The second one determines the direction of the trend.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8438

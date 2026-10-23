@@ -1,0 +1,1 @@
+ScalpX is an indicator that uses Kalman filters to identify buy and sell opportunities whenever is indicated by the graph.

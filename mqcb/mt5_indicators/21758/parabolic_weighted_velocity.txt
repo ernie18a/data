@@ -1,0 +1,8 @@
+It is less known that what is usually known as
+Jurik Velocity
+is actually a difference of Parabolic Weighted Moving Average and Linear Weighted Moving Average.
+This version extends the original by allowing you to change the "power" of the calculated averages used for velocity calculation. The bigger the
+Power
+parameter, the more weight is set to current price (it is faster). The smaller the
+Power
+parameter the slower is the velocity.

@@ -1,0 +1,24 @@
+Background:
+I was impressed by physics calculation with subject named "Linear Momentum" that can be found on Mr. Achmad Hidayat’s
+blog
+with title "Konsep Momentum Linier dan Interpretrasinya pada Forex" and challenged to create a simple indicator based on that article. Unfortunately, I wasn’t able to read his article clearly, so I was looking for another reference for better sense. Then I felt grateful after I found a very clear article about Linear Momentum written by Mrs. Sarah Friedl that can be found at
+http://study.com/academy/lesson/linear-momentum-definition-equation-and-examples.html
+.
+Linear Momentum:
+Momentum is strength of an object that moves to different place — this is my own definition. Momentum can be calculated with following equation: momentum = mass x velocity. You should already know that velocity is speed with direction. Shortest equation will be:
+p=mv
+where
+p
+is momentum,
+m
+is mass (in kg) and
+v
+is velocity (in m/s).
+Linear Momentum Implementation in MetaTrader Custom Indicator:
+The following will explain why it’s called Linear Momentum in Forex:
+p
+= momentum;
+m
+= mass, converted into volume of trade or tick; I would prefer to use tick volume because it’s more easy to find tick information than volume of all lots traded around the world;
+v
+= velocity, it’s a value taken from pips movement divided by timeframe (point/seconds, originally in m/s).

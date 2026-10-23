@@ -1,0 +1,2 @@
+Author: Rosh
+The indicator shows the average between the maximum and the minimum price within a time range.

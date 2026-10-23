@@ -1,0 +1,15 @@
+Indicator: Renko Range Detector
+Detects and displays the fixed size of the Renko Bar/Candle range on the Renko offline chart.
+Fast and easy identification of chart parameters facilitates trading efficiency.
+Note:
+This indicator is intended for use with Renko Bars/Candles,
+not
+Standard Bars/Candles.
+Renko Bars/Candles all have the same fixed range value from open to close..
+Note for newbies:
+A Renko offline charts is generated from a Scripts, or Indicators, or Expert Advisor running on a M1 chart
+Abundant additional information is available on the internet.
+Renko Range size calculation: Open - Close for down bar. Close - Open for up bar.
+Image:
+GBPUSD, M11(offline): 1.41975
+- 1.41900 = 75 points = 7.5 pips.

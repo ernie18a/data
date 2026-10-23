@@ -1,0 +1,2 @@
+The indicator that is using the self adjusting deviation filter to filter out values of WPR. The parameters are only the period (both WPR and  filter) and filter size.
+Th usage can be as usual: the color change can be treated as a signal.

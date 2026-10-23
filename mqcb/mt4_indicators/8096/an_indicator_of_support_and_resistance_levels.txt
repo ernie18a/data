@@ -1,0 +1,7 @@
+An indicator of support and resistance levels.
+The levels themselves are not calculated, as for example the pivot ones, but are read from the text file of a specific format.
+It is necessary to create an individual file "Levels_RS_<symbol name>.csv" for every instrument.
+The fomat of the file involves the differnce of strong levels that are displayed on the chart with the thickened lines. I used this indicator to display the levels, that are published by Teletrade, on the chart.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8096

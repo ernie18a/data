@@ -1,0 +1,6 @@
+The Dealers Trade v 7.51 RIVOT EA is based on the algorithm of multi-lot scalping. The EA has been repeatedly tested on a live account.
+The direction to open positions is selected according to the lines of the RIVOT indicator, which is integrated into the EA. If the price is higher than the RIVOT line, then only BUY. If lower, accordingly, SELL. Next, the EA subsequently opens positions, with every following one 1,5 or 2 times greater than the previous. The parameter is selected in the settings. The interval between the opened positions in points can be set in the EA parameters. When a positive result is reached on the last (closure by TP or by trailing SL) position, largest by the volume, the order batch is closed, regardless of the profitability of the previously opened positions.
+As a rule, the profit of the last order covers the loss (if any) of the previously opened orders and makes profit in general. The EA can work on any time frame, it is advisable to choose the parameters for each currency pair. The report on real testing is attached.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7104

@@ -1,0 +1,10 @@
+Script to create wide screenshots when monitor width is not enough to see the overall picture in terminal.
+The length of resulting image is 1500 bars. This is enough to fit the entire M1 day in one screenshot. This is handy for situation post-analysis.
+The script automatically calculates width of image file and adjusts chart minimum/maximum into screenshot boundaries.
+Screenshot is produced in the following way:
+Set left border of image and run the script. Files are saved in the ..../MQL5/Files/ folder.
+Wide screenshots thumbnails:
+Click on thumbnail to see the full-sized screenshot.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/936

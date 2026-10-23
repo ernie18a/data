@@ -1,0 +1,2 @@
+Author: Robert L Hill
+iMA Fibs indicator. The description read in a copyright.

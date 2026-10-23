@@ -1,0 +1,23 @@
+This Expert Advisor allows you to save infomation about the ticks, actual or simulated in Strategy Tester.
+The filename has the following form:
+T_SYMBOL_DD_MM_YY_HHxMM.csv
+, where
+SYMBOL - symbol;
+DD - day;
+MM - month;
+YY - year;
+НН - hour;
+ММ - start minute.
+It sets the starting period when applied in the Strategy Tester.
+Note:
+When it used in Tester, it creates a file in the Strategy Tester log directory.
+For example, if we have the log like this one -
+2010.08.11 00:17:51	Core 1	log file "
+E:\Program Files\MetaTrader 5\Tester\Agent-127.0.0.1-3001
+\logs\20100811.log" written
+it means that file is located in the "
+E:\Program Files\MetaTrader 5\Tester\Agent-127.0.0.1-3001\files
+" folder
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/162

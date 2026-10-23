@@ -1,0 +1,23 @@
+A version of averages that is using adaptive (variable) periods for calculation instead of using fixed length average calculation. This version is using adaptive lookback method
+Of adaptive lookback
+The Adaptive lookback is truly a market-driven indicator used to determine the variable lookback period for many different indicators, instead of a traditional, fixed figure.
+It is based on the frequency of market swings - the time between swing highs or swing lows. A swing high is defined as two consecutive higher highs followed by two consecutive lower highs; a swing low is defined by two consecutive lower lows followed by two consecutive higher lows. As swing points typically accompany reversals, they occur more frequently in choppier and volatile markets than in trends.
+Adaptive lookback period is determined as :
+Determine the initial number of swing points (
+swing count
+parameter) to use in the calculation.
+Count the number of price bars it takes for the
+n
+swing points to form.
+Divide step 2 by step 1 and round the result.
+As an addition, adjust the "speed" of the produced period using the
+speed
+parameter - the smaller the speed parameter, the "slower" the average, and vice versa
+PS: the "speed' is a deviation from the original adaptive lookback idea. The original is somewhat hard to precisely control, and the speed parameter is helping in that (precise control) largely.
+Interpretation
+This makes the variable lookback period grow in calm or trending markets, and shorten in range-bound and volatile markets. For a trend-following system you would like the opposite to prevent being whipsawed, therefore this indicator and it's usage as a period modifier is more suitable for short-term traders and counter-trend systems (so, in all systems where maximal speed of reaction and signaling is required).
+Averages calculated
+simple moving average
+exponential moving average
+smoothed moving average
+linear weighted moving average

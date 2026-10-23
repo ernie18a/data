@@ -1,0 +1,4 @@
+This is the Leader of the MACD as described by Giorgos E. Siligardos. In short, in this indicator there are 2 indicators in 1. There are a regular MACD (which is drawn as lines (colored line is a regular MACD and dotted line is signal)) and the "Leader MACD" indicator (which is drawn as shaded areas).
+This version extends the
+basic version
+with some options that are adding more flexibility to the usage of the indicator.

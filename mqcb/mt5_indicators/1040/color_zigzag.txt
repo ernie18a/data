@@ -1,0 +1,8 @@
+ColorZZ is the modification of the
+FastZZ
+indicator. ColorZZ draws segments of different colors depending on the ratio of the current segment range to the previous segment range. The following ratio values are selected: Red(<=0.382), Gold(<=0.618), Lime(<=1), Aqua(<=1.618) and Blue(>1.618).
+Warning.
+The color of a vertical segment is not displayed correctly by this indicator. This is due to technical constraints of the DRAW_COLOR_ZIGZAG plot style.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1040

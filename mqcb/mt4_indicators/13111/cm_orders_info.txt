@@ -1,0 +1,5 @@
+Simple, but sometimes very necessary and convenient indicator.
+Add it to the chart, and it will show the identification (magic) number and the profit above every order.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13111

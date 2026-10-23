@@ -1,0 +1,28 @@
+The indicator searches for thirty popular candlestick patterns and displays them on the price chart.
+The indicator can be configured to show separate patterns as well as groups: one-, two- and three-bar patterns. You can enable or disable the display of each found pattern on the screen, as well as tooltips, containing chart period, pattern name and time.
+The indicator has 38 adjustable parameters, eight of which are as follows:
+Enable One-bar patterns
+- enable or disable the display of one-bar patterns;
+Enable Two-bar patterns
+- enable or disable the display of two-bar patterns;
+Enable Three-bar patterns
+- enable or disable the display of three-bar patterns;
+Maximum of pips distance between equal prices
+- the accuracy of the patterns (*);
+Show Pattern Descriptions
+- show/hide pattern descriptions;
+Font size
+- the font size for the description text;
+Texts color
+- the color of the description;
+Font name
+- the font name for the description text.
+...
+The other thirty parameters allow to individually enable or disable the search and display of patterns.
+* Prices are considered equal if the difference between them is less than this number of points.
+Fig.1 One-bar candlestick patterns
+Fig.2 Two-bar patterns
+Fig.3 Three-bar patterns
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19960

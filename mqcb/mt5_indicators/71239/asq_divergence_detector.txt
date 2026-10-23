@@ -1,0 +1,21 @@
+ASQ Divergence Detector — Spot Reversals Before They Happen
+AlgoSphere Quant — Precision before profit.
+ASQ Divergence Detector scans your chart for regular and hidden RSI divergences and marks them with color-coded, non-repaint arrows. Each arrow is labeled with its type — Regular Bullish, Regular Bearish, Hidden Bullish, or Hidden Bearish — so you never have to guess what the signal means.
+A clean on-chart dashboard tracks the count of each divergence type in real time, giving you a statistical overview of how many bullish vs bearish signals have appeared on the current timeframe.
+Features
+Non-repaint divergence arrows on the main chart
+Four divergence types: Regular Bullish, Regular Bearish, Hidden Bullish, Hidden Bearish
+Color-coded arrows: green (reg bull), red (reg bear), blue (hid bull), gold (hid bear)
+Text labels at each divergence point showing the type
+Stats dashboard with running count per type
+Configurable swing length, lookback depth, and RSI period
+Alert popup, sound, and push notification on new divergence
+Minimal CPU usage — single-file, no external dependencies
+Parameters
+Detection: Swing length, lookback bars, RSI period, show regular on/off, show hidden on/off, show labels on/off. Alerts: Popup, sound, push notification. Dashboard: Show on/off, position, font size, colors.
+Installation
+Download ASQ_DivergenceDetector.mq5
+Place in MQL5/Indicators/
+Compile in MetaEditor
+Drag onto any chart
+MetaTrader 5, all brokers, all instruments, all timeframes. Free and open-source.

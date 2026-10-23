@@ -1,0 +1,8 @@
+Highest High fetch - Script.
+1 File - Size : 1.62 KB.
+The code defines a function "RangeHighs" that takes 4 integer inputs: pStartHour, pStartMins, pEndHour, and pEndMins, which represent the start and end time of a period.
+It starts by initializing a "MqlDateTime" structure "time" and getting the current time using the "TimeCurrent" function. Then, it sets the seconds and hour/minute values of "time" to the input parameters.
+The "StructToTime" function is then used to convert the "time" structure into a "datetime" type, which is stored in the "timeStart" and "timeEnd" variables. These variables represent the start and end time of the period of interest.
+The code then declares an array "high" and sets it to be a series using the "ArraySetAsSeries" function. The "CopyHigh" function is then used to copy the highest prices of the symbol during the specified period into the "high" array.
+Finally, the function returns the highest value in the "high" array, which is found using the "ArrayMaximum" function.
+The "RangeHighs" function can be used in a MetaTrader 5 expert Advisor to calculate the highest price of a financial instrument during a specified time range and use it in trading logic, for example for entry or exit conditions.

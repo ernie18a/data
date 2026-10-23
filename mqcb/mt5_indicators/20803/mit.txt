@@ -1,0 +1,17 @@
+Oscillator MIT (Momentum In Time) is a normal momentum with anchoring the calculations to the calculation start time.
+It has two input parameters:
+Hour begin
+- calculation start hour;
+Minutes begin
+- calculation start minutes.
+Calculations:
+MIT = Price[i] - Price[Time]
+where:
+i - current bar;
+Time - calculation start time (Hour begin:Minutes begin).
+It should be noted that, at the first run of the indicator, it may fail to display all data due to the specifics of history loading (if it is not available in full). You should either wait for a new tick for re-drawing or switch to another timeframe.
+Fig.1 Calculation start time 00:00
+Fig.2 Calculation start time 12:00
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20803

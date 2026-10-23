@@ -1,0 +1,11 @@
+Inspired by the
+message
+The indicator calculates the angle between the trend line and the horizontal. On the X axis - minute bars are taken, regardless of the timeframe, on the Y axis - points.
+Please note that local minima or maxima on the lower timeframes may not coincide with the beginning of the bar on the higher TFs.
+Because of this, the indicator values may not differ significantly on different TFs.
+The second variant of the indicator calculates the average rate of price change - pips/minute.
+How to use this indicator? I don't know. Imho, absolutely useless thing.
+I added a basement. However, the same useless.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/49985

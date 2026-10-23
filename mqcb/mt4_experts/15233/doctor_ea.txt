@@ -1,0 +1,4 @@
+This Expert Advisor depends on Moving Average 400 to indicate trend and "slope-direction-line" indicator, it will be attached with EA.
+Also, you can enable/disable TrailingStop from properties.
+I hope everyone who tried this expert, type a comment.
+Whatever your comment is an advice for improvement or a complain from EA, I want to know your opinions, it's very important to me.

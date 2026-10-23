@@ -1,0 +1,491 @@
+The "Pending orders DOWN" script sets a grid of orders below the current price.
+Input Parameters
+Gap for pending orders DOWN from the current price (in pips)
+- the distance from the current price to place the first pending order.
+Step between orders DOWN (in pips)
+- distance between pending orders.
+Type of pending orders DOWN
+- the type of the pending order (can be either Buy Limit or Sell Stop).
+DOWN quantity
+- the number of orders to be placed.
+Lots
+- the volume of each order.
+Stop Loss (in pips)
+- Stop Loss value.
+Take Profit (in pips)
+- Take Profit value.
+The script ensures the fastest possible sending of trade requests to place pending orders due to the use of the
+asynchronous mode of trading operations
+:
+m_trade.SetAsyncMode(
+true
+);
+Here is an example of sending requests for five pending orders:
+2017.08
+.
+28
+09
+:
+00
+:
+30.227
+Scripts script Pending orders DOWN (AUDCAD,Daily) loaded successfully
+2017.08
+.
+28
+09
+:
+00
+:
+35.272
+Trades
+'6121033'
+: sell stop
+0.01
+AUDCAD at
+0.98893
+sl:
+0.99143
+tp:
+0.98693
+2017.08
+.
+28
+09
+:
+00
+:
+35.272
+Trades
+'6121033'
+: sell stop
+0.01
+AUDCAD at
+0.98743
+sl:
+0.98993
+tp:
+0.98543
+2017.08
+.
+28
+09
+:
+00
+:
+35.273
+Trades
+'6121033'
+: sell stop
+0.01
+AUDCAD at
+0.98593
+sl:
+0.98843
+tp:
+0.98393
+2017.08
+.
+28
+09
+:
+00
+:
+35.273
+Trades
+'6121033'
+: sell stop
+0.01
+AUDCAD at
+0.98443
+sl:
+0.98693
+tp:
+0.98243
+2017.08
+.
+28
+09
+:
+00
+:
+35.273
+Trades
+'6121033'
+: sell stop
+0.01
+AUDCAD at
+0.98293
+sl:
+0.98543
+tp:
+0.98093
+2017.08
+.
+28
+09
+:
+00
+:
+35.274
+Scripts script Pending orders DOWN (AUDCAD,Daily) removed
+Five orders were sent in 1 millisecond!
+Here is the full report, from the script start to its removal (the time of first order sent was
+2017.08.28 09:00:35.272)
+:
+2017.08
+.
+28
+09
+:
+00
+:
+30.227
+Scripts script Pending orders DOWN (AUDCAD,Daily) loaded successfully
+2017.08
+.
+28
+09
+:
+00
+:
+35.272
+Trades
+'6121033'
+: sell stop
+0.01
+AUDCAD at
+0.98893
+sl:
+0.99143
+tp:
+0.98693
+2017.08
+.
+28
+09
+:
+00
+:
+35.272
+Trades
+'6121033'
+: sell stop
+0.01
+AUDCAD at
+0.98743
+sl:
+0.98993
+tp:
+0.98543
+2017.08
+.
+28
+09
+:
+00
+:
+35.273
+Trades
+'6121033'
+: sell stop
+0.01
+AUDCAD at
+0.98593
+sl:
+0.98843
+tp:
+0.98393
+2017.08
+.
+28
+09
+:
+00
+:
+35.273
+Trades
+'6121033'
+: sell stop
+0.01
+AUDCAD at
+0.98443
+sl:
+0.98693
+tp:
+0.98243
+2017.08
+.
+28
+09
+:
+00
+:
+35.273
+Trades
+'6121033'
+: sell stop
+0.01
+AUDCAD at
+0.98293
+sl:
+0.98543
+tp:
+0.98093
+2017.08
+.
+28
+09
+:
+00
+:
+35.274
+Scripts script Pending orders DOWN (AUDCAD,Daily) removed
+2017.08
+.
+28
+09
+:
+00
+:
+35.340
+Trades
+'6121033'
+: accepted sell stop
+0.01
+AUDCAD at
+0.98893
+sl:
+0.99143
+tp:
+0.98693
+2017.08
+.
+28
+09
+:
+00
+:
+35.341
+Trades
+'6121033'
+: order #
+164992356
+sell stop
+0.01
+/
+0.01
+AUDCAD at market done
+in
+68.657
+ms
+2017.08
+.
+28
+09
+:
+00
+:
+35.341
+Trades
+'6121033'
+: accepted sell stop
+0.01
+AUDCAD at
+0.98743
+sl:
+0.98993
+tp:
+0.98543
+2017.08
+.
+28
+09
+:
+00
+:
+35.342
+Trades
+'6121033'
+: order #
+164992357
+sell stop
+0.01
+/
+0.01
+AUDCAD at market done
+in
+69.645
+ms
+2017.08
+.
+28
+09
+:
+00
+:
+35.342
+Trades
+'6121033'
+: accepted sell stop
+0.01
+AUDCAD at
+0.98593
+sl:
+0.98843
+tp:
+0.98393
+2017.08
+.
+28
+09
+:
+00
+:
+35.343
+Trades
+'6121033'
+: order #
+164992358
+sell stop
+0.01
+/
+0.01
+AUDCAD at market done
+in
+70.006
+ms
+2017.08
+.
+28
+09
+:
+00
+:
+35.343
+Trades
+'6121033'
+: accepted sell stop
+0.01
+AUDCAD at
+0.98443
+sl:
+0.98693
+tp:
+0.98243
+2017.08
+.
+28
+09
+:
+00
+:
+35.343
+Trades
+'6121033'
+: order #
+164992359
+sell stop
+0.01
+/
+0.01
+AUDCAD at market done
+in
+70.346
+ms
+2017.08
+.
+28
+09
+:
+00
+:
+35.343
+Trades
+'6121033'
+: accepted sell stop
+0.01
+AUDCAD at
+0.98293
+sl:
+0.98543
+tp:
+0.98093
+2017.08
+.
+28
+09
+:
+00
+:
+35.343
+Trades
+'6121033'
+: order #
+164992360
+sell stop
+0.01
+/
+0.01
+AUDCAD at market done
+in
+70.312
+ms
+The time when placing of the last pending order was confirmed is
+2017.08.28 09:00:35.343
+. Totally, all operations took as little as 71 milliseconds!
+At the beginning of script operation, the
+correctness
+of the specified
+volume
+of pending orders is checked:
+//+------------------------------------------------------------------+
+//| Script program start function                                    |
+//+------------------------------------------------------------------+
+void
+OnStart
+()
+  {
+//---
+if
+(InpLots<=
+0.0
+)
+     {
+Print
+(
+"The \"Lots\" can't be smaller or equal to zero"
+);
+return
+;
+     }
+//---
+if
+(!m_symbol.Name(
+Symbol
+()))
+// sets symbol name
+return
+;
+if
+(!
+RefreshRates
+())
+return
+;
+string
+err_text=
+""
+;
+if
+(!CheckVolumeValue(InpLots,err_text))
+     {
+Print
+(err_text);
+return
+;
+     }
+//---
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19025

@@ -1,0 +1,12 @@
+Real author
+: Scriptong
+The
+Derivative
+indicator implemented as a colored histogram with an additional averaging.
+The indicator uses the SmoothAlgorithms.mqh library classes (copy it to <terminal_data_folder>\MQL5\Include). The detailed description of the classes is available in the article
+Averaging Price Series for Intermediate Calculations Without Using Additional Buffers
+.
+Fig. 1. The ColorDerivative indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18867

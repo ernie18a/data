@@ -1,0 +1,11 @@
+SSH is a famous indicator which uses moving average high and low prices of candles to draw two lines. The cross point of these two lines considered as signal for buy or sell.
+Illustrating higher TFs (time-frames) in lower one is a preferred way of technical tracking of market. SSH Multi-TF prepares higher TF of this indicator in lower TFs.
+Moreover, user can select higher TF from a small panel inside of chart without opening indicator input. Also, changing TF will change sort of Time-Frame buttons as we do not need lower time frame button to select.
+SSH Multi -Time-Frame with a panel to select TF from chart
+Code prepared a panel which can be used for any indicator that you want to make a Multi-TF form for. You will need to copy Panel graphical function and its necessities from
+input
+and
+OnInit()
+function. to calculate current TF candle index for higher time frame we can use
+iBarShift
+built-in function but I prefer to use my own function that find candle index which has very nearest time to higher TF candle time. This function is useful for other usage with same purposes too and totally I recommend it in comparison with original built-in function.

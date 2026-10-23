@@ -1,0 +1,21 @@
+The robot works only on
+www.bitex.one
+cryptocurrency exchange. It places a specified number of buy and sell orders considering the market depth price or a guide (fair contract price obtained from other cryptocurrency exchanges). The idea is to make money on the inefficiency of the real contract price and rebates, which the exchange pays for providing liquidity (for trading limit orders). One of the advantages of the robot is that it uses a full-fledged asynchronous model of working with transactions.
+Fig.1. Example of the robot setting the orders with max_pos=100, shift=0.001, level_count=3
+Inputs description:
+magic_number
+- robot ID. If there are several robots, then be sure to assign each next robot this identifier plus 100, for example, if the first robot has magic_number = 100, then the next ones should have magic_number = 200, 300, 400, etc.
+price_type
+- type of price, relative to which the prices of placed orders are to be calculated. 1 - price from traded symbol's market depth, 2 - marking contract price, 3 - contract index price.
+max_pos
+- number of contracts in each EA request.
+shift
+- shift of the first order relative to the marking price (marked purple). It is set in shares of the absolute price value, for example, if shift = 0.001 and the marking price = 6600, the closest buy and sell requests are shifted up and down from the marking price by 6.6 price points up and down (see Fig. 1)
+level_count
+- number of quotes levels. Each subsequent request is shifted by 'shift' value relative to the previous one.
+Fig. 2. Performed deals
+Fig. 3. Equity from the strategy tetser, BTCUSD, real tick, 79 ms of delays, profit in BTC
+Fig. 4. Statistics from the strategy tetser, BTCUSD, real tick, 79 ms of delays, profit in BTC
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22875

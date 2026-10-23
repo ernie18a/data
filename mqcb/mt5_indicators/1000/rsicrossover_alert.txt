@@ -1,0 +1,5 @@
+The simplest arrow semaphore indicator having alerts at the newest close bar and providing the possibility to send signals to a mailbox and push notifications to a smartphone. The indicator's signals are based on crossings of two RSIs.
+RSI-Crossover_Alert
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1000

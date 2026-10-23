@@ -1,0 +1,23 @@
+Script is created after idea from the comment on the script
+"Delete all objects on all charts"
+. Request was to enable deleting only specified object types from the charts.
+This script has list of all object types that can be created in the v765, and each object type deleting can be turned on or off.
+First two parameters define scope:
+Delete objects on all charts;
+if true - objects of selected types are deleted from all charts
+if false - objects of selected types are deleted only from the current chart
+Delete all objects
+if true - ignores selected types and deletes all objects
+if false - deletes only selected object types
+This two parameters are followed by the list of all object types. If "Delete all objects" is false, script will delete only object types that have selected value "true".
+Recommendations:
+Create keyboard hotkey for the script - right click on script name and then select "Set hotkey".
+Create different copies of the script for deleting different types of object. Name copies of the script according to intended function. For example:
+"DeleteTrendLines" for deleting old trend lines from the charts
+"DeleteFibonacci" for deleting all Fibonacci analysis related objects
+"DeleteArrows" for deleting all types of arrow objects from the charts
+...
+Suggestions, remarks and voting:
+If you have any suggestion how this script can be improved, please add a comment here.
+I'm not offended with low marks, but please add a comment and let me know why you did not like this script.
+Thank you.

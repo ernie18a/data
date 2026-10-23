@@ -1,0 +1,13 @@
+Oscillator PAIN (Price Action Indicator) displays the OHL3C candlestick price ratio over a specified period of time.
+It has two parameters:
+Period
+- calculation period;
+Method
+- calculation method.
+Calculation:
+Pain = (3*MA(Close) - MA(Open) - MA(High) - MA(Low)) / 2
+where:
+MA - moving average with the Period time period and the Method calculation method.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21108

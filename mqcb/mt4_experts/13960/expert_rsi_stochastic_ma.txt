@@ -1,0 +1,31 @@
+This Expert Advisor uses three indicators: MA(150), RSI(3) with the levels of 80 and 20, Stochastic(6, 3, 3) with the levels of 70 and 30. These parameters can be changed and customized. Also, the input parameters of the Expert Advisor need to be changed if the used quotes are not 5-digit.
+1. The
+direction
+of the deal entry is based on the MA (Moving Average). Only one deal per each side can be opened.
+If Bid > MA, then consider the buy direction.
+If Ask < MA, then consider the sell direction.
+2. The position
+entry
+when the RSI and Stochastic conditions are met.
+Buy if RSI and Stochastic are below the minimum level, i.e. RSI < 20 and Stochastic < 30.
+Sell if RSI and Stochastic are above the maximum level, i.e. RSI > 80 and Stochastic > 70.
+3.
+Exit
+the deal by Stochastic.
+Exit in the green in points.
+(Trailing Stop = 0) If the Trailing Stop in the input parameters is zero, then close the position once the Stochastic reaches the opposite level, if the deal is in green in points.
+b) close if the position is BUY and Stochastic > 70 and OpenPrice <= Bid
+s) Close if the position is SELL and Stochastic < 30 and OpenPrice >= Ask
+(Trailing Stop > 0) if the Trailing Stop is set in the input parameters, then once the Stochastic reaches the opposite level, the Stop Loss is trailed every time a new candlestick is opened on a specified distance from the price. It can be seen in the first figure. As a result, closed by trailing stop. It should be noted that a negative closure is also possible here, as Stop Loss does not get into the breakeven immediately at times.
+Closure at a loss in points.
+(allow Loss = 0) If allow Loss in the input parameters is equal to 0, then close the position once the Stochastic reaches the opposite level, if the deal is at a loss in points.
+b) Close if the position is BUY and Stochastic > 70 and OpenPrice > Bid
+s) Close if the position is SELL and Stochastic < 30 and OpenPrice < Ask
+(allow Loss > 0) If allow Loss is set in the input parameters, and the position is out of the deal entry zone by Stochastic, and the deal is at a loss by the specified amount or more, then the position is closed.
+b) Close if the position is BUY and Stochastic > 30 and OpenPrice - Bid >= allow Loss in points
+s) Close if the position is SELL and Stochastic < 70 and Ask - OpenPrice >= allow Loss in points
+Important!
+The purpose of this Expert Advisor is researching the market and the RSI and the Stochastic indicators. If this EA gets thought through, then a result with good profit may be obtained.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13960

@@ -1,0 +1,41 @@
+Depending on the timeframe selected (H1 or M30,see above) we attach 3 moving averages on the chart:
+Moving Average 1:
+MA period - 85, MA method - Linear Weighted, applied to Low,
+select red color.
+Moving Average 2:
+MA period - 75, MA method - Linear Weighted, applied to Low,
+select red color.
+Moving Average 3:
+MA period - 5, MA method - Exponential, applied to Close,
+select blue color.
+Also attach
+the MACD indicator with the following parameters
+: Fast EMA=15, Slow EMA=26, MACD SMA=1.
+All these indicators are available in any MetaTrader 5 client terminal.
+The recommended currency pairs and timeframes for use in "Puria method" strategy are listed below:
+AUDJPY - M30 - 15 points (i.e. the deal should be closed at 15 pips of Take Profit);
+NZDUSD - 1H - 25 points;
+USDCAD - H1 - 20 points;
+EURGBP - H1 - 10 points;
+USDJPY - M30 - 15 points;
+GBPUSD - М30 - 20 points;
+USDCHF - M30 - 10 points;
+EURCHF - H1 - 15 points;
+AUDUSD - M30 - 10 points;
+EURJPY - M30 - 15 points;
+CHFJPY - 1H - 15 points;
+CADJPY - M30 - 20 points;
+EURUSD - M30 - 15 points.
+Trading rules:
+Sell when
+the blue MA crossed two red MAs from above to below
+and the signal is confirmed by MACD indicator (one bar is closed below the Zero Level).
+Buy when
+the blue MA crossed two red MAs from below to above
+and the signal is confirmed by MACD indicator (one bar is closed above the Zero Level)
+Use maximal Stop-Loss value is 14 pips.
+The recommended value of Take Profit
+- is dependent on the currency pair (see above).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/138

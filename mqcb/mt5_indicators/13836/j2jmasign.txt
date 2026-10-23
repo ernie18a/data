@@ -1,0 +1,12 @@
+Semaphore signal indicator triggering when the
+J2JMA
+moving average changes direction.
+The indicator uses the CJJMA class from SmoothAlgorithms.mqh library (copy it to
+<terminal_data_folder>
+\MQL5\Include). The use of the class was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Fig.1. The J2JMASign indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13836

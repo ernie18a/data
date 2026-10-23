@@ -1,0 +1,10 @@
+Real author:
+Traders's Tools
+The KAGI chart in the simplest form.
+This indicator was first implemented in MQL4 and published in the
+Code Base at mql4.com
+on 06.02.2008.
+The KAGI-1 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1940

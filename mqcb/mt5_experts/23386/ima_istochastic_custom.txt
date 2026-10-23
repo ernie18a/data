@@ -1,0 +1,75 @@
+The EA uses custom indicators
+Custom Moving Average Levels
+and
+Stochastic Custom
+.
+The EA only operates when a new bar appears. It can be averaged, i.e., open multiple position in the same direction. Exit a position:
+By Stop Loss triggering
+By Take Profit triggering
+By the opposite signal
+There is the reverse of trading signals.
+Trading signals. Here,
+close[1]
+is the Close price on bar #1,
+ma_down[1]
+- the value of the Down buffer of indicator
+Custom Moving Average Levels
+on bar #1, ,
+ma_up[1]
+- the value of the UP buffer of indicator
+Custom Moving Average Levels
+on bar #1,
+sto_main[1]
+- the value of the Main buffer of indicator
+Stochastic Custom
+on bar #1, and
+sto_signal[1]
+- the value of the Signal buffer of indicator
+Stochastic Custom
+on bar #1:
+if
+(close[
+1
+]<ma_down[
+1
+] && (sto_main[
+1
+]<Inp_STO_Level2 || sto_signal[
+1
+]<Inp_STO_Level2))
+     {
+if
+(!InpReverse)
+         m_need_open_sell=
+true
+;
+else
+m_need_open_buy=
+true
+;
+     }
+else
+if
+(close[
+1
+]>ma_up[
+1
+] && (sto_main[
+1
+]>Inp_STO_Level1 || sto_signal[
+1
+]>Inp_STO_Level1))
+     {
+if
+(!InpReverse)
+         m_need_open_buy=
+true
+;
+else
+m_need_open_sell=
+true
+;
+     }
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23386

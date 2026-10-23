@@ -1,0 +1,23 @@
+This Expert Advisor (EA) is based on a trend-following and momentum confirmation strategy using two Exponential Moving Averages (Fast EMA and Slow EMA) together with the Relative Strength Index (RSI).
+Buy signal
+: Fast EMA crosses above Slow EMA and RSI is above a defined threshold.
+Sell signal
+: Fast EMA crosses below Slow EMA and RSI is below a defined threshold.
+Risk management
+: The EA calculates lot size dynamically according to account balance and risk percentage. It sets Stop Loss and Take Profit automatically.
+Trading window
+: Optional time filter allows trading only during specified hours.
+The code is fully written in MQL5 and can be attached to any chart. Users can adjust the parameters for EMAs, RSI, risk, lot size, Stop Loss/Take Profit levels, and trading hours to fit their own strategy.
+Recommended symbol and timeframe:
+EURUSD, H1 (works on other pairs and timeframes with parameter adjustment).
+Parameters:
+FastEMA / SlowEMA
+→ define moving averages.
+RSIPeriod / RSI_Buy / RSI_Sell
+→ RSI settings.
+RiskPercent
+→ % of account balance to risk per trade.
+StopLoss / TakeProfit
+→ in points.
+StartHour / EndHour
+→ trading time filter.

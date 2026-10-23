@@ -1,0 +1,6 @@
+The indicator represents the Kijun-sen line of the Ichimoku indicator. Kijun-sen is the mean of the high and low prices over the specified period. When the line is crossed by candles on the chart, this may indicate a change of trend. Accordingly, the line itself is colored: by default, turquoise color is set for uptrend and orange for the downtrend.
+Users can specify a custom period for calculation of the Kijun-sen line.
+Added the ability to send alerts when a trend changes or a new bar forms.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16571

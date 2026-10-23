@@ -1,0 +1,9 @@
+Use this script 2 minutes before high impact news pip moving faster FOMC, NFP, RATE BANK or else, for 4 digit broker
+It places Buy Stop and Sell Stop orders.
+Just click it or set on key right click the script and set it ctrl + 1 and your ready to follow the big impact news.
+It has Stop Loss if market change direction and have Target.
+Recomendation:
+Use just for
+RED news
+only.
+If in 3 minutes after news didn't touch the buystop and sell stop then the market didn't moving faster delete the position buystop and sell stop and waiting for another news.

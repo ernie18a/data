@@ -1,0 +1,3 @@
+XIT_FIBS indicator automatically plots Fibonacci lines on current chart. Lines have retracement values and price.
+Just attach indicator to your chart and it will automatically place Fibonacci retracement lines from the highest and lowest visible bars on the chart. Lines are green when Fibonacci trend is up and red when down.
+Make sure Auto Scroll is is check on your chart for the indicator to work correctly.

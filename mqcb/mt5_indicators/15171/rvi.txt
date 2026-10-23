@@ -1,0 +1,11 @@
+Real author:
+Witold Wozniak
+The Relative Vigor Index oscillator developed based on the article
+"Using The Fisher Transform"
+by John Ehlers that was published in November 2002 in the
+Technical Analysis Of Stock & Commodities
+magazine.
+Fig.1. The RVI and RVICloud indicators
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15171

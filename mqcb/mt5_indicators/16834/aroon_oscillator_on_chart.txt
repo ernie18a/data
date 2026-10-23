@@ -1,0 +1,5 @@
+Here is a version of Aroon oscillator, the same form with
+this code
+. It displays colored line, bars or
+ candles on the main chart (and it can do it automatically depending on
+ the chart type).

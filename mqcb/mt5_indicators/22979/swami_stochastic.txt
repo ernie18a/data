@@ -1,0 +1,8 @@
+Theory:
+In the March 2012 issue of TASC John Ehlers was describing the swami charts (indicators) again.
+This version:
+In addition to drawing colored zones, this indicator has what the original does not have : the "generic" stochastic (that is a type of average of all the stochastics calculated to display the "swami" zones). Without that generic stochastic it is virtually impossible to use any value as a criteria for some trend assessment (unless we consider the color as that, but with swami charts that can be quite difficult sometimes).
+Usage:
+Ehlers advises to use colors, but I strongly advise that you use the values of the "generic" stochastic for trend estimation.
+PS:
+Swami charts are not "CPU friendly". Take care of the settings for that reason.

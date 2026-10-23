@@ -1,0 +1,9 @@
+This is only extension of the standard indicator Awesome.
+What is changed:
+1. A signal line is drawn.
+2. Option of setting quick, slow and signal lines (for analyzing a chart upon Advanced Get parameters: 5-17-5, 5-34-5, 10-70-10 etc.).
+3. Option of shifting the signal line (Advanced Get: supplements DMA 5-5 may serve as an additional signal)
+Successful search for 4 and 5 waves (as of No. 1,2 of Advanced Get)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7719

@@ -1,0 +1,8 @@
+This Expert Advisor implements a classic moving average crossover strategy. It opens a buy position when the fast EMA crosses above the slow EMA, and a sell position when the fast EMA crosses below the slow EMA. Signals are evaluated on each new candle close to avoid duplicate trades within the same bar.
+Input parameters:
+Fast EMA period (default: 9)
+Slow EMA period (default: 21)
+Stop Loss in points (default: 300, set to 0 to disable)
+Take Profit in points (default: 600, set to 0 to disable)
+Fixed lot size (default: 0.10)
+Magic Number (unique identifier for trades opened by this EA)

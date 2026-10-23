@@ -1,0 +1,23 @@
+Description of the indicator
+The indicator has no indicator buffers.
+In
+a
+given
+time
+interval,
+we
+find
+the
+maximum
+and
+minimum
+prices
+-
+at
+these
+prices
+we
+build
+a
+rectangle.
+Pic. 1. Rectangle in interval

@@ -1,0 +1,6 @@
+The indicator marks the bars, the size of which exceeds the value specified in the settings. The body of the bar, the opening price and the closing price of the bar are taken into account.
+Description of the indicator settings:
+Bars_Size — the minimum bar size in points.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14674

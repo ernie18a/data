@@ -1,0 +1,6 @@
+The purpose of this indicator is to demonstrate newbie friendly way a structure of a multi time frame indicator based on recursion.
+A function which is responsible of the indicator calculation itself can be replaced easily.
+A functionality which is responsible of downloading of multi time frame data can also be utilized and if modified correctly,
+creating of multi symbol implementations are possible as well.
+2024.02.06:  A bug fix in synchronization of upper time frame values.
+In addition, the indicator uses close values of previous bars now. It is a practical way to avoid the price fluctuations of the current bar.

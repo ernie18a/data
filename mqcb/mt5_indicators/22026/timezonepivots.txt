@@ -1,0 +1,28 @@
+Real author:
+unknown
+The channel formed on an open price of an hour set in the settings.
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+HOURS  StartH=ENUM_HOUR_0;
+// Channel calculation start hour
+input
+ENUM_MIDDLE_TYPE MiddleLine=MODE_PRICE_OPEN;
+// channel line
+input
+uint
+Offset=
+100
+;
+// channel width in points
+input
+int
+Shift=
+0
+;
+// horizontal indicator shift in bars
+Fig. 1. TimeZonePivots
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22026

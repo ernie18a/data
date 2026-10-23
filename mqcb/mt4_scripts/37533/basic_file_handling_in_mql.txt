@@ -1,0 +1,4 @@
+This code will basically write some value of prices in a file.
+This is usually helpful when you want to create a local trade copier using file based approach.
+It can also be used to save some values in a file temporarily and read it later across login sessions.
+It can also be used to save custom logs in a file.

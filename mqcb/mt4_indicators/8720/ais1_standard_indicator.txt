@@ -1,0 +1,11 @@
+AIS1 Standard Indicator
+Modification: 10306
+Release Date: 26.02.2009
+Copyright (C) 2009, MetaQuotes Software Corp.
+https://www.metaquotes.net
+Copyright (C) 2009, Airat Safin
+https://www.mql5.com/en/users/ais
+Free Open Source Software
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8720

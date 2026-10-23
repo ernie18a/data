@@ -1,0 +1,26 @@
+CCI OBOS With Confirmation indicator is based on CCI and
+OBOS
+indicators. The indicator places signal labels to the price chart when crossing these indicator lines and confirming a trend direction.
+The indicator has three input parameters:
+OBOS period
+- OBOS calculation period
+CCI period
+- CCI calculation period
+Color candle
+- color candles according to a trend direction
+OBOS
+indicator is not required - it is calculated by the indicator independently
+Signals:
+When CCI line crosses the upper OBOS line upwards and a trend is bullish or uncertain, the
+green
+label is set on the candle open price
+When CCI line crosses the lower OBOS line downwards and a trend is bearish or uncertain, the
+red
+label is set on the candle open price
+Color candle:
+If Color candle = Yes, the price chart candles are colored in trend colors specified in the indicator color settings.
+Fig. 1. CCI OBOS With Confirmation
+Fig. 2. CCI OBOS With Confirmation + colored candles
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22375

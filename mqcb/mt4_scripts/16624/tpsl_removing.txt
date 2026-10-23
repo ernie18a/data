@@ -1,0 +1,1 @@
+Immediately deletes the SL/TP of all positions.

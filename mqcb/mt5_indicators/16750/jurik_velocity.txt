@@ -1,0 +1,1 @@
+Metatrader 5 version of Jurik velocity ("smoother moment"). Additional choice of prices added (the heiken ashi variation of prices).

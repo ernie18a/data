@@ -1,0 +1,5 @@
+Donchian Channel with the background filling inside the channel.
+Fig.1. DonchianChannelsCloud
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15479

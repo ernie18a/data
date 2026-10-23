@@ -1,0 +1,5 @@
+Directional system (ADX). The directional system has been created by George Wilder in the middle of the 70s as an addition to the PARABOLIC SAR system, and then further developed by a number of analysts.
+ADX Crossing
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7442

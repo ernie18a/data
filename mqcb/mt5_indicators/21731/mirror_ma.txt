@@ -1,0 +1,29 @@
+The Mirror MA indicator features two mirrored moving averages in a separate chart window calculated based on a difference between two MAs with different calculation data, and one signal line calculated based on a direct moving average data.
+It has eight input parameters:
+First MA period
+- direct MA calculation period;
+First MA method
+- direct MA calculation method;
+First MA applied price
+- direct MA calculation price;
+Second MA period
+- reverse MA calculation period;
+Second MA method
+- reverse MA calculation method;
+Second MA applied price
+- reverse MA calculation price;
+Signal period
+- signal line calculation period;
+Signal method
+- signal line calculation method.
+Calculations:
+Direct = MA1-MA2,
+Reverse = MA2-MA1
+Signal = MA(Direct, Signal period, Signal method)
+where:
+MA1 = MA(First MA applied price, First MA period, First MA method)
+MA2 = MA(Second MA applied price, Second MA period, Second MA method)
+If calculation data of these two MAs coincide (which lead to a zero difference between the two MAs), a warning with the error message will be displayed and the indicator will exit until the user changes the parameters.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21731

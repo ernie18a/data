@@ -1,0 +1,7 @@
+The EA searches the last upper and lower fractals and opens positions when the price exceeds these levels. If the upper fractal is exceeded, then a buy order is placed. If the lower fractal is exceeded, then a sell order is placed.
+There is no limit on the number of opened positions, i.e. every time a fractal level is exceeded, the EA places an order. The trailing stop feature is implemented, the correction of the stop loss is performed every 10 points.
+Below are the results of testing the EA for 2015 on the EURUSD pair on H4 chart, with the default settings.
+Attention, this EA is presented for evaluation purposes only, do not use it for live trading.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14613

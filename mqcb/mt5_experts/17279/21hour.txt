@@ -1,0 +1,16 @@
+The Expert Advisor places two pending orders at a certain time.
+Author of the idea
+—
+Maksim Zerkalov
+,
+author of the mq5 code
+—
+barabashkakvn
+.
+Two orders are placed at the specified time. When on eof them triggers, the second one should be deleted. Exit either by Take Profit or after a specified time interval, depending on what happens earlier.
+Added on 15.01.2017.
+Version "1.01" - now two time intervals are available.
+Test on EURUSD, M5 from 2016.06.26 to 2016.12.26:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17279

@@ -1,0 +1,7 @@
+extern string _tmp1_ = " --- EA parameters ---";
+extern int N = 3; - check the last 3 bars
+extern double Lots = 0.1; - working volume
+extern int StopLoss = 70; - StopLoss in points
+extern int TakeProfit = 120; - TakeProfit in points
+extern int Slippage = 3; - max. allowed slippage
+extern int Magic = 50607; - a unique identifier of the EA's orders

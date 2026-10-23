@@ -1,0 +1,11 @@
+Idea
+by
+Scriptor
+mq5 code author
+-
+barabashkakvn
+The Expert Advisor operates using pending Buy limit and Sell limit orders. The working timeframe to analyze OHLC is specified in the 'Work TimeFrame' parameter. Trading signals are obtained based on the analysis of the following indicators: iMACD (Moving Average Convergence/Divergence, MACD), iOsMA (Moving Average of Oscillator, OsMA) and iForce (Force Index, FRC).
+Search for results for the timeframes M1 to D1 for the default ES parameters:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23255

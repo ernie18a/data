@@ -1,0 +1,4 @@
+The idea of the indicator
+The indicator shows in the main window the signals (Arrow objects) of the iCHO indicator (Chaikin Oscillator, CHO) and the smoothed iCHO
+Rice. 1. CHO Smoothed Arrow
+Please note: indicators in the subwindow were added SPECIALLY IN MANUAL MODE, for visualization

@@ -1,0 +1,12 @@
+Description:
+Final version of my hybrid Expert Advisor.
+Important: If you want to profit you need to inside function CheckChances properly values, or values got from indicators, i created a buy and sell chance system-
+Place file from channel_scalpe.zip to mql4 directory - templates
+Place file Channel_scalper.mq4 to directory for indicators
+Place file HybridEA1.mqh to directory experts/includes
+Place file HybridEA01..mq4 to directory experts
+RUN:
+Open in metaeditor ChannelScalper, compile it
+Open in metaeditor HybridEA01 and compile it
+Finally run it inside of tester, after that you have a lot of options avaible, only compile HybridEA01 is needed for every change.
+And there is really a lot of functions and options.

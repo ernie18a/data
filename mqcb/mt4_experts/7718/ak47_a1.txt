@@ -1,0 +1,21 @@
+Dear Sir,
+I made my first EA (not scalper, t/p 100), ran it on EURUSD M1 for 2007 (01.01.2007 - 25.11.2007),
+and was very surprised - a profit of about 1 million USD with the initial deposit of 3000!
+Alas, it loses the deposit during 2005-2006 and December 2007.
+Attempts to use stop losses, closures by flats, time limitations and other worsen the situation.
+A lot of potentially profitable orders are filtered out. Obviously, drawdowns make themselves felt.
+Does anyone have ideas on improving the EA reliability without cutting off potentially "good" orders?
+Do not regard this a trouble, share.
+Regards
+P.S.
+The settings are maximally aggressive, the risk level can be reduced using the parameters:
+a) MaxLots - decrease down to 1.
+b) LotsRiskReductor - increase, up to 5-10
+c) SpanGator - increase up to 3-5.
+Although the risk reduction in a single-order system does not lead to improvement of the system in general.
+The open order blocks opening of other orders, both profitable and unprofitable.
+So, IMHO, the complete testing of the system quality can only be conducted without a limitation
+on the number of orders.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7718

@@ -1,0 +1,19 @@
+The author of the idea
+-
+Scriptor
+mq5 code author
+-
+barabashkakvn
+The Expert Advisor uses iMA (Moving Average, MA), iAO (Awesome Oscillator, AO) and custom
+Laguerre
+indicators. Stop loss and take profit can be set separately for BUY and SELL positions.
+The EA opens only one position at a time, therefore it is able to work both on hedging and netting accounts.
+Trading signals:
+Trailing is applied to positions - trailing parameters (
+Trailing Stop
+and
+Trailing Step
+) are similar both for BUY and SELL positions.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22906

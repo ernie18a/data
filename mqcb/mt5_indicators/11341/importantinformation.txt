@@ -1,0 +1,7 @@
+The indicator displays important information:
+Time: current, local, GMT;
+Account: account type, leverage, current balance, current equity;
+Symbol: spread, swap, tick value, allowed maximum and minimum lot.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11341

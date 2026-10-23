@@ -1,0 +1,17 @@
+There is such an indicator in Code Base
+Fibo Bars 2
+created by
+Ivan Karnilov.
+While working with it, the idea arose of simultaneously combining several Fibo Bars 2 in one indicator. The meaning is as follows: there are Fibo Bars 2 with a large period, there are two other periods, the work is carried out in the direction of the older one, when two younger periods match the color of the bars of the older period. As soon as any of the two Fibo Bars 2 of a smaller period starts to turn into a color that contradicts the color of the older period, the indicator turns yellow, thereby showing the trader that the movement that has arisen is going against the main trend.
+Options:
+period - the larger the set period value, the less sensitive the indicator
+fiboLevel - Correction level
+level1 - 0.236
+level2 - 0.382
+level3 - 0.5
+level4 - 0.618
+level5 - 0.762
+By choosing the fiboLevel in Fibo Bars 3, it will be the same for all Fibo Bars 2 layers.
+To adjust the indicator to your requirements and traded intervals, you need to look at the initial Fibo Bars 2, which will be considered an older trend for you. After that, on the lower Fibo Bars 2 periods, see what corrections you want to trade, and what will be considered a reversal for you.
+The settings are very flexible, if you use oscillators when Fibo Bars 3 is colored yellow, you can find even earlier entry points. You can hold a trade either until the oscillator is overbought / oversold, or until the yellow color reappears on Fibo Bars 3.
+If you find more interesting examples of how to work with this indicator, write I will be glad!

@@ -1,0 +1,5 @@
+Author: klot
+An interesting attempt to make levels based on ZigZag values. This indicator is strongly recommended for those who can not "feel" the market. The indicator gives a very clear view of the market.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7212

@@ -1,0 +1,8 @@
+A set of support and resistance levels built on the last tops of
+GannZIGZAG
+.
+To provide correct operation of the indicator, place the compiled GannZIGZAG.mq5 indicator file in terminal_data_folder\MQL5\Indicators.
+Figure 1. The GannZIGZAG_Levels indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2245

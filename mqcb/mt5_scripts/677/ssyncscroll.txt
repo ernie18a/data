@@ -1,0 +1,6 @@
+Script for the charts simultaneous scrolling.
+The script is launched on one chart. When scrolling any of the charts, the rest ones are also shifted. Such a position is marked by vertical lines.
+It is better to turn on the "Shift end of the chart from the right border" option when using the script.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/677

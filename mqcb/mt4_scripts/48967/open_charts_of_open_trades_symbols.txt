@@ -1,0 +1,3 @@
+//+------------------------------------------------------------------+
+//| This little utility script open charts of open trades symbols
+//| and prints list of open trades symbols in Terminal - Experts panel

@@ -1,0 +1,5 @@
+ForexLine is an indicator for MetaTrader 5, based on
+ForexLine
+indicator for MetaTrader 4.
+ForexLine indicator provides signals for trade: red line (sell signal) and blue line (buy signal).
+== Last Update: 2026/03/09 ==

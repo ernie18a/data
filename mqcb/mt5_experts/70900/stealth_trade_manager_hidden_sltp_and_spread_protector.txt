@@ -1,0 +1,18 @@
+In the real trading environment, having a perfect mathematical entry strategy is not enough. You must survive the systemic chaos of the broker's microstructure. Market makers and liquidity providers have full visibility of the order book, making standard Stop Loss and Take Profit levels vulnerable to stop-hunting and algorithmic spikes.
+The Stealth Trade Manager is a pure protection utility designed to shield your capital. It does not open trades; instead, it manages your manual or EA-opened positions by keeping the Stop Loss and Take Profit strictly virtual. The broker sees a position with no SL/TP (0.00), while this manager silently tracks the price on your local terminal and executes market closures only when your true levels are breached.
+Core Protective Features:
+Virtual Stop Loss & Take Profit:
+Hides your true exit intent from the market infrastructure.
+Spread Protector (Crucial):
+During high-impact news or the 00:00 server rollover, spreads can artificially widen by 500% to trigger stops without the actual bid/ask price moving. If the price hits your Virtual SL but the spread is abnormally high, the EA will hold the position and wait for liquidity to normalize before executing the exit, preventing fake "wicks" from destroying your account.
+Universal Management:
+By default, it manages all manual trades on the symbol. You can also assign a specific Magic Number for it to manage trades opened by other Expert Advisors.
+Input Parameters:
+Virtual_SL_Points:
+The hidden Stop Loss distance in points.
+Virtual_TP_Points:
+The hidden Take Profit distance in points.
+Max_Spread_To_Close:
+The maximum allowed spread (in points) to execute a Virtual SL. If the spread exceeds this, the EA will hold until it tightens.
+Magic_Number:
+Set to 0 to manage manual trades, or specify an EA's magic number to manage its positions.

@@ -1,0 +1,86 @@
+The EA is based on the permanent variation of the direction of the trades depending on the TakeProfit, StopLoss and TrailingStop levels. The positions are opened stepwis in the opposite to the previuosly closed positions direction. The positions are closed simultaneously when the TakeProfit, StopLoss or TrailingStop level is reached. The EA doesn't use any indicators, mathematical models and other wisdoms. Its profitability is based on the thing that the duration of the profitable positions is greater than the duration of the loss positions.
+Backbone can be used on any timeframes but with the different optimal TakeProfit, StopLoss and TrailingStop levels for each timeframe. I used EURUSD H1 and the 10/1/2007-9/30/2008 optimization period as an example. For speeding up the optimization I added a key to make all the trading decisions to be performed only at a new bar appearing, and I used "Open Prices only" during the optimization. I used "Every tick" to check the result of the optimization as you can see in the report below.
+The input parameters are (the values are optimal for EURUSD H1, 10/1/2007-9/30/2008)
+extern double MaxRisk =0.5; //Maximum risk for all trades at any time
+extern int ntmax =10; //Maximum number of trades in one direction
+extern int TakeProfit =170;
+extern int StopLoss =40; //0: disable; >0: enable
+extern int TrailingStop=300;//0: disable; >0: enable (StopLoss must be enabled too)
+As most of the optimized EAs, Backbone work well only on the optimized time range. It flushes if a "out-of-sample" checking is performed. For example, if Backbone took part in the 2008 championship, its balance would be 104 dollars.
+Nevertheless, Backbone can be used as a base of more complex and profitable EAs by means of adding different sorts of filters of loss trades. My advice: first of all optimize the Backbone on the TakeProfit, StopLoss and TrailingStop using the embedded in MetaTrader optimizer. Then fix the optimized TakeProfit, StopLoss and TrailingStop, add filters and optimize only the parameters of filetrs.
+Good luck!
+Strategy Tester Report
+Backbone
+InterbankFX-MT4 Demo Accounts 2 (Build 220)
+Symbol
+EURUSD (Euro vs US Dollar)
+Period
+1 Hour (H1) 2007.10.01 00:00 - 2008.09.29 23:00 (2007.10.01 - 2008.09.30)
+Model
+Every tick (the most precise method based on all available least timeframes)
+Parameters
+MaxRisk=0.5; ntmax=10; TakeProfit=170; StopLoss=40; TrailingStop=300;
+Bars in test
+7086
+Ticks modelled
+3103036
+Modelling quality
+n/a
+Mismatched charts errors
+219
+Initial deposit
+10000.00
+Total net profit
+9882406.34
+Gross profit
+31810499.95
+Gross loss
+-21928093.61
+Profit factor
+1.45
+Expected payoff
+4607.18
+Absolute drawdown
+672.94
+Maximal drawdown
+2039240.00 (20.33%)
+Relative drawdown
+82.13% (1922003.87)
+Total trades
+2145
+Short positions (won %)
+1138 (26.27%)
+Long positions (won %)
+1007 (31.28%)
+Profit trades (% of total)
+614 (28.62%)
+Loss trades (% of total)
+1531 (71.38%)
+Largest
+profit trade
+85560.00
+loss trade
+-23220.00
+Average
+profit trade
+51808.63
+loss trade
+-14322.73
+Maximum
+consecutive wins (profit in money)
+22 (1861260.00)
+consecutive losses (loss in money)
+79 (-1591660.00)
+Maximal
+consecutive profit (count of wins)
+1861260.00 (22)
+consecutive loss (count of losses)
+-1591660.00 (79)
+Average
+consecutive wins
+7
+consecutive losses
+16
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8607

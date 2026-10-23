@@ -1,0 +1,4 @@
+The main idea behind it is to search for support and resistance levels,becouse I could not fint any similar indicator. The support and resistance functions do exactly that. When calculating if both support and resistance levels exist, the indicator sdisplays them on the chrt and save their value, so that if the next price is between them, they will remain the same.
+There are 2 input parameters : Period and overlook. The indicator searches for the highest and lowest price for which it is true that it is the highest/lowest in the last (period) bars and also the highest/lowest in the period+overlook bars. If it finds both a highest and a lowest value it displays it on the chart.
+The i parameter running in the OnCalculate function should always run from period+overlook.
+The indicator does not use any include files. I recommend the settings: period: 20, overlook : 10.

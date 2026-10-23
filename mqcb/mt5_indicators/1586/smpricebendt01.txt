@@ -1,0 +1,14 @@
+The real author:
+HomeSoft-Tartan Corp.
+The indicator of the first price change derivative or simply trend speed and sign. Color indication has four states. Light colors correspond to strong trends, dark - to weak trends and a flat. For longs correspond blue shades of indication, for short - red shades.
+For each timeframe you should empirically define flat corridor value determined using LowLevel and HighLevel input parameters. As you will become a little experienced after a couple of days of the indicator observation, you can easily and with a high probability predict the trend and its approximate strength. No one should ever enter, if the chart is in the specified corridor from the purple Dot Dashes. You should enter when you are outside the corridor. It gives you a guarantee that you won't catch Stop Loss and can get some profit from the deal under a certain experience.
+This indicator was first implemented in MQL4 and published in
+Code Base
+on 16.10.2007.
+The indicator uses SmoothAlgorithms.mqh library classes (must be copied to the terminal_data_folder\MQL5\Include). The use of the classes was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Fig.1 The SmPriceBend-T01 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1586

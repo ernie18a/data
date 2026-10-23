@@ -1,0 +1,137 @@
+Description:
+This is an enhanced version of
+ZigZag based on the Parabolic SAR
+technical indicator with the added possibility to build Fibo levels on the last two indicator peaks and the channel generated with the use of three successive zigzag peaks with selection of these peaks.
+Indicator input parameters:
+//+----------------------------------------------+
+//| iSAR indicator input parameters              |
+//+----------------------------------------------+
+input
+double
+Step=
+0.02
+;
+// SAR pitch
+input
+double
+Maximum=
+0.2
+;
+// SAR maximum
+input
+bool
+ExtremumsShift=
+true
+;
+// Extremum shift flag
+//+----------------------------------------------+
+//| Channel creation input parameters            |
+//+----------------------------------------------+
+input
+int
+FirstExtrNumb=
+1
+;
+// First extremum number (0,1,2,3...)
+input
+color
+Upper_color=DarkViolet;
+// Channel upper line color
+input
+ENUM_LINE_STYLE
+Upper_style=
+STYLE_SOLID
+;
+//
+Channel upper line style
+input
+ENUM_WIDTH Upper_width=w_3;
+//
+Channel upper line width
+input
+color
+Middle_color=Blue;
+// Middle line color
+input
+ENUM_LINE_STYLE
+Middle_style=
+STYLE_DASHDOTDOT
+;
+//
+Middle line style
+input
+ENUM_WIDTH Middle_width=w_1;
+// Middle line width
+input
+color
+Lower_color=MediumVioletRed;
+// Channel lower line color
+input
+ENUM_LINE_STYLE
+Lower_style=
+STYLE_SOLID
+;
+//
+Channel lower line style
+input
+ENUM_WIDTH Lower_width=w_3;
+//
+Channel lower line width
+//+----------------------------------------------+
+//| Fibo levels generation input parameters      |
+//+----------------------------------------------+
+//---- Fibo properties at the last extremum
+input
+bool
+DynamicFiboFlag=
+true
+;
+// DynamicFibo display flag
+input
+color
+DynamicFibo_color=DeepPink;
+// DynamicFibo color
+input
+ENUM_LINE_STYLE
+DynamicFibo_style=
+STYLE_DASHDOTDOT
+;
+// DynamicFibo style
+input
+ENUM_WIDTH DynamicFibo_width=w_1;
+// DynamicFibo line width
+input
+bool
+DynamicFibo_AsRay=
+true
+;
+// DynamicFibo ray
+//---- Fibo properties at the second-to-last extremum
+input
+bool
+StaticFiboFlag=
+true
+;
+// StaticFibo display flag
+input
+color
+StaticFibo_color=Teal;
+// StaticFibo color
+input
+ENUM_LINE_STYLE
+StaticFibo_style=
+STYLE_DASH
+;
+// StaticFibo style
+input
+ENUM_WIDTH StaticFibo_width=w_1;
+// StaticFibo line width
+input
+bool
+StaticFibo_AsRay=
+false
+;
+// StaticFibo ray
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/585

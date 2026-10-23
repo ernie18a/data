@@ -1,0 +1,10 @@
+Scalping is one of the most popular strategies in the world that most traders have tried at least once. Because a scalper usually trades more than 10 trades a day, setting
+Stop Loss
+and
+Take Profit
+for each can be a bit boring. If your strategy is to trade on several financial instruments and Break Even as well, managing all these orders will be boring and often accompanied by mistakes. In addition, if you trade in lower Time-Frames and over several currency pairs, there may be a rapid price move just as you leave your desk for a cup of tea, and you miss the Break Even opportunity. However, the possibility of a quick price return and turning a profitable trade into a loss will not be far from the mind.
+Using this expert, you can easily determine the amount of Stop Loss and Take Profit.
+Immediately after you open a trade, the expert automatically sets the initial values and if the price moves enough in the desired direction, the trade will be Risked-Free or Break-Even.
+All input values are in POINT(Not PiP).
+extern double WhenToMoveToBE ////  You determine how many points the price should be away from the order entry point, so that the EA will Break-Even the order.
+extern double BEAmount /// You set the distance of the Stop Loss to the entry point.

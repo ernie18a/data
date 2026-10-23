@@ -1,0 +1,13 @@
+Simple Simulator is designed to practice manual trading on historical data.
+Only close prices are considered, so it is better to use line chart.
+There is no take-profit, stop-loss or lot configuration.
+Only one position can be opened at a time. Multiple positions are prohibited.
+USAGE
+Configure inputs; start bar, cycle speed (recommended 2 seconds minimum)
+Click Long to enter long position.
+Click Short to enter short position.
+Click Close to close opened position.
+Click Pause to pause simulation.
+Click End to end simulation manually.
+Simulation ended automatically at last bar.
+Net Profit/Loss is alerted at the end of the simulation.

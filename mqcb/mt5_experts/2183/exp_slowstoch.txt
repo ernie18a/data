@@ -1,0 +1,23 @@
+This trading system uses the
+Slow-Stoch
+oscillator.
+A trade decision is made when the stochastic changes direction, at the breakthrough of level 50 or when the color of the signal line cloud changes.
+The following input parameter is used for selecting an entry algorithm option:
+input
+AlgMode Mode=twist;
+// Algorithm for market entering
+For a correct operation of the EA, place the compiled indicator file Slow-Stoch.ex5 to terminal_data_folder\MQL5\Indicators.
+Note that the TradeAlgorithms.mqh library file allows using Expert Advisors with brokers who offer
+nonzero spread
+and the option of setting Stop Loss and Take Profit
+together with position opening
+. Other variants of this library can be downloaded from
+https://www.mql5.com/en/code/1578
+.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Figure 1 The instances of history of deals on the chart
+Testing results for 2013 at EURUSD H4:
+Figure 2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2183

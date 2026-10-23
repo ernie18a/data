@@ -1,0 +1,76 @@
+Daily Percentage Change (MetaTrader indicator)
+— calculates the change of currency rate related to the previous daily close and displays it in percentage points in the main chart window of the platform. Additionally, it can display the weekly and monthly percentage changes. Different colors can be set for positive or negative price increases. Also, a small customizable arrow helps to visualize the price change direction. If your
+broker
+uses an unconventional time zone, the indicator can use
+Time Shift
+parameter to adjust the hour it will use for the day's end. The indicator works equally well in MT4 and MT5.
+Input parameters
+General
+Time Shift
+(default = 0) — if non-zero, shifts the effective day's end forward or backward. Can be between -12 and 12.
+Show Weekly
+(default = true) — if
+true
+, weekly percentage change will be shown on chart.
+Show Monthly
+(default = true) — if
+true
+, monthly percentage change will be shown on chart.
+Appearance
+Font Size
+(default = 8) — font size for displayed text.
+Arrow Size
+(default = 10) — font size for displayed arrow.
+Up Color
+(default =
+clrGreen
+) — the color of the text and arrow when price change is positive.
+Up Arrow
+(default = "p") — the Windings 3 symbol for the increase arrow.
+Down Color
+(default =
+clrRed
+) — the color of the text and arrow when price change is negative.
+Down Arrow
+(default = "q") — the Windings 3 symbol for the decrease arrow.
+No Change Color
+(default =
+clrBlue
+) — the color of the text when there is no change in price.
+Positioning
+X Distance for Text
+(default = 21) — horizontal distance in pixels from the chosen screen corner to the daily change text.
+Y Distance for Text
+(default = 20) — vertical distance in pixels from the chosen screen corner to the daily change text.
+Text Corner
+(default = CORNER_LEFT_LOWER) — chart corner to display the daily change text.
+X Distance for Arrow
+(default = 5) — horizontal distance in pixels from the chosen screen corner to the daily change arrow.
+Y Distance for Arrow
+(default = 20) — vertical distance in pixels from the chosen screen corner to the daily change arrow.
+Arrow Corner
+(default = CORNER_LEFT_LOWER) — chart corner to display the daily change arrow.
+X Distance for Weekly Text
+(default = 21) — horizontal distance in pixels from the chosen screen corner to the weekly change text.
+Y Distance for Weekly Text
+(default = 35) — vertical distance in pixels from the chosen screen corner to the weekly change text.
+Weekly Text Corner
+(default = CORNER_LEFT_LOWER) — chart corner to display the weekly change text.
+X Distance for Weekly Arrow
+(default = 5) — horizontal distance in pixels from the chosen screen corner to the weekly change arrow.
+Y Distance for Weekly Arrow
+(default = 35) — vertical distance in pixels from the chosen screen corner to the weekly change arrow.
+Weekly Arrow Corner
+(default = CORNER_LEFT_LOWER) — chart corner to display the weekly change arrow.
+X Distance for Monthly Text
+(default = 21) — horizontal distance in pixels from the chosen screen corner to the monthly change text.
+Y Distance for Monthly Text
+(default = 50) — vertical distance in pixels from the chosen screen corner to the monthly change text.
+Monthly Text Corner
+(default = CORNER_LEFT_LOWER) — chart corner to display the monthly change text.
+X Distance for Monthly Arrow
+(default = 5) — horizontal distance in pixels from the chosen screen corner to the monthly change arrow.
+Y Distance for Monthly Arrow
+(default = 50) — vertical distance in pixels from the chosen screen corner to the monthly change arrow.
+Monthly Arrow Corner
+(default = CORNER_LEFT_LOWER) — chart corner to display the monthly change arrow.

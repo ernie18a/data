@@ -1,0 +1,9 @@
+Mean Indicator displays two levels: average price of all bars of the current day and the average price of the previous day.
+It has one configurable parameter:
+Day hour begin
+- day start hour
+The indicator works on Н1 and lower timeframes.
+The color of the middle line for the current day bars changes depending on the day's bars average price direction. The downward movement of the middle line is colored red, while the upward one is colored green.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22939

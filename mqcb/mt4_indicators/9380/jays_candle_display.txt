@@ -1,0 +1,14 @@
+Author:
+Oje Uadia
+Jays candle display is a multi candle displaying indicator.
+It displays the swing and body of candles on different timeframes from one minute up to one day.
+If the candle is a bear candle, the numbers will be displayed in red and green for bull candles.
+There is an option for you to change which candle you want to observe. By default, this indicator shows the current candle, but if you want to observe the previous candle, you need to change the candle shift to 1. If you change the candle shift to 2, it will display the candle 2steps away from the current candle.
+This indicator will be particularly useful for traders who rely on statistics heavily as they will see at a glance the movements of the selected candles.
+There are 2 columns;
+Body
+and
+SwinG
+.
+The body tells you how many pips the candle moved from open to close. Another way of looking at it would be to say how many pips you would have gained if you had entered at the opening in the correct direction and stayed till the close off the candle.
+The swing is simply the entire movement of the candle obtained by subtracting the high from the low of each of the displayed candles.

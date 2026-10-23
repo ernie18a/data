@@ -1,0 +1,5 @@
+Indicator Weekly_HILO. It represents HiGH and LOW prices.
+You can download the similar ones
+here
+.
+Weekly_HILO.

@@ -1,0 +1,7 @@
+The expert collects every incoming tick into the FXT file in realtime mode. The FXT file symbol and period correspond with the symbol and period of the chart the expert is attached to.
+The
+FXTHeader
+must be preliminarily downloaded from the Libraries section.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8659

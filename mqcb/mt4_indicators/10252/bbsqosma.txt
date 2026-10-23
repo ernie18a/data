@@ -1,0 +1,7 @@
+Description:
+It is the bbsqueeze indicator but with OsMA as momentum.
+If you want the original bbsqueeze indicator, you can find it here on Code Base.
+Be aware of the changes I have made on the setups for the Keltner Channels.
+It´s just for filtering out to many setups.
+With best regards
+Remyn

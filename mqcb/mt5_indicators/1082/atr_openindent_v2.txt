@@ -1,0 +1,8 @@
+The indicator shows the opening price of the senior time frame (e.g., 1-day time frame) and draws line indents to the opening price, thus forming a range. Depending on the parameters the indicator can be used in the trading system to trade range breakouts, or vice versa - to trade within the range.
+Tips:
+The simplest example of interpretation (based on the current H1 frame and base D1 frame):
+If over the previous 2-3 days the price has not broken through the range limited by indents, then there is a strong possibility that there will be a true breakout.
+If the price broke through the range in the previous days and the closing was out of the range, then today the instrument will likely trade within the range.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1082

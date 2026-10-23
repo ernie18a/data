@@ -1,0 +1,20 @@
+MA Lag Reduce indicator is an SMA with the ability to set the delay elimination factor.
+The indicator has three input parameters:
+Period
+;
+Applied price
+;
+Lag Reduce factor
+(*).
+Calculation:
+MLR = ((MA / PrevMA) ^ RLFactor) * MA
+where:
+MA - SMA(Applied price, Period)
+* If Lag Reduce factor is 0, the indicator repeats a simple moving average with the same calculation parameters.
+Fig. 1. MA Lag Reduce. Period 14, ratio 1.5
+Fig. 2. MA Lag Reduce. Period 14, ratio 3.0 as compared to SMA(14)
+Fig. 3. MA Lag Reduce. Period 14, ratio 1.5 as compared to SMA(14)
+Fig. 4. MA Lag Reduce. Period 14, ratio 0.0 as compared to SMA(14)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21537

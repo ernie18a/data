@@ -1,0 +1,1 @@
+ProfitInfo is an indicator to show in one window opened buy and sell trades of defined symbols and systems.

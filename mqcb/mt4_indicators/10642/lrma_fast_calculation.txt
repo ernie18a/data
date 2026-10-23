@@ -1,0 +1,8 @@
+The ideas from the article
+3 Methods of Indicators Acceleration by the Example of the Linear Regression"
+were implemented in this indicator.
+Both methods ("Moving Totals" and " Simplification") are used.
+It calculates the values very fast.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10642

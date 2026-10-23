@@ -1,0 +1,10 @@
+Indicator IDWMA (Inverse Distance Weighted Moving Average) is a moving average that is not sensitive to switching the timeframe, but more efficient on the higher timframes of the chart.
+MA calculation algorithm is that the indicator line "tries" to keep away from the average price value initially, followed by approaching to the price. Inverse Distance Weighted Moving Average is a bit smoother than SMA and resembles EMA with the same period.
+It has two parameters:
+Period
+- calculation period;
+Applied price
+- price used for calculations.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21039

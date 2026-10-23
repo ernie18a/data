@@ -1,0 +1,1 @@
+Quickly analyze charts on different TF by copying of objects (Trendline, Horizontal Line, Rectangle, Fibo) from active chart to all charts at this same symbol.

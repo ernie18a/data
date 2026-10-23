@@ -1,0 +1,7 @@
+Theory:
+As John Ehlers describes it:
+The CG is computed in much the same way as the Ehlers Filter. The position of the balance point is the summation of the product of position within the observation window times the price at that position divided by the summation of prices across the window. The mathematical expression for this calculation is:
+This version:
+Calculates the Center of Gravity indicator exactly the way it is described (including the trigger line, that is used the same way as in the original description). The only deviation is that you can chose the price (while in the original description only median price is used).
+Usage:
+You can use color changes as signals. CoG can not be bound to some levels, hence trying to add some fixed levels to it would not lead to meaningful result.

@@ -1,0 +1,16 @@
+Zero Lag is a modified EMA.
+Calculation formula:
+EMA ZL = α * (EMA + Gain * (Close - ZL [1])) + (1 - α) * ZL [1]
+The formula is similar to EMA with an addition of a new value Gain * (Close - ZL [1])
+Gain
+is the value selected from the interval [-GainLimit, GainLimit] to minimize the error for the current data sample (Close - ZL) → min
+The indicator has three input parameters:
+Period
+- calculation period;
+Gain limit
+- the Gain parameter;
+Applied price
+- price used for calculations.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19896

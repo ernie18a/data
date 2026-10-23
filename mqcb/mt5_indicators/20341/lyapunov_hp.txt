@@ -1,0 +1,12 @@
+This indicator is a result of an attempt to combine the theory of movement stability with the Hodrick-Prescott filter.
+The Hodrick-Prescott filter is a method for smoothing the time series, which is used to identify long-term trends in the time series, i.e. seasonal swings and trends.
+The general stability theory was developed by A. M. Lyapunov, who formulated and proved the main theorems of the movement stability theory.
+The indicator has two input parameters:
+Filter
+- filter calculation period
+Applied price
+- price used for calculation
+Due to the use of the HP filter, the indicator has the following feature: three bars including the current one are redrawn. This can be ignored however due to the relatively small lagging: the indicator is good at predicting possible changes in the price movement.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20341

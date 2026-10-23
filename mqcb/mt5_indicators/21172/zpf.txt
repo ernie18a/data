@@ -1,0 +1,25 @@
+ZPF (Zero Point Force) - zero point force indicator. It displays the market climate.
+It has six configurable parameters:
+Fast MA period
+- fast MA calculation period;
+Fast MA method
+- fast MA calculation method;
+Slow MA period
+- slow MA calculation period;
+Slow MA method
+- slow MA calculation method;
+Volume smoothing period
+- volume data smoothing period;
+Volume smoothing method
+- volume data smoothing method.
+Calculations:
+ZPF = Vol * (FastMA - SlowMA) / 2
+where:
+Vol = MA(Volume, Volume smoothing period, Volume smoothing method)
+FastMA = MA(Close, Fast MA period, Fast MA method)
+SlowMA= MA(Close, Slow MA period, Slow MA method)
+If line +ZP Force has positive values, it means that bullish climate predominates on the market. If the values are negative, it is bearish.
+For line -ZP Force, it is vice versa: Positive values mean bearish climate, and negative ones mean bullish climate.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21172

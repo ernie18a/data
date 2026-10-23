@@ -1,0 +1,6 @@
+John Ehlers introduced a variation of rsi calculation (as a part of another indicator) that he decided to call MyRSi. Since it produces results different then the built in rsi, it seemed as logical step that we should have that indicator too. Kept the name, but again : that name is used by John Ehlers (not me)
+Compared to built in rsi, there are some significant differences :
+it is ranging from -1 to 1 (hence zero cross can be used as a sort of signal)
+values are apart from different ranges) different than built in rsi and the signals (if we take level 50 as signals for built in rsi) are different
+Recommendations:
+you can use it as any other rsi

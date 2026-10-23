@@ -1,0 +1,2 @@
+In the early days there was one version of Trend Trigger Factor by M.H. Pee described in the Technical Analysis of Stocks and Commodities magazine in December, 2004. That was actually wrongly coded for MetaTrader 4.
+But since the results are not bad, here it is for MetaTrader 5 too (using the name it used in those early MetaTrader 4 days).

@@ -1,0 +1,7 @@
+Original Hull moving average is calculated using LWMA (Linear Weighted Moving Average). But sometimes that way of calculation tends to overshoot
+Possible solution for that is to use some other average method to calculate Hull
+This version :
+is using EMA (Exponential Moving Average) for calculation and it seems to be helping in the overshooting while keeping the signals at almost the same positions.
+is having the additional "speed" parameter (which can be helpful for further filtering out signals without changing the Hull period)
+Recommended usage :
+You can use color changes as signals for trend change

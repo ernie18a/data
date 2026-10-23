@@ -1,0 +1,18 @@
+Author: Korey
+In manual trading, watching how zero bar is forming makes you impatient in vain.
+Zero bar is often out of control in automated trading, because it is considered as not-yet formed.
+From these considerations, we concluded that it would be useless to display zero bar of the indicator due to false signals that occur while it was being formed.
+However, it is possible and necessary to display the indicator signal line on zero bar, since this line is rather integrated, i.e., forecast functions of the signal line are retained on zero bar.
+It is proposed to evaluate an indicator that does not display zero bar, but displays the signal line on zero bar.
+The indicator is colored in the B. Williams' AC/AO style.
+If the next bar is below the preceding one, then the down-color=red.
+If the next bar is above the preceding one, then the up-color=green.
+Recommendations:
+You can restore displaying of zero bar directly in the indicator's code
+:
+a) no zero bar displayed: if(i>=1),
+b) zero bar displayed:
+if(i>=0).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8066

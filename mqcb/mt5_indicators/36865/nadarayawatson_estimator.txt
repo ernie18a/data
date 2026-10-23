@@ -1,0 +1,5 @@
+Nadaraya and Watson, both in 1964, proposed to estimate values as a locally weighted average, using a kernel as a weighting function
+It is producing a non-causal (re-calculating) smoothed value that then can be used as an estimate of a possible trend for future values. No extrapolation added to this indicator (in order to avoid fuss that shall inevitably happen when people start using it, as they should not, as signals). The indicator is based on luxAlgo work for different trading platform
+Recommendations:
+Use it for discretional estimates only
+never use it in any signaling mode

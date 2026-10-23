@@ -1,0 +1,20 @@
+The Heiken Ashi indicator with smoothing. Depending on the parameters it can be plotted as bars or candles.
+It can plot the HeikenAshi bars (Fig. 1), and the standard price bars (or candles), painted as Heiken Ashi bars (Fig. 2).
+Figure 1. HeikenAshi bars
+Figure 2. Price bars, painted as Heiken Ashi bars
+Parameters:
+Variant
+- bars (candles): Heiken Ashi bars or standard price bars (candles);
+Type
+- drawing type: bars or candles;
+MAPeriod
+- МА period;
+MAMethod
+- МА method;
+SmPeriod
+- smoothing period;
+SmMethod
+- smoothing method.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/142

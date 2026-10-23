@@ -1,0 +1,10 @@
+Choppy market index indicator (originally published here :
+Choppy market index
+) is a useful indicator but it probably lacks one thing: a bit more smoothness.
+This version is addressing that issue. The method used is attempting to cut the lag to minimal (or to non-existing) and it seems to be working in an acceptable mode. Smoothing method used are the usual set of 4 average types:
+simple moving average
+exponential moving average
+smoothed moving average
+linear weighted moving average
+Setting the smoothing period to <=1, sets the smoothing off.
+PS: a comparison of the smoothed (upper) and regular (lower) values. It is obvious that the smoothed version is much smoother, and that the lag is acceptable even with simple moving average used in this case for smoothing (and sma is the "slowest" average of the averages that can be used for smoothing).

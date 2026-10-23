@@ -1,0 +1,2 @@
+Combination of two very well known indicators (CCI and Moving Average) that estimates the direction strength of the current market trend.
+Averages that can be used are the basic 4 types (SMA, EMA, SMMA and LWMA).

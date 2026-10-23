@@ -1,0 +1,4 @@
+Existing versions of this indicator are using built in fractals to find out the possible support and resistance.
+This version changes that: instead of using fixed period for fractal calculations, this version allows any period for that. That way you can choose whatever "level" of fractal you want to use for possible support resistance calculation.
+PS: bare in mind that as any fractals, this version too finds fractals in the past bars (fractals need confirmation from future bars too) and that makes the current period/2 support/resistance values subject to a possible change. For that reason any usage of this (and similar) indicator(s) should always use the same rules as for the fractals indicator.
+PPS: this version is displayed in a different manner. To have the channel clear, set the fill colors to none.

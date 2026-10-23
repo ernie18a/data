@@ -1,0 +1,7 @@
+At least one position is opened in each direction. First, open two counterpositions with minimal volumes. One of them becomes profitable, whereas the second one loses, of course.
+The profitable one will be closed by TakeProfit, and the losing one will be strengthened (by adding lots) at a certain interval. If the trend continues to go in the same direction, strengthen it again. The trend will turn earlier or later.
+Every step of strengthening is mde with doubling of the volume, so, after the trend has truned, the last losing position closed by TakeProfit will cover everything with a positive result. Then the operations start with the same: opening with the minimal volume and then step by step as described above.
+The initial deposit must be sufficient to cover all necessary steps. The volume on USDCHF ranged from 0.1 to 25.6 (Since February, there have been 9 strengthening steps made 4 times - 4 figures against the trend), so there is a need to have starting deposit of $50000 or more.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7097

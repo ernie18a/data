@@ -1,0 +1,15 @@
+Real author:
+Bob O'Brien
+A trend indicator with three states. During strong trends it colors bars in red or green depending on fall or rise. If there are no strong trends, the bar is gray.
+The indicator is based on the values of the
+MACD
+histogram on a weekly chart and the
+Force Index
+oscillator on a daily chart. Green bars occur during the growth of the MACD histogram and fall of the oscillator below zero, and red color appears when the histogram falls and the oscillator moves above zero.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 06.11.2007.
+Figure 1. Indicator TSD_PP_MACD_FORCE_Ind_v1
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2030

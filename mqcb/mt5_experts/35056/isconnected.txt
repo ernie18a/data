@@ -1,0 +1,2 @@
+Checks if Metatrader5 Terminal is connected to Internet or not.
+The expert will Print a message for the connectivity status

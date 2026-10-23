@@ -1,0 +1,39 @@
+It can be used as with hand-created trend lines, also with the lines created automatically using any other instrument. The indicator itself does not draw any lines, its purpose is to inform about the prices of the available trend lines and price crossing.
+Features:
+each line has its own counter signals
+when price crosses the line, in addition that sound/alert output is played, the font color of the corresponding informational line also changes to the color of the line where the crossing occurred.
+when deleting from the indicator the chart DOES NOT delete lines, but only the information about them
+information updating (including zeroing of all counter signals) is performed in the following cases:
+attaching the indicator to the chart / change of the indicator features,
+when changing features of any trend line,
+when adding / dragging any trend line,
+when deleting line,
+when pressing the "Update Info" button - when using an indicator with automatic lines, exactly the button must be used for updating the information.
+For audio signals any file of .wav format can be used. For this purpose place the file to the MQL5/Files folder and set its name (including extension) in the indicator parameters.
+The indicator does not work with the horizontal lines(!), only with the trend lines.
+Parameters:
+Signal mode
+- one of three signals mode in crossings:
+No signal
+- do not produce any signals,
+Only sound
+- sound only,
+Alert
+- to output alerts.
+Seconds between signals
+- the number of seconds between signals. Since Sleep() function can not be used in the indicators, to realize the pauses timer is used. I.e. in fact this parameter means not a pause between the signals but after what seconds the fact of crossing will be checked. That is why I do not recommend to put too much interval (default value is three seconds).
+Signals Quantity
+- the number of audio signals / alerts. Valid only for the current bar. If crossing happened in the end of the period, then, in fact, the number of signals will depend on the remaining time until the bar formation completes.
+Sound Filename
+- the name that will be replaying if Only sound mode is chosen. File in .wav format must be placed in MetaTrader 5/MQL5/Files folder. If there is no file with the set name in this folder, alert.wav file (from MetaTrader 5/Sounds folder) will be used.
+Show Lines Info
+- display the information about lines, exactly the name of the line on the current (last) bar. The indicator automatically chooses the color of the output labels depending on the chart background. If the price crosses the trend line, the labels are colored in the color of the line.
+Label name prefix
+- the line-prefix for labels' names (line names and prices). It must contain not less than 5 characters. It is designed for deleting only "your" labels when deleting the indicator from the chart.
+Video:
+A short video to illustrate the functional:
+Note:
+The archive has an audio file that must be unpacked and placed in MQL5/Files folder.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1428

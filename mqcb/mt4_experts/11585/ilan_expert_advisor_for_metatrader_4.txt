@@ -1,0 +1,6 @@
+Real author:
+Im not the author I just found it on the Internet and wanted to share it on mql5.com because I think this Expert Advisor has a lot of potential. I added two versions of this Expert Advisor.
+There is no need of an indicator.
+The Expert Advisor opens trades with help of RSI and if they dont hit the TP it opens new trades. Its Martingale but very interesting and good in my opinion. Test both because the second one has more settings.
+Recommendations:
+Like every Martingale EA it could generate high losses if you dont find the right pair and settings.

@@ -1,0 +1,9 @@
+Converted Ronz AutoSLTP MT4 version into MT5 version.
+Descriptions: EA for Automatic Stop Loss, Take Profit, Profit Lock, and Trailing Stop (With Special Methods). SL and TP could be hidden.
+Update:
+- Bug Fixes for Strategy Tester.
+- New Code Translations.
+Original Link:
+https://www.mql5.com/en/code/11649
+Original Author:
+https://www.mql5.com/en/users/ronz

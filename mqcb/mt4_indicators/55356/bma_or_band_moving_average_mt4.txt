@@ -1,0 +1,12 @@
+BMA MetaTrader indicator
+or Band Moving Average — was created by using the original moving average indicator and the idea from one of the site's visitors. The indicator displays itself in the form of three lines: the central one is the standard MT4/MT5 moving average (which can be simple, exponential or weighted), the upper line is the same as the central one but lifted up by 2% (by default), the lower line is the same as the central one but pushed down by 2%. Those two additional lines serve as the support and resistance levels. The indicator is available for both MT4 and MT5.
+Input parameters
+MA_Period
+(default = 49) — the period of the standard moving average (central line).
+MA_Shift
+(default = 0) — horizontal shift for all lines on the chart.
+MA_Method
+(default = Simple) — the method for MA drawing.
+Percentage
+(default = 2) — number of percents to vertically shift the upper and lower bands compared to the central line.
+The best way to use this indicator is to attach it to EUR/USD H4 chart (example shown above) and to sell when the price reaches upper band and to buy when the price reaches lower band. Moderate stop-loss level is advised in both cases as the price can sometimes break those levels or the lines may change directions suddenly.

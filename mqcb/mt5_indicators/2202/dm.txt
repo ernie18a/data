@@ -1,0 +1,10 @@
+Real author:
+AlexP
+A semaphore signal indicator. Four last bars are analyzed in its algorithm.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 27.09.2007.
+Figure 1. Indicator DM
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2202

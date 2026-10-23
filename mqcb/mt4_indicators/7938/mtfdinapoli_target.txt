@@ -1,0 +1,4 @@
+Author: mishanya
+MTF-Dinapoli_Target indicator. Works together with
+DinapoliTargets
+.

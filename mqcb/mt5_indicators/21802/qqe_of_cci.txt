@@ -1,0 +1,3 @@
+QQE
+(Quantitative Qualitative Estimation) is normally made using RSI (Relative Strength Index) as a "basic" indicator.
+This version is using CCI (Commodity Channel Index) instead. It seems that the job done by the QQE calculation is making a useful indicator and that it is useful in trading, but some experimenting is advised in any case.

@@ -1,0 +1,4 @@
+This is one of indicators that falls into the price oscillators family.
+Instead of using "pure price" this indicator uses Heiken Ashi values to determine the trend as well as the "strength" of the trend. Additional signal line is added for two purposes:
+To use it as any regular signal line is used: for crosses with the oscillator values.
+Since the oscillator values tend to be "nervous" (very fast changes), it does not hurt to have a smoothed values that, regardless to the natural lag when smoothing the values, is filtering out some false signals.

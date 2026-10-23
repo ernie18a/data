@@ -1,0 +1,27 @@
+ORIGINAL:
+jMasterRSXv1.mq4 by
+jirimac
+EDITS BY OTHER USERS:
+jMasterRSXv1C.mq4 and new updated version jMasterRSXv1D by
+Pipster
+Pleaser read notes inside the mq4 file.
+Thank you all of you guys for posting your edits..
+Backtest run from 01.01.2009 till now.
+This EA using rsx indicator so you need to download both the EA and the Indicator and place them in correct directory on your trading machine.
+Its developed for EURUSD pair and works fine when you drag it into your 1M EURUSD chart.
+Please feel free to improve and edit the code a do submit your results so we can all benefit from it.
+INSTRUCTION:
+When you extract the archive, you will get two files (
+jMasterRSXv1 and two RSX)
+1. Place the RSX.mq4 in your ..experts\indicators
+2. Place the
+jMasterRSXv1.mq4 in your ..experts
+3. Open your Script Editor and compile both files.
+Happy trading!
+EDITS BY
+Pipster
+Please see jMasterRSXv1C.mq4
+Backtest:
+There is a new updated version from
+Pipster
+called jMasterRSXv1D.

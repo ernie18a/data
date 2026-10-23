@@ -1,0 +1,8 @@
+The details about the Woodies CCI strategy can be found at
+site of Ken Wood
+(Woodie).
+Time period of the indicator can be specified in the input parameters:
+If you have found errors, please post messages at Forum.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/92

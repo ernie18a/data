@@ -1,0 +1,9 @@
+Theory :
+EMA (Exponential Moving Average) is very well known and widely used indicator. More information on it can be found here :
+https://en.wikipedia.org/wiki/Moving_average
+This version :
+It is rare that somebody changes something in the EMA calculation. In one old work of theirs, Bob Fulks and Alex Matulich proposed (as a part of T3 calculation improvement) changing the way how EMA is calculated in order to lessen the EMA lag. This version is using the way they proposed. In a lack of a better name, the name given is the "fast ema"
+Usage :
+You can use this version the usual way - change of color can be used as a signal
+Comparison :
+For the sake of seeing what it is about, at this example the colored line is the "fast ema" and the gray line is the "regular ema" with same parameters

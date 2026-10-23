@@ -1,0 +1,28 @@
+The Expert Advisor is intended for automatic placing of Buy Stop pending orders and Sell Stop pending orders simultaneously, Stop Losses and Take Profits on the user specified levels. As soon as the long position (BUY) is opened as ASK price crosses the levels, the remaining pending order (SELLSTOP) is deleted. Vice versa if the short position (SELL) is opened as BID price crosses the levels, the remaining pending order (BUYSTOP) is deleted. It places again both pending orders after the opened order has been closed. Thus spread widening is not dangerous. Nevertheless, you need to have this EA to prevent unwanted hitting of the Stop Loss levels.
+Main Purposes
+Automation of the process of placing the Buy Stop pending orders and Sell Stop pending orders simultaneously, Stop Losses and Take Profits on user-specified levels in case a brokerage company prohibits placing such orders closer than 'n' points from the current price.
+Avoiding unwanted triggering of Stop Loss without further confirmation with the close price.
+Setting Take Profit levels.
+Setting Trailing Stop levels.
+EA Settings
+DynamicLotSize
+- Choose to use money management system to calculate lot size based on Equity (true by default).
+EquityPercent
+- Risk percentage of equity (2 by default).
+FixLotSize
+- lot size to use if
+DyanamicLotSize
+is false (0.1 by default).
+StopLoss
+- Stop Loss level in point of the price chart (100 by default).
+TakeProfit
+- Take Profit level in point of the price chart (300 by default).
+TrailingStop
+- Trailing Stop level in point of the price chart (100 by default).
+PipsAway
+- trigger level for the "waiting" pending orders in point of the price chart (50 by default).
+Slippage
+- Slippage value.
+Magic
+- Magic number.
+The specified level for entering a position, the Stop Loss and Take Profit levels are marked with lines of different colors on the chart.

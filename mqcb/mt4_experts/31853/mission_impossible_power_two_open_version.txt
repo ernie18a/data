@@ -1,0 +1,1 @@
+It only demonstrates the possibilities of the multiplier.

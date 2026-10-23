@@ -1,0 +1,33 @@
+Idea by
+:
+Iurii Tokman
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+EA operation algorithm
+At the first start, open a BUY position with the volume of
+Lots
+. Then monitor (in OnTradeTransaction) all opening positions and remember (separately for BUY and SELL positions) the opening prices:
+If the price of the last opening a BUY position is ABOVE the current Ask price by
+Step
+- open a new BUY position;
+If the price of the last opening a SELL position is BELOW the current Bid price by
+Step
+- open a new SELL position.
+The virtual Take Profit is monitored, too: As soon as the position profit reaches or exceeds
+Virtual Take Profit
+, close the position by market.
+Inputs
+Lots
+- the volume of the position to be opened;
+Virtual Take Profit (in pips)
+- virtual Take Profit;
+Step (in pips)
+- the minimum step between the last position price;
+magic number
+- unique identifier for the EA.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20630

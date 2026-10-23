@@ -1,0 +1,5 @@
+This is the lightest Expert advisor for beginners to learn about market buy sell types and execute it on the strategy tester or Live market.
+This expert advisor will add market, limit pending or stop order based on input selection
+Make sure you enter correct price for Entry, Stoploss and Takeprofit to avoid Invalid Stop or Invalid Price error
+Just input your price where you want to execute orders, select order type and wait for EA to execute orders
+On Strategy tester comments are also shown.

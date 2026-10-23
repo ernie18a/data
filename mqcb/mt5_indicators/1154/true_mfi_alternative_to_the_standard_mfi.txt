@@ -1,0 +1,12 @@
+The real author:
+VladMsk
+Rise or fall in prices is often preceded by increased activity of trading. The True MFI indicator tries to use this factor. The MFI "standard" technical indicator uses price for calculation. As a result it practically coincides with the RSI that makes the MFI indicator rare to use. In the TMFI indicator the price is used for definition of movement direction and volume is used for calculation of movement amount. As the majority of the indicators, the promptness increases when timeframe increases.
+Indicator's file uses the classes of the SmoothAlgorithms.mqh library. Working with that class was described in details in the article
+"Averaging price series for intermediate calculations without using additional buffers"
+This indicator was first implemented in MQL4 and published in
+Code Base
+on 15.06.2010.
+Fig.1 The True MFI indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1154

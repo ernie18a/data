@@ -1,0 +1,22 @@
+Market structure tells you whether price is making higher highs and higher lows (up trend) or lower highs and lower lows (down trend), and when that changes. This indicator marks it on the chart with clear rules.
+Rules
+Swing high: a high above the highs of the N candles on each side (N = swing strength, default 5). Swing low: the mirror.
+A swing counts only when its N right candles are closed. So the labels appear N candles after the swing, and they never move or disappear (no repaint).
+Each swing gets a label: HH or LH (higher or lower than the last swing high), HL or LL (higher or lower than the last swing low).
+BOS (break of structure): a candle closes beyond the last swing in the direction of the trend - the trend goes on. Drawn as a dashed line.
+CHoCH (change of character): a candle closes beyond the last swing against the trend - the trend turns. Drawn as a solid line.
+The break can be counted by the close (default) or by the wick.
+Inputs
+Swing strength (candles on each side)
+Break by close or by wick
+Bars to scan (default 3000)
+BOS / CHoCH shown, swing labels on/off and how many
+Colours and font size
+Alerts on BOS and CHoCH: popup, push notification, e-mail
+Buffers for Expert Advisors (iCustom, not drawn)
+0: trend (+1 up, -1 down, 0 none yet)
+1: last swing high, 2: last swing low (EMPTY_VALUE when none)
+Example: double trend[]; CopyBuffer(handle, 0, 1, 1, trend); gives the trend on the last closed candle.
+Good to know
+It works on any symbol and time frame. A bigger swing strength shows the larger structure, a smaller one the short-term structure.
+The indicator only draws and calculates; it never trades.

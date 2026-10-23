@@ -1,0 +1,8 @@
+Theory :
+Probability density function based MA is a sort of weighted moving average that uses probability density function to calculate the weights. By it's nature it is similar to a lot of digital filters
+This version :
+It is made to be as simple as it gets and to be (as far as display is concerned) as similar to the built in, regular MACD. It is done so in order to allow simple comparison, testing and usage of this MACD to. The signal line is calculated as PdfMA too, so this is "all PdfMA" MACD indicator
+Usage :
+Same as normal MACD
+PS:
+Comparison of "regular" MACD (upper), this MACD using defaults (middle) and this MACD with variance set to 3 (lower). As you can see, increasing the variance, makes it smoother and still is faster than the regular MACD, hence some experimenting / playing with the variance can produce cleaner signals and less false signals

@@ -1,0 +1,2 @@
+This is not really an indicator, but a method of smoothing, noise reduction. This indicator is applied to another indicator already installed on the chart. It should be noted that in this case the indicator will be displayed incorrectly if it is applied to indicators such as RSI, or WPR, all values of which are either greater or less than zero. The presented version of the indicator works correctly with indicators that have positive and negative values, as shown in the screenshot:
+For the method of installing the indicator on the chart, see the attached video:

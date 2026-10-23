@@ -1,0 +1,18 @@
+The author of the idea
+:
+c0d3
+,
+the mq5 code author
+:
+barabashkakvn
+.
+The Expert Advisor tracks the signals of the
+i-Regr
+indicator on three timeframes M1, M5, H1.
+ATTENTION: by default it is assumed that the compiled indicator is available in [data folder]MQL5\Indicators\
+The values of the indicator from the H1 timeframe determine the type of position (BUY or SELL) to be opened. In addition, two lower timeframes, M1 and M5, are analyzed:
+To open a BUY position, the price must break the lower indicator line on M1 and M5.
+To open a SELL position, the price must break the upper indicator line on M1 and M5.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19110

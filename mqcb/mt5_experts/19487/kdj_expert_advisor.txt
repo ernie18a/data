@@ -1,0 +1,29 @@
+The author of the idea
+:
+yyy999
+,
+the mq5 code author
+:
+barabashkakvn
+.
+Warning! In order to provide conditions for the EA operation, you should add the compiled
+KDJ Indicator
+file to [data folder]\MQL5\Indicators
+Input Parameters
+KDJ: M1
+- the M1 parameter of the KDJ Indicator;
+KDJ: M2
+- the M2 parameter of the KDJ Indicator;
+KDJ: M2
+- the KdjPeriod parameter of the KDJ Indicator;
+Lots
+- position volume;
+Stop Loss
+Take Profit
+Risk
+- percentage of risk per trade based on the free margin.
+It is recommended to launch the EA on the H1 timeframe and higher.
+Example of operation on EURUSD,H1:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19487

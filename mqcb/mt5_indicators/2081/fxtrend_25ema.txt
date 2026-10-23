@@ -1,0 +1,9 @@
+FxTrend 25EMA is based on the difference of the EMA 25 value during two different moments.
+The FxTrend 25EMA value represent the momentum and the strength in the market. And the color represents the trend.
+Green => Bullish;
+Grey   => no trend;
+Red    => Bearish.
+In summary:
+Divergences;
+Current momentum & trend;
+Strength of the trend.

@@ -1,0 +1,1 @@
+This is a MetaTrader 5 version of RSI of MACD double. Values are shifted by -50 in order to have additional cross over a such zero line. It would in original be value 50 of the RSI. It can help a bit more to additionally identify a state of the trend.

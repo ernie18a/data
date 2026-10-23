@@ -1,0 +1,25 @@
+The MA Trend oscillator indicator statistically compares the position of a price relative to the MAs fan, which allows to identify the current market trend. Obtained data is displayed as a colored histogram in a separate window.
+It has five input parameters:
+First MA period
+- the period of the first Moving Average in the fan
+Step
+- period increase step for further Moving Averages in the fan
+MA count
+- the number of Moving Averages in the fan
+Method
+- method for calculating the Moving Averages
+Applied price
+- moving averages calculation price
+Calculation:
+MA_Trend = Sum(S) / MA count
+where:
+If Close is above the MA
+S(N) = 1
+If Close is below the MA
+S(N) = -1
+N - the number of the Moving Average in the fan
+MA - MovingAverage(Applied price, PeriodN, Method)
+PeriodN = First MA period + Step * N
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23125

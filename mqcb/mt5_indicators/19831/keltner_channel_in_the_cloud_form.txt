@@ -1,0 +1,15 @@
+It allows setting any price and calculation method for the central line. The channel lines are calculated based on ATR.
+It has five input parameters:
+Number of the periods to smooth the center line
+- central line calculation period;
+Number of periods to smooth deviation
+- period for calculating the channel lines;
+Factor which is used to apply the deviation
+- cloud size;
+The center line applied price
+- price used for calculating the central line;
+The center line smoothing method
+- smoothing method.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19831

@@ -1,0 +1,3 @@
+A simple indicator that can estimate when the current candle will close.
+It is limited to timeframes equal to or less than the Daily Period.
+Enjoy.

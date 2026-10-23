@@ -1,0 +1,3 @@
+Inverse Fisher Transform version of nonlag smoothed RSX.
+Since RSX is already a "smoother than RSI" RSI, if you wish to turn the nonlag smoothing off, then simple set the nonlag smoothing period to <=1.
+Inverse Fisher Transform enhances the extremes, and it makes the indicators usable for both trend mode as well as the reversal mode.

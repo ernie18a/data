@@ -1,0 +1,3 @@
+Trend strength assessment based on RSX.
+The purpose of the "trend strength" is to try to determine when the change of some other indicator is significant enough to make it a trend. Usually the "trend strength" indicator was using smoothed RSI.
+This version is using RSX. Since the RSX is a "smoother RSI" (without a lag), it makes it a very good basis to be used in the trend strength indicator calculation and produces entry points without too much false signals.

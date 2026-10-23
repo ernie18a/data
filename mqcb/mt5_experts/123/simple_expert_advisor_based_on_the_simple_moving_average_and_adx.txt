@@ -1,0 +1,10 @@
+This simple Expert Advisor uses
+Simple Moving Average
+and
+ADX
+indicators, as considered in the article "
+Step-By-Step Guide to writing an Expert Advisor in MQL5 for Beginners
+".
+It differs from the EA of the article, it doesn't control already opened positions.
+It shows the best results for 30mins, 1H, и 2H.
+Backtest result:

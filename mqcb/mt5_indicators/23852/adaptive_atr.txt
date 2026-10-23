@@ -1,0 +1,5 @@
+Theory :
+Average True Range (ATR) is widely used indicator in many occasions. It is calculated as SMA (Simple Moving Average) of true range (which is calculated as the greatest of the following: current high less the current low, the absolute value of the current high less the previous close and the absolute value of the current low less the previous close).
+This version is adding a "twist" to it : it is using Perry Kaufman's Efficiency Ratio to calculate adaptive true range
+Usage :
+It can be used the same way as the usual ATR is used

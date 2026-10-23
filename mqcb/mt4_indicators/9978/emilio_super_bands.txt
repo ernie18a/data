@@ -1,0 +1,12 @@
+Author:
+Emilio Reale is a friend of mine and asked me to post the code, he is an experienced traded that calculate this bands in metastock, I converted his code to MetaTrader 4.
+The idea behind this band was originally for the calculation of the correct level of the stop loss in a breakout strategy, next we discover to important things about: we can use the bands for trail correcly the stop loss and discover particulare squeeze of the volatility: when the bands are squeeze, we have high volatility when the bands, instead are opened we must expect a slow volatility.
+This bands also privide signals as shown in the picture we can use pivots of the bands for entry and the opposite band for stoploss and trailing according the bands movements.
+Image:
+this is a sample of the bands... super bands !
+Parameters:
+According the market we use we must setup the parameters to adjust
+period normally is 13 or 20
+mul is the multiplier for the type of market for the forex I use 1.5 for OIL or GOLD it's recommended 1.7 or higher
+Any improvements and suggestion are well accepted.
+thank you for your comments.

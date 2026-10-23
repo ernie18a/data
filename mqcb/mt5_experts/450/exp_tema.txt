@@ -1,0 +1,11 @@
+This multi-currency trend following Expert Advisor is based on the
+Triple Exponential Moving Average
+technical indicator.
+This Expert Advisor is thoroughly described in the article
+"Creating an Expert Advisor, which Trades on a Number of Instruments"
+.
+Testing results:
+Testing results of the exp_tema Expert Advisor from 2011.01.01 to 2011.08.24 (tested symbol EURUSD, Daily)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/450

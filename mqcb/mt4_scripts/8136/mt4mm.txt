@@ -1,0 +1,13 @@
+Hello, everybody!
+I've already uploaded this script on many forums, but I fully forgot about this Code Base. So I'm improving this now.:)
+Well, let me introduce to you aт MT 4 plug-in that interactively helps to calculate the amount of lots for the selected symbol according to the current balance (or equity) and loss limit, and then to place an order (or several orders for one symbol simultaneously) with the preset parameters.
+There are no viruses, Trojans, backdoors, or things like that in this plug-in.
+In the archive, there are help files (in CHM format) that describe all properties of the plug-in and its interface in details.
+Screenshot:
+Attached are the plug-in itself and a system DLL that may be necessary only, if the plug-in does not run and produces error 126.
+Archive contains detailed installation instructions.
+Best regards,
+Dmitry
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8136

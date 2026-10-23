@@ -1,0 +1,6 @@
+Skyscraper_Fix
+indicator in candle form. Trend-following candles are bright, while counter-trend ones are dark.
+Fig. 1. Skyscraper_Fix_Candle indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22425

@@ -1,0 +1,46 @@
+Author:
+Andrey N. Bolkonsky
+The Directional Trend Index (DTI) indicator (based on the
+Composite High/Low Momentum
+) is described by William Blau in the book
+"Momentum, Direction, and Divergence: Applying the Latest Momentum Indicators for Technical Analysis"
+.
+WilliamBlau.mqh must be placed in
+terminal_data_folder
+\MQL5\Include\
+Blau_DTI.mq5 must be placed in
+terminal_data_folder
+\MQL5\Indicators\
+Directional Trend Index (DTI)Indicator by William Blau
+Calculation:
+The Directional Trend Index is calculated by formula:
+100 * EMA(EMA(EMA( HLM(q) ,r),s),u)             100 * HLM(q,r,s,u)
+DTI(q,r,s,u) = ––––––––––––––––––
+–––
+–––––––––––– = –––––––––––––––––––––––––––––
+EMA(EMA(EMA( |HLM(q)| ,r),s),u)          EMA(EMA(EMA( |HLM(q)| ,r),s),u)
+if EMA(EMA(EMA(|HLM(q)|,r),s),u)=0, then DTI(price,q,r,s,u)=0
+where:
+q - number of bars, used in calculation of Up Trend Momentum and Down Trend Momentum;
+HLM(q)=HMU(q)-LMD(q) - the
+Composite High/Low Momentum
+;
+|HLM(q)| - the absolute value of HLM(q);
+HLM(q,r,s,u) - triple smoothed HLM(q);
+EMA(...,r) - 1st smoothing - EMA(r), applied to
+HLM(q)
+to the absolute values of HLM(q);
+EMA(EMA(...,r),s) - 2nd smoothed - EMA(s), applied to result of the 1st smoothing;
+EMA(EMA(EMA(...,r),s),u) - 3rd smoothing - EMA(u), applied to result of the 2nd smoothing.
+Input parameters:
+q - number of bars, used in calculation of HLM (by default q=2);
+r - period of the 1st EMA, applied to HLM (by default r=20);
+s - period of the 2nd EMA, applied to result of the 1st smoothing (by default s=5);
+u - period of the 3rd EMA, applied to result of the 2nd smoothing (by default u=3).
+Note:
+q>0;
+r>0, s>0, u>0. If r, s or u are equal to 1, the smoothing is not used;
+Min. rates = (q-1+r+s+u-3+1).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/384

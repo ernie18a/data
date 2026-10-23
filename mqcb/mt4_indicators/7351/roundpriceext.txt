@@ -1,0 +1,6 @@
+Author:
+Tartan
+Very convenient to confirm any market entry signals.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7351

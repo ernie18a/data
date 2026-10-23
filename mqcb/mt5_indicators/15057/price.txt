@@ -1,0 +1,42 @@
+A price label added to the right of the price with adjustable parameters.
+Indicator input parameters:
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+string
+SirName=
+"Price"
+;
+//The first part of the name of graphical objects
+input
+PriceMode Price=BID;
+//Price determining method
+input
+uint
+Digits_=
+0
+;
+//Digits to round
+input
+color
+Color_=
+clrMagenta
+;
+//Price color
+input
+uint
+FontSize =
+2
+;
+//The color of price labels
+input
+int
+Shift =
+10
+;
+//Horizontal shift of price labels in bars
+Fig.1. The Price indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15057

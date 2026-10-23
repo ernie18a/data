@@ -1,0 +1,7 @@
+Really simple EA for those who needs an example and for those who is looking for something to try out new
+Strategy Tester
+.
+EA is based on two
+MA
+lines. If one lines is crossing another then SELL or BUY.
+M30, Last month, after optimization.

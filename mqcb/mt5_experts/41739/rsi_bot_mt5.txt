@@ -1,0 +1,9 @@
+RSI Bot, send alert buy when RSI<=20, send alert sell when RSI>=80
+Parameter:
+input group             "RSI Setting"
+input int                  Inp_RSI_ma_period    = 30;             // RSI: averaging period
+input ENUM_APPLIED_PRICE   Inp_RSI_applied_price= PRICE_WEIGHTED; // RSI: type of price
+input double               Inp_RSI_LevelUP            = 80;          // RSI Fast and Slow: Level UP
+input double               Inp_RSI_LevelDOWN          = 20;          // RSI Fast and Slow: Level DOWN
+input string               Inp_RSI_stringUP           ="Signal Sell";// RSI Fast and Slow: Level UP label
+input string               Inp_RSI_stringDOWN         ="Signal Buy"; // RSI Fast and Slow: Level DOWN label

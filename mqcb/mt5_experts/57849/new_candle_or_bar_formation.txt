@@ -1,0 +1,2 @@
+This Bot detects the open of a new candle on any set timeframe, thereby making it easier to run a one-time code, place trades and call other functions. The code is written in the OnTick() function.
+the PERIOD_CURRENT is the timeframe at which you want to detect a new candle formation, you can change it to your preferred timeframe.

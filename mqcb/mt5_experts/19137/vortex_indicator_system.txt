@@ -1,0 +1,20 @@
+The author of the idea
+:
+Neil
+,
+the mq5 code author
+:
+barabashkakvn
+.
+A trading system based on the
+Vortex
+indicator signals.
+Note In order to provide conditions for the EA operation, you should add the
+Vortex
+compiled indicator file to [data folder]\MQL5\\Indicators
+A Note from the Author:
+In the article "The Vortex Indicator" published in the January issue (2010) of the "Technical Analysis of Stocks & Commodities" magazine, the authors suggested a trading idea in the form of a reversible system with the following filter of entries: a buy or sell operation is only performed in case of a breakout of High/Low of bars, in which the intersection of Vortex was registered.
+When VI+ crosses VI- upwards, it is a potential buy signal, but you should not enter the market until the price exceeds the High of the bar, on which the lines crossed. Likewise, when VI- crosses VI+ downwards, it is a potential sell signal, but you should not enter the market until the price falls below the Low of the bar, on which the lines crossed.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19137

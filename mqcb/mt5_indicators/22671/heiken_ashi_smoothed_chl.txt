@@ -1,0 +1,39 @@
+Indicator
+Heiken_Ashi_Smoothed
+with two color-filled channels built on mean-square deviations from the High and the Low of the indicator candles. For the indicator to be displayed correctly, you should check the Chart on Top checkbox in the chart properties.
+input
+Smooth_Method HMA_Method=MODE_JJMA;
+//Averaging method
+input
+int
+HLength=
+30
+;
+//depth of averaging
+input
+int
+HPhase=
+15
+;
+//averaging parameter,
+//---- for a JJMA ranging within -100 ... +100, it affects the quality of the transition process;
+//---- For VIDIA, it is the CMO period, while for AMA it is the slow moving average period
+input
+uint
+BBLength=
+10
+;
+//Bollinger period
+input
+double
+BandsDeviation=
+1.0
+;
+//deviation
+The indicator uses the classes of library SmoothAlgorithms.mqh (to be copied to terminal_data_catalog\MQL5\Include), working with which was described in details in article
+Averaging Price Series for Intermediate Calculations without Using Additional Buffers
+.
+Fig.1. Indicator Heiken_Ashi_Smoothed_Chl
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22671

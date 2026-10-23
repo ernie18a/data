@@ -1,0 +1,14 @@
+Trend Lord trend-following indicator displays the current market trend in a separate window.
+It has two configurable parameters:
+Period
+- calculation period
+Applied price
+Calculation:
+TrendLord = LWMA(MA, PeriodSQRT)
+where:
+PeriodSQRT = SQRT(Period)
+MA - LWMA(Applied price, Period)
+An upward trend is colored green, while a downward one is colored red. The flat movement is colored gray.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22515

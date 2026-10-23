@@ -1,0 +1,8 @@
+This indicator draws a horizontal line at the Average/Breakeven Price for multiple positions (blue if overall position is buy; red if overall position is sell and White for neutral).
+Additional information (just for the symbol on the chart):
+Distance in pips to Average Price;
+P/L in deposit currency;
+Net Lots (consolidated);
+Total Trades (buy or sell);
+Update 09.05.2015
+: v3.0 with few bug corrections.

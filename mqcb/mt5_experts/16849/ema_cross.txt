@@ -1,0 +1,13 @@
+Author of the idea
+—
+Collector
+,
+MQL5 code author
+—
+barabashkakvn
+.
+Analyzing crossing of the two iMAs on a zero bar. I have added the "Reverse" parameter, which changes the logics of the signal direction after crossing of the two iMAs.
+Testing on EURUSD, M15, from 20116.01.16 to 2016.11.04, initial deposit 3000:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16849

@@ -1,0 +1,330 @@
+Real Author:
+PozitiF
+The MultiLineMovingAverage indicator shows levels of six moving averages for different time frames in the active chart window.
+The parameters of the moving averages are set for each period, and you can also enable/disable the display of moving averages for time frames that you need/do not need.
+This indicator was first implemented in MQL4 and published in Code Base at
+mql4.com
+03.06.2011.
+Input parameters:
+//+------------------------------------------------+
+//| Indicator input parameters                     |
+//+------------------------------------------------+
+input
+string
+level_name=
+"MultiLineMovingAverage 1"
+;
+// Actuation level name
+input
+string
+level_comment=
+"MultiLineMovingAverage"
+;
+// Actuation level comment
+input
+ENUM_TEXT_POSITION TxtPos=Right;
+// Text position
+input
+uint
+TextSize=
+15
+;
+// Text size
+input
+color
+Up_levels_color=Lime;
+// Up MA level color
+input
+color
+Fl_levels_color=Gray;
+// Flat MA level color
+input
+color
+Dn_levels_color=Red;
+// Down MA level color
+input
+uint
+CandleCount=
+10
+;
+// Level length
+//---
+input
+bool
+display_MA1=
+true
+;
+// Show MA Level
+input
+ENUM_TIMEFRAMES
+Timeframe1=
+PERIOD_M5
+;
+// Timeframe of MA
+input
+ENUM_MA_METHOD
+MA1_SMethod=
+MODE_EMA
+;
+// Smoothing MA method
+input
+uint
+MA1_Length=
+10
+;
+// MA period
+input
+uint
+MA1_Signal_Bar=
+1
+;
+// MA signal bar
+input
+ENUM_APPLIED_PRICE
+AppliedPrice1=
+PRICE_CLOSE
+;
+// Applied price
+input
+ENUM_LINE_STYLE
+level1_style=
+STYLE_SOLID
+;
+// Actuation level style
+input
+ENUM_WIDTH level1_width=w_2;
+// Actuation level width
+//---
+input
+bool
+display_MA2=
+true
+;
+// Show MA Level
+input
+ENUM_TIMEFRAMES
+Timeframe2=
+PERIOD_M30
+;
+// Timeframe of MA
+input
+ENUM_MA_METHOD
+MA2_SMethod=
+MODE_EMA
+;
+// Smoothing MA method
+input
+uint
+MA2_Length=
+10
+;
+// MA period
+input
+uint
+MA2_Signal_Bar=
+1
+;
+// MA signal bar
+input
+ENUM_APPLIED_PRICE
+AppliedPrice2=
+PRICE_CLOSE
+;
+// Applied price
+input
+ENUM_LINE_STYLE
+level2_style=
+STYLE_SOLID
+;
+// Actuation level style
+input
+ENUM_WIDTH level2_width=w_2;
+// Actuation level width
+//---
+input
+bool
+display_MA3=
+true
+;
+// Show MA Level
+input
+ENUM_TIMEFRAMES
+Timeframe3=
+PERIOD_H2
+;
+// Timeframe of MA
+input
+ENUM_MA_METHOD
+MA3_SMethod=
+MODE_EMA
+;
+// Smoothing MA method
+input
+uint
+MA3_Length=
+10
+;
+// MA period
+input
+uint
+MA3_Signal_Bar=
+1
+;
+// MA signal bar
+input
+ENUM_APPLIED_PRICE
+AppliedPrice3=
+PRICE_CLOSE
+;
+// Applied price
+input
+ENUM_LINE_STYLE
+level3_style=
+STYLE_SOLID
+;
+// Actuation level style
+input
+ENUM_WIDTH level3_width=w_2;
+// Actuation level width
+//---
+input
+bool
+display_MA4=
+true
+;
+// Show MA Level
+input
+ENUM_TIMEFRAMES
+Timeframe4=
+PERIOD_H4
+;
+// Timeframe of MA
+input
+ENUM_MA_METHOD
+MA4_SMethod=
+MODE_EMA
+;
+// Smoothing MA method
+input
+uint
+MA4_Length=
+10
+;
+// MA period
+input
+uint
+MA4_Signal_Bar=
+1
+;
+// MA signal bar
+input
+ENUM_APPLIED_PRICE
+AppliedPrice4=
+PRICE_CLOSE
+;
+// Applied price
+input
+ENUM_LINE_STYLE
+level4_style=
+STYLE_SOLID
+;
+// Actuation level style
+input
+ENUM_WIDTH level4_width=w_2;
+// Actuation level width
+//---
+input
+bool
+display_MA5=
+true
+;
+// Show MA Level
+input
+ENUM_TIMEFRAMES
+Timeframe5=
+PERIOD_H12
+;
+// Timeframe of MA
+input
+ENUM_MA_METHOD
+MA5_SMethod=
+MODE_EMA
+;
+// Smoothing MA method
+input
+uint
+MA5_Length=
+10
+;
+// MA period
+input
+uint
+MA5_Signal_Bar=
+1
+;
+// MA signal bar
+input
+ENUM_APPLIED_PRICE
+AppliedPrice5=
+PRICE_CLOSE
+;
+// Applied price
+input
+ENUM_LINE_STYLE
+level5_style=
+STYLE_SOLID
+;
+// Actuation level style
+input
+ENUM_WIDTH level5_width=w_2;
+// Actuation level width
+//---
+input
+bool
+display_MA6=
+true
+;
+// Show MA Level
+input
+ENUM_TIMEFRAMES
+Timeframe6=
+PERIOD_D1
+;
+// Timeframe of MA
+input
+ENUM_MA_METHOD
+MA6_SMethod=
+MODE_EMA
+;
+// Smoothing MA method
+input
+uint
+MA6_Length=
+10
+;
+// MA period
+input
+uint
+MA6_Signal_Bar=
+1
+;
+// MA signal bar
+input
+ENUM_APPLIED_PRICE
+AppliedPrice6=
+PRICE_CLOSE
+;
+// Applied price
+input
+ENUM_LINE_STYLE
+level6_style=
+STYLE_SOLID
+;
+// Actuation level style
+input
+ENUM_WIDTH level6_width=w_2;
+// Actuation level width
+Fig.1 The MultiLineMovingAverage Indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1037

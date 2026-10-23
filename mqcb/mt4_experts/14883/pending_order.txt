@@ -1,0 +1,985 @@
+Pending Order is an order that will be executed if the price touches a point that we specify, in other words open pending order means ordering to open a position at a certain price level. So if price hits a predetermined level, then automatically we have an open trading positions.
+At EA, there are 6 kinds of order types:
+Type 0 = Buy
+Type 1 = Sell
+Type 2 = Buylimit
+Type 3 = Selllimit
+Type 4 = Buystop
+Type 5 = Sellstop
+6 kinds of type of the order, there are four kinds of types of pending orders available. We will discuss the type of pending orders one by one and then we will immediately make the action EA.
+1. Buy limit
+Buy limit order is an order running whereas under the price, so in order that needs change the structure is a type of order and the price is booked.
+Note on buy order below:
+OrderSend
+(
+Symbol
+(),
+0
+, start_lot,
+Ask
+,
+3
+,
+Ask
+-SL*
+Point
+,
+Ask
++TP*
+Point
+,
+""
+, Magic,
+0
+, Blue);
+No part of the underlined part that must be changed in order Pending such use.
+And the part that also must be considered is the
+D
+istance
+between the current prices at the booked price for pending orders
+Ask
+-
+D
+istance
+*
+Point
+Thus the following:
+OrderSend
+(
+Symbol
+(),
+2
+, start_lot,
+Ask
+-
+D
+istance
+*
+Point
+,
+3
+,
+Ask
+-
+D
+istance
+*
+Point
+-SL*
+Point
+,
+Ask
+-
+D
+istance
+*
+Point
++TP*
+Point
+,
+""
+, Magic,
+0
+, Blue);
+It could also be written:
+OrderSend
+(
+Symbol
+(),
+OP_BUYLIMIT
+, start_lot,
+Ask
+-
+D
+istance
+*
+Point
+,
+3
+,
+Ask
+-
+D
+istance
+*
+Point
+-SL*
+Point
+,
+Ask
+-
+D
+istance
+*
+Point
++TP*
+Point
+,
+""
+, Magic,
+0
+, Blue);
+2. Sell limit
+Sell limit orders are orders above prices are moving.
+As in order buy limit essential part is the
+type of order and distance
+, so please compare the different
+OrderSend
+(
+Symbol
+(),
+3
+, start_lot,
+Bid
++
+D
+istance
+*
+Point
+,
+3
+,
+Bid
++
+D
+istance
+*
+Point
++ SL*
+Point
+,
+Bid
++
+D
+istance
+*
+Point
+-TP*
+Point
+,
+""
+, Magic,
+0
+, Red);
+It could also be written:
+OrderSend
+(
+Symbol
+(),
+OP_SELLLIMIT
+, start_lot,
+Bid
++
+D
+istance
+*
+Point
+,
+3
+,
+Bid
++
+D
+istance
+*
+Point
++ SL*
+Point
+,
+Bid
++
+D
+istance
+*
+Point
+-TP*
+Point
+,
+""
+, Magic,
+0
+, Red);
+3. Buy stop
+Buy stop orders are orders above prices are moving.
+Please observe and compare with the previous type
+OrderSend
+(
+Symbol
+(),
+4
+, start_lot,
+Ask
++
+D
+istance
+*
+Point
+,
+3
+,
+Ask
++
+D
+istance
+*
+Point
+-SL*
+Point
+,
+Ask
++
+D
+istance
+*
+Point
++TP*
+Point
+,
+""
+, Magic,
+0
+, Blue);
+It could also be written:
+OrderSend
+(
+Symbol
+(),
+OP_BUYSTOP
+, start_lot,
+Ask
++
+D
+istance
+*
+Point
+,
+3
+,
+Ask
++
+D
+istance
+*
+Point
+-SL*
+Point
+,
+Ask
++
+D
+istance
+*
+Point
++TP*
+Point
+,
+""
+, Magic,
+0
+, Blue);
+4. Sell stop
+Sell stop order is an order under the ongoing price.
+Please observe and compare with the previous type
+OrderSend
+(
+Symbol
+(),
+5
+, start_lot,
+Bid
+-
+D
+istance
+*
+Point
+,
+3
+,
+Bid
+-
+D
+istance
+*
+Point
++SL*
+Point
+,
+Bid
+-
+D
+istance
+*
+Point
+-TP*
+Point
+,
+""
+, Magic,
+0
+, Red);
+It could also be written:
+OrderSend
+(
+Symbol
+(),
+OP_SELLSTOP
+, start_lot,
+Bid
+-
+D
+istance
+*
+Point
+,
+3
+,
+Bid
+-
+D
+istance
+*
+Point
++SL*
+Point
+,
+Bid
+-
+D
+istance
+*
+Point
+-TP*
+Point
+,
+""
+, Magic,
+0
+, Red);
+As I promised at the beginning, we will try to make EA simple by using all the four pending!
+But before we make we have to make an order according to the number of filter its type, I provide a to facilitate the script that is a function to calculate the type of order
+int
+totalorder(
+int
+m)
+{
+int
+total =
+0
+;
+for
+(
+int
+i =
+0
+; i <
+OrdersTotal
+(); i++) {
+if
+(!
+OrderSelect
+(i,
+SELECT_BY_POS
+,
+MODE_TRADES
+))
+continue
+;
+if
+(
+OrderSymbol
+() !=
+Symbol
+()||
+OrderMagicNumber
+()!=Magic ||
+OrderType
+()!=m )
+continue
+;
+   total++;
+ }
+return
+(total);
+}
+How to call
+Example:
+For Buy limit
+if
+(totalorder(
+OP_BUYLIMIT
+)==
+0
+){res=
+OrderSend
+(
+Symbol
+(),
+2
+, start_lot,
+Ask
+-
+D
+istance
+*
+Point
+,
+3
+,
+Ask
+-
+D
+istance
+*
+Point
+-SL*
+Point
+,
+Ask
+-
+D
+istance
+*
+Point
++TP*
+Point
+,
+""
+, Magic,
+0
+, Blue);}
+Or
+if
+(totalorder(
+2
+)==
+0
+){res=
+OrderSend
+(
+Symbol
+(),
+OP_BUYLIMIT
+, start_lot,
+Ask
+-
+D
+istance
+*
+Point
+,
+3
+,
+Ask
+-
+D
+istance
+*
+Point
+-SL*
+Point
+,
+Ask
+-
+D
+istance
+*
+Point
++TP*
+Point
+,
+""
+, Magic,
+0
+, Blue);}
+For Sell limit
+if
+(totalorder(
+OP_SELLLIMIT
+)==
+0
+){res=
+OrderSend
+(
+Symbol
+(),
+3
+, start_lot,
+Bid
++Distance*
+Point
+,
+3
+,
+Bid
++Distance*
+Point
++SL*
+Point
+,
+Bid
++Distance*
+Point
+-TP*
+Point
+,
+""
+, Magic,
+0
+, Red);}
+Or
+if
+(totalorder(
+3
+)==
+0
+){res=
+OrderSend
+(
+Symbol
+(),
+OP_SELLLIMIT
+, start_lot,
+Bid
++Distance*
+Point
+,
+3
+,
+Bid
++Distance*
+Point
++SL*
+Point
+,
+Bid
++Distance*
+Point
+-TP*
+Point
+,
+""
+, Magic,
+0
+, Red);}
+Continue to EA ....
+But I've tried to make EA simply to better understand
+please observe
+//+------------------------------------------------------------------+
+//|                                             EA Pending Order.mq4 |
+//|                        Copyright 2016, MetaQuotes Software Corp. |
+//|                                             https://www.mql5.com |
+//+------------------------------------------------------------------+
+#property
+copyright
+"Copyright 2016, WidiPramana."
+#property
+link
+"https://www.mql5.com"
+#property
+version
+"1.00"
+#property
+strict
+extern
+string
+Name_EA                 =
+"PendingOrder"
+;
+extern
+int
+Start_Hour              =
+6
+;
+extern
+int
+End_Hour                =
+20
+;
+extern
+int
+TP                      =
+20
+;
+extern
+int
+SL                      =
+100
+;
+extern
+double
+Lots                    =
+0.01
+;
+extern
+int
+Distance                =
+15
+;
+extern
+int
+Magic                   =
+69
+;
+double
+slb,tpb,sls,tps,pt;
+int
+res,wt,wk,tiket,ticet;
+//+------------------------------------------------------------------+
+//| expert initialization function                                   |
+//+------------------------------------------------------------------+
+int
+init()
+  {
+//----
+if
+(
+Digits
+==
+3
+||
+Digits
+==
+5
+) pt=
+10
+*
+Point
+;
+else
+pt=
+Point
+;
+//----
+return
+(
+0
+);
+  }
+//+------------------------------------------------------------------+
+//| expert deinitialization function                                 |
+//+------------------------------------------------------------------+
+int
+deinit()
+  {
+//----
+//----
+return
+(
+0
+);
+  }
+//+------------------------------------------------------------------+
+//| expert start function                                            |
+//+------------------------------------------------------------------+
+int
+start()
+  {
+label();
+if
+(Hour_trade()==
+1
+){
+if
+(totalorder(
+2
+)==
+0
+){res=
+OrderSend
+(
+Symbol
+(),
+OP_BUYLIMIT
+,NR(Lots),
+Ask
+-Distance*
+Point
+,
+3
+,
+Ask
+-Distance*
+Point
+-SL*
+Point
+,
+Ask
+-Distance*
+Point
++TP*
+Point
+,
+""
+, Magic,
+0
+, Blue);}
+if
+(totalorder(
+3
+)==
+0
+){res=
+OrderSend
+(
+Symbol
+(),
+OP_SELLLIMIT
+,NR(Lots) ,
+Bid
++Distance*
+Point
+,
+3
+,
+Bid
++Distance*
+Point
++SL*
+Point
+,
+Bid
++Distance*
+Point
+-TP*
+Point
+,
+""
+, Magic,
+0
+, Red);}
+if
+(totalorder(
+4
+)==
+0
+){res=
+OrderSend
+(
+Symbol
+(),
+OP_BUYSTOP
+,NR(Lots) ,
+Ask
++Distance*
+Point
+,
+3
+,
+Ask
++Distance*
+Point
+-SL*
+Point
+,
+Ask
++Distance*
+Point
++TP*
+Point
+,
+""
+, Magic,
+0
+, Blue);}
+if
+(totalorder(
+5
+)==
+0
+){res=
+OrderSend
+(
+Symbol
+(),
+OP_SELLSTOP
+,NR(Lots) ,
+Bid
+-Distance*
+Point
+,
+3
+,
+Bid
+-Distance*
+Point
++SL*
+Point
+,
+Bid
+-Distance*
+Point
+-TP*
+Point
+,
+""
+, Magic,
+0
+, Red);}
+     }
+return
+(
+0
+);
+  }
+//+------------------------------------------------------------------+
+int
+Hour_trade()
+{
+bool
+trade =
+false
+;
+if
+(Start_Hour > End_Hour){
+if
+(
+Hour
+() >= Start_Hour ||
+Hour
+() < End_Hour) trade =
+true
+;
+   }
+else
+if
+(
+Hour
+() >= Start_Hour &&
+Hour
+() < End_Hour) trade =
+true
+;
+return
+(trade);
+}
+int
+totalorder(
+int
+tipe)
+{
+int
+total=
+0
+;
+for
+(
+int
+i=
+0
+; i<
+OrdersTotal
+(); i++)
+  {
+if
+(!
+OrderSelect
+(i,
+SELECT_BY_POS
+,
+MODE_TRADES
+))
+continue
+;
+if
+(
+OrderSymbol
+()!=
+Symbol
+() ||
+OrderMagicNumber
+()!=Magic ||
+OrderType
+()!=tipe)
+continue
+;
+     total++;
+  }
+return
+(total);
+}
+double
+NR(
+double
+thelot)
+{
+double
+maxlots =
+MarketInfo
+(
+Symbol
+(),
+MODE_MAXLOT
+),
+    minilot =
+MarketInfo
+(
+Symbol
+(),
+MODE_MINLOT
+),
+    lstep =
+MarketInfo
+(
+Symbol
+(),
+MODE_LOTSTEP
+);
+double
+lots = lstep *
+NormalizeDouble
+(thelot / lstep,
+0
+);
+    lots =
+MathMax
+(
+MathMin
+(maxlots, lots), minilot);
+return
+(lots);
+}
+void
+label()
+{
+Comment
+(
+"\n "
+,
+"\n "
+,
+"\n ------------------------------------------------"
+,
+"\n :: Pending+Order"
+,
+"\n ------------------------------------------------"
+,
+"\n :: Spread                 : "
+,
+MarketInfo
+(
+Symbol
+(),
+MODE_SPREAD
+),
+"\n :: Leverage               : 1 : "
+,
+AccountLeverage
+(),
+"\n :: Equity                 : "
+,
+AccountEquity
+(),
+"\n :: Hour Server             :"
+,
+Hour
+(),
+":"
+,
+Minute
+(),
+"\n ------------------------------------------------"
+);
+}
+The EA runs as follows:
+Hopefully useful, please comment
+Happy profit, good luck, and have a nice day...

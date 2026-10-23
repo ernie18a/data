@@ -1,0 +1,32 @@
+Real author:
+lukas1
+The indicator draws a grid of eight stochastic oscillators on one chart. Indicator parameters are calculated by consequent multiplying of the first stochastic parameters by "koef" ratio implemented in the indicator input parameters. Each line parameters are displayed in tooltips.
+Second (signal) stochastic lines are not displayed in the indicator, but the visibility of the indicator is not affected - on the contrary, display of the entire grid has been improved.
+Indicator buffers are declared using the simplest class for the code optimization:
+//+------------------------------------------------------------------+
+//|  Variables arrays for the indicator buffers creation             |
+//+------------------------------------------------------------------+
+class
+CIndicatorsBuffers
+  {
+public
+:
+double
+IndBuffer[];
+  };
+//+------------------------------------------------------------------+
+//| Indicator buffers creation                                       |
+//+------------------------------------------------------------------+
+CIndicatorsBuffers Ind[LINES_TOTAL];
+If you want to change the number of lines on the chart, you should only change the value of the LINES_TOTAL constant:
+//+-----------------------------------+
+//|  Declaration of constants         |
+//+-----------------------------------+
+#define LINES_TOTAL         8
+// The constant for the number of the indicator lines
+This indicator was first implemented in MQL4 and published in
+Code Base
+at mql4.com 12.03.2010.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/678

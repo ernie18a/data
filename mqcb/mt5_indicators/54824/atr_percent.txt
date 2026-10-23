@@ -1,0 +1,7 @@
+ATR% is an ATR volatility indicator expressed as a percentage. It measures the average true price range for a certain period, taking into account not only daily highs and lows, but also possible price gaps.
+100% in this indicator is the maximum possible volatility of the asset. On the junior timeframes ATR% in most cases takes values up to 3%, on the senior timeframes the values can be higher.
+To calculate ATR%, the formula is used: ATRP = ATR / close * 100, where ATR is the average value of the largest price spread for a certain period, and close is the current price of the asset.
+SZY. ATR vs ATR Percent. The same yuzh, but in the left hand.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/54824

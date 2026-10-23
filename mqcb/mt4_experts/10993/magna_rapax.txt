@@ -1,0 +1,33 @@
+Intro:
+Magna Rapax in latin aka. the Great Hunter will hunt pips for you in the wildernesses of the Forex market.It is an automated expert advisor made for any timeframe (over 1 min is recommended).
+So after a long work, my expert advisor is complete.It is an attempt to do the impossible, to find a
+Holy Grail
+in forex,which is very very rare and very hard to find, but once found it does miracles.This EA and it's future versions should be the closest to a Holy Grail as it can ever get (and its FREE).The EA will use a combination of trend following,breakout and volatility filtering tehniques to put on trades.If you think thats not enough then you can switch on the martingale system (OPTIONAL) which is recommended to be set at
+4-5
+otherwise it will blow your account! Last but not least, many thanks for the MQL4 community for helping me develop this EA!
+Explanation:
+start_lot=0.01; //order lot size
+TAKEPROFITPIPS=99; // take profit in pips
+STOPLOSSPIPS=99; // stop loss in pips
+MAX_ACCOUNT_RISK=25; //in percent,closes all losing trades if AccountEquity goes below AccountBalance by this amount
+MARTINGALE_ACTIVATOR=false; // wanna use martingale system?
+MARTINGALE_LEVELS=5; // what levels to go,ex level 5= 2^5 multiplicator for lot
+MARTINGALE_PROGRESSION=false; //false= doubles only losing trades, true=doubles all trades
+TOTAL_BUY_ORDERS=1; //how many buy orders to place at a time,maximum
+TOTAL_SELL_ORDERS=1; //how many sell orders to place at a time,maximum
+MAX_SLIPPAGE=3; //max slippage tolerated
+FAST_MACD_P=5; //fast macd period
+SLOW_MACD_P=35; //slow macd period
+SIGNAL_PERIOD=5; //signal period macd
+ATR_SLOW_PERIOD=24; // atr slow period
+ATR_QUICK_PERIOD=5; // atr quick period
+ADX_PERIOD=14; // adx period
+ADX_LIMIT_TRIGGER=50; // trigger point which above adx will only take trades
+My results:
+Tips:
+I upload my settings file, at that settings this is what you get (i also used martingale level 5)
+The EA is neither complete nor optimalized, if you find a setting combination with higher win rate/profit or would like to add more features to it please contact me so i can improve the EA, after all it's our common goal ;)
+This EA is only the first edition, and if you help me to improve it by backtesting and trying different combinations of settings i will improve it and upload the reworked editions
+The EA also has a built in order closing function when the opposite trading signs appear,this will close seemingly losing trades, but you can also use tight stop-loss or take-profit as you wish
+DISCLAIMER
+: This expert advisor is only made for educational purposes.It is advised to backtest it first or use it on demo accounts.If you decide to use it on real accounts, you do it at your own risk.I as the author,am not responsible for any material or any other types of losses ocurring when/during the usage of this expert advisor!

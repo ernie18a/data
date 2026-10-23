@@ -1,0 +1,2 @@
+One of the usual "games" of a trader is to try to determine when an extreme is reached for some filter or average.
+This is one of the possible ways to assess that. In this indicator T3 is sigmoidal (Softmax) normalized - made as oscillator that ranges in 0 to 1 range, and if you use hyperbolic normalization it will range from -1 to +1 range.

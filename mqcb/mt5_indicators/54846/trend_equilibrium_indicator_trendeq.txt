@@ -1,0 +1,35 @@
+Settings and Parameters
+General Parameters
+Momentum Period
+The number of candles used to calculate momentum.
+Recommended value:
+14
+(The higher the value, the smoother the curve, but with a lag.)
+Volatility Period
+The number of candles used to calculate volatility.
+Recommended value:
+14
+Scaling Factor
+The scaling factor adjusts the indicator calculation to produce a readable curve.
+Default value:
+100000
+Thresholds
+Overbought Level
+The value above which the market is considered overbought.
+Default value:
+100.0
+Oversold Level
+The value below which the market is considered oversold.
+Default value:
+-100.0
+Functions
+Trend Determination:
+Positive values: Indicate upward momentum (bullish trend).
+Negative values: Indicate downward momentum (bearish trend).
+Volatility Adjustment:
+The indicator dynamically adjusts momentum calculations based on current market volatility, providing more accurate and timely signals.
+Overbought/Oversold Signals:
+Overbought:
+Indicates the price might soon correct.
+Oversold:
+Indicates the price might soon recover.

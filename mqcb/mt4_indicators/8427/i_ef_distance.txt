@@ -1,0 +1,15 @@
+Indicator i_EF_distance.
+Input Parameters:
+extern
+int
+Length
+=
+10
+;
+extern
+double
+Power
+=
+2
+;
+i_EF_distance

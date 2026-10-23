@@ -1,0 +1,35 @@
+Description:
+I like to keep a record of my trades so that I can look back and see where I might make improvements in my trading decisions. To make that easier I created a script that would take a snapshot of the chart, give it a unique name and file it for me. Later it occurred to me that I could just add this feature to the trading execution scripts I was already using and thus save myself a step. I use them with a HotKey setup.
+I thought someone might find the scripts or the actions they perform useful so I am making them available to all.
+There are 5 scripts that execute trades, "
+Buy Market
+", "
+Sell Market
+", "
+Buy Market with user check
+", "
+Sell Market with user check
+" and "
+Close Orders
+".
+Also the is original that just executes the picture of a chart called "
+Snapshot
+".
+Ironically there are no pictures of how they work, but there are comment instructions in the top of each script that should suffice and the titles are fairly self-explanatory:
+Buy Market
+- when dragged onto the chart it executes a buy at market and takes a picture of the chart at the time the trade is executed, names it and files it in C:\Program Files\MetaTrader4\experts\files.
+Trade values are modified in MetaEditor.
+Sell Market
+- when dragged onto the chart it executes a sell at market and takes a picture of the chart at the time the trade is executed, names it and files it in C:\Program Files\MetaTrader4\experts\files.
+Trade values are modified in MetaEditor.
+Buy Market with user check
+- pauses when dragged onto the chart to allow you to set the parameters before it executes a buy at market and takes a picture of the chart at the time the trade is executed, names it and files it in C:\Program Files\MetaTrader4\experts\files.
+Sell Market with user check
+- pauses when dragged onto the chart to allow you to set the parameters before it executes a sell at market and takes a picture of the chart at the time the trade is executed, names it and files it in C:\Program Files\MetaTrader4\experts\files
+Close Orders
+- when dragged onto the chart it closes
+all
+orders on the chart and takes a picture of the chart at the time the trade is executed, names it and files it in C:\Program Files\MetaTrader4\experts\files.
+Snapshot
+- when dragged onto the chart it takes a picture of the chart at that time, names it and files it in C:\Program Files\MetaTrader4\experts\files.
+Remembering the old adage "you get what you pay for", I suggest you check these out for yourself thoroughly (as you should with all code from this site) to see if they will work for you.

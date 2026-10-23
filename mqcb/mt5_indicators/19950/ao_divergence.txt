@@ -1,0 +1,14 @@
+The custom indicator AO_Divergence draws the AO indicator line in a separate window and displays found divergences in the indicator window and on the price chart.
+Unlike the standard Awesome Oscillator, this indicator allows configuring the parameters of the fast and slow MAs.
+The indicator has four input parameters:
+Fast MA period
+- the period of the fast SMA;
+Slow MA period
+- the period of the slow SMA;
+Bullish color
+- the color of bullish signal arrows and lines;
+Bearish color
+- the color of bearish signal arrows and lines;
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19950

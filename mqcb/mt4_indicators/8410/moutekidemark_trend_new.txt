@@ -1,0 +1,81 @@
+Another Demark indicator.
+Input Parameters:
+extern
+int
+showBars
+=
+200
+;
+// if showBars= 0 so the indicator will be shown for all the chart
+extern
+int
+LevDP
+=
+2
+;
+// Demar Pint Levels; 2 = central bar will be higher (lower) then 2 bars on the left side 
+                                  and 2 bars on the right one.
+extern
+int
+qSteps
+=
+1
+;
+// number of steps/ no more than 3
+extern
+int
+BackStep
+=
+0
+;
+// number of staps back
+extern
+int
+startBar
+=
+0
+;
+// ifstartBar=0 so we have recommendation for the current bar, if 1 - for possible next bar
+extern
+bool
+TrendLine
+=
+true
+;
+// false = no trend lines
+extern
+bool
+HorizontLine
+=
+true
+;
+// true = break levels
+extern
+bool
+ChannelLine
+=
+false
+;
+// true = channels which is parallel with trend lines
+extern
+bool
+TakeLines
+=
+true
+;
+// true = take profit lines
+extern
+bool
+Comments
+=
+true
+;
+// true = comments
+extern
+int
+Trend
+=
+0
+;
+// 1 = for UpTrendLines only, -1 = for DownTrendLines only, 0 = for all TrendLines
+Mouteki-Demark trend new

@@ -1,0 +1,7 @@
+The script removes from the chart a comment located in the upper left corner. The script can be useful after you remove from your chart indicators that add such comments but do not delete them in the
+OnDeinit
+functional block.
+Fig1. An example of such a comment
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18005

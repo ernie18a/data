@@ -1,0 +1,4 @@
+Quantora Position Size Calculator MT4 is a utility that calculates lot size based on risk and stop loss distance. It does not open trades or generate signals, and is intended to help manage risk before entering a position.
+The tool converts a selected risk percentage or fixed amount into a broker-compatible lot size using account value and stop loss. It considers symbol specifications such as tick value, tick size, and volume limits automatically.
+You can choose between balance, equity, or a custom account value, and calculate stop loss using points or price difference. It also provides basic risk and reward information along with an estimated margin.
+Suitable for traders who want a simple and consistent way to control position size and risk.

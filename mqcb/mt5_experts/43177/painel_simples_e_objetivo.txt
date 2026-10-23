@@ -1,0 +1,1 @@
+Funciona para todos os ativos e mercados, basta plugar no seu EA

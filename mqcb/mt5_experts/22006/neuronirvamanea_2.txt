@@ -1,0 +1,39 @@
+This EA is a further development of the first
+NeuroNirvamanEA
+version. Now, the EA has a working time interval from Start hour::Start minute to End hour::End minute
+The trading system is based on a simple neural network. A similar code based on a bilayer neural network:
+MTC Сombo
+.
+The EA uses indicators
+Laguerre_PlusDi
+(located in a separate window in the picture) and
+SilverTrend_Signal
+(located in the main chart):
+Before using it, the three optimization stages must be passed!
+All optimization stages are performed in the "1 minute OHLC" mode.
+Step 1
+Set parameter
+Pass
+to
+1
+- this is the key condition. At this stage, such parameters are optimized (please note columns "Start", "Step", and "End")
+Step 2
+Set parameter
+Pass
+to
+2
+- this is the key condition. Then unflag all the parameters that have been optimized at Step 1. At Step 2, such parameters are optimized (please note columns "Start", "Step", and "End")
+Step 3
+Set parameter
+Pass
+to
+3
+- this is the key condition. Then unflag all the parameters that have been optimized at Step 2. At Step 3, such parameters are optimized (please note columns "Start", "Step", and "End")
+Upon optimization, leave parameter
+Pass
+set to
+3
+and unflag the parameters optimized at Step 3. The EA is ready to go.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22006

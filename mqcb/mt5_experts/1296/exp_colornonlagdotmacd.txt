@@ -1,0 +1,9 @@
+The Exp_ColorNonLagDotMACD Expert Advisor drawn on the basis of the signals taken from the ColorNonLagDotMACD histogram. A signal to perform a deal is formed at bar closing when there is breakthrough in RMACD histogram of a zero level or the direction of the histogram or a signal line changes and when there is also breakthrough in signal line of the histogram (depending on the options selected in the input parameter Mode).
+Place ColorNonLagDotMACD.ex5 and NonLagDot.ex5 compiled files to the terminal_data_folder\MQL5\Indicators.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. The instances of history of deals in the chart.
+Testing results for 2011 at USDCHF H4:
+Fig. 2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1296

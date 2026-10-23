@@ -1,0 +1,7 @@
+This ZigZag indicator uses dual buffers to store high and low points. A point is considered as a new high/low point if its high/low is higher/lower than the high/low of N earlier bars' high/low, where parameter N is the number of earlier bars represented by
+Bars
+. Default value is 2.
+This indicator uses the idea of fractal whereby a point is considered high (or low) if the point is higher than its previous 2 bars' high (or lower than its previous 2 bars low) in forward motion. Hence, it doesn't wait for the next 2 bars to determine if it is higher or lower.
+This indicator also eliminates the problem of outside bar as explained by Aleksandr Chugunov in his article
+Professional ZigZag
+. See Figure 2 below. What it does is that it will scan to the last node to check if there exists any point higher (or lower) than the current point. If there is, then that point will be set to be the ZigZag node.

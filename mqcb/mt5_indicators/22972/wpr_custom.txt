@@ -1,0 +1,49 @@
+The following characteristics were made input parameters:
+color of the indicator main line
+width of the indicator main line
+values of the two indicator levels
+Why was this done
+When testing EAs using iWPR (Williams’ Percent Range, %R) standard indicator, the picture is always far from promising: the indicator color cannot be changed (#1) and, most importantly, the level values are always the same (#2)!
+At the same time, the EA based on iWPR can use the levels "-25" and "-75", but only the levels that are strictly fixed in the indicator itself ("-20" and "-80") will be shown during visual testing. This display seemed inconvenient to me, therefore some settings were made to the input parameters.
+Now, after being called from the EA, the indicator levels exactly match the trading system. Example of calling
+WPR Custom
+implemented in the
+Vlado
+EA, MQL5 code
+//--- create handle of the indicator iWPR
+handle_iCustom=
+iCustom
+(m_symbol.Name(),
+Period
+(),
+"WPR Custom"
+,Inp_WPR_Period,
+                          Inp_WPR_Color,Inp_WPR_Width,Inp_WPR_Level1,Inp_WPR_Level2);
+//--- if the handle is not created
+if
+(handle_iCustom==
+INVALID_HANDLE
+)
+     {
+//--- tell about the failure and output the error code
+PrintFormat
+(
+"Failed to create handle of the iWPR indicator for the symbol %s/%s, error code %d"
+,
+                  m_symbol.Name(),
+EnumToString
+(
+Period
+()),
+GetLastError
+());
+//--- the indicator is stopped early
+return
+(
+INIT_FAILED
+);
+     }
+and the result of a display in the strategy tester:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22972

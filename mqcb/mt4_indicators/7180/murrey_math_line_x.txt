@@ -1,0 +1,12 @@
+Author:
+Vladislav Goshkov (VG)
+The Murrey Math system comprises two main components: geometry, used for measuring the price movements of the specified market, and a set of rules based on the Gann technique and Japanese candlesticks.
+Murrey Math
+is not the Holy Grail, but is able to predict the price movement if used properly. As the rules of
+Murrey Math
+are tied to geometry, trader can expect certain preset price movements. By identifying these movements, the trader increases his chances of being on the right side of the market. The main idea of trading by
+Murrey Math
+can be defined as follows - determination of the market trend, trend trading and quick exit from the trend with profit (since the trend are very short).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7180

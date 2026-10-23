@@ -1,0 +1,37 @@
+Modify to allow direct specification of the starting point of the Parabolic SAR.
+Parameters
+Trailing Mode ･･･ None / Trailing Fixed / Trailing Fixed Parabolic SAR
+calcuration part of Parabolic SAR
+bool CSampleExpert::LongModifiedEx(void)
+  {
+   bool res=false;
+//--- check for trailing stop
+   if(m_trailing_max < m_last_bar.high)
+     {
+      double tp=m_position.TakeProfit();
+      double sl=m_position.StopLoss();
+
+      //--- calcurate ParabolicSAR
+m_trailing_max = m_last_bar.high;
+      m_trailing_step = fmin(InpPSAR_Maximum, m_trailing_step + InpPSAR_Step);
+      double sar_stop = sl + (m_trailing_max - sl)* m_trailing_step;
+sar_stop=NormalizeDouble(sar_stop,m_symbol.Digits());
+      //---
+
+      if((sl==0.0 || sl < sar_stop) && sar_stop < m_symbol.Bid())
+        {
+         //--- modify position
+         if(m_trade.PositionModify(Symbol(),sar_stop,tp))
+            printf("Long position by %s to be modified",Symbol());
+         else
+           {
+            printf("Error modifying position by %s : '%s'",Symbol(),m_trade.ResultComment());
+            printf("Modify parameters : SL=%f,TP=%f",sar_stop,tp);
+           }
+         //--- modified and must exit from expert
+         res=true;
+        }
+     }
+//--- result
+   return(res);
+  }

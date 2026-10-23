@@ -1,0 +1,5 @@
+Author:
+Daniel Frieling
+Many consecutive Heiken Ashi candles of the same color often indicate a soon and harsh trend reversal. This indicator shows the number of consecutive same color candles. So you can see overbought and oversold situation at first glance.
+Recommendations:
+This Indicator depends on a Heiken Ashi Indicator. Use the attached Heiken Ashi Indicator file and you're fine or install your own and specify its filename in the Indicator's Settings.

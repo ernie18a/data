@@ -1,0 +1,1 @@
+Since it was one of the most wrongly used (by the "solar wind" and similar repainting versions) here is a simple, non-repainting, Ehlers Fisher transform indicator for metatrader 5

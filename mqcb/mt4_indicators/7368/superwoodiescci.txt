@@ -1,0 +1,7 @@
+Author:
+duckfu
+Indicator for a strategy that uses CCI. When trading Woodies CCI all you need is to find Woodies CCI patterns.
+The system does not care what the price bars resemble, it does not care what other indicators or other markets do. It focuses only on what your single market does at present time and allows you to trade.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7368

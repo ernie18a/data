@@ -1,0 +1,1 @@
+A combination of data analysis from the Awesome Oscillator and the resulting direction of the candles relative to the previous range

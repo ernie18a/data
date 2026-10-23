@@ -1,0 +1,2 @@
+Keltner Channel is usually calculated as SMA (Simple Moving Average) +- ATR distance for the bands.
+Since SMA is the slowest moving average, here is a version that uses a much "faster" moving average for the calculation instead: the JMA (Jurik Moving Average) that is very well known for its smoothness too. That should help in faster response to volatile markets.

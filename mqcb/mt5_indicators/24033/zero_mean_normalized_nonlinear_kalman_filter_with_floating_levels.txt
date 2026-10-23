@@ -1,0 +1,9 @@
+Theory :
+This is an extended version of the zero mean normalized nonlinear Kalman filter (originally published here :
+Zero mean normalized Kalman filter
+). In addition to the original this version is having floating levels and 3 coloring modes for signals :
+color change on slope
+color change on outer (floating) levels cross
+color change on middle (floating) level (sort of a "zero line") cross
+Usage :
+You can use the color changes as signals

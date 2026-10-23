@@ -1,0 +1,20 @@
+In the ICT (Inner Circle Trader) methodology, algorithmic price delivery is heavily dependent on specific operating windows. Time is just as critical as price. The market typically accumulates liquidity during the Asian session, manipulates it during the London open, and distributes it during the New York Killzone.
+MT4 natively lacks robust tools to visualize these macro-sessions, forcing traders to manually draw boxes and calculate their broker's server time differences. The Institutional ICT Killzones indicator automates this entire process.
+Core Features
+Automated Liquidity Boxes:
+Accurately draws the Asian Range, capturing the highest high and lowest low of the session to define the liquidity pools.
+Killzone Highlighting:
+Visually shades the high-volatility windows for London and New York, helping you avoid trading in dead zones.
+Broker Time Offset (Crucial):
+Retail brokers operate on different server times (e.g., GMT+2, GMT+3, EST). This indicator includes a shift parameter, ensuring your Killzones are perfectly aligned with real-world institutional time regardless of your broker's location.
+Lightweight Execution:
+Optimized specifically for MT4. It limits historical calculations to a user-defined number of days, preventing terminal lag or memory leaks.
+Input Parameters
+DaysToCalculate:
+How many days of history to draw boxes for (keeps your MT4 running fast).
+Broker_GMT_Shift:
+Hours to shift to align with true NY midnight.
+Session Times:
+Fully customizable start and end times for Asia, London, and NY.
+Colors:
+Aesthetic customization to fit your chart template seamlessly.

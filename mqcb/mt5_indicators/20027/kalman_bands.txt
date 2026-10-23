@@ -1,0 +1,5 @@
+This is a conversion of Kalman bands originally developed by
+Igor Durkin
+. Values are the same as MetaTrader 4 version except that we are using possibilities that MetaTrader 4 does not have to make the indicator easier to use.
+The original was posted here :
+https://www.mql5.com/en/forum/175037/page46

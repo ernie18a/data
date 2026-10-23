@@ -1,0 +1,6 @@
+Quantora Risk Calculator MT5 is a trading utility for MetaTrader 5 that helps calculate the risk of a trade before it is opened.
+It uses entry price, stop loss, take profit, lot size, and trade direction to estimate potential loss, potential profit, account risk percentage, and reward-to-risk ratio. This makes it easy to evaluate whether a trade fits your risk management rules.
+The tool also includes margin estimation, position value, and a simple risk classification to highlight low and high-risk setups.
+It supports both buy and sell scenarios, works with any symbol, and allows using balance, equity, or a custom account value as the base.
+The dashboard is clear, updates instantly, and is designed for fast decision-making.
+This utility is for calculation and analysis only. It does not open trades or generate signals.

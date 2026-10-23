@@ -1,0 +1,11 @@
+Internal Bar Strength (IBS)
+- is the indicator developed by Volker Knapp.
+Calculation:
+It is calculated as the moving average of the values of the internal bars strength that represent the ratio
+(Close-Low)/(High-Low) * 100%
+for each of them.
+How to use:
+The period that is equal to five bars is usually used. The crossing of 60% level means the overbuying and the crossing of 40% level means overselling, and so they are the signals for selling and buying respectively.
+Input Parameters:
+extern int Per=5;
+Internal Bar Strength

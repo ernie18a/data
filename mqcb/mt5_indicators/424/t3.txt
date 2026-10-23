@@ -1,0 +1,11 @@
+Real author:
+Tim Tillson
+T3 indicator is proposed by Tim Tillson in 1998.
+The reason of development of this new moving average was to improve the noise filter and decrease a lag, presented in most of the moving averages. The indicator is based on multiple exponential smoothing of price. Trade signals are: buy when price crossover the indicator upward and sell in case of downward crossover.
+The indicator uses CT3 class of SmoothAlgorithms.mqh library, the details can be found in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+T3 Moving Average Indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/424

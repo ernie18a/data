@@ -1,0 +1,81 @@
+How the indicator works
+The indicator detects confirmed swing highs and swing lows.
+Nearby swing highs are grouped to form resistance zones, while nearby swing lows are grouped to form support zones. A zone must receive the required number of price touches before it qualifies as a valid barrier.
+When a bullish candle closes above a qualified resistance zone, the indicator displays:
+A blue resistance rectangle
+A blue bullish breakout arrow
+When a bearish candle closes below a qualified support zone, the indicator displays:
+A red support rectangle
+A red bearish breakout arrow
+Signals are confirmed only after the candle closes. The unfinished current candle cannot confirm a breakout.
+The rectangles use a gradient fill with transparency so the underlying candles remain visible.
+Confirmation filters
+The indicator includes a dropdown with four confirmation options.
+VWAP
+VWAP is the default filter.
+A bullish breakout is accepted only when the breakout candle closes above the session VWAP. A bearish breakout is accepted only when it closes below the session VWAP.
+VWAP helps confirm whether price is breaking in the same direction as the session’s volume-weighted price position.
+SMA
+The Simple Moving Average filter accepts bullish breakouts above the SMA and bearish breakouts below it.
+The default filter period is 20 and can be adjusted.
+SMMA
+The Smoothed Moving Average filter works similarly to the SMA filter but reacts more gradually to price changes.
+Bullish signals require price above the SMMA, while bearish signals require price below it.
+None
+Selecting None disables directional confirmation. Every breakout that satisfies the support and resistance rules can produce a signal.
+This setting normally produces more signals, including more false breakouts.
+What the signal table shows
+The chart panel displays the latest confirmed breakout condition:
+BULLISH BREAK
+indicates the latest accepted breakout was above resistance.
+BEARISH BREAK
+indicates the latest accepted breakout was below support.
+The panel reports the latest signal direction. It does not display open trades, profit, stop-loss, or target status.
+Recommended timeframe
+The primary recommended setup is:
+Instrument: XAUUSD
+Timeframe: M5
+M5 provides more breakout opportunities but can contain more market noise.
+M15 and M30 may also be tested. These timeframes generally produce fewer signals, but the zones and breakouts may be cleaner.
+The best timeframe depends on the broker’s price feed, spread, trading session, and the user’s preferred trading frequency.
+Suggested entry method
+For a bullish breakout:
+Wait for the bullish breakout candle to close above the resistance rectangle.
+Confirm that the blue breakout arrow appears.
+Consider entering at the opening of the next candle.
+For a bearish breakout:
+Wait for the bearish breakout candle to close below the support rectangle.
+Confirm that the red breakout arrow appears.
+Consider entering at the opening of the next candle.
+Avoid entering before the breakout candle closes because the price may return inside the zone before the candle is complete.
+If the breakout candle is unusually large, entering at the next candle may produce a late entry and a wide stop. In such cases, the trade may be skipped or evaluated for a controlled pullback entry.
+Suggested stop-loss placement
+For a bullish entry, the stop-loss may be placed:
+Below the breakout candle’s low, or
+Slightly below the broken resistance zone
+For a bearish entry, the stop-loss may be placed:
+Above the breakout candle’s high, or
+Slightly above the broken support zone
+The stop should include enough room for the instrument’s spread and normal volatility. A very small stop may be triggered by ordinary XAUUSD movement.
+Suggested target distance
+A practical starting target is 1.5 times the stop distance.
+For example, if the distance between entry and stop-loss is $10 on XAUUSD, a 1.5R target would be $15 from the entry.
+A 2R target may be considered when there is enough open space before the next opposing support or resistance zone.
+Do not place a target beyond a nearby opposing zone without checking whether price has sufficient room to reach it.
+Use with personal trading analysis
+This indicator should work as an additional confirmation tool rather than the only reason for entering a trade.
+Results may improve when its breakout signals are combined with the trader’s own analysis, including:
+Higher-timeframe market direction
+Major support and resistance
+Market structure
+Trading-session conditions
+Volatility
+News events
+Risk management
+Available distance to the next opposing zone
+A breakout arrow confirms that the programmed conditions were satisfied. It does not guarantee that price will continue in the breakout direction.
+Caution
+False breakouts can occur, especially during low-liquidity periods, sideways markets, major economic announcements, or sudden volatility.
+The indicator does not automatically place trades or manage risk. Stop-loss, target, position size, and trade execution remain the user’s responsibility.
+Past chart signals do not guarantee future performance. Broker feeds, spreads, commissions, slippage, and execution conditions can affect real-world results.
+Before using the indicator with real money, test it thoroughly on historical data and a demo account. Evaluate it across different market conditions, sessions, and time periods. Use appropriate risk management and never risk more than you can afford to lose.

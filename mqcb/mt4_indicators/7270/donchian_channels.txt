@@ -1,0 +1,5 @@
+Author: Luis Guilherme Damiani
+Unusual approach to the Donchian Channels.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7270

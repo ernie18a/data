@@ -1,0 +1,18 @@
+Oscillator Average Average True Range is standard smoothed ATR represented as a colored histogram.
+Growing values are drawn in
+green
+, the falling ones are in
+red
+.
+It has two configurable parameters:
+ATR period
+- ATR calculation period
+Smoothing period
+- smoothing period
+Calculations:
+AATR = SMA(ATR, Smoothing period)
+where:
+ATR - standard ATR to be calculated over the "ATR period"
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21313

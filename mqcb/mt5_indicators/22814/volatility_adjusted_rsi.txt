@@ -1,0 +1,7 @@
+RSI is, by definition, a momentum family indicator
+As such it would be very useful if it was adjusting itself to the market volatility. Since the "regular" RSI is a bit limited in that part, here is a version that uses the simple volatility (published here :
+Simple Volatility
+) to adjust the RSI calculation period.
+PS: it is using custom RSI for calculation. It might seem that i would be faster to use built in RSI, but that would be misleading due to one fact : built in RSI would need to create new RSI for each new rsi period. Since we can not know in advance what exact periods are we going to need, it is impossible to (and it would be highly inefficient) to create all the instances of RSI that would eventually be needed in the adjusted rsi calculations
+In this case custom function(s) are the only possible acceptable solution
+Usage as usual : apart from being adjusted (adaptive) the sage of the rsi should follow all the rules that traders use when rsi indicator is used for trading decisions

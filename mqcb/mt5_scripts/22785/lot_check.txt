@@ -1,0 +1,9 @@
+Idea by:
+Airat Safin
+Code mq5 by:
+barabashkakvn
+This is a utility script. The lot size is set in the inputs. As a result, we obtain a correctly rounded lot, as well as auxiliary data, such as maximum lot size, lot step, and minimum stop size.
+You can specify a necessary symbol to run calculations for.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22785

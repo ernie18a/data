@@ -1,0 +1,30 @@
+Description:
+The combination of the two indicators are showing the profits your EA has made at a certain period
+YourEAHistoryProfits will be showed on the main chart You can choose colors, fontsize, fonttype and where on the chart to place.
+Version one will have maximal 5 magicnumbers to input and it has not the opportunity to show the EAname(s) on the chart
+It was made to show the profit of one EA with different Magicnumbers
+See picture....
+Maximal 10 magicnumbers for version 2. It takes the profits all symbols or only the chartsymbol for calculating the profits of the closed trades in the history of your account. With the magicnumber you can also place the EAname....
+extern string datetobegin= "year1_month_day";
+extern datetime firstday=D'2011.05.01';// 1 may 2011
+extern string finishday= "year2_month_day";
+extern datetime lastday=D'2011.08.01';
+extern string All_Pairs= "True: All Pairs -- False: Chart Symbol()";
+extern bool All_pairs= True;
+extern int Magic1 = 0;
+extern string EAnameMagic1 = "";
+......................
+extern int yline = 10; //go down chart with higher input
+extern int xcolom1 = 10; // place more to the right higher the volume
+extern int xcolom2 = 150;
+extern color TotalsUpColor = Lime;
+extern color TotalsDnColor = Red; // different colors for up and down last closed trade
+extern color ProfitUpColor = Green;
+extern color ProfitDnColor = Red;
+extern color DefaultColor = Blue;
+extern string note3 = "Font Size";
+extern int MagicNrsSize=8;
+extern int EAnameSize=10;
+This is a little of the code from YourEAHistoryProfits the fonttype is also to choose
+EA Profits is an indicator that is placed in a separate window
+This indicator shows the closed trade results and the results of the open trades.

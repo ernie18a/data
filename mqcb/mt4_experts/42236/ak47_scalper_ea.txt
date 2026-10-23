@@ -1,0 +1,540 @@
+1. Input parameters
+#define
+ExtBotName
+"AK-47 Scalper EA"
+//Bot Name
+#define
+Version
+"1.00"
+//--- input parameters
+extern
+string
+EASettings        =
+"---------------------------------------------"
+;
+//-------- <EA Settings> --------
+input
+int
+InpMagicNumber    =
+124656
+;
+//Magic Number
+extern
+string
+TradingSettings   =
+"---------------------------------------------"
+;
+//-------- <Trading Settings> --------
+input
+double
+Inpuser_lot       =
+0.01
+;
+//Lots
+input
+double
+InpSL_Pips        =
+3.5
+;
+//Stoploss (in Pips)
+input
+double
+InpMax_spread     =
+0.5
+;
+//Maximum allowed spread (in Pips) (0 = floating)
+extern
+string
+MoneySettings     =
+"---------------------------------------------"
+;
+//-------- <Money Settings> --------
+input
+bool
+isVolume_Percent  =
+true
+;
+//Allow Volume Percent
+input
+double
+InpRisk           =
+3
+;
+//Risk Percentage of Balance (%)
+input
+string
+TimeSettings      =
+"---------------------------------------------"
+;
+//-------- <Trading Time Settings> --------
+input
+bool
+InpTimeFilter     =
+true
+;
+//Trading Time Filter
+input
+int
+InpStartHour      =
+2
+;
+//Start Hour
+input
+int
+InpStartMinute    =
+30
+;
+//Start Minute
+input
+int
+InpEndHour        =
+21
+;
+//End Hour
+input
+int
+InpEndMinute      =
+0
+;
+//End Minute
+2. local variables initialization
+//--- Variables
+int
+Pips2Points;
+// slippage  3 pips    3=points    30=points
+double
+Pips2Double;
+// Stoploss 15 pips    0.015      0.0150
+int
+InpMax_slippage   =
+3
+;
+// Maximum slippage allow_Pips.
+bool
+isOrder           =
+false
+; // just open 1 order
+int
+slippage;
+string
+strComment        =
+""
+;
+3. Main Code
+a/ Expert initialization function
+int
+OnInit
+()
+  {
+//---
+//3 or 5 digits detection
+//Pip and point
+if
+(
+Digits
+%
+2
+==
+1
+)
+   {
+      Pips2Double  =
+_Point
+*
+10
+; 
+      Pips2Points  =
+10
+;
+      slippage =
+10
+* InpMax_slippage;
+   }
+else
+{    
+      Pips2Double  =
+_Point
+;
+      Pips2Points  =
+1
+;
+      slippage = InpMax_slippage;
+   }
+//---
+return
+(
+INIT_SUCCEEDED
+);
+  }
+b/ Expert tick function
+void
+OnTick
+()
+  {
+//---
+if
+(IsTradeAllowed() ==
+false
+)
+     {
+Comment
+(
+"AK-47 EA\nTrade not allowed."
+);
+return
+;
+     }
+MqlDateTime
+structTime;
+TimeCurrent
+(structTime);
+       structTime.sec =
+0
+;
+//Set starting time
+structTime.hour = InpStartHour;
+       structTime.min = InpStartMinute;
+datetime
+timeStart =
+StructToTime
+(structTime);
+//Set Ending time
+structTime.hour = InpEndHour;
+       structTime.min = InpEndMinute;
+datetime
+timeEnd =
+StructToTime
+(structTime);
+double
+acSpread = MarketInfo(
+Symbol
+(),
+MODE_SPREAD
+);
+       StopLevel = MarketInfo(
+Symbol
+(), MODE_STOPLEVEL);
+      
+      strComment =
+"\n"
++ ExtBotName +
+" - v."
++ (
+string
+)Version;
+      strComment +=
+"\nGMT time = "
++
+TimeToString
+(
+TimeGMT
+(),
+TIME_DATE
+|
+TIME_SECONDS
+);
+      strComment +=
+"\nTrading time = ["
++ (
+string
+)InpStartHour +
+"h"
++ (
+string
+)InpStartMinute +
+" --> "
++  (
+string
+)InpEndHour +
+"h"
++ (
+string
+)InpEndMinute +
+"]"
+;
+      
+      strComment +=
+"\nCurrent Spread = "
++ (
+string
+)acSpread +
+" Points"
+;
+      strComment +=
+"\nCurrent stoplevel = "
++ (
+string
+)StopLevel +
+" Points"
+;
+Comment
+(strComment);
+//Update Values
+UpdateOrders();
+      
+      TrailingStop();
+//Check Trading time
+if
+(InpTimeFilter)
+      {
+if
+(
+TimeCurrent
+() >= timeStart &&
+TimeCurrent
+() < timeEnd)
+         {
+if
+(!isOrder) OpenOrder();
+         }
+      }
+else
+{
+if
+(!isOrder) OpenOrder();
+      }
+  }
+3.1 Calculate signal in order to send orders
+void
+OpenOrder(){
+//int OrdType = OP_SELL;//-1;
+double
+TP =
+0
+;
+double
+SL =
+0
+;
+string
+comment = ExtBotName;
+//Calculate Lots
+double
+lot1 = CalculateVolume();
+//if(OrdType == OP_SELL){
+double
+OpenPrice =
+NormalizeDouble
+(Bid - (StopLevel *
+_Point
+) - (InpSL_Pips/
+2
+) * Pips2Double,
+Digits
+);
+      SL =
+NormalizeDouble
+(Ask + StopLevel *
+_Point
++ InpSL_Pips/
+2
+* Pips2Double,
+Digits
+);
+if
+(CheckSpreadAllow())
+//Check Spread
+{
+if
+(!
+OrderSend
+(
+_Symbol
+, OP_SELLSTOP, lot1, OpenPrice, slippage, SL, TP, comment, InpMagicNumber,
+0
+,
+clrRed
+))
+Print
+(
+__FUNCTION__
+,
+"--> OrderSend error "
+,
+GetLastError
+());
+      }
+//}
+}
+3.2 Calculate Volume
+double
+CalculateVolume()
+  {
+double
+LotSize =
+0
+;
+if
+(isVolume_Percent ==
+false
+)
+     {
+      LotSize = Inpuser_lot;
+     }
+else
+{
+
+      LotSize = (InpRisk) * AccountFreeMargin();
+      LotSize = LotSize /
+100000
+;
+double
+n =
+MathFloor
+(LotSize/Inpuser_lot);
+//Comment((string)n);
+LotSize = n * Inpuser_lot;
+if
+(LotSize < Inpuser_lot)
+         LotSize = Inpuser_lot;
+if
+(LotSize > MarketInfo(
+Symbol
+(),MODE_MAXLOT))
+         LotSize = MarketInfo(
+Symbol
+(),MODE_MAXLOT);
+if
+(LotSize < MarketInfo(
+Symbol
+(),MODE_MINLOT))
+         LotSize = MarketInfo(
+Symbol
+(),MODE_MINLOT);
+     }
+return
+(LotSize);
+  }
+3.3 EA has function "trailing Stop",
+SL will change every time price change (down)
+void
+TrailingStop()
+  {
+for
+(
+int
+i =
+OrdersTotal
+() -
+1
+; i >=
+0
+; i--)
+     {
+if
+(
+OrderSelect
+(i, SELECT_BY_POS, MODE_TRADES))
+        {
+if
+((OrderMagicNumber() == InpMagicNumber) && (OrderSymbol() ==
+Symbol
+()))
+//_Symbol))
+{
+//For Sell Order
+if
+(OrderType() == OP_SELL)
+              {
+//--Calculate SL when price changed
+double
+SL_in_Pip =
+NormalizeDouble
+(OrderStopLoss() - (StopLevel *
+_Point
+) - Ask,
+Digits
+) / Pips2Double;
+if
+(SL_in_Pip > InpSL_Pips){
+double
+newSL =
+NormalizeDouble
+(Ask + (StopLevel *
+_Point
+) + InpSL_Pips * Pips2Double,
+Digits
+);
+if
+(!OrderModify(OrderTicket(), OrderOpenPrice(), newSL, OrderTakeProfit(),
+0
+,
+clrRed
+))
+                        {
+Print
+(
+__FUNCTION__
+,
+"--> OrderModify error "
+,
+GetLastError
+());
+continue
+;  
+                        }
+                    }
+              }
+//For SellStop Order
+else
+if
+(OrderType() == OP_SELLSTOP)
+              {
+double
+SL_in_Pip =
+NormalizeDouble
+(OrderStopLoss() - (StopLevel *
+_Point
+) - Ask,
+Digits
+) / Pips2Double;
+if
+(SL_in_Pip < InpSL_Pips/
+2
+){
+double
+newOP =
+NormalizeDouble
+(Bid - (StopLevel *
+_Point
+) - (InpSL_Pips/
+2
+) * Pips2Double,
+Digits
+);
+double
+newSL =
+NormalizeDouble
+(Ask + (StopLevel *
+_Point
+) + (InpSL_Pips/
+2
+) * Pips2Double,
+Digits
+);
+if
+(!OrderModify(OrderTicket(), newOP, newSL, OrderTakeProfit(),
+0
+,
+clrRed
+))
+                     {
+Print
+(
+__FUNCTION__
+,
+"--> Modify PendingOrder error!"
+,
+GetLastError
+());
+continue
+;  
+                     }
+                  
+                  }
+              }
+              
+           }
+        }
+     }
+  }

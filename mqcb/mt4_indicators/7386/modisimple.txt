@@ -1,0 +1,6 @@
+Simple tactics using RSI and MACD
+It implements the settings for adjusting the formation of the position opening sign and for the 'trailing-stop' algorithm.
+ModiSimple
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7386

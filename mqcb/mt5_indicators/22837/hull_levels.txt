@@ -1,0 +1,8 @@
+Hull moving average is, apart from what is widely know about it as a fast and smooth average, known for two issues that are not too positive (depending on point of view, but in general it can be considered as a nuisance) :
+it tends to overshoot
+it sometimes changes the slope so quickly that it produces too much signals
+This version is addressing those two things.
+For overshooting this version is having the "divisor" parameter. That parameter, if set to 2.0 produces exactly the same Hull average as the original. Any value less than 2, "slows" down the Hull average and lessens the overshooting, and any value greater than 2.0 "speeds" it up (but also adds overshooting). So, one has to find some balance how to use that parameter and some experimenting is advised when it comes to its usage
+For signals it is using dynamically adjusted levels. They are in a lot of cases able to filter out small, insignificant changes (and signals) and are probably going to help in trading decision(s)
+Display can be adjusted to display filled zones (in order to be able to see the trend state and changes in an easier mode) or to display just colored lines for that purpose
+The "big picture" example with filled zones turned on

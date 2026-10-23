@@ -1,0 +1,1 @@
+Expert Advisors MySystem using indicators BullsPower and BearsPower. The Expert Advisors is adjusted on  M15 timeframe and currency pair EURUSD.

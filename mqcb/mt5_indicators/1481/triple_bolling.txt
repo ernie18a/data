@@ -1,0 +1,8 @@
+The advanced presentation of the
+Bollinger Bands
+indicator that allows to visualize the minute candlesticks in particular.
+In fact, the indicator draws three pair of the Bollinger Bands with a standard deviation rate of 2, 3 and 4, respectively. Default period is 50, it is convenient to work on the minute candlesticks.
+It is created for comfort not to arrange three indicators each time and not to change the deviation periods and coloring manually and in order not to load the processor by triple calculations...
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1481

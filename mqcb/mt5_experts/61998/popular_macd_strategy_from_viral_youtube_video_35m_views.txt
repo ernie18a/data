@@ -1,0 +1,29 @@
+This Expert Advisor is based on a MACD crossover strategy with trend filtering and support/resistance confirmation. The logic is built according to the most common interpretation of such strategies, using standard indicators. The code is full of comments explaining every line of code step by step.
+The Strategy Components are simple:
+MACD Crossovers:
+Standard MACD settings (Fast: 12, Slow: 26, Signal: 9) are used to detect momentum shifts
+:
+Trend Filter:
+A 200-period moving average filters trades:
+Only buys are allowed above the MA, and sells if the price is below the MA
+Support/Resistance Condition:
+Trades are only allowed if price has recently touched a key
+support or resistance level
+. These levels are detected using a custom SupportResistance indicator (included as external dependency), based on the relative highs/lows of the last 10 and 20 candles.
+Signal Validity Window:
+To avoid missing setups due to timing mismatch, the EA uses a configurable time window to "remember" support/resistance and MACD signals ( SignalValidity parameter).
+Risk Management:
+Stop loss is placed a fixed number of points (specified by the user) from the 200 MA.
+and the Take profit is automatically calculated as 1.5× the stop loss distance
+Input Parameters
+Parameter
+Description
+SignalValidity
+(int)
+Number of candles a signal remains valid after appearing (default: 7)
+Lotsize
+(double)
+Trade volume for each order
+SLPointDistanceFromMA
+(int)
+Distance (in points) between the MA and the stop loss level

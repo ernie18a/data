@@ -1,0 +1,6 @@
+The Indicator ZeroLAG MA was described in journal Technical Analysis of Stocks and Commodities, April, 2000 for the first time and according to creators, the Indicator ZeroLAG MA is a Moving Average with zero delay.
+This indicator uses TEMA calculation mode in order to make the lag lesser compared to the original
+Zero lag MA
+, and that makes this version even faster than the
+Zero lag DEMA
+too.

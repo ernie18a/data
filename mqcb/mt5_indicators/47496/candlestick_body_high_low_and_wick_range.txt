@@ -1,0 +1,6 @@
+Click on candlestick to see its body range, high low range, upper wick range and lower wick range value.
+Bullish Candlestick Body Range = Close - Open
+Bearish Candlestick Body Range = Open - Close
+High low range = High - Low
+Upper wick range & lower wick range
+Press D key to delete text.

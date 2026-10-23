@@ -1,0 +1,5 @@
+X trader trades using two moving average crosses. The EA contains time filtering as an additional feature to help in optimization or your further research. The default settings are not necessarily the best. Optimize them in MetaTrader 4 to get the best settings for your preferred timeframe and broker. The non straight forward settings are explained below:
+CloseOnReverseSignal
+- set to true to close trades of the previous signal when an opposing trade signal occurs.
+TimeSettings
+- set the hour and minutes to start/end trading.

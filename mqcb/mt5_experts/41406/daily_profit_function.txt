@@ -1,0 +1,3 @@
+I wrote this function as an easy template for accessing the current day's trading history. Can be expanded upon by the user by adding additional doubles, i.e. Volume, or for different periods, by amending the start variable.
+The Daily Profit value is written to the Experts Panel by default.
+Very simple, easily understood code.

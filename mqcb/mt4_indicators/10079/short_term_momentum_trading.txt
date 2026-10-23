@@ -1,0 +1,35 @@
+I am trying to create an alert based upon 5 rules that I use to manually trade each day. Below are the rules to trade and following is the script that I have so far.
+Here's what I got... This is designed for Short Term Momentum Trading, and if you are willing to put in the butt-time in your seat, you will enter winning trades up to 90% of the time; however, you must be willing to follow the rules and not get emotional. Please don't ask me about profit targets or programming a fully functional EA; if I could do that, I'd be a millionaire and I wouldn't be here looking for assistance. So, don't ask; I don't have answers that you're looking for. PS - Yes I realize that these rules are REALLY lagging - I just want to catch part of a trend. I'm not greedy.
+Anyway...
+Indicators:
+3 LWMA
+13 LWMA
+Laguerre Filter - gamma 0.85 (determines monentum / trend)
+ADX (with +DI and -DI)
+CCI
+Alert Rules (BUY):
+3 LWMA crosses above 13 LWMA ...and 1a) 3 LWMA was BELOW 13 LWMA 1 period before
+Candlestick opens ABOVE Laguerre Filter (gamma 0.85)
++DI crosses ABOVE -DI
++DI crosses ABOVE 20 Level
+CCI crosses ABOVE 100 Level
+Alert Rules (SELL):
+3 LWMA crosses below 13 LWMA
+3 LWMA was ABOVE 13 LWMA 1 period before
+Candlestick opens BELOW Laguerre Filter (gamma 0.85)
+-DI crosses ABOVE +DI
+-DI crosses ABOVE 20 Level
+CCI crosses BELOW -100 Level
+Obviously, not all rules are going to hit at the same time. Once all indicator rules line up, I'd like:
+an visual marker below entry candlestick on the screen (arrow, star, whatever..),
+a pop-up alert window displaying currency, time-frame, entry level and time-stamp, and...
+email alert.
+Obviously, in the above picture the signals are not exact - I am just trying to give a visual representation of how I trade. Signal 3 is wrong as the +DI hasen't crossed the 20 threshold. Signal 5 occurs 1 - 2 candlestick later than I marked. I probably could have found a better chart as an example.
+My problem is twofold. One - it just doesn't function correctly. It's programmed as I requested, however the results are way off from what my indicators are telling me visually. Two - The alert works with a BUY signal,; however the alert does not work with a SELL signal.
+I have two concerns that I'm hoping that you can address.
+I run this on a 5 minute chart. I'd like to make sure that it only gives one alert - not one each time a new candlestick opens.
+...however, if we are in a trending market, the LWMAs can cross with the trend several times. I WOULD like an alert each time the all of the rules line up. If the LWMAs cross with the trend (signal 5) than the LWMAs are the only indicator that I care about. Ignore the remaining rules when going with the momentum.
+Is there a talented programmer out there that can assist me in finishing this alert? You would make my life so much easier and my broker so much happier!!!
+Thanks in advance for any assistance that you can offer. I greatly appreciate any comments or coding that you can provide.
+Chris C Berg -
+chrisberg.forex@yahoo.com

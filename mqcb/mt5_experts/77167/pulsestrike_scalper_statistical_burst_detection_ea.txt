@@ -1,0 +1,23 @@
+PulseStrike is a tick-driven scalper. It does not wait for candle close. It watches a short rolling window of price movement (default 4 seconds) and builds a live statistical baseline of what a normal move over that window looks like for the current symbol. A new move only counts as a tradeable burst if it is a genuine outlier against that baseline (z-score threshold, default 3.0 standard deviations). This replaced an earlier version that used a fixed ATR fraction. That version fired on ordinary tick noise and lost heavily across every major pair tested.
+Two modes are available. Momentum mode trades with the burst direction. Reversion mode trades against it. Which mode fits a given symbol is not assumed by the EA. Test both.
+Every entry passes a few gates first. Take profit distance must be a real multiple of current spread. Stop loss and take profit both scale off ATR. A trade is force-closed if it has not resolved within a set number of seconds. There is a daily trade cap and a daily loss limit that stops new entries for the rest of the day once hit. The EA also checks whether a position has already reached its own SL or TP before attempting a manual close, to avoid colliding with the broker's own execution.
+One position is held at a time, not several simultaneously. Most retail MT5 accounts run in netting mode, where a second order on the same symbol just merges into the existing position. Instead of building something that behaves wrong on netting accounts, this cycles one trade fast (tick-level checks, short cooldown) to get the same practical effect.
+Backtest results below. Settings used: All Market Watch symbols, M1 chart, Every tick modelling, Random delay execution, period 2026.01.01 to 2026.09.08, default inputs (InpZScoreThreshold 3.0, InpBurstWindowSeconds 4, InpTakeProfitATRMult 0.35, InpStopLossATRMult 0.55).
+Symbol    Profit       Trades   Profit Factor   Expected Payoff   Drawdown %
+EURUSD    182740.71    5557     1.30            32.88             10.33
+AUDUSD    145066.46    6933     1.27            20.92             7.21
+USDJPY    98592.56     7240     1.37            13.62             3.50
+USDCHF    92761.53     5732     1.32            16.18             5.37
+GBPUSD    42170.70     7991     1.25            5.28              54.07
+NZDUSD    30031.92     4735     1.16            6.34              42.41
+USDCAD    27956.54     3756     1.29            7.44              20.64
+Starting balance 10000 on all runs.
+Two things to be honest about. First, GBPUSD and NZDUSD show a positive profit factor but very high drawdown (54% and 42%). A profitable end result can still involve a rough equity curve. Second, this is one backtest period only. It has not yet been validated on a separate out-of-sample period. A strategy that looks good on the data it was tuned against is not proof of a real edge until it also holds up on data it never saw. I am publishing the current version with these results shown as-is rather than waiting, and will update this listing once out-of-sample testing is done.
+Results on non-forex symbols (stocks, exotic pairs) from the same test are not included here. Trade counts on those were too small to mean anything and this EA was not built with those instruments in mind.
+Key inputs:
+- InpBurstWindowSeconds, InpStatsSampleCount, InpZScoreThreshold, InpModeIsMomentum
+- InpVolATRPeriod, InpRiskPercent, InpTakeProfitATRMult, InpStopLossATRMult, InpMinTPToSpreadRatio, InpMaxSpreadPoints, InpMaxHoldSeconds, InpCooldownSeconds
+- InpMaxTradesPerDay, InpDailyLossLimitPercent
+- InpUseSessionFilter, InpSessionStartHour, InpSessionEndHour
+Test on demo before anything else. Past backtest performance is not a promise of future results. Feedback welcome.
+— Ali Rajput

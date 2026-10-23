@@ -1,0 +1,5 @@
+Author: Jason Robinson
+The Range indicator displays the index of the range expansion and is an oscillator for the market calculation.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7120

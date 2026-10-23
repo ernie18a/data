@@ -1,0 +1,14 @@
+Theory:
+In technical analysis, the
+stochastic oscillator
+is a momentum indicator that uses support and resistance levels.
+Dr. George Lane
+developed this indicator in the late 1950s. The term
+stochastic
+refers to the point of a current price in relation to its price range over a period of time. This method attempts to predict price turning points by comparing the closing price of a security to its price range.
+This version:
+It is adding an option to use filtered price (originally published and described here :
+Filtered price
+). The result is a bit surprising taking into account the nature of the stochastic oscillator calculation. One would expect to have serious issues since the filtered price produces prolonged periods of same prices to which the stochastic calculation usually does not respond well. But after seeing the results, it seems to be usable and here it is.
+Usage:
+All the usual : you can use it in any mode as the regular stochastic (setting the filter to 0 produces stochastic (main) line of close/close price, all the others can not be reproduced with the regular stochastic oscillator). Also you can use the color changes as signals.

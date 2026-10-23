@@ -1,0 +1,194 @@
+X2MA_HTF_Signal_BG shows information about trend direction (based on the
+X2MA indicator
+data) as a graphic object with a colored indication of trend or deal direction and gives alerts or audio signals and sends push notifications to a smartphone when a signal to trade appears.
+A graphic object is represented as a colored background. The background has four colors. Pale colors indicate trend continuation and bright colors indicate a signal to trade.
+The indicator sends alerts and push notifications only if the value of the input parameter:
+input
+uint
+SignalBar=
+0
+;
+// The bar number to get a signal (0 - current bar)
+is greater than one. For the zero bar sound signals and Push-notifications are useless because the signal of the indicator on the zero bar can change and disappear!
+All input parameters can be divided into three large groups:
+Input parameters for drawing a session:
+//+------------------------------------------------+
+//| Session drawing input parameters               |
+//+------------------------------------------------+
+input
+bool
+SessionDrawOff=
+false
+;
+// Show session in a non-session period
+input
+string
+SessionSirName=
+"Asian"
+;
+// Session name
+input
+Hour   StartHour=H00;
+// Session start hour
+input
+Min    StartMinute=M00;
+// Session start minute
+input
+uint
+SessionTime=
+480
+;
+// Session duration in minutes
+input
+color
+Up_Color=
+clrPaleTurquoise
+;
+// Color of growth
+input
+color
+Buy_Color=
+clrLime
+;
+// Color of Buy
+input
+color
+Sell_Color=
+clrDeepPink
+;
+// Color of fall
+input
+color
+Dn_Color=
+clrLightPink
+;
+// Color of Sell
+The input parameters if the X2MA indicator:
+//+------------------------------------------------+
+//|  Indicator input parameters                    |
+//+------------------------------------------------+
+input
+string
+Symbol_=
+""
+;
+// Financial instrument
+input
+ENUM_TIMEFRAMES
+Timeframe=
+PERIOD_H6
+;
+// Indicator timeframe for indicator calculation
+input
+Smooth_Method MA_Method1=
+MODE_SMA
+;
+// Method of averaging of the first smoothing
+input
+int
+Length1=
+12
+;
+// Depth of the fist smoothing
+input
+int
+Phase1=
+15
+;
+// Parameter of the first smoothing
+//--- for JJMA it varies within the range -100 ... +100, and influences the quality of the transient process;
+//--- for VIDIA it is a period of CMO, for AMA it is a period of slow moving average
+input
+Smooth_Method MA_Method2=MODE_JJMA;
+// Method of averaging of the second smoothing
+input
+int
+Length2=
+5
+;
+// Depth of the second smoothing
+input
+int
+Phase2=
+15
+;
+// Parameter of the second smoothing
+//--- for JJMA it varies within the range -100 ... +100, and influences the quality of the transient process;
+//--- for VIDIA it is a period of CMO, for AMA it is a period of slow moving average
+input
+Applied_price_ IPC=
+PRICE_CLOSE
+;
+// Price constant
+The input parameters of the X2MA_HTF_Signal_BG indicator required for the indicator visualization:
+//---- indicator visualization settings
+input
+uint
+SignalBar=
+0
+;
+// Bar number to receive a signal (0 - current bar)
+input
+string
+Symbols_Sirname=INDICATOR_NAME
+"_Label_"
+;
+// a name for the indicator labels
+input
+color
+IndName_Color=DarkOrchid;
+// color of the indicator name
+input
+uint
+Font_Size=
+10
+;
+// Font size of the indicator name
+input
+int
+X_1=
+5
+;
+// Horizontal shift of the name
+input
+int
+Y_1=-
+15
+;
+// Vertical shift of the name
+input
+bool
+ShowIndName=
+true
+;
+// Show the indicator name
+input
+ENUM_BASE_CORNER
+WhatCorner=
+CORNER_RIGHT_UPPER
+;
+// Location corner
+Input parameters of the X2MA_HTF_Signal_BG, indicator required for generating alerts and audio signals:
+//---- Settings of alerts
+input
+ENUM_ALERT_MODE alert_mode=OnlySound;
+// Option of triggering indication
+input
+bool
+Push=
+true
+;
+// Allow push notifications
+input
+uint
+AlertCount=
+0
+;
+// Number of produced alerts
+If you use several X2MA_HTF_Signal_BG indicators on one chart, each of them should have its own Symbols_Sirname (indicator labels names) string variable value.
+Place the indicator compiled file X2MA.mq5 to the terminal_data_folder\MQL5\Indicators\ of the client terminal.
+Fig. 1. A signal of trend continuation based on the data of the X2MA_HTF_Signal_BG indicator
+Fig. 2. A signal to open a position based on the data of X2MA_HTF_Signal_BG
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1975

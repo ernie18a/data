@@ -1,0 +1,103 @@
+Features
+Equity drawdown protection
+— close positions when drawdown exceeds threshold (% or $)
+Daily loss limit
+— cap losses per trading day with automatic trading disable
+Trailing max drawdown
+— measure DD from peak equity (ideal for prop firm rules)
+Session filter
+— block trading outside allowed hours, optionally close positions
+Spread guard
+— prevent entries during high-spread conditions
+Auto lot sizing
+— fixed lot, risk % of balance, or risk $ per trade
+Position limits
+— max open positions, max total lots, max orders per day
+Multi-channel alerts
+with warning at configurable % of limit
+On-chart risk dashboard
+with color-coded status (safe / warning / danger)
+Magic number filter
+— protect specific EAs or monitor all
+Event logging
+to file for audit trail
+Installation
+Copy ASQ_RiskGuard.mq5 to your MQL5/Experts/ folder
+Compile in MetaEditor or restart MetaTrader 5
+Attach to any chart and enable
+Allow Algo Trading
+RiskGuard monitors ALL positions on the account (or filter by magic number)
+How to Configure
+Set Max Drawdown
+— 5% (default). When equity drops 5% from balance, positions are closed
+Set Daily Loss Limit
+— 3%. Max loss per day before trading is disabled
+Choose DD Base
+— "From Balance" (standard) or "From Peak Equity" (trailing, for prop firms)
+Choose Close Method
+— Close All (safest), Close Losers Only, or Close Largest Loser
+Session Filter
+(optional) — Restrict trading to specific hours (e.g. 08:00–20:00)
+Spread Guard
+(optional) — Block entries when spread exceeds threshold
+Set Warning at 80%
+— Receive alerts before limits trigger
+Prop Firm Tip
+Set
+DD Base
+to From Peak Equity and configure your firm's max drawdown percentage. RiskGuard will track your high-water mark and protect you automatically — works with Bulenox, FTMO, TopStep, and similar rules.
+Key Parameters
+Parameter
+Default
+Description
+Max Drawdown %
+5.0%
+Close positions when equity drops this much
+Max Drawdown $
+$500
+Alternative: fixed dollar drawdown limit
+Daily Loss Limit
+3.0%
+Max loss allowed per trading day
+DD Base
+From Balance
+From Balance or From Peak Equity (trailing)
+Close Method
+Close All
+Close All / Losers Only / Largest Loser
+Max Positions
+5
+Max simultaneous open positions (0 = off)
+Max Total Lots
+1.0
+Max total lot exposure (0 = off)
+Max Orders/Day
+10
+Daily order count limit (0 = off)
+Session Filter
+Off
+Allowed hours: 08:00–20:00 (server time)
+Spread Guard
+Off
+Max allowed spread: 30 points
+Warning Alert
+80%
+Alert at this % of limit before trigger
+Magic Filter
+0
+Filter by magic number (0 = monitor all EAs)
+Log to File
+On
+Save events to log file for audit
+Alert System
+RiskGuard sends alerts through multiple channels when limits are approached or triggered:
+Popup
+alert on screen (default: on)
+Sound
+alert with custom .wav file (default: on)
+Push notification
+to mobile (default: off)
+Email
+alert (default: off)
+Early warning
+at 80% of limit before positions are closed

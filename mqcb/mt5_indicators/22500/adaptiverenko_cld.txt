@@ -1,0 +1,6 @@
+AdaptiveRenko
+indicator with the channel background filling and additional display of the NRTR line using colored icons allowing users to visually track trend signals present on a single bar.
+Fig. 1. AdaptiveRenko_Cld indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22500

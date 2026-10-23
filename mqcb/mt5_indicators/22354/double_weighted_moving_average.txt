@@ -1,0 +1,4 @@
+Basics :
+Double weighted moving average is an LWMA (Linear Weighted Moving Average). Instead of doing one cycle for calculating the LWMA, the indicator is made to cycle the loop 2 times. That  produces a smoother values than the original LWMA
+Usage :
+It can be used the usual way : since the values are smooth, every change of slope color can be treated as a potential signal.

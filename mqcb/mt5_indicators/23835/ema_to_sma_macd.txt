@@ -1,0 +1,4 @@
+Theory :
+The idea comes from another trading platform. They called it differently there, but the name here reflects exactly what it is all about. The idea is simple : we are counting on a fact that EMA (Exponential Moving Average) is "faster" from SMA (Simple Moving Average). That way a "MACD" is constructed using single period (unlike the "classical" MACD that needs fast and slow period average for calculations). The signal line in this one is calculated as a sma
+Usage :
+It can be used as any other MACD type indicator

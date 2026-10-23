@@ -1,0 +1,11 @@
+Real author:
+StatBars TO
+The idea of this moving average indicator is in giving the bar with a greater volume a greater weight in averaging. The volumes are summed for the 'Length' period, then the volume of each bar is divided by the sum — this is the weight of each bar.
+Products of each price and weight of each price are summed in the final formula.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 14.06.2016.
+Fig.1. The Volume_Weighted_MA indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15836

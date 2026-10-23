@@ -1,0 +1,6 @@
+a bit more EA frliendly version...
+ADDED:
+buffer for the whole signal
+buffer for the "speed" data
+buffer for the "error" data
+ENUMs for the price selection

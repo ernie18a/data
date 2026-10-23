@@ -1,0 +1,9 @@
+This is MQL5 version of
+DinapoliTargets
+indicator. The
+ZigZag
+indicator is added to the chart.
+It plots several horizontal lines after determination of the local peak/bottom. The white line is the entry point, the remained lines are targets, the first target is the most probable. The stop line is red.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/164

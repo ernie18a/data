@@ -1,0 +1,46 @@
+The author of the idea
+:
+Lacus1977
+,
+the mq5 code author
+:
+barabashkakvn
+.
+The Expert Advisor is only designed for manual trading. The EA sets stop loss and take profit for positions and pending orders on the current symbol. It also has trailing stop and breakeven functions.
+Input Parameters
+Stop loss
+- stop loss value;
+Take profit
+- take profit value;
+Close all if profit reached the x percent of balance or
+- close all positions once the total profit reaches x percent of balance;
+close all if profit reached the x profit amount in currency
+- close all positions once the total profit reaches the specified amount in the deposit currency;
+Close if profit reached x profit amount
+- close a position once its profit reaches the specified amount in the deposit currency;
+Trailing Start after reaching x pips
+- trailing start setting;
+Trailing Stop distance from current price
+- trailing step setting;
+Breakeven Gain after reaching x pips
+- the number of profit points after which a position will be moved to breakeven;
+Breakeven x pips locked in profit
+- the number of points to move the breakeven point;
+Stealth mode for Stoploss and Takeprofit values
+- hidden mode.
+Example
+A Buy position is opened without a stop loss and take profit. The EA sets preset stop loss and take profit values.
+Suppose, the price moves in a favorable direction and makes
+Breakeven Gain after reaching x pips
+point of profit. The EA sets the breakeven at
+Breakeven x pips locked in profit
+points. The price moves higher and the EA trails
+Stop loss
+following the price: every
+Trailing Start after reaching x pips
+stop loss is trailed by
+Trailing Stop distance from current price
+points.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19776

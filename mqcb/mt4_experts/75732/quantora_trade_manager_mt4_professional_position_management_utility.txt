@@ -1,0 +1,4 @@
+Quantora Trade Manager MT4 is a utility designed to manage open trades with automated risk control. It does not generate signals or open new positions, but focuses on handling existing trades more efficiently.
+The tool can automatically apply stop loss and take profit levels, manage break even, and use a trailing stop to protect profits as trades move in your favor. It supports different management modes, including manual trades, all trades, or positions filtered by magic number, with separate control for buy and sell orders.
+It also includes daily profit and loss limits to help control overall account risk. A simple dashboard provides key account and trade information for easy monitoring.
+Suitable for traders who want consistent and automated position management without changing their trading strategy.

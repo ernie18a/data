@@ -1,0 +1,5 @@
+Description:
+After a while, searching the MQL4 community looking for an explanation on how to calculate the highest and lowest values for a data series over "n" bars; I end up with this indicator that display exactly that.
+There are various post explaining how to use iHighest and iLowest, i acknowledge all of them. This is just an application of it that suited my needs.
+Feel free to use it and modify it.
+Image:

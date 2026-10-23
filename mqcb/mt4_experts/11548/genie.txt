@@ -1,0 +1,1 @@
+An EA with Parabolic SAR indicator to check for Buy and Sell signals and automatically close the positions to lock in profits.

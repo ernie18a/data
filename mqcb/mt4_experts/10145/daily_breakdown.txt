@@ -1,0 +1,18 @@
+Description:
+Every day at time, specified in TimeSet variable, it places pending orders.
+After execution of pending order, the other order removed.
+The Buy Stop pending order is placed at the price, equal to High of the previous day + Delta (points) with Stop Loss and Take Profit levels, specified in SL and TP input variables.
+The Sell Stop pending order is placed at the price, equal to Low of the previous day - Delta (points) with Stop Loss and Take Profit levels, specified in SL and TP input variables.
+Input variables:
+TimeSet = "07:32"; // Order place time, if TimeSet = "00:00", the EA works on the breakdown of the previous day.
+Delta - Price shift (in points)
+SL - Stoploss (in points)
+TP - Takeprofit (in points)
+risk - If 0 is a fixed lot
+NoLoss - If 0 then there is "zero" setting
+trailing - If 0 then there is no trailing
+Lot - used only when risk = 0
+Expose OpenStop-stop orders at the open order
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10145

@@ -1,0 +1,69 @@
+Original author:
+Nick A. Zhilin
+An alternative to
+Bollinger Bands®
+with the color filling inside the channel, drawn as a cloud, with the display of the last values as price labels and the possibility to round the channel levels up to a required number of digits.
+//+----------------------------------------------+
+//|  INDICATOR INPUT PARAMETERS                  |
+//+----------------------------------------------+
+input
+string
+SirName=
+"Float_Pivot_Digit"
+;
+//The first part of the name of graphical objects
+input
+int
+IPeriod=
+100
+;
+//Extremum search period
+input
+ENUM_APPLIED_PRICE_ IPC=PRICE_MEDIAN_;
+//Price constant
+input
+int
+Shift=
+0
+;
+//Horizontal indicator shift in bars
+input
+uint
+Digit=
+2
+;
+//Number of digits to round to
+input
+bool
+ShowPrice=
+true
+;
+//Show price labels
+input
+color
+Upper_color=
+clrTeal
+;
+//The color of the upper price label
+input
+color
+Middle_color=
+clrBlue
+;
+//The color of the middle price label
+input
+color
+Lower_color=
+clrMagenta
+;
+//The color of the lower price label
+The number of digits to round is set in the input variable
+Digit
+:
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 08.02.2008.
+Fig.1. The Float_Pivot_Digit indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23217

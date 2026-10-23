@@ -1,0 +1,13 @@
+Author of the idea
+—
+Rashid Umarov
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+The indicator is derived from the NRTR indicator. The new candlestick coloring provides a more convenient visualization.
+NRTR GATOR
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17272

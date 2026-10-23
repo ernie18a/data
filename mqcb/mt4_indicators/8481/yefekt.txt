@@ -1,0 +1,3 @@
+The indicator shows the probabilistic reverses.
+As its developers affirm if the 0.5 level is reached the price strains after the opposite direction.
+yefekt

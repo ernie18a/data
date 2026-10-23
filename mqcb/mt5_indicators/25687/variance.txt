@@ -1,0 +1,6 @@
+The standard deviation is a measure of how much a dataset differs from its mean; it tells us how dispersed the data are. A dataset that’s pretty much clumped around a single point would have a small standard deviation, while a dataset that’s all over the map would have a large standard deviation.
+Given a sample the standard deviation is defined as the square root of the
+variance
+Here you can find a Welford’s method for computing (single pass method) that avoids errors in some cases (if the variance is small compared to the square of the mean, and computing the difference leads
+catastrophic cancellation
+where significant leading digits are eliminated and the result has a large relative error)

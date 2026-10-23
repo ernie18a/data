@@ -1,0 +1,11 @@
+Author:
+David Thomas - aka: CodeMonkey
+irc: chat.ircforex.co (#mqldev #forex #help)
+(Yes that is a .co domain.)
+Someone needed a quick way to open the Alert window again, after they had closed it.
+Instructions:
+To use this script, place it in your script folder and restart your metatrader application.
+You should then see it listed in your available scripts.
+Simply add this script to any chart and it will open the alert message box for you.
+This is helpful when you have closed the alert display, but need to check some previous information.
+Assign a hotkey to this script if you want to make it easy to access.

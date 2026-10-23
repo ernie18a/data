@@ -1,0 +1,6 @@
+Now it's two-color (or two-mode) trend indicator, the number of calculated bars can be specified.
+Also you can select the mode (one or two color) and the uptrend and downtrend color.
+The number of bars to plot is also can be changed.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/135

@@ -1,0 +1,36 @@
+Author of the idea
+:
+Vladimir Khlystov
+,
+MQL5 code author
+:
+barabashkakvn
+.
+The Expert Advisor places a grid of pending Buy Stop and Sell Stop orders. When the profit reaches or exceeds
+Profit purpose
+, all positions are closed and all pending orders are deleted. After that the cycle is repeated anew.
+Input Values
+Profit purpose
+(in money) - profit target in money;
+Use Buy stop
+- enable/disable Buy Stop orders;
+Use Sell stop
+- enable/disable Sell Stop orders;
+Maximum pending orders
+- the maximum number of orders of each type;
+StopLoss ("0" -> off)
+;
+TakeProfit ("0" -> off)
+;
+Distance from current price
+- distance from the current price;
+Lots
+- the lot size of the first order;
+Lot Ratio
+- lot increase ratio; if you do not want to increase lot, set the parameter to 1.0;
+magic number
+- unique identifier for the EA.
+Example of testing in the "Every tick based on real ticks" mode on EURUSD:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20304

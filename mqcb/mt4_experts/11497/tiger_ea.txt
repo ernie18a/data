@@ -1,0 +1,4 @@
+The Expert Advisor determines buy and sell based on Moving Averages, it also uses ADX and RSI.
+I am looking to the community to contribute to the code and develop it into a better EA.
+Currently it performs very well but must use a large stop loss. Must use on EUR/USD daily charts only since this is all I have back tested on, other symbols and timeframes looked poor.
+Test results:

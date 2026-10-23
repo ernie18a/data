@@ -1,0 +1,6 @@
+Fine Fractal Channel
+A quick gluejob of two simple but useful indicators. Requires
+FineFractals
+by Denis Orlov.
+Useful for fractal breakouts and to visualize almost all Support/Resistance lines.
+Sits nicely inside Fractal Channel to give more signals.

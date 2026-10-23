@@ -1,0 +1,43 @@
+The author of the idea
+:
+Vitaliy
+,
+the mq5 code author
+:
+barabashkakvn
+.
+The Expert Advisor tries to take losing positions to profit. It locks positions.
+It is important to configure minimum profit (the "Profit percentage" parameter) appropriate to your deposit and position volume ("Starting lot" and "Secondary lots" parameters).
+input
+double
+NeedProfit  =
+0.001
+;
+// Profit percentage
+input
+double
+StartLot    =
+0.5
+;
+// Starting lot
+input
+double
+StepLot     =
+0.2
+;
+// Secondary lots
+input
+ushort
+InpStep     =
+5
+;
+// Steps between Locking
+input
+bool
+InpHelpMe   =
+true
+;
+// Help me
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19177

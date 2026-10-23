@@ -1,0 +1,11 @@
+Part 6. Trading automation
+In
+"Part 6. Trading automation"
+of the "MQL5 Programming for Traders", we will study a key component of the MQL5 language. We will start with a description of the fundamental entities, such as financial instrument specifications and trading account settings. These are prerequisites for creating properly operating Expert Advisors. Then we will move on to built-in functions and data structures, robot-specific events, as well as key aspects of Expert Advisor operations in the strategy tester. The MetaTrader 5 Strategy Tester is a crucial component in the development of trading robots as it allows you to evaluate financial performance and optimize trading strategies.
+The tester provides indispensable tools for debugging in various modes, including visual testing using bars or ticks, with modeled or real ticks. It also allows the visual reproduction of the quoting flow of quotes and simple testing without a visual window. We have previously seen how to test indicators in visual mode. But only a limited set of settings is allowed for them. When developing Expert Advisors, we will have access to the full range of tester capabilities.
+We will also look at a different representation of market data: Depth of Market and its software interface.
+MetaTrader 5 offers the capability to analyze and trade financial instruments (symbols), which form the basis of all subsystems of the terminal. Users can select symbols from the list provided by the broker and monitor them in the Market Watch. With the MQL5 API, you can view and analyze the characteristics of all symbols, adding or removing them from the Market Watch.
+In addition to standard symbols provided by brokers, MetaTrader 5 supports the creation of custom symbols, loading their properties and quoting history from arbitrary data sources or calculating them using formulas and MQL5 programs.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/45595

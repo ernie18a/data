@@ -1,0 +1,12 @@
+This script converts multiple .set files from MT5 format to MT4 format. This is a necessary step for optimizing and running cross-compatible EAs.
+MetaTrader 5 is able to load .set files created in MT4, however, the format it saves set files in is not compatible with MetaTrader 4. This script acts as a useful tool to make .set files backwards compatible, so you can take advantage of MT5's better strategy tester then run a cross-compatible EA on MT4 and MT5 with the same parameters.
+Two .set files have been attached as an example of the converter.
+The "exampleMT5.set" file is produced by the MetaTreader 5 terminal. This is then converted to "exampleMT5-MT4.set" file by the converter.
+How T‌o Use
+Place .set files in
+MQL5\Files
+folder or subfolder. B‌y default the script will convert all .set files in the files folder to MT4 version and output the converted files to a subdirectory named MT4-Output-Setfiles. The output file names will also have "-MT4" appended before the file extension.
+T‌he file has 3 input options:
+a File input that allows for selective conversion. simply write the name of the file you want to convert
+a SubDirectory option. Write the name of the subdirectory in which your files are stored.
+a Output Directory option. Name of the output directory.

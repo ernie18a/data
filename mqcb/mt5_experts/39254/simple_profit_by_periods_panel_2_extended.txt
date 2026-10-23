@@ -1,0 +1,19 @@
+The idea of a utility EA
+Added
+: symbol ('
+Symbol
+') and magic number ('
+Magic number
+')
+A simple panel based on
+OBJ_LABEL
+graphical objects. According to the specified symbol ('
+Symbol
+') and magic number ('
+Magic number
+'), the panel displays the profit (in total and in percentage) on the trading account for the day, for the week and for the month. The origin is the calculated date of the day. For example, if it is Saturday, then the date of the day is Friday. Accordingly, in the calculation of profit, you must remain in the month of the settlement day.
+Additionally, the amount of transactions for
+day
+, week and
+per month.
+Rice. 1. Simple Profit By Periods Panel 2 Extended

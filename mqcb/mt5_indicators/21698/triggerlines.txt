@@ -1,0 +1,24 @@
+The TriggerLines trend indicator draws two moving average lines colored in accordance with the trend direction:
+Up -
+green
+;
+Down -
+red
+.
+The indicator has three input parameters:
+Period
+- calculation period (line 1);
+Smoothing
+- smoothing period (line 2);
+Applied price
+- price used for the calculation of the two lines.
+Calculations:
+WT = 6.0 * sum / K
+Signal = EMA(WT, Smoothing)
+where:
+sum = sum of (LV * Applied price) over the Period range
+LV = (Period+1)/3
+K = Period * (Period+1)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21698

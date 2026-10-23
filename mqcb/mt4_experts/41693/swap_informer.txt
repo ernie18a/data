@@ -1,0 +1,1 @@
+Searching for symbols in the market watch window with a positive swap and displaying the received data on the screen.

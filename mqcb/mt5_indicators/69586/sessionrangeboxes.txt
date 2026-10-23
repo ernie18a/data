@@ -1,0 +1,86 @@
+The
+Session Range Boxes
+indicator automatically draws colored high/low range boxes for the three major Forex trading sessions — Asian, London, and New York — directly on the price chart. For each configured past day, the indicator scans M1 bars within the session time window and marks the exact high and low with a filled rectangle. This gives traders a clear visual reference of where price was contained during each session, making it immediately obvious when the current session breaks out of a previous range.
+The indicator is based on a concept widely used by professional traders: session range analysis. Many institutional participants plan their entries around the high and low established during the Asian session, waiting for London or New York to break those levels. By overlaying all three sessions simultaneously, traders can compare range sizes, identify overlap zones, and anticipate likely breakout directions at a glance.
+A built-in stats panel in the top-left corner shows the average range in pips for each session, calculated over the configured number of past days. This average helps traders set realistic targets and stops relative to typical session volatility. An optional breakout alert fires the moment price moves beyond any of today's session box boundaries, supporting a rules-based approach to breakout trading.
+How to Use
+Apply the indicator to any Forex pair on any timeframe. Boxes are always calculated from M1 data internally, so the active chart timeframe does not affect accuracy. The recommended view is H1 or H4 for a clean overview of multiple days at once.
+Reading the boxes:
+Top edge of each box = session high
+Bottom edge = session low
+Dotted midline = session midpoint (50% level)
+Label on top-left of each box = session name and range size in pips
+Trading ideas:
+Wait for price to break above the Asian box high at London open — potential long entry
+A London box entirely inside the Asian box signals consolidation — expect a larger New York move
+Use the average range panel to judge whether today's session range is already extended
+The midline acts as dynamic support/resistance within the session
+Input Parameters
+Parameter
+Default
+Description
+=== SESSIONS ===
+Asian_Start
+00:00
+Asian session start time (server time, HH:MM)
+Asian_End
+08:00
+Asian session end time
+London_Start
+08:00
+London session start time
+London_End
+16:00
+London session end time
+NewYork_Start
+13:00
+New York session start time
+NewYork_End
+21:00
+New York session end time
+=== DISPLAY ===
+DaysBack
+5
+Number of past days to draw boxes (1-100)
+BoxAlpha
+30
+Box fill transparency (0 = clear, 255 = solid)
+ShowMidline
+true
+Draw dotted midpoint line inside each box
+ShowLabels
+true
+Show session name and range label on each box
+ShowStatsPanel
+true
+Show average range stats panel in top-left corner
+=== COLORS ===
+Asian_Color
+Gold
+Asian box fill and border color
+London_Color
+DodgerBlue
+London box fill and border color
+NewYork_Color
+MediumSeaGreen
+New York box fill and border color
+=== ALERTS ===
+UseAlerts
+false
+Enable breakout alerts when price exits a session box
+UsePopup
+true
+Show popup dialog on breakout
+UsePush
+false
+Send push notification on breakout
+Important Notes
+Session times are in server time
+, not local time. Check your broker's GMT offset and adjust defaults if needed. Most brokers on UTC+2 or UTC+3 can use the defaults as-is.
+The indicator requires
+M1 history to be loaded
+for accurate boxes. If boxes appear incomplete on first attach, scroll the chart left to force history download, then re-attach.
+Breakout alerts fire
+once per session per day
+and reset automatically at midnight server time.
+The stats panel average is computed over the same DaysBack period as the boxes. A minimum of 3 days is recommended for a meaningful result.

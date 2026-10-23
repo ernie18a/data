@@ -1,0 +1,5 @@
+The Adviser 10 points 3 uses the histogram of the standard indicator Moving Average Convergence/Divergence, MACD. The Expert Adviser is adjusted on work on M15 tameframe.
+The Results of the testing:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9975

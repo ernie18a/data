@@ -1,0 +1,6 @@
+Author:
+Nikolay Kositsin
+Two moving averages, 2pbIdealMA.mq4 and 2pbIdeal3MA.mq4. The averaging algorithms in them is developed by Neutron. The second indicator 2pbIdeal3MA.mq4 uses this averaging algorithm three times.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8681

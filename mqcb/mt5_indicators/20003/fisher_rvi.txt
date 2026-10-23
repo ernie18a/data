@@ -1,0 +1,5 @@
+Relative Vigor Index (RVI) indicator is used in technical analysis to measure the conviction of a recent price action and the likelihood that it will continue. The RVI compares the positioning of a security's
+closing price
+relative to its price range, and the result is smoothed by calculating an exponential moving average of the values.
+The indicator is calculated by using the following formula:
+This indicator has an addition of Fisher Transform to the RVI. The Fisher Transform enables traders to create a nearly Gaussian probability density function by normalizing prices. In essence, the transformation makes peak swings relatively rare events and unambiguously identifies price reversals on a chart. The technical indicator is commonly used by traders looking for extremely timely signals rather than lagging indicators.

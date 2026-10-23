@@ -1,0 +1,11 @@
+V3 Version updates:
+This modification will return a string indicating whether the pip difference is up, down, or unchanged.
+This code will print the price at the beginning and the end of the calculation, as well as calculate and print the pip difference.
+In this version of the script,
+pipDifference
+is calculated as the difference between the prices at the beginning and end of the calculation,
+and then it is converted to pips. Finally, it determines the direction of the pip difference and prints the result accordingly.
+Added Point to Pip conversion factor
+////////
+A very simple calculator on Pips over N Bars for Symbol and Period Chart
+Since I find it fast and useful I want to share it with you !

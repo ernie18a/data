@@ -1,0 +1,11 @@
+This version of Bollinger bands stops is applied to rsi indicator.
+Unlike the original indicator (which can be used for stop loss settings), this version, due to the lack of the on-chart values, is directed into "trend" direction, and can be treated as a different way of having signal line on the RSI.
+RSI that can be used is one of the following :
+Cuttler's RSI
+Ehlers' smoothed RSI
+Harris' RSI
+Rapid RSI
+RSI
+RSX
+"Slow" RSI
+To help the usage usual set of alerts is already built in (along with multi time framing) and along with the features already known in the basic BB stops indicator, it is being extended by the usage of RSI.

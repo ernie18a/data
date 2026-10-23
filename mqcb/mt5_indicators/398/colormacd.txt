@@ -1,0 +1,9 @@
+Padrão histograma colorido do indicador
+MACD
+(a linha de sinal é colorido de vermelho ou verde de acordo com a direção da tendência atual). O indicador permite selecionar algoritmo da média para o próprio histograma.
+O Indicador usa a classe СMoving_Average da biblioteca SmoothAlgorithms.mqh. O trabalho dessa classe foi descrito em detalhes no artigo
+"Média Serial de Preços para Cálculos Intermediários Sem Usar Buffers Adicionais"
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/398

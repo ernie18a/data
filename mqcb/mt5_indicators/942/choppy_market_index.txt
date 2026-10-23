@@ -1,0 +1,24 @@
+Real author:
+Daniel Fernandez
+Indicator values are in the range 0-100. The greater is the indicator value, the greater is the market stability, so the more likely we have trend. The smaller is the indicator value - the less probable the trend is.
+Calculation formula:
+CMI = ((ABS(Close[0]-Close[n]))/(MaxHigh[n]-MinLow[n]))*100
+Where:
+ABS - absolute value
+Close[0] - last close
+Close[n] - close N bars ago
+MaxHigh[n] - maximal value of High for the N bars period
+MinLow[n] - minimal value of Low for the N bars period
+Tips:
+Trading on unstable market:
+Buy, when moving average (blue line) of the CMI indicator is below 40 and the histogram is red.
+Sell when moving average (blue line) of the CMI indicator is below 40 and the histogram is green.
+Close positions when CMI histogram is above 50.
+Trading on trend market:
+Buy when moving average is above 60 and the histogram is green.
+Sell when moving average is above 60 and the histogram is red.
+Close positions, when CMI histogram is below 50.
+This indicator can be used as a filter in trend trading strategies.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/942

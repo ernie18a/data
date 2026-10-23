@@ -1,0 +1,23 @@
+This trading system uses the
+BlauTSStochastic
+oscillator.
+A trade decision is made when the histogram changes direction, at the breakthrough of the zero line or when the color of the signal line cloud changes.
+The following input parameter is used for selecting an entry algorithm option:
+input
+AlgMode Mode=twist;
+// The algorithm for entering the market
+For a correct operation of the EA, place the compiled indicator file BlauTSStochastic.ex5 to the terminal_data_folder\MQL5\Indicators.
+Note that the TradeAlgorithms.mqh library file allows using Expert Advisors with brokers who offer
+nonzero spread
+and the option of setting Stop Loss and Take Profit
+with position opening
+. Other variants of this library can be downloaded from
+https://www.mql5.com/en/code/1578
+.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. The instances of history of deals on the chart.
+Testing results for 2012-2013 at GBPUSD H4:
+Fig. 2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2035

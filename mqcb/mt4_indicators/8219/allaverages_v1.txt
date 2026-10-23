@@ -1,0 +1,8 @@
+The AllAverages_v1 indicator.
+Price=0;
+MA_Period=5;
+MA_Shift=0;
+MA_Method=1;
+Label_Size=8;
+LabelCol=Orange;
+AllAverages_v1

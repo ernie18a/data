@@ -1,0 +1,30 @@
+The implementation of the MACD pattern "Trend continuation".
+The EA was written in order to check the efficiency of the trading strategy described by the author. The received results and the description of the EA parameters is available in the 20th issue of the magazine. The magazine can be downloaded from our website
+http://www.fortrader.ru
+Short description of the strategy:
+Time frame: H4;
+Symbol: EURUSD;
+Volume: 0.1 lot
+Indicators: ЕMA7, EMA21, EMA359, SMA89. MACD 5,13,1.
+Searching for buy signal:
+The MACD histogram must form a High above 0.0015;
+Once a Low is formed above 0.0015, the histogram must go below -0.0005 and reverse with a value greater than 0,0005 without going below zero;
+The stop loss is placed 10 points below the last local minimum;
+The first target for the 30% position is closed at a price value higher than the 21-period Exponential Moving Average;
+The second target for half of the positions is closed when the price reaches a value between the 89-period Simple Moving Average and 365-period Exponential Moving Average.
+The third target for the remaining volume of the positions is closed when the price reaches a resistance level.
+Searching for sell signal:
+The MACD histogram must form a High above -0.0015;
+Once a High is formed above -0.0015, the histogram must take a value higher than -0,0005 and reverse downwards with a value lower than -0,0005 without going above zero;
+The stop loss is placed 10 points above the last local maximum;
+The first target for the 30% position is closed at a price value lower than the 21-period Exponential Moving Average;
+The second target for half of the positions is closed when the price reaches a value between the 89-period Simple Moving Average and 365-period Exponential Moving Average.
+The third target for the remaining volume of the positions is closed when the price reaches a resistance level.
+Testing of the Expert Advisor using the standard parameters:
+After optimization outside the optimization area:
+When working on future, good results were received on the smaller timeframes as well.
+The offered EA has hard-coded default pattern parameters. The extended version of the EA can be downloaded in the issue of our journal. It comes with the ability to change and optimize the parameters, and with adaptive levels for calculating the take profit and stop loss.
+!!! Note that different brokers have different quote properties and the results based on the given parameters may differ.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8249

@@ -1,0 +1,37 @@
+Description:
+What's new in the script:
+The script can apply the trailing function based on the portfolio profits, i.e. Stop Levels can be set upon reaching the total breakeven level of all the orders in the selected direction.
+You can run the script in one window and set SymbolAll = true - in this case it will maintain orders of all symbols.
+Added a function for defining the trailing length based on the Parabolic and Velocity indicators.
+It can run as a separate script or Expert Advbisor.
+Depending on the TrailingStop variable, the script can trail positions using Fractals (stop levels are placed at the nearest fractal shifted by delta from them), extreme values of previous bars (e.g. for Buy they will be placed at Low-delta), Parabolic and Velocity indicators or at the specified number of points.
+TrailingStop = 1; //"0-off 1-Candle 2-Fractals 3-Velocity 4-Parabolic >4-pips";
+delta = 0; //shift from a fractal, candlestick or Parabolic
+only_Profit = true; //only apply trailing to profitable orders
+only_NoLoss = false; //move to breakeven instead trailing
+only_SL = false; //only trail the orders that have SL
+SymbolAll = true; //apply trailing for all instruments
+Portfel = true; //apply trailing based on the portfolio profit
+Additional parameters:
+If TrailingStop = 4, the Parabolic indicator will be used to determine the stop level distance:
+Step = 0.02;
+Maximum = 0.2;
+Magic = 0;
+If TrailingStop = 4, the Velocity indicator will be used to determine the stop level distance:
+VelocityPeriodBar = 30; //a parameter of the Velocity indicator (rate of price change)
+K_Velocity = 1.0; //Stop Loss multiplier by Velocity
+Visualization:
+Information about the current script operation is displayed on the screen:
+script configuration
+number of orders maintained by the script
+minimum allowed stop levels (-)
+current possible stop levels (price labels)
+current breakeven levels (price labels)
+Example:
+In the screenshot, the trailing stop is set based on the portfolio profit levels and is calculated using fractals. Once the SL setting level (the lower price label) rises above the breakeven level (the upper price label), the script will start placing SL for all orders, regardless of whether they are currently profitable or not. If all these orders get closed by these stop levels, the total profit will still be positive.
+Recommendations:
+The script shuts down after closing all orders.
+The scripting can work without the Velocity indicator. You can use any other indicator measuring velocity (rate of price change).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9805

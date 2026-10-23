@@ -1,0 +1,6 @@
+BB_OsMA indicator is the OsMA indicator in the form of spheroid with a deviation as the upper and lower bands.
+This BB_OsMA indicator comes with a simple template BB_OsMA_template.
+Hopefully useful.
+Update 01: 26/01/2016 ~ Correction of bugs.
+Update 02: 08/02/2016 ~ error Correction.
+Recommendate for Scalping: use on TF M5

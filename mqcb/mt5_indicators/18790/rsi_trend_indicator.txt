@@ -1,0 +1,22 @@
+A simple trend indicator moves like ZigZag, based on the rate of RSI changes. If RSI moves down from 65 or moves up from 35, trend line draws. These change limits are selective parameters and could be change by user. Each point of trend line connects to the next RSI change point.
+//--- input parameters
+input
+int
+InpUpperRSI  =
+65
+;
+// Upper limit of RSI changes
+input
+int
+InpLowerRSI  =
+35
+;
+// Lower limit of RSI changes
+input
+int
+InpRSIPeriod =
+14
+;
+// RSI Period
+Uptrend points are price high and downtrend are price low. Uptrend lines are blue and downtrend are red in the main chart window.
+RSI Trend Indicator (65, 35)

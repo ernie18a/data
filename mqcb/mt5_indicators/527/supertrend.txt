@@ -1,0 +1,6 @@
+Real author:
+Jason Robinson
+This indicator is considered to be a trend one and its operation principle is quite simple: as soon as it changes its color to green, it means the start of an uptrend, if the color is changed to red, a downtrend starts. The indicator has one disadvantage - it often lags but, nevertheless, it is quite popular among traders. For better results the indicator should be used as confirmation for the market entry.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/527

@@ -1,0 +1,15 @@
+As you know, prices drop and grow in ondulatory way, in cycles. This cyclic movement is a result of change in investors' expectations and the price control fight between bulls and bears.
+Price Rate of Change (ROC) reflects this ondulatory movement like an oscillator, measuring the difference in prices in a certain period. ROC grows if prices grow and drops along with them. The more the price change is, the more ROC changes.
+12- and 25-day ROC are most widely spread. A 12-day ROC is a perfect short-term and medium-term indicator of overbought/oversold.
+The higher ROC is, the more probable the rise. However, like in the case of using all other overbought/oversold indicators, you should not hurry to open a position until the market changes its direction (turns up or down). The market that seems to be outbidden can remain so for some time. In general, the state of utmost overbought/oversold usually assumes an extension of the current trend.
+Price Rate of Change indicator
+Calculation:
+You can find the speed of price change as a difference between current closing price and the closing price n periods ago.
+ROC = ((CLOSE (i) - CLOSE (i - n)) / CLOSE (i - n)) * 100
+where:
+CLOSE (i) - closing price of the current bar;
+CLOSE (i - n) - closing price n bars ago;
+ROC - the value of Price Rate of Change indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/46

@@ -1,0 +1,8 @@
+The script provides a synchronous scrolling for all charts opened in the client terminal.
+Before the script run, enable the chart shift from the right part of the window (enable the button on the Standard toolbar, if the button is absent, you can add it to the toolbar using the right mouse button click on the panel - "Customize..."):
+Specify the shift size using the triangle marker, located on the upper edge of the chart and configure it as you like:
+The script should be executed only on one chart. The red markers will be created on all of the opened charts after the script running. While scrolling of any chart, the other charts will be scrolled automatically so the bars with the same time will under these lines.
+The input parameters of the script are absent.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/81

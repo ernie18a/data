@@ -1,0 +1,15 @@
+Trading strategy
+This is a very simplified trading strategy based on two custom '
+MA Other TimeFrame Correct
+' indicators. There is no Stop Loss, Take Profit, or Trailing in the Expert Advisor - therefore, closing occurs only with the opposite signal. Positions are opened only by a constant lot.
+Trading signals:
+Checking the intersection: comparing the values of the indicators on bar #1 and on bar #0.
+Rice. 1. Two MA Other TimeFrame Correct Intersection
+Position size management (lot calculation)
+The lot can be only '
+Constant lot
+'.
+Additional features:
+'
+Print log
+' prints an extended log of all operations.

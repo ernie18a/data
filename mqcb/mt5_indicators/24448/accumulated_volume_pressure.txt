@@ -1,0 +1,5 @@
+Theory :
+Found this on another forum. It is calculated as :
+Volume Pressure = Volume / Price Change
+Usage :
+Like all other volume based indicators. You can chose if you wish to use ticks or real volumes (where the real volume is available)

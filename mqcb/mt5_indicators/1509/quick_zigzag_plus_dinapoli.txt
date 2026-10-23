@@ -1,0 +1,23 @@
+The real author:
+Yurich
+The
+"
+Fast ZigZag
+" indicator including the drawing of DiNapoli's target levels.
+The possible value of
+S
+t
+o
+p
+L
+oss
+is marked by the red line
+. Then, according to the order are the start line and the Target1, Target2 and Target3 lines. Besides, the indicator draws vertical lines corresponding to the similar tracking in time. Drawing the vertical lines can be disabled through input parameters. When direction of the ZigZag changes, the indicator can trigger the sound signal.
+Links to Similar Codes:
+DinapoliTargets
+DinapoliTargets_MTF
+DinapoliTargets_Full
+Joe DiNapoli "Trading With DiNapoli Levels".-Мoscow: IK Analitika, 2001.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1509

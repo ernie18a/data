@@ -1,0 +1,11 @@
+Real author:
+Alex Sidd (Executer)
+The ExVol calculates the difference between the total sum of bodies of growing and falling candlesticks on a given interval in points.
+The 0 level of the indicator means that the amount of growing and falling candlesticks is equal. Typically, the zero mark crossed upwards signals the beginning of the upward movement, and mark crossed downwards is a signal of the beginning of a downward movement. The indicator also can be used as a signal to close the position, if its value begins to approach zero.
+This indicator was first implemented in MQL4 and published in
+CodeBase
+on 22.12.2006.
+Figure 1. The ExVol indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/6984

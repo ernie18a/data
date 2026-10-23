@@ -1,0 +1,10 @@
+Real author:
+Antonuk Oleg
+The linear regression line with data placed in the indicator buffer.
+This indicator was first implemented in MQL4 and published in the
+Code Base at mql4.com
+on 06.02.2008.
+The LinearRegressionLine indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1926

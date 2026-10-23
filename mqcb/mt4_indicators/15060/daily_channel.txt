@@ -1,0 +1,18 @@
+Simple display any time zone daily channel.
+Input parameters:
+LocalTimeZone — Local TimeZone
+DailyTimeZone — Daily TimeZone
+Default UTC-5 East USA
+DailyPeriodColor — Daily Period Color
+DailyPeriodStyle — Daily Period Style
+Color Setting:
+High Price Style
+Low Price Style
+Middle Price Style
+Instructions:
+Best use the indicator on max 1 Hour
+Enable Show period separators
+Daily Channel In XAUUSDPro H1 Time Zone: UTC-5 East USA
+Translated from Chinese by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/zh/code/15060

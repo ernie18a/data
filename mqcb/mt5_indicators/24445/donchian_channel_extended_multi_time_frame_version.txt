@@ -1,0 +1,10 @@
+Theory :
+The "regular" version, with detailed description was posted here :
+Donchian Channel - Extended
+. This version is adding multi time frame property to the indicator
+Usage :
+It can be used the same way as the original. Multi time frames are having, apart from all the standard multi time frames that can be used in metatrader 5, 3 additional "time frames" :
+first higher time frame (first time frame higher than the current chart time frame)
+second higher time frame (second time frame higher than the current chart time frame)
+third higher time frame (third time frame higher than the current chart time frame)
+Keep in mind that the indicator is searching time frames regardless if they are displayed on the periodicity bar or not. So it can "chose" time frame that is not displayed as a button at the periodicity bar

@@ -1,0 +1,4 @@
+Since it seems that we can not rely only on the brute force of metatrader 5, from time to time we need to revisit the code and optimize it - for speed mainly. One example of that is vortex indicator (originally published here :
+Vortex
+along with detailed description.
+This version is, regardless that the code is not simpler, significantly faster. Hence, it is more suitable to be used from any iCustom() calls

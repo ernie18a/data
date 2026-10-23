@@ -1,0 +1,23 @@
+A signal indicator YABSI. It shows Buy and Sell labels on the price chart.
+It has one parameter:
+Show price typical
+- display of the typical price line, based on which the calculation is performed, Yes/No.
+Calculations:
+if
+(Close[1] < High and PriceTypical[2] < Close[1])
+or
+PriceTypical[3] < Close[1]
+:
+a Sell signal
+.
+If
+(Close[1] > Low and PriceTypical[2] > Close[1])
+or
+PriceTypical[3] > Close[1]
+:
+a Buy signal
+.
+Note that in order to avoid false entries, signals should be filtered using direction indicators, oscillators and overbought/oversold zones or support/resistance levels.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21686

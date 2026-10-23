@@ -1,0 +1,67 @@
+The trading strategy “Head or Tail” belongs to the category of high-risk short-term trading approaches, primarily used on the stock market and Forex. Its name is due to the randomness of decision-making, similar to flipping a coin (“heads” — buy an asset, “tails” — sell). This strategy is based solely on intuitive decisions or random signals and ignores fundamental market analysis factors.
+How does the strategy work?
+The strategy operates as follows:
+Instrument selection: the trader chooses a financial instrument (stock, currency, commodity).
+Decision-making: the decision to buy or sell is made randomly, for example, by flipping a coin or using another method to choose between two possible actions.
+Trade closure: the trade is automatically closed after a predetermined time or when a certain profit or loss level is reached.
+This strategy does not require a deep understanding of market mechanisms and analytics, but it also does not involve a serious approach to risk management.
+Disadvantages of the strategy:
+High risk level:
+Relying solely on luck significantly increases the probability of losses. The strategy ignores any objective indicators and recommendations, increasing the chances of capital loss.
+Lack of risk control:
+Since buying or selling occurs randomly, there is no possibility of rational capital management, risk assessment, or asset allocation.
+Impossibility of long-term success:
+Even if individual trades are profitable due to luck, in the long term, this strategy is more likely to lead to significant losses.
+Short-lived results:
+Positive outcomes are possible only under favorable market conditions and with a large number of small successful trades, which is rarely encountered in practice.
+Application of the strategy:
+This strategy is more suitable for beginners who want to familiarize themselves with the principles of exchange platforms and try trading without deep knowledge of technical analysis. However, professionals rarely use this strategy, preferring scientifically based approaches that take into account price behavior, trading volume, and fundamental company indicators.
+For experienced investors, this strategy represents more of an experimental method for testing hypotheses rather than a stable way to earn money.
+Thus, although the strategy is simple and accessible to every beginner, it carries significant risks and has almost no chance of providing stable income in the long term.
+Let's examine the main block of the random position opening signal:
+if
+((b + s) ==
+0
+)
+// If there are no active positions
+Here, the condition checks for the absence of open positions. Variable b represents the number of long ("buy") positions, and variable s represents the number of short ("sell") positions. If the sum of both is zero (b + s = 0), it means there are no open positions.
+if
+(::
+MathRand
+() %
+2
+==
+0
+)
+// Randomly choosing the direction of opening a position
+Inside the previous block, a random number is checked. The function
+::MathRand()
+generates a pseudo-random number from 0 to 32767 inclusive. This number is then divided by 2 (% 2) — if the remainder is 0, the next block is executed.
+{
+if
+(trade.Buy(lt))
+// Opening a long position (BUY)
+return
+;
+// Terminating function execution
+}
+If the random number is even (remainder of division by 2 is 0), the trading robot opens a long position (purchase) with a volume of iLots. After successfully opening the position, the function execution is interrupted by the return operator.
+else
+// Otherwise...
+if
+(trade.Sell(lt))
+// Opening a short position (SELL)
+return
+;
+// Terminating function execution
+If the random number was odd (remainder of division by 2 is not zero), a short position (sale) with a volume of iLots is opened, and further execution of the function is also terminated.
+Final logic of the fragment:
+It checks whether the trader has any open positions.
+If there are no open positions, a random direction for the trade is chosen: either a purchase (long) or a sale (short).
+The opened trade automatically stops further execution of the function.
+Thus, this code represents the simplest example of an algorithm that makes a decision to open a position on the market randomly.
+For a detailed line-by-line analysis of the code, you can visit the blog post:
+https://www.mql5.com/en/blogs/post/766912
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11637

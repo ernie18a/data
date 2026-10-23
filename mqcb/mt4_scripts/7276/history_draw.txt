@@ -1,0 +1,5 @@
+They were posted on the forums - people were content. Description is in the archive.
+Here is an example of the operation results of the script, which creates the trading history on the chart. As you can see, everything is like in the tester.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7276

@@ -1,0 +1,22 @@
+Author of the idea
+:
+Evgeny
+,
+mq5 code author
+:
+barabashkakvn
+.
+The Expert Advisor sets a grid of pending orders above and below the current price.
+The EA algorithm is as follows: if there are no pending orders and no positions, the EA sets five pending Sell Limit and five pending Buy Limit orders. Then the EA monitors the market: if profit reaches the "Profit target" value or loss reaches "Maximum loss", all open positions are closed and remaining pending orders are deleted.
+Input Parameters
+Profit target (in money)
+- the target profit value; when it is reached, all positions will be closed.
+Maximum loss (in money)
+- the maximum allowable loss; when it is reached, all positions are closed.
+Step (in pips)
+- distance between pending orders.
+Lot
+- volume of orders.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19048

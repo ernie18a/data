@@ -1,0 +1,16 @@
+Indicator Compare Prices uses a non-standard price with a logarithmic calculation.
+It displays two lines: the initial Close price (green) and the one calculated based on the algorithm (red).
+It has one input parameter:
+Prices shift
+- price shift for logarithm calculation.
+Calculations:
+MainPrice = Close
+LogPrice = Close / (1.0+LOG10(ShiftClose / Close)
+where:
+LOG10 - logarithm to base 10
+ShiftClose - Close Prices shift bars back
+Fig1. Compare Price, Prices shift = 1
+Fig. 2. Compare Price, Prices shift = 5
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22797

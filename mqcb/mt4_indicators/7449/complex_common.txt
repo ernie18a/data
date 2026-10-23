@@ -1,0 +1,7 @@
+Author: Simeon Semenych
+This is an impulse or signal indicator. It is very sensitive and quickly responds to the price movements.
+Article about cluster indicators
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7449

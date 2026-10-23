@@ -1,0 +1,96 @@
+This is a new version of
+KNUX
+Expert Advisor. It works with
+ADX
+,
+CCI
+,
+RVI
+and
+WPR
+indicators.
+The Strategy works with Martingale. The Martingale Base was coded by Matus German. It will works on all time frames.
+To optimize one proceeds as follows:
+Set only ADX Strategy to "true", the WPR-Strategy "false";
+Optimize "Main signal" settings and ADX Strategy settings;
+ADX Strategy set to "false" and WPR-Strategy on "true";
+Optimize "WPRSignal" Settings;
+Now, ADX Strategy and WPR Strategy set to "true" and lets Trade!!!
+If you have a good set-file found, mail me and I gladly exchange with you set-Files.
+If you know improvements, mail me and I'll try to fruition this.
+If you find errors, mail me and I'll try to fix them.
+FOR BACKTESTING YOU SHOULD HAVE A MODELLING QUALITY FROM 99.90% AND TEST IT ON EVERY TICK!!!
+Strategy Tester Report
+Knux_Martingale
+XM.COM-Demo (Build 765)
+Symbol
+EURJPY (Euro vs Japanise Yen)
+Periode
+1 Minute (M1) 2013.01.01 22:00 - 2014.12.26 21:59 (2013.01.01 - 2014.10.01)
+Modell
+Jedes Ticksignal (präziseste Methode, die auf allen nächsten verfügbaren kleineren Zeitrahmen basiert)
+Parameter
+MainSet="------ Main settings ------"; StopLoss=200; TakeProfit=8; MartingaleSet="------ Martingale settings ------"; lotsMultiplier=1.4; distanceMultiplier=1.4; Capital="=== Trade Lots Size ==="; ManualLots=0.1; AutoLot=true; Risk=15; MaxLot=100; MinLot=0.01; MainSignal="=== Main Signal Logic ==="; ADX_FilterPeriod=13; RVI_FilterPeriod=20; TimeShift=0; ADXSignal="=== ADX Signal Logic ==="; ADX_CrossPeriod=3; CCI_FilterPeriod=35; CCI_Level=175; WPRSignal="=== WPR Signal Logic ==="; WPR_Period=33; WPR_BuyRange=14; WPR_SellRange=14; WPR_ADXmaxLevel=21; WPR_ADXminLevel=5; Strategy_Mode="=== Strategy ==="; ADX_Strategy=true; WPR_Strategy=true; Times="=== Time Filters === "; TimeControl=false; TimeZone="Adjust ServerTimeZone if Required"; ServerTimeZone=1; TradingTimes="HourStopGMT > HourStartGMT"; HourStartGMT=7; HourStopGMT=22; DontTradeFriday="Dont Trade After FridayFinalHourGMT"; UseFridayFinalTradeTime=true; FridayFinalHourGMT=6; MenuSetting="------ Wiew settings ------"; showMenu=true; menuColor=Yellow; variablesColor=Red; font=10; Extras="=== Extra Settings ==="; MaxSlippage=3; Identification=35188; Auto_Ident=true;
+Balken im Test
+742254
+Ticks modelliert
+51527826
+Modellierungsqualität
+99.90%
+Fehler in Charts-Anpassung
+0
+Ursprüngliche Einlage
+1000.00
+Spread
+Current (37)
+Gesamt netto Profit
+3101.41
+Brutto Profit
+6846.57
+Brutto Loss
+-3745.16
+Profit Faktor
+1.83
+Erwartetes Ergebnis
+16.41
+Drawdown absolut
+424.26
+Maximaler Drawdown
+1631.82 (43.54%)
+Relative Drawdown
+69.23% (1295.54)
+Trades gesamt
+189
+Short Positionen (gewonnen %)
+80 (91.25%)
+Long Positionen (gewonnen %)
+109 (96.33%)
+Profit Trades (% gesamt)
+178 (94.18%)
+Loss Trades (% gesamtl)
+11 (5.82%)
+Grösster
+Profit Trade
+1503.49
+Loss Trade
+-802.48
+Durchschnitt
+Profit Trade
+38.46
+Loss Trade
+-340.47
+Maximum
+aufeinanderfolgende Gewinne (Profit in Geld)
+72 (1983.42)
+Aufeinanderfolgende Verluste (Verlust in Geld)
+2 (-1207.56)
+Maximal
+Aufeinanderfolgender Profit (Anzahl der Gewinne)
+1983.42 (72)
+Aufeinanderfolgende Verluste (Anzahl der Verluste)
+-1207.56 (2)
+Durchschnitt
+aufeinanderfolgende Gewinne
+22
+aufeinanderfolgende Verluste
+2

@@ -1,0 +1,11 @@
+The indicator displays the Renko bars on the MetaTrader 5 chart.
+The calculation of the nearest border is as follows:
+For the current price three price levels are calculated:
+price_ceil
+price_round
+price_floor
+In this case, the distance between "price_ceil" and "price_round" and the distance between "price_round" and "price_floor" is equal to the size of the "brick". The size of the brick is set in the input parameter "
+InpSize
+".
+If you want to clearly see the price, then turn on the "Chart in foreground":
+After that the price will be on top of the "bricks":

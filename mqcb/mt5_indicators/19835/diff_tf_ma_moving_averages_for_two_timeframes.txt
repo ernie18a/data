@@ -1,0 +1,12 @@
+The indicator shows on one chart two simple moving averages from two timeframes: from the current one and the one specified in input parameters.
+It has two parameters:
+Period MA
+- Moving Average period;
+Timeframe MA
+- the timeframe of the second Moving Average.
+Fig.1 The H1 chart, the MA timeframe H4
+Fig.2 The M30 chart, the MA timeframe H4
+Fig.3 The M15 chart, the MA timeframe H4
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19835

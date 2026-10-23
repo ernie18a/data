@@ -1,0 +1,9 @@
+The strategy of the EA is very simple. It looks through the account history and, if the latest position has been closed by TakeProfit, enters the market in the same way as before. Otherwise, it considers the trend direction to be changed.
+Position is opened at the signals of indicators:
+1. if Parabolic confirms the change of trend;
+2. if the market is between flat range.
+The position volume in lots calculated through money management and risk management for optimal fraction.
+Default settings are for EURUSD M30.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8146

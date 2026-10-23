@@ -1,0 +1,1 @@
+It is a DT oscillator as described by Robert Miner. Some options that do not exist in metatrader 4 (filled zone between the oscillator and the signal line that can be turned on and off) and as a part of the indicator itself, internal RSI that, unlike the built in one, works OK even for period 1.

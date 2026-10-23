@@ -1,0 +1,12 @@
+Presented is the script for the calculation of the third Elliott wave based on the algorithm suggested by Bill Williams in his book "Trading Chaos".
+(Comment to the figure 7-15 in this book)
+This script uses the standard OBJ_EXPANSION object (Fibonacci extension)
+In order to start the calculation it is necessary to move first coordinate of the object created by the script to the supposed start of the first wave to the Low of a bar (for bullish version), the second coordinate to the High of the bar where the first wave is expected to end and the second is expected to start. The third coordinate should be moved to the Low of the expected end of the second wave.
+(For the bearish version, the prices of the coordinates must be - High for the first, Low for the second, High for the third)
+The script automatically detects bullish and bearish versions of the third Elliott wave.
+The red crosses mark the price for the ratio (price/time) where the "supposed" third wave "should" end.
+And more: for a more accurate calculation the script requires a "sufficient" number of bars in the first and second waves.
+P.S. If you like this script, it might be possible to make another for the calculation of the fifth Elliott wave based on the formed third and fourth waves.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7156

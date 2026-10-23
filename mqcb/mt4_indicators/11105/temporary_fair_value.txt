@@ -1,0 +1,10 @@
+Where is the herd of Bulls and Bears within the candle? A candle does not show where most of the activity has been during the candle's timeframe. TFV does.
+TFV shows with 1 dot where the trenches are. TFV shows the core of each candle: the Fair Price.
+Parameters are:
+Exponential – if set to 1, every tick weighs equal, if set to 2 (or higher), the most recent tick weighs double (or more), to emphasize the most recent price positions.
+WingDing – the dot.
+Useability
+It can be used by robots that act OnTick, to avoid unwanted actions on a single and non-signifcant spike.
+Indicator for Temporary Fair Value.
+Straight or near straight TFV-lines reveal support and resistance lines.
+More reliable indicator for a swing high or swing low.

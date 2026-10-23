@@ -1,0 +1,6 @@
+Plotting up to 256 averages using two color line for each average. Supported average types in this version.
+Simple MA
+Exponential MA
+Smoothed MA
+Linear weighted MA
+Usual stuff included too (line styles, colors, weights) and usual set of 22 types of prices.

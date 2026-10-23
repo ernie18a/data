@@ -1,0 +1,109 @@
+A further development of
+Multi Arbitration 1.000
+.
+Difference from 1.000
+:
+The EA is only launched on PERIOD_M1 (see the explanation below, parameter
+Time frame
+).
+The EA now trades two symbols simultaneously. The second symbol is taken from the
+ExtArrSymbols
+static array:
+string
+ExtArrSymbols[
+20
+]=
+  {
+"EURUSD"
+,
+"GBPUSD"
+,
+"USDCHF"
+,
+"USDJPY"
+,
+"USDCAD"
+,
+"AUDUSD"
+,
+"AUDNZD"
+,
+"AUDCAD"
+,
+"AUDCHF"
+,
+"AUDJPY"
+,
+"CHFJPY"
+,
+"EURGBP"
+,
+"EURAUD"
+,
+"EURCHF"
+,
+"EURJPY"
+,
+"EURNZD"
+,
+"EURCAD"
+,
+"GBPCHF"
+,
+"GBPJPY"
+,
+"CADCHF"
+};
+//+------------------------------------------------------------------+
+//| Expert initialization function                                   |
+//+------------------------------------------------------------------+
+int
+OnInit
+()
+Position opening principle has changed:
+Now, a new BUY position can only be opened when the current price is below the lowest BUY position.
+A new SELL position can only be opened when the current price is above the highest SELL position.
+The new parameter
+Time frame
+allows optimizing the EA on any chart. The Expert Advisor
+works when a new bar of the main symbol appears
+(i.e. the symbol of the chart on which the EA is running):
+//+------------------------------------------------------------------+
+//| Expert tick function                                             |
+//+------------------------------------------------------------------+
+void
+OnTick
+()
+  {
+//--- we work only at the time of the birth of new bar
+static
+datetime
+prevtime=
+0
+;
+datetime
+time_0=
+iTime
+(
+0
+,
+m_symbol_one.Name()
+,
+InpTimeFrame
+);
+if
+(time_0==prevtime)
+return
+;
+prevtime=time_0;
+Here the
+InpTimeFrame
+variable is our
+Time frame
+input. Depending on the
+Time frame
+input, we can enable the EA to work on any timeframe!
+Testing results on EURUSD:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18751

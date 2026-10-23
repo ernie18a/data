@@ -1,0 +1,19 @@
+Hello
+This code has been published 01.10.2008 in "
+A System
+" topic.
+It was developed for Automated Trading Championship 2008 participation.
+However, original edition of the code has been discarded.
+In original edition it generates approximately 1000 error codes number 1 for backtest period 01.01.2008-01.09.2008.
+In revised edition this feature is fixed.
+Differences between "A System: Championship 2008 Original Edition" and "A System: Championship 2008 Revised Edition":
+1. line 2 - defence code has been removed;
+2. line 72 - check has been added
+.
+Best regards
+Ais
+==================================================
+Attention!
+This is a technological sample.
+You are using this code on your own risk.
+==================================================

@@ -1,0 +1,10 @@
+Real author:
+Vladimir Kravchuk,
+"New adaptive method of following the tendency and market cycles"
+FATL (Fast Adaptive Trend Line) is calculated using low frequency digital filter (FLF-1).
+FLF-1 filter is necessary for high frequency noises suppression and reduction of market cycles with a very short volatility periods that can also be considered as a noise. The filter parameters (fc cutoff frequency and A attenuation at the rejection band) were calculated with the use of EUR/USD exchange rate spectral estimation.
+Filters of low frequency FLF-1 and FLF-2 provide attenuation in the stop band with no less than 40 dB and absolutely don’t distort the amplitude and phase of entry discontinuous price series in the pass band (bandwidth). These properties of the digital filters provide significantly improved (in comparison with simple moving average) noise suppression that in its turn allows reducing sharply the probability of appearance "false" signals for buy and sell.
+There are no analogues to FATL among widely known technical instruments. It is not a moving "average", but just the adaptive lines estimates of the short-term trends. Unlike moving "average", FATL has no any phase delay with regard to current prices.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/403

@@ -1,0 +1,70 @@
+For an
+Expert Advisor (EA)
+, when a new tick quote arrives, the
+MetaTrader
+terminal calls the default
+OnTick()
+event handling function. However, there is no default event handling function for when a new bar (candle) starts or opens.
+To detect this, one needs to monitor the opening time of the currently most recent bar. Once it changes, it signifies the start of a new bar, and one can react to it and handle the event. The following sample code, compatible with both MQL4 and MQL5, shows one such method on how this can be achieved:
+// Default tick event handler
+void
+OnTick
+()
+   {
+// Check for new bar (compatible with both MQL4 and MQL5).
+static
+datetime
+dtBarCurrent  =
+WRONG_VALUE
+;
+datetime
+dtBarPrevious = dtBarCurrent;
+                         dtBarCurrent  =
+iTime
+(
+_Symbol
+,
+_Period
+,
+0
+);
+bool
+bNewBarEvent  = ( dtBarCurrent != dtBarPrevious );
+// React to a new bar event and handle it.
+if
+( bNewBarEvent )
+         {
+// Detect if this is the first tick received and handle it.
+/* For example, when it is first attached to a chart and
+                  the bar is somewhere in the middle of its progress and
+                  it's not actually the start of a new bar. */
+if
+( dtBarPrevious ==
+WRONG_VALUE
+)
+               {
+// Do something on first tick or middle of bar ...
+}
+else
+{
+// Do something when a normal bar starts ...
+};
+// Do something irrespective of the above condition ...
+}
+else
+{
+// Do something else ...
+};
+// Do other things ...
+};
+In the above code, the
+static variable
+keeps track of the bar's opening time, even when returning from the
+OnTick()
+function. Unlike a normal local variable, it memorizes its data content and does not release it when leaving the function. This is the key to detecting a change in the opening time of the current bar.
+It's also important to note, that when the EA is first placed on a chart, the above code reacts as if the bar has just opened. This condition requires special handling if the situation needs to be handled differently.
+Please note, that all my
+CodeBase
+publications' source code are now also available in "Public Projects" tab of
+MetaEditor
+under the name "FMIC".

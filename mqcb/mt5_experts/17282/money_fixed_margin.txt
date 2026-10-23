@@ -1,0 +1,347 @@
+An example for calculating the lot value with a fixed margin level. That is, if you specify 10%, a position with the margin equal to 10% of free margin will be opened.
+Input Parameters:
+StopLoss (in pips) — the stop loss level
+% risk — margin for a position as % of free margin
+The following loop is implemented to simulate trading:
+static
+long
+count=-
+21
+;
+if
+(count%
+980
+==
+0
+)
+// we pass 980 tics
+{
+//--- getting lot size for open long position (CMoneyFixedMargin)
+Initial value
+count=-
+21
+is set to "warm up" the strategy tester. Then the remainder after devision of
+count
+by
+980
+(this number was chosen randomly) is calculated. It means that every 980 ticks lot calculation cycle is started, in which lot is calculated taking into account the risks per trade.
+The lot calculation cycle depending on risk per trade (calculation for the Buy position):
+Step one
+//--- getting lot size for open long position (CMoneyFixedMargin)
+double
+sl=
+0.0
+;
+double
+check_open_long_lot=
+0.0
+;
+//--- variant #1: StopLoss=0.0
+sl=
+0.0
+;
+check_open_long_lot=m_money.CheckOpenLong(m_symbol.
+Ask
+(),sl);
+Print
+(
+"sl=0.0"
+,
+", CheckOpenLong: "
+,
+DoubleToString
+(check_open_long_lot,
+2
+),
+", Balance: "
+,
+DoubleToString
+(m_account.Balance(),
+2
+),
+", Equity: "
+,
+DoubleToString
+(m_account.Equity(),
+2
+),
+", FreeMargin: "
+,
+DoubleToString
+(m_account.FreeMargin(),
+2
+));
+//--- variant #2: StopLoss!=0.0
+sl=m_symbol.
+Bid
+()-ExtStopLoss;
+check_open_long_lot=m_money.CheckOpenLong(m_symbol.
+Ask
+(),sl);
+Print
+(
+"sl="
+,
+DoubleToString
+(sl,m_symbol.
+Digits
+()),
+", CheckOpenLong: "
+,
+DoubleToString
+(check_open_long_lot,
+2
+),
+", Balance: "
+,
+DoubleToString
+(m_account.Balance(),
+2
+),
+", Equity: "
+,
+DoubleToString
+(m_account.Equity(),
+2
+),
+", FreeMargin: "
+,
+DoubleToString
+(m_account.FreeMargin(),
+2
+));
+if
+(check_open_long_lot==
+0.0
+)
+return
+;
+Then the calculated lot value for a Buy position taking into account StopLoss is received to the
+check_open_long_lot
+variable using the
+CheckOpenLong
+method of the
+CMoneyFixedMargin
+class:
+double
+check_open_long_lot=m_money.CheckOpenLong(m_symbol.
+Ask
+(),m_symbol.
+Bid
+()-ExtStopLoss);
+The following parameters are printed to the Experts journal: StopLoss, calculated lot value in accordance with the risk per trade, trade account balance at the time of calculation, margin at the moment of calculation.
+If the calculation returns "0.0", exit:
+if
+(check_open_long_lot==
+0.0
+)
+return
+;
+Step two
+Then we receive the lot value of the Buy position for which we have sufficient funds; the value is received to the
+chek_volime_lot
+variable using the CheckVolume method of the
+CTrade
+class. The following parameters are passed here:
+m_symbol.Name()
+— symbol name,
+check_open_long_lot
+— position volume we want to open (this parameter was calculated earlier):
+//--- check volume before OrderSend to avoid "not enough money" error (CTrade)
+double
+chek_volime_lot=m_trade.CheckVolume(m_symbol.Name(),check_open_long_lot,m_symbol.
+Ask
+(),
+ORDER_TYPE_BUY
+);
+Step three
+If the CheckVolume method returns a value other than "0.0", then we check the condition: do we have enough money to open a position with the lot calculated in accordance with the risk.
+if
+(chek_volime_lot!=
+0.0
+)
+if
+(chek_volime_lot>=check_open_long_lot)
+m_trade.Buy(chek_volime_lot,
+NULL
+,m_symbol.
+Ask
+(),m_symbol.
+Bid
+()-ExtStopLoss,m_symbol.
+Bid
+()+ExtStopLoss);
+else
+Print
+(
+"CMoneyFixedRisk lot = "
+,
+DoubleToString
+(check_open_long_lot,
+2
+),
+", CTrade lot = "
+,
+DoubleToString
+(chek_volime_lot,
+2
+));
+If we have enough money, open the position, if not — the lot value calculated in accordance with the risk per trade (
+DoubleToString
+(check_open_long_lot,
+2
+)
+) and the lot value for wich we have enough funds (
+DoubleToString
+(chek_volime_lot,
+2
+)
+) are printed to the Experts journal.
+AN example of opening a Buy position with 10% of free margin:
+The following was printed to journal:
+Money Fixed Margin (EURUSD,M1)
+2016.11
+.
+28
+00
+:
+03
+:
+24
+sl=
+0.0
+, CheckOpenLong:
+0.28
+, Balance:
+3000.00
+, Equity:
+3000.00
+, FreeMargin:
+3000.00
+Money Fixed Margin (EURUSD,M1)
+2016.11
+.
+28
+00
+:
+03
+:
+24
+sl=
+1.05792
+, CheckOpenLong:
+0.28
+, Balance:
+3000.00
+, Equity:
+3000.00
+, FreeMargin:
+3000.00
+Trade
+2016.11
+.
+28
+00
+:
+03
+:
+31
+instant buy
+0.28
+EURUSD at
+1.06076
+sl:
+1.05792
+tp:
+1.06292
+(
+1.06042
+/
+1.06076
+/
+1.06042
+)
+Trades
+2016.11
+.
+28
+00
+:
+03
+:
+31
+deal
+#
+2
+buy
+0.28
+EURUSD at
+1.06076
+done (based on order
+#
+2
+)
+Trade
+2016.11
+.
+28
+00
+:
+03
+:
+31
+deal performed [
+#
+2
+buy
+0.28
+EURUSD at
+1.06076
+]
+Trade
+2016.11
+.
+28
+00
+:
+03
+:
+31
+order performed buy
+0.28
+at
+1.06076
+[
+#
+2
+buy
+0.28
+EURUSD at
+1.06076
+]
+Money Fixed Margin (EURUSD,M1)
+2016.11
+.
+28
+00
+:
+03
+:
+31
+CTrade::
+OrderSend
+: instant buy
+0.28
+EURUSD at
+1.06076
+sl:
+1.05792
+tp:
+1.06292
+[done at
+1.06076
+]
+Note that when calculating the lot depending on the risk of free margin, StopLoss does not matter.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17282

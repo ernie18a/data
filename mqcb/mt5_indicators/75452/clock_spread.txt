@@ -1,0 +1,37 @@
+What this indicator does
+Clock (Spread).mq5
+is a MetaTrader 5 chart indicator that displays a small text label in the corner of the chart showing:
+Countdown timer
+until the current candle closes (in HH:MM:SS or MM:SS format, depending on timeframe)
+Current spread
+(Ask − Bid, in points), shown in parentheses next to the timer
+It updates every second via a timer ( EventSetTimer(1) ), so the countdown keeps ticking smoothly even when the market is closed or there's no new price tick. It also refreshes on every new tick ( OnCalculate ).
+Example display: < 04:32 (12) — meaning 4 minutes 32 seconds left until candle close, spread is 12 points.
+The indicator draws nothing on the price chart itself ( indicator_plots 0 ); it just places a text label object ( OBJ_LABEL ) in the corner, and it's built to run safely on many charts at once (it builds a unique object name per chart/symbol/timeframe so instances don't collide).
+Inputs
+Visual settings:
+Input
+Default
+Description
+InpFontName
+"Trebuchet MS"
+Font used for the label text
+InpFontSize
+12
+Font size
+InpFontColor
+Aqua
+Text color, chosen from a dropdown (Aqua, Navy, Teal, Maroon, Lime, Salmon, White, Yellow)
+Positioning settings:
+Input
+Default
+Description
+InpXDistance
+20
+Horizontal offset (pixels) from the top-left corner of the chart
+InpYDistance
+20
+Vertical offset (pixels) from the top-left corner of the chart
+InpObjPrefix
+"CLK_"
+Prefix used to build a unique internal object name, avoiding conflicts when the indicator runs on multiple charts simultaneously

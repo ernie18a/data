@@ -1,0 +1,33 @@
+The Mathematical Flaw in Retail Volatility (ATR)
+Retail algorithms universally rely on the Average True Range (ATR) to calculate stop-losses and position sizing. This is a fatal structural flaw. The ATR is purely backward-looking—it merely averages past price movements. When macroeconomic shocks occur, the ATR lags significantly, leaving your capital exposed during the exact moments when dynamic protection is needed the most.
+The Institutional Standard: GARCH(1,1) Model
+To survive dynamic market regimes, top-tier quantitative hedge funds and options pricing desks do not look at past averages. They forecast future variance using
+Generalized Autoregressive Conditional Heteroskedasticity (GARCH)
+.
+The
+Institutional GARCH(1,1) Forecaster
+brings this Nobel-prize-winning econometric mathematics directly to your MQL5 terminal.
+Core Quantitative Architecture
+Predictive Variance:
+Instead of averaging past ranges, the algorithm calculates logarithmic return shocks (Alpha) and historical volatility persistence (Beta) to forecast the exact mathematical probability of variance for the
+next
+execution candle.
+Non-Lagging Risk Assessment:
+Instantly detects volatility clustering (the tendency for large moves to be followed by large moves), allowing your Expert Advisor to preemptively widen trailing stops
+before
+the ATR even begins to react.
+Institutional Default Weights:
+Pre-configured with standard Wall Street econometric parameters (
+$\alpha = 0.09$
+,
+$\beta = 0.90$
+) to model typical financial asset decay, with full inputs exposed for advanced parameter optimization.
+Zero External Dependencies:
+Calculates complex logarithmic arrays natively in C++, bypassing the need for sluggish external Python integrations.
+How to Implement in Algo-Trading
+Drop the ATR:
+Stop using static period averages for your dynamic stop-losses.
+Forecast the Shock:
+Monitor the GARCH histogram. A sudden spike indicates a high-probability volatility shock is mathematically imminent.
+Protect Capital:
+Use this indicator's buffer to dynamically shrink your lot sizing (VAPS) or widen your stop-loss milliseconds before a major liquidity injection sweeps the retail order book.

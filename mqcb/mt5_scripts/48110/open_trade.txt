@@ -1,0 +1,11 @@
+This function executes the main logic for initiating a trade.
+It calculates the opening price, take profit levels and stop loss based on the symbol information and parameters provided by the user.
+Prepares a trade request (MqlTradeRequest) with essential details such as symbol, volume, order type, slippage, comment, magic number, etc.
+Invoke the OrderSend function to send the trade request and get the result.
+SetTypeFillingBySymbol function:
+This function determines the type of order fulfilment (Fill or Cancel, Immediate or Cancel or Return) according to the symbol's fulfilment policy.
+GetMinTradeLevel function:
+Calculates the minimum trade level considering the freeze level and stop level of the symbol. Adjusts the minimum level to ensure that it is within specified limits and returns the result."
+Translated from Spanish by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/es/code/48110

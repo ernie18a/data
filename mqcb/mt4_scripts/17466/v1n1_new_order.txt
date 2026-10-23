@@ -1,0 +1,34 @@
+V1N1 New Order is a manual trading script that lets you send market and pending orders with precise, risk-based position sizing and thorough pre-trade validation. Configure all parameters in the script's input window, run it on the desired chart, and review an optional confirmation preview before the order is placed.
+ORDER TYPES
+Market: Buy, Sell
+Pending: Buy Limit, Sell Limit, Buy Stop, Sell Stop
+Pending entry level defined by absolute price or by points from the current price
+Optional expiration time (in hours) for pending orders
+POSITION SIZING (RISK-BASED)
+Risk as a percentage of account balance, or as a fixed amount in account currency
+Lot size is calculated automatically from the stop-loss distance so the monetary risk matches your setting
+A configurable maximum-risk limit (% of balance) protects against oversized trades
+STOP LOSS
+Defined by absolute price or by points from the entry
+TAKE PROFIT (optional)
+None
+Absolute price
+Points from the entry
+Amount: a profit target in account currency (the TP price is derived from the lot size)
+Percentage: a profit target as a percentage of balance
+VALIDATION & SAFETY
+Validates all inputs before doing anything
+Checks the current spread against a configurable maximum
+Verifies the broker's minimum stops level for SL/TP distances
+Verifies free margin before sending
+Prices are normalized to the symbol's tick size; lot size is normalized to the broker's volume step, min and max
+Optional confirmation dialog with a full order preview, including the risk/reward ratio, before the order is sent
+NOTES
+This is a script: it runs once, sends the order, and exits. It does not manage the position after it is opened (no trailing, break-even, or partial close).
+Configurable magic number, order comment, and slippage tolerance.
+Designed for discretionary traders who want fast, accurate, risk-controlled order entry.
+HOW TO USE
+Drag the script onto the chart of the symbol you want to trade.
+Set the order type, entry level, risk, SL and TP in the input window.
+(Optional) Keep the confirmation dialog enabled to review the trade preview.
+Confirm to send the order.

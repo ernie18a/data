@@ -1,0 +1,18 @@
+This indicator displays information.
+For the price of the order opening:
+Order type.
+Lot orders.
+Profit orders.
+The ratio of P/L.
+Magic Number.
+By Take Profit:
+Number of points.
+The amount of profit when the take profit.
+Currency Deposit.
+By Stop Loss:
+Number of points.
+The amount of profit when the stop loss.
+Currency Deposit.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10858

@@ -1,0 +1,4 @@
+Two CCI indicators with different periods in the same indicator subwindow.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8378

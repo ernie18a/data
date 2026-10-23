@@ -1,0 +1,12 @@
+Alan Hull's Moving Average.
+Since the classical Moving Average is calculated using symbol's prices received in the past period, that MA lags behind the current price activity. This is the main drawback of the Moving Average.
+The HMA indicator takes into account this limitation. Hull's Moving Average is an indicator, which not only smooths price fluctuations, but also levels out the price lag. Hull's Moving Average can solve this problem through using the square root of the period instead of the period itself, which is used in the classical Moving Average.
+The indicator has two input parameters:
+Period
+- calculation period;
+Applied price
+- price used for calculations.
+HMA works on any timeframe and with any instrument.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20418

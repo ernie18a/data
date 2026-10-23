@@ -1,0 +1,15 @@
+The EA only trades buy positions and does not use Sl and TP.
+Settings:
+"---------- General ----------"
+Commentary
+Start trade
+End trade
+Prder is closed
+"---------- Risk and money management ----------"
+Lots
+Limit of open positions for each symbol
+Daily limit for the number of deals for each symbol
+Test was performed with standard settings. Account 10 000 dollars and with a leverage of 100. symbol US30.
+Translated from German by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/de/code/48137

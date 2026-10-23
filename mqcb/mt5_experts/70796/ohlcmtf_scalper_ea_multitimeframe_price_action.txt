@@ -1,0 +1,30 @@
+This Expert Advisor is a pure price action trading system. It does not use any standard lagging indicators like moving averages or oscillators. Instead, it reads the exact OHLC (Open, High, Low, Close) data across multiple timeframes to find precise entry points based on market structure.
+The core idea of the strategy is to align the momentum of lower timeframes with the structural highs and lows of higher timeframes. For example, the EA can evaluate if the previous H1 High is greater than the H4 High, while simultaneously checking M5 breakouts, executing a trade only when all selected timeframes confirm the direction.
+Main Strategy Components:
+MTF Structure Alignment:
+Compares Previous Highs and Lows across predefined timeframes (H1, H4, Daily).
+Role Reversals:
+Identifies when a previous High flips to become a new Low (Support/Resistance flip).
+Breakout and Continuation:
+Triggers orders based on candle closes breaching critical structure levels.
+Pending Orders Execution:
+Places Limit or Stop orders exactly at the structural levels instead of jumping in at market price.
+Recommended Environment:
+Symbols:
+Works best on highly liquid and trending assets like XAUUSD or BTCUSD.
+Timeframe:
+Attach the EA to the H1 chart (the internal logic will automatically pull data from M5, M30, H4, and D1 as configured).
+Input Parameters Explanation:
+The EA is highly modular, allowing the user to enable or disable any specific condition.
+Look_Back_Bar / Look_Forward_Bar:
+Controls the scanning depth for previous structures and the length of the horizontal visual lines drawn on the chart.
+Buy/Sell Conditions:
+A set of boolean switches to enable specific MTF comparisons (e.g., 60m High > 240m High).
+Lower Timeframes:
+Enables fast execution logic combining M5 with M30 or H1.
+SL_Mode:
+Choose between Fixed Points, % of Balance, or fixed USD Amount for dynamic position sizing.
+Use_Break_Even & Auto_Expiration:
+Moves stop loss to entry after reaching a safe distance and cancels pending orders after a specified time in minutes.
+Dot_Offset:
+A visual adjustment to draw signal dots away from the candles, ensuring the price action remains fully visible to the trader.

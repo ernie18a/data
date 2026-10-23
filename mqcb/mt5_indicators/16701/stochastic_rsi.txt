@@ -1,0 +1,12 @@
+Stochastic RSI (sometimes and by some sellers and traders) called DTOSC (dynamic trend oscillator). It is basically a stochastic of rsi.
+This version has 6 sub-types it is actually calculating:
+Depending on parameters (stochastic 1, stochastic 2 and smoothing) it is :
+(x,x,x) a simple RSI
+(x,x,n) a smoothed RSI
+(n,x,x) or (x,n,x) stochastic RSI in its "classical" way
+(n,x,n) or (x,n,n) smoothed stochastic RSI
+(n,n,x) double stochastic RSI
+(n,n,n) smoothed double stochastic RSI
+x -> parameter is less than or equal to 1
+n -> parameter is greater than 1
+Overbought and oversold zones are marked for easier levels crossings as an aid in decision taking. All the six sub-types should be used following the rules that are usually applied for stochastic and rsi (stochastic being a kind of a "trend" indicator and rsi being a kind of a "momentum" indicator, the combination migh avoid the basic rules, but you shall find out that it is not so dificult to use those two combined rules together)

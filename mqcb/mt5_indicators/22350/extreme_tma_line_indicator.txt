@@ -1,0 +1,18 @@
+Extreme TMA Line is a well-known channel indicator included into multiple Extreme TMA strategies.
+There are five inputs:
+TMA period
+- TMA calculation period
+ATR period
+- ATR calculation period
+ATR multiplier
+- channel width ratio
+Trend threshold
+- trend type switch threshold
+Redraw
+- recalculation for compensating the indicator redrawing (Yes/No)
+The indicator draws three lines: central (colored) and two channel ones. When detecting a bullish trend, the central line is colored green. When detecting a bearish one, the central line is colored red. The flat state is marked by gray color.
+Fig. 1. Extreme TMA Line, Redraw = Yes
+Fig. 2. Extreme TMA Line, Redraw = No
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22350

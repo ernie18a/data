@@ -1,0 +1,50 @@
+ASZ - Adaptive Structure ZigZag
+A Modern Evolution of the Classic Fractal Principle
+📘 The Story Behind ASZ
+ASZ is not just another ZigZag. It started as a research experiment with a simple question:
+"Can we use modern Artificial Intelligence to solve the flaws of the classic ZigZag indicator?"
+Traditional ZigZags are often too static—they lag in fast markets and create noise in slow ones. By combining human market experience with the coding capabilities of AI, we revisited the
+Fractal Principle
+. The result is a tool that respects the classic logic but adds a modern "adaptive" layer using ATR (Average True Range).
+⚠️ Important Disclaimer (Please Read)
+This is NOT a Signal Indicator.
+ASZ does not provide Buy/Sell arrows, and it is not designed for direct auto-trading entry. It is a
+Market Structure Analyzer
+designed to help you see Highs, Lows, and Break of Structure (BOS) clearly. Please do not download this expecting magic signals.
+🧠 How It Works (The Logic)
+Unlike standard indicators that use fixed points, ASZ uses a
+Hybrid Threshold
+engine:
+Volatility Check:
+It constantly monitors market speed (ATR).
+Adaptation:
+In
+High Volatility
+(News/Impulse), it widens the detection threshold to filter out noise.
+In
+Low Volatility
+(Ranges), it tightens the threshold to catch smaller structural moves.
+Fractal Confirmation:
+It searches 3-14 bars to the left and waits for fixed confirmation bars to the right to validate a swing.
+🛠️ Key Features
+Non-Repainting:
+Once a swing point is confirmed (after the set
+RightBars
+), it never changes position.
+High Performance:
+Optimized using advanced caching methods to ensure zero lag, even on maximum history.
+State Machine Logic:
+Enforces strict High-Low alternation logic (prevents invalid double highs/lows).
+🤖 Development Credits
+This tool represents a transparent collaboration between human logic and AI development:
+Concept & Logic:
+Defined by the author based on Fractal Market Structure.
+Architecture:
+Structural design and logic flow assisted by
+Google Gemini
+.
+Optimization:
+Code refinement and performance caching enhanced by
+Claude (Opus)
+.
+Free Open Source Tool for the MQL5 Community. Trade Responsibly.

@@ -1,0 +1,10 @@
+Shows an appropriate value for the last three bars on each timeframe: "1" if the bar is bullish, and "0" if the bar is bearish.
+Inputs:
+background
+background alpha
+text color
+text alpha
+The panel is shifted downwards if the one-click trading panel is enabled on the chart:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18153

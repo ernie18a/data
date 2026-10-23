@@ -1,0 +1,19 @@
+Two independent trading systems using indicators
+BykovTrend_V2
+and
+ColorX2MA
+within one EA. Signals to open trades by trading systems are formed when a bar is closing, if the trend has changed, displayed through changing the color of any of those two indicators.
+For the generated EA to operate correctly, the compiled files of indicators
+BykovTrend_V2.ex5
+and
+ColorX2MA.ex5
+must be in the
+<terminal_data_directory>\MQL5\Indicators
+folder.
+The default EA inputs were used in tests below. Stop Loss and Take Profit were not used in testing.
+Fig 1. Exemplary trades in the chart
+Test results for USDJPY H6 over the year 2016:
+Fig. 2. Testing results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21216

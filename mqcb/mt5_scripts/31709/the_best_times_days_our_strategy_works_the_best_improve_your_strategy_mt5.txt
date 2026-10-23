@@ -1,0 +1,39 @@
+INTRODUCTION :
+For day traders. 2 highly important indicators to turn strategies into extreme winning ones. The Win/Loss ratio and the Reward/Risk ratio will allow us to identify the best times and days our strategy works the best
+For example, if we run a bar in town, we don’t actually open it in the morning or in the afternoon because no one will come to have a drink. We will open it between 10 PM and 3 AM because during this period lot of customers will come for a drink. We might also want to consider that it is best to open the bar on Fridays and on Saturdays because people don’t have work the next day.
+So, when we want to run a strategy (i.e. when we want to run a bar) we must examine it to know what is the best time and days to trade this strategy? (i.e. what is the best period that customers will come to have a drink).
+HOW TO USE IT :
+You can check the following video that will explain how to
+install and run the script,
+analyze historical data retrieve the gold information about our strategies.
+PARAMETERS :
+This script has 3 inputs, which are
+The
+Starting Date
+: to set the range of our analysis from a starting date till now.
+The
+Win/Loss Ratio
+: by defaut, it is set to 40% and
+The
+Reward/Risk Ratio
+: by default, it is set to 2.
+OTHER TRADING TOOLS
+1.
+I've already published a script on best DAY to trade (
+https://www.mql5.com/en/code/31468
+).
+You can check also the following video on that will explain how to
+install and run the script,
+analyze historical data and convert it into a column chart
+PARAMETERS :
+This script has 1 input, which is the number of trading days.
+2.
+I've already published a script on best TIME to trade (
+https://www.mql5.com/en/code/31594
+).
+You can check also the following video on that will explain how to
+install and run the script,
+analyze historical data and convert it into a column chart
+integrate this information into your strategy
+PARAMETERS :
+This script has 1 input, which is the number of trading days.

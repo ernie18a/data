@@ -1,0 +1,11 @@
+The Expert Advisor based on the "New Trading Dimensions" book by Bill Williams.
+The code was written for real trading. There is an error processing and fixing function, intellectual lot adjustment. The operation of the EA is decently commented. Two types of the signals: classic and pending. The type of the signal depends on the mutual arrangement of the Alligator lines.
+Filter=30, Gator_Div_slow=
+250,
+Gator_Div_fast=
+150 — the estimated value for the H4 chart (each pair requires optimization). Recommended timeframe — hourly and above.
+Buy at the breakthrough of the fractal above the Alligator's teeth. Sell at the breakthrough of the fractal below the Alligator's teeth. Trailing stop at the red line of the Alligator, as well as the fractals. Holds only one position. Pyramiding (as in the book) is not used.
+It works with 5-digit quotes only!
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13859

@@ -1,0 +1,12 @@
+Check a MetaQuotes Language 4 program for basic syntax errors like unbalanced braces, parentheses & brackets surrounding operators, expressions & array definers.
+Also verifies for single quotes surrounding color and date constants, double quotes for string constants and multi line comment symbol pairs.
+Set up:
+1) Place files into the following subdirectories:
+"Syntax checker.mq4" into "\experts\scripts",
+"StringArraySuite.mqh" into "\experts\include".
+2) Close and then re-start MetaTrader for it to find
+the new file.
+3) Click on MetaEditor, click on "MQL Navigator", click
+on "scripts", double click on "Syntax checker.mq4" and click on "Compile".
+Input parameters:
+Input parameters are described in the comments at the top of the program.

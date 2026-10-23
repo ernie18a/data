@@ -1,0 +1,26 @@
+The indicator is similar to the standard MACD, but is calculated using both MACD and SAR, which enables it to generate confident signals in trend areas. Overbought/oversold levels allow tracking trend reversals or rollback. The indicator showed good results on higher timeframes, H1 and above.
+It has ten input parameters:
+MACD Fast EMA period
+- period of MACD's fast EMA;
+MACD Slow EMA period
+- period of MACD's slow EMA;
+MACD Signal MA period
+- period of MACD's signal line;
+SAR step
+- the step parameter of the standard SAR;
+SAR max
+- the max parameter of the standard SAR;
+MACD multiplier
+- MACD multiplier parameter;
+SAR multiplier
+- SAR multiplier parameter;
+TAT Signal period
+- indicator's signal line period;
+TAT overbought
+- overbought level;
+TAT oversold
+- oversold level.
+The MACD multiplier and SAR multiplier define the influence of these indicators on the final calculation.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20063

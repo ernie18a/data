@@ -1,0 +1,6 @@
+Average True Range (ATR) indicator values from other timeframes in a digital format, displayed as text on the chart.
+Two timeframes can be selected in the indicator parameters:
+Example:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18091

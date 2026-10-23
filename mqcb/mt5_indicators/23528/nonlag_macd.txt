@@ -1,0 +1,31 @@
+Oscillating indicator Non lag MACD is an MACD built using the moving average named
+Non lag average
+.
+The indicator has nine adjustable parameters:
+Fast NonLag period
+- fast Non lag average calculation period
+Slow NonLag period
+- slow Non lag average calculation period
+Signal period
+- signal line period
+Fast NonLag method
+-fast Non lag average calculation method
+Slow NonLag method
+- slow Non lag average calculation method
+Signal method
+- signal line calculation period
+Applied price
+- price used for calculation
+Filter
+- Non lag average noise filter
+Deviation (price)
+- deviation, i.e., shifting the Non lag average upwards/downwards from the price
+Non lag average
+is not required to be available in the terminal, since it is calculated by the indicator independently.
+Fig. 1. Non lag MACD
+Fig. 2. Non lag MACD
+,
+Filter = 100
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23528

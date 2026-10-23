@@ -1,0 +1,14 @@
+Real author:
+Paladin80
+The
+Money Flow Index
+Indicator use typical price (
+TP = (H + L + C)/3
+) for its plotting. We just added possibility to use all price types for calculations to the indicators standard code.
+This indicator was first implemented in MQL4 and published in
+CodeBase
+on August 17, 2012.
+Fig.1. MFI_price Indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11368

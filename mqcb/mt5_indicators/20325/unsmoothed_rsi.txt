@@ -1,0 +1,14 @@
+The indicator shows a line of the unsmoothed RSI in a separate chart window.
+It has four input parameters:
+Period
+- calculation period;
+Applied price
+- the calculation price;
+Overbought
+- overbought level;
+Oversold
+- oversold level.
+Interpretation of the indicator is similar to the standard RSI.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20325

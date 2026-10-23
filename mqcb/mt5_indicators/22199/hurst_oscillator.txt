@@ -1,0 +1,24 @@
+Hurst oscillator. Two indicators: Hurst oscillator and
+Hurst bands
+are described in Jim Hurst's "The Magic of Stock Transaction Timing" book
+The indicator has two input parameters:
+Period
+- calculation period
+Smoothing
+- smoothing period
+Calculation:
+HO = MA - CMA[Period/2-1]
+where:
+CMA = SMA(PRICE_MEDIAN, Period)
+MA  = SMA(FlowValue, Smoothing)
+If Close > PrevClose
+FlowValue = High
+If Close < PrevClose
+FlowValue = Low
+If Close == PrevClose
+FlowValue = (High+Low)/2
+Fig. 1. Hurst oscillator
+Fig. 2. Hurst oscillator and Hurst bands
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22199

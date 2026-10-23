@@ -1,0 +1,53 @@
+The indicator allows creating an index for one of the eight basic currencies. The index may contain up to ten components.
+The indicator has twenty-two input parameters:
+Index
+- the currency index to be created;
+Inverse
+- inverting the index chart (Yes/No switch);
+Instrument 1
+- name of the first component of the index to be created (EURUSD by default);
+Use instrument 1
+- using the first component when creating an index (Yes/No switch);
+Instrument 2
+- name of the second component of the index to be created (USDJPY by default);
+Use instrument 2
+- using the second component when creating an index (Yes/No switch);
+Instrument 3
+- name of the third component of the index to be created (GBPUSD by default);
+Use instrument 3
+- using the third component when creating an index (Yes/No switch);
+Instrument 4
+- name of the fourth component of the index to be created (USDCHF by default);
+Use instrument 4
+- using the fourth component when creating an index (Yes/No switch);
+Instrument 5
+- name of the fifth component of the index to be created (USDCAD by default);
+Use instrument 5
+- using the fifth component when creating an index (Yes/No switch);
+Instrument 6
+- name of the sixth component of the index to be created (NZDUSD by default);
+Use instrument 6
+- using the sixth component when creating an index (Yes/No switch);
+Instrument 7
+- name of the seventh component of the index to be created (AUDUSD by default);
+Use instrument 7
+- using the seventh component when creating an index (Yes/No switch);
+Instrument 8
+- name of the eighth component of the index to be created (USDSEK by default);
+Use instrument 8
+- using the eighth component when creating an index (Yes/No switch);
+Instrument 9
+- name of the ninth component of the index to be created (USDRUB by default);
+Use instrument 9
+- using the ninth component when creating an index (Yes/No switch);
+Instrument 10
+- name of the tenth component of the index to be created (XAUUSD by default);
+Use instrument 10
+- using the tenth component when creating an index (Yes/No switch);
+Fig.1. Index USD
+Fig.2. Index EUR
+Fig.3. Index AUD
+Fig.4. Index RUB
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20561

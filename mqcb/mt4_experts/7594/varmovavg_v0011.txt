@@ -1,0 +1,5 @@
+Author: Balidev for Darma
+It uses VMA - ЕMA, which automatically adjust the smoothing percentage based on the market volatility.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7594

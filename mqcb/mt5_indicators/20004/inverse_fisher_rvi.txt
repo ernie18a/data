@@ -1,0 +1,6 @@
+Relative Vigor Index indicator used in technical analysis to measure the conviction of a recent price action and the likelihood that it will continue. The RVI compares the positioning of a security's
+closing price
+relative to its price range, and the result is smoothed by calculating an exponential moving average of the values.
+The indicator is calculated by using the following formula:
+This indicator has an addition of inverse Fisher Transform to the RVI.
+The Inverse Fisher Transform normalizes the values in the desired range (-1 to +1 in this case) which helps in assessing the overbought and oversold market conditions.

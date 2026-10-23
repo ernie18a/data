@@ -1,0 +1,55 @@
+Info: Constant Range Detector indicator
+Note:
+This indicator is intended for use with
+Constant Range Charts:
+Range Bars
+or
+Renko Boxes,
+not standard candles - bars
+Constant Range Candles and Charts are also referred to as
+Range Bars (RB)
+and
+Range Bar Charts
+.
+Constant Range Candles / Bars all have the same pip range value from high to low.
+Standard Candles / Bars all have different pip range values from high to low.
+The indicator computes the pip range of the 8th historical candle / bar from the current candle / bar.
+As each new candle / bar is formed the 8th historical candle becomes the next candle to the right.
+Because all range candles / bars have the same pip range value each successive 8th candle produces the same fixed range output.
+If the indicator is used with standard candles / bars the range output will not be fixed but will differ with each new candle / bar.
+Constant Range (CR): CR 50
+LCrudeAug12: 79.58 High - 79.08 Low (a random candle data chosen for illustration)
+Note:
+Be aware that Data Window will return High - Low subtraction values of 150 for 15 pips, 200 for 20 pips etc, on 3 & 5 digit pricing.
+Constant Range Chart: CR 10
+WTI-Oil: 200 LWMA - Williams Aligator (click chart to enlarge)
+Ask - Bid + Spread Indicator in above charts can be got
+Free Constant Range Indicator - 1:
+Source
+. Note: Point based - 3 & 5 digit pricing will require range setting to include additional zero. i.e. 25 pip range requiring an indicator setting of 250. Automatic refreshes and generates range candles / bars on MT4 start.
+Note:
+When in installing indicator ensure file
+ovoranbar001.ex4
+is in the /experts/libraries folder.
+Free Constant Range Indicator - 2:
+Source
+. Note: Pip based. Will need manual refresh on MT4 start - set 1M feeder chart to 5M then back to 1M to start refresh when MT4 starts, after which range candles / bars will continue to be generated until MT4 closed.
+Constant Range Bars -
+HERE
+- flawless performance. Note: license linked to external server.
+Constant Range Information: Google - try "Range Bars", "Constant Range Bars", "Range Bar Trading", etc.
+Tip:
+Create ready made constant range templates for ease and speed of use. Ask-Bid-Spread indicator can be used on constant range templates and generated range charts for ease of check that both charts are in sync and range chart updating.
+Base template
+CR-0-Blank.tpl
+for 1M chart provided (see download),
+will need
+Ask-Bid+Spread indicator.
+___________________________________________________________________________________________________________________________
+Code Revision
+//for (int i = 0; i <= limit; i++
+int
+i;
+//for (int i = 0; i < Bars; i++){
+      ObjectDelete("CRD");
+      //ObjectDelete("name");

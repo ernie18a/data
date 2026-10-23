@@ -1,0 +1,15 @@
+Real author:
+Andy Ismail
+This indicator is a free version of
+Alpha Trend Spotter PA
+. Suplement for
+Alpha Trend Spotter (ATS)
+indicator.
+This indicator acts by PRICE ACTION to find the strongest trend each day, use it when ATS shows clear Bullish or Bearish Trend.
+How to Use:
+PINK Arrow
+means Sell
+GREEN Arrow
+means Buy
+Recommendations:
+Suitable for M5, H1, H4, D1 timeframes. Suitable for Binary Option 5 minutes signal. Never trade when there is a high impact news.

@@ -1,0 +1,7 @@
+This is the Heiken Ashi indicator, based on the averaged Open, High, Low and Close prices, averaged using the
+Adaptive Moving Average
+(AMA).
+The input parameters are the same as for AMA.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/150

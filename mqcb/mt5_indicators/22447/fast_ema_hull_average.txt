@@ -1,0 +1,8 @@
+Theory :
+Original Hull moving average is calculated as LWMA[square root(period), (2*LWMA(period/2, price)-LWMA(period, price)] (where LWMA is Linear Weighted Moving Average). That kind of calculation produces rather smooth average with acceptable lag. Some other average types have been used too, but they tend to produce lag that is exceeding the lag of the original Hull moving average
+This version :
+This version is using the "fast ema" (originally published here :
+Fast EMA
+). Although the result is not as smooth as the original Hull, the lag is lesser than the original and it seems that we can use it regardless of that. The smoothness "lack" is rather subjective and once when it is inspected, it remains smooth at all the right places
+Usage :
+You can use this version the usual way - change of color can be used as a signal

@@ -1,0 +1,16 @@
+Real author:
+TrendLaboratory
+Fixed version of the
+Skyscraper
+indicator. This indicator in its original form has one distinct feature. When calculating on the current bar, it uses volatility of the financial instrument calculated considering all previous chart bars. As a result, when the chart moves to the right, the indicator's NRTR line is moved farther and farther away from the current price values. Such an approach may be viable for short-lived financial instruments, but generally, the algorithm should limit the calculation of volatility to some period, which was done in the proposed version of this indicator. Volatility is defined considering the input parameter:
+input
+uint
+Length=
+10
+;
+// ATR period
+The indicator middle line is also made similar to the main lines in the NRTR form and colored in accordance with the current trend.
+Fig. 1. Skyscraper_Fix
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22288

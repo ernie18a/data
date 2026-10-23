@@ -1,0 +1,12 @@
+Simple risk management tool, that calculates required lot size according to amount of money trader affords to lose and stop-loss in points.
+INPUTS
+Risk-Money: money to sacrifice.
+Stop-Loss Points: stop-loss in points.
+EXAMPLE
+AUDJPY Sell Order
+Risk-Money: 1000 USD
+Open Price: 73.706
+Stop-Loss: 76.130
+Stop-Loss Points: 76.130 - 73.706 = 2.424 (2424 points)
+Lots: 0.45
+You lose 1000 USD, if you hit stop-loss with 0.45 lots position.

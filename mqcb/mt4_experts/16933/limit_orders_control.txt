@@ -1,0 +1,11 @@
+This is a not big assistant for trading with limit orders.
+Its meaning is that if you want to place two limit orders on both sides of the price, you will have to wait until one of them is activated to remove the second. So as to avoid wasting time waiting near the computer this assistant had been made.
+At first you place two limit orders, and then place this Advisor on the chart. As soon as one of them is activated the second one will be deleted automatically and a notification will appear, as well as the Adviser's work will be stopped. To resume work, you need to place limit orders again and restart the Advisor (for example, open its settings and, without changing anything, click OK).
+There is the option to switch on comments in the settings so you will be known that Advisor is activated (not activated). Also you can set the Magic Number, and then the Advisor will manage orders only with a certain Magic Number without touching the rest.
+This assistant had been made at the request of the user mishelbb within the framework of the proposal to create a free indicator in this thread.
+Settings
+MagicNumber — The Magic Number so that this Advisor doesn’t rule orders of others. Set it to “0” that the orders placed manually are tracked.
+WriteComments — To allow Advisor’s comments.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16933

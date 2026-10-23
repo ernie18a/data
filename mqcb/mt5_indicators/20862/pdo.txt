@@ -1,0 +1,13 @@
+PDO (Percent Difference Oscillator) oscillator shows the difference between moving average and the current Close price, expressing the difference in the percents of the moving average (above / below the MA).
+It has three input parameters:
+Period
+- MA calculation period;
+Method
+- MA calculation method;
+Applied price
+- MA calculation price.
+Calculations:
+PDO = 100*(Close - MA)/MA
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20862

@@ -1,0 +1,14 @@
+Basics:
+Original Ehlers fisher transform is using an adjusted RSI in a fisher transform calculation in order to further normalize and emphasize the RSI values in order to be able to spot market conditions in easier way.
+This version :
+It is adding 2 steps :
+floating levels usage option
+in case that the floating level is not to be used, setting the floating level period to less than or equal to 1 will turn the level from floating to fixed levels
+filtering out the prices prior to be used in calculation (averaging the price is used for that purpose - hence the name ris(OMA) - rsi of moving average)
+usual set of average types can be used for price filtering :
+simple moving average (SMA)
+exponential moving average (EMA)
+smoothed moving average (SMMA)
+linear weighted moving average (LWMA)
+Usage:
+You can use the color changes of the indicator as signals

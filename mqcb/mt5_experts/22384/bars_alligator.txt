@@ -1,0 +1,28 @@
+The author of the idea
+-
+Michael
+mq5 code author
+-
+barabashkakvn
+The EA only operates when a new bar appears. If we set
+Maximum positions
+to "1", the EA works on netting accounts as well. Trading signals are taken from bars #1 and #2 of the iAlligator (Alligator) indicator.
+It is possible to specify stop loss (
+Stop Loss
+), take profit (
+Take Profit
+) and trailing.
+A position size can be set as a fixed volume (set
+Money management
+to
+Constant lot
+) or a dynamic one - in risk % (set
+Money management
+to
+Risk in percent for a deal
+).
+The value for "Money management"
+defines a lot size or a risk %, accordingly.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22384

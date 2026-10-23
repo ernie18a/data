@@ -1,0 +1,22 @@
+Triangular Moving Average Convergence/Divergence oscillator - MACD based on
+TriMA
+.
+It has four inputs:
+Fast TriMA period
+- fast TriMA period
+Slow TriMA period
+- slow TriMA period
+Signal period
+- signal line period
+Applied price
+Calculation:
+TMACD = SMA(FastMA, PeriodFast) - SMA(SlowMA, PeriodSlow))
+Signal = SMA(TMACD, Signal period)
+where:
+FastMA = SMA(Applied price, PeriodFast)
+SlowMA = SMA(Applied price, PeriodSlow)
+PeriodFast = Floor(Fast TriMA period/2)+1
+PeriodSlow = Floor(Slow TriMA period/2)+1
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22612

@@ -1,0 +1,6 @@
+Blue lines are support levels, Red ones are resistance levels.
+The dashed lines are candidates.
+The amount of considered lines on a break through is regulated by LB paramter of the indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8547

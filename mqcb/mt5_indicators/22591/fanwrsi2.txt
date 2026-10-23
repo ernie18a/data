@@ -1,0 +1,23 @@
+Fan WRSI with Average line is an RSI fan by
+J. Welles Wilder
+in the form of an oscillator in a separate window with the average line.
+Oscillator values oscillate with the +1/-1 range
+There are seven configurable parameters:
+First RSI period
+- first CCI calculation period
+Applied price
+RSI count
+- number of RSI in the fan
+Incremental method
+- method of incrementing RSI period values:
+Addition
+Multiplication
+Coefficient of increment
+- increment ratio
+Smoothing period
+- middle line smoothing period
+Smoothing method
+- middle line calculation method
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22591

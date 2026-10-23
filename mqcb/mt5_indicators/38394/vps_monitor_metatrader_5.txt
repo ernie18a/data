@@ -1,0 +1,8 @@
+I have use Free indicator for Metatrader 4 from MQL5 in below link, but don't know why the owner remove it.
+VPS-Monitor Monitors Your VPS - Trading Strategies - 14 March 2017 - Traders' Blogs (mql5.com)
+by Taiwo Okunbanjo
+Then I try to create the indicator myself, for Metatrader 5.
+Load this indicator to your Chart ( any charts ), and set Periodic Hour and Message.
+Then After period of time, it will send Notification or Email, to your mobile Metatrader Application.
+Setting in Tools - Option,
+Then in Notification ( and Email ) tab, you can set to your MetaQuotes ID ( you can get in your mobile app Metatrader, in Chat menu, in the bottom )

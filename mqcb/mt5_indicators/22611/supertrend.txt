@@ -1,0 +1,11 @@
+Olivier Seban's SuperTrend indicator.
+The indicator has three input parameters:
+Period
+- calculation period
+Shift
+- indicator line shift from the price in points
+Use filter
+- use the trend filter
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22611

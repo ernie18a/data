@@ -1,0 +1,64 @@
+S.M.A.R.T. ICT/SMC V3.0
+Session Manipulation & Algorithmic Reaction Tracker is a free, non-trading MT5 indicator developed by IronHawk Capital LLC. It monitors three configurable symbols and looks for a complete ICT/SMC reaction around finished Asian and London session ranges.
+Recommended use
+- Default analysis timeframe: M5.
+- Default symbols: EURUSD, GBPUSD and USDJPY.
+- It can be attached to another chart timeframe while keeping M5 as the internal analysis timeframe.
+- All signals use closed bars. The indicator does not open, modify or close positions.
+How a setup is confirmed
+A session sweep by itself is not a signal. A projection is created only when these events occur in order:
+1. Price sweeps the high or low of a completed Asian or London session range.
+2. Price closes through a confirmed pre-sweep swing, producing a Market Structure Shift.
+3. The MSS candle has sufficient directional displacement.
+4. A strict three-candle Fair Value Gap forms in the same direction.
+5. A later closed bar retests the FVG and closes beyond its midpoint.
+The FVG candle cannot confirm its own retest. If price breaches the frozen sweep extreme after MSS, the sequence is invalidated. Failed or expired observations may appear as small Watch markers, but they receive no final score and no trade projection.
+SMART Quality Score
+The score becomes available only after the whole sequence is complete:
+- session liquidity context: 15 points;
+- sweep depth: 10 or 15 points;
+- confirmed MSS: 20 points;
+- displacement strength: 5 or 10 points;
+- FVG quality: 15 or 20 points;
+- later FVG retest: 15 points;
+- tick-volume bonus: 0 or 5 points.
+Validated scores range from 80 to 100. The score measures confluence inside this model. It is not a win probability. Tick volume is only a small bonus and cannot create or reject a setup by itself.
+Trade projection
+- Entry: close of the valid FVG-retest bar.
+- Stop Loss: beyond the frozen sweep extreme plus an ATR buffer.
+- TP1: exactly 1.20R.
+- TP2: opposing session liquidity, capped at 2.00R.
+- Minimum room required for TP2: 1.50R.
+The chart displays the sweep marker, MSS level, FVG zone, red risk rectangle and green reward rectangle. The dark dashboard shows the current ICT phase, directional bias, source session, macro context, projected R:R and the historical T1/T2/N audit.
+Main external inputs
+Symbols and engine
+- InpSymbol1, InpSymbol2, InpSymbol3: instruments scanned by the dashboard.
+- InpAnalysisTimeframe: internal analysis timeframe, M5 by default.
+- InpHistoryBars: number of closed bars loaded, 20,000 by default.
+- InpServerUTCOffsetMinutes: automatic or manual broker-server UTC conversion.
+UTC sessions
+- Asia inputs define the range built before London.
+- London inputs define its range and the Asian-liquidity scan window.
+- New York inputs define the London-liquidity scan window.
+ICT/SMC model
+- InpSwingStrength and InpSwingLookback: confirmed pivot detection.
+- InpMSSBars: maximum wait for structure shift after a sweep.
+- InpFVGFormationBars: maximum wait for a directional FVG after MSS.
+- InpRetestBars: maximum wait for a later FVG retest.
+- ATR inputs control minimum sweep, displacement, FVG size, retest tolerance, stop buffer and accepted structural risk.
+- Risk-multiple inputs control TP1, the minimum projection R:R and the TP2 cap.
+Economic calendar
+- InpUseEconomicCalendar: false by default.
+- Importance and before/after inputs select the native MQL5 events shown in the Macro column.
+The economic calendar is informational only. It never changes the score, direction, signal validation, entry, stop or targets. If calendar data is unavailable, price analysis continues normally.
+Display and alerts
+Display inputs control session boxes, projections, Watch markers, dashboard placement, colors and the number of retained objects. Alert inputs independently enable terminal, push and email notifications.
+Technical characteristics
+- three-symbol scan with broker suffix resolution;
+- deterministic closed-bar state machine;
+- no repainting of stored historical setup levels;
+- bounded history and object retention;
+- time-sliced multi-symbol processing;
+- conservative audit that counts same-bar stop and target ambiguity as stop first;
+- no trade execution, DLL, WebRequest, Python or external service.
+S.M.A.R.T. is an analytical indicator. It does not guarantee future performance. Check session times and symbol availability for your broker before interpreting its output.

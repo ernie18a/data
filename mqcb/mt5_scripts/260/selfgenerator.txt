@@ -1,0 +1,9 @@
+This script generates a file with its own source code (solution of the classical program in MQL5).
+It may be useful to study programming and algorithms.
+- Where is the source code?
+- Just launch the script and you will get it in 'MQL5\Files' folder.
+To check it, please copy the file, created in \Files\ to the "\Experts\" folder, compile it and launch the script. After that you can compare them byte by byte.
+Also you can check several generations...... ;-)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/260

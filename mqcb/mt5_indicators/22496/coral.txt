@@ -1,0 +1,20 @@
+Coral indicator is a colored moving average.
+It has two configurable parameters:
+Coefficient
+- smoothing ratio (*)
+Applied price
+Calculation:
+Coral = (-0.064) * B6 + 0.672 * B5 - 2.352 * B4 + 2.744 * B3
+where:
+B6 = Coefficient * B5 + coeff2 * PrevB6
+B5 = Coefficient * B4 + coeff2 * PrevB5
+B4 = Coefficient * B3 + coeff2 * PrevB4
+B3 = Coefficient * B2 + coeff2 * PrevB3
+B2 = Coefficient * B1 + coeff2 * PrevB2
+B1 = Coefficient * Applied price + coeff2 * PrevB1
+coeff2 =  1.0 - Coefficient
+* Smoothing ratio is, in fact, a calculation period. It cannot be less than 0.0086 and exceed 1.0.
+The smaller the value, the longer the calculation period. The value of 1 corresponds to the calculation period of 1 of the moving average.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22496

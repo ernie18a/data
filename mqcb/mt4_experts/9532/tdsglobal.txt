@@ -1,0 +1,5 @@
+The Expert Advisor TDSGlobal uses the indicators MACD, OsMA and WPR.
+The Expert Advisor is adjusted on work on D1 timeframe with currency USDCHF, GBPUSD, USDJPY and EURUSD.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9532

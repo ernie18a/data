@@ -1,0 +1,6 @@
+Originally developed bu Cynthia Kase (in her book "Trading With the Odds"). This version is calculating the DevStops exactly as described in the book.
+Engineering a Better Stop: The Kase DevStops
+What all of this boils down to is that we need to take variance and skew into consideration when we are establishing a system for setting stops. Three steps that we can take in order to both better define and to minimize the threshold of uncertainty in setting stops are:
+Consideration of the variance or the standard deviation of range.
+Consideration of the skew, or more simply, the amount at which range can spike in the opposite direction of the trend.
+Reformation of our data to be more consistent (this step is examined in detail in Chapter 81, while minimizing the degree of uncertainty as much as possible).

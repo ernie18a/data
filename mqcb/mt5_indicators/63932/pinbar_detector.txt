@@ -1,0 +1,9 @@
+Features
+:
+Detects Upward (Bullish) and Downward (Bearish) Pinbars.
+Customizable parameters for pinbar structure and detection logic.
+Displays pinbars with colored arrows (lime for upward, red for downward).
+Supports pop-up alerts and push notifications
+Usage
+:
+Apply to any chart timeframe. Modify input parameters to fine-tune pinbar detection or enable alerts for real-time notifications.

@@ -1,0 +1,2 @@
+The mathematical averaging of the symbol price for a given period is performed during the calculation of Moving Average. As far as the price changes its average value either increases or decreases.
+Moving Average

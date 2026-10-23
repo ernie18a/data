@@ -1,0 +1,82 @@
+Idea by:
+Ingrit
+mq5 code by:
+barabashkakvn
+ATTENTION: The EA is designed to work on hedge accounts only!
+Ilan based on indicator iMA (Moving Average, MA)
+Signal BUY
+,
+signal SELL
+:
+if
+(ma[
+0
+]<ma[
+1
+] && ma[
+1
+]<ma[
+2
+] && ma[
+2
+]<ma[
+3
+])
+// trend down
+{
+if
+(m_symbol.
+Bid
+()>ma[
+0
+])
+            m_need_open_sell=
+true
+;
+}
+else
+if
+(ma[
+0
+]>ma[
+1
+] && ma[
+1
+]>ma[
+2
+] && ma[
+2
+]>ma[
+3
+])
+// trend up
+{
+if
+(m_symbol.
+Ask
+()<ma[
+0
+])
+            m_need_open_buy=
+true
+;
+        }
+If the position is losing at at least
+Step
+pips (1.00045-1.00055=1 pips), a new position will be opened in the same direction as that losing position. The new position will be opened with a larger lot size. The new reference lot size cannot exceed the predefined value of
+Lot maximum
+.
+If there are several positions, we are waiting until their total profit is equal to or exceeds
+Profit minimum
+. As soon as such a situation is caught, we will close all positions.
+We always work with the positions of only one direction. In case of both BUY and SELL positions opened, this is considered to be an erroneous situation, and the measures will be taken to close unnecessary positions.
+How the volume of positions is increased: If there are more than only one position, the highest volume will be detected; the highest volume found shall be multiplied by the lot-size factor
+Lot exponent
+. Why is it done this way - by searching for the highest volume? The matter is that the price may sometimes move in a wrong direction, and some positions are opened with the minimum step -
+Step
+. In the picture below, the latest volume is equal to 0.34 lots. Suppose the price reverses in the desired direction and the position of 0.34 lots is closed by Take Profit. Logically, if the price moves again against us, we will increase 0.21 *
+Lot exponent
+. Thus, we escape overloading the deposit.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23540

@@ -1,0 +1,15 @@
+Raghee Vague: plot the three EMA34 and SMA200 used in the Raghe Method
+RagheeCandleVagueBars : plot colored candle bar: red for down trend (Raghee Vague < - 30º ), green bar for up trend (Raghee Vague > 30 º) and orange and chartreuse for neutre ( Raghe Vague between -30º and 0 or between 0 and 30º)
+Raghee5minutes : plot three EMA for the Raghee 5 minutes method and change automaticaly with the trend.
+My complete windows use
+my three indicators plus
+- Fractals
+- Swing_zz_with_alert
+- Scan-Index
+- FiboSwing
+- CCI(20)
+- OBV
+- RSI-Swing(34,13,3)
+Recommendations:
+read the Raghee blog for understand Raghee Horner method
+http://ragheehorner.com/blog/

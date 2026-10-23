@@ -1,0 +1,11 @@
+The averaged non-trivial linear combination of iRSI and iDeMarker implemented as a color histogram.
+Indicator calculation formula:
+XRSIDeMarker = MA((iRSI[bar] + 100 * iDeMarker[bar]) / 2)
+The growth of a financial asset is usually accompanied by the growth of the indicator and the green color of the histogram. An asset is considered falling if the indicator is falling and the histogram is pink. The optimal time to perform a trade is when the color of the histogram bars changes.
+The indicator uses SmoothAlgorithms.mqh library classes (copy it to <terminal_data_folder>\MQL5\Include). The classes were described in detail in the article
+Averaging Price Series for Intermediate Calculations Without Using Additional Buffers
+.
+Fig1. The XRSIDeMarker_Histogram indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20107

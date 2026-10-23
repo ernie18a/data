@@ -1,0 +1,41 @@
+The author of the idea
+-
+Scriptor
+mq5 code author
+-
+barabashkakvn
+The EA checks entry opportunities only when a new bar appears, while trailing works on each tick. When checking a signal, there is another verification apart from comparing the values of the main and signal line on the current and previous bar: the main line value is converted into points and compared to the
+MACD open level
+parameter. When a BUY open signal arrives, close SELL positions, and vice versa.
+Open signals
+BUY:
+bool
+open_buy_signal=(main[0]<0 && main[0]>signal[0] && main[1]<signal[1] &&
+MathAbs
+(main[0])>(MACDOpenLevel*m_symbol.Point()));
+SELL:
+bool
+open_sell_signal=(main[
+0
+]>
+0
+&& main[
+0
+]<signal[
+0
+] && main[
+1
+]>signal[
+1
+] &&
+MathAbs
+(main[
+0
+])>(MACDOpenLevel*m_symbol.
+Point
+()));
+EURUSD, M15
+USDJPY, M15:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22087

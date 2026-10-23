@@ -1,0 +1,10 @@
+Definition :
+"Juice" indicator is showing if the level of standard deviation is above or bellow some desired level and, that way, it is showing if we are in a times of increased or decreased volatility
+This version :
+It is using EMA deviation (originally published here :
+EMA deviation
+) and since EMA deviation is "faster" then the regular standard deviation, it can produce signals a bit faster
+Usage :
+The indicator is not a directional indicator. Instead use to to detect times of elevated volatility and adjust your trading accordingly
+PS:
+Do not be confused that the EMA deviation can be negative. That is a result of using that specific calculation mode and is, for EMA deviation quite natural

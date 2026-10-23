@@ -1,0 +1,29 @@
+The
+Highest Lowest
+indicator searches for bars having High above the High of bars on the left and on the right, as well as bars having Low below the Low of bars on the left and on the right:
+Fig. 1. Highest Lowest
+The indicator is displayed using the
+DRAW_ARROW
+style.
+Since the indicator analyzes the bar on the right, the value of the indicator may change in some cases. For example, the following bar can be redrawn:
+Fig. 2. Highest Lowest The bar can be redrawn
+This bar will not be redrawn:
+Fig. 3. Highest Lowest The bar can not be redrawn
+If you want to see the default indexing of bars in indicators, uncomment code in OnCalculate:
+/*
+   int bar_0=0;
+   int bar_rates_total_minus_1=rates_total-1;
+   Comment("prev_calculated=",prev_calculated,"\n",
+           "time[",bar_0,"]=",time[bar_0],"\n",
+           "time[",bar_rates_total_minus_1,"]=",time[bar_rates_total_minus_1]);
+*/
+This code displays on the screen the value of the
+prev_calculated
+variable, the time of the bar with the
+0
+index and the time of the bar with the index of
+rates_total-1
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20300

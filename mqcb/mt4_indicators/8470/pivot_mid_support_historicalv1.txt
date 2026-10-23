@@ -1,0 +1,27 @@
+Indicator Pivot Mid Support Historical.v1
+Input Parameters:
+extern
+int
+GMTshift
+=
+0
+;
+extern
+color
+LColor
+=
+Magenta
+;
+extern
+int
+fontsize
+=
+12
+;
+extern
+int
+LabelShift
+=
+40
+;
+Pivot Mid Support Historical_v1

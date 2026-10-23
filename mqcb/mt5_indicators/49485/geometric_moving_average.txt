@@ -1,0 +1,5 @@
+Quoted from Wikipedia:
+In mathematics, the geometric mean is a mean or average which indicates a central tendency of a finite set of real numbers by using the product of their values (as opposed to the arithmetic mean which uses their sum).
+The geometric mean is often used for a set of numbers whose values are meant to be multiplied together or are exponential in nature, such as a set of growth figures: values of the human population or interest rates of a financial investment over time. It also applies to benchmarking, where it is particularly useful for computing means of speedup ratios: since the mean of 0.5x (half as fast) and 2x (twice as fast) will be 1 (i.e., no speedup overall).
+The geometric mean is more appropriate than the arithmetic mean for describing proportional growth, both exponential growth (constant proportional growth) and varying growth; in business the geometric mean of growth rates is known as the compound annual growth rate (CAGR). The geometric mean of growth over periods yields the equivalent constant growth rate that would yield the same final amount.
+** use as is or develop further to serve your purpose

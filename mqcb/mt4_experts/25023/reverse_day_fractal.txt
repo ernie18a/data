@@ -1,0 +1,29 @@
+The algorithm is based on the idea of returning the current fractal to the opening price of the day. Often this happens with a sharp change of trend, which allows you to earn.
+// ---
+bool
+op_buy_sig()
+{
+if
+(((e_Low() < e_Low_1()) && (e_Low() < e_Low_2())) && (e_Close() > e_Open()))
+return
+true
+;
+// ---
+return
+false
+;
+}
+// ---
+bool
+op_sell_sig()
+{
+if
+(((e_High() > e_High_1()) && (e_High() > e_High_2())) && (e_Close() < e_Open()))
+return
+true
+;
+// ---
+return
+false
+;
+}

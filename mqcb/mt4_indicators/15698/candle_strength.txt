@@ -1,0 +1,5 @@
+Indicator that shows candle strength.
+Candle strength is a difference between close price and open price in pips.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15698

@@ -1,0 +1,18 @@
+Williams’ Percent Range Technical Indicator (%R) is a dynamic technical indicator, which determines whether the market is overbought/oversold.
+Williams’ %R is very similar to the Stochastic Oscillator. The only difference is that %R has an upside down scale and the Stochastic Oscillator has internal smoothing.
+To show the indicator in this upside down fashion, one places a minus symbol before the Williams Percent Range values (for example -30%). One should ignore the minus symbol whenconducting the analysis.
+Indicator values ranging between -80 and -100% indicate that the market is oversold. Indicator values ranging between -20% and 0 indicate that the market is overbought.
+As with all overbought/oversold indicators, it is best to wait for the security’s price to change direction before placing your trades. For example, if an overbought/oversold indicator is showing an overbought condition, it is wise to wait for the security’sprice to turn down before selling the security.
+An interesting phenomenon of the Williams Percent Range indicator is its uncanny ability to anticipate a reversal in the underlying security’s price. The indicator almost always forms a peak and turns down a few days before the security’s price peaks and turns down. Likewise, Williams Percent Range usually creates a trough and turns up a few days before the security’s price turns up.
+Calculation
+Below is the formula of the %R indicator calculation, which is very similar to the Stochastic Oscillator formula:
+%R = (HIGH(i - n) - CLOSE) / (HIGH(i - n) - LOW(i - n))*100
+where:
+CLOSE — is today’s closing price;
+HIGH(i-n) — is the highest high over a number (n) of previous periods;
+LOW(i-n) — is the lowest low over a number (n) of previous periods.
+Full description of %R is available in the
+Technical analysis: Williams Percent Range
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8000

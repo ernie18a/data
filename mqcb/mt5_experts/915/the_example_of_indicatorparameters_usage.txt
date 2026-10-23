@@ -1,0 +1,8 @@
+The MQL5 language has the possibility to get the information about the number of input parameters, their type and values by indicator handle.
+This Expert Advisor illustrates the usage of the
+IndicatorParameters()
+function.
+Demo:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/915

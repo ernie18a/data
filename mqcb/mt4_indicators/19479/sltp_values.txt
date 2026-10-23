@@ -1,0 +1,3 @@
+Indicator displays the value of defined stop loss and or take profit in the deposit currency.
+Note
+: It calculates an estimated value based on a simple calculation and does not take into account brokerage commissions.

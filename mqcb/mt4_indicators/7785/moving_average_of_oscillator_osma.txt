@@ -1,0 +1,9 @@
+Moving Average of Oscillator is the difference between the oscillator and oscillator smoothing. In this case, Moving Average Convergence/Divergence base-line is used as the oscillator, and the signal line is used as the smoothing.
+Moving Average of Oscillator, OsMA
+OSMA = MACD-SIGNAL
+Technical Indicator Description
+Full description of OsMA is available in the
+Technical analysis: Moving Average of Oscillator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7785

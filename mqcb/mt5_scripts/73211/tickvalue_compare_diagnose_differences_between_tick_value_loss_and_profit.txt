@@ -1,0 +1,28 @@
+PURPOSE
+Compares the three tick-value properties exposed by MetaTrader 5 for every symbol in Market Watch:
+SYMBOL_TRADE_TICK_VALUE (generic).
+SYMBOL_TRADE_TICK_VALUE_LOSS (used for loss calculations).
+SYMBOL_TRADE_TICK_VALUE_PROFIT (used for profit calculations).
+WHY THIS MATTERS
+Many EAs use one of the tick-value properties for risk-based lot sizing. When LOSS and PROFIT differ (as they do for cross-currency pairs on many brokers), choosing the wrong property leads to incorrectly sized positions:
+Using LOSS: pessimistic loss estimate - smaller lots (safer, conservative for risk management).
+Using TV: usually equals PROFIT (optimistic) - slightly larger lots than intended.
+This script provides empirical per-symbol data so you can make an informed decision based on your specific broker.
+USAGE
+Add to Market Watch the symbols you want to analyze.
+Drop the script on any chart.
+Enter the input parameters and click the OK button.
+Check the Experts tab for the summary.
+If "Save CSV" is enabled, full per-symbol data is exported to a CSV file in MQL5/Files/ (useful for large brokers, since the Experts tab is limited to ~2000 lines).
+OUTPUT
+Each symbol is classified into one of these categories:
+ALL_EQUAL: the three properties match within tol.
+TV_MATCHES_PROFIT: TV == PROFIT, LOSS slightly different.
+TV_MATCHES_LOSS: TV == LOSS, PROFIT slightly different.
+ALL_DIFFER: all three properties are distinct.
+A summary at the end aggregates counts per category.
+INTERPRETATION
+If most/all symbols are ALL_EQUAL, your broker treats LOSS and PROFIT as identical - any of the three properties is safe.
+If TV_MATCHES_PROFIT is common (typical pattern), then:
+For risk-based sizing, use TICK_VALUE_LOSS (most conservative).
+TV (generic) effectively equals PROFIT, the optimistic value.

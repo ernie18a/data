@@ -1,0 +1,11 @@
+The indicator is based on the Elder's Impluse system, it plots candles with different colors, dependent on the
+OsMa
+(12,26,9) and
+Moving Average
+(EMA 13) indicators:
+If OsMa and EMA grows up, the candle color is green;
+If OsMa and EMA falls down, the candle color is red;
+For all other cases the candle color is grey;
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/167

@@ -1,0 +1,42 @@
+The EA supports three distinct closing modes:
+Crossing Mode
+— closes positions when %K and %D cross in overbought or oversold zones.
+Entering Mode
+— closes positions when %D enters overbought or oversold zones.
+Exiting Mode
+— closes positions when %D exits overbought or oversold zones.
+Additionally, positions can be
+filtered
+for closure by their
+profit state
+, providing granular control over which trades to exit. An optional Test Mode enables basic entry functionality for demonstration or research purposes.
+The source code is fully open and can be used to develop custom position management strategies, add new filters, and test trading hypotheses.
+Parameters
+Stochastic Parameters:
+InpKPeriod — %K Period for the Stochastic oscillator. Default is 14.
+InpDPeriod — %D Period (signal line) for the Stochastic oscillator. Default is 3.
+InpSlowing — Slowing factor for the Stochastic oscillator. Default is 3.
+InpOverSold — Oversold level. Default is 20.
+InpOverBought — Overbought level. Default is 80.
+Stoch_price_field — Price field used for Stochastic calculation. Default is STO_CLOSECLOSE.
+EA Parameters
+Stoch_Zone_Mode — Closing mode. Available modes: Crossing, Entering, Exiting. Default is Crossing.
+InpPosistionState — Profit state filter. Available modes: Loss, Profit, Profit_and_Loss. Default is Loss.
+InpTimeframe — Timeframe for Stochastic calculation. Default is PERIOD_CURRENT.
+Test Mode Parameters
+TestMode — Enable or disable Test Mode entry functionality. Default is false.
+OffSet — Offset value for midline (50) crossovers. Default is 20. Example: Offset = 20 triggers entries above 30 or below 70.
+Closing Modes Explanation
+Crossing Mode closes BUY positions when %K crosses below %D while %D is above Overbought (80). Closes SELL positions when %K crosses above %D while %D is below Oversold (20).
+Entering Mode closes SELL positions when %D drops below Oversold (entering oversold). Closes BUY positions when %D rises above Overbought (entering overbought).
+Exiting Mode closes SELL positions when %D rises above Oversold (exiting oversold). Closes BUY positions when %D drops below Overbought (exiting overbought).
+Position State Filter
+Loss closes only positions with negative floating profit.
+Profit closes only positions with positive floating profit.
+Profit_and_Loss closes all positions regardless of profit status.
+Test Mode Behavior
+When TestMode is enabled, the EA monitors the %D line relative to the midline (50) using the configurable OffSet. A BUY order (0.01 lots) is opened when %D crosses above (50 - OffSet). A SELL order (0.01 lots) is opened when %D crosses below (50 + OffSet). This routine only executes when no positions are currently open. Test Mode entries use a fixed lot size of 0.01 with no Stop Loss, Take Profit, or magic number filtering.
+Important Notes
+The EA evaluates the Stochastic indicator on each tick. The indicator runs on a user-selectable timeframe, independent of the chart timeframe. Position closures are executed only on the current chart symbol. Positions on other symbols are ignored. The InpPosistionState filter applies globally to all positions on the symbol. For example, selecting Profit will close all profitable positions that match the Stochastic condition.
+Test Mode entries use a fixed lot size of 0.01 and do not include Stop Loss or Take Profit. Test Mode and the core closing logic operate simultaneously when enabled. The EA will both close positions based on Stochastic signals and open new positions under Test Mode conditions. The tradable flag is set during Test Mode executions but does not affect the core closing logic. The EA does not include money management, trailing stops, or breakeven functionality. The EA was created for researching position management strategies and should not be considered a ready-to-trade system without additional validation and out-of-sample testing.
+Example

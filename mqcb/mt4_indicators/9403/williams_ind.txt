@@ -1,0 +1,48 @@
+Kind time of day!
+The moved panel with the indicators of B.Williams, for strategy Trading chaos. It shows a direction of indicators AO, AC, and MACD.
+The indicator:
+The given Information indicator is devoted to all fans of theories and Bill Williams's methods.
+The indicator will help all those who only has started studying theories
+B.W
+. For the best visualization of process of the analysis of the schedule, on a method of the author.
+And also helps to save so valuable workspace of the schedule.
+The panels:
+Actually, I publish this panel more as an example of creation of the information panel, static and moved. Also it is the example of visual switching of options without a call out of a window of parameters.
+Williams_Inds.mq4
+- represents a code of the panel moved in manual on the schedule .
+Williams_IndsS.mq4
+- the static panel with preliminary setting of position.
+The moved panel.
+The panel is positioned in relation to bars of the schedule, including from the first visible at the left, and the price in relation to maximal on a scale of the schedule. The algorithm not the most convenient also has some inconveniences at switching TF.
+To move the panel on the necessary place, it is necessary to select its contour (rectangular), by a double click, and to drag it for the center under the schedule. With arrival of a new tic, contents of the panel also "will
+jump
+" into the contour.
+It is possible to move manually only to
+down
+and to the right from a pregoing site. If you have overdone, it is necessary to press key
+DELETE
+to remove the selected contour.
+After that the contour and the panel will be restored in the left top corner of the screen, and it will be possible to begin dragging all over again.
+Except for arrows and signatures of indicators on the panel there are two small badges: a hand and a handbell .
+The "hand" serves for switching
+ON
+and
+OFF
+of the manual dragging. Switching OFF fixes the panel. Switching ON and OFF occurs also by selection of a badge of the "hand" and removal by the key
+DELETE
+, or through the menu.
+The badge will be restored by other color and with the switched option.
+"
+Handbell
+"
+works the same way . It gives a signal about the unidirectional movement of indicators, and it is automatically switched off.
+The static panel.
+The static panel is arranged easier and is set by the parameters of coordinates in pixels, and the corner of position.
+***
+Both panels have two color theme for white and black schedules as it is pleasant to you.
+Parameter White_Chart_Theme (True or False) defines what of subjects to use.
+The conclusion.
+With the help of this example you can create the information panels most convenient for you.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9403

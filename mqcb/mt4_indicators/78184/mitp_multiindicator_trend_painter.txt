@@ -1,0 +1,13 @@
+MITP – Multi-Indicator Trend Painter
+Trend-following indicator that combines up to 32 independent signals from TradingView-style indicators (ALMA, AO, MACD line and histogram, PPO line and histogram, RSI MA, CCI MA, Fisher, KAMA, True Strength Index, Trend Strength Index, RCI Ribbon blue and red lines, Chop Zone and more). Each one can be switched on/off in the inputs.
+How it works
+Layer 1 – each indicator has its own trigger
+When an indicator turns bullish (rising / above zero), the high of that candle is stored as its buy trigger. When it turns bearish (falling / below zero), the low is stored as its sell trigger.
+When a candle CLOSES beyond its trigger while the condition is still valid, that indicator’s state becomes BUY or SELL.
+If the indicator flips to the opposite side, its pending trigger is discarded and a new one is created when it flips back. A neutral reading (e.g. Chop Zone with no color) keeps the current state.
+Layer 2 – general trigger
+4. When a candle closes with ALL enabled indicators in BUY state (or all in SELL state), the high (or low) of that candle is stored as the general trigger.
+5. The signal is activated only when a candle CLOSES above that high (or below that low) AND all enabled indicators are still in BUY (or SELL) state on that same candle. Candles are then painted green (buy) or red (sell) until the opposite signal is confirmed.
+6. The general trigger is discarded only if ALL indicators confirm the opposite side.
+Everything is evaluated on closed candles only, so it does not repaint. Entry/exit levels are shown as dotted lines, and an on-chart panel shows the vote, state and trigger of each indicator.
+Ideal in the first 2 hours after the open of Nikkei 225, DAX and S&P 500, and long-lasting volatility events.

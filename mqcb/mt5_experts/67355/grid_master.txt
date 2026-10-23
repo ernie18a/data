@@ -1,0 +1,23 @@
+Overview
+Grid Master EA is an automated trading system that implements a bidirectional grid strategy. It places multiple pending orders above and below the current market price, capturing profits from market oscillations in both directions.
+Key Features
+Bidirectional Grid Trading
+- Automatically places buy and sell orders in a grid formation
+Flexible Order Types
+- Supports both stop orders (breakout) and limit orders (retracement)
+Position Management
+- Built-in trailing stop and breakeven functions
+24/7 Trading
+- Optional time filter for continuous operation
+Grid Health Monitoring
+- Real-time performance statistics
+Risk Management
+- Fixed lot sizing with volume validation
+Debug Mode
+- Detailed logging for optimization
+Strategy
+The EA creates a symmetrical grid of pending orders at specified intervals. When price triggers orders, positions are managed with optional trailing stops and breakeven protection. Orders are automatically refreshed when the grid clears.
+Suitable For
+Ranging markets, cryptocurrency pairs (BTC/USD, ETH/USD), forex pairs with stable volatility, and traders seeking automated solutions.
+Risk Warning
+Grid trading involves significant risk. Multiple positions can open simultaneously, increasing exposure. Always test on demo accounts first.

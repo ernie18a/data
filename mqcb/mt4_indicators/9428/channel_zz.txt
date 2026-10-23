@@ -1,0 +1,8 @@
+A brand-new version of the
+old
+indicator
+Now it has more speed and functionality.
+Merry Christmas and happy New Year!
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9428

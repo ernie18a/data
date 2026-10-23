@@ -1,0 +1,84 @@
+The MQL5 Wizard MACD Parabolic SAR Expert Advisor has been created using the
+MQL5 Wizard
+, on the basis of
+MACD
+(Moving Average Convergence/Divergence) signals and the
+Parabolic SAR
+trend indicator.
+The Expert Advisor only works at the
+moment of new bar emergence
+:
+//+------------------------------------------------------------------+
+//| Inputs                                                           |
+//+------------------------------------------------------------------+
+//--- inputs for expert
+input
+string
+Expert_Title            =
+"MQL5 Wizard MACD"
+;
+// Document name
+ulong
+Expert_MagicNumber      =
+756
+;
+//
+bool
+Expert_EveryTick        =
+false
+;
+Входные параметры
+:
+Variable
+Value
+Disclaimer
+Signal threshold value to open [0...100]
+20
+A threshold value to
+open
+a position. Valid values from "0" to "100"
+Signal threshold value to close [0...100]
+100
+A threshold value to
+close
+a position. Valid values from "0" to "100"
+Price level to execute a deal
+0.0
+Distance from the current price. If "0" - open at the current price, if "-xx" - pending Stop orders will be placed, if "+xx" - pending Limit orders will be placed.
+Stop Loss level (in points)
+50.0
+The price level for Stop Loss
+Take Profit level (in points)
+115.0
+The price level for Take Profit
+Expiration of pending orders (in bars)
+5
+Pending order lifetime (in bars)
+MACD Period of fast EMA
+12
+MACD - fast EMA period
+MACD Period of slow EMA
+24
+MACD - slow EMA period
+MACD Period of averaging of difference
+9
+MACD - moving average period of the MACD indicator
+MACD Prices series
+PRICE_CLOSE
+MACD - type of prices used for calculations
+MACD Weight [0...1.0]
+0.9
+Weight of MACD signals
+Parabolic SAR Speed increment
+0.02
+Parabolic SAR - price change step - acceleration factor
+Parabolic SAR Maximum rate
+0.2
+Parabolic SAR - maximum step
+Parabolic SAR Weight [0...1.0]
+0.1
+Weight of Parabolic SAR signals
+Testing results on EURUSD, M15 from 2016.01.10 to 2017.01.11, initial deposit 30,000:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17357

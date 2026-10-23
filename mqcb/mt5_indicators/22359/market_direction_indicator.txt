@@ -1,0 +1,18 @@
+Market Direction Indicator
+by Donald Lambert was described in the article "The Market Direction Indicator Anticipating Moving Average Crossovers" of "Stocks & Commodities" magazine.
+The indicator has five input parameters:
+Fast MA period
+- fast MA calculation period
+Slow MA period
+- slow MA calculation period
+Cutoff in points
+- "cutoff area" - filter of minor price fluctuations (in points)
+Show below zero
+- display negative indicator values in the area below zero (oscillator)
+Applied price
+Rising indicator values mean a bearish trend, while falling ones mean a bullish trend, the values included into the +/- Cutoff range are considered neutral.
+Fig. 1. Market Direction Indicator
+Fig. 2. Market Direction Indicator as an oscillator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22359

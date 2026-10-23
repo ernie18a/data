@@ -1,0 +1,21 @@
+This Expert Advisor is rewritten from MQL4 and was originally published here
+https://www.mql5.com/en/code/8165
+by its author
+George-on-Don
+.
+How It Works
+Pivot point and three support/resistance levels are calculated based on daily bars. Position opens when the price hits the Pivot point (closed bars at the 'Close' price). The Expert Advisor shall be used on time frames smaller than D1.
+Stop Loss and Take Profit are set at the support/resistance levels. If Stop Loss and Take Profit are so close that it is impossible to open a position, an attempt is made to open a position with a Stop Loss at the second support/resistance level and Take Profit at the third resistance/support level.
+When the first support/resistance level is reached (if the Take Profit is situated further), the Stop Loss of the position is moved to the opening price level of the position plus the spread (the function can be disabled).
+The image shows the performance of the Expert Advisor in the strategy tester's visual mode.
+Parameters
+Lots - order volume; when 0, the MaxrR parameter is used.
+SndMl - sends messages by e-mail when the Expert Advisor opens and closes positions.
+DcF - lot reduction factor at losses. If the value is 0, the reduction is not carried out. The lower the value, the greater the lot reduction. If the lot cannot be reduced, the minimum lot is used.
+MaxR - maximum risk from 0-1 (share of free funds). It is used when the Lots value is 0.
+TgtProfit - target (Take Profit): 1 - Support1 or Resist1, 2 - Support2 or Resist2, 3 - Support3 or Resist3.
+isTradeDay - intraday trade only (close the position at 23:00).
+ModSL - modify the Stop Loss when the first target is reached.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1053

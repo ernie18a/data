@@ -1,0 +1,4 @@
+This is just a script to get the
+last
+deal history data, for example : profit, deal type, swap, commission, etc.
+You can modify this script and use it in your EA as you want, for example to get the total profit of all history, etc.

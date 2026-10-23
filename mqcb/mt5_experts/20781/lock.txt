@@ -1,0 +1,39 @@
+Idea by
+:
+Igor
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+Suppose a trader enters the market with the Buy and Sell positions by an asset, where the currency is, say, at the level of 100. Then the prices moves to 200. Here, buying for 100 will be profitable, and selling for the same will be losing. We close our buy position, and the profit of 100 comes to our account. In this case, selling results in losing 100 units.
+When using a grid, you should be sure of being able to make profit whatever direction is taken by the market. For this purpose, enter your Buy and Sell transactions again. Now, for the sake of convenience, let us assume that the price is moving to level 100 again.
+The repeated selling will lead to +100, while the second buying will result in -100. According to the rules, you can close your sell position, and 100 more units will enter to your account. As a result, at this point, we have the total profit of 200.
+Now, the first sell position that has remained active is moving from level 200 to level 100. It is in the breakeven range now.
+Summing up the four transactions, we get the profits as follows: +100 for the first Buy; +100 for the second Sell; 0 for the first Sell, and -100 for the second Buy. The total profit has made +100. So we can delete all the orders and drink a glass of champagne. Prior to each subsequent double opening (simultaneous opening of Buy and Sell), we increase the lot size by the factor of
+Lot exponential
+.
+There are many other market movements that make profitable these seemingly incomprehensible activities of simultaneous buying and selling.
+However, in such trading, there is always a risk of "hanging" positions, i.e., positions that produce relatively high losses and have an opening price that is located very far from the current price. To overcome such "hanging" positions, we have introduced two parameters:
+Excess of balance over Equity
+(balance exceeding the Equity) and
+Mimimum profit
+.
+In all cases, be careful, since two scenarios are possible: Optimistic
+and pessimistic
+Input parameters
+Lots
+- initial lot;
+Take Profit
+- Take Profit;
+Lot exponential
+- lot increase ratio;
+Excess of balance over Equity
+- balance exceeding the Equity;
+Mimimum profit
+- minimum profit;
+magic number
+- unique identifier for the EA.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20781

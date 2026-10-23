@@ -1,0 +1,5 @@
+I have attached 3 scripts that will help you to modify the price, the Stop Loss and Take Profit of a pending order.
+Once you have added a pending order to your chart with a SL and a TP use the following scripts:
+DROP_MOVE_PENDING_PRICE.mq4 : If you want to move the price of your pending order you just need to select this script, point the mouse in the place you want to move your new price level and drop.
+DROP_MOVE_PENDING_SL.mq4 : If you want to move the Stop Loss of your pending order you just need to select this script, point the mouse in the place you want to move your new SL level and drop.
+DROP_MOVE_PENDING_TP.mq4 : If you want to move the Take Profit of your pending order you just need to select this script, point the mouse in the place you want to move your new TP level and drop.

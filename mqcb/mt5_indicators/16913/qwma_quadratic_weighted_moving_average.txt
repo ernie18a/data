@@ -1,0 +1,12 @@
+This is the "regular" version of QWMA (what used to mean "quadratic weighted moving average"). The "quadratic" part does not stand any more, but the name is kept. Change made it able to calculate arbitrary weights, and that is why it is not (just) qwma any more, but since the original idea did come from that, the name remained ...
+This version :
+has a choice to use floating levels or not (if the floating levels period is set to <= 1, the levels will be ignored and the coloring automatically switches to coloring on slope)
+has a choice of different color changes to help in decisions - color change on slope change, middle level cross or outer level cross
+same setting is used by the alerts that are already part of the indicator
+and it is multi time frame
+Usual set (22 types) of prices can be explored and the usual set of alerts (messages, sounds, emails, push notifications - on still opened or already closed bar)
+The  "speed" parameter of the qwma that can be experimented with. The common settings :
+0 - for simple moving average
+1 - for linear weighted moving average
+2 - for "quadratic" weighted moving average
+But since the "speed" does not have to be integer, all the values between those values and values larger than those values can be used, and that makes it a limitless number of some sort of new average types (the calculating period is never changed)

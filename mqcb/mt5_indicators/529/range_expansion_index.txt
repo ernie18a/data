@@ -1,0 +1,12 @@
+Real author:
+Earnforex
+Range Expansion Index (REI) is an oscillator that measures price changing rate and signals about overbought/oversold areas, in case a price shows weakness or strength. It was developed by Thomas DeMark and described in his book
+"The New Science of Technical Analysis"
+.
+The indicator values change from -100 up to +100. REI is an enhanced oscillator, as it stays neutral during a flat and shows trends only when considerable top or bottom have been reached.
+Input parameters:
+REI_Period (default value = 8) - indicator period. While its value is increasing, the number of signals is decreasing but they become more accurate. If the value is decreasing, the number of signals rises but they become less accurate.
+Thomas DeMark suggests using the default period equal to 8. It is time to sell when the price crosses level 60 upwards and then goes down and crosses this level downwards. It is time to buy when the price falls below -60 and then goes up past this level.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/529

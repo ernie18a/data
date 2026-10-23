@@ -1,0 +1,5 @@
+Author: Andrey Opeyda
+The Commentator indicator analyzes and displays the possible action for a certain time interval.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7851

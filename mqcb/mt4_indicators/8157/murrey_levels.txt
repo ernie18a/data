@@ -1,0 +1,4 @@
+Murrey levels based on Tim Kruzel's article.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8157

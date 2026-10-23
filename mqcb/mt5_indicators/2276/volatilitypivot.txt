@@ -1,0 +1,13 @@
+Real author:
+S.B.T.
+The trend indicator made as NRTR (
+Nick Rypock Trailing Reverse
+).
+The indicator is calculated on the basis of currency pair volatility displaying the nearest support and resistance levels. It can be used as a trend indicator.
+This indicator was first implemented in MQL4 and published in
+CodeBase
+at mql4.com on 18.09.2007.
+Figure 1. The VolatilityPivot indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2276

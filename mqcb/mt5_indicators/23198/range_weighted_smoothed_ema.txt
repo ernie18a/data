@@ -1,0 +1,8 @@
+Theory:
+This indicator is a variation of the range weighted EMA (originally published here:
+Range Weighted EMA
+with some more explanation what exactly is it doing and how. The variation comes from a possible need to make that indicator a bit less "noisy" when it comes to slope changes. The method used for calculating this variation is the method described by Lee Leibfarth in his article "Trading With An Adaptive Price Zone".
+This version:
+It is a sort of a triple smoothed version. But even though it is "over smoothed" if we judge from the description (triple smoothing usually leads to significant lag), it is much faster than the regular version for the same period (it is due to the nature how the Lee Leibfarth's smoothing had to be applied in this particular indicator) and should be considered as a different indicator than the "regular range weighted EMA.
+Usage:
+The usual ways as any average, but since it is smoother (without a lag), the slope change color is less noisy and can be used as a signal in a more reliable way.

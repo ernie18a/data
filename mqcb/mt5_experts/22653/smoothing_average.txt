@@ -1,0 +1,30 @@
+Idea by:
+Rietsuiker
+Code mq5 by:
+barabashkakvn
+The EA trades on iMA (Moving Average, MA). It holds no more than one position in the market.
+Opening rules (Revers signals == false):
+Open BUY: Price ASK > MA on bar #0 -
+MA delta
+Open SELL: Price BID < MA on bar #0 +
+MA delta
+If
+Revers signals
+== true, then the open signals will be reversed.
+Closing rules (Revers signals == false):
+Close BUY: Price ASK
+<
+MA on bar #0 - (
+MA delta * MA delta coefficient for close
+)
+Close SELL: Price BID > MA on bar #0 + (
+MA delta * MA delta coefficient for close
+)
+If
+Revers signals
+== true, then the close signals will be reversed.
+MA delta
+is the distance between the indicator and the price.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22653

@@ -1,0 +1,5 @@
+Description:
+This inidicator uses simple moving average 20,50,100,200 to see the next target area it will touch so you know where its going...
+So if it break ma 20 next target ma 50, if break ma 50 next target ma 100, if it break ma 100 the next target its ma 200.
+It have dual language Indonesian and English... Moving average not include with this indicator. it just show the target.
+Image:

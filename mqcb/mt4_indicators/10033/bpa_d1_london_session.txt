@@ -1,0 +1,3 @@
+Author:
+Ricky Supriyadi
+This indicator can be useful to read D1 time frame of London session only price action.

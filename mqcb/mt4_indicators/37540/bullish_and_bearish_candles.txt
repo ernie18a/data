@@ -1,0 +1,3 @@
+This Indicator will  plot bullish and bearish candles in separate colours.
+If the colours of both bullish and bearish candles are same, then sometimes it can get difficult or confusing to identify whether the candle is bearish or bullish.
+Using this indicator, one can clearly identify the bearish candles from the bullish candles just by seeing the colours.

@@ -1,0 +1,9 @@
+Daily Zone Recovery
+— is a trading Expert Advisor for MetaTrader 5 that trades from the previous day's highs and lows. It uses three independent strategies: breakout with return to the level, level test followed by breakout, and the "test-pullback-retest" scenario.
+The Expert Advisor features an ATR volatility filter, spread control, individual settings for timeframes, zones, Take Profit and Stop Loss for each strategy. If needed, grid management of positions with a fixed lot and series closure at the average price is available.
+Optimized
+for trading gold.
+Maybe someone will find it useful for scaling.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/75922

@@ -1,0 +1,7 @@
+A semaphore signal indicator that uses an algorithm based on crossovers of moving averages from the
+MAMA
+indicator.
+Fig. 1. The MAMASign indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12562

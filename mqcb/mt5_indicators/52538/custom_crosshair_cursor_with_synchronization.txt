@@ -1,0 +1,14 @@
+Useful for multi timeframe charts to locate candle of interest.
+It converts optionally server time to local time shown as tooltip.
+Press [Ctrl] or [Shift] key while moving mouse on a chart to reposition the custom crosshair cursor.
+Press [Esc] to hide/show custom crosshair cursor.
+Latest update (2024-11-20)
+Maintain hidden/show state of custom crosshair cursor on indicator start/restart.
+Indicator parameters:
+Show localtime
+display localtime as tooltip
+Cursor color
+color of crosshair cursor
+Cursor name
+same cursor name will be synchronized using terminal global variable.
+Enjoy.

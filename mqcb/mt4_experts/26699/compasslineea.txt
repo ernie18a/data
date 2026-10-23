@@ -1,0 +1,2 @@
+The expert uses iFollowLine and iCompass indicators to generate signals.
+With separately parameter for each indicator.

@@ -1,0 +1,6 @@
+Useful watcher for your expert advisor. This EA will send with every new trade opened or closed. Information about opened or closed trade is included in the message.
+Recommendations
+Please remember to fill out your email credentials at Tools -> Options -> Email (try to send "Test" email).
+No additional inputs provided.
+Expert must be added to MQL4/Experts directory.
+First loop (after enable) is without SendMail function. Emails will be send upon new or closed order.

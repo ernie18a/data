@@ -1,0 +1,40 @@
+Hedging Martingale has 5 versions, opens two trades of buy and sell together,and uses the martingale method.
+If the trade goes in the opposite direction after a predetermined number of pips, then it opens another trade in the same direction of the first trade. The process repeats itself until profit is taken.
+By opening a trade only with a new candle it prevents multiple trades, so it is safe to use.
+This Martingale EA can work on all pairs and all timeframes.
+Best timeframe is daily.
+Try it on demo first.
+*Version 1 has trailing stop loss
+*Version 2 has a special way to calculate the lot size
+*Version 3 can Use Equity Stop
+*Version 4 can add lot size or mulitply
+*Version 5 you will have both buy and sell orders at any given time
+*Version 6 you can
+activate a hedge fund protocol for low drawdown
+Inputs:
+==================HEDGE FUND PROTOCOL==========================
+HEDGE FUND PROTOCOL -Enabale Draw dwon control (values:true/false).
+Close basket at +0.10% MIN_PROFIT_PERCENT (values:0.1-0.6).
+Close basket at -0.50% MAX_LOSS_PERCENT (values: 0.5-0.8).
+HEDGE FUND PROTOCOL_SLIPPAGE (values: 10-50).
+=================================================================
+Use_TP_In_Money- Use Take Profit In Money (values:true/false).
+TP_In_Money- Take Profit In Money   (values: 10-100).
+Use_TP_In_percent- Use Take Profit In Percent (values:true/false).
+TP_In_Percent- Take Profit In Percent (values: 10-100).
+------------[Money Trailing Stop For Multiple Trades]----------------------
+Enable_Trailing-Enable_Trailing with money  (values:true/false).
+Take Profit In Money (in current currency) (values: 25-200).
+Stop Loss In Money(in current currency) (values: 1-20).
+--------------------------------------------------------------------------------------
+TakeProfit - TP value of each trade in this Martingale EA (values: 10-60).
+PipStep - Distance in pips which will open a new trade (values: 10-50).
+Lots - Initial lots value, will be duplicated every step (values: 0.01-1).
+Multiply - Multiplier value every step of new trade (values: 2-4).
+MaxTrade - Maximum trades that can run (values: 2-10).
+CLOSEMAXORDERS - Close all orders if there are more than maximum orders.
+MagicNumber - Magic number (values: 1-100000).
+TrailingStop-set a value from 10 to 100 to activate trailing stop loss & take profit, "0" will not activate trailing stop loss.
+-You should optimize this EA every few months and use the exact same  inputs from above .
+-How to perform back test:
+https://bit.ly/2CD7XWD

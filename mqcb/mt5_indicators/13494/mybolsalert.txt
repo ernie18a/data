@@ -1,0 +1,16 @@
+Real author:
+The original code you'll find here is from bb.mq5 by MetaQuotes Software Corp. (
+Bollinger Bands ®
+indicator). Some simple codes were added to produce a sound and email alert. Arrows display is also introduced on this latest version as shared idea inspired by Luis Gomez on his comment.
+The attached file you're seeing now is the updated version 3.2 for this indicator (previous version's error and problems were fixed on this one).
+Whenever the current price passes over the outside upper or lower band of the Bollinger, it will play a WAV sound and can be used as an audio alert indicator. The WAV will keep playing as long as the current price is outside the bands. Additional option if you want to be alerted by email, a message notification will be sent when the price passes outside the band.
+Arrow displays can be set in the indicator too when the price touches or passes the upper/lower band.
+The sound time delay on the 1st version was already removed, replacing it with a much better routine to handle the full playtime of any 3 second WAV file without slowing or obstructing the graphical plotting of the indicator on the chart.
+For the email notification, with a proper SMTP email set up in the MetaTrader 5 settings, and with this indicator you will be able to receive a message alert on email. Whenever the price passes the upper or lower bands, it will trigger a command to send a one time email alert. It won't send another one till the price hits the indicator's middle band. The middle band will reset the flag or mark for the "ready to send" command allowing the indicator to send a message alert.
+These are just a simple codes added on a working indicator to meet the objective. I'm not a professional programmer, but a hobbyist, and this is one of my beginner's programming in MQL5. Someone was asking for the same, so I thought I share this for those who might be interested out there for learning purposes.
+Recommendations:
+A text instruction for SMTP setup is included in the attached zip file, along with two wav sound file that you can use for this indicator.
+Make sure the WAV files in use are placed in the default MetaTrader 5 sound folder (usually located at c:/Program files/<your_MT5_folder>/Sounds).
+You can change the WAV files on the source and compile it new, or just simply rename the wav file you want to use with the name being used in the code.
+For SMTP email setting on your MetaTrader 5 terminal, go to Tools > Options, then choose "Email".
+If arrow display is enabled: Minimize BOL's deviation value for better use of the indicator.

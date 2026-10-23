@@ -1,0 +1,5 @@
+The same Bollinger bands... in a separate window, with fractional deviations and the choice of the method of price and MA calculation.
+The orginal of the indicator code is mercilessly copied from the Bands.mq4 by MetaQuotes Software Corp., respect to you for it.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8293

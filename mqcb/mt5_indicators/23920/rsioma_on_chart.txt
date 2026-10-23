@@ -1,0 +1,10 @@
+Theory :
+In a lot of cases it would help if we can see some oscillator on directly on chart, instead of seeing it in a separate window. There is a few methods for doing that. One is using a highest high / lowest low channel. This version is doing that and is displaying RSI (Relative Strength Index) that is using average instead of raw prices (the well known rsioma) directly on char. The averages that can be used are the usual :
+simple moving average (SMA)
+exponential moving average (EMA)
+smoothed moving average (SMMA)
+linear weighted moving average (LWMA)
+Usage :
+As any other Rsi(oma) is used. Some additional options are added (like 3 coloring modes) in order to help the usage of the indicator
+PS:
+Rsi(oma) usually deserves a "big picture" example too. So here is this example

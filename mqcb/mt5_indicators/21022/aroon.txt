@@ -1,0 +1,17 @@
+Indicator Aroon was developed by Tushar Chande in 1995 to evaluate trend strength. The indicator can be used to see when the existing trend can change its direction.
+In fact, the indicator measures the time necessary for the price to reach its highest and lowest values within a certain time interval in percents of the total time. The indicator consists of the "Aroon up" line measuring uptrends and the "Aroon down" line measuring the strength of the downtrend.
+There are three adjustable parameters:
+Period
+- calculation period;
+Overbought
+- overbought level;
+Oversold
+- oversold level.
+Calculation:
+Aroon Up[i] = 100 * (Period - i + PosMax) / Period
+Aroon Dn[i] = 100 * (Period - i + PosMin) / Period
+where:
+PosMax, PosMin - numbers of bars for the highest and lowest prices within the predefined Period.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21022

@@ -1,0 +1,13 @@
+MA Oscillator indicator is a moving average in the form of an oscillator.
+The indicator has three input parameters:
+Period - calculation period
+Method - calculation method
+Applied price - calculation price
+Calculation:
+MAOsc = Price/MA-1.0
+where:
+MA = MA(Applied price, Period, Method)
+Price = Applied price
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21413

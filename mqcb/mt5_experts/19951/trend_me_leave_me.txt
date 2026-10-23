@@ -1,0 +1,45 @@
+The author of the idea
+:
+Scriptor
+,
+the author of the MQL5 code
+:
+barabashkakvn
+.
+The Expert Advisor works with one position (can be used on netting accounts). The direction of a new open signal is calculated depending on the direction of the last closed position (BUY or SELL) and the way that position was closed (by Stop Loss or Take Profit).
+General principle:
+If a position was closed by Take Profit, the next position will be opened in the same direction;
+If a position was closed by Stop Loss, then the next position should be opened in the opposite direction.
+Type of closing is determined in OnTradeTransaction() using
+ENUM_DEAL_REASON
+: the transaction and its type is accessed in OnTradeTransaction() first:
+TRADE_TRANSACTION_DEAL_ADD
+- adding a deal to history. It is performed as a result of order execution or making operations with the account balance.
+, and then the DEAL_REASON property is checked.
+If the Breakeven parameter is not equal to zero, the position will be moved to breakeven if possible.
+After determining the direction in OnTradeTransaction(), check for further conditions:
+To open a BUY position, the SAR indicator on bar #0 must be
+less
+than the Close of bar #0, and ADX on bar #0 must be less than 20.
+To open a SELL position, the SAR indicator on bar #0 must be
+greater
+than the Close of bar #0, and ADX on bar #0 must be less than 20;
+Input Parameters
+Stop Loss (in pips)
+- Stop Loss value;
+Take Profit (in pips)
+- Take Profit value;
+Risk in percent for a deal
+- risk percent per trade;
+Breakeven (in pips)
+- the breakeven value;
+ADX: averaging period
+- ADX indicator parameter;
+SAR: price increment step - acceleration factor
+- SAR indicator parameter;
+SAR: maximum value of step
+- SAR indicator parameter.
+Default parameters, EURUSD,M30 from 2017.01.08 to 2018.02.05
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19951

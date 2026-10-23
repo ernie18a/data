@@ -1,0 +1,2 @@
+Author: Gosha
+LW Fractals indicator.

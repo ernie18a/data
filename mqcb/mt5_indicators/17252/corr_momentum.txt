@@ -1,0 +1,9 @@
+Corrected momentum indicator.
+If the period of the "correction" is set to <0, then the calculated value is the same as the momentum (if you compare it to the built in momentum, add 100 to it and then the values are going to be exactly the same).
+In any case, the "correction" was added to the momentum in order to filter out many false signals that momentum tends to have (if you try to use momentum based on the slope, it will lead you to anything but usable indicator - the "corrected" method changes that and turns the momentum indicator into a much more usable indicator).
+Alerts are included already. Depending on color choice the alerts are triggered too. Possible color /alert choices are:
+on outer level cross
+on middle level cross
+on slope change
+on original momentum value cross (when "corrected" value is used as a kind of a signal line compared to original value)
+As usual, some experimenting advised with the parameters. Defaults are set to roughly turn momentum indicator into momentum (and) short term trend combination:

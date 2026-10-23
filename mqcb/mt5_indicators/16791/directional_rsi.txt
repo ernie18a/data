@@ -1,0 +1,1 @@
+RSI that is based on Directional Movement. Added filtering and parabolic SAR for as an estimate of trend change (instead of using levels for that purpose).

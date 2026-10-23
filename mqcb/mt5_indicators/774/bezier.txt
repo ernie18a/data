@@ -1,0 +1,44 @@
+Real author:
+Lizhniyk E
+This indicator is one of the alternatives to the
+moving averages
+with less delay and possibility to manage sensitivity ratio.
+This indicator was first implemented in MQL4 and published in Code Base at
+mql4.com
+28.02.2008.
+Indicator input parameters:
+//+-----------------------------------+
+//| Indicator input parameters        |
+//+-----------------------------------+
+input
+int
+period=
+8
+;
+// Smoothing period
+input
+double
+T=
+0.5
+;
+// Sensitivity ratio (from 0 to 1)
+input
+Applied_price_ IPC=
+PRICE_WEIGHTED
+;
+// Applied price
+input
+int
+Shift=
+0
+;
+// Horizontal shift of the indicator in bars
+input
+int
+PriceShift=
+0
+;
+// Vertical shift of the indicator in points
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/774

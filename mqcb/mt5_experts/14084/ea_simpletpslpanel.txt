@@ -1,0 +1,6 @@
+This EA is a simple standalone Take Profit/Stop Loss panel. There's nothing special about this EA except for its simplicity. The limits are not sent as pending orders, if triggered, it is executed as an immediate order.
+Entries are placed-in using a click of the mouse, and if enabled and set it to "run", it will automatically detect any open position whether it's a BUY or SELL. It will then wait for the current price to hit the marked Take Profit or Stop Loss price, and if it happens, it will execute an immediate buy or sell to counter the open position. Alert messages are also used to warn about invalid procedures such as assigning limit with a wrong range of price. Shadow effect of the panel alternates from gray to black in sync with tick changes when set to run.
+Recommendations:
+Since TP/SL is running under EA, any interference, such as changing time period of the chart or turning off the terminal, will stop the run due to initialization.
+Make sure you set the right Lot size of the EA to counter the open position before making it run.
+Don't forget to enable your terminal's option on Expert Advisor to allow automated trading, otherwise order on this EA will not be completed when triggered.

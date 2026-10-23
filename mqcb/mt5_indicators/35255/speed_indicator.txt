@@ -1,0 +1,8 @@
+Averaging-Down
+A double-histogram represents the (green) average positive and (red) average
+negative MA Speed, each one averaged-down with a period of # (user input).
+Example:
+If averaging period is set to 300, then indicator will search for the last 300 positive
+and last 300 negative bars respectively. Calculate each sum's mean and represent it.
+Indicator
+Sample usage.

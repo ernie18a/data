@@ -1,0 +1,9 @@
+The Fibonacci spiral is one of the greatest tools produced by the amazing Fibonacci sequence and numbers.  It is considered by many traders to be the ultimate tool for predicting human behavior in the financial markets. The formation of a Fibonacci spiral can even be seen in nature on shells, petals of flowers, seed heads, the arrangement of leaves and stems, and even in glaxies.
+Fibonacci spiral is a special spiral that grow from the center in the Fibonacci ratio 1.618, which is also called the golden ratio. Every time the spiral makes a full turn it extends it self by Fibonacci ratio.
+This indicator will plot Fibonacci golden spiral on the chart. It is very easy and very flexible to use, however you have understand the initial settings before you use it.
+- radius: is the initial radius for drawing the spiral.
+- goldenSpiralCycle: this parameter represents how many cycles or turns has the spiral to go before it is increased by the golden ratio. (default is: 1)
+- clockWiseSpiral: when true the indicator will plot clockwise spiral and when it is false it will plot a counter clockwise spiral.
+-spiralColor1, spiralColor2: the colors of the plotted spiral.
+After the indicator initialize it will draw square and a spiral. If the square is not correctly scaled you can resize it and the spiral will be redrawn on the next coming price tick. You should rescale the square until you get the desired shape for the spiral.
+I hope you like the indicator.

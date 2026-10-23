@@ -1,0 +1,6 @@
+Basics:
+Wilson Relative Price Channel by Leon Wilson was described in the July 2006 issue of TASC. It is using the RSI to draw on chart trading zones, but in its original version there is one issue with it : on lower time frames it simply will not work - ie: it works, but the displayed results are not usable for trading decisions. It is using price % change as a basis for channel drawing and that is why it can work only on high time frames (mostly weekly and higher)
+This version:
+In this version we are using the Wilson's idea but with a modification: instead of using price % change as a basis, we are using ATR. That way the indicator can work on any time frame (since it is adjusting itself to time frame of the chart via ATR calculation).
+Usage:
+It can be used the original intended way - you can use the zones as overbought and oversold zones

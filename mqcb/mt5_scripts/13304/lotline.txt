@@ -1,0 +1,5 @@
+The script places the horizontal line on a chart and shows the trade volume in lots required to move the position to wherever the line is located.
+Move the line, and the script will update the required lot size.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13304

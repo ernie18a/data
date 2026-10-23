@@ -1,0 +1,10 @@
+The real author:
+mandorr
+The trend indicator drawn on the basis of a comparison of six levels of simple Moving Averages with High and Low for 10, 20, 30, 40, 50 and 60 periods of the current candlestick.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 10.10.2007.
+Fig.1 The TrendPower indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1534

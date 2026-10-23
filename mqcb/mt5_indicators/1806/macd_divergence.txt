@@ -1,0 +1,7 @@
+Real author:
+FX5
+This indicator will plot divergence lines on the MACD indicator and will give buy and sell signal by displaying green and red arrows.
+It also has a built-in alert function. As the original indicator, bullish divergence is plotted in green lines while bearish divergence is plotted in red. If the divergence is classic the line will be solid and if the type is reversed the line will be dotted.
+Divergence indicator based on MACD, this is the conversion of the mql4 indicator
+https://www.mql5.com/en/code/7116
+. This is a total rewrite of the original indicator to improve performance and to correct a little bug. Also it's more funny than simply converting it.

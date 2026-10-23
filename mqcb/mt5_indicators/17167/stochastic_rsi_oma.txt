@@ -1,0 +1,19 @@
+Stochastic RSI (OMA).
+This indicator allows calculation of stochastic of RSI and stochastic of RSI of average (this version has the basic 4 types of averages).
+The RSI types it has are :
+Cuttler's RSI
+Ehlers' smoothed RSI
+Harris' RSI
+Rapid RSI
+RSI
+RSX
+Slow RSI
+If you use price smoothing, then they are becoming RSI (OMA), if you do not, then "regular" rsi is calculated. Levels can be
+floating
+quantile
+or fixed
+Alerts are based on color change settings — which in turn can be :
+on outer levels cross
+on middle level cross
+on slope change
+It is using the usual set of 22 prices and is already a multi time frame version.

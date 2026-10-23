@@ -1,0 +1,7 @@
+Description:
+Like RSI and DeM, but more sensitive. Use the same way.
+Because of simplicity, would not be surprised that such an indicator exists under a different name: 0)
+Image:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9818

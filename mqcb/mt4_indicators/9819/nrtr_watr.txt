@@ -1,0 +1,5 @@
+Being one of indicators of group NRTR (Nick Rypock Trailing Reverse), the NRTR WATR indicator is a dynamic price channel adapted by volatility.
+The NRTR WATR represents blue and red cubes that show the stop level. They can also be used as break-through alerts. If the price breaks through a level, it is highly possible that this movement will continue.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9819

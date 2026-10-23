@@ -1,0 +1,8 @@
+This indicator detects the currencies in the chart and compares the current close value in all the pairs of the currencies trying to understand if the currency is strong or weak.
+Detection of the currencies in the chart
+Calculation of all the pairs involving the above currencies
+Comparing the Close price with the current open OR previous close
+Detection of Strong/Weak
+Indicator is in Beta, suggestions are very welcome.
+‌
+‌

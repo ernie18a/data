@@ -1,0 +1,11 @@
+Automated calculation of Stop Loss levels based on the Average True Range indicator (ATR) indicator.
+Calculation method:
+The "Max" level: add to the Open price the ATR value multiplied by "
+Target
+"
+The "Min" level: subtract from the Open price the ATR value multiplied by "
+Target
+"
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18674

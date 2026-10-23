@@ -1,0 +1,2 @@
+Indicator of support and resistance levels based on Open Close High Low Weekly Candle (last week).
+Entry on H4 or D1.

@@ -1,0 +1,22 @@
+Trading strategy
+Version 2 added:
+'
+Stop Loss
+', '
+Take Profi
+t'. The '
+Trailing activate ...
+' parameter has been added to trailing - we can say that this is a breakeven parameter that does not depend on either 'Trailing Stop' or 'Trailing Step'. How it works: The EA expects the position to become profitable at least 'Trailing activate ...' Points and will move the stop loss to that level if possible. Then the usual trailing will work.
+Added parameter group
+Time control:
+This section sets the time range for searching for trading signals. The time range is enabled via '
+Use time control
+' and sets the time interval for searching for signals from '
+Start Hour
+'::'
+Start Minute
+' to '
+End Hour
+'::'
+End Minute
+'. The time range can be set both within the day and with the transition through the day. Does not affect trailing.

@@ -1,0 +1,5 @@
+Author:
+(c) 2010 Shon Shampain for Zen Cows Go Mu,
+http://www.zencowsgomu.com/
+.
+Certainly a predecessor to indicators such as Average True Range, Price Change is simply an indicator showing the number of pips change per candle. There are many uses for this indicator, not the least of which is the ability to alleviate math in the 3rd and 4th decimal places, which is naturally prone to error.

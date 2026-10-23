@@ -1,0 +1,661 @@
+The KCI-Directional Matrix (KCI-DX)
+is an advanced, physics-inspired analytical tool that extracts market kinematics by measuring price path length and volatility energy. Unlike conventional momentum tools, KCI-DX employs a dynamic Z-Score normalization combined with a Sigmoid activation function. This ensures the output is flawlessly bounded between 0 and 100, providing hyper-responsive trend strength identification and directional bias without distortion from historical extremes.
+KCI Directional Matrix (KCI-DX)
+is a quantitative directional analysis indicator designed to measure market efficiency, directional pressure, and trend expansion through a proprietary Kinetic Compression Index framework.
+Key Features:
+Kinematic Directional Extraction:
+Calculates true market energy using path length variance.
+Dynamic Sigmoid Scaling:
+Adaptive normalization that prevents indicator flatlining.
+Three-Line Matrix:
+Consists of Main KCI (Trend/Compression Strength), +KDI (Bullish Kinematics), and -KDI (Bearish Kinematics).
+Unlike conventional momentum oscillators, KCI-DX decomposes market movement into three independent dimensions:
+KCI Main
+– Measures overall directional efficiency and trend expansion strength.
++KDI (Bullish Kinetic Directional Index)
+– Quantifies bullish directional dominance.
+-KDI (Bearish Kinetic Directional Index)
+– Quantifies bearish directional dominance.
+The indicator combines:
+Kinematic directional extraction
+Path efficiency analysis
+Energy-weighted movement scoring
+Dynamic Z-Score normalization
+Sigmoid adaptive scaling
+The result is a stable 0–100 directional matrix capable of identifying:
+Trend expansion
+Directional dominance
+Compression phases
+Momentum acceleration
+Volatility anomalies
+Market regime transitions
+KCI-DX can be used as a standalone trading tool or as a feature-engineering component for Expert Advisors, machine learning systems, market scanners, adaptive grids, dynamic stop management, and portfolio-level decision engines.
+Input Parameters :
+KCI-DX: VISUAL QUICK START GUIDE
+The Visual Interface (What You See)
+When you attach the KCI-DX to your chart, it appears in a separate window below your main price chart. It consists of
+three distinct lines
+and
+two critical zones
+.
+Visual Element
+Color & Style
+What It Means
+KCI Main Line
+Gold
+(Solid)
+Trend Strength & Compression.
+Shows how much kinematic energy is in the market, regardless of direction.
++KDI Line
+Blue
+(Dashed)
+Bullish Energy.
+The strength of upward price movement.
+-KDI Line
+Red
+(Dashed)
+Bearish Energy.
+The strength of downward price movement.
+Level 80.0
+Gray
+(Dotted)
+Extreme / Exhaustion Zone.
+The trend is at maximum capacity.
+Level 20.0
+Gray
+(Dotted)
+Compression / Sideways Zone.
+The market is accumulating energy.
+Visualizing the Market Phases (The Zones)
+Look at where the
+Gold Line (KCI Main)
+is positioned to instantly understand the market environment:
+Picture. 1
+The Sleep Zone (0 to 20):
+Visual:
+The Gold line is flat and resting at the bottom.
+Action:
+DO NOT TRADE.
+The market is moving sideways, trapped in tight compression.
+The Action Zone (20 to 80):
+Visual:
+The Gold line breaks out above the 20 level and rises steeply.
+Action:
+LOOK FOR ENTRIES.
+A new trend is born. Follow the Blue or Red dashed lines for direction.
+The Danger Zone (80 to 100):
+Visual:
+The Gold line hits the ceiling (above 80).
+Action:
+PREPARE TO EXIT.
+The current trend is extremely overextended and a reversal or deep correction is imminent.
+Visual Trade Setups (Step-by-Step)
+SCENARIO A: The Bullish Breakout (BUY)
+Check the Gold Line:
+It must be crossing
+UP
+and breaking above the
+20
+level.
+Check the Dashed Lines:
+The
+Blue Line (+KDI)
+must cross
+ABOVE
+the
+Red Line (-KDI)
+.
+Execution:
+Enter a
+BUY
+position.
+SCENARIO B: The Bearish Breakdown (SELL)
+Check the Gold Line:
+It must be crossing
+UP
+and breaking above the
+20
+level.
+(Yes, it goes UP even for downtrends, because downward energy is increasing!)
+Check the Dashed Lines:
+The
+Red Line (-KDI)
+must cross
+ABOVE
+the
+Blue Line (+KDI)
+.
+Execution:
+Enter a
+SELL
+position.
+SCENARIO C: The Profit Take (EXIT)
+Check the Gold Line:
+You are already in a trade, and the
+Gold Line
+touches or crosses the
+80
+level.
+Execution:
+Move your Stop Loss to breakeven, activate a tight Trailing Stop, or close the position to secure profits.
+Picture. 2
+PRO TIP:
+Never trade if the
+Blue
+and
+Red
+lines are tangled together under the 20 level. Wait for a clear separation and a Gold line breakout!
+KCI Directional Matrix Logic for Expert Advisors (EAs)
+If this indicator is used within an EA, the following trading rules can be applied:
+Buy Entry Logic (Bullish):
+KDI_Plus cuts above KDI_Minus (Cross over).
+Filter: KCI_Main must be above level 20 (confirming the market is out of the compression/sideways zone).
+Sell ​​Entry Logic (Bearish):
+KDI Minus cuts above KDI Plus (Crossover).
+Filter: KCI_Main must be above level 20.
+Exit / Take Profit / Trailing Logic:
+If KCI_Main reaches level 80 (Extreme Trend), EA should activate tight Trailing Stop or do partial Take Profit, because the trend energy is at its maximum and has the potential for correction.
+Logika No-Trade (Sideways):
+If KCI_Main is below 20, EA is prohibited from opening new positions because the market is in a compression zone (low energy).
+Example EA Code using iCustom Call
+This is the most optimal and recommended method. The EA will call the KCI-Directional_X.ex5 file located in the Indicators folder.
+Code snippet :
+//+------------------------------------------------------------------+
+//|                                                 EA_KCI_iCustom.mq5 |
+//+------------------------------------------------------------------+
+#property
+copyright
+"Copyright 2026, Ritz"
+#property
+version
+"1.00"
+int
+kci_handle;
+double
+KCI_Main[], KDI_Plus[], KDI_Minus[];
+int
+OnInit
+()
+  {
+// Create the custom indicator handle.
+// Ensure that "KCI-Directional_X.ex5" is located
+// in the MQL5/Indicators directory.
+kci_handle =
+iCustom
+(
+_Symbol
+,
+_Period
+,
+"KCI-Directional_X"
+,
+9
+,
+30
+,
+1.5
+);
+if
+(kci_handle ==
+INVALID_HANDLE
+)
+     {
+Print
+(
+"Failed to load the KCI-DX indicator."
+);
+return
+(
+INIT_FAILED
+);
+     }
+// Configure indicator buffers as time series
+// (Index 0 = current bar).
+ArraySetAsSeries
+(KCI_Main,
+true
+);
+ArraySetAsSeries
+(KDI_Plus,
+true
+);
+ArraySetAsSeries
+(KDI_Minus,
+true
+);
+return
+(
+INIT_SUCCEEDED
+);
+  }
+void
+OnTick
+()
+  {
+// Retrieve the latest indicator values
+// (current bar and the most recently closed bar).
+if
+(
+CopyBuffer
+(kci_handle,
+0
+,
+0
+,
+2
+, KCI_Main) <=
+0
+)
+return
+;
+if
+(
+CopyBuffer
+(kci_handle,
+1
+,
+0
+,
+2
+, KDI_Plus) <=
+0
+)
+return
+;
+if
+(
+CopyBuffer
+(kci_handle,
+2
+,
+0
+,
+2
+, KDI_Minus) <=
+0
+)
+return
+;
+// ------------------------------------------------------------
+// KCI-DX Trading Logic
+// All trading decisions are based on the last completed candle
+// (Index 1) to avoid signals from the still-forming candle.
+// ------------------------------------------------------------
+// Detect whether the market is in a trending condition.
+bool
+isTrending = KCI_Main[
+1
+] >
+20.0
+;
+// Detect a bullish directional crossover.
+bool
+buySignal  = (KDI_Plus[
+1
+] > KDI_Minus[
+1
+]) &&
+                     (KDI_Plus[
+2
+] <= KDI_Minus[
+2
+]);
+// Detect a bearish directional crossover.
+bool
+sellSignal = (KDI_Minus[
+1
+] > KDI_Plus[
+1
+]) &&
+                     (KDI_Minus[
+2
+] <= KDI_Plus[
+2
+]);
+// Detect an extreme trend expansion.
+bool
+isExtreme  = KCI_Main[
+1
+] >=
+80.0
+;
+// Example trade execution logic.
+if
+(isTrending && buySignal)
+     {
+Print
+(
+"KCI-DX BUY signal detected."
+);
+// Place your BUY order execution
+// (OrderSend or CTrade::Buy) here.
+}
+else
+if
+(isTrending && sellSignal)
+     {
+Print
+(
+"KCI-DX SELL signal detected."
+);
+// Place your SELL order execution
+// (OrderSend or CTrade::Sell) here.
+}
+// Optional trade management for strong market trends.
+if
+(isExtreme)
+     {
+Print
+(
+"Extreme trend detected. Consider activating a trailing stop or managing existing positions."
+);
+     }
+  }
+Example of EA Code with Embedded Calculations (Directly embeded) (Embeded on the EA KCI-N Matrix engine)
+This method incorporates your mathematical algorithm directly into the EA without requiring external indicator files. Since the calculation requires historical data for the Z-Score, we use a special function within the EA to process the price array.
+Code snippet:
+//+------------------------------------------------------------------+
+//|                                              EA_KCI_Embedded.mq5 |
+//+------------------------------------------------------------------+
+#property
+copyright
+"Copyright 2026, Ritz"
+#property
+version
+"1.00"
+input
+int
+InpBasePeriod   =
+9
+;
+input
+int
+InpZScorePeriod =
+30
+;
+input
+double
+InpSensitivity  =
+1.5
+;
+// Structure used to return all three KCI-DX values
+// from a single calculation.
+struct
+KCI_Result
+  {
+double
+main;
+double
+plus;
+double
+minus;
+  };
+// Calculate the internal Z-Score used for
+// dynamic normalization.
+double
+EmbeddedZScore(
+double
+&data_array[],
+int
+period)
+  {
+if
+(period <
+2
+)
+return
+0.0
+;
+double
+sum =
+0.0
+;
+double
+sum_sq =
+0.0
+;
+for
+(
+int
+i =
+0
+; i < period; i++)
+     {
+      sum += data_array[i];
+      sum_sq += data_array[i] * data_array[i];
+     }
+double
+mean = sum / period;
+double
+variance = (sum_sq / period) - (mean * mean);
+if
+(variance <=
+1
+e-
+10
+)
+return
+0.0
+;
+return
+(data_array[
+0
+] - mean) /
+MathSqrt
+(variance);
+  }
+// Calculate the KCI-DX values for a specified
+// historical bar (shift).
+KCI_Result CalculateKCI(
+int
+shift)
+  {
+   KCI_Result res;
+   res.main =
+0.0
+;
+   res.plus =
+0.0
+;
+   res.minus =
+0.0
+;
+// Retrieve sufficient historical closing prices
+// for both the Base Period and Z-Score window.
+int
+required_bars = InpZScorePeriod + InpBasePeriod;
+double
+close[];
+ArraySetAsSeries
+(close,
+true
+);
+if
+(
+CopyClose
+(
+_Symbol
+,
+_Period
+, shift, required_bars, close) < required_bars)
+return
+res;
+// Insufficient historical data.
+double
+raw_plus[];
+double
+raw_minus[];
+double
+raw_trend[];
+ArrayResize
+(raw_plus, InpZScorePeriod);
+ArrayResize
+(raw_minus, InpZScorePeriod);
+ArrayResize
+(raw_trend, InpZScorePeriod);
+// ------------------------------------------------------------
+// Phase 1:
+// Kinematic Directional Extraction
+// ------------------------------------------------------------
+for
+(
+int
+i =
+0
+; i < InpZScorePeriod; i++)
+     {
+double
+path_len =
+0.000001
+;
+double
+net_up =
+0.0
+;
+double
+net_dn =
+0.0
+;
+double
+mean_p =
+0.0
+;
+for
+(
+int
+j =
+0
+; j < InpBasePeriod; j++)
+        {
+double
+diff = close[i + j] - close[i + j +
+1
+];
+
+         path_len +=
+MathAbs
+(diff);
+if
+(diff >
+0
+)
+            net_up += diff;
+else
+net_dn -= diff;
+
+         mean_p += close[i + j];
+        }
+
+      mean_p /= InpBasePeriod;
+double
+var_p =
+0.0
+;
+for
+(
+int
+j =
+0
+; j < InpBasePeriod; j++)
+         var_p +=
+MathPow
+(close[i + j] - mean_p,
+2
+);
+double
+energy =
+MathSqrt
+(var_p / InpBasePeriod);
+
+      raw_plus[i]  = (net_up / path_len) * energy;
+      raw_minus[i] = (net_dn / path_len) * energy;
+      raw_trend[i] = (
+MathAbs
+(net_up - net_dn) / path_len) * energy;
+     }
+// ------------------------------------------------------------
+// Phase 2:
+// Dynamic Sigmoid Normalization
+// ------------------------------------------------------------
+double
+z_plus  = EmbeddedZScore(raw_plus, InpZScorePeriod);
+double
+z_minus = EmbeddedZScore(raw_minus, InpZScorePeriod);
+double
+z_trend = EmbeddedZScore(raw_trend, InpZScorePeriod);
+
+   res.plus  =
+100.0
+/ (
+1.0
++
+MathExp
+(-InpSensitivity * z_plus));
+   res.minus =
+100.0
+/ (
+1.0
++
+MathExp
+(-InpSensitivity * z_minus));
+   res.main  =
+100.0
+/ (
+1.0
++
+MathExp
+(-InpSensitivity * z_trend));
+return
+res;
+  }
+void
+OnTick
+()
+  {
+// Calculate the KCI-DX values for the
+// two most recently completed candles.
+KCI_Result kci_current = CalculateKCI(
+1
+);
+   KCI_Result kci_prev    = CalculateKCI(
+2
+);
+// ------------------------------------------------------------
+// Example Trading Logic
+// Detect a bullish directional crossover.
+// ------------------------------------------------------------
+bool
+buySignal =
+      (kci_current.plus > kci_current.minus) &&
+      (kci_prev.plus <= kci_prev.minus);
+// Execute trading logic only when the market
+// is in a valid trending condition.
+if
+(kci_current.main >
+20.0
+&& buySignal)
+     {
+Print
+(
+"Embedded KCI-DX detected a BUY signal."
+);
+// Place your BUY order execution
+// (OrderSend or CTrade::Buy) here.
+}
+  }
+Recommendations for Best Results
+Before you compile and trade, keep these best practices in mind to get the most out of the KCI-Directional Matrix:
+Asset Flexibility:
+The default parameters ( BasePeriod=9 , ZScorePeriod=30 ) are highly responsive and perform exceptionally well on major pairs. However, if you are applying this to highly volatile instruments like Gold (XAUUSD), Cryptocurrencies (BTC/ETH), or Indices, consider slightly increasing the ZScorePeriod (e.g., to 40 or 50) to filter out excessive noise.
+Algorithmic Optimization:
+For EA developers building complex or multi-symbol systems, utilizing the
+Embedded Calculation
+method provided above is highly recommended. It keeps your CPU usage incredibly lightweight and ensures your Expert Advisor remains fully self-contained without needing external indicator calls.
+Pairing for Confluence:
+KCI-DX is a dedicated kinematic and volatility engine. While it provides excellent standalone directional bias, it becomes truly formidable when combined with your favorite structural filters (like Support/Resistance zones) or volume anomaly detectors to validate the final entry.
+Closing Statement
+Author's Note / Conclusion:
+Thank you for exploring the KCI-Directional Matrix. This codebase was engineered with a strict focus on providing the MQL5 community with a lightweight, mathematically rigorous, and highly adaptive analytical tool. Whether you are a manual trader looking for precise momentum exhaustion points, or a developer integrating machine-readable data into an Expert Advisor, I hope this indicator serves as a robust foundation for your projects.
+If you find this code valuable for your trading systems, please feel free to leave a review, share your creative modifications, or drop a question in the discussion section below. Let’s continue pushing the boundaries of algorithmic trading together!
+Happy Coding and Trade Safely,
+— Ritz

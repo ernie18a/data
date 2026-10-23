@@ -1,0 +1,70 @@
+Updated Version.
+See description below.
+Still believing in Cross Moving Average and -- as a programmer -- always seeking the simplest solution. I came acros the sentance "there is no magic setting for cross MA". This indicator tries out a lot of settings each time the time frame or the symbol changes or even one each new candle. It works by dull "trading" the last 100 or so candles and choosing the settings with the best success. It is simply measuring the distance between a short and a long signal, as if anybody have traded this without stop loss. It takes the spread into account.
+The lower window shows the distance between the short and the long Moving Average positive values are for long trades, negative values are for short trades in pips. Using the "profit oszilator" you can end a trade in profit by examining if short/long trades have a maximum difference and ending right before the maxium.
+The upper line says "Profit today with MA 5/19 is 60 pips". The indicator or the user has choosen 5 for the fast MA and 19 for the slow MA. The next text field displays the results from yesterday followed by the signal Long or Short. Traders may like to drop two moving averages to the chart and set them up to the given value.
+I am searching for more different MA recomondations in literatur.
+Parameters
+PeriodShort=6;
+Period for the fast MA. Ignore if optimize is true
+PeriodLong=40;
+Period for the slow MA. Ignore if optimize is true
+Method=0;
+Method for iMA
+Optimize=true;
+The indicator automatically chooses values for fast and slow MA
+DrawTringles=true;
+Draw triangles into the chart
+MinShortMA=2;
+MaxShortMA=20;
+MaxLongMA=100;
+Min and Max values for the optimization, it will try out values between 2 and 20 for the fast MA and 7 to 100 for the slow MA
+StepLongMA=5;
+StepShortMA=5;
+For speeding up the search, it is trying out every third value
+CountOptimize=200;
+It is analyzing 200 candles from the past. The more candles you analyze the slower it will be, a big number may also result in less good results
+OptimizeOnNewCandle=false;
+Start optimization on each new candle. Note: Optimization can take some time and slow down your terminal
+Alarm=true;
+Ring the bell if a new signal arises
+Next step, I want to create an expert Advisor of it, however I am still wondering how to detect a sidwards trend which should not be traded with cross MA. Until now my EA based on optimized cross MA sometimes makes excellent gains and burns it the next day.
+Updated Version
+New features:
+- The indicator draws now the moving averages inside the chart, the "profit oszilator" is inside a different indicator (MAProfit2), both communicate with global variables
+- Supports MA Channels (see ebook at www.vnchanger.org), the slow moving average is split into two lines, one for low and one for high values, this should avoid losses in sidewards market
+- Instead of testing all combinations, it can test certain MA ranges found in the literature. To do this set OptimizeAll to false and OptimizeSystems to true.
+You can add or modify the systems table. Be sure to terminate it with 0,0,0,0,0,0
+extern bool OptimizeAll=false;
+extern bool OptimizeSystems=true;
+int Systems[] = {PRICE_MEDIAN,MODE_SMA,50, PRICE_MEDIAN,MODE_SMA,200,
+PRICE_MEDIAN,MODE_SMA,50, PRICE_MEDIAN,MODE_SMA,100, // Death Cross
+PRICE_MEDIAN,MODE_SMA,10, PRICE_MEDIAN,MODE_SMA,40,
+PRICE_MEDIAN,MODE_SMA,13, PRICE_MEDIAN,MODE_SMA,26,
+PRICE_MEDIAN,MODE_SMA,5, PRICE_MEDIAN,MODE_SMA,10,
+PRICE_CLOSE, MODE_EMA,5, PRICE_OPEN, MODE_EMA,6,
+PRICE_MEDIAN,MODE_SMA,3, PRICE_MEDIAN,MODE_SMA,8,
+0,0,0,0,0,0};
+- New alerts can be given as voice, in order to support this, you need to download gspeak, for example from https://www.mql5.com/en/code/8621
+If you do not want voice, you need to modify the code. Remove the lines from #import "speak.dll" until #import and uncomment the gSpeak function. Thanks the autor for this wonderful DLL.
+#import "speak.dll"
+void gRate(int rate);
+void gVolume(int rate);
+void gPitch(int rate);
+void gSpeak(string text);
+#import
+// if you do not have (or want) the speach.dll uncomment this
+/*
+void gSpeak(string x)
+{
+}
+*/
+If you don't remove the voice, after some profit you may begin to love "Oncle Sams" voice speaking.
+- At the firsts start or on parameter change, it remembers the candle on the first trade, this should avoid re-painting old trades with different ones.
+- The treeangles now have three colors: Green for long trades, Red for short trades and Violett for trades with loss (long or short). The colors can be modified in the source code:
+int ColorLongTrade = MediumSpringGreen;
+int ColorShortTrade = Red;
+int ColorBadTrade = Violet;
+- The steps in MA Optimization have been set to 5
+- The internal name of this indicator has been changed to SMA (Smart Ass ... it displays the how you should have traded aferwards).
+MA Optimizer

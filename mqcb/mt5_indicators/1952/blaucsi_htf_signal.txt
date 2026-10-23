@@ -1,0 +1,169 @@
+BlauCSI_HTF_Signal shows information about trend direction based on the data of the
+BlauCSI
+indicator on a selected bar as a graphic object with a colored indication of trend or deal direction and gives alerts or audio signals and sends push notifications on the smartphone if signal to conduct a deal appears.
+The indicator sends alerts and push notifications only if the value of the input parameter:
+input
+uint
+SignalBar=
+0
+;
+// The bar number to get a signal (0 - current bar)
+is greater than one. For the zero bar sound signals and Push-notifications are useless because the signal of the indicator on the zero bar can change and disappear!
+All input parameters can be divided into three large groups:
+Input parameters of BlauCSI:
+input
+string
+Symbol_=
+""
+;
+// Financial instrument
+input
+ENUM_TIMEFRAMES
+Timeframe=
+PERIOD_H6
+;
+// Indicator timeframe for the calculation of the indicator
+input
+Smooth_Method XMA_Method=
+MODE_EMA
+;
+// Method of averaging
+input
+uint
+XLength=
+1
+;
+// Period of Momentum
+input
+uint
+XLength1=
+20
+;
+// Depth of the first averaging
+input
+uint
+XLength2=
+5
+;
+// Depth of the second averaging
+input
+uint
+XLength3=
+3
+;
+// Depth of the third averaging
+input
+int
+XPhase=
+15
+;
+// Smoothing parameter
+input
+Applied_price_ IPC1=
+PRICE_CLOSE
+;
+// Close price constant
+input
+Applied_price_ IPC2=
+PRICE_OPEN
+;
+// Open price constant
+Input parameters of the BlauCSI_HTF_Signal indicator that are necessary for the indicator visualization:
+//---- indicator display settings
+input
+uint
+SignalBar=
+0
+;
+// Bar number to get a signal (0 - current bar)
+input
+string
+Symbols_Sirname=INDICATOR_NAME
+"_Label_"
+;
+// Names of the indicator labels
+input
+color
+UpSymol_Color=Lime;
+// Color of the growth symbol
+input
+color
+DnSymol_Color=Magenta;
+// Color of the down symbol
+input
+color
+IndName_Color=DarkOrchid;
+// Color of the indicator name
+input
+uint
+Symbols_Size=
+60
+;
+// Size of the indicator symbols
+input
+uint
+Font_Size=
+10
+;
+// Indicator name font size
+input
+int
+X_1=
+5
+;
+// Horizontal shift of the name
+input
+int
+Y_1=-
+15
+;
+// Vertical shift of the name
+input
+bool
+ShowIndName=
+true
+;
+// Display of the indicator name
+input
+ENUM_BASE_CORNER
+WhatCorner=
+CORNER_RIGHT_UPPER
+;
+// Location corner
+input
+uint
+X_=
+0
+;
+// Horizontal shift
+input
+uint
+Y_=
+20
+;
+// Vertical shift
+Input parameters of the BlauCSI_HTF_Signal indicator that are necessary for producing alerts and audio signals:
+//---- Settings of alerts
+input
+ENUM_ALERT_MODE alert_mode=OnlySound;
+// Option of triggering indication
+input
+bool
+Push=
+true
+;
+// Allow push notifications
+input
+uint
+AlertCount=
+0
+;
+// Number of produced alerts
+In case several BlauCSI_HTF_Signal indicators are to be used on one chart, each of them should have its own Symbols_Sirname (indicator labels names) string variable value.
+Place the indicator compiled file BlauCSI.mq5 to the terminal_data_folder\MQL5\Indicators\ of the client terminal.
+Fig. 1. A signal of trend continuation based on the data of the BlauCSI_HTF_Signal indicator
+Fig. 2. A signal to open a position based on the data of
+BlauCSI_HTF_Signal
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1952

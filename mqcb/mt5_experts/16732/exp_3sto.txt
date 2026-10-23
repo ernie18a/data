@@ -1,0 +1,20 @@
+Real author:
+Rafael Maia de Amorim
+The trading system based on the three Stochastics signals from three different timeframes. The two Stochastics are used to define a trend direction by the Stochastic location relative to a signal line. The third one is used to detect a crossing of the Stochastic and the signal line. The signal is formed when a bar is closing if there is a crossing of a lower-timeframe Stochastic with medium- and higher-timeframe ones by trend.
+Note that the TradeAlgorithms.mqh library file allows using Expert Advisors with brokers who offer
+nonzero spread
+and the option of setting Stop Loss and Take Profit
+together with position opening
+. You can download more variants of the library at the following link:
+Trade Algorithms
+.
+Default Expert Advisor's input parameters have been used during tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Originally this EA has been written in MQL4 and was first published in the
+Code Base
+on 02.07.2009.
+Fig. 1. Examples of trades on the chart
+Testing results for 2015 on AUDUSD M30, M15, M5:
+Fig. 2. Testing results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16732

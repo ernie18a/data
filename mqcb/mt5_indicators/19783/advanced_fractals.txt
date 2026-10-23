@@ -1,0 +1,13 @@
+The indicator searches for fractals with arbitrary dimensions: 1x1, 2x2, 3x3, ... NxN
+It has only one input parameter:
+Frames
+- the number of bars to the right and left of the central candlestick of the fractal.
+Fig.1 Fractal 1х1:
+Fig.2 Fractal 2х2:
+Fig.3 Fractal 3х3:
+Fig.4 Fractal 4x4:
+Fig.5 Fractal 5х5:
+Fig.6 Fractal 6x6:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19783

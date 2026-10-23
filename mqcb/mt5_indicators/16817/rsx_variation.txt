@@ -1,0 +1,2 @@
+RSX as is is most usually defined as "smoother RSI", and it is correct in most of the cases.
+RSX uses in its calculation what we could call a momentum using period 1. This version is a variation and allows you to use instead any momentum length. Of course, it carries added lag with it (when the momentum period is increased) but in some cases (if the momentum period is increased moderately) it can filter out some false signals.

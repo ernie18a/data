@@ -1,0 +1,16 @@
+This indicator is a variation of Awesome Oscillator (AO) with the possibility to customize parameters:
+MA Fast period
+- fast Moving Average period;
+MA Slow period
+- slow Moving Average period;
+Method
+- Moving Average calculation method;
+Applied price
+- Moving Average calculation price.
+Fig.1. Simple MA
+Fig.2. Exponential MA
+Fig.3. Smoothed MA
+Fig.4. Linear Weighted MA
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20318

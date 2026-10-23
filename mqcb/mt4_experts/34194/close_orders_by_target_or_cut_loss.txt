@@ -1,0 +1,145 @@
+We use this EA as a trading tool.
+There are 3 inputs required, as follows:
+Profit Target
+Cut Loss
+Magic Number
+extern
+double
+inTargetProfitMoney     =
+10
+;
+//Target Profit ($)
+extern
+double
+inCutLossMoney          =
+0.0
+;
+//Cut Loss ($)
+extern
+int
+inMagicNumber           =
+0
+;
+//Magic Number
+When this EA is executed, it will first call the OnInit () function. Where we will verify the input and variable initialization
+int
+OnInit
+()
+  {
+//---
+if
+(inTargetProfitMoney <=
+0
+)
+     {
+Alert
+(
+"Invalid input"
+);
+return
+(
+INIT_PARAMETERS_INCORRECT
+);
+     }
+
+   inCutLossMoney =
+MathAbs
+(inCutLossMoney) * -
+1
+;
+//---
+return
+(
+INIT_SUCCEEDED
+);
+  }
+And every time the price movement (tick) will call the OnTick () function
+void
+OnTick
+()
+  {
+//---
+double
+tFloating =
+0.0
+;
+int
+tOrder  =
+OrdersTotal
+();
+for
+(
+int
+i=tOrder-
+1
+; i>=
+0
+; i--)
+     {
+if
+(
+OrderSelect
+(i, SELECT_BY_POS, MODE_TRADES))
+        {
+if
+(OrderMagicNumber() == inMagicNumber)
+           {
+            tFloating   += OrderProfit()+OrderCommission() + OrderSwap();
+           }
+        }
+     }
+if
+(tFloating >= inTargetProfitMoney || (tFloating <= inCutLossMoney && inCutLossMoney <
+0
+))
+     {
+      fCloseAllOrders();
+     }
+
+  }
+In the OnTick function, it will continue to calculate the total profit or loss. Then will close all orders that can be fulfilled the target or maximum loss limit
+void
+fCloseAllOrders()
+  {
+double
+priceClose =
+0.0
+;
+int
+tOrders =
+OrdersTotal
+();
+for
+(
+int
+i=tOrders-
+1
+; i>=
+0
+; i--)
+     {
+if
+(
+OrderSelect
+(i, SELECT_BY_POS, MODE_TRADES))
+        {
+if
+(OrderMagicNumber() == inMagicNumber && (OrderType() == OP_BUY || OrderType() == OP_SELL))
+           {
+            priceClose  = (OrderType()==OP_BUY)?MarketInfo(OrderSymbol(), MODE_BID):MarketInfo(OrderSymbol(), MODE_ASK);
+if
+(!OrderClose(OrderTicket(), OrderLots(), priceClose, slippage,
+clrGold
+))
+              {
+Print
+(
+"WARNING: Close Failed"
+);
+              }
+           }
+        }
+     }
+  }
+for more detailed information and sharing of mql4 code education, please join our telegram
+t.me/codeMQL

@@ -1,0 +1,3 @@
+This version of RSI is "experimenting" with different ways how internally the RSI is calculated. Welles Wilder used what is frequentlyy called "Wilders EMA" which is, in fact, exactly the same as smoothe MA (SMMA).
+So, in this version, we can chose which one of the 4 basic averages can be used for RSI calculation, and that way we can get 3 completely new types odf RSI.
+Additionaly, price can be smoothed prior to RSI calculation in which case we are getting what is usually regered to as RSI of MA (rsioma) and even then we are getting completely new versions of RSI of MA. With this "experiment" — with a simple average type change in the calculation we are having completely new types of rsi / rsioma.

@@ -1,0 +1,223 @@
+Overview
+Gold Fractal Breakout EA is a MetaTrader 5 Expert Advisor that searches for confirmed swing highs and lows, then attempts to place Buy Stop and Sell Stop orders near those levels. Its structure detection uses configurable neighboring bars rather than the built-in iFractals indicator. Orders and positions are identified by the current symbol and the configured magic number.
+The strategy combines price structure, pending entries and percentage-based exit management. It does not draw entry arrows, fractal markers or trading panels on the chart. The illustration below explains the order placement concept; it is synthetic and does not represent historical trades, a terminal screenshot or measured performance.
+Conceptual buy setup. Illustrative prices; no historical performance data.
+Symbol and timeframe
+The product name suggests gold, so a broker-specific gold symbol such as XAUUSD is the intended starting point for evaluation. However, the source trades the symbol of the chart to which it is attached and contains no gold-only restriction. No supplied backtest or forward-test evidence establishes an optimal symbol, timeframe or profitable parameter set.
+The structure timeframe is fixed to H1 by the internal constant InpFractalTF. It is not an editable input. Even when the chart or Strategy Tester period is D1, CopyRates reads H1 bars. Scans run on the first available tick after the configured interval, which defaults to 15 minutes; position management runs on every tick. H1 therefore describes the default signal data, not a verified best trading timeframe.
+How entry conditions are interpreted
+IsSwingHigh requires the candidate high to be strictly higher than all selected older and newer neighboring highs; IsSwingLow requires the corresponding strictly lower low. With the default settings, five bars are checked on each side. FindSwing starts beyond the newest five closed bars, excluding the current bar from the confirmation window, and returns the most recent qualifying level. If the required history is unavailable, no level is returned.
+For a buy setup, Ask must be below the swing high by more than the configured minimum clearance. For a sell setup, Bid must be above the swing low by more than that clearance. The EA then applies its entry offset, checks for an existing same-direction pending order within the duplicate distance, and verifies that the pending entry is beyond the broker minimum stop distance from the current quote.
+Buy entry = swing high + swing high × buy offset / 100. Sell entry = swing low − swing low × sell offset / 100. Both default offsets are −0.10%, so the buy entry is below the high and the sell entry is above the low. These defaults anticipate the swing boundary rather than require a completed break beyond it. The order is still submitted only if its price is valid for a stop order relative to the current market.
+Key code excerpts
+The following excerpts are taken from the MQ5 file currently downloadable from this CodeBase entry. They explain selected parts of the implementation and are not standalone programs.
+Fixed H1 history and confirmed candidates
+const
+ENUM_TIMEFRAMES
+InpFractalTF     =
+PERIOD_H1
+;
+// Fixed H1 data timeframe, independent of chart or tester period
+double
+FindSwing(
+bool
+high)
+  {
+//--- Load price bars for the swing search
+MqlRates
+r[];
+ArraySetAsSeries
+(r,
+true
+);
+int
+need=InpMaxSearchBars+InpFractalLeft+InpFractalRight+
+5
+;
+if
+(
+CopyRates
+(
+_Symbol
+,InpFractalTF,
+0
+,need,r)<need)
+return
+0
+;
+//--- Skip unconfirmed candidates and search newest to oldest
+int
+first=InpFractalRight+
+1
+;
+int
+last=
+MathMin
+(InpMaxSearchBars,
+ArraySize
+(r)-InpFractalLeft-
+1
+);
+for
+(
+int
+i=first;i<=last;i++)
+if
+(high ? IsSwingHigh(r,i) : IsSwingLow(r,i))
+return
+high?r[i].high:r[i].low;
+return
+0
+;
+  }
+The series array uses index 0 for the current bar. Starting at InpFractalRight + 1 keeps every newer confirmation bar closed. With the default right-side count of five, the first candidate is index 6 and its newer comparison bars are indices 5 through 1. CopyRates explicitly requests H1 data, independently of the attached chart period.
+Strict swing-high comparison
+bool
+IsSwingHigh(
+const
+MqlRates
+&r[],
+int
+i)
+  {
+//--- Compare the candidate with older bars
+for
+(
+int
+k=
+1
+;k<=InpFractalLeft;k++)
+if
+(r[i].high<=r[i+k].high)
+return
+false
+;
+//--- Compare the candidate with newer bars
+for
+(
+int
+k=
+1
+;k<=InpFractalRight;k++)
+if
+(r[i].high<=r[i-k].high)
+return
+false
+;
+return
+true
+;
+  }
+A candidate is rejected when any selected neighboring high is equal to or higher than it. IsSwingLow applies the corresponding inverse comparison to lows. These functions identify confirmed price structure; they do not call the built-in iFractals indicator.
+Entry offsets and initial exits
+double
+entry=buy?swing+Pct(swing,InpBuyEntryOffsetPct):swing-Pct(swing,InpSellEntryOffsetPct);
+
+   entry=N(entry);
+if
+(SimilarPending(type,entry))
+return
+;
+//--- Calculate initial stop loss and take profit
+double
+sl=buy?entry-Pct(entry,InpStopLossPct):entry+Pct(entry,InpStopLossPct);
+double
+tp=buy?entry+Pct(entry,InpTakeProfitPct):entry-Pct(entry,InpTakeProfitPct);
+
+   sl=N(sl);
+
+   tp=N(tp);
+This excerpt comes from PlaceBreakout; buy, swing and type are established earlier in that function. Pct calculates a percentage of its first argument, and N aligns prices to the symbol tick grid. Before normalization, a swing high of 3000 with a buy offset of -0.10% gives an entry of 2997; a swing low of 3000 with a sell offset of -0.10% gives an entry of 3003. Subsequent broker-distance, volume, session and margin checks can still prevent submission.
+Sizing and position management
+Fixed-lot mode normalizes InpFixedLots to the current symbol minimum, maximum and volume step. Risk-percent mode estimates order volume from current account equity, the configured risk percentage, entry-to-stop distance, and the symbol tick size and tick value cached at initialization. Both modes clamp volume to the symbol minimum and maximum and round down to the volume step using step-derived decimal precision. Values below the minimum are raised to the minimum, which can increase exposure above the requested size or risk estimate. Invalid distance or cached tick properties cause a fallback to normalized fixed lots. Before submission, symbol-wide same-direction positions and pending orders are counted against SYMBOL_VOLUME_LIMIT, including trades with other magic numbers; insufficient remaining capacity prevents a new order.
+Initial stop loss and take profit are calculated as percentages of the pending entry price. On each tick, favorable movement is measured from the position opening price using Bid for buys and Ask for sells. At the break-even trigger, the stop is moved toward a small price-based profit lock. Trailing updates apply only while favorable movement is between the trailing trigger and the maximum trailing percentage.
+At the salvage loss threshold, the EA moves take profit to a smaller loss relative to the opening price. This seeks an exit if price subsequently recovers toward that target; it does not close the position immediately or guarantee recovery. For example, the default buy salvage target is 0.15% below entry after an adverse move of at least 1.00%. The updated target is not automatically restored to the original take profit when the loss condition ends.
+Input parameters
+All 25 configurable inputs are listed below with their source defaults. Except for InpRiskPercent, percentage settings describe price distances or price movement, not account returns. InpDuplicatePoints uses symbol points rather than a universal pip size. The trailing distance is based on the current quote; the other exit percentages described here are based on the entry or opening price.
+Parameter
+Default
+Meaning and interpretation
+InpMagic
+900009
+Identifier used together with the chart symbol to select this EA orders and positions.
+InpComment
+"GoldX9 strategy 9"
+Text attached to submitted orders; ownership filtering uses symbol and magic number.
+InpLotMode
+LOT_FIXED
+LOT_FIXED uses fixed volume; LOT_RISK_PERCENT uses equity-risk sizing.
+InpFixedLots
+0.01
+Requested fixed-mode volume, normalized to symbol min/max/step; also the normalized fallback for invalid risk-sizing properties.
+InpRiskPercent
+0.50
+Estimated equity risk per order; not a guaranteed realized loss limit.
+InpMaxPending
+3
+Same-symbol and magic-number pending orders, counted separately for each direction.
+InpMaxPositions
+10
+Secondary position-count threshold; any symbol position already blocks entries and triggers cancellation of owned pending entries.
+InpPendingExpiryHours
+15
+Timestamp calculated from this value; submissions still use GTC, so timed expiry is not implemented.
+InpDuplicatePoints
+100
+A same-type pending entry at or within this distance prevents submission.
+InpRescanMinutes
+15
+Minimum time between entry scans; scans require an arriving tick.
+InpFractalLeft
+5
+Number of older neighboring bars in the strict swing comparison.
+InpFractalRight
+5
+Number of newer closed neighboring bars required to confirm a swing.
+InpMaxSearchBars
+200
+Maximum candidate series index examined; extra bars are loaded for comparisons.
+InpMinFractalClearancePct
+0.02
+Ask clearance below a high or Bid clearance above a low, as a percentage of the swing.
+InpBuyEntryOffsetPct
+-0.10
+Added to the swing high; a negative default places entry below the high.
+InpSellEntryOffsetPct
+-0.10
+Subtracted from the swing low; a negative default places entry above the low.
+InpStopLossPct
+2.00
+Initial stop distance from pending entry price.
+InpTakeProfitPct
+1.00
+Initial target distance from pending entry price.
+InpTrailTriggerPct
+0.20
+Minimum favorable move from opening price for trailing updates.
+InpTrailDistancePct
+0.20
+Stop distance calculated as a percentage of current Bid or Ask.
+InpMaxTrailPct
+1.00
+Upper favorable-move threshold for trailing updates; not a cap on profit.
+InpSalvageTriggerPct
+1.00
+Adverse move from opening price that activates the salvage target.
+InpSalvageExitPct
+0.15
+Loss-side target distance from opening price; does not close immediately.
+InpBreakEvenTriggerPct
+0.10
+Favorable move from opening price that activates the profit lock.
+InpBreakEvenLockPct
+0.025
+Price profit locked relative to opening price, before costs.
+Code organization and dependencies
+The only include is <Trade/Trade.mqh>, the MetaTrader 5 Standard Library trading interface. Its CTrade object, trade, submits pending orders, assigns the expert magic number, requests position modifications and supplies trade-result descriptions. It is not used for swing detection or lot-size calculation. No custom indicator, external DLL, web service or additional custom include is referenced.
+OnInit caches symbol point size, digits, tick size and tick value and checks four positive-count inputs. OnTick cancels remaining pending entries when a symbol position exists, reviews pending margin, manages positions, and throttles entry scans only when no symbol position exists. OnTradeTransaction also triggers pending cancellation after a deal. Pct and N handle percentage distances and decimal normalization; OurOrder and OurPosition filter ownership; CountPositions and CountPending enforce scan-time limits; FindSwing and the swing helpers identify structure; SimilarPending, LotsForRisk, PlaceBreakout and ManagePositions implement duplicate checks, sizing, submission and exits.
+The internal global variables are trade (the trading interface), g_last_scan (the last scan time), g_point (symbol point size), g_digits (price decimal places), g_tick_size (tick-size increment) and g_tick_value (reported tick value). InpFractalTF is an internal constant fixed to PERIOD_H1. These internal variables and the timeframe constant are not user inputs. The EA uses built-in terminal APIs for prices, history, account equity, orders and positions.
+Implementation boundaries to understand before testing
+InpPendingExpiryHours is used to calculate an expiry timestamp, but the order calls explicitly use ORDER_TIME_GTC. The present code therefore does not implement the advertised hour-based expiration mode. Margin-driven cleanup can delete this EA pending orders when their estimated activation margin exceeds the buffered free-margin budget. This is not hour-based expiry. Owned pending entries are canceled when an open position is detected on the symbol. A new swing alone does not cancel existing orders.
+Any open position on the current symbol now blocks new pending entry submissions, regardless of magic number. On a deal event and subsequent ticks, the EA attempts to cancel its remaining pending entries on that symbol. Orders owned by other EAs are not canceled. Deletion may be delayed by a freeze zone or closed session; client-side cancellation is not an atomic server-side OCO guarantee. InpMaxPositions remains as a secondary count check but does not authorize additional entries while a position exists. Risk percentage is per proposed order rather than an aggregate portfolio limit. Broker minimum-volume requirements, the fixed-volume fallback, execution prices and trading costs can make actual exposure differ from the estimate. The source contains no spread or aggregate stop-loss-risk filter. It checks the broker trading sessions before order submission and position modification, estimates standalone activation margin for all account pending orders, and leaves 20% of current free margin as a buffer. If the requested normalized volume cannot fit the remaining buffered margin budget, the entire order is skipped and the reason is logged. Volume is not reduced to fit the margin budget. Opposing orders receive no assumed netting margin relief.
+Prices are rounded to the cached symbol tick-size grid and then normalized to symbol digits. Both fixed and risk-based volumes are normalized to symbol volume specifications. Exit modification requests check the existing SL/TP freeze zones and proposed stop/freeze distances, and report rejected server results. Modification attempts are throttled to once per five seconds per management pass. The EA also prechecks pending requests using OrderCheck before submission. Submission checks both the CTrade return value and the server result code. Failures log the requested normalized volume and the symbol minimum, maximum, step and directional limit. Initialization also logs these specifications.
+At initialization, the source checks fractal neighbor counts, pending and position limits, positive finite fixed volume, and positive finite risk percentage when risk sizing is selected. Several other ranges remain unchecked. Independent opposing positions are easiest to interpret on a hedging account; on a netting account, orders on the same symbol affect a shared position. The updated source compiled with zero errors and zero warnings. The user reported 50 trades on EURUSD H1 netting and 40 trades on XAUUSD D1 netting before these latest guards; the XAUUSD run also reported session, margin and frozen-modification errors. The updated guards have not yet been retested under those conditions. Session schedules do not guarantee availability during exceptional closures, and a gap, sudden equity change or frozen pending order can still prevent timely margin cleanup. No performance results are claimed.

@@ -1,0 +1,5 @@
+Author: Ramdass
+Displays the probable direction of the price movement in future.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7556

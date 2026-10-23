@@ -1,0 +1,9 @@
+An example of automatic running of the script when the timeframe or symbol is changed. It is created on the basis of the function for "pressing" the hotkeys by Ilnur (
+https://www.mql5.com/ru/users/ilnur)
+.
+The s_Test script for testing is attached (jumping smile). The s_Test script should be placed in the experts/script folder, the ind_HotKeys_v1 indicator - in the experts/indicators folder. You should set the Ctrl+Q hotkey for the script, attach the indicator to the chart. The script will be run as soon as you do it. Now, if the timeframe or the symbols is changed the script will be rerun automatically, the jumping smile will indicate this event:
+The parameters of the indicator:
+CtrlAlt
+- the first button: 0 - Ctrl, 1 - Alt;
+Key
+- the second button.

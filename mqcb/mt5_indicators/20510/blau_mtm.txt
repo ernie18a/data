@@ -1,0 +1,19 @@
+The William Blau Momentum Oscillator shows the William blau momentum.
+It has five input parameters:
+Period
+- calculation period;
+First smoothing period
+- the initial smoothin period;
+Second smoothing period
+- the secondary smoothing period;
+Third smoothing period
+- the resulting smoothing period;
+Applied price
+- price used for calculations.
+Calculations:
+Blau_Momentum[i] = EMA(EMA(EMA(Mtm, Smooth period 1), Smooth period 2), Smooth period 3)
+where:
+Mtm[i] = Price[i] - Price[i-Period+1]
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20510

@@ -1,0 +1,21 @@
+The William Blau Candlestick Index indicator shows the William Blau candlestick indexes.
+It has seven input parameters:
+Period
+- period;
+Applied price
+- the calculation price;
+First smoothing period
+- the initial smoothin period;
+Second smoothing period
+- the secondary smoothing period;
+Third smoothing period
+- the resulting smoothing period;
+Upper level
+- the overbought level;
+Lower level
+- the oversold level.
+Calculations:
+CSI =100 * EMA(EMA(EMA( Candlestick Momentum (period) ))) / EMA(EMA(EMA(HH - LL))))
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20507

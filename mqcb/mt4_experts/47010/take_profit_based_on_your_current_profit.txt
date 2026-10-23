@@ -1,0 +1,202 @@
+Introduction
+Most EAs tend to close orders in take profit based on the distance in pips from the purchase price . However, the code used by
+EA Perceptron
+is based mainly on the current profit . This approach allows you to easily manage the take profit with multiple open positions, monitoring the total current profit based on the magic number, in case you use multiple bot instances or different EAs simultaneously .
+Add me to your friends
+and follow my feed to be updated on the news!
+Using this code can also have a positive impact on some problems that may occur when using a take profit based on pips. For example, a pip-based take profit could change depending on the slippage of your broker, limiting profits . By using a code based on current profit, you can avoid this issue and have more control over your trades.
+If you want to learn more about how to set up a take profit based on current profit, you can use the code of EA SwingBot as a reference.
+…
+Total orders
+Let's start with the code that calculates the total number of open orders with the same magic number.
+The magic number is a unique identifier assigned to an order by the trader or an EA (Expert Advisor)
+.
+The code initializes a variable
+total_orders
+to zero. It then loops through all the open orders using a for loop and selects each order using the
+OrderSelect()
+function.
+If an order is successfully selected, it increments the
+total_orders
+variable by one
+.
+//-----------------
+int
+total_orders =
+0
+;
+for
+(
+int
+i =
+0
+; i <
+OrdersTotal
+(); i++)
+     {
+if
+(
+OrderSelect
+(i, SELECT_BY_POS, MODE_TRADES))
+        {
+if
+(OrderMagicNumber() == MagicNumber)
+         {
+         total_orders++;
+        }
+        }
+     }
+…
+Calculating Current Profit
+The code initializes two variables:
+ProfittoMinimo
+and
+Profit
+. The variable
+ProfittoMinimo
+is used to activate the take profit at this level, the value is expressed in the currency of the account. The variable
+Profit
+is used to accumulate the current profit of all open positions that have the same magic number.
+The variable
+StopLoss
+is used for the stop loss
+.
+The code uses a for loop to iterate through all open positions using the
+OrdersTotal()
+function. For each open position, the corresponding order is selected using the
+OrderSelect()
+function.
+If the order is successfully selected and has the same magic number, the profit of the order is added to the
+Profit
+variable
+.
+double
+ProfittoMinimo =
+3
+; // target profit
+double
+Profit =
+0
+; // current profit
+for
+(
+int
+i=
+0
+; i<
+OrdersTotal
+(); i++)
+        {
+if
+(
+OrderSelect
+(i, SELECT_BY_POS, MODE_TRADES))
+           {
+if
+(OrderMagicNumber() == MagicNumber)
+// In case of multiple EAs, you can remove the MagicNumber filter to maintain the function on the total orders
+{
+               Profit += OrderProfit();
+              }
+           }
+        }
+The minimum profit can be set as an external variable and configured in the EA options:
+…
+Closing positions if the Profit is reached
+The code uses a for loop to iterate through all open orders using the
+OrdersTotal()
+function. The loop starts from the last order and goes up to the first order.
+For each order, the corresponding trade is selected using the
+OrderSelect()
+function
+.
+If the selected trade has the same symbol as the current chart, is of type
+OP_BUY
+, and has the same magic number as specified in the code, it checks if the
+Profit
+of the trade is greater than or equal to
+ProfittoMinimo
+.
+If it is, it closes the trade at the bid price using the
+OrderClose()
+function and prints a message indicating that the buy order has been closed
+.
+Similarly, if the selected trade has the same symbol as the current chart, is of type
+OP_SELL
+, and has the same magic number as specified in the code, it checks if the
+Profit
+of the trade is greater than or equal to
+ProfittoMinimo
+.
+If it is, it closes the trade at the ask price using the
+OrderClose()
+function and prints a message indicating that the sell order has been closed.
+for
+(
+int
+e =
+OrdersTotal
+() -
+1
+; e >=
+0
+; e--)
+        {
+if
+(
+OrderSelect
+(e, SELECT_BY_POS, MODE_TRADES))
+           {
+if
+(OrderSymbol() ==
+Symbol
+() && OrderType() == OP_BUY && OrderMagicNumber() == MagicNumber)
+// l’ordine viene modificato solo se il MagicNumber corrisponde a quello dell’ordine in corso.
+{
+if
+(Profit >= ProfittoMinimo)
+                 {
+                  OrderClose(OrderTicket(), OrderLots(), ND(OrderClosePrice()),
+3
+);
+// Bid price
+Print
+(
+"Buy order closed"
+, Profit,
+" - Stoploss minimo: "
+,MarketInfo(
+Symbol
+(), MODE_STOPLEVEL));
+                 }
+              }
+if
+(OrderSymbol() ==
+Symbol
+() && OrderType() == OP_SELL && OrderMagicNumber() == MagicNumber)
+              {
+if
+(Profit >= ProfittoMinimo)
+                 {
+                  OrderClose(OrderTicket(), OrderLots(), ND(OrderClosePrice()),
+3
+);
+// Ask price
+Print
+(
+"Sell order closed"
+, Profit,
+" - Stoploss minimo: "
+,MarketInfo(
+Symbol
+(), MODE_STOPLEVEL));
+                 }
+              }
+           }
+        }
+…
+Conclusion
+This code could be useful for all those position-closing strategies based on take profit, but it could also be combined with a trailing stop based on the increase in current profit. The system is also useful in case of multiple Expert Advisors.
+If you exclude the
+if
+condition on the MagicNumber, you can set general take profit levels to simultaneously control all open positions from all active EAs

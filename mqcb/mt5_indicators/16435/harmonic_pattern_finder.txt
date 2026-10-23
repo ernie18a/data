@@ -1,0 +1,21 @@
+Harmonic patterns are a class of chart patterns based on 5 price extrema and constraints on the relations and proportions between these. As these constraints and ratios are difficult to verify by visual estimation, computerized measuring tools are essential for trading harmonic patterns. This indicator helps the trader by automatically detecting and displaying any existent and emerging harmonic patterns. The 14 patterns detected by this indicator are:
+AB=CD
+Gartley
+Bat
+Alternate Bat
+Butterfly
+Crab
+Deep Crab
+Three Drives
+Cypher
+Shark
+5-0
+Nen Star
+Black Swan
+White Swan
+Each pattern may be individually enabled or disabled in the inputs. Additional display settings include the ability to set a limit on the number of shared points per pattern of a type, the colors used for display, as well as the number of bars a pattern can maximally have. The last setting also concerns CPU usage where a "max history" number (default 1000 bars) sets how far back in time to start scanning for and displaying patterns. Patterns do not need to be exactly fitting to their constraints as it is possible to give a slack on unary and/or range constraints. Because the
+FastZZ
+by
+Yury Kulikov
+is used
+for extracting tops/bottoms, the minimum swing-size in point-value must be specified. Emerging patterns are detected by repeated projections and may be disabled for CPU conservation; it is possible to specify both the precision and the distance in which one wish to see emerging patterns.

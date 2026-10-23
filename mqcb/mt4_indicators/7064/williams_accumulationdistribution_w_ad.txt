@@ -1,0 +1,8 @@
+Williams' Accumulation/Distribution, W_A/D is the accumulated sum of positive "accumulative" price movements and negative "distributive" ones. The term "accumulation" is used to denote the market controlled by buyers, "distribution" denotes that the market is controlled by sellers.
+Thus, if the current closing price is higher than the previous one, W_A/D is enlarged by the difference between the current closing price and the true minimum. If the current closing price is less than the previous, W_A/D is diminished by the difference between the current closing price and the true maximum.
+As trade signals of this indicator, Williams recommends using divergences:
+when price reaches a new maximum and W_A/D cannot reach the new maximum, it means the security distribution takes place. This is a signal to sell;
+when prices reaches a new minimum and W_A/D cannot reach the new minimum, it means the security accumulation takes place. This is a signal to buy.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7064

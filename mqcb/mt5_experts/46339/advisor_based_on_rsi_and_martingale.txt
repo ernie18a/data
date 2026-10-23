@@ -1,0 +1,12 @@
+This advisor utilizes the RSI indicator and performs adaptive search for minimums and maximums to determine optimal entry and exit points in the market. The advisor analyzes the last `BarsForCondition` candles to gauge the current market condition.
+Entry and Exit Strategy
+Entry: The advisor opens a position based on signals from the RSI indicator.
+- Buy: if RSI reaches a minimum over the specified `BarsForCondition` bars.
+- Sell: if RSI reaches a maximum over the specified `BarsForCondition` bars.
+Exit: Positions are closed upon reaching TakeProfit or StopLoss levels, which are set in points via the `TakeProfit` and `StopLoss` parameters.
+Signal Filtering
+Time: The advisor trades only within the time interval specified between `StartTime` and `EndTime`.
+News Avoidance: The advisor avoids trading during time periods specified in the `NewsTimeToAvoid` parameter.
+Spread: Maximum allowable spread values are set through the `MaxSpread` parameter.
+Additional Settings
+Martingale: The advisor can employ a martingale strategy to increase the lot size during market reversals. This feature is activated by the `Upheaval` parameter and the `MartingaleMultiplier`.

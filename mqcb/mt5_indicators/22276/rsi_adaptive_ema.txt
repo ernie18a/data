@@ -1,0 +1,5 @@
+Addition to the adaptive collection ...
+Background:
+Adapting is usually trying to determine the volatility in the market and then, depending in the volatility, adjust the calculation to reflect times of higher or lower volatility. Few methods are used for determining volatility one of which was neglected for a long time : the RSI. Being a momentum indicator and already bounded in known range (0 to 100) it makes a good tool to be used in adapting methods.
+Of this indicator:
+EMA (Exponential Moving Average) can use fractional period for calculation (ie: it can use, for example, period 14.5 and not just period 14 or 15) and that makes it suitable for adapting. So, this is a EMA that is using RSI to adapt itself to the market. Parameters are all the usual : rsi period and price to be used in calculation. Usage is similar to any average usage, with an addition that you can use color change as a signal, but that should be done with care

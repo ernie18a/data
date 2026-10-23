@@ -1,0 +1,10 @@
+Real author:
+Inkov Evgeni
+Simple trend indicator based on three Moving Averages. Upper or lower wave approaching to zero level shows the possible uptrend or downtrend.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 12.03.2014.
+Fig.1. The Begin_Trend_v01 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12910

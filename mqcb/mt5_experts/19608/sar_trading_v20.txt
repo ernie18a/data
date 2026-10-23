@@ -1,0 +1,25 @@
+Author of the idea
+:
+Sergey Kazachenko
+,
+mq5 code author
+:
+barabashkakvn
+.
+Trading signals are generated based on a comparison of two trend indicators: iMA (Moving Average, MA) and iSAR (Parabolic SAR). The EA works on the zero bar, only one position can be open. Position trailing.
+Input parameters are divided into two groups. The main group contains trading settings:
+Lots
+- position volume;
+Stop Loss (in pips)
+- stop loss value (Attention! The 0 value disables the function, and a position may never be closed);
+Take Profit (in pips)
+- take profit value (Attention! The 0 value disables the function, and a position may never be closed);
+Trailing Stop (in pips)
+- trailing value;
+Trailing Step (in pips)
+- trailing step value.
+Indicator parameters are set in the second group. A different timeframe can be specified in indicator settings.
+Results of testing in the "Every tick" mode on EURUSD, H1:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19608

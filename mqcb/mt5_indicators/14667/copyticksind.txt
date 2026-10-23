@@ -1,0 +1,11 @@
+The indicator stores the tick from the terminal to an array. The type of the received ticks can be specified in the parameters:
+Next, the tick array is displayed on the screen. During that the tick flag is displayed:
+TICK_FLAG_BID — the tick changed the Bid price;
+TICK_FLAG_ASK — the tick changed the Ask price;
+TICK_FLAG_LAST — the tick changed the price of the latest trade;
+TICK_FLAG_VOLUME — the tick changed the volume;
+TICK_FLAG_BUY — the tick appeared as a result of a buy trade;
+TICK_FLAG_SELL — the tick appeared as a result of a sell trade;
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14667

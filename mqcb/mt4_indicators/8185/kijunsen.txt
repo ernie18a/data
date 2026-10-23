@@ -1,0 +1,4 @@
+It draws the Kijun line with the specified period (the middle of the price range of the given period) on the chart and allows to draw the line on the KijunShift periods forward, under the stipulation that the maximum-minimum won't change.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8185

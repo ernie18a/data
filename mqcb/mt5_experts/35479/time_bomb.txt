@@ -1,0 +1,4 @@
+Trades amount of pips moved within certain amount of time
+pre set at 5 pips in 10 seconds .
+inputs 1&2 are for sells 3&4 buys.
+inputs lot sizes , target and stop in pips.

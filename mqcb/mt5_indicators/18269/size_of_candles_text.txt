@@ -1,0 +1,45 @@
+The indicator reflects the size of the bar. The size is calculated by the following formula: "minuend" minus "deduction". "Minuend" and "deduction" can be any of four values (open, high, low or close).
+The number of bars for which the size is displayed can be limited in the input parameters (
+InpNumberOfBars
+). This number remains unchanged even if a new bar has opened:
+About synchronization of bars and graphical objects.
+Graphical objects accounting
+The names of objects are stored in the
+m_arr_names[]
+array, its size is equal to the
+InpNumberOfBars
+input. Why do we use an array instead of a simple string variable? This is a kind of reserve for the future.
+Forming an object name
+The name of the object corresponding to the 'index' bar is formed by the following formula:
+name[index] = m_prefix + (
+"high_"
+or
+"low_"
+) +
+TimeToString
+(time[index])
+When you need to delete all objects
+Indicators are unloaded in the following cases
+:
+removing the indicator form the chart;
+closing the terminal (if the indicator was running on the chart);
+loading a template, if the indicator is running on this chart;
+closing the chart on which the indicator was running;
+changing the profile, if the indicator is running on one of the charts of the previous profile;
+changing the symbol and/or timeframe of the chart, on which the indicator is running;
+changing the indicator inputs.
+Therefore, we completely delete created graphical objects:
+in OnDeinit()
+in OnInit() (this is just in case, if there are undeleted orphan objects)
+in OnCalculate(), when prev_calculated==0.
+We also clear the
+m_arr_names[]
+array:
+In OnCalculate(), when prev_calculated==0 or when prev_calculated!=rates_total
+Maintaining a constant number of graphical objects:
+when a new bar (bars) appears, the prev_calculated!=rates_total condition triggers. In this case, all objects are deleted, and the
+m_arr_names[]
+array is cleared.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18269

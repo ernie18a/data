@@ -1,0 +1,2 @@
+This MACD is using what is known as rma average for MACD calculation.
+Taking into consideration that rma is a variation if the sma, the macd values produced are almost surprisingly "fast" compared to the regular ema version. It also has some interesting properties when it comes to periods following the very volatile periods. In any case seems to be a useful tool in the family of all sorts of macd variations

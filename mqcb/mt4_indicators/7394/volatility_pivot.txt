@@ -1,0 +1,5 @@
+Author: S.B.T.
+The indicator is calculated on the basis of currency pair volatility displaying the nearest support and resistance levels. It can be used as a trend indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7394

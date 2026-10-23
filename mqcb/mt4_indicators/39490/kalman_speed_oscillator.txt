@@ -1,0 +1,3 @@
+Just an experiment on try to using the "speed" (or correction factor?) of the Kalman filter as indicator..
+Added a smooth "signal" line based on the moving average of the "speed" (that could be shifted some bars on parameters (positive or negative values)
+Also, the buffers are named to help to understand what is being calculated

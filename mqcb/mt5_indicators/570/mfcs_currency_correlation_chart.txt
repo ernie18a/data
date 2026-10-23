@@ -1,0 +1,14 @@
+An indicator to put correlated currency charts on a given currency chart. It shows only bars currently. Color/monochrome mode is configurable. It also supports currency inversion for handling EURUSD & USDCHF like pairs.
+Using the indicator:
+Find currency correlation and make list of pairs of your interest. e.g. EURUSD, GBPUSD, USDCHF, EURJPY
+Select a primary currency. e.g. EURUSD
+For each pair, drag and drop the indicator on a currency chart.
+Configure the parameters for each currency pair. For example, USDCHF is inverted with respected to EURUSD
+Your chart should be ready to use.
+Input parameters:
+Image for example chart setup:
+Important Things:
+First time rendering may take sometime as the candles are loaded one by one. This done intentionally to gracefully handle missing candles without messing with time series synchronization.
+In inverted currencies, the price show is indicative only. It is derived by 1/PRICE
+Bid and Ask in inverted pairs is swapped
+The refresh of rates happens only with primary pair ticks.

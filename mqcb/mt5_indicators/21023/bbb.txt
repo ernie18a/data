@@ -1,0 +1,20 @@
+Oscillator Bull And Bear Balance displays the balance of bulls and bears.
+It has four configurable parameters:
+Period
+- calculation period;
+Method
+- calculation method;
+Smoothing period
+- smoothing period;
+Smoothing method
+- smoothing method.
+Calculation:
+BBB = MA(MA_Bull - MA_Bear, Smoothing method, Smoothing period)
+where:
+MA_Bull = MA(Bull_Power, Method, Period),
+MA_Bear = MA(Bear_Power, Method, Period),
+MA(Source, Method, Period) - the moving average with the Method calculation method and the Period calculation period
+Bull_Power, Bear_Power - bull power and bear power
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21023

@@ -1,0 +1,202 @@
+The Expert Advisor searches for N identical candlesticks in a row. It buys on bullish candlesticks and sells on bearish ones. The EA checks if the account is netting or hedging. The
+CPositionInfo
+,
+CTrade
+,
+CSymbolInfo
+and
+CAccountInfo
+trade classes are used in the code.
+Version 1
+N candles
+.
+Version 2
+N Candles v2
+.
+Version 3
+N Candles v3
+.
+Version 4
+N Candles v4
+.
+Version 5
+N Candles v5
+.
+New in version 6
+Added types of closure when a "black sheep" is met:
+Closing all positions.
+Closing positions, which are opposite to the "black sheep".
+Closing positions, which are in the same direction as the "black sheep".
+"Black Sheep"
+Suppose, the Expert Advisor searches for 5 identical candlesticks. Then the EA finds five bullish candlestick in a row and opens a Buy position. If the next candlestick after the position opening is not a bullish one, such a candlestick is considered a "black sheep".
+Input Parameters
+N identical candles which go in a row
+- the number of identical candlesticks in a row.
+Lot
+- position volume.
+Take Profit
+- take profit value, the parameter is not used if set to 0.
+Stop Loss
+- stop loss value, the parameter is not used if set to 0.
+Trailing Stop
+- trailing stop value, the parameter is not used if set to 0.
+Trailing Step
+- trailing step value, the parameter is not used if set to 0.
+Max positions certain direction (only for hedging)
+- the maximum allowable number of positions in one direction (only applicable on hedging accounts).
+Max position volume (only for netting)
+- the maximum volume of open positions (only applicable on netting accounts).
+.
+Use trade hours
+- enable/disable the time filter.
+Start hour
+- trading start hour.
+End hour
+- trading end hour.
+magic number
+- unique EA identifier.
+The type of closure at the meeting of the "black sheep"
+- select closing type to be applied in case of a "black sheep".
+In this version you can disable
+Take Profit
+,
+Stop Loss
+and
+Trailing Stop
+- in this case positions will be closed by the "black sheep" parameter.
+Example of testing on D1 from 2017.04.18 to 2018.02.10 in the Every Tick mode:
+Symbol
+Pass
+Result
+Profit
+Expected Payoff
+Profit Factor
+Recovery Factor
+Sharpe Ratio
+Custom
+Equity DD %
+Trades
+AUDJPY
+0
+234868,07
+26677,92
+592,84
+3,06
+2,23
+0,42
+0
+17,42
+45
+EURCHF
+2
+182707,90
+21403,45
+548,81
+2,56
+0,97
+0,34
+0
+26,12
+39
+AUDUSD
+3
+176864,42
+23113,10
+462,26
+2,42
+1,40
+0,33
+0
+23,34
+50
+USDJPY
+1
+161759,58
+16625,68
+573,30
+2,43
+0,66
+0,38
+0
+44,97
+29
+GBPUSD
+4
+106435,34
+15526,40
+378,69
+1,62
+0,61
+0,20
+0
+29,82
+41
+USDCHF
+5
+51537,85
+445,34
+11,42
+1,02
+0,02
+0,02
+0
+31,45
+39
+USDCAD
+6
+40360,28
+-3701,81
+-88,14
+0,87
+-0,15
+-0,04
+0
+35,79
+42
+EURCAD
+7
+38152,04
+-4512,05
+-132,71
+0,84
+-0,17
+-0,06
+0
+42,95
+34
+#AA
+9
+34847,02
+-1795,40
+-51,30
+0,72
+-0,52
+-0,12
+0
+6,95
+35
+EURJPY
+8
+23499,63
+-14049,99
+-326,74
+0,65
+-0,26
+-0,18
+0
+62,68
+43
+EURUSD
+10
+4307,27
+-28962,60
+-851,84
+0,20
+-0,95
+-0,59
+0
+60,81
+34
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20000

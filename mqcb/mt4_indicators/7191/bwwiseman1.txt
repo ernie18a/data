@@ -1,0 +1,7 @@
+Author: wellx
+The first version of the wlx BWWise Man indicator. Displays the candles of trend changes. According to the latest
+book by Bill Williams
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7191

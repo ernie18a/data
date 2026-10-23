@@ -1,0 +1,12 @@
+Theory:
+Stochastic oscillator is usually used on prices. But sometimes that produces much noise. Some filtering methods can be used (like this:
+Stochastic of Filtered Price
+).
+This version:
+This version adds an option to use averages for that purpose instead. The averages types that can be used:
+simple moving average(SMA)
+exponential moving average (EMA)
+smoothed moving average (SMMA)
+linear weighted moving average (LWMA)
+Usage:
+You can use the color change or some custom level crosses as signals.

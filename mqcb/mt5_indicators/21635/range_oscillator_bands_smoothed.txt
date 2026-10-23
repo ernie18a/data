@@ -1,0 +1,4 @@
+Range Oscillator indicator shows the relative position of median price in the highest high to lowest low range for desired period.
+This version is the smoothed version of the original
+Range Oscillator + Bands
+indicator. Smoothing is cleaning up some false signals and, since the smoothing method is JMA (which has very small lag) the added lag is as small as it can be making it much easier to use in a lot of decision situations.

@@ -1,0 +1,66 @@
+Key Features
+Week selection
+:
+The SelectedWeek parameter defines which week of the month will be numbered.
+If SelectedWeek = 0, all weeks are considered, and all candles will be numbered.
+For non-zero values, only the candles of the specified week will be numbered.
+Reverse Count
+:
+When NumberFirstCandle = false , numbering starts at the last candle of the day and proceeds backwards.
+Dynamic Filtering
+:
+The indicator filters candles based on the selected week ( SelectedWeek ) and ignores the others.
+Dynamic Text Positioning
+:
+The numbers are positioned above or below the candles, depending on whether the candle is bullish or bearish.
+The spacing between the text and the candle is controlled by the PriceOffsetFactor parameter.
+Visual customisation
+:
+Colours, font, text size and anchor type can be adjusted to enhance the appearance.
+Optimised Performance
+:
+The indicator deletes old chart objects before creating new ones, ensuring that there is no unnecessary overhead on the chart.
+Input Parameters
+PriceOffsetFactor
+Dynamic spacing factor between text and candle.
+0.5
+InpTextColourAbove
+Colour of the text above the candle (for bullish candles).
+clrSpringGreen
+InpTextColourBelow
+Colour of the text below the candle (for bearish candles).
+clrMediumOrchid
+InpFont
+Type of font used to display the numbers.
+"Arial"
+InpFontSize
+Font size.
+8
+Anchor
+Type of anchor for positioning the text (centre, top, bottom, etc.).
+ANCHOR_CENTER
+NumberFirstCandle
+Defines whether the count starts on the first candle of the day ( true ) or the last ( false ).
+true
+SelectedWeek
+Week selected for counting (0 = Every week).
+1
+Detailed Features
+1. Filtering by Week
+The GetWeekOfMonth() function calculates the week of the month for each candle.
+The condition if(SelectedWeek != 0 && currentWeek != SelectedWeek) ensures that only candles from the selected week are processed.
+2. Sequential counting
+The count restarts whenever there is a change of day ( candleDay != previousDay ).
+If NumberFirstCandle = true , the count starts on the first candle of the day.
+If NumberFirstCandle = false , the count starts at the last candle of the day and continues backwards.
+3. Text positioning
+The text is positioned above the candle if the closing price is lower than the opening price (bearish candle).
+The text is positioned below the candle if the closing price is higher than the opening price (bullish candle).
+4. Creating and Updating Chart Objects
+The CreateText() function creates or updates chart objects on the chart.
+The objects are uniquely named using the ObjectPrefix prefix to avoid conflicts.
+5. Automatic Cleaning
+The DeleteObjects() function removes all graphical objects created by the indicator when it is removed or reinitialised.
+Translated from Portuguese by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/pt/code/56432

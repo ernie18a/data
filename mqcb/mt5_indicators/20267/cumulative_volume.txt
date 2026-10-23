@@ -1,0 +1,23 @@
+This oscillator indicator provides an interesting method for presenting volume data. It displays the total volume over the selected period.
+Volume data can be represented in several ways:
+Combined
+Absolute
+Relative
+Separated
+Absolute
+Relative
+Volumes can be displayed in relative or absolute values, as well as in a combined or a separated way.
+The indicator has three input parameters:
+Period
+- calculation period;
+Combined
+- show data either in a combined or in a separated way (Yes/No);
+Relative
+- choose between relative/absolute values (Yes/No).
+Fig.1. Combined, relative representation
+Fig.2. Combined, non-relative representation
+Fig.3. Non-combined, relative representation
+Fig.4. Non-combined, non-relative representation
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20267

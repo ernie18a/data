@@ -1,0 +1,8 @@
+In the December 2021 issue of TASC article “The DMH: An Improved Directional Movement Indicator”, John Ehlers explores a method of modernizing directional movement with Hann windowing. Directional movement has been a mainstay in technical analysis and has been an examined concept by traders for decades. When the original directional movement indicator was created by J. Welles Wilder, technology did not easily allow for complex calculations. Ehlers proposes it is time for an upgrade. While the DMH indicator defaults to using Wilder’s 14 bars, Ehlers suggests the length should be at the discretion of the trader or can be determined by optimization if the DMH is used in a strategy.
+Recommendations:
+in this version compared to the original additional color changes added :
+color change on slope change
+color change on zero line cross
+and no color change (as in the original)
+Use it as Ehlers recommends it or use color changes for possible signals
+some experimenting with DMH period recommended before using it

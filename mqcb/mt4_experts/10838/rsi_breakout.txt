@@ -1,0 +1,14 @@
+Author:
+OneStepRemoved.com
+MetaTrader Programming
+The RSI Trend Strategy is a simple Expert Advisor based around using the RSI 
+  indicator as a trading signal. When the RSI breaks above 73 or dips 
+  below 27, the Expert Advisor puts in an order to buy or sell the pair. The Expert Advisor uses 
+  ATRs to set exit prices. When a trend is entered, the stop loss is set 
+  three ATRs behind the entrance price. When the price moves in favor of 
+  the trader more than three ATRs, the stop loss is set to break even. If 
+  the trade continues to work, a trailing stop of three ATRs is used to 
+  eventually close out of the position.
+Average true range is a measure of volatility that more accurately 
+  measures volatility in markets prone to gapping such as Commodities and 
+  Forex.

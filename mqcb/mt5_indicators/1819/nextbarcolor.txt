@@ -1,0 +1,12 @@
+The purpose of the indicator is to facilitate the quick assessment of the impact of the spread to the possible cost-effectiveness of strategies that predict the behavior of the market by one bar forward when trading various instruments / on different timeframes.
+It is especially useful when you have your own tester implemented in the form of an indicator or script (Expert Advisor). The signal of the indicator in this case may be interpreted as the market position of a unit volume. Thus you can set meaningful targets when developing/optimizing your strategy, if you first evaluate the requirements to the accuracy of its predictions.
+There is only one parameter in the settings - Precision - the probability of an accurate forecast in percentage.  If you know the approximate accuracy of the prediction of your strategy, use this parameter to model it.
+Notes
+:
+The indicator calculates the color of the next bar based on the difference of the closing prices of the current bar and the next one, so (in case o a gap) it may differ from the bar color on the quote. This method of calculation has been chosen taking into account the purpose for which the indicator was created.
+The last bar in the oscillator histogram is never displayed (== 0), since there is no historical data for its formation.
+The indicator on a chart.  Precision = 100%
+The indicator with the tester indicator over it. Precision = 90%. In the below window - equity, trading AUDUSD,M5 for prediction accuracy of the next bar == 90%
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1819

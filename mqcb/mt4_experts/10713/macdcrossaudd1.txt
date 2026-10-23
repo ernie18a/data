@@ -1,0 +1,4 @@
+This robot trades AUDUSD only using daily chart only.
+It does not make another trade until an existing trade closes either with stop loss or with take profit.
+It enters a trade only when MACD crosses during peak hours (5:00-15:00).
+The order is made with 40 pips stop loss and reward ratio 3.

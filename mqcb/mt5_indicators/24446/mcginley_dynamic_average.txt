@@ -1,0 +1,8 @@
+Theory :
+There are a couple of formulas for McGinley dynamic indicator. This version is based on metastock formula, but is adding an option to chose different "base" average type (default is EMA). This You can have :
+McGinley dynamic SMA
+McGinley dynamic EMA
+McGinley dynamic SMMA
+McGinley dynamic LWMA
+Usage :
+It can be used as any other average. The difference between the types can be significant (see the second example where all 4 types are on the same chart), so some experimenting is advised before using for trading decisions

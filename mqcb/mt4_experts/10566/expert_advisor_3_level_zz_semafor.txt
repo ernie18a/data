@@ -1,0 +1,32 @@
+Author:
+Danu Saputra
+This
+Expert
+Advisor
+is based on
+3_Level_ZZ_Semafor
+indicators
+.
+The best timeframe is
+M5
+.
+Buy will
+closed
+automatically
+if the
+Sell signal is
+already visible
+and
+Sell
+will be closed automatically
+if the
+buy
+signal
+was
+visible
+.
+EA
+is
+without a
+trailing stop
+.

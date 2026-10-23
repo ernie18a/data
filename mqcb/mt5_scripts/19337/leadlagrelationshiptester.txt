@@ -1,0 +1,20 @@
+Script for checking the
+LeadLagRelationship
+indicator, it is intended for sending quotes with a delay.
+How to check: run the script and indicator with a common communication channel on the same instrument. Set the delay parameter in the script. After accumulating sufficient data, the indicator should show the delay specified in the script.
+Script Parameters
+inpTimerPeriod
+- period of the main timer in milliseconds.
+inpUseMode
+- channel mode; 0 - file, 2 - global variables of the terminal. The channel mode is the method for delivering the quotes. The "file" method serves for delivery of quotes from external sources, while global variables are convenient for checking synthetic instruments.
+inpFilename
+- name of the file to receive the quotes. It must have the .csv extension and should be located in (\Terminal\Common\Files). If the quotes delivery method using a file is selected, enter the file name in this parameter.
+inpGlobalVariableAsk
+- name of the global variable for Ask, if the quotes delivery method using global variables is selected.
+inpGlobalVariableBid
+- name of the global variable for Bid, if the quotes delivery method using global variables is selected.
+inpSetLag
+- delay in milliseconds. This is the delay for sending the quotes.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19337

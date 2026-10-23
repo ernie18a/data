@@ -1,0 +1,1 @@
+TMA Slope indicator (non-repainting version).

@@ -1,0 +1,1 @@
+Uses daily open price and current price (close price for closed candles) to compute % change for the day.

@@ -1,0 +1,38 @@
+Idea by
+:
+Alina
+MQL5 code author
+:
+barabashkakvn
+The Expert Advisor is based on the iIchimoku (Ichimoku Kinko Hyo) indicator. If the last position was closed at a loss, the next one will be opened with the increased volume (the volume increase is one-time, there is no constant volume increase).
+A losing position is tracked in OnTradeTransaction: transaction type
+Structure of a trade transaction
+and deal type
+DEAL_ENTRY_OUT
+are expected.
+Input Parameters
+Input Parameters
+Ichimoku: period of Tenkan-sen;
+Ichimoku: period of Kijun-sen;
+Ichimoku: period of Senkou Span B.
+Trading parameters
+Stop Loss
+- stop loss;
+Take Profit
+- take profit;
+Trailing Stop
+- trailing;
+Trailing Step
+- trailing step;
+Maximum positions
+- maximum number of positions in the market;
+Lots
+- fixed position volume;
+Risk
+- position volume calculated dynamically as risk percent per trade;
+magic number
+- unique EA identifier.
+EURUSD, H1:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21661

@@ -1,0 +1,4 @@
+Adaptive Lgauerre filter with the usual set of 20 types of prices.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16522

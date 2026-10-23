@@ -1,0 +1,3 @@
+This is a MetaTrader 5 version of one indicator that was floating around the net as a wonder indicator for MetaTrader 4.
+It is not a matter if it is useful or not (ZigZag is, in my opinion a useful indicator), but a matter of avoiding misuse of the indicator and presenting it as something it is not. Regardless of the completely different look than the ZigZag indicator, that is a ZigZag indicator as it can be seen on the parallel display too.
+PS: always keep in mind that this is actually a ZigZag indicator - it should not be used in signaling mode.

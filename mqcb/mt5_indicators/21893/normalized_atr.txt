@@ -1,0 +1,2 @@
+ATR (Average True Range) is usually used to assess volatility of the market.
+But since it is not bounded, we can not really know if some extremes of the volatility (maximal or minimal, whichever we are looking for) is reached. This version is using a min/max normalization to attempt to add those bounds and thus, to add a criteria if minimum or maximum is reached

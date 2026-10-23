@@ -1,0 +1,6 @@
+Hello,
+This simple EA open trade when the last bar is closing above or under bollinger bands, with RSI value overbought or oversold and using a D1 Moving average as trend filter.
+Automatic take profit on medium bollinger band on opening bar, stop lose to be setted.
+It is working well on EURUSD H1 with initial parameters.
+Please share your set and pairs if you find any other profitable ones.
+Profit factor >3 from 01/01/2019 to today.

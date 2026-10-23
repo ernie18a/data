@@ -1,0 +1,3 @@
+Extremely simple indicator, equally extremely crucial and powerful to help traders manage their risk and help EA with automated symbol selection.
+This indicator uses the ATR to calculate the average price movement per candle, but displays it as a percentage of the price and this facilitates the symbol selection, as far as comparing symbols and understanding how much price movement to expect on an average candle.
+The example above shows that on average, prices of the instrument BCHUSD are expected to move between 4.6% to 9.2% on a daily basis

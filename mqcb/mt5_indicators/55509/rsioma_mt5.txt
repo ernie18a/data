@@ -1,0 +1,63 @@
+RSIOMA MetaTrader indicator
+— this indicator takes two
+moving averages
+, calculates their
+RSI
+(Relative Strength Index) and then also adds a moving average of the calculated RSI. These two lines now can accurately signal the trend changes. They are shown in the separate window where they change from 0 to 100. The auxiliary histogram is shown for a quick-glance view of the current trend. The indicator is available for both MT4 and MT5 versions of the MetaTrader platform.
+Input parameters
+RSIOMA Period
+(default = 14) — the period of the RSI and the moving averages that are used to calculate the RSI. Increase it for smoothness, decrease it for signal frequency.
+RSIOMA Mode
+(default = MODE_EMA) — the mode of the moving averages used for RSI.
+RSIOMA Price
+(default = PRICE_CLOSE) — the price levels used to calculate moving averages that are used in the RSI.
+MA of RSIOMA Period
+(default = 21) — the period of the moving average of the RSI.
+MA of RSIOMA Mode
+(default = MODE_EMA) — the mode of the moving average of the RSI.
+BuyTrigger
+(default = 20) — a trigger level for the oversold situation.
+SellTrigger
+(default = 80) — a trigger level for the overbought situation.
+BuyTriggerColor
+(default = clrMagenta) — an oversold line color.
+SellTriggerColor
+(default = clrDodgerBlue) — an overbought line color.
+MainTrendLong
+(default = 50) — if RSIOMA is above this level, then the trend is considered to be bullish.
+MainTrendShort
+(default = 50) — if RSIOMA is below this level, then the trend is considered to be bearish.
+MainTrendLongColor
+(default = clrRed) — a bullish trend separator color.
+MainTrendShortColor
+(default = clrGreen) — a bearish trend separator color.
+MainAlerts
+(default = false) — if
+true
+, an alert will be issued when RSIOMA crosses the overbought level from above or the oversold level from below.
+AuxiliaryAlerts
+(default = false) — if
+true
+, an alert will be issued when the histogram signals an imminent trend reversal.
+EnableNativeAlerts
+(default = false) — if
+true
+, a native MetaTrader popup alert will be used for any of the above two conditions.
+EnableEmailAlerts
+(default = false) — if
+true
+, an email message will be sent on an alert condition. Email should be properly configured in MetaTrader via
+Tools->Options->Email
+.
+EnablePushAlerts
+(default = false) — if
+true
+, an email message will be sent on an alert condition. Notifications should be properly configured in MetaTrader via
+Tools->Options->Notifications
+.
+TriggerCandle
+(default = Previous) — the candle to issue alerts on:
+Previous
+— the most recently closed candle or
+Current
+— the yet unfinished candle.

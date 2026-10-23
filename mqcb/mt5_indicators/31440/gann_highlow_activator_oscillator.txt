@@ -1,0 +1,6 @@
+Basics
+:
+The Gann High Low Activator Indicator was described by Robert Krausz in a 1998 issue of Stocks & Commodities Magazine. It is a simple moving average SMA of the previous n period's highs or lows.
+This version is made in rather unusual form : Gann high low activator is usually an indicator drawn on main chart. This is an oscillator version that deals mainly with trend changes and signaling
+Recommendations:
+Use the color changes as trend change signals

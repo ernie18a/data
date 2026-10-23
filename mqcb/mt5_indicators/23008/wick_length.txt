@@ -1,0 +1,35 @@
+Wick length indicator displays the candle wick length in points in a separate chart window.
+It has one configurable parameter:
+Method
+- display method
+Separated
+- separate
+Separated Opposite Only
+- separated, opposite wicks only
+Cumulative
+Difference
+Display methods:
+Separated display method:
+Wick length is displayed "as is":
+Upper wick - upper wick length,
+Lower wick - lower wick length
+Separated, opposite wicks only:
+If the candle is bullish:
+Upper wick = 0
+Lower wick = lower wick length
+If the candle is bearish:
+Upper wick = upper wick length
+Lower wick = 0
+Cumulative:
+The 'Upper wick' buffer is named "Wick cumulative" and displays the sum of the upper and lower candle wick
+The 'Lower wick' buffer is not displayed
+Difference:
+The 'Upper wick' buffer is named "Wick difference" and displays the difference between the candle's upper and lower candle
+The 'Lower wick' buffer is not displayed
+Fig. 1. Wick length, Method = Separated
+Fig. 2. Wick length, Method = Separated Opposite Only
+Fig. 3. Wick length, Method = Cumulative
+Fig. 4. Wick length, Method = Difference
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23008

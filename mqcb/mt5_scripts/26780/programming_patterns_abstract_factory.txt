@@ -1,0 +1,25 @@
+Many architectures start with Factory method, then evolve to AF, Prototype, Builder
+Builder makes complex objects step-by-step. AF makes families of related products. Builder returns the object after all steps are complete. AF returns its object at once.
+AF classes are often made with Factory Method/Prototype
+AF can be used instead of Facade to hide classes
+AF and Bridge can be used together, if you have abstractions which will work only with some real classes.
+AF, Builder, Prototype can be made with Singleton
+//--- OUTPUT
+/*
+   Factory 1 constructed
+    • Product A1 constructed
+    • Product B1 constructed
+       • Doing A1 operation
+       • Doing B1 operation
+    • Product A1 destructed
+    • Product B1 destructed
+   Factory 1 destructed
+   Factory 2 constructed
+    • Product A2 constructed
+    • Product B2 constructed
+       • Doing A2 operation
+       • Doing B2 operation
+    • Product A2 destructed
+    • Product B2 destructed
+   Factory 2 destructed
+*/

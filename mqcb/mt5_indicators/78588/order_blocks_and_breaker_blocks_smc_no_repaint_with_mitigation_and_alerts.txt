@@ -1,0 +1,34 @@
+An order block (OB) is the last opposite candle before a strong move that breaks market structure. Smart Money Concepts (SMC) and ICT traders watch these candles because price often comes back to them before the move continues.
+Bullish OB: a candle closes above the last swing high. In the leg before that break, the last down candle at (or just before) the lowest point is the order block. It is a support zone.
+Bearish OB: a candle closes below the last swing low. The last up candle at (or just before) the highest point of the leg is the order block. It is a resistance zone.
+A swing high is a high above the highs of N candles on each side (N = swing strength, default 10); a swing low is the mirror.
+What it shows
+Active order blocks as boxes to the right: green for bullish, red for bearish (the newest 3 per direction by default).
+Breaker blocks in blue. When a candle closes beyond the far side of an order block, the block has failed: a failed bullish block becomes resistance (bearish breaker), a failed bearish block becomes support (bullish breaker), until a candle closes back through it.
+Used and broken blocks as grey boxes that end at the candle that used or broke them, so you can see how price reacted to them.
+Hover a box to see its type and price range.
+When is a block used up? (input)
+Touch: as soon as price comes back into the block, so only fresh (unmitigated) blocks stay active.
+Half: when price reaches the 50 % line of the block.
+Break: the block stays active until a candle closes through it.
+How it works
+A swing is confirmed by N closed candles on each side and a break needs a closed candle, so a block never appears early and never repaints.
+Zone: the whole candle (high - low) or only its body (open - close).
+Optional size filter: the move from the block to the breaking close must be at least X x ATR(14) (0 = off).
+The calculation is incremental: after the first run only the new candle is processed. Tested from M1 to D1 on EURUSD, GBPUSD and XAUUSD.
+Inputs
+Swing strength (default 10), block zone (whole candle / body), when a block is used up
+Breaking move at least x ATR(14)
+Bars to scan (default 2000)
+Active blocks shown per direction; used and broken blocks on / off and how many; breaker blocks on / off and how many
+Names on active blocks; colours
+Alerts: on a new block, when price comes back to a block; push notification and e-mail
+Buffers for Expert Advisors (iCustom, not drawn)
+0 / 1: top / bottom of the newest active bullish order block
+2 / 3: top / bottom of the newest active bearish order block
+EMPTY_VALUE when there is none
+Example: double top[]; CopyBuffer(handle, 0, 1, 1, top); gives the top of the newest active bullish block on the last closed candle.
+Good to know
+A smaller swing strength (5) shows more and smaller blocks (internal structure); a larger one (20) shows fewer and bigger blocks.
+It works on any symbol and time frame.
+The indicator only draws and calculates; it never trades.

@@ -1,0 +1,10 @@
+The Hammer Indicator identifies key candlestick formations, specifically green and red hammers as well as inverted hammers, on a MetaTrader 5 chart. It is designed to highlight potential reversal points in price by analyzing the candlestick structure on each bar. A hammer is generally characterized by a small body and a long lower wick, indicating potential buying pressure after a downtrend. The inverted hammer, in contrast, has a long upper wick and may suggest a possible reversal following an uptrend.
+This indicator calculates the size and ratio of candlestick wicks and bodies to detect these patterns, using three main customizable parameters:
+MaxRatioShortWick
+: Sets the maximum ratio for the short wick relative to the full candlestick, filtering for patterns with minimal top wicks.
+MinRatioLongWick
+: Defines the minimum ratio for the long wick, ensuring that the detected patterns have significant wick lengths compared to the candlestick body.
+MinCandleSize
+: Specifies the minimum size of the candlestick required to qualify as a hammer or inverted hammer pattern.
+Once a pattern is identified, the indicator will display an arrow in a designated color (green or red) on the chart, placed near the highest or lowest price of the candlestick, depending on the direction of the pattern. The functions within the code handle the creation and positioning of these graphical objects, as well as cleaning up the objects when the indicator is removed from the chart.
+This indicator is suitable for traders looking to spot potential reversals, and its parameters can be tailored to suit different timeframes and market conditions. It is a versatile tool that can complement various trading strategies by providing early visual cues for potential price changes.

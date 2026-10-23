@@ -1,0 +1,2 @@
+QQE (Quantitative Qualitative Estimation) of polychromatic momentum
+The polychromatic momentum is a rather "fast" momentum indicator that is suitable for timely trend assessment. In this indicator it is, in order to avoid making it "too sensitive" possible to additionally smooth its value before it is used in the QQE calculation. That way the number of signals is made acceptable and the added lag (since dsema was used for that - which is very fast smoothing method) is minimal

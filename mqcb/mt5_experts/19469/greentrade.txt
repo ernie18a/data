@@ -1,0 +1,40 @@
+Author of the idea
+:
+Andrey
+,
+author of the mq5 code
+:
+barabashkakvn
+.
+The Expert Advisor trades based on
+iMA
+and
+iRSI
+signals. Values of iMA on four bars are compared. Indices of these bars can be optimized. The bar index is specified as a shift from the previous one:
+There are two levels for the iRSI indicator:
+"buy level" - if RSI is equal to or greater than this level, it is a Buy signal;
+"sell level" - if RSI is equal to or lower than this level, it is a Sell signal.
+Input Parameters
+MA: averaging period
+- averaging period for iMA;
+Index of the bar #0
+Index of the bar #1 (shift from bar #0)
+Index of the bar #2 (shift from bar #1)
+Index of the bar #3 (shift from bar #2)
+RSI: averaging period
+RSI buy level
+RSI sell level
+Lots
+- position volume;
+Stop Loss
+Take Profit
+Trailing Stop
+Trailing Step
+Max position
+- the maximum number of open positions;
+magic number
+- Expert Advisor identifier.
+EURUSD,M5:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19469

@@ -1,0 +1,6 @@
+Author:
+Arif E. Nugroho
+arif_endro@vectra.web.id
+This indicator will show six line consisting of different time from all most active forex market in the world, timezone start from Home, New York, London, Tokyo, Sidney and finished with displaying time from server/broker.
+TimeZone Indicator
+Above is the preview of this indicator, the location for display can be configured in the indicator options which currently the default value is in top left corner.

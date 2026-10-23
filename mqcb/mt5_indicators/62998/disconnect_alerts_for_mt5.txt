@@ -1,0 +1,8 @@
+This indicator creates the following trade server disconnect alerts in MT5:
+Pop-ups,
+Sounds,
+Push notifications (TextAlerts),
+Email,
+Printing to Experts tab*, and
+Chart label text.
+* If you enable ExpertsTab with another alert that automatically prints to the Experts tab in MT5, then you will get somewhat duplicate data printed there.

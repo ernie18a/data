@@ -1,0 +1,11 @@
+Real author:
+dXerof
+The indicator S&R based on Daily, Weekly, Monthly candles.
+Based on Daily Candle:
+Based on Weekly Candle:
+Based on Monthly Candle:
+Recommendations:
+You can use all pairs.
+Chart H1, based on Daily candle.
+Chart H4, based on Weekly candle.
+Chart D1, based on Monthly candle.

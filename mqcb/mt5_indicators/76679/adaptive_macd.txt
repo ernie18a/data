@@ -1,0 +1,86 @@
+Overview
+The Adaptive MACD is a custom technical indicator for MetaTrader 5 that enhances the classic MACD (Moving Average Convergence Divergence) by dynamically adjusting its smoothing coefficients based on market conditions. Instead of using fixed fast and slow EMA lengths, the indicator computes a Pearson correlation coefficient between the closing price and the bar index over a user‑defined lookback period. The resulting R² value is then used to blend two different MACD coefficient sets, making the oscillator more responsive during strong trends and smoother during sideways or noisy markets.
+The indicator is displayed in a separate window and consists of:
+A
+color‑coded histogram
+representing the difference between the Adaptive MACD line and its signal line.
+The
+Adaptive MACD line
+itself.
+The
+signal line
+, which is an EMA of the MACD line.
+The histogram uses four colors to indicate both direction and momentum strength:
+Color Index
+Meaning
+0
+Strong bullish (rising positive histogram)
+1
+Weak bullish (falling positive histogram)
+2
+Strong bearish (falling negative histogram)
+3
+Weak bearish (rising negative histogram)
+The MACD line color can be automatically chosen to contrast with the chart background (light/dark theme), or set manually.
+Interpretation
+The Adaptive MACD can be interpreted in ways similar to the standard MACD:
+Signal line crossovers
+– When the MACD line crosses above the signal line, it may indicate a bullish momentum shift; a cross below suggests bearish momentum.
+Histogram behavior
+– The height of the histogram shows the distance between the MACD and signal lines. Rising positive histogram bars (strong bullish) suggest increasing upward momentum, while falling negative bars (strong bearish) indicate strengthening downward pressure.
+Zero line crossings
+– Because the indicator is derived from price differences, zero line crossings can also be monitored for potential trend changes.
+Because the smoothing is adaptive, the indicator tends to filter out noise during ranging periods and react more quickly when a genuine trend develops, potentially reducing false signals compared to a fixed‑period MACD.
+Input Parameters
+The following inputs are available for customization:
+Group
+Parameter
+Default
+Description
+Settings
+InpR2Length
+20
+Lookback period used to calculate the Pearson correlation (R²).
+Settings
+InpFast
+10
+Fast EMA length for the adaptive calculation.
+Settings
+InpSlow
+20
+Slow EMA length for the adaptive calculation.
+Settings
+InpSignal
+9
+Signal line EMA length.
+Style
+InpBullColor
+Blue (RGB)
+Color used for bullish histogram bars (strong/weak).
+Style
+InpBearColor
+Red (RGB)
+Color used for bearish histogram bars (strong/weak).
+Style
+InpAutoFg
+true
+If true, the MACD line color automatically adapts to the chart background.
+Style
+InpMacdColor
+White
+Manual color for the MACD line (used when
+InpAutoFg = false
+).
+Style
+InpSignalColor
+Orange
+Color of the signal line.
+Recommended Symbols and Timeframes
+Because the indicator is a general‑purpose oscillator, it can be applied to any financial instrument (forex, commodities, indices, stocks) and any timeframe. However, its adaptive nature is particularly useful on:
+Liquid pairs
+such as EURUSD, GBPUSD, USDJPY, or XAUUSD.
+Timeframes from M15 to H4
+, where trends are frequent enough to benefit from the adaptive smoothing, and noise is still present.
+For scalping or very short timeframes, a smaller
+InpR2Length
+(e.g., 10–15) may be preferred, while swing traders might increase it to 30 or more.

@@ -1,0 +1,3 @@
+Velocity is a smoother momentum according to Mark Jurik. In the original velocity Jurik does not use JMA (as some versions are adding JMA to it) but has a very specific way of calculating.
+As it can be seen the T3 version is very smooth even without using additional smoothing (that is one of the reasons why some versions added JMA smoothing to it — to make it smoother than the original, but regardless how good the JMA is it means adding lag too. No lag adding in T3 version).
+One of the advantages of T3 velocity: you can control the "speed" of it with simply changing the Hot field.

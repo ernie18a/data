@@ -1,0 +1,9 @@
+Back to the basics :
+One might ask : "Why do we need the simple moving average when it is published already"?
+There are multiple reasons :
+existing sma calculations tend to have one of two issues (or both in some cases) :
+when you increase the calculating period, they are slowing down - due to constant repeated usage of loops
+if they do not use loops all the time, the, sometimes, the apply a "shortcut" that is simply an approximation when the exact simple moving average is never calculated. that can be frustrating at times
+they are rather complicated to use
+So here is one version that is not an approximation, that does not slow down for longer periods and is easy to use (from code too)
+PS: it could be made to run even faster (migrating the code from the class to main loop would do that), but that would make the whole code less flexible and the speed-up would be marginal compared to lack of flexibility / reusability

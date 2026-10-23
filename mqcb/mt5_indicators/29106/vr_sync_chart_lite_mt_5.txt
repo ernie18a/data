@@ -1,0 +1,3 @@
+The VR Sync Chart Lite indicator is written for demonstration purposes and shows how it is possible to synchronize the rectangle object (OBJ_RECTANGLE) on all open charts in the MetaTrader terminal.
+For convenience, we recommend installing the indicator on all charts.
+The indicator code is written simply and clearly.

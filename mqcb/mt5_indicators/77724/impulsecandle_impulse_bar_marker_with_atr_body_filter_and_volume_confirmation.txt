@@ -1,0 +1,18 @@
+An impulse candle is a bar that moves a long way in one direction and closes near where it went. Those bars are the raw material of breakout and momentum strategies, and most of the time they are found by eye. This indicator finds them by rule and marks them with an arrow: green under a bullish impulse, red over a bearish one.
+A bar qualifies when all of these are true:
+1. The body (close minus open) is at least ATR multiplied by InpImpulseAtrMult. ATR is the average true range over InpAtrPeriod bars of the chart timeframe.
+2. The body is at least InpMinBodyRatio of the whole bar range (high minus low), so bars with long wicks do not count.
+3. The close sits in the upper part of the bar for a bullish impulse or the lower part for a bearish one. With InpMinCloseLoc = 0.70 that means the top 30 percent or the bottom 30 percent of the range.
+4. If InpUseVolume is on, the bar's tick volume is at least InpVolumeMult times the average tick volume of the previous InpVolumePeriod bars.
+Everything is calculated on the bar itself, so a marked bar stays marked. The current bar is evaluated as it forms and its arrow can appear and disappear until it closes; use the previous bar from an Expert Advisor.
+Inputs:
+InpAtrPeriod = 14, ATR period.
+InpImpulseAtrMult = 1.20, body must be at least ATR times this.
+InpMinBodyRatio = 0.65, body must be at least this share of the bar range.
+InpMinCloseLoc = 0.70, close location in the range, 0.70 means the top or bottom 30 percent.
+InpUseVolume = true, require tick volume confirmation.
+InpVolumePeriod = 20, bars for the volume average.
+InpVolumeMult = 1.30, volume must be at least the average times this.
+Buffers for Expert Advisors: buffer 0 is the bullish arrow, buffer 1 the bearish one. A non zero value is a signal, the value is the arrow price. Read them with iCustom and CopyBuffer with shift 1 for the last closed bar.
+It works on any symbol and timeframe. The defaults were written for M1 to M15 on volatile symbols such as BTCUSD, XAUUSD and the index CFDs, where impulse bars are frequent; on H1 and above the ATR multiplier can be lowered to 1.0.
+The indicator only marks bars. It does not say whether trading the impulse is a good idea, that depends on the symbol, the costs and what you do after the mark.

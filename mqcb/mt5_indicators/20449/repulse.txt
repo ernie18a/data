@@ -1,0 +1,21 @@
+The "Repulse" oscillator allows finding possible levels of price rebound or rollback from strong levels.
+It has two parameters:
+Repulse period
+- oscillator calculation period;
+Signal period
+- signal line calculation period.
+Calculation:
+Repulse1[i] = Pos_EMA1[i]-Neg_EMA1[i],
+Repulse2[i] = Pos_EMA2[i]-Neg_EMA2[i]
+where
+Pos_EMA1, Neg_EMA1 - EMA(PosSt1), EMA(NegSt1) with the period of 5*Period1),
+Pos_EMA2, Neg_EMA2 - EMA(PosSt2), EMA(NegSt2) with the period of (5*Period2),
+PosSt1[i] = 100*(3*Close[i] - 2*MinPrice1 - Open[i])/Close[i],
+NegSt1[i] = 100*(Open[i] + 2*MaxPrice1 - 3*Close[i])/Close[i],
+PosSt2[i] = 100*(3*Close[i] - 2*MinPrice2 - Open[i-Period2])/Close[i],
+NegSt2[i] = 100*(Open[i-Period2] + 2*MaxPrice2 - 3*Close[i])/Close[i],
+MinPrice1, MaxPrice1 - the highest and the lowest prices in the range from (i-Period1+1) to i,
+MinPrice2, MaxPrice2 - the highest and the lowest prices in the range from (i-Period2+1) to i
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20449

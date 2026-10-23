@@ -1,0 +1,5 @@
+Step Up and Down Forex Indicator draws the price direction movement with single arrow Up or Down on the trading chart.
+New Update for Step Up Down Forex Indicator.
+StepUpDown Forex Indicator Update 2014/06/23, include:
+1. Update and add new formulas.
+2. Add functions Alerts, when the arrow appears or change direction.

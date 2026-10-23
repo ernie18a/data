@@ -1,0 +1,8 @@
+The indicator uses the standard
+iBands
+indicator.
+Bollinger Bands are constructed based on extended Fibonacci levels.
+Fig.1 Bollinger bands drawn using Fibonacci levels.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18034

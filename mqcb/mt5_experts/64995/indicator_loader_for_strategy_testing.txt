@@ -1,0 +1,4 @@
+There's a frustrating limitation with the Indicator strategy tester option as it enables a visual backtest simulation for one indicator only.
+The solution is to build a system for loading indicators and use the expert advisor strategy tester option with visual mode selected.
+This system allows you to test up to four indicators at the same time, and the point is to see how one indicator might weigh up against another indicator in the strategy, and to visually see how the strategy is performing.
+Four indicators that are native to the software are used as default inputs, and the software automatically understands these paths. You can test your own custom indicators, and also use custom paths.

@@ -1,0 +1,20 @@
+This simple Expert Advisor was created to illustrate the capabilities of trading the Fibonacci levels. The EA uses the standard ZigZag indicator (from the standard MetaTrader delivery) as the basis for placing the grid.
+The EA determines the trend direction based on the two latest Highs and two Lows (presence of a higher High and a higher Low — uptrend; accordingly, a lower High and a lower Low — downtrend; Highs and Lows changed in different directions —no trend). The Fibonacci grid is based
+only
+on the trend.
+Once the grid is plotted, the EA waits for a retracement to a certain level and trades the breakout of this levels in the opposite direction.
+The EA uses the following parameters:
+ZigZag Depth — parameter of the ZigZag indicator;
+ZigZag Deviation — parameter of the ZigZag indicator;
+ZigZag BackStep — parameter of the ZigZag indicator;
+Trade volume — working lot;
+Stop-loss level (points) — stop loss level in points;
+Take profit at FIBO extension — take profit levels as a Fibonacci extension (for example, value 0.38 means an expansion of 138%);
+Next bar close distance from level (points) — the distance from the level along the trend, at which the EA will open a trade;
+Next to previous high(low) distance — minimum distance between the subsequent Highs and subsequent Lows, in which the EA searches for a trend;
+Pause from close to trade (bars) — the number of bars that must be elapsed after closure of the previous trade for the EA to open a new trade;
+Fibo levels colors — color of the Fibonacci grid levels;
+For its trading, the EA uses Fibonacci levels plotted using the trend based on the standard ZigZag indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16231

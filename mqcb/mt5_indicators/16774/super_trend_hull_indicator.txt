@@ -1,0 +1,2 @@
+Super trend indicator that uses hull average for calculation.
+It is a standalone indicator and does not require any other indicator in order to work. Also, unlike a lot of metatrader 4 versions of super trend indicators, this one does not repaint, so it can be used in a "signaling mode" if someone wants to do so.

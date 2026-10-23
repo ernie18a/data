@@ -1,0 +1,2 @@
+This script will export the trade history from MT5 selected between two dates. The resulting file is CSV that can be opened/imported with any spreadsheet software.
+Current version 1.0 does not add the takeprofit and stoploss. Any advice to improve this is welcomed.

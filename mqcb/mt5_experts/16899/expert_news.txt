@@ -1,0 +1,15 @@
+Author of the idea
+—
+Vladimir Khlystov
+,
+author of the mq5 code
+—
+barabashkakvn
+.
+The Expert Advisor trades on the market jumps using no indicators.
+The idea behind the EA is that stop orders move on the set distance from the current price discretely in time.
+If the price moves sharply to one side, the Expert Advisor simply has no time to move the order and therefore, it becomes a market one.
+The order trailing is activated afterwards.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16899

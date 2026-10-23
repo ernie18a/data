@@ -1,0 +1,11 @@
+The Expert Advisor Exp_Arrows_Curves based on signals of the
+Arrows_Curves
+indicator. The signal is formed when a bar is closing if there is a new, color point or a cross. Color dots are signals for position opening and closing, while color crosses serves as signals only for position closing.
+Place Arrows_Curves.ex5 compiled file to the terminal_data_folder\MQL5\Indicators.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. The instances of history of deals on the chart.
+Testing results for 2011 at USDCHF H4:
+Fig. 2. Charts of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1097

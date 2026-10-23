@@ -1,0 +1,6 @@
+Description:
+The indicator shows the current market conditions.
+for better results load and install the "Digifacewide" font.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11041

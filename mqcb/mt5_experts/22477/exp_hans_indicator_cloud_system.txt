@@ -1,0 +1,20 @@
+The trading system based on the signals of the
+Hans_Indicator_Cloud_System
+indicator. The signal is formed when a bar is closing if there is a channel breakthrough.
+For the generated EA to operate correctly, the compiled
+Hans_Indicator_Cloud_System.ex5
+indicator file should be available in the <terminal_data_directory>\MQL5\Indicators folder.
+The EA works on timeframes not higher than M30:
+input
+ENUM_TIMEFRAMES
+InpInd_Timeframe=
+PERIOD_M30
+;
+//Hans_Indicator_Cloud_System indicator timeframe
+Default Expert Advisor's input parameters have been used during tests shown below.
+Fig. 1. Examples of trades on the chart
+Testing results for 2017 on EURJPY M30:
+Fig. 2. Test results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22477

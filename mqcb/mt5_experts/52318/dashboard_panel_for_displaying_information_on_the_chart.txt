@@ -1,0 +1,5 @@
+Ever wondered how the dashboards and trading panels in Expert Advisors and indicators are created?
+Now you can learn to build your own!
+The attached code contains everything you need to create a fully functional and informative dashboard. With this code, you'll have the foundation to design custom dashboards that display key trading data and enhance your MetaTrader 5 experience.
+If you want to learn how I created this panel in details watch this youtube video linked:
+https://www.youtube.com/watch?v=MFnR0Tknw-s

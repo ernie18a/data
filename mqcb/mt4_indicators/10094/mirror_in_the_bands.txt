@@ -1,0 +1,3 @@
+Description:
+Mirror indicator in the chart.
+Entry Buy when Red line above Blue line dan Entry Sell when Red line below Blue line. For the Exit try to combine my mirror others indicator.

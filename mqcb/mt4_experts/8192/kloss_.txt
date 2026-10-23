@@ -1,0 +1,9 @@
+Author:
+Klopka
+The EA works on any timeframes and symbols simultaneously.
+It has been specially revised for optimization, the code being improved in procedural style. Now the EA can be optimized by open prices -- the results will match with those obtained by precise method, optimization speed will surprise you agreeably.
+If I've realized the author's idea in a wrong way, he will hopefully correct me.
+Best of luck in optimization!
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8192

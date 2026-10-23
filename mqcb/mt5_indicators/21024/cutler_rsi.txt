@@ -1,0 +1,25 @@
+An RSI version called Cutler's RSI is based on the simple moving average, non on the exponential moving average.
+It has five input parameters:
+Period
+- calculation period;
+Method
+- calculation method (SMA by default);
+Applied price
+- the calculation price;
+Overbought
+- overbought level;
+Oversold
+- oversold level.
+Calculation:
+Cutler's RSI = 100.0 - 100.0 / (1 + P/N)
+where:
+P = MA(pos, Period, Method)
+N = MA(neg, Period, Method)
+pos, neg - positive and negative differences between the current and the previous values of MA
+Fig 1. SMA calculation method
+Fig. 2. EMA calculation method
+Figure 2. SMMA calculation method
+Figure 4. LWMA calculation method
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21024

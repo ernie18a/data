@@ -1,0 +1,12 @@
+Original Code by NG3110@latchess.com, last version:
+https://www.mql5.com/en/code/10548
+Added:
+Channel adjustments: press 1 to widen, press 2 to tighten channel.
+Modified:
+Movable red dot (see the screenshot below).
+Lines on the chart.
+Input parameters.
+Arcs:
+Channel:
+S/R:
+Movable red dot:

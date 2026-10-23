@@ -1,0 +1,16 @@
+The Expert Advisor is rewritten from MQL4, the author is
+RickD
+, link to the source -
+https://www.mql5.com/en/code/7262
+.
+How it works
+The Expert Advisor "catches" rollbacks after a strong movement. If we observe one direction N bars with the increasing size of body, the position will be opened in the back direction.
+The image displays the work of the Expert Advisor in the strategy tester's visual mode.
+Parameters
+N - Number of bars of one direction with the increasing size of body.
+Lots - lot; when 0, the MaxrR parameter is used.
+StopLoss - Stop Loss in points, 0 - without Stop Loss.
+TakeProfit - Take Profit in point, 0 - without Take Profit.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1105

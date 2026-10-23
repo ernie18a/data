@@ -1,0 +1,4 @@
+This one was first published some 5 years ago. But due to the changes of mt5, some features of it are not working as they used to work at that time (the volume factor - ie: the hot) is not working in the old versions any more
+This version is using all the newest modes for metatrader 5 and is calculating all correctly (at least for the current builds of metatrader 5 😊). I believe that no parameter needs further explanation (they are self explanatory, the usual way)
+Recommendations:
+You can use color changes as signals

@@ -1,0 +1,5 @@
+Trend indicator with the simple smoothing algorithms. Based on the indicator trend.mq4 with some modifications.
+It has an only one parameter - period (use period=24 for EURUSD).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/132

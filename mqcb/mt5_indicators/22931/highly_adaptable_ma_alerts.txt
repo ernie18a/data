@@ -1,0 +1,47 @@
+Highly Adaptable Moving Average Alert displays the channel built using any of the eighteen moving averages. When the price crosses extreme and central channel lines, a signal pointer is set and an event message is sent.
+The indicator has eight adjustable parameters:
+MA period
+- МА calculation period
+MA method
+- МА calculation method
+Simple
+Exponential
+Smoothed
+Linear-Weighted
+Wilder Exponential
+Sine-Weighted
+Triangular
+Least Square
+Hull MA by Alan Hull
+Zero-Lag Exponential
+Instantaneous Trendline by J.Ehlers
+Moving Median
+Geometric Mean
+Regularized EMA by Chris Satchwell
+Integral of Linear Regression Slope
+Combination of LSMA and ILRS
+Triangular MA generalized by J.Ehlers
+Volume-Weighted
+MA applied price
+- МА calculation price
+Bands percent
+- channel width
+Show alerts for
+- display messages when crossing
+All
+- all lines
+Mean
+- central line
+Top
+- upper line
+Bottom
+- lower line
+Use alert
+- use alerts when crossing (Yes/No)
+Send mail
+- send messages to email (Yes/No)
+Send push
+- send push notifications (Yes/No)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22931

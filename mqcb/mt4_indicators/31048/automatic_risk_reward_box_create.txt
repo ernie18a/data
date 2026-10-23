@@ -1,0 +1,7 @@
+This Indicator creates automatically a Risk/Reward Box on you all opened chart base on High, Low price with the old candles.
+You can use it easily to drag and change size and price to your desire wanted.
+v1.1:
+1. Objects draw every tick.
+2. You can attach ind to several charts and Risk/Reward box on all chart are synced in time and price to have better
+Analysis
+on your trade risk/reward

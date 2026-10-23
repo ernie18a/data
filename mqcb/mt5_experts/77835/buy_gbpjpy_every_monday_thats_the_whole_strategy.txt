@@ -1,0 +1,52 @@
+GBPJPY Monday
+One long trade a week, on one day, for twelve hours. No indicators, no optimisation, no hidden logic. The full source code is here to read, test and change.
+The rules
+- Symbol: GBPJPY, attached to an M1, M5, M15, M30 H1 chart. It dosent really matter what timeframe the algo is one because the EA doesn't use bars at all. It runs on a one-second timer and only checks the server clock, so it enters and exits at the same time on any timeframe.
+- Day: Monday only
+- Entry: buy at 11:00 server time(summer GMT+3, Winter GMT +2)
+- Exit: close at 23:00 server time, the same day
+- One trade a week, long only
+- Flat before the 00:00 roll, so it never pays swap
+Server time here means the common MetaTrader setting of GMT+2 in winter and GMT+3 in summer. If your broker is different, the EA prints your server's offset when it starts, and you can adjust the entry and exit hours.
+Results
+- Date: From 2022 01 01 to 2026 09 17
+- Total return: +52.9% ($5,294, from a 10k account at 0.2lot)
+- Return per year: 11.2% at 6$ per lot fees
+- Max drawdown: 7.05%
+- MAR ratio: 1.59
+- Profit factor: 1.86
+- Win rate: 59.1%
+- Trades: 242
+Robust to timing
+The default entry is 11:00, but the trade doesn't depend on that exact hour. In backtest it stays profitable with the entry anywhere from 09:00 to 13:00 server time.
+That matters more than any single result. An edge that only works at one precise minute is usually a coincidence the backtest happened to find. One that survives a four-hour window is much more likely to be real.
+Trading doesn't have to be complicated to be profitable
+Just check the Market and see plenty of EAs with a dozen indicators, neural networks and hundreds of settings. One would think that complexity must be an asset here. In many cases, the opposite proves true.
+Each additional rule is another factor that increases the possibility of fitting rather than discovering. An approach with twenty parameters is capable of producing an absolutely amazing fit for any backtesting exercise, and then failing spectacularly when the market conditions change. An approach with just one rule has little to adjust. Should it work, it will work precisely because the pattern exists in reality rather than having been fitted.
+This EA has no indicators at all. All it does is know what the current day and time of the day are. Nothing more. And it is very transparent – everyone can study the code, implement it in any programming language and run on his own data.
+Why a seasonal pattern belongs in every portfolio
+Almost all trading strategies are triggered by price signals. If trend following strategies trade momentum, mean reversion will trade range, while breakouts will trade levels until they get broken. Since all of them base their signals on price, most of the time they win and fail simultaneously.
+A seasonal trade, however, is an exception. In contrast to price-based trades, which consider price before deciding whether to trade or not, a seasonal trade does not care about the appearance of the charts. All that matters is that it's Monday 11:00, no matter how the chart looks like. As you can see, results of the seasonal trade will hardly correlate with most of the strategies since they do not depend on them.
+Moreover, this type of trade spends much less time inside the market. While twelve hours per week constitute only 7% of weekly trading hours, your capital will stay outside of this trade for the remaining 93%.
+Pros and cons
+Pros
+Extremely simple
+Low correlation with many traditional strategies
+Passed robustness tests including the Harvey-Liu haircut, stress tests, doubled fees, delayed entry, Monte Carlo simulation and parameter changes
+Easy to code and replicate
+Cons
+Rare trades: one a week at most
+Can go through long periods without performing
+Weak as a standalone strategy. It works best as one part of a portfolio
+Getting started
+Open a GBPJPY chart and set it to M1
+Attach the EA
+Check the Experts log: it prints the symbol, the day, and the entry and exit times
+Important: there is no stop loss.
+This is a timed hold. It exits on the clock, not on price. A large move against the position during those twelve hours is taken in full, and yen pairs can move sharply on central bank or intervention news. Size your lots with that in mind.
+Two guards, and only two
+Spread.
+It skips the trade if the spread is above 1.5 pips. The filter exists to refuse the rare broken quote, not to fine-tune results.
+Margin.
+It won't open if the trade would push the account's margin level below 300%.
+This EA is shared for education and research. Backtest results do not guarantee future performance. Only trade with money you can afford to lose.

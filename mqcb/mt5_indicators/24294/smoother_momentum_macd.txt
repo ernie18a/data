@@ -1,0 +1,5 @@
+Theory :
+MACD is calculated as a difference of two moving averages : a fast average - slow average. And that is about it. This is a completely different version : tit is a MACD of two momentum (fast and slow momentum). Even though the idea is strange, the results are logical and acceptable and can be used for trading decisions
+Usage :
+It can be used as "regular" macd too - zero crosses or slope direction can be used for signals
+PS: for those checking the code - there is a "strange" thing in the calculation. And no - it is not an error :) That way the results are acceptable

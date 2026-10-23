@@ -1,0 +1,57 @@
+The USDx Index measures the performance of the US Dollar against a basket of currencies: EUR, JPY, GBP, CAD, CHF and SEK.
+USDx started in March 1973, soon after the dismantling of the Bretton Woods system. At its start, the value of the US Dollar Index was 100.000. It has since traded as high as the mid-160s and as low as 70.698 on March 16, 2008, the lowest since its inception in 1973.
+The makeup of the "basket" has been altered only once, when several European currencies were subsumed by the Euro at the start of 1999. USDx is updated whenever US Dollar markets are open, which is from Sunday evening New York time (early Monday morning Asia time) for 24 hours a day to late Friday afternoon New York time.
+The USD index is calculated as a geometic average of 6 currency pairs:
+USDx = 50,14348112 * EURUSD^(-0,576) * USDJPY^0,136 * GBPUSD^(-0,119) * USDCAD^0,091 * USDSEK^0,042 * USDCHF^0,036
+Features of this implementation of USDx index:
+It uses the "
+MCM Control Panel
+".
+It works in a
+real multicurrency mode
+by receiving all ticks on each symbol without delays. The quotes of some symbol may change several times pers second, all of them will be proceed.
+Full synchronization
+of currency pairs. For example, if there isn't historical data for some currency pair, it doesn't calculate the value of USD index.
+By the way, the indicator line is drawn when the new bars had appeared for all currency pairs.
+Full control of data synchronization for
+each currency pair
+using the "Initialization" event of the "
+MCM Control Panel
+". It allows to save time when recalculating the indicator values (for example, in historical data loading). The data will be recalculated only after "Initialization" event.
+The implementation of the indicator is much more
+simple
+than implementation using OnTick() or OnTimer() functions. The benefit is that there isn't delay.
+You can modify the frequency of the indicator recalculation
+"on the fly"
+. For example, if you calculate the index on hourly chart, you don't need to recalculate it at every tick, so you can configure the events of "
+MCM Control Panel
+"(one minute, 5 minutes or hour). But I recommend to use the "new tick" events because of the CopyXXXX functions, sometimes it's necessary to repeat the requests of historical data.
+How to install:
+Download the
+"MCM Control Panel" for Multicurrency Expert Advisors and Indicators
+and compile the "iControl panel MCM.mq5" and "Spy Control panel MCM.mq5".
+The symbols in Market Watch should be
+ordered
+:
+EURUSD,
+USDJPY,
+GBPUSD,
+USDCAD,
+USDSEK,
+USDCHF.
+The order of symbols in Market Watch is important for the calculation of the Index.
+Unpack the iUSDx.zip to the /MQL5 folder. Next, attach the  iUSDx from /MQL5/Indicators/iUSDx/ to some chart, for example, EURUSD М1.
+After that it's necessary to configure the
+MCM Control Panel
+events: Set "
+New tick
+" event for all symbols, as described
+here
+.
+In addition, add "
+New bar
+" event for EURUSD M1. This event used for the synchronization when the new bar has appeared on the current timeframe (in our case М1).
+The next... enjoy. If you have found some bugs, please send me private message.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/242

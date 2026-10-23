@@ -1,0 +1,8 @@
+The given indicator displays the maximum values of price (high and low values for a particular candlestick) for growth and fall of the financial asset. In practice, we have two indicators. One indicator is for growth of the asset and is above zero, the other indicator is for fall and is below zero. To assess the current situation, the simultaneous analysis of these two indicators is required.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 29.10.2007.
+Fig.1 The MaxMinRange indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1477

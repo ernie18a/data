@@ -1,0 +1,22 @@
+Real author:
+transport_david
+Four semaphore signal indicators based on
+Larry Williams' Percent Range
+oscillators with different periods on one price chart.
+Trend signals occur when the oscillators enter the oversold and overbought areas specified in the input parameters:
+input
+int
+rsiUpperTrigger=-
+20
+;
+// Overbought level
+input
+int
+rsiLowerTrigger=-
+80
+;
+// Oversold level
+Figure 1. The X4Period_WPR_Arrows indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2241

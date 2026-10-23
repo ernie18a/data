@@ -1,0 +1,23 @@
+Idea by
+:
+BredSS
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+The EA works with three Moving Average indicators. These three indicators, i.e., the "First", the "Second", and the "Third", have ascending average periods: 5, 25, and 125, respectively. At the same time, the EA is protected by a security mechanism that monitors exactly this manner of averaging, i.e., the ascending one.
+To get a signal, it is necessary that the indicators arrange one above another (or one under another). Which is most important, they must be at the minimum distance from each other:
+Minimum distance between MA's
+.
+At the same time, the opening signals are formed as follows:
+You can also enable limits for the number of positions in the market (
+Maximum quantity of positions
+). For example, if you set the value of "1", then you can even run this EA on netting accounts. The volume of positions is set in the
+Lots
+parameter.
+Testing on H1 from 2017.06.16 to 2018.04.25:
+A single test for EURCAD on H1 from 2017.06.16 to 2018.04.25:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20591

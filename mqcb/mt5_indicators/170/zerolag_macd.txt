@@ -1,0 +1,18 @@
+This oscillator is MQL5 version of
+ZeroLag MACD
+indicator, published in Russian section of MQL4 CodeBase.
+This indicator provides a signal few bars earlier, compared with
+standard MACD
+and its divirgence is much more clear.
+Calculation:
+ZeroLAG MACD(i) = (2*EMA(Close, FP, i) - EMA(EMA(Close, FP, i), FP, i)) - (2*EMA(Close, SP, i) - EMA(EMA(Close, SP, i), SP, i));
+ZeroLAG MACD Signal(i) = 2*EMA( ZeroLAG MACD(i), SigP, i) - EMA(EMA( ZeroLAG MACD(i), SigP, i), SigP, i);
+where:
+EMA - exponential moving average;
+Close - close price of the bar;
+FP - period of fast moving average;
+SP - period of slow moving average;
+SigP - period of signal moving average.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/170

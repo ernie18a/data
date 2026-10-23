@@ -1,0 +1,29 @@
+The MA_Difference trend indicator displays the absolute difference between:
+the price and the MA1
+the price and the MA2
+MA1 and MA2
+The indicator has nine input parameters:
+MA1 period
+- MA1 calculation period;
+MA1 method
+- MA1 calculation method;
+MA2 period
+- MA2 calculation period;
+MA2 method
+- MA2 calculation method;
+Applied price
+- price used for the calculation of two MAs;
+Absolute difference
+- display the difference as an absolute value (Yes/No);
+Show difference MA1/MA2
+- whether to display the Difference line (Yes/No);
+Show MA1
+- whether to display the MA1 line (Yes/No);
+Show MA2
+- whether to display the MA2 line (Yes/No).
+Indicator values can be interpreted similar to the standard ADX: high values of MA1 and MA2 point to the presence of a trend, low values indicate consolidation. The Difference line can be used as a threshold for determining high values of MA1 and MA2.
+Fig.1. The difference in absolute values
+Fig.2. The difference in relative values
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20268

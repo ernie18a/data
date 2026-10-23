@@ -1,0 +1,10 @@
+The iS7N_SacuL.mq5 indicator is based on the original indicator 'Lucas1.mq4', written in MQL4.
+Parameters:
+Per
+- indicator period, in fact, it's a number of bars, used for the calculation (in the original version - the values from 4 to 12 is used for the reverse)
+Pro
+- channel shift in percents (in the original version it's used as a channel breakdown sensitivity from -10 to 40). If Pro is equal to 0 or negative, there isn't any channel breakdown, and no arrows will appear.
+Two versions of this indicator can be used in the trading strategy, for example the first with parameters 7\25 (for entry points), the second with parameters (5\-5) for trailing.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/115

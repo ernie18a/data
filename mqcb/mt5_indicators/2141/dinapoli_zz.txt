@@ -1,0 +1,10 @@
+Real author:
+CrazyChart
+The ZigZag indicator using Joe DiNapoli algorithm.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 03.10.2007.
+Figure 1. The Dinapoli_ZZ indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2141

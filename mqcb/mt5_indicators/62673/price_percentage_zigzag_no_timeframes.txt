@@ -1,0 +1,4 @@
+This is a zigzag which is not warped by timeframes, and the leg changes based on asset price percentage change from the extremums. The zigzag is strictly based on price, and does not consider time.
+The clean and thoughtful zigzag structure is credited to Evgeniy Chumakov and so he is linked in the code as it is his code structure that was seen in his MQL4 "Autoscale zigzag".
+I am the author of this MQL5 indicator which, unlike the Autoscale zigzag, uses a price percentage input instead of a scale and is compatible across all securities.
+As it is a zigzag indicator, it's not appropriate to use this as a standalone tool for trade decisions. Instead, you could use it to police the trend like in a Renko chart, and potentially combine it with a momentum oscillator to figure out when and where it may be appropriate to make an entry.

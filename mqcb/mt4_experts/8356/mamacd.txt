@@ -1,0 +1,19 @@
+Author:
+The author of the strategy -
+nY3o
+. The author of the EA -
+Юрий
+(Yuriy).
+The latest update of the strategy and the discussion of it is
+here
+.
+The chart contains the Linear Weighted Movings with the periods of 85 and 75 applied to Low. Also there is the Exponential MA with the period of 5 applied to Close. MACD 15,26,1. (I use MACD_color that colors the bars in different colors like the AO). A trade is opened as soon as the MA5 has crossed both MAs. The cocurrent factor is the presence of the MACD above zero or its growing at an up trade.
+Properly, two MAs are necessary for visual trading. The placed TakeProfit is not big, 15-20 points depending on the volatility of the currency. Somebody can say that it is too small, but if you enter the market with a big lot and with several symbols, as well, then it turns out to be good. The StopLoss of 15-20 points is reached rarely.
+Picture:
+The more detailed description of the EA is available at the 28-th issue of the joournal dated
+the 1-st of September 2008
+.
+Add a request for strategy programming.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8356

@@ -1,0 +1,5 @@
+From time to time, traders are faced with the task of determining price volatility. This volatility can be measured in a variety of ways. This indicator employs an approach similar to the Winsorisation of a time series. All price values are sorted, after which the rates of change between the sorted values are calculated. A high result corresponds to high volatility.
+A major drawback of this indicator is its insensitivity to the direction of price movement. However, it can be modified by taking the time component into account in the price values.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/77231

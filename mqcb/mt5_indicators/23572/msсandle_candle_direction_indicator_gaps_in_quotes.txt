@@ -1,0 +1,41 @@
+Comparison of Open and Close prices often does not give a correct assessment of the direction of the candle.
+The indicator determines the direction of the bar based not only on the Open/Close prices.
+Gaps and gaps in quotes are also determined.
+Comparison of Open and Close prices often does not give a correct assessment of the direction of the candle.
+They can build, if the body is more than 2/3 of its size in other cases
+a different approach in assessing. The indicator implements the author's empirical approach to this problem.
+During the indicator calculation, some statistical characteristics are evaluated
+a number of quotations. The results described structure TCandlesStats. Boundary values are calculated
+the sizes of the minimum and maximum candles, as well as the approximate size of the "average" or
+"normal" candles. The assessment is carried out as the height of the candle and the height of its body.
+The calculation results are displayed in the terminal log. The calculation is performed on a fixed size
+data window and is repeated when passing at least 1/3 of its size.
+This ensures that the results are up to date at the time of calculation.
+The estimate of the gap in quotes (large gap) uses the size of the maximum candle from the statistical estimate.
+It would be more correct to use the price deviation channel and the Open price going beyond it.
+However, the correct definition of this channel is much more difficult.
+When calculating the indicator, TCandleInfo structure is calculated for each bar.
+The meaning of the fields in it is clear from the comments. The calculation is implemented as a macro.
+The chart shows information about the direction of bars and gaps in quotes.
+You can turn off the direction display.
+You can only display the adjusted direction of the candlesticks.
+Gaps can be filtered by their size. Gaps in quotes are always shown.
+Icon by value Low - candle down (red), Hi-up (yellow).
+Double arrow-gap. Scissors - the gap in the price (big gap).
+The location of the gap icons is the final (by the time) direction of the price movement on it.
+Changes in versions:
+1.01 fixed the algorithm for estimating the directions, changed the structure TCandleInfo.
+1.02 fixed the display of the direction of candles on 0 bar.
+1.03 fixed GetSomeStats function for correct calculation on any shift bar
+1.04 added forced to clean up ALL the buffers drawing. In MT5 information about gaps was drawn on each bar)))
+1.05 added the ability to show gaps with the size calculated automatically
+1.06 In the algorithm for estimating the directions imposed normalization size max candles, expanded structure TCandleInfo.
+(The algorithm is aligned with what is used in the
+ms-Candle-Index
+indicator).
+Evaluation of stat characteristics is performed for the entire history with the passage of at least 1/3 of the size
+data Windows that allows you to get up-to-date results on deep history.
+1.07 corrected description. Minor changes.
+To use in MT4, change the file extension to .mq4 or download
+here
+.

@@ -1,0 +1,11 @@
+The indicator shows the rate of change of
+simple moving average
+.
+The direction of the indicator is the same with direction of daily bars. The local extremums of the indicator corresponds to the reverse points of the local trend.
+The indicator is advancing, it shows the rate of the price change and proposed price reverse.
+The value of the indicator is calculated as ratio of the current price to the value of the simple moving average of the price (n-days averaged) minus 1:
+iMA=Price0/MA(n)0-1
+Suggestions: Daily, Period=5, applied price= (H+L)/2.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/146

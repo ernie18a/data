@@ -1,0 +1,13 @@
+Author of the idea
+—
+John Smith
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Two iMA indicators (MA, Moving Average) — with hard coded periods of 3 and 7, and on iRSI indicator (RSI, Relative Strength Index) with the period of 2.
+Testing results on EURUSD, H1 from 2016.01.10 to 2017.01.11, initial deposit 10000 — could not find a working variant. The EA had total losses with any parameters.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17351

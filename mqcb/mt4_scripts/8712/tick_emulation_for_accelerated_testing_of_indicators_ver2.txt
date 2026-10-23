@@ -1,0 +1,6 @@
+Modernization of the first version of the script with the ability to manage multiple indicators
+Example of including an indicator is displayed on the basis of the attached linear regression indicator and is also described in the indicator code.
+The unique number is formed by the indicator automatically at the first start..
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8712

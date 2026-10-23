@@ -1,0 +1,8 @@
+Author:
+Odir Aguiar (
+Didi
+).
+Indicator developed by Brazilian and analyst Odir Aguiar (Didi), consists of "Moving Averages", known for the famous needles Didi, which allows the visualization of reversal points.
+The concept is very simple, when you insert 3 Moving Averages on display, one of three periods, an 8 and the other 20, there appears the formation of the indicator which works on an axis or center line 0. The needles occur when the intersection of averages comes closest to the line 0.
+Recommendations:
+The indicator works best in higher liquidity assets.

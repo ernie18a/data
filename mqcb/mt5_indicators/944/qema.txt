@@ -1,0 +1,3 @@
+QEMA - Quadruple Exponential Moving Average.
+QEMA = TEMA + DEMA(y - TEMA)
+QEMA = 50, EURUSD D1 (Modification of the original TEMA to make QEMA)

@@ -1,0 +1,4 @@
+The indicator line represent the return point for the main indicator the MACD Zero Lag
+if give the possibility to analyse a market return point beofre it append.
+the extern values are the same than for the MACD Zero Lag
+About drawing point boolean it adds dots on the graph on each side of the indicator line. only for styling

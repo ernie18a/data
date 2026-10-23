@@ -1,0 +1,4 @@
+It's a well-known indicator that shows maximal and minimal prices (and average values) of the last n bars.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/85

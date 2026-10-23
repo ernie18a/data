@@ -1,0 +1,7 @@
+Author: BrunoFX
+Uses indicators: ADX, Stochastic Oscillator, MACD, Parabolic SAR. Rules of an input and output are painted in the code.
+-------------------------
+Parameters of testing
+Period: 30.
+Model: All tics.
+Symbol: EURUSD.

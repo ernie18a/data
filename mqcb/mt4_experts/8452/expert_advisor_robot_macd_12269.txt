@@ -1,0 +1,5 @@
+The EA is based on the MACD indicator.
+The period of the MACD indicator is 12-26-9.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8452

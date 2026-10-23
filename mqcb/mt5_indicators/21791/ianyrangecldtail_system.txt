@@ -1,0 +1,9 @@
+Actual author
+: KimIV
+The indicator paints candlesticks, which are beyond the
+i-AnyRangeCldTail
+channel. Candlesticks outside the channel limits are marked with color according to the trend. Candlesticks with the trend have bright fill color, ones against the trend - dark fill color.
+Fig. 1. Indicator i-AnyRangeCldTail_System
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21791

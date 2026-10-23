@@ -1,0 +1,18 @@
+Idea by:
+Scriptor
+Code mq5 by:
+barabashkakvn
+The EA is only working at the moment when a new bar appears (except for trailing that is active at each tick). Trade signals are formed based on indicator iATR (Average True Range, ATR) on the analysis of the High and the Low of prices within the interval.
+First, the volatility range (
+different
+) is found: The value of indicator ATR on bar #1 is multiplied by "Coefficient of volatility." Then we calculate depending on the current trend.
+If the current trend is BUY:
+We find the minimum within the interval from bar #2 to the ATR averaging period minus 1. Suppose "ATR: averaging period" is 9. Then we will search for the minimum within the interval from bar #2 to bar #8
+If the Close price of bar #1 is below the found minimum by
+different
+- it is a signal to close BUY positions and open SELL positions.
+The current trend is set to "SELL:
+The same is done for SELL positions.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22718

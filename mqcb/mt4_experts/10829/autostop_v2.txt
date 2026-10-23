@@ -1,0 +1,3 @@
+Autostop automatically sets stops(take profit, stop loss or both) on open trades. This saves you time when you are opening multiple trades in that you wont have to set stop levels before or after opening each trade. The EA scans an unlimited number of trades and sets stops with preset values to those that lack the stop you have allowed the EA to monitor. For pending orders, they will be modified once they open.
+New version includes:
+Bug where the EA might modify trades from EAs with magic numbers other than 0 has been solved, more accurate placement of stops even if at the time of modification the price has shifted from trade open price.

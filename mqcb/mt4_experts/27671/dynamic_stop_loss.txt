@@ -1,0 +1,1 @@
+Dynamic Stop-Loss is a tool for traders who trade without a stop-loss. It gives the traders a trick to trade as if there is no stop-loss but actually using one.

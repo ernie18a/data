@@ -1,0 +1,54 @@
+Author of the idea
+—
+Skoch
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Opens a SELL position on each bar, if Close of the 1st bar > Close of the 3rd bar. Opens a BUY position on each bar, if Close of the 3rd bar > Close of the 1st bar.
+If you want to change the order opening condition, it can be easily done by changing the condition in just one line:
+//--- BUY
+if
+((
+iClose
+(
+3
+)>
+iClose
+(
+2
+)) && (
+iClose
+(
+1
+)<
+iClose
+(
+2
+)))
+.
+.
+.
+//--- SELL
+if
+((
+iClose
+(
+3
+)>
+iClose
+(
+2
+)) && (
+iClose
+(
+2
+)<
+iClose
+(
+1
+)))
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17475

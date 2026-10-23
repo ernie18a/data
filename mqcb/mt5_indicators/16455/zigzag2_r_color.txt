@@ -1,0 +1,14 @@
+Real author:
+MetaQuotes Software Corp.
+The standard indicator
+Zigzag.mq4
+used the
+DRAW_SECTION
+style for plotting. This style allows to draw segments only between the points located on different bars. The DRAW_ZIGZAG drawing style allows to remove this limitation. For this purpose, two buffers are used instead of one. The Zigzag2_R_color.mq5 has been developed to illustrate this style. Added handling of the outside bar to the code, when the High of the current bar is higher than previous ones, and the Low of the current bar is lower than previous ones.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 25.01.2007.
+Fig1. The Zigzag2_R_Color indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16455

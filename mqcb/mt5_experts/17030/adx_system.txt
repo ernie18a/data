@@ -1,0 +1,315 @@
+Author of the idea
+—
+Collector
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Signals from the iADX (Average Directional Movement Index) indicator.
+Making decisions about opening and closing positions based on the iADX values:
+//+------------------------------------------------------------------+
+//| Expert tick function                                             |
+//+------------------------------------------------------------------+
+void
+OnTick
+()
+{
+double
+ADXP,ADXC,ADXDIPP;
+double
+ADXDIPC,ADXDIMP,ADXDIMC;
+ADXP = iADXGet(
+MAIN_LINE
+,
+2
+);
+ADXC = iADXGet(
+MAIN_LINE
+,
+1
+);
+ADXDIPP = iADXGet(
+PLUSDI_LINE
+,
+2
+);
+ADXDIPC = iADXGet(
+PLUSDI_LINE
+,
+1
+);
+ADXDIMP = iADXGet(
+MINUSDI_LINE
+,
+2
+);
+ADXDIMC = iADXGet(
+MINUSDI_LINE
+,
+1
+);
+int
+total=
+0
+;
+for
+(
+int
+i=
+PositionsTotal
+()-
+1
+;i>=
+0
+;i--)
+// returns the number of open positions
+if
+(m_position.SelectByIndex(i))
+if
+(m_position.
+Symbol
+()==
+Symbol
+() && m_position.Magic()==m_magic)
+total++;
+if
+(total==
+0
+)
+{
+//--- no opened positions identified
+if
+(m_account.FreeMargin()<(
+1000
+*Lots))
+{
+Print
+(
+"We have no money. Free Margin = "
+,m_account.FreeMargin());
+return
+;
+}
+//--- check for long position (BUY) possibility
+if
+((ADXP<ADXC) && (ADXDIPP<ADXP) && (ADXDIPC>ADXC))
+{
+if
+(!
+RefreshRates
+())
+return
+;
+if
+(m_trade.Buy(Lots,m_symbol.Name(),m_symbol.
+Ask
+(),m_symbol.
+Bid
+()-ExtStopLoss*
+Point
+(),
+m_symbol.
+Ask
+()+ExtTakeProfit*
+Point
+(),
+"adx sample"
+))
+{
+Print
+(
+"BUY order opened : "
+,m_trade.ResultPrice());
+}
+else
+{
+Print
+(
+"Error opening BUY. Result Retcode: "
+,m_trade.ResultRetcode(),
+", description of result: "
+,m_trade.ResultRetcodeDescription(),
+", ticket of deal: "
+,m_trade.ResultDeal());
+return
+;
+}
+}
+//--- check for short position (SELL) possibility
+if
+((ADXP<ADXC) && (ADXDIMP<ADXP) && (ADXDIMC>ADXC))
+{
+if
+(!
+RefreshRates
+())
+return
+;
+if
+(m_trade.Sell(Lots,m_symbol.Name(),m_symbol.
+Bid
+(),m_symbol.
+Ask
+()+ExtStopLoss*
+Point
+(),
+m_symbol.
+Bid
+()-ExtTakeProfit*
+Point
+(),
+"adx sample"
+))
+{
+Print
+(
+"SELL order opened : "
+,m_trade.ResultPrice());
+}
+else
+Print
+(
+"Error opening Sell. Result Retcode: "
+,m_trade.ResultRetcode(),
+", description of result: "
+,m_trade.ResultRetcodeDescription(),
+", ticket of deal: "
+,m_trade.ResultDeal());
+return
+;
+}
+return
+;
+}
+for
+(
+int
+i=
+PositionsTotal
+()-
+1
+;i>=
+0
+;i--)
+// returns the number of open positions
+if
+(m_position.SelectByIndex(i))
+if
+(m_position.
+Symbol
+()==
+Symbol
+() && m_position.Magic()==m_magic)
+{
+if
+(m_position.PositionType()==
+POSITION_TYPE_BUY
+)
+// long position is opened
+{
+if
+(ADXP>ADXC && ADXDIPP>ADXP && ADXDIPC<ADXC)
+{
+m_trade.PositionClose(m_position.Ticket());
+// close position
+return
+;
+// exit
+}
+if
+(ExtTrailingStop>
+0
+)
+{
+if
+(!
+RefreshRates
+())
+return
+;
+if
+(m_symbol.
+Bid
+()-m_position.PriceOpen()>
+Point
+()*ExtTrailingStop)
+{
+if
+(m_position.StopLoss()<m_symbol.
+Bid
+()-
+Point
+()*ExtTrailingStop)
+{
+m_trade.PositionModify(m_position.Ticket(),m_symbol.
+Bid
+()-
+Point
+()*ExtTrailingStop,
+m_position.TakeProfit());
+return
+;
+}
+}
+}
+}
+else
+{
+if
+(ADXP>ADXC && ADXDIMP>ADXP && ADXDIMC<ADXC)
+{
+m_trade.PositionClose(m_position.Ticket());
+// close position
+return
+;
+// exit
+}
+if
+(ExtTrailingStop>
+0
+)
+{
+if
+(!
+RefreshRates
+())
+return
+;
+if
+((m_position.PriceOpen()-m_symbol.
+Ask
+())>(
+Point
+()*ExtTrailingStop))
+{
+if
+((m_position.StopLoss()>(m_symbol.
+Ask
+()+
+Point
+()*ExtTrailingStop)) ||
+(m_position.StopLoss()==
+0
+))
+{
+m_trade.PositionModify(m_position.Ticket(),m_symbol.
+Ask
+()+
+Point
+()*ExtTrailingStop,
+m_position.TakeProfit());
+return
+;
+}
+}
+}
+}
+}
+return
+;
+}
+Result on EURUSD M15, from 2016.06.01 to 2016.11.24, initial deposit - 10000:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17030

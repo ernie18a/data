@@ -1,0 +1,12 @@
+Idea by:
+Inovance
+mq5 code by:
+barabashkakvn
+The EA trades on two custom indicators,
+CCI Color Levels
+and
+RSI Custom Smoothing
+The EA only operates when a new bar appears. Number of positions is not limited. Reverse of trading singals is available.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23404

@@ -1,0 +1,170 @@
+Author of the idea
+-
+Alex
+mq5 code author
+-
+barabashkakvn
+The EA uses iAC (Acceleration/Deceleration, Accelerator/Decelerator Oscillator, AC) indicator. The EA only operates when a new bar appears. The EA opens only one position at a time, therefore it is able to work both on hedging and netting accounts.
+Lot is calculated based on the trading history for the last
+History days
+(the
+Maximum Risk in percentage
+and
+Descrease factor
+parameters are used as well).
+The EA implements several signals for BUY and SELL (ac[] array here stands for AC indicator values)
+BUY signals:
+//--- indicator AC go UP
+if
+(ac[
+1
+]>
+0.0
+&& ac[
+2
+]>
+0.0
+)
+        {
+//--- check signal BUY
+if
+(ac[
+1
+]>ac[
+2
+] && ac[
+2
+]>ac[
+3
+])
+           {
+            ***
+           }
+         ***
+        }
+//--- indicator AC go DOWN
+if
+(ac[
+1
+]<
+0
+&& ac[
+2
+]<
+0
+)
+        {
+//--- check signal BUY
+if
+(ac[
+1
+]>ac[
+2
+] && ac[
+2
+]>ac[
+3
+] && ac[
+3
+]>ac[
+4
+])
+           {
+            ***
+           }
+         ***
+        }
+//--- indicator AC crosses zero from top to bottom
+if
+(ac[
+1
+]>
+0.0
+&& ac[
+2
+]<
+0.0
+)
+        {
+         ***
+        }
+      ***
+SELL signals:
+//--- indicator AC go UP
+if
+(ac[
+1
+]>
+0.0
+&& ac[
+2
+]>
+0.0
+)
+        {
+***
+//--- check signal SELL
+if
+(ac[
+1
+]<ac[
+2
+] && ac[
+2
+]<ac[
+3
+] && ac[
+3
+]<ac[
+4
+])
+           {
+            ***
+        }
+//--- indicator AC go DOWN
+if
+(ac[
+1
+]<
+0
+&& ac[
+2
+]<
+0
+)
+        {
+         ***
+//--- check signal SELL
+if
+(ac[
+1
+]<ac[
+2
+] && ac[
+2
+]<ac[
+3
+])
+           {
+            ***
+           }
+        }
+      ***
+//--- indicator AC crosses zero bottom up
+if
+(ac[
+1
+]<
+0.0
+&& ac[
+2
+]>
+0.0
+)
+        {
+         ***
+        }
+Example of opening BUY:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23086

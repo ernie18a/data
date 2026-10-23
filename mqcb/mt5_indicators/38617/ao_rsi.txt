@@ -1,0 +1,4 @@
+Logic goes, for buy ect. Ao changes direction above zero.
+Same time as engulfing candle , or close above last candles high.
+Rsi filters , two. full alerts.
+Rsi filters can be very useful to prevent alerts at the end of a trend.

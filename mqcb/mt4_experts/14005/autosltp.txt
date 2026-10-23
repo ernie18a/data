@@ -1,0 +1,55 @@
+Real author:
+dXerof
+This EA will help you set Stop Loss and Take Profit on your open position (manual order).
+EA can set SL/TP to all pairs, and you just need attach the EA on one pair only.
+In the input settings, you can set single pair or all pairs. If AllPairs = True, it means EA will manage all pairs. Just attach on one chart, EA will work with all pairs.
+Little Update:
+name:
+AutoSLTP upd.mq4
+input
+double
+TakeProfit=
+400
+;
+//40-->4 digits; 400-->5 digits
+input
+double
+StopLoss=
+150
+;
+//15-->4 digits; 150-->5 digits
+slbuy=
+NormalizeDouble
+(OrderOpenPrice()-iStopLoss*poin,digi);
+tpbuy=
+NormalizeDouble
+(OrderOpenPrice()+iTakeProfit*poin,digi);
+slsell=
+NormalizeDouble
+(OrderOpenPrice()+iStopLoss*poin,digi);
+tpsell=
+NormalizeDouble
+(OrderOpenPrice()-iTakeProfit*poin,digi);
+Input Settings:
+input
+bool
+AllPairs=True;
+// True - EA manages all pairs, False - EA manages only one pair to which EA is attached
+input
+double
+TakeProfit=
+40
+;
+// 4 digits format, 40 (4D) or 400 (5D), just need fill 40
+input
+double
+StopLoss=
+15
+;
+// same as TakeProfit format
+input
+double
+DurasiTime=
+60
+;
+// it means EA only manages order position which OrderOpenTime is less than 60 seconds (new entry)

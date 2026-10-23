@@ -1,0 +1,6 @@
+Ultra Trend is one of the well known indicators made for MetaTrader 5 now.
+The way how Ultra Trend is calculated is simple:
+Multiple period Jurik smooth values are calculated.
+Slope of each instance of such value is checked.
+Overall result of sloping up and sloping down is taken as a current trend.
+Even though at the first glance it seems that such an indicator will lag a lot, it is not the case, and it is rather useful for trend determination.

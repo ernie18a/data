@@ -1,0 +1,22 @@
+Envelopes
+technical indicator is formed with two Moving Averages, one of which is shifted upward and another one is shifted downward. The selection of optimum relative number of band margins shifting is determined with the market volatility: the higher the latter is, the stronger the shift is.
+Envelopes define the upper and the lower margins of the price range. Signal to sell appears when the price reaches the upper margin of the band; signal to buy appears when the price reaches the lower margin.
+The logic behind envelopes is that overzealous buyers and sellers push the price to the extremes (i.e., the upper and lower bands), at which point the prices often stabilize by moving to more realistic levels. This is similar to the interpretation of
+Bollinger Bands ®
+(BB).
+Envelopes indicator
+Calculation:
+UPPER BAND = SMA (CLOSE, N) * [1 + K / 1000]
+LOWER BAND = SMA (CLOSE, N) * [1 - K / 1000]
+where:
+UPPER BAND - upper line of the indicator;
+LOWER BAND - lower line of the indicator;
+SMA -
+Simple Moving Average
+;
+CLOSE - close price;
+N - period of averaging;
+K / 1000 - the value of shifting from the average (measured in basis points).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/28

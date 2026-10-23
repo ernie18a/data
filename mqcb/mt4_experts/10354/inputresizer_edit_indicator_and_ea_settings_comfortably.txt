@@ -1,0 +1,64 @@
+Today's expert advisors and custom indicators are overloaded with settings. Blessing 3 EA has 118 lines of input, The Beast EA has 155 and with every new version, the count of input parameters increases. Some more advanced pivot indicators have dozens of them. MT4 was designed years ago and offers a non-resizable dialog box showing only 8 lines of input
+.
+Majority of traders won't mind it as they set their settings once for ever and forget. But if you are one of them who test, optimize, evaluate or just play around with different settings on daily basis, you could find my utility useful
+.
+InputResizer
+is a set-and-forget utility. Once you set it up, you're done with it. Attach it to
+one single chart
+and
+all the input windows, in all MT4 instances on your PC/VPS, become resizable.
+Attached are two variants - indicator and EA, both doing the same thing. Choose a variant and use it;
+don't use both indicator and EA at once.
+Indicator variant - InputResizer.mq4:
+The indicator depends on incoming ticks, so if you choose it for whatever
+reason, you will have to wait for a tick until the indicator spots the window you have opened and manages it, so it's good to attach it to a chart (pair) that receives tic
+ks frequently - EURJPY and GBPJPY are good choices.
+EA variant - InputResizerEA.mq4:
+The advantage of using the EA is clear; it runs in loop mode and doesn't depend on ticks. It
+checks for windows every 300 msec (default setting) so you will never have to wait.
+However, if you start your MT4 when the market is closed, you have to switch the
+WeekendMode
+(see below) on, or use a tick generator utility or script.
+There's one little disadvantage in using the EA. I recommend using this variant, but it occupies a chart you can't use for another EA. It's a good idea to attach it to a dedicated chart (M1-W1, pair doesn't matter), minimize this chart and not use it for other purposes.
+Setup:
+Per default (set as above), InputResizer will place and resize every input window on its first appearance to specified coordinates (in pixels, relative to upper left screen corner). Then, if the input window (distinguished by EA/indicator name) re-appears (on any chart/platform), position/size at last window close will be applied.
+If RememberSize=false
+, all windows will be opened with
+InitCustom
+(if true) coordinates, maximized if
+InitMaximized=true
+(InitMaximized overrides InitCustom), or at default position and size if both InitCustom and InitMaximized are false.
+If RememberSize=true
+, the above is applied only for the first time a window appears. Then, coordinates are stored at each window close and re-applied next time. Stored coordinates override InitCustom and InitMaximized.
+If Individual=true
+, coordinates will be stored for each EA/indicator name separately. This setting is only relevant if RememberSize=true.
+SleepTime:
+(EA only) time between scans in milliseconds. Lower number results in faster response but increases CPU load.
+WeekendMode:
+(EA only) if set to
+true
+, no need to use a tick simulator to get it running. Use for weekend testing!
+Set it back to
+false
+during normal trading hours to prevent unexpected behavior.
+Reason: Start() is called from within Init() in WeekendMode; this way to get an EA running is quick, dirty and incorrect.
+This mode is not available in "_600" versions, if you need this EA version to work independently from incoming ticks, you have to use a tick simulator!
+Final notes
+:
+DLLs must be allowed for InputResizer to work. Otherwise, you will receive an alert message.
+If you open an input window of an indicator/EA for the first time, it will not resize until you select the input tab.
+If you use the EA version and want to change its settings while running (F7), switch to Monthly timeframe, change what you need and switch back to any lower TF.
+Coordinates are stored into global variables; they are persistent until you delete them. You can do this anytime by pressing F3 and deleting all global variables starting with 'iRes'.
+UPDATES:
+2011.06.25:
+bugfix: "z" character typo (thans to
+symr
+for spotting this bug).
+2011.06.29:
+upgrade: no need to input localised controls, more reliable operation, ability to handle multiple open input windows on different MT4 instances.
+2011.07.10:
+bugfix: indicator input boxes opened from within indicators list (Ctrl+I) couldn't be found.
+2014.02.08
+:
+important upgrade:
+added "_600" versions, modified to work with MT4 build 600 and hopefully newer.

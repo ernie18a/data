@@ -1,0 +1,21 @@
+This indicator implements the original “
+Average True Range (ATR)
+” developed by
+John Welles Wilder Jr.
+, as described in his book—
+New Concepts in Technical Trading Systems [1978]
+.
+It uses
+Wilder’s moving average
+, also known as the
+smoothed moving average (SMMA)
+, instead of a
+simple moving average (SMA)
+as used on
+MetaTrader’s
+built-in ATR indicator. The default period applied is 7, instead of 14, as per the description in his book.
+The code uses conditional compilation and will compile on both MQL4 and MQL5. Please note that all my
+CodeBase
+publications’ source code are now also available in “Public Projects” tab of
+MetaEditor
+under the name “FMIC”.

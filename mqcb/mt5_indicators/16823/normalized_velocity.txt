@@ -1,0 +1,2 @@
+This is a normalized velocity. By default it is using a gradient coloring.
+To turn the gradient coloring off, set the color steps to to less than 2. To set it show the colors on slope change, set the color steps to 2 and all the above is going to be drawn in different shades of gradient calculated colors.

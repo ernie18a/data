@@ -1,0 +1,13 @@
+Author: Matias Romeo
+Here, the focus is on the middle part of the price series. In fact, they are double-smoothed simple moving averages. The simple Moving Averages' length depends on evenness or oddness of the chosen number of periods.
+Operations for TMA calculation:
+1. To the number of periods of Moving Average 1 is added.
+2. The received sum is divided to 2.
+3. If the result was released fraction, it is rounded up to a whole.
+4. The simple Moving Average of close prices with the number of
+periods obtained in point 3 is calculated.
+5. By using the value obtained in point 3 again, the simple
+Moving Average of the Moving Average calculated in point 4 is calculated.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7433

@@ -1,0 +1,128 @@
+Every trader who automates eventually meets error 130, "Invalid stops", or  an order that simply never appears. The usual reaction is to blame the EA. Most of the time the EA is fine and the server is enforcing a contract limit
+that is never shown in the terminal window: the stops level, the freeze  level, or a minimum lot step that your position sizing does not respect. These limits differ per symbol and per broker, and they change without
+notice. This script prints them.
+Load it on any chart. It reads specifications only - it never opens,  modifies or closes anything, and algorithmic trading does not need to be enabled. Give it a comma-separated symbol list, or leave the input empty and it walks your Market Watch selection.
+WHAT IT PRINTS
+For each symbol: digits, point, tick size and value, contract size, min /  step / max lot, spread and whether it floats, execution mode, swap long and short, and the margin required for one minimum lot measured against your current free margin. Then the part that answers the actual question:
+--- XAUUSD (bid
+4402.15
+/ ask
+4402.63
+) ---------------------
+stops level
+350
+pts | freeze level
+0
+pts | EFFECTIVE band
+351
+pts
+VERDICT: a stop/pending placed
+100
+pts
+from
+price would be REJECTED
+as
+'Invalid price'
+(band
+is
+351
+pts)
+buy at ask
+4402.63
+: you asked SL
+4401.63
+-> nearest legal SL
+4399.12
+(moved out)
+The last line is the useful one. It does not just tell you that a 100-point  stop fails on this symbol; it tells you the exact level the server would accept instead.
+THE RULE
+Two separate limits can reject a stop, and tools that check only one of them  give the wrong answer on half the brokers:
+double
+MinStopDistance(
+const
+string
+sym)
+{
+long
+stops =
+SymbolInfoInteger
+(sym,
+SYMBOL_TRADE_STOPS_LEVEL
+);
+long
+freeze =
+SymbolInfoInteger
+(sym,
+SYMBOL_TRADE_FREEZE_LEVEL
+);
+long
+band = (stops > freeze ? stops : freeze) +
+1
+;
+return
+band *
+SymbolInfoDouble
+(sym,
+SYMBOL_POINT
+);
+}
+Three decisions are packed into those four lines.
+The band is the LARGER of the two limits, because some servers leave freeze  at zero and enforce stops, while others do the opposite. Taking whichever is bigger covers both without knowing which kind of server you are on.
+One point is added, because a level sitting exactly on the edge of the band  is still refused by many servers. The documented rule is "closer than", the implemented rule is often "closer than or equal to", and one point costs nothing.
+The result is returned in PRICE units, not points. That is what you need  when you build the actual stop level, and it removes the point-versus-pip confusion that causes a factor-of-ten error on 5-digit symbols.
+USE IT IN YOUR OWN EA
+The second function is the one worth copying. It takes the stop you want and  returns the nearest one the server will accept, on the correct side of price:
+double
+LegalStopLoss(
+const
+string
+sym,
+const
+bool
+isBuy,
+const
+double
+price,
+const
+double
+wanted)
+{
+double
+dist = MinStopDistance(sym);
+int
+digits = (
+int
+)
+SymbolInfoInteger
+(sym,
+SYMBOL_DIGITS
+);
+double
+sl = wanted;
+if
+(isBuy) {
+if
+(price - sl < dist) sl = price - dist; }
+else
+{
+if
+(sl - price < dist) sl = price + dist; }
+return
+NormalizeDouble
+(sl, digits);
+}
+A stop that is already legal comes back unchanged, so it is safe to route every stop through it. Wrapping your existing calculation costs one line:
+double
+sl = LegalStopLoss(
+_Symbol
+,
+true
+, ask, ask - atr *
+1.5
+);
+This matters most where volatility is high relative to the band. An ATR stop  that is comfortable on EURUSD can fall inside the band on gold or on an index during a quiet session - which is exactly when the rejection surprises you, because the same code worked yesterday.
+NOTES ON READING THE OUTPUT
+A wide band is not a broker being difficult. It usually reflects how the  symbol is priced and hedged, and it is the reason a scalping EA that works on one server dies on another without a single line of code changing.
+Compare before you migrate. CSV export is on by default and writes  BrokerSpecs.csv to MQL5\Files, one row per symbol with the band, the minimum stop distance and the nearest legal level included. Run the script on two brokers, put the files side by side, and the differences that would have cost you a week of debugging are visible in a minute.
+Check margin before you scale. The margin column is for one minimum lot. If  that number is already close to your free margin, your position sizing has a ceiling you have not measured yet.
+Symbols must be in Market Watch and must have received at least one tick.  If a symbol reports no tick data, open its chart once and run again.

@@ -1,0 +1,29 @@
+The iMirror indicator (analogue of
+iMirror for MT4
+) shows a prices mirrored upside down.
+When the mouse is on the indicator, its color changes to the chart color, while the chart is dimmed. When you click on the indicator, it remains in the foreground till another click.
+The indicator has three parameters:
+input
+color
+Up=
+clrGreen
+;
+// The color of the bullish candlestick
+input
+color
+Down=
+clrRed
+;
+// The color of the bearish candlestick
+input
+color
+Back=
+clrMidnightBlue
+;
+// Background color
+The indicator has been updated, its code has been optimized.
+Fig.1 Chart in the foreground
+Fig.2 Chart in the background, the cursor is on the indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2285

@@ -1,0 +1,18 @@
+The indicator can show covariation, correlation or Beta ratio of two symbols (selected by Mode1 variable).
+Calculation may be performed by the price set by the Price parameter. Aside from the price, the calculation may be performed based on the ROC (the difference between the current and previous price value) and ROC% values (the ratio of the difference between the current and previous price values to the previous price value), selected by Mode2 variable.
+Input parameters:
+Periods
+- Bar period;
+Symbol1
+- Symbol 1;
+Symbol2
+- Symbol 2;
+Mode1
+- Mode 1: 0 - covariation, 1 - symbol 1 Beta, 2 - symbol 2 Beta, 3 - correlation;
+Price
+- Price: 0 - Close, 1 - Open, 2 - High, 3 - Low, 4 - Median, 5 - Typical, 6 - Weighted;
+Mode2
+- Mode 2: 0 - Price, 1 - ROC from Price, 2 - ROC% from Price.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/572

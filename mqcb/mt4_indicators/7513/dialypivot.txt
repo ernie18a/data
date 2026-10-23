@@ -1,0 +1,2 @@
+Author: 2005 Free software for trader
+Dialy Pivot indicator.

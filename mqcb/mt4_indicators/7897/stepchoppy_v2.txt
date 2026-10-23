@@ -1,0 +1,2 @@
+Author: igorad
+StepChoppy_v2 indicator. Uses indicators: StepMA_v7, StepRSI_v5.2.

@@ -1,0 +1,9 @@
+Real Author:
+jppoton@yahoo.com
+Fractal Momentum. For a more detailed description please see the
+author's blog
+.
+Fig1. The Fractal_Momentum indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17043

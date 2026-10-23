@@ -1,0 +1,4 @@
+The idea of the indicator
+The indicator counts (in percentage) how many times the 'Close' price has been above or below the 'iMA' indicator. The calculation period is equal to the indicator averaging period.
+Please note: the 'iMA' indicator has been added to the main window manually for visualization purposes.
+Rice. 1. Percentage of CLose and iMA prices

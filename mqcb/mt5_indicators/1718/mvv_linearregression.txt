@@ -1,0 +1,10 @@
+Real author:
+MVV
+A standard linear regression channel with support and resistance levels. If we bind the start of the channel to the price maximum, then with each new price minimum the channel will be redrawn. If within five bars the minimum is not updated, the indicator draws a price tag, which, after breaking the channel, becomes a strong support level. And the opposite for an upward channel.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 20.05.2008.
+Figure 1. The MVV_LinearRegression indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1718

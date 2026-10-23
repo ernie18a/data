@@ -1,0 +1,2 @@
+Author: Original code by Nick Bilak, Akuma99.
+Bollinger Squeeze_v9 indicator.

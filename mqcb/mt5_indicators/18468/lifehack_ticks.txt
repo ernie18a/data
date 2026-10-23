@@ -1,0 +1,5 @@
+An indicator of ticks (Bid and Ask). Displays the last 300 ticks.
+The indicator can also be run in the tester. This feature makes it possible to evaluate the differences and similarities between different tick generation modes:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18468

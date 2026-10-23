@@ -1,0 +1,15 @@
+The Delta Oscillator indicator displays the difference in the
+Delta
+indicator lines as a histogram.
+The indicator has no input parameters.
+Calculations:
+OSC = Price - Delta
+where:
+Delta = Price + Diff
+Diff = Log10(PrevPrice / Price)
+Price = (Open + High + Low + Close) / 4.0
+Fig. 1. Delta_oscillator
+Fig. 2. Delta_oscillator + Delta indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21712

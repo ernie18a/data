@@ -1,0 +1,9 @@
+Theory:
+In technical analysis we can state that all is about filtering. Filtering the "insignificant", filtering the "false", and so on ... almost all tools are designed to "filter" out something.
+Here is one indicator that is filtering the source of it : the prices. It is using a sort of "deviation"* for it. But, in order to not to keep it simple the "deviation" used is a self adjusting deviation (it depends on the filter size). That way it filters out the desired price changes and leaves us with the filtered values.
+Usage:
+The filter size can be fractional. Some experimenting with the period and filter size is advised prior to using the indicator for trading decisions.
+You can use the color change as signals when using this indicator.
+PS
+: the reason for the * next to "deviation". Even though it is similar to standard deviation, it is actually very different. Here is a comparison of the "deviation" used by the filter (upper) and standard deviation (lower).
+Also, it seems that these days the "self adjusting" word combination is often patched to what usually is called repainting otherwise. This indicator does not repaint. But for demonstration of how it adjusts, here are 3 instances of the "deviation" used that are having different value just because of the filter size. As it can be seen, the values are different, and they are adjusted to the calculated values - but without repainting.

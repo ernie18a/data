@@ -1,0 +1,4 @@
+Candle ZigZag is an indicator which changes its leg if a candlestick color changes
+It supports Period of 1 while default ZigZag in Example folder does not work for period 1.
+it helps trader to analyze chart in flat mode unlike line chart which has curve in price movement. Close mode can be enabled disabled.
+Line chart vs Candle ZigZag with close mode = true

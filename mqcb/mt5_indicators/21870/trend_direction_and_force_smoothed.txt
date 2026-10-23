@@ -1,0 +1,6 @@
+Trend direction and force index is a useful indicator, but it probably is showing too much signals in some cases
+This version is adding smoothing in order to make the number of signals generated less. Smoothing methods that can be used in this indicator are :
+simple moving average
+exponential moving average
+smoothed moving average
+linear weighted moving average

@@ -1,0 +1,13 @@
+Real author:
+Alexander Elder
+The system is based on two indicators -
+MACD
+and
+EMA
+. When both indicators move upwards, a candlestick is colored in green, when they move downwards, it is colored in red. In case of multidirectional movement, it turnes blue.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+17.06.2010.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/685

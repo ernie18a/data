@@ -1,0 +1,5 @@
+I'm waiting for your opinions.
+The idea is related to the indicator T3MA-ALARM. I.e., as soon as the arrow appears, the EA makes a trade (buys or sells). You can also adjust it to make one or several trades at a time.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7904

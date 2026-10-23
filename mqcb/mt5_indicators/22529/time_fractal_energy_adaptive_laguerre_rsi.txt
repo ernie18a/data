@@ -1,0 +1,6 @@
+Background :
+For some time one Laguerre RSi is floating around with the strange name used : the "Time Fractal Energy adaptive Laguerre RSI". More or less it is an ATR (Average True Range) adaptive Laguerre RSI.
+This version :
+It is using the ATR adapting method for Laguerre RSI but it is also using Laguerre filter for smoothing the RSI values. Both are adaptive, so this indicator is a sort of "completely adaptive" indicator. The smoothing addition is a deviation from the formula used normally (it was added to filter out some false signals)
+Usage :
+You can use color changes for signals. It seems to be usable for short term decisions though (since it is adapting itself all the time, it tends to reflect shprt term trend changes better than long term changes)

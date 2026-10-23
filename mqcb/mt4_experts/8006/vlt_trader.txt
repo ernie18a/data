@@ -1,0 +1,20 @@
+Author:
+FORTRADER.RU
+The system is based on volatility compression. The signal to enter is formed when the market forms the smallest candlestick among a certain amount of bars.
+Rules of Forming Position Entering Signal
+- At forming the next candlestick, the last 8 bars starting from the second-to-last one are calculated, and the minimum value is found.
+- If the first bar takes the size value that is less than the minimum one, then we place:
+·
+a Buy order for the maximum candlestick value + 1 point;
+·
+a Sell order for the minimum candlestick value - 1 point.
+Test Results:
+The system was optimized for the period between 2007.06.01 and 2008.01.01. It is tested for the period from 2007.06.01 to the present time.
+The best ever parameters are stop=65 profit=70.
+A more detailed report and description of the trading strategy can be found in our magazine at:
+http://fortrader.ru/downloads/redirect.php?dlid=15
+All you suggestions concerning elaboration of the system are welcome at:
+letters@fortrader.ru
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8006

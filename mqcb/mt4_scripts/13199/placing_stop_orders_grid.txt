@@ -1,0 +1,5 @@
+The script determines the price at the point of the chart, on which it was dropped down, and depending on that it places a grid of pending orders.
+If the specified price is lower than the current price, the script places a Sell order and a Sell Stop grid below it, if it is higher, then it places a Buy order and a Buy Stop grid above it.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13199

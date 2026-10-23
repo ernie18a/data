@@ -1,0 +1,6 @@
+The Percentage Price Oscillator Extended (PPO) is a technical Momentum indicator showing the relationship between two Moving Averages. To calculate the PPO, subtract the 26-day Exponential Moving Average (EMA) from the nine-day EMA, and then divide this difference by the 26-day EMA. The end result is a percentage that tells the trader where the short-term average is relative to the longer-term average.
+Calculated as:
+The PPO and the Moving Average Convergence Divergence (MACD) are both Momentum indicators that measure the difference between the 26-day and the nine-day Exponential Moving Averages. The main difference between these indicators is that the MACD reports the simple difference between the Exponential Moving Averages, whereas the PPO expresses this difference as a percentage. This allows a trader to use the PPO indicator to compare stocks with different prices more easily. For example, regardless of the stock's price, a PPO result of 10 means the short-term average is 10% above the long-term average.
+The Extended version introduces a signal line (EMA is used for Signal line calculation too) and that way the signals are a bit faster compared to the
+basic version
+.

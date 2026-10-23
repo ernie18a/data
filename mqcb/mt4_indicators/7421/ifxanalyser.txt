@@ -1,0 +1,2 @@
+Author: Renato P. dos Santos
+iFXAnalyser indicator.

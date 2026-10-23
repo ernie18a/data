@@ -1,0 +1,26 @@
+Breakdown oscillator is based on the observation that the longer the price stays within the lower Bollinger Bands line, the higher the probability of its falling.
+It has six input parameters:
+Period
+- calculation period
+Band period
+- Bollinger Bands calculation period
+Deviation
+- Bollinger Bands deviation
+Slope factor
+- the stronger the downward movement, the greater the negative value of the oscillator.
+Applied price
+Upper level
+- upper level value (lower level = 0)
+Calculation:
+Breakdown = 100.0 * EMA / Bottom
+where:
+EMA = EMA(Difference,Period)
+Difference = Applied price - Bottom + Slope factor * (SMA-PrevSMA)
+Bottom = SMA - Deviation * StdDev
+StdDev - StandardDeviation(Applied price,Band period)
+SMA = SMA(Applied price,Period)
+Fig. 1. Breakdown oscillator
+Fig. 2. Breakdown oscillator+Bollinger Bands
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22343

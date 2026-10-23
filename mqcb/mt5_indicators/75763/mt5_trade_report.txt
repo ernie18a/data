@@ -1,0 +1,40 @@
+Trade Report Table — a standalone indicator that shows a full trading report table on your chart, inspired by the MT5 report generated when exporting history to XML/HTML.
+PURELY INFORMATIONAL — this indicator does NOT trade. It simply scans your account's complete deal history (all symbols, all time) and displays the performance statistics in a clean, readable table.
+WHAT IT SHOWS
+Profitability:
+Total Net Profit / Gross Profit / Gross Loss
+Profit Factor / Expected Payoff
+Recovery Factor / Sharpe Ratio
+Drawdown:
+Balance Drawdown (Absolute / Maximal / Relative)
+Trades:
+Total Trades, Short & Long Trades (won %)
+Profit Trades (%) / Loss Trades (%)
+Largest / Average profit & loss trade
+Streaks:
+Max consecutive wins/losses (count + money)
+Max consecutive profit/loss (count + money)
+Average consecutive wins/losses
+Extra:
+Win Rate (%)
+Payoff Ratio (Avg Win / Avg Loss)
+Total Commission + Swap
+Total Deposits / Withdrawals
+FEATURES
+All symbols, full account history — no filters needed
+Auto refresh when new deals close, plus periodic refresh
+Color-coded values: profit in green, loss in red (can be disabled)
+Position anywhere: 4 corners + X/Y offset, auto re-position on resize
+Dark theme palette matching the classic terminal look
+Fully configurable: font size, colors, refresh interval
+Lightweight — only redraws texts on refresh (no full redraw spam)
+INPUTS
+Display   : X/Y offset, corner, font size, show header/footer, color coding
+Refresh   : auto refresh interval (default 30 s)
+Colors    : background, header, accent, label, value, positive, negative
+HOW TO USE
+Attach "Trade Report Table" to any chart
+The table appears immediately (top-left by default)
+Statistics are calculated from the ENTIRE account history — not just the chart symbol
+Works on any symbol, timeframe and account type. Free for general use
+.

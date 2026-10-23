@@ -1,0 +1,15 @@
+Indicator Spyker.
+Input Parameters:
+extern
+int
+JimmyEMA
+=
+1
+;
+extern
+int
+SignalSMA
+=
+375
+;
+Spyker

@@ -1,0 +1,12 @@
+The real author:
+Nikolay Kositsin + lukas1
+The iSAR technical indicator which uses as basic price series the
+X2MA
+Moving Average. The given indicator attempts to smooth parabolic by the Moving Average for more confidence of its signals.
+This indicator was first implemented in MQL4 and published in
+CodeBase
+on 27.01.2009.
+Fig.1 The ColorX2MA-Parabolic indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1192

@@ -1,0 +1,14 @@
+Concept:
+Identifies market microstructure turning points based on ICT/SMC principles.
+It tracks consecutive delivery candles, sets reference levels from their delivery open, and confirms a
+Change in State of Delivery (CISD)
+when price reclaims and closes past those levels.
+Core Features
+True CISD Lines & Labels:
+Plots active pending levels into the future, and on confirmation draws dashed/solid levels, mid-line labels, and directional entry arrows (▲/▼).
+Liquidity Sweeps:
+Automatically identifies sweep highs/lows and marks the wick expansions that take out swing liquidity before rejecting.
+Market Structure Shift (MSS):
+Detects swing structure breaks and marks them with dots.
+Smart Candle Coloring:
+Overlays the chart candles with customized Bull (Emerald Green) and Bear (Red) colors directly or aligned with the confirmed CISD trend.

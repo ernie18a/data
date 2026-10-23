@@ -1,0 +1,21 @@
+Gann HiLo Activator/SuperTrend Bar signal indicator is based on
+Gann HiLo Activator
+and
+SuperTrend
+indicators.
+It has four inputs:
+GHLA period
+- Gunn HiLo Activator calculation period
+SuperTrend period
+- SuperTrend calculation period
+SuperTrend shift
+- SuperTrend line shift relative to the price
+Use SuperTrend filter
+- use the trend filter in SuperTrend (Yes/No)
+Gunn HiLo Activator and SuperTrend are not required. They are calculated by the indicator independently.
+If both Gunn HiLo Activator and SuperTrend indicators show an uptrend, the green label is set
+If both indicators show a downtrend, the red label is set
+In any other cases, the gray label is placed.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22623

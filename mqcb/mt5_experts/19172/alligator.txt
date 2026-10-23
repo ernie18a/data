@@ -1,0 +1,14 @@
+The author of the idea
+:
+Andrey Kornishkin
+,
+the mq5 code author
+:
+barabashkakvn
+.
+A trading system based on the Alligator indicator. If possible, the EA moves positions to breakeven and then enables trailing stop.
+BUY Signal:
+SELL Signal:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19172

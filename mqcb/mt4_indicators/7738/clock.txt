@@ -1,0 +1,6 @@
+The object, the time is displayed in, can be dislocated at any point of the chart. The only external variable is the
+TextColor
+, it specifies the color of the text.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7738

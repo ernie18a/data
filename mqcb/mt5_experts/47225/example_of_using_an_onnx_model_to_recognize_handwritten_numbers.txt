@@ -1,0 +1,95 @@
+An Expert Advisor that can recognize handwritten digits
+The
+MNIST
+database consists of 60,000 images for training and 10,000 images for testing. These images were created by "re-mixing" an original NIST set of 20x20 pixel black-and-white samples, which in turn were obtained from the US Census Bureau and supplemented with testing samples taken from American high school students. The samples were normalized to 28x28 pixel size and anti-aliased, which introduced grayscale levels.
+The trained handwritten digit recognition model mnist.onnx was downloaded from Github from
+Model Zoo
+(opset 8). Those interested can download and try other models, excluding models with opset 1, which is no longer supported by the latest ONNX runtime. Surprisingly, the output vector was not processed with the
+Softmax
+activation function, as is common in classification models. Well, this is not a problem as we can easily implement this ourselves.
+int
+PredictNumber(
+void
+)
+  {
+static
+matrixf
+image(
+28
+,
+28
+);
+static
+vectorf
+result(
+10
+);
+
+   PrepareMatrix(image);
+if
+(!
+OnnxRun
+(ExtModel,
+ONNX_DEFAULT
+,image,result))
+     {
+Print
+("
+OnnxRun
+error ",
+GetLastError
+());
+return
+(-
+1
+);
+     }
+result.Activation(result,
+AF_SOFTMAX
+);
+int
+predict=
+int
+(result.ArgMax());
+if
+(result[predict]<
+0.8
+)
+Print
+(result);
+Print
+("value ",predict," predicted with probability ",result[predict]);
+return
+(predict);
+  }
+Draw digits in a special grid using the mouse, holding down the left mouse button. To recognize the drawn digit, press the CLASSIFY button.
+If the obtained probability for the recognized digit is less than 0.8, the resulting vector with probabilities for each class is printed to the log. For example, try classifying an empty unfilled input field.
+[
+0.095331445
+,
+0.10048489
+,
+0.10673151
+,
+0.10274081
+,
+0.087865397
+,
+0.11471312
+,
+0.094342403
+,
+0.094900772
+,
+0.10847695
+,
+0.09441267
+]
+value
+5
+predicted with probability
+0.11471312493085861
+For some reason, the recognition accuracy is notably lower for the number nine (9). Left-slanted digits are recognized more accurately.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/47225

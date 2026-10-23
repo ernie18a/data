@@ -1,0 +1,2 @@
+Jurik smoothing (not the same as Jurik average - the Jurik smoothing we are using for MetaTrader 5 is actually an indicator that is completely done using MetaTrader 5 and was not developed by Mark Jurik, but since the basic theory of it was similar to the Jurik average, the name was kept) is very responsive to price changes, is very smooth and it makes it a very good candidate for this type of trend assessment.
+Some experimenting is advised, but, all in all, it should be usable with the same parameters for different symbols and timeframes.

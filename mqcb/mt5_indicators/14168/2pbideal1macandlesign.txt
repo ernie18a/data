@@ -1,0 +1,10 @@
+A semaphore signal indicator that uses two
+2pbIdeal1MA
+indicators, based on Open and Close values of the price series. The signals occur when the difference between these indicators changes sign, i.e. in full accordance with the change of the
+2pbIdeal1MACandle
+indicator fill color.
+The indicator requires 2pbIdeal1MA.mq5 indicator file. Place it in <terminal_data_folder>\MQL5\Indicators.
+Fig.1. The 2pbIdeal1MACandleSign indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14168

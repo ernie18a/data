@@ -1,0 +1,6 @@
+Real author:
+Senior Linux Hacker
+The indicator builds two rectilinear channels of standard deviations with different periods and the curvelinear channel of the parabolic regression with interpolation of a price chart future values.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/767

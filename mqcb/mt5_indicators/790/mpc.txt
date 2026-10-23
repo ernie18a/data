@@ -1,0 +1,15 @@
+Real author:
+alexjou
+In trading systems, based on the channel breakout, the long position is opened when the price shows new X days maximum, and short position is opened when the price forms new X day minimum. It allows to forecast the trend direction. But there is a problem - very often trend detected with a lag and the most of the profit is lost.
+The
+HighestLowestRange (HLR)
+indicator helps to resolve the market entry problem before the channel breakout. The MPC indicator plots a simple channel using extermums of the specified period. It can be used for additional visual control of trading system (channel breakout), based on
+HighestLowestRange (HLR)
+indicator
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+25.01.2007.
+MPC indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/790

@@ -1,0 +1,2 @@
+This is an updated version of FRASMA (https://www.mql5.com/en/code/8718). It takes the fractal dimension from FGDI (https://www.mql5.com/en/code/8844), and adds a parameter "shift" to move the MA by "shift" steps to the right (if "shift" is positive) or to the left (if "shift" is negative), this addition comes from the request of a reader of my blog.
+Here is a screen capture with "shift" set to 10:

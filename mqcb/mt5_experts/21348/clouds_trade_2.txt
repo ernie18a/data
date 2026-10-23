@@ -1,0 +1,22 @@
+Idea by
+:
+Vadim Andreevich
+MQL5 code by
+:
+barabashkakvn
+.
+Along with the option of enabling/disabling Stop Loss, Take Profit, and Trailing, you can also choose how to use the signals of indicators: To use either both signals (from Fractals and from Stochastic) or the signal from only one of the indicators.
+Inputs
+Lots - position volume
+Stop Loss (in pips) - Stop Loss
+Take Profit (in pips) - Take Profit
+Trailing Stop (in pips) - trailing
+Trailing Step (in pips) - trailing step
+Minimum profit (in money) - minimum profit (in money), at which the position will be closed
+Minimum profit (in pips) - minimum profit (in pips), at which the position will be closed
+Use Fractals - use the signals of Fractals
+Use Stochastic - use the signals of Stochastic
+One day: one deal - only one trade may be opened per day
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21348

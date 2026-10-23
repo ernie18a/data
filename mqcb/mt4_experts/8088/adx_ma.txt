@@ -1,0 +1,23 @@
+The strategy is based on two indicators: ADX and MA.
+The system is described in more details
+here
+. A detailed article about testing of this system is available in our
+magazine's issue from 21.04.2008
+. You can discuss it or make suggestions on
+our forum
+.
+Trading Strategy Algorithm:
+1. Open a daily chart for EURUSD, lots 0.1.
+2. Draw an ADX with the period of 14, mark level 20 in the indicator.
+3. Draw an MA with the period of 21.
+Buying signal: The bar closes above MA, and the ADX line is above 20.
+Selling signal: The bar closes below MA, and the ADX line is above 20.
+In both cases, trades should be closed, as soon as the bar intersects the MA in the opposite direction.
+Having tested the above rules on the period from 2007.01.11 to 2008.01.11, we obtained the following results (At close prices):
+We added TakeProfit, StopLoss, TralingStop, the values being added separately for buying and for selling. Having optimized the new parameters on the same period, we obtained the following result for the EA:
+You can find the results of a forward test outside the optimization area in
+our magazine's issue from 21.04.2008
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8088

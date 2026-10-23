@@ -1,0 +1,4 @@
+The indicator sets the "Fixed scale" property to a chart window and holds the first bar in the middle of the window. If you move the chart, the rightmost bar will be placed in the middle of the window.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18152

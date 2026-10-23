@@ -1,0 +1,6 @@
+Function, draws arrows and alerts, when
+rsi is overbought or sold
+for a buy ect, rsi below 30, price opens above the 8 moving average
+and the lower wick of the candle is greater than the body.
+Best for finding a possible reversal in these levels.
+Shows a change of the micro trend.

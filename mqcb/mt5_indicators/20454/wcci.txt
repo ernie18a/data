@@ -1,0 +1,25 @@
+The Weighted CCI indicator consists of two CCIs (fast and slow), which are calculated taking into account the ratio of two ATRs (fast and slow) and two maximum overbought/oversold levels. The indicator shows two lines in a separate window: the fast CCI line and the slow CCI line.
+It has ten input parameters:
+CCI Fast period
+- fast CCI calculation period;
+CCI Slow period
+- slow CCI calculation period;
+Weight
+- influence of ATR values on CCI values;
+ATR Fast period
+- fast ATR calculation period;
+ATR Slow period
+- slow ATR calculation period;
+Applied price
+- price used for the calculation of two CCIs;
+Overbought max
+- the maximum overbought value (used in calculations);
+Overbought
+- the overbought level;
+Oversold
+- the oversold level;
+Oversold min
+- the minimum oversold value (used in calculations).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20454

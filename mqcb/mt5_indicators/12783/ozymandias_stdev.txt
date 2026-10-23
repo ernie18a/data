@@ -1,0 +1,16 @@
+Original author:
+GoldnMoney
+The
+Ozymandias
+indicator with additional trend strength indication using colored rhombuses based on the standard deviation algorithm.
+If the standard deviation of the Ozymandias indicator is higher than the dK input parameter value, then a colored rhombus appears on the moving average. Its color corresponds to the current trend direction.
+input
+double
+dK=
+2.0
+;
+// Square-law filter coefficient
+Fig. 1. The Ozymandias_StDev indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12783

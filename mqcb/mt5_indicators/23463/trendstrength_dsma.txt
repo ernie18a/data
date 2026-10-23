@@ -1,0 +1,6 @@
+Theory :
+"Trend strength" is usually used on oscillators. But we also started using it on a non-oscillator types of indicators. This is one of them
+This version :
+It is using Ehlers' deviation scaled moving average as a basi value fro trend strength calculation. The value is displayed on the main chart (the trend strength as well as the DSMA value too)
+Usage :
+You can use the color change as signals

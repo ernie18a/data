@@ -1,0 +1,21 @@
+Description:
+The Expert Advisor OsMaSter_V0 perform trading based on the analysis of the indicator OsMA.
+TF = 0; Period. May be the one of 0, 1, 5, 15, 30, 60, 240, 1440, 10080, 43200. 0 means the period of the current chart.
+fast_ema_period = 9; averaging period for calculating the fast moving average.
+slow_ema_period = 26; averaging period for calculating the slow moving average.
+signal_period = 5; averaging period to calculate the signal line.
+applied_price = 0; used price. Can be any from 0 - 6.
+shift_1 = 0; first index of obtained value from the indicator buffer (shift relative to the current bar to the specified number of periods ago).
+shift_2 = 1; second index of obtained value from the indicator buffer (shift relative to the current bar to the specified number of periods ago).
+shift_3 = 2; third index of obtained value from the indicator buffer (shift relative to the current bar to the specified number of periods ago).
+shift_4 = 3; Fourth index of obtained value from the indicator buffer (shift relative to the current bar to the specified number of periods ago).
+Lots = 0.01; // Lot Size
+StopLoss = 50, // Size stop in pips
+TakeProfit = 50, // size of skull cap in pips
+MagicNumber = 20081975; // magic number of advisor's orders
+Slippage = 3; // Allowable slippage rates when opening position
+NumberOfTry = 5, // Number of trade attempts at requotes
+Author's site
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9807

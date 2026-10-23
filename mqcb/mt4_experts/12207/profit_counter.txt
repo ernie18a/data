@@ -1,0 +1,3 @@
+It's a hedging Expert Advisor, which trades only one time per day.
+You can set time when to start trade.
+Test results:

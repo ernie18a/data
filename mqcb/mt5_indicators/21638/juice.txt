@@ -1,0 +1,2 @@
+For some time there was an indicator called Juice that was used in many systems. This is MetaTrader 5 version of that indicator.
+What is it actually? It is a standard deviation indicator that shows if the deviation is below or above some fixed level. That way it can show if the volatility is increased or not compared to that level. So, it is not a directional indicator, but shows times of increased or decreased market volatility and should be used as such.

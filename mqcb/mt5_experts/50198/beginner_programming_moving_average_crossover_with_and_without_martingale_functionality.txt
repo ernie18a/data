@@ -1,0 +1,29 @@
+All of the functions used in the Expert Advisor are found in the ImportantFunctions.mqh include file.
+There are 2 Expert Advisors, both using the price crossing the moving average as their entry signal, with a simple difference: one uses Martingale when losses occur, and the other does not.
+I don't recommend using any of the EAs with a live account, they are made for demonstration purposes only.
+Simple Moving Average EA Inputs:
+MAPeriod
+: The period of the Moving Average indicator.
+LotSize
+: The lot size used to enter trades.
+TPPoints
+: Take profit points.
+SLPoints
+: Stop loss points.
+Moving Average EA with Martingale Inputs:
+MAPeriod
+: The period of the Moving Average indicator.
+StartingLot
+: The lot size used to enter the first trade; this value will increase after a loss.
+MaxLot
+: The maximum lot size. The StartingLot can be increased until this value.
+TPPoints
+: Take profit points. This will increase after a loss.
+SLPoints
+: Stop loss points. This will increase after a loss.
+LotMultiplier
+: The lot size will be multiplied by this value after a loss if it has not reached the MaxLot value yet.
+TPMultiplier
+: The Take profit and Stop loss will both increase by this amount after a loss, providing a recovery edge not only through position sizing but also because of the bigger TP.
+The code contains comments, and I've made a YouTube video explaining everything you need to understand.
+Thanks for reading!

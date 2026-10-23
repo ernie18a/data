@@ -1,0 +1,6 @@
+This is a simple "direct" optimization of the indicator DT_ZZ that is used by many traders. The indicator DT_ZZ is also a part of the famous indicator
+ZUP
+. The logics of calculation is not changed, so the behavior of the optimized variant should not differ from the original. Other optimized variants conflict with the original version on external bars. The advantage of this version is that calls of this indicator can be used in testing. The original version requires calculation time upon the exponential relationship; and this version undergoes testing smoothly. Therefore using this indicator in other indicators will lower the load of the computer resources.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7365

@@ -1,0 +1,3 @@
+Might be useful if you want to determine hours with lowest (or highest) actual historical spreads for particular instrument and adjust your EA entries accordingly.
+Every line represents 8-hour period within a day starting at 00:00. Day of week is adjustable.
+Best approach is to launch in the Strategy Tester for desired period in 'real ticks' + visualization mode.

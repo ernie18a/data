@@ -1,0 +1,5 @@
+There is already one
+TTM trend
+in the code base, but this one is doing the calculation in a different way.
+The TTM (Trade The Markets) Trend is basically an easier way to look at candlesticks. It is the The Heikin-Ashi method. Literally translated Heikin is "average" or "balance,", while Ashi means "foot" or "bar." The TTM trend is a visual technique that eliminates the irregularities from a normal candlestick chart and offers a better picture of trends and consolidations.
+The TTM Trend can be modified to suit your trading personality or style. If look back bars closes above the 50% mark of the average for the past look back candlesticks, it changes color to bearish. If look back bars closes below the 50% mark of the average for the past look back candlesticks, the TTM Trend changes color to bullish. It is simple, but the TTM Trend is definitely an easier way to look at charts.

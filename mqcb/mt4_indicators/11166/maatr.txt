@@ -1,0 +1,20 @@
+Author:
+Rasoul Mojtahedzadeh
+This indicator combines Moving Average (MA) and Average True Range (ATR) to visualize potential trade signals. Black solid line indicates MA, Red solid line indicates MA+2*ATR, Red dash line indicates MA+1.5*ATR, Green solid line indicates MA-2*ATR, Green dash line indicates MA-1.5*ATR.
+Entry Rules:
+1. The price must cross over the moving average line and close on the opposite side
+2. The trade’s direction will be determined based on the direction of the cross;
+1. a long position when the price crosses from below and closes above the moving average
+2. a short position when the price crosses from above the moving average and closes below
+3. A trade can only be placed if it coincides with the current trend;
+1. a long position must have a positive moving average slope
+2. a short position must have a negative moving average slope
+3. no trade should be placed if there is a flat moving average slope
+4. The highest high or the lowest low must not touch, pass or be very close to dash lines (reversal points).
+Exit Rules:
+1. The position will be closed if the price crosses the moving average to the side opposite of the entry position and reaches the 1.5 ATR level on that side.
+2. The position will be closed if the price crosses the moving average to the side opposite of the entry position and closes on that side.
+3. The position will be closed if the price reaches the 2.0 ATR level.
+4. The position will be closed if the price crosses the 1.5 ATR level on the entry side and closes;
+1. below the 1.5 ATR line for long position
+2. above the 1.5 ATR line for short position

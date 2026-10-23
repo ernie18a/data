@@ -1,0 +1,12 @@
+Coppock MetaTrader indicator
+— is an implementation of the famous Coppock curve indicator first created by Edward Coppock in 1962. The indicator shows long-term buy and sell opportunities (classically, it is used for only buying) by measuring the weighted moving average (with a period of 10) of the sum of two rates of change (with a period of 14 and 11). It is the classical version. In this MetaTrader version, you can modify the parameters of the basic indicators. You can use this Coppock indicator in MT4 and MT5.
+Input parameters
+ROC1Period
+(default = 14) — the period of the first Rate of Change in the sum.
+ROC2Period
+(default = 11) — the period of the second Rate of Change in the sum.
+MAPeriod
+(default = 10) — the period of the Moving Average of the sum.
+MAType (only in MT4)
+(default = 3 (WMA)) — the method of the Moving Average of the sum. It isn't recommended to change it.
+The main strategy when trading using the Coppock indicator is to buy when the curve starts rising from a trough below zero and to sell when the curve starts falling from a top above zero. Small tops and troughs (compared with the surrounding) are disregarded. The indicator helps to capture the trends in their early stages. But don't expect to enter on the actual maximums and minimums with it.

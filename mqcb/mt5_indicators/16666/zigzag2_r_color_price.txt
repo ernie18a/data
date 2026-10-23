@@ -1,0 +1,8 @@
+Real author:
+MetaQuotes Software Corp.
+Zigzag2_R_Color
+with price labels of the ZigZag peak values.
+Fig.1. Zigzag2_R_Color_Price indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16666

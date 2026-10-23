@@ -1,0 +1,14 @@
+The real author:
+Xrust & Vinin
+A digital adaptive Moving Average XXMA represents subtype of Moving Averages with a digital flat-trend filter and is made to separate the angular direction of price movement (trend) from the horizontal (flat) direction for effective trend trading.
+As you can see on the figure, during the trend movement of the price XXMA line stays over or under the price chart constantly changing its meaning and drawing bounding line, and during the horizontal movement (flat) it stays in a fixed position. The signal to enter into the deal is closing bar above or below the indicator line on the slant, while the signal to close the position is crossing or closing of the indicator line into the opposite side on the horizontal position.
+This indicator was first implemented in MQL4 and published in
+Code Base
+on 17.08.2009.
+The indicator uses SmoothAlgorithms.mqh library classes (must be copied to the terminal_data_folder\MQL5\Include). The use of the classes was thoroughly described in the article
+"Averaging price series for intermediate calculations without using additional buffers"
+.
+Fig.1 The XXMA indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1271

@@ -1,0 +1,17 @@
+This script is designed to perform candlestick analysis:
+Data Retrieval:
+The script retrieves the opening, closing, high and low candlestick prices of the financial instrument on which it is running.
+Candlestick Categorisation:
+Classifies each candlestick as bullish, bearish or neutral according to the relationship between its open and close price.
+Amplitude Calculation:
+Calculates the amplitude of each candlestick (difference between high and low) and calculates the average amplitudes for bullish and bearish candlesticks.
+Highlight Candlestick Identification:
+Identifies the 5 most significant candlesticks (highest amplitude) for both bullish and bearish candlesticks.
+Report Generation:
+Creates a report that includes the number of bullish, bearish and neutral candlesticks, as well as the average amplitudes and most significant candlesticks.
+Chart Commentary:
+Displays the generated report as a commentary on the chart of the financial instrument, allowing the user to easily visualise the analysis performed.
+In summary, the script helps traders to understand the distribution and amplitude of candles in a specific period, which can be useful for making informed trading decisions, such as the Take Profit or Stop Loss to be used depending on the timeframe or the specific symbol.
+Translated from Spanish by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/es/code/49150

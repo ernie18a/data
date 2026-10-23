@@ -1,0 +1,4 @@
+It is intended to breakthrough's trading on the support / resistance levels. For example if the price touches the given limit price the script places its stop order at the defined stop buy price (on 5-10 pips above level) and exists. Thus, if the price breaks through the support line no buy stop order is sent. I.e. such approach serves as a filter that allows to deselect weak / false signals.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1460

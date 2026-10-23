@@ -1,0 +1,9 @@
+This indicator shows Step Channel based on volatility (Base Volatility Indicator).
+Updates (12/09/2015):
+v 1.01 — Added hybrid mode.
+* Base Volatility Indicator is 70 MA of StdDev(10).
+Settings:
+Recommendations:
+Uses 2 step channels
+1st settings
+2nd settings

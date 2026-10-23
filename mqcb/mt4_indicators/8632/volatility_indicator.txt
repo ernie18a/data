@@ -1,0 +1,5 @@
+Judging by the code of indicator, it calculates the difference between the maximum maximums and minimum minimums of prices of the candlesticks for the last 20 bars (parameter).
+The result is displayed in points.
+Input Parameters:
+extern int       N=20; // period of the channel
+Volatility indicator

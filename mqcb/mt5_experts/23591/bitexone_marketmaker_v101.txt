@@ -1,0 +1,39 @@
+Previous version:
+https://www.mql5.com/en/code/22875
+What's new:
+1. The
+magic_number
+input has been removed. It is now assigned automatically, and there is no need for checking it for uniqueness.
+2. Input
+vertical_shift
+has been added (see the description below)
+3. Input
+desired_pos
+has been added (see the description below)
+The robot works only on
+www.bitex.one
+cryptocurrency exchange. It places a specified number of buy and sell orders considering the market depth price or a guide (fair contract price obtained from other cryptocurrency exchanges). The idea is to make money on the inefficiency of the real contract price and rebates, which the exchange pays for providing liquidity (for trading limit orders). One of the advantages of the robot is that it uses a full-fledged asynchronous model of working with transactions.
+Fig.1. Example of the robot setting the orders with max_pos=100, shift=0.001, level_count=3
+Inputs description:
+price_type
+- type of the price to be used to calculate the prices of the orders to be placed. 1 - price from traded symbol's market depth, 2 - marking contract price, 3 - contract index price.
+max_pos
+- number of contracts in each EA request.
+shift
+- shift of the first order relative to the marking price (marked purple). It is set in shares of the absolute price value, for example, if shift = 0.001 and the marking price = 6600, the closest buy and sell requests are shifted up and down from the marking price by 6.6 price points up and down (see Fig. 1)
+vertical_shift
+- vertical shift of all levels as relative to the marking price. Similarly,
+shift
+as the percentage of the absolute price value. If
+vertical_shift
+> 0, then all levels are shifted upwards; if it is < 0, then they are shifted downwards.
+level_count
+- number of quotes levels. Each subsequent request is shifted by 'shift' value relative to the previous one.
+desired_pos
+- position that the bot should gain and maintain as the result of its activities. Or you can write in here the existing position for the symbol, for the bot not to consider it.
+Fig. 2. Performed deals
+Fig. 3. Equity from the strategy tetser, BTCUSD, real tick, 79 ms of delays, profit in BTC
+Fig. 4. Statistics from the strategy tetser, BTCUSD, real tick, 79 ms of delays, profit in BTC
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23591

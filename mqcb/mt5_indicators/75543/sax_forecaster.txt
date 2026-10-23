@@ -1,0 +1,146 @@
+Overview
+Almost every tool we build to read a chart stays in the world of numbers. This one leaves it.
+Symbolic Aggregate approXimation
+(SAX), introduced by Jessica Lin, Eamonn Keogh and colleagues in 2003, takes a window of price and turns it into a short string of letters, something like
+bddcbbba
+. Once a piece of the market is a word, you can do to it everything computer science already knows how to do with text: match it, count it, hash it, search it.
+This publication puts that to work on one practical question:
+the market is doing this now; when has it behaved similarly before, and what followed?
+The indicator encodes the current window, scans history for past windows of similar shape, reads each match's known future, and draws the resulting distribution of outcomes as a forecast fan cone on the chart with a verdict panel reporting the statistics behind it.
+The transform itself has three steps, each there for a reason:
+Z-normalise the window
+, so what remains is pure shape. A rise on EURUSD and a rise on gold map to the same normalised curve if they rise in the same way.
+Piecewise Aggregate Approximation
+: chop the normalised window into
+w
+equal segments and replace each with its average. A 48-bar window with w = 8 becomes eight numbers, which is dimensionality reduction that smooths noise along the way.
+Discretise
+: map each segment average to a letter using breakpoints that split the standard normal into equal-probability bands, so every letter is a priori equally likely.
+The SAX pipeline: z-normalise the window, average it into cells, then map each cell to a letter using Gaussian breakpoints.
+What makes SAX search sound rather than merely fast is
+MINDIST
+, a distance between two words that provably
+lower-bounds
+the true Euclidean distance between the z-normalised series. Because it can only ever understate the real distance, it can be used to discard candidates with no risk of discarding a true match. That is what licenses the two-stage search here: prune with the cheap word distance, then rank the survivors by true Euclidean distance. The published validation harness confirms the pipeline returns exactly the same matches as brute force while skipping much of the work.
+Read this before using it:
+the z-normalisation step that makes SAX elegant deliberately discards the price level and the volatility, and in trading those are often exactly what you care about. This tool compensates where it can, by measuring every outcome in units of the volatility that prevailed at the time, but the limitation is real and is not tuned away. Expect the verdict to read
+no edge
+more often than anything else. On markets close to a random walk that is the correct answer, not a malfunction.
+What the Indicator Draws
+Two objects, both rebuilt when a new bar closes.
+The fan cone
+projects the analogs' forward distribution into the future from the last closed bar. A solid line traces the median forward move at each step, and dotted lines above and below trace the 25th and 75th percentiles, so the cone widens as agreement between precedents thins out. The per-step distribution is held in ATR units and multiplied by the current ATR to land on the real price axis, which is what lets precedents from calm and violent regimes contribute to the same cone.
+The cone is drawn only when the verdict is bullish or bearish
+, so an absence of cone is itself information rather than a rendering failure.
+The verdict panel
+reports the numbers the cone is hiding:
+Row
+What it tells you
+word
+The SAX encoding of the current window, the query the search actually ran on.
+analogs
+How many precedents were found, and their mean match distance. A large count at a poor average distance is a weaker case than a small count of close matches.
+fwd H
+Median forward move over the horizon, in ATR multiples and in percent.
+band
+The 25th to 75th percentile range of those forward moves: the cone's width, as a number.
+up rate
+The share of precedents that moved up at all, and the spread. A median that leans up on a 51% up rate is one precedent's luck, not a lean.
+VERDICT
+Bullish, bearish, no edge, too few analogs, or no data.
+The verdict is deliberately hard to earn. Too few analogs is decided first, then the coin-flip case, and only a sample that clears
+both
+conviction bands gets a direction: the median move must exceed the edge threshold in ATR terms,
+and
+the up rate must leave the band around 0.5. Fail either and the answer is no edge, whatever the median happens to say.
+The forecaster on EURUSD, M30: the fan cone projecting the analogs' median and interquartile band, with the verdict panel reporting the sample behind it.
+Key Features
+Honesty by construction
+No lookahead.
+A match's outcome window must end strictly before the query window begins, so nothing from the query's own future can leak into its set of precedents. This is the single guard that separates an analog search from a curve fit.
+ATR-normalised outcomes.
+Forward moves are expressed in multiples of the ATR that prevailed at match time, so a precedent from a quiet stretch and one from a violent stretch are on comparable footing. This is the compensation for what z-normalisation threw away.
+A verdict that is allowed to say no.
+The tool withholds a forecast, and suppresses the cone, whenever the sample is too small or the lean is not decisive on both measures.
+A real SAX library, not an approximation of one
+Z-normalisation, PAA including the fractional case where the window length does not divide evenly by the word length, Gaussian breakpoints via Acklam's probit, encoding, and a MINDIST that provably lower-bounds the true distance. None of these existed on the platform before.
+Alphabet sizes 2 through 10 are supported, with breakpoints built once at configuration time and cached.
+A flat window is reported as flat rather than silently encoded: with a near-zero standard deviation there is no shape to normalise, and inventing one would produce a meaningless word.
+A brute-force Euclidean metric ships alongside the production pipeline as a switch, so the pruning can be checked against the answer it is supposed to reproduce rather than trusted.
+Practical on a live chart
+The search runs once per closed bar, not per tick, and reads history from bar 1 so the forming bar never enters either the query or the precedent set.
+The panel box is sized from the actually rendered text, so nothing clips at any font size or content, and a light and a dark theme are provided so it reads on either chart background.
+Every chart object carries a common prefix and is removed on deinit, leaving no orphans behind.
+Recommended Setup
+Setting
+Recommended value
+Notes
+Symbol
+Any liquid instrument
+Shape matching is scale free by construction. Development and the screenshot used EURUSD.
+Timeframe
+M30 to H4
+Needs enough history for the precedent set to be meaningful. The window, horizon and history scan are all measured in bars, so they carry over between timeframes unchanged.
+History
+6000 bars
+The default scan depth. More history means more precedents and a firmer distribution, at a linear cost in search time.
+Panel theme
+Match your chart
+Dark by default. Switch to light on a white chart or the body text will not read.
+File Structure
+One indicator and two headers. The headers are included as
+<SAX\...>
+, so they must sit in their own
+SAX
+subfolder.
+File
+Role
+Description
+Include\SAX\SAXTransform.mqh
+The transform
+Z-normalisation, PAA, Gaussian breakpoints, word encoding, and the lower-bounding MINDIST. Reusable on any series, with no dependency on charts or trading.
+Include\SAX\SAXAnalogs.mqh
+The search
+Two-stage prune-then-rank matching, the no-lookahead guard, ATR-normalised outcomes, the per-step distribution behind the cone, and the verdict classification.
+Indicators\SAX\SAXAnalog.mq5
+The indicator
+Runs the search on each new bar and draws the forecast fan cone and the verdict panel. Plots nothing into buffers; it is all chart objects.
+Input Parameters
+Input
+Default
+What it controls
+InpWinLen
+48 bars
+Query window length: how much recent shape has to match for a bar to count as a precedent.
+InpHorizon
+12 bars
+Forecast horizon: how far into each precedent's known future the outcome is measured, and how far the cone extends.
+InpWordLen, InpAlphabet
+8, 4
+The SAX resolution. Longer words and larger alphabets discriminate more finely and therefore match less often; shorter and coarser gathers more precedents of looser resemblance.
+InpMaxAnalogs, InpMinAnalogs
+50, 10
+How many closest precedents to keep, and the minimum sample below which the verdict is forced to "too few" regardless of what those few say.
+InpEdgeATR
+0.25
+Conviction threshold: the median forward move must clear a quarter of an ATR to count as a lean at all.
+InpMetric
+MINDIST
+The two-stage prune-then-rank pipeline, which is the production setting. Switch to Euclid for brute force over every candidate: same ranking, no pruning, useful as a correctness and speed baseline.
+InpATRPeriod
+14
+The ATR used to normalise outcomes and to scale the cone onto the price axis.
+InpMaxHistory
+6000 bars
+How far back to scan for precedents.
+Colours, corner, theme
+Blue / red / gray, upper left, dark
+Cone and panel accent colours by verdict, the band line colour, the panel's anchor corner, and the light or dark theme.
+Research Basis
+The implementation follows the original SAX work by Jessica Lin, Eamonn Keogh and colleagues, whose
+SAX page
+collects the papers.
+SAX is not a crystal ball for price, and this tool will report no edge more often than it reports anything else. Its value lies in the rare, well-supported occasions when many genuine precedents lean the same way, and in the discipline of a tool that refuses to pretend otherwise. The same library invites further work: SAX words as categorical features for a machine-learning model, motif and discord discovery for anomaly detection, or a Markov transition model over the word dictionary.
+A companion article derives the transform and the lower bound, walks through the search and its guards, and shows the validation harness passing:
+Symbolic Aggregate Approximation (SAX) in MQL5: Historical Analog Search and Forecasting
+.

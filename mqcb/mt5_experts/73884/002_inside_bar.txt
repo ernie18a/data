@@ -1,0 +1,97 @@
+Expert Advisor for testing the Inside Bar continuation hypothesis.
+Strategy logic: the EA searches for a classic Inside Bar pattern consisting of a
+Main Bar
+and a
+Signal Bar
+.
+Main Bar
+— the larger candle containing the pattern.
+Signal Bar
+— the Inside Bar fully contained within the Main Bar range.
+The Signal Bar must be completely inside the range of the Main Bar. If the Main Bar closes bullish, a Buy Stop order is placed above the Main Bar high. If the Main Bar closes bearish, a Sell Stop order is placed below the Main Bar low.
+Stop Loss is calculated as a fraction of the Main Bar range.
+Take Profit is calculated using a predefined Risk/Reward ratio.
+An optional ATR filter can be applied to require the Main Bar to be significantly larger than recent market volatility.
+This EA was built as a research tool for testing the statistical behavior of the Inside Bar pattern across different markets and timeframes.
+Parameters
+Lot Type
+- Position sizing method.
+Fixed Lot
+— fixed trade volume.
+% Risk from Start Balance
+— position size calculated from a predefined risk percentage.
+Lot Size
+- Fixed lot size used when Fixed Lot mode is selected.
+Risk per Transaction (%)
+- Risk per trade in percent. Used only when risk-based position sizing is enabled.
+ATR Filter
+ATR Filter (Main Bar Size)
+- Enables or disables the ATR filter.
+ATR Period
+- ATR calculation period.
+Min Main Bar Size (x ATR)
+- Minimum Main Bar size expressed as a multiple of ATR.
+Example:
+ATR = 100 points
+Min Main Bar Size (x ATR) = 1.5
+The Main Bar range must be at least 150 points for the setup to be considered valid.
+Inside Bar Filter
+Min Main Bar Body (% of Range)
+- Minimum Main Bar body size expressed as a percentage of the Main Bar range.
+Max Inside Bar Size (% of Main)
+- Maximum Signal Bar size expressed as a percentage of the Main Bar range.
+Example:
+Main Bar range = 100 points
+Max Inside Bar Size (% of Main) = 50
+The Signal Bar range must not exceed 50 points.
+Position Settings
+StopLoss (x Main Bar Range)
+- Stop Loss distance expressed as a fraction of the Main Bar range.
+Example:
+Main Bar range = 100 points
+StopLoss (x Main Bar Range) = 0.62
+The Stop Loss will be placed 62 points away from the entry price.
+TakeProfit (Risk/Reward)
+- Risk/Reward ratio used to calculate Take Profit (
+0 disables Take Profit
+).
+Example:
+Stop Loss = 50 points
+TakeProfit (Risk/Reward) = 2.5
+The Take Profit will be placed 125 points away from the entry price.
+Order Management
+Cancel Pending Order After N Bars
+- Number of bars after which an unfilled pending order is automatically cancelled.
+Important Notes
+The EA analyzes the currently selected chart timeframe.
+Pattern detection is performed only when a new bar appears.
+The Signal Bar must be fully contained within the range of the Main Bar.
+The direction of the Main Bar determines the trade direction.
+Buy Stop orders are placed above the Main Bar high.
+Sell Stop orders are placed below the Main Bar low.
+Only one position per symbol can be open at a time.
+Only one pending order per symbol can exist at a time.
+Pending orders are automatically removed after the number of bars specified in
+Cancel Pending Order After N Bars
+.
+When using
+% Risk from Start Balance
+, risk calculations are based on the account balance captured when the EA starts.
+Risk Calculation
+When using
+% Risk from Start Balance
+, position size is calculated from the account balance captured when the EA starts, not from the current account balance.
+This behavior is intentional and was designed to make strategy testing more consistent. Risk remains constant throughout the test and does not change as the balance grows or declines.
+If you prefer the traditional approach based on current balance or equity, the position sizing logic can be modified in the CalcLot() function.
+Backtest Results
+The strategy was tested on
+EURUSD, XAUUSD and SP500
+across the
+H1 and M15
+timeframes.
+The purpose of this Expert Advisor is research rather than optimization. The source code is published to allow independent verification, modification and testing of the hypothesis on other markets and datasets.
+EURUSD M15 back test
+Full research report, equity curves and test results:
+https://www.mql5.com/en/blogs/post/771362
+Source code is open — feel free to modify it, test it on other instruments and build upon it.
+This EA was created to test a trading hypothesis, not to trade real money without additional research and validation.

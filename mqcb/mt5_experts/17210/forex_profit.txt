@@ -1,0 +1,32 @@
+The Expert Advisor uses Parabolic SAR and three EMAs (with the periods of 10, 25 and 50).
+Author of the idea
+—
+Yuri
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+The algorithm of trading strategy:
+1. Open a H1 chart of EURUSD, lots 0,1.
+2. Draw Parabolic SAR and three Exponential Moving Averages with periods 10, 25, 50.
+A Buy signal:
+ЕMA with the period of 10 crosses ЕМА 25 and 50 from bottom upwards, while Parabolic SAR is below the price
+.
+A Sell signal:
+ЕMA with the period of 10 crosses ЕМА 25 and 50 from top downwards, while Parabolic SAR is above the price
+.
+Exit:
+1. By Stop Loss
+2. By
+Take Profit
+3. When the ЕМА 10 line turns the opposite direction (if we have a
+Buy
+position, close where the ЕМА10 top was formed, for
+Sell
+- where bottom is formed
+), with a minimum profit. The values of Stop Loss and Take Profit for buy and sell trades will be different.
+Testing results on EURUSD, H1 from 2016.06.28 to 2016.12.16, initial deposit - $3000:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17210

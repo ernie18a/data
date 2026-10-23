@@ -1,0 +1,21 @@
+Ehler's Center of Gravity indicator is
+FIR
+filter by
+J
+ohn Ehlers applied to a price. It is
+the result of Ehlers' analysis of adaptive filters
+.
+"Gravity center" has zero lag that enables accurate detection of reversal points.
+It has one configurable parameter:
+Period
+- calculation period
+Interpretation:
+Intersection of the main and signal lines.
+Crossing at overbought/oversold level.
+Since the indicator has no fixed levels, search for the new overbought level is reduced to observing the previous peak: if the indicator has formed a new peak that is higher than the previous one, we can assume that the asset is overbought, and it is time to sell at the downward intersection of the indicator lines.
+Search for the new oversold level is reduced to observing the previous bottom: if the indicator has formed a new bottom that is lower than the previous one, we can assume that the asset is oversold, and it is time to buy at the upward intersection of the indicator lines.
+Divergences.
+Along with a simple signal detection method (intersection of the main and signal lines), the indicator also works by divergence signals.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22928

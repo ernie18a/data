@@ -1,0 +1,7 @@
+This very simple script to apply same template to all charts opened at the moment.
+I work with binary option, for me is useful.
+Simple options:
+I hope this screenshot will be useful to explain this script:
+The result, after running:
+Recommendations:
+If you don't need change timeframe, keep option "Change TimeFrame" in current.

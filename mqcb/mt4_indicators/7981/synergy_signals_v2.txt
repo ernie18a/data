@@ -1,0 +1,4 @@
+Author: SwingMan
+Synergy Signals [v2] indicator. Look the description of signals on
+forum
+.

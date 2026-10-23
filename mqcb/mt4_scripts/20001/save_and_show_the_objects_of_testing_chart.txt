@@ -1,0 +1,5 @@
+After back testing, we usually need to analyze the testing result on a new chart which we have loaded our template,in this case we need to copy the objects on the testing chart to the new chart.
+This script helps to save the objects into a file and show the objects on a new chart.
+Usage
+After testing finished,run the script on the testing chart,select SAVE for the input SaveOrShow.
+Open a new chart,load your template, run the script on the new chart,select SHOW for the input SaveOrShow.

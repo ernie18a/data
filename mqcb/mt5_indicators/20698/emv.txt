@@ -1,0 +1,11 @@
+Indicator Arms' Ease of Movement Value (EMV) developed by Richard W. Arms Junior. It considers the volume and size of changing the price to evaluate its moving quantitatively for ease or complexity.
+It has two input parameters:
+Period
+- calculation period;
+Method
+- calculation method.
+Calculations:
+EMV = (((Current High + Current Low)/2) - ((Previous High + Previous Low)/2)) / (Current Volume/(Current High - Current Low))
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20698

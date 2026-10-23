@@ -1,0 +1,8 @@
+ADX Expert is based on ADX indicator and can be traded on every tradable symbol.
+The expert is trading fixed position size, and has fixed Stop Loss and Take Profit.
+Inputs
+Lot Size
+Stop Loss in Points
+Take Profit in Points
+Max Spread Allowed
+Expert Magic #

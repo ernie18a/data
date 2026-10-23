@@ -1,0 +1,4 @@
+The indicator plots 2 RSI based on 2 MA. Signals are at intersections. At the same time, the direction of the indicator movement must match the intersection signal. Otherwise, the signal is filtered.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7541

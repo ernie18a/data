@@ -1,0 +1,19 @@
+VAMA (Velocity and Acceleration Moving Average).
+There are three adjustable parameters:
+Period
+- calculation period;
+Applied price
+- the calculation price;
+Double smoothing
+- enable or disable double smoothing (Yes/No).
+Calculation:
+VAMA = EMA + D1 + D2 / 2 + D3/6
+where:
+D1[i] = EMA[i] - EMA[i-Period/4]
+D2[i] = EMA[i] - 2 * EMA[i-Period/4] + EMA[i-Period/8]
+D3[i] = EMA[i] - 3 * EMA[i-Period/4] + 3*EMA[i-Period/8] - EMA[i-Period/12]
+Fig 1. Double smoothing enabled
+Fig. 2. Double smoothing disabled
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21044

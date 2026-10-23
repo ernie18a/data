@@ -1,0 +1,7 @@
+Real author
+: KoliEr Li.
+Another version of Bollinger Bands using as the middle line the average of the High and Low over a selected period.
+Fig. 1. The KoliErBands indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18845

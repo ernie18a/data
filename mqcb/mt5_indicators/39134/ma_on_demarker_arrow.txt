@@ -1,0 +1,4 @@
+The idea of the indicator
+The subwindow displays the usual indicator 'DeMarker' and smoothed with the help of 'Moving Average'. 'Arrow' objects are displayed at the intersection.
+Rice. 1. MA on DeMarker Arrow
+Trading Method: You can try to take a signal on bar #0 (but this is a risky style) or take a signal from bar #1 (this is a more conservative style.

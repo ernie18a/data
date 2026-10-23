@@ -1,0 +1,84 @@
+This example shows the use of the mechanism of custom data frame transmission from agents during a brute force search aimed at finding MD5 hashes.
+Units of tasks of password search from the MD5 hash are sent to remote agents, which then return found passwords. A found password is printed in the "Experts" window of the main terminal. The speed characteristics of the computing network and the progress are shown in real time.
+The test MD5 hash "ab4f63f9ac65152575886860dde480a1" was found in a couple of seconds as a 6-symbol password 'azerty'.
+The program also demonstrates the principle of virtualization of nonlinear and non-numeric input parameters into a numeric counter. To do this, we set the sinput flag "not used in the brute force search" and add a working counter named 'Counter', it is program controlled:
+//--- input parameters
+sinput
+int
+PasswordLengthFrom   =
+6
+;
+// Password Length From
+sinput
+int
+PasswordLengthTo     =
+6
+;
+// Password Length To
+sinput
+BruteForceEnumType  BruteforceType       =BRUTEFORCE_SET_ASCII_DIGITS;
+// Bruteforce Attack Charset
+sinput
+string
+BruteforceCharacters =
+""
+;
+// Bruteforce Custom Charset
+sinput
+HashEnumType        HashType=HASH_TYPE_SINGLE;
+// Hash Type
+sinput
+string
+HashList=
+"ab4f63f9ac65152575886860dde480a1"
+;
+// Hash Source of azerty
+// MD5 hash or filename (1 hash in line)
+sinput
+long
+Counter=
+0
+;
+By using the hybrid master mode, which allows running one EA copy in the terminal in addition to copies on remote and local agents, we can:
+manage remote agents and distribute tasks to them
+receive data frames from remote agents
+handle received data, save them, or visualize on chart
+The screenshot above shows that the master EA successfully visualizes the brute force search speed in the computing network.
+To activate the master mode, you need to add the
+OnTesterInit
+handler in the EA, where you can read all input parameters, convert them into a linear counter and explicitly redefine the operation mode of any input variable. The below code shows how to convert non-numeric/nonlinear parameters to a double counter, then
+set new limits
+and operation mode of the numeric Counter parameter:
+void
+OnTesterInit
+()
+  {
+double
+passes=
+0.0
+;
+//--- Calculate the limits
+if
+(!ExtScanner.CalculatePasses(PasswordLengthFrom,PasswordLengthTo,BruteforceType,BruteforceCharacters,passes))
+return
+;
+ParameterSetRange
+(
+"Counter"
+,
+true
+,
+0
+,
+0
+,
+1
+,
+1
++
+long
+(passes/MIN_SCAN_PART));
+Although the Counter parameter was initially locked, later it was redefined as an active working counter with explicit limits. This means that the tester will work with this particular parameter.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12942

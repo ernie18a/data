@@ -1,0 +1,30 @@
+It shows where to buy and where to sell via the arrows. If a trend occurs then it will bring profit, if there is no trend, there will be no profit.
+Input Parameters:
+extern
+int
+ParY
+=
+3
+;
+//"Y"
+parameter
+extern
+int
+ParX
+=
+20
+;
+//"X" parameter
+Rules:
+The method that gives those numbers is miraculously simple. The rules are following:
+Buy:
+1. The average close value calculated for the "X"-days period should be greater than the analogous average value calculated for past "Y" days.
+2. The close price should be less than the analogous price "Y" days ago.
+3. The close price should be greater than the close price "Y+X" days ago.
+If all three conditions are fulfilled then you should by at the opening of the next day
+Sell:
+1. The average value calculated by closing for "X"-days period should be less than the analogous average value calculated for past "Y" days.
+2. The close price should be greater than the analogous price "Y" days ago.
+3. The close price should be less than the close price "Y+X" days ago.
+For example, if "Х"= 20 and "Y"=3
+Ryan_Jones_SM

@@ -1,0 +1,5 @@
+If a trader opens MN1 chart the indicator will automatically configure the period equal to 12 comparing current price to average year price based on bars in a year. If a trader opens W1 the MA will be automatically configured to 52 period which is equal to weekly bars in year.
+The indicator will calculate the period based on daily bars in a month. All time frames below Days to Hour are configured comparative to weeks. All periods below Hour will be relative to days.
+The trader now does not have to select the MA periods on different time frames.
+Interpretation of the indicator:
+If the current price of your instrument is higher than the MA you should buy it or sell if it is below MA.

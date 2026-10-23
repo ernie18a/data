@@ -1,0 +1,23 @@
+Oscillator Tarzan is a standard RSI with a channel having a central line, the color of which changes depending on the RSI line location as related to the channel:
+If the RSI line enters the channel upwards, an "up" signal arrow is placed, and the central line is colored green
+If the RSI line enters the channel downwards, a "down" signal arrow is placed, and the central line is colored red
+If the RSI line is within the overbought/oversold zones (above/below the channel borders), the central line is colored pale gray.
+If the RSI line is in the upper zone within the channel, the line is sky blue,
+if the line is in the lower zone of the channel, the line is orange.
+The central line of the channel is calculated by the RSI line smoothing method, and the indent for the upper and lower channel borders is added/deducted on both sides.
+The indicator has six input parameters:
+RSI period
+- RSI calculation period
+RSI Applied price
+- RSI calculation price
+MA period
+- channel calculation period (the RSI line smoothing period)
+MA Method
+- channel calculation method
+Channel top size
+- indent from the central line for calculating the upper border of the channel
+Channel bottom size
+- indent from the central line for calculating the lower border of the channel
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20938

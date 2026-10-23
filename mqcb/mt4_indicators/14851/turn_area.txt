@@ -1,0 +1,11 @@
+The indicator displays the areas of the potential price reversals.
+It is based on the moving average and RSI indicators, and shows their difference.
+Description of the indicator settings:
+EMA_Period — The averaging period for the calculation of the Moving Average indicator.
+EMA_Method — Averaging method. Can be any of the enumeration values, SMA — simple averaging, EMA — exponential averaging, SMMA — smoothed averaging, LWMA — linearly weighted averaging.
+EMA_Price — applied price. It can be one of the enumeration values. CLOSE — close price. OPEN — open price. HIGH — High price for the period. LOW — Low price for the period. MEDIAN — median price, (high+low)/2. TYPICAL — typical price, (high+low+close)/3. WEIGHTED — weighted close price, (high+low+close+close)/4.
+RSI_Period — Averaging period for the RSI calculation.
+PSI_Price — applied price. Similar to EMA_Price.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14851

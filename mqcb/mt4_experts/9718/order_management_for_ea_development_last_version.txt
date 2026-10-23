@@ -1,0 +1,3 @@
+THIS IS THE LAST VERSION of ARD ORDER MANAGEMENT for EA DEVELOPMENT
+http://codebase.mql4.com/en/code/9041
+.....

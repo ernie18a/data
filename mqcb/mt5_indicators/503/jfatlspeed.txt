@@ -1,0 +1,11 @@
+JFatlSpeed is a smoothed
+Momentum
+from the fast trends indicator
+JFatl
+. It allows to detect new trends at very early stages.
+ColorJFatlSpeed and JFatlSpeed indicators use SmoothAlgorithms.mqh library classes. The use of the classes was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/503

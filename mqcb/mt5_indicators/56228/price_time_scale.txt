@@ -1,0 +1,9 @@
+In version 1.04 cursor synchronisation with different charts has been added. For some reason it does not work with detached charts, but if you stretch the terminal to two monitors, the charts move synchronously.
+In version 1.05 added possibility to synchronise only symbols with the same name.
+31.05.2025
+Various useful changes were made in
+version
+1.08
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/56228

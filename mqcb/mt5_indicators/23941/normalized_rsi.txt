@@ -1,0 +1,6 @@
+Theory :
+RSI (Relative Strength Index) is already normalized. Hence, making a normalized RSI seems like a nonsense ... if it was not for the "flattening" property of RSI. The RSI tends to be flatter and flatter as we increase the calculating period - to the extent that it becomes unusable for levels trading if we increase calculating periods anywhere over the broadly recommended period 8 for RSI. In order to make that (calculating period) have less impact to significant levels usage of RSI trading style in this version a sort of a "raw stochastic" (min/max) normalization is applied
+Usage :
+As any other RSI - with an exception that it is more responsive to the fixed levels usage
+PS:
+The "big picture" example comparing the normalized RSI (upper, colored line) and regular RSI (lower gray line), bot using same parameters and period 32

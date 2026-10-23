@@ -1,0 +1,71 @@
+FineTuningMACandle
+indicator with two colored channels based on standard deviations from High and Low of the indicator candles. For a normal display of the indicator, check the "Chart on foreground" checkbox in the chart properties.
+//+----------------------------------------------+
+//|  INDICATOR INPUT PARAMETERS                  |
+//+----------------------------------------------+
+input
+uint
+FTMA=
+10
+;
+input
+double
+rank1=
+2
+;
+input
+double
+rank2=
+2
+;
+input
+double
+rank3=
+2
+;
+input
+double
+Shift1=
+1
+;
+input
+double
+Shift2=
+1
+;
+input
+double
+Shift3=
+1
+;
+input
+int
+PriceShift=
+0
+;
+// vertical shift of the indicator in points
+input
+uint
+Gap=
+10
+;
+//unconsidered gap in points
+input
+uint
+BBLength=
+10
+;
+// Bollinger period
+input
+double
+BandsDeviation=
+1.0
+;
+// deviation
+The indicator uses the classes of library SmoothAlgorithms.mqh (to be copied to the <terminal_data_directory>\MQL5\Include folder). The use of the classes was described in detail in article
+Averaging Price Series for Intermediate Calculations without Using Additional Buffers
+.
+Fig1. FineTuningMACandle_Chl indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22774

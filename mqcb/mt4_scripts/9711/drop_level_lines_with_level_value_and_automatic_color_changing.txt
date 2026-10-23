@@ -1,0 +1,25 @@
+NEW REVISION 2010-12-17:
+*********************
+DROP_LEVEL_LINE_Rev2.mq4: DROP_LEVEL_LINES.mq4 has been revised. The last revision Rev1 was displaying all prices with 4 digits. In this new revision (Rev2) the number of digits displayed is adjusted to the Market. (Example: With Rev1: EURUSD = 1.3452 USDJPY = 83.8200 DJ30 = 11332.0000 With new Rev2: EURUSD = 1.3452 USDJPY = 83.82 DJ30 = 11332).
+*********************
+NEW REVISION:
+*********************
+DROP_LEVEL_LINE_Rev1.mq4: DROP_LEVEL_LINES.mq4 has been revised. With the new revision the script will work also when MT4 is not connected to server. The old version could only work when the platform was connected to server.
+*********************
+This is the new release of my previous script for horizontal segment lines (level lines).
+http://codebase.mql4.com/en/code/9708
+--> Previous code
+What this script can do:
+This new script will draw horizontal lines like a segment (short line).
+It will show a text with the value (price) of the level line inserted above or below the line.
+It will recognize when the line it’s a bottom or top line changing automatically the color of the line and the position of the text (below a bottom line or above a top line).
+These properties can be modified by editing the code:
+You can modify the color for bottom or top lines
+You can modify the width of the lines
+You can modify the length of the segment line
+You can modify the line type: segment (short line) or Ray (long full line)
+You can choose if you want to insert the level value as a text or not
+You can modify the distance of the text from the line
+You can modify the font size of the text
+You can modify the color of the text
+Graph illustration:

@@ -1,0 +1,11 @@
+The Exp_BBSqueeze Expert Advisor is based on the signals obtained from the
+BBSqueeze
+signal indicator. A signal for a transaction forms when a bar is closing, if there is a change in the indicator histogram color.
+Proper operation of the generated Expert Advisor requires the compiled indicator file BBSqueeze.ex5 to be placed in terminal_data_directory\MQL5\Indicators.
+Tests shown below were run using the default input parameters of the Expert Advisor. Stop Loss and Take Profit were not used during the tests.
+Fig. 1. Examples of transactions in the chart
+Testing results for USDCHF H4 over 2011:
+Fig. 2. Testing results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1071

@@ -1,0 +1,24 @@
+Prop Firm Rule Checker
+A simple diagnostic script that evaluates closed-trade history — from a live/demo account or the Strategy Tester — against the rules typically enforced by proprietary trading firm ("prop firm") evaluation challenges.
+Instead of manually calculating drawdown, daily loss, and consistency after every backtest, run this script and get an instant PASS/FAIL breakdown in the Experts/Journal tab.
+WHAT IT CHECKS
+- Profit Target — did total profit reach the required percentage of starting balance?
+- Max Daily Loss — did any single calendar day lose more than the allowed percentage?
+- Max Overall Drawdown — how far did the balance drop from its peak, and did it breach the limit?
+- Consistency Rule — did any single day generate an outsized share of total profit (a common rule at many firms to prevent one lucky day from carrying the whole challenge)?
+- Minimum Trading Days — were enough distinct trading days logged?
+HOW TO USE
+1. Attach the script to any chart (symbol/timeframe do not matter — it reads deal history, not chart data), or run it right after a Strategy Tester pass.
+2. Set the inputs to match the rules of the specific firm/challenge you want to evaluate:
+- InpStartBalance — challenge account size
+- InpProfitTargetPercent — required profit target
+- InpMaxDailyLossPercent — daily loss limit
+- InpMaxTotalDDPercent — overall drawdown limit
+- InpMaxSingleDayPercent — consistency rule threshold
+- InpMinTradingDays — minimum required trading days
+- InpFromDate / InpToDate — the period to evaluate
+3. Read the report printed to the Experts/Journal tab. Each rule shows PASS or FAIL, plus an overall verdict.
+NOTES
+- This is a read-only diagnostic tool. It does not open, modify, or close any trades — it only reads history via HistorySelect().
+- Rules vary between prop firms; always confirm the exact numbers from your firm's official rule sheet and set the inputs accordingly. This script does not represent or endorse any specific firm.
+- Free to use and modify.

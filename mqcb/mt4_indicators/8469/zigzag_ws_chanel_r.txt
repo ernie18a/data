@@ -1,0 +1,7 @@
+Two rays are added to the "
+ZigZag_ws_Chane
+l" indicator.
+(At GatGen's request the indicator is on the break through of the levels)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8469

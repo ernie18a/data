@@ -1,0 +1,5 @@
+DayTrading Expert Advisor must be used on 5 min charts with 20 pips profit limit. Do not place any stop loss.
+Test results:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8544

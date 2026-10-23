@@ -1,0 +1,26 @@
+How do traders manage their trades?
+A common approach is where price reaches profits = the stop loss size, you move the SL to entry price and let the it ride to TP.
+While this is a good approach, the disadvantage of this comes when price takes you out after you moved your SL to breakeven cashing you 0 profits before moving to TP.
+This kind of scenario happens often especially if you take breakout trades, and the retest goes back to your entry price before moving your way.
+If this is what you have been experiencing, here's another trade management approach:
+You have TP1 and TP2. But instead of moving your stoploss, you close 70% of your position at TP1, leave 30% to reach TP2 but you do not move the SL.
+For example you take a position with 1 standard lot: SL=20pips, TP1=20pips and TP2=60pips
+When price reaches TP1, you close 0.7 lots at 20pips profit, and leave 0.3 lots to hit TP2 at 60pips
+The advantage of this is that you will make a 1:0.4 (R:R) profit when you get stopped out after hitting TP1, and a 1:2.1 (R:R) if you hit TP2.
+This is a conservative approach to trade management which has its disadvantage which is limiting your Risk:Reward when price goes into your favor.
+Default User Inputs:
+SL_pips: 20
+TP_pips: 60
+perc_to_lose: 1
+perc_to_close_at_breakeven: 0.7
+What the scripts do:
+Calculates the lotsize to place based on the account balance, the stop loss (SL_pips) and the %risk (perc_to_lose) set.
+Opens 2 position at market order price
+If the lotsize calculated is 1 lot, the 2 positions will be open with the first order with 0.7 lots and the second order with 0.3 lots. This is determined by the
+perc_to_close_at_breakeven.
+The 0.7 lot position will close when your profits have reached the number of pips of the SL set. (i.e. TP = SL)
+The 0.3 lot position will close at the profit target (i.e. TP_pips)
+Example Sell@1.36624)
+Order1: Lotsize: 0.3, Bid price@1.36624, Stop loss@1.36824 Take Profit@1.36424 (i.e. 20 pips defined by SL_pips)
+Order2:
+Lotsize: 0.7, Bid price@1.36624, Stop loss@1.36824 Take Profit@1.36024 (i.e. 60 pips defined by TP_pips)

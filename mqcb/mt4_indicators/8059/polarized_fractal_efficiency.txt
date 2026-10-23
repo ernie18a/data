@@ -1,0 +1,2 @@
+Fractal efficiency is calculated like in KAMA, Kaufman’s Adaptive Moving Average efficiency ratio, plus
+polarization and with optional exponential moving average.

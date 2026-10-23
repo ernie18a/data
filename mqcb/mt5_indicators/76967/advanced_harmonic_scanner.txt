@@ -1,0 +1,8 @@
+Core Features
+Dual Zigzag Engine: The script simultaneously scans a "Major" wave and a "Minor" wave. It prioritizes finding larger, macro setups first, but will automatically scale down to find minor setups if the broader trend is noisy.
+Live Point D Tracking: Unlike standard scripts that wait for a pivot to be fully confirmed (which causes late entries), Point D dynamically tracks the live wick of the current candle. The Fibonacci ratios update in real-time as the candle moves into the Potential Reversal Zone (PRZ).
+RSI Entry Confirmation: A pattern alone is not enough. The script will only fire a Bull ▲ or Bear ▼ entry signal if Point D forms and the RSI confirms momentum exhaustion (crossing over/under the oversold/overbought thresholds).
+Dynamic Risk & Targets: Forget manual measuring. Upon an entry trigger, the script instantly calculates and plots your Take Profit and Stop Loss lines:
+TP1: 38.2% retracement of the A-to-D leg.
+TP2: 61.8% retracement of the A-to-D leg.
+Risk (Stop Loss): Dynamically placed 20% beyond Point D's structural size, safely protecting you against deep extensions like Butterfly or Crab patterns

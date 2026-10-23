@@ -1,0 +1,19 @@
+Real author:
+gpwr
+AFIRMA (Autoregressive Finite Impulse Response MA) based on the digital filter accurately shows the price movement, though with a time lag.
+Moving Average
+based on the smooth function fitting (a polynom or sin/cos like in Fourier transform) has no lag but often shows the price movement not so well.
+The proposed moving average smooths out the price movement using the digital filter for all candlesticks, except the latest ones, the number of which is equal to the filter time lag. These candlesticks are smoothed by cubic spline fitting using least square method. The condition of combined moving average and its first derivative continuity is set at two moving averages crossing. As a result, we have the smooth moving average that accurately tracks the prices without a time lag.
+Input parameters:
+Periods - sets the low frequency filter transmission width equal to 1/(2*Periods);
+Taps - number of delay units in the filter (must be an odd number), i.e. the filter must have Taps prices to form the new smoothed МА value;
+Window - selects the filter approximation the following way:
+Window=1 - rectangular window;
+Window=2 - Hanning;
+Window=3 - Hamming;
+Window=4 - Blackman;
+Window=5 - Blackman-Harris.
+The first part of MA built using the digital filter is displayed by the blue-violet curve. The second part of MA built by cubic spline fitting is displayed by the red curve.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/603

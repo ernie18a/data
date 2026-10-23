@@ -1,0 +1,13 @@
+The author of the idea
+:
+Scriptor
+,
+the author of the MQ5 code
+:
+barabashkakvn
+.
+The Expert Advisor trades based on the signals of two iMA (Moving Average, MA) indicators (one of which has a hard coded 'period' parameter set to D1) and one iSAR (Parabolic SAR).
+Example of opening a BUY position:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20184

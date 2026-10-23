@@ -1,0 +1,8 @@
+Click "Close All" button to close all your open & pending orders at once.
+Parameters:
+RunOnCurrentCurrencyPair = true (Expert Advisor works only on attached chart's currency pair which means if you run this expert advisor on EurUsd chart, it will only close EurUsd positions)
+RunOnCurrentCurrencyPair = false (All your positions (regardless of the pair) will be closed)
+CloseOnlyManualTrades = true to close only manual trades.
+CloseOnlyManualTrades = false to close manual trades and/or other trades opened by an Expert Advisor.
+DeletePendingOrders = true to close open orders and pending orders
+DeletePendingOrders = false to close only open orders

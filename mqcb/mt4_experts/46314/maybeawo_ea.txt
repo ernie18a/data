@@ -1,0 +1,16 @@
+Key Features:
+Moving Average Entry:
+The EA uses a simple moving average to identify potential entry points. When the market conditions align with the moving average crossover strategy, it can open buy or sell orders.
+Customizable Parameters:
+You can fine-tune the EA's behavior using input parameters such as moving period, lot size, stop loss, take profit, breakeven levels, desired breakeven distances, and trading hours. These parameters allow you to adapt the EA to different trading styles and asset classes.
+Breakeven Functionality:
+The EA includes two breakeven levels. Once a trade is in profit, it can automatically move the stop loss to the breakeven level to protect your gains. The desired breakeven distances can be adjusted to suit your preferences.
+Trailing Stop:
+The EA can trail stop loss levels as the trade moves in your favor, helping you lock in profits during strong trends.
+Start and End Hours:
+You can specify the hours during which the EA should actively trade. This feature allows you to focus your trading activities on specific market sessions.
+Please Do
+Carefully review and optimize the input parameters to align the EA with your trading strategy.
+Test the EA on a demo account before using it in a live trading environment.
+Monitor the EA's performance and adjust parameters as needed to adapt to changing market conditions.
+# Trading involves risk, and this EA is not a guarantee of profit. Use it responsibly and be aware of the risks associated with automated trading.

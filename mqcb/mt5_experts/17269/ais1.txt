@@ -1,0 +1,13 @@
+The EA works based on the analysis of Open, High and Low.
+Author of the idea
+—
+Airat Safin
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Works only on EURUSD.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17269

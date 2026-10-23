@@ -1,0 +1,2 @@
+Author: Yuri Ershtad
+Indicator WcciPatterns. See the description in the indicator's code itself.

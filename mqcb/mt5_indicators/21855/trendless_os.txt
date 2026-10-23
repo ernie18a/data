@@ -1,0 +1,21 @@
+Trendless OS DiNapoli was developed by Joe DiNapoli in 1980's and was described in his book "Trading with DiNapoli Levels". Like other his indicators, Trendless OS is an addition to the main decision-making tools - Fibonacci levels. Moreover, according to DiNapoli's concept, the Trendless indicator can be used as an independent trading tool. Individual level settings should be selected for each traded asset.
+There are five inputs:
+Period
+- calculation period
+Applied price
+Overbought
+- overbought level
+Oversold
+- oversold level
+Drawing type
+- oscillator display type
+Line
+Histogram
+Calculation:
+TrendlessOS = Applied price – SMA(Applied price, Period)
+Two additional display types are provided for the indicator: line (standard) and a color histogram, which shows bars in different colors depending on the position of the oscillator line relative to its levels. Two more levels are available in addition to the overbought and oversold levels: 0.6 and 0.8 of the value given in the settings.
+Fig. 1. Trendless OS - Drawing type = Line
+Fig. 2. Trendless OS - Drawing type = Histogram
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21855

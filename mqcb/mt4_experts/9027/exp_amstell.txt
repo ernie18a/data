@@ -1,0 +1,72 @@
+Symbol
+GBPUSD (Great Britain Pound vs US Dollar)
+Period
+15 Minutes (M15) 2009.06.08 00:00 - 2009.07.06 00:00 (2009.06.06 - 2009.07.06)
+Model
+Control points (a very crude method, the results must not be considered)
+Parameters
+TakeProfit=150; Lots=0.01;
+Bars in test
+2873
+Ticks modeled
+57888
+Modeling quality
+n/a
+Mismatched chart errors
+0
+Initial deposit
+50000.00
+Total net profit
+2338.01
+Gross profit
+3305.29
+Gross loss
+-967.28
+Profit factor
+3.42
+Expected payoff
+8.47
+Absolute drawdown
+1114.32
+Maximum drawdown
+1363.19 (2.71%)
+Relative drawdown
+2.71% (1363.19)
+Total trades
+276
+Short positions (won %)
+141 (79.43%)
+Long positions (won %)
+135 (82.22%)
+Profit trades (% of total)
+223 (80.80%)
+Loss trades (% of total)
+53 (19.20%)
+Largest
+profit trade
+16.57
+loss trade
+-39.47
+Average
+profit trade
+14.82
+loss trade
+-18.25
+Maximum
+consecutive wins (profit in money)
+214 (3253.23)
+consecutive losses (loss in money)
+29 (-571.87)
+Maximal
+consecutive profit (count of wins)
+3253.23 (214)
+consecutive loss (count of losses)
+-571.87 (29)
+Average
+consecutive wins
+112
+consecutive losses
+27
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9027

@@ -1,0 +1,42 @@
+A Simple Expert Advisor The EA opens a position of the specified type at the time specified in the EA parameters. The position is closed at the time specified in the appropriate parameter.
+The purpose is to select the appropriate type of a position (either long or short) and to set position opening and closing time in hours and minutes. You can also set stop loss and take profit in points. If invalid Stop Loss and Take Profit values are specified, the EA will adjust the values to the minimum
+StopLevel
+allowed for the symbol.
+The Expert Advisor will also adjust the lot in case an incorrect value is specified. If the lot is too large, the EA will adjust it in order to be able to open a position. If there is no money for opening even the minimum lot, the signal will be skipped.
+The EA has a specific feature: if short stop orders are used and they trigger, a new position can be opened provided it is the same bar, on which the first position was opened at this time signal. In other words: if a position is opened at the current bar and is closed by the stop order, a new position will be opened if the new bar has not started yet, and so on until a new bar opens on the current timeframe.
+Note that the Expert Advisor is designed for training and strategy testing purposes.
+The EA has 11 input parameters:
+Experts magic number
+- a unique identifier for the EA's positions;
+Hour of position open
+- hour in the position opening time;
+Minute of position open
+- minutes in the position opening time;
+Hour of position close
+- hour in the position closing time;
+Minute of position close
+- minutes in the position closing time;
+Position type
+- opening a long or a short position;
+Lots
+- the volume of position to open;
+Stop loss in points
+- Stop Loss value in points;
+Take profit in points
+- Take Profit value in points;
+Slippage of price
+- allowable slippage;
+Multiplier spread for stops
+- spread multiplier for calculating a correct distance for stop orders.
+For Stop Loss and Take Profit orders (as well as pending orders), there is a minimum allowed distance for placing such orders -
+StopLevel
+. I.e. Stop Loss and Take Profit (as well as pending orders) cannot be placed closer than this distance to the price. If
+StopLevel
+is zero, it does not mean its absence, it only means that
+StopLevel
+is floating. In this case, the minimum distance is usually equal to spread*, but sometimes even the double spread is not enough. So, this parameter allows specifying a custom multiplier for the spread used to calculate the minimum distance for placing stop orders.
+Two tests were performed in the Every Tick mode on EURUSD H1, using data in the interval from 2017.01.02 to 2018.01.19, in two modes: opening long positions and opening short positions. The EA showed good results in the Long Positions mode. This mode was additionally optimized in terms of position opening and closing hour.
+The result of the EA testing with the opening hour set to 15 and closing hour set to 8, and default parameters is shown below:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19916

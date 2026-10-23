@@ -1,0 +1,33 @@
+Negative Volume Index (NVI)
+is a free technical indicator for advanced chart analysis in MT4, MT5 platforms. It is based on tick volume (can be substituted with real volume in MT5) and has two useful features added:
+Support for multi-timeframe (MTF) operation.
+Can be switched to show Positive Volume Index.
+The Negative Volume Index is shown in a separate chart window below the main chart and doesn't use any standard or custom indicators in its code. This implementation of NVI is available for the MT4, MT5 platforms.
+What is Negative Volume Index (NVI) indicator?
+Negative Volume Index (NVI) indicator is a rather old technical indicator that was developed by Paul L. Dysart in the first half of the 20th century and improved by Norman G. Fosback in 1976. It is composed of one oscillating line in the separate indicator window. The line rises or declines only for bars where volume is less than the preceding bar's volume.
+How to use Negative Volume Index (NVI) indicator?
+Classic NVI strategy
+The classic interpretation of Negative Volume Index is that the trend's confirmation by a subsequent movement of the NVI signals the trend's strength. The idea is that a strong trend will continue even on falling volumes. A cross with its moving average can be considered as a trend confirmation.
+As with other MA crossover strategies, this one is susceptible to produce false or lagging signals.
+NVI divergence strategy
+Another option is to look at the divergence between the price and its Negative Volume Index to spot trend reversal. Here, the price chart is making new higher highs while the NVI is demonstrating a lower low. A long-term downtrend ensues:
+Unfortunately, such signals aren't always clear or accurate. As with other
+divergence indicators
+, it makes sense to use additional confirmations before entering or exiting a trade.
+Higher timeframe perspective
+With our version of the Negative Volume Index, it is possible to set it to display higher timeframe NVI values on a lower timeframe chart. This is the same EUR/USD @ D1 chart as above but this time it has a Negative Volume Index indicator from the weekly timeframe attached:
+Considering that the volume on higher timeframe bars can significantly vary from that on the lower timeframe bars, the resulting NVI curve might offer a different picture of the market situation.
+Positive Volume Index (PVI)
+The Negative Volume Index indicator can be switched to calculate and display Positive Volume Index instead. This lets traders see the price changes accompanied by a rising volume. The resulting curve isn't much different from the price chart:
+Consequently, PVI is considered less informative than NVI.
+NVI input parameters
+Indicator shift
+(default = 0) — the horizontal shift in bars for indicator curve. Can be positive (to shift right) or negative (to shift left).
+Timeframe
+(default = Current) — the timeframe to calculate the NVI line on. If you set it to a timeframe that is higher than the current one, the indicator will display a higher timeframe NVI on the current chart. The parameter is ignored if set to a timeframe that is lower than the current one.
+Positive Volume Index?
+(default = false) — if
+true
+, the indicator will use calculate the Positive Volume Index (PVI) instead of the Negative Volume Index (NVI).
+VolumeType
+(default = VOLUME_TICK) — the type of volume to use in calculations — tick volume or real volume. This parameter is available only in MT5.

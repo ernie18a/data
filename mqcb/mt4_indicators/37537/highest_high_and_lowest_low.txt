@@ -1,0 +1,5 @@
+This code is used to find the highest high and lowest low on chart between given bars.
+One can specify the start bar and end bar.
+The code will first find the candle which has highest from start bar and end bar.
+Then the code will find the high of that candle which is the highest between given start bar and end bar.
+Similarly it works for lowest low also.

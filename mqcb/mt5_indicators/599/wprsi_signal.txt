@@ -1,0 +1,18 @@
+Real author:
+gumgum
+The indicator gives trading signals using colored arrows on a chart. The signals are based on the WPR (
+Williams’ Percent Range
+) and RSI (
+Relative Strength Index
+) technical indicators.
+In case the conditions for buying are fulfilled (when WPR >-20 and RSI > 50), lime up arrows are shown, in case the conditions for selling are fulfilled (WPR < -80 and RSI < 50) magenta down arrows appear.
+Input parameters:
+WPRSIperiod - period for WPR and RSI;
+filterUP - depth of WPR > -20 crossing verification;
+filterDN - depth of WPR < -80 crossing verification.
+This indicator was first implemented in MQL4 and published in
+CodeBase
+at mql4.com 05.09.2009.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/599

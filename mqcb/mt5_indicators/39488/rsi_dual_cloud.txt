@@ -1,0 +1,7 @@
+Indicator
+The subwindow displays two RSI (Relative Strength Index, RSI) lines - 'Fast' and 'Slow'.
+The area from the window borders to these lines is painted over from above and below. Three rendering modes:
+Fast
+Slow
+Highest Lowest
+Pic. 1. RSI Dual Cloud

@@ -1,0 +1,35 @@
+🛡️ PropFirm Equity Protector (Institutional Risk Manager)
+1. Recommended Symbol & Timeframe
+Symbol:
+Any (Highly recommended for volatile assets such as XAUUSD, GBPUSD, or indices such as US30).
+Timeframe:
+Any. This Utility EA is timeframe-independent as it relies on the OnTimer() event (1-second intervals) rather than OnTick(), ensuring constant risk monitoring even if the market freezes.
+2. Core Concepts Embedded in the Code
+The primary concept behind this code is to provide an institutional-grade risk management framework for prop firm traders. Traditional stop-loss orders are vulnerable to extreme slippage during news events. This EA mitigates this by introducing a
+dual-tier risk mitigation system
+:
+Tier 1 (Soft Limit):
+When the account reaches a warning drawdown level, the EA identifies the worst-performing open position and executes a partial close (e.g., 50 per cent of the volume) to free up margin in the account and prevent a total breach.
+Tier 2 (Hard Limit):
+If extreme volatility pushes the equity to the absolute daily Prop Firm limit, the EA triggers an aggressive panic-close loop, bypassing broker requotes to secure the account.
+3. Description of External Variables
+InpMaxDailyLossPercent: The absolute maximum daily loss permitted by your Prop Firm (e.g., 4.5%). Triggers Tier 2.
+InpAutoCloseOnLimit : Enables the Tier 2 absolute panic close.
+InpRemoveEAOnLimit: If set to true, the EA detaches itself from the chart following a Tier 2 breach to prevent further automated trading.
+InpMitigationLossPercent: The warning threshold (e.g., 3.5%). Triggers Tier 1.
+InpEnableMitigation : Activates the Tier 1 partial closing module.
+InpPartialClosePercent: The percentage of the worst position’s volume to be closed during Tier 1 mitigation (Default: 50.0).
+InpSlippagePoints: Permitted deviation to enforce closure in fast-moving markets.
+InpSendPushNotification: Sends a mobile push notification when limits are breached.
+InpMaxRetries: The number of times the EA will force the close command to be sent if the broker’s server returns an error.
+4. Brief Explanation of the Code Structure
+To help other users understand the implementation, this EA was developed using strict Object-Oriented Programming (OOP) principles.
+CPropFirmProtector Class:
+Encapsulates all risk logic, preventing conflicts with global variables.
+CalculateDailyStartBalance() Method:
+Instead of relying on static variables, it scans the HistorySelect() from 00:00 server time to mathematically calculate the exact daily starting balance, taking into account swaps, commissions and realised profits.
+Self-Healing GUI:
+The on-chart dashboard utilises a Z-order-locked background and a self-repairing loop (ObjectFind). If another indicator accidentally deletes the risk dashboard, the EA reconstructs it in a millisecond.
+Translated from Spanish by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/es/code/76437

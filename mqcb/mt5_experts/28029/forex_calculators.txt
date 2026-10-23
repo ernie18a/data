@@ -1,0 +1,6 @@
+Forex Calculator Set
+Margin Calculator
+Point Value Calculator
+Position Size Calculator
+Profit Calculator
+Swap Calculator

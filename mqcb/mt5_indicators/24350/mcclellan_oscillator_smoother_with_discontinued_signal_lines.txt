@@ -1,0 +1,6 @@
+Theory :
+McClellan oscillator, as is (originally published here :
+McClellan Oscillator Smoother
+) is a bit difficult to use due to lack of obvious signals. This version is adding discontinued signal lines to it in order to help finding signals in an easier way
+Usage :
+You can use color changes as signals

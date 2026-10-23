@@ -1,0 +1,28 @@
+The author of the idea:
+Scriptor.
+mq5 code author
+-
+barabashkakvn
+.
+The EA uses the iMA indicator (Moving Average, MA) and analyzes the last six bars.
+Inputs
+How many lots to deal with (may be less than one)
+The period for the averager
+Check for too-big candlesticks (avoid them)
+Check for pairs of big candlesticks
+A smart stop-loss
+The trade's stop loss in case of program error
+The trade's take profit
+The minimum EMA slope to enter a trade
+The maximum EMA slope to enter a trade
+Wait this long to determine candlestick lows/highs (BEGIN)
+Wait this long to determine candlestick lows/highs (END)
+An allowance between the close and low/high price (BEGIN)
+An allowance between the close and low/high price (END)
+If the previous volume is not above this, exit the trade
+A strange but functional imaginary spread adjustment
+magic number
+Test for EURUSD H1:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21387

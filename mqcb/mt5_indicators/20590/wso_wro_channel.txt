@@ -1,0 +1,4 @@
+Indicator based on "Automated Support And Resistance" article by Mel Widner published in TASC.
+This version shows channel on chart instead of displaying
+oscillator
+values in a separate window. That way it can be effectively used for support and resistance handling.

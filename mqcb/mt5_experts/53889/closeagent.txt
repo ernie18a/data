@@ -1,0 +1,3 @@
+This is a free example of an automated tool designed to close open positions at the optimal moment, combining two of the most effective technical analysis indicators: Bollinger Bands and RSI. It is particularly useful for closing residual trades at the end of the day or session, identifying overbought and oversold levels to find the best exit points, especially in low volatility conditions. It's also useful during the uncertainty leading up to high-impact news.
+Update:
+added CloseAll function for all positions at specified profit.

@@ -1,0 +1,974 @@
+Description:
+The idea was to develop an Expert Advisor which makes financial trading decisions on news events, automatically. Fundamental Trader EA cannot be back-tested on historical data, it can only be forward-tested, because it is setup to wait for the
+next
+news event, and make a financial trading decision based on the difference between (actual vs. forecast) or (actual vs. previous) data.
+Fundamental Trader EA is very simple, after downloading the calendar, it determines which news event on the DailyFX calendar is scheduled to be next, then it waits for that news event to be released, once the data is released, the EA makes an investor trading decision. Fundamental Trader EA can be applied to any-chart and any-time frame, as it only uses the chart for executing orders.
+Fundamental Trader EA is setup to support every Country that is on the DailyFX calendar, see below for details.
+NOTE:
+To get this EA working, you MUST follow the instruction of setting up the main files from the following site:
+https://www.mql5.com/en/articles/1502
+This EA is built on code from an indicator which is specified in the link above. You
+MUST
+first, follow instruction in the link above, and setup the following files:
+getright_setup.zip
+Time.mq4
+Time.mqh
+Make sure you change the default "get right" download directory to where the calendar will be downloaded, else this EA will not work.
+Make sure you read that article very slowly, and make sure to follow every instruction.
+You can read all about what those (3) files are, and what their function is. That article does a very good job, at explaining what the indicator is executing, to display the news events in the chart window.
+It is a good idea, to first, setup that indicator and have the news displayed on your chart, after which this EA will work without any problems.
+That indicator source code was modified to become an EA, to trade the news and not just display them.
+When you setup the files listed above, from the link listed above, you can download this EA along with "str2double.dll" and this EA will trade the news released on DAILYFX. The "str2double.dll" file goes in the root directory, e.g.
+C:\Program Files\Interbank FX Trader 4\
+Trading Logic:
+The logic behind the trade is as follows: there are two types of events that occur when trading news.
+1st: there is actual economic data which is compared to the forecast economic data.
+2nd: there is actual economic data which is compared to the previous economic data.
+The difference between economic data, can affect the direction of the currency price, and the percent difference between the economic data, gives a higher probability that the news event will have a market reaction in a specific direction.
+For more information on Fundamental Trading visit
+www.pfxglobal.com
+When there is a high percentage difference between economic data, the EA executes orders with larger lots.
+When the percentage difference between economic data is small, the EA executes orders with minimal lots.
+These lot sizes are specified, when the EA is applied to the chart with the following variables:
+lot1, lot2, lot3, lot4, lot5, lot6......lot18
+The specific lot size will be chosen by the EA, based on the percent difference between economic data.
+Risk/Reward Ratio:
+Fundamental Trader EA is setup with 1:3, risk/reward ratio, the default values are risk=20, reward=3.
+Risk is the PIP StopLoss values, and reward is the multiplier, so that if the EA is risking 20 PIP, it is expecting to gain 60 PIP.
+These values can be modified, when applying the EA to the chart.
+Wait Time for the News Event to be Released:
+News data is not released at exact time when it is scheduled, it is necessary to setup a time frame for the EA to wait for the news events to be released.
+The following code snippet determines the time that the EA will wait for the news to be released, when the news wait time has passed, the EA moves on to the next news event.
+xTime is a variable, which can be changed, when you first apply the EA to a chart. The default value is 27 minutes.
+if(Date>(TimeCurrent()-(xTime*60)))
+Wait Time for the Orders to be Closed:
+You can also setup a time frame for the EA to wait a certain amount of time before closing an opened order.
+e.g. After a news event has been released, and a position was executed, wait 30 minutes to close the current order, with profit or loss. This is recommendation by MQL4 user "ebenv".
+There are (3) variables that control this function:
+MagicNumber | number which is used to track opened orders
+enable_close_time | set to true to enable the EA to monitor the time that has passed since the order was executed
+wait_time | time to wait before closing the order
+Fundamental Trader Country Support:
+Fundamental Trader EA trades every single currency that is supported on dailyfx.com/calendar.
+Below is the code snippet which specifies the currency to trade based on the Country where the news event is released. The currency list is the following: EUR, USD, JPY, GBP, CHF, AUD, CAD, NZD
+if
+(
+stCurrency
+=
+=
+"EUR"
+)
+{
+ordercurrency
+=
+"EURUSD"
+;
+}
+//trading eurusd
+if
+(
+stCurrency
+=
+=
+"USD"
+)
+{
+ordercurrency
+=
+"EURUSD"
+;
+}
+//trading eurusd
+if
+(
+stCurrency
+=
+=
+"JPY"
+)
+{
+ordercurrency
+=
+"USDJPY"
+;
+}
+//trading usdjpy
+if
+(
+stCurrency
+=
+=
+"GBP"
+)
+{
+ordercurrency
+=
+"GBPUSD"
+;
+}
+//trading usdgbp
+if
+(
+stCurrency
+=
+=
+"CHF"
+)
+{
+ordercurrency
+=
+"USDCHF"
+;
+}
+//trading usdchf
+if
+(
+stCurrency
+=
+=
+"AUD"
+)
+{
+ordercurrency
+=
+"AUDUSD"
+;
+}
+//trading audusd
+if
+(
+stCurrency
+=
+=
+"CAD"
+)
+{
+ordercurrency
+=
+"USDCAD"
+;
+}
+//trading usdcad
+if
+(
+stCurrency
+=
+=
+"NZD"
+)
+{
+ordercurrency
+=
+"NZDUSD"
+;
+}
+//trading nzdusd
+Trading Decision:
+The following code snippet describes how the EA makes a trading decision, when the EA is waiting for actual economic data, when the forecast economic data is available.
+When the forecast data is not available the EA uses the previous data to make a trade.
+The following code snippet explains how the trade is executed based on forecast data and actual data. The same algorithm is used when the EA makes a trading decision based on previous and actual economic data.
+if
+(
+StringToDouble
+(
+stActual
+)
+>
+StringToDouble
+(
+stForecast
+)
+)
+{
+Aert
+(
+"Stronger(actual vs forecast): "
++
+stCurrency
++
+" "
++
+"Time: "
++
+stTime
+)
+;
+int
+total
+=
+OrdersTotal
+(
+)
+;
+for
+(
+int
+cnt
+=
+0
+;
+cnt
+<
+total
+;
+cnt
++
++
+)
+{
+OrderSelect
+(
+cnt
+,
+SELECT_BY_POS
+,
+MODE_TRADES
+)
+;
+//check opened orders
+if
+(
+OrderComment
+(
+)
+=
+=
+stCurrency
++
+stActual
++
+stForecast
++
+"BUY"
+|
+|
+OrderComment
+(
+)
+=
+=
+stCurrency
++
+stActual
++
+stForecast
++
+"SELL"
+)
+{
+FileClose
+(
+file
+)
+;
+Comment
+(
+"
+\n
+"
++
+"Live Trade Open"
++
+OrderTicket
+(
+)
+)
+;
+return
+(
+0
+)
+;
+}
+}
+int
+historytotal
+=
+OrdersHistoryTotal
+(
+)
+;
+for
+(
+cnt
+=
+0
+;
+cnt
+<
+historytotal
+;
+cnt
++
++
+)
+{
+OrderSelect
+(
+cnt
+,
+SELECT_BY_POS
+,
+MODE_HISTORY
+)
+;
+//check opened orders
+if
+(
+OrderComment
+(
+)
+=
+=
+stCurrency
++
+stActual
++
+stForecast
++
+"BUY"
+|
+|
+OrderComment
+(
+)
+=
+=
+stCurrency
++
+stActual
++
+stForecast
++
+"SELL"
+)
+{
+FileClose
+(
+file
+)
+;
+Comment
+(
+"
+\n
+"
++
+"Trade Executed"
++
+OrderTicket
+(
+)
+)
+;
+return
+(
+0
+)
+;
+}
+}
+if
+(
+stCurrency
+=
+=
+"EUR"
+|
+|
+stCurrency
+=
+=
+"GBP"
+|
+|
+stCurrency
+=
+=
+"AUD"
+)
+{
+double
+ask
+=
+MarketInfo
+(
+ordercurrency
+,
+MODE_ASK
+)
+;
+double
+point1
+=
+MarketInfo
+(
+ordercurrency
+,
+MODE_POINT
+)
+;
+OrderSend
+(
+ordercurrency
+,
+OP_BUY
+,
+lot_p
+,
+ask
+,
+3
+,
+ask
+-
+(
+risk
+*
+point1
+)
+,
+ask
++
+reward
+*
+risk
+*
+point1
+)
+,
+stCurrency
++
+stActual
++
+stForecast
++
+"BUY"
+)
+;
+}
+if
+(
+stCurrency
+=
+=
+"CHF"
+|
+|
+stCurrency
+=
+=
+"CAD"
+|
+|
+stCurrency
+=
+=
+"NZD"
+|
+|
+stCurrency
+=
+=
+"JPY"
+|
+|
+stCurrency
+=
+=
+"USD"
+)
+{
+double
+bid
+=
+MarketInfo
+(
+ordercurrency
+,
+MODE_BID
+)
+;
+double
+point2
+=
+MarketInfo
+(
+ordercurrency
+,
+MODE_POINT
+)
+;
+OrderSend
+(
+ordercurrency
+,
+OP_SELL
+,
+lot_p
+,
+bid
+,
+3
+,
+bid
++
+risk
+*
+point2
+)
+,
+bid
+-
+(
+reward
+*
+risk
+*
+point2
+)
+,
+stCurrency
++
+stActual
++
+stForecast
++
+"SELL"
+)
+;
+}
+1st: the EA can only execute one order per news event, so it first checks to see if an order was executed, if the order is currently open, the EA exits.
+2nd: the EA determines if this order was already executed and closed, if the order has been executed and closed with profit or loss, the EA exits.
+The (2) checks for orders, makes sure that there is not a duplication of orders, which allows the EA to only make a single trade per news event.
+Next, it determines which Country the data is being released for, and opens a trade with the specifications in the ordersend function when the economic data is released.
+The above code is for: when actual data is greater than forecast data, the code is the same when the actual data is less than the forecast data, the only difference is the direction of the trade.
+The same algorithm is applied to when the previous data is compared to actual data when the forecast data is not present.
+Lot Sizing:
+The EA compares (actual data to forecast data), or (actual data to previous data), the percent difference between the news data determines lot amount that the EA will trade.
+The following code snippet is how the EA determines the percent difference, and specifies the lot size, the lot size is an external number which can be modified, to support any EA broker.
+The user can modify the lots when applying the EA to the chart. The default lot size values are (0.01, 0.02, 0.03...0.17).
+double
+percent_d_AF
+=
+MathAbs
+(
+(
+MathAbs
+(
+StringToDouble
+(
+stActual
+)
+-
+StringToDouble
+(
+stForecast
+)
+)
+/
+StringToDouble
+(
+stForecast
+)
+)
+*
+100
+)
+;
+double
+lot_p
+=
+0
+;
+if
+(
+(
+percent_d_AF
+>
+0
+&
+&
+percent_d_AF
+<
+=
+3
+)
+)
+{
+lot_p
+=
+lot1
+;
+}
+//0.1 lot
+if
+(
+(
+percent_d_AF
+>
+3
+&
+&
+percent_d_AF
+<
+=
+6
+)
+)
+{
+lot_p
+=
+lot2
+;
+}
+//0.2 lots
+if
+(
+(
+percent_d_AF
+>
+6
+&
+&
+percent_d_AF
+<
+=
+9
+)
+)
+{
+lot_p
+=
+lot3
+;
+}
+//0.3 lots
+if
+(
+(
+percent_d_AF
+>
+9
+&
+&
+percent_d_AF
+<
+=
+12
+)
+)
+{
+lot_p
+=
+lot4
+;
+}
+//0.4 lots
+if
+(
+(
+percent_d_AF
+>
+12
+&
+&
+percent_d_AF
+<
+=
+15
+)
+)
+{
+lot_p
+=
+lot5
+;
+}
+//0.5 lots
+if
+(
+(
+percent_d_AF
+>
+15
+&
+&
+percent_d_AF
+<
+=
+18
+)
+)
+{
+lot_p
+=
+lot6
+;
+}
+//0.6 lots
+if
+(
+(
+percent_d_AF
+>
+18
+&
+&
+percent_d_AF
+<
+=
+21
+)
+)
+{
+lot_p
+=
+lot7
+;
+}
+//0.7 lots
+if
+(
+(
+percent_d_AF
+>
+21
+&
+&
+percent_d_AF
+<
+=
+24
+)
+)
+{
+lot_p
+=
+lot8
+;
+}
+//0.8 lots
+if
+(
+(
+percent_d_AF
+>
+24
+&
+&
+percent_d_AF
+<
+=
+27
+)
+)
+{
+lot_p
+=
+lot9
+;
+}
+//0.9 lots
+if
+(
+(
+percent_d_AF
+>
+27
+&
+&
+percent_d_AF
+<
+=
+30
+)
+)
+{
+lot_p
+=
+lot10
+;
+}
+//1 lots
+if
+(
+(
+percent_d_AF
+>
+30
+&
+&
+percent_d_AF
+<
+=
+40
+)
+)
+{
+lot_p
+=
+lot11
+;
+}
+//2 lots
+if
+(
+(
+percent_d_AF
+>
+40
+&
+&
+percent_d_AF
+<
+=
+50
+)
+)
+{
+lot_p
+=
+lot12
+;
+}
+//3 lots
+if
+(
+(
+percent_d_AF
+>
+50
+&
+&
+percent_d_AF
+<
+=
+60
+)
+)
+{
+lot_p
+=
+lot13
+;
+}
+//4 lots
+if
+(
+(
+percent_d_AF
+>
+60
+&
+&
+percent_d_AF
+<
+=
+70
+)
+)
+{
+lot_p
+=
+lot14
+;
+}
+//5 lots
+if
+(
+(
+percent_d_AF
+>
+70
+&
+&
+percent_d_AF
+<
+=
+80
+)
+)
+{
+lot_p
+=
+lot15
+;
+}
+//6 lots
+if
+(
+(
+percent_d_AF
+>
+80
+&
+&
+percent_d_AF
+<
+=
+90
+)
+)
+{
+lot_p
+=
+lot16
+;
+}
+//7 lots
+if
+(
+(
+percent_d_AF
+>
+90
+&
+&
+percent_d_AF
+<
+=
+100
+)
+)
+{
+lot_p
+=
+lot17
+;
+}
+//8 lots
+if
+(
+(
+percent_d_AF
+>
+100
+)
+)
+{
+lot_p
+=
+lot18
+;
+}
+//8 lots
+Chart Information:
+Screen Shot of Fundamental News Data
+When the EA is first applied to the chart, you specify "xTime", "risk", "reward", "MagicNumber", "enable_close_time", "wait_time" and specify your minimum and maximum lots sizes, make sure to leave the default location where "get right" is installed.
+The EA will download the dialyfx calendar, and will determine which news event is next. It will display the following data: Date, Time, TimeZone, Currency, Description, Importance, Actual, Forecast, and Previous news event data as a comment on the chart, as shown in the image above.
+In the image above, the EA is waiting for the news event that will be released at 2:00AM, and as you can see, the previous economic data is known (73,5%), so the EA is waiting for the actual data to be released. When the economic data will be released, the EA will compare the data and make a trading decision based on previous and actual economic data.
+Finally, the EA downloads the calendar data on a minute-by-minute basis, starting from the time when the news event is scheduled to release.
+Fundamental Trader Overview:
+This EA trades every economic event that is released on dailyfx.com/calendar, in CSV format.
+The calendar is downloaded with "get right" program.
+The EA downloads the calendar every minute when the news data is scheduled to release.
+The EA parses the calendar and determines which news event is next, then waits 27 minutes for the news to be released.
+Once the economic data is released, it determines if it is (actual vs. forecast) or (actual vs. previous) data.
+The EA determines lot size, currency to trade, and the direction based on the economic calendar event, this data could all be found on the chart when the EA is running.
+The order is executed with 1:3, risk/reward ratio.
+The EA is setup to only execute a single order, per news event. If "enable_close_time" is enabled with a "true" value, the EA will wait the amount of minutes specified by the "wait_time" before closing the opened order.
+Remember to follow all instructions in the following link
+https://www.mql5.com/en/articles/1502
+, so that that the calendar is downloaded correctly, and your broker time is setup correctly, for the news to be processed, dailyfx.com/calendar data is GMT.
+If you have any questions, comments, or criticism, drop a comment.

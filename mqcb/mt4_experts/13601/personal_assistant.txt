@@ -1,0 +1,39 @@
+Personal assistant is there to make your trading easy, basically it does what a real assistant does. Provides information and executes your orders.
+I wrote this EA for several reasons:
+to display important information on the chart when I use full screen in MetaTrader 4;
+to separate manually opened orders by ID with ease and display their current performance (so if you have many opened orders for different strategies or different EAs, you want simple view and control over them);
+to calculate value of Stop Loss, Take Profit, Margin required, Tick value for me;
+to quickly open or close orders with a press of a button.
+Personal assistant functions are:
+Display EA name and ID (to separate more than one Personal assistants and to easily know which one is attached to the chart);
+Display Symbol and timeframe;
+Display leverage for account;
+Display lot volume value currently selected;
+Display tick value for lot volume value (in deposit currency);
+Display margin required for new order based on lot value currently selected;
+Display current spread;
+Display Profit/Loss sum for all orders opened by this EA, calculated in deposit currency;
+Display number of orders currently active for this EA;
+Display Take Profit sum — if opened orders have set TP, then it displays average TP, if TP isn't set, then it displays 0, if TP is set for some orders and not for all, it will calculate average only for positions with TP set;
+Display Stop Loss sum — if opened orders have set SL, then it displays average SL, if SL isn't set, then it displays 0, if SL is set for some orders and not for all, it will calculate average only for positions with SL set;
+Open long position with a press of key number 1 with settings EA is currently set to;
+Open short position with a press of key number 2 with settings EA is currently set to;
+Close positions opened by this EA with a press of key number 3, ALERT: if conditions of market change rapidly it may not close all orders, so always check opened orders, or push 3 once more;
+Increase lot volume value with a press of key number 4 — hold button to quickly increase value;
+Decrease lot volume value with a press of key number 5 — hold button to quickly decrease value.
+ATTENTION:
+Use with caution, it's your own responsibility if you by accident open unwanted orders! Make sure that you have the right chart selected when inputting commands.
+Image of Personal Assistant on the chart:
+User input variables:
+ID — Magic Number for your EA and for your orders opened by EA;
+Display_legend — Shows legend on the chart for buttons/commands (open long, open short, close orders, increase volume, decrease volume);
+LotSize — initial volume value;
+slippage — slippage for opening and closing orders;
+text_size — size of the text displayed on the chart;
+text_color — color of text displayed on the chart;
+right_edge_shift — position of text on the chart from the right edge of window in pixels;
+upper_edge_shift — position of text on the chart from the upper edge of window in pixels and position of row from the previous row;
+Alert me of potential problems, test it on DEMO first!
+UPDATE:
+Now displays how many opened positions have SL and TP set.
+Fixed SL and TP value calculation.

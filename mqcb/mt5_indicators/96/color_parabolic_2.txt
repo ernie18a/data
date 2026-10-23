@@ -1,0 +1,13 @@
+Added colors to Parabolic SAR. The color depends on the acceleration factor.
+All calculations performed inside the CParabolic class.
+The functions:
+Init(double SARStep, double SARMaximum,const double &high[],const double &low[],int totl) - initialization.
+GetColor() - gets the color.
+Calc(const double &high[],const double &low[],int i) - calculates the value of Parabolic at the specified bar.
+The code will be useful for all who start to learn classes.
+The colors are listed in the line:
+#property indicator_color1  Blue,Purple,Indigo,Sienna,SteelBlue,Aqua,SpringGreen,Gold,Yellow,Linen,MintCream
+This version uses 10 first colors, but it's better to specify more colors in the list.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/96

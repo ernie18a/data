@@ -1,0 +1,1 @@
+Multi time frame signal, this indcator using Price,MA,Stochastic,RSI.

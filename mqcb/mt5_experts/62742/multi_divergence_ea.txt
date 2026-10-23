@@ -1,0 +1,95 @@
+Multi-Divergence EA with Confluence and Filters
+This Expert Advisor is designed to automate a sophisticated trading strategy based on
+market divergence
+. The core idea is to identify high-probability reversal points by finding a
+confluence of signals
+from three of the most widely used oscillators: the Relative Strength Index (RSI), Moving Average Convergence Divergence (MACD), and the Stochastic Oscillator.
+How The Strategy Works
+The EA's logic is built upon a multi-layered confirmation process to ensure high-quality trade signals and filter out market noise.
+Divergence Detection:
+The EA constantly scans the price action and the three indicators to find divergences.
+Bullish Divergence (Potential Buy Signal):
+Occurs when the price makes a new lower low, but an indicator fails to do so, instead making a higher low. This suggests that the bearish momentum is weakening and a bullish reversal may be imminent.
+Bearish Divergence (Potential Sell Signal):
+Occurs when the price makes a new higher high, but an indicator makes a lower high. This indicates that the bullish momentum is fading, signaling a potential bearish reversal.
+The Power of Confluence:
+The EA's unique strength is that it does not rely on a single indicator. Instead, it waits for a user-defined number of indicators (
+MinConfirmations
+) to show divergence simultaneously. For example, a trade will only be triggered if at least 2 out of the 3 indicators confirm the same divergence, significantly increasing the signal's reliability.
+Advanced Signal Filtering (Optional):
+To further improve accuracy, two additional filters can be enabled:
+Trend Filter:
+Uses a 50-period EMA to determine the overall market trend. If enabled, the EA will only enter buy trades when the price is above the EMA and sell trades when the price is below it. This helps to avoid trading against the dominant market momentum.
+Volume Filter:
+A trade signal is only considered valid if the volume of the signal bar is significantly higher than the average volume of the preceding bars. This confirms that there is strong market interest and conviction behind the potential reversal.
+Input Parameters Explained
+All external variables are fully customizable to allow you to tailor the strategy to your preferences.
+=== Risk Management ===
+LotSize
+: Sets the fixed trading volume if
+UseMoneyManagement
+is
+false
+.
+StopLoss
+: The stop loss in points.
+TakeProfit
+: The take profit in points.
+MaxSpread
+: The maximum allowed spread in points for opening a new position.
+UseMoneyManagement
+: If
+true
+, the EA automatically calculates the lot size based on
+RiskPercent
+.
+RiskPercent
+: The percentage of your account equity to risk per trade.
+=== Divergence Settings ===
+RSI_Period
+,
+MACD_Fast
+,
+MACD_Slow
+,
+MACD_Signal
+,
+Stoch_K
+,
+Stoch_D
+,
+Stoch_Slowing
+: These are the standard input parameters for the RSI, MACD, and Stochastic indicators.
+=== Divergence Detection ===
+BarsToCheck
+: The number of recent bars the EA will scan for divergence patterns.
+MinBarsDistance
+: The minimum number of bars on each side of a peak/trough to validate it. This helps ignore minor price fluctuations.
+MinDivergenceStrength
+: A filter for the minimum required strength of the divergence signal (0-1).
+MinConfirmations
+: A crucial parameter. Sets the minimum number of indicators (from 1 to 3) that must show divergence for a trade to be opened.
+UseVolumeFilter
+: Set to
+true
+to enable the volume confirmation filter.
+UseTrendFilter
+: Set to
+true
+to enable the EMA-based trend filter.
+=== Trading Settings ===
+AllowBuy
+/
+AllowSell
+: Enable or disable long or short trades.
+MaxTrades
+: The maximum number of concurrent trades allowed.
+MagicNumber
+: A unique identifier for the EA's trades, preventing interference with other robots.
+Recommended Usage
+Symbols:
+The strategy is universal and can be applied to any major currency pairs (e.g., EURUSD, GBPUSD) and other liquid instruments.
+Timeframe:
+Divergence signals are generally more reliable on higher timeframes. It is recommended to use this EA on
+H1, H4, or D1
+charts to filter out market noise and capture more significant market moves.

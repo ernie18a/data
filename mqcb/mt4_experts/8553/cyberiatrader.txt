@@ -1,0 +1,14 @@
+CyberiaTrader Expert Advisor.
+Test results:
+A professional expert advisor to trade on currencies with the spread of 2 points on 1-minute intervals.
+It approves itself especially well on flat markets i\with good volumes. The following specific trading technologies
+has been realized: working with cross-currencies, automated calculation of lots for a preset exposure,
+multicurrency trading, automated search for the best modeling period, automated correlation
+between StopLoss value and coefficient of market confidence, etc. The expert realizes pipping technology,
+techniques to find shadow StopLoss level...
+The expert can show results from 100 to 300% daily with default settings. My company distributed this expert advisor
+only among our commercial customers before. But I think now that some of its ideas could be useful for many traders.
+Please note that you should not install this version for real trading. Or at least use it only on the flat market at your own risk.
+Contacts:
+krivoshey@cyberia.org.ru
+ICQ: 249106432

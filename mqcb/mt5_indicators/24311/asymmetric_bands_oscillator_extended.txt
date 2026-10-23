@@ -1,0 +1,6 @@
+Theory :
+This is an extended version of the "regular" asymmetric bands oscillator (originally published here :
+Asymmetric Bands Oscillator
+). This version is adding the estimation of the price "weight" within the current trend and also it is attempting to estimate the impact it could have to the build of the trend
+Usage :
+Crosses of the average and the price line can be used as signals but get used to ow it works before attempting to use it or signals estimation

@@ -1,0 +1,2 @@
+The Multi-Colored Trend Indicator is a simple but effective way to identify trends in the market. In this Indicator I used two moving averages to calculate the trend direction and changed color depending on the trend direction (green for uptrend, red for downtrend). This indicator is easy to use and understand.
+It's developed for learning purposes only.  I hope It will give you a basic understanding of how multi-colored indicators work.

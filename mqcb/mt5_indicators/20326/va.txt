@@ -1,0 +1,11 @@
+The oscillator indicator shows the velocity/acceleration.
+The indicator has three input parameters:
+Velocity period
+- velocity calculation period;
+Acceleration period
+- acceleration calculation period;
+Applied price
+- price used for calculations.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20326

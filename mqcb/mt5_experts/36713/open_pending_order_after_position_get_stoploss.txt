@@ -1,0 +1,1 @@
+When your position get stoploss immediate this event occur in OnTradeTransaction event this code help you open opposite pending order immediate

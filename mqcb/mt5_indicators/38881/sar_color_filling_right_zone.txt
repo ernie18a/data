@@ -1,0 +1,5 @@
+The idea of the indicator
+Additional style
+DRAW_FILLING
+to the iSAR indicator (Parabolic SAR, SAR). Filling the area between the price and the iSAR indicator. Additionally (on the right side) a rectangle is drawn - this rectangle repeats the fill area.
+Rice. 1.SAR Color Filling Right zone

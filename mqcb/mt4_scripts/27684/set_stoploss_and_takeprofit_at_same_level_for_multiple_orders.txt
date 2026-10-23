@@ -1,0 +1,1 @@
+The script selects all open orders of the symbol and can modify stoploss or takeprofit or both at the desired level (price). If the input parameters are left to zero , the stop or the takeprofit are left unchanged .

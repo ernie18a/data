@@ -1,0 +1,25 @@
+This indicator is very simple: it shows signals triggered using
+two
+different ZigZag indicators (fast and slow) without any filtering.
+It does never -ever- repaint a past signal and therefore is useful to study the real behavior of the ZigZag indicator -which does repaint- as a trading tool over time.
+As you can see, many signals are repainted by ZigZag indicator over time. Fractals have been used to reduce the number of highs and lows painted.
+It depends on original
+MetaQuotes ZigZag indicator
+-attached-.
+Recommendations:
+Do not trade this indicator by itself
+This indicator has been made for educational purposes only -not for actual trading-
+You can use this indicator template to filter zigzag signals with your trading strategy
+You can study the relationship between not-repainted fast and slow zigzag signals over time
+Color convention:
+Orange
+dots are signals shared by both ZigZags
+Blue
+dots are only Fast ZigZag signals
+Red
+dots are only Slow ZigZag signals
+(only seen if fast ZigZag is hidden)
+Input parameters:
+CalculateOnBarClose (default: true) - Determines if unclosed bar is evaluated
+ZigZagFast (default: 6) Set as 0 to hide it
+ZigZagSlow(default: 24) Set as 0 to hide it

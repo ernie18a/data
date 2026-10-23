@@ -1,0 +1,10 @@
+Real author:
+MetaQuotes
+The trend indicator drawn in the form of the colored cloud.
+This indicator was first implemented in MQL4 and published in
+CodeBase
+on April 22, 2014.
+Fig.1. Karpenko Indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11243

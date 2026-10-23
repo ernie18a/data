@@ -1,0 +1,6 @@
+The indicator shows trade signals.
+Trade signals:
+Green
+dot - enter long trade;
+Red
+dot - enter short trade;

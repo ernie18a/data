@@ -1,0 +1,2 @@
+Author: Matsu
+Indicator RSI with Trend Catcher signal.

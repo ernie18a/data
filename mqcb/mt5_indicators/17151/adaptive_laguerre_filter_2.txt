@@ -1,0 +1,3 @@
+There are a few adaptive Laguerre filters. The main difference (addition) among the existing versions and this one is that this is using smoothing that does not use any of the averages but is implemented in the core of the Laguerre filter calculation. That helps in keeping the lag as little as possible and adds flexibility (and experimenting possibility — try very big smooth parameter as an example).
+It allows "smoothing" coefficient from 0 to infinity (as much as mt allows).
+As of the rest: indicator is, as usually, equipped with usual choice of 22 types of prices, alerts and is already multi time frame.

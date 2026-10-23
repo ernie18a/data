@@ -1,0 +1,5 @@
+Aquarium Canvas Background
+This script adds cool colorful live canvas background on the chart like aquarium
+Add Canvas_shader.mqh in MQL5/Include/Canvas Folder
+Extract Files.zip in MQL5/Files
+Add Canvas_Background.mq5 file in MQL5/Scripts folder and compile it

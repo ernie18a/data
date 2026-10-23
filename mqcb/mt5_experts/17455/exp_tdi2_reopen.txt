@@ -1,0 +1,14 @@
+The Exp_TDI-2_ReOpen trading system based on the intersection of
+TDI-2
+indicator lines, with adding to trend-following positions. The signal is formed when a bar is closing if the indicator lines were crossed. When there is an open position, the trading system increases the volume of the open position if profit in points from the last trade increases a threshold fixed in the EA inputs.
+Information on position scaling is stored in string comment to the trade in the format of:
+number of scales / price of last deal / volume of last deal
+.
+This Expert Advisor requires the compiled indicator file TDI-2.ex5 in order to run. Place it to <terminal_data_folder>\MQL5\Indicators.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig1. Examples of deals on the chart
+Testing results for 2015 on USDCHF H4:
+Fig.2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17455

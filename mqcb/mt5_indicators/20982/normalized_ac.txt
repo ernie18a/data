@@ -1,0 +1,21 @@
+This oscillator is a normalized Acceleration/Deceleration indicator. It shifts and re-scales the standard AC indicator.
+It can be helpful in adjusting the configuration to other oscillators.
+It has six input parameters:
+Fast MA period
+- fast MA period to calculate AC
+Slow MA period
+- slow MA period to calculate AC
+Smoothing period
+- smoothing period to calculate AC
+Normalization level
+- normalization level (*)
+Scale
+- normalization scale (**)
+Normalization period
+- normalization period (***)
+* normalization level means the value of the central (zero) line upon normalization
+** normalization scale means the range of the normalized AC. If it is set to 0, the standard AC range (Max-Min) will be used
+*** normalization period means the number of history bars to calculate the normalization. If it is set to 0, the entire available period will be used.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20982

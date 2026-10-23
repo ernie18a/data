@@ -1,0 +1,30 @@
+Real author:
+Cronex
+Superposition of
+RSI
+and
+DeMarker
+technical indicators.
+As a rule, it takes too much time to switch between the periods and the indicator parameters to compare the behaviour and reveal the genuine dynamics of the indicators.
+This indicator was created after the working space of the terminal was completely filled by a set of standard indicators having various parameters.
+The things that are calculated:
+Four
+RSI
+lines with different periods (the interval changing period is specified in the indicator parameters) form the average weighted indicator part according to RSI;
+Four
+DeMarker
+lines with different periods (the interval changing period is specified in the indicator parameters) form the average weighted indicator part according to DeMarker;
+Indications of the averages are reduced to a unified display system because of the difference between RSI and DeMarker indicators;
+Superposition concerning these two indicators is based on the average built from RSI and DeMarker;
+To ease the interpretation two MA are put on a superposition line;
+The histogram of the difference between RSI and DeMarker weighted averages is shown to make the picture complete.
+As a result, we managed to gather two characteristics of different period and dynamics. It is widely known that RSI and DeMarker behave differently in case of uncertain situations on a chart and also relative to themselves in case of the indicators various periods. Therefore, I think, it is quite useful to see this difference.
+The indicator uses the СMoving_Average class of the SmoothAlgorithms.mqh library. Working with that class was described in details in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+This indicator was first implemented in MQL4 and published in
+CodeBase
+14.01.2008.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/515

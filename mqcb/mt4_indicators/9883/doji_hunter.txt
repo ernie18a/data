@@ -1,0 +1,128 @@
+For starters I added a RangeOfBars variable that allows you to indicate how many bars back from current bar you want to look for the doji. This allows for detection of double dojis as well. By setting the RangeOfBars to 2 or 3, you can look in the first, second or third candle position to find a potential double doji. In fact, you can create a method for IsDoji by looking at just the first candle position then create a second method that looks at first and second position for a double doji. In doing so, you can now write your code to say if IsDoji, no trade, if IsDoubleDoji trade on extension, etc, etc
+The original coding for Doji Reader 2, handled 5 digit condition poorly, sorry partner, but here you will see there is a more efficient way to write it. Granted, mine may not be the best either, just one step closer.
+I kept the ShowCandleBox, thought that was a nice way to place an indicator on the chart and it did well in testing. The extra indicators we nice, but I wanted to keep it simple. The extra text was also nice and somewhat educational to the user on the finding of the doji, but again, keeping it simple.
+One change that was major was changing the configuration values to doubles instead of integers. By changing it to doubles, we can utilize the 5 digit precision and get a cleaner tighter doji, as you will see when you use it. Note: when you are using an indicator that is based on a double, never use an integer unless you are using it to count something.
+I also added a counter reset so that the boxes didn't go on forever and ever in the counting process. Each time the indicator processes, it was still cycling the same counter, higher and higher. By including the reset, we still get an accurate count, but it resets when counting at the beginning of each process cycle.
+I included a buffer and a buffer cleaning process so you can pass 0, by default and 1 if found to the code using the buffer. By keeping the range small we do not use excess CPU processing the old data we are not interested in.
+Here is a sample declaration for putting it into your code:
+extern
+string
+__DOJI_HUNTER_SETTINGS =
+"-----"
+;
+int
+RangeOfBars =
+3
+;
+bool
+ShowCandleBox=
+true
+;
+//false to hide the candle box
+extern
+color                  BoxColor=MistyRose;
+//add your fav color
+extern
+string
+__Regular_Doji_Settings =
+"-----"
+;
+bool
+FindRegularDoji=
+true
+;
+//false to disable
+extern
+double
+MinLengthOfUpTail=
+0.1
+;
+//candle with upper tail equal or more than this will show up
+extern
+double
+MinLengthOfLoTail=
+0.1
+;
+//candle with lower tail equal or more than this will show up
+extern
+double
+MaxLengthOfBody=
+0.2
+;
+//candle with body less or equal with this will show up
+extern
+string
+__Dragonfly_Doji_Settings =
+"-----"
+;
+bool
+FindDragonflyDoji=
+true
+;
+//false to disable
+extern
+double
+MaxLengthOfUpTail1=
+0
+;
+//candle with upper tail equal or more than this will show up
+extern
+double
+MinLengthOfLoTail1=
+0.1
+;
+//candle with lower tail equal or more than this will show up
+extern
+double
+MaxLengthOfBody1=
+0.2
+;
+//candle with body less or equal with this will show up
+extern
+string
+__Gravestone_Doji_Settings =
+"-----"
+;
+bool
+FindGravestoneDoji=
+true
+;
+//false to disable
+extern
+double
+MinLengthOfUpTail2=
+0.1
+;
+//candle with upper tail equal or more than this will show up
+extern
+double
+MaxLengthOfLoTail2=
+0
+;
+//candle with lower tail equal or more than this will show up
+extern
+double
+MaxLengthOfBody2=
+0.2
+;
+//candle with body less or equal with this will show up
+Here is a sample call to get the data on the doji. Warning, place this call in the new candle event section of your code, placing it in the tick event will cause you issues:
+Doji1 =
+iCustom
+(
+NULL
+,
+0
+,
+"Doji_Hunter"
+, 
+               RangeOfBars, ShowCandleBox, BoxColor, FindRegularDoji, 
+               MinLengthOfUpTail, MinLengthOfLoTail, MaxLengthOfBody, 
+               FindDragonflyDoji, MaxLengthOfUpTail1, MinLengthOfLoTail1, 
+               MaxLengthOfBody1, FindGravestoneDoji, MinLengthOfUpTail2, 
+               MaxLengthOfLoTail2, MaxLengthOfBody2,
+0
+,
+0
+);
+The above code snippet will get the first candle location value of either 0 or 1, 1 = doji found.

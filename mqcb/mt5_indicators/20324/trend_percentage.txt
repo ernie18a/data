@@ -1,0 +1,9 @@
+The indicator shows the percentage ratio of bullish and bearish bars in the given interval.
+It has two parameters:
+Period
+- calculation period;
+Applied price
+- price used for calculations.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20324

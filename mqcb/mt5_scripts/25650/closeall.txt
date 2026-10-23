@@ -1,0 +1,4 @@
+This is a script to close all market positions and/or pending orders.
+Optionally, you can disable
+Algo-Trading button
+to prevent other running experts from opening further positions and orders.

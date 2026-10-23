@@ -1,0 +1,11 @@
+Original author:
+Kim Igor V. aka KimIV
+This spread indicator shows minimum and maximum spread values for the last hour, 4 hours and day. Two additional lines show minimum and maximum spread values on the current bar.
+This turned out to be very useful when working with trading account of different brokers.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 6.10.2014.
+Fig. 1. The i-Spread indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12546

@@ -1,0 +1,12 @@
+Real author:
+Alexandre
+The
+HighestLowestRange (HLR)
+indicator implemented as a histogram with a color indication of entering the overbought and oversold zones. The first bar upon entering the overbought and oversold zones has a brighter color if preceded by an opposite trend.
+Originally the indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 25.01.2007.
+Fig.1. The HLR_Histogram indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15043

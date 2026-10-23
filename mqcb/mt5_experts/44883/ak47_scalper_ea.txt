@@ -1,0 +1,755 @@
+1. Input parameter
+#define
+ExtBotName
+"AK-47 EA"
+//Bot Name
+#define
+Version
+"1.00"
+//Import inputal class
+#include
+<Trade\PositionInfo.mqh>
+#include
+<Trade\Trade.mqh>
+#include
+<Trade\SymbolInfo.mqh>
+#include
+<Trade\AccountInfo.mqh>
+#include
+<Trade\OrderInfo.mqh>
+//--- introduce predefined variables for code readability
+#define
+Ask
+SymbolInfoDouble
+(
+_Symbol
+,
+SYMBOL_ASK
+)
+#define
+Bid
+SymbolInfoDouble
+(
+_Symbol
+,
+SYMBOL_BID
+)
+//--- input parameters
+input
+string
+EASettings         =
+"---------------------------------------------"
+;
+//-------- <EA Settings> --------
+input
+int
+InpMagicNumber    =
+124656
+;
+//Magic Number
+input
+string
+MoneySettings      =
+"---------------------------------------------"
+;
+//-------- <Money Settings> --------
+input
+bool
+isVolume_Percent  =
+true
+;
+//Allow Volume Percent
+input
+double
+InpRisk           =
+3
+;
+//Risk Percentage of Balance (%)
+input
+string
+TradingSettings    =
+"---------------------------------------------"
+;
+//-------- <Trading Settings> --------
+input
+double
+Inpuser_lot       =
+0.01
+;
+//Lots
+input
+double
+InpSL_Pips        =
+3.5
+;
+//Stoploss (in Pips)
+input
+double
+InpTP_Pips        =
+7
+;
+//TP (in Pips) (0 = No TP)
+input
+int
+InpMax_slippage   =
+3
+;
+//Maximum slippage allow_Pips.
+input
+double
+InpMax_spread     =
+5
+;
+//Maximum allowed spread (in Point) (0 = floating)
+input
+string
+TimeSettings      =
+"---------------------------------------------"
+;
+//-------- <Trading Time Settings> --------
+input
+bool
+InpTimeFilter     =
+true
+;
+//Trading Time Filter
+input
+int
+InpStartHour      =
+2
+;
+//Start Hour
+input
+int
+InpStartMinute    =
+30
+;
+//Start Minute
+input
+int
+InpEndHour        =
+21
+;
+//End Hour
+input
+int
+InpEndMinute      =
+0
+;
+//End Minute
+2. local variables initialization
+//--- Variables
+int
+Pips2Points;
+// slippage  3 pips    3=points    30=points
+double
+Pips2Double;
+// Stoploss 15 pips    0.015      0.0150
+bool
+isOrder =
+false
+;
+int
+slippage;
+long
+acSpread;
+string
+strComment =
+""
+;
+
+CPositionInfo  m_position;
+// trade position object
+CTrade         m_trade;
+// trading object
+CSymbolInfo    m_symbol;
+// symbol info object
+CAccountInfo   m_account;
+// account info wrapper
+COrderInfo     m_order;
+// pending orders object
+3. Main Code
+a/ Expert initialization function
+//+------------------------------------------------------------------+
+//| Expert initialization function                                   |
+//+------------------------------------------------------------------+
+int
+OnInit
+() {
+//3 or 5 digits detection
+//Pip and point
+if
+(
+_Digits
+%
+2
+==
+1
+) {
+      Pips2Double  =
+_Point
+*
+10
+;
+      Pips2Points  =
+10
+;
+      slippage =
+10
+* InpMax_slippage;
+   }
+else
+{
+      Pips2Double  =
+_Point
+;
+      Pips2Points  =
+1
+;
+      slippage = InpMax_slippage;
+   }
+if
+(!m_symbol.Name(
+Symbol
+()))
+// sets symbol name
+return
+(
+INIT_FAILED
+);
+      
+   RefreshRates();
+//---
+m_trade.SetExpertMagicNumber(InpMagicNumber);
+   m_trade.SetMarginMode();
+   m_trade.SetTypeFillingBySymbol(m_symbol.Name());
+   m_trade.SetDeviationInPoints(slippage);
+//---
+return
+(
+INIT_SUCCEEDED
+);
+}
+b/ Expert tick function
+//+------------------------------------------------------------------+
+//| Expert tick function                                             |
+//+------------------------------------------------------------------+
+void
+OnTick
+() {
+if
+(
+TerminalInfoInteger
+(
+TERMINAL_TRADE_ALLOWED
+) ==
+false
+) {
+Comment
+(
+"LazyBot\nTrade not allowed."
+);
+return
+;
+   }
+MqlDateTime
+structTime;
+TimeCurrent
+(structTime);
+   structTime.sec =
+0
+;
+//Set starting time
+structTime.hour = InpStartHour;
+   structTime.min = InpStartMinute;
+datetime
+timeStart =
+StructToTime
+(structTime);
+//Set Ending time
+structTime.hour = InpEndHour;
+   structTime.min = InpEndMinute;
+datetime
+timeEnd =
+StructToTime
+(structTime);
+   
+   acSpread =
+SymbolInfoInteger
+(
+_Symbol
+,
+SYMBOL_SPREAD
+);
+   
+   
+   strComment =
+"\n"
++ ExtBotName +
+" - v."
++ (
+string
+)Version;
+   strComment +=
+"\nSever time = "
++
+TimeToString
+(
+TimeCurrent
+(),
+TIME_DATE
+|
+TIME_SECONDS
+) +
+" - "
++ DayOfWeekDescription(structTime.day_of_week);
+   strComment +=
+"\nTrading time = ["
++ (
+string
+)InpStartHour +
+"h"
++ (
+string
+)InpStartMinute +
+" --> "
++  (
+string
+)InpEndHour +
+"h"
++ (
+string
+)InpEndMinute +
+"]"
+;
+   
+   strComment +=
+"\nCurrent Spread = "
++ (
+string
+)acSpread +
+" Points"
+;
+Comment
+(strComment);
+//Update Values
+UpdateOrders();
+   
+   TrailingStop();
+//Dieu kien giao dich theo phien My
+if
+(InpTimeFilter) {
+if
+(
+TimeCurrent
+() >= timeStart &&
+TimeCurrent
+() < timeEnd) {
+if
+(!isOrder) OpenOrder();
+      }
+   }
+else
+{
+if
+(!isOrder) OpenOrder();
+   }
+   
+}
+//---End fuction
+3.1 Calculate signal in order to send orders
+//+------------------------------------------------------------------+
+//| CALCULATE SIGNAL AND SEND ORDER                                  |
+//+------------------------------------------------------------------+
+void
+OpenOrder(){
+ENUM_ORDER_TYPE
+OrdType =
+ORDER_TYPE_SELL
+;
+//-1;
+double
+TP =
+0
+;
+double
+SL =
+0
+;
+string
+comment = ExtBotName;
+//Calculate Lots
+double
+lot1 = CalculateVolume();
+if
+(OrdType ==
+ORDER_TYPE_SELL
+) {
+double
+OpenPrice = Bid -
+NormalizeDouble
+(InpSL_Pips/
+2
+* Pips2Double,
+_Digits
+);
+      
+      TP = OpenPrice -
+NormalizeDouble
+(InpTP_Pips * Pips2Double,
+_Digits
+);
+      SL = Ask +
+NormalizeDouble
+(InpSL_Pips/
+2
+* Pips2Double,
+_Digits
+);
+if
+(CheckSpreadAllow()
+//Check Spread
+&& CheckVolumeValue(lot1)
+//Check volume
+&& CheckOrderForFREEZE_LEVEL(
+ORDER_TYPE_SELL_STOP
+, OpenPrice)
+//Check Dist from openPrice to Bid
+&& CheckStopLoss(OpenPrice,  SL, TP)
+//Check Dist from SL, TP to OpenPrice
+&& CheckMoneyForTrade(m_symbol.Name(), lot1,
+ORDER_TYPE_SELL
+))
+//Check Balance khi lenh cho duoc Hit
+{
+if
+(!m_trade.SellStop(lot1, OpenPrice, m_symbol.Name(), SL, TP,
+ORDER_TIME_GTC
+,
+0
+, comment))
+Print
+(
+__FUNCTION__
+,
+"--> OrderSend error "
+, m_trade.ResultComment());
+      }
+   }
+else
+if
+(OrdType ==
+ORDER_TYPE_BUY
+) {
+double
+OpenPrice = Ask +
+NormalizeDouble
+(InpSL_Pips/
+2
+* Pips2Double,
+_Digits
+);
+      SL = Bid -
+NormalizeDouble
+(InpSL_Pips/
+2
+* Pips2Double,
+_Digits
+);
+if
+(CheckSpreadAllow()
+//Check Spread
+&& CheckVolumeValue(lot1)
+//Check volume
+&& CheckOrderForFREEZE_LEVEL(
+ORDER_TYPE_BUY_STOP
+, OpenPrice)
+//Check Dist from openPrice to Bid
+&& CheckStopLoss(OpenPrice,  SL, TP)
+//Check Dist from SL, TP to OpenPrice
+&& CheckMoneyForTrade(m_symbol.Name(), lot1,
+ORDER_TYPE_BUY
+))
+//Check Balance khi lenh cho duoc Hit
+{
+if
+(!m_trade.BuyStop(lot1, OpenPrice, m_symbol.Name(), SL, TP,
+ORDER_TIME_GTC
+,
+0
+, comment))
+// use "ORDER_TIME_GTC" when expiration date = 0
+Print
+(
+__FUNCTION__
+,
+"--> OrderSend error "
+, m_trade.ResultComment());
+      }
+   }
+   
+}
+3.2 Calculate Volume
+//+------------------------------------------------------------------+
+//| CALCULATE VOLUME                                                 |
+//+------------------------------------------------------------------+
+// We define the function to calculate the position size and return the lot to order.
+double
+CalculateVolume() {
+double
+LotSize =
+0
+;
+if
+(isVolume_Percent ==
+false
+) {
+      LotSize = Inpuser_lot;
+     }
+else
+{
+      LotSize = (InpRisk) * m_account.FreeMargin();
+      LotSize = LotSize /
+100000
+;
+double
+n =
+MathFloor
+(LotSize/Inpuser_lot);
+//Comment((string)n);
+LotSize = n * Inpuser_lot;
+if
+(LotSize < Inpuser_lot)
+         LotSize = Inpuser_lot;
+if
+(LotSize > m_symbol.LotsMax()) LotSize = m_symbol.LotsMax();
+if
+(LotSize < m_symbol.LotsMin()) LotSize = m_symbol.LotsMin();
+   }
+//---
+return
+(LotSize);
+}
+3.3 EA has function "trailing Stop",
+SL will change every time price change (down)
+//+------------------------------------------------------------------+
+//| TRAILING STOP                                                    |
+//+------------------------------------------------------------------+
+void
+TrailingStop() {
+double
+SL_in_Pip =
+0
+;
+for
+(
+int
+i =
+PositionsTotal
+() -
+1
+; i >=
+0
+; i--) {
+if
+(m_position.SelectByIndex(i)) {
+// selects the orders by index for further access to its properties
+if
+((m_position.Magic() == InpMagicNumber) && (m_position.
+Symbol
+() == m_symbol.Name())) {
+// For Buy oder
+if
+(m_position.PositionType() ==
+POSITION_TYPE_BUY
+) {
+//--Calculate SL when price changed
+SL_in_Pip =
+NormalizeDouble
+(Bid - m_position.StopLoss(),
+_Digits
+) / Pips2Double;
+if
+(SL_in_Pip > InpSL_Pips) {
+double
+newSL =
+NormalizeDouble
+(Bid - InpSL_Pips * Pips2Double,
+_Digits
+);
+if
+(!m_trade.PositionModify(m_position.Ticket(), newSL, m_position.TakeProfit())) {
+Print
+(
+__FUNCTION__
+,
+"--> OrderModify error "
+, m_trade.ResultComment());
+continue
+;  
+                  }
+               }
+            }
+//For Sell Order
+else
+if
+(m_position.PositionType() ==
+POSITION_TYPE_SELL
+) {
+//--Calculate SL when price changed
+SL_in_Pip =
+NormalizeDouble
+(m_position.StopLoss() - Bid,
+_Digits
+) / Pips2Double;
+if
+(SL_in_Pip > InpSL_Pips){
+double
+newSL =
+NormalizeDouble
+(Bid + (InpSL_Pips) * Pips2Double,
+_Digits
+);
+if
+(!m_trade.PositionModify(m_position.Ticket(), newSL, m_position.TakeProfit())) {
+Print
+(
+__FUNCTION__
+,
+"--> OrderModify error "
+, m_trade.ResultComment());
+//continue;
+}
+               }
+            }
+         }
+      }
+   }
+//--- Modify pending order
+for
+(
+int
+i=
+OrdersTotal
+()-
+1
+; i>=
+0
+; i--) {
+// returns the number of current orders
+if
+(m_order.SelectByIndex(i)) {
+// selects the pending order by index for further access to its properties
+if
+(m_order.
+Symbol
+() == m_symbol.Name() && m_order.Magic()==InpMagicNumber) {
+if
+(m_order.OrderType() ==
+ORDER_TYPE_BUY_STOP
+) {
+               SL_in_Pip =
+NormalizeDouble
+(Bid - m_order.StopLoss(),
+_Digits
+) / Pips2Double;
+if
+(SL_in_Pip < InpSL_Pips/
+2
+) {
+double
+newOP =
+NormalizeDouble
+(Bid + (InpSL_Pips/
+2
+) * Pips2Double,
+_Digits
+);
+double
+newTP =
+NormalizeDouble
+(newOP + InpTP_Pips * Pips2Double,
+_Digits
+);
+double
+newSL =
+NormalizeDouble
+(Bid - (InpSL_Pips/
+2
+) * Pips2Double,
+_Digits
+);
+if
+(!m_trade.OrderModify(m_order.Ticket(), newOP, newSL, newTP,
+ORDER_TIME_GTC
+,
+0
+)) {
+Print
+(
+__FUNCTION__
+,
+"--> Modify PendingOrder error!"
+, m_trade.ResultComment());
+continue
+;  
+                  }               
+               }
+            }
+else
+if
+(m_order.OrderType() ==
+ORDER_TYPE_SELL_STOP
+) {
+               SL_in_Pip =
+NormalizeDouble
+(m_order.StopLoss() - Ask,
+_Digits
+) / Pips2Double;
+if
+(SL_in_Pip < InpSL_Pips/
+2
+){
+double
+newOP =
+NormalizeDouble
+(Ask - (InpSL_Pips/
+2
+) * Pips2Double,
+_Digits
+);
+double
+newTP =
+NormalizeDouble
+(newOP - InpTP_Pips * Pips2Double,
+_Digits
+);
+double
+newSL =
+NormalizeDouble
+(Ask + (InpSL_Pips/
+2
+) * Pips2Double,
+_Digits
+);
+if
+(!m_trade.OrderModify(m_order.Ticket(), newOP, newSL, newTP,
+ORDER_TIME_GTC
+,
+0
+)) {
+Print
+(
+__FUNCTION__
+,
+"--> Modify PendingOrder error!"
+, m_trade.ResultComment());
+//continue;
+}               
+               }
+            }
+            
+         }
+      }
+    }    
+}

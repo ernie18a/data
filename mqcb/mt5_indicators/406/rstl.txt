@@ -1,0 +1,8 @@
+Real author:
+Vladimir Kravchuk
+"New Adaptive Method of Following the Tendency and Market Cycles"
+RSTL (Reference Slow Trend Line) is a response "slow" trend line. It is a response of FLF-1 and FLF-2 digital filters to the input discrete sequence. The filters are set with the delay equal to the Nyquist TNi range.
+RSTL reference line is an equivalent of simple moving "averages" from the viewpoint of their delay relative to the current prices. Mentioned similarity would have been complete, in case we use an impulse parameter having 1/N weights that corresponds to the procedure of the dotted moving smoothing instead of the complicated FLF impulse parameters.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/406

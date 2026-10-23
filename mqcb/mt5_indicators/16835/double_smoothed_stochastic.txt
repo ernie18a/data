@@ -1,0 +1,3 @@
+Double smoothed stochastic with some extra options:
+Extended choice of prices (20 types of prices)
+Chosable prices for high, low and close (which are normaly fixed)

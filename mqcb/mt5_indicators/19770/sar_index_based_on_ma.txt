@@ -1,0 +1,17 @@
+The idea of ​​this indicator is to replace the High and Low prices with the Moving Average indicator values when calculating the SAR indicator.
+The result is shown below:
+That is, direction of the SAR indicator changes after it touches the Moving Average indicator.
+Input Parameters
+SAR: Step
+- the SAR indicator parameter;
+SAR: Maximum
+- the SAR indicator parameter;
+MA: Period
+- the Moving Average parameter;
+MA: Shift
+- the Moving Average parameter;
+MA: Method
+- the Moving Average parameter.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19770

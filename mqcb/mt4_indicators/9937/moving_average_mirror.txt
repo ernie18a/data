@@ -1,0 +1,5 @@
+Description:
+Forex trading will becoming more simple & profitable with this indicator.
+Entry BUY after Red Line crossing up the Blue Line and exit before the Red Line crossing down the Blue Line.
+Opposite position : entry SELL after Red Line crossing down the Blue Line.
+Image:

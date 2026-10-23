@@ -1,0 +1,22 @@
+A candlestick-based chart based on histograms
+Ang_Zad_C_Hist
+calculated on the Open, High, Low, and Close timeseries of the price chart. Growing candlesticks are made in blue colors, while falling candlesticks are in pink ones. Growing candlesticks, the close prices of which have grown as compared to the preceding candlesticks, are bright, while pale colors are used for falling close prices. Falling candlesticks with falling close prices are bright pink, those with the growing ones are pale pink.
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+double
+ki=
+4.000001
+;
+// Indicator smoothing ratio
+input
+int
+Shift=
+0
+;
+// Horizontal indicator shift in bars
+Fig 1. Ang_Zad_C_Hist_Candle
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21154

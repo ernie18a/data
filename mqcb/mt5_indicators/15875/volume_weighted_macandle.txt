@@ -1,0 +1,8 @@
+The
+Volume_Weighted_MA
+indicator implemented as a sequence of candlesticks. Candlesticks appear as a result of relevant price timeseries processed by the Volume_Weighted_MA indicator algorithm.
+In many situations, such approach may be more informative for the purpose of analysis.
+Fig.1. The Volume_Weighted_MACandle indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15875

@@ -1,0 +1,4 @@
+Theory :
+The idea is simple : the indicator shows when the close price closes above the upper Bollinger band or bellow the lower Bollinger ban. Some are using those as signals for reversal, some are using it as signals for trend . If you are using it for reversal use bands deviation that are slightly higher than when using it for trend start
+Usage :
+You can use arrows as signals

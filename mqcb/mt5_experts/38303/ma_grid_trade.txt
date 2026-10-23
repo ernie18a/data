@@ -1,0 +1,3 @@
+Some grids setted around the moving average index.
+In general, trade of nomal grid is afraid the price break of grid. So I think turn the straight line of grid into the curve. then I choose to ues MA index.
+The backtest of AUD/USD in 2021/1/1-2021/12/31.

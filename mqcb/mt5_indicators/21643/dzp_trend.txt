@@ -1,0 +1,27 @@
+The DZP Trend indicator displays the market state as a detrended oscillator, i.e. the trend component is removed from the price, thus showing a clearer picture of the price movement.
+There are four input parameters:
+Period
+- calculation period;
+Shift
+;
+Applied price
+;
+Mode view
+- display mode:
+Line
+Histogram
+Calculations:
+DZP = 100*(A-B)
+where:
+A = (Price - Price(Shift)) / Price(Shift)
+B = (MA - MA(Shift)) / MA(Shift)
+Price - SMA(Applied price, 1)
+Price(Shift) - SMA(Applied price, 1) Shift bars back
+MA - EMA(Applied price, Period)
+MA(Shift) - EMA(Applied price, Period) Shift bars back
+The indicator has the following specific feature: indicator line reversal, which forms its local extremum, often occurs a little earlier than the price moves towards this reversal. This allow placing a pending order in the desired direction in advance.
+Fig. 1. Displayed as a line
+Fig. 2. Displayed as a histogram
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21643

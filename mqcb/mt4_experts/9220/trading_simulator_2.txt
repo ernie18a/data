@@ -1,0 +1,68 @@
+The description:
+The modified version of program
+Trading Simulator
+, created for high-speed training, perfecting of strategy, testing of indicators, etc.
+On that page look the detailed description of the basic functions, here I shall describe only new opportunities.
+Break Points :
+In the program is stipulated the function
+BreakPoint
+which puts a tester on a pause at achievement of the price of the set
+Top
+or
+Bottom
+value.
+This function uses library
+dll
+, therefore it is necessary to allow for the adviser to do it:
+BreakPoint
+can be used for
+"Captures" of the exact moment of the price,
+"Captures" of the points of an input, the analysis of a situation,
+Or opening an order as though it was
+Stop or Limit Order
+.
+Values of
+Break Points
+are set
+by labels
+Training Upper Stop
+and
+Training Lower Stop
+, through property
+"Text"
+, and sent for execution by shift of a label upward (by analogy to other controllers of the
+old version of the program
+).
+Trading Simulator v.2
+Modification of orders:
+Process of trade, especially manual strategy, often assume the flexible analysis of the changed situation. Therefore it is important to have an opportunity to change values
+Stop-Loss
+and
+Таке
+Profit
+.
+That it to make it is necessary:
+To change value
+Stop-Loss
+and \or
+Таке
+Profit
+in corresponding labels.
+To shift upward label
+Mod.
+of the corresponding opened order.
+Advice
+: Use a pause on a tester for the thought over change of parameters.
+The resume:
+So, now the program
+Trading SIMULATOR
+, at the simplicity allows to simulate almost all elementary trading operations.
+Opening of market (immediate) orders manually.
+Opening of the postponed(stop,limit) orders (through break points) manually.
+Modifying and closing of orders manually.
+I think, work with
+Trading SIMULATOR
+will help you to avoid typical mistakes, and to save your money and nerves.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9220

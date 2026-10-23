@@ -1,0 +1,7 @@
+Quantora Spread Monitor MT5 is a real-time spread monitoring tool for MetaTrader 5.
+It tracks the current spread continuously and records minimum, maximum, and average values, giving a clear view of how trading costs change over time. A built-in history graph helps identify sudden spread spikes and unstable market conditions.
+The indicator also classifies spread levels from low to extreme, making it easy to quickly judge whether conditions are suitable for trading. Custom thresholds can be set to match your own requirements.
+An alert system notifies you when the spread exceeds your defined limit, with options for popup, sound, or push notifications. A cooldown system prevents repeated alerts during volatile periods.
+The dashboard displays key information such as current spread, statistics, symbol details, and server time, all in a clean and easy-to-read format.
+It works on all symbols and updates automatically with low resource usage.
+This tool is designed for monitoring only. It does not open trades or generate signals.

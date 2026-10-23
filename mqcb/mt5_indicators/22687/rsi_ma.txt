@@ -1,0 +1,17 @@
+Oscillating indicator RSI MA is a simple smoothed RSI
+It has four adjustable parameters:
+RSI period
+- RSI calculation period
+RSI applied price
+- RSI applied price
+Smoothing period
+- smoothing period
+Smoothing method
+- smoothing method
+Calculations:
+RSIMA = MA(RSI, Smoothing period, Smoothing method)
+where
+RSI = RSI(RSI applied price, RSI period)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22687

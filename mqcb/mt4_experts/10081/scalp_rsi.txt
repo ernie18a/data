@@ -1,0 +1,84 @@
+Description:
+The EA is based on the RSI-indicator, tested under Tadawul FX (4 points) and optimized for EURUSD M1!!!
+TP: 20, SL: 80  => an accuracy of >80% is needed
+For the period July 2010 until now:
+212 trades, 189 profitable => accuracy: 89.15%
+probability for H0-hypothesis, that the EA is not profitable: p<0.0001  (see here http://www.stat.tamu.edu/~west/applets/binomialdemo.html)
+(but does anybody know whether normal distribution for trade-accuracy can be assumed?)
+Recommendations:
+EURUSD, M1
+only for Buy-orders I could find convincing parameters (in terms of profitability and reliability)
+recommendations and comments are very much appreciated
+Symbol
+EURUSD (Euro vs US Dollar)
+Periode
+1 Minute (M1)  2010.07.22 13:40 - 2011.01.14 20:31
+Modell
+Jedes  Ticksignal (präziseste Methode, die auf allen nächsten verfügbaren kleineren Zeitrahmen basiert)
+Parameter
+buy_bewegung=18; buy_period=2; buy_breakdown=2; buy_RSIv=30; sell_bewegung=8; sell_period=3; sell_breakdown=4; sell_RSIv=85; buy_StopLoss=80; buy_TakeProfit=20; sell_StopLoss=40; sell_TakeProfit=39; buy_MA=14; sell_MA=14; enable_buy=true; 
+enable_sell=false; 
+Trade_________________=true; 
+Lots=0.05; Slipage=20; breakEven=15; TrailingStopLoss=false; 
+MinMoney=20; Magic=102;
+Balken im Test
+173050
+Ticks modelliert
+2387128
+Modellierungsqualität
+24.99%
+Fehler in Charts-Anpassung
+0
+Ursprüngliche Einlage
+10000.00
+Gesamt netto Profit
+726.47
+Brutto Profit
+1419.73
+Brutto Loss
+-693.26
+Profit Faktor
+2.05
+Erwartetes Ergebnis
+3.43
+Drawdown absolut
+100.43
+Maximaler Drawdown
+181.74 (1.80%)
+Relative Drawdown
+1.80% (181.74)
+Trades gesamt
+212
+Short Positionen (gewonnen %)
+0 (0.00%)
+Long Positionen (gewonnen %)
+212 (89.15%)
+Profit Trades (% gesamt)
+189 (89.15%)
+Loss Trades (% gesamtl)
+23 (10.85%)
+Grösster
+Profit Trade
+7.91
+Loss Trade
+-31.61
+Durchschnitt
+Profit Trade
+7.51
+Loss Trade
+-30.14
+Maximum
+aufeinanderfolgende Gewinne (Profit in Geld)
+26 (188.62)
+Aufeinanderfolgende Verluste (Verlust in Geld)
+4 (-122.20)
+Maximal
+Aufeinanderfolgender Profit (Anzahl der Gewinne)
+188.62 (26)
+Aufeinanderfolgende Verluste (Anzahl der Verluste)
+-122.20 (4)
+Durchschnitt
+aufeinanderfolgende Gewinne
+12
+aufeinanderfolgende Verluste
+2

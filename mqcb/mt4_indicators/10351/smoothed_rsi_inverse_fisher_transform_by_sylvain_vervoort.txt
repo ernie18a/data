@@ -1,0 +1,9 @@
+The indicator was presented by
+Sylvain Vervoort
+in the October 2010 issue of Stocks & Commodities magazine. The article was awarded with the Reader's Choice award in 2011.
+It begins by smoothing the price curve with a “rainbow” weighted moving average.
+This smoothed price curve is used to calculate a RSI, which is then smoothed with the Vervoort zero-lag exponential moving average. The resulting curve is then transformed with an inverse Fisher filter.
+Codes for various platforms
+have been released
+, the attached is my MQL4 port.
+UPDATE 2011.06.24: Fixed refresh if Max Bars On Chart reached.

@@ -1,0 +1,5 @@
+Wick Ratio Candlesticks are recognized by its upper and lower wick ratio instead of open and close properties.
+By default a snow candle appear when upper wick = lower wick
+If upper wick > lower wick, it plots a bear candle
+if upper wick < lower wick, it plots a bull candle
+Colors can be customized from indicator settings.

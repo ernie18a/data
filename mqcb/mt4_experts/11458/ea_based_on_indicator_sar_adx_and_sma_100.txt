@@ -1,0 +1,11 @@
+This EA is in MQL4 language and is based on:
+SMA (
+Simple Moving Average
+) with period 100 bar,
+ADX (
+Average Directional Movement Index
+) period 14 bar,
+SAR (
+Parabolic SAR
+) indicator.
+I'm testing it now on period over 15 min in various crosses.

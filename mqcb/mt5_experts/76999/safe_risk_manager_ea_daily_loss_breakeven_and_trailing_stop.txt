@@ -1,0 +1,37 @@
+Overview
+Safe Risk Manager EA 1.02
+is an educational, manually operated MetaTrader 5 trade panel for hedging accounts. BUY and SELL buttons request market entries with percentage-risk sizing, a broker-side stop loss and optional take profit. This is not an automated signal strategy and does not guarantee profits or a maximum loss.
+Operation
+Entries are blocked when the configured spread is exceeded or the daily-loss threshold is reached. The daily lock is persisted for the current broker-server day, including across EA restarts. Positions with the configured magic number on the current chart symbol are managed by break-even and trailing-stop logic. CLOSE EA TRADES requests closure of those matching positions. The EA rejects netting accounts and rejects a calculated volume below the broker minimum rather than rounding up beyond the requested risk.
+Inputs
+InpMagicNumber
+: position identifier; use a unique value for independent strategies.
+InpRiskPercent
+: target percentage of equity used for each entry volume; not an account-wide exposure cap.
+InpStopLossPoints / InpTakeProfitPoints
+: stop and optional target distances in symbol points.
+InpMaxSpreadPoints / InpDeviationPoints
+: entry spread ceiling and requested execution deviation.
+InpDailyLossPercent
+: account trading-loss threshold as a percentage of current balance.
+InpIncludeFloatingPnL
+: includes account floating P/L in the daily calculation.
+InpCloseAtDailyLimit
+: requests closure of matching positions when the lock first activates.
+InpUseBreakEven / InpBreakEvenTrigger / InpBreakEvenOffset
+: break-even controls.
+InpUseTrailingStop / InpTrailStartPoints / InpTrailDistance
+: trailing-stop controls.
+InpCorner / InpPanelX / InpPanelY
+: panel placement.
+Installation and requirements
+Copy SafeRiskManagerEA.mq5 into MQL5/Experts and compile it in MetaEditor with the standard Trade library. Attach it to a
+demo hedging-account
+chart, configure the inputs and enable Algo Trading. Netting accounts are intentionally unsupported because merged netting positions cannot preserve independent ownership reliably. Entries are manual and management is tick-driven. Distances are points, not pips.
+Daily calculation
+The current broker-server day calculation sums BUY and SELL deal profit, swap, commission and fees, then optionally adds account floating P/L. Non-trading balance operations are excluded. When the threshold is reached, a terminal global variable keeps the entry lock active for that server day across EA restarts. The lock cannot block trades placed manually or by other EAs.
+Limitations and verification
+Risk sizing excludes commissions, gaps and slippage. Broker rejection, invalid stop/freeze distances, unavailable ticks or disconnection can prevent an entry, stop update or close. This example does not implement guaranteed retry handling. Multiple button presses can add exposure. Do not mix strategies under the same magic number.
+Version 1.02 compiled locally with
+zero errors and zero warnings
+. Compilation is not proof of runtime safety or profitability. Test BUY/SELL, below-minimum volume rejection, spread blocking, both stop-management directions, daily-threshold activation, restart persistence, next-day reset, symbol isolation and broker rejection handling on a demo account before any other use. No live-performance claim is made.

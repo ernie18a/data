@@ -1,0 +1,1 @@
+Draws an equidistant channel to detect rectangular consolidation pattern on chart

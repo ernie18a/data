@@ -1,0 +1,9 @@
+Coensio Swing Trader makes it possible to trade semi-automatically using manually pre-defined support/resistance or breakout levels. EA sends automatically orders according to predefined trading direction which can be defined as simply as drawing a line on the chart. Trading SR and breakouts was never so easy.
+EA trading instructions:
+1. Load EA on chart and set desired parameters: StopLoss, Takeprofit, Lots, EntryThreshold, Trailing StopLoss etc..
+2. Draw a breakout/trendline on chart (Insert->Lines->Trednline).
+3. Rename trendline according to desired trade direction "gl" = long; "gs" = short.
+4. Move Blue and Red line to adjust TakeProfit/StopLoss levels.
+5. To enable proportional risk management, set Lots=0; and e.g.:
+RiskMax=2 (in % of account equity based on StopLoss size).
+6. When FalseBreakClose=true, order will be closed when entry candle turns and closes in the wrong direction.

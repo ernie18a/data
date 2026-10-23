@@ -1,0 +1,8 @@
+The real author:
+buldakov_a@mail.ru
+Linear_Sinus_FT is the mathematical indicator that operates on the principle of approximation of sinusoid waves and realizes visualization of Fourier series for currency pair quotes.
+When working with this indicator it should be noted that this indicator is redrawn at all bars at each change of the current bar!
+Fig.1 The Linear Sinus FT indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1455

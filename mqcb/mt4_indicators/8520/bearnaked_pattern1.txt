@@ -1,0 +1,22 @@
+Author:
+Daniel Vieira Costa
+The main idea is the crossover between CCI and MA when the price crossover the high value of BBollinger or crossover the low value of the BB. It's necessary to do a adjust of parameters for other timeframes. That default time frame is 5 minutes.
+Version 1.1
+Version 1.0
+Recommendations:
+The indicator works very well in timeframe of 5 minutes, but, if do you want use in anoter timeframe, will be necessary adjust the parameters.
+Configuration:
+TimeFrame = 5 (but if do you want to use in another timeframe, it's necessary adjust the parameters)
+CCI_Periodo = 21;
+NivelCCI_Min = -80;
+NivelCCI_Max = 80;
+MMPeriodo = 14 (but try 20 too)
+BB_Period = 21;
+BB_Desvio =2;
+PIP_DesvioMAX = 0.0010 (deviation of the prices and de high line of the band boll..)
+PIP_Oscilacao = 0.0015 (oscilation of the price)
+CCI_Setup2 (experiment);
+FuraBollinger = If the price cross over the up or down line of the bollinger
+The BUG was fixed..
+Sorry for my english. I'm studing English a month.
+BearNaked

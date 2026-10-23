@@ -1,0 +1,49 @@
+Real author:
+Doug Schaff
+Schaff Trend Cycle indicator is a cyclical oscillator created by calculating the
+Stochastic
+over
+MАСD
+line using cycles. As a result, the developers managed to achieve more stable and reliable results of the indicator script operation. A chart is almost unaffected by the short-term trends that inevitably emerge on the market. But the indicator generates an appropriate alert in case of some sharp changes of the market situation.
+The author of the Schaff Trend Cycle indicator is Doug Schaff, the economist, whose observations of trading results on financial markets allowed him to develop and mathematically prove that currency trends almost never behave spontaneously. As time passes, the trend direction reverts to the basic one and the cycle of its ascending and descending starts to repeat, i.e. there is some periodicity. And the reliability of the market indicator/oscillator can be considerably increased, in case this periodicity is considered. This theory was confirmed in 2008 after mass researches had been conducted. After that Doug Schaff's mathematical model was used in the development of the new Schaff Trend Cycle indicator.
+Aside from trends periodicity consideration, combination of two different methods of trends direction changes calculation was used to improve reliability of the Schaff Trend Cycle indicator and lessen the quantity of its false activations. These methods are smoothed stochastic oscillator and MACD.
+For illustration purposes the indicator's operational field is graduated in standard units ranged from 0 up to 100. Two trigger levels are used — 25 and 75.
+The following parameters are used as input ones for the Schaff Trend Cycle indicator setting:
+MAShort that is equal to 23 by default. This parameter indicates the value of the fast moving average period during MACD line calculation. It must be considered during its correction that its value must not be lower than MALong parameter value;
+MALong parameter has the default value equal to 50. It sets the value of the slow moving average period for MACD line chart calculation. It must always exceed the value of the MAShort parameter to provide normal operation of the indicator;
+Cycle (by default = 10). This parameter sets the length of a cycle in a chart periods. The resulting cycle is twice as long because two stochastics are calculated consequentially.
+The simplest method of Forex trading using the Schaff Trend Cycle indicator is to sell the currency when the indicator line goes down past the level 80 and to buy it when the indicator line goes up past the level 20. To minimize the quantity of false signals, Doug Schaff suggested to trace the following models of a chart behaviour. For a buy signal, the bar following the trigger bar should close above the high of the trigger bar. For a sell signal, the bar following the trigger bar should close below the low of the trigger bar. Trigger bar is the bar formed above the signal lines with levels 20 or 80.
+The presented variant of this popular indicator allows to select the smoothing algorithm out of ten possible variants:
+SMA
+- simple moving average;
+EMA
+- exponential moving average;
+SMMA
+- smoothed moving average;
+LWMA
+- linear weighted moving average;
+JJMA
+- JMA adaptive average;
+JurX
+- ultralinear smoothing;
+ParMA
+- parabolic smoothing;
+T3
+- Tillson's multiple exponential smoothing;
+VIDYA
+- smoothing with the use of Tushar Chande's algorithm;
+AMA
+- smoothing with the use of Perry Kaufman's algorithm.
+It should be noted that Phase parameter has completely different meaning for different smoothing algorithms.
+For JMA it is an external Phase variable changing from -100 to +100.
+For T3 it is a smoothing ratio multiplied by 100 for better visualization;
+For VIDYA it is a CMO period, for AMA it is a slow EMA period;
+For AMA fast EMA period is a fixed value and is equal to 2 by default. The ratio of raising to the power is also equal to 2 for AMA.
+The indicator uses SmoothAlgorithms.mqh library classes (must be copied to the
+terminal_data_folder
+\MQL5\Include). The use of the classes was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/486

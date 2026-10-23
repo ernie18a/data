@@ -1,0 +1,13 @@
+Moving average
+AbsolutelyNoLagLwma
+displaying the most recent values as a price label, with the possibility to round the indicator levels to a required number of digits. The number of digits to round is defined by the indicator's input variable
+Digit:
+input
+uint
+Digit=3;
+//Number of digits to round to
+If the close price is above the moving average, then the price color is green; if it is below that, then it is red.
+Fig 1. Indicator AbsolutelyNoLagLwma_Digit
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21000

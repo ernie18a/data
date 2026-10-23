@@ -1,0 +1,7 @@
+The Expert Advisor using artificial intelligence - a single-layer neural network. The "Perceptron" is used for identification of the quotes movement direction. The code implements access to the iAC indicator and history bars Open time data (CopyTime function).
+Testing on M30, initial deposit - 10 000, start data 2016.01.01, end data 2016.10.31, other parameter values remain default:
+Optimization was performed on a netting trade account ("1 minute OHLC" mode), while a single test was carried out in the "Every tick based on real ticks" mode.
+Parameter range during optimization:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16727

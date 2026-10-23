@@ -1,0 +1,83 @@
+One of my first proper EAs and work in progress :P
+an EA that opens an order in the direction of a customizable macd signal and ema close/ema open cross
+ive included money management or fixed lot size
+if money management is chosen you can select max lots and min lots - i included that cause when im testing i like not to be stopped out when my broker doesnt support some kind of lot size. atm im using a microlot account with a max of 0.5 lot and 4 digits. i have tried to make it compatible with a 5 digit acct. only thing is the percent risk for a 5 digit acct you have to write 0.3 to get 3 percent risk.
+I have made all the indicators customizable for testing.
+can enable or disable mail. when enabled it sends a mail to you when it opens an order.
+I have found good results on 4h eur/usd with a 40/50pts SL and im using trailing stop of 11pts only cause thats the smallest stabile ts i can make with my broker - they support 8pts ts, but in a fast moving market it could fail.
+Ive included a magicnumber but frankly i havent tested it properly yet.
+atm im forwardtesting it on a real microaccount.
+Hope you like it and feel free to feedback here :P
+Cheers
+Strategy Tester Report
+Emagic1.161
+Butenix-Server (Build 419)
+Symbol
+EURUSD_FX (Euro vs US Dollar)
+Periode
+4 Timer (H4) 2011.01.03 00:00 - 2011.12.30 20:00 (2011.01.01 - 2012.01.01)
+Model
+Hvert tick (the most precise method based on all available least timeframes)
+Parametre
+MagicNumber=12321; SignalMail=true; MM="Auto money management"; AutoMoneyManagement=true; PercentToRisk=3; MaxLots=999; MinLots=0.01; NoMM="when AutoMM is off, use lotsize below."; Lots=0.01; Slippage=3; UseStopLoss=true; StopLoss=40; UseTakeProfit=false; TakeProfit=60; UseTrailingStop=true; TrailingStop=11; Macd="Quick, Slow, Signal"; Qema=10; Sema=32; Signalmacd=4; Ema="fast close, slow open."; Fastema=8; Slowema=13;
+Bars i test
+2556
+Ticks modelleret
+8131424
+Modelkvalitet
+86.27%
+Uoverenstemmende graf fejl
+4
+Deponeret indledningsvis
+50.00
+Totale net profit
+637.55
+Bruttofortjeneste (gross profit)
+2665.68
+Bruttotab (gross loss)
+-2028.13
+Profitfaktor
+1.31
+Forventet payoff
+0.70
+Absolut drawdown
+1.81
+Maksimal drawdown
+141.85 (21.33%)
+Relativt drawdown
+21.86% (134.90)
+Samlet antal handler
+905
+Short positions (vinder %)
+441 (80.05%)
+Long positions (vinder %)
+464 (80.60%)
+Profit handler (% of samlet antal)
+727 (80.33%)
+Tabs handler (% af samlet antal)
+178 (19.67%)
+Storste
+profitgivende handel
+31.90
+tabsgivende handel
+-21.65
+Gennemsnitlig
+profitgivende handel
+3.67
+tabsgivende handel
+-11.39
+Maksimum
+Fortlobende wins (profit in money)
+23 (71.17)
+Fortlobende tab (loss in money)
+4 (-11.78)
+Maksimal
+fortlobende profitter (count of wins)
+101.92 (22)
+fortlobende tab (count of losses)
+-37.75 (2)
+Gennemsnitlig
+fortlobende wins
+5
+fortlobende tab
+1

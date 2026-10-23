@@ -1,0 +1,6 @@
+Theory :
+The basic idea of this indicator is described here :
+RSI - double smoothed Wilder's EMA
+.This version is extending it to what we all know for quite some time as Rsi(oma) (RSI of moving average). This version can use one of the usual averages instead of using "raw" price (the averages used can be SMA, EMA, SMMA or LWMA) and is applying the double smoothed Wilder's EMA in the RSI calculation itself
+Usage :
+It can be used as any regular RSI(oma)

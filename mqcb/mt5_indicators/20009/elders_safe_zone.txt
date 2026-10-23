@@ -1,0 +1,15 @@
+The author of the idea
+:
+Scriptor
+,
+the author of the MQL5 code
+:
+barabashkakvn
+.
+The indicator shows the so-called safe zone, which is calculated using the High, Low and Close prices, and the Moving Average indicator.
+It is recommended to perform trades when the indicator is positioned horizontally:
+If the price is above the horizontal segment of the indicator, open a BUY position;
+If the price is below the horizontal segment of the indicator, open a SELL position.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20009

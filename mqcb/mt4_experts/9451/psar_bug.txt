@@ -1,0 +1,76 @@
+An expert advisor designed to open and close respective orders at the first parabolic SAR signal. Its performance depends on the custom parameters of stop loss, take profit, trailing stop and lot size for opening trades.
+If the last time you were here this red note wasnt here please download the version available at this moment
+.
+From this version onwards the trailing stop should be manually entered in your orders as i try to put a more effective trailingstop script.
+Strategy Tester Report
+pSAR bug
+Btrader-Real (Build 225)
+Symbol
+EURJPY (Euro vs Japanese Yen)
+Period
+1 Hour (H1) 2010.01.04 00:00 - 2010.01.20 23:00 (2010.01.01 - 2010.01.21)
+Model
+Every tick (the most precise method based on all available least timeframes)
+Parameters
+StopLoss=40; TakeProfit=70; Lots=10; TrailingStop=30;
+Bars in test
+886
+Ticks modelled
+198037
+Modelling quality
+90.00%
+Mismatched charts errors
+0
+Initial deposit
+10000.00
+Total net profit
+40705.62
+Gross profit
+93454.67
+Gross loss
+-52749.05
+Profit factor
+1.77
+Expected payoff
+1507.62
+Absolute drawdown
+1741.78
+Maximal drawdown
+20393.39 (34.61%)
+Relative drawdown
+43.66% (14046.28)
+Total trades
+27
+Short positions (won %)
+14 (64.29%)
+Long positions (won %)
+13 (30.77%)
+Profit trades (% of total)
+13 (48.15%)
+Loss trades (% of total)
+14 (51.85%)
+Largest
+profit trade
+7622.78
+loss trade
+-4387.12
+Average
+profit trade
+7188.82
+loss trade
+-3767.79
+Maximum
+consecutive wins (profit in money)
+4 (30453.47)
+consecutive losses (loss in money)
+4 (-17453.31)
+Maximal
+consecutive profit (count of wins)
+30453.47 (4)
+consecutive loss (count of losses)
+-17453.31 (4)
+Average
+consecutive wins
+2
+consecutive losses
+2

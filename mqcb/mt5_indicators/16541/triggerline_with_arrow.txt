@@ -1,0 +1,6 @@
+The Trigger Line indicator, long known to many, now with arrows. Version in MQL4 without arrows is
+here
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16541

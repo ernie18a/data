@@ -1,0 +1,77 @@
+Author:
+Vangabestia is my nickname, I worked in forex 10 years, now I begin to do something about EA.
+Description:
+I just started to work with programming in MetaTrader 4, my first program was to modify a program already did (Ilan1.4). I changed the logic input market. When you have 3 candles of the same color with in a market in the opposite direction. The management of the position is with trailingstop and Martingale.
+Image:
+Strategy Tester Report
+Sophia1_1
+EGlobal-Demo (Build 409)
+Simbolo
+EURUSD (Euro vs US Dollar)
+Periodo
+1 Ora (H1) 2011.08.29 19:00 - 2011.12.29 14:00
+Modello
+Ogni tick (il metodo precissimo sulla base di tutti gli intervalli di tempo minimi)
+Parametri
+MMType=1; UseClose=false; UseAdd=true; LotExponent=2; slip=3; Lots=0.01; LotsDigits=2; TakeProfit=100; Stoploss=500; TrailStart=10; TrailStop=10; PipStep=30; MaxTrades=10; UseEquityStop=false; TotalEquityRisk=20; UseTrailingStop=true; UseTimeOut=false; MaxTradeOpenHours=48;
+Barre sotto esame
+2190
+Ticks adoperati per il modello
+1571051
+Qualita' del modello
+97.21%
+Errori di grafici
+3
+Deposito iniziale
+10000.00
+Profitto totale netto
+386.08
+Profitto lordo
+1325.41
+Perdita lorda
+-939.33
+Fattore di profitto (profit factor)
+1.41
+Ricompensa attesa
+1.30
+Drawdown assoluto
+1174.89
+Drawdown massimo
+1278.37 (12.65%)
+Drawdown relativo
+12.65% (1278.37)
+Operazioni totali
+296
+Posizioni al ribasso (vincite %)
+137 (81.75%)
+Posizioni al rialzo (vincite %)
+159 (77.36%)
+Operazioni con profitto (% del totale)
+235 (79.39%)
+Operazioni in perdita (% del totale)
+61 (20.61%)
+Il piu' grande
+operazione con profito
+563.20
+operazione in perdita
+-141.59
+Media
+operazione con profito
+5.64
+operazione in perdita
+-15.40
+Massimo
+vincite consecutive (profitto in denaro)
+22 (20.68)
+perdite consecutive (perdita in denaro)
+8 (-528.37)
+Massimale
+profitto consecutivo (numero delle vincite)
+564.50 (2)
+perdita consecutiva (numero delle perdite)
+-528.37 (8)
+Media
+vincite consecutive
+7
+perdite consecutive
+I use it in real account: EURUSD, USDJPY, EURJPY, GBPUSD, AUDUSD, USDCAD, GBPJPY, USDCHF, EURCHF, NZDUSD,EURGBP.

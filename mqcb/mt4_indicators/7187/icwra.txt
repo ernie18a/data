@@ -1,0 +1,5 @@
+Author: John Lotoski
+The script plots one Fibo line based on the latest ZigZag. This is a remarkable tool to get rid of unnecessary work for those who constantly place Fibo grids (the majority).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7187

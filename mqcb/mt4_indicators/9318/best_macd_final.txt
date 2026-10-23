@@ -1,0 +1,9 @@
+Classical MACD lines with filled OSMA on the chart.
+Slow MA is calculated using ЕМА.
+Histogram can be scaled by changing parameter OsmaX.
+Draw buffer ordering has changed, so MACD line draws above.
+OSMA indicator has added to chart.
+Images:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9318

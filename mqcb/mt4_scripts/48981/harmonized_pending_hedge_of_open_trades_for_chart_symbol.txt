@@ -1,0 +1,6 @@
+This script sets pending hedges with distance in pips for chart symbol.
+If hedged are 100% harmonized strategy will do nothing,
+else calculates difference between Buy and Sell Trades and places a harmonized pending hedge 100%.
+Deletes old hedges for symbol and places new ones.
+This way can be used as manual trailing pending hedges, when desired.
+I use this strategy often, so I consider is useful enough to share it with you.

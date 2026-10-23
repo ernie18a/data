@@ -1,0 +1,96 @@
+Author of the idea
+:
+bobby
+,
+mq5 code author
+:
+barabashkakvn
+.
+The EA uses two indicators:
+MA Cross 3MACross Alert WarnSig
+and
+Price Channel
+.
+The following three options are available for setting stop loss and take profit:
+Trailing Stop
+is greater than zero. In this case a usual trailing stop function will be applied to positions;
+Auto SL/TP
+is set to 'true'. In this case the TP and SL levels are determined based on the "Price Channel" indicator;
+BreakEven
+is greater than zero: if a position has reached 'BreakEven' points of profit, the position is moved to BreakEven points.
+Important note: only one of the three options can be selected. If one of the options is selected, the other two must be disabled. For example
+BreakEven
+is set to 15. Then the
+Trailing Stop
+parameter must be set to zero, and
+Auto SL/TP
+must be set to false (these are the default EA parameters).
+Also, there are two options for setting position volume: fixed lot equal to
+Lots
+or risk percent of free margin
+Risk in percent for a deal from a free margin
+. Only one option can be selected: if
+Lots
+is equal to or less than zero, risk percent per trade will be used.
+The EA was optimized for USDJPY,H1 (these parameters are used in the EA by default):
+Input Parameters
+Trade parameters
+:
+Lots
+(if <=0 -> use risk from a free margin) - position volume;
+Stop Loss
+Take Profit
+Trailing Stop
+Risk
+- risk per trade as percent of free margin;
+Auto SL/TP
+- stop loss and take profit based on the "Price Channel" indicator;
+Trade at close bar
+- trading on a closed bar: if 'true' the EA uses data of bar #1, if 'false' the EA trades on bar #0;
+BreakEven
+;
+Max open positions
+- the maximum allowed number of positions in one direction.
+MA Cross 3MACross Alert WarnSig
+indicator parameters:
+Parameters of the first Moving Average
+:
+Period
+of the first Moving Average;
+Shift
+of the first Moving Average;
+Method
+of the first Moving Average.
+Parameters of the second Moving Average
+:
+Period
+of the second Moving Average;
+Shift
+of the second Moving Average;
+Method
+of the second Moving Average.
+Parameters of the Third Moving Average
+:
+Period
+of the third Moving Average;
+Shift
+of the third Moving Average;
+Method
+of the third Moving Average.
+crossesOnCurrent
+;
+alertsOn
+;
+alertsMessage
+;
+alertsSound
+;
+alertsEmail
+;
+Price Channel
+indicator parameters:
+InpChannelPeriod
+- calculation period (the number of bars).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19525

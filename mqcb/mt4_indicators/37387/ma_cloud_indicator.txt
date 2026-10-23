@@ -1,0 +1,5 @@
+Moving Average Cloud draws 4 MAs on chart simultaneously in histogram style.
+Indicator uses 4 MAs: slow sma & ema 200 and fast sma & ema 50.
+the range between 2 slows MAs and Fasts, represented by histograms on the MAs boundaries -
+creating kind of "cloud" that can be traded by all kind of MA strategies like support & resistance or other...
+Change of color of the same histogram points to momentum changing.

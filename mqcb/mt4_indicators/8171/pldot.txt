@@ -1,0 +1,2 @@
+Very simple indicator PLdot. It's been even optimized.
+pldot

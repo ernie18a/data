@@ -1,0 +1,23 @@
+The Fibo ZigaZag indicator allows to calculate the probable support and resistance levels using the Fibonacci ratios.
+The Indicator Algorithm
+The indicator locates the subsequent Highs and Lows, finds the distance between them and lays off the percentages of this distance (23,6%, 38,2%, 50%, 61,8%) from peaks and bottoms. The calculation is performed when the minimum or maximum are completed. This indicator is a completely revised version of the standard ZigZag indicator.
+Fields of application
+The indicator can be used for setting the Stop Loss and Take Profit, partially fixing profit. The indicator may also be of interest to traders who use the Joe DiNapoli system.
+The Fibonacci levels may become good entry points in averaging experts.
+Levels
+23.6%
+38.2%
+50%
+61.8 %
+Indicator Parameters
+ExtDepth —
+The number of candles used to identify High or Low The main parameter.
+ExtDeviation
+—
+Minimum deviation in points.
+InpBackstep
+—
+The number of extremums used for recalculation.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16319

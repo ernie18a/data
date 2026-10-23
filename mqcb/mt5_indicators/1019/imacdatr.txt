@@ -1,0 +1,13 @@
+Real author:
+Svinozavr
+The indicator is simple enough. When MACD is in positive area its values are shifted downwards by the amount of ATR, when MACD is in negative area, its values are shifted upwards.
+Therefore, the resulting curve enters the same area with MACD only when the value of the latter one is big enough to cover the value of the trading range. Besides, this method allows users to track decreasing of ATR at the end of the movement – the resulting curve enters the area where MACD is located at the moment.
+Blue line - result of MACD shift by ATR. Highlighted histogram bars indicate places where MACD and shift result have the same sign (±).
+The additional condition for their emerging is MACD slope in the direction of the price movement.
+iMACD±ATR
+This indicator was first implemented in MQL4 and published in Code Base at
+mql4.com
+18.08.2011 (in Russian).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1019

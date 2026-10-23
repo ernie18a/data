@@ -1,0 +1,5 @@
+This EA takes calculates the current account balance and based on user's input of risk and profit percentage , it can close trades either in profit or in loss.
+This tool might be helpful to people who prefer this method in managing their positions.
+NOTE!!!
+In P_pro, I included a line of code which opens one sell position at a time. This is just to demonstrate how the EA works and I have removed this feature in money management mq5.
+If you notice any bugs or issues please let me know.

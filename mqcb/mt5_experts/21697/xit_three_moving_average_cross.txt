@@ -1,0 +1,4 @@
+This is a simple but pretty effective EA I have been working on. It is a basic three moving average cross for opening orders, and it uses MACD as verification before opening.
+Updated 08/30/2018:
+This is a pretty major update. Now this EA includes money management based on fixed risk percentage. Also stop loss and take profit values are set using ATR ranges based on time periods.
+Test it out and let me know if it works well for you, also please let me know if there are any features that may help the EA perform better.

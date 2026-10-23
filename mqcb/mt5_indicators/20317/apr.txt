@@ -1,0 +1,25 @@
+The indicator displays the average range for the specified period.
+It can show two types of ranges:
+High/Low;
+Open/Close.
+Two modes for rendering results are available:
+Absolute values;
+Relative values (percentage).
+It has four input parameters:
+Timeframe
+- the timeframe for which the range is shown;
+Period
+- the period (range) for which data are shown;
+Applied price
+- prices of the ranges
+High/Low;
+Open/Close.
+Calculation mode
+- calculation and display mode:
+Absolute - absolute values;
+Relative - percentage values.
+Fig.1. The daily range on H4
+Fig.2. The range of H12 on H4
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20317

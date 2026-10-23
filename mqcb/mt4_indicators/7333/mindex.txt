@@ -1,0 +1,8 @@
+Author: Yuri Makarov
+The indicator calculates the indices of the USD, EUR, GBP, CHF, AUD, CAD currencies and displays the index specified in the parameters in a separate window.
+Read
+here
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7333

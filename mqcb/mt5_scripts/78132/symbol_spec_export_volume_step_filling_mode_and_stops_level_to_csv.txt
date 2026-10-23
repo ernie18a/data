@@ -1,0 +1,17 @@
+Writes the trading specification of every symbol to a CSV file.
+Columns: digits, point, tick size and tick value, volume min/max/step,
+contract size, stops level, freeze level, current spread, floating or fixed
+spread, allowed filling modes, execution mode, trade mode, initial margin,
+swap long and short, profit currency.
+Why it is useful: these are exactly the values at which Expert Advisors stop
+working when you move them to another broker or another instrument. Volume
+step, filling mode and stops level are the three most common silent failures.
+Export the file once and you can see before the first trade what will break.
+Inputs:
+- Market Watch symbols only, or every symbol the broker offers
+- Write into the common Files folder
+- File name (empty = auto)
+Symbols that are not in the Market Watch are selected temporarily so their
+data can be read, and deselected again afterwards - your Market Watch is left
+the way you found it.
+This is a script. It reads symbol data and writes a file. It does not trade.

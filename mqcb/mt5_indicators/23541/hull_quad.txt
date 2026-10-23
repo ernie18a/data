@@ -1,0 +1,6 @@
+Theory :
+The indicator was originally used as a trading system at one other trading platform long time ago. It was ported for mt4 back in 2011 but since it seems that there is not version for mt5 yet, here is the mt5 version too.
+It is based on 4 different period Hull moving averages and is indicating possible entry points based on the correlations of those 4 Hull averages
+Usage :
+You can use the arrows as possible signals
+PS: a "big picture" example too. Some experimenting with the indicator advised

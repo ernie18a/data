@@ -1,0 +1,13 @@
+Original author:
+Kim Igor V. aka KimIV
+A simple semaphore arrow signal indicator. The indicator shows historical (near past) signals and the current signal based on how many points the price passes during a certain number of bars.
+The indicator shows the entry point against this movement. The idea of these entry points is borrowed from one modification of the
+Bulldozer
+EA.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 15.08.2014.
+Fig. 1. The i-Bul_Jerk indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12552

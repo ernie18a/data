@@ -1,0 +1,5 @@
+This script opens a pending buy order by just point and drop the script in the place you want.
+The script will automatically place a "limit buy order" if you point and drop below actual bid.
+The script will automatically place a "stop buy order" if you point and drop above actual bid.
+Before placing the pending order, a window will be open where you can modify lots, slippage, Stop Loss and Take Profit values.
+IMPORTANT: You just need to specify Slippage, SL or TP in pips value and the script will automatically change the values if you are using 5 decimals prices multiplying by 10 the input values.

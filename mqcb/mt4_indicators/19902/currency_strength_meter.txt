@@ -1,0 +1,29 @@
+Currency Strength Meter
+indicator gets RSI (Relative Strength Index) values from four different instruments of your choice and displays them in indicator window.
+Features
+Ability to set custom colors and styles for each instrument.
+Displays colored labels for instrument identification.
+You can adjust period and applied price.
+Supports all types of markets (Forex, Commodities, Indices, Crypto Currencies etc.).
+Inputs
+instrOne
+- instrument 1.
+instrTwo
+- instrument 2.
+instrThree
+- instrument 3.
+instrFour
+- instrument 4.
+colorOne
+- instrument 1 color.
+colorTwo
+- instrument 2 color.
+colorThree
+- instrument 3 color.
+colorFour
+- instrument 4 color.
+indicatorPeriod
+- indicator period.
+appliedPrice
+- indicator applied price.
+Thank you for reading!

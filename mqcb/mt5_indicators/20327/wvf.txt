@@ -1,0 +1,15 @@
+The volatility index oscillator (VIX).
+It has two parameters:
+Period
+- calculation period (default 22)
+Drawing style
+:
+Line - a colored line
+Histogram - a colored histogram
+The original calculation formula:
+WVF = [Highest (Close,22) - Low) / (Highest(Close,22)] * 100
+Fig.1. VIX displayed as a line
+Fig.2. VIX displayed as a histogram
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20327

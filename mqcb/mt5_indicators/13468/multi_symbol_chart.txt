@@ -1,0 +1,2 @@
+The indicator plots candlestick formations for four symbols in one separate window.
+It can be altered easily to show more or fewer symbols.

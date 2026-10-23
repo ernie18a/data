@@ -1,0 +1,1 @@
+This script will change the SL and TP of all open trades of the symbol to the price where the script is dropped off.

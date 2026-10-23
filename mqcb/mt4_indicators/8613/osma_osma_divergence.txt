@@ -1,0 +1,12 @@
+Colored OsMA and OsMA that shows the divergences.
+You should open the «
+ind_OsMAColored_v1
+» indicator and then drag the
+«
+OsMA_Divergence_v1
+» indicator to the same window using the
+mouse.
+The gray points are more significant, it works on the 5M best of all, but though it is individual. I recommend you not to consider the divergences factors when a strong trend occurs, because rollbacks are very small. If someone is intersted in an EA by this indicator, your are welcome, write me a private message or an e-mail.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8613

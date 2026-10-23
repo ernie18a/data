@@ -1,0 +1,28 @@
+Улучшенные полосы Боллинджера.
+Переписан с метастока:
+pds:=Input("Periods",2,200,20);
+sd:=Input("Standard Deviations",.01,10,2);
+alpha:=2/(pds+1);
+mt:=alpha*C+(1-alpha)*(If(Cum(1)<pds,C,PREV));
+ut:=alpha*mt+(1-alpha)*(If(Cum(1)<pds,C,PREV));
+dt:=((2-alpha)*mt-ut)/(1-alpha);
+mt2:=alpha*Abs(C-dt)+(1-alpha)*PREV;
+ut2:=alpha*mt2+(1-alpha)*PREV;
+dt2:=((2-alpha)*mt2-ut2)/(1-alpha);
+but:=dt+sd*dt2;
+blt:=dt-sd*dt2;
+dt;
+but;
+blt
+Источник формулы -
+http://trader.online.pl
+,
+http://www.guppytraders.com
+.
+Параметры:
+Periods
+- Период.
+Devs
+- Ширина.
+Price
+- Цена (0-Close, 1-Open, 2-High, 3-Low, 4-Median, 5-Typical, 6-Weighted).

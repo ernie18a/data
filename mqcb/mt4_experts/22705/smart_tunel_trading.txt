@@ -1,0 +1,74 @@
+Copyright 2018 Ali Sabbaghi.
+FXnode Group.
+Description:
+Smart tunnel
+is a smart ea that uses the Zigzag indicator to find out sensitivity situation of market price.
+with this point, SMART tunnel automatically create trend line that market movement reacted in this point.
+with zigzag find the highest and lowest price (support and resistance) and with this point EA crate trend line.
+it changes and updates automatically ...
+if price touches this line expert decide to act with it. BUY or SEll depended on the market situation.
+you can manage your time that tells to ea to trade in the special hour of the day. for example trade at midnight.
+this ea has a smart function to manage your RISK, manage your Time.
+Smart tunnel is really profitable.
+with 14% highest drawdown and Profit factor about 6.5
+Recommended parameter:
+Use an ECN broker account.
+minimum deposit of 100$ USD.
+use it in H1 time frame
+recommended symbol is EURUSD
+input parameter:
+TrendType
+Prefered Order Type - BUY or SELL
+TakeProfit
+Profit in points
+MaxStopLoss
+Max Stop Loss
+FixTakeProfit
+Profit in points to take away
+TouchPipBuy
+Pip Distance to touch trend line
+TouchPipSell
+Pip Distance to touch trend line
+SlTrail
+Trail in point
+StaticLot
+Position static size if you have no risk
+MinLot
+Minimum Position size
+MaxLot
+Maximum Position size
+MaxSpread
+Max Spread to allow tradeing
+isk_Percentage
+Money Management Risk Percent
+MaxOpenPosition
+Maximum Opened Position
+MagicNumber
+Your Magic Number
+TREND LINE parameter
+InpDepth                Depth Of
+InpDeviation            Deviation
+InpBackstep             Backstep
+ZigZagNum              Number Of High And Low
+Color_UPLine           Color Of Sell Line
+Color_DWLine          Color Of Buy Line
+TimeManagment
+Activate Time Managment
+WeekenClose
+Close Opened Order in weekends.
+InpAtrPeriod
+ATR Period
+StochasticKperiod
+Stochastic K Period
+StochasticDperiod
+Stochastic D Period
+StochasticSlowing
+Stochastic Slowing
+BuyZone
+Stochastic Low Zone line
+SellZone
+Stochastic High Zone line
+CCIperiod
+CCI Period
+RSIperiod
+CCI Period

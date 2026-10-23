@@ -1,0 +1,8 @@
+This script shows 3 ways of calculating the current Aroon Up and Aroon Down values:
+1st way by using CopyHigh and CopyLow.
+2nd way via iHighest and iLowest.
+And finally using the Aroon indicator. This indicator has been written by
+Nikolay Kositsin
+can be downloaded from the MQL5 library:
+https://www.mql5.com/en/code/388
+.

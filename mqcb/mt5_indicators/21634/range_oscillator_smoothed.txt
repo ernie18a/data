@@ -1,0 +1,3 @@
+Range Oscillator
+is a useful indicator, but in its original form it probably lacks some smoothness in order to avoid some false signals.
+This version is adding that (smoothing) option in order to avoid some false signals.

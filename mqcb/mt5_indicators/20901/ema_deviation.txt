@@ -1,0 +1,9 @@
+By definition, the
+Standard Deviation
+(
+SD
+, also represented by the Greek letter sigma
+σ
+or the Latin letter s) is a measure that is used to quantify the amount of variation or dispersion of a set of data values. In technical analysis we usually use it to measure the level of current volatility.
+Standard Deviation is based on Simple Moving Average calculation for mean value. The built-in MetaTrader 5 Standard Deviation can change that and can use one of the 4 basic types of averages for calculations. This version is not doing that. It is, instead, using the properties of EMA to calculate what can be called a new type of deviation, and since it is based on EMA, we shall call it EMA deviation.
+It is similar to Standard Deviation, but on a first glance you shall notice that it is "faster" than the Standard Deviation and that makes it useful when the speed of reaction to volatility is expected from any code or trading system.

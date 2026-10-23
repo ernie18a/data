@@ -1,0 +1,8 @@
+Theory :
+RSI swings indicator is based on Rsi(oma) indicator and the zone where the values is floating in. You can use the usual set of averages types of Rsi(oma) calculation
+simple moving average
+exponential moving average
+smoothed moving average
+linear weighted moving average
+Usage :
+You can use color changes as signals

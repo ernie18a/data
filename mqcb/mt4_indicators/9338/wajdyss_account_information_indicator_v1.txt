@@ -1,0 +1,1 @@
+This indicator for show most information about your account like : number, name, company, leverage, etc .

@@ -1,0 +1,4 @@
+Theory :
+CCI (commodities Channel Index) is calculated using mean absolute deviation. This version is deviation from that and is using standard deviation instead of using mean deviation. Also, in ordet to filter out some signals on the cci slope change, it is adding Hull moving average as a mean to pre-filter the prices prior to be used in CCI calculation
+Usage :
+You can use it as any "normal" CCI, except that it should have far less signals when crisscrossing the zero line

@@ -1,0 +1,5 @@
+indicator
+A smoothed line has been added to the custom indicator '
+Relative Momentum Index (RMI)
+'. Smoothing is done using iMA:
+Rice. 1. MA on RMI

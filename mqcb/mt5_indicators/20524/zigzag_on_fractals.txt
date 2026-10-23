@@ -1,0 +1,12 @@
+ZigZag on Fractals
+uses fractals (iFractals, Fractals) as reference peaks. Here, the following rule is applied: Where the latest peak was built on the DOWN-fractal and the current DOWN-fractal detected is lower, then the ZigZag will be moved down to the current peak detected:
+Use in trading - the two methods opposed:
+Trading in the direction of the latest peak;
+Trading in the direction opposite to the latest peak.
+Trading strategies for each symbol and each timeframe must be chosen individually.
+Important information on using it in an EA: In the
+ZigZag on Fractals
+indicator, the zigzag value is stored in buffer No. "0"; the values in buffer No. "0" may be EITHER EMPTY_VALUE or the actual price.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20524

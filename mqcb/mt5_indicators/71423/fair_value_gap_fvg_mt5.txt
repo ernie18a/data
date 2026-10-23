@@ -1,0 +1,16 @@
+Detects and draws Fair Value Gaps (price imbalances) on your chart — a core concept in ICT/Smart Money methodology. Tracks when price returns to fill the gap.
+Features:
+-
+Bullish and bearish FVG detection
+-
+Zone rectangles with configurable colors and opacity
+-
+Gap fill tracking: Remove, Fade, or Keep filled gaps
+-
+Minimum gap size filter to reduce noise
+-
+Gap size labels
+-
+Alerts on new FVG formation and fill events
+-
+Push notification and email support

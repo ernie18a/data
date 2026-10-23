@@ -1,0 +1,8 @@
+The attached script allows you to close more orders at once.
+You can choose the following filters:
+Only instrument in the chart where the script is run or all instruments.
+Only orders in profit.
+Only orders in loss.
+Only order matching a magic number.
+Only order marching a comment.
+The script will scan all the open orders and close the ones matching the criteria.

@@ -1,0 +1,3 @@
+The Dynamic Momentum Index (DMI) is a variable term RSI. When default values are used, the RSI term varies from 3 to 30. The variable time period makes the RSI more responsive to short-term moves. The more volatile the price is, the shorter the time period is. It is interpreted in the same way as the RSI, but provides signals earlier.
+The Dynamic Momentum Index was developed by Tushar S. Chande and Stanley Kroll and is described in their 1994 book "The New Technical Trader".
+This version is the same as the original described in the "The New Technical Trader".

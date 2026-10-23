@@ -1,0 +1,7 @@
+Semaphore signal indicator using the trend detection algorithm based on
+AroonHorn
+indicator.
+Fig.1. AroonHornSign
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15335

@@ -1,0 +1,5 @@
+NET (Noise Elimination Technology) -  a sort of a rolling Kendall rank correlation coefficient -was introduced in one of the rsi indicators posted at this code base.
+Now it is used to determine the "trend" of a simple moving average. As such, it is not same with the slope of SMA and do not be surprised that the slope and the trend color change are going to deviate sometimes
+Recommendations:
+You can use the color change of the indicator for possible trend changes
+some experimenting (especially with NET period) is advised prior to using this indicator for trading decisions

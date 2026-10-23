@@ -1,0 +1,2 @@
+Author: lukas1
+Arrows & Curves indicator.

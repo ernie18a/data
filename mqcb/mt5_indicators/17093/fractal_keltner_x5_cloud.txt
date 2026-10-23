@@ -1,0 +1,9 @@
+Real Author:
+jppoton@yahoo.com
+Two fractal Keltner channels in the form of a cloud. For a more detailed description please see the
+author's blog
+.
+Fig1. The Fractal_Keltner_x5_Cloud indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17093

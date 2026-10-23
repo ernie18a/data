@@ -1,0 +1,4 @@
+Description of the EA
+The EA uses the signals of the custom indicator "WPR Custom Cloud". Signal to open a position 'BUY': the indicator left the lower zone, signal to open a position 'SELL': the indicator left the upper zone.
+Pic. 1. WPR Custom Cloud Simple
+The EA checks the signal only when a new bar is born. There is no 'Stop loss', 'Take profit' or 'Trailing' in the EA. Closing positions occurs on the opposite signal.

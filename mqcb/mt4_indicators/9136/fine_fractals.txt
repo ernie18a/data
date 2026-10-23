@@ -1,0 +1,32 @@
+The indicator will show the important bends of the price, peaks and bottoms where will not work standard
+indicator.
+Function of shift on flat
+for more exact instruction of time of an extremum is added .
+Both functions Sensitivity and Shift are accessible in properties:
+extern
+bool
+Fine
+=
+True
+;
+extern
+bool
+FlatShift
+=
+True
+;
+And also
+extern bool NewFAlert=False;
+For inclusion of signal
+Alert
+at occurrence of a new fractal.
+On a picture are shown for comparison usual (grey) and Fine Fractals.
+Example of using:
+As is known, fractals are often used for construction of lines of channels that allows to predict not bad sometimes a course of the price, to be exact levels of support and resistance, a point of a
+bounce
+and breakdown and
+т.д
+... And other ...
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9136

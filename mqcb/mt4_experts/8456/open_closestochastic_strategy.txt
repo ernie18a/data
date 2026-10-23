@@ -1,0 +1,12 @@
+I will describe here the strategy itself the program was designed by.
+The buying is performed:
+1. when the stochastic's signal line is bleow the main one;
+2. when the open and close prices of the next candlestick is above the open and close prices of the previous candlestick.
+The selling is performed in the opposite direction. The same is perfromed with opening and closing the positions, i.e. the buying is closed by selling and so it is placed on selling.
+I can't debug the program. It performs many wrong trades not by the strategy. Please, tell me where the errors may be in the program.
+And if the TP=SL=15 is placed the error 130 wrong stop occurs, how can I correctly place the stops to avoid the error appearance.
+If there is something incomprehensible in the strategy write me, I will explain. I work for a long time with this strategy but I do it manually. It brings a good profit. But the program falls short.
+I'm waiting for your replies. I will appreciate.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8456

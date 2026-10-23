@@ -1,0 +1,5 @@
+SATL (Slow Adaptive Trend Line) - the «slow» adaptive trend line is obtained using a digital low-pass filter of a different order.
+Ticker SATL
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7381

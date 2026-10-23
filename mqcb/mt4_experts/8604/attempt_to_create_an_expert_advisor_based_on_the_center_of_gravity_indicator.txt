@@ -1,0 +1,222 @@
+Please help me with my idea.
+The idea has existed for a long time - based on the "Conservative intraday scalping" strategy, but I could not find a suitable indicator in MT4.
+I found the indicator (
+Center of Gravity.mq4
+). Now I am trying to attach it to an EA, but the EA stubbornly refuses to open trades (neither on demo, nor in testing). Question - why?
+The idea: indicator generates 5 lines parallel to the trend. Trades can be opened at the intersections of the extreme lines (of course, preferably with trailing). My idea is that a moving average with a period of 1 (SMA based on LOW prices) crossing the lower line of the indicator from below, i.e. return to the trend channel, would serve as the signal for opening a trade, for example BUY. For SELL, the opposite - moving average 1, SMA, HIGH crosses the upper line from above. The idea can be further developed indefinitely, but currently it is necessary to deal with this.
+Indicator: Center of Gravity.mq4
+Expert Advisor: C_S_intraday.mq4 /in simple form, no control of the deposit, timeframes, no trailing, etc.
+Bitmap
+//+---------------------------------------------------------------------+
+//|                              C_S_intraday.mq4                       |
+//|                                                                     |
+//+---------------------------------------------------------------------+
+//
+//
+//
+extern
+double
+lots=
+0.1
+;
+//extern int       StopLoss=30 ;
+//extern int       TrailingStop=15;
+//extern int       Slippage=2;
+extern
+int
+BB =
+125
+;
+extern
+int
+MM =
+2
+;
+extern
+int
+II =
+0
+;
+extern
+double
+KK =
+2.0
+;
+extern
+int
+NN =
+1102
+;
+double
+maH0,maH1,maL0,maL1;
+//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
+//| expert start function                                            |
+//+------------------------------------------------------------------+
+int
+start()
+  {
+maH0=
+iMA
+(
+NULL
+,
+0
+,
+1
+,
+0
+,
+MODE_LWMA
+,
+PRICE_HIGH
+,
+0
+);
+//moving average based on high
+maH1=
+iMA
+(
+NULL
+,
+0
+,
+1
+,
+0
+,
+MODE_LWMA
+,
+PRICE_HIGH
+,
+1
+);
+//moving average based on high
+maL0=
+iMA
+(
+NULL
+,
+0
+,
+1
+,
+0
+,
+MODE_LWMA
+,
+PRICE_LOW
+,
+0
+);
+//moving average based on low
+maL1=
+iMA
+(
+NULL
+,
+0
+,
+1
+,
+0
+,
+MODE_LWMA
+,
+PRICE_LOW
+,
+1
+);
+//moving average based on low
+int
+B= BB;
+//
+int
+M= MM;
+//
+int
+I= II;
+//
+double
+K= KK;
+//
+int
+N= NN;
+//
+double
+cgh =
+iCustom
+(
+NULL
+,
+0
+,
+"Center of Gravity"
+,B,M,I,K,N,
+3
+,
+0
+);
+double
+cgl =
+iCustom
+(
+NULL
+,
+0
+,
+"Center of Gravity"
+,B,M,I,K,N,
+4
+,
+0
+);
+if
+(cgl<maL0)
+//if moving average (low) crosses the lowest line of the indicator from below
+{
+OrderSend
+(
+NULL
+,
+OP_BUY
+,lots,
+Ask
+,
+2
+,
+Ask
+-
+10
+*
+Point
+,
+Ask
++
+20
+*
+Point
+,
+"create1"
+,
+123
+,
+0
+,Lime);
+   }
+/*
+if (cgh>maH0)
+   {
+   OrderSend(NULL,OP_SELL,lots,Bid,2,Bid+10*Point,Bid-20*Point,"create1",123,0,Red);
+   }  
+*/
+//----
+return
+(
+0
+);
+  }
+//+------------------------------------------------------------------+
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8604

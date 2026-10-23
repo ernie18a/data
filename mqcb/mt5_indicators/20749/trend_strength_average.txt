@@ -1,0 +1,2 @@
+Usually Trend Strength indicators are using oscillator based indicators for trend strength assessment.
+This version changes that. It can use some of the 4 regular types of averages and is drawn on the main chart. That way you can see directly on the price itself the estimated trend assessment by the trend strength algorithm.

@@ -1,0 +1,4 @@
+Theory:
+This indicator is constructing RSI candles from RSI of open, high, low and close. Those same values are then used to calculate the ATR (Average True Range) of such RSI values (instead of using high, low and close, the indicator is using RSI high, RSI low and RSI close for "ATR" calculation) and then that value is used to display a Keltner channel of such RSI candles (average price used for Keltner middle value is the average of RSI high, low, open and close).
+Usage:
+You can use the breaks of the "Keltner channel" as an indicator of short term volatility / momentum estimate (since RSI itself is from the family of momentum indicators).

@@ -1,0 +1,1 @@
+This allows mt5 chart to vertically scroll like tradingview chart with auto button to reset. MT5 does not allow horizontal scrolling so that feature can not be added

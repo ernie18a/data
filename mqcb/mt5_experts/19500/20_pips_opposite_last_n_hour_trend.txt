@@ -1,0 +1,36 @@
+The author of the idea
+:
+slacktrader
+,
+the mq5 code author
+:
+barabashkakvn
+.
+Trading against the trend direction as of N hours ago. Only one position a day can be opened at a certain hour.
+Input Parameters
+Max positions
+- the maximum number of positions (values below 2 are not recommended);
+Lots (if "Lots"<=0.0 -> use "Risk")
+- position volume (if the value is set to 0 or less than 0, the position volume will be calculated as risk percent of free margin);
+Take Profit
+Risk in percent for a deal from a free margin
+- risk per trade as percentage of free margin.
+Lot maximum
+- limit on the maximum lot size;
+Hour when position should be opened
+- specify the hour for opening a position;
+Hours to check price difference to see a "trend"
+- the number of hours ago to check the trend direction;
+Lot multiplier, if one position is unprofitable
+- lot increase ratio after one losing trade;
+Lot multiplier, if two positions are unprofitable
+- lot increase ratio after two losing trades in a row;
+Lot multiplier, if three positions are unprofitable
+- lot increase ratio after three losing trades in a row;
+Lot multiplier, if four positions are unprofitable
+- lot increase ratio after four losing trades in a row;
+Lot multiplier, if five positions are unprofitable
+- lot increase ratio after five losing trades in a row.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19500

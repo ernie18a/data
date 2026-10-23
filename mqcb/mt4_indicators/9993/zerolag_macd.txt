@@ -1,0 +1,13 @@
+The Indicator ZeroLag MACD is an indicator Moving Average Convergence/Divergence, MACD with zero delay. The Indicator ZeroLag MACD in contrast with standard MACD gives the signals on several bars earlier, but divergences/convergence denominated more obviously.
+ZeroLAG MACD calculates on formula:
+ZeroLAG MACD(i) = (2*EMA(Close, FP, i) - EMA(EMA(Close, FP, i), FP, i)) - (2*EMA(Close, SP, i) - EMA(EMA(Close, SP, i), SP, i));
+ZeroLAG MACD Signal(i) = 2*EMA(ZeroLAG MACD(i), SigP, i) - EMA(EMA(ZeroLAG MACD(i), SigP, i), SigP, i);
+where:
+EMA - exponential moving average;
+Close - a price of the closing of the bar;
+FP - a period of the quick moving average;
+SP - a period of the slow moving average;
+SigP - a period of the signal moving average;
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9993

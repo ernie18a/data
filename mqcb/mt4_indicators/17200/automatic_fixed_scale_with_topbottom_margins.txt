@@ -1,0 +1,4 @@
+This code was written as an indicator. It adds top and bottom margin to the chart. Both can be adjusted separately.
+This gives some breathing space to top and bottom of the chart for drawing. It's changing chart scale to fixed scale, then finds Highest and Lowest price visible on the chart. Then adjust those prices with selected margin, and those are used for Fixed scale.
+Also added automatic switch to auto-scroll when chart is moved.
+Head Margin by default bigger is on top if price is above mid-range (uptrend), and on the bottom if price is below mid-range.

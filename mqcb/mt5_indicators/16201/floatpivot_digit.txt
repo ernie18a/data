@@ -1,0 +1,15 @@
+Real author:
+Nick A. Zhilin
+The
+FloatPivot
+indicator with the color filling inside the channel, drawn as a cloud, with the display of the last values as price labels and the possibility to round the channel levels up to a required number of digits. The number of digits to round is set in the input variable
+Digit
+:
+input
+uint
+Digit=3;
+//Number of digits to round to
+Fig.1. The FloatPivot_Digit indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16201

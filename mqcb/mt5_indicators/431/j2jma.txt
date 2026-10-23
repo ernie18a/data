@@ -1,0 +1,17 @@
+Moving average
+with the double adaptive JMA smoothing of a price range.
+The average is calculated the following way:
+J2JMA[bar] = JMA(JMA(PRICE[bar]))
+where:
+JMA() - adaptive smoothing algorithm;
+PRICE[] - price series value;
+bar - current bar.
+The average shows good results on short- and long-term trends. It is not recommended to use big values of the Length2 second smoothing depth. In the latter case the indicator starts working as a standard JMA average having the Length parameter equal to the sum of Length1 and Length2.
+ColorJ2JMA and J2JMA indicators use the CJJMA class of the SmoothAlgorithms.mqh library (must be placed to the
+terminal_data_folder
+\MQL5\Include). The use of the class was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/431

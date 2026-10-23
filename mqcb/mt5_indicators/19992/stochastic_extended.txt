@@ -1,0 +1,11 @@
+The Stochastic Oscillator is a Momentum indicator comparing the closing price of a security to the range of its prices over a certain period of time. The sensitivity of the oscillator to market movements is reducible by adjusting that time period or by taking a moving average of the result.
+The Stochastic Oscillator is calculated using the following formula:
+%K = 100(C - L(period))/(H(period) - L(period))
+Where:
+C - the most recent closing price.
+L(period) - the low of the (period) previous trading sessions.
+H(period) - the highest price traded during the same (period)-sessions period.
+%K - the current market rate for the currency pair.
+%D - (signal)-period moving average of %K.
+The general theory serving as the foundation for this indicator is that in a market trending upward, prices will close near the high, and in a market trending downward, prices close near the low. Transaction signals are created when the %K crosses through a three-period moving average, which is called the %D.
+The usual average that is used for stochastic calculation is simple moving average (SMA). This version allows you to use any of the 4 basic types of averages (default is SMA, but you can use EMA, SMMA or LWMA too) - some are "faster" then the default version (like EMA and LWMA versions) and SMMA is a bit "slower" but this way you can fine tune the "speed" to signals ratio.

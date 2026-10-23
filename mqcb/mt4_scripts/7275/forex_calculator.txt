@@ -1,0 +1,5 @@
+Calculator_Forex. The calculator is designed ONLY for the FOREX market and only for the currency pairs!
+It works with the direct and indirect quotes, as well as cross rates. The calculator estimates the value of one point of a currency pair and the maximum stop loss for the user-defined lot.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7275

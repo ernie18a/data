@@ -1,0 +1,2 @@
+ADXVMA is one new sort of a Moving Average.
+It uses modified ADX calculation for adapting Moving Average calculation. The process of adapting is so efficient that it filters out a lot of noise out of the market and produces longer periods of smooth values. That makes it useful for trending mode and for support / resistance usage too.

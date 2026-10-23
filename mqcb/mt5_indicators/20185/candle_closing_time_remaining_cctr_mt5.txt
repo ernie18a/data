@@ -1,0 +1,41 @@
+Candle Closing Time Remaining (CCTR) MT5 is an indicator which displays the remaining time for an open candle to be closed.
+Features
+Changeable color and size.
+Changeable location (Corners).
+Display server time (on OR off) [v2].
+Play an alert sound when the candle is going to close [v3].
+Clean code.
+Screen Shots
+The indicator will be shown as follows in the weekly time frame:
+The indicator will be shown as follows in the top-left location:
+Usability Tips
+You can change the location of display time, by setting the
+location
+input field as follows:
+Set location 'Top-Left': to be displayed in comment in the top-left part of the chart.
+Set location 'Top-Right': to be displayed in the top-right part of the chart.
+Set location 'Bottom-Left': to be displayed in the bottom-left part of the chart.
+Set location 'Bottom-Right': to be displayed in the bottom-right part of the chart.
+You can on or off server time displaying by setting
+displayServerTime
+as follows: [v2]
+Set 'On': display server time.
+Set 'Off': don't display server time.
+You can on or off alert sound playing by setting
+playAlert
+as follows: [v3]
+Set 'On': play a sound when candle is going to close in less than 5 seconds.- set 'Off': don't play sound.
+Also you can set your favorite sound as alert by enter it's name on
+customAlertSound
+: [v3]
+Note that, the file must be located in <terminal_directory<>>\Sounds or its sub-directory. Only WAV files are played.
+If you leave the field empty, the default sound will be played.
+Change log
+Display candle closing time remaining. [v1]
+Adding an input field to display server time. [v2]
+Play an alert sound when the candle is going to close. [v3]
+Change input types to readable strings. [v3]
+Shorten the name of the indicator in comments area. [v3]
+MetaTrader 4 version:
+https://www.mql5.com/en/code/11051
+.

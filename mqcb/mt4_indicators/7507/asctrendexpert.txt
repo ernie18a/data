@@ -1,0 +1,8 @@
+The ASCTrend is the program that determines the most probable direction of the market along with the optimal stops. The primary purpose of the ASCTREND is to determine the trend objectively.
+The ASCTrend acts according to facts (based on the currently present market situation), but not assumptions (what the market must or may do).
+ASCTrendExpert
+The optimal stops provide the greater flexibility for entries/exits, re-entries, pyramiding. The ASCTrend determines the maximal optimum stops for each trade. If you know when to exit the market, you can enter virtually at any time.
+The ASCTrend is a prism which allows to consider the reality of the market without distortions.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7507

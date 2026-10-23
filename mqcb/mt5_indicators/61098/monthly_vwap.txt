@@ -1,0 +1,23 @@
+Monthly VWAP: Your Compass for Long-Term Market Direction
+The
+Monthly VWAP (Volume Weighted Average Price)
+is a sophisticated custom indicator meticulously crafted to provide traders with a high-level, long-term perspective on market activity: the volume-weighted average price, which diligently resets at the commencement of each new trading month. Unlike simple moving averages, VWAP inherently accounts for volume in its calculation, granting greater significance to price levels where substantial trading interest has converged. This makes it an exceptionally powerful tool for discerning the true fair value of an asset over an extended monthly timeframe.
+This indicator precisely computes the cumulative sum of (Price * Volume) divided by the cumulative volume for each calendar month, automatically restarting its calculation with the first bar of every new monthly trading session. It plots a clear and distinct line directly on your chart, offering an effortless visual representation of where the bulk of the month's trading volume has occurred in relation to price.
+Why is Monthly VWAP a cornerstone of long-term strategy?
+Identify Long-Term Fair Value:
+Gain profound insights into the average price at which an asset has traded, weighted by volume, establishing a robust benchmark for prevailing sentiment across the entire month.
+Strategic Positional Planning:
+Many institutional and long-term traders leverage Monthly VWAP as a pivotal reference point for managing larger positions. Price consistently holding above Monthly VWAP can signal enduring bullish strength, while sustained trading below may indicate persistent bearish control. This provides critical insights for strategic entries, exits, and robust position sizing.
+Macro Trend Confirmation:
+Utilize Monthly VWAP to confirm the underlying strength and direction of a macro trend. Healthy long-term trends often see price interacting predictably with the Monthly VWAP.
+Uncluttered Long-Term View:
+Despite its intricate calculation, the Monthly VWAP is presented as a single, unambiguous line on your chart, ensuring your high-level analysis remains clean and focused, free from short-term noise.
+Key Features of this Source Code:
+Monthly Reset:
+The VWAP calculation automatically resets at the beginning of each new trading month, providing a fresh and highly relevant perspective on long-term market activity.
+Precision Calculation:
+Employs standard MQL5 functions for the accurate computation of typical price and volume, ensuring reliable and robust data.
+Clear Chart Visualization:
+Presents a distinct line on your chart for immediate visual understanding, enhancing your analytical clarity.
+Open Source:
+The full MQL5 source code is provided, promoting transparency, fostering learning, and enabling further customization by the dedicated trading community.

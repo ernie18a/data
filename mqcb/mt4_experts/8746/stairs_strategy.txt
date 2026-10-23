@@ -1,0 +1,31 @@
+Description:
+Breakthrough strategy.
+The first, two pending orders are placed. They defines a corridor with the range of the specified channel property.
+It is necessary for the detection of the appromixate price movement direction.
+After breakthrough the further order management is performed by the "Stairs" strategy.
+For the filled order we are placing two stop orders, they defines a channel range specified in properties.
+The Stop Loss prices for the orders are the same as the breakthrough price.
+The exit is performed after the profit will be the same as specified in the
+Profit
+property,
+or after the total profit of the all traded currencies (from all of the experts instances attached) achieve the value defined by
+CommonProfit
+property.
+So, everything will be clear after the deals and during the visualization.
+The arithmetic increasing of orders is supported.
+The automatic calculation of the lot size is also supported, I do not recommend to set it greater than 3%.
+If somebody will find the good parameters for the trading, please inform about it.
+I sure that such parameters are exist.
+I wouldn't like to advise to use it with just one pair, but of course, it's cool to test it on demo accounts or MT Strategy Tester.
+For the several currency pairs, the strategy might be more effecient, I have tested it on the demo account.
+But it's impossible to find the optimal parameters in such case, because of the multicurrency trading.
+A picture from the demo account:
+I have used 5 currency pairs, the profit channel size was 100, the profit was 150 and common profit was 300.
+The maximal drawdown was the same as we see at the picture.
+The initial balance was 25000, the strategy also can work with 10000.
+*.mqh -- copy to include
+logical.mq4, trade.mq4 copy to libraries
+Stairs.mq4 -- the expert advisor.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8746

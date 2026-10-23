@@ -1,0 +1,40 @@
+Overview
+The
+Risk Calculator
+is an indispensable tool for traders who value speed and accuracy. Tired of manually calculating the financial value of your Stop Loss and Take Profit? This Expert Advisor adds an intuitive panel directly to your chart, allowing you to visualize the risk and reward of a trade in seconds—before you even place the order.
+With a clean, high-performance interface, this tool seamlessly integrates into your trading environment, providing crucial information without cluttering your chart or slowing down your computer.
+Key Features
+✅
+Instant Calculation:
+Enter the lot size, the distance in points for your Take Profit and Stop Loss, and immediately see the corresponding values in your account's currency.
+📈
+Intuitive On-Chart Interface:
+A modern and user-friendly panel, positioned to avoid interfering with your technical analysis.
+💲
+Real-Time Point Value:
+The calculator displays the monetary value of each point (
+tick value
+) for the current symbol, helping you better understand volatility.
+🌐
+Universal Compatibility:
+Works perfectly with any symbol on your MetaTrader 5 platform (Forex, indices, commodities, etc.).
+⚡
+Lightweight and Efficient:
+Designed to consume minimal resources, ensuring your platform remains fast and responsive.
+How to Use
+Attach the Expert Advisor to any chart.
+The calculator panel will appear in the upper-right corner.
+Enter your desired values in the
+Lot Size
+,
+Take (pts)
+, and
+Stop (pts)
+fields.
+Click the
+"Calculate"
+button.
+The financial results for "Take" (profit) and "Stop" (loss) will be displayed instantly.
+Optimize your risk management and make smarter, more informed trading decisions. Get the
+Risk Calculator
+and elevate your pre-trade analysis to the next level!

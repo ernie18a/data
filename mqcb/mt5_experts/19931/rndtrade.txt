@@ -1,0 +1,17 @@
+The author of the idea
+:
+Oleksandr
+,
+the author of the MQL5 code
+:
+barabashkakvn
+.
+The EA opens and closes positions with a minimum lot every
+Interval of opening and closing positions
+minutes. The position type is determined as follows:
+If the random number generator produces a number less than 32767/2, then a BUY position is opened;
+Otherwise, a SELL position is opened.
+The previous position is closed before determining the type of the next position.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19931

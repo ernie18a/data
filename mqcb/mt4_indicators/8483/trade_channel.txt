@@ -1,0 +1,21 @@
+The indicator of Fibo levels and arcs drawing.
+Input Parameters:
+extern
+int
+nLeft
+=
+50
+;
+extern
+int
+nRight
+=
+50
+;
+extern
+int
+filter
+=
+10
+;
+Trade Channel

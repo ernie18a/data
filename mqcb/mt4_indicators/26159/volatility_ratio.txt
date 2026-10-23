@@ -1,0 +1,4 @@
+This one is the "reverted conversion" (sort of speaking) of this indicator :
+Volatility Ratio
+from metatrader 5 to meatrader 4. Detailed description of what it does and how to use it you can find there
+The comparison may serve as a reminder how some things are much simpler in MT5 now (non-repainting color line for example, since almost the whole change in this indicator is a change that makes that - having the main calculation made as a class no code change whatsoever was made to the main calculation)

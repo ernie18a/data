@@ -1,0 +1,2 @@
+At times, you need to work with object created on the chart. Depending on the time of the creation of the object you decide whether you need to take a buy action or a sell action.
+This code will help in getting the time of an object using which you can decide whether the object has been created recently. Then you can take suitable action in your code to perform the desired trade.

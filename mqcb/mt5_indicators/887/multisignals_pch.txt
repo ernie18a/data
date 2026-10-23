@@ -1,0 +1,103 @@
+Logo:
+Description:
+This is the improved version of
+Price Channel
+indicator. Two additional price levels, trade signals and
+Stop Loss
+/
+Take Profit
+levels were added.
+The signals and
+Stop Loss
+/
+Take Profit
+can be disabled in input parameters. The indicator with price levels, signals and disabled
+Stop Loss
+/
+Take Profit
+is shown at the figure below:
+Image:
+Уровням присвоены имена, которые можно посмотреть во всплывающих подсказках при наведении указателя. Ниже приведён список всех уровней и их описание:
+H_PCH
+- Уровень, который строится по максимумам баров;
+MH_PCH
+- Уровень, который рассчитывается, как середина между максимумом и центром ценового канала;
+M_PCH
+- Уровень, который рассчитывается, как середина между максимумом и минимумом ценового канала;
+ML_PCH
+- Уровень, который рассчитывается, как середина между минимумом и центром ценового канала;
+L_PCH
+- Уровень, который строится по минимумам баров.
+All the signals are based on price crossover with these levels:
+Upward crossover of
+ML_PCH
+(buy signal) / Downward crossover of
+MH_PCH
+(sell signal);
+Upward crossover of
+M_PCH
+(buy signal) / Downward crossover of
+M_PCH
+(sell signal);
+Upward crossover of
+MH_PCH
+(buy signal) / Downward crossover of
+ML_PCH
+(sell signal);
+Upward crossover of
+H_PCH
+(buy signal) / Downward crossover of
+L_PCH
+(sell signal);
+Indicator parameters:
+Parameter
+Value
+Period
+15
+ML/MH_PCH signals
+true
+M_PCH signals
+true
+MH/ML_PCH signals
+true
+H/L_PCH signals
+true
+Take Profit MLMH
+100
+Take Profit M
+100
+Take Profit MHML
+100
+Take Profit HL
+100
+Stop Profit MLMH
+50
+Stop Profit M
+50
+Stop Profit MHML
+50
+Stop Profit HL
+50
+The indicator with one condition and enabled
+Stop Loss
+(bars)/
+Take Profit
+(squares) levels is shown at the figure below:
+This indicator is used in the
+TRADING WAY
+expert system, described in the
+"Limitless Opportunities with MetaTrader 5 and MQL5
+" article
+(in Russian). The
+TRADING WAY
+Expert Advisor and its demo version is avalible in
+Market
+.
+Additional info:
+The indicator logo (logoMultiSignals_PCH_64x64.ico) can be found in the attached archive
+logomultisignals_pch_64x64.zip.
+This file must be placed to
+\MetaTrader 5 data folder\MQL5\Images.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/887

@@ -1,0 +1,14 @@
+The indicator draws fractals with the bar number indication option available for determining a fractal in input parameters:
+input
+uint
+Fr_Period=
+6
+;
+// Number of candles
+This indicator was first implemented in MQL4 and published in
+CodeBase
+on June 19, 2007.
+Fig.1. i-FractalsEx Indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2385

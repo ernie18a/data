@@ -1,0 +1,6 @@
+In his article "The Hunt for Superior Signals – Two Moving Function Hybrids" (September 2005), William Rafter described the Moving Slope Rate Of Change. This is the MSROC as originally described.
+Instead of using just a change in price to calculate slope (as with Rate Of Change or "ROC"), the slope of a least-squares line is used to calculate MSROC. That produces a much smoother result than the regular ROC and that way the number of false signals is significantly decreasing compared to the ROC itself. In addition to just showing the slope, in this version there is a colored zone that helps pinpoint the moment when the zero level is crossed in order to be able to use it for longer term trend direction determination too.
+Original is using closing price only (as it is in the ROC too), but for the sake of experimenting (since we have an opportunity to use longer periods too) in our version we can use all the usual prices in order to be able to check which one is performing the best in some markets and some calculating period lengths.
+Recommendations
+One way to use it is when the MSROC crosses zero value (as a confirmation of trend direction change).
+Another way is to use the slope of MSROC (as an early warning of trend exhaustion).

@@ -1,0 +1,38 @@
+Author of the idea
+—
+Vladimir Pastushak
+,
+author of the mq5 code
+—
+barabashkakvn
+.
+I have developed this EA based on my own trading experience. The market and the price are chaotic entities with no laws, therefore forecasting future movements is meaningless. However, there is one law that never changes: the chaos can never produce regular permanent sequences (the chaos remains the chaos). This can be used to catch movements of different size receiving a small profit.
+The EA is based on three components:
+1 — Good entry. I went through more than a dozen trade tactics to find the one to have at least 8 successful entries against 2 unsuccessful ones.
+2 — Hold a position until a planned profit is received.
+3 — Positive exit by profit and leading 2 statistical loss-making trades to zero. The EA also features Plus parameter adding several points of profit above zero.
+1 - Good entry
+We often come across financial news stating that the price increased by 2%, 1% etc. I have thoroughly studied the statistics on the market overbought/oversold trading tactics. We have the day's High and Low and the currency price of 1.23000. In order to enter a trade, the EA needs rise or fall set by Percent parameter. By default, the parameter is set to 1.3 which means the EA is to sell when reaching 1.2423.
+Thus, we have the following parameters: day's Low 1.23000, current price 1.25000, sell threshold — Percent 1.3 %. The equation looks as follows: (((current price 1.25000*100 )/Day's Low 1.23000)-100)>=Percent 1.3 %
+The buy signal has the opposite equation. Thus, we take a roll-back from the strong movement.
+Most of other tactics do not fall within the 8/2 ratio.
+2 - Hold a position until a planned profit is received.
+If the price moves in favorable direction after opening the first order, the EA waits for a take profit to trigger. If a lot is calculated from the deposit (Lots = 0, while Percent => 1), the lot of each new trade exceeds the previous one in case of a positive result. In order to calculate a lot as a percentage from free funds, we used the code from the
+MQL4 Book
+. The code was changed to allow setting a decimal value of the percentage (1.1% 1.8% 35.69%)
+3 - Positive exit by profit and leading 2 statistical loss-making trades to zero
+The averaging method (adding the same position with the same volume to the current one) is used to exit a losing trade. In other words, if the price moves against a position, the EA opens a new trade of the same type expecting the price to roll-back to the level where the result is 0. Without a martingale, the EA needs a roll-back of 50-52% to reach a zero level depending on spread and commission.
+The chart with a fixed trading volume:
+With a martingale, the EA only needs a 20-22% roll-back to close an order series (averaging with martingale — adding the same position with an increased volume to the current one). This method is considered high-risk since you need a considerable amount of funds on your deposit in case the price moves 300-400 points.
+Chart with martingale (the volumes vary depending on the number of open positions).
+The Distanciya parameter is used for averaging when setting an opening of the next additional order, while the ShagDist parameter is used to increase the distance by the specified number of points per each new order.
+The EA features the parameter for changing the averaging method:
+Standard Martin=False
+Using martingale Martin=True
+Slip=2 (slippage in points)
+Magic=1 (EA magic number).
+Thus, we have the following chart when optimizing by Open prices
+Below are the test results in "Every tick" mode on EURUSD M30 from 2016.01.01 to 2016.11.12:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16898

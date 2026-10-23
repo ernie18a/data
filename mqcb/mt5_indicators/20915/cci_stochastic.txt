@@ -1,0 +1,2 @@
+Indicator combining two well known indicators: CCI and Stochastic.
+This is a Stochastic of CCI. One possible issue that CCI can cause (it is not widely known that CCI actually does not have known bounds for levels) is avoided when Stochastic is applied to CCI and the bounds are in the fixed 0 to 100 range. That way the trend assessment can be done using that fact too.

@@ -1,0 +1,27 @@
+The indicator shows the break through line.
+Input parameters:
+extern
+int
+MA
+.
+Period
+=
+35
+;
+extern
+int
+MA
+.
+method
+=
+MODE_SMA
+;
+extern
+int
+MA
+.
+applied_price
+=
+PRICE_CLOSE
+;
+i-CAi

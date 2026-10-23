@@ -1,0 +1,21 @@
+Author of the idea
+—
+Monu Ogbe
+,
+author of the mq5 code
+—
+barabashkakvn
+.
+If an even simpler EA exists, I would like to see it!
+The EA does not use any indicators. It simply opens two opposite positions when a new bar appears.
+Then, it waits till both are closed by SL or TP and opens the next couple of positions.
+Manual optimization allows us to select the best parameters where SL is lower than TP for each of the three trading pairs and receive the three possible results:
+Both positions are profitable
+One position is profitable, while another one is loss-making (the profit covers the loss)
+Both positions are loss-making
+The "Open prices only" mode is recommended since it trades only at a new bar opening.
+The best results have been achieved on EURGBP M5, while EURUSD, GBPUSD and EURCHF have also shown good results.
+Feel free to improve the code as you like!
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16920

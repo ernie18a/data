@@ -1,0 +1,30 @@
+If you run more than one Expert Advisor on the same account - or you trade manually alongside an EA - the account statement stops answering the question you actually have. The equity curve is a sum. It tells you the account made money; it does not  tell you which of your systems paid for the others, which one quietly stopped trading three months ago, or which one is carrying the whole result on its own.
+The magic number already contains that information. Every deal an EA places carries its magic, so the history is fully separable. This script does the separation and prints the table.
+Load it on any chart of the account you want audited. It reads history only: it never opens, modifies or closes anything, and it does not need algorithmic trading to be enabled. The chart symbol is irrelevant - the whole account is scanned regardless of which chart the script sits on. Being a script, it runs once and removes itself.
+WHAT IT PRINTS
+One line per magic number, sorted by net result, best first, with these columns:
+- trades      closed round turns (see the note on partial closes below)
+- net P/L     realised result including swap and commission
+- win%, PF    win rate and profit factor computed per round turn
+- avgWin/Loss average winning and losing round turn
+- open(vol)   positions open right now for this magic, and their volume
+- pend        pending orders currently placed by this magic
+- first..last first and last activity date
+- symbols     instruments traded (truncated with "+" beyond three)
+A totals row closes the table. Magic 0 collects manual trades and any EA that does not set a magic number - on most terminals that bucket is a mixture, not one system, so read it accordingly.
+With InpExportCSV enabled (default) the same table is written to MQL5\Files\MagicInventory.csv for spreadsheet work.
+TWO IMPLEMENTATION DETAILS THAT CHANGE THE NUMBERS
+Both are easy to get wrong, and both are wrong in the direction that flatters you.
+1. A partial close is ONE trade. A position closed in two parts produces    one entry deal and two exit deals. Counting exit deals would report two trades for one round turn - inflating the trade count, and worse, splitting a single result into a separate "win" and "loss" when the parts closed on opposite sides of breakeven. This script aggregates deals by DEAL_POSITION_ID first, so win rate and profit factor stay honest on scale-out systems.
+2. Entry commission counts. On most commission-charging brokers half of the round-turn commission is charged on the entry deal, where DEAL_PROFIT is zero. A tool that reads closing deals only never sees it and overstates net P/L by roughly half the commission bill. Here every deal of a position contributes to that position's net.
+Positions still open - and positions partially closed with a remainder still running - are not counted as trades, because their cost is not final yet. They appear in the open(vol) column instead.
+HOW TO READ THE TABLE
+- A magic with many closed trades but zero open positions and zero pendings has gone quiet. Either a filter is keeping it out of the market, or it stopped working. Check the last activity date.
+- A magic whose entire net comes from a handful of large wins (high avgWin against a low win rate) is not necessarily broken, but its result depends on rare events - size it accordingly.
+- Profit factor below 1.0 with a long history is a system paying rent. Profit factor above 2.0 on twenty trades is noise; wait for the sample to grow before believing either number.
+- If two magics always show open positions at the same time on related symbols, you may be running one exposure under two names. The correlation between them is measurable - see the companion script Portfolio Correlation Analyzer, which computes exactly that on monthly P/L.
+NOTES
+- Only what the terminal holds is analysed. If the History tab is set to a short period, load "All history" (right-click in History -> All history) and run the script again.
+- Deposits, withdrawals, credits and corrections are not trades and are excluded.
+- Very old history without a position id is skipped rather than mis-counted.
+- All output is read-only. The bundled guide covers installation and interpretation in more detail.

@@ -1,0 +1,10 @@
+The WI indicator shows a moving average calculated by the following formula:
+WI(2 * Close-High-Low)
+It has two parameters:
+Period
+- calculation period;
+Method
+- calculation method.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19895

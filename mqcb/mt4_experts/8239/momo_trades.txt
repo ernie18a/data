@@ -1,0 +1,437 @@
+The EA was developed to test the strategy described at
+http://www.kroufr.ru/content/view/2989/124/
+on order, I lay it out here, because it still remains unclaimed, the enters are organized under the strategy and exits - by the TakeProfit. During the development, I've added the autolot by
+Bookkeeper
+described
+on the forum
+.
+Here are the results of the forward test, the optimization was performed for the period from the beginning of the year till 01,05,2008.
+Strategy Tester Report
+Momo_Trades_V3
+Ukrsotsbank-MT4 (Build 216)
+Symbol
+EURJPY (Euro vs Japanese Yen)
+Period
+1 Hour (H1) 2008.05.01 00:00 - 2008.07.01 23:59 (2008.05.01 - 2008.07.02)
+Model
+By open price (only for EAs with explicit control of bar opening )
+Parameters
+Lots=0.1; Risk=1; Sl=95; Tp=125; bu=12; magic=78977; PriseShift=4; AutoLot=true; CloseEndDay=false; BU=true; MaPeriod=24; MaShift=1; Fast=44; Slow=57; Signal=5; MacdShift=3;
+Bars in test
+2048
+Ticks modelled
+3094
+Modelling quality
+n/a
+Mismatched charts errors
+0
+Initial deposit
+10000.00
+Total net profit
+1702.92
+Gross profit
+4289.34
+Gross loss
+-2586.42
+Profit factor
+1.66
+Expected payoff
+106.43
+Absolute drawdown
+929.85
+Maximal drawdown
+2261.95 (19.82%)
+Relative drawdown
+19.82% (2261.95)
+Total trades
+16
+Short positions (won %)
+5 (80.00%)
+Long positions (won %)
+11 (45.45%)
+Profit trades (% of total)
+9 (56.25%)
+Loss trades (% of total)
+7 (43.75%)
+Largest
+profit trade
+1532.59
+loss trade
+-1307.55
+Average
+profit trade
+476.59
+loss trade
+-369.49
+Maximum
+consecutive wins (profit in money)
+4 (1842.01)
+consecutive losses (profit in money)
+2 (-1540.57)
+Maximal
+consecutive profit (count of wins)
+1842.01 (4)
+consecutive loss (count of losses)
+-1540.57 (2)
+Average
+consecutive wins
+2
+consecutive losses
+2
+№
+Time
+Type
+Order
+Volume
+Price
+S / L
+T / P
+Profit
+Balance
+1
+2008.05.05 10:00
+buy
+1
+1.30
+162.89
+161.90
+164.14
+2
+2008.05.06 00:00
+swap close
+1
+1.30
+162.65
+161.90
+164.14
+-294.33
+9705.67
+3
+2008.05.06 00:00
+swap open
+2
+1.30
+162.6382
+161.90
+164.14
+4
+2008.05.07 00:00
+swap close
+2
+1.30
+162.66
+161.90
+164.14
+26.74
+9732.41
+5
+2008.05.07 00:00
+swap open
+3
+1.30
+162.6482
+161.90
+164.14
+6
+2008.05.07 11:00
+modify
+3
+1.30
+162.6482
+162.77
+164.14
+7
+2008.05.07 12:00
+s/l
+3
+1.30
+162.77
+162.77
+164.14
+149.37
+9881.78
+8
+2008.05.08 03:00
+sell
+4
+1.30
+160.79
+161.78
+159.54
+9
+2008.05.08 04:00
+modify
+4
+1.30
+160.79
+160.67
+159.54
+10
+2008.05.08 09:00
+t/p
+4
+1.30
+159.54
+160.67
+159.54
+1532.59
+11414.37
+11
+2008.05.13 09:00
+buy
+5
+1.40
+161.25
+160.26
+162.50
+12
+2008.05.13 11:00
+s/l
+5
+1.40
+160.26
+160.26
+162.50
+-1307.55
+10106.82
+13
+2008.05.20 21:00
+buy
+6
+1.30
+162.40
+161.41
+163.65
+14
+2008.05.21 00:00
+swap close
+6
+1.30
+162.21
+161.41
+163.65
+-233.02
+9873.80
+15
+2008.05.21 00:00
+swap open
+7
+1.30
+162.1982
+161.41
+163.65
+16
+2008.05.21 11:00
+modify
+7
+1.30
+162.1982
+162.32
+163.65
+17
+2008.05.22 00:00
+swap close
+7
+1.30
+162.68
+162.32
+163.65
+590.89
+10464.69
+18
+2008.05.22 00:00
+swap open
+8
+1.30
+162.6446
+162.32
+163.65
+19
+2008.05.22 03:00
+s/l
+8
+1.30
+162.32
+162.32
+163.65
+-398.09
+10066.60
+20
+2008.06.02 20:00
+sell
+9
+1.30
+162.17
+163.16
+160.92
+21
+2008.06.03 00:00
+swap close
+9
+1.30
+162.24
+163.16
+160.92
+-85.83
+9980.77
+22
+2008.06.03 00:00
+swap open
+10
+1.30
+162.2205
+163.16
+160.92
+23
+2008.06.03 07:00
+modify
+10
+1.30
+162.2205
+162.10
+160.92
+24
+2008.06.03 08:00
+s/l
+10
+1.30
+162.10
+162.10
+160.92
+147.74
+10128.51
+25
+2008.06.05 22:00
+buy
+11
+1.30
+165.26
+164.27
+166.51
+26
+2008.06.06 00:00
+swap close
+11
+1.30
+165.06
+164.27
+166.51
+-245.28
+9883.23
+27
+2008.06.06 00:00
+swap open
+12
+1.30
+165.0482
+164.27
+166.51
+28
+2008.06.06 03:00
+modify
+12
+1.30
+165.0482
+165.17
+166.51
+29
+2008.06.09 00:00
+swap close
+12
+1.30
+165.03
+165.17
+166.51
+-22.32
+9860.91
+30
+2008.06.09 00:00
+swap open
+13
+1.30
+165.0182
+165.17
+166.51
+31
+2008.06.09 01:00
+s/l
+13
+1.30
+165.17
+165.17
+166.51
+186.17
+10047.08
+32
+2008.06.24 13:00
+buy
+14
+1.30
+168.00
+167.01
+169.25
+33
+2008.06.24 19:00
+modify
+14
+1.30
+168.00
+168.12
+169.25
+34
+2008.06.24 20:00
+s/l
+14
+1.30
+168.12
+168.12
+169.25
+147.17
+10194.25
+35
+2008.06.27 21:00
+sell
+15
+1.30
+167.59
+168.58
+166.34
+36
+2008.06.30 00:00
+swap close
+15
+1.30
+167.55
+168.58
+166.34
+49.04
+10243.29
+37
+2008.06.30 00:00
+swap open
+16
+1.30
+167.5305
+168.58
+166.34
+38
+2008.06.30 08:00
+modify
+16
+1.30
+167.5305
+167.41
+166.34
+39
+2008.06.30 10:00
+t/p
+16
+1.30
+166.34
+167.41
+166.34
+1459.63
+11702.92
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8239

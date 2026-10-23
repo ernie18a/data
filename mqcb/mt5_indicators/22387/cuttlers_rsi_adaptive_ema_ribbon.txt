@@ -1,0 +1,6 @@
+Basics :
+Crosses of two averages are frequently used as signals. But adaptive averages are not uses as frequently for that. This version is using adaptive EMA for that and it is using crosses of two Cuttlers' RSI adaptive EMAs (originally published here :
+Cuttlers RSI daptive EMA
+) for signals
+Usage :
+As usual : you can use the color change (since it is indicating two average crosses) for signals. But due to the adaptive nature of the EMA and due to sometimes very "nervous" behavior of Cuttlers RSI (which can change RSI values significantly very quickly), some experimenting with the parameters is strongly advised

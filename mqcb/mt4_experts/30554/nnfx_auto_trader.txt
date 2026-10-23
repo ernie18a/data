@@ -1,0 +1,40 @@
+This EA allows to
+CREATE, MANAGE and EXIT
+trades in the No Nonsense Forex way much faster. It helps to perfect risk management and also to get rid of emotions when trading, as you can open and close trades with one click.
+Inputs
+-X/Y position: change the position of the box in the chart
+-Default Risk: Percentage of the account used in one trade (this setting is saved between sessions). Default is 2.
+-Pip decimal shift: extra decimals after the pip decimal (some brokers provide 5 decimals instead of 4. In this case, this parameter should be set to 1).
+-Lots decimals: Precision of lot values (if your broker allows to trade with nano lots: 3 decimals). Default is 2.
+**Extra account:
+This is not a parameter, but can be changed in code easily (line 43: rewrite, save and compile). Money in external accounts that needs to be taken into account to no split risk (for example, if you had 10000$ in other broker or in the bank). It is not a parameter since it should be changed in each of the 28 pairs every time it is updated: it is faster to write it directly in code and recompile (which changes the value for all instances, while mantaining every other parameter intact).
+Controls
+-RISK INPUT:
+allows to change the risk value faster, but it is not saved after closing MT4.
+-SELL/BUY:
+opens 2 trades with half lots in each one: both with stop loss at ATR*1.5 and only one of them with take profit at ATR.
+-SL to BREAKEVEN:
+sets the stop loss of every open trade to its initial price
+-TRAILING STOP:
+updates the stop loss (only works after price has moved more than 2*ATR
+-SHOW:
+displays the pip value, the current ATR used (in pips) and the lots that better approximate the risk (and it's real cost)
+-USE ADVANCED:
+allows to set custom stops and take profits. Be careful if that window is
+open
+, since these values would be the ones used (when opening trades, or updating trailing stops). If
+USE DATE
+is set to true (default), the system picks the current ATR in the hours before daily candle close, and the last ATR after a new candle is created.
+Possible errors or bad uses
+-Opening trades when the lots that fit the risk are 0.01 or 0.00 (when using 2 decimals), the amount of lots would be invalid (with 0.01, one trade would be opened with 0.01 lots, and the other would be invalid).
+-Set breakeven when the trade is losing also causes an error
+-The EA may interfer with other open trades if they are in the same pair since it doesn't recognize which it has opened
+-This EA is optimized to be used in D1 charts (if not, make sure that USE DATE is set to false or use custom TP-SL)
+-Orders can still be modified manually
+-Don't click SELL or BUY multiple times, since it would open 2 trades each time
+-Be careful with your margin: the EA does not check it, and it also doesn't prevent you from overexposing to one currency in multiple trades
+-It has only been checked with the main forex pairs, it could work with
+metals, commodities or stocks
+but I can't say for sure
+Feel free to report any bug, change code or whatever you may want. If you are a beginner (well, like me), I recommend to learn how risk is calculated before using this EA. Also, forward test it before using it with real money accounts (and make sure your broker allows Expert Advisors, I don't know if that can have any influence).
+**Edit: buy orders didn't scale out, solved

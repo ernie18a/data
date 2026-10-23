@@ -1,0 +1,10 @@
+Origin of correcting algorithm  :
+Dr. Alexander Uhl invented a method that he used to filter the moving average and to check for signals. Originally it was used at simple moving average
+This indicator :
+This indicator is using the modified "correcting" method. Instead of using standard deviation for calculation, it is using EMA deviation (originally published here :
+EMA deviation
+) and is applied to super smoother (originally published here :
+Super smoother
+)
+Usage :
+You can use the change of color as signals

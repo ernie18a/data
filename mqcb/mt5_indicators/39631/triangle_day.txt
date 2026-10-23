@@ -1,0 +1,3 @@
+Indicator
+A dynamic area between 'Open', 'High', 'Low' and 'Close' is plotted on the current chart. Prices are calculated during the day. When a new one arrives, the dynamic region begins to be rebuilt.
+Rice. 1. Triangle Day

@@ -1,0 +1,2 @@
+Author: DVYU
+TrendOSC indicator.

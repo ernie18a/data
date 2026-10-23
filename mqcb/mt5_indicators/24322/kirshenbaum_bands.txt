@@ -1,0 +1,9 @@
+Theory :
+The Kirshenbaum Bands were authored by Paul Kirshenbaum. Their range is based on standard error as calculated from a hypothetical linear regression line. This range is added to and subtracted from an exponential moving average of the price to produce a top and a bottom band.
+As a deviation from the original, you can chose one of the 4 types of average to sue instead of using just EMA. Averages that can be used are :
+simple moving average
+exponential moving average
+smoothed moving average
+linear weighted moving average
+Usage :
+It can be used in a similar way as Bollinger bands

@@ -1,0 +1,25 @@
+MA slope presents the slope of a Moving Average line. The indicator displays a colored Moving Average, the color of which depends on the point value of the MA slope between two key points of the Moving Average.
+It has five input parameters:
+Period
+- calculation period
+Method
+- calculation method
+Applied price
+- price used for calculations
+Slope
+- the threshold slope value in points, after which the MA color changes
+Slope length
+- shift in bars of the first key point from the current bar, used to determine the slope value (difference between these points)
+Calculation:
+MA = MovingAverage(Applied price, Period, Method)
+Diff = MA - PrevMA
+PrevMA - MovingAverage(Applied price, Period, Method) Slope length bars ago
+If Diff is greater than Slope
+The MA color is green
+If Diff is less than -Slope
+The MA color is red
+Otherwise
+MA is gray
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23124

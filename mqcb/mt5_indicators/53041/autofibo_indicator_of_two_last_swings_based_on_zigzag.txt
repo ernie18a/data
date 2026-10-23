@@ -1,0 +1,18 @@
+Features:
+Automatic Fibonacci Levels
+: The indicator dynamically draws Fibonacci retracement lines based on recent ZigZag highs and lows, giving a clear view of potential reversal points.
+Dynamic and Static Fibonacci Options
+: Users can choose between dynamic and static Fibonacci retracement levels. The dynamic levels update continuously based on the latest ZigZag points, while the static levels remain fixed to the prior significant high or low.
+Customizable Appearance
+: You can adjust the color, style, and width of Fibonacci lines for both dynamic and static levels, allowing for personalized visualization to suit different chart backgrounds and styles.
+Optimized for MetaTrader 5
+: The indicator takes full advantage of MT5's graphical object handling, offering a seamless and efficient charting experience.
+Parameters:
+ZigZag Settings
+( ExtDepth , ExtDeviation , ExtBackstep ): Adjust the sensitivity of the ZigZag pattern to capture more or fewer price swings.
+Dynamic Fibonacci Settings
+: Customize the color, line style, and width of the dynamic Fibonacci retracement lines.
+Static Fibonacci Settings
+: Customize the appearance of the static Fibonacci lines based on the second most recent ZigZag high/low.
+How to Use:
+The AutoFibo indicator is ideal for trend-following and reversal trading strategies. By overlaying Fibonacci levels onto the ZigZag pattern, it allows traders to visually assess retracement levels and potential entry/exit points. This indicator can be used on various timeframes, making it versatile for both intraday and long-term trading.

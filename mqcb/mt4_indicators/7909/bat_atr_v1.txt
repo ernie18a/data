@@ -1,0 +1,4 @@
+Author:
+Copyright Team Aphid
+Indicator BAT ATR_v1.
+Indicator BAT ATR_v1

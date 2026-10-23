@@ -1,0 +1,4 @@
+The strategy based on the price breaking out of a high period Bollinger Band and then coming back into the bands.
+For short trades: Wait until the price closes above the upper Bollinger band and wait for it to close below the upper band. Then go short with 1 ATR stop loss and 1.5 ATR take profit.
+It can be used in any time frame but I recommend 15M as its rare that the daily or 4h will break out of an 800 period Bollinger band.
+The library file Util.mql4 is used for determining lot size and checking if a new candle has opened and validating lot size.

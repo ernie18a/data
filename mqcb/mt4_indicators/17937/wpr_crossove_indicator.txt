@@ -1,0 +1,1 @@
+This is a WPR crossover indicator based signal generating indicator.

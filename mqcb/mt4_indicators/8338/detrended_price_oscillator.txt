@@ -1,0 +1,4 @@
+The Detrendeded Price Oscillator (DPO) indicator looks like a moving average because it filters the directivity (trend) in the price values in the same manner, it allows to determine the circularity easier. The indicator determines the circularity by drawing the moving avarage in the form of a straight horizontal line and then plaсing the price values along this line according to their ratio to the moving average.
+The Detrended Price Oscillator is calculated by the following formula:
+DPO(i) = Close(i) - SMA(i, N)
+where N is the period of the moving average.

@@ -1,0 +1,12 @@
+Author of the idea
+—
+PPP
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+The iMAs on the current period.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17352

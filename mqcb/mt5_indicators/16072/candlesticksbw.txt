@@ -1,0 +1,16 @@
+Real author:
+Vladimir
+The indicator colors the candlesticks according to B. Williams:
+Uptrend and growing candles - aqua;
+Uptrend and falling candles - blue;
+no trend and growing candles - green;
+no trend and falling candles - red;
+Downtrend and growing candles - purple;
+Downtrend and falling candles - magenta
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 13.02.2008.
+Fig.1. The CandlesticksBW indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16072

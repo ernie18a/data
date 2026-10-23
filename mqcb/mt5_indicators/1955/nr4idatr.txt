@@ -1,0 +1,10 @@
+Real author:
+Rosh
+The indicator fixes the moments when the volatility of the financial asset takes to a minimum value and puts colored dots on the chart in the middle of the range of the candlestick movement.
+This indicator was first implemented in MQL4 and published in the
+Code Base at mql4.com
+on 02.02.2008.
+The NR4ID-ATR indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1955

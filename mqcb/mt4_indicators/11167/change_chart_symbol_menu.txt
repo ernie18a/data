@@ -1,0 +1,223 @@
+Change Chart Symbol Menu 1.00
+The indicator loads as a Menu on the menu bar. Click the Symbol Menu to open or close the symbol list. Click a selected symbol to change the chart symbol.
+Tested in MT4 Build 625
+Please read ALL information
+The function of this Indicator is dependent on files mt4gui.dll and mt4.mgh. (At current date 05-04-2014 these files are updates mt4gui2.dll and mt4gui2.mgh) Without these files the Indicators will not work. Both are free and require a free license key for every computer running the .dll file. The mt4gui2.mgh file is included with the Indicator download because it can be easily edited for update. The mt4gui2.dll cannot be edited and must be downloaded from source -
+Download here
+. When the Indicator is first loaded a popup will request a name and email (NO spam ! - occasional update notification - always advisable to use an alias name and alternative email address). Once submitted a License Key will be emailed which is then entered in said popup. There is no limit on the number of free licenses.
+Required: The .dll → MQL4/ Library folder
+Required: The .mgh → MQ4/ Include folder
+Required: Change Chart Symbol Menu → MQL4/ Indicators folder
+Optional Extra: Chart Symbol → MQL4/ Indicators folder
+The .dll and .mgh files are periodically updated to accommodate new MT4 builds. See
+Updating
+and
+How to edit code example
+below.
+If chart symbols are other than the standard six letter EURUSD such as EURUSDSB or EURUSD_uk etc., the User needs to see "Notes: Suffix -1 and Suffix - 2".
+Notes:
+Suffix - 1:
+For platforms that use variants like EURUSDSB, EURUSD_uk etc., the user will have to enter the added suffix
+(case sensitive
+- examples: SB, _uk) in the suffix section in the Indicator Inputs Tab.
+Suffix - 2:
+Future symbols such as Usa500Dec13 or SoybnsJan14 should be added to the Indicator as complete names (case sensitive - examples: Usa500Dec13, SoybnsJan14) in the Inputs sections marked - SPARE. Do not add these to the suffix section.
+Any Symbol can be changed from the Indicator Inputs tab.
+Additional symbols can be added via the Inputs Tab by changing SPARE to the required symbol. Note: if a suffix has been added to the suffix section of the Indicator Input Tab do not include the suffix as part of the added symbol name because the suffix will duplicated - example: EURUSD_uk_uk.
+Users should check Expert Advisors settings. Tools → Options → Expert Advisors
+Possible reasons for failure to change the symbol.
+When the indicator loads the first symbol change will require two separate clicks. After that one click will change any symbol.
+On the wrong chart. Identify the correct chart from the Symbol Menu name which includes the chart timeframe.
+The Broker symbols are suffixed. Check that the suffix has been entered via the Indicator Inputs Tab.
+See Expert Advisor settings ↑ ↑
+Note:
+If the indicator stops working the .dll file although still the same name may be out of date. Delete the old .dll file and download a new .dll file.
+Updating: 3 Easy Steps
+At current date April 2014 the .dll and .mgh updated files are mt4gui2.dll and mt4gui2.mgh. At some point in time these files will probably be updated to mt4gui3.dll and mt4gui3.mgh.
+1. Download the new .dll file from source -
+Download here
+. The old .dll file should be deleted.
+The .mgh file is easily edited for update - see step 2.
+An alternative option is to copy the .mgh code from source (not available as download) and paste and compile in MT4 MetaEditor. Open MT4 MetaEditor → File → New → Include[*.mgh] → Name → Finish → Copy the .mgh code into MetaEditor code window → Save As (ensure the save path is MQL4/ Include and the Save As name is the current update name) →
+.
+2. The below code in mt4gui2.mgh calls the .dll file and must be changed
+from
+#import
+"mt4gui2.dll"
+to
+#import
+"mt4gui3.dll"
+or "the current update name.dll".
+Note:
+After the above changes in the mt4gui2.mgh file it can be → Saved As →the current update name.mgh → in the MQL4/ Include folder and →
+.
+3. The below code in Change Chart Symbol Menu.mq4 calls the .mgh file and must be changed
+from
+#include
+<mt4gui2.mqh>
+to
+#include
+<mt4gui3.mqh>
+or <the current update name.mgh>.
+How to edit code example -
+See Here
+- scroll down to Follow These Steps.
+User Preference Editing in the MT4 MetaEditor
+To permanently add a suffix enter the required suffix between the quotation marks on the first line of the below code.
+To permanently change or rearrange the symbol list change only the upper case symbol names between the quotation marks in the below code.
+Provided the symbol list is not shortened and remains at thirty no other code needs changing. If you are new at this
+always remember to compile
+as a last action. The edited code does not become effective until compiled.
+If the list is shortened via deleting then associated-corresponding code, not included here but further down the code window, must also be deleted.
+extern string Suffix = "";
+
+extern
+string
+Symbol_1 =
+"EURUSD"
+;
+extern
+string
+Symbol_2 =
+"GBPUSD"
+;
+extern
+string
+Symbol_3 =
+"USDCHF"
+;
+extern
+string
+Symbol_4 =
+"USDJPY"
+;
+extern
+string
+Symbol_5 =
+"GOLD"
+;
+extern
+string
+Symbol_6 =
+"XAUUSD"
+;
+extern
+string
+Symbol_7 =
+"AUDCAD"
+;
+extern
+string
+Symbol_8 =
+"AUDCHF"
+;
+extern
+string
+Symbol_9 =
+"AUDJPY"
+;
+extern
+string
+Symbol_10 =
+"AUDNZD"
+;
+extern
+string
+Symbol_11 =
+"AUDUSD"
+;
+extern
+string
+Symbol_12 =
+"CADCHF"
+;
+extern
+string
+Symbol_13 =
+"CADJPY"
+;
+extern
+string
+Symbol_14 =
+"CHFJPY"
+;
+extern
+string
+Symbol_15 =
+"EURAUD"
+;
+extern
+string
+Symbol_16 =
+"EURCAD"
+;
+extern
+string
+Symbol_17 =
+"EURCHF"
+;
+extern
+string
+Symbol_18 =
+"EURGBP"
+;
+extern
+string
+Symbol_19 =
+"EURJPY"
+;
+extern
+string
+Symbol_20 =
+"EURNZD"
+;
+extern
+string
+Symbol_21 =
+"GBPAUD"
+;
+extern
+string
+Symbol_22 =
+"GBPCAD"
+;
+extern
+string
+Symbol_23 =
+"GBPCHF"
+;
+extern
+string
+Symbol_24 =
+"GBPJPY"
+;
+extern
+string
+Symbol_25 =
+"GBPNZD"
+;
+extern
+string
+Symbol_26 =
+"USDCAD"
+;
+extern
+string
+Symbol_27 =
+"SPARE"
+;
+extern
+string
+Symbol_28 =
+"SPARE"
+;
+extern
+string
+Symbol_29 =
+"SPARE"
+;
+extern
+string
+Symbol_30 =
+"SPARE"
+;

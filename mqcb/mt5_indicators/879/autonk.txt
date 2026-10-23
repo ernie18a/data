@@ -1,0 +1,5 @@
+After the launch a channel with three lines will appear. It differs from the standard channel - it has the middle line.
+The black line of the channel can be tuned, the red and the grey lines will be recalculated automatically. The channel width can be tuned using the opposite line of the channel, the middle line will be recalculated. If you need to create a new channel, you have to launch the indicator with other name (see inputs).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/879

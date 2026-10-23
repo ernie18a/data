@@ -1,0 +1,21 @@
+The Expert Advisor uses signals provided by the
+DivergenceViewer
+indicator. This does not require the indicator to be present in the terminal folder. The EA configuration parameters include the
+"Divergence parameters"
+block, which duplicates the similar parameters of the indicator.
+The EA opens deals when a divergence of a
+specified class
+is registered. The Stop Loss level is set behind the local extremum, reached by the price over the divergence formation period, at the distance of
+"Offset for Stop Loss, pts."
+. The Take Profit level depends on the distance between the deal opening price and the Stop Loss level. This ratio can be adjusted using the
+"Ratio of the TP size to SL"
+parameter.
+For the Expert Advisor to properly detect the divergences, it is necessary to specify the amount of bars, sufficient for the correct calculation of the base indicator values, in the
+"Start bars count"
+parameter. For example, to calculate the values of the William Blau base indicator with the parameters 8000, 1, 1, the chart is required to have at least 8000 bars.
+The detailed description of the Expert Advisor and thorough test results are given in the article
+The Divergence Expert Advisor
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14277

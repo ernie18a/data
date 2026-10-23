@@ -1,0 +1,4 @@
+Author: Indoforex Groups - Primajaya
+Indicator Filter over WPR. It is based on indicator
+Stochastic
+.

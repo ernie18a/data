@@ -1,0 +1,19 @@
+The indicator plots the candles with different colors depending on the trend direction and price movement.
+The indicator changes its color smoothly if the price retracement from the maximum/minimum by value is less than the value of the Movment parameter.
+The value of retracement, equal of greater than Movment parameter, considered as a trend change, the indicator changes its color smoothly until the next retracement will be equal to Movment parameter.
+Parameters:
+Movment
+- Price movement in points, considered as necessary for the change of the trend;
+UpColor
+- Color of upward trend candles;
+UpBackColor
+- Color of "retracement" candles for the upward trend;
+DnColor
+- Color of downward trend candles;
+DnBackColor
+- Color of "retracement" candles for the downward trend;
+Auto5Digits
+- To multiply the parameter Movment automatically by 10 for the 5- and 3-digit quotes.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/99

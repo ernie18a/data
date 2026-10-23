@@ -1,0 +1,4 @@
+EA is coded based on MAM_Crossover Indicator published earlier by pramono72 Code base:
+http://codebase.mql4.com/en/code/9969
+EA works better on EUR/USD pair and H1 time frame. Basically MAM_Crossover works based on moving averages (Mirrors) so I added the moving average period to external parameters so you would be able to adjust it easily to different time frames.
+Any comments are appreciated.

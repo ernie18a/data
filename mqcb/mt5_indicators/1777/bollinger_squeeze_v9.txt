@@ -1,0 +1,16 @@
+Real author:
+Akuma99
+A trend indicator with four states. The indicator provides an option for selecting a source indicator for detecting trend using the triggerType input parameter:
+iStochastic;
+iCCI;
+iRSI;
+iMACD;
+iMomentum.
+Strong trend colors the histogram in red and green, weak trends - in pale purple and blue colors. Indicators iATR and iStdDev are used for detecting the strength of the trend.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 12.03.2008.
+Figure 1. The Bollinger_Squeeze_v9 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1777

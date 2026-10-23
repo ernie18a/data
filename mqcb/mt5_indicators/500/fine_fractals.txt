@@ -1,0 +1,16 @@
+Real author:
+Denis Orlov
+The indicator can show important price curves, highs and lows in the cases where standard
+Fractals
+indicator fails. The input parameter of shift by flat has been added for more accurate indication of the extreme value time in case of flat.
+Both input parameters - Sensibility and Shift - are accessible in the features:
+input bool Fine=True;
+input bool FlatShift=True;
+input uint AlertCount=0;
+to turn on the Alert signal in case of a new fractal emerging and selection of the given alerts.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+22.08.2009.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/500

@@ -1,0 +1,7 @@
+Starting from
+build 581
+, the native support of the OpenCL interface has been added for using GPU capacities.
+Here is a small working example of the Mandelbrot fractal calculation in OpenCL. The OpenCL accelerates calculations of fractal approximately up to 100 times in comparison with the CPU calculations.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/825

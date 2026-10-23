@@ -1,0 +1,6 @@
+MetaTrader 5 allows you to export/import rates and ticks from/to the "Symbols" dialog. Due to some limitations, the export of ticks may not cover all required (available) history. This script allows you to export entire history or any part of it into the same CSV-format used by standard export/import facilities.
+The script uses the current chart's symbol. Its history of rates and ticks in a given range of dates is saved into 2 CSV-files (in MQL5/Files folder). The file names include symbol name, timeframe (for rates), range of dates.
+Input parameters
+FilterStart - first datetime to start processing from;
+FilterStop - last datetime to process (up to but not including);
+By default both parameters are 0, which means entire available history.

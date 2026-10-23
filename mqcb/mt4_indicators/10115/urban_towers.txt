@@ -1,0 +1,8 @@
+Description:
+The indicator shows the arrows point of entry into the position according to the
+Urban Towers Scalping Strategy
+.
+Image:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10115

@@ -1,0 +1,3 @@
+This indicator is based on the classical indicator Standard Deviation.
+You can choose StDev from 4 TimeFrames (1 current TF and 3 TFs by your choice).
+TF2-TF4 should be not less then current TF.

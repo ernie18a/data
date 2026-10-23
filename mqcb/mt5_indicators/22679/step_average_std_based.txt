@@ -1,0 +1,10 @@
+Basics:
+We are all using averages for market assessment. One of the ways averages are used is using the change of the slope of the average as a signal. But that way tends to produce a lot of signals in ranging market. One of the way to lessen that number of signals is to filter out insignificant changes in average.
+This version:
+It is using percent of STD (Standard Deviations) as a filter. It is done in order to fix one of the weak points of using fixed (pips) step size : different time frames tend to have different results for fixed step size (ie: higher time frames become almost without steps and lower time frames still have those steps for same setting). Percent of STD usage fixes that and makes it a sort of adaptive. The rest is the same : if the average does not changes for more than the required step, the value of the average remains the same. Otherwise it is changed in order to reflect the nearest value based on the required steps. Averages supported are the following:
+simple moving average (SMA)
+exponential moving average (EMA)
+smoothed moving average (SMMA)
+linear weighted moving average (LWMA)
+Usage:
+You can use the color changes as signals.

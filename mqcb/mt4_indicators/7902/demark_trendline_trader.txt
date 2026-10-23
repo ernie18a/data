@@ -1,0 +1,2 @@
+Author: Kara Software Corp
+DeMark Trendline Trader indicator.

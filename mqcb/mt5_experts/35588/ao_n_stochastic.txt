@@ -1,0 +1,4 @@
+Expert, trades using awesome oscillator, Accelerator oscillator.
+stochastics can be used as a filter , upper and lower levels.
+for buy trade main stoch line must be greater than signal.
+sells inverse.

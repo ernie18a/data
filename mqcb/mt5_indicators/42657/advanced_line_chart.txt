@@ -1,0 +1,4 @@
+This line tries to reflect the main direction of the trend and
+it is calculated based on Japanese candlestick data.
+If the trend is up, then the line is closer to the high prices of each candle, and vice versa, if the trend is down, then the line is closer to the low prices of each candle.
+This is great for plotting various moving averages and can be a good basis for calculating other indicators.

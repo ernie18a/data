@@ -1,0 +1,11 @@
+The real author:
+Aleksandr Pak, Almaty
+The indicator draws the boundaries of the calendar day for trading by Larry Williams. One of the trading recommendations of Larry Williams is the previous day's trading range consideration.
+It is hard to apply this recommendation to many instruments. The offered indicator allows to automate this process pointing out the previous calendar day by vertical and horizontal lines. When changing the day, it will carry the lines forward.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 11.07.2008.
+Fig.1 The DayBorders indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1694

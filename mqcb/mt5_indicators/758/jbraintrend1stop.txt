@@ -1,0 +1,7 @@
+The indicator building Stop Loss levels lines according to BrainTrend1 trading system data with preliminary price timeseries smoothing.
+Many traders experienced difficulties using standard BrainTrend1Stop (BT1S), as it gives many false signals. To solve this problem, it was necessary to use filters and load a chart with additional indicators. In this indicator the issue is solved with the help of JMA smoothing of the price timeseries used in the indicator calculation.
+As a result, the indicator has become more stable. JMA smoothing allows to considerably lessen the amount of false signals. Such intervals are now perceived by the system as flat ones. The system sensitivity to the market volatility can now be managed by "Length_" parameter. Compared with conventional BT1S, the new indicator is a more reliable system. It can even be called a trend tracking system.
+Place JMA.mq5 indicator compiled file to MQL5\Indicators.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/758

@@ -1,0 +1,14 @@
+The author of the idea
+:
+Neil
+,
+the mq5 code author
+:
+barabashkakvn
+.
+This oscillator based on the
+Vortex
+indicator shows the difference between the VI+ and VI- lines as a histogram. The figure below shows two indicators - the original Vortex and Vortex Oscillator:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19460

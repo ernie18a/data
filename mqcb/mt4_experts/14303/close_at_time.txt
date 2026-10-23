@@ -1,0 +1,65 @@
+Close At Time is an Expert Advisor for MetaTrader 4 trading platform, that closes open positions or deletes pending orders or both. You can also specify how it should be closed — by symbol, magic number or ticket number. And the last one is time when Expert Advisor will close selected orders. Time is meant local time of computer. Expert Advisor has also integrated error description for cases when there is some problem while closing individual orders.
+EA is built on idea that it has to be done. It means that if there is an error while closing order or position, EA will try it again on next tick. It has also small problem when this idea is applied. Other trades, opened after selected time and satisfying selected conditions, are closed (EA is not stopped). But it doesn't violate basic idea.
+Input parameters:
+Close settings:
+extern
+bool
+bAllClose =
+false
+;
+//Close All
+extern
+bool
+bSymClose =
+false
+;
+//Close by Symbol
+extern
+bool
+bMNClose =
+false
+;
+//Close by Magic Number
+extern
+bool
+bTNClose =
+false
+;
+//Close by Ticket Number
+extern
+bool
+PO =
+false
+;
+//Close Pending Orders
+extern
+bool
+MO =
+false
+;
+//Close Market Orders
+extern
+string
+TimeToClose=
+"YYYY.MM.DD HH:MI"
+;
+//Local time to close
+Close parameters:
+extern
+string
+SymClose=
+""
+;
+//Symbol to close
+extern
+int
+MNClose =
+0
+;
+//Magic Number to close
+extern
+int
+TNClose =
+0
+;
+//Ticket Number to close

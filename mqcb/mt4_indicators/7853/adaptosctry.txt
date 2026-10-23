@@ -1,0 +1,4 @@
+Author: Telemah
+Adaptosctry indicator. Works with indicator
+FATL
+.

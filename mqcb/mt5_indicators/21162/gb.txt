@@ -1,0 +1,15 @@
+Indicator GB (Gaussian Bands) works in the same manner as standard indicator Bollinger Bands. However, unlike the former, it performs filtering centerline and deviation lines by Gaussian method. It also has two deviation lines on each side of the centerline.
+It has five configurable parameters:
+Period
+- calculation period;
+Deviation period
+- deviations calculation period;
+First multiplier
+- a multiplier for the first level of deviations;
+Second multiplier
+- a multiplier for the second level of deviations;
+Applied price
+- price used for calculations.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21162

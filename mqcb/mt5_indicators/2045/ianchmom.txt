@@ -1,0 +1,10 @@
+A non-normalized oscillator implemented in the form of a color histogram.
+The formula for the calculation:
+iAnchMom = 100 * ( ( SMA (SMAPeriod, bar ) / SMA ( SMAPeriod, bar ) ) - 1.0 )
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 02.11.2007.
+Figure 1. The iAnchMom indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2045

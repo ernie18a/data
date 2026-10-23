@@ -1,0 +1,35 @@
+The real author:
+jax1000
+This indicator calculates the averaging amount of the RSI different oscillators. The period of the averaging intervals is set by the user.
+Indicator input parameters:
+//+----------------------------------------------+
+//|  INDICATOR INPUT PARAMETERS                  |
+//+----------------------------------------------+
+input
+uint
+StartLength=
+3
+;
+// the initial period of the averaging
+input
+uint
+EndLength=
+25
+;
+// the final period of the averaging
+input
+ENUM_APPLIED_PRICE
+Applied_Price=
+PRICE_CLOSE
+;
+// price type
+input
+int
+Shift=
+0
+;
+// horizontal shift of the indicator in bars
+Fig.1 The SumRSI indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1242

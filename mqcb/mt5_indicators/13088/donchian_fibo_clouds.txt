@@ -1,0 +1,12 @@
+Real author:
+Guilherme Santos & Luis Guilherme Damiani
+The
+Donchian_Fibo
+indicator implemented as a cloud.
+Originally this indicator has been written in MQL5 and was first published in the
+Code Base
+on 22.05.2015.
+Fig.1. The Donchian_Fibo_Cloud indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13088

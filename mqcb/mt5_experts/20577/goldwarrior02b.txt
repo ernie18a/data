@@ -1,0 +1,44 @@
+Idea by
+:
+Scriptor
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+The EA uses indicators iCCI (Commodity Channel Index, CCI), ZigZag, and
+Impulse
+. Position trailing is possible.
+Inputs
+Lots
+- the initial volume of the positions;
+Stop Loss (in pips)
+- Stop Loss;
+Take Profit (in pips)
+- Take Profit;
+Trailing Stop (in pips)
+- trailing;
+Trailing Step (in pips)
+- trailing step;
+Averaging period (for "Impulse" and "CCI")
+- the averaging period, common for indicators "Impulse" and "CCI";
+ZigZag: Depth
+- indicator ZigZag: Parameter Depth;
+ZigZag: Deviation
+- indicator ZigZag: Parameter Deviation;
+ZigZag: Backstep
+- indicator ZigZag: Parameter Backstep;
+Profit target for closing all positions
+- profit target, at which we close all positions;
+Output, "false" -> in "Experts", "true" -> in Chart
+- displaying the messages on the screen or in a tab;
+Negative impulse value for SELL signal
+- the negative impulse value for SELL (for example, if the value of "-30" is set, no SELL signal will appear at the impulse of "-40", while the SELL signal will appear at the impulse of "-20");
+Positive impulse value for BUY signal
+- the positive impulse value for BUY (for example, if the value of "-30" is set, no BUY signal will appear at the impulse of "-40", while the BUY signal will appear at the impulse of "-20");
+Multiplier of hedge positions of 1st and 2nd level
+- the multiplier of the initial lot for hedging.
+Test for several symbols on H1 from 2018.01.01 to 2018.04.26:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20577

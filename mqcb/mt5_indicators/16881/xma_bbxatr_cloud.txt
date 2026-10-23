@@ -1,0 +1,90 @@
+This is a modified Bollinger Bands® displaying the upper and lower borders of the price deviation from МА calculated considering the average volatility of the symbol according to ATR indicator. The internal MintCream-colored indicator channel stands for Bollinger Bands, while the pale light green and pale pink borders are formed by ATR by deviation from the channel.
+//+----------------------------------------------+
+//| INDICATOR INPUTS                             |
+//+----------------------------------------------+
+input
+uint
+ATR_Period=
+14
+;
+//ATR period
+input
+double
+ATR_Ratio=
+2.0
+;
+//ATR ratio
+input
+Smooth_Method XMA_Method=MODE_SMA_;
+//averaging method
+input
+uint
+XLength=
+100
+;
+//depth of averaging
+input
+int
+XPhase=
+15
+;
+//first averaging parameter,
+//---- for JJMA within the range of -100 ... +100 it influences the quality of the transition process;
+//---- For VIDIA it is a CMO period, for AMA it is a slow average period
+input
+double
+BandsDeviation=
+2.0
+;
+//deviation
+input
+Applied_price_ IPC=PRICE_CLOSE_;
+//price constant
+input
+int
+Shift=
+0
+;
+// horizontal indicator shift in bars
+input
+int
+PriceShift=
+0
+;
+// vertical shift of the indicator in points
+//---- price label colors
+input
+color
+Upper_color2=
+clrLime
+;
+input
+color
+Upper_color1=
+clrMediumSeaGreen
+;
+input
+color
+Middle_color=
+clrMediumPurple
+;
+input
+color
+Lower_color1=
+clrRed
+;
+input
+color
+Lower_color2=
+clrMagenta
+;
+//+----------------------------------------------+
+The indicator uses the classes of SmoothAlgorithms.mqh library (copy it to
+<terminal_data_folder>
+\MQL5\Include). The use of the classes was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Fig.1. XMA_BBxATR_Cloud indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16881

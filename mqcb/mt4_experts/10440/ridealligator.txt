@@ -1,0 +1,6 @@
+Description:
+Simple trading system, simple EA based on Alligator indicator.
+Image:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10440

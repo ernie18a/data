@@ -1,0 +1,12 @@
+MA modified DPO facilitate controlling all parameters of MA (MA period , MA mode , MA applied price) to change required MA curve to horizontal line and can easily used as support or resistance level
+Calculation:
+DPO = close - MA (mode, price, DPO_period)
+Where :
+DPO -
+DPO indicator value
+close - close price of bar;
+mode - applied method to calculate MA (SMA, EMA, SMMA, LWMA)
+price - applied price to calculate MA
+DPO_period - period applied to calculate MA.
+MT5 version available at
+https://www.mql5.com/en/code/50822

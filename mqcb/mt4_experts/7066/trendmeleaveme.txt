@@ -1,0 +1,31 @@
+Just draw Trend Up or Trend Down before the Expert Advisor "TrendMeLeaveMe" start. Set properties, run expert and go to sleep or work.
+This expert does not work automatically. You must draw trend up, trend down or horizontal trend. Name it
+buystop
+or
+sellstop
+, set
+BuyStop_StepUpper
+,
+BuyStop_StepLower
+,
+SellStop_StepUpper
+and
+SellStop_StepLower
+Properties.
+When price enter area between your buystop trend and BuyStop_StepLower, expert will open buystop order at Price BuyStop_StepUpper. When price enter area between your sellstop trend and SellStop_StepUpper, expert will open sellstop order at Price SellStop_StepLower.
+The expert will always modify OpenPrice to both orders when the price walks with the trends Until Price goes out Previuos area.
+You can set
+BuyStop_StopLoss
+,
+BuyStop_Takeprofit
+and
+BuyStop_Lot
+to buystop. You can set
+SellStop_StopLoss
+,
+SellStop_Takeprofit
+and
+SellStop_Lot
+to sellstop.
+Look this chart to more explain:
+This is another example:

@@ -1,0 +1,6 @@
+The EA opens trades at the intersection of the fast and the slow MAs. Closes trades if there is a reverse signal.
+If the function of outstaying the losses is enabled, the EA does not close the unprofitable trades by the reverse signal, but opens new ones (see Fig. - EURUSD, H1, every tick, from 1.09.2015 to 8.01.2016). The Stop Loss order of these unprofitable trades is moved to their opening prices.
+The maximum amount of opened trades during the outstaying is limited by the 'Maximum deals' parameter.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14601

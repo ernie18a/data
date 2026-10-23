@@ -1,0 +1,12 @@
+This is the indicator originally posted here
+Limit channels
+that is extended with a display of "states".
+"states" are displayed as colored histogram
+they can be calculated using :
+level 3 - outer levels - the "slowest"
+level 2 - middle levels
+level 1 - the inner levels - the "fastest"
+Recommendations:
+This is just a suggestion how the levels of this kind can be used
+A lot more combinations from 6 levels can be added but that is left to the discretion of anybody using the levels indicator
+You can use color changes as possible "signals"

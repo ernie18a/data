@@ -1,0 +1,6 @@
+The standard chart grid has a number of peculiarities, that do not allow to determine the price movement at first sight: the grid step changes dynamically when switching timeframes, the step is not tied to the basic levels, such as 1.12000, like in the screenshot below.
+The Price Lines script marks the price levels on the chart and supplements the chart grid. It helps to determine the fluctuations in the currency rates at a glance. It is possible to set the color, lines width and their step. The lines are automatically bound to the basic levels.
+This script is especially useful on the EURUSD chart, as the price tends to "snap" to levels that are multiples of 50 and 100 points and to "drift" near them.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16262

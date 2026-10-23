@@ -1,0 +1,29 @@
+The author of the idea
+:
+John Smith
+,
+the mq5 code author
+:
+barabashkakvn
+.
+The Expert Advisor uses the signals of "crossover of two iMAs (Moving Average, MA)". The EA uses Trailing Stop and Take Profit. Sell positions are closed when a Buy signal appears, and vice versa.
+Take profit and trailing stop can be set to 0 to turn them off.
+Input Parameters
+Lots
+- position volume;
+Take Profit (in pips)
+- Take Profit value;
+Trailing stop (in pips)
+- trailing stop value;
+Trailing Step (in pips)
+- trailing step value;
+MA fast: averaging period
+- averaging period of the fast Moving Average;
+MA slow: averaging period
+- averaging period of the slow Moving Average;
+magic number
+- Expert Advisor identifier.
+Individual parameters should be selected for each symbol. EA's default parameters are intended for EURUSD,H1. Results:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19546

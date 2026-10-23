@@ -1,0 +1,6 @@
+Theory:
+According to idea, Bollinger bands squeeze detect the periods of "no entry" zones by using the Bollinger bands and Keltner combined. When the Bollinger bands are within Keltner channel, then the "squeeze" is happening and then one should not enter a new position.The idea behind this is that the deviation from a moving average is smaller than the average true range in the times when the markets turn flat,  and is usually happening at the times when imminent changes in the market.
+This version:
+There are few versions of the BB squeeze indicator, but they are combined with some other indicators (not related to either Bollinger bands or Ketner channel). This version uses only the original indicators and is, unlike some oscillators, showing its state on the main chart.
+Usage:
+When there is a "squeeze" going on, the indicator fills the bands zone with gray color. That means that you should not enter a new order in that time. When the zone is clear, it shows the relative position of close price compared to the middle value of Bollinger bands and also shows bands breakouts of the close price.

@@ -1,0 +1,12 @@
+Theory :
+Ocean series of indicators were originally created by Jim Sloman (the theory) and Pat Raffalovich (the coder) - additional information can be obtained in Jim Sloman's book
+Natural market slope is an indicator that combines :
+Natural market slope period linear regression slopes (weighted by appropriate coefficients) into a single "market slope"
+Prices can be additionally pre-smoothed vi TEMA (triple ema)
+Even though usually adding pre-smoothing adds lag, using TEMA in this case works very well (default values are using almost insignificant lag)
+Usage :
+As any usual slope / momentum indicator
+You can use the color change
+of the indicator as an indication of momentum change
+You can use the zero cross
+of the indicator as an indication of "trend" change

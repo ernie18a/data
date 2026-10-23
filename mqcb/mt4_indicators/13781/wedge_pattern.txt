@@ -1,0 +1,11 @@
+This indicator shows Wedge pattern (using
+ATR 3 LWMA
+).
+Display:
+Sea Green lines — Wedge Line;
+Yellow line — Trend Line;
+Gray dot line — standard deviations of the trend line.
+Fig.1. EURUSD 5 min
+Fig.2. EURUSD 1 hour
+Fig.4. EURUSD 1 day
+Settings:

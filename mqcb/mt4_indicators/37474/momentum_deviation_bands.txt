@@ -1,0 +1,5 @@
+Quick example how momentum deviation (published here :
+Momentum deviation
+) can be used, this is a momentum deviation bands indicator (similar - but just similar - to Bollinger bands)
+Recommendations:
+You can use it in same way as Bollinger bands

@@ -1,0 +1,5 @@
+How fast does the price moves?
+With this very simple piece of code you may learn how many seconds it takes to complete 100 ticks.
+The less seconds it takes, the faster the price moves.
+it uses the time subtraction to determine the time it takes to complete 100 ticks.
+You may drag and drop the ea to the chart and see the comment on it with such information.

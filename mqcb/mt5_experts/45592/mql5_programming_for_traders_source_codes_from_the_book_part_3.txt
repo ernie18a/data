@@ -1,0 +1,10 @@
+Part 3. Object Oriented Programming in MQL5
+"Part 3. "Object Oriented Programming in MQL5"
+offers an immersion into the world of object-oriented programming (OOP) in the MQL5 language. Software development often involves the complexity related to the management of multiple entities, requiring advanced technology to improve programming convenience, productivity, and quality.
+The OOP technology is based on the concept of objects, which are variables of a custom type defined by the programmer using MQL5 tools. Creating custom types allows the modeling of objects and simplifies the writing and maintenance of programs.
+This part examines various ways to define new types, including classes, structures, and unions. These custom types can combine data and algorithms to describe the state and behavior of application objects.
+The author dwells on the "divide and conquer" principle, showing that objects are mini-programs, each responsible for solving a small but logically complete task. You can combine objects into a single system and create products and services of arbitrary complexity.
+To assist users in studying the capabilities of MQL5, Part "Object Oriented Programming in MQL5" introduces the principles of OOP along with practical implementation examples. The book also covers templates, interfaces, and namespaces, unveiling the flexibility and power of OOP in MQL5 developing programs.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/45592

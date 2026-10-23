@@ -1,0 +1,23 @@
+Stop switching between tabs to check your stats. With the Quant Pro Dashboard, your key metrics are always front and center, allowing you to focus on what matters most: your analysis.
+Key Features:
+Account Intelligence:
+Automatically detects your Account Number and Broker details.
+Performance Metrics:
+Real-time monitoring of Balance, Equity, and Floating PnL.
+Trade Management:
+Instant view of your total Open Positions and Closed trade counts.
+Market Awareness:
+Stay updated with live Spread, Daily PnL percentage, and Network Latency (Ping).
+Professional UI:
+A sleek, "Neon Cyberpunk" aesthetic with a high-contrast black box and neon outline that integrates perfectly with any chart theme.
+Why Pro Dashboard?
+Zero Lag:
+Highly optimized code ensures sub-millisecond execution, meaning it won't slow down your platform.
+Clean Design:
+Specifically built to prevent text overlap, ensuring your chart remains clutter-free.
+Motivation:
+Includes a dedicated quote section to keep your mindset focused: "Slow & Steady wins the race".
+Instructions:
+Simply drag and drop the indicator onto any chart.
+The dashboard will automatically align to the Top-Right corner.
+No complex settings required—it’s plug-and-play.

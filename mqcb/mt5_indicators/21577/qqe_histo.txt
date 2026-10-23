@@ -1,0 +1,7 @@
+The QQE (Quantitative Qualitative Estimator) indicator consists of a smoothed Relative Strength Index (RSI) indicator and two volatility-based trailing levels (fast and slow).
+Compared to the original
+QQE
+indicator, this version is adding:
+Fixed levels (to help further estimate the trend).
+Color changing histogram (based on those levels).
+This way we have more information available to analyze.

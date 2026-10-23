@@ -1,0 +1,5 @@
+The indicator shows
+Moving Average
+and oscillator in a separate window.
+An indicator line with its moving average of any method drawn in a separate window (optional).
+An oscillator of the difference between indicator and moving average drawn as a histogram (optional).

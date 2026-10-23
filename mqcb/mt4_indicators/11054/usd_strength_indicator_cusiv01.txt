@@ -1,0 +1,7 @@
+Coensio USD strength indicator (CUSIV01) measures the momentary USD strength, using combined data from the following four USD pairs: EURUSD, GBPUSD, AUDUSD and USDJPY. The USD "momentary strength" of each pair is determined by measuring distance (in pips) of each closed candle w.r.t exponential moving average line e.g.: ΔEURUSD = (Close[n]-EMA50[n]) / PipValue. The combined USD currency strength can be simply expressed by:
+USD
+STRENGTH
+= (-ΔEURUSD-ΔGBPUSD-ΔAUDUSD+ΔUSDJPY)/4
+Notes: Load the indicator on any chart, any time frame. Set "EMASize" to desired value (EMA value is used as reference point of relative USD strength). Note that on USDJPY chart the indicator will display the strength of USD currency, so the histogram will be displayed in the opposite direction!
+Input parameters:
+EMASize - period for calculation of indicator

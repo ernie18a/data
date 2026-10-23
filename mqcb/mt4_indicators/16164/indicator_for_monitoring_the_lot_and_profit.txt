@@ -1,0 +1,4 @@
+The indicator displays the total volume and profit of trades for each direction. Monitoring is performed only for the instrument the indicator is attached to.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16164

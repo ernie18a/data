@@ -1,0 +1,1 @@
+EA works on Symbol = EURUSD and Period = H1

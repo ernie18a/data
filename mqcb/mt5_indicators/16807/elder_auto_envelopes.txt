@@ -1,0 +1,2 @@
+Upgraded with new price types and different display type added.
+Also some code optimization made (to lessen the CPU usage).

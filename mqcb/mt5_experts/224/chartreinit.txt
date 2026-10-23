@@ -1,0 +1,26 @@
+The Expert Advisor adds a button to the bottom right corner of each chart. After press of the button it reinitializes all charts of the chart symbol.
+The chart reinitialization is implemented by termporary change of the chart timeframe.
+This way is simple and doesn't has side effects, because it doesn't redraw (and recalculate) the temporary chart window.
+Input parameters:
+//--- input parameters
+input
+string
+SampleText=
+"Recalculate"
+;
+// Button text
+input
+color
+SampleTextColor=
+NavajoWhite
+;
+// Text color
+input
+color
+SampleBackColor=
+SlateGray
+;
+// Button background
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/224

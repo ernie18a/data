@@ -1,0 +1,2 @@
+If previous candle is bear and current candle is bull with open below the previous candle's close, it marks a bullish arrow
+If previous candle is bull and current candle is bear with open above the previous candle's close, it marks a bearish arrow

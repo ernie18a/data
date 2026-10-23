@@ -1,0 +1,21 @@
+The panel is designed for manual trading and allows you to open and close positions on several instruments. Contains only the minimum required parameters, such as symbols, volumes and directions of positions. Remember the following when working with the panel:
+It does not matter on which symbol chart you attach the panel, since it works with all symbols available in the Market Watch. The default value in the panel boxes*  is "Select", i.e. the symbol is not selected.
+Positions are opened / closed only when the symbol(s) is/are selected. Boxes with the symbol value equal to
+"Select" are ignored when you press the buttons of position opening / closing.
+When you change the symbol, the lot parameters are automatically recalculated: the minimum and maximum lot value for the selected symbol, as well as the default value and the minimum change step (both are ten times the size of the minimal lot) are set
+Volume and order direction fields are required
+only for opening
+positions!
+Closure is implemented according to the following principle: if there is a position on the selected symbol, then close. That is, the specified volume and direction do not matter - the whole position will be closed.
+* A box here means an object containing the fields of the symbol, volume and direction to open one position. In turn, the panel is composed of a specified number of boxes and buttons for opening and closing positions.
+Parameters:
+Boxes
+- the number of boxes in the panel. In other words, the number of symbols on which positions will be opened / closed. Can vary from 1 to 5. With any other value, the panel will work with two boxes.
+Set up:
+An archive is a folder named SimpleHedgePanel that contains the files of the panel. Unzip to termina_data_older\MQL5\Experts, open the folder you created (SimpleHedgePanel) and compile it.
+Tips:
+If you need to close a position partially, you can "open" deals in the opposite direction, so a part of the position will be closed.
+For example, if there are open positions on 4 symbols, and you want to close positions only on two of them, then use "Select" for the boxes of the symbols which should stay open - such positions will not be closed.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1771

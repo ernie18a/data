@@ -1,0 +1,2 @@
+Keltner Channel is usually calculated as SMA (Simple Moving Average) +- ATR distance for the bands.
+In the series of different types of Keltner Channel indicators, here is a version that is adaptive too. In this version, Perry Kaufman's Adaptive Moving Average (KAMA) is used for calculation, which makes it a good choice whenever the indicator should adjust itself to market conditions automatically.

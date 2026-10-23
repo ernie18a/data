@@ -1,0 +1,20 @@
+Features:
+Switch sequentially between multiple Templates (as many as you want)
+Switch template in current chart OR for all charts
+Video Tutorial:
+How to Use:
+Open mq4 file in Metaeditor.
+Change the template names with any you like. Template names should be comma separated.
+extern string Templates = "1.tpl, 2.tpl, 3.tpl";
+extern bool   ApplyAllCharts = true;  // Apply New Template to All Charts
+Change 1.tpl and 2.tpl and 3.tpl to your template names. There can be spaces between comma and names for easier reading. Template names can also contain spaces. There should be at least 2 templates for switching to happen.
+Just make sure these template files exist in your Data Folder/templates folder. Follow above Script installation for more help.
+If you need to apply template to your current chart only change ApplyAllCharts to false. If you need to apply to all charts leave it to true.
+Right click the script in your navigator and Set Hotkey. Choose any keys you need. Now you can use this shortcut to keep switching templates.
+How It Works:
+It uses Global Variables to remember which Template was specific to which Chart ID.
+If you want to reset everything, just go to Global Variables and delete all vars starting with "AbiroidTemplate":
+Select all and Delete:
+Error Codes:
+Error Code 0: Means no error was returned but something is wrong with MT4. You need to go to Scripts in navigator and right click and press refresh. Or restart MT4.
+Error Code 5020: Means template tpl file is not found in your "Data Folder/templates" folder

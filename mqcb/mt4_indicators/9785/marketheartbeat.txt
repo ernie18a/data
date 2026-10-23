@@ -1,0 +1,5 @@
+M35 – minute in the current hour.
+T = 16 – amount of ticks in this minute.
+Pl = 9 – Sum of points which happen to be goes up.
+Mi = 7 – Sum of points which happen to be goes down.
+The "<---" will represent the current minute. All lines before current minute will show data about minutes which happened from the beginning of the hour. The line after the current minute will have an Empty value. All lines after an Empty value line will represent data which left from previous hour.

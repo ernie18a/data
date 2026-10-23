@@ -1,0 +1,3 @@
+This indicator calculates 5, 10, 20 Average Daily Range.
+There is a on chart display in top left corner. it includes the Days movement in Pips, color coded...Up/Down less than 20 pips it is YELLOW. GREEN is 20+ Pips UP, RED is 20+ Pips Down
+It displays a floating Top/Bottom Price box.

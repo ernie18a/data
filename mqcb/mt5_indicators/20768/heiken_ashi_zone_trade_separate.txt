@@ -1,0 +1,8 @@
+Heiken Ashi Zone Trade - Separate indicator is based on 3 indicators:
+Heiken Ashi.
+Accelerator Oscillator.
+Awesome Oscillator.
+The combined states and values of the 3 are producing zones and trade signals.
+This version of
+Heiken Ashi Zone Trade
+indicator is made to display values in a separate window - that way it will not interfere with the other on-chart indicators and can be easier to read the states in some cases.

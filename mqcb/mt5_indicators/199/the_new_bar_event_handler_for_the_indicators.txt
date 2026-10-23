@@ -1,0 +1,73 @@
+The idea of this approach is described in the "
+New Bar" Event Handler
+article. The example of its use in the Expert Advisors is presented in the article. Here you will find the solution for the indicators. Idea is the same: it will allow to perform recalculations only when the new bar has appeared. It's a convenient alternative to the direct use of the
+OnCalculate()
+function.
+Here is the simple indicator, it prints a line when the new bar has appeared:
+//+------------------------------------------------------------------+
+//|                                            OnNewBarCalculate.mq5 |
+//|                                            Copyright 2010, Lizar |
+//|                                                    Lizar@mail.ru |
+//+------------------------------------------------------------------+
+#property copyright
+"Copyright 2010, Lizar"
+#property link
+"Lizar@mail.ru"
+#property version
+"1.00"
+#property indicator_chart_window
+#include <OnNewBarCalculate.mqh>
+// here is the secret of call of OnNewBarCalculate() function
+//+------------------------------------------------------------------+
+//| New bar event handler for the indicator                          |
+//+------------------------------------------------------------------+
+int
+OnNewBarCalculate(
+const
+int
+rates_total,
+const
+int
+prev_calculated,
+const
+datetime
+& time[],
+const
+double
+& open[],
+const
+double
+& high[],
+const
+double
+& low[],
+const
+double
+& close[],
+const
+long
+& tick_volume[],
+const
+long
+& volume[],
+const
+int
+& spread[])
+  {
+//--- here you can write the code, similar to OnCalculate();
+//--- but this function will be called only if a new bar has appeared (not at every tick)
+PrintFormat
+(
+"New bar: %s"
+,
+TimeToString
+(
+TimeCurrent
+(),TIME_SECONDS));
+//--- return value of prev_calculated for next call
+return
+(rates_total);
+  }
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/199

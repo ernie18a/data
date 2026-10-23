@@ -1,0 +1,22 @@
+The real author:
+CrushD
+The indicator to trail the stop levels in the Expert Advisors. Up and low boundaries of the channel have individual input parameters for setting:
+input
+uint
+UpTrailPeriods=
+5
+;
+//The period of search for high
+input
+uint
+DnTrailPeriods=
+5
+;
+//The period of search for low
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 28.10.2007.
+Fig.1 The CandleStop indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1407

@@ -1,0 +1,5 @@
+In the "good old days" coders were trying to optimize all the code that could be optimized. One such example was the optimization of Liner regression calculation. Coder that was coding by the name "mathemat" (if I remember correctly, if I am wrong please correct me) came up with a simplified formula for linear regression value : 3*lwma - 2*sma
+And, since both lwma and sma can be optimized to a so called "loop less mode", it was adopted as the optimal way to calculate it and it produces correct values. But that calculation lacks what the "normal" linear regression value calculation has as intermediate values :
+linear regression intercept
+and the slope of the linear regression line
+So, here is one different way of calculating linear regression (optimal : uses the so called "loop less mode") but that has both the intercept and slope

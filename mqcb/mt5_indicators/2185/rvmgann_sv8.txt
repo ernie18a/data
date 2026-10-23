@@ -1,0 +1,10 @@
+Real author:
+Profi_R
+The indicator implements the Gann principle in the form of a zigzag.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 28.09.2007.
+Figure 1. The rvmGann_sv8 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2185

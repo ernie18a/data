@@ -1,0 +1,25 @@
+Average Percentage True Range indicator with MA adjustments is an extended version of the
+Average Percentage True Range
+indicator described in Stock&Commodities (November 2015).
+It has two configurable parameters:
+Period
+- calculation period
+MA method
+- МА calculation method
+Calculation:
+APTR = 100.0 * MA(PTR, Period, MA method)
+where:
+PTR = Max(s1,s2,s3)
+s1 = 2.0 * (High-Low) / (High+Low)
+s2 = 2.0 * (High-PrevClose) / (High+PrevClose)
+s3 = 2.0 * (Low-PrevClose) / (3.0*Low-Prevlose)
+When selecting the Simple calculation mode, the indicator is completely identical to the
+Average Percentage True Range
+indicator
+Fig. 1. Average Percentage True Range, Method = Simple
+Fig. 2. Average Percentage True Range, Method = Exponential
+Fig. 3. Average Percentage True Range, Method = Smoothed
+Fig. 4. Average Percentage True Range, Method = Linear weighted
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22495

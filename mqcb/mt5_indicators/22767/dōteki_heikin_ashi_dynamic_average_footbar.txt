@@ -1,0 +1,44 @@
+The standard
+Heikin Ashi
+candle representation has an open value that is equivalent to an
+Exponential Moving Average (EMA)
+of the
+Total Price
+, of which the
+alpha
+value of the
+EMA
+is fixed at 0.5 (equivalent to an
+EMA
+period of 3.0).
+In this dynamic version, the period can be changed to whatever value one wishes to use, which also allows one to approximate multi-time-frame analysis, or use the low or high value as a sort of trailing stop-loss. The crossing of the real
+Close
+price over the
+Heikin Ashi
+open value can also be used as a signal for a change in trend direction.
+Also, besides the standard
+EMA
+, this version also has the option of using an
+Almost Zero-Lag EMA
+instead, which can detect changes in trend direction more quickly, especially when using longer periods of averaging.
+When attaching the indicator to the chart, you also have the option of automatically switching the Chart into the
+Line Graph Mode
+and optionally hiding the real
+Close
+prices from the
+Line Graph
+, however, without it, you will not be able to see the cross-over signals between the real
+Close
+prices and the
+Heikin Ashi
+open values.
+Please, also note, that the code can be compiled for both
+MQL4
+or
+MQL5
+by simply changing the file extension (".mq4" or ".mq5"). Hopefully, if time permits, I will update this version with extra features in the future.
+Please note, that all my
+CodeBase
+publications' source code are now also available in "Public Projects" tab of
+MetaEditor
+under the name "FMIC".

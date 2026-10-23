@@ -1,0 +1,75 @@
+Real author:
+klot
+The indicator is an example of smoothing a time series of the ADX indicator by filtering harmonics of higher order.
+This approach can be applied to smooth the values of any indicators. The main advantage of the method is virtually no delay.
+Indicator input parameters:
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+uint
+ADXPeriod=
+14
+;
+// averaging period
+input
+uint
+N =
+7
+;
+// number Length
+input
+uint
+SS =
+20
+;
+// smoothing factor
+input
+int
+Shift=
+0
+;
+// The shift indicator in the horizontal bars
+input
+uint
+ExtraHighLevel=
+60
+;
+// Maximum trend level
+input
+uint
+HighLevel=
+40
+;
+// Strong trend level
+input
+uint
+LowLevel=
+20
+;
+// Weak trend level
+input
+ENUM_LINE_STYLE
+LevelStyle=
+STYLE_DASHDOTDOT
+;
+// Style of level lines
+input
+color
+LevelColor=
+clrBlue
+;
+// Color of levels
+input
+ENUM_WIDTH LevelWidth=w_1;
+// Width of levels
+where:
+N — series length (power of two);
+SS — Smoothing coefficient, zeroes the frequencies above the specified value in the obtained spectrum. SS cannot be greater than 2^N. If SS = 2^N, the ADX series is fully repeated.
+The indicator operation requires the library:
+https://www.mql5.com/en/code/7000
+.
+Fig.1. The i-SpectrAnalysis_ADX indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16074

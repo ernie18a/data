@@ -1,0 +1,112 @@
+So many people wants:
+How to detect new bar present.
+It is so simple especially if u want detect new bar in current timeframe,
+void
+start(){
+static
+datetime
+tmp;
+if
+(tmp!= Time[
+0
+]) {
+    tmp =  Time[
+0
+];
+//do ur code here
+}
+}
+but what about the other timeframe event? It is not too hard but it has some restriction:
+MT4 is not support onBar event, but u can put the upward times into array and check the array times every tick, if it reached the right time, execute the new bar event.
+That means if u run eg.: backtest on M5 timeframe u can catch the M6 M7...D1 events.
+Why u can detect only upward trends? The answer is a question: how to
+generate
+tick
+data
+by
+metatrader
+?
+A1
+,
+A2
+,
+A3
+,...
+Until the D1 timeframe its more difficult because the week starting at eg.: Sunday 20:45 (Broker specific)
+and the
+start
+of the month
+can start
+in the middle of
+the week... etc.
+I think this info isnt too relevant, so i dont publish it...
+So there is a
+topic
+for this Q, but i think so many people dont read the articles and forums, so i published this code.
+Some explanation:
+in the init function u fill the time array with the starter times :
+curIndex = utils.periodToPeriodIndex(
+Period
+());
+  times[curIndex] = Time[
+0
+];
+for
+(
+int
+i=curIndex+
+1
+; i<MAX; i++)
+    times[i] = times[curIndex]-
+MathMod
+(times[curIndex],utils.periodIndexToPeriod(i)*
+60
+);
+and in the start function u checked is there enough time elapsed now,
+then execute the event
+if
+(times[curIndex] != Time[
+0
+]) {
+    times[curIndex] = Time[
+0
+];
+    onBar(
+Period
+());
+for
+(
+int
+i=curIndex+
+1
+; i<MAX; i++) {
+int
+period  = utils.periodIndexToPeriod(i),
+          seconds = period*
+60
+,
+          time0   = times[curIndex] -
+MathMod
+(times[curIndex],seconds);
+if
+(times[i] != time0) {
+        times[i] = time0;
+        onBar(period);
+      }
+    }
+  }
+Write ur code in
+void
+onTick() { 
+}
+and
+void
+onBar(
+int
+period) {
+}
+That's all folks.
+Update 1.1
+: Thx to
+WHRoeder
+for clear code

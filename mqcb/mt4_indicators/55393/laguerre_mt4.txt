@@ -1,0 +1,7 @@
+Laguerre MetaTrader indicator
+— a completely custom indicator that doesn't rely on the standard MT4/MT5 indicators. It shows the weighted trendline in the separate window of the chart. It can be used for simple entry and exit signals. The indicator is available for both MT4 and MT5.
+Input parameters
+Gamma
+(default = 0.7) — a multiplier that is used in the line's levels calculation. The higher it is the smoother is the line.
+CountBars
+(default = 950) — the maximum number of bars for which to calculate this indicator. Set to as high as possible if you don't experience performance problems.

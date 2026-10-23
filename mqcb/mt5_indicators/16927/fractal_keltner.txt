@@ -1,0 +1,9 @@
+Real Author:
+jppoton@yahoo.com
+Fractal channel by Keltner. This indicator increases the width of the Keltner channel in order to avoid false entry or exit signals, or to minimize them. For a more detailed description please see the
+author's blog
+.
+Fig1. The Fractal_Keltner indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16927

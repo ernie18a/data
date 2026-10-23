@@ -1,0 +1,16 @@
+Author of the idea
+:
+Victor Chebotariov
+,
+mq5 code author
+:
+barabashkakvn
+.
+The Expert Advisor shows the calculated lot depending on risk settings.
+Input Parameter
+Risk in percent for a deal from a free margin
+.
+Example (for 100% risk):
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19431

@@ -1,0 +1,2 @@
+RSI of average is normally used when we want the extremes of the RSI reasonably predictable and when we want to filter out some of the erratic signals that sometimes can happen with the regular RSI. This version is adding one more small tool to help to assess the possible exhaustion of the trend : normalized zones.
+With the help of normalized zones we can see the estmated strength of the current trend too and that could possibly help in early detection of possible trend reversals or short term corrections

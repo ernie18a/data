@@ -1,0 +1,21 @@
+You have here a version of "Manual Hedging  EA ",that is an advanced hedging system to trade manualy,You have buy,sell and stop buttons, each time you press the "Start" button, a sequence of trades begins ,When the market goes against you by certain number of pips, you open an opposite trade by a trade with slightly bigger lot size.
+Try it on demo first.
+You have  buy,sell and stop buttons.
+If the market keeps moving in this new direction, at some point the profit from the profit trade will overtake the loss trade, at which point you can close both the trades.
+If the market returns to the previous direction, the trade with the bigger lot size will accumulate loss faster than the older trade which is gaining.
+In this situation, calculate and open another trade in that direction by which the initial trade and the third trade together will be bigger than the second trade.
+This back and forth hedging strategy can be continued for 6 iterations until the market moves to a level which can give profit or break even.
+Inputs
+Use_TP_In_Money- Use Take Profit In Money (values:true/false).
+TP_In_Money- Take Profit In Money   (values: 10-100).
+Use_TP_In_percent- Use Take Profit In Percent (values:true/false).
+TP_In_Percent- Take Profit In Percent
+(values: 10-100).
+Enable_Trailing-Enable_Trailing with money  (values:true/false).
+Take Profit In Money (in current currency) (values: 1-100).
+Stop Loss In Money(in current currency) (values: 1-100).
+TakeProfit - values: 100-200.
+Zone_Recovery_Area - values: 50-80.
+Period1 - Fast Moving Average, values: 10-50.
+Period2 - Slow Moving Average, values: 100-200.
+Multiplier - Multiplier for lot size, values: 0.01-1.

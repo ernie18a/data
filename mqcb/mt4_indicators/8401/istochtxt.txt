@@ -1,0 +1,1 @@
+The iStochTxt indicator draws the arrows on the main chart at the ponts of intersection of the stochastic's main line and the signal levels.

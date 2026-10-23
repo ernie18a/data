@@ -1,0 +1,44 @@
+Author:
+Andrey N. Bolkonsky
+The Ergodic CSI Oscillator (based on
+Candlestick Index
+) is described by William Blau in the book
+"Momentum, Direction, and Divergence: Applying the Latest Momentum Indicators for Technical Analysis"
+.
+WilliamBlau.mqh must be placed in
+terminal_data_folder
+\MQL5\Include\
+Blau_Ergodic_CSI.mq5 must be placed in
+terminal_data_folder
+\MQL5\Indicators\
+Ergodic CSI-Oscillator by William Blau
+Calculation:
+The CSI Oscillator is defined as follows:
+Ergodic_CSI(price1,price2,q,r,s,u) = CSI(price1,price2,q,r,s,u)
+SignalLine(price1,price2,q,r,s,u,ul) = EMA( Ergodic_CSI(price1,price2,q,r,s,u) ,ul)
+where:
+Ergodic_CSI() - Erogic line - Candlestick Index CSI(price1,price2,q,r,s,u);
+SignalLine() - Signal Line - EMA(ul), applied to Ergodic;
+ul - period of a Signal Line.
+Input parameters:
+graphic plot #0 - Ergodic Line (Candlestick Index):
+q - number of bars, used in calculation of Candlestick Momentum (by default q=1);
+r - period of the 1st EMA, applied to Candlestick Momentum (by default r=20);
+s - period of the 2nd EMA, applied to result of the 1st smoothing (by default s=5);
+u - period of the 3rd EMA, applied to result of the 2nd smoothing (by default u=3);
+graphic plot #1 - Signal Line:
+ul - period of a Signal Line, EMA(ul) is applied to Ergodic (by default ul=3);
+AppliedPrice1 -
+price type
+(by default AppliedPrice1=PRICE_CLOSE);
+AppliedPrice2 -
+price type
+(by default AppliedPrice2=PRICE_OPEN).
+Note:
+q>0;
+r>0, s>0, u>0. If r, s or u are equal to 1, the smoothing is not used;
+ul>0. If ul=1, the Signal and Ergodic Lines are the same;
+Min. rates = (q-1+r+s+u+ul-4+1).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/381

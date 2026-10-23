@@ -1,0 +1,17 @@
+MTF MACD is a MetaTrader indicator based on well known MACD. Moving Average Convergence / Divergence, is a technical analysis indicator created by Gerald Appel in the 1960s. It shows the difference between a fast and slow exponential moving average (EMA) of closing prices. Additionally it has signal line which is simple moving average (SMA) of main value of indicator. MACD is a trend following indicator, and is designed to identify trend changes. It's generally not recommended in ranging market conditions.
+In MetaTrader we have MACD already included as a standard technical indicator. However it can be used only for current timeframe. When we are looking for trend, it is very desirable to have MACD showing higher timeframes. MTF MACD presented here has additional parameter - TimeFrame. You can use it to set up higher timeframe from which MACD will calculate its values. Because values are derived from bars, when using higher timeframes, you will notice rough shape of indicator lines.
+MTF MACD settings:
+TimeFrame
+Default value is 0 - means current timeframe. For other timeframes: 1=M1, 5=M5, 15=M15, 30=M30, 60=H1, 240=H4, 1440=D1, 10080=W1, 43200=MN1
+FastEMA
+Default value is 12. This is fast exponential moving average.
+SlowEMA
+Default value is 26. This is slow exponential moving average.
+Signal
+Default value is 9. This is signal line and it is simple moving average.
+Applied_price
+Default value is 0 - means Close price used for MA calculations. For other types of price: 0-CLOSE, 1-OPEN, 2-HIGH, 3-LOW, 4-MEDIAN, 5-TYPICAL, 6-WEIGHTED.
+Shift
+Default value is 0. This parameter shifts whole indicator by Shift number of bars from set timeframe to the right on the chart.
+Example.
+MTF MACD screenshot

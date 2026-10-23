@@ -1,0 +1,24 @@
+The indicator allows finding on the price chart fractals with different dimensions and displaying them simultaneously.
+It searches for fractals with dimensions form 1х1 to 10х10
+The indicator has five input parameters:
+Min dimension of a fractal
+- the minimum dimension of fractals to display;
+Max dimension of a fractal
+- the maximum dimension of fractals to display;
+Use last bar
+- whether to use the current bar for search;
+Upper fractals color
+- the color of upper fractals;
+Lower fractals color
+- the color of lower fractals.
+Note that if you choose "Yes" in
+Use last bar
+, the rightmost found fractal can be canceled if the configuration of the right side of the fractal candlestick formation changes.
+The fractals found are displayed in digits, which correspond to their dimensions.
+Fig.1 Fractals with the dimension of 2х2
+Fig.2 Fractals with the dimension of 3x3
+Fig.3 Fractals with the dimension of 4x4
+Fig.4 Fractals with dimensions of 2x2 to 10x10
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20048

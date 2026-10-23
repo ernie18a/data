@@ -1,0 +1,18 @@
+This indicator is a pure price action utility designed for Smart Money Concepts (SMC) traders. It automatically scans the chart to detect and visualize Fair Value Gaps (FVGs), also known as imbalances or inefficiencies, in real-time.
+A Fair Value Gap occurs when there is a three-candle sequence where the wicks of the first and third candles do not overlap, leaving a "gap" in the body of the second candle. These zones act as strong magnets for price, often serving as high-probability targets or reversal zones when the market returns to mitigate the imbalance.
+Key Features:
+Instant Detection:
+Automatically identifies both Bullish (Demand) and Bearish (Supply) FVGs as soon as the third candle closes.
+Non-Repainting:
+The logic relies strictly on closed candles, ensuring that once an FVG is drawn, it never repaints or shifts.
+Lightweight:
+Optimized code that scans a user-defined history length, ensuring zero terminal lag even when attached to multiple charts.
+Input Parameters:
+InpHistoryBars:
+The maximum number of historical bars the indicator will scan (default is 500 to keep the terminal extremely fast).
+InpColorBull:
+Custom color selection for Bullish FVGs.
+InpColorBear:
+Custom color selection for Bearish FVGs.
+Recommended Usage:
+Attach this indicator to execution timeframes (like M5 or M15) to spot precise entry imbalances, or use it on higher timeframes (H1 or H4) to define structural liquidity targets.

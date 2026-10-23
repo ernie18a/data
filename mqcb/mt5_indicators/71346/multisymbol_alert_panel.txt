@@ -1,0 +1,109 @@
+MultiSymbolAlertPanel
+is a powerful MQL5 indicator that lets you monitor the High and Low levels of multiple currency pairs across Daily, Weekly, or Monthly timeframes, all from a single chart. The indicator draws a clean on-chart panel showing the current Bid price, the selected timeframe High/Low, and a live status for every symbol in your list. When any symbol breaks its High or Low level, the indicator immediately fires a popup alert and a sound alert so you never miss a breakout.
+Every row in the panel is color-coded for instant visual reading.
+Lime/Green
+means the High has been broken,
+Tomato/Red
+means the Low has been broken,
+Yellow
+means price is approaching a level within the Near Zone, and the normal watching state is shown in light blue. In addition, the indicator draws horizontal dashed lines directly on the chart for the current chart symbol, giving you a clear visual reference of the key levels.
+An optional
+Date Filter
+mode lets you view the High and Low of any specific past date instead of the current live bar. This is useful for historical analysis and level review. Alerts only fire in live mode and will not repeat more than once per bar.
+Key Features:
+Multi-Symbol Monitoring.
+Track up to 50 symbols at the same time within a single panel.
+Timeframe Support.
+Supports Daily (D1), Weekly (W1), and Monthly (MN1) High/Low levels.
+Real-Time Alerts.
+Instant popup and sound alert when any symbol breaks its High or Low.
+Color-Coded Status.
+Each symbol row changes color based on its status: broke high, broke low, near high, near low, or watching.
+H/L Lines on Chart.
+Draws dashed High and Low lines directly on the current chart symbol with optional price labels.
+Date Filter Mode.
+Analyze the High and Low of any past date for historical level review.
+Fully Customizable Panel.
+Font size, all colors, near zone percentage, and line width are all configurable via inputs.
+Input Parameters
+Parameter
+Default Value
+Description
+=== Symbols ===
+InpSymbols
+EURUSD,GBPUSD,EURGBP...
+Comma-separated list of symbols to monitor. Maximum 50 symbols supported. Example: "EURUSD,GBPUSD,XAUUSD"
+=== Timeframe ===
+InpTimeframe
+TF_D1 (Daily)
+The timeframe whose High and Low will be displayed in the panel. Options: D1 (Daily), W1 (Weekly), MN1 (Monthly).
+=== Date Filter ===
+InpUseDateFilter
+false
+When set to true, the panel shows the High and Low of the date specified in InpDate instead of the current live bar. Alerts are disabled in this mode.
+InpDate
+Current Date (__DATE__)
+The specific date whose High and Low will be fetched when InpUseDateFilter is enabled.
+=== Panel Settings ===
+InpFontSize
+9
+Font size for all panel text. Use 8 for smaller screens or 10-11 for larger displays.
+InpClrTitle
+clrGold
+Color of the panel title text.
+InpClrHeader
+clrAqua
+Color of the column header row (SYMBOL, BID, HIGH, LOW, STATUS).
+InpClrBull
+clrLime
+Row color when a symbol has broken above its High (bullish breakout).
+InpClrBear
+clrTomato
+Row color when a symbol has broken below its Low (bearish breakout).
+InpClrWatch
+clrYellow
+Row color when price is within the Near Zone of a High or Low level.
+InpClrNormal
+C'180,210,255' (light blue)
+Row color for symbols in normal watching state, where no breakout or near zone condition is detected.
+InpClrDim
+C'100,120,150' (dim blue-grey)
+Color used for divider lines and the footer text.
+InpClrBG
+C'10,10,18' (near black)
+Background color of the panel.
+InpNearPct
+0.10 (10%)
+Near Zone threshold as a fraction of the bar range. If price is within this percentage of the High or Low, the status shows "NEAR HIGH" or "NEAR LOW". For example, 0.10 means 10% of the range.
+=== H/L Lines ===
+InpDrawLines
+true
+When true, horizontal dashed lines are drawn on the chart for the High and Low of the current chart symbol.
+InpClrHLine
+clrLime
+Color of the High level line drawn on the chart.
+InpClrLLine
+clrTomato
+Color of the Low level line drawn on the chart.
+InpLineWidth
+1
+Width of the High and Low lines on the chart. Accepts values from 1 to 5.
+InpLineLabel
+true
+When true, a price label is displayed alongside each chart line showing the exact level (e.g. "High: 1.08450").
+=== Alerts ===
+InpPopup
+true
+When true, a MetaTrader popup alert is shown when a symbol breaks its High or Low.
+InpSound
+true
+When true, a sound alert is played when a symbol breaks its High or Low.
+InpSoundFile
+alert.wav
+File name of the sound to play for alerts. The file must be located in the MetaTrader Sounds folder.
+Note:
+This indicator supports only D1, W1, and MN1 timeframes. Intraday timeframes such as H1 or M15 are not available. Alerts fire only in live mode and are disabled when Date Filter mode is active.
+File Name
+Description
+MultiSymbolAlertPanel.mq5
+Multi-Symbol High/Low Break Alert Panel, full source code

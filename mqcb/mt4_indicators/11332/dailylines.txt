@@ -1,0 +1,10 @@
+Like period Separator each new day will gets its line at starting.
+Above this line you can read the text what day of the week is starting. The lines can be dotted, solid , dash ....  and also the width can be chosen. The text is placed pixels you choose from pricemax.
+Everytime you change the chart the lines will correct themselves so the output keeps the same. Choosing the first day of the week different color makes you see easily weekly Separators also.
+Instead of
+OnChartEvent()
+like I did with the mq5 code, I have here used the
+OnTimer()
+function.
+Hope you enjoy this tool.
+Regards, deVries

@@ -1,0 +1,10 @@
+An implementation of the
+Commodity Channel Index
+using exponential moving averages, instead of simple moving averages as implemented by the its creator,
+Donald Lambert
+.
+The code uses conditional compilation and will compile on both MQL4 and MQL5. Please note that all my
+CodeBase
+publications’ source code are now also available in “Public Projects” tab of
+MetaEditor
+under the name “FMIC”.

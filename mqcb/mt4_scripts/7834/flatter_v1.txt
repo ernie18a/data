@@ -1,0 +1,4 @@
+This script is aimed at facilitating of placing stop orders within the flat boundaries defined by trader as prices specified in variable Hi (the upper price boundary) and Lo (the lower price boundary). Orders are placed at the distance specified in the variable Otstup, based on the predefined flat boundaries.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7834

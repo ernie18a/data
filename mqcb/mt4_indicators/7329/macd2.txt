@@ -1,0 +1,5 @@
+Author: not specified
+MACD2 generates bearish signals from three main sources. These signals are a reflection of the bullish signals - negative divergence, bearish intersection of the moving averages, bearish intersection of the center line.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7329

@@ -1,0 +1,5 @@
+Author: Kim Igor V. aka KimIV
+Entry and exit signals by the "Monday" system.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7416

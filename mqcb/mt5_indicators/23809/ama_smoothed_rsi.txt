@@ -1,0 +1,6 @@
+Theory :
+Some might think that using smoothing prior to rsi calculation is the same as smoothing the rsi value. As a vivid example, you can compare this version (when the RSI is smoothed after the calculation) to the version that uses (smoothed prices (originally published here :
+RSI of AMA
+). As you can see they are quite different in a lot of ways. And it also shows why a "generalized" AMA was needed (now it can calculate smoothed value of any other value, not just of price)
+Usage :
+It can be used in a same way as any Ris(oma) indicator or as any Rsi itself

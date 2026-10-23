@@ -1,0 +1,11 @@
+This oscillator indicator displays the percentage ratio of prices and candlestick sizes in a given range.
+It has two parameters:
+Period
+- calculation period (the range)
+Use last period
+- set the beginning of the range on the current candlestick (true) or the preceding one (false)
+Fig.1. Use last period = true
+Fig.2. Use last period = false
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20377

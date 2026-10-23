@@ -1,0 +1,19 @@
+The indicator draws up/down buffer arrows if conditions on one or two of the following indicators are met:
+Moving Average
+;
+MACD
+;
+Moving Average of Oscillator (OsMA
+);
+Stochastic Oscillator
+;
+Relative Strength Index (RSI)
+;
+Commodity Channel Index (CCI)
+;
+Relative Vigor Index (RVI
+);
+ADX
+;
+Bollinger Bands
+;

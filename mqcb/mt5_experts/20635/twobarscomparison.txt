@@ -1,0 +1,32 @@
+Idea by
+:
+Dmitriy
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+the EA compares the opening prices (Open) of bar#0 and bar#2:
+Inputs
+Stop Loss (in pips)
+- Stop Loss;
+Take Profit (in pips)
+- Take Profit;
+Trailing Stop (in pips)
+- trailing;
+Trailing Step (in pips)
+- trailing step;
+Breakeven
+- breakeven;
+Breakeven Profit
+- profit for breakeven;
+Lots (or "Lots">0 and "Risk"==0 or "Lots"==0 and "Risk">0)
+- position volume (for manual defining);
+Risk (or "Lots">0 and "Risk"==0 or "Lots"==0 and "Risk">0)
+- risk per trade as percent of free margin;
+magic number
+- unique identifier of the EA.
+Test results in the "Every tick" mode for all symbols on D1:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20635

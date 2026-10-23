@@ -1,0 +1,91 @@
+MMType
+=
+1
+;
+// Type of ММ: 0-Lots, 1-as it was at 1.2, 2-martingale (LotExponent coefficient)
+UseClose
+=
+false
+;
+// closing by the PipStep loss. false
+is recommended
+UseAdd
+=
+true
+;
+// reopening with a new lot. The lot for reopening is calculated by the LotExponent regardless of the MMType,
+true
+is recommended
+LotExponent
+=
+1.667
+;
+// multiplication of lots in the series by exponent for moving to the stopless region. first lot 0.1,
+series: 0.16, 0.26, 0.43
+slip
+=
+3
+;
+// acceptable gap of the price in pips
+Lots
+=
+0.1
+;
+// now the micro lots
+0.01
+are availale, at that if 0.1 is specified then the next one in the series
+will be equal to 0.16
+LotsDigits
+=
+2
+;
+// 2 - micro lots 0.01, 1 - mini lots 0.1, 0 - normal lots 1.0
+TakeProfit
+=
+10
+;
+// the level of the profit in pips from the open price
+Stoploss
+=
+500
+;
+// these three parameters do not work
+TrailStart
+=
+10
+;
+TrailStop
+=
+10
+;
+PipStep
+=
+30
+;
+// the distance from the loss in pips the next order of the branch is opened at.
+MaxTrades
+=
+10
+;
+UseEquityStop
+=
+false
+;
+TotalEquityRisk
+=
+20
+;
+//loss as a percentage of equity
+UseTrailingStop
+=
+false
+;
+UseTimeOut
+=
+false
+;
+MaxTradeOpenHours
+=
+48
+;
+The optimization settings are in the SET-files.rar archive. Set-files should be unpacked at the mt4\tester\Ilan directory. The name of each file contains the TF and currency pair it was created on. Try to test them on the last year or with a bigger maximum profit, those files that will be profitable to the present day should be kept, the others should be removed. Try the remained files with your profit, but it should be more than the minimum acceptable (from 250 dollars or 25000 percents). Those of the remained files that will show the good results with your deposit can be kept and used on the real or demo account.

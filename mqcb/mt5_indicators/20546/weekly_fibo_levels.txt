@@ -1,0 +1,2 @@
+Calculation is based on current week open and previous week range.
+Due to its nature it probably best fits for a long term traders.

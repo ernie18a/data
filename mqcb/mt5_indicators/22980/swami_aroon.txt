@@ -1,0 +1,6 @@
+Basics:
+John Ehlers was promoting Swami charts for some time. What was made on MetaTrader (and wasn't in the original Swami package) was, among other things, swami version of Aroon oscillator (some more information you can find here:
+Aroon oscillator
+).
+Usage:
+The same way as the rest of swami charts, and in combination with generic Aroon value.

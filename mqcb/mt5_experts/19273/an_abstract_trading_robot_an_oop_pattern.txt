@@ -1,0 +1,8 @@
+When creating an automated trading system, developers often face the problem of choosing from a number of possible solutions. Patterns would be very useful in such cases. Almost certainly, such problems have already been solved earlier, and there are well thought out elegant solutions implemented by programmers from the expert community.
+Designing object oriented programs is not an easy task, which becomes even more complicated when you need to reuse these solutions. It is necessary to select suitable objects, arrange them in appropriate classes with a reasonable degree of detailing, define class interfaces and inheritance hierarchy, etc.
+What do experienced programmers do to solve this task?
+First of all, every new problem should not be solved from scratch. It's better to use solutions, which have proven to be successful in the past. Many object oriented Expert Advisors contain similar patterns consisting of classes and interacting objects. Those trading robot developers, who use patterns, can instantly apply the patterns to implement a new task, without having to "reinvent the wheel".
+The proposed template can be used for creating a real Expert Advisor, not an abstract one.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19273

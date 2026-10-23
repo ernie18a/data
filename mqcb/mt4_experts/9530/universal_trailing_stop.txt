@@ -1,0 +1,39 @@
+Description:
+Can run as a single Expert Advisor or a script, together with any Expert Advisor.
+Depending on the variable
+TrailingStop
+, trailing may be performed using the fractals, the extremal values of bar in the past or using the specified points.
+If
+TrailingStop
+is greater than 0, then trailing will be carried out with the specified points, which are defined in the variable TrailingStop. If TrailingStop is less than the minimal limit stops, trailing stops will be minimal.
+If
+TrailingStop
+= 0 and
+Tip.Fr.or.Candl
+= 0, then trailing will performed using the fractals. The first corresponding fractal is used for the trailing.
+If
+TrailingStop
+= 0 and
+Tip.Fr.or.Candl
+= 1, then trailing will performed using the minimal/ maximal price values of the previous candle.
+If
+Magic
+= 0, then the trailing will performde on all orders with of this character, without the magic number. If the variable specified Magic magic number, respectively, will only trailing orders with the number of Magic.
+If
+OnlyProfit
+= true, then trailed profit orders only.
+If
+OnlyWithoutLoss
+= true, then orders trailed to the price level without loss only.
+Visualization:
+The screen displays information about the ongoing work of the script:
+- Script settings;
+- Number of orders, that processed;
+- Current time
+- Minimum levels of Stop (-)
+- Current possible stop levels (price tags)
+Tips:
+The script terminates when all orders are closed. If the program is running as an ExpertAdvisor, it can be terminated manually.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9530

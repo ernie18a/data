@@ -1,0 +1,19 @@
+This indicator is based on the
+PanPrizMA Sin leverage 72
+indicator, the features of which make it possible to calculate the phase and amplitude. This can sometimes be helpful.
+The phase is calculated in degrees, takes values from 0 to 360 and is displayed by the 5th, green line (removed from array 4).
+The opposite phase is also calculated in degrees, takes values from -360 to 0 and is displayed by the 6th, red line (removed from array 5). In the calculations, it is more convenient to use the antiphase values in the sum with 360 (which conditionally raises it to the phase level).
+The amplitude with a factor of 1 is calculated in points and displayed by the 9th orange line (removed from array 8)
+Averaging by a polynomial of the second or fourth degree increases the smoothness of lines, adds inertia and, accordingly, rhythm.
+Extrapolation by the function of a sinusoid near a constant allows you to adjust the delay or lead.
+The value of the phase - the state parameter of the wave
+(close in meaning to the trigonometric phase or the angle of rotation of the radius vector in the trigonometric plane)
+allows you to digitize each point of the line and, accordingly, use any necessary point in the expert as a trading signal. And this, in turn, accelerates the process of optimizing strategies.
+Digitization allows you to set asymmetric resolution / prohibition intervals during filtering. The interval of the prohibition of trade against the trend can be, for example, 90 degrees, starting from any phase, only a quarter of the entire wave period.
+Here is the version for MT5
+Refinement of the indicator from the topic:
+Difference calculus, examples
+.
+I want to draw attention to the fact that there are “crutches” in the indicator that allow you to display the initial lines of the
+PanPrizMA Sin leverage 72
+indicator.

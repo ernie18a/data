@@ -1,0 +1,9 @@
+When we do back-test, we usually download M1 data from a third party, and then convert M1 data to other timeframes.
+This script helps to convert history data from M1 to M5, M15, M30, H1, H4, D1, W1 and MN.
+This script must be run on M1 chart.
+You may choose whether to convert to D1, W1, MN or not. By default it is false.
+ConverterD1=false;
+ConverterW1=false;
+ConverterMN=false;
+Please note that you should disconnect from broker server before backtesting, otherwise the data will be overridden by server data.
+To avoid override, the practical method is to delete the password in MetaTrader 4 settings (menu "Tools" → "Options" → "Server").

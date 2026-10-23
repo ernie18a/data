@@ -1,0 +1,11 @@
+The indicator draws candlesticks of a larger timeframe as color filled rectangles using
+DRAW_FILLING
+buffers. Rectangles are color filled in accordance with the values of the
+ColorStepXCCX
+indicator.
+Depending on trend direction the candlestick body is painted in brick red or blue, shadows are painted in light pink or light blue.
+The indicator requires the compiled indicator file ColorStepXCCX.mq5 for operation. Place it to terminal_data_folder\MQL5\Indicators\.
+Figure 1. Indicator BackgroundCandle_ColorStepXCCX_HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2216

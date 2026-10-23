@@ -1,0 +1,47 @@
+Sixty
+Hull Moving Averages (HMA)
+with gradually changing period on a single chart.
+Indicator input parameters:
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+uint
+StartLength=
+2
+;
+// First depth of averaging
+input
+uint
+StartStep=
+2
+;
+// Starting step of averaging change
+input
+uint
+EndStep=
+6
+;
+// Final step of averaging change
+input
+Applied_price_ IPC=PRICE_QUARTER_;
+// Price constant
+input
+int
+Shift=
+0
+;
+// Horizontal indicator shift in bars
+input
+int
+PriceShift=
+0
+;
+// Vertical indicator shift in points
+The indicator uses the classes of the SmoothAlgorithms.mqh library. Working with these classes was described in details in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Fig.1. The Rainbow_HMA indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13046

@@ -1,0 +1,5 @@
+Displays current bid price and % change of (open price of) current bar or X previous bars, also High, Low, and range.
+Examples:
+% change of current Day bar (Period D1, Shift 0). In this case current price is compared to open price of the day.
+% change of current Hour bar (Period H1, Shift 0). In this case current price is compared to open price of the hour.
+% change of the last hour's Minutes bars (Period M1, Shift 60). In this case current price is compared to M1 bar 60 minutes ago, High/Low and range are calculated from last 60 M1 bars. This follows last hour trend without resetting every hour, unlike H1 bar.

@@ -1,0 +1,8 @@
+It is very helpful for a coder who is just starting to learn MQL coding.
+It prints the following fields.
+Account Balance
+Account Equity
+Account Credit
+Account Currency
+Account Company
+Account Name

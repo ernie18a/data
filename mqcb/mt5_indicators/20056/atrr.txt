@@ -1,0 +1,13 @@
+The indicator displays the ratio of two ATRs with different periods.
+It is calculated by the following formula:
+ATRR = (ATR1/ATR2)*100
+It has two parameters:
+ATR1 Period
+- ATR1 calculation period;
+ATR2 Period
+- ATR2 calculation period.
+Fig.1 ATRR with the periods of 10 and 20
+Fig.2 ATRR with the periods of 10 and 20, and the standard ATR with the period of 20
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20056

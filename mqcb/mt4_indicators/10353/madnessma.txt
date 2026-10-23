@@ -1,0 +1,52 @@
+This indicator calculates correlation between MAs of different periods.
+Lines:
+Black
+/
+Red
+dots - Shows Open/Close signals (Above chart = BUY, below = SELL)
+Silver Line
+- Trend corelation (100 = All MAs are UP trend, -100 = All MAs are DOWN trend)
+Blue Line
+- Sort Degree (100 = All MAs are ASCENDING, -100 = All MAs are DESCENDING)
+Blue
+Dashed
+Line
+- Rough Sort Degree between MAcheck, Higher MAs and Lower MAs (100 = All Higher MAs are above MAcheck and all Lower MAs are below MAcheck, -100 = Higher MAs < MAcheck < Lower MAs; Higher and Lower MAs don't have to be sorted)
+Parameters (self explainable) :
+//---- input parameters
+extern
+string
+________________01=
+"List of MAs, eg form fiobo: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597"
+;
+extern
+string
+listMA=
+"1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233"
+;
+extern
+string
+________________02=
+"MA to check SORT DEGREE"
+;
+extern
+int
+MAcheck=
+8
+;
+extern
+string
+________________10=
+"MA sort type"
+;
+extern
+int
+MAmethod =
+1
+;
+// iMA moving average method:
+//          0    Simple moving average,
+//          1    Exponential moving average,
+//          2    Smoothed moving average,
+//          3    Linear weighted moving average.
+Image:

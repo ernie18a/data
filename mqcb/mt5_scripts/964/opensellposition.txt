@@ -1,0 +1,45 @@
+Description:
+OpenBuyPosition script is developed for buying with fixed Stop Loss and Take Profit values in points from the current price. The main advantage of this script is its ability to fix a deal volume, which depends on the entire deposit size, using MM (Money Management) script input parameter. This script determines a ratio between the amount of funds involved in the deal and all the funds of the deposit.
+The script input parameters:
+//+----------------------------------------------+
+//| SCRIPT INPUT PARAMETERS                      |
+//+----------------------------------------------+
+input
+double
+MM=
+0.1
+;
+// Money Management
+input
+int
+DEVIATION=
+10
+;
+// Price deviation
+input
+int
+STOPLOSS=
+300
+;
+// Stop Loss in points from the current price
+input
+int
+TAKEPROFIT=
+800
+;
+// Take Profit in points from the current price
+input
+uint
+RTOTAL=
+4
+;
+// Number of repeats in case of unsuccessful deals
+input
+uint
+SLEEPTIME=
+1
+;
+// Pause duration between repeats in seconds
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/964

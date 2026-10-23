@@ -1,0 +1,37 @@
+Idea by
+Artem Titarenko
+mq5 code author
+-
+barabashkakvn
+The Expert Advisor trades using the iMACD (Moving Average  Convergence/Divergence, MACD) indicator signals.
+Signal generation rules:
+if
+(macd_main[
+3
+]>=macd_main[
+2
+] && macd_main[
+2
+]>=macd_main[
+1
+])
+      m_need_open_buy=
+true
+;
+if
+(macd_main[
+3
+]<=macd_main[
+2
+] && macd_main[
+2
+]<=macd_main[
+1
+])
+      m_need_open_sell=
+true
+;
+The EA only operates when a new bar appears (this applies both to trailing and signal generation).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23325

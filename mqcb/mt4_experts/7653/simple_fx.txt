@@ -1,0 +1,35 @@
+Simple FX
+free expert advisor
+automatically trades the Forex market using moving averages.
+The two moving averages can be changed to the period, method and type. Also order settings can be changed lot size, slippage and magic number.  The expert advisor can trade
+any pair
+and
+any mt4 broker
+.Simple FX trades best attached to the
+daily D1 chart time frame.
+The latest version of Simple FX is simplefx2.mq4. Changes include:
+Added optional s/l and t/p
+Bug fix in s/l and t/l code
+Now waits for first MA cross
+If s/l or t/p is used and order reaches s/l or t/p it will wait for the next MA cross
+Important variables are automatically saved to a file
+How it works
+Its simple (pun intended). When the short moving average is above the long moving average the trend is considered up or bullish. The expert advisor closes its sell order (if one is open) and opens a buy order. When the short moving average is below the long moving average the trend is considered down or bearish. The expert advisor closes its buy order (if one is open) and opens a sell order. So, the expert advisor stays in the market riding the trend up and down.
+Quick overview of variables
+Stop_Loss and Take_Profit
+Stop_Loss and Take_Profit variables are optional, meaning the values can be left at zero and the EA will still trade correctly. If you would like more control over the expert advisor you can change one or more of the values. For example to have the EA open positions with a take profit of 20 pips  you would simply change Take_Profit value to 20.
+Long_MA_Method and Short_MA_Method
+Simple moving average (SMA) = 0
+Exponential moving average (EMA) = 1
+Smoothed moving average (SMMA) = 2
+Linear weighted moving average (LWMA) = 3
+Long_MA_Applied_Price and Short_MA_Applied_Price
+Close price = 0
+Open price = 1
+High price = 2
+Low price = 3
+Median price = 4 (default value)
+Typical price = 5
+Weighted close price = 6
+Best regards,
+Glenn Bacon (RobinHood)

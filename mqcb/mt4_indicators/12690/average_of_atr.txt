@@ -1,0 +1,6 @@
+This is a custom indicator for MetaTrader 4. ATR has been well known as market volatility indicator, ATR bring insight of market strength conditions within specified period.
+Average of ATR (AATR)
+is simple but effective indicator to confirm any
+price action
+trading strategy. This compares ATR to its own average.
+Confirmation rule is simple, scan for price action if the ATR line crossed up from below Average of ATR or take order on that time based on your signal.

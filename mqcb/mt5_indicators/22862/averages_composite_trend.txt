@@ -1,0 +1,10 @@
+Definition:
+The indicator is taking a series of averages and calculates differences between the fastest of the specified and the rest. The result is taken as a trend.
+You can use (theoretically) up to 256 averages for compositing the trend. But in practice, due to limitation of parameter input length, it depends what periods are you using how many periods are you going to be allowed to enter in the periods parameter. The periods are to be entered separated by ";". Default periods used are "10;15;20;25;30;40;50;60" but you can use any periods you wish and you can enter them in any order (the code will take care of the rest).
+The averages that can be used are the standard average types:
+simple moving average (SMA)
+exponential moving average (EMA)
+smoothed moving average (SMMA)
+linear weighted moving average (LWMA)
+Usage:
+The indicator is showing color changes based on slope and zero line cross. Either of those can be used as signal(s).

@@ -1,0 +1,10 @@
+This is an informative script displaying data on the current trading pair in the upper left corner of the chart window. It displays such data as order freeze level (FreezeLevel), minimum and maximum lot sizes, lot step, nearest possible distance for setting orders (StopLevel), swaps, etc.
+The data is displayed on the chart for twenty seconds before removal.
+InfoMarket
+script operation
+This script was first implemented in MQL4 and
+published
+30.04.2012 (in Russian).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1009

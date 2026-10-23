@@ -1,0 +1,13 @@
+Standard Deviations/Moving Average Ratio indicator displays volatility by the ratio of the standard deviation to the moving average.
+It has two configurable parameters:
+Period -
+calculation period
+Applied price
+Calculation:
+Ratio = StdDev / MA
+where:
+StdDev - StdDev(Applied price, Period)
+MA - SMA(Applied price, Period)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22204

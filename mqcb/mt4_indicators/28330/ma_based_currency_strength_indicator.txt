@@ -1,0 +1,122 @@
+Note
+: New update on 30 Mar 2020 - added support for brokers that use all sorts of prefix/infix/postfix to their symbols. Scroll down for more detailed description.
+Description
+When we determine that a currency pair, for instance, EURUSD is trending up, we want to know the extent to which EUR is strengthening, and USD weakening. Similarly, if CADJPY is trending down, we want to know the extent to which CAD is weakening, and JPY is strengthening.
+A simple way to measure the extent of strengthening/weakening is to look across multiple pairs of currencies and add up the times where each currency play a certain role within each pair. So it'll be meaningful to know that, for example, CAD has been strengthening across all pairs that contain it, and for how many bars already.
+Given that there are many currencies being trade, it will be wise to narrow down and focus on just 8 of the major ones - USD, EUR, GBP, CHF, AUD, CAD, JPY and NZD, at least for now, and the combinations of these 8 currencies will be 28 pairs.
+What this indicator does, is to scan through all 28 pairs, determine the strengthening and weakening currency within each pair, and add up the numbers - i.e. number of times each currency is strengthening and weakening, and present it as follows:
+From the above screenshot, we can easily conclude that USD is strengthening, and AUD is weakening, and thus AUDUSD is heading south with maximum momentum!
+So this indicator provides an easy way, to see, in one glance, the pairs that are worth closer monitoring at any chosen timeframe.
+Inputs
+The inputs that a user may set, are as follows:
+These inputs allow the user to change the property of the moving average, and the indicator will just compare the close of a candle with the moving average to determine whether the trend is up or down. An update uploaded on 30 Mar 2020 is the support for brokers that prefix/infix/postfix their symbols with additional characters like '+' or '.', for example. Also, some brokers may be using lower case letters. So all that is necessary, is to fill in the "Full Symbol Name of EURUSD" input parameter (as shown above) with the exact full name of EURUSD... so be it "cEuRuSd." or "eUR_USd++", etc. (ok, I'm just trying to catch all possibilities... lol), this new version should be able to handle.
+To call this indicator from EA, other indicators or scripts, this function can be used:
+bool
+GetCSBuffer(
+int
+tf,
+int
+bar,
+string
+currency,
+int
+&numBulls,
+int
+&numBears)
+{
+string
+name =
+"MACurrencyStrength"
+;
+string
+Cs[] = {
+"USD"
+,
+"EUR"
+,
+"GBP"
+,
+"CHF"
+,
+"AUD"
+,
+"CAD"
+,
+"JPY"
+,
+"NZD"
+};
+int
+numCs =
+ArraySize
+(Cs);
+for
+(
+int
+i=
+0
+; i<numCs; i++)
+   {
+if
+(Cs[i]==currency)
+      {
+         numBulls =
+int
+(
+iCustom
+(
+Symbol
+(),tf,name,i*
+3
+,bar)) - (numCs-i-
+1
+)*numCs;
+         numBears =
+int
+(
+iCustom
+(
+Symbol
+(),tf,name,(i*
+3
+)+
+1
+,bar)) - (numCs-i-
+1
+)*numCs;
+         numBulls = numBulls - numBears;
+return
+(
+true
+);
+      }
+   }
+return
+(
+false
+);
+}
+And this is an example of how to use the GetCSBuffer() function:
+int
+bar =
+1
+; // Users can vary this.
+string
+c =
+"USD"
+; // Users can vary this, but must be one of the 8 currencies.
+int
+numBulls, numBears;
+if
+(GetCSBuffer(
+Period
+(),bar,c,numBulls,numBears))
+Print
+(
+"Bulls = "
+, numBulls,
+", Bears = "
+, numBears);
+When using this indicator, pay attention to the Experts tab in Terminal, ensure that there are no error messages.
+Lastly, for those who are more adventurous, the function GetTrend() can be rewritten (just make sure it takes the same parameters, and return the same value range (i.e. 1 for up, -1 for down, as simple as that) such that different criteria can be used to determine trend. Of course, some changes may require some updates to the input parameters, but nothing too complex - if you have basic knowledge of programming, you can customize it call your own indicators.
+Have fun!

@@ -1,0 +1,34 @@
+Absolute Strength Histogram trend-following indicator.
+The indicator displays the difference between bulls and bear power of the
+Absolute Strength Oscillator (ASO)
+indicator as a histogram
+There are five inputs:
+Period
+- ASO calculation period
+Smoothing
+- ASO smoothing period
+Mode
+- ASO calculation mode
+RSI
+Stochastic
+Method
+- ASO calculation method
+Applied price
+- ASO calculation price
+Calculation:
+ASH = BullsStrength - BearsStrength
+where:
+BullsStrength = MA(AvgBulls, Smoothing, Method)
+BearsStrength = MA(AvgBears, Smoothing, Method)
+AvgBulls = MA(Bulls, Period, Method)
+AvgBears = MA(Bears, Period, Method)
+Bulls = Price - Min
+Bears = Max - Price
+Price - Applied price
+Min, Max - the highest and lowest prices within the Period interval
+Fig. 1. ASH mode of RSI
+Fig. 2. ASH mode of Stochastic
+Fig. 3. ASH + ASO
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21429

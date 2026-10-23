@@ -1,0 +1,27 @@
+Support and Resistance MetaTrader indicator
+— as the name of this indicator suggests, it displays the
+support and resistance
+levels. It shows them directly on the chart, providing an easy help when you want to set stop-loss or take-profit level, or when you want to see the next market target. This indicator uses the standard MetaTrader Fractals indicator (by Bill Williams' method) and has no changeable input parameters. This indicator is available for MetaTrader version 4 and 5.
+Input parameters
+EnableNativeAlerts
+(default = false) — if
+true
+, a native MetaTrader popup alert will be used when price closes above or below the support or resistance level.
+EnableEmailAlerts
+(default = false) — if
+true
+, an email message will be sent when price closes above or below the support or resistance level. Email should be properly configured in MetaTrader via
+Tools->Options->Email
+.
+EnablePushAlerts
+(default = false) — if
+true
+, an email message will be sent when price closes above or below the support or resistance level. Notifications should be properly configured in MetaTrader via
+Tools->Options->Notifications
+.
+TriggerCandle
+(default = Previous) — the candle to issue alerts on:
+Previous
+— the most recently closed candle or
+Current
+— the yet unfinished candle.

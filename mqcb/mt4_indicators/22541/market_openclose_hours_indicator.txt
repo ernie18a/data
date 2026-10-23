@@ -1,0 +1,8 @@
+Basics:
+MOCHI indicator allows you to display a line that represents the open markets.
+The market data were taken from
+https://en.wikipedia.org/wiki/List_of_stock_exchange_trading_hours
+You can select which markets display and what colors use.
+To do:
+Add labels to identify each market
+Add Support for DST (Daylight Saving Time)

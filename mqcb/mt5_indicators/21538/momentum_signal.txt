@@ -1,0 +1,23 @@
+Momentum Signal oscillator is based on Momentum, CCI, ATR, RSI and ADX indicators. It sets the market entry moment and direction.
+There are seven configurable parameters:
+CCI period
+- CCI indicator parameter;
+ATR period
+- ATR calculation period;
+Momentum period
+- Momentum calculation period;
+RSI period
+- RSI calculation period;
+ADX period
+- ADX calculation period;
+Signal line offset
+- signal line shift relative to the oscillator line;
+Momentum line offset
+- oscillator line shift relative to 0.
+Calculation:
+Momentum = (ATR+CCI+RSI) / ADX - Momentum line offset
+Signal = Momentum / (ATR+ADX) - Signal line offset
+Interpretation: Oscillator line crossing the signal one displays the market entry direction.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21538

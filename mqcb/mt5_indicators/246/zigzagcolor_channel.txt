@@ -1,0 +1,7 @@
+The indicator plots the
+standard ZigZag
+by connecting the price peaks with bottoms during the period.
+It plots a channel by connecting the ZigZag peaks and ZigZag bottoms. The colors looks fine for black and white background.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/246

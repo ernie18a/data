@@ -1,0 +1,88 @@
+The author of the idea
+-
+vgs
+mq5 code author
+-
+barabashkakvn
+NOTE: For hedge accounts only! Netting is prohibited!
+Stop loss and take profit are calculated
+dynamically
+based on iATR (Average True Range, ATR) indicator - the indicator value on bar #0 is multiplied by
+Stop Loss
+(for obtaining stop loss) and
+Take Profit
+(for obtaining take profit) ratio.
+If there is more than one open position and there is no order to lock it, check for the possibility to average the position:
+if there is a BUY position and the current Ask price goes below its open price for a distance equal to or exceeding
+Distance
+, open another BUY position.
+if there is a SELL position and the current Bid price goes above its open price for a distance equal to or exceeding
+Distance
+, open another SELL position.
+Distance
+is reduced to standard values for four-digit pairs.
+The volume of the opened position can be either constant or calculated dynamically:
+position volume is fixed -
+Lots
+parameter exceeds 0.0, while
+Ris
+k is equal to 0.0;
+Lots
+parameter sets the position volume (lots)
+position volume is dynamic -
+Lots
+parameter is 0.0, while
+Ris
+k exceeds 0.0;
+Risk
+sets a risk per deal
+Trailing works as a stop loss mover to a breakeven (during the first position modification) and as trailing (for subsequent modifications).
+Trailing Stop
+is the minimum distance from the price to the stop loss after the modification,
+Trailing Step
+is a trailing step. Both parameters are reduced to standard values for four-digit pairs.
+Bars Control
+parameter defines the EA operation: at the occurrence of a new bar only ("
+true
+") or inside a bar ("
+false
+").
+Forming trading signals
+General parameter for trading signals:
+Current Bar
+is a current bar.
+Trend filter
+The trend filter compares iMA (Moving Average, MA) value on the current bar (
+Current Bar
+) with its value on the previous bar (
+Current Bar
+- 1)
+Minimum distance between price and indicator MA
+. For opening BUY, MA should be UNDER the price, while for opening SELL, MA should be located ABOVE the price.
+RSI filter
+RSI filter is based on comparing iRSI (Relative Strength Index, RSI) indicator value
+on the current bar (
+Current Bar
+) with the
+RSI level UP
+and
+RSI level DOWN
+levels. For a
+SELL position open signal, RSI should exceed
+RSI level UP
+, while for a BUY one, it should be below
+RSI level DOWN
+.
+Locking
+If there is an open position and the last closed price of the same direction was closed with a loss, this is a prerequisite for locking. Let's check this:
+if there is a BUY position and the previous BUY was closed with a loss, while the current Ask price is at a distance equal or exceeding
+Distance
+from this BUY position, open yet another BUY position. It does not matter whether it is higher or lower - the value of the distance is taken as an absolute one.
+if there is a SELL position and the previous SELL was closed with a loss, while the current Bid price is at a distance equal or exceeding
+Distance
+from this SELL position, open yet another SELL position. It does not matter whether it is higher or lower - the value of the distance is taken as an absolute one.
+Detecting the position closing moment is performed in OnTradeTransaction.
+EURUSD, M15:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22261

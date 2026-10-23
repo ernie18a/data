@@ -1,0 +1,43 @@
+Market Structure Shift (CHoCH)
+Bullish Setup (
+CHoCH ↑
+)
+: Price breaks above the previous confirmed
+Lower High (LH)
+, signaling a trend reversal from bearish to bullish.
+Bearish Setup (
+CHoCH ↓
+)
+: Price breaks below the previous confirmed
+Higher Low (HL)
+, signaling a trend reversal from bullish to bearish.
+2. Areas of Interest (AOI) Mapping
+Once CHoCH confirms, two institutional entry zones are calculated:
+Fibonacci Equilibrium
+Bullish
+: Drawn from origin Swing Low
+Post-CHoCH Fair Value Gap (FVG)
+:
+Formed within the
+first 3 candles
+of the breakout impulse (institutional imbalance zone).
+Trade Management (SL & TP)
+Stop Loss (SL)
+:
+Buy
+: Placed below the origin swing low
+0.0%
+0.0%
+Fibo anchor).
+Sell
+: Placed above the origin swing high (
+0.0%0.0% Fibo anchor).
+Take Profit (TP)
+:
+TP1
+: Structural breakout high/low (
+100.0%
+100.0%
+level).
+TP2
+: Opposing major liquidity pool / next structural swing.

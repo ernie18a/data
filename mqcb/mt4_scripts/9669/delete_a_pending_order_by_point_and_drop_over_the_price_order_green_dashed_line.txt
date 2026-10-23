@@ -1,0 +1,5 @@
+Description:
+Select the pending order you want to delete when you have severals pending orders on a same chart by point and drop over the price of the pending order you want to delete.
+You have severals pending orders placed on a chart and you want to delete one specific pending order?
+Just point a drop this script over the price (green dashed line) of the pending order you want to delete. (with a margin error of +/- 2 pips)
+The script will delete the pending order where the price order (green dashed line) is near from the place where you have dropped the script (+/- 2 pips).

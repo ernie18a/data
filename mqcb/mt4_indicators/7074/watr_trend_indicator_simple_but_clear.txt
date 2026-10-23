@@ -1,0 +1,5 @@
+A simple trend indicator that clearly shows the direction of the current trend. It can be used in the breakout trading systems.
+WATR
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7074

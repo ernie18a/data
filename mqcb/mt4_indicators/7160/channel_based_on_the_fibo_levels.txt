@@ -1,0 +1,4 @@
+The indicator displays the currency movement with the Fibo coefficient on the chart. 8 levels are set at a distance from the price and are dynamic support/resistance levels. It is possible to configure the averaging method.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7160

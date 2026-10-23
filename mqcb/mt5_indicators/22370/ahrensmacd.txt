@@ -1,0 +1,13 @@
+Ahrens Moving Average Convergence Divergence is an MACD based on
+Ahrens Moving Average
+.
+The indicator has three input parameters:
+Fast Ahrens MA period
+- fast Ahrens MA period
+Slow Ahrens MA period
+- slow Ahrens MA period
+Signal line period
+To calculate the indicator, the presence of Ahrens MA is not necessary - the Ahrens MA moving average is calculated by the indicator itself.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22370

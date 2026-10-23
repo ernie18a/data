@@ -1,0 +1,16 @@
+For every open position the script estimates the loss if the market reopens with a gap against it, adds them up, and compares the total with the room left under the daily loss limit of the next trading day. Run it before the Friday close, or before a holiday.
+What it shows
+- The daily limit of the next day, in money.
+- The floating loss you carry over. If your firm measures the trading day from the balance, this loss already uses part of the next day's limit before any gap.
+- For each position: symbol, side, lots, the gap you accept for its group, and the loss that gap would cause.
+- The verdict: OK, or TOO MUCH with how much to reduce every position.
+Why it matters
+A stop loss does not protect you from a gap. It is filled at the first price after the gap, so the loss can be much larger than the stop.
+Inputs
+- Account size (0 = current balance), daily loss limit %, safety margin %.
+- Whether a floating loss carried over counts against the next day's limit. Check how your firm defines the start of the day.
+- The gap you accept, as % of the price, for currency pairs, metals, indices, crypto and everything else. Crypto often trades in the weekend: there the setting is the move while you are away.
+- The symbol groups, as parts of the name (XAU, US500, BTC...).
+How the loss is calculated
+Loss of a position = price x gap % / tick size x tick value x lots. The tick value comes from your broker, so the result is in your account currency.
+It only reads the account. It never opens, changes or closes a position. The gap sizes are your assumptions, not a forecast.

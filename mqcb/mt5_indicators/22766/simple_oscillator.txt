@@ -1,0 +1,6 @@
+Theory:
+The indicator was created as an experiment. The experiment was how simple one oscillator can get and still be usable. And it turned out that it is enough to sum prices in a certain way to produce an oscillator.
+The result:
+All in all, it takes one line of code to produce an oscillator that is fairly good for showing trends.
+Usage:
+You can use color changes of the slope for short term trend assessment or zero crosses longer term trend assessment.

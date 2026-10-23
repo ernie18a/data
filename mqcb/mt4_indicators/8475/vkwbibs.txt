@@ -1,0 +1,34 @@
+The WKBIBS indicator is a new generation oscillator with combined functions of two indicators WKB and
+IBS
+.
+It will suit a novice at Forex and it will serve as an addition to the trading systme for a prefessional. WKBIBS delivers the earliest signals comparing to the standard oscillators like stochastic and in distinct from all arrow indicators it doesn't deliver the false signals and doesn't redraw. The arrow indicators like Trend_Signal_2008 are not worth of buying, everything is beautiful on a frozen chart, but they are behind delivering the signal during real time drawing, when that signal becomes non-topical and the trade will be undesired. There is nothing like that with the WKBIBS, it is really not so more complicated visually than the arrow indicators but it delivers earlier and true signals.
+How to Trade:
+When the red line crosses the blue one from top downward then we SELL, on the contrary, if the red line crosses the blue one bottom-up then we BUY, everything is simple, and the main thing is you can see clearly on the chart that there is a signal and the price is still topical for performing a trade in the neccessary direction, in distinct from the arrow indicators where it would be late to open a trade.
+You can pick up by yourself the other things including the possibility of using a trend filter and the preferential direction of the trades.
+It works with the IBS indicator.
+Input Parameters:
+extern
+int
+RangePeriod
+=
+25
+;
+extern
+int
+SmoothPeriod
+=
+3
+;
+extern
+int
+SmoothMode
+=
+MODE_SMA
+;
+extern
+int
+Per
+=
+5
+;
+VKWBIBS

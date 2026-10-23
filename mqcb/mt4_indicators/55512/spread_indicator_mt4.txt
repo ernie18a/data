@@ -1,0 +1,59 @@
+Spread MetaTrader indicator
+— displays current spread in the main window of the chart. You can modify the font parameters, indicator's position and the normalization of the spread value. The spread is redrawn after each tick, ensuring the most current and active spread value. This can be useful for brokers with variable spreads or with spreads that are widened often. You can also enable a spread label to be shown near the current Bid line. The indicator is available for both MT4 and MT5.
+Input parameters
+UseCustomPipSize
+(default = false) — if
+true
+, the pip size will be based on
+DecimalPlaces
+input parameter, otherwise, the broker's default pip size will be used.
+DecimalPlaces
+(default = 0) — the number of decimal places in a pip. E.g. "4", if the pip looks like "0.0001".
+AlertIfSpreadAbove
+(default = 0) — if above zero, then one or more of the defined alerts will be issued if spread goes above given value.
+AlertNative
+(default = true) — if
+true
+, then a native popup alert will be used.
+AlertSound
+(default = false) — if
+true
+, then a sound alert will be played.
+AlertEmail
+(default = false) — if
+true
+, alerts will be sent via email. Email should be properly configured in MetaTrader via
+Tools->Options->Email
+.
+AlertNotification
+(default = false) — if
+true
+, alerts will be sent via push notifications to your mobile device. Notifications should be properly configured in MetaTrader via
+Tools->Options->Notifications
+.
+DrawLabel
+(default = false) — if
+true
+, a small text label with the current spread value will be drawn near the Bid line.
+font_color
+(default = Red) — color of the spread indicator.
+font_size
+(default = 14) — size of the spread indicator.
+font_face
+(default = "Arial") — font of the spread indicator.
+corner
+(default = ANCHOR_LEFT_UPPER) — location for the spread indicator on the chart.
+spread_distance_x
+(default = 10) — horizontal distance from the corner to indicator.
+spread_distance_y
+(default = 130) — vertical distance from the corner to indicator.
+DrawTextAsBackground
+(default = false) — if
+true
+, the text label with the spread value will be drawn as background. It can be useful if you want to prevent the indicator from obscuring the chart.
+label_font_color
+(default = Red) — color of the spread label.
+label_font_size
+(default = 13) — size of the spread label.
+label_font_face
+(default = "Courier") — font of the spread label.

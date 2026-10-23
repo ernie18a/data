@@ -1,0 +1,54 @@
+The i-MorningRange morning range indicator.
+Indicator input parameters:
+//+-----------------------------------+
+//|  INDICATOR INPUT PARAMETERS       |
+//+-----------------------------------+
+input
+string
+CheckTime   =
+"08:00"
+;
+// Range check time
+input
+bool
+ShowHistory =
+true
+;
+// Show levels in history
+input
+int
+NumberOfDays=
+5
+;
+// Number of days in history
+input
+bool
+ShowComment =
+true
+;
+// Show comments
+input
+int
+Shift=
+0
+;
+// horizontal shift of the indicator in bars
+input
+color
+Color1=
+clrBlue
+;
+// resistance color
+input
+color
+Color2=
+clrDarkOrange
+;
+// support color
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 26.09.2007.
+Fig.1 The i-MorningRange indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1639

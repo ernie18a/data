@@ -1,0 +1,5 @@
+Every time a stop loss is triggered, the EA increases the sizes of take profit and stop loss by the specified coefficient. The EA does no increase the lot sizes of orders.
+If the option "stop after profit" is selected, the EA will be disabled after reaching take profit.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15847

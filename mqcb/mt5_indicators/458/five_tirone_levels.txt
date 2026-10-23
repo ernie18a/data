@@ -1,0 +1,24 @@
+Real author:
+John Tirone
+Tirone Levels are a series of several successively decreasing horizontal lines used to determine possible support and resistance areas on a price chart.
+This technical analysis method is developed by John Tirone in his book "Classical Technical Analysis as a Powerful Trading Methodology". The system based on five Tirone levels is constructed using the Adjusted Mean method.
+This method generates 5 often non-symmetrical lines.
+Adjusted average value (Adjusted Mean) is found at first;
+The next line is found by deducting the minimum from the Adjusted Mean multiplied by 2;
+The third line is the Adjusted mean itself (adjusted average);
+The next line is calculated by deducting the maximum from the Adjusted Mean multiplied by 2;
+The lowest line is calculated by deducting the minimum from the maximum and deducting this result from the Adjusted Mean.
+The levels are calculated the following way:
+Adjusted mean = (Hhigh+Llow+Close)/3
+Tirone Level 1 = Adjusted Mean + (Hhigh-Llow)
+Tirone Level 2 = 2 x Adjusted Mean - Llow
+Tirone Level 3 = Adjusted mean
+Tirone Level 4 = 2 x Adjusted Mean - Hhigh
+Tirone Level 5 = Adjusted Mean - (Hhigh-Llow)
+where:
+Hhigh (Highest High) - the highest price for a certain period, for example, 20 bars;
+Llow (Lowest Low) - the lowest value for a certain period, for example, 20 bars;
+Close - close price of a current bar.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/458

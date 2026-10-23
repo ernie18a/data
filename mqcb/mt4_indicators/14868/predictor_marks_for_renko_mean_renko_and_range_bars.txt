@@ -1,0 +1,2 @@
+A simple mark on a chart predicts the future candle close, so a manual trader/scalper can easily monitor the chart, how far the candle can go before it closes.
+This code works for Renko, mean (medium) Renko and range bars offline charts only.

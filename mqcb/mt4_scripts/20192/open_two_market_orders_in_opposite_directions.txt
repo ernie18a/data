@@ -1,0 +1,8 @@
+This simple script opens two Market orders in two opposite directions. The essence of this is when trading news, price often breaks out in one direction. So ideally executing this script shortly before the news release would imply that if a breakout occurs in one direction one of the market orders (the one in the wrong direction) will be closed by the price triggering the stop loss, while the order will be left open to accumulate profits.
+It should be noted that this is not always this case, however the above example is just an illustration where one might require a script like this.
+Whats more? This script is %100 compatible with ECN accounts that do not allow the stop levels alongside OrderSend function.
+Inputs
+input double   InpLots        = 0.01;                    //Size of the trade
+input int      InpSL          = 150;                     //Stop loss in points 150 = 15 pips
+input int      InpTP          = 300;                     //Take profit in points 300 = 30 pips
+input int      InpRetries     = 10;                      //Retries in case of failed trades

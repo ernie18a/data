@@ -1,0 +1,6 @@
+An indicator to mark extremums with lines. A period input is used to determine highest highs and lowest lows for that period. In this indicator, it's not only highs and lows (OHLC) which are used in the analysis, but also bid and ask prices from each bar. A lookback figure is used to limit the processing to a specific number of bars.
+Another feature in this indicator is to not paint on break of structure areas (breaking of the current perceived higher high or lower low) by forcing sections of the lines to vanish during those periods. This way it will only display lines on actual support and resistance areas. That feature is controlled by an input, so if you prefer, it will display lines on the extreme prices as well as display sloping of the lines when the market is trending up or down.
+----------------------------------------------------
+What's new in version 2.0
+- It uses an optimization where only the ticks from the current bar will be accounted for, and this will mean that the indicator can run seamlessly on higher timeframes
+- Removed unneeded buffers

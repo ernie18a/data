@@ -1,0 +1,13 @@
+Placing pending orders with no need to calculate lot size. Script calculates the proper lot size and opens the pending order(s) for you.
+Set risk percent or risk amount of your equity and other parameters in script source code and compile it, then:
+First run the script and select type of pending order that you want to open. script opens the pending order on chart with SL and TP Lines.
+Second: drag SL and TP lines to your wanted prices on the chart.
+Third: run script again and set the rest of parameters if needed (without changing former input parameter). Script will delete the previous pending order and opens new one with proper lot size based on SL price and risked equity.
+Parameters:
+Risk Percent  (like 2% of equity)
+Risk Amount (like 100$)
+Minimum Lot Allowed by Broker to open Orders (generally 0.01 or 0.1)
+Number of Positions (You can split your risk between more than one pending order to set different TPs for them)
+Max order slippage(deviation)
+V1.1:
+Added above parameters to inputs window, they must be set on second run of the script.

@@ -1,0 +1,4 @@
+Description:
+This is the Doda-Donchian v2 created by Gopal Krishan Doda, but when I use this indicator, I found some error and I have to fix it. also adding features price and candle time.
+Doda-Donchian v2 mod fix --> Upper&Lower Donchian-->Hide, Stop Loss and Candle Time Color can change.
+Image:

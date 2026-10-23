@@ -1,0 +1,2 @@
+Author: Aborigen
+HiLo Activator indicator.

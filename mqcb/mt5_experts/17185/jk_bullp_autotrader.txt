@@ -1,0 +1,14 @@
+Author of the idea
+is
+Collector
+,
+author of the MQL5 code
+is
+barabashkakvn
+.
+An Expert Advisor based on the Bulls Power indicator.
+Opening two successive positions.
+EURUSD,M5 с 2016.06.08 по 2016.12.10:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17185

@@ -1,0 +1,7 @@
+A set of scripts to install and work with Gann fan.
+The aim was to create an instrument, that can fully substitute standard instrument, but without its disadvantages.
+Imho, the disadvantages are -- incorrect angles of the lines and sensivity to the chart scale.
+See more details in the video.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10736

@@ -1,0 +1,140 @@
+Fibonacci Retracement with BOS, CHoCH, and Confluence Detection
+The
+FibStructureEngine
+is a custom indicator for MetaTrader 5 that combines market structure analysis with automated Fibonacci retracement plotting. It detects pivot-based swing highs and swing lows, classifies each structural break as either a
+Break of Structure (BOS)
+or a
+Change of Character (CHoCH)
+, and anchors a complete Fibonacci grid between the most recent significant swing points. The result is a single, self-contained tool that replaces several manual steps a price action trader would otherwise perform by hand on every chart and every timeframe.
+The indicator uses a 14-period ATR (Average True Range) internally both for filtering weak swing points and for computing signal confirmation scores. When a confirmed buy or sell condition is met, the indicator fires a real-time Alert with symbol, entry price, calculated stop-loss, and take-profit levels. This makes it practical not just as a visual aid but also as a monitoring tool in live trading sessions.
+Key Features
+Pivot-Based Swing Detection.
+The indicator scans each bar using a configurable lookback length (SwingLength) to identify confirmed pivot highs and pivot lows. An optional ATR filter rejects minor swings that are too small relative to recent volatility, keeping the structure clean and noise-free.
+BOS and CHoCH Classification.
+Every structural break is evaluated against the previous swing sequence. A break that continues the existing trend is labeled BOS. A break that violates the prior trend direction is labeled CHoCH, signaling a possible trend reversal. Both labels are drawn directly on the chart with colored trend lines.
+Swing Labels (HH / HL / LH / LL).
+Each confirmed pivot is tagged with its structural label: Higher High, Higher Low, Lower High, or Lower Low. These labels keep the context of the trend visible at a glance without any manual annotation.
+Automated Fibonacci Grid.
+After every structural event, the indicator anchors Fibonacci retracement levels between the relevant swing high and swing low. Levels 0.236, 0.382, 0.500, 0.618, and 0.786 are supported individually, and each can be toggled on or off. A shaded Golden Zone box highlights the 0.500 to 0.786 area, which is the primary retracement window used in most price action frameworks.
+Extension Targets.
+In addition to retracement levels, the indicator draws extension targets at -0.500 and -0.618 beyond the swing origin. These act as projected take-profit zones in the direction of the structural break.
+Confluence Detection.
+When a Fibonacci level falls within a configurable ATR-based tolerance zone of another nearby level, it is highlighted in a separate color to mark high-confluence price areas where reactions are statistically more probable.
+Engulfing Signal Detection.
+The indicator identifies bullish and bearish engulfing candle patterns and incorporates them into its signal scoring system. Engulfing patterns near a Fibonacci level add to the overall confirmation score of a buy or sell signal.
+Signal Confirmation and Cooldown.
+Buy and sell signals are only emitted when a minimum confirmation score is met. A configurable cooldown parameter prevents back-to-back signals from firing on consecutive bars, reducing signal noise during choppy conditions.
+Alert System.
+On the most recently closed bar, when a confirmed signal is detected, a platform alert is fired with full trade information: symbol, direction, entry price, confirmation score, stop-loss, and take-profit calculated at ATR multiples of 1.5 and 2.5 respectively.
+Full Visual Customization.
+All drawn objects use configurable colors for bullish elements, bearish elements, Fibonacci lines, and confluence highlights. The structure line style and width are independently adjustable.
+Input Parameters
+Parameter
+Default
+Range
+Description
+SwingLength
+10
+3 – 50
+Number of bars on each side required to confirm a pivot high or pivot low. Higher values detect only major swings; lower values are more sensitive to minor structure.
+UseATRFilter
+true
+true / false
+When enabled, a swing point is only accepted if its size relative to the preceding opposite swing is at least ATRMultiplier times the current ATR value. Filters out small noise swings.
+ATRMultiplier
+0.5
+0.1 – 3.0
+Scaling factor applied to the ATR value when UseATRFilter is true. Increase this value to require larger swings before accepting a pivot.
+SignalCooldown
+5
+1 – 100
+Minimum number of bars that must pass after a confirmed buy or sell signal before another signal of the same type can be emitted. Prevents cluster signals during consolidation.
+ShowFib
+true
+true / false
+Master toggle for the entire Fibonacci grid. When set to false, no Fibonacci lines, labels, or zone boxes are drawn regardless of individual level settings.
+FibExtendBars
+20
+1 – 200
+Number of bars to the right of the current candle by which the Fibonacci horizontal lines are extended. Increase this value on faster timeframes where more future bars are visible.
+ShowFib236
+false
+true / false
+Toggles the 0.236 retracement level. This is a shallow retracement level and is disabled by default to reduce chart clutter.
+ShowFib382
+true
+true / false
+Toggles the 0.382 retracement level. Commonly used as a shallow retracement target in trending markets.
+ShowFib500
+true
+true / false
+Toggles the 0.500 retracement level. The midpoint of the swing, widely used as a decision level by institutional traders.
+ShowFib618
+true
+true / false
+Toggles the 0.618 retracement level, known as the Golden Ratio. One of the most important Fibonacci retracement levels in price action trading.
+ShowFib786
+true
+true / false
+Toggles the 0.786 retracement level. The deepest standard retracement level; forms the lower boundary of the Golden Zone box together with 0.500.
+ShowFibTarget
+true
+true / false
+Toggles the -0.618 extension target line. Used as the primary projected take-profit zone beyond the swing origin in the direction of the break.
+ShowFibTgt50
+true
+true / false
+Toggles the -0.500 extension target line. Acts as an intermediate take-profit level between the swing origin and the -0.618 target.
+ConfluenceTol
+0.3
+0.05 – 1.0
+ATR-based tolerance used to determine whether two Fibonacci levels are close enough to be considered confluent. A value of 0.3 means levels within 0.3 x ATR of each other are highlighted as confluence zones.
+ShowBOSCHoCH
+true
+true / false
+Enables drawing of BOS and CHoCH trend lines on the chart. Each line connects the bar of the structure break to a reference point and is labeled with the event type and direction.
+ShowSwingLabels
+true
+true / false
+Toggles the HH, HL, LH, and LL text labels placed at each confirmed pivot point on the chart.
+ShowEngulfing
+true
+true / false
+Enables detection of bullish and bearish engulfing candle patterns. Detected engulfing patterns near Fibonacci levels contribute to the signal confirmation score.
+ShowSignals
+true
+true / false
+Master toggle for the buy and sell arrow signals plotted on the chart. The internal alert logic still fires even if this is set to false; only the visual arrows are hidden.
+StructLineStyle
+STYLE_DASH
+ENUM_LINE_STYLE
+Line style applied to BOS and CHoCH structure lines. Accepts any MetaTrader 5 line style constant.
+StructLineWidth
+2
+1 – 4
+Pixel width of the structure lines. Higher values produce thicker lines that are easier to read on smaller monitor resolutions.
+BullColor
+clrLime
+Any color
+Color applied to all bullish elements: bullish BOS/CHoCH lines, bullish swing labels, buy signal arrows, and bullish extension target lines.
+BearColor
+clrRed
+Any color
+Color applied to all bearish elements: bearish BOS/CHoCH lines, bearish swing labels, sell signal arrows, and bearish extension target lines.
+FibColor
+clrDodgerBlue
+Any color
+Color applied to all Fibonacci retracement level lines and their price labels.
+ConfluenceColor
+clrGold
+Any color
+Color applied to Fibonacci levels that are detected as confluent with another nearby level based on the ConfluenceTol setting.
+How the Signal Logic Works
+The indicator builds a confirmation score for each bar by checking several independent conditions and assigning a weight to each. A structural bias in the direction of the potential signal adds the highest weight. Price interacting with the Golden Zone (0.500 to 0.786 Fibonacci retracement area) adds a second layer. The presence of an engulfing candle pattern near a Fibonacci level, if ShowEngulfing is enabled, contributes an additional increment. The signal is only emitted when the accumulated score meets a minimum threshold, and only if the cooldown bars since the last signal of the same type have elapsed. This layered approach means that isolated Fibonacci touches without structural context will not generate false signals, while high-probability setups that align structure, retracement, and candle pattern receive fast confirmation.
+Stop-loss is calculated as the entry price minus 1.5 x ATR for buy signals, and entry plus 1.5 x ATR for sell signals. Take-profit is set at 2.5 x ATR from entry in the signal direction. These values are reported in the alert message but are not plotted on the chart, leaving the trader free to use the Fibonacci extension targets as their preferred TP reference instead.
+Note:
+This indicator is provided for educational and analytical purposes. Always validate its signals on a demo account across different symbols and timeframes before applying it to a live trading environment. Past visual accuracy on historical bars does not guarantee future performance.
+File Name
+Description
+FibStructureEngine.mq5
+Full source code for the FibStructureEngine indicator. Place in MQL5/Indicators and compile in MetaEditor.

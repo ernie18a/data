@@ -1,0 +1,6 @@
+The indicator based on the moving averages shifted to the left relative to the chart. It generates clear, sometimes delayed buy and sell signals. Use the MaPeriod parameter to adjust the clarity of the signals.
+Tip:
+Trading on an hourly chart is advised.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14736

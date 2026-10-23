@@ -1,0 +1,7 @@
+Many developers face the same problem - how to get to the trading terminal sandbox without using unsafe DLLs. One of the easiest and safest method is to use standard Named Pipes that work as normal file operations.
+Between read and write operations is strongly recommended to set FileFlush() and FileSeek() to the beginning of the file.
+See the description in the article
+Communicating With MetaTrader 5 Using Named Pipes Without Using DLLs
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10865

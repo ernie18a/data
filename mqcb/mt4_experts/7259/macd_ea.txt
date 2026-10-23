@@ -1,0 +1,6 @@
+This is my old development, at certain parameters it seems to show profit too.
+It was created similarly to EA that won the first place in the championship (at least in my opinion).
+See, test, optimize, improve, if any questions come up - ask!
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7259

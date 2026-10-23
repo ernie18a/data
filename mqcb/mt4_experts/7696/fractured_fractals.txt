@@ -1,0 +1,9 @@
+Author: tageiger aka
+Adviser Fractured Fractals. Uses indicator
+iFractals
+.
+-------------------------------
+Parameters of testing:
+Symbol: EURUSD.
+Period: M15.
+Model: All tics.

@@ -1,0 +1,5 @@
+BB MACD is a MACD (Moving Average Convergence Divergence) indicator variation with an addition of Bollinger bands, which helps in detecting the trend change points and measuring the current trend's strength.
+The indicator is separated into two parts:
+the "line" part which is the colored MACD value;
+the "channel" part which is the Bollinger bands drawn that way to make it easier to spot the changes of macd within the channel.
+Color of the macd depends on the slope of the MACD and the relative position within the Bollinger bands. Whenever the bands are broken, the color is changed in order to make it easier to pinpoint the moment when the breakout happens.

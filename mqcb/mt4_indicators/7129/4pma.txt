@@ -1,0 +1,3 @@
+Author
+: tageiger
+4PMA indicator.

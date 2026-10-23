@@ -1,0 +1,23 @@
+Indicator Operation Principle
+The arrows are drawn in the following case:
+BUY:
+RSI is higher than the upper level (determined by RSILowerLevel). With the default settings - above 40.
+CCI is below the lower level. With the default settings - below -200
+If CheckLastRSIZone is enabled, then the last overbought/oversold zone of the RSI is checked by the (RSILowerLevel_2) level.
+If ReverseRSIZone=false, for the arrow to appear, the last zone to be above the upper level, with the default settings - above 70.
+If ReverseRSIZone=true, the last value of RSI must be a value lower than the lower level, with the default settings - below 30.
+SELL:
+Similarly, but in reverse.
+Indicator Parameters
+RSIPeriod   - RSI period.
+RSIPrice   - RSI price: 0-Close, 1-Open, 2-High, 3-Low, 4-Median, 5-Typical, 6-Weighted.
+RSILowerLevel   - the lower level of RSI, the upper level is defined as 100-RSILowerLevel. RSI below the lower level is considered a bearish trend, above the upper level - bullish.
+RSILowerLevel_2  - the lower level of RSI, used for determining the last overbought or oversold zone. The upper level is defined as 100-RSILowerLevel_2.
+CheckLastRSIZone  - check the last overbought/oversold zone of RSI.
+ReverseRSIZone   - reverse the last overbought/oversold zone of RSI.
+CCIPeriod   - CCI period
+CCIPrice   - CCI price: 0-Close, 1-Open, 2-High, 3-Low, 4-Median, 5-Typical, 6-Weighted.
+CCILevel   - the upper level of CCI. The lower level is equal to - CCILevel.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7625

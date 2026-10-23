@@ -1,0 +1,225 @@
+This is a ridiculously simple script that allows you to quickly estimate the exponent/power factor, characterizing the uniformity ("random walkness") of price changes in history.
+A time series is considered a "random walk" if its movements follow the rule that the distance up or down traveled is proportional to the square root of the number of steps taken. The square root corresponds to the factor 1/2. This is a regular (theoretical) case, but in practice the numbers are usually different when working with quotes (because they are not random values with a normal distribution).
+Using the factor it's possible to transform time series increments into a nearly uniform distribution - for more consistent and predictable processing in algotrading algorithms, especially in terms of volatility.
+The idea behind the uniformity factor is described in details in the
+Uniformity Factor Indicator
+.
+The indicator provides visualization and some settings for experiments, allowing you to explore the extent to which price fluctuations of a particular instrument can be treated as a random walk, and find which value is more appropriate as the factor.
+The script makes it much easier to find the right factor and classify the instrument as more or less "random walked". Just run the script, and it prints out the recommended value.
+Here are some examples of the script output for different instruments and timeframes:
+(EURUSD.c,H1)   Range=
+136
+points/bar on
+20000
+bars [
+2022.10
+.18
+15
+:
+00
+-
+2026.01
+.06
+15
+:
+00
+]
+(EURUSD.c,H1)   PowerFactor suggested:
+0.5141977291309214
+(EURUSD.c,D1)   Range=
+774
+points/bar on
+14920
+bars [
+1971.01
+.04
+00
+:
+00
+-
+2026.01
+.06
+00
+:
+00
+]
+(EURUSD.c,D1)   PowerFactor suggested:
+0.5126171667398397
+(EURUSD.c,M15)  Range=
+73
+points/bar on
+20000
+bars [
+2025.03
+.18
+08
+:
+00
+-
+2026.01
+.06
+15
+:
+45
+]
+(EURUSD.c,M15)  PowerFactor suggested:
+0.5139649573293636
+(EURUSD.c,M1)   Range=
+12
+points/bar on
+20000
+bars [
+2025.12
+.15
+17
+:
+07
+-
+2026.01
+.06
+15
+:
+58
+]
+(EURUSD.c,M1)   PowerFactor suggested:
+0.48686129240569975
+(BTC.jt,M1)     Range=
+2406
+points/bar on
+20000
+bars [
+2025.12
+.23
+17
+:
+49
+-
+2026.01
+.06
+15
+:
+58
+]
+(BTC.jt,M1)     PowerFactor suggested:
+0.5925932868374578
+(BTC.jt,H1)     Range=
+47169
+points/bar on
+20000
+bars [
+2023.09
+.24
+21
+:
+00
+-
+2026.01
+.06
+15
+:
+00
+]
+(BTC.jt,H1)     PowerFactor suggested:
+0.5410803504119848
+(BTC.jt,D1)     Range=
+206470
+points/bar on
+1467
+bars [
+2022.01
+.01
+00
+:
+00
+-
+2026.01
+.06
+00
+:
+00
+]
+(BTC.jt,D1)     PowerFactor suggested:
+0.5461562475503626
+(US500m,D1)     Range=
+566
+points/bar on
+2009
+bars [
+2019.01
+.02
+00
+:
+00
+-
+2026.01
+.06
+00
+:
+00
+]
+(US500m,D1)     PowerFactor suggested:
+0.5829671874632288
+(US500m,H1)     Range=
+120
+points/bar on
+20000
+bars [
+2022.08
+.10
+06
+:
+00
+-
+2026.01
+.06
+15
+:
+00
+]
+(US500m,H1)     PowerFactor suggested:
+0.5718848691959075
+(US500m,M15)    Range=
+77
+points/bar on
+20000
+bars [
+2025.02
+.28
+11
+:
+15
+-
+2026.01
+.06
+16
+:
+00
+]
+(US500m,M15)    PowerFactor suggested:
+0.5687029228374606
+(US500m,M1)     Range=
+12
+points/bar on
+20000
+bars [
+2025.12
+.12
+23
+:
+52
+-
+2026.01
+.06
+16
+:
+00
+]
+(US500m,M1)     PowerFactor suggested:
+0.5304339122995178
+The factor around 0.5 or less denotes a symbol with low volatility and ranging behaviour. If you have a decent algotrading robot for mean reversion strategy, use it on such symbols.
+The factor greater than 0.5 means that the symbol has high volatility and so called 'fat tails' in its distribution of increments. Such symbols are more suitable for breakout-oriented advisors and trend-oriented advisors.
+Looking at the examples above, it can be said that EURUSD is better suited for use with mean reversion strategies.
+On the other hand, US500 index or BTC are more suitable for trend following strategies.
+The input
+BarLimit
+allows you to specify maximal number of bars to analyze, by default the script processes all history of the chart.

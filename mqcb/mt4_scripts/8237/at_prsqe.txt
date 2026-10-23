@@ -1,0 +1,15 @@
+If anyone wants to see quickly the Polynomial regression on the history and in the current time, then he/she can use this script. The script is to be put at the "scripts" folder. It can be attached to the chart by dragging it with the mouse. The midline of the channel of the linear regression can be selected and then stretched, squeezed or dragged anywhere you want.
+The length of the channel will be 50 bars at the first time it's turned on, further, it can be changed by modifying the length of the selected midline of the channel of the linear regression.
+In the startup information:
+m - the degree of the regression;
+m = 1 - linear;
+m = 2 - parabolic;
+m = 3 - cubic;
+etc.
+ksq - the multiplier of the channel of the mean square deviation.
+One of the practical aspects of the usage of this script is the following: suppose, if the trend is growing and if the end of the parabola surpasses the regression line, then it is the sign of the possible further growing; if the end crossed the regression line downwards, then it is the sign of the slowdown of the trend and the possible reverse. The same thing, but inversely is valid for moving of the trend downwards.
+I think that application of this tool is much more wide, and those, who study it, can discover the additional interesting aspects.
+The script hangs the processor a little because of its cycled operating mode. So, the ones, for whom it is of a high priority, don't use it for a long time. Unfortunately, the drawing of the mobile curves in the indicator mode in MT4 is not very goog, because of the binding of indicators to the start() function and its dependance of the quote coming; and the capabilities of the script are limited.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8237

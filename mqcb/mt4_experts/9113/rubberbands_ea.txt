@@ -1,0 +1,37 @@
+RUBBERBANDS EA
+Version 1.6 (there is no Versions 1.4 or 1.5^^)
+Version 1.6 only deals with dollar values. No pip values are used to avoid "Point" issues.
+The "SAFETY NET" has been added since Version 1.3 to avoid big losses due to big drawdowns.
+-- The external variable "maxcount" has been removed. There are at most three orders outstanding at any time.
+This EA works in any timeframe for any currency pair, including gold and silver. Its logic is based on the fact that any price movement may accompany rebound. It opens orders in both directions (BUY & SELL) at a time initially, then closes one of them at the specified profit "dollar_profit" (in dollars per lot) and opens one order in reverse direction. Meanwhile accumulated (unrealized) loss is greater than the profit made, but when price moves back, loss decreases or turns to profit.
+It closes all the outstanding orders when the specified profit "sessionTP" (in dollars per lot) is reached, which functions as TAKEPROFIT.
+The opening of the initilal orders through the closure of all outstanding orders constitutes one "session".
+Preferred currency pairs are: EUR/USD, GBP/USD, and USD/CHF.
+To avoid big drawdowns, use the "SAFETY NET".
+In fact, if we use this EA for several pairs at the same time with small lots allocated to each of them, we can make profits quite stably when we use the "SAFETY NET".
+If you set "use_safety_mode" = false, this EA functions just like older versions.
+If you set "use_safety_mode" = true (default), the "SAFETY NET" is used. An additional order (called "safety order") is opened in the direction opposite to the remaining two orders when the loss amounts to "safety_start" (in dollars per lot). This safety order is closed when "safety_profit" (in dollars per lot) specific to each safety order is reached to increase profit during drawdown period to offset the accumulated loss (approx. 40% with preset values -- safety_profit /safety_step=1300/3000). Another safety order is opened when "safety_step" (in dollars per lot) is reached from the former safety order, and so on. Meanwhile, when the price goes back and "safety_modeTP " (dollars per lot) is reached, all outstanding orders are closed and the session concludes itself. Because profit has been accumulated during drawdown period, the loss may be minimized and profitability be improved. Once the "SAFETY NET" is entered, the profit which would be made may be reduced, though. If we are lucky enough, the "SAFETY NET" is not entered and the original intended profit can be made.
+External variables are:
+Lots = 0.05 (number of lots for each order)
+dollar_profit = 1000 (profit per lot to close one of initial orders)
+quiesce_now = false (if true, quiesces this EA when the current session ends)
+do_now = false (if true, opens orders immediately)
+stop_now = false (if true, stops this EA)
+close_now = false (if true, closes all outstanding orders)
+use_sessionTP = true (don't change this)
+sessionTP = 1300 (profit in dollars per lot to close all outstanding orders; functions as TAKEPROFIT)
+use_sessionSL = false (If true, uses "sessionSL" below)
+sessionSL = 300 (loss in dollars per lot to close all outstanding orders; functions as STOPLOSS)
+The following external variables are for "SAFETY NET":
+use_safety_mode = true (uses "SAFETY NET". Set to false if you don't want to use "SAFETY NET")
+safety_start = 2000 (loss in dollars per lot [negated] to start "SAFETY NET")
+safety_lots = 0.05 (number of lots for each safety order)
+safety_step = 3000 (=1500*2 -- dollars per lot to place additional safety order)
+safety_profit = 1300 (profit in dollars per lot to close each safety order)
+safety_modeTP = 500 (profit in dollars per lot to close all outstanding orders after "SAFETY NET" is entered; functions as TAKEPROFIT)
+The following five external variables are for restarting this EA after, say, the weekend, when there are outstanding orders. Names in "" are those displayed on MT4 screen.
+use_in_values = false (set to true on restart)
+in_profit_sofar = 0 (set "profit so far")
+in_safety_mode = false (set "safety mode", ture(1) or false(0))
+int in_safety_to_buy = false (set "safety to buy" (1) or sell (0))
+int in_used_safety_count = 0 (set "used safety count")

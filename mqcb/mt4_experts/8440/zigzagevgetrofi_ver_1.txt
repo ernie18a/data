@@ -1,0 +1,82 @@
+1.	As is known, the ZigZag indicator has the last flexible point. If it is lower than the previous one then it is a sell signal. If it is above then it is a buy signal.
+2. If a buy position is already opened and there is a buy signal then we don't do anything.
+3.	If a sell position is opened and the current signal is for buying then we close the position and open another one in the necessary direction.
+Note:
+It will be a good composition if Money Management and Martingale are added to this EA. Before you start using this system you should take care of the StopLoss and TakeProfit limits. There are none of them. So, if a problem with the internet or electricity occur your position may go in a wrong direction very far.
+Attention! Do not use this EA on a real account. It is not finished yet.
+Report:
+Strategy Tester Report
+ZigZagEvgeTrofi 1
+Alpari-Classic (Build 218)
+Symbol
+GOLD (Gold (Spot))
+Period
+4 Hours (H4) 2004.07.07 12:00 - 2008.09.22 20:00 (2003.09.23 - 2008.09.23)
+Model
+Every tick (the most precise method based on all available least timeframes)
+Parameters
+ExtDepth=17; ExtDeviation=7; ExtBackstep=5; Lot=0.1;
+Bars in test
+6443
+Ticks modelled
+4267178
+Modelling quality
+88.60%
+Missmatched charts errors
+1
+Initial deposit
+1000.00
+Total net profit
+6275.97
+Gross profit
+16505.35
+Gross loss
+-10229.38
+Profit factor
+1.61
+Expected payoff
+28.14
+Absolute drawdown
+376.19
+Maximum drawdown
+1101.44 (15.32%)
+Relative drawdown
+46.40% (540.02)
+Total trades
+223
+Short positions (% won)
+111 (37.84%)
+Long positions (% won)
+112 (48.21%)
+Profit trades (% of total)
+96 (43.05%)
+Loss trades (% of total)
+127 (56.95%)
+Largest
+profit trade
+1182.76
+loss trade
+-306.66
+Average
+profit trade
+171.93
+loss trade
+-80.55
+Maximum
+consecutive wins (profit in money)
+5 (716.33)
+consecutive losses (loss in money)
+5 (-297.53)
+Maximum
+consecutive profit (count of wins)
+1505.49 (2)
+consecutive loss (count of losses)
+-631.09 (4)
+Average
+consecutive wins
+2
+consecutive losses
+2
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8440

@@ -1,0 +1,9 @@
+Crypto EA for ETH/USD pair.
+I trade ETH/USD using a simple system. I'm tired of constantly following the schedule. I missed signals at night, sometimes I missed signals during the day when I went out to eat or on business. To solve this issue, I simply launched this robot on a VPS. Now I always work out all the signals and do not miss the inputs.
+The strategy is simple - after touching the Bollinger Band (200) determines the trend. The trade then occurs on the breakout of 55 WMA. Trailing using the same Bollinger.
+Traded chart 5 min!
+EA uses large TP/SL ratio 30/1 and trailing for catching big profits.
+Entry by WMA 55. Trend & Trail by Bolinger Bands 200.
+Useful for conservative investments.
+Just use VPS and risks as in the screenshots.
+Happy Trading!

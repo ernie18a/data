@@ -1,0 +1,28 @@
+The author of the idea
+-
+Collector
+mq5 code author
+-
+barabashkakvn
+The EA applies position volume calculation based on trading history:
+Maximum Risk in percentage
+Decrease factor (activated if loss-making trades are detected)
+History days - number of analyzed days in history from the current date
+The EA applies iCCI (Commodity Channel Index) and iMA (Moving Average) indicators, as well as trailing.
+For iCCI (Commodity Channel Index),
+CCI level
+is set as an integer, since this allows rounding the indicator values. Also,
+CCI current bar
+and
+CCI previous bar
+are set. These are the bars CCI values are taken from.
+For iMA (Moving Average), only
+MA bar current
+is set. The previous bar for MA is
+MA bar current+1
+. Also, the
+MA delta
+parameter is set for MA - difference between the current and the previous bars.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22647

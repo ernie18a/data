@@ -1,0 +1,8 @@
+Author: Shurka & Kevin
+The indicator is replotted when a vertical line is moved. It is convenient to switch the timeframes of the active chart to navigate it.
+For example: on a higher timeframe roughly position the line to the required place, switch to a small timeframe and continue working in it.
+See the image
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7527

@@ -1,0 +1,11 @@
+The real author:
+Igorad, conversion to MQL5 by Igorad.
+Distinctive feature of this indicator is re-enter (UseReEntry parameter in indicators' settings/input). Many traders remember this term 're-enter' as it is usually used in signal trading. So, practically - this re-enter is having same logic as to Asctrend original system by Ablsys, or according to many other signal systems.
+This feature (re-enter) was created by Igorad for his original Price Channel indicator according to my request some time ago, and it is providing the possibility to re-enter by arrow on same pair/timeframe:
+Red/blue circle on the chart - signal to enter (to open the order on next open bar).
+Red/blue arrow on the chart - signal to re-enter (to open additional order).
+Indicator is having all kinds of alerts: email alert, alert on current open or previous/close bar, message alert, sound alert. There are possibilities to turn alerts on/off (all the alerts, or some of them separatedly).
+Advise:
+Indicator is used for technical analysis together with Ichimoku for example (H1 - D1 timeframes);
+for signal trading as standalone indicator on small timeframes as well;
+with some other indicators all together.

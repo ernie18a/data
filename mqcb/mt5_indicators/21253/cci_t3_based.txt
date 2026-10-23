@@ -1,0 +1,3 @@
+Usually CCI is calculated as using average (Simple Moving Average) and mean deviation. That produces the well known CCI that we all are using.
+Smoother results can be achieved in multiple ways. Prices can be smoothed prior to being used in calculation (average or deviation), and then the average and deviation can be replaced.
+In this version, average is replaced with T3 and the deviation is replaced with EMA deviation. The reason for not using T3 deviation is simple: T3 deviation can be negative and that makes it non-suitable to be used for CCI calculation, but in any case, the result in this one is responsive and fast (as expected) and also it is smoother than the original CCI (also as expected).

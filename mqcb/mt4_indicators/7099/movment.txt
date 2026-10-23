@@ -1,0 +1,6 @@
+The indicator paints bars in different colors depending on the direction of the price movement (red - up, blue - down).
+The direction is determined according to the price movement by the amount of points specified in the 'Points' variable. During a movement in the opposite direction the saturation of the color is reduced according to the rollback value. Apart from the main color, there are three additional color gradations: at a rollback of 1/4 of the 'Points' value, 1/2 and 3/4. A rollback to a 'Points' value means a change in the price movement direction, in this case the indicator is painted to th main color of the opposite direction.
+Movment
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7099

@@ -1,0 +1,9 @@
+Added parameters:
+extern int CountBar=1; // The amount of bars to calculate open price
+extern int mode=0; // Choosing among alternatives of close price calculation method
+// (mode==0) haClose=(High[pos]+Low[pos]+Close[pos])/3.0;
+// (mode==1) haClose=(High[pos]+Low[pos]+Close[pos]+Open[pos])/4.0;
+Modified Heiken Ashi
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8106

@@ -1,0 +1,2 @@
+Indicator window shows % change for the day.
+% change = (Daily open price - candle close or current price) / Daily open price ) * 100

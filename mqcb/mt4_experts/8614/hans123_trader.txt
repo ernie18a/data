@@ -1,0 +1,42 @@
+Good EA, good optimization results. The unfailing EUR/USD pair and H1 timeframe.
+Input parameters:
+extern
+int
+BeginSession1=
+6
+;
+extern
+int
+EndSession1=
+10
+;
+extern
+int
+BeginSession2=
+10
+;
+extern
+int
+EndSession2=
+14
+;
+//----
+extern
+double
+TrailingStop=
+0
+;
+extern
+double
+TakeProfit=
+0
+;
+extern
+double
+InitialStopLoss=
+40
+;
+Hans123_Trader
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8614

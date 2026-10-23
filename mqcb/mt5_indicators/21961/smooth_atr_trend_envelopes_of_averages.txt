@@ -1,0 +1,7 @@
+Trend Envelopes
+indicator is calculated based on a % of price change. That % is then used to determine if there is a new trend or trend remains the same.
+This version is using smooth ATR for the price change calculation instead and is adding prices smoothing prior to be used in calculations. The smoothing can be done using one of the 4 averages types:
+Simple Moving Average
+Exponential Moving Average
+Smoothed Moving Average
+Linear Weighted Moving Average

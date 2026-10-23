@@ -1,0 +1,2 @@
+Deviation scaled moving average was described in the “The Deviation-Scaled Moving Average.” article of July 2018 TASC
+There Ehlers describes not only the Deviation scaled moving average but a cross of two DSMAs. This indicator is the system of those two DSMAs

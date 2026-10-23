@@ -1,0 +1,8 @@
+This is the new version of the sChartsSynchroScroll script (the old version
+here
+).
+Just attach script to one chart and that's all.
+You can change shift and chart scale, the different charts may have different scales.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/266

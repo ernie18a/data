@@ -1,0 +1,2 @@
+This is a variation of T3 indicator.
+It uses the T3 to calculate prices deviations from the T3 and, if the changes are not significant, then the value is "flattened". That way we can easily see not just trends, but periods of flat trends too.

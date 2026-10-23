@@ -1,0 +1,4 @@
+i-HighLow indicator draws the channel with borders correspond to highest high and lowest low values of the bar's shadows for the last N bars.
+Indicators' parameters are:
+extern int N = 20; - searching of highest/lowest bars for the last 20 bars
+extern int N2 = 5; - drawing the borders with 5 points offset by price axis

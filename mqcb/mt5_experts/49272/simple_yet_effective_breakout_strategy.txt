@@ -1,0 +1,10 @@
+You can freely modify/add your own filters to create your own unique version of this strategy.
+The basic premise of the strategy:
+Buy/Cover
+as soon as
+the price breaks above n bars high
+Short/sell
+as soon as
+the price breaks below n bars low
+Backtested on USDJPY 2013-2023, let's see if you can improve the results even further!
+I hope you find values in this script.

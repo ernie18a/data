@@ -1,0 +1,4 @@
+Theory :
+RSX is "smoother RSI than RSI". It is an RSI that, without adding lag is producing smoother RSI values. This version adds volatility ratio adapting to it in order to make it more responsive to market condition changes at the times of high volatility, and to make it smoother in the times of low volatility
+Usage :
+It can be used the same way as "regular" RSX

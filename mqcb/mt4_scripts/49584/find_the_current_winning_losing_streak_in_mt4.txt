@@ -1,0 +1,2 @@
+In this simple expert advisor, we will be able to see the current winning /losing streak in the MT4 terminal. We have two filter options. One is based on symbol and the other is a Magic number.
+if filter options are enabled then the winning or losing trades are calculated based on the filter criteria

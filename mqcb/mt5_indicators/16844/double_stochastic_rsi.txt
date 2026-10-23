@@ -1,0 +1,2 @@
+Double stochastic of RSI.
+It can be a simple stochastic of RSI too, if one of the stochastic periods is set to >=1.

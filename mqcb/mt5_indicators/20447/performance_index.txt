@@ -1,0 +1,16 @@
+The Performance Index (PI) is used in technical analysis for comparing a symbol's price trend with the general trend of the benchmark index.
+The ratio of indices of two instruments (the current and the one selected in inputs) is shown in a separate window. The indicator has four input parameters:
+Period
+- calculation period;
+Method
+- calculation method;
+Applied price
+- the calculation price;
+Instrument
+- the benchmark instrument.
+Please note that for a proper display of the indicator, the symbol that you specify in inputs must exist on the server and must have the required history. If the symbol does not have enough history, the indicator will not display anything until the required history is downloaded from the server.
+Fig.1. GBPUSD Performance Index
+Fig.2. USDJPY Performance Index
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20447

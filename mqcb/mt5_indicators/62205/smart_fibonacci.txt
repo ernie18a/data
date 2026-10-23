@@ -1,0 +1,23 @@
+Key Features
+Automatic Wave Detection
+: Identifies significant price swings and draws Fibonacci levels automatically
+23 Fibonacci Levels
+: Including retracement (0%, 23.6%, 38.2%, 50%, 61.8%, 76.4%, 88.6%, 100%), extension (127.2%, 138.2%, 161.8%, 200%, 261.8%), and negative levels
+Multiple Retracements
+: Display up to 4 different Fibonacci retracements simultaneously with custom colors
+Pattern Recognition
+: Detects 4 market patterns (uptrend/downtrend continuation, recent upswing/downswing)
+Body-to-Body Mode
+: Special mode for JPY pairs for precise candle body measurements
+Customizable Display
+: Adjustable colors, labels, fonts, and line styles
+Main Parameters
+SF_ScanBars : Bars to scan for wave analysis (default: 200)
+SF_RetracementCount : Number of retracements to display (1-4)
+WaveDetectionDepth : Wave detection sensitivity (default: 5)
+WaveDeviationPips : Minimum price movement (default: 3)
+SF_ShowLabels : Display level labels with prices
+Usage
+The indicator automatically analyzes price action, detects wave patterns, and draws Fibonacci levels. Works on all timeframes and symbols. Best results on H1 and higher timeframes.
+Compatibility
+MT5 Platform | All pairs | All timeframes

@@ -1,0 +1,9 @@
+Original author:
+Nick Bilak
+A redrawing
+Super_Signals_Channel
+indicator
+Fig.1. The Super_Signals_Channel_V2 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23173

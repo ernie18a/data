@@ -1,0 +1,5 @@
+General description :
+In his June 2020 TASC article "Correlation as a cycle indicator" John Ehlers describes one possible way to determine trend in the markets
+His article describes 3 possible ways of determining the trend and here we shall post all the 3 possible ways
+This version :
+this version is showing the "market state" part of the correlation calculation

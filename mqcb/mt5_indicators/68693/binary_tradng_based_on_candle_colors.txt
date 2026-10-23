@@ -1,0 +1,8 @@
+This indicator serves as a demonstration that one can send trade signals utilizing MT5 global variables.
+It is up to the reader to implement the "real trading" part, for testing purpose you might want to check the following blog
+https://www.mql5.com/en/blogs/post/766943
+(Binomo Trading using MT5 Terminal)
+Please note, for best result, one shall use the 5 seconds chart of any asset.
+Candle colors are counted and majority colors will determine the trade to place, CALL or PUT, which can be reversed in the indicator settings. In the reverse case, the minority colors will determine the trade to place.
+One can verify the global variables used by pressing F3 to display MT5 Global Variables as shown in the following figure.
+Good luck and enjoy.

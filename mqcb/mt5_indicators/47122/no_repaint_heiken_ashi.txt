@@ -1,0 +1,4 @@
+This indicator is written based on the
+Heiken Ashi
+indicator published by MetaQuotes.
+* Update v1.1: Add Faster Mode.

@@ -1,0 +1,4 @@
+Author:
+Matsu
+Indicator +RSI-TC.
+indicator RSI-TC

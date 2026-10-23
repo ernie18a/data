@@ -1,0 +1,22 @@
+Elder Impulse System signal indicator is Alexander Elder's impulse system. The system
+uses the slope of the exponential moving average and the MACD histogram to classify trends.
+The indicator has three input parameters:
+EMA period
+MACD fast EMA period
+MACD slow EMA period
+The system has four types:
+EMA is rising, MACD histogram is rising: the signal is 'Long or stand aside, no shorting'
+EMA is falling, MACD histogram is falling: the signal is 'Short or stand aside, no buying'
+EMA is rising, MACD histogram is falling: the signal is 'Either long or short'
+EMA is falling, MACD histogram is rising: the signal is 'Either long or short'
+Three signals can be retrieved from four states:
+Long or stand aside, no shorting
+,
+Short or stand aside, no buying
+and
+Either long or short
+.
+These signals are displayed by the indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22619

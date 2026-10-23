@@ -1,0 +1,45 @@
+The OpenBuyPosition_X script is designed to buy at fixed values of Stop Loss and Take Profit in points from the current price.
+The main advantage of this script is the ability to fix deals' losses when Stop Loss triggered depending on the size of the whole deposit using LossMM script input parameter which defines equity volume rate lost when Stop Loss triggered to the deposit equity.
+Script input parameters:
+//+----------------------------------------------+
+//| SCRIPT INPUT PARAMETERS                      |
+//+----------------------------------------------+
+input
+double
+LossMM=
+0.1
+;
+// Losses from balance when Stop Loss triggered
+input
+uint
+DEVIATION=
+10
+;
+// Price deviation
+input
+uint
+STOPLOSS=
+300
+;
+// Stop Loss in points from the current price
+input
+uint
+TAKEPROFIT=
+800
+;
+// Take Profit in points from the current price
+input
+uint
+RTOTAL=
+4
+;
+// The number of retries in unsuccessful deals
+input
+uint
+SLEEPTIME=
+1
+;
+// Pause time between retries in seconds
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1541

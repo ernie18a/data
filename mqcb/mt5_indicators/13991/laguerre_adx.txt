@@ -1,0 +1,9 @@
+The
+Laguerre_PlusDi
+and
+Laguerre_MinusDi
+indicators in a single window in the form of a cloud.
+Fig.1. The Laguerre_ADX indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13991

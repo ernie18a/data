@@ -1,0 +1,58 @@
+Real author:
+Alejandro Galindo
+Visual trend indicator that shows the direction and power of the current price movement.
+Indicator input parameter:
+//+-----------------------------------+
+//| Indicator input parameters        |
+//+-----------------------------------+
+input
+uint
+DVLimit=
+70
+;
+// Limit in points
+input
+uint
+Fast_Period=
+23
+;
+// Fast MA period
+input
+ENUM_APPLIED_PRICE
+Fast_Price=
+PRICE_OPEN
+;
+// Fast MA price type
+input
+ENUM_MA_METHOD
+Fast_Method=
+MODE_SMA
+;
+// Fast MA smoothing method
+input
+uint
+Slow_Period=
+84
+;
+// Slow MA period
+input
+ENUM_APPLIED_PRICE
+Slow_Price=
+PRICE_OPEN
+;
+// Slow MA price type
+input
+ENUM_MA_METHOD
+Slow_Method=
+MODE_SMA
+;
+// Slow MA smoothing method
+input
+int
+Shift=
+0
+;
+// Horizontal shift of the indicator in bars
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/754

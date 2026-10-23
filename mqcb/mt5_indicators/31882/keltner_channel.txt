@@ -1,0 +1,4 @@
+Keltner channel indicator with a multiplier and two ways to calculate the boundaries:
+By averaging the candle body size
+Averaging the ATR indicator data
+The Keltner channel can be used as an independent indicator, but also as a source of initial data. An example is the "Squeeze Momentum Indicator" published on tradingview.com with the most likes. The translation of "Squeeze Momentum Indicator" from Pine to MQL 5 was done by me.

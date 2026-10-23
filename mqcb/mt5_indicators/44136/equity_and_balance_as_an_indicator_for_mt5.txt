@@ -1,0 +1,5 @@
+This indicator reads balance and reads equity from the trading account and displays them on a separate chart window. Very simple, and really useful for backtesting.
+Here is how it displays... the blue line represents Balance over time and the green line represents equity and it´s fluctuations over time.
+Known limitations:
+Because of the methods used to read balance and equity, AccountInfoDouble(), it is not able to go back in time to display data from before it was attached to the chart. It will only display dynamically the equity and balance from the time when it is attached to the chart. This means it is particularly more useful on backtests, and it is a tremendous tool to help analyze drawdown from very close, allowing the user to zoom in or zoom out, just as the user zooms in or out with the chart.
+Enjoy!

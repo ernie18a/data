@@ -1,0 +1,9 @@
+Description:
+Indicator that shows you market push and future 80% of next big trend .....trendy markets begins with high tick and movment...for time 5 setup ....in hard movement will inform you this when you want sleep.
+Note :for timeframe 5 min inter your instrument setup number in indicator properties:
+green= high current candle - low previuos candle
+red = low current candle - high of previuos candle
+You must work with it min 1 week that can find its magic and secrets where applicable.
+When you see high tick Bar(above normal bars..... show next trend 80% in same side....if it gives buy side but market break this mean market breaks....dont forget SL on low too....in eurusd 50-50 SLTP is good.
+Enjoy and be patient min 1 week with this indicator!!!
+Image:

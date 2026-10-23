@@ -1,0 +1,3 @@
+That EA doesn't use any indicator, because it opens a sell and a buy trade at the same time, so it is a kind of hedging.
+Both trades stopp loss at 99 pips and take profit at 100 pips, so the difference of 1 pip is profit.
+Works best on 1 min chart

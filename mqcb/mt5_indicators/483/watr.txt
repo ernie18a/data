@@ -1,0 +1,7 @@
+Simple trend indicator that clearly shows direction of a current trend. May be used in breakout trading systems. Signal colored dots are added to show changes of a trend direction in this version of the indicator.
+This indicator was first implemented in MQL4 and published in
+CodeBase at mql4.com
+05.03.2007.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/483

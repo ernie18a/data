@@ -1,0 +1,13 @@
+Real Author:
+LastViking ?? (Inspired from Renko script by "e4" (renko_live_scr.mq4) )
+This EA attaches to a chart (1M chart is best) and then builds a new offline chart with Renko boxes.
+This version was built off of v4.12 ... I don't remember where I got it, it took forever to find it in the first place.
+There are videos all over youtube to see how to use the chart and conversations galore on why this is or isn't a better trading strategy. Let's leave those comments in the other forums.
+This is now v4.13 of the EA. The modifications I have made are as follows:
+Aug 22 2014 (Tim Welch) (v4.13):
+Added a startup option (BuildChartsWhenMarketOffline) to build the offline charts when inside of the OnInit() for times when the market is closed
+Changed the RenkoBoxSize variable from an INT to a DOUBLE for 5 digit currency accuracy (i.e. 5.5 == 55 pipettes)
+Enjoy...
+-Tim Welch (maj1es2tic)
+This is the Renko Comments showing the new RenkoBoxSize pip value to be 7.5, no longer an INT.
+And, finally, the showing the box size is truly set to 7.5 pips on my 5 digit broker.

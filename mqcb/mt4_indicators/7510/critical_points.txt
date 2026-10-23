@@ -1,0 +1,2 @@
+Author: emsjoflo
+Critical Points indicator.

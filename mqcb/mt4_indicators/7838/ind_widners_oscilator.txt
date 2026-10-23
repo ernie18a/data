@@ -1,0 +1,9 @@
+Author: expert-mt4.nm.ru
+The Ind-Widners Oscilator indicator. Draws the support and resistance levels.
+r1,r2,r3,r4,r5,r6;
+- Resistance
+s1,s2,s3,s4,s5,s6;
+- Support
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7838

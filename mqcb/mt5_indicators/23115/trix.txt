@@ -1,0 +1,10 @@
+Theory:
+Developed by Jack Hutson in the early 1980s, the Triple Exponential Average (TRiX) is a momentum indicator used by technical traders that shows the percentage change in a triple exponentially smoothed moving average. When it is applied to triple smoothing of moving averages, it is designed to filter out price movements that are considered insignificant or unimportant. TRiX is also implemented by technical traders to produce signals that are similar in nature to the Moving Average Convergence Divergence (MACD).
+This version:
+It is posted mainly for two reasons:
+it is not missing out the first bars values (there is no reason for that when EMA calculations are used)
+it is adding some coloring modes that can be used for easier trading decisions. You can chose to have :
+color changes on slope changes
+color changes on zero line cross
+Usage:
+You can use color changes or zero crosses as signals.

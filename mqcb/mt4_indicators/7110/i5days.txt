@@ -1,0 +1,24 @@
+Indicator's parameters:
+extern string __1__ = "";
+extern int MaxDays = 20;
+extern int FontSize = 16;
+extern string FontName = "System";
+extern int Offset = 16;
+extern string __2__ = "";
+extern string Text1 = "mon";
+extern string Text2 = "tue";
+extern string Text3 = "wed";
+extern string Text4 = "thu";
+extern string Text5 = "fri";
+extern string __3__ = "";
+extern color Color1 = DodgerBlue;
+extern color Color2 = DeepPink;
+extern color Color3 = ForestGreen;
+extern color Color4 = Coral;
+extern color Color5 = MediumPurple;
+extern string __4__ = "";
+extern bool ShowDay1 = true;
+extern bool ShowDay2 = true;
+extern bool ShowDay3 = true;
+extern bool ShowDay4 = true;
+extern bool ShowDay5 = true;

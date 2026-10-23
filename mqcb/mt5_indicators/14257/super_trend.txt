@@ -1,0 +1,11 @@
+Real author:
+Jason Robinson (jnrtrading)
+Indicators providing simple and clear indication are quite popular on Forex market. The Supertrend trend indicator is one of such tools. It displays its values not in a separate window, but right on the price chart, which is quite convenient.
+On an uptrend the indicator line is painted green and placed below the price chart. On a downtrend it is painted red and placed above the price. The indicator can be used in several ways. The simplest is to buy when the Supertrend line is painted green and sell when it is red. In a more advanced variant the evaluation takes place at a senior timeframe, such as H4, and trade is conducted on a smaller - say, M15 towards the dominating trend. Another application option of this indicator is using its lines as resistance and support levels. That is, one should wait until the price gets close to the line and trade rolling back from it.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 19.06.2015.
+Fig.1. The Super_Trend indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14257

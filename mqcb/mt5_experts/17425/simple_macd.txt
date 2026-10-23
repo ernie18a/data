@@ -1,0 +1,8 @@
+Trading on a new bar only. Trading rules are simple — on the new bar, compare the value of the main line on bar (1) and bar (2):
+If MAIN_LINE MACD (1) > MAIN_LINE MACD (2) -> Buy,
+If MAIN_LINE MACD (1) < MAIN_LINE MACD (2) -> Sell.
+When a signal opposite to open positions is received, close all positions.
+The code can be seen as a test of the theory: if MACD is greater than the previous value, we can buy. As you can seen, the theory in this form is completely a failure. It requires additional filters and protection of positions.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17425

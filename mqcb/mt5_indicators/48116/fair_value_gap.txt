@@ -1,0 +1,2 @@
+Fair Value gaps are used in ICT's smart money concept where there is an imbalanace of 1 point or more between 1st candle's high and 3rd candle 's low in bullish and 1st candle 's low and 3rd candle's high in bearish
+You can customize the colors of FVG from indicator settings

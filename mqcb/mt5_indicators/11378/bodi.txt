@@ -1,0 +1,14 @@
+Real author:
+paladin80
+The principles of plotting this indicator, calculation formula, interpretation, algorithm for Expert Advisors and suggested parameters are described in the
+Forex Magazine №438
+.
+This indicator is calculated as the difference between the upper and lower
+Bollinger Bands
+. You may find that during upward or downward impulse movement of the price the bands expand (the difference between them increases), and when the movement fades they narrow (the difference decreases). In my opinion, it is impossible to use this for determining the start of the movement, as it becomes evident only at the end.
+Narrowing of the Bollinger Bands channel often coincides withe the moment of lull in the battle between bears and bulls, and this last moment can be utilized for searching the end point of the movement. The BoDi indicator displayed in a separate window of the chart as a histogram.
+This indicator was first implemented in MQL4 and published in CodeBase at mql4.com on 17.08.2012.
+Fig1. The BoDi indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11378

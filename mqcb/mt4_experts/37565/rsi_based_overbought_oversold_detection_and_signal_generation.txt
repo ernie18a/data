@@ -1,0 +1,2 @@
+This is an EA to generate signals based on RSI signal crossing the upper level or lower level.
+It detects when the market is overbought or oversold and then places trades.

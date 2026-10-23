@@ -1,0 +1,42 @@
+How it works
+- The EA builds fixed-size Renko directly from BID ticks.
+- Classic two-brick reversal logic is used.
+- A confirmed DOWN -> UP Renko reversal creates a support zone.
+- A confirmed UP -> DOWN Renko reversal creates a resistance zone.
+- Price must first move away from a new zone before a retest is accepted.
+- If price returns to the zone and a completed Renko brick confirms rejection away from it, the EA opens a trade.
+- Each zone can be traded only once.
+- A position is closed by take profit, stop loss, opposite Renko reversal, or maximum holding time.
+- Only one position on the symbol is allowed.
+- A spread filter blocks entries when the current spread is too large relative to the Renko brick.
+Default inputs
+Brick Size = 18.0
+Zone Half Width = 1.65 bricks
+Minimum Move Away = 0.90 bricks
+Maximum Zone Age = 53 completed bricks
+Take Profit = 5.50 bricks
+Stop Loss = 2.90 bricks
+Maximum Hold = 680 minutes
+Maximum Spread Fraction = 0.30
+Lots = 0.01
+Example Strategy Tester run
+Broker: RoboForex Ltd
+Symbol: XAUUSD
+Host timeframe: M1
+Model: Every tick based on real ticks
+Period: 2026-05-01 to 2026-08-24
+Initial deposit: 10,000 USD
+Leverage: 1:500
+History quality: 100% real ticks
+Trades: 72
+Net result: +1,026.29 USD
+Profit Factor: 2.33
+Maximum balance drawdown: 117.88 USD (1.09%)
+Maximum equity drawdown: 147.51 USD (1.36%)
+Winning trades: 58.33%
+The parameters above were selected on this historical interval for demonstration. The result is not evidence of a persistent trading edge, a recommendation, or a promise of future profitability.
+This example intentionally uses a much simpler zone model than the visual GDS Auto Renko Support and Resistance Zones indicator. Its purpose is to keep the source code easy to read and show how a Renko zone concept can be converted into a mechanical trading example.
+Related visual indicator on MQL5 Market:
+https://www.mql5.com/en/market/product/175439
+The chart timeframe is only a host. Renko construction is driven by incoming ticks rather than M1 bars.
+No DLLs, external libraries, custom indicators, custom symbols or offline Renko charts are required.

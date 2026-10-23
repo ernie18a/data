@@ -1,0 +1,7 @@
+Indicator was designed by scientist, inventor, author, and trader Tushar Chande in order to help identify market trends with the use of candlestick charts.
+In case the Qstick indicator shows a reading below zero, this is indicative that the majority of candlesticks during the examined period are bearish, thus, the bias for the trading instrument is bearish.
+In case the Qstick indicator shows a reading above zero, this is indicative that the majority of candlesticks during the examined period are bullish, thus, the bias for the trading instrument is bullish.
+There are several ways, in which the Qstick can generate trading signals:
+Crossings over the zero line. If the indicator crosses above zero, this is a signal to buy. If the indicator crosses below zero, this is a signal to sell.
+Looking for extreme levels. If the Qstick indicator is at very low level and begin reversing up, this is a signal to buy. If the indicator is at very high level and begin reversing down, this is a signal to sell.
+Looking for divergences. If the market is forming lower lows and the Qstick is forming higher lows, this is a bullish divergence and a signal to buy. If the market is forming higher highs and the Qstick is forming lower highs, this is a bearish divergence and a signal to sell.

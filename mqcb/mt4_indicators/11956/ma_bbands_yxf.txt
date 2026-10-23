@@ -1,0 +1,2 @@
+The indicator is a combination of MA channels and Bollinger Bands.
+The MA indicator has been moved SHIFT. I hope who have a forward left of the indicators to replace it.

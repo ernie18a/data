@@ -1,0 +1,11 @@
+Theory :
+The idea for this indicator is as simple as it gets : a lot of times we are using some indicator levels as a signal that some desired level is reached and that the price change is to be used as an entry or exit price for our orders / positions. That is all OK but many times we simply are comparing the prices only visually. This indicator is a sort of a "helper" for that. What it does :
+it waits for a level break (CCI in this case)
+if it was broken, then it checks if a new trend line at the chart should be displayed
+if it remains in the over bought or oversold area, it adjusts the existing SR level displayed on chart
+if it retraces in to the neutral zone, the line update is canceled and a new signal is waited for
+Th indicator, as it is, is mainly meant to be used in manual trading.
+Usage :
+The same as any CCI.
+PS:
+The "big picture" example that shows in a more clear way how the indicator works and what is it showing us on chart

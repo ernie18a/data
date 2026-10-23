@@ -1,0 +1,8 @@
+Theory :
+The original of deviation scaled ma was originally published here :
+Deviation Scaled MA
+with some more explanation. That original is using what Ehlers calls a "filer" which is simply a difference between close and a close of 2 bars ago. That is all OK - as long as you use close price ... or as long as you use it to smooth price ...
+This version :
+It corrects the usage of filter and makes it possible to apply deviation scaled MA to any value (does not matter if it is a price or some other value)
+Usage :
+It can be used as any other average now

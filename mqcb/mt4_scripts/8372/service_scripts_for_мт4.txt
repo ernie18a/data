@@ -1,0 +1,17 @@
+The archive contains the following scripts:
+IndicatorPropertyOnDropped
+- the script for a quick access to the properties of the indicator. Drag this script to the indicator whose properties should be called.
+IndicatorDeleteOnDropped
+- the script for quick deletion of the indicator from the current chart window. Drag the script to the indicator to be deleted.
+IndicatorPropertyFromWindow
+- the script calls the properties of the first indicator in the window which the script was dropped on.
+IndicatorsReinit
+- the script for reinitialization of all indicators attached to the current window. The reinitialization is performed by a short-time timeframe changing.
+WindowDeleteOnDropped
+- the script for quick deletion of a subwindow of the current chart. Drag the script to the window to be deleted.
+The video that demonstrates the operation of scripts is given below.
+Note: You should allow function calls from the system DLL for scripts to work:
+Tools -> Options  -> Expert Advisors -> Allow DLL imports.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8372

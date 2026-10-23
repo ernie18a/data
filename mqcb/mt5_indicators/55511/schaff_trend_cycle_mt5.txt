@@ -1,0 +1,44 @@
+Schaff Trend Cycle (MetaTrader indicator)
+— is a cyclical oscillator created by calculating the stochastic over stochastic over a MACD line using cycles. The result is the improved version of the oscillator that is not choppy during the trends and reacts to the changes very fast. It was developed by Doug Schaff, who assumed that the currency trends accelerate and decelerate in cycles. Its algorithm was made public in 2008. Schaff Trend Cycle tries to combine two different methods of determining the trend direction changes — MACD and smoothed stochastic oscillator. The value of the indicator fluctuates between 0 and 100. Two trigger levels are used — 25 and 75. Optional alerts are available. You can download this indicator for
+MT4
+,
+MT5
+Input parameters
+Main
+MAShort
+(default = 23) — the period of the fast moving average for the MACD line calculation. Should be less than
+MALong
+.
+MALong
+(default = 50) — the period of the slow moving average for the MACD line calculation. Should be greater than
+MAShort
+.
+Cycle
+(default = 10) — the length of the cycle in chart periods. The resulting cycle is twice as long because two stochastics are calculated consequentially.
+Alerts
+ShowArrows
+(default = false) — if
+true
+, draws arrows above or below the respective bars where a signal is generated.
+UpColor
+(default = clrBlue) — color of the bullish signal arrow.
+DownColor
+(default = clrRed) — color of the bearish signal arrow.
+ShowAlerts
+(default = false) — if
+true
+, a display alert will be called when a signal is generated.
+SoundAlerts
+(default = false) — if
+true
+, a sound alert will be played when a signal is generated.
+EmailAlerts
+(default = false) — if
+true
+, an email alert will be sent when a signal is generated.
+PushAlerts
+(default = false) — if
+true
+, a push notification alert will be sent when a signal is generated.
+Strategy
+The simplest and most obvious way to use this indicator in trading is to sell when the line drops below level 75 and to buy when it rises above level 25. To filter out some more bad signals, Doug Schaff (the author of Schaff Trend Cycle) offers the following method: for a buy signal, the bar following the trigger bar should close above the high of the trigger bar; for a sell signal, the bar following the trigger bar should close below the low of the trigger bar. Trigger bar is the bar formed at the same time as the Schaff Trend Cycle rose above 25 or declined below 75.

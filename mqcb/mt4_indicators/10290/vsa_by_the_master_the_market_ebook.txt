@@ -1,0 +1,5 @@
+Author:
+Nichcha Sriboonruang.
+It is the VSA, "Volume Spread Analysis" of Tom Williams . It shows the arrow sign as a signal.
+To trade VSA, you need to compair the signal to the market background.
+Do not trade the signal alone.

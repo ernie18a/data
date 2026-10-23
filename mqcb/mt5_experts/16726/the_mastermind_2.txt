@@ -1,0 +1,4 @@
+Testing interval: 2016.01.01 – 2016.10.26, M5 timeframe, initial deposit 10 000, symbol – EURUSD, default settings:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16726

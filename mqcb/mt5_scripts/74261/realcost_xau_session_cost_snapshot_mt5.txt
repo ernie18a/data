@@ -1,0 +1,29 @@
+RealCost XAU Session Cost Snapshot MT5
+is a small open-source MetaTrader 5 script for checking the current chart symbol before trusting a backtest.
+It is useful for XAUUSD, GOLD, and other symbols where broker-specific contract settings can materially affect a short-term EA test.
+The script prints a compact report and can write a local CSV key/value file with:
+bid and ask
+current spread in points
+digits and point size
+tick size and tick value
+contract size
+minimum, maximum, and step lot
+stop level and freeze level
+long and short swap
+trade mode
+filling mode
+order mode
+profit and margin currencies
+account balance, equity, currency, and leverage
+Why this is useful
+XAUUSD and GOLD symbols can differ between brokers. The symbol name, contract size, tick value, volume step, stop level, freeze level, spread, commission assumptions, and server time can all change the meaning of a Strategy Tester result.
+Before comparing an EA result across brokers, it is useful to record the exact symbol settings.
+Suggested workflow
+Open the broker's XAUUSD or GOLD chart.
+Run the script.
+Save the log or CSV output.
+Compare the values with the symbol used in your Strategy Tester report.
+Use realistic spread, commission, leverage, and server-time assumptions before trusting the final test.
+Boundary
+This is not a trading robot. It does not open trades, modify orders, close positions, use DLLs, use WebRequest, or provide buy/sell signals.
+The script records a snapshot only. It does not measure slippage or future spread behavior. For spread distribution over time, use a spread logger and compare the CSV rows across brokers or sessions.

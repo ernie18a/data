@@ -1,0 +1,8 @@
+Balance of Power, introduced by Igor Livshin, attempts to measure the strength of buyers vs. sellers by assessing the ability of each to push price to an extreme level. Livshin published this indicator in the August 2001 issue of Stocks and Commodities Magazine. This version of indicator calculates the BOP exactly as it is described in the article where it was published.
+The resulting raw BOP values can be optionally smoothed using any Moving Average type.
+The BOP oscillates between extremes of -1 and +1.
+Livshin makes the following statements:
+For daily charts, a 14-period Moving Average is recommended, though the number of periods varies depending on the nature of the market and the time frame.
+One of the most important properties of BOP is the level at which it clusters its tops and bottoms. During bull markets, its tops often reach the upper limit and never reach the bottom level. During bear markets, the picture is reversed.
+BOP supports price divergence, trends, and overbought-oversold levels.
+A change in the BOP trend serves as a warning signal and should be confirmed by a change in the price direction.

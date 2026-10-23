@@ -1,0 +1,35 @@
+Technical Workflow & Architecture
+This indicator operates on an event-driven and sequential calculation pipeline inside the OnCalculate and OnTimer functions. Below is the step-by-step execution flow:
+1. Initialization ( OnInit )
+Sets chart digits precision dynamically using _Digits .
+Clears any legacy drawing objects prefixed with "SMC_OB_" to ensure a clean slate.
+Initializes global variables, structural validation buffers, and state tracking arrays.
+2. Historical Iteration & Optimization ( OnCalculate Loop)
+The engine loops through historical rates starting from prev_calculated - 1 to ensure efficient incremental updates without reprocessing the entire chart history.
+Price Filter Optimization:
+To save CPU cycles, the loop evaluates whether current price action exceeds prev_valid_high or prev_valid_low . If price stays within boundaries, minor updates are skipped.
+3. Pivot & Structure Tracking ( ValidBar Struct)
+Utilizes a rolling 3-bar structural window ( vb1 , vb2 , vb3 ) to track swing points dynamically using absolute timestamps ( datetime ) rather than volatile bar indices. This guarantees absolute positioning stability across terminal reloads and timeframe switches.
+4. Order Block Detection & Filtering Logic
+Bullish OB:
+Identified when a lower low ( vb2.l < vb3.l ) is followed by an impulsive displacement breaking above vb2.h ( vb0.l > vb2.h ), leaving a measurable Fair Value Gap ( fvg_size ).
+Bearish OB:
+Identified when a higher high ( vb2.h > vb3.h ) is followed by a displacement breaking below vb2.l ( vb0.l < vb2.h ).
+Overlap & Nested Filtering:
+When a new OB forms inside an existing zone, the engine compares their FVG sizes and automatically deactivates the weaker/smaller block.
+5. Mitigation Management
+Continuously scans historical and live bars against active OB boundaries.
+Supports dual mitigation modes:
+Mitigation by Body:
+Deactivates the OB if a candle closes beyond its opposite boundary.
+Mitigation by Wick:
+Deactivates the OB the moment a wick penetrates the boundary.
+6. Real-Time Tick Engine & Alert Mechanism
+On every incoming tick ( rates_total > 1 ), the engine monitors the live bar ( rates_total - 1 ) using the real-time Bid price ( SymbolInfoDouble ).
+Checks for price crossings against active Bullish and Bearish OB zones.
+Incorporates a
+bar-based cooldown filter
+( InpAlertCooldownBars ) to prevent duplicate alert spam when price lingers inside an OB zone.
+7. Graphical Rendering ( UpdateOBGraphics )
+Manages rectangle objects ( OBJ_RECTANGLE ) and text labels dynamically.
+Respects the maximum limit set by InpMaxOB , automatically cleaning up expired or mitigated visual zones to keep the chart clutter-free.

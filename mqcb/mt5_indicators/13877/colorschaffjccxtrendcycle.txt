@@ -1,0 +1,11 @@
+The real author:
+EarnForex.com
+The
+Schaff Trend Cycle
+indicator based on the difference between two
+JCCX
+oscillators with different periods.
+Fig.1. The ColorSchaffJCCXTrendCycle indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13877

@@ -1,0 +1,12 @@
+Real author:
+MetaQuotes Software Corp.
+The indicator shows
+fractals
+of different time periods on one chart.
+This indicator was first implemented in MQL4 and published in
+CodeBase
+at mql4.com on 14.09.2007.
+Fig.1 The Ind-Fractals-1 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2301

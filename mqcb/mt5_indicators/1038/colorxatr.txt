@@ -1,0 +1,67 @@
+Real Author:
+Martingeil
+Smoothed ATR, recalculated as price chart points.
+It uses color to show whether the trend strengthens or weakens. The red color corresponds to the trend strengthening, the yellow color corresponds to the trend weakening.
+Indicator input parameters:
+//+-----------------------------------+
+//| Indicator input parameters        |
+//+-----------------------------------+
+input
+int
+ATRPeriod=
+12
+;
+// ATR period
+input
+Smooth_Method XMA_Method=MODE_JJMA;
+// Smoothing method
+input
+int
+XLength=
+5
+;
+// Smoothing depth
+input
+int
+XPhase=
+15
+;
+// Smoothing parameter
+input
+int
+Shift=
+0
+;
+// Horizontal shift of the indicator in bars
+You can change averaging algorithms out of ten possible options in the indicator:
+SMA
+- simple moving average;
+EMA
+- exponential moving average;
+SMMA
+- smoothed moving average;
+LWMA
+- linear weighted moving average;
+JJMA
+- adaptive JMA smoothing;
+JurX
+- ultralinear smoothing;
+ParMA
+- parabolic smoothing;
+T3
+- Tillson's multiple exponential smoothing;
+VIDYA
+- smoothing using the algorithm developed by Tushar Chande;
+AMA
+- smoothing using Perry Kaufman's algorithm.
+It should be noted that Phase parameters for different smoothing algorithms have completely different meaning. For JMA, it is an external Phase variable that varies from -100 to +100. For T3, it is a smoothing coefficient multiplied by 100 for better visualization. For VIDYA, it is a CMO oscillator period. And for AMA, it is a slow EMA period. These parameters do not affect the smoothing in other algorithms. For AMA, the fast EMA period is a fixed value and is equal to 2 by default. The powering coefficient for AMA is also fixed at 2.
+The indicator uses the SmoothAlgorithms.mqh library classes (to be copied to the terminal_data_directory\MQL5\Include). The use of the classes was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Fig.1 The ColorXATR Indicator
+This indicator was first implemented in MQL4 and published in
+Code Base
+26.04.2011.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1038

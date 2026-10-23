@@ -1,0 +1,48 @@
+The indicator shows a cloud within a channel formed by two МАs, EMA and LWMA
+It has five input parameters:
+First LWMA period
+- calculation period of the first LWMA
+Second LWMA period
+- calculation period of the second LWMA
+First EMA period
+- calculation period of the first EMA
+Second EMA period
+- calculation period of the second EMA
+Applied price
+- price used for calculations
+Recommendations:
+* Use
+timeframe
+H1 or hogher.
+Components:
+* 5 LWMA and 8 LWMA (blue lines)
+* 18 EMA and 28 EMA (
+red lines
+)
+Inputs:
+* EMA lines touch or cross each other.
+* LONG: 5 LWMA and 8 LWMA cross the EMA channel upwards.
+- If 5 LWMA also crosses 8 LWMA upwards, then the signal is strong.
+* SHORT: 5 LWMA and 8 LWMA cross
+channel
+EMA downwards.
+- If 5 LWMA also crosses 8 LWMA downwards, then the signal is strong.
+Outputs:
+* LONG: the price has reached the top, and
+5
+LWMA
+has gone under 8 LWMA > Close position.
+* SHORT: the price has reached the bottom, and
+5
+LWMA
+has grown
+above 8 LWMA >
+Close position.
+Other signals:
+* Always close the position, when the EMA lines touch or cross each other, then analyze again and open a new position in accordance with the signals.
+Please note!
+when there is a position and both LWMAs cross the EMA channel,
+then this is a signal that the EMA lines are going to cross each other in the nearest future.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20810

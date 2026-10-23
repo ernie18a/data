@@ -1,0 +1,19 @@
+Ehlers Filter with the non-linear distance calculation algorithm. The indicator allows tracking the common trend and trade in its direction. Unlike linear
+Ehlers Filter
+, it has a shorter delay and allows detecting the direction for entering and closing your positions more accurately.
+There are three adjustable parameters:
+Period
+- calculation period
+Momentum
+- momentum period
+Applied price
+- calculation price
+Calculation:
+EF = SMA(PriceCoeff) / SMA(Coeff)
+where
+PriceCoeff[i] = Coeff[i] * Price[i]
+Coeff[i] = (Price[i] - Price[i-Momentum]) * (Price[i] - Price[i-Momentum])
+Price -- Applied price
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20979

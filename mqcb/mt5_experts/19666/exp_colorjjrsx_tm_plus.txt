@@ -1,0 +1,34 @@
+A trading system based on
+ColorJJRSX
+indicator signals with the possibility to set a fixed position holding time. A signal is formed at the close of a bar, if the direction of the indicator movement (the indicator color) has changed. Once position holding time exceeds a preset fixed limit, the position is immediately closed:
+input
+bool
+TimeTrade=
+true
+;
+//Enabling position exit by time
+input
+uint
+nTime=
+240
+;
+//Open position holding time in minutes
+This Expert Advisor uses the compiled indicator file
+ColorJJRSX.ex5
+for operation. Place it to <terminal_data_folder>\MQL5\Indicators.
+Note that the
+TradeAlgorithms.mqh
+library file allows using Expert Advisors with brokers who offer
+nonzero spread
+and the option of setting Stop Loss and Take Profit
+together with position opening
+. You can download more variants of the library at the following link:
+Trade Algorithms
+.
+Default input parameters of the Expert Advisor were used during the tests shown below. Stop Loss and Take Profit were not used during testing.
+Fig. 1. Examples of deals on the chart
+Testing results for 2016 at AUDUSD H4:
+Fig. 2. Testing results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19666

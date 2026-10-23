@@ -1,0 +1,9 @@
+Description:
+This indicator is EMAs drawn by Fibonacci numbers.
+There are part1 and part2:
+Part1-->EMA 34(High,Close,Low), 55, 89, 144, 200
+Part2--->EMA 233, 377, 610, 987, 1598
+http://ragheehorner.com/blog/?p=157
+Images:
+Figure 1. Fibonacci-based Moving Averages- Part 1
+Figure 2. Fibonacci-based Moving Averages- Part 2

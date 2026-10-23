@@ -1,0 +1,2 @@
+Trade using MA. An easy indicator to identify the trend direction on a specific timeframe. This indicator uses two moving averages. You can customize it according to your preference.
+If you like, you can also combine it with my previous indicators.

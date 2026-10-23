@@ -1,0 +1,11 @@
+The same code can be compiled in mt4 as well. It gets News from FXStreet servers automatically which can be further filtered by importance level, Currency and Keyword in the News.
+Mt4 version can be found here:
+https://www.mql5.com/en/code/40598
+Salient features of the code:
+-Filter News by High, Low or Medium Volatility
+-Filter By currencies
+-Filter by News Keyword
+-Auto GMT offset check
+-Dashboard to show upcoming News (Can be enabled or disabled)
+-Lines on chart for all Upcoming events
+-Code can be easily modified to place trade at certain time before or after an event or to just stop trading during events.

@@ -1,0 +1,2 @@
+T
+he Predictive Moving Average was created by John Ehlers (“Rocket Science For Traders”, pg.212″). This is one of his first leading indicators. Buy when the indicator line is green and sell when it is red.

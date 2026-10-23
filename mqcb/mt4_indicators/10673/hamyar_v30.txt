@@ -1,0 +1,5 @@
+Remember to install the fonts
+Author:
+Farshad Saremifar
+The idea is based on Pivots on different situation, it is best to use on 15min Time frame. !!!Attach HamyarZone Indicator Before Attaching any indicator to chart,and set GMT_Shift in minutes!!!
+No need to add hamyar calculate to chart,

@@ -1,0 +1,16 @@
+ExMachina Safe Scalping — 6-Condition Breakout Scalping EA
+This Expert Advisor does not enter a trade unless the market proves itself six times over. Six independent filters must agree on the same bar before any position opens. If even one says no, the system stays flat.
+The six conditions:
+- EMA trend direction (150/510 dual moving average)
+- Trend strength measured against ATR — weak and sideways markets are rejected
+- Price position confirmed on the correct side of both EMAs
+- Breakout beyond N-bar high/low with a volatility-adjusted buffer
+- RSI within a healthy range, not at extremes
+- Momentum confirmation via close-to-close comparison
+Risk management is fixed and non-negotiable. Every trade gets a predefined stop loss and take profit at entry. Only one position at a time. No martingale, no grid, no hedging, no averaging down. Automatic breakeven shifts the stop to entry when price advances. If drawdown exceeds your threshold, the EA pauses itself.
+Built-in filters restrict trading to your chosen session hours (default London/New York), block entries when spreads widen beyond your limit, and pause around scheduled news events.
+This is the Code Base version — a single standalone .mq5 file with no external dependencies beyond the standard MT5 Trade library. The full strategy logic is readable and editable.
+The Market version of this EA includes a premium dashboard with a cockpit bar (manual BUY/SELL, lot controls, filter status), an analytics panel (account metrics, drawdown gauge, win rate, profit factor, expectancy), and a status strip. Search "ExMachina Safe Scalping" on the MQL5 Market for the free download with GUI.
+Recommended: XAUUSD, XAGUSD, EURUSD, GBPUSD on M5 or M15. Works on any MT5 broker.
+Parameters have been optimized on EURUSD M5 over 11 years of data (2015–2026). Default values represent the most robust result set: 315 trades, profit factor 1.24, max drawdown 0.86%. A custom OnTester() fitness function is included for your own optimization runs.
+Developed by ExMachina Trading Systems.

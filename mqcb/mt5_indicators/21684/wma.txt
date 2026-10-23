@@ -1,0 +1,13 @@
+The Wilder's Smoothing Average (WMA) indicator.
+It has two input parameters:
+Period
+- calculation period;
+Applied price
+- price used for calculations.
+Calculations:
+WMA = (Applied price - PrevWMA) * k + PrevWMA
+where:
+k = 1/Period
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21684

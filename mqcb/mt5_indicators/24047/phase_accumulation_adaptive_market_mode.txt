@@ -1,0 +1,2 @@
+This indicator is a phase accumulation adaptive version of the original posted here :
+Market mode

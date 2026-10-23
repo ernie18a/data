@@ -1,0 +1,1 @@
+This script will detect an end-of-trading day and notify the end user in a message box

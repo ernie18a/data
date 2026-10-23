@@ -1,0 +1,17 @@
+Indicator
+SilverTrend_NRTR
+with the timeframe selection option available in input parameters, alerting and sending e-mails and push-messages when the indicator changes its color.
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// The indicator chart period (timeframe)
+For the indicator to operate, the
+SilverTrend_NRTR.ex5
+indicator must be added to the <terminal_data_directory>\MQL5\Indicators folder.
+Fig.1. Indicator SilverTrend_NRTR_HTF
+Fig.2. Alerting
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20939

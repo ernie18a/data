@@ -1,0 +1,10 @@
+Real author:
+Andrey Opeyda
+The Commentator indicator analyzes a group of technical indicators and displays trade recommendations.
+This indicator was first implemented in MQL4 and published in the
+Code Base at mql4.com
+on 11.02.2008.
+Figure 1. The Commentator indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1894

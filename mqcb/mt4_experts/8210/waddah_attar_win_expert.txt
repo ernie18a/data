@@ -1,0 +1,4 @@
+Step = 120
+FirstLot = 0.1
+MinProfit = 450 ( in dollar )
+1/1/2008 - 20/6/2008

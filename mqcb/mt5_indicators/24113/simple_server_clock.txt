@@ -1,0 +1,6 @@
+Many friends asked me for a simple, non-obtrusive, resource-friendly clock to track the time during their trades. It seems pretty obvious, but it is a must-have for those trading the market manually, waiting for the Market News, or just to visually know what time it is... Trading is an absorbing endeavor!
+So, here it is...
+Just 1 Text Object, totally configurable, including Font Type, Font Size and Chart Location: Upper Left/Center/Right OR Lower Left/Center/Right, with a little twist of adjusting the Offset, just in case the Clock get in front of something already there...
+KISS compliant (Keep It Simple Stupid!)
+Enjoy!
+Live Long and Prosper!

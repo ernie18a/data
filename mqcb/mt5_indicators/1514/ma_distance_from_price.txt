@@ -1,0 +1,12 @@
+The real author:
+David W Honeywell
+Description:
+A semaphore signal indicator for the moments when the trend force measured by the deviation of the price from the Moving Average is higher than a fixed limit. The measured deviation is defined in points using the threshold value of the PipLevel input variable of the indicator (the level of triggering in points from the Moving Average).
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 12.10.2007.
+Image:
+Fig.1 The Ma_Distance_From_Price indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1514

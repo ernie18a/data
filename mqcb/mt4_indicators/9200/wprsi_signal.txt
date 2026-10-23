@@ -1,0 +1,4 @@
+He places the arrow in the WPR> -20 and RSI> 50 (WPR <-80 and RSI <50).
+WPRSIperiod - period for WPR and RSI.
+filterUP and filterDN - check the depth of intersection WPR> -20 (filterUP) and the intersection WPR <-80 (filterDN)
+WPRSI_signal_V.2

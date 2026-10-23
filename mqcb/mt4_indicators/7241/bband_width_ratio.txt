@@ -1,0 +1,2 @@
+Author: Maji
+BBand Width Ratio indicator.

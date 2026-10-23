@@ -1,0 +1,4 @@
+RSX is one of the RSI/Momentum family based indicators that is suitable for adapting.
+This indicator is a
+Schaff Trend Cycle
+that is using Jurik Volty Adaptive RSX for calculation. Default adapting period is kept rather long simply to make the effects of the adapting more noticeable.

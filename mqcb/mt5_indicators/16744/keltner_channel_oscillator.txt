@@ -1,0 +1,2 @@
+Keltner channel made in a form of an oscillator in order to make it easier to monitor channel breakouts than on the original Keltner channel on-chart representation.
+This indicator is already a mtf version too.

@@ -1,0 +1,7 @@
+Indicator
+BykovTrend
+as candlesticks. Green candlesticks correspond with growth signals, and orange candlesticks are for the signals of falling. Candlesticks with the trend are colored brightly, and those against the trend are colored darkly.
+Fig 1. Indicator BykovTrend_V2
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21211

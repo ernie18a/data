@@ -1,0 +1,18 @@
+A trading system that uses the
+Candle Momentum Index
+oscillator. A decision about a deal is made when the oscillator changes direction of its movement.
+Place the compiled file of the indicator BlauCMI.ex5 to the terminal_data_folder\MQL5\Indicators.
+It should be considered that the TradeAlgorithms.mqh library file is designed to use Expert Advisors by brokers who offer
+nonzero spread
+and ability to set Stop Loss and Take Profit
+simultaneously opening
+a position. Other variants of this library can be downloaded from
+https://www.mql5.com/en/code/1578
+.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. The instances of history of deals on the chart.
+Testing results for 2012 at EURUSD H1:
+Fig. 2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1933

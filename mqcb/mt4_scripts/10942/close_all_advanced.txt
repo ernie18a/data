@@ -1,0 +1,9 @@
+Author:
+ThinkTrustTrade
+This script can close all your open positions in your MetaTrader 4 terminal, or you can select different similar positions.
+You can select:
+by position side: Long or Short;
+by magic number: close or skip all position with specified magic number;
+by Market Instrument;
+and the combination of the above options.
+You just need to drag the script to the chart and adjust the settings.

@@ -1,0 +1,2 @@
+Adaptive MA made using dr. Alexander Uhl's corrected algorithm
+You can use color changes as signals in this indicator

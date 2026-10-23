@@ -1,0 +1,19 @@
+Perfect Seconds chart indicator allows you to convert minute candles of live data into seconds
+Remove this line of code from OnInit and OnCalculate in case of you find indicator not working
+if
+(
+ENUM_MQL_INFO_INTEGER
+(
+MQL_TESTER
+)) {
+return
+(
+INIT_SUCCEEDED
+);  }
+1. Choose any number of seconds to close a bar with accurate time.
+2. This is Live OHLC rates based data, It works even if ticks are not available.
+3. No external DLL required, it works smoothly on VPS
+4. Fast and optimized code
+5. Supports Crypto Pairs such as BInance, Kucoin and all other exchanges where Futures live chart can be converted into seconds easily.
+6. Support all type of symbols such as Gold and Forex pairs.
+7. Options to delete symbol and rates.

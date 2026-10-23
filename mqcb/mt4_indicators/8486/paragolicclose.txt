@@ -1,0 +1,7 @@
+Revised
+Parabolic
+. It shows good result when used with the MA with a period of 100.
+Paragolic-close
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8486

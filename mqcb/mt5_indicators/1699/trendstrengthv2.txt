@@ -1,0 +1,3 @@
+Real author:
+Igorad.
+Author of all TrendStrength indicators are Igorad, there are a lot of similar indicators but his indicators can be used as a real filter to some systems, there are many Expert Advisors based on this indicators for MetaTrader 4, we can now build new Expert Advisor for MetaTrader 5.

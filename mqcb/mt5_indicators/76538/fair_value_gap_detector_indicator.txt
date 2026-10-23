@@ -1,0 +1,63 @@
+Fair Value Gap Detector
+The idea behind it
+A Fair Value Gap forms when a strong, impulsive candle leaves a price range untouched by the candles immediately before and after it — the classic 3-candle imbalance: if the low of candle 3 is above the high of candle 1, no trading occurred in that gap, and price often revisits it later to "fill" the imbalance before continuing. This indicator scans every closed bar for that exact 3-candle relationship (in both directions), and the moment one is found, draws the gap zone as a rectangle spanning from the impulsive candle forward.
+Each gap is tracked individually after that: while unmitigated, its box keeps stretching forward to the current bar in real time; the instant a later candle's range trades back into the zone, the box freezes exactly where mitigation happened and (by default) turns gray, so at a glance you can tell which gaps are still "live" untouched imbalances and which have already been revisited.
+How to interpret it
+Bullish gap
+(default green/white) — the low of the third candle is above the high of the first candle. Untouched space below current price that the market left behind on the way up; often watched as potential support on a pullback.
+Bearish gap
+(default red) — the high of the third candle is below the low of the first candle. Untouched space above current price left behind on the way down; often watched as potential resistance on a bounce.
+An extending (colored) box
+— the gap is still unmitigated; its right edge keeps moving forward live with
+InpExtendUntilMitigated
+enabled (default), or stops after a fixed
+InpExtendBars
+bars if disabled.
+A frozen, gray box
+— the gap has been mitigated: a later candle's range traded back through the zone, and the box stopped exactly at that bar. Set
+InpHideMitigatedGaps
+to delete mitigated boxes instead of graying them out, for a cleaner chart.
+Minimum size filter
+—
+InpMinGapSizePoints
+discards gaps too small to be meaningful noise on the current symbol's tick size.
+External variables (inputs)
+Input
+Default
+Purpose
+InpMinGapSizePoints
+50
+Minimum gap size, in points, for a detected imbalance to be drawn — filters out negligible gaps.
+InpMaxGapsToShow
+50
+Maximum number of gaps kept on the chart at once; the single oldest tracked gap is dropped whenever a new one exceeds this cap.
+InpExtendUntilMitigated
+true
+When true, an unmitigated gap's box keeps extending live to the current bar; when false, it stops after a fixed number of bars.
+InpExtendBars
+20
+Fixed extension length (in bars), used only when InpExtendUntilMitigated is false.
+InpHideMitigatedGaps
+false
+When true, a gap's box is deleted the moment it's mitigated instead of being grayed out and kept.
+InpBullishColor / InpBearishColor
+Lime / Red
+Colors for unmitigated bullish and bearish gap boxes.
+InpMitigatedColor
+Dim Gray
+Color a gap's box changes to once mitigated (when not hidden).
+InpFillBox
+true
+Whether gap boxes are filled or drawn as outlines only.
+InpBoxStyle / InpBoxWidth
+Solid / 1
+Border style and width of every gap box.
+Recommended use
+Works on any symbol and any timeframe; imbalances are a pure price-action pattern with no symbol-specific assumptions, though they read most cleanly on timeframes with real intrabar structure (M1–H4) rather than very high timeframes where a single "candle" already represents an entire trading session. Detection and mitigation checks only run on fully closed bars by design, so a gap will not appear or disappear mid-candle as the current bar's high/low are still changing — expect a newly formed gap to show up right as the next bar opens, not tick-by-tick during formation.
+On very long chart histories, thousands of small gaps can accumulate;
+InpMinGapSizePoints
+and
+InpMaxGapsToShow
+exist specifically to keep the chart readable and the object count bounded rather than letting every historical imbalance pile up indefinitely. This indicator only reads price data and never places, modifies, or closes any order, so it is safe to run on any account type.
+All chart objects are created under a single internal name prefix and are fully removed via ObjectsDeleteAll() in OnDeinit() when the indicator is detached, so it leaves nothing behind on the chart.
+Fig. 1. An unmitigated bullish gap and a mitigated bearish gap on XAUUSD M15. Rendered in black and white per the Code Base image guidelines (750×500 px).

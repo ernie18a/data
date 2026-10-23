@@ -1,0 +1,11 @@
+Real Author:
+LenIFCHIK
+The New Highs-New Lows Index was very well described by A. Edler in his book "Trading for a Living: Psychology, Trading Tactics, Money Management " in the chapter dealing with Stock Market Indicators.
+In our case, the indicator has been adapted to the foreign exchange market and is calculated as the difference between the number of currency pairs that reached new highs over a given period and the number of currency pairs that reached new lows over a given period. The peak is, as a rule, a sign of a forthcoming reversal.
+This indicator was originally developed in MQL4 and published in Code Base at
+mql4.com
+01.04.2011.
+Fig.1 The NH_NL Indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1051

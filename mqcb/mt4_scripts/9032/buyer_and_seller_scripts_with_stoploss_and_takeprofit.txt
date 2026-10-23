@@ -1,0 +1,54 @@
+Hi Guys:
+Answering the call for Stoploss and TakePrifot in my origional Buyer and Seller Scripts here you go. Just Like their first versions, they are "order openers" that are irrespective of chart or currency pair. Within the code of each script there are notes listing how to change the lotsize and number of orders opened each time the script is run
+- JMBUYERv2 : Without Modification it is initially set to simultainiously place (3) 1.0 Lot BUY orders to be executed on the active chart in the trading station with a stoploss of 100 and takeprofit of 100
+- JMSELLERv2: Without Modification it is initially set to simultainiously place (3) 1.0 Lot SELL orders to be executed on the active chart in the trading station with a stoploss of 100 and takeprofit of 100
+Directions to modify the SL and TP are in the code as notes.
+Just so you guys know I am learning allot by trying to answer all the polls to add things to my scripts, your challenges are making me grow, thanks.
+=============================================================================================
+NOTICE ABOUT ALL THESE SCRIPTS
+THEY ARE ALL CHART IRRESPECTIVE
+==============================================================================================
+AS WITH ALL SCRIPTS OR EAs (IF YOU ARE NEW TO MQL4 KEEP READING) YOU EXPERTS OUT THERE, IGNORE THIS PART, THANKS ------ LOL
+TO USE EXPERTS/SCRIPTS/INDICATORS/TEMPLATES IN YOUR MT4 TRADING STATION YOU NEED TO TAKE CERTAIN STEPS:
+FIRST:
+YOU NEED TO COPY THE FILES TO THE CORRECT LOCATION THEY ALL WILL LOOK SIMILAR BUT WILL VARY SLIGHTLY DEPENDING ON YOUR SOFTWARE PROVIDER:
+INDICATORS GO INTO ----- C:\Program Files\ForexTrader.Meta\MQL4\Indicators
+TEMPLATES GO INTO ----- C:\Program Files\ForexTrader.Meta\MQL4\templates
+EXPERTS GO INTO ----- C:\Program Files\ForexTrader.Meta\MQL4\Experts
+SCRIPTS GO INTO ----- C:\Program Files\ForexTrader.Meta\MQL4\Scripts (for these Scripts this is where)
+SECOND:
+OPEN EACH FILE UP INDIVIDUALLY WITH THE METAEDITOR AND HIT THE (COMPILE) BUTTON THEN CLOSE THE FILE
+NOW ITS READY TO USE
+THIRD:
+IF THEY STILL DONT WORK, OPEN UP THE (TOOLS) DROP DOWN MENU IN THE TRADING STATION, AND SELECT OPTIONS. GO TO THE EXPERT ADVISORS TAB AND MAKE SURE BASICALLY EVERYTHING IS CHECKED EXCEPT "MANUAL CONFIRMATION" THAN CLICK OK, AND TRY TO USE THEM AGAIN.
+YOU SHOULD BE GOOD AT THIS POINT
+=====================================================================================
+SUGGESTIONS FOR USE:
+EVERYBODY'S TRADING STRATEGY IS DIFFERENT, I LIKE MANUAL TRADING, BUT THAT'S ONLY BECAUSE IM STILL LEARNING HOW TO AUTOMATE. I USE THESE SCRIPTS AND VARATIONS THAT IVE MODDED IN CONJUNCTION WITH MY ORDER CLOSER SCRIPTS THAT I HAVE ALSO POSTED HERE TO PARTIALLY AUTOMATE ORDER OPERATIONS BUYING, SELLING, AND CLOSING MULTIPLE ORDERS AT ONCE WITHOUT HAVING TO GO THROUGH THE MENUES. ITS EASY TO SET UP EACH SCRIPT TO RUN WITH A HOTKEY THAT YOU SPECIFY BY "RIGHT CLICKING THE SCRIPT IN THE NAVIGATOR MENU OF THE TRADING STATION. ESSENTIALLY YOU HAVE JUST MACROED THE OPERATIONS. I DO BOTH SCALPING AND DAILY SWING TRADING MANUALLY. THESE SCRPTS ARE PARTICULARLY HELPFUL IN SCALPING WHEN YOU NEED TO BE QUICK, THEY ELIMINATE ALOT OF THE MENUS AND CLICKS NORMALLY USED TO OPEN AND CLOSE POSITIONS INDIVIDUALLY.
+===================================================================================
+FOR EVERYBODY THAT IS NEW TO CODING ORDER OPERATIONS ARE THE INITIAL BREAD AND BUTTER OF WHAT WE ARE TRYING TO LEARN. CRACKING THE NUT FOR ME HAS SO FAR AND WILL BE MADE BY TRIAL AND ERROR LOOKING AT EXISTING CODE AND RELATING IT TO OTHER PARTS OF THE CODE AND THEN LOOKING AT WHAT IS ACCOMPLISHED WHEN ITS EXECUTED, I READ SOMEWHERE THAT ITS NOT SO IMPORTANT TO MAKE A PROFITABLE EXPERT ADVISOR AS IT IS TO MAKE ONE THAT DOES WHAT YOU WANT IT TO DO. I BELIEVE THAT IF YOU CAN GET THE SCRIPTS AND EAs TO DO WHAT YOU WANT THEM TO DO THEN IT BECOMES A MATTER OF ADDING INDICATORS AND TIMING; SO LETS ALL START WITH THE BASICS. HERE IS WHERE IM AT IN UNDERSTANDING OF THIS STUFF SO FAR.
+==================================================================================
+HERE YOU HAVE YOUR BASIC IMPUT VARIABLE... IN THIS CASE ITS A LOTSIZE. BY CHANGING THE NUMBER PORTION IN THIS AREA THE LOTSIZE PER EACH ORDER OPERATION IS AFFECTED THE SAME. BYTHE WAY IF NO ONE HAS TOLD YOU EVERYTHING IN MQL4 IS CASE SENSITIVE
+EXAMPLE.... "lots" IS NOT THE SAME AS "Lots" OR "LOTS" BE CAREFUL
+extern double Lots = 1.0;
+NOW THE ORDER OPERATION STARTS, EVERYTHING BETWEEN THE BRACKETS OR PARENTHESIS IS THE OPERATION IN THIS CASE ITS A "BUY" OPERATION
+YOU HAVE A FEW THINGS THAT CAN GO ON HERE I WILL SPREAD IT OUT FOR YOU WITH SPACES int start() { OrderSend(Symbol(),OP_BUY,Lots,Ask,3,0,0,"JMBUYER",0,0,CLR_NONE); }
+OrderSend ( Symbol(), OP_BUY, Lots, Ask, 3, 0, 0, "JMBUYER", 0, 0, CLR_NONE);
+SENDS AN ORDER SPECIFYS PAIR, ORDER TYPE, SIZE, PRICE, SLIPPAGE ?, ?, COMMENT, ?, ?, ?
+Symbol() - says that the order is pair irrelevant that the order will be executed on the active chart "Symbol(GBPJPY)" specifiys a pair
+OP-BUY or OP-SELL are order types; BUYs go for the "Ask" if this was a SELL you would see "Bid" in the place where "Ask" is
+Lots specifys the lotsize of the order in this space you could directly put a number 1.0 0.1 etc. in this case we have elected to specify the exact lotsize for the order somewhere else, namely as a variable listed above, i did this because each of the scrips places multiple identical orders and it saved me typing time.
+"COMMENTS" will appear on each order, in this case the comment JMBUYER will appear but you can change this to say anything between the quotes or just put "" for no comment
+SO IF YOU WANTED TO GENERATE A BUY ORDER INDIVIDUALLY WITH THE LOTSIZE 1.12 AND THE COMMENT BEING "TESTER" THE OPERATION WOULD LOOK LIKE THIS
+int start() { OrderSend(Symbol(),OP_BUY,1.12,Ask,3,0,0,"TESTER",0,0,CLR_NONE);
+}
+HOPEFULLY YOU GET IT NOW IT TOOK ME A LITTLE WHILE, BUT IM STILL LEARNING, GOOD LUCK
+=========================================================================================
+Please Post feedback here and/or Email Me
+Jedimedic77@gmail.com
+and if you could please Rate the Scripts here on the site
+Good Luck Everyone, and Good Fortune
+Jim Malwitz
+--------------------------------
+"Sis Vis Pacum Parabellum"
+"Draco Dormiens Nunqueim Titilandus"

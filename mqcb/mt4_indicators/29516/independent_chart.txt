@@ -1,0 +1,2 @@
+Using this indicator you can specify your all drawing object to a specific symbol and timeframe.
+example if you draw any object ( Trendline/ Text/ Line / Anything ) on the GBPUSD H4 chart, it will only be restricted for the GBPUSD H4 chart. So it will not conflict with other charts/timeframe

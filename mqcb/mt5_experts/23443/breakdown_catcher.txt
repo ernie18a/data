@@ -1,0 +1,33 @@
+Idea by:
+Scriptor
+mq5 code by:
+barabashkakvn
+The EA works with pending Buy Stop and Sell Stop orders.
+Buy Stop is placed at the High price of bar #1 + "
+Indent
+", Sell Stop is placed at the Low price of bar #1 - "
+Indent
+".
+Program Parameters
+Stop Loss
+, in pips (1.00045-1.00055=1 pips) - Stop Loss
+Take Profit
+, in pips (1.00045-1.00055=1 pips) - Take Profit
+Trailing Stop
+(min distance from price to Stop Loss, in pips - Trailing
+Trailing Step
+, in pips (1.00045-1.00055=1 pips) - Trailing step
+Indent
+, in pips (1.00045-1.00055=1 pips) - Indent from the High and Low of bar #1
+Allowable spread
+, in points (1.00045-1.00055=10 points) - the largest spread permitted
+Money management
+: Lot OR Risk - volume calculation type (fixed lot size or risk % per trade)
+The value for "Money management"
+- volume or percentage
+Print log
+magic number
+Testing on EURUSD, M1:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23443

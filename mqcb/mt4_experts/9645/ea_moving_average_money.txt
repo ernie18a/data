@@ -1,0 +1,8 @@
+Description:
+Here is one of the backtest( Backtest June 2009 to April 2010), the equity is larger than balance, LOL
+I am using Moving_Average from mt4 and also Money Management from
+https://www.mql5.com/en/forum/123914
+I did change a bit of the code to combine them all. The Money Management code I changed from using AccountBalance() to AccountFreeMargin() to count the stoploss
+The reason I post here is for all to comment and to improve. Don't try use on live account.
+Need more time to enhance it and test on demo
+Image:

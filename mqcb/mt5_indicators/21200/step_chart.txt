@@ -1,0 +1,1 @@
+Step Chart indicator monitors the price change (in pips) and according to that, determines if a new "step" has been made or not.

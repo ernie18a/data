@@ -1,0 +1,5 @@
+Author: Kim Igor V. aka KimIV
+The morning range indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7417

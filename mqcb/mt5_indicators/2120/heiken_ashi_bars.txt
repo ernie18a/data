@@ -1,0 +1,9 @@
+The indicator uses analysis of values of Heiken Ashi Open and Heiken Ashi Close.
+Candlestick opening and closing values are calculated by
+Heiken Ashi
+algorithm, their directions are determined and only these directions of Heiken Ashi candlesticks are drawn on a price chart as colored bars.
+If the direction of trend of the Heicken Ashi candlesticks and of chart candlesticks match, the color of the bar is light, if opposite, the bar is dark.
+Figure 1. The Heiken_Ashi_BARS indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2120

@@ -1,0 +1,11 @@
+The real author:
+Dserg
+The Dserg - LinRegression Breakout indicator searches and displays consolidation areas and stable channel movement in the chart. If the linear regression channel for the last Nlin bars has the width of no more than 2*range points, then we draw a new channel. In the future you can work at the breakthrough.
+The arrows show the inputs, stops and targets. Please, pay attention that not a morning flat breakthroughs well but also a stable movement at the beginning of the American session or the news issues. This peculiarity can be used in trade. Recommended pairs are EURUSD, EURGBP, timeframe М15, default settings are exactly for them. The indicator works well in other timeframes up to a week.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 03.03.2010.
+Fig.1 Dserg - LinRegression Breakout
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1205

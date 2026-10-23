@@ -1,0 +1,10 @@
+Real author:
+SSL_NRTR
+NRTR type trend indicator based on exiting the channel formed by averaging High and Low of the price series. Apart from usual growth (green-pale green) and fall (red-pink) labels, it also features a flat signal (yellow).
+The indicator uses the SmoothAlgorithms.mqh library classes (copy it to <terminal_data_folder>\MQL5\Include). The detailed description of the classes is available in the article
+Averaging Price Series for Intermediate Calculations Without Using Additional Buffers
+.
+Fig. 1. SSL_NRTR
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22000

@@ -1,0 +1,28 @@
+Author of the idea
+:
+Iurii Tokman
+MQL5 code author
+:
+barabashkakvn
+The EA trades by a single iMA (Moving Average, MA) indicator. All indicator parameters are included to the inputs. Operation is performed at each tick: as soon as a signal is received and there are no open positions in the direction of a signal, the signal can be executed.
+Position opening decision logic
+Indicator data are taken from
+Current Bar (get MA)
+. Open, High and Low data are taken from
+Current Bar (get OHLC)
+. Conditions for being in the channel, where the upper border is calculated as "MA" plus
+Ceiling of the channel
+and the lower one is "MA" minus
+Floor of the channel
+.
+Levels
+Stop Loss
+and
+Take Profit
+parameters can be disabled. To do this, set "0". Keep in mind that if
+Stop Loss
+is "0", we may receive frozen loss-making positions that are never closed by the EA.
+Sample test on EURUSD M15:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21499

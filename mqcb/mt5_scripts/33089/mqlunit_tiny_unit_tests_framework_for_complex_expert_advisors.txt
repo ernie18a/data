@@ -1,0 +1,138 @@
+As a Java developer for 20 years I am used to writing more complex programs using test driven development technique. When I started writing more complex expert advisors I was missing a solid framework that supports me in doing unit tests in MQL5. Therefore I have developed my own simple yet straight forward solution, MQLUnit was born. It simplifies the test writing so that it can be integrated in everyones development process. I recommend to use it as soon you develop a more complex MQL5 program. What does "more complex" mean exactly? Whenever your code exceeds a certain number of code lines, you usually create components to cope with complexity. When you have multiple components its time to seriously think about a good test strategy to ensure the quality of your code.
+Feature list:
+Seperate setup, unit test and tear down functions
+Various test asserts
+Each test suite simply runs as Expert Advisor scripts in Strategy Tester
+Define exactly on which candle of the Strategy Tester chart each test case runs
+Visual feedback on failure and success (green and red chart)
+Immediate feedback as Strategy Tester chart comment during the test
+Test single functions and step through your code by adding break points
+Repeat the unit tests with specified same test data settings (Tools > Options > Debug/Profiling)
+Getting started
+Download the zip file and export it either to your MQL5/Include directory or directly into your expert advisor project. MQLUnit is made up of some classes you can use when writing your unit tests. Users of MQLUnit create an instance of
+CUnitTestSuite
+to compose and run their unit tests. The following snippet shows a simple test suite that executes a set-up function and a unit test.
+//+------------------------------------------------------------------+
+//|                                                          MQLUnit |
+//|                                   Copyright 2021, Niklas Schlimm |
+//|                             https://github.com/nschlimm/MQL5Unit |
+//+------------------------------------------------------------------+
+#property
+copyright
+"Copyright 2021, Niklas Schlimm"
+#property
+version
+"1.00"
+#include
+"MQLUnitTestLibrary.mqh"
+int
+m_movingAverageHandle;
+void
+OnInit
+() {
+   m_testSuite = ComposeTestsuite();
+};
+//+------------------------------------------------------------------+
+//| Simple test example on moving average indicator
+//+------------------------------------------------------------------+
+CUnitTestSuite* ComposeTestsuite()
+  {
+   CUnitTestSuite* testSuite =
+new
+CUnitTestSuite();
+   testSuite.AddSetupFunction(
+1
+, Test_Indicators_copyBuffer_setup);
+   testSuite.AddUnitTestFunction(
+2
+,Test_Indicators_copyBuffer);
+   testSuite.AddTearDownFunction(
+3
+, Test_Indicators_copyBuffer_tearDown);
+return
+testSuite;
+  }
+//+------------------------------------------------------------------+
+//| Setup method to initialize indicator
+//+------------------------------------------------------------------+
+void
+Test_Indicators_copyBuffer_setup()
+  {
+// initialize indicator
+m_movingAverageHandle=
+iMA
+(
+_Symbol
+,
+PERIOD_CURRENT
+,
+10
+,
+0
+,
+MODE_SMA
+,
+PRICE_CLOSE
+);
+  }
+//+------------------------------------------------------------------+
+//| Tear down and remove indicator
+//+------------------------------------------------------------------+
+void
+Test_Indicators_copyBuffer_tearDown()
+  {
+// remove indicator
+m_movingAverageHandle=
+NULL
+;
+  }
+//+------------------------------------------------------------------+
+//| Test on indicator
+//+------------------------------------------------------------------+
+CUnitTestAsserts* Test_Indicators_copyBuffer()
+  {
+   CUnitTestAsserts* ut =
+new
+CUnitTestAsserts(
+"Test_Indicators_copyBuffer"
+);
+double
+movingAverageData[];
+CopyBuffer
+(m_movingAverageHandle,
+0
+,
+1
+,
+10
+,movingAverageData);
+// check if data is copied to local array
+ut.IsTrue(
+__FILE__
+,
+__LINE__
+, movingAverageData[
+0
+] >
+0
+);
+return
+ut;
+  }
+//+------------------------------------------------------------------+
+Here is what you need to do:
+Create an mq5-file, let's say you call that file MyTestsuite.mq5 for example.
+Include the MQLUnitTestLibrary.mqh.
+Define your test object as a variable available to your test cases. What ever your test object is, in the simple example above we are testing indicators - for the sake of simplicity - so we have the handle defined as state available to the unit test. Sometimes you do not need state available to all your test cases, sometimes you do. That depends on the test subject.
+Write some unit test functions. These functions use your test object and also use CUnitTestAsserts class to make test asserts. Unit test functions return the instance of CUnitTestAsserts. In the example above Test_Indicators_copyBuffer is a unit test function.
+Sometimes you need to prepare some stuff for your test cases, you may want to define setup-Methods like
+Test_Indicators_copyBuffer_setup above.
+Then you need to glue your setup-Methods and unit test functions together to form a test suite. Write the ComposeTestsuite() method to register the unit test functions with the test suite. The ComposeTestsuite method returns the CUnitTestSuite. On the CUnitTestSuite::AddUnitTestFunction you register the test case. You can also specify exactly
+on which chart candle
+the test case should run. This is important when you test complex business rules. Using the
+CUnitTestSuite::AddSetupFunction you can also register the setup functions for your test cases. They can also run on opening of specific chart candles.
+Start the
+MyTestsuite.mq5 using the debugger in your MetaEditor. You start it like if you would test an expert advisor in the Strategy Tester Debugger.
+If everything works you can see the results of your test cases in the Strategy Tester journal, like shown in the picture below.
+That's all. You've defined your test case. You can use the simple framework to first write unit tests that define the interfaces of your program components. The result is a much more clean design and better testibility. And it should certainly improve the program quality. Another advantage is, that you can re-run all tests as regression test when you make changes to your program.
+If you have questions or suggestions, please get in contact. I'm happy to answer all questions and make improvements to the framework !!

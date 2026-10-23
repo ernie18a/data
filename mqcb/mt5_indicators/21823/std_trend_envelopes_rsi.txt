@@ -1,0 +1,5 @@
+This version of
+Trend Envelopes RSI
+indicator differs in one significant point: instead of using fixed value (5) for envelopes calculation, standard deviation (adjusted by multiplier) of the calculated RSI is used for envelopes calculation.
+Also, the RSI indicator used in this version can be pre-smoothed. That is done in order to avoid too much false signals. Pre-smoothing method used can be one of the basic averages types (SMA, EMA, SMMA or LWMA) or, if you use smoothing period less than or equal to 1, no smoothing will be used.
+The RSI value displayed is a sort of a "generic" RSI. It is an RSI of (RSI(High) + RSI(Low) + RSI(Close))/30. You can not find a similar RSI just by searching in the rest of the RSI types available.

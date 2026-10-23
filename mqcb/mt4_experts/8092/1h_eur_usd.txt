@@ -1,0 +1,1 @@
+The purpose of this EA is to find good entry in a well established trend. The EA was developed on 1 Hour EUR_USD graph, but I think that the similar concept can works in a good manner on the other crosses too. I’m happy about the drawdown.

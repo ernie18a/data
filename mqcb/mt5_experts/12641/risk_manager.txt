@@ -1,0 +1,11 @@
+The risk manager controls and limits the overall loss for the account, and the loss for every deal.
+It includes Trailing Stop for the account. When exceeding the preset values (in %) the open positions are closed by market orders. All pending orders are removed.
+A balance check is performed once a day when the date changes. It uses the trade server time, i. e. the time of the last quote.
+The EA has been tested on a real account for FORTS derivatives market and on a demo account MetaQuotes-Demo for FOREX.
+Expert Advisor parameters:
+Day Risk % - maximum percentage of loss for a day.
+Deal Risk % - maximum percentage of loss for every deal. Zero value disables this function.
+Trailing Stop % - trailing stop percentage for a day profit.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12641

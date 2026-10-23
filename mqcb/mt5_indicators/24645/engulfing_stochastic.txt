@@ -1,0 +1,9 @@
+We have all seen a currency pair enter the overbought or oversold territory and stay there for long periods of time. What this indicator does is gives you the emphasis. So if you are looking for reversals then you may want to take notice when oversold territory is entered into with a bullish engulfing candle or if the trend is your thing then check for bearish engulfing candles while entering oversold.
+This indicator will show a downward arrow when it detects a bearish engulfing candle while crossing over an overbought or oversold line. It will show an upward arrow if it detects a bullish candle while crossing the overbought or oversold line. A cross of the overbought or oversold line is made when the signal line of the stochastic crosses the line. If in the case of an overbought cross the signal line of stochastic was below the overbought and then crosses above it that is a valid cross, crosses in the other direction are ignored. It is similar, but opposite, for the oversold, the signal line must cross from above to below the oversold level.
+Interesting Inputs:
+OverSold level for defining the oversold level
+OverBought level for defining overbought
+symbol enter a symbol name here if you don't want to use the symbol that the chart is attached to.
+The timeframe is used to select periods that are possibly different from the one that the chart is attached to base the indicator on.
+More info on blog post at
+https://www.mql5.com/en/blogs/post/724674

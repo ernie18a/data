@@ -1,0 +1,54 @@
+The Expert Advisor opens a deal during a breakthrough (on candlestick closure) of the trend line, drawn between the peak of the Zig Zag and the two latest peaks for the Buy orders. For the Sell orders — mirrored.
+Filtering by the МА. For Buy the price has to be higher than the МА, for Sell - lower than the МА.
+Closure by crossing the МА.
+Cyclicity filter. The breakthrough has to take place in the second half of the cycle from the first to the second vertex, overlaid on the first one to the right.
+Prohibition of trading on Friday after a specified time and closing the open deals, if their profit is less than set in the options.
+Breakeven and Trailing Stop.
+For more details see here:
+http://strategy4you.ru/prostaya-strategiya-foreks/strategy-forex-na-mazi.html
+Parameters:
+Parameter
+Description
+lot
+Lot
+stop_loss
+Stop Loss
+take_profit
+Take Profit
+noloss
+Breakeven (disabled if set to 0)
+noloss_pips
+Level to set Breakeven
+trall
+Trailing Stop (disabled if set to 0)
+trall_start
+Profit level to set Trailing Stop
+cycle_filter
+Cyclicity filter
+ma_filter
+Filter by the МА
+close_ma_cross
+Closure by crossing the МА
+friday_time
+Trade ending time on Friday
+friday_close_profit
+Profit, less than which the deals will be closed on Friday (in points)
+Indicators parameters
+zz_InpDepth
+The ZigZag indicator parameters
+zz_InpDeviation
+zz_InpBackstep
+ma_period
+МА period
+ma_method
+МА method
+ma_price
+МА price
+Other parameters
+magic
+Magic number
+CommentSize
+Number of log lines at the top left corner of the window (0 - disable this function)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14072

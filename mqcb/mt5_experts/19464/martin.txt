@@ -1,0 +1,38 @@
+Author of the idea
+:
+Dmitriy Epshteyn
+,
+author of the mq5 code
+:
+barabashkakvn
+.
+Warning! High risks!
+A trading system based on the Martingale technique. Opening of new positions can be limited in time, but the EA always controls position closing based on the total profit, without limitations on working hours.
+Input Parameters
+Use time
+- enable/disable the trading time filter;
+Start hour
+- operation start hour;
+End hour
+- operation end hour;
+Lot multiplier
+- lot increase ratio;
+Number of multiplications
+- the number of consecutive lot increases;
+Start position
+- the type of the starting position (Buy or Sell);
+Minimum profit for close all
+- minimum profit, at which all positions will be closed;
+Lots
+- starting lot;
+Stop Loss (in pips)
+- Stop Loss value;
+Take Profit (in pips)
+- Take Profit value;
+magic number
+- Expert Advisor identifier.
+When applying the martingale system, it would be a good practice to withdraw money from the trading account from time to time. It even allows obtaining a considerable profit before the EA loses all money.
+Parameters need to be optimized for each symbol and each timeframe.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19464

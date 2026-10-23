@@ -1,0 +1,12 @@
+The Expert Advisor Exp_BullsBearsEyes based on signal entry taken from the ColorBullsBearsEyes indicator. A signal to perform a deal is formed at bar closing when the average line of the indicator breakthroughs, histogram direction or signal line change and also overbought/oversold zones or the exit from the boundaries of these zones breakthrough (depending on the options selected in the input parameter Mode).
+The ColorBullsBearsEyes indicator was assembled especially for using in the Expert Advisor and to this end all signal entry determine algorithms were placed in this indicator for a maximum simplicity of the Expert Advisor code. Trade signals themselves formed by the indicator are placed in the SignBuffer[] indicator buffer under a second number. The ColorBullsBearsEyes indicator is a modification of the
+BullsBearsEyes
+indicator.
+Place the ColorBullsBearsEyes.ex5 compiled file to the terminal_data_folder\MQL5\Indicators.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. The instances of history of deals in the chart.
+Testing results for 2011 at USDCHF H4:
+Fig. 2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1103

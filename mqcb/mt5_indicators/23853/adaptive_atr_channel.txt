@@ -1,0 +1,6 @@
+Theory :
+This indicator is showing an example how an adaptive ATR (originally published here :
+Adaptive ATR
+) can be used within some other indicator. As an addition, not only the ATR is adaptive in this indicator but the main value is calculated as adaptive EMA using the same Kauffman's efficiency ratio for adapting
+Usage :
+It can be used the similar way as similar indicators (Keltner channel and similar channel indicators ...)

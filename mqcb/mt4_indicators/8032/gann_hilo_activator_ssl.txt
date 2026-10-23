@@ -1,0 +1,3 @@
+Author:
+Kalenzo
+The unpretentious indicator, will approach beginners in mastering MQL4.

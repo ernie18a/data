@@ -1,0 +1,21 @@
+Author of the idea
+:
+Andrey
+,
+author of the mq5 code
+:
+barabashkakvn
+.
+The Expert Advisor checks two parameters: the profitability of the last closed trade and the account balance.
+Attention: works only on "EURUSD"!
+Input Parameters
+Stop Loss (in pips)
+- Stop Loss value;
+Take Profit (in pips)
+- Take Profit value;
+magic number
+- unique identifier for the EA.
+Testing on EURUSD,M30
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19968

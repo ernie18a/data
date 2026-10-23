@@ -1,0 +1,7 @@
+Theory:
+BB stops is using Bollinger bands as a criteria for determining if the trend is changing as well as determining the trend direction. The usual way how it finds out the stop lines is by calculating a risk based on deviation. But, in many cases, one single proposed stop line is not enough.
+This version:
+It is calculating 3 stop lines immediately and proposes the one with the highest risk as the "ultimate" stop line. The two additional stop lines can be used as lower risk stops or as an early warning for market changes. Also, instead of using some of the standard averages, it is using JMA (Jurik Moving Average) for averaging method and instead of using standard deviations for trend and risk calculations, it is using fast EMA deviation instead - which all makes it faster to react to market changes and produces smoother results.
+Usage:
+You can use the color change as an indicator of current trend direction, and you can use any of the stop lines as stop loss for your orders.
+Some experimenting with parameters is strongly advised before usage for real trading decisions.

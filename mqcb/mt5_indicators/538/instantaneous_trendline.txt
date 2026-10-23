@@ -1,0 +1,11 @@
+Real author:
+Witold Wozniak
+The indicator is inspired by John Ehlers' article
+"Using The Fisher Transform"
+published in November 2002 in the
+"Technical Analysis Of Stock & Commodities"
+magazine.
+The indicator shows buy and sell signals. The simplest trading system for working with the indicator consists of using the moving averages crossing for the market entry and exit.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/538

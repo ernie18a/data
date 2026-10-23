@@ -1,0 +1,1 @@
+Custom Linear Regression Tool. Values of LR line and Support and Resistance lines are in buffers.

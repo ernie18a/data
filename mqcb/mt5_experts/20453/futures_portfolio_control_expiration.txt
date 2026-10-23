@@ -1,0 +1,26 @@
+The Expert Advisor demonstrates the use of
+functions
+from the
+Current Next Futures
+script, which enables automatic switch to a new futures before expiration. The EA opens a position of the appropriate volume on three instruments, which are specified in input parameters. Negative volume values are used for sell positions, positive ones are for buy positions. A few hours before the expiration of the futures (specified in
+hours_before_expiration
+), the EA closes the position and opens a new one on the new futures symbol.
+Input Values
+Symbol1
+- a short name of the first symbol;
+Symbol2
+- a short name of the second symbol;
+Symbol3
+- a short name of the third symbol;
+Lot1
+- volume for the first symbol;
+Lot2
+- volume for the second symbol;
+Lot3
+- volume for the third symbol;
+hours_before_expiration
+- how many hours before expiration the EA should switch to a new futures symbols.
+Warning: The Expert Advisor has not been tested in real trading. It is designed for use in the Strategy Tester.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20453

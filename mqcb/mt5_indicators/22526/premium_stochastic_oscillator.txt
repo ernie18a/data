@@ -1,0 +1,4 @@
+Background :
+The PSO (Premium Stochastic Oscillator) was first introduced by technical analyst Lee Leibfarth in the August 2008 issue of the journal Technical Analysis of Stocks & Commodities.
+Usage :
+You can use the color changes when the PSO crosses trigger lines as signals : signals for entries as well as signals for early warnings of exits

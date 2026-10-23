@@ -1,0 +1,26 @@
+Broker Session Schedule Inspector MT5 reads the actual weekly trading-session schedule supplied by your connected broker. It does not rely on fixed London, New York, or other global-session presets.
+Run It to Inspect
+The current chart symbol.
+A comma-separated custom symbol list.
+All visible Market Watch symbols.
+For each symbol, the script:
+Enumerates every session returned by SymbolInfoSessionTrade .
+Reports whether the current server time falls within a scheduled session.
+Finds the next opening or closing transition.
+Includes the broker symbol’s trade mode and synchronization status.
+An optional timestamped CSV snapshot can be written to the terminal’s Common Files folder. Sessions that cross midnight are labeled with (+1d) .
+If the broker does not provide schedule data, the script reports SCHEDULE_UNAVAILABLE instead of inventing fallback hours.
+Inputs
+InpSymbolScope : Select the current chart, Market Watch, or a custom symbol list.
+InpCustomSymbols : Specify comma-separated symbols for custom-list mode.
+InpExportCSV : Enable or disable the Common Files CSV snapshot.
+InpFilePrefix : Set a sanitized filename prefix.
+InpMaximumSessionsPerDay : Set the defensive maximum used while enumerating broker sessions.
+Usage
+Attach the script to any MT5 chart.
+Select the desired symbol scope.
+Read the concise chart summary and Experts log.
+If CSV export is enabled, retrieve the file from the terminal’s Common Files location.
+Important Information
+This is a diagnostics and documentation script. It does not place, modify, delete, or close trades. It also does not generate entry signals or promise trading results.
+Schedule availability and accuracy depend on the connected broker’s symbol specification.

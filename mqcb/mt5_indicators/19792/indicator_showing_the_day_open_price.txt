@@ -1,0 +1,11 @@
+Daily Open Line. The indicator draws a line from the beginning of the day on charts with the timeframe of H1 or below. The day beginning hour can be set in input parameters.
+It has only one input parameter:
+Hour of daily open
+- day beginning hour. The daily open price as of this hour will be shown.
+Fig.1 Day beginning hour = 0, H1
+Fig.2 Day beginning hour = 0, M30
+Fig.3 Day beginning hour = 6, H1
+Fig.4 Day beginning hour = 6, M30
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19792

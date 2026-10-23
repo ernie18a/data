@@ -1,0 +1,1 @@
+Typical Unassuming Volumes indicator, but divided by spread. I removed the color changing, as it became useless after dividing by spread. Edit: ability to use Spread or not. To be used in EA building experimentation and have another option for optimization. Is it useful? Who knows..

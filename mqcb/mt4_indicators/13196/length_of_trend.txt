@@ -1,0 +1,5 @@
+The indicator shows the length of the trend line in points.
+The indicator adds the information as the number of points to all the trend lines that already are placed on the chart, or soon will be. By moving the line, it is possible to measure the trends.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13196

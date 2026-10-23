@@ -1,0 +1,6 @@
+Total Power Indicator
+in the semaphore-arrow form, generating alerts and sending emails and push notifications.
+Fig1. Total_Power_Indicator_Signal
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18156

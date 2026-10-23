@@ -1,0 +1,4 @@
+This EA alerts you the Depth per inch of your monitor. This is very important code for this trying to make your panels work on multiple screen resolution.
+Generally a panel works only for few resolutions with default steins. However a panel must work for all monitor resolutions.
+In order to achieve this one must use DPI and set the dimensions of the panel according to DPI.
+The code along with helps you achieve the same.

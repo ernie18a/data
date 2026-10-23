@@ -1,0 +1,27 @@
+CCI OBOS Crossover signal indicator applies
+Overbought/Oversold
+(OBOS) and standard CCI indicators. The indicator places signal labels to the price chart when crossing these indicator lines.
+There are five inputs:
+OBOS period
+- OBOS calculation period
+CCI period
+- CCI calculation period
+Use OB/OS filter
+- use the filter by overbought/oversold levels (Yes/No)
+Overbought
+- overbought level
+Oversold
+- oversold level
+Signals:
+When crossing the Up OBOS line by CCI upwards, the
+green
+label is placed on the candle open price
+When crossing the Up OBOS line by CCI downwards, the
+red
+label is placed on the candle open price
+Filter:
+If Down OBOS line is below the oversold level, only buy labels are placed
+If Up OBOS line exceeds the overbought level, only sell labels are placed
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22189

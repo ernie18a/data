@@ -1,0 +1,4 @@
+PricePosition indicator provides the position of price in the point of angle when the price rises above (BUY) or falls below the angle section line (SELL). Indicator also shows current price (OHLC) and alerts when the angle direction is changed.
+Update 1 version "2.00" 18/10/2016
+Added display options for corner position, at the LeftHand or at the RightHand
+Added options to Turn On or Turn Off Alerts

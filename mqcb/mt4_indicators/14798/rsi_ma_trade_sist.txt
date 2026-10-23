@@ -1,0 +1,18 @@
+A signal indicator. It is based on the analysis of two moving average indicators and one RSI indicator.
+Description of the indicator settings:
+FastEMA — The averaging period for the indicator calculation — fast Moving Average.
+SlowEMA — The averaging period for the indicator calculation — slow Moving Average.
+RSIPeriod — Averaging period for the RSI calculation.
+shift — index of obtained value from the indicator buffer (shifting back by specified periods relative to the current bar). Recommended value is 1, at 0 there will be a lot of false signals, as the signals will be formed on the current unfinished bar.
+Alerts — show a dialog box containing user data.
+Text_BUY — custom user-defined text to display the buy signal.
+Text_SELL — custom user-defined text to display the sell signal.
+Send_Mail — sending an email using an address specified on the Email tab of the options window.
+subject — custom user-defined text to use as the email header.
+Send_Notification — sends push notifications to the mobile terminals, whose MetaQuotes IDs are specified in the "Notifications" tab.
+This indicator was used to create the
+ea_RSI_MA_Trade_Sist
+trading robot.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14798

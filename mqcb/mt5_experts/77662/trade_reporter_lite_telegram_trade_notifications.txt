@@ -1,0 +1,15 @@
+Trade Reporter Lite posts your MetaTrader 5 trades to a Telegram chat as they happen. It never opens, closes or modifies a trade.
+What it posts
+Open: side, symbol, entry, stop and target with their distance in pips, and lot size.
+Close: pips, R-multiple measured from the first stop, result in account currency, entry to exit, and time held.
+It watches every position on the account, manual or from any EA. A restart does not re-announce positions that are already open. Failed sends retry with back-off (5 s, 15 s, 45 s, 135 s). A small box on the chart shows sent, queued and failed counts, with any error in plain words.
+Inputs
+Telegram bot token: from @BotFather.
+Chat ID: @yourchannel for a public channel, or the numeric chat id.
+Line added above every message: optional, e.g. your channel name.
+Setup
+In Telegram, message @BotFather, send /newbot and copy the token.
+Send your new bot any message, or add it to your channel as an admin. For a private chat, open api.telegram.org/bot followed by your token and /getUpdates in a browser, and copy the number after "chat":{"id":
+In MetaTrader: Tools > Options > Expert Advisors > tick "Allow WebRequest for listed URL" and add https://api.telegram.org (press Enter after typing it).
+Attach Trade Reporter Lite to any chart and paste the token and chat ID. If you added the address while it was already running, reload it once (F7 > OK).
+Works on any symbol and timeframe, on hedging and netting accounts. In the Strategy Tester WebRequest is not available, so messages are printed to the journal as TRL[tester].

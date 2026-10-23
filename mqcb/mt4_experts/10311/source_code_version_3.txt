@@ -1,0 +1,10 @@
+This uses some common technical indicators. Run this as
+long
+on
+EURUSD M15
+from
+01/16/2011 till whenever
+you download it.
+100% trades profitable with about 100% profit.
+Small number of trades are expected. Hence dont expect a trade right away. Maybe it wont trade for months.. But when it does it tends to make profit
+Start testing with 1000USD for better results.

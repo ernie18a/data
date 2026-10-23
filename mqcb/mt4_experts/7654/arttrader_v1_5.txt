@@ -1,0 +1,2 @@
+Author: Arthur Matteson's
+Parameters give a 43.5% profit on "Every tick" for EUR/USD  from 7/13/2006 to 9/12/2006 (MT4 release 197, H1 timeframe)

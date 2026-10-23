@@ -1,0 +1,7 @@
+1. Shows moving Last Price on Bid Line + Symbol Name + Countdown of candle closing + Timeframe
+2. Last 24 hours percentage change
+3. Time based on Input selection to the Price Line : Local, GMT or Current and current Symbol Number / total symbols from Marketwatch (Make sure you select current time which is on your chartbefore using)
+4. Color for Bear and Bull can be set from indicator settings
+5. Shows Current High and Low text on visible area of chart and scale up and down chart from mouse scroll button ( code taken from forum by author : Lorentzos Roussos )
+6. Use arrow keys left and right to change chart symbol
+Update: Added alternative version for Renko charts.

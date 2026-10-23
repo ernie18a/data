@@ -1,0 +1,2 @@
+Author: Luis Guilherme Damiani
+Like MA cross but this indicator shows more valid signal. Buy and Sell Signal appears when it cross each others.

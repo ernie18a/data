@@ -1,0 +1,27 @@
+This indicator is based on
+code
+from the original author
+Iurii Tokman
+. I translated it from Russian and made the following improvements:
+Added trading alerts (Alerts in MetaTrader 4 terminal, Email notifications, Push notifications).
+Inputs to enable/disable each alert type separately.
+Instead of only Momentum, implemented a drop-down list of indicators you can choose from.
+Minor optimizations and fixes.
+Inputs
+MName
+- indicator name.
+MPeriod
+- indicator period.
+MLevel
+- indicator level.
+MAppliedPrice
+- applied price for Momentum, CCI or RSI.
+Alerts
+- enable/disable alerts.
+Email
+- enable/disable Email notifications.
+Push
+- enable/disable Push notifications.
+Recommendations
+Employ other means of fundamental and technical analysis, do not rely solely on this indicator to make trading decisions.
+Thank you for reading!

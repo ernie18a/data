@@ -1,0 +1,21 @@
+The indicator is displayed on a chart as a two-color line.
+If the current indicator value is lower than its previous value, the indicator line is red.
+If the current indicator value is higher than its previous value, the indicator line is blue.
+Also the indicator includes a filter allowing to smooth the market noise.
+Input Parameters
+Range
+– period.
+Fast Period
+– fast EMA period.
+Slow Period
+– slow EMA period.
+Count Bars
+– the number of bars on which the indicator is displayed.
+Filter
+– the filter allowing to smooth market noise.
+This is the MetaTrader 5 version of the indicator (the MetaTrader 4 version is available at this
+link
+).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18317

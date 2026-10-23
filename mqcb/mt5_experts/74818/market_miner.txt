@@ -1,0 +1,125 @@
+This Expert Advisor is a multi-strategy system broken into
+four independent trading subsystems (Cycle 1 to Cycle 4)
+. Each cycle operates with its own Magic Number, indicators, entry triggers, and unique money management parameters.
+1. Cycle 1 Logic: Multi-Indicator Confluence
+Cycle 1 relies on a composite filter combining up to three Moving Averages (MA), a Relative Strength Index (RSI), and a Williams’ Percent Range (WPR).
+Entry Triggers
+A core variable c1_signal acts as a binary register to ensure indicators do not conflict. If indicator A gives a Buy signal, c1_signal becomes 1 . If indicator B then gives a Sell signal, c1_signal resets to 0 to invalidate the trade.
+Moving Average 1, 2, and 3:
+Buy Condition:
+The previous bar closes above the MA, and the current bar opens above the MA (
+$Close[1] > MA$
+and
+$Open[0] > MA$
+).
+Sell Condition:
+The previous bar closes below the MA, and the current bar opens below the MA (
+$Close[1] < MA$
+and
+$Open[0] < MA$
+).
+RSI Filter:
+Buy Condition:
+RSI falls below the oversold threshold ( RSI_Buy_Level , e.g., 30).
+Sell Condition:
+RSI rises above the overbought threshold ( RSI_Sell_Level , e.g., 70).
+WPR Filter:
+Buy Condition:
+WPR drops below WPR_Buy_Level (e.g., -80).
+Sell Condition:
+WPR rises above WPR_Sell_Level (e.g., -20).
+Signal Processing
+Reverse Signals Rule:
+If Reverse_Signals = true , a final Buy signal ( 1 ) flips to a Sell signal ( 2 ), and vice versa.
+One Trade Per Bar Constraint:
+The EA checks if the current open price matches c1_open_price . If it does, a position has already been handled on this bar, and further executions are blocked until a new bar opens.
+2. Cycle 2 Logic: Envelopes Trend Following
+Cycle 2 uses a classic dual-band Envelopes indicator to map out structural market breakouts.
+Buy Trigger:
+The previous bar closes above the Upper Envelope band, and the current bar opens above it (
+$Close[1] > UpperBand$
+and
+$Open[0] > UpperBand$
+). This assumes a strong bullish momentum breakout.
+Sell Trigger:
+The previous bar closes below the Lower Envelope band, and the current bar opens below it (
+$Close[1] < LowerBand$
+and
+$Open[0] < LowerBand$
+), indicating a bearish breakdown.
+Signal Flips:
+If Reverse_Signals2 = true , it flips breakouts into fakeout traps (fades the breakdown/breakout).
+3. Cycle 3 Logic: Envelopes Mean Reversion
+Cycle 3 tracks identical parameters to Cycle 2 but reverses the default baseline execution logic to target mean reversion (fading extremes).
+Buy Trigger:
+The previous bar closes above the Upper Envelope band, and the current bar opens above it.
+Logic:
+The code assigns a
+Sell
+signal here because it assumes the asset is overextended and will pull back inside the bands.
+Sell Trigger:
+The previous bar closes below the Lower Envelope band, and the current bar opens below it.
+Logic:
+The code assigns a
+Buy
+signal here, betting on an immediate bounce from oversold territory.
+4. Cycle 4 Logic: Envelopes Point-Distance Breakout
+Cycle 4 introduces a hard volatility/pip distance constraint to the Envelopes indicator, acting as an aggressive breakout system.
+Buy Trigger:
+The distance between the lower envelope band and the previous close is greater than Distance in points,
+AND
+the distance between the lower envelope band and the current Bid price is also greater than Distance (
+$LowerBand - Close[1] > Distance$
+and
+$LowerBand - Bid > Distance$
+).
+Sell Trigger:
+The distance between the previous close and the upper band, as well as the current Bid price and the upper band, both exceed Distance (
+$Close[1] - UpperBand > Distance$
+and
+$Bid - UpperBand > Distance$
+).
+5. Exit, Basket Closure & Risk Logic
+The exit management architecture does not use standard per-position Stop Loss (SL) or Take Profit (TP) orders. Instead, it relies on a
+Global Account Equity Basket Tracking System
+mapped per cycle.
+Milestone Capturing
+When a cycle’s position count transitions from 0 to 1 (tracked via c1_Buycount == 0 or c1_Sellcount == 0 ), the EA benchmarks the exact baseline equity of the trading account at that moment:
+$$\text{Baseline Equity} = \text{AccountInfoDouble}(\text{ACCOUNT\_EQUITY})$$
+Using this baseline, it maps static global targets for that specific trading direction:
+Take Profit Target:
+If target_amount is specified, it assigns
+$\text{Baseline} + \text{target\_amount}$
+. Otherwise, it uses a percentage formula:
+$$\text{Target Price} = \text{Baseline} + \left(\frac{\text{Baseline} \times \text{target\_percent}}{100}\right)$$
+Stop Loss Target:
+Uses a percentage drawdown constraint relative to the captured snapshot equity:
+$$\text{Risk Price} = \text{Baseline} - \left(\frac{\text{Baseline} \times \text{Account\_Risk\_percent}}{100}\right)$$
+Dynamic Basket Verification
+On every tick, the EA calculates the running total of real-time floating profit/loss, swaps, and commissions for all active positions matching that specific Cycle’s Magic Number and trade type ( MyAccountProfit_Buy or MyAccountProfit_Sell ).
+$$\text{Current Portfolio Value} = \text{Baseline Equity} + \text{Floating Profit/Loss}$$
+Exit Execution
+If
+$\text{Current Portfolio Value} \ge \text{Target Price}$
+(Profit Target Hit)
+OR
+$\text{Current Portfolio Value} \le \text{Risk Price}$
+(Max Risk Ceiling Breach):
+The EA calls ClosePositions() .
+It loops backward through all market positions, filtering by matching
+Magic Number
+and
+Position Type
+.
+Every single correlated trade is instantly liquidated via a market order.
+The direction’s cycle tracker is reset back to 0 , arming the EA to establish a completely fresh benchmark snapshot on the next structural indicator signal.
+6. Sizing Logic (Money Management)
+The volume calculations are performed dynamically by the getLots(int cycle) routine:
+Fixed Lotting:
+If AutoLots is false , it returns the baseline hardcoded lot size setting (e.g., LotSize = 0.01 ).
+Dynamic Risk Scaling:
+If AutoLots = true , the system automatically adjusts trade volume based on free margin:
+It queries the exact margin required to handle a standard 1.0 lot transaction on the current asset using OrderCalcMargin .
+It projects an affordable investment capacity using the formula:
+$$\text{Projected Volume} = \frac{\text{AccountFreeMargin} \times \left(\frac{\text{Lots\_Risk}}{100}\right)}{\text{Margin Per 1.0 Lot}}$$
+The final result is bounded against broker-enforced constraints using MathMin and MathMax to ensure it falls precisely within the valid range between SYMBOL_VOLUME_MIN and SYMBOL_VOLUME_MAX , rounded cleanly to the nearest exchange asset step size ( SYMBOL_VOLUME_STEP ).

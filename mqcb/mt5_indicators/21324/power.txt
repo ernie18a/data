@@ -1,0 +1,23 @@
+Oscillator Power displays the power of bulls and bears, as well as their ratio.
+It has two configurable parameters:
+Period
+- calculation period
+Range
+- calculation range
+Calculations:
+Power = 100 * (BullPower - BearPower)
+where:
+BullPower = SMA(Bulls, Range)
+BearPower = SMA(Bears, Range)
+If High > EMA
+Bulls = 1
+Otherwise
+Bulls = 0
+If Low < EMA
+Bears = 1
+Otherwise
+Bears = 0
+EMA = EMA(Close, Period)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21324

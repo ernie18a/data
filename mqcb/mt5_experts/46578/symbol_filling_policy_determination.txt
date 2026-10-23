@@ -1,0 +1,5 @@
+Symbol Input (symbol): The function takes as input the symbol of a financial instrument for which the filling policy is to be determined.
+Obtaining the Filling Policy Type (filling): The function uses SymbolInfoInteger to retrieve information about the filling policy for the provided symbol. This information is stored in a variable named filling as a numerical value.
+Comparison of Filling Policies: Next, the numerical value (filling) is compared with predefined constants representing different filling policies, such as "Fill or Kill" (SYMBOL_FILLING_FOK), "Immediate or Cancel" (SYMBOL_FILLING_IOC), and "Return" (SYMBOL_FILLING_RETURN).
+Returning the Filling Policy Type: The function determines the filling policy type based on the comparison. If it matches "Fill or Kill," it returns ORDER_FILLING_FOK. If it matches "Immediate or Cancel," it returns ORDER_FILLING_IOC. If it doesn't match either, it returns ORDER_FILLING_RETURN.
+In summary, this function allows you to retrieve and return the filling policy of a symbol in MetaTrader 5. This is useful for making trading decisions based on the filling policy of a specific financial instrument.

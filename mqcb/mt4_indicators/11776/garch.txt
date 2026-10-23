@@ -1,0 +1,7 @@
+This a little contribution for the wonderful community. I inspired my indicator by Edgar Peters work. It is a fractal volatility indicator based on
+Bollerslev Model
+. ARMA and ARCH models could help to understand forecast.
+The indicator grows when the volatility of the market is high. The changes or variation can be predicted as well. Almost you have greater value of indicator when up or down tendency. All critics are accepted to improve the indicator.
+I added an improvement to better results ()
+In version 1.1 you can reverse GARCH (1,1) or just leave as default behavior. If you've already downloaded it, re-download it to test the improvements
+Version 1.2 is better, you can customize more parameters. I use this new code and result is so good.

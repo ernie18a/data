@@ -1,0 +1,10 @@
+Trend Trail displays possible TrailingStop level by trend.
+It has two configurable parameters:
+ATR period
+- ATR calculation period
+Multiplier
+- sensitivity ratio
+It can be used as a recommended position stop loss level
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21418

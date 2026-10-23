@@ -1,0 +1,27 @@
+Graphic Panel Contest Submission.
+Code:
+Source code and presentation is attached as ZIP file.
+Hints:
+1) Setting take profit and stop loss levels can simply be done by dragging BLUE line (suggestedEntryLine). TP and SL is set automatically depending on Action type (BUY or SELL) and entered into S/L and T/P fields. It can be corrected by dragging blue line once more, or simply by putting a new value inside S/L or T/P edit fields (double click to edit, Enter key to confirm changes).
+2) MTF indicator module uses indicator values from timeframes M1 to MN1. You may observe that not all rectangles display indicator values when you run this module on fresh MT5 installation. This completely normal and is due to to the fact that history data is downloaded by the terminal. After all history is downloaded module displays all values correctly and indicator values are updated on tick by tick basis (this may serve as reading of the 'mood' of the market).
+3) Points of Interest list is built from:
+any Horizontal lines;
+any Fibonacci retracement levels;
+any PIVOT points (put by PIVOT module).
+When you add additional lines when Trade Plan is opened it is sufficient to press 'Refresh' button to populate list with new objects.
+4) Fibonacci calculator remembers lines in different timeframes, it is easy to switch between timeframes and choose which pivot to display. The calculator is based on web-based calculator available at
+http://www.mypivots.com/calculators/pivot-point-calculator.aspx
+5) Please see videos in Demos section to see panel main features.
+Demos:
+https://www.youtube.com/watch?v=1qz8Gb--Y68
+https://www.youtube.com/watch?v=ztVCPwnrUlQ
+https://www.youtube.com/watch?v=BDzjKK4ixzk
+https://www.youtube.com/watch?v=Iv84l6eq6Rk
+https://www.youtube.com/watch?v=rQeRAMMqkQ0
+1.
+2.
+3.
+4.
+;5.
+Best Regards,
+Investeo

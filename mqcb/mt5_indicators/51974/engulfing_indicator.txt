@@ -1,0 +1,3 @@
+This is an indicator that helps identify Engulfing candle patterns.
+The red arrow represents a Bearish Engulfing, while the green arrow represents a Bullish Engulfing.
+If you want to create Indicators, Scripts, or Expert Advisors, please contact me.

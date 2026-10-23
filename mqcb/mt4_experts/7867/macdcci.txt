@@ -1,0 +1,2 @@
+This is a simple EA, uses CCI and MACD algorithem it does not loss on the long run and it can be edited to do much better, i will leave that up to all of you .
+Hazem.

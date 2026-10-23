@@ -1,0 +1,13 @@
+The real author:
+Svinozavr
+The Bollinger Bands indicator with filtering of front and damping. The very idea of ​​such a filtering is most fully presented by the author
+here
+.
+Lagging indicator (it is represented in the figure by the red lines) is asymmetric in relation to the falling and the growing market! The very idea of drawing the indicator intends to its use on specific asymmetric markets. For example, in the stock market.
+This indicator was first implemented in MQL4 and published in
+Code Base
+on 23.10.2009.
+Fig.1 The BandsFBA indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1226

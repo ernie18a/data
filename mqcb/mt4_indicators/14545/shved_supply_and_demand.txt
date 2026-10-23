@@ -1,0 +1,6 @@
+It shows the number of zone retests.
+It shows the zones that were support but became resistance and vice versa.
+Some additions were made by me. It is possible to toggle on/off the weak zones. Fixed to work on the 600+ terminal builds. The prices closest to the zones are located in the buffers, which makes the indicator usable in Expert Advisors.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14545

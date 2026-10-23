@@ -1,0 +1,34 @@
+Indicator: Constant Range Size
+Detects and displays the fixed size of the Constant Range.
+Fast and easy identification of chart parameters facilitates trading efficiency.
+Note:
+This indicator is intended for use with
+Constant Range (Synthetic) Bars/Candles,
+not Standard Bars/Candles.
+Constant Range Candles and Charts are also referred to as Range Bars (RB) and Range Bar Charts.
+Constant Range Bars/Candles all have the same fixed range value from high to low.
+Note for newbies:
+A Constant Range offline charts is generated from a Scripts, or Indicators, or Expert Advisor running on a M1 chart.
+Abundant additional information is available on the internet.
+Constant Range size calculation: High - Low.
+Gold. M2(offline): 1234.9 - 1232.4 = 2.5
+Problem:
+No Ticks !
+Often the Constant Range Offline Chart is created by an EA.
+EAs rely on ticks and when markets are closed there are no ticks.
+With no ticks Constant Range Charts
+will not update to new Range Sizes and other inputs.
+Solution
+:
+a Tick Generator
+- FREE -
+HERE
+. Also helps when testing in quiet - tick scarce - markets.
+Parameters
+Text - CR;
+Font_Color - DodgerBlue;
+Font_Size - 11;
+Font_Bold - true;
+Left_Right - 25;
+Up_Down - 150;
+Corner - 1;

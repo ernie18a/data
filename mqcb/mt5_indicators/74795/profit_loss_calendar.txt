@@ -1,0 +1,14 @@
+FoxWave P/L Calendar — Monthly Profit & Loss at a Glance
+FoxWave P/L Calendar by Fox Wave turns your raw account history into a color-coded monthly calendar, so you can see at a glance which days made money, which days lost, and by how much — without opening a single report.
+Key features:
+Full month calendar grid (Mon-Sun) built directly from your account's closed-trade history
+Color-coded daily cells — brighter green for bigger profit days, brighter red for bigger loss days, so the visual intensity itself tells the story
+Automatic currency detection — displays P/L in your account's actual deposit currency (USD, EUR, GBP, CZK, JPY, or any other)
+One-click month navigation — browse back through any previous month or forward again
+Instant summary bar: total P/L for the month, number of profit/loss days, and your single best and worst day
+Today's cell is automatically highlighted so you always know where you are in the month
+Grid automatically resizes to the exact number of weeks a given month needs — no empty rows wasting space
+Optional single-symbol filter, or leave blank to track your whole account across every pair you trade
+Clean dark panel design, fully repositionable, refreshes automatically on a configurable timer
+Lightweight — reads history only periodically, not on every tick, safe to run alongside other tools
+Perfect for traders who want a fast, visual read on their monthly consistency — spotting winning streaks, isolating the day a big loss happened, or simply keeping an honest scoreboard of how the month is going.

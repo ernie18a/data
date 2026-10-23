@@ -1,0 +1,3 @@
+Description of the indicator
+A candlestick chart without shadows is built in the subwindow. Please note that the same 'Custom Moving Average' indicator has been added to the main window and subwindow
+Pic. 1. Candles without shadows

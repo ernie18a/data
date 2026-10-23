@@ -1,0 +1,21 @@
+TVB (True Value of Bar) gives an idea of how healthy the market is. Rex Oscillator is the moving average of the TVB values.
+The oscillator Rex line becoming positive on the bearish market indicates the up-reversal.
+Similarly, the negative value of the line on the bullish market indicates its down-reversal.
+Moreover, the oscillator Rex and Signal lines can be used as warning signal.
+The indicator has four configured parameters:
+Rex period
+- oscillator line calculation period;
+Rex method
+- oscillator line calculation method;
+Signal period
+- signal line calculation period;
+Signal method
+- signal line calculations method.
+Calculations:
+Rex = MA(TVB, Rex period, Rex method)
+Signal = MA(Rex, Signal period, Signal method)
+where:
+TVB = 3*Close - (Low + Open + High)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21247

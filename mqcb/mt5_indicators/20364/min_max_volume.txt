@@ -1,0 +1,8 @@
+A simple indicator, which marks candlesticks with the maximum and minimum volume over a given period on a price chart.
+It has one input parameter:
+Period
+- indicator calculation period.
+A candlestick having the maximum volume for a given period, is marked with a signal dot above the candlestick, the one having the minimum volume is marked with a dot below.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20364

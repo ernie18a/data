@@ -1,0 +1,31 @@
+Advisor was created at the request of one of the members of our forum (see details in
+Russian
+).
+The Expert Advisor has lot increasing feature, but it cannot be called as a "pure" Martingale, this EA really comes out flat, that Martin was not given to many.
+Please express your thoughts here doubts and options for improvement. But do not create statements like "Martin's bad." without without checking the EA at least in the demo and understanding of its work.
+Inputs:
+extern
+int
+Step =
+10
+;
+extern
+double
+ProfitClose =
+1.0
+,
+lot =
+0.01
+;
+extern
+int
+slippage =
+3
+/ / The maximum deviation of the price
+for
+market orders (orders to buy or sell).
+magic =
+0
+, / / ​​magic number order. Can be used
+as
+a user-defined identifier.

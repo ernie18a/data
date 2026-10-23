@@ -1,0 +1,4 @@
+Another zigzag version with a simple code that correctly determines peaks.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11419

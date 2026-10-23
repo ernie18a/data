@@ -1,0 +1,12 @@
+Description:
+Maybe you are familiar with indicator
+ytg_DveMashki_ind
+by
+Satop
+.
+It's convenient for visual observation of MACD on the price chart.
+The signal lines has been added. The standard MACD has one line, here we can use two.
+I think that addition will be very useful, especially to EWA fans.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9335

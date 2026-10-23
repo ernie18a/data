@@ -1,0 +1,16 @@
+An implementation of all patterns of trade strategy by MACD in one EA. It's a full-fledged code, plus some errors were corrected.
+The original of the trade strategy is available
+here
+.
+The EA was written to check the efficiency of the trade strategy described by the author.
+The results of the EA's working:
+Working period: 2007.01.01-2008.07.21 Initial deposit: $500 Gross profit: $4318 Amount of trades: 369
+The testing should be performed from year 2007, because the parameters were optimized on the period from 2007.01.01 to 2008.01.01.
+The detailed results of the strategy investigation and the description of the parameters are available
+here
+.
+Good results were obtained at forward testing and when working with smaller timeframes.
+!!! Note that different brokers have different quoting mechanisms, so the results of working with our parameters may vary.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8274

@@ -1,0 +1,9 @@
+The OsMACD indicator is a combination of the colored Moving Average of Oscillator(OsMA) and Moving Average Convergence/Divergence(MACD) indicators.
+Two versions of the indicator are available:
+- OsMACD:
+OsMACD
+- and OsMACD_M:
+OsMACD_M
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7081

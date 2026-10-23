@@ -1,0 +1,16 @@
+'Specified time range candles' indicator displays colored candles at a specified time interval (trading session) on the price chart.
+Candles not falling within the specified range are displayed by the specified chart display type.
+The indicator has three input parameters:
+Start hour of the trading session
+Session length
+- displayed trading session duration in hours
+Chart mode
+- mode of displaying the chart not falling within a specified period
+Bar chart
+Candlesticks
+Line chart
+Fig. 1. Start hour of the trading session = 8, Session length = 5
+Fig. 2. Start hour of the trading session = 0, Session length = 12
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23114

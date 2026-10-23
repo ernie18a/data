@@ -1,0 +1,153 @@
+Real author:
+Witold Wozniak
+This indicator is designed for measurement of a financial asset price change periodicity.
+The indicator stores in its indicator buffer the current market cycle values, which can never be stable for obvious reasons. This indicator is created to be used with oscillators to provide their adaptation to constantly changing market cycles and their transformation to adaptive ones.
+The indicator is inspired by John Ehlers' article
+"Using The Fisher Transform"
+published in November 2002 in the
+"Technical Analysis Of Stock & Commodities"
+magazine.
+The
+CyclePeriod
+indicator handle variable must be declared on the global level to let the indicator be used in another indicator's code (for example, in
+RVI
+oscillator)
+:
+//---- declaration of integer variables for the indicators handles
+int
+CP_Handle;
+Then, the
+CyclePeriod
+indicator handle must be received in the
+RVI
+indicator initialization block
+:
+//---- getting the CyclePeriod indicator handle
+CP_Handle=
+iCustom
+(
+NULL
+,
+0
+,
+"CyclePeriod"
+,Alpha);
+if
+(CP_Handle==
+INVALID_HANDLE
+)
+     {
+Print
+(
+" Failed to get the CyclePeriod indicator handle"
+);
+return
+(
+1
+);
+     }
+Now, we have the new
+Alpha
+variable that is the input parameter of the used indicator and the period averaging ratio. This variable must be transformed to the developed indicator input variable.
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+double
+Alpha=
+0.07
+;
+// Indicator smoothing ratio
+The previous
+Length
+input variable must be removed from the list of the input parameters transforming it to the local variable inside the
+OnCalculate()
+function.
+The size of the arrays used for the indicator smoothing is fixed by the
+Length
+parameter value:
+//---- Memory distribution for the variables arrays
+ArrayResize
+(Count,Length);
+ArrayResize
+(Value1,Length);
+ArrayResize
+(Value2,Length);
+The value of this parameter is changing now. Therefore, it is better to set the sizes of these arrays to be not less than the assumed high value of this variable.
+While analyzing the indicator charts, we can see that this value does not exceed 100. Therefore, the arrays sizes will have the same value:
+//----
+Memory distribution for the variables arrays
+ArrayResize
+(Count,MAXPERIOD);
+ArrayResize
+(Value1,MAXPERIOD);
+ArrayResize
+(Value2,MAXPERIOD);
+And further on, period values for the current bar in the
+OnCalculate()
+block must be taken from the
+CyclePeriod
+custom indicator buffer to let them be used instead of the value of the
+Length
+former input parameter.
+//---- main indicator calculation loop
+for
+(bar=first; bar<rates_total && !
+IsStopped
+(); bar++)
+     {
+//---- copy newly appeared data into the array
+if
+(
+CopyBuffer
+(CP_Handle,
+0
+,rates_total-
+1
+-bar,
+4
+,period)<=
+0
+)
+return
+(RESET);
+
+      Length=
+int
+(
+MathFloor
+((
+4.0
+*period[
+0
+]+
+3.0
+*period[
+1
+]+
+2.0
+*period[
+2
+]+period[
+3
+])/
+20.0
+));
+if
+(bar<Length) Length=bar;
+// cutting the smoothing down to the real number of bars
+In this case four last values are taken from the
+CyclePeriod
+indicator buffer and their linearly weighted smoothing is performed, after which the gained value is used as a
+Length
+smoothing period. And finally, the line at the end of the indicator code must be altered:
+if
+(bar<rates_total-
+1
+) Recount_ArrayZeroPos(Count,MAXPERIOD);
+As a result, we have received
+Adaptive RVI
+oscillator:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/562

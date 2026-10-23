@@ -1,0 +1,9 @@
+The indicator supports two functions:
+Spread Ask and Bid line customization (style *, thickness)
+Second Broker spread comparison ** - see indicator Input for instruction.
+Regards below images:
+The top image shows customization of spread Ask & Bid lines.
+The bottom image shows second Broker spread comparison (second Broker spread - chart spread, 8 - 5 = 3 points spread adjustment). The comparison is relative and is an addition or subtraction padding of the chart Ask Line.
+* dependent on Chart on foreground. ** dependent on Show Ask.
+Note:
+This indicator will automatically set → Chart on foreground and Show Ask: Chart on foreground and Show Ask can be toggled on/off from the indicator Inputs window.

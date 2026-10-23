@@ -1,0 +1,112 @@
+An important parameter in trading is the relevance of the current price. It depends on a lot of factors, one of the most popular being the network ping between the terminal and the trade server.
+However, another parameter is often ignored: the so-called
+"internal terminal ping", which is an additional lag of quotes inside the terminal (the platform)
+. Even if the network ping is zero, this lag can be significant.
+The indicator shows the dynamics of change in this parameter, which is calculated as follows:
+#include
+<TypeToBytes.mqh>
+// https://www.mql5.com/en/code/16280
+// Getting a fresh tick with the value of the internal quote lag (in milliseconds)
+bool
+SymbolInfoTick
+(
+const
+string
+&Symb,
+MqlTick
+&Tick,
+double
+&Ping
+)
+{
+static
+const
+bool
+IsTester = (
+MQLInfoInteger
+(
+MQL_TESTER
+) ||
+MQLInfoInteger
+(
+MQL_OPTIMIZATION
+));
+static
+MqlTick
+PrevTick = {
+0
+};
+static
+ulong
+PrevTime =
+0
+;
+const
+ulong
+NowTime = IsTester ?
+0
+:
+GetMicrosecondCount
+();
+const
+bool
+Res =
+SymbolInfoTick
+(Symb, Tick);
+if
+((!IsTester) && Res)
+  {
+if
+(_R(Tick) != PrevTick)
+    {
+      Ping = PrevTime ?
+MathAbs
+(Tick.time_msc - PrevTick.time_msc - (NowTime - PrevTime) /
+1
+e3) :
+0
+;
+      
+      PrevTime = NowTime;
+      PrevTick = Tick;
+    }
+else
+Ping =
+0
+;
+  }
+return
+(Res);
+}
+The above screenshot shows that the calculated value is far from small (a clean terminal with one chart), and the pursuit of zero ping can be deceiving in trading and some types of analysis in MetaTrader 5.
+Features
+The time lag of quotes is calculated in milliseconds;
+The indicator consumes minimum computing resources of the terminal;
+When the indicator is reset (after changing the TF, symbol, etc.) the accumulated data are lost (no database is maintained);
+After removing the indicator, its comment stays on the chart;
+It is not possible to create a similar indicator for MetaTrader 4, since tick data with the ms precision are not available;
+SymbolInfoTick
+in indicators requires some "warm-up" in the form of a few first
+Calculate events
+;
+The indicator can be used as a template for real-time visualization of any values, you only need to replace one line;
+A library is required for indicator calculation, which is used for comparing
+MqlTick
+structures when calculating the lag:
+#include
+<TypeToBytes.mqh>
+// https://www.mql5.com/en/code/16280
+The indicator has two display types depending on the following line:
+#define
+HISTOGRAM_VIEW
+// Comment the line to change the indicator view from histogram to candlesticks
+The current indicator shows the price lag (
+ping
+), connected with the Calculate event. Actually, there are a lot of factors that have a significant impact on ping, so the appropriateness of using any indicators in trading systems and analysis may seem doubtful. Of course, the
+NewTick event
+is less sensitive to negative influences, but its ping is also considerable (if measured in an Expert Advisor), which can sometimes minimize the importance of some
+speed characteristics of the platform
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19422

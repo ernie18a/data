@@ -1,0 +1,36 @@
+Strategy Author:
+Urban Sotensek.
+EA Author:
+Yuriy. ForTrader.ru
+Last Versions:
+here
+Up\Buying
+ENTER: First of all we wait for the signal up arrow
+GUPPY MMA: The green lines should be above the red ones! The green, red and yellow lines should consistently point upwards. All lines should move in the same direction!
+LAGUERRE: The line of the Laguerre indicator should cross the 0.15 level bottom-up.
+MACD: This is important! The MACD should be above 0 at the moment of signal.
+STOP-LOSS: 5 points (+ spread!) below the LOW of the current candlestick.
+ALTERNATIVE STOP-LOSS: 20 points on the default currency pairs and 25 points on more volatile pairs such as GBP and cross currencies. You should choose the method of StopLoss placing which is more suitable for you.
+EXIT (combined): If you have an opened position you can close half of it at the first check point and let the remaiming part to work until the Slope Direction line becomes red.
+ALTERNATIVE EXIT: You can choose your own method of exit and close the positions at the check points or when the Slope Direction line becomes red or when the price (new candlestick) opens from the other side of the volatility channel.
+Down\Selling
+ENTER: First of all we wait for the signal down arrow
+GUPPY MMA: The green lines should be below the red ones! The green, red and yellow lines should consistently point downwards. All lines should move in the same direction!
+LAGUERRE: The line of the Laguerre indicator should cross the 0.75 level from top downward.
+MACD: This is important! The MACD should be below 0 at the moment of signal.
+СТОП-ЛОСС: 5 points (+ spread!) above the HIGH of the current candlestick.
+ALTERNATIVE STOP-LOSS: 20 points on the default currency pairs and 25 points on more volatile pairs such as GBP and cross currencies. You should choose the method of StopLoss placing which is more suitable for you.
+EXIT (combined): If you have an opened position you can close half of it at the first check point and let the remaiming part to work until the Slope Direction line becomes blue.
+ALTERNATIVE EXIT: You can choose your own method of exit and close the positions at the check points or when the Slope Direction line becomes blue or when the price (new candlestick) opens from the other side of the volatility channel.
+Picture:
+The system based on Trend Follower
+Advices:
+You should optimize it and perform the future testing.
+Try to use different methods of exiting from the positions.
+You should revise the StopLoss.
+The description of the parameters of the EA and the investigation of the "Trend Follower" strategy is available in the
+23-rd issue of the journal
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8507

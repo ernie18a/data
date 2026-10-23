@@ -1,0 +1,30 @@
+Idea by
+:
+Risdyanto Risdyanto
+.
+MQL5 code by
+:
+barabashkakvn
+.
+Indicator
+Resistance & Support
+is used:
+The Expert Advisor works in two timeframes: Indicator Resistance & Support is constructed on the current timeframe, while object Fibonacci Lines (OBJ_FIBO) is based on the High and Low of the daily timeframe, and parameter "
+Number of DAUY bars for finding support and resistance levels
+" is equal to "
+1
+":
+Inputs
+Lots - position volume
+Trailing Stop (in pips) - trailing
+Trailing Step (in pips) - trailing step
+Number of DAUY bars for finding support and resistance levels - amount of days for calculating Fibo
+MA: averaging period - Moving Average averaging period
+MA: horizontal shift - horizontal Moving Average shift
+MA: smoothing type - Moving Average smoothing type
+MA: type of price - price type used as the basis for calculating the Moving Average indicator
+magic number - the unique EA identifier
+Exemplary testing on EURUSD,M15:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21120

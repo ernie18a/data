@@ -1,0 +1,18 @@
+Strategy Author:
+Bill Willams.
+EA Author:
+Electronic journal "ForTrader.ru"
+Signal "Saucer" for Buying
+The signal appears when a hystogram located above the zero line changes its descending direction to the rising.
+The «A» column should be above the "B" column and can have any color. The "C" column (signal) should be green.
+The signal bar is the bar the signal column is formed at.
+Once the signal was formed we place the pending order Buy Stop higher than the signal bar by one pips. The very last signal "saucer" for buying cancels all previous ones (do not forget to delete the pending orders after the signal is changed).
+There is a rule for all types of signals: we buy only if the current column is green and we sell only if the current column is red.
+Signal "Saucer" for Selling
+This signal is a mirror reflection of the signal "saucer" for buying: the hystogram located below the zero line changes its rising direction to the descending.
+The «A» column should be below the "B" and can have any color. The "B" column should be green. The "C" column (signal) should be red.
+Once the signal was formed we place the pending order Sell Stop lower than the signal bar by one pips. The very last signal "saucer" for selling cancels all previous ones.
+Read the research of the "Saucer" pattern in the 32-nd issue of the electronical journal "ForTrader.Ru".
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8466

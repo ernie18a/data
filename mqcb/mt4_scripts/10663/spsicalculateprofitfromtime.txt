@@ -1,0 +1,4 @@
+It's no secret that the market volatility has in-session, not and every hour in the day has its own activity. This script outputs the log information on your strategy (filter Magic) for each hour of the day. And you will be able to estimate (based on a previous trade) on whether to enter the market for a particular hour.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10663

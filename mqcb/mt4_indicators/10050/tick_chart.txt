@@ -1,0 +1,17 @@
+Tick Chart
+=========
+This is a mod of
+Tick_on_Chart
+by
+Scriptor
+?
+Shows the tick chart in a separate window, with Ask line. The three additional variations plot the Median, Typical and Weighted candle prices aswell.
+The price lines can be used for support/resistance and to gauge the direction of movement, also for trading signals when the Bid line (red) crosses or bounces off them, as pictured below.
+Median = High + Low /2
+Typical = High + Low + Close / 3
+Weighted = High + Low + Close + Close / 4
+All four indicators shown in window...
+FX Tools release :
+Levels RMS - Professional background Risk management system for manual or automated trading.
+-
+www.fxtools.info

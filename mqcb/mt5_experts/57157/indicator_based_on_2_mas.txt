@@ -1,0 +1,6 @@
+Good day everyone)
+First time posting my code on the forum!!!
+The EA is based on 2 MA indicators. If they do not cross for a certain period and there is a pullback from the main movement, the first deal of 3 is opened. The other deals are opened when moving in our direction or against us by a step depending on ATR. After the set of all three deals when moving in our direction will work trailing. When moving against us, the EA closes below or above (depends on the type of deals) a number of deals at the distance of the grid step.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/57157

@@ -1,0 +1,10 @@
+It is an indicator that determines target levels according to the average of price movements on an annual, monthly, weekly or 4-hourly basis.
+The current levels are determined as follows;
+OpenBuffer[i] = PeriodOpenPrice;
+HighBuffer[i] = PeriodOpenPrice + adr/2;
+LowBuffer[i] = PeriodOpenPrice - adr/2;
+MaxHighBuffer[i] = PeriodOpenPrice + adr;
+MinLowBuffer[i] = PeriodOpenPrice - adr;
+Translated from Turkish by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/tr/code/54247

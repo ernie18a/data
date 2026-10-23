@@ -1,0 +1,4 @@
+Quantora Pip Value Calculator MT5 is a utility that calculates the monetary value of pips and points for the selected symbol. It does not open trades or generate signals.
+The tool uses broker-provided symbol data to provide accurate values based on lot size, contract size, and tick information. You can adjust the lot size or quickly view values for common volumes.
+It also displays basic symbol details and works across different instruments, with a simple dashboard for easy monitoring.
+Suitable for traders who want a clear understanding of pip value and position impact before trading.

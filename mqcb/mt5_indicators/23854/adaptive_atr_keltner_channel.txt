@@ -1,0 +1,6 @@
+Theory :
+This indicator is showing an example how an adaptive ATR (originally published here :
+Adaptive ATR
+) can be used within some other indicator. It is using the original way how Ketner channel is calculated (the middle line is a SMA - Simple Moving Average) and the channel is using adaptive ATR (which is a deviation from the original Keltner channel since it uses "regular" ATR for that)
+Usage :
+It can be used the similar way as the original Keltner channel  ...

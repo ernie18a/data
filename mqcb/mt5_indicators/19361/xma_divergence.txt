@@ -1,0 +1,7 @@
+Real author
+: Trader Ron
+A trend indicator displaying divergence areas on the price chart.
+Fig.1. The XMA_Divergence indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19361

@@ -1,0 +1,18 @@
+This indicator is based on the original “
+Time Segmented Volume (TSV)
+” developed by
+Worden Brothers, Inc
+. However, I added an extra few features to this one.
+One can choose the price to be applied, instead of only having the default close price used by the original.
+One can also choose which volume weighting to use, including a pseudo-volume based on true range, or no volume weighting at all.
+The indicator displays two moving averages, one being the default
+simple moving average
+as the original, and the other being an
+exponential moving average
+, which reacts faster.
+The code uses conditional compilation and will compile on both MQL4 and MQL5.
+Please note that all my
+CodeBase
+publications’ source code are now also available in “Public Projects” tab of
+MetaEditor
+under the name “FMIC”.

@@ -1,0 +1,6 @@
+The script operates like an Expert Advisor with the exception that unloads from the memory itself once it completes its mission.
+At the specified time (set in parameters) two Buy Stop and Sell Stop orders are placed at a distance in points (set in parameters) from the current price, with the TP and SL in points (set in parameters).
+When either of orders triggers, the opposite order is deleted. Next, the script finishes its work.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14590

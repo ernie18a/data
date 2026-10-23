@@ -1,0 +1,54 @@
+Author of the idea
+—
+Hazem
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+The main difficulty of the code is comparing iCCI and iMACD values with the "Buy Sell Level" variable. The indicator values may be different several or even dozens of times.
+For example, for EURUSD, USDJPY and USDSEK symbols as well as for all period values available in MetaTrader 5:
+As you can see, iCCI is stable enough in its readings, while iMACD is highly dependent on the symbol price. To solve that, we may
+multiply iMACD values by a ratio
+:
+void
+OnTick
+()
+{
+//----
+m_ext_lot=
+NormalizeDouble
+(m_account.Balance()/
+50001.0
+,
+2
+);
+if
+(m_ext_lot<
+0.1
+)
+m_ext_lot=
+0.1
+;
+m_cci=iCCIGet(
+0
+);
+m_macd=iMACDGet(
+MAIN_LINE
+,
+0
+)*
+1000000
+;
+m_buy_total=
+0
+;
+m_sell_total=
+0
+;
+Tip:
+EURUSD M30 is recommended.
+Results from 2016.01.08 to 2016.11.06, EURUSD M30, initial deposit — 10 000:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16886

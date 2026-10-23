@@ -1,0 +1,3 @@
+STRATEGY MARKET Tickmill-Live; EURGBP; H4
+EA will trade a fix lot as you select and close as per the EA base indicator.
+ITs work only on Tickmill live broker account. without selected any date to back test

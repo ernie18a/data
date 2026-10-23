@@ -1,0 +1,8 @@
+The
+High and Low Line Indicator
+is a straightforward yet powerful tool designed to plot the highest and lowest price levels of a selected symbol directly on the chart. This indicator allows traders to visually identify key support and resistance levels, which can be crucial in making informed trading decisions.
+Use Cases:
+Identifying Support and Resistance:
+The high and low lines often act as natural support and resistance levels, providing clear points for entry, exit, or stop-loss placement.
+Breakout Trading:
+Monitor when the price breaks above the high line or falls below the low line, which can signal potential breakout opportunities.

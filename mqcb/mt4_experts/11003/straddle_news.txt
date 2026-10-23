@@ -1,0 +1,15 @@
+It is based on the simple idea that important news generate significant volatility. It puts two Pending Orders (Buy Stop and Sell Stop), if the Buy Stop order is activated, the Sell Stop will be deactivated automatically and vice versa. The trailing stop will go behind the sudden movement. It works great !!!. If the trade is successful it is closed by the trailing stop or take profit, else it will be closed by stop loss. The algorithm is very light, which is very important when you trade news.
+Fully Adjustable:
+StopLoss
+TakeProfit
+TrailingStop
+PipsAway (Send pending orders XX pips away from the current Bid & Ask)
+BalanceUsed (Lot size is adjusted by BalanceUsed Function, if BU = 1, you will use 100% of the Balance Available)
+SpreadOperation (Spread allowed XX pips. If spread is higher than allowed, it doesn't send any pending order )
+Slippage (Slippage allowed XX pips).
+Recommendations:
+You must compile the source code (F5) when you re-use it in upcoming news, otherwise it will not work, because it is programmed to send only once the two pending orders.
+5 seconds before the news comes out, you must enable manually the EA
+It is recommended to use a broker who doesn't expand too much the spread on the important news like Alpari. Symbol recommended: EURUSD. The Time Frame doesn't matter, what really matters is the time of the news.
+News recommended for trading: NFP, GDP reports, Interest rates decisions, Inflation reports, Trade Balance, Manufacturing PMI.
+Good luck !!!

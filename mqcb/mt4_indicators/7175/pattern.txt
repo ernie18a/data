@@ -1,0 +1,5 @@
+Author: VMesquita
+Displays the type of candlestick or small pattern in accordance with the general setting.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7175

@@ -1,0 +1,6 @@
+The Relative Momentum Index (RMI) was developed by Roger Altman. It was first introduced in the February 1993 issue of Technical Analysis of Stocks & Commodities magazine.
+The RMI is a variation of the RSI indicator. The RMI counts up and down days from the Close relative to the Close X days ago (where X is not limited to 1 as is required by the RSI) instead of counting up and down days from Close to Close as the RSI does.
+Note that an RMI with parameters of C, 14, 1 is equivalent to a 14 period RSI of the Close price. This is because the Momentum parameter is calculating only a 1-day price change (which the RSI does by (default).
+As the Momentum periods are increased the RMI fluctuations become smoother.
+Since the RMI is an oscillator it exhibits the same strengths and weaknesses of other overbought / oversold indicators. During strong trending markets it is likely that the RMI will remain at overbought or oversold levels for an extended period of time.
+However, during non-trending markets the RMI tends to oscillate more predictably between an overbought level of 70 to 90 and an oversold level of 10 to 30.

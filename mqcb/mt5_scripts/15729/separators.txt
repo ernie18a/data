@@ -1,0 +1,8 @@
+Note:
+This is merely for historical analysis; therefore, it doesn't update the chart with upcoming separators.
+Settings:
+Time of the day (e.g. 23:35)
+Number of days (e.g. 10000)
+Color of the separators
+Enjoy!
+If you have any suggestions for improvements, or found any bug, please post them in the comment section below.

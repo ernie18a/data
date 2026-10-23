@@ -1,0 +1,8 @@
+Shows simple channels for daily, weekly, monthly timeframes.
+Colors Setting:
+Daily High
+Daily Low
+Weekly High
+Weekly Low
+Monthly High
+Monthly Low

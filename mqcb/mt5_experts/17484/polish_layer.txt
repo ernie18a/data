@@ -1,0 +1,14 @@
+Author of the idea
+—
+Dima
+,
+author of the mq5 code
+—
+barabashkakvn
+.
+The Expert Advisor is based on the following indicators: RSI, WPR, Stochastic, Moving Average, deMarker
+ATTENTION! It is designed for use on the H5 period!
+Testing from 2016.01.05 to 2017.01.25 on EURUSD, M5:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17484

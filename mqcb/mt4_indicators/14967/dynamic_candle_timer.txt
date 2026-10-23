@@ -1,0 +1,9 @@
+For the visual type person, a way of keeping track of:
+the remaining time on each candle,
+the changing value of the Bid price, tick by tick,
+the relative price position of the Bid/Ask spread.
+This is all in the same area and vicinity of the price action.
+Main Features:
+Bid line changes color as price moves up/down.
+Optional viewing of Ask line.
+Optional viewing of the text info for price/time countdown.

@@ -1,0 +1,25 @@
+The author of the idea
+:
+Scriptor
+,
+the author of the MQL5 code
+:
+barabashkakvn
+.
+The Expert Advisor uses the iFractals indicator signals to place pending Buy Stop and Sell Stop orders and trail the Stop Loss levels of positions. A condition to place a Buy Stop order occurs when there are two upper fractals, of which the last formed one ("Up youngest") is higher than the previous fractal ("Up middle").
+Stop Loss of a Buy Stop order is set at the latest lower fractal ("Down youngest"). Then, Stop Loss of a Buy position is trailed based on that "Down youngest" fractal.
+Fig. 1. Conditions for Buy Stop
+Conditions are opposite for Sell orders and Sell positions.
+Input Parameters
+Maximum Risk in percentage
+- maximum allowable risk;
+Decrease factor
+- lot reduction factor in case of losing trades;
+Life time of the pending order (in hours)
+- pending order life time in hours;
+magic number
+- unique identifier for the EA.
+Testing results on M30 and H2:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20127

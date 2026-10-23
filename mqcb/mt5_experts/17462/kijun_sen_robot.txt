@@ -1,0 +1,38 @@
+Author of the idea
+—
+John Smith
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+The Expert Advisor uses the following indicators: Ichimoku, MA, SAR. Optimized for currency pairs: GBPUSD and EURUSD with the M30 timeframe. The full description is available in comments to the code.
+Trading is limited to specified hours only
+:
+double
+longentry       =
+0.0
+;
+double
+shortentry      =
+0.0
+;
+int
+daystart           =
+7
+;
+/* 5AM GMT */
+int
+dayend             =
+19
+;
+/* 5PM GMT */
+int
+MAdir              =NEUTRAL;
+int
+precision          =
+4
+;
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17462

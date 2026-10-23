@@ -1,0 +1,9 @@
+Author
+: KimIV
+The Regression Channel is based on the Linear Regression Trend, which represents a usual trend line plotted between two points on a price chart using the method of least squares. As a result, this line proves to be the exact median line of the changing price. It can be considered as an equilibrium price line, and any deflection up or down indicates the increased activity of buyers or sellers, respectively.
+Read
+here
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7350

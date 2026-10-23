@@ -1,0 +1,3 @@
+New version of
+Dual Trix
+indicator. The Dual Trix indicator with dual magnified Values in the Chart and in the Indicator window.

@@ -1,0 +1,13 @@
+Author of the idea
+-
+alex
+mq5 code author
+-
+barabashkakvn
+ATTENTION: Expert Advisor ONLY for hedge accounts!
+The Expert Advisor opens two multidirectional positions. As soon as both positions are closed (by triggering Stop Loss or Take Profit), two multidirectional positions will be opened again on a new bar.
+From the parameters only Stop Loss and Take Profit are available. No trailing and no indicators are used.
+USDJPY, H1:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23628

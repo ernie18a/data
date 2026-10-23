@@ -1,0 +1,11 @@
+Basics :
+CCI (Commodity Channel Index) is well known and is widely used indicator. Sometimes it is used in a combination of some filtering method in order to avoid some of the false signals that CCI might produce in some market conditions. This is one more version that will attempt to address the issue by using two filters on this version of CCI
+This version :
+This version is using step chart as a filter to lessen the number of signals produced by CCI and (if possible) to make it easier and safer to use. The step size is to be entered as CCI units that you wish to be used as a filter for minimal CCI change that should be considered as a significant change. It also can use averages for price filtering prior to be used in CCI calculation. That way the CCI can be "double filtered" (filtering the price prior to be used in CCI calculation and then using the step chart filter on the calculated CCI result). The averages that can be used in this version :
+simple moving average
+exponential moving average
+smoothed moving average
+linear weighted moving average
+Usage :
+You can use color change of the step bar as signals
+PS: if you use average period less than or equal to 1 (one), then price filtering is not done. Here is a comparison of the two modes : upper is using period 14 sma, lower is not using price filtering

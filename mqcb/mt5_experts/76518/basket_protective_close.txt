@@ -1,0 +1,30 @@
+Closes a basket of positions the moment its floating loss reaches a limit you set.
+The limit can be a fixed amount of money, a percent of balance, or a percent of equity. Percent is the mode I recommend: a fixed 1000 USD limit means one thing on a 10k account and something very different on 200k, and on a large basket spread and swap alone can eat a fixed figure before the market even moves. A percent limit keeps its meaning as the account changes.
+You decide what counts as the basket: every position on the account, only the chart symbol, or a list of magic numbers, so you can guard one specific EA and leave the rest alone. Magic 0 covers manual trades.
+There is also an optional profit target: close the same basket when its floating profit reaches a fixed amount or a percent of balance. Off by default.
+How it closes: at the moment of trigger the utility takes a snapshot of the basket and only ever closes those tickets, so positions that other EAs open seconds later are never touched. It retries failed closes on a half second timer without blocking the terminal, picks the right filling mode per symbol, and verifies every close against the server return code instead of trusting the send. The retry budget is only spent on real rejections: while the connection is down, autotrading is off, or the market is closed, it waits instead of giving up. If the server keeps rejecting for 40 sweeps it stops, alerts you, and leaves the account to you instead of hammering the server forever.
+After a trigger it either re-arms or stops monitoring, your choice. To re-arm after any stop, change any input and press OK. Alert window and push notification are supported, and the chart shows a small status panel with the current basket, the limit, and the distance to it.
+One safety rule at attach: if the floating loss is already beyond the limit at the moment you attach the utility, it starts disarmed and tells you so, instead of liquidating the account the second it loads. Review the inputs and press OK to arm it.
+Input parameters:
+Loss limit type
+: fixed money, percent of balance, or percent of equity.
+Loss limit value
+: the amount or the percent, depending on the type. Default 2.0 percent of balance.
+Profit target type and value
+: optional basket take profit in money or percent of balance. Off by default.
+Scope
+: all positions, current chart symbol only, or magic numbers from the list.
+Magic numbers
+: comma separated list, 0 means manual trades. Used only with the magic scope.
+Stop monitoring after first trigger
+: one shot mode. Off by default, the utility re-arms.
+Max deviation on close
+: slippage allowance in points for close orders. Default 20.
+Alert window and push notification
+: how the trigger is reported.
+Symbol and timeframe: attach to one chart of any symbol and any timeframe. The monitoring runs on a timer, the chart only hosts the panel. With the account scope it guards every symbol from that single chart.
+Notes:
+Floating result is position profit plus swap. Deal commission is not visible on an open position in MT5, so on raw spread accounts set the limit with commission in mind.
+Run one instance per basket. Two instances guarding overlapping baskets will race each other.
+Works on hedging and netting accounts. It needs a running terminal, so put it on a VPS if the protection matters.
+I wrote this after analyzing a grid EA from its trade history and finding that its fixed money protective close could never work at the lot sizes involved. This is the version I wanted to hand over instead.

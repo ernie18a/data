@@ -1,0 +1,1 @@
+If current date have red news this code will count news and before released news time EA will put pending order buy or sell

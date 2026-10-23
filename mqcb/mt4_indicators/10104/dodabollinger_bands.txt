@@ -1,0 +1,9 @@
+Bollinger band is one of the famous indicator. But it's implication of 3 lines confuse sometimes and one can not take proper action on time. So, here is the modified version of Boolinger band. You'll get single line here.
+Usage is simple. Buy when price closes above red line and you see blue line. Sell when price closes below blue line and you see red line. The sample image below is self-explanatory. The chart is latest EURUSD pair on H4 time frame. You can easily spot the starting of bull run and now starting of bearish phase.
+Lastly, I've modified the code to great extent. It was originally by TrendLaboratory. So, the basic coding credit goes to them.
+Recommendations:
+Works best on higher time frame like H4
+Works on all currency pairs but good on stable pair like EURUSD
+Take action on CLOSING of candle and not on just touching the blue or red lines.
+More examples can be found on
+http://www.DodaCharts.com

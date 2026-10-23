@@ -1,0 +1,8 @@
+The
+ColorBulls
+indicator implemented as a sequence of candlesticks. Candlesticks appear as a result of relevant price timeseries processed by the ColorBulls indicator algorithm.
+In many situations, such approach may be more informative for the purpose of analysis.
+Figure 1. The ColorBullsCandle indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14280

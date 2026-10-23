@@ -1,0 +1,15 @@
+New update Version. Download Free from this link :
+Double MA With Special Time Frame with Fibo
+2 Moving Averages
+is a comprehensive MQL4 indicator designed to assist traders in identifying trend directions, potential entry points, and market momentum through the use of two moving averages—typically a fast (short-term) and a slow (long-term) average. The core concept behind this indicator is the moving average crossover strategy, where a buy signal is generated when the fast moving average crosses above the slow moving average, and a sell signal occurs when the fast moving average crosses below the slow one.
+What sets this indicator apart is its integration with dynamic
+support and resistance level plotting
+, offering traders an added layer of confirmation for trade decisions. By identifying and displaying key price levels where the market has historically reversed or consolidated, it helps traders avoid false signals and improves the accuracy of entries and exits.
+Users can customize the periods and types of the moving averages (e.g., Simple, Exponential, Smoothed, or Linear Weighted), making the indicator adaptable to different trading styles and market conditions. Additionally, the indicator works well across all time frames, making it suitable for scalping, swing trading, and long-term trend analysis.
+Features:
+Configurable fast and slow moving averages
+Buy/sell signals based on MA crossovers
+Automatic detection and plotting of support and resistance levels
+Alerts or visual markers for crossovers and key zones
+Compatible with all symbols and time frames
+Whether you are a novice looking for a clear trend-following system or an experienced trader refining your entry points, Double Moving Averages offers a powerful combination of simplicity and depth to support your technical analysis.

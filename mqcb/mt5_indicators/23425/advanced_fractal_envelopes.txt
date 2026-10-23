@@ -1,0 +1,20 @@
+Indicator Advanced Fractal Envelopes builds two envelopes on the mean prices of the pre-defined number of upper and lower fractals and the central line.
+It has three adjustable parameters:
+Average
+- number of fractals to build a moving average on their prices
+Show central line
+- show the central line
+Show fractals
+- show the fractals
+Calculations:
+Top     = AvgFractUp
+Bottom  = AvgFractDn
+Central = (AvgFractUp + AvgFractDn) / 2.0
+where:
+AvgFractUp = SMA(SumAvgUp, Average)
+AvgFractDn = SMA(SumAvgDn, Average)
+SumAvgUp - sum of the prices of upper fractals within the Average number
+SumAvgDn - sum of the prices of lower fractals within the Average number
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23425

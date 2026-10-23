@@ -1,0 +1,10 @@
+Indicator
+i-KlPrice_Vol
+that shows the direction of moving the histogram bars as colored labels on such bars.
+The indicator uses the classes of SmoothAlgorithms.mqh (to be copied to terminal_data_directory\MQL5\Include). The use of the classes was thoroughly described in article
+Averaging Price Series for Intermediate Calculations Without Using Additional Buffers
+.
+Fig.1. Indicator i-KlPrice_Vol_Direct
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22759

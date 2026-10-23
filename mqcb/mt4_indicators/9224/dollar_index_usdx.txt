@@ -1,0 +1,1 @@
+Dollar Index Custom Indicator. Displays the value of USDX Dollar Index futures contract in MT4.

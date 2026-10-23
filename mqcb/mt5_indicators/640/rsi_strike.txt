@@ -1,0 +1,11 @@
+Real author:
+Matvievskiy Andrey
+The indicator displays the crossing points of RSI (
+Relative Strength Index
+) indicators belonging to various periods. Eight RSI indicators are used in total (two indicators per one crossing). The indicator signals must be compared with readings of some other trend indicator.
+This indicator was first implemented in MQL4 and published in
+Code Base
+at mql4.com 17.07.2009.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/640

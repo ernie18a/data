@@ -1,0 +1,2 @@
+This indicator is my attempt to estimate the real market value. The idea was to create something that changes direction much slower than market price, and is better fitted than moving average.
+Indicator moves up, if price is above it and also moves up, and down, if price is below it and also moves down, with speed proportional to average of differences between minimums and maximums of bars from Period given as a parameter.

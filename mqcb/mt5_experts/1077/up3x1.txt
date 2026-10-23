@@ -1,0 +1,29 @@
+This Expert Advisor is rewritten from MQL4 and was originally published here
+https://www.mql5.com/en/code/8097
+by its author
+izhutov
+.
+How It Works
+Three
+MA's
+are used. When the fast MA crosses the middle MA, while the middle MA and the fast MA are below the slow MA, a buy position opens. It is quite the opposite for a sell position - the fast MA crosses the middle MA downward, while the middle MA and the fast MA are above the slow MA.
+The lot size for positions to be opened can be fixed or proportional to free margin. There is an additional function to reduce the lot size at losses - the more consecutive losing trades, the smaller the lot size. A trailing stop can be set for an open position.
+The image below shows the performance of the Expert Advisor in the strategy tester's visual mode.
+Parameters
+MaximumRisk - Risk (it is used if Lots=0).
+Lots - Lot.
+DecreaseFactor - Lot reduction factor after losing trades. 0 - reduction disabled. The smaller the value, the greater the reduction. Where it is impossible to reduce the lot size, the minimum lot position is opened.
+TakeProfit - Take Profit in points.
+StopLoss - Stop Loss in points.
+TrailingStop - Trailing Stop in points. If the value is 0, the Trailing stop function is disabled.
+FastPeriod - Fast MA period.
+FastShift - Fast MA shift.
+MiddlePeriod - Middle MA period.
+MiddleShift - Middle MA shift.
+SlowPeriod - Slow MA period.
+SlowShift - Slow MA shift
+Note
+It is not recommended to set FastShift, MiddleShift and SlowShift values at less than 1. The Expert Advisor checks the indicators on the zero bar only when the new bar opens (it is not supposed to work on the zero (forming) bar). The original version does not have any external parameters of moving averages whatsoever.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1077

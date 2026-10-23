@@ -1,0 +1,9 @@
+A Moving Average calculated by linear regression.
+The indicator has two input parameters:
+Period
+- calculation period;
+Applied price
+- price used for calculations.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20217

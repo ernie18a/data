@@ -1,0 +1,30 @@
+Round Trip Cost Reconciler is a free, read-only MT5 utility for traders and developers who need more than a raw deal-history export.
+It writes one CSV with filtered deal records and a second CSV that groups buy/sell deals by DEAL_POSITION_ID. Partial fills are combined into volume-weighted entry and exit prices, while broker-recorded commission, swap, and fee remain visible separately from gross trading result.
+WHAT IT REPORTS
+• Deal, order, and position identifiers.
+• Symbol, magic number, direction, entry type, time, price, and volume.
+• Broker-recorded profit, commission, swap, and fee.
+• Total entry and exit volume per position identifier.
+• Volume-weighted entry and exit prices.
+• Gross result, total costs, net result, deal count, and lifecycle status.
+LIFECYCLE STATUSES
+• COMPLETE: entry and exit volumes match within tolerance.
+• OPEN_OR_INCOMPLETE: entry volume remains unmatched.
+• EXCESS_EXIT: exit volume exceeds recorded entry volume.
+• COMPLEX_REVERSAL: an INOUT reversal exists, so the program does not invent a simple allocation.
+INPUTS
+• InpDaysBack: history window from 1 to 3650 days.
+• InpSymbolScope: current chart symbol or all symbols.
+• InpMagicFilter: -1 for every magic number, otherwise one exact non-negative magic.
+• InpDealsFileName and InpPositionsFileName: two distinct safe CSV filenames.
+• InpUseCommonFolder: Common Files folder when enabled.
+• InpDelimiter: comma (44) or semicolon (59).
+SETUP
+1. Compile RoundTripCostReconcilerMT5.mq5 with RoundTripCostCore.mqh in the same folder.
+2. Attach the Expert Advisor to any chart.
+3. Select the history scope and optional exact magic filter.
+4. Choose two distinct safe CSV filenames.
+5. Read the Experts log, then retrieve the CSV files from Common Files or the terminal Files folder.
+SAFETY AND LIMITATIONS
+The utility only reads account history and writes local CSV files. It does not place, modify, delete, or close orders; it does not use DLLs, WebRequest, or an external service.
+Results depend on the history available from the connected terminal and broker. Reversals are deliberately classified as complex instead of being forced into a misleading simple round trip. This is an accounting and diagnostic aid, not a profit or tax guarantee.

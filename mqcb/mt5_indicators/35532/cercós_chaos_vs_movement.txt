@@ -1,0 +1,4 @@
+Most volume/volatility take into account price volatility to determine if price is moving or not. However, they usually fail to get you out of choppy price action. This indicator was intended to filter those flat periods while also getting you into the beginning of most trends.
+This indicator works better with lower periods (5-10).
+If the green line is above the red line, trading is allowed. If it's below, there is a range or choppy price action.
+This is a volatility indicator so it should not be used for entries. You can compliment it with other entry signal indicators.

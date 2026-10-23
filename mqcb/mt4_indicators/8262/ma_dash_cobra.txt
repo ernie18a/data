@@ -1,0 +1,5 @@
+Indicator MA_Dash_Cobra.
+MAPeriod=14;
+MAMethod=0; // 0-SMA, 1-EMA, 2-SMMA, 3-LWMA
+MAPrice=0; // 0-Close, 1-Open, 2-High, 3-Low, 4-Median, 5-Typical, 6-Weighted
+MA_Dash_Cobra

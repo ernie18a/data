@@ -1,0 +1,1 @@
+Parabolic SAR that avoids some of the problems (issues) of existing parabolic SAR indicators and calculates the values correctly. It is made to show two colors in order to make it easier to determine the current PSAR trend, and, unlike the original PSAR, it allows you to chose prices different than high and low for its calculation.

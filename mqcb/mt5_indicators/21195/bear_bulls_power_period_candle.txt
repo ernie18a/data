@@ -1,0 +1,11 @@
+Synthetic Japanese candlesticks over the period defined in the indicator settings, calculating on each bar, based on the
+Bear_Bulls_Power_Candle
+indicator candlesticks.
+Growing candlesticks are made in green colors, while falling candlesticks are in red ones. Growing candlesticks, the close prices of which have grown as compared to the preceding candlesticks, are bright. The color for falling close prices is pale. Falling candlesticks with falling close prices are bright red, those with the growing ones are pale red.
+The indicator uses the SmoothAlgorithms.mqh library classes. Working with them was described in details in article
+Averaging Price Series for Intermediate Calculations Without Using Additional Buffers
+.
+Fig 1. Bear_Bulls_Power_Period_Candle
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21195

@@ -1,0 +1,35 @@
+How to Use
+1. Initialization
+Attach the EA to your normal chart (e.g., BTCUSD). The EA will automatically create and load a custom replay symbol (e.g., BTCUSD _REPLAY ). Open this new custom chart.
+2. Starting the Replay
+On the Replay Panel (top-left), click
+"SELECT"
+. A yellow vertical line will appear; drag it to your desired starting date. Once positioned, click
+"LOAD DATA"
+, then click
+"PLAY"
+to start the simulation.
+3. Playback Controls
+Use the speed multiplier buttons (0.5x to 20x) to adjust how fast the candles form. You can pause anytime or use the skip buttons ( +10 , -10 , << , >> ) to jump forward or backward quickly.
+4. Drawing Trade Setups (Long/Short)
+Go to the Drawing Toolbar (bottom-right). Click
+"LONG"
+or
+"SHORT"
+.
+Click once
+on the chart to set your Entry price.
+Move your mouse
+to determine the Stop Loss distance.
+Click again
+to confirm and lock the setup (Take Profit is generated automatically).
+Adjust dynamically:
+You can drag the Entry, Stop Loss, or Take Profit lines at any time to modify the setup.
+⚠️ Important Note on Chart Settings:
+To ensure the replay tool can load deep historical data without truncation, please verify your MetaTrader 5 chart settings. Navigate to
+Tools > Options > Charts
+from the top menu, and set
+"Max bars in chart"
+to
+Unlimited
+(or at least 1,000,000). If this limit is set too low, older historical data may not load correctly during the replay session.

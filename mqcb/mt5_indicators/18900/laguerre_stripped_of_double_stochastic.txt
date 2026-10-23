@@ -1,0 +1,2 @@
+Instead of using fixed levels, this version of double smoothed stochastic is using "stripped" Laguerre filter for levels and trends.
+Stripped Laguerre filter is showing intermediate steps performed by Laguerre filter as "levels" that can then be used as support/resistance (or overbought/oversold) levels (depending on the trading style) of the underlying indicator. In this case a double smoothed stochastic is used for the basic calculation.

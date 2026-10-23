@@ -1,0 +1,3 @@
+Metatrader 4 version of the indicator published here :
+Limit channels
+For details check the link above

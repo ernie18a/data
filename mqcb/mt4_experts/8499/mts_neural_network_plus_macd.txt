@@ -1,0 +1,18 @@
+Greeting to all community! I wish profits to all Championship participants!
+I attend the programming not for the first year, but I'm a novice in your Community, the Community of writers of the programs for the financial analysis. So I will be glad to see a constructive discussion. You can praise (it is always pleasant) or you can even abuse (but only ad rem).
+This is my first EA from the series
+"МТS based on Neuro network"
+.
+Instantly, I want to thank Yuriy Reshetov whose publications on this website helped me to apply the theory of neuro nets for writing the MTS.
+For those who are not familar with the neuro nets I suggest to read the article:
+https://www.mql5.com/ru/articles/1447
+The method of application and training the double-layer neuro net is perfectly described at the page:
+http://codebase.mql4.com/en/code/7917
+I want you to draw your attention that here I am representing the "engine", i.e. the "skeleton" of the MTS, which functionality can be thickened, i.e. you can use another indicator or a group of them instead of MACD, you can perform additional optimization of them and so on.
+But the most important is: not the mutual exclusion of the signals from the neuro net and from the indicator
+(i.e. if the signal from the neuro net is neutral then we use the indicator),
+but their combined application for the analysis of the possibility of opening a position.
+P.S. In my opinion, the best results are on the H1 of the main currency pairs. However, create, try and so you will find your "golden grail"! :-)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8499

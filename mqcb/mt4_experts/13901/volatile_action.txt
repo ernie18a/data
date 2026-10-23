@@ -1,0 +1,13 @@
+A real working idea, which is as follows. If there is a trend, then it consists of impulse and correction waves. Impulse waves are generally characterized by high volatility of bars, rapid movement towards the existing trend.
+The goal — enter the market in the beginning of the impulse.
+The EA works in the following way. Trace the trend on the H4 chart using the Alligator. Trace the volatility on the M30 chart, enter the market when it explodes towards the trend. Additional condition — the bar with the increased volatility has to break through maximum (minimum) 24 bars with its extremum, i.e. get out of its price range.
+VolN — how many times the volatility of the current bar has to be greater than the average volatility for the period.
+ATR — the average volatility period.
+ns — the stop loss factor (tied to volatility).
+np — the take profit factor (tied to volatility).
+Important!
+The EA works on a M30 chart. It is supposed to work properly on any financial instruments, 4- and 5-digit quotes. Slightly optimized for gold, highly volatile pairs will probably fit. Optimization can be performed by opening prices.
+I would be glad to hear offers on modernization of the idea itself!
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13901

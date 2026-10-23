@@ -1,0 +1,9 @@
+Author: Todd Geiger, Shimodax, Mr Pip, Kirk Sloan and Perky.
+Adviser Flat Trend v1.0 Uses indicator
+FlatTrend V2
+.
+-------------------------
+Parameters of testing
+Symbol: EURUSD.
+Период: 5 Minut (M5) 2006.01.02 00:00 - 2006.12.29 22:55 (2006.01.01 - 2007.01.01)
+Model: All tiks.

@@ -1,0 +1,8 @@
+On contrast with Trailing Stop which a stop loss trails price until the price hits the stop loss and the position gets closed in profit, introducing Trailing Take Profit which take profit trails price when a position is in loss and ultimately the position gets closed with a loss.
+For example, If a position is in loss and current price hits TrailingTPStart (e.g. TailingTPStart is 500 points, when price reach 500 points from open price and the position is in -500 points in loss), Take profit starts to trail price and TrailingTPDistance is the max distance of trailing take profit and price.
+I do not know it will help you or not, but this concept can be used in some EA without stop loss to lower loss in some points.
+Run the TrailingTakeProfit EA.
+If TrailingTP_Mode is true, The EA will run.
+Put the symbol name like, GBPUSD in the EA.
+Set TrailingTPStart . Which is the points from current price that take profit starts to run and trail the price when a position is in loss.
+Set TrailingTPDistance. Which is the maximum distance in points between take profit and current price.

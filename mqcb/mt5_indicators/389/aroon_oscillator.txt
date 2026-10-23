@@ -1,0 +1,15 @@
+Real author:
+Tushar Chande
+In the Sanskrit language "aroon" means "dawn's early light". This indicator predicts price changes from trend to flat market conditions.
+It can be calculated using the following equation:
+Aroon Oscillator = Bearish indicator - Bullish indicator
+where:
+Bullish indicator = [(N periods - N periods from the greatest maximum / N periods] * 100
+Bearish indicator = [(N periods - N periods from the lowest minimum) / N periods] * 100
+AroonOscillator analysis includes three main signals.
+Reaching critical values -100 and +100 indicates a strong downward or upward trend.
+Aroon Up = +50 and Aroon Down = -50 levels breakout increasingly or decreasingly respectively indicates beginning of a trend.
+Oscillator position between Aroon Up = +50 and Aroon Down = -50 levels indicates a weak trend or its complete absence.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/389

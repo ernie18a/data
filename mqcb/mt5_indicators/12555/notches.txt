@@ -1,0 +1,11 @@
+Original author:
+Serkov Alexandr
+The indicator draws lines by ascending series of maximums and descending series of minimums.
+In an uptrend the lines of maximums are much shorter and can be used as entry points. It is exactly the opposite for a downtrend.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 10.09.2014.
+Fig. 1. The Notches indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12555

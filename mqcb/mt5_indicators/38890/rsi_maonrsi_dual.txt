@@ -1,0 +1,3 @@
+The idea of the indicator
+Two lines ('RSI Fast' and 'RSI Slow') smoothed using the 'Moving Average' indicator. Signals can be the intersection of the indicator lines.
+Rice. 1. RSI_MAonRSI_Dual

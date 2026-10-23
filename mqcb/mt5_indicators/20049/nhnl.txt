@@ -1,0 +1,9 @@
+The New High New Low Index indicator displays the High/Low values of a symbol.
+The index is calculated as the difference between the number of highest highs and the number of lowest lows for a given period.
+In addition to High and Low, the indicator calculates their sum - the HL index.
+The indicator has one input parameter:
+Period
+- period, for which the High and Low indices will be calculated.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20049

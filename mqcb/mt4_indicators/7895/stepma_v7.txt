@@ -1,0 +1,2 @@
+Author: igorad
+StepMA_v7 indicator.

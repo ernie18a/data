@@ -1,0 +1,32 @@
+Real author:
+sx ted
+An indicator of trading sessions displaying bodies and shadows of resulting session candlesticks using
+DRAW_FILLING
+buffers.
+The indicator determines the width of the channel and location of sessions on a chart in accordance with the values ​​of the following input parameters:
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+Hour   StartHour=H07;
+// Session start hour
+input
+Min    StartMinute=M00;
+// Session start minute
+input
+Hour   EndHour=H13;
+// Session end hour
+input
+Min    EndMinute=M00;
+// Session end minute
+input
+uint
+Shift=
+0
+;
+// Horizontal shift of the channel in bars
+Depending on candlestick direction its body is painted in blue or pink, shadows are painted in lime or red.
+Figure 1. Indicator ShadeNY_candle
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2097

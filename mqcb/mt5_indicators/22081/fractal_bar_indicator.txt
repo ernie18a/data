@@ -1,0 +1,19 @@
+Fractal bar indicator is a signal indicator based on comparing the price and fractals.
+There are no adjustable parameters.
+Calculation:
+If a Close price exceeds the last upper fractal, the
+green
+label is placed
+If a Close price is below the lower fractal, the
+red
+label is placed
+Otherwise, the
+gray
+label is used
+The upper fractal is the one with a High price exceeding the High prices of the two adjacent bars to the left and the two adjacent bars to the right.
+The lower fractal is the one with a Low price below the Low prices of the two adjacent bars to the left and the two adjacent bars to the right.
+The last detected upper and lower fractals are considered the last ones.
+The images below display Fractals indicator on the price chart:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22081

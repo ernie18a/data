@@ -1,0 +1,144 @@
+Indicators add account information to chart. Profit, Balance, Equity, Free Margin, Margin and Margin Level %.
+Indicator 1: Account Info Vertical 4.01 places account information on the chart in vertical sequence.
+Indicator 2: Account Info Horizontal 4.01 places account information on the the chart in horizontal sequence.
+Hide account information: Click anywhere on account information text.
+Show account information: Click on text 'Account Info'.
+Show Profit only: Select 'true' from Inputs value.
+Horizontal and vertical axis auto equal space distance between account info headers and no font overlap — see Recommendations below.
+The hide/show response is dependent on incoming ticks or chart refresh. In tick scarce or closed markets the indicator hide/show click will appear not to function while waiting for a tick or chart refresh. An autorefresh timer indicator is include in the download. It is only necessary to attach the autorefresh timer to
+one
+chart because it refreshes all instances of account info vertical and account info horizontal across all charts.
+Increasing autorefresh refresh frequency will have minimal impact on CPU load with respect to up-to-date equipment. A program like Core Temp (free) from http://www.alcpu.com/CoreTemp/ can be arranged to show on the task bar the CPU Load, CPU Temp and used % RAM and can be used to monitor program impact on CPU load.
+Recommendations
+Horizontal and vertical axis auto equal space distance between account info headers and no font overlap
+The following requirements must be satisfied:
+Space distances between successive account headers must be equal.
+An increase or decrease of font size must not result in vertical or horizontal font overlap.
+Vertical axis equal spacing between account info headers
+*
+*
+To avoid unnecessary repetitions any reference to 'equal spacing' implies 'equal spacing between account headers'.
+For account headers in vertical sequence vertical axis equal space distance is dependent on an OBJPROP_YDISTANCE parameter formula.
+Vertical axis equal space distance is maintained by including in the formula the following:
+Successive header OBJPROP_YDISTANCE formulas maintain vertical equal spacing by multiplying the font size in accordance with successive allocated terms of even sequence 2, 4, 6, 8, 10, 12.
+Vertical font overlap is avoided because each equal space increases or decreases proportional to change in font size.
+OBJPROP_YDISTANCE vertical axis shift is maintained by including as addition the OBJPROP_ YDISTANCE corresponding input parameter value.
+The below account_info_vertical code illustrates the solution.
+input
+int
+Up_Down=
+10
+;
+// Up <-> Down
+..........
+int
+OnInit
+()
+ { 
+   ..........
+   {
+    Up_Down_ML=Up_Down+Font_Size*10;
+    Up_Down_M =Up_Down+Font_Size*8;
+    Up_Down_FM=Up_Down+Font_Size*6;
+    Up_Down_E =Up_Down+Font_Size*4;
+    Up_Down_B =Up_Down+Font_Size*2;
+    Up_Down_P =Up_Down;
+   }
+   .........
+int
+OnCalculate
+(
+const
+int
+rates_total,
+const
+int
+prev_calculated,
+const
+datetime
+&time[],..........)
+ {
+  ..........
+  // Balance Header YDISTANCE
+  ObjectSet(
+"Acc_B_v"
+,
+OBJPROP_YDISTANCE
+,Up_Down_B);
+  ...........
+  // Profit Header YDISTANCE
+  ObjectSet(
+"Acc_P_v"
+,
+OBJPROP_YDISTANCE
+,Up_Down_P);
+  ...........
+Horizontal axis equal spacing between account info headers
+For account headers in horizontal sequence horizontal axis equal space distance is dependent on an OBJPROP XDISTANCE parameter formula.
+The OBJPROP_YDISTANCE formula for vertical axis equal spacing is relatively straight forward because all elements of successive header formulas, the OBJPROP_YDISTANCE corresponding input value and even sequence multiples and font size, remain constant in the formula.
+Successive header OBJPROP_XDISTANCE formulas for horizontal axis equal space must accommodate a real time updating variable in the form of multiple preceding account header lengths that increase or decrease according to changes in account margin, profit or loss, balance etc.
+Horizontal axis equal space distance is maintained by including in the formula the following:
+Successive header BJPROP_XDISTANCE formulas maintain horizontal equal space by obtaining a total count of all string lengths in preceding headers and multiplying by a suitable font size related multiplier.
+Horizontal font overlap is avoided because each equal space increases or deceases proportional to change in font size.
+OBJPROP_XDISTANCE horizontal axis shift is maintained by including as addition the OBJPROP_ XDISTANCE corresponding input parameter value.
+The below account_info_horizontal code illustrates the solution.
+input
+int
+Left_Right_P=
+15
+;
+// Left <-> Right
+int
+OnCalculate
+(
+const
+int
+rates_total,
+const
+int
+prev_calculated,
+const
+datetime
+&time[],.........)
+ {
+double
+Spacer_Mult=Font_Size*Spacing*0.1
+;
+  ..........
+  ..........
+// Profit Header String Length
+int
+StLenP=
+StringLen
+(Acc_P_Header+Acc_Curr+Acc_gap_P+Acc_P_hs);
+  ..........
+// Balance Header String Length
+int
+StLenB =
+StringLen
+(Acc_B_Header+Acc_B_hs);
+  ..........
+  
+  ..........
+// Equity Header XDISTANCE
+ObjectSet(
+"Acc_E_h"
+,
+OBJPROP_XDISTANCE
+,(StLenP+StLenB)*Spacer_Mult
++Left_Right_P);
+  ..........
+// Balance Header XDISTANCE
+ObjectSet(
+"Acc_B_h"
+,
+OBJPROP_XDISTANCE
+,StLenP*Spacer_Mult
++Left_Right_P);
+  ..........
+// Profit Header XDISTANCE
+ObjectSet(
+"Acc_P_h"
+,
+OBJPROP_XDISTANCE
+,Left_Right_P);

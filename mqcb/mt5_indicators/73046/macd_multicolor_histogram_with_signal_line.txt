@@ -1,0 +1,37 @@
+This custom indicator provides a classic MACD visualization with a color-coded histogram, the main MACD line, and a signal line in a separate window. Unlike the standard MetaTrader 5 MACD, which often displays only a histogram, this version includes both the MACD and Signal lines for a more comprehensive view of momentum and trend crossovers.
+The histogram is designed to change color based on its position relative to the zero level: it turns
+Green
+when the MACD value is positive (bullish territory) and
+Salmon
+when it is negative (bearish territory). This allows traders to instantly identify the current market bias and zero-line crossovers.
+The indicator is highly customizable, allowing users to select different Moving Average methods (SMA, EMA, SMMA, or LWMA) for the signal line and choose the applied price for calculations. This flexibility makes it suitable for various trading strategies, from trend-following to mean reversion.
+Indicator components include:
+Main MACD Line:
+The difference between the Fast and Slow EMAs.
+Signal Line:
+A Moving Average of the MACD line.
+Color Histogram:
+A visual representation of the MACD line’s value with color alerts for trend direction.
+Input parameters:
+Fast EMA Period:
+Period for the fast moving average (default: 12).
+Slow EMA Period:
+Period for the slow moving average (default: 26).
+Signal MA Period:
+Period for the signal line (default: 9).
+Signal MA Method:
+Choice of EMA, SMA, SMMA, or LWMA for the signal line.
+Applied Price:
+Price type used for calculations (default: Median Price).
+Image:
+Recommendations:
+Zero-Line Crossover:
+Use the histogram’s color change to identify potential shifts in long-term momentum (Green for bullish, Salmon for bearish).
+Signal Line Crossover:
+Look for the intersection of the Black (Main) and Blue (Signal) lines for entry or exit signals.
+Divergence:
+This indicator is excellent for spotting classical MACD divergences between price action and the MACD line/histogram.
+Multi-Market Use:
+The indicator works effectively across all timeframes and asset classes, including Forex, Stocks, Commodities, and Cryptocurrencies.
+Confirmation:
+Combine this indicator with price action or volume-based indicators for higher probability trade setups.

@@ -1,0 +1,3 @@
+Based on the Austin Passamonte's idea, this indicator calculates intra-day pivots.
+This one is a version where default values for pivot levels are at 38,61% of the range, but you can easily change it through parameters to the Fibo levels Passamonte proposes in his TASC article (0.25,0.50 and 0.75) or whatever levels you want. If level parameter is set to 0 or less than 0, it will be omitted.
+Also, when alternative pivots are used, it looks like the example bellow. The alternative pivots are added simply because they seem more logical than the original.

@@ -1,0 +1,20 @@
+The Expert Advisor Exp_AdaptiveCyberCycle is built on the base of indicator
+Adaptive Cyber Cycle
+. The signal is formed when a bar is closing if there is crossing of indicator and its signal line. In input parameters of the Expert Advisor is possibility to use the expert Advisor with the same indicators
+Adaptive CG Oscillator
+,
+CyberCycle
+and
+Adaptive RVI
+.
+Place
+AdaptiveCyberCycle.ex5, CyberCycle.ex5, AdaptiveRVI.ex5, AdaptiveCGOscillator.ex5 and
+CyclePeriod.ex5
+complied files to the terminal_data_folder\MQL5\Indicators.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. The instances of history of deals on the chart.
+Testing results for 2011 at EURCHF H4:
+Fig. 2. Charts of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1063

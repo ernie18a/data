@@ -1,0 +1,6 @@
+Use this script to generate and synchronize historical data from M1 to D1.
+Steps to create data:
+1. create subfolder .../experts/files/databank/
+2. copy M1 data into databank and call M1_XXXXXX.hst  (alpari format)
+3. attach script 'periodgen' to the same chart XXXXXX, frame doesn't matter
+4. It will create subfolder .../experts/files/databank/XXXXXX in which you will find all timeframes up to D1 will be  generated

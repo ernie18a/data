@@ -1,0 +1,21 @@
+The indicator plots up/down buffer arrows in the chart window when conditions are met on one or two of the following indicators:
+Moving Average
+;
+Moving Average Convergence/Divergence (MACD
+);
+Oscillator of Moving Averages (OsMA
+);
+Stochastic Oscillator
+;
+Relative Strength Index (RSI)
+;
+Commodity Channel Index (CCI)
+;
+Relative Vigor Index (RVI
+);
+Average Directional Index (ADX)
+;
+Triple Exponential Average
+;
+Bollinger Bands
+;

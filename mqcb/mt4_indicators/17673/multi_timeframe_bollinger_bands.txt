@@ -1,0 +1,2 @@
+This is an indicator that I implemented for my personal use. It aims to show the Bollinger Bands from different timeframes to help me find the dynamic levels of support and resistance.
+The checkboxes are used to show/hide the different Bollinger Bands and allow for a cleaner reading of the price chart without requiring to change the current timeframe.

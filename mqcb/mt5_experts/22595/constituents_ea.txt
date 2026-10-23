@@ -1,0 +1,20 @@
+The author of the idea
+:
+Scriptor
+MQL5 code author
+:
+barabashkakvn
+The EA waits for a control bar having its open hour equal to
+Start hour
+. After that, the search for maximum and minimum prices from the current bar up to the
+Search depth
+bar is performed. Depending on
+Order Type
+, the EA places either pending Limit orders or pending Stop ones.
+You can use trading sessions to select control bar time:
+Pending orders can be removed in two cases:
+The lifetime has come to an end (ORDER_TIME_DAY is used - the order will be valid only during the current trading day)
+Any pending order has been activated - remaining pending orders are removed (the activation event is detected in OnTradeTransaction)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22595

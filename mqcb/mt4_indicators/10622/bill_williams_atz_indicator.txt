@@ -1,0 +1,10 @@
+This indicator throws visual and verbose buy/sell signals according to Bill Williams Trading in the Zone methodology and Alligator and MACD.
+According to Bill Williams trading in the zone helps to maximize/double/triple profits when the market goes your way, namely, when momentum, acceleration and price confirm that you have strong trend or acceleration period. Armed with this information you can add to positions aggresively. However, price and momentum are not enough to enter a trade, and this is what this indicator tries to simplify for you, by eliminating false, exhaust or against the trend signals.
+Please, note that this is a reactive indicator and signals are triggered after the price has already accelerated.
+It can be used to get into trends safely or adding to positions aggresively. For the record, it makes use of the following:
+Alligator to determine the trend
+AC and AO to determine the trade zone
+Images:
+Changelog:
+Changed to use standard MT4 MACD
+Code cleanup and little improvements

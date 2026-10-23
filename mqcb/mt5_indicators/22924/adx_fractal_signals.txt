@@ -1,0 +1,26 @@
+ADX Fractal Signals indicator is based on readings of four indicators: ADX, DMI, CCI and Fractals.
+There are five inputs:
+ADX period
+- ADX and DMI calculation period
+CCI period
+- CCI calculation period
+CCI bullish signal level
+- CCI level for a bullish signal
+CCI bearish signal level
+- CCI level for a bearish signal
+Use alerts
+- use alerts when a signal appears (Yes/No)
+Signal activation conditions:
+Buy signal:
+ADX grows two bars in a row
+DMI Plus exceeds DMI Minus
+CCI exceeds CCI bullish level for three bars in a row
+A new lower fractal appears (support)
+Sell signal:
+ADX falls two bars in a row
+DMI Plus is less than DMI Minus
+CCI is less than CCI bearish level for three bars in a row
+A new upper fractal appears (resistance)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22924

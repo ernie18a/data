@@ -1,0 +1,29 @@
+PropFirm Risk Guardian MT5
+Product Overview
+An account-wide risk protection EA for MetaTrader 5, designed for prop-firm and personal trading accounts.
+Key Protection Features
+Account-Level Protection
+- Monitors and protects against daily drawdown.
+- Monitors and protects against maximum overall drawdown.
+- Provides an adjustable safety buffer before the firm's limit.
+- Automatically closes open positions when a protection limit is reached.
+- Automatically deletes pending orders after a limit is breached.
+- Retains its protection status after MT5 restarts.
+Position-Level Protection
+- Protects against losses on individual positions.
+- Supports an optional fixed-money loss limit for each trade.
+- Can stop trading after a single-position loss.
+Monitoring and Compatibility
+- Supports broker-server trading-day rollover settings.
+- Works with all symbols and can protect the entire MT5 account.
+- Checks risk every second and on every market tick.
+- Uses a Terminal Global Variable to coordinate with other EAs.
+Default Settings
+- Daily loss limit: 5%
+- Overall loss limit: 10%
+- Safety buffer: 1%
+- Single-position loss limit: 1%
+- Automatic position closing: Enabled
+Important Risk Disclaimer
+This EA is a risk-protection and guardian tool, not a trading strategy. It does not create trading signals or open trades by itself.
+Before using the EA on a live account, set all limits to match your prop firm's actual rules.

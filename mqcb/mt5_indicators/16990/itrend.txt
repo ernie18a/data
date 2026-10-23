@@ -1,0 +1,12 @@
+Well known iTrend indicator made for MetaTrader5
+In order to extend it (apart of making it use the visual tools that are available in MetaTrader 5 now), it is  :
+multi time frame
+it has  the usual set of alerts :
+alerts on current (still opened) or on a closed bar
+alert displaying a message
+alert playing a sound
+alert sending an email
+alert sending a push notification
+it has a choice of 4 types of averages used for calculation
+and it has the set of 22 price types
+As a deviation compared to the wide spread version, this version has an adjustable level that is used to determine trend change (and continuation) that can be set to desired extremes look-back period and value. Once when that level is broken the trend is kept as long as the opposite direction value does not brake that level

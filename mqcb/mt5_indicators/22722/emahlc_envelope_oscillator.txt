@@ -1,0 +1,14 @@
+Indicator EMA HLC Envelope Oscillator is an oscillator displaying as a histogram the breaking through the envelopes of indicator
+EMA HLC Envelope
+by the price.
+It has one adjustable parameter:
+Period
+- calculation period for the envelopes of EMA HLC Envelope
+The histogram has positive values, if the Close price breaks through the upper envelope of EMA HLC Envelope, and displays the distance of the Close price from the upper envelope.
+The histogram has negative values, if the Close price breaks through the lower envelope of EMA HLC Envelope, and displays the distance of the Close price from the lower envelope.
+Fig.1. EMA HLC Envelope Oscillator
+Fig. 2. EMA HLC Envelope Oscillator +
+EMA HLC Envelope
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22722

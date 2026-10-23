@@ -1,0 +1,25 @@
+A trend indicator drawn in the form of a colored histogram.
+There are four color histogram display options depending on the values ​​of the input parameters:
+input
+color
+UpLevelsColor=
+clrBlue
+;
+// The color of the overbought level
+input
+color
+DnLevelsColor=
+clrBlue
+;
+// The color of the oversold level
+Above the overbought level - pink;
+Above zero but below the overbought level - brown;
+Below zero, but above the oversold levels - green;
+Below the oversold level - lime.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 07.11.2007.
+Figure 1. Indicator William36HistogramWaller
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2032

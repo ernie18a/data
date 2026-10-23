@@ -1,0 +1,11 @@
+Real author:
+Ravish Anandaram
+This indicator is based on the strategy described in the book "Mastering the Trade" by John Carter. This is a completely revised version of the Squeeze_Break indicator, written by Des O'Regan.
+Key improvements include the plotting of compression values (some changes in the calculation of BB/KC) on the zero line, and then smoothing the momentum value in the form of rising/descending positive/negative histogram. Thus, the result is an image that is simple for visual acceptability. Part of the code of the linear regression by Viktor Nikolaev (Vinin's V_LRMA.mq4) is used for the smoothing of the histogram.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 23.12.2015.
+Figure 1. The Squeeze_RA_V1 Indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14529

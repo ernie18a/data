@@ -1,0 +1,2 @@
+Author: DriverDan, based on the original by Tartan at the link below
+The indicator shows the forecast for 12 bars forward.

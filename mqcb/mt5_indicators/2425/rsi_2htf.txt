@@ -1,0 +1,9 @@
+Real author:
+lukas1
+A colored cloud formed by two RSI (
+Relative Strength Index
+) oscillators with different timeframes.
+Fig.1. RSI_2HTF Indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2425

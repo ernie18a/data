@@ -1,0 +1,1 @@
+A simple script that creates a timer in the form of a clock in the main chart window and shows how much time is left until the start of the next bar.

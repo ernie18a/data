@@ -1,0 +1,12 @@
+Real author:
+Collector (
+https://www.mql5.com/en/code/9217
+)
+The indicator code is a "literal" translation from MQL4 to MQL5.
+In general, the indicator can be used for determining trend on high timeframes (day, week), and for receiving short-term alerts of volatility breakthrough on small timeframes (hour, 4 hours). Intraday traders and small TF fans may also like this indicator.
+Alas, a screenshot of the recommended resolution (750x500) does not reveal all the advantages; however, the indicator provides required information in a convenient way.
+Tips:
+May your trading be profitable! :)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2246

@@ -1,0 +1,23 @@
+I use the indicator mainly in my advisors to divide the market into volatile and flat.
+Recommended M5 timeframe.
+The indicator is displayed by a straight line in a separate one under the window. The meaning of the display colors: Red - strong flat; Yellow is a weak flat; Blue - strong volatility; Green - weak volatility.
+https://www.mql5.com/ru/code/27552
+The indicator consists of the maximum range of the previous 5-bars divided by a coefficient with further smoothing. The indicator has a threshold level of volatility, and a coefficient that is regulated by external variables.
+input
+int
+bar   =
+6
+;
+// number of bars to calculate
+input
+int
+koef  =
+50
+;
+// candle division ratio
+input
+double
+level =
+0.75
+;
+// midline volatility level

@@ -1,0 +1,12 @@
+Smoothed standard deviation changing rate. Interpretation of the indicator values:
+High positive values (yellow) indicate an increasing trend;
+High negative values (gray) indicate that the trend is falling;
+Zero values after positive ones indicate that the trend continues;
+Zero values after negative ones allow you to assume that the market is flat.
+The indicator uses the SmoothAlgorithms.mqh library classes (copy it to <terminal_data_folder>\MQL5\Include). The classes were described in detail in the
+Averaging Price Series for Intermediate Calculations Without Using Additional Buffers
+article.
+Fig.1. Indicator XStdDevSpeed
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20655

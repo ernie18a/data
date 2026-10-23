@@ -1,0 +1,10 @@
+BrainTrend1Sig is a market indicator for positions opening and closing.
+It indicates trend reversal points when a price reaches extreme values and the most convenient time for market entry or exit comes.
+The algorithm is based on the
+ATR
+and
+Stochastic Oscillator
+indicators. In this version the values of all algorithm variables are designed as the indicator's input parameters, so now it be used with custom settings.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/392

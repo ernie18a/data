@@ -1,0 +1,46 @@
+Idea by
+:
+Alex
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+The EA trades on several candlestick patterns. For positions BUY and SELL, there must be the separate settings of Take Profit, Stop Loss, and Trailing. There must not be no more than one position in the market, so the EA can run on both hedging and netting accounts.
+Along with determining the patterns, there is one setting (
+Off "Main timeframe"
+) that can enable/disable determining a trend by bar #1 on
+Main timeframe
+. An example of how the
+Off "Main timeframe"
+setting influences for EURUSD,H1:
+Fig. 1. Parameter "Off "Main timeframe"" == true
+Fig. 2. Parameter "Off "Main timeframe"" == false
+Input parameters
+Stop Loss Buy
+- Stop Loss for BUY positions;
+Take Profit Buy
+- Take Profit for BUY positions;
+Trailing Stop Buy
+- Trailing for BUY positions;
+Stop Loss Sell
+- Stop Loss for SELL positions;
+Take Profit Sell
+- Take Profit for SELL positions;
+Trailing Stop Sell
+- Trailing for SELL positions;
+Trailing Step
+- trailing step (common for BUY and SELL);
+Lots
+- position volume, permanent (if the value is above zero, then the "Risk" parameter MUST be equal to zero);
+Risk
+- the position volume is calculated automatically, in the risk percents (if the value is above zero, then the "Lots" parameter MUST be equal to zero);
+Off "Main timeframe"
+- disabling parameter "Main timeframe";
+Main timeframe
+- the main timeframe to determine the trend;
+magic number
+- unique identifier for the EA.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20824

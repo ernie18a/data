@@ -1,0 +1,65 @@
+The author of the idea
+:
+Scriptor
+,
+the author of the MQL5 code
+:
+barabashkakvn
+.
+An intersection of two Moving Averages based on the data of two bars is searched for generating a signal:
+The number of the current bar can be specified in
+Trade bar
+: either
+bar #0
+or
+bar #1
+.
+If
+Use MACD
+is set to true, the EA will also take into account the position of the main MACD line relative to zero (the
+Trade bar
+parameter).
+If a signal is generated when there are no open positions, a position is opened and four hedging orders are placed at a distance of
+Hedge level
+and the lifetime equal to
+Expiration pending orders
+: Buy Stop orders are placed in case of a BUY position; Sell Stop orders are placed in case of a SELL position.
+Positions can be closed by an opposite signal if
+Close the opposite positions
+parameter is set to true. For example, SELL positions will be closed if a BUY signal is generated.
+Once positions are opened,
+Trailing Stop
+with
+Trailing Step
+will be enabled for them.
+Input Parameters
+Lots
+- the volume of position to open;
+Stop Loss (in pips)
+- Stop Loss value;
+Take Profit (in pips)
+- Take Profit value;
+Trailing Stop (in pips)
+- trailing value;
+Trailing Step (in pips)
+- trailing step value;
+Hedge level (in pips)
+- distance between pending orders;
+Close the opposite positions
+- the flag to close opposite positions;
+Use MACD
+- the flag to use MACD;
+Expiration pending orders (seconds)
+- pending order expiration time;
+MA short: averaging period
+- fast MA calculation parameter;
+MA long: averaging period
+- slow MA calculation parameter;
+Trade bar
+- the bar number to trade on;
+magic number
+- unique identifier for the EA.
+Example of testing EURUSD, M30:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19945

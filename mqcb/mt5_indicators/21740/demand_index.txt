@@ -1,0 +1,14 @@
+The Demand_Index indicator developed by James Sibbet combines the price and volume, and is often considered a leading indicator of price change.
+It has one configurable parameter:
+Period
+- calculation period.
+James Sibbet defined six "rules" for the demand index:
+Divergence between the demand index and the price indicates the forthcoming price reversal;
+The price often reaches new highs after the extreme peak of the demand index (the index acts as a leading indicator);
+High price with a lower demand index peak usually coincides with an important peak (the index acts as a confirmation indicator);
+The demand index, which breaks the zero level, indicates a trend change (the index acts as a confirmation indicator with a delay);
+If the demand index constantly fluctuates around zero, then the current price trend has a weak potential and will not last long;
+A significant long-term divergence between prices and the demand index indicates an important market top or bottom.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21740

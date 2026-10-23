@@ -1,0 +1,4 @@
+a combination of many familiar indicators for novice traders
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/66064

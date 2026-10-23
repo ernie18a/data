@@ -1,0 +1,64 @@
+JPN225 Quiet Drift
+A free, fully open Nikkei 225 EA. It buys when price is leaning up, momentum isn't stretched and volume is unusually quiet, then closes everything by 17:00 server time. Three conditions, long only, one trade at a time, a stop loss on every trade.
+Backtest results
+-Net profit: +$8,782 (+87.8%, 10k account at 15lots)
+-Return per year: +18.5% (simple, not compounded)
+-Max drawdown: 8.5%
+-MAR ratio: 1.17
+-Profit factor: 1.68
+-Win rate: 61.8% (191 of 309)
+-Trades: 309, all long (about 65 a year)
+-Average time in a trade: 3 h 48 min
+-Recovery factor: 5.55
+Every year was profitable: 2022 +15.6%, 2023 +18.1%, 2024 +22.3%, 2025 +16.4%, 2026 (to October) +15.4%.
+Robustness: 15 tests built to break it
+It passed all 15. The tests ran in my research engine.
+Costs and timing:
+doubled fees (PF 1.50), extra slippage (PF 1.30), every entry one bar late (PF 1.61).
+Is it luck?
+p-value 0.0004 on the data used to build it and 0.011 on data it never saw. It beats 200 random-entry strategies (PF 1.75 vs 1.00). It stays significant after the Harvey-Liu haircut for the 385 candidates tried (adjusted p 0.014). 1,000 Monte Carlo resamples stay profitable.
+Overfitting:
+held-out profit factor 1.81 vs 1.72 in-sample. 5 of 5 walk-forward periods profitable. Probability of backtest overfitting 8.6%. The look-ahead audit passed: no condition uses future data.
+Fragility:
+all 12 nearby versions keep PF 1.10 or better, and all 54 setting tweaks stay profitable (median PF 1.45). Dropping a random 20% of trades, or the 10 best trades, still leaves a profit.
+The strategy in more detail
+A signal needs all three conditions on the bar that just closed:
+1. Price is leaning up. The close is more than half a standard deviation above its 34-bar average.
+2. Momentum is not stretched. The MACD histogram, in ATR units, is below 0.2. This only rules out strong upward surges.
+3.Volume is quiet. Tick volume is below 60% of normal for that time of day (average of the last 20 days).
+These came out of my automated research. I don't claim a theory for why they work, so the code is here for you to test and challenge.
+Trade management:
+it buys at the open of the next bar with a stop at 4 ATR and a target at 3.5 ATR. Everything is closed by 17:00 server time. In the test, 63% of trades ended at the 17:00 close, 26% at the target and 11% at the stop.
+When it trades:
+Monday to Friday. Signals are taken from 11:00 to 14:59 server time, so entries fall between 11:15 and 15:00, after Tokyo's cash session has closed. The times assume the common MetaTrader server time of GMT+2 in winter and GMT+3 in summer:
+Entries
+Close
+Server
+11:15 to 15:00
+17:00
+New York
+04:15 to 08:00
+10:00
+London
+09:15 to 13:00
+15:00
+UTC
+08:15 to 12:00 (summer), 09:15 to 13:00 (winter)
+14:00 (summer), 15:00 (winter)
+If your broker uses a different server time, move the hours by the difference. The EA prints your server's GMT offset when it starts.
+Setup:
+attach it to your broker's Nikkei 225 chart (JPN225, JP225, NIKKEI225 and so on) on M15. Lot size is the main setting. The thresholds and hours are inputs if you want to experiment. The VALIDATION section at the bottom of the source exists only for MQL5's automatic tests and doesn't touch a trade on JPN225 M15.
+Pros and cons
+Pros
+Three plain conditions in readable code
+Profitable in every calendar year tested
+Passed 15 stress tests
+Stop loss on every trade, and flat by 17:00 (no overnight positions, no swap)
+Free, with the full source
+Cons
+Long only, so it can go months without a trade
+A fixed lot means dollar risk grows as the index rises (the average trade moved about $92 in 2022 and about $256 in 2026)
+The volume condition uses tick volume, which depends on your broker's feed
+One market and one timeframe
+I don't trade this strategy myself. It's free research to read, test and build on. If you want to see the strategies I do trade, check my profile.
+Shared for education and research. Backtest and stress-test results do not guarantee future performance. Only trade with money you can afford to lose.

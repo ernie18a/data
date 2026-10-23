@@ -1,0 +1,36 @@
+The
+Fractal_TRIX
+indicator with the timeframe selection option available in the input parameters.
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Indicator chart period (timeframe)
+The Fractal_TRIX_HTF repeater indicator requires the compiled custom indicator file Fractal_TRIX.mq5 in order to compile. Place it in
+<terminal_data_folder>\MQL5\Indicators
+.
+After compilation, the Fractal_TRIX_HTF.ex5 indicator file contains the Fractal_TRIX.ex5 indicator as a
+resource
+,
+and therefore, it is not required to be present in the terminal folder for the compiled indicator to work! For this purpose, the corresponding code has been added to the indicator code in order to include the Fractal_TRIX indicator in the executable file.
+The indicator executable file has been added as resources at the global scope
+//---- Include custom indicators in the indicator code as resources
+#resource
+\\Indicators\\Fractal_TRIX.ex5
+Changed the string path to the indicator used as resource in the block of the OnInit() function
+//--- getting the Fractal_TRIX indicator handle
+Ind_Handle=
+iCustom
+(
+Symbol
+(),TimeFrame,
+"::Indicators\\Fractal_TRIX"
+,e_period,normal_speed,IPC,
+0
+);
+Thus, the compiled executable file of the repeater indicator can be used on other trade terminals on its own without the original indicator.
+Fig1. The Fractal_TRIX_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17421

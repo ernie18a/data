@@ -1,0 +1,7 @@
+extern string _tmp1_ = " --- Trade parameters ---";
+extern int N = 3; - numbers of bars to check
+extern double Lots = 0.1; - lots value
+extern int StopLoss = 70; - stoploss value in points
+extern int TakeProfit = 120; - takeprofit value in points
+extern int Slippage = 3; - max. allowable slippage value
+extern int Magic = 50607; - unique identifier of expert's orders

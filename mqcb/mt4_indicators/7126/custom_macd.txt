@@ -1,0 +1,4 @@
+Displays the difference between the long-term and short-term market sentiments relative to the price.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7126

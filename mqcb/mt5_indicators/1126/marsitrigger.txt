@@ -1,0 +1,10 @@
+The real author:
+Aleks_Ivan
+The MaRsi-Trigger indicator fixes three states of a financial asset. Rising, if the indicator value is equal to plus one. Falling, if the indicator value is equal to minus one. And flat, if the indicator value is equal to zero. To form signals two Moving Averages and two RSI oscillators with different periods are used.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 13.07.2010.
+Fig.1 The MaRsi-Trigger and ColorMaRsi-Trigger indicators
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1126

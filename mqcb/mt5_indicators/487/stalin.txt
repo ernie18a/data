@@ -1,0 +1,43 @@
+Real author:
+Andrey Vassiliev
+Stalin is one of the so-called "signal" indicators, as it provides a trader with accurate market entry points marking them by red and blue arrows for selling and buying respectively.
+This indicator uses the most popular, simple and proven method - crossing of two
+Moving Averages
+. Though such signals are one of the strongest ones, they become false during flat movements and their quantity on the market increases in the manner sufficient to let your deposit diminish considerably. Therefore, three filter types are implemented in this indicator:
+the filter based on the RSI indicator (
+Relative Strength Index
+);
+movement confirmation filter;
+side trend signals filter.
+These filters let the indicator eliminate most of false signals.
+Input parameters:
+MAMethod – moving averages smoothing method:
+0 –
+SMA
+,
+1 –
+EMA
+,
+2 –
+SMMA
+,
+3 –
+LWMA
+;
+MAShift – shift of moving averages relative to a price chart;
+Fast – "fast" Moving Average period;
+Slow – "slow" Moving Average period;
+RSI – RSI period for signals filtration;
+Confirm – confirmation ratio;
+Flat – flat state confirmation ratio;
+SoundAlert – audio alert on/off;
+EmailAlert – e-mail alert on/off.
+Parameters description:
+Confirm parameter is responsible for one of the indicator filters designed to confirm the start of the price movement. That, in its turn, confirms that we enter the market in the right direction;
+Flat parameter also participates in false signals filtration but this parameter is responsible for flat and market movements recognition when it is too risky to enter the market.
+Application in trading:
+it is quite easy to use it in trading, a trader must follow its signals on a chart or turn on the audio alert.
+If we examine its history, we can notice that the number of accurate signals delivered by the indicator is considerable but not all of these potential deals would have been profitable. Therefore, it would be better to use this indicator with one of the oscillators that can show the moments to exit the market in case of the first reverse signals.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/487

@@ -1,0 +1,34 @@
+Brief description of "Dynamic Gaussian Channel" indicator
+Purpose
+The indicator builds dynamic support and resistance levels based on smoothed price data using Gaussian filter.
+Key features
+Three lines
+: resistance (DRAW_LINE), median (DRAW_LINE), support (DRAW_LINE).
+Algorithm
+:
+Applies Gaussian smoothing to high/low prices
+Finds extrema for the specified period
+Builds a channel based on the smoothed values
+Customisable parameters
+:
+Calculation period (InpPeriod)
+Line colours and styles for each level
+Working principle
+Initialisation
+: calculates Gaussian filter weights for smoothing
+Smoothing
+: applies the filter to high and low prices
+Definition of levels
+:
+Resistance = maximum of smoothed high for the period
+Support = minimum of smoothed low for the period
+Median = average between support and resistance
+Implementation Features
+Uses indicator buffers for three levels
+Gaussian filter with 5 bars window
+Optimised recalculation of new bars only
+Supports various timeframes
+The indicator is useful for identifying dynamic support/resistance levels and defining price channels in the market.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/65370

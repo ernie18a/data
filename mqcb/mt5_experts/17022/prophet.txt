@@ -1,0 +1,31 @@
+Author of the idea
+—
+Boris
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Attention: parameters should be optimized on the M5 timeframe for the last 12 weeks!
+The
+PROphet
+Expert Advisor consists of two independent linear perceptrons.
+Each of them separates the input features — candlestick shifts — into 2 classes.
+Perceptron № 1 >
+class № 1: BUY
+class № 2: flat or SELL
+Perceptron № 2 >
+class № 1: SELL
+class № 2: flat or BUY
+This is the main idea of the EA —
+not to combine the only BUY and only SELL classes in once perceptron.
+Optimization is performed for the previous 12 weeks, on weekends, in 2 stages.
+Stage № 1:
+set variables to daBUY=true and daSELL=false. Optimize only the weights x1, x2, x3, x4 from 1 to 200 and the movable stop loss slb from 30 to 100, everything with a step of 1.
+Stage № 2:
+set variables to daBUY=false and daSELL=true. Optimize only the weights y1, y2, y3, y4 from 1 to 200 and the movable stop loss sls from 30 to 100, everything with a step of 1.
+After optimization both daBUY and daSELL variables are set to true .
+The obtained results are valid for the next /future/ week.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17022

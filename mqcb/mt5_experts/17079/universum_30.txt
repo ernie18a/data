@@ -1,0 +1,23 @@
+Author of the idea
+—
+Yury Reshetov
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Increasing the lot after a losing trade. OnTradeTransaction. Entry signals are based on the DeMarker indicator.
+Expert Advisor Input Parameters
+p — period for the DeMarker oscillator Optimized with the values from 3 to 100 with step of 1.
+tp — take profit in pips. Optimized with the values from 10 to 100 with step of 1.
+sl — stop loss in pips. Optimized with the values from 10 to 100 with step of 1.
+lots — lot size of the first order and all orders opened after a losing trade. The parameter is not optimized.
+mn — magic number. The parameter is not optimized.
+losseslimit — limit the number of losing trades in a row. The parameter is not optimized. In case the number of losses reaches a limit, the EA stops opening new trades and sends a message e-mail.
+Lot increase ratio is calculated by the formula:
+double
+k=(ExtTakeProfit+ExtStopLoss)/(ExtTakeProfit-spread);
+The EA works only at newly formed bars and opening prices. There is no need to optimize it using Every tick mode.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17079

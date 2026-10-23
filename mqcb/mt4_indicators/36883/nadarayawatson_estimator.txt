@@ -1,0 +1,5 @@
+This is the metatrader 4 version of already posted metatrader 5 version
+Original - with more description - posted here :
+Nadaraya-Watson estimator
+Recommendations:
+Same recommendation as for metatrader 5 version

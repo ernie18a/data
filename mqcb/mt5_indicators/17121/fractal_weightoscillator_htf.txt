@@ -1,0 +1,37 @@
+The
+Fractal_WeightOscillator
+indicator with the timeframe selection option available in input parameters.
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Indicator chart period (timeframe)
+The Fractal_WeightOscillator_HTF repeater indicator requires the compiled custom indicator file Fractal_WeightOscillator.mq5 in order to compile. Place it in
+<terminal_data_folder>\MQL5\Indicators
+.
+After compilation, the Fractal_WeightOscillator_HTF.ex5 indicator file contains the Fractal_WeightOscillator.ex5 indicator as a
+resource
+,
+and therefore, it is not required to be present in the terminal folder for the compiled indicator to work! For this purpose, the corresponding code has been added to the indicator code in order to include the WeightOscillator indicator in the executable file.
+The indicator executable file has been added as resources at the global scope
+//---- Include custom indicators in the indicator code as resources
+#resource
+\\Indicators\\Fractal_WeightOscillator.ex5
+Changed the string path to the indicator used as resource in the block of the OnInit() function
+//--- getting the Fractal_WeightOscillator indicator handle
+Ind_Handle=
+iCustom
+(Symbol_,TimeFrame,
+"::Indicators\\Fractal_WeightOscillator"
+,e_period,normal_speed,RSIWeight,RSIPrice,MFIWeight,MFIPrice,MFIVolumeType,
+WPRWeight,DeMarkerWeight,bMA_Method,bLength,bPhase,HighLevel,LowLevel);
+The file of the Fractal_WeightOscillator.ex5 source indicator also contains indicators as resources. Thus, the compiled executable file of the repeater indicator can be used on other trade terminals on its own without the original indicator.
+The order of compiling the files:
+Fractal_RSI.mq5, Fractal_MFI.mq5, Fractal_WPR.mq5 and Fractal_DeMarker.mq5;
+Fractal_WeightOscillator.mq5;
+Fractal_WeightOscillator_HTF.mq5.
+Fig1. The Fractal_WeightOscillator_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17121

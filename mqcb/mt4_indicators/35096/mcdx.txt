@@ -1,0 +1,48 @@
+For those who familiar with MCDx Smart Money indicator. Sorry to let you know.
+No Banker. No Smart Money. No retailer. Just RSI.
+---
+1. Take RSI value from the
+_period
+iRSI
+(
+NULL
+,
+0
+, period,
+PRICE_CLOSE
+, pos)
+2. RSI Value from (1) will minus with
+_base
+(
+iRSI
+(
+NULL
+,
+0
+, period,
+PRICE_CLOSE
+, pos)-base)
+3. Whatever value from (2) will multiply with
+_sensitivity
+sensitivity * (
+iRSI
+(
+NULL
+,
+0
+, period,
+PRICE_CLOSE
+, pos)-base)
+4. Lastly trap value from (3), to be between 0 - 20. So if value (3) > 20, cap it at 20; if value (3) < 0, make it 0.
+if
+(rsi >
+20
+) { rsi =
+20
+; }
+if
+(rsi <
+0
+) { rsi =
+0
+; }

@@ -1,0 +1,11 @@
+Indicator ang_PR (Din)-v1 represents an indicator based on polynomial regression.
+External variables:
+hours - initial amount of hours elapsed;
+i - bar number, at which the right part of the indicator is anchored;
+m - degree of regression.
+If m = 1, then it is a linear regression. If m = 2, then it is a parabolic regression. If m = 3, then it is a cubic one. It makes no sense to use m exceeding 3.
+After the indicator has been drawn, one can select the red circle in the left part of the line and drag it to the desired date. The chart will be re-drawn
+when a new quote incomes. The right end remains anchored to value i.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10202

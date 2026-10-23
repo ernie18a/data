@@ -1,0 +1,11 @@
+Real author:
+TrendLaboratory Ltd.
+The Fisher Transform indicator. The indicator had been originally developed in 2002 by John Ehlers. Therefor, the FT is often called Ehlers indicator.
+Described in a few words, the Fisher Transform indicator displays the current movements, and the set levels often act as turning points. But the main thing is the tendency: indicator grows — market grows. Indicator falls — market falls.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 14.06.2016.
+Fig.1. The Fisher_org_v1 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15857

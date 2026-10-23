@@ -1,0 +1,74 @@
+Long-Only Trend Breakout with Dynamic Risk Management
+Breakout
+is a clean, automated MetaTrader 5 expert advisor designed to capture algorithmic breakout momentum in structural bull markets. It features a precise bar-breakout setup, execution strictly at the open of a new bar to minimize noise, and an advanced dynamic lot-sizing module that guarantees you risk a fixed currency amount on every setup, regardless of market volatility.
+This EA is specifically tailored for indices and instruments with strong directional biases—such as the
+NASDAQ (NAS100)
+—where asset growth tends to reward disciplined structural buying.
+Strategy Overview
+The core logic is built around catching immediate, high-probability structural expansions:
+The Signal:
+The EA looks at the last completed bar (Bar 1). If its Close price is strictly greater than the High of the previous bar (Bar 2), a bullish breakout is triggered.
+The Execution:
+It runs strictly on
+New Bar Open
+( OnTick structure), protecting you from execution lag and intra-candle noise.
+Stop Loss (SL):
+Placed dynamically at the Low of the breakout candle (Bar 1).
+Take Profit (TP):
+Mathematically calculated based on your custom Risk-to-Reward ratio.
+Directionality:
+Long Only
+. Designed specifically to harvest gains during structural macro-bull trends.
+Performance & Backtesting Notes
+Tested Instrument:
+NASDAQ (NAS100)
+Timeframe:
+H4
+Backtest Window:
+3.5 Years (showing positive net returns)
+Backtest Method:
+Conducted using
+M1 OHLC (Open, High, Low, Close)
+bars.
+⚠️
+Note to Users:
+This strategy has shown robust structural returns via M1 OHLC testing. However, it has not yet been simulated on "Every Tick based on Real Ticks." Users are highly encouraged to run their own real-tick simulations and optimizations matching their broker's specific spreads and contract specifications before going live.
+Advanced Risk Management & Dynamic Lot Sizing
+Unlike basic EAs that use fixed lot sizes,
+Breakout
+uses your account equity intelligently.
+You input a precise currency amount you are willing to lose (e.g., $20 or $50). The EA extracts the current market SYMBOL_TRADE_TICK_VALUE and SYMBOL_TRADE_TICK_SIZE to calculate the exact distance to your Stop Loss in ticks. It then normalizes this data into a calculated position volume, adjusting seamlessly to broker rules ( SYMBOL_VOLUME_STEP ). If a setup requires a lot size smaller than your broker's minimum allowance, the trade is safely skipped.
+Input Parameters & Optimization Guide
+The EA exposes highly flexible inputs designed for the MT5 Strategy Tester:
+Parameter
+Default Value
+Description
+Optimization Potential
+InpRiskAmount
+20.0
+Fixed monetary currency amount to risk per trade (e.g., $20).
+Scale according to your account size.
+InpMinSLPoints
+5000
+Minimum allowed Stop Loss distance in points.
+High.
+Filter out tiny, low-momentum breakouts or tight noise.
+InpRewardToRiskRatio
+1.0
+Target reward multiplier (e.g., 1.5 means TP is 1.5x the SL distance).
+High.
+Find the sweet spot for maximum expectancy on your chosen asset.
+InpMagicNumber
+654321
+Unique tracking identifier for the EA's positions.
+Change if running multiple EAs on one account.
+How to Optimize:
+Run a
+Fast (Genetic Algorithm)
+optimization on your target index.
+Vary
+InpMinSLPoints
+to filter out small structural candles that result in false breakouts.
+Optimize
+InpRewardToRiskRatio
+between 0.5 and 2.5 to find the mathematical edge for the H4 timeframe.

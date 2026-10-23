@@ -1,0 +1,1 @@
+A basic trade management panel to back testing your strategy

@@ -1,0 +1,1 @@
+Easy example working with object: object creation, modification properties, redraw chart.

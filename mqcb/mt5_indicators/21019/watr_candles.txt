@@ -1,0 +1,7 @@
+Indicator
+WATR
+implemented as a sequence of candlesticks. Candlesticks with the trend are colored brightly, and those against the trend are colored darkly.
+Fig 1. Indicator WATR_Candles
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21019

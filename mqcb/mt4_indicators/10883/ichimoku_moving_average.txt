@@ -1,0 +1,9 @@
+Ichimoku with moving average instead of middle of price channel (Donchian Channel).
+Choose:
+Price = 4 (medianprice)
+MA_Type:
+0 simple moving average
+1 exponential moving average
+3 weighted moving averge.
+You can use this Ichimoku, with same rules than the regular one.
+Regards.

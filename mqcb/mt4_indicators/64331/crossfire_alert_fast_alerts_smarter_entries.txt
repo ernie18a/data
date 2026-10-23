@@ -1,0 +1,14 @@
+MetaTrader’s default moving average indicator does not include alerts for crossovers. This means traders often miss good opportunities unless they are glued to the screen.
+CrossFire Alert
+solves this problem. It’s a powerful moving average crossover indicator that instantly notifies you when two MAs cross, so you never miss a signal.
+With CrossFire Alert you can:
+Display two customizable moving averages directly on your chart.
+Get instant alerts (on-screen, email, or push notifications).
+Choose between different MA types (Simple, Exponential, Smoothed, Weighted, etc.).
+Adjust period, shift, colors, and signal display.
+See buy/sell arrows whenever a crossover occurs.
+Why Use CrossFire Alert?
+Helps you spot fresh trends and reversals in real time.
+Works in both trend-following and reversal strategies.
+Flexible settings allow you to adapt it to any pair or timeframe.
+Saves time by sending alerts so you don’t need to monitor the charts constantly.

@@ -1,0 +1,6 @@
+Basic theory :
+Step chart indicator, in its basic form, is made as a way to filter out insignificant price changes. Price changes are specified in pips and all the changes smaller than the desired are ignored. When drawing such values we are getting that characteristic step like chart and that is where the name of the indicator came from
+This version :
+Here we have added a choice of moving averages that can be used for additiona filtering too. That way we are having a sort of "double filtering"
+Usage :
+Experiment a bit with the parameters, but it seems that with a mild average price filtering, step chart is becoming lest sensitive to some false signals

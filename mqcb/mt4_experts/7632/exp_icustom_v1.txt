@@ -1,0 +1,89 @@
+Purpose of the EA
+The EA is designed for working with any
+Custom
+that draws buy/sell arrows,
+except the indicators with string parameters
+.
+The name of the Custom indicator is specified in the parameters of the EA, as well as the list of the indicator parameters and numbers of the buffers for drawing the buy/sell arrows.
+Despite the use of a string list of parameters, it is possible to optimize up to five parameters of the indicator. Instead of any of the variables of the iCustomParam string list, it is possible to use the value of any of the variables Opt_1_Value - Opt_5_Value.
+Parameters of the Expert Advisor
+TimeFrame - working timeframe of the EA: 0 - timeframe of the chart the EA is running on, or which was selected in the tester. Or a specific value 1,5,15,30,60,240,1440...
+iCustomName - name of the Custom indicator.
+iCustomParam - the list of parameters delimited by "/". For the boolean variables, use 1 instead of true, 0 instead of false. If the indicator parameters contain string variables, the EA will not work!
+iBuyBufIndex - index of the buffer with the buy arrows.
+iSellBufIndex - index of the buffer with the sell arrows.
+iShift - offset of the indicator. 1 - work on the formed bars, 0 - on the forming bar (not recommended). It is also possible to enter a value 2,3,4...
+Opt_1_Use - enable usage of the variable 1 to be optimized. When the variable to be optimized is activated instead of the value from the iCustomParam string, defined by the Opt_X_Index variable, the value of the Opt_X_Value variable will be used.
+Opt_1_Index - index of the variable 2 to be optimized in the parameter array (in the iCustomParam string). The numbering starts with zero.
+Opt_1_Value - the value of the variable 1 to be optimized.
+Opt_2_Use - enable usage of the variable 2 to be optimized.
+Opt_2_Index - index of the variable 2 to be optimized in the parameter array (in the iCustomParam string). The numbering starts with zero.
+Opt_2_Value - the value of the variable 2 to be optimized.
+Opt_3_Use - enable usage of the variable 3 to be optimized.
+Opt_3_Index - index of the variable 3 to be optimized in the parameter array (in the iCustomParam string). The numbering starts with zero.
+Opt_3_Value - the value of the variable 3 to be optimized.
+Opt_4_Use - enable usage of the variable 4 to be optimized.
+Opt_4_Index - index of the variable 4 to be optimized in the parameter array (in the iCustomParam string). The numbering starts with zero.
+Opt_4_Value - the value of the variable 4 to be optimized.
+Opt_5_Use - enable usage of the variable 5 to be optimized.
+Opt_5_Index - index of the variable 5 to be optimized in the parameter array (in the iCustomParam string). The numbering starts with zero.
+Opt_5_Value - the value of the variable 5 to be optimized.
+MMMethod - ММ method: 0-Lots, 1-part (Risk) of the free margin, 2-part (Risk) of the free margin normalized by the MeansStep (for example, Risk=0.1, MeansStep=1000, if the margin is less than 2000, the lot equals 0.1, if the margin is greater than 2000 or more - 0.2 lot, 3000 or more - 0.3 lot and so on)
+Lots - the number of lots at MMMethod=0.
+Risk - risk. The value based on funds at FixedLot=false.
+MeansType - type of funds used in lot calculation. 1 - Balance, 2 - Equity, 3 - FreeMargin.
+MeansStep - step of the funds. Used at MMMethod=2.
+LotsDigits - the number of decimal places in the lot value.
+Slippage - allowed deviation from the requested price.
+StopLoss - stop loss.
+TakeProfit - take profit.
+Magic_N - magic number.
+MaxOrdersCount - allowed total number of the opened orders. -1 - not limited.
+MaxBuyCount - allowed number of opened buy orders. -1 - not limited.
+MaxSellCount - allowed number of opened sell orders. -1 - not limited.
+SleepBars - timeout after opening an order as a number of bars of the working timeframe.
+CancelSleeping - activation of the timeout cancellation when opening an order in the opposite direction.
+CloseOnRev - close orders of the opposite direction before opening.
+TrailingStop_Use - activation of the trailing stop function.
+TrailingStopStart - profit of the order to activate the trailing stop.
+TrailingStop - the trailing stop level.
+BreakEven_Use - activation of the breakeven function.
+BreakEvenStart - order profit to activate the breakeven.
+BreakEvenLevel - the level to place the stop loss from the breakeven activation price.
+Note
+The archive with the expert contains the file test_example.set with the example of settings for using the ind_Test indicator (crossing of two МАs) and the variables to be optimized. The ind_Test indicator is attached.
+Version 2
+1. Added the ability to use different indicators for opening and closing signals. The parameters for opening indicator start with the prefix _O_, for closing indicator - with the prefix _C_.
+There are three possible modes for using the opening and closing indicators (defined by the _OС_Mode variable):
+Mode 1 - indicator is not used for closing. Closing is only possible by stop loss and take profit.
+Mode 2 - the closing indicator is not used. Apart from closing by stop loss and take profit, the closing of opposite orders is performed by the opening signals. The stop loss and take profit can be disabled - set the value 0 to the variables StopLoss and/or TakeProfit (applies to all modes).
+Mode 3 - Separate closing signals based on the closing indicator (_C_) are used. In this mode it is possible to use an additional mode for copying the parameters of the opening indicator to the parameters of the closing indicator (the C_UseOpenParam variable), at the same time the indicator name and its parameters are copied. This mode is made for the indicators which generate opening and closing signals for increasing the speed of optimization (the optimized parameters are also copied).
+2. It is possible to use not only the indicators with arrows, but indicators with lines as well. It is possible to use two lines (crossing of the main and signal lines) and one line - its crossing with the levels. Use the _O_Mode variable (and _С_Mode in the closing block) to select the indicator type.
+Mode 1 - the indicator draws arrows. The _O_M1_iBuyBufIndex and _O_M1_iSellBufIndex variables are used for specifying the buffer numbers, and in the closing block - _C_M1_iCloseBuyBufIndex and _C_M1_iCloseSellBufIndex.
+Mode 2 - the main and signal line of the indicator are used. If the main line crosses the signal line from below - signal for opening Buy or closing Sell. The _O_M2_iMainBufIndex, _O_M2_iSignalBufIndex and _C_M2_iMainBufIndex, _C_M2_iSignalBufIndex variables are used for specifying the buffers.
+Mode 3 - one indicator line is used. The buffer number is specified in the _O_M3_iBufIndex variable (or _С_M3_iBufIndex in the closing block). The _O_M3_BuyLevel and _O_M3_SellLevel (_O_M3_CloseBuyLevel and _C_M3_CloseSellLevel in the closing block) are used for specifying the level values. Crossing of the Buy level from below - buy, crossing of the Sell level from above - sell.
+Version 3
+Added another _O_Mode mode (and _S_Mode)
+Mode 4 - Extremum by three points. Uses one indicator line. The buffer number is specified in the _O_M4_iBufIndex (or _С_M4_iBufIndex in the closing block) variable.
+Version 4
+1. Added working with pending orders.
+2. Added section separators in the properties window (from string variables).
+Selection of the order type is performed by the
+OrdType
+variable: 0 - market, 1 - stop, 2 - limit (the variable is in the "Order" section).
+The "Pending orders" variable section for managing the pending order operation:
+PendLevel
+- the level from the current market price to place the pending order
+PendPromPrice
+- the price to place the pending order is calculated from the price of the zero bar, at the value PendPromPrice=0 - from the close price (corresponds to the current market price), 1 - from the bat open price.
+PendNewSigMode
+- the method of controlling the pending order on a new trading signal: 0 - if an order has already been placed, then no action is taken when a new trading signal appears, 1 - replace the order on a new signal, 2 - on a new signal the order is replaced only to a "better level" - buy-stop only down, buy-limit only up, sell-stop only up, sell-limit only down.
+PendPriceFollow
+- price following mode. The order is modified at every change of a certain variable PendPromPrice, the order is replaced only to a "better price" (see the description of the PendNewSigMode variable).
+PendDelete
+- delete the pending order on an opposite trading signal. At the value false, it is possible for two pending orders in different directions to exist simultaneously.
+PendExpiration
+- order expiration time in minutes (the minimum value is 11 minutes).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7632

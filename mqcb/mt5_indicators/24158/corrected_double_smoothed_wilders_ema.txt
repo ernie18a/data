@@ -1,0 +1,4 @@
+Theory :
+This indicator is a "corrected" version (using dr. Alexander Uhl's method for correcting an average) of Wilder's double smoothed EMA
+Usage :
+You can use color changes as signals

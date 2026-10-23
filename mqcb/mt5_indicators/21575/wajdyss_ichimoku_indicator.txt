@@ -1,0 +1,7 @@
+Real author
+: Wajdyss
+A semaphore signal indicator based on a breakthrough of the Kijun Sen line by the price.
+Fig. 1. wajdyss_Ichimoku_Indicator indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21575

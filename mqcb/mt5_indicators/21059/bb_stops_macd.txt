@@ -1,0 +1,4 @@
+MACD indicator that is using very well known
+BB Stops
+instead of using signal line for signals.
+You can control the % risk based for the signals (the smaller the risk %, the faster the BB Stops are reacting), but some experimenting is advised before using in real trading.

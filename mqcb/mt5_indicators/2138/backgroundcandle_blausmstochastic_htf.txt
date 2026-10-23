@@ -1,0 +1,11 @@
+The indicator draws candlesticks of a larger timeframe as color filled rectangles using
+DRAW_FILLING
+buffers.
+Rectangles are color filled in accordance with the change of direction of the
+BlauSMStochastic
+histogram. Depending on trend direction the candlestick body is painted in blue or red, shadows are painted in light blue or pink.
+The indicator requires the compiled indicator file BlauSMStochastic.mq5 for operation. Place it to terminal_data_folder\MQL5\Indicators\.
+Figure 1. The BackgroundСandle_BlauSMStochastic_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2138

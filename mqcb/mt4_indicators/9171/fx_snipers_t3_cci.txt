@@ -1,0 +1,4 @@
+FX Sniper's T3 CCI Indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9171

@@ -1,0 +1,13 @@
+The indicator marks the pin bars on the chart based on the parameters set, such as:
+the maximum size;
+the minimum size;
+the "depth" of a pin bar (opening and closing price zone in percentage of the size);
+mark only on daily extremums.
+The indicator settings window
+The chart's display at "Only extremum = false"
+The chart's display at "Only extremum = true"
+Hints:
+As the pin bar is a "Price Action" pattern, it is recommended to use a timeframe no lower than H1.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13703

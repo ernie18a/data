@@ -1,0 +1,3 @@
+This indicator examines 5bar and 7bar fractals and highlights those which seem to be price reversals.
+Recommendations:
+Filter signals with your own trading strategy.

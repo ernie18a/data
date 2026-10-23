@@ -1,0 +1,7 @@
+Real author:
+SilverTrend, rewritten by CrazyChart,
+http://viac.ru/
+The indicator generates buy and sell signals using colored dots on a chart and displays messages.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/459

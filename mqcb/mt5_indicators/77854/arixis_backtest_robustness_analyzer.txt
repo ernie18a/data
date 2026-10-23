@@ -1,0 +1,40 @@
+Arixis Backtest Robustness Analyzer
+Arixis Backtest Robustness Analyzer is a free and open-source analytical utility for MetaTrader 5 designed to examine historical trading performance beyond headline statistics such as Profit Factor, net profit and win rate.
+The analyzer works with closed trading history and provides additional information about how historical results were produced.
+Main features
+Net result, gross profit and gross loss
+Profit Factor and win rate
+Average and median trade
+Best/worst trade analysis
+Top 1, 3, 5 and 10 trade dependency
+Historical sensitivity after removing extreme trades
+Winning and losing streak analysis
+Reconstructed closed-equity drawdown
+Underwater periods and recovery information
+Performance by year, month, weekday and hour
+Separate BUY and SELL statistics
+Trade-result percentiles and standard deviation
+Sample-size information
+Optional CSV export
+Profit Dependency
+The Dependency section recalculates the historical result after removing the strongest observations. This can help reveal whether historical performance was broadly distributed or concentrated in a small number of trades.
+If total net profit is zero or negative, dependency percentages are displayed as N/A because expressing the strongest trades as a percentage of net profit could be misleading. The analyzer still displays the resulting net value after those trades are removed.
+Historical Sensitivity
+The analyzer also performs the inverse experiment by removing the worst historical trades and periods.
+This does not modify the original trading history and should not be interpreted as an improved backtest. It is simply a sensitivity analysis showing how extreme observations influenced the historical result.
+Drawdown
+The utility reconstructs a closed-equity curve from completed historical trades and analyzes drawdown depth, underwater periods and recovery.
+Closed-equity drawdown is not the same as intratrade floating-equity drawdown. Floating losses that occurred while positions were still open cannot necessarily be reconstructed from completed trading history alone.
+Time Analysis
+Historical performance can be examined by year, month, weekday and hour. The number of observations is displayed together with the statistics so that small samples remain visible.
+BUY / SELL Analysis
+BUY and SELL operations are displayed separately without automatically ranking either direction.
+Distribution
+The analyzer displays the mean, median, standard deviation and several percentiles of historical trade results.
+Filters
+The utility supports date-range, symbol and Magic Number filtering.
+Read-only operation
+Arixis Backtest Robustness Analyzer is completely read-only. It does not open, close or modify trades and does not interfere with other Expert Advisors.
+Important
+All measurements describe historical observations only. They do not predict future profitability and should not be interpreted as future risk limits.
+The complete MQL5 source code is provided for educational and research purposes.

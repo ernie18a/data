@@ -1,0 +1,47 @@
+Author of the idea
+:
+Sergey Deev
+,
+mq5 code author
+:
+barabashkakvn
+.
+The Expert Advisor is based on Puria method with a few changes.
+The EA does not use the signal of intersection of fast and slow MAs, but uses their movement in one direction instead. The signal is confirmed by the crossover of MACD and its zero level and the slope of MA, which is measured as a number of pips per tick (parameter
+Shift (vertically) between MA Fast and MA Slow
+). The EA uses a traditional trailing stop function or the fractal-based trailing.
+Optimization was performed using OHLC prices on the period of 2010, testing was performed in the Every Tick mode using data for 2010-2017:
+Input Parameters
+Manual lot: "true" -> use MANUAL lot, "false" -> use risk percent
+- position volume calculation principle: manual or percent of free margin;
+Lots
+- manually set position volume;
+Stop loss (in pips)
+- stop loss value;
+Take profit (in pips)
+- take profit value;
+Trailing stop, if use Fractal trailing - do not use Trailing (in pips)
+- trailing stop value, the option should be disabled if fractal based trailing is used;
+Trailing step (in pips)
+- trailing step value;
+Risk in percent for a deal from a free MARGIN
+- risk per trade as percent of free margin;
+Maximum number of positions in one direction
+- sets the maximum number of open positions in one direction;
+magic number
+- Expert Advisor identifier;
+Fractal trailing, if use Trailing stop - do not use Fractal trailing
+- fractal based trailing, should be disabled if traditional trailing is used;
+MA Fast: averaging period
+- the averaging period of the fast Moving Average;
+MA Slow: averaging period
+- the averaging period of the slow Moving Average;
+Shift (vertically) between MA Fast and MA Slow (in pips)
+- minimum vertical distance between two Moving Averages;
+MACD: period for Fast average calculation
+- fast moving average period;
+MACD: period for Slow average calculation
+- slow moving average period.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19578

@@ -1,0 +1,8 @@
+Triple Exponential Moving Average Band is an indicator similar to Bolinger Band.
+The difference is it is based on Triple Exponential Moving Average (TEMA). Compared with BB, the current indicator is more symmetric: the middle line is closer to price movement, and the upper/lower bands evenly placed.
+When the upper/lower band is too far from center line, it is a potential reverse signal.
+There are three input parameters:
+EMA Period
+Shift
+Deviation (for calculating the distance between TEMA and upper/lower bands)
+Image:

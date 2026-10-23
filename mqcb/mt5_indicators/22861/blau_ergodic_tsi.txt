@@ -1,0 +1,13 @@
+Ergodic True Strength index (as described by the author - William Blau)
+Definition:
+By definition TSI (True Strength Index) is a double smoothed momentum calculated using the following formula:
+By further extending his definition, William Blau states that:
+The Ergodic is a double smoothed TSI with one smoothing fixed at five price bars. A further EMA (Exponential Moving Average) smoothing produces its signal line
+So, if any of the two smoothing periods is set to 5, by definition provided by William Blau, that is an Ergodic oscillator (or Ergodic TSI in this case)
+Features:
+The indicator recognizes if it is an "Ergodic" or a "regular" TSI. It also provides 3 coloring modes in order to help decisions making:
+color change on signal line cross
+color change on zero line cross
+color change on TSI line slope direction change
+Usage:
+You can use the color changes for signals. Even though William Blau uses that definition for Ergodic, might be wise to experiment with the smoothing parameters regardless if it is "Ergodic" or not that way. He frequently uses 25,13 settings for first two smoothing periods, and that seems to be quite an acceptable setting for a lot of cases.

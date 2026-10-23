@@ -1,0 +1,66 @@
+MA of Custom RSI | Smart Momentum Filter
+Tired of noisy RSI signals?
+Transform your momentum analysis with the
+MA of Custom RSI
+indicator. This powerful tool filters the classic RSI through a moving average, providing a smoother, more reliable signal line for pinpointing entries, exits, and trend direction with unparalleled clarity.
+Perfect for traders who:
+Struggle with false signals from a choppy, fast-moving RSI.
+Want a clearer, more defined view of momentum shifts.
+Use strategies based on RSI but need a more robust and tradable signal.
+✨ Key Features & Benefits
+Dual-Layer Analysis
+: Plots both the raw
+Custom RSI (period 1)
+and a smoothed
+Moving Average of the RSI
+on the same window, giving you both the raw speed and the filtered trend.
+Unmatched Customization
+:
+Custom RSI Core
+: Utilizes MetaTrader 5's built-in custom RSI, allowing for extreme settings like period 1 for ultra-sensitive readings.
+Fully Configurable MA
+: Choose the MA
+Period
+,
+Method
+(SMA, EMA, LWMA, SMMA), and
+Shift
+to lead or lag the signal precisely to your strategy's needs.
+Clear Visual Guidance
+: Customizable overbought and oversold levels (default: 80/15) are displayed as horizontal lines, making reversals and extremes instantly recognizable.
+Professional Design
+: Clean, intuitive visuals with a solid line for the MA and a dotted line for the underlying RSI, all in a separate window scaled perfectly from 0 to 100.
+🛠 How It Works & Trading Ideas
+The indicator calculates a standard RSI and then applies your chosen moving average to those RSI values itself. This creates a "signal line" that filters out market noise.
+Popular Trading Strategies:
+MA Crossover
+: Enter long when the fast RSI line crosses
+above
+its MA, and short when it crosses
+below
+.
+Trend Confirmation
+: Stay in a trade only while the RSI remains
+above
+its MA in an uptrend or
+below
+it in a downtrend.
+Divergence Detection
+: Spot classic RSI divergences against price, but use the smoother MA line for clearer, more reliable confirmation.
+Level Rejection
+: Look for the RSI and its MA to bounce off the overbought/oversold levels for high-probability reversal signals.
+⚙️ Input Parameters
+Tailor every aspect of the indicator to fit your unique style:
+RSI Settings
+: Period, Applied Price.
+MA Settings
+: Period, Shift, Method (SMA, EMA, LWMA, SMMA).
+Level Settings
+: Fully adjustable Overbought and Oversold levels
+📋 Requirements
+MetaTrader 5
+The standard
+Examples\RSI.ex5
+indicator must be present in your
+MQL5/Indicators/Examples/
+directory (it is included by default with MT5).

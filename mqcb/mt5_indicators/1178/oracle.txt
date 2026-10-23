@@ -1,0 +1,11 @@
+The real author:
+Ivan Kornilov
+According to the author it is the best forecast indicator. The oracle which can be trusted more than analysts. So it or not, it is a disputable question but as far as the idea of creation of redrawn indicators regularly disturbs minds of some part of the trader's community, so it is impossible to pay attention to this slippery topic. The indicator is redrawn four bars ahead!
+At any case Recount input parameter is added into the Expert Advisor code that allows disabling indicator conversion in the closed bars in a certain sense that is a little overdone to see the actual state of the indicator in all closed bars without redrawing.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 05.04.2010.
+Fig.1 The Oracle indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1178

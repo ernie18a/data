@@ -1,0 +1,90 @@
+The EA uses ADX, CCI, RVI, WPR and EMA. It works with all Timeframes, the BEST is M1.
+The idea is to work with a trigger. Often come indicators signals, although the trend is not yet received. This is where the trigger and start the trade if the trend arrives.
+The EA can trade with trigger, without trigger and both.
+To optimize one proceeds as follows:
+Set only ADX Strategy to "true", the WPR-Strategy "false";
+Trigger and More Trades on "false";
+Optimize "Main signal" settings and ADX Strategy settings;
+ADX Strategy set to "false" and WPR-Strategy on "true";
+Optimize "WPRSignal" Settings;
+Enable trigger and optimize MA_Trigger values (when you like trade on trigger);
+Enable "More Trades" (when you like trade with and without trigger);
+It will works on all time frames. When the trigger is activated, the EA only works with trigger-signals and uses the EMA for the trade. If More-trades is active, the EA works with signals with and without trigger.
+if you have a good set-file found, mail me and I gladly exchange with you set-Files.
+If you know improvements, mail me and I'll try to fruition this.
+if you find errors, mail me and I'll try to fix them.
+FOR BACKTESTING YOU SHOULD HAVE A MODELLING QUALITY FROM 99.90% AND TEST IT ON EVERY TICK!!!
+Strategy Tester Report
+KNUX_1.0
+XM.COM-Demo (Build 670)
+Symbol
+EURUSD (Euro vs US Dollar)
+Periode
+1 Minute (M1) 2013.01.01 00:00 - 2014.09.12 20:59 (2013.01.01 - 2014.09.01)
+Modell
+Jedes Ticksignal (präziseste Methode, die auf allen nächsten verfügbaren kleineren Zeitrahmen basiert)
+Parameter
+Basic="=== Basic Settings ==="; StopLoss=135; TakeProfit=40; TrailingStop=8; TrailingStep=1; Trailing=true; MoreTrades=true; Trigger_Enable=true; MainSignal="=== Main Signal Logic ==="; ADX_FilterPeriod=13; ADX_FilterLevel=15; RVI_FilterPeriod=20; CCI_FilterPeriod=39; MA_TriggerFast=5; MA_TriggerSlow=20; TimeShift=0; ADXSignal="=== ADX Signal Logic ==="; ADX_CrossPeriod=4; CCI_Level=177; WPRSignal="=== WPR Signal Logic ==="; WPR_Period=33; WPR_BuyRange=14; WPR_SellRange=20; WPR_ADXmaxLevel=22; WPR_ADXminLevel=15; Strategy_Mode="=== Strategy ==="; ADX_Strategy=true; WPR_Strategy=true; Capital="=== Trade Lots Size ==="; ManualLots=0.1; AutoLot=true; MaxRisk=65; MaxLot=100; MinLot=0.1; Losses="Loss- Management ( 0 = Off, 1 = Reduce, >1 = BoostFactor )"; LossManager=2; Times="=== Time Filters === "; UseTradingHours="Time Control ( 1 = True, 0 = False )"; TimeControl=0; TimeZone="Adjust ServerTimeZone if Required"; ServerTimeZone=1; TradingTimes="HourStopGMT > HourStartGMT"; HourStartGMT=7; HourStopGMT=22; DontTradeFriday="Dont Trade After FridayFinalHourGMT"; UseFridayFinalTradeTime=true; FridayFinalHourGMT=6; Extras="=== Extra Settings ==="; MaxTrades=5; Slippage=3; MaxSpread=4; Identification=35077; Auto_Ident=true; TradeComment="KNUX V1.0 by BroTrader2014";
+Balken im Test
+632727
+Ticks modelliert
+28829258
+Modellierungsqualität
+99.90%
+Fehler in Charts-Anpassung
+0
+Ursprüngliche Einlage
+1000.00
+Spread
+Current (18)
+Gesamt netto Profit
+1007333.05
+Brutto Profit
+1392556.43
+Brutto Loss
+-385223.38
+Profit Faktor
+3.61
+Erwartetes Ergebnis
+1963.61
+Drawdown absolut
+260.16
+Maximaler Drawdown
+452047.15 (74.71%)
+Relative Drawdown
+74.71% (452047.15)
+Trades gesamt
+513
+Short Positionen (gewonnen %)
+326 (99.08%)
+Long Positionen (gewonnen %)
+187 (98.40%)
+Profit Trades (% gesamt)
+507 (98.83%)
+Loss Trades (% gesamtl)
+6 (1.17%)
+Grösster
+Profit Trade
+29384.21
+Loss Trade
+-97740.39
+Durchschnitt
+Profit Trade
+2746.66
+Loss Trade
+-64203.90
+Maximum
+aufeinanderfolgende Gewinne (Profit in Geld)
+212 (370352.38)
+Aufeinanderfolgende Verluste (Verlust in Geld)
+3 (-293151.84)
+Maximal
+Aufeinanderfolgender Profit (Anzahl der Gewinne)
+596778.67 (90)
+Aufeinanderfolgende Verluste (Anzahl der Verluste)
+-293151.84 (3)
+Durchschnitt
+aufeinanderfolgende Gewinne
+127
+aufeinanderfolgende Verluste
+2

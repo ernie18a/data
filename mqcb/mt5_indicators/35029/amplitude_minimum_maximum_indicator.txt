@@ -1,0 +1,8 @@
+This Indicator will show the Amplitude [Minimum; Maximum] of a given period and can act as a substitute of the ATR indicator. The indicator can be used to observe volatility and the force of past swings, useful to determine excesses that will possibly be reversed or repeated, given that the user has knowledge to complement with volume or standard-deviation strategies.
+It is suggested a period of 55200 at M1 or 2400 at H1 (meaning 40 sessions of 23hs each), or any period that complements your strategy.
+Changelog
+v1.05 Also some fixes
+v1.04 Some fixes
+v1.02 Updated checks, implemented Relative Amplitude (a percentage), updated comments, many more period input settings (D1, W1 and MN are a constant, because W1 is 7 days and MN is something else)
+v1.01 Code fixes (removed EventKillTimer() from OnDeinit() and added more comments - nothing that actually matters other than the comments)
+v1.00 First release

@@ -1,0 +1,4 @@
+Global variables:
+GMT_Time_Diff - Time difference between Local Time and GMT
+_MonitorScreen_ScreenShot - Set to "1", take screen shot
+_MonitorScreen_Email - Set to "1", notice to you via email

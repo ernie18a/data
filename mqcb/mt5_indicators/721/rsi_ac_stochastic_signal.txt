@@ -1,0 +1,56 @@
+This indicator gives trend signals with
+RSI
+as color trapeziums (the color correlates with a trend direction) and integral market entry signals as color bars from
+Stochastic oscillator
+and Bill Williams'
+Accelerator
+.
+Indicator input parameters include RSI and Stochastic oscillator input parameters:
+//+-----------------------------------+
+//|  Indicator input parameters       |
+//+-----------------------------------+
+input
+int
+RSI_Period=
+9
+;
+// RSI period
+input
+ENUM_APPLIED_PRICE
+RSI_Price=
+PRICE_CLOSE
+;
+// RSI prices calculation method
+input
+int
+STO_Period=
+5
+;
+// Stochastic period
+input
+int
+STOD_Period=
+5
+;
+// Stochastic signal line period
+input
+int
+STO_Slowing=
+3
+;
+// Stochastic slowing period
+input
+ENUM_MA_METHOD
+STO_Method=
+MODE_SMA
+;
+// Stochastic smoothing method
+input
+ENUM_STO_PRICE
+STO_Price=
+STO_LOWHIGH
+;
+// Stochastic prices calculation method
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/721

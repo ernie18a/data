@@ -1,0 +1,12 @@
+This is a Grid system which opens first trade with market order and next orders of the Grid with Limit Pending orders.
+This code can be used in both MetaTrader5 and MetaTrader4.
+Just change the file extension from .mq5 to .mq4
+and compile the file in MetaEditor.
+This expert advisor is designed with
+visual strategy builder -
+Mission Automate. Code is generated automatically. More info:
+https://www.mql5.com/en/articles/4951
+This EA is available as a template in a free demo version, so you can easily modify / customise it without programming.
+Parameters
+First trade type is specified by the user, and after that Grids reverse buy/sell/buy/sell etc.
+Trading

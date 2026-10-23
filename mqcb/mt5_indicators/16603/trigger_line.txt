@@ -1,0 +1,11 @@
+Real author:
+dwt5 and adoleh2000
+This is a trend-following indicator using the moving average and its smoothing. It features alerts, emails and push notifications.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 01.08.2006.
+Fig.1. Trigger_Line indicator on the chart
+Fig.2. Trigger_Line indicator. Generating alerts
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16603

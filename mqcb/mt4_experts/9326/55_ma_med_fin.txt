@@ -1,0 +1,11 @@
+This advisor uses an only one МА(55) PRICE_MEDIAN !!!
+I have decided to check an idea, it still raw, and it may not work.
+But it can be used as "template" for beginners, just rewrite your strategy after void Check () function.
+It is possible to test it in a fast mode, because it uses a SMA (55) shift. It trades from 8:00 till 20:00 on GBP JPY M5
+Recommendations:
+Advisor has a trailing stop, but it doesn't used;
+Copy TrailingAll.mq4 to Libraries, а 55 MA med FIN.mq4 to experts;
+Restart terminal.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9326

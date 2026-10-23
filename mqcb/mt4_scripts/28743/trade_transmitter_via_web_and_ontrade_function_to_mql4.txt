@@ -1,0 +1,5 @@
+This EA has 3 Very Interesting Functions:
+1. It can Detect Trades and its modifications in the account, made by other EAs or made manually.
+2. Once trades are detected, it can transmit each Trade over the web to any Server or any webapplication API (May require modification by professional coder, depending on the API).
+Currently using JSON type messages, but can be modified for any other format.
+3.  Function TransmitTradeRequest can be used by other algorithms to replace the function "OnTrade" from mql5.

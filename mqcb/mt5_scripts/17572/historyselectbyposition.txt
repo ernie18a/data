@@ -1,0 +1,76 @@
+An example of using
+HistorySelectByPosition
+(based on the
+HistoryDealGetTicket
+use example).
+Position identifier is set as the input parameter. Next, the script attempts to create a list of orders and deals with the specified identifier.
+Script operation example:
+0
+: deal
+#
+116488443
+at
+2017.02
+.
+07
+12
+:
+55
+:
+56
+Enter, buy
+0.03
+EURUSD (order
+#
+132873637
+,
+position ID
+132873637
+)
+1
+: deal
+#
+116488540
+at
+2017.02
+.
+07
+12
+:
+56
+:
+38
+Close by, sell
+0.01
+EURUSD (order
+#
+132873727
+,
+position ID
+132873637
+)
+2
+: deal
+#
+116488549
+at
+2017.02
+.
+07
+12
+:
+56
+:
+42
+Exit, sell
+0.02
+EURUSD (order
+#
+132873736
+,
+position ID
+132873637
+)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17572

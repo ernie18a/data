@@ -1,0 +1,6 @@
+Generates a random number, and if this number is even, it will buy, if odd - it will sell.
+Only 1 position at a time.
+Settings
+Choose the SL distance.
+Choose the TP distance.
+Choose the % of risk on your capital.

@@ -1,0 +1,10 @@
+The ColorLine indicator shows the line of the price
+moving average
+on the chart.
+The line has diffrent colors (100 bars has the same color). The color settings of the line is changing every 5 ticks, there are 3 color schemes.
+ColorLine, color scheme 1
+ColorLine, color scheme 2
+ColorLine, color scheme 3
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23

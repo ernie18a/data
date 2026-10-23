@@ -1,0 +1,22 @@
+We Have A free EA base On an Idea here for you.
+FIFO strategy
+HOW it works:
+When a candle move more than a special size (
+volatility in input parameter) then we have a big/fast market movement for symbol price...
+so we use stop orders type to catch this big/fast movement. yes its easy strategy and it has a big potential to be better.
+When all the market movement makes you have lost, This ea makes a good profit with a little profit with many orders in a short time Just on a Candle.
+When ex: M15 or better in H1 time frame a candle moves fast as I need it or have a good change in price about over the 200 points this is a good choice to enter the market with a thiny order.
+We make this Idea to an EA free.
+if you have any question, any Idea to have better ea im here:
+Fafolika
+Enjoy
+Recommendations:
+Use ECN account with smalest posible spread.
+H1 Timeframe / EURUSD and GBPUSD have best result.
+version 1.1:
+Work on strategy to have better result in real market.
+Add input parameter to limit maximum orders taken in a candle
+See the result:
+if you have better idea to have better one leave me a message.
+Remember, this program is an idea and needs to be improved.
+Do not use this program on real market

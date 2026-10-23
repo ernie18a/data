@@ -1,0 +1,11 @@
+The real author:
+Svinozavr
+The basis of the ZigZag channel is not a fixed but sliding threshold calculated by the Parabolic SAR. By analogy with the stops are fixed and trailing thresholds (stops).
+The indicator setting is performed by the standard input for Parabolic input parameters (Step and Maximum). Beside, there is added the restriction with the minimum available width of the channel to remove thin market. It is set in points.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 17.06.2009.
+Fig.1 The ChanellOnParabolic indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1313

@@ -1,0 +1,5 @@
+The indicator draws line for quick calculation of potential profit/loss from lot, or lot from expected profit.
+Select what are you inserting into value, and the opposite will be calculated on the line. Click New for creating new line or Edit to calculate the last inserted line with new Value. Drag line ends for calculate
+Inputs:
+Font = 12;         - size of the font;
+Color = Yellow;  - color of line and value shown;

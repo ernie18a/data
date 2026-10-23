@@ -1,0 +1,46 @@
+Real author:
+That is not the original version of Pirat's "
+Jolly Roger
+" Expert Advisor submitted to the Automated Trading Championship 2011. It represents only my vision of performing deals.
+The Expert Advisor works using only
+RSI
+indicator, timeframe - М5. Lots 5-15. Trading is performed using the same parameters.
+//--- external variables
+input
+int
+TP        =
+150
+;
+// Take Profit
+input
+int
+SL        =
+50
+;
+// Stop Loss
+input
+int
+RSIPeriod =
+14
+;
+// RSI period
+input
+int
+RSILevel  =
+30
+;
+// RSI level
+Fig. 1. Pirat's Expert Advisor trading results at the Automated Trading Championship 2011
+Fig. 2. Test results displayed on the period of the Automated Trading Championship 2008
+Fig. 3. Test results
+displayed
+on the period of the Automated Trading Championship 2010
+Fig. 4. Test results
+displayed
+on the period
+of the Automated Trading Championship 2011
+Note:
+We recommend using this Expert Advisor only as a basis for developing your own strategy.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/919

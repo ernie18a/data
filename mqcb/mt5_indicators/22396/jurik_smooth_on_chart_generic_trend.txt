@@ -1,0 +1,12 @@
+Basics :
+This indicator is using the well known JMA (Jurik Moving Average) to calculate a sort of a generic trend. The way it calculates it :
+it calculates the jma of high
+it calculates the jma of low
+it calculates the jma of close
+it calculates the jma of typical price (high+low+close)/3 - the "generic" value (it s not the same as (jma(high)+jma(low)+jma(close))/3 hence the name "generic")
+the slope of the "generic" depends on the slopes of the first 3 valuse
+if all are sloping up the color of the "generic value is the color for up
+if all are sloping down the color of the "generic value is the color for down
+otherwise the color of the "generic' is indicating neutral (thus filtering out some potential false signals)
+Usage :
+You can use the color of the "generic" value as a signal. Also, the colors of the other 3 jmas can be used as early warnings fo potential trend change or reversal

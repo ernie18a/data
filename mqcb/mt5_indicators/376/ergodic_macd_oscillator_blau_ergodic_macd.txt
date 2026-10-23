@@ -1,0 +1,43 @@
+Author:
+Andrey N. Bolkonsky
+Ergodic MACD Oscillator by William Blau is described in the book
+"Momentum, Direction, and Divergence: Applying the Latest Momentum Indicators for Technical Analysis"
+.
+WilliamBlau.mqh must be placed in
+terminal_data_folder
+\MQL5\Include\
+Blau_Ergodic_MACD.mq5 must be placed in
+terminal_data_folder
+\MQL5\Indicators\
+Erogdic MACD Oscillator by William Blau
+Calculation:
+Ergodic MACD Oscillator is defined as follows:
+Ergodic_MACD(price,r,s,u) = MACD(price,r,s,u)
+SignalLine(price,r,s,u,ul) = EMA( Ergodic_MACD(price,r,s,u) ,ul)
+where:
+Ergodic_MACD() - Ergodic - MACD(price,r,s,u);
+SignalLine() - Signal Line - exponentially smoothed moving average EMA(ul), applied to MACD;
+In contrast with the standard MACD indicator (it uses the
+simple moving average
+), the
+exponentially smoothed moving average
+is used in the approach, proposed by William Blau.
+Input parameters:
+graphic plot #0 - Ergodic (moving average convergence/divergence):
+r - period of the 1st EMA (slow), applied to price (by default r=20);
+s - period of the 2nd EMA (fast), applied to price (by default s=5)
+u - period of the 3rd EMA, applied to MACD (by default u=3);
+graphic plot #1 - Signal Line:
+ul - smoothing period (signal line), applied to Ergodic (by default ul=3);
+AppliedPrice -
+price type
+(by default AppliedPrice=PRICE_CLOSE).
+Note:
+r>1, s>1;
+s<r (according to William Blau, there isn't any checks in the code);
+u>0. If u=1, smoothing is not used;
+ul>0. If ul=1, the signal and ergodic lines are the same;
+Min. rates =([max(r,s)]+u+ul-3+1).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/376

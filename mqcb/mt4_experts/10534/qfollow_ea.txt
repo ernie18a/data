@@ -1,0 +1,10 @@
+This EA implements a trailing stop buy and a trailing stop sell. It places an order above the price and below the price. The sell stop order will fall with the price, the stop sell order will rise.
+This expert advisor is used to manage a break out. You can place either a sell stop under the price or a sell buy above the price or both.
+The sell stop order will be executed if the price falls below the trigger price. If the price rises, the trigger price also rises.
+The buy stop order will be executed if the price rises above the trigger price. If the price falls the trigger prices falls also.
+The trigger price starts with a distance from the price, for example 50 pips.
+This expert advisor is not a trading system by itself, it is a tool which can be very profitable in some cases.
+For example:
+Set it up before a news comes out.
+The price is in a triangle and we know it will break out either long or short
+The price is falling without any reason, in this case we place a stop buy which falls also

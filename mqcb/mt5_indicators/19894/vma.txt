@@ -1,0 +1,11 @@
+The VMA indicator draws a moving average, the period of which changes dynamically depending on volatility. The higher the volatility, the greater the period of the moving average, and vice versa.
+The indicator has three input parameters:
+Period of calculation
+- calculation period;
+Period of smoothing
+- smoothing period;
+Applied price
+- price used for calculations.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19894

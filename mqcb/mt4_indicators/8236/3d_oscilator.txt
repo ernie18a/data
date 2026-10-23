@@ -1,0 +1,4 @@
+An oscillator that signals in case of trend changing. When the blue line crosses the red one from top downward - Sell, when the blue line crosses the red one bottom-up - Buy.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8236

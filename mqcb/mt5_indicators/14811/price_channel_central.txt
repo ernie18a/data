@@ -1,0 +1,14 @@
+Real author:
+Yuriy Tokman (YTG)
+The Channel indicator.
+The upper line of the channel — the maximum value of a bar in a specified amount of bars.
+The lower line of the channel — the minimum value of a bar in a specified amount of bars.
+The middle line of the channel — the average value of the upper and the lower lines.
+The indicator also displays the current channel levels as price labels and the type of the signal for making trading decisions.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 10.09.2015.
+Figure 1. The Price_Channel_Central indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14811

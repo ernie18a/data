@@ -1,0 +1,17 @@
+This EA searches for Horizontal and Trend lines of specified color in
+MonitoringColor
+on current chart and notifies you when price crosses them.
+When it happens, after the notification, it also changes line color to what specified in
+CrossedColor
+parameter and stops monitoring for price crosses on it, until the user changes its color again.
+You can choose what type of notification you want setting appropriate input parameters:
+EnableAlert
+shows a popup alert on price cross
+EnableNotifications
+sends a mobile notification if you configured it on MT5
+EnableEmails
+sends you an email message if you configured it on MT5
+I'm sharing this code primarily because I need it for my personal trading and I haven't found something similar working well, but also because I'm switching from MQL4 to MQL5 and would like to know from the community if I'm doing it the right way.
+Example setup:
+Hope you enjoy it,
+Strx.

@@ -1,0 +1,5 @@
+Paints the bars in the color corresponding to the current trend. Based on ADX.
+ADX BARS
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7554

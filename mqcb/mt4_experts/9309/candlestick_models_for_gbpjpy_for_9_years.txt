@@ -1,0 +1,31 @@
+Author:
+Kontra
+Description:
+An Expert Advisor uses the Candlestick Models for trading: Blending Candlesticks (Engulfing) and Hammer(inverted Hammer)/Shooting Star models
+It has been tested at GBP/JPY, M15. The extended 9 year trading report can be found
+here
+.
+Parameters:
+extern int bTp = 100; // Profit for buy
+extern int sTp = 100; // Profit for sell
+extern int zazor= 1; // Distance from the previous bar High/Low (for orders)
+extern int Max_Search = 100; // Bars count for the price extremum search
+extern int OrderExp = 8; // Life time (in hours) for pending order
+extern int MagicType1 = 11111; // Magic number for the first type of deals
+extern int MagicType2 = 22222; // Magic number for the second type of deals
+extern int MagicType3 = 33333; // Magic number for the third type of deals
+extern double StartLot = 0.1; // Deal volume
+extern bool TSProfitOnly = True; // Trailing stop for profit only
+extern int TStop.Buy = 50; // Trailing stop for buys (in points)
+extern int TStop.Sell = 35; // Trailing stop for sells (in points)
+extern int TrailingStep = 3; // Trailing stop step (in points)
+extern int LevelProfit = 25; // Profit (in points)
+extern int LevelWLoss = 1; // Without Loss level (in points)
+I have some improvement ideas, the comments are welcome.
+I would like to ask you to add a confirmation of the next candle closing price to the conditions of orders opening:
+If a buy signal - the closing price of the candle, crossed the entrance level in the old scheme, should be above the old level of the entrance. Buy immediately after such closing. This candle does not necessarily have to be exactly next. As it has illustrates at figure. Main confirmation is close above the old entrance.
+If a sale signal - then the closing price of the candle, crossed the old entrance level, should be below the old entrance level. Sell immediately after such close!
+History backtesting results:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9309

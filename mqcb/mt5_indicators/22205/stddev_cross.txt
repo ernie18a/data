@@ -1,0 +1,21 @@
+StdDev Cross indicator displays two lines of the Standard deviation with different parameters and sets signal pointers at the intersection of these lines.
+There are five inputs:
+First MA period
+- first StdDev calculation period
+First MA method
+- first StdDev calculation method
+Second MA period
+- second StdDev calculation period
+Second MA method
+- second StdDev calculation method
+Applied price
+- moving averages calculation price
+If the first StdDev crosses the second one upwards, the
+blue
+pointer is placed on the average price of the two StdDev (StdDev1+StdDev2)/2
+If the first StdDev crosses the second one downwards, the
+red
+pointer is placed on the average price of the two StdDev (StdDev1+StdDev2)/2
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22205

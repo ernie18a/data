@@ -1,0 +1,65 @@
+Real author:
+Tor
+Trend analyzer based on the difference of two RSI oscillators with different periods.
+The indicator will be useful for those who analyze two RSI indicators with different periods (fast and slow), their relative positions, as well as the location of the slow RSI relative to the specified level (for example, 50).
+That is, if the slow RSI is greater than 50, and the fast RSI is greater than the slow RSI — paint the histogram in overbought color.
+If the slow RSI is less than 50, and the fast RSI is less than the slow RSI — paint the histogram in oversold color.
+Al settings can be customized: colors, signal level (50), periods of the slow and fast RSI, histogram display type.
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+TypeGraph            TypeGr=Histogram;
+// Type graph
+//---
+input
+uint
+RSIPeriod1=
+14
+;
+// Fast RSI Period
+input
+ENUM_APPLIED_PRICE
+RSIPrice1=
+PRICE_CLOSE
+;
+//---
+input
+uint
+RSIPeriod2=
+50
+;
+// Slow RSI Period
+input
+ENUM_APPLIED_PRICE
+RSIPrice2=
+PRICE_CLOSE
+;
+//---
+input
+uint
+Level=
+50
+;
+// Signal Level
+//---
+input
+int
+Shift=
+0
+;
+// Horizontal indicator shift in bars
+The indicator has 5 buffers that can be used at your discretion.
+0 — Indicator buffer;
+1 — color indicator buffer with three color states;
+2 — RSI fast;
+3 — RSI slow;
+4 — Difference between two RSI (MACDRSI).
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 27.09.2016.
+Fig1. Full histogram of the Delta_RSI indicator
+Fig.2. Shortened histogram of the Delta_RSI indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16476

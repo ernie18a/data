@@ -1,0 +1,14 @@
+Volume Rate of Change (VROC) is an indicator of the direction where the volume trend moves.
+Its idea lies in the fact that almost all important graphical formations (peaks, bottoms, breaches, etc.) are accompanied by a dramatic increase of trade volume.
+The indicator is the difference between current bar volume and the volume n periods ago. If the current bar volume is higher than it was n periods ago, the value of the indicator will be positive. If the current volume is lower, VROC will obtain a negative value. Thus, the indicator gives an idea of the volume change speed.
+Determining the calculation period is very important while working with this indicator. Short periods of 10-15 bars show sudden changes of volume. However, for signals that are more realistic it is better to choose periods of 25-30 bars. This gives a smoother and more rounded line and makes the analysis easier. At the same time, using short periods gives a more broken, "noisy" line and complicates the analysis.
+Volume Rate of Change indicator
+Calculation:
+VROC = ((VOLUME (i) - VOLUME (i - n)) / VOLUME (i - n)) * 100
+where:
+VOLUME (i) - is the current bar volume;
+VOLUME (i - n) - the volume n bars ago;
+VROC - the Volume Rate of Change indicator value.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/53

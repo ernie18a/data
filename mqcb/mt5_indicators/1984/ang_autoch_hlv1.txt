@@ -1,0 +1,10 @@
+Real author:
+ANG3110@latchess.com
+The indicator plots an equidistant channel with the calculation period defined in input parameters.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 28.01.2008.
+Figure 1. The Ang_AutoCh_HL-v1 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1984

@@ -1,0 +1,60 @@
+The author of the idea:
+Sergey Rashevskiy
+.
+mq5 code author
+—
+barabashkakvn
+.
+Working Strategy
+If there are no open positions
+(opened by the EA), two oppositely directed positions with the "
+Lots
+" initial lot are opened with a stop loss equal to "
+Stop Loss
+", while take profit is not used. Stop loss moves using trailing ("
+Trailing Stop
+" and "
+Trailing Step
+" parameters are applied).
+Trailing
+Position's first modification reliably moves a stop loss to a breakeven or even a small profit. The subsequent modifications of Stop Loss increase the guaranteed profit.
+Two stop loss activation options are available afterwards:
+1. Position has closed with a loss
+1.1. In this case,
+we assume that the trend has reversed
+.
+Open a position with an increased lot
+(add "
+Number of minimum lots
+" to the volume of the remaining position) in the direction opposite to the closed one. For example, the unprofitable BUY position has been closed. Then open a SELL position with an increased lot. Thus, we obtain
+two positions in one direction
+.
+1.2. Further on,
+it works only in the obtained direction
+: wait till the price leaves the least loss-making position by "
+Step
+" points in the loss-making direction and
+open a position with an increased lot
+(add "
+Number of minimum lots
+" to the volume of the least loss-making position) in the direction of existing positions (as you remember, we have one or several unidirectional positions).
+2. Position has closed with a profit (this is the position that was modified at least once)
+2.1. We assume that this is not a trend reversal, but a small rebound. Open a position with an increased lot in the direction of the closed one. For example, a profitable BUY position has been closed, then we open a BUY order with an increased lot. Thus, we obtain
+two positions in the same direction
+.
+2.2. We try to apply trailing afterwards. In any case, one of the Stop Losses will work and we will return either to p. 1 or to p. 2.
+Calculation of BUY and SELL positions, total profit on BUY and total profit on SELL, as well as searching for the least loss-making BUY and SELL position are performed within one call in the
+CalculateAllPositions
+function.
+Inputs
+Lots - initial position volume
+Number of minimum lots - number of minimum lots, a position volume is changed by
+Stop Loss (in pips)
+Trailing Stop (in pips)
+Trailing Step (in pips)
+Step - initial step between differently directed positions
+Minimum nearest (in pips) - minimum distance within a series of positions
+magic number - unique EA identifier
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21311

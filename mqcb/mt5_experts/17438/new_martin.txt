@@ -1,0 +1,26 @@
+The Expert Advisor only works on accounts with hedging! (Read here about the hedging option:
+MetaTrader 5 now features hedging option
+)
+Inspired by
+"
+Martin damped
+" (in Russian).
+The
+New Martin
+Expert Advisor opens two opposite positions upon start.
+OnTradeTransaction
+handling. When Take Profit triggers, it opens a position (one position) in the same direction. The intersection of two MA indicators is a signal to open a position of a larger lot.
+Open two opposite positions at start
+Then wait for the activation of TakeProfit (processing of trading transactions in
+OnTradeTransaction
+):
+If a BUY position was closed, open (no only one) BUY position
+If a Sell position was closed, open (no only one) Sell position
+Then we have a losing position
+How to eliminate it: waiting for the intersection of two MAs.
+And open a position with an increased lot in the direction of the losing position.
+The balance increases while equity does not grow
+The method used: "Loss percent" (difference between equity and balance) is configured in the EA's inputs. It is calculated as follows:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17438

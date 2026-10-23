@@ -1,0 +1,4 @@
+This TS is based on the classical trend-following system of opening the positions at the intersection of two MAs, short and long. However, in this case, the signals are strengthened (filtered) by an additional signal from the CCI indicator and, at the same time, the signal is traced by the intersection of the zero line with the indicator: bottom-up - a long position, top-down - a short position. The main parameters of the EA are: the periods of moving averages, the period of CCI, the period of ATR for placing a stop loss, and some other secondary parameters.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7746

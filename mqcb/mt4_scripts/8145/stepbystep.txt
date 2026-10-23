@@ -1,0 +1,12 @@
+Not all the trading systems can be automated. Manual testing is often necessary. At the same time, the problem of "dipping into the future" exists that can significantly affect the testing quality. The script allows you to mimic trading showing historical quotes of various symbols and timeframes step by step. The feeding is managed by the user.
+Composition:
+IdleLib.dll - library to intercept pressing of keys in MetaTrader 4 windows. You should copy it to \experts\libraries
+StepByStep.mq4 - the script itself
+Script inputs:
+startdate - date and time when testing started
+instruments - symbols for testing separated by spaces, for exmaple: "EURUSD GBPUSD USDCHF"
+minperiod - minimum period for testing. It can be M1, M5, M15, M30, H1, H4, D1, W1.
+После запуска скрипта Файл->Открыть автономно. Там выбираем файлы с приставкой "t_" и тайм-фреймом на 1 больше. Например, чтобы открыть EURUSD 30-минутный - нужно открыть файл "t_EURUSDM31.hst". Далее клавишей "6" на расширенной клавиатуре пошагово добавляем котировки. Шаг добавления будет соответствовать тайм-фрейму активного окна. Например, если нажали "6" в окне с часовым тайм фреймом, то шаг будет 1 час и т.д.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8145

@@ -1,0 +1,53 @@
+The Long-Term Trend TRIX Oscillator is a custom MetaTrader 5 indicator designed to identify the long-term market direction and the strength of momentum using multiple TRIX calculations and smoothing filters.
+The indicator combines:
+- Fast TRIX
+- Slow TRIX
+- LWMA smoothing
+- Dynamic trend colouring
+The aim is to help traders identify:
+- continuation of a bullish trend
+- bearish momentum
+- trend transitions
+- long-term directional bias
+The oscillator is displayed in a separate window and uses different colours to highlight market conditions and momentum phases.
+FEATURES:
+- Dual TRIX analysis
+- Smoothed momentum filtering
+- Trend visualisation
+- Lightweight calculations
+- Suitable for discretionary trading
+- Clear visual structure
+HOW IT WORKS:
+The indicator compares:
+- a fast TRIX oscillator
+- a slower TRIX oscillator
+- a moving average smoothing filter
+Different line colours are displayed depending on the relationship between the oscillators and the smoothing line.
+GREEN:
+Strong bullish momentum.
+BLUE:
+Weak bullish phase or transition.
+RED:
+Bearish pressure.
+PURPLE:
+Strong long-term bullish structure.
+SUGGESTED USAGE:
+- Trend confirmation
+- Momentum filtering
+- Swing trading
+- Long-term directional analysis
+SUGGESTED TIMEFRAMES:
+- H1
+- H4
+- D1
+WORKS BEST ON:
+- Forex
+- Indices
+- Crypto
+- Commodities
+INPUTS:
+The current version uses internally optimised parameters.
+This indicator is provided free of charge and may be modified for personal use.
+Translated from Italian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/it/code/72996

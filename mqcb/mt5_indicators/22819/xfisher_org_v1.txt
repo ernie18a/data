@@ -1,0 +1,46 @@
+Real author:
+TrendLaboratory Ltd.
+Fisher
+indicator with an additional smoothing for eliminating false intersection of the main and signal lines.
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+uint
+FLength=
+7
+;
+// depth of averaging
+input
+Smooth_Method MA_SMethod=MODE_JJMA;
+// Smoothing method
+input
+uint
+MA_Length=
+5
+;
+// Depth of smoothing
+input
+int
+MA_Phase=
+15
+;
+// smoothing parameter,
+3//---- for JJMA within the range of -100 ... +100 it influences the quality of the transition process;
+//---- for VIDIA it is a CMO period, for AMA it is a slow average period
+input
+ENUM_APPLIED_PRICE_ IPC=PRICE_CLOSE_;
+// price constant
+input
+int
+Shift=
+0
+;
+// Horizontal shift of the indicator in bars
+The indicator uses the classes of library SmoothAlgorithms.mqh (to be copied to <terminal_data_directory>\MQL5\Include). The use of the classes was thoroughly described in article
+Averaging Price Series for Intermediate Calculations without Using Additional Buffers
+.
+Fig1. Indicator XFisher_org_v1
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22819

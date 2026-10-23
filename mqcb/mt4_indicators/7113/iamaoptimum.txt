@@ -1,0 +1,1 @@
+Kaufman's Adaptive Moving Average (AMA) was developed by Perry Kaufman. The present version or i-AMA-Optimum is optimazed for the long periods.

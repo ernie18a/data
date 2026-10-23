@@ -1,0 +1,7 @@
+Super Trend
+indicator extended with additional display types:
+Bars
+Candles
+Lines
+Automatic
+- depends on the chart type and adjusts the display automatically.

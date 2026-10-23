@@ -1,0 +1,16 @@
+Rubicons CCI Cross signal oscillator. This is a standard CCI with a signal line - three-period exponential moving average.
+It has four adjustable parameters:
+CCI period
+- CCI calculation period
+EMA period
+- signal EMA calculation period
+Overbought
+- overbought level
+Oversold
+- oversold level.
+Signals:
+If CCI line crosses the oversold level upwards and CCI line is above the signal EMA line, the buy label is placed.
+If CCI line crosses the overbought level downwards and CCI line is below the signal EMA line, the sell label is placed.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22795

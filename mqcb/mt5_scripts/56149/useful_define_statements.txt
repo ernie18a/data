@@ -1,0 +1,1134 @@
+Definition of variables
+First, you need to change the first lines in the file to match the name of your variables and arrays. Below you can see I have used g_rates for the MqlRates variable that has the candle open, close, high, and low. You should replace g_rates with the name of your variable. The "i" is a dummy variable name that will not interfere with any other variable in your code. The variable "i" is the number of the candle being used. Example: to use the close of candle 3, use CANDLECLOSE(3).
+// Candle (define g_rates as: MqlRates g_rates[];)
+#define
+CANDLELOW(i)    g_rates[i].low
+#define
+CANDLEHIGH(i)   g_rates[i].high
+#define
+CANDLEOPEN(i)   g_rates[i].open
+#define
+CANDLECLOSE(i)  g_rates[i].close
+#define
+CANDLETIME(i)   g_rates[i].time
+Also, you can get the ASK and BID values using MqlTick as I did below, or you can call SymbolInfoDouble(_Symbol,SYMBOL_ASK) if you prefer. It does not make any difference in the value returned.
+// Prices (define g_tick as: MqlTick g_tick;))
+#define
+ASK             g_tick.ask
+#define
+BID             g_tick.bid
+Finally, arrays are also defined for moving averages, atr, or any additional array you need. Example: to use the Average True Range of candle 1, use ATR(1).
+IMPORTANT: it is assumed that arrays are AsSeries ( e.g.,
+ArraySetAsSeries
+(g_MA20_arr, true);
+). This is critical in the #define statements shown later.
+// define these arrays as: double g_MA20_arr[];
+// Moving averages and ATR
+#define
+MOVAVG20(i)     g_MA20_arr[i]
+#define
+MOVAVG40(i)     g_MA40_arr[i]
+#define
+MOVAVG50(i)     g_MA50_arr[i]
+#define
+MOVAVG200(i)    g_MA200_arr[i]
+#define
+ATR(i)          g_atr_arr[i]
+Once you have defined the statements above, you should not need to change anything else. Additional #define statements that fit your EA could also be added if you need to.
+Candle Features
+Candles have features that are useful when developing an EA, especially if the EA is price-action based. The names of the following definitions tell what they represent. WICK refers to the top candle's shadow and TAIL the bottom candle's shadow. Example: to get the price at the middle of the last candle's body, use CANDLEBODYMIDDLE(1).
+// candle features
+#define
+CANDLEBODYTOP(i)
+fmax
+(CANDLEOPEN(i),CANDLECLOSE(i))
+#define
+CANDLEBODYBOT(i)
+fmin
+(CANDLEOPEN(i),CANDLECLOSE(i))
+#define
+CANDLEMEDIAN(i)       (
+0.5
+*(CANDLEHIGH(i)+CANDLELOW(i)))
+#define
+CANDLEWEIGHTED(i)     (
+0.25
+*(CANDLEHIGH(i)+CANDLELOW(i)+
+2
+*CANDLECLOSE(i)))
+#define
+CANDLETYPICAL(i)      (
+1
+./
+3
+.*(CANDLEHIGH(i)+CANDLELOW(i)+CANDLECLOSE(i)))
+#define
+CANDLEBODYMIDDLE(i)   (
+0.5
+*(CANDLEBODYTOP(i)+CANDLEBODYBOT(i)))
+#define
+CANDLESIZE(i)         (CANDLEHIGH(i)-CANDLELOW(i))
+#define
+CANDLEBODYSIZE(i)
+fabs
+(CANDLECLOSE(i)-CANDLEOPEN(i))
+#define
+CANDLEWICKSIZE(i)     (CANDLEHIGH(i)-CANDLEBODYTOP(i))
+#define
+CANDLETAILSIZE(i)     (CANDLEBODYBOT(i)-CANDLELOW(i))
+In addition, we define two sizes using the ATR as reference. Example: you want to know how big the candle 4 is with respect to the Atr, use ATRCANDLESIZE(4).
+#define
+ATRCANDLESIZE(i)      (CANDLESIZE(i)/ATR(i))
+#define
+ATRCANDLEBODYSIZE(i)  (CANDLEBODYSIZE(i)/ATR(i))
+Also, candles that are going up (close>open) are said to have a +1 direction, while candle going down are -1. If close==open, direction = 0. Example: if(CANDLEDIRECTION(10)==1) Print("Candle 10 is an up candle");
+#define
+CANDLEDIRECTION(i)    (CANDLECLOSE(i)>CANDLEOPEN(i)?
+1
+:(CANDLECLOSE(i)<CANDLEOPEN(i)?-
+1
+:
+0
+))
+Two types of "runs" are defined: UP and DOWN. The runUP is define in a going-up candle as Close-Low, otherwise 0. The runDOWN is defined in a going-down candle as High-Close, otherwise 0; "Runs" are used useful to capture strong movement in the price in one direction. Example, to get the run-up of candle 3, use CANDLERUNUP(3).
+#define
+CANDLERUNUP(i)        ((CANDLECLOSE(i)>CANDLEOPEN(i))?(CANDLECLOSE(i)-CANDLELOW(i)):
+0
+)
+#define
+CANDLERUNDOWN(i)      ((CANDLECLOSE(i)<CANDLEOPEN(i))?(CANDLEHIGH(i)-CANDLECLOSE(i)):
+0
+)
+Candle Feature Inquiries
+These definitions are Boolean variables that tell us the behavior of one or a group of candles. They use previous #define statements to make it short in length.
+isCANDLERIGHTDIR(i,dir) will be true if the candle(i) direction is equal to dir, otherwise false;
+There are two types of fractals: one using five candles, and another (the weak fractal) using three candles. In the fractal #definitions below the candle(i) is the middle candle having the highest high (TOP) or lowest low (BOT). Make sure there is data for candles i-2,i-1,i,i+1,i+2 for the five-candle fractals. There are also other variations using strict inequality ">" or "<", and using "<=" or ">=". Finally, there are #definitions to identify top (TOP) or bottom (BOT) fractals. Looking at the definitions you can figure out which definition to use.
+is3CANDLEGAPUP(i,gap,size) is used to find an UP gap (where the high of a candle is below the low of two candles later). Candle(i) will be the newest of the three candles in question. Again, it is assumed that candles are "AsSeries". "gap" is the minimum price-delta of the gap, and "size" is the minimum price-delta of the middle candle body size.
+is3CANDLEGAPDOWN(i,gap,size) is used to find an DOWN gap using the same logic.
+is3CANDLEGAPUPTREND(i,gap,size) is the same as
+is3CANDLEGAPUP(i,gap,size)
+but add an additional condition to be true: that the oldest of the three candles must be positive direction.
+There are two ways to inquiry of a candle is a doji: isCANDLEDOJIPOINTS(i,n) and isCANDLEDOJIFRACTION(i,f). The first version uses n*_Point and the second uses f*CANDLESIZE(i) to determine whether or not (true or false) the candle is a Doji.
+Example: if you want to know if candle 20 is a non-strict (using equalities) fractal top use isCANDLEFRACTALEQTOP(20), and the output will be true or false.
+As you can see, the definitions are a compressed form of the inquiries, making your EA code shorter and easier to read.
+// candle feature inquiries (boolean)
+#define
+isCANDLEUP(i)               (CANDLEDIRECTION(i)==
+1
+)
+#define
+isCANDLEDOWN(i)             (CANDLEDIRECTION(i)==-
+1
+)
+#define
+isCANDLEFLAT(i)             (CANDLEDIRECTION(i)==
+0
+)
+#define
+isCANDLEWICKLESS(i)         (CANDLEWICKSIZE(i)==
+0
+)
+#define
+isCANDLETAILLESS(i)         (CANDLETAILSIZE(i)==
+0
+)
+#define
+isCANDLESOLID(i)            (CANDLEWICKSIZE(i)==
+0
+&& CANDLETAILSIZE(i)==
+0
+)
+#define
+isCANDLERIGHTDIR(i,dir)     (dir*(CANDLECLOSE(i) - CANDLEOPEN(i))>
+0
+)
+#define
+isCANDLEFRACTALTOP(i)       (CANDLEHIGH(i) > CANDLEHIGH(i-
+1
+) && CANDLEHIGH(i-
+1
+) > CANDLEHIGH(i-
+2
+) && CANDLEHIGH(i) > CANDLEHIGH(i+
+1
+) && CANDLEHIGH(i+
+1
+) > CANDLEHIGH(i+
+2
+))
+#define
+isCANDLEFRACTALBOT(i)       (CANDLELOW(i) < CANDLELOW(i-
+1
+) && CANDLELOW(i-
+1
+) < CANDLELOW(i-
+2
+) && CANDLELOW(i) < CANDLELOW(i+
+1
+) && CANDLELOW(i+
+1
+) < CANDLELOW(i+
+2
+))
+#define
+isCANDLEFRACTALEQTOP(i)     (CANDLEHIGH(i) >= CANDLEHIGH(i-
+1
+) && CANDLEHIGH(i-
+1
+) >= CANDLEHIGH(i-
+2
+) && CANDLEHIGH(i) >= CANDLEHIGH(i+
+1
+) && CANDLEHIGH(i+
+1
+) >= CANDLEHIGH(i+
+2
+))
+#define
+isCANDLEFRACTALEQBOT(i)     (CANDLELOW(i) <= CANDLELOW(i-
+1
+) && CANDLELOW(i-
+1
+) <= CANDLELOW(i-
+2
+) && CANDLELOW(i) <= CANDLELOW(i+
+1
+) && CANDLELOW(i+
+1
+) <= CANDLELOW(i+
+2
+))
+#define
+isCANDLEWEAKFRACTALTOP(i)   (CANDLEHIGH(i) > CANDLEHIGH(i-
+1
+) && CANDLEHIGH(i) > CANDLEHIGH(i+
+1
+))
+#define
+isCANDLEWEAKFRACTALBOT(i)   (CANDLELOW(i) < CANDLELOW(i-
+1
+) && CANDLELOW(i) < CANDLELOW(i+
+1
+))
+#define
+isCANDLEWEAKFRACTALEQBOT(i) (CANDLELOW(i) <= CANDLELOW(i-
+1
+) && CANDLELOW(i) <= CANDLELOW(i+
+1
+))
+#define
+isCANDLEWEAKFRACTALEQTOP(i) (CANDLEHIGH(i) >= CANDLEHIGH(i-
+1
+) && CANDLEHIGH(i) >= CANDLEHIGH(i+
+1
+))
+#define
+is3CANDLEGAPUP(i,gap,size)  (CANDLELOW(i)-CANDLEHIGH(i+
+2
+)>gap && CANDLEBODYSIZE(i+
+1
+)>=size)
+#define
+is3CANDLEGAPDOWN(i,gap,size) (CANDLELOW(i+
+2
+)-CANDLEHIGH(i)>gap && CANDLEBODYSIZE(i+
+1
+)>=size)
+#define
+is3CANDLEGAPUPTREND(i,gap,size)  (CANDLELOW(i)-CANDLEHIGH(i+
+2
+)>gap && CANDLEBODYSIZE(i+
+1
+)>=size &&  isCANDLEUP(i+
+2
+))
+#define
+is3CANDLEGAPDOWNTREND(i,gap,size) (CANDLELOW(i+
+2
+)-CANDLEHIGH(i)>gap && CANDLEBODYSIZE(i+
+1
+)>=size &&  isCANDLEDOWN(i+
+2
+))
+#define
+isCANDLEDOJIPOINTS(i,n)     (CANDLEBODYSIZE(i) <= n*
+_Point
+)
+#define
+isCANDLEDOJIFRACTION(i,f)   (CANDLEBODYSIZE(i) <= f*CANDLESIZE(i))
+Math Functions and Operations
+We now define some mathematical functions and operations that are useful in the EA. Some of them are specific for EAs I have developed, but you may change them or delete them if you so desire.
+BRACKET(x,minV,maxV) will return a value of x inside the interval [minV,maxV]. This is useful to box-constrain input variables in the EA.
+CONVEXCOMB(a,x1,x2) is a convex combinations of x1 and x2 as a*x1+x2. This function is useful when computing a intermediate value between x1 and x2, but you want more than just the average (a=0.5).
+EVALLINE(x,x1,y1,x2,y2,ymin,ymax) is the evaluation of a straight line define by two points [x1,y1] and [x2,y2]. Once evaluated at x, it returns a bracketed value inside [ymin, ymax].
+MAPAB11(x,A,B) maps the value x from a bracket [A,B] to a bracket [-1,1]. MAP11AB(x,A,B) maps the value x from a bracket [-1,1] to a bracket [A,B]. These two functions are useful to work with normalized variables in the range of [-1,1].
+The last four functions are used in my EAs and may not necessarily be generically useful for everybody, but I left them there, just in case.
+#define
+BRACKET(x,minV,maxV)                 (x<minV?minV:(x>maxV?maxV:x))
+#define
+CONVEXCOMB(a,x1,x2)                  (a*x1+(
+1.0
+-a)*x2)
+#define
+EVALLINE(x,x1,y1,x2,y2,ymin,ymax)    BRACKET((y2-y1)/(x2-x1)*(x-x1)+y1,ymin,ymax)
+#define
+MAPAB11(x,A,B)                       (
+2
+./(B-A)*(BRACKET(x,A,B)-A)-
+1
+.)
+#define
+MAP11AB(x,A,B)                       ((B-A)/
+2
+.*(BRACKET(x,-
+1
+,
+1
+)-
+1
+)+B)
+#define
+SIGMOID(x,a)                         (
+1.0
+/(
+1.0
++
+exp
+(-a*x)))
+#define
+NN1(x,w,b)                           (w*x+b)
+#define
+EVALPOLY(X,X0,X1,Y0,Y1,EX,ymin,ymax) BRACKET(Y1*
+pow
+((X-X0)/(X1-X0),EX)+Y0,ymin,ymax)
+#define
+EVALPOLY2P(X,X0,X1,Y0,Y1,EX,ymn,ymx) BRACKET((Y1-Y0)*
+pow
+((X-X0)/(X1-X0),EX)+Y0,ymn,ymx)
+Also, as function and operations, there are calculations of differences (as a proxy for slopes).
+MA20DIFF(i,n) gives the difference between the two values of the 20-period moving average separated by n candles. The rest of functions follow the same logic. Example: to compute the difference between the 200-period moving average at candle 3 and at candle 13, use MA200DIFF(3,10).
+#define
+MA20DIFF(i,n)                        (MOVAVG20(i)-MOVAVG20(i+n))
+#define
+MA40DIFF(i,n)                        (MOVAVG40(i)-MOVAVG40(i+n))
+#define
+MA50DIFF(i,n)                        (MOVAVG50(i)-MOVAVG50(i+n))
+#define
+MA200DIFF(i,n)                       (MOVAVG200(i)-MOVAVG200(i+n))
+#define
+CANDLECLOSEDIFF(i,n)                 (CANDLECLOSE(i)-CANDLECLOSE(i+n))
+#define
+CANDLEOPENDIFF(i,n)                  (CANDLEOPEN(i)-CANDLEOPEN(i+n))
+#define
+CANDLEHIGHDIFF(i,n)                  (CANDLEHIGH(i)-CANDLEHIGH(i+n))
+#define
+CANDLELOWDIFF(i,n)                   (CANDLELOW(i)-CANDLELOW(i+n))
+#define
+CANDLEMEDIANDIFF(i,n)                (CANDLEMEDIAN(i)-CANDLEMEDIAN(i+n))
+#define
+CANDLEWEIGHTEDDIFF(i,n)              (CANDLEWEIGHTED(i)-CANDLEWEIGHTED(i+n))
+#define
+CANDLETYPICALDIFF(i,n)               (CANDLETYPICAL(i)-CANDLETYPICAL(i+n))
+#define
+CANDLEBODYMIDDLEDIFF(i,n)            (CANDLEBODYMIDDLE(i)-CANDLEBODYMIDDLE(i+n))
+Inquiries are also included as mathemtical functions. Bracketing and convexity is checked below.
+#define
+isINBRACKET(x,minV,maxV)             (x
+<
+=maxV && x>
+=minV)
+#define
+isINBRACKETSTRICT(x,minV,maxV)       (x
+<
+maxV
+&& x>
+minV)
+#define
+isOUTBRACKET(x,minV,maxV)            (x>=maxV || x
+<
+=minV)
+#define
+isOUTBRACKETSTRICT(x,minV,maxV)      (x>
+maxV || x
+<
+minV)
+#define
+isCONVEX(yl,yc,yr)                   (yl>
+=yc && yc
+<
+=yr)
+#define
+isCONCAVE(yl,yc,yr)                  (yl<=yc && yc>
+=yr)
+#define
+isCONVEXTSTRICT(yl,yc,yr)            (yl>yc && yc
+<
+yr
+)
+#define
+isCONCAVESTRICT(yl,yc,yr)            (yl<yc && yc>
+yr)
+Constants
+I define some constants that I use. It is your choice to use them.
+// Constants
+#define
+PIVALUE                              (
+M_PI
+)
+#define
+MINSTOPPOINTS                        (
+30
+)
+#define
+MINFREEZEPOINTS                      (
+30
+)
+#define
+STOPLEVEL                            (
+fmax
+(MINSTOPPOINTS,(
+double
+)
+SymbolInfoInteger
+(
+_Symbol
+,
+SYMBOL_TRADE_STOPS_LEVEL
+))*
+_Point
+)
+#define
+FREEZELEVEL                          (
+fmax
+(MINFREEZEPOINTS,(
+double
+)
+SymbolInfoInteger
+(
+_Symbol
+,
+SYMBOL_TRADE_FREEZE_LEVEL
+))*
+_Point
+)
+Debugging
+Any seasoned programmer knows that the best tool for debugging your code is the Print statement. The following definitions allows to set up Print statements all over your program, and turn them ON/OFF depending on the value of the level of debugging you are interested in.
+First, you need to define the level of debugging using #define DEBUG_LEVEL0,
+#define DEBUG_LEVEL1,
+or
+#define DEBUG_LEVEL2. When using
+DEBUG_LEVEL0, there will be no printing on the Journal tab of the Metatrader 5 terminal. With
+DEBUG_LEVEL1, only the PRINTVARn statements will be active and will print on the Journal tab. With
+DEBUG_LEVEL2, both, the PRINT
+VARn
+and the VPRINT
+VARn
+statements will print on the journal tab. The
+DEBUG_LEVEL2 is the "V"erbose case using VPRINT
+VARn
+.
+PRINTVARn will print n variables. For instance, if you want to print i, x and z, use PRINTVAR3(i,x,z); In order to print a string, use PRINTTEXT("any string"); The print out will include the function name and the line number of the file where the PRINTVARn statement is inserted.
+// Debugging with Print
+// At the beginning of your code define the debug level x={0,1,2} as: #define DEBUG_LEVELx
+#ifdef
+DEBUG_LEVEL0
+#define
+PRINTTEXT(text)
+#define
+PRINTVAR(x1)
+#define
+PRINTVAR1(x1)
+#define
+PRINTVAR2(x1,x2)
+#define
+PRINTVAR3(x1,x2,x3)
+#define
+PRINTVAR4(x1,x2,x3,x4)
+#define
+PRINTVAR5(x1,x2,x3,x4,x5)
+#define
+PRINTVAR6(x1,x2,x3,x4,x5,x6)
+#define
+VPRINTTEXT(text)
+#define
+VPRINTVAR(x1)
+#define
+VPRINTVAR1(x1)
+#define
+VPRINTVAR2(x1,x2)
+#define
+VPRINTVAR3(x1,x2,x3)
+#define
+VPRINTVAR4(x1,x2,x3,x4)
+#define
+VPRINTVAR5(x1,x2,x3,x4,x5)
+#define
+VPRINTVAR6(x1,x2,x3,x4,x5,x6)
+#endif
+#ifdef
+DEBUG_LEVEL1
+#define
+PRINTTEXT(text)
+Print
+(
+"*/*/*/* "
+,
+__FUNCTION__
+,
+"("
+,
+__LINE__
+,
+") :"
+,text)
+#define
+PRINTVAR(x1)
+Print
+(
+"*/*/*/* "
+,
+__FUNCTION__
+,
+"("
+,
+__LINE__
+,
+") :"
+,
+#x1
++
+"="
+, (x1))
+#define
+PRINTVAR1(x1)
+Print
+(
+"*/*/*/* "
+,
+__FUNCTION__
+,
+"("
+,
+__LINE__
+,
+") :"
+,
+#x1
++
+"="
+, (x1))
+#define
+PRINTVAR2(x1,x2)
+Print
+(
+"*/*/*/* "
+,
+__FUNCTION__
+,
+"("
+,
+__LINE__
+,
+") :"
+,
+#x1
++
+"="
+, (x1),
+", "
+#x2
++
+"="
+, (x2))
+#define
+PRINTVAR3(x1,x2,x3)
+Print
+(
+"*/*/*/* "
+,
+__FUNCTION__
+,
+"("
+,
+__LINE__
+,
+") :"
+,
+#x1
++
+"="
+, (x1),
+", "
+#x2
++
+"="
+, (x2),
+", "
+#x3
++
+"="
+, (x3))
+#define
+PRINTVAR4(x1,x2,x3,x4)
+Print
+(
+"*/*/*/* "
+,
+__FUNCTION__
+,
+"("
+,
+__LINE__
+,
+") :"
+,
+#x1
++
+"="
+, (x1),
+", "
+#x2
++
+"="
+, (x2),
+", "
+#x3
++
+"="
+, (x3),
+", "
+#x4
++
+"="
+, (x4))
+#define
+PRINTVAR5(x1,x2,x3,x4,x5)
+Print
+(
+"*/*/*/* "
+,
+__FUNCTION__
+,
+"("
+,
+__LINE__
+,
+") :"
+,
+#x1
++
+"="
+, (x1),
+", "
+#x2
++
+"="
+, (x2),
+", "
+#x3
++
+"="
+, (x3),
+", "
+#x4
++
+"="
+, (x4),
+", "
+#x5
++
+"="
+, (x5))
+#define
+PRINTVAR6(x1,x2,x3,x4,x5,x6)
+Print
+(
+"*/*/*/* "
+,
+__FUNCTION__
+,
+"("
+,
+__LINE__
+,
+") :"
+,
+#x1
++
+"="
+, (x1),
+", "
+#x2
++
+"="
+, (x2),
+", "
+#x3
++
+"="
+, (x3),
+", "
+#x4
++
+"="
+, (x4),
+", "
+#x5
++
+"="
+, (x5),
+", "
+#x6
++
+"="
+, (x6))
+#define
+VPRINTTEXT(text)
+#define
+VPRINTVAR(x1)
+#define
+VPRINTVAR1(x1)
+#define
+VPRINTVAR2(x1,x2)
+#define
+VPRINTVAR3(x1,x2,x3)
+#define
+VPRINTVAR4(x1,x2,x3,x4)
+#define
+VPRINTVAR5(x1,x2,x3,x4,x5)
+#define
+VPRINTVAR6(x1,x2,x3,x4,x5,x6)
+#endif
+#ifdef
+DEBUG_LEVEL2
+#define
+PRINTTEXT(text)
+Print
+(
+"*/*/*/* "
+,
+__FUNCTION__
+,
+"("
+,
+__LINE__
+,
+") :"
+,text)
+#define
+PRINTVAR(x1)
+Print
+(
+"*/*/*/* "
+,
+__FUNCTION__
+,
+"("
+,
+__LINE__
+,
+") :"
+,
+#x1
++
+"="
+, (x1))
+#define
+PRINTVAR1(x1)
+Print
+(
+"*/*/*/* "
+,
+__FUNCTION__
+,
+"("
+,
+__LINE__
+,
+") :"
+,
+#x1
++
+"="
+, (x1))
+#define
+PRINTVAR2(x1,x2)
+Print
+(
+"*/*/*/* "
+,
+__FUNCTION__
+,
+"("
+,
+__LINE__
+,
+") :"
+,
+#x1
++
+"="
+, (x1),
+", "
+#x2
++
+"="
+, (x2))
+#define
+PRINTVAR3(x1,x2,x3)
+Print
+(
+"*/*/*/* "
+,
+__FUNCTION__
+,
+"("
+,
+__LINE__
+,
+") :"
+,
+#x1
++
+"="
+, (x1),
+", "
+#x2
++
+"="
+, (x2),
+", "
+#x3
++
+"="
+, (x3))
+#define
+PRINTVAR4(x1,x2,x3,x4)
+Print
+(
+"*/*/*/* "
+,
+__FUNCTION__
+,
+"("
+,
+__LINE__
+,
+") :"
+,
+#x1
++
+"="
+, (x1),
+", "
+#x2
++
+"="
+, (x2),
+", "
+#x3
++
+"="
+, (x3),
+", "
+#x4
++
+"="
+, (x4))
+#define
+PRINTVAR5(x1,x2,x3,x4,x5)
+Print
+(
+"*/*/*/* "
+,
+__FUNCTION__
+,
+"("
+,
+__LINE__
+,
+") :"
+,
+#x1
++
+"="
+, (x1),
+", "
+#x2
++
+"="
+, (x2),
+", "
+#x3
++
+"="
+, (x3),
+", "
+#x4
++
+"="
+, (x4),
+", "
+#x5
++
+"="
+, (x5))
+#define
+PRINTVAR6(x1,x2,x3,x4,x5,x6)
+Print
+(
+"*/*/*/* "
+,
+__FUNCTION__
+,
+"("
+,
+__LINE__
+,
+") :"
+,
+#x1
++
+"="
+, (x1),
+", "
+#x2
++
+"="
+, (x2),
+", "
+#x3
++
+"="
+, (x3),
+", "
+#x4
++
+"="
+, (x4),
+", "
+#x5
++
+"="
+, (x5),
+", "
+#x6
++
+"="
+, (x6))
+#define
+VPRINTTEXT(text)
+Print
+(
+"V/*/*/* "
+,
+__FUNCTION__
+,
+"("
+,
+__LINE__
+,
+") :"
+,text)
+#define
+VPRINTVAR(x1)
+Print
+(
+"V/*/*/* "
+,
+__FUNCTION__
+,
+"("
+,
+__LINE__
+,
+") :"
+,
+#x1
++
+"="
+, (x1))
+#define
+VPRINTVAR1(x1)
+Print
+(
+"V/*/*/* "
+,
+__FUNCTION__
+,
+"("
+,
+__LINE__
+,
+") :"
+,
+#x1
++
+"="
+, (x1))
+#define
+VPRINTVAR2(x1,x2)
+Print
+(
+"V/*/*/* "
+,
+__FUNCTION__
+,
+"("
+,
+__LINE__
+,
+") :"
+,
+#x1
++
+"="
+, (x1),
+", "
+#x2
++
+"="
+, (x2))
+#define
+VPRINTVAR3(x1,x2,x3)
+Print
+(
+"V/*/*/* "
+,
+__FUNCTION__
+,
+"("
+,
+__LINE__
+,
+") :"
+,
+#x1
++
+"="
+, (x1),
+", "
+#x2
++
+"="
+, (x2),
+", "
+#x3
++
+"="
+, (x3))
+#define
+VPRINTVAR4(x1,x2,x3,x4)
+Print
+(
+"V/*/*/* "
+,
+__FUNCTION__
+,
+"("
+,
+__LINE__
+,
+") :"
+,
+#x1
++
+"="
+, (x1),
+", "
+#x2
++
+"="
+, (x2),
+", "
+#x3
++
+"="
+, (x3),
+", "
+#x4
++
+"="
+, (x4))
+#define
+VPRINTVAR5(x1,x2,x3,x4,x5)
+Print
+(
+"V/*/*/* "
+,
+__FUNCTION__
+,
+"("
+,
+__LINE__
+,
+") :"
+,
+#x1
++
+"="
+, (x1),
+", "
+#x2
++
+"="
+, (x2),
+", "
+#x3
++
+"="
+, (x3),
+", "
+#x4
++
+"="
+, (x4),
+", "
+#x5
++
+"="
+, (x5))
+#define
+VPRINTVAR6(x1,x2,x3,x4,x5,x6)
+Print
+(
+"V/*/*/* "
+,
+__FUNCTION__
+,
+"("
+,
+__LINE__
+,
+") :"
+,
+#x1
++
+"="
+, (x1),
+", "
+#x2
++
+"="
+, (x2),
+", "
+#x3
++
+"="
+, (x3),
+", "
+#x4
++
+"="
+, (x4),
+", "
+#x5
++
+"="
+, (x5),
+", "
+#x6
++
+"="
+, (x6))
+#endif

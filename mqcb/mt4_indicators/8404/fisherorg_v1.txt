@@ -1,0 +1,5 @@
+Indicator Fisherorg_v1.
+Fisher org v1
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8404

@@ -1,0 +1,4 @@
+This indicator will show trend, based on EMA200 of the higher timeframe.
+This is my first indi. Sometimes we always miss to look trend in other TimeFrame Scale.
+This indicator will show Trend(EMA200) in TF M30, if your current TF is M15.
+When you change TF to M30, it will show movement of EMA200 in Next TF.

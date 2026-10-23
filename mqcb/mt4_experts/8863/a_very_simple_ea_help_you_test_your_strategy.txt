@@ -1,0 +1,5 @@
+A really simple ea help you test your strategy with history data
+create buy position by create a horizontal line above the current close price.
+create see position by create a horizontal line below the current close.
+to modify the stop loss and Take profit just create a horizontal line to the price .
+to close the possition just create a vertical line.

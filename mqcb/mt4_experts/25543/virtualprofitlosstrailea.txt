@@ -1,0 +1,6 @@
+This Utility is a tool to manage level of profits or losses for each order without using stop loss or take profit.
+The Utility applies virtual levels to close orders in profit or loss.
+You can use the robot to manage manually opened orders or manage orders opened by another EA.
+Update version 1.3 > Rewriting the whole code to improve it.
+Update version 1.4 > Add option for activate trailing stop loss after x pips. Fixed some bugs.
+Update version 1.5 > Improve expert to manage up 100 orders simultaneously with different level for each order.

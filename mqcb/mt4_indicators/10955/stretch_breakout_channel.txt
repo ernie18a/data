@@ -1,0 +1,18 @@
+Author:
+The developer of these indicators is Arturo López, founder of
+Point Zero Trading Solutions
+.
+Who is Toby Crabel?
+Toby Crabel is a self-made millionaire commodities trader who has avoided having a losing year from 1991 to 2002. Among other achievements, he wrote a great trading book entitled
+Day Trading with Short-term Price Patterns
+.
+What is the Stretch?
+The Stretch is calculated by taking the 10 period SMA of the absolute difference between the open and either the high or low, whichever difference is smaller. It represents the minimum average price movement/deviation from the open price during a period of time, and that value is used to calculate breakout thresholds for the current trading session. This can be used to plot a multitimeframe breakout channel.
+The Opening Range Breakout (ORB) Trading Strategy
+Using this strategy, the trader places a buy stop just above the open price plus the Stretch and a sell stop just below the open price minus the Stretch. The first stop triggered enters the trader into the trade and the other stop becomes the protective stop.
+Crabel's research shows that the earlier in the trading session the entry stop is hit the more likely the trade will be profitable at the close. A market movement that kicks off a trend quickly in the current trading session could add significant profit to a trader's position by the close and should be considered for a multi-day trade.
+Extending Crabel's research results it is obvious that as time passes and we are not filled early on then the risk increases and it becomes prudent to reduce the size of the position during the day. Trades filled towards the end of the day carry the most risk and the later in the day the trade is filled the less likely the trader will want to carry that trade overnight.
+Opening Range Breakout Preference (ORBP) Trading Strategy
+An ORBP trade is a one sided Opening Range Breakout (ORB) trade. If other technical indicators show a strong trend in one direction then the trader will exercise a
+preference
+for the direction in which to trade the ORB trade. A stop to open a position would be placed on the side of the trend only and if filled a protective stop would then be placed. The calculation of where to place the "stop to open" would be the same as that for the ORB trade: For longs, the Open price plus the Stretch and for shorts the Open price minus the Stretch.

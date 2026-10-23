@@ -1,0 +1,15 @@
+Average True Range Indicator (ATR) is an indicator that shows volatility of the market. It was introduced by Welles Wilder in his book "New concepts in technical trading systems". This indicator has been used as a component of numerous other indicators and trading systems ever since.
+Average True Range, ATR
+Average True Range can often reach a high value at the bottom of the market after a sheer fall in prices occasioned by panic selling. Low values of the indicator are typical for the periods of sideways movement of long duration which happen at the top of the market and during consolidation. Average True Range can be interpreted according to the same principles as other volatility indicators. The principle of forecasting based on this indicator can be worded the following way: the higher the value of the indicator, the higher the probability of a trend change; the lower the indicator’s value, the weaker the trend’s movement is.
+Calculation
+True Range is the greatest of the following three values:
+difference between the current maximum and minimum (high and low);
+difference between the previous closing price and the current maximum;
+difference between the previous closing price and the current minimum.
+The indicator of Average True Range is a moving average of values of the true range.
+Technical Indicator Description
+Full description of ATR is available in the
+Technical analysis: Average True Range
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7807

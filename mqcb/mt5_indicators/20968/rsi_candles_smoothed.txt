@@ -1,0 +1,2 @@
+Combination of 4 RSI values (RSI of High, Low, Open and Close) displayed as candles.
+This version has additional option to enable prices pre-smoothing prior to be used in calculation, which makes it an RSI-of-MA combination. To avoid prices pre-smoothing, use smoothing period that is less than or equal to 1.

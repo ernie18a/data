@@ -1,0 +1,3 @@
+Author: не указан
+Elliott Wave indicator.
+Actually, it OsMA (5,35)

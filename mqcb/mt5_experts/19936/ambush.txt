@@ -1,0 +1,34 @@
+The author of the idea
+:
+Igor
+,
+the mq5 code author
+:
+barabashkakvn
+.
+The Expert Advisor places pending Buy Stop and Sell Stop orders at a distance of
+Initial indentation
+. The
+Max spread
+parameters is also taken into account: if the current spread exceeds
+Max spread
+, the pending orders will not be placed. After that pending orders are constantly modified (using
+Trailing Stop
+with
+Trailing Step
+), expecting the order to trigger at a sudden sharp price movement. Pending orders are modified every
+Pause
+seconds.
+Positions are controlled by
+Equity profit
+and
+Equity loss
+levels. Once profit reaches
+Equity profit
+, all positions are closed to fix the profit. If loss reaches
+Equity loss
+, all positions are closed and loss is fixed.
+Results from 2018.01.08 to 2018.02.05 at the M1 timeframe:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19936

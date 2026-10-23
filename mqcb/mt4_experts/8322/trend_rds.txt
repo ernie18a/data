@@ -1,0 +1,79 @@
+Description:
+The trader can submit a time, the expert will analyse the 3 bars before this time and will conclude if it is an up trend or a down trend. Finally it will go in the opposite side or it will follow the trend (if reversed).
+It can be used for news.
+Images:
+Examples :
+Recommendations:
+Test first on demo.
+Strategy Tester Report
+Trend_RDS
+InterbankFX-Demo Accounts (Build 217)
+Symbole
+EURUSD (Euro vs US Dollar)
+Periode
+15 Minutes (M15) 2008.08.06 00:00 - 2008.08.18 17:30 (2008.08.06 - 2008.08.30)
+Modele
+Chaque tick (la méthode la plus précise, basée sur tous les moindres relevés disponibles)
+Parametres
+Lots=20; StopLoss=30; TakeProfit=0; StartHour="12:30"; CloseHour="21:00"; Reverse=false; TrailingStop=0; TrailingStep=1; BreakEven=50; MagicNumber=0; Repeat=3; Periods=5; UseAlert=false; SendEmail=false; TradeLog="Trend_RDS"; Slippage=3; Indicator_Setting="---------- Indicator Setting";
+Bars en test
+1823
+Ticks modelés
+95595
+Qualité du modelage
+90.00%
+Erreurs des graphiques désaccordés
+0
+Dépot initial
+10000.00
+Profit total net
+121486.00
+Profit brut
+151486.00
+Perte brute
+-30000.00
+Facteur de profit
+5.05
+Rémunération espérée
+13498.44
+Chute absolue
+400.00
+Chute maximal (%)
+33357.00 (25.00%)
+Enfoncement relatif
+33.60% (8400.00)
+Total des Trades
+9
+Positions SHORT (vente) gagnées %
+6 (50.00%)
+Positions LONG (achat) gagnées %
+3 (33.33%)
+Profits des Trades (% du total)
+4 (44.44%)
+Pertes des Trades (% du total)
+5 (55.56%)
+Le plus large
+gains par Trade
+117886.00
+pertes par Trade
+-6000.00
+Average (moyenne)
+gains par Trade
+37871.50
+pertes par Trade
+-6000.00
+Maximum
+gains consecutifs (profit en $)
+2 (117886.00)
+pertes consecutives (perte en $)
+2 (-12000.00)
+Maximal
+Gains consecutifs (coups gagnants)
+117886.00 (2)
+Pertes consecutives (coups perdants)
+-12000.00 (2)
+Average (moyenne)
+gains consecutifs
+1
+Pertes consecutives
+2

@@ -1,0 +1,3 @@
+Test and See. I proves to be a good EA with good profit potentials. You're free to discuss it and make it better for all members to use.
+I've also tried to modify the Slope Directional Line EA by FxiGor. But the thing won't compile. Someone can try and make it better for everyone to use. You are also free to help make it better for me everyone. (note that I have not tested this one yet because of the error I encountered during compilation)
+Thanks.

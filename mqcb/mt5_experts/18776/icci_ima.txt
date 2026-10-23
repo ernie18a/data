@@ -1,0 +1,62 @@
+Author of the idea
+is
+Andrey
+,
+the author of the MQL5 code
+is
+barabashkakvn
+.
+Calculating
+Moving Average
+using
+Commodity Channel Index
+data:
+//--- create handle of the indicator iMA
+handle_iMA
+=
+iMA
+(m_symbol.Name(),
+Period
+(),
+15
+,
+0
+,
+MODE_EMA
+,
+handle_iCCI
+);
+//--- if the handle is not created
+if
+(handle_iMA==
+INVALID_HANDLE
+)
+     {
+//--- tell about the failure and output the error code
+PrintFormat
+(
+"Failed to create handle of the iMA indicator for the symbol %s/%s, error code %d"
+,
+                  m_symbol.Name(),
+EnumToString
+(
+Period
+()),
+GetLastError
+());
+//--- the indicator is stopped early
+return
+(
+INIT_FAILED
+);
+     }
+It is similar to launching in the terminal the Moving Average indicator in the Commodity Channel Index window with "Previous Indicator's Data" selected in its parameters (apply indicator to other indicator's data).
+Position opening and closing principles:
+If Moving Average calculated based on Commodity Channel Index crosses the common Commodity Channel Index downwards, a BUY position is opened.
+If Moving Average calculated based on Commodity Channel Index crosses the common Commodity Channel Index upwards, a SELL position is opened.
+If Moving Average calculated based on Commodity Channel Index crosses the common Commodity Channel Index upwards, a BUY position is closed.
+If Moving Average calculated based on Commodity Channel Index crosses the common Commodity Channel Index downwards, a SELL position is closed.
+Testing on EURUSD,H1:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18776

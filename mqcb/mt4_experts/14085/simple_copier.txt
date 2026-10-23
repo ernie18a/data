@@ -1,0 +1,4 @@
+This utility copies deals from master to slave account. Accounts could be opened at different brokers. The utility translates all essential information between accounts using common file C4F.csv, placed in the common directory of MetaTrader 4. Reading/writing of a file is conducted by a timer.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14085

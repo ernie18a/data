@@ -1,0 +1,2 @@
+StepUpDown indicator will provide a signal that the price will change direction, and show the arrow up or arrow down and alerts, when the price will begin to change direction.
+== Last Update: 2026/03/24 ==

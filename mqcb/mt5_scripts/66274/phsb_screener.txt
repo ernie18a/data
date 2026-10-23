@@ -1,0 +1,23 @@
+Description:
+Advanced screener that identifies assets with significant price drawdown. Scans all available symbols or filtered categories to find instruments trading below their recent peaks. Perfect for identifying potential buying opportunities in undervalued assets.
+Key Features:
+✅ Accurate drawdown calculation using closing prices
+Customisable lookback period (default 90 days)
+Adjustable drawdown threshold
+Asset category filters (Stocks, Forex, Indices, Crypto)
+Batch data loading for better performance
+Real-time progress monitoring
+✅ Clean Market Watch after execution
+Perfect For:
+Value investors seeking discounted assets
+Swing traders looking for oversold instruments
+Portfolio managers monitoring position drawdowns
+Technical analysts screening for reversal opportunities
+Version 2.02 Updates:
+Fixed drawdown calculation algorithm
+Accurate peak-to-current price comparison
+Improved result display with relevant price data
+Enhanced filtering and performance
+Translated from Portuguese by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/pt/code/66274

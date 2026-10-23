@@ -1,0 +1,11 @@
+Indicator Double-deviation Bollinger Band with cloud is indicator Bollinger Bands with two deviations and a cloud between the values of two bands with different deviation values.
+It has three adjustable parameters:
+Period
+- Bollinger Bands calculation period
+First deviation
+- value of the first deviation
+Second deviation
+- value of the second deviation
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23432

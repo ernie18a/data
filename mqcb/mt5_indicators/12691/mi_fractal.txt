@@ -1,0 +1,46 @@
+Original author:
+Oreshkin A.V.
+A
+Fractal
+indicator with extended functionality.
+You can specify the number of candlesticks on each side for fractal determination, and also the minimum difference between extreme points and adjacent peaks:
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+uint
+LeftCount=
+10
+;
+// Number of candles to the left
+input
+uint
+RightCount=
+2
+;
+// Number of candles to the right
+input
+uint
+MinDiff=
+10
+;
+// Minimum distance from extreme points to peaks
+input
+int
+UpLable=
+217
+;
+// Up fractal label
+input
+int
+DnLable=
+218
+;
+// Down fractal label
+The original code has been published in
+Code Base
+on 27.12.2012.
+Fig. 1. The MI_Fractal indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12691

@@ -1,0 +1,10 @@
+Real author:
+zzuegg
+A Moving Average that includes price series processing by Gaussian filter. The MA direction is marked with an appropriate color. The color of the dots depends on the direction of the moving average velocity.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 23.01.2012.
+Figure 1. The GFilter indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11435

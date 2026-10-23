@@ -1,0 +1,2 @@
+The indicator counts Bull and Bear candles in Bar_Period bars and calculates percent.
+When blue line is up to 61.8% and red line is down to 38.2%, the trend is completed. When blue and red lines are near 50%, the trend is started.

@@ -1,0 +1,9 @@
+Hello
+This code may be useful for the chart window visual properties measurement.
+It is result of collaboration in "
+How do I display several lines of Comments on the chart?
+" topic.
+Thanks to all the participants
+.
+Best regards
+Ais

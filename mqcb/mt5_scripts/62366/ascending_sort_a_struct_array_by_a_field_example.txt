@@ -1,0 +1,39 @@
+This is an example of ascending sort a struct list by a field. You can find out and customize the above algorithm depending on the purpose of use, this is the most basic example is also a direction to resolve the arrangement in an array of structure.
+The algorithm used in this example is Quick Sort and Merge Sort.
+Input
+psList_[
+0
+] = ExStruct(
+1.0
+, D
+'2025.08.06 10:00'
+);
+  psList_[
+1
+] = ExStruct(
+2.0
+, D
+'2025.08.04 09:00'
+);
+  psList_[
+2
+] = ExStruct(
+3.0
+, D
+'2025.08.05 12:00'
+);
+  psList_[
+3
+] = ExStruct(
+4.0
+, D
+'2025.08.07 14:00'
+);
+  psList_[
+4
+] = ExStruct(
+5.0
+, D
+'2025.08.03 02:00'
+);
+Output

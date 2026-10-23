@@ -1,0 +1,21 @@
+The Expert Advisor is rewritten from MQL4, the author is
+Reshetov
+, link to the source -
+https://www.mql5.com/ru/code/10289
+.
+How it works
+We use the
+Accelerator Oscillator
+indicator from where 4 values of bars are taken: Shift, Shift+7, Shift+14, Shift+21. Each of the indicator values is multiplied by its weight calculated using the formula (100-x(n)), where x(n) - is an optimized variable x1, x2, x2, x3. After multiplying values are summarized and exit value of the perceptron is received. If exit value of the perceptron is higher than 0, a buy is opened, if value is lower than 0, a sell position is opened.
+Position opens on Stop Loss (Stop Loss required) and without Take Profit. When a position reaches a profit value that exceeds Stop Loss value on the spread amount and if there is an opposite signal, then the position is reversed by opening a position of a larger volume. If opposite signal does not appear, Stop Loss is set on the same level as it had been on the open position (according to calculations a deal is profitable on spread value).
+If suddenly is impossible to open a position which is reversed due to close value of Stop Loss, the position will be closed and there will be one more attempt to open position on the next tick.
+Stop Loss is required because a position can be closed and its Stop Loss can be moved only if the position is profitable. There has to be a possibility to exit in case the position is unprofitable.
+The results of work of the Expert Advisor with the default settings for the last year EURUSD M15 are displayed in the chart.
+Parameters
+Lots - Lot.
+StopLoss - Stop Loss in points.
+Shift - Bar on which indicators are checked: 0 - forming bar, 1 - first formed bar.
+x1, x2, x3, x4 - Perceptron input weights from 0 to 200. It is recommended to use Generic Algorithm for optimization.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1104

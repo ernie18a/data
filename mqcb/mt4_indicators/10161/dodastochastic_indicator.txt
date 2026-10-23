@@ -1,0 +1,6 @@
+Description:
+This is another variant of stochastic indicator. The normal stochastic indicator gives buy, sell signals many times even if price is trading on single direction. This indicator gives less signals i.e. filters out false signals and gives clear alert on screen for buy or sell.
+Another point, which I must disclose here is that I'm not the original coder of this indicator. I've changed some code and added alerts. Credit goes to original coder.
+The usage is self-explanatory. More examples for this indicator can be found at my website.
+Recommendations:
+Use on higher timeframe like H4. On shorter time frames, this indicator may not work properly.

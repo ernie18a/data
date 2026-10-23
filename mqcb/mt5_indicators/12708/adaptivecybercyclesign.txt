@@ -1,0 +1,10 @@
+Original author:
+Witold Wozniak
+A semaphore signal indicator based on crossovers of the main and the signal line of the
+AdaptiveCyberCycle
+indicator.
+The indicator requires CyclePeriod.mq5 indicator file. Place it in <terminal_data_folder>\MQL5\Indicators.
+Fig. 1. The AdaptiveCyberCycleSign indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12708

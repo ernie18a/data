@@ -1,0 +1,19 @@
+Indicators used:
+Moving average SMA, WMA or EMA.
+The algorithm of the trading strategy
+Well, to work under this strategy, we only need the indicator Moving Average using SMA, WMA or EMA smoothing. For the research we'll use timeframe H4 on EURUSD chart.
+Search for buy signal
+1.	The price must cross the moving average bottom-up on the chart;
+2.	The buy position is closed when the price crosses the moving average from top downward.
+Search for sell signal
+1.	The price must cross the moving average from top downward on the chart;
+2.	The sell position is closed when the price crosses the moving average bottom-up.
+Money management
+If the total loss on all trades makes 100 points, the volume of the next trade is increased twofold. If the result with the trades of increased volume makes 100 points again, the volume of the next position is increased twofold again. An so on, until the trades with the increased lot bring 50 points of profit, after that the trading will be continued with the initial volume.
+The investigation of the strategy is available at the 25-th issue of the journal:
+http://www.fortrader.ru/ftgate.php?id=0&num=69
+The last version of the EA:
+http://forum.fortrader.ru/index.php?topic=25.0
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8313

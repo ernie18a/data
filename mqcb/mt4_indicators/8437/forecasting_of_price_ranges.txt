@@ -1,0 +1,8 @@
+The idea was taken from the book "The New Science of Technical Analysis" by Thomas R. Demark. Demark advises to use own calculation for forecasting the daily range of the prices. As far as the data of one daily bar is used for the calculation, this caculation can be applied to the bars on the other periods of the chart just as well.
+The indicator draws a colored region before each bar, it is the presumed price range of the next bar.
+Picture:
+Forecasting of Price Ranges
+Thanks to WWer for the help.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8437

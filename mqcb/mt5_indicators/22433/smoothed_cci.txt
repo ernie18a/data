@@ -1,0 +1,29 @@
+Smoothed CCI indicator.
+It has ten input parameters:
+CCI period
+- calculation period
+Applied price
+Use pre-smoothing
+- use preliminary smoothing (smoothing of prices used to calculate the indicator)
+Pre-smoothing period
+- preliminary smoothing period
+Pre-smoothing method
+- preliminary smoothing method
+Use post-smoothing
+- use resulting smoothing (smoothing of the preliminarily calculated indicator)
+Post-smoothing period
+- resulting smoothing period
+Post-smoothing method
+- resulting smoothing method
+Overbought
+- overbought level
+Oversold
+- oversold level
+Smoothed CCI as compared to standard one, default periods and methods values
+Fig. 1. Smoothed CCI, Use pre-smoothing = No, Use post-smoothing = No
+Fig. 2. Smoothed CCI, Use pre-smoothing = Yes, Use post-smoothing = No
+Fig. 3. Smoothed CCI, Use pre-smoothing = No, Use post-smoothing = Yes
+Fig. 4. Smoothed CCI, Use pre-smoothing = Yes, Use post-smoothing = Yes
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22433

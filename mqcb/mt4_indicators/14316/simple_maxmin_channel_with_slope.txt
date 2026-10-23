@@ -1,0 +1,3 @@
+Just a Donchian channel with slope. If
+xslope
+= 0, it becomes the Donchian channel. It uses the moving average of Momentum.

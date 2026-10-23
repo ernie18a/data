@@ -1,0 +1,7 @@
+Author:
+David Thomas - aka: CodeMonkey
+irc: chat.ircforex.co (#mqldev, #forex)
+(Yes that is suppose to be a .co domain.)
+Someone needed a quick way to close all the orders in the basket, both pending and live.
+Place this script in your \experts\scripts folder.
+Then you can either assign a hot-key to it, or just drop it on a chart and it will close ALL the open and pending orders on your account.

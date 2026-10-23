@@ -1,0 +1,4 @@
+Description:
+PEMA is the Pentuple Exponential Moving Average:
+PEMA = QEMA + TEMA(y - QEMA)
+Image:

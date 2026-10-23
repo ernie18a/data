@@ -1,0 +1,8 @@
+Real author:
+Witold Wozniak
+Modified elliptic filter from John Ehlers' book
+"Cybernetic Analysis for Stocks and Futures: Cutting-Edge DSP Technology to Improve Your Trading"
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/597

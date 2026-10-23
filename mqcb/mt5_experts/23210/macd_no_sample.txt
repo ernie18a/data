@@ -1,0 +1,18 @@
+Idea
+by
+Leonid Basis
+mq5 code author
+-
+barabashkakvn
+The Expert Advisor uses the iMA (Moving Average, MA) and iMACD (Moving Average Convergence/Divergence, MACD) indicators.
+The MA indicator is used as the trend filter.
+Lot can be fixed or dynamic (set in the
+Money management: Lot OR Risk
+parameter). Parameter
+The value for "Money management"
+sets either lot value or risk percent.
+Trailing stop is applied for open positions.
+A position opening signal also serves as a signal to close an opposite position.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23210

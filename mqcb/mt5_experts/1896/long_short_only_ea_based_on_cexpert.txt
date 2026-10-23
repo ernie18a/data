@@ -1,0 +1,132 @@
+Current Expert Advisor allows to choose opening only long/short (or both) positions based on an extension of the
+CExpert
+class.
+Two different files are provided:
+LongShortExpertModified.mqh:
+This class extends default
+CExpert
+modifying the CheckOpen() and CheckReverse() methods in order to allow only the desired orders to be opened;
+LongShortExpertMACD.mq5:
+This EA is a simple modification over the embedded ExpertMACD.mq5 class, including the developed modified expert in order to only allow the desired order type according to an input parameter, and is supplied to clarify the expert use.
+LongShortExpertModified
+This class modifies the default CExpert class behaviour allowing only a certain type of order according to the following enum:
+enum
+ENUM_AVAILABLE_POSITIONS
+  {
+   LONG_POSITION,
+   SHORT_POSITION,
+   BOTH_POSITION
+  };
+This enum will be used as an input parameter for the required final EA to determine which type of orders will be allowed, and is used internally to open only the desired orders and to process order reversals only if both position types are allowed (BOTH_POSITION enum value).
+To do so, CheckOpen() and CheckReverse() methods are rewritten:
+class
+CLongShortExpertModified :
+public
+CExpert
+  {
+protected
+:
+   ENUM_AVAILABLE_POSITIONS m_positions;
+public
+:
+                     CLongShortExpertModified(
+void
+);
+                    ~CLongShortExpertModified(
+void
+);
+virtual
+bool
+CheckOpen(
+void
+);
+virtual
+bool
+CheckReverse(
+void
+);
+void
+SetAvailablePositions(ENUM_AVAILABLE_POSITIONS newValue){m_positions=newValue;};
+  };
+CheckOpen() is modified to only check long or short positions according to m_positions value:
+bool
+CLongShortExpertModified :: CheckOpen()
+  {
+switch
+(m_positions)
+     {
+case
+LONG_POSITION:
+return
+CheckOpenLong();
+//check only new long positions
+case
+SHORT_POSITION:
+return
+CheckOpenShort();
+//check only new short positions
+default
+:
+return
+CExpert::CheckOpen();
+//default behaviour
+}
+  }
+CheckReverse() is modified to check position reversal only if both position types are allowed:
+bool
+CLongShortExpertModified::CheckReverse()
+  {
+switch
+(m_positions)
+     {
+case
+LONG_POSITION:
+case
+SHORT_POSITION:
+return
+false
+;
+// no reversal is allowed
+default
+:
+return
+CExpert::CheckReverse();
+//default behaviour
+}
+  }
+LongShortExpertMACD
+This class provides a specific EA example of the previous class use, based on the default ExpertMACD EA included in the MQL5 distribution.
+First of all, the concrete Expert class must be included, and the corresponding input parameter added. Also, the external expert is associated with the subclass, instead of the default CExpert:
+#include
+<Expert\LongShortExpertModified.mqh>
+//[...]
+input
+ENUM_AVAILABLE_POSITIONS Inp_Allowed_Positions=BOTH_POSITION;
+//short / long / both positions allowed
+//[...]
+CLongShortExpertModified ExtExpert;
+//specific designed CExpert Subclass
+After initiallizing the expert, the parameter must be set according to the input value:
+if
+(!ExtExpert.Init(
+Symbol
+(),
+Period
+(),Expert_EveryTick,Expert_MagicNumber))
+     {
+//--- failed
+printf
+(
+__FUNCTION__
++
+": error initializing expert"
+);
+      ExtExpert.Deinit();
+return
+(-
+1
+);
+     }
+// Specific parameter controlling which positions are allowed
+ExtExpert.SetAvailablePositions(Inp_Allowed_Positions);
+No additional changes are required. The following figure shows the configuration parameters for the expert:

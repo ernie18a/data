@@ -1,0 +1,29 @@
+The author of the idea
+:
+Hemant Agarwal
+,
+the MQ5 code author
+:
+barabashkakvn
+.
+The Expert Advisor places pending Buy Stop and Sell Stop orders.
+The EA searches through an array of the last 100 bars for the prices to be used for pending orders. The price of the placed order is calculated taking into account the minimum allowed distance for that symbol (SYMBOL_TRADE_STOPS_LEVEL).
+Input Parameters
+Lots
+- the volume for pending orders
+Trailing Stop (in pips)
+- trailing value
+Trailing Step (in pips)
+- trailing step value
+Reset time
+(minutes) - pending order lifetime in minutes;
+Doji diff 1
+- minimum size of bar #1;
+Doji diff 2
+- minimum size of the bar following bar #1;
+magic number
+- unique identifier for the EA.
+Symbol USDJPY, H1:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20195

@@ -1,0 +1,56 @@
+Click
+"Close All"
+button to close all your open positions at current attached chart.
+Select CloseOnlyManualTrades =
+true
+to close only manual trades.
+Select CloseOnlyManualTrades =
+false
+to close manual trades and/or other trades opened by an Expert Advisor.
+This new version
+doesn't contain
+the code written below that previous versions had which may cause an infinite loop .
+if
+(checkOrderClose==
+false
+)
+continue
+;
+but instead brings
+an error control system
+to prevent an infinite loop while still closing all trades.
+if
+(checkOrderClose ==
+false
+)
+         {
+int
+errorCode =
+GetLastError
+();
+if
+(errorCode ==
+1
+|| errorCode ==
+2
+|| errorCode ==
+5
+|| errorCode ==
+6
+|| errorCode ==
+64
+|| errorCode ==
+65
+|| errorCode ==
+132
+|| errorCode ==
+133
+|| errorCode ==
+139
+)
+break
+;
+else
+continue
+;        
+         }

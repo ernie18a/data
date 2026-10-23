@@ -1,0 +1,4 @@
+The EA opens the positions in the direction of moving of Stochastic indicator, in addition there is a heightening of positions by martingale. It is tuned for micro-Forex.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8416

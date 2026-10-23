@@ -1,0 +1,3 @@
+Quoted from
+Mladen Rakic
+Combination of 4 RSI values (RSI of High, Low, Open and Close) displayed as candles.

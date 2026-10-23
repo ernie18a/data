@@ -1,0 +1,8 @@
+This indicator uses Moving Average to detect markets trend.
+It's a very useful tool for manual trading.
+Update v1.2: Added popup alert.
+Parameters
+BarsCount
+—How many bars used to show the line.
+MAperiods
+—Period of Moving Average.

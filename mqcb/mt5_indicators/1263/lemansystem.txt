@@ -1,0 +1,10 @@
+The real author:
+LeMan
+The system using the internal channel from High to Low.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 11.09.2009.
+Fig.1 The LeManSystem indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1263

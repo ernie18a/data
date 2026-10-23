@@ -1,0 +1,10 @@
+Aggressiveness shows the number of points the instrument passes within one candle on average, analyzing the last MyPeriod periods.
+No matter in which direction!
+Volatility - the size of the channel for MyPeriod in points.
+The Silence indicator demonstrated one of the variants of normalization of any indicators.
+.
+Recommendations:
+It is possible to determine a flat (absence of trend) using the Silence indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8694

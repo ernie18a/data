@@ -1,0 +1,13 @@
+GDS Renko Bricks builds a classic fixed-size Renko chart directly inside a regular MetaTrader 5 chart.
+The indicator uses tick data to create completed Renko bricks in real time. All bricks have equal visual width, and the standard time scale is hidden because Renko is based on price movement rather than time.
+Features:
+classic fixed-size Renko;
+two-brick reversal logic;
+real-time updates from ticks;
+equal-width bricks;
+no offline charts;
+no custom symbols;
+no DLLs or external libraries;
+only one input: Brick Size .
+The selected MT5 timeframe is used only as a host for the indicator and does not determine the Renko construction.
+Example: for XAUUSD, Brick Size = 1.00 creates $1 price bricks.

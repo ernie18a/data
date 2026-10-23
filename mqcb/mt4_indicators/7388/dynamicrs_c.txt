@@ -1,0 +1,6 @@
+The third indicator of the series of indicators without averaging.
+For ease of manual operation, added the color change depending on the current state of the chart. Changed (decreased) the default period of the indicator.
+DynamicRS_C
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7388

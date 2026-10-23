@@ -1,0 +1,68 @@
+Smoother Relative Strength Index in which alternative algorithms of averaging such as
+JMA
+and
+ultralinear
+are used that let this indicator be more predictable.
+The trend direction is defined by the color of the indicator. Strong trends color the histogram in lettuce green or red color, weak - in brown and green colors. Trend strength is defined by the histogram bar value relative to the HighLevel and the LowLevel breakthrough levels in the indicator input parameters.
+Indicator input parameters:
+//+-----------------------------------+
+//| Indicator input parameters        |
+//+-----------------------------------+
+input
+uint
+JurXPeriod=
+8
+;
+// JurX period
+input
+uint
+JMAPeriod=
+3
+;
+// JMA
+period
+input
+int
+JMAPhase=
+100
+;
+// JMA averaging parameter
+input
+Applied_price_ IPC=
+PRICE_CLOSE
+;
+// Price constant
+input
+int
+Shift=
+0
+;
+// Horizontal shift of the indicator in bars
+input
+IndStyle Style=COLOR_HISTOGRAM;
+// Style of JJRSX display
+input
+int
+HighLevel=+
+20
+;
+// Upper level of triggering
+input
+int
+MiddleLevel=
+0
+;
+// Medium of the range
+input
+int
+LowLevel=-
+20
+;
+// Lower level of triggering
+The indicator uses SmoothAlgorithms.mqh library classes (must be copied to the terminal_data_folder\MQL5\Include). The use of the classes was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Fig.1 The ColorJJRSX indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1594

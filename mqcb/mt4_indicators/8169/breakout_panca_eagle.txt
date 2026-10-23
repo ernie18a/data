@@ -1,0 +1,8 @@
+Indicator BreakOut_Panca_eagle.
+Parameters:
+extern int NumberOfDays=50;
+extern string periodBegin ="00:00";
+extern string periodEnd ="05:30";
+extern string BoxEnd ="23:00";
+extern int BoxBreakOut_Offset=10;
+BreakOut_Panca_eagle

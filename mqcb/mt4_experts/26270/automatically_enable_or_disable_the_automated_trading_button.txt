@@ -1,0 +1,10 @@
+Let say you have an EA and you want it to trade in between an interval of time but you do not have the source codes to modify the EA.
+This utility allows you to automatically enable or disable the automated trading button. You can use the codes as an EA, Indicator or script but I used as an EA.
+Recommendations:
+You need to uncomment 4 lines of codes where is written uncomment
+You can remove Ordersend command because I set it only for the codes to past the test but it is meaningless.
+You add minutes for to the codes
+You can modify and insert it on your EA, Indicator
+Input parameters:
+Start AutoTrade Time
+Stop AutoTrade Time

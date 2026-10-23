@@ -1,0 +1,5 @@
+This indicator is designed for you to choose how many bars you want to form the fractal, which is nothing more than a top or a bottom
+In this example I have 5 bars to the left and 2 to the right, this would form a top and a bottom with these settings
+Translated from Portuguese by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/pt/code/61233

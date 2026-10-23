@@ -1,0 +1,10 @@
+The real author:
+Svinozavr
+The indicator to search extremums of volatility.
+This indicator was first implemented in MQL4 and published in
+CodeBase in mql4.com
+on 04.02.2010.
+Fig.1 Volatility_FBA_NR
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1218

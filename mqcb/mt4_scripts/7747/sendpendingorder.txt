@@ -1,0 +1,25 @@
+To place a pending order you should:
+1) Get acquainted with this instruction =)
+2) !Specify default values!
+(they are below the description, they begin and end with the entry: //+----------------------------------------------+ )
+3) Allow the import of external experts
+Menu "Tools" -> "Options" -> "Expert Advisors" -> "Allow external experts imports" (it is necessary to describe an error that may occur while placing an order)
+4) Drag the script to the chart.
+At the same time you should keep in mind that the attachment place is the future price of opening (OpenPrice). It is possible to modify it during the installation, but, for simplification of work, I recommend to drag the script to the necessary place at once.
+5) Move all the lines to the necesasry levels:
+- Open_Price_Line (white by default) - open price (OBLIGATORY line)
+- Stop_Loss_Line (red) - Stop Loss level (OBLIGATORY)
+- Take_Profit_Line (green) - Take Profit level (optional)
+- Expiration_Line (yellow) - time of expiration (optional) (the optional lines can be deleted)
+- "````" - position size. It is necessary to place over against the neccessary value (from 0,1 to 10 lots)
+Choose the necessary order type depending on the Open_Price and Stop_Loss lines location:
+Open_Price > Bid and Open_Price > Stop_Loss - BUYSTOP-order,
+Open_Price > Bid and Open_Price < Stop_Loss - SELLLIMIT-order,
+Open_Price < Ask and Open_Price > Stop_Loss - BUYLIMIT-order,
+Open_Price < Ask and Open_Price < Stop_Loss - SELLSTOP-order.
+6) Press the "OK" button when everything is ready.
+To stop the script working at any time press the "
+Cancel" button.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7747

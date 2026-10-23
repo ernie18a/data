@@ -1,0 +1,27 @@
+The strategy is based on the fact that, in practice, round numbers ending with "00" are always closer to people. For example, if pair EUR/USD is traded at 1.2470 and its price is growing, most stop orders will be placed within one or two points from 1.2500, not say 1.2517. We can earn using this fact. So let's try to.
+You can view the original description of the strategy
+here
+.
+A detailed article devoted top the system testing and a link to reports are available in our
+magazine's issue of 12.05.2008
+.
+You can discuss it and make your suggestions on
+our forum
+.
+Trading Strategy Algorithm:
+1. Open one-hour chart of EURUSD, lots 0.1.
+2. Draw Moving Average with the period of 200.
+Buying alert (open two orders): The price is above MA and intersects the level 15 points below the "round" price
+.
+Selling alert (open two orders): The price is below MA and intersects the level 15 points above
+the "round" price.
+Closing Trades:
+We will close our trades by StopLoss.
+Having tested the above rules within the period from 2007.01.11 to 2008.01.11, we obtained the following results (Open price only):
+Having optimized the inputs on the same period of time, we obtained the following result of EA operations:
+A forward test outside the optimization area, the article devoted to the system testing, and a link to reports are available in our
+magazine's issue of 12.05.2008
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8134

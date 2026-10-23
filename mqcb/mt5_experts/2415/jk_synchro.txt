@@ -1,0 +1,39 @@
+Idea by
+:
+Scriptor
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+The EA analyzes the Open and Close between zero bar (the rightmost bar in the chart) to bar
+Number of candles for analysis
+. New positions may only be opened, if the following three requirements are met:
+As of now, the EA has opened fewer positions than
+Number of candles for analysis
+;
+The latest trading server time known is within the range from
+Start hour
+and
+End hour
+; and
+Upon opening the last position more than
+Pause between transactions
+seconds have elapsed.
+You can define (or even completely disable) parameters, such as Stop Loss, Take Profit, and Trailing.
+Inputs
+Stop Loss;
+Take Profit;
+Trailing Stop;
+Trailing Step;
+Lots;
+Risk;
+Maximum number of positions;
+Number of candles for analysis;
+Pause between transactions;
+Start hour;
+End hour.
+For each symbol and timeframe, a separate optimization of input parameters is required.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2415

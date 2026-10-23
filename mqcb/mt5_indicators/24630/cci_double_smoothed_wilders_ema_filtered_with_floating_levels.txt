@@ -1,0 +1,10 @@
+Theory :
+This CCI (Commodities Channel Index) indicator deviates from "regular" CCI in two main points :
+it is using standard deviations for calculations (instead of using mean absolute deviation)
+it is allowing us to use double smoothed Wilder's EMA for price filtering (and that way it filters out some false signals)
+Also, in order to help finding out trends, floating levels are added to the indicator. You can use 3 coloring modes :
+color change on outer levels cross
+color change on middle level cross
+color change on slope change
+Usage :
+You can use color changes as signals

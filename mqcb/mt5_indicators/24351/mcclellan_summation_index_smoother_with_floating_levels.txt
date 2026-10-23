@@ -1,0 +1,6 @@
+Theory :
+McClellan summation index, as is (originally published here :
+McClellan Summation Index - Smoother
+) is a bit difficult to use due to lack of obvious signals. But, unlike the McClellan oscillator, the summation index does not necessarily oscillate around the zero value. This version is adding floating levels to it in order to help finding signals in an easier way
+Usage :
+You can use color changes as signals

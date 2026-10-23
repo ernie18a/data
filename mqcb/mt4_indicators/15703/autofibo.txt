@@ -1,0 +1,5 @@
+Indicator that automatically draws Fibo Retracement.
+Indicator uses ZigZag for drawing.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15703

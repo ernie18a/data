@@ -1,0 +1,2 @@
+Author: TraderSeven
+Adviser RSI trader v0.15. Uses indicator RSI.

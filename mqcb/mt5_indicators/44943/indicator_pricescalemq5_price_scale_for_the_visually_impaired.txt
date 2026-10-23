@@ -1,0 +1,4 @@
+We add the indicator to the chart, save the template under the name "default".
+Now all newly opened charts will open with this indicator.
+Version for MT4
+https://www.mql5.com/ru/code/45289

@@ -1,0 +1,12 @@
+Real author:
+www.EarnForex.com
+Semaphore arrow signal indicator based on the
+QQE
+oscillator. Signals are generated when there is a crossover of the main and the signal oscillator line.
+The indicator uses SmoothAlgorithms.mqh library classes (copy it to <terminal_data_folder>\MQL5\Include). The use of the classes was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Fig.1. The QQESign indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12865

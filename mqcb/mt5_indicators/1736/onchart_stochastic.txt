@@ -1,0 +1,10 @@
+Real author:
+mladen
+A stochastic oscillator located directly on the chart. In addition to the stochastic oscillator, a classical MA is applied on the chart, based on which the stochastic oscillator an overbought/oversold levels are calculated.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 30.04.2008.
+Figure 1. The OnChart_Stochastic indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1736

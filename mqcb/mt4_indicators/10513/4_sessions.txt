@@ -1,0 +1,21 @@
+Description:
+4Sessions v2.3
+Shows 4 sessions: Pacific, Asian, European, American.
+Settings:
+Winter=2 (UTC+2=EET)
+Summer=3 (UTC+3=EET)
+The difference between the mt server's timezone and UTC. By default the mt server's timezone is EET (UTC+2=EET (winter), UTC+3=EET (summer).
+You'll have to change the settings depending on your broker's time.
+E.g. if it's CET you'll have to set:
+Winter=1 (UTC+1=CET)
+Summer=2 (UTC+2=CET)
+The indicator automatically adjusts itself for DST.
+AsiaDesc = "Asia"; Session name
+AsiaColor = Aqua; Session color
+AsiaOpen = "00:00"; Session open time
+(UTC timezone)
+AsiaClose = "09:00"; Session close time
+(UTC timezone)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10513

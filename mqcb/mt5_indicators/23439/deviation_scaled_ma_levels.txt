@@ -1,0 +1,6 @@
+Theory :
+Making self adjusting levels is a method that in some cases "chooses" to do the full value calculation or just to "inherit" a previously calculated value.  That implies that the basic method must have calculating method that is suitable for "inheritance". As it is normal, not all calculating methods are suitable for that. Deviation scaled moving average, as an offspring of ema (which is less known) , is suitable
+This version :
+We are using deviation scaled MA and self adjusting levels are added to it. That adds a sort of dynamic levels that are helping us to filter out some signals and to add "significant levels" to things that otherwise could not have those levels at all. All, (the main value, as well as the levels), are calculated as deviation scaled MA, hence, this is a full fledged deviation scaled ma indicator
+Usage :
+You can use the color changes as signals

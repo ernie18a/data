@@ -1,0 +1,60 @@
+Real author:
+Eva Ruft
+A simple indicator that calculates rounded volatility of a financial asset. Volatility is calculated in points based on the maximum and minimum prices.
+The volatility is calculated using a simple MA as the sum of the maximum prices for the averaging period minus the sum of minimal prices for the same period. The resulting value is converted into points and rounded according to the coordinate grid step defined by the
+StartLevel
+and
+LevelsStep
+input values.
+Inputs:
+//+-----------------------------------+
+//|   INDICATOR INPUT PARAMETERS      |
+//+-----------------------------------+
+input
+ENUM_MA_METHOD
+MAType=
+MODE_SMA
+;
+// smoothing method
+input
+uint
+VolatilityPeriod=
+5
+;
+// indicator period
+input
+int
+Shift=
+0
+;
+// horizontal indicator shift in bars
+input
+uint
+LevelsTotal=
+20
+;
+// number of levels
+input
+uint
+StartLevel=
+100
+;
+// initial level
+input
+uint
+LevelsStep=
+100
+;
+// distance between levels
+input
+color
+LevelsColor=
+clrDarkOrange
+;
+// color of levels
+Fig. 1.
+Volatility2Step
+indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22963

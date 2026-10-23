@@ -1,0 +1,4 @@
+The indicator behavior is similar to the FXSniper CCI Trigger but works faster. The purpose is filtering the Cronex Taichi values.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7347

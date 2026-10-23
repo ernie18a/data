@@ -1,0 +1,2 @@
+The original idea came from Bob Fulks and Alex Matulich (they are the ones that improved the original Tim Tillson T3 calculation).
+The calculation is not a Standard Deviation smoothed by T3. Instead it uses intermediate steps of T3 calculation to get the deviation based on T3. As expected the deviation calculated this way is much smoother than the Standard Deviation (as a result of using T3 which on its own is smoother than the simple moving average), and is "faster" in response to market changes.

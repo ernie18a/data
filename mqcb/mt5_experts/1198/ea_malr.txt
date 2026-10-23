@@ -1,0 +1,29 @@
+The EA_MALR Expert Advisor is drawn on the basis of the MALR indicator (the author is unknown). A sell is opened after crossing top to bottom of the <MALRHH> line (the most upper line) by price, a buy is opened after crossing the <MALRLL> line (the lowest line) by price.
+It includes the following functions:
+position averaging on a new signal,
+position reversal when the signal changes to the opposite one,
+trailing stop with additional settings,
+lot increase to the set equity drawdown.
+The testing result since 2000 at EURUSD. Initial lot 0.10, initial deposit 10000$, 1:500,
+MetaQuotes-Demo.
+Charts with and without lot increase are represented below.
+Averaging and reversal are not used (only Stop Loss/Take Profit are used).
+AVERAGING function is enabled (reversal function is disabled).
+REVERSAL function is enabled
+(averaging
+function
+is disabled).
+Both REVERSAL and AVERAGING functions are enabled.
+The Expert Advisor is protected from data loss when there are bond cutting, errors in networks and restart of the Expert Advisor (terminal).
+The main settings of the Expert Advisor (when zero these settings are not used):
+sl/tp - set after opening the position.
+N_modify_sltp - the number of times to install Stop Loss/Take Profit in an unsuccessful deal.
+use_Averaging - enable averaging in the set loss (loss_forAveraging) in points. Opening of an additional basic lot when a new single directed signal appears.
+loss_forAveraging - the number of points in loss from the previous open price (last averaging).
+Position_overturn - position reversal when the signal on the indicator changes to the opposite. Lot reversal multiplies by a reversal coefficient (koff_multiplication).
+use_increase - lot increase to the given drawdown (Max_drawdown) when opening and averaging of the position.
+Trail_StopLoss - enable trailing stop StopLoss in points (trail). When there are reversal and averaging, trailing stop is saved.
+Activate_by_profit - inclusion of trailing stop in set profit in points (profit) from open price. In case of averaging open price is equal to averaging price of all openings.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1198

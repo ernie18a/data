@@ -1,0 +1,23 @@
+Pivot Oscillator is based on three oscillators of average differences in typical prices.
+There are four input parameters:
+Fast MA period
+- fast moving average period
+Medium MA period
+- medium moving average period
+Slow MA period
+- slow moving average period
+MA method
+- moving average calculation method
+Calculation:
+Pivot oscillator = (Diff1 + Diff2 + Diff3) / Typical Price
+where:
+Diff1 = FMA - SMA
+Diff2 = MMA - SMA
+Diff3 = FMA - MMA
+FMA = MA(Typical Price, Fast MA period, MA method)
+MMA = MA(Typical Price, Medium MA period, MA method)
+MMA = MA(Typical Price, Slow MA period, MA method)
+Typical Price = (Close + High + Low) / 3.0
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22943

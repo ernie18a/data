@@ -1,0 +1,27 @@
+An educational example of a breakout Expert Advisor that works with pending orders. It shows how to build a daily price range from M1 bars, place a pair of stop orders, delete the other order after a fill and restore its state after a terminal restart.
+Strategy
+After the range ends (e.g. 00:00–07:00 server time) the EA calculates its High and Low from M1 bars and places one set of orders per day:
+BuyStop = High + Shift + spread; SL = Low − ShiftSL; TP = entry + RR × (entry − SL),
+SellStop = Low − Shift; SL = High + ShiftSL + spread; TP = entry − RR × (SL − entry).
+When one order is filled, the other is deleted. Unfilled orders are deleted at the cancel time; an open position can optionally be closed at a set time.
+If the price is already beyond a breakout level (gap), that side is skipped. Ranges narrower than the minimum or wider than the maximum width are skipped for the day.
+After a restart the EA checks today's orders in the history, so it does not place a second set on the same day.
+What the code demonstrates
+pending orders ( CTrade::BuyStop
+/
+SellStop ) with SL/TP adjusted to the broker's minimum distance,
+building a range from M1 bars with a check that the data is available,
+order history ( HistorySelect ) used to restore the EA's state,
+free margin and lot checks, spread filter, order retries.
+Inputs
+Range start / Range end (HH:MM, server time) – 00:00 / 07:00
+Delete pending orders at (HH:MM) – 20:00
+Close open position at CloseTime – on; Close time – 22:00
+Min / Max range width – in points, 0 = no limit
+Entry shift from High/Low – 20 points; Stop Loss shift beyond the range – 20 points
+TP RR – 1.0 (1:1); Lot (fixed) – 0.10
+Magic number – 5030; Max slippage – 10 points
+Trading days – Monday to Friday (each can be switched off)
+Max spread – 30 points (0 = off)
+Important
+This is an educational example, not a trading system. It works only on demo accounts and in the Strategy Tester – on a live account it shows a message and stops. Provided "as is", without any warranty. Not investment advice. Trading Forex and CFDs involves a high risk of losing capital. License: FxCraft Example EA License (see the source header).

@@ -1,0 +1,9 @@
+Original author:
+Barmaley
+A semaphore signal indicator that uses breakthroughs of the zero line from the
+TrendlessAG
+oscillator to generate signals.
+Fig. 1. The TrendlessAGSign indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12584

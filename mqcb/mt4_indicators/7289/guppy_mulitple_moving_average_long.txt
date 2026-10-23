@@ -1,0 +1,8 @@
+Author: Matt Trigwell
+The indicator allows the trader to understand market relations.
+Read
+here
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7289

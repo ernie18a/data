@@ -1,0 +1,14 @@
+Error_Break_Script_V2 revised
+Version 1 - Error_Break_Script_V1 Deleted
+Fixed implementation in Version2:
+//+------------------------------------------------------------------+
+//| Break_On_Error                                                        |
+//+------------------------------------------------------------------+
+int Break_On_Error(){
+int error_code = GetLastError();
+string error_string = ErrorDescription(error_code);
+Print("Error : ", error_string," ",error_code);
+return error_code;
+}
+//+------------------------------------------------------------------+
+Tested successfully:

@@ -1,0 +1,8 @@
+It draws the hidden divergence by the OsMA.
+Some procedures (lines drawing) are taken from FX5_divirgence...
+The points are drawn at the real moments of the signals discovering on the chart.
+Yes, I think that it is right, to draw a signal at the zero bar, the chart displays the reality at once!
+Ones who are successful with the HD, please, respond...
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8668

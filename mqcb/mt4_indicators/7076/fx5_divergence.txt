@@ -1,0 +1,15 @@
+Divergence is a powerful tool for detecting price reversal points from support and resistance zones. It usually gives us a relatively early signals compared to those given by moving average indicators. It can be successfully applied to many technical indicators and end up with good results.
+This indicator will plot divergence lines between the price and OsMA indicator. It will give buy/sell signal according to the type of divergence that was detected. The indicator also is capable of drawing divergence lines for the whole history prices located within a specific chart.
+Bullish divergence will be plotted with green lines on both price and OsMA idicator windows.
+Bearish divergence will be plotted with red lines on both price and OsMA idicator windows.
+I hope this indicator prove to be a useful tool.
+Changes to Version 1.5:
+A bug was fixed in updating divergence lines as the live quotes flow;
+A sound Alert feature was added to the indicator and can be enabled or disabled from indicator settings;
+Classical divergence is plotted in Solid Style (continues) lines, while hidden divergence is plotted in Dot Style (interuppted) lines.
+Changes to version 2.0:
+The code was rebuilt from scratch to make the indicator runs much faster.
+The indicator now doesn't repaint any of its signals.
+Some improvements in the signal identification algorithms.
+Version 2.1:
+I attached the last file by mistake. This is the one I wanted to attach. It is the last version. I am designating it version 2.1.

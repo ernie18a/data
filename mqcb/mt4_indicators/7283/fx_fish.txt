@@ -1,0 +1,5 @@
+Author: Kiko Segui.
+The unique FX_FISH indicator is widely used by the Western experts to trade in the foreign exchange market, stock market, and others. It is an autonomous trading system. Crossing of the zero line will be the signal for buying/selling the selected currency pair. It works on all timeframes, but it is recommended to use the higher ones, like H4. The indicator predicts the beginning and end of a trend with 90% accuracy.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7283

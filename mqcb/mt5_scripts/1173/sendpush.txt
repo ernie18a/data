@@ -1,0 +1,9 @@
+Description:
+The simplest script to send instant PUSH-notifications to smartphone. It is quite naturally that before sending instant notifications you should
+set
+client terminal to send them to your smartphone!
+Fig.1 Sending PUSH-notifications from the terminal on the computer.
+Fig.2 Getting PUSH-notifications by smartphone.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1173

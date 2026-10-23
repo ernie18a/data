@@ -1,0 +1,2 @@
+Author: Mohammed
+EMA OsMA indicator.

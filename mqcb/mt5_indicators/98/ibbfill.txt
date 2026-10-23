@@ -1,0 +1,15 @@
+The indicator plots the
+Bollinger Bands ®
+, filled with different colors depending on the trend direction.
+If the price crosses the upper bound (upward trend), the Bollinger Bands fills with blue color, if it crosses the lower bound (downward trend), the Bands filled with pink color.
+If the price crosses the middle line, it's considered as a flat, and the Bands filled with grey color.
+Input parameters:
+BBPeriod
+- Bollinger Bands period;
+BBDeviation
+- Bollinger Bands width (in deviations);
+BBPrice
+- Bollinger Bands applied price.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/98

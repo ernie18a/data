@@ -1,0 +1,36 @@
+Unfortunately, I found that some brokers
+The time change on the server is a bit incorrect, which I did not expect.
+and which surprised me very much.
+Here is a script that anyone can use to check their broker.
+A FOREX session lasts exactly 120 hours:
+from Sunday 5:00 pm EST (North America) or EST
+to Friday 5:00 pm EST.
+The problem arises because of daylight saving time and winter time,
+which do not occur on the same Sundays in different regions of the world.
+In the US, for example, the changeover occurs on the second Sunday in March and the first Sunday in November.
+which also affects the start and end of the FOREX session.
+The EU will submit its annual report on the last Sunday in March, after the US, and in
+the last Sunday in October, i.e. in the US (see chronology above).
+This creates a transitional phase in which the US and EU have a different
+Time difference than the usual 5 hour difference.
+hours (London), 6 hours (Frankfurt, CET) or 7 hours (Cyprus, EET).
+At the same time, this change in time difference should be reflected in
+The timestamp of the first and last hour of a FOREX session has been changed.
+Thus, if a FOREX session starts at 00:00 (EET, MQ time) on Monday, it should
+After this change, time in the USA will start one hour earlier, i.e. on Sunday.i.e. on Sunday at 23:00.
+and ends one hour earlier on Friday, at 23:00 (or 22:59:59).
+But unfortunately I had to realise (and with this script everyone can do it themselves)
+Broker Rating), which is available on MQ demo account and on some real brokers' accounts
+the first hour always(!) appears on Monday at 00:00, but the last hour as expected
+on Friday at 23:00 (or 22:59) or one hour earlier. So, the first hour is missing.
+FOREX session for a trader or advisor to react to weekend events.
+In addition, the end of a FOREX session can no longer be determined by simply adding 120 to
+the first hour of a FOREX session, for example, to close all positions before the weekend.
+This script now checks if the broker's time has changed in the past and logs all
+FOREX sessions that are clearly odd or do not last 120 hours. No logging is done between
+If 120 hours have passed between the first and last hour of a FOREX session.
+At the end, the script displays the last timestamp received, the number of
+abbreviated session periods found, and the approximate number of years taken into account.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/55087

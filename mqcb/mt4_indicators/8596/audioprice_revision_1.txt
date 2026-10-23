@@ -1,0 +1,16 @@
+Description:
+Have audio output of latest Price "in stereo".
+Input parameters:
+SaySymbol: Accept the default <true> for the symbol to precede the price, additional symbols may be added if required.
+SayBidPrice: Accept the default <true> for the "Bid" price to be spoken, else change to <false> for the "Ask" price.
+Imports:
+Thank you to Codersguru at
+http://www.forex-tsd.com
+for his library of speach functions.
+Place files ino the following subdirectories:
+AudioPrice.mq4 into "\experts\indicators",
+gSpeak.mqh into "\experts\include",
+speak.dll into "\experts\libraries".
+In indicator AudioPrice, enable "Allow DLL imports".
+Notes:
+PC is slowed down in the middle of speech pricing and trade execution could take second place.

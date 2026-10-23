@@ -1,0 +1,2 @@
+Detrended Synthetic Price was originally developed by John Ehlers. There are various ways of using it, but the one I found that they use mostly (with fixed levels), is very limited in its usage (you have to adjust the levels for each and every symbol, time frame or any settings of the parameters).
+Discontinued signal lines version seems to be a reasonable choice for the indicator to use instead of those fixed levels.

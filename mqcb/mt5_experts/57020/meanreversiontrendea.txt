@@ -1,0 +1,36 @@
+1. Overview
+MeanReversionTrendEA combines trend following and mean reversion strategies using Moving Averages and ATR-based volatility measurements, with built-in trade validation to ensure reliable execution across various market conditions.
+2. Key Features
+Dual Strategy: Combines trend following (MA crossovers) and mean reversion (price-to-MA deviations).
+Adaptive Signals: Uses fast and slow moving averages for trend identification.
+Volatility Integration: Incorporates ATR to measure market volatility for mean reversion entries.
+Built-in Validator: Comprehensive trade validation system checking volume, margin and stop levels.
+Safety Mechanism: Includes safety trade functionality for backtest validation.
+Defensive Position Management: Fixed or proportional SL/TP with proper validation.
+Multi-Asset Compatible: Works with forex, commodities, indices and stocks with proper lot sizing.
+3. How It Works
+Monitors moving average crosses for trend direction changes.
+Measures price deviations from slow MA using ATR-based volatility bands.
+Generates buy signals when fast MA crosses above slow MA or price falls below volatility band.
+Generates sell signals when fast MA crosses below slow MA or price rises above volatility band.
+Validates and executes trades with proper risk management parameters.
+4. Inputs
+Fast_MA_Period (20), Slow_MA_Period (50), ATR_Period (14)
+ATR_Multiplier (2.0) for mean reversion band calculation
+LotSize (0.1) for position sizing
+SL_Points (500), TP_Points (1000) for risk management
+Magic_Number (123456) for order identification
+5. Usage Notes
+Optimal for all major currency pairs and liquid instruments.
+Works on all timeframes, with H1-H4 recommended for better signal quality.
+Requires sufficient historical data for proper indicator calculation.
+Best for trending markets with occasional reversion opportunities.
+Robust validation system ensures proper execution across brokers.
+6. Code Structure
+CTradeValidator: Comprehensive trade validation class.
+Indicator initialization and data processing functions.
+Signal generation combining trend and reversion logic.
+Trade execution with proper validation and risk management.
+Safety mechanisms for backtesting integrity.
+7. Disclaimer
+Provided as-is for educational purposes. Past performance is not indicative of future results. Test extensively on demo accounts before live trading.

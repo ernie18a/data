@@ -1,0 +1,10 @@
+Indicator
+XFisher_org_v1
+represented as candlesticks. Candlesticks result from processing the relevant price timeseries by the indicator algorithm. In many situations, such approach may be more informative for the purpose of analysis.
+The indicator uses the classes of library SmoothAlgorithms.mqh (to be copied to <terminal_data_directory>\MQL5\Include). The use of the classes was thoroughly described in article
+Averaging Price Series for Intermediate Calculations without Using Additional Buffers
+.
+Fig1. Indicator XFisher_org_v1_Candle
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22833

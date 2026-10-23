@@ -1,0 +1,25 @@
+This Expert Advisor is rewritten from MQL4 and was originally published here
+https://www.mql5.com/en/code/7756
+by its author
+George-on-Don
+.
+How It Works
+First, the price channel is determined (maximum High (MaxH) and minimum Low (MinL) over the period specified in the parameters). The obtained values are then used to calculate the reference level (MaxH+MinL+Close)/3.
+Signals for opening a position appear as follows: if the bar closing price is below the upper limit of the channel and above the reference level, we get a Sell signal. If the bar closing price is above the lower limit of the channel and below the reference level, we get a Buy signal.
+Signals for closing a position appear as follows: if the High price of the closed bar is equal to the upper limit of the channel and the upper limit value of the channel is equal to the value on the previous bar, we get a signal for closing a Buy position. If the Low price of the closed bar is equal to the lower limit of the channel and the lower limit value of the channel is equal to the value on the previous bar, we get a signal for closing a Sell position. These conditions can very rarely be satisfied so in addition to the above closing options, the Expert Advisor also uses Stop Loss. The Stop Loss value is determined using the
+ATR
+indicator, whereby the level is calculated from the channel limits: from the lower limit when buying and from the upper limit when selling.
+The Expert Advisor takes profit using a trailing stop function.
+The image below shows the Expert Advisor performance in the strategy tester's visual mode.
+Parameters
+Lots - the order volume; when 0, the MaxR parameter is used.
+SndMl - sends messages by e-mail when the Expert Advisor opens and closes positions.
+DcF - lot reduction factor at losses. If the value is 0, the reduction is not carried out. The lower the value, the greater the lot reduction. If the lot cannot be reduced, the minimum lot is used.
+MaxR - maximum risk from 0-1 (share of free funds). It is effective when Lots value is 0
+pATR - the ATR period for Stop Loss.
+rChannel - price channel period.
+Trailing - trailing level; when 0, the trailing is off.
+The original version has the isFloatLots parameter that switches between the variables Lots and MaxR. In this version, it is replaced by the Lots parameter. If Lots is 0, the MaxR parameter is used.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1049

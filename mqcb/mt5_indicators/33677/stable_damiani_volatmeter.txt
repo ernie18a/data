@@ -1,0 +1,2 @@
+This indicator is the same as any other Damiani Voltameter, but I corrected one subtle error that caused it to behave differently when backtesting/optimizing than what can be seen on the charts in MT5 (visual backtesting, non visual backtesting and the indicator in real-time charts had different values from each other). I read comments around the internet of people that thought that this indicator could be a repainter... but from what I've seen in the code I don't think it is.
+Anyway, compare it with other Damiani Volatmeters and comment if you still find anything wrong.

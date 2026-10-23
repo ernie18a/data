@@ -1,0 +1,13 @@
+RSI Condition:
+The Relative Strength Index (RSI) for the current period is below a specified low threshold (RsiLow). This indicates oversold conditions.
+Candlestick Pattern:
+It checks for a specific candlestick pattern across three consecutive candles:
+The current candle (1) closes higher than it opens (bullish)
+The previous candle (2) closes lower than it opens (bearish)
+The current candle's close is below the high of the previous candle
+Price Action:
+The alert also checks that the current candle's close is above the open of the previous candle, suggesting a potential reversal.
+Buy Signal:
+If all conditions are met, the alert generates a "Buy" signal with an up arrow at the low of the current candle.
+Rsi Levels 30 - 70 - PLEASE ADD RSI with PERIOD 10 / LVLS 30/70 -  When a engulfing bar occurs below or above the rsi values the alert is triggered -
+Full ALERTS !!!

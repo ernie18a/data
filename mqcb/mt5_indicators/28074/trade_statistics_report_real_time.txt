@@ -1,0 +1,17 @@
+Real Author
+This code is modified version of:
+Andrey Voytenko
+The original code is available at:
+https://www.mql5.com/en/code/1084
+This code will display the report in a panel on your chart.
+Images:
+The report is compared with the Metatrader5 Report:
+Use it and let me know what you can suggest for.
+What are the changes from the original code? Here they are:
+Calculation for Total Net profit improved.
+Calculation for Gross Profit and Gross Loss improved.
+The Drawdown calculation improved.
+Short Trades and Long Trades calculations improved.
+Initial Balance calculations improved.
+Note:
+This is free code and I am always open for suggestions to improve it. I will not permit anyone to make a product and sell the code. Please try remaining ethical.

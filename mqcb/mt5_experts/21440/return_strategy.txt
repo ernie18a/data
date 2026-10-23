@@ -1,0 +1,61 @@
+The author of the idea
+:
+Andrey Kornishkin
+MQL5 code author
+:
+barabashkakvn
+The strategy operates with pending limit orders.
+Main idea
+If at
+Start Hour
+, we set the grid of pending orders from
+Number of pending orders
+of each type (Buy Limit and Sell Limit), one or several pending orders are activated. Then the price necessarily returns to the Open price of the bar the grid of pending orders has been placed at.
+For example, at 19:00 (
+Start Hour
+= 19), we place four (
+Number of pending orders
+= 4) Buy Limit and four Sell Limit orders. We expect that after one or several pending orders are activated, the price returns to the 19 hour bar's Open price.
+Note
+: There should be no pending orders on a trading account at
+Start Hour
+.
+Constructing grid
+Distance
+(indent from the current price) + N *
+Step
+(step between pending orders)
+The Expiration lifetime value is set for pending orders in hours.
+Closing positions and removing pending orders
+If the total profit of all positions becomes "Total profit" points, all positions are closed while pending orders are removed. At "End Hour", pending orders are forcibly removed.
+Inputs
+Stop Loss (in pips)
+- stop loss;
+Start Hour
+- pending order placing time (in hours);
+End Hour
+- pending order removal time (in hours);
+Total profit (in pips)
+- when this profit is reached, all positions are closed, while pending orders are removed;
+Trailing Stop (in pips)
+- trailing ("0" - disable trailing);
+Trailing Step (in pips)
+- trailing step;
+Distance
+- distance from the current price to the first pending order;
+Step
+- step between pending orders;
+Number of pending orders
+- number of pending orders of each type;
+Expiration (in hours)
+- pending order lifetime (in hours);
+Lots
+- fixed volume of pending orders;
+Risk
+- dynamic volume of pending orders, calculated as a risk % per trade;
+magic number
+- unique EA identifier.
+Optimization was performed from 2018.01.01 to 2018.07.12 on EURUSD,H1:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21440

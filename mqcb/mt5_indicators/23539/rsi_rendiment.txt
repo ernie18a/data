@@ -1,0 +1,31 @@
+Oscillating indicator RSI Rendiment is a logarithmic RSI.
+It has six adjustable parameters:
+RSI period
+- RSI calculation period
+Normalized
+- use normalizing (Yes/No)
+Normalization range
+- range of normalization
+Rendiment X
+- logarithm multiplier
+Overbought
+- overbought level
+Oversold
+- oversold level
+Calculations:
+RRSI = (RSI + Rendiment) / 2.0
+where:
+Rendiment = Rendiment X * LOG(Close/CloseRange)
+Close = current Close price
+CloseRange = Close price
+Normalization range
+bars ago
+LOG - natural logarithm
+Normalization reduces the calculated data of Rendiment to the RSI oscillator range:
+NormRendiment = ((Rendiment - Min) / (Max - Min)) * 100.0
+Max, Min - maximum and minimum values of Rendiment within the Normalization range
+Fig. 1. Normalized RSI Rendiment
+Fig. 2. Non-nomalized RSI Rendiment
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23539

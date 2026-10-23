@@ -1,0 +1,17 @@
+The Expert Advisor is based on the lot management according to the Labouchere system.
+About the system
+In theory, the SL and TP must be equal or almost equal. A trader takes a certain (any, the greater the lot, the greater the risks) sequence of lots. For example: 0.01 0.02 0.01 0.01 0.01.
+During an order opening the first and the last element of the list are always added. That is, the first order will be 0.01+0.01=0.02. Let the order be profitable. Cross out the first and the last elements from the list. The remaining are 0.02 0.01 0.01.
+Open an order with the lot 0.02+0.01 (the first and the last element) = 0.03. Let it be unprofitable. Add one element at the end, which is equal to the sum of the bet. Now the list is 0.02 0.01 0.01 0.03.
+Open an order with 0.02+0.03 (the first and the last element) = 0.05. And so on.
+The cycle ends once there are no more elements or only one element in the list. Stop opening orders, or start all over again.
+About the Expert Advisor
+Entries are made when there is an intersection of the main and the signal line of the stochastic.
+Only one order can be in the market.
+Entries are made during the opening of a new bar.
+The Expert Advisor implements the option to run a new cycle after the completion of the previous one or to not open any more orders once the cycle completes.
+It has a function of operation by time
+There is a reverse function, instead of Buy it opens Sell and vice versa.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14363

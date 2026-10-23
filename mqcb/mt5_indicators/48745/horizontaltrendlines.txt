@@ -1,0 +1,4 @@
+The indicator brings the specified (by colour and style) "Trend Line" objects to horizontal by changing the price coordinate of the second reference point of the trend line (by default this point is located on the right side of the chart).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/48745

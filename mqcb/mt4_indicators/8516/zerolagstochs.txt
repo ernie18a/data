@@ -1,0 +1,6 @@
+Author:
+perky_z
+The working with this indicator is analogous with the intersection of two movings or two stochastics in many instances.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8516

@@ -1,0 +1,6 @@
+Author: Yuri Makarov
+The indicator calculates the indices of the USD, EUR, GBP, CHF, AUD, CAD currencies and displays the index specified in the parameters in a separate window. The currency index displays the price of the currency relative to all other currencies, measured in certain standard units that are equal for all currencies. The real exchange rate for the pair is always obtained as a ratio of their indexes.
+The correct operation of the indicator requires the data on all major pairs to be downloaded. If the data is currently missing, the index may be displayed incorrectly. In this case, simply restart the terminal.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7252

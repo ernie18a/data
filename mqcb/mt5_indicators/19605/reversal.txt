@@ -1,0 +1,12 @@
+The indicator shows position opening signals based on the 'Reversal' trading system.
+Description of the System
+The system works best on the H6 timeframe. The idea of the system is as follows: it analyzes a specified number of closed candlesticks starting with the previous one, in order to find a local high or low, after which a candlestick closed with a trend reversal. For example, a candlestick shows the maximum value in the specified interval, and then closes as a bearish one. A Sell operation should be performed at the opening of the next candlestick. A buy signal is formed similarly: a candlestick shows a local low and then closes as a bullish one. A buy operation should be performed at the opening of the next candlestick.
+Parameters
+Interval
+- the number of bars to search for a local high or low.
+Send_Email
+- sending an email alert when a signal to open a position appears.
+Example of the indicator operation:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19605

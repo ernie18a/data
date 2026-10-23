@@ -1,0 +1,1 @@
+Quickly close open orders by dragging and dropping this script on chart. Will ask for confirmation to close each order within 2 pips of the drop.

@@ -1,0 +1,17 @@
+The Stochastic MACD oscillator shows in a separate window the stochastic MACD.
+It has six input parameters:
+MACD Fast MA
+- fast MA to calculate MACD;
+MACD Slow MA
+- slow MA to calculate MACD;
+MACD Signal period
+- the signal period of the MACD line;
+Stoch period
+- the period of calculating the stochastic;
+Method
+- calculation method;
+Applied price
+- price used for calculations.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20572

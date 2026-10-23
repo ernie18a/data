@@ -1,0 +1,44 @@
+Features:
+Classic ZigZag swing detection
+(Depth / Deviation / Backstep) using the standard MQL5 ZigZag approach.
+Automatic pivot tracking
+(recent swing points are stored internally for structure analysis).
+Break of Structure (BOS)
+detection:
+Marks continuation breaks in the same structure direction.
+Draws a horizontal level and labels it "BOS".
+Change of Character (CHoCH)
+detection:
+Marks the first break against the previous structure direction.
+Draws a horizontal level and labels it "CHoCH".
+Clean chart objects
+:
+Lines and labels are drawn directly on the chart for clear visibility.
+Updates on new bars to avoid unnecessary redraws.
+Parameters:
+Parameter Name
+Description
+InpLookback
+How many bars to scan when collecting recent ZigZag pivots for structure detection.
+InpDepth
+ZigZag Depth (standard MQL5 ZigZag parameter).
+InpDeviation
+ZigZag Deviation in points (standard MQL5 ZigZag parameter).
+InpBackstep
+ZigZag Backstep (standard MQL5 ZigZag parameter).
+Notes and Limitations:
+ZigZag repaints:
+Like all ZigZag-based tools, swing points can update until a leg is confirmed. BOS/CHoCH levels may shift accordingly.
+Close-based confirmation:
+Break detection is evaluated using candle closes relative to the relevant swing level.
+Chart objects:
+BOS/CHoCH levels are drawn using chart objects (lines + text labels).
+Performance:
+Very large lookback values may reduce performance on slower devices or low timeframes.
+Screenshots:
+Conclusion:
+This indicator combines the reliability of the
+standard MQL5 ZigZag
+with clear
+BOS/CHoCH
+market-structure labeling. It’s a lightweight visual tool for traders who want swing-based structure confirmation directly on the chart.

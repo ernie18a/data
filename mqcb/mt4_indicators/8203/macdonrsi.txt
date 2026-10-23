@@ -1,0 +1,5 @@
+Green line is RSI
+Red and gray lines are MACD histogram and signal line, repesctively
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8203

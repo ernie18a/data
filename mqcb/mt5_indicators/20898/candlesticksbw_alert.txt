@@ -1,0 +1,41 @@
+Real author
+: Vladimir
+An indicator with coloring candlesticks according to B. Williams and alerting on trend change, as well as sending e-mails and Push-messages in such situation.
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+uint
+NumberofBar=
+1
+;
+//Number of bar to generate a signal
+input
+bool
+SoundON=
+true
+;
+//Enabling alerts
+input
+uint
+NumberofAlerts=
+2
+;
+//Number of alerts
+input
+bool
+EMailON=
+false
+;
+//Enabling sending signals by e-mail
+input
+bool
+PushON=
+false
+;
+//Enabling sending the signal to mobile devices
+Fig.1. Indicator CandlesticksBW_Alert
+Fig.2. Alerting
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20898

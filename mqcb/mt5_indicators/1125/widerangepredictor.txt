@@ -1,0 +1,12 @@
+The logic is quite simple and based on the alternation of narrow and wide ranges. Draw the indicator in the following way:
+The histogram of the range of each candlestick (high - low).
+The line of average value of the range.
+The histogram of candlesticks body (abs(close - open)).
+The line of the average value of candlesticks body.
+If there are several candlesticks in a row and both the range and the body size are less than their average value, so the next bar with the extended range is expected. Besides, if we have a series of candlesticks with the range and body size less than average and these candlesticks are located on the same price level, then a strong single directed movement is expected.
+Recommendations:
+It is recommended to use the indicator on a period not lower than H4. Usually 3-5 "small" candlesticks are enough.
+As a variant of the system, after series of the bars with a small range (the first histogram is blue) and a small body (the second histogram is lettuce green), set stop orders above and under high and low values of the last series bar. If the order is triggered, close the position on the candlestick closing.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1125

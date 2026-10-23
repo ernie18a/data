@@ -1,0 +1,10 @@
+Real author:
+Ramdass
+Description
+The ZigZag indicator plotted using the
+NRTR
+algorithm.
+Fig1. The NRTR_ZigZag indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17515

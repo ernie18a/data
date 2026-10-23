@@ -1,0 +1,7 @@
+This indicator was originally developed by John F.
+Ehlers
+(Stocks &
+Commodities
+, V.33:10 (September, 2015): "Decyclers").
+Ehlers
+recommended to use two instances of the Decycler Oscillator with different parameters (high-pass filter period and multiplier). As a result, he got the Decycler Oscillator pair.  This version is doing that and is showing the expected trend based on those two oscillators

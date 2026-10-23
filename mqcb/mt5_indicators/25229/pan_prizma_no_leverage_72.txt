@@ -1,0 +1,35 @@
+The indicator creates a sliding line based on interpolation by a 4 degree polynomial. The constructed line extrapolates with a sine wave and its
+line_poweraxial
+or nearly constant
+,
+or
+close to the slant
+line
+power_line
+= 3
+(
+redrawn to visualise the graph).
+From the constructed and axial sinusoids, one value in each bar is removed and a line of extrapolated values is constructed,
+which is not redrawn
+.
+External variables:
+line_power
+-
+the degree of the extrapolated line;
+leverage
+:
+leverage the elimination values for the resulting line. It is set from the first sliding line shifted backwards;
+multiplier
+-
+multiplier. If equal to zero, then value is removed from axial, if equal to one, then from sinusoid, if equal to minus one, then from mirror sinusoid point through axial. It can take any value.
+line4_SHIFT
+-
+line shift resulting from extrapolated values;
+interval
+-
+increase the average multiple.
+Refinement of the indicator from the subject:
+calculation of differences, examples.
+Translated from Spanish by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/es/code/25229

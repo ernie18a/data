@@ -1,0 +1,136 @@
+The trade sessions indicator. The indicator colors eight trade sessions by rectangles. The periods of sessions defined by indicator input parameters:
+//+-----------------------------------+
+//|  INDICATOR INPUT PARAMETERS       |
+//+-----------------------------------+
+input
+int
+NumberOfDays=
+50
+;
+input
+string
+S1Begin   =
+"00:55"
+;
+input
+string
+S1End     =
+"03:55"
+;
+input
+color
+S1Color   =
+clrDarkSlateGray
+;
+input
+string
+S2Begin   =
+"03:55"
+;
+input
+string
+S2End     =
+"06:55"
+;
+input
+color
+S2Color   =
+clrDarkSlateGray
+;
+input
+string
+S3Begin   =
+"06:55"
+;
+input
+string
+S3End     =
+"09:55"
+;
+input
+color
+S3Color   =
+clrDarkSlateGray
+;
+input
+string
+S4Begin   =
+"09:55"
+;
+input
+string
+S4End     =
+"12:55"
+;
+input
+color
+S4Color   =
+clrDarkSlateGray
+;
+input
+string
+S5Begin   =
+"12:55"
+;
+input
+string
+S5End     =
+"15:55"
+;
+input
+color
+S5Color   =
+clrDarkSlateGray
+;
+input
+string
+S6Begin   =
+"15:55"
+;
+input
+string
+S6End     =
+"18:55"
+;
+input
+color
+S6Color   =
+clrDarkSlateGray
+;
+input
+string
+S7Begin   =
+"18:55"
+;
+input
+string
+S7End     =
+"21:55"
+;
+input
+color
+S7Color   =
+clrDarkSlateGray
+;
+input
+string
+S8Begin   =
+"21:55"
+;
+input
+string
+S8End     =
+"23:55"
+;
+input
+color
+S8Color   =
+clrDarkSlateGray
+;
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 26.09.2007.
+Fig.1 The i-Sessions indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1643

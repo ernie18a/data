@@ -1,0 +1,16 @@
+Real author:
+Perky_z
+This Stochastic Oscillator equivalent is based on four
+Stochastic
+Oscillators
+.
+All the indicator options are configured as the indicator's external parameters. But note that some variables are not independent and must be selected more carefully!
+Such variables as FactorN represent specific weight of the N-th Stochastic in the final indicator's total value. The rest of the input parameters of the indicator are completely equivalent to the
+iStochastic()
+technical indicator parameters. Indicator is presented in two variants.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+24.10.2008.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/420

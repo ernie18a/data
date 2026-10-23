@@ -1,0 +1,19 @@
+Indicator DMX (Bipolar DMI) is calculated using the standard indicator ADX. However, as compared to that, it displays data as an oscillator with a signal line, and has shorter delay.
+It has four configurable parameters:
+DMX Period
+- calculation period;
+Signal period
+- signal line period;
+Method
+- calculation method;
+Applied price
+- price used for calculations.
+Calculations:
+DMX = (P-M) / (P+M)
+Signal = MA(DMX, Signal period, Method)
+where:
+P - (+DI) ADX indicator line;
+M - (-DI) ADX indicator line.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21161

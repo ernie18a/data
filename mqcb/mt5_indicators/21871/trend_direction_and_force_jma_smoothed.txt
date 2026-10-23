@@ -1,0 +1,2 @@
+Trend direction and force index is a useful indicator, but it probably is showing too much signals in some cases
+This version is adding smoothing that is using one of the very well know smoothing type : Jurik smoothing (which has a very low lag and is producing very smooth results). This way it is becoming more useful and allows us to trade with more reliable signals

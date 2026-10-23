@@ -1,0 +1,7 @@
+The k-Nearest Neighbor algorithm (k-NN) searches for k past patterns (neighbors) that are most similar to the current pattern and computes the future prices based on weighted voting of those neighbors. The present indicator finds only one nearest neighbor. So, in essence, it is a 1-NN algorithm. It uses the Pearson correlation coefficient between the current pattern and all past patterns as the measure of distance between them.
+The indicator has the following input parameters:
+Npast - number of past bars in a pattern;
+Nfut -number of future bars in a pattern (must be < Npast).
+The indicator plots two curves: the blue curve indicates the past prices of the nearest neighbour and the red curve indicates the future prices of the same pattern. The nearest neighbour is scaled according to the linear regression slope between this pattern and the current pattern. The indicator also prints the information about the starting date of the nearest neighbor and its correlation coefficient to the present pattern. For example,
+Nearest_Neighbor (EURUSD,H1): Nearest neighbor is dated 2003.08.26 23:00:00 and has correlation with current pattern of 0.9432442047577905;
+Image:

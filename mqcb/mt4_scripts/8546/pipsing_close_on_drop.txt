@@ -1,0 +1,91 @@
+The script closes any position using the Drag'n'Drop method,
+i.e. the method of "drag the script with the mouse and drop it on the order lines".
+The closing of a position will be performed just at the moment of releasing the script.
+Take the script with the mouse and wait for the favorable moment not releasing the button.
+The edge of the mouse cursor points the order line with a clearance.
+The size of the clearance is specified by the
+Region
+parameter.
+The script closes all types of orders and deletes the pending orders.
+The open orders are closed first, then comes the limits' turn.
+The operation of the script is limited with the predefined region.
+The script has two modes:
+а) closing only one closest order, the
+ALL_on_region parameter is set =0;
+b) closing of all orders that are within the envelope of the mouse pointer
++/-
+Region
+.
+the
+ALL_on_region parameter =1
+;
+For the accurate choice of the closest order from many ones the Region should not be wide. It is enough to set it to 10 on the minute charts.
+If that value is specified you can close only the positions which lines are visible on the screen
+.
+The script can close all positions if you specify a value that is certainly greater than the trading range
+,
+for example, if
+Region
+=3000, then all orders will be closed because
+the range of searching the orders is specified as +/-3000 points.
+If a DC refuses to close an order the attempts with the new prices
+will be repeated
+as much as specified number of repetiotions Repetiotions=6.
+For example, if the price is at the distance of the freeze level when a DC refuses to close the order, the new attempt
+will be performed with the new price.
+If the price is within the freeze level the script doesn't refuse to close the order for the following reasons: the price at the closing moment + the gap may appear to be within the permitted range.
+If the order is already closed by the StopLoss or TakeProfit the attempts are stopped.
+You can modify the parameters of the script only via the
+MetaEditor
+.
+For the sake of clarity the modifiable parameters are marked as external.
+extern
+int
+ALL_on_region
+=
+1
+;
+//1= closes all orders within the region. 0- only the closest one.
+extern
+int
+Region
+=
+10
+;
+// size of the action region in points up and down, i.e 2*Region
+extern
+int
+Slippage
+=
+6
+;
+// gap for DC.
+extern
+int
+Repetitioons
+=
+6
+;
+// number of attempts to close an order.
+Instruction: put it at the
+experts
+\
+scripts
+\ folder and compile
+.
+For working
+Plan A.
+close position:
+-open "Navigator";
+-select this script;
+-press the left mouse button on it;
+-drag it to the order line and do not release;
+-wait for the favorable moment;
+-release the button - the position will be closed;
+Plan B.
+refuse from closing, situation: you activated the script, waited for the favorable moment but then changed your mind:
+- take away the mouse pointer rather far off the order;
+- release the button.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8546

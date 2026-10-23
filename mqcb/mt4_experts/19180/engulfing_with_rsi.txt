@@ -1,0 +1,11 @@
+Opens buys on Bullish Engulfing candles when RSI is above overbought and sells on Bearish Engulfing candles when RSI is below oversold.
+When the account's profit reaches the desired level it closes all the orders.
+Inputs
+Lot size - specify the trade size.
+Profit Goal - in deposit currency.
+MaxLoss - a negative amount of currency.
+RSI period.
+Applied price for RSI.
+Overbought level.
+Oversold level.
+Some results:

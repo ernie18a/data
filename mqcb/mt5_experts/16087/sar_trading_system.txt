@@ -1,0 +1,28 @@
+The SAR Trading System illustrates the operation of the Stop and Reversal (SAR), developed by Welles Wilder. The Expert Advisor check for presence of an open position and starts moving the stop loss with parabolic acceleration, determined by the parameters of the parabolic system.
+Every time a new bar opens, the EA moves the stop loss by a value determined by the parabolic. Due to the acceleration factor, the amount, by which the stop loss is moved, increases steadily. As a result, the stop loss moves with a noticeable acceleration. The SAR system is described in more detail below.
+Although Wilder conceived the SAR for reversing position at the moment the parabolic touches the current price, the proposed system uses the SAR as an effective trailing stop.
+The option for opening random buy or sell positions has been provided in order to illustrate the operation of the stop loss trailing system in an EA. The EA opens random positions only if the 'Random trade toggle' switch is set to 'True'. In case the switch is set to 'false', the EA will not open positions by itself.
+Parabolic system, however, remains active. That is, the EA can trail positions opened manually or by another expert.
+The EA also features the ability to delay the opening of a new position by certain time. The delay time is set by the timer.
+Below are the external parameter of the EA with brief comments:
+Initial Stop-loss (points) — initial stop loss value (before the start of the parabolic trailing).
+SAR acceleration factor increment step — increment of the parabolic acceleration factor (see description below).
+SAR acceleration factor max. value — maximum value of parabolic acceleration factor (see description below).
+Random trade toggle — toggle random position opening (true — activate the ability to perform deals manually).
+Timer frequency (sec) — delay before opening a new deal.
+Every time a new bar opens, the system must calculate a new stop loss value. For long positions the new value is calculated as:
+SAR(n+1) = SAR(n) +AF x [EP - SAR(n)].
+Accordingly, for short positions the new stop loss value is calculated as:
+SAR(n+1) = SAR(n) - AF x [SAR(n) - EP],
+where
+SAR(n+1)
+— the stop loss level at the new (n+1) bar,
+SAR(n)
+— the stop loss level at the previous (n) bar,
+EP
+— (extremum point) — the new maximum (for a long position) or minimum (for a short position) of the price, recorded since the moment the trailing stop started,
+AF
+— (acceleration factor) — the coefficient increasing at a constant step (increment of the acceleration factor) on every bar, where the price reaches a new extremum (extremum point). The acceleration factor increases until it reaches the maximum value.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16087

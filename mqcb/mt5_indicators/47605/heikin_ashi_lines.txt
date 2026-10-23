@@ -1,0 +1,23 @@
+Probably everyone has put up a
+Heikin Ashi
+chart one time or another. It makes it look so much cleaner with less noise and clearer trends.
+But there is one major flaw — it hides the true bar/candle values, especially the true closing prices.
+The
+Heikin Ashi
+close price is simply an applied price called the “total price”, and the
+Heikin Ashi
+open is simply a moving average of its close prices.
+So, why not just display it as two lines instead?
+This is what this indicator does. That way, you can still see the true bar/candle values. The dotted line is the open and the solid is the close.
+Please note that by default it will use
+Gray/Grey
+as the line colour, which is dull. So use the colour that best suits you, for example
+Yellow
+on a black background or
+Blue
+on a white background.
+The code uses conditional compilation and will compile on both MQL4 and MQL5. Please note that all my
+CodeBase
+publications’ source code are now also available in “Public Projects” tab of
+MetaEditor
+under the name “FMIC”.

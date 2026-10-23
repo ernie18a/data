@@ -1,0 +1,9 @@
+Author: Registr
+Advise Graal-003. Uses indicator
+iFractals
+.
+----------------------------------------------
+Parameters of testing:
+Symbol: EURUSD.
+Period: Daily.
+Model: For the prices of opening.

@@ -1,0 +1,7 @@
+The indicator displays the price pivot point.
+When the candles form a pattern, where all their wicks can be crossed by a line, as a rule, the price reverses.
+Example:
+The number of candles and the history period for searching the pattern can be set in the indicator parameters.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16032

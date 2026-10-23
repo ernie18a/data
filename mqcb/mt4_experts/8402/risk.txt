@@ -1,0 +1,4 @@
+The EA defines the permitted lot size of the trade to be made and shows how much has already been used and how much more can be added. It shows the current and the total profit, as well.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8402

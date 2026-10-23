@@ -1,0 +1,10 @@
+Real author
+: KCBT
+A redrawing channel with a colored background. The middle line of the channel is colored in accordance with the active market trend.
+This indicator was first implemented in MQL4 and published in
+Code Base
+on 11.10.2007.
+Fig.1 Indicator KiS_max_min_Avg
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18567

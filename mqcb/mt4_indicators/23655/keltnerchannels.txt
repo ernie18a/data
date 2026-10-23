@@ -1,0 +1,2 @@
+KeltnerChannels is base of the Indicator Keltner_Channels by MetaQuotes Software Corp. with alert and email alert and option to display trader info and signal.
+Hopefully useful for fellow traders.

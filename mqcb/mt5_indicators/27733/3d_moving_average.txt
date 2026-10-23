@@ -1,0 +1,6 @@
+The indicator management is simple and intuitive.
+There are two color modes:
+Color varies with price
+Color changes depending on the MA Period.
+Switching between the two color modes is done by the "C" key (Color).
+To change the step between periods of moving averages, the mouse pointer occurs when it is in the extreme right position and a vertical slider appears.

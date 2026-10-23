@@ -1,0 +1,9 @@
+Suppose that there is some data, which is used as the basis for plotting a diagram, for example, a chart of five equities.
+The source data is stored in the equity.csv file.
+And this data needs to be viewed on the price chart of some currency pair. And not in a separate window, but right in the window that displays the instrument price. This indicator example is written for such a case. It displays 5 charts of the average equity for five groups with different values of Money Compounding. First, compile the indicator and attach it to the daily chart (the equity.csv file must be placed to experts\files\..). Nothing appears on the chart, this is normal, as the scale of the chart and the scale of the values read from the file have great differences.
+After that, comment out one line in the indicator code, and, conversely, uncomment the other one, then press F5 (compile). Now there is a normal picture.
+Thus, the terminal was "deceived" and forced to scale the indicator according to the current price range. This trick is only possible in case the indicator is told to be drawn in a separate window.
+Receive this picture.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7600

@@ -1,0 +1,19 @@
+Real author:
+LeMan
+This trend indicator shows the current trend direction and moments for closing of the opened position.
+There are 3 variants of the indicator:
+As a line (Variation.mq5);
+As a line with color depending on current trend (ColorVariation.mq5);
+As a line with additional JMA-smoothing for noise reduction (ColorJVariation.mq5).
+The ColorJVariation.mq5 uses the СJJMA class of SmoothAlgorithms.mqh library, described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+The Variation.mq5,  ColorVariation.mq5 and ColorJVariation.mq5 must be placed to
+terminal_data_folder
+\MQL5\Indicators.
+This indicator was first implemented in MQL4 and published in
+Code Base
+14.07.2010.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/422

@@ -1,0 +1,6 @@
+Real author
+: this code was originally written by "fukinagashi". Thanks for a great indicator.
+This indicator provides ZigZag lines to help indicate spot cycles and draws Fibonacci lines to indicate support and resistance levels.‌
+Changes: I have tweaked the code to remove the playsound call which is super annoying and unnecessary.
+Enjoy!!‌
+‌

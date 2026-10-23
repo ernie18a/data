@@ -1,0 +1,4 @@
+There are 2 input parameters:
+AtrMultiplier: The lines will have this* the current Atr value distance from the moving averages.
+Period: High and Low moving average, Atr period.
+The basic idea is to have 6 lines: upper will be 2*atrmultiplier*atr +HighMA, second then atrmultiplier*atr + HighMA... Very easy to understand,

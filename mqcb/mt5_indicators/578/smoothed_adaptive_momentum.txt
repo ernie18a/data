@@ -1,0 +1,13 @@
+Real author:
+Witold Wozniak
+Adaptive Momentum from John Ehlers' book
+"Cybernetic Analysis for Stocks and Futures: Cutting-Edge DSP Technology to Improve Your Trading"
+.
+Place the
+CyclePeriod
+indicator compiled file to the
+terminal_data_folder
+\MQL5\Indicators\.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/578

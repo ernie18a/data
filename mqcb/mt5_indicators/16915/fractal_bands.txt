@@ -1,0 +1,12 @@
+Real Author:
+jppoton@yahoo.com
+Fractal Bollinger Bands. The indicator expands the Bollinger Bands width to avoid or minimize false entry/exit signals. The
+author's blog
+contains more information.
+The original indicator was developed in the MQL4 language and published in the
+CodeBase
+on 14.06.2016.
+Fig.1. Fractal_Bands indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16915

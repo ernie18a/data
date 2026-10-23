@@ -1,0 +1,373 @@
+Playground EA Series - Complete Documentation
+Important Notice
+This code is not optimized and is provided as-is for educational and experimental purposes.
+The Playground EA series was created for experimentation with Fair Value Gaps (FVGs) and liquidity concepts. These Expert Advisors were developed to test different trading modes and observe how various strategies behaved under different market conditions. The author does not remember specific implementation details, as these were rapid experimental builds.
+Feel free to use, modify, and learn from this code. It serves as a foundation for understanding encroachment-based tradin
+g strategies and liquidity targeting.
+Overview
+The Playground EA series consists of five versions (v1.00 - v1.04), each introducing new features, refinements, and bug fixes. All versions use the FVG Library and most utilize the Liquidity Library for market analysis.
+Core Concept Across All Versions:
+Trade based on Fair Value Gap (FVG) encroachment points
+Entry logic: Close above ENC = BUY, Close below ENC = SELL
+Multiple experimental trading modes tested
+Version History
+Playground EA v1.00
+Status:
+Initial experimental release with dual-mode functionality
+Description:
+The first iteration introduced two distinct trading modes: Encroachment Scalping and Liquidity Scalping. This version attempted to combine FVG detection with liquidity level sweeps.
+Key Features:
+Dual trading mode system (Encroachment Scalp / Liquidity Scalp)
+Dynamic lot sizing based on volatility (ATR, Range, or Volume-based)
+Encroachment-based entries using FVG ENC point
+Liquidity sweep detection and trading
+Multiple volatility calculation methods
+Session filtering for liquidity scalping
+Configurable filters and trend alignment checks
+Trailing stop loss functionality
+Fixed and FVG-based stop loss options
+Trading Modes:
+PLAYGROUND_ENCROACHMENT_SCALP
+: Trades when price closes above/below FVG encroachment point
+PLAYGROUND_LIQUIDITY_SCALP
+: Trades on liquidity level sweeps with reversal expectations
+Input Parameters:
+Base lot size with optional dynamic sizing
+Profit target and loss threshold in account currency
+FVG detection settings (timeframe, minimum gap size, accuracy mode)
+Encroachment filters (minimum gap, trend checking)
+Liquidity scalping settings (session filter, minimum distance)
+Volatility-based lot adjustment
+Stop loss configuration (fixed or trailing)
+Known Issues:
+Liquidity function did not work as intended
+Trades closed immediately in some conditions
+Required refinement for practical use
+Magic Number:
+9999
+Playground EA v1.01
+Status:
+Simplified and functional - liquidity mode removed
+Description:
+Version 1.01 addressed the critical issues from v1.00 by removing the non-functional liquidity scalping mode and focusing entirely on encroachment scalping. This resulted in a clean, working implementation.
+Changes From v1.00:
+Removed liquidity scalping mode entirely
+Removed liquidity library dependency
+Fixed immediate trade closure issue
+Simplified code structure
+Focused exclusively on FVG encroachment logic
+Removed dynamic lot sizing complexity
+Removed trailing stop functionality
+Cleaner position management
+Key Features:
+Single trading mode: Encroachment Scalping
+Simple profit/loss management using dollar targets
+Optional filters for entry validation
+Trend alignment checking (optional)
+FVG visualization on chart
+Streamlined execution
+Trading Logic:
+Detects FVG formation
+Waits for encroachment point touch
+Enters BUY if close above ENC point
+Enters SELL if close below ENC point
+Exits at fixed profit target or loss threshold
+Input Parameters:
+Fixed lot size
+Profit target (Eprofit) in dollars
+Loss threshold (Eloss) in dollars
+FVG settings (timeframe, gap size, accuracy)
+Optional filters (minimum gap, trend check)
+Improvements:
+Stable execution
+Reliable profit/loss management
+No premature trade closures
+Works well in testing
+Magic Number:
+9999
+Playground EA v1.02
+Status:
+Dual-mode reintroduction with Silver Bullet timing
+Description:
+Version 1.02 reintroduced a second trading mode but with a completely different approach. Instead of liquidity scalping, it introduced Silver Bullet mode with timed trading windows and liquidity targets. This version also changed how the modes operated - now using enumeration-based selection.
+Changes From v1.01:
+Reintroduced dual-mode functionality
+Added Silver Bullet Encroachment mode
+Introduced timed trading windows (Silver Bullet 1, 2, 3)
+Added liquidity library back for DOL (Draw On Liquidity) targeting
+Mode selection via enumeration (not separate toggles)
+Different magic numbers for each mode
+Added partial profit taking for Silver Bullet trades
+Session-based liquidity targeting
+Key Features:
+Two distinct trading modes (enum-based selection)
+Silver Bullet time windows (3-4am, 10-11am, 2-3pm GMT)
+Draw On Liquidity (DOL) targeting
+Partial profit taking at multiple targets
+Session filtering and priority lists
+GMT offset configuration
+Trading Modes:
+MODE_SILVER_BULLET_ENC
+:
+Trades only during Silver Bullet windows
+Targets liquidity zones (PDH/PDL, PWH/PWL, session highs/lows)
+Multiple profit targets as percentage to DOL
+Partial closing at Target 1 (50%), full close at Target 2
+MODE_SIMPLE_ENC
+:
+One trade at a time
+Fixed profit/loss targets in dollars
+No time restrictions
+Simple entry/exit logic
+Silver Bullet Features:
+Configurable time windows with GMT offset
+Minimum distance to DOL requirement
+Two-stage profit targets (50% and 80% to DOL)
+Session-based priority lists
+Liquidity sweep tracking
+Input Parameters:
+Mode selection (Silver Bullet or Simple)
+GMT offset for session timing
+Silver Bullet window toggles (SB1, SB2, SB3)
+DOL distance and target percentages
+Standard FVG and filter settings
+Separate profit/loss settings per mode
+Known Issues:
+Confusing default timeframe handling
+Enumeration-based mode selection less intuitive
+Did not properly implement session DOL mapping
+Time window calculations needed refinement
+Magic Numbers:
+Silver Bullet: 1002
+Simple Mode: 1003
+w
+Playground EA v1.03
+Status:
+Parallel mode execution with proper DOL implementation
+Description:
+Version 1.03 was a significant refactor that allowed both trading modes to run simultaneously with independent operation. It also corrected the Silver Bullet time windows to match the Liquidity Library implementation and improved DOL targeting logic.
+Changes From v1.02:
+Changed from enum selection to dual boolean toggles
+Both modes can now run at the same time
+Each mode uses separate magic numbers for independent tracking
+Fixed Silver Bullet time windows (7-8am, 2-3pm, 6-7pm GMT+0)
+Improved session DOL targeting
+Better session data retrieval from Liquidity Library
+Clearer configuration output
+Key Features:
+Simultaneous dual-mode operation
+Independent trade management per mode
+Corrected Silver Bullet timing windows
+Proper session-based DOL targeting
+Clean separation of mode logic
+Better session high/low tracking
+Trading Modes:
+Silver Bullet Mode
+(InpUseSilverBulletMode):
+SB1: 7-8am GMT+0 targeting session liquidity
+SB2: 2-3pm GMT+0 targeting session liquidity
+SB3: 6-7pm GMT+0 targeting session liquidity
+Multiple trades possible (one per window)
+DOL-based profit targets
+Simple Mode
+(InpUseSimpleMode):
+One trade at a time restriction
+Dollar-based profit/loss targets
+No time restrictions
+Independent of Silver Bullet trades
+Improvements:
+Both modes can be enabled simultaneously
+Better error checking for mode activation
+Clearer logging and trade identification
+Improved session data handling
+More intuitive configuration
+Session DOL Mapping:
+Each Silver Bullet window targets specific session liquidity
+Proper priority lists for DOL selection
+Session high/low tracking
+Fallback to alternative DOL if primary unavailable
+Input Parameters:
+Boolean toggles for each mode
+GMT offset (0 for GMT+0, -4 for New York, etc.)
+Individual Silver Bullet window toggles
+DOL distance and percentage settings
+Standard FVG and filter configurations
+Magic Numbers:
+Silver Bullet: 1002
+Simple Mode: 1003
+Playground EA v1.04
+Status:
+Latest version with session-specific DOL and enhanced controls
+Description:
+Version 1.04 is the most refined implementation, introducing session-specific DOL targeting where each Silver Bullet window targets a specific trading session's liquidity. It also added a toggle for Silver Bullet sub-modes (fixed targets vs DOL-based), one-trade-per-window rules, and improved stop loss management.
+Changes From v1.03:
+Session-specific DOL targeting (each SB window targets different session)
+SB1 (3-4am) targets Sydney Session H/L
+SB2 (10-11am) targets Tokyo Session H/L
+SB3 (2-3pm) targets London Session H/L
+Added Silver Bullet sub-mode toggle (fixed vs DOL targets)
+Implemented one-trade-per-window rule for Silver Bullet
+Removed partial profit taking logic (full close only)
+Added stop loss buffer below FVG boundaries
+Better window status tracking
+Improved position management
+Fixed time zone handling
+Key Features:
+Session-specific liquidity targeting for each window
+Dual target mode for Silver Bullet (fixed profit/loss OR DOL-based)
+One active trade per Silver Bullet window maximum
+Stop loss placed below FVG boundaries with buffer
+Window-based trade tracking
+Full position closure (no partial takes)
+Trading Modes:
+Silver Bullet Mode
+:
+Fixed Target Sub-mode (InpSBUseFixedTargets = true):
+Uses Eprofit/Eloss like Simple mode
+Trades during Silver Bullet windows only
+One trade per window allowed
+DOL Target Sub-mode (InpSBUseFixedTargets = false):
+Targets session-specific liquidity levels
+Profit target as percentage to DOL
+Minimum distance check to DOL
+One trade per window allowed
+Simple Mode
+:
+Unchanged from v1.03
+One trade at a time globally
+Fixed profit/loss targets
+Session DOL Targeting:
+SB1 (3-4am GMT): Sydney Session High or Low
+SB2 (10-11am GMT): Tokyo Session High or Low
+SB3 (2-3pm GMT): London Session High or Low
+Intelligent selection (high if price below, low if price above)
+Stop Loss Implementation:
+Placed below FVG bottom (for buys) or above FVG top (for sells)
+Configurable buffer in points (default 5 points)
+Protects against adverse moves
+Loss threshold still applies in dollar terms
+One-Trade-Per-Window Rule:
+Each Silver Bullet window can have maximum one active trade
+Once window's trade is filled, no new trades in that window
+Window becomes available when trade is closed
+Prevents over-trading within sessions
+Input Parameters:
+Silver Bullet sub-mode toggle (fixed vs DOL)
+Stop loss buffer points
+DOL target percentage
+Minimum DOL distance
+Session-specific window toggles
+All standard FVG and filter settings
+Improvements:
+More disciplined trade management
+Better risk control with SL buffers
+Clearer session targeting
+Prevents window over-trading
+Flexible profit target methods
+Better logging and status tracking
+Magic Numbers:
+Silver Bullet: 1004
+Simple Mode: 1005
+Common Features Across All Versions
+FVG Detection
+Detects three-candle Fair Value Gaps
+Configurable minimum gap size
+Optional accuracy mode using lower timeframe
+Visual plotting of FVG dots
+Encroachment point calculation (mid-point of gap)
+Reset detection for inverse candles
+Entry Logic
+Core rule: Close above ENC = BUY, Close below ENC = SELL
+Optional filters (minimum gap size, trend alignment)
+FVG type validation
+Encroachment confirmation
+Position Management
+Dollar-based profit targets
+Dollar-based loss thresholds
+Trade tracking with FVG association
+Proper position closure handling
+Error handling and logging
+Visual Elements
+FVG formation dots (green for bullish, red for bearish)
+Encroachment dots (orange for bullish bias, blue for bearish bias)
+Optional liquidity level lines (v1.00, v1.02-v1.04)
+Technical Specifications
+Library Dependencies
+FVGLibrary.mqh
+: Required for all versions
+LiquidityLibrary.mqh
+: Required for v1.00, v1.02, v1.03, v1.04
+Compatibility
+Platform: MetaTrader 5
+Language: MQL5
+Minimum Build: Recent MT5 versions with updated MQL5 syntax
+Performance Notes
+Not optimized for speed
+Suitable for experimentation and learning
+May generate volume or margin errors in testing
+Code prioritizes readability over efficiency
+Usage Recommendations
+Start with v1.01
+for understanding basic encroachment logic
+Use v1.04
+for production testing with enhanced features
+Adjust lot sizes
+conservatively
+Monitor margin requirements
+in testing
+Review logs
+to understand trade decisions
+Known Limitations
+General
+Volume errors may occur during testing
+Margin errors possible with certain broker configurations
+Not optimized for high-frequency trading
+Requires proper FVG and Liquidity library setup
+Version-Specific
+v1.00: Liquidity mode non-functional, immediate closures
+v1.02: Confusing mode selection, time zone issues
+All versions: Public test code may show errors (adds personality)
+Future Development Ideas
+Implement risk-based position sizing
+Add session volatility adjustments
+Create composite liquidity targeting
+Develop multi-timeframe FVG confirmation
+Add correlation filters
+Implement partial profit strategies
+Create backtesting optimization tools
+Disclaimer
+This Expert Advisor series is provided for educational and experimental purposes only. The author makes no guarantees about profitability or performance. Trading involves substantial risk of loss. Always test thoroughly on demo accounts before considering live trading.
+The code represents experimental work and learning exercises. Use at your own risk.
+Version Summary Table
+Version
+Key Feature
+Trading Modes
+Status
+v1.00
+Dual mode with volatility sizing
+Encroachment + Liquidity Scalp
+Broken
+v1.01
+Simplified single mode
+Encroachment only
+Working
+v1.02
+Silver Bullet introduction
+SB + Simple (enum)
+Functional
+v1.03
+Parallel mode execution
+SB + Simple (both)
+Improved
+v1.04
+Session-specific targeting
+SB (sub-modes) + Simple
+Refined
+Contact & Contributions
+This code is open for community use and improvement. Feel free to:
+Modify and enhance the code
+Share improvements with the community
+Report bugs or issues
+Suggest new features or modes
+Created by: loki Series: Playground EA (Experimental FVG & Liquidity Testing)
+End of Documentation

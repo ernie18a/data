@@ -1,0 +1,9 @@
+Real Author:
+jppoton@yahoo.com
+A fractal TRIX. For a more detailed description please see the
+author's blog
+.
+Fig1. The Fractal_TRIX indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17384

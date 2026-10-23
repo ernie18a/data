@@ -1,0 +1,11 @@
+Real author
+: cmillion@narod.ru
+The indicator displays the price pivot point.
+When candlesticks form a pattern so that all their wicks can be crossed by a line, the price is expected to reverse as a rule.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 28.07.2016.
+Fig1. The cm_ind_level_cndl indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18003

@@ -1,0 +1,26 @@
+Although there are many similar indicators out there, this particular one is based on
+code
+previously published by
+Mladen Rakic
+and incorporates a number of improvements, part of which was added following user request in comments.
+List of fixes and improvements
+Trading alerts (Alerts in MT4 terminal, Email notifications, Push notifications).
+Inputs to enable/disable each alert type separately.
+Simplified and easy-to-grasp color theme.
+Additional signal buffer (Indicator output value).
+Miscellaneous minor fixes.
+The list of adjustable parameters
+Average Period = 30
+- indicator period.
+Sensitivity = 3
+- sensitivity to price fluctuations.
+Enable Alerts = false
+- enable/disable trading alerts in MetaTrader 4.
+Enable Email Notification = false
+- enable/disable email trading alerts.
+Enable Push Notification = false
+- enable/disable push trading alerts.
+Examples
+Recommendations
+Please, make sure you combine these signals with other sources of fundamental and technical analysis, do not rely on this indicator alone for your trading decisions.
+Thank you for reading!

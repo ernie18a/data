@@ -1,0 +1,13 @@
+Trades using indicators: iStochastic (Stochastic Oscillator) and iRSI (Relative Strength Index, RSI).
+Author of the idea
+—
+L.Bigger
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+It is recommended to use on the M15 timeframe and higher.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17194

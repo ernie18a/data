@@ -1,0 +1,86 @@
+Another version of the Madeleine indicator.
+Input Parameters:
+string
+str
+=
+"Madeleine_v2.0"
+;
+extern
+string
+_Bars
+=
+"Number of bars to be drawn"
+;
+extern
+int
+cfg_Bars
+=
+18
+;
+//number of bars to be drawn
+extern
+string
+Ray
+=
+"Rays drawing"
+;
+extern
+bool
+cfg_Ray
+=
+false
+;
+//rays drawing
+extern
+string
+HL1
+=
+"High (315), Low (45)"
+;
+extern
+bool
+cfg_HL1
+=
+true
+;
+//drawing only by High (315), Low (45)
+extern
+string
+OC1
+=
+"Open (315), Close (45)"
+;
+extern
+bool
+cfg_OC1
+=
+false
+;
+//drawing only by Open (315), Close (45)
+extern
+string
+HL2
+=
+"High (45), Low (315)"
+;
+extern
+bool
+cfg_HL2
+=
+false
+;
+//drawing only by High (45), Low (315)
+extern
+string
+OC2
+=
+"Open (45), Close (315)"
+;
+extern
+bool
+cfg_OC2
+=
+false
+;
+//drawing only by Open (45), Close (315)
+Madeleine_v2.0

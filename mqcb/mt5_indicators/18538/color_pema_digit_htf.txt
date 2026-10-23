@@ -1,0 +1,14 @@
+The
+Color_PEMA_Digit
+indicator with the timeframe selection option available in input parameters:
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Indicator chart period (timeframe)
+The indicator requires the Color_PEMA_Digit.mq5 indicator file. Place it to <terminal_data_folder>\MQL5\Indicators.
+Fig. 1. Indicator Color_PEMA_Digit_HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18538

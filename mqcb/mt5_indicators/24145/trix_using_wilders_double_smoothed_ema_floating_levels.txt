@@ -1,0 +1,6 @@
+This is a variation of trix that is using Wilder's double smoothed EMA and which has floating levels instead of fixed levels for signals. You can chose :
+color change on outer levels cross
+color change on middle (dynamic zero) level cross
+color change on slope change
+Usage :
+You can use color changes as signals

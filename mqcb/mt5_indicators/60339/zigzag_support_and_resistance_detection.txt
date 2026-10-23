@@ -1,0 +1,38 @@
+Features:
+Detects key support and resistance levels using ZigZag pivot points.
+Identifies high and low extremes to calculate levels.
+Optional display of closed and open levels for historical analysis.
+Adjustable ZigZag parameters: Depth, Deviation, and Backstep.
+Interactive labels display the level type and timeframe.
+Works on all standard MetaTrader symbols and intraday to daily timeframes.
+Parameters:
+Parameter Name
+Description
+InpLookback
+Total number of bars to analyze for level detection.
+InpDepth
+ZigZag Depth parameter to identify pivots.
+InpDeviation
+ZigZag Deviation to filter minor price fluctuations.
+InpBackstep
+ZigZag Backstep to avoid false pivot points.
+InpDrawClosed
+Show levels that have already been broken.
+InpDrawZigZag
+Display the ZigZag line on the chart.
+InpDrawLabels
+Display text labels for each level.
+How to Use:
+A simple step-by-step guide:
+Attach the indicator to a chart of your chosen symbol and timeframe.
+Adjust ZigZag parameters (Depth, Deviation, Backstep) to suit your analysis style.
+Choose whether to display closed levels, ZigZag line, and labels.
+The indicator will display support and resistance levels and highlight clusters of pivots.
+Observe the chart for areas where multiple levels converge to identify potential zones of interest.
+Understanding Support and Resistance Levels:
+Support levels are drawn from low pivots; resistance levels are drawn from high pivots.
+Open levels extend to the current bar, while closed levels have been broken.
+Labels indicate the type of level (S for Support, R for Resistance) and the chart timeframe.
+Screenshots:
+Conclusion:
+ZigZag SNR Detection provides a structured view of support and resistance levels. It helps analyze price behavior while maintaining a visual presentation of market structure.

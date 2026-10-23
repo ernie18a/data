@@ -1,0 +1,2 @@
+Author: Ким Игорь В. aka KimIV
+Indicator i-RoundPrice-T01m.

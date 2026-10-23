@@ -1,0 +1,23 @@
+The indicator builds a sliding line based on interpolation by a polynomial of 4 degrees. The constructed line is extrapolated as a section of a given function by a sinusoid and its axial near the constant
+line_power = 2,
+or near the inclined straight
+line_power = 3
+(redrawn to visualize the plot).
+From the built sinusoids and axial one value is removed on each bar and a line of extrapolated values is built,
+which does not redraw
+.
+MT4
+External variables:
+line_power
+- the degree of the extrapolated line;
+leverage
+- shoulder removal values for the resulting line. Set from the backward slid first line;
+multiplier
+- multiplier. If it is equal to zero, then the value is removed from the axial, if it is equal to one, then from the sinusoid, if it is equal to minus one, then from the point of the mirror sinusoid through the axial one. May take any values.
+line4_SHIFT
+- offset of the resulting line of extrapolated values;
+interval
+- multiples multiple averaging.
+Refinement of the indicator from the topic:
+Difference calculus, examples.
+Possible development of indicator potential

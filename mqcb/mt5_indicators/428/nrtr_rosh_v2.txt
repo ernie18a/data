@@ -1,0 +1,10 @@
+Real author:
+Rosh
+This indicator marks its values depending on the current trend.
+In case of a downward trend, the indicator is colored red and magenta. In case of an upward trend, it is colored lime and aqua. When prices are rising, the level where crosses are set is a support line. When prices are falling they represent a resistance line. Similarly, aqua points show resistance levels when prices go up, while magenta ones show support levels during a downward trend.
+MQL4 version of this indicator was published in
+CodeBase at mql4.com
+02.11.2007.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/428

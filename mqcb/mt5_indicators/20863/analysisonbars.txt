@@ -1,0 +1,7 @@
+Real author
+: PozitiF
+Informational indicator AnalysisOnBars shows bars without considering the price. Bars are shown in points.
+Fig.1. Indicator AnalysisOnBars
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20863

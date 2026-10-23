@@ -1,0 +1,11 @@
+This indicator differs from the standard Kagi chart as it is drawn on a considering timeframe, so the process of forming of "yang" and "yin" lines is exactly traced. In fact, no Moving Averages or periods, and only price movement on a certain distance and breakthrough of the previous local minimums/maximums are used in drawing the Kagi charts. Suggested that the Kagi is not "one more kind of chart", but represents a good alternative to different trend indicators.
+Comparison of the KagiOnChart indicator (in the main window) with a standard chart-indicator
+Kagi
+(in the subwindow). The analogical area of the indicators is marked in the figure, but in the first case consider time of lines formation, in the second case don't consider it.
+Recommendations:
+The very simple principle is to buy when "yang" (blue line), to sell when "yin" (red line).
+After reversal wait for the confirmation in the form of a second vertical line of the same color in direction to a new trend.
+A more detailed description of the Kagi charts and their use can be find in the book by Steve Nison "Beyond Candlesticks".
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1319

@@ -1,0 +1,14 @@
+Ulcer Index (UI) shows the volatility decrease risk. It indicates lowering volatility, i.e. a possible drawdown or recovery within a given period.
+The indicator has three input parameters:
+Period
+- calculation period;
+Inverse pair
+- inverse calculation;
+Applied price
+- price used for calculations.
+The higher the indicator value, the greater the probability of volatility decrease.
+Fig.1. Direct calculation
+Fig.2. Inverse calculation
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20274

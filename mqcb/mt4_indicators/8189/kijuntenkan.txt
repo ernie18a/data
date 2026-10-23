@@ -1,0 +1,5 @@
+Just like the Kijun-sen+ indicator, it draws both lines forward on a specified number of periods. Periods and the number of periods for drawing forward are specified separately for each line in external parameters. I use it together with the Silver-channels. In a flat market, these lines rest, as a rule, because there are no new periods.
+P.S. It is a new version dated 13.06.2006 (the error of drawing forward is corrected; the chart was drawn on 1 odd bar there).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8189

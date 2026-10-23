@@ -1,0 +1,11 @@
+Usage Instructions:
+- save the IsConnected.mq4 file in the MetaTrader 4\experts\ folder, open and compile it;
+- attach it to any chart that you are not going to use actively (change symbol and/or timeframe).
+The report file
+_IsConnected.txt
+will be created in the
+MetaTrader 4\experts\files\
+folder. It will be overwritten during the operation.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7744

@@ -1,0 +1,17 @@
+Real author:
+Ulterior
+It's MQL5 version of the indicator, published here:
+https://www.mql5.com/ru/code/9187
+.
+The input parameter
+PERIOD
+is the value of the standard
+WPR
+indicator.
+EURUSD M15
+Recommendations:
+Attention - the signal lines of trend reversal isn't filtered.
+It's better to use it at several timeframes for the confirmation of divergence.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/119

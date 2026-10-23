@@ -1,0 +1,13 @@
+opens trades when a engulfing bar occurs at the SAME time as a change in heiken ashi colour
+opening above moving averages, two rsi filters, set at 5 &14 periods.
+engulfing bar must close above the high of previous bear candle, (for bullish trades)
+explaned in terms of a buy trade
+inp15 maperiod, open of heikin ashi must be above 20 ema
+inp26 20 ema is above 30 ema
+inp27 rsi period
+candle shift, start bar in which levels are measured ,candles period endbar, between these levels, set at 0-100 currently doing nothing
+may specify oversold and overbought lvls
+exception bars are not within these lvls.
+inp28 same as inp 27, for a second rsi filter
+variable moving average type
+mobile and native platform alerts.

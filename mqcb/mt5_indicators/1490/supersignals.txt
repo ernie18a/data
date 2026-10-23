@@ -1,0 +1,10 @@
+The real author:
+Nick Bilak, beluck[AT]gmail.com
+The semaphore arrow indicator of trend change. The indicator is based on the algorithm of price extremums for the period. For all the visibility and credibility of the total results of the indicator on history we should consider the fact that this indicator is redrawn with all consequences!
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 17.10.2007.
+Fig.1 The super-signals indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1490

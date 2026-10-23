@@ -1,0 +1,63 @@
+The author of the idea
+:
+John Smith
+,
+the mq5 code author
+:
+barabashkakvn
+.
+The EA trades based on the signals of
+iIchimoku
+(Ichimoku Kinko Hyo) using a fixed lot. When a signal emerges, opposite positions are closed.
+The Buy signal:
+if
+(Senkou_Span_A>Senkou_Span_B)
+if
+(
+Close
+>
+Open
+)
+if
+(Senkou_Span_B<
+Close
+&&
+Close
+<Senkou_Span_A)
+Example:
+The Sell signal:
+if
+(Senkou_Span_B>Senkou_Span_A)
+if
+(
+Open
+>
+Close
+)
+if
+(Senkou_Span_B>
+Close
+&&
+Close
+>Senkou_Span_A)
+Input Parameters
+Ichimoku settings
+Ichimoku: period of Tenkan-sen
+;
+Ichimoku: period of Kijun-sen
+;
+Ichimoku: period of Senkou Span B
+.
+Trade settings
+Lots
+- position volume;
+Stop Loss
+(in pips) - stop loss value;
+Take Profit
+(in pips) - take profit value;
+magic number
+- Expert Advisor identifier.
+Example of EA launch on EURUSD,H3:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19563

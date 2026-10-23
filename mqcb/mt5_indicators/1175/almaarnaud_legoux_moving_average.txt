@@ -1,0 +1,11 @@
+The real author:
+Arnaud Legoux & Dimitris Kouzis-Loukas
+This Moving Average uses curve of the Normal (Gauss) distribution which can be placed by Offset parameter from 0 to 1. This parameter allows regulating the smoothness and high sensitivity of the Moving Average. Sigma is another parameter that is responsible for the shape of the curve coefficients. A more detailed description of the ALMA can be found at
+the author's website
+.
+There is the possibility to highlight the trend direction in the indicator by color.
+Also a built-in algorithm of drawing the indicator for the high timeframes is used.
+Image:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1175

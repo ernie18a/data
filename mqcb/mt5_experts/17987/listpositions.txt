@@ -1,0 +1,100 @@
+A list of all positions. An example of working with CPositionInfo.
+The following can be displayed on the screen:
+positions of all symbols;
+positions of the current symbol;
+positions for all magic numbers;
+positions with the specified magic number.
+It provides a visual review of the order in which positions are stored in the terminal. An example of output format:
+2017.03
+.
+27
+17
+:
+38
+:
+40.858
+ListPositions (USDJPY,H1)
+2
+| USDJPY |
+140795995
+|
+2017.03
+.
+27
+17
+:
+32
+:
+40
+|
+POSITION_TYPE_SELL
+|
+0.02
+|
+110.33500000
+2017.03
+.
+27
+17
+:
+38
+:
+40.889
+ListPositions (USDJPY,H1)
+1
+| EURUSD |
+140795819
+|
+2017.03
+.
+27
+17
+:
+31
+:
+49
+|
+POSITION_TYPE_BUY
+|
+0.07
+|
+1.08833000
+2017.03
+.
+27
+17
+:
+38
+:
+40.889
+ListPositions (USDJPY,H1)
+0
+| USDCAD |
+140795790
+|
+2017.03
+.
+27
+17
+:
+31
+:
+45
+|
+POSITION_TYPE_BUY
+|
+0.07
+|
+1.33933000
+2017.03
+.
+27
+17
+:
+38
+:
+40.889
+ListPositions (USDJPY,H1)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17987

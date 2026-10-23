@@ -1,0 +1,6 @@
+The code was designed to illustrate the use of the timer. This Expert Advisor opens a deal in random direction the moment a signal from the timer arrives.
+If there are open positions present when the timer signal arrives, the EA will skip the timer signal.
+Timer parameters, as well as the stop loss and take profit values can be set in the input parameters.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15849

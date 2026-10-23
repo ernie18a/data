@@ -1,0 +1,4 @@
+Quantora Margin Calculator MT4 is a utility that estimates the margin required before opening a trade. It does not open trades or generate signals, and is designed to help evaluate margin usage in advance.
+The tool calculates required margin based on symbol, lot size, trade direction, and price. It also shows the expected free margin after the trade and the projected margin level, helping you understand the impact before execution.
+It includes margin usage percentage and a simple safety classification to indicate risk level. Symbol specifications such as contract size and volume limits are handled automatically.
+Suitable for traders who want a clear and practical way to check margin requirements before placing a trade.

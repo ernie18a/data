@@ -1,0 +1,31 @@
+This simple, quick & dirty script code will output a CSV file of all the Signals' properties as reported by the
+MQL5 Trade Signals
+functionality. With the resulting CSV file opened as a spreadsheet (e.g. Excel), you can sort them by your preferred metrics and choose that suite your requirements for copy trading.
+Please note that the
+MQL5 Trade Signals
+functionality, only lists MT5 signals. See also
+Listing all MT4 Signals' properties to a CSV file
+for
+MetaTrader 4
+. It also seems to be limited to a maximum of 1000 signals (I don't know how many there are in total).
+Before running the
+script
+, open up the "Signals" tab, and make sure that terminal downloads data for signals. Otherwise the
+script
+will have no data to report on.
+The CSV file will be output to terminal's "
+MQL5\Files
+" folder. In
+MetaTrader
+go to the menu
+File
+→
+Open Data Folder
+, then navigate to the "
+MQL5\Files
+" folder.
+Please note, that all my
+CodeBase
+publications' source code are now also available in "Public Projects" tab of
+MetaEditor
+under the name "FMIC".

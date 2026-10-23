@@ -1,0 +1,7 @@
+The real author:
+http://www.earnforex.com/
+The SchaffTrendCycle oscillator performed as a color histogram.
+Fig.1 The ColorSchaffTrendCycle indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1425

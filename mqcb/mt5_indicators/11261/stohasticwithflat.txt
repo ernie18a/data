@@ -1,0 +1,16 @@
+Real author:
+Powered byStep
+Stochastic Oscillator which is able to identify flat conditions of the market. In case of flat the indicator line and the signal line are tightening and reside at values of 45 and 55. Tightened Bollinger is the criterion of such state. Critical value of Bollinger tightening is captured by half of its band width and defined by the indicator input parameter:
+input
+uint
+flat=
+100
+;
+// flat size in points
+This indicator was first implemented in MQL4 and published in
+CodeBase
+on March 24, 2014.
+Fig.1. StohasticWithFlat Indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11261

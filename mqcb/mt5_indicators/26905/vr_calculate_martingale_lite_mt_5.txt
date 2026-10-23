@@ -1,0 +1,23 @@
+Average price indicator that helps the trader to calculate the price for closing all the orders without loss and profit.
+With the help of the indicator, the trader creates the virtual orders and manually sets the order volume. The indicator calculates the average price by itself.
+One can move the orders with the mouse.
+The indicator will be of a great help for both green beginners and experienced traders.
+Links to additional material:
+Full version
+MetaTrader 4
+Demo version
+MetaTrader 4
+Lite version
+MetaTrader 4
+- (open source)
+Full version
+MetaTrader 5
+Demo version
+MetaTrader 5
+Lite version
+MetaTrader 5
+- (open source)
+Blog Russian
+- Examples of work, lessons, instructions.
+Blog English
+- Examples of work, lessons, instructions.

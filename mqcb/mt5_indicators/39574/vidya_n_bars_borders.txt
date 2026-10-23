@@ -1,0 +1,4 @@
+Indicator
+Two levels are added to the iVIDYA (Variable Index Dynamic Average) indicator: upper and lower. The level size is determined for N bars
+Rice. 1. VIDYA N Bars Borders
+Indicator signals are taken by analogy with Bollinger Bands

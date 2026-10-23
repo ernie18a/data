@@ -1,0 +1,18 @@
+The real author:
+space_cowboy
+Fractals with the ability to set range. Fractal range is determined by value of indicator input parameter:
+input
+uint
+RangeFractal=
+5
+;
+//fractal range (odd numbers no less than 3)
+Even numbers of this parameter are modified to odd numbers increasing per one odd!
+Remind that standard 5-th range fractals are available in a complete МetaTrader5.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 27.06.2009.
+Fig.1 The RFractals indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1309

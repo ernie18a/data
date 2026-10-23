@@ -1,0 +1,8 @@
+Indicator
+Trend change is indicated by arrows ('
+Up
+' and '
+Down
+')
+Rice. 1. Half Trend New Alert
+When the icon appears in the indicator buffer ('Up' or 'Down'), alerts are triggered.

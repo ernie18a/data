@@ -1,0 +1,5 @@
+Description:
+Exponential average true range reduces the lag by applying more weight to recent prices.
+The weighting applied to the most recent price depends on the number of periods.
+Calculation is exact the same as in Exponential Moving Average.
+Image:

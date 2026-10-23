@@ -1,0 +1,7 @@
+3 moving averages that give target and possible entries.
+Works in any time interval, but is most used in short timeframes like M1, M2, M5, M10.
+UPDATE: 26-11-2017
+Colored Moving Average Fixed
+Select MA Method
+TODO List:
+Candle Pattern Identifier

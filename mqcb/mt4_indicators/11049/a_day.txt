@@ -1,0 +1,4 @@
+Shows the Max and Min levels of the previos day and today's open price. Change the "up" and "dn" parameters to see the day candle.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11049

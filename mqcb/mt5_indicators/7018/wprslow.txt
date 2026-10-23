@@ -1,0 +1,12 @@
+Real author:
+OlegVS
+A semaphore signal indicator on the basis of
+Williams' Percent Range
+Oscillator. The indicator identifies slow trends.
+This indicator was first implemented in MQL4 and published in
+CodeBase
+on October 12, 2006.
+Fig.1. WPRslow Indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7018

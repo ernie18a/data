@@ -1,0 +1,54 @@
+A further development of
+Bollinger Bands N positions
+.
+An Expert Advisor based on the iBands (Bollinger Bands) indicator. When a signal is received, the EA closes opposite positions (see 'Features' for details).
+What's new in version 2
+Stop Loss
+- the Stop Loss value (0 disables the parameter);
+Take Profit
+- the Take Profit value (0 disables the parameter);
+Trailing Stop
+- the Trailing Stop value (0 disables the parameter);
+Trailing Step
+- trailing step (if "Trailing Stop" is enabled, "Trailing Step" MUST NOT be set to zero!);
+Max positions
+- a limit on the number of positions (the minimum allowed value is "1" position).
+Features
+Works on a new bar;
+The number of positions is not limited;
+If a BUY signal is received, all SELL positions are closed;
+If a SELL signal is received, all BUY positions are closed;
+Before opening an order, a check is performed if there are enough funds for a double lot.
+Testing with default parameters on EURUSD, H1, from 2017.06.06 to 2018.04.10:
+Input Values
+Trade parameters
+:
+Lots
+- the volume of position to open;
+Stop Loss (in pips)
+- the Stop Loss level;
+Take Profit (in pips)
+- the Take Profit level;
+Trailing Stop (in pips)
+- trailing value
+Trailing Step (in pips)
+- trailing step value
+Max positions
+- the maximum number of open positions allowed at one time.
+Bollinger Bands parameters
+:
+period of moving average
+- period for calculating the average line;
+shift
+- horizontal shift of the indicator;
+number of standard deviations
+- number of standard deviations in the indicator;
+type of price
+- the price used for calculations.
+Arrow parameters
+- signal visualization parameters:
+color of signs Buy;
+color of signs Sell.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20353

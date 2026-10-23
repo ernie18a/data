@@ -1,0 +1,13 @@
+Author:
+Vladimir Hlystov
+When the price is approaching to the Signal Lines, the indicator sends Alert. The Signal Lines can have any angle.
+Initially, the Signal Lines are based on the straight lines of the support and resistance levels. Signal Lines can be moved to the desired place using the mouse .
+When the distance between the Bid and Signal Lines is lower than specified (in points), the indicator sends Alert, with the name of the crossed signal line.
+If the variable
+remove_segments
+is defined, it draw a new segments after the period change. The total number of Signal Lines is not limited.
+To use the indicator copy it to the folder "C: \ Program Files \-Terminal-\ experts \ indicators" and attach to the chart.
+Image:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9302

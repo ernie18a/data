@@ -1,0 +1,79 @@
+Real author:
+Bookkeeper
+SnakeInBorders calculates the channel of a filtered market, which is limited by two borders BorderTopBuffer[] and BorderBotBuffer[], and it calculates the signal MartBuffer[].
+//+--------------------------------------------+
+//|  INDICATOR INPUT PARAMETERS               |
+//+--------------------------------------------+
+input
+Smooth_Method XMA_Method=MODE_LWMA_;
+//Smoothing method
+input
+uint
+SnakeRange=
+2
+;
+//Half-period of Snake'а Axis calculation
+input
+int
+XPhase=
+15
+;
+//First averaging parameter,
+//---- for JJMA within the range of -100 ... +100 it influences the quality of the transition process;
+//---- for VIDIA it is a CMO period, for AMA it is a slow average period
+input
+uint
+FilterPeriod =
+24
+;
+// Filtering period
+input
+double
+MartFiltr    =
+2
+;
+// Market filtering ratio. The larger the value of MartFiltr, the narrower is the filtered market channel. The ratio should be properly selected. Default is 2;
+input
+bool
+HardCalc     =
+true
+;
+input
+Applied_price_ IPC=PRICE_WEIGHTED_;
+//A price constant
+input
+int
+Shift=
+0
+;
+// Horizontal indicator shift in bars
+input
+int
+PriceShift=
+0
+;
+// Vertical indicator shift in points
+input
+color
+Upper_color=
+clrMediumSeaGreen
+;
+input
+color
+Lower_color=
+clrRed
+;
+The behavior of the signal Mart inside the channel:
+When the market moves up, the signal line moves away from the lower border, crosses the channel and merges with the upper border. And vice versa when the market moves down.
+When there is a directional market move, the signal line will be held at the appropriate channel border. Expanding channel width means strengthening of the movement. The channel becomes narrower during market fluctuations. During channel narrowing, the signal line moves from one border to the other inside the channel. After reaching the opposite border, the channel begins to expand.
+SnakeInBorders can be used independently, comparing the signal line movement on different timeframes, as well as for the construction of other indicators, using Mart instead of the bar price. For the indicators like MA, OA, AC,.. you can set HardCalc = true, for indicators like ZigZag, Channel,.. — HardCalc = false, and MartFiltr value should be chosen in the range 3...5... You can differentiate between true and false peaks: if a peak is intermediate, the Mart signal line does not match the border.
+The indicator uses SmoothAlgorithms.mqh library classes (copy it to <terminal_data_folder>\MQL5\Include). The use of the classes was described in detail in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+This indicator was first implemented in MQL4 and was published in
+CodeBase
+on 19.12.2006.
+Fig1. The SnakeInBorders indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17378

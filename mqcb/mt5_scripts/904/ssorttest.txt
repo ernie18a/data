@@ -1,0 +1,46 @@
+The script contains several sorting methods for sorting of double[] array:
+Bubble sort
+;
+Selection sort;
+Insertion sort
+;
+Shell sort
+;
+Hoar sort
+;
+sorting using
+ArrayMinimum()
+and
+ArrayMaximum()
+functions.
+There are 2 functions - ascending (Up) and descending (Dn) sort:
+SortBubbleUp(double & aAr[]);
+SortBubbleDn(double & aAr[]);
+SortSelectUp(double & aAr[]);
+SortSelectDn(double & aAr[]);
+SortInsertUp(double & aAr[]);
+SortInsertDn(double & aAr[]);
+SortShellUp(double & aAr[]);
+SortShellDn(double & aAr[]);
+SortHoareUp(double & aAr[]);
+SortHoareDn(double & aAr[]);
+SortSelectUpFst(double & aAr[]);
+SortSelectDnFst(double & aAr[]).
+The script has several
+auxiliary functions
+:
+Check(double & aAr[]) - checks if array is already sorted (ascending). If array is not sorted, it prints "Error".
+ArrayAlertR(double & aAr[],int aDigits=0,string aHeader="") - prints array as a line. Arguments: double & aAr[] - array to print, int aDigits - precision (digits), string aHeader - additional string at the start of the line. This function may be useful to check the changes of the array during the sorting process.
+ArrayAlertC(double & aAr[],int aDigits=0,string aHeader="") - prints array as a column. Arguments: double & aAr[] - array to print, int aDigits - precision (digits),  string aHeader - additional string at the start of the line.
+Sorting algorithms performance:
+Hoare - 8 ms;
+Shell - 78 ms;
+SelectFst - 126 ms;
+Selection - 582 ms;
+Insertion - 702 ms;
+Bubble - 1558 ms;
+Fig. 1. Sort algorithms performance
+The fastest sort method is Hoar sort (Quick sort), but it's recursive and needs a careful use.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/904

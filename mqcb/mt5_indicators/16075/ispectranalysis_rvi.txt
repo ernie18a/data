@@ -1,0 +1,42 @@
+Real author:
+klot
+The indicator is an example of smoothing a time series of the RVI indicator by filtering harmonics of higher order.
+This approach can be applied to smooth the values of any indicators. The main advantage of the method is virtually no delay.
+Indicator input parameters:
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+uint
+RVIPeriod=
+14
+;
+// averaging period
+input
+uint
+N =
+7
+;
+// number Length
+input
+uint
+SS =
+20
+;
+// smoothing factor
+input
+int
+Shift=
+0
+;
+// The shift indicator in the horizontal bars
+where:
+N — series length (power of two);
+SS — Smoothing coefficient, zeroes the frequencies above the specified value in the obtained spectrum. SS cannot be greater than 2^N. If SS = 2^N, the RVI series is fully repeated.
+The indicator operation requires the library:
+https://www.mql5.com/en/code/7000
+.
+Fig.1. The i-SpectrAnalysis_RVI indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16075

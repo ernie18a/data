@@ -1,0 +1,71 @@
+Description:
+Underlyings for this EA are the daily opening (o1), the daily high (h1) and the daily low (l1).
+The distances from each other in a maximum of 3 steps form the filter base, which is confirmed by the CCI.
+Desciption (German):
+Use
+Google translate
+PC und EA müssen eingeschaltet sein während der Handelszeit
+5-18:00 GMT.
+Die
+Demo-Version
+(
+D1
+) ist ausschließlich für Demo-Accounts codiert. Sie kann auf Live-Accounts andere Systeme und das manuelle Trading beeinflussen!
+Die _D1-Version läuft bei allen Brokern, die den
+MetaTrader 4
+als Plattform nutzen. Sie hat gegenüber der Premium-Version (EUR 148) weniger Funktionen und keine visuelle Anzeige.
+Meine Systeme sind optimal für den zeitgleichen Handel mit max. 9 Währungspaaren codiert.
+Bedenken Sie bitte, dass der Forexhandel sehr riskant ist. Ihre Margin sollte 20% Ihrer Account-Balance nicht überschreiten!
+Basisversion
+.
+Basiswerte für diesen EA sind die Tageseröffnung (o1), das Tageshoch (h1) und das Tagestief (l1). Die Abstände zu einander in maximal 3 Steps bilden die Filtergrundlage, die bestätigt wird durch den CCI.
+Lots.
+Die Grundeinstellung für die „
+Lots
+“ beträgt 0.1. Wenn Sie einen Micro-Account handeln, müssen Sie dieses Setting
+ändern auf 0.01.
+automatisches Trading
+. Mit „
+autoTrading
+= false“ können Sie das Öffnen einer Position während der Handelszeit deaktivieren. Meine EAs sind voll automatisiert. Hier stellt sich nicht die Frage: Was passiert wenn ... Hier wird nach Tradingsschluß der Tag kontrolliert, und am Wochenende wird Bilanz gezogen.
+Reversal.
+Mit „
+Reversal
+= true“ können Sie bei einem Trendwechsel offene Positionen (ggf. mit negativem Ergebnis) schließen.
+StopLoss / TakeProfit.
+Mit „
+OrderSL
+“ kann ein StopLoss gesetzt werden, wenn noch kein StopLoss vom System generiert wurde, mit „
+OrderTP
+“ ein TakeProft.
+ProfitStop.
+Mit „
+ProfitStop
+“ (Empfehlung: 200 EUR od. USD pro 0,1 lots) werden alle Positionen geschlossen, wenn der ProfitStop erreicht wird. Der ProfitStop singt bis zum Handelsschluss auf 10% seines eingestellten Wertes.
+Settings.
+Ihre aktuellen Settings erhalten Sie im betreffenden Chart mit der Taste F4. Sie können die Werte jederzeit selbst ändern.
+GMT / Zeitdifferenz.
+Wenn die Chart-Zeit (Brokerzeit hh:mm) von GMT (hh:mm) abweicht, müssen Sie die Abweichung (in Stunden) unter "GMT_Diff" ändern. Basiswert für alle Zeitangaben ist die GMT (Greewich Mean Time
+http://wwp.greenwichmeantime.com
+/
+).
+Beispiel :
+Chart time
+-
+GMT
+=
+GMT_Diff (
+16:30
+-
+15:30
+=
++ 1)
+manuelles Traden.
+In der Tradingzeit (5 bis 14:00 GMT) wird dann eine Position mit dem Lotwert (0.1) geöffnet, wenn keine offene Position zu dem Währungspaar vorhanden ist. Wenn also eine Position um 5:00 GMT geöffnet und z.B. bis 8:00 GMT komplett geschlossen wurde, wird beim nächsten Handelssignal bis 14:00 GMT eine neue Position geöffnet. Wenn Sie nur eine Position öffnen wollen, dann reduzieren Sie die Tradingzeit, umgehrt erhöhen sie diese.
+Positionen modifizieren und schließen.
+Wenn die Haltezeit „
+HoldingHours
+“
+(10 = 10 Std.) oder die „
+GMTclosingHour
+“ erreicht ist, wird eine positive Position geschlossen, eine negative Position modifiziert den TP auf den Eröffnungswert dieser Position.

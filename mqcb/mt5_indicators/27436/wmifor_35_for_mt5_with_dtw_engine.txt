@@ -1,0 +1,33 @@
+This indicator predicts possible future price movements by searching for similar candle patterns in the rate history.
+This is an adaptation of original indicator WmiFor 3.0 (with dynamic time warping engine, DTW) for
+MetaTrader 4
+.
+Please, find all details about main principles of operation, settings, and trading strategies on the page of the original indicator (for that indicator only Russian version is available so far, please use built-in translation facilities to read in other languages).
+Input parameters
+IsTopCorner - Info panel in upper corner
+OffsetInBars - Offset backward in bars (to check forecast) [1..]
+IsOffsetStartFixed - Keep offset of the start of the pattern (move synchronously with new bar formation)
+IsOffsetEndFixed - Keep offset of the end of the pattern (move synchronously with new bar formation)
+PastInBars - Length of the pattern to search (in bars) [3..]
+VarShiftInBars - Variation of the found candidates' length (in bars) [0..]
+ForecastInBars - Forecast this number of bars [1..]
+MaxAgeInDays - Maximal history age to search (in days) [1..]
+MaxVarInPercents - Maximal allowed tolerance in candidates (%) [0..100]
+MaxAlts - Maximal number of candidates to find [1..]
+ShowPastAverage - Show average price movement of candidates from history
+ShowForecastAverage - Show average line with price forecast
+ShowBestPattern - Show the best candidate (disables the average line)
+ShowTip - Show trading tip
+IndicatorPastAverageColor - Color of the average line on history
+IndicatorCloudColor - Color of the range of candidates (high and low)
+IndicatorBestPatternColor - Color of the best candidate
+IndicatorVLinesColor - Color of vertical boundaries of the pattern
+IndicatorTextColor - Color of the info panel and tip
+IndicatorTakeProfitColor - TakeProfit and StopLoss color
+XCorner - Margin from left/right borders of the chart
+YCorner - Margin from upper/lower borders of the chart
+Main changes
+Conversion from MQL4 to MQL5
+Bug fixes
+New bugs ;-)
+Screenshot

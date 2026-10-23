@@ -1,0 +1,3 @@
+Description:
+The indicator draws true Key Level on chart based on DiNapoli Fibonacci levels gives point of intraction by buyers and sellers.
+Image:

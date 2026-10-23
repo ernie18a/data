@@ -1,0 +1,3 @@
+Real author:
+Theclai
+The strategy of this EA is place buy and sell pending orders for daily breakout which is compare previous high or low previous day candle

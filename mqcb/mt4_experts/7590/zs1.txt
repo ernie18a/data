@@ -1,0 +1,7 @@
+Author: Gen4sp
+I came across an expert that was discussed many times on the forum.
+Go to topic
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7590

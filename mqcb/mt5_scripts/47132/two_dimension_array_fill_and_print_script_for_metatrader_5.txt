@@ -1,0 +1,1 @@
+We often need to input numeric values into an array, in which I am sharing how we can easily use a string array to input and output numeric values. In this case, a 2-dimensional array is used, but it can also be multidimensional.

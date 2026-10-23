@@ -1,0 +1,21 @@
+Author of the idea
+—
+Sergey
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+The advantage of the Expert Advisor is that it can confidently move into positive direction. Its main disadvantage is the drawdown.
+The idea is: trade EURUSD. The average price change for 90% of days is over 60 points. For one week, the volume exceeds 200 in 90% of cases.
+It means that there is growth during the full three days of the week on the average. The weekly "turbulence" is minimal.
+The strategy is as follows: stop loss is set at 60+10 points (in order to avoid accidental hitting, we add +10 points to the price), take profit is set at 190 (200 - 10 for the spread and the minimum distance to a trade).
+Lot with a stop loss and take profit (70/190) is opened. Then the order is trailed by 10 pips every 10 pips (in case of reversal, it guarantees that the stop-order is aways positioned at the weekly bottom/peak price. As a result, an order will be closed during a week).
+As a result, every 1.5 weeks theoretically make a profit equal to the average weekly volume (200).
+‌
+After optimization on EURUSD M5, from 2016.01.01 to 2017.03.02, initial deposit 10000 (the resulting parameters are already used in the EA):
+‌
+‌
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17774

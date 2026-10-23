@@ -1,0 +1,6 @@
+OSF 1.0 Expert Advisor
+The concept of this EA is to monitor several indicators and trade based on a value returned by those indicators. Every x bars, the strategy will check the indicators and return a 1 - 100 value, and adjust the position.
+Open Source Forex is an open source strategy, developed by the community.
+That means we will work together on something we can all use and profit from. The open source concept to strategy development will allow us to tap the knowledge and resources of a large pool of independent developers, who have an interest in seeing a good public domain strategy that can be sent out and traded. Differing versions of the same strategy, means that we could develop 1 strategy, implemented in varying ways, and all profit from it.
+We could all use the same strategy with hundreds of implementations. The base strategy is more a development platform than a specific strategy. OSF will monitor custom indicators written by developers, and execute trades based on an array monitoring those indicators, using a Money Management Module (MMM). We encourage anyone to contribute to the project, of course anything you contribute will need to be shared with the group, according to the GPL.
+www.opensourceforex.com

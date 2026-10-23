@@ -1,0 +1,19 @@
+Spread Monitor — a simple information indicator for MetaTrader 5.
+Features:
+Displays the current spread in pips
+Displays Bid and Ask
+Colour coding: green / yellow / red
+Supports Russian and English
+Customisable thresholds and colours
+Does not overload the chart — just a single text panel
+Settings:
+Language — language selection (Russian / English)
+X_Offset, Y_Offset — panel position
+MidThreshold, HighThreshold — spread thresholds in points
+ColorLow, ColorMid, ColorHigh — display colours
+FontSize — font size
+Why it is needed:
+Traders use it to monitor the spread before entering a trade. It is particularly useful during news events and periods of low liquidity.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/77409

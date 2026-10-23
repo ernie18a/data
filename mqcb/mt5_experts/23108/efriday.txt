@@ -1,0 +1,22 @@
+The author of the idea
+-
+Scriptor
+mq5 code author
+-
+barabashkakvn
+The EA opens only one position at a time, therefore it is able to work both on hedging and netting accounts. It works on every tick. Trading is completely disabled on Friday.
+BUY signal:
+Open D1 #1 > Close D1 #1
+SELL signal:
+Open D1 #1 < Close D1 #1
+A position can be opened only if the current hour of the trade server is equal to "
+Hour of opening a position
+". This condition imposes a restriction on a timeframe: it should not exceed H1.
+If "
+Use "Position Closing Hour
+" is "true", position is closed at "
+Position Closing Hour
+".
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23108

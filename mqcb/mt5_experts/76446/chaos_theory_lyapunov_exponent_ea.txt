@@ -1,0 +1,14 @@
+This Expert Advisor combines Chaos Theory and quantitative momentum logic for MetaTrader 5. It calculates the
+Largest Lyapunov Exponent (LLE)
+in real-time to analyze phase space trajectory divergence, identifying whether current market dynamics are chaotic or deterministic.
+By measuring divergence between nearest neighbors in reconstructed phase space, the EA filters out unpredictable market noise and executes trades only when market conditions exhibit structured behavior.
+Key Features:
+Lyapunov Chaos Filter:
+Uses phase space reconstruction (lookback, embedding dimension, and projection steps) to calculate the LLE and halt trading during high-entropy conditions.
+Momentum Trigger:
+Executes trades using fast and slow Exponential Moving Average (EMA) crossovers strictly when the chaos filter validates market predictability.
+Dynamic Risk Management:
+Automated lot sizing based on account balance risk percentage, ATR-based Stop Loss, and Take Profit targets.
+Bar-By-Bar Execution:
+Evaluates signals at the open of each new bar to optimize performance and prevent over-trading.
+Note: Developed as a quantitative regime-filtering module for algorithmic portfolios.

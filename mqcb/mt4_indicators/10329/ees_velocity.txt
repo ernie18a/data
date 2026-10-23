@@ -1,0 +1,4 @@
+Description:
+Velocity = High-Low / Time. Time is changeable to minutes, hours, or days. Seconds is the default. In physics, Velocity = distance / time.
+Velocity can be a good indication of price action divided by time, differing from indicators such as ATR and Volatility indicators that do not include time.
+Image:

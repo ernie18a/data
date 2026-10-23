@@ -1,0 +1,5 @@
+You may change input parameters:
+nPeriod = 13;
+MaShift = 0;
+For RSI_Bands_B2 i added:
+RossiKoeff = 300;// find value by testing for each Symbol and TimeFrame

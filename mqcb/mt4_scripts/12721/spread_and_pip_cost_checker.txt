@@ -1,0 +1,11 @@
+This script show you current currency pair spread, pip value and the total cost of the spread to open a position. Result will show in your account currency.
+To see those information you have to input volume size in the input section.
+Fig. 1. General information
+Fig. 2. Input parameters
+Fig. 3. Script output on 2 decimal quotes
+Fig. 4. Script output on 3 decimal quotes
+Fig. 5. Script output on 4 decimal quotes
+Fig. 6. Script output on 5 decimal quotes
+If you like it then rate it 5 star. If don't like then say why you don't. So that I can improve this script.
+Sincerely,
+Md. Mobarak Ali

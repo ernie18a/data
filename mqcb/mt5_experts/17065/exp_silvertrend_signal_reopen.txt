@@ -1,0 +1,36 @@
+The Exp_SilverTrend_Signal_ReOpen trading system based on the signals of the
+SilverTrend_Signal
+indicator with scaling by the trend. The signal is formed when a bar is closing if a colored indicator arrow appears. Further, it scales the volume of the opened position if the profit points of the last deal in the position exceed the threshold specified in the EA input parameters.
+Information on position scaling is stored in string comment to the trade in the format of:
+number of scales / price of last deal / volume of last deal
+.
+Place SilverTrend_Signal.ex5 compiled file to the
+<terminal_data_folder>\MQL5\Indicators
+.
+After compilation, the Exp_SilverTrend_Signal_ReOpen.ex5 expert file contains the SilverTrend_Signal.ex5 indicator as a
+resource
+,
+and therefore, it is not required to be present in the terminal folder for the compiled EA to work! For this purpose, the corresponding code has been added to the EA code in order to include this indicator in the expert's executable file.
+The indicator executable file has been added as resources at the global scope
+//---- Include the indicator in the EA code as resource
+#resource
+\\Indicators\\SilverTrend_Signal.ex5
+Changed the string paths to the indicators used as resources in the block of the OnInit() function
+//---- getting SilverTrend_Signal indicator handle
+InpInd_Handle=
+iCustom
+(
+Symbol
+(),InpInd_Timeframe,
+"::Indicators\\SilverTrend_Signal"
+,SSP,RISK,
+0
+);
+Thus, the compiled executable file of the expert can be used on other trade terminals on its own without the indicators.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig1. Examples of deals on the chart
+Testing results for 2015 at EURUSD H4:
+Fig.2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17065

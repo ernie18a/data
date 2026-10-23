@@ -1,0 +1,163 @@
+Description
+The CRSIOnRingBuffer class is designed for calculation of a technical indicator Relative Strength Index (
+Relative Strength Index
+, RSI) using the algorithm of
+the ring buffer
+.
+Declaration
+class
+CRSIOnRingBuffer :
+public
+CArrayRing
+Title
+#include <IncOnRingBuffer\CRSIOnRingBuffer.mqh>
+File of the CRSIOnRingBuffer.mqh class must be placed in the IncOnRingBuffer folder that need to be established in MQL5\Include\. Two files with the examples used by the class from this folder are attached to the description. File with the class of
+the ring buffer
+and the class of
+Moving Average
+also must be in this folder.
+Class methods
+//--- the method of initialization:
+bool
+Init(
+// if error it returns false, if successful - true
+int
+period      =
+14
+,
+// the period of the RSI
+ENUM_MA_METHOD
+method      =
+MODE_SMMA
+,
+// the method of smoothing
+int
+size_buffer =
+256
+,
+// the size of the ring buffer, the number of stored data
+bool
+as_series   =
+false
+// true, if a time series, false - if a usual indexing of the input data
+);
+//--- the method of calculation based on a time series or indicator buffer:
+int
+MainOnArray(
+// returns the number of processed elements
+const
+int
+rates_total,
+// the size of the array array[]
+const
+int
+prev_calculated,
+// processed elements on the previous call
+const
+double
+&array[]
+// the array of the input values
+);
+//--- the method of calculation based on the separate series elements of the array
+double
+MainOnValue(
+// returns the value of the RSI for the set element
+const
+int
+rates_total,
+// the size of the array
+const
+int
+prev_calculated,
+// processed elements of the array
+const
+int
+begin,
+// from where the significant data of the array starts
+const
+double
+value,
+// the array element value
+const
+int
+index
+// the element index
+);
+//--- the methods of access to data:
+int
+BarsRequired();
+// Returns the necessary number of bars to draw the inficator
+string
+Name();
+// Returns the name of the indicator
+int
+Period
+();
+// Returns the period
+string
+Method();
+// Returns the method in the form of the text line
+int
+Size();
+// Returns the size of the ring buffer
+To get the calculated data of the indicator from the ring buffer is possible as from the usual array. For example:
+//--- the class with the methods of calculation of the RSI indicator:
+#include <IncOnRingBuffer\CRSIOnRingBuffer.mqh>
+CRSIOnRingBuffer rsi;
+
+...
+//+------------------------------------------------------------------+
+//| Custom indicator iteration function                              |
+//+------------------------------------------------------------------+
+int
+OnCalculate
+(
+const
+int
+rates_total,
+const
+int
+prev_calculated,
+const
+int
+begin,
+const
+double
+&price[]) 
+  {
+//--- calculation of the indicator based on price time series:
+rsi.MainOnArray(rates_total,prev_calculated,price);
+
+...
+//--- use the data from the ring buffer "rsi",
+//    for example, copy the data in the indicator buffer:
+for
+(
+int
+i=start;i<rates_total;i++)
+      RSI_Buffer[i] = rsi[rates_total-
+1
+-i];
+// indicator line
+//--- return value of prev_calculated for next call:
+return
+(rates_total);
+  }
+Please note that indexing in the ring buffer is the same as in the
+time series
+.
+Examples
+The indicator calculates the Test_RSI_OnArrayRB.mq5 file on the basis of the price time series. The MainOnArray() method application is demonstrated
+The Test_RSI_OnValueRB.mq5 file demonstrates the use of the MainOnValue() method. At first the RSI indicator is calculated and drawn. Then on the basis of this indicator ring buffer one more RSI is drawn.
+The result of the work of the Test_RSI_OnArrayRB.mq5 with the size of the ring buffer of 256 elements
+The result of the work of the Test_RSI_OnValueRB.mq5 with the size of the ring buffer of 256 elements
+When writing code the developments of
+MetaQuotes Software Corp.
+,
+Integer
+and
+GODZILLA
+were used.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1385

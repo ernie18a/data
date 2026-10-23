@@ -1,0 +1,10 @@
+Real author:
+Kalenzo
+A set of support and resistance levels with five different timeframes. Extremes of a period are used as the levels.
+This indicator was first implemented in MQL4 and published in the
+Code Base at mql4.com
+on 03.02.2008.
+The KLines indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1948

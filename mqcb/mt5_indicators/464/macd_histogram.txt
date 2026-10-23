@@ -1,0 +1,11 @@
+Real author:
+Frankie28
+The indicator displays divergences between a price chart and
+MACD
+histogram signal line. The divergences are shown on a chart as line segments. The trade signals are displayed as colored arrows, also it shows alerts.
+This indicator was implemented in MQL4 and published in
+CodeBase
+28.07.2008.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/464

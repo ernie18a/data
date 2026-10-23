@@ -1,0 +1,16 @@
+The indicator draws a channel constructed by the method of polynomial regression.
+It has four configurable parameters:
+Length
+- the channel length in bars;
+Power
+- sensitivity;
+Deviation
+- channel width (distance between the borders and the middle line);
+Applied price
+- channel calculation price.
+Fig.1 Power = 2
+Fig.2 Power = 4
+Fig.3 Power = 6
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19884

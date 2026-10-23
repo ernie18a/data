@@ -1,0 +1,29 @@
+The Expert Advisor looks for correlations of the Market Watch list symbols, calculates Average True Range ratios for every hedging combination and assigns different magic numbers for them. Then the subsequent operations can be easily carried out with the prepared data. For precision, statistics like correlation and ATR ratio are recalculated every day.
+The Expert Advisor can work with all the currency pairs from the Market Watch list on a single chart simultaneously, as well as it does not depend on the incoming ticks from particular symbol. For the purpose of showing the principle of action, hedging technique was implemented based on overlay chart indicator presented here
+https://www.mql5.com/en/code/7933
+.
+Inputs
+TakeProfitByPoints
+- Set it to 'true' if you want profit/loss to be calculated in points.
+TakeProfitPoints
+- Take Profit value (in points).
+TakeProfitByUsd
+- Set it to 'true' if you want profit/loss to be calculated in USD.
+TakeProfitUsd
+- Take Profit value (in USD).
+Retries
+- Number of retries for trying to close an order.
+AtrTimeFrame
+- Timeframe for Average True Range calculation.
+AtrBarsBack
+- Number of bars for Average True Range calculation.
+CorrelationTimeFrame
+- Timeframe for correlation calculation.
+CorrelationBarsBack
+- Number of bars for correlation calculation.
+OverlayThreshold
+- Overlay threshold (in points).
+MaxOrders
+- Number of maximum open orders allowed.
+MaxSpread
+- Maximum spread allowed (in points).

@@ -1,0 +1,1 @@
+The Adaptive Kalman Trend Filter Indicator reduces market noise to provide a clearer view of price trends. By adjusting its responsiveness to changing market conditions, it balances smooth filtering with sensitivity to price movements, helping traders assess trend direction and potential shifts in momentum.

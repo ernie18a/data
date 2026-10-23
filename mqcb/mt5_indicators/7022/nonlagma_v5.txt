@@ -1,0 +1,57 @@
+Real author:
+TrendLaboratory
+This is a moving where effect of retardation is lessened by means of damped cosinusoid defining coefficients' ratios in equation of the linearly weighted average (LWMA).
+Statical filter (in points) helps to remove small spurts of the medium which gives a shape of stair-stepping.
+Input Parameters:
+//+-----------------------------------+
+//| Input parameters of the indicator |
+//+-----------------------------------+
+input
+int
+MAPeriod       =
+13
+;
+// Period
+input
+ENUM_MA_METHOD
+MAType         =
+MODE_EMA
+;
+// Type of averaging
+input
+ENUM_APPLIED_PRICE
+MAPrice        =
+PRICE_CLOSE
+;
+// Price
+input
+uint
+Filter         =
+0
+;
+// Static filter in points
+input
+uint
+ColorBarBack   =
+1
+;
+// Bar back for color mode
+input
+double
+Deviation      =
+0
+;
+// Up/down deviation
+input
+int
+Shift          =
+0
+;
+// Horizontal shift of the indicator in bars
+This indicator was first implemented in MQL4 and published in
+CodeBase
+on September 21, 2006.
+Fig.1. NonLagMA_v5 Indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7022

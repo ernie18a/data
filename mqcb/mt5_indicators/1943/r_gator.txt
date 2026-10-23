@@ -1,0 +1,12 @@
+Real author:
+Rosych
+An analogue of the
+Alligator
+indicator with a smaller lag of signals.
+This indicator was first implemented in MQL4 and published in the
+Code Base
+at mql4.com on 04.02.2008.
+The r_Gator indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1943

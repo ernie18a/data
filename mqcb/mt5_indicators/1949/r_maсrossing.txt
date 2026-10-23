@@ -1,0 +1,10 @@
+Real author:
+Rosych
+A moving average calculated as an average of all variants of calculation of the classical
+Moving Average
+with a signal line and the possibility to produce alerts and send push notifications.
+Push notifications are sent only from closed bars.
+The r_MaСrossing indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1949

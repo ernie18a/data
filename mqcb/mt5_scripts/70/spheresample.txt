@@ -1,0 +1,10 @@
+The script SphereSample.mq5 illustrates control of graphic objects using the classes from the
+Standard Library
+(Base class of objects array
+CArrayObj
+,
+CChartObjectText
+).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/70

@@ -1,0 +1,7 @@
+Developed by Tushar Chande, the Range Action Verification Index (RAVI) is used in order to help identify if the market is in a trend. The indicator shows the difference (in percentage) between the current prices and the past prices. Two key lines are recommended by Chande for the RAVI – 3% or 1% in dependence on the market.
+A bull trend begins, when the RAVI crosses the 3% key line from bottom-up. The bull trend is considered as active as long as the indicator line moves up.
+A bear trend begins, when the RAVI crosses the 1% key line from top to the downside. The bear trend is considered as active as long as the indicator line moves down.
+This version has an additional inverse Fisher transform applied to the RAVI in order to emphasize the RAVI values and to make the detection of trend change and exhaustion easier.
+Recommendations
+Can be used in both trending mode and counter trending mode.
+Adjust trigger levels for trending mode (set the trigger levels to lesser values).

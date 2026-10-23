@@ -1,0 +1,18 @@
+The calculation of correlation coefficient between two quotes charts of two currency pairs is performed (between the currency pair to whose chart the indicator is attached and the pair specified in the parameters of the indicator).
+The followings are displayed in the indicator's window:
+The chart of the correlation coefficient (you can disable its displaying as is shown on the mentioned pictures)
+The chart of the moving average related to the curve of the correlation coefficient (you can disable displaying)
+The average value of the correlation coefficient for the specified number of last bars
+Mode = 0, 1, 2 - the parameter that determines the exact property of the price chart the correlation will be calculated for (0 - for the close price of the bar, 1- for the differnece between the open and the close prices, 2 - for the relation between the close price and the maximum price of the bar).
+Pair = "USDCHF", "EURUSD"... - a currency pair the correlation coefficient is to be calculated for.
+ShowCorrelation = true - if the displaying of the buffer of the correlation coefficient is necessary, = false - if not.
+ShowMA = true - if the displaying of the buffer of the correlation coefficient's moving average is necessary, = false - if not.
+CorrelationRadius = 15 - the radius of the correlation.
+MA_Period = 10 - the period of the moving average.
+ResultingBars = 0 - the number of bars the total average value of the correlation coefficient is calculated by (this value is displayed at the bottom-left part of the window). If ResultingBars = 0, then the average will be calculated by all obtained values of the correlation coefficient.
+FontName = "Verdana" - the font the average value of the correlation coefficient is displayed with.
+FontSize = 10 - the font size.
+FontColor = Black - the font color.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8224

@@ -1,0 +1,6 @@
+As it was shown in the
+Rsi(var)
+indicator, other Moving Averages can be used for calculation of an RSI indicator. This version is one more step in that direction.
+Adding zero lag MA to the RSI calculation as a preferred smoothing method has two things as a result:
+It is "faster" - zero lag MA is an average with significantly reduced lag.
+It reaches the extremes (0 and 100) much faster and much more often than the regular RSI - to the extent that even long periods of calculation are regularly reaching those levels and that makes one of the most unpleasant features (the flattening around 50 value when longer periods are used) almost solved.

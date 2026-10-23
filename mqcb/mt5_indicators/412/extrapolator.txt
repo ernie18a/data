@@ -1,0 +1,31 @@
+Real author:
+Vladimir
+Extrapolator is a result of a long-term research in the field of Timeseries Forecasting. This indicator forecasts future price behavior. The indicator draws two lines: the blue one shows model prices on training bars, the red one shows predicted future prices.
+The indicator is based on several methods that can be selected by the Method input variable:
+Fourier's series extrapolation; the frequencies are calculated using Quinn-Fernandes Algorithm;
+Autocorrelation Method;
+Weighted Burg Method;
+Burg Method with Helme-Nikias weighting function;
+Itakura-Saito (geometric) method;
+Modified covariance method.
+Methods 2-6 are linear prediction methods. Linear prediction is based on finding of future values as linear functions of previous values. Assume that we have the x[0]..x[n-1] price range where the older index corresponds to more recent prices.
+Forecasting of the x[n] future price is calculated as
+x[n] = -Sum(a[i]*x[n-i], i=1..p)
+where:
+a[i=1..p] - model ratios;
+p - model structure.
+Named methods 2-6 find the a[] ratios by decreasing a mean-root-square error on the last training n-p bars. Of course, zero error forecast on training bars can be achieved by solving previously mentioned linear equation system directly at n=2*p using the Levinson-Durbin algorithm. Such a forecast method is called Prony Method. Its drawback is unstable forecasts of the future values of the range. Therefore, this method is not included.
+Other input data are:
+LastBar - last bar index at previous data;
+PastBars - number of previous bars used to predict future values;
+LPOrder - linear module structure as a share from the number of previous bars (0..1);
+FutBars - number of future bars in a forecast;
+HarmNo - maximum number of frequencies for Method 1 (0 selects all frequencies);
+FreqTOL - measure of inaccuracy in frequencies calculation for Method 1 (>0.001 may not converge);
+BurgWin - weighing function index for Method 2 (0=Rectangular, 1=Hamming, 2=Parabolic);
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+9.12.2008.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/412

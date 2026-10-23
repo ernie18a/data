@@ -1,0 +1,8 @@
+The iSpread shows the following:
+The spread for each bar as a histogram;
+The minimum spread for a specified period (horizontal green line);
+The current spread in the upper right corner of the indicator window.
+Due to specific aspects of storing the historical data, the indicator shows the maximum spread for a bar time.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2426

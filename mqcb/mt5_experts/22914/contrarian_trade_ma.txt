@@ -1,0 +1,52 @@
+The author of the idea
+-
+Scriptor
+mq5 code author
+-
+barabashkakvn
+The Expert Advisor uses iMA (Moving Average, MA) indicator and W1 timeframe. A timeframe can also be set separately via the
+MA and OHLC: timeframe
+parameter. The
+Number of bars among which search is Highest and Lowest
+interval searches for highs and lows. Position size (
+Lots
+) and stop loss (
+Stop Loss
+) are set as well.
+The EA opens only one position at a time, therefore it is able to work both on hedging and netting accounts.
+Trading signals
+max - maximum found value of High prices
+min - minimum found value of Low prices
+rates[1].close - Close price on bar #1
+rates[0].open - Open price on bar #1
+ma[1] - Moving Average indicator value on bar #1
+if
+((max<rates[
+1
+].close) || (ma[
+1
+]>rates[
+0
+].open))
+        {
+         ***
+         BUY
+         ***
+        }
+else
+if
+((min>rates[
+1
+].close) || (ma[
+1
+]<rates[
+0
+].open))
+        {
+         ***
+         SELL
+         ***
+        }
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22914

@@ -1,0 +1,19 @@
+Author of the idea
+—
+John Smith
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Using
+#include
+<MovingAverages.mqh>
+we average the array of values of the iRSI indicator.
+We also get the values of two iMAs — the fast and the slow one.
+The "Reverse" parameter is available in inputs. He is responsible for the position direction: if set to "true", the signal will be opposite.
+Test example on AUDUSD:
+‌
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17833

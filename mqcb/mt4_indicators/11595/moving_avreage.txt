@@ -1,0 +1,1 @@
+Once the price closes above or below the two moving (60 &100) a signal is generated. Signal must be generated ONLY in-case the price closes above/below the TWO lines.

@@ -1,0 +1,14 @@
+This indicator marks swing highs and swing lows on the chart, and it never repaints. A swing is drawn only after the bars that confirm it have closed, so what you see today is exactly what the chart will still show tomorrow.
+How it works
+A bar is a swing high when its high is above the highs of the N bars on its left and not below the highs of the N bars on its right. Swing lows use the same logic, mirrored. The bar that is still forming is never used, and a swing is drawn only when all N confirming bars on its right have closed.
+Nothing is drawn early and nothing is removed later. This makes the swings safe as a building block for BOS / CHoCH logic and for backtests. The cost of this honesty is a lag of N bars: that lag is unavoidable for any swing that cannot repaint.
+Inputs
+InpStrength - number of bars on each side used to confirm a swing (default 5).
+InpMaxBars - how many bars to scan on the chart (default 2000, 0 = all).
+InpAlert - popup alert when a new swing is confirmed.
+InpPush - push notification to the phone when a new swing is confirmed.
+Buffers (for use from an Expert Advisor with iCustom and CopyBuffer)
+Buffer 0 - swing high price (EMPTY_VALUE when there is none).
+Buffer 1 - swing low price (EMPTY_VALUE when there is none).
+Notes
+This is a drawing tool, not a trading signal, and it makes no claim about profitability. It works on any symbol and timeframe.

@@ -1,0 +1,25 @@
+An alert (an audio alert, email and push notification) is generated when the
+iMA
+(Moving Average, MA) indicator crosses the bar with index N.
+Input Parameters:
+period of ma
+- Moving Average indicator averaging period;
+ma_shift
+- shift of the Moving Average indicator;
+ma_method
+- MA averaging method;
+applied_price
+- the price used for the Moving Average calculation;
+Play sound
+- flag for playing an audio file;
+sound_filename
+- the name of the audio file;
+Send mail
+- flag for sending email notifications;
+Send notification
+- flag for sending push notifications;
+N bar
+- the index of the bar, for which intersection with the Moving Average is checked.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19335

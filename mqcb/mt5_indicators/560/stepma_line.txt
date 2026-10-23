@@ -1,0 +1,11 @@
+Real author:
+igorad
+StepMA is executed as a
+moving average
+.
+Trading signals:
+We should buy when the indicator line is changing its color from magenta to blue. A long position should be kept till the line color is changed to magenta.
+We should sell when the indicator line is changing its color from blue to magenta. A short position should be kept till the line color is changed to blue.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/560

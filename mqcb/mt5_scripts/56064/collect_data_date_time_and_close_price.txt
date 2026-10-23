@@ -1,0 +1,4 @@
+As you can see this is a short script used to collect close price and place it in a column after a date string and a time (hour and minute) string.
+The data is saved to a comma separated values (CSV) file in the MQL5/Files folder by default, for outside use as needed.
+There are no frills, bells or whistles on this and I am not yet familiar enough to know whether it would be better (or if it is possible) to use CopyTime and CopyRates built-in functions rather than the iClose and iTime functions.
+There are more than one ways to skin a cat as they say.

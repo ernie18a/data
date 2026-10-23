@@ -1,0 +1,4 @@
+The
+TrailingStop EA
+manages an open position with a trader supplied Trailing Stop. If the trailing stop is less than the allowed stop, the EA changes it to the allowed minimum stop.
+Trader can run the EA on any chart even if the ticket number (s)he supplied is for a different symbol.

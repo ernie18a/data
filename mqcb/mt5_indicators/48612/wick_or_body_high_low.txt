@@ -1,0 +1,3 @@
+Searches for Wick or Body based High low in visible bars of chart
+Wick based High Example
+Body based High Example

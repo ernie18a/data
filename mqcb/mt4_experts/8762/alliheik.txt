@@ -1,0 +1,2 @@
+This EA works on 15min EURUSD and 30 min EURUSD.
+At the first attempt to author I used the heiken Smoothed as primary signal indicator to be followed by the JAW line of the Alligator indicator. The results could be made efficient with adding maybe the Alligator indicator lines as filter to possibly clean the Heiken Smoothed changes at times when market goes sideways. Also it needs a mm that does change the position if direction changes and closes all open positions of the opponent signal.

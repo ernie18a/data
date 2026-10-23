@@ -1,0 +1,45 @@
+The EA is based on several key trading and technical concepts:
+Trade Copying/Mirror Trading Concept:
+The fundamental idea is to replicate trading activity from one account (Master) to another account (Slave)
+This is useful for:
+Fund managers managing multiple client accounts
+Traders wanting to run same strategy across different brokers
+Risk distribution across different brokers
+Account Architecture:
+Two-tier system:
+Master Account: Original source of trades
+Slave Account(s): Copies/mirrors the master's positions
+Uses a file-based communication system between master and slave instances
+Technical Implementation Methods:
+Binary File Communication:
+Master writes position data to a binary file
+Slave reads this file to sync positions
+Uses common folder access for inter-terminal communication
+Faster and more efficient than text-based methods
+Position Management:
+Real-time position tracking
+Maintains three key aspects:
+Open positions replication
+Stop loss/Take profit synchronization
+Position closure synchronization
+Symbol Mapping:
+Handles different symbol names across brokers
+For example:
+XAUUSD.ecn on one broker might be GOLD on another
+Allows flexible symbol mapping for different broker conventions
+Risk Management Principles:
+Maintains exact position sizes
+Preserves stop loss and take profit levels
+Ensures synchronized risk management across accounts
+Operational Features:
+Regular polling (every 50ms) to check for changes
+Bi-directional verification:
+Checks for new positions to copy
+Verifies existing positions are still valid
+Closes positions that no longer exist on master
+Error Handling and Recovery:
+Manages common trading issues:
+Failed order execution
+Communication failures
+Symbol availability issues
+Price differences between brokers

@@ -1,0 +1,32 @@
+Zone Recovery is an advanced hedging system. When the market goes against you by certain number of pips, you open an opposite trade by a trade with slightly bigger lot size.
+If the market keeps moving in this new direction, at some point the profit from the profit trade will overtake the loss trade, at which point you can close both the trades.
+If the market returns to the previous direction, the trade with the bigger lot size will accumulate loss faster than the older trade which is gaining. In this situation, calculate and open another trade in that direction by which the initial trade and the third trade together will be bigger than the second trade.
+This back and forth hedging strategy can be continued for 6 iterations until the market moves to a level which can give profit or break even.
+It works better with "every tick" data
+Try it on demo first.
+There are 3 versions for this EA:
+1.version 1 "ZONE RECOVERY AREA" can work
+with live trading with limited lotsize.
+2.version 2 "ZONE RECOVERY AREA VERSION II" can work with live trading
+with unlimited lotsize
+.
+3.version 3 "ZONE RECOVERY AREA VERSION III" you can add or multiply lotsize.
+Inputs list:
+Use_TP_In_Money- Use Take Profit In Money (values:true/false).
+TP_In_Money- Take Profit In Money   (values: 10-100).
+Use_TP_In_percent- Use Take Profit In Percent (values:true/false).
+TP_In_Percent- Take Profit In Percent (values: 10-100).
+------------[Money Trailing Stop For Multiple Trades]----------------------
+Enable_Trailing-Enable_Trailing with money  (values:true/false).
+Take Profit In Money (in current currency) (values: 25-200).
+Stop Loss In Money(in current currency) (values: 1-20).
+--------------------------------------------------------------------------------------
+TakeProfit - values: 100-200.
+Zone_Recovery_Area - values: 50-80.
+Period1 - Fast Moving Average, values: 10-50.
+Period2 - Slow Moving Average, values: 100-200.
+Multiplier - Multiplier for lot size, values: 0.01-1.
+-You should optimize this EA every few months and use the exact same  inputs from above .
+-How to perform back test:
+https://bit.ly/2CD7XWD
+Zone Recovery Hedging Strategy on YouTube:

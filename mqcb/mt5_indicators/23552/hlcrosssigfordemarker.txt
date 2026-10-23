@@ -1,0 +1,64 @@
+Real author:
+Bigeev Rustem
+The HLCrossSigForDeMarker is considered as a trend indicator since it is intended for "catching" trends. However, it's a pretty complex and informative indicator that allows excluding the psychological and emotional effects from trading.
+This indicators shows levels for opening positions, setting stop levels, Trailing Stop and Take Profit, what leaves no doubts for a trader regarding performing a deal. Avoiding psychological and emotional influence in trading is a key factor for getting a profit on the market.
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+uint
+Supr_Period=
+6
+;
+//Break-through range period: The higher its value is, the later and rarer the signals are
+input
+uint
+MA_Period=
+21
+;
+//Period for Triple Exponential Moving Average. Used as an additional filter
+input
+uint
+Risk=
+0
+;
+//Highest risk in pips to calculate the entering level based on the level of the nearest MAX/MIN
+input
+uint
+ATR_Period=
+120
+;
+//ATR period. Used for calculation of volatility.
+input
+double
+Q=
+0.7
+;
+//Parameter to place Take Profit. - A rate of Stop Loss. if =1, Take = Stop
+input
+uint
+DeMarker_Period=
+12
+;
+//DeMarker period. Used as an additional filter
+input
+double
+HLine=+
+0.5
+;
+//Upper signal stop line for DeMarker
+input
+double
+LLine=-
+0.5
+;
+//Lower signal stop line for DeMarker
+Displayed elements of the indicator:
+Up and down arrows are signals for opening the corresponding positions;
+Circles on crosshairs are points for placing initial Take Profit;
+Dots are used for confirmation of determined trend. If the price continuously breaks through the levels of these points, one should keep the position as long as it is possible. If points represent a "corridor" for a long period, it is time for fix the profit.;
+Diamonds are limits for placing Stop Loss and Trailing Stop.
+Fig. 1. Indicator HLCrossSigForDeMarker
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23552

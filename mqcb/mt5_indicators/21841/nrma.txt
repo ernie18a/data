@@ -1,0 +1,19 @@
+NRMA -
+an indicator by
+Konstantin Kopyrkin
+. It is one of the many implementations of the NRTR indicator (Nick Rypock Trailing Reverse
+).
+The indicator displays NRMA and trailing stop positioning marks - NRTR.
+There are four input parameters:
+K
+- coefficient of NRTR points shift from the price and direction change
+Smooth
+- NRMA smoothing factor
+Fast
+- minimal smoothing period
+Sharp
+- degree of dynamism
+The indicator is used to determine entry points and trailing stop positions.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21841

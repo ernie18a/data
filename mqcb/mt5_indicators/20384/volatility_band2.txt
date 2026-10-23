@@ -1,0 +1,15 @@
+The Volatility Band 2 indicator is similar to the standard Bollinger Bands, and is a modification of
+Volatility_Band
+with the following difference: instead of a separate 'Low band adjustment', this parameter affects both the lower and the upper bands of the indicator.
+It has four input parameters:
+Period Band
+- period for calculating the bands
+Period
+- period for smoothing the bands
+Deviation factor
+- affects the range of the bands. The lower the value, the wider the range
+Band adjustment
+- adjustment of the indicator bands.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20384

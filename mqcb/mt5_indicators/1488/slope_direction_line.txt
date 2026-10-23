@@ -1,0 +1,5 @@
+Slope Direction Line is the trend indicator drawn on the basis of Moving Average.
+Trade decisions are taken according to the position of the indicator line in relation to price and its color change.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1488

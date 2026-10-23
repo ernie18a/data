@@ -1,0 +1,3 @@
+Indicator
+A series of indicators 'Color N Bars' - a trend is determined on a given number of bars ('MA: trend N Bars'). The trend is painted in its own colors.
+Rice. 1. MA On Stochastic Color N Bars

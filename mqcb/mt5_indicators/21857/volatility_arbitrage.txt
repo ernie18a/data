@@ -1,0 +1,19 @@
+The Volatility Arbitrage oscillator displays the price rate of change chart and the corridor of the standard deviation of the rate.
+Breakdown of the corridor edges indicates an increase in volatility.
+There are four input parameters:
+ROC period
+- period for calculating the price rate of change
+Deviation period
+- deviation calculation period
+Deviation multiplier
+- the width of the deviation channel
+Applied price
+Calculation:
+ROC = 100.0*(Applied price / Applied price[ROC period] - 1.0)
+Top = Dev * Deviation multiplier
+Bottom =-Top
+where:
+Dev = StdDev(ROC, Deviation period, MODE_SMA)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21857

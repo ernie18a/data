@@ -1,0 +1,7 @@
+Basics:
+The Laguerre RSI indicator created by John F. Ehlers is described in his book "Cybernetic Analysis for Stocks and Futures". It's a responsive RSI successor constructed using only 4 bars of data, but compared to the regular RSI it has way less noise (whipsaws) considering its fast reaction speed.
+The gamma value determines how aggressive or conservative does it get; for example, a value like 0.80 is considered conservative whereas the value of 0.5 will be more reactive but more prone to whipsaws.
+This version:
+Instead of using gamma parameter (which is rather "cryptic") this version is using what is common in most similar indicators: the period. The period can be fractional; (ie: it does not need to be integer value). Also, in order to filter out some false signals, Laguerre filter is added for RSI smoothing. To turn of the smoothing, simply set the filter period to less than or equal to 1
+Usage:
+You can use it (in combination with adjustable levels) for signals when color of the Laguerre RSI changes

@@ -1,0 +1,15 @@
+A ZigZag alike the one used in Ensign with little differences (v1). With displaying of statical and dynamical Fibo levels and Andrews' pitchfork.
+Parameters:
+minBars - the bars filter (the number of bars is specified)
+minSize - the filter by the number of points (the number of points is specified)
+ExtFiboType = true - the fibs with Pesavento numbers, false - the standard Fibo levels
+ExtFiboDinamic - enables the displaying of dynamical Fibo levels. The dynamical Fibo levels are displayed on the first ray of ZigZag.
+ExtFiboStatic - enables the displaying of statical Fibo levels
+ExtFiboStaticNum - the number of ZigZag ray the statical Fibonacci levels will be displayed from. 1<ExtFiboStaticNum<=9
+ExtFiboS и ExtFiboD - the choice of colors for statical and dynamical fibs.
+ExtPitchfork = 1 the Andrews' pitchfork is displayed from the last three extremums, ZigZag=2 the 50% median is displayed in addition
+ExtLinePitchfork - specifies the color of Andrews' pitchfork
+ZZ_Ensign_Fibo
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8257

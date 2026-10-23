@@ -1,0 +1,2 @@
+One more in the series of a simple-to-do code examples in MetaTrader 5 (the main loop of this one has 6 lines of code).
+This is a MACD that can use average for input price instead of using "pure" price. That can help in filtering some false signals, but the main purpose of this code is to show how simple some things can be done using MetaTrader 5. In addition to all usual options when it comes to this type of indicators, option to have color changes based on MACD slope change or MACD crossing signal line.

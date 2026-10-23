@@ -1,0 +1,22 @@
+Virtual Robot will open virtual trades, using them to monitor the market to determine the entry point(according to the inputs parameters), at which point Virtual Bot will start opening real trades.
+Demo account - recommended
+Input Parameters
+TF - the choice of timeframe
+Slippage - slippage.
+MagicNumber - trades ID.
+Comment - comment for orders.
+Stop Loss - Stop Loss in pips.
+Take Profit - Take Profit in pips.
+Min Take Profit -
+minimal Take Profit.
+Average + Take Profit  - average order price + Take Profit.
+Lots - initial lot.
+Lotmax - maximum volume.
+Multiplier - multiplier to increase/reduce your lot size.
+Stepper for real - quantity positions without the multiplier 1=1+multiplier; 2=1+1+multiplier etc.
+Stepper for virtual - quantity positions without the multiplier 1=1+multiplier; 2=1+1+multiplier etc.
+PipStep - the minimum distance between orders.
+Max Trades - the maximum number of position.
+Start opening real trades - after virtual trades.
+Start average orders price for real orders - transition to averaging real transactions (only).
+Visual - true/false.

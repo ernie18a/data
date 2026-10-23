@@ -1,0 +1,175 @@
+Expert Advisor Parameters (Inputs)
+The EA provides several external parameters that the user can modify to control its behavior:
+General Parameters
+Parameter
+Type
+Description
+MagicNumber
+int
+A unique identifier for the EA's trades.
+InitialLot
+double
+The starting lot size for the first trade in a series.
+AllowBuy
+bool
+Flag to allow the EA to open Buy trades (initial and Martingale).
+AllowSell
+bool
+Flag to allow the EA to open Sell trades (initial and Martingale).
+TakeProfit
+int
+A fixed Take Profit in points/pips used when placing pending orders (though not for market execution).
+FindHighLowBackBars
+int
+The number of previous bars to look back for determining the highest high and lowest low for initial pending order placement.
+ResetAfterBars
+int
+The number of bars after which the initial pending orders will be deleted and re-evaluated (if no position is open).
+Martingale Strategy
+Parameter
+Type
+Description
+ReverseMartingale
+bool
+If true , the subsequent Martingale trades will be in the
+opposite
+direction of the last trade in the series (this would typically be an anti-Martingale or hedging approach, but the code
+opens
+in the same direction if false ).
+The current logic suggests opening in the
+same
+direction if ReverseMartingale is false .
+LotMultiplier
+double
+The factor by which the lot size is multiplied for the next trade in the loss-making series (e.g.,
+2.0
+means doubling the lot).
+SecureProfitMartingaleTarget
+double
+The
+total floating profit
+(in account currency) at which the entire series of open trades will be closed.
+DistanceMartingalePips
+int
+The distance (in pips) the price must move against the last trade's open price before a new Martingale trade is opened.
+MaxTradesInSeries
+int
+The maximum number of trades allowed in a single Martingale series.
+Time Strategy
+Parameter
+Type
+Description
+AllowMonday
+...
+AllowFriday
+bool
+Flags to enable or disable trading on specific days of the week.
+ForbiddenDates
+string
+A comma-separated list of dates (format YYYY.MM.DD) on which trading is prohibited.
+Core Functions Overview
+OnInit() (Initialization)
+Sets the EA's MagicNumber , margin mode, and deviation. It
+resets the Martingale status
+variables ( s_currentLot , s_totalTradesInSeries , etc.) to their initial values, preparing for a fresh start.
+OnDeinit() (Deinitialization)
+A simple function for cleanup, printing a message when the EA is stopped or removed.
+IsTradingDateAllowed() and IsTradingDayAllowed() (Trading Filters)
+These functions check the current day and date against the user-defined inputs ( AllowMonday to AllowFriday and ForbiddenDates ) to determine if trading is permitted.
+OpenTradeLogic(ENUM_ORDER_TYPE type, string tradeComment) (Market Execution)
+This function handles opening new market positions (Buy or Sell).
+It validates and normalizes the lot size against the broker's minimum, maximum, and step size.
+It checks for
+sufficient free margin
+using CheckMargin() .
+It executes the trade
+without a fixed Take Profit or Stop Loss
+( tp_calculated is
+0
+).
+It updates the global Martingale status variables: s_currentLot , s_lastOpenPrice , s_seriesType , and s_totalTradesInSeries .
+CloseAllPositions()
+Iterates through all currently open positions and closes any that were opened by
+this EA
+(matching the MagicNumber ).
+PendingOrders(ENUM_ORDER_TYPE type, double price, double lotSize, string comment) (Pending Order Placement)
+This function places
+Buy Limit
+or
+Sell Limit
+orders:
+It validates the lot size and checks for sufficient margin.
+It validates the entry price against the broker's minimum distance ( SYMBOL_TRADE_STOPS_LEVEL ).
+It calculates a fixed Take Profit ( tp ) based on the TakeProfit input.
+It sends the trade request.
+Note:
+The UpdateHighLowAndOrders function
+calls
+this to place initial Buy Limit and Sell Limit orders.
+UpdateHighLowAndOrders() (Initial Entry Logic)
+This is the
+initial entry mechanism
+when no positions are open:
+It looks back FindHighLowBackBars to find the
+Highest High
+and
+Lowest Low
+.
+It calculates priceSellLimit (Highest High +
+1
+tick) and priceBuyLimit (Lowest Low -
+1
+tick).
+It checks if Buy Limit and Sell Limit orders with the EA's MagicNumber already exist.
+It places an initial
+Sell Limit
+order just above the recent highest high and a
+Buy Limit
+order just below the recent lowest low, each using the InitialLot .
+OnTick() (Main Logic)
+The core of the EA's execution logic:
+Time Check:
+Prevents redundant calculations on the same tick.
+Filter Check:
+If trading is not allowed by day/date, it deletes all pending orders.
+Profit Target Check (Series Exit):
+If eaHasOpenPositions is true AND totalFloatingProfit is
+≥
+SecureProfitMartingaleTarget , it calls CloseAllPositions() and
+resets all Martingale status variables
+to start a new series.
+Initial Order Placement:
+If !eaHasOpenPositions AND trading is allowed, it
+resets the Martingale status
+and checks if a new bar has formed.
+If a new bar is formed, it checks if barsCount is
+≥
+ResetAfterBars . If so, it deletes pending orders and calls UpdateHighLowAndOrders() to place new initial orders. If not, it just calls UpdateHighLowAndOrders() .
+Martingale Step Logic:
+If eaHasOpenPositions is true AND s_totalTradesInSeries is $< MaxTradesInSeries`:
+It checks if totalFloatingProfit is
+negative
+AND the price has moved against the last open trade by at least DistanceMartingalePips .
+If both conditions are met, it calculates the nextLot by multiplying s_currentLot by LotMultiplier .
+It determines the orderToOpen direction (either the same direction as the series or the reverse, based on ReverseMartingale ).
+It calls OpenTradeLogic() to open the new, multiplied position, continuing the Martingale series.
+Summary of Strategy
+The "Babi Ngepet" EA implements a risky but potentially high-reward Martingale strategy combined with a breakout/range-reversal initial entry:
+Initial Entry:
+The EA places an initial
+Buy Limit
+(below recent low) and a
+Sell Limit
+(above recent high). This suggests an initial assumption of
+range-bound behavior
+—it enters a buy when the price drops to a low, and a sell when the price rises to a high.
+Trade Management:
+If one of the initial trades is triggered and the position moves into an aggregate loss (negative floating profit), and the price continues to move against the open positions by a defined distance, the EA opens a
+new position
+in the same direction with a
+larger lot size
+(Martingale).
+Exit Strategy:
+The series of trades continues to increase lot size until the aggregate floating profit of all trades in the series reaches the SecureProfitMartingaleTarget , at which point all positions are closed, and the EA resets for a new series.
+Warning:
+The Martingale strategy is known for high drawdowns and high risk of capital loss because the lot size increases after every losing step.

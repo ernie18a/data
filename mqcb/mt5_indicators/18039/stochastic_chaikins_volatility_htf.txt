@@ -1,0 +1,14 @@
+The
+Stochastic_Chaikins_Volatility
+indicator with the timeframe selection option available in its input parameters:
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Indicator chart period (timeframe)
+To provide correct operation of the indicator, add the compiled Stochastic_Chaikins_Volatility.mq5 indicator file to terminal_data_folder\MQL5\Indicators.
+Fig1. Indicator Stochastic_Chaikins_Volatility_HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18039

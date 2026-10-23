@@ -1,0 +1,9 @@
+Phase change index by M.H. Pee (originally published here :
+Phase Change Index
+) with an addition of JMA smoothing
+The original indicator is very useful but maybe lacks some smoothing in some cases in order to avoid some cases. In order to address that, this version adds smoothing using the well known JMA (Jurik Moving Average) but it adds it in 3 possible ways :
+smoothing the price prior to using it in calculation
+smoothing the PCI when it is calculated
+smoothing the price prior to using it in calculation and the smoothing the PCI value too
+Comparison of the 3 modes (in the order described above) - it is obvious that the values can change significantly depending on the smoothing mode, hence some experimenting prior to using the indicator in trading decision is advised
+PS: to turn the smoothing off altogether, simply set the smoothing period to Less than or equal to 1

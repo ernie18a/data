@@ -1,0 +1,20 @@
+The indicator calculates the inclination angle of the last segment of moving average and shows it in the chart together with the MA line and the line drawn from the last segment of moving average.
+It has seven input parameters:
+MA period
+- MA period;
+MA method
+- MA calculation method;
+Applied price
+- MA calculation price;
+Line color
+- color of the line drawn from the last MA segment;
+Line width
+- width of the line drawn from the last MA segment;
+Line style
+- style of the line drawn from the last MA segment;
+Font size
+- size of the text showing the line inclination angle.
+Various colora and types of lines are in pictures below:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20871

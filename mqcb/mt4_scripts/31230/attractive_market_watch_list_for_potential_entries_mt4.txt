@@ -1,0 +1,16 @@
+INTRODUCTION
+Are you tired and lost
+when it comes to creating an attractive market watch list ? You don't know from where to start ? You always see pro traders creating an attractive market watch list in which they draw support/resistance and create all possible scenario ?
+Well this script will help you to create your own attractive market watch list for potential entries.
+Do not forget to send you comments as well as rate this script. Happy trading!
+HOW TO USE IT :
+In the video below, we will guide you step by step to create your own attractive market watch list for potential entries. We will explain
+How to install the script,
+How to eliminate the first set of unattractive charts from our market watch list,
+How to study each remain chart and make sure that they are attractive.
+Remark: make sure you have downloaded all charts' data, or the script will be slow since it will try to download all charts' data while it is running
+RECOMMENDATION :
+In the video below, we will help you see your risk and your target as percentage rather than money or pips. It will show you the same trades on two different account, a small account and a big account.
+IMPORTANT INFORMATION YOU NEED TO KNOW
+========================================
+Please note that investing involves risks. Any decision to invest in either the real estate or stock markets is a personal decision that should be made after thorough research, including an assessment of your personal risk tolerance and your personal financial condition and goals. Results are based on market conditions and on each individual and the action they take and the time and effort they put in.

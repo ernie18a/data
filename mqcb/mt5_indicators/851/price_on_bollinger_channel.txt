@@ -1,0 +1,7 @@
+The indicator draws (in a separate window) the
+Bollinger Bands ®
+relative to the moving average and projection of the price bars.
+The drawing looks like a pulse.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/851

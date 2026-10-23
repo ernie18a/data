@@ -1,0 +1,4 @@
+Green = Bullish Trend
+Red= Bearish Trend
+Gray= Retracement in Bullish/Bearish trend started
+Used with Bollinger Band to detect possible reversal point in ongoing trend.

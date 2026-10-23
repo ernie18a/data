@@ -1,0 +1,11 @@
+Author: Kim Igor V. aka KimIV
+The indicator is designed for displaying the candles of any higher timeframe on the H1 chart. It is also possible to display the candles of the non-standard timeframes: H5, H7 or H11. The upward and downward bars are filled with different colors.
+The following parameters can be adjusted:
+TFBar=6 - Period of the higher candlesticks.
+offsetHour=-2 - Time offset. Set the formation time of the higher candlestick.
+NumberOfBar=30 - The number of higher candlesticks.
+ColorUp=Silver - Color of the upward candlestick.
+ColorDown=RoyalBlue - Color of the downward candlestick.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7406

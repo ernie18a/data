@@ -1,0 +1,16 @@
+Real author:
+Vladimir Kravchuk
+"New Adaptive Method of Following the Tendency and Market Cycles"
+Slow Adaptive Trend Line (SATL) is formed with the digital filter of the low frequency FLF-2.
+Filter FLF-2 serves to suppress noises and market cycles with longer periods of oscillation. Filters of low frequency FLF-1 and FLF-2 provide attenuation in the stop band with no less than 40 dB and absolutely don’t distort the amplitude and phase of entry discontinuous price series in the pass band (bandwidth).
+These properties of the digital filters provide significantly improved (in comparison with
+simple moving average
+) noise suppression that in its turn allows reducing sharply the probability of appearance of "false" signals for purchase and sell.
+There are no analogues to SATL among widely known technical instruments. This is not a moving "average", but just the adaptive line estimate of a long-term trend.
+Unlike
+moving average
+, SATL has no any phase delay with regard to current prices.
+SATL filter coefficients
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/404

@@ -1,0 +1,70 @@
+Author:
+Suggested by
+Malish
+https://www.mql5.com/ru/forum/108241/page3
+Description:
+The script is aimed at studying price levels on a randomly selected bar of the main chart by drawing a series of horizontal lines that are at a certain-percentage distance from the price (see image below).
+Position is that the bar CLOSE price, on the basis of which the lines are built, is selected by user by moving the vertical line named
+StartML
+.
+The script is similar to
+Fibo
+Lines
+.
+Below are its differences:
+- the line levels are set in percents of the distance from the bar close price. Here, we have set: 0.4,
+0.6,
+0.8,
+1,
+1,2,
+1,4 %
+- the lines are drawn in two sets: symmetrically upwards and downwards
+- the script draws a series of horizontal lines of the
+TrendLine
+type,
+The levels are drawn by objects
+TrendLine
+to facilitate the line length controlling
+. The "ray" property is controlled from external variables.
+Instruction:
+The script is placed in the folder named 'scripts', then compiled and launched manually, where necessary.
+At the first start, vertical line StartML appears.
+You should change the position of the vertical line and restart the script.
+On smaller timeframes, the percentage lines may exceed the bounds of the screen. You should catch the right edge of the screen with the left button of your mouse and the select a scale by moving the mouse up/down
+.
+Recommendations:
+1. For practical use: The "Properties" tab does not appear when you call to the script. It means that percentage levels will be rigidly defined at translation.
+extern
+double
+percent_lev1=
+0.4
+;
+extern
+double
+percent_lev2=
+0.6
+;
+extern
+double
+percent_lev3=
+0.8
+;
+extern
+double
+percent_lev4=
+1
+;
+extern
+double
+percent_lev5=
+1.2
+;
+extern
+double
+percent_lev6=
+1.4
+;
+2. To adjust your trading strategy by fitting of percentage ratios, remove the "//" characters from the line #property show_inputs, and then compile it.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8113

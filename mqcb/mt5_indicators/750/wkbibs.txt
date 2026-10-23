@@ -1,0 +1,106 @@
+Real author:
+Rosh
+WKBIBS is a next generation oscillator with combined WKB and
+IBS
+indicators functions.
+This indicator is quite suitable even for the beginner at Forex, also it will be a good addition to a trading system of a professional. WKBIBS gives the earliest signals in comparison to standard
+Stochastic
+type oscillators. In contrast to all arrow indicators, it neither gives false signals, nor it redraws. WKBIBS is not more complex visually than arrow indicators but it gives more early and correct signals.
+Usage:
+When the blue oscillator crosses the upper green line downwards, it is time to sell, and if the blue oscillator crosses the lower red line upwards, it is time to buy. It's very simple, and most importantly, very clear: at the moment when a signal appears, a price on a chart is still actual for entering the market in the appropriate direction. The rest features including the possible use of a trend filter and preferred trades direction you can choose for yourself.
+Input parameters:
+//+-----------------------------------+
+//| Indicator input parameters        |
+//+-----------------------------------+
+input
+Smooth_Method IMA_Method=
+MODE_SMA
+;
+// IBS smoothing method
+input
+int
+ILength=
+5
+;
+// IBS smoothing depth
+input
+int
+IPhase=
+15
+;
+// IBS smoothing parameter
+input
+Applied_price_ IPC=PRICE_HIGH_CLOSE;
+// IBS applied price
+input
+int
+IShift=
+0
+;
+// Horizontal shift of IBS in bars
+input
+bool
+IDirect=
+true
+;
+// Indicator vertical reverse
+extern
+uint
+RPeriod=
+25
+;
+// Extremums searching period
+input
+Smooth_Method SmMA_Method=
+MODE_SMA
+;
+// Smoothing method
+input
+int
+SLength=
+3
+;
+// Smoothing depth
+input
+int
+SPhase=
+100
+;
+// Smoothing parameter
+input
+int
+SShift=
+0
+;
+// Horizontal shift of the channel indicator in bars
+This indicator allows to change smoothing method:
+SMA
+- simple moving average;
+EMA
+- exponential moving average;
+SMMA
+- smoothed moving average;
+LWMA
+- linear weighted moving average;
+JJMA
+- JMA adaptive average;
+JurX
+- ultralinear smoothing;
+ParMA
+- parabolic smoothing;
+T3
+- Tillson's multiple exponential smoothing;
+VIDYA
+- smoothing with the use of Tushar Chande's algorithm;
+AMA
+- smoothing with the use of Perry Kaufman's algorithm.
+It should be noted that Phase type parameters for different smoothing algorithms have completely different meaning. For JMA it is an external Phase variable changing from -100 to +100. For T3 it is a smoothing ratio multiplied by 100 for better visualization, for VIDYA it is a CMO oscillator period and for AMA it is a slow EMA period. In other algorithms these parameters do not affect smoothing. For AMA fast EMA period is a fixed value and is equal to 2 by default. The ratio of raising to the power is also equal to 2 for AMA.
+The indicator uses SmoothAlgorithms.mqh library classes (must be copied to the terminal_data_folder\MQL5\Include). The use of the classes was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+This indicator was first implemented in MQL4 and published in
+CodeBase
+11.10.2008.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/750

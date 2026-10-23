@@ -1,0 +1,5 @@
+Cloud indicator, the envelopes of which represent the TriX oscillator values calculated for High and Low prices.
+Fig.1. The TriXCloud indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13197

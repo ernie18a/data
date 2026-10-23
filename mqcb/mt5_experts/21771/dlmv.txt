@@ -1,0 +1,78 @@
+Idea by
+:
+Scriptor
+MQL5 code author
+:
+barabashkakvn
+The Expert Advisors uses signals from the
+FX Fish 2MA
+indicator
+Buy signals
+-
+Fish
+is below zero and is crossed by
+Fish Aver
+.
+Sell signals
+-
+Fish
+is above zero and is crossed by
+Fish Aver
+.
+Fish Aver Aver
+can be used either for a more conservative entry or as a position exit signal.
+Input Parameters
+Lots
+- volume for positions and pending orders
+Stop Loss
+Take Profit
+Trailing Stop
+Trailing Step
+Maximum number of orders to open
+- the maximum allowed number of positions and pending orders
+Distance between positions or distance to Limit order
+- the distance between positions or the distance from the current price to place a pending order
+Use secure profit protection
+- enable/disable profit protection
+Secured profit: close all if profit is bigger than
+- the profit size to protect
+Number of positions to enable the account protection
+- the maximum number of positions to enable the profit protection function
+Use Equity protection
+- enable/disable equity protection
+Equity protection: percent of the account
+- percent of equity to protect
+Use account money protection
+- enable/disable balance protection
+Account money protection
+- amount of balance to protect
+Use trade on Friday
+- enable/disable trading on Fridays
+Positions Time Live in seconds
+- position lifetime in seconds
+Reverse signals
+- enable/disable reversal of trading signals
+Use Limit Orders
+- enable/disable placing of pending Limit orders
+Close Opposite
+- enable/disable closing of positions at an opposite signal
+FX Fish 2MA: Calculate Period
+- FX Fish 2MA parameter: period to search for maximum and minimum, in bars
+FX Fish 2MA: Calculate Price
+- FX Fish 2MA parameter: price type for the
+Fish
+buffer
+FX Fish 2MA: MA1period
+- FX Fish 2MA parameter: averaging period for the
+Fish Aver
+buffer
+FX Fish 2MA: MA2period
+- FX Fish 2MA: averaging period for the
+Fish Aver Aver
+buffer
+magic number
+- unique EA identifier
+EURUSD, H1:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21771

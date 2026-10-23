@@ -1,0 +1,10 @@
+The real author:
+mbkennel
+The Prev Day And Floating Pivot indicator.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 24.10.2007.
+Fig.1 The PrevDayAndFloatingPivot indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1412

@@ -1,0 +1,35 @@
+Resistance and support lines are drawn based on the
+iFractals
+indicator. The indicator takes into account the fact that the last value of Fractals can be redrawn, therefore
++5 additional bars are analyzed
+:
+//--- number of values copied from the iFractals indicator
+int
+values_to_copy=-
+1
+;
+//--- if it is the first start of calculation of the indicator
+if
+(prev_calculated==
+0
+)
+      values_to_copy=rates_total;
+else
+{
+//--- it means that it's not the first time of the indicator calculation, and since the last call of OnCalculate()
+//--- for calculation not more than one bar is added
+//--- value "+5" - because of the feature of drawing fractals
+values_to_copy=(rates_total-prev_calculated)+
+5
+;
+}
+In order to compare "Resistance & Support" and "Fractals" in the strategy tester, do the following:
+Attach "Fractals" on a clear chart.
+Then right-click on the chart → Templates → Save Template. Use "tester" for the name of the template. As a result, you save the chart with the attached Fractals indicator in the "tester.tpl" template.
+Start:
+Either debugging on history (from the MetaEditor by pressing "Ctrl" + "F5")
+Or visual testing (from the terminal, from the Strategy Tester window).
+Testing of the "Resistance & Support" indicator in the strategy tester is shown below:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19241

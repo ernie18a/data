@@ -1,0 +1,4 @@
+Theory:
+The indicator is using 4 TRiX ( Triple Exponential Moving Averages Oscillator) values: of open, close, high and low to construct candles of this indicator. That produces quite a smooth result (which is not a surprise since the TRix itself is smooth) that seems to be usable in trading. To further help in trend estimation, an additional Keltner channel (calculated from TRiX candles, not from symbol prices) is calculated and drawn on the same chart.
+Usage:
+You can use the color change as signals and you can use the Keltner channel values to possibly filter out some false signals.

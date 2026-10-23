@@ -1,0 +1,15 @@
+Indicator Mass Index is used to search for trend reversals. It is based on the changes between the highest and the lowest prices. If the bandwidth becomes wider, the mass index will grow; if it narrows, then the mass index will decrease.
+It has four input parameters:
+First smoothing period
+- the initial smoothin period;
+Second smoothing period
+- the secondary smoothing period;
+Resulting smoothing period
+- the resulting smoothing period;
+Method
+- calculation method.
+Calculations:
+MI = SUM(EMA(HIGH - LOW, First Period) / EMA(EMA(HIGH - LOW, First Period), Second Period), Resulting Period)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20699

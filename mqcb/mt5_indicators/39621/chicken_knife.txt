@@ -1,0 +1,6 @@
+A simple indicator that tries to assess autocorrelation in price series.
+- Values above 0 indicate autocorrelation between return and therefore a strong direction in movement (which could denote the begin of a trend or a chance for reversal).
+- Values below 0 indicate periods of uncertanty (which could denote the end of trends/reversals).
+- Values close to 0 indicate regions similar to random walks, and therefore not particular interesting.
+The indicator is supposed to be used as support for other indicators as it does not present the user with trade direction.
+Good Profits!

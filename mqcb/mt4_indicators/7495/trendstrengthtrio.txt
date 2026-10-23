@@ -1,0 +1,11 @@
+Author: not specified
+This version of the indicator combines 3 TrendStrength.
+Parameters:
+Line2Visible - display the second indicator - displays by default;
+Line3Visible - display the third indicator - does not display by default;
+If anyone is interested, they can read this
+topic
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7495

@@ -1,0 +1,8 @@
+Auth
+o
+r:
+Adrian Robles
+This EA executes trades when it recognizes candlestick patterns that are associated with Bullish Reversals. Test have been ran on the daily chart. The code still needs a lot of work, so trade at your own risk.
+See attached Files.
+Recommendations:
+Recommend reviewing and altering the code to your risk preferences.

@@ -1,0 +1,42 @@
+Indicator ASO (Average Sentiment Oscillator) displays the general market climate.
+It has four configurable parameters:
+Range period
+- range calculation period;
+Smoothing period
+- oscillator smoothing period;
+Method
+- smoothing method;
+Mode
+- calculation mode:
+Combined
+- combined mode;
+Intra-bar
+- intra-bar mode;
+Group algorithm
+- group algorithm mode.
+Calculations:
+Bulls = MA(BL, Smoothing period, Method)
+Bears = MA(BR, Smoothing period, Method)
+where:
+Combined Mode:
+BL = (IBL+GBL)/2
+BR = (IBR+GBR)/2
+Intra-bar Mode:
+BL = IBL
+BR = IBR
+Group Algorithm Mode:
+BL = GBL
+BR = GBR
+IBL = 50 * (Close - Low + High - Open)/(High - Low)
+IBR = 50 * (High - Close + Open - Low)/(High - Low)
+GBL = 50*(Close - GL + GH - GO)/(GH - GL)
+GBR = 50*(GH - Close + GO - GL)/(GH - GL)
+GO - Open within Range period;
+GL -minimum value of High within Range period;
+GH - maximum value of Low within Range period.
+Fig 1. Combined Mode
+Fig. 2. Intra-bar Mode
+Fig. 2. Group Algorithm Mode
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21159

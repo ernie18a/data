@@ -1,0 +1,30 @@
+Author:
+Andrey N. Bolkonsky
+True Strength Index indicator by William Blau (see
+Momentum, Direction, and Divergence: Applying the Latest Momentum Indicators for Technical Analysis
+).
+True Strength Index
+(TSI, q-period smoothed Momentum) - is a normalized Momentum indicator developed by William Blau. The indicator values are normalized and mapped into the [–100,+100] interval.
+The positive values of TSI correspond to overbought, the negative values correspond to oversold states of the market.
+WilliamBlau.mqh must be placed in
+terminal_data_folder
+\MQL5\Include\
+Blau_TSI.mq5 must be placed in
+terminal_data_folder
+\MQL5\Indicators\
+Input parameters:
+q - Momentum smoothing period (default q=2);
+r - period of the 1st EMA, applied to Momentum (default r=20);
+s - period of the 2nd EMA, applied to result of the first smoothing (default s=5);
+u - period of the 3rd EMA, applied to result of the second smoothing (default u=3);
+AppliedPrice -
+price type
+(by default AppliedPrice=PRICE_CLOSE).
+Note
+:
+q>0;
+r>0, s>0, u>0. If r, s or u =1, smoothing is not used;
+Min. rates =(q-1+r+s+u-3+1).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/361

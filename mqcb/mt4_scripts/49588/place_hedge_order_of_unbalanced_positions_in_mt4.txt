@@ -1,0 +1,5 @@
+This script calculates the total unbalanced postion of hedged or non hedged postions and then place hedge trades accordingly.
+Example
+trader places 0.01 lot then 0.02 lot buy trade
+if then try to run the script , it will place 0.03 lot sell trade
+if again a sell trade is placed of lot size 0.05 size and again we try to run the script, then it will place 0.05 lot buy trade.

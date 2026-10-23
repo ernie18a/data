@@ -1,0 +1,207 @@
+Description
+The CADXWOnRingBuffer class is designed for calculation of a technical indicator Average Directional Movement Index Wilder (
+Average Directional Movement Index Wilder
+, ADX Wilder) using
+the ring buffer
+algorithm.
+Declaration
+class
+CADXWOnRingBuffer
+Title
+#include <IncOnRingBuffer\CADXWOnRingBuffer.mqh>
+File of the CADXWOnRingBuffer.mqh class should be placed in the IncOnRingBuffer folder that need to be established in MQL5\Include\. Two files with the examples used by the class from this folder are attached to the description. File with the class of
+the ring buffer
+and the class of
+Moving Average
+also must be in this folder.
+Class methods
+//--- initialization method:
+bool
+Init(
+// if error it returns false, if successful - true
+int
+ma_period   =
+14
+,
+// the period of Moving Average smoothing
+ENUM_MA_METHOD
+ma_method   =
+MODE_SMMA
+,
+// the method of Moving Average smoothing
+int
+size_buffer =
+256
+,
+// the size of the ring buffer, the number of stored data
+bool
+as_series   =
+false
+// true, if a time series, false - if a usual indexing of the input data
+);
+//--- method of calculation based on a time series or indicator buffers:
+int
+MainOnArray(
+// returns the number of processed elements
+const
+int
+rates_total,
+// the size of the arrays
+const
+int
+prev_calculated,
+// processed elements on the previous call
+const
+double
+&high[]
+// the maximum value array
+const
+double
+&low[]
+// the minimum value array
+const
+double
+&close[]
+// close price array
+);
+//--- method of calculation on the basis of the separate series elements of the array
+double
+MainOnValue(
+// returns the ADXW value for the set element
+const
+int
+rates_total,
+// the size of the array
+const
+int
+prev_calculated,
+// processed the elements of the array
+const
+int
+begin,
+// from where the significant data of the array starts
+const
+double
+high,
+// the maximum value
+const
+double
+low,
+// the minimum value
+const
+double
+close,
+// close price
+const
+int
+index
+// the element index
+);
+//--- methods of access to the data:
+int
+BarsRequired();
+// Returns the necessary number of bars to draw the indicator
+string
+NameADXW();
+// Returns the name of the indicator
+string
+NameNDI();
+// Returns the name of the negative directional movement indicator line
+string
+NamePDI();
+// Returns the name of the positive directional indicator line
+string
+MAMethod();
+// Returns the method of smoothing in the form of the text line
+int
+MAPeriod();
+// Returns the period of smoothing
+int
+Size();
+// Returns the size of the ring buffer
+To get the calculated data of the indicator from the ring buffer is possible as from the usual array. For example:
+#include <IncOnRingBuffer\CADXWOnRingBuffer.mqh>
+CADXWOnRingBuffer adxw;
+
+...
+//+------------------------------------------------------------------+
+//| Custom indicator iteration function                              |
+//+------------------------------------------------------------------+
+int
+OnCalculate
+(
+const
+int
+rates_total,
+const
+int
+prev_calculated,
+const
+datetime
+& time[],
+const
+double
+& open[],
+const
+double
+& high[],
+const
+double
+& low[],
+const
+double
+& close[],
+const
+long
+& tick_volume[],
+const
+long
+& volume[],
+const
+int
+& spread[])
+  {
+//--- calculation of the indicator:
+adxw.MainOnArray(rates_total,prev_calculated,high,low,close);
+
+   ...
+//--- copy the data from the "adxw" ring buffers in the indicator:
+for
+(
+int
+i=start;i<rates_total;i++)
+     {
+      ADXW_Buffer[i] = adxw[rates_total-
+1
+-i];
+// average directional movement index Wilder
+PDI_Buffer[i]  = adxw.pdi[rates_total-
+1
+-i];
+// positive directional index
+NDI_Buffer[i]  = adxw.ndi[rates_total-
+1
+-i];
+// negative directional index
+}
+
+   ...
+  }
+Please note that indexing in the ring buffer is the same as in the
+time series
+.
+Examples
+The Test_ADXW_OnArrayRB.mq5 file calculates the indicator based on the price time series. The MainOnArray() method application is demonstrated
+The Test_ADXW_OnValueRB.mq5 file demonstrates the use of the MainOnValue() method. At first the ADXW indicator is calculated and drawn. Then on the basis of the ring buffer of this indicator, three lines of the ADXW indicator are calculated.
+The result of the work of the Test_ADXW_OnArrayRB.mq5 with the size of the ring buffer of 256 elements
+The result of the work of the Test_ADXW_OnValueRB.mq5 with the size of the ring buffer of 256 elements
+When writing code the developments of
+MetaQuotes Software Corp.
+,
+Integer
+and
+GODZILLA
+were used.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1356

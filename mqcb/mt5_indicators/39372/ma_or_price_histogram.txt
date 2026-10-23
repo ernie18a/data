@@ -1,0 +1,15 @@
+The idea of the indicator
+Two iMA (Moving Average, MA) indicators ('Fast' and 'Sloe') are displayed in the main window. A color histogram (
+DRAW_COLOR_HISTOGRAM2
+style) can be drawn between:
+Price <-> Fast
+Price <-> Slow
+Fast <-> Slow
+Price type (if option '
+Price <-> Fast
+' and '
+Price <-> Slow
+' is selected) is set in '
+Price:
+'). You can turn on/off the display of informational Labels - they show the price of two indicators, "Fast' and 'Slow'.
+Rice. 1. MA or Price Histogram

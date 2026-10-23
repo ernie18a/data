@@ -1,0 +1,9 @@
+The channel based on
+ATR
+(Average True Range) technical indicator deviations from the moving average.
+This indicator was first implemented in MQL4 and published in
+CodeBase at mql4.com
+25.01.2008.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/766

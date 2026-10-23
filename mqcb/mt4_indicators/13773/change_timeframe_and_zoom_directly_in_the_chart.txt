@@ -1,0 +1,2 @@
+Simple buttons to change the timeframe directly in the chart. You can change the zoom too.
+Changing the timeframe of the wrong chart is now over!

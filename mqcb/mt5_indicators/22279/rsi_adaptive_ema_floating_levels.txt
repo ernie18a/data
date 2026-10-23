@@ -1,0 +1,10 @@
+Background :
+This indicator is an extended version of the RSI adaptive EMA indicator (originally published here :
+RSI adaptive EMA
+)
+Extension added :
+In order to avoid some false signals (since the slope of the RSI adaptive EMA can change too many times in ranging market) this version is adding floating levels as a criteria for trend change. You have an option to chose between two color changing modes :
+color change when outer levels are crossed
+color change when middle level (a sort of a "zero line") is crossed
+Usage :
+Use color change as signal,. Some experimenting with levels is advised prior to usage in live trading

@@ -1,0 +1,4 @@
+Variation of the "triple" series of indicators.
+Basic version of "triple" indicators is using Hull Moving Average. One possible disadvantage of using Hull Moving Average is that Hull Moving Average is tending to overshoot in some situations.
+This version uses double smoothed EMA instead of using Hull average, and since double smoothed EMA is never overshooting, that issue is solved. Being a very smooth average too, double smoothed EMA is really a good filter/average to be used in the "triple" series.
+As a reminder: triple indicator is using 3 values - average of high, low and close to determine the overall trend direction and and ranging zone (when the price is between high and low average).

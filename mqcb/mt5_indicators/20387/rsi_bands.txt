@@ -1,0 +1,2 @@
+In his TASC April 2008 article, François Bertrand describes a "what-if" RSI indicator: what should be the price so that some target RSI level would be reached.
+The indicator helps in multiple ways, but mainly in visualizing on the main chart what price change would trigger the expected overbought or oversold signals. Being on the main chart it is very easy to assess is the price change is realistic or it is far from being close to what is needed for signal and hence, far from signaling trend change.

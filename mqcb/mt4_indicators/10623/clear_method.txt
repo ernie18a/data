@@ -1,0 +1,17 @@
+Description:
+This indicator is based on the article: Getting Clear With Short-Term Swings by Ron Black
+http://www.traders.com/Documentation/FEEDbk_docs/2010/09/Black.html
+http://www.traders.com/Documentation/FEEDbk_docs/2010/09/TradersTips.html
+To set up colored candle charts:
+Switch to Line Chart;
+in Chart Properties window, set Line Chart Color to None (the entire price graph will disappear);
+Copy the ClearMethod.mq4 file to the Indicator directory, it will be used by iCustom();
+Add ClearMethodCandles1 (this must be the first), then ClearMethodCandles2 to the chart;
+If you use black backgrounded chart, set IsBlackChart parameter to true for both indicator.
+The histogram shows the distance from the actual switching threshold.
+Signals (ClearMethodSignals.mq4):
+Clear signal(x): breaking Clear Line (candles change color here)
+Move signal(arrow): Clear Line moves again after flat (see image below)
+Alert: after a closed bar signal, at the first tick of next bar
+The drawings and the alerts can be separately switched off.
+Image:

@@ -1,0 +1,4 @@
+Best used on the 15 minute timeframe on EURUSD.
+This Expert Advisor (EA) for MetaTrader 4 (MT4) buys
+when price breaks above the MA and Sells when price breaks below the MA. User can choose the time range (server time) to trade in.
+The user can also input the stop loss, take profit, lot size, magic number, and the Moving Average settings.

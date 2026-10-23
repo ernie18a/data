@@ -1,0 +1,4 @@
+Indicator based on the
+NonLag Moving Average
+.
+Instead of displaying average line, it displays colored bars on the chart and that way helps in assessment of the current trend. Since NonLag MA is very fast, it is very responsive to trend changes.

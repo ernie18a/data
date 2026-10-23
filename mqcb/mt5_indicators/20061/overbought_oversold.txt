@@ -1,0 +1,18 @@
+The indicator draws a Moving Average relative to ATR and overbought/oversold levels in a separate window.
+Calculation formula:
+Overbought_Oversold = (MA/ATR)*100
+where:
+MA - the Moving Average of the difference between Close and Low prices for the selected period;
+ATR - Average True Range with the specified calculation period.
+It has four input parameters:
+Period
+- calculation period;
+Method
+- MA calculation method;
+Overbought
+- overbought level;
+Oversold
+- oversold level.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20061

@@ -1,0 +1,10 @@
+Real author:
+Edward Coppock
+This indicator shows long-term opportunities for buying or selling by measuring a 10-period weighed Moving Average of the sum of two rates of change (with periods of 14 and 11). It's a classic version.
+Input parameters:
+ROC1Period (Default = 14) — period of first rate of change in the sum.
+ROC2Period (Default = 11) — period of second rate of change in the sum.
+MAPeriod (Default = 10) — period of Moving Average of the sum.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13141

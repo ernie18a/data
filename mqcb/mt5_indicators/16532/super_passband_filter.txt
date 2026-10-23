@@ -1,0 +1,6 @@
+John Ehlers developed a new oscillator to help minimize computational lag. Oscillator rejects very low-frequency components and as well as high-frequency components so as to minimize noise.
+This modification added the new input parameter "Calculation Count".
+Oscillator can be used on multiple symbols and multiple timeframes.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16532

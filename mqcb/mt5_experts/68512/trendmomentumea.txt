@@ -1,0 +1,31 @@
+TrendMomentumEA is a professional Expert Advisor for MetaTrader 5 designed to trade trending and momentum moves in the market using a combination of EMA, RSI, and Stochastic indicators. It is optimized for high-probability trades during the London and New York trading sessions.
+Key Features
+Trend Detection: Trades only when price is above EMA50 and EMA200 for buys, and below EMA50 and EMA200 for sells.
+Momentum Confirmation: Uses RSI and Stochastic %K/%D crossovers to confirm entry signals.
+Candle Confirmation: Trades are opened only after the last closed candle meets trend and momentum criteria.
+Session Filter: Automatically trades only during London and New York sessions (configurable by broker server time).
+Position Management: Only opens one trade at a time per symbol and Magic Number to avoid conflicts.
+Risk Management: Configurable lot size, stop loss, and take profit.
+How It Works
+The EA monitors the last closed candle to identify the current trend using EMA50 and EMA200.
+If a trend exists, it checks RSI levels and Stochastic crossover for momentum confirmation.
+Once all conditions are met, it opens a buy or sell trade with pre-defined stop loss and take profit.
+Trades are filtered by session, ensuring the EA only operates during high liquidity periods.
+Recommended Settings
+Symbols: Major Forex pairs (EURUSD, GBPUSD, USDJPY), indices, commodities.
+Timeframes: M15, H1 are ideal; compatible with other timeframes.
+Input Parameters:
+EMA50 and EMA200 periods
+RSI period and thresholds
+Stochastic %K, %D, and slowing
+Stop Loss and Take Profit in points
+London and New York session times
+Advantages
+Avoids trading in sideways markets by combining trend and momentum filters.
+Reduces risk with Magic Number filtering and single-position logic.
+Works on any MT5 broker, supporting 3-, 4-, or 5-digit quotes.
+Notes & Disclaimer
+Ensure broker server time is aligned with session inputs.
+Test on a demo account before live trading.
+Designed for trend-following and swing trades, not scalping.
+Past performance does not guarantee future results.

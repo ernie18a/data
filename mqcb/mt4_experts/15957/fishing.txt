@@ -1,0 +1,8 @@
+The Expert Advisor opens positions after the price passes the specified distance: 1 step up - sells, 1 step down - buys. That way it creates a grid, which can be closed manually using the EA buttons or placed at the expert's disposal by pressing the automated trading button.
+Pressing the 'X buy' button closes all buy positions. Pressing the 'X sell' button closes all sell positions. Pressing the 'X all' button closes all positions opened by the EA. If the corresponding 'auto' buttons are pressed, the closure is performed automatically once the specified profit is reached. The profit is specified in the edit box (to the left of the 'auto' button).
+The following settings allow to specify the lot size and step of the corresponding buy and sell directions. There is no need to go to the main parameters, all parameters can be adjusted directly in the trading window and they are stored in the global variables. This way all the parameters and pressed buttons are automatically restored after a restart.
+This is a semi-automatic EA, therefore it should be tested only in visualization mode. Optimization is not required for this EA.
+The operation principle is not complicated. Look for the suitable profit in either direction and press the button. After that, wait for the profit of the other direction to reach the desired result... After some practice in the strategy tester, it is possible to obtain such picture and start real trading.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15957

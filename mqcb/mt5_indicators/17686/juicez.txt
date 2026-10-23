@@ -1,0 +1,14 @@
+Real author
+: Perky_z
+An indicator of financial asset volatility using the OSMA oscillator.
+Indicator formula:
+JuiceZ = ( Abs(OSMA) / Point ) - Level
+, where:
+Abs(OSMA) - absolute value of the OSMA indicator;
+Point - point value in the price chart units;
+Level - the price changed level specified in the inputs, which should be considered as flat (all OSMA values below this level make the indicator negative).
+The trend is believed to be strong, if the indicator above zero is colored in light green. In this situation, if other indicators provide a trade signal, a position can be opened.
+Fig1. The JuiceZ indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17686

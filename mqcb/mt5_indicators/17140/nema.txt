@@ -1,0 +1,13 @@
+NEMA indicator - that calculates depth (offspring) of EMA of arbitrary "depth".
+Nema
+can calculate all the known variations (offspring) of EMA : EMA, DEMA, TEMA, ... DecEMA, ... and so on, up to "levels" or "depth" 50 (whatever name it would be)
+Some known depths :
+1 -> EMA
+2 -> DEMA
+3 -> TEMA
+....
+10 -> DecEMA
+....
+50 -> the maximal depth calculated by this indicator
+If the depth is set to 1, NEMA is equal to EMA, for depth 2 it is equal to DEMA, for depth 3 it is equal to TEMA and so on ..., up to depth 50. In any case, depths over 40 are — due to the way how internal calculation is done, are losing precision too much and unlike the lower depths, should be used for with extreme care and with reserve. Also, as a deviation from EMA (and DEMA and TEMA...) this indicator allows fractional period for calculation (there is no reason whatsoever why any EMA-type indicator should use only integer bound calculation period)
+On the example picture are the first 3 (EMA, DEMA and TEMA) using default parameters only the depth is set to 1, 2 and 3.

@@ -1,0 +1,17 @@
+NEW REVISION:
+*********************
+DROP_RESISTANCE_SEGMENT_LINE_Rev1 and DROP_SUPPORT_SEGMENT_LINE_Rev1
+: Both scripts have been revised. With the new revision the scripts will work also when MT4 is not connected to server. The old version could only work when the platform was connected to server.
+*********************
+If you want to draw several resistance and support lines as a "little segment line", differentiating the color of both types of line. (example, all Resistance Lines: Magenta color // all Support Lines: Blue color) but you don’t want to change the color of the horizontal line using the “properties button”, each time a new line has been created, you can use these scripts:
+DROP_RESISTANCE_SEGMENT_LINE.mq4
+: You just need to drag and drop this script in the place of the chart where you want to draw a resistance line. The horizontal line will be drawn with the color and the width wanted.
+DROP_SUPPORT_SEGMENT_LINE.mq4
+: You just need to drag and drop this script in the place of the chart where you want to draw a support line. The horizontal line will be drawn with the color and the width wanted.
+Parameters that you can modify on both scripts
+:
+You can easily change the following parameters by editing the script code:
+- Color of the Segment Line.
+- Width of the Segment line
+- Length of the Segment line.
+- Change Segment Line to Ray (full Horizontal Line)

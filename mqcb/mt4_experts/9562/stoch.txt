@@ -1,0 +1,4 @@
+The Expert Advisor Stoch works with SellLimit and BuyLimit pending orders. The Adviser is adjusted on work on H4 timeframe.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9562

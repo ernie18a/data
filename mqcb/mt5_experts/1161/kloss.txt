@@ -1,0 +1,45 @@
+The Expert Advisor is rewritten from MQL4, the author is
+klopka
+, link to the source
+https://www.mql5.com/ru/code/8186
+.
+How it works
+Three indicators such as
+Moving Average
+(MA),
+CCI
+,
+stochastic
+are used.
+When CCI is lower than a level, stochastic is lower than a level, price is higher than the МА, then there is a buy.
+When CCI is higher than a level, stochastic is higher than a level, price is lower than the МА then there is a sell.
+The image 1 shows the performance of the Expert Advisor in the strategy tester's visual mode, the image 2 shows the results of the tester.
+Fig. 1. Deals in the Expert Advisor tester. Sell performed above МА, so different shift of MA and price is used.
+Fig. 2. The results of work of the Expert Advisor for the last year (2012) at EURUSD H1.
+Parameters
+Lots - lot; when 0, the MaxrR parameter is used.
+MaximumRisk - Risk (default value Lots=0).
+StopLoss - Stop Loss in points, 0 - without Stop Loss.
+TakeProfit - Take Profit in points, 0 - without Take Profit.
+RevClose - Close the position by the opposite trading signal.
+MAPeriod - The period of the Moving Average.
+MAMethod - The method of the Moving Average.
+MAPrice - The price of the Moving Average.
+MAShift - The bar from which the Мoving Аverage value is taken to compare it with the price.
+PShift - The bar from which the price value is taken to compare it with the Мoving Аverage.
+CCIPeriod - The period of the CCI.
+CCIPrice - The price of the CCI.
+CCIDiffer - The CCI level (in both sides from 0 for a buy and a sell).
+CCIShift - The bar on which the CCI is checked.
+StKPeriod - The period of К stochastic.
+StDPeriod - The period of D stochastic.
+StSPeriod - The period of S stochastic.
+StMethod - The method of stochastic.
+StPrice - The price of stochastic.
+StShift - The bar on which the Stochastic is checked.
+StDiffer - Stochastic level (in both sides from 50 for a buy and a sell).
+CommonShift - Common shift (added to Shift variable of all indicators).
+MWMode - Place Stop Loss and Take Profit after position opening.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1161

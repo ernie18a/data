@@ -1,0 +1,35 @@
+Price Action Volumetric Order Blocks MT5
+An open-source market structure and order block visualisation tool for MetaTrader 5.
+The indicator identifies confirmed swing points, BOS/MSB structure events and active bullish or bearish order blocks. It also estimates the balance between buying and selling activity within each block and summarises active zones in a compact chart panel.
+Key features
+Confirmed market-structure pivots and BOS/MSB levels.
+Bullish and bearish order blocks projected across the chart.
+Estimated buy/sell participation within each active zone.
+Compact dashboard showing price range, buy/sell percentages and volume.
+Configurable colours, panel position, number of zones and visual options.
+Deterministic removal of chart objects when the indicator is removed.
+Volume interpretation
+MT5 does not provide centralised buy/sell volume for every market. The indicator therefore estimates participation from the available bar and tick-volume data. Where actual volume is unavailable, tick volume is used as a fallback. These values are analytical estimates, not exchange order-flow data.
+Historical behaviour
+Swing points are displayed only after the selected confirmation bars have closed. BOS/MSB events and order blocks are based on confirmed structure. This prevents unconfirmed movements within the current bar from being presented as completed structural events.
+Main inputs
+Pivot period
+and structure sensitivity.
+Maximum active order blocks
+and projection length.
+Colours for estimated volume
+and zone palette.
+Dashboard visibility, position, font and dimensions.
+Visibility
+and spacing of
+confirmed markers
+.
+Compatibility and use
+Designed for MetaTrader 5 and suitable for use on symbols and timeframes with sufficient price history. It is a visual analysis tool; it does not place or manage trades.
+Authorship and licence
+Original Pine Script concept and implementation by UAlgo. MetaTrader 5 port, interface redesign and corrections by German Emilio Camon. Distributed under the Mozilla Public Licence 2.0. The complete corresponding source code is included in this CodeBase publication.
+Risk notice:
+This indicator is for analytical and educational use. It does not guarantee future market behaviour or trading results.
+Translated from Spanish by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/es/code/76573

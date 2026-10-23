@@ -1,0 +1,5 @@
+Author: Kim Igor V. aka KimIV
+The indicator displays the selected day of the week.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7408

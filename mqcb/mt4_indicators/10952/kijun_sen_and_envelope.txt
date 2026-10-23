@@ -1,0 +1,16 @@
+This indicator draws: 1 Kijun Sen + 1 Envelope + 3 Price Labels.
+The Kijun Sen, Envelope and Price Labels can be shown/hidden as required.
+Envelopes can be used to identify:
+Price ranging;
+Overbought price levels;
+Oversold price levels;
+Take Profit levels;
+Stop Loss Levels.
+Lower timeframes will require higher Kijun Sen periond and lower Envelope deviation, higher timeframes lower Kijun Sen period and higher Envelope deviation. Adjust according to user preference.
+Note:
+Kijun Sen functions well in trending markets. Be aware of chop during ranging markets.
+Also available for MetaTrader 5:
+Kijun Sen + 1 Envelope
+Kijun Sen + 3 Envelopes
+.
+Image: Kijun Period = 26, Envelope Deviation = 4000, Timeframe = Daily

@@ -1,0 +1,4 @@
+Moving Average based on Ultimate Oscillator (I modified Ultimate Oscillator's code). It calculates weighted average of three moving averages (Simple, Exponential, Smoothed or Linear Weighted). Highly adjustable, 3 periods and weight of each period.
+IMHO it follows trend better than single moving average, it can also be used as Entry/Exit signal when crossing a bar or stop-loss level.
+Very good alternative to SMA or EMA for those who don't like clutter. E.g. use one Ultimate MA instead of two/three SMAs (or EMAs).
+On this example it clearly crosses bar very close to crossing of SMA(5)/SMA(34).

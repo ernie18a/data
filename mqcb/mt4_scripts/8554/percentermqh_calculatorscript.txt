@@ -1,0 +1,19 @@
+The script displays the ratio between the sum at the end of the period and the current sum, i.e. how many times it is increased/decreased.
+The properties window will appear as soon as you launch it:
+In this example we specify:
+i
+=0.3 (i.e. 30%),
+n
+=12 (the number of periods of charging),
+method
+=2 - on default, and we don't specify anything in the
+m
+field (it is used only when calculating the nominal interest rates).
+The result:
+I.e. if the interest rate is equal to 30% a month and charging is performed by the complex interset rate, then the deposit will be increased more than 23 times after a year.
+You can read the additional information about the rates here:
+https://en.wikipedia.org/wiki/Interest_rate
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8554

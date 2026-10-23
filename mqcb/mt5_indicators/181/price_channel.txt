@@ -1,0 +1,8 @@
+There is a
+Price Channel
+indicator, but I don't like it, because it fills all the space between the upper and lower boundaries:
+This version of Price Channel looks like in MetaTrader 4:
+Also you can combine both them together:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/181

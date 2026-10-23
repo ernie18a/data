@@ -1,0 +1,17 @@
+The EA opens and closes positions at a specified time. Only HH:mm are considered in the inputs (time).
+Inputs:
+opening time (only HH:mm are considered)
+— position open time
+closing time (only HH:mm are considered)
+— position close time
+symbol
+— traded symbol
+volume transaction
+— position volume
+true -> Buy, false -> Sell
+— if "true", only "Buy" positions are opened; if "false", only "Sell" ones
+magic number
+— EA's magic number.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16728

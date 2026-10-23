@@ -1,0 +1,55 @@
+The indicator paints candles going beyond the
+Rj_SlidingRangeRj_Digit
+channel. Candlesticks outside the channel limits are marked with color according to the trend. Candlesticks with the trend have bright fill color, ones against the trend - dark fill color.
+The indicator algorithm features the ability to separately configure everything related to its upper and lower border.
+//+--------------------------------------------+
+//|  INDICATOR INPUTS                          |
+//+--------------------------------------------+
+input
+uint
+UpCalcPeriodRange=
+5
+;
+//Search period for high
+input
+uint
+UpCalcPeriodShift=
+0
+;
+//Shift period for high
+input
+uint
+UpDigit=
+2
+;
+//number of rounded decimal places for high
+//----
+input
+uint
+DnCalcPeriodRange=
+5
+;
+//Search period for low
+input
+uint
+DnCalcPeriodShift=
+0
+;
+//Shift period for low
+input
+uint
+DnDigit=
+2
+;
+//number of rounded decimal places for low
+//----
+input
+int
+Shift=
+0
+;
+//Indicator horizontal shift in bars
+Fig. 1. Rj_SlidingRangeRj_Digit_System indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21513

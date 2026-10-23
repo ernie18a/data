@@ -1,0 +1,5 @@
+This indicator adds a smoothing curve to the MACD.
+It should be noted that the intersections of the black and red lines even on the current flat area will be quite effective. They also predict a long bearish candle on the right.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7184

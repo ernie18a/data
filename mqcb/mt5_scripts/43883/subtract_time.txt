@@ -1,0 +1,6 @@
+With this short piece of code you are going to learn how to subtract the time.
+it may be very useful to time your trades entrances and exits, also to make up strategies based on time.
+I use a tick counter to execute the subtraction.
+Notice that the initial date is: 1970.01.01 00:00:00 and you may use it as a parameter for your calculations.
+---
+To use it just grab it to your chart and you're gonna see the Comment on your screen with such information.

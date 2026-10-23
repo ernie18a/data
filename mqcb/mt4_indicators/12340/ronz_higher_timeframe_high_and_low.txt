@@ -1,0 +1,4 @@
+This indicator shows High and Low points for certain timeframe.
+Input parameters:
+Recommendations:
+Select Only Higher Timeframe in the Input Parameter.

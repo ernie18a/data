@@ -1,0 +1,129 @@
+Author of the idea
+—
+Maksim Zerkalov
+,
+author of the mq5 code
+—
+barabashkakvn
+.
+When opening a new bar, the EA analyzes the value of the previous four bars:
+if
+(
+iHigh
+(
+1
+)>
+iHigh
+(
+2
+) &&
+iHigh
+(
+2
+)>
+iHigh
+(
+3
+) &&
+iHigh
+(
+3
+)>
+iHigh
+(
+4
+) &&
+iOpen
+(
+1
+)>
+iOpen
+(
+2
+) &&
+iOpen
+(
+2
+)>
+iOpen
+(
+3
+) &&
+iOpen
+(
+3
+)>
+iOpen
+(
+4
+))
+BuyOp=
+true
+;
+if
+(
+iHigh
+(
+1
+)<
+iHigh
+(
+2
+) &&
+iHigh
+(
+2
+)<
+iHigh
+(
+3
+) &&
+iHigh
+(
+3
+)<
+iHigh
+(
+4
+) &&
+iOpen
+(
+1
+)<
+iOpen
+(
+2
+) &&
+iOpen
+(
+2
+)<
+iOpen
+(
+3
+) &&
+iOpen
+(
+3
+)<
+iOpen
+(
+4
+))
+SellOp=
+true
+;
+When we have an open position, then the "HalfLots" variable value is checked in the
+void
+TrailingStairs(
+ulong
+m_ticket,
+ushort
+trldistance)
+trailing block. In other words, the system checks if it is possible to partially close a profitable position. If "HalfLots==true", the position is closed partially:
+m_trade_partial.PositionClose(m_position.Ticket(),-
+1
+,half_volume);
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16787

@@ -1,0 +1,18 @@
+Author: Gordago Software Corp
+Binario is not an automated trading system but a trading idea. It consists of entering at a breakout and following the trend. The suggested method can be used on all time frames.
+It is very simple and will be useful for beginners.
+People's tips on usage.
+1. Wait for the price line to be in the range of "Binario", and then wait for a breakout of one of the lines.
+2. Place a buy-stop order at the level of 25 points + spread ABOVE the "Binario" line.
+3. Place a sell-stop order at the level of 25 points + spread BELOW the "Binario" line.
+4. Place a stop loss for the long position 1 point below the "Binario" lower line.
+5. Place a stop loss for the short position 1 point above the "Binario" upper line. In both cases the spread is added to 1 point. Stop loss levels can be adjusted every hour or when needed.
+6. Set the take profit (I usually set a target of 850 points, but you can set your own targets).
+7. The positions must be adjusted when the ЕМА values change.
+8. Exit: upon reaching the target or by stop loss.
+One last comment. This is trend following method, it is based on catching large movements, therefore small losses can be very frequent, but these unprofitable trades must not be skipped - the trend will be missed!
+Discussion topic
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7658

@@ -1,0 +1,97 @@
+Mediana & Parallel Lines Multi-Timeframe (MTF Channel)
+Description
+Mediana & Parallel Lines MTF
+is a visual indicator for MetaTrader 5 that draws parallel channels directly on the current chart, based on the last two
+closed
+candles of higher timeframes (Monthly, Weekly, Daily, H4, H1, M30, M15).
+Each channel consists of
+3 parallel trend lines
+:
+Median Line
+– drawn through the midpoint (Open+Close)/2 of the last two closed candles of the selected timeframe;
+High Line
+– parallel to the median, starting from the High of the second-to-last candle;
+Low Line
+– parallel to the median, starting from the Low of the second-to-last candle.
+The slope of all three lines is identical, calculated from the change in the median between the two reference candles. This provides a simple, clear visual projection of the direction/trend of that timeframe, automatically extended into the future (ray right).
+Key Features
+Supports 7 timeframes simultaneously
+: MN1, W1, D1, H4, H1, M30, M15 — each can be enabled/disabled independently.
+Individual color for each timeframe
+, fully configurable from inputs.
+Configurable line width and style
+(LineWidth, LineStyle), applied globally.
+Automatic safety rule
+: a timeframe's channel is only displayed if that timeframe is
+higher
+than the current chart timeframe (e.g. the Daily channel won't appear if you're already viewing the D1 chart or higher) — prevents irrelevant/redundant data from being shown.
+Performance optimized
+: calculation logic runs only once per new bar (not on every tick), allowing smooth operation across dozens of charts simultaneously without lag.
+Auto-cleanup
+: all graphical objects are automatically deleted when the indicator is removed from the chart ( OnDeinit ).
+Info panel
+: displays a list of currently active channels in the chart corner (via Comment ).
+No repaint
+— relies exclusively on already closed candles (index 1 and 2).
+Input Parameters
+Timeframe Selection (True/False)
+Parameter
+Default
+Description
+Show_MN1
+true
+Show Monthly Channel
+Show_W1
+true
+Show Weekly Channel
+Show_D1
+true
+Show Daily Channel
+Show_H4
+false
+Show H4 Channel
+Show_H1
+false
+Show H1 Channel
+Show_M30
+false
+Show M30 Channel
+Show_M15
+false
+Show M15 Channel
+Channel Colors
+Parameter
+Default
+Color_MN1
+Red
+Color_W1
+Orange
+Color_D1
+Yellow
+Color_H4
+Lime
+Color_H1
+Aqua
+Color_M30
+DeepSkyBlue
+Color_M15
+Magenta
+Line Style Settings
+Parameter
+Default
+Description
+LineWidth
+2
+Line width
+LineStyle
+STYLE_SOLID
+Line style (solid, dash, dot, etc.)
+How to Use
+Attach the indicator to any chart (ideally on lower timeframes, such as M15–H1, to see higher timeframe channels projected over current price).
+Enable/disable the desired timeframes from the input properties window.
+Customize colors and line style as preferred.
+Channels update automatically whenever a new candle forms on the current chart.
+Recommendations
+Useful for traders applying
+multi-timeframe top-down analysis
+, providing a quick visual representation of the direction and magnitude of price movement on higher timeframes, overlaid directly on the execution chart.

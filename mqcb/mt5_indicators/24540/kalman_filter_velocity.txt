@@ -1,0 +1,6 @@
+Theory :
+This is just a slightly altered indicator from here :
+Kalman Filter.
+It is showing one of the intermediate steps of calculating the final value that is interesting as a standalone indicator too. This version shows the velocity ( a sort of a momentum) part of that Kalman filter indicator
+Usage :
+You can use color changes as signals

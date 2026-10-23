@@ -1,0 +1,16 @@
+Oscillator ADMIR (Average Directional Movement Index Rating) shows the ratio of the ADX lines of two indicators Average Directional Movement Index with the calculation periods differing by the specified value.
+It has three input parameters:
+ADX Period
+- calculation period for the first ADX;
+Difference
+- difference between the calculation periods of the first and of the second ADX;
+Applied price
+- price used for calculations.
+Calculations:
+ADMIR = (ADX1 + ADX2) / 2
+where:
+ADX1 - Average Directional Movement Index с периодом Period
+ADX2 - Average Directional Movement Index с периодом Period+Difference
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20910

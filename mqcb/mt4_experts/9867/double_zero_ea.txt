@@ -1,0 +1,4 @@
+Description:
+Double zero cross level is the signal to open position and/or close. Settings for H4 TF.
+Images:
+filtered:

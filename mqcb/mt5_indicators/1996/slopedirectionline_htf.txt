@@ -1,0 +1,18 @@
+Real author:
+asystem2000
+The
+SlopeDirectionLine
+indicator with the timeframe selection option available in input parameters:
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Indicator chart period (timeframe)
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 15.01.2008.
+Figure 1. The SlopeDirectionLine_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1996

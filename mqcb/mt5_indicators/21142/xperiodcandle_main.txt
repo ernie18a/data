@@ -1,0 +1,13 @@
+Indicator
+XPeriodCandle
+in the main chart.
+The indicator uses the
+SmoothAlgorithms.mqh
+library classes. Working with them was described in details in article
+Averaging Price Series for Intermediate Calculations Without Using Additional Buffers
+.
+Fig 1. Indicator XPeriodCandle_main in the candlestick chart
+Fig. 2. Indicator XPeriodCandle_main in the bar chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21142

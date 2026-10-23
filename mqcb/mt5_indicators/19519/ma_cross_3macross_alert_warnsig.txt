@@ -1,0 +1,26 @@
+The author of the idea
+:
+John Smith
+,
+the mq5 code author
+:
+barabashkakvn
+.
+The indicator draws arrows at the intersection of three iMAs (Moving Average, MA). The first MA is the fastest one, the second MA is slower, and the third MA is the slowest one.
+Three types of notifications: alert, sound and email.
+MA Cross 3MACross Alert WarnSig has four indicator buffers:
+two buffers ("Cross Up" and "Cross Down") are used for drawing arrows at the intersection which occurred NOT ON THE CURRENT bar;
+two buffers ("Cross Ghost Up" and "Cross Ghost Down") are used for drawing arrows at the intersection which occurred ON THE CURRENT bar;
+Two Ghost buffers notify of the first intersection. A possible field of application is scalping.
+How indexing of bars is treated inside the indicator: the following is applied to all indicator buffers and used arrays (high, low, close,true, time):
+ArraySetAsSeries
+(array,
+true
+);
+So, the index #0 corresponds to the rightmost bar in the chart.
+Fig. 1. Indicator MA Cross 3MACross Alert WarnSig
+Fig. 2. Alert example: the fastest First MA has crossed the slower Second MA upwards
+Fig. 3. An example of signal emergence in the "Ghost" indicator buffer
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19519

@@ -1,0 +1,44 @@
+Pending_tread Expert Advisor (EA) – Detailed Description
+The
+Pending_tread EA
+is a versatile and easy-to-use trading robot designed to automate the placement and management of multiple pending orders arranged in a grid pattern above and below the current market price. This EA is well-suited for scalping strategies and can operate on any time frame or currency pair, making it highly flexible for various trading styles.
+It's good for XAUUSD.
+Core Features
+Grid of Pending Orders:
+The EA places a configurable number of pending orders ( totalOrdersPerSide , default 10) both above and below the current price. This creates a “grid” of buy and sell pending orders to capture market moves in either direction.
+Configurable Distance Between Orders:
+You can set the distance between each pending order using PipStep (expressed in points), allowing you to tailor how tight or wide the grid is spaced. For example, setting PipStep to 120 corresponds to 12 pips for 5-digit brokers.
+Customizable Order Types:
+The EA supports different trade directions for orders above and below the market.
+Above market: places buy stop or sell limit orders (depending on your choice).
+Below market: places sell stop or buy limit orders.
+The pending order type logic is designed correctly to ensure orders are placed at appropriate price levels relative to the current market price.
+Take Profit per Order:
+Each pending order is assigned a take profit level calculated as a fixed number of pips ( Take Profit Pips ) from the order price. This allows for automated profit-taking without manual intervention.
+Lot Size and Slippage Control:
+You can customize the lot size ( Lot Size ) and the maximum slippage ( Slippage ) allowed when orders are sent to the broker, giving you control over risk and execution parameters.
+Order Management and Filtering:
+The EA tracks existing pending orders for the current symbol and its own magic number ( MagicNumber ) to avoid duplicating or interfering with other trades or EAs running on the same account.
+Throttle Mechanism:
+To prevent excessive trade context calls, the EA limits its order placement attempts to once every 5 seconds.
+How It Works
+On every tick, the EA checks whether the trading context is free and enough time has elapsed since the last order placement.
+It counts existing pending orders for both above-market and below-market grids.
+It calculates the price levels for new pending orders spaced by the configured pip step.
+It places new pending orders up to the configured total number per side, respecting broker stop level restrictions to avoid placing orders too close to the current market price.
+Each pending order includes a take profit set relative to the order price.
+The EA continuously monitors and maintains this grid, re-placing orders as necessary if any are executed or canceled.
+Use Cases
+Scalping:
+Take advantage of small price movements by having multiple pending orders ready to trigger in either direction.
+Range Trading:
+Place buy and sell orders near key support/resistance levels automatically.
+Breakout Strategies:
+Capture breakouts by setting pending stop orders above and below the current price.
+Important Notes
+This EA only manages pending orders; it does not manage open positions (no trailing stop or stop loss currently).
+Use proper risk management and test the EA on a demo account before live trading.
+The EA works best with brokers that support 5-digit or 4-digit pricing; adjust PipStep and Take Profit Pips accordingly.
+Your will found this for MT4 too. Just click :
+Pending tread EA
+.

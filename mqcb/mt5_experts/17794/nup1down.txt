@@ -1,0 +1,7 @@
+Strategy: N bars up and one bar down. Trailing. Lot calculation based on the risk value as a percentage of free margin.
+Examples:
+‌
+If the condition is met, open a Sell position.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17794

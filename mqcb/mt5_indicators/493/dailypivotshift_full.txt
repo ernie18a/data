@@ -1,0 +1,10 @@
+Real author:
+MetaQuotes
+DailyPivot_Shift indicator differs from the common DailyPivot indicator, as the main levels can be calculated with day start shift. Therefore, it is possible to calculate the levels based on the local, not server time, for example, GMT-8. Also, this indicator does not consider information concerning Saturday and Sunday quotes, while generating levels on Monday.
+This variant of the DailyPivot_Shift_Full indicator can be calculated for any chart bar and allows to clearly see the market behaviour relative to the indicator levels at each bar. Apparently this indicator can be most useful when analyzing a strategy in the offline mode.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+28.07.2006.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/493

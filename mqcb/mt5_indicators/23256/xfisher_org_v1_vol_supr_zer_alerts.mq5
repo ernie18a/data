@@ -1,0 +1,503 @@
+﻿//+---------------------------------------------------------------------+
+//|                              XFisher_org_v1_Vol_Supr_Zer_Alerts.mq5 |
+//|                              Copyright © 2006, TrendLaboratory Ltd. |
+//|               http://finance.groups.yahoo.com/group/TrendLaboratory |
+//|                                          E-mail: igorad2004@list.ru |
+//+---------------------------------------------------------------------+
+//| Для работы  индикатора  следует  положить файл SmoothAlgorithms.mqh |
+//| в папку (директорию): каталог_данных_терминала\\MQL5\Include        |
+//+---------------------------------------------------------------------+
+//---- авторство индикатора
+#property copyright "Copyright © 2005, TrendLaboratory Ltd."
+//---- авторство индикатора
+#property link      "http://finance.groups.yahoo.com/group/TrendLaboratory"
+//---- номер версии индикатора
+#property version   "1.11"
+//---- отрисовка индикатора в отдельном окне
+#property indicator_separate_window
+//---- для расчета и отрисовки индикатора использовано десять буферов
+#property indicator_buffers 10
+//---- использовано шесть графических построений
+#property indicator_plots   6
+//+----------------------------------------------+
+//| Параметры отрисовки облака канала            |
+//+----------------------------------------------+
+//---- отрисовка индикатора 1 в виде цветного облака
+#property indicator_type1   DRAW_FILLING
+//---- в качестве цветjd индикатора использованы
+#property indicator_color1  clrLavender
+//---- отображение метки линии индикатора
+#property indicator_label1  "XFisher_org_v1_Vol Cloud"
+//+----------------------------------------------+
+//| Параметры отрисовки линии сопротивления      |
+//+----------------------------------------------+
+//---- отрисовка индикатора в виде линии
+#property indicator_type2   DRAW_LINE
+//---- в качестве цвета линии индикатора использован Teal цвет
+#property indicator_color2 clrTeal
+//---- линия индикатора - штрих-пунктир
+#property indicator_style2  STYLE_DASHDOTDOT
+//---- толщина линии индикатора равна 1
+#property indicator_width2  1
+//---- отображение метки индикатора
+#property indicator_label2  "XFisher_org_v1_Vol Res"
+//+----------------------------------------------+
+//| Параметры отрисовки линии поддержки          |
+//+----------------------------------------------+
+//---- отрисовка индикатора в виде линии
+#property indicator_type3   DRAW_LINE
+//---- в качестве цвета линии индикатора использован Red цвет
+#property indicator_color3 clrRed
+//---- линия индикатора - штрих-пунктир
+#property indicator_style3  STYLE_DASHDOTDOT
+//---- толщина линии индикатора равна 1
+#property indicator_width3  1
+//---- отображение метки индикатора
+#property indicator_label3  "XFisher_org_v1_Vol Supr"
+//+----------------------------------------------+
+//| Параметры отрисовки индикатора Fisher_org_v1 |
+//+----------------------------------------------+
+//---- отрисовка индикатора в виде цветного облака
+#property indicator_type4   DRAW_FILLING
+//---- в качестве цветjd индикатора использованы
+#property indicator_color4  clrDodgerBlue,clrDeepPink
+//---- отображение метки линии индикатора
+#property indicator_label4  "XFisher_org_v1_Vol"
+//+----------------------------------------------+
+//| Параметры отрисовки сигнальных значков       |
+//+----------------------------------------------+
+//---- отрисовка индикатора в виде многоцветных значков
+#property indicator_type5   DRAW_COLOR_ARROW
+//---- в качестве цветов трехцветной гистограммы использованы
+#property indicator_color5  clrLime,clrGray,clrMagenta
+//---- гистограммы индикатора - непрерывная кривая
+#property indicator_style5  STYLE_SOLID
+//---- толщина линии индикатора равна 2
+#property indicator_width5  2
+//---- отображение метки индикатора
+#property indicator_label5  "XFisher_org_v1_Vol Arrows"
+//+----------------------------------------------+
+//|  Параметры отрисовки значков                 |
+//+----------------------------------------------+
+//---- отрисовка индикатора 6 в виде цветного символа
+#property indicator_type6   DRAW_COLOR_ARROW
+//---- в качестве цветов индикатора использованы
+#property indicator_color6  clrAqua,clrYellow
+//---- толщина линии индикатора 6 равна 4
+#property indicator_width6  4
+//---- отображение метки индикатора
+#property indicator_label6  "XFisher_org_v1_Vol ZeroSignal"
+//+----------------------------------------------+
+//| Параметры отображения горизонтальных уровней |
+//+----------------------------------------------+
+#property indicator_level1 0.0
+#property indicator_levelcolor clrGray
+#property indicator_levelstyle STYLE_SOLID
+#property indicator_levelwidth 1
+//+----------------------------------------------+
+//|  Объявление констант                         |
+//+----------------------------------------------+
+#define RESET 0       // константа для возврата терминалу команды на пересчет индикатора
+//+----------------------------------------------+
+//|  Описание класса CXMA                        |
+//+----------------------------------------------+
+#include <SmoothAlgorithms.mqh> 
+//+----------------------------------------------+
+//---- объявление переменных класса CXMA из файла SmoothAlgorithms.mqh
+CXMA XMA1,XMA2;
+//+----------------------------------------------+
+//|  объявление перечислений                     |
+//+----------------------------------------------+
+/*enum Smooth_Method - перечисление объявлено в файле SmoothAlgorithms.mqh
+  {
+   MODE_SMA_,  // SMA
+   MODE_EMA_,  // EMA
+   MODE_SMMA_, // SMMA
+   MODE_LWMA_, // LWMA
+   MODE_JJMA,  // JJMA
+   MODE_JurX,  // JurX
+   MODE_ParMA, // ParMA
+   MODE_T3,    // T3
+   MODE_VIDYA, // VIDYA
+   MODE_AMA,   // AMA
+  }; */
+//+----------------------------------------------+
+//|  объявление перечислений                     |
+//+----------------------------------------------+
+enum ENUM_APPLIED_PRICE_ //Тип константы
+  {
+   PRICE_CLOSE_ = 1,     //PRICE_CLOSE
+   PRICE_OPEN_,          //PRICE_OPEN
+   PRICE_HIGH_,          //PRICE_HIGH
+   PRICE_LOW_,           //PRICE_LOW
+   PRICE_MEDIAN_,        //PRICE_MEDIAN
+   PRICE_TYPICAL_,       //PRICE_TYPICAL
+   PRICE_WEIGHTED_,      //PRICE_WEIGHTED
+   PRICE_SIMPL_,         //PRICE_SIMPL_
+   PRICE_QUARTER_,       //PRICE_QUARTER_
+   PRICE_TRENDFOLLOW0_,  //PRICE_TRENDFOLLOW0_
+   PRICE_TRENDFOLLOW1_,  // TrendFollow_2 Price 
+   PRICE_DEMARK_         // Demark Price 
+  };
+//+----------------------------------------------+
+//| Входные параметры индикатора                 |
+//+----------------------------------------------+
+input uint FLength=7;                             // глубина усреднения
+input Smooth_Method MA_SMethod=MODE_JJMA;         // Метод сглаживания
+input uint MA_Length=5;                           // Глубина сглаживания                    
+input int MA_Phase=15;                            // параметр сглаживания,
+//---- для JJMA изменяющийся в пределах -100 ... +100, влияет на качество переходного процесса;
+//---- Для VIDIA это период CMO, для AMA это период медленной скользящей                  
+input ENUM_APPLIED_PRICE_ IPC=PRICE_CLOSE_;       // ценовая константа
+input ENUM_APPLIED_VOLUME VolumeType=VOLUME_TICK; // объём 
+input int HighLevel=+150;                         // уровень перекупленности
+input int LowLevel=-150;                          // уровень перепроданности
+input int Shift=0;                                // Сдвиг индикатора по горизонтали в барах
+input uint NumberofBar=1;          // Номер бара для подачи сигнала
+input bool SoundON=true;           // Разрешение алерта
+input uint NumberofAlerts=2;       // Количество алертов
+input bool EMailON=false;          // Разрешение почтовой отправки сигнала
+input bool PushON=false;           // Разрешение отправки сигнала на мобильный
+//+----------------------------------------------+
+//---- объявление динамических массивов, которые в дальнейшем будут использованы в качестве индикаторных буферов
+double UpIndBuffer[],DnIndBuffer[];
+double UpIndBuffer1[],DnIndBuffer1[];
+double IndBuffer[],TriggerBuffer[];
+double ArrBuffer[],ColorArrBuffer[];
+double ZrSigBuffer[],ColorZrSigBuffer[];
+//---- объявление целочисленных переменных начала отсчета данных
+int min_rates_total,min_rates_1,AtrPeriod;
+//+------------------------------------------------------------------+
+//| Custom indicator initialization function                         |
+//+------------------------------------------------------------------+  
+int OnInit()
+  {
+//---- инициализация переменных начала отсчета данных
+   min_rates_1=int(FLength)+1;
+   min_rates_total=min_rates_1+GetStartBars(MA_SMethod,MA_Length,MA_Phase);
+   AtrPeriod=15;
+//---- превращение динамического массива IndBuffer[] в индикаторный буфер
+   SetIndexBuffer(0,UpIndBuffer,INDICATOR_DATA);
+//---- превращение динамического массива TriggerBuffer[] в индикаторный буфер
+   SetIndexBuffer(1,DnIndBuffer,INDICATOR_DATA);
+//---- осуществление сдвига индикатора 1 по горизонтали на Shift
+   PlotIndexSetInteger(0,PLOT_SHIFT,Shift);
+//---- осуществление сдвига начала отсчета отрисовки индикатора на min_rates_total
+   PlotIndexSetInteger(0,PLOT_DRAW_BEGIN,min_rates_total);
+//---- установка значений индикатора, которые не будут видимы на графике
+   PlotIndexSetDouble(0,PLOT_EMPTY_VALUE,EMPTY_VALUE);
+//---- запрет на отображение значений индикатора в левом верхнем углу окна индикатора
+   PlotIndexSetInteger(0,PLOT_SHOW_DATA,false);
+//----
+//---- превращение динамического массива в индикаторный буфер
+   SetIndexBuffer(2,UpIndBuffer1,INDICATOR_DATA);
+//---- осуществление сдвига начала отсчёта отрисовки индикатора
+   PlotIndexSetInteger(1,PLOT_DRAW_BEGIN,min_rates_total);
+//---- установка значений индикатора, которые не будут видимы на графике
+   PlotIndexSetDouble(1,PLOT_EMPTY_VALUE,EMPTY_VALUE);
+//---- осуществление сдвига индикатора по горизонтали
+   PlotIndexSetInteger(1,PLOT_SHIFT,Shift);
+//---- запрет на отображение значений индикатора в левом верхнем углу окна индикатора
+   PlotIndexSetInteger(1,PLOT_SHOW_DATA,false);
+//----   
+//---- превращение динамического массива в индикаторный буфер
+   SetIndexBuffer(3,DnIndBuffer1,INDICATOR_DATA);
+//---- осуществление сдвига начала отсчёта отрисовки индикатора
+   PlotIndexSetInteger(2,PLOT_DRAW_BEGIN,min_rates_total);
+//---- установка значений индикатора, которые не будут видимы на графике
+   PlotIndexSetDouble(2,PLOT_EMPTY_VALUE,EMPTY_VALUE);
+//---- осуществление сдвига индикатора по горизонтали
+   PlotIndexSetInteger(2,PLOT_SHIFT,Shift);
+//---- запрет на отображение значений индикатора в левом верхнем углу окна индикатора
+   PlotIndexSetInteger(2,PLOT_SHOW_DATA,false);
+//----
+//---- превращение динамического массива IndBuffer[] в индикаторный буфер
+   SetIndexBuffer(4,IndBuffer,INDICATOR_DATA);
+//---- превращение динамического массива TriggerBuffer[] в индикаторный буфер
+   SetIndexBuffer(5,TriggerBuffer,INDICATOR_DATA);
+//---- осуществление сдвига индикатора 1 по горизонтали на Shift
+   PlotIndexSetInteger(3,PLOT_SHIFT,Shift);
+//---- осуществление сдвига начала отсчета отрисовки индикатора на min_rates_total
+   PlotIndexSetInteger(3,PLOT_DRAW_BEGIN,min_rates_total);
+//---- установка значений индикатора, которые не будут видимы на графике
+   PlotIndexSetDouble(3,PLOT_EMPTY_VALUE,EMPTY_VALUE);
+//---- запрет на отображение значений индикатора в левом верхнем углу окна индикатора
+   PlotIndexSetInteger(3,PLOT_SHOW_DATA,false);
+//----
+//---- превращение динамического массива в индикаторный буфер
+   SetIndexBuffer(6,ArrBuffer,INDICATOR_DATA);
+//---- превращение динамического массива в цветовой, индексный буфер   
+   SetIndexBuffer(7,ColorArrBuffer,INDICATOR_COLOR_INDEX);
+//---- осуществление сдвига индикатора по горизонтали
+   PlotIndexSetInteger(4,PLOT_SHIFT,Shift);
+//---- осуществление сдвига начала отсчета отрисовки индикатора
+   PlotIndexSetInteger(4,PLOT_DRAW_BEGIN,min_rates_total);
+//---- установка значений индикатора, которые не будут видимы на графике
+   PlotIndexSetDouble(4,PLOT_EMPTY_VALUE,EMPTY_VALUE);
+//---- символ для индикатора
+   PlotIndexSetInteger(4,PLOT_ARROW,110);
+//----  
+//---- превращение динамического массива ExtLineBuffer в индикаторный буфер
+   SetIndexBuffer(8,ZrSigBuffer,INDICATOR_DATA);
+//---- осуществление сдвига начала отсчёта отрисовки индикатора
+   PlotIndexSetInteger(5,PLOT_DRAW_BEGIN,min_rates_total+AtrPeriod);
+//--- запрет на отрисовку индикатором пустых значений
+   PlotIndexSetDouble(5,PLOT_EMPTY_VALUE,EMPTY_VALUE);
+//---- осуществление сдвига индикаторапо горизонтали
+   PlotIndexSetInteger(5,PLOT_SHIFT,Shift);
+//---- запрет на отображение значений индикатора в левом верхнем углу окна индикатора
+   PlotIndexSetInteger(5,PLOT_SHOW_DATA,false);
+//---- выбор символа для отрисовки
+   PlotIndexSetInteger(5,PLOT_ARROW,108);
+//---- превращение динамического массива в цветовой, индексный буфер   
+   SetIndexBuffer(9,ColorZrSigBuffer,INDICATOR_COLOR_INDEX);
+//----
+//---- инициализации переменной для короткого имени индикатора
+   string shortname;
+   StringConcatenate(shortname,"XFisher_org_v1_Vol_Supr_Zer_Alerts(",FLength,")");
+//---- создание имени для отображения в отдельном подокне и во всплывающей подсказке
+   IndicatorSetString(INDICATOR_SHORTNAME,shortname);
+//---- определение точности отображения значений индикатора
+   IndicatorSetInteger(INDICATOR_DIGITS,0);
+//---- завершение инициализации
+   return(INIT_SUCCEEDED);
+  }
+//+------------------------------------------------------------------+
+//| Custom indicator iteration function                              |
+//+------------------------------------------------------------------+
+int OnCalculate(const int rates_total,    // количество истории в барах на текущем тике
+                const int prev_calculated,// количество истории в барах на предыдущем тике
+                const datetime &time[],
+                const double &open[],
+                const double& high[],     // ценовой массив максимумов цены для расчета индикатора
+                const double& low[],      // ценовой массив минимумов цены  для расчета индикатора
+                const double &close[],
+                const long &tick_volume[],
+                const long &volume[],
+                const int &spread[])
+  {
+//---- проверка количества баров на достаточность для расчета
+   if(rates_total<min_rates_total) return(RESET);
+
+//---- объявления локальных переменных 
+   int first,bar;
+   double smax,smin,price,wpr,value,res1,res2,fish,vol,xvol;
+   static double value_prev,fish_prev;
+
+//---- расчет стартового номера first для цикла пересчета баров
+   if(prev_calculated>rates_total || prev_calculated<=0) // проверка на первый старт расчета индикатора
+     {
+      first=min_rates_1;                           // стартовый номер для расчета всех баров
+      value_prev=0.0;
+      IndBuffer[first-1]=fish_prev=0.0;
+     }
+   else first=prev_calculated-1; // стартовый номер для расчета новых баров
+
+//---- основной цикл расчета индикатора
+   for(bar=first; bar<rates_total && !IsStopped(); bar++)
+     {
+      smax=DBL_MIN;
+      smin=DBL_MAX;
+      //----
+      for(int iii=0; iii<int(FLength); iii++)
+        {
+         int barx=bar-iii;
+         smax=MathMax(smax,high[barx]);
+         smin=MathMin(smin,low[barx]);
+        }
+      if(smax==smin) smax+=_Point;
+      price=PriceSeries(IPC,bar,open,low,high,close);
+      wpr=(price-smin)/(smax-smin);
+      value=(wpr-0.5)+0.67*value_prev;
+      value=MathMin(value,+DBL_MAX);
+      value=MathMax(value,-DBL_MAX);
+      res1=1.0-value;
+      if(!res1) res1=1.0;
+      res2=(1.0+value)/(1.0-value);
+      if(res2<0.0000001) res2=1.0;
+      fish=0.5*MathLog(res2)+0.5*fish_prev;
+      if(VolumeType==VOLUME_TICK) vol=double(tick_volume[bar]);
+      else vol=double(volume[bar]);
+      IndBuffer[bar]=fish*vol; //домножаем значение осциллятора на объём  
+      IndBuffer[bar]=100*XMA1.XMASeries(min_rates_1,prev_calculated,rates_total,MA_SMethod,MA_Phase,MA_Length,IndBuffer[bar],bar,false);
+      xvol=XMA2.XMASeries(min_rates_1,prev_calculated,rates_total,MA_SMethod,MA_Phase,MA_Length,vol,bar,false);  //усредняем объём  
+      UpIndBuffer[bar]=UpIndBuffer1[bar]=HighLevel*xvol;
+      DnIndBuffer[bar]=DnIndBuffer1[bar]=LowLevel*xvol;
+      TriggerBuffer[bar]=IndBuffer[bar-1];
+
+      ColorArrBuffer[bar]=1;
+      ArrBuffer[bar]=EMPTY_VALUE;
+      if(IndBuffer[bar]>UpIndBuffer[bar])
+        {
+         if(IndBuffer[bar]>=TriggerBuffer[bar])
+           {
+            ColorArrBuffer[bar]=0;
+            ArrBuffer[bar]=0.0;
+           }
+        }
+
+      if(IndBuffer[bar]<DnIndBuffer[bar])
+        {
+         if(IndBuffer[bar]<=TriggerBuffer[bar])
+           {
+            ColorArrBuffer[bar]=2;
+            ArrBuffer[bar]=0.0;
+           }
+        }
+      //---- 
+      ColorZrSigBuffer[bar]=2;
+      ZrSigBuffer[bar]=EMPTY_VALUE;
+      
+      if(IndBuffer[bar-1]>0.0 && IndBuffer[bar]<=0.0)
+        {
+         ZrSigBuffer[bar]=0.0;
+         ColorZrSigBuffer[bar]=1;
+        }
+      if(IndBuffer[bar-1]<0.0 && IndBuffer[bar]>=0.0)
+        {
+         ZrSigBuffer[bar]=0.0;
+         ColorZrSigBuffer[bar]=0;
+        }
+      //----
+      if(bar<rates_total-1)
+        {
+         value_prev=value;
+         fish_prev=fish;
+        }
+     }
+//---     
+   BuySignal("XFisher_org_v1_Vol_Supr_Zer_Alerts",rates_total,prev_calculated,close,spread);
+   SellSignal("XFisher_org_v1_Vol_Supr_Zer_Alerts",rates_total,prev_calculated,close,spread);
+//---     
+   return(rates_total);
+  }
+//+------------------------------------------------------------------+
+//| Buy signal function                                              |
+//+------------------------------------------------------------------+
+void BuySignal(string SignalSirname,      // текст имени индикатора для почтовых и пуш-сигналов
+               const int Rates_total,     // текущее количество баров
+               const int Prev_calculated, // количество баров на предыдущем тике
+               const double &Close[],     // цена закрытия
+               const int &Spread[])       // спред
+  {
+//---
+   static uint counter=0;
+   if(Rates_total!=Prev_calculated) counter=0;
+
+   string SignalText="";
+   bool BuySignal=false;
+   int index=Rates_total-1-int(NumberofBar);
+   int index1=Rates_total-1-int(NumberofBar)-1;
+   //--- 
+   if(IndBuffer[index1]<=0 && IndBuffer[index]>0)  
+     {
+      BuySignal=true;
+      SignalText=SignalText+"Пробой нуля! ";
+     }  
+    //--- 
+    if(TriggerBuffer[index1]>=IndBuffer[index1] && TriggerBuffer[index]<IndBuffer[index])
+     {
+      BuySignal=true;
+      SignalText=SignalText+"Изменение направленности тренда! ";
+     } 
+    //--- 
+    if(IndBuffer[index1]<=UpIndBuffer[index1] && IndBuffer[index]>UpIndBuffer[index]) 
+     {
+      BuySignal=true;
+      SignalText=SignalText+"Пробой уровня перекупленности! ";
+     } 
+    //--- 
+    if(IndBuffer[index1]<=DnIndBuffer[index1] && IndBuffer[index]>DnIndBuffer[index]) 
+     {
+      BuySignal=true;
+      SignalText=SignalText+"Выход из зоны перепроданности! ";
+     }        
+   //---              
+   if(BuySignal && counter<=NumberofAlerts)
+     {
+      counter++;
+      MqlDateTime tm;
+      TimeToStruct(TimeCurrent(),tm);
+      string text=TimeToString(TimeCurrent(),TIME_DATE)+" "+string(tm.hour)+":"+string(tm.min);
+      double Ask=Close[index];
+      double Bid=Close[index];
+      Bid+=Spread[index]*_Point;
+      string sAsk=DoubleToString(Ask,_Digits);
+      string sBid=DoubleToString(Bid,_Digits);
+      string sPeriod=GetStringTimeframe(ChartPeriod());
+      if(SoundON) Alert("BUY signal "+SignalText+"\n Ask=",Ask,"\n Bid=",Bid,"\n currtime=",text,"\n Symbol=",Symbol()," Period=",sPeriod);
+      if(EMailON) SendMail(SignalSirname+": BUY signal "+SignalText," at Ask="+sAsk+", Bid="+sBid+", Date="+text+" Symbol="+Symbol()+" Period="+sPeriod);
+      if(PushON) SendNotification(SignalSirname+": BUY signal "+SignalText+" at Ask="+sAsk+", Bid="+sBid+", Date="+text+" Symbol="+Symbol()+" Period="+sPeriod);
+     }
+
+//---
+  }
+//+------------------------------------------------------------------+
+//| Sell signal function                                             |
+//+------------------------------------------------------------------+
+void SellSignal(string SignalSirname,      // текст имени индикатора для почтовых и пуш-сигналов
+                const int Rates_total,     // текущее количество баров
+                const int Prev_calculated, // количество баров на предыдущем тике
+                const double &Close[],     // цена закрытия
+                const int &Spread[])       // спред
+  {
+//---
+   static uint counter=0;
+   if(Rates_total!=Prev_calculated) counter=0;
+   string SignalText="";
+   bool SellSignal=false;
+   int index=Rates_total-1-int(NumberofBar);
+   int index1=Rates_total-1-int(NumberofBar)-1;
+   //---   
+   if(IndBuffer[index1]>=0 && IndBuffer[index]<0)
+     {
+      SellSignal=true;
+      SignalText=SignalText+"Пробой нуля! ";
+     }
+    //--- 
+    if(TriggerBuffer[index1]<=IndBuffer[index1] && TriggerBuffer[index]>IndBuffer[index])
+     {
+      SellSignal=true;
+      SignalText=SignalText+"Изменение направленности тренда! ";
+     }   
+    //--- 
+    if(IndBuffer[index1]>=DnIndBuffer[index1] && IndBuffer[index]<DnIndBuffer[index]) 
+     {
+      SellSignal=true;
+      SignalText=SignalText+"Пробой уровня пепроданности! ";
+     }  
+    //--- 
+    if(IndBuffer[index1]>=UpIndBuffer[index1] && IndBuffer[index]<UpIndBuffer[index]) 
+     {
+      SellSignal=true;
+      SignalText=SignalText+"Выход из зоны перекупленности! ";
+     }       
+   //--
+   if(SellSignal && counter<=NumberofAlerts)
+     {
+      counter++;
+      MqlDateTime tm;
+      TimeToStruct(TimeCurrent(),tm);
+      string text=TimeToString(TimeCurrent(),TIME_DATE)+" "+string(tm.hour)+":"+string(tm.min);
+      double Ask=Close[index];
+      double Bid=Close[index];
+      Bid+=Spread[index]*_Point;
+      string sAsk=DoubleToString(Ask,_Digits);
+      string sBid=DoubleToString(Bid,_Digits);
+      string sPeriod=GetStringTimeframe(ChartPeriod());
+      if(SoundON) Alert("SELL signal "+SignalText+"\n Ask=",Ask,"\n Bid=",Bid,"\n currtime=",text,"\n Symbol=",Symbol()," Period=",sPeriod);
+      if(EMailON) SendMail(SignalSirname+": SELL signal "+SignalText," at Ask="+sAsk+", Bid="+sBid+", Date="+text+" Symbol="+Symbol()+" Period="+sPeriod);
+      if(PushON) SendNotification(SignalSirname+": SELL signal "+SignalText+" at Ask="+sAsk+", Bid="+sBid+", Date="+text+" Symbol="+Symbol()+" Period="+sPeriod);
+     }
+//---
+  }
+//+------------------------------------------------------------------+
+//|  Получение таймфрейма в виде строки                              |
+//+------------------------------------------------------------------+
+string GetStringTimeframe(ENUM_TIMEFRAMES timeframe)
+  {
+//----
+   return(StringSubstr(EnumToString(timeframe),7,-1));
+//----
+  }
+//+------------------------------------------------------------------+

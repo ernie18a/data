@@ -1,0 +1,2 @@
+Author: Гоша Шмель
+DayChannel indicator.

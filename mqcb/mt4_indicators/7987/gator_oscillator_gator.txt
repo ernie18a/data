@@ -1,0 +1,7 @@
+Gator Oscillator is based on the Alligator and shows the degree of convergence/divergence of the Balance Lines (Smoothed Moving Averages). The top bar chart is the absolute difference between the values of the blue and the red lines. The bottom bar chart is the absolute difference between the values of the red line and the green line, but with the minus sign, as the bar chart is drawn top-down.
+Technical Indicator Description
+Full description of Gator is available in the
+Technical analysis: Gator Oscillator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7987

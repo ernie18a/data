@@ -1,0 +1,10 @@
+Real author:
+John Ehlers
+The indicator is a moving average based on the
+EMA
+algorithm and adapted to a financial instrument current volatility.
+The indicator consists of two averages - fast MAMA (green line) and slow FAMA (red line). Crossover of the averages provide signals for market entries and exits.
+Two variants of the indicator are presented here: MAMA.mq5 and MAMA_Optim.mq5. Their only difference is that the second one is more optimized for computer resources saving and more preferable for using in Expert Advisors, while the first one has more clear code.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/400

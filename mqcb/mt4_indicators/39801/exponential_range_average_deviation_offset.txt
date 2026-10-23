@@ -1,0 +1,7 @@
+This indicator calculates and plots the exponential moving average of the true range, as well as an offset of the exponential moving average of its deviation.
+The code uses conditional compilation and will compile on both MQL4 and MQL5.
+Please note that all my
+CodeBase
+publications’ source code are now also available in “Public Projects” tab of
+MetaEditor
+under the name “FMIC”.

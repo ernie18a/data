@@ -1,0 +1,58 @@
+Market Session Separator
+The idea behind it
+Knowing which session is active matters for almost every intraday decision — volatility, liquidity, and typical behavior all shift as Asian trading gives way to London, and London overlaps with New York. Most traders end up doing this math in their head, glancing at the clock and converting to server time on the fly. This indicator removes that step entirely: it draws the boundary of up to three configurable sessions directly on the chart, every day, automatically, using vertical lines and/or a shaded background tint so the active session is visually obvious at a glance.
+Everything here is purely visual — there is no calculation of highs, lows, or any other derived value, which keeps the indicator lightweight and lets it focus on doing one job well: making session boundaries impossible to miss. Session boxes track the chart's own zoom and scroll (rebuilt from CHART_PRICE_MIN / CHART_PRICE_MAX ), so they always span the full visible price range no matter how the chart is framed.
+How to interpret it
+Vertical dotted lines
+— mark the exact start and end time of each enabled session, repeated for every day in the rolling window.
+Shaded background bands
+— a tinted region spanning the full visible price range for the duration of each session, so the active window is obvious even without reading the axis.
+Session label
+— the name you gave that session (e.g. "London") printed near the top of its band, at its start time.
+Three independently configurable sessions
+— default to Asian, London and New York, but every start/end time, color and label is fully editable, so the same indicator works for any custom set of windows (a specific news period, an overlap window, etc.).
+Overnight sessions
+— if a session's end time is earlier than its start time (e.g. 21:00 → 05:00), it's automatically treated as spanning midnight into the next day.
+External variables (inputs)
+Input
+Default
+Purpose
+InpEnableSession1/2/3
+true / true / true
+Toggles each of the three sessions independently.
+InpSession1/2/3StartHour, StartMin
+0:00 / 8:00 / 13:00
+Start time of each session, server time.
+InpSession1/2/3EndHour, EndMin
+8:00 / 16:00 / 21:00
+End time of each session, server time. Automatically treated as overnight if earlier than the start.
+InpSession1/2/3Color
+SteelBlue / Goldenrod / MediumSeaGreen
+Color used for that session's lines, box and label.
+InpSession1/2/3Label
+"Asian" / "London" / "New York"
+Text shown on that session's label.
+InpDrawMode
+Lines + Boxes
+Whether to draw vertical separator lines only, shaded boxes only, or both.
+InpShowLabels
+true
+Toggles the session name labels.
+InpLabelFontSize
+8
+Font size used for the labels.
+InpDaysToDraw
+10
+Rolling window of calendar days (back from today) the separators are drawn for; older days are pruned automatically as time passes.
+InpSkipWeekends
+true
+Skips drawing separators on Saturday/Sunday — turn off for symbols that trade through the weekend (e.g. some crypto feeds).
+InpLineStyle
+Dot
+Line style used for the vertical separators.
+Recommended use
+Works on any symbol and any intraday timeframe (M1–H4 are typical; on D1 and above, a single candle already spans multiple sessions, so separators lose their usefulness). Always confirm your broker's server time against the actual session hours you intend to mark — server-time offsets vary by broker and shift with daylight-saving changes on either side of London/New York, so the default hours are a starting point, not a universal constant.
+InpDaysToDraw
+keeps the object count bounded and predictable regardless of how long the indicator has been running: objects for days older than the rolling window are pruned automatically every time a new bar closes, so leaving the indicator attached for months does not cause chart objects to accumulate indefinitely. This indicator only draws visual markers and never places, modifies, or closes any order, so it is safe to run on any account type.
+All chart objects are created under a single internal name prefix and are fully removed via ObjectsDeleteAll() in OnDeinit() when the indicator is detached, so it leaves nothing behind on the chart.
+Fig. 1. Asian, London and New York sessions shaded and separated on XAUUSD M15. Rendered in black and white per the Code Base image guidelines (750×500 px).

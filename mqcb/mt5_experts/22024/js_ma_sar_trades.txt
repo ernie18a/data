@@ -1,0 +1,58 @@
+The author of the idea
+:
+JS_Sergey
+MQL5 code author
+:
+barabashkakvn
+ZigZag, Parabolic Sar and two Moving Averages are applied.
+BUY open signal
+Zigzag Low 0
+bottom should be higher than
+Zigzag Low 1
+bottom,
+Moving Average Fast
+should be higher than
+Moving Average Slow
+, close price should exceed
+Parabolic Sar
+indicator:
+BUY close signal
+Moving Averages are not used here.
+Zigzag Low 0
+bottom should be higher than
+Zigzag Low 1
+bottom,
+while
+close price should be below
+Parabolic Sar
+indicator:
+SELL open signal
+Zigzag High 0
+top should be lower than
+Zigzag High 1
+,
+Moving Average Fast
+should be lower than
+Moving Average Slow
+, while close price should be below
+Parabolic Sar
+indicator.
+SELL close signal
+Moving Average are not used in a SELL close signal.
+Zigzag High 0
+top should be lower than
+Zigzag High 1
+top, while close price should be above
+Parabolic Sar
+indicator.
+If we need to open and close positions by trading signals only within a certain working time interval, set the
+Use start and end hours
+flag to 'true', while use the
+Start hour
+and
+End hour
+parameters to set the working time interval.
+EURUSD M15
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22024

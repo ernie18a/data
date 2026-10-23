@@ -1,0 +1,36 @@
+DeMarker
+indicator tracks the areas of the price exhaustion that usually match price tops and bottoms.
+Indicator range is from 0 to 1. When the indicator drops below 0.3, prices upward reversal is most probable. When the indicator goes up to 0.7 and higher, prices downward reversal is most likely. In this indicator version overbought and oversold areas are made in dynamically changing form with the help of
+Bollinger Bands ®
+.
+Colored dots are located on the DeMarker line. Their color depends on the location relative to the Bollinger middle band and DeMarker line direction. Ascending DeMarker above the middle band paints the dots in green, while descending one - in blue. Descending DeMarker below the middle band paints the dots in red, while ascending one - in magenta. The color of the signal dot-dashed line is changed depending on their location relative to the DeMarker line. In case the Demarker line is higher than the signal one, the color is sandy. Otherwise, it is lime.
+Smoothing types can be selected out of ten possible versions:
+SMA
+- simple moving average;
+EMA
+- exponential moving average;
+SMMA
+- smoothed moving average;
+LWMA
+- linear weighted moving average;
+JJMA
+- JMA adaptive average;
+JurX
+- ultralinear smoothing;
+ParMA
+- parabolic smoothing;
+T3
+- Tillson's multiple exponential smoothing;
+VIDYA
+- smoothing with the use of Tushar Chande's algorithm;
+AMA
+- smoothing with the use of Perry Kaufman's algorithm.
+It should be noted that Phase type parameters for different smoothing algorithms have completely different meaning. For JMA it is an external Phase variable changing from -100 to +100. For T3 it is a smoothing ratio multiplied by 100 for better visualization, for VIDYA it is a CMO oscillator period and for AMA it is a slow EMA period. In other algorithms these parameters do not affect smoothing. For AMA fast EMA period is a fixed value and is equal to 2 by default. The ratio of raising to the power is also equal to 2 for AMA.
+The indicator uses SmoothAlgorithms.mqh library classes (must be copied to the
+terminal_data_folder
+\MQL5\Include). The use of the classes was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/591

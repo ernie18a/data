@@ -1,0 +1,43 @@
+What it shows
+-------------
+- Current Renko direction: UP or DOWN
+- Number of consecutive confirmed bricks in the current run
+- Fixed brick size
+- Last confirmed Renko close
+- Price level where the opposite Renko brick becomes confirmed
+- Current market distance to that reversal level, measured in bricks
+How it works
+------------
+The indicator builds a small classic Renko model directly from the symbol's tick history.
+Continuation rule:
+A new brick in the current direction is confirmed after price moves one full brick beyond the last Renko close.
+Reversal rule:
+A reversal is confirmed only after price moves two full brick sizes against the current direction.
+For an UP run:
+reversal = last Renko close - 2 × brick size
+For a DOWN run:
+reversal = last Renko close + 2 × brick size
+The dashed horizontal line marks that level.
+Why this indicator exists
+-------------------------
+A common Renko mistake is to treat every counter-move as a reversal. In classic Renko that is not true. Price must reach the two-brick reversal threshold before the opposite brick is confirmed.
+This indicator is intentionally small. It does not generate BUY/SELL signals and does not try to predict the next brick. It only shows the current Renko context.
+Inputs
+------
+InpBrickPoints       Brick size in symbol points.
+InpHistoryTicks      Number of recent ticks used to initialize the Renko sequence.
+InpShowReversalLine  Show/hide the reversal level on the chart.
+InpX / InpY          Panel position from the upper-right chart corner.
+Color inputs         Display colors only.
+Notes
+-----
+- The source is self-contained: no external .mqh libraries are required.
+- The sequence is built from Bid ticks when Bid is available; Last is used as fallback.
+- Tick history availability depends on the broker/server and local MT5 history.
+- This is an educational/context indicator, not a trading system.
+Suggested screenshot
+--------------------
+Use a clean XAUUSD chart with a 100- or 500-point brick size. Keep the panel visible in the upper-right corner and the dashed reversal level clearly visible on price.
+Suggested CodeBase category
+---------------------------
+Indicators / Examples / Renko

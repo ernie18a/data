@@ -1,0 +1,16 @@
+The Expert Advisor is based on Dual
+Trix
+indicators. It uses martingale, the number of doublings is limited.
+It has good backtesting results for last year (EURUSD, M5).
+Copy the library files (.mqh) to: terminal_data_folder\MQL5\Include\
+Input parameters:
+DML - Lot size (in deposit money);
+UD - number of doublings;
+Stop - Stop Loss in points;
+Tp - Take Profit in points;
+Slipage - Slippage in points;
+Fast - Fast Trix period;
+Slow - Slow Trix period.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/165

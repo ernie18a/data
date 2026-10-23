@@ -1,0 +1,24 @@
+Key Features
+Daily Breakdown: View statistics for the last 7 days (customizable)
+All-Time Summary: See total statistics across your entire trading history
+Real-Time Updates: Automatically refreshes as you trade
+Color-Coded Profits: Green for profitable days, red for losses
+Clean Design: Modern flat UI with customizable colors
+Number Formatting: Professional comma-separated number display
+Comprehensive Metrics: Tracks total lots, order count, and net P/L (including swap and commission)
+What It Shows
+Date: Each trading day in YYYY.MM.DD format
+Lots: Total volume traded per day
+Orders: Number of closed orders per day
+P/L ($): Net profit/loss including all fees and commissions
+TOTAL: Cumulative statistics across all trading history
+Installation
+Copy the file to your MQL5/Indicators folder
+Compile or restart MT5
+Drag the indicator onto any chart
+Customize colors and position in the indicator settings
+Perfect For
+Day traders tracking daily performance
+Swing traders monitoring weekly activity
+Anyone wanting a quick visual summary of their trading stats
+Traders who want professional-looking on-chart statistics

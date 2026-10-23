@@ -1,0 +1,19 @@
+Indicator Bears Bulls Impuls displays in a separate window a pulse graph showing the market switches from bullish to bearish, and vice versa.
+It has two configurable parameters:
+Period
+- calculation period
+Applied price
+- calculation price
+Calculations:
+If (BullIndex + BearIndex) > 0
+Bulls = 1
+Bears = -1
+If (BullIndex + BearIndex) < 0
+Bulls = -1
+Bears = 1
+where
+BullIndex = High - EMA(Applied price, Period)
+BearIndex = Low - EMA(Applied price, Period)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21315

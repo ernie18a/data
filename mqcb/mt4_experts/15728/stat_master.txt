@@ -1,0 +1,5 @@
+EA that writes statistic data (Ask, Bid, Spread) in CSV file.
+File will be saved in MQL4/Files/ folder.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15728

@@ -1,0 +1,60 @@
+MD Scalper
+is a fast scalping Expert Advisor for MetaTrader 4.
+It uses a very short moving average channel to detect momentum and manages everything with pending stop orders and a tight trailing stop.
+How it works
+Signal.
+Two 3-period smoothed moving averages are calculated, one on High and one on Low. If Bid breaks above the MA(High), the signal is UP. If Bid breaks below the MA(Low), the signal is DOWN. The current bar's range must also exceed the Filter value, which acts as a volatility filter.
+Mode.
+TradeMode decides which pending order is placed:
+Trend:
+order in the direction of price. Price rising places a BUYSTOP just above price, and price falling places a SELLSTOP just below it.
+Reversal:
+order behind price. Price rising places a SELLSTOP just below price, and price falling places a BUYSTOP just above it.
+Both:
+places the Trend and Reversal order together. When one fills, the other is deleted.
+Pending order follows price.
+A BUYSTOP only moves down and a SELLSTOP only moves up, so the order always stays close to the market and triggers on a small move.
+Trailing stop.
+After the fill, the stop loss trails the price at Distance points. Optional TrailStart and TrailStep settings control when and how often it moves.
+Only one position is open at a time. When it closes, a new signal restarts the cycle.
+Broker and latency handling:
+TEST on 1 min chart with low latency and near Zero SL level like IC Markets.
+Increas SL to 30points for avoid Stop hunt and some breath space.
+Respects the broker's stop level and freeze level automatically ( AutoStopLevel ).
+Modifications are throttled ( MinModifyMs ) with minimum step sizes, to avoid flooding the server with requests.
+Retries on requote, busy and off-quotes errors, then pauses briefly after a failed send.
+Measures average order latency, displays it, and can block entries when it is too high.
+ExtraLatencyPoints adds a cushion to the order offset and trail distance.
+Stale pending orders are deleted by age, outside the trading session, or when the spread is too wide.
+Other features
+Spread filter: average spread, current spread and commission (auto-detected or manual).
+Lot modes: fixed lots, % of balance risked at the stop loss, or the original leverage-based formula. A free-margin check is included.
+Optional protections: max trades per day, daily loss limit, cooldown after a close, Friday cutoff, and a time filter that works across midnight.
+On-chart panel showing signal, spread, latency, today's result and why entries are blocked.
+Main inputs
+Input
+Meaning
+TradeMode
+Trend / Reversal / Both
+MAPeriod, MAMethod
+MA settings (default 3, Smoothed)
+Filter
+Minimum current-bar range in points
+Limit
+Pending order offset from price in points
+StopLoss, TakeProfit
+Initial SL / TP in points (0 = none)
+Distance
+Trailing distance in points (negative = off)
+MaxSpreadPlusCommission
+Maximum allowed spread plus commission in points
+LotMode, FixedLots, RiskPercent
+Position sizing
+MagicNumber
+Order identifier
+Recommendations
+The defaults (Limit 2, StopLoss 10, Distance 2) are very tight. They suit low-spread accounts with a small stop level.
+On other accounts, AutoStopLevel widens the distances automatically.
+Always test on a demo account first. Latency and broker execution effects cannot be fully reproduced in the Strategy Tester.
+Scalping results depend heavily on spread, execution speed and the broker.
+Risk warning: trading leveraged products involves substantial risk. Past or simulated results do not guarantee future performance.

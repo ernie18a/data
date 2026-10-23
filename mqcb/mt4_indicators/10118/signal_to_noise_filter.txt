@@ -1,0 +1,1 @@
+The purpose of this indicator is to identify market fases that have too small amplitudes. These fases are useless even for systems designed for trading ranges markets. You will need other indicators. When the green line is BELOW the gray line - DON'T trade.

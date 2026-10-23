@@ -1,0 +1,4 @@
+Description:
+The logic is the crossing of fast and slow moving averages or the similar, just trade looking at the arrows one arrow = 50 pips sure.
+Use it only on 1 HR chart.
+Image:

@@ -1,0 +1,31 @@
+A Tool: Horizontal Grid Plotter
+Modification: 70101
+Release Date: 2009.06.26
+Copyright (C) 2009, MetaQuotes Software Corp.
+https://www.metaquotes.net
+Copyright (C) 2009, Airat Safin
+https://www.mql5.com/en/users/ais
+Free Open Source Software
+Instructions
+1. A Tool: Horizontal Grid Plotter is MQL4 program set for equidistant horizontal price lines plotting.
+2. Program files:
+   1.1. "AIS7HGP.MQ4" is horizontal grid plotter file;
+   1.2. "AIS7HGR.MQ4" is horizontal grid remover file.
+3. Copy program files in "../experts/scripts" folder.
+4. Run MetaEditor and compile program files.
+5. Run "AIS7HGP" to plot horizontal grid lines.
+6. Run "AIS7HGR" to delete horizontal grid lines.
+7. Input parameters:
+   7.1. "aed.HGMax"   defines maximal price level of the grid in quote units;
+   7.2. "aed.HGStep"  defines distance between horizontal price lines in quote units;
+   7.3. "aed.HGMin"   defines minimal price level of the grid in quote units;
+   7.4. "aei.HGColor" defines color of the grid;
+   7.5. "aei.HGStyle" defines style of the grid according to following code table:
+        7.5.1. "0" is solid line code,
+        7.5.2. "1" is dash line code,
+        7.5.3. "2" is dot line code,
+        7.5.4. "3" is dash-and-dot line code,
+        7.5.5. "4" is dash-and-double-dot line code;
+   7.6. "aei.HGBackground" defines background or foreground plotting:
+        7.6.1. "0" is foreground plotting code,
+        7.6.2. "1" is background plotting code.

@@ -1,0 +1,35 @@
+Indicator Xaos Patterns Explorer. It is a kind of "if you understand it, you'll become rich"!
+Parameters:
+extern
+int
+Separation
+=
+15
+;
+extern
+int
+AlarmOn
+=
+false
+;
+extern
+int
+SHOW_SIGNALS
+=
+true
+;
+extern
+double
+indicator_lev1
+=
+1.0010
+;
+// I believe playing around with these constants
+extern
+double
+indicator_lev2
+=
+0.999
+;
+// can make patterns appear more vivid as well as unvivid.
+Xaos Patterns Explorer

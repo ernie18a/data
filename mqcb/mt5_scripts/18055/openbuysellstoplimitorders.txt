@@ -1,0 +1,56 @@
+A script for placing two Buy Stop Limit and Sell Stop Limit orders at an equal distance.
+Script input parameters:
+//+----------------------------------------------+
+//| SCRIPT INPUT PARAMETERS                      |
+//+----------------------------------------------+
+input
+double
+MM=
+0.1
+;
+// Money Management
+input
+int
+DEVIATION=
+10
+;
+// Price deviation
+input
+uint
+LEVEL=
+100
+;
+// Distance to place the order in points
+input
+uint
+STOPLEVEL=
+150
+;
+// Distance for Stop Limit in points
+input
+uint
+STOPLOSS=
+100
+;
+// Stop Loss in points from the current price
+input
+uint
+TAKEPROFIT=
+800
+;
+// Take Profit in points from the current price
+input
+uint
+RTOTAL=
+4
+;
+// Number of attempts in case of unsuccessful trades
+input
+uint
+SLEEPTIME=
+1
+;
+// A pause between the attempts in seconds
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18055

@@ -1,0 +1,5 @@
+Author: Egorov Gennadiy & KimIV
+Removed LSMA and EMA. Made the sixth signal bar and trend coloring.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7412

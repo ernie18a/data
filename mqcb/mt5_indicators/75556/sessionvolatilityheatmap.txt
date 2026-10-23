@@ -1,0 +1,58 @@
+Session Volatility Heatmap
+The idea behind it
+Most traders know the textbook version of session times, but every symbol has its own real rhythm — the hour it actually wakes up is not always the hour the session guide says it should. This indicator replaces the guess with a measurement: it pulls
+InpLookbackDays
+of history on the chart's own timeframe, buckets every bar's (high − low) range by the hour it closed in, and averages each of the 24 hourly buckets. The result is drawn as a small heatmap panel, and the same three major sessions are shaded directly behind the candles so the two views line up at a glance.
+How to interpret it
+The heatmap bars
+— each of the 24 columns is one hour of the broker/server day. Taller, warmer-coloured columns are hours where this specific symbol has historically moved more; short, cool-coloured columns are quiet hours. Because it is computed from your own history, it reflects this symbol and this broker's server time, not a generic session chart.
+The session bands
+— the pale shaded rectangles behind price mark the Asian, London, and New York windows for each of the last
+InpSessionDays
+days. Where two bands overlap, you are looking at the highest-liquidity part of the day; comparing that visually against the heatmap panel usually confirms it is also where the tallest bars are.
+Reading the two together
+— the heatmap tells you which hour, the session bands tell you why. If the tallest bar in the heatmap does not line up with a session overlap on your instrument, that is often worth knowing on its own — it usually means a scheduled release (open, fix, or a recurring data print) rather than session flow is driving that hour.
+This is a measurement tool, not a signal generator. It does not suggest entries or exits — it only shows you where the historical volatility and liquidity actually sit, so decisions about when to trade (or when to sit out) are made from what is measured rather than assumed.
+External variables (inputs)
+Input
+Default
+Purpose
+InpLookbackDays
+30
+How many days of history feed the hourly average. Longer windows smooth out one-off news spikes; shorter windows react faster to a genuine change in the symbol's rhythm.
+InpCorner / InpOffsetX / InpOffsetY
+Right Upper / 12 / 18
+Where the heatmap panel sits on the chart.
+InpPanelWidth / InpPanelHeight
+340 / 150
+Panel size in pixels.
+InpRefreshSecs
+30
+How often the panel recomputes from history, independent of ticks.
+InpShowSessions
+true
+Toggles the session background shading on the price chart.
+InpSessionDays
+6
+How many recent days get shaded. Kept modest by default to avoid cluttering the chart with objects.
+InpAsianStartHour / InpAsianEndHour
+0 / 9
+Asian session window, broker/server time.
+InpLondonStartHour / InpLondonEndHour
+7 / 16
+London session window, broker/server time.
+InpNewYorkStartHour / InpNewYorkEndHour
+12 / 21
+New York session window, broker/server time.
+InpBackColor / InpBorderColor / InpTextColor
+see code
+Heatmap panel colour scheme.
+InpLowColor / InpHighColor
+see code
+The two colours the heatmap interpolates between, from quietest to busiest hour.
+InpAsianBandColor / InpLondonBandColor / InpNewYorkBandColor
+pale blue / amber / red
+Session shading colours. Kept pale by default since chart rectangle objects render fully opaque — there is no true transparency to fall back on, so the colour itself has to stay soft.
+Recommended use
+Every broker's server clock is set differently relative to UTC, so check what your broker's server time actually is before trusting the default session hours — they are typical starting points, not universal constants. Once the three ranges are set correctly for your broker, the panel and the shading stay accurate on their own; there is nothing else to maintain.
+Fig. 1. The hourly volatility heatmap panel alongside session-shaded candles. Rendered in black and white per the Code Base image guidelines.

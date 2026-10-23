@@ -1,0 +1,8 @@
+Linear regression is a statistical tool used to predict future prices based on past data.
+The indicator uses the least squares method for the construction of the "most suitable" straight line through a series of points of price values​​.
+As input parameters used the number of bars (candles) to use in the calculation. This indicator is a good for use in Expert Advisors.
+Input parameters:
+input int      LRMAPeriod=14; // Period LRMA
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11898

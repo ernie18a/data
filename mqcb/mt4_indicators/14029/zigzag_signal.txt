@@ -1,0 +1,30 @@
+Signal based on the
+ZigZag
+indicator.
+The following pattern is implemented:
+А
+— double bottom, the
+C
+level is above the
+B
+level, the
+D
+level is above the
+C
+level.
+Hints:
+Best used on
+EURUSD M15
+with the default parameters, other periods are also acceptable.
+As the
+ZigZag is redrawn
+, it is better to test the indicator
+in the strategy tester
+.
+The images show the signal triggering series sorted from the indicator publication moment by time in descending order,
+EURUSD M15
+is used.
+The images were taken in the strategy tester.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14029

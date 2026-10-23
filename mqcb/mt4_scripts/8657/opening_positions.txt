@@ -1,0 +1,8 @@
+When opening a position the scripts automatically set the lot size (three options: fixed lot and two options as described here
+https://www.mql5.com/ru/forum/108290
+).
+At the same time the scripts try to select a stop loss and (equal) take profit. Those are set as safety measure, they will probably need to be modified after a position is opened.
+If necessary, it is possible to set saving the chart screenshot at the moment the position is opened, so that it is possible to review the actions later, not the history when everything is clear, but the situation at the time the position was opened, in order to try to remember "why did I do that".
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8657

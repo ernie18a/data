@@ -1,0 +1,10 @@
+This is a version of rsi  that can calculate 7 types of RSI :
+"regular" RSI
+Cuttler's RSI
+Ehlers' smoothed RSI
+Harris' RSI
+Rapid RSI
+RSX
+"Slow" RSI
+Levels for this indicator can be 2 type : floating (if the floating level period is set to > 1) or fixed - the classical way (if the floating levels period is set to <=1). Also, when the price smoothing is turned on (price smoothing period set to >1) it becomes what was commonly known as rsioma. It can use 4 basic types of averages for price smoothing/filtering and combined with the 7 types of rsi it supports, you can now have 7 types of rsioma too.
+Indicator has the usual set of 22 types of prices, usual set of alerts (that is synchronized with the choice of color change for the rsi value, which can be based on slope change, middle level cross or outer level cross , all in accordance to level type settings as described above) and is already a multi time frame version

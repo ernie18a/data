@@ -1,0 +1,11 @@
+The indicator draws candlesticks of a larger timeframe as color filled rectangles using
+DRAW_FILLING
+buffers. Rectangles are color filled in accordance with the colors of the
+AMkA
+indicator dots, if there are any.
+Depending on the trend direction defined by the color of the dot of the source indicator, the candlestick body is painted in green or red, the appropriate shadows are painted in lime or pink.
+The indicator requires the compiled indicator file AMkA.mq5 for operation. Place it to terminal_data_folder\MQL5\Indicators\.
+Figure 1. Indicator BackgroundСandle_AMkA_HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/6999

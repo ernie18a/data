@@ -1,0 +1,4 @@
+Value Charts is a detrended price indicator created by David Stendhal, it shows the overbought and oversold states using the detrended price extremes.
+For a nice description, see the
+"Dynamic Trading Indicators: Winning with Value Charts and Price Action Profile"
+book Mark Helweg and David Stendahl, this book is very good.

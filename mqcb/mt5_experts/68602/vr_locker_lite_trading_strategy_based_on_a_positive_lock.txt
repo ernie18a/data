@@ -1,0 +1,31 @@
+What is locking?
+Locking is a situation where a trader simultaneously holds a
+long (LONG)
+and a
+short (SHORT)
+position of equal volume on the same asset. As a result:
+Market risk is neutralized
+: profit or loss on one position is offset by the opposite movement of the other.
+The position value is "frozen"
+: the net financial result ceases to depend on market fluctuations.
+The presented VR Locker Lite trading algorithm demonstrates working with one positive lock:
+Operation algorithm:
+The trading robot immediately opens two positions: a buy (BUY) and a sell (SELL).
+Using averaging, the trading robot "widens" the buy (BUY) and sell (SELL) positions.
+Options for further work with the lock:
+The simplest one
+- simply close the lock and start the entire trading cycle anew.
+Unlock the lock
+- leave one of the positions for a longer period and "let the profit grow".
+Enable a trailing stop
+for one of the positions or for both simultaneously.
+Move one of the positions to breakeven
+and "let the profit grow".
+Start the algorithm on another financial instrument or with another MagicNumber to create another positive lock.
+Important things not to forget:
+Double commissions and swaps: You pay a commission for opening and (in the future) closing two positions instead of one. In forex, there may be a negative swap (rollover fee) on one of the positions.
+Capital lock-up: The margin (collateral) for the locked position is still frozen. You cannot use these funds for other trades.
+Complication of analysis: You still have to decide which side of the lock to close and when. This is often more difficult than the initial entry.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/68602

@@ -1,0 +1,11 @@
+Author: Coders Guru
+Adviser EMA Cross Contest Hedged. Uses indicators:
+Macd
+and
+MA
+.
+------------------------------
+Parameters testing
+Symbol: EURUSD.
+Period: M30.
+Model: All tiks.

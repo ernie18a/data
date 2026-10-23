@@ -1,0 +1,28 @@
+Indicator
+FineTuningMACandle_Chl_Arr
+that additionally indicates the trend strength with colored dots, based on the standard deviation algorithm.
+If the standard deviation of the FineTuningMACandle_Chl_Arr centerline is between the values of parameters dK1 and dK2, then a small colored dot appears on the moving average. Its color is relevant to the current trend direction.
+input
+double
+dK1=
+1.5
+;
+// Square-law filter coefficient 1
+input
+double
+dK2=
+2.5
+;
+// Square-law filter coefficient 2
+If the standard deviation becomes higher than the value of input dK2, then the dot increases in size. Thus, we get three levels of trend strength indicated.
+Weak — no dots;
+Medium — small colored dots;
+Strong — big colored dots.
+The initial indicator candle color is passed by the signal line color.
+The indicator uses the classes of library SmoothAlgorithms.mqh (to be copied to <terminal_data_directory>\MQL5\Include). The use of the classes was thoroughly described in article
+Averaging Price Series for Intermediate Calculations without Using Additional Buffers
+.
+Fig1. Indicator FineTuningMACandle_Chl_Arr_StDev
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22804

@@ -1,0 +1,11 @@
+This indicator is based on the
+Stochastic oscillator crossover strategy
+, where trading signals are generated when the %K line crosses the %D line. It provides both
+real-time alerts
+and
+confirmed signals
+once a bar closes, helping traders identify momentum shifts and potential reversals quickly.
+Buy Signal: A bullish crossover occurs when %K rises above %D in the oversold zone.
+Sell Signal: A bearish crossover occurs when %K falls below %D in the overbought zone.
+Real-time Alerts: Arrows and notifications show potential setups before the bar closes.
+Confirmed Alerts: Arrows and optional vertical lines mark validated signals on closed bars.

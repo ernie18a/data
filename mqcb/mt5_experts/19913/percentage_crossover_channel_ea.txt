@@ -1,0 +1,63 @@
+The Expert Advisor uses the
+Percentage_Crossover_Channel
+indicator.
+The strategy is simple:
+The mode of trading based on channel borders:
+If the Low price of the first bar has crossed or touched the lower border downwards, a Buy position is opened;
+If the High price of the first bar has crossed or touched the upper border upwards, a Sell position is opened;
+If the reverse mode is enabled, Sell is opened instead of Buy and vice versa.
+Mode of trading based on the midline intersection:
+If the Close price of the first bar has crossed the middle line downwards, a Buy position is opened;
+If the Close price of the first bar has crossed the middle line upwards, a Sell position is opened;
+If the reverse mode is enabled, Sell is opened instead of Buy and vice versa.
+It is a swing Expert Advisor, which can only have one position in the market. If a buy signal emerges and there is an open sell position, such a position will be closed and a buy position will be opened. The opposite is true for sell signals.
+The Expert Advisor can reverse indicator signals to open Sell instead of Buy and vice versa. You can also set stop loss and take profit in points. If invalid Stop Loss and Take Profit values are specified, the EA will adjust the values to the minimum
+StopLevel
+allowed for the symbol.
+The Expert Advisor will also adjust the lot in case an incorrect value is specified. If the lot is too large, the EA will adjust it in order to be able to open a position. If there is no money for opening even the minimum lot, the signal will be skipped.
+For a proper operation, the EA needs the compiled indicator file
+Percentage_Crossover_Channel
+.
+Also note that the Expert Advisor is designed for training and strategy testing purposes.
+The EA has ten input parameters:
+Experts magic number
+- a unique identifier for the EA's positions;
+Percent
+- the indicator parameter, which sets the channel width;
+Applied price
+- the indicator parameter;
+Trade at the intersection of the middle line
+- enable/disable trading based in the middle line intersection;
+Reverse trade
+- enable/disable the reverse mode;
+Lots
+- the volume of positions to open;
+Stop loss in points
+- Stop Loss value in points;
+Take profit in points
+- Take Profit value in points;
+Slippage of price
+- allowable slippage;
+Multiplier spread for stops
+- spread multiplier for calculating a correct distance for stop orders.
+For Stop Loss and Take Profit orders (as well as pending orders), there is a minimum allowed distance for placing such orders -
+StopLevel
+. I.e. Stop Loss and Take Profit (as well as pending orders) cannot be placed closer than this distance to the price. If
+StopLevel
+is zero, it does not mean its absence, it only means that
+StopLevel
+is floating. In this case, the minimum distance is usually equal to spread*, but sometimes even the double spread is not enough. So, this parameter allows specifying a custom multiplier for the spread used to calculate the minimum distance for placing stop orders.
+To check the strategy, two tests were performed on EURUSD H1, using data in the interval from 2017.01.02 to 2018.01.19, in two modes: default (at channel borders) and at the intersection of the middle line.
+Fig.1. Testing graph of trading using channel borders on EURUSD H1 2017.01.02 - 2018.01.19
+Fig.2. Testing results of trading using channel borders on
+EURUSD
+H1 2017.01.02 - 2018.01.19
+Fig.3. Testing graph of middle line crossover trading on
+EURUSD
+H1 2017.01.02 - 2018.01.19
+Fig.4. Testing results of middle line crossover trading on
+EURUSD
+H1 2017.01.02 - 2018.01.19
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19913

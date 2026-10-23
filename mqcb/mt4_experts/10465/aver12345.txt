@@ -1,0 +1,73 @@
+Description:
+AVer12345 is a new version of Aver4Sto+Postzigzag (Set-up for USDJPY only).
+Strategy Tester Report
+Aver12345 FxPro.com-Demo02 (Build 229)
+Symbol
+USDJPY (US Dollar vs Japanese Yen)
+Period
+5 Minutes (M5) 2011.05.02 00:00 - 2011.09.27 23:55 (2011.05.02 - 2011.09.28)
+Model
+Every tick (the most precise method based on all available least timeframes)
+Parameters
+LotsOptimized="====== LotsOptimized ======"; MoneyManagement=true; UseMinilot=true; Lots=0.1; MaximumRisk=0.1; MinLot=0.1; Stoploss_Takeprofit="====== Setup Stoploss/Takeprofit ======"; MyStopLoss=800; MyTakeProfit=0; Stopoutlevel=50; Nextopenposition_in_point="====== Nextopenposition in point ======"; Nextopenposition=150; Delay_open_in_point="====== Delay open in point ======"; Delay=0; Maxiposition=5; Close_Optimized="====== Close_Optimized ======"; Closebyprofit=false; Needprofit=1000; Losscan=500; TimeFrame="====== TimeFrame ======"; TimeFrameM1=false; TimeFrameM5=true; TimeFrameM15=true; TimeFrameM30=false; TimeFrameM60=false; TimeFrameM240=false; IndicatorsPeriod="====== Indicators Period ======"; iStochPeriod=26; iWPRPeriod=26; PostzigzagPeirod=14;
+Bars in test
+31175
+Ticks modelled
+7714138
+Modelling quality
+n/a
+Mismatched charts errors
+4135
+Initial deposit
+500.00
+Total net profit
+3478.14
+Gross profit
+7587.70
+Gross loss
+-4109.56
+Profit factor
+1.85
+Expected payoff
+64.41
+Absolute drawdown
+362.63
+Maximal drawdown
+2692.16 (85.45%)
+Relative drawdown
+85.45% (2692.16)
+Total trades
+54
+Short positions (won %)
+14 (64.29%)
+Long positions (won %)
+40 (62.50%)
+Profit trades (% of total)
+34 (62.96%)
+Loss trades (% of total)
+20 (37.04%)
+Largest
+profit trade
+987.03
+loss trade
+-418.23
+Average
+profit trade
+223.17
+loss trade
+-205.48
+Maximum
+consecutive wins (profit in money)
+9 (1911.30)
+consecutive losses (loss in money)
+9 (-2154.16)
+Maximal
+consecutive profit (count of wins)
+2156.67 (3)
+consecutive loss (count of losses)
+-2154.16 (9)
+Average
+consecutive wins
+5
+consecutive losses
+3

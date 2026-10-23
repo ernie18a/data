@@ -1,0 +1,49 @@
+Author of the idea
+:
+Iurii Tokman
+,
+mq5 code author
+:
+barabashkakvn
+.
+The Expert Advisor opens positions at the specified time. You can set separate permissions for opening Buy and Sell positions. You can also configure the EA to close positions at a certain time. Also, it is possible to set stop loss, take profit, and trailing stop.
+Input Parameters
+Position closing options
+Use position closing time
+- the flag sets whether to use or not time-based position closing.
+Closing hour
+- target hour for closing.
+Minutes of position closing
+- minutes for closing.
+Trailing
+- the use of the trailing stop function.
+Trailing stop (in pips)
+- trailing stop value.
+Trailing step (in pips)
+- trailing step value.
+Position opening settings
+Opening hour
+- position opening hour.
+Minutes of position opening
+- position opening minutes.
+Duration in seconds
+- the duration of period for position opening.
+Use Sell
+- allowing the EA to open Sell positions.
+Use Buy
+- allowing the EA to open Buy positions.
+Volume transaction
+- the volume of positions.
+StopLoss (in pips)
+- Stop Loss value.
+TakeProfit (in pips)
+- Take Profit value.
+Advisor Options
+MagicNumber
+- magic.
+It is recommended to optimize the EA in two steps. AT the first step, optimize only important parameters:
+Then select the best variant, disable settings form the first step and enable the rest of parameters.
+One of the results on EURUSD,H1:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19089

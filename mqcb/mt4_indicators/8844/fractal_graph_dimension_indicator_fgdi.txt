@@ -1,0 +1,14 @@
+This a rework of a script by iliko called Fractal dimension and that can be found here: https://www.mql5.com/en/code/7758
+In there, I corrected two minor errors, and added a calculation and representation of the standard deviation of the estimation of the box-counting dimension. The two minor errors were the following:
+- At line 199:
+Instead of :
+for( iteration=0; iteration < g_period_minus_1; iteration++ )
+It should be :
+for( iteration=0; iteration <= g_period_minus_1; iteration++ )
+- At line 213:
+Instead of :
+fdi=1.0 +(MathLog( length)+ LOG_2 )/MathLog( 2 * e_period );
+It should be :
+fdi=1.0 +(MathLog( length)+ LOG_2 )/MathLog( 2 * g_period_minus_1);
+For further details, see my blog: http://fractalfinance.blogspot.com/
+Here is what it looks like on a daily chart for EUR/USD, the lower window represents the original fractal dimension by iliko, and the moving average is the FRASMA I published earlier:

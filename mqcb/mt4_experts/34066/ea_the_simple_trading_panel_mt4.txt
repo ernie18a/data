@@ -1,0 +1,13 @@
+INTRODUCTION :
+The simple trading panel is a trading tool that is very interesting because it will allow you to predefine your StopLoss and your TakeProfit in term of pips. You can also predefine the number of trades, the position size and which tradable instrument you want to trade. This trading tool can be used for scalping, day-trading, swing trading & investing.
+THE STORY BEHIND THIS TRADING TOOL:
+The story behind developing this trading tool is that I struggled a lot when I use to scalp so I wasn't fast enough to place my StopLoss and TakeProfit especially when the market was super volatile. Besides, many times my computer crashed the moment I clicked on Buy/Sell and I couldn't also place my SL/TP. Let's not forget about Internet provider; I also faced difficulties because I had problems with my Internet provider. So that is why I've decided to create this simple trading panel to avoid these technical problems.
+HOW TO USE IT :
+You can check the following video that will explain how to use this trading tool
+PARAMETERS :
+This EA has 5 inputs, which are
+NB: number of trades
+SL: stop loss in terms of pips
+VOL: position size
+TP: take profit in terms of pips
+SYM: choosing the symbol

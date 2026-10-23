@@ -1,0 +1,5 @@
+Denis Meyers that invented Polychromatic Momentum, describes it as:
+Momentum is defined as the difference, or percent change, between the current bar and a bar some lookback period in the past. The major problem with using momentum based indicators is that the optimum lookback period seems to change over time creating losses with the current chosen lookback period.
+To avoid the errors due to a single lookback period we create an indicator that takes an weighted average of all significant lookback periods for the tradable. We named this indicator
+polychromatic
+because poly means many and chromatic means colors. Thus, Polychromatic Momentum for this indicator translates into the sum of many Momentums.

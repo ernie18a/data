@@ -1,0 +1,8 @@
+The indicator finds Doji candlesticks and highlights them on a chart using colored arrows.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 24.09.2007.
+Figure 1. The Doji_Arrows indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2214

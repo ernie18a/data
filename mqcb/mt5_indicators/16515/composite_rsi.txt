@@ -1,0 +1,6 @@
+RSI with the possibility of price smoothing before calculating the RSI. This allows for additional signal filtering.
+The input paramerets are the RSI calculation period, the method for calculating the smoothing line (simple MA, EMA etc.). As usual, inputs provide a standard set of 22 types of price.
+Overbought and oversold areas are filled with the selected color.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16515

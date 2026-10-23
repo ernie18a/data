@@ -1,0 +1,1 @@
+Deviation scaled moving average as described in the “The Deviation-Scaled Moving Average.” article of July 2018 TASC

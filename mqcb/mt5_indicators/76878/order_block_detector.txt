@@ -1,0 +1,83 @@
+Order Block Detector
+The idea behind it
+Before a strong impulsive move, there is usually one last candle going the "wrong" way — the final sell candle before price rips higher, or the final buy candle before price collapses. That candle is read as the footprint of the order flow that fueled the move: the zone it occupies is where a large position was likely built before the breakout. This indicator formalizes the detection in three steps: confirm genuine fractal swing points, watch for a close that breaks decisively past one of them with a real-bodied impulse candle (not a weak doji push), and then look backward from that break for the last opposing candle — that candle's range becomes the order block.
+Like the gap and liquidity-sweep detectors in this series, a zone here is genuinely live: while unmitigated it keeps stretching forward to the current bar, and the instant price trades back into it, the box freezes exactly at that bar and (by default) turns gray — so at a glance you can tell which zones are still "untested" and which have already been revisited.
+How to interpret it
+Bullish order block
+(default green/white) — the last down-closing candle before an impulsive close above a recent swing high. Untested supply-turned-demand; often watched as potential support on a pullback.
+Bearish order block
+(default red) — the last up-closing candle before an impulsive close below a recent swing low. Untested demand-turned-supply; often watched as potential resistance on a bounce.
+An extending (colored) zone
+— still unmitigated; its right edge keeps moving forward live with
+InpExtendUntilMitigated
+enabled (default), or stops after a fixed
+InpExtendBars
+bars if disabled.
+A frozen, gray zone
+— price has traded back into it — the block is mitigated, and its box stopped exactly at that bar. Set
+InpHideMitigatedOBs
+to delete mitigated zones instead of graying them out.
+"Break" candle vs. the order block itself
+— the order block is the opposing candle, not the impulsive one; the impulsive candle is only used to confirm the structure break and is never drawn as a zone itself.
+External variables (inputs)
+Input
+Default
+Purpose
+InpSwingLookback
+5
+Bars required on each side of a candidate bar for it to be confirmed as a swing high/low.
+InpMinBreakPoints
+30
+Minimum distance, in points, a close must push beyond a swing level to count as a genuine structure break.
+InpMinImpulseBodyPercent
+50.0
+Minimum body-to-range percentage the breaking candle must have — filters out weak, wick-heavy "breaks."
+InpMaxSearchBarsForOB
+10
+How many bars back from the break candle to search for the opposing order-block candle.
+InpUseBodyOnly
+false
+Uses the order-block candle's body only, instead of its full high-low wick range, for the zone.
+InpMinZoneSizePoints
+30
+Minimum zone size, in points, for a detected order block to be drawn.
+InpMaxOBsToTrack
+30
+Maximum number of order blocks kept on the chart at once; the single oldest tracked block is dropped whenever a new one exceeds this cap.
+InpExtendUntilMitigated
+true
+When true, an unmitigated block's zone keeps extending live to the current bar; when false, it stops after a fixed number of bars.
+InpExtendBars
+40
+Fixed extension length (in bars), used only when InpExtendUntilMitigated is false.
+InpRequireFullCloseForMitigation
+false
+When true, a candle must close inside the zone to mitigate it; when false, any wick touching the zone is enough.
+InpHideMitigatedOBs
+false
+When true, a block's zone is deleted the moment it's mitigated instead of being grayed out and kept.
+InpBullishOBColor / InpBearishOBColor
+Lime / Red
+Colors for unmitigated bullish and bearish order-block zones.
+InpMitigatedColor
+Dim Gray
+Color a zone changes to once mitigated (when not hidden).
+InpFillBox
+true
+Whether order-block zones are filled or drawn as outlines only.
+InpBoxStyle / InpBoxWidth
+Solid / 1
+Border style and width of every zone.
+InpShowLabels
+true
+Shows a text label with the zone's price next to each order block.
+Recommended use
+Works on any symbol and any timeframe; structure-break and order-block concepts are pure price action with no symbol-specific assumptions, though — like any fractal-pivot method —
+InpSwingLookback
+trades off level significance against detection frequency the same way it does in this series' Liquidity Sweep Detector. Structure breaks and mitigation are both evaluated only on fully closed bars by design, so a block will not appear or disappear mid-candle while the current bar's high/low/close are still changing.
+InpMinImpulseBodyPercent
+exists specifically to avoid tagging a barely-there close as a "break" — a candle that only just pokes past a swing level with a large wick and a small body is excluded, since that is closer to noise than genuine displacement. On very long chart histories,
+InpMaxOBsToTrack
+keeps the object count bounded rather than letting every historical order block accumulate indefinitely. This indicator only reads price data and never places, modifies, or closes any order, so it is safe to run on any account type.
+All chart objects are created under a single internal name prefix and are fully removed via ObjectsDeleteAll() in OnDeinit() when the indicator is detached, so it leaves nothing behind on the chart.
+Fig. 1. A bullish order block confirmed by the impulsive break candle, later mitigated, on XAUUSD M15. Rendered in black and white per the Code Base image guidelines (750×500 px).

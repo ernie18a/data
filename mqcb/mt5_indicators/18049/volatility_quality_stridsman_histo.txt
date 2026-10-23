@@ -1,0 +1,5 @@
+Volatility quality Stridsman indicator (
+Thomas Stridsman
+is the inventor of that indicator, and this version is coded the way how original version is, not like some variations that are commonly used) — histogram version.
+This version, unlike the "regular" version, plots only 1 value:
+a histogram that is indicating the short term direction of the VQ slope

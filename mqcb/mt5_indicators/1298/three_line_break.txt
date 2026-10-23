@@ -1,0 +1,7 @@
+The charts of linear reversal represent a series of vertical boxes (lines) which direction and size are determined by dynamics of prices. This type of charts is drawn on close prices and considers neither timeframe, nor volume.
+The main advantage is lack of a freely defined reversal value as far as it is signaled by the market behavior. The chart sensitivity of the three linear breakthrough can be regulated by changing number of lines that market should break to design the reversal.
+Recommendations:
+The general recommendation is a buy after appearance of a blue box after a series of red boxes, and a sell after appearance of a red box after a series of blue boxes. However, as in many cases, brute force solution of task will be optimal. Therefore, in my opinion it is better to use a linear breakthrough in combination with other instruments and find their own patterns (in TLB charts).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1298

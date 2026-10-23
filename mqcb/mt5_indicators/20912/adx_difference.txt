@@ -1,0 +1,15 @@
+A simple oscillator showing the difference between the values of standard indicators ADX and ADX as of N periods ago.
+It has three input parameters:
+ADX Period
+- ADX calculation period;
+Difference
+- number of periods ago;
+Applied price
+- ADX calculation price.
+Calculations:
+ADX Difference = ADX[i] - ADX[i-Difference]
+where:
+ADX - Average Directional Movement Index with the calculation period of Period
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20912

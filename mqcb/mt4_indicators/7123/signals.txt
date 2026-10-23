@@ -1,0 +1,5 @@
+Author: Nick Bilak
+A solution for those who can not devote much time to the analysis of the current situation on the Forex market and to making correct and confident decisions.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7123

@@ -1,0 +1,7 @@
+Author: SFK Corp
+Adviser Gaps.
+------------------------------
+Parameters of testing
+Symbol: EURUSD.
+Period: M15.
+Model: All tics.

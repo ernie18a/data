@@ -1,0 +1,79 @@
+Donchian Ultimate MetaTrader indicator
+— is a classic
+Donchian channel
+indicator with multiple features added:
+Variable period and shift of the Donchian channel.
+The middle line that can be turned off.
+Support for multi-timeframe (MTF) operation.
+5 different calculation methods for the channel borders.
+Optional support and resistance zones near the main Donchian channel's borders.
+A comprehensive alert system.
+A high level of customization accord to your trading needs.
+The indicator is drawn in the main window and doesn't use any standard or custom indicators in its code. Donchian Ultimate is available for the MT4, MT5, and cTrader trading platforms.
+Input parameters
+Period
+(default = 20) — the Donchian channel period.
+Timeframe
+(default = Current) — the timeframe to calculate the channel on. If you set it to a timeframe that is higher than the current one, the indicator will display a higher timeframe channel on the current chart. The parameter is ignored if set to a timeframe that is lower than the current one.
+PriceType
+(default = Highest High (Lowest Low)) — the type of prices to use in calculations. Can be one of the five modes:
+Highest High (Lowest Low)
+— the classic Donchian channel configuration with the upper band calculated as the Highest High of the period and the lower band calculated as the Lowest Low of the period.
+Average Highest High, Highest Open (Lowest Low, Lowest Open)
+— the upper band is calculated as the average between the Highest High and the Highest Open of the period and the lower band is calculated as the average between the Lowest Low and the Lowest Open of the period.
+Average Highest High, Highest Close (Lowest Low, Lowest Close)
+— the upper band is calculated as the average between the Highest High and the Highest Close of the period and the lower band is calculated as the average between the Lowest Low and the Lowest Close of the period.
+Highest Open (Lowest Open)
+— the upper band is calculated as the Highest Open of the period and the lower band is calculated as the Lowest Open of the period.
+Highest Close (Lowest Close)
+— the upper band is calculated as the Highest Close of the period and the lower band is calculated as the Lowest Close of the period.
+Shift
+(default = 0) — the indicator's shift in bars.
+Show Resistance Span
+(default = true) — if
+true
+, the upper resistance span will be displayed on the chart.
+Show Support Span
+(default = true) — if
+true
+, the lower support span will be displayed on the chart.
+Alert Candle
+(default = Previous) — the candle to issue alerts on:
+Previous
+— the most recently closed candle or
+Current
+— the yet unfinished candle.
+Alert About Bullish Crossing of Mid Line
+(default = true) — if
+true
+, the indicator will issue alerts when a candle closes crossing the middle line from below.
+Alert About Bearish Crossing of Mid Line
+(default = true) — if
+true
+, the indicator will issue alerts when a candle closes crossing the middle line from above.
+Alert About Candle Close Inside Resistance
+(default = true) — if
+true
+, the indicator will issue alerts when a candle closes inside the resistance zone.
+Alert About Candle Close Inside Support
+(default = true) — if
+true
+, the indicator will issue alerts when a candle closes inside the support zone.
+Show Alert
+(default = false) — if
+true
+, indicator will use MetaTrader's native pop-up alerts.
+Send Email
+(default = false) — if
+true
+, indicator will use MetaTrader's email alerts. Email should be properly configured in MetaTrader via
+Tools->Options->Email
+.
+Send Notification
+(default = false) — if
+true
+, indicator will use MetaTrader's push notification alerts. Notifications should be properly configured in MetaTrader via
+Tools->Options->Notifications
+.
+Example and strategy
+As with the classic Donchian channel indicator, Donchian Ultimate cannot be used to generate buy and sell signals on its own. What it can do is demonstrate the current situation with the trend and how close the price is to changing direction or extending the trend. As you can see on the chart below, the upper band rises steadily when a trend starts, while both bands start go sideways when the currency pair is consolidating:

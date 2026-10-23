@@ -1,0 +1,6 @@
+This version of the iMAX indicator is an example of how methods used in iMAX3 can be more fully developed into useful trading tools, especially programming the amplitude phase shifts for the higher speed hp trend detection modes introduced in iMAX3. This version is also liberally commented to aid in better understanding the mechanics of all the iMAX indicators.
+Optional display of trend arrows.
+Optional trend arrow sizes.
+Optional color selections for all phases and trend arrows.
+Optional generation of trend change alerts.
+Optional Trend detection mode selections. Functions with 20 approved currency pairs in iMAX hp modes or universally in iMAX mode 0.

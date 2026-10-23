@@ -1,0 +1,40 @@
+Real author:
+Igor Kim
+The indicator of the ranges of unrestricted time intervals.
+This is an intraday indicator displaying the height of trade ranges inside a trading day. The operation principle is as follows. Two temporary points are taken from the external parameters and minimum and maximum values between them are determined. These values are shown as horizontal lines in the indicator.
+This indicator is useful for testing both breakdown and rollback strategies.
+The following parameters can be configured in the indicator:
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+string
+Time1 =
+"02:00"
+;
+// Temporary point 1
+input
+string
+Time2 =
+"07:00"
+;
+// Temporary point 2
+input
+uint
+nDays =
+2
+;
+// Number of days for calculation (0-all)
+input
+int
+Shift=
+0
+;
+// Horizontal shift of the indicator in bars
+i-AnyRange
+This indicator was first implemented in MQL4 and
+published
+13.02.2012 (in Russian).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/982

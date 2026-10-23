@@ -1,0 +1,8 @@
+The market is often accelerates and
+decelerate
+s its movements, so it's not easy to draw the straight lines of support and resistance levels.
+The Price Channel Indicator draws the price channel, its upper and lower boundaries are determined by maximal and minimal prices for a certain period.
+Price Channel indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/44

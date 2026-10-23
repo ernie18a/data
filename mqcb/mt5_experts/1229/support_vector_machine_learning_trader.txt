@@ -1,0 +1,10 @@
+The example Expert Advisor below ("svmTrader") has been written to show a typical use of the support vector machine learning tool (a copy of the support vector machine learning tool can be downloaded from the
+MQL5 Market
+). This Expert Advisor works as follows:
+Two new support vector machines are created using the svMachineTool library. One is setup to signal new 'buy' trades and the other is setup to signal new 'sell' trades.
+Seven standard indicators are initialized with each of their handles stored to an integer array (Note: any combination of indicators can be used as inputs, they just need to be passed to the svm in a single integer array).
+The array of indicator handles are passed to the new support vector machines.
+Using the array of indicator handles and other parameters, historical price data is used to generate accurate inputs and outputs to be used for training the support vector machines.
+Once all of the inputs and outputs have been generated, both of the support vector machines are trained.
+The trained support vector machines are used in the EA to signal new buy and sell trades. When a new buy or sell trade signal appears, the trade is opened along with manually set Stop Loss and Take Profit orders.
+Hopefully the Expert Advisor will allow you to experiment a little with the Tool. I recommend you copy/change/modify the Expert Advisor to suit your own trading style.

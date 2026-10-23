@@ -1,0 +1,9 @@
+Bollinger Bands
++-3sigma.
+You can change period and sigma ratio (Proper size of Deviation is 0.5~1.0).
+Bollinger Bands
+Indicator (BB) is similar to
+Envelopes
+. The only difference is that the bands of Envelopes are plotted a fixed distance (%) away from the moving average, while the Bollinger Bands are plotted a certain number of standard deviations away from it.
+Standard deviation
+is a measure of volatility, therefore Bollinger Bands adjust themselves to the market conditions. When the markets become more volatile, the bands widen and they contract during less volatile periods.

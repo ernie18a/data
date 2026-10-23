@@ -1,0 +1,6 @@
+Author: Hua Ai (aha)
+Uses indicators: MA and RSI. The description of the adviser in the code.
+-------------------------
+Parameters of testing
+Symbol: EURUSD.
+Model: All tics.

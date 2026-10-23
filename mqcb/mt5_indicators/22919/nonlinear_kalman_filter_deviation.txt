@@ -1,0 +1,12 @@
+Theory:
+We are having various methods of measuring volatility. One is the standard deviation (and all its variations - since standard deviation is using simple moving average - that are using various smoothing methods to calculate the estimated volatility). Each of it has it goods sides, but mainly the speed of response is crucial for volatility estimation.
+This version:
+This indicator is using Ehlers nonlinear Kalman filter (originally published, with some more description, here  :
+Nonlinear Kalman filter
+) for deviation calculation. You can use one of the 4 standard types of averages for pre-smoothing method:
+simple moving average (SMA)
+exponential moving average (EMA)
+smoothed moving average (SMA)
+linear weighted moving average (LWMA)
+Usage:
+As any deviation calculating indicator, it is not a directional indicator (you can not tell the trend just by looking at the indicator). So this indicator is used for volatility assessment and you should use it in very similar way as using the standard deviation indicator.

@@ -1,0 +1,100 @@
+Well Martin EA is based on two indicators: Bollinger Bands and ADX. It is designed for use on a tranquil market.
+After a Stop Loss, the EA increases the lot by
+KLot
+coefficient until it reaches the maximum value —
+MaxLot
+. Then the lot returns to its start size —
+Lot
+.
+The EA has Stealth Mode in which the stops are visible only to the user.
+When breaking through the lower Bollinger Bands boundary, the EA opens a Buy order, when breaking through the higher boundary, it opens a Sell order.
+EURUSD, М15 timeframe.
+Expert Advisor parameters:
+//--- Bollinger Bands indicator input parameters
+input
+int
+BBPeriod  =
+84
+;
+// Bollinger Bands period
+input
+int
+BBShift   =
+0
+;
+// Offset relative to the chart
+input
+double
+BBDev     =
+1.8
+;
+// Standard deviation
+//--- ADX indicator input parameters
+input
+int
+ADXPeriod =
+40
+;
+// ADX period
+input
+int
+ADXLevel  =
+45
+;
+// ADX level
+//--- EA input parameters
+input
+int
+TP        =
+1200
+;
+// Take Profit
+input
+int
+SL        =
+1400
+;
+// Stop Loss
+input
+int
+Slip      =
+50
+;
+// Slippage
+input
+int
+Stelth    =
+0
+;
+// Mode: 1-stops are only visible to the user
+input
+double
+KLot      =
+2
+;
+// Lot multiplier
+input
+double
+MaxLot    =
+5
+;
+// Maximum lot size re-setting it to the start size
+input
+double
+Lot       =
+0.1
+;
+// Number of lots for trading
+input
+color
+LableClr  =
+clrGreen
+;
+// Label color
+Fig.1. Stealth Mode
+Fig.2. Optimization results from 2010 until now
+Tips:
+It is recommended to use this EA only as a basis for your own strategy.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13315

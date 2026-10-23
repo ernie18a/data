@@ -1,0 +1,11 @@
+Theory :
+The original was posted here :
+RSI Slope Divergence
+. This version is extended in a couple of things :
+possible channels background color is added. to avoid drawing channel back color, simply set the color to none (see second example)
+multi time frame support added. apart from the standard time frames supported by the metatrader 5, you have 3 "special" time frames :
+next higher time frame (first time frame higher than the current  chart time frame)
+second higher time frame (second time frame higher than the current  chart time frame)
+third higher time frame (third time frame higher than the current  chart time frame)
+Usage :
+It can be used for divergences detection

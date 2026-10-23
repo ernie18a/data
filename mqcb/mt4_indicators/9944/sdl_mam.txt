@@ -1,0 +1,5 @@
+Description:
+Upgraded version of Slope Direction Line.
+Entry Sell or Exit Buy when Red and Entry Buy or Exit Sell when Blue.
+For conservative trader use this indicator (as exit indicator) together with MA_Mirror (as entry indicator).
+Image:

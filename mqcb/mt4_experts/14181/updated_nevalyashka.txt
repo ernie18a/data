@@ -1,0 +1,7 @@
+The
+Nevalyashka
+, updated to the new requirements off the terminal.
+Once again, the Expert Advisor reverses the orders after closing.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14181

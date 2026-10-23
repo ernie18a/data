@@ -1,0 +1,6 @@
+Author:
+fxbs
+Right corner - direction of price movement; signals from 8(9) TFs (1M-1W) ; up to 8 MAs (def. 5,21,55)
+See:
+forex-tsd.
+Indicator Fansimple8_4men

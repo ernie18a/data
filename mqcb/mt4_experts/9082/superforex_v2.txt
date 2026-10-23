@@ -1,0 +1,3 @@
+Author:
+Rafael Maia de Amorim
+Using RSI(set) with High and Low and trailing stop, i optimize one month with USYJPY, test 1 year back test. Daily chart only.

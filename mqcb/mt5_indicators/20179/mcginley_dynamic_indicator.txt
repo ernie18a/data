@@ -1,0 +1,7 @@
+The McGinley Dynamic indicator is designed to follow prices, avoiding whipsaws that are given when conventional Moving Averages are used.
+Conventional Moving Averages have a fixed period and therefore a fixed speed. As a result, price separation occurs when the price moves rapidly which can lead to unwanted results. The McGinley Dynamic however is designed to adjust speed inline with the market.
+This tool can be used as a substitute for a conventional Moving Average as a trend confirmation indicator or crossover signal.
+There is one input for this indicator:
+MD_smoothing
+- In the same way you choose a period for a Moving Average, choose the period for this indicator. Make this 60% of the period you would otherwise use in a Moving Average. So if your MA period is 20, set this value to 12 for comparative indicator. The default value is 125.
+The pictures below show comparisons between the McGinley Dynamic (Red line) and a simple Moving Average (Blue line). The McGinley Dynamic reacts to price increases sooner whilst also tracking closer to prices and reducing whipsaws.

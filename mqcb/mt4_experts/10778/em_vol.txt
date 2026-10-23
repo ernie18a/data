@@ -1,0 +1,74 @@
+Description:
+This Strategy use ADX and ATR for the volatity, when Adx is < 30 open 1 buy stop and 1 Sell stop in High+ATR (14) and Low-ATR(14) the money management is similar Sophia1.1
+Strategy Tester Report
+EM_VOL
+EGlobal-PAMM (Build 427)
+Symbol
+EURUSD (Euro vs US Dollar)
+Period
+1 Hour (H1) 2012.02.08 00:00 - 2012.06.25 21:00
+Model
+Every tick (the most precise method based on all available least timeframes)
+Parameters
+MMType=1; UseClose=false; UseAdd=true; LotExponent=1.2; slip=3; Lots=0.02; LotsDigits=2; TakeProfit=100; Stoploss=500; TrailStart=10; TrailStop=10; PipStep=100; MaxTrades=30; UseEquityStop=false; TotalEquityRisk=20; UseTrailingStop=true; UseTimeOut=false; MaxTradeOpenHours=2; MaximumRisk=0.001;
+Bars in test
+2452
+Ticks modelled
+927548
+Modelling quality
+90.14%
+Mismatched charts errors
+9
+Initial deposit
+10000.00
+Total net profit
+250.82
+Gross profit
+514.67
+Gross loss
+-263.86
+Profit factor
+1.95
+Expected payoff
+0.71
+Absolute drawdown
+297.54
+Maximal drawdown
+330.30 (3.29%)
+Relative drawdown
+3.29% (330.30)
+Total trades
+352
+Short positions (won %)
+202 (72.28%)
+Long positions (won %)
+150 (52.67%)
+Profit trades (% of total)
+225 (63.92%)
+Loss trades (% of total)
+127 (36.08%)
+Largest
+profit trade
+83.14
+loss trade
+-35.70
+Average
+profit trade
+2.29
+loss trade
+-2.08
+Maximum
+consecutive wins (profit in money)
+19 (38.66)
+consecutive losses (loss in money)
+7 (-81.96)
+Maximal
+consecutive profit (count of wins)
+84.36 (6)
+consecutive loss (count of losses)
+-81.96 (7)
+Average
+consecutive wins
+4
+consecutive losses
+2

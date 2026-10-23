@@ -1,0 +1,4 @@
+Author: Forex-Experts
+Expert Advisor ASC++.
+Attention: it has manual confirmation of trades disabled on default!
+The trailing stop is absent, also there are problems with YEN pairs. It drains off on a flat. It evades the swaps (closes orders at 23:59 and then opens them).

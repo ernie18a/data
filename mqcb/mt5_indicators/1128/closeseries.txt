@@ -1,0 +1,13 @@
+It is used in combination with the other indicators and prompts exit points on short-term trend trading.
+Internal closing (gray line) indicates closing which is located within the range of the previous bar. The series of such closings speak of "creeping" or horizontal movement. The longer the series, the more likely for a breakthrough, respectively, define the point (points) of entry using the other instruments.
+External/net closing (purple line) is a closing located above high and below low of the previous bar. Usually the series of the external closings include 3-5 bars and speak of either flat will run, or the price reverse.
+Single direction closing (blue line) is a current bar which closes in the same direction as the previous bar. The appearsance of such series speaks that short-term trend is terminated.
+Each line's value is the number of bars in the corresponding series.
+Recommendations:
+It is recommended to use on older timeframes in combination with the other indicators.
+When a series of 3-4 external closings appears, close or at least defend the position.
+When a series of 4 or more closings appears, close or defend the deal.
+It is important: series of external and single directed bars are not the signals of reverse, but they testify of a current short-term trend termination.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1128

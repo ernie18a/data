@@ -1,0 +1,22 @@
+Key Features:
+Dual Display:
+Automatically calculates and shows price changes in both
+pips
+(below the candle) and
+percentage
+(above the candle).
+Two Measurement Modes:
+Close-to-Close (default):
+Compares the current candle's close price to the previous candle's close to measure inter-candle volatility.
+Close-to-Open:
+Compares the close and open prices of the same candle to measure its body size.
+Flexible Customization:
+Easily change colors for gains/losses and set a minimum pip threshold ( PipsLimit ) to filter out insignificant movements.
+Performance Optimized:
+Limit the number of historical bars to process ( MaxBars ) to ensure the indicator runs smoothly.
+Input Parameters:
+CloseToClose : Set to true to compare with the previous candle, or false to measure the current candle.
+PipsLimit : Only displays information if the candle moves more than this number of pips.
+DisplayLossColor : Color for price drops.
+DisplayGainColor : Color for price gains.
+MaxBars : The maximum number of past bars the indicator will calculate.

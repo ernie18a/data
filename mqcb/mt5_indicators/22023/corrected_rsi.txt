@@ -1,0 +1,2 @@
+RSI that is attempting to determine the periods of flat and trending periods.
+Regular RSI value is also displayed (in order to help to determine a trend) but the main value is the "corrected" value. Usage should be simple: possible trend change on a color change. For "trend traders" possible usage of longer periods is advised.

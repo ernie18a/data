@@ -1,0 +1,38 @@
+RealCost Spread P95 Logger MT5 is an open source utility for measuring spread behavior on the current MetaTrader 5 chart symbol.
+What it does
+The Expert Advisor samples the current spread and displays a compact chart panel with current spread, average spread, p50, p90, p95, p99, maximum spread, sample count, optional alert status, the percentage of samples above the configured threshold and the optional local CSV file name.
+This tool is intended for spread observation and session comparison. It does not open trades, modify orders, close positions, send data to external services or provide buy or sell signals.
+Why p95 spread is useful
+Average spread can hide short spikes. A symbol may look normal most of the time, but a few spread spikes around rollover, news, session changes or thin liquidity can still affect short-term systems.
+p95 spread answers a practical question: what spread level covers most of the observed samples while ignoring the single worst outlier? p99 and maximum spread give extra context when you want to inspect tail behavior.
+Typical use cases
+- Compare spread behavior between symbols.
+- Watch rollover, news windows or session changes.
+- Collect local CSV data before running a manual plan, EA, scalper, grid system or copy-trading setup.
+- Check whether the current trading environment matches the assumptions of a strategy.
+Inputs
+InpSampleSeconds - spread sample interval in seconds.
+InpMaxSamples - maximum number of samples kept in memory.
+InpAlertSpreadPoints - alert if spread is at or above this value. Set it to 0 to disable alerts.
+InpAlertCooldownSeconds - minimum seconds between repeated alerts.
+InpPopupAlerts - enable popup alerts.
+InpPushNotifications - enable mobile push notifications.
+InpWriteCsv - write a local CSV file.
+InpUseCommonFilesFolder - write the CSV file to the common terminal files folder.
+InpFilePrefix - CSV file prefix.
+InpCsvWriteSeconds - CSV write interval.
+InpShowPanel - show the chart panel.
+InpPanelCorner, InpPanelX and InpPanelY - panel placement.
+Panel color inputs - panel background, text, accent and warning colors.
+CSV columns
+time, symbol, bid, ask, spread_points, sample_count, avg_spread_points, p50_spread_points, p90_spread_points, p95_spread_points, p99_spread_points, max_spread_points, alert_threshold_points, above_threshold_percent
+How to use
+1. Compile the MQ5 file in MetaEditor.
+2. Attach the Expert Advisor to the chart symbol you want to measure.
+3. Leave it running during the session you care about.
+4. Check the panel values on the chart.
+5. Use the exported CSV file if you want to compare multiple sessions later.
+Notes
+- The utility uses local terminal files only.
+- It does not require DLLs or WebRequest.
+- It is a monitoring and educational example, not a trading system.

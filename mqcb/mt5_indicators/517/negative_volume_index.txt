@@ -1,0 +1,9 @@
+Negative Volume Index (NVI) draws a connection between the volume downfall and financial instrument price change. In case the volume decreases compared to the previous day, NVI is defined by the price percentage change.
+NVI indicator is designed so that its value changes only when the current day volume is lower than the previous day one. Due to the fact that the prices fall is often connected with decreasing volumes, NVI usually changes towards a downtrend.
+The following assumption is implemented in NVI interpretation. At the time when trading activity is booming and the volume is going up, amateur investors who follow the crowd are most active. In the opposite case, when the volume is decreasing, the market is controlled by professionals making smart money. Therefore, NVI values changes (as it was already noted, NVI changes only when the volume is falling) show that the time for making "smart money" on the market has come.
+In his book
+"Stock Market Logic: A Sophisticated Approach to Profits on Wall Street"
+Norman Fosback shows that, if NVI of Dow Industrials index is higher than its one-year moving average, the market is bullish in 95 out of 100 cases.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/517

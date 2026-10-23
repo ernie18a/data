@@ -1,0 +1,2 @@
+Author: klot.
+DT-RSI-Sig indicator.

@@ -1,0 +1,206 @@
+Backtest EURUSD 01/03/2025 - 20/01/2026 Timeframe M5 (
+ONNX AI training specifically for M5-M15
+)
+Backtest GBPUSD 01/03/2025 - 20/01/2026 Timeframe M5 (ONNX AI training specifically for M5-M15)
+1. General Overview
+SidewaysMartingale
+is an Expert Advisor designed to trade
+sideways (range-bound) markets
+using a
+martingale recovery strategy
+, enhanced with an
+AI-based trend detector
+implemented via an
+ONNX model
+.
+The EA combines:
+AI trend classification (Sideway / Bullish / Bearish)
+Envelopes indicator for range-based entries
+Controlled martingale position scaling
+Profit-based basket closing
+Margin-based emergency stop
+The core idea is:
+Trade only when the market is statistically classified as sideways, and avoid adding martingale positions when a strong trend is detected.
+2. AI Trend Detector (ONNX Integration)
+ONNX Model Output
+The ONNX model returns:
+A predicted label (not directly used)
+A probability vector with
+three probabilities
+:
+Variable
+Meaning
+prob_side
+Probability that the market is
+sideways / ranging
+prob_bull
+Probability that the market is
+bullish (uptrend)
+prob_bear
+Probability that the market is
+bearish (downtrend)
+These probabilities are extracted as:
+float
+prob_side = prob_data[
+0
+].values[
+0
+];
+float
+prob_bull = prob_data[
+0
+].values[
+1
+];
+float
+prob_bear = prob_data[
+0
+].values[
+2
+];
+3. Feature Engineering (AI Inputs)
+The EA feeds
+9 engineered features
+into the ONNX model:
+Feature Index
+Description
+f[0]
+EMA200 slope (trend direction & strength)
+f[1]
+Price distance from EMA200
+f[2]
+ATR value (volatility)
+f[3]
+Candle range normalized by ATR
+f[4]
+Breakout pressure vs previous high
+f[5]
+Candle body dominance
+f[6]
+Day of week
+f[7]
+Hour of day
+f[8]
+Previous candle direction
+These features allow the AI model to detect:
+Market volatility
+Trend strength
+Time-based behavioral patterns
+Price structure behavior
+4. Sideways Market Detection Logic
+A market is considered
+sideways
+when:
+bool
+is_sideway = (prob_side >= InpAISidewayThreshold);
+Example:
+If InpAISidewayThreshold = 0.70
+Then
+at least 70% confidence
+is required to classify the market as sideways
+👉
+No new trades are opened unless this condition is met
+5. Entry Logic (Scalping in Range)
+The EA uses
+Envelopes
+to detect range extremes.
+Buy Entry
+if
+(price_close <= lower[
+0
+] && is_sideway)
+Price touches or breaks the
+lower envelope
+AI confirms a
+sideways market
+Opens a
+BUY
+position
+Sell Entry
+else
+if
+(price_close >= upper[
+0
+] && is_sideway)
+Price touches or breaks the
+upper envelope
+AI confirms a
+sideways market
+Opens a
+SELL
+position
+💡 This ensures trades are taken
+only at range extremes
+during non-trending conditions.
+6. Martingale Recovery Logic
+When positions already exist, the EA applies a
+distance-based martingale
+:
+New position is opened only if price moves away by a defined pip distance
+Lot size increases using a multiplier ( LotMultiplier )
+Maximum number of trades is limited ( MaxTradesInSeries )
+Distance Check
+if
+(dist >= reqDist)
+7. AI Safety Filter for Martingale
+This is a
+critical risk control mechanism
+.
+Before adding a new martingale position, the EA checks:
+If current series is BUY
+if
+(s_seriesType == POSITION_TYPE_BUY && prob_bear >= InpAISafetyThreshold)
+return
+;
+If current series is SELL
+if
+(s_seriesType == POSITION_TYPE_SELL && prob_bull >= InpAISafetyThreshold)
+return
+;
+🔒 Meaning:
+If AI detects a
+strong opposite trend
+And confidence exceeds InpAISafetyThreshold
+Martingale expansion is stopped
+This prevents:
+Martingale during strong breakouts
+Deep drawdowns caused by trend continuation
+8. Profit Target & Basket Closing
+The EA monitors
+total floating profit
+across all positions:
+if
+(totalProfitUSD >= TakeProfitTargetUSD)
+Once reached:
+All positions are closed
+Martingale series is reset
+EA waits for a new sideways setup
+This approach treats all positions as
+one basket trade
+.
+9. Risk Management
+Margin-Based Emergency Stop
+if
+(((bal - eq)/bal)*
+100.0
+>= StopLossByMarginPercent)
+If equity drawdown exceeds a defined percentage:
+All positions are immediately closed
+Prevents margin call scenarios
+10. Strategy Summary
+Component
+Purpose
+AI Trend Detector
+Classifies market regime
+prob_side
+Allows trading only in ranges
+prob_bull / prob_bear
+Blocks martingale during strong trends
+Envelopes
+Defines range extremes
+Martingale
+Recovery in sideways markets
+Basket TP
+Fast exit after mean reversion
+Margin SL
+Account-level protection

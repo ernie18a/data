@@ -1,0 +1,8 @@
+A typical pipser. It works on the small timeframes. The Chaikin indicator is necessary to launch it, you can take it
+HERE
+. The default settings are for USDCHF M5.
+The gist of the strategy is a try to discover the moments of possible trend reverses or rollbacks using the Chaikin indicator and 20-peroid "moving". To perform it, we are looking at the value of Chaikin and if it exceeds a specific level, the price goes beyond the "moving" and the previous candlestick is reversed then we are concerned with a rollback or a reverse. And since it is so, we parlay in the direction shown by the previous candlestick. If the position is opened and again we have a suspicion of a rollback to the opposite direction, then we lock it with the opposite position. In this case, the strong tendency will break through one of the stops and will give a chance to earn some extra pips.
+Why shouldn't we take for this aim the RSI, for example, instead of the Chaikin? Because the RSI doesn't consider the activity of the market, but only takes into the account the diapasons. And the Chaikin considers the vloumes. In case of rising trend, the RSI will point that the market is overbought over and over again, and in case of descending trend - that the market is oversold, i.e. it acts opposite to the trend. If we try to discover the reverse moment using it, as a result, we will get some false triggerings before the tendecy will really reverse. In case of sideways trend, the RSI is always inferior to the Chaikin.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8167

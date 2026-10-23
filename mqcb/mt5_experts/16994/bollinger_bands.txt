@@ -1,0 +1,11 @@
+Author of the idea —
+mohamed
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+The Expert Advisor opens trades based on the Bollinger Bands indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16994

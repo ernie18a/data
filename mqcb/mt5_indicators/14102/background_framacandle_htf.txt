@@ -1,0 +1,11 @@
+The indicator draws
+FrAMACandle
+indicator candlesticks of a higher timeframe as color filled rectangles using
+DRAW_FILLING
+buffers.
+Depending on candlestick direction the candlestick body is painted in blue or red, shadows are painted in light blue or pink.
+This indicator requires the the compiled indicator file FrAMACandle.mq5. Place it in <terminal_data_folder>\MQL5\Indicators\.
+Fig.1. The Background_FrAMACandle_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14102

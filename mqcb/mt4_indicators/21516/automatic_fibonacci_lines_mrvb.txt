@@ -1,0 +1,7 @@
+AutoFibLinesMrVB indicator draws automatically Fibonacci levels on the chart. Includes Fibonacci channel.
+The lines have percentage value and price.
+Available Fibonacci levels: 0.0%, 14.6%, 23.6%, 38.2%, 50.0%, 61.8%, 76.4%, 100.0%, 123.6%, 138.2%, 150.0%, 161.8%.
+You can set the lines color from the parameters.
+You can set the
+searchBars
+parameter - number of bars from which to get the lowest and highest points to start.

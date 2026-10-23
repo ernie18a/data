@@ -1,0 +1,18 @@
+Generalized version of the smooth step indicator (originally posted here :
+SmoothStep
+).
+This version is using a property of a smooth step that it can be further smoothed - based on
+Kenneth H. Perlin's
+(
+a professor in the Department of
+Computer Science
+at
+New York University
+) idea
+when order 0 is used, it is the same as built in stochastic / 100 (with slowing in stochastic set to 1)
+when order 1 is used, it is the same as the smooth step indicator
+when any higher order is used, it filters further the signal while keeping the values in the expected ranges
+Recommendations:
+Accompany the submitted code with a meaning-bearing name and a brief description.
+Attach a brief explanation to the code for users to make head or tail of it.
+Insert illustrating images where applicable.

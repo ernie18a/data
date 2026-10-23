@@ -1,0 +1,5 @@
+Author: Shimodax
+Splits the chart by horizontal levels after a specified period.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7525

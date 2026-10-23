@@ -1,0 +1,14 @@
+Channel-based indicator Fractal Channel draws a channel based on fractals with a given dimension.
+It has one adjustable parameter:
+Farme
+- frame size for searching for the fractal
+Frame shall be a window consisting the number of bars, in which one fractal must fit.
+For a 1x1 fractal (left bar + central bar + right bar), the frame size must be 3,
+For a 2x2 fractal, the frame size = 5 (two left bars + one central bar + two right bars), etc.
+Fig.1. Frame = 3 (standard fractal size)
+Fig. 1.
+Fractal Channel + Fractals,
+Frame = 3
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22723

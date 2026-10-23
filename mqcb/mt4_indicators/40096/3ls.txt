@@ -1,0 +1,6 @@
+Converted 3 Line Strike from TradingView to MQL4
+Link URL is inside the source code
+bear = 3 bull candle + 1 bear engulfing candle
+bull = 3 bear candle + 1 bull engulfing candle
+No alert in this source code because I'm lazy.
+On how to use this indicator, please check out in Youtube.

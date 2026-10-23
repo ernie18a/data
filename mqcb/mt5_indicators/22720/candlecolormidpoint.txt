@@ -1,0 +1,39 @@
+Indicator Colored Middle Point of Candle, like indicator
+Candle's Middle Point
+, displays the middle point of the candle, but it colors the middle point of each candle depending on the candle type, bullish or bearish.
+It has two adjustable parameters:
+Middle point for
+- display the middle point for
+Candle
+- candles
+Body
+- candle body
+Dots type
+- the candle middle point dots type:
+Smallest Dot
+- the smallest dot
+Small Dot
+- cmall dot
+Big Dot
+- big dot
+Small Square
+- small square
+Big Square
+- big square
+Small Diamond
+- small diamond
+Big Diamond
+- big diamond
+Cross
+- cross
+Calculations:
+For the middle point of a candle:
+Point = (High + Low) / 2.0
+For the middle point of the candle body:
+Point = (Open + Close) / 2.0
+If the candle is bullish, its middle point is blue. If it is bearish, its middle point is red
+Fig.1. Middle point for = Candle
+Fig. 2. Middle point for = Body
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22720

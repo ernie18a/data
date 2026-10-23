@@ -1,0 +1,14 @@
+Real author:
+MetaQuotes
+Larry Williams' Accumulation/Distribution, or W_A/D, is an accumulated sum of "accumulative" and "distributive" price movements. The term accumulation is used for indication of a market controlled by buyers, and "distribution" means a market controlled by sellers.
+Thus, if the current closing price is higher than the previous one, W_A/D increases by the difference of the current closing price and the true minimum. But if the current closing price is lower than the previous one, W_A/D decreases by the difference of the current closing price and the true minimum.
+Williams recommends using following discrepancies as trading signals of this indicator:
+Share is distributing if the price reaches new maximum, and Accumulation/Distribution Indicator cannot reach new maximum. This is a signal for selling;
+Share is accumulating if the price reaches new minimum, and Accumulation/Distribution Indicator cannot reach new minimum. This is a signal for buying.
+This indicator was first implemented in MQL4 and published in
+CodeBase
+on February 12, 2007.
+Fig.1. Williams_Accumulation_Distribution Indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2416

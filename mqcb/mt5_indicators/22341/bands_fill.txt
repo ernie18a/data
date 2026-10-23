@@ -1,0 +1,13 @@
+Bands Fill indicator - Bollinger bands with a color cloud.
+It has two configurable parameters:
+Period
+- period
+Deviation
+- deviation
+The cloud is colored as follows:
+If the price crosses the upper band, the cloud is colored in blue.
+If the price crosses the low band,
+the cloud is colored in pink.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22341

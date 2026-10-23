@@ -1,0 +1,18 @@
+The EA places pending stop orders BUY_STOP and SELL_STOP.
+Recommended timeframe — M15.
+Author of the idea
+—
+Yuri
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Trading rules:
+Find the maximum price value in the interval between 14 and 16 hours terminal time and place a pending Buy stop order at this level. Find the minimum price value in the interval between 14 and 16 hours terminal time and place a pending Sell stop order at this level.
+The distance between the maximum and minimum should be no more than 50 points, otherwise the orders should not be placed.
+Take Profit is 30 points.
+Stop Loss is set at the price level of the opposite trade. Untriggered orders are deleted at the end of the day.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17250

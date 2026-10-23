@@ -1,0 +1,2 @@
+Author: Jason Robinson (jnrtrading)
+CCI_Woodies_Lnx_v3_1 indicator.

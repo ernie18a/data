@@ -1,0 +1,7 @@
+Theory :
+The usage of RSI (Relative Strength Index) started for, mainly, two reason :
+to filter out insignificant price changes
+to emphasize the RSI values (to eliminate, if possible, the "flattening" property of RSI when longer calculation periods are used)
+This version is using the Adaptive Moving Average by Vitali Apirine for that purpose. But, in order to make it more usable (since the color change of the slope change or some fixed level cross tend to be "not-so-usable" signals) this version adds floating levels to the indicator.
+Usage :
+It can be used in a same way as any Ris(oma) indicator or as any Rsi itself. Or you can use color changes as signals

@@ -1,0 +1,3 @@
+BB Stops
+using RSI for stops calculation.
+For trend trading it is advised to use longer RSI periods. For scalping it is probably better to use shorter RSI periods, but in any case do some experimenting with periods before using it in live trading.

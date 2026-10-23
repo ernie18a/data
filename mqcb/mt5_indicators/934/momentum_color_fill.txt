@@ -1,0 +1,2 @@
+The Momentum Technical Indicator measures the change of price of a financial instrument over a given time span. Momentum is calculated as a ratio of today’s price to the price in periods ago.
+When the momentum indicator is above/below the "line level", it is filled with color. The additional input parameter is "line level" to determine the color to fill the indicator.

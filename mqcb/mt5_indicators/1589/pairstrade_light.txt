@@ -1,0 +1,101 @@
+The real author:
+The real author:
+Leonid
+Borsky
+(
+leonid
+553
+)
+This indicator is the simplified variant of the "
+ind_2_linep1.mq5
+" indicator. Unlike it, in this indicator is following:
+for slow MA used an exponential smoothing;
+for fast
+MA
+exponential smoothing is used twice;
+ATR
+is calculated using exponential smoothing;
+two threshold lines based on ATR are drawn for the chart of difference;
+trading deals volumes are calculated only for "Forex" type instruments;
+selected instruments are automatically included in the "Market Watch";
+indicator values are calculated not for the whole chart, but the last part which size is defined by
+"inpNumBars";
+a complex system of different symbols data synchronization is not used;
+external indicators and include files are not used.
+The indicator draws three lines:
+green is the price index line of the main instrument;
+blue is the price index line of the additional instrument;
+two colored line of difference:
+blue is when there is divergence, red is when convergence.
+If you need to continue downloading from the server quotes by the selected instruments or prepare them in the terminal, so the indicator will go to standby, at this the corresponding message is displayed on the screen. Server connection and ticks' arrival will be required for the correct work of the indicator. If there is a connection with the server, but ticks do not come (for example, in weekends), so you can try several times use "Refresh" command of the terminal.
+The value of the "
+Max
+bar
+in
+chart"
+terminal parameter must exceed the selected value of the "inpNumBars" indicator parameter, in some cases it must significantly exceed it.
+Indicator input parameters:
+input
+string
+inpSymbol1_Name =
+"EURJPY"
+;
+//Main instrument
+input
+bool
+Symbol1_Reverse =
+false
+;
+//Opposite dependence
+input
+string
+inpSymbol2_Name =
+"USDJPY"
+;
+//Additional instrument
+input
+bool
+Symbol2_Reverse =
+false
+;
+//Opposite dependence
+input
+bool
+ATREnable       =
+true
+;
+//Considering ATR values
+input
+int
+inpEMA_Slow     =
+42
+;
+//Slow EМА period
+input
+int
+inpEMA_Fast     =
+5
+;
+//Fast 2xEМА period
+input
+int
+inpN_ATR        =
+175
+;
+//ATR period
+input
+int
+inpNumBars      =
+5000
+;
+//Drawing interval
+Recommendations:
+The indicator hasn't been tested for a long time. It is laid out by the principle "as it is".
+Information about such indicator basis and its use can be find, for example, in the archives of the "
+Leprecon Review
+" magazine or in the forum "
+Trading spreads in MetaTrader
+".
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1589

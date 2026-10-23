@@ -1,0 +1,15 @@
+I offer you to test it and tell if it has a right to life :)
+The EA works on the intersections of the movings. It opens a position either up or down if the intersection occurs and it closes the position if a reverse intersection occurs.
+Parameters:M15
+MA1_Period=3
+MA2_Period=13
+MA1_Method=0
+MA2_Method=0
+MA1_Price=2
+MA2_Price=3
+MA1_Shift=0
+MA2_Shift=0
+I wait for your comments and wishes.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8463

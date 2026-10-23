@@ -1,0 +1,26 @@
+Theory:
+The original indicator was described by B. Williams as fourth dimension - Trading Zone:
+If the current bars of AC and AO are
+trending up
+, it shows that the zone is
+up
+If the current bars of АС and АО
+down
+, it shows that the zone is
+down
+.
+If the bars of AC and AO are differently directed then the bar is colored
+grey
+.
+This version:
+The indicator is based on the following 3 indicators:
+Heiken Ashi
+smoothed (if the smoothing period is >1)
+regular (if the smoothing period is <=1)
+Accelerator Oscillator.
+Awesome Oscillator.
+Comparing the slope of the smoothed Heiken ashi can filter out some of the false signals. The combined states and values of the 3 are producing zones and trade signals. This version is adding the smoothing possibility using one of the 4 average types :
+simple moving average
+exponential moving average
+smoothed moving average
+linear weighted moving average

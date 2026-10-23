@@ -1,0 +1,4 @@
+This simple indicator is to find out easily when the price reaches a particular time on any candle or time frame. This is useful for those who are looking to easily detect when the price has reached a certain time of clock e.g If you are waiting for the price to reach a particular time may be on any market session or time zone. If you want place a trade at exactly 9.00am or any time of your choice, you can use this indicator and it will show the time when it has reached.
+New Update Vs.1.1: I added day of the week to make it easy to remember the trading day.
+You can change the width of the line, the color of the line, time text and how far or near you want the time to stay from the current candle.
+I hope you enjoy using this.

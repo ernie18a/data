@@ -1,0 +1,6 @@
+Theory :
+The original version of this indicator was posted with a detailed description here :
+Frama
+. In this version we are adding one feature that is probably needed in order to make the frama indicator easier to use : floating levels. That way we can determine the trend without an attempt to us the slope of the frama for that (which might cause a lot of false signals, especially if chosen price usage for fractal estimation method is used). Default method for color changing is the cross of outer levels which is recommended if you intend to use the indicator in "trending" mode
+Usage :
+You can use the color change as signals in this indicator

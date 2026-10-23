@@ -1,0 +1,157 @@
+Did you ever want to pass the time or to stretch your brains while awaiting important news event or monitoring open position in MetaTrader? It's easy with
+Sudoku puzzle
+. This nontrading expert can do many things for Sudoku: generate boards, load existing boards, check difficulty, let you play and solve Sudokus right in MetaTrader chart. This is the classical 9x9 Sudoku with 9 blocks, and digits from 1 to 9 to fill empty cells.
+After its started the program shows a dialog with a puzzle. If input parameters are left default, this is a special introductory position provided with the source codes (you may find some details below).
+You can adjust input parameters to get random sudokus with different characteristics. Please, note, that new board is not generated right after the start, but upon clicking the New button in the dialog. Other buttons are available in the dialog: Hint shows automatically calculated candidates for empty cells (normally, a fair player should deduce candidates himself/herself, but this option helps you learn Sudoku a bit, if you're a novice); Undo reverts performed moves/changes on the board.
+Input parameters
+Sudoku - name of a file with Sudoku position; this is a text file with 81 symbols, where every digit from 1 to 9 is a clue, and other symbols (presumably, 0s or dots) denote empty cells at corresponding places; for better visibility the single long line can be splitted into 9 separate lines with 9 symbols in each, which resembles the board as is (please find an example below);
+ShufflingRandomSeed - an integer number to initialize random generator during board shuffling; default value -1 means randomization by timer - every time you hit New, you'll get a unique position (completed board which is not shown to the player); if you specify any other specific number, you'll always get the same completed board; if you change the number you'll get another reproducable board, etc;
+CompositionRandomSeed - an integer number to initialize random generator during selection of clues from the completed position; the clues are the numbers and their cells which will be presented to the player; default value -1 means randomization by timer - every time you hit New, you'll get new clues (yet you can do it on the same completed board, if specific ShufflingRandomSeed is given); if a value other than -1 is used, you'll always get the same set of clues (for the same board), but if you change shuffling, the clues will change as well of course;
+ShufflingCycles - number of cycles of shuffling; every cycle performes special permutations, starting from initial trivial board; default value is 100;
+EliminateLabel - a number to eliminate from possible clues; default value 0 means that every number from 1 to 9 can appear in clues; if a number from 1 to 9 is selected, it will not appear in clues (this can be considered as an additional complication);
+Auto-Assistant - an option to enable/disable special help mode: if it's enabled, entering a label to a cell will clean up the same candidates in all cells of corresponding row, column, and block; also if a wrong label is provided (which conflicts with existing labels), the problematic structures (row, column, block) will be highlighted in yellow;
+Here is an example of log when you generate new sudoku:
+Shuffling...
+Permutations done:
+137
+of
+200
+Generating composition...
+Done at nesting level of speculations/guesses:
+1
+/ Backtrack count:
+0
+Clues:
+53
+/ Integral difficulty:
+1.08067
+Not a unique solution
+Done at nesting level of speculations/guesses:
+1
+/ Backtrack count:
+0
+Clues:
+50
+/ Integral difficulty:
+1.14551
+Not a unique solution
+...
+Done at nesting level of speculations/guesses:
+13
+/ Backtrack count:
+0
+Clues:
+21
+/ Integral difficulty:
+7.21605
+Not a unique solution
+Done at nesting level of speculations/guesses:
+21
+/ Backtrack count:
+0
+Clues:
+21
+/ Integral difficulty:
+9.0458
+Not a unique solution
+Done at nesting level of speculations/guesses:
+13
+/ Backtrack count:
+0
+Clues:
+21
+/ Integral difficulty:
+7.21605
+Done at nesting level of speculations/guesses:
+17
+/ Backtrack count:
+0
+Clues:
+20
+/ Integral difficulty:
+8.59135
+Not a unique solution
+Ready, number of clues:
+21
+.........
+.
+742
+...
+3
+.
+8
+.....
+749
+.
+8.1
+...
+25
+5
+........
+..
+7
+.....
+3
+.
+5
+.......
+..
+1
+......
+24.5
+.
+8
+...
+Generated soduku is saved in file rnd25473.txt
+The last line mentions the name of file with the new board. You can use it in the input parameter Sudoku to continue the same puzzle next time (in the next MetaTrader session). For every puzzle, the program remembers current position in a special file (with the same name as Sudoku, but with additional extension ".log"). Also all edits on the board is logged in the global variables and can be reverted by Undo button.
+The number of clues and estimated difficulty are also shown in a comment on the chart. There is no a standard scale of Sudoku difficulties, so you'll get accustomed with suggested rating after some time. The value below 2 means easy level, 2 and a bit higher - medium level, above 3 - difficult, it requires to speculate/make guesses multiple times, and backtrack in case of wrong guessing (encountering a collision). Unfortunately it's not possible to generate sudoku of specific difficulty upon request. If you get a puzzle with undesirable difficulty, try to generate another random one.
+You can enter a single digit in a cell (fill the edit field), or mark it with several digits - so called candidates, possible values. Candidates are displayed in smaller font in green. During the play you should eliminate candidates one by one and finaly left a single digit (displayed in blue).
+Be cautious: clicking the Hint button will overwrite your manually entered candidates (if any). Clicking the Hint button second time will hide candidates completely. In other words, the Hint button works as a switch for automatic help.
+The program will check if the puzzle is solved only when all cells are filled with single digits. Of course, the board is considered solved if it complies with Sudoku rules.
+The introductory sudoku supplied with the program and shown by default is interesting in many aspects.
+it consists of 17 clues, which is minimal possible number;
+it's relatively easy, because it can be solved in straightforward manner without speculations;
+yet it requires many different (and not so obvious) methods of logic reasoning to make moves;
+Here is how the puzzle is presented in the text file:
+000700000
+100000000
+000430200
+000000006
+000509000
+000000418
+000081000
+002000050
+040000300
+It could be as well
+000700000100000000000430200000000006000509000000000418000081000002000050040000300
+or
+...
+7
+.....
+1
+........
+...
+43.2
+..
+........
+6
+...
+5.9
+...
+......
+418
+....
+81
+...
+..
+2
+....
+5
+.
+.
+4
+....
+3
+..
+.
+To build the program, unpack the attached res.zip with bmp-resources (it should create MQL5\Include\Sudoku\Layouts\res\ folder with bmp-files), and then comment out the line #define CODEBASE_CHECKUP in the source code SudokuUI.mq5. Without this some button images will be unavailable. This is a workaround for the strange limitation of the codebase, which does not allow BMP-files, which are mainly used for graphic resources in MQL.

@@ -1,0 +1,10 @@
+Basics:
+The original ATR adaptive Laguerre filter (originally published here :
+ATR adaptive Laguerre filter
+) uses slope/color changes for signals. Here we are changing that.
+This version:
+In this version we are using self adjusting levels for signals filtering. That way it is attempting to produce a clearer signal and to lessen the number of signals produced.
+Usage:
+You can use the color changes as signals for entries or exits. Also some experimenting with the levels period is advised before using it for trading decisions.
+PS:
+There are two display modes. Default is like the upper. For the sake of simple display (some like it that way better) you can chose this type of display too in the parameters (no filled zones - lines are still changing colors).

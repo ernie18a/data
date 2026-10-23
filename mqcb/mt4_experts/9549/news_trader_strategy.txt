@@ -1,0 +1,84 @@
+This is a small example of using news trading strategy. There are few strategies. I described them all on my site and add my article to the pipswanted.com blog aggregator here:
+http://pipswanted.com/Trading-News-Working-Methods-%C2%B7-ForexFellowcom-Making-forex-trading-Easy
+. I wrote about four different strategies to play news. This simple EA includes one and the most interesting of these strategies in my opinion.
+I didn't include the method to get news because I found indicator for playing news on this site
+https://www.mql5.com/en/articles/1502
+and I didn't want to write about it ones more. Here you get a simple implementation of making orders results from one of the strategies I wrote on my blog.
+Here is description of the strategy:
+Strategy no 3
+It’s my favorite strategy. Before the news publication we place two orders: one buy stop and one sell stop. Both for example 5 pisp TP and 5 pips SL. We place buy stop above current price let’s say 20 pips above, and sell stop 20 pips under current price. Now we wait for the data. When the market shots in some way it is big probability to hit one of our TP. Even if it returns after all it can his the second TP. The profit can bee small but not very risky. Be careful with your SL’s and TP’s to be not too big cause it is better to earn small than to lose big money.
+Here is sample code:
+if
+(orderOpenDate == currentDate)
+   {
+//we place 2 orders: buy stop and sell stop
+if
+(ticket <
+1
+)
+      {
+         orderAsk = Ask - bias *
+Point
+;
+         orderBid = Bid - bias *
+Point
+;
+         ticket=
+OrderSend
+(
+Symbol
+(),OP_SELLSTOP,lot,orderBid,
+1
+,orderAsk+
+Point
+*sl,orderBid-tp*
+Point
+,
+"NewsTrader"
+,
+2
+,
+0
+,
+Red
+); 
+      }
+if
+(ticket2 <
+1
+)
+      {
+         orderAsk = Ask + bias *
+Point
+;
+         orderBid = Bid + bias *
+Point
+;
+         ticket2=
+OrderSend
+(
+Symbol
+(),OP_BUYSTOP,lot,orderAsk,
+1
+,orderBid-
+Point
+*sl,orderAsk+tp*
+Point
+,
+"NewsTrader"
+,
+2
+,
+0
+,
+Green
+); 
+      }         
+   }
+Recommendations:
+The article about news trading strategies
+http://pipswanted.com/Trading-News-Working-Methods-%C2%B7-ForexFellowcom-Making-forex-trading-Easy
+The article where you can find news indicator
+https://www.mql5.com/en/articles/1502
+My blog
+http://www.forexfellow.com

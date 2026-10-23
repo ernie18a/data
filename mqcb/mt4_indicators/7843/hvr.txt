@@ -1,0 +1,2 @@
+Author: Albert, (idea and code into MQL2 - podval)
+HVR indicator.

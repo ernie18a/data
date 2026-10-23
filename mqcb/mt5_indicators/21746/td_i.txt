@@ -1,0 +1,24 @@
+The TD_I indicator (Thomas DeMark Indicator) is a modified version of the standard DeMarker Indicator by Thomas R. DeMark.
+The range of values ​​is from 0.0 to 100.0 instead of the standard 0.0-1.0. Additionally, a shift was introduced: instead of comparing current bar's High/Low with the previous bar's High/Low, this indicator uses current bar's High/Low and the High/Low price of the bar with the given shift, which allows to filter noises.
+There are four input parameters:
+Period
+- calculation period;
+Shift
+- set to 1 by default, corresponds to DeMarker;
+Overbought
+- overbought level;
+Oversold
+- oversold level.
+Calculations:
+TD_I = 100.0 * HighAvg / (HighAvg + Low_Avg)
+where:
+HighAvg = SMA(HighDiff, Period)
+LowAvg = SMA(LowDiff, Period)
+HighDiff = High - High[Shift]
+LowDiff = Low[Shift] - Low
+Fig. 1. TD I, period 8, shift 1
+Fig. 2. TD I, period 8, shift 1 + DeMarker with period 8
+Fig.3. TD I, period 8, shift 3 + DeMarker with period 8
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21746

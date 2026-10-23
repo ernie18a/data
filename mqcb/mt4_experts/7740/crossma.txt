@@ -1,0 +1,4 @@
+A TS based on the intersection of two MA, stop/loss is placed automatically on the basis of ATR value, when a position is closed or opened a message is sent on the e-mail. The parameters, surely, can be selected by testing on the history.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7740

@@ -1,0 +1,28 @@
+The indicator WeekDays displays Day Of Week, Week Of Year, Day Of Year or Bar Index in the Data Window, and optionally in labels on the chart.
+As usual, the information in the Data Window is updated dynamically according to mouse movements: the name of the day is always promptly updated in the left column, whereas the content of the right column is defined by the settings, specifically the inputs
+WholePart
+and
+FractionalPart
+. Each of them allows user to select one of the entities to display: Day Of Week, Week Of Year, Day Of Year, Bar Index, or None.
+WholePart
+- selector for the number in front of the floating point;
+FractionalPart
+- selector for the number after the floating point;
+Two selected properties (integer numbers) are combined into a single floating point value for every bar and stored in the indicator buffer. Of course, the buffer made invisible on the chart due to DRAW_NONE style, because its values are synthetic.
+For example, for the screenshot below the name of the day is Tue, and the buffer containing Week.DoY (Day Of Year index) shows value 44.302, that is 44-th week and 302-th day of the year, respectively.
+The other inputs allows user to specify whether or not to
+ShowLabels
+on chart, what
+FontName
+,
+FontSize
+,
+FontColor
+to use, as well as
+Padding
+from top/bottom edges, how to
+Align
+them (top/middle/bottom), and optional
+RotationAngle
+for middle alignment.
+Default clrNONE for FontColor means reverse color for current chart background.

@@ -1,0 +1,10 @@
+The
+WcciPatterns indicator
+was taken as a basis. The code was almost entirely rewritten. Now the indicator gives much less false signals.
+The indicator itself is in the main chart window. The
+CCI_Woodies_Lnx_v6
+indicator is in the lower window.
+The second attached file contains the description of the system itself.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8325

@@ -1,0 +1,1 @@
+QEMA is the Quadruple Exponential Moving Average. With this small change you can modify the percentage of the quadruple correction respect to the normal EMA. (Sorry, there was a small error in the previous file).

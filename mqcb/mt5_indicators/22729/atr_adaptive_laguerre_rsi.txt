@@ -1,0 +1,6 @@
+Basics:
+The Laguerre RSI indicator created by John F. Ehlers is described in his book "Cybernetic Analysis for Stocks and Futures".
+This version:
+Instead of using fixed periods for Laguerre RSI calculation it is using ATR (Average True Range) adapting method to adjust the calculation period. It makes the RSI more responsive in some periods (periods of high volatility), and smoother in oder periods (periods of low volatility).
+Usage:
+You can use it (in combination with adjustable levels) for signals when color of the Laguerre RSI changes.

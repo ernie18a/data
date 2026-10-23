@@ -1,0 +1,27 @@
+Idea by
+:
+Airat Safin
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+An automated trading system with a data panel in form of the
+OBJ_LABEL
+objects.
+Automated trading;
+Automated risk management;
+Flexible control and setup;
+Monitoring panel.
+Input parameters
+% of the remaining Equity allowed;
+% of the loss on Equity;
+Working symbol;
+Timeframe No. 1;
+Timeframe No. 2;
+Take Factor - % of the calculated range; it places the Take Profit level;
+StopFactor - % of the calculated range; it places the Stop Loss level;
+TrailFactor - % of the calculated range; it places the trailing level.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20779

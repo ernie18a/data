@@ -1,0 +1,11 @@
+The Exp_2pbIdealMA indicator is based on the crossing of two Moving Averages. A signal to perform a deal is formed at bar closing if there is crossing of a fast  2pbIdeal1MA Moving Average with a slow 2pbIdeal3MA Moving Average. The upward breakthrough of the slow Moving Average by the fast Moving Average serves as a signal for a buy. The downward breakthrough serves as a signal for a sell.
+Place
+2pbIdeal1MA.ex5 and 2pbIdeal3MA.ex5
+complied files to the terminal_data_folder\MQL5\Indicator.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. The instances of history of deals in the chart.
+Testing results for 2011 at USDCHF H4:
+Fig. 2. Charts of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1158

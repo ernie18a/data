@@ -1,0 +1,7 @@
+A colored cloud drawn on the difference of smoothed lines PLUSDI and MINUSDI of the
+ADX
+indicator.
+Figure 1. The ADXCloud indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2172

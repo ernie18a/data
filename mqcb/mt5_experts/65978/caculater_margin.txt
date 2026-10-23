@@ -1,0 +1,6 @@
+Hello,
+I am learning how to code in MQL5. This code is used to calculate the margin required for a trading lot.
+It allows customizing the leverage factor to see the required margin.
+The code may not be fully complete yet, as I am using it with FX and metal symbols, and there may be inaccuracies when using cent accounts or CFDs/cryptos.
+I am still working on improving my coding knowledge. Any suggestions or feedback would be greatly appreciated to help me improve.
+Thank you.

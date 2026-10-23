@@ -1,0 +1,2 @@
+This indicator for draw an Arrows for buy & sell, it's Depends on Kijun Line in Ichimoku Indicator
+http://forum.m-e-c.biz/t30739.html

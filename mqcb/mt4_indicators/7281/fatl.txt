@@ -1,0 +1,5 @@
+Author: Ramdass.
+(Fast Adaptive Trend Line)– the «fast» adaptive trend line is calculated using a digital low-pass filter with a small cutoff period.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7281

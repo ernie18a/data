@@ -1,0 +1,9 @@
+In short "repulse" would be :
+The Repulse indicator measures and displays the bullish or bearish pressure associated with each price candlestick in the form of a curve.
+It is more relevant when compared to price and offers valuable additional information on the feeling and confidence that traders have about the markets.
+This version can use one of the 4 basic averages types for smoothing.
+Coloring can be chosen depending on :
+slope
+outer levels cross
+middle ("zero") level cross
+Since the "repulse" indicator is not limited to known bounds, levels are dynamic — the "zero" value too. That makes it more responsive in the times of elevated volatility. Alerts are triggered based on the color change.

@@ -1,0 +1,9 @@
+The indicator is based on moving averages. It dynamically calculates and shows possible support/resistance levels.
+It has two parameters:
+Period
+- calculation period;
+Applied price
+- price used for calculations.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20053

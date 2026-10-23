@@ -1,0 +1,23 @@
+📈 Adjustable Moving Average EA for MT4
+This Expert Advisor trades based on the crossover of two customizable moving averages. It’s designed for traders who want full control over trade direction, entry logic, and risk settings.
+⚙️ Input Parameters Explained:
+FastPeriod
+: Period of the fast moving average.
+SlowPeriod
+: Period of the slow moving average.
+MAPriceType
+: Price used in MA calculation (e.g., Close, Open, High, Low).
+SL_Points
+: Stop Loss in points. Set to 0 to disable.
+TP_Points
+: Take Profit in points. Set to 0 to disable.
+TrailStopPips
+: Enables a trailing stop after the trade is in profit.
+EntryMode
+: Choose between Long-only, Short-only, or Both directions.
+FixedLot
+: Lot size used for each trade.
+MaxSlippage
+: Maximum allowed slippage in points.
+TradeComment
+: Adds a comment to each trade for identification in history.

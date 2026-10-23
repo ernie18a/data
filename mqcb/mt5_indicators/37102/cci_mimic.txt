@@ -1,0 +1,13 @@
+This indicator is one of the series of "experiments"
+even though it is named CCI, it is not actually CCI
+the calculating method is changed significantly compared to original CCI which make the usage as it is usual for classical version (via fixed levels) obsolete
+for that reason a sort of dynamic levels are added (a sort of Donchian channel levels added)
+basic types of averages can be used :
+for main calculation
+for price smoothing (as a possible method of signals filtering without significant lag addition)
+Recommendations:
+You can use the color changes as signals
+Comparison :
+An example why is it still called CCI.
+Upper is this indicator, lower is the classical CCI.
+Regardless of the completely different values produced, the relative values / slopes are very similar

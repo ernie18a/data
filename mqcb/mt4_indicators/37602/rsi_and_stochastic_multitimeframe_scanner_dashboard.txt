@@ -1,0 +1,4 @@
+This is a multi timeframe dashboard scanner for RSI and Stochastic.
+It shows both stochastic main and signals.
+It has input elements on the chart itself where you can enter the value if RSI period and Stochastic inputs.
+One can click on update to get the desired values of indicators as per the values of input set on chart input.

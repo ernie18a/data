@@ -1,0 +1,4 @@
+The indicator is finding out the minimum and maximum for the desired period and draws fibo zones in those bounds. Highest high and lowest low current trend is marked by the color (sometimes it is very useful to see the change in the  "trend" of those extremes).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16488

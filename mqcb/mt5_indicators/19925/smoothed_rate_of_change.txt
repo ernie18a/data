@@ -1,0 +1,10 @@
+Smoothed Rate of Change (Smoothed-RoC) is a refinement of Rate of Change (RoC) indicator that was developed by
+Fred G Schutzman
+. It differs from the RoC in that it based on Exponential Moving Averages (EMAs) rather than on price closes. Like the RoC, Smoothed RoC is a leading Momentum indicator that can be used to determine the strength of a trend by determining if the trend is accelerating or decelerating. The Smoothed RoC does this by comparing the current EMA to value that the EMA was a specified periods ago. The use of EMAs rather than the price close eliminates the erratic tendencies of the RoC.
+RoC is calculated in three steps. First, the EMA is calculated. Then the Momentum of the change in the EMA is calculated by subtracting the previous value of the EMA from the current EMA. Finally, the result is divided by the previous value of the EMA and multiplied by 100 to give a percentage. As the Smoothed-RoC is a RoC of EMA, it takes two periods:
+EMA period (13 by default).
+RoC period (21 by default).
+The formula is:
+Smoothed-RoC = (Current EMA - Previous EMA) / (Previous EMA) x 100
+where the previous EMA is the value that the EMA was at specified period ago. The result is a percentage that is plotted as an oscillator that oscillates between 100% and -100%.
+As with the RoC oscillator, the key consideration when using Smoothed-RoC is the center line. When the price of the underlying security is in an uptrend, a buy signal is generated when the Smoothed-RoC falls below its center line and starts to turn back up. When the price of the underlying security is in a downtrend, a sell signal is generated when the Smoothed-RoC moves above its center line and starts to turn back down.

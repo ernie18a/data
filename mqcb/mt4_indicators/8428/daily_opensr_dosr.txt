@@ -1,0 +1,21 @@
+The trading technique that is based on the support/resistance that are determined at the daily opening.
+Input Parameters:
+extern
+color
+ResistanceColor
+=
+Red
+;
+extern
+color
+SupportColor
+=
+Blue
+;
+extern
+color
+TodayOpenColor
+=
+Yellow
+;
+Dosr

@@ -1,0 +1,14 @@
+Author of the idea
+:
+George F.Peskov
+,
+mq5 code author
+:
+barabashkakvn
+.
+A trading system using the Price Channel principle. Position open signals are formed on the second bar after the price moves above or below the channel borders. Trade should be performed before a rollback, i.e. if the price touches the upper border, a Sell operation is formed, if it touches the lower border, it is a Buy signal. The position is held open until any stop level is reached or until the position is closed by a signal. Trailing stop is used.
+During testing, some currencies did not give any positive results on certain timeframes (the limiting factor used was the percentage of drawdown). So, there is something to think about: either market entry and exit rules should be improved, or channel trading methods should not be used for these currencies on these timeframes.
+EURUSD,M15:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18824

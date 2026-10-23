@@ -1,0 +1,30 @@
+Hi
+My plan is
+1 search for usa stocks below 20 euro/dollar.
+2 When the price rice above the stochastic lowlevel the first lot 0.01 will be bought.
+3 when the price drops then another lot 0,01 will be bought
+4 when the price rice above buy + spread the trailerstop will move in place.
+lowlevel when stochastic cross level 10 lot will be bought.
+maxprice means there will be no lots will be bougth above this price. (max = price + spread)
+lowprice means there will be no buy below the low
+magicnummer has to be changed by every new chart
+timechart is the chart
+maperios is the ma
+steplevel is the percentage when a buy order will be placed.
+profit when set at 0 then all open positive orders will be closed at closing if close all set on true
+closeall set on true or false
+hour set the hour
+minute set the minute
+(when close all is true profit is 10 hour is 20:00 minute = 55 then all open orders with a profit more then 10 will be closed from
+20:55 till 21:00
+the best way is to search for stocks with low swap like zynga, nokia, vale (the reason is swap)
+when setting lowprice to 1 it is possible to calculate the possible max loss
+when set on 1% maxloss stock from 5 euro will be about 500 euro when trading stock from 15 euro your maxloss will be about 1500 euro.
+But you only risk this when company goes broke,  when you want to close all trades when in loss then you have to take a loss.
+Or you can lose a part when your broker doesn't support the stock anymore.
+This is the latest version i like to use.
+Rijfie pyramid version 1.12.mq4
+Just one thing when using this ea then consider to close all open orders that are above 0 just before closing time.(This is because of gap opening next day)
+With version 1,10 it is possible to close the trades before closing time wich are above 0.(by using profit and set close all to true then set hour and minute)
+New version 1.12 percentage is changeble by setting steplevel1 set steplevel1 at 1 means 1%, 5 means 5%.
+At the end you see some loses but that is because of ending testing.

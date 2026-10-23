@@ -1,0 +1,4 @@
+This is the basic version of the Average Change indicator.
+This indicator reflects the effect of the latest price changes.
+Try to get some trading signals out of that!
+Enjoy!

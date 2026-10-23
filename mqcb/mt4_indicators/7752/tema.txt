@@ -1,0 +1,7 @@
+To describe the principle of operation, I give below a citation from the book by S. Bulashev Statistika dlya tradera (Statistics for a Trader):
+YDEMA can already be found in Code Base -
+DEMA_RLH
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7752

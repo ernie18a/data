@@ -1,0 +1,16 @@
+Bollinger Bands consist of a
+N
+-period Moving Average (MA), an Upper Band at
+K
+times an
+N
+-period standard deviation above the Moving Average (MA +
+Kσ
+), and a Lower Band at
+K
+times an
+N
+-period standard deviation below the Moving Average (MA −
+Kσ
+).
+This version does not use standard deviation for Upper and Lower Bands, but uses the EMA deviation. That makes it faster in the response to market volatility.

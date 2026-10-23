@@ -1,0 +1,29 @@
+Indicator BeginnerAlert. The code contains a highly detailed description.
+extern
+bool
+SoundON
+=
+true
+;
+extern
+int
+AllBars
+=
+0
+;
+//How many bars to count for. 0 - for all.
+extern
+int
+Otstup
+=
+30
+;
+//Indentation.
+extern
+double
+Per
+=
+9
+;
+//Period.
+Beginner Alert

@@ -1,0 +1,30 @@
+Real author:
+Rafael Jimenez Tocino
+Indicator
+RJTX_Matches_Smoothed_Alert
+featuring alerts, emails and push notifications for smartphones. The input variables allow replacing the displayed indicator symbols
+input
+uint
+SellSymb=
+171
+;
+// Sell symbol
+input
+uint
+BuySymb=
+171
+;
+// Buy symbol
+To replace the values of the last two inputs, use the
+Wingdings font symbols
+table.
+The indicator uses the classes of library SmoothAlgorithms.mqh (to be copied to the <terminal_data_directory>\MQL5\Include folder). The use of the classes was thoroughly described in article
+Averaging Price Series for Intermediate Calculations Without Using Additional Buffers
+.
+This indicator was first implemented in MQL4 and published in the
+Code Base
+on December 23, 2015.
+Fig.1. Indicator RJTX_Matches_Smoothed_Alert_xx
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22713

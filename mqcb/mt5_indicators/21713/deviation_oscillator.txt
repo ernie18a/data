@@ -1,0 +1,22 @@
+Deviation Oscillator - a volatility oscillator which represents a difference between the price and the MA, normalized within the selected range.
+There are four input parameters:
+MA period
+- MA period;
+Min/Max period
+- the range of values for normalization;
+Method
+- calculation method;
+Applied price
+- price used for calculations.
+Calculations:
+DO = nf * (PD - Min) - 100.0
+where:
+PD = Applied price - MA(Applied price, MA period, Method)
+nf = 200.0 / (Max-Min)
+Max
+,
+Min
+- the maximum and minimum PD values in the 'Min/Max period' range.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21713

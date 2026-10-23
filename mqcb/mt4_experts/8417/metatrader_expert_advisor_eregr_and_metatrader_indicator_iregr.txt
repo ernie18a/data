@@ -1,0 +1,29 @@
+Regression Channel
+Linear Regression Channel
+consists of two parallel lines, equidistant up and down from the line of linear regression trend. The distance between frame of the channel and regression line equals to the value of maximum close price deviation from the regression line.
+Linear Regression Channel
+Second-power (Parabolic)
+Polynomial
+Regression Channel
+Third-power
+Polynomial
+Regression Channel
+MetaTrader Indicator i-Regr Setting
+Degree - power of Polynomial : 1- linear; 2- parabolic; 3- Third-power
+MetaTrader Expert Advisor e-Regr based on Regression Channel MetaTrader Indicator
+If price lower than under line - Buy
+If price bigger than upper line
+- Sell
+TakeProfit by average line.
+Stop Loss = 0 but you can set Stop Loss
+Trend Protection:
+If
+D1 candle (for previously day)
+bigger than 150 pips – trade prohibition and
+close all opened position.
+MetaTrader Expert Advisor e-Reg Setting
+Warning:
+The Expert advisor e-Regr was not adjusted and was not optimized.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8417

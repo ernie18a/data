@@ -1,0 +1,11 @@
+NineTFMovement indicator gives an overview of the price movement on 9 timeframes (M1 to Monthly), accompanied by consideration trend (Up or Down or Wait).
+The best use of NineTFMovement Forex indicator is on TF M15 or TF M5.
+Update 01 (2015/04/05)
+:
+Simplified the code to improve the performance of the Indicator.
+Eliminated the noisy signal.
+Update 02 (2015/07/03):
+Minor changes in the codes for indicator arrow trend consideration.
+Update  03 (2015/09/07):
+Improved signal formula.
+Added alerts.

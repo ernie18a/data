@@ -1,0 +1,4 @@
+Here is a way to dramatically improve the doubleDown algorithm, still the same works good on 1 min EURUSD but mush more satisfactory results: here is the results from Jan 2006 to date:
+I hope you like it and please rate it if you like it so others can know.
+Thank you
+Hazem

@@ -1,0 +1,4 @@
+Description:
+Timer is a break trough system. It buys/sells in big and fast movements in market.
+You set the distance of the buy/sell levels for entry from the market price and the time how long the levels are active, after it the levels are reset according to market price.
+The system buys when price breaks upper level and sells when price breaks lower level.

@@ -1,0 +1,3 @@
+The script gets all the symbols available on your platform and writes their closing prices for a specific bar to a csv file.
+You can choose which bar to write closing prices and file name you want to export.
+Drag and drop the script to a chart. It uses the time frame of the chart and look to the bar you specify on the inputs part with the index. 0 is the current bar, and bar index gets bigger as you move backwards.

@@ -1,0 +1,5 @@
+No time to watching screen, let this indicator to give you alert on mt5, mobile, and email.
+Press "N" to new signal, "D" delete signal
+Costume to receive message
+MT4 version:
+https://www.mql5.com/en/code/40575

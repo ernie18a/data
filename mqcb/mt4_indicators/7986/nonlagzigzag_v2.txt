@@ -1,0 +1,2 @@
+Author: igorad
+NonLagZigZag_v2 indicator.

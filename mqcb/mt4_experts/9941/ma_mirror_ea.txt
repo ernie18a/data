@@ -1,0 +1,18 @@
+Based on the indicator https://www.mql5.com/en/code/9937 (Thanks a lot) I wrote this simple Expert Advisor and it makes profit, at least in trend phases. Also in small time frames like M1 or M5.
+The more complicated functions are in the include file ea.mhq and serve for all my expert advisors. The start() functions checks the order, calls the function which does trailing stop loss and such then calls the function Signal() to find out if the indicator part of the EA wants something to have done, it than acts acording to the Signal. Signal() returns -1 or OP_BUY/OP_SELL if it wants to sell or buy.
+int Signal()
+{
+int i=1;
+int signal = -1;
+double ma1, ma2;
+ma1=iMA(NULL,0,MovingPeriod,MovingShift,MODE_SMA,PRICE_CLOSE,i)-iMA(NULL,0,MovingPeriod,MovingShift,MODE_SMA,PRICE_OPEN,i);
+ma2=iMA(NULL,0,MovingPeriod,MovingShift,MODE_SMA,PRICE_OPEN,i)-iMA(NULL,0,MovingPeriod,MovingShift,MODE_SMA,PRICE_CLOSE,i);
+if (ma1 > ma2) signal = OP_BUY;
+if (ma1 < ma2) signal = OP_SELL;
+return (signal);
+}
+You can simple modify the Signal() to do what you want, for example a different indicator, always buy or sell or even use a random number gernerator (I use all of them in order to see if the expert is better than simply buying or selling (in a trend) or random).
+------------------------------------------------------------
+Updated version of ea.mqh, please rename to ea.mqh
+There was an error in FindOrders (I accidently removed a line)
+New feature: BreakEven, if indicator is 20 pips in plus, it sets stop loss to be 0

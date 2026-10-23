@@ -1,0 +1,68 @@
+Signals Preview:
+Features:
+Detects mean-reversion signals when price closes back inside the Bollinger Band after a Stochastic RSI extreme.
+Bear signal: prior bar closed above the upper band with %K and %D both above the upper limit, current bar closes back inside.
+Bull signal: prior bar closed below the lower band with %K and %D both below the lower limit, current bar closes back inside.
+Bear/bull arrows plotted on the signal bar, offset from price by a fraction of ATR(14) so they don't overlap the candle.
+Built-in Stochastic RSI (RSI passed through its own rolling stochastic + double SMA smoothing) - no external indicator required, everything is calculated inside this single file.
+Bollinger Bands plotted as a shaded fill between the upper and lower bands, plus the basis (mid) line.
+On-chart status panel showing live readings, current zone, armed setups, and the last signal fired.
+Parameters:
+Parameter Name
+Description
+InpLength
+Bollinger Bands period.
+InpMult
+Bollinger Bands standard deviation multiplier.
+InpLengthRSI
+RSI period used as the Stochastic RSI's source.
+InpLengthStoch
+Lookback period for the rolling highest/lowest RSI (the "stochastic" part).
+InpSmoothK
+Smoothing period for %K.
+InpSmoothD
+Smoothing period for %D (signal line).
+InpUpperLimit
+Overbought threshold for %K/%D (default 90).
+InpLowerLimit
+Oversold threshold for %K/%D (default 10).
+How to Use:
+A simple step-by-step guide:
+Attach the indicator to any chart/timeframe.
+Adjust
+BB Period/Deviations
+and
+Stochastic RSI
+settings if you want a different sensitivity, or leave the defaults.
+Watch for a
+triangle-down
+arrow above a candle - price closed above the upper band while StochRSI was overbought, then closed back inside: a bearish reversal signal.
+Watch for a
+triangle-up
+arrow below a candle - price closed below the lower band while StochRSI was oversold, then closed back inside: a bullish reversal signal.
+Use the on-chart panel to check the current zone, whether a setup is "armed" and waiting for the cross-back, and details of the last signal fired.
+What's in the Panel?
+Live
+Close, BB Upper/Basis/Lower, and ATR(14)
+readings for the current bar.
+Current
+Stochastic RSI %K/%D
+values and the resulting
+Zone
+(Overbought / Oversold / Neutral).
+Setup status
+- flags when the last closed bar met the extreme precondition and is "armed", waiting for the current bar to cross back inside the band.
+Last Signal
+- type, price, and how many bars ago it fired.
+Notes and Limitations:
+Signal only:
+This indicator does not place trades. It's for visual/analytical use - no order management, no SL/TP.
+Single file:
+Everything (Bollinger Bands, Stochastic RSI, signal logic, and panel) is self-contained in one .mq5 file - no external indicators or includes required.
+Repaint-free:
+Signals are evaluated on closed bars only; the signal bar itself does not repaint once formed.
+Standard RSI:
+The embedded RSI uses Wilder's smoothing (the standard method), calculated via iRSI(); only the stochastic-of-RSI stage is custom.
+Screenshots:
+Conclusion:
+Whether you trade mean-reversion setups or just want a quick visual read on when price has stretched too far and is snapping back, this indicator combines Bollinger Bands and Stochastic RSI into one clean, self-contained signal with a live status panel.

@@ -1,0 +1,42 @@
+If a trade is closed by Stop loss, the volume is doubled; if it's closed by Take profit the minimum volume is used. OnTradeTransaction is used to determine whether a trade was performed after the activation of Stop loss or Take profit.
+The excellent enumeration ENUM_DEAL_REASON was added in
+build 1625
+:
+ENUM_DEAL_REASON
+Reason description
+...
+...
+DEAL_REASON_SL
+The operation was executed as a result of Stop Loss activation
+DEAL_REASON_TP
+The operation was executed as a result of Take Profit activation
+...
+...
+It can be checked in OnTradeTransaction.
+In other words, it is a very simple and reliable way to determine that a trade resulted from Take Profit or Stop Loss.
+At the moment (build 1626), this Expert Advisor can only be checked in a live test - by launching it on a chart or in a debug mode on real data (F5 in the MetaEditor editor). I used the following bypass maneuver:
+In OnTradeTransaction, we determined whether Take Profit or Stop Loss triggered:
+if
+(deal_symbol==m_symbol.Name() && deal_magic==m_magic)
+if
+(deal_entry==
+DEAL_ENTRY_OUT
+)
+           {
+if
+(
+deal_reason==DEAL_REASON_SL
+)
+               ExtLot*=
+2.0
+;
+else
+if
+(
+deal_reason==DEAL_REASON_TP
+)
+               ExtLot=m_symbol.LotsMin();
+           }
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18755

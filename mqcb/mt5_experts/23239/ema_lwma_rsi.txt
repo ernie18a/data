@@ -1,0 +1,15 @@
+Author of the idea
+-
+Vladimir Khlystov
+mq5 code author
+-
+barabashkakvn
+The Expert Advisor uses two iMA (Moving Average, MA) indicators and one iRSI (Relative Strength Index, RSI). One of the iMAs uses the MODE_EMA
+averaging method
+, the second one uses
+MODE_LWMA (the averaging method cannot be changed, because the idea of the trading system is exactly in using such methods).
+The EA operates at a new bar opening and opens only one position at a time, therefore it is able to work both on hedging and netting accounts.
+BUY open signal serves as a SELL close signal and vice versa: Sell open signal serves as a BUY close one.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23239

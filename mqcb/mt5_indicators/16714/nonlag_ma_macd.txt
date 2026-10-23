@@ -1,0 +1,2 @@
+MACD variation that is not using EMA for MACD-calculation (as it was originally invented by Geral Appel) but, for making it even faster, it uses Nonlag MA. As an adition, even the signal line is calculated using Nonlag MA ma, so this is a sort of a "full" Nonlag MA MACDAs with any MACD, it is good for spotting divergences, can be used when the MACD and the signal line crosses, and can be used to spot the sudden trend changes.
+Also was added multi time framing, OSMA and histogram of OSMA.

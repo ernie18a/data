@@ -1,0 +1,80 @@
+Adaptive Volume Profile Node Tracker
+Adaptive Volume Profile Node Tracker
+Author:
+Adeolu Gbadebo
+The idea behind it
+Most volume profile tools on the platform rebuild their bins from a fixed session or a fixed calendar range, which means the resolution of the profile stays the same whether the market is grinding sideways in a 10-pip box or ripping through 100 pips an hour. This indicator does something different: it ties the
+bin width
+to current volatility. Every time the profile rebuilds, it reads the current
+ATR(InpATRPeriod)
+value and uses a fraction of it as the base bin height, then clamps the resulting bin count between 5 and
+InpMaxBins
+. In a quiet range the bins come out narrow and numerous, which sharpens the picture of exactly where liquidity has pooled. In an expanding, volatile market the bins widen automatically, which keeps the node count statistically meaningful instead of splitting volume across dozens of near-empty slices.
+The profile itself is built from the last
+InpLookback
+completed bars, using tick volume by default (or real/exchange volume if your broker feeds it and
+InpUseRealVolume
+is enabled). Each bar's volume is bucketed by its closing price into the bin it falls into. From there the indicator locates the
+Point of Control
+(the single bin holding the most volume), expands outward bin-by-bin to enclose
+InpValueAreaPercent
+of total volume for the
+Value Area High/Low
+, and flags bins more than
+InpNodeStdDevMult
+standard deviations above the mean as
+High Volume Nodes
+and bins that far below the mean as
+Low Volume Nodes
+. The whole profile recalculates on a rolling basis every
+InpRecalcBars
+bars, so the levels genuinely track the current market structure rather than a level built once at the start of a session. Recommended for
+EURUSD
+and other liquid FX pairs on the
+M15 to H1
+charts, where a 150-300 bar lookback captures several hours to a couple of days of genuine order flow.
+How to interpret it
+POC line (solid blue)
+— the price level where the most volume has traded over the lookback window. It behaves like a magnet: price that drifts away from it, absent a strong trend driver, tends to gravitate back toward it over time.
+Value Area High / Low (dashed silver)
+— together these bracket the zone containing InpValueAreaPercent of all traded volume. Price inside the band is considered to be at "fair value"; price that closes and holds outside the band is considered extended and more likely to attract trending, directional participation.
+High Volume Nodes (thick orange-red)
+— bins where liquidity has built up well beyond the statistical average. These often act as support or resistance shelves because a large number of resting orders and prior fills sit at that price.
+Low Volume Nodes (thin dotted gray)
+— bins the market moved through quickly without building up volume. Price tends to cross these zones fast, which makes them useful as acceleration/breakout confirmation levels and as logical stop-placement references.
+Practical read
+— fade excursions back toward the POC when price is outside the Value Area and momentum is weak, or use a clean break through an LVN with expansion as a trigger for continuation toward the next HVN shelf.
+External variables (inputs)
+Input
+Default
+Purpose
+InpLookback
+200
+Number of completed bars in the rolling window used to build the volume profile.
+InpMaxBins
+24
+Upper limit on the number of price bins the profile can be divided into.
+InpATRPeriod
+14
+ATR period used to scale bin width to the current volatility regime.
+InpValueAreaPercent
+70.0
+Percentage of total window volume enclosed by the Value Area High/Low band.
+InpRecalcBars
+10
+How often (in bars) the rolling profile rebuilds and the levels update.
+InpUseRealVolume
+false
+Use exchange/real volume instead of tick volume when the data feed supports it.
+InpNodeStdDevMult
+1.0
+Standard deviation multiplier that sets the sensitivity of HVN / LVN classification.
+InpHVNColor
+clrOrangeRed
+Line color used to mark High Volume Nodes.
+InpLVNColor
+clrGray
+Line color used to mark Low Volume Nodes.
+Recommended use
+Attach the indicator to a liquid FX pair on the M15 or H1 timeframe and leave the defaults in place for the first few sessions to get a feel for how the profile updates. Traders working a mean-reversion approach will find the most value fading price back toward the POC once it has closed outside the Value Area on declining momentum. Breakout traders should watch for closes through a Low Volume Node with expanding range and rising tick volume, since these zones offer the least resistance to a continuation move. It pairs well with a simple trend filter or a momentum oscillator in a subwindow: use that secondary tool to confirm direction, and use the profile levels here to time entries and place stops just beyond the nearest node rather than at an arbitrary distance.
+Fig. 1. Rolling volume profile on EURUSD, M15. The solid line marks the Point of Control, the dashed lines bracket the Value Area High/Low, the thick nodes mark High Volume Nodes, the dotted nodes mark Low Volume Nodes, and the shaded bars on the right form the mini profile histogram built from the lookback window.

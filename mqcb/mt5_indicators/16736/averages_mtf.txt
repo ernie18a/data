@@ -1,0 +1,12 @@
+A version that adds some averages not supported by built in standard types to the collection of averages in one single file.
+This version has the following features in it:
+Simple moving average
+Exponential moving average
+Smoothed moving average
+Linear weighted moving average
+Linear regression value
+Triangular moving average
+Sine weighted moving average
+Hull moving average
+T3 moving average
+Quantiles

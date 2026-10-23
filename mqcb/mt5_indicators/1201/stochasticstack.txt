@@ -1,0 +1,10 @@
+The real author:
+Ivan Kornilov
+The simpliest linear combination of eight stochastics in the form of the oscillator, the cloud color corresponds to the trend direction.
+This indicator was first implemented in MQL4 and published in
+CodeBase in mql4.com
+on 24.03.2010.
+Fig.1 The StochasticStack indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1201

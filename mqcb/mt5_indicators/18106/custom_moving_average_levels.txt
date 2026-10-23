@@ -1,0 +1,76 @@
+A Moving Average indicator, for which the values of two levels can be specified from the MQL5 code:
+An example of this indicator (located in "terminal data directory"\MQL5\Indicators\
+MyInd
+\):
+...
+int
+handle_iMA_Custom;
+// variable for storing the handle of the iMA indicator
+//+------------------------------------------------------------------+
+//| Expert initialization function                                   |
+//+------------------------------------------------------------------+
+int
+OnInit
+()
+  {
+...
+//--- create handle of the Custom indicator "Custom Moving Average Levels"
+handle_iMA_Custom=
+iCustom
+(
+Symbol
+(),
+Period
+(),
+"
+MyInd
+\\Custom Moving Average Levels"
+,
+                             ma_period,
+                             ma_shift,
+                             ma_method,
+100
+,
+                             -
+100
+);
+//--- if the handle is not created
+if
+(handle_iMA_Custom==
+INVALID_HANDLE
+)
+     {
+//--- tell about the failure and output the error code
+PrintFormat
+(
+"Failed to create handle of the iMA indicator for the symbol %s/%s, error code %d"
+,
+Symbol
+(),
+EnumToString
+(
+Period
+()),
+GetLastError
+());
+//--- the indicator is stopped early
+return
+(
+INIT_FAILED
+);
+     }
+ChartIndicatorAdd
+(
+0
+,
+0
+,handle_iMA_Custom);
+//---
+return
+(
+INIT_SUCCEEDED
+);
+  }
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18106

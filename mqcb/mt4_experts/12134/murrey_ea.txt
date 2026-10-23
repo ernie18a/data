@@ -1,0 +1,22 @@
+New
+: Version 4.
+This Expert Advisor is based on Murrey lines, Stochastic oscillator, Candles, Bollinger Bands.
+Oversold occured when price breaked level 8/8 and stochastic >70 and target level 7/8  , with auto trail, when candle close above 8/8
+Overbought occured when price breaked level 0/8 and stochastic<20 and target level 1/8 , with auto trail, when candle close bellow 0/8
+What's new   : V4  -> no order modify error 134 ,  and I will always update EA when I have time....
+You must download murrey template before using EA to understand the functionality , Murrey auto detect     support and resistance , pivotal point ...  on a cetain timeframe
+If you do not know what is Murrey please view this links:
+https://www.mql5.com/en/code/101
+,
+https://www.mql5.com/en/code/8570
+.
+Algorithms
+I develolped level 1/8 and level8/8, other algo in next version...
+Recommendations:
+I. 5 digits pair
+II. Best timeframes: M15,M30,H1,H4
+III. Please follow the trend before running EA , you can disable buy by setting. Enable Buy :false , you can disable sell by setting Enable Sell:false
+So EA will work good when you take a look at the trend and follow only the trend, disable Short or Long.
+This is not the final version yet and I will always update this EA...
+Money management
+Do not risk, because minimum timeframe to EA to work good is M15.

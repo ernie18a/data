@@ -1,0 +1,18 @@
+XIT_BuySellAutoStoploss.mq4 - Stoploss set from Fractal Levels, Money management Risk/Reward
+My main goal here with this script was to help improve my win ratio, by setting my stoploss at fractals with the best support. I had been using fixed stoploss values, and kept having the stop hit and within minutes the price went back into the correct direction. This script has really helped me spot out recent support/resistance levels, providing good stop levels.
+Here are some of the features of the script, and a basic run threw of how to use it.
+First off you must either choose to BUY or SELL. If both are left false you will get a message stating this and have to relaunch the script. Same error will occur if both are true.
+The next thing to do would be to set your Risk%, default is set at 2%.
+The way that i calculate lots to risk in this script is as follows:
+FreeMargin * Risk% = RiskCapital
+(RiskCapital / StopLossPips) / (Leverage / ExchangeRate) = Volume
+This formula should give an accurate Risk/Stoploss pip volume. On accounts with small deposits you may end up risking more than the risk percentage you were hoping for. In this case you will get a message stating that you are risking more than your Risk%. You will have the option to continue or not.
+The Reward multiplier is fairly simple, basically if you want your takeprofit set to the same number of pips as the stoploss enter 1, for twice the stoploss pips 2 etc...
+StopAdd, just adds x amount of pips to the fractal based stoploss level.
+MaxSlip, sets the maximum price slippage allowed when opening trade.
+MaxSpread, sets the maximum allowed spread.
+Magic, sets the magic number for the trade. 0 if none.
+The next thing to do is choose the Fractal level you wish to place your stop at. It is a good idea to have the fractal indicator on your chart so you can see a clearer picture of these levels. There will be a message asking if you want to place your stop at 0.3434 etc... if the first stop is where you want it, click no and go to the next Fractal and so on.
+After clicking yes the script to run as intended and open your order. If there is an error, you should get a message stating what it is.
+I hope this script can help some of you out, and please let me know if there issues with the script so that i can get them all fixed. Also if there are any additions or modifications that would make this script better please let me know..
+Happy Trading

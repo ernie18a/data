@@ -1,0 +1,2 @@
+Displays Buy/Sell arrows as the MACD or RVIindicators are changing. When both indicators will match a message will be display and a sound alert will play.
+This indicator will print sell/buy alert only if time period is 1H or higher.

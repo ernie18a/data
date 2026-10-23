@@ -1,0 +1,17 @@
+This set of scripts has been designed to scale-in your trades as price action runs in your favor. This will maximize profits due to proper pyramiding, decrease the impact of unprofitable trading decisions and make your life much easier. There are four different tasks you can perform with these scripts:
+Buy at market price and place 3 further pending orders
+Sell at market price and place 3 further pending orders
+Place a buy stop order at the high of the previous bar and 3 further pending orders
+Place a sell stop order at the low of the previous bar and 3 further pending orders
+Some other facts you should know:
+The first trade has a risk allocation of 2%.
+All further pending orders decrease in lotsize to avoid overbetting.
+All orders have an ATR-based stop-loss. Default is
+ATR(30)*2
+from the opening price.
+All pending orders have an ATR-based distance between them. Default is
+ATR(30)/2
+.
+Additionally, a fifth script is provided to delete all pending orders if desired. Use with caution since it affects
+all
+pending orders.

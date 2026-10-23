@@ -1,0 +1,7 @@
+Author: Alex
+Adviser Doji Trader.
+------------------------
+Parameters of testing
+Symbol: EURUSD.
+Period: H1.
+Model: All tics.

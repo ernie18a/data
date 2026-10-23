@@ -1,0 +1,18 @@
+My goal was to make an indicator that triggers signals when the market price cuts the moving average.
+The moving average period length can be user defined (default is 200 length). The amount of points of price movement above and below the MA to be considered a signal; is also user defined in the inputs.
+If shorter timeframes are used such as the 2 minute or 5 minute TF, the points number needs to be low (roughly 15 - 20) as price is moving by less points on these timeframes.
+If the 1 hour timeframe or higher is used, a points number of 80 or higher should be used to smooth out the signals.
+The signals are in essence based on price moving above or below the line, and the purpose of the indicator is to catch such events sooner rather than later.
+Indicator Inputs Explained
+Input
+Description
+Moving Average Length
+The period length of the moving average line.
+Audio Alert Sample
+The user defined name of the audio sample which should match the name of the actual audio sample (must be placed in data_folder/MQL5/Files)
+Enable Audio Alerts
+Set to true or false depending on whether the indicator should trigger audio alerts
+Amount of Points on MA Crossover
+This is the user defined amount of points of price movement
+that should trigger signals
+for the bars moving over the MA

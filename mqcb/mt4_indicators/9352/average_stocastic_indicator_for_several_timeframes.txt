@@ -1,0 +1,23 @@
+My first stategy was to buy when several stochastics are below 20, and sell when they are above 80.
+It was un
+convenient
+to change periods every time, so I have developed this indicator, maybe it can be useful.
+It shows Stochastics for several timeframes in a single chart, also it calculates the average value (blue line on the chart).
+Image:
+My other solutions:
+https://www.mql5.com/ru/users/cmillion/publications
+Good Luck!
+Editor's remark:
+Note that it's a mirror translation of the
+original Russian version
+.
+If you have any questions to the author, suggestions or comments, it's better to post them
+there
+.
+If you have found this code useful for trading or educational purposes, don't forget to thank author.
+-------------------------------------------------------------------------------------------------------------------------
+Stochastic3_v2.mq4
+Good Luck!
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9352

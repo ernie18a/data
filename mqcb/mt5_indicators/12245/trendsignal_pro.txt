@@ -1,0 +1,14 @@
+Trend Signal Pro is the advanced & latest version of
+Trend Signal Indicator
+.
+We have worked on it and made it more accurate. It doesn't repaint. Also it works well with all the currency pairs.
+It is very easy to use. It also works well with a template of few indicators below:
+RSI
+Pair of MA's 7 & 14.
+It gives good profits for the traders who will follow the Indicator with analytical mind and trade without emotions.
+Just believe the Indicator and Earn more pips.
+Usage:
+When UP arrow is printed just put a BUY trade.
+When DOWN arrow is printed just put a SELL trade.
+Previously, there was nothing to rectify the trades given by the indicator but now we have given you the supportive template as well.
+Just download the template file and save it in the \Templates folder of your MetaTrader 4.

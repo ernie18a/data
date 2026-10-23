@@ -1,0 +1,7 @@
+Original of this one was posted here :
+ATR adaptive smooth Laguerre RSI
+. This version is a version that is a part of optimization
+atr calculation is done internally (not using built in atr)
+smoothing is done using built in averages functions though - simply to allow more smoothing modes
+Recommendations:
+Since the false signals are lessened in this smoothed version, you can use it like any other RSI and Laguerre RSI indicator - but with less false signals

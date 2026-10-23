@@ -1,0 +1,12 @@
+How it works
+- Classic fixed-size Renko is built internally from BID ticks.
+- Reversals use the classic two-brick rule.
+- The Donchian channel is calculated from the previous N completed Renko bricks.
+- The current brick is excluded from the channel calculation, avoiding look-ahead.
+- A bullish Renko brick closing above the previous Donchian high can trigger BUY.
+- A bearish Renko brick closing below the previous Donchian low can trigger SELL.
+- Positions close by TP, SL, opposite Donchian breakout, or maximum holding time.
+- A short Renko cooldown can be used after an exit.
+- One position per symbol.
+- No external indicators, DLLs, custom symbols or offline Renko charts are required.
+The EA is intended as an educational / Strategy Tester example. Public default parameters and a historical test example will be added only after a real-tick verification run.

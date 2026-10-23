@@ -1,0 +1,7 @@
+Author: MetaQuotes Software Corp
+True Strength Index (TSI) is a double-smoothed Momentum. TSI follows the bars with little or hardly noticeable delay in the main and intermediate trend reversal points.
+Read
+more.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7376

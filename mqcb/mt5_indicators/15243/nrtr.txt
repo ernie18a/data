@@ -1,0 +1,21 @@
+Real author:
+Ramdass
+NRTR is a trend indicator calculated using the CLOSE prices. The indicator is always located at the same distance from the reached extreme price. For an uptrend, it is displayed below the chart; for the downtrend — above. The meaning of this distance is to filter small corrective movements counter to the main trend. A stronger movement counter to the main trend above the preset level (the size of the moving filter) signals the complete trend reversal.
+For an uptrend:
+NRTR = Highest(Close, period)*(1-(K/100)),
+For a downtrend:
+NRTR = Lowest(Close, period)*(1+(K/100)),
+where the first part of the expression is the highest/lowest extreme price reached since the last intersection of the indicator and the prices, K is the size of the moving filter in percentage terms, i.e. the distance between the indicator and reached extreme values.
+Like any other simplified approach, this indicator works well in trending market, but may fail in non-trend periods.
+Read more about the properties and versions of the indicator in the article
+"
+Trend indicator of dynamic price channel breakthrough
+"
+by Konstantin Kopyrkin (in Russian).
+This indicator was first implemented in MQL4 and published in
+CodeBase
+at mql4.com on 13.07.2006.
+Fig.1. The NRTR indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15243

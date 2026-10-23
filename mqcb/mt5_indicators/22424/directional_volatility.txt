@@ -1,0 +1,19 @@
+Directional Volatility indicator. The indicator displays two volatility lines - bullish and bearish ones.
+It has two configurable parameters:
+Period
+- calculation period
+Deviation
+- deviation
+Calculation:
+Short = ShortMA + Deviation * ShortDev
+Long  = LongMA  + Deviation * LongDev
+where:
+ShortMA - EMA(ShortS,Period)
+ShortDev - StdDev(ShortMA,Period)
+ShortS = PrevClose - Low
+LongMA - EMA(LongS,Period)
+LongDev - StdDev(LongMA,Period)
+LongS = High - PrevClose
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22424

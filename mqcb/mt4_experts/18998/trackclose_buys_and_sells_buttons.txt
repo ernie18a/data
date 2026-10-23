@@ -1,0 +1,7 @@
+This tiny helper tracks total profits for SELL and BUY orders separately, displays them in two buttons attached to a chart and allows one to close either all BUYs or all SELLs by clicking the corresponding button. I find it useful for the cases when an order goes the wrong way and I try to get it back into profit by averaging.
+The orders tracked are those corresponding to the symbol of the chart and can be further filtered by magic number:
+Magic < 0 : track and close all magic numbers of this symbol.
+Magic = 0 : track and close only orders opened manually.
+Magic > 0 : track and close orders of some other EA.
+Additionally a comment filter string can restrict the orders tracked to those with the corresponding comment.
+Happy trading!

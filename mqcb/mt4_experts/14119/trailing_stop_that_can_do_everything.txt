@@ -1,0 +1,11 @@
+I present you the Trailing Stop that can do everything expected from a trailing stop.
+It can trail both real and virtual.
+By points, as usual, by SAR, ATR and MA indicators, by candlesticks and by fractals.
+It can trail percent of the profit.
+It can do all of that based on the net breakeven as well as on each order separately.
+In the strategy tester the EA opens the order pairs by itself, so that its operation could be seen and understood.
+It is even possible to run optimization and develop a new strategy based on it.
+Check, test, and if you see something still missing, it will be added!
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14119

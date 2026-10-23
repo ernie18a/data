@@ -1,0 +1,10 @@
+Real author:
+KurlFX
+Simple trend visualizer.
+The original indicator was developed in the MQL4 language and published in the
+CodeBase
+on 10.07.2009.
+Fig1. The TASSKlT indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17017

@@ -1,0 +1,2 @@
+This EA, Ask you to Put price, whatever price you put, in "ZEN" field, you will get that price on all open orders either SL or TP value, that would help to close all orders at one price, and you can close all bulk orders in one shot.
+(works very well with large balance - i suggest cent / micro account for newbees. to be able to place large closure of orders. Openin random orders manually with ongoing trend is suitable for large order accounts. (Please check the images attached)

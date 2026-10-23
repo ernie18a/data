@@ -1,0 +1,10 @@
+Corrected velocity indicator.
+Velocity is usually referred to as a "smoother momentum", and it is true (it has much smoother results without lag that would go with the smoothness). This is a logical step to have velocity as a "corrected" version too so that both (momentum and velocity) can be used. For the ones looking for more "speed" in the indicator, momentum is probably the choice. For those looking for filtered out values, velocity is a probable choice, but now, with both versions available, the choice is easy (and possible).
+If the period of the "correction" is set to <0, then the calculated value is the same as the velocity.
+Even though the velocity already does a good job of filtering a lot of false signals out, the "corrected" method moves that one further step forward. With a combination of floating levels, the choice of a "significant change" is not limited to zero crosses only, and the response (or the "expected lag") can be easily controlled.
+Alerts are included already. Depending on color choice the alerts are triggered too. Possible color /alert choices are:
+on outer level cross
+on middle level cross
+on slope change
+on original velocity value cross (when "corrected" value is used as a kind of a signal line compared to original value)
+Velocity is an indicator from momentum family, but with all the changes, "trending" usage should be considered too (the above example as a "larger picture" example).

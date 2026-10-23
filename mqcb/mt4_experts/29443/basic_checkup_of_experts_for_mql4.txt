@@ -1,0 +1,12 @@
+List of controls who performed in this function:
+have you any symbol in MarketWatch?
+The
+permission to trade
+for the given executed program.
+The
+Permission to trade
+for the Terminal.
+Are transactions Allowed for the account at the trade server side for expert?
+Are transactions Allowed for the account at the trade server side for for the current account ?
+the stability of the connection to the server.
+the type of account on which you want Expert to work.

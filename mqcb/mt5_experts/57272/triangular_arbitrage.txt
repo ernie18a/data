@@ -1,0 +1,18 @@
+This Expert Advisor (EA) is designed to perform triangular arbitrage between three currency pairs: EURUSD, USDJPY and EURJPY. The main objective is to exploit price discrepancies between these pairs, identifying arbitrage opportunities and opening positions to capitalise on them.
+Description of functionalities:
+Identifying opportunities
+: The EA calculates the implied price of EURJPY by multiplying the Ask prices of EURUSD and USDJPY. This value is then compared to the EURJPY direct price. If the relative difference exceeds a defined threshold, an arbitrage opportunity is recognised.
+Opening of positions
+: When an opportunity is identified:
+If the implied price is higher than the direct price, the EA executes a set of trades including buying EURJPY and selling EURUSD and USDJPY.
+If the implied price is lower, the EA executes the reverse trade.
+Position tracking
+: The EA tracks open positions using a specific Magic Number. This helps to distinguish trades executed by the EA from others.
+Closing positions
+: When the cumulative profit of open positions exceeds the defined target, all positions associated with the EA are closed.
+Error handling
+: The EA includes error checks to ensure that any problems when opening or closing positions are reported.
+In summary, this EA automates the triangular arbitrage process with a systematic approach, optimising returns based on price discrepancies.
+Translated from Italian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/it/code/57272

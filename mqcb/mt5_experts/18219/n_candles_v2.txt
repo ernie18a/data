@@ -1,0 +1,12 @@
+We look for N identical candles in a row. If the found candles bull — we buy if bear — we sell.
+New in version 2: Take Profit, Stop Loss, Trailing.
+Input parameters:
+N identical candles which go in a row
+Lot
+Take Profit (in pips)
+Stop Loss (in pips)
+Trailing Stop ("0" -> not trailing)
+Trailing Step (use if Trailing Stop >0)
+magic number
+slippage
+Example of search, at N=3:

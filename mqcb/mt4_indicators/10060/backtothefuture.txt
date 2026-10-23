@@ -1,0 +1,1 @@
+This indicator may help to make a decision to close your position in case of Overbought / Oversold situation.

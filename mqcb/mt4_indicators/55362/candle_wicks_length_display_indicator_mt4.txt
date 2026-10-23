@@ -1,0 +1,116 @@
+Candle Wicks Length Display MetaTrader indicator
+is an indicator that can display the length of candle wicks in pips directly on your chart. You can set the minimum length to be displayed. Alternatively, it can show wick lengths that are less than the given limit. The indicator supports all sorts of alerts and works with both MT4 and MT5.
+If your trading system is using candle wicks and if really long wicks are important to determining entry or exit signals for your trades, Candle Wicks Length Display indicator can be indispensable as a tool to notify you about such candles and the exact length of their wicks.
+Input parameters
+Units
+(default = Pips) — how to measure wicks— in standard Pips or in Percentage points.
+DisplayWickLimit
+(default = 5) — the minimum wick length in pips (standard/normal) or percentage points for indicator to display it on the chart.
+DisplayHighWickColorBullish
+(default = clrRed) — the color of the top wick length display for bullish candles.
+DisplayHighWickColorBearish
+(default = clrFireBrick) — the color of the top wick length display for bearish candles.
+DisplayLowWickColorBullish
+(default = clrLimeGreen) — the color for the bottom wick length display for bullish candles.
+DisplayLowWickColorBearish
+(default = clrGreen) — the color for the bottom wick length display for bearish candles.
+UpperWickLimit
+(default = 10) — the minimum value for the upper wick length in  broker pips or percentage points for alert to trigger.
+LowerWickLimit
+(default = 10) — the minimum value for the lower wick length in  broker pips or percentage points for alert to trigger.
+WaitForClose
+(default = true) — if
+true
+, the indicator will wait for a candle to close before checking its wicks' length.
+TopBottomPercent
+(default = 0) — if this parameter is set to a value greater than 0 and less or equal 100, the indicator will display length only for candles where Open and Close are within the given top or bottom percentage of the candle.
+LessThan
+(default = false) — if
+true
+, the indicator will mark wicks that are
+less
+or equal than the given limits instead of greater or equal.
+SoundAlert
+(default = false) — if
+true
+, sound alerts will be used when
+UpperWickLimit
+or
+LowerWickLimit
+is reached.
+VisualAlert
+(default = false) — if
+true
+, MetaTrader's native pop-up alerts will be used when
+UpperWickLimit
+or
+LowerWickLimit
+is reached.
+EmailAlert
+(default = false) — if
+true
+, MetaTrader's email alerts will be sent when
+UpperWickLimit
+or
+LowerWickLimit
+is reached. Email should be properly configured in MetaTrader via
+Tools->Options->Email
+.
+NotificationAlert
+(default = false) — if
+true
+, MetaTrader's push notification alerts will be sent to your device when
+UpperWickLimit
+or
+LowerWickLimit
+is reached. Notifications should be properly configured in MetaTrader via
+Tools->Options->Notifications
+.
+AlertOnLimit
+(default = false) — if
+true
+, the indicator will issue alerts on wicks exceeding the given limit.
+AlertOnEqualTopBottomWicks
+(default = false) — if
+true
+, the indicator will issue alerts when upper wick and lower wick have the same length.
+IgnoreAlertsOnFirstRun
+(default = true) — if
+true
+, the indicator will ignore alert conditions when indicator is first attached to the chart or the chart's timeframe/symbol is changed. Subsequent alert conditions won't be ignored.
+FontFace
+(default = "Verdana") — the font face to use for candle wick length display.
+FontSize
+(default = 10) — the font size to use for candle wick length display.
+MaxCandles
+(default = 500) — the number of candles (counting from the current one) to process. 0 — process all candles.
+UseRawPips
+(default = false) — if
+true
+, the indicator won't try to guess the pip size for the current symbol and will use the raw pips (points) instead. Might be necessary when working with non-Forex symbols.
+ShowAverageWickSize
+(default = false) — if
+true
+, the average wick size will be displayed by the indicator.
+AvgCandles
+(default = 50) — the number of candles to analyze for the average wick size. 0 — all available candles.
+AverageWickSizeColor
+(default = clrLightGray) — the color of the average wick size display.
+Corner
+(default = CORNER_LEFT_UPPER) — the location for the average wick size display on the chart.
+Distance_X
+(default = 3) — the horizontal distance from the corner to the average wick size display.
+Distance_Y
+(default = 12) — the vertical distance from the corner to the average wick size display.
+DrawTextAsBackground
+(default = false) — if
+true
+, the text label with the average wick size display will be drawn as background. It can be useful if you want to prevent the indicator from obscuring the chart.
+RemoveOldLabels
+(default = false) — if
+true
+, the text labels beyond the candles set via
+MaxCandles
+parameter will be continuously removed.
+ObjectPrefix
+(default = "CWLD-") — the prefix for chart objects for compatibility with other indicators.

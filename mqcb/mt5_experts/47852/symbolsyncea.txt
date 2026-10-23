@@ -1,0 +1,1 @@
+Syncs all chart symbols to symbol of  the chart the EA is attached to

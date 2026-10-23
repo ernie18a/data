@@ -1,0 +1,4 @@
+The idea of the indicator
+Engulfing Pattern Plus One': The current bar completely Engulfings the previous two bars. Absorption takes into account 'High' and 'Low' prices
+Rice. 1. Engulfing Pattern Plus One
+The pattern is displayed using 'Arrow' objects, and two rectangles are drawn on the chart manually - specifically, to visualize and explain how this pattern works.

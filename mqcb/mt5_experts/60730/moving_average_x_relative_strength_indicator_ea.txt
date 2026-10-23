@@ -1,0 +1,60 @@
+MARSI-
+EA is a beginner-friendly Expert Advisor (EA) that combines the logic of the
+Relative Strength Index (RSI)
+and a
+Simple Moving Average (SMA)
+to identify and execute trading signals on financial markets like XAUUSD (Gold).
+The EA is built to demonstrate:
+Dynamic lot sizing based on account risk
+RSI-based overbought/oversold entry conditions
+Trend filtering using a Moving Average
+SL and TP levels adjusted to symbol tick precision
+This EA is
+especially useful for learners
+who are experimenting with technical strategies and want to understand how indicator handles, dynamic risk, and broker digit differences affect trading logic.
+Trading Logic
+The EA operates with the following entry rules:
+Buy when
+:
+The current price is above the moving average (bullish)
+RSI is below the oversold threshold (suggesting price will rise)
+Sell when
+:
+Price is below the moving average (bearish)
+RSI is above the overbought threshold (suggesting price will fall)
+Stop Loss and Take Profit are configured using _Point , adjusted based on the broker’s pricing precision ( _Digits ).
+External Input Parameters
+Variable
+Description
+maPeriod
+Period used for Simple Moving Average
+rsiPeriod
+Period used for Relative Strength Index
+rsiOverbought
+RSI threshold above which the market is considered overbought (sell trigger)
+rsiOversold
+RSI threshold below which the market is considered oversold (buy trigger)
+riskPercent
+Percentage of balance to risk per trade
+stopLoss
+Stop Loss distance in points
+takeProfit
+Take Profit distance in points
+slippage
+Maximum allowed slippage in points
+Recommended Usage
+Symbol
+: XAUUSD (Gold)
+Timeframe
+: M15 or H1
+Broker
+: Any broker with proper tick data (test across both 2/3 and 4/5 digit brokers for consistency)
+Backtest Range
+: 3–6 months recommended
+Conditions
+: Ensure tick data is available for reliable RSI/MA values
+Additional Notes
+The function PipSize() helps normalize pip values across brokers with different _Digits .
+The EA automatically calculates a lot size based on the current account balance and defined risk.
+Code is modular and easily extendable with trailing stops, news filters, or other conditions.
+This Project is an ongoing one and feedbacks are welcome!

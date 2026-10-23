@@ -1,0 +1,48 @@
+H
+ow the example works
+1. Incoming BID ticks are passed to an internal classic Renko builder with a two-brick reversal rule.
+2. ADX, +DI and -DI are updated only after a Renko brick is completed.
+3. ADX is used as a strength filter.
+4. +DI / -DI define the allowed trade direction.
+5. A new trade can be opened only when the newest completed brick confirms the same direction and the required Renko run is present.
+6. An opposite DI direction can request an exit. Virtual TP, SL and maximum holding time provide additional exits.
+Default demonstration profile
+Brick Size: 16
+ADX Period: 14
+ADX Threshold: 8.5
+Minimum DI Separation: 2.5
+Entry Run: 3 completed bricks
+Take Profit: 9.5 bricks
+Stop Loss: 42 bricks
+Maximum Hold: 1060 minutes
+Cooldown: 6 completed bricks
+Maximum Spread / Brick: 0.35
+Requested Lot: 0.01
+Real-tick verification example
+Symbol: XAUUSD
+Period: M1
+Test interval: 2026-05-01 to 2026-09-08
+History quality: 100%
+Ticks: 48,458,994
+Initial deposit: $10,000
+Total trades: 46
+Net result: +$1,095.53
+Profit factor: 3.14
+Maximum equity drawdown: $139.11 / 1.36%
+Maximum balance drawdown: $68.70 / 0.64%
+Recovery factor: 7.88
+Sharpe ratio: 9.22
+Profit trades: 31 / 46 (67.39%)
+Short trades: 25, 64.00% won
+Long trades: 21, 71.43% won
+The defaults are included only to make the source code immediately testable. This is a historical educational example, not evidence of a persistent trading edge or future profitability. Results depend on symbol specification, tick history, spread, execution and broker conditions.
+Implementation notes
+- Completed Renko bricks only are used for ADX/DI calculations and signals.
+- No intra-brick entry signal is generated.
+- A large incoming tick can complete several bricks; they are processed sequentially and only the newest completed state can produce the final entry signal on that tick.
+- Requested volume is normalized to the symbol minimum, maximum and volume step.
+- Trading-session checks prevent repeated requests while the market is closed.
+- Due exits remain pending until a valid trading session is available.
+- One position is allowed on the symbol and duplicate requests are blocked.
+- TP and SL are virtual, so the terminal and EA must remain running.
+Golden Delta | Research First

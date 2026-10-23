@@ -1,0 +1,17 @@
+Many may have already tried to gain profit from the trades with positive swaps of the instruments. But opening towards the positive swaps is one thing. At the same time it is necessary to keep all this business running.
+In order not to simply try to hold out a little longer, try the
+multi-currency arbitrage
+. This tactic was chosen because I am more or less competent in it. If anyone is allergic to it or poorly versed in it, then any other trading strategy can be used as basis. In order to profit from swapping, set the algorithm to prohibit closing the positions with positive swaps. More precisely, mark only the positions with negative swaps as the candidates for closure. Open in both directions, as it will not work in any other way.
+The multi-currency arbitrage tactics
+does not have any parameter optimization as there is nothing to optimize. For more information about the settings, see
+HERE
+).
+Be aware that there is no point in running the EA on a demo account on a single pair. Firstly, the strategy for a single pair can be checked in tester. As there are no parameters to optimize, the adjustments are virtually impossible and the results will be almost the same as real. Secondly, it is a multi-currency strategy and it has zero degree of freedom, and due to the counter-trend nature built into the algorithm, it is forced to comply with the movements of the pair quotes, just like a splinter in a sea storm.
+Group the experts to grant them the possibility for reinvestments and adhere to the conditions:
+The minimum deposit for one group is $100 000 (one hundred thousand). At a smaller deposit the experts will not have enough to trade. Because, in order to open positions towards the positive swaps they need money for mortgages. And to keep them within the strategy, free margin is required. On the cent accounts, 100 000 units are merely $1000;
+The minimum timeframe is М15 (15 minutes). On the higher timeframes the intensity of trading is such that the DC is unlikely to withstand and will fill the terminal with requotes;
+The instruments must have positive swaps, otherwise there would be no need for such an EA. If the Specification of contracts do not contain them, change the DC.
+DC must not limit the number of simultaneously opened trades too much. If such restrictions are imposed, it is necessary to abandon such a fastidious DC. After all, the bulk of these very trades will be opened towards the positive swaps. And in addition to this, trading within the strategy will also be necessary, which will also require the trades to be opened and held open for some time.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7102

@@ -1,0 +1,8 @@
+The
+i-AnyRangeCldTail_System
+indicator provides alerts, sends email and push notifications when the candlesticks break through the dot-dash channel.
+Fig. 1. Indicator i-AnyRangeCldTail_System_Alert. Channel breakthrough on the first bar.
+Fig. 2. Indicator i-AnyRangeCldTail_System_Alert. Activating an alert.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21792

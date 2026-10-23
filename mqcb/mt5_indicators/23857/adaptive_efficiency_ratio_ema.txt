@@ -1,0 +1,9 @@
+Theory :
+Efficiency ratio was invented by Perry Kaufman as a measure of volatility and as a way of making some calculations adaptive. In his adaptive moving average he uses 3 periods for calculation which makes it a bit "cryptic" and, by all means, not so simple to use. This version is simplifying the whole thing without an intention to clone the KAMA indicator - but with an intention to use the efficiency ratio for adapting the average calculations and to use only two parameters for that :
+period
+price
+No other parameters needed
+Usage :
+It can be used as any other moving average type indicator
+PS:
+This type of adapting tends to produce smoother slopes than the EMA. The interesting is that the reaction to high volatility is very fast and after that the produced results remains smooth. At the example bellow, the colored line is this one and the gray line is the "classical" ema using same price and period

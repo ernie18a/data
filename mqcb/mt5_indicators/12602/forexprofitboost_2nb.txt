@@ -1,0 +1,11 @@
+A trend indicator based on two
+Moving Averages
+and
+Bollinger Bands
+made as a colored histogram.
+This is a trend indicator, so it provides the best results for trending markets. On flat markets there will be too many false signals (filters are required). The indicator shows the existence and strength of a currency pair trend. Only three colors are used for signals: default colors are yellow, blue and red.
+As you may have guessed, red indicates a bearish trend, and blue indicates a bullish trend. Yellow indicates weakening of the current trend, a possible trend change, a pullback or a flat period. The more yellow is on the chart, the higher is the possibility of a trend change. The more detailed description is available at the following link:
+Fig. 1. The ForexProfitBoost_2nb indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12602

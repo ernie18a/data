@@ -1,0 +1,1 @@
+Set the maximum rollback size in the window on the top left of the chart, and the indicator will show the nearest reversal levels and their chances.

@@ -1,0 +1,23 @@
+Indicator Advance Parabolic Time/Price System is an advanced Parabolic SAR with a wide scope of settings.
+It has seven adjustable parameters:
+Price mode
+- mode of choosing the calculation price
+Defined
+- price chosen in the list
+High/Low
+- High/Low prices
+Applied price
+- list of applied prices for the Defined mode
+Start
+- initial value of the acceleration factor increment step
+Step
+- acceleration factor increment step
+Max
+- maximum value of the acceleration factor
+Filter
+- noise filter
+Min change
+- size of the minimum change in price
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23530

@@ -1,0 +1,8 @@
+Description:
+I wrote these to help me find visually where my data was patchy. It's wasn't intended for publication, so WYSIWYG!
+I'm happy for people to use them for their own personal (or even company) use, but I would be annoyed if someone decided to sell them.
+The logic takes weekends (49 hours) into account, but not public holidays. My broker use CET time (no Sunday bars) so unsure how it works with US times.
+The separate chart version displays alert box on start up if there are missing bars - saves hunting for graphics to check! The other lists messages in the 'Experts' log.
+Note that the 'same chart' indicator has 5 size of scissors (bigger scissors = more missing data), and the separate chart has slightly higher bars as more data is missing.
+Feel free to change logic if you wish!
+Image:

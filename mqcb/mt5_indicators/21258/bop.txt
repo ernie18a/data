@@ -1,0 +1,15 @@
+BOP (Balance of Power) is an oscillator that allows you to assess the powers of buyers and sellers on the market and identify the trend reversal within a proper time.
+It has three configurable parameters:
+Period Action
+- short-term price volatility calculation period;
+Range Price
+- trend price range;
+Use last period
+- whether or not to use the values of the current bar to calculate the trend component.
+Calculations:
+BOP = (Close - Open[Period Action]) / (Max-Min)
+where:
+Max, Min - the highest and the lowest price values within the Range Price.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21258

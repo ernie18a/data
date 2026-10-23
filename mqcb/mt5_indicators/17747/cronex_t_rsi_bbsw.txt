@@ -1,0 +1,6 @@
+I liked an MQL4
+indicator
+, and decided to re-write it in MQL5. This implementation has no limit on displaying graphical data.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17747

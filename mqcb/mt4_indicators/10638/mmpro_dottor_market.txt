@@ -1,0 +1,8 @@
+The indicator shows lot size, corresponding to the specified risk.
+How does it work?
+Once applied on the chart, you needs to setup two basic parameters:
+The stop you want to use to perform each operation
+How much will you risk your capital (Equivalent if you already have open positions) for the single trade
+Note:
+the pip value of each cross that is applied automatically updates
+it works well on currencies only, some CFD but not all

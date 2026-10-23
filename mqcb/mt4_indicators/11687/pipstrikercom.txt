@@ -1,0 +1,7 @@
+The indicator shows top and bottom ranges of price movement.
+Put on WK chart, set color, remove from chart.
+Repeat on all currency pairs you trade.
+Change TF to D1, set color, remove from chart.
+Repeat on all currency pairs you trade.
+Do the same on 4HR TF of all pairs.
+Don't forget to remove indicator before switching TF's!!!!

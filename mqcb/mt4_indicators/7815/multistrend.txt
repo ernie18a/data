@@ -1,0 +1,5 @@
+Author: Rosh
+Indicator MultiStrend. It works only with the
+Supertrend
+indicator.
+MultiStrend

@@ -1,0 +1,4 @@
+EUR/USD M5 2010.05.26 - 07.27. Deposit: 10000, Lot: 1, Stoploss (sl): 50, Trailing stop (ts): 50. (four digits)
+EUR/USD H1 2010.01.01 - 07.27. Deposit: 10000, Lot: 1, Stoploss (sl):150, Trailing stop (ts): 150. (four digits)
+Opens one position when RSI comes back from extreme zone, and two others when the last opened has 20 (dif in the code) pips profit.
+Custom indicator edition is in the codebase (Extreme RSI).

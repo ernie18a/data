@@ -1,0 +1,1 @@
+X alert alerts you whenever there is a moving average(MA) cross. More details on our new site check the EA settings tab.

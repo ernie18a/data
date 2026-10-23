@@ -1,0 +1,94 @@
+Updates:
+12/26/2008 - corrected the lots calculation function
+The EA uses the method of Burg's linear prediction. The linear prediction is based on finding the future values as the values of the lienar functions of the past values. Assume that we have a number of prices x[0]..x[n-1] where the higher index is compliant with the recent price. The prediction of the future price x[n] is calculated as
+x[n] = -Sum(a[i]*x[n-i], i=1..p)
+where a[i=1..p] - coefficients of the model, p - order of the model. The Burg's method finds the a[] coefficients by decreasing the mean-root-square error on the training last n-p bars.
+The inputted data are:
+MaxRisk - the maximum risk of all simultaneous deals
+ntmax - the maximum number of deals in the same direction
+MinProfit - the minimum predicted price the positions should be opened by
+MaxLoss - the maximum predicted loss the positions should be closed at
+TakeProfit
+StopLoss
+TrailingStop
+PastBars - the number of past bars to be used for future prediction
+ModelOrder - the order of the Burg's model as a fraction of the past bars number (0..1)
+UseMOM - turns on the detrend of the input data: mom(i)=log[p(i)/p(i-1)]
+UseROC - turns on the detrend of the input data: roc=100*(p(i)/p(i-1)-1)
+Only one of the variables UseMOM and UseROC can have the true value simultaneously, i.e. UseMOM=true and UseROC=true are not allowed.
+As the most of optimized EAs, Burg Extrapolator work well only on the training bars. The EA will steadily lose without a constant reoptimization.
+Strategy Tester Report
+Burg Extrapolator - opt
+InterbankFX-MT4 Demo Accounts 2 (Build 220)
+Symbol
+EURUSD (Euro vs US Dollar)
+Period
+4 Hours (H4) 2007.12.03 00:00 - 2008.12.02 20:00 (2007.12.03 - 2008.12.03)
+Model
+Every tick (the most precise method based on all available least timeframes)
+Parameters
+MaxRisk=0.5; ntmax=5; MinProfit=160; MaxLoss=130; TakeProfit=0; StopLoss=180; TrailingStop=10; PastBars=200; ModelOrder=0.37; UseMOM=true; UseROC=false;
+Bars in test
+2584
+Ticks modelled
+3936616
+Modelling quality
+n/a
+Mismatched charts errors
+5263
+Initial deposit
+10000.00
+Total net profit
+2150865.30
+Gross profit
+3755013.80
+Gross loss
+-1604148.50
+Profit factor
+2.34
+Expected payoff
+8467.97
+Absolute drawdown
+2463.43
+Maximal drawdown
+763930.92 (38.56%)
+Relative drawdown
+70.14% (47506.11)
+Total trades
+254
+Short positions (won %)
+92 (71.74%)
+Long positions (won %)
+162 (82.72%)
+Profit trades (% of total)
+200 (78.74%)
+Loss trades (% of total)
+54 (21.26%)
+Largest
+profit trade
+314280.00
+loss trade
+-90000.00
+Average
+profit trade
+18775.07
+loss trade
+-29706.45
+Maximum
+consecutive wins (profit in money)
+26 (21889.31)
+consecutive losses (loss in money)
+6 (-26080.89)
+Maximal
+consecutive profit (count of wins)
+1372487.83 (6)
+consecutive loss (count of losses)
+-314864.76 (4)
+Average
+consecutive wins
+7
+consecutive losses
+2
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8611

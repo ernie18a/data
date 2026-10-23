@@ -1,0 +1,18 @@
+The DMA indicator, in which the period parameter is the number of days N in the below calculation formula.
+The indicator has two input parameters:
+Period
+- calculation period
+Applied price
+- price used for calculation
+The default timeframe is M15. The default calculation period: N = 17.
+Calculation:
+DMA[i] = E*Price[i]+(1-E)*DMA[i-1],
+where
+E = D*D,
+D = C*2/31+(1-C)*2/3,
+C=A/B,
+A = Price[i] - Price[i-Period+1],
+B = Sum(Price[i]-Price[i-1]) from (i-Period+1) to (i).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20332

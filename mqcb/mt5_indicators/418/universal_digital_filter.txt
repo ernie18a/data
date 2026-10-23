@@ -1,0 +1,44 @@
+Real author:
+Sergey Ilyukhin, the author of the
+"Digital methods generator"
+method.
+DFilter universal digital filter provides a common solution of the issue of the digital filters creation in the client terminal.
+With this MQL5 filter you don't need to create any other digital filters using the tools of the client terminal. That fact gives new possibilities for the use of these indicators.
+This indicator was thoroughly described in the article
+"Practical Implementation of Digital Filters in MQL5 for Beginners"
+.
+Place the
+DF.dll
+file to "\MetaTrader5\MQL5\Libraries\".
+Attention! Three additional dll files are required for DF.dll operation:
+bdsp.dll
+,
+lapack.dll
+and
+mkl_support.dll
+. These files contain mathematical treatment block and must be placed in "C:\Windows\System32\" for 32-bit Windows OS or "C:\Windows\SysWOW64\" for 64-bit Windows OS.
+Check the following things before use:
+1. "Allow DLL imports" checkbox is marked in Tools->Options->Expert Advisors;
+2. Bdsp.dll, lapack.dll and mkl_support.dll files (additional mathematical libraries) are placed in "C:\Windows\System32\" or "C:\Windows\SysWOW64\" folder.
+Input parameters description:
+Ftype - filter type:
+0 - LPF (FATL/SATL/KGLP);
+1 - HPF (KGHP);
+2 - band-pass (RBCI/KGBP);
+3 - rejection (KGBS).
+P1 - P1 cut-off period, bars;
+D1 - D1 transient process cut-off period, bars;
+A1 - A1 attenuation in a rejection band, dB;
+P2 - P2 cut-off period, bars;
+D2 - D2 transient process cut-off period, bars;
+A2 - A2 attenuation in a rejection band, dB;
+Ripple - Pulsations in a pass band, dB;
+Delay - Delay, bars.
+P2, D2 and A2 parameters' values must not be considered for LPF and HPF.
+Working conditions:
+LPF: P1>D1
+HPF: P1<D1
+Band-pass and rejector: D2>P2>P1>D1
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/418

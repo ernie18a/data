@@ -1,0 +1,14 @@
+Idea by:
+Boris
+Code mq5 by:
+barabashkakvn
+The EA works on hedge accounts only!
+A very simple idea: Open two opposite positions simultaneously. However, Stop Loss must be greater than Take Profit. We expect that the Take Profit of one of the positions would trigger first, and then the price would reverse and the Take Profit of the remaining position would trigger.
+You can also enable trailing. To do so, pass a value greater than zero to
+Trailing Stop
+.
+For each symbol and timeframe, a separate optimization of parameters is required. For example, the parameters range for optimization on H1 timeframe:
+The Print result parameter displays trading operations logs (opening and modifying the positions).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22820

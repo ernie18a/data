@@ -1,0 +1,8 @@
+TRIX indicator is displayed as a colored histogram and provides the ability to change the averaging algorithm.
+The indicator uses the classes of SmoothAlgorithms.mqh library (copy it to <terminal_data_folder>\MQL5\Include). The use of the classes was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Fig.1. ColorXTRIX_Histogram
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15473

@@ -1,0 +1,85 @@
+Semaphore signal indicator based on the RSI indicator, which features alerts, sending emails and push-notifications to mobile devices.
+The indicator is based on the idea that the price reversal is preceded by a reduction in indicator change rate and its reversal. For this purpose, it searches for the intervals where the price begins to stagnate in the overbought or oversold area of the fast RSI indicator.
+The indicator provides the ability to mark these areas with arrows on the chart. It is also possible to disable searching for the RSI slowdowns. In that case, the indicator will simply display exceedance of the RSI levels specified in the settings —
+LevelMax
+and
+LevelMin
+.
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+uint
+RSIPeriod=
+2
+;
+// RSI Period
+input
+ENUM_APPLIED_PRICE
+RSI_Price=
+PRICE_CLOSE
+;
+// RSI Price
+input
+double
+LevelMax=
+90
+;
+// Signal Level Max
+input
+double
+LevelMin=
+10
+;
+// Signal Level Min
+input
+bool
+SeekSlowdown=
+true
+;
+// Seek Slowdown
+input
+int
+Shift=
+0
+;
+// Horizontal indicator shift in bars
+//---- Input variables for alerts
+input
+uint
+NumberofBar=
+1
+;
+// Bar number for the signal
+input
+bool
+SoundON=
+true
+;
+// Enable alerts
+input
+uint
+NumberofAlerts=
+2
+;
+// Number of alerts
+input
+bool
+EMailON=
+false
+;
+// Enable mailing the signal
+input
+bool
+PushON=
+false
+;
+// Enable sending the signal to mobile devices
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 05.10.2016.
+Fig1. The RSI_Slowdown indicator
+Fig.2. The RSI_Slowdown indicator generating alert
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16514

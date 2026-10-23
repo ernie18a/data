@@ -1,0 +1,6 @@
+The algorithm
+At every bar the indicator checks all SMA periods ranging from MIN_PERIOD to MAX_PERIOD to find which one caused the most recent bounce(either up or down). If nothing found it leaves that bar empty.
+What is the purpose?
+The indicator is meant to detect market momentum. Wherever you find both upper and lower line to be non-empty you expect range bound behaviour.
+Too much processing needed
+The indicator requires heavy processing. So choosing too wide ranges of MA period to be scanned for larger lookback bars or changing SMA to more sophisticated MA methods will cause the indicator to load too late. Anyway when loaded you will have to update latest bar only.

@@ -1,0 +1,18 @@
+Oscillator DI (Damping Index) is designed for identifying the damping of the directed market movement.
+Any value below 1.0 definitely points to slowing price movement, whatever direction it was moving before.
+It has three input parameters:
+Period
+- calculation period;
+Method
+- calculation method;
+Damping level
+- threshold level.
+Calculations:
+DI = (H - L)/R
+where:
+H = Moving Average(High price, Period, Method)
+L = Moving Average(Low price, Period, Method)
+R = H[i-Period] - L[i-Period]
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20853

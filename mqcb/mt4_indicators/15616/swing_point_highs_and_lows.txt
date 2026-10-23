@@ -1,0 +1,7 @@
+This indicator helps to determine swing point highs and swing point lows.
+You can choose how many bars need to be checked to determine the major and minor swing points.
+Want alerts? The
+SwingPoints
+indicator with alerts is now available in the marketplace. If you use MetaTrader 5
+SwingPointsMT5
+is now available.

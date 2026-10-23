@@ -1,0 +1,10 @@
+Theory:
+Trend Trigger Factor was described by M.H. Pee in the Technical Analysis of Stocks and Commodities magazine in December, 2004. Usually the indicator is added some sort of smoothing in order to filter out the false break results.
+This version:
+It is using averages filter out prices prior to being used in calculation. That way the lag added is smaller then when the smoothing is used on the calculated result. The averages that can be used are the following:
+simple moving average (SMA)
+exponential moving average (EMA)
+smoothed moving average (SMMA)
+linear weighted moving average (LWMA)
+Usage:
+You can use the color change for signals.

@@ -1,0 +1,7 @@
+The real author:
+Sergey
+The indicator to define the trend and the flat. Pink bar is a trend, gray bar is a flat, violet bar is trend or flat shift.
+Fig.1 The Flat-Trend indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1303

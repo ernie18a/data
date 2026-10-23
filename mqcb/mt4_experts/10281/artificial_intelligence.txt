@@ -1,0 +1,2 @@
+The use of "Perceptron".
+Prepare for optimization:

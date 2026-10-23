@@ -1,0 +1,10 @@
+Real author:
+Dark Han
+Three WPR (Williams’ Percent Range) osicllators from the same timeframe, based on Close, High and Low in a single window.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 5.12.2011.
+Fig.1. The WPR3 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14203

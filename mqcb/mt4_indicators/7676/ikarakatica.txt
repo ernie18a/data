@@ -1,0 +1,8 @@
+Author: Dmitry
+The Ikarakatica indicator. It shows when to buy and when to sell.
+Participated in the
+Automated Trading Championship 2006
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7676

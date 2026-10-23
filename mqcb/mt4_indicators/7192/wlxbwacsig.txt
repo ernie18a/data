@@ -1,0 +1,8 @@
+Real author:
+B.Williams, coding wellx
+The indicator shows entry points according to
+AC indicator
+.
+The system is described in the book
+"New Trading Dimensions: How to Profit from Chaos in Stocks, Bonds, and Commodities"
+.

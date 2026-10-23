@@ -1,0 +1,28 @@
+TMAGi is an oscillator based on three moving averages and the +DI and -DI lines of the ADX indicator. It indicates the market state: uptrend/downtrend/flat.
+There are seven configurable parameters:
+ADX period
+- ADX calculation period
+Fast MA period
+- fast MA calculation period
+Middle MA period
+- middle MA calculation price
+Slow MA period
+- slow MA calculation price
+SMA slowing
+- SMA smoothing period
+LWMA slowing
+- LWMA smoothing period
+Applied price
+Calculation:
+TSMAGi = SMA(RAW, SMA slowing)
+TLWMAGi = LWMA(RAW, LWMA slowing)
+where:
+RAW = (Abs(FastMA - MiddleMA) + Abs(FastMA - SlowMA) + Abs(MiddleMA - SlowMA))*DI
+FastMA = SMA(Applied price, Fast MA period)
+MiddleMA = SMA(Applied price, Middle MA period)
+SlowMA = SMA(Applied price, Slow MA period)
+DI = PlusDI - MinusDI
+PlusDI,  MinusDI - +DI and -DI lines of ADX(ADX period)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21843

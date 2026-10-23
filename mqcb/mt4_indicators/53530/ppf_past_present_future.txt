@@ -1,0 +1,11 @@
+The same PNB from Yousufkhodja Sultonov.
+I took the calculations in order from his file for excel (the file itself is not saved) and transferred the code to mql4.
+In the code, I signed the lines that correspond to the cells in excel.
+I will not write much about the indicator, since I am not the author. If anything, you can read about it in the topics:
+https://www.mql5.com/ru/forum/359299/page71#comment_20193436
+https://www.mql5.com/ru/forum/361109
+In short, there are three indicator lines P1, P2, P3.
+According to which trajectory P3 sticks there and the price forecast.
+At the moments of a clear upward or downward movement, all lines merge into one.
+Version updated!
+Added 'Remove Indicator Drawing' function which allows you to enable and disable indicator drawing on history.

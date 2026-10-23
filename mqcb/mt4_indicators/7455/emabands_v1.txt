@@ -1,0 +1,2 @@
+Author: IgorAD
+EMA Bands v1 indicator.

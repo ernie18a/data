@@ -1,0 +1,16 @@
+Trend indicator. It adapts to the history, unfortunately redraws.
+Input parameters:
+extern
+int
+RISK=
+4
+;
+extern
+int
+AllBars=
+250
+;
+Trend
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8482

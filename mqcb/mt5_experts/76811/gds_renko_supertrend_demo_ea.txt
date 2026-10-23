@@ -1,0 +1,15 @@
+How it works
+- Classic fixed-size Renko is built internally from BID ticks.
+- Reversal uses the classic two-brick rule.
+- SuperTrend ATR and bands are calculated from completed Renko bricks, not time candles.
+- A trade is allowed when the completed Renko brick direction agrees with the Renko
+SuperTrend direction.
+- Positions close by price target, stop, SuperTrend flip, or maximum holding time.
+- A short Renko cooldown can be used before re-entry.
+- Only one position on the symbol is allowed.
+The EA is standalone. No external indicator, DLL, custom symbol or offline chart is required.
+Companion visual indicator:
+GDS Renko Pip ST Chart
+https://www.mql5.com/en/market/product/175340
+This Expert Advisor is an educational historical demonstration. Default settings are not
+a recommendation, proof of a persistent edge, or a promise of future profitability.

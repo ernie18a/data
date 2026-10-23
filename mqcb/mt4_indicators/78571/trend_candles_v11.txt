@@ -1,0 +1,7 @@
+Mistral Trend Candles
+- **Green:** confirmed uptrend (Hull MA slope above threshold, ADX in trend regime).
+- **Red:** confirmed downtrend.
+- During weak/lateral conditions, candles keep the last confirmed trend color, so the chart always reads as clean green/red zones.
+- **Non-repainting:** a closed candle never changes color. Only the forming candle may update until it closes.
+- Drawn as chart objects layered in front of the native candles, covering them completely.
+- Recommended settings: consider lowering `ADX_TrendMin` (18–19) on fast timeframes (M1–M5) and raising it on higher timeframes. `HMA_Period` and `Slope_MinATR` control responsiveness.

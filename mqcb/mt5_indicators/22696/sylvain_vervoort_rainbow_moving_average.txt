@@ -1,0 +1,21 @@
+Sylvain Vervoort Rainbow Moving Average
+It has one adjustable parameter:
+Period
+- calculation period
+Calculations:
+SVRMA = Value / 20.0
+where:
+Value = 5.0 * MA1 + 4.0 * MA2 + 3.0 * MA3 + 2.0 * MA4 + MA5 + MA6 + MA7 + MA8 + MA9 + MA10
+MA1 = SMA(Close,Period)
+MA2 = LWMA(MA1, Period)
+MA3 = LWMA(MA2, Period)
+MA4 = LWMA(MA3, Period)
+MA5 = LWMA(MA4, Period)
+MA6 = LWMA(MA5, Period)
+MA7 = LWMA(MA6, Period)
+MA8 = LWMA(MA7, Period)
+MA9 = LWMA(MA8, Period)
+MA10= LWMA(MA9, Period)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22696

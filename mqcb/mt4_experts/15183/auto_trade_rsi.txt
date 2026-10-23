@@ -1,0 +1,18 @@
+Real author:
+Khurram Mustafa
+Based On : RSI
+Time Frame : ALL (But I tried it on M15)
+Logic : Above 50 Buy & Below 50 Sell
+Other Options:
+Selection Of Buy Sell
+Signal For Close
+Auto Lot Control
+One time One Position.
+Recommendations:
+Remember, in any case of loss I am not responsible.
+I recommend to False
+Auto Lot Option
+because of increase in lots.
+First test on
+demo account.
+Please teach if you want to teach me. Thank You with respect.

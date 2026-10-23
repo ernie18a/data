@@ -1,0 +1,7 @@
+As described by Markos Katsanos and his article in the June 2018 edition of Technical Analysis of Stocks and Commodities magazine.
+Additional choice of what is used for penetration criteria (in original only close price is used, in this version you can chose to use high/low instead too). Also, instead of using only simple moving average for averaging, it can be done using one of the 4 averages types:
+Simple Moving Average
+Exponential Moving Average
+Smoothed Moving Average
+Linear Weighted Moving Average
+And finally : found one idea for calculating the trend that comes from someone that calls himself "Vonasi" on the net. I liked the idea (it is not showing the usual "greater than" or "smaller than" trend) and used it in this indicator too (as an option, so this indicator can calculate the trend the "classical" way as well as that custom way). Also, regardless of the indicator name, you can chose to display colored bars as well as colored candles

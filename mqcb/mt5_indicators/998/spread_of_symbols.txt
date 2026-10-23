@@ -1,0 +1,10 @@
+Description:
+Indicator input parameters:
+Symbol1 and Symbol2 - symbols for calculation of prices difference and displaying it as a chart. AUDUSD and NZDUSD by default.
+mass_of_symbol1 and mass_of_symbol2 - quantitative ratio of trading symbols. Both parameters are equal to 1 by default. If you want to calculate the sum of symbols, put -1 to mass_of_symbol2 parameter. Sum calculation is used to evaluate the possibility of applying negative correlation symbols in pairs trading.
+Image:
+The image displays:
+AUDUSD chart above, NZDUSD chart in the middle and Spread Of Symbols indicator below.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/998

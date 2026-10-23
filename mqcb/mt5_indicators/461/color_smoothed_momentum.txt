@@ -1,0 +1,7 @@
+In this indicator Momentum values are smoothed using the
+JMA smoothing algorithm
+for signals filtration and display of a trend.
+As a result, it is now possible to indicate a trend using the indicator line coloring.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/461

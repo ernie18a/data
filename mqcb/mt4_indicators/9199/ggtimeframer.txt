@@ -1,0 +1,19 @@
+This indicator shows the
+last candle
+(High-Low) of all timeframes (M1,M5 ... D1) together with the actual price.
+Colors show whether the bar is
+bullish
+or
+bearish
+or
+neutral
+(Doji).
+High and low levels are displayable for each timeframe.
+Maybe useful for
+scalping
+and
+breakout
+systems.
+Color setting is variable.
+Please, give a little feedback if you find it useful. Thanks!
+GG-TimeFramer

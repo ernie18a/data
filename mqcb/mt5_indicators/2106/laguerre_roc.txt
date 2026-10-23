@@ -1,0 +1,61 @@
+Real author:
+Emerald King , MTE&I
+The
+ROC
+indicator smoothed by Laguerre filter drawn as a color histogram.
+Indicator input parameters:
+input
+uint
+vPeriod=
+5
+;
+// Period
+input
+double
+gamma=
+0.500
+;
+// Averaging factor
+input
+double
+UpLevel=
+0.75
+;
+// Overbought level in %
+input
+double
+DnLevel=
+0.25
+;
+// Oversold level in %
+input
+color
+UpLevelsColor=
+clrMagenta
+;
+// Color of the overbought level
+input
+color
+DnLevelsColor=
+clrMagenta
+;
+// Color of the oversold level
+input
+STYLE Levelstyle=DASH_;
+// Style of levels
+input
+WIDTH  LevelsWidth=Width_1;
+// Width of levels
+input
+int
+Shift=
+0
+;
+// Horizontal shift of the indicator in bars
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 12.10.2007.
+Figure 1. The Laguerre_ROC indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2106

@@ -1,0 +1,11 @@
+SuperTrend indicator for
+MetaTrader 5
+.
+Original version was implemented in MQL4 and published in
+CodeBase
+at mql4.com
+Is possible to use
+DRAW_FILLING
+by "Show_Filling" input.
+Show_Filling=false:
+Show_Filling=true (DRAW_FILLING):

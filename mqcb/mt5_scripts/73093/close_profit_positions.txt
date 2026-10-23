@@ -1,0 +1,22 @@
+What ideas is the code based on:
+This script is designed for manual traders and algorithmic managers who need to instantly clean up their exposure. Standard MetaTrader 5 interface requires closing each position individually, which can cause significant slippage during high volatility. This script automates the process by iterating through all open positions and closing them in a split second based on the selected mode.
+How indications can be interpreted:
+The script works via a user-friendly drop-down menu (Enumeration) and executes immediately upon being dragged onto the chart. It provides clear feedback in the Experts log terminal, printing the exact number of successfully closed positions.
+Description of external variables (Inputs):
+CloseMode:
+Determines the filtering logic for closing.
+CLOSE_PROFIT
+— Closes only positions that are currently in net profit (including swap and commission).
+CLOSE_LOSS
+— Closes only positions that are currently underwater (negative net profit).
+CLOSE_ALL
+— Completely flattens the account by closing every single open position.
+TargetMagic:
+Filter by Magic Number.
+If set to 0 , the script will affect all manual trades and trades from any Expert Advisor.
+If set to a specific number (e.g., 12345 ), it will only close positions opened by that specific EA.
+Recommended usage:
+Symbol:
+Universal (works on any currency pair, Gold, or Crypto).
+Timeframe:
+Any (the script executes instantly and does not depend on chart periods).

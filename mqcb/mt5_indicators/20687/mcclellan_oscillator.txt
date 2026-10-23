@@ -1,0 +1,23 @@
+Oscillator represents the difference between 19-day MA and 39-day MA, based on the values of McClellan
+RANA
+indicator.
+It has three input parameters:
+Base currency
+- name of the base currency of symbols in the Market Watch for calculating the RANA.
+Fast MA period
+- fast MA period (19 by default);
+Slow MA period
+- slow MA period (19 by default).
+Calculations:
+McClellan Oscillator = (MA(RANA(19)) - MA(RANA(39))) * (Fast MA period + Slow MA period)
+where:
+MA(RANA(19)) - 19-day MA based on RANA;
+MA(RANA(39)) - 39-day MA based on RANA.
+RANA = (Up - Dn)/(Up + Dn)
+Up - number of bullish candlesticks on all symbols;
+Dn - number of bearish candlesticks for all symbols.
+It should be noted that, at the first launch or at switching the timeframe, the indicator will need some time to download the necessary history for all the symbols required.
+Indicator RANA is not required for operation - it is calculated by the indicator independently.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20687

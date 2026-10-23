@@ -1,0 +1,117 @@
+Real author:
+Alejandro Galindo
+The indicator draws four vertical colored lines during a day. Line parameters can be set in the input parameters:
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+//--- common settings
+input
+string
+LinesSirname=
+"TimeZones"
+;
+// Line name
+input
+uint
+WeeklyTotal=
+4
+;
+// Number of weeks in the history
+input
+uint
+FutureTotal=
+1
+;
+// The number of lines in the future
+//--- setting for day bars
+input
+color
+Line_Color_D=
+clrRed
+;
+// Color of a day line
+input
+STYLE Line_Style_D=SOLID_;
+// Style of a day line
+input
+ENUM_WIDTH Line_Width_D=w_3;
+// Width of a day line
+input
+bool
+SetBackground_D=
+true
+;
+// Background display of day lines
+//--- settings for intraday bars GMT
+input
+Hour GMT=H02;
+//
+input
+color
+Line_Color_D1=
+clrDodgerBlue
+;
+// Color of the GMT line
+input
+STYLE Line_Style_D1=SOLID_;
+// GMT line style
+input
+ENUM_WIDTH Line_Width_D1=w_2;
+// GMT line width
+input
+bool
+SetBackground_D1=
+true
+;
+// Background display of the GMT line
+//--- settings for intraday bars MST
+input
+Hour MST=H06;
+//
+input
+color
+Line_Color_D2=
+clrLime
+;
+// Color of the MST line
+input
+STYLE Line_Style_D2=SOLID_;
+// Style of the MST line
+input
+ENUM_WIDTH Line_Width_D2=w_2;
+// Width of the MST line
+input
+bool
+SetBackground_D2=
+true
+;
+// Background display of the MST line
+//--- settings for intraday bars EST
+input
+Hour EST=H07;
+//
+input
+color
+Line_Color_D3=
+clrDarkOrchid
+;
+// Color of the EST line
+input
+STYLE Line_Style_D3=SOLID_;
+// Style of the EST line
+input
+ENUM_WIDTH Line_Width_D3=w_2;
+// Width of the EST line
+input
+bool
+SetBackground_D3=
+true
+;
+// Background display of the EST line
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 28.09.2007.
+Figure 1. The TimeZones indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2193

@@ -1,0 +1,48 @@
+The idea of the indicator
+Two iStochastic (Stochastic Oscillator, STO) indicators - 'Fast' and 'Slow' (more precisely, the 'Main' lines of these indicators) in one subwindow. Areas are filled between lines. The level settings are included in the input parameters - it can be useful when used in an Expert Advisor and when visualizing in a strategy tester. Added Notifications when crossing lines (Sound, Alert, mail, push)
+input
+group
+"Alerts"
+input
+string
+InpSoundName               =
+"alert.wav"
+;
+// Sound Name
+input
+uchar
+InpSoundRepetitions        =
+3
+;
+// Repetitions
+input
+uchar
+InpSoundPause              =
+3
+;
+// Pause, in seconds
+input
+bool
+InpUseSound                =
+false
+;
+// Use Sound
+input
+bool
+InpUseAlert                =
+true
+;
+// Use Alert
+input
+bool
+InpUseMail                 =
+true
+;
+// Use Send mail
+input
+bool
+InpUseNotification         =
+true
+;
+// Use Send notification
+Rice. 1. Two Stochastic Custom Filling Alert

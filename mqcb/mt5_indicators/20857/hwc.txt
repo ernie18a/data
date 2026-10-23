@@ -1,0 +1,26 @@
+Channel indicator HWC (Holt-Winters Channel) based on
+HWMA
+- a three-parameter moving average calculated by the method of Holt-Winters.
+It has six input parameters:
+nA
+- parameter of the equation that describes a smoothed series (from 0 to 1);
+nB
+- parameter of the equation to assess the trend (from 0 to 1);
+nC
+- parameter of the equation to assess seasonality (from 0 to 1);
+nD
+- parameter of the channel equation (from 0 to 1);
+Multiplier
+- multiplier for the width of the channel calculated;
+Applied price
+- price used for calculations.
+Calculations:
+Top = HWMA + Multiplier * StDt
+Bottom = HWMA - Multiplier * StDt
+where:
+HWMA - Holt-Winter Moving Average
+StDt[i] = Sqrt(Var[i-1])
+Var[i] = (1-d) * Var[i-1] + nD * (Price[i-1] - HWMA[i-1]) * (Price[i-1] - HWMA[i-1])
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20857

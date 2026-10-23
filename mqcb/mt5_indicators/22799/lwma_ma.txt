@@ -1,0 +1,12 @@
+LWMA/SMA ratio oscillator is a colored histogram defining the difference between two moving averages - a simple and a linear-weighted one.
+It has one input parameter:
+Period
+- calculation period
+Calculations:
+DMA = (LWMA / SMA)-1.0
+where:
+LWMA - linear-weighted МА with a Period value
+SMA - simple МА with a Period value
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22799

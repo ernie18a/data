@@ -1,0 +1,4 @@
+Author:
+None
+Indicator Hull_O_H_L_C.
+Indicator Hull_O_H_L_C

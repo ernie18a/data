@@ -1,0 +1,15 @@
+The PCR (Percent Retracement) indicator shows the maximum distance by which the price has moved away from the highest High in the specified range.
+The indicator has three input parameters:
+Period
+- the range;
+Overbought
+- overbought level;
+Oversold
+- oversold level.
+Calculations:
+PCR = 100.0 * (1.0 - (Max+Close) / (Max-Min))
+where:
+Min, Max - the highest and lowest prices within the Period interval
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21651

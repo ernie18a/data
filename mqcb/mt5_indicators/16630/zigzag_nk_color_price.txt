@@ -1,0 +1,5 @@
+ZigZag indicator with price labels of the ZigZag peak values.
+Fig.1. ZigZag_NK_Color_Price indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16630

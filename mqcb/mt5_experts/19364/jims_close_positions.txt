@@ -1,0 +1,15 @@
+Author of the idea
+:
+James Malwitz
+,
+mq5 code author
+:
+barabashkakvn
+.
+The Expert Advisor closes positions according to one of the following conditions:
+close all positions
+close only profit positions
+close only loss positions
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19364

@@ -1,0 +1,2 @@
+It is a good trend indicator that has two lines. When white line is above the blue line then this is a buy signal, otherwise it is sell signal.
+Based on TradingView indicator that has same name.

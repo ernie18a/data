@@ -1,0 +1,11 @@
+The TOSC oscillator indicator. It shows the difference between the exponential moving average and the
+recursive trendline
+.
+It has two parameters:
+Period
+- period;
+Applied price
+- price used for calculations.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20272

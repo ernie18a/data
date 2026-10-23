@@ -1,0 +1,14 @@
+Ichimoku is one of the excellent indicator which can work lonely or with other indicators.
+With Alerting indicator which send notification to your cell phone whenever Tenkan-sen Cross Kijun-sen you can have an opportunity to enter or exit market at right time .
+Push Notification: (iOS and Android)
+Push Notifications are fast, fail safe and easy to set up.
+Speed will depend on capability of Internet Connection and Computer and Mobile Devices.
+First install MT5 on Mobile Device.
+Locate MetaQuotes ID., See - Messages or Messages in Settings
+Enter MetaQuotes ID in Client Terminal of MT5 on computer (Tools → Options → Notifications).
+Note: The same MetaQuotes ID can be used with multiple Client Terminals (different Brokers).
+Click the Test.
+Open up MT5 Terminal (Ctrl + O) and select the Journal Tab and check under Messages if the the Test was successful.
+One a successful Test is obtained Push Notification Alerts can be set in the Alerts New Bar Indicator.
+Important:
+Ensure that your mobile device has sound for notifications turned on.

@@ -1,0 +1,6 @@
+The indicator draws the nearest levels of the specified price range.
+In the settings, you can choose what to measure the range in, points or percentages.
+The principle of the indicator:
+1. The user specifies the required price range in the settings,
+2. The indicator scans the chart,
+3. As soon as the difference between the Maximum and Minimum prices on the observation interval falls within the specified boundaries, the action stops and the price levels of the range are displayed on the chart.

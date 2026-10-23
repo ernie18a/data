@@ -1,0 +1,8 @@
+This indicator shows you the
+trend
+(based on ADX and PSAR) on
+every timeframe
+simultaneously.
+You can adjust the set up parameters.
+Corner: 0,1,2,3 (0 is the left upper corner)
+GG-TrendBar indicator

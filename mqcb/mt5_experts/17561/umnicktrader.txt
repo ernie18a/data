@@ -1,0 +1,20 @@
+The author of the idea
+:
+Victor
+,
+the mq5 code author
+:
+barabashkakvn
+.
+An MQL5 implementation of the adaptive
+UmnickTrade
+Expert Advisor.
+Explanation from the author of the idea:
+General Theory of Trading (GTT): In order to make profit, trade your own function synchronized with the market.
+The attached Expert Advisor features the simplest principles of GTT and of adjustment to the market. The Digital Brain (DB) technology was used in the creation of adaptive algorithms. The components of the DB technology are protected with two patents issued in the Russian Federation: No 2257611 and No 2295763.
+The EA has one optimizable parameter: StopBase.
+All positions are opened by market. Positions are only closed by limit and stop orders.
+Testing results on EURUSD, M30, from 2017.06.09 to 2018.02.10:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17561

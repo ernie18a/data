@@ -1,0 +1,9 @@
+Description:
+BreakThrough is not full system, it only opens trade when it crosses trend line you created on chart.
+It buys/sells depending on the name of the trend line.
+If you name the line “buy”, without quotes, the system will open a buy trade after crossing the line.
+If you name the line “sell”, the system will open sell trade after crossing the line.
+First you position your trend line on chart and then change its name to “buy” or “sell”. The system will open only one buy, one sell trade.
+You can remove the line and place another if you want the system to continue to open a trade on a trend line crossing.
+You can set take profit and stop loss in expert advisors settings, but also create take profit trend line, simply create a trend line and name it “buyTP”, “buySL”, “sellTP”,  “sellSL” according to function you want to.
+If the price goes above buyTP or under buySL the system will close all buy trades with its magic number, if the price goes under sellTP or above sellSL the system will close all sell trades with its magic number.

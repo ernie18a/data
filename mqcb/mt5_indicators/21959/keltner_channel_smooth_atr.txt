@@ -1,0 +1,7 @@
+Ketner channel is calculated as SMA (Simple Moving Average) +- ATR (Average True Range)
+This version is deviating from that. It allows you to use one of the 4 average types :
+simple moving average (SMA)
+exponential moving average (EMA)
+smoothed moving average (SMMA)
+linear weighted moving average (LWMA)
+and instead of using "regular" ATR it uses the smooth ATR (which is much smoother and faster from the regular ATR)

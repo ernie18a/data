@@ -1,0 +1,39 @@
+Automatic marking of the chart by the time and the timer.
+period
+of the marking is from
+5
+to
+43200:
+5
+5M
+15
+15M
+30
+30M
+60
+1H
+240
+4H
+1440
+1D
+10080
+1W
+43200
+1MN
+period
+there should be more than TF of the chart.
+At a variable
+period
+smaller than TF of the chart and/or less than 5 - the indicator will not work.
+The Alert works at achievement of a new line if variable
+TimeAlert
+is
+True
+.
+TimeLines 1H
+Some indicators can be used for more difficult marking.
+TimeLines 15M and 1H
+TimeLines 15M, 1H, 4H
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9278

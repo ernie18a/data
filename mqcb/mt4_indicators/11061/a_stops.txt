@@ -1,0 +1,4 @@
+Shows the distance to assumed stop with two lines located at a predetermined distance from the current price. Despite its simplicity, is a very useful thing, as it allows to navigate on a scale chart. In the settings, if you do not need put one of the parameters to zero.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11061

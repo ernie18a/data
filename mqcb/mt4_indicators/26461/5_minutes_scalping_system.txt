@@ -1,0 +1,5 @@
+It is a manual trading system consisting of 5 indicators.
+Open long position when all indicators are in blue, and open short when all indicators are in red.
+Indicators auto turn chart in M5 time frame, there is a switch to skip it.
+The signal is confirmed by the alert and the information on the chart.
+The histogram bars and dots produce no signals.

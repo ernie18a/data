@@ -1,0 +1,6 @@
+Description:
+Kaufman Efficiency Ratio (also called "generalized fractal efficiency") according to Perry Kaufman books "Smarter Trading" and "Trading Systems & Methods".
+Image:
+See also:
+"Code request: Kaufman Efficiency Ratio"
+"Kaufman Volatility"

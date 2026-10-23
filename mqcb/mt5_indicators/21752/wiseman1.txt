@@ -1,0 +1,10 @@
+Real author
+: Pavel Kulko
+The indicator colors candlesticks depending on the position of these candlesticks in relation to the previous candlesticks.
+If the candlestick's High has grown as compared to the highest price over the period, and the candlestick Close price is below its middle, the color is green;
+If the candlestick's Low has decreased as compared to the lowest price over the period, and the candlestick Close price is above its middle, the color is pink.
+Candlesticks in the direction of the signal are bright; those against the direction are dark.
+Fig. 1. The Wiseman1 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21752

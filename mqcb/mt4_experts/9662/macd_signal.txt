@@ -1,0 +1,5 @@
+The Expert Advisor MACD_signal is founded on signals of Average Directional Movement Index (ADX) and Moving Average Convergence/Divergence (MACD) indicators.
+The Adviser is adjusted on work on H4 timeframe.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9662

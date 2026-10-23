@@ -1,0 +1,5 @@
+Quantora Drawdown Monitor MT5 is an indicator that tracks account drawdown and risk in real time. It does not open or manage trades and is designed for monitoring and analysis.
+The tool compares balance and equity to show current drawdown in both percentage and account currency. It also tracks peak equity and calculates equity drawdown, giving a clearer view of how the account is performing over time.
+It includes maximum drawdown tracking and a daily performance summary with daily profit, loss, and drawdown values. Floating profit or loss and the number of open positions are also displayed.
+Risk levels are automatically classified based on configurable thresholds, helping you quickly understand whether the account condition is low, moderate, high, or critical. A simple visual bar supports quick monitoring.
+Suitable for traders who want a clear and practical way to track drawdown and overall account risk.

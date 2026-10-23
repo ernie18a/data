@@ -1,0 +1,4 @@
+Description:
+QEMA is the Quadruple Exponential Moving Average:
+QEMA = TEMA + DEMA(y - TEMA)
+quema = 50

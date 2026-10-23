@@ -1,0 +1,17 @@
+The Modified Moving Average indicator. It was described in "Stocks & Commodities" in January, 2000.
+The indicator has small lagging.
+It has two input parameters:
+Period
+- calculation period
+Applied price
+Calculation:
+MMM = MA + 6 * Slope / K
+where:
+MA - SMA(Applied price, Period)
+Slope = Sum (Applied price * (Period-Factor)/2) in the range of 'Period'
+Factor = 1 + 2*(N-1)
+N = values from 1 to Period in the range of 'Period'
+K = Period*(Period+1)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21840

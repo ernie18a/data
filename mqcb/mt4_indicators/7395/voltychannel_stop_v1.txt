@@ -1,0 +1,5 @@
+Author: TrendLaboratory Ltd
+The indicator helps to follow the trend on the market.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7395

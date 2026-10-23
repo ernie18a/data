@@ -1,0 +1,7 @@
+Author:
+James OBrien
+Sequential
+is an automated trading system developed by Thomas DeMark.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7372

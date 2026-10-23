@@ -1,0 +1,12 @@
+Most traders judge a strategy's risk by a single number: its maximum drawdown. That figure tells you how far equity fell from its peak, but it says nothing about how often declines happen, how long the account stays below a previous peak, or how quickly it recovers. Two equity curves with the same maximum drawdown can be very different to hold.
+DrawdownDNA is a script that reads a daily equity curve and dissects the full structure of its declines. It rebuilds the equity curve and its underwater curve, splits the underwater curve into individual drawdown episodes, and combines a set of risk metrics into a single resilience grade.
+On each run it prints, in the Experts tab:
+A text underwater curve, so the shape of the declines is visible at a glance.
+A table of drawdown episodes with depth, drawdown duration, recovery time and underwater length.
+Maximum and average drawdown, number of episodes, longest underwater period and time underwater.
+The Ulcer Index, the Pain Index and the Recovery Factor.
+A composite resilience score (depth, recovery and stability), graded from A+ to F, with recommendations.
+Input.
+The script reads a CSV file with two columns, Date and DailyPnL, one row per trading day. On the first run, if no file is found, it creates a sample EquityCurve.csv and analyzes it, so you can see the output immediately (the "file not found" message with error 5004 is expected on that first run). To analyze your own strategy, export its daily results to the same format; the included helper ExportEquity.mq5 writes that file from the trade history and can be called from an Expert Advisor's OnTester() event.
+Parameters.
+InpFileName (the CSV file), InpStartCapital (starting capital used to rebuild the equity), InpMinDepthPct (ignore episodes shallower than this), and three weights InpWeightDepth, InpWeightRecov and InpWeightUlcer for the composite score.

@@ -1,0 +1,53 @@
+Indicator
+SilverTrend_Signal
+that generates alerts and sends e-mails and Push-messages when the indicator changes its color, implemented as candlesticks. Candlesticks with the trend are colored brightly, and those against the trend are colored darkly.
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+int
+SSP=
+9
+;
+input
+int
+RISK=
+3
+;
+// Risk level
+input
+uint
+NumberofBar=
+1
+;
+// Bar number for the signal сигнала
+input
+bool
+SoundON=
+true
+;
+// Enable alerts
+input
+uint
+NumberofAlerts=
+2
+;
+// Number of alerts
+input
+bool
+EMailON=
+false
+;
+// Enable mailing the signal
+input
+bool
+PushON=
+false
+;
+// Enable sending the signal to mobile devices
+//+----------------------------------------------+
+Fig.1. Indicator SilverTrend
+Fig.2. Alerting
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20942

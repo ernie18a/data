@@ -1,0 +1,15 @@
+Author: Farhad Farshad.
+The Farhad EA. It has a lot of settings. It also uses the indicators:
+MACD
+,
+Stochastic
+,
+SAR
+,
+Momentum
+,
+MA
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7680

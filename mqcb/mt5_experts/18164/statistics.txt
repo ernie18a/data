@@ -1,0 +1,16 @@
+Analyzes bars whose opening time (hour and minute) is equal to the current bar opening time. Lit increase, if the previous trade was closed with a loss. Closing (forced) on a new bar.
+Lot increased in OnTradeTransaction — the EA catches deals with the "market exit type". If the deal is profitable, the initial lot value is used (the "
+Lots
+" parameter). If the deal is losing, the lot is increased.
+Stop Loss. OnTradeTransaction.
+Inputs:
+Min Candle Height ("0" -> the parameter is disabled)
+Lots
+Stop Loss (in pips)
+Days of History
+The EA searches for "
+Days of History
+" number of days. If the size of the found bullish bars exceeds the size of the found bearish bars, we open a Buy position. If opposite, open Sell.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18164

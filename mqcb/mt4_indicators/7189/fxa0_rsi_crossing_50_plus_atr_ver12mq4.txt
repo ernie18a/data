@@ -1,0 +1,14 @@
+This is my first indicator :)
+Here's how you use it. Just drop it on the chart, preferably a H1 or H4 chart, if you go up to a daily or down
+below the H1 you will need to adjust the RSI and ATR values.
+The indicator will give you blue arrows for long positions and red for short positions.
+Here's what you will see.
+1) Blue arrows for long (going up) Red arrows for short (going down)
+2) Two horizontal lines for most current position (one line for the entry and one for the stop)
+3) If you put in the order and the entry is executed look for a second blue or red arrow and add to that position when
+the arrow occurs.
+4) Close one lot at the green check box, close the next at the opposite colored arrow.
+If you ever get a blue/red arrow opposite of your entry close all orders in that direction and look for orders in opposite direction.
+Here is the Jamie Saettele article in summary.
+http://www.traders.com/Documentation/FEEDbk_docs/Archive/082006/ForexFocus/FOREXfocus.html
+-Enjoy

@@ -1,0 +1,5 @@
+Prop Firm Risk Dashboard is a lightweight, read-only panel that helps you stay within prop-firm risk limits. Attach it to any one chart and it watches the whole account.
+It shows - and color- codes green, orange, red as you approach a limit - your balance and equity, floating P/L, today's P/L (equity change since the start of the trading day), the daily loss used as a percent of a configurable daily-loss limit, the max drawdown used as a percent of a configurable max-drawdown limit (measured from a configurable starting balance), and the margin level.
+Inputs let you set the daily-loss percent limit, the max-drawdown percent limit, the starting balance (0 = use the current balance), the warning and danger thresholds, and the panel's corner, offsets, font, colors and background.
+The day's starting equity is stored in a terminal global variable, so today's P/L stays correct across chart reloads and terminal restarts.
+This is a monitoring tool only - it does not place, modify or close any orders. It works on any symbol and timeframe.

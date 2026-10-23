@@ -1,0 +1,11 @@
+Oscillator RTR (Range To Range) shows the ratio of two ATRs, a fast one and a slow one.
+It has two input parameters:
+Fast ATR Period
+- fast ATR period;
+Slow ATR Period
+- slow ATR period.
+Calculations:
+RTR = 100 * ATR(Fast ATR Period) / ATR(Slow ATR Period)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20808

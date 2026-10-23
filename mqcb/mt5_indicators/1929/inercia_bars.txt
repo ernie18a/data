@@ -1,0 +1,11 @@
+Real author:
+NICTRADER
+This indicator colors price bars depending on the value of price change.
+If the price on the current bar has grown more than the value determined by the input parameter body (the value of price change in points), the bar is blue, if the price fell by a similar amount of points, the bar is red, in other situations the bar is gray.
+This indicator was first implemented in MQL4 and published in the
+Code Base at mql4.com
+on 06.02.2008.
+The INERCIA_bars indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1929

@@ -1,0 +1,33 @@
+ROCX is a modified ROC (Rate Of Change) indicator displaying an absolute or relative price change.
+It is calculated as (current - previous) / previous, not (current / previous - 1).
+Three display modes:
+Absolute value;
+Percent of the previous value;
+1/10 percent of the previous value.
+The indicator has three input parameters:
+Period
+- calculation period;
+Applied price
+;
+Mode
+- mode:
+Absolute value
+- absolute value;
+% value
+- percent of the previous value;
+%1/10 value
+- 1/10 percent of the previous value.
+Calculations:
+Absolute value:
+ROCX = diff
+% value:
+ROCX = 100.0 * diff / PrN
+% 1/10 value:
+ROCX = 1000.0 * diff / PrN
+where:
+diff = Applied price - Applied price[Period]
+PrN = Applied price[Period]
+A positive value indicates the upward direction of change, a negative value means the downward change direction. Greater values mean faster changes.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21666

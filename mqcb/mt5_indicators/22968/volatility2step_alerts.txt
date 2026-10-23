@@ -1,0 +1,50 @@
+Volatility2Step
+indicator provides alerts, sends email and push notifications when the indicator breaks through the trigger level specified in the inputs.
+Input parameters for activating signals:
+input
+uint
+AlertLevel=
+150
+;
+// Trigger level
+input
+uint
+NumberofBar=
+1
+;
+// Bar number for the signal
+input
+bool
+SoundON=
+true
+;
+// Enable alerts
+input
+uint
+NumberofAlerts=
+2
+;
+// Number of alerts
+input
+bool
+EMailON=
+false
+;
+// Enable mailing the signal
+input
+bool
+PushON=
+false
+;
+// Enable sending the signal to mobile devices
+input
+color
+AlertLevelColor=
+clrMediumSeaGreen
+;
+// trigger level color
+Fig. 1. Volatility2Step_Alerts. The indicator exceeds the threshold value on a zero bar
+Fig. 2. Volatility2Step_Alerts. Activating an alert
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22968

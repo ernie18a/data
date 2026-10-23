@@ -1,0 +1,29 @@
+The Exp_VininI_Trend_LRMA trading system is based on changes of the trend direction displayed by the
+VininI_Trend_LRMA
+indicator.
+The signal is formed when a bar is closing depending on the chosen algorithm of forming signals with the input parameter:
+input
+AlgMode Mode=BREAKDOWN;
+//the algorithm to enter the market
+Two variants of the algorithm are possible:
+The breakthrough of UpLevel and DnLevel levels of the indicator;
+Change of the indicator direction.
+To eliminate triggering of the Expert Advisor on the flat the
+ChangeOfVolatility
+volatility indicator must be added into this Expert Advisor which level determines whether there is enough trend force to open position. Deals filtering performs by the input parameter of this indicator:
+input
+uint
+MaxTrendLevel=
+60
+;
+// Trend level enough to make a deal (the range is 0/100)
+The deals filtering carried out only by the entry, exits are without filtering.
+Place VininI_Trend_LRMA.ex5 and ChangeOfVolatility.ex5 compiled files to the terminal_data_folder\MQL5\Indicators.
+The Exp_VininI_Trend_LRMA_ Expert Advisor is the same Expert Advisor but without use of volatility indicator!
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. The instances of history of deals in the chart.
+Testing results for 2011 at USDCHF H4:
+Fig. 2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1366

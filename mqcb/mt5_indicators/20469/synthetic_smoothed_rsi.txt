@@ -1,0 +1,7 @@
+The idea of this indicator is the same as for the synthetic RSI:
+Instead of using one RSI, the indicator is using 3 instances of RSI.
+Those 3 instances of RSI are then used to calculate the "synthetic" value (that is not an average of the 3 since the calculation differs from an average).
+As an addition, the prices are pre-filtered prior to be used in RSI calculation. If you wish to omit that part, simply set all the EMA periods to be less than or equal to 1.
+The difference (compared to
+Synthetic RSI
+) is that this version is using Ehlers smoothed RSI in calculation instead of using "regular" RSI and that makes the resulting synthetic RSI even smoother.

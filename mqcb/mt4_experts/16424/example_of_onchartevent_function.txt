@@ -1,0 +1,3 @@
+Real author:
+Mohammad Soubra
+This is a great beginners' example of the function OnChartEvent() & creating objects on the chart to access them for some tasks

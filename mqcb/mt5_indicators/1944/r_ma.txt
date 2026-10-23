@@ -1,0 +1,13 @@
+Real author:
+Rosych
+This MA is in a certain sense an average of all calculation variants of the classical
+Moving Average
+.
+If we fix the MA period, we get twenty eight variants for its calculation (4 versions of averaging method and 7 versions of the input price). The algorithm is the average of these twenty eight calculations.
+This indicator was first implemented in MQL4 and published in the
+Code Base at mql4.com
+on 04.02.2008.
+The r_Ma indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1944

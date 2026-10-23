@@ -1,0 +1,25 @@
+Real author:
+kharko
+i-Regression Channel generates regression channel.
+Linear regression channel consists of two parallel lines located at the equal distance from the linear regression trend line. The distance between the channel borders and the regression line is equal to the value of the highest close price deviation from the regression line.
+The indicator is implemented in two versions:
+i-Regr_Channel_Time.mq5
+- this indicator calculates the channel from the date fixed in the input parameters;
+i-Regr_Channel_Bars.mq5
+- this indicator calculates the channel from the number of bars fixed in the input parameters.
+Indicators input parameters:
+degree - degree of regression, changes from 1 to 61;
+kstd - regression channel width;
+data - channel calculation start date;
+CountBars - the number of bars for the channel calculation;
+Applied_price - applied price;
+shift - the channel horizontal shift in bars.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+27.02.2009.
+Linear Regression Channel (degree = 1):
+Square (Parabolic) Regression Channel (degree = 2):
+Cubic Regression Channel (degree = 3):
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/547

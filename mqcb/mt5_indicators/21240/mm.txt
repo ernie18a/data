@@ -1,0 +1,37 @@
+Oscillator MM (Market Mode) allows assessing the market state: In trend state or in cyclic state.
+It has three configurable parameters:
+Period
+- calculation period;
+Delta
+- coefficient to calculate market waves;
+Fraction
+- half-width of the channel.
+Calculations:
+Mode = SMA(BP, Period2)
+Peak = Fraction * SMA(FPeak, 50)
+Valley = Fraction * SMA(FValley, 50)
+where:
+BP = 0.25 * (1-Alpha) * (High + Low - High[2] - Low[2]) + Beta * (1+Alpha) * PrevBP - Alpha * BP[2]
+If
+PrevBP > BP
+and
+PrevBP > BP[2]
+:
+FPeak = PrevBP
+otherwise:
+FPeak = PrevFPeak
+If
+PrevBP < BP
+and
+PrevBP < BP[2]
+:
+FValley = PrevBP
+otherwise:
+FValley = PrevFValley
+Period2 = 2*Period + 5
+Alpha = Gamma - Sqrt(Gamma*Gamma - 1),
+Gamma = 1/cos(4*Pi*Delta/Period),
+Beta = cos(2*Pi/Period)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21240

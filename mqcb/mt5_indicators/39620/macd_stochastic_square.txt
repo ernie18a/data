@@ -1,0 +1,4 @@
+Indicator
+The indicator shows the status of the two indicators as lines of squares.
+Compares the position of the signal line relative to the signal line for the 'MACD' and 'Stochastic' indicators.
+Rice. 1. MACD Stochastic Square (indicators in the main window added manually for visualization)

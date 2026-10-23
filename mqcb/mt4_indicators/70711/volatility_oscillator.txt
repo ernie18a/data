@@ -1,0 +1,2 @@
+The current bar volatility is measured to previous 100 bars in Standard Deviations statistical measure.
+That may serve as a minimum requirement for trade entry or exit. Indicator can also show divergences.

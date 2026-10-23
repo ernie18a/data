@@ -1,0 +1,21 @@
+The indicator displays five parameters of the symbol and two parameters of the account, some of them may change during the release of important news or before closing the weekly session.
+The following parameters may change:
+Leverage - can be changed downward.
+StopLevel - the levels for placing the stop loss and take profit (in points). They may increase during the news release and at the end of the session.
+MarginCall - when this drawdown level is reached, it is recommended to make a deposit or to close some deals.
+StopOut - when this drawdown level is reached, broker may force close part of the losing deals.
+The following parameters are constantly changing, depending on the current quotes of the symbol.
+Margin4Lot - the margin size when opening one lot.
+SpreadSmooth - the current spread, averaged for SpreadSmoothTicks ticks.
+RealSpread - the current spread without averaging
+SpreadPrice - price of the averaged spread in the deposit currency
+Parameters:
+FontSize
+FontColor - font color
+FontName - font name
+XOffset - horizontal offset from the bottom left corner in pixels
+YOffset - vertical offset from the bottom left corner in pixels and the distance between lines
+SpreadSmoothTicks - spread value averaging period
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15808

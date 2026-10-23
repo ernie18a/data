@@ -1,0 +1,5 @@
+Description:
+This EA alerts you whenever there is a MA cross. Its very helpful if you use moving averages for your trading strategy as it spares you having to visually look for crossings. This version includes all moving average settings as requested by most of you. Full documentation is available at my site.
+After a cross occurs X trail 2 sends out an alert.
+The EA is designed to only alert when there is a perfect cross so it wont signal till the end of the timeframe.
+In the picture below the orange x shows an example of where x trail 2 would alert you.

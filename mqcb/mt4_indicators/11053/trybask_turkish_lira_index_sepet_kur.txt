@@ -1,0 +1,12 @@
+Currency Index
+0
+Turkish Lira index (Sepet Kur)
+TRYBASK= 1 x [(USDTRY x 0.50) + (EURTRY x 0.50)]
+The presented indicator is displayed in form of a line with two removable and customizable moving averages. The indicator is shown in the separate chart window
+extern string comment1 = "// 0 - PRICE_CLOSE, 1 - PRICE_OPEN, 2 - PRICE_HIGH, 3 - PRICE_LOW, 4 - PRICE_MEDIAN, 5 - PRICE_TYPICAL, 6 - PRICE_WEIGHTED";
+extern int _PriceType = PRICE_CLOSE;
+extern int MA_Period1 = 13; //period of the first moving average. Set to 0 to turn it off
+extern int MA_Period2 = 17;
+extern string comment2 = "// 0 - MODE_SMA, 1 - MODE_EMA, 2 - MODE_SMMA, 3 - MODE_LWMA";
+extern int MA_Mode1 = MODE_SMA;
+extern int MA_Mode2 = MODE_SMA;

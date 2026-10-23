@@ -1,0 +1,2 @@
+CCI is a very useful indicator. But it lacks one thing: known bounds.
+Adding Inverse Fisher Transform to CCI makes it oscillate in known bounds, and that way it can help in assessing what is exactly going on with the markets. Also, a sort of a signal line is added (so instead of using only the slope of the indicator, signal line is used - which may filter out some false signals) and coupled with additional CCI smoothing, it should be usable in trend determination, but in any case some parameters experimenting is strongly advised.

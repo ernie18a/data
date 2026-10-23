@@ -1,0 +1,11 @@
+Real author:
+GammaRatForex
+Quite an interesting alternative to Bollinger Bands. The indicator has been developed to solve the problem of delays, which often appear in trading techniques that use averages. Normal averaging gives you information related to the events on a half of the average time period in the past.
+The indicator uses an algorithm similar to that used in the STD channel (smoothing of a straight line at a fixed number of periods), and returns the last point, and 2 standard deviation channels with the user defined width.
+File GRFLeadingEdgeMov.mq5 is an MA prepared using this algorithm of the geometric averaging without channels. This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 16.05.2008.
+Figure 1. The GRFLeadingEdge indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1726

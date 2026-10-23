@@ -1,0 +1,8 @@
+The main principle of the indicator is as follows — there are 3 fields on the panel: magic number, start date, end date. When these fields are filled out, an aggregated report is generated, the lines of which show financial result in deposit currency and points.
+The points are calculated without considering position sizes.
+See full video description on the product page:
+https://www.mql5.com/en/market/product/8076
+. This indicator contains all features of the paid version except the chart.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13190

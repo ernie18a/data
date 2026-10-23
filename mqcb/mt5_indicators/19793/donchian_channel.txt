@@ -1,0 +1,9 @@
+Donchian Channel.
+The indicator has two input parameters:
+Period
+- calculation period;
+Mode of calculation
+- calculation price: High/Low, or Close.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19793

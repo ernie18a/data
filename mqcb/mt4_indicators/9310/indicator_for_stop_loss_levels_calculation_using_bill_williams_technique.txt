@@ -1,0 +1,31 @@
+Author
+Vladmir Hlystov
+An indicator for Stop Loss levels calculation using Bill Willams technique
+Bill Williams in his book
+"Trading Chaos: Applying Expert Techniques to Maximize Your Profits"
+(Chapter 7, Level One: Novice Trader, p.95) has described SL as follows:
+"...We place the air bag one tick above/below the high/low of the second bar back on one significantly higher time frame (or the next bar further back that has both a higher high and a higher low or a lower high and lower low).
+This is our air bag protection. Its purpose is to protect us against a drunken market that is moving against us. Remember, it is not necessiarly an entry signal; it is protection against major losses..."
+The indicator calculates and shows Stop Loss levels (for Buy and Sell positions without installed SL) using this method.
+Indicator variables
+:
+int BAR = 200; // searching for in last BAR bar
+int minSL = 25; // it is exposed when 2 bars are not found
+bool show_bar = true; // show bars on which search for SL
+show_info = true; // show active orders without SL
+color color_BAR = DarkSlateGray; // colour bar on which search for SL
+color color_Тек_BAR = Gray; // colour of the current bar
+color color_SL = Gray; // colour of the marks
+Fig 1. Bar was found
+Fig 2. The upper bar was not found (SL for Sell position has determined using the greater timeframe):
+Recommendations:
+SL Level is drawing on the right side of the current bar, set chart shift on:
+To make it clear, use
+show_bar=true
+Good Luck!
+17.10.2009:
+A new feature has added:
+It is possible to show Stop Loss Levels in the history (SL_BW.mq4):
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9310

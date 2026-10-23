@@ -1,0 +1,26 @@
+Real author:
+Victor Chebotariov
+The indicator shows the current market trend.
+It is calculated as follows:
+Go = SMA(CLOSE[bar] - OPEN[bar], period)
+where:
+OPEN[bar] - bar opening price;
+CLOSE[bar] - bar closing price;
+SMA() - smoothing algorithm;
+period -
+SMA()
+smoothing period;
+bar - bar index.
+Indicator basic signals:
+Zero line upward crossing - BUY;
+Zero line downward crossing - SELL.
+The author recommends to use this indicator with smoothing period 174, though it is possible to use other values.
+The indicator uses the СMoving_Average class of the SmoothAlgorithms.mqh library. The use of the class was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+This indicator was first implemented in MQL4 and published in
+Code Base
+03.08.2006.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/440

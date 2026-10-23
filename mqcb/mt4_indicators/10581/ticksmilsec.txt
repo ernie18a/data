@@ -1,0 +1,4 @@
+This indicator is calculating numbers of ticks and average time between ticks (in milliseconds) for each minute in the current hour.
+Minute by minute the indicator will add a new line with current data until all 60 minutes will be fill in. Number of a current minute will be shown on the Bar[1].
+The indicator designed for M1 TF.
+Ticks-MilSec-2.mq4 without 1 small mistake in version 1.

@@ -1,0 +1,44 @@
+Indicator Smoothed ADX was written on demand of a forum visitor and was not too difficult. However, the search for a description of the smoothed ADX algorithm resulted in nothing. This is why I give below only the code that has been provided:
+Inputs: {declaring inputs}
+Length( 14 ),
+ADXTrend( 25 ),
+alpha1(0.25), alpha2(0.33)
+;
+variables: {declaring variables}
+DMIPlus( 0 ), DMIMinus( 0 ), DMI( 0 ), ADX( 0 ),
+DIPlusLead(0), DIMinusLead(0), DIPlusFinal(0), DIMinusFinal(0),
+ADXLead(0), ADXFinal(0);
+{now calling the built-in ADX functions, so we don't need to calculate them}
+Value1 = DirMovement( H, L, C, Length, DMIPlus, DMIMinus, ADX);
+{this part is the actual smoothing of the original ADX indicator, DI+, DI- and ADX lines are smoothed}
+DIPlusLead = 2*DMIPlus + (alpha1 - 2) * DMIPlus[1] + (1 - alpha1) * DIPlusLead[1];
+DIPlusFinal = alpha2*DIPlusLead + (1 - alpha2) * DIPlusFinal[1];
+DIMinusLead = 2*DMIMinus + (alpha1 - 2) * DMIMinus[1] + (1 - alpha1) * DIMinusLead[1];
+DIMinusFinal = alpha2*DIMinusLead + (1 - alpha2) * DIMinusFinal[1];
+ADXLead = 2*ADX + (alpha1 - 2) * ADX[1] + (1 - alpha1) * ADXLead[1];
+ADXFinal = alpha2*ADXLead + (1 - alpha2) * ADXFinal[1];
+{Plotting them on chart}
+Plot1( DIPlusFinal, "DMI+" ) ;
+Plot2( DIMinusFinal, "DMI-" ) ;
+Plot3( ADXFinal, "ADX" ) ;
+Indeed, if you don't try to get into the deep sense underlying the initial text of the smoothed ADX, this smoothing can be divided into two stages. Suppose we have a numerical sequence P and we have to smooth it with a minimum lag. For this, we build at the first stage function V(P) of P-sequence oscillation from the following formula:
+V0 = (8*P0 - 7*P1 + 3*V1) / 4,
+where:
+P0 is the current value of the sequence (a price or an indicator);
+P1 is the preceding value of the sequence;
+V1 is the preceding value of oscillation;
+V0 is the current value of oscillation.
+Or, in a different way:
+V0 = (Vol(P) + 3*V1) / 4,
+where:
+Vol(P) = 8*P0 - 7P1 - Ehlers' burst (the term is invented by myself).
+At the second stage, we apply the simple weighted smoothing:
+W0 = (1*V0 + 2*W1) / (2 + 1).
+where:
+W0 is the current smoothed value of sequence P;
+V0 is the current value of P-sequence oscillation;
+W1 is the preceding smoothed value.
+In Smoothed ADX, this smoothing algorithm is applied to all three buffers of standard indicator ADX. This is why the obtained indicator is called Smoothed ADX. If we were smoothing indicator RSI, we would call it Smoothed RSI, etc. The figure below shows that Smoothed ADX, indeed, is not so 'twitchy' as the original, standard ADX (Average Directional Movement Index).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7072

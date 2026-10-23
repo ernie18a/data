@@ -1,0 +1,18 @@
+In professional quantitative trading, evaluating individual setups is only half the battle. The biggest blind spot for retail traders is invisible systemic correlation. You might think you are diversified by trading EURUSD, GBPUSD, and AUDUSD simultaneously, but in systemic reality, you are heavily stacking risk against the US Dollar. If a major USD news event occurs, your perfectly calculated individual stop losses will all trigger at once.
+The Institutional Currency Exposure Monitor is a lightweight on-chart dashboard designed to solve this exact problem. It scans every open position in your account, breaks down the pairs into their base and quote currencies, and calculates your true net exposure in lots.
+Core Features:
+Net Exposure Calculation:
+If you are Long 1.0 lot of EURUSD and Short 0.5 lots of USDJPY, the monitor calculates your exact net directional exposure for EUR, USD, and JPY independently.
+Systemic Risk Visualization:
+Instantly see if your portfolio is dangerously over-leveraged on a single currency, allowing you to hedge or close trades before a systemic shock wipes out your account.
+Universal Compatibility:
+Works seamlessly with manual trades and positions opened by any Expert Advisor. It accounts for both Netting and Hedging account types.
+How to Read the Dashboard:
+A positive number (e.g., +2.50) means you are net LONG on that specific currency.
+A negative number (e.g., -1.00) means you are net SHORT on that specific currency.
+If the number turns red, it indicates a high exposure warning (customizable in inputs).
+Input Parameters:
+Warning_Threshold_Lots:
+The net lot size at which a currency's exposure turns red on the dashboard to warn you of high systemic risk.
+Corner / X_Offset / Y_Offset:
+Fully customizable dashboard positioning.

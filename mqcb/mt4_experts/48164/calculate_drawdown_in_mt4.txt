@@ -1,0 +1,1 @@
+Please note that it will calulate drawdown based on magic number and symbol. If you dont want to consider the the overall account drawdown the remove the magic number filter and symbol filter in the code.

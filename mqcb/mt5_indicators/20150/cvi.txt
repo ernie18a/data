@@ -1,0 +1,23 @@
+The oscillator shows the value of price deviation from the Moving Average taking into account ATR.
+Calculation formula:
+CVI = (Close – MA ) / ATR
+Modified formula:
+(MCVI) = (Close – MA ) / (ATR * (Period ^ 0.5))
+The indicator has six input parameters:
+Period
+- period;
+MA method
+- calculation method;
+MA price
+- calculation price;
+Modified algorithm
+- enable/disable the modified algorithm;
+Overbought
+- overbought level;
+Oversold
+- oversold level.
+Fig.1 Unmodified calculation algorithm
+Fig.2 Modified calculation algorithm
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20150

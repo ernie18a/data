@@ -1,0 +1,41 @@
+Real author:
+Alexey Volchanskiy
+The BigBarSound indicator plays sound alerts when candlestick body size exceeds a certain value.
+The size can be considered as Close-Open (current price - candlestick open price) or as High - Low, the calculation mode is selected in the settings. It works on any timeframe and symbol.
+Indicator input parameters:
+//+------------------------------------------------+
+//| Indicator input parameters                     |
+//+------------------------------------------------+
+input
+ENUM_TIMEFRAMES
+TimeFrame   =
+PERIOD_H4
+;
+// Indicator chart period
+input
+uint
+BarPoint    =
+200
+;
+// Minimum candle step size for the signal
+input
+START_POINT     SP          = HIGH_LOW;
+// Movement option
+input
+string
+WavFile     =
+"alert.wav"
+;
+// The name of a sound file
+input
+uint
+TimeDeley   =
+10
+;
+// Minimum delay between two signals
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 05.12.2014.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14388

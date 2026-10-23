@@ -1,0 +1,6 @@
+Basics :
+Here we have a variation of super smoother (originally published here :
+Super smoother
+) that is using its own past values as a criteria for filtering out some false signals.
+Usage :
+Since the indicator is not using slope as a criteria for color change, color change to gray can be used as a warning sign of a possible reversal, while the change to "active" color can be used as a signal for entry or re-entry

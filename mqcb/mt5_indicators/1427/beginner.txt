@@ -1,0 +1,10 @@
+The real author:
+EarnForex
+The Beginner indicator is a very simple custom indicator which displays the local peaks and troughs in the chart using pink and blue points next to them. It analyzes the maximums and the minimums on a specific period and compares them with the range in which the currency pair has been traded. If the peak/trough is quite significant, it marks it with a point.
+Input parameters:
+Otstup (default value is 30) is the number of percentage that is cut off from the range before comparing the minimums and the maximums to define their significance. The higher this number, the more frequent the points will occur.
+Per (default value is 9) is a period on which the maximums and the minimums are calculated in the given moment. The higher the number, the rare the points will occur.
+Fig.1 The Beginner indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1427

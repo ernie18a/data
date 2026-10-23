@@ -1,0 +1,81 @@
+The correct order is a set of moving averages located consecutively. The correct order for an uptrend would be the situation, when the 10-period simple moving average (SMA) is on a higher price level than the 20-period SMA, which is above the 50- SMA. That one, in turn, is above the 100- SMA, and 100- SMA is above the 200- SMA.
+In a downtrend, the opposite is true.
+The presence of moving averages located consecutively is usually a strong indication of trend condition movements and indicates that the momentum is on the trend side, but the moving averages serve as the support levels.
+In order to use the correct order strategy with more reliability, added ADX check, which must be greater than 20 and have an increasing tendency.
+Entry - after 5 candles once the correct order forms, exit - once the correct order gets violated.
+Testing Results:
+Strategy Tester Report
+TrueSort_0002
+SIG-Demo.com (Build 220)
+Symbol
+EURUSD (Euro vs US Dollar)
+Period
+1 Hour (H1) 2008.06.04 23:00 - 2009.02.20 22:00
+Model
+Every tick (the most accurate mode based on the shortest available time frames)
+Parameters
+lots=0.1; stloss=100; magicnum=5000;
+Bars in test
+4451
+Ticks modelled
+2924368
+Modelling quality
+44.19%
+Mismatched chart errors
+2
+Initial deposit
+10000.00
+Net profit
+1327.99
+Gross profit
+3462.83
+Gross loss
+-2134.84
+Profit factor
+1.62
+Expected payoff
+20.12
+Absolute drawdown
+128.73
+Maximum drawdown
+934.88 (7.70%)
+Relative drawdown
+7.70% (934.88)
+Total trades
+66
+Short positions (won %)
+45 (42.22%)
+Long positions (won %)
+21 (61.90%)
+Profit trades (% of total)
+32 (48.48%)
+Loss Trades (% of total)
+34 (51.52%)
+Largest
+profit trade
+470.06
+loss trade
+-304.00
+Average
+profit trade
+108.21
+loss trade
+-62.79
+Maximum
+consecutive wins (profit in money)
+5 (717.85)
+consecutive losses (loss in money)
+5 (-338.41)
+Maximal
+consecutive profit (count of wins)
+717.85 (5)
+consecutive loss (count)
+-457.47 (2)
+Average
+consecutive wins
+1
+consecutive losses
+2
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8722

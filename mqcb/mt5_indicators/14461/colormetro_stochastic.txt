@@ -1,0 +1,7 @@
+Real author:
+TrendLaboratory Ltd.
+Indicator of the oscillator type, which displays its values based on the Stochastic technical indicator. The Stochastic indicator is represented by the purple color, the cloud color changes according to the trend direction. The green color of the cloud is signal for buying, tomato is for selling.
+Figure 1. The ColorMETRO_Stochastic indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14461

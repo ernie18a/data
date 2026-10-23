@@ -1,0 +1,8 @@
+Theory :
+Found the formula on another forum that calls this type of calculation "rma". Frankly I do not know what does the "rma" come from, but decided to experiment a bit. Now the original formula is :
+rma = sma(price,period*3) + sma (price,period*2) - sma(price,period)
+The results are logical except for one thing : that formula tends to add too much lag. So, with just a little change - when the formula is changed to this :
+rma = sma(price,period*3) - sma (price,period*2) + sma(price,period)
+we get a much better fit and, as a sort of a surprise, average that is faster than any of the 4 basic averages using same period. So, this is our own metatrader rma indicator
+Usage :
+You can use it as any other average

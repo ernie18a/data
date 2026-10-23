@@ -1,0 +1,32 @@
+Indicator CI (Congestion Identifier). It displays within how many bars before the current one the price was within the channel formed by the Close price of the current bar +/- Delta in points. It also displays the counter value threshold level and the marks, in which the counter is above or below that level.
+The indicator has three configurable parameters:
+Period
+- calculation period;
+Delta
+- up/down shift from the price in points, which forms the channel width;
+Level
+- threshold level of bars within the channel.
+Calculations:
+CI = count
+where:
+count - number of bars with the Close price within corridor Close+Delta - Close-Delta.
+Signals:
+If
+PrevCI < Level
+and
+CI > Level
+:
+Out = Level
+If
+PrevCI > Level
+and
+CI < Level
+:
+In = Level
+Out
+- signal of exceeding the Level;
+In
+- signal of entering back inside the Level upon having exceeded it.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21225

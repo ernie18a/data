@@ -1,0 +1,29 @@
+Key Features:
+Signal Detection:
+Identifies oversold (RSI < 30) and overbought (RSI > 70) conditions with engulfing patterns for optimal entry points.
+Dynamic Risk Management:
+Uses the Average True Range (ATR) to adjust stop loss, take profit, and trailing stop levels, adapting to market conditions.
+Spread Filter:
+Avoids trading in high-spread conditions for better risk control.
+Visual Indicators:
+Displays buy (green arrow) and sell (red arrow) signals on the chart for easy monitoring.
+Recommended Symbols:
+Forex:
+Major pairs like EUR/USD, GBP/USD, USD/JPY, and USD/CHF.
+Crypto:
+Liquid cryptocurrencies such as BTC/USD and ETH/USD.
+Recommended Parameters for M1 Trading:
+InpPeriodRSI = 6
+: A quick RSI for rapid market movements.
+InpMAPeriod = 2
+: Short-period moving average for trend detection.
+MaxSpread = 15-20 points
+: Prevents trading during high spread conditions.
+InpLot = 0.01
+: Start with a low lot size for safer trading on the 1-minute chart.
+Getting Started:
+Adjust the parameters based on your trading style and market conditions.
+Test on a demo account
+first with recommended symbols to understand the EA's behavior and optimize settings.
+Monitor performance and refine parameters if needed for the best results.
+This EA is simple, adaptable, and suitable for both beginners and experienced traders looking for automated, short-term trading strategies.

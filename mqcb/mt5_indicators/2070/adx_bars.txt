@@ -1,0 +1,12 @@
+Real author:
+Perky
+The indicator changes the bar color to the color of the current trend calculated based on the
+ADX
+technical indicator. If the trend and candlestick direction match, the color of the bar is light, if opposite, the bar is dark.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 31.10.2007.
+Figure 1. Indicator ADX_BARS
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2070

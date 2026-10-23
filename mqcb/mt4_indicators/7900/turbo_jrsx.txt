@@ -1,0 +1,2 @@
+Author: finger
+The indicator shows a trend.

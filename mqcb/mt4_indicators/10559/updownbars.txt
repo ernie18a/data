@@ -1,0 +1,13 @@
+The indicator counts the Up bars (Close-Open) and Down bars (Open-Close).
+Calculation:
+n = Up bars (Close>Open, first bar=1, last bar=n)
+m = Down bars (Close<Open)
+Oscillator indicator, my opinion - use it for filtering of entry, when UpDownBars is above 0 go only short and when UpDownBars is below 0 go only long.
+Inputs:
+UpDown_Period = 20
+//
+period for calculation UpDown bar indicator
+Average_Period = 10     // period for calculation Moving Average on indicator
+Average_Method = Simple
+//
+method of Moving Average

@@ -1,0 +1,13 @@
+This is the
+Automated Trading Championship 2011
+version of the Expert Advisor.
+It uses the signals of the standard
+MACD
+indicator - zero line crossover and signal line reversal, also it uses aggressive addition to position up to maximum volume. Optimized for EURUSD H1. The code is written without the use of
+object-oriented programming
+, it uses the
+MACD indicator
+and doesn't need any other files.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/611

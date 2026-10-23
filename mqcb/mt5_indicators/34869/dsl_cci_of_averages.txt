@@ -1,0 +1,16 @@
+This is a continuation of a series of indicators that might benefit from discontinued signal line calculating mode
+This is the CCI that can (and by default it does) use average of price instead of "raw" price to avoid some false signals. Adding dsl as signal lines might add some more false signals filtering. Usual options :
+to chose average that will be used for price filtering :
+simple moving average
+exponential moving average
+smoothed moving average
+linear weighted moving average
+to set the display type
+...
+Recommendations:
+You can use color changes as indicators of "states" and possible signals
+Default period 9 for dsl is taken as a compromise
+to use it in a sort of "fixed" levels, use very long dsl period (don't worry, that is a sort of ema, no CPU load fo very long periods) - upper example in the bellow example picture
+or use very short period to get something close to slope but with respect to the zero line too (might be interesting to use if somebody uses classical woodies like ccis on lower time frames) - lower example in the bellow example picture
+Using dls period <= 1 turns the dsl off (you shall get 2 "levels", but those are the starting values when cci moves from 0 only)
+Using averaging period of <= 1 for prices in effect turns of average price filtering off (regardless of what average type is used) and then you get a "raw" CCI

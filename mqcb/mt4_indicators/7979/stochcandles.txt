@@ -1,0 +1,6 @@
+Author:
+Christof Risch (iya)
+Indicator StochCandles. Paints candles on the basis of stochastic. See
+forum
+.
+Indivcator StochCandles

@@ -1,0 +1,4 @@
+The indicator displays Wingdings arrows when RSI crosses UP and DOWN levels. The "RSI Arrow" indicator is drawn in the main window.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18473

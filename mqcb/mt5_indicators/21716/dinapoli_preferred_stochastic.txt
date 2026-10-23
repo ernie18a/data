@@ -1,0 +1,19 @@
+The Dinapoli Preferred Stochastic indicator uses the smoothing method described by Joe DiNapoli, which differs from the standard stochastic.
+There are four input parameters:
+%K period
+- K line calculation period;
+%D period
+- D line calculation period;
+Slowing
+- slowing calculation period;
+Applied price
+- price used for calculations.
+Calculations:
+K = PrevK + (FastK -PrevK) / Slowing
+D = PrevD + (K - PrevD) / %D period
+where:
+FastK = 100.0 * (Close-Min) / (Max-Min)
+Max, Min are the highest and lowest prices within the '%K period' interval
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21716

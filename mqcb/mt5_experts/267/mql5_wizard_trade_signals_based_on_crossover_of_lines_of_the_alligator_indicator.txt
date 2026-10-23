@@ -1,0 +1,288 @@
+MQL5 Wizard
+provides the automatic creation of Expert Advisors (see
+MQL5 Wizard: Creating Expert Advisors without Programming
+).
+It's time consider the trading signals, based on the Alligator technical indicator, presented by B.Williams in "Trading Chaos". The strategy called
+"Signals based on the Alligator"
+(when creating EA automatically in MQL5 Wizard).
+The system is based on three moving averages (Lips, Teeth and Jaw lines), and oscillators, calculated using the difference between them. The trading signals are generated after crossover of the Alligator lines, depending on trend, determined by order of these lines. In the case of upward trend the Lips line (with minimal period) is the highest, the next is the Teeth line, and the lowest is the Jaw line. The similar but opposite case in the case of downward trend.
+The trade signals:
+Open long position: crossover of the Alligator lines and increase of the distance between them in the case of the upward trend;
+Close long position: upward crossover of Lips line with the Jaw line;
+Open short position: crossover of the Alligator lines and increase of the distance between them in the case of the downward trend;
+Close short position: downward crossover of Lips line with the Jaw line;
+This strategy is implemented in CSignalAlligator class.
+Figure 1. Trade signals, based on the Alligator technical indicator
+Trade signals
+The trading strategy is implemented in CSignalAlligator, it has some protected methods to simplify access to indicator values:
+double
+Jaw(
+int
+ind)
+// returns the value of Jaw line of the bar
+double
+Teeth(
+int
+ind)
+// returns the value of Teeth line of the bar
+double
+Lips(
+int
+ind)
+// returns the value of Lips line of the bar
+double
+LipsTeethDiff(
+int
+ind)
+// returns the difference between the Lips and Teeth lines
+double
+TeethJawDiff(
+int
+ind)
+// returns the difference between the Teeth and Jaw lines
+double
+LipsJawDiff(
+int
+ind)
+// returns the difference between the Lips and Jaw lines
+bool
+CheckCross();
+// used to check the crossover of Alligator lines
+1. Open long position
+The checking of trade conditions has some features, caused by the shift of the Lips, Teeth and Jaw lines.
+Conditions to open long position:
+The CheckCross is used to detemine the crossover and further increase of the difference between the lines;
+LipsTeethDiff(-2)>=LipsTeethDiff(-1) and LipsTeethDiff(-1)>=LipsTeethDiff(0); check for increase of the difference between the Lips and Teeth lines;
+LipsTeethDiff(0)>=0.0;  the Lips line is higher than Teeth line;
+TeethJawDiff(-2) >=TeethJawDiff(-1)  and TeethJawDiff(-1) >=TeethJawDiff(0) ; check for increase of the difference between the Teeth and Jaw lines;
+TeethJawDiff(0) >=0.0; the Teeth line is higher than Jaw line.
+//+------------------------------------------------------------------+
+//| Checks conditions to open long position (buy)                    |
+//+------------------------------------------------------------------+
+bool
+CSignalAlligator::CheckOpenLong(
+double
+& price,
+double
+& sl,
+double
+& tp,datetime& expiration)
+  {
+if
+(CheckCross())
+return
+(
+false
+);
+//---
+price=
+0.0
+;
+   sl   =
+0.0
+;
+   tp   =
+0.0
+;
+//---
+if
+(LipsTeethDiff(-
+2
+)>=LipsTeethDiff(-
+1
+) && LipsTeethDiff(-
+1
+)>=LipsTeethDiff(
+0
+) && LipsTeethDiff(
+0
+)>=
+0.0
+&&
+      TeethJawDiff(-
+2
+) >=TeethJawDiff(-
+1
+)  && TeethJawDiff(-
+1
+) >=TeethJawDiff(
+0
+)  && TeethJawDiff(
+0
+) >=
+0.0
+)
+      m_crossed=
+true
+;
+//---
+return
+(m_crossed);
+  }
+2. Close long position
+Conditions to close liong position (note the shift of the lines):
+LipsTeethDiff(-1)<0; the Lips line of the next bar (because of the shift) is lower than Teeth line;
+LipsTeethDiff(0)>=0; the Lips line of the current bar is higher/equal than Teeth line;
+LipsTeethDiff(1)>0; the Lips line of the previous (completed) bar is higher than Teeth line.
+//+------------------------------------------------------------------+
+//| Checks conditions to close long position                         |
+//+------------------------------------------------------------------+
+bool
+CSignalAlligator::CheckCloseLong(
+double
+& price)
+  {
+   price=
+0.0
+;
+//---
+return
+(LipsTeethDiff(-
+1
+)<
+0
+&& LipsTeethDiff(
+0
+)>=
+0
+&& LipsTeethDiff(
+1
+)>
+0
+);
+  }
+3. Open short position
+Conditions to open short position:
+The CheckCross is used to detemine the crossover and further increase of the difference between the lines;
+LipsTeethDiff(-2)<=LipsTeethDiff(-1) and LipsTeethDiff(-1)<=LipsTeethDiff(0); check for increase of the difference between the Lips and Teeth lines;
+LipsTeethDiff(0)<=0.0; the Lips line of the current bar is lower than Teeth line;
+TeethJawDiff(-2)<=TeethJawDiff(-1) and TeethJawDiff(-1)<=TeethJawDiff(0); check for increase of the difference between the Teeth and Jaw lines;
+TeethJawDiff(0) <=0.0; the Teeth line of the current bar is lower the Jaw line;
+//+------------------------------------------------------------------+
+//| Checks conditions to open short position (sell)                  |
+//+------------------------------------------------------------------+
+bool
+CSignalAlligator::CheckOpenShort(
+double
+& price,
+double
+& sl,
+double
+& tp,datetime& expiration)
+  {
+if
+(CheckCross())
+return
+(
+false
+);
+//---
+price=
+0.0
+;
+   sl   =
+0.0
+;
+   tp   =
+0.0
+;
+//---
+if
+(LipsTeethDiff(-
+2
+)<=LipsTeethDiff(-
+1
+) && LipsTeethDiff(-
+1
+)<=LipsTeethDiff(
+0
+) && LipsTeethDiff(
+0
+)<=
+0.0
+&&
+      TeethJawDiff(-
+2
+) <=TeethJawDiff(-
+1
+)  && TeethJawDiff(-
+1
+) <=TeethJawDiff(
+0
+)  && TeethJawDiff(
+0
+) <=
+0.0
+)
+      m_crossed=
+true
+;
+//---
+return
+(m_crossed);
+  }
+4. Close short position
+Conditions to close short position:
+LipsTeethDiff(-1)>0; the Lips line of the next bar (because of the shift) is higher than Teeth line;
+LipsTeethDiff(0)<=0; the Lips line of the current bar is lower/equal then Teeth line;
+LipsTeethDiff(1)<0; the Lips line of the previous (completed) bar is lower than Teeth line.
+//+------------------------------------------------------------------+
+//| Checks conditions to close short position                        |
+//+------------------------------------------------------------------+
+bool
+CSignalAlligator::CheckCloseShort(
+double
+& price)
+  {
+   price=
+0.0
+;
+//---
+return
+(LipsTeethDiff(-
+1
+)>
+0
+&& LipsTeethDiff(
+0
+)<=
+0
+&& LipsTeethDiff(
+1
+)<
+0
+);
+  }
+Creating Expert Advisor using MQL5 Wizard
+To create a trading robot based on the strategy you need to choose the signal properties as "
+Signals based on the Alligator
+" in "Creating Ready-Made Expert Advisors" option of
+MQL5 Wizard
+:
+Figure 2. Select "Signals based on the Alligator" in MQL5 Wizard
+The next you have to specify the needed
+trailing stop
+algorithm and
+money and risk management
+system. The code of Expert Advisor will be created automatically, you can compile it and test in
+Strategy Tester
+of MetaTrader 5 client terminal.
+Testing Results
+Let's consider backtesting of the Expert Advisor on historical data (EURUSD H1, testing period: 1.1.2010-05.01.2011, JawPeriod=13, JawShift=8, TeethPeriod=8, TeethShift=5, LipsPeriod=5, LipsShift=3, MaMethod=2, Applied=5, CrossMeasure=5).
+In creation of Expert Advisor we used the fixed volume (
+Trading Fixed Lot
+, 0.1), Trailing Stop algorithm is not used (
+Trailing not used
+).
+Figure 3. Testing Results of the Expert Advisor with trading signals, based on the Alligator indicator
+The profit can be increased if you will use the deal filtration and take into account the market features, depending on time. The CSignalITF class will allow you to add the intraday time filter. The best times can be found using the
+Strategy Tester
+of MetaTrader 5 client terminal. See example in
+MQL5 Wizard - Trade Signals Based on Crossover of Two EMA with intraday time filter
+.
+Attachments:
+The SignalAlligator.mqh with CSignalAlligator class  must be placed to  terminal_data_folder\MQL5\Include\Expert\Signal folder.
+The expert_alligator.mq5 contains the code of the Expert Advisor, created using MQL5 Wizard.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/267

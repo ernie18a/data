@@ -1,0 +1,12 @@
+Picture
+The parameters are the same with the Bollinger Bands plus I added smoothing.
+BandsPeriod - Period
+BandsShift - Shift
+BandsDeviations - Deviation from the main line
+Slow - Smoothing
+The indicator was developed on the basis of the book
+J. Bollinger. "Bollinger on Bollinger Bands"
+The interpretation is simple. The line of the indicator shows the position of the price in relation to the Bollinger Bands. The outing of the indicator line out of 0 or 1 means the outing out of the lower and the upper bands respectively.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8450

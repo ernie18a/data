@@ -1,0 +1,15 @@
+BrainTrend1Stop is a trend reversal indicator. Intersection of the stops line by a price indicates trend reversal and the time to close previously opened positions.
+BrainTrend1Stop algorithm is based on the
+ATR
+and
+Stochastic Oscillator
+indicators. In this version the values of all algorithm variables are designed as the indicator's input parameters, so now it be used with custom settings.
+Cyan line below the candlesticks minimums indicates the following:
+The market trend is going upwards;
+The meaning of the line itself - protection stop at that level or profit taking (if position is profitable) for a long position.
+Magenta line above the candlesticks maximums indicates two things:
+The market trend is going downwards;
+The meaning of the line itself - protection stop at that level or profit taking (if position is profitable) for a short position.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/393

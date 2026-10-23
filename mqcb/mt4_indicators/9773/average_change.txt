@@ -1,0 +1,5 @@
+Description:
+This Indicator should reflect how much of effect the most recent price changes have had.
+This version of AC focus mainly on Low and High.
+Enjoy !
+Image:

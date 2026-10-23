@@ -1,0 +1,11 @@
+sics
+:
+One of the moving averages that is not often made adaptive is SMA (Simple Moving Average). The reason for that is that it is bound to bars values (unlike, for example EMA - that is used in numerous adaptive averages - that can use fractional periods too) and that makes the calculations a bit complicated and, in some cases the results are going to be "nervous" - they tend to changes slope in some periods very quickly.
+That makes it a bit difficult to use it too : using the slope of such an average as a criteria for a trading decision would lead to "change of mind" on almost every bar - and that is not what anybody would like to do. This version makes a possible solution for that : since adaptive SMA is "faster" than the "regular" SMA, you can use the crosses of adaptive to regular SMA as a criteria for trend. Results seem to be acceptable
+MT5 version of this indicator was published here :
+https://www.mql5.com/en/code/30844
+Recommendations:
+The indicator allows you to use :
+classical slope change for color change
+cross of tho SMAs (the adaptive and the "regular") as a criteria for color change - as described above
+You can use color change of the adaptive SMA as a signal for trend change

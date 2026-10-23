@@ -1,0 +1,11 @@
+Real author:
+Integer
+Standard ZigZag acts as
+ZigZag
+from the terminal custom set of indicators (though it is faster), though having some minor differences. This version of the indicator does not contain unnecessary additional indicator buffers. Their absence has allowed to optimize the code.
+This indicator was first implemented in MQL4 and published at
+http://dmffx.com
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/718

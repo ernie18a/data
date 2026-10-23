@@ -1,0 +1,27 @@
+Indicator Heikin-Ashi Difference calculates and displays as an oscillator the difference between the Open and Close prices of Heikin-Ashi candlesticks, a signal line being added. It can be used in combination with
+haOpen
+.
+It has two parameters:
+Signal period - signal line calculation period;
+Signal Method - signal line calculation method.
+Calculation:
+HA Difference = (HAClose - HAOpen) / Point
+Signal = MA(HA Difference, Period, Method)
+where:
+HAOpen = (PrevHAOpen + PrevHAClose) / 2.0
+HAClose = (Open + High + Low + Close) / 4.0
+HAClose
+- Heikin-Ashi candlestick closing price;
+HAOpen
+- Heikin-Ashi candlestick opening price;
+PrevHAClose
+- closing price of the previous Heikin-Ashi candlestick;
+PrevHAOpen
+- opening price of the previous Heikin-Ashi candlestick;
+MA
+- moving average with Signal period and Signal Method, based on the value of HA Difference.
+Fig 1. Indicator Heikin-Ashi Difference
+Fig. 2. Indicator Heikin-Ashi Difference in combination with Heikin-Ashi Open
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21038

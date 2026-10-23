@@ -1,0 +1,3 @@
+Hidden Engulfing Candlestick Pattern with option to select Two bar or Three bars break
+Two Bars Break Example: A bearish candle's open broken by a close of a bull candle which having atleast one haramis (pregnant) in between the bear and bull candle
+Thre Bars Break example : A bearish candle's open broken by a close of a bull candle which having atleast two haramis (pregnant) in between the bear and bull candle

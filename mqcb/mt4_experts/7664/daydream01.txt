@@ -1,0 +1,7 @@
+Author: not specified
+Adviser Daydream01.
+------------------------
+Parameters of testing
+Symbol: USD/JPY.
+Period: H1.
+Model: For the prices of opening.

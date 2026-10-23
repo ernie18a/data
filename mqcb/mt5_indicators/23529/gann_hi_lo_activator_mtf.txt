@@ -1,0 +1,23 @@
+Indicator Multi timeframe Gann Hi Lo Activator displays on the current chart the data of three indicators
+Gann HiLo Activator (GHLA)
+from the predefined timeframes.
+It has five adjustable parameters:
+GHLA period
+- GHLA calculation period
+Drawing mode
+- drawing mode
+Steps
+- by steps
+Slope
+- by sloping lines
+First GHLA timeframe
+- first GHLA timeframe
+Second GHLA timeframe
+- second GHLA timeframe
+Third GHLA timeframe
+- third GHLA timeframe
+Fig. 1. Multi timeframe Gann Hi Lo Activator, Drawing mode = Steps
+Fig. 2. Multi timeframe Gann Hi Lo Activator, Drawing mode = Slope
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23529

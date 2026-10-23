@@ -1,0 +1,20 @@
+Real author:
+Vladislav Goshkov (VG)
+Plotting ROC indicators of two arbitrary same types (including Momentum) and periods in a single window.
+Resulting indicators are processed by an averaging algorithm in order to filter out the random noise.
+Indicator calculation equations:
+MOM = (price - prevPrice) [Momentum];
+ROC = ((price/prevPrice)-1)*100 [Rate of change];
+ROCP = (price-prevPrice)/prevPrice [Rate of change Percentage];
+ROCR = (price/prevPrice) [Rate of change ratio];
+ROCR100 = (price/prevPrice)*100 [Rate of change ratio 100 Scale].
+Additional averaging is used to filter out random noise and to have a more smooth final indicator. The indicator uses the CJJMA class from the SmoothAlgorithms.mqh library. The class is described in detail in the article
+Averaging Price Series for Intermediate Calculations Without Using Additional Buffers
+.
+This indicator was first implemented in MQL4 and published in the
+Code Base
+on 28.03.2006.
+Fig. 1. The XROC2_VG indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18456

@@ -1,0 +1,3 @@
+Super Trend indicator is probably one of the most known for MetaTrader 4. This version is for MetaTrader 5.
+There are basically two versions of Super Trend, and this one is made as the first version: it is based on CCI indicator values.
+Some extensions are made compared to that first original version (changeable ATR period that is used too) and, naturally, since we have made quite a lot of changes since, this version, unlike the first versions of Super Trend, is not repainting.

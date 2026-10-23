@@ -1,0 +1,12 @@
+Automatic Magic No Calc Symbol per ASC II DANGER EUR/CHF + EUR/JPY the same number I have a new code AutoMagiCal v2a
+must test it
+comes later
+For example EURUSD first and last killed = URUS
+U = 95 R = 86 s = 91 number from ASC II Code caution is not equal to any computer
+number = 95869591 while integer maximum 2´147´483´647 take the number in a double
+check is bigger then 999´999´999 then make / 10 else its Magic
+!!!
+please check it on their computer befor use it!!!
+!!!
+Use at your own risk!!!
+for me it works perfectly!!!

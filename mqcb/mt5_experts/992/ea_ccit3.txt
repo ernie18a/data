@@ -1,0 +1,45 @@
+EA is based on indicator CCIT3_Simple_v_2-01 and CCIT3_noReCalc_v_3-01. Buy position is opened when the zero line is crossed upwards, while sell position is opened when the zero line is crossed downwards. Indicator values ​​for determining the signal are taken from the previous bar.
+CCIT3_Simple_v_2-01 -
+the modified indicator CCIT3 1.01, its calculation basis depends on CCI indicator with a ratio calculated from the beginning of history. The indicator has a limit for the number of calculated bars (Max_bars_calc)
+.
+CCIT3_noReCalc_v_3-01 - simplified CCIT3_Simple_v_2-01 - its calculation equation does not consider the ratio recalculated at each bar
+from the beginning of history
+. It also
+has a limit for the number of calculated bars
+(Max_bars_calc).
+no_increaselot_gbpusd_2004 - result since 2004 GBPUSD without increasing lots, the initial lot 1.0.Testing was done at the DC Alpari-Demo, by all ticks .
+increaselot_gbpusd_2004 - used increase of lots. The limit for the maximum lot = 50.0. Testing was done at the DC Alpari-Demo, by all ticks.
+The same increase of lots. The limit to the maximum lot = 500.0. Testing was done at the DC MetaQuotes-Demo, by all ticks.
+Tips:
+All parameters of the Expert Advisor (except indicator settings) are not used in case of 0. The function for setting the maximum allowable volume lot has been implemented into the Expert Advisor in case the limit (by the lot volume) of your dealing center has been exceeded. Basic parameters of the settings:
+SL/TP - placed after opening a position.
+N_modify_sltp -
+the number of times
+to
+set
+sl/tp
+at unsuccessful attempt
+.
+trail SL -
+activated when the profit position
+>= 0.
+Max_drawdown -
+the EA has lot increasing option, which depends on the deposit/max.drawdown ratio.
+Trade_overturn -
+reversing the position when changing the signal. If false order will be closed only by sl/tp/trail
+.
+use_Simple_CCIT3 -
+signals
+are taken
+from the indicator
+CCIT3_Simple_v_2-01.
+use_noReCalc_CCIT3 -
+signals
+are taken
+from the indicator
+CCIT3_noReCalc_v_3-01.
+The Expert Advisor can work with one of the selected indicators, which shows good trading results, they can also be used as a filter or a confirmation signal.
+This Expert Advisor can be a good starting point for creation of a complex trading robot.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/992

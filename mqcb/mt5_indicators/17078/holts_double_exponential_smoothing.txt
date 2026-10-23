@@ -1,0 +1,9 @@
+The name of the indicator might be a bit misleading. Holt's double exponential smoothing is mostly used for forecasting, not as an average. The forecasting method usually used with it is a sort of linear forecasting.
+- Double Exponential Smoothing
+Like the regression forecast, the double exponential smoothing forecast is based on the assumption of a model consisting of a constant plus a linear trend.
+For the purposes of a forecast where the parameters of the model may change, it is more convenient to express the model as a function of , where is the positive displacement from a reference time T.
+The estimate a and b at time T are based in the observation at time T and the estimates for the previous period, T -1.
+Here we have both the constant and trend coefficients estimated by exponential smoothing. The forecasting parameters, for the constant term and for the trend term can be set independently. Both parameters must be between 0 and 1.
+The forecast for the expected value for future periods is the constant plus a linear term that depends on the number of periods into the future.
+To make it usable in both manners though (as an average or as an "average" with forecasting), setting the number of forecasted bars to <= 0, turns the forecasting part off.
+As usual with the forecasting parts, it is strongly advised not to use it in signaling mode. The forecasting part is a subject of change and should be used only as an estimation of trend component of the double smoothing, not as signal. Alerts in this indicator are not alerting on the change of the forecast part, but on the change of the "past" part - which is not going to change with time past.

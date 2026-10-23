@@ -1,0 +1,78 @@
+Real author:
+Tor
+Semaphore signal indicator based on the WPR indicator, which features alerts, sending emails and push-notifications to mobile devices.
+The indicator is based on the idea that the price reversal is preceded by a reduction in indicator change rate and its reversal. For this purpose, it searches for the intervals where the price begins to stagnate in the overbought or oversold area of the fast WPR indicator.
+The indicator provides the ability to mark these areas with arrows on the chart. It is also possible to disable searching for the WPR slowdowns. In that case, the indicator will simply display exceedance of the WPR levels specified in the settings —
+LevelMax
+and
+LevelMin
+.
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+uint
+WPRPeriod=
+12
+;
+// WPR Period
+input
+double
+LevelMax=-
+20
+;
+// Signal Level Max
+input
+double
+LevelMin=-
+80
+;
+// Signal Level Min
+input
+bool
+SeekSlowdown=
+true
+;
+// Seek Slowdown
+input
+int
+Shift=
+0
+;
+// Horizontal indicator shift in bars
+//---- Input variables for alerts
+input
+uint
+NumberofBar=
+1
+;
+// Bar number for the signal
+input
+bool
+SoundON=
+true
+;
+// Enable alerts
+input
+uint
+NumberofAlerts=
+2
+;
+// Number of alerts
+input
+bool
+EMailON=
+false
+;
+// Enable mailing the signal
+input
+bool
+PushON=
+false
+;
+// Enable sending the signal to mobile devices
+Fig1. The WPR_Slowdown indicator
+Fig.2. The WPR_Slowdown indicator generating alert
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16528

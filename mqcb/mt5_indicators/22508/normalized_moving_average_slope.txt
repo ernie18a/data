@@ -1,0 +1,18 @@
+Normalized Moving Average Slope oscillator calculates the slope of the moving average in % of ATR.
+It has four inputs:
+MA period
+- MA calculation period
+ATR period
+- ATR calculation period
+Method
+- MA calculation method
+Applied price
+- MA calculation price
+Calculation:
+NMAS = 100.0 * (MA-PrevMA) / ATR
+where:
+MA - MA(Applied price, MA period, Method)
+ATR - ATR(ATR period)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22508

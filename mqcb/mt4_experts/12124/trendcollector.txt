@@ -1,0 +1,77 @@
+TrendCollector is the EA based on price action, Stochastic indicator, specific EMA's (206) crossings, and trade size variability based on ATR and time of a day.
+It is also watching for the price position with regard to 204EMA and distance from this EMA.
+This EA is also using the fundamental news avoidance system based on parsing news from "http://www.forexfactory.com/ffcal_week_this.xml" feed.
+External variables:
+Input parameter name
+Type
+Description
+EA_FAST_MA_TH
+int
+Fast moving average treshold (treshold for the EMA4 speed)
+EA_SLOW_MA_DISTANCE
+int
+Slow moving average treshold (treshold for the EMA204 speed)
+EA_MA_METHOD
+ENUM_MA_METHOD
+MA Mehod (Default: EMA)
+EA_MAX_OPEN_TRADES
+int
+Number of maximum open trades
+EA_MAX_OPEN_SAME_TRADES
+int
+Number of maximum open trades in the same direction
+EA_SL_PIPS
+int
+Number of SL pips for normal trade ATR > EA_ATR_VOLATILITY_TRH
+EA_TP_PIPS
+int
+Number of TP pips for normal trade ATR > EA_ATR_VOLATILITY_TRH
+EA_TP_PIPS_LV
+int
+Number of TP pips for low volatility trade ATR < EA_ATR_VOLATILITY_TRH
+EA_TRADING_START_HOUR
+int
+Start hour of the trading session
+EA_TRADING_END_HOUR
+int
+End hour of trading session
+EA_ATR_VOLATILITY_LIM
+double
+Volatility limit (Under this ATR limit no new trades are openned)
+EA_ATR_VOLATILITY_TRH
+double
+Volatility treshold is used to separate trades into low and high volatility trades
+EA_TRADE_LOT_SIZE
+double
+Default LOT size for a trade
+EA_SPREAD_LIMIT
+int
+Maximum allowable spread limit
+EA_TRADE_MAX_SLIPPAGE
+int
+Maximum allowed slippage
+EA_FREE_MARGIN_LIMIT
+double
+Limit for the free margin to enter the trade
+EA_STOCH_UPPER_LIMIT
+double
+Stochastic indicator upper limit thats crossing is used to enter the trade
+EA_STOCH_LOWER_LIMIT
+double
+Stochastic indicator lower limit thats crossing is used to enter the trade
+EA_MIN_PAUSE_BTW_TRDS
+int
+Pause between opening trades on the same currency
+EA_TIME_FRAME
+ENUM_TIMEFRAMES
+Default time frame used for the EA
+EA_NEWS_HUNTER
+bool
+News hunter enabled/disabled (RSS feed is comming from: http://www.forexfactory.com/ffcal_week_this.xml)
+EA_NEWS_HUNTER_TIMESPAN
+long
+News hunter timespan specifies the time limit for the trade enter. If the news regarding currency is closer in time then this timespan the trade is not entered.
+Recommendations:
+This EA can be scaled for both small (100USD) and big accounts
+TODOs:
+Implement zone recovery algorithm in case of trades going against the open position.

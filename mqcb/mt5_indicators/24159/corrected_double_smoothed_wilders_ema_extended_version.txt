@@ -1,0 +1,9 @@
+Theory :
+This indicator is a "corrected" version (using dr. Alexander Uhl's method for correcting an average) of Wilder's double smoothed EMA
+Also it is adding floating levels to the indicator. That way you have 4 choices for color changes :
+change color when outer floating levels are crossed
+change color when middle floating level (a sort of a "zero line") is crossed
+change color on slope change
+change color original to corrected value cross
+Usage :
+You can use color changes as signals

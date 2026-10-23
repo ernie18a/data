@@ -1,0 +1,7 @@
+It is based on the observation, which shows that the price crosses the MA chart quite often and moves a certain distance further. It places a pending order (Buy Limit or Sell Limit) at the price equal to the value of МА(590-М1). When the price changes, the MA value changes, the order is also modified, and so on until the order is triggered.
+Once the order is triggered, it is not modified. Exit – by tight ТР and SL. As soon as the EA «sees» that there are no orders, it places a new pending order. As it often happens that the price only touches the MA and does not go further, I chose the SL small enough - 30 points. Level of TP=70.
+Since the original version is not available, I had to restore the source text from a later version.
+And even though I am sure I prevailed, there is a small possibility that I forgot to fix something.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7704

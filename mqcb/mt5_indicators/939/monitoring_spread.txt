@@ -1,0 +1,11 @@
+This indicator displays the minimal (
+red
+), average (
+green
+) and maximal (
+blue
+) values of spread on corresponding bars as a histogram (borrowed idea).
+Such monitoring is handy for comparison of trading conditions offered by various brokers, as well as for analysis of spread dynamics.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/939

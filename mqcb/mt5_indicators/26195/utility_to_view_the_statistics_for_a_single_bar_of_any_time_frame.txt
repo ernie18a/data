@@ -1,0 +1,28 @@
+The utility will display the high, low, open, close and time statistics for any user selected bar of any timeframe for the symbol of the chart the utility resides on.  The indicator posts an event (EventChartCustom) to process its data collection and display activities, keeping the processing time for those activities outside of the indicator's quote (OnCalculate) processing times.
+User Input values:
+input int         Uniquifier       = 3;  // Display Offset and Unique Instance Number
+This value mkes the object names unique t this indicator instance; change this number if you are using multiple instances of the indicator.
+Also, this number changes the display offset of the inidicator.
+input ENUM_ON_OFF DirectClick         = ON; // select bars with a mouse click
+The bar to display may be selected by clicking on the chart.
+This turns that feature on or off.  This feature on can interfere with clicking on the other controls.
+Display Controls:
+Bar_Up:
+Click this text to increment the bar for which information is displayed by one.
+Bar_Dn: Click this text to decrement the bar for which information is displayed by one.
+‘The Box”: This is a text input box, the number of the bar to display information about can be directly entered here.
+Period:
+Click this text to increment the timeframe of the bar display.
+“_H4” {Time Frame}:
+Click this text to decrement the timefame of the bar display.
+“Rates” {Data acquisition method}:
+Click this text to increment thru multiple data acquisition methods.
+There are 3 different ways to get a single bar’s statistics implemented in the indicator:
+COPY_FUNCS:
+CopyClose, CopyHigh, CopyLow and CopyTime.
+DIRECT: iClose, iHigh, iLow, iOpen and iTime.
+RATES:
+CopyRates (to an MqlRates structure)
+This is control and functionality is in the indicator purely for those who want to see how to get the information in different ways.
+The Indicator also highlights the bar for which statistics are being displayed - this shows the highlight of an H4 bar on an M30 chart:
+When the timeframe of the bar is less than the timeframe of the chart (or the same as the chart), this highlight can be difficult to discern.

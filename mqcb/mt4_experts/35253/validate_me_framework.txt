@@ -1,0 +1,51 @@
+Validate Me framework
+My interpretation of how to code a robot using market buy and sell orders to cope with market validation. This framework deals with some checks that a trading robot must pass before it is published on the market.
+For educational purposes.
+code example BUY
+ask=MarketInfo(
+_Symbol
+,MODE_ASK);
+         bid=MarketInfo(
+_Symbol
+,MODE_BID);
+         sl=(OrderStopPips==
+0
+)?
+0.0
+:bid-ExtOrderStop;
+if
+(sl!=
+0.0
+&& ExtOrderStop<StopLevel)
+            sl=bid-StopLevel;
+         tp=(OrderTakePips==
+0
+)?
+0.0
+:ask+ExtOrderTake;
+if
+(tp!=
+0.0
+&& ExtOrderTake<StopLevel)
+            tp=ask+StopLevel;
+         GetLot=CheckVolumeValue(Lots);
+if
+(!CheckStopLoss_Takeprofit(OP_BUY,ExtOrderStop,ExtOrderTake))
+return
+;
+if
+(CheckMoneyForTrade(GetLot,OP_BUY))
+            order=
+OrderSend
+(
+_Symbol
+,OP_BUY,GetLot,ask,
+10
+,sl,tp,
+"FrameWork"
+,
+678
+,
+0
+,Blue);
+Framework inputs

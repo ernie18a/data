@@ -1,0 +1,2 @@
+This is the Expert Advisor with Money Management and signal selection.
+You can add your own signals in this EA very easily by just adjusting the function signals. I have included the signal ZZ with the trendlines you see in the image.

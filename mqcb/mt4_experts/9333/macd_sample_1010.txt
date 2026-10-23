@@ -1,0 +1,221 @@
+when it win it win 100 pips and when it lose it lose 50 pips only.it doe not make more than 20% drawdown as u see gpbusd test as long as it dont get losses at the
+begining of trading in gpbjpy it got four
+consecutive losses at begining total of 6000 usd(that what cause big drowdown) but it got back fast and started profiting.the file in here not the full expert if any body want full expert took with me on email kin.city@yahoo.com
+the expert dose not need more than 30% profit to end in profit
+Strategy Tester Report
+MACD Sample101
+BroCo-Demo (Build 225)
+Symbol
+GBPJPY (GREAT BRITAIN POUND vs JAPANESE YEN)
+Period
+5 Minutes (M5) 2009.05.08 04:30 - 2009.11.16 13:35
+Model
+Every tick (the most precise method based on all available least timeframes)
+Parameters
+stopLoss=50; TakeProfit=100; Lots=0.1; TrailingStop=30; MACDOpenLevel=3; MACDCloseLevel=2; MATrendPeriod=26; MovingPeriod=50; MovingShift=0;
+Bars in test
+38737
+Ticks modelled
+3089350
+Modelling quality
+n/a
+Mismatched charts errors
+622
+Initial deposit
+10000.00
+Total net profit
+35685.62
+Gross profit
+222105.32
+Gross loss
+-186419.70
+Profit factor
+1.19
+Expected payoff
+47.58
+Absolute drawdown
+7081.51
+Maximal drawdown
+14868.70 (83.59%)
+Relative drawdown
+83.59% (14868.70)
+Total trades
+750
+Short positions (won %)
+385 (31.69%)
+Long positions (won %)
+365 (32.33%)
+Profit trades (% of total)
+240 (32.00%)
+Loss trades (% of total)
+510 (68.00%)
+Largest
+profit trade
+3353.27
+loss trade
+-1684.16
+Average
+profit trade
+925.44
+loss trade
+-365.53
+Maximum
+consecutive wins (profit in money)
+4 (2513.11)
+consecutive losses (loss in money)
+16 (-3967.37)
+Maximal
+consecutive profit (count of wins)
+3909.91 (3)
+consecutive loss (count of losses)
+-3967.37 (16)
+Average
+consecutive wins
+1
+consecutive losses
+3
+on different broker with more errors
+Strategy Tester Report
+MACD Sample1010
+AlpariUK-Demo (Build 225)
+Symbol
+GBPJPY (Great Britain Pound vs Japanese Yen)
+Period
+5 Minutes (M5) 2009.05.05 05:50 - 2009.11.16 14:20
+Model
+Every tick (the most precise method based on all available least timeframes)
+Parameters
+sl=50; TakeProfit=100; Lots=0.1; TrailingStop=30; MACDOpenLevel=3; MACDCloseLevel=2; MATrendPeriod=26; MovingPeriod=50; MovingShift=5;
+Bars in test
+39874
+Ticks modelled
+11118308
+Modelling quality
+n/a
+Mismatched charts errors
+2146
+Initial deposit
+10000.00
+Total net profit
+21649.21
+Gross profit
+237462.42
+Gross loss
+-215813.21
+Profit factor
+1.10
+Expected payoff
+26.24
+Absolute drawdown
+9442.05
+Maximal drawdown
+17049.11 (65.87%)
+Relative drawdown
+95.94% (13184.45)
+Total trades
+825
+Short positions (won %)
+416 (30.29%)
+Long positions (won %)
+409 (30.81%)
+Profit trades (% of total)
+252 (30.55%)
+Loss trades (% of total)
+573 (69.45%)
+Largest
+profit trade
+3368.25
+loss trade
+-1696.74
+Average
+profit trade
+942.31
+loss trade
+-376.64
+Maximum
+consecutive wins (profit in money)
+4 (4205.82)
+consecutive losses (loss in money)
+18 (-4074.73)
+Maximal
+consecutive profit (count of wins)
+4205.82 (4)
+consecutive loss (count of losses)
+-4074.73 (18)
+Average
+consecutive wins
+1
+consecutive losses
+3
+Strategy Tester Report
+MACD Sample1010
+AlpariUK-Demo (Build 225)
+Symbol
+GBPUSD (Great Britain Pound vs US Dollar)
+Period
+5 Minutes (M5) 2009.06.05 12:20 - 2009.11.16 15:35
+Model
+Every tick (the most precise method based on all available least timeframes)
+Parameters
+sl=50; TakeProfit=100; Lots=0.1; TrailingStop=30; MACDOpenLevel=3; MACDCloseLevel=2; MATrendPeriod=26; MovingPeriod=50; MovingShift=5;
+Bars in test
+33231
+Ticks modelled
+6772669
+Modelling quality
+n/a
+Mismatched charts errors
+540
+Initial deposit
+10000.00
+Total net profit
+19486.76
+Gross profit
+91399.60
+Gross loss
+-71912.84
+Profit factor
+1.27
+Expected payoff
+56.00
+Absolute drawdown
+2163.00
+Maximal drawdown
+9927.02 (34.39%)
+Relative drawdown
+38.33% (5971.70)
+Total trades
+348
+Short positions (won %)
+162 (32.72%)
+Long positions (won %)
+186 (35.48%)
+Profit trades (% of total)
+119 (34.20%)
+Loss trades (% of total)
+229 (65.80%)
+Largest
+profit trade
+3003.60
+loss trade
+-1500.00
+Average
+profit trade
+768.06
+loss trade
+-314.03
+Maximum
+consecutive wins (profit in money)
+5 (4004.80)
+consecutive losses (loss in money)
+11 (-3302.68)
+Maximal
+consecutive profit (count of wins)
+4004.80 (5)
+consecutive loss (count of losses)
+-3302.68 (11)
+Average
+consecutive wins
+2
+consecutive losses
+3

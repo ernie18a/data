@@ -1,0 +1,7 @@
+In the article
+How to Evaluate the Expert Testing Results
+was written: "It is easy to recalculate the profit in points then."
+Exposed script calculates profit and all secondary data in points. Script creates 2 files: summary report and csv-file with account history list, that can be analyzed in some spreadsheet (for instance MS Excel).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8271

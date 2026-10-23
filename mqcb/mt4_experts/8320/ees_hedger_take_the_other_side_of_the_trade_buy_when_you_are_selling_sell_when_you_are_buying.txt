@@ -1,0 +1,37 @@
+EES Hedger
+Do you have the need to take the opposite side of a trade?
+Using manual trading or another EA, EES Hedger can immediately take the opposite position as specified in EA parameters.
+Instructions:
+For example, you are trading SAR EA on GBPUSD and SAR EA uses magicnumber of 1234,
+so you want to use EES Hedger in conjunction with SAR EA.
+Open another GBPUSD chart (same pair SAR EA is trading), does not matter which time frame, but it is ideal that you use the same timeframe as what the SAR EA is trading, or a lower timeframe. Now on EES Hedger’s external var: Original_EA_Magic enter SAR EA's magicnumber which is in this example 1234. Now make sure that Advocate_EA_Magic is different from Original_EA_Magic.
+Once SAR EA opens a trade, EES Hedger will open the opposite order.
+Now if you want to use EES Hedger for Manual trades, simply input Original_EA_Magic = 0.
+Parameters:
+Original_EA_Magic
+= 0,
+//This is the magic number that your 1st EA uses where advocate EA will base its trades on
+Advocate_EA_Magic
+= 2008, //This is the advocate EAs own magic number please keep it unique to avoid conflict
+Slippage
+= 6,
+//Amount of allowed slippage
+TakeProfit
+= 50,
+//Take profit amount, per trade
+StopLoss
+= 50,
+//Stop loss, per trade
+TS_MinProfit
+= 0,
+//minimum profit require before trailing stop starts
+TrailingStop
+= 25,
+//this is the trailing stop in pips
+BreakEvenAfterPips
+= 25;
+//when this amount in profit in pips is reached SL will be moved to
+breakeven
+To obtain a free copy of this EA, visit
+www.eesfx.com
+and register for a free account.

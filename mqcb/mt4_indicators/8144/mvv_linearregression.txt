@@ -1,0 +1,5 @@
+The standard linear regression channel and support/resistance levels. If you anchor the beginning of a channel to the price maximum, the channel will be redrawn at each new price minimum. If the minimum is not refreshed within five bars, the indicator will draw a price label that will represent a strong support level after the channel has been broken through. Vice versa, for an up-channel.
+The first picture shows channel anchoring, the second one shows price level processing.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8144

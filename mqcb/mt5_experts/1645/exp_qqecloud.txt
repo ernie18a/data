@@ -1,0 +1,32 @@
+Trading system using the
+Exp_QQECloud
+trend indicator.
+The decision of a deal is taken strictly in fixed moments of time. There are two of them: the moment of position opening and position closing.
+These moments are defined by two pairs of the Expert Advisor input parameters:
+input
+Hour       StartHour=H08;
+// Hour of position opening
+input
+Min        StartMinute=M00;
+// Minute of position opening
+input
+HourX      StopHour=HX23;
+// Hour of position closing
+input
+Min        StopMinute=M59;
+// Minute of position closing
+To the moment of position opening the direction for the deal is defined by the color of the Exp_QQECloud indicator. If the color is red, short will be opened, if purple, long will be opened. Place Exp_QQECloud.ex5 compiled file to the terminal_data_folder\MQL5\Indicators.
+It should be considered that the TradeAlgorithms.mqh library file is designed to use Expert Advisors by brokers who offer
+nonzero spread
+and ability to set Stop Loss and Take Profit
+simultaneously opening
+a position. Other variants of this library can be downloaded from
+https://www.mql5.com/en/code/1578
+.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. The instances of history of deals in the chart
+Testing results for 2011 at USDCHF H4:
+Fig. 2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1645

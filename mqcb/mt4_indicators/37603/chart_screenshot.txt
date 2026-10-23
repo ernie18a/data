@@ -1,0 +1,3 @@
+This code can be used to take screenshot from code itself at any particular desired time.
+Suppose one wants to know the exact conditions oaf indicators at the time when a trade was placed in an EA, then code can be used to take screenshot of the chart automatically and save it.
+Later on it can be viewed yb the trader to analyse the trading condition on the chart at the time of the trade.

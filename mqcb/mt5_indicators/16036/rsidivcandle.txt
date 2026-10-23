@@ -1,0 +1,11 @@
+Real author:
+RickD
+The RSIdivCandle indicator. Colors the candles based on the RSI oscillator:
+Blue — RSI is in the overbought area;
+Dodger blue — RSI is above the 50 level and outside the overbought and oversold areas;
+Purple — RSI is below the 50 level and outside the overbought and oversold areas;
+Red — RSI is in the oversold area.
+Fig.1. The RSIdivCandle indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16036

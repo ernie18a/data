@@ -1,0 +1,12 @@
+Real author:
+LeMan
+The indicator calculates the distance from the market entry price to the highs and lows displaying the quartiles deviation.
+The first green line (counting from bottom to top) shows how high the price was raised in 75% (Quartile_3) of cases from the sample, the second green line shows the same in 50% (Quartile_2) of cases, the third one - 25% (Quartile_1), the fourth one - the maximum deviation.
+The first red line (counting from top to bottom) shows how low the price dropped in 75% (Quartile_3) of cases from the sample, the second red line shows the same in 50% (Quartile_2), the third one - 25% (Quartile_1), the fourth one - the maximum deviation.
+These lines help in defining price movement targets beginning from a bar opening price. The author suggests using the indicator with the timeframes no less than the daily one.
+This indicator was first implemented in MQL4 and published in
+CodeBase at mql4.com
+13.01.2011.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/695

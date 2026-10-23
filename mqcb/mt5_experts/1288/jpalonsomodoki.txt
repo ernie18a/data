@@ -1,0 +1,117 @@
+Modified from Generated.
+Using Envelopes 200, dev 0.35.
+//+------------------------------------------------------------------+
+//| "Voting" that price will grow.                                   |
+//| INPUT:  no.                                                      |
+//| OUTPUT: number of "votes" that price will grow.                  |
+//| REMARK: no.                                                      |
+//+------------------------------------------------------------------+
+int
+CSignalEnvelopes::LongCondition()
+  {
+int
+result=
+0
+;
+int
+idx   =StartIndex();
+double
+close=
+SymbolInfoDouble
+(
+Symbol
+(),
+SYMBOL_ASK
+);
+double
+upper=Upper(idx);
+double
+lower=Lower(idx);
+double
+width=upper-lower;
+double
+ma=lower+width/
+2
+;
+if
+(close<=lower || (close<upper && close>ma))
+      result=
+100
+;
+//--- return the result
+return
+(result);
+  }
+//+------------------------------------------------------------------+
+//| "Voting" that price will fall.                                   |
+//| INPUT:  no.                                                      |
+//| OUTPUT: number of "votes" that price will fall.                  |
+//| REMARK: no.                                                      |
+//+------------------------------------------------------------------+
+int
+CSignalEnvelopes::ShortCondition()
+  {
+int
+result  =
+0
+;
+int
+idx     =StartIndex();
+double
+close=
+SymbolInfoDouble
+(
+Symbol
+(),
+SYMBOL_BID
+);
+double
+upper=Upper(idx);
+double
+lower=Lower(idx);
+double
+width=upper-lower;
+double
+ma=lower+width/
+2
+;
+if
+(close>=upper || (close>lower && close<ma))
+      result=
+100
+;
+//--- return the result
+return
+(result);
+  }
+//+------------------------------------------------------------------+
+I couldn't get the "Mystery of the first week", so just put timer.
+//+------------------------------------------------------------------+
+//| "Tick" event handler function                                    |
+//+------------------------------------------------------------------+
+void
+OnTick
+()
+  {
+if
+(
+PositionSelect
+(
+Symbol
+()))
+return
+;
+if
+(
+TimeCurrent
+() <
+D'2012.10.08 10:55'
+)
+return
+;
+   
+   ExtExpert.
+OnTick
+();
+  }
+The real one above, the test result below.

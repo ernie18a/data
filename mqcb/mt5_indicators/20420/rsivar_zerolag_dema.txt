@@ -1,0 +1,8 @@
+As it was shown in the
+Rsi(var)
+indicator, other Moving Averages can be used for calculation of an RSI indicator. This version is one more step in that direction.
+Adding zero lag DEMA to the RSI calculation as a preferred smoothing method has two things as a result:
+It is "faster" - zero lag DEMA is an average with significantly reduced lag (even compared to
+Zero lag MA
+).
+Extremes (0 and 100) are reached much more often compared to regular RSI and that makes RSI as a momentum indicator even more useful.

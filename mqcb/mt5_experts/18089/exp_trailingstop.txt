@@ -1,0 +1,33 @@
+The Expert Advisor moves trailing stops of all positions on the current symbol.
+Expert Advisor input parameters
+:
+//+----------------------------------------------+
+//| Expert Advisor input parameters              |
+//+----------------------------------------------+
+input
+uint
+StopLoss_=
+1000
+;
+//Stop Loss in points
+input
+int
+TralStart=
+1000
+;
+//Trailing start in points
+input
+uint
+TralStep=
+200
+;
+//Trailing step in points
+input
+uint
+Deviation_=
+10
+;
+//Max. price deviation in points
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18089

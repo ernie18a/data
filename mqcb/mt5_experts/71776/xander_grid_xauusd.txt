@@ -1,0 +1,40 @@
+XANDER Grid XAUUSD is a bidirectional grid Expert Advisor developed
+specifically for Gold (XAUUSD) trading on MetaTrader 5.
+The EA opens buy orders when the previous candle is bullish, and sell
+orders when the previous candle is bearish. New grid levels are added
+only when price moves a defined distance from the last entry, combining
+candle direction with grid spacing to reduce unnecessary entries during
+choppy markets.
+━━━ HOW IT WORKS ━━━
+The EA manages two independent grids — one for buys and one for sells.
+When two or more positions are open on the same side, it calculates a
+weighted average price and sets a shared take profit for the group.
+This allows the grid to recover faster compared to managing each
+position individually.
+Two closing modes are available:
+- Average TP — shared take profit on the best and worst position
+- Partial Close — closes the worst position partially to reduce exposure
+━━━ KEY FEATURES ━━━
+- Bidirectional grid with candle direction filter
+- Weighted average take profit calculation
+- Daily Profit Target — closes all positions when daily $ target is reached
+- Max Floating Drawdown — pauses new entries when floating loss exceeds limit
+- Auto clean chart on load (hides grid, volume, trade history, bid/ask lines)
+- Configurable magic number, slippage and lot limits
+━━━ IDEAL FOR ━━━
+This EA is designed for ProCent accounts on brokers such as RoboForex
+and Weltrade. ProCent accounts allow minimum lot sizes starting at 0.01
+cent lots, which significantly reduces exposure while maintaining the
+same grid logic. Default settings are configured conservatively for
+Gold with a maximum lot size of 0.04.
+━━━ SETTINGS ━━━
+- Take Profit per position — individual TP in pips before grid activates
+- Distance between grid levels — minimum pips between entries
+- Minimum grid profit to close — profit threshold for group close
+- Starting lot size — initial lot (default 0.01)
+- Maximum lot size — hard cap on lot doubling (default 0.04)
+- Close method — Average TP or Partial Close
+- Daily Profit Target — enable and set $ target per day
+- Max Floating Drawdown — enable and set $ drawdown pause limit
+- Magic Number — unique ID for this EA (default 2001)
+- Slippage — execution tolerance in pips

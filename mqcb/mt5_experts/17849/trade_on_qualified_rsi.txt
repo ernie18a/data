@@ -1,0 +1,23 @@
+Author of the idea
+—
+John Smith
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+A trade strategy based on the RSI indicator. Checks if there is enough money before opening a position.
+Initial check
+:
+to open BUY: R‌SI on bar "1" < 45
+to open SELL: R‌SI on bar "1" > 55
+Confirmation of opening:
+to open BUY: R‌SI on bars from "2" to "2"+"CountBars" < 45
+to open SELL: R‌SI on bars from "2" to "2"+"CountBars" > 55
+Position modification:
+uses the close price of the bar "1" as the basic value.
+The EA shows the following results on H1 with default parameters:
+‌
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17849

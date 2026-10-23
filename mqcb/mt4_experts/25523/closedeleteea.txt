@@ -1,0 +1,2 @@
+his Expert Advisor closes all open positions and pending orders.
+It is possible to close only buy or sale orders, market or pending orders, positions with profit or loss.

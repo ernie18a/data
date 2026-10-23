@@ -1,0 +1,4 @@
+First of all, the script removes all previously created objects-arrows from the chart. Then it arranges the arrows in accordance with the opened, closed, pending orders from the history of terminal. The color and the direction of an arrow is determined by the type of the order: SELL - red, BUY - blue, pending orders - yellow. A balloon-tip, containing the information about the type of the order, its price and ticket, appears as soon as you put the cursor of your mouse over it. The length of the displayed history is determined by the "Account History" tab of the client terminal.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8163

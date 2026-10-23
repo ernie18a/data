@@ -1,0 +1,1 @@
+This indicator is using the Exponential Moving Average Calculation Applied to the RSI Data, and allows users to choose the number of periods for the RSI and the number of periods for the Exponential Moving Average.

@@ -1,0 +1,9 @@
+Basics:
+MetaTrader built-in stochastic allows us to chose only two "prices":
+close/close
+low/high
+Obviously we are missing the rest of the usual price types in those choices.
+This version:
+In this version all the usual price types are added. Also, in order to help a bit spotting the signal line crosses, color of the stochastic is changed depending on the signal line cross.
+Usage:
+The same way as the regular stochastic.

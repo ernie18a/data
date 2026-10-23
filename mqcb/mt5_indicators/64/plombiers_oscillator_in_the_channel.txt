@@ -1,0 +1,9 @@
+Example of the channel and
+Stochastic oscillator
+. Sometimes this is useful - to observe the behavior of the oscillator in the channel. Greatly simplifies the evaluation of the situation.
+By changing the parameters, you began to see
+clearly.
+Plombiers Indicator - oscillator in the channel
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/64

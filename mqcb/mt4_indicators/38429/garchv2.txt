@@ -1,0 +1,1 @@
+A second version of GARCH volatility indicator. Several improvements are implemented.

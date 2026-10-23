@@ -1,0 +1,2 @@
+This is a simple program to compare asynchronous and synchronous all close.
+It is a sample program, so feel free to modify it for your own testing purposes, such as adding conditions.

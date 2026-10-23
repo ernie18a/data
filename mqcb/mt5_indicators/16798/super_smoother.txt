@@ -1,0 +1,1 @@
+This is the super smoother of prices: the only parameter that can be changed is the price to use in the super smoother calculation. It might be a good filter for some price pre-filtering usage in some other indicators that filter prices prior to calculation.

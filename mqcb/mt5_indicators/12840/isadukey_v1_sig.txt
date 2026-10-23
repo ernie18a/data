@@ -1,0 +1,7 @@
+Semaphore signal indicator based on the
+i-Sadukey_v1
+digital filter.
+Fig.1. The i-Sadukey_v1_Sig indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12840

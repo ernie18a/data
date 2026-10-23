@@ -1,0 +1,23 @@
+Auto Envelope is an envelope indicator that automatically changes the channel size calculating the standard deviation for the last 100 bars.
+It is designed to change the value no more than once a week, which makes it suitable even for intraday data.
+It has four inputs:
+MA period
+- moving average calculation period
+MA method
+- moving average calculation method
+Deviation factor
+- standard deviation ratio
+Deviation period
+- standard deviation calculation period
+Calculation:
+Central = MA
+Top = Central + Channel / 2.0
+Bottom = Central - Channel / 2.0
+where:
+Channel = StdDev * Deviation factor * Central / 10.0
+StdDev - StdDev(Raw, Deviation period)
+Raw = 2.0 * Max(Abs(High-MA), Abs(Low-MA)) / MA
+MA - MA(Close, MA period, MA method)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22184

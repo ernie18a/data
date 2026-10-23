@@ -1,0 +1,22 @@
+V1N1 LONNY is a multi-symbol Asian Range Breakout day-trading Expert Advisor.
+How it works
+During the London session, the EA looks for breakout setups and places pending stop orders (BuyStop / SellStop).
+Entries are anchored on the most recent Parabolic SAR swing plus a small buffer (a fraction of ATR). The pre-London Asian range (measured in real H1 bars) acts as a no-trade zone: BuyStops are only allowed above the Asian high and SellStops only below the Asian low.
+Signals combine three classic tools on the trading timeframe: Parabolic SAR (swing/trend), MACD (direction) and Stochastic (avoiding overbought/oversold entries).
+A size filter ignores Asian ranges that are too tight or too wide relative to the Average Daily Range (ADR).
+Risk and trade management
+Structural stop loss placed at the opposite PSAR swing, clamped to a sane min/max fraction of the ADR. Take profit is derived from the stop distance (golden-ratio factor).
+Position management includes a MACD reversal exit, plus trailing stop and break-even.
+All orders and positions are flattened near the New York close or near the symbol's own session close, whichever comes first.
+Daily profit and daily loss limits (percentage based) close everything once reached.
+Sessions and timeframes
+Trades M15, M30 and H1 simultaneously (one magic number per timeframe).
+Automatic London and New York Daylight Saving Time handling; the broker GMT offset and DST convention are set via inputs.
+Symbols and parameters
+Multi-symbol from a single chart (comma-separated list). Fifteen symbols are pre-configured as an example (US indices, forex majors/crosses, metals and BTCUSD).
+Each symbol carries its own set of parameters (ADR period, period in hours, PSAR step, MACD signal in hours, Asian-range bars). The bundled defaults were optimized with cross-broker robustness checks on three different brokers.
+Important: the default per-symbol values were optimized. Other symbols or timeframes should be re-optimized. You can freely add symbols that perform well on your own broker by editing the per-symbol table.
+Main inputs
+Symbol list, server GMT offset and DST convention.
+Risk mode (percentage / fixed lot / fixed amount) and risk size.
+Daily profit and daily loss limits (0 = disabled).

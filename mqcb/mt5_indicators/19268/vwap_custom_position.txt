@@ -1,0 +1,2 @@
+The indicator calculates standard VWAP (Volume Weighted Average Price) line, with the advantage of user defined start point.
+The start point is movable and can be changed by moving the arrow created on chart.

@@ -1,0 +1,6 @@
+QQE
+(Quantitative Qualitative Estimation) is normally made using RSI (Relative Strength Index) as a "basic" indicator.
+This version is using
+Parabolic Weighted Velocity
+and it can help in determining trend. Adjust the calculating period to your trading style: longer - to trend traders, shorter - for scalping.
+PS: this is a standalone indicator. It does not need any other indicator in order to work correctly.

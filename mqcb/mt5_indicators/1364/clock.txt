@@ -1,0 +1,8 @@
+The indicator displays three variants of time in the chart: local, server and GMT!
+The indicator uses the
+GetFontName.mqh
+class of library (should be copied to the terminal_data_folder\MQL5\Include).
+Fig.1 The Clock indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1364

@@ -1,0 +1,6 @@
+The narrowing and widening phases of Bollinger Bands can be an indication of price volatility. This indicator may give you a more direct display of this kind of pattern. This indicator may give you a more direct display of this kind of pattern.
+The logic is quite simple, just using iBands data to calculate colours. May seem stupid but it's my personal preference.
+Hope you like it.
+Translated from Chinese by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/zh/code/66540

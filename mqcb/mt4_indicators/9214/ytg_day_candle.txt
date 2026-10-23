@@ -1,0 +1,4 @@
+The indicator shows the ranges of price movement during different trade sessions.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9214

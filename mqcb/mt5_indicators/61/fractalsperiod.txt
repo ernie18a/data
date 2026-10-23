@@ -1,0 +1,20 @@
+An indicator lets you specify the number of bars separately before and after the current High / Low (fractal) can.
+It uses CalcFrac Class from
+CalcFrac.mqh
+Library.
+Input parameters:
+Input parameter
+Value
+Description
+CompleteBarsOnly
+true
+Converts only with finished bars
+FractalsPeriodBefore
+2
+Number of bars before the current High / Low
+FractalsPeriodAfter
+5
+Number of bars after the current High / Low
+Maxbar
+100
+Number of bars in the calculation

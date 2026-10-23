@@ -1,0 +1,4 @@
+BB_OsMA indicator is a Forex indicator for MetaTrader 5.
+BB_OsMA indicator is the OsMA indicator in the form of spheroid, with a deviation as the upper and lower bands.
+Update: version "1.00" @ 2024/02/19
+The program has not been updated for too long and is no longer working properly.

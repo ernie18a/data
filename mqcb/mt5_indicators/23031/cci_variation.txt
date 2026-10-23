@@ -1,0 +1,17 @@
+Theory:
+The commodity channel index (CCI) is an oscillator originally introduced by Donald Lambert in 1980. It is calculated as:
+(price - average) / (0.015 * mean absolute deviation)
+This version:
+In this version we are adding (changing) the following:
+option to change the mean absolute deviation to:
+standard deviation
+ATR (average true range)
+option to chose to smooth the value of such a "CCI"
+option to change color on zero crosses or on slope direction change
+What is the same as in regular CCI (if smoothing is not used):
+- the crosses of the zero line will always be exactly the same as in regular CCI (regardless if you use ATR or standard deviation for calculation)
+What is different :
+- levels are not going to be the same (that will eventually need adjustments if you are used to use levels when using CCI for trading decisions)
+- slope of the CCI is not going to be the same
+Usage:
+You can use the color changes for signals.

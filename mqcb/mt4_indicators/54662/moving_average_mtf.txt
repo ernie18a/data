@@ -1,0 +1,9 @@
+This is a simple indicator to calculate moving averages based on timeframe that currently viewed.
+The calculations are generally based on timeframe window and moving average's period defined.
+The following chart is
+on M15 timeframe
+shows an Exponential Moving Average on close price with period of 16.
+while this following chart is
+on the M5 timeframe,
+shows an Exponential Moving Average on close price with period of 48.
+both charts shows equal moving average relative to market structure on different the time frame.

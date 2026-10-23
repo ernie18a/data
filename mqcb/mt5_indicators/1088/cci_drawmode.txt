@@ -1,0 +1,4 @@
+This indicator has an option for the user to change the drawing mode. Here, it is exemplified by CCI but it can in fact be similarly applied to any oscillator. The histogram is enhanced with a new parameter "Confirmation (number of bars)" the purpose and application of which are identical to the similar parameter WoodieCCI. Note that this parameter does not affect the line and color fill drawing modes.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1088

@@ -1,0 +1,3 @@
+3D is applied without the use of Direct X only by means of the iCanvas class.
+There is only one parameter in the indicator - A maximum number of circles displayed.
+To change the period (the number of bars in one circle), you need to click the left mouse button and the period changes depending on the position of the mouse horizontally. Clicking again with the left mouse button exits the period change mode.

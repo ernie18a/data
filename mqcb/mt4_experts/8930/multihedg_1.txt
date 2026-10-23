@@ -1,0 +1,4 @@
+The Multi-currency adviser in the time, given by the user, opens a market position, on a choice Buy or Sell. As, it is possible to set closing of positions in the certain time, to choose currencies, to choose percent of the profit and loss for closing all positions.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8930

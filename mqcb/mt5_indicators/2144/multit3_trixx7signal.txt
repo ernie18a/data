@@ -1,0 +1,9 @@
+The MultiT3_TRIXx7Signal indicator shows information on active trends using the values of seven
+T3_TRIX
+indicators from different timeframes.
+One of the seven indicator lines corresponds to each T3_TRIX indicator. If the cloud of the T3_TRIX indicator is rising, the line is dark blue, it's pink for a falling cloud. Colored dots on lines occur when the bar of the corresponding timeframe changes.
+The indicator requires T3_TRIX.mq5 indicator file. Place it to terminal_folder\MQL5\Indicators.
+Figure 1. The MultiT3_TRIXx7Signal indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2144

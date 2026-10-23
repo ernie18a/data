@@ -1,0 +1,43 @@
+Idea by
+:
+Alberto Tortella
+MQL5 code author
+:
+barabashkakvn
+Input Parameters
+Lots
+- position volume (always fixed, dynamic calculation is not used);
+Stop Loss
+- stop loss ("0.0" == off);
+Take Profit
+- take profit ("0.0" == off);
+Trailing Stop
+- trailing stop ("0.0" == off);
+Trailing Step
+- trailing step;
+Number of elements (check iHighest and iLowest)
+- amount of bars, among which the highest and the lowest bars will be searched
+Moving Average First
+- parameters of the first Moving Average:
+MA First: averaging period;
+MA First: horizontal shift;
+MA First: smoothing type;
+MA First: type of price or handle.
+Moving Average Second
+- parameters of the second Moving Average:
+MA Second: averaging period;
+MA Second: horizontal shift;
+MA Second: smoothing type;
+MA Second: type of price or handle.
+MACD
+- MACD indicator parameters:
+MACD: period for Fast average calculation;
+MACD: period for Slow average calculation;
+MACD: period for their difference averaging;
+MACD: type of price.
+magic number
+- unique EA identifier.
+EURUSD, H1, "Every tick based on real ticks":
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21672

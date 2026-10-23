@@ -1,0 +1,13 @@
+The real author:
+Talex
+The trend indicator drawn on the basis of the Bollinger Bands. The indicator is written by the book by J. Bollinger
+"Bollinger on Bollinger Bands"
+.
+The interpretation of the indicator is simple. The indicator histogram displays the position of price in relation to Bollinger Bands. The exit of the indicator line beyond the limits of -25 or +25 means the exit beyond low or upper line of bands respectively.
+This indicator was first implemented in MQL4 and published in
+Code Base
+on 30.09.2008.
+Fig.1 The i-BandsPrice indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1350

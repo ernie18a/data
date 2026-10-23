@@ -1,0 +1,8 @@
+The Chande Momentum Oscillator is a technical momentum indicator invented by Tushar Chande. Chande introduced the indicator in his 1994 book "The New Technical Trader". It is created by calculating the difference between the sum of all recent gains and the sum of all recent losses and then dividing the result by the sum of all price movement over the period.
+The Chande Momentum Oscillator formula is:
+CMO = 100 x ((Su – Sd) / (Su + Sd))
+where:
+Su - sum of gains.
+Sd - sum of losses.
+Usually CMO is used compared to static levels (usually levels -50 and +50), but that approach lacks flexibility and often lags. This version attempt to change that by adding Discontinued Signal Lines instead of using static levels for trends.
+Also, instead of displaying it as an indicator in a separate window, it is displayed on the main chart as bars (if the current chart style is bars or line) or candles (it is done automatically) to make it easier to pinpoint when the momentum crosses the DSL levels.

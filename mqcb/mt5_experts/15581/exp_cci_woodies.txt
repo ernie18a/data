@@ -1,0 +1,24 @@
+Exp_Directed_Movement Expert Advisor is based on the change of color of the
+CCI_Woodies
+indicator. The signal is formed when a bar is closing if there is change in cloud color of the indicator. The EA features the ability to trade against a trend:
+input
+bool
+Invert=
+false
+;
+//Trade against a trend
+The Expert Advisor uses the compiled indicator file CCI_Woodies.ex5 for operation. Save it to <terminal_data_folder>\MQL5\Indicators.
+Note that the TradeAlgorithms.mqh library file allows using Expert Advisors with brokers who offer
+nonzero spread
+and the option of setting Stop Loss and Take Profit
+together with position opening
+. You can download more variants of the library at the following link:
+Trade Algorithms
+.
+Default Expert Advisor's input parameters have been used during tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig.1. Examples of trades on the chart
+Testing results for 2014 at EURUSD H6:
+Fig.2. Charts of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15581

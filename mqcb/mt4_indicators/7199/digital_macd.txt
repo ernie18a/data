@@ -1,0 +1,2 @@
+Author: rewritten CrazyCharts
+One more version of the digital indicator.

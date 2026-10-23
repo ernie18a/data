@@ -1,0 +1,9 @@
+The indicator draws a colored area on a price chart in the form of a histogram between two Moving Averages based on High/Low prices.
+It has two parameters:
+MA period
+- MA calculation period;
+MA method
+- MA calculation method.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20159

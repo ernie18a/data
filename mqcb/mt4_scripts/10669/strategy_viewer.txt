@@ -1,0 +1,19 @@
+This is a script to view a CSV statements file in MetaTrader 4.
+How to work:
+Select a system or strategy;
+Download the statements to CSV (right up corner);
+Copy this file to terminal_data_folder\experts\files;
+In MetaTrader 4 select a currency pair window;
+Drop the StrategyView script;
+Set the "statement.csv" filename (if neccessary);
+Set the correct hour offset (if neccessary);
+Press OK and you will see the orders in your chart.
+Version history:
+v.1.2 - 2013.07.03
+Fixed some issues with symbol suffix.
+Shows stop and limit pending orders.
+v.1.1 - 2012.12.20
+Fixed: added ticket number to csv.
+Fixed: Missing orders if csv does not contain price field.
+v1.0 - 2012.03.27
+First release.

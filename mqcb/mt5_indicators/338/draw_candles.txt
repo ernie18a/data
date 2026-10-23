@@ -1,0 +1,17 @@
+The indicator plots the candles on two symbols in the separate window.
+The
+DRAW_CANDLES
+drawing style plots the candles using the values of 4 indicator buffers with Open, High, Low and Close prices. The N variable is defined as input parameter, it can be changed using the "Properties" window. The color and symbols changed randomly each N ticks. To see how does it work, attach two indicators to the chart.
+Note that initial properties of the plot1 graphic plot (
+DRAW_CANDLES
+) are defined using the #
+property
+preprocessor directive, further these properties changed randomly (
+OnCalculate()
+function).
+See also:
+The Drawing Styles in MQL5
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/338

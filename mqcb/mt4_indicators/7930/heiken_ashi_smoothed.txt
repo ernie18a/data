@@ -1,0 +1,2 @@
+Author: Raff
+Heiken Ashi Smoothed indicator.

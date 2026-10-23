@@ -1,0 +1,18 @@
+REMARK:
+For this
+to work perfectly
+, you must have
+high speed internet
+and a
+high quality Computer
+. Otherwise, it will not work for you.
+INTRODUCTION :
+The breakout strength meter is a trading tool that is used to identify which currencies are the strongest to breakout, and which currencies are the weakest to breakout.
+Don't hesitate to send all your comments and I would appreciate rating this trading tool.
+HOW TO USE IT :
+You can check the following video that will explain how to
+define and see how a breakout strength meter works.
+use this trading tool to confirm real and fake breakouts (the most important part)
+compile the script in MT4 or MT5.
+You can also check the following video. It is about Currency Strength Meter
+SCREENSHOT :

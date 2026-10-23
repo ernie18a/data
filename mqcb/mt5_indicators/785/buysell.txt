@@ -1,0 +1,14 @@
+Real author:
+bobik
+This indicator shows the "ultimate support/resistance" levels of current trend. Trend changes is shown with color rectangles, trend direction is shown with colored dots. The direction of trend is determined by dynamics of
+moving average
+, the support/resistance levels depend on current volatility and calculated using the
+Average True Range
+(ATR) indicator.
+This indicator was first implemented in MQL4 and published in
+CodeBase at mql4.com
+26.04.2008.
+BuySell indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/785

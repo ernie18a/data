@@ -1,0 +1,2 @@
+By definition Elliot Oscillator is a "34 period Simple Moving Average of prices subtracted from a 5 period Simple Moving Average of prices displayed as a histogram above and below a zero line" (it is sometimes called a "5/34 Oscillator").
+This version is doing exactly the same with only one difference: it allows you to chose periods of calculation. This way it is as simple as it gets and shows exactly what Elliot Oscillator indicator is about.

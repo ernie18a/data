@@ -1,0 +1,14 @@
+Intraday intensity index oscillator.
+It has two input parameters:
+Period
+- calculation period;
+Use normalization
+- switch (Yes/No) of using normalization in calculations.
+Calculations:
+No normalization:
+Idx = Sum[Volume * (2*Close - High - Low) / (High - Low)] за Period
+With normalization:
+Idx = 100*(Sum[Volume * (2*Close - High - Low) / (High - Low)]) / (Sum [Volume]) за Period
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20858

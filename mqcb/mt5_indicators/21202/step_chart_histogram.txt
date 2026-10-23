@@ -1,0 +1,4 @@
+Step Chart Histogram indicator monitors the price change (in pips) and according to that, determines if a new "step" has been made or not.
+Compared to the
+Step Chart
+indicator, this version displays the values in a separate window as a histogram (as a sort of a help to see the trend changes in an easier way).

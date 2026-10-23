@@ -1,0 +1,15 @@
+RSI Histogram Oscillator displays a smoothed difference of two different-period RSIs as a colored histogram.
+It has three adjustable parameters:
+Fast RSI period
+Slow RSI period
+Smoothing
+- period of smoothing the difference between two RSIs
+Calculations:
+OscRSI = SMA(RAW, Smoothing)
+where:
+RAW = FastRSI - SlowRSI
+FastRSI = RSI(Fast RSI period)
+SlowRSI = RSI(Slow RSI period)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22801

@@ -1,0 +1,2 @@
+Easy to use ticks recorder.
+The indicator records every tick into a .csv file which can be found in /MQL4/Files folder.

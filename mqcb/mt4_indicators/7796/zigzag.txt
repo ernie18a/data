@@ -1,0 +1,9 @@
+ZigZag Indicator tracks and connects extreme points of the chart, the distance between these points being equal or higher than the percentage specified for the price scale.
+Depth is the minimal amount of bars where there will not be the second maximum (minimum) Deviation pips higher or lower than the previous one. I.e., ZigZag can always diverge, but it can converge (or completely draw together) more than at the Deviation value only after Depth bars. Backstep is the minimal amount of bars between maximums/minimums.
+After the ZigZag has captured the lowest point, it starts to search for the turn point until the rollback down from the maximum value exceeds the parameter. As soon as rollover down exceeds the parameter, the second (in this case, the upper) point is considered for captured, and ZigZag starts to search for the third one (in this case, for the lower one), etc.
+Full description of ZigZag is available in the
+Technical analysis: ZigZag
+ZigZag indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7796

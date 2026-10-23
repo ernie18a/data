@@ -1,0 +1,6 @@
+About Jurik smoothing there is one part that is less known: Jurik smoothing is adaptive indicator.
+It is using something that is sometimes refereed to Jurik Volty (a sort of market volatility) for that adapting. This is the indicator that is calculating and showing periods of elevated or lesser volatility as a standalone indicator. Parameters are simple:
+Volatility period.
+Price.
+There are no other parameters used by this indicator.
+PS: do not forget that the indicator is not directional. The color change is showing periods of elevated or lessened than average volatility - not the expected direction of market prices.

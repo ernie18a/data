@@ -1,0 +1,9 @@
+Hello
+This code may be useful in some specific cases of order management, for example, in case of fractional order closing.
+It is result of collaboration in "
+How do I round the lot size so it is evenly divisible by two?
+" topic.
+Thanks to all the participants
+.
+Best regards
+Ais

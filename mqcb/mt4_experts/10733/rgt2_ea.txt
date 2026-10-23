@@ -1,0 +1,14 @@
+Expert advisor based on Bollinger bands and Rsi. Modified trailing stop system.
+Inputs:
+extern double Lots = 0.01; // lot size
+extern double MinPipsProfit = 30; // when does the trailling stop start ( +30 pips above open price )
+extern double Ea_StopLoss = 70;
+extern double Ea_Trailing_Stop = 35;
+extern int Slippage = 3;
+extern int RsiH = 90; // sell if bollinger band high and and rsi>90
+extern int RsiL = 10; // buy if bollinger band low and and rsi<10
+extern int RsiPeriod = 8;
+extern int Magic=686;
+This indicator is the first version so please be gentle :p
+Let me know if you find some bugs.
+If you use 5 digits broker multiply MinPipsProfit, Ea_StopLoss and Ea_Trailing_Stop by 10.

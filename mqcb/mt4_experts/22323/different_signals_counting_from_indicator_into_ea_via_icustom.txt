@@ -1,0 +1,2 @@
+Default indicator name: super_signals_v2_alert
+if you want to change your indicator name, it should be in your indicators folder. You should write without .mql4

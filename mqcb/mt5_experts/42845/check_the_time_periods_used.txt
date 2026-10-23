@@ -1,0 +1,3 @@
+The function takes two arrays of integers as parameters: "allowedPeriods" and "periodsToCheck". "allowedPeriods" is an array containing all the time periods allowed by the system, while "periodsToCheck" is an array containing the time periods used by the user in the indicator.
+The function iterates through the elements of the "periodsToCheck" array and checks if each of them is present in the "allowedPeriods" array. If it finds any time period that is not allowed, the function returns "false". If all time periods are allowed, the function returns "true".
+In short, this function is used to make sure that the time periods used in an indicator are valid and allowed by the system.

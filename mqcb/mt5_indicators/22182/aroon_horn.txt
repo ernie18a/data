@@ -1,0 +1,24 @@
+Aroon Horn oscillator is based on
+Aroon
+indicator. The indicator displays a trend direction filtering minor fluctuations.
+It features two adjustable parameters
+Period
+- Aroon calculation period
+Filter
+- filter size
+Calculation:
+AH = 10.0 * (Up-Dn) / Period
+where:
+Up = 100.0 * (Period-MaxBar+index) / Period
+Dn = 100.0 * (Period-MinBar+index) / Period
+MaxBar, MinBar - High and Low prices index in the Period range
+index - current bar index
+A bullish trend is displayed in
+green
+A bearish trend is displayed in
+red
+Sorted out values are displayed in
+gray
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22182

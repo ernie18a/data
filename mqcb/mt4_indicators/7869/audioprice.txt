@@ -1,0 +1,8 @@
+Have audio output of latest Price "in stereo".
+Input parameters:
+SaySymbol: Accept the default <true> for the symbol to precede the price, additional symbols may be added if required.
+SayBidPrice: Accept the default <true> for the "Bid" price to be spoken, else change to <false> for the "Ask" price.
+Imports:
+Thank you to Codersguru at
+http://www.forex-tsd.com
+for his library of speach functions. File "gSpeak.mqh" to be placed in subdirectory "\experts\include" and file "speak.dll" to be placed in subdirectory "\experts\libraries".

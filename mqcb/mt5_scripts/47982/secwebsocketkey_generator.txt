@@ -1,0 +1,5 @@
+Generates
+16-byte value
+Randomly selected
+Base64-encoded
+Sec-WebSocket-Key as per protocal in https://datatracker.ietf.org/doc/html/rfc6455#section-11.3.3

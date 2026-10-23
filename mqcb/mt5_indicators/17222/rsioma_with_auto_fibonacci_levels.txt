@@ -1,0 +1,10 @@
+RSI (OMA) that shows automatic Fibonacci levels for RSI.
+If the prices smoothing period is set to > 1, then the indicator calculates one of the chosen RSI (OMA) values. If the price smoothing is set to <= 1, then the calculated value is RSI. RSI can be one of the 7 types:
+Cuttler's RSI
+Ehlers' smoothed RSI
+Harris' RSI
+Rapid RSI
+RSI
+RSX
+Slow RSI
+For any RSI value calculated, the indicator automatically shows the Fibonacci levels, so that the value of rsi can be estimated using those levels.

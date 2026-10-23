@@ -1,0 +1,27 @@
+The script removes from the current chart all objects of the type selected by the trader in input parameters.
+//+-----------------------------------------------+
+//|  SCRIPT INPUT PARAMETERS                      |
+//+-----------------------------------------------+
+input
+ENUM_OBJECT
+OBJ_TYPE = -
+1
+;
+//The type of objects to delete
+When used with default parameters, the script deletes all objects from the current chart.
+If you regularly need to delete objects of a fixed type, you should write a copy of the script with the appropriate
+object type ID
+specified as an input variable. For example, here is a script for removing trend lines
+ToClearChartObjectsByOBJ_TREND
+:
+//+-----------------------------------------------+
+//|  SCRIPT INPUT PARAMETERS                      |
+//+-----------------------------------------------+
+ENUM_OBJECT
+OBJ_TYPE =
+OBJ_TREND
+;
+//The type of objects to delete
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17996

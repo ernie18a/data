@@ -1,0 +1,4 @@
+Description:
+You can choose Parabolic SAR for 4 TimeFrames (TF4 = true) or for 3 TimeFrames (TF4 = false and TF3 = true) or for 2 TimeFrames (TF4 = false and TF3 = false andTF2 = true) or for only 1 current TimeFrame (TF4 = false and TF3 = false and TF2 = false).
+Green arrow will show the beginning of Up trend and Red arrow will show the beginning of Down trend.
+Image:

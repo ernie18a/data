@@ -1,0 +1,43 @@
+Indicator Name
+: Kuskus Starlight
+Description
+:
+Kuskus Starlight is a technical indicator that functions as an oscillator, utilizing a Fisher price transformation to assist traders in identifying potential market trends and reversals. It is normalized over a specified range of periods, with adjustable smoothing parameters to tailor its responsiveness. This indicator is particularly valued for its role as a confirmation tool within trading systems, aiding in validating potential trade signals.
+Background
+:
+I discovered the Kuskus Starlight indicator through Stonehill Forex and the No Nonsense Forex (NNFX) YouTube channel. Both platforms highlight their utility as a confirmation indicator within their trading systems. According to Stonehill Forex, the indicator dates back to 2007, while NNFX references its release in 2017.
+For a detailed overview and application of the Kuskus Starlight indicator, you can refer to the following resources:
+Stonehill Forex's article:
+Kuskus
+Starlight
+as
+a
+Confirmation
+Indicator
+NNFX's YouTube video:
+Kuskus
+Starlight
+Indicator
+Why I Coded It
+:
+As a MetaTrader 5 (MT5) user, I was unable to find a version of the Kuskus Starlight indicator compatible with MT5. Recognizing its potential value for traders in the MT5 environment, I took the initiative to code it myself, ensuring that its functionality and integrity align with the original algorithm.
+Original MT4 Code and Algorithm
+:
+The original version of this indicator, designed for MetaTrader 4 (MT4), was posted by Scriptor and can be found here:
+Kuskus
+Starlight
+- MQL4
+Code
+Base
+. My MT5 adaptation is based on this code and preserves its core principles while making it accessible to the MT5 community.
+I hope this MT5 version of Kuskus Starlight proves to be a valuable addition to your trading toolkit!
+Indicator Settings:
+DrawType Options
+DrawType Options:
+Line
+DrawType Options:
+Histogram
+DrawType Options:
+StaryStaryNight
+Arrow Type Options:
+Many Arrow type to choose from

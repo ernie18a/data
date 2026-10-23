@@ -1,0 +1,7 @@
+Keltner Channel built relative to the average value of the
+MomentumCandle
+oscillator as a sequence of candlesticks.
+Fig1. The MomentumCandleKeltner indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17567

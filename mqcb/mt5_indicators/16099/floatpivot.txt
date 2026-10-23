@@ -1,0 +1,10 @@
+Real author:
+Nick A. Zhilin
+Another alternative to the Bollinger Bands® channel with colored inner area of the channel.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 08.02.2008.
+Fig.1. The FloatPivot indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16099

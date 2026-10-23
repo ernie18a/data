@@ -1,0 +1,7 @@
+• Inheritance is not always flexible.
+• Composition and delegation is sometimes a good alternative to dynamically add new behavior.
+• Decorator type matches component type.
+• Decorators change component behavior without changing the component code.
+• A component may have arbitrary number of decorators.
+• Decorators are transparent to the client, unless the client depends on a particular component.
+RULE: Open classes for extension and close for changes.

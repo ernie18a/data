@@ -1,0 +1,17 @@
+A clean Smart Money Concepts (SMC/ICT) market-structure indicator for MetaTrader 5. It reads the sequence of swing highs and lows and marks the full structure on the chart.
+What it draws:
+Swing highs/lows — N-bar fractal points (arrows).
+BOS (Break of Structure) — a close beyond the last swing in the trend direction = continuation.
+CHoCH (Change of Character) — a close beyond the last swing against the trend = possible reversal.
+Order Blocks — the last opposite candle before a structure break.
+Fair Value Gaps (FVG) — 3-candle imbalance zones.
+QML (Quasimodo) — on a CHoCH, a dotted line at the left-shoulder swing (sell = previous high, buy = previous low) as a retrace reference.
+Inputs:
+InpSwingN — fractal bars each side (swing sensitivity; higher = fewer, larger swings).
+InpBreakOnClose — confirm breaks on candle close (true) or wick (false).
+InpMaxBars — recent bars to analyze.
+InpShowLines / InpShowLabels — broken-level line and BOS/CHoCH text.
+InpShowFVG / InpFVGColor — Fair Value Gaps and color.
+InpShowOB / InpOBBullColor / InpOBBearColor — Order Blocks and colors.
+InpShowQML / InpQMLColor — QML levels and color.
+Works on any symbol and timeframe. All markings are close-confirmed and redrawn on each new bar.

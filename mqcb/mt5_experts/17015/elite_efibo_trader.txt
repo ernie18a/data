@@ -1,0 +1,46 @@
+Author of the idea
+—
+eesfx
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Grid with a constant step. Grid lot sizes based on Fibonacci.
+This is not a "set and forget" kind of expert, it is a tool for manual trading. The EA is in automatic mode of execution, but you need to decide when to use it. This works when you have confidence in the currency, that is, you know that the dollar will go up or down. If you are right, it increases your profit by increasing the lot size, and at the same time it limits your risk to a few pips (risk tolerance can be adjusted).
+The e-Fibo can be used for trading in both directions, but it can be switched to only buy or to only sell. See this example (the following are set: "
+Open_Buy
+"= false, "
+Open_Sell
+"= true), EUSUSD M30, period from 2016.06.23 to 2016.11.24, initial deposit - 100000:
+- EURUSD smoothly falls and the total size of the fall is 3004 points, at the same time the profit on this interval amounted to 8788. All this is due to the grid or orders that built up the position:
+By simply buying EUR/USD, and not using the eFibo trader, you could have received 3004+ pips. With eFibo trader you could have received 8780+ pips, risking only the spread. How is this possible?
+Simple math: you increase your position as soon as you get profit, but if the market goes against you, you will lose only your profit.
+Usage:
+eFibo buys/sells on any pair, using the Fibonacci-based money management. The Fibonacci levels are set by default, but in fact the can be replaced by any others. The idea is as follows:
+If the currency is in a trend, you want to increase the position volume, because you are in profit. You increase your risk in proportion to the increase in profit. On the other hand, you want to protect against failing with a large position.
+Example А: USD/CHF goes down. eFibo sells х lots at the first level (USD/CHF must go down by pips in order to reach the first level). As USD/CHF falls, the eFibo sells more and more according to the Fibo levels (1,2,3,5,8…), but you can customize it as you wish.
+Settings:
+Open_Buy
+: If true, the system will only buy
+Open_Sell
+: If true, the system will only sell
+LevelDistance
+: Distance in pips between generation of new buy/sell orders. If set to 20, sell orders will be generated every 20 pips
+StopLoss
+: The stop loss level of trades. This level is not for a single trade, once it is reached, all trades will be closed.
+MoneyTakeProfit: The take profit value in USD. If it is set to $2,000, as in the figure, all trades will be closed upon reaching the total profit (for all trades) equal to or greater than $2,000
+Lots_Level_1
+: The first level for buying/selling in lots. These values (all lot levels) can be changed to any values, but the recommended Fibonacci levels are set by default
+The
+eFibo
+is a money management system, it is NOT a signals system, and it does not imply the use of indicators. It is a simple method for increasing profit when trend trading.
+When to use eFibo trader:
+When there is a formed trend on any pair, in any direction, on any timeframe;
+When there is an established inclination for any of the currencies.
+When NOT to use:
+On changing markets;
+When you do not know what will happen.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17015

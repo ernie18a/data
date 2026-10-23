@@ -1,0 +1,2 @@
+Author: igorad
+CMO_v1 indicator.

@@ -1,0 +1,13 @@
+Real author:
+RickD
+Adaptive Moving Average (
+AMA
+) developed by Perry Kaufman.
+AMA is designed so that you can adjust its sensitivity depending on the strength of a trend. This version of the indicator is optimized for large periods.
+This indicator was first implemented in MQL4 and published in
+CodeBase
+on 11.06.2007.
+Figure 1. Indicator i-AMA-Optimum
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2387

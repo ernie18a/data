@@ -1,0 +1,3 @@
+This is an improved Jurik Filter with the option to be applied to any indicator not only to prices.
+The computation in this version is improved compared to orginal version (faster response but the smoothness is kept).
+Also, the addition of slope coloring can help in many cases: even in cases like setting the period to 1 and masking the underlying indicator with color changes even when the underlying indicator can not do that.

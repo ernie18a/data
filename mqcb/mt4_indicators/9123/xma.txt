@@ -1,0 +1,10 @@
+This Moving Average indicator has digital filter to detect trend and flat states of the market.
+One can see at the image above that XMA located above and below the price and by changing its movement it draws the separation line. When flat movement it does not have this behaviour.
+Trade signals:
+Open position when the bar close price is above or below the indicator line with its tilted position.
+Close position when the indicator line crossovers the close price or close price has the opposite direction in the horizontal position of the indicator line.
+Input parameters:
+Period - Indicator period
+Porog - Indicator threshold (in pips)
+Metod - Averaging method 0=Simple 1=Exponential 2=Smoothed 3=Linear weighted
+Prise - Averaging price 0=Close 1=Open 2=High 3=Low 4=Median 5=Typical 6=Weighted

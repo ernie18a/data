@@ -1,0 +1,14 @@
+The indicator is made after the original work and idea of Francesco G. Cavasino (described in his published article "Stochastic volatility").
+Original stochastic (
+OriginalStoch
+input variable in the code or
+Calculate using original stochastic
+option in the inputs tab of the indicator) - do you want the indicator to calculate the smoothness of the stochastic the original George Lane way or do you want it to be calculated as an EM. By default it is set to true.
+Original volatility (
+OriginalVolatility
+input variable in the code or
+Calculate using original volatility
+option in the inputs tab of the indicator) - in the original indicator historical volatility was predicted to be calculated on daily data and the assumption was that there are 252 working days in a year. If you are using the indicator on a time frame that is not daily, it is probably smarter to turn the original volatility calculation off (setting this parameter to false).
+Some explanation of usage:
+This is not a directional indicator
+. This means that even it is stochastic it does not show the direction of the market, but shows the direction-amount-size of volatility. The assumption that seems sound enough and after which this indicator is made is that in the times of extremely low volatility it is a good time to enter the market, since the change in volatility is imminent. Those times are marked by dark gray dots on this indicator. For direction of entry, you should use some other trend showing indicator(s).

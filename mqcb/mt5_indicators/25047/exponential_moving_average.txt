@@ -1,0 +1,24 @@
+In the "back to basic" again :
+Even though EMA is fairly simple and the code execution time should not vary a lot from one version to another (EMA does not have loops within the loops), it seems that we are still lacking some easy to reuse code that is fast in execution also. This version fills that a bit
+PS: using the alternative mode of OnCalculate() - this mode :
+int
+OnCalculate
+(
+const
+int
+rates_total,
+// price[] array size
+const
+int
+prev_calculated,
+// number of handled bars at the previous call
+const
+int
+begin,
+// index number in the price[] array meaningful data starts from
+const
+double
+&    price[]
+// array of values for calculation
+);
+would make the execution time even shorter and faster (getting the chose price through a function does take it share of time - not too much but compared to a version that does not have to do that, it can be noticed) but, for the sake of flexibility, using the "standard" mode. Also making it a single color version would make it even faster, but then what would be the fun :)

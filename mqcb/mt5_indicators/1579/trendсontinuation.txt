@@ -1,0 +1,11 @@
+The real author:
+Doc Gaines
+Trends indicate an important component of the market. You should certainly be able to define them.
+However, it is not enough just to define the trend. It is also important to define the current trend direction. Although trends help us to earn more money in short periods of time, they also help "quickly" lose them, if your position is opened against the market. To avoid such situations the author developed a "trend continuation factor" (TCF). This indicator is created to determine the trend and its direction.
+This indicator was first implemented in MQL4 and published in
+Code Base
+on 16.10.2007.
+Fig.1 The TrendСontinuation indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1579

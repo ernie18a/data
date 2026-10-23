@@ -1,0 +1,7 @@
+Arithmetic and geometric moving averages in a single window, calculated using (Open + Close + High + Low)/4 prices.
+The indicator settings:
+YMA_Period — period for calculation of the arithmetic moving average.
+GMA_Period — period for calculation of the geometric moving average.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16567

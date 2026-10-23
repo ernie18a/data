@@ -1,0 +1,2 @@
+The Stochastic Oscillator is a momentum indicator comparing the price to the range of its prices over a certain period of time. The sensitivity of the oscillator to market movements is reducible by adjusting that time period or by taking a moving average of the result.
+This version reduces the number of false alerts by smoothing the price prior to be used in the stochastic calculation. That makes a nice smooth stochastic as a result that can easily be used for trend trading systems.

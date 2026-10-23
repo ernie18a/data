@@ -1,0 +1,4 @@
+One-click closing of all positions, or closing of all positions after getting the stated profit as a percentage of the deposit.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11349

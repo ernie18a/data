@@ -1,0 +1,14 @@
+The Hodrick-Prescott filter is used in macroeconomics, especially in real business cycle theory to separate the cyclical component of a time series from raw data. It has a zero lag. There is a common disadvantage of such zero lag filters -
+the recent values are recalculated
+.
+I have tried to apply this filter for the different purposes: for price channels, to use it as the trend changes indicator, etc, but I have found that it hasn't any significant advantages compared with
+EMA
+,
+LWMA
+or
+AMA
+.
+Also I have found that values of the prices, smoothed by this filter are close to the principal component of the Principal Component Analysis (PCA). It seems that there is a mathematical relashionship between the Hodrick-Prescott filter and PCA. It might be useful, so I publish it here. I don't use it, but it would be great if you propose its possible applications.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/143

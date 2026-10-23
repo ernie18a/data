@@ -1,0 +1,15 @@
+The
+two moving averages crossover
+strategy is one of the most common trading strategies in the financial market. It is based on the use of two moving averages (usually a long term and a short term) and signals an entry into a position based on their intersection.
+Selection of moving average periods: The
+trader selects two periods for the moving averages. For example, it could be the 50-day and 200-day moving averages.
+Defining Signals:
+When a short-term moving average (e.g. 50-day) crosses a long-term moving average (e.g. 200-day) from bottom to top, this can be considered a buy signal (long position) as it may indicate the beginning of an uptrend. Conversely, a short-term moving average crossing a long-term moving average from bottom to top may be considered a sell signal (short position).
+Risk Management and Stop Loss Levels:
+A trader may also consider introducing stop loss orders to manage risk. For example, a stop loss can be set at a certain percentage of the current price to protect against large losses in the event of an unfavourable price movement.
+Input parameters
+unoptimised test
+developer's website https://it-yy.site/
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/48961

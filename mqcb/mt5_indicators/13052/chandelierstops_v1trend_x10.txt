@@ -1,0 +1,8 @@
+The ChandelierStops_v1Trend_x10 indicator shows the
+ChandelierStops_v1
+trend indicator position from ten different timeframes.
+If the indicator line is positioned lower than the minimum price level, the squares are painted in light green, if it's higher than the maximum price level, the squares are painted in pink. The indicator uses the values of the last closed bars.
+Fig.1. The ChandelierStops_v1Trend_x10 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13052

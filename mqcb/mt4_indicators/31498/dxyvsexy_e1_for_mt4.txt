@@ -1,0 +1,13 @@
+DXYvsEXY_e1 is an optimized version of DXYvsEXY.
+Original code here: https://www.mql5.com/en/code/30714
+Main changes:
+All the
+ArrayResize were removed.
+All the
+ArraySetAsSeries
+were removed.
+SetIndexBuffer used instead.
+The function
+iMAOnBuffers was removed.
+iMaOnArray used instead.
+MA_SLOW, MA_FAST and MAX_BAR are now inputs.

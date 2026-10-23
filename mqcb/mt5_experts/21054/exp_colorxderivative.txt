@@ -1,0 +1,13 @@
+A trading system based on the signals of the
+ColorXDerivative
+indicator. The signal is formed when a bar is closing if there is a change in the oscillator direction.
+For the EA to operate correctly, the compiled file of indicator
+ColorXDerivative.ex5
+must be in the <terminal_data_directory>\MQL5\Indicators folder.
+In the texts below, the default inputs of the EA are used. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. Examples of deals on the chart
+Testing results for GBPUSD H12 over the year 2016:
+Fig. 2. Testing results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21054

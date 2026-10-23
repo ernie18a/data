@@ -1,0 +1,20 @@
+The trading system based on the signals of the
+TimeZonePivotsOpenSystem
+indicator. The signal is formed when a bar is closing if there is a channel breakthrough.
+For the generated EA to operate correctly, the compiled
+TimeZonePivotsOpenSystem.ex5
+indicator file should be available in the <terminal_data_directory>\MQL5\Indicators folder.
+The EA works on timeframes not higher than H1:
+input
+ENUM_TIMEFRAMES
+InpInd_Timeframe=
+PERIOD_H1
+;
+// TimeZonePivotsOpenSystem indicator timeframe
+Default Expert Advisor's input parameters have been used during tests shown below.
+Fig. 1. Examples of trades on the chart
+Test results for 2017 at EURUSD H1:
+Fig. 2. Test results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22429

@@ -1,0 +1,2 @@
+Currently Three versions,if drawing bug recompile it........(it repair indicator drawing)
+forex.zip=complete pack with small helpers to orders[for private use must configure - easy]

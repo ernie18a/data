@@ -1,0 +1,40 @@
+Importance of the Indicator
+A single moving average only shows the trend condition of one timeframe. This can be misleading when the lower timeframe is bullish while the broader market trend remains bearish.
+This indicator helps traders see the relationship between several market timeframes at the same time.
+For example:
+Price above the M15, H1, and H4 SMMAs may indicate broad bullish alignment.
+Price below all three levels may indicate broad bearish alignment.
+Price above the lower-timeframe SMMA but below the higher-timeframe levels may indicate a temporary pullback rather than a complete trend reversal.
+A large distance from a higher-timeframe SMMA may indicate that price is extended and could be vulnerable to consolidation or mean reversion.
+The distance column also helps traders understand how close price is to an important dynamic support or resistance level.
+The indicator does not predict future price movement. It provides structured trend and location information that can support better trade filtering and decision-making.
+Who Is This Indicator For?
+This indicator can be useful for:
+Trend Traders
+Trend traders can use the dashboard to confirm whether several timeframes support the same market direction before entering a trade.
+Multi-Timeframe Traders
+Traders who normally switch between M15, H1, H4, or other charts can monitor selected SMMA levels from one chart.
+Pullback Traders
+The SMMA levels can act as dynamic trend references. Traders may watch for price reactions, pullbacks, or continuation setups near these levels.
+Intraday Traders
+Scalpers and day traders can use lower-timeframe SMMAs for immediate market direction while using higher-timeframe SMMAs as broader trend filters.
+Swing Traders
+Swing traders can monitor higher-timeframe levels such as H1, H4, or D1 to identify the broader market structure and potential dynamic support or resistance.
+Beginner Traders
+The dashboard simplifies moving-average interpretation by clearly showing
+ABOVE
+or
+BELOW
+, instead of requiring the trader to manually compare every value.
+Expert Advisor Developers
+The indicator logic can also serve as a visual reference when testing multi-timeframe trend filters for automated trading systems.
+Recommended Use
+The indicator is best used as a trend-confirmation and market-context tool. It can be combined with:
+Support and resistance
+Price-action patterns
+Breakout strategies
+Pullback entries
+Market structure
+Momentum indicators
+Risk-management rules
+It should not be treated as a complete standalone trading strategy or as a guaranteed buy-and-sell signal system.

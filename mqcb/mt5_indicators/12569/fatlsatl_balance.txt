@@ -1,0 +1,10 @@
+Original author:
+Dmitry Shmatkov
+A middle line between the SATL and FATL digital trend filtering indicators.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 29.09.2012.
+Fig. 1. The fatl-satl_balance indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12569

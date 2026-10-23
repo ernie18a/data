@@ -1,0 +1,9 @@
+This is a very simple MQL5 code for an indicator to plot the values of the
+spread[]
+data (in points) as reported by the
+OnCalculate
+event handler. These are the same spread data values that would be returned when collecting
+MqlRates
+data via the
+CopyRates
+function.

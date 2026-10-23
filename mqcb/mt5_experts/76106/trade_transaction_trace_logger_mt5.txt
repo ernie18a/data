@@ -1,0 +1,28 @@
+Trade Transaction Trace Logger MT5
+Trade Transaction Trace Logger is a read-only Expert Advisor for diagnosing the lifecycle of MT5 orders, deals, and positions. It records OnTradeTransaction events in their arrival order to a local CSV file and can mirror a compact line to the Experts Journal.
+What it records
+Monotonic event sequence and server time.
+Transaction type, symbol, and resolved magic number.
+Order, deal, and position tickets.
+Order type, state, deal type, price, trigger, Stop Loss, Take Profit, and volume.
+Trade request action and server result retcode/comment.
+When an event does not carry full context, the included core resolves the symbol and magic number from the request, live order, order history, deal history, or position when available.
+Inputs
+InpSymbolScope
+: trace the current chart symbol or all symbols.
+InpMagicFilter
+: use -1 for every magic number, or specify one exact magic number.
+InpCSVFileName
+: name of the local CSV report.
+InpUseCommonFolder
+: save in the terminal Common Files folder when true.
+InpPrintJournal
+: mirror compact event lines to the Experts Journal.
+Usage
+Attach the EA to any chart. No specific symbol or timeframe is required.
+Choose the symbol and magic-number scope.
+Reproduce the placement, modification, fill, cancellation, or history transition you want to diagnose.
+Remove the EA and inspect the CSV in the terminal Files or Common Files folder.
+Safety and privacy
+The public logger sends no trade requests and contains no DLL or WebRequest call. It does not place, modify, close, or delete orders. Review comments and ticket identifiers before sharing a trace file. Use a demo account first when diagnosing an unfamiliar trading workflow.
+The attached TradeTransactionTraceCore.mqh include file contains the reusable context-resolution, filtering, and CSV-writing functions used by the EA.

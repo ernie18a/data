@@ -1,0 +1,82 @@
+We place two pending orders at the specified time and delete one of them when another one triggers. Exit is performed by TakeProfit or by time expiration, depending on what happens first.
+The default settings:
+Lots - the volume of the order,
+ChasStart - the time of placing the orders,
+ChasStop - the time of closing the orders,
+Step - the distance from the price when placing the pending order,
+TP - TakeProfit
+Strategy Tester Report
+21hour
+Alpari-Classic (Build 220)
+Symbol
+EURJPY (Euro vs Japanese Yen)
+Period
+1 Hour (H1) 2008.11.03 00:00 - 2008.12.08 09:00 (2008.11.01 - 2008.12.09)
+Model
+Every tick (the most precise method based on all available least timeframes)
+Parameters
+Lots=0.1; ChasStart=10; ChasStop=22; Step=15; TP=200;
+Bars in test
+1606
+Ticks modelled
+748858
+Modelling quality
+52.19%
+Missmatched charts errors
+3
+Initial deposit
+10000.00
+Total net profit
+792.85
+Gross profit
+2597.94
+Gross loss
+-1805.09
+Profit factor
+1.44
+Expected payoff
+31.71
+Absolute drawdown
+515.25
+Maximum drawdown
+917.51 (8.34%)
+Relative drawdown
+8.34% (917.51)
+Total trades
+25
+Short positions (% won)
+16 (56.25%)
+Long positions (% won)
+9 (66.67%)
+Profit trades (% of total)
+15 (60.00%)
+Loss trades (% of total)
+10 (40.00%)
+Largest
+profit trade
+213.43
+loss trade
+-582.46
+Average
+profit trade
+173.20
+loss trade
+-180.51
+Maximum
+consecutive wins (profit in money)
+4 (761.80)
+consecutive losses (loss in money)
+4 (-758.50)
+Maximum
+consecutive profit (count of wins)
+761.80 (4)
+consecutive loss (count of losses)
+-758.50 (4)
+Average
+consecutive wins
+3
+consecutive losses
+2
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8610

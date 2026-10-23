@@ -1,0 +1,6 @@
+Author: mandorr
+Here, the trail line is used instead of the signal line. Trail is the line that is distanced from the current price no more than the trailing length. If the difference between the price and the trail line is less than the trailing length, then the trail line does not move. The trail line is a good filter with a delay by price and not by time, unlike the signal line.
+Calculated as the difference between the fast and the slow trail. Since this is an oscillator, there is no ticker line on the chart. The indicator values vary in the range from -100 to +100. The change of the TrailCD line direction can serve as a trading signal. In another version, the signal is the zero line crossing. A very strong signal is the indicator line reaching the value of -100 or +100. It is necessary to accumulate a quite large number of bars for the indicator signals to become significant.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7492

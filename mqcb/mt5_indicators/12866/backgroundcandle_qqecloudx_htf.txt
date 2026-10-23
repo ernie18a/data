@@ -1,0 +1,11 @@
+The indicator draws candlesticks of a larger timeframe as color filled rectangles using
+DRAW_FILLING
+buffers. Rectangles are color filled based on the values of the
+QQECloudX
+indicator.
+Depending on the color of the QQECloudX indicator the candlestick body is painted in blue or pink, and shadows are painted in light blue or light pink.
+This indicator requires the compiled indicator file QQECloudX.mq5. Place it in <terminal_data_folder>\MQL5\Indicators\.
+Fig.1. The BackgroundCandle_QQECloudX_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12866

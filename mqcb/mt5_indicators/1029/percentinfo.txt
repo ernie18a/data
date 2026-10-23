@@ -1,0 +1,53 @@
+Real Author:
+Arif Endro Nugroho
+PercentInfo gives information on the rise and drop in prices expressed as a percentage and in points as obtained from the three largest time frames of the currency chart. Simple and good information assistant.
+Indicator input parameters:
+//+----------------------------------------------+
+//|  Indicator input parameters                  |
+//+----------------------------------------------+
+input
+color
+UpColor=Teal;
+//color for the upward move
+input
+color
+DnColor=Magenta;
+//color for the downward move
+input
+color
+ZrColor=Gray;
+//color for no change
+input
+int
+FontSize=
+11
+;
+//font size
+input
+type_font FontType=Font14;
+//font type
+input
+ENUM_BASE_CORNER
+WhatCorner=
+CORNER_LEFT_LOWER
+;
+//location corner
+input
+uint
+Y_=
+20
+;
+//vertical location
+input
+uint
+X_=
+5
+;
+//horizontal location
+Fig.1 The PercentInfo Indicator
+The
+GetFontName.mqh
+library should be available in the 'terminal_directory\MQL5\Include' folder for the operation of the indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1029

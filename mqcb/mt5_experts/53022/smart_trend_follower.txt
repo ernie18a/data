@@ -1,0 +1,109 @@
+1.
+Enum Types (enumJnsSignal, enumOrderType)
+-
+enumJnsSignal
+This enum defines the type of signal used in the EA. There are two signal options:
+- `eTypeCrossMA`: Uses the signal of
+Cross 2 MA
+(the crossing of two Moving Averages).
+- `eTypeTrend`: Follows the
+trend
+using Moving Averages and Stochastic.
+-
+enumOrderType
+This enum defines the type of order:
+- `eBuy`: A
+Buy
+order.
+- `eSell`: A
+Sell
+order.
+- `eNone`: No order executed.
+2.
+Input Parameters
+-
+inMagicNumber
+A unique magic number used to distinguish orders from this EA.
+-
+inLotSize
+The initial lot size for each order.
+-
+inMultiply
+The multiplier factor used in the lot size strategy.
+-
+inJarakLayer
+The pip distance between trading positions in the grid/layer strategy.
+-
+inMAPeriodFast & inMAPeriodSlow
+The periods for fast and slow Moving Averages.
+-
+inSTOKPeriod, inSTODPeriod, inSTOSlowing
+Parameters for the Stochastic Oscillator.
+-
+inTakeProfit & inStopLoss
+The settings for Take Profit and Stop Loss.
+3.
+Struct dataTrades
+- This struct is used to store data related to open trading positions, such as the total number of positions (`ttlPos`), the average price of positions (`hargaTA`, `hargaTB`), and the total volume (`ttlLot`).
+4.
+OnInit() Function
+- This function handles the initialization of the EA, including validating input parameters (e.g., ensuring that the fast MA period is smaller than the slow MA period) and creating handles for the MA and Stochastic indicators.
+5.
+OnTick() Function
+- The main function executed every time the price moves (tick).
+- It calls the function to check for a new signal with
+GetSignal()
+, and if a signal is found,
+manageTrading()
+is used to execute trades.
+- It also calls
+setTPSL()
+to ensure that Take Profit and Stop Loss are always updated.
+6.
+isNewCandle() Function
+- This function detects whether a new candle has formed. This is important because the EA checks for signals only on new candle formations.
+7.
+GetSignal() Function
+- This function determines if a valid trading signal exists based on the selected strategy:
+- For
+eTypeCrossMA
+, the signal is determined by the crossing of the fast and slow Moving Averages.
+- For
+eTypeTrend
+, the signal uses confirmation from MA and Stochastic.
+8.
+manageTrading() Function
+- This function manages the execution of trades.
+- If a valid signal is detected, the EA opens a position with the lot size determined using the
+getLotSize()
+function.
+- A grid/layer strategy is also applied to open additional positions based on the price distance (`inJarakLayer`).
+9.
+updateDataTrades() Function
+- This function updates the data related to ongoing trading positions, such as calculating the average price and total volume of open positions.
+10.
+openTrade() Function
+- This function opens a new trading position based on the generated signal and calculated lot size. It uses
+OrderSend()
+to execute the order.
+11.
+setTPSL() Function
+- This function sets or updates the
+Take Profit
+and
+Stop Loss
+for each open position.
+12.
+modifTPSL() Function
+- This function modifies the
+Take Profit
+and
+Stop Loss
+of existing positions if the values differ from what has been previously set.
+13.
+validateLot() Function
+- This function ensures that the lot size used is within the allowed minimum and maximum range, as well as in line with the minimum lot step (`gLotStep`).
+14.
+getLotSize() Function
+- This function calculates the lot size to be used based on the initial lot size and the number of positions already opened, taking into account the multiplier factor (`inMultiply`).
+This code is designed to capture market trends and manage trading positions automatically using technical signals from Moving Averages and Stochastic.

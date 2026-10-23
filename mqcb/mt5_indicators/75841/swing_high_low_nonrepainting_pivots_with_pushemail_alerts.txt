@@ -1,0 +1,53 @@
+Swing High Low marks market-structure pivots directly on the chart. A red arrow is placed above each swing high and a green arrow below each swing low. Swing strength is set by the
+LeftBars
+and
+RightBars
+inputs — the same pivot logic as the TradingView pivothigh / pivotlow functions.
+The indicator
+does not repaint
+. A swing is confirmed only after RightBars candles have closed to its right, so an arrow never moves or disappears once printed. Reliable for reading market structure and for drawing support / resistance trendlines by connecting the swing points.
+On every newly confirmed swing the indicator can send a
+push notification
+to the MetaTrader mobile app and an
+email alert
+. Each swing is reported only once.
+Inputs:
+LeftBars
+— bars required to the left of a pivot (higher = fewer, stronger swings)
+RightBars
+— bars required to the right; also the confirmation delay
+InpArrowHigh / InpArrowLow
+— Wingdings arrow codes
+InpPush
+— send push notification on a new swing (default: true)
+InpEmail
+— send email alert on a new swing (default: false)
+How to enable Push notifications:
+Open the MetaTrader 5 mobile app → Settings → Messages → copy your
+MetaQuotes ID
+.
+On the PC terminal:
+Tools → Options → Notifications
+→ tick
+Enable Push Notifications
+→ paste the MetaQuotes ID → OK.
+Set the indicator input
+InpPush = true
+.
+How to enable Email alerts:
+On the PC terminal:
+Tools → Options → Email
+→ tick
+Enable
+→ fill in your SMTP server, login and address → press
+Test
+.
+Set the indicator input
+InpEmail = true
+.
+To turn alerts off, set
+InpPush = false
+and
+InpEmail = false
+. The arrows are still drawn on the chart.
+Works on any symbol and timeframe.

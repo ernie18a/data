@@ -1,0 +1,28 @@
+// ---
+bool
+op_buy_sig()
+{
+if
+((e_Relative_Strength_Index() - e_Relative_Strength_Index1()) > Ratio)
+return
+true
+;
+// ---
+return
+false
+;
+}
+// ---
+bool
+op_sell_sig()
+{
+if
+((e_Relative_Strength_Index() - e_Relative_Strength_Index1()) < -Ratio)
+return
+true
+;
+// ---
+return
+false
+;
+}

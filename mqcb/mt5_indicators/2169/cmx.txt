@@ -1,0 +1,16 @@
+Real author:
+Alexandr
+This indicator combines two
+MAs
+,
+CCI
+,
+ADX
+and Fibo levels.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 15.10.2013.
+Figure 1. The CMx indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2169

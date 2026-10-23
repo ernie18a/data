@@ -1,0 +1,22 @@
+The indicator calculates what price should be on the next bar for the MACD and Signal lines of the standard MACD indicator intersect. It was described in Johnny Doug's article Reversing MACD: The Sequel in the S & C magazine in December, 2013.
+It is useful, for instance, in approximately forecasting the prices of pending orders.
+It has five input parameters:
+MACD Fast MA period
+- fast MA period of the MACD indicator
+MACD Slow MA period
+- slow MA period of the MACD indicator
+MACD Signal line period
+- signal line period of the MACD indicator
+Method
+- MACD calculation method
+Simple
+- SMA
+Exponential
+- EMA
+Applied price
+- calculation price
+Fig 1. Reverse MACD
+Fig. 2. Reverse MACD and standard MACD with similar settings
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20988

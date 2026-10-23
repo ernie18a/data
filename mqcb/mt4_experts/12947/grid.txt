@@ -1,0 +1,5 @@
+Arrangement of the pending orders at equal intervals (steps). In case the market moves not in the direction of the purchased lot - placing in an opposite direction with an increase.
+The robot starts with minimal lot, once the deposit profitability reaches a certain value - automatic restart, removing all orders and resetting the lots to minimum.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12947

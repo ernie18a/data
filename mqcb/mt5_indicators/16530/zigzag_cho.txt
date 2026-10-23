@@ -1,0 +1,5 @@
+The ZigZag based on the Chaikin oscillator.
+Fig1. The ZigZag_CHO indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16530

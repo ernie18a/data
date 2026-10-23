@@ -1,0 +1,10 @@
+Real author:
+Archer Trading, LLC
+A set of Fibo levels (pivot points) drawn on day candlesticks.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 01.11.2007.
+Figure 1. Indicator Pivot_Fibs
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2048

@@ -1,0 +1,6 @@
+Autor: igorad
+A modified verion of the
+Chande & Kroll's Stop
+indicator. The author consider that the ChandelierStops_v1 is very similar to it and look better than the
+Chande & Kroll's Stop
+.

@@ -1,0 +1,5 @@
+Trader's simple assistant. The MQL5 Spread indicator shows the current spread of the currency pair on a chart. The indicator is especially useful when working with the brokers who offer floating spread. I know that it is very inconvenient to calculate spread based on quotes in the Market Watch each time you open a position or need it for some calculations. This indicator always shows the current spread of the currency pair.
+The last parameter of the MQL5 Spread indicator normalizes spread to the common decimal view for brokers with nonstandard quotes (parameter set to true).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2230

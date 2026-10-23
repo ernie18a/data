@@ -1,0 +1,2 @@
+Non Lag Relative Strength Index for MT4.
+Eliminates unnecessary preliminary calculations on the built-in RSI.

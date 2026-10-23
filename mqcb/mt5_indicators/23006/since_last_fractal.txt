@@ -1,0 +1,7 @@
+'Since last fractal' displays the number of bars passed since the last fractal formation in a separate chart window. Two lines: one displays the number of bars after the upper fractal, while the second one displays the number of bars after the lower fractal.
+There are no adjustable parameters.
+Fig. 1. Since last fractal
+Fig. 2. Since last fractal + Fractals
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23006

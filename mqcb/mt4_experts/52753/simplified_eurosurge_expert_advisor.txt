@@ -1,0 +1,34 @@
+This code represents a simplified version of "EuroSurge" Expert Advisor (EA) for MetaTrader 4 (MT4). It implements multiple technical indicators for trade signal generation, provides configurable lot sizing, and manages trades based on specific conditions.
+The Default settings work for EURUSD 5min
+Settings based off optimizations since 2020
+Input Parameters
+Trade Size Calculation:
+The EA allows for three types of trade size calculations:
+Fixed lot size.
+Balance percentage (percentage of account balance used to calculate lot size).
+Equity percentage (percentage of account equity used to calculate lot size).
+Inputs like FixedLotSize , TradeSizePercent , and MagicNumber configure the lot size and uniquely identify trades.
+Indicator Settings:
+The EA uses a variety of indicators for generating buy and sell signals:
+Moving Average (MA) with configurable period.
+Relative Strength Index (RSI) with configurable overbought/oversold levels.
+MACD with adjustable EMA and signal line settings.
+Bollinger Bands with adjustable periods and deviation settings.
+Stochastic Oscillator with configurable %K, %D, and slowing parameters.
+Each indicator can be toggled on or off using input parameters like UseMA , UseRSI , etc.
+Signal Detection
+IsBuySignal(): This function checks if all buy conditions are met based on the chosen indicators. For example:
+MA Condition: Checks if the shorter-term MA is above the longer-term MA.
+RSI Condition: Looks for the RSI being below 50 (relaxed from the oversold level of 30).
+MACD Condition: Compares the MACD line and signal line.
+Bollinger Bands Condition: Checks if the price is below the lower band.
+Stochastic Condition: Looks for %K and %D values below 50 (relaxed from 20).
+IsSellSignal(): Similar to IsBuySignal() , but reversed for selling conditions, such as checking for:
+MA Short < MA Long,
+RSI > 50 (relaxed from overbought at 70),
+MACD line < signal line,
+Price above the upper Bollinger band, etc.
+Trade Execution
+When the buy or sell conditions are met, the EA places a trade with calculated stop loss (SL) and take profit (TP) based on multipliers ( SL_Multiplier , TP_Multiplier ).
+The lot size is calculated using the CalculateLotSize() function, which adjusts based on the selected TradeSizeType .
+Orders are executed using the OrderSend() function, with error handling to check for issues in placing trades.

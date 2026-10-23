@@ -1,0 +1,13 @@
+Real Author:
+Mikhail Pashnin
+The indicator is based on the article published on mql5.com -
+The Indicators of the Micro, Middle and Main Trends
+.
+There you can also find methods for interpretation of its signals and working with them.
+This indicator was first implemented in MQL4 and published in Code Base
+at mql4.com
+on 30.03.2011.
+Fig.1 The Gann_Multi_Trend Indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1046

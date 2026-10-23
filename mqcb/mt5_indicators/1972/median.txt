@@ -1,0 +1,12 @@
+Real author:
+Rosh
+A channel built using the values of the
+ATR
+deviation from the middle of the range calculated on extremes. The middle of the range and its signal line are displayed as a colored cloud.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 06.02.2008.
+Fig. 1. The Median indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1972

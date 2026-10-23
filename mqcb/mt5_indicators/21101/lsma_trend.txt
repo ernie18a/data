@@ -1,0 +1,2 @@
+Indicator based on linear regression value or, as it is sometimes known - LSMA (Least Squares Moving Average).
+It shows the trend of the used average and displays it as a sort of an oscillator.

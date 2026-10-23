@@ -1,0 +1,86 @@
+This is a simple Expert Advisor using a specified custom RKD indicator.
+The code describes how a specified custom RKD indicator can be used in
+MetaTrader 5
+Expert Advisor.
+The better results for EUR/USD, GBPUSD - 30mins, 1H and 2H timeframes.
+Tested Result:
+Strategy Tester Report
+autoRKD_EA
+MetaQuotes-Demo (Build 286)
+Settings:
+Symbol:
+GBPUSD (Great Britain Pound vs US Dollar)
+Period:
+H1(2010.06.01 - 2010.07.12)
+Inputs:
+Lots=0.100000; SL=0; TP=0; MAGIC=666; KDPeriod=30; M1=3; M2=6
+Initial Deposit:
+3 000.00 USD
+Results:
+Bars:
+358
+Ticks:
+1021990
+Total Net Profit:
+228.06
+Gross Profit:
+1 139.65
+Gross Loss:
+911.59
+Profit Factor:
+1.25
+Expected Payoff:
+4.39
+Recovery Factor:
+0.72
+Sharpe Ratio:
+4.69
+Balance Drawdown:
+Absolute:
+200.89
+Maximal:
+224.35 (7.33%)
+Relative:
+7.33% (224.35)
+Equity Drawdown:
+Absolute:
+242.10
+Maximal:
+316.03 (10.12%)
+Relative:
+10.12% (316.03)
+Total Trades:
+52
+Short Positions (won %):
+27 (33.33%)
+Long Positions (won %):
+25 (60.00%)
+Profit Trades (% of total):
+24 (46.15%)
+Loss trades (% of total):
+28 (53.85%)
+Largest
+profit trade:
+135.50
+loss trade:
+-102.00
+Average
+profit trade:
+47.49
+loss trade:
+-32.56
+Maximum
+consecutive wins ($):
+3 (232.18)
+consecutive losses ($):
+4 (-126.40)
+Maximal
+consecutive profit (count):
+232.18 (3)
+consecutive loss (count):
+-192.20 (3)
+Average
+consecutive wins:
+2
+consecutive losses:
+2

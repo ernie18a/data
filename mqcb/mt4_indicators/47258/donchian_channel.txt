@@ -1,0 +1,22 @@
+Donchian Channel
+The Donchian channel is an indicator used in market trading developed by Richard Donchian It is formed by taking the highest high and the lowest low of the last n periods. The area between the high and the low is the channel for the period chosen.
+A line is marked for the high and low values visually demonstrating the channel on the markets price. This indicator also includes a mid line and a moving average of the mid line.
+The Donchian channel is a useful indicator for seeing the volatility of a market price. If a price is stable the Donchian channel will be relatively narrow. If the price fluctuates a lot the Donchian channel will be wider. Its primary use, however, is for providing signals for long and short positions.
+If a security trades above its highest n periods high, then a long is established. If it trades below its lowest n periods low, then a short is established.
+Buffers Used In Indicator
+This indicator uses four buffers representing;
+Upper Donchian Channel - Buffer 0 - Green Line
+Middle Donchian Channel - Buffer 1 - Blue Line
+Lower Donchian Channel - Buffer 2 - Green Line
+MA Donchian Channel - Buffer 3 - Red Line
+The Code
+The code is fairly straightforward, it gets the High and Low for the last ‘n’ periods in InpBarsToLookBack.  It then takes an average of the High and Low values to create the Middle Line of the Channel.  The iMAOnArray function is then used to get a moving average of the  Middle Donchian Channel based upon parameters InpMaPeriod and InpMaMethod that have been inputted.
+Chart Output
+The output on the chart consists of the four buffers outlined above.  If needed the color can be changed to None to show only Buffers that are needed.
+iCustom
+To call the indicator using the iCustom function;
+double donchian = iCustom(Symbol(), Period(), "Donchian Channel", InpBarsToLookBack, InpMaPeriod, InpMaMethod, Buffer[], shift);
+To use a Script to call the last price of the Moving Average buffer using the default parameters it would be;
+double donchian = iCustom(Symbol(), Period(), "Donchian Channel", 20, 14, MODE_SMA, 3, 0);
+Thanks
+Thank you for taking the time to download this indicator.  Please feel free to post any questions related to the indicator and reviews are appreciated.

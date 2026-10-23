@@ -1,0 +1,23 @@
+Idea by
+:
+Scriptor
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+The EA works only when a new bar appears. Only one input is needed - the lot size: Either a permanent lot size (parameter "
+Lots
+" is above zero and parameter "
+Risk
+" is zero) or a dynamic lot size in risk percents (parameter "
+Risk
+" is above zero and parameter "
+Lots
+" is zero).
+The EA uses two indicators iMA with hard-coded settings:
+Exemplary signals to open BUY and SELL:
+When a BUY signal appears, the SELL positions close, and vice versa: When a SELL signal appears the BUY positions close.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16783

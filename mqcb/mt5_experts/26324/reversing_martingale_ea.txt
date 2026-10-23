@@ -1,0 +1,12 @@
+This Expert Advisor is based on a very popular but dangerous strategy which doubles the stakes after each loosing trade. Finally, if there is enough margin, it will reverse into the direction of the current price movement and will eventually close in profit, compensating for the entire loosing series.
+This code can be used in both MetaTrader5 and MetaTrader4.
+Just change the file extension from .mq5 to .mq4
+and compile the file in MetaEditor.
+This expert advisor is designed with
+visual strategy builder -
+Mission Automate. Code is generated automatically. More info:
+https://www.mql5.com/en/articles/4951
+This EA is available as a template in a free demo version, so you can easily modify / customise it without programming.
+Parameters
+Examples
+Backtest

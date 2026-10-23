@@ -1,0 +1,8 @@
+The indicator without averaging of the data array, that is a Buy/Sell decision is made in one move.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 18.09.2007.
+Figure 1. The XO indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1745

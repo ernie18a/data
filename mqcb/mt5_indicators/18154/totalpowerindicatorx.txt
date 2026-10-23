@@ -1,0 +1,9 @@
+Real author
+:
+www.EarnForex.com
+Total Power Indicator
+, in which values are fixed in the range from zero to one hundred.
+Fig1. TotalPowerIndicatorX
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18154

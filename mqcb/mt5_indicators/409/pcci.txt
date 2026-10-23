@@ -1,0 +1,18 @@
+Real author:
+Vladimir Kravchuk,
+"
+New Adaptive Method of Following the Tendency and Market Cycles
+"
+PCCI (Perfect Commodity Channel Index) indicator is calculated by the following formula:
+PCCI(bar) = close(bar) – FATL(bar)
+where:
+close(bar) - closed bars prices;
+FATL(bar) - FATL digital filter.
+It resembles D. Lambert's
+Commodity Channel Index
+by the method of its calculation.
+Actually, CCI index is calculated as a normalized difference between the current price and its moving average. PCCI is calculated as a difference between a day closing price and its statistical expectation presented by a FATL value. Therefore, PCCI is more efficient than CCI.
+PCCI index is a high frequency part of the exchange rate fluctuations normalized according to its standard deviation.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/409

@@ -1,0 +1,12 @@
+The real author:
+Alexander Piechotta
+Description:
+The indicator displays the breakthrough line.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 23.10.2008.
+Image:
+Fig.1 The CorrectedAverage indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1341

@@ -1,0 +1,5 @@
+Welford’s method for computing variance (published here :
+Variance - Welford's Method
+) is using single pass method for calculation, but it is still using a loop.
+This method is avoiding loops after initial values are set up and that makes it much faster and suitable for usage where speed of execution is a must.
+PS: if you compare it to Welford's method, there will be a difference. That is coming from a fact that Welford's method is using sample correction, while this method is not - the difference is small, and if you are used to using built in indicators using any sort of standard deviation (apart from std, Bollinger bands, ...)  then compare it to this one, but if you are calculating values that are ranging very much (some values are very different that the standard sample values) then use Welford's method

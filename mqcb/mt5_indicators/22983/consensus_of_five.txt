@@ -1,0 +1,59 @@
+Consensus of Five signal indicator. The indicator is based on the readings of five indicators: ADX, DMI, CCI, MACD and Stochastic.
+DMI, CCI, MACD and Stochastic indicator directions (or only of some of them) should match for generating a direction signal, while the value of ADX indicator is used as a trend filter (either a trend is present or not) and affects simultaneously all four indicators DMI, CCI, MACD and Stochastic (or only some of them). If indicators display direction, while ADX is located in a non-trend area, direction signals are not generated.
+The indicator has twenty-one input parameters:
+Use ADX as trend filter
+- use ADX as a trend filter (Yes/No)
+Use DMI
+- use DMI (Yes/No)
+Use CCI
+- use CCI (Yes/No)
+Use MACD
+- use MACD (Yes/No)
+Use Stochastic
+- use Stochastic (Yes/No)
+ADX period
+- ADX calculation period
+ADX entry level
+- ADX position entry level
+ADX exit level
+- ADX position exit level
+DMI period
+- DMI calculation period
+CCI period
+- CCI calculation period
+CCI Buy level
+- CCI Buy position entry level
+CCI Sell level
+- CCI Sell position entry level
+MACD fast EMA period
+- fast EMA MACD calculation period
+MACD slow EMA period
+- slow EMA MACD calculation period
+MACD Buy level
+- MACD Buy position entry level
+MACD Sell level
+- MACD Sell position entry level
+Stochastic %K period
+- K Stochastic line calculation period
+Stochastic %D period
+- D Stochastic line calculation period
+Stochastic slowing
+- Stochastic slowing period
+Stochastic overbought
+- Stochastic overbought level
+Stochastic oversold
+- Stochastic oversold level
+MACD signal line calculation period is 1, Stochastic price field is Low/High
+Fig. 1. All indicators + ADX filter
+Fig. 2. All indicators without ADX filter
+Fig. 3. CCI + MACD + Stochastic without ADX filter
+Fig. 4. MACD + Stochastic without ADX filter
+Fig. 5. DMI with ADX filter
+Fig. 6. DMI without ADX filter
+Fig. 7. CCI without ADX filter
+Fig. 8. MACD without ADX filter
+Fig. 9. Stochactic without ADX filter
+Fig. 10. Stochactic without ADX filter + Stochastic oscillator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22983

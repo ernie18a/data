@@ -1,0 +1,3 @@
+Trend Envelopes
+with an option to chose smoothed/filtered price in calculation instead of using "raw" prices.
+The usage of filtered prices lessens the number of signals and, depending on your trading style, can be used to filter out undesired signals. To have unfiltered/non-smoothing values, simply set the the smoothing period to less than or equal to 1 and then, regardless of the smoothing type, there will be no smoothing/filtering.

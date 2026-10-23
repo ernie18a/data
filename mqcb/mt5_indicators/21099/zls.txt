@@ -1,0 +1,44 @@
+Indicator ZLS (Zero Lag Stochastic) - a zero-delay stochastic - a ratio of several stochastics with different periods %К, deceleration, and weights.
+The indicator has 31 input parameters:
+Smoothing
+- the indicator signal line smoothing period (the only parameter common to all the stochastics).
+First stochastic data:
+Stoch 1 %K period
+- %K line period of stochastic 1.
+Stoch 1 %D period
+- %D line period of stochastic 1.
+Stoch 1 Slowing
+- deceleration of stochastic 1.
+Stoch 1 Method
+- stochastic 1 calculation method.
+Stoch 1 Price field
+- stochastic 1 calculation prices.
+Stoch 1 Weight
+- weight of stochastic 1 values.
+Second stochastic data:
+Stoch 2 %K period
+- %K line period of stochastic 2.
+Stoch 2 %D period
+- %D line period of stochastic 2.
+Stoch 2 Slowing
+- deceleration of stochastic 2.
+Stoch 2 Method
+- stochastic 2 calculation method.
+Stoch 2 Price field
+- stochastic 2 calculation prices.
+Stoch 2 Weight
+- weight of stochastic 2 values.
+Data of stochastics 3, 4, and 5 are similar:
+Calculation:
+K = (S1 + S2 + S3 + S4 + S5) / SumWeight
+D = K / Smoothing + PrevD * (Smoothing-1) / Smoothing
+where:
+S1 - Stochastic(1 %K period, 1 %D period, 1 Slowing, 1 Method, 1 Price field)
+S2 - Stochastic(2 %K period, 2 %D period, 2 Slowing, 2 Method, 2 Price field)
+S3 - Stochastic(3 %K period, 3 %D period, 3 Slowing, 3 Method, 3 Price field)
+S4 - Stochastic(4 %K period, 4 %D period, 4 Slowing, 4 Method, 4 Price field)
+S5 - Stochastic(5 %K period, 5 %D period, 5 Slowing, 5 Method, 5 Price field)
+SumWeight = 1 Weight + 2 Weight + 3 Weight + 4 Weight + 5 Weight
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21099

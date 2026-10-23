@@ -1,0 +1,51 @@
+The Expert Advisor searches for N identical candlesticks in a row. It buys on bullish candlesticks and sells on bearish ones. The account type is taken into account, i.e. whether it is netting or hedging. The
+CPositionInfo
+,
+CTrade
+,
+CSymbolInfo
+and
+CAccountInfo
+trade classes are used in the code.
+Version 1:
+N candles
+.
+Version 2:
+N Candles v2
+.
+Version 3:
+N Candles v3
+.
+Version 4:
+N Candles v4
+.
+New in version 5: the new "working time" parameter allows setting the trade beginning and end hours. The EA will only trade within "working time" and will do nothing the rest time.
+Input Parameters
+N identical candles which go in a row
+- the number of identical candlesticks in a row.
+Lot
+- position volume.
+Take Profit
+.
+Stop Loss
+.
+Trailing Stop ("0" -> not trailing)
+.
+Trailing Step (use if Trailing Stop >0)
+.
+Max positions certain direction (only for hedging)
+- the maximum number of positions (only for hedging accounts).
+Max position volume (only for netting)
+- the maximum volume of a position (only for netting accounts).
+Use trade hours
+- enable/disable the time filter
+.
+Start hour
+- trading start hour
+.
+End hour
+- trading end hour
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19510

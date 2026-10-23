@@ -1,0 +1,3 @@
+Description:
+Based on difference between two MA smoothed by iMAOnArray, with alerts.
+Image:

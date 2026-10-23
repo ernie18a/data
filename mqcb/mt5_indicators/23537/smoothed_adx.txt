@@ -1,0 +1,29 @@
+This indicator is the smoothed standard indicator
+Average
+Directional Movement Index
+.
+It has five adjustable parameters:
+Period
+- ADX calculation period
+Primary smoothing factor
+- primary factor of smoothing
+Secondary smoothing factor
+- secondary factor of smoothing
+Strong trend level
+- level of a strong trend
+Weak trend level
+- level of a weak trend
+Calculations:
+SDIP = Secondary smoothing factor * DIPtmp + (1.0 - Secondary smoothing factor) * PrevSDIP
+SDIM =Secondary smoothing factor * DIMtmp + (1.0 - Secondary smoothing factor) * PrevSDIM
+SADX = Secondary smoothing factor * ADXtmp + (1.0 - Secondary smoothing factor) * PrevSADX
+where:
+DIPtmp = 2.0 * DMIplus + (Primary smoothing factor - 2.0) * PrevDMIplus + (1.0 - Primary smoothing factor) * PrevDIPtmp
+DIMtmp = 2.0 * DMIminus + (Primary smoothing factor - 2.0) * PrevDMIminus + (1.0 - Primary smoothing factor) * PrevDIMtmp
+ADXtmp = 2.0 * ADX + (Primary smoothing factor - 2.0) * PrevADX + (1.0 - Primary smoothing factor) * PrevADXtmp
+DMIplus, DMIminus - DMI+ и DMI-
+ADX -
+Directional Movement Index(Period)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23537

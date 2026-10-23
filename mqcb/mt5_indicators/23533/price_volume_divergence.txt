@@ -1,0 +1,21 @@
+Indicator Price volume divergence compares the sizes and volumes of the current bar and of the preceding bar and, provided that there is a difference between them, places signal pointers.
+It has five adjustable parameters:
+Use alerts
+- use alerts
+Send mail
+- send email notifications
+Send push-notifications
+- send push notifications to your mobile device
+Applied volume
+- volume used by the indicator
+Show volumes bars
+- show volumes on the price chart
+Calculations:
+If the size of the current candle exceeds that of the preceding one and the volume of the current candle is smaller than that of the preceding one,
+then this is considered to be the growing divergence and the green signal pointer is place on the candle High
+If the size of the current candle is smaller than that of the preceding one and the volume of the current candle exceeds that of the preceding one,
+then this is considered to be the falling divergence and the red signal pointer is placed on the candle Low
+It should be understood that signal pointer do not indicate the dierection of opening a position; they just indicate the type (growing/falling) of the divergences among the sizes and volumes of the current candle and the preceding candle.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23533

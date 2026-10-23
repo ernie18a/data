@@ -1,0 +1,4 @@
+The indicator InnBar_mtf.
+Parameters:
+extern int tf=60;
+InnBar_mtf

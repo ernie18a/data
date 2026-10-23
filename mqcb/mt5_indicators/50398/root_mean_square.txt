@@ -1,0 +1,11 @@
+Was checking if this one exists as a standalone function/indicator and since I did not find it, here it is
+The RMS (Root Mean Square) value is calculated by squaring the values, taking the average of the squared values, and then taking the square root of the average. This calculation is applicable to a set of values, especially in the context of waveforms in electrical engineering.
+The RMS is also known as the
+quadratic mean
+(denoted
+𝑀 2
+)
+What you need to know if you want to use it :
+I have seen implementations of Quadratic Mean as a moving average, but it seems that people forgot to compare it to some other averages
+RMS or Quadratic Mean is equal to SMA (Simple Moving Average) when applied to set of values that is always equal to or greater than 0
+As soon as there is even a single negative value the result will be wrong (that is simply a consequence of the formula used for calculation) hence it can not be used as normal moving averages that do not have the described restricion

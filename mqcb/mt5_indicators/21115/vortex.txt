@@ -1,0 +1,16 @@
+This indicator was developed by Etienne Botes and Douglas Siepman. Indicator Vortex consists of two oscillators that display positive and negative trend movements, similar to lines +DI and -DI of indicator Average Directional Movement Index.
+It has one input parameter:
+Period
+- indicator calculation period.
+Calculation:
++VI = 100 * svip / satr,
+-VI = 100 * svim / satr
+where:
+svip = SMA(iVIP, Period)
+svim = SMA(iVIM, Period)
+satr = SMA(ATR, Period)
+iVIP = Abs(High - PrevLow)
+iVIM = Abs(Low - PrevHigh)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21115

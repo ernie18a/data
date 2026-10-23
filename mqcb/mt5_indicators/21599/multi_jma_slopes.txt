@@ -1,0 +1,3 @@
+Indicator that checks slopes of 5 (different period) Jurik Moving Averages (JMA) and adds them up to show overall trend.
+Update :
+Due to some changes in the new builds, the original version can not pass regular speed test. The updated version is doing that without any issue though

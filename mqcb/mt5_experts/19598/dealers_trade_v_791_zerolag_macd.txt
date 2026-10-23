@@ -1,0 +1,302 @@
+Author of the idea
+:
+Alexander
+,
+author of the mq5 code
+:
+barabashkakvn
+.
+A further development of "
+Dealers Trade v 7.74 MACD
+".
+Uses the
+Zero-lag MACD
+instead of the standard iMACD (Moving Average Convergence/Divergence, MACD).
+When the number of positions increases, the following is also increased: step between positions, lot size, take profit (martingale).
+Position volume management:
+The initial lot can be specified manually;
+The initial lot can be calculated as the risk percent of free margin;
+As the number of positions increases, each subsequent volume is multiplied by a coefficient.
+You can also limit the following:
+The maximum number of open positions;
+The maximum lot.
+What's new:
+With the increase in the number of positions:
+the step between positions is increased;
+the distance of take profit is increased.
+If a signal emerges and the number of positions is
+equal
+to the limit, one more position is opened and at the next tick (if there is a signal to open a position) the most losing position is closed.
+Protection of profit: if protection is allowed and the total profit of all positions is greater than the specified value, as well as the number of positions is greater than or equal to the protected amount, the most profitable position is closed. For example, we have a total profit of $52 and four open positions. The protected amount is set to "3". So we can close one position, thus trying to keep a minimum of three positions always open.
+Input Parameters (
+new parameters are color highlighted
+)
+Lots (if <= "0" -> use "Risk")
+- position volume (if <="0.0", lot will be calculated using the "Risk" parameter);
+Stop Loss (in pips)
+- Stop Loss value;
+Take Profit (in pips)
+- Take Profit value;
+Trailing Stop (in pips)
+- trailing value;
+Trailing Step (min value == 1)(in pips)
+- trailing step value;
+Risk in percent for a deal from a free margin
+- risk per trade as percent of free margin;
+Max open positions
+- the maximum number of open positions;
+Interval between positions
+- the distance between positions;
+Coefficient interval between positions
+- multiplier for the step between positions;
+Coefficient Take profit
+- multiplier for the Take Profit step;
+Min profit. Close max profit position
+- minimum profit, at which the most profitable position will be closed;
+Account protection. If "true" -> close max profit position
+- protecting profit, at which the most profitable position will be closed;
+Number of open items if "Account protection" = "true"
+- the number of positions to protect;
+Reverse condition
+- reversing signals;
+MACD: fast ema period
+MACD: slow ema period
+Max volume of position
+- maximum allowed position volume;
+Lot coefficient
+- lot multiplier, the more open positions exist, the greater lot multiplier will be.
+An example of tests in the Every Tick mode on the H1 timeframe with the initial deposit $50000 (with default inputs):
+Symbol
+Pass
+Result
+Profit
+Expected Payoff
+Profit Factor
+Recovery Factor
+Sharpe Ratio
+Custom
+Equity DD %
+Trades
+EURUSD
+0
+4258,61
+25755,12
+120,92
+1,29
+2,23
+0,12
+0
+17,79
+213
+USDCHF
+2
+3926,94
+16444,75
+89,37
+1,23
+1,31
+0,10
+0
+16,92
+184
+AUDCHF
+8
+1992,67
+201002,50
+1322,38
+3,68
+3,19
+0,10
+0
+125,96
+152
+GBPUSD
+1
+1863,80
+32885,21
+118,29
+1,27
+0,72
+0,12
+0
+44,47
+278
+AUDJPY
+9
+1766,38
+10454,94
+49,55
+1,12
+0,42
+0,06
+0
+34,23
+211
+CADCHF
+19
+1637,65
+3740,37
+27,50
+1,06
+0,20
+0,04
+0
+32,82
+136
+AUDUSD
+5
+1380,94
+-2409,08
+-15,75
+0,97
+-0,14
+0,00
+0
+34,46
+153
+USDJPY
+3
+1330,16
+3205,03
+11,41
+1,02
+0,12
+0,02
+0
+40,00
+281
+EURGBP
+11
+1230,38
+4365,99
+26,62
+1,05
+0,16
+0,03
+0
+44,19
+164
+AUDCAD
+7
+1211,38
+656,34
+3,91
+1,01
+0,03
+0,01
+0
+41,82
+168
+EURCAD
+16
+1189,20
+2053,86
+6,63
+1,01
+0,08
+0,02
+0
+43,77
+310
+CHFJPY
+10
+940,61
+-7405,27
+-35,95
+0,92
+-0,28
+-0,02
+0
+45,28
+206
+EURJPY
+14
+862,14
+66,71
+0,23
+1,00
+0,00
+0,01
+0
+58,07
+287
+EURCHF
+13
+712,52
+-10484,91
+-91,97
+0,81
+-0,33
+-0,06
+0
+55,46
+114
+USDCAD
+4
+567,01
+-16854,03
+-74,58
+0,84
+-0,50
+-0,06
+0
+58,46
+226
+GBPCHF
+17
+563,15
+-10039,42
+-36,64
+0,94
+-0,20
+-0,01
+0
+70,96
+274
+AUDNZD
+6
+487,68
+-19841,20
+-116,71
+0,74
+-0,63
+-0,10
+0
+61,84
+170
+EURAUD
+12
+479,76
+-12733,15
+-39,42
+0,92
+-0,32
+-0,01
+0
+77,68
+323
+EURNZD
+15
+213,11
+-34083,91
+-94,42
+0,82
+-0,86
+-0,06
+0
+74,69
+361
+GBPJPY
+18
+18,31
+-48130,44
+-147,19
+0,78
+-0,70
+-0,11
+0
+102,08
+327
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19598

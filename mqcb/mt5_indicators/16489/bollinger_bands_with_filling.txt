@@ -1,0 +1,7 @@
+This is a version of Bollinger bands made as a filled area. But to avoid just making the usual Bollinger bands with some more colors, this version has a choice of calculating the standard deviation as a sample or as an uncorrected deviation. The explanation for that would be the
+following
+.
+The difference is usually not big, but it exists. So now we have the Bollinger bands with a choice of these two deviation types too (with the usual set of 22 price types addition).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16489

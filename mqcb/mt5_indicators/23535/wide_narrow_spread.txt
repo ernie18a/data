@@ -1,0 +1,19 @@
+Indicator Wide/Narrow Spread bar displays the largest and the smallest bar over the selected period as colored candles.
+It has three adjustable parameters:
+Range
+- search range
+Show wide spread bar
+- show the largest bar (Yes/No)
+Show narrow spread bar
+- show the smallest bar (Yes/No)
+Calculations:
+If Max = HL,
+WS = Max/Point and the candle color is blue
+If Min = HL,
+NS = Min/Point and the candle color is red
+where:
+HL = High - Low
+Max, Min - the maximum and minimum HL within the Range
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23535

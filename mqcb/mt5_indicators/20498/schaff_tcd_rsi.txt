@@ -1,0 +1,2 @@
+Doug Schaff created a few indicators that were meant to assess trends.
+In one of his indicators he uses what he calls "Shaff CD" (which is actually MACD signal line instead of using MACD). The resulting indicator has the benefit of putting the Schaff Trend CD on a scale of zero to 100, making it easier to identify potential overbought and oversold levels in a currency trend and is using RSI for a final calculation.

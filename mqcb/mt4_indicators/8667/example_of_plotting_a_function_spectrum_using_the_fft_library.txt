@@ -1,0 +1,4 @@
+Description: Example of plotting a function spectrum using the FFT library A test function based on the sum of 3 sinusoids with different parameters or market Close prices are set as input.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8667

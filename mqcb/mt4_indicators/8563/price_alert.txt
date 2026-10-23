@@ -1,0 +1,33 @@
+It will alert at another place as soon as you quickly move it using the mouse.
+Input Parameters:
+extern
+string
+NamePrice
+=
+"Price_1"
+;
+extern
+string
+SoundFileName
+=
+"alarm.wav"
+;
+extern
+bool
+ActiveSignal
+=
+true
+;
+extern
+bool
+ActiveAlert
+=
+true
+;
+extern
+color
+LineColor
+=
+Gold
+;
+Price_Alert

@@ -1,0 +1,9 @@
+The "MACD Crossing the zero level" indicator uses the
+DRAW_COLOR_CANDLES
+style to draw areas, in which MACD is above or below the zero line.
+In the indicator settings, you can select the MACD line to show areas for, i.e. the main or the signal line:
+Fig. 1. Displaying areas for the MACD signal line
+Fig. 2. Displaying areas for the MACD main line
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19302

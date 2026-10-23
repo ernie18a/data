@@ -1,0 +1,2 @@
+ZigZag Color Indicator for Line Charts which works on Close prices rather than High low
+This indicator has only one input parameter which is ExtDepth and its optimized for performance

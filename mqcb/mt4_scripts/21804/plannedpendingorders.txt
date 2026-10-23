@@ -1,0 +1,25 @@
+Overview
+The script will open limit pending orders according to named horizontal lines in the chart you have to draw before. When finished drawing you drag and drop the script onto the chart. Before the orders get executed you can change the aspired risk. Right before the execution you will get an info dialog with the calculated risk where you get asked if you really want to execute the order.
+Code under version control here:
+https://github.com/dirkmql/planned-pending-orders
+Drawing lines
+The following two horizontal lines are required to let the script execute a trade:
+Entry price line, name it like "entry_#" example: entry_1
+Stoploss line, name it like "sl_#", example: sl_1
+The takeprofit line is optional:
+Takeprofit line, name it like "tp_#", example: tp_1
+You can define lines for up to 4 orders.
+Always start with 1 and for following orders increase the number. If you have created lines for more then one order then keep in mind that the entry price or the stoploss will be taken over from the first order if it is not set in the current order. So for example you are able to set the takeprofit only for order 2 because entry and stoploss will be taken over from order 1.
+In the example we will let the script execute two sell limit orders with same entry and sloploss but different takeprofit. In the following screenshot you can see the created horizontal line for the entry, named entry_1. To not getting confused with the lines I gave them different colors for the screenshots.
+Now we set the stoploss line named sl_1 for order 1:
+And takeprofit for order 1:
+And takeprofit for order 2 (underneath tp_1):
+Start the script
+Drag and drop the script on the chart when you are finished with drawing the lines.
+Parameter aspired risk
+When setting the aspired risk (default value: 0.005 = 0.5%) it is taken as a factor of your account balance if it is set to a value below 0.1. Example: If your account balance is 10000 EUR right now and you want to enter a trade with an aspired risk of 0.01, the aspired risk is 100 EUR in money (1% of the account). If you set the aspired risk to 0.1 or higher it will be taken as money amount. The calculated approximate risk differs from aspired risk according to account size and trade setup. You will see it printed out in a message box where you have to confirm to execute the trade(s).
+For the example we set 0.01 which is 1%:
+Confirm the trade
+After clicking OK in the parameters dialog the following dialog with a short conclusion of the trade is been shown:
+When confirming the dialog with OK the orders will be created:
+If anything does not work properly please check the Expert tab in the lower Terminal window for any error messages (auto trading need to be allowed).

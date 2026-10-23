@@ -1,0 +1,39 @@
+LBR Paint Bars indicator draws color candles depending on a trend direction.
+The trend is defined by the location of two volatility lines. A color cloud histogram is displayed along these two lines.
+It has four inputs:
+Factor
+- ATR share in the cloud width calculation
+ATR period
+- ATR calculation period
+HL period
+- cloud borders calculation period
+Color Candles
+- display color candles (Yes/No)
+Calculation:
+Edge1 = Min(Lowest(Low,
+HL period) + Delta;
+Edge
+2 = Max
+(Highest(High,
+HL period)
+-
+Delta
+;
+where:
+Delta = ATR(ATR period) * Factor
+If color candles display is enabled (Color Candles = Yes):
+if the bullish candle is closed above the cloud, a
+green
+candle is displayed
+if the bearish candle is closed above the cloud, a
+light-green
+candle is displayed
+if the bearish candle is closed below the cloud, a
+red
+candle is displayed
+if the bullish candle is closed below the cloud, an
+orange
+candle is displayed
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22200

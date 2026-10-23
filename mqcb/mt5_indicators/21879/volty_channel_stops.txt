@@ -1,0 +1,4 @@
+Indicator was originally developed by
+Igor Durkin
+.
+It is based on ATR and money risk and it makes it an interesting indicator, since the usage of money risk in indicators is not that usual. This version of the indicator has some additions compared to the original (like choice of smoothing methods, that can be SMA, EMA, SMMA or LWMA), display of the value that needs to be broken in order to have a trend change  and is also made a "pure" metatrader 5 code (without adjusting mt4 code to metatrader 5 code, but using all the metatrader 5 code ways instead)

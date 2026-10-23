@@ -1,0 +1,21 @@
+Oscillating indicator Dynamic Zone RSI is
+Relative Strength Index
+with dynamic overbought/oversold zones based on
+Bollinger Bands
+.
+It has six adjustable parameters:
+RSI period
+- RSI calculation period
+Bands period
+- Bollinger Bands calculation period
+Deviation
+- Bollinger Bands deviation
+Show intersection arrows
+- show the labels of RSI crossing the lines of zones
+Allow midline intersections
+- allow controlling the intersections with the midline
+Use alerts
+- use alers as soon as RSI intersects the lines of zones
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23531

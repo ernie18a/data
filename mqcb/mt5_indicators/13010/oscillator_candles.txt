@@ -1,0 +1,6 @@
+The indicator draws OHLC colour candles in a separate window for one of the following indicators:
+Moving Average Convergence/Divergence
+Stochastic Oscillator
+Relative Strength Index
+Commodity Channel Index
+Momentum

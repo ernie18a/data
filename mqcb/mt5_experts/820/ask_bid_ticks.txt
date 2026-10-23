@@ -1,0 +1,23 @@
+Ask Bid Ticks is a real-time tick data solution for microstructure analysis — a high precision tick data collector. It exports tick-by-tick prices to a CSV file, and provides options for filename, delimiters and timestamps. It works with local computer time for catching the arrival time of each tick in high precision.
+Settings:
+The program uses a Windows system file "kernel32.dll" to provide millisecond timestamps, so it is required to allow DLL imports. You can set this property in "Dependencies" tab in "Properties" window (look at the picture below).
+You can choose delimiter for the data columns (which are date time, symbol name, ask bid prices). You can also choose the timestamps:
+Standard
+: Standard timestamp mod — the output seems like: 2012.11.13 15:41:23
+Systemtime
+: This mod uses system time for high precision — the output seems like: 2012.11.13 15:41:23.692
+Analysis
+: number of milliseconds so far (from the first tick to the current one). This option is generated only for simplifying further operations (like HighFrequency data analysis with other programs)
+If you want to specify the name of the output file, just delete the string "
+Use default
+" in the first parameter, then enter the name you choose.
+Output File:
+The output file can be found in
+terminal_data_directory
+. To easily reach the data directory, you can use the file menu in MetaTrader 5 client terminal. At the start of the program, the complete file path is also shown in "ToolBox" > "Experts" tab:
+Below there is a tab delimited output CSV sample with millisecond timestamps:
+You should note there may be some missing ticks. The probability of this situation is small and depends on various facts:
+Economic activity in the period,
+Speed of your hardware on which the code is used: the main reason of missing ticks is the no-queue policy in
+NewTick
+event handling. It's a useful thing, in order to have high precision timestamps for new tick arrivals. But to decrease the event handling time, it is better to use this code with a fast hardware.

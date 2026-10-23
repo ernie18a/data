@@ -1,0 +1,7 @@
+Description:
+The Indicator analyses 4 currency pairs, compares them and prints the current divergence on the chart. The divirgence is presented in points of the current pair.
+Image:
+Sell upper, buy lower.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9564

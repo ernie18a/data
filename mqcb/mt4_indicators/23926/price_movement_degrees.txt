@@ -1,0 +1,3 @@
+Forex Indicator Price Movement Degrees with Trend Alerts.
+This indicator will write value degrees of the latest position of price at the current time frames according to the Daily price movement, and when position and condition of trend status was changed the indicator will give an alerts.
+Hopefully useful for fellow traders.

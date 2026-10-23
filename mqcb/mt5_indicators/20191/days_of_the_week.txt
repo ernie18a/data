@@ -1,0 +1,38 @@
+The indicator shows the current day of the week as a histogram. The histogram rule matches the
+numbering of days
+in the
+MqlDateTime
+structure:
+struct
+MqlDateTime
+{
+int
+year;
+// year
+int
+mon;
+// month
+int
+day;
+// day
+int
+hour;
+// hour
+int
+min;
+// minutes
+int
+sec;
+// seconds
+int
+day_of_week;
+// day of the week (0-Sunday, 1-Monday, ... ,6-Saturday)
+int
+day_of_year;
+// number of a day in the year (1st of January has number 0)
+};
+The "Days of the week" indicator can be applied on the D1 timeframe together with "Volumes" indicator for a visual search of dependencies between days of the week and volumes:
+Fig. 1. An example of a combination of "Days of the week" and "Volumes"
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20191

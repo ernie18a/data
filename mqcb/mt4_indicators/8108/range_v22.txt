@@ -1,0 +1,9 @@
+Author:
+IgorAD
+One more version of the indicator Range.
+Parameters:
+extern string TimeFrame= "D1";
+extern int Shift =0;
+extern int AjShift=0;
+extern string TimeFrames="1,5,15,30;H1(60);H4;D1;W1;MN";
+Indicator Range_v2.2

@@ -1,0 +1,7 @@
+Author: AlexP
+Developed by Wilder to improve the PTP indicator and performs two tasks:
+identifies the long-term trend of the market
+displays the degree of directivity of a specific market.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7264

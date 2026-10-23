@@ -1,0 +1,10 @@
+Description:
+Fibonacci Retracement Levels indicator draws Fibonacci Retracement Levels on the trading chart.
+Version 2: added price labels on each Fibonacci level.
+Image:
+I
+'ve fixed
+the error
+in
+code
+Fibonacci Retracement Levels indicator version 2.

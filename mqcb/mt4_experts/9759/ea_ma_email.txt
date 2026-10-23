@@ -1,0 +1,7 @@
+A simple EA that will send e-mail alert whenever there is moving average crossover. Shall change it to indicator so that the moving average indicator will show on the chart window. Not yet have time do it.
+Hope some one here can help me complete it =P
+If you do not have vps to run the EA 24/7 but interested to receive the e-mail alert, pls refer here
+http://100k2.blogspot.com/2010/06/do-you-want-to-have-e-mail-alert-on.html
+From
+erekit
+http://100k2.blogspot.com

@@ -1,0 +1,23 @@
+The Moving Average Envelopes Percentage indicator shows the price as a percentage of the Envelopes channel.
+There are five inputs:
+Period
+- calculation period;
+Deviation
+;
+Applied price
+;
+Overbought
+- the overbought level is set to 100% of the Envelopes channel by default;
+Oversold
+- the oversold level is set to 0% (bottom edge) of the Envelopes channel by default.
+Calculations:
+MAE = 100 * (Applied price - DN) / (UP - DN)
+where:
+UP = MA * (1+Deviation / 100.0)
+DN = MA * (1-Deviation / 100.0)
+MA - MA(Applied price, Period)
+Fig. 1. MAE
+Fig. 2. MAE + Envelopes
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21648

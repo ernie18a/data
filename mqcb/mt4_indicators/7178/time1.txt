@@ -1,0 +1,6 @@
+The idea of this indicator is quite simple: draw lines to remember the current phase of the market and who "rules" the market.
+Below are the different session times (Asian, European, American) or different phases of these sessions.
+These indicators can be easily customized.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7178

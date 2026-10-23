@@ -1,0 +1,1 @@
+Not sure if anyone need this. Just showing the angle of the MA of current and adjacent candle.

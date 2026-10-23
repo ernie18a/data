@@ -1,0 +1,11 @@
+Author:
+The developer of this EA is Arturo Lopez, founder of
+Point Zero Trading Solutions
+.
+Trend following systems can vary, but principle elements remain the same. A reversal system, a very common system, has two modes: you are either long or short. It is always in the market and closes one position by opening a new one in the opposite direction.
+With this MT4 Expert Advisor, you can either be long or short at any given time. You enter a long position and exit a short position if the current price closes above the highest price in the previous 100 days. You enter a short position and exit a long position if the current price drops below the lowest price in the previous 100 days.
+This system should be applied to a huge variety of instruments to make sure to catch some big trends to pay for the other little losses. You should trade
+forex, commodities, indexes, interest rates, government bonds and even sectorial stocks
+. As a sidenote,
+Bill Dunn
+is a long term reversal trend follower that exploited the Japanese Yen to extreme levels in 1995 with a reversal system exactly like this one and has reaped incredible profits since then.

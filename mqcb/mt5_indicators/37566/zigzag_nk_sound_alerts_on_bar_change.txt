@@ -1,0 +1,2 @@
+ZigZag NK Sound Alerts notifies you with Sound alert, Push Notification or Popup Notification on terminal when Zigzag changes its bar.
+This indicator has 3 buffers, two are used for ZigZag and one is used for coloring

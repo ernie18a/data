@@ -1,0 +1,5 @@
+Another variation on reversed, pivot points. The indicator draws the pivot line by daily chart values.
+Fig.1 The DailyTurnPoint indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1638

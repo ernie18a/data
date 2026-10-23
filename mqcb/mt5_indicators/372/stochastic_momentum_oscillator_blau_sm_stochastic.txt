@@ -1,0 +1,44 @@
+Author:
+Andrey N. Bolkonsky
+Stochastic Oscillator by William Blau is based on
+Stochastic Momentum Index
+Indicator (see
+Momentum, Direction, and Divergence: Applying the Latest Momentum Indicators for Technical Analysis
+).
+WilliamBlau.mqh must be placed in
+terminal_data_folder
+\MQL5\Include\
+Blau_SM_Stochastic.mq5 must be placed in
+terminal_data_folder
+\MQL5\Indicators\
+Stochastic Momentum Oscillator
+Calculation:
+Stochastic Momentum Oscillator is calculated as follows:
+SM_Stochastic(price,q,r,s,u) = SMI(price,q,r,s,u)
+SignalLine(price,q,r,s,u,ul) = EMA( SM_Stochastic(price,q,r,s,u) ,ul)
+where:
+SM_Stochastic() - Stochastic Momentum Index SMI(price,q,r,s,u);
+SignalLine() - Signal Line -
+exponentially smoothed moving average
+with period ul, applied to Stochastic Momentum Index;
+ul - period of EMA smoothing of a Signal Line.
+Input parameters:
+graphic plot #0 - Stochastic Momentum Index:
+q - period of Stochastic Momentum (by default q=5);
+r - period of the 1st EMA, applied to Stochastic Momentum (by default r=20);
+s - period of the 2nd EMA, applied to result of the 1st smoothing (by default s=5);
+u ;- period of the 3rd EMA, applied to result of the 2nd smoothing (by default u=3);
+graphic plot #1 - Signal Line:
+ul - period of EMA smoothing of a Signal Line, applied to Stochastic Momentum Index (by default ul=3);
+AppliedPrice -
+price type
+(by default AppliedPrice=PRICE_CLOSE).
+Note
+:
+q>0;
+r>0, s>0, u>0. If r, s or u =1, smoothing is not used;
+ul>0. if ul=1, the Signal Line and Stochastic Momentum Index are the same;
+Min. rates=(q-1+r+s+u+ul-4+1).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/372

@@ -1,0 +1,4 @@
+The indicator finds candlesticks without an upper or lower shadow. The indicator is drawn using the DRAW_ARROW style. It is also possible to set the minimum size if the candlestick.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17923

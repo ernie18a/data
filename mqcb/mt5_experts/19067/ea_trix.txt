@@ -1,0 +1,21 @@
+Author of the idea
+:
+bobby
+,
+mq5 code author
+:
+barabashkakvn
+.
+The Expert Advisor trades following the
+TRIX ARROWS
+indicator signals:
+The
+Triple Exponential Average (TRIX)
+indicator with an additional signal line and arrows displayed at the intersection of the main and the signal lines.
+The principle for determining the intersection of the main and the signal lines:
+If on the previous bar the signal line was below the main one, and on the current bar the signal line is above the main one, it is an "UP" signal.
+If on the previous bar the signal line was above the main one, and on the current bar the signal line is below the main one, it is a "DOWN" signal.
+Testing results on EURUSD, H1:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19067

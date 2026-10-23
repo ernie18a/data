@@ -1,0 +1,10 @@
+Real author:
+Rjabkov Alexander
+Moving average of ranges. The calculation is based on the price high and low for a period.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 16.01.2012.
+Figure 1. The Rj_RMA indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11436

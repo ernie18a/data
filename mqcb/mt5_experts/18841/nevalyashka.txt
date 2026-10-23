@@ -1,0 +1,14 @@
+Author of the idea
+:
+Vladimir Khlystov
+,
+mq5 code author
+:
+barabashkakvn
+.
+We open a new position opposite to the previous one. Inputs only contain Stop loss, Take Profit and the minimum lot.
+The Stop loss and Take Profit parameters should be optimized.
+Example on EURUSD, H1:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18841

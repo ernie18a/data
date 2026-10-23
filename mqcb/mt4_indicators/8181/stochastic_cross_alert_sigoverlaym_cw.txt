@@ -1,0 +1,15 @@
+The indicator displays signals to buy/sell.
+Parameters:
+KPeriod=5;
+DPeriod=3;
+Slowing=3;
+MA_Method=0; // SMA 0, EMA 1, SMMA 2, LWMA 3
+PriceField=0; // Low/High 0, Close/Close 1
+OverBoughtLevel =80;
+OverSoldLevel =20;
+show_KD_cross=false;
+show_K_OBOScross=true;
+show_D_OBOScross=false;
+note_Price="PriceField: Low/High = 0, Close/Close = 1";
+_MA_Method="SMA0 EMA1 SMMA2 LWMA3";
+Stochastic_Cross_Alert_SigOverlayM_cw

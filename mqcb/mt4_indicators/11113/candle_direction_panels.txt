@@ -1,0 +1,4 @@
+Author:
+Luis Andrianto
+Candle direction panels indicator based on open and close recent candle (Close>Open or Close<Open and Close=Open). The indicator work on all timeframe, It's will shown all TF candle direction at one place.
+Update for mt4 build 604

@@ -1,0 +1,13 @@
+Author: Andrei Bulagin
+.
+Helpful stuff!
+16.30 М . This news is of the 2nd importance
+16.00 Н . This news is of the 3rd importance Most important!
+16.00 L . This news is of the 1st importance
+please note that the market is not overbought or oversold!!
+Here you can see how the market affects the news
+Fundamental Analysis. Forex / Alpari
+Events Calendar
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8204

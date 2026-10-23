@@ -1,0 +1,10 @@
+I enhanced the original concept of the Donchian channel to include the ability to set additional levels internal or external of the calculated range.
+This has resulted in a great indi that can run behind any moving average cross strategy or such like so that you have current levels to aim toward or place stops at.
+In addition I have enabled the ability to shrink or enlarge the range of the same period. If for eg; the period is set to say 96 bars, if you option the indicator to calculated at
+a reduction of 62%, you will be presented with a closely ranged set of breakthrough support and resistance lines. There are other options to show range based on close
+not high low and this reveals another interesting set of levels.
+The alerts work well and will alert of major edge and center crosses if you wish and only once per bar so you don't go batty with the alarms going off every tick.
+All the options are self explanatory and you should have no problems with the indicator. Basic picture attached.
+Works really well for swing trading to see lower highs/higher lows etc.
+Cheers
+Brooky

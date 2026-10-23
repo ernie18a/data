@@ -1,0 +1,3 @@
+In an algorithm experiment, candlesticks were studied with a behavior of frog jump. It is considered a frog never jumps a single block of leaf in the pond but covers a distance from leaf 1 to leaf 3 or more.
+This indicator hides alone candlesticks which are excluded in that experiment of frog hopping. if candle is bull and next candle is bear and its previous candle was also bear, it is considered an alone candlestick and its hidden on chart, vice versa for bear candle.
+Left :  Hidden Alone Candlestick, Right : Normal Chart

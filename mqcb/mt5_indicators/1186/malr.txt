@@ -1,0 +1,7 @@
+The Moving Average of a linear regression with two levels of bands like John Bollinger bands.
+Parameters:
+ChannelReversal - Relative width of the narrow channel.
+ChannelBreakout - Relative width of a wide channel, channel width is measured from the narrow channel (i.e. if a previous parameter = 1, and this = 2, the wide channel width will be = 3)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1186

@@ -1,0 +1,10 @@
+A lightweight tool for manual scalping in MT5 using keyboard shortcuts.
+1
+→ Buy
+2
+→ Close
+3
+→ Sell
+5
+→ Break Even
+Includes options to set daily max loss, auto SL TP,  break even, with everything displayed in a small on-chart dashboard. All parameters can be adjusted in the inputs. Designed for fast manual trading, especially useful on indices or futures.

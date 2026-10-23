@@ -1,0 +1,37 @@
+The indicator shows price on a chart. It is simple to write.
+Parameters:
+note1=
+"Change font colors automatically? True = Yes"
+;
+Bid_Ask_Colors=
+True
+;
+note2=
+"Default Font Color"
+;
+FontColor=Black;
+note3=
+"Font Size"
+;
+FontSize=
+24
+;
+note4=
+"Font Type"
+;
+FontType=
+"Comic Sans MS"
+;
+note5=
+"Display the price in what corner?"
+;
+note6=
+"Upper left=0; Upper right=1"
+;
+note7=
+"Lower left=2; Lower right=3"
+;
+WhatCorner=
+2
+;
+Magnified Market Price

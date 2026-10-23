@@ -1,0 +1,29 @@
+I built this panel because I got tired of right-clicking
+every time I wanted to close a trade or move a stop loss.
+It puts everything you need in one draggable panel —
+buy, sell, breakeven, close all, modify SL/TP,
+partial close, pending orders and more.
+Works on MT5 and MT4 with the same file.
+What it does:
+- Buy and Sell with one click at market price
+- Close all open trades on the current symbol
+- Close only buys or only sells separately
+- Move SL to breakeven across all positions
+- Modify SL or TP on all open trades at once
+- Open pending orders by clicking directly on the chart
+- Delete pending buy or sell orders with one click
+- Partial close with a custom lot size
+- Risk mode: fixed lots or percentage of account balance
+- Optional trade comment field
+- All sections can be turned on or off from inputs
+- Panel position is saved between sessions
+It is not complicated. Open it, set your SL and lot size,
+press buy or sell. That is it.
+Tested on forex, gold, synthetic indices and crypto pairs.
+If you need a custom version or a completely different
+tool built for your strategy, you can hire me directly
+through MQL5 Freelance. I have been coding EAs and
+indicators since 2017.
+If you use it and find it helpful,
+a rating on this page takes 5 seconds
+and helps a lot.

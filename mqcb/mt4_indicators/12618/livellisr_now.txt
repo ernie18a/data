@@ -1,0 +1,4 @@
+The indicator shows support and resistance levels.
+Like all simple things, sometimes these indicators are very useful, the indicator shows support and resistance and makes it obvious at a glance (programmed style with a "mild" to not be very invasive but useful).
+At the right time you will also find a comment that will show you the last maximum and the last minimum, the public in this indicator to return to the open source community of MQL4 a small part of what I've got and the guys who are part taught me.
+The indicator is all yours enjoy it.

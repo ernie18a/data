@@ -1,0 +1,3 @@
+1. RMA Relative Moving Average is a variant of EMA, with a calculation factor of 1/cycle .
+2. There is only one input variable, which is the calculation period. If you need to change the line type and color, please select in the Parameters or Color tab
+3. After loading, it is as follows:

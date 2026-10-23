@@ -1,0 +1,9 @@
+My EA is based on JJN Scalper indicator. Real author of
+JJN Scalper
+is
+Gordon Gekko
+.
+I made many changes to this indicator then made EA based on it. Now it seems to produce promising results.
+Recommended timeframe: 1 hour. Recommended Currency: EURUSD.
+All default setting are looking good as I set in this EA.
+Following is a Strategy Tester screenshot of this EA:

@@ -1,0 +1,2 @@
+The indicator is shown in a histogram the MACD uptrend and downtrend uses a different way.
+You can set period of indicator and levels for trend

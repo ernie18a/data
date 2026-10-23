@@ -1,0 +1,11 @@
+Basics:
+The trend direction and force was developed long time ago by Pyotr
+Wojdyło for metastock trading platform. Since then we have made multiple versions for
+MetaTrader
+(both
+MetaTrader 4 and
+MetaTrader 5).
+This version:
+This indicator is using double smoothed EMA (DSEMA) for smoothing result in order to produce less false signals.
+Usage:
+You can use the color change as signals for trend change or for breakouts.

@@ -1,0 +1,33 @@
+Depending on the value of UpDoun =true or =false, the script either drags the TakeProfit closer to the market or pushes it away from the market holding the same Distance in points.
+If a DC limits placing Stops and Limits "for the market" (usually it's 10 points) you should
+//+------------------------------- FIND OUT ABOUT THE LIMITS OF YOUR DC -----+
+// if(Distance<10) Dist=10;
+// else
+Dist
+=
+Distance
+;
+//+--------------------------------------------------------------------------+
+remove the comment in the block and set the Dist value.
+//+-------------------------------
+FIND OUT ABOUT THE LIMITS OF YOUR DC
+-----+
+if
+(
+Distance
+<
+10
+)
+Dist
+=
+10
+;
+else
+Dist
+=
+Distance
+;
+//+--------------------------------------------------------------------------+
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8408

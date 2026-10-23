@@ -1,0 +1,4 @@
+Description:
+This EA automatically moves your stop loss to break even at a predefined level.
+Copy Stop Loss Mover into the experts folder of MetaTrader. Open MetaTrader. Attach EA to chart after trade has been entered.
+On the inputs tab, change Move_SL-at to your desired price target. The EA will move your Stop Loss to Break even once price has achieved that price.

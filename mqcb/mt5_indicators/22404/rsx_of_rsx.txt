@@ -1,0 +1,9 @@
+History :
+The original idea for this indicator comes from Mark Jurik (the original inventor of RSX - Relative Strength Quality Index). His idea was to apply RSX to RSX and then to use that as a new indicator. This indicator does that : calculates RSX and then that calculated RSX uses as a new "price" for next RSX calculation
+Basics :
+Only two parameters are used :
+RSX period
+and price
+No other parameter needed for this indicator
+Usage :
+You can use color change as signal

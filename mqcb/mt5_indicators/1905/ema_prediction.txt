@@ -1,0 +1,11 @@
+Real author:
+Codersguru
+A semaphore arrow indicator using two moving averages.
+The signals occur when at the crossing point of two MAs. An additional filter for signal generation is the direction of the candlestick. For example, if the fast MA crosses the slow MA upward, and the candlestick on the current bar is bullish, it is a buy signal. When the fast MA crosses the slow one downward and the candlestick is bearish, it is a signal to sell.
+This indicator was first implemented in MQL4 and published in the
+Code Base at mql4.com
+on 26.02.2008.
+The EMA_Prediction indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1905

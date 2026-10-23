@@ -1,0 +1,3 @@
+The indicator is designed to show how the seven major currencies have moved against the US dollar.
+All currencies are normalised to a start at an earlier point in time ‘p’ and there is also an exponentially weighted moving average filter to provide a smoothing function ‘k’.  The graph is subsequently updated at each period increment from the starting position.
+Due to the standard form in which the Canadian Dollar, Swiss Franc and Japanese Yen are expressed in relation to other USD currency pairs, they are shown inverted and dotted. Sometimes the full display does not emerge until after the period is changed.

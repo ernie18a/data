@@ -1,0 +1,7 @@
+The idea is as follows:
+If the cross doesn't touch the red line, it is an alert.
+I tried trading on a 5-minute chart. The results obtained are very good. It easily makes 50-100 pips daily.
+STOP LOSS should be placed at max/min of the preceding bar. TP is about 5-15 pips distant.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8005

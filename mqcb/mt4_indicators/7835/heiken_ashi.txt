@@ -1,0 +1,7 @@
+Custom Indicator as Candlesticks Example.
+For Heiken Ashi we recommend the following chart settings ( press F8 or select on menu ’Charts’->’Properties…’):
+1. On ’Color’ Tab select ’Black’ for ’Line Graph’.
+2. On ’Common’ Tab disable ’Chart on Foreground’ checkbox and select ’Line Chart’ radiobutton.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7835

@@ -1,0 +1,15 @@
+The indicator displays a set of eight Moving Averages. It allows setting methods and calculation prices for all MAs at a time. An individual calculation period is set for each moving average.
+There are three adjustable parameters:
+Calculated method MA
+- the calculation method used for all MAs;
+Calculated price MA
+- the calculation price used for all MAs;
+Periods of all MA
+- individual periods for the MAs. Set as a text parameter with the comma "," separator.
+Fig.1 The SMA method
+Fig.2 The EMA method
+Fig.3 The SMMA method
+Fig.4 The LWMA method
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19789

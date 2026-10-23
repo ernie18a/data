@@ -1,0 +1,6 @@
+Indicator MACD with crossing.
+Parameters:
+FastEMA=12;
+SlowEMA=26;
+SignalSMA=9;
+MACD with crossing

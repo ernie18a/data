@@ -1,0 +1,22 @@
+Oscillator DBB displays as two lines the chart of the price distance from the lines of indicator Bollinger Bands.
+Two display options are possible:
+In percents;
+In price points.
+The indicator has four configured parameters:
+BB Period
+- Bollinger Bands calculation period;
+BB Deviation
+- Bollinger Bands deviation;
+Applied price
+- the calculation price;
+Display mode
+- display mode:
+Percentage
+- in percents;
+Price points
+- in price points.
+Fig 1. Displaying in percents
+Fig. 2. Displaying in price points
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21035

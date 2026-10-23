@@ -1,0 +1,4 @@
+Author: Jjk2
+Indicator MBA. Uses signals of indicators: MACD, Stochastic, RSI, Momentum. Look the description at this
+forum
+.

@@ -1,0 +1,1 @@
+This is the RSI indicator applied to Kalman Filter, this has the same interpretation that normal RSI, on the image, this can be seen in the separate window, this version is the last fix version

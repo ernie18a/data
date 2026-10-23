@@ -1,0 +1,12 @@
+Author:
+Inovance
+Easily save your indicator values and the Open timestamp, Open, High, Low, Close, Volume data to a csv file. To find the saved file open the MetaTrader 4 directory, open the "MQL4" folder and your file will be in the "Files" folder.
+It will capture both all the historical data in your chart and changing values with every new tick.
+To use:
+Input your indicator periods;
+Re-name the indicator buffers;
+Define your indicators;
+Name the column headers;
+Identify indicator buffers to be written to file;
+Enjoy!
+Example:

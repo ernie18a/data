@@ -1,0 +1,2 @@
+The indicator precisely quantifies market noise, helping traders distinguish between periods of high and low volatility
+graphically represented on the chart, allowing for easy interpretation and quick decision-making.

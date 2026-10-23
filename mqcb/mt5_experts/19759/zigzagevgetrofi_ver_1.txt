@@ -1,0 +1,37 @@
+The author of the idea
+:
+Evgeniy Trofimov
+,
+the mq5 code author
+:
+barabashkakvn
+.
+Works on a new bar. The nearest vertex of the ZigZag indicator is found:
+Vertex at the bar High means a signal to open BUY and to close all existing SELL positions.
+Vertex at the bar Low means a signal to open SELL and to close all existing BUY positions.
+The
+Signal reverse
+parameter allows reversing signals.
+Input Parameters
+Depth
+- ZigZag indicator parameter;
+Deviation
+- ZigZag indicator parameter;
+Backstep
+- ZigZag indicator parameter;
+Volume position
+- the volume of a position to open;
+Signal reverse
+- the flag is responsible for reversing positions;
+magic number
+- Expert Advisor identifier.
+Testing in the "Every Tick" tick generation mode.
+EURUSD,M30 (
+Signal reverse
+== false):
+EURUSD,M30 (
+Signal reverse
+== true):
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19759

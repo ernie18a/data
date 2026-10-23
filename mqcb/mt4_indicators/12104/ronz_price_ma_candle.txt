@@ -1,0 +1,6 @@
+MA-Based Price Candle. Viewing MA Indicator as price candle.
+Recommendations:
+Set period and method in your favor.
+Go long if previous candle was white.
+Go short if previous candle was red.
+Stop-loss on previous green shadow or prevous candle shadow.

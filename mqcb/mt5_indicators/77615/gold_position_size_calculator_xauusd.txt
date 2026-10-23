@@ -1,0 +1,28 @@
+Gold Position Size Calculator (XAUUSD)
+is a free risk management indicator for MetaTrader 5, designed specifically for gold traders.
+The idea
+Most retail gold traders lose money not because of bad entries, but because of wrong position sizes. Risking a fixed lot size on XAUUSD means every trade carries a different, unknown risk. This indicator applies the classic risk-based position sizing formula:
+Lot size = (Balance x Risk %) / (Stop distance in points x Tick value per lot)
+so that if the stop-loss is hit, the loss equals exactly the chosen percentage of the account - no more, no less.
+How it works
+1. Attach the indicator to a Gold (XAUUSD) chart. It works on any timeframe.
+2. Set your account balance and risk per trade (%).
+3. Enter your entry price (or leave 0 to use the current price) and your stop-loss price.
+4. Optionally set a take-profit price.
+5. Read the calculated lot size from the panel - that is the position size that risks exactly your chosen % if the stop is hit.
+The panel shows: balance, risk %, risk amount, stop distance in points, calculated lot size, risk/reward ratio and potential profit. Entry, stop-loss and take-profit lines are drawn directly on the chart.
+External variables (inputs)
+InpAccountBalance - account balance used in the calculation
+InpRiskPercent - risk per trade in percent of the balance
+InpEntryPrice - planned entry price (0 = current close)
+InpStopPrice - stop-loss price (0 = not set)
+InpTakeProfit - take-profit price (0 = not set)
+InpContractSize - contract size per 1.00 lot (0 = read automatically from the symbol specification)
+InpShowLines - show or hide entry, stop and TP lines
+InpShowPanel - show or hide the info panel
+InpPanelCorner - panel corner
+Notes
+- Contract size is read automatically from the broker's symbol specification, so the indicator works on XAUUSD, XAUUSDm, gold futures and any other instrument without manual setup.
+- The math is non-repainting: values are recalculated only when inputs change or a new bar opens.
+- This is a risk calculation tool, not a signal service: it does not open trades and does not promise profits.
+A Pro version with one-click execution, break-even, trailing stop and partial close is in development.

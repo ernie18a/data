@@ -1,0 +1,283 @@
+Indicator: Alerts on New Bar
+Please read all relevant Information
+.
+Other than the below notes the Author cannot respond to individual inquiry. The user will find abundant help and advice on the internet - MetaQuotes, Forums, Search Engines, Video Sites etc.
+Alert Options:
+Popup Alert
+Sound
+Email
+Push Notification
+If the Popup Alert and Sound Alert are both set to true only the Popup Alert will function. For the Sound Alert to work the Popup Alert must be set to false. This is a MT4 function.
+Any Alert set to true will fire it the chart Period (Timeframe) is changed. The same applied if MT4 is loaded and Alerts are set to true. I have not solved these problems (see here -
+posts #943,#944
+) and nor have I seen them solved for New Bar Alerts.
+All Alerts will state Broker Time and Date.
+New Bar Alerts can also work with most Renko and Constant Range (Synthetic) candles.
+Sound (applicable only if extra sound alerts wanted)
+The Indicator default sound alert is "alert.wav" and corresponds to options 1 of the Indicator Sound_Bite parameter. "alert.wav is a MT4 default sound file. The sound file associated with option 1 cannot be changed unless recoded.
+The Sound_Bite parameter has additional sound options 2, 3, 4, 5, 6, 7, 8 but no associated sound bite files.The user must add these files to the MT4/Sounds folder.
+This is optional not a must do.
+An example sound bite is provided in SB2.zip (see Download). Place this unzipped sound bite - SB2.wav - in the MT4/Sounds folder and it will correspond to option 2 of the Indicator Sound_Bite parameter.
+Fee additional sound bites can be got -
+HERE
+.
+Hint - search for "chimes", "bells" etc.
+Additional sound bite files
+must
+be in .wav format and renamed SB2.wav, SB3.wav,SB4.wav, SB5.wav, SB6.wav, SB7.wav or SB8.wav; placed in the MT4/ Sounds folder; they will correspond to to options 2, 3, 4, 5, 6, 7, 8 of the Indicator Sound_Bite parameter. Options not required do not need associated sound files.
+Sound files not in .wav format must be converted to .wav format with an audio converter and named in accordance with the above directives.
+Other than Alert sounds, Event sounds can be changed from Tools → Options → Event.
+Push Notification: (iOS and Android)
+Push Notifications are fast, fail safe and easy to set up.
+Speed will depend on capability of Internet Connection and Computer and Mobile Devices.
+First install MT4 on Mobile Device.
+Locate MetaQuotes ID. See - Messages or Messages in Settings
+Enter MetaQuotes ID in Client Terminal of MT4 on computer (Tools → Options → Notifications).
+Note: The same MetaQuotes ID can be used with multiple Client Terminals (different Brokers).
+Click the Test Button.
+Open up MT4 Terminal (Ctrl + T) and select the Journal Tab and check under Messages if the the Test was successful.
+One a successful Test is obtained Push Notification Alerts can be set in the Alerts New Bar Indicator.
+Important:
+Ensure that your mobile device has sound turned on for notifications.
+If further clarification is required, google and youtube "MT4 push notification."
+Below: Two Push Notifications as received on Android Mobile Device. Each from different Brokers using the same MetaQuotes ID.
+The image below shows time displayed as hh:mm. The user code will display time as hh:mm:ss.
+The Broker time is one hour ahead of local time.
+Below: Push Notifications receive on iOS Mobile Device.
+The image below shows time displayed as hh:mm. The user code will display time as hh:mm:ss.
+The Broker time is one hour ahead of local time. PN delivery is, depending on equipment capability, instantaneous or within a few seconds. The two minute (on hour) time difference is delay in taking screen shot.
+Email
+There are a number of ways to setup MT4 Email and the user should research the Internet for clarification.
+I have successfully set up Email with stunnel and hMailServer. Both are FREE.
+Here is how to do it with stunnel.
+Go to his
+forum
+for further clarification.
+First download the stunnel install file. If the following link is out of date or broken search the internet for a new stunnel download link.
+Stunnel Download.
+Install stunnel. Note:
+During the the installation a black cmd screen opened requesting location information. I did not type in any information and merely pressed the Enter Key at every request untill the cmd screen closed.
+After installation a stunnel icon should be on the desktop. Click on the trunnel icon and open the stunnel configuration file. It should open in NotePad. Edit the stunnel.conf file in accordance with the above referenced Forum instructions. A copy of my edited file (stunnel.conf), current at Dec 2013, can be found in Stunnel Config.zip. See - Download.
+Fill Server and Email information in the MT4 Terminal (Tools → Options → Email).
+Note:
+stunnel must be running for the Indicator Email function to work - check if stunnel icon is on the task bar.To automate every time the computer turns off just create a shortcut of RUN STUNNEL then paste this shortcut into the STARTUP folder.
+Click the Test Button.
+Open up MT4 Terminal (Ctrl + T) and select the Journal Tab and check under Messages if the the Test was successful.
+Once a successful Test is obtained Email Alerts can be set in the Alerts New Bar Indicator.
+Note:
+I filled in SMTP sever as 127.0.01:25 as suggested by Sangmane in the above referenced forum because smtp.gmail.com:25 did not work for me.
+I used the same email address for SMTP login, From and To. Different Email addresses can be used for From and To. I would deem SMTP login and From would have to be the same Email address but I have not tested to prove certainty.
+Below: Email as received in Email Client. (Desktop, Laptop and Mobile Devices).
+The image below shows time displayed as hh:mm. The user code will display time as hh:mm:ss.
+New Bar Alert Label
+The New Bar Alert Label indicates Alerts set to true. The below image indicates Popup Alert, Email Alert and Push Notification set to true.
+The New Bar Alert Label font is at default Bold. Bold can be turned off. See Parameters: Font_Bold - true/false.
+The New Bar Alert Label can be hidden. See Parameters: Show Font - true/false.
+Alert Truth Table
+The indicator has 4 different Alerts, each Alert has two states - true or false. The total possible combinations of Alerts are 16. (2 to exponent 4 or 2 x 2 x 2 x 2)
+When Popup Alert and Sound Alert are simultaneously true only Popup Alert is functional. This result in a loss 4 unique combinations leaving 12 combinations out of 16.
+This can be seen under columns Logical Output-2 and Modified Output where S is effectively cancelled in rows 1, 2, 3 and 4 due to the coexistence of A (Popup Alert) and S(SoundAlert) both in state of T(true). See explanation under heading Sound.
+The above results in column Modified Output rows 1, 2, 3 and 4 being duplications of rows 5, 6, 7 and 8 respectively.
+Key:
+T: True
+F: False
+A: Popup Alert
+S: Sound Alert
+M: Email Alert
+P: Push Notification
+12 Alert combinations: AMP, AM, AP, A, SMP, SM, SP, S, MP, M, P & no Alerts.
+Logical Input-1
+Logical Input-2
+Logical Input-3
+Logical Input-4
+Logical Output-1
+Logical Output-2
+Logical Output-3
+Logical Output-4
+Modified Output
+A
+S
+M
+P
+A
+S
+M
+P
+A - S - M - P
+1
+T
+T
+T
+T
+1
+A
+S
+cancelled
+M
+P
+1
+AMP
+2
+T
+T
+T
+F
+2
+A
+S
+cancelled
+M
+2
+AM
+3
+T
+T
+F
+T
+3
+A
+S
+cancelled
+P
+3
+AP
+4
+T
+T
+F
+F
+4
+A
+S
+cancelled
+4
+A
+5
+T
+F
+T
+T
+5
+A
+M
+P
+5
+AMP
+6
+T
+F
+T
+F
+6
+A
+M
+6
+AM
+7
+T
+F
+F
+T
+7
+A
+P
+7
+AP
+8
+T
+F
+F
+F
+8
+A
+8
+A
+9
+F
+T
+T
+T
+9
+S
+M
+P
+9
+SMP
+10
+F
+T
+T
+F
+10
+S
+M
+10
+SM
+11
+F
+T
+F
+T
+11
+S
+P
+11
+SP
+12
+F
+T
+F
+F
+12
+S
+12
+S
+13
+F
+F
+T
+T
+13
+M
+P
+13
+MP
+14
+F
+F
+T
+F
+14
+M
+14
+M
+15
+F
+F
+F
+T
+15
+P
+15
+P
+16
+F
+F
+F
+F
+16
+16
+Parameters
+Popup_Alert - false;
+Sound_Alert - false;
+Email_Alert - false;
+Push_Notification - false;
+Sound_Bite - 1;
+New_Bar_Label - "NB Alert";
+Font_Color - DodgerBlue;
+Font_Size - 11;
+Font_Bold - true;
+Show_Font - true;
+Left_Right - 25;
+Up_Down - 100;
+Corner - 1;

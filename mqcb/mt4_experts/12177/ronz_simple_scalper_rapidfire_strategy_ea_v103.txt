@@ -1,0 +1,12 @@
+This Expert Advisor is based on one of 17 proven currency strategies by Mario Singh.
+The Expert Advisor uses MA and Parabolic SAR on M1 Time Frame.
+Indicator used : MA and Parabolic SAR.
+Timeframe used : M1
+Pair : Best with EURUSD
+Risk/Reward : 15 pips:10 pips
+Inputs parameters:
+Change Log:
+v1.03
+Fixed not closing order on trend close option;
+Added Lot Risk Option;
+Fixed Lot Minimum/Maximum/Step.

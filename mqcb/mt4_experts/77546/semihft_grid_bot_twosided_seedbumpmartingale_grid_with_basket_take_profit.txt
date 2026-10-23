@@ -1,0 +1,96 @@
+⚠ Read before anything else
+This is a
+two-sided martingale grid system
+. It has no per-trade stop loss by default, and lot sizes double as the grid extends against an open side. Drawdown and exposure can grow quickly during a sustained one-directional move. BasketSL_USD (an emergency floating-loss cutoff) exists but is
+off by default
+. This EA is published as a working, transparent implementation of a specific grid mechanic for study and testing — not as a low-risk or "set and forget" system. Test on a demo account, understand the worst-case drawdown for your own lot/step settings before considering live use, and never risk money you can't afford to lose on a martingale approach.
+Timeframe:
+Any (tick-driven, not bar-driven)
+Symbols:
+XAUUSD, and NAS100/US100/USTEC-style index CFDs (separate input blocks for each, auto-detected from the symbol name)
+Latency:Recomended less then 80ms.
+The three phases:
+Phase 1 — Seed (flat).
+When there are no open orders, the EA places 3 pending stop orders on each side of price: a nearer level at SeedLotNear and two farther levels at SeedLotFar . This is a small, symmetric starting ladder — it doesn't yet express a directional bias.
+Phase 2 — Bump.
+As soon as one side's nearest level (L1) fills, the
+opposite
+side's pending L2 lot is raised to RecoveryBumpLot . The idea is that if price has moved decisively one way, the level waiting to catch a pullback the other way is given a bit more size.
+Phase 3 — Martingale.
+Once either side reaches 2 fills, both sides switch every still-pending level (2 through 5) to a doubling sequence based on RecoveryBumpLot and MartingaleMultiplier (default lot = RecoveryBumpLot × multiplier^(level−2), so 1×, 2×, 4×, 8× by default), and two additional levels (4 and 5) are added on both sides. Already-filled levels are never touched or resized.
+Basket management:
+Every tick, the EA sums floating profit + swap + commission across all of its own open positions (matched by symbol and magic number). If that total reaches BasketTP_USD , everything is closed and every pending order cancelled — the grid then re-arms from Phase 1 on the next tick. If BasketSL_USD is set above zero, the same full-close happens on the loss side as an emergency stop.
+Self-healing and market-fallback fills:
+The grid is reconciled every tick, not just on new bars: ReconcileGrid() checks each level's status and places, resizes, or replaces pending orders as needed to match the current phase's target lot sizes. If a level's price has already been passed by a fast market move — common on faster-moving symbols where a BuyStop / SellStop at that price would just be rejected — the EA fills it at market instead of leaving the level empty, since the level's condition ("price traded through here") has effectively already been satisfied.
+Multi-symbol handling:
+XAUUSD and index CFDs like NAS100 commonly differ a lot in point size and in the broker's minimum distance for pending orders ( MODE_STOPLEVEL / MODE_FREEZELEVEL ). A grid step tuned for gold can silently place zero orders on an index. This EA keeps entirely separate input blocks for metals and for indices, selected automatically from the chart symbol's name (or forced via SymbolProfile ), and automatically widens the configured grid step if it's narrower than the current symbol's broker-required minimum. Every failed OrderSend / OrderModify / OrderDelete is logged with its GetLastError() code so a silent failure is visible in the Experts log instead of the EA just doing nothing.
+Inputs
+Symbol profile
+Input
+Default
+Meaning
+SymbolProfile
+PROFILE_AUTO
+Auto-detect XAUUSD vs NAS100/US100 from the symbol name, or force one
+XAUUSD / metals
+Input
+Default
+Meaning
+Metals_SeedLotNear
+0.02
+Lot for level 1 each side
+Metals_SeedLotFar
+0.01
+Lot for levels 2–3 each side
+Metals_RecoveryBumpLot
+0.05
+Lot used from Phase 2 onward
+Metals_GridStepPoints
+50
+Spacing between levels, in points
+Metals_MaxSpreadPoints
+40
+Don't arm a new seed grid if spread exceeds this
+NAS100 / US100
+Input
+Default
+Meaning
+Index_SeedLotNear / Index_SeedLotFar / Index_RecoveryBumpLot
+0.20 / 0.10 / 0.50
+Same roles as above, index-sized
+Index_GridStepPoints
+50
+Re-check against your broker's index point size
+Index_MaxSpreadPoints
+150
+Indices typically quote wider spreads in points
+Shared
+Input
+Default
+Meaning
+MagicNumber
+990011
+Order identification
+MartingaleMultiplier
+2.0
+Doubling factor once Phase 3 activates
+BasketTP_USD
+2.00
+Close everything at this combined floating profit
+BasketSL_USD
+0
+Emergency close at this floating loss; 0 = disabled
+Slippage
+5
+Points
+LogOrderErrors
+true
+Print GetLastError() detail on any failed order
+Setup notes:
+Check Metals_GridStepPoints / Index_GridStepPoints against your broker's actual point size and MODE_STOPLEVEL for the symbol before running — the EA will auto-widen an undersized step, but it's worth understanding what spacing you'll actually get rather than relying on the auto-correction.
+BasketTP_USD and BasketSL_USD are in account currency, not pips or percent — a small BasketTP_USD combined with larger lot sizes from the martingale phase means the basket can close very quickly once it's in that phase.
+If the EA restarts (terminal restart, VPS reboot) while a grid is already active, OnInit() detects existing orders under its magic number and recovers the grid's base price from the B1/S1 level rather than starting a fresh, potentially overlapping grid.
+Notes and limitations:
+This is a specific, documented grid mechanic reverse-engineered from observed behaviour, not a tuned or optimised trading system, and it carries the structural risks inherent to any martingale approach: a strong sustained trend against one side will keep escalating that side's exposure through Phase 3. There is no cap on how far the grid can extend beyond level 5, and BasketSL_USD is the only hard backstop, disabled by default. Back-test across varied market conditions (trending and ranging) and forward-test on demo before drawing any conclusions about its viability, and size the seed/bump/martingale lots conservatively relative to account equity.
+Credits / originality statement
+This EA is an original implementation, reverse-engineered by the author from a screen recording and annotated screenshots of a "Semi HFT Algo Trading bot," then extended with multi-symbol support, self-healing reconciliation, and error logging not present in the original observation. It has no external indicator or DLL dependencies.

@@ -1,0 +1,15 @@
+THE STORY BEHIND THIS TRADING TOOL:
+Most traders lose and this is a fact. There are lot of reasons behind their losses, but the main reason in my opinion is that they can't control their emotions since they are dealing with money. So when we see a trader keep holding a losing trade for so long or when we see a trader closes a winning trade too soon, this trader don't know how to manage emotions.
+For example, if we give Ben, Joey and Rachel the same trading plan with the same balance and the same trading information, in the end of the day every one of them will have a different result because they are human beings and have emotions.
+So what I did, I create an eyeglasses (a.k.a. the RiskPerTrade trading tool) that will allow Ben, Joey and Rachel to see everything on their screen in terms of % instead of money.
+I urge you to try wearing these eyeglasses :)
+HOW TO USE IT :
+You can check the following video that will explain how to use this trading tool
+SCREENSHOTS :
+ALTERNATIVE TRADING TOOL:
+You can also consult the following indicator which is the
+Overall Risk trading tool
+THE STORY BEHIND THE OVERALL RISK TRADING TOOL:
+The story behind developing this trading tool was to build a good trading habit, which is to always think in terms of percentage rather than amount of money. This way will allow us to treat small accounts as we are treating bigger accounts, which will allow us to switch from small accounts to bigger accounts smoothly.
+HOW TO USE IT :
+You can check the following video that will explain how to use this trading tool

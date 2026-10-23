@@ -1,0 +1,2 @@
+RSI Candles (RSI that calculates RSI of High, Low Open and Close and displays those values as candles) with an addition of Trend Envelopes.
+Since the Trend Envelopes are used on the set of Open, High, Low and Close price it only seems logical that it can be applied to this type of indicator (that has the equivalent of all those prices). Results are logical and adding Trend Envelopes to such an RSI seems to be helping in assessing trend based on RSI candles indicator. Some experimenting is advised before using it in live trading.

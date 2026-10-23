@@ -1,0 +1,371 @@
+Demo it First... $5000 Flipped To $243K in 3 Months. Coders Needed, Not Finished.
+Strategy Tester Report
+TheMasterMind
+AlpariUS-Demo (Build 216)
+Symbol
+EURUSD (Euro vs US Dollar)
+Period
+5 Minutes (M5) 2008.03.31 00:00 - 2008.06.19 07:30 (2008.03.30 - 2008.07.01)
+Model
+Every tick (the most precise method based on all available least timeframes)
+Parameters
+Lots=200; StopLoss=2000; TakeProfit=0; TradeAtCloseBar=true; TrailingStop=0; TrailingStep=1; BreakEven=0; MagicNumber=0; Repeat=3; Periods=5; UseAlert=false; SendEmail=true; TradeLog="MasterMind"; Slippage=3; Indicator_Setting="---------- Indicator Setting"; Crash=false; TimeFrame=0; Length=5; Method=3; Smoothing=1; Filter=5; RealTime=true; Steady=false; Color=true; Alerts=true; EmailON=false; SignalPrice=true; SignalPriceBUY=Yellow; SignalPriceSELL=Aqua; CountBars=1485;
+Bars in test
+17601
+Ticks modelled
+587455
+Modelling quality
+65.18%
+Mismatched charts errors
+62
+Initial deposit
+5000.00
+Total net profit
+243061.68
+Gross profit
+300660.90
+Gross loss
+-57599.22
+Profit factor
+5.22
+Expected payoff
+15191.35
+Absolute drawdown
+4202.40
+Maximal drawdown
+182004.27 (47.03%)
+Relative drawdown
+90.11% (163677.74)
+Total trades
+16
+Short positions (won %)
+8 (75.00%)
+Long positions (won %)
+8 (100.00%)
+Profit trades (% of total)
+14 (87.50%)
+Loss trades (% of total)
+2 (12.50%)
+Largest
+profit trade
+71525.61
+loss trade
+-54596.85
+Average
+profit trade
+21475.78
+loss trade
+-28799.61
+Maximum
+consecutive wins (profit in money)
+9 (279697.49)
+consecutive losses (loss in money)
+1 (-54596.85)
+Maximal
+consecutive profit (count of wins)
+279697.49 (9)
+consecutive loss (count of losses)
+-54596.85 (1)
+Average
+consecutive wins
+7
+consecutive losses
+1
+#
+Time
+Type
+Order
+Size
+Price
+S / L
+T / P
+Profit
+Balance
+1
+2008.03.31 20:50
+buy
+1
+1.60
+1.5774
+1.3774
+0.0000
+2
+2008.04.09 19:00
+close
+1
+1.60
+1.5855
+1.3774
+0.0000
+1334.88
+6334.88
+3
+2008.04.09 19:00
+sell
+2
+2.10
+1.5856
+1.7856
+0.0000
+4
+2008.04.10 18:45
+close
+2
+2.10
+1.5729
+1.7856
+0.0000
+2608.41
+8943.29
+5
+2008.04.10 18:45
+buy
+3
+3.00
+1.5730
+1.3730
+0.0000
+6
+2008.04.11 04:45
+close
+3
+3.00
+1.5773
+1.3730
+0.0000
+1298.10
+10241.39
+7
+2008.04.11 04:46
+sell
+4
+3.40
+1.5772
+1.7772
+0.0000
+8
+2008.05.12 05:55
+close
+4
+3.40
+1.5405
+1.7772
+0.0000
+11561.02
+21802.41
+9
+2008.05.12 05:55
+buy
+5
+7.30
+1.5404
+1.3404
+0.0000
+10
+2008.05.12 12:50
+close
+5
+7.30
+1.5461
+1.3404
+0.0000
+4161.00
+25963.41
+11
+2008.05.12 12:50
+sell
+6
+8.70
+1.5462
+1.7462
+0.0000
+12
+2008.05.19 17:20
+close
+6
+8.70
+1.5490
+1.7462
+0.0000
+-3002.37
+22961.04
+13
+2008.05.19 17:20
+buy
+7
+7.70
+1.5489
+1.3489
+0.0000
+14
+2008.05.21 22:10
+close
+7
+7.70
+1.5789
+1.3489
+0.0000
+23141.58
+46102.62
+15
+2008.05.21 22:10
+sell
+8
+15.40
+1.5788
+1.7788
+0.0000
+16
+2008.05.27 22:05
+close
+8
+15.40
+1.5684
+1.7788
+0.0000
+15156.68
+61259.30
+17
+2008.05.27 22:05
+buy
+9
+20.50
+1.5685
+1.3685
+0.0000
+18
+2008.05.28 09:20
+close
+9
+20.50
+1.5750
+1.3685
+0.0000
+13380.35
+74639.65
+19
+2008.05.28 09:20
+sell
+10
+25.00
+1.5751
+1.7751
+0.0000
+20
+2008.05.29 18:10
+close
+10
+25.00
+1.5517
+1.7751
+0.0000
+57802.50
+132442.15
+21
+2008.05.29 18:10
+buy
+11
+44.40
+1.5518
+1.3518
+0.0000
+22
+2008.06.05 20:15
+close
+11
+44.40
+1.5581
+1.3518
+0.0000
+28811.16
+161253.31
+23
+2008.06.05 20:15
+sell
+12
+54.10
+1.5582
+1.7582
+0.0000
+24
+2008.06.10 20:45
+close
+12
+54.10
+1.5447
+1.7582
+0.0000
+71525.61
+232778.92
+25
+2008.06.10 20:46
+buy
+13
+78.10
+1.5445
+1.3445
+0.0000
+26
+2008.06.13 00:30
+close
+13
+78.10
+1.5466
+1.3445
+0.0000
+17455.35
+250234.27
+27
+2008.06.13 00:30
+sell
+14
+83.90
+1.5467
+1.7467
+0.0000
+28
+2008.06.17 02:15
+close
+14
+83.90
+1.5465
+1.7467
+0.0000
+117.46
+250351.73
+29
+2008.06.17 02:15
+buy
+15
+84.00
+1.5464
+1.3464
+0.0000
+30
+2008.06.18 19:40
+close
+15
+84.00
+1.5526
+1.3464
+0.0000
+52306.80
+302658.53
+31
+2008.06.18 19:40
+sell
+16
+101.50
+1.5527
+1.7527
+0.0000
+32
+2008.06.19 07:30
+close at stop
+16
+101.50
+1.5578
+1.7527
+0.0000
+-54596.85
+248061.68

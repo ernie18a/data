@@ -1,0 +1,6 @@
+ZigZag with its values displayed as fractal labels.
+The labels are repainted similar to the extreme values of the original ZigZag!
+Fig.1. ZigZag_NK_Arrows indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16592

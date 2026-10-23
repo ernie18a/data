@@ -1,0 +1,7 @@
+Real author:
+https://www.mql5.com/en/forum/3032/page1
+This Expert Advisor performs the synchronization of charts.
+bar/candle/line
+timeframe
+zoom
+starting candle number

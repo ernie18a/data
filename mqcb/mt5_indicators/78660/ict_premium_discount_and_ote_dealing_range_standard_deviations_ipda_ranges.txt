@@ -1,0 +1,30 @@
+The dealing range is the core of ICT's premium / discount idea: look to buy in discount (below 50 % of the range), to sell in premium (above it), and to enter in the OTE band. This indicator finds the range from confirmed swings and draws all of its levels.
+Dealing range
+From the older of the last confirmed swing high and swing low up to now. The top is the highest high and the bottom the lowest low since that swing, so the range grows when price makes a new extreme. A newly confirmed swing starts a new range.
+A swing high is a high above the highs of N candles on each side (N = swing strength, default 10). It counts only when its N right candles have closed, so nothing repaints.
+Up leg: the bottom came before the top. Down leg: the top came first.
+What it draws
+Premium zone (above equilibrium) in red, discount zone (below) in green, and the equilibrium line (50 %).
+OTE (optimal trade entry): the 62 % - 79 % retracement of the leg as an amber band with the 70.5 % line. It lies in discount for an up leg and in premium for a down leg.
+Standard deviation projections (ICT): the range height projected beyond the end of the leg, -1, -2, -2.5 and -4 by default (you can type your own list).
+Optional: more retracements (23.6, 38.2, 61.8 and 78.6 %).
+IPDA data ranges: highest high and lowest low of the last 20, 40 and 60 completed trading days. Equal levels share one line and one label (for example "IPDA 20/40 H"). The short Sunday evening session of GMT+0 servers counts with Monday.
+A status line, for example "Up leg: price in DISCOUNT + OTE". Hover a zone or a line to see its price.
+Alerts (when a candle closes)
+A new dealing range.
+Price comes into the OTE band (first touch of each range).
+A candle closes across equilibrium.
+Popup, push notification and e-mail.
+Buffers for Expert Advisors (iCustom, not drawn)
+A closed candle keeps the values it had at its close (no repaint):
+0 / 1: range top / bottom, 2: equilibrium, 3 / 4: OTE 62 % / 79 %
+5: leg (+1 up, -1 down)
+6: zone of the close (+1 premium, -1 discount, 0 at equilibrium, +2 / -2 inside the OTE band)
+7 - 12: IPDA 20 / 40 / 60-day high and low
+EMPTY_VALUE when there is no value
+Example: double zone[]; CopyBuffer(handle, 6, 1, 1, zone); zone[0] == -2 means the last closed candle closed in discount inside the OTE band.
+Good to know
+Works on any symbol and time frame. A larger swing strength gives the bigger range of the higher time frame.
+Checked from M1 to D1 on EURUSD, GBPUSD and XAUUSD.
+These levels are ICT conventions, not guarantees: the indicator shows where they are, it gives no buy or sell signals.
+The indicator only draws and calculates; it never trades.

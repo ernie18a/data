@@ -1,0 +1,22 @@
+In the days of the burdensome thoughts about the effectiveness of oscillators usage I often needed the normalization of their values, i.e. the adduction of the oscillations of the indicator to the range [-1;1]. This often opens new possibilities, the simpliest of them is the controlling of the values of the indicator by the concrete levels (0.5, 0.8 or others), and not by some casual values estimated approximately depending on the market. Of course, if the indicator is already normalized there is no need to consider this product, and if it is not...use it, please, don't judge me strictly for the raw code.
+Parameters:
+string Indicator
+- the indicator itself that is passed to the icustom() function then. Unfortunately, the MQL4 automatization tools are not enough for the addition of the standard indicators here. On the other hand, who can prevent a curious coder from changing an entry in the program?
+int mode
+- the number of the necessary line of the initial indicator...
+int param1
+int param2
+- ... and its parameters. Unfortunately again, the imagination of the MQL developers is enough just for allowing themselves to write functions with the variable number of parameters (like Print), and for supporting the address arithmetics (in my opinion, the last one is made solely to make the common users feel themselves inferior comparing to the gods :)))). So let's work manually.
+Picture:
+Comments:
+The calculations are performed in two stages:
+1. At the initialization stage (the init() function, if somebody doesn't know:) the whole array of the indicator data is analized with a view to the calculation of the distinctive period, i.e. the period within which the mean square value of the indicator can provide the insight to the that mean square value (MSV) but on the whole history.
+Let me explain. Suppose we have an oscillator and we've calculated its mean square for several consecutive oscillation periods. So let's make an agreement that there must be, for example, 3 periods (as I have - #define PERIODS_CHARACTERISTIC 3, I recommend not to use more, otherwise the processor will be orverloaded). The essence of the calculation is brought to the determination of how many bars on the average long one period (i.e. 2*average interval between two zeros of the indicator), and to the multiplication of the obtained value by 3.
+2. It is left to calculate MSV for every bar (like the square root of the dispersion) on the obtained three periods, to normalize the value of our indicator on it, and in the end to adduce everything to the dynamical diapason [-1;1] by means of passing it through the compressor-function f(x)=tanh(x) (hyperbolic tangent, I had to write the function by myself:))
+A pure technical example. The green line in the picture is my very old oscillator that characterizes the activity of the market (in point of fact it is the same as the MACD but it is by the volumes). The blue one - is the oscillator too, but is already passed through the
+-=Normalizator=-
+. The +-0.75, +-0.5, +-0.25 levels are clearly seen, and also you can see that all maximums and minimums, the regions of increasing and decreasing, and the points of crossing the zero level keep their positions.
+So, here you are... I'm not at fault if somebody don't like it.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8572

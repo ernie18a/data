@@ -1,0 +1,1 @@
+Basic RSI Template EA - Market entries by signal from Relative Strength Index indicator, basic default values of overbought 70 and oversold 30.  It's a template to use for further study or develop as you like.

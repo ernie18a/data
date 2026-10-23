@@ -1,0 +1,5 @@
+The title contains the idea based on observations of the market regularities. It has been written for the CHF/USD pair. Timer: 1hour. triggering timer: only Monday 9-00 Belarusian time. With the set stop loss and take profit it had worked in 2007.
+Description: At 9-00 Belarussian time (10-00 Moscow) opening price of an hourly candle is greater that (H+L + C )/3 of the previous 8-00 candle - buy, and vice versa. Do not enter the market at equal values. Online operation time is 10 minutes once a week - on Monday, hence the name. When testing, change the stop loss and take profit to new specified values. It is possible to set lot size increase based on the deposit. Feature - in 2007, it did not repeat consecutive loss trades, which allowed to double the lot after them, thus decreasing the losses.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8187

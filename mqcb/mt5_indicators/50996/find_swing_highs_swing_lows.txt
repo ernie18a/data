@@ -1,0 +1,25 @@
+Swing High/Low Identifier
+The
+Swing High/Low Identifier
+is a custom MetaTrader 5 (MT5) indicator designed to highlight significant swing points on your chart. This indicator identifies and marks swing highs and swing lows based on a configurable range of bars.
+-
+Swing Highs
+are marked with red arrows above the respective candles.
+-
+Swing Lows
+are marked with blue arrows below the respective candles.
+This tool helps traders quickly spot important price levels and patterns, which can be crucial for making informed trading decisions.
+### Useful Strategies
+1.
+Trend Reversal Identification:
+- Swing Highs can indicate potential resistance levels where a downtrend might begin.
+- Swing Lows can signify potential support levels where an uptrend might start.
+2. Support and Resistance Analysis:
+- Use the marked swing highs and lows to draw horizontal lines or channels that can act as key support and resistance levels.
+3. Price Action Trading:
+- Combine the indicator with price action techniques, such as candlestick patterns or breakout strategies, to confirm entries and exits at swing points.
+4. Swing Trading:
+- Utilize the swing highs and lows to determine entry and exit points based on the observed price swings and potential reversal areas.
+5. Confirmation for Other Indicators:
+- Use the swing points as confirmation for other technical indicators, such as moving averages or oscillators, to enhance the reliability of trading signals.
+This indicator provides a visual representation of key price points, helping traders enhance their technical analysis and decision-making processes.

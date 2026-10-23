@@ -1,0 +1,23 @@
+Author:
+Coders' Guru
+While discovering the
+MQL4
+New build (610) capabilities I found a very useful even
+OnTrade
+() highlighted in MetaEditor.
+I clicked F1 to see its implementation but unfortunately it's not supported yet in MQL4.
+That's why I created my own Simulator.
+This code will raise events on these cases:
+OnOpen
+: When open a new instant order.
+OnModify
+: When the order modified.
+OnStopLoss
+: When the order close because its StopLoss.
+OnTakeProfit
+: When the order close because its TakeProfit.
+OnClose
+: When the order close (Not by SL or TP).
+Please give it a test and tell me your comments.
+Regards,
+Coders' Guru

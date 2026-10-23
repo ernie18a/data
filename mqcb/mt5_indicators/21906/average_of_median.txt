@@ -1,0 +1,8 @@
+Average that uses median price instead of using "simple" price
+Average methods that can be used in this indicator are :
+simple moving average
+exponential moving average
+smoothed moving average
+linear weighted moving average
+More information on how median price is calculated you can find here :
+https://en.wikipedia.org/wiki/Median

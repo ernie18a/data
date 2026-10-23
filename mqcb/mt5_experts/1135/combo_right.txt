@@ -1,0 +1,35 @@
+The Expert Advisor is rewritten from MQL4, the author is
+Reshetov
+, link to the source
+https://www.mql5.com/en/code/7917
+.
+How it works
+There is a basic trading system. This Expert Advisor uses the CCI indicator, if the CCI value is higher than zero, it is a buy, if lower, it is a sell.
+The basic system can be wrong. To correct these errors linear perceptrons are used which sometimes take control and ignore the basic trading signals.
+The system has three perceptrons one for a sell, one for a buy, the third is the total.
+The perceptron exit value can be higher or lower than zero. If both the total perceptron and the first perceptron exit values are negative, a sell opens. If both total perceptron and the second perceptron exit values are positive, then a buy opens. In other cases the basic system signals are used.
+The author of the Expert Advisor recommends the following procedure of its setting. There is the pass parameter which can take values from 1 to 4. When 1, the perceptrons are not used, only the basic trading system is set. When pass=1, tp1, sl1, CCIPeriod, CCIPrice parameters should be optimized. Then, when pass=2, configure a sell perceprton when x12, x22, x32, x42, tp2, sl2, p2 parameters are optimized. Then, when pass=3, set a buy perceptron if x13, x23, x33, x43, tp3, sl3, p3 parameters are optimized. At last when pass=4, total perceptron is set and x14, x24, x34, x44, p4 parameters are optimized. The Expert Advisor uses pass=4.
+The image shows the results of work of the Expert Advisor in the tester. 1 is optimization results on the image. 2 is forward test results.
+Fig. 1. Optimization results.
+Fig. 2. Forward test results.
+Parameters
+tp1 - Take Profit when position opens by the basic trading signal.
+sl1 - Stop Loss when position opens by the basic trading signal.
+CCIPeriod - Period of CCI.
+CCIPrice - Price of CCI.
+x12, x22, x32, x42 - Weight of a sell perceptron.
+tp2 - Take Profit when position opens by a sell perceptron signal.
+sl2 - Stop Loss when position opens by a sell perceptron signal.
+p2 - The period of coverage of history data by a sell perceptron.
+x13, x23, x33, x43 - Weight of a sell perceptron.
+tp3 - Take Profit when position opens by a buy perceptron signal.
+sl1 - Stop Loss when position opens by a buy perceptron signal.
+p2 - The period of coverage of history data by a buy perceptron.
+x14, x24, x34, x44 - Weight of total perceptron.
+p2 - The period of coverage of history data by total perceptron.
+pass is the Expert Advisor mode: 1 is a basic system, 1 is a sell perceptron, 2 is a buy perceptron, 4 is all perceptrons, operative mode.
+lots - Position volume.
+Shift - Bar from which the price data is used: 0 - forming bar, 1 - first formed bar.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1135

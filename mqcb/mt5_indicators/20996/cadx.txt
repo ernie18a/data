@@ -1,0 +1,17 @@
+Oscillator Comparative ADX indicates the relative trend strength, based on the smoothed values of the five main currency pairs: EURUSD, GBPUSD, AUDUSD, USDJPY, and USDCAD, and of the instrument, on which the indicator is running.
+USDCHF is excluded from the list of the indicator symbols to be calculated, since it is historically reversing as to EURUSD.
+It has two parameters:
+Period
+- ADX calculation period;
+Level value
+- threshold level value (*).
+Calculation:
+CADX = Current ADX / Average ADX(EURUSD, GBPUSD, AUDUSD, USDJPY, USDCAD)
+where:
+Current ADX - the ADX value of the current symbol
+Average ADX = (ADX(EURUSD, Period) + ADX(GBPUSD, Period) + ADX(AUDUSD, Period) + ADX(USDJPY, Period) + ADX(USDCAD, Period)) / 5
+* Values above 1.0 (Level value) are considered a stable trend.
+It should be noted that, at the first launch or at switching the timeframe, the indicator will need some time to download the history for all the symbols used on the current chart timeframe. If there are no ticks for drawing the indicator's line, it will be worth it to switch the timeframe once, since, even upon having downloaded all necessary history, the indicator has to be re-calculated when a new tick appears (if there are no ticks, it will be re-calculated when you switch the timeframe).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20996

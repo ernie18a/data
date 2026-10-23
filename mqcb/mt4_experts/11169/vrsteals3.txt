@@ -1,0 +1,35 @@
+Advisor invisible . With advisor broker will not see your StopLoss, TakeProfit, Breakeven, Traling stop, OrderClose, OrderDelete.
+At first glance, it seems silly to hide data rates from a broker, but previous versions of
+VR --- STEALS- 2
+and
+VR --- STEALS
+proved otherwise .
+Two previous versions scored more than 20,000 downloads indicating that demand for this EA instrument.
+System requirements : MT4 build 610 or higher.
+In functional advisor include:
+Billing virtual take profit
+Billing virtual Stop Loss
+Billing bezubytka
+Billing Trailing Stop
+Time- Life warrants as deferred and market
+Manage orders directly from the chart
+Opening orders in one click
+Emulation option trading
+Expert inputs :
+StartLot = 0.01; Entry lot
+TakeProfit = 500 ; starting Virtual Take Profit
+in points
+StopLoss = 500 ; Virtual starter Stop Loss in points
+TralingStop = 300 ; Virtual Trailing Stop starting
+in points
+Breakeven = 300 ; Virtual starter breakeven
+in points
+prefix = "vr"; prefix added to the names of graphical objects
+Magic = 0 ; unique order number Adviser
+Slip = 30 ; Slippage
+in points
+MilSec = 100 ; Cycle delay for demo or live accounts for weak PC 500 and above for high-end PC 50 and above
+Example of the EA :
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11169

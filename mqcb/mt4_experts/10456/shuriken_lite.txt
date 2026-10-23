@@ -1,0 +1,13 @@
+This is the strategy scoring system used for
+Shuriken EA
+.
+It can monitor the trading activity of up to 10 Expert Advisors by inputing their different magic numbers in the settings.
+The chart display shows the total pips made, wins % and number of trades for each EA, plus the combined totals with overall Profit Factor and Net Profits shown below.
+If you use lots of expert advisors this will help you keep track of their performance.
+Usage:
+Copy Shuriken.ttf font file to C:\Windows\Fonts folder first.
+Shuriken Lite.mq4 goes in the experts folder.
+Place on a chart and input the magic numbers of your EA's trading on the account.
+A value of 0 will score your manual trades.
+Recommendations:
+Click Chart Shift button to make room for the display.

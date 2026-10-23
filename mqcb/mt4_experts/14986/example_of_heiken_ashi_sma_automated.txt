@@ -1,0 +1,9 @@
+Real Author:
+Mohammad Soubra
+This is unpaid version of Trading Robots. Just it is a source code for coders who see it helpful for them.
+Showing how to trade FX market trend using the (SMA: Simple Moving Average) with the Japanese indicator Heiken Ashi.
+All trades get the ATR(14) shift(1) as Take Profit.
+Recommendations:
+This robot has no Stop Loss, no Break Even & no Trailing Stop. Feel fee to update it as you wish. I am ready for help.
+Use it only in Demo Accounts or Strategy Tester.
+For Coders only.

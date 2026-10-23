@@ -1,0 +1,22 @@
+Kairi method (KRI) is similar to
+Momentum
+according to its application mode.
+The oscillator fluctuates around 0 but the fluctuation range is wider. Recommended smoothing period - 13. KRI can be used for any time frame. It is one of the simplest oscillators. When creating the indicator, deviation of a price from its
+simple moving average
+is calculated and the reult is shown in percentage of the average.
+Indicator calculation formula:
+KRI = 100 * (PRICE[bar] - SMA(PRICE[bar],period)) / SMA(PRICE[bar],period)
+where:
+PRICE[bar] - price;
+SMA() - smoothing algorithm;
+period - SMA() smoothing period;
+bar - bar index.
+In case the moving of prices has no clearly defined trend, considerable positive value of the KRI indicator means an overcharge and marks a moment for opening a short position. Considerable negative value is a buy signal.
+In case of a clearly defined trend, KRI will generate stable positive values during a downward trend because of the time lag between the moving average and the current price. KRI will generate stable negative values during an upward trend. Therefore, if the method values do not change from positive to negative or vice versa for quite a long time, it can be used as a trend indicator.
+The signals are generated when the indicator values pass above +1 (overbought area) and below -1 (oversold area) and then turn back to the middle. Additional signal is a bullish divergence or a bearish convergence of the indicator and a price.
+The indicator uses the СMoving_Average class of the SmoothAlgorithms.mqh library for its compilation. The use of the class was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/439

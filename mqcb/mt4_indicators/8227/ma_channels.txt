@@ -1,0 +1,4 @@
+It displays Fibo levels of the price channel created on the moving avrage. The 100% line of the channel is the maximal difference between the price and MA.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8227

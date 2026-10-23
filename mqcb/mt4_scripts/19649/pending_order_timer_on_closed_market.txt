@@ -1,0 +1,6 @@
+You can send pending order on closed market between StartTime and EndTime at specific minumum and maximum price.
+You can also use it on open market to setup time and price of your choice.
+Parameters
+Comments on Screen
+You can check my other work here
+Average Trailing Stop

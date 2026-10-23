@@ -1,0 +1,33 @@
+In pscillator Self-Adjusting RSI, we have implemented the methods of automated adjusting the RSI oscillator overbought/oversold levels, described in David Sepiashvili's article The Self-Adjusting RSI.
+The indicator has five configurable parameters:
+Period
+- RSI calculation period;
+Applied price
+- RSI calculation price;
+Calculation mode
+- adjusting mode:
+Standard deviation
+- by standard deviation;
+Moving average
+- by moving average.
+Deviation for StdDev mode
+- deviation for the Standard deviation mode;
+Deviation for MA mode
+- deviation for the Moving average mode.
+Calculations:
+SARSI = RSI(Period, Applied price)
+If Calculation mode = Standard deviation:
+Overbought = 50.0 + Deviation * AvgDev
+Oversold = 50.0 - Deviation * AvgDev
+AvgDev = StdDev(SARSI, Period, MODE_SMA)
+If Calculation mode = Moving average:
+Overbought = 50.0 + Deviation * AvgRAW
+Oversold = 50.0 - Deviation * AvgRAW
+AvgRAW = SMA(RAW, Period)
+RAW = Abs(SARSI - AvgDev)
+AvgDev = SMA(SARSI, Period)
+Fig 1. Calculation mode = Standard deviation
+Fig. 2. Calculation mode = Moving average
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21266

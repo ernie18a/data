@@ -1,0 +1,21 @@
+The Momentum-based Adaptive Channel is a version of the adaptive channel based on the Euclidean distance. It is designed to adapt according to the dynamic market as needed.
+Display:
+red line
+—
+upper channel.
+blue line
+—
+lower channel.
+gray line is a standard donchian channel.
+Settings:
+channel period
+—
+c
+onverted to the Euclidean distance.
+volatility factor
+—
+w
+idth of one bar.
+volatility smoothing
+—
+smoothing period of the volatility.

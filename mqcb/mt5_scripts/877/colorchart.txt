@@ -1,0 +1,1 @@
+Simple script to randomize all colors of your chart. Just click on it and see results yourself!

@@ -1,0 +1,23 @@
+The indicator displays the difference between the
+DiffMA
+lines, i.e., two moving averages calculated within the range of one-direction candlesticks.
+The calculations doe not require the availability of
+DiffMA
+- the indicator calculates it by itself.
+It has two configurable parameters:
+Period
+- DiffMA calculation period
+Applied price
+- DiffMA calculation price
+Calculations:
+DMA = (Up - Dn)
+where:
+UP = SumUp / CountUp
+DN = SumDn / CountDn
+SumUp = Sum of SMA(Applied price, 1) for all bullish candlesticks within the Period
+SumDn = Sum of SMA(Applied price, 1) for all bearish candlesticks within the Period
+CountUp - number of bullish candlesticks within the Period
+CountDn - number of bearish candlesticks within the Period
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21317

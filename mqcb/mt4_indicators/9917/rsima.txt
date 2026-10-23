@@ -1,0 +1,2 @@
+Better to use on the Daily TF.
+You may change extern parameter "RSIPeriod" to fit each and every Symbol and TF.

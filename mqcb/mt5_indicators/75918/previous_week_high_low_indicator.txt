@@ -1,0 +1,47 @@
+Previous Week High & Low
+The idea behind it
+The weekly range is one of the cleanest higher-timeframe reference points available on an intraday chart: it filters out the day-to-day noise and leaves just two numbers — where price was rejected and where it was accepted over the full prior week. Swing traders and intraday traders alike use these levels as a map for the week ahead, whether that means fading a return to last week's high, watching for a breakout continuation once it is cleared, or treating last week's low as a standing support reference. This indicator reads those two values straight from the completed Weekly (W1) bar and draws them as horizontal levels across the current week, so you never have to switch to a weekly chart to find them.
+It works on any symbol and any intraday-to-daily timeframe, since the levels themselves always come from W1 data regardless of the chart you have open. Optionally, more than one previous week can be shown at once, with each week's High/Low drawn only across the specific week it was active for — useful for spotting levels that have lined up or been repeatedly respected across several weeks.
+How to interpret it
+PWH (Previous Week High)
+— the highest price reached during the prior completed trading week. Often acts as swing resistance or a breakout trigger once cleared.
+PWL (Previous Week Low)
+— the lowest price reached during the prior completed trading week. Often acts as swing support or a breakdown trigger once broken.
+Multi-week stacking
+— when
+InpWeeksToShow
+is greater than 1, each older week's level is drawn only across the week it actually applied to, with a "-N" suffix on its label (e.g. PWH-1 , PWH-2 ) so historical and current levels never overlap or get confused with one another.
+Live refresh
+— levels are rebuilt automatically the moment a new Weekly bar opens, so the indicator always reflects the most recently completed week without needing to be removed and re-attached.
+External variables (inputs)
+Input
+Default
+Purpose
+InpWeeksToShow
+1
+Number of previous trading weeks to display (1-8). Each week's levels are drawn only across the week they applied to.
+InpShowHigh
+true
+Toggles the Previous Week High line on or off.
+InpShowLow
+true
+Toggles the Previous Week Low line on or off.
+InpHighColor / InpLowColor
+Lime / Red
+Independent colors for the two levels.
+InpLineStyle / InpLineWidth
+Dash / 1
+Line style and width applied to both levels.
+InpShowLabels
+true
+Shows a text label (e.g. "PWH") at the right-hand edge of each level.
+InpShowPriceInLabel
+true
+Appends the exact price value to each label.
+InpLabelFontSize
+8
+Font size used for the level labels.
+Recommended use
+Works on any symbol and any timeframe up to and including Daily (M1–D1 are typical), since the High/Low values are always sourced from the Weekly timeframe regardless of the chart period. The exact week boundary (which day the weekly bar opens on) is set by your broker's server — most open weeks on Sunday or Monday server time — so check this against the week definition you actually trade by before relying on the exact level, particularly around holidays with shortened trading weeks.
+All chart objects are created under a single internal name prefix and are fully removed via ObjectsDeleteAll() in OnDeinit() when the indicator is detached, so it leaves nothing behind on the chart.
+Fig. 1. Previous week's High and Low plotted as horizontal levels across the current week on EURUSD H1. Rendered in black and white per the Code Base image guidelines (750×500 px).

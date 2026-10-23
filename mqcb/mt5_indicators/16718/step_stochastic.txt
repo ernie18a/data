@@ -1,0 +1,5 @@
+Since I first saw it, I have always liked the idea of a step stochastic. But every single version I have seen had two very serious flaws:
+minimum and maximum average true range are inherited from a previous bar
+and thus it makes it depend on the number of bars used in calculations. The rest of the calculations depends on that "inherited" value, and, since with time the minimum and the maximum are just getting bigger (maximum) and smaller (minimum), the "step quality" of the step stochastic is simply lost when big enough number of bars pass. So the step stochastic becomes deformed and is not a "step" stochastic any more on newest bars.
+This one solves those issues. The idea is simple — instead of inheriting previous state of ATR minimum and maximums, the minimum and maximum are cheсked in a "Window" number of past bars. That way it is not deformed and is reacting to latest data fairly good. Compared to the "old" ones you will notice that at the beginning they have the same values (since the "old" still did not "deform") but as time passes the differences grow bigger and bigger. That is the effect of not inheriting and in the end of not repainting.
+>

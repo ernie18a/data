@@ -1,0 +1,14 @@
+Author: Jason Robinson (jnrtrading)
+The indicator is very simple, and it requires certain mental and psychological efforts.
+If there is a minus (for example, at 9:15) and if an opposite signal appears - CLOSE THE MINUS without a second thought, the plus will compensate it.
+If news are coming - this system will not be helpful. Wait for the situation to calm down.
+If there is 10 point fluctuation, it should not be used, it will only be a hassle.
+IMPORTANT ADDITION !
+----------------------------
+Signal for opening is valid only if the difference of EMA3 and EMA7 is at least 3 points.
+Otherwise, it is possible to get into a "snake" and have a dozen consecutive minuses, this happens in a thin flat.
+More
+...
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7453

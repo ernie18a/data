@@ -1,0 +1,9 @@
+This indicator is a sharp turn to the dynamic change of direction. Like tango steps! It makes earlier entry possible.
+I wrote
+Reversal Navi
+and discovered that the buy line can also be used as a sell line. So I created this indicator. In future, to be combined with
+BSI
+. Have fun!
+Display:
+tango line (pink line) — middle of the range, which was created after the reversal bar;
+band — high and low in the range.

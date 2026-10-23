@@ -1,0 +1,24 @@
+The Derivative Oscillator indicator by Constance Brown was published in her book "Technical Analysis for the Trading Professional"
+The indicator is a twice exponentially smoothed RSI with the default parameters of 5 and 3.
+Then a signal line is formed by simple smoothing of the resulting 2ERSI with the period of 9.
+The derived histogram is calculated as a difference between 2ERSI and the signal line
+There are five inputs:
+RSI period
+- period of RSI
+First EMA period
+- the period of the first smoothing EMA
+Second EMA period
+- the period of the second smoothing EMA
+SMA period
+- signal line smoothing period
+Applied price
+price used for calculations
+Calculation:
+DEROSC = EMA2 - SMA(EMA2, SMA period)
+where:
+EMA2 = EMA(EMA1, Second EMA period)
+EMA1 = EMA(RSI, First EMA period)
+RSI - RSI(Applied price, RSI period)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21825

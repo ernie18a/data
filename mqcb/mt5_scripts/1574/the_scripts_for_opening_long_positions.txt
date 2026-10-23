@@ -1,0 +1,90 @@
+These scripts are designed to buy with fixed values of Stop Loss and Take Profit in points from the current price. There are four variants of scripts which can be divided into two groups:
+Scripts for brokers which have nonzero spread and admit the ability to set Stop Loss and Take Profit simultaneously performing a deal;
+Scripts for brokers which may have zero spread, otherwise, it is not recommended to set Stop Loss and Take Profit simultaneously opening a position. At first, these scripts open positions without orders and then modify them changing Stop Loss and Take Profit.
+The first group scripts are OpenBuyPosition.mq5 and OpenBuyPosition_X.mq5. The second group scripts have ending in the name of the ECN files. They are OpenBuyPosition_ECN.mq5 and OpenBuyPosition_X_ECN.mq5.
+All scripts are designed to buy with fixed values of Stop Loss and Take Profit in points from the current price.
+The main advantage of OpenBuyPosition and OpenBuyPosition_ECN scripts is the ability to fix deal's volume depending on the size of the whole deposit using the MM (Money Management) script input parameter which defines equity volume rate participated in a deal to the whole deposit equity:
+OpenBuyPosition and OpenBuyPosition_ECN scripts input parameters:
+//+----------------------------------------------+
+//| SCRIPT INPUT PARAMETERS                      |
+//+----------------------------------------------+
+input
+double
+MM=
+0.1
+;
+// Money Management
+input
+int
+DEVIATION=
+10
+;
+// Price deviation
+input
+int
+STOPLOSS=
+300
+;
+// Stop Loss in points from the current price
+input
+int
+TAKEPROFIT=
+800
+;
+// Take Profit in points from the current price
+input
+uint
+RTOTAL=
+4
+;
+// The number of retries in unsuccessful deals
+input
+uint
+SLEEPTIME=
+1
+;
+// Pause time between retries in seconds
+The main advantage of OpenBuyPosition_X and OpenBuyPosition_X_ECN scripts is the ability to fix deals' losses when Stop Loss triggered depending on the whole deposit size using LossMM script input parameter which defines equity volume rate lost when Stop Loss triggered to the whole deposit equity:
+OpenBuyPosition_X and OpenBuyPosition_X_ECN scripts input parameters:
+//+----------------------------------------------+
+//| SCRIPT INPUT PARAMETERS                      |
+//+----------------------------------------------+
+input
+double
+LossMM=
+0.1
+;
+// Losses from balance when Stop Loss triggered
+input
+uint
+DEVIATION=
+10
+;
+// Price deviation
+input
+uint
+STOPLOSS=
+300
+;
+// Stop Loss in points from the current price
+input
+uint
+TAKEPROFIT=
+800
+;
+// Take Profit in points from the current price
+input
+uint
+RTOTAL=
+4
+;
+// The number of retries in unsuccessful deals
+input
+uint
+SLEEPTIME=
+1
+;
+// Pause time between retries in seconds
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1574

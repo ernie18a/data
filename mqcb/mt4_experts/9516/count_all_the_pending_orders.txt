@@ -1,0 +1,3 @@
+Author:
+Desmond Wright aka Buju
+This Expert Advisor will count all the pending orders for the chart it has been placed on, it will NOT place trades but is merely a indicator.

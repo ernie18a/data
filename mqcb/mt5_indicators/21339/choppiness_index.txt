@@ -1,0 +1,26 @@
+Oscillator Choppiness Index is intended for assessing the market situation. It identifies three states:
+Trend
+Flat
+Instable consolidation
+Values below 38.2 indicate a trend on the market, while those above 61.8 indicate a flat market. Values close to 100 indicates an instable consolidation.
+the lower the oscillator value is, the more expresed the trend component is on the market.
+The indicator has four configured parameters:
+Period
+- calculation period
+Trend level
+- trend boundary level
+Choppiness level
+- flat boundary level
+Consolidation level
+- consolidation boundary level
+Calculations:
+CI = 100.0 * log10( SumATR / ( MaxHigh - MinLow)) / log10X
+where:
+log10X = log10(Period)
+ATR = ATR(1)
+SumATR - sum of ATR over the Period
+MaxHigh - maximum High value within the Period
+MinLow- minimum Low value within the Period
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21339

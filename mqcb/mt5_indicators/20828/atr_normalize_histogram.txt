@@ -1,0 +1,7 @@
+Real author:
+Langouste
+A typical oscillator using Average True Range in form of a multicolor histogram.
+Fig.1. Indicator ATR_Normalize_Histogram
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20828

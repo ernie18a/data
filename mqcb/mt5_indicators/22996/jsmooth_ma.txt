@@ -1,0 +1,19 @@
+JSmooth MA is a Moving Average by Mark Jurik.
+It has two adjustable parameters:
+Period
+- calculation period
+Applied price
+- calculation price
+Calculations:
+JSM = PrevJSM + A4
+where:
+A4 = (A3 - PrevJSM) * Alpha12 + Alpha2 * PrevA4
+A3 = A1 + A2
+A2 = (1-Alpha) * (Applied price - A1) + Alpha * PrevA2
+A1 = (1-Alpha) * Applied price + Alpha * PrevA1
+Alpha = 0.45*(Period-1) / (0.45*(Period-1)+2)
+Apha2 = Alpha * Alpha
+Alpha12 = (1-Alpha) * (1-Alpha)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22996

@@ -1,0 +1,7 @@
+Description:
+Another simple, powerfull and profitable Mirror Indicator.
+Use like and with
+MA_Mirror
+for best result.
+Entry when each indicator (MA & RSI Mirror) show the same direction and exit when different.
+Image:

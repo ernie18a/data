@@ -1,0 +1,47 @@
+Author
+:
+Origin indicator
+X
+_0_
+Serg
+153
+Copyright © 2005, Serg153
+We took the ready indicator
+X
+_0_
+Serg
+153 created in 2005, and modified it.
+On one hand this allowed us to avoid verification of the tick-tack-toe method with its implementation in the indicator and to retain the illustration of the method. However, on the other hand, there are some difficulties in extracting trade alerts.
+The data of indicator
+X
+_0_
+Serg
+153 is represented as graphical objects, which caused the arising of the corresponding question on the forum:
+http
+://
+forum
+.
+mql
+4.
+com
+/
+ru
+/12351
+. The code of the indicator was taken from that link, as well.
+The tick-tack-toe method has been used by American traders since 19th century.
+The special features of the tick-tack-toe method consist in that no timeline stability is kept.
+In the MT 4 window,
+new price bars appear continuously, but the tick-tack-toe indicator doesn't move if the price hasn't exceeded the threshold value. This is why the indicator chart doesn't match with the price chart shown in MT 4 screens.
+In this present version of the indicator we:
+- added generation of trade alerts - signs directed up or down that appear in the development of price movements at each calculation step of the indicator;
+- added Alert.
+Special Features
+:
+Trade alerts are not calculated on history, since it would be difficult to judge about the correctness of placing the trade alerts if the indicator moves out of synchronization with the price movements.
+At the same time, "historical" alerts are not of great importance for trading.
+This is why you should also test the trade alerts in the Strategy Tester.
+Testing:
+Launch the indicator together with any EA in the Strategy Tester of the client terminal.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8114

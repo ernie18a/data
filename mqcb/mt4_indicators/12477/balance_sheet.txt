@@ -1,0 +1,3 @@
+As a part of money management system, we need a balance sheet that show how much money we can risk from a profit that we have took.
+This indicator will show balance sheet for a year.
+Input parameters:

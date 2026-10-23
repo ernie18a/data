@@ -1,0 +1,1 @@
+This indicator collects and groups information on open positions. It is useful for those who like adding to open positions and using Martingale's method.

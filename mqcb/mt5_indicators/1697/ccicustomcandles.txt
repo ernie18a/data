@@ -1,0 +1,22 @@
+The real author:
+Christof Risch (iya)
+The indicator draws candlesticks when finding the CCI indicator in the overbought and oversold levels. The moments of entry in these zones is defined by the input parameters values.
+input
+int
+Overbought=+
+100
+;
+// oberbought level
+input
+int
+Oversold=-
+100
+;
+// oversold level
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 01.07.2008.
+Fig.1 The CCICustomCandles indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1697

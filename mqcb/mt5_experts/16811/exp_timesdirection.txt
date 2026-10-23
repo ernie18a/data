@@ -1,0 +1,60 @@
+The Expert Advisor opens and closes positions at the predefined moments in time.
+EA inputs:
+//+-------------------------------------------------+
+//| Input parameters of the EA indicator            |
+//+-------------------------------------------------+
+input
+double
+MM=
+0.1
+;
+//Share of a deposit in a deal
+input
+MarginMode MMMode=LOT;
+//lot value detection method
+input
+int
+StopLoss_=
+1000
+;
+//stop loss in points
+input
+int
+TakeProfit_=
+2000
+;
+//take profit in points
+input
+int
+Deviation_=
+10
+;
+//max price deviation in points
+input
+TradeMode Trade=ENUM_SELL;
+//Trade direction
+input
+datetime
+OpenTime=
+D'1970.01.01 00:00'
+;
+//Position open time
+input
+datetime
+CloseTime=
+D'3000.01.01 00:00'
+;
+//Position close time
+input
+uint
+TradeInterval =
+60
+;
+//Trading interval in seconds (time accuracy for a trade)
+//+-------------------------------------------------+
+Note that the TradeAlgorithms.mqh library file allows using Expert Advisors with brokers who offer nonzero spread and the option of setting Stop Loss and Take Profit together with position opening. You can download more variants of the library at the following link:
+Trade Algorithms
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16811

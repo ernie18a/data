@@ -1,0 +1,12 @@
+Real author:
+Cronex
+The
+MACD
+histogram with a cropped display of flat areas.
+This indicator was first implemented in MQL4 and published in the
+Code Base at mql4.com
+on 24.01.2008.
+Figure 1. The Cronex_Impulse_MACD indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1989

@@ -1,0 +1,19 @@
+This trading system uses the
+FatlSatlOsma
+non-normalized indicator.
+A trade decision is made when the FatlSatlOsma oscillator changes direction.
+This Expert Advisor requires the compiled indicator file FatlSatlOsma.ex5 in order to run. Place it to <terminal_data_folder>\MQL5\Indicators.
+Note that the TradeAlgorithms.mqh library file allows using Expert Advisors with brokers who offer
+nonzero spread
+and the option of setting Stop Loss and Take Profit
+together with position opening
+. You can download more variants of the library at
+https://www.mql5.com/en/code/1578
+.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. Examples of deals on the chart
+Testing results for 2014 at USDJPY H12:
+Fig. 2. Testing results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12579

@@ -1,0 +1,22 @@
+This indicator is a composite of several indicators: Fibonacci, Pivot Point, ZigZag, MACD and Moving Average which are combined in this indicator.
+This indicator gives advice to buy and sell with the direction of the arrow.
+Update_01 (24/03/2015)
+Reduced false signals, simplified the formula, and replaced the formula of the Stochastic indicator with MACD indicator.
+Update_02 (26/04/2015)
+Fixed code for Price Retracement FiboCandleBar.
+Update_03 (18/05/2015)
+Added Alerts (Messages, Email and Sound) to the indicator.
+Improved the performance of the Indicator.
+Update_04 (16/06/2015)
+Added Color Option, so that the user can change the color bar and font colors.
+Update_05 (30/07/2015)
+Made minor changes to the Pivot formula.
+Removed unused variables.
+Update_06 (16/09/2015)
+Added a formula to improve the accuracy of the signal.
+Update_07 (29/12/2016): version "2.00"
+Update and simplify code.
+Update_08 (01/04/2017) version "3.00"
+Fix syntax, according to the latest updates MQL4.
+Simplify the writing program.
+Added Font model option.

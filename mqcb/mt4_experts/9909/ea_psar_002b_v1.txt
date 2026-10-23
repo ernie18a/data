@@ -1,0 +1,4 @@
+EA_PSar_002B_v1 designed on the idea of the indicator Nik_PSAR_2B (https://www.mql5.com/en/code/9854).
+EA tested and optimized on FXDD’s MT4 trading platforms.
+This is a sample version of the EA.
+All active traders will be able to receive (with some conditions) a free full version of this EA (basisforex@gmail.com).

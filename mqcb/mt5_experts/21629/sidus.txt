@@ -1,0 +1,65 @@
+Author of the idea
+:
+Mikhail
+MQL5 code author
+:
+barabashkakvn
+The EA applies two indicators: iAlligator (Alligator) and iRSI (Relative Strength Index, RSI). Alligator acts as the main indicator, while RSI is used as a trend filter.
+RSI as a filter
+RSI #2 < 50.0 && RSI #1 > 50.0 - the filter allows checking the ability to open BUY;
+RSI #2 > 50.0 && RSI #1 < 50.0 - the filter allows checking the ability to open SELL.
+Alligator signals
+Alligator signals considers the
+Delta between Alligator lines (#1 - #2)
+parameter - difference between the indicator line on bars #1 and #2
+Jaw #1 - Jaw #2
+>
+Delta
+&& Teeth #1 - Teeth #2
+>
+Delta
+&& Lips#1 - Lips #2
+>
+Delta
+- BUY signal;
+Jaw #1 - Jaw #2
+<
+Delta
+&& Teeth #1 - Teeth #2
+<
+Delta
+&& Lips#1 - Lips #2
+<
+Delta
+- SELL signal.
+Trading parameters
+The EA works (checks signals) only when a new bar appears, while trailing works on each tick. Position volume is always fixed and set as
+Lots
+. Stop loss is always calculated dynamically.
+Offset
+is considered: for BUY, it is Low#1 -
+Offset
+, while for SELL, it is High#1 +
+Offset
+. Take profit is fixed and set in
+Take Profit
+. If you need to disable take profit, set "0.0".
+Position trailing is set by two parameters:
+Trailing Stop
+and
+Trailing Step.
+To disable trailing, set "0.0" for
+Trailing Stop
+.
+Delta between Alligator lines (#1 - #2)
+has already been described above.
+Closing Opposite Positions
+- if "true", positions opposite to a signal are closed.
+Optimization order
+First step - select trailing and Alligator parameters. Genetic optimization (since we iterate over trailing, while trailing works at each tick). I have selected USDJPY M15.
+Second step - check the best test on all symbols.
+After completing optimization at step 1, go to Optimization tab and click on the Result column just in case (needed to sort results, so that the best result is at the top of the table). Right-click the best result and select "Run a single test" - a single test is launched. The best EA parameters are set in the Parameters tab.
+Go to the "Settings" tab and select "By all symbols" from the "Optimization" list.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21629

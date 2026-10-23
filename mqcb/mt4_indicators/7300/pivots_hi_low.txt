@@ -1,0 +1,6 @@
+Author:
+Cartwright Software Corp
+The Hi/Low indicator shows how close the current value of the parameter is to the minimum and maximum values over a certain time interval.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7300

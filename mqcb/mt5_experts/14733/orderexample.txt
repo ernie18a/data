@@ -1,0 +1,8 @@
+This OrderExample Expert Advisor is based on the
+OrderSendAsync
+() example in MQL5 Reference.
+The Expert Advisor sends trade requests using OrderSendAsync() function.
+Displays handling trading events using
+OnTrade
+() handler function.
+Expert Advisor parameters allow setting Magic Number (unique Expert ID).

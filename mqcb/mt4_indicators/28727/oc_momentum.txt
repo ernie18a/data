@@ -1,0 +1,13 @@
+5.5.2020 new version uploaded.
+-----------------------------------------------------------------
+Descritpion:
+OC Momentum oscillator uses Open and Close price to calculate its value.
+The only variable
+n
+default value is 3. It can be modified obviously.
+The histogram simplifies identification of trade entry.
+Usage in trending markets:
+Points 1 and 2 form a trendline.
+Entry signal is when the indicator curve crosses the zero line and the first histogram bar of propper color is formed.
+Points 3,4 and 5 present possible entry points.
+Take into account that no trend is endless.

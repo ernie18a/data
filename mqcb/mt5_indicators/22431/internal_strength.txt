@@ -1,0 +1,31 @@
+Internal Strength indicator.
+The indicator has three input parameters:
+RSI period
+- RSI calculation period
+Calculating method
+- calculation method
+Price
+- calculation at High/Low/Close prices
+RSI on price
+- RSI at High/Low/Close prices
+Drawing type
+- display type
+Line
+- line
+Bars
+- bars
+Calculation:
+IS = Data
+where:
+If Calculating method = Price
+Data = Raw
+If Calculating method = RSI on price
+Data = RSI(Raw,RSI period)
+Raw = (Close-Low)/(High-Low)
+Fig. 1. Internal Strength, RSI on price, Line
+Fig. 2. Internal Strength, RSI on price, Bars
+Fig. 3. Internal Strength, Price, Line
+Fig. 4. Internal Strength, Price, Bars
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22431

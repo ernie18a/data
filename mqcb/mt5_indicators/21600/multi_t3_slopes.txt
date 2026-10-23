@@ -1,0 +1,6 @@
+Indicator that checks slopes of 5 (different period) T3 Moving Averages and adds them up to show overall trend.
+You can chose between the two know T3 types:
+Original Tim Tillson T3 calculation type.
+Modified Fulks/Matulich calculation type.
+Update :
+Added version 2 which is a much faster and with a much smaller memory print with the new builds of metatrader 5. That version should be used

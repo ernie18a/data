@@ -1,0 +1,23 @@
+Asymmetric Linear Weighted Moving Average.
+The indicator has three input parameters:
+Period
+- calculation period
+Method
+- calculation method
+Regular
+Inverse
+Asymmetric
+Inverse asymmetric
+Applied price
+Four calculation modes:
+Regular - behaves like an ordinary LWMA. The last period has the greatest weight.
+Inverse - the initial period has the greatest weight.
+Asymmetric - the period middle has the greatest weight. Initial and final periods have the lowest weights.
+Inverse asymmetric - the initial and final periods have the greatest weight. The middle part has the least weight.
+Fig. 1. Regular mode
+Fig. 2. Inverse mode
+Fig. 3. Asymmetric mode
+Fig. 4. Inverse Asymmetric mode
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21427

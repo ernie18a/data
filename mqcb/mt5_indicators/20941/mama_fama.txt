@@ -1,0 +1,2 @@
+Usually MESA Adaptive Moving Average (MAMA) is displayed on chart as two values. That sometimes is misleading since it is not often explained what are the traders actually looking at then.
+The second value displayed on chart is what John Ehlers calls "a Following Adaptive Moving Average (FAMA)", and this indicator uses the combined values of MAMA and FAMA to assess the trend of the market.

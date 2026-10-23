@@ -1,0 +1,14 @@
+As described in the May 2018 edition of Technical Analysis of Stocks & Commodities by John F. Ehlers. This indicators is an enhancement to the traditional RSI for detecting cyclical reverses.
+This indicator has two settings:
+RSILength
+- This needs to be half the dominant cycle period. For example, if applying to stocks or stock indexes, the cycle period would be monthly (20 Bars on a daily chart) so you would set this variable to 10.
+Smooth
+- The smoothing parameter of the indicator to control volatile swings. This should be set to no more than the value of RSILength.
+How to use this indicator in practice:
+If the indicator spikes below -2, this shows a high probability of a bullish reversal and is therefore a
+buy
+signal.
+If the indicator spikes above 2, this shows a high probability of a bearish reversal and is therefore a
+sell
+signal.
+An example of this indicator is shown in the image below.

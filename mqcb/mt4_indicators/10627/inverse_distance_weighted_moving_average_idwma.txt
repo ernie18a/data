@@ -1,0 +1,30 @@
+This multi-timeframe capable moving average discounts prices far from the average. It is smoother than SMA but follows price similar to an EMA of the same length.
+I came across
+en.wikipedia.org/wiki/Distance-weighted_estimator
+, thought it might be useful and coded it.
+It does have some overshoot and initial lag just like SMA, but converges to nearer to price than the corresponding EMA. The initial lag may be useful in a trailing stop and when the market has reversed direction.
+There are four (4) parameters, the first three are the same as the standard moving average
+extern
+int
+MA_Period =
+14
+;
+// Default Moving Average
+extern
+int
+MA_Shift  =
+0
+;
+// Default Moving Average
+extern
+int
+MA_Price  =
+0
+;
+// PRICE_CLOSE=0, Open=1, High=2, Low=3, median=4, typical=5, weighter=6
+extern
+int
+MA_TF     =
+0
+;
+// Chart=0, PERIOD_H1...

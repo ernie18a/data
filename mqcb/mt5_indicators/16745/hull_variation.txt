@@ -1,0 +1,2 @@
+A variation of Hull moving average that allows speed adjusting of the hull moving average.
+Whistles and bells added too (multi time frame, alerts, no repainting color lines). The "speed" can be controlled through HMASpeed parameter: the lower the value the slower the HMA. I am not aware who's idea was to modify the speed in original, but I liked it, so here is this version (original Hull moving average has a "speed" value of 2).

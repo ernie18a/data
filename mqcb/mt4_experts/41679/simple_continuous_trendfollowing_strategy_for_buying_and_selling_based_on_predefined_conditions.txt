@@ -1,0 +1,27 @@
+This MetaTrader 4 (MT4) script implements a simple continuous trend-following strategy for buying and selling based on predefined conditions. Here's a breakdown of the script:
+Initialization
+: The script initializes and prints a message when initialized successfully.
+Deinitialization
+: The script deinitializes and prints a message when deinitialized.
+OnTick Function
+: This function executes whenever there's a new tick (price change) in the market.
+a.
+Reset Position Tracking Variables
+: The script resets variables tracking open buy and sell positions.
+b.
+Check Open Orders
+: It loops through all open orders to determine if there are any existing buy or sell positions.
+c.
+Open Buy Position
+: If there's no open buy position and the "OpenBuyPosition" flag is set to true, it attempts to open one based on the current market bid price. It sets a stop loss and take profit for the buy order.
+d.
+Open Sell Position
+: If there's no open sell position and the "OpenSellPosition" flag is set to true, it attempts to open one based on the current market ask price. It sets a stop loss and take profit for the sell order.
+e.
+Check Closed Orders
+: It checks for any closed orders. If a buy or sell order is closed with profit, it resets the corresponding position flag.
+Input Parameters
+: The script provides input parameters for lot size, stop loss, take profit, and flags to control whether to open buy or sell positions.
+Disclaimer
+: The script includes a warning advising users to use it at their own risk and absolves the creator from any responsibility for potential damage or loss.
+Overall, this script aims to automate the process of executing buy and sell orders based on a continuous trend-following strategy, allowing users to customize parameters such as lot size and trade direction. However, users should exercise caution and conduct thorough testing before deploying it in live trading environments.

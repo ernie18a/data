@@ -1,0 +1,21 @@
+A trading system that uses the
+XD-RangeSwitch
+semaphore, signal indicator.
+Trade decisions are made when colored arrow appear, if their direction is the same as the direction of deals or opposite to it.
+input
+Mode   Direct=FalshDirect;
+// Trade direction
+Note that the TradeAlgorithms.mqh library file allows using Expert Advisors with brokers who offer
+nonzero spread
+and the option of setting Stop Loss and Take Profit
+together with position opening
+. You can download more variants of the library at the following link:
+TradeAlgorithms
+.
+The Expert Advisor requires the compiled file of the indicator XD-RangeSwitch.ex5. Place it to terminal_data_folder\MQL5\Indicators.
+Figure 1 The instances of history of deals on the chart.
+Testing results for 2013 at EURUSD H4:
+Figure 2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2274

@@ -1,0 +1,15 @@
+I'm not a professional programmer but made many changes by with the help of people in the forum.
+The indicator plots Pivot levels for three pivots with different periods with separate setting. It would be great if you have daily, weekly, monthly pivots by an indicator on a chart.
+Main indicator downloaded from "
+Pivot - indicator for MetaTrader 4
+"
+Some of indicator parameters:
+Refresh Period:
+reduce CPU usage by re-calculating every custom period of time.
+3 separate pivots with different custom periods
+Pivot and S/R lines style
+Pivot and S/R lines width
+Pivot and S/R lines color
+Enable/Disable display S/R lines and labels
+Enable/Disable display Pivot lines and labels
+NOTE: before start using this indicator please check each pivot color and keep in mind or change colors if needed.

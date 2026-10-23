@@ -1,0 +1,1 @@
+MACD indicator, red color mean bullish, blue color mean bearish.

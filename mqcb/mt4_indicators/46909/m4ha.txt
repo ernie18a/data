@@ -1,0 +1,1 @@
+Trend indicator based on the intersection of adaptive HMA and its smoothed line. I recommend using it together with the flat indicator to determine the beginning of a trend early

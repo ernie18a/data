@@ -1,0 +1,35 @@
+FX Multi-Meter
+This all-in-one indicator was inspired by !x-meter and used some of its code as a template for the graphic objects (so thanks to Robert Hill who developed it). It is however completely different and provides alot more information that would normally require many charts and indicators and general screen clutter. It was designed to give alot more precision to both trade entries and exits and provide an instant snapshot of a currency pair's movement. Multi-Meter works on any currency or timeframe (or it should) and displays the following in the bottom right corner of the chart..
+A graph of Stochastic Oscillators on timeframes M1 up to D1.
+An indication of the market trend using EMA's on timeframes M1 to D1.
+The direction of the MACD on the current chart, and crossing of the signal line and zero line.
+The direction of a fast 3 period LWMA crossing a 5 period SMA (periods can be changed).
+The direction of the Parabolic SAR on the current chart for giving the exit signal and also confirmation for entry.
+An oscillating graph of the William's % Range indicator. This was used because of its fast movement and unique predictive quality. Also because its very good for identifying Overbought/Oversold conditions.
+A Bar % Increase/Decrease meter I developed to give a direct visual representation of the percentage rise or fall of the current price compared to the last 4 bars. It's simple but effective. The gist of it is that the previous 4 bar movements (close to close) are averaged and percentaged, so if the current bar rises above 100% it is speeding up above the recent average, conversely if it drops below 100% it is slowing down and taking on a more steady movement. Strong price movements are displayed in bright red or green, with varying shades according to the strength of movement.
+The overall recommended signal to trade, based on the various indicator signals.
+And last but not least the spread of the currency, in big easy-to-see numbers.
+------------------------------------------------------------------------------------------------------------
+FX Multi-Meter on EUR-USD M1 Chart
+Example interpretation - EUR/USD - M1 Chart
+- Bar % Meter is showing that the price movement is accelarating upwards (237% above previous 4 bar average).
+- MACD is crossing upwards above its signal line.
+- MA-X is showing that the fast moving 3-period Linear Weighted MA has risen above the slower 5-period Simple MA.
+- P-SAR is still travelling downwards and hasn't swung around yet.
+- WPR% is peaking at its maximum level upwards, indicating either a commencing strong upward movement or an Overbought condition. In this case the movement is commencing, not peaking.
+- All MA's except D1 timeframe are trending upwards.
+- Stochastic Oscillator on M30 chart is peaking, indicating a possible Overbought condition on that timeframe. M1 Stochastic is at 58% and rising.
+- Current spread is 1.6 pips.
+- Overall Signal =
+Buy
+------------------------------------------------------------------------------------------------------------
+Being very new it hasn't been tested extensively, but so far so good on both live and demo accounts. At the very least it helps to improve trading confidence, possibly because of the positive results! Its great to watch it go on an M1 chart, very responsive but still a bit slow to change between charts. I'm not sure if it works properly on a 4 digit account as it was designed for 5 digits, but feel free to test it out and report back. I 'd appreciate feedback on its performance and any possible optimizations it could use, particularly any additional criteria for the overall Signal. Current overall Signal is set at...
+eg. Signal Buy
+(Current MACD > Previous MACD & 3-period LWMA > 5-period SMA & WPR% > -50 & Current 14-period EMA > Previous 14-period EMA & Current 14-period Stochastic > Previous 14-period Stochastic & Current Close price > Previous Close price)
+------------------------------------------------------------------------------------------------------------
+Installation:
+Put the mq4 file in the Experts folder and compile in MetaEditor. Drag and drop onto a chart. Install Fonts in the zip file to C:/WINDOWS/FONTS/
+------------------------------------------------------------------------------------------------------------
+Note:
+I have a small wishlist of modifications for the indicator, particularly an Elliot Wave signal, anyone have any EA friendly code for this? As i'm more familiar with writing EAs than Indicators in mql4, Multi-Meter was written as an EA, like the original !x-meter, which is now also a less memory/cpu hungry indicator (x-meter2). It doesn't trade like an EA and doesn't work in Tester, but if you attempt to test it it will give a chart of all the standard indicators used in Multi-Meter which can be saved as a template. If anyone is interested to convert Multi-Meter to an mql4 Indicator, great! Contact me for any additional details.
+Joshua

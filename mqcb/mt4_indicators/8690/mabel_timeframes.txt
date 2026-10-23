@@ -1,0 +1,4 @@
+The code is based on indicators from six time frames with each giving a seperate signal as to its timeframe.
+When the ALL part of a time frame is showing UP/Down it means most of the indicator agree to the direction. Orders can then be placed based on the signal given by the ALL signal.
+This indicator takes input from the major time frames and displays the appropriate time to trade each timeframe based on five indicators. It is best used when the major timeframes are giving a coresponding signal with the lower ones
+This indicator uses five different indicators from 6 different timeframes to give a signal. It is best used when the major timeframe signals agree with the lower timeframe signal except when scalping.

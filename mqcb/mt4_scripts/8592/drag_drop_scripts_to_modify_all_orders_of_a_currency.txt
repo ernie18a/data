@@ -1,0 +1,10 @@
+Hello all,
+this code might be good for those who manage several orders placed on a currency. For instance, you have several BUY orders on EURUSD and you want to modify their stop loss; you drag the script "modify_all_dragDrop", and drop it exactly in the point you want the stop levels to be. You will see that all orders placed on the corresponding currency will have their stop loss level adjusted to chosen point of the chart.
+This functionality is similar for the take profit levels, which is provided by the modify_take_profits_DragDrop.
+I also provide a close_all_DragDrop to close all orders of a currency (close_all_DragDrop).
+These scripts can process all type of orders (BUY, SELL, BUYSTOP, ....).
+Please, take a look before use and try them in a demo account firstly.
+I'll not take responsibility
+for eventual damages in your portfolio.
+Regards.
+Joao

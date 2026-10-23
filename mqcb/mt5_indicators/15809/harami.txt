@@ -1,0 +1,10 @@
+Real author:
+Paul Stringer
+Indicator to identify the Harami patterns.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 14.06.2016.
+Fig.1. The Harami indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15809

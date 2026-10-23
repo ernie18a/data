@@ -1,0 +1,15 @@
+Description:
+This EA uses the Stochastic indicator signals in the level between 20 and 80 (EURUSD, period H4);
+A trade will be started when the "minut" is equal to TimeMinute. There is a SL-parameter "stolos" setable. I'm using a higher SL. Is the trade in profit, the EA will start to safe profit, when "start"-Points are reached. Then the SL will set "trailstop"-Points under /over "start".
+I inserted a divisor "diff" to scalp the balance. If there are more then one "orders" setted, then the Lots will be devided also by the numbers of orders. The parameter "sign" can be used to check a higher delta between "stochastic-signal" and "stochastic-base" before start trading. I don't use it.
+The ZIP-File attached contains a Tester result for July 2013.
+Explanations to the parameters:
+minut = Set the minute, when EA should start a trade;
+orders = numbers of orders;
+trailstop = SL, when “start” is reached;
+start = Profit in Points, when trailingstop should start working;
+stolos = this means StopLoss;
+diff = this is a divisor for balance to scalp the lot;
+sign = checking a higher difference between stochastic-base and stochastic-signal before trading;
+Image:
+Test results for July 2013 (EURUSD, H4)

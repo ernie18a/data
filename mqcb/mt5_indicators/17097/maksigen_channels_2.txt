@@ -1,0 +1,5 @@
+There is already a version of maksigen channels for MetaTrader 5 (here :
+https://www.mql5.com/en/code/2073
+), but there are some minor issues, and there was some room for extending the indicator ...
+In order to keep this useful indicator in current, it has been re-coded (to metatrader 5 ways) and in this version some issues with time limits, that the existing version had, are solved, and now it works correctly (time limits are as they should be). High and low values are - since time limits are solved, also correct. And, as a plus, this version looks much more like channels then the original version.
+PS: to turn the channels display off, set the color for area 1 and area 2 to none

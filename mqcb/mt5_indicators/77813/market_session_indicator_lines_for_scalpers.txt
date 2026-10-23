@@ -1,0 +1,28 @@
+NB: The latest version (3) includes a total of 24 markets instead of just the original 12.
+Overview:
+Looking at the screenshot, it is easy to see how market openings and closings affect the short term movement of the Gold price. Thus, these lines are very important for short-term scalping. No other indicator that I could find includes all the market times, everyone else seems to focus on the larger markets only.
+What the indicator does
+Market Session Pro+ (v2.00) is a chart-window indicator that shows when the world's major markets open and close, drawn straight onto your chart. It covers 12 built-in markets: New York, Shanghai, Euronext, Tokyo, Shenzhen, Mumbai, Hong Kong, London, Toronto, Zurich, Frankfurt and Sydney. There are also two optional custom markets with their own times, colour and DST rule.
+Time handling.
+Session times are entered in UTC standard time, and each market has its own ± hours adjustment.
+With Auto DST on, the right rule is applied per market: US for New York and Toronto, EU for London, Euronext, Frankfurt and Zurich, and Australian for Sydney.
+The broker's GMT offset is auto-detected or set manually, with a fine-tune in minutes.
+Countdowns run off the server clock, so they always match where the lines sit on the chart.
+Weekend sessions can be skipped, and sessions that wrap past midnight are handled.
+On the chart.
+Each session gets a vertical open line and an optional close line, with configurable width, style and colour.
+Lines can be semi-transparent, drawn on an overlay so candle highs and lows show through.
+Open lines can snap to the first bar at or after the open time.
+Optional session boxes are a lighter shade of the market colour. They can overlap or be stacked in separate bands.
+Sessions repeat back as far as the visible chart, up to 90 days by default, and only the next upcoming session per market is drawn ahead.
+Small triangle and rectangle markers at the chart edge show opens (filled) and closes (ring), stacked when several markets share a time.
+Optional labels show the market name, the next open or close countdown and the [HH:MM–HH:MM] times. They can sit at the top or bottom and be horizontal or vertical.
+Hovering a line shows a tooltip such as "New York OPEN (09.29 13:00–22:00)".
+Info panel and buttons.
+The panel lists every market with its colour stripe and a live "Opens in…" or "Closes in…" countdown. Active markets get a green row, and the list is sorted by active first, then soonest to open.
+Six click buttons above and below the panel toggle labels, label position, text orientation, close lines, boxes and time tags. Their state survives timeframe changes.
+You can resize the panel by dragging the corner handle.
+Chart setup.
+It can switch to a white, grid-free colour scheme and restores your original look when removed.
+On first attach it switches to M5 and applies a zoom level.
+It adds 25% open space on the right for upcoming sessions.

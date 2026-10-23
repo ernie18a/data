@@ -1,0 +1,1 @@
+Parabolic SAR for current Time Frame (White Line and Yellow Line) and Next Available Time Frame (Aqua Line and Orange Line)

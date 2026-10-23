@@ -1,0 +1,191 @@
+Description
+The CDEMAOnRingBuffer class is designed for calculation of the technical indicator Double Exponential Moving Average (
+Double Exponential Moving Average
+, DEMA) using the algorithm of
+the ring buffer
+.
+Declaration
+class
+CDEMAOnRingBuffer :
+public
+CArrayRing
+Title
+#include <IncOnRingBuffer\CDEMAnRingBuffer.mqh>
+File of the CDEMAOnRingBuffer.mqh class must be placed in the IncOnRingBuffer folder that need to be established in MQL5\Include\. Two files with the examples used by the class from this folder are attached to the description. File with the classes of
+the ring buffer
+and the
+Moving Average
+also must be in this folder.
+Class methods
+//--- initialization method:
+bool
+Init(
+// if error it returns false, if success - true
+int
+period      =
+12
+,
+// the DEMA period
+ENUM_MA_METHOD
+method      =
+MODE_EMA
+,
+// the method of smoothing
+int
+size_buffer =
+256
+,
+// the size of the ring buffer
+bool
+as_series   =
+false
+// true, if a time series, otherwise - false
+);
+//--- the method of calculation based on a time series or the indicator buffers:
+int
+MainOnArray(
+// returns the number of the processed elements
+const
+int
+rates_total,
+// the size of the array
+const
+int
+prev_calculated,
+// processed elements on the previous call
+const
+double
+& price[],
+// the array for calculation
+);
+//--- the method for calculation based on a separate series elements of the array
+double
+MainOnValue(
+// returns the DEMA value for the set element (bar)
+const
+int
+rates_total,
+// the size of the array
+const
+int
+prev_calculated,
+// processed elements of the array
+const
+int
+begin,
+// from where the significant data of the array starts
+c
+onst
+double
+value,
+// the element (bar) value
+c
+onst
+int
+index
+// the element (bar) index
+   );
+//--- the methods of access to the data:
+int
+BarsRequired();
+// Returns the necessary number of bars to draw the indicator
+string
+Name();
+// Returns the name of the indicator
+int
+Period
+();
+// Returns the period
+int
+Size();
+// Returns the size of the ring buffer
+double
+MA(
+int
+index);
+// Returns the value of the Moving Average, indexing is like in a time series
+To get the calculated data of the indicator from the ring buffer is possible as from the usual array. For example:
+//--- the class with the methods of calculation of the DEMA indicator:
+#include <IncOnRingBuffer\CDEMAOnRingBuffer.mqh>
+CDEMAOnRingBuffer dema;
+
+...
+//+------------------------------------------------------------------+
+//| Custom indicator iteration function                              |
+//+------------------------------------------------------------------+
+int
+OnCalculate
+(
+const
+int
+rates_total,
+// the size of the array price[]
+const
+int
+prev_calculated,
+// processed bars on the previous call
+const
+int
+begin,
+// from where the significant data starts
+const
+double
+& price[])
+// the array for the calculation
+{
+//--- calculation of the indicator based on a time series:
+dema.MainOnArray(rates_total,prev_calculated,price);
+
+...
+//--- use the data from the "dema" ring buffer,
+//    for example, copy the data in the indicator buffer:
+for
+(
+int
+i=start;i<rates_total && !
+IsStopped
+();i++)
+      DEMA_Buffer[i] = dema[rates_total-
+1
+-i];
+// the DEMA indicator line
+...
+//--- return value of prev_calculated for next call:
+return
+(rates_total);
+  }
+When calculation the DEMA also calculation of the
+Moving Average
+with the same parameters is performed. We can get the data from the MA ring buffer using the MA method(
+int
+index):
+//--- use the data from the Moving Average ring buffer,
+//    for example, copy the data in the indicator buffer:
+for
+(
+int
+i=start;i<rates_total && !
+IsStopped
+();i++)
+      MA_Buffer[i] = dema.MA(rates_total-
+1
+-i);
+// the Moving Average indicator line
+Please note that indexing in the ring buffers is the same as in the
+time series
+.
+Examples
+The indicator calculates the Test_DEMA_OnArrayRB.mq5 file on the basis of the price time series. The MainOnArray() method application is demonstrated
+The Test_DEMA_OnValueRB.mq5 file demonstrates the use of the MainOnValue() method. At first the DEMA indicator is calculated and drawn. Then on the basis of this indicator ring buffer one more DEMA is drawn.
+The result of the work of the Test_DEMA_OnArrayRB.mq5 with the size of the ring buffer of 256 elements
+The result of the work of the Test_DEMA_OnValueRB.mq5 with the size of the ring buffer of 256 elements
+When writing code the developments of
+MetaQuotes Software Corp.
+,
+Integer
+and
+GODZILLA
+were used.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1416

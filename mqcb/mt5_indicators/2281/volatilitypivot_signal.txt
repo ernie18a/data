@@ -1,0 +1,9 @@
+The VolatilityPivot_Signal indicator shows information on the current trend using the values of the
+VolatilityPivot
+indicator with a fixed timeframe.
+The color of the initial indicator lines is the source of the signal: Colored dots on lines appear when the bar of the corresponding timeframe changes.
+The indicator requires VolatilityPivot.mq5 indicator file. Place it to terminal_folder\MQL5\Indicators.
+Figure 1. The VolatilityPivot_Signal indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2281

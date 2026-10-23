@@ -1,0 +1,10 @@
+CustomCandle draws candlesticks of a larger and, perhaps, non-standard (for MT 4) timeframe in the current chart. At the same time, there is no need to open that larger timeframe chart, since only the data from the current timeframe are used. You should make the candlesticks (bars) of the current chart faded or invisible.
+Limitations:
+1. The period of the larger timeframe must be larger and multiple of the current one (for M5, you may use M10, M15, M20, etc., up to 1440; however, for М1 you may use any timeframes from 2 to 1440).
+2. The period of the larger timeframe may not exceed 1 day (1440 minutes), since it is impossible to draw 2 (or more)-day candlesticks. (I could program it, but I didn't.)
+3. Charts with timeframes of H4 and larger are not supported. (It is possible to program them, though.)
+Special Features:
+After a disconnection, some undesirable candlesticks may appear during history pumping and the consecutive numbering will be broken. So we should redraw the candlesticks after history pumping. There is no need to remove the indicator, just open its properties. This is an unpleasant thing, but I don't know yet how to fix it.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8118

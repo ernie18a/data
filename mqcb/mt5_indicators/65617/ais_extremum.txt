@@ -1,0 +1,14 @@
+The main task of this indicator is to estimate the probability that the High price has reached its maximum, or the minimum for the Low price.
+First, the indicator collects statistics on historical price movements. After that it analyses the current state of the market and compares it with the statistics. If the result of the analysis is positive, the indicator signals about it.
+The indicator can be used as an additional filter. If signals of one direction appear, there is a high probability that the price will go in the other direction.
+Indicator parameters:
+iPeriod
+- period of the indicator. The minimum value is equal to 2.
+History
+- the number of bars in the history, for which the indicator collects statistics. If this parameter is equal to 0, the whole history is analysed. Please note that a large value of this parameter can slow down the first start of the indicator.
+Percent
+- defines the threshold of triggering of indicator signals. The higher it is, the less frequent the signals are.
+The first start of the indicator may take some time. This is due to the fact that it collects statistics on historical data.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/65617

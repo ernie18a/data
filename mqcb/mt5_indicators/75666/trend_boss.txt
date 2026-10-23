@@ -1,0 +1,155 @@
+Overview
+This indicator tags every bar on your chart as
+trending
+,
+ranging
+, or
+volatile
+, using a
+Bag-of-SFA-Symbols (BOSS)
+classifier built from scratch in pure MQL5. Any Expert Advisor can read that lane as context and gate its strategy on the current regime.
+The method behind it is unusual, and it is the reason the indicator exists. BOSS throws the raw prices away entirely. Each window of the series is compressed into a short
+word
+of a few letters, a stretch of market becomes a
+bag
+of those words, and two stretches are compared by how similar their vocabularies are. Three differences that make raw price windows impossible to compare are each discarded by one step of that compression:
+Z-normalization
+removes the price level, so the same arc at 30,000 and at 60,000 becomes the same normalised curve.
+A low-pass Fourier filter
+removes the noise, keeping only the first few Fourier coefficients of the window and discarding the high-frequency jitter.
+Quantization into letters
+removes fine numerical detail, so tiny differences that do not change the shape category do not change the word.
+Because the result is a bag rather than a sequence, it also does not care
+where
+inside the window a pattern happened. And because the words are literally readable, the vocabulary of a regime can be printed and inspected, which is something no elastic-distance method offers.
+A single price window is z-normalized, low-pass filtered, and quantized into a short word of letters.
+What Is Actually Included
+The package is a complete symbolic time-series toolkit, not just the indicator on top of it. Every layer is a header-only class with no external dependency beyond ALGLIB's FFT, which ships with MetaTrader 5:
+Class
+Job
+CDFT
+The Fourier front end. Returns the first few non-DC coefficients of a window, interleaved as real and imaginary parts. Low index means low frequency, so keeping the first few is the low-pass filter the whole method rests on.
+CMCB
+Multiple Coefficient Binning, the one piece that separates SFA from the older SAX. Rather than assuming a standard normal and cutting at fixed Gaussian quantiles, it learns its cut points from the data, and it learns a separate set for every coefficient slot, because a low-frequency coefficient and a high-frequency one have very different spreads.
+CSFA
+Symbolic Fourier Approximation: one window in, one word out.
+CBossTransform
+Slides the window along a series and drops each word into a histogram, applying numerosity reduction so a run of identical consecutive words counts only once. The bag then measures how many distinct pattern occurrences a series contains rather than how long each one lingers.
+CBossClassifier
+1-nearest-neighbour over word bags using the asymmetric BOSS distance, with leave-one-out training accuracy for scoring.
+CBossEnsemble
+The competitive form of BOSS. Trains one member per candidate window size, scores each, keeps the good ones, and lets them vote.
+CRegimeLabeler
+Rule-based ground truth for training, deriving trend / range / volatile labels from the lag-1 autocorrelation and the volatility of a window's log returns.
+Why the Ensemble Matters
+A single BOSS classifier commits to one sliding-window length, and the right length is data dependent and not known in advance. A short window captures fast local structure and misses slow sweeps; a long window does the reverse. Pick wrong and the classifier is blind to exactly the structure that separates the classes. This is a well documented weakness of the method, and it showed up plainly in testing: a single BOSS scored 25.3% macro accuracy on real bars, barely better than picking one class and calling it a day.
+The ensemble fixes it. It trains one member at each of six candidate window sizes (12, 18, 24, 32, 48 and 64 bars), scores each by leave-one-out accuracy over the training bags, keeps every member that comes within 92% of the best score, and classifies by majority vote among the survivors. That single change lifted macro accuracy from 25.3% to 62.5%. The ensemble is not an optional refinement on top of BOSS; for a dictionary classifier it is what makes the method work at all.
+Several BOSS members at different window sizes classify the query, and the majority vote wins.
+What the Indicator Draws
+The indicator trains its ensemble once when it loads, then tags each bar with the regime of the trailing segment of closes ending at it. The result is a colour-coded lane in a separate window, at three distinct heights so the states never overlap, plus an optional text label naming the current regime on the chart itself.
+Regime
+Lane
+Meaning
+Range
+Blue, bottom row (0)
+Mean-reverting oscillation. Typically the dominant class on most instruments.
+Trend
+Green, middle row (1)
+Persistent directional drift, where moves tend to continue rather than reverse.
+Volatile
+Red, top row (2)
+Large erratic moves with no clear direction.
+Reading it from an Expert Advisor.
+Acquire a handle with
+iCustom
+on
+BOSS\BOSSRegime
+and read buffer
+0
+: it holds the regime code directly, 0 for range, 1 for trend, 2 for volatile, and
+EMPTY_VALUE
+on bars with no full segment behind them. Buffer 1 is only the colour index. That is the whole interface, and it is deliberately thin so a gating condition is one
+CopyBuffer
+call.
+The colour-coded regime lane under a BTCUSD H1 chart: blue range, green trend, red volatile.
+Two things to know before you attach it.
+Training happens in
+OnInit
+and takes a moment, and the indicator refuses to load rather than draw a lane it cannot justify: it needs at least four segments of history, and enough of them to survive labelling. Second, the forming bar's regime can change as that bar completes, because its trailing segment is not final yet. Closed bars are stable; the rightmost one is not, so gate on a closed bar.
+Recommended Setup
+Setting
+Recommended value
+Notes
+Symbol
+Any
+Windows are z-normalized internally, so the classifier sees shape rather than price level and needs no per-symbol scaling. Development and the screenshots used BTCUSD.
+Timeframe
+H1
+Works on any timeframe. The segment is measured in bars, so 120 bars describes a very different stretch of market on M5 than on D1.
+History required
+At least 480 bars, ideally 20000
+Four segments is the hard floor below which the indicator will not load. The default asks for 20000 bars so the ensemble has a broad sample of all three regimes to learn from.
+Word length
+2 coefficients (four letters)
+Leave this alone unless you have measured otherwise. See the note below: it is not a default, it is the measured robust operating point.
+Why WordLen stays at 2.
+Keeping more Fourier coefficients means longer words that capture finer shape detail, which sounds like an improvement and is not. A coefficient sweep on a controlled two-class task showed two coefficients holding at or near 100% until the noise is heavy, and still well above chance at the extreme, while three or four coefficients collapse toward the 50% coin flip as soon as any noise appears. Fewer coefficients means a stronger low-pass filter, and a stronger low-pass filter is what survives noise.
+Installation and File Structure
+The headers are included as
+<BOSS\...>
+and the indicator lives in an
+Indicators\BOSS
+subfolder, so the layout below has to be preserved.
+File
+Description
+Indicators\BOSS\BOSSRegime.mq5
+The indicator. Trains a BOSS ensemble on recent history at load time and colour-codes the regime lane.
+Include\BOSS\FourierTransform.mqh
+CDFT: real-input Fourier front end over ALGLIB's FFT, returning the low coefficients for SFA.
+Include\BOSS\SFA.mqh
+CMCB and CSFA: learned equi-depth binning per coefficient slot, and window to word.
+Include\BOSS\BOSS.mqh
+CBossHistogram, CBossTransform, CBossClassifier and CBossEnsemble: the bag, the BOSS distance, and the voting ensemble.
+Include\BOSS\RegimeLabeler.mqh
+CRegimeLabeler: rule-based trend / range / volatile labels from autocorrelation and volatility.
+Input Parameters
+Parameter
+Default
+What it does
+Segment
+120
+Bars per classified segment. BOSS represents a series by the distribution of words its sliding window produces, so the segment has to be long enough to yield many words.
+WordLen
+2
+Fourier coefficients kept, each contributing two letters. The measured robust operating point; raising it overfits noise.
+Alphabet
+4
+Letters available per coefficient slot. Allowed range is 2 to 10.
+TrainBars
+2000
+History bars used to train the ensemble, taken from closed bars only. Fewer bars means faster loading and a narrower sample of regimes.
+TrendACF
+0.05
+Lag-1 autocorrelation above which the labeler calls a training segment trending. Lowered from the class default of 0.15 to balance the training classes, since a strict threshold leaves too few trend examples to learn from.
+VolHighMult
+1.3
+Volatility above this multiple of the mean segment volatility marks a training segment volatile. Relative, not absolute, so it adapts to the instrument.
+ShowLabel
+true
+Draw a text label naming the current regime in the chart corner.
+Note:
+the two labeler thresholds shape the
+training data
+, not the live classification. They decide what the ensemble is taught to call a trend or a volatile stretch, so changing them changes what the lane means. Print the training summary in the Experts log after loading to see how many segments of each class the labeler produced; a class with very few examples will be classified poorly no matter how good the ensemble is.
+Research Basis
+The implementation follows the two papers that define the method:
+Patrick Schäfer,
+The BOSS is concerned with time series classification in the presence of noise
+, Data Mining and Knowledge Discovery, 2015. The bag-of-words representation, the BOSS distance, and the ensemble with its 92% retention rule.
+Patrick Schäfer and Mikael Högqvist,
+SFA: A Symbolic Fourier Approximation and Index for Similarity Search in High Dimensional Datasets
+, EDBT 2012. Symbolic Fourier Approximation and Multiple Coefficient Binning.
+One point is worth stating plainly. The labels the ensemble learns from are generated by a simple statistical rule rather than by hand, so the indicator learns to reproduce that rule from window shape alone. It is a transparent, mechanical definition of regime, not an oracle, and a richer or forward-looking labeler would give BOSS a cleaner target. The engine is built so that swapping the labeler is a small change.
+A companion article builds every layer from scratch, explains the mathematics, and runs the full benchmark against Dynamic Time Warping:
+Bag-of-SFA-Symbols (BOSS) in MQL5: Symbolic Time-Series Classification for Market Regimes
+.

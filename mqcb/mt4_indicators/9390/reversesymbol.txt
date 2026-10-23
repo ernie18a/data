@@ -1,0 +1,26 @@
+This indicator is the simplified version of
+Monitoring-Spread
+tool.
+It allows to use the reversed symbols (
+1 / X
+) in a realtime.
+Image:
+ReverseSymbol example
+How to use:
+Attach indicator to the chart, set "
+allow DLL use
+".
+Open chart of "reversed" symbol in
+Offline
+mode (File->Open Offline).
+Editor's remark:
+Note that it's a mirror translation of the
+original Russian version
+.
+If you have any questions to the author, suggestions or comments, it's better to post them
+there
+.
+If you have found this code useful for trading or educational purposes, don't forget to thank author.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9390

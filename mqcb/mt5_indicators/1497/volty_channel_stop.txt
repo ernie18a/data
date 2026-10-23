@@ -1,0 +1,12 @@
+The real author:
+TrendLaboratory
+Description:
+The Volty Channel Stop indicator uses the ATR and the Moving Average indicator for calculation of support/resistance lines.
+Recommendations to use in trading are standard. If the price is higher than a line, then a buy, if the price is lower than a line, then a sell.
+Bullet points are a signal that the trend is reversed. This indicator can become a good alternative of a standard
+Parabolic SAR
+indicator in your trading systems.
+Image:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1497

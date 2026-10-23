@@ -1,0 +1,5 @@
+Author: not specified
+Smoothing for the ADX indicator. Recalculates the specified number of bars at every tick (not optimized)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7196

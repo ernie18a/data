@@ -1,0 +1,5 @@
+Description:
+This is a template of the simple scalping system. It include CCI + Parabolic+Moving Average. Timeframes m1-m5.
+Enter when parabolic shows sell or buy signals, for more safe signals use MA and CCI watching where is common trend.
+Copy template file to directory - C:\Program Files\ МТ4\templates and load in terminal template.
+Image:

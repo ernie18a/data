@@ -1,0 +1,8 @@
+Notifies you at your specified Chart Time
+Indicator can be used to set alarm at a specified time on the chart.
+In the default setting I am using it for a chart of GMT server time.
+I have set the indicator time to notify me 5 minutes before H4 Candle closing (in LocalTIme)
+The indicator has six input Time options Time1, Time2,Time3,Time4,Time 5 and Time6, so you can add up to 6 alarms
+Ignore the date and add time for which you want to be notified
+You can set alerts on or off
+and receive alerts as Popup window, Sound Alert, Send an Email, Send Push notification or Prints a Message on Toolbox - Experts Window

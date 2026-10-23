@@ -1,0 +1,19 @@
+VelaMayor MTF
+is a powerful multi-timeframe visualization indicator for MetaTrader 5, engineered for traders practicing Multi-Timeframe Analysis, Smart Money Concepts (SMC), Price Action, and ICT strategies.
+Instead of flipping between multiple charts,
+VelaMayor
+projects the last
+X candles of any higher timeframe
+(e.g. H1, H4, D1) directly onto your execution timeframe (e.g. M1, M5, M15).
+Dual-Layer Rendering (Independent Borders & Fills)
+: Choose separate colors for candle bodies and candle outlines for maximum contrast on both light and dark chart themes.
+True Period Separation ( Separate Boxes )
+: Unlike typical indicators that stretch full-interval blocks across the screen, VelaMayor bounds the box strictly to the inner candles formed within that timeframe, leaving natural breathing space between periods.
+Centered High/Low Wicks
+: Cleanly detached upper and lower wicks that respect body boundaries and keep chart readability crisp.
+Zero-Lag Real-Time Candle 0
+: Live bar updating tick by tick with instant price expansion.
+Timeframe Change Auto-Recovery
+: Built-in background timer and chart-event listeners ensure all boxes and wicks reappear reliably whenever you switch timeframes or reconnect.
+Optional Features
+: Full High-to-Low range envelope and floating info labels with OHLC values and point ranges.

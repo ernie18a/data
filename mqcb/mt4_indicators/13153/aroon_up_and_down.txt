@@ -1,0 +1,8 @@
+The Aroon Up and Down detects the local tops and bottoms on the chart it is attached to. This indicator provides buy and sell signals for currency pairs when they rise from the bottom or fall from the top. Crossing the line indicator shows a good signal for taking profit or minimizing the loss. The indicator can send signals on the intersection by email, as well as in the standard windows of the platform.
+Input Parameters:
+AroonPeriod (default = 14) — the period in chart bars for the indicator to look up for the bottoms and the tops. As with many other indicators, the higher is the period the smoother the output lines are, and the lower the period is the more signals are generated.
+MailAlert (default = false) — if true then signals on the intersection will be sent by e-mail according to the e-mail options of your MetaTrader platform.
+SoundAlert (default = false) — if true then sound and visual alert on the intersection will be generated in the platform itself.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13153

@@ -1,0 +1,5 @@
+Quantora Account Health Monitor MT5 is an indicator that provides a real-time overview of account condition and risk. It does not open or manage trades and is designed for monitoring and analysis.
+The tool combines key metrics such as balance, equity, margin, drawdown, and exposure into a single dashboard. It helps you understand how your account is performing without checking multiple windows.
+Its main feature is the Account Health Score, which evaluates margin usage, drawdown, and open position exposure to produce a simple score from 0 to 100. This score is translated into clear states such as excellent, good, warning, or critical, giving a quick summary of overall account condition.
+The dashboard also shows floating profit or loss, number of open positions, total lot exposure, and current spread. All values update automatically and can be adjusted using custom risk thresholds to match different trading styles.
+Suitable for traders who want a simple and structured way to monitor account health and overall risk in real time.

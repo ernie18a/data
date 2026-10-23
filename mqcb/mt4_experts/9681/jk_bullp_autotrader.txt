@@ -1,0 +1,4 @@
+The Expert Adviser JK_BullP_AutoTrader is built on Bulls Power indicator. The Expert Adviser is used on H1 timeframe. It was tested on "Every ticks" model.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9681

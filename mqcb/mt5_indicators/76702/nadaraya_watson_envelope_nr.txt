@@ -1,0 +1,17 @@
+This indicator is based on the Nadaraya-Watson method using Gaussian smoothing to build a dynamic envelope around price. The upper and lower bands adjust with market movement, while arrows are displayed when price crosses beyond either side of the envelope. The calculation is designed so that historical signals remain fixed once they have been calculated.
+Main Features
+Non-repainting calculation
+Nadaraya-Watson Gaussian smoothing
+Dynamic upper and lower envelope bands
+Clear upper and lower band crossing signals
+Solid colored signal arrows
+Adjustable bandwidth
+Adjustable envelope multiplier
+Selectable applied price
+Customizable band and arrow colors
+Works on all symbols and timeframes
+Lightweight chart display
+No external indicators required
+I
+mportant note:
+This indicator is provided as an analytical tool and does not guarantee profits, as trading in financial markets involves risk.

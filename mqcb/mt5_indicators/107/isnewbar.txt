@@ -1,0 +1,22 @@
+For the indicators and Expert Advisors it's very often necessary the information whether a new bar has appeared on the specified timeframe. Here is an example, how it can be done.
+After the first call of the isNewBar() function, the current bar is not assumed as a new bar. The function saves its time, it's the current bars, the next bar will be new.
+The code is commented, it's easy to understand, I hope it will be useful.
+Take care of use
+of the method, that is widely used in MQL4 -
+the bars counting using the
+Bars
+function
+(discussed
+here
+in Russian).
+In MQL5 It will work only if the max bars in chart is set as
+Unlimited
+:
+In this case, when the new bars appeared, the
+Bars
+function will return the increasing number of bars, but if the max bars in chart is limited (for example, 10000 bars), this approach will not work! It easy to check it.
+That's why it's necessary to save the times of the last bars and compare them, because the time isn't changes until the bar completed.
+This method is used in the indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/107

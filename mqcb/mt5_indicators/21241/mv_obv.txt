@@ -1,0 +1,25 @@
+Unlike standard On Balance Volume calculated on Close prices only, and indicator MultiVote OBV is calculated on HLC prices, which resulted in its higher sensitivity.
+The indicator has no configurable parameters. Negative values are drawn in
+red
+, positive ones in
+green
+.
+Calculations:
+MVOBV = PrevMVOBV + TotalVote * Volume
+where:
+TotalVote = HighVote + LowVote + CloseVote
+If High > PrevHigh:
+HighVote = 1
+If High < PrevHigh:
+HighVote = -1
+If Low > PrevLow:
+LowVote = 1
+If Low < PrevLow:
+LowVote = -1
+If Close > PrevClose:
+CloseVote = 1
+If Close < PrevClose:
+CloseVote = -1
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21241

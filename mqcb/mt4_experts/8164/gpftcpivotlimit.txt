@@ -1,0 +1,17 @@
+A TS based on the kickback from intraday levels calculated by indicator Pivot is implemented.
+Trade Rules:
+trade on the H1 timeframe;
+after 00.00 a.m. of the current day, calculate Pivot, Resist1, Resist2, Resist3, Support1, Support2, Support3 levels;
+buy after testing the one-hour candlestick (T-2) of the Support(n) level and closing the (T-1) candlestick above this level, StopLoss being placed on the Support(n+1) level, TakeProfit on the Resist(n) level. T is the time of the current hour;
+to move StopLoss to the lossless point, trailing is used;
+vice versa, sell when one-hour candlestick (T-2) is testing Resist(n), and candlestick (T-1) is closed below this level, StopLoss - Resist(n+1), TakeProfit - Support(n).
+The values of some inputs:
+the TgtProfit variable specifies the levels of stops and profits and can have the values from 1 to 5;
+if TgtProfit = 1, then the tested level (buy/sell) = Resist1/Support1, StopLoss (buy/sell) = Resist2/Support2, TakeProfit (buy/sell) = Support1/Resist1;
+if TgtProfit = 2, then the tested level (buy/sell) = Resist1/Support1, StopLoss (buy/sell) = Resist2/Support2, TakeProfit (buy/sell) = Support2/Resist2;
+if TgtProfit = 3, then the tested level (buy/sell) = Resist2/Support2, StopLoss (buy/sell) = Resist3/Support3, TakeProfit (buy/sell) = Support1/Resist1;
+if TgtProfit = 4, then the tested level (buy/sell) = Resist2/Support2, StopLoss (buy/sell) = Resist3/Support3, TakeProfit (buy/sell) = Support2/Resist2;
+if TgtProfit = 5, then the tested level (buy/sell) = Resist2/Support2, StopLoss (buy/sell) = Resist3/Support3, TakeProfit (buy/sell) = Support3/Resist3;
+the isTradeDay variable determines the way the opened positions will be closed. If isTradeDay = true, then the opened orders will be compulsory closed at the end of the day, otherwise the orders will be at the market until they are closed by StopLoss or TakeProfit;
+if the value of the variable isTrace = True then the information of all kind will be written to the log file for debugging the TS.
+The test results: the positive result was not reached with every currency pair using this approach of kickback. Mainly, the positive profitableness was reached when the trailing was used.

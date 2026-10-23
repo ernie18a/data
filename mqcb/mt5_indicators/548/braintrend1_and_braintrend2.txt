@@ -1,0 +1,11 @@
+BrainTrend1
+and
+BrainTrend2
+are placed in one minimized window to remove excessive elements from a chart workspace.
+BrainTrend1 (upper square dots) is a basic trend indicator, while BrainTrend2 (lower round dots) is a confirming indicator.
+BrainTrend1 and BrainTrend2 compiled files must be placed to the
+terminal_data_folder
+\MQL5\Indicators\.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/548

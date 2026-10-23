@@ -1,0 +1,10 @@
+Theory:
+There are a couple of versions of super trend that are floating around the net. One of the versions is using CCI (Commodity Channel Index) for calculation. Now, the way it is calculated, it is using the CCI crosses of zero line as a signal for a trend change. Implicitly, since CCI will cross zero line when the price crosses its SMA (Simple Moving Average), that means that the super trend is actually an indicator of a price crossing the SMA. Except that would not be the super trend indicator as we know it at all :). ATR (Average True Range) is usually added as a filter to those crosses, and then we have what we all know as "super trend" indicator.
+This version:
+It is using as simple as it gets calculation. Also, in order to add some things that are usually not available, you have a choice of what is to be used as a filter. You can use
+average true range (ATR)
+standard deviation
+as a filter. Standard deviation tends to be "faster" then the ATR counterpart hence you need to do some experimenting when using it, but all in all the signals are still remaining usable (see the example bellow).
+Usage:
+You can use the color changes for signals.
+Same example as above, but using standard deviations instead of ATR for filtering:

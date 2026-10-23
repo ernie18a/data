@@ -1,0 +1,6 @@
+Changing two parameters with the mouse pointer
+X - maximum MA period changes
+Y - step of changing of MA period
+Left click of the mouse - the beginning/end of the change of parameters.
+MT5 Version
+works much faster and therefore much more comfortable!

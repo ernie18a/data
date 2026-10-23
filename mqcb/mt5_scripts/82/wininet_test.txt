@@ -1,0 +1,11 @@
+The WININET_TEST.mq5 script is a modified version of script
+s_wininet.mq4
+, published by Integer in MQL4.Codebase.
+It's a simple example that shows how to download page(file) from Internet using the wininet.dll library.
+Input parameters:
+URL - address of page or file (also it can reference to a binary file)
+FileToSave - file name, that will be saved to terminal_data_folder\MQL5\Files\ folder of the client terminal.
+To see how does it works, don't forget to "Allow DLL imports" in the options of the client terminal and execute it at any chart.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/82

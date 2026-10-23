@@ -1,0 +1,9 @@
+The original version
+:
+Step chart
+Usage:
+Step chart is displaying values as increments of step size
+Step size can be specified as fractional pips
+You can use any of the usual price types to display the chart
+Reason for upgrade :
+making the code faster (never enough of execution speed) and simpler to use (iCustom() wise too)

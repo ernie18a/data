@@ -1,0 +1,7 @@
+The simple MACD indicator with insert price on it. It helps trader easy to view overall price position in MACD indicator to minimize false signal.
+If cross macd and signal lines, or macd is place on beyond or below signal, the position of the current price and shadow of the price (blue line) will help us to ensure the macd signals.
+You can use it on any time frame for intraday trading or use it for identify trend of the market.
+Many applicated and interpretation from it, example, you could find valuable trading zone if macd>0, position in opposite (or beyond signal line) with crossing down => indicated for sell, and reverse.
+Or when macd cross signal but price still not move accordingly, it warn us to be carefully of very soon signal from macd.
+It is one of the indicator i have used in my EA and could be
+If you have any questions to me, want to use it you can post suggestion, request or comment!

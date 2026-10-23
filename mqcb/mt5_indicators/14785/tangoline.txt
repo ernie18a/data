@@ -1,0 +1,13 @@
+Real author:
+fxborg
+The indicator displays rapid reversals to the dynamic change of the direction. Like steps in tango! It allows you to enter the market early.
+Display:
+tango line (purple line) - the middle of the range, created after the reversal bar;
+band - high and low range (red and pink line).
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 04.02.2016.
+Figure 1. The TangoLine indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14785

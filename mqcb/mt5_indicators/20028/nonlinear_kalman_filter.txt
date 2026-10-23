@@ -1,0 +1,10 @@
+One more from the creations of John Ehlers.
+Best described by Ehlers himself:
+John Ehlers:
+Take EMA of price (better, a 3 Pole filter).
+Take the difference (delta) between Price and its EMA.
+Take an EMA of delta (or a 3 Pole filter):
+Smoothing will help reduce whipsaws.
+Ideally, smoothing introduces no major trend mode lag because delta is detrended.
+Add the smoothed delta to EMA for a zero lag curve.
+Add 2*(smoothed delta) to EMA for a smoother predictive line.

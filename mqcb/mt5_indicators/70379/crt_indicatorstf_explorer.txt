@@ -1,0 +1,10 @@
+CRT Indicator (STF)
+– Exploring a picture perfect CRT model
+This indicator is my focused quest to objectively test and visualize the “picture-perfect” CRT (Candle Range Theory) setups often seen online, directly on live charts.
+Built in less than 100 lines of MQL5 code, it focuses on structural purity and logical clarity. The algorithm  detects strict three-candle structural conditions (directional shift, range expansion, midpoint positioning, and structure violation) and instantly projects the originating candle range using clean trendlines. No buffers. No clutter. No multi-timeframe dependency. Just raw structural logic on a single timeframe.
+The core objective is simple but rigorous:
+What does a “textbook” single-timeframe CRT model actually produce when exposed to different symbols and timeframes?
+By stripping the concept down to raw candle geometry and structural conditions, this indicator allows traders to observe CRT behavior across markets without subjective interpretation. No repainting logic. No multi-timeframe dependency. Just pure structural detection rendered in real time.
+What surprised me most was the visual outcome on a specific symbol and timeframe. The structural clarity it produced led to a deeper question:
+What would be the best entry filter to apply on a lower timeframe (for a multi-timeframe approach)?
+This is not a finished system, it's a precision-built structural probe for serious CRT exploration.

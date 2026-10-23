@@ -1,0 +1,10 @@
+Real author:
+igorad
+The indicator shows the channel based on fractals.
+Quite an interesting method of a channel creation. Despite its simplicity, it can be useful for flat level analysis (for example, in case you have been absent for some time and now you want to quickly observe recent market events).
+This indicator was first implemented in MQL4 and published in
+CodeBase at mql4.com
+01.11.2007.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/421

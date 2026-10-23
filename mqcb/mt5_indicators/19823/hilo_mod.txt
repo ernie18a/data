@@ -1,0 +1,10 @@
+It is a very old version of High/Low indicator (basically the idea comes from a Gann High Low activator with some modifications).
+Modification was made at that time to allow users to use the indicator in scalping but as well in trending mode.
+Usage is simple :
+It signals a buy/sell opportunity when the indicator changes color.
+If using it in that signaling mode, close opposite orders (if opened) on a new signal.
+Recommendations
+Use it for scalping opportunities when using short calculating periods.
+Use it for trend assessment when using long calculating periods.
+In both cases, use it in combination with some other indicator that can filter out some of the signals of this indicator.
+For experts developers - use buffer 2 (3rd buffer) of the indicator for custom calls (simple +1 and -1 states in that buffers).

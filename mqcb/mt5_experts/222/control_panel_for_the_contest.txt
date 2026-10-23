@@ -1,0 +1,23 @@
+Decription:
+The Control Panel can be used for the manual trading, intraday scalping etc. The Panel is designed for scalping.
+It looks as follows:
+Figure 1. Control Panel
+Top panel:
+Title and version;
+GMT time;
+local time;
+Left panel:
+Trade volume
+is a sum of the values, selected at trade panel. It allows you to set trade volume fast and accurate. It allows you to quickly and accurately set the desired trade volume. The values can be defined in input parameters of the Expert Advisor (up to 9 values);
+Buy/Sell buttons
+- to open long/short position. The volume of the position is shown below the Buy button.
+Right panel:
+Close ALL
+, closes the opened position on the current price;
+Loss Break
+, sets Stop Loss for Even Break level, defined in the input parameters;
+Reverse
+, reverses the opened position;
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/222

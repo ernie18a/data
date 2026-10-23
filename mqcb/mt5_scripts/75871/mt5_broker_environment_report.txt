@@ -1,0 +1,25 @@
+MT5 Broker Environment Report is a small diagnostic script for MetaTrader 5. It prints a structured snapshot of the current terminal, account mode, symbol specification and trading environment to the Experts log and, optionally, to a text file. The report helps compare a working and a failing setup without exposing trading-account activity.
+Purpose
+Broker and symbol specifications are not identical. Differences in symbol suffixes, volume steps, stop levels, filling policies, account modes or terminal permissions can make the same Expert Advisor behave differently. This script records those facts in a repeatable format for bug reports and development briefs.
+How to use
+Copy
+SCA_BrokerEnvironmentReport.mq5
+to
+MQL5\Scripts
+.
+Compile the file in MetaEditor.
+Attach the script to a chart and open the Experts tab.
+Review the report and copy only the fields you want to share.
+Inputs
+InpWriteTextFile
+— save the report to the terminal Common Files directory.
+InpPrintToExperts
+— print the report in the Experts log.
+InpFilePrefix
+— set the prefix used for the generated text filename.
+Reported fields
+The output includes the terminal and MQL5 builds, account margin mode, leverage and deposit currency, server time, current symbol identity, digits, point and tick sizes, contract size, volume limits, trade and order modes, stop and freeze levels, supported filling and expiration modes, tick values, spread and selected terminal permissions.
+Privacy and safety
+The script intentionally excludes the account login, account holder name, balance, equity, open positions, pending orders, trade history and credentials. It is read-only and does not open, modify or close trades. Review every report before sharing it. The values are diagnostic facts, not trading signals and not financial advice.
+License
+The source is released under the MIT License. Example values in the screenshot are illustrative.

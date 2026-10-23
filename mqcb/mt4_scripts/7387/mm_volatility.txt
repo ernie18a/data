@@ -1,0 +1,27 @@
+Lot calculation and position opening by market with the consideration of the asset volatility. StopLoss is set automatically, TakeProfit - on demand, as a multiple of R.
+LotSize:=RiskAmount/(PointPrice*StopLossPoints);
+RiskAmount:=FreeMargin*RiskPercent/100;
+StopLossPoints:=kATR*ATR(TimeFrame,RiskAtrPeriod)/PointSize;
+TakeProfitPoints:=StopLossPoints*ProfitToLossRatio.
+The working function is Trade, in the Trade.mq4 library file. Declaration:
+int Trade(string smb, int TimeFrame, int cmd, bool ShowQ, int Slippage, bool SetProfit, double MaxRiskPercent, int RiskAtrPeriod, double RiskMulATR, double ProfitToLossRatio), where:
+smb - name of the asset;
+TimeFrame - used to determine the StopLossPoints;
+cmd - OP_BUY or OP_SELL;
+ShowQ - display the dialog asking confirmation (False - no dialog);
+Slippage - slippage in points;
+SetProfit - if True - the TakeProfit will be specified in the orders;
+MaxRiskPercent - % FreeMargin, allowed to risk (2% - classic, 5% - aggressive, higher - based on luck);
+RiskAtrPeriod - the number of last bars to calculate the true range (21 is sufficient);
+RiskMulATR - to determine the StopLossPoints;
+ProfitToLossRatio - multiplicity of R (for example, 5).
+Attached scripts:
+Buy.mq4/Sell.mq4 - buy/sell the current asset, timeframe, with confirmation dialog, slippage of 1 point, 2% risk, RiskAtrPeriod=21, RiskMulATR=1, ProfitToLossRatio=10;
+Buy_nonQuery.mq4/Sell_nonQuery.mq4 - the same settings, but without the dialog and with slippage=0.
+How to install:
+Trade.mqh - copy to the 'include' subdirectory of the 'experts' directory of the MetaTrader root folder;
+Trade.mq4 - copy to the 'libraries' subdirectory of the 'experts' directory of the MetaTrader root folder and compile;
+Buy.mq4, Buy_nonQuery.mq4, Sell.mq4, Sell_nonQuery.mq4 - copy to the 'scripts' subdirectory of the 'experts' directory of the MetaTrader root folder and compile.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7387

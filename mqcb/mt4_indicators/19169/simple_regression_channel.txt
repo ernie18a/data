@@ -1,0 +1,10 @@
+Simple Regression Channel automatically generates Regression Channel, based on timeframe (user input).
+Linear Regression Channel consists of two parallel lines located at the equal distance from the linear regression trend line. The distance between the channel borders and the regression line is equal to the value of the highest close price deviation from the regression line.
+The indicator code features:
+This indicator can be attached to any chart timeframe.
+The calculation will be based on applied timeframe in the input.
+Input Parameters
+Look back period (default: 30 bars)
+Applied timeframe (default: Period_H4)
+Regression style (default: Solid)
+Regression color (default: Dark Blue)

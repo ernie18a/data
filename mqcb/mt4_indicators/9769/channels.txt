@@ -1,0 +1,5 @@
+Author:
+(c) 2010 Shon Shampain for Zen Cows Go Mu,
+http://www.zencowsgomu.com/
+.
+Channels calculates the high / low channel in which price action has been moving. The number of candles is considered is a parameter. This indicator is a precursor to the ChannelBalance indicator.

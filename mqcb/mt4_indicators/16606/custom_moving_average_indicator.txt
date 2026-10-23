@@ -1,0 +1,6 @@
+The code contains the implementation of Moving Average indicator. For the code, the following input parameters are available:
+Period
+Shift
+Method: Simple, Exponential, Smoothed, Linear Weighted
+Applied Price : Close Price, Open Price, Low Price, High Price, Median Price, Typical Price, Weighted Price
+Color: Change color of indicator line

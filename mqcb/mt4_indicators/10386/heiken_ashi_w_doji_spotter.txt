@@ -1,0 +1,8 @@
+Original Author:
+MetaQuotes
+Modified By:
+Tim Welch
+This is the standard Heiken Ashi, but with the option to spot Dojis and color them differently.
+Basically, if the body of the candle is less than a certain percentage of the total range for that candle, then it's a doji. That's the premise behind this. A Doji for Heiken Ashi is typically almost no body at all, with a long head and tail. I default the value to 10% of the total range, but I personally have been testing with the value at 4%. YMMV.
+Options:
+Image:

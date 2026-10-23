@@ -1,0 +1,22 @@
+The indicator changes the bar color to the color of the current trend calculated based on the
+RSI
+technical indicator.
+If the trend and candlestick direction match, the color of the bar is light, if opposite, the bar is dark.
+Trend strength is determined by the presence of the RSI indicator in overbought or oversold areas whose levels are determined by the indicator input parameters:
+input
+uint
+HighLevel=
+55
+;
+// Overbought level
+input
+uint
+LowLevel=
+45
+;
+// Oversold level
+If the RSI is outside these areas, the bar is not painted.
+Figure 1. The RSI_BARS indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2122

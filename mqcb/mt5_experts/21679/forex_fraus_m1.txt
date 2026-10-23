@@ -1,0 +1,32 @@
+Idea by
+:
+Dmitriy Zaytsev
+MQL5 code author
+:
+barabashkakvn
+How it works
+The EA only operates (opens new positions) when a new bar emerges.
+The volume of the opened position is equal to
+Lots
+.
+Stop Loss
+,
+Take Profit
+and
+Trailing Stop
+can be disabled by setting the appropriate parameter to "0.0".
+The EA checks the value of
+iWPR
+(Williams' Percent Range, %R) at the #0 bar. The EA sells in the overbought zone and buys in the oversold zone. If the time period control is enabled (
+Use Timecontrol
+== true), the time interval is configured from
+Start hour
+to
+End hour.
+When a signal emerges, opposite positions can be closed: this can be done by setting
+Use close opposite positions
+= true.
+EURUSD, M1, "Every tick based on real ticks"
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21679

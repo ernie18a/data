@@ -1,0 +1,16 @@
+First of all , I was trying to sell this self adapting Expert advisor on the Market.
+I get the Idea to develop such system after I developed an expert advisor that trade static patterns : "The Unreal Engine"
+https://www.mql5.com/en/market/product/62341?source=Site+Profile+Seller
+I encountered limitation testing this Deep Learning Expert advisor due to my computer resources. ( I have a dual core pc with 4 Gb only)
+To test this EA for many years you will need a super computer or It will take a very long Time
+"The Enchantress" Brand name of my Expert Advisor,
+Is an EA that collect Each pattern that occurs in the Market , open virtual orders with stop loss and take profit
+EA will detect the best market pattern to open a real trade.
+NB:
+This is a deep learning expert advisor , EA will run for at least 3 to 5 months to start opening Real Trades.
+Try on strategy tester before trying on real account.
+Anyone who test this EA please share results Here:
+https://www.mql5.com/en/messages/018799F5C217D701
+https://www.mql5.com/en/channels/theunrealengine
+Happy Testing.
+I recommend to test on a 5 digits pair / Min Timeframe (H1)

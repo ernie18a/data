@@ -1,0 +1,6 @@
+The code was prepared back in 2005. Unlike the original, the smoothing ratio here is raised to power. The power value is set by the G external variable (the default value is 2, like in the original). Several people challenged the authorship of this value, though it is not of much significance here.
+The main advantage of wellx version is the color dots identifying a trend.
+Kaufman's AMA from wellx
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7378

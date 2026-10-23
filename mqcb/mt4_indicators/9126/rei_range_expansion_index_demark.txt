@@ -1,0 +1,4 @@
+The REI (Range Expansion Index) indicator by Thomas DeMark.
+The usage of the indicator is described in
+"The New Science of Technical Analysis"
+by Thomas R. DeMark.

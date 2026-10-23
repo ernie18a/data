@@ -1,0 +1,13 @@
+Inputs:
+- Brick Size — Renko brick size in price units.
+- BB Period — Bollinger lookback in completed Renko bricks.
+- BB Deviation — standard-deviation multiplier.
+Visual design:
+- cyan up bricks and red down bricks;
+- blue outer Bollinger bands;
+- gold middle band;
+- square Renko bricks with automatic scaling;
+- one Canvas bitmap layer instead of hundreds of rectangle objects;
+- automatic redraw when the chart is resized.
+The indicator does not require DLLs, custom symbols, offline charts or external indicators.
+This is an educational CodeBase example intended to demonstrate custom Renko rendering with a causal Bollinger overlay. It does not provide trading signals or make claims about future performance.

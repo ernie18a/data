@@ -1,0 +1,10 @@
+Real author
+:
+mandorr
+Two
+Boa_ZigZag
+indicators with different periods, which appear as arrows on one chart.
+Fig.1. The Boa_ZigZag_Arrows_Duplex indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19616

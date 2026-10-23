@@ -1,0 +1,20 @@
+The strategy underlying this EA is based on the indicator of MA.
+A detailed article about the system testing is available in the issue of our magazine from 28.04.2008: You can discuss and suggest some elaborations for it on our forum at:
+http://fortrader.ru/forum/viewtopic.php?t=74
+Description:
+Trading strategy algorithm:
+1. Opening a 4-hour chart for EURUSD, lots 0.1.
+2. Drawing an MA with the period of 5.
+Signal to buy: Indicator MA has formed a trough.
+Signal to sell: Indicator MA has formed a peak.
+The trades will be closed by StopLoss. For placing a StopLoss, we should find the MA inflection (trough or peak) and detect: for Buy, the minimum price value for 10 bars in history; for Sell, the maximum price value for 10 bars in history. Then place a StopLoss. We should perform checks at each formation of trough (for Buy) or peak (for Sell) and modify the StopLoss, if necessary.
+Image:
+Once having tested the above rules on the period from 2007.01.11 to 2008.01.11, we obtained the following results (Open prices):
+Having optimized the results for the same period, we obtained the following result of the EA operations:
+Profit factor is 3.70, expected payoff is 76.74!
+You can also see the forward test of the optimized area for EURUSD and the EA tests for GBPJPY in the issue of our magazine from 28.04.2008:
+The latest issue of the magazine can be downloaded from:
+http://fortrader.ru/downloads/redirect.php?dlid=34
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8105

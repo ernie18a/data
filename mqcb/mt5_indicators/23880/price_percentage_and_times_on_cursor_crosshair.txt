@@ -1,0 +1,4 @@
+This indicator enhance the functionality of the standard crosshair of MetaTrader adding the difference in Percentage and the time span in a human readable form (not in bars, but in Hours, minutes, days, etc)
+The indicator is for MetaTrader5, but should work just fine also with MetaTrader4.
+USAGE
+To use the indicator just add it to a graph and then use the Crosshair function by pressing the Mouse middle button (the functionality will not work pressing Ctrl-F, but only pressing the Middle mouse button)

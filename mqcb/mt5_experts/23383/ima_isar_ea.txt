@@ -1,0 +1,26 @@
+Idea by:
+Yuri
+mq5 code by:
+barabashkakvn
+The EA only operates when a new bar emerges. Trading signals are generated based on the values of three indicators iMA (Moving Average, MA), two indicators iRSI (Relative Strength Index, RSI), and the value of close (all balues are taken for bar #1).
+Block for decision making:
+if(ma_fast[1]>ma_normal[1] && ma_fast[1]>ma_slow[1] && sar_fast[1]
+<close[1] &&
+sar
+_normal[1]<close[1])
+m
+_need_open_buy=true;
+else
+if
+(ma_fast[1]<ma_normal[1] &&
+ma
+_fast[1]<ma_slow[1] &&
+sar
+_fast[1]>
+close[1] && sar_normal[1]>close[1])
+      m_need_open_sell=true;
+Example of opening a BUY position:
+Trailing is applied to the open position. A BUY opening signal is also a SELL closing signal (first, SELL is closed, and then BUY is opened). We act similarly with the SELL opening signal.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23383

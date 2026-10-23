@@ -1,0 +1,44 @@
+Idea by
+:
+Vladimir Tkach
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+The EA opens trades at the intersection of the fast and the slow MAs. It closes trades if there is a reverse signal.
+If the
+Close losses
+option is enabled, the EA does not close losing positions by the reverse signal, but opens new ones, the Take Profit level for losing positions being moved to their open prices.
+The maximum number of positions to be opened during outstaying is limited by parameter
+Maximum positions
+. The type of the position to be opened is monitored in
+OnTradeTransaction
+.
+Input parameters
+Lots
+- position volume;
+Maximum positions
+- maximum number of positions;
+Close losses
+- whether to close losing positions or not (overstaying);
+MA Fast: averaging period
+- averaging period;
+MA Fast: horizontal shift
+- horizontal shift;
+MA Fast: type of price
+- price type;
+MA Slow: averaging period
+- averaging period;
+MA Slow: horizontal shift
+- averaging period;
+MA Slow: type of price
+- averaging period;
+MA Fast and Slow: smoothing type
+- averaging type (a common parameter for both "Fast" and "Slow");
+magic number
+- unique identifier for the EA.
+An example of how overstaying affects trading:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20877

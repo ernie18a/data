@@ -1,0 +1,3 @@
+This is a demo version.
+If you want to create your own trading bot that integrates with this indicator, please contact me.
+I will help you create an optimized trading bot tailored specifically for you.

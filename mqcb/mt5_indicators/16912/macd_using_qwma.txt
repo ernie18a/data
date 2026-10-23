@@ -1,0 +1,7 @@
+MACD that uses a new version of QWMA moving average for calculation ...
+After some experiments it turned out that qwma can be a kind of a "chameleon". Depending on the "speed" parameter it can be:
+Speed equal to 2 is the basic value  (or parabolic weighted moving average - whatever name is used).
+Speed 1 is equal to linear weighted moving average (LWMA).
+Speed 0 is equal to simple moving average (SMA).
+And in between and above, for each new speed it is a sort of an no-named (yet) average. So, after all, we have now a completely new "family" of average. The higher the "speed" parameter value, the faster the "qwma". That qwma is used by this macd to calculate a whole new set of possible macd(s) that, since some of the qwma(s) do not have a name at all, also are a complete novelty as a new kind of a macd not existed before.
+The usage is the usual macd: this version already includes multi time frame, coloring on signal cross (osma is not added since the filled area is shoving quite nicely what the osma would just duplicate on the zero line) and the usual set of prices and alerts is already a part of this indicator. Some experimenting is recommended, but the rule of thumb is that the higher "speed" you use, the faster the macd will be and then you shall probably have to adjust the main macd periods.

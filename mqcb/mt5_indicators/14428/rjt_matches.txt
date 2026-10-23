@@ -1,0 +1,3 @@
+This indicator helps determine the end and the beginning of trends based on the inclination of the matches.
+These are basic lines that show inclination for themselves, and together showing the evolution of the trend of prices. This tells us about the strength of a trend to continue or prepare us for an imminent change.
+Each match is the line between the open price of a bar and the close price of the next. It is ideal for intraday trading (scalping / swing) in low time frames (minutes / hours).

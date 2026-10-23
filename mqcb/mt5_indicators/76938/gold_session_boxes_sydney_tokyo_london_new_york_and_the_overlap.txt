@@ -1,0 +1,30 @@
+Gold moves in sessions. Most of the XAUUSD daily range is made between 13:00 and 16:00 GMT, when London and New York are both open, while the Sydney and Tokyo hours usually drift inside a narrow band and the rollover hour at 22:00 GMT carries the widest spread of the day. This indicator puts those facts on the chart so you can see at a glance which session you are trading, how far it has already moved, and how that compares with the average.
+What it draws
+One high/low box per session and per day: Sydney, Tokyo, London and New York, each in its own colour, filled or outline only.
+The London/New York overlap as a thicker outlined box drawn on top of the session fills.
+The daily rollover hour shaded across the day's high and low, as a reminder to avoid opening trades into the spread widening.
+A label on every box with the session range in price units (gold, indices) or points (FX pairs) and the average range of the last N completed sessions, for example
+London 92.109 (avg 73.697)
+.
+Time zones
+All session times are entered in GMT, which is how session tables are normally published. The indicator reads the difference between the broker's server clock and GMT with TimeTradeServer() - TimeGMT() , rounds it to the nearest 15 minutes and applies it to every window, so the boxes stay correct across the spring and autumn daylight-saving changes without editing the inputs. The offset is refreshed on every new bar.
+Inputs
+Sessions
+: show/hide and start/end hour (GMT, 0-23) for Sydney (21-6), Tokyo (0-9), London (7-16) and New York (13-22). A session that ends on the next day, such as Sydney, is handled automatically.
+Overlap and rollover
+: overlap window (13-16 by default) and the rollover hour (22).
+Appearance
+: number of days to draw (10), fill boxes, show labels, number of sessions used for the average range (10), colours, label font size.
+Alerts
+: optional pop-up, push notification or sound when a session opens; each session alerts once.
+How to use it
+Attach it to M1-H1 charts. On timeframes above H1 a session is shorter than one bar and the indicator draws nothing.
+Trend-following: trade only inside the London box and the overlap, where the range is being made; treat Tokyo box breakouts with caution because the Asian range is often re-entered when London opens.
+Range comparison: when the current London range is already above its average, the remaining move is statistically smaller; a small Tokyo box before London often precedes a wide London session.
+Rollover: the shaded hour is where most stop-outs on tight stops happen. Widen or avoid.
+Implementation notes
+No indicator buffers, indicator_plots 0 : everything is chart objects with the prefix GSSB_ , removed in OnDeinit .
+Ranges are taken with CopyHigh / CopyLow between the window times, so they are exact regardless of the chart timeframe.
+Objects are redrawn once per new bar, not on every tick, and the object count is bounded by days × sessions.
+All objects are hidden from the object list and drawn in the background so they never block clicks on the chart.
+Built for XAUUSD, but it works on any symbol. The screenshot shows XAUUSD M15 with the default settings on a black-on-white chart.

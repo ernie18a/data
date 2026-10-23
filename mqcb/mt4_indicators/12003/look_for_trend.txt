@@ -1,0 +1,2 @@
+The indicator marks the current chart with red/blue arrows to signal a possibility for buy/sell.
+Works best for time frames greater than M30.

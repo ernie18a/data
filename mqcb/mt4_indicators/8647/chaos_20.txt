@@ -1,0 +1,4 @@
+The signal indicator based on the signal from AO and AC - the changing of the hystogram color.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8647

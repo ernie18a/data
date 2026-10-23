@@ -1,0 +1,5 @@
+Balance of Power, introduced by Igor Livshin attempts to measure the strength of buyers vs. sellers by assessing the ability of each to push price to an extreme level. Livshin published this indicator in the August 2001 issue of Stocks and Commodities Magazine. This version of indicator calculates the BOP exactly as it is described in the article where it was published.
+The resulting raw BOP values can be optionally smoothed using any Moving Average type.
+The BOP oscillates between extremes of -1 and +1.
+But the "raw" BoMP would be almost unusable in trading. Example of such a value can be checked if you set the smoothing period to <=1 - like this :
+That makes it almost impossible to be used for trading decision. That is the main reason why the inventor of that indicator already at the start added result smoothing. Default used is the default proposed by Igor Livshin (period 14), but that is, as usually, a subject of experimenting too. In any case, smoothed value is much better for trading decisions, and combined with DSL (Discontinued Signal Line) it can be used both for trending and scalping mode.

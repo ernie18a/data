@@ -1,0 +1,11 @@
+It's an expert to open and close orders on specific day and time.
+Expert open and close orders only with the same symbol it attached.
+Can set time open and close orders based day of year or day of week.
+Expert can send market orders and pending (stop or limit).
+Each order can placed with take profit and stop loss.
+There is option to use trailing stop loss and break even.
+Expert can manage only own orders or all orders of account.
+UPDATE
+Version 1.5 > Added money management and option for pending orders (stop and limit).
+Version 1.6 > Added trailing stop and break-even option.
+Version 1.7 > Change parameter to set time and day from 'day of week' to 'day of year'.

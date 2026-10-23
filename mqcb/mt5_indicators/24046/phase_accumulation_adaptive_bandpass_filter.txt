@@ -1,0 +1,6 @@
+Theory :
+Short description of bandpass filter by John Ehlers :
+The objective in cycle mode is to filter out the unwanted components – both low frequency trends and the high frequency noise – and retain only the range of frequencies over the desired swing period . A filter for doing  this  is called a bandpass filter and the range of frequencies passed  is the filter’s bandwidth .
+This version is using Hilbert transform phase accumulation for bandpass filter period, hence making it adaptive. The phase accumulation expects you to specify the number of cycles it should fill when looking for current bar period. The cycles can be fractional, hence you are not limited to full cycles
+Usage :
+You can use the color changes as signals

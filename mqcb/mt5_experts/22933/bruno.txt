@@ -1,0 +1,99 @@
+The author of the idea
+-
+Scriptor
+mq5 code author
+-
+barabashkakvn
+The EA contains five strategies:
+by iADX indicator (Average Directional Movement Index, ADX)
+if
+(axd_plusdi[
+1
+]>axd_minusdi[
+1
+] && axd_plusdi[
+1
+]>
+20.0
+)
+      lot_buy*=InpSignalRatio;
+else
+if
+(axd_plusdi[
+1
+]<axd_minusdi[
+1
+] && axd_plusdi[
+1
+]<
+40.0
+)
+      lot_sell*=InpSignalRatio;
+by iMA (Moving Average, MA) and iStochastic (Stochastic Oscillator) indicators
+if(ma_one[1]>ma_two[1] && sto_main[1]>sto_signal[1] && sto_main[1]<80.0)
+      lot_buy*=InpSignalRatio;
+   else if(ma_one[1]
+<ma_two[1] &&
+sto
+_main[1]<sto_signal[1] &&
+sto
+_main[1]>
+20.0)
+      lot_sell*=InpSignalRatio;
+by iMACD (Moving Average Convergence/Divergence, MACD)) indicator
+if
+(macd_main[
+1
+]>
+0.0
+&& macd_main[
+1
+]>madc_signal[
+1
+])
+      lot_buy*=InpSignalRatio;
+else
+if
+(macd_main[
+1
+]<
+0.0
+&& macd_main[
+1
+]<madc_signal[
+1
+])
+      lot_sell*=InpSignalRatio;
+by iMA (Moving Average, MA) and iSAR (Parabolic SAR) indicators
+if
+(ma_one[
+1
+]>ma_two[
+1
+] && sar[
+1
+]>sar[
+2
+])
+      lot_buy*=InpSignalRatio;
+else
+if
+(ma_one[
+1
+]<ma_two[
+1
+] && sar[
+1
+]<sar[
+2
+])
+      lot_sell*=InpSignalRatio;
+Each strategy increases the initial lot (
+Lots
+)
+Signal ratio
+times when a signal is activated. If BUY and SELL signals are activated simultaneously, both are ignored.
+BUY open signal is also SELL close one and vice versa.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22933

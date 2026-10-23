@@ -1,0 +1,27 @@
+The universal moving average with double smoothing and possibility to select each of this smoothings from the dozen of possible variants:
+SMA
+- Simple moving average
+EMA
+- Exponential moving average
+SMMA
+- Smoothed moving average
+LWMA
+- Linear weighted moving average
+JJMA
+- JMA adaptive average
+JurX
+- Ultralinear smoothing
+ParMA
+- Parabolic smoothing
+T3
+- Tillson's multiple exponential smoothing
+VIDYA
+- Smoothing with the use of Tushar Chande's algorithm
+AMA
+- Smoothing with the use of Perry Kaufman's algorithm
+It should be noted that Phase1 and Phase2 parameters have completely different meaning for different smoothing algorithms. For JMA it is an external Phase variable changing from -100 to +100. For T3 it is a smoothing ratio multiplied by 100 for better visualization, for VIDYA it is a
+CMO oscillator
+period and for AMA it is a slow EMA period. In other algorithms these parameters do not affect smoothing. For AMA fast EMA period is a fixed value and is equal to 2 by default. The ratio of raising to the power is also equal to 2 for AMA.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/465

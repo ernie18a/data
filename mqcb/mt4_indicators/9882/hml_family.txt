@@ -1,0 +1,1 @@
+This idea came from the creation of the HML Rainbow.  That is a lot of lines to pump into a chart, so I broke them down into individual indicators you can choose from anytime you need.  Each indicator represents the high, median, and low of the timeframe it is named after. monthly down to M5.  All of them are zipped up for you to use as needed.

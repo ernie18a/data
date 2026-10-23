@@ -1,0 +1,4 @@
+The indicator shows the beginnings and the ends of three trading sessions: Asian, European, and American. The sessions are displayed with the background rectangles. The length of the rectangle corresponds with the duration of a trading session, and its height is the trade range.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7753

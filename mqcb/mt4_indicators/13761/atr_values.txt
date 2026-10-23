@@ -1,0 +1,1 @@
+This indicator plots the values of the user specified ATR period for all timeframes as a text block. The text block corner can be changed by the user.

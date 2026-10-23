@@ -1,0 +1,28 @@
+Author of the idea
+—
+Yuri
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Bill Williams. iAlligator, Alligator, iMA, Moving Average.
+Entry:
+Buy fractal — a series of five consequent bars with two bars with lower maximums standing before and after a bar with the highest maximum.
+Sell fractal — a series of five consequent bars with two bars with higher minimums standing before and after a bar with the lowest minimum.
+Buy and sell fractals can be composed of the same bars.
+Fractals generate the following signals:
+if a buy fractal is above the Alligator's Teeth (red line), a Buy Stop pending order for opening a position should be placed 1 pips above the maximum of the bar, where the fractal has been formed.
+if a sell fractal is below the Alligator's Teeth, a Sell Stop pending order should be placed 1 pips below the minimum of the bar, where the fractal has been formed.
+The fractals are active until they are "hit" or until a new fractal in the same direction appears (in this case the previous signal is canceled and the pending order is canceled).
+The point where a fractal is hit is essential, i. e. it is the bar at which you should enter the market after the fractal is passed. If that bar is outside of the Alligator's Teeth, such deal is allowed.
+Exit:
+The market exiting method that is sensitive to the price dynamics allows to take profit during the last 10% of the trend, capturing at least 80% of the movement (as told by B. Williams).
+Bill Williams suggested several ways to set the Stop Loss of orders:
+If there is a trend in the market, positions should be closed if the bar Close crosses the Alligator's Teeth (red line).
+Use the Alligator's Lips (green line) as a stop loss level for orders in a rapidly moving market. Market is considered to be rapid if the inclination angle of the price is greater than the inclination of the green line. In accordance with this method, at the end of the current bar the Stop Loss order is moved at the levet of the red or green line of the next bar.
+Set the Stop Loss order after the fifth bar in a row appears in the green (red) area (this method was discussed above in the description of zone trading).
+If a signal appears in the opposite direction — close the open positions.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17113

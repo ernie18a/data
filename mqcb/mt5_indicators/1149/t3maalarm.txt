@@ -1,0 +1,17 @@
+The indicator is rewritten from MQL4, the author is
+Martingeil
+, link to the source
+https://www.mql5.com/ru/code/10303
+.
+How it works
+it is calculated as a Moving Average, this Moving Average is re-smoothed. The arrows display places of changing the direction of the Moving Average.
+Parameters
+MAPeriod - The period of the Moving Average.
+MAShift - Shift of the Moving Average.
+MAMethod - The method of the Moving Average.
+MAPrice - The price of the Moving Average.
+Note
+Despite the name of the indicator it is not the indicator with a well known T3 smoothing.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1149

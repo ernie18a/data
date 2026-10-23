@@ -1,0 +1,12 @@
+Indicator NMA (Navel Moving Average) - a moving average calculated by the formula:
+NMA = MA(P, Period, Method)
+where:
+P = (5*Close + 2*Open + High + Low)/9.0
+It has two parameters:
+Period
+- calculation period;
+Method
+- calculation method.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21040

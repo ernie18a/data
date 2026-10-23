@@ -1,0 +1,39 @@
+This script provides quick work with a large number of pending orders in the market and contains functions for placing, changing, and deleting of orders within the your price range.
+The capability
+The script abilities:
+It is able to place a group of pending orders of a required type within from an initial price to a final price with a certain step of points, distributing them evenly over the range, so you don’t need to monitor where your orders will be above or below than the current price.
+It is able to modify Take Profit and/or Stop Loss for all pending orders at once.
+It can at one time delete all not triggered orders, as well as provides the option to close or not to close already triggered orders.
+Settings
+Type of transaction
+- The type of a required action.
+Buy -
+To place orders of Buy.
+Sell -
+To place orders of Sell.
+Modify –
+To modify Take Profit and Stop Loss.
+Delete –
+To close pending orders.
+Lot –
+The lot size for opening pending orders.
+Price from –
+The starting price within your price range.
+Price up to -
+The final price within your price range.
+TakeProfit -
+Take Profit (in points) for orders.
+StopLoss –
+Stop Loss (in points) for orders.
+Step –
+The step (in points), a distance between orders.
+Delete active orders –
+To delete or not to delete activated orders. If it equals “true” then when pending orders are deleted activated orders will be deleted too. If it equals “false” then activated orders are saved.
+Magic Number -
+Magic number for positions.
+Slippage –
+The slippage for opening and closing positions.
+If you need additional functionality, please contact me.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18705

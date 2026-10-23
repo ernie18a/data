@@ -1,0 +1,7 @@
+The Indicator ang_AutoCh_HL-v1 automatically forms up the equidistant price channel from givenned points.
+In the window of the indicator's characteristics:
+Hours - an initial number hours back.
+After drawing the indicator, it is possible to select any line and drag over the left end to necessary date, with receipts of the new quoting - a graph is drawn again. The Right end will remain clinging to the last importance.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10191

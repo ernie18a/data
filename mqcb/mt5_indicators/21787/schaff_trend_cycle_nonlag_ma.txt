@@ -1,0 +1,3 @@
+Schaff Trend Cycle
+is usually calculated using MACD, meaning the difference of two EMAs (Exponential Moving Averages).
+This version uses a much "faster" moving average than EMA (NonLag MA) for that calculation which makes the resulting MACD "faster" and thus the resulting Schaff Trend Cycle "faster" to market changes.

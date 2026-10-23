@@ -1,0 +1,25 @@
+The EA works without the use of indicators. Uses only the price values of the current and previous bars for operation.
+The idea of the EA lies in the searching of pivot points. It enters using market orders at trend reversal attempt.
+Each order is protected with a take profit and stop loss (set in settings). When the stop loss is set to zero — stop loss is calculated automatically by the EA, depending on the current price and the pivot point (stop is moved beyond the level).
+It is possible to use trailing stop with a specified step or transfer of the position to breakeven. There are several options for closing positions on condition (enabled in the parameters).
+Parameters:
+------ start trade settings ------
+TakeProfit — TakeProfit level.
+StopLoss — StopLoss level (if 0 then auto).
+HLdivergence — minimum deviation of two adjacent bars for entry.
+SpanPrice — price indent from the starting level for opening an order.
+Lots — lot size.
+MaxTrades — Maximum number of simultaneously opened orders.
+Slippage — Slippage.
+MagicNumber — Expert's magic number.
+------ output settings ------
+TrailingStop — trailing stop for open positions;
+TrailStopLoss — StopLoss trailing level.
+ZeroTrailingStop — StopLoss trailing to breakeven level.
+StepTrailing — trailing stop step.
+OutputAtLower — exit if the price is lower than the previous bar.
+OutputAtRevers — exit at trend reversal.
+SpanToRevers — price indent from the reverse level for closing an order.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14481

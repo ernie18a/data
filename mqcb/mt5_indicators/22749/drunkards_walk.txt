@@ -1,0 +1,8 @@
+Theory :
+According to the article "Random Walk Revealed" by Ron Davis, the original name of what became known as the "Random walk" originally used by probability theorist and teacher William Feller was "Drunkard's walk", so Ron Davis decided to use the original name instead and we are keeping it here too regardless of the changes made in this version of the calculation.
+This version :
+It is a version that uses a bit different way of calculations that is probably a bit easier to use for traders (you can see the original random walk index published here :
+Random Walk Index
+and, as it is obvious, it is rather hard to use that for trading). This version is changing the way it is calculated (keeping the essence of it though) In order to make it easier it is showing the colored lines and colored zones that are identifying the current prevailing trend
+Usage :
+You can use the color change (that happens at the cross of the two lines) as signals

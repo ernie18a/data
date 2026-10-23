@@ -1,0 +1,5 @@
+The indicator draws the difference between two MAs of EURUSD and GDPUSD in one subwindow.
+The parameters of MA can be adjusted through the settings of the indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8638

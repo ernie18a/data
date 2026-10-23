@@ -1,0 +1,3 @@
+This indicator measures the rate of change of the smoothed difference between two exponential moving averages given by AwesomeModPips indicator (it is necessary to have this last indicator).
+There are four inputs: short_mean, long_mean, meanAO and meanSpeed. The first three inputs are the ones needed for AwesomeModPips indicator (see details in the description of this indicator). The last input, meanSpeed, is the period of the smoothed average for the difference for the current and the previous value of the AwesomeModPips indicator.
+In particular, the indicator is positive whenever AwesomeModPips is increasing and it is negative whenever AwesomeModPips is decreasing. The higher is the indicator (in absolute value) the strongest is the trend.

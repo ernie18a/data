@@ -1,0 +1,5 @@
+After adding the indicator to the chart, two text labels will appear at the right bottom corner, which display the current spread and the amount of time left until the closure of the current bar.
+Users can change the text color to the desired one by changing the parameters when attaching the indicator. Coordinates of the labels can also be changed, but their values can only be within the chart. If it is necessary to display the labels at their standard location, set the numeric value of -1 instead of the coordinate values.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16025

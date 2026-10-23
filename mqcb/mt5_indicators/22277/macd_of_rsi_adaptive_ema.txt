@@ -1,0 +1,12 @@
+Background :
+MACD (Moving Average Convergence Divergence) is, in its original form and by definition, using difference of two EMAs (Exponential Moving Average) to determine trend of the market. It is a good indicator with maybe one flaw : depending on the market conditions it sometimes tends to lag more than we are expecting it (in any average based indicators we always expect some lag). This version is attempting to address that issue
+The calculation :
+Instead of using "regular" EMA, this version is using RSI adaptive EMA (originally published here :
+RSI adaptive EMA
+) in calculation. Since the EMA used is adaptive, that makes the macd adaptive too, and that can reduce the expected lag
+Usage :
+Three modes of coloring (signals) are provided :
+coloring based on MACD slope
+coloring based on MACD zero line cross
+coloring based on MACD signal line cross
+Depending on your trading style use the mode that suits you the best

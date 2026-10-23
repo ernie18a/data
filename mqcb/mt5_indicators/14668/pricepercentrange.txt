@@ -1,0 +1,2 @@
+Price(%)Range is the indicator for the MetaTrader 5, which calculates the price movement based on percentage High (Highest) and Low (Lowest) price on 100 bars.
+Update 1 version "2.00" 17/12/2016

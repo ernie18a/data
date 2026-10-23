@@ -1,0 +1,4 @@
+Smoothed Standard Deviation. Smoothing period is equal to 3 (smoothing is calculated using MovingAverages.mqh). The image below shows conventional and smoothed Standard Deviations:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23119

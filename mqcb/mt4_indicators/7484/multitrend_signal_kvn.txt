@@ -1,0 +1,5 @@
+Author: Vladimir Korykin
+The indicator of the famous trader Korykin. It helps to enter inside the channel.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7484

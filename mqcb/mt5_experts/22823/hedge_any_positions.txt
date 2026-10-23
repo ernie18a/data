@@ -1,0 +1,17 @@
+Author of the idea
+-
+Sam
+Code mq5 by:
+barabashkakvn
+The EA works on hedge accounts only!
+The EA tracks all positions regardless of the symbol or magic number.
+As soon as a position (opened by another EA or manually) features a loss exceeding or equal to
+Losing
+, an opposite position is opened. The volume of the opened position is calculated considering
+Lot coefficient
+.
+For each position (opened by another EA or manually), the "Hedge any positions" EA opens an opposite position ONLY ONCE.
+Please note that the EA simply sets the opposite position once without Stop Loss and Take Profit.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22823

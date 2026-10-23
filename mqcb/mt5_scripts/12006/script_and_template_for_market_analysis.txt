@@ -1,0 +1,7 @@
+If you apply the script to a new chart it will search the Templates directory for the _SoHarD_dB_wyuEz_.tpl file that I made (it contains all parameters for the script) and apply those to all other charts you've opened already.
+The script will project 6 Exponential Moving Averages on a Chinese candlestick chart, the same ones used as indicators on the Investing.com website so it's easy to see the numbers on the website projected on your charts in 6 different colors.
+This is helpful to me so I hope you can use it to your benefit too.
+On the lower part of the chart you'll have 5 different indicators, Volume graph indicating ascending and descending real volumes in red and green, Average True Range (7) that indicates how many pips of movement was on the last 7 candlesticks, bear in mind that this indicator has a bit of lag so it's a bit behind on the chart, the default setting is 14 but I find it lagging too much.
+RSI is below that and I customized this one too so now you'll see the high level on 80% and lower on 20% and in red so it's more accurate to read, below that there's a Stochastic oscillator customized upper and lower level in blue, signal line in red, average in green. The last one is the MACD (12,26,9) with the signal line customized so it's easier to read.
+I hope you like my work and use it for your own benefit, till next time, TheDutchTrader at _SoHarD_dB_w@®Ez_
+For the script to work properly you'll have to copy the ".tpl" file to the correct directory, location is: MQL5 Terminal directory under "profiles\Templates"

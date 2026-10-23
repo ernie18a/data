@@ -1,0 +1,14 @@
+The indicator draws on the price chart a simple ZigZag, for which you need to specify only the step value. A break point is added when the length of the ZigZag leg (step) is exceeded.
+The indicator provides two possible options for specifying the step:
+in points
+in percentage
+The indicator has two input parameters:
+Step calculation method
+- step calculation method;
+Step size
+- step value.
+Fig.1 H4, step in points: 800 points
+Fig.2 H4, step in percentage: 50%
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20055

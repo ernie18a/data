@@ -1,0 +1,38 @@
+This technical indicator shows М & W Wave Patterns by Merrill and support/resistance levels drawn at extreme points of the standard
+ZigZag
+indicator. A. Merrill classified five-pointed shapes based on the order of the points from top to bottom, and created an orderly classification model M & W Waves. Here they are:
+The dynamic pattern by A. Merrill
+is the pattern that can vary over time. The dynamic pattern is on the first four right zigzag rays.
+In this indicator all patterns are considered dynamic.
+To provide this condition, the concept of
+mutation of waves
+was artificially introduced (see below) and the algorithm of the classic Zigzag indicator was slightly modified.
+As for the core of the extreme search algorithm - Zigzag, this algorithm is a "temporary (quick) decision" and certainly requires replacement. Since most of the errors are associated with pattern detection
+NOPATTERN
+(see in
+enum
+NamePattern in the MyCPattern.mqh file) - this is an error of the search engine.
+Evolution and Mutation of Waves
+Evolution
+- change of the dynamic pattern, which still stays in the same wave family. Evolution of M-Wave patterns:
+Evolution of W-Wave patterns:
+Mutation
+- change of the dynamic pattern, which then moves to another wave family. Mutation of M-Wave patterns:
+Mutation of W-Wave patterns:
+Note
+: Prediction algorithm considers that a mutation results in the youngest shape of the evolution, and the evolution/mutation counter is aware of the possible nonsequential mutation/evolution. For example, mutation in the middle and senior shape. This is achieved by selecting specific values ​​in the bit-mask
+enum
+NamePattern (see MyCPattern.mqh). If you want to use the evolution/mutation counter -
+do not change
+enum
+NamePattern.
+Indicator operation:
+This indicator shows М & W Wave Patterns by Merrill and support/resistance levels on a chart. The indicator is recalculated on each new history bar (to save CPU time when rendering objects). The names of all objects are pseudo-random. The indicator calculates the predicted price movements based on the expectations of a private (serial) evolution/mutation of waves. The indicator includes a counter of pattern model efficiency.
+Current version:
+Test version 1.02:
+Search engine, classic Zigzag;
+Prediction model: level 0 (sequential evolution/mutation);
+Model counter: level 0 (Algorithm: "I count only what I see, I don't know what was before...". Statistics is displayed after the 11th shape appears).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7050

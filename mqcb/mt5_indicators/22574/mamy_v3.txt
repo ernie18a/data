@@ -1,0 +1,17 @@
+The author of the idea
+:
+Victor Chebotariov
+MQL5 code author
+:
+barabashkakvn
+The indicator is based on three moving averages. If we attach these MAs to the chart, we get something similar to Alligator. The operation principle is similar as well.
+If MA Close exceeds MA (H+L+O+C)/4, while MA (H+L+O+C)/4 exceeds MA Open - BUY.
+If MA Close is less than MA (H+L+O+C)/4, while MA (H+L+O+C)/4 is less than MA Open - SELL.
+If MA Close exceeds MA (H+L+O+C)/4 - CLOSE SHORT POSITION.
+If MA Close is less than MA (H+L+O+C)/4 - CLOSE LONG POSITION.
+The indicator shows these signals using two lines:
+Green line shows buy/sell signals. If the zero line is crossed upwards - BUY, downwards - SELL.
+Red line shows market exit signals. If the zero line is crossed upwards - CLOSE SHORT POSITION, downwards - CLOSE LONG POSITION.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22574

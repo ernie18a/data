@@ -1,0 +1,5 @@
+Author: Vladislav Goshkov (VG)
+DeMark indicator - changed the rendering of the TD lines. The previous did not always work correctly - bot always both the TD points were moved, and it was necessary to "juggle" the indicator. Now they are simply removed and drawn anew. The upper and lower targets are drawn in different colors. Everything is drawn, projectors and the average price alike.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7374

@@ -1,0 +1,84 @@
+AntiFragile EA is an innovative trading strategy built on the idea of Antifragility professes by Nassim Nicholas Taleb. The general idea is to gain from disorder.
+The book of Nassim Taleb is
+Antifragile: Things That Gain from Disorder
+.
+Nassim Taleb is also the author of the besteller
+The Black Swan: The Impact of the Highly Improbable Fragility
+and also
+Fooled by Randomness: The Hidden Role of Chance in Life and in the Markets
+.
+Strategy:
+The idea is very simple. What we know about the market is that either goes up or down, if up it must reverse and vice versa.
+So we place a number of sell limit orders and buy limit orders with increasing lots each time, and we wait for market reversal, et voilà !
+Strategy Tester Report:
+AntiFragile EA
+Tripleafx-FX-Demo (Build 468)
+Symbol
+EURUSD (Euro vs US Dollar)
+Period
+1 Minute (M1) 1971.05.25 22:00 - 2013.02.21 16:41
+Model
+Open prices only (only for Expert Advisors that explicitly control bar opening)
+Parameters
+StartingLot=0.1; IncreasePercentage=100; SpaceBetweenTrades=50; NumberOfTrades=50; StopLoss=100; TrailingStop=200; TradeLong=true; TradeShort=true; Magic=2157;
+Bars in test
+4627786
+Ticks modelled
+9049847
+Modelling quality
+n/a
+Mismatched charts errors
+0
+Initial deposit
+1000000.00
+Total net profit
+5073443.28
+Gross profit
+14295328.07
+Gross loss
+-9221884.79
+Profit factor
+1.55
+Expected payoff
+104.18
+Absolute drawdown
+542746.21
+Maximal drawdown
+1834631.03 (23.66%)
+Relative drawdown
+60.58% (702756.80)
+Total trades
+48700
+Short positions (won %)
+24731 (17.89%)
+Long positions (won %)
+23969 (18.48%)
+Profit trades (% of total)
+8853 (18.18%)
+Loss trades (% of total)
+39847 (81.82%)
+Largest
+profit trade
+84591.89
+loss trade
+-717.25
+Average
+profit trade
+1614.74
+loss trade
+-231.43
+Maximum
+consecutive wins (profit in money)
+12 (14294.86)
+consecutive losses (loss in money)
+146 (-37163.29)
+Maximal
+consecutive profit (count of wins)
+302887.96 (4)
+consecutive loss (count of losses)
+-37163.29 (146)
+Average
+consecutive wins
+2
+consecutive losses
+8

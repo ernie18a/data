@@ -1,0 +1,8 @@
+EA based on MACD and STOCH.
+This is my first EA. Based on Stochastic and MACD. This EA is my own idea, but coded by a good russian student.
+This Strategietest was for EUR/USD 1 h time frame from 01.01.2009 to end of October 2009.
+The EA will work on all currencies and with all time frames. My best results are for 1 h.
+Attached find the EA, settings and the report.
+It will be helpful, if you test this EA with other currencies and report me, thx.
+Fig. 1. History Backtesting results for EURUSD 1H
+I am attaching a Backtest from the last 2 weeks with a few currencies from my account:

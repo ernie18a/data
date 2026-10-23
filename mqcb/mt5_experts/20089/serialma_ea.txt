@@ -1,0 +1,58 @@
+The Expert Advisor is based on the
+SerialMA
+indicator.
+The calculation period of the indicator is constantly increased starting from the intersection of its line with the price until the next intersection. The indicator calculation starts anew with the minimum value after each intersection.
+The Expert Advisor uses this indicator property:
+If the candlestick closing price on the signal bar is above the indicator line on the signal bar, and the indicator point on the previous bar was located on the indicator line, this is a signal to open a long position.
+If the candlestick closing price on the signal bar is below the indicator line on the signal bar, and the indicator point on the previous bar was located on the indicator line, this is a signal to open a short position.
+Two position opening modes can be selected:
+One appropriate position is opened at each signal. The opposite position is closed.
+Only one position can be opened in one direction. Such a position is opened at the first signal. If there is an opposite position, it should be closed upon this signal. All further signals in the same direction will be ignored until an opposite signal emerges - in this case the position will be reversed (swing).
+The Expert Advisor is designed for working on hedging accounts. If you launch the EA on a netting account, a warning message will pop up and the EA will be unloaded.
+For a correct operation of the Expert Advisor, save the compiled indicator file
+SerialMA.ex5
+to the standard indicators folder in your terminal directory (Your terminal directory\MQL5\Indicators).
+The Expert Advisor allows enabling/disabling long/short positions, as well as reversing indicator signals to open sell instead of buy and vice versa. You can also set stop loss and take profit in points. If invalid Stop Loss and Take Profit values are specified, the EA will adjust the values to the minimum
+StopLevel
+allowed for the symbol.
+The Expert Advisor will also adjust the lot in case an incorrect value is specified. If the lot is too large, the EA will adjust it in order to be able to open a position. If there is no money for opening even the minimum lot, the signal will be skipped.
+Please note that the Expert Advisor is designed for training purposes.
+The EA has 12 input parameters:
+Experts magic number
+- the unique identifier of the EA's positions;
+Mode of opening positions
+- position opening mode (at each signal or only allow having one position);
+Long positions is enabled
+- enable opening of long positions;
+Short positions is enabled
+- enable opening of short positions;
+Reverse trade
+- choosing the reverse mode (Yes, No): if Yes, a short position will open upon a long signal and vice versa;
+Lots
+- the volume of positions to open;
+Stop loss in points
+- the Stop Loss of a position in points;
+Take profit in points
+- the Take Profit of a position in points;
+Slippage of price
+- maximum allowable slippage when opening a position;
+Multiplier spread for stops
+- spread multiplier applied in the calculation of a proper distance for stop orders (*).
+Waiting for environment update (in seconds)
+- time in seconds to wait for the update of the trading environment (**);
+Number of attempts to get the state of the environment
+- the number of attempts to obtain an accurate trading environment (***).
+* For Stop Loss and Take Profit orders (as well as pending orders), there is a minimum allowed distance for placing such orders -
+StopLevel
+. I.e. Stop Loss and Take Profit (as well as pending orders) cannot be placed closer than this distance to the price. If
+StopLevel
+is zero, it does not mean its absence, it only means that
+StopLevel
+is floating. In this case, the minimum distance is usually equal to spread*, but sometimes even the double spread is not enough. So, this parameter allows specifying a custom multiplier for the spread used to calculate the minimum distance for placing stop orders.
+** When a trading order is sent to a server, an occasional delay in execution may lead to an incorrect counting of the number of market positions. If such an "undefined" state is detected, the Expert Advisor waits for the specified number of seconds and then reads the environment again.
+*** The number of waiting periods within one tick is set in the EA parameters. After taking all allowed attempts to get the accurate environment, the Expert Advisor exits the processing and waits for the next tick. The EA will repeat these attempts on this new tick if the trading environment fails to update by this time.
+The strategy was tested with default settings using data in the interval from 2017.01.04 to 2018.02.09. Unfortunately, the EA did not show good results with default settings. Therefore, it was tested in the reverse mode. Results in the reverse mode were better. The Expert Advisor receives signals from a dynamically calculated moving average, so there are no parameters for optimization. But you can reflect on what to add to the EA. For example, trailing stops can be applied to open positions.
+Fig.1,2 Testing results.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20089

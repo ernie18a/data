@@ -1,0 +1,8 @@
+Two histograms in one window showing the degree of the financial asset's overbought or oversold state.
+Originally this indicator was written in MQL4 and was first published in the
+Code Base
+on 19.07.2006.
+Fig. 1. The DeltaForce indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18435

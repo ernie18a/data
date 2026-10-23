@@ -1,0 +1,6 @@
+Theory :
+The original double smoothed Wilder's EMA was published here :
+Double Smoothed Wilder's EMA
+. This version is extending it by adding volatility ratio adapting mode and is also adding the "correcting" method invented by dr. Alexander Uhl
+Usage :
+It can be used as any other average : in this one you can use the color changes as signals

@@ -1,0 +1,10 @@
+Solution: in error condition - timer activation of Copy* with testing of flag (error occurrence).
+Calculation according to close prices. Recalculation is not made if index has been calculated and there are not any changes.
+Calculation formula was taken from
+here
+There is one input parameter: amount of bars for calculation (== amount of bars for line mapping).
+All pairs are called for calculation. There is not any difference where to launch. A pair, where the indicator is launched, is displayed in the upper left corner near (short) indicator name.
+It is advisable to add synchronization and checks for practical use ( particularly on small (less then H1) timeframes). But this is another story.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1830

@@ -1,0 +1,23 @@
+Time Averaged Price draws the line with its values calculated by prices in a specified range.
+It has two configurable parameters:
+Period
+- calculation period
+Applied price
+The calculation depends on the selected calculation price:
+Close price: TAP = Close[Period-1]
+Open price: TAP = Open[Period-1]
+High price: TAP = Max
+Low price: TAP = Min
+Median price: TAP = (Max+Min)/2.0
+Typical price: TAP = (Max+Min+Close)/3.0
+Weighted price: TAP = (Max+Min+2.0*Close)/4.0
+where:
+Min, Max - Low and High prices in the Period range
+Fig. 1. Time Averaged Price, Close
+Fig. 2. Time Averaged Price, High
+Fig. 3. Time Averaged Price, Low
+Fig. 4. Time Averaged Price, Median
+Fig. 5. Time Averaged Price, Weighted
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22512

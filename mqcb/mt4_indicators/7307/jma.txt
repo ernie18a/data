@@ -1,0 +1,5 @@
+Author: Spiggy
+"JMA's improved timing and smoothness will astound you.".- Jurik wrote on his website.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7307

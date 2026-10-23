@@ -1,0 +1,28 @@
+The
+Indexes_v7L
+indicator calculates the indices of
+8
+major currencies. All
+8
+indices will be displayed in one window. It is possible to enable the automatic detection of the currency pair when attaching to a chart, and the output of the corresponding indices. Calculation of
+CCI
+,
+RSI
+,
+Momentum
+,
+MACD
+and
+Stochastic
+based on the currency indices, and also application of
+Moving Averages
+. The indicator displays the increase/decrease in the price of the currency as a percentage of some initial value set as 100% relative to the currency basket. The undeniable advantage of the indicator is the ability to see the entire market at once without switching charts.
+All versions of the indicators require only
+7
+currency pairs: AUDUSD, EURUSD, GBPUSD, NZDUSD, USDCAD, USDCHF, USDJPY.
+Currency indices
+MACD for the currency indices
+Stochastic for the indices of EUR and USD
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7145

@@ -1,0 +1,19 @@
+WPR HL - Williams’ Percent Range indicator calculated by (High-Low)
+The indicator has three input parameters:
+Period
+- calculation period
+Overbought
+- overbought level
+Oversold
+- oversold level
+Calculation:
+WPR_HL =-100.0 * (Max-HL) / (Max-Min)
+where:
+HL = High - Low
+Max, Min are the highest and lowest prices within the Period interval
+Fig. 1. WPR HL
+Fig. 2. WPR HL as compared to
+Williams’ Percent Range
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21422

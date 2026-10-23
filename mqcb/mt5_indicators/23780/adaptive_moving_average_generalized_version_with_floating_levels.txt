@@ -1,0 +1,9 @@
+Theory :
+In “Adaptive Moving Averages” in this issue, author Vitali Apirine introduces an adaptive moving average (AMA) technique based on Perry Kaufman’s KAMA (Kaufman adaptive moving average). His update to the original KAMA allows the new method to account for the location of the close relative to the high–low range.
+This version of the indicator is coded in a changed way.
+The original uses fixed high and low prices for one part of calculation. While that is (partly) OK if you are using it as a moving average of price, it limits its usage greatly. For start, it can not be used on data other than prices (the results would be highly misleading at the least). So this version corrects that and is using strictly the chosen value (price) for all the calculations without hidden data dependencies
+Usage :
+It can be used as any regular moving average (or, for the users of KAMA - Perry Kaufman's AMA, as a "faster" substitute of KAMA). Also, this version instead adds floating levels and, implicitly, makes it a sort of a "twice adaptive" indicator (since the levels are adapting to the market changes). To reflect the additions, now you have a choice when to change colors of the indicator :
+change when the slope of AMA changes
+change when the AMA crosses outer floating levels (default)
+change when the AMA crosses the middle (dynamic "zero") level

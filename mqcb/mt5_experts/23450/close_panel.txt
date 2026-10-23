@@ -1,0 +1,11 @@
+A panel based on class
+CDialog
+works for all symbols and magic numbers. It has three buttons based on class
+CButton
+"Close all" - closing all positions
+"Close loss more ... " - closing losing positions only, moreover, only those having the loss exceeding the Loss parameter
+"Close profit more ... " -closing profitable positions only, moreover, only those having the profit exceeding the Profit parameter
+All trades are performed within one run: If an error occurs during closing, then this error will not be processed in any way.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23450

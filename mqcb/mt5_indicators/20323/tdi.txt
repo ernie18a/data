@@ -1,0 +1,19 @@
+The indicator is drawn as two lines and a histogram:
+TD Index
+- the trend index;
+Direction
+- trend direction line;
+Signal
+- trade direction histogram.
+It has two parameters:
+Period
+- calculation period;
+Applied price
+- price used for calculations.
+Possible interpretation of the indicator
+If the histogram points upwards, buying is preferred; if downwards — selling is preferred.
+The intersection of the TD Index and Direction lines, intersection of Direction and zero, as well as a change in direction can also be a signal to open a position in the direction indicated by the histogram.
+If trading implies opening of counter-trend positions (trading on rollbacks), then a change in the line direction counter to the histogram direction can serve as a signal to open a counter-trend position.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20323

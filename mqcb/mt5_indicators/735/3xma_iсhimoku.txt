@@ -1,0 +1,157 @@
+This indicator includes three
+moving averages
+, calculation principle of which is taken from
+Ichimoku Kinko Hyo
+.
+A couple of slow moving averages with different periods form the cloud, the color of which corresponds to a trend direction. Usage of this indicator is almost completely equivalent to the usage of
+Ichimoku
+indicator.
+Indicator input parameters<:
+//+-----------------------------------+
+//| Indicator input parameters        |
+//+-----------------------------------+
+input
+uint
+Up_period1=
+3
+;
+// Period 1 for the highest prices calculation
+input
+uint
+Dn_period1=
+3
+;
+// Period 1 for the lowest prices calculation
+input
+uint
+Up_period2=
+6
+;
+// Period 2 for the highest prices calculation
+input
+uint
+Dn_period2=
+6
+;
+// Period 2 for the lowest prices calculation
+input
+uint
+Up_period3=
+9
+;
+// Period 3 for the highest prices calculation
+input
+uint
+Dn_period3=
+9
+;
+// Period 3 for the lowest prices calculation
+//----
+input
+MODE_PRICE Up_mode1=HIGH;
+// Price type 1 for searching for highs
+input
+MODE_PRICE Dn_mode1=LOW;
+// Price type 1 for searching for lows
+input
+MODE_PRICE Up_mode2=HIGH;
+// Price type 2 for searching for highs
+input
+MODE_PRICE Dn_mode2=LOW;
+// Price type 2 for searching for lows
+input
+MODE_PRICE Up_mode3=HIGH;
+// Price type 3 for searching for highs
+input
+MODE_PRICE Dn_mode3=LOW;
+// Price type 3 for searching for lows
+//----
+input
+Smooth_Method XMA1_Method=
+MODE_SMA
+;
+// Smoothing method 1
+input
+Smooth_Method XMA2_Method=
+MODE_SMA
+;
+// Smoothing method 2
+input
+Smooth_Method XMA3_Method=
+MODE_SMA
+;
+// Smoothing method 3
+//----
+input
+int
+XLength1=
+8
+;
+// Smoothing depth 1
+input
+int
+XLength2=
+25
+;
+// Smoothing depth 2
+input
+int
+XLength3=
+80
+;
+// Smoothing depth 3
+input
+int
+XPhase=
+15
+;
+// Smoothing parameter
+input
+int
+Shift1=
+0
+;
+// Horizontal shift of the indicator 1 in bars
+input
+int
+Shift2=
+0
+;
+// Horizontal shift of the indicator 2 in bars
+input
+int
+Shift3=
+0
+;
+// Horizontal shift of the indicator 3 in bars
+Smoothing algorithms can be selected out of ten possible versions:
+SMA
+- simple moving average;
+EMA
+- exponential moving average;
+SMMA
+- smoothed moving average;
+LWMA
+- linear weighted moving average;
+JJMA
+- JMA adaptive average;
+JurX
+- ultralinear smoothing;
+ParMA
+- parabolic smoothing;
+T3
+- Tillson's multiple exponential smoothing;
+VIDYA
+- smoothing with the use of Tushar Chande's algorithm;
+AMA
+- smoothing with the use of Perry Kaufman's algorithm.
+It should be noted that Phase parameters for different smoothing algorithms have completely different meaning. For JMA it is an external Phase variable changing from -100 to +100. For T3 it is a smoothing ratio multiplied by 100 for better visualization, for VIDYA it is a CMO oscillator period and for AMA it is a slow EMA period. In other algorithms these parameters do not affect smoothing. For AMA fast EMA period is a fixed value and is equal to 2 by default. The ratio of raising to the power is also equal to 2 for AMA.
+Place the
+XMA_Ichimoku.mq5
+indicator compiled file to MQL5\Indicators\.
+The indicators use SmoothAlgorithms.mqh library classes (must be copied to the terminal_data_folder\MQL5\Include). The use of the classes was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/735

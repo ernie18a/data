@@ -1,0 +1,10 @@
+This is an extended version of smoother momentum MACD (originally published here :
+Smoother Momentum MACD
+)
+It has been added floating levels and , accordingly 4 types of color changes :
+color change on outer levels cross
+color change on middle level cross
+color change on slope change
+color change on zero level cross
+Usage :
+You can use the color changes as signals

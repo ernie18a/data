@@ -1,0 +1,4 @@
+My version of Squeeze Indicator for MetaTrader 4. This indicator is based on a strategy mentioned in John Carter's book, Mastering the Trade. It is also a fully improvised version of Squeeze_Break indicator by Des O'Regan.
+The main improvements include plotting squeeze values (some BB/KC calculation changes) on the zero-line and then to smoothen the momentum values as rising/falling positive/negative histograms to match the ones sold on commercial websites. This is easy on the eye. Uses some of the Linear Regression code from Victor Nicolaev aka Vinin's V_LRMA.mq4 for smoothening the histograms.
+This version DOES NOT have any alerts functionality and also does not have inputs to change. The reason is — this is V1 and generally nobody changes the BB and KC values.
+On a D1 timeframe below:

@@ -1,0 +1,7 @@
+We are by now using different types of levels in different indicators. Here is one experiment to use some other way.
+This indicator is using stripped Laguerre in a sort of "levels" applied to the RSI "experiment" (to remind, this version of RSI can use :
+Original RSI calculation.
+Use SMA for calculation.
+Use EMA for calculation.
+Use SMMA for calculation.
+Use LWMA for calculation.

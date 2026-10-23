@@ -1,0 +1,240 @@
+ACTUAL VERSION :
+http://codebase.mql4.com/en/code/10413
+Expert advisor that trade in the trend of EMA and buy/sell signals get from Williams %R
+I have tried to create an Expert advisor that could by traded with 1000 EUR starting equity and to minimize the drawdown. Hope you like it. I appreciate every feedback.
+Optimized for EURUSD 5 min
+I have removed some bugs, changed position sizing, you define the % of your account you want to risk on a single trade. I added simple trailing stop, if trailingStop = 0, then it is disabled.
+You use it on your own risk. I am not responsible for your loss, you have to change, test and optimize it for your purpose.
+Inputs:
+extern
+double
+takeProfit      =
+200
+;
+// take profit
+extern
+double
+maxStopLoss     =
+50
+;
+// stop loss
+extern
+double
+maxLots         =
+10
+;
+// max lots per position
+extern
+double
+maxContracts    =
+2
+;
+// max open positions, 2 is optimal for smoother equity
+extern
+double
+EMA             =
+144
+;
+// EMA to identify trend
+extern
+int
+iWPRPeriod      =
+46
+;
+// Williams' Percentage Range to determine buy/sell signals
+int
+iWPRretracement =
+30
+;
+// retracement of Williams' Percentage to allow next trade
+extern
+double
+trailingStop    =
+50
+;
+// trailing stop, use 0 to disable trailing stop
+extern
+int
+risk            =
+2
+;
+// % of account you want to risk on a trade
+extern
+double
+magicNumber     =
+13131
+;
+Strategy Tester Report
+EMAplusWPRv1_1
+XTrade-MT4 Demo (Build 229)
+Symbol
+EURUSD (Euro vs US Dollar)
+Period
+5 Minutes (M5) 2010.01.04 00:00 - 2011.02.01 23:55 (2010.01.04 - 2011.02.02)
+Model
+Every tick (the most precise method based on all available least timeframes)
+Parameters
+takeProfit=200; maxStopLoss=50; maxLots=0.1; maxContracts=2; EMA=144; iWPRPeriod=46; trailingStop=50; risk=6; magicNumber=13131;
+Bars in test
+59025
+Ticks modelled
+7365767
+Modelling quality
+n/a
+Mismatched charts errors
+8220
+Initial deposit
+1000.00
+Total net profit
+1635.88
+Gross profit
+4478.56
+Gross loss
+-2842.67
+Profit factor
+1.58
+Expected payoff
+3.92
+Absolute drawdown
+22.16
+Maximal drawdown
+249.69 (10.77%)
+Relative drawdown
+12.99% (188.82)
+Total trades
+417
+Short positions (won %)
+198 (67.68%)
+Long positions (won %)
+219 (73.52%)
+Profit trades (% of total)
+295 (70.74%)
+Loss trades (% of total)
+122 (29.26%)
+Largest
+profit trade
+67.23
+loss trade
+-39.62
+Average
+profit trade
+15.18
+loss trade
+-23.30
+Maximum
+consecutive wins (profit in money)
+20 (273.93)
+consecutive losses (loss in money)
+6 (-142.17)
+Maximal
+consecutive profit (count of wins)
+326.42 (15)
+consecutive loss (count of losses)
+-142.17 (6)
+Average
+consecutive wins
+4
+consecutive losses
+2
+To use my position sizing increase the maxLots size and define the risk - how many % of your account you want to risk on a single trade.
+For position sizing I use the following code:
+minAllowedLot  =  MarketInfo(
+Symbol
+(), MODE_MINLOT);
+//IBFX= 0.10
+lotStep        =  MarketInfo(
+Symbol
+(), MODE_LOTSTEP);
+//IBFX= 0.01
+maxAllowedLot  =  MarketInfo(
+Symbol
+(), MODE_MAXLOT );
+//IBFX=50.00
+balance = AccountBalance();  
+   ilo   =  ((balance * risk /
+100
+) / maxStopLoss); 
+    
+   lots  =
+NormalizeDouble
+(ilo,
+0
+) * lotStep;
+if
+(lots < minAllowedLot)  lots = minAllowedLot;
+if
+(lots > maxLots)        lots = maxLots;
+if
+(lots > maxAllowedLot)  lots = maxAllowedLot;
+Strategy Tester Report
+EMAplusWPRv1_1 + position sizing
+XTrade-MT4 Demo (Build 229)
+Symbol
+EURUSD (Euro vs US Dollar)
+Period
+5 Minutes (M5) 2010.01.04 00:00 - 2011.02.01 23:55 (2010.01.04 - 2011.02.02)
+Model
+Every tick (the most precise method based on all available least timeframes)
+Parameters
+takeProfit=200; maxStopLoss=50; maxLots=10; maxContracts=2; EMA=144; iWPRPeriod=46; trailingStop=50; risk=6; magicNumber=13131;
+Bars in test
+59025
+Ticks modelled
+7365767
+Modelling quality
+n/a
+Mismatched charts errors
+8220
+Initial deposit
+1000.00
+Total net profit
+4655.80
+Gross profit
+13740.16
+Gross loss
+-9084.36
+Profit factor
+1.51
+Expected payoff
+11.16
+Absolute drawdown
+22.16
+Maximal drawdown
+1139.43 (28.08%)
+Relative drawdown
+28.08% (1139.43)
+Total trades
+417
+Short positions (won %)
+198 (67.68%)
+Long positions (won %)
+219 (73.52%)
+Profit trades (% of total)
+295 (70.74%)
+Loss trades (% of total)
+122 (29.26%)
+Largest
+profit trade
+268.93
+loss trade
+-256.75
+Average
+profit trade
+46.58
+loss trade
+-74.46
+Maximum
+consecutive wins (profit in money)
+20 (353.21)
+consecutive losses (loss in money)
+6 (-354.36)
+Maximal
+consecutive profit (count of wins)
+1466.13 (15)
+consecutive loss (count of losses)
+-664.91 (4)
+Average
+consecutive wins
+4
+consecutive losses
+2

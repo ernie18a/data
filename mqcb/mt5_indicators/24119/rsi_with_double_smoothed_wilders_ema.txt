@@ -1,0 +1,10 @@
+Theory :
+In the original RSI calculation Welles Wilder is using the "Wilder EMA" (some explanation of it can be found here :
+Double Smoothed Wilder's EMA
+). He never explained exactly why he was that EMA but we can guess that he was trying to reduce the number of signals for RSI (if he was to use the "regular" EMA the number of signals would be significantly bigger since EMA would make even more "nervous" RSI). This version is addressing that issue and implicitly addressing the issue of RSI flattening (when RSI becomes flat for longer periods). Instead of using "regular" Wilder's EMA for calculation, this version is using double smoothed Wilder's EMA, and that way :
+it is smoothing a bit the RSI (not too much, but the smoothness difference is noticeable and significant in a lot of cases)
+it is preventing too much flattening of the RSI (see the lower "big picture" example)
+Usage :
+It can be used as any other RSI
+PS:
+A "big picture" example showing the difference of regular RSI (gray line) and this RSI (colored line). As it is obvious, this version avoids too much "flattening" and the slope still remains reasonably smoother than the original regular RSI

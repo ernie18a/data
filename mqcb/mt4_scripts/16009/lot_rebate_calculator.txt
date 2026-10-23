@@ -1,0 +1,19 @@
+Real author:
+dXerof
+This simple script is used to calculate total lot or rebate.
+Input Settings
+extern
+string
+StartDate=
+"2016.04.01"
+;
+extern
+double
+RebatePerLot=
+6
+;
+extern
+color
+TColor=
+clrRed
+;

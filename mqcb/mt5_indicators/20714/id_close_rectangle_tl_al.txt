@@ -1,0 +1,35 @@
+An indicator utility for closing (reducing the right side of the length) the rectangles, trendlines, or lines with arrows to some bars/candlesticks.
+Using it, you can do it in two clicks (instead of many actions, if you have to do this manually):
+One - on the button in the control panel of this utility;
+then another one - on the object in the chart, in the location, to which it must be reduced.
+This utility works with the objects located in the main chart and with those located in its separate windows.
+Inputs
+i_prefix_add_to_object_name
+- add prefix "cl" to the name of the object to be closed;
+i_prefix_add_to_object_text
+- add prefix "cl" to the description of the object to be closed;
+i_prefix_add_to_object_tooltip
+- add prefix "cl" to the tooltip of the object to be closed;
+i_font_size
+- font size in the control panel;
+i_y_distance
+- placing the control panel along the
+y
+axis in pixels (referencing from the chart top);
+i_x_distance
+- placing the control panel along the
+x
+axis in pixels (referencing from the right chart edge);
+Abbreviation in the name of this utility reads as follows:
+TL - Trend Line (
+OBJ_TREND
+);
+AL - Arrowed Line (
+OBJ_ARROWED_LINE
+).
+Together with Rectangle (
+OBJ_RECTANGLE
+) - these are the types of graphic objects in the terminal, of those having two anchoring points by time and price.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20714

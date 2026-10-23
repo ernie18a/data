@@ -1,0 +1,18 @@
+John Ehlers Trend Component Indicator.
+It has three input parameters:
+Period
+- calculation period;
+Delta
+- factor to calculate gamma;
+Applied price
+- price used for calculations.
+Calculations:
+Trend Component = SMA(2*Period + 1, BP)
+where:
+BP = 0.5*(1.0 - alpha)*(Price[0] - Price[2]) + beta*(1.0 + alpha)*BP[1] - alpha*BP[2]
+alpha = gamma*SQRT(gamma*gamma - 1.0)
+gamma = 1.0/COS(4.0*Pi*Delta/Period)
+beta = COS(2.0*Pi/Period)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20878

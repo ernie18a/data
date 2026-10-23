@@ -1,0 +1,11 @@
+The Indicator ZeroLAG MA is a moving average with zero delay. The Indicator ZeroLAG MA was described in journal Technical Analysis of Stocks and Commodities, April, 2000 for the first time.
+ZeroLAG MA calculates on formula:
+ZeroLAG MA(i) = 2*MA(Price, P1, i) - MA(MA(Price, P1, i), P2, i);
+where:
+MA - moving average;
+Price - an aplyed price;
+P1 - a period of the moving average under the first smoothing;
+P2 - a period of the moving average under the second smoothing;
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9984

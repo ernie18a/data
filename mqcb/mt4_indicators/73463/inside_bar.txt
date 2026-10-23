@@ -1,0 +1,51 @@
+Inside Bar is one of the most reliable candlestick patterns used by price action traders. It often signals an impending breakout. This premium indicator not only detects every Inside Bar on your chart, but also identifies the likely direction (bullish / bearish / neutral), draws a projection rectangle from the mother candle, and sends instant alerts to your desktop and mobile.
+Key Features
+Feature
+Benefit
+✅ Auto Pattern Detection
+Identifies every Inside Bar – no manual scanning required.
+✅ Smart Direction Filter
+Small candle’s close vs open determines bullish (⬆) or bearish (⬇) bias.
+✅ Projection Rectangle
+Drawn from the mother candle’s high/low and extended forward (customizable bars).
+✅ Multi‑Channel Alerts
+Popup, sound,
+✅ Color by Direction
+Green = bullish, Red = bearish, Blue = neutral – or set manual colors.
+✅ Clean Chart Labels
+“Inside Bar BULLISH / BEARISH” text next to each rectangle.
+✅ Keep Last N Bars
+Show only recent rectangles (e.g., last 50 bars) – keeps chart uncluttered.
+✅ Works on Any Symbol
+Forex, indices, stocks, crypto, commodities – any timeframe.
+✅ Lightweight & Fast
+Optimized loop processes only visible / recent bars.
+Input Parameters (fully adjustable)
+Parameter
+Description
+BarsToKeep
+Number of past candles to keep rectangles visible (e.g., 50, 100).
+ForwardBars
+How many bars to extend the rectangle to the right from the mother candle.
+RectangleFill
+Enable/disable filled rectangle (true/false).
+AutoColorByDirection
+If true – color changes automatically (green/red/blue).
+BullishColor / BearishColor / NeutralColor
+Custom colors when auto mode is ON.
+RectangleFillColor
+Fill color when auto mode is OFF.
+EnableAlert
+Turn notifications ON/OFF.
+EnableLabel
+Show text labels on chart.
+LabelOnlyOnNewBar
+Show label only for the most recent pattern (reduces clutter).
+FilterDirection
+Ignore neutral patterns – show only bullish or bearish signals.
+Who Is This For?
+Breakout traders who trade consolidations before strong moves.
+Price action traders who rely on Inside Bar setups.
+Swing & day traders who need immediate notifications.
+Traders who use multiple timeframes – works perfectly on M1 to MN1.
+No repainting – signals are fixed once the bar closes.

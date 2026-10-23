@@ -1,0 +1,40 @@
+Idea by
+:
+Sergey
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+The EA trades with the Absorption pattern. It places pending orders Buy Stop and Sell Stop. It can move a position to a breakeven, as well as trailing. Individual Take Profit settings for BUY and SELL.
+Absorption in bar #2:
+Absorption in bar #1
+Inputs
+Lots
+- volume of the pending order to be placed;
+Take Profit Buy
+- Take Profit for the Buy Stop of pending orders;
+Take Profit Sell
+- Take Profit for the Sell Stop of pending orders;
+Trailing Stop
+(in pips) - trailing;
+Trailing Step
+(in pips) - trailing step;
+Indent from high or low
+- indent from the extreme (high or low) found;
+Number of bars to search for price extremes
+- number of bars for searching for extremes;
+Expiration a pending order in hours
+- life time of the pending order, in hours;
+Magic number for signal 1
+- identifier for positions on trades for signal 1;
+Magic number for signal 2
+- identifier for positions on trades for signal 2;
+Breakeven (in pips) ("0" -> parameter "Breakeven" is off)
+- breakeven (for how many pips to move the Stop Loss);
+Breakeven profit (in pips)
+- a profit, at achieving which the Stop Loss must be moved to breakeven.
+Test in the "Every tick based on real ticks" tick generation mode for GBPUSD,H1 from 2018.01.01 to 2018.04.25:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20565

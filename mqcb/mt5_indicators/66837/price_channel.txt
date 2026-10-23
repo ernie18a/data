@@ -1,0 +1,4 @@
+This is a simple price channel indicator allowing user to customize period and line colours. Often used in channel break strategies.
+Translated from Chinese by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/zh/code/66837

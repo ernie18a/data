@@ -1,0 +1,7 @@
+This Ulcer Index (UI) indicator is a technical indicator devised by Peter Martin in his 1987 book "The Investors Guide to Fidelity Funds".
+Typically used in measuring downside risk in stock market funds, the index looks at measuring downside volatility over a period.
+The use of the indicator is simple:
+Downward trending UI - Confirms rising trend with decreasing downside volatility.
+Upward trending UI - Confirms falling trend with increasing downside volatility.
+This code can be used across any instrument and time frame. However, the shorter the time the more chance of volatility and false signals like any other trend confirmation. Like most other indicators, it is not recommend for sole use, but rather as a trend confirmation tool to complement your strategy.
+The first picture (Below) shows falling UI in the face of rising prices, while the second picture shows rising UI in the face of falling prices.

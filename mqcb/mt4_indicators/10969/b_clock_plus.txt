@@ -1,0 +1,4 @@
+Description:
+Here you will see Spread Cost and Margin require for 1.00 Lot, 0.10 Lot, 0.01 Lot which is useful for counting balance, risk before executing a trade.
+Please view the image, there I draw total description.
+Image:

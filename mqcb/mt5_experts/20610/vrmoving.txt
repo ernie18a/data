@@ -1,0 +1,147 @@
+Idea by
+:
+Vladimir Pastushak
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+The EA trades on indicator Moving Average, all the preparatory and trading functions having been implemented as the
+CMoving
+trading class in a separate file named
+Moving.mqh
+.
+Inputs
+magic number
+- the unique EA identifier;
+Lots
+- position volume (the position volume above zero or risk size above zero may be specified);
+Risk
+- risk in percents of free margin per trade (the position volume above zero or the risk size above zero may be specified);
+MA: period
+- indicator Moving Average: Timeframe;
+MA: averaging period
+- indicator Moving Average: Averaging period;
+MA: horizontal shift
+- indicator Moving Average: Horizontal shift;
+MA: smoothing type
+- indicator Moving Average: Averaging method;
+MA: type of price
+- indicator Moving Average: Type of prices, on which the indicator is calculated;
+Take Profit
+- Take Profit (for the case where one position is open);
+Lot multiplier for a series of Positions
+- increasing the volume of a position for a series of positions;
+Distance from Moving Average
+- distance from the Moving Average indicator;
+Additive in the presence of the general profit
+- adding to the indent, if there is general profit.
+The EA uses the swing principle, there being a possibility to increase the number of lots; a simple strategy is used for its operation:
+If the price is above the Moving Average indicator at a pre-set
+Distance from Moving Average
+, we will open a BUY position;
+If the price moves down from the Moving Average indicator at a pre-set
+Distance from Moving Average
+, we will open a SELL position with the same lot;
+If the price has moved up from the BUY position having the highest price at a pre-set
+Distance from Moving Average
+, we will open the next BUY position;
+If the price has moved down from the BUY position having the lowest price at a pre-set
+Distance from Moving Average
+, we will open the next SELL position;
+Class CMoving
+Setting parameters
+Initialization
+Primary initialization - the following parameters are set:
+symbol
+- name of the symbol, on which the EA will operate
+magic
+- unique identifier for the EA
+slippage
+- slippage.
+GetFlag
+It returns the state of the initialization flag. It is used as an auxillary function when calling from the basic EA for checking the status of the internal
+m_init
+variable of class CMoving.
+LotsOrRisk
+Defining the type of position lots calculations: Either manually (the
+lots
+parameter is above zero) or in the percents of free margin per trade (the
+risk
+parameter is above zero).
+CreateMA
+Creating the Moving Average indicator.
+TakeProfit
+Defining the Take Profit parameter.
+Multiplier
+Defining the lot increasing parameter.
+DistanceMA
+Defining the indent from the Moving Average indicator.
+ProfitPlus
+Defining the additional indent at general profit.
+Main function
+Processing
+Main function, in which all calculations are performed.
+Class functions with the protected access specifier
+RefreshRates
+Updating quotes for the symbol.
+CheckVolumeValue
+Checking for correctness the position volume entered (the check is used when defining the position volume manually).
+IsFillingTypeAllowed
+Checking the order filling mode.
+iMAGet
+Getting the values of the Moving Average indicator on the bar having the index of
+index
+.
+CalculateAllPositions
+Getting the information on positions per call:
+count_buys
+- number of BUY positions;
+price_highest_buy
+- the price of the highest BUY position;
+price_lowest_buy
+- the price of the lowest BUY position;
+lot_highest_buy
+- voume of the highest BUY position;
+lot_lowest_buy
+- volume of the lowest BUY position;
+total_lots_buy
+- the total volume of BUY positions;
+count_sells
+- number of SELL positions;
+price_lowest_sell
+- the price of the lowest SELL position;
+price_highest_sell
+- the price of the highest SELL position;
+lot_lowest_sell
+- volume of the lowest SELL position;
+lot_highest_sell
+- volume of the lowest SELL position;
+total_lots_sell
+- the total volume of SELL positions.
+Prices
+Getting the reference prices for BUY and SELL positions, considering the pre-set
+Distance from Moving Average
+.
+LotCheck
+Checking and normalizing the position volume (it is used when defining the position size manually).
+OpenBuy
+Opening a BUY position.
+OpenSell
+Opening a SELL position.
+PrintResult
+Printing out the results of a trade operation for opening a position.
+SetTakeProfit
+Setting the Take Profit level for positions or removing all the Take Profit and Stop Loss levels (where the
+delete_take_profit
+parameter is equal to "true").
+CompareDoubles
+Comparing two real numbers for being equal.
+AwerageTakeProfit
+Calculating and setting the single Take Profit level for a position of a certain type
+pos_type
+.
+GBPUSD, H1, "Every tick based on real ticks."
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20610

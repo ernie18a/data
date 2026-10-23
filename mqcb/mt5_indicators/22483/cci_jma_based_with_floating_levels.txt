@@ -1,0 +1,6 @@
+Basics :
+Usually CCI is calculated as using average (Simple Moving Average) and mean deviation.
+This version :
+In this version, average is replaced with well known JMA (Jurik Moving Average) instead for the smoothing phase and the deviation is replaced with EMA deviation. The result in this one is responsive and fast (as expected) and also it is smoother than the original CCI (as expected). Also, instead of using fixed levels, this version is using floating levels. Floating levels are adjusted to the market volatility and that makes this version of CC even more responsive
+Usage :
+You can use the color changes as signals when using this indicator

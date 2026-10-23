@@ -1,0 +1,7 @@
+Original script was posted here:
+http://codebase.mql4.com/en/code/7735
+The script stores an output file in the
+MetaTrader 4\experts\files\
+directory.
+The file name contains the following information:
+"Symbol_Period---date of the first bar in history--date of the last bar in history.txt".

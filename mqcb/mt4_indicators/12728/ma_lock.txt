@@ -1,0 +1,17 @@
+Real author:
+tembox
+This indicator will help define MA (Moving Average) for one specified timeframe only.
+When timeframe changes, this indicator automatically adjusts its setting to new timeframe if possible. The idea is "I just want to see how MA(8) from H1 when I am currently on M15" or "I just want to see how MA(100) from M15 when I am currently on H4" .
+Example:
+We want to see how MA(8) locked for H1 to other timeframe, especially for lower timeframes, such as M15, M30, M5, or even larger timeframe H4.
+H1: MA(8)  --->  M15: MA(32)  ---> M30: MA(16)  ---> M5: MA(96)  --->  H4: MA(2)
+To do this, we bound MA to H1 timeframe with this setting :
+MATF = 60  (see notes on parameter)
+MAPeriod = 8
+Input parameters:
+MALock(8) on H1 (thin red line) compared with normal MA(8) before switching timeframe:
+MALock(8) H1 (thin red line) on M15 compared with normal MA(32).
+MALock automatically becomes MA(32):
+MALock(8) H1 on M30 (equal to MA(16)):
+MALock(8) H1 on H1 and H4:
+2 MALock:

@@ -1,0 +1,22 @@
+The VR Alert NT5 indicator warns the trader about the price reaching a specified level.
+This is a lite version with open source. The full version is available on the
+Market
+. It can track prices as well as other indicators.
+The indicator has been developed as an assistant when you wait for a breakout of an important price level, which can take hours or even days. With this indicator, you do not need to constantly monitor your terminal. The indicator alerts of a level breakdown or of the specified time using the selected method.
+Monitoring charts for a prolonged time causes most traders to have "Blurred eyes". This makes them miss really good signals while looking at their trading strategies, and, conversely, see their signals where there is nothing to see.
+Advantages
+Works with the price
+Easy to install and configure
+Levels can be dragged along the chart using the mouse
+Any trading instruments and timeframes
+Sound notification - the terminal will play a short melody attracting the attention of the trader
+Other versions of the program
+VR Alert MT5
+- full version for MetaTrader 5;
+VR Alert
+- full version for MetaTrader 4;
+VR Alert Lite
+- lite version for MetaTrader 5.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19824

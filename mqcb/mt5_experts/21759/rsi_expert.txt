@@ -1,0 +1,35 @@
+Idea by
+:
+Aleksey Cherbaev
+MQL5 code author
+:
+barabashkakvn
+A simple Expert Advisor based on iRSI (Relative Strength Index, RSI).
+The trading strategy is simple:
+A BUY position is opened at the intersection of
+RSI DOWN level
+from bottom up;
+A SELL position is opened at the intersection of
+RSI UP level
+downwards.
+The lot size is fixed and is set in parameters (
+Lots
+). You can also specify the desired
+Stop Loss
+,
+Take Profit
+and
+Trailing Stop
+.
+In the course of signal formation, the indicator can temporarily cross any of the levels (upper or lower), therefore the trading signal is checked at bar #1 and bar #2. Position closure is a bit more interesting - positions are mainly closed when an opposite signal appears. Accordingly, if there are open BUY positions and a SELL signal appears, all BUY positions will be closed and one SELL position will be opened.
+You can try different values of
+Stop Loss
+,
+Take Profit
+and
+Trailing Stop
+. Parameters can be disabled by setting their values to "0.0".
+USDJPY, M15:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21759

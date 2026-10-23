@@ -1,0 +1,12 @@
+Real author:
+from MetaStock by Rosh
+Three normalized oscillators on one chart.
+The formula for the calculation:
+StoneAxe(bar) = 200 * ( Close[bar] - Lowest(bar, period) ) / ( Highest(bar, period) - Lowest(bar, period) ) - 100
+This indicator was first implemented in MQL4 and published in the
+Code Base at mql4.com
+on 02.02.2008.
+The StoneAxe_x3x indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1953

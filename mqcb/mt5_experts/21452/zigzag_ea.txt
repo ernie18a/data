@@ -1,0 +1,35 @@
+Author of the idea
+:
+Iurii Tokman
+MQL5 code author
+:
+barabashkakvn
+The EA applies data from the ZigZag custom indicator. This indicator is used to define the channel. Buy Stop and Sell Stop pending orders are placed along the channel borders. After a pending order is activated, trailing can be enabled for a position. Stop loss and take profit values are specified in Fibo levels (0.0%, 23.6%, 38.2%, 50%, 61.8%, 100%, 161.8%, 261.8% and 423.6%).
+Inputs
+ZigZag settings:
+Depth;
+Deviation;
+Backstep.
+EA operation time:
+Operation start, hours;
+Operation start, minutes;
+Operation stop, hours;
+Operation stop, minutes.
+Channel and indent settings:
+Indent in points;
+Minimum channel size;
+Maximum channel size.
+ММ settings:
+Lots;
+Risk.
+EA settings:
+Stop loss in %;
+Take profit in %;
+Trailing Stop (in pips);
+Trailing Step (in pips);
+Show channel lines;
+magic number.
+EURUSD,M15:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21452

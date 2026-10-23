@@ -1,0 +1,15 @@
+Author: Andrew & Conversion: Dr. Gaines
+Trend indicator with a multitude of settings. Displays the direction (red) and strength (blue) of the trend as a two-colored histogram. The main signals are the crossing of the zero line, reaching a new high/low, divergence.
+If the red graph is greater than zero and grows - go bullish (if at the same time the blue graph is less than zero and falls - the uptrend is getting stronger)
+If the red graph is less than zero and falls - go bearish (if at the same time the blue graph is greater than zero and grows - the downtrend is getting stronger)
+Common parameters - parameters that affect both lines:
+"Apply to". The basis for the indicator calculation. In this case it is the price - Close, Open etc.
+Parameters of the trend direction line (red line). The trend direction in the iTrend is calculated based on the Bollinger Bands technical indicator, and therefore the iTrend trend direction has the same settings as Bollinger Bands:
+"Mode". Specifies the Bollinger Bands line to use in the calculation of the iTrend: Main, Top or Bottom.
+"Period". The period of the iTrend indicator
+"Deviation". The deviation of the iTrend indicator
+Parameters of the trend strength line (blue line). The line of the trend strength in the iTrend is calculated based on the technical indicators by Alexander Elder - Bears Power and Bull Power
+"Period". The of the iTrend trend line.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7471

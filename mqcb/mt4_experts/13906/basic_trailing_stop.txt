@@ -1,0 +1,13 @@
+Real author:
+Inovance - https://www.inovancetech.com/
+Add a trailing stop to your entry signals. Simply put in your entry conditions so that the
+LongRule()
+function returns "1" when long conditions are met and the
+ShortRule()
+function returns "-1" when the short conditions are met. You can set the trailing stop distance, in pips, as an external input.
+Trailing stop will adjust at each tick.
+Recommendations:
+Will work on 4 and 5 digit brokers.
+Always test on demo account first.
+Does not include exit logic besides Trailing Stop.
+Example strategy shown in template.

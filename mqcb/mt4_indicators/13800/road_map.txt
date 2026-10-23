@@ -1,0 +1,18 @@
+A safe journey is only possible on a road with good marking and proper road signs.
+The indicator shows:
+impulse waves (bold sloping lines);
+corrective waves (thins sloping lines);
+upward wave series (blue color);
+downward wave series (purple color);
+wave series length (the numbers near the Zig Zag vertices);
+wave series breakthrough levels (short green and red lines);
+targets for Take Profit (the Fibonacci grid from the start of the wave series).
+The Zig Zag is non-standard, the idea for plotting was taken from the wave theory of Stanislav Chuvashov (it can be viewed, say,
+here
+).
+The green numbers are the time fractals that can change on further price movement.
+In the input parameters it is possible to change the number of the output Zig Zag bars (Max_Bars), colors of the lines and numbers, as well as the indicator display modes.
+The Road_Map_v04.mq4 file was added. Some minor errors were fixed, the logic was completely changed to increase the speed.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13800

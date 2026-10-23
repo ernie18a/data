@@ -1,0 +1,6 @@
+Quantora Market Volatility Monitor MT5 is a real-time volatility analysis indicator for MetaTrader 5.
+It measures current market activity using ATR and compares it with a historical average to show whether volatility is low, normal, high, or extreme. This helps traders quickly understand current conditions before making decisions.
+The dashboard also displays daily high, low, and range, along with the ratio between daily movement and ATR. Live market data such as bid, ask, and spread are included for a complete view of current conditions.
+All thresholds and ATR settings can be adjusted, allowing the indicator to adapt to different trading styles and markets.
+The interface is simple, updates automatically, and works on all symbols and timeframes.
+This tool is designed for market monitoring and analysis only. It does not generate trading signals or manage trades.

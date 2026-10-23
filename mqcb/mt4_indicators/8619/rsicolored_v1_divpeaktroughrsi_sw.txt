@@ -1,0 +1,8 @@
+First of all we attach the
+ind_RSIColored_v1
+, then move the
+ind_DivPeakTroughRSI_SW_v1
+to the same window using the mouse.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8619

@@ -1,0 +1,10 @@
+Indicator
+XPeriodCandle
+supplemented by Bollinger Bands, based on their candlesticks, and indicating with the bright candlestick color if the candlesticks go beyond the bands.
+The indicator uses the SmoothAlgorithms.mqh library classes. Working with them was described in details in article
+Averaging Price Series for Intermediate Calculations Without Using Additional Buffers
+.
+Fig 1. XPeriodCandleSystem
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21176

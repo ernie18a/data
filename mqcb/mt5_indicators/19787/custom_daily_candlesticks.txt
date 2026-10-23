@@ -1,0 +1,19 @@
+The indicator allows customizing the day beginning hour, the vertical shift of candlesticks, as well as colors of bullish, bearish and doji candlesticks.
+It has five input parameters:
+Hour of begin day
+- day beginning hour;
+Candles vertical shift
+- vertical shift for the candlesticks;
+Color of bullish candle
+- select color for bullish candlesticks;
+Color of bearish candle
+- select color for bearish candlesticks;
+Color of doji candle
+- select color for doji candlesticks.
+Fig. 1. Default settings.
+Fig. 2. The day beginning hour is set to 12.
+Figure 3. The day beginning hour is set to 23.
+Figure 4. Shift is set to 0.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19787

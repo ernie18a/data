@@ -1,0 +1,12 @@
+Protect Your Funded Account with Institutional-Grade Risk Monitoring.
+The #1 reason traders fail prop firm challenges is not a bad strategy; it is breaching daily drawdown limits. The AlphaQuant Prop Firm Daily Drawdown Dashboard is a free, high-visibility Expert Advisor designed specifically for funded traders.
+Instead of drawing messy lines on your price chart, this EA creates a sleek, professional risk monitor directly on your screen. It tracks your account equity in real-time and calculates exactly how much "room" you have left before you hit your daily loss limit.
+Key Features:
+• Real-Time Equity Tracking: Monitors your actual account balance and equity, not just chart price.
+• High-Visibility Dashboard: Large, color-coded text designed for multi-screen setups.
+• Dynamic Status Alerts: Automatically switches from "SAFE" (Green) to "WARNING" (Orange) and "CRITICAL" (Red) as you approach your daily limit.
+• Daily Auto-Reset: Automatically resets the baseline balance at server midnight to align with prop firm rules.
+How to Use:
+Attach the EA to any chart.
+Set your "Max Daily DD %" in the inputs (e.g., 5.0 for a 5% limit).
+Monitor your risk visually while you trade.

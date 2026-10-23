@@ -1,0 +1,5 @@
+It is based on the Filtr_AO indicator, which has been shared on KROUFR. Modified to output arrows on the chart. Added the ability to output signals both to alert and comment (set true/false in the extern variables). Just like any other arrow indicator that tries to catch the signal within the zero bar, the indicator "trembles", the arrow appears/disappears. The price at which the last signal appeared is stored both in the comments and in the alert. It is possible that the appearance of the arrow should be used not as an entry signal, but as a sign of a level appearance, the price of which is reflected in the comments and the alert, and enter after the breakout of this level is confirmed. The Ask and Bid prices are output to the alert, the comment only has Bid. The F2a_AO indicator requires a compiled NavelEMA.mq4 file.
+"Lagged" only on H4 for EURUSD and GPBJPY.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8692

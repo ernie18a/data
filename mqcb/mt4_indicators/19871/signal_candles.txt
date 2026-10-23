@@ -1,0 +1,32 @@
+Signal Candles
+indicator lets you filter candles by your predefined criteria (direction, minimum size, upper tail to candle ratio, lower tail to candle ratio etc) and get alerts when such candles appear on the chart.
+Features
+Email, Push and Alert notifications.
+Ability to enable/disable each alert type separately.
+Thorough candle property filter.
+Draws buy and sell signals on the chart.
+Doesn't repaint.
+Inputs
+minimum_candle_size_hl_points
+- Minimum Candle Size in Points (High - Low).
+minimum_body_to_candle_ratio
+- Minimum Candle Body to Candle Size Ratio.
+s_candle_direction
+- Candle Direction (Sell Signal).
+s_minimum_upper_tail_ratio
+- Minimum Upper Tail to Candle Size Ratio (Sell Signal).
+s_minimum_lower_tail_ratio
+- Minimum Lower Tail to Candle Size Ratio (Sell Signal).
+b_candle_direction
+- Candle Direction (Buy Signal).
+b_minimum_upper_tail_ratio
+- Minimum Upper Tail to Candle Size Ratio (Buy Signal).
+b_minimum_lower_tail_ratio
+- Minimum Lower Tail to Candle Size Ratio (Buy Signal).
+Alerts
+- Enable Alerts.
+Email
+- Enable Email Notifications.
+Push
+- Enable Push Notifications.
+Thank you for reading!

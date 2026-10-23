@@ -1,0 +1,12 @@
+Last Versions:
+Here
+Two differently directed trades are opened at 7.00 (gmt).
+tp=20 pips
+The orders that didn't trigger and the unprofitable orders are deleted at 00.00 gmt.
+Advices:
+The decsription of the EA's parameters and the investigation of the strategy of the regularities of the exchange rates are available in the
+35-th issue of the journal
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8573

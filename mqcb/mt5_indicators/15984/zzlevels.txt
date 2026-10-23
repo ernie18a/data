@@ -1,0 +1,15 @@
+The Simple ZigZag indicator is a good basis for automation of the technical analysis. Below is a simple example of pattern recognition. The ZZLevels indicator uses the Simple ZigZag to find the boundaries of the flat, as well as the support and resistance levels.
+Automation of many graphical constructions, including simple ones like channels, trends (higher highs / lower lows) or Fibo grids, requires defining a "refined movement", i.e. price passing from local minimum to local maximum and from local maximum to local minimum.
+I have already proposed a simple algorithm for searching local Highs and Lows implemented in
+Simple ZigZag
+. The main difference of Simple ZigZag from the conventional one is the much more simple and fast algorithm, as well as the single parameter — typical correction depth.
+The ZZLevels indicator is the development of the idea of automating analytical ZigZag-based constructions. In particular, the presented indicator implements a simple algorithm for finding the borders of trading ranges, as well as the support and resistance levels.
+The following inputs are used to adjust the indicator:
+Number of ZZ points analyzed — the number of non-zero values of the Simple ZigZag indicator buffer, analyzed by the algorithm (essentially the depth of search for levels in the indicator history). Use this parameter for finding long-lasting levels.
+Number of times the price touches the level — the number of times the price touches the level. It is known that the more often the price touches the level, the more important that level is for technical analysis.
+High/Low max. deviation around level — this parameter is responsible for the precision of the level. Since the price can "pierce" the level by a few points, or reverse just before reaching it, user must set the precision for the indicator to monitor the level touches.
+Typical retracement size — is inherited from the parent indicator — Simple ZigZag.
+In its current form the indicator still can not be used for automated trading. At the same time, it perfectly illustrates the idea of automating graphic plots of technical analysis on the basis of simple algorithms based on finding local Highs and Lows. In addition, it helps to find the range borders and support/resistance levels in "manual" trading.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15984

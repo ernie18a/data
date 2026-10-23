@@ -1,0 +1,12 @@
+Indicator in the form of a panel. Displays the resulting direction of the position: resulting lot size and up or down arrow.
+The main area of application is hedge accounts, when there are multiple open positions in different directions with different volumes. The panel displays the resulting position volume only for the symbol of the chart the panel is attached to.
+Example
+Such open positions are present:
+Thus, the resulting position on AUDUSD: sell 0.02 + buy 0.05 = buy 0.03:
+Similarly, the resulting position on EURUSD will be: sell 0.01 + buy 0.05 = buy 0.04:
+And the resulting position on USDJPY will be: buy 0.06 + sell 0.03 + sell 0.05 = sell 0.02:
+Tip:
+Attach the Positions Info Panel indicator to the chart, save the chart template (right click on the chart -> Templates -> Save Template) under the name default.tpl. After that, whenever you open a new chart, the Positions Info Panel will already be present on the chart.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16931

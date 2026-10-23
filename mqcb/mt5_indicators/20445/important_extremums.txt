@@ -1,0 +1,14 @@
+The indicator displays "important" extremum points on the price chart.
+It has one input parameter:
+Period
+- indicator calculation period.
+Calculation:
+If High[i-1] >= MaxHigh and High[i-1] > High[i] - it is the upper extremum
+If Low[i-1] <= MinLow and Low[i-1]<Low[i] - it is the lower extremum
+where
+MaxHigh, MinLow - the highest and the lowest prices in the range from (i-Period-1) to (i-2)
+Fig.1. Timeframe H1
+Fig.2. Timeframe H4
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20445

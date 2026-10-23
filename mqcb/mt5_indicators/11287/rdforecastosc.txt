@@ -1,0 +1,10 @@
+Real author:
+Nick Bilak
+A non-normalized oscillator that uses Tilman's averaging, drawn in the form of a color cloud.
+The original indicator was developed in the MQL4 language and published in the
+CodeBase
+on 03.08.2006.
+Figure 1. The RD-ForecastOsc indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11287

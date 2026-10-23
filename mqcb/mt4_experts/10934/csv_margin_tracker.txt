@@ -1,0 +1,2 @@
+Writes Date, Time, Balance, Equity, Margin to a .csv file in "\experts\files\" in regular intervals. Windows usually places the file in the MetaTrader folder in "User\AppData\Local\VirtualStore". Attach to any chart.
+To account for spikes, the Margin recorded will be the highest, and Balance and Equity the lowest of the interval. Email settings for mail alert can be configured in Metatrader Email options.

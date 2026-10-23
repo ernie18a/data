@@ -1,0 +1,62 @@
+Detailed Description — RSI Histogram (MQL5)
+This is a custom indicator for MetaTrader 5 that plots the classic RSI (Relative Strength Index) in a separate window, while also adding a color-coded histogram based on the direction of the RSI's momentum. In effect, it combines a standard RSI with a "trend-colored RSI," making it easy to see at a glance whether RSI is rising, falling, or flat.
+Explanation of each input
+"RSI" group
+Show_RSI
+(true/false) — shows or hides the classic RSI line (the solid blue line).
+RSI_Period
+(default 14) — the number of bars used to calculate the average gain/loss (Wilder's method). A shorter period makes RSI more sensitive/noisy; a longer period makes it smoother but more lagging.
+RSI_Price
+(default PRICE_CLOSE) — which price is used in the calculation: close, open, high, low, median (H+L)/2, typical (H+L+C)/3, or weighted (H+L+2C)/4.
+RSI_Color
+— the color of the RSI line.
+RSI_Width
+— the line thickness of RSI (automatically clamped between 1 and 5).
+"Histogram" group
+Show_Histogram
+— shows or hides the colored histogram.
+Histogram_Width
+— thickness of the histogram bars (1–5).
+Momentum_Filter
+(default 0.01) — the minimum RSI change between two bars required to classify the move as "rising" or "falling." Below this threshold, the bar is treated as "flat" (neutral). This keeps the histogram from flickering color on tiny noise fluctuations.
+Color_Up / Color_Down / Color_Flat
+— colors for the histogram when RSI is rising, falling, or stationary.
+"Levels" group
+Show_Levels
+— shows or hides the three horizontal reference lines.
+Upper_Level
+(default 70) — typically the "overbought" threshold.
+Middle_Level
+(default 50) — the midline, used as a neutral bull/bear threshold.
+Lower_Level
+(default 30) — the "oversold" threshold. (The code auto-corrects if levels are entered out of order or outside the 0–100 range.)
+"Performance" group
+Maximum_Bars
+(default 10000, 0 = no limit) — limits how many bars of history are recalculated on each tick, for performance on charts with very long history. The indicator re-seeds the Wilder average right at the window boundary, so RSI stays mathematically correct instead of accumulating drift.
+Applicable trading methods
+This indicator is a visual variant of classic RSI, so standard RSI strategies apply, plus a few ideas specific to the color histogram:
+Classic overbought/oversold
+RSI above Upper_Level (70) → asset possibly overbought → look for sell/short signals.
+RSI below Lower_Level (30) → possibly oversold → look for buy/long signals.
+The shorter the RSI period, the more often these extremes occur (but also more false signals).
+Midline (50) crossovers
+RSI crossing above 50 = bullish momentum confirmation.
+RSI crossing below 50 = bearish momentum confirmation.
+Useful as a trend filter rather than a direct entry/exit trigger.
+Reading the momentum histogram (specific to this indicator)
+Consecutive green bars
+= RSI accelerating upward → buying momentum strengthening.
+Consecutive red bars
+= selling momentum strengthening.
+Gold (flat) bars
+= RSI stagnating → possible indecision/consolidation zone, a cue for caution before entering a position.
+A color flip (green→red or vice versa) can serve as an early warning that the current move is losing steam, even before RSI reaches an extreme level.
+Divergences
+(not calculated automatically by the indicator, but visible manually)
+Price makes a new high but RSI/histogram makes a lower high → bearish divergence, possible exhaustion of the uptrend.
+Price makes a new low but RSI makes a higher low → bullish divergence.
+Using Momentum_Filter as a noise filter
+Increasing Momentum_Filter makes the histogram more conservative (flat color shows up more often) — useful to avoid false signals in choppy/sideways markets.
+Decreasing the threshold makes the histogram react to any minor move — useful on shorter timeframes (scalping).
+Note:
+like any RSI-based tool, this indicator works best combined with other confirmation (price structure, moving averages, volume) rather than in isolation — RSI alone can stay in overbought/oversold territory for a long time during strong trends, generating premature signals.

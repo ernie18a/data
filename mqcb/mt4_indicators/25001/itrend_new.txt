@@ -1,0 +1,2 @@
+iTrend_new is base on iTrend Indicator by MetaQuotes Software Corp. Update and modify by Roberto Jacobs 3rjfx @ 2019/03/18, for MT4 with Signal and Alert and options to display signal on the chart.
+Hopefully useful for fellow traders.

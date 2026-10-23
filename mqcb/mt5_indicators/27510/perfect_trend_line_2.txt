@@ -1,0 +1,8 @@
+This is a variation of a well known perfect trend line indicator (one of the versions can be found here
+PTL
+)
+This version is adding a sort of signals filtering which helps in cleaning up some false signals that are there in the original version.
+Usage :
+You can use the arrows (dots) as early signals
+You can use the appearance of the color candle as signal for entry or re-entry
+As usual : some experimenting with the parameters is advised before using it in real trading. The defaults of the parameters are somewhat changed compared to the original (to reflect more "trendy" work) but by all means check those to adjust it to your own trading style and trading needs

@@ -1,0 +1,21 @@
+Indicator Multi Timeframe Linear Regression Moving Average with signal line represents a multi-timeframe
+linear-regression moving average
+(LRMA) having a signal line.
+It has four configurable parameters:
+LRMA period
+- LRMA calculation period
+Signal period
+- signal line calculation period
+LRMA timeframe
+- LRMA timeframe
+Drawing mode
+- drawing mode
+Steps
+- by steps
+Slope
+- by sloping lines
+Fig. 1. Multi Timeframe Linear Regression MA. H4 data on the H1 chart, Drawing mode = Steps
+Fig. 2. Multi Timeframe Linear Regression MA. H4 data on the H1 chart, Drawing mode = Slope
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23416

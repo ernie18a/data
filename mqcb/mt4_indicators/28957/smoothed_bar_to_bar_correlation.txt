@@ -1,0 +1,6 @@
+The Smoothed Correlation Indicator provides an indication of price trending and ranging through a bar to bar correlation coefficient. A indicator value approaching one is an indication of up or down trending.  An indicator value approaching 0 is an indication of price ranging.  A negative indicator value suggests whipsawing price action.
+The correlation period is set by the
+CorrPer
+input and the smoothing period is set by the
+SmthPeriod
+input.

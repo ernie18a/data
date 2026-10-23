@@ -1,0 +1,18 @@
+Author: Aborigen
+Elastic Volume Weighted Moving Average (
+EVWMA
+), a natural replacement for the standard moving average.
+Differences of the EVWMA
+from the standard МА:
+1. The
+EVWMA
+does not have an averaging period, instead it uses the volume to determine the period of the average component.
+2. The
+EVWMA
+considers the information on volume (or time) in a natural and logical manner.
+3. The
+EVWMA
+can be obtained as an approximation to the statistical estimation, and thus has a mathematical basis.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7457

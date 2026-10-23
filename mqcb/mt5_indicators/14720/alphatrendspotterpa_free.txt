@@ -1,0 +1,10 @@
+Real author:
+Andy Ismail
+A semaphore signal indicator based on the price extremums for the two periods determined by the indicator input parameter.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 04.01.2016.
+Figure 1. The AlphaTrendSpotter-pa_free indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14720

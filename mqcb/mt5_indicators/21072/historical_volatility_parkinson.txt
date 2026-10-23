@@ -1,0 +1,9 @@
+The Parkinson's number, or High Low Range Volatility developed by the physicist, Michael Parkinson in 1980, aims to estimate the Volatility of returns for a random walk using the High and Low in any particular period. IVolatility.com calculates daily Parkinson values. Prices are observed on a fixed time interval: n = 10, 20, 30, 60, 90, 120, 150, 180 days.
+SH is stock's High price in t day.
+SL is stock's Low price in t day.
+High/Low Return (xt
+HL
+) is calculated as the natural logarithm of the ratio of a stock's High price to stock's Low price.
+Return:
+And Parkinson's number:
+An important use of the Parkinson's number is the assessment of the distribution prices during the day as well as a better understanding of the market dynamics. Comparing the Parkinson's number and periodically sampled volatility helps traders understand the tendency towards mean reversion in the market as well as the distribution of stop-losses.

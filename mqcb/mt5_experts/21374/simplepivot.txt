@@ -1,0 +1,34 @@
+The author of the idea:
+Scriptor.
+mq5 code author
+-
+barabashkakvn
+.
+The EA trades a simple Pivot: each new bar features a trading signal for opening a BUY position. At the same time, the following limitations are built in:
+The
+Pivot
+itself is calculated as (
+High
+of bar#1 +
+Low
+of bar #1) / 2.0;
+If
+Open
+of bar #0 <
+High
+of bar#1, while
+Open
+of bar #0 >
+Pivot
+is a SELL signal
+If
+Pivot
+coincides with the previous
+Pivot
+, do nothing. If
+Pivots
+are opposite, close the current position and open a new one.
+EURUSD,D1:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21374

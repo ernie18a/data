@@ -1,0 +1,4 @@
+The script defines the place where it has been dragged by the mouse and looks for the nearest bar. The process is based on the concept of bar boundaries:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16926

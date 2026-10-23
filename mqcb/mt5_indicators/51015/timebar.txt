@@ -1,0 +1,15 @@
+Two types of display mode have been added for easy perception: as a comment in the upper left corner of the graph, or as a graphical object.
+Features
+:
+Font selection
+Font size. You can set any one you want. When commenting it is too small
+You can move objects. Any time can be selected with a double click and moved to any place on the chart, it will continue to be updated as usual.
+Visual notification. You can set a preset number of seconds before the current bar closes, when reached, the time will be coloured with the warning colour set in the settings
+Settings
+:
+Select which time to display
+Colour of each time (for graphical objects)
+Alert, which will notify about the bar closing soon
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/51015

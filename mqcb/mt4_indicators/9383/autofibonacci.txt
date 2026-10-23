@@ -1,0 +1,7 @@
+Description:
+This indicator will create a Fibonacci Retracement Object on your chart, and auto-update its values.
+You can indicate if you prefer to use the classic High/Low values, or the less classic Open/Close ones (price_type: 0 = High/Low, 1 = Open/Close).
+You can also define how many bars to look back maximum (Band_period).
+Indicator settings (Band_period, price_type)
+Color settings
+Auto-Fibonacci - AUDUSD H1, Period=72

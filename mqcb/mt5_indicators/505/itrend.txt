@@ -1,0 +1,15 @@
+This is a combination of two indicators in one. Histogram values are the sum of the values of two technical indicators -
+Bears Power
+and
+Bulls Power
+.
+Moving average values are the difference between the values of the financial asset price and
+Bollinger Bands ®
+(depending on the value of the Bands_Mode input parameter; the 'direction' switcher is provided to invert the histogram for its correct display in case of various values of that parameter).
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+13.07.2006.
+The conclusion about the violation of the normal logics of the code had been made after its analysis. Therefore, I have modified the algorithm when preparing the indicator in MQL5.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/505

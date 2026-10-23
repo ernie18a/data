@@ -1,0 +1,14 @@
+The Binario Expert Advisor is based on the exponential moving averages of the same period, but for different price types (High and Low). This EA does not use the signals to buy or sell, and simply opens long and short positions in turns and changes their settings according to the calculated moving averages. It uses stop loss and order monitoring in real-time to close positions. A position in the opposite direction is opened right after the previous one is closed.
+Recommendations:
+The EA uses a temporary stop loss and take profit, but the average profitable position is about 1750 pips and the average unprofitable one is 250 pips.
+This EA will open the average of 4 trades per year on the daily chart of GBP/USD (the optimum combination).
+This EA is compatible with ECN. The
+ECN_Mode
+input parameter must be set to
+true
+to enable the ECN compatibility mode for this EA. Otherwise, the
+OrderSend Error 130
+error message is likely to occur when the EA tries to open positions. This will happen because if you trade through an ECN-broker (with market execution of orders), you can not set a stop-loss or take profit during the position opening. You should open a position without these levels first and then change the position by adding a stop-loss and take-profit.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13161

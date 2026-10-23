@@ -1,0 +1,17 @@
+Unlike the standard MACD, the indicator has a smaller lag and three lines:
+The MACD line;
+A signal line;
+Histogram.
+The histogram can serve as a leading signal - the histogram color changes before the intersection of the MACD and signal lines.
+The indicator has four input parameters:
+Period of the Fast EMA
+- fast EMA period;
+Period of the Slow EMA
+- slow EMA period;
+Period of the signal line
+- the signal line period;
+Applied price
+- indicator calculation price.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19897

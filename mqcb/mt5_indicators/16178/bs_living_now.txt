@@ -1,0 +1,51 @@
+Real author:
+Backspace
+The BS Living Now indicator points at the market extremums and somewhat resembles the standard Fractals indicator.
+If you are not familiar with the Fractals by Bill Williams, you can easily find them in the standard set of
+indicators
+in virtually any trading platform, Once you attach them to your chart, you can immediately observe the similarity of these two
+indicators
+.
+But despite the fact that the
+indicators
+are similar, they are essentially different, as different filters are applied in both of these
+indicators
+during the determination of extremums on the chart.
+In addition, the
+BS Living Now
+indicator features the ability to customize the filter, which will pick more or less extremums and mark them, while the standard Fractals
+indicator
+has no options of adjusting them or to change something, as they are clearly subject to a strict formula, which is described in one of the books by the aforementioned Bill Williams.
+Indicator input parameters:
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+uint
+iPeriod=
+10
+;
+// Indicator period
+input
+int
+Shift=
+0
+;
+// Horizontal indicator shift in bars
+The greater the
+iPeriod
+parameter, the fewer extremums will be displayed on the chart. And conversely, the smaller the parameter, the greater will be the number of extremums marked. Therefore, before using this
+indicator
+in your trading, it is better to select the most optimal parameter for the currency pair.
+Application in trading:
+The
+indicator
+should be treated as an assistant, which marks important levels on the chart. And if you view some history, then you would notice that every new peak is higher than the previous during uptrends and lower than the previous during downtrends.
+This means that when determining the correct trend and using
+the BS Living Now indicator
+, not only you can correctly determine the entry point, but also add to the existing position during breakouts of each subsequent extremum.
+In addition, a good money management can be applied to such a strategy, i.e. open the first deal with a large lot, and each consecutive with a smaller one. Thus, in case of a sudden reversal, you get a loss from deals with a small volume and profit from deals with large volume, which increases the possibility to close the deal in profit.
+Fig.1. The BS_Living_Now indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16178

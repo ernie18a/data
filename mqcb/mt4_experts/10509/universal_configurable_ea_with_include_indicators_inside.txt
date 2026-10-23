@@ -1,0 +1,5 @@
+Description:
+Configurable EA with advantage of proffesional EA.
+This is my own best EA, in the main lines can be setted up many things, however currently isn't profitable so i a you too, to edit function what select tradings style - insert method based on results of included indicator, informations.
+It needs only modify for check trade situation from informations inside of EA indicators, only after that will be profitable!!!
+and thanks if anyone do it, and send it back to my/author

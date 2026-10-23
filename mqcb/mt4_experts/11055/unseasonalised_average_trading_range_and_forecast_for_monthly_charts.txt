@@ -1,0 +1,3 @@
+Author:
+Gary Thompson
+Best used on monthly candlestick charts with four decimal points to a pip (use the JPY version for other pairs). This EA calculates the likelihood of your desired range of pips being hit based on two years of past trading ranges and a statistical forecast. If used in conjunction with a direction determinant, it can help determine where to take profit in a monthly trade. Once you use it on the monthly time-frame you will get statistical information to the top left of the screen.

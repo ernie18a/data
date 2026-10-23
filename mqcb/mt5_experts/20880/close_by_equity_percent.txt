@@ -1,0 +1,15 @@
+Idea by
+:
+adam malik kasang
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+The EA closes all positions (for any symbol and with any magic number), if the equity reaches a certain ratio as related to the balance.
+It has only one input parameter
+Equity Percent From Balances
+- the percentage of the equity above the balance.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20880

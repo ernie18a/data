@@ -1,0 +1,14 @@
+This Indicator is based on the True Range which is the maximum of (High - Low), Abs(High - Close[1]) and Abs(Low - Close[1]), with Abs being mathematical absolute.
+In order to get the first data, it calculates the true range value for a number of bars (which is the input Length) and then calculates the SMA of these values (which is the sum of all these values by the Length - a simple average). This average is set as the first ATR value.
+Smoothing methods:
+RMA: a coefficient alpha is defined as : alpha = 1/Length. The calculation of RMA is: rma = alpha * (true range value of this candle) + (1-alpha) * (last rma).
+SMA: for each bar it calculates the simple average of the true range value for the defined number of bars (Length). This mode is equal to the iATR value.
+EMA: a coefficient alpha is defined as : alpha = 2/(1+Length). The calculation of EMA is: ema = alpha * (true range value of this candle) + (1-alpha) * (last ema).
+WMA: for each bar it calculates the weighted average of the true range value for the defined number of bars (Length) like this:
+sum = N * (tr[0]) + (N-1) * (tr[1]) + ... + 1 * (tr[N-1]); tr is true range value of the candle
+wma = sum / (N*(N+1)/2)
+Example: XAUUSD, H1
+RMA
+EMA
+SMA
+WMA

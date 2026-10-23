@@ -1,0 +1,11 @@
+The indicator predicts a probable price reversal. The reversal of the indicator line suggests that the price direction may change soon.
+The indicator has three input parameters:
+Fast MA period
+- fast moving average period
+Slow MA period
+- slow moving average period
+Applied price
+- price used for calculation
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20329

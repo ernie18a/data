@@ -1,0 +1,25 @@
+Description:
+The indicator uses in the calculation the deviation of its previous value from price. Therefore, the starting point is the first value of price on history. The indicator can be considered as adaptable to the market volatility, as it reacts on sharp price change.
+Parameters:
+input
+int
+period   =
+10
+;
+//--Defines acceleration of the approximation of the indicator line to price
+input
+bool
+USE_LIMIT=
+false
+;
+//--"Tumbler" which enables and disables the limit mode
+//--It can limits the maximum change of the indicator value
+input
+double
+use_limit=
+0.00005
+;
+//--The value on which the indicator can be changed
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1291

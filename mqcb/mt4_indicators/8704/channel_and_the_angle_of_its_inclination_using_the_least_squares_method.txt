@@ -1,0 +1,33 @@
+A line y=
+a
+x+
+b
+can be drawn through a set of points, and the distance from each point to the line will be approximately balanced.
+To plot the
+HighLine
+and
+LowLine
+lines it uses the set of High and Low points, respectively, for the MyPeriod period.
+If the CalculateDeflection parameter is enabled, then two more lines - HighDeflection and LowDeflection are placed on the chart. They display the possible price variation (mean square error). The hidden line
+b
+shows the value of the free variable in the line equation.
+The MLS-HL4-Angle indicator calculates the value of
+a
+in points and indicates the inclination angle of the obtained line to the horizon.
+The indicator displays the value of the initial price
+b
+and the rate of change of angle
+p
+relative to the tangent. If
+p
+>0, then the curve
+a
+turns left, so the angle tends to positive values. However, if
+p
+<0, then the curve
+a
+tries to turn right and tends the angle to negative values
+The MLS.zip archive contains the math of calculation using the least squares method.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8704

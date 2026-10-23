@@ -1,0 +1,12 @@
+KNJ ZigZag with value at pivots (highs/lows).
+Zigzag line: Blue.
+Pivot value (Swing value): Black
+Inputs window:
+ExtDepth=12;
+ExtDeviation=5;
+ExtBackstep=3;
+PivotsColor=Magenta; => Color of pivot value/Swing value
+ZigZagLineShow=True; => To show (True) or hide (false) zigzag line
+PivotsValueShow=True; => To show (True) or hide (false) highs/lows Value
+SwingValueShow=False; => To show (True) or hide (false) swing Value
+Color tab: color of zigzag lines.

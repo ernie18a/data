@@ -1,0 +1,14 @@
+This indicator is a demo of
+DRAW_COLOR_HISTOGRAM2
+drawing style.
+For each bar it plots a section between the Open and Close prices. Three indicator buffers are used: the first contains the High values of the bar, the second contains the Low prices of the bar, the third buffer contains the color indexes.
+The colors, width and line style are changed randomly after N ticks. The initial properties of the plot1 graphic plot are defined using the
+#property
+preprocessor directive, further these properties changed randomly (see
+OnCalculate()
+function).
+See also
+The Drawing Styles in MQL5
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/344

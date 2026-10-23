@@ -1,0 +1,3 @@
+The indicator shows the names of the days of the week, as text labels on the chart.
+The indicator has input parameters:
+it shows labels on chart as follow

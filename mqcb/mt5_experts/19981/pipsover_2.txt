@@ -1,0 +1,14 @@
+This EA is a further development of the first
+Pipsover
+version.
+What's new in version 2:
+Trailing Stop
+Break-even
+, which is also the Trailing Step parameter, so it cannot be equal to 0. The operating algorithm: the EA tries to move a position to breakeven first and then it can enable Trailing Stop.
+Parameters for Moving Average and
+Chaikin indicator
+are available in inputs.
+Now, these two indicators are displayed on the chart after you launch the Expert Advisor on a chart.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19981

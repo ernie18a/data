@@ -1,0 +1,11 @@
+The idea is similar to
+MACD
+, but rather the difference between the
+Moving Averages
+, it calculates the difference between the
+Ichimoku indicator
+lines.
+The input parameters are the same as in Ichimoku indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/195

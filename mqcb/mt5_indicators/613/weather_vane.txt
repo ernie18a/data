@@ -1,0 +1,6 @@
+This indicator calculates last average price for a symbol and determines the trend direction, so it can be a signal to commit a trade operation.
+Tips:
+It is recommended to use this indicator on M1 timeframe.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/613

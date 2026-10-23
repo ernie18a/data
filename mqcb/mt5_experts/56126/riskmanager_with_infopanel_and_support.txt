@@ -1,0 +1,9 @@
+The code provides control over risks,
+as I did not try to display information on the panel on the chart
+, as you can see on the screen in the log is information, but not displayed on the chart, I think for experienced progers to fix it will not be difficult.
+The main parameters of the bot are shown on the screen above, here everyone individually for himself will choose the necessary ones.
+The bot also has the implementation of clickable links, in this case to support the author.
+Good luck with your tests, I am waiting for your improvements!
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/56126

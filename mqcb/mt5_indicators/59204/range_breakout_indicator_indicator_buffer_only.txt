@@ -1,0 +1,12 @@
+Input:
+Range Start Time
+: The starting time of the range creation
+Range End Time
+: The ending time of range creation
+Trade End Time
+: The time where the line of range zone high/low will be extended to
+Minimum Size
+: The minimum size of the range in point
+Maximum Size
+: The maximum size of the range in point
+If the range size is between the minimum and maximum, indicator will print the 1st color (blue).

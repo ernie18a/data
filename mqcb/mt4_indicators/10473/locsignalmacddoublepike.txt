@@ -1,0 +1,7 @@
+Author:
+Mikhail A.
+A simple signal indicator that detects MACD Main line extreme value. It filters first pike and displays all after the first.
+This is an easy to use signal indicator that displays arrows on the chart. The main idea is to find MACD pikes starting from 2nd one in one side. Please check the image for more info
+Recommendations:
+Use on 1h chart and it is better to confirm with any other trend indicator.
+Let me know if you have questions.

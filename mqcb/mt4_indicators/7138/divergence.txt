@@ -1,0 +1,6 @@
+Author:
+Pavel Kulko
+Displays the situation when the directions of price movement and technical indicators do not coincide. This is mostly seen when the indicator reaches an overbought or oversold area (20;80).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7138

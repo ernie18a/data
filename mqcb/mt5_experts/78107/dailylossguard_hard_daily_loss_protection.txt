@@ -1,0 +1,4 @@
+The #1 reason funded challenges fail is breaking the daily loss rule. DailyLossGuard enforces it automatically: it tracks your daily P/L every tick against your limit (% of day-start balance or a fixed amount). On breach, it closes ALL positions instantly (optional), fires an Alert + push notification, and shows a red BREACHED panel till next day.
+Features: Magic Number filter (guard one EA or the whole account), live top-center dashboard (daily P/L, limit, ARMED/BREACHED status) that self-heals on timeframe changes and resizes.
+Built for: prop-firm challenge & funded accounts, multi-bot EA traders, and manual traders who want a hard, emotion-free daily stop.
+Honest note: no EA can force other EAs to stop opening trades (MetaTrader API limitation) — this guard closes positions and alerts you instantly so you stay in control. Free. No DLLs. No profit promises — it manages risk, it doesn't generate signals

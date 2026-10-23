@@ -1,0 +1,2 @@
+Description:
+With 3 settable parameters (currency pair, timeframe, and template) opens a new chart on your screen at the initalization period of the script.

@@ -1,0 +1,1 @@
+Quick scripts to remove Equity from a demo account for a broker that does not support anyway to withdraw.

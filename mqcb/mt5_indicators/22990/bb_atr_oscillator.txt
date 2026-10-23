@@ -1,0 +1,19 @@
+The BB ATR oscillator indicator shows an average true range based on Bollinger Bands
+It has four adjustable parameters:
+ATR period
+- ATR calculation period
+ATR multiplier
+- ATR multiplier value
+BB period
+- Bollinger Bands calculation period
+BB deviation
+- Bollinger Bands deviation
+Calculations:
+BBATR = UpperBB - LowerBB - ATR * ATR Multiplier
+where:
+UpperBB = BollingerBands(UPPER_BAND, BB period, BB deviation)
+LowerBB = BollingerBands(LOWER_BAND, BB period, BB deviation)
+ATR - AverageTrueRange(ATR period)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22990

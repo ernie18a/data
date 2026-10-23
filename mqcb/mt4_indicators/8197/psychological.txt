@@ -1,0 +1,2 @@
+The indicator is rewritten from FXAccuCharts to MT4.
+Psychological

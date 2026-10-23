@@ -1,0 +1,30 @@
+Keltner Channel is volatility-based envelopes set above and below an
+exponential moving average
+.
+The indicator is named after its author Chester Keltner who first described his system based on the 10-period
+moving average
+in his 1960 book
+"How to make money in Commodities"
+.
+The indicator consists of price envelopes or bands that are located above and below the exponential moving average by means of multiplying its value by the value of the
+Average True Range
+. The channels are surely quite interesting. Firstly, because they brilliantly join together two indicators: moving average and ATR.
+Calculation method is as follows:
+Keltner Upper Channel = MA (close, x) + (m * ATR (y))
+Keltner Lower Channel== MA (close, x) - (m * ATR (y))
+where:
+x - MA period;
+m - coefficient;
+у - ATR indicator period.
+Indicator uses СMoving_Average class of the SmoothAlgorithms.mqh library. Working with this class was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+SmoothAlgorithms.mqh must be placed in the
+terminal_data_folder
+\MQL5\Include\
+Keltner_Channel.mq5 must be placed in the
+terminal_data_folder
+\MQL5\Indicators\
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/399

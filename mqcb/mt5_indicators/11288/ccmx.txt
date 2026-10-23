@@ -1,0 +1,10 @@
+Real author:
+MetaQuotes
+A non-normalized indicator that uses MACD, CCI and ADX for calculations.
+The original indicator was developed in the MQL4 language and published in the
+CodeBase
+on 15.10.2013.
+Figure 1. The CCMx indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11288

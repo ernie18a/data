@@ -1,0 +1,321 @@
+Expert Advisor Straddle&Trail.
+Input Parameters:
+extern
+bool
+ShutDown
+.
+NOW
+=
+False
+;
+// If true ALL POSITIONS (open and/or pending) will be closed/deleted
+// based on "ShutDown.What" flag below
+// This parameter is the first on the list so the user can access it
+// as quickly as possible.
+extern
+string
+sStr00
+="
+0
+=
+Everything
+";
+extern
+string
+sStr01
+="
+1
+=
+All
+Triggered
+Positions
+";
+extern
+string
+sStr02
+="
+2
+=
+Triggered
+Long
+";
+extern
+string
+sStr03
+="
+3
+=
+Triggered
+Short
+";
+extern
+string
+sStr04
+="
+4
+=
+All
+Pending
+Positions
+";
+extern
+string
+sStr05
+="
+5
+=
+Pending
+Long
+";
+extern
+string
+sStr06
+="
+6
+=
+Pending
+Short
+";
+extern
+int
+ShutDown
+.
+What
+=
+0
+;
+extern
+bool
+ShutDown
+.
+Current
+.
+Pair
+.
+Only
+=
+True
+;
+// If true, ALL trades for CURRENT pair will be shutdown 
+                                                   //(no matter what time frame).
+// If False, ALL trades on ALL pairs will be shutdown.
+extern
+string
+sStr1
+="===
+POSITION
+DETAILS
+===";
+extern
+double
+Lots
+=
+1
+;
+extern
+int
+Slippage
+=
+10
+;
+extern
+int
+Distance
+.
+From
+.
+Price
+=
+30
+;
+// Initial distance from price for the 2 pending orders.
+extern
+int
+StopLoss
+.
+Pips
+=
+30
+;
+// Initial stop loss.
+extern
+int
+TakeProfit
+.
+Pips
+=
+60
+;
+// Initial take profit.
+extern
+int
+Trail
+.
+Pips
+=
+15
+;
+// Trail.
+extern
+bool
+Trail
+.
+Starts
+.
+After
+.
+BreakEven
+=
+true
+;
+// if true trailing will start after a profit of "Move.To.
+                                                   //BreakEven.at.pips" is made
+extern
+int
+Move
+.
+To
+.
+BreakEven
+.
+Lock
+.
+pips
+=
+1
+;
+// Pips amount to lock once trade is in profit
+// by the number of pips specified with "Move.To.BreakEven.at.pips"
+// Unused if Trail.Starts.After.BreakEven=False
+extern
+int
+Move
+.
+To
+.
+BreakEven
+.
+at
+.
+pips
+=
+5
+;
+// trades in profit will move to entry price + Move.To.BreakEven.
+                                                   //Lock.pips as soon as trade
+// is at entry price + Move.To.BreakEven.at.pips
+// i.e. Entry price on a long order is @ 1.2100
+// when price reaches 1.2110 (Entry price + "Move.To.BreakEven.at.pips")
+// the ea will lock 1 pip moving sl
+// at 1.2101 (Entry price+ "Move.To.BreakEven.Lock.pips=1")
+extern
+string
+sStr2
+="===
+NEWS
+EVENT
+===";
+extern
+int
+Event
+.
+Start
+.
+Hour
+=
+12
+;
+// Event start time = Hour.      Broker's time.
+extern
+int
+Event
+.
+Start
+.
+Minutes
+=
+30
+;
+// Event start time = Minutes.   Broker's time.
+// IF YOU WANT TO DISABLE THE "NEWS" FEATURE (the straddle)
+// SET BOTH PARAMETERS TO 0.
+extern
+int
+Pre
+.
+Event
+.
+Entry
+.
+Minutes
+=
+30
+;
+// Number of minutes before event where the ea will place the straddle.
+// If set to 0, the ea will place the straddle immediately when activated,
+// otherwise xx minutes specified here before above Event start time.
+extern
+int
+Stop
+.
+Adjusting
+.
+Min
+.
+Before
+.
+Event
+=
+2
+;
+// Minutes before the event where the EA will stop adjusting
+// the pending orders. The smallest value is 1 min.
+extern
+bool
+Remove
+.
+Opposite
+.
+Order
+=
+True
+;
+// if true, once the 1st of the 2 pending orders is triggered,
+// the opposite pending one is removed otherwise left as is.
+extern
+bool
+Adjust
+.
+Pending
+.
+Orders
+=
+True
+;
+// if true, once the pending orders are placed at
+// "Pre.Event.Start.Minutes" minutes before the event's time,
+// the ea will try to adjust the orders ONCE EVERY MINUTE until
+// "Stop.Adjusting.Min.Before.Event" minutes before the release where
+// it will stay put.
+extern
+bool
+Place
+.
+Straddle
+.
+Immediately
+=
+False
+;
+// if true, the straddle will be placed immediately once the
+// expert is activated. This overrides previous 'News Events'
+// settings for placing the long and short pending orders and
+// in that case, the positions WILL NOT BE ADJUSTED.
+// This is to be used as a "quiet" range breakout, for example if we
+// want to play a "regular" breakout during Asian Session for example
+// or at any other time of the day where the market is rangebound
+Test Parameters:
+Symbol: EURUSD.
+Period: M5.
+Model: All ticks.
+Test Chart:

@@ -1,0 +1,11 @@
+The indicator OzFX_D1_IndAES_v1.0.
+Parameters:
+SEP1="----SIGNAL CONTROLS----";
+Show_OzFX_Signals=true;
+Show_AES_Signals=false;
+SEP2="----FILTER CONTROLS----";
+Show_SMA_Filter=true;
+SMA_Filter_Period=200;
+Show_RSI_Filter=false;
+RSI_Filter_Period=45;
+OzFX_D1_IndAES_v1.0

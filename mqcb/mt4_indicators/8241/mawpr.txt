@@ -1,0 +1,5 @@
+The indicator MA-wpr.
+Parameters:
+extern int WPR=39;
+extern int Moving=10;
+Ma-wpr

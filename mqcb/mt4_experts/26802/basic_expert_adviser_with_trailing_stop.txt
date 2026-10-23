@@ -1,0 +1,1 @@
+Fully functional expert adviser with trailing stop. Should not be used for trading as there are no entry/exit rules or any thing else!

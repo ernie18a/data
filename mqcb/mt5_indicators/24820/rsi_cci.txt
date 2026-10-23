@@ -1,0 +1,2 @@
+A combination of RSI (Relative Strength Index) indicator and CCI (Commodity Channel Index) that provides a confirmation of RSI signals
+You can use the color changes as signals

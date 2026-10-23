@@ -1,0 +1,14 @@
+Real author:
+Powered byStep
+Relative Strength Index with the market flat state detection option.
+If the market is flat, the colored indicator cloud shrinks and is located at the value of 50, and a thick blue line appears. The criterion for determining this state is a shrunk Bollinger. The critical Bollinger shrink value is fixed by a half of its bandwidth and defined in the indicator input:
+input
+uint
+flat=
+100
+;
+// flat value in points
+Figure 1. Indicator RSIWithFlat
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11268

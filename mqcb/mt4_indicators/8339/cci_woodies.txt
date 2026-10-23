@@ -1,0 +1,1 @@
+Two CCI indicators with different periods in a single indicator's subwindow.

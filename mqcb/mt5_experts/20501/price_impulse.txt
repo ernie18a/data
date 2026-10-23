@@ -1,0 +1,21 @@
+Idea by
+:
+Nikolay
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+The EA uses reference to REAL TICKS using the
+CopyTicks
+function - it waits for the price to pass NNN points within XXX ticks.
+Inputs
+Lots - the size of the position to be opened (in lots)
+Stop Loss - Stop Loss
+Take Profit - Take Profit
+the price must pass NNN points
+within XXX ticks
+the minimum delay between trades (in seconds)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20501

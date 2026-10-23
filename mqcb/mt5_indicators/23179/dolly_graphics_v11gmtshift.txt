@@ -1,0 +1,10 @@
+Original author:
+Mods and stuff by Linuxser for Forex-TSD
+An indicator of support and resistance channels.
+The original indicator was developed in the MQL4 language and published in the
+CodeBase
+on 19.04.2008.
+Fig.1. The Dolly_Graphics_v11-GMTShift indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23179

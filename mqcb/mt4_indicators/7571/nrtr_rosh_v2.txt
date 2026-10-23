@@ -1,0 +1,2 @@
+Author: Rosh
+The indicator which shows points of a probable turn.

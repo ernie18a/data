@@ -1,0 +1,10 @@
+Real:
+mandor
+ZigZag with unusual properties (you can set the length when drawing the indicator).
+This indicator was first implemented in MQL4 and published in the
+Code Base
+on 9.10.2007.
+Fig. 1. The Boa_ZigZag indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18546

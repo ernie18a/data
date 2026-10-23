@@ -1,0 +1,10 @@
+Indicator CycleIdentifier.
+Parameters:
+PriceActionFilter=1;
+Length=3;
+MajorCycleStrength=4;
+UseCycleFilter=false;
+UseFilterSMAorRSI=1;
+FilterStrengthSMA=12;
+FilterStrengthRSI=21;
+CycleIdentifier

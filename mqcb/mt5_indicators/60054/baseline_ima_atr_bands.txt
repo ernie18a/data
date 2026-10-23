@@ -1,0 +1,26 @@
+Indicator Name
+:
+Baseline: iMA + ATR Bands
+Description
+:
+Baseline: iMA+ATR Bands is a custom indicator that combines a standard Moving Average (MA) with upper and lower bands based on the Average True Range (ATR). The result is a simple yet powerful visual tool for identifying market trends, potential breakouts, and volatility.
+Background
+:
+This indicator was inspired by the
+No Nonsense Forex (NNFX)
+trading methodology, where the Baseline acts as a primary trend filter. I developed this to make the baseline setup easier to read and interpret directly on the chart.
+How to use :
+iMA Period – The number of bars used to calculate the Moving Average.
+iMA Method – Type of Moving Average (SMA, EMA, SMMA, LWMA).
+Applied Price – Source price for MA (e.g., Close, Open, High, Low).
+ATR Period – Number of bars used for ATR calculation.
+ATR Multiplier – The factor applied to the ATR value to calculate the upper and lower bands.
+Trading Suggestions (not financial advice) :
+Use the MA line as your baseline trend filter.
+Price crossing above the upper band may suggest bullish momentum.
+Price crossing below the lower band may indicate bearish momentum.
+Combine with confirmation, volume, and exit indicators in line with your strategy (e.g., NNFX guidelines).
+Screenshots :
+Input Settings :
+Color & Lines Settings :
+About :

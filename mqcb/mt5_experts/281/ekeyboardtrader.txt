@@ -1,0 +1,23 @@
+The Expert Advisor allows to trade using the keyboard. The Buy, Sell and Close trade operations are supported. It allows to set/change: Trade Volume (lots), Stop Loss, Take Profit, Slippage.
+After launch of the Expert Advisor, it will show the current parameters (Lot, StopLoss, TakeProfit, Slippage) and list of available commands (Fig. 1):
+b - buy,
+s - sell,
+c - close,
+i - parameters menu
+Figure 1. Main menu
+In parameters menu the following commands (Fig. 2) are supported:
+l - Lot,
+k - StopLoss,
+j - TakeProfit,
+h - Slippage,
+i and Esc - return to main menu.
+Figure 2. Selection of input parameter
+When input parameter is selected, it will work in the input mode (fig. 3).
+In input mode the following commands are available:
+i - apply, if the value isn't specified, the result of "apply" is equal to Esc,
+Esc - cancel (return to main menu),
+BackSpace - delete last input char.
+Figure 3. Input parameter value
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/281

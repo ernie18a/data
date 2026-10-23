@@ -1,0 +1,235 @@
+When two Moving Averages cross the indicator will alert once per cross between crosses and mark the cross point with down or up arrow.
+MA_Cross_Alert_Once_1a: Numerical input for MA Method and Price.
+MA_Cross_Alert_Once_1b: Dropdown list selection for MA Method and Price.
+The indicator will work on normal charts times, offline period converted charts (M2, M3, M7 etc)*, Offline Range Charts, Offline Renko Charts and should work with other non standard offline charts.
+Possible enhancement indicator: Second-by-second candle count down timer, see here -
+https://www.mql5.com/en/code/12804
+Possible enhancement indicator: Period Converter indicator →
+See Here
+Possible enhancement indicator: Close MA Cross, see here -
+https://www.mql5.com/en/code/11086
+* Online and available offline periods reporting for Alert, Push Notification and Email:
+M1, M2, M3, M3, M4, M5, M6, M7, M8, M9, M10, M11, M12, M13, M14, M15, M20, M25, M30, M40, M50, H1, H2, H3, H4, H5, H6, H7, H8, H9, H10, H11, H12, D1, W1, MN
+When the indicator is attached to the chart it may appear not to be working because no historical arrows are drawn. Note: The first arrow will appear on the chart at the first cross up or down after the indicator is attached to the chart.
+The default MA settings are set for fast testing on a M1 charts with a 7 SMA, and in no way suggest optimum settings.
+The fast MA is set Period=1, Method = 0(SMA), Shift=0, Price=0(Close). This equates to current price at close.
+Explanation:
+https://www.forexfactory.com/showthread.php?p=9765697#post9765697
+The user should define preferred settings. Various preferred settings can be saved and loaded via the Inputs tab → Save → Load.
+Alert Options
+Popup Alert
+Sound Only
+Push Notification
+Email
+If Sound Only = true and Popup Alert = true, Sound Only will function and Popup Alert will be cancelled.
+All Alerts will correspond Broker Time and Date.
+Note: If a candle count down timer is used with the indicator ensure that the computer time is synchronised with internet time. Left click date and time in lower right corner → change date and time settings → Internet Time → Change settings → ensure Synchronise with internet time server is ticked → click the Update Now → ensure a successful update.
+Alerts will work with most Renko and Constant Range (Synthetic) candles.
+Alert Instructions
+Please read all relevant Information
+.
+Other than the below notes the Author cannot respond to individual inquiry. The user will find abundant help and advice on the internet - MetaQuotes, Forums, Search Engines, Video Sites etc.
+Push Notification: (iOS and Android)
+Push Notifications are fast, fail safe and easy to set up.
+Speed will depend on capability of Internet Connection and Computer and Mobile Devices.
+First install MT4 on Mobile Device.
+Locate MetaQuotes ID., See - Messages or Messages in Settings
+Enter MetaQuotes ID in Client Terminal of MT4 on computer (Tools → Options → Notifications).
+Note: The same MetaQuotes ID can be used with multiple Client Terminals (different Brokers).
+Click the Test.
+Open up MT4 Terminal (Ctrl + T) and select the Journal Tab and check under Messages if the the Test was successful.
+One a successful Test is obtained Push Notification Alerts can be set in the Alerts New Bar Indicator.
+Important:
+Ensure that your mobile device has sound for notifications turned on.
+If further clarification is required, google and YouTube "MT4 push notification."
+Email
+The below is mostly a copy and paste from an earlier posting-download - Alerts on New Bar -
+https://www.mql5.com/en/code/11065
+. For the purpose of this post email function was proven to work using only the stunnel method. The author does not use email and does not have time for further investigation. Further investigation/research via a preferred search engine should find sufficient available material as guidance. Some references are provided below.
+There are a number of ways to setup MT4 Email and the user should research the Internet for clarification.
+I have successfully set up Email with stunnel and hMailServer. Both are free.
+Here is how to do it with stunnel.
+Go to his
+forum
+(Email Setup in MT4 (Gmail) The Easiest Way) for further clarification.
+First download the stunnel install file. If the following link is out of date or broken search the internet for a new stunnel download link.
+Stunnel Download.
+Install stunnel. Note:
+During the the installation a black cmd screen opened requesting location information. I did not type in any information and merely pressed the Enter Key at every request untill the cmd screen closed.
+Note: On this current test I filled in UK and the remainder blank.
+After installation a stunnel icon should be on the desktop. Click on the trunnel icon and open the stunnel configuration file. It should open in NotePad. Edit the stunnel.conf file in accordance with the above referenced Forum instructions. A copy of my edited file (stunnel.conf), current at Dec 2013, can be found in Stunnel Config.zip., See - Download.
+Fill Server and Email information in the MT4 Terminal (Tools → Options → Email).
+Note:
+stunnel must be running for the Indicator Email function to work - check if stunnel icon is on the task bar.To automate every time the computer turns off just create a shortcut of RUN STUNNEL then paste this shortcut into the STARTUP folder.
+Click the Test.
+Open up MT4 Terminal (Ctrl + T) and select the Journal Tab and check under Messages if the the Test was successful.
+Once a successful Test is obtained Email Alerts can be set in the indicator and should be received at the email address.
+Note:
+In the tests associated with the previous mentioned posting only 127.0.0.1:25 worked. With this test, different machines and Windows OS, both 127.0.01:25 as suggested by Sangmane in the above referenced forum and smtp.gmail.com:25 worked.
+Note:
+To receive emails at google mail I had to turn on - Access for less secure apps
+. This may not be optimum practice. However, my purpose was to test that email could be received and edit the code for the email format. I do not have time for further research and the user will need to investigate further if faced with difficulties. Alternative email services may be better suited.
+I used the same email address for SMTP login, From and To. Different Email addresses can be used for From and To. I would deem SMTP login and From would have to be the same Email address but I have not tested to prove certainty.
+Recommendation
+The below Indicator MA crossover code is derived from the MQL4 Book documentation - Usage of Technical Indicators.
+......
+if
+((Fast_MA_Bar_1 < Slow_MA_Bar_1) && (Fast_MA_Bar_0 > Slow_MA_Bar_0))
+// MQL4 book example: cross up -
+if
+( M_1 < S_1 && M_0 >= S_0 )
+......
+if
+((Fast_MA_Bar_1 > Slow_MA_Bar_1) && (Fast_MA_Bar_0 < Slow_MA_Bar_0))
+//
+MQL4 book example:
+cross down -
+if
+( M_1 > S_1 && M_0 <= S_0 )
+......
+MQL4 Book documentation - Usage of Technical Indicators -
+https://book.mql4.com/samples/indicators
+Fig. 107. Concurrence of the main and the signal lines of Stochastic Oscillator.
+//--------------------------------------------------------------------
+// callstohastic.mq4
+// The code should be used for educational purpose only.
+//--------------------------------------------------------------------
+int
+start()
+// Special function start()
+{
+double
+M_0, M_1,
+// Value MAIN on 0 and 1st bars
+S_0, S_1;
+// Value SIGNAL on 0 and 1st bars
+//--------------------------------------------------------------------
+// Tech. ind. function call
+M_0 =
+iStochastic
+(
+NULL
+,
+0
+,
+5
+,
+3
+,
+3
+,
+MODE_SMA
+,
+0
+,
+MODE_MAIN
+,
+0
+);
+// 0 bar
+M_1 =
+iStochastic
+(
+NULL
+,
+0
+,
+5
+,
+3
+,
+3
+,
+MODE_SMA
+,
+0
+,
+MODE_MAIN
+,
+1
+);
+// 1st bar
+S_0 =
+iStochastic
+(
+NULL
+,
+0
+,
+5
+,
+3
+,
+3
+,
+MODE_SMA
+,
+0
+,
+MODE_SIGNAL
+,
+0
+);
+// 0 bar
+S_1 =
+iStochastic
+(
+NULL
+,
+0
+,
+5
+,
+3
+,
+3
+,
+MODE_SMA
+,
+0
+,
+MODE_SIGNAL
+,
+1
+);
+// 1st bar
+//--------------------------------------------------------------------
+// Analysis of the situation
+if
+( M_1 < S_1 && M_0 >= S_0 )
+// Green line crosses red upwards
+Alert
+(
+"Crossing upwards. BUY."
+);
+// Alert
+if
+( M_1 > S_1 && M_0 <= S_0 )
+// Green line crosses red downwards
+Alert
+(
+"Crossing downwards. SELL."
+);
+// Alert
+if
+( M_1 > S_1 && M_0 > S_0 )
+// Green line higher than red
+Alert
+(
+"Continue holding Buy position."
+);
+// Alert
+if
+( M_1 < S_1 && M_0 < S_0 )
+// Green line lower than red
+Alert
+(
+"Continue holding Buy position."
+);
+// Alert
+//--------------------------------------------------------------------
+return
+;
+// Exit start()
+}
+//--------------------------------------------------------------------

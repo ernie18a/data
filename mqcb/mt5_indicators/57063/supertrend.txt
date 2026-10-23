@@ -1,0 +1,24 @@
+This SuperTrend indicator helps identify market trends based on Average True Range (ATR) volatility. Released under MIT license for free and open-source use.
+Core Formula
+Upper Band = Source Price + (Multiplier × ATR)
+Lower Band = Source Price - (Multiplier × ATR)
+In uptrend: SuperTrend = Lower Band (green)
+In downtrend: SuperTrend = Upper Band (red)
+Usage
+Green line indicates uptrend (potential buying opportunities)
+Red line indicates downtrend (potential selling opportunities)
+Can be used for trend following strategies or identifying reversals
+Works well as a trailing stop mechanism
+Installation
+Copy the file to your MetaTrader 5 indicators folder (typically located at Terminal_Directory\MQL5\Indicators\ )
+Restart MetaTrader 5 or refresh the Navigator panel
+Drag the indicator onto any chart
+Parameters
+ATRPeriod
+: Period for ATR calculation (default: 22)
+Multiplier
+: ATR multiplier to adjust sensitivity (default: 3.0)
+SourcePrice
+: Price type used for calculations
+TakeWicksIntoAccount
+: Whether to include price wicks in calculations

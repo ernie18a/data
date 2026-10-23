@@ -1,0 +1,6 @@
+Theory :
+The original double smoothed Wilders' EMA was published here :
+Double Smoothed Wilders' EMA
+. This version is extending it by adding volatility ratio adapting mode
+Usage :
+It can be used as any other average

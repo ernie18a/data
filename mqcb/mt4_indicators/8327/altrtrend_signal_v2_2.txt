@@ -1,0 +1,1 @@
+The indicator that sets the signals of trend reverse. The green circle is the bullish trend, the red one is the bearish trend.

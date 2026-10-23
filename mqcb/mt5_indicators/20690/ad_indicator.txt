@@ -1,0 +1,19 @@
+Indicator AD (Advances/Declines) developed by Sherman and Marian McClellan and based on indicator
+RANA
+.
+It shows two components of indicator RANA - the positive and negative increments of the prices of instruments available in the Market Watch and including the specified currency.
+It has one input parameter:
+Base currency
+- name of the base currency of symbols in the Market Watch for calculating the RANA.
+Calculations:
+Up = Up(RANA)
+Dn = Dn(RANA)
+where:
+RANA = (Up - Dn)/(Up + Dn)
+Up - number of bullish candlesticks on all symbols;
+Dn - number of bearish candlesticks for all symbols.
+It should be noted that, at the first launch or at switching the timeframe, the indicator will need some time to download the necessary history for all the symbols required.
+Indicator RANA is not required for operation - it is calculated by the indicator independently.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20690

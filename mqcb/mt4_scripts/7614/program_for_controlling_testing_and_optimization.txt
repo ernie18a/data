@@ -1,0 +1,37 @@
+The names of the macroprograms and versions of tests and optimizations:
+1) The "Multy_DATA" macroprogram - testing by the specified time intervals.
+Performs sequential testing over the predetermined time intervals,
+the number and duration of the intervals can be set manually in the array of the "TestCommander" script.
+When increasing or decreasing the number of time intervals, it is necessary
+to specify the number of lines in the array accordingly (below the tick V )
+2) The "Multy_TF" - macroprogram - testing by the specified time frames (periods), parameters are set in the array
+Performs sequential testing over the predetermined periods, set in the array of the "TestCommander" script.
+These parameters can be set manually.
+The "MultySymbol" macroprogram - sequential testing by the currency pairs specified in the array of the "TestCommander" script,
+When increasing or decreasing the number of currency pairs (symbols), it is necessary to
+to specify the corresponding number of lines in the array (below the tick V )
+4) The "MultyVariable" macroprogram - testing by the variables specified in the array of the "TestCommander" script,
+it is necessary to set both the variable names and test values, the unused variable names
+should be set to ="";   (empty value designation)
+5) The "StabilityTest" macroprogram - stability check, testing is performed by three criteria simultaneously -
+MultySymbol (testing by symbols),
+Multy_DATA (testing by time intervals),
+Multy_TF (testing by time frames).
+the parameters are substituted from the corresponding arrays of the "TestCommander" script.
+6) The "OneOptim" macroprogram - performs optimization of the parameters, followed by filtering of unprofitable trades,
+removing duplicates, filtering by the number of minimum and maximum trades per day, results sorting
+in the order specified by the user at the start. The result is output to a report file in the "Report" folder.
+7) The "Complex" macroprogram -complex optimization followed by testing,
+filtering and sorting of the obtained values, the best values are checked for stability
+the best results are output to a report file.
+---------------------------------------------------------------------------------------------------------------------------------------
+The program checks the availability and status of available history before the testing or optimization begins.
+To perform specialized optimizations the program implements the ability to
+pass commands to the EA and receive the response information from it immediately during the optimization process
+It implements the ability to perform automatic optimization at the specified time by running it from the EA.
+Up to 10 variables are available at a time for testing and optimization.
+The program has the ability of adding custom macroprograms for testing and optimization
+the program and a more detailed description can be found in the attached archive.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7614

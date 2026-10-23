@@ -1,0 +1,22 @@
+A trend state indicator. It is a signal modification of the
+trend indicator
+of the same name.
+It has only one input parameter:
+Period
+- indicator calculation period.
+The indicator displays color marks on a chart indicating the trend state. Six types of marks are possible:
+Strongly up
+- a strong uptrend;
+Up
+- an uptrend;
+Uncertainly up
+- an uncertain uptrend (rollback/consolidation after an uptrend);
+Strongly down
+- a strong downtrend;
+Down
+- a downtrend;
+Uncertainly down
+- an uncertain downtrend (rollback/consolidation after an uptrend).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20219

@@ -1,0 +1,2 @@
+Shows trading information such as spread, ATR, swap, etc.
+The fractal trend indicates the actual price relative to each timeframe's last high and last low fractal points. The place of indicator's panel is adjustable (corner and X-Y offset) and with "All Other Objects To Background" switcher can be always on top. You can hide each information what isn't useful for you.

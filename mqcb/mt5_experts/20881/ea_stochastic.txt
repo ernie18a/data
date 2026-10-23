@@ -1,0 +1,44 @@
+Idea by
+:
+Sergey
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+The EA trades based on indicator Stochastic. Take Profit and Stop Loss levels can be disabled (the value "0" is set in properties). The size of a position can be set manually (the EA will trade with a permanent lot size), or the lot size can be calculated automatically (as the risk percentage per trade).
+Input parameters
+Stop Loss
+- Stop Loss;
+Take Profit
+- Take Profit;
+Trailing Stop
+- trailing;
+Trailing Step
+- trailing step;
+Lots
+- position size is permanent, "Risk" must be equal to zero;
+Risk
+- position size is calculated automatically in risk percents per trade, and "Lots" must be equal to zero;
+Stochastic: K-period
+- K-period (number of bars for calculations);
+Stochastic: D-period
+- D-period (initial smoothing period);
+Stochastic: final smoothing
+- final smoothing;
+Stochastic: type of smoothing
+- smoothing type;
+Stochastic: stochastic calculation method
+- type of prices;
+Stochastic signal (level UP)
+- (upper) signal line of stochastic;
+Stochastic signal (level DOWN)
+- (lower) signal line of stochastic;
+Compared bar
+- number of the bar, which the zeroth bar is compared to;
+magic number
+- unique identifier for the EA.
+Example of EA launch on EURUSD,M15:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20881

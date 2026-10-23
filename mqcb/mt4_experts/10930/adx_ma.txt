@@ -1,0 +1,13 @@
+This Es is using 2 MAs with Input parameters:
+maPerBig     = 25;
+ModeBig      = 2;
+appPriceBig  = 2;
+maPerSmal    = 5;
+ModeSmal     = 1;
+appPriceSmal = 0;
+and Input Parameters for ADX:
+advPeriod    = 11;
+appPriceAdx  = 4;
+advLevelMa   = 13;
+advLevelPl   = 13;
+advLevelMi   = 14;

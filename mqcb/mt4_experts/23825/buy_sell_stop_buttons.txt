@@ -1,0 +1,39 @@
+"Buy Sell Stop Buttons" EA sets up 3 buttons for manual trading and allows to predetermine trailing stoploss & take profit, open and close all trades at once.
+Try it on demo first.
+It is possible to activate a hedge fund protocol for low drawdown
+-USEMOVETOBREAKEVEN  system functions like a stop loss
+But a one-time function with a smaller value than the subsequent
+Stop Loss value
+to lock minimal profit and avoid loss if the price goes against you.
+If you have reached a certain value of pips with the direction of the trade -
+-WHENTOMOVETOBE - When to move break even (values: 10-100).
+So how many pips would you like to move the stop loss above the price line of the open trade-
+-PIPSTOMOVESL - How much pips to move stop loss (values: 10-100).
+Inputs:
+==================HEDGE FUND PROTOCOL==========================
+HEDGE FUND PROTOCOL -Enabale Draw dwon control (values:true/false).
+Close basket at +0.10% MIN_PROFIT_PERCENT (values:0.1-0.6).
+Close basket at -0.50% MAX_LOSS_PERCENT (values: 0.5-0.8).
+HEDGE FUND PROTOCOL_SLIPPAGE (values: 10-50).
+=================================================================
+Use_TP_In_Money- Use Take Profit In Money (values:true/false).
+TP_In_Money- Take Profit In Money   (values: 10-100).
+------------[Money Trailing Stop For Multiple Trades]----------------------
+Enable_Trailing-Enable_Trailing with money  (values:true/false).
+Take Profit In Money (in current currency) (values: 25-200).
+Stop Loss In Money(in current currency) (values: 1-20).
+Loss Index (values: 1.1-2).
+--------------------------------------------------------------------------------------
+USEMOVETOBREAKEVEN - Enable "no loss" break even system (values: 0-1).
+USESTOP - Enable automatic "STOP"  function (values: 0-1).
+WHENTOMOVETOBE - When to move break even (values: 10-100).
+PIPSTOMOVESL - How much pips to move stop loss (values: 10-100).
+Lots - Lots size (values: 0.01-10).
+MaximumRisk - maximum risk from total margin in %, (values: 0.01 - 0.3).
+If "MaximumRisk =0" then "Lot=constant"
+DecreaseFactor - decrease from total margin if you lose a trade.
+TrailingStop-set a value from 10 to 100 to activate trailing stop loss & take profit, "0" will not activate trailing stop loss.
+Stop_Loss - Stop Loss (values: 10-100).
+MagicNumber - Magic number (values: 1-100000).
+TakeProfit - Take Profit (values: 10-100).
+NumberOfTrades-Number Of Trades(values: 1-10).

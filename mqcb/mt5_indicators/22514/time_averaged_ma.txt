@@ -1,0 +1,31 @@
+Time Averaged Moving Average is a moving average based on
+Time Averaged Price indicator
+. It draws a smoothed line with its values calculated by prices in a specified range.
+It has four inputs:
+Period
+- calculation period
+Applied price
+Smoothing period
+Smoothing method
+Calculation:
+TAMA = MA(TAP, Smoothing period, Smoothing method)
+where:
+TAP calculation depends on the selected calculation price (Applied price):
+Close price: TAP = Close[Period-1]
+Open price: TAP = Open[Period-1]
+High price: TAP = Max
+Low price: TAP = Min
+Median price: TAP = (Max+Min)/2.0
+Typical price: TAP = (Max+Min+Close)/3.0
+Weighted price: TAP = (Max+Min+2.0*Close)/4.0
+Min, Max - Low and High prices in the Period range
+Time Averaged Price
+is not required for calculation.
+Fig. 1. Time Averaged MA, Close
+Fig. 2. Time Averaged MA, High
+Fig. 3. Time Averaged MA, Low
+Fig. 4. Time Averaged MA, Median
+Fig. 5. Time Averaged MA, Weighted
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22514

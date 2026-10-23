@@ -1,0 +1,84 @@
+EA is made using the Hedge Average function.
+Trigger order is made not based on the candle value, but the order is made by using the Moving Average indicator, so when candle is moving and going across the Moving Average indicator, there will be an order.
+Hedge order will occur, when there is a cross in the succession candle on previous orders that are detected by the Moving Average indicator, so it will create a new order that is different from previous orders.
+In order triggers the order that I have explained above can happen, it is necessary to add filters as below.
+if
+( totalorder(
+0
+)<Max_order  && Trade_buy  && signal==
+1
+&& wt!=
+Time
+[
+0
+] ){ticketb =
+OrderSend
+(
+Symbol
+(),
+OP_BUY
+,NR(Lots),
+Ask
+,
+3
+,slb, tpb,Name_EA,Magic,
+0
+,Blue);
+if
+(ticketb>
+0
+) wt=
+Time
+[
+0
+];
+}
+if
+( totalorder(
+1
+)<Max_order && Trade_sell && signal==
+2
+&& wk!=
+Time
+[
+0
+]) {tickets =
+OrderSend
+(
+Symbol
+(),
+OP_SELL
+,NR(Lots),
+Bid
+,
+3
+,sls, tps,Name_EA,Magic,
+0
+,Red);
+if
+(tickets>
+0
+) wk=
+Time
+[
+0
+];
+}
+Expert input:
+Name_EA = "Hedge Average"
+Trade_buy= true
+Trade_sell= true
+Start_Hour= 6
+End_ Hour= 20
+Tp_in_Money= true
+TP_in_money= 2
+TP= 100
+SL= 100
+Max_order= 10
+Lots= 0.1
+TrailingStop_= true
+TrailingStop= 20
+Magic= 76
+Period_1 = 4
+Period _2 = 4
+Example of the EA:

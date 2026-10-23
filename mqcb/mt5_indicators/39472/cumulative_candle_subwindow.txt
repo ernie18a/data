@@ -1,0 +1,5 @@
+Indicator
+In the subwindow in the form of a colored histogram (
+DRAW_COLOR_HISTOGRAM2
+) there is a cumulative candle made of bars of the same direction.
+Rice. 1.Cumulative candle subwindow

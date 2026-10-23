@@ -1,0 +1,16 @@
+Real author:
+Luis Guilherme Damiani
+The indicator of the ratio between fast
+Average True Range (ATR)
+and slow ATR.
+ATR ratio often reach high values after the prices quick and strong movements. Low indicator values often correspond with long periods of flat that can be observed on the market top and during consolidation. It can be intepreted according to same rules as other volatility indicators. Forecasting method using ATR ratio is as follows: the higher is the indicator value, the higher is the probability of a trend change; the lower is the value, the weaker is the trend movement. In case the indicator value climbs above the blue horizontal line, it is time to buy or sell.
+High ATR ratio price levels often correlate with high volatility. Low ATR ratio price correlates with low volatility, as the prices stabilize or move along the channel flat movement up to the possible breakout point.
+The indicator itself does not submit sufficient amount of signals and must be used together with other indicators. Volatility movements happen in the direction of a trend. Like
+moving averages
+systems, volatility systems for trend markets will not work well during a flat.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+08.08.2006.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/495

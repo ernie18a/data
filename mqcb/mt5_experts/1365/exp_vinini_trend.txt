@@ -1,0 +1,18 @@
+The Exp_VininI_Trend trading system is based on change of the trend direction displayed by the
+VininI_Trend
+indicator.
+A signal to perform a deal is formed at bar closing depending on the chosen algorithm of forming signals with the input parameter:
+input
+AlgMode Mode=BREAKDOWN;
+//the algorithm to enter the market
+Two variants of the algorithm are possible:
+the breakthrough of UpLevel and DnLevel levels of the indicator;
+change of the indicator direction.
+Place VininI_Trend.ex5 compiled file to the terminal_data_folder\MQL5\Indicators.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. The instances of history of deals in the chart.
+Testing results for 2011 at NZDUSD H4:
+Fig. 2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1365

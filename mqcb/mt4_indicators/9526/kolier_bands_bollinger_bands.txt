@@ -1,0 +1,17 @@
+Author:
+KoliEr Li (
+http://kolier.li
+)
+KoliEr Bands give you a step by step view for support and resistant levels.
+If Bollinger Bands is Batman, KoliEr Bands is Robin.
+Use them together.
+Red and solid lines is KoliEr Bands.
+Blue and dot lines is Bollinger Bands
+Logic:
+Use the average value of the highest and lowest price from the period bar to now as Center Line.
+Upper and Lower bands are Deviation of close price.
+Parameters:
+extern string IndicatorName = "KoliErBands";
+extern int BarsToCount = 0; // Set to 0 to count all bars
+extern int KB_Period = 14; // Peroid of KoliEr Bands
+extern int KB_Deviation = 2; // Deviation Level

@@ -1,0 +1,17 @@
+The real author:
+svm-d
+The fast trends indicator drawn on the basis of two
+XMUV
+Moving Averages. In fact, as a result two lines of the Momentum indicator drawn on the basis of this Moving Average with SMA and EMA averagings respectively are displayed.
+The crossing of these Momentum indicators defines the moments of time when the trend changes.
+The indicator is represented in two versions:
+In the standard version as lines - MUV_DIFF;
+As a two colored cloud - MUV_DIFF_Cloud.
+Place the XMUV.ex5 compiled file to the terminal_data_folder\MQL5\Indicators.
+This indicator was first implemented in MQL4 and published in
+Code Base
+on 09.11.2008.
+Fig.1 The MUV_DIFF and MUV_DIFF_Cloud indicators
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1665

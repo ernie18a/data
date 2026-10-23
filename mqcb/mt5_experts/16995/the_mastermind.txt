@@ -1,0 +1,36 @@
+Author of the idea
+—
+L.Bigger
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+The iStochastic (Stochastic) Oscillator, iWPR (Larry Williams' Percent Range) indicators are used.
+Recommended period is M5. Test on EURUSD M5, from 2016.06.01 to 2016.11.18, initial deposit - 10000:
+It is recommended to disable output of comments on the chart during visual testing.
+The version for visual testing is shows
+:
+//+------------------------------------------------------------------+
+//| PRINT COMMENT FUNCTION                                           |
+//+------------------------------------------------------------------+
+void
+subPrintDetails()
+{
+return
+;
+string
+sComment   =
+""
+;
+string
+sp         =
+"----------------------------------------\n"
+;
+string
+NL         =
+"\n"
+;
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16995

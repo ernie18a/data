@@ -1,0 +1,12 @@
+Real Author:
+jppoton@yahoo.com
+Fractal Graph Dimension Indicator. The
+author's blog
+contains more information.
+The original indicator was developed in the MQL4 language and published in the
+CodeBase
+on 21.01.2009.
+Fig.1. FGDI indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16916

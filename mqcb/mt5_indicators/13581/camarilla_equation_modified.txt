@@ -1,0 +1,8 @@
+Real author:
+Nikolay Kositsin
+Initially written by
+Nikolay Kositsin
+and adjusted to plot lines on the right side of the chart, reducing the number of lines over the candles.
+More information at:
+https://www.mql5.com/en/code/469
+.

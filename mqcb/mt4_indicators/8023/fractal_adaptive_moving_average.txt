@@ -1,0 +1,9 @@
+Author:
+FractalAMA Description: Fractal Adaptive Moving Average - by John Ehlers Version 1.1 7/17/2006
+Heavily modified and reprogrammed by Matt Kennel
+Description:
+The FRAMA is an alternative indicator to the default fractals that is included with the MT4 installation.
+October 2005 Issue - "FRAMA - Fractal Adaptive Moving Average" Length will be forced to be an even number. Odd numbers will be bumped up to the next even number.
+Last modified 2006.
+There is another FRAMA already uploaded to codebase, this one may accompany it. I find it useful.
+Image:

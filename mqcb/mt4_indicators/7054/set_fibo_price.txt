@@ -1,0 +1,2 @@
+This indicator puts Prices at Fibo lines. Draw your fibo's on chart and then put this indicator, you will see prices at fibo levels.
+The indicator Set_Fibo_Price_Any takes the value of the level automatically from the fibonacci levels and then convert to text.

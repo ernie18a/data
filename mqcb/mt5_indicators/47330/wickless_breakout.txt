@@ -1,0 +1,1 @@
+If any type of candle has a missing wick wick it plots a "x" wingdings

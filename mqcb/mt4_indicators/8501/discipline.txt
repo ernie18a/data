@@ -1,0 +1,41 @@
+Of course it has some inaccuracies, but they are 10% of 100%.
+Input Parameters:
+extern
+int
+period
+=
+10
+;
+extern
+int
+price
+=
+0
+;
+// 0 or other = (H+L)/2
+// 1 = Open
+// 2 = Close
+// 3 = High
+// 4 = Low
+// 5 = (H+L+C)/3
+// 6 = (O+C+H+L)/4
+// 7 = (O+C)/2
+extern
+bool
+Mode_Fast
+=
+false
+;
+extern
+bool
+Signals
+=
+true
+;
+Discipline
+The indicator was tested on:
+- timeframes: М15, H 1, H 4, Daily;
+- currency pairs: EUR/USD, GBP/USD, USD/CHF, USD/JPY;
+The author citation about this indicator is published
+here
+.

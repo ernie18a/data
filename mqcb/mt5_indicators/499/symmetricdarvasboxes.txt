@@ -1,0 +1,8 @@
+Standard Darvas Box
+indicator is not symmetrical. The very programme logic of its calculation is arranged so that generation of the upper and lower channel borders is performed without using antisymmetric algorithms.
+This fact is quite acceptable when analyzing stocks prices changes but if we take Forex, such method seems to be rather unnatural. In the
+standard version of the indicator
+the calculation period of the indicator is fixed and equal to five that imposes strong limitations of Darvas Boxes applications. Considering this logics there has been made an attempt to enhance this indicator by making the calculation logics completely symmetrical and arranging the access to the generation period of the channel.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/499

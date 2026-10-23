@@ -1,0 +1,13 @@
+Channel Balance oscillator displays the difference between the median price ((High+Low)/2) and the price channel for a selected period.
+It has one configurable parameter:
+Period
+- price channel calculation period
+Calculation:
+CB = 100 * SMA(T, Period)
+where:
+T = (Median price - Min) / Range
+Range = Max - Min
+Max, Min are the highest and lowest prices within the Period interval
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21432

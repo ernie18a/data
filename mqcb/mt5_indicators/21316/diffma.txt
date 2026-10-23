@@ -1,0 +1,18 @@
+The indicator represents two moving averages calculated based on the range of one-direction candlesticks.
+One MA is for bullish range, the other one is for bearish candlesticks.
+It has two configurable parameters:
+Period
+- calculation period (candlestick range)
+Applied price
+- calculation price
+Calculations:
+UP = SumUp / CountUp
+DN = SumDn / CountDn
+where:
+SumUp = Sum of SMA(Applied price, 1) for all bullish candlesticks within the Period
+SumDn = Sum of SMA(Applied price, 1) for all bearish candlesticks within the Period
+CountUp - number of bullish candlesticks within the Period
+CountDn - number of bearish candlesticks within the Period
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21316

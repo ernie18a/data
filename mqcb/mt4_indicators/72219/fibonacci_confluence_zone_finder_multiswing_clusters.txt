@@ -1,0 +1,13 @@
+Identifies zones where Fibonacci levels from multiple swing points align at the same price.
+Algorithm:
+Finds 4-5 significant swing points
+Calculates Fib levels (38.2%, 50%, 61.8%, 78.6%) from each swing pair
+Scans for clusters where 2+ levels converge within tolerance
+Ranks by density (more levels = stronger)
+Features:
+Confluence zones drawn as shaded rectangles
+Color by strength: yellow (2), orange (3), red (4+)
+Labels showing contributing levels
+Individual Fib lines optional
+Alert when price enters strong zone
+Works on all timeframes — best H1, H4, D1

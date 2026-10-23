@@ -1,0 +1,67 @@
+It is a semiautomatic Expert Advisor. It opens a position at the intersection of the lines drawn on the symbol chart.
+Four types of lines are supported
+Trendline
+Trendline by Angle
+Vertical Line
+Horizontal Line
+Three types of interaction with the lines are possible
+Opening a position in the direction indicated in the line description;
+Only buying
+Only selling
+Once the price crosses the line and an appropriate position is opened, the line becomes inactive (its type changes). The type of the inactive line is set in the settings to avoid reopening after the price crosses this line.
+One type of intersection is implemented: at the opening of a new bar, i.e. if the Open price of the previous bar and the Open price of the current bar are on opposite sides of the crossed line.
+Intersection of trendlines
+The "Ray to the right" parameter of trendlines is checked:
+If it is enabled, then any intersection of this line at any current bar is counted;
+If the ray is disabled, the intersection is only possible when the right edge of the line is on the current bar or to the right of it. If the price does not cross the line before its right edge becomes to the left of the last bar, then the line becomes inactive.
+Intersection of the horizontal line
+If the open price of the past bar and the open price of the current bar cross the line, a position corresponding to the settings opens and the line becomes inactive.
+Intersection of the vertical line
+As soon as the current bar opens behind the bar, on which the line is set, a position corresponding to the settings opens and the line becomes inactive.
+The Expert Advisor is designed for working on hedging accounts. If you launch the EA on a netting account, a warning message will pop up and the EA will be unloaded.
+The volume of positions opened by the Expert Advisor is configured in the settings. You can also set stop loss and take profit in points. If invalid Stop Loss and Take Profit values are specified, the EA will adjust the values to the minimum
+StopLevel
+allowed for the symbol.
+The Expert Advisor will adjust the lot in case an incorrect value is specified. If the lot is too large, the EA will adjust it in order to be able to open a position. If there is no money for opening even the minimum lot, no position will be opened.
+The EA has 13 input parameters:
+Direction of opening positions
+- the list of modes for opening of positions:
+As per line description
+Always Buy
+Always Sell
+Description for Buy position
+- the line description for opening Buy positions (default is Buy);
+Description for Sell position
+- the line description for opening Sell positions (default is Sell);
+Inactive Line Style
+- the style of the inactive line;
+Experts magic number
+- the unique identifier of positions, which will be opened upon intersection;
+Lots
+- the volume of positions to open;
+Stop loss in points
+- the Stop Loss of a position in points;
+Take profit in points
+- the Take Profit of a position in points;
+Slippage of price
+- maximum allowable slippage when opening a position;
+Multiplier spread for stops
+- spread multiplier applied in the calculation of a proper distance for stop orders (*).
+Waiting for environment update (in seconds)
+- time in seconds to wait for the update of the trading environment (**);
+Number of attempts to get the state of the environment
+- the number of attempts to obtain an accurate trading environment (***);
+Log messages
+- write messages about the intersection of lines to log (Yes/No).
+* For Stop Loss and Take Profit orders (as well as pending orders), there is a minimum allowed distance for placing such orders -
+StopLevel
+. I.e. Stop Loss and Take Profit (as well as pending orders) cannot be placed closer than this distance to the price. If
+StopLevel
+is zero, it does not mean its absence, it only means that
+StopLevel
+is floating. In this case, the minimum distance is usually equal to spread*, but sometimes even the double spread is not enough. So, this parameter allows specifying a custom multiplier for the spread used to calculate the minimum distance for placing stop orders.
+** When a trading order is sent to a server, an occasional delay in execution may lead to an incorrect counting of the number of market positions. If such an "undefined" state is detected, the Expert Advisor waits for the specified number of seconds and then reads the environment again.
+*** The number of waiting periods within one tick is set in the EA parameters. After taking all allowed attempts to get the accurate environment, the Expert Advisor exits the processing and waits for the next tick. The EA will repeat these attempts on this new tick if the trading environment fails to update by this time.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20178

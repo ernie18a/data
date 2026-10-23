@@ -1,0 +1,34 @@
+ATTENTION: Undocummented solution, it may not work in the other versions of MetaTrader
+Among the standard MQL4 functions there is very useful function
+MarketInfo()
+which returns the various information on the financial instruments listed in"Market Watch" window. However, in some cases, the additional information about the instruments is need. For example, the list of the symbols listed in "Market Watch" window, their order in the list, the full description of the instrument, or full list of the financial instruments provided by broker.
+It has been discovered, that during any changes in the "Market Watch" window, the client terminal opens and modifies the binary file
+symbols.sel
+in the history folder. Analysis of the structure of this file shows that the terminal records for the every instrument of the "Market Watch" window has a 128-byte structure. The first 12 bytes allocated for the symbol name, the other bytes are filled with the other information: Bid, Ask, High, Low, etc. The instument order is the same as in "Market Watch" window. And if the user changes the ordering of symbols, the changes are immediately reflected in the file.
+Note: the first 4 bytes are reserved for MQL version and they are constant
+However, the information contained in the file symbols.sel may not be complete. Especially if the "Market Watch" window has no all listed financial instruments. Therefore, if you need a complete list of available symbols, provided by broker, then this method will not work. The good idea based on analysis of file s
+ymbols.raw
+has been proposed by
+kaisa
+. However, its implementation using the API functions is not the best solution.
+This problem can be solved and the "pure" MQL. Analysis of the structure of this file shows that each symbol is recorded in a file in the binary structure of the size of
+1936
+bytes. The first
+12
+bytes are for the short symbol name, and the next of
+64
+-bytes block contain an extended symbol description.
+On the basis of the analysis proposed here it has been developed library that contains a several functions for more information about financial instruments loaded in the client terminal.
+Here is a list of the exported functions:
+SymbolsList
+- returns the symbol list (listed in "Market Watch" or all of the symbols).
+SymbolDescription
+- returns the detailed name description of the specified financial symbol.
+SymbolType
+- returns a type of the financial instrument.
+An example of the library usage is presented in the script
+SymbolsSample.mq4
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9102

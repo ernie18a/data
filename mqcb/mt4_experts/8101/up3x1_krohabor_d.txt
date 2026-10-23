@@ -1,0 +1,4 @@
+Having a minimum deposit of, for example, 200 bucks, and using this EA, you can trade without any losses of deposit. I've personally tested it on a two-year history with one currency pair, EUR/USD, with the final result of about 500 CU.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8101

@@ -1,0 +1,9 @@
+Description:
+AggM is a composite trend and mean-reversion indicator.
+The calculation:
+rank_long = PercentRank(10 period HLC, Close)
+rank_short = 1 - PercentRank(200 period HLC, Close)
+value = (rank_long + rank_short) / 2
+AggM = (value[1] * 0.4)+(value[0] * 0.6)
+Strategy:
+Long above 0.7, Short below 0.2

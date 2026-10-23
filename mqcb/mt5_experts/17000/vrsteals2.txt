@@ -1,0 +1,67 @@
+Author of the idea
+—
+Vladimir Pastushak
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+The EA represents a stealth program, which manages the positions using labels.
+The EA and this way of working are well proven when working with certain brokers.
+The EA functionality includes:
+Placing a virtual Take Profit
+Placing a virtual Stop Loss
+Placing breakeven
+When orders are detected on the chart, the EA uses labels to draw the prices for closing by Take Profit, Stop Loss and the breakeven level.
+The program is able to work with different magic numbers simultaneously. To do this, set the "Magic" parameter to "0".
+Expert advisor parameters:
+input
+ushort
+InpTakeProfit    =
+50
+;
+// TakeProfit (if 0, not used)
+input
+ushort
+InpStopLoss      =
+50
+;
+// StopLoss (if 0, not used)
+input
+ushort
+InpBreakeven     =
+20
+;
+// Breakeven (if 0, not used)
+input
+ushort
+InpBreakMinDis   =
+9
+;
+// Minimum profit when moving to breakeven
+input
+ulong
+Magic            =
+0
+;
+// (if 0, all magics)
+input
+ulong
+InpSlip          =
+20
+;
+// Slippage
+input
+int
+coment           =
+1
+;
+// The number of comment lines. If 0, comments are not displayed
+Labels:
+Green label — breakeven level
+Red label — Stop Loss level
+Blue label — Take Profit level
+Example of the EA operation:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17000

@@ -1,0 +1,31 @@
+all orders
+This EA is modification of this
+old EA
+How to use :
+1. Add this EA for any symbol
+2. Set the variable value that you need to TP, SL, Trailing, Closing, Treshold of Profit or Loses for the orders
+3. This EA not based for specific Magic Number, then if you place the order on Mobile Device the order will be modify (SL,TP & Trailing) by EA
+Modification features is :
+1. Separate with 5 Buttons
+2. Auto close All Orders if reach the profit  according with value of parameter : "CLOSE IF PROFIT-xxxx" (Fill with 0 if you don't use it)
+--> Fill
+100.0
+will auto close
+all orders
+when profit reach $100
+--> Fill 0.0 will non activated this function
+3.
+Auto close All Orders if reach the loss  according with value of parameter : "CLOSE IF LOSS-xxxx" (Fill with 0 if you don't use it)
+--> Fill
+-70.0
+will auto close
+all orders
+when loss reach -$70
+--> Fill 0.0 will non activated this function
+Have a nice trade....
+Update History:
+- Add button Close BUY
+- Add button Close SELL
+- Remove not used parameter "
+Lots
+"

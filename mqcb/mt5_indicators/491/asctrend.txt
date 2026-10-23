@@ -1,0 +1,4 @@
+The indicator generates signals for entering the market using colored dots.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/491

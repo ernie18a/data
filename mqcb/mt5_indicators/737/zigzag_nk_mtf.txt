@@ -1,0 +1,32 @@
+ZigZag
+indicator version (based on the MetaTrader 4 terminal indicators delivery set) displaying results of its calculations from the larger timeframe at the current one.
+The indicator builds ZigZag considering ZigZag_NK indicator data.
+Indicator input parameters:
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Chart period
+input
+int
+ExtDepth=
+12
+;
+input
+int
+ExtDeviation=
+5
+;
+input
+int
+ExtBackstep=
+3
+;
+Place ZigZag_NK.mq5 compiled indicator file to MQL5\Indicators.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/737

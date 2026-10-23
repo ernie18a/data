@@ -1,0 +1,3 @@
+This code identifies highest high and lowest low in the neighbourhood.
+This code compares the high of candles with the high of the candles to its left and to its right. If the high of the candle in question is more than the high of the candle to its left or to its right then the an arrow is plotted.
+Similarly for lows.

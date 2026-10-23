@@ -1,0 +1,62 @@
+1. Indicator description
+A multi-timeframe trend-agreement indicator inspired by George Soros's macro trading style. Soros ran Quantum Fund on a longer-term directional view formed by weighing evidence across multiple time horizons before committing capital. This indicator approximates that idea for a single instrument: it checks whether a fast/slow moving-average trend is pointing the same way on three different timeframes (short, medium, long — H4/D1/W1 by default) and condenses that into one score from -3 (strong bearish agreement) to +3 (strong bullish agreement), shown as a color histogram plus a live on-chart dashboard.
+Features:
+Three-timeframe trend agreement score
+— combines the fast-vs-slow MA relationship on a short, medium, and long timeframe (fully configurable) into a single -3…+3 bias score.
+Configurable MA method
+— choose SMA, EMA, SMMA, or LWMA for the trend detection, applied consistently across all three timeframes.
+Live gauge, not a fake history
+— the histogram shows only the current, live reading; it never back-paints historical bars with today's score, so the chart can't misleadingly look uniformly bullish or bearish.
+Resilient data handling
+— if a higher-timeframe read momentarily fails (e.g. history for that timeframe still syncing in the terminal), the indicator keeps the last known good value instead of snapping to neutral, avoiding false flickers.
+Dedicated, throttled dashboard panel
+— a small on-chart panel (drawn inside the indicator's own subwindow) shows the direction per timeframe, the total score, and a plain-language bias label (MACRO BULLISH / MACRO BEARISH / NEUTRAL-MIXED). Labels are only redrawn when their text actually changes, keeping CPU usage minimal.
+Resource-safe
+— every indicator handle created on init is properly released on deinit; no handle leaks even after repeated attach/detach or parameter changes.
+Full input validation on startup
+— invalid parameter combinations are rejected with a clear message in the Experts log instead of silently misbehaving.
+DPI/font-aware panel scaling
+— panel size and font scale together with a single font-size input and the screen's DPI, staying readable on any monitor.
+2. Input explanations
+=== Trend Detection ===
+InpFastMA
+(default 50) — the period of the fast moving average used to detect trend direction on each of the three timeframes.
+InpSlowMA
+(default 200) — the period of the slow moving average. When the fast MA sits above the slow MA, that timeframe is scored bullish (+1); below, bearish (-1); exactly equal, flat (0).
+InpMAMethod
+(default MODE_EMA) — the moving-average method applied to both the fast and slow MA, on all three timeframes (options: SMA, EMA, SMMA, LWMA).
+=== Macro Timeframes ===
+InpTF_Short
+(default PERIOD_H4) — the short-term timeframe used for one of the three trend readings.
+InpTF_Medium
+(default PERIOD_D1) — the medium-term timeframe for the second trend reading.
+InpTF_Long
+(default PERIOD_W1) — the long-term timeframe for the third trend reading. The total score is the sum of the three individual readings (+1/0/-1 each), so it ranges from -3 to +3.
+=== Dashboard ===
+InpShowDashboard
+(default true) — shows/hides the on-chart panel that displays per-timeframe direction, the score, and the bias label.
+InpPanelX
+(default 10) — horizontal offset of the panel from the left edge of the indicator's subwindow, in pixels (before scaling).
+InpPanelY
+(default 10) — vertical offset of the panel from the top edge of the subwindow, in pixels (before scaling).
+InpFontSize
+(default 9, range 6-24) — text size used in the panel; panel geometry scales automatically with this value and with screen DPI.
+3. Trading methods with this indicator
+a) Full-alignment confirmation (highest conviction)
+Only trade in the direction of the trend when the score is exactly
++3
+(all three timeframes bullish) or
+-3
+(all bearish). This is the strictest filter — fewer signals, but each one represents genuine agreement across short, medium, and long horizons, similar to how Soros would only commit large size when the macro picture was unambiguous.
+b) Majority-agreement entries
+Trade with the sign of the score whenever it's
+non-zero
+(+1, +2, +3 for long bias; -1, -2, -3 for short bias), using it as a directional filter for entries taken from another system (e.g. only take long setups from your entry strategy while the score is positive). More signals than method (a), less conviction per trade.
+c) Combine with the Trend Following Henry indicator
+Use this indicator as a higher-level macro filter and only act on Trend Following Henry's BUY/SELL arrows when the macro score agrees with that direction (score > 0 for BUY, score < 0 for SELL). This layers a longer-horizon macro bias filter on top of a shorter-horizon mechanical trend system.
+d) Score-flip exits
+If already in a position, treat a flip in the score's sign (e.g. from +2 to -1) as an early warning that the macro backdrop is turning against the trade — a cue to tighten stops or scale out, even before your primary system's exit signal triggers.
+e) Timeframe-weighted discretionary bias
+Rather than trading the aggregate score mechanically, use the dashboard's per-timeframe breakdown (Short/Medium/Long shown individually) to build a discretionary macro view — e.g. weighting the Long-term (W1) reading more heavily for position-trading decisions, while using Short (H4) only to time entries within that established bias.
+f) Multi-symbol macro scan
+Attach the indicator to several charts (majors, indices, commodities you follow) and use the dashboard's score/bias label on each as a quick cross-market scan — favoring instruments where the score strongly agrees with a broader thesis you already hold, rather than relying on a single chart's reading in isolation.

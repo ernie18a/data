@@ -1,0 +1,5 @@
+Indicator PerkyAsctrend1, as well as all other ASCTrend indicators is based on Laryy williams' oscillator %R, or WPR (Williams’ Percent Range). Indicator PerkyAsctrend1 "studies" the current trend and proposes the best entrance points near key support/resistance levels according to its forecast of the future price movement.
+Indicator PerkyAsctrend1 gives signals that are shwon with blue and pink dots in the chart. Blue dots are for opening a long position, pink ones - for a short position.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9787

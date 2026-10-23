@@ -1,0 +1,4 @@
+Author: mishanya
+Forecasting of price daily ranges. This indicator shows the resistance and support levels of the current day, the levels are forecasted on the basis of the price levels of the previous day. You can find the calculation formulas in Thomas Demark's book:
+"The New Science of Technical Analysis"
+.

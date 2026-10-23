@@ -1,0 +1,27 @@
+Indicator AML (Adaptive Market Level) displays one of three market states: Flat, uptrend, and downtrend.
+It is based on fractal smoothing and has a discrete filter that removes small price movements: If the price movement amplitude does not exceed the square of the predefined amplitude within the specified range, then this price movement will be ignored and considered a flat one.
+It has two parameters:
+Period
+- calculation period;
+Dimension
+- price movement amplitude in points.
+Calculation:
+If ABS(FR - FR(Dimension)) < LAG:
+AML = PrevAML
+otherwise:
+AML = FR
+where:
+LAG = Dimension * Dimension * Point
+FR = Alpha * Price + (1.0 - Alpha) * PrevFR
+Price = (High + Low + 2.0 * Open + 2.0 * Close) / 6.0
+Alpha = EXP(-1.0 * Dimension * (DIM - 1.0)) in the range from 0.01 to 1.0
+If R1+R2 > 0 and R3 > 0:
+DIM = 1.44269504088896 * (LOG(R1+R2) - LOG(R3))
+Otherwise:
+DIM = 0
+R1 - (Maximum price - Minimum price within thе Period from the current price) / Period
+R2 - (Maximum price - Minimum price within the Period from i+Period) / Period
+R3 - (Maximum price - Minimum price within the Period * 2) / Period * 2
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21103

@@ -1,0 +1,7 @@
+Author:
+Ideas by Sidus
+The indicator draws the arrows at the intersection of the MA and the RSI of the 50 level. It makes a sound signal.
+Attention! Sometimes the indicator does not draw the errros if the conditions are fulfilled. Sometimes it put the arrows at the current bar, but if the price continues moving in the former direction it doesn't remove these arrows.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8633

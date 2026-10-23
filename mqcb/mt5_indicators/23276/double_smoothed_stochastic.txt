@@ -1,0 +1,7 @@
+Theory:
+When it comes to double smoothed stochastic, there seems to be a lot of confusion there. Quite a few versions, and some people claiming to be inventors of it - some with and some without any traceable proof of being actually the inventors. In order to make a bit of order in the whole thing, few versions will be posted.
+This version:
+It is a "basic" version that was claimed to be invented by one person, but the claim came in a description of one commercial package when there were already freely available versions of double smoothed stochastic on the net, hence the claim of "inventorship" will be ignored in the name of this, and it is named simply as DSS (Double Smoothed Stochastic). It is calculated as EMA of (stochastic (of EMA (of stochastic)) - that is where the "double" comes from: it is not only double smoothed but it is also double stochastic.
+It is adding the choice of prices and the usual "low/high" combination too (which is the default setting).
+Usage:
+The indicator adds signal (or trigger) line in order to make the entries (and exits() easier to assess. You can use the color changes as signals.

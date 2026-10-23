@@ -1,0 +1,6 @@
+This indicator displays a subwindow with histogram of custom bars' durations in minutes. It's applicable for renko boxes, PnF, equivolume bars, and other custom charts, where bar durations are variable, as opposed to standard charts based on timeframes.
+Please note that MT5 does not support charts with variable timeframes, so the custom representation, such as renko or equivolume, is emulated by standard charts anyway, and usually uses M1 timeframe, because it's the smallest available timeframe and it provides highest possible accuracy of bar alignment on time axis.
+Using this indicator on a regular chart makes small sense, because it'll show vertical columns of the same height for all bars.
+Inputs
+Directional
+- a boolean option to show signed or unsigned histogram; by default, it's false (unsigned) and all values are absolute; if direction is enabled (true) - the values are positive or negative depending from price change on corresponding bar;

@@ -1,0 +1,24 @@
+Author of the idea
+—
+Yuri
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+The implementation of the MACD pattern "Trend continuation".
+The Expert Advisor was written in order to check the efficiency of the trading strategy described by the author.
+Brief description of the strategy:
+Time-frame: H1
+Symbol: EURUSD
+Volume: 0.1 лот
+Indicators: MACD 12, 26, 9.
+Searching for a buy signal:
+The MACD histogram must form a High above 0.0015
+Once a Low is formed above 0.0015, the histogram must go below -0.0005 and reverse with a value greater than 0,0005 without going below zero;
+Searching for a sell signal:
+The MACD histogram must form a High above -0.0015
+Once a High is formed above -0.0015, the histogram must take a value higher than -0,0005 and reverse downwards with a value lower than -0,0005 without going above zero
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17773

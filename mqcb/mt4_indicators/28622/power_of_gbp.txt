@@ -1,0 +1,15 @@
+Power of XXX indicator description.
+The indicator is showing relative actual strength of currency XXX.
+The indicator calculates its value of close prices of 7 pairs containing currency XXX.
+The indicator can be used for MEAN REVERSION based strategies.
+Lets assume XXX YYY currency pair scheme where XXX is BASE currency and YYY is QUOTEcurrency.
+Place Power of XXX into your chart first and Power of YYY second.
+You can have 2 relevant situations.
+Indicators curves are close to each other. It means there is higher probability that the price of the pair XXX YYY will go
+UP
+.
+Do not take Power of .. signals separately from overall market situation (SR levels/zones and so on).
+Indicators curves are FAR from each other. It means there is higher probability that the price of the pair XXX YYY will go
+DOWN
+.
+Do not take Power of .. signals separately from overall market situation (SR levels/zones and so on).

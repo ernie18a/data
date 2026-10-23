@@ -1,0 +1,16 @@
+The Exp_ColorMaRsi-Trigger Expert Advisor is based on signals triggered by the colors of the ColorMaRsi-Trigger semaphore signal indicator. The signal is formed when a bar is closing, if the indicator has changed its color, or if the color has appeared on the current bar.
+This Expert Advisor requires the compiled indicator file ColorMaRsi-Trigger.ex5 in order to run. Place it in <terminal_data_folder>\MQL5\Indicators.
+Note that the TradeAlgorithms.mqh library file allows using Expert Advisors with brokers who offer
+nonzero spread
+and the option of setting Stop Loss and Take Profit
+together with position opening
+. You can download more variants of the library at the following link:
+Trade Algorithms
+.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig.1. Trade examples on the chart
+Testing results for 2014 on USDJPY H4:
+Fig.2. Testing results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13381

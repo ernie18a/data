@@ -1,0 +1,16 @@
+Price Cycle oscillator.
+It has four input parameters:
+Period
+- calculation period;
+Method
+- calculation method;
+Overbought
+- overbought level;
+Oversold
+- oversold level.
+Calculations:
+PC = MA(Close-Low) / ATR
+When the indicator line moves beyond the daily overbought/oversold level and the price approaches to the extreme monthly ranges, we can consider it is time to buy/sell.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20700

@@ -1,0 +1,2 @@
+Aroon oscillator, that is displayed as a simple line. Trends changes showed with different colours.
+This indicator might be good to look at it since it is even simpler code.

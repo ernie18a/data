@@ -1,0 +1,12 @@
+In essence, it implements the idea of visual interpretation of the state of the fourth dimension of the Chaos Theory by B. Williams - Zone.
+Information on the Chaos Theory in general and the on logic of determining its state in particular can be found
+here
+.
+In short, the state of the zone is determined based on the values of two indicators: Awesome Oscillator and Acceleration/Deceleration. Both are included in the standard package of the MetaTrader (Insert - Indicators - B. Williams).
+When the driving force (Awesome Oscillator — AO) and acceleration (Acceleration/Deceleration — AC) are in the same direction (both green or both red) — it means that the driving force not only moves in that direction, but also accelerates.
+If the current AC and AO columns are green, this indicates the green zone. For clarity, this bar can be colored in green.
+If the current AC and AO columns are red, this indicates the red zone. For clarity, this bar can be colored in red.
+If the AC and AO columns have different directions, the bar is colored in gray (gray zone).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8713

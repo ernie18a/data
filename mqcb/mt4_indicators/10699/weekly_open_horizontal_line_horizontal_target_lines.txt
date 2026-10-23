@@ -1,0 +1,31 @@
+Indicators:
+Weekly Open + Targets
+Weekly Open
+(no Targets)
+These two indicators are modifications of the HI_Low Indicator.
+//+------------------------------------------------------------------+
+//|                                                MTF_HI_LOW_v1.mq4 |
+//|                      Copyright © 2006, MetaQuotes Software Corp. |
+//|                                        http://www.metaquotes.net |
+//+------------------------------------------------------------------+
+// Weekly Open + Targets: Modifications by File45 - http://codebase.mql4.com/en/author/file45
+Weekly Open + Targets:
+A Weekly Open Horizontal Line
+A Target Line above the Weekly Open Line (Long Target)
+A Target Line below the Weekly Open Line (Short Target)
+If a Target Line is not required it can be hidden by setting the color to
+None
+(from the Inputs Tab not the Colors Tab).
+If both Target Lines are not required use
+Weekly Open Indicator
+which has no Target Lines.
+SP500 - H4
+The Target Lines provide a useful means to eyeball the historic weekly range of an instrument or symbol. The Target Lines below are set at 200 points (20 pips).
+Parameters
+CountDays - 110;
+Weekly_Open - LightSlateGray;
+TP_Long_Target - Green;
+TP_Short_Target - Red;
+TP_Target - 500;
+Line_Style - 0;
+Line_Width - 2;

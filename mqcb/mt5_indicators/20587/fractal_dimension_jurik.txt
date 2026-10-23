@@ -1,0 +1,2 @@
+A lot of people have attempted to build indicator that assesses if there is a trend going on or the market is ranging. One of them was Mark Jurik too.
+This is his version of fractal dimension. Version from Mark Jurik is much smoother than the others but the general rule is the same: it is not a directional indicator, but is attempting to determine if there is a trend in the current market price changes or not, and it should be used bearing that in mind.

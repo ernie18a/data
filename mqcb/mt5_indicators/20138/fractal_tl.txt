@@ -1,0 +1,21 @@
+An indicator for automatic drawing of trendlines based on fractals of a given timeframe.
+Input Parameters
+base_tf
+- the timeframe for calculating fractals, based on which the trendlines will be drawn;
+color of the resistance line
+- set the color for the resistance line;
+line style of the resistance
+- set the style for the resistance line;
+width of the resistance line
+- set the width for the resistance line;
+color of the support line
+- set the color for the support line;
+style of the support line
+- set the style for the support line;
+width of the support line
+- set the width for the support line;
+Remove_TL
+- removing trendlines from the chart (set to true in order to remove the lines).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20138

@@ -1,0 +1,40 @@
+Real author:
+Iin Zulkarnainn
+A semaphore signal indicator that uses crossings of two Moving Averages.
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+uint
+FastMAPeriod=
+10
+;
+input
+ENUM_MA_METHOD
+FastMAType=
+MODE_EMA
+;
+input
+ENUM_APPLIED_PRICE
+FastMAPrice=
+PRICE_CLOSE
+;
+input
+uint
+SlowMAPeriod=
+22
+;
+input
+ENUM_MA_METHOD
+SlowMAType=
+MODE_SMA
+;
+input
+ENUM_APPLIED_PRICE
+SlowMAPrice=
+PRICE_CLOSE
+;
+Fig. 1. Iin_MA_Signal
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21874

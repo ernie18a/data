@@ -1,0 +1,16 @@
+Theory:
+This version can easily be tracked down. It was originally published in an TASC article "Double-Smoothed Stochastic" by William Blau and was published way back in 1990. The calculation is defined as:
+where:
+C = Current close
+La = Lowest low in
+a
+days
+Ha = Highest high in
+a
+days
+Ey = y-day exponential moving average
+Ez = z-day exponential moving average
+This version:
+It is calculating as described, and is adding signal/trigger line for easier trend assessment.
+Usage:
+You can use color changes as signals.

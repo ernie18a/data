@@ -1,0 +1,11 @@
+Author: Vitalik
+Expert based on intersection of two EMAs. Uses the
+MA
+indicator.
+Tested:
+Symbol: EURUSD.
+Period: H4.
+Model: every tick.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7675

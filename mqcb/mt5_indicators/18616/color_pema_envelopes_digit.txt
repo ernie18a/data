@@ -1,0 +1,10 @@
+Envelopes using the
+Color_PEMA_Digit
+MA, with an indication of trend direction and display of the last values of channel borders.
+The indicator uses the SmoothAlgorithms.mqh library classes (copy it to <terminal_data_folder>\MQL5\Include). The detailed description of the classes is available in the article
+Averaging Price Series for Intermediate Calculations Without Using Additional Buffers
+.
+Fig. 1. Indicator Color_PEMA_Envelopes_Digit
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18616

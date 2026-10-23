@@ -1,0 +1,25 @@
+This is an MQL5 version of the Expert Advisor from the article "
+How to reduce trader's risks
+".
+The EA works on each tick and can be optimized:
+Get some data (on indicators and time series) only if a new bar appears
+Sample tester runs with the appropriate settings (the terminal was relaunched before each test, the caches were not cleared):
+1
+EURUSD,M1: 90097615 ticks, 1090402 bars generated. Environment synchronized in 0:00:00.173. Test passed in 0:08:34.093 (including ticks preprocessing 0:00:29.109)
+2
+EURUSD,M1: 90097615 ticks, 1090402 bars generated. Environment synchronized in 0:00:00.047. Test passed in 0:08:20.531 (including ticks preprocessing 0:00:28.453)
+3
+EURUSD,M1: 90097615 ticks, 1090402 bars generated. Environment synchronized in 0:00:00.031. Test passed in 0:07:56.172 (including ticks preprocessing 0:00:30.969)
+Below is the graph before the code optimization:
+Now, three runs after a small code optimization:
+1
+EURUSD,M1: 90097615 ticks, 1090402 bars generated. Environment synchronized in 0:00:00.047. Test passed in 0:06:25.609 (including ticks preprocessing 0:00:30.750)
+2
+EURUSD,M1: 90097615 ticks, 1090402 bars generated. Environment synchronized in 0:00:00.047. Test passed in 0:06:20.875 (including ticks preprocessing 0:00:28.743)
+3
+EURUSD,M1: 90097615 ticks, 1090402 bars generated. Environment synchronized in 0:00:00.043. Test passed in 0:06:15.305 (including ticks preprocessing 0:00:27.475)
+As we can see, now that some variables are declared with 'static' type and re-written on a new bar only, we can save 2 minutes.
+The attached file of the version 1.013 contains the optimized code.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19726

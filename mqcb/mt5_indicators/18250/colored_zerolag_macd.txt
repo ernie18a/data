@@ -1,0 +1,19 @@
+This is the MQL5 version of ZeroLag MACD that was available for MetaTrader 4 here:
+https://www.mql5.com/en/code/9993
+Also there was a colored version of it here but it had some problems:
+https://www.mql5.com/en/code/8703
+I fixed the MetaTrader 4 version which has 95 lines of code. It took me 5 days to write the MetaTrader 5 version.(reading the logs and testing multiple times and finding out the difference of MetaTrader 5 and MetaTrader 4!)
+My first MQL5 version of this indicator had 400 lines of code but I optimized my own code again and now for reading all of the history it has around 290 lines of code!
+In My first MQL5 version of this indicator I used IMAonArray from MetaTrader 5 site and it used to take 8 seconds to load for the first time for calculating 700 candles!
+As MetaTrader 5 does not have iMAonArray and the code iMAOnArrayMQL4 from
+https://www.mql5.com/en/articles/81
+has some loops with too much cycles, so I rewrote it.
+Also the time series in MetaTrader 5 is from old to new candles (from left to right) but in MetaTrader 4 the time array is set as timeseries by default, so it is from new to old (right to left). As the MQL4 version of the indicator was coded somehow that I couldn't simply set arrays as timeseries (change their direction) and get the correct results in MQL5, so I had to change all the loops and write my own method to calculate all the candles of history for this MetaTrader 5 version.
+As the original code was free, I will share product for free in market too. hope it will be useful for getting faster signals than the traditional MACD.
+Indicator parameters
+FastEMA
+- default is 12. the number for setting the faster EMA period.
+SlowEMA
+- default is 26. the number for setting the slower EMA period. It's value should be greater than the FastEMA.
+SignalEMA
+- default is 9. The number for setting the period for calculating the Signal line which is drawn in blue color.

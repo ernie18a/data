@@ -1,0 +1,8 @@
+Theory :
+The idea for this type of divergence checking was explained here :
+RSI Slope Divergence
+. More information can be found at the original post
+This indicator :
+It is using the linear regression channel on MACD in this case. Even though the MACD tends to "mimic" the price changes better than some other indicators, using longer periods for linear regression channel seems to produce usable results, hence the default period for linear regression channel in this indicator is set to 100. Some experimenting is advised though
+Usage :
+The same way as any divergence seeking indicator - as soon as you see the changed color of the channel middle line, you can take any action you usually do when there is a divergence.

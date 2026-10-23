@@ -1,0 +1,11 @@
+This tool is what the standard MetaTrader 5 objects miss. To edit a formed line, click on it (at the edges or in the center of the line) until a dotted line appears. Then move the cursor without pressing a button.
+The indicator has a simple animated button. Its size and transparency changes, when the mouse pointer is moved closer to it.
+This implementation is mostly a training material and an attempt to inspire MetaTrader 5 developers to add the same functionality to the standard set of MetaTrader 5 objects. It is not implemented as a class. The following features have not been implemented: saving and passing of parameters in case of timeframe switch, multi-channel and smoothing functionality, channel extension to the right of the last bar. A version with full functionality can be implemented on demand.
+This is a cross-platform code, which can also be used in MetaTrader 4. I apologize for not adding comments.
+The arc is drawn according to the following formula:
+Price = a+b*n+c*n²
+where a, b, c are coefficients, and n is the bar number.
+In fact, it is a polynomial of degree 2. Three points are enough to calculate the a, b, c coefficients.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19580

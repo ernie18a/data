@@ -1,0 +1,6 @@
+Theory :
+Keltner channel is calculated as SMA (Simple Moving Average) + ATR(Average True Range)*multiplier. This version is using the intra-day ATR instead (published, with additional explanation here :
+Intra-day ATR
+)
+Usage :
+It can be used the same way as "regular" Keltner channel

@@ -1,0 +1,29 @@
+INTRODUCTION :
+The 8 effective steps to build a robust day trading plan using Fibonacci retracement will help us use Fibonacci to locate potential entry points.
+Having a trading plan is what differ us from amateurs because professional traders always use their trading plan.
+HOW TO USE IT :
+You can check the following video that will explain how to
+What are the
+8 steps to build a robust trading plan based on Fibonacci retracement
+.
+Most
+common mistakes that trades do
+.
+Applying the trading plan to search for Fibonacci entry points.
+PARAMETERS :
+This script has 5 inputs, which are
+The
+Price on 50% Level on M5 TF
+: enter the price
+The
+Price on 61% Level on M5 TF
+: enter the price
+The
+Price on 100% Level on M5 TF
+: enter the price
+The
+Second Target on H1 TF
+: enter the price
+The
+Risk in %
+: enter the % risk on this trading setup

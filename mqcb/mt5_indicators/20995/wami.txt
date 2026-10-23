@@ -1,0 +1,31 @@
+This Momentum indicator was described in article "Optimizing the Pulse" by Anthony W. Warren in the S & C magazine in April, 1994.
+It has nine input parameters:
+First MA period
+- first MA calculation period
+First MA method
+- first MA calculation method
+Second MA period
+- second MA calculation period
+Second MA method
+- second MA calculation method
+Third MA period
+- third MA calculation period
+Third MA method
+- third MA calculation method
+Signal MA period
+- signal line calculation period
+Signal MA method
+- signal line calculation method
+Applied price
+- calculation price
+Calculation:
+WAMI = MA(MA2, Third MA period, Third MA method)
+Signal = MA(WAMI, Signal MA period, Signal MA method)
+where:
+MA2 = MA(MA1, Second MA period, Second MA method)
+MA1 = MA(Difference, First MA period, First MA method)
+where:
+Difference = Price - PrevPrice
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20995

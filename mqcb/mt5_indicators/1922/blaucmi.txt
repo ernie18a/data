@@ -1,0 +1,12 @@
+O
+oscilador CMI
+ergódico de
+"Momentum, direção e Divergência"
+de William Blau, implementado como um histograma de colorido.
+O indicador utiliza as classes da biblioteca SmoothAlgorithms.mqh (devem ser copiados para o terminal_data_folder\MQL5\Include). A utilização das classes foi exaustivamente descrito no artigo
+"Série de preço médio para cálculos intermediários sem utilizar buffers adicionais"
+.
+Indicador BlauCMI
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1922

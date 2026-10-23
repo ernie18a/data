@@ -1,0 +1,5 @@
+The Expert Advisor looks for a negative spread and trades using it. The EA waits until Ask is less than Bid, then opens Sell and closes the position immediately.
+I heard that negative spread appears very rarely, please write in the comments if you encounter one. People on the forums recommend trading stocks of Google, Amazon and other big companies.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13678

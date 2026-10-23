@@ -1,0 +1,23 @@
+TREND EXECUTION PLANNER - REGIME AND RISK PANEL
+Additional screenshots
+Trend Execution Planner is a free, open-source MetaTrader 5 chart utility for traders who want to assess market conditions and size a hypothetical trade before placing an order manually or starting another system.
+IMPORTANT: It is an Expert Advisor only because it needs access to live account and symbol specifications. It is strictly non-trading. It never opens, modifies, closes, or sends any order or position request.
+WHAT IT SHOWS
+- A transparent trend-condition score from price/MA direction, MA slope, ADX, and Kaufman's Efficiency Ratio.
+- Strong up-trend, strong down-trend, or mixed/neutral condition classification.
+- Current spread expressed as a percentage of ATR, with a configurable execution-cost limit.
+- Long and short hypothetical plans using the current Ask/Bid, an ATR stop, and a reward/risk target.
+- Broker-normalized lot size calculated in account currency with OrderCalcProfit.
+- Required margin calculated with OrderCalcMargin, plus a free-margin check.
+- A warning if the broker's minimum lot would exceed the selected money risk.
+HOW THE CONDITION SCORE WORKS
+score = direction x 100 x efficiency ratio x min(1, ADX / 50)
+The score is signed by the direction of price relative to a moving average and its slope. The Efficiency Ratio measures whether price moved directly from A to B or followed a choppy path. A positive or negative score describes the current market condition only; it is not a forecast, entry signal, or trade recommendation.
+RISK-PLAN METHOD
+The calculator uses the selected percentage of equity or balance as the requested money risk. Stop distance is the larger of the selected ATR multiple and the broker's minimum stop distance. It calculates the risk of one lot at that stop using the symbol's actual contract and account-currency conversion rules, rounds volume down to the broker's valid volume step, and checks margin for that exact volume.
+USAGE
+1. Attach the tool to any chart and timeframe.
+2. Set the trend-model and risk-plan inputs to match your workflow.
+3. Treat the panel as a condition and execution checklist. Make any trading decision separately.
+SAFETY
+This code contains no CTrade, OrderSend, position modification, or chart-line modification calls. It reads market/account data and creates only its own removable panel objects on the chart.

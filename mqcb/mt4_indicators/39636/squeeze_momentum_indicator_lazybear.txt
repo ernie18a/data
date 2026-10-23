@@ -1,0 +1,1 @@
+Converted LazyBear Squeeze Momentum Indicator from TradingView to MQL4

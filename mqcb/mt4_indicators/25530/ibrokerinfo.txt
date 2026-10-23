@@ -1,0 +1,6 @@
+This indicator shows information about your account and your broker on the chart.
+Parameters
+SizeBackground
+– background size.
+PositionUpDn
+– position to show info on the chart.

@@ -1,0 +1,10 @@
+Authors:
+Richard Donchian, based on the code by Luis Guilherme Damiani, posted by
+Nikolay Kositsin
+. (All credits maintained.)
+This indicator is a modified version of
+Donchian Channels
+by Luis Guilherme Damiani, inspired by
+DonForex DonchianFibo
+indicator for MetaTrader 4.
+I never found this indicator for Metatrader 5, so i made one for me. Hope you enjoy it.

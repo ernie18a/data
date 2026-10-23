@@ -1,0 +1,6 @@
+Murrey levels are an efficient tool to forecast the changes in price movement. The main idea of this system is that all markets move in the same manner.
+The levels were developed based on Gann theory: The basis is Gann square 8x8 used for describing the price movement with the time. These Murrey levels make the market clearer for a trader and help you make your trading profitable. They can be added to various trading strategies.
+Fig.1. Indicator MurreyMathFixPeriod
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20876

@@ -1,0 +1,10 @@
+Modification of the DeMarker indicator.
+Changes:
+Changed the number of dimensions (specifically to simplify use in experts)
+The line of the main indicator is composed of 4 with period shifts
+Added a line of smoothing based on T3 (I do not remember whose algorithm it is)
+Crossing of the main line and T3 are moved to separate buffers
+Separated a histogram of divergence without smoothing
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8675

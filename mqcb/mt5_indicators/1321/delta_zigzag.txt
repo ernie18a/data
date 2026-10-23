@@ -1,0 +1,21 @@
+The most important difference of this indicator from other versions of the zigzag is determination of the trend on a breakthrough level of the local extremums. The number of levels is set in parameters and means that, for instance, in ascending move the trend change will be fixed only when the least of the N local minimums will breakthrough price (where N is a number of levels). For more visualization the Delta ZigZag displays these reversal levels.
+Besides, the indicator can be drawn as on high/low prices, so on close prices, and forms the section reversal only on the basis of the minimum swing height set by the trader. It should be noted that drawn on close prices Delta ZigZag with the number of levels equal to 1, in fact is identical to Kagi charts (visual presentation is different, but logics is the same).
+As for high/low prices, the following features apply also:
+If the last section of zigzag is ascending:
+if current bar forms the new maximum then we continue the section of zigzag up and prohibit the reversal down in current bar.
+if high of the current bar is lower the last value of zigzag and low of the current bar is lower the last value of the zigzag on a set swing height then we draw the descending section (i.e. has zigzag reversal).
+The similar rules applied to descending sections of the indicator.
+Parameters:
+Apply to prices - to use high/low prices or only close prices
+Reversal - reversal mode (in pips or percentage)
+Reversal in pips - the minimum reversal value in pips. The parameter is actual in case if the reversal mode is also in pips and does not produce any influence if the reversal mode is in percentage.
+Reversal in percentage - the minimum value of the reversal in percentage. The parameter is actual in case if the reversal mode is also in percentage and does not produce any influence if the reversal mode is in pips.
+Number of levels - number of last minimums/maximums at which the change of the trend direction will be fixed.
+Delta ZigZag with the number of reversal equal to 2:
+Recommendations:
+More than 3 number of reversal levels is not recommended.
+If close prices are used for drawing, the deals should also be done on close prices (in order to avoid breakthrough trade on shadow levels)
+Reversal levels can also act as (trailing) stop levels.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1321

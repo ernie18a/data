@@ -1,0 +1,14 @@
+This is a very simple and very useful indicator to follow the evolution of profit.
+It displays the actual status of account in the main window and the profit curve in a subwindow.
+There are two method for displaying:
+1./
+Total
+profit of the account
+2./ Profit selected by
+magicnumber
+Recommended: use it on
+M1 timeframe
+because of the more details
+Note:
+The first data will appear in the subwindow after closing of the actual candle. (Be patient, it will be within 1 minute on M1 timeframe.)
+This indicator DOES NOT save data at all. It means, if you change indicator settings or timeframe, the curve will disappear and starts the drawing again

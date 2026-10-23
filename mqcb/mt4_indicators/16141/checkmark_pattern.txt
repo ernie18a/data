@@ -1,0 +1,13 @@
+Purpose of the pattern - predict the type of the next candle: bullish or bearish. It has no further effect.
+The "CheckMark" pattern is plotted the same way as the
+divergence lines
+, which means that a price chart alone is not enough for finding it. An additional indicator is also required. This task is performed best by various oscillators.
+Formation of the pattern involves three last bars. It is necessary to connect the Close prices of bars by lines, and on the oscillator chart — simply highlight three last vales. If "checkmarks" are obtained from both charts and they have different vertical orientation, then the "CheckMark" pattern is found. The local minimum on the oscillator chart is a bullish pattern (blue), the local maximum is bearish (red).
+The indicator has been described in more details in the article
+The "CheckMark" pattern
+.
+Updated on 26.08.2016
+. Version 1.10. Added the ability to select the CCI indicator as the base indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16141

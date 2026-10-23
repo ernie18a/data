@@ -1,0 +1,9 @@
+The indicator shows John Ehlers trendline on the price chart.
+Calculations:
+Instantaneous Trendline = MVA(Price, Period) + SmoothSlope/2,
+where:
+SmoothSlope[i] = (Slope[i] + 2*Slope[i-1] + 2*Slope[i-2] + Slope[i-3])/6,
+Slope[i] = Price[i] - Price[i-Period+1]
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20569

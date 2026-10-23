@@ -1,0 +1,2 @@
+This indicator idea is based on somewhere on the internet, so i decided to recreate it.
+If you want to catch the volatile event on some pairs, maybe this indicator will help you.

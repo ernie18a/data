@@ -1,0 +1,6 @@
+Theory :
+TRIX (triple exponential average (TRIX) indicator is an oscillator used to identify oversold and overbought markets, and it can also be used as a momentum indicator.  It is using EMA for calculation
+This version :
+Is using the "Double smoothed Wilder's EMA" variation instead of using "regular" EMA for TRIX calculation. That makes it faster in response to market changes than the original TRIX indicator
+Usage :
+You can use this version the usual way - change of color can be used as a signal

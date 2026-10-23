@@ -1,0 +1,2 @@
+BBMACD is the Bollinger Bands® and MACD indicator in the same place at separate window.
+Use BBMACD indicator on H1 or H4 timeframes.

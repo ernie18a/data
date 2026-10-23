@@ -1,0 +1,69 @@
+Smart Trend Score
+Overview
+Smart Trend Score is a clean and lightweight MetaTrader 5 indicator designed to identify high-quality trading opportunities using multiple trend and momentum filters.
+Unlike traditional indicators that draw arrows, trend lines, or multiple graphical objects on the chart, Smart Trend Score displays a single informative text line in the upper-left corner of the chart, making it ideal for traders who prefer a clean workspace.
+The indicator analyzes market conditions and generates BUY, SELL, or NO SIGNAL indications together with a confidence score and automatically calculated trading levels.
+Features
+* Clean chart without arrows or graphical objects
+* BUY signal displayed in Lime
+* SELL signal displayed in Red
+* NO SIGNAL displayed in Gold
+* Confidence Score (%)
+* Automatic Entry Price
+* Automatic Stop Loss
+* Automatic Take Profit calculated from the selected Risk/Reward ratio
+* Fully customizable text position
+* Adjustable Arial font size
+* Popup alerts
+* Push notifications
+* Email notifications
+* One alert per closed candle
+Trading Logic
+Smart Trend Score combines several market filters to reduce false signals:
+* Fast and Slow Linear Weighted Moving Averages
+* Trend direction confirmation
+* Market structure analysis (Higher High, Higher Low, Lower High, Lower Low)
+* ADX trend strength filter
+* ATR volatility filter
+* Price action confirmation
+* Multi-factor scoring system
+Signals are generated only after the candle closes to avoid unstable signals.
+Score System
+Each signal receives a confidence score between 0 and 100.
+The score is calculated from several independent market conditions.
+Users can define the minimum acceptable score in the indicator inputs.
+If the calculated score is below the selected threshold, the indicator displays:
+NO SIGNAL
+instead of generating a trading signal.
+Risk Management
+The indicator automatically calculates:
+* Entry Price
+* Stop Loss
+* Take Profit
+Take Profit is calculated using the selected Risk/Reward ratio.
+Example:
+* Stop Loss = 250 points
+* Risk/Reward = 1:2
+The indicator automatically places Take Profit at twice the Stop Loss distance.
+Display Example
+BUY | Score: 92% | Entry: 1.08452 | SL: 1.08252 | TP: 1.08852 | RR: 1:2.00
+SELL | Score: 90% | Entry: 1.08452 | SL: 1.08652 | TP: 1.08052 | RR: 1:2.00
+NO SIGNAL | Score: 65%
+Input Parameters
+* Font Name
+* Font Size
+* Text X Position
+* Text Y Position
+* BUY Color
+* SELL Color
+* NO SIGNAL Color
+* Stop Loss (Points)
+* Risk/Reward Ratio
+* Minimum Score
+* Show Score
+* Enable Popup Alerts
+* Enable Push Notifications
+* Enable Email Alerts
+Notes
+Smart Trend Score is an analytical tool intended to assist traders in evaluating market conditions.
+It does not open, modify, or close trading positions and should be used as part of a complete trading plan with proper risk management.

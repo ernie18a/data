@@ -1,0 +1,15 @@
+The indicator draws a Moving Average, as well as bullish and bearish areas built using Bollinger Bands calculated based on this Moving Average.
+It has five input parameters:
+Period of MA calculation
+- MA calculation period;
+Method of MA calculation
+- MA calculation method;
+Applied price of MA
+- price used for the MA calculation;
+Period of BB calculation
+- Bollinger Bands calculation period;
+Deviation of BB
+- Bollinger Bands deviation.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19878

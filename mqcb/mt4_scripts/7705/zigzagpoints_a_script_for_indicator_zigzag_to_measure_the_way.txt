@@ -1,0 +1,8 @@
+In the last year's
+Statistical Report #4
+, the greatest possible hypothetic result was measured for a situation where all entering and leaving the market are made at the
+Zigzag
+extremums. This given script measures from and to a certain point, as the "From" and "To" parameters are given. For the checking to be more convenient, the calculated entering and leaving points are put out using Print(). You can remove all unnecessary limitations or printing.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7705

@@ -1,0 +1,6 @@
+Theory :
+Stochastic oscillator is, due to its nature (it is an oscillator with known bounds) suitable to be made as an "on chart" version using highest high / lowest low channel method. So, here it is too. Also one additional coloring method (along with the existing 3) is added : color change on signal line cross
+Usage :
+You can use it as any other stochastic indicator
+PS:
+The "big picture" example comparing the on chart version with the same indicator in its usual;l separate window (cross on signal line coloring mode chosen)

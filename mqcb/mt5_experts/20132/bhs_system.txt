@@ -1,0 +1,68 @@
+The author of the idea
+:
+Yuri
+,
+the mq5 code author
+:
+barabashkakvn
+.
+The Expert Advisor calculates the nearest upper and lower "round" price depending on
+Step of the "round" number
+(to see how the calculation of the "round" price is performed,
+comment out the line
+in OnDeinit:
+//+------------------------------------------------------------------+
+//| Expert deinitialization function                                 |
+//+------------------------------------------------------------------+
+void
+OnDeinit
+(
+const
+int
+reason)
+  {
+//--- how Math() function works:
+return
+;
+An example will be printed in the Experts tab when you unload the EA from the chart). The EA checks the position of the price and the iAMA (Adaptive Moving Average, AMA) indicator to place an initial pending order.
+If the Close price of bar #0 is above the indicator, a pending Buy Stop order will be placed at the upper round price.
+If the Close price of bar #0 is below the indicator, a pending Sell Stop order will be placed at the lower round price.
+Lifetime is set for each pending order:
+Life time of the pending order
+(in hours) is added to the last known server time.
+Separate trailing methods are applied for BUY and SELL positions. They are configured in
+Trailing Stop BUY
+and
+Trailing Stop SELL
+.
+Input Parameters
+Lots
+- volume;
+Stop Loss BUY
+- stop loss for the Buy Stop order;
+Stop Loss SELL
+- stop loss for the Sell Stop order;
+Trailing Stop BUY
+- trailing stop for Buy positions;
+Trailing Stop SELL
+- trailing stop for Sell positions;
+Step of the "round" number
+- the step value for the round price;
+Life time of the pending order (in hours)
+- pending order life time in hours;
+AMA: Period of calculation
+- AMA period;
+AMA: Period of fast MA
+- fast moving average period;
+AMA: Period of slow MA
+- slow moving average period;
+AMA: Horizontal shift
+- horizontal shift of the indicator;
+AMA: Type of price
+- price type used for the indicator calculation;
+magic number
+- unique identifier for the EA.
+Testing on EURUSD, H1:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20132

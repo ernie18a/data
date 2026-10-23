@@ -1,0 +1,20 @@
+Indicator MA_Gideon2.
+extern
+double
+slowPeriod
+=
+9
+;
+extern
+double
+MainPeriod
+=
+35
+;
+extern
+double
+TrendOverPeriod
+=
+14
+;
+MA_Gideon2

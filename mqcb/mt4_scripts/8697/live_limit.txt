@@ -1,0 +1,11 @@
+Many probably encountered a situation where the market requires instant decisions (especially true for pipsing and scalping), but the process of calculating the acceptable risk, and then placing the corresponding stop loss and take profit takes a lot of time. For these people, the problem can be solved by this script assigned to a hotkey. When started, the script finds the line with a special label (named "GO!") on the chart and opens a limit order on the line level (if the line is above the price - a buy limit order, if below - sell limit). The lot size (Lots variable), the maximum loss by stop loss (the MoneyRisk variable, in deposit currency) and the profit/loss ratio (the ProfitLoss variable, used as a basis for placing take profit) are set in the script settings. Based on the variable values, the script automatically calculates the values of stop loss and take profit for the current instrument and opens an order.
+Installation of the script:
+Download the script
+Open it in the MetaEditor and edit the values of the variables Lots, MoneyRisk and ProfitLoss
+Save the script in the 'experts\scripts\' folder
+Assign the script to a hotkey.
+Create a line with the name "GO!" on the chart
+The script is ready to use - now by moving the line and pressing the hot key combination you can instantly open limit orders. If you want to use the ability to open orders with different lot and risk values using hotkeys - save the variants of the script with different variable values under a different name and set a hotkey for each of them.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8697

@@ -1,0 +1,18 @@
+The custom MACD_Signal_Divergence indicator draws a signal line of the MACD indicator in a separate window and displays found divergences in the indicator window and on the price chart.
+Unlike the standard MACD, this indicator only draws a signal line.
+The indicator has six configurable parameters:
+Fast EMA
+- the fast EMA period;
+Slow EMA
+- the slow EMA period;
+MACD SMA
+- the signal line period;
+Applied price
+- the calculation price;
+Bullish color
+- the color of bullish signal arrows and lines;
+Bearish color
+- the color of bearish signal arrows and lines;
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19957

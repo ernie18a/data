@@ -1,0 +1,5 @@
+Synthetic Japanese candlesticks over the period defined in the indicator settings, calculating on each bar.
+Fig 1. Indicator PeriodCandle
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21081

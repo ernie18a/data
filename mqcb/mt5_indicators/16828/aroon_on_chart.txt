@@ -1,0 +1,1 @@
+Here is a version of Aroon indicator that displays colored line, bars or candles on the mains chart (and it can do it automatically depending on the chart type).

@@ -1,0 +1,127 @@
+Indicator Micro Pivots displays the selected Fibonacci levels between two moving averages.
+It has thirty-two adjustable parameters:
+First MA period
+- first moving average calculation period
+First MA method
+- first moving average calculation method
+First MA applied price
+- first moving average calculation price
+Second MA period
+- second moving average calculation period
+Second MA method
+- second moving average calculation method
+Second MA applied price
+- second moving average calculation price
+Show Fibo-level 1
+- show Fibonacci level 1
+Fibo-level 1 value
+- value of Fibonacci level 1
+Show Fibo-level 2
+- show Fibonacci level 2
+Fibo-level 2 value
+- value of Fibonacci level 2
+Show Fibo-level 3
+- show Fibonacci level 3
+Fibo-level 3 value
+- value of Fibonacci level 3
+Show Fibo-level 4
+- show Fibonacci level 4
+Fibo-level 4 value
+- value of Fibonacci level 4
+Show Fibo-level 5
+- show Fibonacci level 5
+Fibo-level 5 value
+- value of Fibonacci level 5
+Show Fibo-level 6
+- show Fibonacci level 6
+Fibo-level 6 value
+- value of Fibonacci level 6
+Show Fibo-level 7
+- show Fibonacci level 7
+Fibo-level 7 value
+- value of Fibonacci level 7
+Show Fibo-level 8
+- show Fibonacci level 8
+Fibo-level 8 value
+- value of Fibonacci level 8
+Show Fibo-level 9
+- show Fibonacci level 9
+Fibo-level 9 value
+- value of Fibonacci level 9
+Show Fibo-level 10
+- show Fibonacci level 10
+Fibo-level 10 value
+- value of Fibonacci level 10
+Show Fibo-level 11
+- show Fibonacci level 11
+Fibo-level 11 value
+- value of Fibonacci level 11
+Show Fibo-level 12
+- show Fibonacci level 12
+Fibo-level 12 value
+- value of Fibonacci level 12
+Show Fibo-level 13
+- show Fibonacci level 13
+Fibo-level 13 value
+- value of Fibonacci level 13
+Types of moving averages that can be used as the calculation method:
+Simple
+-
+simple moving average
+Exponential
+-
+exponential moving average
+Smoothed
+-
+smoothed moving average
+Linear-Weighted
+-
+linear weighted moving average
+Wilder Exponential
+-
+Welles Wilder's exponential moving average
+Sine-Weighted
+-
+sine-weighted moving average
+Triangular
+-
+triangular moving average
+Least Square
+-
+least square moving average (LSMA)
+Hull MA by Alan Hull
+-
+Hull's moving average (HMA)
+Zero-Lag Exponential
+-
+exponential moving average with the minimum delay
+Instantaneous Trendline by J.Ehlers
+-
+John Ehlers' trendline
+Moving Median
+-
+moving median
+Geometric Mean
+-
+moving average based on the geometric mean method
+Regularized EMA by Chris Satchwell
+-
+moving average based on Chris Satchwell's Regularized EMA method
+Integral of Linear Regression Slope
+-
+integral of linear regression slope (ILRS MA)
+Combination of LSMA and ILRS
+- moving average - combination of
+LSMA
+and
+ILRS
+methods
+Triangular MA generalized by J.Ehlers
+-
+John Ehlers' triangular moving average
+Volume-Weighted
+-
+volume-weighted moving average
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23525

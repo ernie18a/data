@@ -1,0 +1,5 @@
+Parallel strategies is an Expert Advisor based on many strategies that work in parallel mode (each strategy has its own magic number, Time to Trade, Stop Loss, Take Profit, Trailing Stop, Money Management, Entry Rules, Exit Rules). Each strategy is a unique instance of a class "EA" .
+Strategies used in this EA:
+Moving Average Crossover, MACD Breakout, Heiken Ashi Color Change, Heiken and MACD (Combo). You have the ability to choose which strategy to run or you can use all of them.
+Other files: Heiken_Ashi_Smoothed.mq4 (indicator).
+The idea of this Expert Advisor is to help new MQ4 coders understand the basic functionallity of strategy development. This EA is like a template and can be optimised anytime. Any new classes can be added (like Hedging Positions, Martingale and more) and can be related to the class "EA".

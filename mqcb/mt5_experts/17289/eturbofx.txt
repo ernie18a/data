@@ -1,0 +1,14 @@
+Analysis of bars, if they contain N consecutive bars of the same type.
+Author of idea
+—
+... Rick D. ... .
+,
+author of MQL5 code
+—
+barabashkakvn
+.
+An example of the strategy: find N consecutive bullish bars, the body of each bar is greater than the previous one. This gives a sell signal.
+N consecutive bearish bars with the body of which greater than previous, give a buy signal.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17289

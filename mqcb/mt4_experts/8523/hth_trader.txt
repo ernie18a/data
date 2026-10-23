@@ -1,0 +1,51 @@
+Description:
+Hedge The Hedge
+Trader was developed to hedge the normal hedge(EURUSD hedged with USDCHF). Pairs-Trading, at times, has heavy DD. This trading strategy tries to
+hedge the hedge
+to reduce the heavy drawdown that is experienced by traders.
+HTH
+Trader, hedges
+EURUSD with USDCHF
+, and
+GBPUSD with AUDUSD
+, creating
+hedge the hedge
+strategy. The strategy trades (4) positions per day. The DD is also limited since the hedged positions are only allowed to stay live for the length of one day. When the new day starts, when the
+Hour()
+on the current broker is greater than zero, the EA enters. The EA waits until the
+Hour()
+is 23 to close the current positions. The EA restarts, when the new day starts.
+When the deviation of previous day for EURUSD is positive, the EA enters with LONG EURUSD, LONG USDCHF, SHORT GBPUSD and LONG AUDUSD. In this case,
+EURUSD is hedged with USDCHF
+,
+EURUSD is hedged with GBPUSD
+,
+USDCHF is hedged with AUDUSD
+, and
+GBPUSD is hedged with AUDUSD
+.
+When the deviation of previous day for EURUD is negative, the EA enters with the SHORT EURUSD, SHORT USDCHF, LONG GBPUSD and SHORT AUDUSD.
+There is strong correlation between EURUSD/USDCHF ratio and GBPUSD/AUDUSD ratio, hence it is possible to
+hedge the hedge
+.
+New Function: Emergency Trading
+If 'enable_emergency_trading' is set to 'true', this EA waits for the loss to reach 'emergency_loss' PIP value, to enter into new trades. The new trades are going to be the positive profited positions. For example, if you have EURUSD in loss, USDCHF in loss, GBPUSD in profit and AUDUSD in profit, when 'emergency_loss' is reached, the EA will open a clone of the GPBUSD position and the AUDUSD position, since they are positive in profit. This function is setup to have a single execution per day, if 'emergency_loss' PIP value is reached, only execute 'emergency_trading' function once, then restart the next day. This function cannot be turned off, unless the code is deleted.
+if(enable_emergency_trading==true && totalprofit<=-emergency_loss){doubleorders();}
+EA Options:
+Trade | enables trading, if set to true
+C1 | 1st currency
+C2 | 2nd currency
+C3 | 3rd currency
+C4 | 4th currency
+Show_Profit | enables tracking of profit/loss of all trades executed by this EA
+Enable_Profit | Enable profit monitoring, to close all positions
+Enable_Loss | Enable loss monitoring, to close all positions
+Enable_Emergecy_Trading | enables to enter new trades when profit reaches Emergency_Loss PIP value
+Profit | PIP value
+Loss | PIP value
+MagicNumber1 | number to track C1
+MagicNumber2 | number to track C2
+MagicNumber3 | number to track C3
+MagicNumber4 | number to track C4
+E_MagicNumber | number to track Emergency Trades
+Lot | order lots

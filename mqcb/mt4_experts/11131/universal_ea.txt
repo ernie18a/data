@@ -1,0 +1,21 @@
+Author:
+I learned how to code MQL4 from Jim Dandy and his youtube tutorials, which can be found here,
+https://www.youtube.com/watch?v=n8fZINmSv0g
+.
+My code is inspired by his teachings. I also learned from other EAs and used some portions of their code as well. I can't recall the names of all the EAs but if you see your code and wish to be recognized then just let me know. I made this EA from a blank template and I am the only one who coded it.
+Hello traders and potential traders. I have been coding now for over 2 months and I have created my first official EA. The name is Universal EA because it is very universal in its use and it is nearly infinitely adjustable. Please feel free to play around with the inputs or code as you see fit and email me at p.a.cofflin@gmail.com with any comments or concerns and happy trading.
+Recommendations:
+Adjust the inputs until you find a series of inputs that works for you. Then share with me if you feel inclined :).
+Code is based on 5 different indicators working together to create a very strong buy signal that can increase the chances of getting into a strong uptrend early.
+There are many different entry and exit methods included in this EA and all of them can be adjusted to fine tune your entry and exit points.
+Save your inputs into SET files for later use. There are nearly infinite amount of variations with this EA so keep changing inputs until you find what works for your strategy.
+I have uploaded tutorials on youtube. You can find them here:
+Universal EA Tutorial
+part 1:
+https://www.youtube.com/watch?v=ZKRzSfHMjpQ
+part 2:
+https://www.youtube.com/watch?v=lNt8PNrRKGs
+part 3:
+https://www.youtube.com/watch?v=Afrg4YPV8Mg
+part 4:
+https://www.youtube.com/watch?v=w6wcXU-ufwI

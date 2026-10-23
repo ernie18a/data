@@ -1,0 +1,6 @@
+Originally developed by - Andreas Uhl
+Dashboard based on the indicator available
+here
+The strength of the CMA is that the current value of the time series must exceed the current volatility-dependent threshold, so that the filter increases or falls, avoiding false signals in weak phases. In simple words it compares the variance and the squared difference between the corrected average and the regular average and decides if the CMA should advance or not.
+Version update:-
+Added option to change color on slope change.

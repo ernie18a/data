@@ -1,0 +1,6 @@
+Author:
+Kevin Kurka, Kurkafund.com
+Numeric representation of how many times each price occurred during a given period. Prints the number of occurrences at each price level within the given time.
+Recommendations:
+Use it in an EA to determine support and resistance levels
+Can be used for weighted Mean revisions.

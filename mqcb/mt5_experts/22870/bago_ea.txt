@@ -1,0 +1,24 @@
+Idea by:
+Scriptor
+Code mq5 by:
+barabashkakvn
+The EA uses indicators iMA (Moving Avrage, MA) and iRSI (Relative Strength Index, RSI).
+Original description:
+Bago system can be categorized as a trend following system based on the cross of ema 5 and ema 12. When used properly on hourly chart, it can capture daily swings of 100+ pips.
+The use of small number emas gives Bago system the sensitivity to generate early signals following 10-20 minutes scale waves, but also produces a great deal of false signals that can quickly drain a trader's account. So filters are extremely important for Bago system.
+While Bago system is largely a discretionary system, the integration of two excellent filters may make it possible to use a computer program to generate signals with great high successful rate. This program is written to investigate this possibility.
+The mechanism to generate a raw Bago signal is simple: ema 5 crosses ema 12 in the same direction as RSI 21 crosses 50 level. To abstract real signals, we need to pay attention to context: where the price are,and when the crosses happens.
+The greatest meaning of integrating Vegas tunnel into Bago system is, the tunnel as well as its fibo lines changes the original plain 2-d space into a twisted 2-d space. The twisted price trends now have the coordinates. With this coordinates system, we may see the entry and exit with higher accuracy.
+So, this program will first construct the simple rules, upon which the the raw signals are generated, then it will add rules to filter those signals. Those new rules are quantified as parameters, so they can be easily changed and optimized based on the output results.
+Enough talk, let's get to the point.
+The images below show the values of all indicators on bars #2 and #1 for opening BUY:
+Fig. 1. Indicator values on bar #2
+Fig. 2. Indicator values on bar #1
+Here is how the test on EURUSD H1 looks:
+First, I tested BUY and SELL separately and then performed a joint test.
+Fig. 3. Only SELL test
+Fig. 4. Only SELL test
+Fig. 5. Test with both BUY and SELL enabled
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22870

@@ -1,0 +1,8 @@
+Theory :
+The Aroon indicator was developed by Tushar Chande in 1995. Arron oscillator is belonging to the same family and is (even if it does not look so at the first glance) a direct offspring of Aroon indicator.
+This version is correcting what is frequently found for metatrader versions of Aroon oscillator indicator (level -100 never reached) and is adding multi time frame option to it. Multi time frames are having, apart from all the standard multi time frames that can be used in metatrader 5, 3 additional "time frames" :
+first higher time frame (first time frame higher than the current chart time frame)
+second higher time frame (second time frame higher than the current chart time frame)
+third higher time frame (third time frame higher than the current chart time frame)
+Usage :
+You can use color changes as signals

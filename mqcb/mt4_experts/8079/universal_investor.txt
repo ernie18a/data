@@ -1,0 +1,4 @@
+A universal EA for the long-time, portfolio trading. Using averages in this EA demonstrates profiting with many symbols.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8079

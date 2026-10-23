@@ -1,0 +1,4 @@
+Awesome Oscillator, customizable, 4 colors, and some more parameters
+I started with default MetaQuotes Awesome Oscillator.
+I borrowed the 4 colors idea from AIMS YouTube videos. And some more parameters from other Awesome Oscillators in CodeBase.
+I wanted the most customizable AO possible, for my needs.

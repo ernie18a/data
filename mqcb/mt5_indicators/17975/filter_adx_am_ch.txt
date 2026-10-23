@@ -1,0 +1,12 @@
+Real author:
+Andrey Matvievskiy
+A simple trend indicator based on the
+smoothed Average Directional Movement Index
+drawn in the main chart window. The uptrend is marked by a lime dot, if the plus line of ADX is above its minus line. The dot is red if the position of the lines is the opposite. A large dot with a growing ADX is an indication of trend strengthening. A small dot with a falling ADX indicates its weakening.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 22.07.2009.
+Fig1. The FILTER_ADX_AM_ch indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17975

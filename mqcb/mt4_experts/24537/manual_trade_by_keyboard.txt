@@ -1,0 +1,4 @@
+This EA uses your key pressing effort to execute what you want to do..
+There is no GLOBAL ACTION which will effect your account and other chart in which do not contain this EA;
+Please be careful about TO ADD GLOBAL ACTIONS/EXECUTIONS (which will effect your account / portfolio) into ANY EA ; since I have terrible experiences to do so..
+I RECOMMEND USE ANOTHER EA FOR THAT EXECUTIONS..

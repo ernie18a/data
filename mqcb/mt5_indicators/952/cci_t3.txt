@@ -1,0 +1,8 @@
+Standard Commodity Channel Index smoothed by Tilson algorithm. The indicator implements efficient calculation method (calculation by bar closing).
+Tips:
+The indicator can be used as the integral part of a trading system as the signal filter.
+BUY signal - the histogram crosses the zero line upwards.
+SELL signal - the histogram crosses the zero line downwards.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/952

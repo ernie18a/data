@@ -1,0 +1,6 @@
+Theory :
+The indicator is based on Akram El Sherbini's article "Time Cycle Oscillators" published in IFTA journal 2018.
+The WPO is a short-term oscillator that measures the buying and selling period of price cycles over a certain time interval. The leading oscillator indicates a rise in buying period when it moves above the zero line and a rise in selling period when it moves below the zero line
+Usage :
+Trading Tactics
+Centerline Crossover: As shown in Figure 11, a bullish centerline crossover occurs when the WPO line moves above the zero level to turn positive. A bearish centerline crossover occurs when the WPO line moves below the zero level to turn negative. When bulls are in control, the price rally begins and the average of the bull’s period T increases to drive the WPO line above the centerline. A buy signal is subsequently triggered. When the bulls start to loose power, prices move sideway and the average period decreases. In this case, the WPO line may flutter near the centerline and cause false signals, whipsaws. To avoid the whipsaws occuring on the centerline, the following trading tactics are proposed.

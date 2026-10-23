@@ -1,0 +1,17 @@
+Every candle tells a story. ASQ Candle Scanner reads it for you — tagging liquidity sweeps, breaks of structure, fair value gaps, reversal patterns, and inside bars directly on your chart. Non-repaint: only fully closed candles are analyzed. Multi-candle lookback shows you the last N bars at a glance.
+FEATURES:
+- 5 structure tags detected on every closed candle:
+— BOS (Break of Structure): strong body closes beyond previous high/low
+— LQ (Liquidity Sweep): wick beyond previous H/L but close inside — trapped traders
+— FVG (Fair Value Gap): price gap between candle and 2-back — imbalance zone
+— REV (Reversal): pin bar (body < 30% of range, wick > 2x body) or engulfing candle (body > 1.3x previous)
+— IB (Inside Bar): current high/low completely within previous candle — compression before breakout
+- Trend direction arrows — bullish (up), bearish (down), neutral (dot). Color-coded green/red/amber
+- Buyer vs seller sentiment — percentage split based on close position within the range
+- Momentum strength — Strong/Moderate/Weak/Indecisive based on body-to-range ratio
+- Multi-candle lookback — analyze and tag the last 1-20 candles (configurable). Latest candle gets larger arrows
+- Optional prediction bubble with directional probability
+- Clean mode — arrows only, no tags or text
+- Non-repaint guarantee — only closed candles are analyzed, never the current forming candle
+Drop on any chart, any timeframe. Works on forex, gold, indices, crypto — anything with OHLC data.
+Single file, zero dependencies. 288 lines of production MQL5.

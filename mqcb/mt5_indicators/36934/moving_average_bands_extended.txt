@@ -1,0 +1,5 @@
+Since in the original (published here
+Moving Average Bands
+) it is not as obvious how the indicator can be used, here is a version that is extended with one of the possible ways (that relies of the bands values) how the indicator can be used for trading signals
+Recommendations:
+You can use color changes for entries, re-entries and possible exits

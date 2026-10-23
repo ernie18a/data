@@ -1,0 +1,21 @@
+The
+Mini Prop-Firm Traders Utility Dashboard
+dynamically analyzes all open and closed trades on the account and presents key metrics in a clean, easy-to-read interface directly on the chart. You don't need to open your MetaTrader's ToolBox before you know what  is happening right from your chart! Every information you need to know to help you avoid trading errors and spontaneous trading. A full and elaborate Prop-Firm Traders Utility Dashboard can be found on my mql5.com market store, check it out! It is very useful for all traders.
+This tool transforms your MT5 chart into a powerful trading control center, allowing you to:
+* Monitor risk in real time.
+* Track performance accurately.
+* Maintain discipline.
+* Trade with confidence.
+*** It is collapsible and movable across the chart window.
+This Mini Prop-Firm Traders Utility Dashboard has these input parameters features:
+1. input int Panel_X = 5; //Distance - left/right => This is to move the indicator left or right to your preferred spot on the chart.
+2. input int Panel_Y = 20; //Distance - up/down => This is to move the indicator up or down to your preferred spot on the chart.
+3. input color Panel_BG = clrNavy;//Background Color (Optional) => This is to determine your favorite background color for the indicator panel.
+4. input color Text_Color = clrLightGray;//Text Color (Optional) => This is to determine your favorite text color on the indicator's panel for easy reading.
+FEATURES ON THE DASHBOARD:
+# Account Balance.
+# Equity Balance.
+# Total Trades Today.
+# Positions (Opened Trades).
+# Floating Profit/Loss.
+# Today's Closed Trades So Far.

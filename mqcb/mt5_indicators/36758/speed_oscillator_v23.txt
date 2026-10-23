@@ -1,0 +1,15 @@
+History:
+v 2
+v 2.2
+v 2.3  adds fixes, code improvement and Price-to-MA Distance
+Information:
+Trade Value
+depends on
+Price Positioning,
+the shape of which can be described also by MA Speed and Price-to-MA Distance.  This indicator provides:
+Speed Data as a Histogram, scaled with the historical average.
+Distance Data as a Line, in percentage points.
+Use:
+The two properties are provided together in a single indicator more so for ease of use, than their immediate compatibility. On the surface, the indicator makes it easy to distinguish price
+pressure
+on trending Moving average.

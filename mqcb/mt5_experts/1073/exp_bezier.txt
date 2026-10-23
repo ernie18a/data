@@ -1,0 +1,13 @@
+The Exp_Bezier Expert Advisor is based on the change in the direction of a universal
+Bezier
+curve. A signal for a transaction forms when a bar is closing, provided that the curve direction has changed.
+Proper operation of the generated Expert Advisor requires the compiled indicator file Bezier.ex5 to be placed in terminal_data_directory\MQL5\Indicators.
+Tests shown below were run using the default input parameters of the Expert Advisor. Stop Loss and Take Profit were not used during the tests.
+Fig. 1.
+Examples of transactions in the chart
+Testing results for AUDUSD H4 over 2011:
+Fig. 2.
+Testing results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1073

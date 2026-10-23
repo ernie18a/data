@@ -1,0 +1,13 @@
+Exponential Moving Average -
+RSI
+Volatility-Adjusted by Jose Silva.
+Input parameters:
+RSIPeriod
+- Period of RSI indicator;
+EMAPeriods
+- Period of EMA indicator;
+Price
+- Applied price;
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/907

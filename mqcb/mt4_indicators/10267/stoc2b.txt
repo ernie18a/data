@@ -1,0 +1,7 @@
+You can choose Stochastic for only 1 current TimeFrame (
+TimeFrame2 = false; TimeFrame3 = false;
+TimeFrame4 = false
+)
+or up to 4 TimeFrames (TimeFrame2 = true; TimeFrame3 = true;
+TimeFrame4 = true).
+The indicator is automatically calculates the following 3 TF.

@@ -1,0 +1,15 @@
+This program is created for training on historical data. Try it. It’s interesting. 
+This requires to run the application training.exe, open Strategy tester, start testing of the attached expert adviser HistoryTrain.mql. Turn on visual mode and adjust the scroll speed of history. 
+The adviser works with the DLL so it is necessary to allow the DLL in the "Tools" menu, "Options".
+Mark the next items:
+-Allow dll imports
+-Allow live trading
+And remove the check mark from the item
+-Confirm dll function call
+In the application window there are only 3 buttons: buy, sell, close. Look at the currency chart and carry out trading activities on historical data. At the same time look at the chart of profit.
+Unpack the archive to the root, then there will be a folder c: \ HistTraining \ in which there are 4 files:
+HistoryTrain.mql
+libSharedVarsDLLv2.def
+SharedVarsDLLv2.dll
+Training.exe
+Copy HistoryTrain. mql to the folder with the experts advisers.

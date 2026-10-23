@@ -1,0 +1,10 @@
+Indicator has been updated!
+This indicator is a ported version of the
+FractalZigZagNorepaint
+indicator that is available on the MQL4 Code Base.
+It uses the Zigzag indicator to ascertain swing highs and lows. These swings can then be used to draw or estimate a non redrawing zigzag indicator. The indicator backdraws values 2 bars from the current bar.
+The program has 4 input variables explained below.
+Input variables:
+The first variable determines when a fractal low or high is drawn with reference to the close of the current bar. Set CalculateOnBarClose to true and indicator arrows will only be drawn on the close of the current bar or the open of the next bar.
+ZZDepth and ZZDev variables are related to the input parameters for the Zigzag indicator. ZZDepth corresponds to the ExtDepth input variable  and ZZDev corresponds to the ExtDeviation input variable of the Zigzag indicator. ExtBackStep is permanantly set to 1.
+nShift simply sets the number of pips the arrows will be above or below a fractal high or low.

@@ -1,0 +1,7 @@
+The
+Schaff Trend Cycle
+indicator based on the difference between two DeMarker oscillators with different periods.
+Fig.1. The ColorSchaffDeMarkerTrendCycle indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14055

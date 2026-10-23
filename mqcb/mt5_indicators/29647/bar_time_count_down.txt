@@ -1,0 +1,4 @@
+This MT5 indicator is to count down the remaining time of the current bar as the format HH:MM:SS
+The label can be positioned with 2 ways:
+FOLLOW_PRICE  --- The label always follows the current price.
+FIXED_POSITION --- The label is positioned at the top of chart,you can double click and move it.

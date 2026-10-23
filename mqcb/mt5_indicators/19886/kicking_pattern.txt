@@ -1,0 +1,16 @@
+The Kicking Pattern indicator searches for a sequence of candlesticks on a chart and marks bullish and bearish sequences.
+Bearish Pattern:
+candlestick up - candlestick down - candlestick up - candlestick down
+;
+Bullish pattern:
+candlestick down - candlestick up - candlestick down - candlestick up
+.
+An example:
+The indicator has two switchers:
+Show bullish patterns
+- enable marking of bullish patterns;
+Show bearish patterns
+- enable marking of bearish patterns.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19886

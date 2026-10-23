@@ -1,0 +1,11 @@
+Real author
+: VadimVP
+The indicator draws a color filled channel at a distance from the current price, which is equal to the current spread multiplied by ten.
+In other words, the indicator draws an area, trading inside which would most likely bring loss. It is especially useful for currency pairs with huge spread values.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 22.11.2010.
+Fig.1 The RiskSpread indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18191

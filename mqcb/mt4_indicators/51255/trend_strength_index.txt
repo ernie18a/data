@@ -1,0 +1,6 @@
+The Trend Strength Index indicator measures strength of current trend. Basically it is similiar to a simplified auto regression indicator, because Correlation function calculates the Pearson correlation coefficient between two sets of data: the closing prices and the bar indices over a specified length. This coefficient ranges from -1 to 1, indicating the strength and direction of the linear relationship between the index of the bar and bar close price.
+Interpretation:
+A value near 1 means strong uptrend with small deviation to the mean.
+A value near -1 means strong downtrend with small deviations to mean.
+A value near 0 means that there is possibly a flat.
+[08/22/24] Fixed issue with indicator not updating

@@ -1,0 +1,9 @@
+The EA trades on the breakout or the retreat from the support/resistance lines. The lines are set manually by the trader using the "Trend line" object on the toolbar.
+When the price moves towards the profit the EA trails the Stop Loss order.
+Two trade modes are available:
+Retreat from the line. In this case, the buy order is placed by the "up" arrow once the price touches the support level (when the bar opening price is above the line). The sell order is placed by the "down" arrow once the price touches the resistance level (the bar opening price is below the line).
+The breakout of the line. Buy and sell are placed by the ↕ arrow once the line crosses the resistance and the support levels, respectively.
+For ease of visual perception, the line colors are set according to the slope angle, as well as zero thickness in case incompatible trade directions relative to it are set. In that case the line is considered to be disabled, and trading based on it is not performed. A reduction to the horizontal is provided once the trader moves the second plot point of the horizontal line to the left of the first plot point, in order to simplify its placement.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14206

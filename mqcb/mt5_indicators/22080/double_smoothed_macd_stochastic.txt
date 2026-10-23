@@ -1,0 +1,29 @@
+As its name suggests, this oscillator is a stochastic MACD smoothed twice
+It has eight adjustable parameters:
+Stochastic period
+Smoothing
+- smoothing period
+Signal period
+- signal line period
+Fast EMA period
+Slow EMA period
+Applied price
+Overbought
+- overbought level
+Oversold
+- oversold level
+Calculation:
+DSS = PrevDSS + Beta * (DDS3-PrevDSS)
+Signal = PrevSignal + Alpha * (DSS-PrevSignal)
+where:
+DDS3 = 100.0 * (DDS2-Min2) / (Max2-Min2)
+Max, Min - maximum and minimum DDS2 values in the 'Stochastic period' range
+DDS2 = PrevDDS2 + Beta * (DDS1-PrevDDS2)
+DDS1 = 100.0 * (MACD-Min1) / (Max1-Min1)
+Max1, Min1 - maximum and minimum MACD values in the 'Stochastic period' range
+MACD = EMA(Applied price, Fast EMA period) - EMA(Applied price, Slow EMA period)
+Alpha = 2.0 / (1+Signal_EMASignal period)
+Beta  = 2.0 / (1+Smoothing)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22080

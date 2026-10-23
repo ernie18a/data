@@ -1,0 +1,3 @@
+Converted ATR Bands by AlexanderTeaH from TradingView to MQL4
+In situation where entry is not reversal, use ATR as guide for stop loss or exit.
+Also can be used for trail stop like chandelier exit.

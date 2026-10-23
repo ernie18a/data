@@ -1,0 +1,10 @@
+From one of the posts of the forum it turned out that there is no "pure metatrader 5" version of this indicator. Some of the Ehlers explanation (the rest in the original TASC  V32.8 article ) :
+John Ehlers
+:
+Early Trend Detection
+Here’s one way to detect a trend early and know how long to stick with it.
+Trading the trend is a favorite technique of technical analysts. Trends are usually detected by some variation of following a moving average. The problem with this approach is that the moving averages invariably introduce lag because they require a relatively large amount of historical data to form a reliable indicator. This article introduces the quotient transform, which nonlinearly manipulates indicators to not only produce an early trend detection but also provides the ability to know how long to stick with the trend.
+QUOTIENT TRANSFORM MATHEMATICS
+Transforms are handy devices that change indicator waveforms to better interpret the meaning of various indicators. They introduce zero lag into the indicators, which is a good thing. For example, a Fisher transform changes any indicator probability distribution to have a nearly normal probability distribution, with the result that visibility peak turning points are highly amplified.
+...
+So here it is

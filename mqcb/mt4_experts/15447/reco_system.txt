@@ -1,0 +1,5 @@
+It is a recovery system implemented in EA. But you can copy it to any other EAs.
+System makes buy (first order,but you can set another rule for it) than if price goes up,order closes.
+If price goes down, EA opens sell at buy price-distance. If price not takes overall profit and goes up, than EA open buy at sell price+distance*multiplier and so on.
+Distance, lot, profit have settings of multiplier.
+User can increase or decrease distance, lot and overall profit depends on number of opened orders.

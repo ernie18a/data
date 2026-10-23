@@ -1,0 +1,11 @@
+Author:
+https://www.mql5.com/ru/forum/109556
+The entropy is the measure of the disorder of the system.
+One of the methods of calculation the entroy of random sample is used in the indicator.
+The parameters of the setting
+NumBars
+is the width of the gap or, what is more habitual for a trader, the period of the indicator.
+Picture:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8240

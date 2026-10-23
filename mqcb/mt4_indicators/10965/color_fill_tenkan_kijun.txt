@@ -1,0 +1,47 @@
+Color Fill - Tenkan + Kijun:
+Also available for MT5
+Color Fill (Color Histogram) enhances visual perception of price action assisting with decisions of trade entry, continuation, exit and trade re-entry on trend continuation.
+This indicator draws
+The Tenkan Sen and Kijun Sen components of the Ichimoku Kinko Hyo Indicator.
+Two associated Price Labels.
+The below Color Fill options.
+Note
+- The Color Fill is not part of the Ichimoku Kinko Hyo Indicator and should not be confused with the Ichimoku Cloud.
+Color Fill options
+Color Fill between Price and Tenkan Sen
+Color Fill between Price and Kijun Sen
+Color Fill between Tenkan Sen and Kijun Sen
+No Fill
+Image:
+Color Fill - 3 of 1, 2, 3 or 4.
+Check Chart on foreground - Chart Properties (press F8)
+Parameters and Trading
+All inputs, parameters and options can be changed and will save automatically.
+User should investigate personal preferences.
+The Tenkan Sen and Kijun Sen default periods are 50 and 100
+.
+Adjust Tenkan Sen and Kijun Sen periods as required.
+Line thickness can be increased for better visual definition.
+Lower timeframes can be enhanced with Session Open V-Line Indicator.
+Use of Color Fill - Tenkan + Kijun as part of a Trading System or Trading Tool is subject to user discretion and innovation.
+Note:
+The Tenkan Sen and Kijun Sen are the same indicator. The non programmer can prove this by placing the Ichimoku Kinko Hyo Indicator (MT4 → Iinsert → Indicators → Oscillatirs → Ichimoku Kink Hyo) on a H4 chart and setting Tenkan Sen and Kijun Sen to periods 26 and 27 respectively. The Tenkan Sen and Kinjun Sen are slightly apart. Now change both to period 27. Both now overlay each other exactly. This is bought to the user's attention in order to avoid miss understanding should the user discover this while using the present Indicator.
+Tenkan Sen and Kijun Sen Price Labels
+The Labels are positioned at the lower right corner but can be re-positioned to any position on the chart.
+The Price Labels can be hidden if not required.
+If the Tenkan Sen or Kijun Sen is hidden the associated Price Label will also be hidden.
+Accuracy of Price Labels can be determined by drawing a horizontal line on the chart and setting the line Parameters - Value to the price indicated on a TS or KS Label. The horizontal line should align precisely with the end of the Tenkan Sen or Kijun Sen depending on Label chosen.
+Inputs and Parameters
+Color_Fill_1_2_3_or_4 - 3;
+Tenkan_sen_Period - 50;
+Kijun_sen_Period - 100;
+TS_Label_Color - indicator_color1;
+KS_Label_Color - indicator_color2;
+Label_Bold - true;
+Label_Size - 12;
+Label_Corner - 3;
+Label_Left_Right - 10;
+Label_Up_Down - 10;
+Show_Tenkan_sen - true;
+Show_Kijun_sen - true;
+Show_Labels - true;

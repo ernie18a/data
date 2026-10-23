@@ -1,0 +1,7 @@
+The STLM digital filter implemented as a sequence of candlesticks. Candlesticks appear as a result of relevant price timeseries processed by the ColorSTLM_HISTOGRAM indicator algorithm.
+In many situations, such approach may be more informative for the purpose of analysis.
+This indicator requires the the compiled indicator file ColorSTLM_HISTOGRAM.ex5. Place it in <terminal_data_folder>\MQL5\Indicators.
+Fig.1. The STLMCandle indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16142

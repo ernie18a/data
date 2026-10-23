@@ -1,0 +1,5 @@
+Real author:
+Inovance
+Export the trade details (order, trade return, ticket number, open price, close price, open timestamp, close timestamp, currency pair, position size) from a backtest or live trading to a CSV file.
+To use, input your trading logic inside the Signal() function (return 1 for long signals, 2 for short signals), name the CSV file and either run a backtest or attach to a live chart. With live trading, the most recent trade will be automatically written to the last line in the file.
+If from a backtest, the file will be in <terminal_data_folder>\tester\files. If from live trading, the file will be in <terminal_data_folder>\MQL4\Files.

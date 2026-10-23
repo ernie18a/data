@@ -1,0 +1,7 @@
+Consecutive Advance/Decline indicator displays the number of rising and falling prices as two lines in a separate window.
+It has one configurable parameter:
+Applied price
+- price tracked by the counter
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22349

@@ -1,0 +1,12 @@
+Author:
+me.
+Basis of the script is the period_converter by Metaquotes. Most of the work has been done by them, so thank these guys.
+Automatically converts M1-data to M5/M15/M30/H1/H4/D1 in a single run, then it stops. No more guessing whether the script is finished or not.
+Usage:
+1. Delete all *hst.files
+2. Import your M1-data via History Center
+3. open the M1 chart offline
+4. attach the script
+5. lean back and see "the magic" happen, then go develop great trading systems and keep in mind, that you get all this
+for free
+because there are people willing to share

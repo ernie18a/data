@@ -1,0 +1,2 @@
+Automatic EMA envelope.
+Image:

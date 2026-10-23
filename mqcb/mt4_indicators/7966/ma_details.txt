@@ -1,0 +1,2 @@
+Show all the MA details
+MA type, Period, Price applied on, & current value will be shown.

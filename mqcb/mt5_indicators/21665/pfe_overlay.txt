@@ -1,0 +1,39 @@
+The Polarized Fractal Efficiency Overlay (PFE_Overlay) indicator is designed for identifying trends. Unlike
+Polarized Fractal Efficiency
+, the indicator is displayed on the price chart as the main indicator line and two lines of the calculated StdDev deviation value.
+There are seven configurable parameters:
+Fast ROC period
+- fast ROC (Rate of Change) calculation period;
+Slow ROC period
+- slow ROC (Rate of Change) calculation period;
+MA period
+- MA calculation period;
+PDS
+- sensitivity;
+Avg period
+- deviation calculation period;
+Deviation
+;
+Show deviations
+- Yes/No.
+Calculations:
+PFE = BL + (100.0 + RAW) / scale
+TL = MA + Deviation * Dev
+BL = MA - Deviation * Dev
+where:
+MA = SMA(Avg period)
+Dev = StdDev(Avg period, MODE_SMA)
+scale = 200.0 / (TL - BL)
+Если
+Close > Close[Slow ROC period]
+RAW = 100.0 * Z
+Else:
+RAW = -100 * Z
+Z = X / Y
+X = Sqrt(SlowROC * SlowROC + 100.0)
+Y = Sqrt(FastROC * FastROC + 1.0) + PDS
+SlowROC = 100.0 * (Close / Close[Slow ROC period]-1)
+FastROC = 100.0 * (Close / Close[Fast ROC period]-1)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21665

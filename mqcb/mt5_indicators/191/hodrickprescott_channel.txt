@@ -1,0 +1,14 @@
+The indicator plots a price channel using the
+Hodrick-Prescott Filter
+.
+The first step is to calculate the smoothed values of Close prices. After that it smoothed again with higher smoothing period. As a result we will have HP and HPSlow. On the next step we calculate the standard deviation HP relative to HPSlow and construct the channel.
+The indicator prints the ratio of a full channel width to HPSlow[0], presented in percents. This text can be easily moved at any place on the chart - just drag it with double mouse click and move.
+We have used the HPF (Hodrick-Prescott Filter) function from
+https://www.mql4.com/
+for smoothing.
+Indicator input parameters:
+HP Fast Period – smoothing period of the HP;
+HP Slow Period - smoothing period of the HPSlow.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/191

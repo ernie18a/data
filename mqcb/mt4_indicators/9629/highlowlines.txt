@@ -1,0 +1,3 @@
+Description:
+Simple but helpfull for some cases.
+Shows you the value of the highest high, the lowest low and the average of both over the last x Bars (to be set in the input tab)

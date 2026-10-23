@@ -1,0 +1,133 @@
+By default, this indicator displays nine values of two different Moving Averages (МА) for the
+current timeframe
+, a difference between previous sequential МА values and a difference between MAs in points. You can set the data display with positive or negative offsets and/or rounded to required decimal digits. Displaying the values for zero (current) bar is not supported.
+This indicator, as
+its version for MetaTrader 4
+, can be used for displaying not only a difference between sequential values, but also a distance in points, without extending the source code:
+between bars'
+HIGH
+and
+LOW
+,
+HIGH
+and
+OPEN
+,
+HIGH
+and
+CLOSE
+or
+HIGH
+and the values of a certain moving average, also considering some positive or negative offsets in points and/or with decreased or "extended" number of decimal digits;
+between
+OPEN
+and ... (etc.);
+between
+CLOSE
+and ... (etc.);
+between
+LOW
+and ... (etc.);
+between two moving averages, considering or not considering positive or negative offsets and/or with fewer or more decimal digits.
+As shown on the screenshots below, a table is displayed on a 3-digit chart with values, rounded to 2 decimal digits, and also "extended" to 4 decimal digits.
+Other than that, the indicator is identical to its
+version for MetaTrader 4
+:
+In the indicator table, the colors change automatically for МА (or bars) marks and differences between adjacent sequential values. Different colors apply when values change to greater, lesser and/or equal. Changing color for difference between two moving averages (and/or bars or offsets) displayed in the fifth table row is not supported.
+The calculations and changing the table values occur when:
+when new bars appear;
+when the user changes indicator's input parameters;
+when the user changes the timeframe or the symbol of the chart with an attached indicator.
+If nine values in each table row by X axis is too much or too low, then to change the number of cells and thus the amount of calculated and displayed data, you need to change
+9
+to a positive number >= 2 in this line of code:
+#define
+ARRAY_SIZE_X
+9
+Additional information:
+The indicator table has the same "secret", as its version for МetaТrader 4: you can temporarily hide it by clicking the horizontal bar under the table heading.
+Note:
+The table heading shows the bar numbers the values of which are displayed by the indicator. In the indicator parameters, you can change the starting bar number to any positive non-zero value.
+The reason for not including the zero bar is that I wrote the indicator for personal needs and I didn't require to display constantly changing data for the current (zero) bar. However, if you require to display data (results) changing with every tick for a currently forming bar, you need to implement a slightly different code structure.
+In fact, the limitation for current (zero) bars applies only to values in the table. So you can, if required, add lines to the code, for example, to implement notifications (alerts etc.) triggering when
+the current price breaks through certain values from the table
+. You can also trigger the notifications when certain "new" values from the table are less than/greater than or equal to certain "old" values. Also, you can replace the existing MA or bar mark calculations with some other required calculations.
+You can view the parameters of each Moving Average (set in the input parameters or remaining by default) at any time by hovering the cursor over the table cells.
+Note:
+Tooltips with parameter values will display only if "Show object descriptions" option is turned on in the chart properties.
+Instead of МА values, you can set the display of data with required positive or negative offsets in points from each Moving Average or bar marks.
+Note:
+To make the indicator display
+Open
+and/or
+High
+and/or
+Low
+and/or
+Close
+of adjacent bars and differences between them instead of MA calculations, you need to set the following MA values in the input parameters:
+Period Moving Averages
+... =
+1
+;
+MA method
+...=
+MODE_SMA
+;
+Apply to
+... =
+PRICE_OPEN,
+PRICE_HIGH,
+PRICE_LOW or
+PRICE_CLOSE
+.
+With this set of parameters, the indicator will calculate directly by bar marks, without getting the
+iMA
+handle.
+If you need to round or "extend" the МА or bar values to a certain decimal digit, set the required value (number of decimal digits) for
+Decimal digits
+input parameter.
+You can also turn off the display of indicator lines in the input parameters.
+Note:
+Line colors depend on direction of
+first
+calculated bar value, which is set in the line
+Shift (bar for first value):
+. Plotted lines are 1 bar longer deep into the chart, than the number of МА values in the table (this allows to see which mark the last bar in the table is compared with).
+In the input parameters, you can also change the table offset by X and Y axis, table cells size, font size, colors, and bring the table to front (by default, it's rendered in the background, to avoid obscuring the bars).
+Fig.1. Indicator lines, marks and differences in points between
+High
+and
+Low
+prices, rounded to 2 decimal digits, on a 3-digit chart
+Fig.2. Marks and differences in points between 2 moving averages, "extended" to 4 decimal digits, on a 3-digit chart
+Note:
+If you have added this indicator on a chart along with standard Moving Average(s) and you haven't set offsets and/or rounding in the ID Lite Info MA input parameters, but the lines of this indicator don't match the standard MAs (
+with the same parameters
+), then please do not jump to conclusions about the accuracy of calculation.
+Open the
+Data Window
+and check the number of displayed digits for the standard Moving Average (for example, it may use 4 decimal digits on a 3-digit chart).
+This is normal and convenient in my opinion because moving averages are calculated by average values. Example:
+(1.2052 + 1.2057 + 1.2073)/3 = 1.2060667
+. Therefore, calculated values with rounded or extended digits increase the number of possible use scenarios.
+If the lines
+should perfectly match (with other parameters identical)
+, you can choose a greater number of decimal digits in
+Decimal digits
+drop-down list in the ID Lite Info MA input parameters.
+Fig.3. Built-in Moving Average and ID Lite Info MA (with Decimal digits
+=
+current chart) on a 3-digit chart
+Version 1.11 from 25.09.2015:
+Increased maximum Moving Averages periods value from 500 to 3000 bars. Because this limit can be set freely, you can change this value to any other positive integer value. It is set in the function:
+bool
+CheckInput(
+int
+period,
+string
+text)
+Minor code corrections and optimizations.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13356

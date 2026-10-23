@@ -1,0 +1,9 @@
+Oscillator DMI Difference displays the chart of the difference between the two components of indicator ADX: plus DI and minus DI. Market movement direction displays in different colors: Up in blue and down in red.
+It has one input parameter:
+ADX period
+- period of the ADX to be calculated.
+Calculations:
+DDMI = PlusDI - MinusDI
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21260

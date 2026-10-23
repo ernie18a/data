@@ -1,0 +1,4 @@
+The indicator shows the cosine of the material excess from the division of the symbol price by the moving average.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8598

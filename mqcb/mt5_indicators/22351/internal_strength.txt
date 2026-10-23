@@ -1,0 +1,27 @@
+Internal Strength oscillator. The indicator specifies the point of a daily range the price is located in.
+It has four inputs:
+Calculating mode
+- calculation method
+HLC
+- by High, Low and Close prices
+RSI
+- RSI based on HLC
+RSI period
+- RSI calculation period
+Overbought
+- overbought level
+Oversold
+- oversold level
+Calculation:
+If Calculation mode = HLC
+Internal Strength = Data
+Если Calculation mode = RSI
+Internal Strength = RSI(Data,RSI period)
+where:
+Data = (Close  - Low[i]) / HL
+HL = High - Low
+Fig. 1. Internal Strength mode HLC
+Fig. 2. Internal Strength mode RSI
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22351

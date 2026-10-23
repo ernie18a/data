@@ -1,0 +1,15 @@
+Real author:
+Perry Kaufman
+Perry Kaufman's adaptive
+moving average
+with indicative (signal) points arrangement based on the standard mean-square deviation.
+Signal points interpretation is as follows. In case the market goes flat, AMA indicator is placed horizontally and signal points are absent. In case there is a directional trend exceeding a mean-square deviation, a point of an appropriate color appears. That point is a signal for market entry or exit.
+The following equation is used as a signal point positioning criteria:
+AMA-AMA0 > StDev(AMA-AMA0,periodAMA)*dK
+where:
+AMA-AMA0 - АМА last expansion;
+StDev(AMA - AMA0, periodAMA) - indicator extensions' standard deviation for a period;
+dK - external parameter.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/387

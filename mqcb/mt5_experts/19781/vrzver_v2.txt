@@ -1,0 +1,64 @@
+This code is a further development of the first
+VR---ZVER
+version.
+The EA uses three iMAs (Moving Average, MA), one iStochastic (Stochastic Oscillator) and one iRSI (RSI, Relative Strength Index). Positions are opened by market, as well as Buy Stop and Sell Stop pending orders are placed.
+Input Parameters
+Main Settings
+- main trading settings:
+Lots (if <="0.0" -> use "Risk")
+- position volume; if the value is less than or equal to zero, lot will be calculated using the "Risk" parameter;
+Stop Loss (use only > 0)(in pips)
+- stop loss value;
+Take Profit (use only > 0) (in pips)
+- take profit value;
+Risk in percent for a deal
+- risk value;
+Lock
+- locking a trade;
+Building of a position
+- increasing position volume;
+Lot factor for pending orders
+- lot multiplier for pending orders;
+Breakeven (in pips)
+- breakeven level.
+MA fast
+- "fast" Moving Average parameters:
+Use MA fast;
+MA fast: averaging period;
+MA fast: horizontal shift;
+MA fast: smoothing type;
+MA fast: type of price.
+MA slow
+- "slow" Moving Average parameters:
+MA slow: averaging period;
+MA slow: horizontal shift;
+MA fast: smoothing type;
+MA fast: type of price.
+MA very slow
+- "very slow" Moving Average parameters:
+MA very slow: averaging period;
+MA very slow: horizontal shift;
+MA very slow: smoothing type;
+MA very slow: type of price.
+Stochastic Oscillator
+parameters:
+Use Stochastic Oscillator;
+Stochastic: K-period (number of bars for calculations);
+Stochastic: D-period (period of first smoothing);
+Stochastic: final smoothing;
+Stochastic: UP level;
+Stochastic: DOWN level.
+Relative Strength Index indicator
+parameters:
+Use RSI;
+RSI: averaging period;
+RSI: UP level;
+RSI: DOWN level;
+magic number.
+The following parameters have been added in version 2:
+Trailing stop
+A separate flag for allowing/prohibiting BUY positions
+A separate flag for allowing/prohibiting SELL positions
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19781

@@ -1,0 +1,39 @@
+One of the varieties of the price channel.
+Input Parameters:
+extern
+int
+LngPeriod
+=
+50
+;
+extern
+int
+MedPeriod
+=
+20
+;
+extern
+int
+ShtPeriod
+=
+10
+;
+extern
+int
+Extremes
+=
+1
+;
+extern
+int
+Margins
+=
+0
+;
+extern
+int
+Advance
+=
+0
+;
+Turtle Channel Method

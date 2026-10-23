@@ -1,0 +1,7 @@
+Real author:
+Scriptong
+The indicator highlights caudate candlesticks of the "hammer" or "inverted hammer" type, the body of such candlestick being in the upper or lower half of the candlestick. Hammer-formed candlesticks are highlighted in blue, while the "inverted hammers" are highlighted in red. Candles are highlighted in a bright color, if its tail and the close price are located on different sides of the candlestick. If the tail and the price are on the same side, the candlesticks are highlighted in a pale color.
+Fig 1. Indicator CaudateCandle
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21020

@@ -1,0 +1,6 @@
+Zigzag lines are built on fractals. The fractals can specified by user.
+Number of fractals on the right and left is determined by the variable Fractal
+Image:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10022

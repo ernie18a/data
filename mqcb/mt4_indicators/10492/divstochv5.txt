@@ -1,0 +1,3 @@
+Description:
+Basic on iStochastic. Show good area price for long/short.
+Image:

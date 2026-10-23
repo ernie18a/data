@@ -1,0 +1,3 @@
+Quoted from Wikipedia:
+In mathematics, the logarithmic mean is a function of two non-negative numbers which is equal to their difference divided by the logarithm of their quotient. This calculation is applicable in engineering problems involving heat and mass transfer.
+Use as is or develop further to serve your purpose

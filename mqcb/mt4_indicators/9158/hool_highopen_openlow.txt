@@ -1,0 +1,4 @@
+The indicator helps to find Stop Loss levels.
+It's values are calculated in pips.
+Green - distance from Open price to High price;
+Red - distance from Open to Low price.

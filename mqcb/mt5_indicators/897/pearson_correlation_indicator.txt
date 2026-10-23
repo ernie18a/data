@@ -1,0 +1,20 @@
+Pearson correlation indicator shows the correlation between symbols.
+Input parameters:
+Symbol
+- Name of the second symbol, used for calculation of correlation;
+Period
+- Period;
+Price
+- Applied price;
+Min correlation
+- Gradient color for weak correlation;
+Max correlation
+- Gradient color for strong correlation.
+Formula:
+where:
+xi and yi - time series;
+n - number of data;
+σx and σy - standard deviations.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/897

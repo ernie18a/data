@@ -1,0 +1,16 @@
+This EA collects information about the spread and shows the statistics on the chart.
+When the EA ends its working, it prints all statistics to the Journal, which can be useful for the Strategy Tester. For example, if you want to know all information about the spread of historical data in the tester for a certain period.
+Input Parameters
+'Max. Spread'
+parameter value in points, for example: 1.12001 - 1.12000 = 1 point.
+When the current spread exceeds this value there will be an Alert.
+If the parameter value = 0, this function does not work.
+'Minimum Alert Interval (in seconds)'
+- a
+fter the Alert, the next Alert will not be earlier than specified in this parameter.
+Version History
+v.1.01
+- New input parameter is 'Minimum Alert Interval (in seconds)'. After the Alert, the next Alert will not be earlier than specified in this parameter.
+v.1.02
+-
+Added information about the current spread.

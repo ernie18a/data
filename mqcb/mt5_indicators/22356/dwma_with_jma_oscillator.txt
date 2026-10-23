@@ -1,0 +1,4 @@
+Description :
+Long time ago one trader was using the combination of DWMA (Double Weighted Moving Average) crosses with JMA (Jurik Moving Average) for signals. As a logical step forward, one indicator that can manage the combination of those two indicators was made. Both (DWMA and JMA) are very smooth indicators, and that combination tends to produce acceptable number (ie : not too much) signals. This version is extending the idea and making an oscillator of the proposed system - that way it might be a bit easier to use the indicator
+Usage :
+Crosses of the zero line can be used as trading signal. Since they are different types of averages, be careful what combination of periods are used, since some can produce illogical results. With correct settings, the crosses seem to be useful

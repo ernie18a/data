@@ -1,0 +1,7 @@
+Hi! This is just a very simple EA.
+It waits the price to have a strong fluctuation of x pips in y minutes (field "Limit"= fluctuation value, field "PeriodX" = time, both customisable) and then it opens a reverse position with a grid of limits position to reinforce it (field "Grid" customisable)
+It closes all the positions when the amount (field "Amount", customisable) is reached. You can also say: " if(getProfit()>=AccountBalance()/1000){CloseAll();} if you would like your profit to be proportionate with your balance.
+It is quite risky actually because you may expose yourself with a big amount of lots, that's why uou can also activate the "LockDown" option that will cover your positions after tot pips (recommended around 400= 40 pips). However, I do not recommend to use this EA on a live environemnt biut it just gives you an idea on how much you can expose yourself.
+It can be used on any chart/timeframe but PLEASE optimise it first. This is for a 1M EURUSD but I am pretty sure you can get better results on EURJPY.
+Enjoy.
+David

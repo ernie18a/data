@@ -1,0 +1,15 @@
+Main features:
+- Classic fixed-size Renko
+- BID tick construction
+- Completed bricks only
+- Classic two-brick reversal
+- Square equal-width bricks
+- Automatic number of visible bricks
+- Vertically centered visible Renko range
+- Real price scale on the right
+- No offline charts
+- No custom symbols
+- No DLLs or external libraries
+- One main input: Brick Size
+The normal MT5 chart acts only as a host window. Its original visual settings are restored when the indicator is removed.
+This CodeBase example is intended for studying Renko construction and MQL5 Canvas rendering.

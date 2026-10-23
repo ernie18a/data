@@ -1,0 +1,4 @@
+The script performs the calculation of the average volatility of the symbol on the specified interval. The calculation results are outputted to the comment.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7755

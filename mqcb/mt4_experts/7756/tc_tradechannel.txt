@@ -1,0 +1,6 @@
+A variant of a trading system is implemented, it uses the principle of working in a channel (Price channel). The signals for opening a position are obtained on the second bar after the price has touched the upper or lower border of the channel. We are trading on a kickback, so when the price touches the upper border of the channel we perform Sell, when the lower one - we perform Buy. We keep the position until it's kicked by the stop or the entering is performed by the signal of position closing. The trailing is used.
+Some currency pairs with several timeframes haven't demonstrated the positive results during testing (the only limiting factor was used - % of drawdown), so there is something to think about: to improve the rules of entering and escaping either or not to use this method of trading in the channel with this currency pairs at all.
+Let's discuss....
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7756

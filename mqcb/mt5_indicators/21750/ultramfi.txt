@@ -1,0 +1,144 @@
+Actual author
+:
+Dmitriy
+.
+This indicator is based on
+MFI (Money Flow Index)
+and its multiple signal lines analysis. Signal lines calculation algorithm is as follows. We have indicator input parameters as source data:
+StartLength
+- minimum initial value of the first signal line;
+Step
+- period change step;
+StepsTotal
+- number of period changes.
+Any period value from the multitude of signal lines is calculated using arithmetic progression:
+SignalPeriod(Number) = StartLength + Number * Step,
+where the value of
+Number
+variable ranges from zero to
+StepsTotal
+. Obtained values ​​of the periods are added to the variables array and are used at each indicator tick to get the array of smoothed Larry Williams' Percent Range indicator values. Directions of the current trend for each of the smoothings are calculated and also the number of positive and negative trends for the whole array of MFI smoothed values is determined.
+The final number of positive and negative trends is smoothed in its turn and used as the indicator lines that form a color cloud displayed with the help of the
+DRAW_FILLING
+style class.
+A trend direction in this indicator is determined by the cloud color, while its power is determined by the cloud width. You can use the overbought (UpLevel) and oversold (DnLevel) levels that are set in percent value from the indicator maximum range.
+Smoothing algorithms can be selected out of ten possible versions:
+SMA
+- simple moving average;
+EMA
+- exponential moving average;
+SMMA
+- smoothed moving average;
+LWMA
+- linear weighed Moving Average;
+JJMA
+- JMA adaptive average;
+JJurX
+- ultralinear averaging;
+ParMA
+- parabolic averaging;
+T3
+- Tillson's multiple exponential smoothing;
+VIDYA
+- smoothing with the use of Tushar Chande's algorithm;
+AMA
+- smoothing with the use of Perry Kaufman's algorithm.
+It should be noted that Phase1 and Phase2 parameters have completely different meaning for different smoothing algorithms. For JMA it is an external Phase variable changing from -100 to +100. For T3 it is a smoothing ratio multiplied by 100 for better visualization, for the VIDYA it is a CMO oscillator period and for the AMA it is a slow EMA period. In other algorithms these parameters do not affect the averaging. For AMA fast EMA period is a fixed and equal to 2 by default value. The ratio of raising to the power is also equal to 2 for AMA.
+The indicator uses the SmoothAlgorithms.mqh library classes (copy them to <terminal_data_directory>\MQL5\Include). The classes were described in detail in the
+Averaging Price Series for Intermediate Calculations Without Using Additional Buffers
+article.
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+int
+MFI_Period=
+13
+;
+// MFI indicator period
+input
+ENUM_APPLIED_VOLUME
+VolumeType=
+VOLUME_TICK
+;
+// MFI indicator volume
+//----
+input
+Smooth_Method W_Method=MODE_JJMA;
+// Smoothing method
+input
+int
+StartLength=
+3
+;
+// Initial averaging period
+input
+int
+WPhase=
+100
+;
+// Smoothing parameter
+// for JJMA it varies within the range -100 ... +100 and influences the quality of the transient period;
+// For VIDIA, it is the CMO period, for AMA, it is the period of slow moving average
+//----
+input
+uint
+Step=
+5
+;
+// Period change step
+input
+uint
+StepsTotal=
+10
+;
+// Number of period changes
+//----
+input
+Smooth_Method SmoothMethod=MODE_JJMA;
+// Soothing method
+input
+int
+SmoothLength=
+3
+;
+// Smoothing depth
+input
+int
+SmoothPhase=
+100
+;
+// Smoothing parameter
+// for JJMA it varies within the range -100 ... +100 and influences the quality of the transient period;
+//----
+input
+uint
+UpLevel=
+80
+;
+// Overbought level in %%
+input
+uint
+DnLevel=
+20
+;
+// Oversold level in %%
+input
+color
+UpLevelsColor=Blue;
+// The color of the overbought level
+input
+color
+DnLevelsColor=Blue;
+// The color of the oversold level
+input
+STYLE Levelstyle=DASH_;
+// Style of the levels
+input
+WIDTH  LevelsWidth=Width_1;
+// Width of the levels
+//+----------------------------------------------+
+Fig. 1. The UltraMFI indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21750

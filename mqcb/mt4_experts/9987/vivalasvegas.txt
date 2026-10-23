@@ -1,0 +1,22 @@
+This EA was written to test different betting strategies.
+It uses a simple random generator to enter the market. Risk reward ratio is fixed to 1 to simulate straight betting.
+Settings:
+TP_SL:
+Set the size of the trades. (As larger the size as smaller the house advantage)
+BaseLotSize:
+the startlotsize or size of one betting unit.
+GameStrategy:
+This is the most important setting. In the current version you can switch between 5 gametypes:
+Martingale
+with double up
+Negative exponential pyramiding
+Labouchere System
+. (You can change the Labouchere Series in the code at line 18)
+Oscars Grind.
+This is a positive progression system. The target of this system is 1 BaseLot
+System 31.
+Negative progression System where you can loose maximum 31 BaseLots.
+Seed:
+This is used to seed the random generator.
+At last: No error management/ECN style ordertypes added, this might only work in tester.
+http://www.when-money-makes-money.com

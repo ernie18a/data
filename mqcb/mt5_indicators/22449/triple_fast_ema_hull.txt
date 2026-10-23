@@ -1,0 +1,6 @@
+Basics :
+The indicator is using 3 instances of the new fast ema Hull (originally published here :
+Fast ema Hull average
+). That indicator  is an extremely fast and smooth moving average. Combining 3 instances of Fast ema Hull averages to 3 prices (Close, High and Low) can help in giving us a sort of an over-all look at the current trend assessment.
+Usage :
+Probably the best way to use is to wait for the 3 instances to have the same slope color and then to use that slope as an indicator of a current trend, but the channel can be used too (for ranging periods when the channel can be used as a sort of a no trade zone). In any case, some experimenting with the Hull period is advised for different symbols and different styles of trading.

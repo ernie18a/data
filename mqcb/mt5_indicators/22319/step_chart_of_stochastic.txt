@@ -1,0 +1,6 @@
+Basics :
+Stochastic is well known and is widely used. Sometimes it is used in a combination of some filtering method in order to avoid some of the false signals that stochastic might produce in some market conditions. This is one more version that will attempt to address the issue by using a filter on stochastic
+This version :
+This version is using step chart as a filter to lessen the number of signals produced by stochastic and (if possible) to make it easier and safer to use. The step size is to be entered in % of stochastic that you wish to be used as a filter for minimal stochastic change that should be considered as a significant change
+Usage :
+You can use color change of the step bar as signals

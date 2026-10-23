@@ -1,0 +1,31 @@
+The vaMA is the indicator drawn on the simple principle of price shift, the smoothed EMA, the increments of the first 3 orders with a step proportional to the period of smoothing. Then we get the smoothed and the fast indicator.
+Indicator input parameters:
+input
+int
+vaMA_period=
+15
+;
+//Period
+input
+bool
+use_double_smooth=
+1
+;
+//Double smoothing
+The vaZZ is the indicator which draws the
+ZigZag
+on the principle of the
+vaMA
+in the extremums (knees) points that displays
+where you can send the orders. In contrast to the standard
+ZZ
+, it is not redrawn and minimum lags behind.
+P.S.
+"va"
+from
+velocity
+and
+accelerate)))
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1661

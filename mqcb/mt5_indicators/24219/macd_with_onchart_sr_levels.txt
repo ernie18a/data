@@ -1,0 +1,10 @@
+Theory :
+This is the MACD indicator with an addition of on chart support resistance levels. Three choices of color (and SR levels) change are available :
+color change on zero cross
+color change on macd slope change
+color change on macd to signal line cross
+Usage
+:
+It can be used in any mode usual to MACD
+PS:
+The SR lines are using close price of the bar where the signal happens. That largely coincides to sell signals and, if you add the spread, to buy signals, hence it is probably helpful to see those as a possible order entries in a quick way

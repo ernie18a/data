@@ -1,0 +1,15 @@
+Real author:
+TOPpoint
+Two pairs of support and resistance levels based on the candlesticks of the timeframe specified in the input parameters.
+The formula for the calculation of the levels:
+Res2 = ( Low + High + Close ) / 3 + ( High - Low ) * 0.618
+Res1 = ( Low + High + Close ) / 3 + ( High - Low ) * 0.5
+Sup1 = ( Low + High + Close ) / 3 - ( High - Low ) * 0.5
+Sup2 = ( Low + High + Close ) / 3 - ( High - Low ) * 0.618
+This indicator was first implemented in MQL4 and published in the
+Code Base at mql4.com
+on 30.01.2008.
+The RES-SUP indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1956

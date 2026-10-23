@@ -1,0 +1,12 @@
+The indicator "sell zone fibs".
+Parameters:
+MAPeriod=55;
+MAType=2;
+fibo1=1;
+fibo2=2;
+fibo3=3;
+fibo4=4;
+fibo5=5;
+fibo6=6;
+fibo7=7;
+sell zone fibs

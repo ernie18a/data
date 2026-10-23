@@ -1,0 +1,16 @@
+Author: Tartan
+Quote:
+Details on its usage.
+Attach three indicators to the chart (ADXCross, NDuet and SUrovny)
+The first two place entry arrows at the interval of 1-2 bars from each other
+- this is an entry with cross-confirmation, use it to enter.
+Also plot ЕМА55 on the chart (it is involved, but there is no buffer for it)
+The third indicator will put its confirmation arrow much later, but reliably.
+If the first 2 signals have not been confirmed by the third indicator, and
+the price reversed and ЕМА55 went inside the channel - close by market - this will
+either be zero, a small plus or a small minus, then wait for the next signal.
+Such tactic allows to avoid large risks and drawdowns, and also there is no
+need for a stop loss - the position of ЕМА55 relative to the channel will serve as a stop. */
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7340

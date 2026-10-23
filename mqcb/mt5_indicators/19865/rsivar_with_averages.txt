@@ -1,0 +1,17 @@
+RSI that can use 4 different types of averages for RSI calculation was originally developed for MetaTrader 4 by
+Igor Durkin
+( (originally posted here:
+https://www.mql5.com/en/forum/175870
+).
+Igor Durkin
+:
+...
+So-called normal RSI uses EMA smoothing with period = 2*Length-1 (or Wilder's smoothing with period=Length).
+I've developed RSI indicator with my algorithm of calculation.
+Now you can use any values for length and any kinds of smoothing.
+...
+This version can use up to 2 Moving Averages applied to that RSI in order to filter out some false signals (when RSI is used in combination with levels crosses). In this version you can use smoothed values of the RSI for signals. To set any of the averages off, set the average period to less than or equal to 0.
+Recommendations
+Use some short period for fast period (default is 2) to help filtering out some of the RSI sudden value and direction changes.
+Use some longer period for slow period (default is 8).
+Try using the crosses of the averages as signals.

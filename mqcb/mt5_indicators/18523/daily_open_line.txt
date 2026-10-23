@@ -1,0 +1,1 @@
+This Indicator draw Horizontal line at start of trading day till at opening price level. Recommended use on H1 and below timeframe.

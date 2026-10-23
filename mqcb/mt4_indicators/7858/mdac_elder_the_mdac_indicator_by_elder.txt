@@ -1,0 +1,7 @@
+The MDAC indicator by Elder
+Green bars - uptrend
+Blue bars following green or red bars - trend change
+Red bars - downtrend
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7858

@@ -1,0 +1,4 @@
+Indicators for the "Chaos" trading system described in the third book by Bill Williams (Bill Williams and Justin Williams. Trading Chaos - Second Edition).  The indicators, INDICATOR DESCRIPTION and the LOT MANAGEMENT TABLE are in the attached file.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7115

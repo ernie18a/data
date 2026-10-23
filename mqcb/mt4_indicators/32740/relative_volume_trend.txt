@@ -1,0 +1,1 @@
+Relative volume trend shows trend based on relative gain and loss of volume of an asset. it can be used in conjunction with Relative price trend to see what movement is favored by volume.

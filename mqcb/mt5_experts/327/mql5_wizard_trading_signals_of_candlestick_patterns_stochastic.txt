@@ -1,0 +1,225 @@
+Description:
+With
+MQL5 Wizard
+, traders now can
+automatically generate Expert Advisor's code
+based on trading signals' classes, positions tracking and money management. Along with
+trading signals' classes
+of the Standard Library, you can develop and test your own trading systems. To do this, just write a
+module of trading signals
+.
+The book "
+The Strategies of the Best Traders in the World
+" (in Russian) describes indicators and trading strategies for the technical analysis involving MetaStock software package. Along with the conventional trading signals, the book deals with the ones based on the combined use of reversal candlestick patterns with confirmations of
+Stochastic
+,
+CCI
+,
+MFI
+and
+RSI
+.
+Using "reversal" candlestick patterns together with oscillator signals allows reducing the number of false signals and increasing the trading system's efficiency.
+In previous publications, we have considered trading signals based on candlestick patterns with confirmation of
+Stochastic
+:
+3 Black Crows/3 White Soldiers
+Dark Cloud Cover/Piercing Line
+Bullish Engulfing/Bearish Engulfing
+Bullish Harami/Bearish Harami
+Hammer/Hanging Man
+Bullish/Bearish Meeting Lines
+Morning/Evening Stars
+In this description, we will consider the results of the combined use of all these models together with
+Stochastic
+indicator signals.
+1. Bullish and Bearish Candlestick Models and Their Detection
+CandlePattern
+class also has the functions for detecting the forming of some of bullish and bearish candlestick patterns (except from Hammer/Hanging Man combination).
+The forming of a bearish candlestick pattern is checked by CheckPatternAllBullish() function:
+//+------------------------------------------------------------------+
+//| Checks formation of bullish patterns                             |
+//+------------------------------------------------------------------+
+bool
+CCandlePattern::CheckPatternAllBullish()
+  {
+return
+(CheckPatternThreeWhiteSoldiers()  || 
+          CheckPatternPiercingLine()       || 
+          CheckPatternMorningDoji()        || 
+          CheckPatternBullishEngulfing()   || 
+          CheckPatternBullishHarami()      || 
+          CheckPatternMorningStar()        || 
+          CheckPatternBullishMeetingLines());
+  }
+The forming of a bullish candlestick pattern is checked by CheckPatternAllBearish() function:
+//+------------------------------------------------------------------+
+//| Checks formation of bearish patterns                             |
+//+------------------------------------------------------------------+
+bool
+CCandlePattern::CheckPatternAllBearish()
+  {
+return
+(CheckPatternThreeBlackCrows()     || 
+          CheckPatternDarkCloudCover()     || 
+          CheckPatternEveningDoji()        || 
+          CheckPatternBearishEngulfing()   || 
+          CheckPatternBearishHarami()      || 
+          CheckPatternEveningStar()        || 
+          CheckPatternBearishMeetingLines());
+  }
+2. Trading Signals Combined with Stochastic Indicator
+Opening a long/short position is performed when one of the bullish/bearish models is formed and there is a confirmation from the
+Stochastic oscillator
+. %D signal line value should be above or below the appropriate critical level (30 and 70).
+An exit signal is formed in two cases:
+When an opposite candlestick pattern is formed (a bearish one for a long position and a bullish one for a short position).
+According to the subsequent behavior of %D. If %D reaches the level that is opposite to the market (80 in case of a long and 20 in case of a short position) or if %D does not confirm the reversal signal and reaches 20 in case of a long position and 80 in case of a short one.
+Checking the market entry and exit conditions is performed in the following methods:
+int CCP_Stoch::LongCondition() - checking conditions for opening a long position (m_pattern_0) and closing a short one (m_pattern_1);
+int CCP_Stoch::ShortCondition() - checking conditions for opening a short position (m_pattern_0) and closing a long one (m_pattern_1).
+2.1. Opening a Long Position and Closing a Short One
+The signal for opening a long position is forming a bullish candlestick combination and fulfilling StochSignal(1)<30 condition (the value of
+Stochastic
+indicator's signal line at the last completed bar is less than 30);
+The signal for closing a short position is forming one of the bullish candlestick patterns or the case when the indicator line crosses the 20-level
+Stochastic
+line (upwards) or the 80-level one (upwards).
+//+------------------------------------------------------------------+
+//| Method of checking if the market models are formed               |
+//| Checks conditions for                                            |
+//| entry (open short position, m_pattern_0)                         |
+//| exit  (close long position, m_pattern_1)                         |
+//+------------------------------------------------------------------+
+int
+CCP_Stoch::LongCondition()
+  {
+int
+res=
+0
+;
+//---- check conditions to open short position
+//---- formation of bullish pattern and signal line of Stochastic indicator<30
+if
+(CheckPatternAllBullish() && (StochSignal(
+1
+)<
+30
+)) res=m_pattern_0;
+// signal to open long position
+//--- check conditions of short position closing
+//--- formation of bearish pattern or crossover of the signal line (upward 20, upward 80)
+if
+(CheckPatternAllBullish() ||
+      ((StochSignal(
+1
+)>
+20
+) && (StochSignal(
+2
+)<
+20
+)) || 
+      ((StochSignal(
+1
+)>
+80
+) && (StochSignal(
+2
+)<
+80
+)))    res=m_pattern_1;
+// signal to close short position
+//---
+return
+(res);
+  }
+2.2. Opening a Short Position
+and Closing a Long One
+The signal for opening a short position is forming one of the bearish candlestick patterns and fulfilling StochSignal(1)>70 condition (the value of
+Stochastic
+indicator's signal line at the last completed bar exceeds 70):
+The signal for closing a long position is forming one of the bearish candlestick patterns or the case when the indicator line crosses the 80-level
+Stochastic
+line (downwards) or the 20-level one (downwards).
+//+------------------------------------------------------------------+
+//| Method of checking if the market models are formed               |
+//| Checks conditions for                                            |
+//| entry (open short position, m_pattern_0)                         |
+//| exit  (close long position, m_pattern_1)                         |
+//+------------------------------------------------------------------+
+int
+CCP_Stoch::ShortCondition()
+  {
+int
+res=
+0
+;
+//--- check conditions to open short position
+//---- formation of bearish pattern and signal line of Stochastic indicator>70
+if
+(CheckPatternAllBearish() && (StochSignal(
+1
+)>
+70
+)) res=m_pattern_0;
+// signal to open short position
+//--- check conditions of long position closing
+//---- formation of bearish pattern or
+crossover of the signal line (downward 80, downward 20)
+if
+(CheckPatternAllBearish() || 
+      ((StochSignal(
+1
+)<
+80
+) && (StochSignal(
+2
+)>
+80
+)) || 
+      ((StochSignal(
+1
+)<
+20
+) && (StochSignal(
+2
+)>
+20
+)))    res=m_pattern_1;
+// signal to close long position
+//---
+return
+(res);
+  }
+2.3. Creating an Expert Advisor Based on Trading Signals of "Candlestick Patterns+Stochastic" Reversal Pattern Using MQL5 Wizard
+CCP_Stoch class is not included to the Standard Library of trading signals. Therefore, download ccp_stoch.mqh file (attached) and save it to
+\terminal_folder\Include\Expert\Signal\MySignals
+directory to use it. candlepatterns.mqh file should be copied to the same directory as ccp_stoch.mqh. After that, relaunch MetaEditor to be able to use the file in MQL5 Wizard.
+To create a trading robot following this strategy via
+MQL5 Wizard
+, select "
+Signals based on Candlestick Patterns+Stochastic
+" signal type at the second step:
+Fig. 1. Selecting "Signals based on Candlestick Patterns+Stochastic" trading signals generator in MQL5 Wizard
+At the subsequent steps, specify the necessary
+trailing stop
+type and
+money management
+system. The Expert Advisor's code is generated automatically. Now, it should be compiled to be ready to start testing.
+2.4. Testing Results
+Results of the Expert Advisor Testing on historical data (EURUSD H1, testing period: 1.1.2000-02.02.2011, PeriodK=33, PeriodD=37, PeriodSlow=30, MA_period=25).
+This Expert Advisor uses the module for trading the fixed volume of 0.1 lot (
+Trading Fixed Lot
+). Trailing stop is not used (
+Trailing not used
+).
+Fig. 2. Results of testing the Expert Advisor based on "
+Signals based on Candlestick Patterns+Stochastic" trading signals generator
+The best set of trading system parameters can be found using the MetaTrader 5
+Strategy Tester
+.
+The code of the Expert Advisor created by MQL5 Wizard is attached in expert_cp_stoch.mq5 file.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/327

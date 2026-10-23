@@ -1,0 +1,25 @@
+Update:
+The positions will only be opened after the bearish or bullish candle.
+Indicators such as Moving Average and Bollinger Bands removed from the chat after closing the EA.
+Small errors with closing the positions after time.
+BollingerBandsEA trades according to Bollinger Bands. If the lower line is broken downwards, ES places a buy order and vice versa the sell position.
+The following settings are integrated:
+Magic number
+Fixed volume
+Procent volume
+Volume type
+Risk for Position
+Lots
+Stoploss in points
+Trading (minutes) begins after session start
+Trading (minutes) end before session
+Close position after indicator
+Allow trailing stop?
+Profit factor (RR) after stop is pulled
+Allow breakeven?
+Profit factor (RR) after stop is pulled
+Close position if it is in minus (after minutes)
+Please only try in the backtester or demo account!
+I hope you have fun trying it out.
+PS: There was a typo in the first version. You can download the second version.
+Regards, Igor

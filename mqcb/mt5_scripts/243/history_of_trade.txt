@@ -1,0 +1,4 @@
+The script allows you to place the deals history on the chart using the graphic objects.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/243

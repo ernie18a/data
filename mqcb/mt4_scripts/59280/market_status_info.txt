@@ -1,0 +1,2 @@
+A script that displays the useful information about the broker, the account and the full specifications of the instrument. It is based on the example of "MQL4 Reference  /  Constants, Enumerations and Structures  /  Environment State / Symbol Properties", as well as the idea of ​​the script "Market Info" by Sergey Mechanic, "https://www.mql5.com/ru/code/11223".
+In the screenshots I compare "contract specification" (View / Symbols / Properties) with the information from the script:

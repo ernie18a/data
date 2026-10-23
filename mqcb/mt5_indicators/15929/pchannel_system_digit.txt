@@ -1,0 +1,14 @@
+The indicator implements a breakout system using the
+PChannel_System
+channel, with the possibility to round the channel levels to the required number of orders and with the display of the latest channel breakout levels in the form of price labels. The number of digits to round is set in the input variable
+Digit
+:
+input
+uint
+Digit=2;
+//Number of digits to round to
+When price exits the gray channel, the bar color changes to the color corresponding to trend direction. Blue for the growth of a financial asset, red color - fall. Bright colors denote coincidence of trend direction and direction of a candlestick. Dark colors correspond to the situation when the direction of a candlestick is opposite to trend.
+Fig.1. The PChannel_System_Digit indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15929

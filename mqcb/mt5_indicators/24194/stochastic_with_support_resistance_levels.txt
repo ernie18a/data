@@ -1,0 +1,5 @@
+The stochastic that has an addition of on-chart support / resistance levels. You have two choices for color (and implicitly for SR levels) display :
+on signal line cross
+on levels cross
+Usage :
+It can be used as any other stochastic.

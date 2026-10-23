@@ -1,0 +1,3 @@
+There are a lot of bands type indicators and almost all are working in a very similar way: some basic value is taken to be a central value and the bands are drawn on equal distances up and down. That encloses the prices very well, but usually causes a lag when there is a trend reversal (since the opposite side band is too far from the current price).
+This indicator is one of the ways to avoid that. Instead of using equidistant bands, the bands are asymmetric.
+When the price is above the average, then the lower band is narrowed. Also, when the price is bellow the average the upper band is narrowed. That makes the "opposite side" band much closer after some time to the average and it makes the signals on bands breaking faster and sooner than any "regular" bands indicator.

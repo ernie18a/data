@@ -1,0 +1,23 @@
+The indicator shows MACD calculated based on AMA.
+The indicator has eight configurable parameters:
+Period of the Fast AMA
+;
+Fast EMA of the Fast AMA
+- the period of the fast EMA in the fast AMA settings;
+Slow EMA of the Fast AMA
+- the period of the slow EMA in the fast AMA settings;
+Period of the Slow AMA
+;
+Fast EMA of the Slow AMA
+- the period of the fast EMA in the slow AMA settings;
+Slow EMA of the Slow AMA
+- the period of the slow EMA in the slow AMA settings;
+The signal line period
+- period for the signal line of AMACD;
+Applied price
+- AMACD calculation price.
+Fig.1 AMACD H1
+Fig.2 AMACD M15
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19882

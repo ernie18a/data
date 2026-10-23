@@ -1,0 +1,1 @@
+The SuperTrend indicator here is based on the one in ProRealTime. It has the same parameters: Nbr Periods and Multiplier, and works in the same way.

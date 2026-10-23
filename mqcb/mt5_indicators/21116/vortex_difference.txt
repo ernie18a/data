@@ -1,0 +1,23 @@
+Oscillator VORTEX difference displays as a histogram the difference between +VI and -VI of indicator
+Vortex
+.
+For it to operate correctly, the availability of indicator Vortex is not required - the indicator calculates it independently.
+It has one input parameter:
+Period
+- Vortex indicator calculation period.
+Calculation:
+Diff = +VI - (-VI)
+where:
++VI = 100 * svip / satr,
+-VI = 100 * svim / satr
+where:
+svip = SMA(iVIP, Period)
+svim = SMA(iVIM, Period)
+satr = SMA(ATR, Period)
+iVIP = Abs(High - PrevLow)
+iVIM = Abs(Low - PrevHigh)
+Fig 1. Indicator Vortex difference
+Fig. 2. Indicators Vortex Difference and Vortex
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21116

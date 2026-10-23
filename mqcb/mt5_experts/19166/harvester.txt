@@ -1,0 +1,43 @@
+Author of the idea
+:
+Yuri
+,
+mq5 code author
+:
+barabashkakvn
+.
+The HarVesteR Expert Advisor closes a half of the profitable position when the following condition is fulfilled: the distance between the current position price and the position open price is equal to
+StopLoss* ratio "Half-of-position closing ratio"
+The EA additionally moves the position to breakeven.
+Input Parameters
+MACD: period for Fast average calculation
+- fast moving average period.
+MACD: period for Slow average calculation
+- slow moving average period.
+MACD: period for their difference averaging
+- the period for averaging the difference.
+Number of bars MACD (only >= 1)
+- the number of MACD bars to search for high and low.
+MA #1: averaging period
+- Moving Average #1 averaging period.
+MA #2: averaging period
+- Moving Average #2 averaging period.
+Minimal indentation (in pips)
+- the minimum distance between the price and the Moving Average.
+Number of bars Stop loss (only >= 1)
+- the number of bars for calculating stop loss.
+ADX enable
+: true → use adx, false → const "60" - allow/prohibit using the values of the ADX indicator.
+Buy Level ADX (use only if "ADX enable == true")
+- ADX value for opening BUY positions.
+Sell Level ADX (use only if "ADX enable == true")
+- ADX value for opening SELL positions.
+ADX period
+- averaging period of Average Directional Movement Index.
+Half-of-position closing ratio (only >= 2)
+- stop loss increase ratio.
+Lots
+- position volume.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19166

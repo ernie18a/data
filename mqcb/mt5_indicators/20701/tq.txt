@@ -1,0 +1,20 @@
+The Trend Quality oscillator by David Sepiashvili presented in his article Detecting And Determining Trends - Trend-Quality Indicator.
+It has six input parameters:
+Period fast
+- fast EMA period;
+Period slow
+- slow EMA period;
+Scalar trend period
+- scalar trend value period;
+Scalar noise period
+- scalar noise value period;
+Scalar correction factor
+- scalar correction factor;
+Applied price
+- price used for calculations.
+Usage
+When the histogram of the indicator is above zero and above the indicator line and colored in green, the bullish trend can be considered as stable. It is vice versa for the bearish trend (red color).
+The signal for entering a position may be when the histogram crosses the indicator line.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20701

@@ -1,0 +1,232 @@
+Strategy Tester Report
+NeuroNirvaman
+FXDD-MT4 Demo Server (Build 224)
+Symbol
+EURUSD (Euro vs. United States Dollar)
+Period
+5 Minutes (M5) 2009.05.22 00:00 - 2009.06.05 22:55 (2009.05.22 - 2009.06.06)
+Model
+Every tick (the most precise method based on all available least timeframes)
+Parameters
+SSP=20; periods=64; distancia=8; x11=130; x12=80; tp1=43; sl1=17; SSP2=2; periods2=74; distancia2=14; x21=140; x22=86; tp2=49; sl2=16; distancia3=13; distancia4=15; periods3=98; periods4=52; x31=196; x32=78; pass=3; lots=0.1; mn=555;
+Bars in test
+4124
+Ticks modelled
+161267
+Modelling quality
+n/a
+Initial deposit
+100000.00
+Total net profit
+906.33
+Gross profit
+2637.04
+Gross loss
+-1730.72
+Profit factor
+1.52
+Expected payoff
+5.89
+Absolute drawdown
+4.00
+Maximal drawdown
+222.24 (0.22%)
+Relative drawdown
+0.22% (222.24)
+Total trades
+154
+Short positions (won %)
+89 (37.08%)
+Long positions (won %)
+65 (43.08%)
+Profit trades (% of total)
+61 (39.61%)
+Loss trades (% of total)
+93 (60.39%)
+Largest
+profit trade
+47.00
+loss trade
+-19.72
+Average
+profit trade
+43.23
+loss trade
+-18.61
+Maximum
+consecutive wins (profit in money)
+4 (176.00)
+consecutive losses (loss in money)
+7 (-127.00)
+Maximal
+consecutive profit (count of wins)
+176.00 (4)
+consecutive loss (count of losses)
+-127.00 (7)
+Average
+consecutive wins
+2
+consecutive losses
+3
+.
+Hi all
+Neuronirvaman works in EURUSD. I have no tested it on other currencies. Timeframe M5.
+Optimization must be done all weekends with a 15 days range of data. Optimization lasts 1 WEEK.
+The sttrategy of this EA is to always stop when its in a lossing position. it losses like a 50% of the time but when it wins it wins more that it lose.
+yes I have tested it in a real account and it behaves the same it does in demo accounts.
+As allways happen with all good EAs this EA backtest is far too optimistic, but if you want to reach the rooft you have to aim the stars.
+if you ever make money with this EA please give some of your fortune to the more
+needed of my country. Thats fair in exchange to what I am giving to you.
+here you can do your donations.
+https://pagos.conexioncolombia.com/home.aspx
+I believe in good things happen to you when you do good things to other people.
+just try it. ;-)
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+for you to work with this EA, first you have to undestand some things
+1) forget about indicators and rules based on static values. target and stoplosses must always change depending on market conditions. it only can work when you constantly optimize the EA (all weekends).
+2) if you are lazy and dont optimize it ALL WEEKENDS you will lose money. optimization takes like 1 day.
+3) if you are so lazy that you dont want to move a finger and earn money, you always can auto trade this using my signals exposed in fxdd, alphary, OLD, Fxcm, goforex, Avafx, Wallstreet, Monex investindo Futures, FXCBS, ForexYard, Bullbroker. those brokers have autotrader like the following http://fxcm.fx-performance.com/Performance.aspx#PagePerformance my system shows with the name "matadorfx".
+I will start puting my signals today 2009/06/08. Past performance correspond to other old system I used.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Sv2.mq4 goes in Indicators folder
+Laguerre PlusDi.mq4 goes in Indicators folder
+NeuroNirvaman.ex4 goes in Experts folder
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Optimization
+to train the network you must do the following
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Stage 1. Teaching the perceptron responsible for long positions:
+Set the value 1 (according to the stage number) for the input "pass".
+Uncheck the inputs checked for optimization in the previous stage. Just in case, save in a file the inputs obtained at the previous stage.
+Check the inputs for optimization:
+ssp, periods, distancia, x11, x12, tp1, sl1. the parameters for start step stop are in the setting file i am attaching
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Stage 2. Teaching the perceptron responsible for short positions:
+Set the value 2 (according to the stage number) for the input "pass".
+Uncheck the inputs checked for optimization in the previous stage. Just in case, save in a file the inputs obtained at the previous stage.
+Check the inputs for optimization:
+ssp2, periods2, distancia, x21, x22, tp2, sl2. The parameters for start step stop are in the setting file i am attaching
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Stage 3. Teaching the perceptron responsible for type of market:
+Set the value 3 (according to the stage number) for the input "pass".
+Uncheck the inputs checked for optimization in the previous stage. Just in case, save in a file the inputs obtained at the previous stage.
+Check the inputs for optimization:
+ssp3, periods3, distancia3, x31, x32, tp3, sl3. The parameters for start step stop are in the setting file i am attaching
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+That's all, the neural network has been taught. the "pass" value must remain in "pass=3" for using the EA in a chart. this are the final settings you must save
+here goes the .set file. open the notpad and copy and paste the following into that notepad. the save it as neuronirvaman.set
+SSP=20.00000000
+SSP,F=0
+SSP,1=0.00000000
+SSP,2=2.00000000
+SSP,3=100.00000000
+periods=64.00000000
+periods,F=0
+periods,1=0.00000000
+periods,2=2.00000000
+periods,3=100.00000000
+distancia=8.00000000
+distancia,F=0
+distancia,1=0.00000000
+distancia,2=2.00000000
+distancia,3=50.00000000
+x11=130
+x11,F=0
+x11,1=0
+x11,2=2
+x11,3=200
+x12=80
+x12,F=0
+x12,1=0
+x12,2=2
+x12,3=200
+tp1=43.00000000
+tp1,F=0
+tp1,1=10.00000000
+tp1,2=1.00000000
+tp1,3=50.00000000
+sl1=17.00000000
+sl1,F=0
+sl1,1=10.00000000
+sl1,2=1.00000000
+sl1,3=25.00000000
+SSP2=2.00000000
+SSP2,F=0
+SSP2,1=0.00000000
+SSP2,2=2.00000000
+SSP2,3=100.00000000
+periods2=74.00000000
+periods2,F=0
+periods2,1=0.00000000
+periods2,2=2.00000000
+periods2,3=100.00000000
+distancia2=14.00000000
+distancia2,F=0
+distancia2,1=0.00000000
+distancia2,2=2.00000000
+distancia2,3=50.00000000
+x21=140
+x21,F=0
+x21,1=0
+x21,2=2
+x21,3=200
+x22=86
+x22,F=0
+x22,1=0
+x22,2=2
+x22,3=200
+tp2=49.00000000
+tp2,F=0
+tp2,1=10.00000000
+tp2,2=1.00000000
+tp2,3=50.00000000
+sl2=16.00000000
+sl2,F=0
+sl2,1=10.00000000
+sl2,2=1.00000000
+sl2,3=25.00000000
+distancia3=13.00000000
+distancia3,F=1
+distancia3,1=1.00000000
+distancia3,2=2.00000000
+distancia3,3=50.00000000
+distancia4=15.00000000
+distancia4,F=1
+distancia4,1=1.00000000
+distancia4,2=2.00000000
+distancia4,3=50.00000000
+periods3=98.00000000
+periods3,F=1
+periods3,1=0.00000000
+periods3,2=2.00000000
+periods3,3=100.00000000
+periods4=52.00000000
+periods4,F=1
+periods4,1=0.00000000
+periods4,2=2.00000000
+periods4,3=100.00000000
+x31=196
+x31,F=1
+x31,1=0
+x31,2=2
+x31,3=200
+x32=78
+x32,F=1
+x32,1=0
+x32,2=2
+x32,3=200
+pass=3
+pass,F=0
+pass,1=4
+pass,2=0
+pass,3=0
+lots=0.10000000
+lots,F=0
+lots,1=0.10000000
+lots,2=0.00000000
+lots,3=0.00000000
+mn=555
+mn,F=0
+mn,1=555
+mn,2=0
+mn,3=0

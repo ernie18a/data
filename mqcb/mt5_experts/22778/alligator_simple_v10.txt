@@ -1,0 +1,17 @@
+Idea by:
+Nikolay Khrushchev
+Code mq5 by:
+barabashkakvn
+The EA based on iAlligator (Alligator) indicator. It can work both on hedging and netting accounts, since it always holds only one position in the market at a time. If
+Every tick
+is
+true
+, the EA will work at each tick. If
+false
+(default), then the possibility of opening a position will only be checked as soon as a new bar appears.
+Market entry condition
+BUY:  Lips#1 > Teeth#1 && Teeth#1 > Jaws#1
+SELL:  Lips#1 < Teeth#1 && Teeth#1 < Jaws#1
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22778

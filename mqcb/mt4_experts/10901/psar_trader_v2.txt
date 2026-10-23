@@ -1,0 +1,6 @@
+PSAR trader trades using parabolic SAR signals. If you downloaded the other versions it is recommended you update it with this version.
+The EA includes a time filter and supports ECN brokers. The none straight forward settings are explained below:
+CloseOnOppositeSignal- If true if an opposite signal is given all trades that had been opened with the previous signal will be closed.
+NOTE:
+The EA is designed for 5 digit brokers since most major brokers are 5 digit nowadays.
+Its up to you to discover the optimum settings for your strategy the default settings have not been tested/optimized.

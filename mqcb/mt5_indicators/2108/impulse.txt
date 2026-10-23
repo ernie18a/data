@@ -1,0 +1,14 @@
+Real author:
+Gep
+A one period
+Momentum
+averaged by the
+SMA
+algorithm.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 11.10.2007.
+Figure 1. The Impulse indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2108

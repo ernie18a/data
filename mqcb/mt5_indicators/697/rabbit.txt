@@ -1,0 +1,97 @@
+Real author:
+Martingeil
+Modified version of
+"Rabbit"
+indicator written by JonKatana. According to the
+version author's
+opinion it looks better without fuzzy lines on a chart.
+This indicator was first implemented at MQL4 and published in
+Code Base at mql4.com
+14.03.2011.
+Input parameters:
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+int
+Yesterday    =
+0
+;
+// Days shift 0 - current,1 - previous, 1 - future
+input
+int
+Levels       =
+7
+;
+// Number of levels
+input
+bool
+Comm         =
+true
+;
+// Display of comments on a chart
+input
+bool
+Sublevel     =
+true
+;
+// Display of sublevels in the middle between basic levels
+//----
+input
+color
+FontColor=Black;
+// Price level color
+//----
+input
+color
+LineColor    = DeepSkyBlue;
+// Basic line color
+input
+STYLE LineStyle    = SOLID_;
+// Basic line style
+input
+Width LineWidth    = Width_1;
+// Basic line width
+//----
+input
+color
+MLineColor   = Lime;
+// Sublevels line color
+input
+STYLE MLineStyle   = DASHDOTDOT_;
+// Sublevels line style
+input
+Width MLineWidth   = Width_1;
+// Sublevels line width
+//----
+input
+color
+VlineColor   = Black;
+// Vertical line color
+input
+STYLE VLineStyle   = SOLID_;
+// Vertical line style
+input
+Width VLineWidth   = Width_1;
+// Vertical line width
+//----
+input
+color
+HL_lineColor = Lime;
+// Previous day range line color
+input
+STYLE HL_lineStyle = SOLID_;
+// Previous day range line style
+input
+Width HL_lineWidth = Width_5;
+// Previous day range line width
+//----
+input
+bool
+Background=
+true
+;
+// Draw vertical lines as background
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/697

@@ -1,0 +1,13 @@
+Description:
+I, myself, hardly understand the benefit of "Hedging" (Buy one Sell the same symbol), but since not many brokers follow the American style, at least certain number of traders don't like that in MetaTrader 5 multi-directional positions are not supported. So, maybe it will be cool for some people.
+This EA will open 2 component positions to synthesize the hedge symbol. For example, if you want to make "synthesized" EURUSD Buy position, you can buy EURGBP and GBPUSD with adjusted lots.
+I have added 12 symbols from
+ATC
+and AUDJPY into the selection list, but you can synthesize any symbol if you have the necessary components. For example, if you have XAUUSD and USDJPY, then we can synthesize XAUJPY, etc.
+However, we all know that normally it takes double spread and affects your deposit. Sometimes it is better than "real" symbol like below.
+Image:
+It should be a script, but I don't know how to make dialog-box from script so far. That's the only reason I made it EA.
+The files are;
+EA: SymbolSynthesizer.mq5
+Class: SymbolSynthesizerDialog.mqh (put in "/Include" folder)
+Class: SpinEditDouble.mqh (put in "/Include" folder, modified from SpinEdit.mqh, to use for double value)

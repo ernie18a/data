@@ -1,0 +1,19 @@
+Introduction
+: Traders of all varieties have increasingly dependent on mt4's automated trading and custom studies capabilities to implement their speculative strategies unattended. The execution of these tools rely on the primary input: price feed. Each new price quote of bid/ask information comes on a new tick. If the price feed contains old or stale ticks, then it is possible that the price that is presented is no longer valid. However, when trading with algorithms, the trader would not know the difference quick enough to act just by looking at the chart until after the fact, even if the price difference was significant enough to see visually.
+The basic logic of the Rogue tick detector tool is as follows:
+Price feed is linear (current price increases, decreases, or stays the same relative to previous price), and each price quote (tick) is supposed to be sequential. Meaning a price quote time stamp 12:20:25 should always arrive and be counted in the platform before quote timestamp 12:20:26. If the 12:20:25 stamp comes after 12:20:26, then an error message appears, either in popup, email, and/or written log format. The log will have the symbol name, the rogue tick, and the previous tick bid/ask and time-stamp information.
+Check incoming tick (tick0) timestamp and compare to the previous tick time-stamp (tick-1). If tick 0 timestamp < tick -1, then record alert.
+Options for popup, email, and separate log file are all possible. If you need to send evidence to the broker or programmer, you may use the separate log file if you do not want to use expert logs. Make sure you account for the time difference as the expert log will record the local computer time, and the timestamp of the ticks will be mt4 market watch time.
+Installation
+: Copy RogueTickDetector.mq4 or ex4 to [metatrader4 folder]\experts\indicators . Restart metatrader 4 and then you should see the new indicator in the navigator under the 'custom indicators' folder. Drag RogueTickDetector onto any chart with the symbol you want to track. It is possible to run several
+different
+indicators simultaneously on the same chart, but only one instance of RogueTickDetector per tracked symbol is needed.
+log file will be in [metatrader4 folder]\experts\files
+Notes:
+There could be legitimate reasons why rogue ticks are detected on a sporadic basis (couple of times a day max). But often times when a pair is suddenly experiencing several rogue ticks per minute or per hour (regardless of the symbol volatility), it is
+possible
+that it is intentional price feed manipulation. Check to see if other forms of dealer intervention is present (execution/fill delays, asymmetric slippage, excessive re-quotes, unusual disconnects, etc). Also check on your end the latency from the mt4 terminal to the server as well as the internet connection quality.
+Normally the price feed rogue ticks are a result of a problem on the broker side, as we normally use the tool on quality VPS server in New York with 100% uptime guarantee. The same server will have multiple live and demo accounts with multiple brokers trading similar currency pairs; yet only a few brokers seem to have the problem consistently. Or a broker will never have this issue, but suddenly it will happen very frequently.
+Since it uses very few computer resources, we recommend all traders who value accurate pricing to consider using this tool or something similar.
+Special thanks
+to Vivek @ Anka Software for assistance in designing the tool for practical use.

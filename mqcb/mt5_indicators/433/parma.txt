@@ -1,0 +1,15 @@
+Real author:
+alexjou
+Moving average indicator based on parabolic approximation of price. Quite remarkable algorithm of parabolic price approximation is used in this indicator for smoothing.
+The indicator uses the CParMA class of the SmoothAlgorithms.mqh library. The use of this class is described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Place smoothalgorithms.mqh library to the
+terminal_data_folder
+\MQL5\Include.
+The indicator parma.mq5 must be placed to the
+terminal_data_folder
+\MQL5\Indicators.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/433

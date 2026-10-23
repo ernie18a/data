@@ -1,0 +1,6 @@
+Author: not specified
+The 1_Otkat_Sys Expert Advisor.
+The system is configured for 0 hours (Moscow Time), does not trade on the nights of Monday and Friday.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7862

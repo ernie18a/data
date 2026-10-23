@@ -1,0 +1,6 @@
+Author:
+CRN, www.crn.ugu.pl
+The moving average that divides the prices for classes. The classes with extreme price get bigger weight (importance) (different from WMA). It should show the state of bought / sold out of market. It Show Trend.
+Green line is up-trend.
+Red is down-trend
+Blue is no trend.

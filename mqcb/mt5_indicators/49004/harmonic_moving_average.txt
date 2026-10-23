@@ -1,0 +1,3 @@
+Quoted from Investopedia
+What Is the Harmonic Mean?
+The harmonic mean is a numerical average calculated by dividing the number of observations, or entries in the series, by the reciprocal of each number in the series. Thus, the harmonic mean is the reciprocal of the arithmetic mean of the reciprocals.

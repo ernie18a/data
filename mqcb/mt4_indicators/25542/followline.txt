@@ -1,0 +1,17 @@
+This indicator uses Bollinger Bands lines to detect markets trend.
+It's a very useful tool for manual trading.
+Parameters
+BarsCount
+- How many bars used to show the line.
+BBperiod
+- Period of Bollinger Bands.
+BBdeviations
+- Deviations of Bollinger Bands.
+ATRperiod
+- Period of ATR.
+UseATRfilter
+- Use ATR for filter.
+AlertON
+- Pop up an alert.
+ShowArrows
+- Show arrows in case of any trend change.

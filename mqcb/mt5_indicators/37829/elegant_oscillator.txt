@@ -1,0 +1,6 @@
+In his article in February 2022 issue of TASC, “An Elegant Oscillator: Inverse Fisher Transform Redux,” author John Ehlers explains how he uses the inverse Fisher transform to create an indicator he calls the
+elegant oscillator
+.
+Recommendations:
+this version is extended compared to original (not using fixed oscillator period and you can freely chose prices)
+some experimenting with parameters advised (see the example bellow : red is default, blue is with periods 100,100 - so there is plenty of room for experimenting)

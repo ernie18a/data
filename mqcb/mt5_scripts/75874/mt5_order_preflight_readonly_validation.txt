@@ -1,0 +1,51 @@
+Purpose
+MT5 Order Preflight
+is a read-only diagnostic script for checking a hypothetical market, limit or stop order against the rules currently advertised for the chart symbol. It helps isolate common request problems before the same values are tested inside a larger Expert Advisor.
+The script never sends, modifies or cancels a trade. It creates a plain-text validation report in the Experts tab and, optionally, in the terminal-wide Common\Files folder.
+What it checks
+availability of a current Bid and Ask tick;
+symbol trade mode and long-only, short-only or close-only restrictions;
+support for market, limit or stop orders;
+minimum, maximum and step-aligned volume;
+tick-size normalization of a hypothetical pending price;
+pending-order distance against the current stops level;
+stop-loss and take-profit support and minimum distance;
+advertised FOK, IOC or BOC filling flags.
+How to use
+Copy SCA_MT5OrderPreflight.mq5 to MQL5\Scripts\StratCoreAlpha and compile it.
+Run the script on the symbol that exhibits the order problem.
+Select the hypothetical order scenario, volume and distances.
+Review every PASS, WARN and FAIL line in the Experts tab or saved text report.
+Add the actual trade retcode and nearby Experts or Journal lines when preparing a reproducible bug report.
+Inputs
+InpScenario
+— market buy/sell, buy/sell limit or buy/sell stop.
+InpVolume
+— hypothetical order volume.
+InpPendingDistancePoints
+— pending distance from the current Ask or Bid.
+InpStopLossPoints
+and
+InpTakeProfitPoints
+— protective distances; zero disables the corresponding check.
+InpWriteTextFile
+and
+InpPrintToExperts
+— report destinations.
+InpFilePrefix
+— prefix for the Common\Files text report.
+Reading the result
+PASS
+means the supplied value is consistent with the inspected symbol metadata.
+WARN
+identifies a disabled or broker-dependent check that needs review.
+FAIL
+means the hypothetical request conflicts with at least one current rule.
+[PASS] Volume range: 0.10000000 is inside the advertised range. [PASS] Volume alignment: 0.10000000 matches step 0.01000000. [FAIL] Stop loss distance: 5 points is below the current stops level of 20. Result: DO NOT SEND AS CONFIGURED
+Privacy and safety
+The report excludes account login, owner name, broker server, balance, equity, positions, orders, history, files, keys and credentials. Review the generated text before sharing it.
+A passing preflight cannot guarantee trade-server acceptance, execution price or trading results. Market state and broker rules can change between the diagnostic run and a later request.
+Source and license
+The source is released under the MIT License. The versioned source and installation guide are available at
+the public GitHub release
+.

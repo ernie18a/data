@@ -1,0 +1,8 @@
+This indicator shows 3 periods ATR LWMA. I made this indicator for identifying declining volatility.
+Updates (05/09/2015):
+v 1.01 — minor bug fixes.
+Display:
+Red line — shows the Signal Period ATR LWMA;
+Aqua line — shows the Fast Period ATR LWMA;
+Blue line — shows the Slow Period ATR LWMA.
+Settings:

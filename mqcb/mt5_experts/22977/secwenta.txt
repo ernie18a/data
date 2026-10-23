@@ -1,0 +1,15 @@
+The EA only operates when a new bar appears. It always keeps open no more than one open position - therefore it can work both on netting and hedging accounts.
+The algorithm itself is very simple: wait for
+Number of bull bars
+or
+Number of bear bars
+in a row. It is expected that identical bars arriving in a row hint at the continuation of a trend.
+BUY open signal is also SELL close one.
+You can allow the EA to only BUY or only SELL. For example, only BUY trades are available and
+Number of bull bars
+is 2 and
+Number of bear bars
+is 1. In this case, a single incoming bearish bar is a signal to close a BUY position.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22977

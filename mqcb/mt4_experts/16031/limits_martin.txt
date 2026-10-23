@@ -1,0 +1,19 @@
+The second version of the EA adds the ability to select the type of pending orders for trading in the Limits0_or_Stops1 parameter. If set to 0 — it trades limit orders, if 1 — stop orders.
+Added trailing stop and breakeven features, which are activated if: 1) they are enabled in the EA settings; 2) the last order has either closed in profit or broken even.
+Trailing_Use=true; enable trailing of stop orders (works if the last order has closed in profit or broken even).
+Profit_Level_Trailing = 100; profit level in points, when reached by an order, trailing stop is activated.
+TrailingStop=50; TrailingStop distance in points, at which the stop loss will trail the price.
+TrailingStep=50; step in points, after which the stop loss is modified.
+Breakeven_Use=true; enable breakeven.
+Profit_Level=30; an order moves to profit of the stated number of points (for breakeven).
+SL_Plus = 10; sets the order breakeven+SL_Plus in points.
+At the default of "Step" points (200 pt. by default) from the market price, the EA places pending Buy Limit and Sell Limit orders with the specified stop loss ("SL", 30 pt. by default) and take profit ("TP", 60 pt. by default).
+If the price moves away from the pending order, the EA trails the pending orders after the price, with a step of "Step_Interval" points (10 pt. by default).
+When any of the pending of orders is triggered, the opposite one is removed and new orders are not placed until the existing market order is closed. If the last order was closed in profit, the subsequent limit orders are opened with the initial lot, equal to the "Lots" parameter. If the last order closed in a loss or if there is a series of multiple unprofitable orders in a row, the EA calculates the lot size of the subsequent pending orders in a way that closing the next order by take profit covers the previous losses (it is recommended to set the take profit at least twice the size of stop loss).
+If the MegaLot is set to true (enabled), in case the previous order (series of orders) had closed in a loss, the next order will be opened with a lot size, that is able to cover the previous losses and earn extra in the deposit currency = the number of profit points taken by the initial lot.
+The EA features a limit on the number of lot multiplications in the "Limit" parameter. If there is a series of consecutive losing orders in the amount exceeding or equal to the "Limit", the lot size of the subsequent orders will be set to the initial value and equal to the "Lots" parameter, until there is an order closed in profit.
+Increase of the lot size after receiving unprofitable orders can be disabled by setting "Martin = false".
+The EA provides the ability to place pending orders at the price equal to the opening price of the last deleted order (it is better to leave "false").
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16031

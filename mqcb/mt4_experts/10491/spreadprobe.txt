@@ -1,0 +1,4 @@
+Description:
+Most forex brokers make money from the differences between ask and bid prices (or called spreads), which are the full cost of trading for a trader.
+It is critical for a trader (especially a day-trader) to trade with a broker who provides low spreads among other things. However, the reality is that spreads usually vary through the day, and brokers usually do not provide as tight spreads as they advertize or promised. How to find out if your broker is honest or compare spreads among brokers? Here, SpreadProbe is designed to do the benchmark for you.
+The result is saved in a file in "experts\files" folder. It contains 3 columns: start time, end time, average spread of the interval. By default, the interval is set to 15.

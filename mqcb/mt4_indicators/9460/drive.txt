@@ -1,0 +1,8 @@
+Green above Red -> Up.
+Red above Green -> Down.
+Periods that seem useful are 4, 16, 128.
+Value is calculated as follows:
+Up (Green) = ((High - Open) + (Close - Low))/2, averaged for the selected period;
+Down (Red) = ((Open - Low) + (High - Close))/2, averaged for the selected period.
+This may have another name or be similar to an existing indicator. I've made up the name drive. Please drop me an email if you've run into a similar indicator before -
+systrad5@yahoo.com

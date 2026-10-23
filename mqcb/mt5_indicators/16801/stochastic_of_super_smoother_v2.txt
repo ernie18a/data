@@ -1,0 +1,4 @@
+This is the second version of
+stochastic of super smoothe
+r. It has an added color stochastic part too that is drawn around 50 base line. That, for example, is completely impossible to do in MetaTrader 4, along with the number of colors used for that.
+It is a bit more "readable" this way and it us an additional criteria of trend forming.

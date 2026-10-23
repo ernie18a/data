@@ -1,0 +1,31 @@
+The SAW_system_1 Expert Advisor places pending orders on the basis of the volatility for the last N days. The stop loss is always placed at the level of the opposite order, therefore, setting the stop loss value also sets the distance between orders. Stop loss and take profit and NOT calculated in points, but as a percentage of the average volatility over the specified number of days.
+The orders are placed at a certain hour (terminal time), and if none of them was triggered, then they are deleted at the specified hour.
+In addition, the EA is able to "reverse" the position when the first stop loss is triggered, or rather, it simply does not remove the opposite order when a position is opened by either of the orders. Also, when a position is opened, the opposite order can be placed with an increased lot to compensate losses, in case the position on second order closes in a loss.
+Parameters:
+Lot
+- trading lot;
+Amount of days (for calculating volatility)
+- the number of days for calculation of volatility;
+Hour installation orders (terminal time)
+- order placing hour (terminal time);
+Hour removal orders (terminal time)
+- order deleting hour (terminal time);
+Stop-Loss (percentage of the average volatility)
+- stop loss (percentage of the average volatility);
+Take-Profit (percentage of the average volatility)
+- take profit (percentage of the average volatility);
+Reverse positions
+- position reversal;
+Martingale
+- enable Martingale;
+Multiplier
+- Martingale multiplier.
+The trading instrument does NOT matter, as long as optimization is performed.
+Timeframe is not important either, as everything happens by the terminal time.
+Recommendations:
+The parameters should be optimized on a period not greater than one year, as greater period does not make sense.
+Reoptimization will probably need to be performed every 3 months.
+I had written this code long ago, so write me about all issues, I will fix them as much as possible.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15952

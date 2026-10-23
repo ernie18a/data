@@ -1,0 +1,2 @@
+Indicator SilverTrend rewritten by CrazyChart is an alerting system similar to indicators of ASCTrend. If the indicator SilverTrend rewritten by CrazyChart meets lines, it alerts about necessity to buy or sell.
+If the blue line meets the red line from bottom to top, a long position should be opened. If vice versa, a short position should be opened.

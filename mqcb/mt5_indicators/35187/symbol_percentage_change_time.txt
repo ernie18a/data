@@ -1,0 +1,3 @@
+Shows Symbol name, percentage change of price from last day, and Time
+Time has input options, You can select GMT, LocalTime or TradeServerTime
+You can also set label to any corner you wish.

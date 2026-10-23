@@ -1,0 +1,13 @@
+You can see how MACD works on main price chart.
+Equivalency #1:
+MACD oscillator: MACD line crosses the Signal line.
+MACD_CW: Indicator Red line crosses the price bar.
+Example in Fig.: Red vertical lines.
+Equivalency #2:
+MACD oscillator: MACD line crosses Zero.
+MACD_CW: Indicator Silver line crosses the price bar.
+Example in Fig.: Silver vertical lines.
+Equivalency #3:
+MACD oscillator: Signal line crosses Zero.
+MACD_CW: Indicator Red line crosses Indicator Silver line.
+Example in Fig.: Blue vertical lines.

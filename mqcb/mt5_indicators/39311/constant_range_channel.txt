@@ -1,0 +1,8 @@
+This is a very simple indicator. It plots a channel with a constant range of twice the step-size parameter value.
+The range is broken when the low quote price breaks the upper level, or when the high quote price breaks the lower level of the channel’s range.
+The code uses conditional compilation and will compile on both MQL4 and MQL5.
+Please note that all my
+CodeBase
+publications’ source code are now also available in “Public Projects” tab of
+MetaEditor
+under the name “FMIC”.

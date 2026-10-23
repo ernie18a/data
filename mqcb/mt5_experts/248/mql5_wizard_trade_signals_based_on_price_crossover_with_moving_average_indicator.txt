@@ -1,0 +1,230 @@
+MQL5 Wizard
+allows to create the code of Expert Advisors automatically. See
+Creating Ready-Made Expert Advisors in MQL5 Wizard
+for the details.
+Here we will consider the strategy based on price crossover with Moving Average indicator. The strategy called
+"Signals based on price crossover with MA"
+(when creating EA automatically in MQL5 Wizard).
+The trade signals:
+Buy: upward crossover of price with Moving Average.
+Sell: downward crossover of price with Moving Average.
+The checking of MA increase/decrease is used to filter false signals.
+This strategy is implemented in
+CSignalMA
+class of the
+Trading Strategy classes
+of MQL5 Standard Library (located in MQL5\Include\Expert\Signal\SignalMA.mqh).
+Figure 1. Trade signals based on price crossover with Moving Average
+Trade Signals
+The trading strategy is implemented in
+CSignalMA
+class, it has some protected methods to simplify access to indicators and price values:
+double
+MA(
+int
+ind)
+// returns the value of moving average of the bar
+double
+Open(
+int
+ind)
+// returns the opening price of the bar
+double
+Close(
+int
+ind)
+// returns the closing price of the bar
+double
+StateMA(
+int
+ind)
+// returns positive value if average increases and negative if decreases
+double
+StateOpen(
+int
+ind)
+// returns the difference between the opening price and moving average
+double
+StateClose(
+int
+ind)
+// returns the difference between the closing price and moving average
+The price and indicator values of the 0th (uncompleted) bar may change, so it's necessary to perform the checking of trade conditions using the completed (formed) bars data.
+1. Open long position
+Conditions to open long position (price crossover with MA and checking of MA increase):
+Open(1)<MA(1): opening price is lower than moving average;
+Close(1)>MA(1): closing price is higher than moving average;
+MA(1)>MA(2): check increase of moving average (to filter false signals).
+//+------------------------------------------------------------------+
+//| Checks conditions to open long position (buy)                    |
+//+------------------------------------------------------------------+
+bool
+CSignalMA::CheckOpenLong(
+double
+& price,
+double
+& sl,
+double
+& tp,
+datetime
+& expiration)
+  {
+   price=
+0.0
+;
+   sl   =
+0.0
+;
+   tp   =
+0.0
+;
+//--- price has crossed upward the MA and MA increases
+return
+(StateOpen(
+1
+)<
+0
+&& StateClose(
+1
+)>
+0
+&& StateMA(
+1
+)>
+0
+);
+  }
+2. Close long position
+Conditions to close long position (price crossover with MA and checking of MA decrease):
+Open(1)>MA(1): opening price is higher than moving average;
+Close(1)<MA(1): closing price is lower than moving average;
+MA(1)<MA(2): check decrease of moving average (to filter false signals).
+//+------------------------------------------------------------------+
+//| Checks conditions to close long position                         |
+//+------------------------------------------------------------------+
+bool
+CSignalMA::CheckCloseLong(
+double
+& price)
+  {
+   price=
+0.0
+;
+//--- price has crossed moving average downward and moving average decreases
+return
+(StateOpen(
+1
+)>
+0
+&& StateClose(
+1
+)<
+0
+&& StateMA(
+1
+)<
+0
+);
+  }
+3. Open short position
+The conditions to open short position are the same as long position closing conditions.
+//+------------------------------------------------------------------+
+//| Checks conditions to open short position (sell)                  |
+//+------------------------------------------------------------------+
+bool
+CSignalMA::CheckOpenShort(
+double
+& price,
+double
+& sl,
+double
+& tp,
+datetime
+& expiration)
+  {
+   price=
+0.0
+;
+   sl   =
+0.0
+;
+   tp   =
+0.0
+;
+//--- price has crossed moving average upward and moving average decreases
+return
+(StateOpen(
+1
+)>
+0
+&& StateClose(
+1
+)<
+0
+&& StateMA(
+1
+)<
+0
+);
+  }
+4. Close short position
+The conditions to close short position are the same as long position opening conditions.
+//+------------------------------------------------------------------+
+//| Checks conditions to close short position                        |
+//+------------------------------------------------------------------+
+bool
+CSignalMA::CheckCloseShort(
+double
+& price)
+  {
+   price=
+0.0
+;
+//--- price has crossed moving average upward and moving average increases
+return
+(StateOpen(
+1
+)<
+0
+&& StateClose(
+1
+)>
+0
+&& StateMA(
+1
+)>
+0
+);
+  }
+//+------------------------------------------------------------------+
+Creating Expert Advisor using MQL5 Wizard
+To create a trading robot based on the strategy you need to choose the signal properties as "
+Signals based on price crossover with MA
+" in "Creating Ready-Made Expert Advisors" option of
+MQL5 Wizard
+:
+Figure 2. Choose "Signals based on price crossover with MA" in MQL5 Wizard
+The next you have to specify the needed
+trailing stop
+algorithm and
+money and risk management
+system. The code of Expert Advisor will be created automatically, you can compile it and test in
+Strategy Tester
+of MetaTrader 5 client terminal.
+Testing Results
+Let's consider backtesting of the Expert Advisor on historical data (EURUSD H1, custom period: 1.1.2010-05.01.2011, MA_period=12, MA_Shift=0).
+In creation of Expert Advisor we used the fixed volume (
+Trading Fixed Lot
+, 0.1), Trailing Stop algorithm is not used (
+Trailing not used
+).
+Figure 3. Historical backtesting results of the Expert Advisor, based on price crossover with MA
+Attachments:
+The SignalMA.mqh with
+CSignalMA
+class (included in
+MQL5 Standard Library
+) is located at MQL5\Include\Expert\Signal folder. The file crossoverma.mq5 contains the code of the Expert Advisor, created using MQL5 Wizard.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/248

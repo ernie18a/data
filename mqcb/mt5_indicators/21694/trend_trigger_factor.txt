@@ -1,0 +1,2 @@
+Trend Trigger Factor was described by M.H. Pee in the Technical Analysis of Stocks and Commodities magazine in December, 2004.
+This version is adding T3 smoothing (to lessen false signals) and some extras in order to make the trend triggering state easier.

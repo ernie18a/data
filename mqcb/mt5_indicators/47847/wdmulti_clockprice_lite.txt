@@ -1,0 +1,28 @@
+The MT5 custom indicator, named "wd.Multi_ClockPrice lite!", is the lite version of "wd.Multi_ClockPrice".
+"wd.Multi_ClockPrice lite!" is designed to provide a visual representation of the MT5 terminal server time and bid price on the chart. It contains basic features for displaying clock and price information.
+The clock display using
+OnTimer()
+event function, updates the server time every second. It synchronizes with PC clock, allowing seamless updates. Even when the MT5 is disconnected/offline, the server time continues to run without depends on tick prices.
+Here's how the indicator works:
+Place 'server clock & bid price' labels in the specified Sub-Window:
+The Sub-Window input parameter specifies the sub-window number where the labels need to be placed.
+These clock and price information can be placed in the main chart or sub-window. User can also adjust label distances (Y-Position).
+To place labels in the main chart, simply input '0' in the 'Sub-Window placement' properties.
+To place them in a Sub-Window below, input ‘1 or 2 or 3, etc’. User need to attach indicator “wd.Multi_SubWindow”
+{wd.Multi_SubWindow.mq5 attached}
+.
+Server Time Display:
+The
+OnTimer()
+function updates the server time by adding or subtracting the specified increment (if needed).
+Usually, the seconds might not match between the MT5 terminal and the server time display, so to synchronize them, user needs to adjust the seconds.
+For example, if the MT5 server time is 05:28:06 and the "wd.Multi_ClockPrice lite!" displayed is 05:28:03, (Need 3 seconds adjustment).
+To make the displayed server time incremented/adjusted, in the 'Seconds incremented' indicator properties, user needs to input the value 3.
+Price Display:
+The price is updated in real-time, showing the current bid price.
+Overall, the “wd.Multi_ClockPrice lite!” indicator efficiently meets the basic need for clock and price information.
+It consistently updates the server clock every second, avoiding halting time-jumping, and also updates bid prices in real-time.
+Its most significant advantage lies in its utility for users who hide all MT5 control panels (Toolbars, Market Watch, Navigator, etc) to maximize their monitor screen for full multi-charts. It also has an advantage for MT5 users whose brokers don't update server/terminal time too often.
+Using
+OnTimer()
+function with multiple EAs and many indicators running at the same time might impact overall performance, especially if other EA’s or indicators also use same timers ID function.

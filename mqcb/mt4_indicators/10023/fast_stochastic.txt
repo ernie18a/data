@@ -1,0 +1,16 @@
+The Fast Stochastic is a kind of George C. Lane’s stochastic oscillator.
+The Fast Stochastic is the indicator that shows ratio between the current close price and the maximum/minimum of the preset period of time. This means the indicator is calculated on the moving data window and shows the price change rate.
+The Fast Stochastic is shown in a chart as two lines %K and %D.
+Classical formula to compute the Fast Stochastic is the following:
+%K(i) = 100*(Close(i) - MaxHigh(N)) / (MaxHigh(N) - MinLow(N));
+%D(i) = MA(%K(i), P);
+where:
+Close(i) - close price of the current bar;
+MaxHigh(N) - maximum High for N preceding periods;
+MinLow(N) - minimum Low for N preceding periods;
+MA - moving average;
+N - the range of High/Low computation;
+P - smoothing period for %D(i).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10023

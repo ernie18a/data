@@ -1,0 +1,10 @@
+Real author:
+Heaton Research's Encog project.
+I modified it to take the data for Stohastic, I do not hold the ownership of the code.
+This indicator exports the indicator values in CSV to use for MATLAB analysis with neural network, SVM, KNN, fuzzy.
+This indicator will save value Stohastic main line and Stohastic signal line for using in artifical intelegence.
+If you need indicator to save to csv just send pm I tried to help for computer science.
+HOW TO USE:
+Choose what pair and what timeframe;
+Attach the indicator to the chart;
+The file is saved in /your broker/MQL4/Files folder.

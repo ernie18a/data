@@ -1,0 +1,36 @@
+The code keeps track of orders' tickets in an
+CArrayInt.
+Monitoring the changes to the list of tickets in
+onTimer
+it triggers these event handlers:
+//+------------------------------------------------------------------+
+//| Event handler when stop loss is hit                              |
+//+------------------------------------------------------------------+
+void
+onStopLoss(
+ulong
+ticket);
+//+------------------------------------------------------------------+
+//| Event handler when take profit is hit                            |
+//+------------------------------------------------------------------+
+void
+onTakeProfit(
+ulong
+ticket);
+//+------------------------------------------------------------------+
+//| Event handler when a new order is opened                         |
+//+------------------------------------------------------------------+
+void
+onTradeEntry(
+ulong
+ticket);
+//+------------------------------------------------------------------+
+//| Event handler when an order is closed(removed)                   |
+//+------------------------------------------------------------------+
+void
+onTradeExit(
+ulong
+ticket);
+note
+: Not all features of the MQL5 onTradeTransaction handler has been implemented here. It is just a basic approach.
+In the screenshot below you can see the output log for the EA:

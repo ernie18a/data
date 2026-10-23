@@ -1,0 +1,66 @@
+The indicator displays the time of the trading session.
+//   CloqCorner   - 0 = top left, 1 = top right, 2 = bottom left, 3 = bottom right
+//   DispGMT      - Display GMT Time
+//   DispLocal    - Display Local Time
+//   DispLondon   - Display London Time
+//   DispTokyo    - Display Tokyo Time
+//   DispNY       - Display New York Time
+//   DispBroker   - Display Brokers Time
+//   LabelColor   - Color of city label
+//   ClockColor   - Color of clock
+Input Parameters:
+extern
+int
+CloqCorner
+=
+2
+;
+extern
+bool
+DispGMT
+=
+true
+;
+extern
+bool
+DispLocal
+=
+true
+;
+extern
+bool
+DispLondon
+=
+false
+;
+extern
+bool
+DispTokyo
+=
+false
+;
+extern
+bool
+DispNY
+=
+false
+;
+extern
+bool
+DispBroker
+=
+true
+;
+extern
+color
+LabelColor
+=
+Black
+;
+extern
+color
+ClockColor
+=
+Black
+;
+Cloq

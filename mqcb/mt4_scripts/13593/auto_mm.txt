@@ -1,0 +1,14 @@
+This script will help you calculate your lot to open position. You just need to enter Risk and StopLoss.
+Input parameters:
+OPBUY=False — set true for entry position
+OPSELL=False — set true for entry position
+Risk=10 — in percent, your maximum loss when hit Stop Loss
+SL=20 — it means 20 pips (4 digits) and 200 point (5 digits)
+Jumlah_OP=2 — total orders, you can make multiple open positions
+TakeProfit=20 — it means 20 pips (4 digits) and 200 point (5 digits)
+CloseALL=False — true when you want to close all orders
+MagicNumber=333 — orders identification number
+Update:
+- AutMM V1.mq4 (March 10, 2016)
+decimal correction
+comment info

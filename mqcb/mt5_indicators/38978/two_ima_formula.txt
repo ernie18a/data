@@ -1,0 +1,7 @@
+The idea of the indicator
+Explore the shape of a line by applying three different formulas:
+Fast-Slow
+Fast/Slow
+(Fast-Slow)/Slow
+Rice. 1. Two iMA Formula
+In the figure above, three indicators are added to one chart - each has its own formula. As you can see, the shape of the indicator line is the same in all three cases - only the values of these lines differ.

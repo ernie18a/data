@@ -1,0 +1,9 @@
+If you would like to take a screenshot of a script/EA/indicator you have to specify the chart size, because the MT4 can't detect it.
+This script:
+calls the user32.dll to determine the chart's size
+places labels in the top left and bottom left corners, that show the instrument's name and the timeframe
+calls the kernel32.dll that's why the script is able to save the image to a user defined folder
+outside the MQL4 folder
+with a file name which containings: the user defined prefix, instrument's name, timeframe, and a timestamp when the screenshot was taken (e.g. Screen_USDCHF_M15_17-13-20.gif)
+Some settings can be changed with external variables.
+If you uncomment the "//#property show_inputs" line, you can change settings every time you run the script.

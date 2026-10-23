@@ -1,0 +1,24 @@
+Smoothed Momentum indicator is a smoothed momentum.
+There are five inputs:
+Momentum period
+- calculation period
+Use smoothing
+(Yes/No)
+Smoothing period
+Smoothing method
+Applied price
+- Momentum calculation price
+Calculation:
+If Use smoothing = Yes
+Momentum = MA(Mom, Smoothing period, Smoothing method)
+otherwise
+Momentum = Mom
+where:
+Mom = 100.0 * MA / PMA
+MA - SMA(Applied price, 1)
+PMA - SMA(Applied price) Momentum period back
+Fig. 1. Smoothed Momentum, Use smoothing = Yes
+Fig. 2. Smoothed Momentum, Use smoothing = No
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22610

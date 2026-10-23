@@ -1,0 +1,10 @@
+A semaphore signal indicator that gives trade signals when candles
+Heiken Ashi Smoothed
+change their directions.
+The indicator uses the classes of library SmoothAlgorithms.mqh (to be copied to terminal_data_catalog\MQL5\Include), working with which was described in details in article
+Averaging Price Series for Intermediate Calculations without Using Additional Buffers
+.
+Fig.1. Indicator Heiken_Ashi_Smoothed_Trend
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22669

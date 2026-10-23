@@ -1,0 +1,7 @@
+Theory:
+Tim Tillson (that invented T3 indicator) used generalized DEMA in the T3 calculation. It is less known that there are 3 "levels" of that T3 calculation : GDEMA (as the first "level"), GDEMA of GDEMA (as the second "level") and GDEMA of GDEMA of GDEMA (which is the T3).
+This indicator:
+In it you can chose which "level" of the 3 you wish to be displayed. It is a sort of 3-in-1 indicator (since it is displaying the above described "levels"). It is also using self adjusting levels in order to identify trends. Instead of using slope of the calculated value, crosses of levels are used as trend direction, and that way they are filtering out the less significant slope changes that could lead to false signals.
+Usage:
+You can use the color changes of the values as signals.
+PS: the "big picture" example where all 3 "levels" are displayed (just the type is different, the rest of the parameters is the same).

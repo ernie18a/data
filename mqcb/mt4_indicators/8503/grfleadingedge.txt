@@ -1,0 +1,28 @@
+Indicator of Bollinger bands.
+Input Parameters:
+extern
+int
+Samples
+=
+60
+;
+extern
+int
+LookAhead
+=
+0
+;
+extern
+double
+StdLevel1
+=
+2
+;
+extern
+double
+StdLevel2
+=
+4
+.
+;
+GRFLeadingEdge

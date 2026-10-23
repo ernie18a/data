@@ -1,0 +1,28 @@
+The script will create a gif image section of the chart in the root directory of the program (MQL4/Files/ScreenShots).
+If successful, the file creation works beep. Create a screen name, you can simply drag the script from the browser to the chart.
+Continue the whole area between the extreme lower right corner of the graph and the mouse cursor. Windows indicators are also included.
+Images:
+Image sizes can be very different:
+Indicators are also displayed correctly:
+Tips:
+If you interfere with the audio signal, it can simply be removed by changing the source code:
+To do this, open the editor MetaEditor, open the script there and find these lines:
+//#property show_inputs
+-
+if you want every time to change these settings, then remove the first two forward slashes
+input
+string
+dir=
+"//ScreenShots/"
+; -
+You can specify a folder, but necessarily in the program directory
+input
+bool
+play_sound=
+true
+;      -
+if you do not need a sound, change the true to false
+This script can not take pictures with the middle of the chart. You can take pictures only at its end. Since the right boundary of the picture - the current date and time.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12313

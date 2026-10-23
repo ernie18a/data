@@ -1,0 +1,13 @@
+Description:
+This will help reduce the semiautomatic routine work.
+Features:
+Opening trades directly from charts;
+Enable or disable the sound from the chart;
+Shows how many points to the profit and stop loss;
+Shows a profit for each order;
+TP and SL of movement directly on the chart;
+Ability Grouping information on orders.
+Image:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10558

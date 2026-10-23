@@ -1,0 +1,5 @@
+Author: MaksiGen
+Some people think: "Most indicators, such as: MACD, RSI, AO, AC, are delayed and not convenient to work with. But the MaksiGen KaHaJI ckaJIneP allows to earn 10 points every day persistently".
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7483

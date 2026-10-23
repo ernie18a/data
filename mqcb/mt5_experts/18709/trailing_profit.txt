@@ -1,0 +1,52 @@
+Author of the idea
+—
+Vitaly
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+The Expert Advisor manages all open positions in the terminal (on all symbols and with all magic numbers). If the total profit has not reached "
+minimum_profit
+", the EA waits.
+If the total profit has reached "
+minimum_profit
+"
+, the EA sets a percent of profit drawdown and enables tracking.
+The "
+percent_of_profit
+" parameter is specified in percent. For example,
+"
+minimum_profit
+"
+= 1000 and "
+percent_of_profit
+" 20. The total profit of all open positions has reached 1000. If the profit falls to 800 (1000 - 20%), positions will be closed. If the profit continues to grow, for example up to 2000, the allowable drawdown will be equal to 400 (2000 - 20%). That is, all positions will be closed with the total profit of 1600. There is no fixed drawdown limit, as I do not find it useful to use absolute values.
+In theory, it is possible to set percentage = 0. It will function as a total Take Profit. It is possible to set percentage = 100, it will function as breakeven (do not forget, as some orders are being closed, others may become losing).
+Attention! The Expert Advisor works with the
+3-second interval:
+void
+OnTick
+()
+  {
+//--- allow work every three seconds
+static
+datetime
+prev_time=
+0
+;
+datetime
+time_current=
+TimeCurrent
+();
+if
+(time_current-prev_time<
+3
+)
+return
+;
+   prev_time=time_current;
+//---
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18709

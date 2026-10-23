@@ -1,0 +1,9 @@
+The
+QQE
+(Quantitative Qualitative Estimator) made multi timeframe.
+Timeframes supported are all the possible timeframes supported by MetaTrader 5 and it has 3 "special" timeframes:
+Next higher timeframe: first higher timeframe compared to active chart.
+Second higher timeframe: second higher timeframe compared to active chart.
+Third higher timeframe: third higher timeframe compared to active chart.
+If some of these 3 timeframes are used, then the timeframe is set automatically as you change the timeframe of the chart.
+PS: the indicator is a standalone indicator. It does not need any other indicator in order to work correctly.

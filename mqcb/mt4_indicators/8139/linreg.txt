@@ -1,0 +1,4 @@
+A simple indicator will be useful for beginners. Even the present optimization.
+Options:
+int LRPeriod=13;
+linreg

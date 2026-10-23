@@ -1,0 +1,3 @@
+Auhtor: Jason Robinson (jnrtrading)
+Indicator Supertrend. It displays the buying and selling with the colors.
+Supertrend

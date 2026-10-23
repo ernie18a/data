@@ -1,0 +1,29 @@
+This is a Martingale system that has random entry, you can program your own entry like you want for better results.
+I was focused only on martingale system, not only the lot size is rising but also the take profit distance, so you can withstand more consecutive losses.
+To work properly set the account History in terminal to show all history.
+Input parameters:
+Martingale settings:
+sl_tp = 20; - stop loss and take profit in pips;
+lotsMultiplier = 1.5; - lot multiplier, if a trade was loss the next trade lot size will be lotsMultiplier times larger;
+distanceMultiplier = 1.5; - take profit and stop loss multiplier, after a los trade the take profit distance is distanceMultiplier times larger;
+Lots = 0.03; - the lot size in first trade;
+MaxSlippage = 3; - the maximall allowed slippage in pips;
+magicNumber = 1212123; - special number to avoid colliding with another EA or manual trades;
+Trading Hours:
+useTradingHours = false; - if it is true, the system opens trades only in defined time;
+StartTime = "06:00"; - start time of trading;
+StopTime = "18:00"; - end time of trading;
+GMT_Offset = 0; - GMT offset;
+Trading Days:
+Monday = true;
+Tuesday = true;
+Wednesday = true;
+Thursday = true;
+Friday = true;
+Saturday = true;
+Sunday = true;
+View settings:
+showMenu = true; - if true, EA shows on graph information about open trades, lots and profit;
+menuColor = Blue; - color of menu text;
+variablesColor = Red; - color of variables;
+font = 10; - font size;

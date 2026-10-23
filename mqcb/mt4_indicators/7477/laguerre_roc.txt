@@ -1,0 +1,5 @@
+Author: Emerald King, MTE&I
+This is an advanced version of RSI. Laguerre converts the signals, so that low-frequency components lag much more that the high-frequency ones. In general, the last bar data has more weight than the previous data, just like the exponential moving average.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7477

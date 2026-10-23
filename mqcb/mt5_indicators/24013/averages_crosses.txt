@@ -1,0 +1,7 @@
+One more in the series of very simple (code wise - ie, execution speed is satisfactory, and to use) indicators :
+This one is showing the crosses of two averages as signals and the direction of the last cross direction while it lasts. You can use the appearance of the signal value for trading signals
+You can use one of the 4 basic averages for signals :
+simple moving average (SMA)
+exponential moving average (EMA)
+smoothed moving average (SMMA)
+linear weighted moving average (LWMA)

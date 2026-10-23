@@ -1,0 +1,231 @@
+Description
+The CStochasticOnRingBuffer class is designed for calculation of the technical indicator Stochastic Oscillator (
+Stochastic Oscillator
+) using the algorithm of
+the ring buffer
+.
+Declaration
+class
+CStochasticOnRingBuffer
+Title
+#include <IncOnRingBuffer\CStochacticOnRingBuffer.mqh>
+File of the CStochasticOnRingBuffer.mqh class should be placed in the IncOnRingBuffer folder that need to be established in MQL5\Include\. Two files with the examples used by the class from this folder are attached to the description. File with the class of
+the ring buffer
+and the class of
+Moving Average
+also must be in this folder.
+Class methods
+//--- initialization method:
+bool
+Init(
+// if error it returns false, if successful - true
+int
+period_k    =
+5
+,
+// the period %K
+int
+period_d    =
+3
+,
+// the period %D
+int
+period_s    =
+3
+,
+// the period of slowing %K
+ENUM_MA_METHOD
+method      =
+MODE_SMA
+,
+// the method %D
+int
+size_buffer =
+256
+,
+// the size of the ring buffer, the number of stored data
+bool
+as_series   =
+false
+// true, if a time series, false - if a usual indexing of the input data
+);
+//--- method of calculation based on a time series or indicator buffers:
+int
+MainOnArray(
+// returns the number of processed elements
+const
+int
+rates_total,
+// the size of the arrays
+const
+int
+prev_calculated,
+// processed elements on the previous call
+const
+double
+&high[]
+// the maximum value array
+const
+double
+&low[]
+// the minimum value array
+const
+double
+&close[]
+// close price array
+);
+//--- the method of calculation based on the separate series elements of the array
+double
+MainOnValue(
+// returns the Stochastic value for the set element
+const
+int
+rates_total,
+// the size of the element
+const
+int
+prev_calculated,
+// processed elements of the array
+const
+int
+begin,
+// from where the significant data of the array starts
+const
+double
+high,
+// the maximum value
+const
+double
+low,
+// the minimum value
+const
+double
+close,
+// close price
+const
+int
+index
+// the element index
+);
+//--- the methods of access to the data:
+int
+BarsRequired();
+// Returns the necessary number of bars to draw the indicator
+string
+Name();
+// Returns the name of the indicator
+string
+NameSignal();
+// Returns the name of the signal line indicator
+string
+Method();
+// Returns the method of smoothing in the form of the text line
+int
+PeriodK()
+// Returns the period of %K
+int
+PeriodS()
+// Returns the period of slowing %K
+int
+PeriodD()
+// Returns the period of %D
+int
+Size();
+// Returns the size of the ring buffer
+To get the calculated data of the indicator from the ring buffer is possible as from the usual array. For example:
+//--- the class with the methods of calculation the Stochastic indicator:
+#include <IncOnRingBuffer\CStochasticOnRingBuffer.mqh>
+CStochasticOnRingBuffer st;
+
+...
+//+------------------------------------------------------------------+
+//| Custom indicator iteration function                              |
+//+------------------------------------------------------------------+
+int
+OnCalculate
+(
+const
+int
+rates_total,
+const
+int
+prev_calculated,
+const
+datetime
+& time[],
+const
+double
+& open[],
+const
+double
+& high[],
+const
+double
+& low[],
+const
+double
+& close[],
+const
+long
+& tick_volume[],
+const
+long
+& volume[],
+const
+int
+& spread[])
+  {
+//--- calculation of the indicator based on the price time series:
+st.MainOnArray(rates_total,prev_calculated,high,low,close);
+
+...
+//--- use the data from the ring buffers "st",
+//    for example, copy the data in the indicator buffers:
+for
+(
+int
+i=start;i<rates_total && !
+IsStopped
+();i++)
+     {
+      MainBuffer[i]   = st[rates_total-
+1
+-i];
+// the main line of the indicator
+SignalBuffer[i] = st.signal[rates_total-
+1
+-i];
+// the signal line of the indicator
+}
+
+...
+//--- return value of prev_calculated for next call:
+return
+(rates_total);
+  }
+Please note that indexing in the ring buffer is the same as in the
+time series
+.
+Examples
+The Test_
+Stochastic
+_OnArrayRB.mq5 file calculates the indicator based on the price time series. The MainOnArray() method application is demonstrated
+The Test_
+Stochastic
+_OnValueRB.mq5 file demonstrates the use of the MainOnValue() method. At first the
+Stochastic Oscilator
+indicator is calculated and drawn. Then on the basis of the ring buffer two more
+Stochastic Oscilator
+lines are drawn.
+The result of the work of the Test_Stochastic_OnArrayRB.mq5 with the size of the ring buffer of 256 elements
+The result of the work of the Test_Stochastic_OnValueRB.mq5 with the size of the ring buffer of 256 elements
+When writing code the developments of
+MetaQuotes Software Corp.
+,
+Integer
+and
+GODZILLA
+were used.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1372

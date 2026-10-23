@@ -1,0 +1,8 @@
+This is the updated version of the indicator i uploaded previously at
+http://codebase.mql4.com/en/code/9976
+.
+The basic logic is
+It calculates number of bars on charts and then based on histogram it draws a arrow which is again confirmed when next opening bar price its high in case of buy arrow or low in case of sell signal, when both these conditions are satisfied it draws an arrow.
+it is price behavior change It means if arrow has appeared price will change it direction a five bars sequence, where the central bar has higher maximum or lower minimum arrow shows central bar position.
+Sound pop-up alert as well email alert have been added to it.
+Recommended timeframe 1 hr.

@@ -1,0 +1,10 @@
+This variant of
+JJRSX
+oscillator is calculated based on five JJRSX indicators.
+All editable variables are implemented as indicator input parameters. However, keep in mind that these variables are interdependent to some extent, so you should adjust them more carefully!
+FactorN input variables represent the unit weight of JJRSX with number N in total indicator value.
+This indicator requires the compiled indicator file JJRSX.ex5. Place it in <terminal_data_folder>\MQL5\Indicators.
+Fig.1. The ColorZerolagJJRSX indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13841

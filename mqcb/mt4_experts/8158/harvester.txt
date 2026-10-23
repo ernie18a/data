@@ -1,0 +1,26 @@
+The original of the trade strategy is available by this link:
+http://www.unfx.ru/strategies_to_trade/strategies_131.php
+The EA was written to check the effectiveness of the trade strategy, described by the author. The educt and the description of EA parameters can be viewed in our lates journal number:
+http://www.fortrader.ru/ftgate.php?id=0&num=42
+Short Description of EA Algorithm:
+1. Time period: H1-D;
+2. Instrument: Trend financial instruments;
+Volume: whole lot; (0.2,0.4,0.8,1.0 и т.д).
+3. Indicator: MA with the period of 50, MA with the period of 100. MACD with standard parameters.
+Buy signal
+The price is above the MA indicator with the period of 50 and 100 by 10 points, MACD is above zero. At that, the MACD must have the negative values for five last bars before the signal has appeared. StopLoss is set on the minimum of last five bars.
+Sell signal
+The price is below the MA indicator with the period of 50 and 100 by 10 points, MACD is below zero. At that, the MACD must have the positive values for five last bars before the signal has appeared. StopLoss is set on the maximum of last five bars.
+Management of positions
+1. Once the signal has appeared the order is opened on a whole lot.
+2. The first target is specified on the double StopLoss level; as soon as the objective is reached, half of the position will be closed. The StopLoss will be moved to the lossless level.
+Position closing
+The opened position is closed by the StopLoss, otherwise the remaining half of the position is closed as the price crosses the 50-period average from top downward by 10 points for buy and as the price crosses the 50-period average bottom up by 10 points for sell.
+Testing of the EA with the standard parameters:
+After optimization of parameters:
+You can view the full analysis of the strategy with the test on future quotes in our journal:
+http://www.fortrader.ru/ftgate.php?id=0&num=42
+P.S. All the possible variables of the strategy are taken to the external varibles, you can pick out not bad parameters for the intraday charts too, experiment. It is preferably to test on the ticks, because the profit is closed at the market.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8158

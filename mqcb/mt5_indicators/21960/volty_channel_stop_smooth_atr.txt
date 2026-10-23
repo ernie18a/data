@@ -1,0 +1,4 @@
+One of the indicators that are using ATR for calculation is the Volty Channel Stop indicator too (one version published here :
+Volty Channel Stop
+)
+This version is replacing the regular ATR with smooth ATR in the channel calculation. It makes the stops "faster" when the market conditions change compared to the "regular" ATR

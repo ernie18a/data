@@ -1,0 +1,75 @@
+Hi guys, all I have time for at moment is post these revisions I found. I understand this is a favorable ea with some issues and so I will continue with it later. Unfortunately I don't have any recommendations on this one so you guys will have to discover it all on your own. In fact I barely remember doing this ea.
+Description:
+EUR/USD 5min scapling or similar
+Start with the settings in the set file provided and tweak to your liking.
+They return a fair amount for the month of June 2013. I suggest you tweak the settings to your liking on the Strategy Tester before going live.
+The only weakness in the EA is when there is a major trend change due to a news release (it handles typical high impact news releases fine).
+There are about 20 versions I progressed from to get to this one, I was trying to get an Expert advisor that will turn over small profits steadily and every now and again rip out on trend. I ended up this this and I am not sure if I like it yet.
+Test Results:
+Symbol
+EURUSD (Euro vs US Dollar)
+Period
+5 Minutes (M5)  2013.06.02 21:00 - 2013.06.30 23:55    (2013.06.01 - 2013.07.01)
+Model
+Every tick (the most precise method based on all available least timeframes)
+Bars in test
+6777
+Ticks modelled
+719666
+Modelling quality
+90.00%
+Mismatched charts errors
+0
+Initial deposit
+100.00
+Total net profit
+356.25
+Gross profit
+648.94
+Gross loss
+-292.69
+Profit factor
+2.22
+Expected payoff
+1.40
+Absolute drawdown
+26.89
+Maximal drawdown
+74.03 (40.73%)
+Relative drawdown
+40.73% (74.03)
+Total trades
+254
+Short positions (won %)
+183 (73.77%)
+Long positions (won %)
+71 (83.10%)
+Profit trades (% of total)
+194 (76.38%)
+Loss trades (% of total)
+60 (23.62%)
+Largest
+profit trade
+22.26
+loss trade
+-19.60
+Average
+profit trade
+3.35
+loss trade
+-4.88
+Maximum
+consecutive wins (profit in money)
+14 (11.26)
+consecutive losses (loss in money)
+2 (-26.23)
+Maximal
+consecutive profit (count of wins)
+76.74 (6)
+consecutive loss (count of losses)
+-26.23 (2)
+Average
+consecutive wins
+4
+consecutive losses
+1

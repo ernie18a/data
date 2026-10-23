@@ -1,0 +1,7 @@
+Author: not specified
+The indicator plots trend lines based on the two last extremums.
+More
+..
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7517

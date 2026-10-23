@@ -1,0 +1,6 @@
+This indicator calculated the StDev of a spezified period and calculates the upper and lower channel bonds.
+It works nearly the same as the original bollinger band, but with following features:
+Gaussian Filtration for centerline;
+Gaussian Filtration for stDev;
+StDev and centerline periods can be different. (You can add a 200bar average stDev to a 10 bar filterline);
+2 different settings for 2 different bands.

@@ -1,0 +1,64 @@
+Lastest Version: 1.4
+2005.12.24  1.4      faster to detect if data changed by removing float point  operations, added support to output CSV file in real time.
+OutputCSVFile = 0 means no CSV.
+OutputCSVFile = 1 means CSV + HST.
+OutputCSVFile = 2 CSV only, no HST .
+(useful if you want to generate CSV for builtin periods)
+CSV Filename will be the same as HST file except the extension added safe checking for PeriodMultiplier.
+Screenshot is the CPU cost on P4 1.8G when refreshing with M1-&gt;M3, M10 and H1-&gt;H2 together.
+The steps to use the script after installing is almost same as the default MT4 period converter.
+Use this script to make nonstandard timeframe of symbol based on standard timeframe. For example, to make 3-hours timeframe H3 for selected symbol you
+should:
+1. Open H1 chart.
+2. Attach to chart 'Period_converter_opt.mq4' MQL4 file from 'Custom Indicator' folder of 'Navigator' window.
+3. On 'Common' tab check 'Allow DLL imports' checkbox.
+4. On 'Inputs' properties tab please set 'PeriodMultiplier' variable value to 3 (you'll get H1*3 = H3).
+5. Click OK.
+6. Open H3 chart in offline mode ('File – Open Offline'). H3 chart will be updated real-time (by default) while H1 chart with attached 'Period_converter_opt.mq4'
+running.
+Read below for more details:
+I. Features:
+This is an improved version of period converter for MT4 based on the MT4's default period converter by metaquotes. The default period converter script do not
+support real-time refreshing, and consume lots of CPU (50%-9x%) making the whole system slow. Also, the default one is a script which do not save when you
+exit MT4, so you have to apply every converter script again after restarting, quite annoying. This one fixed all above problems:
+1. Real-time updating or custom interval millisecond level updating.
+2. Low CPU cost, average 5%-10% or less.
+3. Works as an indicator, so can be saved and reloaded during restart.
+4. There is no one converter per chart limitation as it is not script any more, you can only use one window as source to generate as many new timeframe chart
+as possible.
+5. Auto updating if there is new history block loaded.
+II. How to use:
+Copy the mq4 file to your MT4 indicators folder (experts\indicators) to install it as an indicator, NOT script. then in the custom indicator list, attach
+period_converter_opt to the chart you want. It support 4 parameters:
+PeriodMultiplier:    new period multiplier factor, default is 2;
+UpdateInterval:      update interval in milliseconds, zero means update real-time. default is zero;
+Enabled:             You can disable it without remove it with this option.
+Other parameters are comments or for debugging, it is safe to ignore them. Also Make sure you have Allow Dll imports option checked in common tab or it won't
+work. After that, File-&gt;Open Offline to open the generated offline data. then the offline data will be updated automatically.
+As long as you keep the source chart open and the converter indicator running, the generated chart including indicators inside will always be updated. also
+you can close the generated chart and open again later from File-&gt;Open Offline without problem.
+If you want to quit MT4, you can leave those offline chart as other normal online charts. when you start MT4 next time, those charts will also be loaded and
+updated.
+III. Notes:
+1. Do NOT uncheck the "offline chart" option in offline chart common properties or after MT4 restart, it will treat that chart as online chart and request the data
+from server, resulting empty chart window.
+2. You can attach more than one converter to same window with different PeriodMultiplier, e.g: you can attach 3 converter with PeriodMultiplier = 2, 4, 10 to M1
+to generate M2, M4, M10 at the same time. It is even ok to use the M1 chart to generate Hourly chart like H2, which only cost a few more CPU resource during
+initial conversion. but usually most server don't have much data for those short period, resulting the generated data isn't long enough for long period. so it is
+suggested to use Hourly/Daily charts as source when needed.
+3. The real-time updating mode updates quotes as fast as possible, but as this is done via script, and MT will skip calling start() function when your PC is busy
+and lots of quotes income. anyway, this seldom happen, and you can at least get 10 updates each seconds which is much more  than enough.
+4. The offline chart don't have a bid line showing in chart, but all data in the chart including the indicators is still being updated, so don't worry. you can show
+the bid line by unclick the "offline chart" option in chart properties. but which don't helps much and if you forget to check "offline chart" option before exit. It
+will cause errors and become empty on next startup. you have to close the window and open again from File-&gt;Open offline, which don't worth the trouble.
+IV. History:
+2005.12.24  1.4      faster to detect if data changed by removing float point operations, added support to output CSV file.
+OutputCSVFile = 0 means no CSV;
+OutputCSVFile = 1 means CSV + HST;
+OutputCSVFile = 2 CSV only, no HST;
+(useful if you want to generate CSV for builtin periods)
+CSV Filename will be the same as HST file except the extension, added safe checking for PeriodMultiplier.
+2005.12.04  1.3      Fixed missing data when there is large amount of data loaded in several blocks, and support auto updating when new history is loaded.
+2005.11.29  1.2      Additional fix for missing data and server changing.
+2005.11.29  1.1      Fixed missing partial data after restart. Reinitialize after changing server or data corrupted.
+2005.11.28  1.0      Initial release

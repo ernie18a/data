@@ -1,0 +1,9 @@
+Theory :
+Detailed description of the double smoothed EMA was posted here :
+Double Smoothed EMA
+. This version is upgrading that code and is floating levels to it. In the options for floating levels you can chose coloring based on :
+outer levels cross (default)
+middle level cross
+based on slope change
+Usage :
+You can use color changes as signals

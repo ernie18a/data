@@ -1,0 +1,22 @@
+The author of the idea
+-
+Scriptor
+mq5 code author
+-
+barabashkakvn
+The EA applies
+BrainTrend1Sig
+indicator:
+The following parameters are responsible for its settings
+BrainTrend1: ATR averaging period
+BrainTrend1: STO averaging period
+BrainTrend1: STO smoothing typeBrainTrend1: STO type of price
+The EA trails positions per each tick (only if trailing is enabled, i.e. if
+Trailing Stop
+is above zero). Checking a trading signal by the indicator is performed only when a new bar appears. The signal from the indicator is removed on bar #1.
+Reverse
+allows you to reverse trading signals.
+EURUSD,H1:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22052

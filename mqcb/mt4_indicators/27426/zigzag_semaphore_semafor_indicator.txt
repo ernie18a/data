@@ -1,0 +1,22 @@
+This indicator places a mark (a semaphore, spelling is semfor and retained from the original) at the zig zag for each of 4 zig zag evaluation lengths.
+This means the zig zag does not draw lines on the charts, just marks the locations of the zig zags.
+The algorithm is one of the simpler algorithms for zig zag, found in a posting for “!!!-MT4 SEMAFOR", and is implemented in the methods “DetectNewSwing”, “LoadIndiBuffers” and “SetSwingBarValues””. The original would not run in the strategy tester (I believe it would not run real time, only correctly producing marks on the history at startup).
+This version runs fine in the strategy tester.
+I believe the algorithm as implemented is true to the original, it seems to create the marks true to the positions of the original, including with the flaws I could see.
+A more elaborate algorithm could be implemented into the mentioned functions if needed.
+The marks show the level of the mark with a small white dot for level one, a red circle around the white dot for level 2, a yellow circle around both the white dot and red circle for level 3 and finally, a green circle around them all for level 4.
+The lengths are user enterable, and set for default values with these entries:
+extern int
+Level_1_Length
+= 21; // Zig Zag 1 detection length (21)
+extern int
+Level_2_Length
+= 40; // Zig Zag 2 detection length (40)
+extern int
+Level_3_Length
+= 60; // Zig Zag 3 detection length (60)
+extern int
+Level_4_Length
+= 72; // Zig Zag 4 detection length (72)
+Two controls are added, one to turn text labels showing marked zig-zag’s price value on and off and the other to remove all the indicator marks from the display, or turn them back on – just click on the two text objects to toggle between on and off.
+I believe I have structured and commented pretty well for those interested in the code.

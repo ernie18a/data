@@ -1,0 +1,18 @@
+Set Auto TP and SL:
+The “Set Auto TP and SL” (Take Profit and Stop Loss) feature is a crucial tool in any trading strategy, designed to automate risk and reward management. It allows traders to define fixed price levels where a trade should be automatically closed to either secure profits (TP) or limit losses (SL), removing the need for constant manual monitoring.
+When this feature is enabled, each position you open will automatically include a predefined Take Profit and Stop Loss level based on your custom parameters, such as a specific number of pips, percentage of balance, or technical levels. This not only saves time but also ensures that your trades are protected from sudden market movements and emotional decision-making.
+Key Benefits:
+Risk Management
+: Automatically limits potential losses by closing trades at your specified SL level, preventing devastating drawdowns.
+Profit Locking
+: Secures gains by closing positions once your target TP is reached, ensuring you don't miss out on profits during fast market changes.
+Emotional Discipline
+: Reduces the influence of fear and greed by sticking to a planned strategy, especially important in volatile markets.
+Time Efficiency
+: Saves time by removing the need to manually set SL and TP levels for every trade, especially useful for scalpers or high-frequency traders.
+Consistency
+: Applies the same logic to every trade, leading to a more systematic and disciplined approach to trading.
+Whether you are a beginner trying to protect your account or a professional trader aiming for precision and automation, the “Set Auto TP and SL” function is an essential component of successful trading. It helps you trade smarter, not harder, by allowing your strategy to run with minimal manual input and maximum control over your risk-reward ratio.
+You can use it in XAUUSD too. Just you need to setup your settings. If you need MQL5 virsion, you will find this on here (
+Auto Tp
+).

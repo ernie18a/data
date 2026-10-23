@@ -1,0 +1,5 @@
+The EA operation logic: open a Buy order with Take Profit and Stop Loss, if the order closes by Stop Loss, then the Take Profit of the next order will be equal to the Take Profit of the previous order, multiplied by the coefficient.
+When Buy closes by Stop Loss or Take Profit, then a Sell order with Take Profit and Stop Loss is opened, if the order closes by Stop Loss, then the Take Profit of the next order will be equal to the Take Profit of the previous order, multiplied by the coefficient.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13121

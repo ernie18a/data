@@ -1,0 +1,9 @@
+A modification of the earlier version
+Crossing of two iMA
+.
+What's new: the price type in input parameters can now be selected from the
+ENUM_APPLIED_PRICE
+enumeration.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20403

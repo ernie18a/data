@@ -1,0 +1,5 @@
+Trades based on the previous candlestick: it is bearish, the EA sells; if it is bullish, the EA buys.
+Take Profit, Trailing Stop.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17988

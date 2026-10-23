@@ -1,0 +1,6 @@
+Theory :
+Deviation scaled MA tends to be a "fast" average, but if you attempt to use the slope change of it as signals, then you can run into a lot of false signals when the market is ranging
+This version :
+It is adding filter to deviation scaled average in order to lessen the number of signals on slope change. Setting the filter size to 0 turns the filter off
+Usage :
+The usual way how average type indicators are used, with an addition of using the filter. Some experimenting with the filter size and period is advised prior to using it for trading decisions

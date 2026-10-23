@@ -1,0 +1,30 @@
+- "Peter Panel
+©
+" allows user to define and execute custom trading setups by simply dragging three lines called; Aqua, Green and Red.
+- For an easier operation disable "
+show trade levels"
+and enable "select object by single mouse click" in tools:options menu.
+[DEFINITION OF LINES]
+AQUA
+determines entry level for pending orders; BUY_STOP, BUY_LIMIT, SELL_STOP, SELL_LIMIT.
+GREEN
+determines take profit for BUY, BUY_STOP, BUY_LIMIT and stop loss for SELL, SELL_STOP, SELL_LIMIT.
+RED
+determines take profit for SELL, SELL_STOP, SELL_LIMIT and stop loss for BUY, BUY_STOP, BUY_LIMIT.
+Green should always be above red.
+Aqua should always be above of current ask for BUY_STOP and SELL_LIMIT and below of current bid for SELL_STOP and BUY_LIMIT orders.
+[ORDER MODIFICATION]
+Select order on the listview.
+Lines will be adjusted automatically corresponding to order price, tp, and sl.
+Set new levels by dragging lines.
+Click Modify button.
+[CLOSING/DELETING ORDER]
+Select order on the listview.
+Click Close button. Opened positions will be closed, pending orders will be deleted.
+[RESET]
+In order to reset lines to their initial positions click Reset button.
+[VOLUME ADJUSTMENT]
+Enter required volume in LOTS edit box.
+To select minimal amount of tradeable volume click Min button.
+To select maximal amount of tradeable volume click Max button.
+To normalize user entered volume click Norm button. It returns nearest tradeable volume.

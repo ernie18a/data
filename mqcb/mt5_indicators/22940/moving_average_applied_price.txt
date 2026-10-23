@@ -1,0 +1,11 @@
+Why was there a need to improve the standard indicator? I wanted to test Moving Average indicator ([data folder]Indicators\Examples\
+Custom Moving Average.mq5
+) in the tetser, since this gives an idea of the connection between bars formation and the indicator. But as it turned out, you cannot select a price type from the
+ENUM_APPLIED_PRICE
+enumeration for the standard Moving Average during a test.
+Therefore, the
+Type of price
+parameter has been added. Now, it is possible to set a price type when testing for Moving Average:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22940

@@ -1,0 +1,8 @@
+Theory :
+MACD is calculated, by original definition, as a difference of two EMAs : fast and slow EMA (Exponential Moving Average). This version is using RSI adaptive EMA for calculation and it is adding one thing that originally does not exist in the MACD (since it is an un-bound indicator) : a sort of over bought and over sold levels by using floating levels for that. You have a choice of 4 types of color changes for that :
+color change on macd slope change
+color change on macd to signal cross
+slope change on macd crossing on outer (OB/OS) crosses
+slope change on middle (floating zero) cross
+Usage :
+It can be used as any other MACD

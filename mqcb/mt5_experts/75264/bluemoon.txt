@@ -1,0 +1,65 @@
+BlueMoon EA is an Expert Advisor for MetaTrader 5 that uses EMA Envelope signals to identify potential market reversals and automatically manages trades using adaptive basket recovery techniques.
+The system has been designed for traders who prefer a structured approach to basket management while maintaining configurable risk controls.
+Unlike many simple grid systems, BlueMoon combines technical signal generation with controlled basket management and built-in account protection
+Main Features
+✔ EMA Envelope signal detection
+✔ Automatic BUY and SELL entries
+✔ Adaptive basket management
+✔ Progressive lot sizing
+✔ Configurable grid distance
+✔ Single trade take-profit
+✔ Basket profit target
+✔ Spread protection
+✔ Drawdown protection
+✔ Automatic recovery after terminal restart
+✔ Real-time monitoring dashboard
+✔ Supports broker symbol suffixes (example: AUDCAD.c)
+✔ Designed for MT5 Hedging accounts
+Trading Logic
+BlueMoon monitors the market using an Exponential Moving Average (EMA) Envelope.
+When price reaches the configured envelope boundaries, the EA can open a position according to the selected settings.
+If the market continues moving against the initial position, additional trades may be opened using configurable grid spacing and progressive lot sizing.
+Once the basket reaches the configured profit target, the EA closes the basket automatically.
+Risk Management
+The EA includes several configurable protection mechanisms:
+• Maximum spread filter
+• Maximum basket size
+• Maximum lot size
+• Total drawdown protection
+• Optional trading lock after emergency drawdown
+• Automatic basket reconstruction after platform restart
+Dashboard
+BlueMoon includes an information dashboard displaying:
+• Current EA status
+• Spread
+• EMA values
+• Envelope levels
+• Basket statistics
+• Current drawdown
+• Next expected action
+• Last trading activity
+• Account information
+Inputs
+The EA allows configuration of:
+EMA period
+Envelope deviation
+Initial lot
+Lot increment
+Maximum lot
+Grid distance
+Basket profit target
+Single trade take-profit
+Maximum spread
+Maximum positions
+Drawdown protection
+Dashboard options
+Recommended Usage
+MetaTrader 5
+Hedging account
+Low spread broker
+VPS recommended for uninterrupted operation
+Test settings on a demo account before using on a live account
+Important
+Trading involves risk.
+This Expert Advisor does not guarantee profits and past performance does not guarantee future results.
+Users are encouraged to understand the strategy and perform their own testing before live trading.

@@ -1,0 +1,4 @@
+Two EA's. One places Stop orders the other places Limit orders. The EA does not use any form of technical analysis, just price movement. EA works on any timeframe. Easy to back test and find historical winning parameters.
+Code places arrow on chart for all pending orders. Top left of chart shows a running total of profit/loss.
+All orders must be outside of broker's prescribed stop level. Trailing stop loss function.
+In terminal, under comments, there is clear identification of order type.

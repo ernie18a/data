@@ -1,0 +1,42 @@
+Opening-Closing:
+The opening of the position is performed at the beginning of every day by a simple rule:
+if
+(
+Open
+[
+0
+]
+>
+Open
+[
+3
+]
+)
+BUY
+;
+if
+(
+Open
+[
+0
+]
+<
+Open
+[
+3
+]
+)
+SELL
+;
+The closing is performed by the StopLoss or at the beginning of the next day.
+Input Parameters:
+1. stop - StopLoss level. It is specified in points, stop = 500 on default;
+2. lots - lot size, lots = 1 on default;
+Testing:
+In spite of its simplisity the EA shows good results on the trend markets:
+Symbol EUR\USD, period D1:
+Symbol EUR\JPY, period D1:
+However, the testing on USD\JPY didn't have the positive results. What do you think, why is it so?
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8462

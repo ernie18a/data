@@ -1,0 +1,37 @@
+The Expert Advisor developed by unknown author is rewritten from MQL4 and was originally published here
+https://www.mql5.com/en/code/8515
+by
+Collector
+.
+The operation of the Expert Advisor requires the use of the
+Laguerre
+indicator.
+How It Works
+Laguerre is equal to 0,
+МА
+is moving upward,
+CCI
+is below the level - a buy signal. Laguerre is equal to 1, МА is moving downward, CCI is above the level - a sell signal.
+The lot size for positions to be opened can be fixed or proportional to free margin. In case of losing trades the position volume can be reduced.
+A position is closed when Laguerre goes in the opposite direction. A buy position closes at a value greater than 0.9 and a sell position closes at a value less than 0.1.
+A Stop Loss and Take Profit can be set for an opening position. Instead of real Stop Loss and Take Profit, positions can be closed upon reaching a set loss or profit.
+The image below shows the performance of the Expert Advisor in the strategy tester's visual mode.
+Parameters
+Lots - Lot; if the value is 0, MaximumRisk value is used.
+MaximumRisk - Risk (it is used if Lots=0).
+DecreaseFactor - Lot reduction factor after losing trades. 0 - reduction disabled. The smaller the value, the greater the reduction. Where it is impossible to reduce the lot size, the minimum lot position is opened.
+StopLoss - Stop Loss in points; 0 - no Stop Loss.
+TakeProfit - Take Profit in points; 0 - no Take Profit.
+VirtualSLTP - Stop Loss and Take Profit are not set. Instead, a position is closed upon reaching loss or profit as specified in the StopLoss and TakeProfit parameters.
+LagGamma - Laguerre indicator parameter.
+CCIPeriod - CCI period.
+CCIPrice - CCI price.
+CCILevel - CCI level.
+MAPeriod - MA period.
+MAShift - MA shift.
+MAMethod - MA method.
+MAPrice - MA price.
+Shift - The bar on which the indicator values are checked: 0 - new forming bar, 1 - first completed bar.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1087

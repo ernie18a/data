@@ -1,0 +1,5 @@
+The classical RSI indicator implemented as a histogram with a color indication of entering the overbought and oversold areas.
+Fig.1. The RSI_Histogram indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14923

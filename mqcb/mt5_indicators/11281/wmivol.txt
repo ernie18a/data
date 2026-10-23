@@ -1,0 +1,10 @@
+Real author:
+Murad Ismayilov
+It is often the case that you need to find out an optimal trading time when quotes are rapidly changing (for instance from 7.00 a.m. to 9.00 p.m.). It may constitute a problem if you are not familiar with the instrument. This indicators reads all bars on the chart and displays statistics concerning time of a day with the biggest activity. Candle height is chosen as activity criterion (High minus Low). High activity is highlighted by blue bars, low activity is highlighted by pink bars. The indicator can be used as a filter for various strategies requiring high instrument activity.
+This indicator was first implemented in MQL4 and published in
+CodeBase
+on February 28, 2014.
+Fig.1. WmiVol Indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11281

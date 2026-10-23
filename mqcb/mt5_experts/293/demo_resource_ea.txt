@@ -1,0 +1,21 @@
+This is the version of the
+Demo_Create_OBJ_BITMAP_LABEL_EA
+Expert Advisor with resources, built-in in the .EX5 file.
+The euro.bmp and dollar.bmp is included and used as a resources:
+#resource
+"\\Images\\euro.bmp"
+;
+// euro.bmp is located in client_terminal_data_folder\MQL5\Images\
+#resource
+"\\Images\\dollar.bmp"
+;
+// dollar.bmp is located in
+client_terminal_data_folder
+\MQL5\Images\
+The graphic object of
+OBJ_BITMAP_LABEL
+type allows to create the buttons with different size and form. The object of OBJ_BITMAP_LABEL type can change it's state by click, but selection of object must be disabled.
+By default, the "Disable selection" property is enabled for all graphic objects, created in MQL5.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/293

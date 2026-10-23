@@ -1,0 +1,18 @@
+The author of the idea
+—
+Viktor Fateev
+,
+mq5 author
+—
+barabashkakvn
+.
+Author
+:
+The system is not mine, it was described by Chuck LeBo and David Lucas.
+This EA uses the following purchase rules:
+1. MA_Long should go up - this is a filter.
+2 The closing price must cross from the bottom to the top of the upper Bollinger Boundary (BB_Up).
+3 When buying, set the stop at the lower Bollinger Border minus the reserve points.
+Exit:
+When crossing the price of closing the middle Bollinger line from top to bottom.
+The GBPUSD, H1 pair is recommended.

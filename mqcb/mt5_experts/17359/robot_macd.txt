@@ -1,0 +1,13 @@
+Author of idea
+—
+Iurii Tokman
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+MACD based Expert Advisor.
+Example of opening a SELL position:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17359

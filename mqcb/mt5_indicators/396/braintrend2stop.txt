@@ -1,0 +1,15 @@
+BrainTrend2Stop is a trend reversal detection indicator, it is displayed by the stops line. Intersection of the line indicates trend reversal and the time to close previously opened positions. BrainTrend2Sig algorithm is based on the processing of
+ATR
+and
+Stochastic Oscillator
+indicators' information.
+In this indicator I extracted all algorithm variables that can be controlled into the indicator's input parameters, so it can be used not only with the default settings now.
+Blue line below the candlesticks minimums indicates two things:
+The market trend is going upwards;
+The meaning of the line itself - protection stop at that level or profit taking (if position is profitable) for a long position.
+Red line above the candlesticks maximums indicates two things:
+The market trend is going downwards;
+The meaning of the line itself - protection stop at that level or profit taking (if position is profitable) for a short position.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/396

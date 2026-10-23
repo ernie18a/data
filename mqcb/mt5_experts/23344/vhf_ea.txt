@@ -1,0 +1,30 @@
+The EA trades on custom indicator
+VHF
+:
+Vertical Horizontal Filter (VHF) shows, if there is a trend or a flat.
+VHF was first described by Adam White in 1991.
+There are three ways of VHF interprtation:
+VHF values can be used to measure the prices direction. THe higher is VHF, the more stable is a trend.
+VHF movement direction allows to determine, if there is a trend or a flat. VHF growth means the presence of a trend; VHF falling indicates possible flat.
+It can be also used as the opposite opinion indicator. If VHF values are high - the probability of a future flat is high; if they are low - a new trend is near.
+For working with the indicator, the following strategy will be applied: The term of
+Main Sliding window
+is introduced, i.e., the number of bars, among which the highest and the lowest values of indicator
+VHF
+is searched for,
+as well as the term of
+Working Sliding window
+, i.e., the number of bars, among which the trend state will be identified.
+Parameters:
+Main Sliding window size - size of the main window
+Working Sliding window size - size of the working window
+Money management: Lot OR Risk - the position volume calculation type: A fixed lot size of a dynamic one in risk %
+The value for "Money management" - either lot size or risk %
+VHF: averaging period - averaging period of the custom indicator
+Reverse - signal reverse
+Print log - print all errors
+magic number - unique EA identifier
+Test for EURUSD, H1
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23344

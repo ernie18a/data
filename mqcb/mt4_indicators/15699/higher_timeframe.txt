@@ -1,0 +1,2 @@
+Indicator that shows higher timeframe candle on current timeframe.
+On screenshot you can see D1 candle on H1 timeframe.

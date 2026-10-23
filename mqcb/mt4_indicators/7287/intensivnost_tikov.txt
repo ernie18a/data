@@ -1,0 +1,6 @@
+As the indicator draws only the number of ticks of the precious candlestick, it will not display the results of its operation immediately.
+At all. for those who work level breakouts, this indicator suggests an interesting thought.
+The colors of the indicator histogram: green - for bullish candlesticks, red - for bearish, gray - for the Dojis.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7287

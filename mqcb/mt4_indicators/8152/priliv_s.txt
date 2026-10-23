@@ -1,0 +1,6 @@
+The indicator represents 3 lines of different colors showing the trend speed on the current, the nearest larger and the next larger timeframe (TF).
+Beige line means calculations with the smallest period (current TF).
+Green line represents the nearest larger TF in the current TF.
+Red line is used to represent the trend in the next larger TF. It can be applied to any timeframes.
+Inflection of the indicator means that the trend direction has changed.
+Priliv_s

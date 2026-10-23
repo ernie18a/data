@@ -1,0 +1,23 @@
+"Wide Range Body" displays candles having body size larger than the body of the previous three candles (configurable).
+The indicator displays three types of WRB:
+N of consecutive bullish candles
+N of consecutive bearish candles
+N of consecutive candles of any direction
+The indicator has one customizable parameter:
+Range
+- candle range (default is 3)
+The sequence of N bullish candles is displayed by a
+green
+signal label on the Low price of the WRB candle
+The sequence of N bearish candles is displayed by a
+red
+signal label on the High price of the WRB candle
+The sequence of N oppositely directed candles is displayed by a
+blue
+signal label on the Low price of the WRB candle
+The sequence of N oppositely directed candles is displayed by an
+orange
+signal label on the High price of the WRB candle
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21404

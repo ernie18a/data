@@ -1,0 +1,12 @@
+The real author:
+Kalenzo
+This indicator is a copy of the
+Gann Hi-Lo Activator SSL
+indicator which was rewritten in MQL5. The original indicator was single color, that is why for more visual definition of the trend direction it was necessary to make it color.
+The signal of the indicator must be considered only in closed bars, as for a time when the bar is not closed, its results can be changed. As many trend indicators, it is inclined to trigger false signals in the flat market. However, it can be useful as:
+short term support and resistance line.
+signal for scalping in the breakthrough price of the indicator line.
+an additional filtering of signals for your trading system.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1496

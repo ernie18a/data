@@ -1,0 +1,14 @@
+The script proposed deletes objects from the chart.
+It looks at the object list of the chart, shows its property (type and color) and ask for delete.
+There is nothing special, but it can be useful.
+Editor's remark:
+Note that it's a mirror translation of the
+original Russian version
+.
+If you have any questions to the author, suggestions or comments, it's better to post them
+there
+.
+If you have found this code useful for trading or educational purposes, don't forget to thank author.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9162

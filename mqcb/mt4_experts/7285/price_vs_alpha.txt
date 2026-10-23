@@ -1,0 +1,8 @@
+The new version of the Mc_valute_v8_final EA.
+The new version tries to works on a trending market as well, but it needs ideas on possible improvements and optimal parameters. It works well on a flat market.
+This is the final version, looks like there are no more visible bugs.
+It works as intended, but the parameters and entry points still need experimenting.
+The new version actually contains a lot of new thing, including some possible glitches. Therefore, it is recommended to test in visualization mode to grasp the details.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7285

@@ -1,0 +1,52 @@
+Previous Day High, Low & Close
+The idea behind it
+Yesterday's high, low and close are among the most watched reference points in intraday trading — they mark where the last full session found resistance, support, and fair value, and price frequently reacts around them the next day regardless of instrument. This indicator reads those three values straight from the completed Daily (D1) bar and draws them as horizontal levels across the current session, so you always have the prior day's structure visible without having to switch timeframes or calculate it by hand.
+It works on any symbol and any intraday timeframe, since the levels themselves come from D1 data regardless of the chart you have open. Optionally, more than one previous day can be shown at once, with each day's High/Low/Close drawn across the specific session it was active for — useful for spotting levels that have been respected or broken repeatedly over the last several days.
+How to interpret it
+PDH (Previous Day High)
+— the highest price reached during the prior completed trading day. Often acts as intraday resistance or a breakout trigger once cleared.
+PDL (Previous Day Low)
+— the lowest price reached during the prior completed trading day. Often acts as intraday support or a breakdown trigger once broken.
+PDC (Previous Day Close)
+— the settlement price of the prior day. Commonly used as a fair-value pivot: price trading above it for the session is read as net bullish, below it as net bearish.
+Multi-day stacking
+— when
+InpDaysToShow
+is greater than 1, each older day's level is drawn only across the session it actually applied to, with a "-N" suffix on its label (e.g. PDH-1 , PDH-2 ) so historical and current levels never overlap or get confused with one another.
+Live refresh
+— levels are rebuilt automatically the moment a new Daily bar opens, so the indicator always reflects the most recently completed session without needing to be removed and re-attached.
+External variables (inputs)
+Input
+Default
+Purpose
+InpDaysToShow
+1
+Number of previous trading days to display (1-10). Each day's levels are drawn only across the session they applied to.
+InpShowHigh
+true
+Toggles the Previous Day High line on or off.
+InpShowLow
+true
+Toggles the Previous Day Low line on or off.
+InpShowClose
+true
+Toggles the Previous Day Close line on or off.
+InpHighColor / InpLowColor / InpCloseColor
+Lime / Red / Silver
+Independent colors for each of the three levels.
+InpLineStyle / InpLineWidth
+Dash / 1
+Line style and width applied to all three levels.
+InpShowLabels
+true
+Shows a text label (e.g. "PDH") at the right-hand edge of each level.
+InpShowPriceInLabel
+true
+Appends the exact price value to each label.
+InpLabelFontSize
+8
+Font size used for the level labels.
+Recommended use
+Works on any symbol and any intraday timeframe (M1–H4 are typical), since the High/Low/Close values are always sourced from the Daily timeframe regardless of the chart period. On symbols that trade around the clock (Gold, major FX pairs, crypto), the "daily" session boundary is whatever your broker's server uses to close and open D1 bars — check this against the session you actually care about (e.g. NY close vs. broker midnight) before relying on the exact level.
+All chart objects are created under a single internal name prefix and are fully removed via ObjectsDeleteAll() in OnDeinit() when the indicator is detached, so it leaves nothing behind on the chart.
+Fig. 1. Previous day's High, Low and Close plotted as horizontal levels across the current session on XAUUSD M15. Rendered in black and white per the Code Base image guidelines (750×500 px).

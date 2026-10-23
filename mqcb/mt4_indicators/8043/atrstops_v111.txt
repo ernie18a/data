@@ -1,0 +1,3 @@
+Author:
+igorad
+ATRStops_v1[1].1 indicator.

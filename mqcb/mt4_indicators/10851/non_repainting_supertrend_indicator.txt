@@ -1,0 +1,12 @@
+Author:
+Rajandran - Founder of
+Marketcalls
+. Marketcalls is a small research blog started during 11th September 2007 which talk about Intelligent stock market analysis, trading strategies and forecasting. Only Charts, Patterns, Technicals and Strategies Will be Discussed accordingly with current market data’s from Charts.
+The Non Repainting SuperTrend is particularly stable and has a few advantages over older version of SuperTrend indicators:
+It uses a moving (statistical) median of the arithmetic mean (High + Low)/2 of the bars instead of a moving average. The (statistical) median is known to be more robust than any average.
+It calculates both the Median and the ATR (average true range) 1 bar ago, whereas the original SuperTrend indicator takes the ATR and moving average of the current bar. If you use the current bar’s ATR, the current bar’s breakout is partly measured against its own range. This is particularly true, if the ATR period is short.
+Signals: The Non Repaiting SuperTrend indicator gives a reversal signal, when the bar closes on the other side of the stop line.
+Magnified Market Price added for instant check of current market price
+The olderversion (Current bar repainting can be found at
+http://codebase.mql4.com/en/code/8268
+)

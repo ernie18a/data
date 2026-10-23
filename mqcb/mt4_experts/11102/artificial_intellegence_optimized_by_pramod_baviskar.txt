@@ -1,0 +1,267 @@
+Name:
+Artificial Intellegence
+Author: Reshetov (2006.11.27 13:02) original code is optimized with higher returns and accuracy for positional traders.
+tested on daily chart working best.
+for more read at the link in profile.
+Strategy Tester: auto m5
+Strategy Tester Report
+Pramod Baviskar auto m5
+Symbol
+EURUSD (Euro vs US Dollar)
+Period
+Daily (D1) 2013.12.22 00:00 - 2014.01.22 00:00 (2013.12.22 - 2014.01.23)
+Model
+Every tick (the most precise method based on all available least timeframes)
+Bars in test
+1026
+Ticks modelled
+526529
+Modelling quality
+83.60%
+Mismatched charts errors
+0
+Initial deposit
+10000.00
+Total net profit
+3305.41
+Gross profit
+3624.41
+Gross loss
+-319.00
+Profit factor
+11.36
+Expected payoff
+472.20
+Absolute drawdown
+151.40
+Maximal drawdown
+1641.70 (13.42%)
+Relative drawdown
+13.42% (1641.70)
+Total trades
+7
+Short positions (won %)
+6 (83.33%)
+Long positions (won %)
+1 (100.00%)
+Profit trades (% of total)
+6 (85.71%)
+Loss trades (% of total)
+1 (14.29%)
+Largest
+profit trade
+1267.10
+loss trade
+-319.00
+Average
+profit trade
+604.07
+loss trade
+-319.00
+Maximum
+consecutive wins (profit in money)
+3 (2611.99)
+consecutive losses (loss in money)
+1 (-319.00)
+Maximal
+consecutive profit (count of wins)
+2611.99 (3)
+consecutive loss (count of losses)
+-319.00 (1)
+Average
+consecutive wins
+3
+consecutive losses
+1
+#
+Time
+Type
+Order
+Size
+Price
+S / L
+T / P
+Profit
+Balance
+1
+2013.12.22 21:45
+buy
+1
+1.00
+1.36698
+1.36379
+0.00000
+2
+2013.12.29 21:45
+modify
+1
+1.00
+1.36698
+1.37253
+0.00000
+3
+2013.12.31 00:00
+modify
+1
+1.00
+1.36698
+1.37780
+0.00000
+4
+2013.12.31 08:14
+s/l
+1
+1.00
+1.37780
+1.37780
+0.00000
+1084.68
+11084.68
+5
+2014.01.02 07:00
+sell
+2
+1.00
+1.37500
+1.37819
+0.00000
+6
+2014.01.03 00:00
+modify
+2
+1.00
+1.37500
+1.36965
+0.00000
+7
+2014.01.05 21:45
+modify
+2
+1.00
+1.37500
+1.36231
+0.00000
+8
+2014.01.06 11:09
+s/l
+2
+1.00
+1.36231
+1.36231
+0.00000
+1267.10
+12351.79
+9
+2014.01.07 00:00
+sell
+3
+1.00
+1.36293
+1.36612
+0.00000
+10
+2014.01.09 00:00
+modify
+3
+1.00
+1.36293
+1.36029
+0.00000
+11
+2014.01.09 08:00
+s/l
+3
+1.00
+1.36029
+1.36029
+0.00000
+260.21
+12611.99
+12
+2014.01.10 00:00
+sell
+4
+1.00
+1.36059
+1.36378
+0.00000
+13
+2014.01.10 13:30
+s/l
+4
+1.00
+1.36378
+1.36378
+0.00000
+-319.00
+12292.99
+14
+2014.01.12 21:46
+sell
+5
+1.00
+1.36778
+1.37097
+0.00000
+15
+2014.01.16 00:00
+modify
+5
+1.00
+1.36778
+1.36308
+0.00000
+16
+2014.01.16 13:45
+s/l
+5
+1.00
+1.36308
+1.36308
+0.00000
+464.31
+12757.30
+17
+2014.01.17 00:00
+sell
+6
+1.00
+1.36151
+1.36470
+0.00000
+18
+2014.01.19 21:45
+modify
+6
+1.00
+1.36151
+1.35699
+0.00000
+19
+2014.01.21 16:21
+s/l
+6
+1.00
+1.35699
+1.35699
+0.00000
+450.10
+13207.41
+20
+2014.01.22 00:00
+sell
+7
+1.00
+1.35570
+1.35889
+0.00000
+21
+2014.01.22 19:04
+close at stop
+7
+1.00
+1.35472
+1.35889
+0.00000
+98.00
+13305.41

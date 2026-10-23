@@ -1,0 +1,24 @@
+The Trend Force oscillator indicator.
+The indicator has three input parameters:
+Period
+- calculation period;
+ATR's period
+- ATR parameter;
+ATR's coefficient
+- ATR parameter.
+Calculation:
+Trend Force[i] = Up[i]-Dn[i]
+where
+Up[i]
+- the highest value (MaxPrice-ATR_Coeff*ATR) in the range from (i-Period+1) to i;
+Dn[i]
+- the lowest value (MinPrice+ATR_Coeff*ATR) in the range from (i-Period+1) to i;
+MaxPrice
+,
+MinPrice
+- the highest and the lowest price in the range from (i-ATR_Period+1) to i;
+ATR
+- Average True Range value with the period ATR_Period.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20452

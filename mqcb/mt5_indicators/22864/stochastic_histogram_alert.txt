@@ -1,0 +1,84 @@
+Indicator
+Stochastic_Histogram
+provides alerts and sends email and push notifications when the main and signal lines intersect, accompanied by a change in the color of the signal cloud.
+//+-----------------------------------+
+//|   INDICATOR INPUT PARAMETERS      |
+//+-----------------------------------+
+input
+int
+KPeriod=
+5
+;
+input
+int
+DPeriod=
+3
+;
+input
+int
+Slowing=
+3
+;
+input
+ENUM_MA_METHOD
+MA_Method=
+MODE_SMA
+;
+input
+ENUM_STO_PRICE
+Price_field=
+STO_LOWHIGH
+;
+input
+uint
+HighLevel=
+60
+;
+// overbought level
+input
+uint
+LowLevel=
+40
+;
+// oversold level
+input
+int
+Shift=
+0
+;
+// Horizontal shift of the indicator in bars
+input
+uint
+NumberofBar=
+1
+;
+// Bar number to activate a signal
+input
+bool
+SoundON=
+true
+;
+// Enable an alert
+input
+uint
+NumberofAlerts=
+2
+;
+// Number of alerts
+input
+bool
+EMailON=
+false
+;
+// Enable mailing the signal
+input
+bool
+PushON=
+false
+;
+// Enable sending the signal to mobile devices
+Fig1. Stochastic_Histogram_Alert. Intersection of the main and signal lines
+Fig. 2. Stochastic_Histogram_Alert. Activating an alert.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22864

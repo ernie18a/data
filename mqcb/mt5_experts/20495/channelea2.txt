@@ -1,0 +1,44 @@
+The EA works in a channel drawn by the
+ChannelInd
+indicator.
+This indicator itself is not required for the EA operation, since its data are calculated inside the EA.
+The EA trades on a time basis: At the trading time specified in the EA settings, the EA places two pending stop orders on the channel borders and sets Stop Loss levels on the opposite side of the channel, without setting Take Profit levels. At the end of the trading time, all the existing positions are closed and the orders that have not triggered are deleted.
+Please note that this Expert Advisor is designed for training purposes.
+The Expert Advisor has eight configurable parameters:
+Begin hour
+- trading start time;
+End hour
+- trading end time;
+Experts magic number
+- the unique identifier of the EA's positions;
+Lots
+- the volume of positions to open;
+Slippage of price
+- maximum allowable slippage when opening a position;
+Multiplier spread for stops
+- spread multiplier applied to calculating a proper distance for stop orders (*).
+Waiting for environment update (in seconds)
+- time in seconds to wait for the update of the trading environment (**);
+Number of attempts to get the state of the environment
+- the number of attempts to obtain accurate information on the trading environment (***).
+* For pending orders (as well as Stop Loss or Take Profit), there is a minimum allowed distance for placing stop orders -
+StopLevel
+. I.e., the pending order (as well as Stop Loss or Take Profit) cannot be placed closer than the above distance to the price. However, if a
+StopLevel
+is zero, it only means that the
+StopLevel
+is floating, not absent. In this case, the minimum distance is usually the value of spread*2, but sometimes even the double spread is not sufficient. This is why we have introduced a custom spread multiplier used by the EA to calculate the minimum distance for placing pending orders.
+** When a trading order is sent to a server, an occasional delay in execution may lead to incorrectly countinging the number of market positions. If such an "undefined" state is detected, the Expert Advisor waits for the specified number of seconds and then reads the environment again.
+*** The number of such waiting periods within one tick is set in the EA parameters. Having taken all the allowed attempts to get the accurate information on the environment, the Expert Advisor exits processing and waits for the next tick. The EA will repeat these attempts on this new tick if the trading environment has failed to update by this time.
+To check the strategy, the default settings were tested using EURUSD H1 in the 1 minute OHLC mode within the interval from 2017.01.02 to 2018.03.29.
+Then the trading start/end parameters (
+Begin hour
+and
+End hour
+) were optimized for EURUSD H1 in the 1 minute OHLC mode:
+The best results were obtained with the following settings:
+Begin hour = 8;
+End hour = 10.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20495

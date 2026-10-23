@@ -1,0 +1,13 @@
+The RMO oscillator has been created by Rahul Mohindar. The purpose of the oscillators is to find trends.
+The general recommendation is to trade in the direction of the intersection between the oscillator line and the zero line.
+This indicator is provided with two "anticipating" lines - their crossover provides earlier signals, though with a greater risk.
+The indicator has three input parameters:
+Period 1
+- the period of the first signal line;
+Period 2
+- the period of the second signal line;
+Applied price
+- price used for calculations.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20434

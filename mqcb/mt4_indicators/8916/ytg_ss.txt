@@ -1,0 +1,1 @@
+It is possible to switch on or to switch off functions Alert, PlaySound, SendMail having moved the mouse the appropriate inscription in the basic window of the diagram.

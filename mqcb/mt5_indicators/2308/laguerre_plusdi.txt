@@ -1,0 +1,10 @@
+Real author:
+Emerald King/transport_david
+The PlusDi indicator processed through the Laguerre filter.
+This indicator was first implemented in MQL4 and published in
+CodeBase
+at mql4.com on 14.09.2007.
+Figure 1. The Laguerre_PlusDi indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2308

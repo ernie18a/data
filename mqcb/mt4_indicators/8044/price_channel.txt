@@ -1,0 +1,2 @@
+The Price Channel indicator calculates the highest high and lowest low of the trailing number of bars specified by the input Length.
+Lines representing the trailing highs and the trailing lows are then plotted. When a forex market moves above the upper band, it is a sign of forex market strength. Conversely, when a forex market moves below the lower band, it is a sign of forex market weakness. A sustained move above or below the channel lines may indicate a significant breakout.

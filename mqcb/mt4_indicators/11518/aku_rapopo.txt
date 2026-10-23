@@ -1,0 +1,1 @@
+The indicator calculates and draws the highest, lowest and median point of certain period.

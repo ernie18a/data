@@ -1,0 +1,4 @@
+Author: cja
+Macd_CJA M1D1 indicator. Uses signals
+Macd
+.

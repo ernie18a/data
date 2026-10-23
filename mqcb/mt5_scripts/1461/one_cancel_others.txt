@@ -1,0 +1,11 @@
+This simple script without parameters is used in cases when, for example, the orders are set on the breakthrough (the breakthrough from boundaries) of the channel and when one order is triggered, the other must be canceled.
+Features:
+The script works only with the orders by the symbol, to which chart it is attached.
+Supposed that the orders have already been set.
+Supposed that there is no open positions to the given symbol.
+When one order is triggered, the script deletes all (!) remaining orders on the current symbol and exits.
+If the symbol has no pending orders, the script will exit.
+Simply said, this script helper is designed for using in manual trade. It does not set orders, but only deletes. Thus the trader has no need to follow the fact of execution of one of the pending orders.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1461

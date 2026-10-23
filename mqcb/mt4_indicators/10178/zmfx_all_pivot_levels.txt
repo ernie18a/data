@@ -1,0 +1,8 @@
+Description:
+Here is an indicator, which draws daily, weekly and monthly pivots, support and resistance levels. All lines are drawn from the beginning of the timeframe (daily levels - from the beginning of the day etc.).
+You will be able to choose which timeframe (monthly, weekly, daily) pivots, support and resistance levels to show. Also, there is an option to choose any level color. For more information visit ZoomInForex.com.
+Update:
+In
+v2
+corrected issue on smaller timeframes, when labels did not show on chart. Now You can adjust label position by Yourself.
+Also, added customization possibility to change pivot, support and resistance lines type and width.

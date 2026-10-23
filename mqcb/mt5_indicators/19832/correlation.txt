@@ -1,0 +1,12 @@
+Correlation of two symbols. Values are oscillating between +1 (complete positive correlation) and -1 (complete negative correlation). Correlation value 0 is denoting absence of correlation (random changes without correlated price changes between the two observed symbols).
+Usage
+Use the correlation period to calculate either longer term correlation using longer period (good for observing if the symbols that are monitored are tending to trend in the same direction) or using short period (good for sudden price changes observation - usually when news are issued for one symbol and not for the other).
+Enter in either or both of the symbol parameters the symbol you wish to monitor.
+If the symbol parameter is left empty, current chart symbol will be used.
+Set the coloring mode (two color mode is displaying different colors when zero value - no correlation level - is crossed).
+Recommendations
+If the symbols observed tend to be either completely positively or negatively correlated, a break in the opposite direction usually can be used for entries.
+In cases like the above estimate which is the symbol that is deviating from the usual trend, and enter in the direction of the other observed symbol.
+All values above 0.8 or bellow -0.8 can be considered as a high level of correlation.
+P.S.
+Using same symbols in both symbol parameters will always produce result 1.

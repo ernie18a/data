@@ -1,0 +1,2 @@
+ADX trend (that is a part of adxvma calculation) made as standalone indicator and using Jurik smoothing for result smoothing (in order to lessen the false signals)
+It is in a same way as any trend assessment indicator: when the color is changed, the trend is changed too

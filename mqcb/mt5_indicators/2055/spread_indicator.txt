@@ -1,0 +1,3 @@
+This is a plain-vanilla code for spread.
+The indicator can be placed on any pair on chart window. The font colour and indicator's display position can be changed on the fly. Pips can be normalized too.
+Spread indicator

@@ -1,0 +1,18 @@
+Input Parameters:
+nBars
+- numbers of Bars for calculating prices Open, Close, High and Low;
+dLevel
+-  variable that determines the level of response of this EA;
+profB
+and
+profS
+- allows you to set the profit  separately for Buy and Sell;
+UseMM
+- if = true - "Money Management" will be involved
+PercentMM
+-  Lot Size will be calculated as percent from AccountFreeMargin
+TradingHoursOn -
+if  = true - the EA will vork only ibetween
+OpenSessionHour
+and
+CloseSessionHour

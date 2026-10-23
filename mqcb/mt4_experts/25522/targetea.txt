@@ -1,0 +1,4 @@
+This Expert Advisor is a tool to be used for closing all open positions by ticket in profit.
+Does not open positions, can only close positions.
+You can select the type of profits (pips or currency) and type of tickets (buy or sell) to manage it, and specific ID (magic number).
+Update  version 1.5 = added option for percentage of balance.

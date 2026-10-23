@@ -1,0 +1,4 @@
+Ulcer index was originally meant to be used for something different than finding out the trend (the original calculation "
+... is a measure of the depth and duration of draw-downs in prices from earlier highs ...
+") but if we imagine that the calculation can be done in the opposite direction too (perfect in Forex where a symbol can not have a 0 value - if it exists it must have some value) then we can get something like this:
+Also, as an experiment (and a deviation to the original calculation) option to calculate "inverted" Ulcer index added. The direction of the calculation is changed in the inverted mode, and even though the direction is inverted, there is no repainting and it can be used as any other "regular" indicator. The results in the inverted mode are interesting (at the least) and it is recommended that you do a bit of experimenting to find out which version suits your trading style better.

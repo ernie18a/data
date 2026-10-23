@@ -1,0 +1,2 @@
+The indicator plots two lines that represent the difference between two currencies derived from three pairs/currencies.
+It applies to EURUSD, EURJPY, GBPUSD, GBPJPY, USDCAD, USDCHF or USDJPY.

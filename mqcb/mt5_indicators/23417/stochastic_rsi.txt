@@ -1,0 +1,26 @@
+Indicator Stochastic RSI is a stochastic calculated on the data of Relative Strength Index (RSI)
+It has six adjustable parameters:
+Stochastic %K period
+- stochastic %K line calculation period
+Stochastic %D period
+- stochastic %D line calculation period
+Stochastic slowing
+- stochastic slowing calculation period
+RSI period
+- RSI calculation period
+Overbought
+- overbought level
+Oversold
+- oversold level
+Calculations:
+SK = AvgSKI
+SD = AvgSK
+where:
+AvgSKI = SMA(SKI,Stochastic slowing)
+AvgSK  = SMA(SK, Stochastic %D period)
+SKI = (RSI - Min) / (Max-Min) * 100.0
+Max, Min - the highest and the lowest values of RSI within the range of Stochastic %K period
+RSI - Relative Strength Index(Close, RSI period)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23417

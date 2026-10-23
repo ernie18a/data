@@ -1,0 +1,37 @@
+Hi folks,
+I wrote this EA to fulfill my own needs. Therefore, I will briefly explain what this is about and especially what NOT:
+It is NOT:
+A guaranteed method for success! Obviously losses are to be expected! (I know this should be trivial, but sometimes I get the feeling that people see expert advisors as a sure thing..)
+It does not create hedges to your existing trades or in other symbols. Therefore, one can assume that this is not about securing a position and would be partially right with this assumption. I will try to clarify what the "hedge" really does later on.
+As written in the description this EA is meant as an Order-Placement tool. However, this EA does not place orders based on anything else but your given order. It will stop its work after this one trade is finished.
+What It Tries:
+It tries to allow you to put the "stop-loss-level" farther away than you would normally do. Additionally, it tries to avoid higher losses even though the stop-loss is farther away. Therefore, with creating the order a hedge position is created within the same symbol. The position is created every time the main-trade reaches its "loss-zone".
+I intentionally wrote "tries", because the "method" has its flaws. Hedging a position at a "zero-loss-level" is hard to reach due to the spread. To compensate this the EA automatically modifies the hedge as soon as possible to equalise the hedge's spread. Unfortunately, this is not always possible. If it does not succeed, you will have a 2*spread-loss each time.
+If the hedge does not get triggered (due to slippage or the small gap between the entry-price and the trigger position or the at the zero-level stopped former hedge), there are two possibilities included to secure that the losses don't get too high:
+"RiskSL": If there is no active hedge, the stop-loss level of the main-order will be automatically set to a definable position.
+"RiskHedge": This creates a new hedge in the loss-zone of the main trade and about 3*spread away from the entry price if the normal hedge gets not triggered. This possibility allows to stick with the predefined stop-loss, but the stop-loss of this hedge does create higher losses than a normal one would do. If due to slippage or whatever else this hedge is not created the same principle as with "RiskSL" will set the stop-loss to a definable level.
+"RiskSLN" will set the stop-loss-distance in both cases. INTEGER VALUE! Multiplied with *Points.
+It is obviously not possible to activate both methods simultaneously.
+This is one of the reasons why I uploaded my EA. Whether you use one or the other depends on which time-basis you trade and is a matter of experience.
+This means that this EA requires knowledge about how to trade
+! As mentioned before: This is an order-placement tool!
+I'd very much appreciate if anybody could test my EA and reply what does work best in what dimensions for him/her.
+Furthermore, the EA tries to minimize losses with a
+trailing-system
+. To clarify that right away: This function is meant to minimize losses and not to make profit. Therefore, the hedge has no take-profit in the order itself. The take-profit will be triggered if the main order gets stopped. At this point the difference between hedge and main order is about 2*spread. The EA now tries to "trail" the market price at a relatively very small distance to hopefully earn at least 2 more points. To reach this goal there are certain other code-lines in the ea, but I don't want to get too much into detail.
+The take-profit of the main-order has a similar system.
+By the way, the distance is definable. The hedge is regulated by NSL_21_Wert, the main-order by NewTP_21_Wert (Wert = value) (double-var, multiplied with *Point). This is fine tuning. Possible values are 1-9. The results may differ sometimes very much. Since it is a statistically matter to get the best working value: If anybody tries this function please let me know which works best for you in general (differences in results can easily be seen in the strategy tester).
+Another function of the EA is to end the trade if the hedges produce too much losses. This can be deactivated. Nevertheless, if k_aktivieren = true (aktivieren = activate), the function is activated and will end the whole trade if the hedges produced losses four times. It won't stop everything right away, but a take-profit for the main order will be set at a 7*spread distance to at least get some money back.
+The last function is the 75-50 rule. It is disabled by default, but can be activated through Regel_75_50 (Regel = rule). This rule measures the distance between the take-profit and the entry-price of the main order. If the market price reaches 75% of that distance the main-order-stoploss will be modified and set to 50% of that distance.
+Important:
+This EA works with OrderSelect -> "Select by position" orders! This means that you
+cannot
+have any other (pending) orders in your terminal! Otherwise it will definitely cause trouble! Maybe I will change that sometime, but I don't have the time at the moment.
+Also note that this EA lacks some fine tuning and is not expected to be completely final right now! (It does work though, but I cannot tell for sure if there might be some problems left. If you are interested in this EA, please always check for updates).
+And if you are going to use this: Please test this thoroughly before you even consider to use this for real trading-situations. I just tested this with a demo account so far, so I cannot give you "real-life" advices here and I don't know how this will go along with requotes and slippage.
+Also consider the chance-risk ratio. It is possible to get out of the hedge with no losses. But this does not work all the time. Normally you will have to accept minor losses due to the hedge closes; keep that in mind.
+Note that I warned you here and that I cannot guarantee any trading functionality at all!
+Note: Removing the expert closes all open orders and deletes all pending orders!
+It also doesn't really matter which timeframe you use (see point above). But please be aware of the fact that orders are closed if you change the timeframe during an active trade. Therefore, make sure to place the EA in an additional window in order to go on with your analyses.
+The are two EA attached to this post. Hedger_Short is for short-orders and the other way around. (I intentionally did not create one file, but if anybody needs the one-file solution I may add one.)
+At last: Thank you in anticipation for every tester/comment/download! Hopefully this tool can enhance your trading. If there are any questions left don't hesitate to ask! And thank you for your understanding that my sentences might not be perfect - I'm obviously not a native speaker ;)

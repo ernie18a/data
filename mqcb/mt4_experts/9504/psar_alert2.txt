@@ -1,0 +1,5 @@
+Now with added options and features. pSAR Alert plays a sound whenever a first parabolic SAR signal appears. For visual accuracy, match the step setting for your indicator to that of the EA incase you change any of the two step values.
+Please donate to my projects in order to keep this EA and others together with their future versions 100% free. My moneybookers email is
+admin@forexyangu.com
+. Anyone can join moneybookers and send money via numerous methods.
+Red ticks in the above diagram are for demonstration purposes only and show examples where the EA will start playing the alarm.

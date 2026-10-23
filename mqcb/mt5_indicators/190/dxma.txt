@@ -1,0 +1,3 @@
+The DMI Expanded Moving Average Indicator. The
+DMI
+and HLrange are used.

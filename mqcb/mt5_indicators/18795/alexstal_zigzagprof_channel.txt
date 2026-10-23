@@ -1,0 +1,10 @@
+Real author
+: AlexSTAL
+A channel based on peaks and troughs of
+AlexSTAL_ZigZagProf
+.
+To provide correct compilation of the indicator, add the AlexSTAL_OutsideBar.mqh library to <terminal_data_folder>\MQL5\Include.
+Fig. 1. The AlexSTAL_ZigZagProf_channel indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18795

@@ -1,0 +1,4 @@
+The indicator marks the days of the week with a colored histogram in the chart sub-window.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18986

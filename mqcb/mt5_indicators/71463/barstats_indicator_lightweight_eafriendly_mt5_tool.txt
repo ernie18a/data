@@ -1,0 +1,15 @@
+BarStats Indicator for MetaTrader 5
+Features:
+- Shows Bar Index (internal use or EA integration)
+- Price difference in points for each bar
+- Percentage change per bar
+- Lightweight and fast calculation
+- DRAW_NONE buffer to avoid chart clutter
+- EA-friendly buffers for custom strategies
+Perfect for:
+- Traders who need quick bar statistics
+- EA developers requiring fast, clean data
+- Backtesting and analysis
+Contact:
+- Telegram: @JohnHansonDev
+- For custom indicators or EA development, feel free to reach out.

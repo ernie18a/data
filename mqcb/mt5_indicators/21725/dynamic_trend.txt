@@ -1,0 +1,41 @@
+The Dynamic Trend signal indicator draws a two-color trend direction line and adds signal arrows.
+It has two input parameters:
+Period
+- calculation period;
+Percent
+- "strengthening percent" (*).
+Calculations:
+Line
+If
+Close < PrevLine
+:
+Line = Close[Hindex] - Percent
+If
+Close > PrevLine
+:
+Line = Close[Lindex] + Percent
+where:
+Hindex
+- the index of the highest Close within the Period interval;
+Lindex
+- the index of the lowest Close within the Period interval.
+Arrows
+If
+Close[3] > Line[2]
+and
+Close[2] < Line[3]
+:
+Blue
+up arrow.
+If
+Close[2] < Line[1]
+and
+Close[2] > Line[3]
+:
+Red
+down arrow.
+* The strengthening percent is actually the number of points, by which the line is "attached" to the price.
+To filter the indicator signals, it is recommended to use confirmation signals, such as support/resistance levels.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21725

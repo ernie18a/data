@@ -1,0 +1,7 @@
+Author:
+Bifeancho
+- Este indicador señala la cantidad de compras y ventas por cada barra.
+- La linea verde señala la cantidad de compras y la linea roja señala la cantidad de ventas.
+- Si el par de lineas disminuye en altura es señal de poco volumen.
+- Si la linea superior disminuye y la inferior aumenta puede leerse como una señal de cambio de tendencia.
+Volumes Buy-Sell

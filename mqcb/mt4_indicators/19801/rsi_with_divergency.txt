@@ -1,0 +1,2 @@
+Regular RSI, but it will show the divergency or the convergency between the 2 last peaks.
+You can choose the icon's size as well as the excess limits.

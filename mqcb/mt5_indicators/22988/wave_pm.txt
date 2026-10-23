@@ -1,0 +1,29 @@
+Whistler's Active Volatility Energy - Price Mass indicator. The indicator was described in the book "Volatility illuminated" by Mark Whistler.
+The indicator has twelve input parameters:
+Fast bands period
+- fast line calculation period
+Fast bands shift
+- fast line shift
+Fast bands deviation
+- fast line deviation
+Slow bands period
+- slow line calculation period
+Slow bands shift
+- slow line shift
+Slow bands deviation
+- slow line deviation
+Chars
+- fast and slow oscillators calculation period
+Extreme top level
+- extreme upper level value
+Top level
+- upper level value
+Central level
+- central level value
+Bottom level
+- lower level value
+Extreme bottom level
+- extreme lower level value
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22988

@@ -1,0 +1,77 @@
+The author of the idea
+-
+Andrey
+mq5 code author
+-
+barabashkakvn
+ATTENTION: By default, grid trading is completely FORBIDDEN, i.e.
+Use buy stop
+,
+Use buy limit
+,
+Use sell stop
+and
+Use sell limit
+parameters are set to "false". First, you need to select your type of grid (type of pending orders) and select the best parameters: step, volume, etc.
+The EA places a grid consisting of pending Stop and Limit orders.
+Grid features
+: the first pending grid order can be placed at the
+First
+xxxx price or at a certain
+DeltaFirst
+xxxx distance from the current price. If
+First
+xxxx exceeds zero, the
+DeltaFirst
+xxxx parameter is not considered, and vice versa, when
+First
+xxxx is equal to zero, the
+DeltaFirst
+xxxx parameter is activated.
+You can:
+enable/disable pending order types: Buy stop (
+Use buy stop
+), Buy limit (
+Use buy limit
+), Sell stop (
+Use sell stop
+) and Sell limit (
+Use sell limit
+).
+set a separate step for pending Stop and Limit orders (
+Step stop
+and
+Step limit
+)
+different volume for the first pending Stop and Limit order (
+Volume stop
+and
+Volume
+limit
+)
+equal volume ratio for pending Stop and Limit orders (
+Coefficient stop
+and
+Coefficient limit
+)
+disable stop loss (
+Stop Loss
+) and take profit (
+Take Profit
+) - to do this, set the parameter to "0.0"
+Stop loss (
+Stop Loss
+) and take profit (
+Take Profit
+) can be disabled. To do this, simply set the parameters to "0.0".
+The lifetime of a pending order in minutes (
+Expiration
+) - if "0", it is not considered.
+Closing all open positions and deleting pending orders are possible in two cases:
+a profit reaches
+Profit Close
+a loss reaches or exceeds
+Loss Close
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22100

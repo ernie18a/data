@@ -1,0 +1,19 @@
+Stop Geometry Visualizer MT5
+is a free, read-only indicator that turns the current broker Stops Level and Freeze Level into visible chart references.
+It shows:
+current Bid, Ask and spread
+Stops Level and Freeze Level in points and price distance
+upper reference for Buy Stop and Sell Stop Loss geometry
+lower reference for Sell Stop and Buy Stop Loss geometry
+optional freeze reference lines
+tick size, volume minimum/step/maximum and filling-mode flags
+Journal messages when the broker specification changes
+Inputs:
+InpRefreshSeconds — timer refresh interval
+InpShowStopReferences — display Stops Level reference lines
+InpShowFreezeReferences — display Freeze Level reference lines
+InpPrintChanges — log symbol-specification changes
+color inputs — configure the reference-line colors
+If a broker reports zero Stops Level or Freeze Level, the corresponding lines are intentionally omitted and the dashboard states that the current specification is zero.
+The indicator does not place, modify or delete orders.
+Reference lines are diagnostic guides, not an order-approval guarantee. Always recheck the final direction-specific request against the current broker state and OrderCheck .

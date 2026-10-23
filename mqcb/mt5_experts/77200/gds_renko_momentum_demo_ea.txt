@@ -1,0 +1,16 @@
+Historical demonstration
+, XAUUSD RoboForex-ECN, 1 May–8 September 2026; USD 10,000 initial deposit, 1:100 leverage, fixed 0.01 lot. The MT5 report shows 100% real ticks.
+- 220 trades
+- Net profit: USD 1,293.99
+- Profit factor: 1.67
+- Maximum equity drawdown: USD 203.00 (1.91%)
+- Win rate: 28.64%
+- Long and short trades both had positive net results over this interval.
+Default parameters were selected for this example. The result is an optimized historical demonstration, not an independent forward test. The trading logic in v0.11 is unchanged from tested v0.10; v0.11 sets the demonstrated parameters as defaults.
+Default inputs
+Brick size 6.0 price units; momentum period 8 bricks; threshold 5.0 brick units; TP 10 bricks; SL 2 bricks; maximum hold 1440 minutes; cooldown 3 bricks; maximum spread/brick ratio 0.35; lot 0.01; Magic 26091043.
+The example has a low win rate and includes 13 consecutive losing trades. It relies on larger winners rather than frequent winning trades.
+Usage notes
+Run the EA in Strategy Tester first. Brick size is expressed in price units, not points. Virtual SL/TP require the EA and terminal to remain running; they are not broker-side protective orders. Exits may be delayed by closed sessions, connection loss or execution restrictions. Price gaps can cause losses beyond the nominal stop.
+Trade requests are checked against symbol trading sessions. Renko/momentum history starts again after EA reinitialization. Other positions or active orders on the symbol block new entries. Use one instance per symbol and a unique Magic.
+The historical result is not evidence of a persistent trading edge and is not a promise of future profitability.

@@ -1,0 +1,139 @@
+Author of the idea
+—
+Alexey Kiyanitsa
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+An assessment is made based on the values of five indicators (Gator, WPR, AC, DeMarker and RSI). Uses trapezoidal membership functions. Before sending a trade request, it checks if funds on the account are enough.
+Parameters
+double
+arGator[
+8
+]    ={
+0.010
+,
+0.020
+,
+0.030
+,
+0.040
+,
+0.040
+,
+0.030
+,
+0.020
+,
+0.010
+};
+double
+arWPR[
+8
+]      ={-
+95
+,-
+90
+,-
+80
+,-
+75
+,-
+25
+,-
+20
+,-
+10
+,-
+5
+};
+double
+arAC[
+8
+]       ={
+0.05
+,
+0.04
+,
+0.03
+,
+0.02
+,
+0.02
+,
+0.03
+,
+0.04
+,
+0.05
+};
+double
+arDeMarker[
+8
+] ={
+0.15
+,
+0.2
+,
+0.25
+,
+0.3
+,
+0.7
+,
+0.75
+,
+0.8
+,
+0.85
+};
+double
+arRSI[
+8
+]      ={
+25
+,
+30
+,
+35
+,
+40
+,
+60
+,
+65
+,
+70
+,
+75
+};
+double
+Weight[
+5
+]     ={
+0.133
+,
+0.133
+,
+0.133
+,
+0.268
+,
+0.333
+};
+For the time-frame H1.
+From the author of the idea:
+There is a lot of theoretical material on fuzzy systems, so let's discuss this Expert Advisor:
+1) An assessment is made based on the values of five indicators (Gator, WPR, AC, DeMarker and RSI). Uses trapezoidal membership functions.
+2) Ranking and weights of values can be edited straight in the code.
+3) As a basis for the fuzzy assessment (to buy, to sell, not to do anything), you can use not only the above indicators, but also other methods at your discretion.
+In general, the EA code is designed for practical acquaintance with the techniques of fuzzy evaluation of the current market situation. It is recommended to use or modify it after reading the theory. You can start with materials on fuzzy evaluation fundamentals by A. Nedosekin (it describes a different technology, but contains a very good explanation of the theory).
+Note:
+If you want to add your own criteria for evaluation instead of the five built-in indicators, I recommend splitting such criteria into borders of fuzzy values (in the code - arrays arGator[7], etc.).
+Do not attempt to over-optimize the parameters of the membership function (they are not available as external parameters in the code) — this will not give any substantial effect.
+Try experimenting. I think that fuzzy logic is incomparable in terms of decision making.
+The best result was obtained on EURUSD, H1:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17502

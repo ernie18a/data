@@ -1,0 +1,1 @@
+This is the standard metaquotes volume indicator, but with the moving average of the volumes added by Ron T, and now modified so that the histogram bar will indicate whether the candle or bar closing price was higher or lower than the open.

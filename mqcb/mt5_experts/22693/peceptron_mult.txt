@@ -1,0 +1,96 @@
+Idea by:
+Igor
+Code mq5 by:
+barabashkakvn
+This is a multisymbol EA, i.e., it works simultaneously on three symbols: EURUSD (
+Symbol #1
+), GBPJPY (
+Symbol #2
+), and AUDNZD (
+Symbol #3
+). A simple neural network (perceptron) is use, which works on indicator iAC (Acceleration/Deceleration, Accelerator/Decelerator Oscillator, AC).
+For optimization mode, you can disable some symbols just by assigning a non-existing symbol to variable
+Symbol #
+.
+Setting the size of a position
+An uncommon pattern is used in this EA to set the volume of a position: The minimum number of lots is specified in the variables of
+Number of minimum lots for Symbol #
+. Example: The minimum lot size is 0.1 on
+Symbol #1
+and 0.01 on
+Symbol #2
+, i.e., the difference is ten times. So, if variable
+Number of minimum lots for Symbol #
+is set as 10 for both symbols, then a position of 1.0 lots (0.1 x 10) will be opened for
+Symbol #1
+and 0.10 lots (0.01 x 10) for
+Symbol #2
+.
+Perceptron block
+At each new bar (at the moment where there is a new bar for all symbols used), an array of the indicator values (
+array
+) is assigned to the perceptron block for each symbol:
+//+------------------------------------------------------------------+
+//| Perceptron                                                       |
+//+------------------------------------------------------------------+
+double
+Perceptron(
+double
+&array[],
+int
+y1,
+int
+y2,
+int
+y3,
+int
+y4)
+  {
+double
+w1 = y1 -
+100
+;
+double
+w2 = y2 -
+100
+;
+double
+w3 = y3 -
+100
+;
+double
+w4 = y4 -
+100
+;
+double
+a1 = array[
+0
+];
+double
+a2 = array[
+7
+];
+double
+a3 = array[
+14
+];
+double
+a4 = array[
+21
+];
+return
+(w1 * a1 + w2 * a2 + w3 * a3 + w4 * a4);
+  }
+I recommend to consecutively perform optimizations for each symbol. First,
+Symbol #1
+is optimized, while
+Symbo2 #1
+and
+Symbol #3
+are disabled. For all symbols, parameters x are set within the range from 0 through 100, while sl (Stop Loss) and tp (Take Profit) are set at your own discretion. Please keet in mind that, to disable a symbol, it is sufficient to assign
+variable
+Symbol #
+with a non-existing symbol.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22693

@@ -1,0 +1,104 @@
+Autor real:
+ellizii
+Neste indicador as médias móveis são calculados da mesma maneira que as de
+Ichimoku Kinko Hyo
+(veja
+XMA_Ichimoku
+), os envelopes são construídos posteriormente.
+Parâmetros de entrada do indicador:
+//+-----------------------------------+
+//| Parâmetros de entrada do indicador|
+//+-----------------------------------+
+input
+uint
+Up_period=
+3
+;
+// Cálculo do preço máximo do período
+input
+uint
+Dn_period=
+3
+;
+// Cálculo do preço mínimo do período
+//----
+extern
+MODE_PRICE Up_mode=HIGH;
+// Busca do preço máximo
+extern
+MODE_PRICE Dn_mode=LOW;
+// Busca do preço mínimo
+//----
+input
+Smooth_Method XMA_Method=
+MODE_SMA
+;
+// Método de suavização
+input
+int
+XLength=
+100
+;
+// Profundidade de suavização
+input
+int
+XPhase=
+15
+;
+// Parâmetros de suavização
+input
+double
+Up_percent =
+1.0
+;
+// Percentual do desvio da média para a construção da banda superior do canal
+input
+double
+Dn_percent =
+1.0
+;
+// Percentual do desvio da média para a construção do canal da banda inferior
+//----
+input
+int
+Shift=
+0
+;
+// Deslocamento horizontal do indicador em barras
+input
+int
+PriceShift=
+0
+;
+// Deslocamento vertical do indicador em pontos
+Este indicador permite selecionar um tipo de suavização dentre as dez versões disponíveis:
+SMA
+- média móvel simples;
+EMA
+- média móvel exponencial;
+SMMA
+- média móvel suavizada;
+LWMA
+- média móvel ponderada linear;
+JJMA
+- média adaptativa JMA;
+JurX
+- suavização ultra linear;
+ParMA
+- suavização parabólica;
+T3
+- suavização exponencial múltipla de Tillson;
+VIDYA
+- suavização com o algoritmo de Tushar Chande;
+AMA
+- suavização com o algoritmo de Perry Kaufman.
+Deve se notar que o parâmetro Phase possui um significado totalmente diferente entre os diferentes algoritmos de suavização. Para JMA, Phase é uma variável externa cujo valor varia entre -100 e +100. Para T3, é uma relação de suavização multiplicada por 100 para se obter uma visualização melhor. Para VIDYA, é um período do oscilador CMO e para AMA é um período lento de EMA. Estes parâmetros não afetam a suavização de outros algoritmos. Em AMA, o período rápido de EMA, por padrão, é um valor fixo igual a 2. A razão de crescimento da potência para AMA também é igual a 2.
+Este indicador utiliza a biblioteca de classes SmoothAlgorithms.mqh (deve ser copiada para terminal_data_folder\MQL5\Include). O uso desta classe está descrito com mais detalhes no Artigo
+"Série de preço médio para cálculos intermediários sem utilizar buffers adicionais"
+.
+Este indicador foi implementado pela primeira vez em MQL4 e publicado na
+Base de Código
+em 04.10.2010.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/733

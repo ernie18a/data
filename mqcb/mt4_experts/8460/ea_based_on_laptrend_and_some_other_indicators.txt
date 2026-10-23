@@ -1,0 +1,7 @@
+The EA was developed on the basis of the guide by Sergey Kovalev.
+Description:
+As was said previously I would like to test the EA. I just set the severe conditions of the enter, it is clear because of not a good situation. The lapternd checks the correctness of enter, for example on 3 timeframes, and the EA itself can be uploaded on any of them...it will work on the timeframes that are specified in the code.
+If somebody wants, he/she can modifiy it in his/her own way. The main thing is that somebody will be able to test it, my PC halts during testing of this EA. However, it trades satisfactorily on a demo account. I wish I could receive more accurate information.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8460

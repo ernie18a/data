@@ -1,0 +1,9 @@
+The indicator plots one vertical line per day in a specified moment of time. Lines are drawn using indicator buffers and
+DRAW_HISTOGRAM2
+graphical construction type. It is recommended to place the indicator on the main chart before attaching other indicators.
+Fig. 1. Time_Bar_Custom indicator in the main chart window
+You can also place the indicator in the additional windows of other indicators simply by dragging it to these windows from the Navigator window.
+Fig. 2. Time_Bar_Custom indicator in the additional window of another indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22982

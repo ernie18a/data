@@ -1,0 +1,5 @@
+Subjects update observers through interface.
+Subjects knows nothing about the observers (one-to-many weak relation).
+New data can be broadcast by the subject, or requested by the observers (better).
+Order of notification is not guaranteed.
+RULE: Use weak connection between communicating objects.

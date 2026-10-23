@@ -1,0 +1,5 @@
+Author:
+2008forextsd mladen
+Indicator MA Cross 3MACross Alert WarnSig. The author gives the explanatory
+here
+.

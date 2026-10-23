@@ -1,0 +1,1 @@
+Draws either MACD, Stochastic, RSI or CCI of 3 timeframes in a separate window.

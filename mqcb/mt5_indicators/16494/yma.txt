@@ -1,0 +1,6 @@
+Moving average for prices calculated by the following formula: (Open+Close+High+Low)/4.
+The indicator settings:
+YMA_Period — period of the moving average.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16494

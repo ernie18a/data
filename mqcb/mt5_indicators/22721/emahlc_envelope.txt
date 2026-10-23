@@ -1,0 +1,9 @@
+Indicator EMA HLC Envelope. The indicator displays an exponential moving average calculated at the Close price with two envelopes — the top and the bottom ones calculated as EMA at the High and Low prices, respectively, and signal indicators showing the envelopes breakthrough by the price.
+The indicator has one adjustable parameter:
+Period
+- calculation period
+If the candle Close price breaks through the upper envelope, the blue signal pointer is placed on the High price of the candle.
+If the candle Close price breaks through the lower envelope, the red signal pointer is placed on the Low price of the candle.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22721

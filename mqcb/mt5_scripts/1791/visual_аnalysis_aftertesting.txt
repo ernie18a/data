@@ -1,0 +1,11 @@
+The ForAfterTesting script for changing the display of graphical objects created by the strategy tester and for easier visual analysis of the results.
+Changes the parameters of lines (the ChangeOnly parameter). Simplifies the analysis of profitable (parameter ChangeWinners) and loss (parameter ChangeLosses) trades.
+Key features:
+Changing object properties: the color of the line, the display style, width, color of the arrows.
+Analysis of losing trades:
+Analysis of profitable trades:
+Tips:
+Note: it is recommended that you open a new chart for every new change.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1791

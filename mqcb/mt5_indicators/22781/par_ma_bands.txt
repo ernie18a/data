@@ -1,0 +1,12 @@
+Parabolic Moving Average with Bands
+features standard deviation bands.
+It has three adjustable parameters:
+Period
+- MA calculation period
+Applied price
+- Moving Average calculation price
+Deviation
+- standard deviation
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22781

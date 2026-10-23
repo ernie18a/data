@@ -1,0 +1,34 @@
+The tool draws a shape based on a number of points added to a chart. Press and hold Ctrl and left-click on a chart to add a point. Once the 'Dots Max Number' points is added to chart, the program plots a shape.
+All commands:
+Ctrl + Left Click - add a point on the chart.
+Ctrl + Backspace - undo the last action.
+Ctrl + Delete - delete all graphical objects from the chart. The command deletes all graphical objects with the names starting with the characters specified in 'Objects prefix name'. The prefix can be specified as 'name' or 'name*' – the two ways work the same.
+Settings
+Objects prefix name
+- the prefix, based on which all objects whose name start with the specified set of characters will be deleted. The prefix can be specified as 'name' or 'name*' – the two ways work the same. If an empty string is specified here, 'Figure' will be used as the prefix.
+The "Dot" Block
+Dots Max Number
+- number of points; once they are added, the program will draw a shape.
+Empty Dot Code
+- the code of an empty point.
+Empty Dot Width
+- the width of an empty point.
+Filled Dot Code
+- point code of a drawn shape.
+Filled Dot Width
+- the width of a point of the drawn shape.
+The "Line" Block
+First Dot Line Left Ray
+- drawing the line on the first point as a ray to the left.
+Last Dot Line Right Ray
+- drawing the line on the last point as a ray to the right.
+Lines color
+- the color of the shape lines.
+Lines Style
+- the style of the shape lines.
+Lines Width
+- the width of the shape lines.
+Examples
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17671

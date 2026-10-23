@@ -1,0 +1,21 @@
+The indicator marks all performed trades with short horizontal lines, if such trades have corresponding arrows.
+//+------------------------------------------------+
+//|  Indicator input parameters                    |
+//+------------------------------------------------+
+//---- Indicator display settings
+input
+string
+Sirname=
+"AutoTradeLevels"
+;
+// The name for the indicator labels
+input
+uint
+Len=
+3
+;
+// The length of price labels as the number of candlesticks
+Fig. 1. The AutoTradeLevels indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18635

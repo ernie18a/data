@@ -1,0 +1,22 @@
+This indicator gives
+BUY or SELL signals
+and
+entry level
+. Use it on M5 or above.
+IMPORTANT! >>
+DON'T
+open new trade
+IMMEDIATELY
+when the status (BUY or SELL) changes, because it may vary! Wait until the opening of the next candle.
+(But if you like the high risk and the higher profit,
+in a strong trend
+you can enter immediately when the status changes in the same direction of the strong trend.)
+It can be useful to use in conjunction with a filter (for example, as
+JJN-BigTrend
+on higher timeframe), i.e. sell only in overall downtrend, buy only in overall uptrend.
+Test it on
+demo
+for the
+first
+time.
+Use PosX and PosY to place the indicator to the desired location.

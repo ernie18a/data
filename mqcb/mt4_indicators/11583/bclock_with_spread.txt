@@ -1,0 +1,6 @@
+Real author:
+Nick Bilak
+Modified b-clock with font customization (font, color, size) and spread value (ask-bid).
+2014.09.04 :
+-bug fix on deinit
+-display format in "h:m:s" (hour:minute:second) for H4 Timeframe and above

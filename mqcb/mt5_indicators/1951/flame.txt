@@ -1,0 +1,4 @@
+The indicator shows the method of drawing gradient semitransparent areas with independent update rate.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1951

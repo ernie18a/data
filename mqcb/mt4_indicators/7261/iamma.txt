@@ -1,0 +1,9 @@
+AMMA's formula is:
+AMMA[i] = ((AMMA.Period-1)*AMMA[i+1] + Close[i])/AMMA.Period;
+A 25-day Average Modified Moving Average is employed as a filter. This was defined by Maxwell in
+"Commodity Futures Trading with Moving Averages"
+.
+AMMA is multiplied by 24, then today's close is added and the sum divided by 25.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7261

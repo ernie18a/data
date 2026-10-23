@@ -1,0 +1,88 @@
+RSI Exhaustion Reversal - EURUSD
+is an open-source Expert Advisor developed for strategy research, historical testing and educational purposes in MetaTrader 5.
+This version is intentionally designed to operate
+only inside the MetaTrader 5 Strategy Tester
+. When attached to a normal chart, the EA does not execute live trades.
+The purpose of this project is to provide a simple and transparent example of an RSI exhaustion/reversal strategy combined with volatility-based trade management.
+Because the complete MQL5 source code is provided, developers and students may inspect, study and modify the strategy. The code can also be used as a starting point for creating a version intended for demo or live trading, but this requires modifying the tester-only restriction and performing additional validation.
+Strategy concept
+The EA searches for an overbought exhaustion condition on EURUSD using the Relative Strength Index (RSI).
+The current strategy core is configured for
+SELL trades
+.
+The RSI is monitored for an exhaustion signal around the predefined upper level. When the entry condition is detected during the permitted trading session, the EA evaluates the current spread relative to market volatility before allowing a position.
+ATR is used to adapt Stop Loss and Take Profit distances to the current volatility of the market instead of using a fixed number of points.
+The strategy also limits the maximum duration of a position and allows only one position to be active at a time.
+Current strategy configuration
+Instrument:
+EURUSD
+Default timeframe:
+M5
+Direction:
+SELL only
+RSI Period:
+14
+RSI Sell Level:
+65
+Trading session:
+14:00 until before 18:00, based on broker/server time
+ATR Period:
+14
+Maximum Spread / ATR ratio:
+0.15
+Stop Loss:
+4 ATR
+Take Profit:
+4 ATR
+Maximum position duration:
+96 candles
+Maximum simultaneous positions:
+1
+The strategy core above is intentionally embedded in the source code so that the original research configuration is preserved.
+External inputs
+Only the main operational parameters are exposed to the user:
+Timeframe
+Defines the timeframe used internally by the strategy.
+The EA uses the timeframe selected in this input for its calculations and does
+not depend on the timeframe of the chart
+where the EA is attached.
+Position Size
+Defines the fixed trading volume.
+The default value in this version is
+1.00 lot
+.
+Users should adjust this value according to their own testing conditions and risk tolerance.
+Magic Number
+Unique identifier used by the Expert Advisor to identify its own positions.
+Strategy Tester usage
+This edition is intended for use with the
+MetaTrader 5 Strategy Tester
+.
+For more accurate historical evaluation, using:
+Every tick based on real ticks
+is recommended whenever the broker provides sufficient tick history.
+Results can vary significantly between brokers because of differences in historical prices, spreads, commissions, swaps, server time and execution conditions.
+The trading session used by the EA is based on
+broker/server time
+, not the user's local computer time.
+Open-source and educational purpose
+This project is published with its MQL5 source code so that users can:
+study the implementation of an RSI-based exhaustion strategy, understand ATR-based trade management, experiment with different timeframes, analyze historical behavior, modify the strategy logic, add additional filters, or develop their own demo/live-trading version.
+The current version intentionally contains a restriction that prevents normal chart/live trading.
+Anyone wishing to use the strategy outside the Strategy Tester must modify the source code accordingly and perform their own testing and validation.
+Important risk notice
+This Expert Advisor is provided primarily for
+research, education and historical testing
+.
+No profitability or future performance is guaranteed.
+Historical results do not guarantee future results.
+The author does
+not recommend using this research version directly with real money
+.
+Anyone who modifies the source code to enable demo or live trading is responsible for validating the modified version before use.
+Trading leveraged financial instruments involves substantial risk and can result in partial or total loss of capital.
+Any decision to use this code, or a modified version of it, on a demo or real trading account is made entirely at the user's own discretion and risk.
+IMPORTANT: This version is intentionally restricted to the MetaTrader 5 Strategy Tester and does not place trades when attached to a normal chart.
+Translated from Portuguese by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/pt/code/77738

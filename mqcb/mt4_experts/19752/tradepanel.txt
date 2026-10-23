@@ -1,0 +1,12 @@
+Note:
+The current chart symbol can be switched by writing the desired one in the symbol box.
+Used Fonts
+Arial
+Arial Black
+Calibri
+Tahoma
+Trebuchet MS
+Webdings
+Wingdings
+Wingdings 2
+If you have found this code useful for trading or educational purposes, don't forget to thank the author.

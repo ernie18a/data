@@ -1,0 +1,5 @@
+Author: palanka
+The indicator shows when to sell and when to buy. But it is not so simple.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7564

@@ -1,0 +1,14 @@
+The indicator displays the percentage of the price change for the specified period of the specified pairs and plots the corresponding bars in the indicator subwindow.
+Clicking on a bar or a name of a pair opens a corresponding chart with the period specified in the input parameters.
+Recommendations:
+The list of pairs is entered using a separator
+without spaces
+.
+Selection of the pairs in the "Market Watch" window is performed automatically.
+When the chart window size changes or when a bar exceeds the subwindow borders, an automatic bar scaling occurs.
+If a font scaling error occurs during the window scaling,
+increase or decrease the height
+of the indicator subwindow.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13404

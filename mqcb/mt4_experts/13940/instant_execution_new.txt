@@ -1,0 +1,10 @@
+You can manually click the Close Profit button to close all orders that have a profit.
+Order will auto close by take profit parameter or trailing process.
+Features:
+Button Close All Orders by magic.
+Button Buy or Sell orders.
+Button Close All Profit orders by magic.
+Trailing Process by parameter.
+Trailing Start & Size. (Ex: Start 5 & Size 5 = When order have profit by 5 pip then SL will set with profit 1 pip)
+Hidden TP/SL.
+"Try hard to be a confident trader"

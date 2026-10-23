@@ -1,0 +1,11 @@
+T3 indicator that is using floating levels as an aid to determine the trend
+Indicator is made to be using extended set (22 types) of prices, and since it is using floating levels, it can change colors (and alert accordingly), using 3 different conditions :
+when outer levels are crossed
+when middle (zero) level is crossed
+when the slope of T3 changes
+It is already multi time frame (with the usual set of all available time frames in metatrader 5 - no need for some other indicator in order to have this version work in multi time frame mode)
+Additional information about the "original T3" option was provided by the authors of the T3 modification (it was originally first applied on another trading platform) :
+By Bob Fulks, modified by Alex Matulich 4/2003
+The T3 Average is essentially a low-pass filter, as are the traditional moving average and exponential moving average. The T3 Average, however, exhibits a steeper rolloff, resulting in better  filtering of high-frequency noise while better preserving the low-frequency components of a time series.
+The "Length" parameter is divided by two to make the T3 Average's lag equivalent to the lag of the traditional moving averages. This way you can use the T3 Average as a drop-in replacement for Average or xAverage, and get the same lag but better noise filtering.
+With the addition of floating levels, the T3 usage can be extended to what it is normally used (as a kind of average). Floating levels are making it a kind of an "on chart oscillator" and then it can be used with floating "significant levels of what is usually referred to as "over bought" and "over sold" levels, but the recommendation is not to use them in that way, but as a signal for a new trend forming or a previously established trend confirmation

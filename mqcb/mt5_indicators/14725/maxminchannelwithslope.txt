@@ -1,0 +1,10 @@
+Real author:
+fajuzi
+Simple Max-Min channel with a slope. In fact, this is the Donchian channel with a slope. If the xslope input parameter is equal to zero, then the indicator becomes a regular Donchian channel. Use the Moving Average of the Momentum.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 23.12.2015.
+Figure 1. The MaxminChannelWithSlope indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14725

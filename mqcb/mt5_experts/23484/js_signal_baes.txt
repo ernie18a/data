@@ -1,0 +1,25 @@
+Idea
+by
+JS_Sergey
+mq5 code by:
+barabashkakvn
+The EA receives data from indicators
+iCCI indicator
+iMA indicator (fast)
+iMA indicator (slow)
+iMACD indicator
+iStochastic indicator
+iRSI indicator
+and each indicator is created on the following timeframes:
+M1
+M5
+M15
+M30
+H1
+H4
+You can manage the reverse of trading signals using parameter
+Reverse
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23484

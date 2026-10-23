@@ -1,0 +1,20 @@
+The author of the idea
+:
+Yury Reshetov
+,
+the MQ5 code author
+:
+barabashkakvn
+.
+The main principle of the EA operation is as follows: a market entry signal emerges when both indicator lines have the same sign, and an exit signal emerges when the lines become different in sign. If both lines have a positive sign, a buy trade is opened. If the lines are negative, a sell trade is opened. Once the signs of the lines become different, the position is closed.
+A note from the author:
+The EA made a slightly less than 50% real profit on CFD #GM (General Motors stocks) in six months. No money management and risk management techniques were applied (the EA traded fixed position size).
+Input Parameters
+The volume of positions to open
+Increment of the fast MA period to the period of the signal line
+Increment of the slow MA period to the fast MA period
+Period of the signal line
+Magic number
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19977

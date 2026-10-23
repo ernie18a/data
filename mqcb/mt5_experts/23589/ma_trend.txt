@@ -1,0 +1,49 @@
+Idea by:
+Dmitry
+mq5 code by:
+barabashkakvn
+The Expert Advisor uses indicator iMA (Moving Average, MA). It has many settings:
+Only one positions
+- only one position can be held in the market
+Reverse
+- reversal of trading signals
+Close opposite
+- forcedly closing opposite positions when receiving a trading signal
+Generating trading signals, where all parameters are set by default:
+The current ASK price is higher than the indicator value on bar #1 -> a signal to open a BUY position
+The current BID price is lower than the indicator value on bar #1 -> a signal to open a SELL position
+And how it looks in the MQL5 code:
+if
+(m_symbol.
+Ask
+()>ma[
+1
+])
+         m_need_open_buy=
+true
+;
+else
+if
+(m_symbol.
+Bid
+()<ma[
+1
+])
+         m_need_open_sell=
+true
+;
+A sample of how it works where parameters of
+Only one positions
+are false and true:
+The next sample of
+Only one positions
+- true,
+Reverse
+- false, and
+Close opposite
+- true: A BUY position was opened, and then a signal for opening a SELL position was received. Since
+Close opposite
+- true, then the BUY position was closed first (as it was opposite to the signal) and only after that the SELL position was opened.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23589

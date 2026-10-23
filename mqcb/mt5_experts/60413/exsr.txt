@@ -1,0 +1,35 @@
+EA Name:
+EXSR – Extreme Strength Reversal
+Version:
+1.0
+Platform:
+MetaTrader 5
+Description:
+EXSR is a counter‑trend Expert Advisor that hunts for market reversals at points of extreme exhaustion. It combines a high‑threshold RSI (oversold < 20 or overbought > 80) with price breakouts beyond Bollinger Bands (20, ±2) and confirms entry on a reversal candlestick pattern.
+Key Features:
+Dual‑Indicator Filter:
+RSI(14):
+Detects extreme overbought/oversold conditions.
+Bollinger Bands:
+Validates that price has pierced the outer band.
+Reversal Confirmation:
+Long only if the previous candle closes bullish after an oversold band‑break.
+Short only if the previous candle closes bearish after an overbought band‑break.
+Fixed SL/TP:
+User‑defined Stop Loss (default 150 pips) and Take Profit (300 pips) set at order entry.
+Single‐Position Logic:
+Only one trade per symbol at a time to avoid conflicting positions.
+Clean OOP Code:
+Uses CTrade for order placement, buffer arrays for indicator data, and modular functions ( CopyData , CheckBuySignal , CheckSellSignal ).
+Input Parameters:
+MagicNumber (ulong):
+Unique EA ID
+Lots (double):
+Fixed position size
+StopLoss_pips / TakeProfit_pips (int):
+SL/TP in pips
+BB_Period / BB_Deviation (int/double):
+Bollinger Bands settings
+RSI_Period / RSI_Overbought / RSI_Oversold (int/double):
+RSI settings
+Ideal for traders seeking systematic counter‑trend entries with clear over‑extension filters and strict risk controls.

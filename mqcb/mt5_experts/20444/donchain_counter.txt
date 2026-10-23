@@ -1,0 +1,27 @@
+The author of the idea
+:
+Scriptor
+.
+The MQL5 code author
+:
+Vladimir Karputov
+.
+The Expert Advisor uses the
+Donchian Channel
+indicator. Limitations: no more than one position can exist in the market, the next position can be opened not earlier than in 24 hours.
+Donchian Channel indicator values are used as signals for opening a position and applying the trailing stop function.
+An example of a BUY signal: if the upper buffer of the indicator on the first bar is greater than that on the second bar, open BUY:
+The lower indicator buffer is analyzed for SELL signals: if the lower buffer of the indicator on the first bar is less than on the second one, it is a signal to open SELL.
+Input Values
+Lots
+- the size of the position to open;
+Donchian Channel: averaging period
+- indicator parameter;
+Donchian Channel: Time frame
+- indicator parameter;
+Magic number of the strategy
+- the unique ID number for the Expert Advisor.
+Testing results on EURUSD (with default settings):
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20444

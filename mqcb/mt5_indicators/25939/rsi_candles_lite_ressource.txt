@@ -1,0 +1,5 @@
+Quoted from
+Mladen Rakic
+Combination of 4 RSI values (RSI of High, Low, Open and Close) displayed as candles.
+This implementation use less ressource and standard iRSI MT5 function to calculate the RSI value.
+Can be used in any timeframe with any fx pair.

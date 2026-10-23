@@ -1,0 +1,9 @@
+The script allows conversion CSV tick data into FXT data format. The corresponding HST file can be created at the same time. The file can be imported into the Client Terminal History Center.
+The csv file record must be of the following format:
+YYYY.MM.DD HH:MI:SS;1.2345
+The
+FXTHeader
+must be preliminarily downloaded from the Libraries section.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8658

@@ -1,0 +1,9 @@
+Author:
+Desmond Wright aka Buju
+This EA will use the deposit currency as stop loss and take profit for each trade. It does NOT use pips to measure values.
+Once profit or loss has been reached it will close the entire trade.
+Of course if you are trading 1 USD / pip then the stop loss and take profit will in "pips".
+Example:
+if you set take profit to 10 ( and you are trading 1 USD/pip) then the trade will close at 10 USD or 10 pips, same for stop loss.
+if you set take profit to 10 (and you are trading 0.5 USD/pip) then the trade will close at 10 USD or 20 pips, same for stop loss
+if you set take profit to 10 (and you are trading 2 USD/pip) then the trade will close at 10 USD or 5 pips, same for stop loss.

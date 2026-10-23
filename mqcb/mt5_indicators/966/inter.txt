@@ -1,0 +1,36 @@
+The indicator was originally developed to simplify receiving synchronized and normalized data and deliver to the neural network inputs.
+The data is synchronized by the symbol, at which the indicator is installed.
+Perhaps, someone will be able to find some other application area for it.
+Up to 10 lines (buffers) from various symbols, timeframes and signals can be displayed.
+Input parameters:
+Instrument
+- instrument (symbol) name, selected from the list,
+Variant
+- indicator calculation variant, selected from the list,
+Timeframe
+- timeframe for the indicator calculation,
+Parametr
+- the indicator calculation parameter (period).
+Variant parameter can take the following values:
+NONE
+- not calculated,
+HLP
+- calculated as the ratio of maximums and minimums for the previous "Parametr" bars,
+Op0_OpN
+- Open[0]-Open[Parametr],
+RSI
+- normal RSI with  "Parametr" period,
+Stoch
+- normal Stochastic with "Parametr,3,3", parameters,
+Op0_Ma
+- Open[0]-iMa[0] with "Parametr"
+smoothing period,
+Ma0_Ma1 - Ma[0]-Ma[1] with "Parametr"
+smoothing period,
+Time - Parametr time of day (can be 0 or >=1).
+The similar parameters are used for all ten buffers.
+It should be noted that when calculating Op0_OpN, Op0_Ma and Ma0_Ma1, normalization to -1;  +1; range is performed as soon as new data is received.
+In this case, it is recommended to set Maximum Bars Calculate parameter to be twice as large as the required data amount.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/966

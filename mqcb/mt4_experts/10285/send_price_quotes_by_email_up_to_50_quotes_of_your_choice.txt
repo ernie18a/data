@@ -1,0 +1,15 @@
+Do you want to receive your quotes by email in a clean an organized way ?
+This EA is easy to use. You just need to introduce the desired frecuency of the emails (minutes) and the name of the symbols you want to add to the email.
+Then you compile and you just need to drop the EA on an active Chart. The market must be open for the EA to work, so I recommend to drop it on a EURUSD chart because FOREX opens 24 hrs a day. When you want to stop the EA from sending emails you don't need to remove the EA from the chart. If you set the minutes frecuency to 0 (zero) the EA will stop running and compile the EA.
+The EA runs only when it's the time to send the email and "sleep" other times, so the consumption of the PC resources is low.
+ATTENTION: You need to enable and configure the email on MT4 before using this EA (go to TOOLS >> OPTIONS >> EMAIL)
+************************
+IMPORTANT: THIS EA COULD NOT WORK IN SOME CASES GIVING THIS ERROR:
+"Mail: 451 Invalid Smtp line - Should end with CRLF"
+T
+his EA need to use a code structure which is not supported by all servers, specially those servers (like Yahoo) that are enforcing some fairly strict email related RFC standards (rules) in their email checks.
+If the EA is not selling emails correctly and when you check your MT4 Journal you have this message:
+"Ma il: 451 Invalid Smtp line - Should end with CRLF",
+you will need to try with another email account that is supporting a more
+complex smtp coding.
+************************

@@ -1,0 +1,40 @@
+Author http://fxcoder.blogspot.com
+An oscillator that duplicates the chart of a selected asset in a separate window in three ways: line, bars and candles. This is essentially an indicator Bollinger bands, displayed in a separate window.
+In my opinion, it will be useful for beginners as a way to look at various technical signals from a different angle.
+This indicator helped me in an adviser for filtering unfavorable moments for trades.
+Calculation of a standard assessment and its conclusion in the form of candles.
+Formula:
+μ - moving average
+σ -
+is the standard deviation
+Important features:
+the last candle (current candle) can be indicator redrawn strongly, especially at the beginning, this is a feature of the calculation formula
+сhecking the accessibility of history is not carried out, which is especially true when using a symbol other than the current
+Parameter
+Description
+Period
+calculation period
+Symbol
+simbol, an empty value is the current simbol
+Reverse
+reverse indicator values
+Applied price
+estimated price. By default, Median Price (HL / 2) is used as the least prone to redrawing
+Value and line price
+type of chart: Line, Bar - High/Low price, Candlestick
+Bull color
+color of the bull candle / bar
+Bear color
+color of the bear candle / bar
+Background color
+background color
+Body width
+thickness of the body of the candle;  0 - auto detect, 1 - body is hidden
+Maximum bars
+maximum number of bars displayed.  If 0 - no limit.
+Shift
+shift of the indicator values
+Ways of interpretation:
+1. When you hold a trade and it is in the positive zone, moving the indicator values from 2 to 4 indicates a likely local rebound soon, so you should think about fixing a position if your trade is designed for short movements.
+2. Confirmation signalas of breakout trading ranges, as well as the provision of early signals for transactions.
+If you find more interesting examples of how to work with this indicator, write to me, I will be happy!

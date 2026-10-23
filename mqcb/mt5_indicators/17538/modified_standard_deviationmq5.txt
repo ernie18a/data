@@ -1,0 +1,8 @@
+The idea of ​​revising the standard StdDev indicator is to improve the visibility of moments when the indicator values change to growing or falling.
+The values can be interpreted as follows.
+The moment when the line color changes from red to green indicates the beginning of the trend movement.
+When the line color changes from green to red, the trend movement is weakening.
+The indicator is traditionally used along with Bollinger Bands. If the price touches the upper Bollinger Band or is close to it, and the color of Modified Standard Deviation changes from red to green, it can be interpreted as the beginning of the uptrend movement. If the price is near the bottom Bollinger Band and Modified Standard Deviation begins to grow, it indicates the beginning of a downward trend.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17538

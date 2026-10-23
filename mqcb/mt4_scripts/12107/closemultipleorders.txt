@@ -1,0 +1,10 @@
+A simple script to close multiple market orders.
+Input parameters:
+ClossAll -> If this parameter is set to true, all orders (Buy, Sell, Pending orders) are close. This parameter supercedes every other.
+CloseBuyOders -> Closes only Buy orders. If 'CloseOnlyProfit is set to true it closes only Buy positions in profit.
+CloseSellOrders -> Closes only Sell Orders. If 'CloseOnlyProfit' is set to true it closes only Sell positions in profit.
+CloseBuyLimits -> Delete all BuyLimit pending orders if set to true.
+CloseSellLimit -> Delete all SellLimit pending orders if set to true.
+CloseOnlyProfit -> Will close only trades in profit. If 'CloseAll' is set to true, this parameter will be ignored and all trades will be closed
+Slippage -> The minimum allow Slippage. Leave current settings intact if unsure of slippage to apply.
+Please make sure you enable automated trading in your terminal, as the figure below, for scripts to function.

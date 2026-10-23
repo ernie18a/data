@@ -1,0 +1,28 @@
+RSI Price Action Breakout is a technical indicator designed to filter market noise and identify high-probability reversal points. Unlike standard oscillators, this tool does not signal immediately upon overbought/oversold conditions; instead, it waits for a Price Action confirmation (Breakout/Engulfing) to validate the entry.
+Engineering Logic
+The algorithm operates on a strict two-step validation process
+:
+1. Condition A (Setup): The RSI (Relative Strength Index) must breach the defined thresholds (Default: 70 for Overbought, 30 for Oversold). This indicates potential exhaustion.
+2. Condition B (Trigger): A reversal candlestick pattern must occur.
+-
+For Sells: The price must close below the previous candle's low (Engulfing structure).
+-
+For Buys: The price must close above the previous candle's high.
+Key Features
+-
+Zero-Repaint: Arrows are plotted only after the candle closes.
+-
+Buffer Architecture: Optimised for iCustom calls within Expert Advisors.
+-
+Visual Efficiency: Clean chart overlay with distinct buy/sell signals.
+Parameters
+-
+InpRSIPeriod (14): Period for the Relative Strength Index calculation.
+- InpRSIOverbought (70): Level to monitor for selling opportunities.
+-
+InpRSIOversold (30): Level to monitor for buying opportunities.
+Usage Recommendations
+This indicator is best used as a filter for scalping strategies on M1/M5 timeframes or as a confirmation signal for Swing Trading on H1.
+Translated from Portuguese by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/pt/code/69244

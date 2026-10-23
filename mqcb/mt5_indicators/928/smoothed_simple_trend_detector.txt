@@ -1,0 +1,7 @@
+3-Pole Butterworth Filter by Witold Wozniak was used for smoothing.
+The indicator is used similar to RSI and Dem.
+Image:
+The blue line represents non-smoothed version, while the red one shows smoothed version.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/928

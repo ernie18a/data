@@ -1,0 +1,14 @@
+Description:
+MAD stands for Moving Average Delta, it calculates the difference between two points of an moving average. The curve shows the different in Pips.
+By calculating the delta between two points we can see more small changes in the direction of the moving average curve which are normally hard to see. You can see the MAD curve as look through the microskope at a simple moving average curve. It may help predicting a trend change before it happens, the sample shows a beginning trend change from long to short.
+Though the most simple indicator, I still believe moving averages because the market still is slow enough that a trend change needs some time to happen. If a trend is going to change, some of the million individuals on the markt start to buy (sell) followed by more and more individuals. A falling (rising) curve starts to fall more slowly, stops and goes to the other direction.
+(I wonder nobody before has made this kind of indicator)
+Image:
+The MAD indicator
+Interpretation:
+If the MAD curve is bigger than 0, the moving average is rising
+Before a trend change, the moving average gets flatter, the MAD curve points to towards the zero
+We can see what is the maximum rising/falling of the moving average and predict an upcomming trend change
+Usage:
+Drop a simple moving average to a chart and set the period in a way that it best fits the movements. There is no "magic" settings for the moving average period, you may double click the MA line to set it to a different period.
+Drop the MAD indicator to the cart and give it the same period as your simple moving average.

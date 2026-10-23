@@ -1,0 +1,20 @@
+Oscillator TCI (Trading Channel Index) displays the ratio between the average daily price and the smoothed averaged value of the average daily price.
+It has four configurable parameters:
+Period
+- calculation period;
+Average period
+- period of calculating the average smoothed value;
+Coefficient
+- coefficient (indicator price scale values scaling);
+Applied price
+- price used for calculations.
+Calculation:
+TCI = EMA(B2, Average period)
+where:
+B2 = (Applied price - MA1) / (Coeff * MA2)
+MA2 = EMA(B1, Period)
+B1 = Abs(Applied price - MA1)
+MA1 = EMA(Applied price, Period)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21114

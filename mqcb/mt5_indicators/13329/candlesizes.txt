@@ -1,0 +1,13 @@
+The indicator shows the size of candlestick elements. One histogram bar corresponds to a certain element size on a current candlestick, the histogram line indicates the daily average value of selected elements. A histogram bar changes its color to the color of the line if the element size exceeds the daily average.
+Input Parameters:
+inpType — display type (show the size of upper shadows, lower shadows or bodies);
+inpClr — histogram color (if the element size exceeds the daily average);
+inpNeutralClr — neutral color, if the element size doesn't exceed the daily average.
+Tips:
+Analyze the values of upper shadows after an uptrend movement, and the values of lower shadows — after a downtrend movement (trend reversal).
+It can be used as a confirming signal to determine important price levels (instead of a candlestick patterns indicator).
+It can be used as a basis for developing candlestick indicators.
+The indicator can work on timeframes up to Н2.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13329

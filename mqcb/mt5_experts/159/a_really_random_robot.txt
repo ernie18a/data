@@ -1,0 +1,111 @@
+Real author:
+This Expert Advisor is an object-oriented MQL5 version of the Trading Gurus MQL4
+random entry Expert Advisor
+.
+This Expert Advisor is best used on the one minute timeframe. Try it on any and all currency pairs.
+It uses a random number generator to simulate simply tossing a coin to decide on the direction of each trade. It stays in the market 100% of the time. It provides an example of a minimal Expert Advisor programmed in an
+object-oriented style
+, based on a framework designed to facilitate the creation of more complex robots. It also provides a basis for quantifying the value added by alternative, more complex, methods of entry.
+It can be surprisingly profitable!
+Input settings:
+Magic - Magic number to make your broker think you have a profitable robot to hide! Default = 12345
+Slippage - Acceptable slippage on a market order. Default = 30
+ProfitTarget - Fixed profit target. Default = 1000
+StopLoss - Fixed stop-loss. Default = 3000
+Lots - Fixed trade size. Default = 0.1
+ReallyRandom - If true, then every backtest run should see a different sequence of simulated tosses of the coin. If false, every backtest run should see exactly the same sequence of simulated coin tosses. Default = true
+The pip based settings should each be divided by 10 if your broker only quotes to 4 decimal places.
+Strategy Tester Report
+MetaQuotes-Demo (Build 305)
+Settings
+Expert:
+GurooEx01
+Symbol:
+EURUSD
+Period:
+M1 (2010.01.03 - 2010.08.10)
+Inputs:
+Magic=12345
+Slippage=30
+ProfitTarget=1000
+StopLoss=3000
+Lots=0.100000
+ReallyRandom=true
+Broker:
+MetaQuotes Software Corp.
+Currency:
+USD
+Initial Deposit:
+3 000.00
+Results
+Bars:
+219207
+Ticks:
+868201
+Total Net Profit:
+1 586.38
+Gross Profit:
+4 565.56
+Gross Loss:
+-2 979.18
+Profit Factor:
+1.53
+Expected Payoff:
+28.33
+Recovery Factor:
+2.07
+Sharpe Ratio:
+0.18
+Balance Drawdown:
+Balance Drawdown Absolute:
+566.12
+Balance Drawdown Maximal:
+663.72 (21.43%)
+Balance Drawdown Relative:
+21.43% (663.72)
+Equity Drawdown:
+Equity Drawdown Absolute:
+650.60
+Equity Drawdown Maximal:
+767.30 (24.62%)
+Equity Drawdown Relative:
+24.62% (767.30)
+Total Trades:
+56
+Short Trades (won %):
+22 (90.91%)
+Long Trades (won %):
+34 (76.47%)
+Total Deals:
+112
+Profit Trades (% of total):
+46 (82.14%)
+Loss Trades (% of total):
+10 (17.86%)
+Largest profit trade:
+105.64
+Largest Loss Trades (% of total):
+-303.15
+Average profit trade:
+99.25
+Average Loss Trades (% of total):
+-297.92
+Maximum consecutive wins ($):
+9 (903.33)
+Maximum consecutive losses ($):
+2 (-599.78)
+Maximal consecutive profit (count):
+903.33 (9)
+Maximal consecutive loss (count):
+-599.78 (2)
+Average consecutive wins:
+5
+Average consecutive losses:
+1
+Recommendations:
+For some theoretical background see
+this thread
+on the Trading Gurus Community
+Wealth Warning! This expert is for educational purposes only.
+It should NEVER be used on a live account.
+Past performance is in no way indicative of future results!

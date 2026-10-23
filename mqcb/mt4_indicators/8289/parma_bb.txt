@@ -1,0 +1,10 @@
+МА on the basis of a parabolic regression with Bollinger bands.
+A comparison with the LRMA (red line) on the same chart. Bolinger bands are disabled for demonstrativeness.
+It can be seen that with the same size of selection (30) ParMA has a lesser delay comparing to the LRMA
+with the comparable jumps on the price chart.
+A notice to the code: properly, the calculation of the parabolic regression was taken from the book:
+В.П. Дьяконов. Справочник по алгоритмам и программам на языке Бейсик для персональных ЭВМ. М., "Наука", 1987 (V.P. Dyakonov. Reference book by the algorithms and programs on the Basic language for personal computers.)
+and left without changes not to embarrass the code.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8289

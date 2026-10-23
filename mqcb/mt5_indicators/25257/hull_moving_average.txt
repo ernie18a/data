@@ -1,0 +1,12 @@
+Basics (description by All Hull)
+By Alan Hull
+Back in 2005 when I was working on a new indicator I was temporarily sidetracked by trying to solve the problem of lag in moving averages, the outcome of which was the Hull Moving Average.
+Since then the HMA has found its way into charting programs around the world and is regularly discussed on traders bulletin boards in different languages around the world. It was the result of an intellectual curiosity which I placed into the public domain by writing the following article
+Alan Hul Hull Moving Average
+.
+The Hull Moving Average solves the age old dilemma of making a moving average more responsive to current price activity whilst maintaining curve smoothness. In fact the HMA almost eliminates lag altogether and manages to improve smoothing at the same time.
+To understand how it achieves both of these opposing outcomes simultaneously we need to start with an easily understood frame of reference. The following chart contains a 16 week simple moving average which constantly lags the price activity and has poor smoothness.
+Hull Moving Average (HMA) formula
+Integer(SquareRoot(Period)) WMA [2 x Integer(Period/2) WMA(Price) - Period WMA(Price)]
+This version is a deviation from the original indicator since it uses what is called a "speed" in the parameters. The "speed" allows you to additionally fine tune the smoothness and the reaction time to sudden market changes, making it more flexible that way. Also, this version is a part of "back-to-basics" series : since it seems that the speed of execution is what we always seem to need regardless of the metatrader version we are using, this version is calculating the HMA in a way that changing the HMA period does not change the execution time
+As usual  some experimenting with parameters is advised prior to using it in trading decisions

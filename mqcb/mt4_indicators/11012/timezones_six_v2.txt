@@ -1,0 +1,10 @@
+TimeZones Six v2
+Position anywhere on chart.
+SER = Broker Server Time. Broker Time cannot be changed.
+The remaining 5 Time Zones can be changed.
+The SER label and remaining 5 labels can be changed.
+Time Zones not required can be hidden.
+In the above demo image LND (London) is offset – 2, NYC (New York City) offset -7 etc,.
+If Time Zones are hidden the Up_Down parameter may require a negative value to align closer to chart bottom margin.
+As default, two Time Zones are hidden. If these Time Zones are unhidden then the Up_Down parameter must be changed from – 20 to a positive number to lift the indicator off the chart lower margin.
+For bold fonts set Fonts_Bold: true.

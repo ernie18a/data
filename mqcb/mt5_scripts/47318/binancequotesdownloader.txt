@@ -1,0 +1,17 @@
+This script allows you to get quotes from the Binance crypto exchange and display them in a custom token window.
+To run the script:
+1. In the terminal settings in the Advisors tab allow WebRequest and enter the site address: https://api.binance.com.
+2. Place the BinanceQuotesDownloader file in the Scripts folder in the MT5 terminal catalogue.
+3. Double-click to launch it.
+4. Open View -> Symbols, a window will open and select Custom -> Binance, a list of
+Binance
+cryptocurrencies will appear
+, double click to select the desired cryptocurrencies
+.
+5. Open a new cryptocurrency chart File -> New Chart
+-> Custom -> Binance
+6. In the Experts tab you can see the process of loading quotes.
+Done! Now you can watch cryptocurrency quotes, connect custom indicators, and analyse the market.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/47318

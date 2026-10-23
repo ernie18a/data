@@ -1,0 +1,8 @@
+Theory :
+Although T3 is widely used, some of the details how it is calculated are less know. T3 has, internally, 6 "levels" or "steps" that it is using for calculation of the T3.
+This version :
+Instead of showing the final T3 value it is showing those intermediate steps. They are nicely showing the "building steps" of a T3 and can be used for trend assessment as well as for possible support / resistance value
+PS:
+Do now forget that the steps displayed are not T3. T3 is different from any of the levels displayed
+PPS:
+some "big picture" examples

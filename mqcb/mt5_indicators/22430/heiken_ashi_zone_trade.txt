@@ -1,0 +1,38 @@
+The indicator colors candles based on data from AO and AC indicators.
+There are five inputs:
+Data source
+- data source for calculating AO and AC
+Price
+- price
+Heiken Ashi
+- Heiken Ashi
+Fast MA period
+- fast МА period for calculating AO and AC
+Slow MA period
+- slow МА period for calculating AO and AC
+AC period
+- AC calculation period
+Calculating method
+- calculation method
+AO
+- AO only
+AC
+- AC only
+AO+AC
+- both indicators
+If AO line and/or AC is directed upwards, this is a bullish direction
+If AO line and/or AC is directed downwards, this is a bearish direction
+When AO and AC indicators coincide, the appropriate bullish or bearish zone is registered.
+The neutral area is registered if AO and AC directions do not match. It may only happen in the Calculating method = AO+AC mode
+A bullish candle in a bullish area is colored green
+A bearish candle in a bullish area is colored light-green
+A bearish candle in a bearish area is colored red
+A bullish candle in a bearish area is colored light-red
+A bullish candle in a neutral area is colored gray
+A bearish candle in a neutral area is colored light-gray
+Fig. 1. Heiken Ashi Zone Trade. The data source is a price
+Fig. 2. Heiken Ashi Zone Trade. Data source -
+Heiken Ashi
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22430

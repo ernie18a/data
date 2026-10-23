@@ -1,0 +1,9 @@
+Updated: Added the ability to output information to a file.
+Another version of ZigZag, where the step size for changing the direction of the segment is set in price points.
+This version has additional options to enable:
+1. You can display the level lines that correspond to the last extremes (Maximum / Minimum) of the zigzag.
+2. Enable displaying the size of the waves in points. Indicates how many points the price has passed from level to level.
+The indicator settings allow you to choose a color for each zigzag element, etc.
+Displaying a pure ZigZag:
+ZigZag with the level display function enabled:
+ZigZag with all additional functions enabled (levels + wavelength in points):

@@ -1,0 +1,8 @@
+Modification of the
+Cronex T Demarker GF
+indicator.
+Changes:
+The divergence histogram is colored according to the movement of the previous bar of the histogram
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8682

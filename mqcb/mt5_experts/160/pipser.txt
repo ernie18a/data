@@ -1,0 +1,9 @@
+This Expert Advisor allows to perform one click trading.
+Just press the corresponding button to open position. To close position, press the opposite button, i.e. if Buy position is opened, press "Sell" to close it.
+Input parameters:
+Lot - lot size.
+SL - Stop Loss in points, if 0, there isn't SL.
+Slipage - slippage in points.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/160

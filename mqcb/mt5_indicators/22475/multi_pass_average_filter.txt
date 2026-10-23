@@ -1,0 +1,12 @@
+Definition :
+In theory almost everything average like can be a digital filter too (it is just a matter of finding corresponding coefficients - sma , for example, has all "1" for coefficients), but this indicator goes directly into that category even though it does not use coefficients in this version. Avoiding coefficients in this version was done for 2 main reasons : simplicity and efficiency of code. The basis of this is the good old simple moving average a bit differently calculated than the usual "sum them all and then divide" in order to avoid nxn complexity (which would significantly slow down your PC when this indicator works) and that is why it does not look like "classical" digital filters.
+Of limitations :
+Maximal pass value allowed by the indicator is 10. To change it, change the line 4 of the code that goes like this :
+#define
+_maxPass
+10
+and replace the "10" with desired maximal pass (in the published version the limit is kept at 10 for practical reasons)
+Usage :
+You can use the color change as signals. Some experimenting with optimal pass for your trading stile is strongly advised (see the "big picture" example for reasons why it should be experimented with). Also, be advised that pass 1 is making this indicator value the same as SMA (Simple Moving Average). The difference comes for passes different from 1, and for that reason the best usage is probably to use short ma periods and then experiment with different pass parameters
+"Big picture" example :
+10 instances of the indicator with default parameters except that the pass is changed from 1 to 10

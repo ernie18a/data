@@ -1,0 +1,14 @@
+Idea by:
+eugene-last
+mq5 code by:
+barabashkakvn
+The EA hedges a too losing position.
+Suppose thereis an open BUY position on a given symbol (the position has been opened by another EA or manually). As soon as the losses on this position, in pips, exceed the pre-defined level of
+Drawdown (opening a hedge)
+, the EA will open a hedging SELL position with the same lot size. Then that new SELL position will be tracked and, as soon as its losses, in pips, exceed the predefined level of
+Drawdown (closing the hedge)
+, the EA will close that hedging SELL position.
+To demonstrate how it works, a BUY position opening operation was added for the TESTER mode only.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23511

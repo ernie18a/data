@@ -1,0 +1,61 @@
+In the standard
+Zigzag.mq4
+the style
+DRAW_SECTION
+was used for drawing. This style allowed drawing only lines between points placed on different bars. The drawing style DRAW_ZIGZAG allows to avoid this limitation. For this purpose two buffers are used instead of one. The indicator Zigzag2_R_.mql4 illustrates this style. Added into the code: the processing of the outside bar when High of the current bar is higher than that of the previous one, and Low of the current bar is lower than that of previous. The code also shows that the color is defined by the color of the first of the two bars.
+#property
+indicator_chart_window
+#property
+indicator_buffers
+2
+#property
+indicator_color1 Blue
+#property
+indicator_color2 Red
+To call the indicator from other programs in mql4 use two constructions:
+iCustom
+(
+NULL
+,
+0
+,
+"
+Zigzag2_R_
+"
+,
+12
+,
+5
+,
+3
+,
+0
+,
+index
+)
+- peaks
+iCustom
+(
+NULL
+,
+0
+,
+"
+Zigzag2_R_
+"
+,
+12
+,
+5
+,
+3
+,
+1
+,
+index
+)
+- bottoms
+The block of processing the outside bar is given as an example. For such a situation you may use your own algorithm.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7762

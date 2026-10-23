@@ -1,0 +1,14 @@
+The
+TrendTriggerMod
+indicator with the timeframe selection option available in input parameters:
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Indicator chart period (timeframe)
+The indicator requires the compiled indicator file TrendTriggerMod.mq5 for operation. Place it to terminal_data_folder\MQL5\Indicators\.
+Figure 1. Indicator TrendTriggerMod_HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2090

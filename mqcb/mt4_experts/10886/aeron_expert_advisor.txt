@@ -1,0 +1,10 @@
+Aeron Expert Advisor works on martingale technique, but the best thing is that all parameters are customisable beyond your imagination.
+Please look at following image of its parameters:
+What minimum amount you should have in your account for Aeron Expert Advisor?
+Say the minimum lots allowed by your broker is 0.01 and it needs $1 to open 0.01 lots at 100:1 leverage, then you should have $1 x 75=$75 in your account for safe trading. On the other hand as in case of AlpariUK, it needs approx $13.5 to open the minimum lots size 0.10 at 100:1 levergae, so there should be atleast $13.5 x 75=$1012 in the account.
+This is only a recommandation message for safety purpose, it doesn't affect the working of Expert Advisor.
+Recommendations Time frame & Currency Pair:
+EURUSD on 1-minute Time Frame.
+If you want to understand above parametrs in more details then please
+visit its details parameters info
+.

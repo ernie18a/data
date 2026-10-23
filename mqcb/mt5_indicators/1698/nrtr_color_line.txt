@@ -1,0 +1,8 @@
+Real author:
+Igorad.
+This Nick Rypock concept or idea was created by Konstantin Kopyrkin in 2001... If we read 'Nick Rypock' from back to front so we will receive the name of the author of idea... by the way - it is good idea to name the idea by own name.
+Example:
+You can see an example of using this indicator as a filter in
+this topic
+.
+The publication of this indicator on MQL5 codebase is a collective work: thanks to newdigital and Igorad.

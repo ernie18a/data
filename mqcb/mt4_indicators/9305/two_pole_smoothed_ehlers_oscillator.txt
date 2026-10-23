@@ -1,0 +1,24 @@
+Author:
+Original researches by John F. Ehlers, described in "Cybernetic Analysis for Stocks and Futures" (2004) ISBN: 0-471-46307-8
+Two Pole Super Smoother Indicator based on Ehlers' book, and coded by Witold Wozniak (www.mqlsoft.com)
+Additional researches and codes by Julien Loutre (zenhop).
+The Two Pole Super Smoother Indicator is a great way to evaluate the trend, and a good alternative the a regular moving average. But it can hardly be used tofind the turning points of the major cycles.
+So I've transformed the Super Smoother Indicator as a smoothed oscillator.
+The oscillator accurately find most of the cycle's turning points, while the additional smoothing removed the residual noise.
+In order to remove the residual noise from the oscillator, I used Ehlers' Instantaneous trendline filter, because this filtershows a great noise reduction capacity while keeping the additional lag really low.
+Because all the Maths have been modified in order to be based on the Open prices, the indicator won't retrace.
+Lag:
+Please note that the original Two pole Super Smoother indicator presents a small lag proportional to it's Cutoff Period. Because the version on this page has been modified to be based on the Open price (in order to avoid retracements), one bar of lag is added.
+Finally, the Instantaneous trendline filter is adding a little lag too, which should not be of more than 2 bars.
+As a result, you should not use this indicator in order to catch cycles with a period of less than 10 bars.
+If you want to catch 5 bars cycles on H1 for example, you can use this indicator on the M1 or M5 timeframe, using a large cutOff period. The additional data available on small timeframes allows you to trade short cycles.
+On this screenshot, you can see how the oscillator finds the turning point of most cycles.
+EURUSD M30 with CutOff=48 (24hours, daily cycle) and alpha=0.07
+Ehlers' CyberCycle allows you to evaluate the quality of the signal.
+Ehlers' CG also allows you to evaluate the quality of the signal (Period=24 (half the target cycle's period))
+Recommendations:
+This indicator can be pretty accurate, but is not magic. Please confirm the signals using other indicators (preferably DSP indicators).
+Ehlers' CyberCycle is a great indicator to filter the signals. Uses the same alpha in both indicators.
+Ehlers' CG (Center of gravity) is also a great indicator to filter the signals. Uses CG's period = Oscillator's CutOff/2.
+Filtering the signals using an adaptive indicator (like Adaptive CyberCycle or Adaptive CG) seems to be a great idea, but the fact is that an adaptive indicator won't be synchronized with this indicator and can lead to more noises in the signals.
+This indicator is best adapted to detect 30 bars or higher cycles. Its accuracy drops when used to detect short cycles.

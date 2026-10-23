@@ -1,0 +1,9 @@
+Swing Index is a math expression of the operations activity for the last two bars.
+The indicator marks an "actual" instrument price by binding the current (Open, High, Low and Close) and previous prices. The data concerning the open prices must be available for the index calculation.
+The following index characteristics should be noted:
+The indicator describes price volatility;
+Short-term price range is determined;
+The confusion caused by several price types (High, Low, Close) is removed, the possibility to determine the actual power and market movement direction is provided.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/513

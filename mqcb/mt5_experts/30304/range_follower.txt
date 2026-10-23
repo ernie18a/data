@@ -1,0 +1,30 @@
+This expert opens trade in the direction of the trend (buy for uptrend, sell for downtrend) if a specific rate of average daily range has been exceeded.
+Average daily range is calculated by ATR indicator with period of 20 bars.
+Default rate is 80 percent. if 80% of average daily range is exceeded it opens trade.
+Default stop-loss is daily high for sell order, daily low for buy order.
+Default take-profit is remaining part of the average range in pips.
+This expert is only for intraday trading, so opened positions will be automatically closed at midnight.
+Expert is successful on long body candles, unsuccessful on long tail candles.
+Comments are self-explanatory.
+Trend:
+intraday trend.
+Average:
+Daily ATR for 20 bars.
+Trigger:
+level of which trade will open if it is reached.
+Rest:
+remaining part of average range after trigger range is subtracted. also take-profit in pips.
+Daily:
+range between daily high and low.
+To High:
+distance to daily high in pips.
+To Low:
+distance to daily low in pips.
+Trade Opened:
+true if trade is opened.
+Range Reached:
+true if trigger level has been passed.
+Seconds Left:
+seconds left until midnight. 24:00. after reached opened order is closed automatically if sl or tp is not reached.
+End Time:
+time when the opened position will get closed and start new setup at.

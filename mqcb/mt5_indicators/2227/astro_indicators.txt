@@ -1,0 +1,26 @@
+There are three Astro Indicators:
+PlanetCycles
+Show the Angle (Aspect) between the two selected planets;
+Declination
+Show the declination of all planets;
+BodyPosition
+Show the Position of all planets.
+Select the Flag geocentric in the Indicator Parameter panel. Otherwise the view is heliocentric.
+All indicator values are in degree.
+Special Astro Library required:
+A Special extern DLL 'swedll32.dll' for Astrocompution is required. Use it from the 'swedll32.zip' or download the original DLL from ftp://ftp.astro.com/pub/swisseph.
+Installation:
+Download all files;
+Unpack the DLL 'swedll32.dll' in MQL5/Libraries from 'swedll32.zip' or get the original DLL (see above);
+Compile the Indicators 'planetcycles.mq5', 'declination.mq5' and 'bodyposition.mq5'.
+Interpretation:
+You can analyse the Sun/Moon Cycle with the
+PlanetCycles
+Indicator.
+Looking for turning Point in indicator and Price. the value 0 degree is the conjunction (new moon) and the value 180 degree is the Opposition (full moon).
+For Inspiration search
+https://www.google.de/#q=astro+based+trading+systems&start=0
+Use the Astro Indicators in Tradingsystems:
+The simplest way is the iCustom() Function. The other better way is an include of the 'swisseph.mqh' in your EA and use the Calculate() function.
+Look in the indicator source how the function can be used. The return value a[0] is the bodyposition in degree and the returnvalue a[1] is the declination in degree. The return variable is defined as 'double a[6]' for more Body values.
+See also help files from ftp://ftp.astro.com/pub/swisseph.

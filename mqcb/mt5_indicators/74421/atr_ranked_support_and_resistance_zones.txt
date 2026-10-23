@@ -1,0 +1,10 @@
+This indicator is an example of building support and resistance as price areas rather than exact horizontal lines.
+It starts with confirmed pivot highs and lows. Nearby pivots are then merged using a distance based on ATR, so the same logic can adjust to different symbols and timeframes.
+Each area receives a score from three parts:
+- how many reactions were grouped inside it
+- how far price moved after those reactions
+- how recently the area was tested
+Only the highest-ranked areas are drawn. Zones below the current price are shown as support and zones above it as resistance.
+The code is mainly intended as a starting point for developers who want to experiment with level clustering without using a fixed number of clusters.
+One limitation is worth noting: support and resistance are classified from their position relative to the current price. A more advanced version could wait for a confirmed break and retest before changing the role of a zone.
+This code is shared for educational purposes. It is intended to demonstrate confirmed pivot detection, ATR-based zone merging and simple level scoring in MQL5. The displayed strength value is an internal ranking score, not a probability of a successful trade or a trading signal.

@@ -1,0 +1,9 @@
+The indicator draws the charts of equity and balance by the data of account's history, it uses the current opened positions for updating the charts in the real time mode as well. There is a possibility of drawing the charts of margin and free margin but only by the current values in the monitoring mode.
+You can draw the charts considering only the orders that meet the specified conditions. For example, if you specify the magic number and the necessary symbol the indicator will extract these exact orders from the history. In such a manner, you can estimate the working of several MTS on one account.
+There is a possibility of not considering the initial balance for more demonstrativeness.
+The indicator is able to calculate the maximum drawdown by the equity and the recovery factor!
+The chart of the equity and balance of the account
+The chart of the equity and balance for the orders that have magic number = 856
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8454

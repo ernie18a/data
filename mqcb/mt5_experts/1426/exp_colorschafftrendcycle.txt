@@ -1,0 +1,24 @@
+Sistema de negociação baseado no indicador ColorSchaffTrendCycle. O sinal de negociação é formado após o fechamento da barra, quando há um rompimento nos níveis de sobercompra/sobrevenda do histograma.
+Estes níveis são definidos nos parâmetros de entrada do Expert Advisor:
+input
+int
+HighLevel=+
+60
+;
+//nível de sobrevenda
+input
+int
+LowLevel=-
+60
+;
+//nível de sobrecompra
+Coloque o arquivo compilado
+ColorSchaffTrendCycle.ex5
+em terminal_data_folder\MQL5\Indicators.
+Logo abaixo encontramos os testes realizados com o Expert Advisor utilizando os parâmetros de entrada padrão. Stop Loss e Take Profit não foram utilizados durante os testes.
+Fig. 1. Gráfico com algumas operações de exemplo.
+Resultados do teste para o par USDCHF H4 em 2011:
+Fig. 2. Gráfico de resultados do teste
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1426

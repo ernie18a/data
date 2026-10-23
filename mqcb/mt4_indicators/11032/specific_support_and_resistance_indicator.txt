@@ -1,0 +1,6 @@
+Author:
+Marwi1
+Displays lines of support and resistance.
+Characterized in that the support line sets 10 and 10 of the line resistance. Works on all intervals and very well indicate compaction resistance and support levels from which you can infer what stage is the price. To work properly, download files, "MW_ZigZag.ex4" and "High_Low v2.ex4" which is written in the catalog expert / indicators /. The chart only run the file MW_ZigZag.ex4.
+White lines are lines of resistance (Res), yellow lines are lines that support levels (Sup). After moving the cursor on the line, for example, highlights the Res10, then the last line of resistance, the same goes with the lines of support. The lines are labeled Res10 ... res1 - res1 is the oldest lines of resistance, Sup10, ... SUP1 - SUP1 is the oldest line of support. The "Properties" indicator "MW_ZigZag.ex4 should not be changed.
+Image:

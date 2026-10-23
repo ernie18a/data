@@ -1,0 +1,2 @@
+Expert Advisor is based on the indicator
+Fibo-Average-2B.mq4

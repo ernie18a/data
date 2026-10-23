@@ -1,0 +1,6 @@
+In many cases (computer graphics, machine learning, ta analysis) we need normalized values. Smooth step is one of the possible ways to do it
+It belongs to the family of sigmoidal (clamping in this case, since this indicator,
+as is,
+is not used for interpolation) functions, and is producing a sub-set of what is the built in stochastic, except that I kept it in its original range of 0 to 1 and that it filters out some values that stochastic produces. Also, this indicator can use all the usual prices (not just the close/close or low/high/close)
+Recommendations:
+You can use it the same way as stochastic built in indicator

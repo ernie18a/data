@@ -1,0 +1,2 @@
+Author: iliko
+This indicator do not shows trend direction, but it shows the market is in trend or in volatility...more explanation can be found in indicators source.

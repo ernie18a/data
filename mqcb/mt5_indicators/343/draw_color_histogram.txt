@@ -1,0 +1,14 @@
+This indicator is a demo of
+DRAW_COLOR_HISTOGRAM
+drawing style.
+It plots a sin(x) function as a color histogram in a separate window. Two indicator buffers are used: the first contains the values of sin(x) function, the color indexes specified in the second indicator buffer.
+The histogram colors, the width and line style changed randomly after N=5 ticks. The initial properties of the plot1 graphic plot are defined using the
+#property
+preprocessor directive, further these properties changed randomly (see
+OnCalculate()
+function).
+See also
+The Drawing Styles in MQL5.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/343

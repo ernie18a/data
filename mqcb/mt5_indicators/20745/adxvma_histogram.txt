@@ -1,0 +1,5 @@
+ADXVMA is one new sort of a Moving Average.
+It is using modified ADX calculation for adapting Moving Average calculation. The process of adapting is so efficient that it filters out a lot of noise out of the market and produces longer periods of smooth values.
+This is a binary version of
+ADXVMA
+indicator: instead of showing the values of ADXVMA on chart, it displays only the state of the slope of the ADXVMA in a form of a histogram.

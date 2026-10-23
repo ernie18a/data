@@ -1,0 +1,2 @@
+Indicator based on basic slope moving average and cloud around.
+Indicator shows two types of signals: prepearing - dot and entry - arrow.

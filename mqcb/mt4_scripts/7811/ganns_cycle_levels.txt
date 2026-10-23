@@ -1,0 +1,4 @@
+The significant Highs and Lows are entered manually in the dialog box one after the other in the lines Point_1 and Point_2. The script settings contain the ability to enable/disable plotting the levels corresponding to the steps of 30, 45 and 90 degrees. I think it is not difficult to figure them out.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7811

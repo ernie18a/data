@@ -1,0 +1,32 @@
+Variation of the
+RMO
+oscillator developed by Rahul Mohindar. The indicator is implemented in the form of a color histogram with signal pointers.
+It has four inputs:
+First EMA period
+- calculation period of the first ЕМА
+Second EMA period
+- calculation period of the second ЕМА
+Third EMA period
+- calculation period of the third ЕМА
+Applied price
+Calculation:
+RMO = EMA(SwingTrd, Third EMA period)
+where:
+SwingTrd = 100.0 * (Price-MA_Avg) / (Max-Min)
+MA_Avg = (MA1+MA2+MA3+MA4+MA5+MA6+MA7+MA8+MA9+MA10)/10
+MA10= (MA9+PrevMA9)/2
+MA9 = (MA8+PrevMA8)/2
+MA8 = (MA7+PrevMA7)/2
+MA7 = (MA6+PrevMA6)/2
+MA6 = (MA5+PrevMA5)/2
+MA5 = (MA4+PrevMA4)/2
+MA4 = (MA3+PrevMA3)/2
+MA3 = (MA2+PrevMA2)/2
+MA2 = (MA1+PrevMA1)/2
+MA1 = (Applied price+PrevApplied price)/2
+Max, Min are the highest and the lowest price within the range from (the current bar+10) to the current bar
+Fig. 1. Rahul Mohindar oscillator
+Fig. 2. Rahul Mohindar oscillator + RMO
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22202

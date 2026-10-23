@@ -1,0 +1,9 @@
+A trend indicator drawn using the CCI and ATR values. It draws on a chart a colored line indicating three directions: uptrend, downtrend and flat.
+It has two parameters:
+CCI period
+- CCI calculation period
+ATR period
+- ATR calculation period
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20337

@@ -1,0 +1,18 @@
+MT5 Memory Monitor
+MT5 users often run multiple Expert Advisors, indicators, and other programs simultaneously, but keeping track of the platform's memory consumption can be difficult. Monitoring memory usage is important because excessive consumption can affect platform performance and, in extreme cases, contribute to instability.
+MT5 Memory Monitor addresses this limitation with a simple and intuitive on-chart dashboard that provides a quick overview of the platform's current memory status.
+The monitor displays memory usage as a visual meter, together with key resource information including:
+Memory usage percentage — visualized through an intuitive meter bar.
+Total memory available to the MT5 terminal.
+Used memory currently consumed.
+Available memory remaining.
+Number of indicators running across the current chart's windows.
+Number of chart windows associated with the current chart.
+The information is automatically refreshed periodically, allowing users to keep an eye on resource consumption while working with multiple MT5 programs.
+The goal is to provide a lightweight
+resource-monitoring panel
+that makes MT5 memory usage easier to observe at a glance.
+Note:
+The panel display logic is not explicitly called during initialization because the
+CHARTEVENT_CHART_CHANGE
+event is automatically triggered when the indicator is initialized. The chart-change handler therefore performs the initial dashboard display as well as subsequent updates whenever the chart changes.

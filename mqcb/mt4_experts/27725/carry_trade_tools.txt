@@ -1,0 +1,27 @@
+If you open for a swap earning positions only. This is an extra income on top of the trading income.
+If the pairs that you want to trade is not in the list, you can simply insert it in the array. Go to this part of the script. Insert the pairs. Increase the values of PairCount and Pairs[x].
+//=====================================================================//
+//    Variables
+//=====================================================================//
+int
+PairCount =
+7
+;
+string
+Pairs[
+7
+]={
+"EURUSD"
+,
+"GBPUSD"
+,
+"AUDUSD"
+,
+"NZDUSD"
+,
+"USDCAD"
+,
+"USDCHF"
+,
+"USDJPY"
+};

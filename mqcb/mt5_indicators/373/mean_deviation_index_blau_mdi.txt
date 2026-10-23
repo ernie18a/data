@@ -1,0 +1,48 @@
+Author:
+Andrey N. Bolkonsky
+The Ergodic MDI (Mean Deviation Index, MDI) is the double-smoothed Mean Deviation Index (see
+Momentum, Direction, and Divergence: Applying the Latest Momentum Indicators for Technical Analysis
+).
+The mean deviation is defined as a distance between close price and exponentially smoothed moving average, applied to close price.
+The smoothing leads to a lag, it can be seen at price reversal points.
+The value of mean deviation
+shows the distance between price and r-period moving average, applied to price
+.
+The sign of the mean deviation
+shows price position relative to r-period moving average, applied to price: it positive if price below the moving average and negative if price is lower than moving average.
+How to use:
+WilliamBlau.mqh must be placed in
+terminal_data_folder
+\MQL5\Include\
+Blau_MDI.mq5 must be placed in
+terminal_data_folder
+\MQL5\Indicators\
+Mean Deviation Index by William Blau
+Calculation:
+The mean deviation is calculated by formula:
+md(price,r) = price - EMA(price,r)
+where:
+price - close price;
+EMA(price,r) - market trend, determined by exponentially smoothed moving average with period r, applied to price.
+Mean Deviation Index is calculated by formula:
+MDI(price,r,s,u) = EMA(EMA( md(price,r) ,s),u) = EMA(EMA( price-EMA(price,r) ,s),u)
+where:
+price - close price;
+EMA(price,r) - market direction - 1st EMA smoothing of period r, applied to price;
+md(price,r)=price-EMA(price,r) - mean deviation;
+EMA(md(price,r),s) - 2nd smoothing - exponentially smoothed moving average of period s, applied to mean deviation;
+EMA(EMA(md(price,r),s),u) - 3rd smoothing - exponentially smoothed moving average of period u, applied to result of the 1st smoothing;
+Input parameters:
+r - period of the 1st EMA, applied to price (by default r=20);
+s - period of the 2nd EMA, applied to mean deviation (by default s=5);
+u - period of the 3rd EMA, applied to result of the smoothing (by default u=3);
+AppliedPrice -
+price type
+(by default AppliedPrice=PRICE_CLOSE).
+Note:
+r>1;
+s>0, u>0.  If r, s or u =1, smoothing is not used;
+Min. rates=(r+s+u-3+1).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/373

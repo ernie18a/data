@@ -1,0 +1,2 @@
+This Scalper EA needs a Top-Tier Low-Spread ECN Broker with a VPS with maximum of 1 millisecond latency, to use
+on M1 Time-Frame.

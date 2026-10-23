@@ -1,0 +1,12 @@
+The expert can trade up 28 (31 with yuan) pairs from one chart.
+Expert has the option for manual strategy (user strategy) or uses one of five included strategies.
+Expert has analyzer for any trade to show information for any currency and any pair to help a trader to make a better strategy.
+Important: Read how can to set GMT offset in my
+blog
+.
+Updated versions' information
+Update: version 3.5 > Fixed a critical bug that prevented to open orders from the expert.
+Update: version 3.6 > Fixed a minor bug about showing impacts event.
+Update: version 3.7 > Added option to open orders manually from chart panel.
+Update: version 3.8 > Added option to set stop  loss and take profit based ATR indicator. Added confirmation option for buttons' operation.
+Update: version 3.81 > Fixed typing errors.

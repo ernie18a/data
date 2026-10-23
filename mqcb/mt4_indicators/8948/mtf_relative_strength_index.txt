@@ -1,0 +1,13 @@
+MTF Relative Strength Index is a MetaTrader indicator based on well known RSI. Relative Strength Index is a financial technical analysis momentum oscillator measuring the velocity and magnitude of directional price movement by comparing upward and downward close-to-close movements. The RSI was developed by J. Welles Wilder and published in Commodities magazine in June 1978.
+In MetaTrader we have Relative Strength Index already included as a standard technical indicator. However it can be used only for current timeframe. Sometimes it is desirable to have RSI showing higher timeframes. MTF Relative Strength Index presented here has additional parameter - TimeFrame. You can use it to set up higher timeframe from which RSI will calculate its values. Because values are derived from bars, when using higher timeframes, you will notice rough shape of indicator line.
+MTF Relative Strength Index settings:
+TimeFrame
+Default value is 0 - means current timeframe. For other timeframes: 1=M1, 5=M5, 15=M15, 30=M30, 60=H1, 240=H4, 1440=D1, 10080=W1, 43200=MN1
+RSIPeriod
+Default value is 14. Number of periods for calculation.
+Applied_price
+Default value is 0 - means Close price used for calculations. For other types of price: 0-CLOSE, 1-OPEN, 2-HIGH, 3-LOW, 4-MEDIAN, 5-TYPICAL, 6-WEIGHTED.
+Shift
+Default value is 0. This parameter shifts whole indicator by Shift number of bars from set timeframe to the right on the chart.
+Example.
+MTF Relative Strength Index screenshot

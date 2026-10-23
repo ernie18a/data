@@ -1,0 +1,1 @@
+LRDegrees MT4 is the indicator for MetaTrader 4 will show double trend line of the linear regression, and gives the position degree of short line and provide alerts when the trend line changes direction, and provide the Fibonacci price at the chart time frame.

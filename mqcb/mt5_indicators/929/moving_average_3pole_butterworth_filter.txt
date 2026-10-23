@@ -1,0 +1,14 @@
+Real author:
+Witold Wozniak
+Image:
+Moving Average: 3-Pole Butterworth Filter.
+The indicator is based on the code of Witold Wozniak.
+The indicator provides good smoothing without consuming considerable CPU resources.
+Distinctive features comparing with the similar indicator (
+https://www.mql5.com/en/code/584
+):
+Ability to choose a price type and place over the previous indicators,
+smoothing ratios from another version of the original indicator have been used.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/929

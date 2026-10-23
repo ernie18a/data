@@ -1,0 +1,4 @@
+The Expert Advisor synchronizes the local computer time in the interval from 9:50 to 9:59 (before the beginning of the morning session) with the MetaTrader 5 FORTS server time.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17417

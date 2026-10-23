@@ -1,0 +1,12 @@
+Author of the idea
+—
+Eugene
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Analysis of OHLC on 0, 1, 2 and 3 bars.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17544

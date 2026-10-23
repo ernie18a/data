@@ -1,0 +1,22 @@
+D-Oscillator is an oscillator based on the RSI and CCI ratio.
+Calculation formula
+Line1[i] = 2/(Smooth + 1)*StCCI + (1 - 2/(Smooth + 1))*Line1[i-1]
+Line2[i] = 2/(Smooth*0.8 + 1)*Line1[i-1] + (1 - 2/(Smooth*0.8 + 1))*Line2[i-1]
+where
+StCCI = [CCI_Coeff]*CCI[i] + (1 - [CCI_Coeff])*StRSI
+StRSI = (RSI[i] - MinRSI)*200/(MaxRSI - MinRSI) - 100
+MaxRSI, MinRSI - the maximum/minimum values of RSI between [i-D_Period] and [i].
+The indicator has five input parameters:
+RSI period
+- RSI calculation period;
+D-period
+- the number of bars to search for the maximum/minimum RSI values;
+CCI period
+- CCI indicator parameter;
+CCI coefficient
+- CCI indicator parameter;
+Smooth
+- smoothing.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19953

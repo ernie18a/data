@@ -1,0 +1,32 @@
+The game panel for manual and automated trading demonstrates the possibilities of the
+MasterWindows
+library. The panel code has been automatically generated using the environment for visual design of interface windows
+MasterWindows for MQL5
+.
+By analyzing the price databases of the
+ENUM_APPLIED_PRICE
+type, you can make an assumption about the future price movement. The probability of such movement is shown as a scale and in terms of percentage. The functionality of the trade panel allows sending requests for the broker to execute trading operations. Market orders are used in this example. You can additionally reduce or increase the volume of a position, close a position, and enable
+autopilot
+.
+Autopilot
+means automated trading based on the signals of the panel. The mode can be activated by pressing the appropriate button.
+Input data:
+input
+ENUM_TIMEFRAMES
+tf=
+PERIOD_M5
+;
+// Chart period for signal calculation
+You can set the required chart period, from which the program will copy price data for calculation.
+Fig. 1. The game trade panel
+Recommendations:
+The
+MasterWindows
+library should be added to the \MQL5\Include\ folder. The library provides adequate operation of the interface windows you create.
+For a better display of created interface windows, use graphical schemes with a black background.
+This is a demo panel (a joke program) and is not intended for live accounts. However, you can modify or replace the
+BUYorSELL()
+signal generation function in accordance with your trading system, add position support function , and try to use it on a live account.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15241

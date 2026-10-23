@@ -1,0 +1,7 @@
+Theory :
+The idea for this indicator is coming from someone using name "NGBaltic". The indicator here is coded as the idea is without usage of levels (that shall be explained in another publication). All in all, the indicator is not bad, and here we have 3 options for color changes :
+color changes on slope change
+color changes on signal line cross
+color changes on zero line cross
+Usage :
+You can use color changes as signals

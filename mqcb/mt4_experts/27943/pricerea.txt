@@ -1,0 +1,11 @@
+What is it
+PricerEA is a utility to help any trader to place pending orders (stop or limit) at a specific price.
+It is designed for easy use.
+There is a parameter to set the prices you want to place orders.
+The expert can calculate automatically the lot size for each order.
+In addition, there is the possibility run trailing stop (work only for market orders) if triggered a pending order.
+How use it
+Use BuyStop to open buy order over than current price.
+Use BuyLimit to open buy order under than current price.
+Use SellStop to open sell order under than current price.
+Use SellLimit to open sell order over than current price.

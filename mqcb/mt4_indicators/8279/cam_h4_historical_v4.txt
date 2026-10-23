@@ -1,0 +1,21 @@
+A modified
+Camarilla dt Historical
+indicator.
+Parameters:
+GMTshift
+=
+0
+;
+HColor
+=
+Lime
+;
+fontsize
+=
+12
+;
+LabelShift
+=
+20
+;
+cam_H4_Historical_V4

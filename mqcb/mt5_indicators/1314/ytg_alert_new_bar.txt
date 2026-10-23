@@ -1,0 +1,32 @@
+The real author:
+Yuriy Tokman
+The sound signal which triggers that a new bar appeared.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 23.04.2009.
+Input parameters of the indicator:
+//+-----------------------------------+
+//|INPUT PARAMETERS OF THE INDICATOR  |
+//+-----------------------------------+
+input
+bool
+off_Alert =
+false
+;
+//sending alert
+input
+bool
+off_Play_Sound =
+false
+;
+//triggering of a sound signal
+input
+string
+NameFileSound =
+"expert.wav"
+;
+//the name for sound signal file
+Fig.1 The alert demonstration supplied by the ytg_Alert_New_Bar indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1314

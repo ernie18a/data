@@ -1,0 +1,278 @@
+﻿//+------------------------------------------------------------------+
+//|                                wajdyss_Ichimoku_Candle_Alert.mq5 |
+//|                                        Copyright © 2009, Wajdyss |
+//|                                                wajdyss@yahoo.com |
+//+------------------------------------------------------------------+
+#property copyright "Copyright © 2009, Wajdyss"
+#property link "wajdyss@yahoo.com"
+#property description ""
+//---- номер версии индикатора
+#property version   "1.00"
+//---- отрисовка индикатора в главном окне
+#property indicator_chart_window 
+//---- для расчета и отрисовки индикатора использовано пять буферов
+#property indicator_buffers 5
+//---- использовано всего одно графическое построение
+#property indicator_plots   1
+//+--------------------------------------------+
+//|  Параметры отрисовки индикатора            |
+//+--------------------------------------------+
+//---- в качестве индикатора использованы цветные свечи
+#property indicator_type1   DRAW_COLOR_CANDLES
+#property indicator_color1  clrMagenta,clrBrown,clrBlue,clrAqua
+//---- отображение метки индикатора
+#property indicator_label1  "wajdyss_Ichimoku Open;wajdyss_Ichimoku High;wajdyss_Ichimoku Low;wajdyss_Ichimoku Close"
+//+--------------------------------------------+
+//|  объявление констант                       |
+//+--------------------------------------------+
+#define RESET  0 // Константа для возврата терминалу команды на пересчёт индикатора
+//+--------------------------------------------+
+//|  ВХОДНЫЕ ПАРАМЕТРЫ ИНДИКАТОРА              |
+//+--------------------------------------------+
+input uint Kijun=26;
+input uint NumberofBar=1;       //Номер бара для подачи сигнала
+input bool SoundON=true;        //Разрешение алерта
+input uint NumberofAlerts=2;    //Количество алертов
+input bool EMailON=false;       //Разрешение почтовой отправки сигнала
+input bool PushON=false;        //Разрешение отправки сигнала на мобильный
+//+--------------------------------------------+
+//---- объявление динамических массивов, которые будут в дальнейшем использованы в качестве индикаторных буферов уровней Боллинджера
+double ExtOpenBuffer[];
+double ExtHighBuffer[];
+double ExtLowBuffer[];
+double ExtCloseBuffer[];
+double ExtColorBuffer[];
+//---- Объявление целых переменных начала отсчёта данных
+int min_rates_total;
+//+------------------------------------------------------------------+   
+//| CandleStop initialization function                               | 
+//+------------------------------------------------------------------+ 
+int OnInit()
+  {
+//---- Инициализация переменных начала отсчёта данных
+   min_rates_total=int(Kijun);
+
+//---- превращение динамических массивов в индикаторные буферы
+   SetIndexBuffer(0,ExtOpenBuffer,INDICATOR_DATA);
+   SetIndexBuffer(1,ExtHighBuffer,INDICATOR_DATA);
+   SetIndexBuffer(2,ExtLowBuffer,INDICATOR_DATA);
+   SetIndexBuffer(3,ExtCloseBuffer,INDICATOR_DATA);
+
+//---- превращение динамического массива в цветовой, индексный буфер   
+   SetIndexBuffer(4,ExtColorBuffer,INDICATOR_COLOR_INDEX);
+
+//---- индексация элементов в буферах как в таймсериях
+   ArraySetAsSeries(ExtOpenBuffer,true);
+   ArraySetAsSeries(ExtHighBuffer,true);
+   ArraySetAsSeries(ExtLowBuffer,true);
+   ArraySetAsSeries(ExtCloseBuffer,true);
+   ArraySetAsSeries(ExtColorBuffer,true);
+
+//---- осуществление сдвига начала отсчета отрисовки индикатора 1
+   PlotIndexSetInteger(0,PLOT_DRAW_BEGIN,min_rates_total);
+
+//--- создание имени для отображения в отдельном подокне и во всплывающей подсказке
+   IndicatorSetString(INDICATOR_SHORTNAME,"wajdyss_Ichimoku_Candle");
+
+//--- определение точности отображения значений индикатора
+   IndicatorSetInteger(INDICATOR_DIGITS,_Digits+1);
+//--- завершение инициализации
+   return(INIT_SUCCEEDED);
+  }
+//+------------------------------------------------------------------+ 
+//| CandleStop iteration function                                    | 
+//+------------------------------------------------------------------+ 
+int OnCalculate(
+                const int rates_total,    // количество истории в барах на текущем тике
+                const int prev_calculated,// количество истории в барах на предыдущем тике
+                const datetime &time[],
+                const double &open[],
+                const double &high[],
+                const double &low[],
+                const double &close[],
+                const long &tick_volume[],
+                const long &volume[],
+                const int &spread[]
+                )
+  {
+//--- проверка количества баров на достаточность для расчета
+   if(rates_total<min_rates_total) return(RESET);
+
+//---- Объявление переменных с плавающей точкой  
+   double kijun,price,High,Low;
+//---- Объявление целых переменных и получение
+   int limit,bar,to_copy;
+  
+//---- расчет стартового номера limit для цикла пересчета баров
+   if(prev_calculated>rates_total || prev_calculated<=0) // проверка на первый старт расчета индикатора
+     {
+      limit=rates_total-min_rates_total-1;               // стартовый номер для расчета всех баров
+     }
+   else
+     {
+      limit=rates_total-prev_calculated;                 // стартовый номер для расчета новых баров
+     }
+   to_copy=limit+1;
+   
+//---- индексация элементов в массивах, как в таймсериях 
+   ArraySetAsSeries(open,true);
+   ArraySetAsSeries(low,true); 
+   ArraySetAsSeries(high,true);
+   ArraySetAsSeries(close,true);
+
+//---- Основной цикл расчёта индикатора
+   for(bar=limit; bar>=0 && !IsStopped(); bar--)
+     {
+      High=high[bar];
+      Low=low[bar];
+      int index=bar+int(Kijun)-1;
+      while(index>bar)
+        {
+         price=high[index];
+         if(High<price) High=price;
+         price=low[index];
+         if(Low>price) Low=price;
+         index--;
+        }
+      //----  
+      kijun=(High+Low)/2;
+      
+      ExtOpenBuffer[bar]=open[bar];
+      ExtHighBuffer[bar]=high[bar];
+      ExtLowBuffer[bar]=low[bar];
+      ExtCloseBuffer[bar]=close[bar];
+      
+      //----
+      if(close[bar]>kijun)
+        {
+         if(close[bar]>=open[bar]) ExtColorBuffer[bar]=3;
+         else ExtColorBuffer[bar]=2;
+        }
+      //----
+      if(close[bar]<kijun)
+        {
+         if(close[bar]<=open[bar]) ExtColorBuffer[bar]=0;
+         else ExtColorBuffer[bar]=1;
+        }
+     }
+//---     
+   BuySignal("wajdyss_Ichimoku_Candle_Alert",ExtColorBuffer,rates_total,prev_calculated,close,spread);
+   SellSignal("wajdyss_Ichimoku_Candle_Alert",ExtColorBuffer,rates_total,prev_calculated,close,spread);
+//---    
+   return(rates_total);
+  }
+//+------------------------------------------------------------------+
+//| Buy signal function                                              |
+//+------------------------------------------------------------------+
+void BuySignal(string SignalSirname,      // текст имени индикатора для почтовых и пуш-сигналов
+               double &ColorArrow[],      // цветовой индикаторный  буфер с сигналами для покупки
+               const int Rates_total,     // текущее количество баров
+               const int Prev_calculated, // количество баров на предыдущем тике
+               const double &Close[],     // цена закрытия
+               const int &Spread[])       // спред
+  {
+//---
+   static uint counter=0;
+   if(Rates_total!=Prev_calculated) counter=0;
+
+   bool BuySignal=false;
+   bool SeriesTest=ArrayGetAsSeries(ColorArrow);
+   int index,index1;
+   if(SeriesTest)
+     {
+      index=int(NumberofBar);
+      index1=index+1;
+     }
+   else
+     {
+      index=Rates_total-int(NumberofBar)-1;
+      index1=index-1;
+     }
+   if(ColorArrow[index]>1 && ColorArrow[index1]<2) BuySignal=true;
+   if(BuySignal && counter<=NumberofAlerts)
+     {
+      counter++;
+      MqlDateTime tm;
+      TimeToStruct(TimeCurrent(),tm);
+      string text=TimeToString(TimeCurrent(),TIME_DATE)+" "+string(tm.hour)+":"+string(tm.min);
+      SeriesTest=ArrayGetAsSeries(Close);
+      if(SeriesTest) index=int(NumberofBar);
+      else index=Rates_total-int(NumberofBar)-1;
+      double Ask=Close[index];
+      double Bid=Close[index];
+      SeriesTest=ArrayGetAsSeries(Spread);
+      if(SeriesTest) index=int(NumberofBar);
+      else index=Rates_total-int(NumberofBar)-1;
+      Bid+=Spread[index]*_Point;
+      string sAsk=DoubleToString(Ask,_Digits);
+      string sBid=DoubleToString(Bid,_Digits);
+      string sPeriod=GetStringTimeframe(ChartPeriod());
+      if(SoundON) Alert("BUY signal \n Ask=",Ask,"\n Bid=",Bid,"\n currtime=",text,"\n Symbol=",Symbol()," Period=",sPeriod);
+      if(EMailON) SendMail(SignalSirname+": BUY signal alert","BUY signal at Ask="+sAsk+", Bid="+sBid+", Date="+text+" Symbol="+Symbol()+" Period="+sPeriod);
+      if(PushON) SendNotification(SignalSirname+": BUY signal at Ask="+sAsk+", Bid="+sBid+", Date="+text+" Symbol="+Symbol()+" Period="+sPeriod);
+     }
+
+//---
+  }
+//+------------------------------------------------------------------+
+//| Sell signal function                                             |
+//+------------------------------------------------------------------+
+void SellSignal(string SignalSirname,      // текст имени индикатора для почтовых и пуш-сигналов
+                double &ColorArrow[],      // цветовой индикаторный  буфер с сигналами для продажи
+                const int Rates_total,     // текущее количество баров
+                const int Prev_calculated, // количество баров на предыдущем тике
+                const double &Close[],     // цена закрытия
+                const int &Spread[])       // спред
+  {
+//---
+   static uint counter=0;
+   if(Rates_total!=Prev_calculated) counter=0;
+
+   bool SellSignal=false;
+   bool SeriesTest=ArrayGetAsSeries(ColorArrow);
+   int index,index1;
+   if(SeriesTest)
+     {
+      index=int(NumberofBar);
+      index1=index+1;
+     }
+   else
+     {
+      index=Rates_total-int(NumberofBar)-1;
+      index1=index-1;
+     }
+   if(ColorArrow[index]<2 && ColorArrow[index1]>1) SellSignal=true;
+   if(SellSignal && counter<=NumberofAlerts)
+     {
+      counter++;
+      MqlDateTime tm;
+      TimeToStruct(TimeCurrent(),tm);
+      string text=TimeToString(TimeCurrent(),TIME_DATE)+" "+string(tm.hour)+":"+string(tm.min);
+      SeriesTest=ArrayGetAsSeries(Close);
+      if(SeriesTest) index=int(NumberofBar);
+      else index=Rates_total-int(NumberofBar)-1;
+      double Ask=Close[index];
+      double Bid=Close[index];
+      SeriesTest=ArrayGetAsSeries(Spread);
+      if(SeriesTest) index=int(NumberofBar);
+      else index=Rates_total-int(NumberofBar)-1;
+      Bid+=Spread[index]*_Point;
+      string sAsk=DoubleToString(Ask,_Digits);
+      string sBid=DoubleToString(Bid,_Digits);
+      string sPeriod=GetStringTimeframe(ChartPeriod());
+      if(SoundON) Alert("SELL signal \n Ask=",Ask,"\n Bid=",Bid,"\n currtime=",text,"\n Symbol=",Symbol()," Period=",sPeriod);
+      if(EMailON) SendMail(SignalSirname+": SELL signal alert","SELL signal at Ask="+sAsk+", Bid="+sBid+", Date="+text+" Symbol="+Symbol()+" Period="+sPeriod);
+      if(PushON) SendNotification(SignalSirname+": SELL signal at Ask="+sAsk+", Bid="+sBid+", Date="+text+" Symbol="+Symbol()+" Period="+sPeriod);
+     }
+//---
+  }
+//+------------------------------------------------------------------+
+//|  Получение таймфрейма в виде строки                              |
+//+------------------------------------------------------------------+
+string GetStringTimeframe(ENUM_TIMEFRAMES timeframe)
+  {
+//----
+   return(StringSubstr(EnumToString(timeframe),7,-1));
+//----
+  }
+//+------------------------------------------------------------------+

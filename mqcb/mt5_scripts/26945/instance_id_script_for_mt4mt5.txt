@@ -1,0 +1,18 @@
+This script calculates and prints out the instance_id for MT4/MT5 installations.
+The instance_id is used in the roaming folder names such as
+C:/Users/{username}/AppData/Roaming/MetaQuotes/Terminal/{
+instance_id
+}/
+Please, find more details here:
+- MT4:
+https://www.metatrader4.com/en/trading-platform/help/userguide/start_comm#data_folder
+- MT5:
+https://www.metatrader5.com/en/terminal/help/start_advanced/start#guest
+The original idea comes from the user
+JC
+, posted on the
+forum
+. Main changes are:
+Built-in Unicode conversion using StringToShortArray (wide chars, 2 bytes); this should presumably support folder names with non-ASCII characters;
+Built-in MD5 hashing using CryptEncode (CRYPT_HASH_MD5); this removes dependency from custom MD5 implementation;
+The script prints current MetaTrader instance installation folder and corresponding instance_id in the experts log.

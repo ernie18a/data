@@ -1,0 +1,15 @@
+*Version 2, corrected array alignment and calculation of the current bar time.
+*Version 2ma — added moving average as requested.
+A very simple indicator to display the difference in time between candles in seconds.
+Intended for use with offline renko charts to indicate how long each block or brick has taken to form.
+On a regular timeframe chart, it can indicate dropped candles because the subsequent candle starts late.
+My first indicator! Please comment!
+Long indicator bars at the period separator as market closed.
+You might expect indicator bars to be double height where the renko colour changes as the price has had to move twice as far to make the block.
+My guess is that when the market moves then the bars are small, indecisive market produces longer bars as price takes longer to move.
+On a regular timeframe chart, it can indicate dropped candles because the subsequent candle starts late.
+Here, news was out at 15:30 but the candle was skipped so the 15:31 candle took 120 seconds to start, counted from the start of the previous (15:29) candle.
+Comments:
+Seems odd to put the time element back into renko charts but I figured it might produce useful information such as slow bricks indicating a turn in the market or price moving slowly inside a range. Or fast bricks indicating a real move in the price.
+On a regular, standard timeframe chart, it can show where the chart / broker has skipped one or more candles. This is surprisingly often! Particularly at news times.
+Added MA as requested.

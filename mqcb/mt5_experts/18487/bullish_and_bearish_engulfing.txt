@@ -1,0 +1,12 @@
+The EA trades based on the "Bullish and Bearish Engulfing" pattern.
+Inputs:
+Bullish Engulfing — the type of the position that should be opened when there is "Bullish Engulfing"
+Bearish Engulfing — the type of the position that should be opened when there is "Bearish Engulfing"
+Risk in percent for a deal — risk per trade (position volume calculation)
+Shift in bars (from 1 to 255) — horizontal shift in bars
+Distance (in pips) — distance parameter (see the below image for details)
+true -> close opposite positions — reverse of a given position
+magic number
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18487

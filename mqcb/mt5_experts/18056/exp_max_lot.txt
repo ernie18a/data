@@ -1,0 +1,59 @@
+Real author
+: Andrey Mishustin
+The Expert Advisor calculates the maximum lot size that can be used to open a position using the entire free margin available on the deposit. The calculated value is displayed in the upper right chart corner by default.
+This Expert Advisor was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 21.06.2012.
+Expert Advisor input parameters
+:
+//+------------------------------------------------+
+//|  Expert Advisor input parameters               |
+//+------------------------------------------------+
+input
+ENUM_POSITION_TYPE
+PosType=
+POSITION_TYPE_BUY
+;
+// Position type
+//---- indicator display settings
+input
+string
+Symbols_Sirname=
+"MAX_LOT_Label_"
+;
+// Name for the indicator labels
+input
+color
+IndName_Color=
+clrMediumSlateBlue
+;
+// Indicator color
+input
+uint
+Font_Size=
+15
+;
+// Indicator font size
+input
+uint
+X_=
+15
+;
+// Horizontal offset
+input
+int
+Y_=
+15
+;
+// Vertical offset
+input
+ENUM_BASE_CORNER
+WhatCorner=
+CORNER_RIGHT_UPPER
+;
+// Display corner
+//+------------------------------------------------+
+Fig1. The EXP_MAX_LOT EA on the chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18056

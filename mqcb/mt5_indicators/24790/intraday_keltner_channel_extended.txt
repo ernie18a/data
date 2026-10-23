@@ -1,0 +1,8 @@
+Theory :
+Keltner channel is calculated as SMA (Simple Moving Average) + ATR(Average True Range)*multiplier. This version is using the intra-day ATR instead (published, with additional explanation here :
+Intra-day ATR
+). This version is also extending the "basic" version of the intra-day Keltner channel (from here :
+Intra-day Keltner Channel
+) by applying the same resseting procedure to SMA (Simple Moving Average) calculation too. That means that the first SMA of the day is simply the price, second SMA of the day is SMA (2), and so on, till the desired period specified in the parameters is (if ever) reached)
+Usage :
+It can be used the same way as "regular" Keltner channel

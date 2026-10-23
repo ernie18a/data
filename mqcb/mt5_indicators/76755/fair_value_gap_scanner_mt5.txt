@@ -1,0 +1,12 @@
+Fair Value Gap Scanner gives a clean view of three candle price imbalances. Bullish and bearish gaps are detected from completed candles and displayed as chart zones. Each zone can remain visible after mitigation or be removed automatically, depending on the selected setting.
+The trader can choose whether mitigation means the first touch of the zone or a complete fill. A minimum gap size filter is included so very small imbalances can be ignored on symbols with more market noise.
+The scanner processes new candles instead of rebuilding objects on every tick. This keeps chart activity controlled while preserving a clear historical view.
+Main inputs
+1. Maximum Bars controls the historical scan depth.
+2. Minimum Gap Points filters small gaps.
+3. Show Bullish Gaps and Show Bearish Gaps control each direction separately.
+4. Hide Mitigated removes filled zones from the chart.
+5. Use Full Fill selects complete mitigation instead of first touch.
+6. Extension Bars controls the visual length of each zone.
+7. Enable Alerts reports a new fair value gap after candle confirmation.
+The indicator is a visual analysis tool and does not place trades.

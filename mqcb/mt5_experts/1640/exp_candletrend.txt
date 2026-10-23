@@ -1,0 +1,21 @@
+The simplest non-indicator based trading system that defines the moments of entry by presence of single directed candlesticks. Signals to open positions occur when there is a sequence of simultaneously growing or falling candlesticks. The number of these candlesticks is defined by the Expert Advisor input parameter.
+input
+uint
+CandleTrendTotal=
+3
+;
+//number of candlesticks in one direction
+It should be considered that TradeAlgorithms.mqh library file is designed to use Expert Advisors by brokers who offer
+nonzero spread
+and ability to set Stop Loss and Take Profit
+simultaneously opening
+a position. Other variants of this library can be downloaded from
+https://www.mql5.com/en/code/1578
+.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. The instances of history of deals in the chart.
+Testing results for 2011 at XAUUSD H4:
+Fig. 2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1640

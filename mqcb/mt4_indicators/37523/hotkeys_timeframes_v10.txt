@@ -1,0 +1,9 @@
+hotkeys 1-9 numbers on keyboard but not on number-pad to change timeframes
+1=m1
+2=m5
+3=m15
+4=m305=h1
+6=h4
+7=d1
+8=w1
+9=mn

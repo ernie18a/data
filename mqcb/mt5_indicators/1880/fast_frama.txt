@@ -1,0 +1,3 @@
+Fast FrAMA, in contrast to
+the version from MQL5 suite
+, has more wide applied price constant choose and, what's the main difference, calculation speed is increased by a factor of 30 to 100.

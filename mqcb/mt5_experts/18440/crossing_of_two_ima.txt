@@ -1,0 +1,53 @@
+The author of the idea
+:
+ITM7
+(inspired by
+Requests & Ideas (MQL5 only!)
+)
+MQL5 code author
+:
+Vladimir Karputov
+.
+Added:
+The call to iMA has been replaced by a call to iCustom
+Custom Moving Average Input Color
+. In the tester (in the visual mode) or when attached to a chart, the EA visualizes the Moving Average indicators in different colors:
+Crossover of two iMAs (Moving Averages), one more iMA (Moving Average) is used as the filter.
+Position
+Lot
+calculation: manually or risk percent of balance.
+Trading method: Stop, Market or Limit orders. The EA also sets Stop Loss, Take Profit, Trailing Stop.
+Input parameters: (
+additions are highlighted
+)
+"Parameters of the first Moving Average"
+Period of the first Moving Average
+Shift of the first Moving Average
+Method of the first Moving Average
+Color of the first Moving Average
+"Parameters of the second Moving Average"
+Period of the second Moving Average
+Shift of the second Moving Average
+Method of the second Moving Average
+Color of the second Moving Average
+"Parameters of the Third Moving Average"
+Third indicator Moving Average - filter
+Period of the third Moving Average
+Shift of the third Moving Average
+Method of the third Moving Average
+Color of the third Moving Average
+"Parameters of Money Management"
+true -> lot is manual, false -> percentage of risk from balance
+Lots (use only if lot size is manual)
+"Parameters of trading"
+Risk in percent for a deal from balance
+(in pips) <0 -> Stop orders, =0 -> Market, >0 -> Limit orders
+Stop Loss (in pips)
+Take Profit (in pips)
+Trailing Stop ("0" -> not trailing)
+Trailing Step (use if Trailing Stop >0)
+Magic number
+Slippage
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18440

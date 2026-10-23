@@ -1,0 +1,12 @@
+Real author:
+CrazyChart
+The SilverTrend_CrazyChart is a signal system similar to
+ASCTrend
+. It is drawn as a colored cloud.
+The original DS_Stochastic indicator was developed in the MQL4 language and published in the
+CodeBase
+on 27.10.2006.
+Fig.1. SilverTrend_CrazyChart Indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7010

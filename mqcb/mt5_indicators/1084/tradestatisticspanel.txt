@@ -1,0 +1,16 @@
+Description:
+The indicator panel displays the main statistical parameters of the trade for the current account calculated based on the trade history. Recalculation of these parameters is initiated at the panel start and by the
+OnTrade()
+event automatically. The "Calculate" button is provided for the forced recalculation.
+The
+Consolas
+font is used by default as the panel font. If for some reason you do not have this font in the system, you can install it from the official website of the font developer, by following this
+link
+.
+The
+CTradeStatistics
+class is used for calculations.
+Image:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1084

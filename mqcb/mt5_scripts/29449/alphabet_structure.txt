@@ -1,0 +1,193 @@
+This structure provides quick access to sets of lowercase and uppercase latin, russian characters, digits, punctuation, brackets, whitespaces, and special sets of symbols after/before which space should be dropped.
+Alphabet abc;
+/*REPORT*/
+Print
+(
+"RUSSIAN"
+);
+ArrayPrint
+(abc.russian.capital.shortitems);
+ArrayPrint
+(abc.russian.capital.stringitems);
+ArrayPrint
+(abc.russian.lowercase.shortitems);
+ArrayPrint
+(abc.russian.lowercase.stringitems);
+Print
+(
+"LATIN"
+);
+ArrayPrint
+(abc.latin.capital.shortitems);
+ArrayPrint
+(abc.latin.capital.stringitems);
+ArrayPrint
+(abc.latin.lowercase.shortitems);
+ArrayPrint
+(abc.latin.lowercase.stringitems);
+Print
+(
+"DIGITS"
+);
+ArrayPrint
+(abc.digits.shortitems);
+ArrayPrint
+(abc.digits.stringitems);
+Print
+(
+"PUNCTUATION"
+);
+ArrayPrint
+(abc.punctuations.shortitems);
+ArrayPrint
+(abc.punctuations.stringitems);
+Print
+(
+"NO SPACE BEFORE"
+);
+ArrayPrint
+(abc.nospacebefores.shortitems);
+ArrayPrint
+(abc.nospacebefores.stringitems);
+Print
+(
+"NO SPACE AFTER"
+);
+ArrayPrint
+(abc.nospaceafters.shortitems);
+ArrayPrint
+(abc.nospaceafters.stringitems);
+Print
+(
+"WRAP"
+);
+ArrayPrint
+(abc.wrapmarkers.shortitems);
+ArrayPrint
+(abc.wrapmarkers.stringitems);
+Print
+(
+"WHITESPACE"
+);
+ArrayPrint
+(abc.whitespaces.shortitems);
+ArrayPrint
+(abc.whitespaces.stringitems);
+Print
+(
+"BRACKETS"
+);
+ArrayPrint
+(abc.brackets.shortitems);
+ArrayPrint
+(abc.brackets.stringitems);
+The Alphabet also contains a method to classify a character.
+Print
+(
+"CHECK"
+);
+   ENUM_ALPHABET_CAT category;
+/**/
+string
+stringchars[]= {
+"\\"
+,
+"("
+,
+"7"
+,
+"$"
+,
+"abc"
+};
+int
+sizestringchars=
+ArraySize
+(stringchars);
+for
+(
+int
+i=
+0
+; i<sizestringchars; i++)
+     {
+string
+stringchar=stringchars[i];
+      category=abc.Check(stringchar);
+Print
+(stringchar,
+" is "
+,
+EnumToString
+(category));
+     }
+/**/
+for
+(
+int
+i=
+0
+; i<
+3
+; i++)
+     {
+short
+shortchar=(i==
+0
+)?abc.space.shortitem:
+                      (i==
+1
+)?abc.comma.shortitem:
+                      abc.leftbrace.shortitem;
+      category=abc.Check(shortchar);
+Print
+(shortchar,
+" is a "
+,
+EnumToString
+(category));
+     }
+The output:
+RUSSIAN
+[ 0] 1040 1041 1042 1043 1044 1045 1025 1046 1047 1048 1050 1051 1052 1053 1054 1055
+[16] 1056 1057 1058 1059 1060 1061 1062 1063 1064 1065 1066 1067 1068 1069 1070 1071
+"А" "Б" "В" "Г" "Д" "Е" "Ё" "Ж" "З" "И" "К" "Л" "М" "Н" "О" "П" "Р" "С" "Т" "У" "Ф" "Х" "Ц" "Ч" "Ш" "Щ" "Ъ" "Ы" "Ь" "Э" "Ю" "Я"
+[ 0] 1072 1073 1074 1075 1076 1077 1105 1078 1079 1080 1082 1083 1084 1085 1086 1087
+[16] 1088 1089 1090 1091 1092 1093 1094 1095 1096 1097 1098 1099 1100 1101 1102 1103
+"а" "б" "в" "г" "д" "е" "ё" "ж" "з" "и" "к" "л" "м" "н" "о" "п" "р" "с" "т" "у" "ф" "х" "ц" "ч" "ш" "щ" "ъ" "ы" "ь" "э" "ю" "я"
+LATIN
+65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90
+"A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" "Y" "Z"
+ 97  98  99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122
+"a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s" "t" "u" "v" "w" "x" "y" "z"
+DIGITS
+48 49 50 51 52 53 54 55 56 57
+"0" "1" "2" "3" "4" "5" "6" "7" "8" "9"
+PUNCTUATION
+  46   44   59   58   33   63   43   61   42   96  126   39   34   92   47   45 8212 8211
+"." "," ";" ":" "!" "?" "+" "=" "*" "`" "~" "'" """ "\" "/" "-" "—" "–"
+NO SPACE BEFORE
+  46   44   58   59   63   33   41   93   62  125   45 8212 8211
+"." "," ":" ";" "?" "!" ")" "]" ">" "}" "-" "—" "–"
+NO SPACE AFTER
+  40   91   60  123   45 8212 8211
+"(" "[" "<" "{" "-" "—" "–"
+WRAP
+44 93 63 33
+"," "]" "?" "!"
+WHITESPACE
+32  9 13 10
+" " " " " " "
+"
+BRACKETS
+ 40  41  91  93 123 125  60  62
+"(" ")" "[" "]" "{" "}" "<" ">"
+CHECK
+\ is CHAR_PUNCTUATION
+( is CHAR_BRACKET
+7 is CHAR_DIGIT
+$ is CHAR_UNDEFINED
+abc is ENUM_ALPHABET_CAT::-1
+32 is a CHAR_WHITESPACE
+44 is a CHAR_PUNCTUATION
+91 is a CHAR_BRACKET

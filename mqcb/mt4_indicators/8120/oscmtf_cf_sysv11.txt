@@ -1,0 +1,4 @@
+Author:
+kuncup
+Indicator OSC-MTF_CF_SYS-v1.1
+Indicator OSC-MTF_CF_SYSv1.1

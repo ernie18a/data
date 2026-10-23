@@ -1,0 +1,14 @@
+Description:
+This custom indicator combines the ADX Wilder indicator with Bollinger Bands to visualize trend strength and volatility in a single subwindow.
+The indicator calculates the standard ADX Wilder, including +DI and −DI, and then applies Bollinger Bands to the ADX line. This allows traders to identify when trend strength is expanding or contracting relative to its recent volatility.
+When the ADX line approaches or breaks the upper Bollinger Band, it may indicate unusually strong trend momentum. When it moves toward the lower band, it may signal weakening trend strength or a ranging market.
+This tool helps traders detect increasing trend strength, trend exhaustion or weakening momentum, and volatility expansion in trend strength.
+Indicator components include the ADX line, +DI and −DI directional movement lines, and Bollinger Bands applied to the ADX line.
+Input parameters allow users to adjust the ADX period, Bollinger period, and Bollinger deviation to match their trading strategy.
+This indicator can be used together with price action or other technical indicators for additional confirmation.
+Image:
+Recommendations:
+Use ADX above the middle band to confirm strengthening trends.
+ADX crossing above the upper band may indicate strong momentum continuation.
+ADX falling below the middle band may signal weakening trend strength.
+The indicator can be used on all timeframes and across multiple markets including Forex, Stocks, Indices, Commodities, and Crypto.

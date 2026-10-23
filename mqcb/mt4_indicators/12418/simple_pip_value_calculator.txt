@@ -1,0 +1,9 @@
+"How much is a 1 pip movement on EURUSD (or any pair) worth in my currency???"
+It's a question we see asked frequently on the MQL forums and other forex websites. Knowing how much a 1 pip or 1 point move on a currency is going to make you (or cost you) is one of the most important factors in any forex trade.
+If you don't know that, how can you calculate your risk to reward??!!??
+This very simple calculator will tell you exactly what the value of a 1 pip or 1 point move in any pair will be in your base (deposit) currency. Either use the calculator "as is" for a handy tool, or use the formula inside for your own EA and money management strategies. The code is provided as open source, free to the MQL community to do with as you please.
+Inputs:
+There is only one input required, the lot size you plan to trade. Simply enter that and everything else will be calculated for you automatically. Standard (4 digit) and ECN (5 digit) brokers are taken into account in the calculations.
+How to use:
+Simply drop it on any chart, fill in the lot size and the values of that chart pair will be printed out in the top left of your screen. If you wish to develop it further, go right ahead! Add some text labels and pretty it up, do what you like :)
+NOTE: Version 1.02 uploaded 15-Feb-2015 to correct pip size

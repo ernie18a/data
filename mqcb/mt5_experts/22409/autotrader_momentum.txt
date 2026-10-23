@@ -1,0 +1,35 @@
+The author of the idea
+-
+Collector
+mq5 code author
+-
+barabashkakvn
+The EA works on netting and hedging accounts. Trading signals are checked only when a new bar appears, while trailing works constantly. When opening a position, a stop loss (
+Stop Loss
+) and take profit (
+Take Profit
+) are placed immediately.
+To disable stop loss, take profit or trailing, simply set
+Stop Loss
+,
+Take Profit
+or
+Trailing Stop
+to "0.0".
+Position opening signals - comparing Close price on the current bar #
+Current bar
+with the one on the compared bar #
+Comparable bar
+:
+BUY open signal: Close #
+Current bar
+> Close #
+Comparable bar
+SELL open signal: Close #
+Current bar
+< Close #
+Comparable bar
+BUY open signal is also SELL close one, while SELL open signal also serves as BUY close one. A previous position is closed first, and a new one is opened afterwards.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22409

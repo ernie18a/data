@@ -1,0 +1,10 @@
+Real author:
+Yuriy Tokman
+Indicator of trend change.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 13.10.2008.
+Fig.1. The dTrend indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15967

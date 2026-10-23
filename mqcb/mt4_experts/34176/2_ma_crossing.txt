@@ -1,0 +1,318 @@
+We will start creating this EA by defining the input variables.
+//--- input parameters
+input
+int
+period_ma_fast =
+8
+;
+//Period Fast MA
+input
+int
+period_ma_slow =
+20
+;
+//Period Slow MA
+input
+double
+takeProfit  =
+20.0
+;
+//Take Profit (pips)
+input
+double
+stopLoss    =
+20.0
+;
+//Stop Loss (pips)
+input
+double
+lotSize     =
+0.10
+;
+//Lot Size
+input
+double
+minEquity   =
+100.0
+;
+//Min. Equity ($)
+input
+int
+Slippage =
+3
+;
+//Slippage
+input
+int
+MagicNumber =
+889
+;
+//Magic Number
+followed by defining global variables. variables with this global scope will be known or accessible to all functions.
+//Variabel Global
+double
+myPoint    =
+0.0
+;
+int
+mySlippage =
+0
+;
+int
+BuyTicket   =
+0
+;
+int
+SellTicket  =
+0
+;
+When EA is executed, the first function that is executed is OnInit (). So that we often use this function to validate and initialize global variables that will be used.
+int
+OnInit
+()
+{
+//validasi input, sebaiknya kita selalu melakukan validasi pada initialisasi data input
+if
+(period_ma_fast >= period_ma_slow || takeProfit <
+0.0
+|| stopLoss <
+0.0
+|| lotSize <
+0.01
+|| minEquity <
+10
+){
+Alert
+(
+"WARNING - Input data inisial tidak valid"
+);
+return
+(
+INIT_PARAMETERS_INCORRECT
+);
+   }
+double
+min_volume=
+SymbolInfoDouble
+(
+Symbol
+(),
+SYMBOL_VOLUME_MIN
+);
+if
+(lotSize<min_volume)
+   {
+string
+pesan =
+StringFormat
+(
+"Volume lebih kecil dari batas yang dibolehkan yaitu %.2f"
+,min_volume);
+Alert
+(pesan);
+return
+(
+INIT_PARAMETERS_INCORRECT
+);
+   }
+   
+   myPoint = GetPipPoint(
+Symbol
+());
+   mySlippage = GetSlippage(
+Symbol
+(),Slippage);
+return
+(
+INIT_SUCCEEDED
+);
+}
+When the market price moves (tick), the OnTick () function will be called and execute all instructions / functions contained in this OnTick () function block.
+Inside the OnTick () function will call various other functions.
+Starting to call the checkMinEquity () function to control the adequacy of trading equity. If the equity funds are sufficient (exceeding the minimum equity), it will be followed by a signal variable declaration and followed by a call to the NewCandle () function which functions to inform when a new candle is formed.
+The getSignal () function will read the values on both moving average indicators and return signal information whether an upward or downward cross occurs as a signal for a buy / sell signal.
+Based on this signal information, it will be forwarded to the transaction () function to set open buy or sell positions.
+And it will be continued by calling the setTPSL () function which functions to set the take profit and stop loss prices.
+If equity does not meet the minimum equity requirement, an alert will be displayed and this EA will be terminated.
+void
+OnTick
+()
+{
+if
+(cekMinEquity()){
+int
+signal = -
+1
+;
+bool
+isNewCandle = NewCandle(
+Period
+(),
+Symbol
+());
+      
+      signal = getSignal(isNewCandle);
+      transaction(isNewCandle, signal);
+      setTPSL();
+      
+      
+   }
+else
+{
+//Stop trading, karena equity tidak cukup
+Print
+(
+"EA akan segera diberhentikan karena equity tidak mencukup"
+);
+   }
+}
+Function to setTPSL()
+void
+setTPSL(){
+int
+tOrder =
+0
+;
+string
+strMN =
+""
+, pair =
+""
+;
+double
+sl =
+0.0
+, tp =
+0.0
+;
+   
+   pair =
+Symbol
+();
+   
+   tOrder =
+OrdersTotal
+();
+for
+(
+int
+i=tOrder-
+1
+; i>=
+0
+; i--){
+bool
+hrsSelect =
+OrderSelect
+(i, SELECT_BY_POS, MODE_TRADES);
+      strMN =
+IntegerToString
+(OrderMagicNumber());
+if
+(
+StringFind
+(strMN,
+IntegerToString
+(MagicNumber),
+0
+) ==
+0
+&&
+StringFind
+(OrderSymbol(), pair,
+0
+) ==
+0
+){
+if
+(OrderType() == OP_BUY && (OrderTakeProfit() ==
+0
+|| OrderStopLoss() ==
+0
+) ){
+if
+(takeProfit >
+0
+) {
+               tp = OrderOpenPrice() + (takeProfit * myPoint);
+            }
+else
+{
+               tp = OrderOpenPrice();
+            }
+if
+(stopLoss >
+0
+) {
+               sl = OrderOpenPrice() - (stopLoss * myPoint);
+            }
+else
+{
+               sl = OrderStopLoss();
+            }
+if
+(OrderTakeProfit() != tp || OrderStopLoss() != sl ){
+if
+(OrderModify(OrderTicket(), OrderOpenPrice(), sl, tp,
+0
+,
+clrBlue
+)){
+Print
+(
+"OrderModify Successful"
+);
+               }
+            }
+         }
+if
+(OrderType() == OP_SELL && (OrderTakeProfit() ==
+0
+|| OrderStopLoss() ==
+0
+) ){
+if
+(takeProfit >
+0
+) {
+               tp = OrderOpenPrice() - (takeProfit * myPoint);
+            }
+else
+{
+               tp = OrderOpenPrice();
+            }
+if
+(stopLoss >
+0
+) {
+               sl = OrderOpenPrice() + (stopLoss * myPoint);
+            }
+else
+{
+               sl = OrderStopLoss();
+            }
+if
+(OrderTakeProfit() != tp || OrderStopLoss() != sl ){
+if
+(OrderModify(OrderTicket(), OrderOpenPrice(), sl, tp,
+0
+,
+clrRed
+)){
+Print
+(
+"OrderModify Successful"
+);
+               }
+            }
+         }
+         
+      }
+//end if magic number && pair
+}
+//end for
+}
+for education and sharing in Indonesian, please join us in the telegram group
+t.me/codeMQL
+If you are looking for an App to support your trading, please download our SignalForex app in the play store
+https://play.google.com/store/apps/details?id=com.autobotfx.signalforex

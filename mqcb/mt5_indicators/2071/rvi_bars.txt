@@ -1,0 +1,10 @@
+Real author:
+Perky
+The indicator changes the color of the bar to the color corresponding to the current trend, which is determined using the RVI indicator (
+Relative Vigor Index
+).
+If the trend and candlestick direction match, the color of the bar is light, if opposite, the bar is dark.
+Figure 1. The RVI_BARS indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2071

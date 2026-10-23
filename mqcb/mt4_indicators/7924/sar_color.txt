@@ -1,0 +1,4 @@
+Author:
+Kalenzo
+Indicator SAR_COLOR.
+Indicator SAR Color

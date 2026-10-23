@@ -1,0 +1,13 @@
+Author of the idea
+—
+John Smith
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Inputs:
+Testing in the "Every tick based on real ticks" mode, from 2016.03.08 to 2016.12.01, initial balance - 3000, AUDUSD M15:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17069

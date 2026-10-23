@@ -1,0 +1,14 @@
+This moving average is a slow adaptive trend line with ultralinear and JMA smoothings.
+The moving average is calculated the following way:
+JJurX[bar] = JMA(Jurx(PRICE[bar]))
+where:
+JurX() - JurX ultralinear smoothing algorithm;
+JMA() - JMA adaptive smoothing algorithm;
+PRICE[] - price series value;
+bar - current bar index.
+Additional JMA smoothing is used to improve the smoothing of the final indicator. The indicator uses the CJJMA class of the smoothalgorithms.mqh library. The use of the class was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/436

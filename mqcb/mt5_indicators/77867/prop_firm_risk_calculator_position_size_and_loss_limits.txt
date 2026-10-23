@@ -1,0 +1,23 @@
+Prop Firm Risk Calculator
+A small on-chart panel that helps you plan risk on funded / prop firm accounts. It is a calculator only: it gives no signals and places no orders.
+What it shows:
+Risk per trade in account currency.
+Stop distance in price units.
+Position size in lots for that stop.
+Daily loss limit and max total loss limit.
+How many losing trades at the chosen risk fit inside each limit.
+Value of 1 price unit for 1 lot, read from the symbol specification.
+How it works:
+Risk amount = account size x risk percent.
+Lots = risk amount / (stop distance x value of 1 price unit per lot), rounded down to the symbol volume step and kept between the minimum and maximum lot.
+The stop distance is either a fixed value in price units or ATR x multiplier (ATR of the last closed bar).
+Inputs:
+Account size source: fixed value or current account balance.
+Account size, risk per trade (%), daily loss limit (%), max total loss limit (%).
+Stop distance mode: manual (price units) or ATR based.
+Manual stop distance, ATR period, ATR multiplier.
+Panel corner, font size, text color.
+Notes:
+Results do not include spread, commission or slippage.
+The loss limits are values you set to match your own prop firm rules. Always check them against the rules of your firm.
+Works on any symbol. The panel updates with every tick.

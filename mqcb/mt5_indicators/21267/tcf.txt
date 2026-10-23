@@ -1,0 +1,17 @@
+Oscillator TCF (Trend Continuation Factor) was developed to help identify the trend and direction of the market. It was presented by M.H. Pee in article named Trend Continuation Factor in the Stocks & Commodities magazine.
+It has three configurable parameters:
+ROC period
+- ROC (rate-of-change) calculation period;
+Smoothing period
+- smoothing period;
+Applied price
+- price used for calculations.
+The growing values of the indicator lines above zero point indicate a trend:
+red line
+- downtrend;
+green line
+- uptrend.
+If both lines have negative values, it means that the market is in the consolidation state.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21267

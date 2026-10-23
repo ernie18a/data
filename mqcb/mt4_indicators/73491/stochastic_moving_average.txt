@@ -1,0 +1,17 @@
+This indicator is an implementation of Stochastic of Moving Average.
+This indicator can be used as a filter indicator.
+It can be associated with my free indicator "HLPeak_Trend".
+The logic is implemented as Class, so you can copy and paste in your Expert Advisor code without using the function iCustom().
+Use the class function ".Update(int shift)" to run or update the indicator class.
+Usually use shift=0 in Expert Advisor.
+Class Input Parameters:
+int   parPeriod;        // Period
+int   parKPeriod;       // K Period
+int   parDPeriod;       // D Period
+int   parSlowingPeriod; // Slowing Period
+ENUM_APPLIED_PRICE   parPrice;   // Applied Price
+Class Output Buffers: (index 0=current, 1=previous)
+double bufStoc[];    // Stochastic
+double bufStoK[];    // Stochastic K line
+double bufStoD[];    // Stochastic D line
+int    bufStoDir[];  // Direction (2=Strong Up, 1=Weak Up, -1=Weak Down, -2=Strong Down)

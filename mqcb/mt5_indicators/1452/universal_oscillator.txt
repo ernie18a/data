@@ -1,0 +1,8 @@
+The purpose is to simplify the use of different oscillators by collecting the most popular oscillators in the indicator and also except for the simple levels add two dynamic types realized on the basis of a Moving Average and Bollinger bands.
+In order not to post some screenshots, there are some variants of the indicator with different parameters:
+Recommendations:
+Important:
+if the type of the oscillator is changed to Bears Power, Bulls Power and MACD, and the mode of building levels is NOT equal to the Bollinger Bands Mode - set the shift value equal to 0, and then depending on frame or currency pair select the necessary parameter of shift.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1452

@@ -1,0 +1,10 @@
+Step_Ema_LK.mq4:
+This is a hybrid step / ema filter I wrote a while ago. Exchanging some lag/price for lag/time then prices moves a lot.
+LK_FDI_V2.mq4:
+Is my version of a Fractal Dimension Index. Following more or less the same principles as FGDI.mq4 posted elsewhere in the codebase. (There is some small differences, especial when dealing with small periods: e.g. a 2 bar period (2 observations) is considered random(~1.58) in this version there FGDI will give values above 2.0).
+Also this version supports a linear weighted mode that may give a little less lag in some cases.
+Plus dFDI (green line in the chart), that is FDI on first derivative (rate of change).
+FDI well below 1.5 generally means that we are trending.
+FDI at 1.5 generally means that we are in a random market.
+FDI well above 1.5 generally means that we are in a ranging market.
+High dFDI readings generally means that the trend is stable in nature.

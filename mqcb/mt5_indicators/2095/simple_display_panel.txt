@@ -1,0 +1,4 @@
+The code is designed to be a simple reference of how to create movable (drag) panels and populate it with information obtained from the MetaTrader terminal, using the
+Standard library controls
+.
+The output is a panel that can be moved when dragged and can be used in the form of a simple indicator.

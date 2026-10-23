@@ -1,0 +1,2 @@
+Written in this code you can find a loop on your MarketWatch. It can be used to do a multi-market algorithm, like an EA which works on all the selected markets. Back to our script main function, in the code, obviously, you can find how to open and write on a csv file. It's really important to close your file before saving it using FileClose() function.
+Here below you can find the final result:

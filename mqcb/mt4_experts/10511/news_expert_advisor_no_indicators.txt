@@ -1,0 +1,77 @@
+Description:
+EA trades on a large market movements, and does not uses any indicators.
+The idea of the Expert Advisor is that stop orders are discrete-time moving at a given distance from the current price.
+If the price is rather abruptly slid to one side, the EA simply does not have time to move the order and it becomes a market.
+Further included trail orders.
+extern
+int
+Stoploss =
+10
+,        // ​​stoploss if 0
+is not changed
+           Takeprofit =
+50
+,      // TakeProfit, if 0
+is not changed
+extern
+int
+TrailingStop =
+10
+,    // length of Trail, if 0
+no trail
+extern
+int
+TrailingStart =
+0
+,    // ​​when trail usede, for
+example, after reaching
+40
+n arrived
+extern
+int
+StepTrall =
+2
+// Thrall step - move stop-loss
+is not closer than StepTrail
+extern
+int
+NoLoss =
+0
+,           // ​​transfer to breakeven
+for a given number ve points of profit,
+if then there
+is no move to breakeven
+           MinProfitNoLoss =
+0
+,  // ​​minimum earnings when move to break-even level
+extern
+int
+Magic =
+77
+// Magic
+extern
+int
+Step =
+10
+,            // distance from
+the price
+extern
+double
+Lot =
+0.1
+;
+extern
+int
+TimeModify =
+30
+// number of seconds before a order
+is not allowed to change
+extern
+int
+slippage =
+30
+// The maximum deviation of the price
+for market orders (orders to buy or sell).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10511

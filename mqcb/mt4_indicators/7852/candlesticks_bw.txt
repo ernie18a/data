@@ -1,0 +1,5 @@
+Author: CandlesticksBW
+The CandlesticksBW indicator. Plots bars by B. Williams.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7852

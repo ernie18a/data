@@ -1,0 +1,13 @@
+A zigzag which identifies new swing points based on a step size. The sensitivity of the swing detection is controlled by a single input "scale," which adjusts how responsive the indicator is to price changes.
+The
+step size
+defines the minimum price movement required to reverse the current wave direction. It determines the threshold of price movement needed before the swing direction is considered to have changed.
+The traditional Zigzag indicator uses a "depth" parameter to define the minimum number of price bars needed for a swing reversal, while this indicator focuses on the price movement itself.But despite this difference, the functionality is quite similar as there is a leg continuation until the new swing is confirmed. It should be used for swing analysis.
+It is a conversion of an MT4 indicator by Evgeniy Chumakov.
+The original MT4 indicator can be found here:
+https://www.mql5.com/en/code/54274
+increasing the scale value will make the zigzag more sensitive to price changes, and thus, there will be more zigzag points the higher the scale value.
+A default scale input of 1.0 was primarily designed for currency pairs.
+For XAUUSD, you can start with a scale input of 3000 and work up from there.
+For BTCUSD, you can start with a scale input of 25000 and work up from there.
+For other types of markets, you will have to use trial and error to find an appropriate starting scale value.

@@ -1,0 +1,14 @@
+The real author:
+LenIFCHIK
+The DMA (Displaced Moving Averages) indicator places three Moving Averages in the main window:
+3-period Moving Average displaced forward on three periods (SR DMA);
+7-period Moving Average displaced forward on five periods (MR DMA);
+25-period Moving Average displaced forward on five periods (LR DMA).
+The indicator is drawn on the basis of the description given in Joe DiNapoli book "Trading with DiNapoli Levels".
+This indicator was first implemented in MQL4 and published in
+CodeBase at mql4.com
+on 30.03.2010.
+Fig.1 The Displaced Moving Averages indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1191

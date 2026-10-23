@@ -1,0 +1,4 @@
+Works on the range of M1.
+I am using periods of M1, M5, H1, D1 but, if necessary, everyone can modify the periods.
+Of course, the colors of MA and Parabolic SAR are the same for the same periods.
+Good luck!

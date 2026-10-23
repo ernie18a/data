@@ -1,0 +1,24 @@
+FX Trend oscillator displays the market status and its wave characteristic.
+Crossing the level of 50.0 and divergence of the oscillator graph and price chart can serve as signals.
+The indicator has four configurable parameters:
+Small range of bars
+- small calculation range
+Middle range of bars
+- middle calculation range
+Big range of bars
+- large calculation range
+Threshold level
+- threshold (signal) level (default is 50)
+Calculation:
+FXT = K * ((Close-L1) / (D1*Small range)+(Close-L2) / (D2*Middle range)+(Close-L3) / (D3*Big range))
+where:
+D1 = H1 - L1
+D2 = H2 - L2
+D3 = H3 - L3
+L1, H1 - the lowest and the highest prices in the Small range
+L2, H2 - the lowest and the highest prices in the Middle range
+L3, H3 - the lowest and the highest prices in the Big range
+K = 100.0 / (1/Small range+1 / Middle range+1 / Big range)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21433

@@ -1,0 +1,2 @@
+One more in the "back to the basics" series :
+Linear Weighted Moving Average is one more that is usually calculated using loops and that makes it slower as the calculating period gets longer. This version is solving that and that makes it suitable for usage via iCustom() calls

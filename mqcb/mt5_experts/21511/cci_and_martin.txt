@@ -1,0 +1,415 @@
+Author of the idea
+:
+Vladimir
+MQL5 code author
+:
+barabashkakvn
+The EA uses iCCI (Commodity Channel Index, CCI) indicator value on the last four bars and Open/Close prices on the last three bars. A position opening signal is checked if less than 20 seconds remain before closing the current bar (this is a very rare solution) and if there are no positions opened by this EA.
+Position opening conditions
+//--- BUY
+if
+(cci[
+1
+]<
+5
+&& cci[
+2
+]<cci[
+3
+] && cci[
+1
+]<cci[
+2
+] && cci[
+0
+]>cci[
+1
+] &&
+Open
+[
+2
+]>
+Close
+[
+2
+] &&
+Open
+[
+1
+]>
+Close
+[
+1
+] &&
+Open
+[
+0
+]<
+Close
+[
+0
+] &&
+Open
+[
+1
+]<
+Close
+[
+0
+])
+//--- SELL
+if
+(cci[
+1
+]>-
+5
+&& cci[
+2
+]>cci[
+3
+] && cci[
+1
+]>cci[
+2
+] && cci[
+0
+]<cci[
+1
+] &&
+Open
+[
+2
+]<
+Close
+[
+2
+] &&
+Open
+[
+1
+]<
+Close
+[
+1
+] &&
+Open
+[
+0
+]>
+Close
+[
+0
+] &&
+Open
+[
+1
+]>
+Close
+[
+0
+])
+where:
+cci
+[] - array of CCI indicator values;
+Open
+[] and
+Close
+[] - open and close prices arrays, respectively.
+Main trading settings
+Lots
+- constant position volume (if martingale and incremental volume increase are disabled) or this is an initial lot for martingale and incremental volume increase;
+Stop Loss
+("0.0" → disabled);
+Take Profit
+("0.0" → disabled);
+Trailing Stop
+("0.0" → disabled);
+Trailing Step
+.
+CCI parameters
+CCI: averaging period
+- averaging period;
+CCI: type of price
+- type of price to calculate the indicator.
+Positions volume
+It can be specified in one of the following ways:
+fixed lot (
+Lots
+);
+martingale (
+Use martingale
+);
+incremental volume increase (
+Use step by step
+).
+Note
+: Do not use martingale and incremental volume increase simultaneously! Select only one method or disable both.
+Let's consider the last two methods of setting positions volume in more detail:
+Martingale
+The method is applied only if a loss-making position (positions) is present in trading history. Main settings:
+Use martingale
+- martingale flag;
+Martingale coefficient
+- position volume increase ratio;
+Ordinal number of the losing trade
+- index of a losing trade the volume increase starts from;
+Maximum number of multiplications
+- maximum number of position volume increases in a row.
+Volume incremental increase
+The method is applied to a series of loss-making or profitable positions. Main settings:
+Use step by step
+- incremental lot increase flag;
+Step lots
+- position volume increase step;
+Maximum lots
+- maximum volume to be used with incremental lot increase;
+Use step after...
+- apply incremental volume increase after:
+... losing
+- a losing trade;
+... profitable
+- a profitable trade.
+When using martingale,
+Stop Loss
+,
+Take Profit
+,
+Trailing Stop
+and
+Trailing Step
+parameters should be selected carefully apart from the martingale settings.
+The default parameters, M15, initial deposit $10 000, tets on all symbols:
+Symbol
+Pass
+Result
+Profit
+Expected Payoff
+Profit Factor
+Recovery Factor
+Sharpe Ratio
+Custom
+Equity DD %
+Trades
+EURGBP
+12
+510.69
+678.56
+3.29
+1.27
+0.55
+0.05
+0
+12.14
+206
+USDCHF
+1
+180.17
+250.96
+0.81
+1.08
+0.32
+0.02
+0
+7.25
+310
+EURCHF
+14
+178.94
+227.73
+0.80
+1.08
+0.22
+0.02
+0
+9.93
+284
+USDCAD
+3
+87.20
+113.09
+0.28
+1.03
+0.15
+0.01
+0
+7.26
+409
+AUDJPY
+9
+27.45
+1.28
+0.00
+1.00
+0.00
+0.00
+0
+7.44
+417
+CADCHF
+18
+-42.18
+-101.84
+-0.37
+0.97
+-0.09
+0.00
+0
+10.53
+272
+AUDUSD
+5
+-82.46
+-160.03
+-0.53
+0.95
+-0.14
+-0.01
+0
+10.91
+301
+EURCAD
+6
+-82.68
+-233.21
+-0.42
+0.95
+-0.19
+-0.01
+0
+11.98
+562
+USDJPY
+4
+-90.72
+-211.15
+-0.52
+0.95
+-0.21
+-0.01
+0
+9.63
+404
+EURUSD
+0
+-181.05
+-451.65
+-1.07
+0.90
+-0.24
+-0.02
+0
+17.60
+422
+AUDNZD
+7
+-227.43
+-305.03
+-0.94
+0.89
+-0.39
+-0.02
+0
+7.54
+324
+GBPUSD
+2
+-245.81
+-838.84
+-1.76
+0.86
+-0.62
+-0.03
+0
+13.20
+477
+EURNZD
+15
+-390.22
+-1381.32
+-2.01
+0.80
+-0.68
+-0.05
+0
+20.18
+686
+EURJPY
+16
+-390.24
+-1210.77
+-2.19
+0.80
+-0.58
+-0.04
+0
+20.45
+553
+EURAUD
+13
+-477.19
+-1483.33
+-2.41
+0.77
+-0.64
+-0.06
+0
+22.12
+616
+GBPJPY
+19
+-558.54
+-2645.95
+-3.87
+0.69
+-0.81
+-0.08
+0
+32.18
+683
+GBPCHF
+17
+-626.44
+-3325.40
+-6.56
+0.63
+-0.83
+-0.09
+0
+39.28
+507
+AUDCHF
+10
+-738.94
+-1472.97
+-5.11
+0.67
+-0.67
+-0.09
+0
+21.09
+288
+CHFJPY
+11
+-920.15
+-5540.53
+-12.95
+0.42
+-0.92
+-0.21
+0
+58.57
+428
+AUDCAD
+8
+-1541.16
+-3692.85
+-12.69
+0.35
+-0.94
+-0.24
+0
+39.19
+291
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21511

@@ -1,0 +1,30 @@
+Description:
+Expert Advisor is fairly simple and with a little practice it can be modified even people not familiar with the programming.
+An Expert Advisor opens the trade, based on the intersection of MA. Opening is filtered on the indicator RSI.
+If RSI> 50 - allowed only Buy
+If RSI <50 - allowed only Sell
+Variables:
+period_EMA = 28
+- period EMA line
+period_WMA = 8
+- between lines WMA
+period_RSI = 14
+- period RSI indicator
+stoploss = 0
+- level set stop loss orders at the opening (if 0, then the stoploss is not exposed)
+takeprofit = 500
+- level set take profit at the opening of a warrant (if 0, then takeprofit not exposed)
+risk = 10
+- if Lot = 0, then the size of the Lot is calculated as% (risk) of free funds
+Magic = 777
+- the unique number of orders of the adviser, is used to make the adviser does not affect the order open hand or other advisers.
+CloseCounter = false
+- if you set the parameter to true, the warrants will be closed at the opposite signal. Ie when opening Buy, Sell and close down all the way around.
+Lot = 0.1
+- lot may be installed either, but at zero lot will be calculated automatically.
+TrailingStop, Tip.Fr.or.Candl
+- Used in advisor TrailingStop detail:
+http://codebase.mql4.com/en/code/9530
+Tips:
+If you place takeprofit = 0, then be sure to CloseCounter = true, otherwise the order simply did not close.
+When installing the stoploss = 0, protective stop there, with the balance line in the tester is nice, but there is a risk of subsidence.

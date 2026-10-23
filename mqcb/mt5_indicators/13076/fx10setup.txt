@@ -1,0 +1,7 @@
+Real author:
+palanka
+Simple trend indicator based on a group of several technical indicators. Beginning of a strong trend is indicated by bars with corresponding color.
+Fig.1. The Fx10Setup indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13076

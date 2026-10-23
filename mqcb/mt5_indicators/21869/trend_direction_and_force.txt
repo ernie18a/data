@@ -1,0 +1,2 @@
+This indicator was made originally for metastock a long, long time ago
+There are multiple MetaTrader 4 versions but they were not converted to MetaTrader 5 yet. So here is the "basic" version of the trend direction and force index indicator for MetaTrader 5. It is showing the direction of the trend and also the intensity of the trend. Usually the signals are when the trend direction changes for the first time

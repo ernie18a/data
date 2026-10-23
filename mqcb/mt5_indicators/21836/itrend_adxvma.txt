@@ -1,0 +1,6 @@
+Very well known
+iTrend
+indicator but that uses
+ADXVMA
+for calculation.
+Due to ADXVMA properties it tends to have "flat" periods during the ranging periods, that makes it less sensitive to false changes and combined with iTrend calculation, it seems to be useful combination.

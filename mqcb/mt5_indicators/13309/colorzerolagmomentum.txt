@@ -1,0 +1,7 @@
+This variant of Momentum oscillator is calculated based on five Momentum indicators.
+All editable variables are implemented as indicator input parameters. However, keep in mind that these variables are interdependent to some extent, so you should adjust them more carefully!
+FactorN input variables represent the unit weight of Momentum with number N in total indicator value.
+Fig.1. The ColorZerolagMomentum indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13309

@@ -1,0 +1,106 @@
+'Three ATR Bands with multiple selection' indicator is a set of three ATR Bands indicators each having adjustable parameters.
+It has nineteen input parameters:
+Show middle lines
+- show the middle ATR Band (Yes/No)
+Show first ATR Bands
+- show the first ATR Bands indicator (Yes/No)
+First ATR period
+- ATR calculation period for the first ATR Bands
+First MA period
+- MA calculation period for the first ATR Bands (middle line)
+First MA type
+- MA type for the first ATR Bands
+First applied price
+- MA calculation price for the first ATR Bands
+First bands multiplier
+- ATR multiplier for the first ATR Bands
+Show second ATR Bands
+- show the second ATR Bands indicator (Yes/No)
+Second ATR period
+- ATR calculation period for the second ATR Bands
+Second MA period
+- MA calculation period for the second ATR Bands (middle line)
+Second MA type
+- MA type for the second ATR Bands
+Second applied price
+- MA calculation price for the second ATR Bands
+Second bands multiplier
+- ATR multiplier for the second ATR Bands
+Show third ATR Bands
+- show the third ATR Bands indicator (Yes/No)
+Third ATR period
+- ATR calculation period for the third ATR Bands
+Third MA period
+- MA calculation period for the third ATR Bands (middle line)
+Third MA type
+- MA type for the third ATR Bands
+Third applied price
+- MA calculation price for the third ATR Bands
+Third bands multiplier
+- ATR multiplier for the third ATR Bands
+The types of Moving Averages, which can be used for each of the three ATR Bands:
+Simple
+-
+simple moving average
+Exponential
+-
+exponential moving average
+Smoothed
+-
+smoothed moving average
+Linear-Weighted
+-
+linear weighted moving average
+Wilder Exponential
+-
+Welles Wilder's exponential moving average
+Sine-Weighted
+-
+sine-weighted moving average
+Triangular
+-
+triangular moving average
+Least Square
+-
+least square moving average (LSMA)
+Hull MA by Alan Hull
+-
+Hull's moving average (HMA)
+Zero-Lag Exponential
+-
+exponential moving average with the minimum delay
+Instantaneous Trendline by J.Ehlers
+-
+John Ehlers' trendline
+Moving Median
+-
+moving median
+Geometric Mean
+-
+moving average based on the geometric mean method
+Regularized EMA by Chris Satchwell
+-
+moving average based on Chris Satchwell's Regularized EMA method
+Integral of Linear Regression Slope
+-
+integral of linear regression slope (ILRS MA)
+Combination of LSMA and ILRS
+- moving average - combination of
+LSMA
+and
+ILRS
+methods
+Triangular MA generalized by J.Ehlers
+-
+John Ehlers' triangular moving average
+Volume-Weighted
+-
+volume-weighted moving average
+Calculation:
+Top = Middle + ATR * Multiplier
+Bottom = Middle - ATR * Multiplier
+Middle = MA(Applied price, MA period, MA type)
+Since the indicator provides wide options for adjusting the indicator lines, it is convenient for trading at rollbacks from extreme values.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23304

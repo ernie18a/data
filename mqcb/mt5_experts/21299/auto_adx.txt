@@ -1,0 +1,24 @@
+Idea by
+:
+Devid
+.
+MQL5 code by
+:
+barabashkakvn
+.
+The EA uses indicator iADX (Average Directional Movement Index, ADX), places Stop Loss and Take Profit, and can enable trailing of your positions. Two main parameters are used: "
+ADX Smoothing Period
+" and "
+ADX Level
+".
+The resting three parameters:
+Reverse
+- if it is "true", the EA closes a position opposite to the signal.
+Lots
+- defining the lot size manually, the constant lot size
+Risk
+- lot size is calculated dynamically, in risk percents per trade
+Upon optimizing for EURUSD,H1 (Attention! The code attached to the CodeBase contains NON-OPTIMIZED parameters!!!)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21299

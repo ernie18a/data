@@ -1,0 +1,10 @@
+According to the author
+Vitali Apirine
+, the width of the moving average bands indicator can be used as an indicator of volatility.
+Vitali Apirine
+:
+The distance between the bands will widen as volatility increases and will narrow as volatility decreases. The moving average band width (MABW) measures the percentage difference between the bands. Changes in this difference may indicate a forthcoming move or change in the trend.
+In this version the only deviation from the original published in TASC August 2021 magazine is that the indicator is drawing periods when the bands width is reaching its extreme lows in red (as a possible sign of expansion after extreme congestion)
+Recommendations:
+It is not a directional indicator - it indicates volatility
+You can probably use it for indication of possible trend changes (after the lower extremes are reached) or trend continuation after a period of ranging

@@ -1,0 +1,31 @@
+Real author
+: ANG3110
+A trend-following indicator of the main and signal lines, drawn as a color cloud.
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+double
+ki=
+4.000001
+;
+// Indicator smoothing ratio
+input
+Applied_price_ IPC=PRICE_CLOSE_;
+// price constant
+input
+int
+PriceShift=
+0
+;
+// vertical indicator shift in points
+input
+int
+Shift=
+0
+;
+// horizontal indicator shift in bars
+Fig 1. Ang_Zad_C
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21152

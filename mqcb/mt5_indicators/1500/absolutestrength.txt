@@ -1,0 +1,19 @@
+This indicator can be considered as an alternative to the well known
+RSI
+,
+Stochastic
+and
+DMI
+, as far as their methods of calculation based on Buyers and Sellers strengths. Despite of the enumerated indicators, the calculation is performed in points, not in a percentage. It gives a possibility to appreciate finer-grained market strengths and avoid such sufficient disadvantages as slippage in the strong trend for Stochastic.
+In the given version of the indicator there is a possibility to build levels of Strength (Strength Level) and Weakness (Weakness Level) using three ways:
+OverBought/OverSold levels (OverBought/OverSold),as in the RSI and Stochastic, regulated by StrengthLevel and Weakness Level parameters (for example, 70 and 30).
+The channel of the standard deviations regulated by LookBackPeriod parameters and coefficients for the upper (UpperMultiplier) and lower (LowerMultiplier) bound of the channel.
+High/Low Channel drawn on the principle of the price channel is regulated by the LookBackPeriod, StrengthLevel and Weakness Level parameters.
+The illustration shows 3 variants of building the Strength and Weakness Levels. In the first subwindow are OverBought/OverSold levels, in the second is the channel of standard deviations and in the third is High/Low Channel.
+The indicator has two additional smoothing using four type of the Moving Averages (MA_Mode: SMA, EMA, Wilder and LWMA):
+preliminary smoothing of the prices with the PreSmooth parameter.
+the main smoothing based on the calculated Bulls and Bears with the Smooth parameter.
+To define the bend points of Bulls and Bears lines are used signal lines which are regulated by Signal and MA_Mode parameters. The indicator also uses a built-in algorithm of drawing lines for higher timeframes.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1500

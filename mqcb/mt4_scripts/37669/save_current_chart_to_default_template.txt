@@ -1,0 +1,1 @@
+it saves the current chart to default template , it just helps to do it faster than a manual save. you can assign a hotkey for it. it has no confirmation and immediately saves the template, if you want it to save to a template other than default just edit the code and replace "default.tpl" to any other name you want.

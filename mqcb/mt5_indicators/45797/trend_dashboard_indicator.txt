@@ -1,0 +1,13 @@
+Trend Dashboard Indicator MetaTrader 5 indicator — a multi-timeframe indicator that is based on three standard indicators: Stochastic oscillator, RSI (Relative Strength Index), and CCI (Commodity Channel Index). It displays current trend directions for M1, M5, M15, M30, H1, H4, D1, W1, and MN1 timeframes. When you follow such an indicator you have a clear picture of the trends across all important timeframes. It doesn't matter which timeframe you attach this indicator to. The indicator can be downloaded for MT4 and MT5.
+Input parameters
+CheckCandle (default = Previous) — which candle to check indicator values on — works for both display and alerts.
+PercentK (default = 8) — the period in bars for calculation of the line %K of Stochastic indicator.
+PercentD (default = 3) — the period in bars for calculation of the line %D of Stochastic indicator.
+Slowing (default = 3) — the value for slowing of Stochastic indicator.
+RSIP1 (default = 14) — the period for the first RSI (fast).
+RSIP2 (default = 70) — the period for the second RSI (slow).
+Enable (default = false/true) — if true, Trend Dashboard Indicator calculates and displays signals for a given timeframe.
+EnableNativeAlerts (default = false) — if true, a native MetaTrader popup alert will be used when a confluence of signals appear for some of the timeframes.
+EnableEmailAlerts (default = false) — if true, an email message will be sent when a confluence of signals appear for some of the timeframes. Email should be properly configured in MetaTrader via Tools->Options->Email.
+EnablePushAlerts (default = false) — if true, an email message will be sent when a confluence of signals appear for some of the timeframes. Notifications should be properly configured in MetaTrader via Tools->Options->Notifications.
+Other parameters — symbol codes for trend direction arrows and colors.

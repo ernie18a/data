@@ -1,0 +1,35 @@
+A very simple sample of clock. You can select GMT, SERVER, or LOCAL time.
+input
+ENUM_TIME_FUNC  inp_tf = TIME_FUNC_LOCAL;
+CLoongClock c1;
+int
+OnInit()
+  {
+EventSetTimer
+(
+1
+);
+// 1 second
+c1.SetTimeFunc(inp_tf);
+return
+(
+0
+);
+  }
+void
+OnDeinit(
+const
+int
+reason)
+  {
+EventKillTimer
+();
+  }
+void
+OnTimer()
+  {
+   c1.Timer();
+ChartRedraw
+();
+  }
+Loong Clock

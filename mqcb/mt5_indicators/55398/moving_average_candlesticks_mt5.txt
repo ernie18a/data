@@ -1,0 +1,11 @@
+Moving Average Candlesticks MetaTrader indicator
+— is a chart visualization of a standard
+moving average
+using the candlestick bars. It draws the candlesticks based on the moving average values calculated for Close, Open, Low, and High. It allows seeing a compact snapshot of the more detailed market information compared with the classic MA indicator. It works with any currency pair, timeframe, and MA mode. The indicator is available for MT4 and MT5.
+Input parameters
+MAPeriod
+(default = 10) — the period of the moving average used in the calculations.
+MAType
+(default = MODE_SMA) — the method of the moving average.
+Example and strategy
+This indicator isn't a very good one to use for direct trading. It simply indicates the moving average cross as well as some other parameters of the chart. Use it to spot the irregularities in the price behavior by observing the candlestick bodies' length and the length of their shadows (wicks). The change of color might seem like a good entry signal, but it will give a lot of fake signals too.

@@ -1,0 +1,2 @@
+This EA will show the button that can used to close all orders by the current chart symbol.
+No input parameters.

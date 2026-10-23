@@ -1,0 +1,2 @@
+Indicator RSI_dots.
+RSI_dots

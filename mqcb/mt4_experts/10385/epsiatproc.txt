@@ -1,0 +1,133 @@
+Description:
+Seemed an interesting
+idea
+- first virtual open orders, and then, if the virtual trade this strategy is the Profit, the open market orders.
+Each of the strategies has its own rating as a percentage of the most successful.
+To drop the market order, you need to rank the strategy was above the minimum - MinRating.
+In order to simplify the scaling of new strategies in the counselor had to tweak the code.
+There is also a source strategies added two more "neural" from different authors and one for MA-Nike.
+The first "neyronka" has three ways of constructing Perceptron -
+VarPerceptron
+: 0 - Perceptron to Close \ Open; 1 - to iStochastic; 2 - on the CCI.
+Well, for a complete set of added
+this
+my library for managing capital.
+Each of the strategies has its own Magic, which is formed from the initial
+Base.Magic
+adding to it the number of strategies, so to make use of the library
+b-PSI@ICManager
+, preferably in row
+Allowed_Magics
+register all used Magics
+through
+",".
+Also, if the n-th number of strategies, it seemed to me that there would be superfluous, if we add to the capabilities of Councillor
+Traling total profit
+.
+Which can operate in two modes: Classic and MA (
+TrailProfitByMA = TRUE
+).
+Latest first draws a line of minimum profit> 2 warrants equal to 20 (set in code) units of currency depot, and then, when there is the inclusion of trailing, he draws and the price moves SL Profit.
+Trawl for each individual warrant from the strategy can also work on AI (
+Tx.Var.TS
+= 1), it can also be configured in a mode BezUbytka if
+Tx.OnlyBU = True
+.
+Feet also have two options for the formation of (
+Tx.Var.STOP
+: 0 - classic; 1 - By MA), and TP at
+Tx.Var.STOP
+=
+1
+can be formed in two ways: if
+Tx.TP
+=
+0
+, it will be made at MA
+, or
+TP
+=
+Tx.TP
+.
+Also regulated by the amount offered one strategy warrants -
+MAX_OrdersOnTC
+.
+Strategies used in the indicators can be set to the desired timeframe -
+Period.Indicators
+not necessarily coinciding with the period of the schedule.
+Periods of all relevant indicators, including trailing by MA, working on this parameter.
+Period.New.Send
+- regulates pause to open (if the conditions for the opening) of the following orders on the strategy, if
+MAX_OrdersOnTC
+> 1.
+More details about this site can be read in that
+article
+.
+In the archives of
+all the
+work
+for
+the library
+adviser
+.
+Well,
+as I mentioned
+at the beginning,
+you can
+effortlessly
+add to
+this system of
+their
+strategy.
+Number of processed
+advisor
+strategies
+governed
+by a constant
+#define MAX_TC
+.
+Prescribe
+conditions for
+the individual functions
+of opening and closing
+orders,
+add
+to the external
+configuration variables
+and
+their strategy
+-
+working
+!
+..
+WARNING!
+All external
+variables
+(set
+adviser
+), linked to
+the dimension of the
+quotations
+have
+capacity
+for 4
+digit
+s -
+you put
+a value
+for
+4-
+digits, and the
+adviser
+itself
+automatically
+recalculates the
+capacity
+depending on
+quotations
+received from
+DC
+!
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10385

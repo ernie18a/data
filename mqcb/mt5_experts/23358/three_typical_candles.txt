@@ -1,0 +1,54 @@
+The EA only operates when a new bar appears within a specified time interval. It calculates the Typical prices for bars #1, #2, and #3. This results in getting trading signals:
+double
+typical_3=(rates[
+3
+].high+rates[
+3
+].low+rates[
+3
+].close)/
+3.0
+;
+double
+typical_2=(rates[
+2
+].high+rates[
+2
+].low+rates[
+2
+].close)/
+3.0
+;
+double
+typical_1=(rates[
+1
+].high+rates[
+1
+].low+rates[
+1
+].close)/
+3.0
+;
+if
+(typical_3<typical_2 && typical_2<typical_1)
+if
+(count_buys==
+0
+)
+         m_need_open_buy=
+true
+;
+if
+(typical_3>typical_2 && typical_2>typical_1)
+if
+(count_sells==
+0
+)
+         m_need_open_sell=
+true
+;
+No more than one position is in the market at a time. A BUY open signal is also a SELL close one, and vice versa: A SELL open signal is a BUY close one (the algorithm is like this: First closing, and then opening).
+I recommend testing it on timeframes starting from H1 and higher and on several symbols.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23358

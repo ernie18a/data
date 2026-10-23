@@ -1,0 +1,91 @@
+MT4:
+//--- importing required dll files
+#include
+<WinUser32.mqh>
+#import
+"user32.dll"
+int
+GetAncestor(
+int
+,
+int
+);
+#define
+MT4_WMCMD_EXPERTS
+33020
+#import
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+void
+SetAlgoTradingTo(
+bool
+trueFalse) {
+//--- getting the current status
+bool
+currentStatus = IsTradeAllowed();
+//--- if the current status is equal to input trueFalse then, no need to toggle auto-trading
+if
+(currentStatus != trueFalse) {
+//--- Toggle Auto-Trading
+int
+main = GetAncestor(WindowHandle(
+Symbol
+(),
+Period
+()),
+2
+/*GA_ROOT*/
+);
+        PostMessageA(main, WM_COMMAND,  MT4_WMCMD_EXPERTS,
+0
+);
+//Toggle Expert Advisor button
+}
+}
+MT5:
+//--- importing required dll files
+#define
+MT_WMCMD_EXPERTS
+32851
+#define
+WM_COMMAND
+0x0111
+#define
+GA_ROOT
+2
+#include
+<WinAPI\winapi.mqh>
+//+------------------------------------------------------------------+
+//| Toggle auto-trading button                                       |
+//+------------------------------------------------------------------+
+void
+AlgoTradingStatus(
+bool
+newStatus_True_Or_False) {
+//--- getting the current status
+bool
+currentStatus = (
+bool
+)
+TerminalInfoInteger
+(
+TERMINAL_TRADE_ALLOWED
+);
+//--- if the current status is equal to input trueFalse then, no need to toggle auto-trading
+if
+(trueFalse != newStatus_True_Or_False) {
+//--- Toggle Auto-Trading
+HANDLE hChart = (HANDLE)
+ChartGetInteger
+(
+ChartID
+(),
+CHART_WINDOW_HANDLE
+);
+        PostMessageW(GetAncestor(hChart, GA_ROOT), WM_COMMAND, MT_WMCMD_EXPERTS,
+0
+);
+    }
+}
+//+------------------------------------------------------------------+

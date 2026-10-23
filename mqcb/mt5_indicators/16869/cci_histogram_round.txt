@@ -1,0 +1,16 @@
+Standard CCI oscillator implemented as a histogram rounding its values to the standard range:
+1 — no rounding;
+2 — all values divided by two;
+5 — all values divided by five;
+10 — all values divided by ten;
+20 — all values divided by twenty;
+50 — 0, 50, 100 etc.
+For all CCI values less than zero, rounding occurs to the lower side, while for all CCI values exceeding zero — to the greater one.
+The following input is used for rounding in the indicator:
+input
+ENAM_ROUND_MODE Round=X10;
+// rounding level
+Fig.1. CCI_Histogram_Round indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16869

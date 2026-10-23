@@ -1,0 +1,15 @@
+Indicator NewTrend_v1.
+Input Parameters:
+extern
+int
+Smooth
+=
+9
+;
+extern
+int
+Signal
+=
+9
+;
+NewTrend

@@ -1,0 +1,3 @@
+It displays the current time position in relation to the beginning and the end of the bar. In addition the ratio between the time passed since the beginning of the bar and the whole bar duration expressed in percents is given. The informer is useful for choosing the moment of making a trade decision.
+For example, I open the positions within 20% from the beginning of the candlestick and after 80% of it. In the first case, the previous candlestick is taken into the account, in the second case - the current one. I think that it is necessary to keep to the harder constraints on longer intervals.
+BarTimer

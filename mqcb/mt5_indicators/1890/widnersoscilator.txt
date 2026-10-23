@@ -1,0 +1,11 @@
+A normalized oscillator of two curves, similar to the
+Aroon
+indicator.
+The indicator logic is similar. The blue line is above the red one means that the trend is growing, red above blue - the trend is falling. Crossing of the lines means the moment of trend change.
+This indicator was first implemented in MQL4 and published in the
+Code Base at mql4.com
+on 12.02.2008.
+Figure 1. The WidnersOscilator indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1890

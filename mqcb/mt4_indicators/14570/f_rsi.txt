@@ -1,0 +1,20 @@
+The RSI with dynamic levels.
+Description of the indicator settings:
+Price
+— applied price.
+PRICE_CLOSE — Close price;
+PRICE_OPEN — Open price;
+PRICE_HIGH — High price for the period;
+PRICE_LOW — Low price for the period;
+PRICE_MEDIAN — Median Price, (High+Low)/2;
+PRICE_TYPICAL — Typical price, (High+Low+Close)/3;
+PRICE_WEIGHTED — Weighted Close price (High+Low+Close+Close)/4
+RSI_PERIOD
+— Averaging period for the indicator calculation.
+K
+— Coefficient, the distance between the dynamic levels.
+Mode
+— Averaging method. SMA — simple averaging. SMMA — smoothed averaging.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14570

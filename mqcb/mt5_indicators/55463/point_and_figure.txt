@@ -1,0 +1,73 @@
+Point-and-Figure MetaTrader 5 indicator
+is an indicator that can plot a point-and-figure chart directly in the main window of your normal MT5 chart. You can set up all the point-and-figure method parameters, such as the box size and the reversal distance, according to your preference. In addition, you can control all the display parameters of the PnF chart. This point-and-figure indicator supports all sorts of alerts. It is based on real ticks data, and thus is available only for MT5.
+Point-and-figure charting
+is an alternative method of displaying price changes. Its main feature is that it ignores time and takes into account only large enough changes in the exchange rates. Where "large enough" is defined by the trader according to their trading goals and strategy.
+Input parameters
+BoxSize
+(default = 60) — the box size in points. The price has to exceed this value for a new X or O to be printed on the chart.
+Reversal
+(default = 3) — the number of boxes for a reversal. The price has to go as many box sizes in the opposite direction before the chart is reversed from X's to O's or vice versa.
+Days
+(default = 1) — the number of days to get the real tick data for to build the initial point-and-figure chart. More days mean more data but require more computing power to process.
+PriceToUse
+(default = Bid) — the price to use in point-and-figure chart building:
+Bid
+— charting is based on the Bid price.
+Ask
+— charting is based on the Ask price.
+Midprice
+— charting is based on the average between the Bid and Ask prices.
+Bid/Ask
+— X's are based on the Bid price, O's are based on the Ask price.
+AlertOnXO
+(default = false) — if
+true
+, alerts will be issued whenever a new X or O is printed.
+AlertOnReversal
+(default = false) — if
+true
+, alerts will be issued whenever the point-and-figure chart reverses from a column of X's to a column of O's or vice versa.
+EnableNativeAlerts
+(default = false) — if
+true
+, a native MetaTrader popup alert will be used on either of the above conditions.
+EnableEmailAlerts
+(default = false) — if
+true
+, an email message will be sent for alerts. Email should be properly configured in MetaTrader via
+Tools->Options->Email
+.
+EnablePushAlerts
+(default = false) — if
+true
+, an email message will be sent for alerts. Notifications should be properly configured in MetaTrader via
+Tools->Options->Notifications
+.
+ColorUp
+(default = clrGreen) — the color for the rising point-and-figure symbols (X's).
+ColorDown
+(default = clrRed) — the color for the declining point-and-figure symbols (O's).
+FontSize
+(default = 15) — the font size to use for the chart symbols (X's and O's).
+Font
+(default = "Arial") — the font to use for the chart symbols.
+X
+(default = "x") — the symbol to mark the rising price levels.
+O
+(default = "o") — the symbol to mark the declining price levels.
+SilentMode
+(default = true) — if
+false
+, information about each printed X and O will be printed in the
+Experts
+tab of the
+Toolbox
+subwindow.
+MaxObjects
+(default = 10000) — the maximum allowed number of chart objects (X's and O's) for the indicator to create. You can use this parameter to prevent the indicator from overloading your platform due to wrong settings.
+ObjectPrefix
+(default = "PNF-") — the prefix for chart objects for compatibility with other indicators.
+Example
+The example image below shows 4 days of EUR/USD price action compressed into 47 columns of X's and O's with the Point-and-Figure indicator in MT5. The box size is set to 60 points (6 pips) with reversal equaling 3.
+You can still do the classic support and resistance and trendline analysis with point-and-figure charts. Some traders even operate using PnF chart patterns, for example, pennants, triangles, double tops and bottoms.
+Here is a sped-up video of the Point-and-Figure MT5 indicator plotting a chart for the BTC/USD pair using $10 (1000 points) as the box size and the reversal value set to 3:

@@ -1,0 +1,20 @@
+The five classic moving averages are present:
+Simple
+moving average
+Exponential
+moving average
+Smoothed
+moving average
+Linear weighted
+moving average
+Smoothed
+moving average
+The indicator displays a colored moving average.
+It has three parameters:
+Period calculation period
+Method calculation method
+Price applied prise used for calculation
+This version is faster and code is more flexible and reusable
+Technical Indicator Description
+Full description of MA is available in the
+Technical analysis: Moving Averages

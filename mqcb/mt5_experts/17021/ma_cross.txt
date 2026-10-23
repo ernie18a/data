@@ -1,0 +1,14 @@
+Author of the idea
+—
+Duke3D
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Intersection of two iMA.
+The Expert Advisor works based on intersections of two moving averages. At an intersection a position is opened either upward or downward, at a reverse intersection the position is closed.
+I offer you to test it and say whether it has the right to live.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17021

@@ -1,0 +1,6 @@
+When the market is close to the flat state, the majority of indicators generate a lot of false signals. Meanwhile, there is a quite easy way to filter, may be, not everything, but a quite considerable part of the signals of this kind. As far as the appearance of strong trend movements is almost always accompanied by the volume increase, the usage of indicator may be useful for determination of optimal points to enter the market.
+The suggested indicator of the normalized volume build the chart of tick volume values per average value of the period. Owing to this normalization of the current vloume value, the possibility of easy and accurate criteria of market entrance can be produced. So, if the chart line is above 1.0 value, it means that the current volume value is higher than the avearage for the period, therefore the indiocator's signals, that the trading is preformed with, should be considered as the true ones.
+We recommend to use 8 value for the avearging period.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8156

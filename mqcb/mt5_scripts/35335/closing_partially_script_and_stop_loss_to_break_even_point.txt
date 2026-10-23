@@ -1,0 +1,8 @@
+closing partially script
+and Stop loss to Break Even point
+Input Parameters are as follows.
+input bool ParticalClosed=false;
+input int ClosedVolume=50;//Percentage of Lots to Close %
+input string ack="Type 50 for 50%";
+input bool  StopMoveToBE=false;
+input int   AddBreakEventPips=10;// opening price +1 Pips

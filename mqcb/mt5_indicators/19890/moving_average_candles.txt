@@ -1,0 +1,15 @@
+Moving Average Candles draws a moving average as candlesticks.
+It has five input parameters:
+MA period
+- moving average calculation period
+MA method
+- moving average calculation method;
+MA shift
+- shift;
+Bullish candles color
+- color of bullish candlesticks;
+Bearish candles color
+- color of bearish candlesticks.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19890

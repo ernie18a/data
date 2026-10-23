@@ -1,0 +1,8 @@
+Historical Volatility Bands that are constructed using:
+Average as the middle line.
+Upper and lower bands using the
+Parkinson's historical volatility
+(instead of "regular"
+Historical Volatility
+) for bands calculation.
+Color of the middle line is, unlike the bands colors, having 3 colors. When colors of the bands are the same, then the middle line is having the same color, otherwise it is having a neutral color.

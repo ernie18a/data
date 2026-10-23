@@ -1,0 +1,2 @@
+Author: Kiko Segui
+FX Fish 2MA indicator.

@@ -1,0 +1,1 @@
+This EA demonstrate the implementation of martingale in any EA base don the signals from any indicator..

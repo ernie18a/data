@@ -1,0 +1,14 @@
+The indicator searches for candlesticks, which are larger than the specified size, and marks such candlesticks on the chart. It can also show an Alert message, once the current candlestick exceeds the preset size value. There are three adjustable parameters:
+Size level
+- candlestick size in points;
+Displays only last bar
+- only the current bar will be marked on the chart;
+Use alerts
+- showing an alert message to notify that the current candlestick size exceeds the preset value.
+Fig.1 Size 10, only the current bar.
+Fig.2 Size 10, only the current bar, alerts enabled.
+Fig.3 Size 400, all bars.
+Fig.4 Size 800, all bars.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19784

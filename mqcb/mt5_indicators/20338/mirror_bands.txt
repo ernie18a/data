@@ -1,0 +1,16 @@
+The indicator is similar to Bollinger Bands, but has a signal ("mirror") line.
+It has four input parameters:
+Period
+- calculation period
+MA period
+- MA line calculation period
+Deviation
+- deviation, the width of the band
+Applied price
+- price used for calculation
+Interpretation of the indicator:
+Enter a long position, when the MA line crosses the Mirror line upwards
+Enter a short position, when the MA line crosses the Mirror line downwards
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20338

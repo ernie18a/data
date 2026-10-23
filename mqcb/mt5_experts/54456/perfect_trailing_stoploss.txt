@@ -1,0 +1,2 @@
+Copy these into any EA you are busy coding and you"ll have a trailing SL.
+The only things you'll need to change would probably be InpMagic for your magic number or you could just copy my code as is , Remember to add COrderinfo ord; and CPositionInfo pos;

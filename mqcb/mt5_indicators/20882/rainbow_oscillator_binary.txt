@@ -1,0 +1,9 @@
+Based on Mel Widner's Rainbow Average (that is similar to
+Guppy MMA
+), here is a binary version of
+Rainbow Oscillator
+.
+It shows only two states:
+state up.
+state down.
+That makes it suitable for cases when a simple access to indicator values is required (like from experts).

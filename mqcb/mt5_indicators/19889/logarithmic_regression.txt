@@ -1,0 +1,16 @@
+The indicator draws a channel calculated by the logarithmic function.
+There are three adjustable parameters:
+Length
+- the channel length in bars;
+Deviation
+- channel width;
+Applied price
+- price used for calculation.
+The appearance of the channel depends on its length, i.e. the number of bars calculated.
+Fig.1 Length 50, chart period H4
+Fig.2 Length 75, chart period H4
+Fig.3 Length 100, chart period H4
+Fig.4 Length 100, chart period MN
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19889

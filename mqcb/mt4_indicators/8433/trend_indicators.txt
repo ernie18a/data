@@ -1,0 +1,6 @@
+I can't give the link to the idea. It was taken from one of the forums.
+I tried to extend the idea. And a part of the indicators is the variations with WPR again.
+Trend Indicators
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8433

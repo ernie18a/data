@@ -1,0 +1,1 @@
+It is Diffrent complex Range BreakOut system. Using to Range Breakout system is defined by min number of bars and max width in pips. This robot is can use to volatility instrument.

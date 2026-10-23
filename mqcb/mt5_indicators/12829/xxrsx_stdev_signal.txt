@@ -1,0 +1,22 @@
+Real author:
+olegok83
+Semaphore signal indicator based on the
+XXRSX_StDev
+indicator values.
+input
+Applied_Mode Mode=Mode_LevelsStDev_On;
+// Algorithm variant
+Depending on the value of Mode input parameter, the indicator uses one of the 5 methods of determining signals:
+Levels only. The indicator determines when the original oscillator XXRSX enters the overbought or oversold areas specified by the UpLevel and DnLevel input parameters.
+Deviation only. The indicator captures the moments when the deviation exceeds the boundary values determined by the dK input parameter.
+Levels plus deviation. In this case, signals appear when the deviation exceeds the boundary values determined by the dK input parameter, and the XXRSX oscillator is in the oversold or overbought area.
+Levels plus deviation by trend. This algorithm is similar to previous, but only uptrend signals are taken into account in the overbought area, and downtrend signals in the oversold area.
+Levels plus deviation against trend. The last algorithm is similar to third algorithm, but only downtrend signals are taken into account in the overbought area, and uptrend signals in the oversold area.
+The indicator uses SmoothAlgorithms.mqh library classes (copy it to <terminal_data_folder>\MQL5\Include). The use of the classes was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+This indicator requires the compiled indicator file XXRSX_StDev.mq5. Place it in <terminal_data_folder>\MQL5\Indicators\.
+Fig.1. The XXRSX_StDev_Signal indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12829

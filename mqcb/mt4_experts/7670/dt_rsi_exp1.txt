@@ -1,0 +1,9 @@
+Author: klot
+Adviser DT-RSI-EXP1. Uses indicators RSI and
+RFTL
+.
+-------------------------
+Parameters of testing
+Symbol: EURUSD.
+Period: H4.
+Model: Control points.

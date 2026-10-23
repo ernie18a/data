@@ -1,0 +1,22 @@
+Author:
+Loong
+Draws 96 line MAs with only 100 lines of code (uses MyBuffer class).
+History: The idea is got from Rosh's topic
+https://www.mql5.com/ru/forum/102881/page6
+https://www.mql5.com/zh/forum/102888/page2
+https://www.mql5.com/en/forum/102908/page4
+https://www.mql5.com/en/forum/102908/page5
+And the idea in Chinese name, called 'jun xian liu'.(That means "Moving Average Line Flow".) I wanted to simplify the multi-indicator template with a multi-line indicator. But it means many repetitive codes.
+Or I need two-dimensional array, one dimensional for time index, another dimensional for MAs[] index. In MQL4, it is impossible. (And MQL4 support only 8 line indicator.) Then we had
+MetaTrader 5
+and MQL5, them support class. And class can hide one dimensional. So I achieved the first version, at
+https://www.mql5.com/en/forum/121672
+(notice: the old class named '
+CIndicatorBuffer
+' conflicts with same name in Indicator.mqh)
+Later, a newer version be discussed at
+https://www.mql5.com/en/forum/331/
+(Thank 'Rosh' and 'investeo'!)
+And now, the newest version is here.
+Input parameters:
+Parameters? forget it! It work fine without changing parameters.

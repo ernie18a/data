@@ -1,0 +1,3 @@
+Non Lag Relative Strength Index for MT5
+Eliminates unnecessary preliminary calculations on the built-in RSI.
+/** Update_01: 27/11/2023 **/

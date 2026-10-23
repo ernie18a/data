@@ -1,0 +1,5 @@
+This indicator is actually a combination of two values: it shows the crosses of fast and slow
+Zero Lag TEMA
+, and that cross determines the current market trend.
+Since Zero Lag TEMA is from a family of fast averages, this indicator is very responsive to sudden market changes.
+PS: it is a standalone indicator. It does not need any other indicator in order to work correctly.

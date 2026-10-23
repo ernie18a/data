@@ -1,0 +1,45 @@
+Gueta Position Sizer
+is a professional, lightweight on-chart risk calculator and minimum lot guard designed for MetaTrader 5. It dynamically computes the exact position size in lots based on your specified risk percentage and Stop Loss distance, helping traders enforce institutional risk management across Forex, Indices, and Commodities.
+Core Mathematical Principle
+The indicator solves the fundamental position sizing formula in real time:
+Position Size (Lots) = (Account Balance × Risk %) / (SL Points × Tick Value / Tick Size)
+All calculated lots are automatically normalized to the broker's exact LOT_STEP , LOT_MIN , and LOT_MAX parameters.
+Key Features
+Exact Risk Sizing:
+Define risk from 0.1% to 5.0% of account balance or equity.
+Dynamic Volatility (ATR) Mode:
+Automatically adjust Stop Loss to market volatility using Average True Range.
+Minimum Lot Guard:
+Instantly warns the trader in bold red text if the minimum possible contract (e.g., 0.01 lot) exceeds the target risk budget.
+Live Heads-Up Display (HUD):
+Shows account balance, risk amount in currency, tick value, required margin, and recommended lot size directly on the chart.
+Zero External Dependencies:
+Self-contained MQL5 indicator without DLLs or third-party libraries.
+Indicator Parameters
+Parameter
+Default Value
+Description
+InpRiskPercent
+1.0
+Target risk as a percentage of account balance (e.g. 1.0 = 1%)
+InpStopLossPoints
+300
+Fixed Stop Loss distance in points (used when ATR mode is false)
+InpUseATR
+true
+Use Average True Range for dynamic volatility-based Stop Loss
+InpATRPeriod
+14
+Period for ATR calculation
+InpATRMultiplier
+1.5
+ATR multiplier for Stop Loss distance
+InpCorner
+CORNER_LEFT_UPPER
+Chart corner to anchor the risk HUD panel
+Interpretation & Alerts
+The indicator updates on every incoming tick. When the HUD displays
+NORMAL (GREEN)
+, your position size respects your chosen risk limit. If the account capital is insufficient for the asset's minimum contract size, the HUD turns
+ALERT (RED)
+with the exact risk overshoot warning.

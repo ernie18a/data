@@ -1,0 +1,13 @@
+The indicator draws the market profile.
+References about market profile:
+E. Naiman. The Way to Financial Freedom.
+J. Piper. The Way to Trade.
+The author colored sessions: yellow - Asian session, blue - European session, red - American session. It displays results on M30 and M15.
+Parameters:
+StartDate - for backtesting (from what date to start drawing)
+lastdayStart - if it is 'true', then it draws up to the last day (StartDate is ignored)
+CountProfile - set how many profiles should be drawn.
+Mode is drawn in white. Volume is not considered. There are situations where it considers volumes, but it 99% matches it. IMHO, it is of no importance for Forex.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8115

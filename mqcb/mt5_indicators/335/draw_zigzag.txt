@@ -1,0 +1,19 @@
+The indicator plots the Zigzag ("saw") using the High and Low prices.
+The
+DRAW_ZIGZAG
+drawing style allow to draw sections using the values of two indicator buffers. It looks like
+DRAW_SECTION
+, but it allows to draw vertical sections inside one bar. The color, width and style of Zigzag lines changed randomly after N ticks. The N variable is defined as input parameter, it can be changed using the "Properties" window.
+Note that initial properties of the plot1 graphic plot (
+DRAW_ZIGZAG
+) are defined using the #
+property
+preprocessor directive, further these properties changed randomly (
+OnCalculate()
+function).
+See also:
+The Drawing Styles in MQL5
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/335

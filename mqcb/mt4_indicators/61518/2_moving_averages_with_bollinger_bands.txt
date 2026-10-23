@@ -1,0 +1,58 @@
+2 Moving Averages with Bollinger Bands
+is a powerful and flexible technical analysis indicator for MetaTrader 5 (MT5) that combines two classic trading tools:
+moving average crossovers
+and
+Bollinger Bands
+.
+📌
+Key Features:
+✅ Configurable
+two moving averages
+(fast/slow):
+Customizable period, method (SMA, EMA, SMMA, LWMA), and applied price
+✅
+Buy and Sell arrows
+based on crossover logic:
+A
+Buy signal
+appears when the fast MA crosses above the slow MA
+A
+Sell signal
+appears when the fast MA crosses below the slow MA
+✅ Optional
+alerts system
+:
+Chart alerts
+Sound alerts ( alert.wav )
+Email notifications
+✅ Integrated
+Bollinger Bands
+:
+Upper, Middle, and Lower Bands displayed
+Fully customizable: period, deviation, applied price, style, and shift
+✅ Works on
+any symbol and time frame
+✅ Clean, non-repainting logic based on closed candles
+✅ Suitable for scalping, swing, or trend-following strategies
+📊
+Use Case:
+This indicator helps traders identify potential
+trend reversals
+and
+entry points
+based on moving average crossovers while visually monitoring
+volatility
+and
+price channels
+using Bollinger Bands. It can be used as a standalone tool or combined with additional filters like RSI or CCI for more advanced setups.
+⚙️
+Input Settings Overview:
+MA1 Settings (Fast MA): Period, Method, Price
+MA2 Settings (Slow MA): Period, Method, Price
+Bollinger Bands Settings: Period, Deviation, Shift, Style, Width, Price
+Alerts: Enable/Disable chart, sound, or email alerts
+⚠️
+Disclaimer:
+This indicator does not guarantee profitable trades. Use it with proper risk management and strategy testing. The developer is not responsible for any financial losses.
+Download for MT5. You will found in :
+2 Moving Averages with Bollinger Bands

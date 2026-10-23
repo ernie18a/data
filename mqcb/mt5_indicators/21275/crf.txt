@@ -1,0 +1,42 @@
+Indicator CRF (Cumulative Rotation Factor) displays the states of the market:
+Uptrends
+/
+downtrends
+/
+consolidation
+.
+It has no configurable parameters:
+Calculations:
+CRF = PrevCRF
+If
+High > PrevHigh
+:
+CRF = PrevCRF + 1
+Otherwise, if
+High < PrevHigh
+:
+CRF = PrevCRF - 1
+If
+Low > PrevLow
+:
+CRF = PrevCRF + 1
+Otherwise, if
+Low < PrevLow
+:
+CRF = PrevCRF - 1
+Color:
+If
+CRF > PrevCRF
+, then color is
+green
+If
+CRF < PrevCRF
+, then color is
+red
+If
+CRF == PrevCRF
+, then color is
+gray
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21275

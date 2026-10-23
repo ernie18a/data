@@ -1,0 +1,9 @@
+Firstly attributions for the initial COG code need to go to
+//| Original Code from NG3110@latchess.com
+//| Linuxser 2007 for TSD http://www.forex-tsd.com/
+For traders who have mastered the art of trading with COG, the Stochastic COG should be no problem to interpret. It appears to lead the On Chart COG as divergence takes place as you would expect.
+COG is often misunderstood because it portrays ( like Zig Zag ) a perfect past. Having linear regression logic, the present is often a different story. I personally do not trade with it, but have noticed that it can serve as a very good overall trend channel style indicator. If you want to see how a COG behaves in real time, I have made a video that shows both indicators working together.
+http://www.brooky-indicators.com/?p=1058
+If you do not have much experience with COG style indicators, just Google the term and you will find several strategies being discussed on the forums.
+Cheers
+Brooky

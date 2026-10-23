@@ -1,0 +1,6 @@
+It appeared occasionally, in a manner of speaking, it is a byproduct. The basis of it is the position of the NavelSMA moving in relation to two SMA movings drawn by the HIGHs and LOWs of the bars. I usually use the NavelXXX movings instead of the standard ones by Close, because I has added all four parameters (O, H, L, C) in their calculation, they're are slightly smoother and they "rattle" less on the zero bar.
+I was very surprised when obtained the picture. If you want to experience the same place the BO and AO one below the other on a single window. It turns out that "all roads lead to Rome"? I didn't try to find out what is better, what is worse and what is the difference, it's been born so may it live.
+Compile both files, NavelSMA is called through the BO via the iCustom().
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8653

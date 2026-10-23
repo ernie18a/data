@@ -1,0 +1,2 @@
+LRDegrees MT5 is the indicator for MetaTrader 5 will show double trend line of the linear regression, and gives the position degree of short line and provide alerts when the trend line changes direction.
+*== Last Update: 2026/02/10 ==*

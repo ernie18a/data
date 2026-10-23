@@ -1,0 +1,5 @@
+Semaphore signal indicator SilverTrend with the NRTR line of possible stop order locations.
+Fig.1. Indicator SilverTrend_NRTR
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20935

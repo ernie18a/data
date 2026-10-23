@@ -1,0 +1,72 @@
+An example of receiving the High and Low prices of bars over the past 24 hours.
+Hot Keys:
+The "H" key (case insensitive) — find the High price
+The "L" key (case insensitive) — find the Low price
+To get the High and Low prices, the third form of call
+CopyHigh
+and
+CopyLow
+is used:
+Requesting based on the first and last date of the required time interval:
+int
+CopyHigh
+(
+string
+symbol_name,
+// Symbol name
+ENUM_TIMEFRAMES
+timeframe,
+// Period
+datetime
+start_time,
+// Start date
+datetime
+stop_time,
+// End date
+double
+high_array[]
+// Array to copy High prices
+);
+Requesting based on the first and last date of the required time interval:
+int
+CopyLow
+(
+string
+symbol_name,
+// Symbol name
+ENUM_TIMEFRAMES
+timeframe,
+// Period
+datetime
+start_time,
+// Start date
+datetime
+stop_time,
+// End date
+double
+low_array[]
+// Array to copy Low prices
+);
+The time interval is represented as follows:
+datetime
+stop_time   =
+TimeCurrent
+();
+// stop date and time
+datetime
+start_time  = stop_time-
+24
+*
+60
+*
+60
+;
+// start date and time
+start_time <-> stop_time
+Visualization:
+For convenience, text information is displayed on the chart (the example with low prices):
+Also a vertical line is displayed in the chart (it shows the left border of the time interval), and a horizontal line is shown (means the searched price) — (the example with low prices):
+The video with a sample search:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17528

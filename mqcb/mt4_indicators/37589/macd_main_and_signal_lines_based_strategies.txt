@@ -1,0 +1,4 @@
+This indictor plots multiple signals based on MACD depending on the following
+1. Whether the MACD is positive or negative
+2. Whether the MACD main and signal line are crossing over
+3. Whether the MACD and close prices are crossing over.

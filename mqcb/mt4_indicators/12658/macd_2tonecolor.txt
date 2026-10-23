@@ -1,0 +1,1 @@
+Custom MACD indicator with 2 tone color (MACD Up and MACD Down colors).

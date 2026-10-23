@@ -1,0 +1,3 @@
+T3 is a very well known indicator. It is smooth and it is fast.
+In the process of making it faster, two coders (Bob Fulks and Alex Matulich) have altered the T3 calculation to make it faster. This version can calculate both of the calculating ways : original (Tim Tillson way) and altered (Fulks/Matuklich) way.
+But it also uses the "zero lagging" method to make it even faster and to keep the smoothness. This is the Zero lag T3.

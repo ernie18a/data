@@ -1,0 +1,23 @@
+The indicator draws a moving line based on interpolation by a polynomial of 4 degrees. Built line extrapolate a sine wave and its axial or nearly constant
+line_power=2
+, or around an inclined straight
+line_power=3
+(redrawn for the visualization of building).
+One value on each bar is removed from the constructed sine and axial ones and a line of extrapolated values is drawn,
+which is not redrawn
+.
+MT5
+External variable:
+line_power
+- degree of the extrapolated lines;
+leverage
+- the leverage of removing the value for the resulting line. Set far back from the first moving line;
+multiplier
+-multiplier. If it is zero, then the value is removed from the axial, if it is equal to one then from the sine wave, if it is equal to minus one then from the point of the mirror sine wave through the axial. It can take any value.
+line4_SHIFT
+- offset of the resulting line of extrapolated values;
+interval
+- multiplies the averaging leverage.
+Refinement of the indicator from the theme:
+Разностное исчисление, примеры.
+Possible development of indicator potential.

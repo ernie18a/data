@@ -1,0 +1,14 @@
+Author:
+cluster indicatos CC and CCFp is originaled by
+Simeon Semenych
+, please ref to
+https://www.mql5.com/en/articles/1472
+for what ideas is the code based on and how can the indications be interpreted.
+My udpdated version provide the following 3 features
+1) the indicator refreshes itself for current bar, while the original does not.
+2) the indicator can be used for brokers who has extra char in their symbol for pair, such as "EURUSD_fx", while the original does not.
+3) the indicator has extra external variable, if ShowOnlyPairOnChart=True, then the indicator show the line for the current pair, however, it still takes all pairs into calculation.
+Usage: it can be used to detect the relative strength for each currency by calculate their MAs. The MA settings are optimized by Simeon Semenych, so one best is not change it.
+It is best to be used on H4 and larger timeframe.
+If you want to chech the relative strength on small timeframe, then the T101 system is better in combination with cluster indicator. search Traders101 system on Forexfactory then.
+The indicators takes around 1 minuet to load the first time to load up, since it calculates all the pairs MA. Be patient.

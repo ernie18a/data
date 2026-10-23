@@ -1,0 +1,6 @@
+The RSI indicator implemented as candlesticks with indication of breaking the overbought and oversold areas. Candlesticks appear as a result of relevant price timeseries processed by the RSI algorithm. In many situations, such approach may be more informative for the purpose of analysis.
+If the growing candle has a High above the overbought level, then it is painted in dark blue. If the growing candle crosses the oversold level or touches it from above, its color will also be painted in dark blue. Similarly, the opposite is for falling candles in bright red color. In other cases, the color of candles is pale.
+Fig.1. The RSICandleV2 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16202

@@ -1,0 +1,45 @@
+FoxWave Pip Value Calculator
+is a lightweight yet powerful MT5 indicator that displays a clean, always-on-screen panel with everything you need to trade with precise risk control — no manual calculations, no spreadsheets.
+What it does
+► Pip Value (1.00 lot)
+Shows the real-time pip value for the current chart symbol in your account currency. Automatically handles 3-, 4-, 5-digit brokers and all asset classes (Forex, indices, commodities, crypto).
+► Suggested Lot Size
+Enter your desired risk % and stop loss distance in pips. The indicator instantly calculates the correct lot size to keep your risk exactly where you want it — updated live on every tick.
+► Your Volume — Actual Risk Analysis
+Enter any custom lot size (e.g. 0.10) and the panel shows:
+Pip value for that exact volume
+Actual risk % of your account balance (given your SL distance)
+Actual risk in account currency
+Color-coded feedback tells you at a glance whether your chosen size is safe:
+🟢 Green — at or within your target risk
+🟠 Orange — slightly over your target (up to 50% above)
+🔴 Red — significantly over your target risk
+► Open Position Monitor
+If you have an open trade on the current symbol, the panel shows:
+Open volume in lots
+Current pips gained / lost
+Floating P/L in account currency (including swap)
+All values update automatically every second (configurable).
+Key Features
+Works on any symbol and any broker
+Fully customizable colors, panel position and refresh rate
+Zero indicator buffers — no chart clutter
+Minimal CPU footprint (timer-based, not tick-based)
+Clean dark panel design — readable on any chart background
+Inputs
+Parameter
+Description
+PanelX / PanelY
+Panel position on chart
+RefreshSeconds
+Update interval (default: 1 sec)
+RiskPercent
+Target risk % per trade
+StopLossPips
+SL distance used for lot calculation
+MyVolume
+Your custom lot size to analyze
+Colors
+Full color customization for every element
+Who is it for?
+Any trader who wants instant, accurate risk sizing without switching between tools. Ideal for day traders and scalpers who need fast decisions with controlled risk.

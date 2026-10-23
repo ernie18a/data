@@ -1,0 +1,6 @@
+A program implementation of the midline and bollinger bands superimposed on the MACD. It is used in the strategy:
+http://unfx.ru/strategies_to_trade/strategies_139.php
+Maybe it will be useful for somebody.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8303

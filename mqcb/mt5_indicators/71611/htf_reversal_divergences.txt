@@ -1,0 +1,94 @@
+This indicator combines two powerful analytical tools into a single overlay:
+RSI divergence detection
+and a
+Higher Timeframe (HTF) Power of 3 (PO3) candle projection
+. Divergences between price action and the RSI are one of the most reliable early warning signs of a potential trend reversal. When price makes a new low while RSI makes a higher low, a bullish reversal becomes probable. When price makes a new high while RSI makes a lower high, a bearish reversal is likely. This indicator automates that detection across all historical bars and continues to monitor in real time, marking every confirmed divergence with trend lines on both the main chart and the RSI subwindow.
+In addition to divergence detection, the indicator renders a live candle projection panel to the right of the last chart bar. This panel displays the most recent closed candles from a user-selected higher timeframe, alongside the currently forming live HTF candle. Each projected candle shows its Open, High, Low, and Close values along with a signed
+Delta
+(tick volume with direction), giving traders an at-a-glance view of HTF momentum without switching charts. Historical candles are rendered in a muted gray tone to visually distinguish them from the live candle, which is displayed in full color.
+The indicator also includes a built-in
+signal filter system
+that combines RSI level thresholds, HTF candle direction, and Delta direction to qualify divergence signals. Only divergences that pass all active filters produce a colored arrow on the chart and update the on-chart
+dashboard panel
+. The dashboard displays the current symbol and timeframe, HTF candle direction, live RSI reading, live Delta reading, and the last confirmed signal with its timestamp. Optional pop-up alerts notify the trader when a fresh bullish or bearish divergence forms on the current bar. All drawn objects are cleanly removed when the indicator is removed from the chart.
+Input Parameters
+Parameter
+Default Value
+Description
+=== RSI Divergence ===
+InpRsiLen
+14
+RSI period used for divergence calculations. Shorter values produce more sensitive signals; longer values filter out noise.
+InpLbLeft
+5
+Number of bars to the left that must be lower (for pivot low) or higher (for pivot high) than the pivot candidate bar in the RSI buffer.
+InpLbRight
+5
+Number of bars to the right that must be lower (for pivot low) or higher (for pivot high) than the pivot candidate bar. Increasing this value delays detection but reduces false pivots.
+InpBullDivCol
+clrLime
+Color used for bullish divergence trend lines and labels in both the RSI subwindow and the main chart.
+InpBearDivCol
+clrRed
+Color used for bearish divergence trend lines and labels in both the RSI subwindow and the main chart.
+InpShowOnChart
+true
+When enabled, divergence trend lines and text labels are mirrored onto the main price chart in addition to the RSI subwindow.
+=== HTF PO3 Settings ===
+InpHTF
+PERIOD_H1
+The higher timeframe from which candles are fetched for the PO3 projection panel. Select any standard MetaTrader 5 timeframe equal to or higher than the current chart timeframe.
+InpCandleCount
+3
+Total number of HTF candles to project to the right of the last chart bar. The rightmost candle is always the currently forming live HTF candle; all others are closed historical candles. Maximum is 10.
+InpRightOffset
+3
+Gap in chart bars between the last visible price bar and the first projected HTF candle. Keep this value small (1 to 5) to avoid placing the projection too far to the right.
+InpShowLabels
+true
+When enabled, OHLC price labels (O, H, L, C) are displayed next to the live HTF candle in the projection panel.
+InpShowDelta
+true
+When enabled, a signed Delta value (derived from tick volume with direction) is displayed below each projected candle. Positive Delta is shown in green; negative Delta in red.
+InpBullCandle
+C'8,153,129'
+Fill and wick color for bullish (close above open) projected candles in the PO3 panel.
+InpBearCandle
+C'242,54,69'
+Fill and wick color for bearish (close below open) projected candles in the PO3 panel.
+=== Signal Filters ===
+InpUseHTFConfirm
+true
+When enabled, a divergence signal is only confirmed if the live HTF candle direction matches the signal direction. A bullish divergence requires a bullish HTF candle; a bearish divergence requires a bearish HTF candle.
+InpRsiBuyLevel
+45.0
+RSI threshold for bullish signals. A bullish divergence only passes the filter if the RSI value at the pivot bar is below this level, ensuring the signal occurs in oversold or weakening momentum territory.
+InpRsiSellLevel
+55.0
+RSI threshold for bearish signals. A bearish divergence only passes the filter if the RSI value at the pivot bar is above this level, ensuring the signal occurs in overbought or weakening upside momentum territory.
+InpUseDeltaFilter
+true
+When enabled, the live HTF Delta must confirm the signal direction. A bullish signal requires positive Delta; a bearish signal requires negative Delta. This filter applies only to live bar signals, not historical divergences.
+InpShowArrows
+true
+When enabled, a directional arrow is drawn on the main price chart at every divergence that passes all active filters, for both historical and live bars.
+InpShowDashboard
+true
+When enabled, a dark information panel is drawn in the upper-left corner of the chart. It displays the symbol, timeframe, HTF candle direction, RSI reading, Delta reading, last signal type, and signal timestamp.
+InpBuyArrowCol
+C'0,200,130'
+Color of the bullish (buy) signal arrow drawn on the chart.
+InpSellArrowCol
+C'255,80,80'
+Color of the bearish (sell) signal arrow drawn on the chart.
+=== Alerts ===
+InpAlertBull
+true
+When enabled, a pop-up alert is triggered when a fresh bullish divergence forms on the current (rightmost) bar. The alert fires only once per bar to prevent repeated notifications.
+InpAlertBear
+true
+When enabled, a pop-up alert is triggered when a fresh bearish divergence forms on the current (rightmost) bar. The alert fires only once per bar to prevent repeated notifications.
+File Name
+Description
+HTF_Reversal_Divergences.mq5
+Full source code for the HTF PO3 + RSI Divergence indicator for MetaTrader 5

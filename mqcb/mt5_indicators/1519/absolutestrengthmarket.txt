@@ -1,0 +1,25 @@
+This indicator with a sufficient accuracy allows defining 6 market states, exactly:
+Bull market (Bull Market).
+Bear market (Bear Market).
+Correction (Correction) in a bull market.
+Correction in a bear market (Bear Market Rally).
+Choppy market (Choppy Market).
+Flat market (Sideways Market).
+As in
+AbsoluteStrength
+to define the market forces 3 methods of calculation are used:
+RSI
+,
+Stochastic
+and
+DMI
+.
+Using Length, PreSmooth, Smooth, Signal and MA_Mode parameters you can achieve the desired accuracy of calculation.
+Keep in mind that a period of a signal line (
+Signal) starts from 1, in this case Bulls and Bears values on the previous bar are used.
+The indicator also applies a set algorithm for calculation used on high timeframes. It allows putting several indicators in one subwindow for different timeframes as it has been displayed in the image.
+If parameter AlertMode=1, then a monitor will display messages informing about changing market conditions.
+Image:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1519

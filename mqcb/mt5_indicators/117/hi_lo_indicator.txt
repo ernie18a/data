@@ -1,0 +1,2 @@
+This is the hilo indicator.
+Usage of this indicator should be obvious.

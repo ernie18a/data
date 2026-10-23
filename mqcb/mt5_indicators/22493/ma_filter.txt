@@ -1,0 +1,33 @@
+MA with filter is a moving average with the direction filter and direction change signal pointers.
+The indicator displays three states:
+Upward movement
+Downward movement
+Flat
+There are five inputs:
+MA period
+- calculation period
+MA method
+- calculation method
+Applied price
+MA anchor shift
+- filter starting point offset in bars
+MA anchor difference
+- filter starting point threshold value relative to the current one
+If the difference between the current value of MA and the value of MA on the
+MA anchor shift
+bar exceeds the
+MA anchor difference
+value, then the transition from the previous state to the ascending state is registered, the MA is colored green and the signal pointer is set.
+If the difference between the current value of MA and the value of MA on the
+MA anchor shift
+bar is less than the
+MA anchor difference
+value, then the transition from the previous state to the downward state is registered, the MA is colored red and the signal pointer is set.
+If the difference between the current value of MA and the value of MA on the
+MA anchor shift
+bar is less than or equal to the
+MA anchor difference
+value, then the transition from the previous state to the neutral state (flat) is registered, the MA is colored gray and the signal pointer is set.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22493

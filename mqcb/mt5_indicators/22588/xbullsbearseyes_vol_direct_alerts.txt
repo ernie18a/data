@@ -1,0 +1,45 @@
+XBullsBearsEyes_Vol_Direct
+indicator provides alerts, sends email and push notifications at the incoming trading signals. Possible signal options:
+Zero breakthrough by the histogram;
+Changing the histogram movement direction;
+Overbought or oversold levels breakthrough;
+Exiting overbought or oversold areas.
+Input parameters for activating signals:
+input
+uint
+NumberofBar=
+1
+;
+// Number of a bar for delivering a signal
+input
+bool
+SoundON=
+true
+;
+// Allow the alert
+input
+uint
+NumberofAlerts=
+2
+;
+// Number of alerts
+input
+bool
+EMailON=
+false
+;
+// Allow sending signals by email
+input
+bool
+PushON=
+false
+;
+// Allow sending signals to a mobile device
+The indicator uses SmoothAlgorithms.mqh library classes (copy it to <terminal_data_folder>\MQL5\Include). The use of the classes was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Fig. 1. XBullsBearsEyes_Vol_Direct_Alerts indicator. Changing the histogram movement direction
+Fig. 2. XBullsBearsEyes_Vol_Direct_Alerts. Activating an alert
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22588

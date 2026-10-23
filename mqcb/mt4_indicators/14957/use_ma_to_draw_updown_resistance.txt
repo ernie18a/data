@@ -1,0 +1,4 @@
+The indicator uses Move Average to draw the level line of up and down.
+Use on EURUSD_D1
+Use on EURUSD_H4
+Use on EURUSD_H1

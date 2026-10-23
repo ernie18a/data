@@ -1,0 +1,24 @@
+The Expert Advisor uses two moving averages: the slow MA is used to receive the entry signal, the fast MA - exit signal.
+Opens Buy, if the slow MA moves upwards. Closes, when the fast MA falls.
+Opens Sell, if the slow MA moves downwards. Closes, when the fast MA rises.
+That's it! And no intricacies, no crossings of moving averages, etc. :)
+Here is the
+optimization result
+for a year from July 2007 to July 2008
+Any optimization shows profitable images. But how does the EA trade on an interval after the optimization, on a period it knows nothing about?
+Let us try performing a
+three-month forward test
+- test it on the interval from July 2008 to today (second half of October). This results in a test interval of three and a half months after optimization.
+As you can see, the EA is still profitable after optimization for more than three months.
+Parameters to be optimized:
+p1, p2 - the period of averaging for calculating the Moving Average. Optimized with the values from 2 to 100 with step of 1.
+s1, s2 - shift relative to the current bar by the specified number of periods back. Values from 2 to 20 with step of 1.
+sl - stop loss of the opened positions. Optimized with the values from 10 to 100 with step of 5.
+ts - maintain the open positions with a trailing stop. Optimized with the values from 100 to 200 with step of 5.
+If ts is less than 100, trailing is disabled. This is done so that the trailing does not interfere with the EA operation, but servers as safety measure. For example, if connection is lost, when the EA can not close the position itself.
+To disable trailing, it is set the value of the ts variable to less than 100. For example, ts = 0 - trailing is disabled.
+The EA works when a new bar appears. Therefore, optimization should be performed according to the model: "Open prices only (fastest method to analyze the bar just completed, only for EAs that explicitly control bar opening)."
+P.S. The EA in the source code is not optimized.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8508

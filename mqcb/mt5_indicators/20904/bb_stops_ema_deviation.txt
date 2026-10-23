@@ -1,0 +1,4 @@
+BB Stops (Bollinger Bands Stops) indicator is a well known indicator. Some versions are posted at the code base too (for example here:
+BB Stops
+).
+Usually it is calculated using standard deviation. This version changes that and uses EMA deviation for calculation as a sort of further developing the idea. Some experimenting with the parameters is recommended before using in real trading.

@@ -1,0 +1,13 @@
+Real author:
+Witold Wozniak
+John Ehlers and Ward Systems Group developed Cybernetic Analysis application based on the indicators described in the book
+"Cybernetic Analysis for Stocks and Futures"
+written by John Ehlers and published by John Wiley & Sons publishing house.
+New effective trading methods are shown in the book. The methods are based on implementation of modern methods of signals digital processing into financial time series analysis. The author claims "that this methods proved their efficiency at various markets exceeding results of commercial trading systems that cost hundreds or even thousands of dollars".
+CyberCycle is one of the indicators presented in that book. Basic methods of working with this indicator comprise the usage of the moving averages crossings and their movement direction changes.
+See also
+"Applying The Fisher Transform and Inverse Fisher Transform to Markets Analysis in MetaTrader 5"
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/539

@@ -1,0 +1,2 @@
+Indicator colours prices of certain areas hh: mm_start before hh: mm_finish.
+Painter_v1

@@ -1,0 +1,1 @@
+This Script will Refresh All Open Charts in MT5, Usually custom symbols in MT5 needs to be Refresh sometime so this script will help to refresh all open chart at once. We can also use this Script anywhere where we need to refresh all open charts.

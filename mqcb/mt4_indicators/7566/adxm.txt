@@ -1,0 +1,9 @@
+Unlike the traditional ADX indicator, where the ADX itself is plotted in absolute units and detection of the trend direction is hindered, this indicator clearly displays the positive and negative ADX half-waves (displayed as colored on the chart). And the DI+/- signals are displayed as their difference (gray).
+The method of using this indicator is the same as the traditional one.
+In addition, it displays the levels (dashed), above which the market is considered to be in a trend state. This level is usually set to approximately 20-25 percents, - somewhat depends on the time frame it is used on.
+In the settings:
+p - ADX period.
+Level - critical level.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7566

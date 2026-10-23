@@ -1,0 +1,6 @@
+This Indicator was done to fulfill the need from EAs to check on Volume increase and decrease in a extremely simple way.
+All it does is calculate the average volume of a certain period of time, in candles.
+It works with Tick Volume, as well as real volume.
+To have your EA check if the volume has increased, just check if volume from a longer time is smaller than the volume from a shorter time... that's it ! Simple, and makes this data available to MQL5 EAs, as well as FX Dreema EAs.
+On the image above, the brokerage firm is only supplying Tick Volume, and therefore, the indicator is printing the pink line, with average tick volume.
+In case the brokerage firm also supplies real volume, the Blue line will represent that volume

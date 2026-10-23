@@ -1,0 +1,134 @@
+Real author:
+Mohammad Soubra
+Commodity Channel Index or
+CCI
+is a great indicator in financial markets (forex too).
+it is used here as an example only for coders (not a profitable EA).
+it depends on the typical price of CCI to open buy/sell orders as below conditions:
+double
+CCI_Typical_Curr=
+iCCI
+(
+NULL
+,
+0
+,CCIPeriod,
+PRICE_TYPICAL
+,
+0
+);
+double
+CCI_Typical_Prev=
+iCCI
+(
+NULL
+,
+0
+,CCIPeriod,
+PRICE_TYPICAL
+,
+1
+);
+// Here is the open buy rule
+if
+((CCI_Typical_Prev<-
+90
+) && CCI_Typical_Curr>-
+80
+)
+// Here is the open Sell rule
+if
+((CCI_Typical_Prev>
+90
+) && (CCI_Typical_Curr<
+80
+))
+with some fantastic entries as in the following:
+input
+string
+separator1=
+"--------------- TRADES OPTIONS ---------------"
+;
+//TRADING INPUTS >> >> >> >>
+input
+int
+TradesDuplicator=
+3
+;
+//Trades Duplicator
+input
+double
+Lots=
+0.03
+;
+//Fixed Lot Size
+input
+int
+MagicNumber=
+1982
+;
+//Trades ID
+input
+double
+StopLoss=
+50
+;
+//Stop Loss
+input
+double
+TakeProfit=
+200
+;
+//Take Profit
+input
+int
+TrailingStop=
+50
+;
+//Trailing Stop
+input
+int
+Slippage=
+3
+;
+input
+string
+separator2=
+"--------------- CCI OPTIONS ---------------"
+;
+//CCI INPUTS >> >> >> >>
+input
+int
+CCIPeriod=
+9
+;
+//CCI Period
+input
+string
+separator3=
+"--------------- ON CHART COLORS ---------------"
+;
+//TRADES ARROW COLOR >> >> >> >>
+input
+color
+BuyArrowOpen=
+clrBlue
+;
+//Buy Arrow Color
+input
+color
+SellArrowOpen=
+clrRed
+;
+//Sell Arrow Color
+input
+color
+ModificationArrow=
+clrWhite
+;
+//Modified Trades Arrow Color
+Recommendations:
+This is just an example for this community library,
+not for trading.
+Feel free to update/modify the code by me, yourself or even a 3rd party coder...
+Take Care!

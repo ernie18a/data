@@ -1,0 +1,38 @@
+SniperGold SMC ProPlus is a MetaTrader 5 chart indicator that maps Smart Money Concepts (SMC) structure and shows an optional trade setup readout.
+Every structure line, sweep, CHoCH and signal is evaluated on fully closed candles only, so nothing repaints after a bar closes.
+WHAT IT DRAWS ON THE CHART
+Internal and swing market structure with BOS / CHoCH trend lines
+Swing points labelled HH / HL / LH / LL, plus strong / weak highs & lows
+Order blocks (internal + swing), with optional volume weighted selection
+Fair value gaps on the chart timeframe, or projected from a higher timeframe
+Equal highs / equal lows and resting liquidity levels (buy side / sell side)
+Liquidity sweep arrows (wick beyond a level, close back inside)
+Premium / equilibrium / discount zones
+Previous day / week / month high low levels
+A multi timeframe bias panel (three user selected higher timeframes, top down)
+An optional trade setup panel: BUY / SELL / WAIT with entry, SL, TP1-TP3, R:R and a confluence score, plus a note stating which condition is pending
+HOW A SETUP IS GATED (objective rules, no discretionary guessing)
+A BUY or SELL is shown only when the configured sequence completes on closed bars—for example, a liquidity sweep, then a CHoCH in the same direction, then price tapping a fresh order block or FVG in the correct premium / discount zone, and only when the higher timeframe bias agrees. If any leg is missing, the panel states exactly which condition is still pending instead of forcing a signal. Each gate (sweep, CHoCH, OB/FVG tap, HTF alignment) can be toggled.
+WHAT IT DOES NOT DO
+This indicator does not open, modify or close any trade. It is a visual analysis and alert tool. Popup and push alerts are optional and fire on structure breaks, liquidity sweeps and new setups.
+EXTERNAL VARIABLES (grouped inputs)
+General: history depth (InpLookbackBars) and present mode switch.
+Internal structure: on/off and pivot length.
+Swing structure: on/off, pivot length, HH/HL/LH/LL labels, strong/weak tags.
+Order blocks: internal & swing on/off, counts, volume weighted selection.
+Fair value gaps: on/off, auto noise threshold, count, and a separate FVG timeframe so a higher timeframe gap can be projected down.
+Equal highs/lows: on/off, confirmation bars, ATR based tolerance.
+Liquidity: resting level marks, count per side, sweep arrows and the bar window used to detect a sweep.
+Confluence: optional rule that internal structure must agree with swing trend.
+Premium / discount: band heights for premium, equilibrium and discount.
+MTF highs & lows: previous day / week / month levels on/off.
+Multi timeframe bias: three higher timeframes (TF1 master, TF2, TF3) and a strict align switch (all three must agree, or master + no opposite).
+Trade signals: on/off, minimum confluence score, SL buffer (x ATR), alert on new setup; plus the setup sequence gates (require sweep, require CHoCH, require OB/FVG tap, max chain window, max zone distance).
+Order flow: optional candle anatomy delta proxy that adds confluence when it agrees with the trade direction.
+Alerts: popup and push on/off.
+Visual: candle coloring by bias, dashboard on/off, font name and size.
+Colours: separate colours for bull/bear structure, internal and swing order blocks, FVG, MTF levels, premium/equilibrium/discount, fill shades and panel colours, including a transparent panel option. All distances are ATR and point based, so the indicator adapts across brokers and symbols without hardcoded pip values.
+SUGGESTED USE
+Any symbol and timeframe; the defaults are oriented to M15-H4 on instruments such as XAUUSD, EURUSD and GBPUSD. Run it on the execution chart and set the three higher timeframes above it for top-down context.
+DISCLAIMER
+This is an analytical tool to assist market reading. It implies no profit, win rate, drawdown, profit factor or trade frequency, and past market behaviour does not guarantee future results. Use it as part of a complete trading plan with proper risk management.

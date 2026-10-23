@@ -1,0 +1,3 @@
+Author:
+rockyhoangdn@gmail.com
+Based on ibull/ibear, but compare power to define good entry bars.

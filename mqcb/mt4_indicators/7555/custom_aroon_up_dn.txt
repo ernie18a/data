@@ -1,0 +1,2 @@
+Author: rafcamara
+Custom Aroon Up & Dn indicator.

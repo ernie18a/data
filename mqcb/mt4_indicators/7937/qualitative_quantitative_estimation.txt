@@ -1,0 +1,4 @@
+Author: Roman Ignatov
+Qualitative Quantitative Estimation indicator. Uses indicator
+RSI
+.

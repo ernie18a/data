@@ -1,0 +1,11 @@
+Range Expansion Index (REI) definition :
+Range Expansion Index (REI) is an oscillator that measures price changing rate and signals about overbought/oversold areas, in case a price shows weakness or strength. It was developed by Thomas DeMark and described in his book
+"The New Science of Technical Analysis"
+.
+The indicator values change from -100 up to +100. REI is an enhanced oscillator, as it stays neutral during a flat and shows trends only when considerable top or bottom have been reached.
+This version :
+This version is made according to Mark Jurik's idea : according to him, REI can be made as rsx(high) + rsx(low) - and the result should be much smoother. So, this version is doing exactly that
+Usage :
+In this version use color changes for early trend change warnings and zero lines crosses as general trend direction
+Comparison :
+For clarification sake, here isa comparison of this version and the original. Upper is this version of REI and lower is the original. Seems that Mark Jurik's statement can be taken as correct, and, since the values are similar enough, we can use this as a smoother version of REI indicator

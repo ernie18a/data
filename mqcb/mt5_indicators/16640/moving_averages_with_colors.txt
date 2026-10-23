@@ -1,0 +1,9 @@
+"Classical" averages with a twist.
+Сolors change depending on the angle of the slope: the greater the angle the color will be closer or equal to
+"Fast up" color
+. The smaller the angle the color will be closer or equal to
+"Fast down" color
+. The rest is drawn as a gradient between the two colors (depending on the angle of MA).
+The "equal" part depends on the
+"Angle threshold for color steps"
+parameter: if you set 90, it is obvious that it will never be reached. Default for this parameter is set to 20 degrees.

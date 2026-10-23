@@ -1,0 +1,16 @@
+Brooky Trend Strength Indicator
+The indicator shows the power of the trend that is in place and whether a pair is trending or ranging.
+Strength is always from below 0 heading up. This is not a linear directional indicator. The colours give direction, the slope shows strength. 0 is ranging, going up off 0 is trending. The logic is the variance between ATR and StdDev over the same period with smoothing arrays of the result. Sensitivity is pip based as the desired minimum movement between the highest high and lowest low over your nominated set of bars. Typically the last 5 bars. This filters the minimal movements into lighter colored bars which are often an early sign of reversal or just a consolidation before trend continuation.
+Direction of trend is Red for down Blue for up
+Resistance to trend is
+a) Pink for light downward pressure.
+b) Light blue for upward pressure.
+Settings are similar to MACD with Slow, Fast and signal settings. Resistance pressure can be entered to your taste and are different for each pair. 1 for EURUSD and up to 100 for USDJPY. Just plot against historical to see the pale colour levels as you would like them.
+If you place a MACD with the same settings on the chart you can see what is going on within the trend of the macd. I have found working with both acts well as complimentary confirmations.
+Places to pay attention.
+1) At extreme power tops you will often see a reverse colour ie: if it has been a strong red downtrend a light blue will show up. If you get only a few bars of light blue the trend will likely continue even if it is not in itself gaining strength as there is light resistance.
+2) A trend has come to an end when the power line increases with more of the opposite colours showing in the reversal.
+3) Generally the trend will degrade into a messy ranging power struggle which you can see by the power line going below 0 and lots of colour bars alternating as the struggle rages. Best to wait for a clean clearance.
+4) The ranging finishes when a gentle slope with more developed color patterns starts to head up to 0 and breaks free. Sharp near vertical breaks out of 0 are generally short lived. As usual be careful following on the back of monster breakout candles.
+Longer period settings such as 48 on a 1Hour chart are very insightful and I recommend playing with the settings as they can also be tuned to a good scalp confirmation when placed on a chart with support and resistance levels marked. Attached are 2 charts with different settings so that you can see the difference.
+Enjoy.

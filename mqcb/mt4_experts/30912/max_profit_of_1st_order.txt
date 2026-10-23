@@ -1,0 +1,1 @@
+This expert shows the maximum profit level that touched by price line for your first position on chart window. the expert  don't need any variable or specified timeframe. Please vote this program to help know this program how much helpful. Thanks for your vote stars.

@@ -1,0 +1,31 @@
+Author of the idea
+:
+Boris
+,
+author of the mq5 code
+:
+barabashkakvn
+.
+The main idea of ​​the trading strategy is as follows: when there are three down bars on the current timeframe:
+and the main Stochastic line is
+above
+the signal line on the other two timeframes:
+a Buy signal emerges.
+The strategy handles only Buy signals.
+Testing in the M15 timeframe:
+Input Parameters
+Lots
+- position volume;
+Stop Loss
+Take Profit
+Max positions
+- the maximum number of open positions;
+timeframe Stochastic #1
+- timeframe for Stochastic #1;
+timeframe Stochastic #2
+- timeframe for Stochastic #2;
+magic number
+- Expert Advisor identifier.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19467

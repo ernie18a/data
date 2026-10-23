@@ -1,0 +1,10 @@
+Market Structure Swing Map helps traders read price structure without covering the chart with unnecessary signals. It identifies confirmed swing highs and swing lows, compares each new point with the previous point of the same type, and labels the result as HH, HL, LH or LL.
+The indicator works with closed candles. A swing is displayed only after the selected number of candles has confirmed it on both sides. This keeps the historical chart stable and avoids using future information for an early signal.
+The optional structure line connects confirmed points so the movement of price remains easy to follow. Colors, font size, scan depth and swing strength can all be adjusted from the inputs.
+Main inputs
+1. Swing Strength controls how many candles are required on each side of a swing.
+2. Maximum Bars controls the amount of history scanned.
+3. Show Swing Price adds the exact price beside each label.
+4. Show Structure Line connects the confirmed structure points.
+5. Enable Alerts reports a newly confirmed structure point.
+This indicator is intended for chart analysis. It does not open, modify or close trades.

@@ -1,0 +1,128 @@
+Trading Strategy
+After a losing trade, the МТ45 EA opens the next trade with a higher lot.
+The first deal is always a Buy operation, after that positions alternate, i.e. buying-selling-buying.
+The EA opens positions at the candlestick opening.
+After a Stop Loss, the EA increases the lot by
+KL
+coefficient until it reaches the maximum value of
+ML
+. Then the lot is reset to the initial one,
+LТ
+.
+EURUSD, the Н1 timeframe. The EA is optimized at an interval of 11.01.2014-09.09.2017
+Expert Advisor Settings
+input
+int
+Stop =
+600
+;
+// Stop Loss
+input
+int
+Take =
+700
+;
+// Take Profit
+input
+int
+Slip =
+100
+;
+// Slippage
+input
+int
+MN   =
+123
+;
+// Magic
+input
+double
+LT   =
+0.01
+;
+// Lot
+input
+double
+KL   =
+2
+;
+// Lot increase ratio
+input
+double
+ML   =
+10
+;
+// Maximum lot
+Features
+The cross-platform mode is implemented using preprocessor directives. An example of the Martingale function:
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+double
+Lot()
+  {
+double
+lot=LT;
+//---  MQL4
+#ifdef
+__MQL4__
+if
+(
+OrderSelect
+(
+OrdersHistoryTotal
+()-
+1
+,
+SELECT_BY_POS
+,
+MODE_HISTORY
+))
+     {
+if
+(
+OrderProfit
+()>
+0
+) lot=LT;
+if
+(
+OrderProfit
+()<
+0
+) lot=
+OrderLots
+()*KL;
+     }
+#endif
+//---  MQL5
+#ifdef
+__MQL5__
+if
+(
+HistorySelect
+(
+0
+,
+TimeCurrent
+()))
+     {
+      double profit=HistoryDealGetDouble(HistoryDealGetTicket(HistoryDealsTotal()-1),DEAL_PROFIT);
+      double LastLot=HHistoryDealGetDouble(HistoryDealGetTicket(HistoryDealsTotal()-1),DEAL_VOLUME);
+      if(profit>0) lot=LT;
+      if(profit<0) lot=LastLot*KL;
+     }
+#endif
+if
+(lot>ML)lot=LT;
+return
+(lot);
+  }
+Backtests
+The МetaТrader 4 terminal:
+The МetaТrader 5 terminal:
+Tips
+It is recommended to use this EA only as a basis for your own strategy.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19102

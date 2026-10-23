@@ -1,0 +1,5 @@
+After the success of the original indicator, I decided to write more indicators for detecting divergence between price and other indicator.
+This indicator will plot divergence lines on the MACD indicator and will give buy and sell signal by displaying green and red arrows. It also has a built-in alert function. As the original indicator, bullish divergence is plotted in green lines while bearish divergence is plotted in red. If the divergence is classic the line will be solid and if the type is reversed the line will be interrupted.
+I hope you gets the most benedfit from this indicator.
+Changes to verion 1.1:
+- This version is directed to traders who do not want repainted singals. The signals are not repainted buy they are delayed one candle.

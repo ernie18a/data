@@ -1,0 +1,2 @@
+Author: TrendLaboratory Ltd
+Metro indicator.

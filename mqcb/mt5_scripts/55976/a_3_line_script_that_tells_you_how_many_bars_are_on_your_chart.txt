@@ -1,0 +1,11 @@
+The following code is deceptively simple and straightforward.
+And yet it is also quite useful, especially if you would like to know how many bars are on your chart.
+This is always going to be equal to or less than any constraint you have specified through Tools/Options/Charts and Max Bars in Chart, of course, and dependent on the data either downloaded from your broker, or uploaded by you, using a custom symbol, for instance.
+I use the built-in
+iBars
+function in this instance. All you do is drag the script onto the chart, and look in the experts tab of the
+Toolbox
+.
+You can also look at the top left corner of the chart window because I added a
+Comment
+line

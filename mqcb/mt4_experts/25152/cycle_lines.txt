@@ -1,0 +1,45 @@
+With "Cycle Lines" EA you can draw Cycle Lines on the chart and trade with price breakthrough,has 3 buttons for manual trading and allows to predetermine trailing stoploss & take profit, open and close all trades at once.
+Try it on demo first.
+It is possible to activate a hedge fund protocol for low drawdown
+Inputs
+==================HEDGE FUND PROTOCOL==========================
+HEDGE FUND PROTOCOL -Enabale Draw dwon control (values:true/false).
+Close basket at +0.10% MIN_PROFIT_PERCENT (values:0.1-0.6).
+Close basket at -0.50% MAX_LOSS_PERCENT (values: 0.5-0.8).
+HEDGE FUND PROTOCOL_SLIPPAGE (values: 10-50).
+=================================================================
+Use_TP_In_Money- Use Take Profit In Money (values:true/false).
+TP_In_Money- Take Profit In Money   (values: 10-100).
+------------[Money Trailing Stop For Multiple Trades]----------------------
+Enable_Trailing-Enable_Trailing with money  (values:true/false).
+Take Profit In Money (in current currency) (values: 25-200).
+Stop Loss In Money(in current currency) (values: 1-20).
+Loss Index (values: 1.1-2).
+--------------------------------------------------------------------------------------
+1 st point's date, %
+1 st point's price, %
+2 nd point's date, %
+2 nd point's price, %
+Color of cycle lines
+Style of cycle lines
+Width of cycle lines
+Background object
+Highlight to move
+Hidden in the object list
+Priority for mouse click
+Enable "STOP"
+Lots - Lots size (values: 0.01-10).
+Lots size Exponent  (values: 1.01-2).
+MaximumRisk - maximum risk from total margin in %, (values: 0.01 - 0.3).
+If "MaximumRisk =0" then "Lot=constant"
+DecreaseFactor - decrease from total margin if you lose a trade.
+Stop_Loss - Stop Loss (values: 10-100).
+TakeProfit - Take Profit (values: 10-100).
+MagicNumber - Magic number (values: 1-100000).
+NumberOfTrades-Number Of Trades(values: 1-10).
+IF YOU USE ONLY 1 TRADE:
+//////////////////////////////////////////////////
+TrailingStop-set a value from 40 to 100 to activate trailing stop loss & take profit, "0" will not activate trailing stop loss.
+USEMOVETOBREAKEVEN-Enable " break even " (values: true/false).
+WHENTOMOVETOBE-When to move break even (values: 1-30).
+PIPSTOMOVESL=30-How much pips to move stop loss  (values: 1-30).

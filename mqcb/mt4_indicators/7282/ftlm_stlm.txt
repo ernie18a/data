@@ -1,0 +1,5 @@
+Author: Finware.ru Ltd.
+What the author of the instrument and the creator of the trading system - Vladimir Kravchuk writes... "The main difference of FTLM_STLM from the classic Momentum technical tool is that its calculation uses not the closing prices, but the values of the trend line smoothed as a result of filtering. Consequently, the FTLM, STLM become much smoother and regular functions than the classic Momentum tool, and therefore have greater predictive value."
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7282

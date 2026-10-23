@@ -1,0 +1,6 @@
+Smoothed RSI indicator and RSI of Moving Average.
+There are two ways to smooth RSI:
+Whether someone calculate an RSI (first line) and then smooth it and get a Smoothed_RSI: (second line)
+Whether someone get an MA and then take the RSI of this MA, this will be an RSI_of_MA (first line), then it is possible to smooth this RSI_of_MA (second line).
+For the people to see the diference between the two ways, selecting "show_both = true", one will see the two ways on the same chart;
+The green line is the RSI_of_MA.

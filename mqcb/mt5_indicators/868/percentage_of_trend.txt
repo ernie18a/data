@@ -1,0 +1,17 @@
+The indicator values are calculated by this formula :
+For first period (red color) =
+(Close - LowValue) / (HighValue - LowValue)
+The value is between 0 - 1.
+The higher value means uptrend, the lowest value means downtrend, value in the middle means sideway.
+For second period (blue color) =
+(Close - LowValue)*-1 / (HighValue - LowValue)
+The value is between -1 - 0.
+The higher value means downtrend, the lowest value means uptrend, value in the middle means sideway.
+where :
+HighValue - the highest high for n period;
+LowValue - the lowest low for n period;
+Input parameters:
+InpPeriod1 -
+First period for calculating trend;
+InpPeriod2 -
+Second period for calculating trend;

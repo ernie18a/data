@@ -1,0 +1,39 @@
+ColorRSI_X20
+indicator featuring background filling in overbought/oversold areas. Filling size and position are adjustable by inputs
+input
+uint
+HighLevelM=
+80
+;
+// maximum overbought level
+input
+uint
+HighLevel=
+60
+;
+// overbought level
+input
+uint
+MidLevel=
+50
+;
+// middle level
+input
+uint
+LowLevel=
+40
+;
+// oversold level
+input
+uint
+LowLevelM=
+20
+;
+// minimum overbought level
+When launching the indicator, you can change the style and color of only the first indicator line coming second in the
+indicator inputs
+color tab, while the remaining lines will have a similar look.
+Fig. 1. ColorRSI_X20_Cloud indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23014

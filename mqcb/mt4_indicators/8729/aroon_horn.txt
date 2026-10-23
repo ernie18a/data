@@ -1,0 +1,4 @@
+Aroon Horn Indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8729

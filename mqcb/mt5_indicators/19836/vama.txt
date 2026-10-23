@@ -1,0 +1,9 @@
+The indicator draws a Simple Moving Average, which is constructed taking into account tick volumes of each bar.
+It has two parameters:
+Period VAMA
+- SMA calculation period;
+Applied price
+- SMA calculation price.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19836

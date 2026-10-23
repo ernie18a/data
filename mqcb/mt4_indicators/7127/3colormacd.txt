@@ -1,0 +1,36 @@
+Standard MACD diagram with bullish and bearish bars colored differently.
+Inputs:
+extern
+int
+FastEMA=
+12
+;
+extern
+int
+SlowEMA=
+26
+;
+extern
+int
+SignalSMA=
+9
+;
+extern
+int
+CountBars=
+300
+;
+extern
+int
+Line=
+3
+;
+extern
+double
+Zero_level=
+0.0
+;
+3ColorMACD
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7127

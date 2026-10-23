@@ -1,0 +1,18 @@
+The template code of Expert Advisor.
+It contains basic features and functions required for the developing the Expert Advisor:
+Calculation of point for the 3-5 digit pairs;
+Setup takeprofit and stoploss;
+Identification number for tEA's orders - Magic number;
+Ability to set a fixed trade volume;
+The function of money management - calculation of the trade volume, based on a specified percentage of the current balance;
+Ability for opening of the order in 2 steps (open the order, and then the set stops) - work on the ECN - accounts;
+Ability to open positions in the opposite direction from the trading signal;
+Limitation of work regarding of the maximum size of the spread;
+Setting the maximum possible deviation of the price;
+Placing Orders in several attempts in case of failure (the default count of attempts=10);
+Function to calculate the total profits of EA's positions in the currency;
+Function to close all EA's positions and orders;
+Error Logging.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11698

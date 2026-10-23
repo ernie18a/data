@@ -1,0 +1,1 @@
+An expert advisor designed to alert you when every first parabolic SAR dot in a sequence appears. You must note that this expert advisor is not meant for opening or closing orders automatically but to just sound an alarm. Testing it with strategy tester will indicate no trades.

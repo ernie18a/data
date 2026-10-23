@@ -1,0 +1,206 @@
+The world has changed... I feel it in water, I feel it in the ground,
+I feel in air. Much, that was before - will not return never...
+" The Lord of Rings ", Tolkien.
+The idea of creation  Gandalf_PRO  EA is taken from
+this branch of a forum
+.
+The  EA  holds open one buy and one sell orders (without dependence from each other)
+Until the market of them will not close with fixed TP or SL.
+The input in the market occurs on the basis of two-parametrical Exponential Smoothings
+Time Series in view of 2 parameters:
+1-st parameter: it is parameter of accommodation of the price-S,
+2-nd parameter: it is parameter of an inclination of trend T,
+Calculations go under recurrent formulas:
+S [n] =w*y [n] + (1-w) * (S [n-1] +T [n-1])
+T [n] =t * (S [n]-S [n-1]) + (1-t) *T [n-1]
+Then, the predicted value:
+y [n+1] =S [n] +T [n]
+As initial (i.e. initial) values (estimations) for 1-st and 2-nd parameter it is possible
+To take factors from the formula of linear regress -
+from here.
+_____________________________________________________________________________________
+Entrance variables in the EA :
+For longs:
+In_BUY=true;
+long positions allowed,
+Count_buy=24;
+number of bars in a history on which smooths out ВР,
+w_price=0.18;
+factor of the price,
+w_trend=0.18;
+factor  of a trend,
+SL_buy=62;
+a level stoploss in pips,
+Risk_buy=0;
+a risk level in % .
+For shorts: variables
+In_SELL, Count_sell, m_price, m_trend, SL_sell, Risk_sell
+- are similar.
+_____________________________________________________________________________________
+Optimization passes in 2 stages, on constant lot, i.e. when
+Risk_buy=0; and Risk_sell =0;
+Stage 1, for longs:
+In_BUY=true; In_SELL=false; Count_buy
+from 3 up to 120, with step 1;
+w_price
+and
+w_trend
+from 0.05 up to 0.6 with step 0.01;
+SL_buy
+from 30 up to 100, with step 1.
+Stage 2, for shorts:
+In_BUY=false; In_SELL=true;
+the other-is similar.
+The EA well trades on "fat" sites of a trend on periods H4 and D - EURUSD,
+However, the additional filtration is necessary for an input in the market with application of indicators
+on the higher periods.
+__________________________________________________________________________________________
+Examples.
+1. Movement on the north from March, 9 till March, 20, 2009:
+Strategy Tester Report
+Gandalf_PRO
+Symbol
+EURUSD (Euro vs US Dollar)
+Period
+4 Hours (H4) 2009.03.09 00:00 - 2009.03.19 20:00 (2009.03.09 - 2009.03.20)
+Model
+Every tick (the most precise method based on all available least timeframes)
+Parameters
+In_BUY=true; Count_buy=24; w_price=0.18; w_trend=0.18; SL_buy=62; Risk_buy=0; In_SELL=false; Count_sell=24; m_price=0.18; m_trend=0.18; SL_sell=62; Risk_sell=0;
+Bars in test
+1055
+Ticks modelled
+420744
+Modelling quality
+90.00%
+Mismatched charts errors
+3
+Initial deposit
+10000.00
+Total net profit
+326.02
+Gross profit
+389.82
+Gross loss
+-63.80
+Profit factor
+6.11
+Expected payoff
+27.17
+Absolute drawdown
+116.90
+Maximal drawdown
+142.10 (1.42%)
+Relative drawdown
+1.42% (142.10)
+Total trades
+12
+Short positions (won %)
+0 (0.00%)
+Long positions (won %)
+12 (91.67%)
+Profit trades (% of total)
+11 (91.67%)
+Loss trades (% of total)
+1 (8.33%)
+Largest
+profit trade
+58.10
+loss trade
+-63.80
+Average
+profit trade
+35.44
+loss trade
+-63.80
+Maximum
+consecutive wins (profit in money)
+11 (389.82)
+consecutive losses (loss in money)
+1 (-63.80)
+Maximal
+consecutive profit (count of wins)
+389.82 (11)
+consecutive loss (count of losses)
+-63.80 (1)
+Average
+consecutive wins
+11
+consecutive losses
+1
+__________________________________________________________________________________________
+№2. Movement on the south from September, 24 till October, 31, 2008:
+Strategy Tester Report
+Gandalf_PRO
+Symbol
+EURUSD (Euro vs US Dollar)
+Period
+4 Hours (H4) 2008.09.24 00:00 - 2008.10.30 20:00 (2008.09.24 - 2008.10.31)
+Model
+Every tick (the most precise method based on all available least timeframes)
+Parameters
+In_BUY=false; Count_buy=24; w_price=0.18; w_trend=0.18; SL_buy=62; Risk_buy=0; In_SELL=true; Count_sell=24; m_price=0.18; m_trend=0.18; SL_sell=62; Risk_sell=0;
+Bars in test
+1163
+Ticks modelled
+780695
+Modelling quality
+90.00%
+Mismatched charts errors
+32
+Initial deposit
+10000.00
+Total net profit
+857.40
+Gross profit
+2007.24
+Gross loss
+-1149.84
+Profit factor
+1.75
+Expected payoff
+17.86
+Absolute drawdown
+67.70
+Maximal drawdown
+362.48 (3.31%)
+Relative drawdown
+3.31% (362.48)
+Total trades
+48
+Short positions (won %)
+48 (62.50%)
+Long positions (won %)
+0 (0.00%)
+Profit trades (% of total)
+30 (62.50%)
+Loss trades (% of total)
+18 (37.50%)
+Largest
+profit trade
+251.20
+loss trade
+-64.88
+Average
+profit trade
+66.91
+loss trade
+-63.88
+Maximum
+consecutive wins (profit in money)
+7 (384.44)
+consecutive losses (loss in money)
+5 (-319.36)
+Maximal
+consecutive profit (count of wins)
+394.04 (3)
+consecutive loss (count of losses)
+-319.36 (5)
+Average
+consecutive wins
+3
+consecutive losses
+2
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8779

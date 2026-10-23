@@ -1,0 +1,23 @@
+This Expert Advisor implements the trading strategy, based on the
+Index Moving Average (IMA)
+indicator, its money management system dependent on the specified risk and loss size.
+The strategy
+The daily bars are used for trading. The signals checks when the new bar is appear.
+The formulae is:
+k=(ima0 – ima1)/|ima1|
+where ima0 – the current value of IMA indicator, ima1 – is the previous value of the IMA indicator.
+Open long position, when k>= 0,5;
+Open short position, when k<= -0,5.
+The management of opened position is based on the trailing stop, specified in the value of the
+take
+parameter.
+The loss trade is closed, according the specified
+drop
+parameter.
+The lot size is changed with the minimal step up to the value, specified in
+max_lots
+parameter.
+If this value is equal to 0, the lot can be from the minimal up the maximal allowed for the symbol.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/149

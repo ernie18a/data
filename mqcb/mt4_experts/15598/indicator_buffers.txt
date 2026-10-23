@@ -1,0 +1,1 @@
+This EA will detect the buffers values of any indicator you want. Just type its name in the EA settings.

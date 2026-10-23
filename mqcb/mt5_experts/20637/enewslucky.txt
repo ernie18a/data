@@ -1,0 +1,38 @@
+Idea by
+:
+Scriptor
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+Working with pending Buy Stop and Sell Stop orders. Pending orders are placed and removed at a specified time (
+Time of order placement
+and
+Time of order removal
+, respectively), the time being considered as hours and minutes only in the parameters. As soon as any of the pending orders triggers (the triggering moment is monitored in
+OnTradeTransaction
+), the remaining pending order will be removed.
+Inputs
+Lots
+- the volume of the pending order to be placed;
+Stop Loss (in pips)
+- Stop Loss;
+Take Profit (in pips)
+- Take Profit;
+Trailing Stop (in pips)
+- trailing;
+Trailing Step
+(in pips) - trailing step;
+Time of order placement (use only hh:mm !!!)
+- time, at which pending orders must be placed;
+Time of order removal (use only hh:mm !!!)
+- time, at which the pending orders must be removed (positions are closed at the same time);
+Distance from market
+- distance from the current prices, at which pending orders are placed;
+magic number
+- unique identifier for the EA.
+Test example on GBPUSD,H1
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20637

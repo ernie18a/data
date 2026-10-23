@@ -1,0 +1,13 @@
+The Indicator that allows modifying color of the candles .
+We can set time for change color of candles.
+Input Parameters:
+Start_Day - Start Day of the weeks
+Start_Hour - Start Hour of the Days
+Start_Minute - Start Minute of the Hours
+End_Day - End Day of the weeks
+End_Hour - End Hour of the Days
+End_Minute - End Minute of the Hours
+Color_Bar_Up_0 - Default Up candles
+Color_Bar_Down_0 - Default down candles
+Color_Bar_Up_1 - Color of the  Up candles between my time
+Color_Bar_Down_1 - Color of the Down candles between my time

@@ -1,0 +1,14 @@
+The Difference indicator shows the difference between the current prices and prices as of N periods ago.
+It can show the difference in two modes:
+The difference between Open and Close;
+The difference between High and Low.
+It has two parameters:
+Period
+- calculation period;
+Calculation method
+- select one of the two available calculation methods.
+Fig.1 The High/Low mode
+Fig.2 The Open/Close mode
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19885

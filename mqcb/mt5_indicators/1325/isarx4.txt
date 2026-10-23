@@ -1,0 +1,37 @@
+This indicator presents four parabolic indicators at one time. The indicator is for amateurs of parabolic trading systems.
+Indicator input parameters:
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+double
+Start_Step=
+0.002
+;
+// step to the smallest indicator
+input
+double
+Step_Shift=
+0.002
+;
+// size of step change
+input
+double
+Maximum=
+0.2
+;
+// the maximum for all indicators
+input
+int
+Shift=
+0
+;
+// horizontal shift of the indicator in bars
+Start_Step input parameter is a Step for the first parabolic.
+For the second parabolic Step parameter will be equal to Start_Step+1*Step_Shift.
+For the third parabolic Step parameter will be equal to Start_Step+2*Step_Shift.
+And for the fourth parabolic Step parameter will be equal to Start_Step+3*Step_Shift.
+Fig.1 The iSarX4 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1325

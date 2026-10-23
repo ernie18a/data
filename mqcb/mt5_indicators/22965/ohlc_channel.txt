@@ -1,0 +1,5 @@
+The indicator displays two lines (DRAW_LINE display style). You can select the prices (Open, High, Low or Close) each line should be based on
+As a result, we have a channel consisting of two prices. Such a channel gives more visual insight into the price movement than bars or candles.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22965

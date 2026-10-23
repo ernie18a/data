@@ -1,0 +1,39 @@
+Idea by
+:
+Alex
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+The EA uses custom indicator
+ExVol
+:
+Separate stop loss, take profit, and trailing are used for BUY and SELL positions.
+Inputs
+Maximum Risk in percentage
+- lot size calculations, the maximum risk parameter;
+Descrease factor
+- lot size calculations; decrease it, if there are many losing trades;
+Stop Loss Buy
+- stop loss for BUY positions;
+Stop Loss Sell
+- stop loss for SELL positions;
+Take Profit Buy
+- take profit for BUY positions;
+Take Profit Sell
+- take profit for SELL positions;
+Trailing Stop Buy
+- trailing for BUY positions;
+Trailing Stop Sell
+- trailing for SELL positions;
+Trailing Step
+- trailing step (common for both BUY and SELL positions);
+ExVol: ExPeriod
+- parameter of custom indicator "ExVol";
+magic number
+- unique identifier for the EA.
+Example of testing on EURUSD,M15:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21086

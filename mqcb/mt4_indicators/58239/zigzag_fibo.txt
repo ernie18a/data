@@ -1,0 +1,5 @@
+Description:
+This is a modified version of the original MetaQuotes MQL4 indicator with an added
+automatic Fibonacci
+feature. It automatically plots Fibonacci retracement/projection levels based on selected swing highs/lows. Users can choose which swing index (e.g., 1st, 2nd, or 3rd swing) to use as the Fibonacci anchor point, simplifying technical analysis by eliminating manual drawing. This modification does not claim any rights to the original indicator—it only enhances usability.
+(Short, clear, and covers key points: purpose, user control, and copyright disclaimer.)

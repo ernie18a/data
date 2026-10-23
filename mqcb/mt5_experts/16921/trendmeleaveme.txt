@@ -1,0 +1,45 @@
+Author of the idea
+—
+Ahmad Waddah Attar
+,
+author of the mq5 code
+—
+barabashkakvn
+.
+TrendMeLeaveMe is a MetaTrader 5 EA. The semi-automated Expert Advisor using a trend line (TrendLIne).
+Before launching the EA, simply draw a bullish or a bearish trend. Set the properties, launch the EA and you are free to focus your attention on something else.
+This is an automated EA.
+First, you should draw an upward, downward or horizontal trend:
+Name it
+buystop
+or
+sellstop
+and set the
+BuyStop_StepUpper
+,
+BuyStop_StepLower
+,
+SellStop_StepUpper
+and
+SellStop_StepLower
+parameters
+When the price enters the area between your buystop and BuyStop_StepLower levels, the EA opens a buystop order following the BuyStop_StepUpper price. When the price enters the area between your sellstop and SellStop_StepUpper levels, the EA opens a sellstop order following the SellStop_StepLower price.
+The EA always changes the OpenPrice for both order types when the price follows a trend till it leaves the displayed area.
+You can adjust
+BuyStop_StopLoss
+,
+BuyStop_Takeprofit
+and
+BuyStop_Lot
+to open a buystop order. You can also set
+SellStop_StopLoss
+,
+SellStop_Takeprofit
+and
+SellStop_Lot
+for a sellstop order.
+Here is how it looks on the charts:
+Another example:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16921

@@ -1,0 +1,4 @@
+The excelent properties on the H1 with EUR/USD. The MA indiactors were used. The EA was tested on the two-year data with the initial deposit of 500$, and it passed the test with the reasonably good properties. The EA is simple, but reliable.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8097

@@ -1,0 +1,10 @@
+I want to thank the author of the
+i-Regr indicator
+for a smashing performance. I place the modification of it.
+The green lines are the lines of the regression: the upper one is drawn by the High prices, the lower one - by the Low prices.
+This indicator is redrawn with the coming of a new bar.
+Linear Regression...
+Square Regression....
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8436

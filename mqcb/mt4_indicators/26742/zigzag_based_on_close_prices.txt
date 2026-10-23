@@ -1,0 +1,4 @@
+The code is based on indicator ZigZag which is in-built in MT4, developed by MetaQuotes.
+I have changed it slightly so that it isn't calculated on highest Highs and lowest Lows, but instead uses highest Close and lowest Close of chart price history.
+See chart below for differences: ZigZag (red) versus ZigZagClose (yellow).
+Some differences are minor in nature, while at other times the effects are significant.

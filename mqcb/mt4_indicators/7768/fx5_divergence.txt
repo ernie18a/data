@@ -1,0 +1,2 @@
+Author: FX5
+This is indicators used divergence theory. Red arrow = sell signal and green arrow = buy signal.

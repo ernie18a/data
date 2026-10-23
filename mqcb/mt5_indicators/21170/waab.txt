@@ -1,0 +1,19 @@
+Indicator WAAB (Waddah Attar ADXxBollinger) is intended for identifying the direction and strength of the current trend. For this pupose, a combination of the signals from two indicators is used: Advanced_ADX and Bollinger Bands.
+The indicator is made as a histogram, the columns of which are green when the prices grow. Red color means falling. The larger the columns (of any color) are, the stronger the trend is.
+It has three configurable parameters:
+ADX Period
+- ADX calculation period;
+BB Period
+- Bollinger Bands calculation period;
+BB Applied price
+- applied price for Bollinger Bands.
+Calculations:
+WAAB = (TL-BL) * ADX
+where:
+TL, BL - the upper and the lower bands of indicator Bollinger Bands
+DIP, DIM - +DI and -DI of indicator ADX
+If DIP > DIM, then the histogram is green.
+If DIP < DIM, then the histogram is red.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21170

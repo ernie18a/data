@@ -1,0 +1,6 @@
+In his article in January 2022 issue of TASC, “(Yet Another) Improved RSI,” John Ehlers explains how he enhances the RSI by taking advantage of Hann windowing. The RSIH indicator provides a smoother calculation than the classic RSI and has a zero mean. The inherent smoothing in the computation removes the need for supplemental filtering.
+Compared to built in Rsi
+Recommendations:
+You can use it as any other Rsi indicator
+You can use (since rsi is a momentum family of indicators) the color change for possible momentum change estimation
+You can use zero crosses as an estimation of longer term "trends"

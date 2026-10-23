@@ -1,0 +1,8 @@
+The file of the report is stored at the
+MetaTrader 4\experts\files\
+directory. The appearance of the name is
+"Symbol_Period---date of the first bar in history--date of the last bar in history.txt".
+The example is attached.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7735

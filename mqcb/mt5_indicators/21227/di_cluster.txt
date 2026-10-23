@@ -1,0 +1,23 @@
+Indicator DI_Cluster represents three indicators ADX with different parameters. Unlike standard ADX, the threshold levels of DI Cluster are not constant, but are determined by the intersections of three indicator lines. You can choose any of the three lines of standard ADX to be displayed: ADX trend strength lines themselves and line +DI or -DI.
+The indicator has four configured parameters:
+Lines mode
+- selecting the mode of displaying the lines:
+ADX
+- ADX lines;
++DI
+- +DI lines;
+-DI
+- -DI lines.
+First ADX period
+- first ADX calculation period;
+Second ADX period
+- second ADX calculation period;
+Third ADX period
+- third ADX calculation period.
+Interpreting the signals of lines +DI and -DI is intersection of all three lines.
+Fig 1. ADX lines
+Fig. 2. +DI lines
+Fig. 3. -DI lines
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21227

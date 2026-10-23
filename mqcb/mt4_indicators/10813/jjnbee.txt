@@ -1,0 +1,15 @@
+Scalper system. It shows the entry, takeprofit and stoploss levels. Use it on M5 or above.
+TakeProfit and StopLoss come from ATR (you can change the period of the ATR).
+IMPORTANT! >>
+There are 2 basic rules:
+1. Entering only if the price crosses the entry level (i.e. for example if BUY appears, wait until the price is crosses the entry level upward)
+2. Recognizing the trend and sell only in overall downtrend, buy only in overall uptrend
+Test it on
+demo
+for the
+first
+time.
+Use PosX and PosY to place the indicator to the desired location.
+Methodology differs from
+JJN-Scalper
+.

@@ -1,0 +1,13 @@
+Forecast oscillator was developed by Tushar Chande and is the continuation of his "Time Frame Forecast" method.
+The indicator has three input parameters:
+Period - calculation period
+Applied price - calculation price
+Signal period - signal SMA period
+The Time Frame Forecast method is calculated inside the indicator and does not require the use of additional indicators.
+Calculation:
+Forecast Oscillator = Applied price - Previous Time Series Forecast / Applied price * 100.0
+Interpretation:
+Positive indicator values predict a price growth. Negative values suggest the price may fall. Tushar Chande also recommends using a 3-day smoothing line as a signal line. When the oscillator line is accelerated relative to the signal line or crosses it, this indicates either stopping of the price movement (reversal or intersection opposite to the signal line movement), or a continuation of movement in the same direction (reversal or intersection in the direction of the signal line movement), or a forthcoming trend change (needs to be confirmed by the intersection of the oscillator's zero value). Data interpretation depends on the position of the oscillator line, i.e. whether it is above or below zero.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21827

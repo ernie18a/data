@@ -1,0 +1,9 @@
+Based on the
+Austin Passamonte's idea
+, this indicator calculates pivots for any time frame (provided that the chosen time frame is higher than the chart time frame).
+Two modes of calculation :
+original (when it calculates as in the
+Austin Passamonte's idea)
+or alternate mode (when it is more support / resistance inclined)
+Recommendations:
+You can use it as any pivots indicator

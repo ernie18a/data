@@ -1,0 +1,4 @@
+The EA named TicksInMySQL writes the ticks directly into mySQL database.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8589

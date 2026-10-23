@@ -1,0 +1,2 @@
+Ron Black's swing line indicator for MetaTrader 5 version.
+This indicator does not have any parameters so I think that there is no need to explain how it should be used (except that I would like to add my personal opinion that it should not be used on lower time frames: using it on time frame starting from 1 hour, in my opinion gives better results).

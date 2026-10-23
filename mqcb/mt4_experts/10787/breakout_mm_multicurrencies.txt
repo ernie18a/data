@@ -1,0 +1,75 @@
+Description:
+The EA based on break-outs with money management. It is able to trade on multiple pairs.
+The bot allows you to select one or more Symbol Pairs. It then computes support and resistence values given the price for each Symbol and places incremental orders. Once the global Profit has been reached, it tries to follow the gain and then takes the pips. The bot also has a smart money management both avoiding to open orders if there is margin available and also trying to protect the balance if the loss is higher of a certain percentage.
+The gain is not "galactical" but is assured and secure. The aim of the bot is to protect the capital and get a constant good profit.
+For the installation you need to put the two mqh files into the "include" folder.
+Recommendations:
+Comma separated list of Symbol Pairs: EURUSD,USDCHF (must be equal to the string of your account provider).
+extern
+string
+Symbols =
+"EURUSD"
+;
+extern
+double
+xFactor =
+1.5
+;
+extern
+string
+TimeSet =
+"07:32"
+; // Balance percentage order balance and Lot value
+extern
+double
+RiskPercent =
+10
+;  // Percentage of the risk for
+each Lot
+extern
+double
+RiskPerTrade =
+2
+;  // Fixed value if
+RiskPerTrade ==
+0
+extern
+double
+Lots =
+0.01
+;
+extern
+double
+StopLoss =
+0
+;
+extern
+double
+MinPipsProfit =
+30
+;
+extern
+double
+TrailingUnlockStop =
+35
+;
+extern
+int
+Slippage =
+3
+;
+extern
+bool
+AllOrders =
+false
+;  // Wheather or not manage ALL opened orders (manual too)
+extern
+bool
+AllSymbols =
+true
+;
+extern
+bool
+LogToFile =
+false
+;  // Log to console or to a file

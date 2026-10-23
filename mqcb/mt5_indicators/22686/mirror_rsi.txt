@@ -1,0 +1,25 @@
+Oscillating indicator Mirror RSI displays the forward and reverse difference of two RSIs and the signal line.
+It has six adjustable parameters:
+First RSI period
+- first RSI calculation period
+First RSI applied price
+- first RSI applied price
+Second RSI period
+- second RSI calculation period
+Second RSI applied price
+- second RSI applied price
+Signal period
+- signal line calculation period
+Signal method
+- signal line calculation method
+Calculations:
+Ascending = RSI1 - RSI2
+Descending = RSI2 - RSI1
+Signal = AvgRSI
+where:
+RSI1 = RSI(First RSI applied price, First RSI period)
+RSI2 = RSI(Second RSI applied price, Second RSI period)
+AvgRSI = MA(RSI1, Signal period, Signal method)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22686

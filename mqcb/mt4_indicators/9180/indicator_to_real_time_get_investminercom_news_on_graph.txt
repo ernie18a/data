@@ -1,0 +1,12 @@
+With this indicator you can check data mining news from InvestMiner.com while analysis a symbol Graph.
+InvestMiner Indicator
+Important:
+it´s necessary install "http51" (dll and include file) remote http library before use de indicator (more information about http51 and install information at
+https://www.mql5.com/en/code/8435
+)
+Usage tips:
+it works just with Symbols that are present on
+InvestMiner.com
+data base
+use Chart Shift mode to better see the news
+news refresh time is 5 minutes

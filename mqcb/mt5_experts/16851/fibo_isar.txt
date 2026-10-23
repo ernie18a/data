@@ -1,0 +1,29 @@
+Author of the idea
+—
+Yuri
+,
+mq5 code author
+—
+barabashkakvn
+.
+The EA compares the current price location with the readings of the two indicators (SAR("
+Step Fast_SAR
+","
+Maximum Fast_SAR
+") and SAR("
+Step Slow_SAR
+","
+Maximum Slow_SAR
+")).
+Buy signal:
+Sell signal:
+Pending order prices are calculated by Fibo levels "
+Fibo Entrance Level
+" and "
+Fibo Profit Level
+" in the
+ScalpParabolicPattern
+() code block.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16851

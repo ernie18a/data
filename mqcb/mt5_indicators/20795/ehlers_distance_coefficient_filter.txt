@@ -1,0 +1,5 @@
+John Ehlers' Distance Coefficient Filter.
+Even though a lot of times it is mistaken for
+Ehlers Nonlinear Filter
+, they are not the same.
+This version is coded exactly a Ehlers described it in his book "Rocket science for traders".

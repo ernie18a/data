@@ -1,0 +1,41 @@
+Draws a
+Horizontal Line
+at Session Open: On the hour (09:00, 15:00 etc) or any minute past the hour (9:30, 18:47 etc)
+Daily_Open_Line mod-x is a modification of the Daily_Open_Line indicator -
+Original Author: Midnite
+The original indicator has input for a start time
+on
+the hour (9:00, 11:00, 15:00 etc) but not
+past
+the hour (09:30, 15:15 etc). See
+here
+for original indicator.
+Unable to find a version accommodating a start time past the hour, rather than reinvent the wheel, I have added some edits.
+Edits
+:
+Added the ability to input minutes and set the start time at any minute past the hour (9:30, 10:42, 14:56 etc).
+Added input limits - hours to 23 or less and minutes to 59 or less.
+The usual parameters of line color, thickness & style apply.
+EUR-USD: US Open 9:30 Eastern Time @ 2012-Jun-04
+Note:
+If you are checking the historical candles.....
+The candles in the above chart are generated from range bars (RB) at a setting of 5 pips and will differ from the historical standard candles.
+Each of the above range candles is exactly 5 pips from low to high.
+Please be aware of below:
+Been messing with this and the minute feature doesn't work to an extent as MT4 will move any line to the nearest candle open, when ever on a higher TF. Limitation of the orignal code maybe - SetIndexStyle(0,DRAW_LINE);
+The minute feature works within the limits of mathematical possibilty. The indicator starts the H-Line at the open of the candle that corresponds to the minute setting-parameter.
+On a M5 timeframe a time of 08:05 will start the H-Line at the open of the 08:05 - 08:10 candle and on a M30 timeframe a time of 08:30 will start the H-Line at the open of the 08:30 - 09:00 candle.
+If a time of 08:07 is set on a M5 timeframe the indicator will not find a candle open at 08:07 and will skips the 08:05 - 08:10 candle and starts the H-Line at the next available candle open, 08:10 - 08:15. So a minute parameter of xx.07 is meaningless and invalid. Likewise a time of 02:00 on a H4 timeframe is meaningless and invalid as the candle start and end time is 00:00 - 04:00.
+Within the scope of present code valid hour and minute settings-parameters are as follows:
+M1
+>- all possible minutes past the hour : xx:00 - xx:59
+M5:
+xx:00, xx:05, xx:15, xx:30.
+M15:
+xx:00, xx:15, xx:30.
+M30:
+xx:00, xx:30
+H1:
+00:00 - 23:00 (only on the hour)
+H4:
+00:00, 04:00, 08:00, 12:00, 16:00 & 20:00.

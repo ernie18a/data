@@ -1,0 +1,56 @@
+The strategy is based on the ZigZag indicator and pending orders.
+The code idea first appeared in the forum topic
+A strategy based on the ZigZag indicator - "Last ZZ50"
+(in Russian).
+The author of the idea:
+Vitaly Muzichenko
+, the author of MQL5 code:
+Vladimir Karputov
+.
+The general principle of the "Last ZZ50" strategy:
+In the ZigZag indicator, we always analyze the last two rays:
+AB
+and
+BC
+. The
+AB
+ray is not fixed yet, and can change (the position of the
+A
+point can change).
+Pending orders are paced in the middle of the
+AB
+and
+BC
+rays so that:
+Triggering of the pending order on the
+AB
+ray is the
+continuation
+of trend shown by the
+BC
+ray.
+Triggering of the pending order on the
+BC
+ray is the
+reversal
+of trend shown by the
+BC
+ray.
+Since the
+AB
+ray is not fixed yet, and can change (the position of the
+A
+point can change), the pending order will be modified all the time to keep its price in the middle of
+AB
+.
+Open positions are trailed based on the following rule: we wait until the position moves to the profit area (not taking account commission and swaps) by at least (Trailing Stop + Trailing Step) points, and then enable the trailing function for this position.
+The process of search for peaks is implemented in this Expert Advisor: the indicator is added to the chart, and additional three vertical lines are drawn through points
+A
+,
+B
+and
+C
+:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18857

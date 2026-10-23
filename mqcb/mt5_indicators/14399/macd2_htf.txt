@@ -1,0 +1,14 @@
+The
+MACD-2
+indicator with the timeframe selection option available in input parameters:
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Indicator chart period (timeframe)
+The indicator requires MACD-2.mq5 indicator file. Place it in <terminal_data_folder>\MQL5\Indicators.
+Figure 1. The MACD-2_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14399

@@ -1,0 +1,31 @@
+Elder's Safe Zone Triple indicator is Alexander Elder's safe zone. Unlike
+Elder's Safe Zone
+, the indicator is able to display three lines with different settings. The indicator calculates the minimum stop loss size, so that it is not far from the price for maintaining profit and not too close to the price so that the noise does not prematurely interferes stop positions.
+The indicator has nine adjustable parameters:
+First ESZ Period
+- first line Safe Zone calculation period
+First
+Stop factor
+- value of Safe Zone line shift from the first line price
+First
+EMA period
+- EMA calculation period for defining the first line price direction
+Second ESZ Period
+- second line Safe Zone calculation period
+Second
+Stop factor
+- value of Safe Zone line shift from the second line price
+Second
+EMA period
+- EMA calculation period for defining the second line price direction
+Third ESZ Period
+- third line Safe Zone calculation period
+Third
+Stop factor
+- value of Safe Zone line shift from the third line price
+Third
+EMA period
+- EMA calculation period for defining the third line price direction
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22930

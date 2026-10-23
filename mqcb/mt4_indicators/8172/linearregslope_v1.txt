@@ -1,0 +1,7 @@
+Indicator LinearRegSlope_v1.
+What was done
+.
+Parameters:
+extern int Price =0;
+extern int Length =14;
+LinearRegSlope_v1

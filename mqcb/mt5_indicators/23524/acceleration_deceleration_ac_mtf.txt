@@ -1,0 +1,27 @@
+This indicator is a multi-timeframe Bill Williams AO (
+Accelerator Oscillator
+) with adjustable parameters.
+It has five adjustable parameters:
+AO Fast MA period
+-
+Awesome Oscillator's
+fast SMA calculation period
+AO Slow MA period
+-
+Awesome Oscillator's
+slow SMA calculation period
+AC MA period
+- SMA period to calculate accelerating/slowing
+AC timeframe
+- timeframe, from which the AC data will be displayed on the current chart
+Drawing mode
+- drawing mode
+Steps
+- by steps
+Slope
+- by sloping lines
+Fig. 1. Data of Accelerator Oscillator from timeframe H4 on the H1 chart, Drawing mode = Steps
+Fig. 2. Data of Accelerator Oscillator from timeframe H4 on the H1 chart, Drawing mode = Slope
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23524

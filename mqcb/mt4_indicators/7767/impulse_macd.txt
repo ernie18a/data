@@ -1,0 +1,11 @@
+The basis of the indicator is constructing a system combining three MA indicators. Visual presentation and physical sense can be estimated when attaching them to a chart.
+The first indicator: SMMA МА of High
+The second indicator: SMMA МА of Low
+These lines constitute a channel.
+The third indicator: LWMA МА of WEIGHTED. Actually this is an impulse signal line. Here is nothing new, but the histogram construction method differs from traditional.
+The main question I tried to answer: why do we always need to track MACD values and its movements even if they are useless at the moment? The solution is to remove from a chart all unnecessary values. This is done by analyzing the position of an impulse signal line relatively to the channel lines: if the impulse line is higher than High value, divergence is calculated as the difference between the impulse and the High value. If it is lower than Low, it is calculated as the difference between the impulse and Low. Consequently, intermediary movements are not shown.
+And there is additional signal line of a histogram typical of MACD.
+A trading system here is clear from the chart: open only when the histogram and the zero line signal cross, if direction changes place a trailing stop and wait for the next intersection if a Stop triggers. So, we use only the first price movement impulse.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7767

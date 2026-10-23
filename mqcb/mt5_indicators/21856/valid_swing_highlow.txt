@@ -1,0 +1,15 @@
+Valid Swing HighLow is an advanced indicator of 2х2 fractals. It differs from the standard one in that each new bar of the fractal is always higher/lower than the previous one.
+For the upper fractal: LeftHigh2<LeftHigh1<CenterHigh>RightHigh1>RightHigh2
+For the lower fractal:  LeftLow2>LeftLow1>CenterLow<RightLow1<RightLow2
+It has one configurable parameter:
+Bar of drawing
+- the bar for drawing labels
+Signal bar
+- draws labels based on the Open price of the signal bar
+Fractal bar
+- draws labels on the bar and using fractal prices (High/Low)
+Fig. 1. Bar of drawing = Fractal bar
+Fig. 2. Bar of drawing = Signal bar
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21856

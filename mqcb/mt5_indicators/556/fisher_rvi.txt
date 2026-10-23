@@ -1,0 +1,18 @@
+Real author:
+Witold Wozniak
+Fisher RVI is an oscillator that modifies
+RVI
+(
+Relative Vigor Index
+) custom indicator values using
+Inverse Fisher Transform
+.
+The indicator is inspired by John Ehlers' article
+"Using The Fisher Transform"
+published in November 2002 in the
+"Technical Analysis Of Stock & Commodities"
+magazine.
+Trading rules are quite simple. It is time to buy when the indicator crosses the zero level upwards. It is time to sell when the indicator crosses the zero level downwards. Crossing the indicator signal line may also be used.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/556

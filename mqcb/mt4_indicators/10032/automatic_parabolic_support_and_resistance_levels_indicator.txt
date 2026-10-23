@@ -1,0 +1,6 @@
+This indi will draw the levels and then delete if older than your selected bars. The turn is calculated on above/below opens not closes as that seems to get most of the turns and this makes it slightly different than just the dots from a programing point of view.
+I prepared a video to show it in use with Bollinger bands as this seemed to illustrate how the indi worked quite well. You can have a look if you like here>>.
+Parabolic S&R Levels Video
+.
+Very basically the more previous crosses in bars past that are close together show the strength of the resistance/support level. I have noticed that price tends to want to break
+into clear ground which is easy to see as clear chart area.

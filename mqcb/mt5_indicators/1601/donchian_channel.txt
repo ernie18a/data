@@ -1,0 +1,8 @@
+The real author:
+Richard Dawood Donchyan
+Donchian channel is constructed by taking the highest (maximum from High) and the lowest (minimum from Low) prices for the previous N periods.
+The instrument will be bought (long positions will be opened) when the current price maximum increases the maximum channel value and it will be sold (short positions will be opened) when the current bar decreases below the minimum channel value.
+Donchian channel is the indicator useful for observing market price volatility. If the price is stable, Donchian channel will be relatively tight. If the price fluctuates too much, then Donchian channel will be wider.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1601

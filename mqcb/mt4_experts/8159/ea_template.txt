@@ -1,0 +1,44 @@
+Revised template attached to article
+MetaEditor: Templates as a Spot to Stand On
+. The main idea of this revision was to avoid redundant size definitions of service arrays and dynamic changes of these arrays sizes. Service arrays are immediately allocated with the size of up to 100 orders, counters that indicate the array size are added,
+int
+OurTicketsCounter;
+// counter of "friendly" orders, it specifies the limitation for arrays Tickets[100][9],CommentsTicket[100][2]
+int
+SL_TP_Counter;
+// counter of orders to be modified: for array newSL_and_TP[100][5]
+int
+OrdersToCloseCounter;
+// counter of orders to be closed: for arrays ticketsToClose[100][2] and lotsToClose[100]
+int
+OrdersToDeleteCounter;
+// counter of orders to be closed: for arrays ticketsToDelete[100]
+that are initialized with zero value at each launch of the function start() in the separate special function InitCounters():
+//+------------------------------------------------------------------+
+//| reset all counters of service arrays                             |
+//+------------------------------------------------------------------+
+void
+InitCounters()
+   {
+//----
+OurTicketsCounter =
+0
+;
+   SL_TP_Counter =
+0
+;
+   OrdersToCloseCounter =
+0
+;
+   OrdersToDeleteCounter =
+0
+;
+//----
+return
+;   
+   }
+Modifications result in that the EA created using the template loses out only two times to a specially designed EA written fully manually. I would consider this result more than acceptable.
+Store it in the folder 'experts/templates'.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8159

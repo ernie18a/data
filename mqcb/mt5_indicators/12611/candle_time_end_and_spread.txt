@@ -1,0 +1,14 @@
+Credits:
+Sergeev
+The indicator displays the current
+spread
+and the
+time
+till closing the current bar (candlestick)
+at the same time
+.
+Settings:
+The settings have only two parameters: the indicator color and its location on the chart.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12611

@@ -1,0 +1,18 @@
+The On screen MACD indicator is drawn on the main price chart. Slow ЕМА is used as the zero line.
+It has four adjustable parameters:
+Fast EMA period
+Slow EMA period
+Signal period
+- signal line calculation period
+Applied price
+- price used for calculation
+Calculations:
+MACD = EMA(Applied price, Fast EMA period)
+Zero = EMA(Applied price, Slow EMA period)
+Signal = Zero + SMA(RAW, Signal period)
+Histogram = Zero + MACD - Signal
+where:
+RAW = MACD - Zero
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23005

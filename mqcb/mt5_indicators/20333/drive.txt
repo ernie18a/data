@@ -1,0 +1,12 @@
+The oscillator indicator shows a ratio between bullish and bearish candlesticks over the selected period.
+It has two parameters:
+Period
+- calculation period
+Method
+- the method of smoothing
+Indicator calculation:
+Up (Green) = ((High - Open) + (Close - Low))/2, the average value over the selected period;
+Down (Red) = ((Open - Low) + (High - Close))/2, the average value over the selected period.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20333

@@ -1,0 +1,38 @@
+Another SMI indicator. On the basis of the book "
+Momentum, Direction and Divergence
+" by W. Blau.
+extern
+int
+Period_Q
+=
+13
+;
+// HH LL
+extern
+int
+Period_R
+=
+25
+;
+// 1st EMA
+extern
+int
+Period_S
+=
+2
+;
+// 2nd EMA
+extern
+int
+Signal
+=
+5
+;
+// Signal EMA
+extern
+int
+ShowBars
+=
+1000
+;
+SMI_Correct-1

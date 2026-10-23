@@ -1,0 +1,30 @@
+The author of the idea
+:
+Gladiator
+,
+the mq5 code author
+:
+barabashkakvn
+.
+Martingale is used. The EA trades either only BUY or only SELL direction.
+The best results are obtained during separate trading (either Buy or Sell). Only Buy trades are allowed in the below example:
+Fig. 1. Precipice MartIn USDJPY M10 Only BUY Martin 1.6.png
+Fig. 2. Precipice MartIn USDJPY M10 Only BUY Martin 3.0
+Input Parameters
+Use Buy
+- allowing Buy trades;
+SL/TP Buy
+- both the stop loss and take profit of Buy positions;
+Use Sell
+- allowing Sell trades;
+SL/TP Sell
+- both the stop loss and take profit of Sell positions;
+Use Martin
+- allowing the position lot increase;
+Martin Coefficient
+- multiplier for losing trades;
+magic number
+- Expert Advisor identifier.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19514

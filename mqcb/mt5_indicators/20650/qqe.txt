@@ -1,0 +1,2 @@
+The QQE (Quantitative Qualitative Estimator) indicator consists of a smoothed Relative Strength Index (RSI) indicator and two volatility-based trailing levels (fast and slow).
+The Fast Trailing Level (TL) and Slow TL are constructed by calculating the average range of the smoothed RSI over n-periods and then further smoothing the average range using an additional n-periods Wilders smoothing function. This smoothed average range of RSI is then multiplied by the Fast and Slow average range Multipliers to calculate the final Fast and Slow Trailing Levels.

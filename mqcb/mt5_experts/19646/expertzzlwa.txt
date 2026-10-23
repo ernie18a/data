@@ -1,0 +1,78 @@
+Installation Instructions
+To test the Expert Advisor, download the demo version of the
+ZigZagLW Addition
+indicator. The
+ZigZagLW Addition.ex5
+file must be located in the MQL5\Indicators\Market directory. Also, download the
+IsNewBar
+library and add the
+isnewbar.mqh
+file to the MQL5\Include directory. Then download the EA file
+ExpertZZLWA.mq5
+, open it in the editor and compile it. The model is ready for testing.
+Testing
+The purpose of this publication is to demonstrate the potential profitability of the ZigZagLW Addition indicator, which can be briefly described as a "trend indicator". For a detailed description of the indicator algorithm, please see
+https://www.mql5.com/en/market/product/2647
+. We will use an Expert Advisor from
+https://www.mql5.com/en/code/19102
+to develop an automated system model trading based on the specified indicator. Nothing was removed from the EA body - unnecessary lines were commented instead and required code blocks were added. I also changed the EA name. Changes are marked with the following comments:
+//**************************
+...
+//**************************
+How it works: the EA buys and sells when appropriate signals emerge, but it is not a reversal EA: all orders are closed by Stop Loss and Take Profit, and the number of open orders is equal to the number of signals.
+Let's determine the main criteria for evaluating the effectiveness of the automated system and the way the evaluation should be performed. At the initial stage, we have only a model and want to understand whether it is a good basis for constructing a system. A positive answer to this question could be obtained from the balance curve shape over a long testing period. If the balance curve shows a steady uptrend, this model can be considered as the basis for a system, to which filters, indicators, money management and other elements can be added. In general, the basis must be stable to provide a good foundation for all additions.
+To avoid manual evaluation of different balance curves with all parameters, let's set reasonable limits for the optimization by selecting (by trying to guess) the most promising sets of parameters.
+Here we can use some classic ideas. Here I mention a book, which was not my first choice. I liked the numbered list of rules for the trader. Other authors present such thoughts inconsistently scattered through the text. So, the book is "The Way to Trade" by John Piper. Open chapter 9 and read:
+The trading secrets:
+Cut your losses
+Run your profits
+Trade selectivity
+Trade with the trend
+In our case, these secrets mean the following:
+Stop loss should be small
+Take profit should be large
+Not programmed in the model
+Buy at a buy signal, sell at a sell signal
+Three of four rules can be implemented. Although there are some remarks to the last item: signals not indicate a long trend. The signal may change multiple times while the price makes its way to Take Profit. Here the signal rather plays the role of a stochastic, but its required characteristics include an early alert and mandatory formation at the beginning of the trend. So it would be more correct to say that the indicator discussed here can partially cover items 3 and 4, but none of them is covered completely. The problem with long-term trend indicators is a catastrophic lag. However such signals can also be used, for example for position scaling when such a signal is formed.
+The first screenshot shows optimization parameters. Optimize only two parameters, stoploss and takeprofit:
+The
+Level
+parameter means the used level of the ZigZagLW Addtion indicator, and
+mode
+shows the EA operation mode. In
+original_mode
+, the EA works as the original MT45 Expert Advisor; in
+addition_test_mode
+it uses signals of the ZigZagLW Addtion indicator; in
+ma_test_mode
+it uses MA intersection signals.
+The EA was optimized in the MetaTrader 5 terminal using data from the
+access.metatrader5.com:443
+server as it is recommended in the article at
+https://www.mql5.com/en/articles/385#files
+, using the data interval 1.01.2000 - 31.12.2016, in the Control Points mode on the M15 timeframe - it is shown in the second screenshot:
+The optimization result is attached here as
+complete period.xml
+.
+Consider the highest result: it obviously has a long unsuccessful period at the end of testing, which is highlighted in orange.
+The next optimization was performed on data 1.01.2012 - 31.12.2016. The result is available in the file
+partial period.xml
+.
+Let's choose the best result and see how these parameters work on the entire interval 1.01.2000 - 31.12.2016.
+For comparison, I added the third EA mode
+ma_test_mode
+. Crossing of moving averages is used as a signal in this mode. The purpose was to get about the same number of deals in order to compare the results and evaluate the effect of trading signals with the same stoploss and takeprofit parameters.
+General Observations
+The results may seem encouraging for some users and not good enough for others. Here we only note indisputable facts:
+The model corresponds to the recommendations of experienced traders in terms of loss cutting and profit running: it is reflected on the balance curve as the equity line which is above the balance line.
+The equity curve showed a steady upward trend over a long time interval with small drawdowns.
+A purely mechanical model with a small number of optimization parameters is used.
+Parameters, which are used as optimal (StopLoss=3600, TakeProfit=6700, Level=Long_term1) are a compromise. It would be more interesting to test parameters, which better suit traders' recommendations, such as StopLoss=500 and TakeProfit=8000.
+Let us compare the same parameters for signals on the crossing of moving averages
+The variant of the model with parameters StopLoss = 500, TakeProfit = 8000 is closest to experienced traders' ideas, but it is the most complex one from the point of view of psychology: because of long plateaus on the balance curve and long series of losing trades (up to 145), very few traders are able to follow the advice (maybe that's why it still works).
+Recommendations and tips described in most books on trading really work. I think, even if market entries at the specified interval were completely random, these parameters would show a profit.
+Some automated systems differ significantly from others with the same order placing parameters and with approximately the same number of orders in the selected interval.
+Given the extreme volatility of the Forex market, perhaps better results could have been obtained on other less volatile markets.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19646

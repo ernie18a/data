@@ -1,0 +1,2 @@
+A simple indicator to draw daily vertical lines plus the day of week labels on the chart.
+Useful to identify the start of trading days on the chart.

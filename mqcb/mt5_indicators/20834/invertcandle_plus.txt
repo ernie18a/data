@@ -1,0 +1,51 @@
+The inverted chart of the current financial instrument, displaying Ask and Bid price levels.
+//+----------------------------------------------+
+//|  INDICATOR INPUT PARAMETERS                  |
+//+----------------------------------------------+
+input
+bool
+AskShow=
+true
+;
+// display Ask
+input
+color
+AskColor=
+clrBlue
+;
+// Ask line color
+input
+ENUM_LINE_STYLE
+AskStyle=
+STYLE_SOLID
+;
+// Ask line style
+input
+bool
+BidShow=
+true
+;
+// display Bid
+input
+color
+BidColor=
+clrRed
+;
+// Bid line color
+input
+ENUM_LINE_STYLE
+BidStyle=
+STYLE_SOLID
+;
+// Bid line style
+input
+int
+IndicatorDigits
+=
+6
+;
+// indicator display accuracy format
+Fig.1. Indicator InvertCandle_Plus
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20834

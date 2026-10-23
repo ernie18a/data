@@ -1,0 +1,44 @@
+Real author:
+klot
+The indicator exemplifies smoothing of price time series of the
+RSI
+indicator by means of filtration of harmonics of a greater order.
+This approach can be applied for smoothening any indicators' values. The main advantage of the method is a real absence of a delay.
+Indicator input parameters:
+input
+uint
+RSIPeriod=
+14
+;
+input
+ENUM_APPLIED_PRICE
+RSIPrice=
+PRICE_CLOSE
+;
+input
+uint
+N =
+7
+;
+// Series length
+input
+uint
+SS =
+20
+;
+// Smoothing coefficient
+input
+int
+Shift=
+0
+;
+// Horizontal shift of the indicator in bars
+where:
+N specifies series length (power of two);
+SS - A smoothening coefficient in the resulting spectrum zeroes out frequency ratios exceeding set value. SS cannot exceed 2^N. RSI series fully repeats itself if SS = 2^N.
+dt_FFT
+library is required for the indicator operation.
+Fig.1. i-SpectrAnalysis_RSI Indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7002

@@ -1,0 +1,2 @@
+Author: Fermin Da Costa Gomez
+iDCG ModStDev indicator.

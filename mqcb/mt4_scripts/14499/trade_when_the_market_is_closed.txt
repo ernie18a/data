@@ -1,0 +1,8 @@
+The script is designed to place orders at the time when it is not possible, for example, when the market is closed.
+Specify the trading direction (buy or sell), the order volume and the parameters of the stops in the script. As soon as the market opens, the order will be placed. Moreover, this script will maintain the order until its closure. It is possible to specify all the trailing parameters, then the order will be maintained by a trailing stop once it is opened.
+There is another feature - virtual stops. If the stop loss or take profit was specified below the stop level allowed by the broker, then the script will control the stop loss and take profit virtually and will close the order by the specified parameters itself.
+If a GAP occurs during the attachment of the script to the chart, then the script will try to open the order by the first price available.
+It is also possible to specify the start time of the script, then the order will be placed not immediately once the market opens, but at the specified time.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14499

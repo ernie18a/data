@@ -1,0 +1,2 @@
+Multi pass averages MetaTrader 5 version is similar to multi weighted MA but this one allows the additional 16 types of averages instead of using just LWMA.
+As usual, this version is made so that it can be applied to other indicators too (it can accept other indicator data in the price field). Maximal depth is up to 25.

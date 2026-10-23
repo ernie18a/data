@@ -1,0 +1,8 @@
+This indicator is used to create signals for the
+Binary Com
+connector. An arrow indicator can be connected to it, and when a signal appears, an arrow will be drawn.
+This indicator can be used to connect and transfer data between indicators or from the indicator to the advisor (if the signal is in the indicator buffer, a graphic object will be drawn, in this case OBJ_ARROW)
+To work correctly, place the required indicator in the folder with the data, or specify the path to it along with the name.
+In the indicator code itself, you can specify for ICustom the input parameters for the indicator. You can also change the buffers for the buy / sell signal and the default buffers values.
+Changing the ICustom value (appending the parameters for the indicator)
+We change the values of buffers, the name of the indicator and the name of the arrows.

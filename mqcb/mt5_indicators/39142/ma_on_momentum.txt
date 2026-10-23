@@ -1,0 +1,5 @@
+The idea of the indicator
+Two lines - simple 'Momentum' indicator and 'Momentum' indicator smoothed with 'Moving Average'.
+Rice. 1. MA on Momentum
+How to trade
+We are looking for moments when the indicator lines cross: if the cross is below the '100' level, this is a signal to open a BUY position; if the recalculation is above the '100' level, this is a signal to open a SELL position.

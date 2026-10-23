@@ -1,0 +1,2 @@
+This version uses T3 price prefiltering.
+Unlike the MetaTrader 4 version, in MetaTrader 5 we can have more colors for a line and we can do almost the same thing that is easily done in tradestation. So, this version is using that possibility to make it change colors depending on its value in user definable steps (example is using 20 steps for that purpose).

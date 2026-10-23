@@ -1,0 +1,15 @@
+Indicator Decema.
+Input Parameters:
+extern
+int
+MA_Period
+=
+15
+;
+extern
+int
+MA_Price
+=
+PRICE_CLOSE
+;
+Decema

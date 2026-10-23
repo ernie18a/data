@@ -1,0 +1,2 @@
+.
+This is an MT4 indicator which generates signals based on Bollinger bands crossover with price.

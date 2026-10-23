@@ -1,0 +1,76 @@
+Idea by:
+Nikolay Khrushchev
+Code mq5 by:
+barabashkakvn
+The EA works on hedge accounts only!
+Swing-based Expert Advisor: the EA sets a pending Sell stop or Buy stop order with an increased lot and in the opposite direction.
+Inputs:
+Stop Loss,
+in pips (1.00045-1.00055=1 pips)
+Take Profit
+, in pips (1.00045-1.00055=1 pips)
+Trailing Stop
+(min distance from price to Stop Loss), in pips
+Trailing Step
+, in pips (1.00045-1.00055=1 pips)
+Money management
+: Lot OR Risk (only for first positions) - lot calculation type for the first position: fixed lot or in risk % relative to the deposit
+The value for "Money management"
+//--- trading logic
+Step
+, in pips (1.00045-1.00055=1 pips) - pending stop order step
+Lot coefficient
+(for a series of deals) - lot increase ratio for subsequent positions
+Multiply the volume of all positions
+- enable/disable multiplying the overall volume of open positions by "Lot coefficient"
+Maximum number of positions
+Maximum volume of all positions
+Profit target in money
+("0.0" -> OFF)
+Minimum Equity
+(in percent of balance) -> pause in trade
+Close all positions at startup
+//---
+magic number
+- unique EA's ID
+Start hour
+End hour
+Each time, the EA starts a trading cycle after falling within the allowed time interval between
+Start hour
+and
+End hour
+provided that there are no pending orders and no positions opened by this EA. An open position is accompanied by a pending stop order. A position volume depends on the
+Money management
+and
+The value for "Money management"
+parameters, while the volume of a pending Stop order depends on the
+Lot coefficient
+and
+Multiply the volume of all positions
+parameters.
+Position direction is determined according to the following rule:
+Close of bar #0 > Close of bar #1 -> open BUY; OTHERWISE -> open SELL
+Pending stop order type depends on an open position:
+if BUY, a Sell stop is set; if SELL, a Buy Stop is placed
+A pending stop order is set at
+Step
+from the current price.
+Trailing Stop
+and
+Trailing Step
+are enabled further on together with the profit tracking mechanisms (
+Profit target in money
+and
+Minimum Equity
+).
+When a pending order is triggered, a pending stop order with an increased lot is set again in the opposite direction.
+It is recommended to run optimization on small timeframes. First of all, look for the
+Stop Loss
+,
+Take Profit
+and
+Step
+parameters.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22788

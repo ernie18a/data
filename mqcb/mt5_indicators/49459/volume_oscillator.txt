@@ -1,0 +1,20 @@
+Volume Oscillator is the ratio of two moving averages calculated on volume.
+Calculation:
+LongEMA   = EMA(Volume, LongPeriod)
+
+ShortEMA  = EMA(Volume, ShortPeriod)
+
+VolumeOsc =
+100
+* (ShortEMA - LongEMA) / LongEMA
+A rise or fall in price
+along with an increase in volume
+can potentially signal the strength of a trend. In this case, if the volume oscillator is above the zero line, it can be a confirmation of price direction and market trend, whether the market is in an uptrend or downtrend.
+A rise or fall in price
+along with a decrease in volume
+could potentially signal trend weakness. In this case, if the volume oscillator is below the zero line, it could signal that the price direction and overall market trend is weak.
+Divergences in the negative area of the oscillator can often signal that a trend reversal could potentially occur in the near future.
+The indicator line fluctuates between above and below the zero line, which gives an indication of the price trend and whether the movement is strong or weak. Positive values of the oscillator suggest that there is sufficient market support for the price to continue its current trend direction. Negative values suggest that there is no market support, indicating that the price is stagnant or hinting at a trend reversal.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/49459

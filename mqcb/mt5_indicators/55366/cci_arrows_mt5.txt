@@ -1,0 +1,28 @@
+CCI Arrows MetaTrader indicator
+— will show you where the CCI cross with the zero occur (marking it with the red or blue arrow) to help you decide whether to go short or long. It has a minimal lag and a relatively high accuracy. This simple indicator is a good choice for those traders that prefer to keep it simple and hate complex indicators. CCI Arrows supports all types of alerts. The indicator is available in MT4 and MT5 versions.
+Input parameters
+CCI_Period
+(default = 14) — the period of the CCI that is used in this indicator. The higher is the value the more lags this indicator but less false signals occur.
+EnableNativeAlerts
+(default = false) — if
+true
+, MetaTrader's native pop-up alerts will be used when an arrow appears.
+EnableEmailAlerts
+(default = false) — if
+true
+, MetaTrader's email alerts will be sent when an arrow appears. Email should be properly configured in MetaTrader via
+Tools->Options->Email
+.
+EnablePushAlerts
+(default = false) — if
+true
+, MetaTrader's push notification alerts will be sent to your device when an arrow appears. Notifications should be properly configured in MetaTrader via
+Tools->Options->Notifications
+.
+TriggerCandle
+(default = Previous) — the candle to issue alerts on:
+Previous
+— the most recently closed candle or
+Current
+— the yet unfinished candle.
+As you can see, this indicator gives direct signals for buy (blue arrow pointing up) and sell (red arrow pointing down). You should know that you should NOT enter the trade if the signal is contradicting the current general trend. If it is uptrend and you get a blue arrow — go long, if you get a red arrow — do nothing (just close your long position if you had one open); if it is downtrend and you get blue arrow — close short position but don't go long, if you get red arrow — go short; if chart goes sideways and you get blue or red arrow — feel free to go long or short respectively. I recommend setting your stop-loss directly at the level where the arrow is drawn (it is displayed if you point your mouse at it).

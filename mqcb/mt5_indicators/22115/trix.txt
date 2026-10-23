@@ -1,0 +1,50 @@
+Trix oscillator is an oscillator based on the smoothed triple moving average.
+The indicator was developed in the early 1980's by Jack Hutson, an editor for "Technical Analysis of Stocks and Commodities" magazine.
+There are seven configurable parameters:
+Period
+- calculation period
+First MA method
+- first MA calculation method
+Second MA method
+- second MA calculation method
+Third MA method
+- third MA calculation method
+Signal period
+- signal line calculation period
+Signal method
+- signal line calculation period
+Applied price
+Calculation
+:
+Trix = (MA3 - PrevMA3) / PrevMA3
+Signal = MA(Trix,
+Signal period,
+Signal method)
+Histogram =
+Trix -
+Signal
+where:
+MA3 = MA(MA2, Period, Third MA method)
+MA2 =
+MA(MA1, Period,
+Second MA method)
+MA1 = MA(Applied price,
+Period,
+First MA method)
+The equation is taken from Appel, Gerald: Winning Stock Market Systems.
+Signalert Corp., Great Neck, N.Y. 1974.
+General rule:
+Buy when
+Trix
+is below zero and crosses its
+signal line
+upwards.
+Sell when
+Trix
+is above zero and crosses its
+signal line
+downwards.
+The histogram color change may serve as a preliminary signal that either forecasts the indicator lines crossing, or can be used to work on the price roll-backs.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22115

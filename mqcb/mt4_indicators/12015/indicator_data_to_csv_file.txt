@@ -1,0 +1,10 @@
+Real author:
+I got the real code from Heaton Research's Encog project.
+Their code first gathers data, prints them on a csv file then process it real time after optimization.
+I simplify the code in order to gather data only. I do not hold the ownership of the code.
+For reference visit
+Heaton Research's project page.
+Add indicators you want to export their values to the csv to the section that starts at Line 84. Update Line 31 accordingly.
+Run the indicator on a chart. When the indicator window loads, delete indicator window.
+As soon as you delete the indicator window it gets the data and export in to the csv file. You can specify the name on the inputs part. As usual you find the file at
+MT4\MQL4\Files.

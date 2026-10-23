@@ -1,0 +1,4 @@
+It draws the resistance line basing on two last upper fractals.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8419

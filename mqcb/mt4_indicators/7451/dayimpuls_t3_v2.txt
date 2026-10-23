@@ -1,0 +1,12 @@
+Author: supplemented by Modest
+The modified version of the DayImplus 1.1 indicator.
+Added:
+Added smoothing by the t3 method. Added channels.
+Slightly changed the algorithm to ease the perception of the code. DOES NOT affect the essence of the original in any way.
+Remove the excess graphics, introduce the display modes
+DisplayMode=0 - Displays DayImpuls and smoothed curve
+DisplayMode=1 - Displays only DayImpuls
+DisplayMode=2 - Displays only the smoothed curve
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7451

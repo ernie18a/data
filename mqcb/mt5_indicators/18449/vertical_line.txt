@@ -1,0 +1,68 @@
+The indicator draws a vertical line (OBJ_VLINE) and then moves it to the specified time (hours and minutes).
+Input parameters
+:
+Only hours and minutes are used from the "
+Use only Hours and minutes
+" parameter.
+The vertical line is drawn for the current day. If a new day begins, the line is moved to this new day, and is set at the specified hour and minute.
+Video
+:
+The indicator has a built-in protection against accidental deletion of the vertical line: the timer periodically checks the existence of the line on the chart. If the vertical line (OBJ_VLINE) is not found, the static variable "prev_date" declared at the global program level is reset to zero:
+//+------------------------------------------------------------------+
+//| Timer function                                                   |
+//+------------------------------------------------------------------+
+void
+OnTimer
+()
+  {
+//--- protection against unauthorized deletion
+if
+(
+ObjectFind
+(
+0
+,InpName)<
+0
+)
+     {
+      prev_date=
+0
+;
+      VLineCreate(
+0
+,InpName,
+0
+,
+0.0
+,InpColor,InpStyle,InpWidth);
+     }
+  }
+This will cause the creation of a new vertical line in OnCalculate():
+if
+(prev_date==
+0
+)
+// first start
+{
+MqlDateTime
+str_input;
+TimeToStruct
+(InpTime,str_input);
+      str_to_draw.hour=str_input.hour;
+      str_to_draw.min=str_input.min;
+      str_to_draw.sec=
+0
+;
+
+      prev_date=
+StructToTime
+(str_to_draw);
+      VLineMove(
+0
+,InpName,prev_date);
+return
+(rates_total);
+     }
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18449

@@ -1,0 +1,10 @@
+Original author:
+Andres Barale Sarti
+A fractal volatility indicator based on the
+GARCH model by Tim Bollerslev
+. The ARMA and ARCH models can help you understand the forecasting.
+The indicator goes up if the volatility is high. It can also predict the volatility changes. The indicator almost always shows high values when trends exist. Suggestions for improving the indicator will be appreciated.
+Fig. 1. The GARCH indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12567

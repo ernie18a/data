@@ -1,0 +1,14 @@
+Zero-Lag Exponential Moving Average indicator is an exponential moving average with the minimum delay.
+It has two configurable parameters:
+Period
+- calculation period
+Applied price
+Calculation:
+ZeroLagEMA = Alpha * (2.0*AppliedPrice-LagAppliedPrice) + (1.0-Alpha) * PrevZeroLagEMA
+where:
+Alpha = 2.0 / (Period+1)
+Lag = Ceil((Period-1)/2.0)
+LagAppliedPrice - AppliedPrice on Lag bar
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22439

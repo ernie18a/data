@@ -1,0 +1,8 @@
+The average spread for the "averaging period". You can set the background transparency and transparency of the text.
+Input parameters:
+averaging period
+background
+background alpha
+text color
+text alpha
+The last 7 spreads are displayed and, at the end, the average spread over the period "averaging period".

@@ -1,0 +1,6 @@
+The HLC Trend indicator is a confirmation indicator with sub-type as a two-line-crossover.
+Buy signal:
+long line (white) crosses and closes above short line (red).
+Sell signal:
+short line (red) crosses and closes above long line (white).
+Inputs are MA method, high MA period, low MA period and close MA period. This indicator is often used with exponential moving averages but can be useful with different MA methods.

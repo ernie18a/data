@@ -1,0 +1,16 @@
+The basic idea and 99% of the source code are originally derived from the built-in 'MACD.mq5' in the MT5 terminal,
+Copyright by MetaQuotes Ltd.
+'wd.Range_MACD' indicator calculates the range difference between the 'Signal lines and MACD' and also the range distance between 'the last two MACD bar'.
+This additional range information provided by this indicator can be used to measure price cross-points, resistance/support levels, and trend changes more efficiently.
+Here's how the indicator works:
+We know if the 'MACD bar' is heading up, it indicates an upward trend on this current timeframe; conversely, if the 'MACD bar' is heading down, it indicates a downward trend. In other conditions, when the current 'MACD bar' remains flat with no difference compared to the previous bar (0 pips), this forms a new resistance/support level.
+On the image below example, the difference in range of 'Signal-MACD' is 12 pips, and the range of the 'last two MACD bars' is 0 pips.
+This implies that the resistance/support level based on the 'last two MACD bars', in period H1, is at a price level 1.2283, while the resistance/support level based on 'Signal-MACD' will be at a price level 1.2271 (1.2283 - 12 pips).
+Note:
+Resistance-Support levels based on the MACD range distance are dynamic and applicable only within the same bar and the same period. If a new bar is formed, the Resistance-Support price levels will be reset.
+In summary, MACD is a widely used technical indicator, helping traders identify potential trends, reversals, and changes in asset prices.
+With the additional range difference/distance information from 'Signal-MACD' and 'last two MACD bars,' this 'wd.Range_MACD' indicator serves as a leading indicator, helping traders in making more informed trading decisions.
+However, it is most effective when used in conjunction with other tools and analysis techniques.
+Version history:
+----------------
+v2.23    : initial release

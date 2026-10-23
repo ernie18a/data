@@ -1,0 +1,11 @@
+The Exp_ColorZerolagTriX Expert Advisor enters the market when the
+ColorZerolagTriX
+indicator cloud changes its color. The signal is formed when a bar is closing if the oscillator has crossed its signal line.
+This Expert Advisor requires the compiled indicator file ColorZerolagTriX.ex5 in order to run. Place it in <terminal_data_folder>\MQL5\Indicators.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig.1. Trade examples on the chart
+Testing results for 2014 on GBPJPY H4:
+Fig.2. Testing results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13214

@@ -1,0 +1,18 @@
+The author of the idea
+-
+Scriptor
+mq5 code author
+-
+barabashkakvn
+The Expert Advisor is designed to work only on hedge accounts: it opens BUY and SELL positions at once.
+Inputs:
+Lots - position volume if there are no open positions at the moment
+Lots coefficient - position increase ratio if there are open positions at the moment
+Lots max - maximum volume limitation
+Take Profit (in points) - take profit set in points
+magic number - unique EA identifier
+Example of "points":
+When a new bar appears, the EA closes positions and opens BUY and SELL ones simultaneously. The expectation is that within the bar, one of the positions will close by take profit and the trend will reverse a little.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22465

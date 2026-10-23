@@ -1,0 +1,4 @@
+The indicator FiboPiv_Daily_DK.
+Above Pivot = BUY AREA
+Below Pivot= SELL AREA
+FiboPiv_Daily_DK

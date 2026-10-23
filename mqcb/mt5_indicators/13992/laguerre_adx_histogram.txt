@@ -1,0 +1,9 @@
+The difference between the
+Laguerre_PlusDi
+and
+Laguerre_MinusDi
+indicators in a single window in the form of a colored histogram.
+Fig.1. The Laguerre_ADX_Histogram indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13992

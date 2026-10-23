@@ -1,0 +1,11 @@
+Description:
+BrainTrend2Sig is an indicator of the market trends that assigns colors to candlesticks according to the trend direction.
+While there is a downward trend on the market, all candlesticks are colored in red. As soon as the trend is upwards, all succeeding candlesticks will be colored in blue.
+BrainTrend2Sig algorithm is based on the processing of
+ATR
+and
+Stochastic Oscillator
+indicators' information. In this indicator I extracted all algorithm variables that can be controlled into the indicator's input parameters, so it can be used not only with the default settings now.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/395

@@ -1,0 +1,8 @@
+The
+Moving Average
+Indicator, based on the Quasi-Digital Filter. The
+MACD
+Indicator as example of its use is presented.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/137

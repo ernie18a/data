@@ -1,0 +1,12 @@
+Another version of a recommended indicator.
+Parameters:
+extern bool Bid_Colors=True;
+extern string FontType=" Sans MS";
+extern color ColorHeading= Gainsboro ;
+extern color ColorValue=CadetBlue;
+extern int TimeFrame =1440;
+extern int Trend_Bars=10;
+extern bool show.Trend=true ;
+extern int price.x.offset= 50;
+extern int price.y.offset= 10;
+Bid_View

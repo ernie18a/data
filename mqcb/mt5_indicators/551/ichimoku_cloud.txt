@@ -1,0 +1,7 @@
+In many trading systems only the cloud of Ichimoku indicator can be used (
+Ichimoku Kinko Hyo
+). Therefore, there is a need to remove the rest of the indicator lines from a chart.
+In such a situation it is better to have the indicator without any extra lines. This indicator is exactly of that kind.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/551

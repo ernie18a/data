@@ -1,0 +1,8 @@
+ZigZag version drawn using high and low of the Heikin Ashi indicator. When changing the color of the Heikin Ashi candlestick, the direction of the zigzag is changing respectively. The indicator realized the ability to specify the period of Heikin Ashi, and also displaying of enable/disable of the HA-candlesticks themselves.
+ZigZag on Heikin Ashi period equal to 1:
+ZigZag on Heikin Ashi period equal to 2 and enabled display of HA-candlesticks:
+Recommendations:
+More than 5-th period of the Heikin Ashi is not recommended.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1318

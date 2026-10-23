@@ -1,0 +1,57 @@
+The EA uses indicator
+Small_Inside_Bar
+that searches and displays the "Inside Bar" Price Action pattern.
+This indicator itself is not required for the EA operation, since its data are calculated inside the EA.
+When the bullish "Inside Bar" pattern is found, the EA will open a buy position, while for the bearish pattern, it will open a sell position.
+There are three options to open positions:
+A relevant position is opened at each signal, and the positions are closed by Stop Loss or Take Profit (*);
+A relevant position is opened at each signal, while the opposite positions are closed (refilled swing);
+A relevant position is opened at a signal, provided that such position does not exist, and the opposite position is closed (swing).
+The EA allows disabling the buy/sell activities and has the reverse mode, i.e., a Sell position is opened at the buy signal, and vice versa.
+* In case of using the mode of opening all positions at all signals and if no Stop Loss or Take Profit levels are set, the EA cannot close positions by itself. In this case, a warning will be displayed on the chart that neither Take Profit nor Stop Loss is preset and that you can only close your positions manually.
+Please note that this Expert Advisor is designed for training purposes.
+The EA has twelve input parameters:
+Experts magic number
+- the unique identifier of the EA's positions;
+Mode of opening positions
+- position opening mode:
+Any position on each signal
+- any position at each signal (*);
+Positions on each signal in one direction (swing with a refill)
+- several position in one direction (refilled swing);
+Always one position (swing)
+- only one position always (swing).
+Long positions is enabled
+- opening long positions is enabled (Yes/No switch);
+Short positions is enabled
+- opening short positions is enabled (Yes/No switch);
+Reverse trade
+- transactions reverse mode (Yes/No switch);
+Lots
+- the volume of positions to open;
+Stop loss in points
+- Stop Loss value in points (0 means no SL);
+Take profit in points
+- Take Profit value in points (0 means no TP);
+Slippage of price
+- maximum allowable slippage when opening a position;
+Multiplier spread for stops
+- spread multiplier applied to calculating a proper distance for stop orders (*).
+Waiting for environment update (in seconds)
+- time in seconds to wait for the update of the trading environment (**);
+Number of attempts to get the state of the environment
+- the number of attempts to obtain accurate information on the trading environment (***).
+* For pending orders (as well as Stop Loss or Take Profit), there is a minimum allowed distance for placing stop orders -
+StopLevel
+. I.e., the pending order (as well as Stop Loss or Take Profit) cannot be placed closer than the above distance to the price. However, if a
+StopLevel
+is zero, it only means that the
+StopLevel
+is floating, not absent. In this case, the minimum distance is usually the value of spread*2, but sometimes even the double spread is not sufficient. This is why we have introduced a custom spread multiplier used by the EA to calculate the minimum distance for placing pending orders.
+** When a trading order is sent to a server, an occasional delay in execution may lead to incorrectly countinging the number of market positions. If such an "undefined" state is detected, the Expert Advisor waits for the specified number of seconds and then reads the environment again.
+*** The number of such waiting periods within one tick is set in the EA parameters. Having taken all the allowed attempts to get the accurate information on the environment, the Expert Advisor exits processing and waits for the next tick. The EA will repeat these attempts on this new tick if the trading environment has failed to update by this time.
+To check the strategy, the default settings were tested using EURUSD H1 in the 1 minute OHLC mode within the interval from 2016.01.04 to 2018.03.29. Then, in order to find the best values of Stop Loss and Take Profit, the latter ones were optimized in the same mode and for the same time interval.
+Optimal Stop Loss is 800 points, and optimal Take Profit is 900 points:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20497

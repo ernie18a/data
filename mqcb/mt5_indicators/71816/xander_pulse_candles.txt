@@ -1,0 +1,41 @@
+XANDER Pulse Candles transforms your chart into a momentum-reading machine by coloring
+each candle based on the state of an internal momentum oscillator (RSI-based, period 14
+by default). Instead of watching a separate oscillator window, you read the market
+directly from the candles.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎨 ELECTRIC DEPTH COLOR SYSTEM
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🟢 SPRING GREEN — Strong bullish bias
+Momentum is above the threshold AND the candle closed bullish.
+Full conviction — buyers are in control.
+🔵 DEEP SKY BLUE — Weak bullish bias
+Momentum is bullish but the candle closed bearish.
+Momentum is present but losing energy — possible slowdown ahead.
+🔴 ORANGE RED — Strong bearish bias
+Momentum is below the threshold AND the candle closed bearish.
+Full conviction — sellers are in control.
+🟣 ORCHID — Weak bearish bias
+Momentum is bearish but the candle closed bullish.
+Sellers are losing grip — watch for a potential reversal.
+⬛ DIM GRAY — No bias / neutral
+Momentum is undecided. Stay out or wait for confirmation.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⚙️ THREE COLORING MODES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Momentum vs Center Line (default)
+Bias is determined by whether momentum is above or below 50.
+Best for: trend-following entries.
+2. Momentum vs Extreme Zones
+Bias activates only when momentum enters overbought or oversold territory.
+Best for: reversal hunting and avoiding overextended entries.
+3. Momentum Direction
+Bias is determined by whether momentum is rising or falling tick by tick.
+Best for: early entries and momentum shift detection.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📌 HOW TO USE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- Look for consecutive Spring Green candles for bullish continuation setups.
+- A Blue candle after a Green sequence warns of momentum fade — tighten your stop.
+- Orchid candles inside a downtrend signal short-term pullbacks, not reversals.
+- Gray zones are low-probability — avoid entries until color returns.
+Designed for dark chart themes. Works on any symbol and timeframe.

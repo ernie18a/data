@@ -1,0 +1,46 @@
+The real author:
+Kalenzo
+A variant of the
+SSL
+indicator performed in the form of the channel and represented as the colored cloud. The indicator submits alert when the trend changes its direction.
+Indicator input parameters:
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+uint
+period=
+13
+;
+// Moving averages period
+input
+bool
+NRTR=
+true
+;
+// NRTR form
+input
+int
+Shift=
+0
+;
+// Horizontal shift of the indicator in bars
+input
+uint
+AlertCount=
+0
+;
+// Number of submitted alerts
+input
+uint
+AlertBar=
+0
+;
+// The bar, from which the alert is
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 19.07.2008.
+Fig.1 The SSL_Channel_Chart indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1692

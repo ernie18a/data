@@ -1,0 +1,16 @@
+Idea by:
+Vladislav Andruschenko
+mq5 code by:
+barabashkakvn
+The EA place Stop Loss and Take Profit ONCE. In case of successful placing, it is aborted. In fact, this is a one-use EA, almost like a script. I just like it more to place this functionality in an EA.
+It only works for the current symbol.
+You can specify in its parameters: Stop Loss and Take Profit lot sizes and the type of the position, to which it should be applied (BUY, SELL, or both BUY and SELL). It it is allowed to modify the position, then the EA will change the Stop Loss and/or Take Profit forcedly. For example, modifying a BUY position is allowed and
+Stop Loss
+is set as above zero in the parameters, it means that in the BUY position, the Stop Loss will be changed
+forcedly
+in accordance with the
+Stop Loss
+input.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23445

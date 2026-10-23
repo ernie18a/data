@@ -1,0 +1,42 @@
+The author of the idea
+:
+Andrey Baluev
+MQL5 code author
+:
+barabashkakvn
+The EA only operates when a new bar appears. Position volume is set in the
+Lots
+parameter. Separate
+Stop Loss Buy
+,
+Stop Loss Sell
+,
+Take Profit Buy
+and
+Take Profit Sell
+parameters are provided for Buy and Sell positions, while
+Trailing Stop
+and
+Trailing Step
+are the same for all position types.
+Maximum positions
+allows you to set the maximum number of positions opened at a time.
+The EA defines a trend by crossing of two Moving Average indicators (
+First
+and
+Second
+). The
+Minimum distance between MA's for Buy
+and
+Minimum distance between MA's for Sell
+parameters define the minimum acceptable distance between the Moving Average indicators (
+First
+and
+Second
+).
+After defining a trend direction, the filters are enabled: iATR (Average True Range, ATR) and iStdDev (Standard Deviation, StdDev) indicators with separate input parameters for Buy and Sell.
+Note
+: The parameters for all filters both for Buy and Sell are set to similar values in the indicator by default. Optimization is required for work!
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21523

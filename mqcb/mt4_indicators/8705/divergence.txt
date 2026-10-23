@@ -1,0 +1,30 @@
+If the blue bar is directed upwards, the price will also go up. Downwards - likewise.
+Dots indicate the identified peaks (fractals) of the specified indicator.
+Red bars are the maximum peaks (weak signal that the price will "roll back" and slightly move against the trend)
+i-Divergency.mq4 - divergence based on stochastic
+i-DivMACD.mq4 - divergence based on MACD
+If you want to analyze any other indicators - replace the line
+Stochastic[CurBuffer]=
+iStochastic
+(
+NULL
+,
+0
+,
+5
+,
+3
+,
+3
+,
+MODE_EMA
+,
+0
+,
+MODE_MAIN
+,CurrentCandle);
+with the required one
+There can also be false signals. Can't do without them.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8705

@@ -1,0 +1,1 @@
+Delete pending order - script printing selected first in list pending order data and deleting pending order.

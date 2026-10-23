@@ -1,0 +1,4 @@
+Theory :
+There are a couple of versions of Tushar Chande's DMI. Some adaptive too. What is different in this version is that all is adaptive : the DMI, the dsl signal lines, All that could be made adaptive is adaptive in this version. It is using volatility ratio for adapting
+Usage :
+You can use color changes as signals

@@ -1,0 +1,8 @@
+Indicator calculates profit (loss) of the current orders on the symbol. You can freely drag and drop a line to display the current profit or loss.
+Parameters
+To count in money or in pips — how to show profit / loss.
+Add pending orders to calculate — count pending orders in the calculation, yes / no.
+Magic Number (0 - all orders by symbol) — for individual orders.
+Offset for first print (from average price) — this option is for the first start, the line is displayed on the distance of the average price.
+Color profit — profit line color.
+Color loss — loss line color.

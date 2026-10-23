@@ -1,0 +1,6 @@
+Historical Volatility Bands that are constructed using:
+Average as the middle line.
+Upper and lower bands using the
+Historical Volatility
+for bands calculation.
+Color of the middle line, unlike the bands colors, has 3 colors. When colors of the bands are the same, then the middle line is having the same color, otherwise it is having a neutral color.

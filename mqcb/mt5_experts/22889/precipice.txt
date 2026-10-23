@@ -1,0 +1,14 @@
+The author of the idea
+-
+Gladiator
+Code mq5 by:
+barabashkakvn
+Note: The EA was developed solely for checking a random market entry!
+The EA opens positions depending on the value obtained in the random number generator. Stop loss and take profit settings are similar and set in the
+Stop Loss, Take Profit
+parameter.
+The EA works on every tick. There is no more than one position on the market, which means it is able to work both on hedging and netting accounts.
+The result can be unpredictable:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22889

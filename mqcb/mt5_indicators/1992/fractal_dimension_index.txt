@@ -1,0 +1,18 @@
+Real author:
+iliko
+The Fractal Dimension Index determines the amount of market volatility.
+The easiest way to use this indicator is to understand that a value of 1.5 suggests the market is acting in a completely random fashion. Deviation from 1.5 indicates a possible profit. The possibility of profit increases when deviation increases. However, be careful - the indicator does not show trend direction! In the state of trend the indicator appears red. With high volatility it is blue. Color change from red to blue means the end of the trend, the market becomes chaotic and volatility increases. Typically, these moments are not long and are followed by a new trend.
+Indicator triggering is defined by the value of the following input parameter:
+input
+double
+e_random_line=
+1.5
+;
+// Level of triggering
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 24.01.2008.
+Figure 1. Fractal Dimension Index
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1992

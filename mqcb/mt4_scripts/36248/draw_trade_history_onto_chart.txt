@@ -1,0 +1,9 @@
+Blue Zone = TP Zone
+Red Zone = SL Zone
+Blue Arrow = Buy
+Red Arrow = Sell
+Blue Tick = Win
+Red Cross = Lose
+---
+1. Open the chart that you want to display the objects.
+2. Key in magic number if you want to display only certain magic number trade. If MAGIC_NUMBER = 0, it will display all the history trade for that selected symbol.

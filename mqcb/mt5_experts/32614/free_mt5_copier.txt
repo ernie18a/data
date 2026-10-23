@@ -1,0 +1,1 @@
+The code is mostly self-documenting, and should therefore be easy to follow along with some experience in coding. This is not a perfect product, but it should set the wheel rolling. Please feel free to develop and possibly share this product back to the discussion.

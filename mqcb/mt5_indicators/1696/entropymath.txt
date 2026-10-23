@@ -1,0 +1,19 @@
+The real author:
+Aleksandr Pak
+The entropy is the system disorder measure. The indicator applies one of the methods of random sample entropy calculation.
+The NumBars setting parameter is the width of the window or the period of the indicator what is more accustomed for trader:
+input
+uint
+numbars=
+12
+;
+//period of averaging
+The final indicator by its properties resembles the MACD histogram. This indicator was first implemented in MQL4 and published in
+Code Base
+on 05.07.2008. The source code of this script is shown
+on link
+.
+Fig.1 The EntropyMath indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1696

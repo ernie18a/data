@@ -1,0 +1,12 @@
+Real author:
+Nick A. Zhilin
+An indicator of the series of simple indicators without averaging. It is implemented as a channel with a fixed width.
+The meaning of the indicator is quite clear from its code. Instead of analyzing the period, a fixed channel in both sides of the indicator line has been added. Initially it included period analysis, but experiments have shown that in the indicator values are mainly formed at the channel borders.
+Use: first - we need to know the current trend at the older TFs. The most convenient way is to use the indicator on smaller timeframes with a small target. For example, for timeframe M5 the channel of 8 points works well. Enter a trade during correction one point above the main line of the indicator (to Sell) and one point below it (to Buy) with a target about 10 points, or one point beyond the channel. Better work with pending orders because small timeframe is used. Otherwise, you can be late sometimes.
+This indicator was first implemented in MQL4 and published in
+CodeBase
+on 22.08.2007.
+Figure 1. The DynamicRS_Channel indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2354

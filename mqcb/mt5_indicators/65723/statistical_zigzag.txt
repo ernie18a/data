@@ -1,0 +1,9 @@
+In this Zigzag, a new swing point is confirmed when price moves beyond the volatility threshold. The volatility is defined as current
+standard deviation × multiplier
+.
+Instead of scanning for absolute highs/lows across a fixed depth, it evaluates extremes relative to the local volatility level and takes the most extreme price within the move that triggered the threshold. Because standard deviation evolves bar-by-bar, the threshold adapts dynamically to changing market conditions.
+A horizontal line extends from the latest confirmed swing projecting a statistically meaningful boundary: the price is likely to either respect it with a bounce or breach through it with a breakout.
+There are many ways to see this indicator. In a bearish trend, you could view price movement above the projected level as noise and place a sell stop just beneath the line, or, enter directly at the level - and exit at breakeven if the price suddenly diverges against the trade.
+Understanding the inputs:
+A higher length will mean that the legs will be longer (and there will be less turning points), likewise, a lower length will cause more turning points, and the zigzag legs will be shorter
+A higher volatility multiplier means the threshold is harder to trigger -- more rigid legs, a lower volatility multiplier means the threshold is easier to trigger -- more responsive legs

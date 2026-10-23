@@ -1,0 +1,4 @@
+МТS performs a trading oriented at the panic, publishing of the important economical indexes at the FOREX market. The parameters of this MTS are oriented at the trading with EURUSD by the hourly data. It is recommended to use a deposit more than 1000$. You can increase the profit by increasing the risk factor, but it is better if you keep the moneymanagement and use the defaults. Also this MTS contains a lot of excessive code from my other EA that will be finished soon, maybe.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8155

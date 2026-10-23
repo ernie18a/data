@@ -1,0 +1,76 @@
+Description:
+This expert advisor is based on the famous DeMark Lines indicator that automatically draws trending lines. Each time that there is a signal, it takes 4 orders with different settings. It can be reversed if needed.
+You have to put the DeMark lines.mq4 in the indicators directory and the DemarkLinesEA.mq4 in the experts one.
+Recommendations:
+Test first on demo.
+Strategy Tester Report
+DemarkLinesEA
+InterbankFX-Demo Accounts (Build 217)
+Symbole
+EURUSD (Euro vs US Dollar)
+Periode
+4 Heures (H4) 2008.07.25 00:00 - 2008.08.01 12:00 (2008.07.25 - 2008.08.30)
+Modele
+Chaque tick (la méthode la plus précise, basée sur tous les moindres relevés disponibles)
+Parametres
+Reverse=false; TradeOrder1=true; TradeComment1="Trade1"; TradeLots1=15; TradeSL1=30; TradeTS1=50; TradeTP1=0; TradeOrder2=true; TradeComment2="Trade2"; TradeLots2=10; TradeSL2=50; TradeTS2=80; TradeTP2=0; TradeOrder3=true; TradeComment3="Trade3"; TradeLots3=5; TradeSL3=80; TradeTS3=120; TradeTP3=0; TradeOrder4=true; TradeComment4="Trade4"; TradeLots4=2; TradeSL4=120; TradeTS4=160; TradeTP4=0; TradeAtCloseBar=true; TrailingStop=0; TrailingStep=1; BreakEven=0; MagicNumber=0; Repeat=3; Periods=5; UseAlert=false; SendEmail=true; TradeLog="DemarkLinesEA"; Slippage=3; Indicator_Setting="---------- Indicator Setting"; showBars=3000; LevDP=2; qSteps=1; BackStep=0; startBar=0; TrendLine=false; HorizontLine=false; ChannelLine=false; TakeLines=false; Comments=false; Trend=0; ShowArrows=true; CustomFeatures=true; UpTrendColor=Green; DownTrendColor=Red; TrendlineWidth=3; ShowAlerts=false; EmailAlert=false;
+Bars en test
+1034
+Ticks modelés
+46452
+Qualité du modelage
+90.00%
+Erreurs des graphiques désaccordés
+0
+Dépot initial
+10000.00
+Profit total net
+41626.40
+Profit brut
+41626.40
+Perte brute
+0.00
+Facteur de profit
+Rémunération espérée
+4625.16
+Chute absolue
+1020.00
+Chute maximal (%)
+11400.00 (18.09%)
+Enfoncement relatif
+39.57% (6513.80)
+Total des Trades
+9
+Positions SHORT (vente) gagnées %
+3 (100.00%)
+Positions LONG (achat) gagnées %
+6 (100.00%)
+Profits des Trades (% du total)
+9 (100.00%)
+Pertes des Trades (% du total)
+0 (0.00%)
+Le plus large
+gains par Trade
+18000.00
+pertes par Trade
+0.00
+Average (moyenne)
+gains par Trade
+4625.16
+pertes par Trade
+0.00
+Maximum
+gains consecutifs (profit en $)
+9 (41626.40)
+pertes consecutives (perte en $)
+0 (0.00)
+Maximal
+Gains consecutifs (coups gagnants)
+41626.40 (9)
+Pertes consecutives (coups perdants)
+0.00 (0)
+Average (moyenne)
+gains consecutifs
+9
+Pertes consecutives
+0

@@ -1,0 +1,6 @@
+Theory :
+Based on the description from here :
+Advance-decline line
+the indicator counts advances and declines of the symbol it is applied to (instead of counting some other instruments, and that is why the "self" in the name comes. Seems to be useful in the "self" form too
+Usage :
+You can use color changes as signals

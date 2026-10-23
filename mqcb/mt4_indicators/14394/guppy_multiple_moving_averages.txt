@@ -1,0 +1,19 @@
+The daily strategy by Daryl Guppy is implemented using this indicator.
+Originally this system was designed for the securities market, but has been later modernized for the currency market as well.
+Recommendations:
+Currency pairs with USD.
+Time frame — Daily.
+However, there is no restriction on using other currency pairs and time frames.
+Indicators:
+The first (fast) set consists of 6 Moving Average with periods of: 3, 5, 8, 10, 12, 15 (in this indicator they are red).
+The second (slow) set consists of 6 Moving Average with periods of: 30, 35, 40, 45, 50, 60 (in this indicator they are green).
+The records regarding the binary options feature a 13-th Moving Average with a period of 200 (implemented in this indicator and colored in blue).
+The trading conditions will not be described, as the detailed information is easy to find on the Internet, but for the lazy there is a couple of links:
+Strategy4you.ru
+Binguru.net
+Take the time to follow the link once more and read carefully!
+Recommendations:
+A favor, to be exact: I am merely learning programming and do not know much, but... if anyone has an idea about the improvement of the indicator, feel free to write me. I would be interested in trying to implement your ideas!
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14394

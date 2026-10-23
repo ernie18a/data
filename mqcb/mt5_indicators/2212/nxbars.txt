@@ -1,0 +1,13 @@
+Real author:
+EvgeniX
+A semaphore signal indicator with a prediction. The newest signal appears on the bar distanced from the current bar. The distance is defined by an input parameter
+input
+uint
+HowManyBars=
+5
+;
+// number of bars for analysis
+Figure 1. The NxBars indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2212

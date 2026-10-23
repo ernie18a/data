@@ -1,0 +1,17 @@
+This is a modification of the first
+RSI EA
+version. Time control has been added in this version (you can set a time interval within a day as well as with a transition though a day). Time control is configured using parameters
+Use time control
+,
+Start hour
+and
+End hour.
+Trailing stop has been added. Position opening functions have been extended. The Expert Advisor performs operation on every tick. The EA opens only one position at a time, therefore it is able to work both on hedging and netting accounts.
+The Expert Advisor will buy when the RSI indicator enters the oversold zone, and will sell when RSI enters the overbought zone.
+OpenBUY, OpenSELL — now you can configure only buy, only sell or both directions.
+CloseBySignal — you should set Stop Loss or Take Profit if ClosebySignal = false.
+An example of a buy signal:
+An example of a sell signal:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23152

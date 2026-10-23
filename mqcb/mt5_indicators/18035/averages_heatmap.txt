@@ -1,0 +1,6 @@
+Plotting up to 256 averages slopes using two color line for each average slope. Supported average types in this version.
+Simple MA
+Exponential MA
+Smoothed MA
+Linear weighted MA
+Usual stuff included too (line styles, colors, weights) and usual set of 22 types of prices. This indicator is the same as averages rainbow except that it draws only a two state heatmap which is basically the slope of the average. In the example picture rainbow is on the main chart and heatmap is in its sub-window.

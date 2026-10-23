@@ -1,0 +1,11 @@
+A standard zigzag complemented with support and resistance levels.
+The same indicator implemented in MQL4 is available here:
+https://www.mql5.com/en/code/8469
+. ZigZag by
+MetaQuotes Software Corp
+can be downloaded at
+https://www.mql5.com/en/code/56
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18319

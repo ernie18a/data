@@ -1,0 +1,27 @@
+This Expert Advisor is
+purely
+a
+diagnostic tool
+: it does not open any trades, but analyses and ‘captures a snapshot’ of the environment in which MetaTrader 5 is running.
+Once launched on the chart, it collects all the broker’s technical specifications and displays them in three ways:
+The chart panel
+at the top left of the chart (with data updated in real time).
+Terminal log (the
+‘Experts’ tab at the bottom).
+CSV file
+(saved in the MQL5/Files folder on your PC).
+What information does it extract?
+The EA reads dozens of vital parameters in real time, grouping them by category:
+Time Zone (Crucial):
+Calculates the broker’s server time, your PC’s time and the exact difference between the server time and UTC (Greenwich) time.
+Trading Costs:
+Extracts the swap calculation method, the long and short swap values in real currency (per 1 lot), and the current spread.
+Symbol Rules:
+Digits (decimals), contract size, minimum/maximum/step volume, Stop Levels (minimum distance for placing Stop Loss and Take Profit orders) and Freeze Level.
+Execution and Connection:
+Ping in milliseconds (latency), connection status, order filling modes accepted by the broker (FOK, IOC) and margin calculation method.
+Account:
+Broker name, server, account currency, leverage and equity.
+Translated from Italian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/it/code/75827

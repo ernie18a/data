@@ -1,0 +1,1 @@
+This code commences through AMA supported signal. It has a filter included RSI and one MA. in the 1 minute EURUSD it is able to make profit. However it needs more brain to make a top and bottom differential in the trade. The tops and bottoms are recognized to late and so it makes those trades go negative. We need latent trades eliminated.

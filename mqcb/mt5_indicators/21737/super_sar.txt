@@ -1,0 +1,31 @@
+Super SAR is a signal indicator based on
+SuperTrend
+and
+iSAR
+.
+It has six input parameters:
+SAR step
+- Parabolic SAR step;
+SAR max
+- the maximum value of Parabolic SAR;
+ATR Period
+- ATR period for the SuperTrend calculation;
+Multiplier
+- SuperTrend line multiplier (to set it closer/farther from the median price);
+Swing
+- alteration of signals (Yes/No);
+Show SAR
+- whether to display Parabolic SAR (Yes/No).
+Green
+/
+red
+arrows (position entry) appear after a change in the SAR position, provided there is confirmation from SuperTrend.
+Gray
+arrows (do not enter position/open position can be closed) appear after a change in the SAR direction, if there is no confirmation from SuperTrend.
+If Swing (Yes) is used, arrows (only up/down) appear when both criteria are met, taking into account the previous signal direction.
+The SuperTrend indicator is not required for operation - its values are calculated by the indicator.
+Fig. 1. Super_SAR, Swing = No
+Fig. 2. Super_SAR, Swing = Yes
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21737

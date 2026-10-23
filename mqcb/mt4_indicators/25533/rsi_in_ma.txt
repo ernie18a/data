@@ -1,0 +1,19 @@
+RSI in MA is an indicator to change color in iMA if iRSI crosses level up (uptrend) or crosses level down (downtrend).
+It helps any trader to see the trend of pair.
+Parameters
+MA_Periods
+— Period for iMA.
+MA_Method
+— Method for iMA.
+RSI_Periods
+— Period for iRSI.
+RSI_ApliedPrice
+— Price used for iRSI.
+RSI_LevelsUp
+— Level iRSI for up trend.
+RSI_LevelsDN
+— Level iRSI for down trend.
+BarsCount
+— How many bars will show the line.
+ReverseSignals
+— Reverse up trend to down trend signals.

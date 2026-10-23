@@ -1,0 +1,15 @@
+Description:
+This EA uses the following rules for buying:
+1. The fast MA must be above the slow one.
+2. We enter when the close price is lower than the open price, place TP=20 pips, StopLoss is not placed.
+Exit:
+We exit either by TP or placing the StopLoss at the minimum of the previous bar minus 10 pips, as soon as the mimimum of the previous bar becomes less than the lower Price Channel line.
+The elements of the Matringale are used in this strategy - there is a little chance that the second lossmaking position will appear after the first one, so the next trade is performed with a much bigger lot.
+The selling rules are opposite to the buying.
+I want to say right now that is not a ready for trading robot. It is necessary just for exercising the idea of the trading.
+The EA works on the daily charts by the open prices. It is enough to optimize only the Period_Pch duting testing, if the multiplier is set to 1 then the system will work without the Martingale. It is not necessary to change the TP, the 20 pips is the optimal value for the majority of symbols.
+I'm waiting for your remarks, comments, advices and critics.
+Picture:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8326

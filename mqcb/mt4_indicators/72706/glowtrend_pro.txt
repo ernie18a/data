@@ -1,0 +1,30 @@
+GlowTrend Pro
+is a high-performance trend-following indicator designed for traders who value visual clarity and precision. It filters market noise by using a smoothed moving average algorithm and dynamically changes its color based on the slope of the price action.
+How it works:
+Blue Line:
+Indicates a bullish momentum (uptrend).
+Red Line:
+Indicates a bearish momentum (downtrend).
+Glow Dots:
+These markers appear at the exact moment the trend flips, serving as potential entry or exit alerts.
+Key Features:
+Smooth Transitions:
+Unlike standard indicators that repaint or lag, GlowTrend Pro uses a linked-buffer logic to ensure a continuous and elegant visual flow.
+Customizable Parameters:
+You can adjust the period and averaging method (EMA, SMA, Smoothed, Linear Weighted) to fit any timeframe from M1 to Daily.
+Minimalist Design:
+Optimized for dark-themed charts to provide a "glowing" effect that makes trend exhaustion easy to spot.
+Input Variables:
+InpPeriod (default: 20):
+The lookback period for trend calculation. Higher values provide smoother lines but more lag.
+InpMethod:
+Choose the smoothing algorithm (EMA is recommended for faster response).
+InpPrice:
+Choose the price source (Close, Open, High, Low, etc.).
+Trading Recommendations:
+Buy:
+Wait for the line to turn Blue and a Blue Dot to appear.
+Sell:
+Wait for the line to turn Red and a Red Dot to appear.
+Best Results:
+Use on H1 or H4 timeframes for swing trading, or M5 for scalping during high-volatility sessions.

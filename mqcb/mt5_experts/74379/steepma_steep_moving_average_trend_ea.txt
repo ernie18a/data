@@ -1,0 +1,31 @@
+Core Principle: Defining Trend Strength Using the Angle of the Moving Average
+Traditional moving average crossover strategies are prone to frequent false signals in ranging markets, making drawdowns difficult to control. The core concept of this strategy is that a trend is only deemed valid—and thus worthy of opening a position—when the moving average exhibits a sufficiently steep, one-sided trend.
+The strategy is based on the Simple Moving Average (SMA), calculating the difference between the current SMA value and the value from a specified period ago, and converting the rate of change of the SMA into an intuitive angle using the inverse tangent function. The greater the absolute value of the angle, the stronger the directionality of the trend and the smoother the market movement;
+an angle close to 0 indicates a ranging market, in which case the strategy actively refrains from trading. Additionally, a price-to-moving-average deviation indicator is introduced, measuring the degree of price deviation relative to the moving average as a percentage, thereby mitigating the risk of chasing prices at the tail end of a trend when entering the market.
+Trade Entry Logic: Robust Entry via Triple Filtering
+The strategy employs a new candlestick trigger mechanism, performing signal evaluation only once at the close of each candlestick to avoid interference from intraday noise. Opening a position requires the simultaneous fulfilment of three conditions:
+Angle Threshold Filter
+: For long positions, the moving average angle must be above the positive threshold; for short positions, it must be below the negative threshold. A secondary verification using a minimum angle is also applied to filter out false breakouts in weak trends;
+Price direction verification
+: For long positions, the closing price must be above the moving average; for short positions, it must be below the moving average, ensuring entry is in the direction of the trend rather than against it;
+Upper limit constraint on deviation
+: The absolute value of the deviation between the price and the moving average must not exceed the set upper limit, to prevent buying at high levels towards the end of a trend acceleration.
+Position management supports two modes: a fixed lot size and a dynamic calculation based on the account equity ratio. Upon opening a position, the initial stop-loss is calculated in real time according to the preset risk ratio, thereby controlling the maximum risk per trade.
+Risk Control System: Dynamic stop-loss with progressively tighter levels
+Strategy stop-loss levels are adjusted in stages as market conditions evolve, with the core objective being to preserve unrealised profits and let profits run. Four tiers of stop-loss protection are set throughout the holding period:
+Break-even stop-loss
+: When the position’s profit reaches 500 points, the stop-loss is moved 100 points beyond the opening price to ensure the trade does not end in a loss;
+Profit Deviation Tightening
+: When the price deviates by 19% from the moving average, the stop-loss is immediately tightened to the current closing price, locking in the majority of the unrealised profit;
+Extreme Deviation Protection
+: When the deviation expands to 50 per cent, the stop-loss is further tightened to near the current price to mitigate the risk of extreme market reversals;
+Trend Breakout Relocation
+: When the price crosses the moving average in the opposite direction, the stop-loss is simultaneously moved beyond the moving average to exit the position swiftly following a trend breakout.
+Data Backtesting: Built-in SQLite end-to-end logging
+The strategy utilises a built-in local SQLite database via MT5’s native interface to automatically and persistently record every position opening and stop-loss adjustment event. Each record contains comprehensive information including the event time, trade direction, lot size, price, moving average value,
+angle, deviation, stop-loss price and account equity, among other comprehensive details. This provides a more complete set of data than the terminal’s native logs, facilitating subsequent strategy review, parameter optimisation and performance attribution.
+Overall, this is a trend-following EA with clear logic and well-defined risk management tiers. Its core returns stem from smooth, one-way market movements; it avoids sideways movements through angle filtering, controls entry timing via deviation, and utilises dynamic
+stop-losses to protect profits. Parameters can be adjusted according to the volatility characteristics of different instruments to suit various trading timeframes.
+Translated from Chinese by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/zh/code/74379

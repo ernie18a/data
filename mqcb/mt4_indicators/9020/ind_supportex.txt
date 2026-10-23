@@ -1,0 +1,4 @@
+The indicator shows candles of the grown-ups TF.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9020

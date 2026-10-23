@@ -1,0 +1,36 @@
+Basic Functions:
+Quantum System
+-
+Uses quantum states and probabilities to make decisions
+AI modules
+-
+Includes multiple indicators (RSI, ADX, MA, ATR) with adaptive weights
+Risk Management System
+:
+Deposit protection with daily and total drawdown limits
+Position size limits
+Daily loss limits
+Quantum Trailing
+Stop
+-
+Dynamic stop loss that adapts to market conditions
+Auto-optimisation
+-
+Automatic optimisation of parameters in the strategy tester
+Specifics for metals:
+Specific settings for gold and silver (different risk, stop-loss and take-profit parameters)
+Taking into account the peculiarities of volatility of precious metals
+Protective mechanisms:
+Minimum deposit check ($300)
+Trade blocking in case of exceeding loss limits
+Automatic risk reduction after a series of losses
+Lot correction for micro-accounts
+Technical features:
+Indicator data caching to optimise performance
+Validation of orders before sending
+Saving and loading optimised parameters
+Detailed logging of all operations
+The Expert Advisor uses a comprehensive approach combining quantum computing, artificial intelligence and advanced risk management to trade on the precious metals market.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/63193

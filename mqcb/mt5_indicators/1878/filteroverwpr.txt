@@ -1,0 +1,12 @@
+Real author:
+Indoforex Groups - Primajaya
+An indicator of trend power with four states.
+The Stochastic oscillator
+is used as the source of signals. A strong upward trend is marked as a blue bar, a weak upward trend is pale green. A strong falling trend is colored red, a weak falling trend is ginger.
+This indicator was first implemented in MQL4 and published in the
+Code Base at mql4.com
+on 26.02.2008.
+Fig. 1 The FilterOverWPR indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1878

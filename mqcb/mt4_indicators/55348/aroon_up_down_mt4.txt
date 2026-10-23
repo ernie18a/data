@@ -1,0 +1,7 @@
+Aroon Up & Down MetaTrader indicator — detecting the local tops and bottoms of the chart it was applied to, this indicator provides the signals for buying and selling the currency pairs when they rise up from the bottom and fall from the top. The cross of the indicator lines provide a good signal to take the profit or to exit with a minimum loss. This indicator can send sound and e-mail alerts on the cross. It is available in both MT4 and MT5 versions.
+Input parameters
+AroonPeriod (default = 14) — the period in chart bars for the indicator to look up for the bottoms and the tops. As with many other indicators, the higher is the period the smoother the output lines are, the lower the period is the more signals are generated.
+MailAlert (default = false) — if true then the e-mail alert will be sent on cross according to the mail options of your MetaTrader platform.
+SoundAlert (default = false) — if true then a simple sound and visual alert will be activated on cross.
+Aroon Up & Down Indicator Example MetaTrader Chart
+As you see, trading is quite easy if you follow this indicator. Just buy when the blue line rises from the bottom and the red one is near the middle of the range; sell when the blue line falls from the top and the red one is near the middle of the range. Exit for profit or for minimum loss when the red line reaches the opposite side of the range.

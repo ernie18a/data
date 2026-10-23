@@ -1,0 +1,26 @@
+The strategy of trade - the breakdown of the maximum / minimum of the selected time period.
+To compensate for the unprofitable orders, use the "tumbler" with an increase in the lot on the principle of the Martingale.
+This advisor calculates the maximum and minimum prices in the time interval between
+TimeStart
+(start time of the observation period) and
+TimeEnd
+(end time of the observation period)
+So you can choose the most optimal for trading period.
+Next, in excess of the maximum price of this period, exhibited a warrant to purchase. If the price went below the minimum, then for sale.
+Stop loss is exposed on the opposite border of the period.
+TP exposed to a level equal to the height of the observation period.
+Open orders can be closed at certain times Adviser
+TimeCloseOrder
+(time in which occurs the closing of all orders)
+If you set TimeCloseOrde = 0 or less TimeEnd, then the closure orders will only footsteps, excluding TimeCloseOrder.
+If the order is closed by the loss, it opens the opposite order with the increased by a factor K_martin lot.
+Feet from the new order is placed in such a way as to cover the resulting loss. If the order was closed profit, then the adviser awaits launch of the next period (TimeEnd) and all repeats.
+Parameter
+No_Loss
+- go to no loss, when a order half of its profits, SL order is transferred to the level of open orders.
+An Expert Advisor feels great to brokers with 4 and 5 characters, but will not work in the DC, where barred foot with the discovery orders
+Period, a time frame allocated to the price chart.
+To succeed under this strategy must be clearly understood when the price can make a "breakthrough." Ie take into account the time-critical news and the opening sessions.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9658

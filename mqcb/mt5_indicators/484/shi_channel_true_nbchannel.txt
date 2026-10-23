@@ -1,0 +1,14 @@
+Real author:
+Shurka & Kevin
+SHI_Channel_true automatically shows Barishpolts dynamic moving channels on a chart.
+The main idea is that the indicator finds the nearest fractal in history, looks for the second one and draws a line between them. On the opposite side the parallel line is drawn along the maximum fractal. The middle line is drawn between these two ones.
+Parameters (default parameter value is shown in brackets):
+BarsForFract(0) - a fractal "shoulder" length.
+A standard fractal consists of 5 bars: extreme point and two bars (leverage is equal to 2) on each side. The leverage can be increased for more impact. In case the parameter is equal to 0, the leverage size depends on a chart's time frame and is set by the program automatically.
+The indicator works with all currency pairs and time frames beginning from М1. The indicator has two variants. In NB_SHI_Channel_true three lines that form a channel are additionally placed in the indicator buffers for possible access to this data for the Expert Advisors.
+This indicator was first implemented in MQL4 and published in
+CodeBase at mql4.com
+13.10.2006.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/484

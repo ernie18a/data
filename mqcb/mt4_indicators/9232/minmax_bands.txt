@@ -1,0 +1,6 @@
+Author:
+Julien Loutre
+This indicator allows you to visualize the Lowest Low and the Highest High for the last X bars.
+I use it to calculate the value of the Trailing Stop on my orders.
+Screenshot:
+Screenshot, with Period = 20 on M1

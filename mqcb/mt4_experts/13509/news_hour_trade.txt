@@ -1,0 +1,60 @@
+Expert Advisor I have developed for News Time Trading.
+The EA is not fully automatic, you must set the time before 1 minute of news release time and lot, s/l, t/p accordingly.
+Remember — time settings must be your broker's MetaTrader 4 server time.
+Set and leave it. Get the Results.
+I can not guarantee the EA makes reliable profit, but if you setup the settings when you have heard the better news, it's working good.
+Updated version 2:
+Added Magic Number.
+Updated version 3:
+Added option to change Expiry time for pending order (Remember expiry time in minutes).
+Input parameters:
+StartHour =
+1
+;
+// Starting Hours
+StartMinute =
+1
+;
+// Starting Minute News Released time (-1 minute)
+DelaySeconds =
+5
+;
+// Default 5 seconds
+Lots =
+0.1
+;
+// Lots Size
+StopLoss =
+20
+;
+/
+/ StopLoss
+TakeProfit =
+50
+;
+// Take Profit
+PriceGap =
+10
+;
+// Price Offset
+TrailStop=
+false
+;
+// Enable/Disable Trailing
+TrailingStop =
+20
+;
+/
+/ Trailing Stop Value in Pips
+TrailingGap =
+10
+;
+// Trailing Gap in Pips
+BuyTrade=
+true
+;
+// True=Enable Buy Trade; False=Disable Buy Trade
+SellTrade=
+true
+;
+// True=Enable Sell Trade; False=Disable Sell Trade

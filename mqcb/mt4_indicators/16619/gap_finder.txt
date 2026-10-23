@@ -1,0 +1,19 @@
+This indicator plots up arrow for bullish gaps and down arrow for bearish gaps.
+It also can plot a cross for a closed gap or hide it.
+Trader can select the minimum gap size in points. Gaps less than minimum size are ignored.
+Input Parameters:
+Min gap size in points :
+Minimum number of points for valid gaps
+Check for closed gaps :
+Enable/Disable history check for closed gaps
+Max history bars for closed gaps :
+Max number of history bars to check for closed gaps
+Hide closed gaps :
+Hide/Show closed gaps
+Show Alerts :
+Show alert messages of new gaps and closed gaps
+Example showing both open and closed gaps
+Same chart showing only open (fresh) gaps
+Suggested Usage:
+New open gaps can be used as entry filter in the same direction of the gap.
+Old open gaps can be used as targets for opposite direction trades.

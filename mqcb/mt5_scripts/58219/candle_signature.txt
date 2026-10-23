@@ -1,0 +1,23 @@
+Candle signature with example is a script which can be useful for traders doing research and development in finding single candlestick pattern, storing them and further making an enquiry
+to find if such custom patterns may be repeated again
+it has following example of datasets e.g. open,high,low,close,comment
+where a user can add custom values to further find and explore matching patterns of candlestick using fuzzy matching algorithm
+Example :
+AddCustomPattern(
+1.0
+,
+1.1
+,
+0.95
+,
+1.08
+,
+"Bullish Engulfing"
+);
+Futher user can also add tolerace as perfect patterns are rare to be repeated exactly
+detector =
+new
+CandlePatternDetector(
+0.3
+);
+// 30% tolerance

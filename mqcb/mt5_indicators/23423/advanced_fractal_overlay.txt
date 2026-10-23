@@ -1,0 +1,11 @@
+Indicator Advanced Fractal Overlay displays the chart as colored candles according to the price movement direction relative to the last upper or lower fractal.
+There are no adjustable parameters.
+If the current close price is above the last upper fractal,
+then the green candles will be displayed
+If the current close price is below the last lower fractal,
+then the red candles will be displayed
+Fig. 1. Advanced Fractal Overlay
+Fig. 2. Advanced Fractal Overlay + Fractals
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23423

@@ -1,0 +1,6 @@
+Theory :
+This is a natural "offspring" of the McClellan oscillator (that was originally published here :
+McClellan Oscillator - smoother
+). It is using the same smoother for calculation (instead of EMA) and in this version it is also producing much smoother results
+Usage :
+The same way described in the oscillator description

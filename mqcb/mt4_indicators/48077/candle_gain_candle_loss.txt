@@ -1,0 +1,3 @@
+The indicator can calculate gain/loss in two modes: plain candlestick Close and Open difference, and as difference between current Close and previous Close.
+You can set minimum change limits (for pips and percentage), change modes, and you can also control font color of the output numbers. The indicator is available for MT4.
+Displays the gains and losses for all candles where the given threshold is surpassed. The values are calculated in points and percentage.

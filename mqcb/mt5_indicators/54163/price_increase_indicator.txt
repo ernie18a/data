@@ -1,0 +1,5 @@
+A price increase indicator calculates margin and price changes in per cent.
+Update 13.12.2024: There was an error in the last version. Has been corrected!
+Translated from German by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/de/code/54163

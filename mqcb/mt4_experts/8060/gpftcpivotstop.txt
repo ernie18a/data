@@ -1,0 +1,19 @@
+It is realized by the TS on breakdown of day time levels, which pay off on indicator Pivot.
+Trading:
+it is traded on hour timeframe;
+after 0 hours of current day, we count levels Pivot, Resist1, Resist2, Resist3, Support1, Support2, Support3;
+after closing an hour candle above Pivot we make purchase and stoploss at level Support(n), takeprofit on Resist (n);
+it is used trailing for carry of a stoploss to a point of breakeven;
+sell - an hour candle is closed below Pivot, stoploss - Resist (n), takeprofit - Support (n).
+I explain value of some entrance parameters:
+variable TgtProfit is levels of stops and profits and should have values 1, 2 or 3;
+if TgtProfit = 1, that stoploss (byu/sell) = Resist1/Support1 and takeprofit (byu/sell) = Support1/Resist1;
+if TgtProfit = 2, that stoploss (byu/sell) = Resist1/Support1 and takeprofit (byu/sell) = Support2/Resist2;
+if TgtProfit = 3, that stoploss (byu/sell) = Resist2/Support2 and takeprofit (byu/sell) = Support3/Resist3;
+the variable isTradeDay defines, that as the open positions will be closed. If isTradeDay = true, the open warrants will be compulsorily closed on the termination of day, else warrants will be in the market yet will be closed on stop or of profit;
+at installation value of a variable isTrace = True in a broad gully the file is carried out record of the every possible debugging information for debugging the TS.
+Results of testing: not all pairs at use of this approach on breakdown send on a level of profitableness.
+In the following adviser it will be realized by the TS on a release from the same levels.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8060

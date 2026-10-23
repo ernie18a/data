@@ -1,0 +1,41 @@
+Semi-automatic grid assistant
+The Expert Advisor is designed for placing managing grids.
+Expert buttons
+"Buy Stop" — open a grid of buy stop pending orders
+"Sell Stop" — open a grid of sell stop pending orders
+"Buy Limit" — open a grid of buy limit pending orders
+"Sell Limit" — open a grid of sell limit pending orders
+"Close Buy" — close the entire grid and all opened buy positions
+"Close Sell" — close the entire grid and all opened sell positions
+"Close" — close the entire grid and all opened positions
+"Tral Profit" — trail profit of all positions starting from ProfitStart
+Expert Settings
+OrdersBuyStop — number of orders in BuyStop grid
+OrdersSellStop — number of orders in SellStop grid
+OrdersBuyLimit — number of orders in BuyLimit grid
+OrdersSellLimit — number of orders in SellLimit grid
+StepBuyStop — step between orders in BuyStop grid
+StepSellStop — step between orders in SellStop grid
+StepBuyLimit — step between orders in BuyLimit grid
+StepSellLimit — step between orders in SellLimit grid
+Lot — lot of the first order based on the price, lot sizes of subsequent orders are based on formula
+LotPlus — addition to the initial lot size
+For example:
+Lot = 0.1
+LotPlus = 0.1
+first lot: 0.1
+second: 0.1+0.1=0.2
+third: 0.2+0.1=0.3
+fourth: 0.3+0.1=0.4
+FirstLevel — distance from th price to the first order (if 0, opened at the stop level). It can be changed in the top right corner of the panel.
+2 profit taking methods:
+ProfitClose — profit in the deposit currency (for example: set to $100, when the total grid profit reaches $100, it will be closed).
+ProfitStart — profit in the deposit currency to start trailing, for example: $50.
+TralClose — close when profit decreases, for example: $20.
+Profit reached 50, trailing was activated, profit continued to grow to 60, then rolled back to 20 and everything was closed with $40 of profit. The pending orders are deleted, and an alert with the "continue operation?" question pops up. If you answer ОК — grid is placed again.
+Features of closing orders
+First, the EA attempts to close all orders by opposite ones, then closes the market positions and pending orders.
+The EA can be tested and customized in the strategy tester, but strictly in Visual mode, as the EA does not press buttons on its own!
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16093

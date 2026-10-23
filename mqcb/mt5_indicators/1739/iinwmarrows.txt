@@ -1,0 +1,10 @@
+Real author:
+Iin Zulkarnain
+A semaphore signal indicator that uses Moving Averages. The signals are formed at the bend of Moving Averages when there are local extremes.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 24.03.2008.
+Figure 1. The IINWMARROWS indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1739

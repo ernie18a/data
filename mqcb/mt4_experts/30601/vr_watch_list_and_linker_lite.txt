@@ -1,0 +1,11 @@
+The Expert Advisor changes a financial instrument by drag-and-drop from the "Market Watch" window.
+The user just needs to drag the financial instrument to the chart window where the advisor is installed.
+Thus, the trader can quickly view any financial instruments in all his open charts without changing templates and profiles.
+When you change a financial instrument, only the instrument changes in the charts. The chart period, indicators and their settings remain unchanged.
+VR Watch List and Linker Lite is a light, open source version of VR Watch list and linker
+Recommendation:
+Install an advisor in each window, then it will not matter to which window you drag the financial instrument.
+Warning:
+When changing a financial instrument in windows, all indicators and advisors will be reinitialized.
+If the advisor traded on EURUSD, then after changing the financial instrument, the advisor will start trading on the new instrument.
+The program has very simple code that will be useful for novice programmers. The code is also interesting in that it works the same in the MetaTrader 4 and MetaTrader 5 terminals

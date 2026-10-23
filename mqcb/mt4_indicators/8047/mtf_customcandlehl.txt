@@ -1,0 +1,3 @@
+Author:
+mankurt
+Indicator MTF_CustomCandle[HL].

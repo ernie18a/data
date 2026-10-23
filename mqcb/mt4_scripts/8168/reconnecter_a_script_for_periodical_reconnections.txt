@@ -1,0 +1,16 @@
+The script should solve the
+"fading charts" problem
+- the situation when the charts stop being updated while the connection to the server remains ok.
+Usage:
+- add to Favorites the account you are going to connect to (it must be located in the first line!);
+- enable using DLLs in the terminal parameters;
+- launch the script having specified the necessary pause between relogins (by default, 10 minutes (600 seconds)).
+The first (trial) connection will be performed immediately after the launch.
+Script operation results:
+15:21:05 ReConnecter EURUSD,M5: loaded successfully
+15:21:05 ReConnecter EURUSD,M5 inputs: Pause_sec=300;
+15:21:08 ReConnecter EURUSD,M5: Successfully connected to account #1008396! Reconnection will be in 5 minutes...
+15:26:41 ReConnecter EURUSD,M5: Successfully connected to account #1008396! Reconnection will be in 5 minutes...
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8168

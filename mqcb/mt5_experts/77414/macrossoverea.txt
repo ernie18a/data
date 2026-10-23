@@ -1,0 +1,20 @@
+MA Crossover EA — an expert advisor based on the crossover of moving averages
+The expert advisor opens trades when two moving averages (Fast and Slow) cross. It works on any instrument and timeframe.
+Features:
+Opens a BUY trade when the Fast MA crosses from bottom to top
+Opens a SELL position when the Fast MA crosses from top to bottom
+Setting Stop Loss and Take Profit
+Only one position at a time
+Trading only on a new bar (optional)
+Customisable parameters
+Parameters:
+Lot — lot size
+FastMAPeriod, SlowMAPeriod — MA periods
+StopLoss, TakeProfit — levels in pips
+MagicNumber — magic number
+TradeOnNewBar — trade only on bar close
+Recommendations:
+Before using this expert advisor on a live account, test it in the Strategy Tester and optimise the parameters for your specific instrument.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/77414

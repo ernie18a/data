@@ -1,0 +1,121 @@
+This indicator brings the full Smart Money Concepts (SMC) framework directly onto your MetaTrader 5 chart. It automatically detects and visualizes five core institutional concepts in real time:
+Market Structure (BOS/CHoCH)
+,
+Order Blocks (OB)
+,
+Fair Value Gaps (FVG)
+,
+Equal Highs and Equal Lows (EQH/EQL)
+, and
+BUY/SELL signal arrows
+. Each component is independently toggleable, fully color-customizable, and ATR-adaptive, making this a versatile tool for traders who follow institutional price action methodology across any symbol and timeframe.
+The
+Market Structure
+engine identifies swing pivots using a configurable lookback period and draws horizontal lines at each confirmed Break of Structure (BOS) or Change of Character (CHoCH). Swing labels (HH, HL, LH, LL) are plotted directly at pivot points to give you an at-a-glance view of trend development. When a bullish BOS is confirmed, the indicator looks back for the most recent bearish (down-close) candle before the breakout and marks it as a
+Bullish Order Block
+. The reverse logic applies for bearish BOS events, locating the last bullish candle and registering a
+Bearish Order Block
+. Order Blocks are drawn as filled rectangles using the midpoint-to-bottom (bull) or top-to-midpoint (bear) of the origin candle body, and they are automatically deactivated (grayed out) when price mitigates them.
+Fair Value Gaps
+are identified using the classic three-candle imbalance pattern: a bullish FVG forms when the low of the candle two bars ahead is higher than the high of the candle two bars behind, leaving an unfilled gap in the price ladder. A minimum gap size of 15% of ATR filters out noise. FVGs are displayed as semi-transparent boxes and are also deactivated on mitigation. The
+Equal Highs and Equal Lows
+module scans for pivot highs or lows that match a previous pivot within an ATR-based sensitivity threshold, then draws a dashed line connecting the two levels and labels them EQH or EQL, highlighting liquidity pools that smart money is likely to target.
+The
+signal engine
+fires a BUY arrow below the bar when a bullish candle touches an active Bullish Order Block after the block was formed, and a SELL arrow above the bar under the equivalent bearish condition. An optional confluence filter (
+Require FVG near OB
+) raises signal quality by only triggering when a same-directional FVG overlaps the Order Block zone. Signal arrows are placed at ATR-offset positions below lows (BUY) or above highs (SELL) for clean visual separation. Alerts are fully supported: popup, email, and push notification options are all independently switchable, and the indicator prevents duplicate alerts on the same bar.
+Key features at a glance:
+Automatic BOS and CHoCH detection with trend-state tracking
+HH / HL / LH / LL swing labels drawn at each pivot
+Bullish and Bearish Order Block zones with mitigation logic
+Bullish and Bearish Fair Value Gap boxes with mitigation logic
+Equal Highs and Equal Lows detection with dashed connector lines
+BUY and SELL arrow signals based on OB retest (with optional FVG confluence filter)
+ATR-14 adaptive thresholds for noise-free detection on all timeframes
+Popup, email, and push notification alerts with per-bar deduplication
+All five modules are independently toggleable and fully color-customizable
+Automatic chart cleanup on removal or reinitialization
+Input Parameters
+Parameter
+Default
+Description
+--- Market Structure ---
+InpShowStructure
+true
+Enable or disable BOS/CHoCH lines and swing labels on the chart.
+InpSwingLength
+10
+Number of bars to the left and right required to confirm a pivot high or low. Larger values produce fewer but more significant structure levels.
+InpShowSwingLabels
+true
+Show HH, HL, LH, LL labels at each detected swing pivot point.
+InpBullColor
+DodgerBlue
+Color used for bullish structure lines, BOS/CHoCH labels, and HL swing tags.
+InpBearColor
+Red
+Color used for bearish structure lines, BOS/CHoCH labels, and LH swing tags.
+--- Order Blocks ---
+InpShowOB
+true
+Enable or disable Order Block zone drawing.
+InpMaxOB
+5
+Maximum number of active Order Blocks stored and displayed per direction (bull/bear). Oldest blocks are removed when the limit is reached.
+InpOBExtend
+20
+Number of bars to extend the right edge of Order Block rectangles forward in time.
+InpBullOBColor
+CornflowerBlue
+Fill color for Bullish Order Block zones.
+InpBearOBColor
+LightCoral
+Fill color for Bearish Order Block zones.
+--- Fair Value Gaps ---
+InpShowFVG
+true
+Enable or disable Fair Value Gap zone drawing.
+InpBullFVGColor
+MediumSeaGreen
+Fill color for Bullish FVG zones (upward price imbalance).
+InpBearFVGColor
+Salmon
+Fill color for Bearish FVG zones (downward price imbalance).
+InpFVGExtend
+10
+Number of bars to extend the right edge of FVG rectangles forward in time.
+--- Equal Highs and Lows ---
+InpShowEQHL
+true
+Enable or disable Equal Highs and Equal Lows detection and labeling.
+InpEQHLLen
+5
+Pivot lookback length used specifically for the EQH/EQL module (bars each side).
+InpEQHLSens
+0.5
+ATR multiplier defining how close two pivot levels must be to qualify as equal. A value of 0.5 means the price difference must be less than 0.5 x ATR.
+InpEQHColor
+OrangeRed
+Color for Equal Highs connector lines and labels.
+InpEQLColor
+LimeGreen
+Color for Equal Lows connector lines and labels.
+--- Signal Settings ---
+InpShowSignals
+true
+Enable or disable BUY and SELL arrow signals on the chart.
+InpRequireFVG
+false
+When enabled, a signal is only generated if an active same-directional FVG overlaps the triggering Order Block zone, adding a confluence filter.
+InpAlerts
+true
+Enable popup alert notifications when a new BUY or SELL signal fires.
+InpEmailAlert
+false
+Send an email notification on each new signal (requires email configured in MetaTrader terminal settings).
+InpPushAlert
+false
+Send a push notification to the MetaTrader mobile app on each new signal.
+Note:
+This indicator is provided for educational and analytical purposes only. Past signal performance does not guarantee future results. Always validate on a demo account before using on live capital.

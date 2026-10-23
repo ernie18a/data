@@ -1,0 +1,12 @@
+Real author:
+Amir
+A semaphore arrow indicator based on the crossover of the DI+ and DI- lines of the
+ADX
+indicator.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 03.10.2007.
+Figure 1. The ADXCrossing indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2160

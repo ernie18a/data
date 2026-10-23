@@ -1,0 +1,14 @@
+The
+CHOWithFlat
+indicator with the timeframe selection option available in input parameters:
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Indicator chart period (timeframe)
+To provide correct operation of the indicator, place the compiled indicator files CHOWithFlat.mq5 and CHO.mq5 in terminal_data_folder\MQL5\Indicators.
+Figure 1 The CHOWithFlat_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11322

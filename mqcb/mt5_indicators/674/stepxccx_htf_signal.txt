@@ -1,0 +1,170 @@
+StepXCCX_HTF_Signal displays trend directions from three last bars of the
+ColorStepXCCX
+indicator as three graphical objects with a trend color indication.
+Unlike the original, four color indication is used here. In the overbought area defined by the Up1Level input parameter threshold value, ascending trend signals color the objects in lime, outside the overbought area ascending signals are green. In the oversold area defined by the Dn1Level input parameter threshold value, descending trend signals color the objects in magenta, outside the oversold area descending signals are red.
+Indicator input parameters
+:
+A timeframe and a name of a financial asset used for the indicator calculation can be changed by the indicator appropriate input parameters. If Symbol_ (financial asset) input parameter is empty, the current chart symbol shall be used as a financial asset.
+All input parameters can be divided into two large groups:
+The information about the input parameters of ColorStepXCCX indicator can be found in its
+description
+;
+//+-----------------------------------+
+//|  Indicator input parameters       |
+//+-----------------------------------+
+input
+string
+Symbol_=
+""
+;
+// Financial asset
+input
+ENUM_TIMEFRAMES
+Timeframe=
+PERIOD_H6
+;
+// Indicator timeframe for the indicator calculation
+input
+Smooth_Method DSmoothMethod=MODE_JJMA;
+// Price smoothing method
+input
+int
+DPeriod=
+30
+;
+// Moving average period
+input
+int
+DPhase=
+100
+;
+// Smoothing parameter
+input
+Smooth_Method MSmoothMethod=MODE_T3;
+// Deviation smoothing method
+input
+int
+MPeriod=
+7
+;
+// Average deviation period
+input
+int
+MPhase=
+15
+;
+// Deviation smoothing parameter
+input
+APPLIED_PRICE IPC=
+PRICE_TYPICAL
+;
+// Applied price
+input
+int
+StepSizeFast=
+5
+;
+// Fast step
+input
+int
+StepSizeSlow=
+30
+;
+// Slow step
+StepXCCX_HTF_Signal indicator input parameters that are necessary for the indicator visualization:
+//---- indicator display settings
+input
+string
+Symbols_Sirname=
+"StepXCCX_"
+;
+// Indicator labels name
+input
+int
+Up1Level=+
+50
+;
+// Overbought level
+input
+int
+Dn1Level=-
+50
+;
+// Oversold level
+input
+color
+Up1Symbol_Color=Lime;
+// Maximum growth symbol color
+input
+color
+UpSymbol_Color=Teal;
+// Growth symbol color
+input
+color
+DnSymbol_Color=Red;
+// Downfall symbol color
+input
+color
+Dn1Symbol_Color=Magenta;
+// Maximum downfall symbol color
+input
+color
+IndName_Color=DarkOrchid;
+// Indicator name color
+input
+uint
+Symbols_Size=
+40
+;
+// Signal symbols size
+input
+uint
+Font_Size=
+12
+;
+// Indicator name font size
+input
+int
+X_3=
+110
+;
+// Horizontal shift of the name
+input
+int
+Y_3=
+17
+;
+// Vertical shift of the name
+input
+bool
+ShowIndName=
+true
+;
+// Indicator name display
+input
+ENUM_BASE_CORNER
+WhatCorner=
+CORNER_RIGHT_UPPER
+;
+// Location corner
+input
+uint
+X_=
+0
+;
+// Horizontal shift
+input
+uint
+Y_=
+0
+;
+// Vertical shift
+In case several StepXCCX_HTF_Signal indicators are to be used on one chart, each of them should have its own Symbols_Sirname (indicators labels names) string variable value.
+Place the ColorStepXCCX indicator compiled file to the terminal_data_folder\MQL5\Indicators\.
+The indicators use SmoothAlgorithms.mqh library classes (must be copied to the terminal_data_folder\MQL5\Include). The use of the classes was thoroughly described in the article "
+Averaging Price Series for Intermediate Calculations Without Using Additional Buffers
+".
+ColorStepXCCX_.mq5 is just an intermediate version of the final indicator with two color indication.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/674

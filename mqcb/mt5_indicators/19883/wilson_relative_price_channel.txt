@@ -1,0 +1,26 @@
+The channel is based on the classic RSI and displays three zones, including the overbought zone, the oversold zone and the neutral zone, which is between the overbought and oversold zones. Suitable for higher timeframes starting with Daily.
+The indicator has 9 input parameters:
+Channels period
+- period for calculating the channels;
+Period of smoothing
+- smoothing period;
+Overbought level
+- RSI overbought level;
+Upper level of neutral zone
+- the upper level of the neutral zone (equal to the lower level of the overbought zone);
+Lower level of neutral zone
+- the lower level of the neutral zone (equal to the upper level of the oversold zone);
+Oversold level
+- RSI oversold level;
+Applied price
+- RSI calculation price;
+Color of overbought zone
+- the color of the overbought zone cloud;
+Color of oversold zone
+- the color of the oversold zone cloud.
+Fig.1 WRPC on the daily chart
+Fig.2 WRPC on the weekly chart
+Fig.3 WRPC on the monthly chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19883

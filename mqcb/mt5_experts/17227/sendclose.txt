@@ -1,0 +1,30 @@
+The Expert Advisor opens or closes positions at the intersection of lines.
+Author of the idea
+—
+Vladimir Khlystov
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+The EA draws 4 lines: "LINE BUY", "LINE SELL" and two "CLOSE" lines.
+Your task is to move the lines to positions where you intend to perform a specific action to a position. I.e. Вuy, Sell, Close.
+Positions are opened or closed when the Ask is above the corresponding line and Bid is below. I.e. when the price crosses one of the four lines.
+The figure shows an example of trading.
+The number of lines can be reduced using the variables:
+DRAW_SELL
+— draw the Sell line
+DRAW_BUY
+— draw the Buy line
+DRAW_CLOSE1
+— draw the Close1 line
+DRAW_CLOSE2
+— draw the Close2 line
+Additional external variables
+lot
+— lot size and
+order
+— maximum number of orders. CLOSE lines can be used as a trailing stop when placed at a certain angle.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17227

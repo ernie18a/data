@@ -1,0 +1,2 @@
+Author: Randy Cartwright
+MACD Divergence indicator.

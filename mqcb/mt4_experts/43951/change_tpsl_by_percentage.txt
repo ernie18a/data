@@ -1,0 +1,5 @@
+The Expert will help you change the TP/SL of all open orders by setting the TP/SL based on the input percentage value.
+Recommendations:
+Change the TP/SL accurately only if all open orders are for same symbol
+Set the leverage accordingly as indicated in the expert. Enter leverage value(ex. 1:200-->0.5, 1:100-->1, 1:400-->0.25)
+The expert to load the specific symbol chart

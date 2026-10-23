@@ -1,0 +1,5 @@
+Theory :
+We have all sorts of RSI : regular rsi, rsi of averages, .... so far we did not have an RSI of SAR (Parabolic SAR). Here is this version : instead of using prices, it is using parabolic SAR. Results are interesting and are not lacking logic, hence decided to post it here
+PS: the RSI used in this calculation is the one using double smoothed Wilder's EMA instead of "simple" Wilder's EMA. Results are a bit smoother (and faster) this way
+Usage :
+You can use it as any regular RSI

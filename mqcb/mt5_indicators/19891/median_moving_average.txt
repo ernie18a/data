@@ -1,0 +1,14 @@
+Median MA is a moving average, which is calculated using the median price for a given period.
+A sorted array of prices for the specified period is used for calculating the moving average. A value from the array of prices with the following index is used:
+(N-1)/2
+- for an odd N;
+([N/2] + [N/2 + 1])/2
+- for an even N.
+The indicator has two input parameters:
+Period
+- calculation period;
+Applied price
+- price used for calculations.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19891

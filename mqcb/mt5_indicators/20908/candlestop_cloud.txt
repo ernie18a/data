@@ -1,0 +1,7 @@
+Real author
+: CrushD
+An indicator to pull trailing stops with the channel color background filling and showing the latest values as price labels.
+Fig.1. Indicator CandleStop_Cloud
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20908

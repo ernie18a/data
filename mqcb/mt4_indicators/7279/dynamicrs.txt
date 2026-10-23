@@ -1,0 +1,9 @@
+The indicator was created as a result of attempts to plot something opposite to the price channel. There are no analogues in the literature (correct me if it is not so, or better provide a link).
+The idea is simple
+: if the High of the current bar is lower than that of the previous, less than the High n bars ago and the indicator value of the previous bar, then the indicator line is equal to the High. The opposite is for the Lows.
+The movement nature of the indicator line resembles the MA, but filters the noises better. The application variants are now being tested. Therefore, I would be grateful if anyone shares their experiment results.
+I did not want to post it here before the championship. But it turns out that most likely I will not be able to participate for various reasons. If there is interest in this indicator, I will upload the next ones this week.
+DynamicRS
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7279

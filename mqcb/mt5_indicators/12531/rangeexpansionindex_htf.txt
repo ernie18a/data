@@ -1,0 +1,7 @@
+Range Expansion Index (REI)
+is a relative oscillator with the timeframe selection option available in the input parameters.
+The indicator requires RangeExpansionIndex.mq5 indicator file. Place it in <terminal_data_folder>\MQL5\Indicators.
+Fig. 1. The RangeExpansionIndex_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12531

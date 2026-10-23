@@ -1,0 +1,21 @@
+When a position is closed (exit from the market, reversal or a close by operation), a sound is played.
+A sound alert is selected from the standard terminal package:
+version "1.002":
+Added new parameter
+notification
+t send push-notifications to mobile terminals based on the MetaQuotes IDs specified in the options window, in its "
+Notifications
+" tab.
+This option is disabled by default (false).
+The format of notifications is approximately the following:
+deal
+#
+127811212
+sell
+0.01
+EURUSD, profit:
+0.08
+USD
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18082

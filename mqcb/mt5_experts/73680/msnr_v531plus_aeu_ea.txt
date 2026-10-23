@@ -1,0 +1,26 @@
+MSNR v5.31Plus AEU EA is an Expert Advisor for MetaTrader 5 based on Malaysian SNR body levels, Smart Money reaction logic, liquidity sweep, MISS, engulfing confirmation, trendline confluence, QML, CRT and DOL target projection.
+The EA is designed mainly for XAUUSD on the M5 timeframe. It scans higher timeframes such as W1, D1, H4 and H1 to build important support and resistance zones, then waits for price action confirmation on the execution timeframe.
+Main features:
+- Malaysian SNR body-level detection.
+- Higher-timeframe support and resistance scan.
+- Liquidity sweep, MISS and engulfing confirmation.
+- Trendline, QML, breakout-retest and CRT logic.
+- Confluence cluster system.
+- Asia, Europe and US session filter.
+- Risk management by account percentage.
+- Partial close and break-even options.
+- Safety guard for losing streak and drawdown control.
+- Clean dashboard and key level display.
+- CSV export for backtest deals, signal logs and closed trades.
+Recommended settings:
+- Symbol: XAUUSD or broker gold symbol such as XAUUSDm.
+- Timeframe: M5.
+- Account type: Hedging or Netting.
+- Risk: 0.5% to 1.00% per trade.
+- Spread: use a broker with stable gold spread and good execution.
+How it works:
+The EA does not trade from one signal only. It waits for multiple confirmation layers around the same price zone. A valid setup may include SNR touch, liquidity sweep, MISS, engulfing candle, trendline reaction, GAP SNR, QML or CRT confirmation.
+Take profit logic:
+The EA can use DOL targets such as previous day high, previous day low, previous week high, previous week low and recent swing liquidity. If no suitable DOL target is available, it can use a risk-reward projection as a fallback.
+Risk warning:
+This Expert Advisor is intended for research, strategy testing and educational use. Backtest results may vary depending on broker spread, symbol specification, execution model and historical data quality. Always test the EA on a demo account before using it on a live account.

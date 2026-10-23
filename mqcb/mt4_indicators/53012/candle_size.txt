@@ -1,0 +1,19 @@
+The indicator searches for candlesticks on the price chart that are larger than the size specified in the settings and marks them on the chart.
+You can choose two types of candlestick size measurement (Units of Calculation): Points and Percentages.
+Points
+- the size will be calculated in points. (for a five-digit quote, a point = 0.00001 and similarly for others)
+Percentages
+- the candlestick size will be calculated in percentages.
+You can also choose between which values ​​to measure (Between Levels):
+High/Low
+- Between the maximum and minimum of the candlestick.
+Open/Close
+- between the opening and closing prices.
+Upper Shadow
+- the size of the upper shadow of the candlestick.
+Lower Shadow
+- the size of the lower shadow.
+Select the unit of measurement and between which levels to measure, then use the
+Size Definitions
+parameter in the indicator to set the desired candlestick size level.
+If the indicator detects a candle with the specified parameters on the price chart, it will mark it using one of the methods selected in the settings.

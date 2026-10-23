@@ -1,0 +1,92 @@
+Author of the idea
+-
+Vasiliy
+mq5 code author
+-
+barabashkakvn
+The EA uses iCCI (Commodity Channel Index, CCI) and iMA (Moving Average, MA) indicators.
+When MA shows growth, iCCI indicator is running: -100 to buy and 200 to sell!
+When MA shows falling, iCCI indicator is running: 100 to buy and -200 to sell!
+Thus, during strong movements, "incorrect" trades are decreased. The EA then tries to capture the remaining movement!
+You can include a time interval for trading (
+Use Time interval
+parameter enables/disables using the time interval). The time interval is set from
+Start hour
+to
+End hour
+. You can define the time interval both inside the day and with a transition through day. The example is provided in the time interval definition function:
+//+------------------------------------------------------------------+
+//| TimeControl                                                      |
+//+------------------------------------------------------------------+
+bool
+TimeControl(
+void
+)
+  {
+MqlDateTime
+STimeCurrent;
+datetime
+time_current=
+TimeCurrent
+();
+if
+(time_current==
+D'1970.01.01 00:00'
+)
+return
+(
+false
+);
+TimeToStruct
+(time_current,STimeCurrent);
+if
+(InpStartHour<InpEndHour)
+// intraday time interval
+{
+/*
+Example:
+input uchar    InpStartHour      = 5;        // Start hour
+input uchar    InpEndHour        = 10;       // End hour
+0  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 0  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15
+_  _  _  _  _  +  +  +  +  +  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  +  +  +  +  +  _  _  _  _  _  _
+*/
+if
+(STimeCurrent.hour>=InpStartHour && STimeCurrent.hour<InpEndHour)
+return
+(
+true
+);
+     }
+else
+if
+(InpStartHour>InpEndHour)
+// time interval with the transition in a day
+{
+/*
+Example:
+input uchar    InpStartHour      = 10;       // Start hour
+input uchar    InpEndHour        = 5;        // End hour
+0  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 0  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15
+_  _  _  _  _  _  _  _  _  _  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  _  _  _  _  _  +  +  +  +  +  +
+*/
+if
+(STimeCurrent.hour>=InpStartHour || STimeCurrent.hour<InpEndHour)
+return
+(
+true
+);
+     }
+else
+return
+(
+false
+);
+//---
+return
+(
+false
+);
+  }
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23061

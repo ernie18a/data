@@ -1,0 +1,12 @@
+Real author:
+Gosha
+A fractal
+(by Bill Williams) is the formation of five candlesticks (bars), in which the average candlestick has the highest high (lowest low).
+This indicator draws the fractal arrow based on three candlesticks only (not five).
+This indicator was first implemented in MQL4 and published in the
+Code Base at mql4.com
+on 05.02.2008.
+The LW_Fractals indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1937

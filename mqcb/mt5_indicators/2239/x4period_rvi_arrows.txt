@@ -1,0 +1,10 @@
+Real author:
+transport_david
+Four semaphore signal indicators based
+RVI oscillators
+with different periods on one price chart.
+Trend signals are based on the mutual arrangement of the main and signal lines of the indicator.
+Figure 1. X4Period_RVI_Arrows
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2239

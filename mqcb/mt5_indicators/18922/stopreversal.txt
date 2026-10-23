@@ -1,0 +1,7 @@
+Real author
+: Dominic
+A semaphore signal indicator.
+Fig. 1. The Stopreversal indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18922

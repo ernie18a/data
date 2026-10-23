@@ -1,0 +1,4 @@
+This indicator is a tool to show history orders on chart.
+Indicator show open time and price, close time and price and profit in pips on chart.
+It can to help the trader to see all history orders which are opened either manually or by an automated system.
+You can to use indicator on any symbol and any time frame.

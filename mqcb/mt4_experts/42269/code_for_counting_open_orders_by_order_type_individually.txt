@@ -1,0 +1,5 @@
+It is common for Expert Advisor developers to face the challenge of making the robot capable of opening and administering more than one order at the same time. For that, there needs to be a way to recognize the total open orders running and also each one of them by type.
+With that in mind, I decided to share this very simple code. In it, I use the Comment() function as a way to make the order count by the robot visual in real time. The code is extensively explanatory with descriptive notes.
+I hope it is useful.
+---------
+Below, a video of the Expert Advisor running:

@@ -1,0 +1,4 @@
+Quantora Candle Countdown MT5 is a utility that displays the remaining time of the current candle in real time. It does not open trades or generate signals.
+The tool shows a clear countdown timer along with elapsed time and candle progress, helping you track how much of the current bar has completed. It also provides basic candle information such as timeframe and symbol, and detects whether the market is open or closed.
+Configurable alerts can notify you as the candle approaches its close, allowing better timing for entries and exits. A simple dashboard keeps everything easy to monitor.
+Suitable for traders who rely on precise timing and want a clear view of candle activity.

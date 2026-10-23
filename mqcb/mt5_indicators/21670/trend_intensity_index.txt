@@ -1,0 +1,10 @@
+The
+Trend Intensity Index
+oscillator displayed as a color histogram.
+The indicator uses the SmoothAlgorithms.mqh library classes (copy it to <terminal_data_folder>\MQL5\Include). The detailed description of the classes is available in the article
+Averaging Price Series for Intermediate Calculations Without Using Additional Buffers
+.
+Fig. 1. The Trend_Intensity_Index indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21670

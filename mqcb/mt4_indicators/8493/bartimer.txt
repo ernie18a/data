@@ -1,0 +1,7 @@
+The current location in time relative to the beginning and end of the current bar is displayed in the main window. It additionally displays the value of time elapsed from the beginning of the bar as a percentage.
+The indicator is useful for monitoring the moment of making the trading decisions.
+For example, I open positions not further than 20% from the beginning of a candle and/or 80% after. In the first case the previous candle is considered, in the second - the current. On the larger intervals, I think it is necessary to adhere to stricter restrictions.
+BarTimer
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8493

@@ -1,0 +1,1 @@
+Deletes Stoploss and Take Profit for All Symbols for All current Open market orders.

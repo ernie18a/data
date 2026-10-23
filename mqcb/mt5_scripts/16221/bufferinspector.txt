@@ -1,0 +1,4 @@
+This script allows you to see all buffers, even those which are hidden and are used for calculations. The output uses the following format:
+INDICATOR_NAME [BUFFER_INDEX] [POSITION_INDEX] = VALUE
+Note
+: ‌both indexes start at 0.

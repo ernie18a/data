@@ -1,0 +1,31 @@
+The indicator shows
+moving average
+, calculated using the digital filter. In this example the Hann Window is used.
+You can use the other filter coefficients, just modify them in
+OnInit()
+:
+for
+(
+int
+k=
+0
+;k<Per;k++)
+   {
+      w[k]=
+0.5
+-
+0.5
+*
+MathCos
+(
+2
+.*pi*(k+
+1
+)/(Per+
+1
+));
+      wsum+=w[k];
+   }
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/120

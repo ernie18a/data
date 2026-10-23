@@ -1,0 +1,1171 @@
+note ........ when you set risk to 0 it trades the lots size for every trade
+reverse ...... set to true to take the opposite trade to when its set to false
+Strategy Tester Report
+2bar
+AlpariUK-Classic-2 (Build 419)
+Symbol
+GBPUSD (Great Britain Pound vs US Dollar)
+Period
+4 Hours (H4) 2012.01.02 00:00 - 2012.06.01 20:00 (2012.01.01 - 2012.06.03)
+Model
+Every tick (the most precise method based on all available least timeframes)
+Parameters
+Risk=0; Lots=1; Stop=50; TakeProfit=100; Reverse=false; MondayStartTime="00:00"; MondayEndTime="23:59"; TuesdayStartTime="00:00"; TuesdayEndTime="23:59"; WednesdayStartTime="00:00"; WednesdayEndTime="23:59"; ThursdayStartTime="00:00"; ThursdayEndTime="23:59"; FridayStartTime="00:00"; FridayEndTime="23:59"; MondayNoBreakStartTime="00:00"; FridayNoBreakEndTime="23:00"; MonFriNoBreak=true; IntraBar=false; MagicNumber=0; WriteScreenshots=true; TrailStart=50; TrailAmount=10; periodAMA=9; nfast=7; nslow=30; G=1; dK=3; FasterLWMA=7; SlowerLWMA=30; soundAlert=true; soundFile="lwma_crossover.wav"; textAlert=true; FastEMA=30; SlowEMA=40; SignalEMA=9; SlippageExit=6; SlippageEnter=2;
+Bars in test
+1661
+Ticks modelled
+7089055
+Modelling quality
+n/a
+Mismatched charts errors
+511
+Initial deposit
+10000.00
+Total net profit
+3180.60
+Gross profit
+7721.20
+Gross loss
+-4540.60
+Profit factor
+1.70
+Expected payoff
+113.59
+Absolute drawdown
+345.00
+Maximal drawdown
+3104.30 (20.72%)
+Relative drawdown
+20.72% (3104.30)
+Total trades
+28
+Short positions (won %)
+18 (44.44%)
+Long positions (won %)
+10 (60.00%)
+Profit trades (% of total)
+14 (50.00%)
+Loss trades (% of total)
+14 (50.00%)
+Largest
+profit trade
+1000.00
+loss trade
+-503.70
+Average
+profit trade
+551.51
+loss trade
+-324.33
+Maximum
+consecutive wins (profit in money)
+5 (1549.20)
+consecutive losses (loss in money)
+4 (-1502.00)
+Maximal
+consecutive profit (count of wins)
+1995.90 (2)
+consecutive loss (count of losses)
+-1502.00 (4)
+Average
+consecutive wins
+2
+consecutive losses
+2
+#
+Time
+Type
+Order
+Size
+Price
+S / L
+T / P
+Profit
+Balance
+1
+2012.01.02 12:00
+buy
+1
+1.00
+1.55014
+0.00000
+0.00000
+2
+2012.01.02 12:00
+modify
+1
+1.00
+1.55014
+1.54514
+1.56014
+3
+2012.01.03 06:08
+modify
+1
+1.00
+1.55014
+1.55014
+1.56014
+4
+2012.01.03 07:33
+modify
+1
+1.00
+1.55014
+1.55114
+1.56014
+5
+2012.01.03 08:20
+modify
+1
+1.00
+1.55014
+1.55214
+1.56014
+6
+2012.01.03 08:45
+modify
+1
+1.00
+1.55014
+1.55314
+1.56014
+7
+2012.01.03 11:17
+t/p
+1
+1.00
+1.56014
+1.55314
+1.56014
+999.60
+10999.60
+8
+2012.01.05 20:00
+sell
+2
+1.00
+1.54915
+0.00000
+0.00000
+9
+2012.01.05 20:00
+modify
+2
+1.00
+1.54915
+1.55415
+1.53915
+10
+2012.01.06 14:38
+modify
+2
+1.00
+1.54915
+1.54915
+1.53915
+11
+2012.01.06 15:40
+modify
+2
+1.00
+1.54915
+1.54815
+1.53915
+12
+2012.01.06 15:43
+modify
+2
+1.00
+1.54915
+1.54715
+1.53915
+13
+2012.01.06 16:03
+modify
+2
+1.00
+1.54915
+1.54615
+1.53915
+14
+2012.01.06 16:21
+t/p
+2
+1.00
+1.53915
+1.54615
+1.53915
+996.30
+11995.90
+15
+2012.01.11 00:00
+buy
+3
+1.00
+1.54842
+0.00000
+0.00000
+16
+2012.01.11 00:00
+modify
+3
+1.00
+1.54842
+1.54342
+1.55842
+17
+2012.01.11 11:28
+s/l
+3
+1.00
+1.54342
+1.54342
+1.55842
+-500.00
+11495.90
+18
+2012.01.11 12:00
+sell
+4
+1.00
+1.54354
+0.00000
+0.00000
+19
+2012.01.11 12:00
+modify
+4
+1.00
+1.54354
+1.54854
+1.53354
+20
+2012.01.11 12:37
+modify
+4
+1.00
+1.54354
+1.54354
+1.53354
+21
+2012.01.11 15:33
+modify
+4
+1.00
+1.54354
+1.54254
+1.53354
+22
+2012.01.11 15:36
+modify
+4
+1.00
+1.54354
+1.54154
+1.53354
+23
+2012.01.11 16:03
+modify
+4
+1.00
+1.54354
+1.54054
+1.53354
+24
+2012.01.11 17:13
+t/p
+4
+1.00
+1.53354
+1.54054
+1.53354
+1000.00
+12495.90
+25
+2012.01.11 17:13
+sell
+5
+1.00
+1.53329
+0.00000
+0.00000
+26
+2012.01.11 17:13
+modify
+5
+1.00
+1.53329
+1.53829
+1.52329
+27
+2012.01.12 09:03
+modify
+5
+1.00
+1.53329
+1.53329
+1.52329
+28
+2012.01.12 10:48
+s/l
+5
+1.00
+1.53329
+1.53329
+1.52329
+-11.10
+12484.80
+29
+2012.01.17 08:00
+buy
+6
+1.00
+1.53667
+0.00000
+0.00000
+30
+2012.01.17 08:00
+modify
+6
+1.00
+1.53667
+1.53167
+1.54667
+31
+2012.01.18 15:52
+modify
+6
+1.00
+1.53667
+1.53667
+1.54667
+32
+2012.01.18 21:11
+modify
+6
+1.00
+1.53667
+1.53767
+1.54667
+33
+2012.01.19 09:57
+modify
+6
+1.00
+1.53667
+1.53867
+1.54667
+34
+2012.01.19 11:31
+modify
+6
+1.00
+1.53667
+1.53967
+1.54667
+35
+2012.01.19 16:46
+t/p
+6
+1.00
+1.54667
+1.53967
+1.54667
+998.40
+13483.20
+36
+2012.02.06 08:00
+sell
+7
+1.00
+1.57781
+0.00000
+0.00000
+37
+2012.02.06 08:00
+modify
+7
+1.00
+1.57781
+1.58281
+1.56781
+38
+2012.02.06 17:13
+s/l
+7
+1.00
+1.58281
+1.58281
+1.56781
+-500.00
+12983.20
+39
+2012.02.09 12:00
+sell
+8
+1.00
+1.58401
+0.00000
+0.00000
+40
+2012.02.09 12:00
+modify
+8
+1.00
+1.58401
+1.58901
+1.57401
+41
+2012.02.10 06:03
+modify
+8
+1.00
+1.58401
+1.58401
+1.57401
+42
+2012.02.10 08:23
+modify
+8
+1.00
+1.58401
+1.58301
+1.57401
+43
+2012.02.10 10:32
+s/l
+8
+1.00
+1.58301
+1.58301
+1.57401
+96.30
+13079.50
+44
+2012.02.17 00:00
+buy
+9
+1.00
+1.58054
+0.00000
+0.00000
+45
+2012.02.17 00:00
+modify
+9
+1.00
+1.58054
+1.57554
+1.59054
+46
+2012.02.17 10:38
+modify
+9
+1.00
+1.58054
+1.58054
+1.59054
+47
+2012.02.17 16:03
+s/l
+9
+1.00
+1.58054
+1.58054
+1.59054
+0.00
+13079.50
+48
+2012.02.22 00:00
+sell
+10
+1.00
+1.57793
+0.00000
+0.00000
+49
+2012.02.22 00:00
+modify
+10
+1.00
+1.57793
+1.58293
+1.56793
+50
+2012.02.22 10:38
+modify
+10
+1.00
+1.57793
+1.57793
+1.56793
+51
+2012.02.22 10:42
+modify
+10
+1.00
+1.57793
+1.57693
+1.56793
+52
+2012.02.22 10:52
+modify
+10
+1.00
+1.57793
+1.57593
+1.56793
+53
+2012.02.22 13:27
+modify
+10
+1.00
+1.57793
+1.57493
+1.56793
+54
+2012.02.22 13:57
+t/p
+10
+1.00
+1.56793
+1.57493
+1.56793
+1000.00
+14079.50
+55
+2012.02.24 16:00
+buy
+11
+1.00
+1.58575
+0.00000
+0.00000
+56
+2012.02.24 16:00
+modify
+11
+1.00
+1.58575
+1.58075
+1.59575
+57
+2012.02.27 00:00
+close
+11
+1.00
+1.58912
+1.58075
+1.59575
+336.60
+14416.10
+58
+2012.03.02 20:00
+sell
+12
+1.00
+1.58473
+0.00000
+0.00000
+59
+2012.03.02 20:00
+modify
+12
+1.00
+1.58473
+1.58973
+1.57473
+60
+2012.03.05 00:00
+close
+12
+1.00
+1.58353
+1.58973
+1.57473
+116.30
+14532.40
+61
+2012.03.05 00:00
+sell
+13
+1.00
+1.58327
+0.00000
+0.00000
+62
+2012.03.05 00:00
+modify
+13
+1.00
+1.58327
+1.58827
+1.57327
+63
+2012.03.06 01:38
+s/l
+13
+1.00
+1.58827
+1.58827
+1.57327
+-503.70
+14028.70
+64
+2012.03.09 00:00
+buy
+14
+1.00
+1.58300
+0.00000
+0.00000
+65
+2012.03.09 00:00
+modify
+14
+1.00
+1.58300
+1.57800
+1.59300
+66
+2012.03.09 10:31
+s/l
+14
+1.00
+1.57800
+1.57800
+1.59300
+-500.00
+13528.70
+67
+2012.03.09 20:00
+sell
+15
+1.00
+1.56678
+0.00000
+0.00000
+68
+2012.03.09 20:00
+modify
+15
+1.00
+1.56678
+1.57178
+1.55678
+69
+2012.03.12 00:00
+close
+15
+1.00
+1.56687
+1.57178
+1.55678
+-12.70
+13516.00
+70
+2012.03.12 00:00
+sell
+16
+1.00
+1.56664
+0.00000
+0.00000
+71
+2012.03.12 00:00
+modify
+16
+1.00
+1.56664
+1.57164
+1.55664
+72
+2012.03.12 12:03
+modify
+16
+1.00
+1.56664
+1.56664
+1.55664
+73
+2012.03.13 10:16
+s/l
+16
+1.00
+1.56664
+1.56664
+1.55664
+-3.70
+13512.30
+74
+2012.03.15 20:00
+buy
+17
+1.00
+1.57237
+0.00000
+0.00000
+75
+2012.03.15 20:00
+modify
+17
+1.00
+1.57237
+1.56737
+1.58237
+76
+2012.03.16 13:32
+modify
+17
+1.00
+1.57237
+1.57237
+1.58237
+77
+2012.03.16 13:47
+modify
+17
+1.00
+1.57237
+1.57337
+1.58237
+78
+2012.03.16 13:53
+modify
+17
+1.00
+1.57237
+1.57437
+1.58237
+79
+2012.03.16 14:03
+modify
+17
+1.00
+1.57237
+1.57537
+1.58237
+80
+2012.03.16 14:36
+t/p
+17
+1.00
+1.58237
+1.57537
+1.58237
+999.60
+14511.90
+81
+2012.03.22 12:00
+sell
+18
+1.00
+1.57997
+0.00000
+0.00000
+82
+2012.03.22 12:00
+modify
+18
+1.00
+1.57997
+1.58497
+1.56997
+83
+2012.03.23 08:23
+s/l
+18
+1.00
+1.58497
+1.58497
+1.56997
+-503.70
+14008.20
+84
+2012.03.29 00:00
+sell
+19
+1.00
+1.58878
+0.00000
+0.00000
+85
+2012.03.29 00:00
+modify
+19
+1.00
+1.58878
+1.59378
+1.57878
+86
+2012.03.29 21:11
+s/l
+19
+1.00
+1.59378
+1.59378
+1.57878
+-500.00
+13508.20
+87
+2012.03.30 08:00
+buy
+20
+1.00
+1.59848
+0.00000
+0.00000
+88
+2012.03.30 08:00
+modify
+20
+1.00
+1.59848
+1.59348
+1.60848
+89
+2012.03.30 13:48
+modify
+20
+1.00
+1.59848
+1.59848
+1.60848
+90
+2012.03.30 15:57
+s/l
+20
+1.00
+1.59848
+1.59848
+1.60848
+0.00
+13508.20
+91
+2012.04.04 00:00
+sell
+21
+1.00
+1.59119
+0.00000
+0.00000
+92
+2012.04.04 00:00
+modify
+21
+1.00
+1.59119
+1.59619
+1.58119
+93
+2012.04.04 12:43
+modify
+21
+1.00
+1.59119
+1.59119
+1.58119
+94
+2012.04.04 15:58
+modify
+21
+1.00
+1.59119
+1.59019
+1.58119
+95
+2012.04.05 02:47
+s/l
+21
+1.00
+1.59019
+1.59019
+1.58119
+88.90
+13597.10
+96
+2012.04.11 00:00
+sell
+22
+1.00
+1.58622
+0.00000
+0.00000
+97
+2012.04.11 00:00
+modify
+22
+1.00
+1.58622
+1.59122
+1.57622
+98
+2012.04.11 09:56
+s/l
+22
+1.00
+1.59122
+1.59122
+1.57622
+-500.00
+13097.10
+99
+2012.04.11 16:00
+buy
+23
+1.00
+1.59141
+0.00000
+0.00000
+100
+2012.04.11 16:00
+modify
+23
+1.00
+1.59141
+1.58641
+1.60141
+101
+2012.04.12 13:40
+modify
+23
+1.00
+1.59141
+1.59141
+1.60141
+102
+2012.04.13 11:47
+s/l
+23
+1.00
+1.59141
+1.59141
+1.60141
+-1.60
+13095.50
+103
+2012.04.16 00:00
+sell
+24
+1.00
+1.58477
+0.00000
+0.00000
+104
+2012.04.16 00:00
+modify
+24
+1.00
+1.58477
+1.58977
+1.57477
+105
+2012.04.16 20:47
+s/l
+24
+1.00
+1.58977
+1.58977
+1.57477
+-500.00
+12595.50
+106
+2012.04.17 12:00
+buy
+25
+1.00
+1.59580
+0.00000
+0.00000
+107
+2012.04.17 12:00
+modify
+25
+1.00
+1.59580
+1.59080
+1.60580
+108
+2012.04.18 10:02
+s/l
+25
+1.00
+1.59080
+1.59080
+1.60580
+-500.40
+12095.10
+109
+2012.05.02 00:00
+sell
+26
+1.00
+1.62190
+0.00000
+0.00000
+110
+2012.05.02 00:00
+modify
+26
+1.00
+1.62190
+1.62690
+1.61190
+111
+2012.05.02 15:42
+modify
+26
+1.00
+1.62190
+1.62190
+1.61190
+112
+2012.05.04 17:48
+modify
+26
+1.00
+1.62190
+1.62090
+1.61190
+113
+2012.05.04 23:00
+close
+26
+1.00
+1.61524
+1.62090
+1.61190
+651.20
+12746.30
+114
+2012.05.08 12:00
+sell
+27
+1.00
+1.61336
+0.00000
+0.00000
+115
+2012.05.08 12:00
+modify
+27
+1.00
+1.61336
+1.61836
+1.60336
+116
+2012.05.09 15:20
+modify
+27
+1.00
+1.61336
+1.61336
+1.60336
+117
+2012.05.09 20:03
+s/l
+27
+1.00
+1.61336
+1.61336
+1.60336
+-3.70
+12742.60
+118
+2012.05.11 08:00
+sell
+28
+1.00
+1.61197
+0.00000
+0.00000
+119
+2012.05.11 08:00
+modify
+28
+1.00
+1.61197
+1.61697
+1.60197
+120
+2012.05.11 15:45
+modify
+28
+1.00
+1.61197
+1.61197
+1.60197
+121
+2012.05.11 23:00
+close
+28
+1.00
+1.60759
+1.61197
+1.60197
+438.00
+13180.60
+Author:
+I designed the EA but I had help in writing the code by onestep they were excellent.
+The first indicator to use is called LWMA CROSSOVER SIGNAL
+It basically plots 2 points on the chart were there,s a cross over of the faster and slower LW-moving averages. The first is an ARROW pointing downwards and is coloured red, which obviously shows a downward trend and is the first signal of three I would like to pick up to indicate a possible SHORT TRADE .
+The second point is an arrow pointing upwards and is coloured springreen and is the first signal of three I would like to pick up to indicate the possible LONG TRADE.
+LWMA VARIABLES
+The variables inputs to be able to change from the LWMA indicator when Im running my EA are:
+Faster lwma;
+Slower lwma.
+Image:
+LWMA CROSSOVER SIGNAL
+indicator
+SECOND indicator is the AMA
+This indicator draws a moving average line and when the line is trending upwards it plots BLUE DOTS directly on the line and when the line is trending downwards it plots GOLDDOTS on the line . It is these dots I to use for my second signals to go long or short .
+Once the first signal of an RED arrow from the LWMA indicator appears in line with a candle indicating a downward trend the EA needs to look for the second indication of a GOLD DOT ONLY. Which appears on the AMA line on the SAME OR VERY NEXT CANDLE along from the first LWMA SIGNAL on the chart . Then we can move onto the last signal from the third indicator once these to signals have appeared indicating a possible SHORT TRADE
+Again it will be the opposite if there is a SPRINGGREEN arrow appears from the LWMA indicator in line with a candle indicating an upward trend and if ONLY A BLUE DOT on the AMA trend line appears on the very SAME OR NEXT CANDLE ALONG from the first LWMA SIGNAL . Then we can move onto the last signal from the third indicator,indicating a possible LONG TRADE
+AMA VARIABLE inputs to be able to change in my working EA are
+Periodama;
+nfast;
+Nslow;
+G;
+DK.
+Image:
+AMA indicator
+THIRD INDICATOR is the FXBAY-MACD
+This indicator is a standard MACD indicator, its also got a historgram plotted for the difference of the two plotted lines
+ITS the historgrams points THAT help with the third signal to take a long or short trade. And also I want to use the histogram signal to help exit a long or short trade.
+Image:
+TAKING A LONG TRADE:
+And the third signal to finaly open a LONG TRADE will be if I have the TWO signals from the LWMA and the AMA to go long(THE GREEN ARROW AND BLUE DOT) as they are giving me the trending upwards signals, as long as the HISSOGRAM from the MACD indicator on the candle where the AMA DOT signal is given is a POSITIVE NUMBER THEN TAKE THE TRADE
+EXITING A LONG TRADE:
+to exit a LONG TRADE as soon as the HISTOGRAM on the MACD indicator hits 0.000 (zero) or LOWER THAN ZERO.(negative number)
+TAKING A SHORT TRADE:
+Also if I have the TWO signals from the LWMA and the AMA to go SHORT(THE RED ARROW AND THE GOLD DOT) as they are telling me its trending downwards as long as the HISTOGRAM on the MACD INDICATOR where the AMA DOT signal is given is a NEGATIVE NUMBER, Be it on the first or second candle THEN TAKE THE SHORT TRADE
+EXITING A SHORT TRADE:
+I want to exit the trade if the HISTOGRAM on the MACD indicator hits 0.00 (zero) or HIGHER THAN ZERO(positive number) .
+MACD VARIABLES to change in my working EA are
+Fast EMA;
+SlowEMA;
+Signal EMA.
+OTHER VARIABLES
+STOP LOSS in PIPS the same for all trades,
+RISK % of whats in the account.
+TAKE PROFIT in pips on the EA.
+ALSO WHEN TO OPEN THE TRADE on the next OPENED CANDLE or INSTANTLY AS SOON AS THE INDICATORS LINE UP
+SOME GOOD VARIABLE TO TEST THE EA ON USING 15 MINUTE CHARTS:
+LWMA:
+Fast lwma…………. 7
+Slow lwma………..30
+AMA:
+Period ama…………9
+Nfast…………………..7
+Nslow…………………30
+G…………………..1.4
+DK………………….3.0
+MACD:
+Fast ma…………..12
+Slow ma……………30
+Signal ………………9
+times frames to use M5 up to H4.
+Recommendations:
+any help or ideas will be greatly appriciated
+the actual ea is called snowies ea, there are also the three indicators called AMA,fx-bay_macd and lwma

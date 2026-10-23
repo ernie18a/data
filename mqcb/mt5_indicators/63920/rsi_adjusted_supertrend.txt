@@ -1,0 +1,16 @@
+aRSI Calculation & Usage:
+Subtract 50 from RSI → take absolute value → divide by 100 or 50 (setting:
+Divide RSI value by
+) → gives
+aRSI
+(percentage-like).
+Bands adjustment:
+Lower band = lower − (lower × aRSI)
+Upper band = upper + (upper × aRSI)
+Option: Toggle
+Show Regular ST
+to view standard SuperTrend.
+Settings:
+Factor (for both STs)
+ATR length (for STs)
+RSI length (for aRSI ST)

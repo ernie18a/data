@@ -1,0 +1,35 @@
+Updated MultiCurrency Template to v4.0
+You can change the entry logic for any desired logic. This sample using just Moving Averages.
+(Please note: for Multisymbols it cannot be backtested, but it can be tested on live trade).
+Main Input Parameters
+Value
+Descriptions
+OrdersType
+Buy and Sell
+Orders Type
+Lots
+0.01
+Basic Lot Value
+StopLoss
+50
+Stop Loss Value
+TakeProfit
+100
+Take Profit Value
+TrailingStop
+15
+Trailing Stop (in Points)
+TrailingStep
+5
+Trailing Step (in Points)
+Magic
+1
+Magic Number
+Slippage
+10
+Slippage
+TradeMultipair
+false
+Trade Multipair Mode
+PairsToTrade
+Selected Pair to Trade

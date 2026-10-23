@@ -1,0 +1,6 @@
+Description:
+This is first EA I am providing for everyone to see and work upon. This is written by me. This EA should be used on EURUSD 15min with initial capital of $1000. If you run this EA from 14th Jan 2011 till today, you might find profit with good profit%.
+Recommendations:
+EURUSD only
+15 min chart
+Firstly run this as long, then as short, then as long+ short from 12th Jan till today to see in which direction the wind is blowing. Then please test according to that wind direction.

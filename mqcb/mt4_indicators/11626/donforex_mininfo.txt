@@ -1,0 +1,19 @@
+Some basic information which every trader needs.
+This indicator is
+tick
+- and
+timer-based also, so you don't have to wait for a new tick to update the time value!
+It is very useful for display of remaining time.
+Price
+display in large font size (last digit is in different color!);
+Price
+color changes
+according to price moving's direction;
+Spread;
+Time
+left to bar end (timer based!);
+Color and position settings.
+Other
+DonForex tools
+can be found on the
+MetaTrader 4 Market.

@@ -1,0 +1,6 @@
+Two-pole super smoother filter from John Ehlers' book "
+Cybernetic Analysis for Stocks and Futures: Cutting-Edge DSP Technology to Improve Your Trading
+" is used in this indicator for moving average calculation.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/588

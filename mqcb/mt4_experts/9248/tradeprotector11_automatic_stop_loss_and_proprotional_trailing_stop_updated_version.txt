@@ -1,0 +1,34 @@
+Updated version of the:
+https://www.mql5.com/en/code/9238
+List of fixes:
+- Added SYMBOL (currency pair) checking. Version 1.0 was processing all orders, no matter what currency pairs was there. Currently this EA is only processing orders of the same symbol.
+If you want to use it for - let's say EURGBP and EURUSD - attach trade_protector-1.1 to the charts of the respective pairs.
+- Fixed minor calculation problem for trailing stops on SELL orders (the spread value was unnecessarily added in the trailing stop value calculation formula).
+Changes/Fixes in version 1.2:
+- changed algorithm: if there is no SL, EA sets nInitialSL (pips) from the current price, then nTrailingStop is used as normal trailing stop until nPropSLThreshold profit (in pips) is reached. From that point proportional SL is used: (Buy/Sell)
+SL = OrderOpenPrice() +/- dPropSLRatio(Bid/Ask - OrderOpenPrice()) -/+ spread
+- 3 logging level are now meaningful: 0 - no logging, 1 - (default) only events (change SL) are logged, 2 - additional log file for diagnostic
+The settable parameters are:
+extern int logging=1;
+//logging=0,1,2 - logging level
+extern int nInitialSL=15;
+// inital SL
+extern int nTrailingStop=35;
+//nTrailingStop [pips] - initial trailing stop. It will be used until your trade will reach profit = nPropSLThreshold. If you don't want trailing stop, set to a big value (bigger then nInitialSL + nPropSLThreshold)
+extern int nPropSLThreshold=12;
+//nPropSLThreshold [pips] - after reaching this profit proportional trailing stop will be used
+extern double dPropSLRatio=0.35;
+//dPropSLRatio [decimal] - multiplying factor ( PropSL = Profit * dPropSLRatio - Spred )
+extern int nUseEscape=0;
+//nUseEscape [ 1 or 0 ] - escape misplaced trades as soon as they reach some minimal profit
+extern int nEscapeLevel=0;
+//nEscapeLevel [pips] - lose size after which we want our trade to terminate
+//as soon as it will reach next high
+extern int nEscapeTP=35;
+//nEscapeTP [pips] - take profit level in pips (you can set to negative value
+//- then it will be a lose that you would be happy to get,
+//in the case your trade reached some impressive negative pips value)
+extern int nSleep=0;
+//delay after new bar
+extern int nSlip = 2;
+//maximum price slip allowed

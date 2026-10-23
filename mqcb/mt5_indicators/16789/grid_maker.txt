@@ -1,0 +1,4 @@
+Real author
+: Im_hungry
+This indicator shows vertical and horizontal lines that you can set in very different ways. For example in my picture there are entry levels (dash yellow lines) and TP (solid lime lines), but you can easily change all distance of all lines and find the best way to work with it.
+Then there are vertical lines on the most hot hours, but you can easily change on settings.

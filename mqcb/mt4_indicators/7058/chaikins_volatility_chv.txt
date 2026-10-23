@@ -1,0 +1,4 @@
+According to volatility interpretation method offered by Chaikin, the growth of the volatility indicator value in a short is the sign of a price's approaching to a base (for example, panic selling of securities), and volatility fall during a larger period denotes the closeness of a peak (e.g. in conditions of the mature bull market). Chaikin does not recommend relying on only one indicator. He offered to use a system of moving average crossing or a system of trade bands to confirm signals of this (or any other) indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7058

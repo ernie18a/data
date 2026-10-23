@@ -1,0 +1,4 @@
+3 EMA Crossover Indicator. MaPeriod1 must be smaller than MaPeriod2 and MaPeriod2 must be smaller than MaPeriod3.
+If ma1>ma2 and ma2>ma3 the indicator turns green.
+If ma1<ma2 and ma2<ma3 the indicator turn red otherwise it turns orange.
+Only the last bar of the indicator repaints.

@@ -1,0 +1,60 @@
+How it helps a trader in real trading:
+Eliminates hesitation and manual math:
+Traders instantly see if the current broker spread is acceptable for scalping (via green/red color alerts).
+Short-term trend monitoring:
+Using a fast and a slow EMA, it displays the momentum direction (
+Bullish
+,
+Bearish
+, or
+Flat
+), preventing traders from trading against the main timeframe flow.
+Clean visual management:
+The dashboard updates every second via a timer and completely cleans up all graphical objects upon removal, leaving no residue on the chart.
+Input Parameters Explained
+========== SCALPING SETTINGS ==========
+InpFastEMA (Default: 5):
+Fast Exponential Moving Average period used to detect rapid price shifts.
+InpSlowEMA (Default: 20):
+Slow Exponential Moving Average period used to confirm baseline trend direction.
+InpMaxSpread (Default: 12.0):
+Maximum allowed spread threshold in points. If exceeded, the panel warns of high spread to prevent costly trades.
+InpTimerSeconds (Default: 1):
+Frequency in seconds at which the panel refreshes market ticks and indicator data.
+========== UI POSITION & SCALING ==========
+InpShowPanel (Default: true):
+Toggles panel visibility on or off.
+InpPanelX (Default: 15):
+Horizontal distance in pixels from the top-left chart corner.
+InpPanelY (Default: 15):
+Vertical distance in pixels from the top-left chart corner.
+InpBaseFontSize (Default: 10):
+Base font size used throughout the layout.
+========== COLOR THEME (DROPDOWN) ==========
+InpColorBackground :
+Panel background color.
+InpColorGold :
+Secondary accent and title color.
+InpColorWhite :
+Main text color.
+InpColorGray :
+Neutral state color (
+Flat
+).
+InpColorGreen / InpColorRed :
+Profit/Buy or Loss/Sell/High Spread alert colors.
+InpColorBorder / InpColorDarkBox :
+Border and inner box colors for visual elements.
+Recommended Trading Methods
+Rapid-Fire Momentum Following:
+Enter trades in the direction indicated by the
+Momentum
+row (BULLISH or BEARISH) strictly when the spread status is green (
+SPREAD OK
+). Use the generated
+BUY SETUP
+or
+SELL SETUP
+prompt as your instant entry cue.
+Maximum Spread Filtering:
+Tune InpMaxSpread according to the traded currency pair. Avoid opening any position when the panel warns of high spreads, effectively protecting your profit margins from high broker transaction costs.

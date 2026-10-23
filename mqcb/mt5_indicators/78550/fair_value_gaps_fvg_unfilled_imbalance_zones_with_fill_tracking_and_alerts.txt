@@ -1,0 +1,29 @@
+A fair value gap (FVG, also called an imbalance) is a three-candle pattern where price moved so fast that the wicks of candle 1 and candle 3 do not overlap:
+Bullish FVG: the low of candle 3 is above the high of candle 1.
+Bearish FVG: the high of candle 3 is below the low of candle 1.
+Price often comes back to such a gap later. This indicator shows the gaps that are still open, so you can see at a glance where those zones are.
+What it shows
+Every open gap as a box from candle 2 to the right, green for bullish, red for bearish.
+The 50 % line of each gap (often called consequent encroachment).
+How much of a gap price has filled since it formed. When the gap is filled (100 % by default, or the percent you set, for example 50 %), its box ends at the candle that filled it.
+Optionally the filled gaps as grey boxes, so you can see how price reacted to them.
+How it works
+Gaps are found on closed candles only, so a gap never appears or disappears afterwards (no repaint).
+Small gaps can be skipped: minimum size as a part of ATR(14) (default 0.25 x ATR) or in points.
+To keep the chart clean only the newest open gaps are drawn (default 10 per direction).
+The calculation is incremental: after the first run only the new candle is processed.
+Inputs
+Bars to scan (default 1500)
+Minimum gap size, x ATR(14) / in points
+A gap counts as filled at this percent (default 100)
+Unfilled gaps shown per direction; keep filled gaps as boxes; filled gaps shown
+Draw the 50 % line; colours
+Alerts: on a new gap, when price comes back into a gap; push notification and e-mail
+Buffers for Expert Advisors (iCustom, not drawn)
+0 / 1: top / bottom of the newest unfilled bullish gap
+2 / 3: top / bottom of the newest unfilled bearish gap
+EMPTY_VALUE when there is none
+Example: double top[]; CopyBuffer(handle, 0, 1, 1, top); gives the top of the newest open bullish gap on the last closed candle.
+Good to know
+It works on any symbol and time frame.
+The indicator only draws and calculates; it never trades.

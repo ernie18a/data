@@ -1,0 +1,8 @@
+Theory :
+This indicator is using the asymmetric way of calculating the bands instead of using same distance for up and down bands, and then it is converted to an oscillator. One of the 4 possible average types can be used :
+simple moving average
+exponential moving average
+smoothed moving average
+linear weighted moving average
+Usage :
+The oscillator can be used as an estimator of the current trend strength

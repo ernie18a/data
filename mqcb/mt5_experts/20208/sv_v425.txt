@@ -1,0 +1,71 @@
+Author of the idea
+:
+Evgeny
+,
+MQ5 code author
+:
+barabashkakvn
+.
+The Expert Advisor opens no more than one position per day. Conditions for opening a position are checked at the specified time. The EA searches for the highest
+high price
+and the lowest
+low price
+in the
+Analyzed interval
+. The EA takes into account
+Shift
+of the interval from the current moment.
+Additional conditions: analysis of the position of the found prices (
+highest price
+and
+lowest price
+) relative to two Moving Averages: "Fast" and "Slow".
+Recommendations for Optimization
+Use only the following parameters during the initial optimization:
+Start hour
+,
+Shift
+and
+Analyzed interval
+.
+Input Parameters
+Use Manual setting ("true" -> "Lots", "false" -> "Risk")
+- enable/disable manual lot setting;
+Lots
+- manually set lot;
+Stop Loss (in pips)
+- Stop Loss value
+Take Profit (in pips)
+- Take Profit value
+Trailing Stop (in pips)
+- trailing value
+Trailing Step (in pips)
+- trailing step value
+Risk in percent for a deal from a free margin
+- risk per trade (if
+Use Manual setting
+== false);
+Start hour
+- trading start hour;
+Start minute
+- trading start minute;
+Shift
+- shift for the analyzed interval;
+Analyzed interval
+- the width of the analyzed interval;
+Parameters of the "Fast" Moving Average:
+MA Fast: averaging period;
+MA Fast: horizontal shift;
+MA Fast: smoothing type;
+MA Fast: type of price.
+Parameters of the "Slow" Moving Average:
+MA Slow: averaging period;
+MA Slow: horizontal shift;
+MA Slow: smoothing type;
+MA Slow: type of price.
+magic number
+- Expert Advisor's unique identifier.
+Testing on USDJPY, H1:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20208

@@ -1,0 +1,24 @@
+To calculate the average price, you can specify the periods H1 and D1. For example, the D1 average price allows you to track whether the price of a certain financial instrument is above or below the average price. The same is with H1, which indicates a price trend reversal much faster.
+The indicator has only three calculated input parameters:
+input
+string
+_symbolName    =
+"0"
+;
+// Symbol, 0 = take a symbol from the chart
+input
+ENUM_USE_SMA         _useSMA        =HOUR_SMA;
+// Use moving average
+input
+ENUM_APPLIED_PRICE
+_appliedPrice  =
+PRICE_WEIGHTED
+;
+// Price
+Symbol for calculations;
+The time period for which the average price is calculated;
+Applied price.
+It is recommended to use from M1 to M30, M1 is the most informative time scale.
+You can also compare different financial instruments on the same price chart.
+For example, EURUSD and USDCAD, M15.
+The indicator also allows you to see the resistance / support levels of the daily average price.

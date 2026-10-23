@@ -1,0 +1,23 @@
+Weekly VWAP: Your Foundation for Weekly Market Analysis
+The
+Weekly VWAP (Volume Weighted Average Price)
+is a robust custom indicator meticulously designed to provide traders with a vital long-term perspective on market activity: the volume-weighted average price, reset at the start of each new trading week. Unlike simpler moving averages, VWAP integrates volume directly into its calculation, giving greater significance to price levels where substantial trading occurred. This makes it an exceptionally valuable tool for discerning the true fair value of an asset over the entire trading week.
+This indicator precisely calculates the cumulative sum of (Price * Volume) divided by the cumulative volume for each week, automatically resetting with the commencement of every new weekly trading session. It plots a distinct line directly on your chart, offering an effortless visual representation of where the majority of the week's trading volume has transpired relative to price.
+Why incorporate Weekly VWAP into your strategy?
+Identify Weekly Fair Value:
+Gain insights into the average price at which an asset has traded, adjusted for volume, providing a clear benchmark for overarching sentiment across the week.
+Strategic Positional Analysis:
+Many professional traders utilize VWAP as a key reference point for higher-timeframe positions. Price consistently trading above Weekly VWAP can signal sustained bullish momentum, while price below may suggest persistent bearish control. This offers critical insights for strategic entry, exit, and position management.
+Trend Strength Confirmation:
+Use Weekly VWAP to confirm the underlying strength of a weekly trend. A robust trend often sees price maintaining its trajectory relative to the Weekly VWAP.
+Clear Visual Representation:
+Despite its sophisticated calculation, the Weekly VWAP is displayed as a single, unambiguous line on your chart, ensuring your analysis remains clean and focused.
+Key Features of this Source Code:
+Weekly Reset:
+The VWAP calculation automatically resets at the beginning of each new trading week, providing a fresh and relevant perspective on weekly market activity.
+Accurate Calculation:
+Employs standard MQL5 functions for the precise computation of typical price and volume, ensuring reliable data.
+Clean Chart Plotting:
+Presents a clear line on your chart for immediate visual understanding.
+Open Source:
+The full MQL5 source code is provided, promoting transparency, fostering learning, and allowing for further customization by the trading community.

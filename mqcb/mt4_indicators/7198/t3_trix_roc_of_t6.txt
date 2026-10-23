@@ -1,0 +1,5 @@
+Author: convert FinGeR Alex orginal by Luis Damiani
+Interpretation of the TRIX generator is quite simple. When the generator values rise one should buy, and sell when the values fall. Moving averages are commonly used to get the smoothed TRIX generator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7198

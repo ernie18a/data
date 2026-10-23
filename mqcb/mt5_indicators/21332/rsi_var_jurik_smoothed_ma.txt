@@ -1,0 +1,4 @@
+As it has been shown, RSI can be calculated using different types of averages (the basic version was posted here :
+Rsi (var)
+)
+This version is using Jurik smoothing MA in order to produce a very smooth RSI as a result

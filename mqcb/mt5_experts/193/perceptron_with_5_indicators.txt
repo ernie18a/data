@@ -1,0 +1,17 @@
+Using Perceptron Model: 5 NN working with 5 indicators, each NN user a diferent combination os indicators.
+NN1 = IND2, IND3, IND4, IND5;
+NN2 = IND1, IND3, IND4, IND5;
+NN3 = IND1, IND2, IND4, IND5;
+NN4 = IND1, IND2, IND3, IND5;
+NN5 = IND1, IND2, IND3, IND4.
+1 NN working with the 5 NN´s. Each NN and each IND has a Height, where this indicate if the signal of this IND/NN is good or not.
+EX:
+order buy
+NN1 indicated buy;
+NN2 indicated buy;
+NN3 indicated Sell;
+NN4 indicated buy;
+NN5 indicated Sell.
+So is the result of each NN, in the end, after many operations, the system will hitting the best combination of indicators and NN.
+In a back test there is a period of learning, which soon after begins to generate profit.
+not use for live trading!! just for learning,

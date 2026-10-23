@@ -1,0 +1,6 @@
+Author: konKop & wellx
+One of the moving average types. This type is called «Kaufman Moving Average».
+There is more than enough information on the moving averages, therefore it will not be elaborated. Suffice to say that it can be used most productively in conjunction with others.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7163

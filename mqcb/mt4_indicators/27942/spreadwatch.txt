@@ -1,0 +1,3 @@
+This indicator is ideal for scalpers who need to know the biggest spread possible with his broker. This will limit his stop-loss. Stop-loss should be higher than the biggest spread to minimize stop-hunt and slippage issues.
+UPDATE:
+Included lowest spread.

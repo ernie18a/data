@@ -1,0 +1,4 @@
+Motion Smoothness Index
+"Telling when market price is smooth or rough is not the easiest task, so here is a trend metric indicator that provides you with that information."
+The indicator has in an approximate range of (0,1) with mean x¯ decaying for higher length's, when the indicator is below 0.5 the market is smooth, else rough, this is the simple interpretation. The indicator is simply the ratio of the price residual standard deviation and the price standard deviation.
+Higher value of length will make the indicator less accurate when it comes to detect rough market price, you can still use the indicator direction or its running mean to give you insights but 0.5 is still the recommended detection threshold." - Alex Grover

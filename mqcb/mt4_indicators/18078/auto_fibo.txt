@@ -1,0 +1,1 @@
+This indicator is designed to draw a Fibonacci retracement, using as a basis the ZigZag indicator.

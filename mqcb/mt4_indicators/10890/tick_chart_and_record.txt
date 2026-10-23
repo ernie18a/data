@@ -1,0 +1,19 @@
+Description:
+Record, storage and displays of data, fully tick chart in MT.
+Image:
+Structure of tick file:
+iTime - modeling time.
+iOpen - quote BID
+iLow - quote BID
+iHigh - quote ASK
+iClose - quoteASK
+iVolume - Time from server, precision to second.
+Instruction:
+Start the indicator to a chart. To open a tick chart -> File -> Open Offline -> "name of the symbol with the prefix tick". For example tickAUDUSD,M1
+Tips:
+Start the indicator to a chart, and save the template to "default", now when you open any chart, ticks data will automatically be written.
+Open the needed symbols for recording, and save to your profile, click on File -> Profiles -> "Your Profile", it open all the charts required for record.
+To continue record after unplanned shutdown of terminal, use script SandyE-7-Recovery!
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10890

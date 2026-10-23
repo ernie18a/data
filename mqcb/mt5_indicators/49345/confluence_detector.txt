@@ -1,0 +1,30 @@
+The indicator draws three line plots on the chart. It detects the current period, and you assign two other periods in the input which should compare to the current period.
+If the price is not moving in the same direction on the other timeframes you selected, the lines will deviate from each other and this shows that there is a lack of confluence between those timeframes.
+When the lines move apart, it can be a signal to avoid trading during that time. It is safer to trade when there is confluence between multiple timeframes.
+It is an experimental indicator. A simple minimal science experiment.
+First plot is a line chart on the closing prices of the current period.
+Second plot is the deviation of 1st input timeframe to current period.
+Third plot is the deviation of 2nd input timeframe to current period.
+You can often see a much different chart when you switch from one timeframe to another. This proves that M1 price action could be behaving completely differently to M5 price action, M5 price action could be behaving completely differently to H1, and so on. If bars are red on each timeframe, then there is what I say is "confluence", because the close prices are agreeing on that direction.
+Usage:
+The current timeframe must be higher than the other two timeframes chosen in the input. See screenshot closely as an example.
+Example:
+TF 1 (Current): M30
+TF 2 (Deviator): M15
+TF 3 (Deviator): M5
+Six M5 bars and two M15 bars are tested against the M30 bar close price direction. The lower timeframe close prices are
+within
+the M30 time block, so naturally the lower timeframe bars will complete first and update the deviator plots on the current, higher timeframe.
+M30 bar wraps {M15 Close +
+M15 Close}
+M30 bar wraps {M5 Close +
+M5 Close +
+M5 Close +
+M5 Close +
+M5 Close
++
+M5 Close
+}
+These close prices on the lower timeframes cause the line plots to warp based on where the bars close (every timeframe bar has a closing price). The data is recorded when both the bars are open (current), and closed (historical), so the ticks of current unclosed bars are taken into account.
+Visually, it works as a trend indicator, but it must be noted that this is not not a tick indicator as historical data is based on OHLC - the resulting visual plot is based on where bars finally closed.
+The word "confluence" in this context, is to examine if the close prices on different timeframe bars are harmonious (similar) with respect to the timeframes chosen. If there is a lot of noise and volatility, then it will record this by means of line expansion (lines moving away from each other), and if the close prices are agreeing (similar), it will record that by means of line contraction (lines becoming closer to each other).

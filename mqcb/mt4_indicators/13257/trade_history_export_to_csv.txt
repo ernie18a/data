@@ -1,0 +1,16 @@
+Exports CSV file to analyze trade history for a symbol.
+Input parameters:
+InputFileName — export file name
+InputDirectoryName — export directory name
+InputHistoryStartDateTime — analysis start date
+InputHistoryEndDateTime — analysis end date
+Analysis trade type:
+OpBuy — Buy
+OpBuyLimit — Buy Limit
+OpBuyStop — Buy Stop
+OpSell — Sell
+OpSellLimit — Sell Limit
+OpSellStop — Sell Stop
+Instructions:
+Press "Export CSV" button on the main chart.
+Directory: File -> Open Data Folder -> MQL4\Files

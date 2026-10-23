@@ -1,0 +1,13 @@
+Real author:
+Vinin
+ZigZag based on fractals.
+Fractals
+indicator is used to find tops and bottoms for ZigZag. Because of this fact, it works much faster than conventional
+ZigZag
+indicator.
+This indicator was first implemented in MQL4 and published in
+CodeBase at mql4.com
+27.04.2011.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/704

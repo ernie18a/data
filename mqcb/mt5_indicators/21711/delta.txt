@@ -1,0 +1,14 @@
+The Delta indicator draws two lines:
+Red
+- the bar average price line (OHLC)/4;
+Green
+- the line of the decimal logarithm of the current to previous (OHLC)/4 prices ratio.
+The indicator has no input parameters.
+Calculations:
+Delta = Price + Diff
+where:
+Diff = Log10(PrevPrice / Price)
+Price = (Open + High + Low + Close) / 4.0
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21711

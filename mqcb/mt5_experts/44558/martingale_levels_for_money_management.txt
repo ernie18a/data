@@ -1,0 +1,10 @@
+This EA is a money management algorithm for opening and closing positions and uses martingale with a "multiplier".
+Run EA before opening any positions to get the best result.
+Run "MartingaleEA-5Levels" on any chart.
+"Martingale Mode" should be true.
+Put the name of symbols e.g. EURUSD or GBPUSD.
+Choose a martingale multiplier and put it in "Martingale Volume Multiplier" to multiply a number to the previous volume. For example if you put 2 in this field, and the first position's volume is 1 lot. another position will open with 2 lots volume and third position  will open with 4 lots.
+This EA can open max 5 martingale positions so put a number between 1 to 5 in the field of "Number Of Martingale Trading).
+In distances field (distance 1 to distance5), you should put pips or points between each positions to open.
+In the field of "Close all  positions when total take profit is" , put a number like 100, and when all martingale positions reach $100, all open positions will be closed.
+In the field of "Close all positions when total stop loss is" , put a number like -500, and when all martingale positions reach -$500, all open positions will be closed.

@@ -1,0 +1,119 @@
+Last Version is here :
+https://www.mql5.com/en/code/9499
+(Updated : support 5digits or 4digits Brokers + Sendmail Function + added moving average cross buffer for better cross signaling+ 5 mode for MA)+Option for Static Lot
+I have deleted the old version and update with this, Updates are in
+Red
+I have write an EA which use many methods to open and close trade,and you can modify each method,
+THIS IS NOT A MAGIC SYSTEM, It's a combination of multi strategies, Very simple system which you can use your parameters to trade with
+Strategy Tester Report
+Combo EA@FSF
+AlpariUK-Demo (Build 225)
+Symbol
+EURUSD (Euro vs US Dollar)
+Period
+1 Hour (H1) 2009.12.01 00:00 - 2010.01.29 22:00 (2009.12.01 - 2010.01.30)
+Model
+Every tick (the most precise method based on all available least timeframes)
+Bars in test
+1991
+Ticks modelled
+1794365
+Modelling quality
+n/a
+Mismatched charts errors
+0
+Initial deposit
+100000.00
+Total net profit
+2157162.27
+Gross profit
+4370724.52
+Gross loss
+-2213562.25
+Profit factor
+1.97
+Expected payoff
+38520.75
+Absolute drawdown
+23503.85
+Maximal drawdown
+831709.56 (49.83%)
+Relative drawdown
+50.84% (79120.87)
+Total trades
+56
+Short positions (won %)
+36 (83.33%)
+Long positions (won %)
+20 (30.00%)
+Profit trades (% of total)
+36 (64.29%)
+Loss trades (% of total)
+20 (35.71%)
+Largest
+profit trade
+422527.01
+loss trade
+-283293.72
+Average
+profit trade
+121409.01
+loss trade
+-110678.11
+Maximum
+consecutive wins (profit in money)
+9 (297047.58)
+consecutive losses (loss in money)
+5 (-261829.22)
+Maximal
+consecutive profit (count of wins)
+1324082.70 (5)
+consecutive loss (count of losses)
+-487805.29 (2)
+Average
+consecutive wins
+3
+consecutive losses
+2
+Multi Time Frame & Multi Currency Pair
+First method is moving average cross,
+You can choose to use 2 Moving average cross system or 3 moving average cross,
+set MA_MODE to 1 :to use 2 moving average cross system
+set MA_MODE to 2 :to use 3 moving average cross system
+set MA_MODE to 3 :to use Both Option 1 & 2
+**new set MA_MODE to
+4
+:to signal by crossing fastest moving average with slowest moving average
+**new set MA_MODE to
+5
+:to signal by mode 4 or mode 3
+For better crossing signal you have to set MA1CrossBuffer or MA2CrossBuffer (based on atr period )
+second method is based on RSI with four modes,
+RSI mode 1: use the RSI in OVERBOUGHT & OVERSOLD, if it is in OVERBOUGHT Zone then it will be Good For Opening a sell position,or if it is in OVERSOLD zone then it will give you a Buy Signal
+RSI mode 2: Use RSI as a trend, if RSIcurrent > RSIprevious and the Current Open Price > Previous Open Price, then it will Give You a Buy Signal, Or if RSIcurrent < RSIprevious and the Current Open Price < Previous Open Price, then it will Give You a Sell Signal,
+RSI mode 3: USE both of RSI MODE 1 & RSI MODE 2
+RSI MODE 4: USE RSI IN THE BUY ZONE SIGNAL OR SELL ZONE SIGNAL,which means if RSI is in the buy zone signal then it will give you buy and if RSI is in the SELL zone It will give you a sell
+Third Method is based on macd with Three Modes
+MACD MODE 1: USE TREND DIRECTION
+MACD MODE 2: USE buy signal in sell zone and sell signal in the buy zone
+MACD MODE 3: USE Both Mode 1 & Mode 2
+I am using this MACD https://www.mql5.com/en/code/9993 Which is not lazy!!! you must first download this and copy it to \experts\indicators
+Fourth Method is based on Stochastic with two modes JUST LIKE RSI MODE 1& RSI MODE 2
+Fifth Method is based on Parabolic Sar
+I use ATR to find the best stop loss & take Profit, You just give the ATR Period and Atr_multiple to get SL&TP,
+This EA Use a Money Management System,with the Risk Parameter in %
+**new: I have add an option named
+Use_Static_Lots, if you want to use static lots set this true and then set Static Lots Below on it
+I Have add an option named Auto_Close which it will CLose a Trade If The Opposite Signal Recieved, if you set Open_opposite_after_close to 1 will open an order if the Opposite Signal Recieved;
+You can choose to exit an order with ma signaling or macd or rsi or stoch or sar.....
+you can use all of them or just any of them, you just set the option to 1(which means True), And 0(which means False);
+USE_MA :TO USE MOVING AVERAGE CROSS SIGNAL SET THIS TO 1 ELSE TO 0
+USE_RSI :TO USE RSI SIGNAL(BASED ON RSI_MODE) SET THIS TO 1 ELSE TO 0
+USE_MACD :TO USE MACD(BASED ON MACD_MODE) SIGNAL SET THIS TO 1 ELSE TO 0
+USE_STO: TO USE STOCHASTIC SIGNAL SET THIS TO 1 ELSE TO 0
+USE_SAR:TO USE PARABOLIC SAR SIGNAL SET THIS OPTION TO 1 ELSE TO 0
+If you need to optimize this EA : you can Optimize it in Open Price Only Model;
+i'll wait for your comments;
+Cause I need your comments to Fix this Ea; I have used this on my demo account for a week with my optimization, (EURUSD 1H), with 200% profit;and 16% drawdown
+If you Find any bug Just tell me to fix it and make it a better EA;
+If you Optimize this on current conditions of market it works great,

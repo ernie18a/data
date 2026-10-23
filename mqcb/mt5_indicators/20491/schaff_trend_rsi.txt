@@ -1,0 +1,4 @@
+Schaff Trend Series indicator that is less known.
+While
+Schaff Trend Cycle
+is a sort of a double smoothed stochastic of a MACD, this is an RSI of the MACD. It partially reminds of a RSI of Moving Average, but the difference is significant enough to have it as a new indicator. Also, do not expect to have values similar to the Schaff Trend Cycle - they are calculated in a completely different way, and the results are very different.

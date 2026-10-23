@@ -1,0 +1,12 @@
+The Stochastic Momentum Index (SMI) was developed by William Blau and was introduced in the January 1993 issue of Technical Analysis of Stocks & Commodities magazine.
+It incorporates an interesting twist on the popular Stochastic Oscillator. While the Stochastic Oscillator provides you with a value showing the distance the current close is relative to the recent x-period high/low range, the SMI shows you where the close is relative to the midpoint of the recent x-period high/low range.
+The result is an oscillator that ranges between +/- 100 and is a bit less erratic than an equal period Stochastic Oscillator.
+When the close is greater than the midpoint of the range, the SMI is positive.
+When the close is less than the midpoint of the range, it is negative.
+The interpretation of the SMI is virtually identical to the Stochastic Oscillator.
+Three popular methods include:
+Buy when the SMI falls below a specific level (e.g., -40) and then rises above that level, and sell when the Oscillator rises above a specific level (e.g., +40) and then falls below that level.
+However, before basing any trade off of strict overbought/oversold levels it is recommended that you first qualify the trendiness of the market using indicators such as r-squared or Chande Momentum Oscillator. If these indicators suggest a non-trending market, then trades based on strict overbought/oversold levels should produce the best results. If a trending market is suggested, then you can use the oscillator to enter trades in the direction of the trend.
+Buy when the SMI rises above its signal line (dotted) line and sell when the SMI falls below the signal line.
+Look for divergences. For example, where prices are making a series of new highs and the SMI is failing to surpass its previous highs.
+Mr. Blau also notes that a 1-day SMI (with large smoothing periods such as 100) is very sensitive to the close relative to the high and low of the day.

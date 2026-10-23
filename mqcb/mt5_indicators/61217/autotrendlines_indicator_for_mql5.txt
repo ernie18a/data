@@ -1,0 +1,27 @@
+Main Features :
+Dual Detection Mode:
+Mode A: Dual Pivot Detection - identifies trendlines through 2 pivot points
+Mode B: Adaptive Slope Analysis - adaptive slope-based analysis
+Breakout Detection System:
+Automatic support/resistance breakout detection
+Real-time alerts on breakouts
+Arrow markers at breakout points
+Customizable breakout threshold (pips)
+Auto-Adjust Feature:
+Automatically adjusts trendlines after breakouts
+Stores historical trendline data
+Displays up to 3 historical trendlines
+Smart Visualization:
+Customizable colors, thickness, and line styles
+Clear distinction between support (lime) and resistance (orange-red)
+Dimmed historical lines for better tracking
+Flexible Configuration:
+15+ customizable parameters
+Adjustable lookback periods and edge offsets
+Independent feature toggles
+Application:
+Ideal for swing/intraday traders, supports accurate trend detection and entry point identification.
+Original Source
+: Copyright 2012, Rone - mql5.com
+Version
+: 2.0 (Optimized 2025)

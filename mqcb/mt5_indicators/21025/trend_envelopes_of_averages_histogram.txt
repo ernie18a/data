@@ -1,0 +1,3 @@
+Trend Envelopes
+indicator made as histogram.
+This version also has an additional option to smooth prices prior to be used in calculation (the option that can help filtering out some of the signals).

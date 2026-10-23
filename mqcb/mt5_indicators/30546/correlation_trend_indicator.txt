@@ -1,0 +1,15 @@
+General
+:
+In his article “Correlation As A Trend Indicator” in May 2020 issue of TASC, author John Ehlers introduces a new trend indicator that is based on the correlation between a security’s price history and the ideal trend: a straight line. He describes methods for using the indicator to not only identify the onset of new trends but to identify trend failures as well.
+Recommendations:
+Ehlers describes a rather strange way of using
+it (like using asymmetric threshold for buy and sell, in which case it is clear that he was fitting the indicator to the chart - which is never a good idea, hence
+Use 0 line as a criteria for a "trend" (short or long)
+Use crosses of short and long values as a signal to buy or sell
+Addition :
+You shall find two version of the indicator here :
+one is "regular"
+one is optimized (with an opt in its name)
+The reason for that is simple : the regular is using the coding ways that are common (and which are used in every version of that indicator in the TASC). It is a simple and clear code. And it is slower than it should which is important when it comes to normal usage and testing. Hence made the optimized version. I know that some are going to send "angry" PMs (as I was getting already in similar cases) that the code for the optimized version is not understandable as the "regular" version, but :
+results are exactly the same
+optimized version is an average 15-16 times faster than the regular version (which is even partially optimized, since instead of 2 sub-loops only one is used using default parameters. With longer calculation periods the difference only grows

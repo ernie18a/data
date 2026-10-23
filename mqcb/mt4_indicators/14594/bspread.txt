@@ -1,0 +1,6 @@
+This indicator helps you display spread on a chart. You can set font, color and font size for it, also you can select position on chart according to following values in indicator properties:
+1 — top-right,
+2 — bottom-left,
+3 — bottom-right,
+4 — top-left.
+Settings:

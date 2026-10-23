@@ -1,0 +1,20 @@
+This Expert Advisor is based on overbought and oversold levels.
+EA will buy when RSI is in the oversold and sell when RSI is in the overbought zone.
+Update (2015.09.28):
+TrailingStop has been added.
+TrailingStop will active ONLY IF TrailingStop>0.
+input
+double
+TrailingStop=0;
+Update (2015.09.09):
+input
+bool
+OpenBUY=True;
+input
+bool
+OpenSELL=True;
+input
+bool
+CloseBySignal=True;
+OpenBUY, OpenSELL — now you can set for sell only or buy only or both.
+CloseBySignal — it means you must set Stop Loss and Take Profit (if ClosebySignal = false ).

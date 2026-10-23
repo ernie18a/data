@@ -1,0 +1,6 @@
+Quantora Risk Calculator MT4 is a trading utility for MetaTrader 4 that helps calculate the risk of a trade before opening it.
+It uses entry price, stop loss, take profit, and lot size to estimate potential loss, potential profit, account risk percentage, and reward-to-risk ratio. This allows traders to quickly evaluate whether a setup fits their risk rules.
+The tool also includes basic margin analysis and position value, along with a simple risk classification to highlight low or high-risk trades.
+It supports both buy and sell scenarios, works with different symbols, and allows using balance, equity, or a custom account value as the base.
+The dashboard is clean, updates instantly, and is designed for quick decision-making.
+This utility is for calculation and analysis only. It does not open trades or generate signals.

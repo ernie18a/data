@@ -1,0 +1,10 @@
+The indicator measures the distance between the
+Bollinger Bands ®
+and providing it as a singular indicator, using the
+MetaTrader 5
+techniques to simplify Bollinger calculations.
+This new version designed with MetaTrader 5 takes the calculations of
+iBands
+and calls them to perform the calculations needed to get the difference between upper and lower bandwidths.
+This version also comes with an attempt to provide a digits offset so that you can drop it on a 2 digit, 3 digit, 4, digit, or 5 digit and the resulting value should be correct.
+The digits settings may need to be adjusted, all variants may not have been taken into consideration.  The code is available for you to modify.

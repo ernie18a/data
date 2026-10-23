@@ -1,0 +1,79 @@
+In the model there is set
+Ma 2 crosses 35 upper - buy, (close sell)
+Ma 2 crosses 35 blow - sell (close buy)
+SL 30, TP 200 and TS 60,
+Of course you can change in the code parameters of MAs
+I use only Exponential MA
+Enjoy!
+Strategy Tester Report
+MA_MA 2-35_EA
+XM.COM-Demo (Build 509)
+Symbol
+EURUSD (Euro vs US Dollar)
+Okres
+4 Godziny (H4) 2013.06.03 00:00 - 2014.02.19 23:59 (2013.06.01 - 2014.02.20)
+Model
+Tylko ceny otwarcia (tylko dla Automatycznych Strategii które bezporednio kontrolujš otwarcie słupków)
+Parametry
+MagicNumber=10001; Lots=1; StopLoss=30; TakeProfit=300; TrailingStop=60; Slippage=3;
+Słupki w tecie
+2113
+Ticki użyte w modelu
+3223
+Jakoć modelowania
+n/a
+Błedy na wykresie
+0
+Depozyt poczštkowy
+10000.00
+Całkowity zysk netto
+4482.40
+Zysk brutto
+13169.40
+Strata brutto
+-8687.00
+Wskanik zysku
+1.52
+Przewidywany zysk
+99.61
+Największa strata bezwzględna
+0.00
+Maksymalna strata względna
+3550.80 (24.42%)
+Strata relatywna
+24.42% (3550.80)
+Iloć transakcji w sumie
+45
+Krótkie pozycje (zyskownych %)
+23 (30.43%)
+Długie pozycje (zyskownych %)
+22 (31.82%)
+Transakcje zyskowne (% wszystkich)
+14 (31.11%)
+Transakcje stratne (% wszystkich)
+31 (68.89%)
+Największa
+zyskowna transakcja
+2989.20
+stratna transakcja
+-311.60
+rednia
+zyskowna transakcja
+940.67
+stratna transakcja
+-280.23
+Maksymalna
+iloć transakcji zyskownych pod rzšd (zysk w pln)
+2 (3939.20)
+iloć transakcji stratnych pod rzšd (straty w pln)
+8 (-2322.80)
+Największy
+nieprzerwany zysk (suma transkacji zyskownych)
+3939.20 (2)
+nieprzerwana strata (suma transkacji stratnych)
+-2322.80 (8)
+rednia
+iloć transakcji zyskownych pod rzšd
+1
+iloć transakcji stratnych pod rzšd
+3

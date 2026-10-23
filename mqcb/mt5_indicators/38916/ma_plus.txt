@@ -1,0 +1,1 @@
+In this code, I combined several non-standard moving average options into one indicator

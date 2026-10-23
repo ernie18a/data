@@ -1,0 +1,10 @@
+Author of the idea
+-
+Viktor
+mq5 code author
+-
+barabashkakvn
+Pendulum system-based EA. Always no more than three positions.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23027

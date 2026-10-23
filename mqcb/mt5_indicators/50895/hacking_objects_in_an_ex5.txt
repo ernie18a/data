@@ -1,0 +1,7 @@
+This code demonstrates how you can modify the objects in an indicator without having the source code. There are some indicators that don't use buffers, they are only using objects. It would be easy if inputs could be changed with iCustom, but this is only possible if the indicator is using buffers to draw the elements. What if the indicator only uses objects?
+For the demonstration, a free market indicator for MT5 called "PZ Multidiagonals MT5" is used. You would need to install this indicator from the market before attempting to test this code as it is.
+We need an object prefix name in order to begin manipulating the objects. The function LogChartObjectNames() is created to log all of the names of the objects which exist in the indicator.
+Objects are then manipulated using the ModifyChartObjects() function which passes two parameters. The prefix name (which should be the beginning part of a descriptive object name), and an integer which is for passing how much objects should unmodified or "spared" for that particular object.
+The PZ Multidiagonals indicator is a trend indicator which automatically draws trend lines, but goes a little overboard. Here is how the default preset looks:
+From the data window, it's evident that no buffers are used in this indicator. Everything is constructed with objects.
+Now by starting from a clean chart, and loading this indicator "Hacking Objects.mq5", you will see how I removed a lot of the trend lines, and left what are in my opinion the most relevant not by accessing the inputs, but by hacking the objects:

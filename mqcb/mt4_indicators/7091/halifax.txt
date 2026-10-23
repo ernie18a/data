@@ -1,0 +1,10 @@
+Attached is a trend estimator (similar to a BB) developed to address the problem of the delay inherent in the usual averaging techniques. Regular averages give you information relating to events  at 1/2 the averaging length in the past. It uses an algorithm similar to what one probably finds in the MT STD channel (fitting a straignt line over a fixed number of periods), and outputs the last point as well as 2 deviation channels, the width of which is set by the user.
+Note:
+1)
+I am new to MQL4 programming
+(though not to programming in general),
+so there may be code errors or ways to optimize the code
+. If so, please let me know (& I'll fix them) or post it back.
+2) I use geometric averaging rather than linear averaging, which you can change in the function "get_avg" if you like. I like the former as it is less sensitive to excusions.
+3)I have found (for my own use) it works best on the hourlies over 5 days (120 pts) or the 4 hourlies over 20 days (120 points).
+4)The deviation channels are not STD channels, as the deviation above and below the trend are calculated separately and maybe not all that correctly (my forte is math, not stats, alas...).

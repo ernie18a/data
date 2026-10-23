@@ -1,0 +1,10 @@
+The original Schaff trend cycle :
+Schaff Trend Cycle indicator is a cyclical oscillator created by calculating the
+Stochastic
+over
+MАСD
+line using cycles. As a result, the developers managed to achieve more stable and reliable results of the indicator script operation. A chart is almost unaffected by the short-term trends that inevitably emerge on the market. But the indicator generates an appropriate alert in case of some sharp changes of the market situation.
+This version :
+It is not calculating stochastic but instead CCI (Commodity Channel Index). It is a sort of an experiment how will CCI "behave" when MACD (moving Average Convergence Divergence) is used as "price". Seems that some of the results are usable but it needs to be thoroughly checked before being used in trading
+Usage :
+It can be used two ways : either when zero line is crossed or when the slope of the CCI is changed

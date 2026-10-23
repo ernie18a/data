@@ -1,0 +1,2 @@
+Unlike MetaTrader 4, MetaTrader 5 should have a "real" volumes for some symbols. In this indicator you can choose if you wish to use a real volume or the ticks volume (which is default for forex symbols). In cases of forex symbols real volumes and tick volumes are the same.
+>

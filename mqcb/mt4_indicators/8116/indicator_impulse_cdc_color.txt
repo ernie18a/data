@@ -1,0 +1,7 @@
+The indicator is a modification of
+Indicator Impulse CD
+. By users' requests, colors and signal line are added.
+Indicator Impulse CDC (Color)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8116

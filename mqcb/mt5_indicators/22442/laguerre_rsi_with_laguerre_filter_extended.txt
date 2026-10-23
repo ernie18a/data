@@ -1,0 +1,10 @@
+Description :
+The Laguerre RSI indicator is a highly advanced version of the standard RSI indicator. The Laguerre RSI indicator was created by John Ehlers and introduced in his book Cybernetic Analysis for Stocks and Futures.
+This version :
+This version is additionally using Laguerre filter (also created by John Ehlers) for signal line and additional Laguerre RSI smoothing. Following coloring modes can be chosen :
+change colors on no trade zones crossing
+change colors on outer levels crossing
+change colors on Laguerre RSI slope
+change colors on signal line crossing
+Usage :
+Depending on your trading style, chose the appropriate color change mode and then color change can be used as signal

@@ -1,0 +1,10 @@
+Real author:
+Richard Donchian
+Richard Donchian is a legendary figure in trading. He is often called a founder of the trend following systems. The famous Turtle trading system is based on his works. Donchian came to a serious success when he was in quite an old age already. Despite that, he continued working and proved to be a successful trader showing by his own example that no one is too old for trading.
+Donchian Channels is a volatility indicator based on the calculation of the current price range with the help of the recent highest and lowest prices. All that is needed to calculate the Channel is to find the highest maximum and the lowest minimum for a definite period.
+Richard Donchian himself recommended to use period 20 to build the Channel. In those days trading was usually conducted on day charts and 20 is exactly an average number of days in a month. Nevertheless, period 20 is also quite convenient for creation of Donchian Channels on lesser timeframes. Results of building the Channels with the periods 18, 24 etc. are also quite interesting. "The Turtles" used the period 55 (for market entry).
+Most of trading systems using Donchian Channels are breakout ones, they have a small per cent of profitable deals that must be enough to compensate the losses from a big amount of wrong entries over and above.
+The Channel center line is also added in this version of the indicator (aside from the upper and lower border lines).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/402

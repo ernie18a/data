@@ -1,0 +1,10 @@
+The EA searches for N identical candlesticks in a row. If the found candlesticks are bullish, it buys. I they are bearish, the EA sells.
+Settings:
+N identical candles in a row
+Lot Sizes
+Magic
+Slippage
+Example of search if N=3:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18023

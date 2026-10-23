@@ -1,0 +1,13 @@
+The real author:
+EarnForex
+The Moving Average which uses quite a simple procedure on decreasing temporal lag based on the increase of the Moving Average period. The method was firstly described by Manfred G. Dürschner in his article
+Gleitende Durchschnitte 3.0
+(in German).
+3rd Generation Moving Average demonstrates the lowest lag level in comparison with the simple exponential Moving Average and faster adjusts on price changes. Unfortunately, this indicator will still have some delay and can give false signals. You can use the 3rd Generation Moving Average indicator for financial markets analysis in the same way as the standard Moving Average - to determine the current trend direction.
+The indicator uses SmoothAlgorithms.mqh library classes (must be copied to the terminal_data_folder\MQL5\Include). The use of the classes was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Fig.1 The 3rd Generation Moving Average indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1576

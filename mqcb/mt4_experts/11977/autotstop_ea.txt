@@ -1,0 +1,109 @@
+AutoTStop EA does not work to open the orders, but only helps trader to use Trailing Stop.
+Automatic Trailing Stop will work when the price has reached half of the value that you specify on Trailing Stop.
+Copy and paste ping.wav sound (ping.zip) into MetaTrader 4/Sounds folder, so that every time an order is closed or take profit, EA will provide notification sound.
+I trade using AutoTStop_EA in TF M5 with template AutoTS6-MMA-RVI60-CS.tpl (AutoTS6-MMA-RVI60-CS.zip) on pairs (EURUSD, USDCHF, AUDUSD, EURAUD, EURJPY, GBPJPY, GBPAUD, GBPCHF, GBPUSD, NZDUSD, USDCAD, USDJPY) with very satisfactory results.
+Update 01 (2014-12-05)
+:
+1. Added some option on the Expert Property.
+2. Value CalcSTP().
+3. Value system Trailing Stop.
+Update 02 (2015-01-05):
+1. Fixed some typos code.
+Update 03 (2015-03-27):
+1. Changed the calculation system for TP and SL.
+2. Simplified the code to improve the performance of the EA.
+Update 04 (2015-06-16):
+1. Correction of bugs on the overall program scripts.
+2. Added BEP on the Trailing Stop.
+Update 05 (2015-07-03):
+1. There is no change in the Expert Properties, still according update_4.
+2. Minor changes in the void StartAction() function, and the void TpSlTrlS() function.
+//--- User Input // Update_4 (16-06-2015)
+input
+string
+AutoTStop =
+"Copyright © 2014 3RJ ~ created by Roy Philips-Jacobs"
+;
+extern
+bool
+FridayTrade = True;
+// If True, EA still trading at Friday
+extern
+bool
+UseTrailingStop = True;
+// Use Trailing Stop, True (Yes) or False (Not)
+extern
+bool
+AutoTrailingStop = True;
+// Default Trailing Stop value = 24.0
+extern
+double
+TrailingStop =
+24.0
+;
+// If Auto Trailing Stop False, input Trailing Stop Value
+extern
+double
+TrailingStopStep =
+1.0
+;
+// Input Trailing Stop Step Value (default 1.0)
+input
+string
+AutomaticSystemTP =
+"Set AutomaticTakeProfit=True or False"
+;
+extern
+bool
+OptimizationTakeProfit = True;
+// TP will calculation by EA and Automatic TP by EA
+extern
+bool
+NoMinimumTakeProfit = True;
+// True or False -> If Set True, 100% TP by EA not use minimum TP.
+input
+string
+MinimumSystemTP =
+"If Set NoMinimumTakeProfit=False"
+;
+// TP by EA on minimum TP values
+extern
+double
+MinimumTP =
+12
+;
+// Minimum TP by EA on the AutomaticTakeProfit=True function, default value 12
+input
+string
+ManualSystemTP =
+"If Set AutomaticTakeProfit=False"
+;
+// TP by Terminal MT4 (same as manual trading)
+extern
+double
+TakeProfit =
+20
+;
+// TP by System, values can adjust by user, default 20
+input
+string
+AutomaticSystemSL =
+"Set AutomaticStopLoss=True or False"
+;
+extern
+bool
+AutomaticStopLoss = True;
+// SL will calculation by EA
+input
+string
+ManualSystemSL =
+"If Set AutomaticStopLoss=False"
+;
+// SL values can adjusted by user
+extern
+double
+StopLoss =
+108
+;
+// SL adjusted by user, default 108
+//---

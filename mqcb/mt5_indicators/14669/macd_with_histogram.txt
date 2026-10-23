@@ -1,0 +1,28 @@
+This indicator modifies the original MACD.mq5 from MetaTrader 5 Indicators/Examples folder.
+It presents MACD Main and Signal in Lines Style, and includes the MACD Histogram in visualization.
+Periods of EMA Fast, EMA Slow and Signal are freely customizable, as well as applied price.
+Input parameters:
+input
+int
+InpFastEMA=
+12
+;
+// Fast EMA period
+input
+int
+InpSlowEMA=
+26
+;
+// Slow EMA period
+input
+int
+InpSignalSMA=
+9
+;
+// Signal SMA period
+input
+ENUM_APPLIED_PRICE
+InpAppliedPrice=
+PRICE_CLOSE
+;
+// Applied price

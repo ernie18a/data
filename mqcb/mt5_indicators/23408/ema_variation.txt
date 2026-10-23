@@ -1,0 +1,9 @@
+Theory :
+Exponential moving average (EMA) is one of the most used ways of smoothing / filtering data. By its nature it is a first-order infinite impulse response filter that applies weighting factors which decrease exponentially. The weighting for each older data decreases exponentially, never reaching zero. Because of one characteristic that is less know (it depends only on a previous data - no older data needed for calculation) it is perfect for all sorts of adjustments / combinations / variations (most of the adaptive averages are calculated using some sort of ema)
+This version :
+It is doing 2 things :
+it is adding "speed" (the higher the "speed" the "faster" the ema - without changing the ema period). Speed can be set as fractional value
+it is adding implicit smoothing - hence the same period ema is less smooth that this indicator even when they are producing similar values (the values can never be exactly the same)
+Usage :
+You can use it as any average type indicator
+Comparison of this indicator ("speed" set to 1.8 which produces results similar to "regular" ema) and regular ema (gray line). As it can be seen, the slope of this one is smoother

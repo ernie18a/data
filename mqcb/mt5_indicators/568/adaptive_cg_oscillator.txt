@@ -1,0 +1,17 @@
+Real author:
+Witold Wozniak
+Adaptive CG Oscillator is a
+CG Oscillator
+that can adapt to constantly changing market cycles of a real financial asset.
+Conventional oscillators require constant adjustments of the smoothing period to the current market condition. In this indicator such an adjustment is executed automatically. This is achieved by using the additional
+CyclePeriod
+indicator that calculates the indicator smoothing period for the current market condition.
+The indicator is inspired by John Ehlers' article
+"Using The Fisher Transform"
+published in November 2002 in the
+"Technical Analysis Of Stock & Commodities"
+magazine.
+Place the CyclePeriod indicator compiled file to the terminal_data_folder\MQL5\Indicators\.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/568

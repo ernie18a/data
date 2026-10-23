@@ -1,0 +1,2 @@
+This is super simple starter code for anyone looking to work or build with support and resistance. It includes a mid-line which is calculated using the average of the support and resistance values.
+The default setting for the number of bars to look back is 50. This can be updated by changing the value of "Lookback" on the input tab.

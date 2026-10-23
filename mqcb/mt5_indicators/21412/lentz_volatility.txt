@@ -1,0 +1,14 @@
+Lentz Volatility oscillator displays the difference between average ATR and ATR for a specified number of periods.
+The indicator has three input parameters:
+ATR period
+- ATR calculation period
+Smoothing period
+Smoothing method
+Calculation:
+LV = AvgMA - ATR
+where
+AvgMA = MA(ATR, Smoothing period, Smoothing method)
+ATR - ATR(ATR period)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21412

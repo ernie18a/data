@@ -1,0 +1,55 @@
+This EA is a cleaned and minimized version of the
+RRS Randomness in Nature EA
+. It opens trades randomly with random currency pairs, random lot sizes, and random order types. This EA does not rely on any technical skillset such as indicators, price action, news calendar events, or candlestick patterns. It offers multiple trading strategies, risk management plans, and other customizable settings.
+Even though the EA operates on randomness, it has still achieved good profits with proper settings.
+Variable
+Values
+Description
+minLot_Size
+Double Value
+Minimum lot size to ensure lot size randomness does not go below this value.
+maxLot_Size
+Double Value
+Maximum lot size to ensure lot size randomness does not exceed this value.
+StopLoss
+Int Value
+Set your stop loss value in points/pips (the smallest price movement unit for your asset).
+Set Stop Loss to
+0
+to disable it.
+TakeProfit
+Int Value
+Set your take profit value in points/pips.
+Set Take Profit to
+0
+to disable it.
+Risk_In_Money_Type
+FixedMoney, BalancePercentage
+FixedMoney:
+Closes all open trades when the negative floating reaches your specified amount.
+BalancePercentage:
+Automatically calculates based on your account balance and closes all trades once this limit is reached.
+Money_In_Risk
+Int Value
+If
+Risk_In_Money_Type
+is set to
+FixedMoney
+, enter the amount of money you can afford to lose.
+If set to
+BalancePercentage
+, the EA will automatically calculate the risk based on your account balance and close all trades when that limit is reached.
+Max_Spread
+Int Value (Points/Pips)
+Sets the maximum acceptable spread. If the current spread exceeds this value, the EA will not take a trade and will wait for the spread to return within the specified limit.
+Slippage
+Int Value (Points/Pips)
+Set the maximum allowed slippage for order execution.
+MaxOpenTrade
+Int Value
+Maximum number of open trades allowed
+Note:
+If you are experiencing a malfunction or error in EA operation, remove
+#property strict
+from the EA code on line 8.
+Good Luck, Happy Trading!

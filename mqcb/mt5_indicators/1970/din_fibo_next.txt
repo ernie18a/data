@@ -1,0 +1,8 @@
+A channel drawn by extremums for the period.
+This indicator was first implemented in MQL4 and published in the
+Code Base at mql4.com
+on 30.01.2008.
+Figure 1. The Din Fibo Next indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1970

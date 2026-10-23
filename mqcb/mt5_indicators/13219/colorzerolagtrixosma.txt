@@ -1,0 +1,7 @@
+Smoothed
+ColorZerolagTriX
+indicator rate of change represented as a colored histogram.
+Fig.1. The ColorZerolagTriXOSMA indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13219

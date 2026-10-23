@@ -1,0 +1,16 @@
+The ZigZag Moving Average indicator builds a moving average using ZigZag reference points.
+It has three input parameters:
+ZigZag depth
+- the Depth parameter of the ZigZag indicator
+ZigZag deviation
+- the Deviation parameter of the ZigZag indicator
+ZigZag backstep
+- the Backstep parameter of the ZigZag indicator
+The moving average is calculated as a sum of Close prices in the range between the current bar and the reference point, divided by the number of bars in this range.
+Calculation example for three bars after the reference point (P):
+ZMA[P] = Close[P]
+ZMA[P+1] = (Close[P]+Close[P+1]) / 2
+ZMA[P+2] = (Close[P]+Close[P+1]+Close[P+2]) / 3
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23117

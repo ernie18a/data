@@ -1,0 +1,55 @@
+EMDcotir
+script performs empirical mode decomposition for the current symbol. The result is displayed using the default
+WEB
+browser. To launch the script, copy the entire
+EMDcotir
+directory (from the archive having the same name) to
+Scripts
+of the terminal, then compile
+EMDcotir
+.
+mq
+5. After that,
+EMDcotir
+.
+mq
+5 can be launched on the necessary symbol. Using external
+DLLs
+should be allowed for the script normal operation.
+MQL
+5 codes are additionally attached outside the archive to let users to examine them without downloading and unzipping
+EMDcotir
+archive.
+Details can be found in the article “
+Introduction to the Empirical Mode Decomposition Method
+”.
+Input
+:
+Len
+=300
+- specifies the number of handled bars.
+AScale
+=1
+- charts display mode: 1=
+AutoScale
+, 0=
+w
+/
+o
+AutoScale
+.
+ADraw
+=1
+- autostart of
+WEB
+browser: 1=
+AutoDraw
+, 0=
+w
+/
+o
+AutoDraw
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/956

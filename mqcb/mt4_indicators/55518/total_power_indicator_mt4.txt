@@ -1,0 +1,45 @@
+Total Power Indicator (MetaTrader indicator)
+— is based on the two standard indicators —
+Bear Power and Bull Power
+. The indicator calculates how many bullish and bearish bars were there during a given look-back period and then calculates the proportional index for bears, bulls, and total (calculated as the absolute difference between bulls and bears) for the current bar. This way, we get continuous lines of the relative average bear and bull power over a period, removing the main disadvantage of the original Bear/Bull Power indicators — the lack of a long-term perspective. The original MetaTrader 4 version of Total Power Indicator was created by Daniel Fernandez of
+Asirikuy
+in 2011. The version for MT5 is now also available.
+Input parameters
+Lookback Period
+(default = 45) — the main period of the indicator. Determines the amount of bars to look back to count the bear/bull-dominated ones.
+Power Period
+(default = 10) — the period of the original Bear Power and Bull Power indicators.
+AlertOn100Power
+(default = false) — if
+true
+, an alert will be issued when either Bull or Bear Power reaches level 100. This is a strong overbought/oversold signal, often preceding trend reversals.
+AlertOnCrossover
+(default = false) — if
+true
+, an alert will be issued when Bull and Bear Power lines cross each other.
+EnableNativeAlerts
+(default = false) — if
+true
+, a native MetaTrader popup alert will be used for any of the above two conditions.
+EnableEmailAlerts
+(default = false) — if
+true
+, an email message will be sent on an alert condition. Email should be properly configured in MetaTrader via
+Tools->Options->Email
+.
+EnablePushAlerts
+(default = false) — if
+true
+, an email message will be sent on an alert condition. Notifications should be properly configured in MetaTrader via
+Tools->Options->Notifications
+.
+TriggerCandle
+(default = Previous) — the candle to issue alerts on:
+Previous
+— the most recently closed candle or
+Current
+— the yet unfinished candle.
+The Total Power Indicator works similarly to other oscillator-type indicators:
+One of the most surefire entry method, albeit rare, is to wait for either Bull or Bear line to reach the value of 100 and enter a reversal trade.
+The crossover of the Bear and Bull lines can also be used to enter trades. If the Bull line resulted above — go long, if the Bear line is now above — go short.
+The crossover of the Bull or Bear line with the Total line can be used for a conservative exit from a trade.

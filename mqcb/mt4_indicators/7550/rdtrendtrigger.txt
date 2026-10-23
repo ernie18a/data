@@ -1,0 +1,2 @@
+Author: Paul Y. Shimada
+Indicator RD-Trend Trigger.

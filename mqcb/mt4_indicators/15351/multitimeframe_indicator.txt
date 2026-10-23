@@ -1,0 +1,5 @@
+Real author:
+SLIM
+This indicator help you keep 3 different timeframes on the screen to see the price action clearly on both short term and long term without switching buttons.
+Recommendations:
+If you are not using a black background you should make sure colors index 2 and index 5 are same as your background color.

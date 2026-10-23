@@ -1,0 +1,5 @@
+Author: Yura Prokofiev
+The only catch is that the indicator is, so to say, dynamic. That is it can redraw more than ten (!) bars. And what is seen as green was red before. And it became green only because the trend went up.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7176

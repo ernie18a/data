@@ -1,0 +1,8 @@
+Indicator VQ bars.
+Parameters:
+Length=5;
+Method=3;
+Smoothing=1;
+Filter=5;
+Steady =false;
+VQ bars

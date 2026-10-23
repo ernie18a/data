@@ -1,0 +1,44 @@
+Real author:
+Khlystov Vladimir
+Vertical histogram with distribution of prices.
+Indicator input parameters:
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+string
+SirName=
+"PriceDistribution"
+;
+//The first part of the name of graphical objects
+input
+uint
+iPeriod=
+3000
+;
+//calculation period
+input
+int
+Shift=-
+300
+;
+//shift of the initial drawing level of the histogram
+input
+double
+Dev=
+1.0
+;
+//histogram drawing scale
+input
+color
+PrColor=
+clrDodgerBlue
+;
+//color of the number of prices
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 03.05.2012.
+Fig.1. The PriceDistribution indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15936

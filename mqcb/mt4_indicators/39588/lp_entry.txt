@@ -1,0 +1,4 @@
+Arrow Up and Down on each bar and informations about "power of trend" and about "PEAK" or "EXTREM peak" on the chart.
+Indicator uses only WPR and RSI signals. Arrows can be changed only on last bar and indicator can be used on all TF and all symbols.
+Princip is simle ((WPR(4) +100 + RSI(2))/2) < or > 50. This is my first indicator, be carefull and good luck.
+On chart are used another 4 indicators: BollingerBands (9,2,0), Clock, FiboPiv_v2, PL4 CandleTime

@@ -1,0 +1,11 @@
+Added colors to
+Parabolic SAR
+.
+Parabolic SAR
+Technical Indicator was developed for analyzing the trending markets. The indicator is constructed on the price chart. This indicator is similar to
+Moving Average
+with the only difference that Parabolic SAR moves with higher acceleration and may change its position in terms of the price. The indicator is below the prices on the bull market (Up Trend), when it’s bearish (Down Trend), it is above the prices.
+If the price crosses Parabolic SAR lines, the indicator turns, and its further values are situated on the other side of the price. When such an indicator turn does take place, the maximum or the minimum price for the previous period would serve as the starting point. When the indicator makes a turn, it gives a signal of the trend end (correction stage or flat), or of its turn.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/90

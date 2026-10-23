@@ -1,0 +1,6 @@
+Indicator
+The indicator shows the status of the two indicators as lines of squares.
+clrYellowGreen - no trend,
+clrBlue - trend up,
+clrRed - trend down
+Rice. 1. Two MA Color N Bars Square

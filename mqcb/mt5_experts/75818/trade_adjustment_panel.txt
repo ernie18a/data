@@ -1,0 +1,17 @@
+Trade Adjustment Panel is an on-chart position management utility for MetaTrader 5 designed to modify active market positions. The EA acts strictly as a post-execution management tool for manual trades or orders opened by other Expert Advisors. It does not contain entry logic, signal generation, or order placement algorithms.
+Functional Overview:
+1. Stop Loss Management
+- Break-Even: Adjusts Stop Loss to the order open price.
+- Break-Even Offset: Adjusts Stop Loss to the open price plus or minus a user-defined point offset.
+- Profit Locking: Secures a specified point distance in profit by adjusting the Stop Loss level.
+- Trailing Stop: Updates the Stop Loss dynamically relative to current market price based on a set point distance.
+2. Take Profit Calculations
+- Risk:Reward Targets: Calculates Take Profit distances automatically using 1R, 2R, or 3R multiples. Calculations are derived directly from the initial distance between the entry price and the active Stop Loss.
+3. Volume Management & Partial Closures
+- Preset Volume Modification: Closes 25%, 50%, 75%, or 100% of open volume.
+- Validation Protocol: Checks position volume against broker specifications (SYMBOL_VOLUME_MIN and SYMBOL_VOLUME_STEP) prior to sending modification requests to avoid order execution errors.
+4. Execution Filters
+- Symbol Selection: Applies actions to the current chart symbol only or across all active chart symbols in the terminal.
+- Direction Selection: Filters actions by order type (Buy positions only, Sell positions only, or both directions simultaneously).
+5. Graphical Interface & Safety Controls
+- On-Chart GUI: Built using native MQL5 object classes. Features window relocation capabilities, panel minimization to a title bar, and a close button that deletes interface objects and issues an ExpertRemove() call.

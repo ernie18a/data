@@ -1,0 +1,9 @@
+Quantora Candle Strength Analyzer MT5 is a free and open-source indicator for analyzing candle structure and price action in MetaTrader 5.
+It analyzes candle body, upper and lower wicks, candle direction, buyer and seller pressure, wick rejection and range conditions.
+The indicator provides a Pressure Score from -5 to +5 based on candle direction, strength, pressure and rejection.
+It supports Current Candle and Closed Candle analysis modes.
+Users can adjust the body thresholds, wick ratio, range lookback and update interval.
+The dashboard also displays live spread, candle range, average range and other current candle information.
+It supports different market types and works on the timeframe of the attached chart.
+Buyer/Seller Pressure is a candle-structure proxy and does not represent actual order flow or transaction volume.
+The indicator does not open, close or modify trades and does not provide guaranteed trading signals.

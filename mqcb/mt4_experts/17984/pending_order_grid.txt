@@ -1,0 +1,17 @@
+This EA Opens a grid of Buy Stops and Sell Stops at a specified distance from price. It is not a fully automatic EA. You need to reset it once a while.
+Features
+Startinglot
+IncreasePercentage - Choose to have Increasing grid lots
+Distance from price - Points from price where grid starts
+Spacebetween Trades - Points between orders
+Number of trades - Total of open and pending orders in your terminal
+Takeprofit - TP in points
+Stoploss - SL in points
+Trailingstop - TS in points
+Magic
+Can be used on all pairs and timeframes.
+Feel free to play around with it, but remember this is not at fully operational EA that can run on its own.
+Pending order grid is based on Haroun Boutamanis
+Antigragile EA
+, but is heavily changed. Original code had used limits and bought/sold against the trend, waiting for pullbacks. This uses stops and buys/sells with the trend. I also added TP and the option to specify the distance from price where the grid will start. I also fixed a problem with the numbers of trades it opened.
+One problem this still has is that it can not be used on several pairs at the same time even if it uses magic numbers. This is because it counts all open positions and pending orders regardless of magic. So if somebody has an idea how to fix it, please feel free to share or change the code.

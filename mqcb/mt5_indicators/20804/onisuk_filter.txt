@@ -1,0 +1,67 @@
+The indicator named after the author of the filter system is the direction filter, e.g., for some
+candlestick models
+.
+It has three filtering scenarios:
+Power Trend
+(strong trend)
+Buy signal:
+EMA 3 > EMA 7;
+EMA 7 > EMA 50.
+Sell conditions are opposite.
+Medium MA Bounce
+(medium moving average bounce)
+Buy signal:
+EMA 20 > EMA 50;
+Low of the candlestick < EMA 20;
+Open of the candlestick > EMA 20;
+Close of the candlestick > EMA 20.
+Sell conditions are opposite.
+Long MA Bounce
+(long moving average bounce)
+Buy signal:
+EMA 20 > EMA 50;
+Low of the candlestick < EMA 50;
+Open of the candlestick > EMA 50;
+Close of the candlestick > EMA 50.
+Sell conditions are opposite.
+The indicator has seventeen input parameters:
+Use scenario 1 "Power Trend"
+- scenario 1 usage switch (Yes/No)
+Scenario 1, Period 1
+- scenario 1, calculation period of the first MA;
+Scenario 1, Method 1
+- scenario 1, calculation method of the first MA;
+Scenario 1, Period 2
+- scenario 1, calculation period of the second MA;
+Scenario 1, Method 2
+- scenario 1, calculation method of the second MA;
+Scenario 1, Period 3
+- scenario 1, calculation period of the third MA;
+Scenario 1, Method 3
+- calculation method of the third MA.
+Use scenario 2 "Medium MA Bounce"
+- scenario 2 usage switch (Yes/No)
+Scenario 2, Period 1
+- scenario 2, calculation periodof the first MA;
+Scenario 2, Method 1
+- scenario 2, calculation method of the first MA;
+Scenario 2, Period 2
+- scenario 2, calculation period of the second MA;
+Scenario 2, Method 2
+- scenario 2, calculation method of the second MA.
+Use scenario 3 "Slow MA Bounce"
+- scenario 3 usage switch (Yes/No)
+Scenario 3, Period 1
+- scenario 3, calculation period of the first MA;
+Scenario 3, Method 1
+- scenario 3, calculation method of the first MA;
+Scenario 3, Period 2
+- scenario 3, calculation period of the second MA;
+Scenario 3, Method 2
+- scenario 3, calculation method of the second MA.
+Fig.1 Filter, scenario 1
+Fig.2 Filter, scenario 2
+Fig.3 Filter, scenario 3
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20804

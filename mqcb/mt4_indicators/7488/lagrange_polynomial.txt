@@ -1,0 +1,7 @@
+The first option is !siLagrange - automatically detects the maximums/minimums of the points and creates the polynomial on their basis
+The second option is !siLagrangePnt - creates the polynomial based on the points specified by the user. The points are set using the "Arrow" tool.
+Make sure their names match the parameter specified in the indicator. For more detailed help, see:
+https://www.mql5.com/ru/forum/105388
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7488

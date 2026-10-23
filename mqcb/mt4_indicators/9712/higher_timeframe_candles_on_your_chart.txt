@@ -1,0 +1,11 @@
+Author:
+Julien L (
+http://www.thetradingtheory.com
+)
+I wanted to know the details of the candles. What's happening in those H1 candles? By switching to a lower timeframe, you don't have the same view, making it hard to understand what gives their shapes to the candles.
+So I've created this indicator, that draws candles from an higher timeframe on your chart.
+If you wanna see all the details in your H1 candles, just apply this indicator on M1!
+Recommendations:
+drawing.mq4 must be placed and compiled in the experts/libraries/ folder.
+You can find more details and more researches on my blog:
+www.thetradingtheory.com

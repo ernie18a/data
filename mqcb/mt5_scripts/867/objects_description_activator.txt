@@ -1,0 +1,2 @@
+This script Enables the 'Chart Objects Description' for non-programmers. For any open chart window.
+After the run from the "Objects Description Activator":

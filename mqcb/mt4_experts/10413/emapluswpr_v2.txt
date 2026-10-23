@@ -1,0 +1,109 @@
+Expert advisor that trade in the trend of EMA and buy/sell signals get from Williams %R
+I have tried to create an Expert advisor that could by traded with 1000 EUR starting equity and to minimize the drawdown. Hope you like it. I appreciate every feedback.
+Optimized for EURUSD 5 min
+I have removed some bugs, removed position sizing, add some inputs.
+You use it on your own risk. I am not responsible for your loss, you have to change, test and optimize it for your purpose.
+have not optimized it
+old versions:
+http://codebase.mql4.com/en/code/10116
+http://codebase.mql4.com/en/code/10201
+inputs:
+extern
+string
+separator1 =
+"------trend settings------"
+;
+extern
+bool
+useEMAtrend =
+true
+;
+// trade in EMA trend
+extern
+int
+barsInTrend =
+1
+;
+// how many bars should be in trend
+extern
+double
+EMAtrend =
+144
+;
+// EMA period for trend
+extern
+string
+separator2 =
+"------WPR settings------"
+;
+extern
+double
+iWPRPeriod =
+46
+;
+// WPR period for enter and exit
+extern
+double
+iWPRRetracement =
+30
+;
+// minimal retracement for WPR to allow another trade
+extern
+bool
+useWPRExit =
+true
+;
+// use exit with WPR indicator
+extern
+string
+separator3 =
+"------position settings------"
+;
+extern
+double
+lots =
+0.1
+;
+// fixed lot size
+extern
+int
+maxTrades =
+2
+;
+// max trades allowed for pyramiding
+extern
+double
+stop_loss =
+50
+;
+// stop loss
+extern
+double
+take_profit =
+200
+;
+// take profit
+extern
+bool
+useTrailingStop =
+false
+;
+// use trailing stop
+extern
+double
+trailing_stop =
+10
+;
+// trail stop loss
+extern
+bool
+useUnprofitExit =
+false
+;
+// exit trade when trade was not in profit in defined amount of bars
+extern
+int
+maxUnprofitBars =
+5
+;
+// amount of bars not in profit

@@ -1,0 +1,26 @@
+Mini Panel Manager
+Makes trade execution easier with a trader-friendly interface and practical features.
+Information Panel
+Displays your account status and all currently active trading positions in real time.
+Trading Panel
+Includes dedicated
+Buy
+and
+Sell
+buttons with
+Magic Number
+support, allowing the EA to identify and manage its own trades accurately.
+Position Closing Panel
+Provides quick actions to close specific positions efficiently.
+Average TP Panel
+Allows you to quickly set or update a
+Take Profit
+level based on the average entry price of your open positions.
+Break-even Panel
+Moves your positions to the
+Break-even
+level once they reach a predefined profit.
+Auto Grid Panel
+Automatically opens additional grid/martingale positions when the
+ON
+mode is enabled.

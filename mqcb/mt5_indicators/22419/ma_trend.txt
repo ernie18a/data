@@ -1,0 +1,25 @@
+MA Trend trend oscillator displays a trend based on the analysis of a specified set of moving averages with calculated periods within the specified range.
+There are five inputs:
+Period begin
+- MA initial calculation period
+Period step
+- МА calculation period increment step
+Count
+- number of calculated МАs
+Method
+- МА calculation method
+Applied price
+- МА calculation price
+Calculation:
+MATrend = Sum(S) / Count
+where:
+If Applied price > MA
+S = 1
+If Applied price < MA
+S = -1
+MA - MovingAverage(Applied price,Period begin+Period step,Method)
+Fig. 1. MA_Trend with the default parameters: Period begin=10, Period step=10, Count=50
+Fig. 2. MA_Trend with the parameters: Period begin=5, Period step=2, Count=50
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22419

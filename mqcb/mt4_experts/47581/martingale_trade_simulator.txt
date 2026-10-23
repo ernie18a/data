@@ -1,0 +1,2 @@
+This EA i've created is for Manual Trade Training using Martingale that can be enabled/disabled.
+Only works on Strategy Tester Mode.

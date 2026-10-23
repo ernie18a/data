@@ -1,0 +1,5 @@
+Description:
+Kaufman Volatility according to Perry Kaufman books "Smarter Trading".
+Image:
+See also:
+"Kaufman Efficiency Ratio"

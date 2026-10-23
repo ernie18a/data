@@ -1,0 +1,29 @@
+The Expert Advisor is based on the indicator with the same name
+Candle shadow percent
+. Lot is calculated based on the risk value as a percentage of free margin.
+Attention: in this Expert Advisor, it is assumed that the
+Candle shadow percent
+indicator is located in the
+\Indicators\MyInd\Candels
+\ folder, which is clear from OnInit()
+m_money.Percent(Risk);
+//--- create handle of the custom indicator
+handle_iCustom=
+iCustom
+(m_symbol.Name(),
+Period
+(),
+"MyInd\\Candels\\Candle shadow percent"
+,
+                          __1__,
+You will need to edit the path to the
+Candle shadow percent
+indicator in OnInit, if it is located in another folder.
+The Expert Advisor only performs actions at the moment of a new emergence, and it does not work inside the bar.
+Position opening conditions:
+if the value of the "Candle shadow percent" indicator on the bar indexed 1 in the 0 buffer ("BufferTop") is not equal to zero, i.e. an there is an arrow on this bar, Sell will be opened
+if the value of the "Candle shadow percent" indicator on the bar indexed 1 in the 1 buffer ("BufferLow") is not equal to zero, i.e. an there is an arrow on this bar, Buy will be opened
+Recommendations for debugging: first adjust parameters only for the upper shadow, then only for the lower shadow.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17940

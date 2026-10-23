@@ -1,0 +1,6 @@
+Author:
+tageiger aka
+Modified indicator
+AvgRangeM
+.
+Indicator AvgRangeM

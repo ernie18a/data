@@ -1,0 +1,6 @@
+A popular indicator in the Internet, the author is unknown.
+The ant-GUBreakout indicator draws a color marking on the chart highlighting the set time interval and setting high and low price lines for this time interval.
+A distinctive feature of this indicator realization is use of the indicator buffers instead of chart objects to display time box.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1493

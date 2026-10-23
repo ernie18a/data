@@ -1,0 +1,6 @@
+The indicator consisting of two moving averages from John Ehlers' book
+"Cybernetic Analysis for Stocks and Futures: Cutting-Edge DSP Technology to Improve Your Trading"
+. Red moving average is a filter and a medium-term trend indicator. Blue moving average is used as the fast trends filter with the simplest smoothing tool.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/598

@@ -1,0 +1,5 @@
+The Expert Advisor allows you to determine which chart is active at the moment.
+The code also works in MQL4, you just need to change the file extension to .mq4.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12805

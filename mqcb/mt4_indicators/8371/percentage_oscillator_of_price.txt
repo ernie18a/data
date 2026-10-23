@@ -1,0 +1,11 @@
+A percentage oscillator of the price allows to perform the comparing the time periods independently on the price.
+Calculation:
+PPO = ( EMA(CLOSE, 12) - EMA(CLOSE, 26) ) / EMA(CLOSE, 26)
+SIGNAL = SMA(PPO, 9)
+Signals:
+1.Positive/Negative divergence
+2.The intersection of the indicator with its signal line.
+3.A condition of overbuying/overselling
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8371

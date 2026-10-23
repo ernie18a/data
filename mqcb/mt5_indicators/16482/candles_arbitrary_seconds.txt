@@ -1,0 +1,6 @@
+This indicator is not on bars or on tick based. It strictly works based on a time. It generates a new bar with Open, Close, High and Low for the given period in seconds. This version does not depend on ticks at all (it works even on weekends — creating a flat line, since there is no price change, but it works) and this version is able to display data even when ticks in regular sessions are not coming in.
+Also, pay attention that starting multiple instances of the same indicator with same settings at different time will not produce same "chart": the data will be different.
+PS: it does not generate offline data.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16482

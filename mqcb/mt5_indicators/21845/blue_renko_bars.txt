@@ -1,0 +1,11 @@
+An indicator for constructing Renko bars in the chart sub-window.
+Indicator Properties
+Brick Size
+- brick size in pips;
+Show Wicks
+- if true, bar shadows will be drawn If false, shadows will not be displayed;
+Use full history
+- if true, entire available history of the trading instrument is used for the indicator calculation.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21845

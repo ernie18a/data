@@ -1,0 +1,5 @@
+A compound interest calculator for the trader. Calculates, based on your parameters, your risk of ruin, and the optimal risk per trade. Gives a forecast of your capital size in a year, month, and at the end of the term.
+Now you can dream right in the MetaTrader 5 terminal)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/56035

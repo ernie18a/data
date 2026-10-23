@@ -1,0 +1,4 @@
+Phase accumulation adaptive version of a market mode using discontinued signal lines (originally published here :
+Market Mode - Discontinued Signal Lines
+)
+PS: the "big picture" example

@@ -1,0 +1,2 @@
+Author: DVYU inc
+Pivot RS Session indicator. Shows trading sessions.

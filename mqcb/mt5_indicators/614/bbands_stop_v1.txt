@@ -1,0 +1,13 @@
+Real author:
+igorad
+BBands_Stop_v1 trend indicator is a modification of
+Bollinger Bands ®
+. It can be used for detecting a trend change, as well as for setting stop orders. It is quite descriptive and easy to use.
+Tips for using the indicators:
+The indicator changes its color when the chart crosses Bollinger Bands showing trend reversal on the market. Green dots are for buying, orange ones are for selling. Stop-losses are set above/below the dots. The indicator shows good results during a trend but starts to give false signals in case of a flat. Therefore, it is recommended to use this indicator together with some other, filtering indicators.
+This indicator was first implemented in MQL4 and published in
+CodeBase
+at mql4.com 27.09.2007.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/614

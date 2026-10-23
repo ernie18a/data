@@ -1,0 +1,26 @@
+DEFINITION :
+Before we start, it is important to define the
+Martingale system
+. It is a system that allow you to increase the size of your position as the trade moves against you or after a losing trade. *
+INTRODUCTION :
+This strategy is the well known set & forget accompanied by the martingale system. It is very useful if you are very busy in which you don't have time, you want to trade the London session while you are sleeping in USA, etc.
+Do not forget to send you comments as well as rate this script. Happy trading!
+HOW TO USE IT :
+You can check the following video that will explain
+The set and forget strategy (with the martingale system)
+Who usually use this strategy,
+How to compile the script, and
+How to use it in real example
+PARAMETERS :
+This EA has 5 inputs
+1st input (NB TRADE): Specify the total number of Stop limit (Buy/Sell limit).
+2nd input (INITIAL ENTRY): Specify the initial entry price.
+3rd input (INITIAL STOP): Specify the initial stop loss.
+4th input (INITIAL TARGET: Specify the initial take profit.
+5th input (POSITION SIZE): Specify the position size of each trade.
+* LIVE TRADING SESSION: (How to properly trade small accounts - KNOW WHEN TO STOP).
+This is an example that I was using the
+Martingale technique
+IMPORTANT INFORMATION YOU NEED TO KNOW
+========================================
+Please note that investing involves risks. Any decision to invest in either the real estate or stock markets is a personal decision that should be made after thorough research, including an assessment of your personal risk tolerance and your personal financial condition and goals. Results are based on market conditions and on each individual and the action they take and the time and effort they put in.

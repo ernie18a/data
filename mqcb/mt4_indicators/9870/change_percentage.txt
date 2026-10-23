@@ -1,0 +1,2 @@
+This indicator shows the change in percentage between the Close of the current period and the previous one.
+MT-Coder

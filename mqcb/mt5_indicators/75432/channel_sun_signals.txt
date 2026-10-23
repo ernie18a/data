@@ -1,0 +1,45 @@
+How it works
+Center line:
+a symmetric, triangular-weighted moving average of the applied price over 2×HalfLength+1 bars (the weight peaks at the current bar and decays linearly toward both edges — the "smoothing" bell shape visible in the screenshots).
+Bands:
+an adaptive/EMA-style variance of the positive and negative deviations from the center line is tracked bar by bar, and the upper/lower bands are drawn at Center ± BandsDeviations × StdDev .
+Signals (arrows):
+A
+red "Sell" arrow
+appears above a bar when the previous bar closed bullish and pushed its high above the upper band, followed by the current bar closing bearish (a rejection from the top of the channel).
+A
+blue "Buy" arrow
+appears below a bar when the previous bar closed bearish and pushed its low below the lower band, followed by the current bar closing bullish (a rejection from the bottom of the channel).
+Arrow vertical offset from the candle is scaled by ATR(20), so arrows stay readable across instruments/timeframes.
+Multi-timeframe mode:
+you can select any timeframe (e.g., run the indicator on an M15 chart but calculate the channel on H1). Higher-timeframe candles are pulled with CopyRates() and the channel is computed locally, with optional linear interpolation between HTF bar closes so the lines aren't "staircased" on the lower timeframe chart.
+Inputs
+Timeframe
+– calculation timeframe (defaults to chart period; can also be a higher timeframe for MTF mode).
+Channel HalfLength
+– smoothing/width of the triangular MA window.
+Applied Price
+– standard MT5 price types (Close, Open, High, Low, Median, Typical, Weighted).
+Bands Deviation multiplier
+– how far the bands sit from the center line.
+Interpolate between MTF bars
+– smooths the channel lines when using a higher calculation timeframe.
+Colors
+– chosen from fixed dropdown lists (not the free color picker), for the mid line, bands, and both arrow colors.
+Line width / Arrow size
+– 1–5 for each plot.
+Signals → closed-bar only
+– optional switch to make signals appear only after a bar fully closes (removes any repainting on the current, still-forming bar).
+Signal filters (optional):
+Minimum band width % — ignore signals when the channel is too narrow (range-bound/no-trend market).
+Volume confirmation — require the breakout bar's tick volume to exceed its recent average by a chosen multiplier.
+Signal cooldown (bars) — suppress new arrows for N bars after a signal, to avoid clusters of arrows in choppy conditions.
+Alerts
+– popup, sound, push-notification and email alerts, triggered on band penetration by either High/Low or Close, on the current or last closed bar.
+Notes for reviewers
+Pure MQL5, single file, no external dependencies ( .ex5 , DLLs, or other indicators) — safe to compile and post as-is.
+Runs in the main chart window ( indicator_chart_window ), 5 visible plots + 2 internal calculation buffers.
+ATR(20) handle is created in OnInit() and released in OnDeinit() .
+MTF engine caches the last copied bar to avoid recalculating full history on every tick.
+Risk Disclaimer:
+This indicator is provided for informational and educational purposes only and does not constitute financial or investment advice. Trading Forex, CFDs, and other financial instruments involves a high level of risk and may not be suitable for all investors. Past performance, backtest results, or historical signals are not indicative of future results. You may lose part or all of your invested capital, and you should never trade with money you cannot afford to lose. The author accepts no responsibility for any losses incurred as a result of using this indicator. Always test thoroughly on a demo account before using it with real funds, and consider seeking advice from an independent, licensed financial advisor.

@@ -1,0 +1,10 @@
+What the template can do for you?
+A simple but fully functional program that demonstrate how a martingale can work for you. Just change the entry analysis using your own scalping strategy and your personal money management style, then optimize. If your goal is a consistent profit, NOT a high-percentage one and willing to use a big capital. This script maybe for you. Optimize it first with a capital that gives a maximum drawdown of not more than 50%. To be conservative, less than 30% is ideal.
+If you are looking for an EA with a profit of 100% per year or more, this is not for you. Just don't be greedy and just aim for reasonable profit percentage (e.g. 5% to 50% per year)
+⚡
+⚡
+V E R Y  I M P O R T A N T
+⚡
+⚡
+Read the source code carefully to learn more tips.
+Here's an example of the potential of the program...

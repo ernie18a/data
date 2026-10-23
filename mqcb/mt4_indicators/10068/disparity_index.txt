@@ -1,0 +1,7 @@
+Steve Nison refers to his
+Disparity Index
+as "a percentage display of the latest close to a chosen moving average." This can be defined mathematically using the formula:
+[ C - Mov(C,X,MA ) ]
+[Mov(C,X,MA) ] * 100
+Where X is the number of time periods and MA is the calculation type of the moving average. For more in depth interpretation of the Disparity Index refer to Steve Nison's book
+"Beyond Candlesticks", Chapter 5

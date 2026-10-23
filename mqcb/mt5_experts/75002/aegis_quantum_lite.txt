@@ -1,0 +1,39 @@
+Aegis Quantum Lite is a free educational Expert Advisor for MetaTrader 5. It demonstrates a straightforward completed-candle trend-entry method and a compact on-chart dashboard in one standalone, commented MQ5 source file.
+Entry logic
+Buy conditions:
+- Fast EMA is above Slow EMA.
+- RSI is above the configured Buy level.
+- Spread is within the configured maximum.
+- No position already exists on the chart symbol.
+- A new completed candle is available.
+Sell conditions:
+- Fast EMA is below Slow EMA.
+- RSI is below the configured Sell level.
+- Spread is within the configured maximum.
+- No position already exists on the chart symbol.
+- A new completed candle is available.
+Default parameters
+- FastEMA: 9
+- SlowEMA: 21
+- RSIPeriod: 14
+- BuyRSILevel: 48
+- SellRSILevel: 52
+- FixedLot: 0.01
+- MaximumSpreadPoints: 50
+- StopLossPoints: 500
+- TakeProfitPoints: 500
+- OneEntryPerCandle: true
+Dashboard
+The compact black-and-gold dashboard displays the symbol, timeframe, completed-candle EMA values, RSI, spread, current signal and trading status.
+Safety and execution behavior
+- Uses one fixed lot size; no martingale and no grid.
+- Blocks entries when another position exists on the symbol.
+- Checks terminal and account trading permissions.
+- Checks free margin before sending an order.
+- Runs OrderCheck before OrderSend.
+- Uses the filling mode supported by the current symbol.
+- Uses optional Stop Loss and Take Profit distances.
+Suggested use
+Attach the EA to a chart after testing it in the MetaTrader 5 Strategy Tester. M5 is a useful starting timeframe, but the program can run on other chart periods. Broker spreads, symbol specifications and execution conditions vary.
+Risk notice
+This source code is provided for educational purposes. Trading foreign exchange, metals and CFDs involves risk. Historical tests do not guarantee future results. Test settings on a demo account and select position size according to your own risk tolerance.

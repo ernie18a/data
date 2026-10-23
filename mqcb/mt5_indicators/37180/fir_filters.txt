@@ -1,0 +1,11 @@
+Some of the digital filters in one place :
+Hanning
+Hamming
+Blackman
+Blackman / Harris
+And (simply in order to demonstrate that almost anything can be a digital filter) :
+rectangular - simple moving average
+linear weighted moving average
+triangular moving average
+Recommendations:
+Use it as any other moving average

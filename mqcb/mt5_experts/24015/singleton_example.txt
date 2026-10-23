@@ -1,0 +1,3 @@
+I was working on an EA and identified that an object should never have more than one copy. Most EA's never get large enough for it to actually matter that a singleton is used, but I like the clarity in the code for the object's type.  This is just an update to a years earlier post of this for MQ4; it may be getting to be time to convert everything to MQ5.
+The code follows closely the tutorial at http://www.yolinux.com/TUTORIALS/C++Singleton.html
+The display of the event count is just to show that the singleton object is working.

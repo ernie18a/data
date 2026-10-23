@@ -1,0 +1,14 @@
+Hikkake Pattern (Inside Day False Breakout) indicator is a trading strategy based on false breakouts. Translated into MQL5 code from Dan Chesler's article published in April 2004, Active Trader Magazine "Trading False Moves with the Hikkake Pattern".
+The basic Hikkake pattern consists of two price bars — two hourly bars, two daily bars, two weekly bars, etc. The first bar in the pattern is an inside bar, which is simply a bar with a lower high and higher low than the preceding bar. The second bar in the pattern must have a higher high and higher low than the previous (inside) bar for a bearish Hikkake setup, or a lower low and a lower high than the previous (inside) bar for a bullish Hikkake setup.
+The essence of the pattern concept is captured in these two bars. The market has just broken out from an inside bar. Traders are positioned to go with the market in the direction of the breakout.
+However, just as an athlete will execute a well-timed stutter step to throw off an opponent, so does the market. The market’s true intent becomes clear only after it begins moving in a direction opposite that of the initial breakout. As with all patterns, it is important to wait for signs of verification before acting.
+With the Hikkake pattern, a false move should not be anticipated unless price crosses above the high of the inside bar (for a bullish setup) or below the low of the inside bar (for a bearish setup). Verification must occur within three bars of the Hikkake pattern, otherwise the pattern is ignored.
+Dan Chesler
+Complete Dan Chesler article:
+click here
+We developed this indicator from scratch following Dan's theory.
+This indicator shows 3 big dots when the pattern is identified.
+After that, on the next 3 candles, small dots will be shown identifying the theoretical entry point for a trade.
+When the price reaches the theoretical entry point, a Buy/Sell arrow appears.
+Hope this indicator is useful to the community!
+Please feel free to post bugs, comments, and tips on what type of markets, stocks and timeframes this indicator performs well.

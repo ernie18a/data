@@ -1,0 +1,14 @@
+Author of the idea
+—
+Evgeny
+.
+MQL5 code author
+:
+Vladimir Karputov
+.
+The EA trades in the specified time interval. It takes into account High and Low within a certain number of bars. The EA includes protection against the "not enough money" error.
+High and Low are determined at the specified interval of bars. When the low value is broken down, a BUY position is opened. When the high value is broken up, a SELL position is opened.
+Before opening BUY, all SELL trades are closed. Before opening SELL, all BUY trades are closed.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18333

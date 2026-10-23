@@ -1,0 +1,4 @@
+Author: Alejandro Galindo
+Adviser DLMv1.4 - MQL4Contest. Uses indicator
+FX FISH 2MA
+.

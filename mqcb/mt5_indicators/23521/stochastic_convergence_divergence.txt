@@ -1,0 +1,60 @@
+This indicator displays two stochastics with adjustable smoothing and a convergence/divergence line of %K lines of those two stochastics.
+It has thirteen adjustable parameters:
+Calculation mode
+- calculation and display mode
+Two stochastics
+- two stochastics with predefined parameters
+Stoch1/Stoch2 divergence
+- %K lines of stochastics with predefined parameters and the line of convergence/divergence between them
+First stochastic %K period
+- first stochastic %K line calculation period
+First stochastic %D period
+- first stochastic %D line calculation period
+First stochastic slowing
+- first stochastic smoothing calculation period
+First stochastic %K-smoothing type
+- first stochastic %K line smoothing period
+Simple
+- simple smoothing
+Exponential
+- exponential smoothing
+Fast
+- fast smoothing
+First stochastic %D-smoothing type
+- first stochastic %D line smoothing type
+Simple
+- simple smoothing
+Exponential
+- exponential smoothing
+Second stochastic %K period
+- second stochastic %K line calculation period
+Second stochastic %D period
+- second stochastic %D line calculation period
+Second stochastic slowing
+- second stochastic smoothing calculation period
+Second stochastic %K-smoothing type
+- second stochastic %K line smoothing type
+Simple
+- simple smoothing
+Exponential
+- exponential smoothing
+Fast
+- fast smoothing
+Second stochastic %D-smoothing type
+- second stochastic %D line smoothing type
+Simple
+- simple smoothing
+Exponential
+- exponential smoothing
+Overbought
+- overbought level
+Oversold
+- oversold level
+Fig. 1. Two Stochastics with MA Smoothing and Convergence Divergence line,
+Calculation mode = Stoch1/Stoch2 divergence
+Fig. 2. Two Stochastics with MA Smoothing and Convergence Divergence line,
+Calculation mode =
+Two stochastics
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23521

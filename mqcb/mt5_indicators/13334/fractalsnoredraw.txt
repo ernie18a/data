@@ -1,0 +1,8 @@
+Author of the idea:
+Bill Williams
+Bill Williams' fractals indicator based on the built-in Fractals indicator in MetaTrader 5. The distinctive feature of this indicator is that it doesn't repaint.
+Tips:
+To compare it with the built-in indicator in Strategy Tester, open the chart of any symbol, add a standard fractals indicator and save a template named tester.tpl.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13334

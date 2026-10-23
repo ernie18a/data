@@ -1,0 +1,12 @@
+This indicator was originally made to study patterns in price movements, while discarding minor fluctuations in price. Although this was its original purpose, there are other interesting ways you can apply it to your strategy.
+This indicator tracks the movements of a Moving Average and accumulates them according to a threshold.
+Screenshot:
+Recommendations:
+The
+smaller the threshold
+, the smaller and more specified the trends are. These are ended more abruptly with divergence in price movements.
+The
+bigger the threshold
+, the bigger and more generalized the trends are. These last longer and ignore small divergences in price movements.
+Enjoy!
+If you have any suggestions for improvements, or found any bug, please post them in the comment section below.

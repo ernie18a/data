@@ -1,0 +1,2 @@
+Author: Ramdass
+Digital CCI Woodies indicator.

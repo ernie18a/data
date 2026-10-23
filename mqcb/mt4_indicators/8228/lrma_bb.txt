@@ -1,0 +1,4 @@
+The LRMA_BB moving average calculated according to the method of the linear regression and complemented buy the Bollinger bands.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8228

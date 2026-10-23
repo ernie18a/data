@@ -1,0 +1,6 @@
+If a high has two preceding highs (rising) and two succeeding highs (falling), it is considered a swing high
+If a low has two preceding lows (falling) and two succeeding lows (rising), it is considered a swing low
+The color of buffer can be changed from code : To obtain color of your choice ->
+Webcolors
+#property
+indicator_colors

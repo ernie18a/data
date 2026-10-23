@@ -1,0 +1,3 @@
+The indicator helps to find the correct trend before enter the market.
+Open trade when Lime Line is greater then Green Line and exit trade when Lime Line is lesser then Green Line.
+Use build-in AC for entry point at the bottom of indicator's window. This indicator is created for educational purposes only.

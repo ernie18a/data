@@ -1,0 +1,2 @@
+Accumulative Swing Index is a useful indicator but it lacks an ease of usage (sine the levels are not usable in it).
+This version of the indicator is attempting to add some more functionality to it by producing much smoother results in which case the slope of the accumulative swing index can be used as an assessment criteria for the ongoing trend. Smoothing method used is the JMA.

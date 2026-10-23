@@ -1,0 +1,12 @@
+The image shows the effectiveness of the smoothing properties of the "
+Ma_Parabolic_st2
+" indicator, compared to the standard
+"Parabolic SAR"
+indicator.
+The purple dotted line is the Ma_Parabolic, the greed dotted line is the standard Parabolic SAR.
+Version 2.1. Fixed the display the on the charts with small number of bars. Previously, the parabolic chains were not displayed at the values of "Step" ~0.001 (or less) and the number of bars ~300.
+Added separation of the inclination for the falling and rising lines in the version Ma-Parabolic_st2.2.
+Ma-Parabolic_st2_2 with different inclination of lines
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8686

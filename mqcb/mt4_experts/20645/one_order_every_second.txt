@@ -1,0 +1,4 @@
+It may sound very easy to write a code which places one order every second.
+However, that are various practical difficulties that come across.
+The attached code ensures that only one order is placed in one second.
+The code also ensures that one order must be placed every second. So no second is skipped.

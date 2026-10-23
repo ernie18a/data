@@ -1,0 +1,1 @@
+This script automatically closes all open orders within few seconds.

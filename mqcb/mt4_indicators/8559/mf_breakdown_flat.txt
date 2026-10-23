@@ -1,0 +1,34 @@
+For now there is no need to draw the levels manually.
+It will be very useful for the novices.
+According to the TS MF, usually the first enter point is at the double break through and the support of the associates.
+Input Parameters:
+extern
+int
+Дней
+=
+10
+;
+// How many days in history to display
+.
+extern
+string
+sTimeEndAsia
+=
+" 07:00:00"
+;
+// You can specify your own values.
+extern
+int
+m7
+=
+7
+;
+// This one should be correсted too.
+extern
+string
+sTimeEndEur
+=
+" 10:00:00"
+;
+// The time we stand the flat.
+MF_BreakDown_Flat

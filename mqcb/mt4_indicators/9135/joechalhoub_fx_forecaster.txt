@@ -1,0 +1,3 @@
+The indicator predicts the future movement of prices.
+JoeChalhoub_FxForecaster is easy to set, it requires no external variable or dlls or include files, and work with any currency and any timeframe.
+This indicator forecasts and predicts future trends and give for traders a very precise idea about the next trend. Trader has to study the indicator and extract from it the right strategy.

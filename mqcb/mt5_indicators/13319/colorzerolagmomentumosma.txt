@@ -1,0 +1,7 @@
+Smoothed
+ColorZerolagMomentum
+indicator rate of change, represented as a colored histogram, allows you to determine the current trend direction quite accurately.
+Fig.1. ColorZerolagMomentumOSMA
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13319

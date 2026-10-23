@@ -1,0 +1,47 @@
+Idea by:
+Scriptor
+mq5 code by:
+barabashkakvn
+The EA refers to the data of two indicators iMA (Moving Average, MA), Fast and Slow, and of one indicator iBands (Bollinger Bands, BB). The indicators work on the current symbol and on the current timeframe.
+Trailing the positions and trading signals are generated only when a new bar appears. You can also reverse trading signals (parameter
+Reverse
+, variable
+InpReverse
+in the code) and close positions opposite to the trading signal (parameter
+Close opposite
+, variable
+InpCloseOpposite
+in the code).
+Block of trading signals:
+if(ma_fast[2]
+<ma_slow[2] &&
+ma
+_fast[1]>
+ma_slow[1] && close[1]
+<bands_lower[1])
+     {
+if
+(!InpReverse)
+m
+_need_open_buy=true;
+else
+m
+_need_open_sell=true;
+     }
+if
+(ma_fast[2]>
+ma_slow[2] && ma_fast[1]
+<ma_slow[1] &&
+close
+[1]>
+bands_lower[1])
+     {
+      if(!InpReverse)
+         m_need_open_sell=true;
+      else
+         m_need_open_buy=true;
+     }
+EURUSD, H1:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23556

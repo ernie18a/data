@@ -1,0 +1,18 @@
+The Wyckoff PriceVolume Histogram oscillator indicator allows analyzing the market by applying Richard Wyckoff's volume spread analysis VSA.
+Here the "spread" does not mean Ask-Bid, but the full size of the candle: High-Low.
+The indicator has three input parameters:
+Fast period
+- fast smoothing period
+Slow period
+- slow smoothing period
+Show histogram
+- show the histogram
+First, the candlestick "profile" is calculated. Then, based on the obtained profile, the candlestick's "volume weight" is calculated, and then the histogram value is calculated by subtracting the past candlestick profile from the current profile.
+To draw the average values, two SMAs with different periods are calculated - fast and slow - based on the candlestick profiles.
+If Show histogram = Yes, an additional histogram is drawn showing the differences between the past and current profiles.
+Fig. 1. Show histogram = No
+Fig. 2. Show histogram = Yes
+,
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21858

@@ -1,0 +1,2 @@
+Here is a "DMA" indicator that calculates "DMA" (the same thing as DEMA but this one can be applied to SMA, EMA, SMMA and LWMA instead of just EMA).
+That way it adds possible "DEMA" versions that did not exist before and extends the family of moving averages by adding 3 new versions that did not exist at all before.

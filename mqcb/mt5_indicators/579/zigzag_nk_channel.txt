@@ -1,0 +1,76 @@
+In this indicator the channel is built using three extreme points of ZigZag.
+The indicator has two versions: with ZigZag indicator on a chart (ZigZag_NK_Channel2) and without (ZigZag_NK_Channel).
+Input parameters:
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+int
+ExtDepth=
+12
+;
+input
+int
+ExtDeviation=
+5
+;
+input
+int
+ExtBackstep =
+3
+;
+//+----------------------------------------------+
+//| Channel creation input parameters            |
+//+----------------------------------------------+
+input
+int
+FirstExtrNumb=
+1
+;
+// First peak index number (0,1,2,3...)
+input
+color
+Upper_color=DeepSkyBlue;
+// Upper channel line color
+input
+ENUM_LINE_STYLE
+Upper_style=
+STYLE_SOLID
+;
+//
+Upper channel line style
+input
+ENUM_WIDTH Upper_width=w_3;
+//
+Upper channel line width
+input
+color
+Middle_color=Teal;
+// Middle line color
+input
+ENUM_LINE_STYLE
+Middle_style=
+STYLE_DASHDOTDOT
+;
+// Middle line style
+input
+ENUM_WIDTH Middle_width=w_1;
+// Middle line width
+input
+color
+Lower_color=Magenta;
+// Lower channel line color
+input
+ENUM_LINE_STYLE
+Lower_style=
+STYLE_SOLID
+;
+//
+Lower channel line style
+input
+ENUM_WIDTH Lower_width=w_3;
+//
+Lower channel line width
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/579

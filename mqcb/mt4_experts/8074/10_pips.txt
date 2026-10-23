@@ -1,0 +1,31 @@
+No indicators are used in this strategy!
+Trading Strategy Algorithm:
+1.Open the daily chart of
+EURUSD
+,
+lots
+0.1.
+2.
+As soon as a new candlestick (bar) is formed, open two trades (buy & sell) simultaneously (TakeProfit must be
+10 points).
+3.
+TrailingStop and StopLoss
+place at 50 points.
+4.
+If one of the trades is closed, then open an additional position in the direction of the remaining one
+.
+Exit
+trades, in all cases, by StopLoss or by TakeProfit.
+Test on
+EURUSD
+D
+1
+within the period from 2007.01.11 to 2008.01.11:
+The working result of the optimized parameters within the period from 2007.01.11 to 2008.01.11:
+The profit made over $6,100 within that period, profit factor being equal to 5.81, expected payoff being equal to practically 100!!!
+You can see the forward testing results outside the optimization area and the results obtained for other timeframes in
+our magazine's issue from 14.04.2008
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8074

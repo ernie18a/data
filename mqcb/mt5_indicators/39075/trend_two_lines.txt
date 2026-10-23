@@ -1,0 +1,3 @@
+The idea of the indicator
+Visual assistant for determining the trend. The indicator compares the current and previous price.
+Rice. 1. Trend Two Lines

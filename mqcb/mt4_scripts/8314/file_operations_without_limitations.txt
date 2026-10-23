@@ -1,0 +1,16 @@
+In the "Tools" window of MetaEditor, it is written for the
+FileOpen
+function:
+Metatraders file functions are limited to the terminals sandbox and its specific folders for files.
+And there is no shared-access mode for an open file. At least, it is not given explicitly.
+But I would prefer to save files where I want and to read them from where I want. And also to pass data from one operating EA into another operating EA through a file.
+I asked on the forum to search in system libraries for how to use file operations in an EA, but nobody seemed being able to do that, although we discussed the SendMessage function from Shell32.dll. Delphi-biased, though.
+Well, the functions of file operations are used in the system library of
+kernel32.dll
+. It is this library that we import into the EA. The code is attached. Create a file as follows: "C:\Text.txt", save some text in it. Launch the attached script. The script reads the entire contents of the file. Add some checks for delimiter characters and for line end characters, some cherry syrup - and the
+ReadLine
+function is ready...
+Note. In the MetaEditor Dictionary, we read: "The length of a string constant ranges from 0 to 255 characters. If the length of a string constant exceed the maximal allowed one, the excessive characters from the right will be cut off, while the compiler shows the following warning:...".
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8314

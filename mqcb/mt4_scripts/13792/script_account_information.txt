@@ -1,0 +1,6 @@
+Description:
+This script will display all account information.
+Image:
+Recommendations:
+If your account information or customer will not have this script can be run.
+Where do you want to add the email.

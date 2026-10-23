@@ -1,0 +1,6 @@
+I saw lately a few trading system which require for example a 5 sec. This Indicator let you choose any time (in seconds) and generates candlesticks. Of course not real candlesticks are generated but i used histograms. actually they lookalike.
+Unfortunately this works only in forward mode.
+I recommand to make the main chart invisible, as shown on the screenshot.
+Happy Trading
+Please Donate here to support our work and ensure we can continue to offer free stuff
+This screenshot shows a 5sec chart

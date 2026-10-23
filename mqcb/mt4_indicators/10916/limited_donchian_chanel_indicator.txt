@@ -1,0 +1,4 @@
+External variables:
+distance - required maximum width of the donchian chanel in points.
+fixed - if false, chanel can be narrower than "distance". If true, it has to be the size of "distance".
+Standard settings on EURUSD M5.

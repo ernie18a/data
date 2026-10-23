@@ -1,0 +1,2 @@
+Author: sx ted
+The indicator of trading sessions.

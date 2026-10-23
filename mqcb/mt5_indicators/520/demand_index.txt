@@ -1,0 +1,36 @@
+Demand Index is developed by James Sibbet. When calculating this index the prices and volume are used. This index is considered to be a leading one. In this version the index varies from +100 to -100. In other aspects the index calculation precisely repeats the author's version.
+There are six rules for the Demand Index:
+Divergence between the Index and a price trend supports the idea that the price is "weak";
+In case the market starts increasing its activity, new price highs are usually preceded by Demand Index maximum peaks (the Index works as a forward-looking indicator in this case);
+The case when a price reaches new highs but the Index value is lower than its previous top, is usually accompanied by "significant" reversals on the top (the Index works as an accompanying indicator in this case);
+The case when the Index crosses the zero level, shows the change of a trend (the Index works as a lagging indicator in this case);
+The case when the Index remains near the zero level for some time, shows that the current price move is weak and it will not last long;
+Wide long-term divergence between the prices and the Index values implies big tops and bottoms.
+This indicator allows to select a smoothing type out of ten possible versions:
+SMA
+- simple moving average;
+EMA
+- exponential moving average;
+SMMA
+- smoothed moving average;
+LWMA
+- linear weighted moving average;
+JJMA
+- JMA adaptive average;
+JurX
+- ultralinear smoothing;
+ParMA
+- parabolic smoothing;
+T3
+- Tillson's multiple exponential smoothing;
+VIDYA
+- smoothing with the use of Tushar Chande's algorithm;
+AMA
+- smoothing with the use of Perry Kaufman's algorithm.
+It should be noted that Phase type parameters for different smoothing algorithms have completely different meaning. For JMA it is an external Phase variable changing from -100 to +100. For T3 it is a smoothing ratio multiplied by 100 for better visualization, for VIDYA it is a CMO oscillator period and for AMA it is a slow EMA period. In other algorithms these parameters do not affect smoothing. For AMA fast EMA period is a fixed value and is equal to 2 by default. The ratio of raising to the power is also equal to 2 for AMA.
+The indicator uses SmoothAlgorithms.mqh library classes (must be copied to the terminal_data_folder\MQL5\Include). The use of the classes was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/520

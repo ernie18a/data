@@ -1,0 +1,11 @@
+Description:
+Very simple scalping EA, no Indicators. Logic is based on very fast price movements.
+Here is my scalping EA idea works most of the time, but needs to be better programmed.
+If some1 can help to modify it so it can be used on many pairs at the same time.
+Idea is very simple, no indicators at all.
+it keeps updating BuyStop and SellStop orders with each price movements.
+And when the market becomes heavy or news it won't get a chance to get updated quick... which means very fast price movement in one of the directions. This practically guarantees 10-15 pips movement.
+If some1 can help me to code it properly it would be very cool.. For the last 3 month i have a ratio of this working 4-6 wins vs 1 loss. ( and i noticed the loss mostly because i programmed wrong). Stop Loss should be adjusted to 5-7 pips ( if broker allowed)Works fine on Alpari US.
+PS. For some reason and i cant identify the problem- after executing the order it may not send another order till i disable and re=enable EA ( gotta be a bug somewhere). Would appreciated any help.)
+oops. One more thing, i used the coding template from IBFX scripts and modified for my use.
+Thanks for the Help... And ignore the grammar.

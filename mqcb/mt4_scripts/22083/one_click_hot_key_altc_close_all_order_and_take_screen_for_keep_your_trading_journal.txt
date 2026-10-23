@@ -1,0 +1,5 @@
+Copyright 2018 , raymondyeung.htc@gmail.com
+Speed Technology
+One Click (Reference : Hot Key Alt-C) close all order and take screen for keep your trading journal
+1) Close all order on the Symbol Chart
+2) Take screen for keep a Trading Journal

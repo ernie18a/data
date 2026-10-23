@@ -1,0 +1,10 @@
+Real author:
+LGP
+A fractal based variation. Close prices are used for blue and pink fractals, Highs and Lows are used for red and green fractals.
+This indicator was first implemented in MQL4 and published in
+Code Base
+on 14.09.2007.
+Fig. 1. Indicator LGP_Ivanoff_Maloma-Demark_levels
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18471

@@ -1,0 +1,58 @@
+Price Action Day Trader EA
+Core Trading Logic
+The EA analyzes price action on every new bar and executes trades based on three primary setups:
+Pin Bar (Rejection):
+Identifies price rejection at key levels with customizable wick-to-body ratios.
+Engulfing Candles (Momentum):
+Captures reversals when a large candle completely overcomes the previous price action.
+Inside Bar Breakouts (Consolidation):
+Trades the breakout of a mother bar, signaling the continuation or reversal of a trend.
+Trend Filter:
+A dual EMA (default 20/50) ensures the EA only enters trades in the direction of the medium-term momentum.
+S/R Context:
+Integrated Support and Resistance lookback allows the EA to validate signals based on historical price levels.
+Key Features
+Dynamic Risk Management:
+Automatically calculates lot sizes based on a percentage of account balance (default 1.5%).
+Safety Protections:
+Includes a
+Max Daily Loss
+limit (3%) to protect capital during volatile market days.
+Trade Evolution:
+Features an automatic
+Break-Even
+trigger and a
+Trailing Stop
+to lock in profits as the trade moves in your favor.
+Time Control:
+Built-in session filter allows you to define specific trading hours and automatically close positions at the end of the day.
+Auto-Detection Filling Mode:
+Sophisticated order execution logic that automatically detects and adapts to your broker's filling mode (FOK, IOC, or Return).
+Input Parameters
+RiskPercent:
+Percentage of balance to risk per trade.
+StopLossPips:
+Fixed stop loss distance.
+TakeProfitRatio:
+Target profit relative to the stop loss (e.g., 2.0 = 2:1 R:R).
+PinBarRatio:
+Minimum wick-to-body ratio for pin bar detection.
+SRLookback:
+Number of bars used to calculate Support and Resistance levels.
+Fast/Slow MA:
+Periods for the EMA trend filter.
+Start/End Hour:
+Time window for opening new positions.
+Recommendations
+Timeframes:
+Optimized for
+M15
+,
+H1
+, and
+H4
+.
+Symbols:
+Works best on major pairs (EURUSD, GBPUSD) and XAUUSD.
+Optimization:
+It is recommended to optimize the StopLossPips and PinBarRatio based on the specific volatility of your chosen instrument.

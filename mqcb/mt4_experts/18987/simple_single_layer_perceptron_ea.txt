@@ -1,0 +1,310 @@
+1. About Perceptrons
+About Perceptron:
+Dr. Mark Humphrys Single-layer Neural Networks (Perceptrons)
+I referred to "
+Artificial Intelligence
+" as the logic of Perceptron.
+2. Algorithm
+2.1. Inputs
+The
+w1
+,
+w2
+,
+w3
+and
+w4
+are weights which set the values decided by your optimization.
+input
+int
+x1 =
+0
+;
+//weight1
+input
+int
+x2 =
+0
+;
+//weight2
+input int    x3 =
+0
+;
+//weight3
+input
+int
+x4 =
+0
+;
+//weight4
+2.2. Perceptron
+For making a simple EA, threshold is zero. And output isn't changed "fires" 1, "doesn't fire" 0.
+double
+w1 = x1 -
+100
+;
+double w2 = x2 -
+100;
+double
+w3 = x3 -
+100
+;
+double
+w4 = x4 -
+100
+;
+//Perceptron before one bar 2017/03/18
+double
+a11 = ((
+iRSI
+(
+Symbol
+(),
+0
+,
+12
+,
+PRICE_MEDIAN
+,
+1
+))/
+100
+-
+0.5
+)*
+2
+;
+double
+a21 = ((
+iRSI
+(
+Symbol
+(),
+0
+,
+36
+,
+PRICE_MEDIAN
+,
+1
+))/
+100
+-
+0.5
+)*
+2
+;
+double
+a31 = ((
+iRSI
+(
+Symbol
+(),
+0
+,
+108
+,
+PRICE_MEDIAN
+,
+1
+))/
+100
+-
+0.5
+)*
+2
+;
+double
+a41 = ((
+iRSI
+(
+Symbol
+(),
+0
+,
+324
+,
+PRICE_MEDIAN
+,
+1
+))/
+100
+-
+0.5
+)*
+2
+;
+double
+Current_Percptron = (w1 * a11 + w2 * a21 + w3 * a31 + w4 * a41);
+//Perceptron before two bar 2017/03/18
+double
+a12 = ((
+iRSI
+(
+Symbol
+(),
+0
+,
+12
+,
+PRICE_MEDIAN
+,
+2
+))/
+100
+-
+0.5
+)*
+2
+;
+double
+a22 = ((
+iRSI
+(
+Symbol
+(),
+0
+,
+36
+,
+PRICE_MEDIAN
+,
+2
+))/
+100
+-
+0.5
+)*
+2
+;
+double
+a32 = ((
+iRSI
+(
+Symbol
+(),
+0
+,
+108
+,
+PRICE_MEDIAN
+,
+2
+))/
+100
+-
+0.5
+)*
+2
+;
+double
+a42 = ((
+iRSI
+(
+Symbol
+(),
+0
+,
+324
+,
+PRICE_MEDIAN
+,
+2
+))/
+100
+-
+0.5
+)*
+2
+;
+double
+Pre_Percptron = (w1 * a12 + w2 * a22 + w3 * a32 + w4 * a42);
+I use RSI in this EA, but I think that other oscillators are OK. RCI, W%R and so on.
+2.3.Order Opening and Closing
+When previous Perceptron under 0 and current Perceptron upper 0, if there is a short position, it is closed.
+And EA sends a long order.
+if
+(Pre_Percptron <
+0
+&& Current_Percptron >
+0
+)
+//long signal
+{
+//If there is a short position, send order close
+if
+(pos <
+0
+)
+      {
+         ret =
+OrderClose
+(Ticket,
+OrderLots
+(),
+OrderClosePrice
+(),
+0
+);
+if
+(ret) pos =
+0
+;
+//If order close succeeds, position status is Zero
+}
+//If there is no position, send long order
+if
+(pos ==
+0
+) Ticket =
+OrderSend
+(
+_Symbol
+,
+// symbol
+OP_BUY
+,
+// operation
+Lots,
+// volume
+Ask
+,
+// price
+0
+,
+// slippage
+0
+,
+// stop loss
+0
+,
+// take profit
+Trade_Comment,
+// comment
+MagicNumber,
+// magic number
+0
+,
+// pending order expiration
+Green
+// color
+);
+   }
+Conversely, when current Perceptron under 0 and previous Perceptron upper 0, if there is a long position, it is closed.
+And EA sends a short order.
+3. Optimization
+Load "Slime_Mold_RSI_template.set", and You choose "open price only" for Model.
+4. Comment and Magic Number
+I set Magic Number the duration used for optimization, this EA uses Magic Number in comment.
+string
+Trade_Comment =
+IntegerToString
+(MagicNumber,
+5
+,
+' '
+) +
+"Days-Optimization"
+;
+5. Related article (in Japanese)
+https://qiita.com/Kei-Sanada/items/cd6b8d9c02bc9eea1e01

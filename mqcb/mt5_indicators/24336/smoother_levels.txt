@@ -1,0 +1,4 @@
+Theory :
+The "smoother" is sometimes called Jurik average even though there is no evidence of being that. Hence the name of this one is simply smoother. The indicator is using the method of finding "self adjusted" levels in order to assess trend direction and possible support and resistance levels
+Usage :
+You can use color changes as signals

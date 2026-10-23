@@ -1,0 +1,4 @@
+The idea of the indicator
+Find the moments when a fully formed candlestick (bar #1) crosses the 'Moving Average' indicator. Then we look for the previous intersection. Between the dates found, draw a rectangle.
+Pic. 1. High Low Сluster
+The borders of the rectangle (upper and lower) can be used as Stop Loss and Take Profit levels.

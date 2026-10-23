@@ -1,0 +1,28 @@
+Indicator Sylvain Vervoort RSI inverse fisher transform built on Sylvain Vervoort
+Rainbow Moving Average
+It has five adjustable parameters:
+SVRMA period
+- Rainbow Moving Average calculation period
+RSI period
+- RSI calculation period
+MA period
+- smoothing period
+Overbought
+- overbought level
+Oversold
+- oversold level
+Calculations:
+SVRSI = ((Pow(2.71828183,2 * ZeroLagEMA)-1.0) / (Pow(2.71828183,2 * ZeroLagEMA)+1.0) + 1.0) * 50.0
+where:
+ZeroLagEMA = SmMA1 + (SmMA1 - SmMA2)
+SmMA1 = EMA(RSI, MA period)
+SmMA2 = EMA(SmMA1, MA period)
+RSI = 0.1 * (TmpRSI - 50.0)
+TmpRSI = RSI(RMA, RSI period)
+RMA = Rainbow Moving Average(SVRMA period)
+No need to have indicator
+Rainbow Moving Average
+in the terminal, it is calculated independently
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22698

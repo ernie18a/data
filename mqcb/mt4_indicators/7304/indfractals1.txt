@@ -1,0 +1,5 @@
+Author: MetaQuotes Software Corp
+The indicator shows the fractals of different time periods on one chart (with different colors). Only М15, Н1, Н4, D1 are used.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7304

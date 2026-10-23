@@ -1,0 +1,6 @@
+Theory :
+The built in stochastic allows the usage of only two price combinations. The "extended" version already included all the rest of the prices. This version is further extending the indicator : it is adding "floating levels".
+This version :
+Instead of using some fixed levels as a criteria for over-bought and oversold, now the indicator calculates "floating levels" which are adjusting itself to the changes of the stochastic. That, implicitly, make the stochastic adaptive, so in this case w can say that we have an adaptive extended stochastic
+Usage :
+You can use the color change as signals. Setting the upper and lower level to 50% would in effect simulate a sort of "zero line" crosses for stochastic - without having a real zero line

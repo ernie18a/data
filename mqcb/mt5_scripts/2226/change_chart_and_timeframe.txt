@@ -1,0 +1,18 @@
+Real Author:
+The inspiration comming from
+ChartChanger
+by
+Olegs Kucerenko
+(see
+ChartNext
+script).
+Modified scripts to change Charts(next,previous) and Timeframes(higher,lower) of all charts quickly by hotkeys.
+script ChartNext:
+change to next Chart;
+script ChartBefore:
+change to previous Chart;
+script PeriodNext:
+select higher timeframe of all Charts;
+script PeriodBefore:
+select lower timeframe of all Charts;
+Please add a shortcut key to every script at you choice.

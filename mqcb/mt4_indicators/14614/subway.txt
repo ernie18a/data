@@ -1,0 +1,14 @@
+The indicator displays a channel based on the moving averages.
+Description of the indicator settings:
+Level_Model — channel line layout model relative to the central line at a distance in points,
+at
+Model №1: +89, +144, +233, -89, -144, -233,
+at
+Model №2: +144, +233, +377, -144, -233, -377,
+at Model №3: +233, +377, +610, -233, -377, -610,
+at Model №4: +377, +610, +987, -377, -610, -987
+MA_1 — The averaging period for the indicator calculation — fast Moving Average.
+MA_2 — The averaging period for the indicator calculation — slow Moving Average.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14614

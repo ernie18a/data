@@ -1,0 +1,4 @@
+Author:
+Rasoul Mojtahedzadeh
+Donchian Channel indicator is originally designed by Richard Donchian. The indicator can capture the price movement and the price trend decently. There is only one parameter to set manually, the number of previous trading sessions, or bars, which has a default value of 20. The highest high, the lowest low and their mean value is calculated which indicates the current support and resistance levels. One can use this indicator to develop his/her own scalping strategy. In the following figure, there is an example how to spot a SELL signal for scalping purposes:
+As soon as the current candle is closed such that its highest high touches the upper band of Donchian Channel (Red Line), open a SELL position.

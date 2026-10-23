@@ -1,0 +1,11 @@
+Author:
+FX5
+Indicator FX5_SelfAdjustingRSI.
+Parameters:
+extern int rsiPeriod =14;
+extern double diviation =2;
+extern bool MA_Method =true;
+extern color rsiColor =Blue;
+extern color overBoughtColor =Red;
+extern color overSoldColor =Green;
+Indicator FX5_SelfAdjustingRSI

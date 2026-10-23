@@ -1,0 +1,19 @@
+Real author:
+Avery T. Horton, Jr. aka TRO
+A simple volatility meter which displays sizes of candlesticks in a separate subwindow. If the size of a candlestick is greater than the threshold determined by the input parameter Treshold, the histogram is purple, otherwise it is pink.
+//+-----------------------------------+
+//|  INDICATOR INPUT PARAMETERS       |
+//+-----------------------------------+
+input
+uint
+Threshold=
+200
+;
+// Threshold in points
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 23.05.2008.
+Figure 1. The TRO_RANGE indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1755

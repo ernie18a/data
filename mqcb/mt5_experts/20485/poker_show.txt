@@ -1,0 +1,79 @@
+The author of the idea
+:
+Gladiator
+.
+The MQL5 code author
+:
+Vladimir Karputov
+.
+The EA determines whether or not to enter a position based on the random number generator. It has eight gradations: the
+Poker combination number
+parameter:
+Straight-flush → 127;
+Quads → 255;
+Full House → 511;
+Flush → 1023;
+Straight → 2047;
+Set → 4095;
+Two pairs → 8191;
+Couple → 16383.
+If the given gradation is greater than the current value of the random number generator, then this is a signal.
+Then, the presence of a trend is checked:
+If the
+Reverse
+parameter is set to "false":
+Moving Average is
+higher
+than the Ask price by
+Minimum distance between MA and price
+- this is a BUY signal;
+Moving Average is
+lower
+than the Ask price by
+Minimum distance between MA and price
+- this is a SELL signal.
+If
+Reverse
+is set to "true":
+Moving Average is
+lower
+than the Bid price by
+Minimum distance between MA and price
+- this is a BUY signal;
+Moving Average is
+higher
+than the Bid price by
+Minimum distance between MA and price
+- this is a SELL signal.
+Input Values
+Poker combination number
+- the given gradation of the probability;
+Lots
+- the size of the position to open;
+Stop Loss
+Take Profit
+Use BUY
+- allow opening BUY positions;
+Use SELL
+- allow opening SELL positions;
+MA trend: Minimum distance between MA and price
+- the minimum distance value;
+MA trend: period
+- timeframe for the Moving Average;
+MA trend: averaging period
+- the averaging period for the Moving Average;
+MA trend: horizontal shift
+- the horizontal shift for the Moving Average;
+MA trend: smoothing type
+- the smoothing type for the Moving Average;
+MA trend: type of price
+- the price type;
+Reverse. "false" → MA on top - BUY; "true" → MA on top - SELL - reversing Moving Average signals;
+magic number
+- unique EA identifier;
+slippage
+- slippage size.
+Since this Expert Advisor is based on a random number generator, testings results are rendered incorrectly, because each time you get different results.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20485

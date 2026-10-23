@@ -1,0 +1,10 @@
+Real author:
+Ivan Kornilov
+The indicator colors candlesticks based on the highs and lows of previous bars.
+The original indicator was written in MQL4 and published in
+CodeBase
+on 25.04.2012.
+Fig.1. Indicator SimpleBars
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11390

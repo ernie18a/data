@@ -1,0 +1,21 @@
+The indicator displays high and low levels of a day (specified by DayShift input parameter value) on any timeframe. If DayShift is equal to zero, all indicator's data is recalculated within the current day!
+Indicator input parameters:
+//+-----------------------------------+
+//| Input parameters of the indicator |
+//+-----------------------------------+
+input
+uint
+DayShift=
+0
+;
+// shift of counting start in days
+input
+int
+Shift=
+0
+;
+// horizontal shift of the indicator in bars
+ShowMinMaxDayLevel
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1007

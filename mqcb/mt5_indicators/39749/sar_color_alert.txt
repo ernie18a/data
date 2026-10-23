@@ -1,0 +1,7 @@
+Description of the indicator
+Colored SAR indicator. Several types of alerts when changing colors. Can choose:
+Sound
+Alert
+Send mail
+Send push notification
+Pic. 1. SAR Color Alert

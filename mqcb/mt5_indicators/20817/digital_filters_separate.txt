@@ -1,0 +1,10 @@
+A set of digital filters that are always drawn in separate window (due to their nature).
+Supported types are:
+FTLM
+- Fast Trend Momentum.
+STLM
+- Slow Trend Momentum.
+RBCI
+- Range Bound Channel Index.
+PCCI
+- Perfect Commodity Channel Index.

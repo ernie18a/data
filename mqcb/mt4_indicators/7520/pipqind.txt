@@ -1,0 +1,2 @@
+Author: emsjoflo
+Indicator PIPQind.

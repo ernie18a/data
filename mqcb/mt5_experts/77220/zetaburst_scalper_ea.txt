@@ -1,0 +1,77 @@
+ZetaBurst
+Tick-driven scalper. No waiting for a candle to close — it watches a short rolling window of price movement (4 seconds by default) and builds a live statistical baseline of what a normal move looks like for whatever symbol it's running on. A move only counts as tradeable if it's a genuine outlier against that baseline: a z-score measured against the last InpStatsSampleCount window of returns, 3.0 standard deviations by default.
+That threshold wasn't the first thing tried. An earlier version used a fixed ATR fraction instead of a statistical baseline and it fired constantly on ordinary tick noise, losing heavily across every major pair it touched. The z-score version replaced it for exactly that reason.
+Momentum or reversion — your call
+Two modes ship with it. Momentum trades with the burst direction. Reversion trades against it. Neither is assumed correct. Which one actually fits a given symbol isn't something the EA decides for you — test both and see.
+Built to survive real broker delay
+This part came out of an actual problem, not a design guess. A position opens with no stop attached at all. The EA then reads back its own real fill price and calculates stop loss and take profit off that, never off a price snapshot taken before the delay — because that snapshot stops being accurate the moment price moves during execution. The stop distance also gets clamped to the symbol's own minimum stop level, so a trade never gets rejected for being technically too tight.
+And if stop attachment fails for any reason, the position closes immediately instead of sitting there unprotected. That rule exists because an earlier version didn't have it. A handful of trades slipped through without a stop attached during testing, and that alone was enough to produce 80%+ drawdown on some pairs. It's fixed now, but worth saying plainly instead of glossing over.
+The rest of the trade logic
+Every entry passes a cost check first: take profit has to be a real multiple of the current spread or the setup gets skipped. There's a daily trade cap and a daily loss limit — hit either one and no new entries go out for the rest of the day.
+Only one position runs at a time. Most retail MT5 accounts run in netting mode, where a second order on the same symbol doesn't become a new trade, it just merges into whatever's already open. Rather than build something that behaves wrong the moment it lands on a netting account, ZetaBurst cycles one trade fast instead — tick-level checks, a short cooldown, repeat.
+Backtest results
+All Market Watch symbols, M1, Every tick modelling, Random delay execution, 2026.01.01 through 2026.09.08. Default inputs throughout — z-score threshold 3.0, burst window 4 seconds, take-profit at 0.35x ATR, stop-loss at 0.55x ATR. Starting balance 10000 on every run.
+Symbol
+Profit
+Trades
+Profit Factor
+Expected Payoff
+Drawdown %
+USDJPY
+252535.49
+7468
+1.42
+33.82
+3.26
+EURUSD
+215509.88
+5618
+1.26
+38.36
+13.55
+AUDUSD
+114405.33
+7282
+1.16
+15.71
+19.70
+USDCHF
+93077.55
+5773
+1.25
+16.12
+4.62
+GBPUSD
+86900.21
+7205
+1.24
+12.06
+4.11
+USDCAD
+35444.88
+3676
+1.29
+9.64
+24.29
+USDSEK
+25835.38
+1037
+1.64
+24.91
+7.67
+NZDUSD
+10188.64
+5144
+1.05
+1.98
+51.40
+One of these doesn't belong with the rest. NZDUSD clears a profit factor of 1.05, barely positive, while sitting on 51% drawdown — nowhere close to how the other seven behaved. I wouldn't trade that pair with this EA as it stands.
+Non-forex and exotic symbols came back in the same test run and aren't shown here. Trade counts on those were too small to mean anything, and this EA wasn't built with those instruments in mind to begin with.
+The caveat that matters most: this is one backtest period, tuned and tested against itself. It hasn't been validated on a separate out-of-sample period yet, and a strategy that looks good on the data it was built around isn't proof of a real edge until it holds up on data it's never seen. I'm publishing with what's shown here rather than waiting on that, and this listing will get updated once out-of-sample testing is done.
+Inputs
+Burst detection — InpBurstWindowSeconds, InpStatsSampleCount, InpZScoreThreshold, InpModeIsMomentum
+Trade management — InpVolATRPeriod, InpRiskPercent, InpTakeProfitATRMult, InpStopLossATRMult, InpMinTPToSpreadRatio, InpMaxSpreadPoints, InpCooldownSeconds
+Daily limits — InpMaxTradesPerDay, InpDailyLossLimitPercent
+Session filter — InpUseSessionFilter, InpSessionStartHour, InpSessionEndHour
+Test on demo before anything else. Past backtest performance isn't a promise of future results. Feedback welcome.
+— Ali Rajput

@@ -1,0 +1,5 @@
+The EA for trailing along a price channel.
+Tightening trailing and removal of pending orders according to a symbol, where the EA is launched, are added.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11350

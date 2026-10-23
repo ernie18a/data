@@ -1,0 +1,9 @@
+volume - number of ticks per bar
+Actions for getting a chart:
+1) Run the EA in the tester in "all ticks" mode on some period of time.
+2) A file of "EURUSD volume 100.csv" type will appear in the folder terminal_catalog\tester\files.
+3) In the quotes archive delete history of an unnecessary pair and import new history from the file (it is recommended to disconnect from the server to prevent adding of new quotes).
+Ready. Now you can test EAs on the new history (in the tester choose the symbol and the timeframe with the downloaded new history).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7754

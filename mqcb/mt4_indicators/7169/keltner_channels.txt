@@ -1,0 +1,7 @@
+Author: Gilani
+I think it is a great type of indicators!
+As Eric L. Naiman said in his book - "Trader's small encyclopedia":
+"Professional traders operate on channel boundaries with very tight stops. This allows them to receive such an over spot, that several losses in a row are acceptable. Novices, however, trade inside the channel and lose money."
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7169

@@ -1,0 +1,31 @@
+Real author:
+Akif TOKUZ
+The indicator detects and marks the WRB (Wide Range Bars) or candlesticks with Wide Range Bodies. Because WRBs are not useful themselves, the indicator also determines hidden gaps based on these bars. It shows filled and unfilled hidden gaps differently, so you can quickly get the current situation. You can also turn on notifications about price entering the unfilled gap area.
+Input Parameters:
+UseWholeBars
+(by default = false) — if
+true
+, the indicator searches for Wide Range Bars instead of Wide Range Bodies.
+WRB_LookBackBarCount
+(by default = 3) — how many bars to compare to determine WRB. The higher this price, the rarer and more significant WRBs will be.
+WRB_WingDingsSymbol
+(by default = 115) — text symbol code to designate WRBs. By default, a small rhombus is used.
+HGcolor1
+(by default = clrDodgerBlue) — first (and default) hidden gap rectangles color.
+HGcolor2
+(by default = clrBlue) — second color for hidden gap rectangles.
+HGstyle
+(by default = STYLE_SOLID) — line style for drawing hidden gap rectangles.
+StartCalculationFromBar
+(by default = 100) — number of bars in chart history to analyze to mark WRBs and hidden gaps.
+HollowBoxes
+(by default = false) — if
+true
+, the hidden gap rectangles will be without filling.
+DoAlerts
+(by default = false) —
+true
+turns on notifications about price entering a hidden gap area.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13174

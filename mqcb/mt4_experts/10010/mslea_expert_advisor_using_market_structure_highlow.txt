@@ -1,0 +1,90 @@
+MS Lea calculates the last n Local Highs/Lows and waits for a break out. Please see my article at
+http://codebase.mql4.com/en/code/9720
+about Local High/Low.
+We make a long trade if the price moves above the local high. (if the price goes above the green line)
+We make ashort trade trade if the price goes below the local low. (if the price goes below the red line).
+Additional a distance in PIPs can be added, so for example the price must move 5 pips above the last high for a long trade or 5 pips below the low.
+The trades gets stopped by trailing stop loss.
+Parameters:
+Level: 1 = Last recent local high/low. Higher numbers use the minimum/maximum of the last n local low/high.
+Distance: Distance in Pips from the low/high
+MaxTrades: Number of trades allowed. It creates a new trade, each time the stop loss of all other trades is save.
+Lots. (0 = Minimum required lots)
+Stop Loss (negativ = -x * minimum stop loss, e.g. if your broker lets you set stop loss eurusd at minimum 10 pips, -3 means 30 Pips Stop Loss)
+TakeProfit (same with negativ numbers)
+BreakEven (same with negative numbers). If it wins x pips, it sets the stop loss to 0
+The expert is able to open as many positions as you like, however in order to open a new position, the stop loss of all other positions must be save.
+The expert is split into ea.mhq which goes into the include directory and the expert code. This keeps the expert code small and simple while all order management and tools are separete. You are welcome to develop your own expert with ea.mqh.
+Please support the author in order to continue with free code (see comments in the mq4)
+Strategy Tester Report
+MSLea
+EGlobal-Cent2 (Build 229)
+Symbol
+EURUSD (Euro vs US Dollar)
+Periode
+15 Minuten (M15) 2010.11.18 00:00 - 2010.11.30 23:59 (2010.11.18 - 2010.12.01)
+Modell
+Open Preis (nur für Expert Advisors, die offensichtlich Balkenöffnung kontrollieren)
+Parameter
+MaxTrades=1; Level=2; Distance=11; Trade_________________="Trade parameters"; Lots=1; Slipage=20; StopLoss=30; TakeProfit=0; TrailingStopLoss=true; BreakEven=20; MinMoney=20; Magic=12345; _____________________________i7="Bildschirmaufteilung"; StartY=50; StartX=0;
+Balken im Test
+1857
+Ticks modelliert
+2712
+Modellierungsqualität
+n/a
+Fehler in Charts-Anpassung
+0
+Ursprüngliche Einlage
+10000.00
+Gesamt netto Profit
+5908.64
+Brutto Profit
+6028.64
+Brutto Loss
+-120.00
+Profit Faktor
+50.24
+Erwartetes Ergebnis
+1477.16
+Drawdown absolut
+170.00
+Maximaler Drawdown
+1080.00 (7.83%)
+Relative Drawdown
+8.18% (1040.00)
+Trades gesamt
+4
+Short Positionen (gewonnen %)
+1 (100.00%)
+Long Positionen (gewonnen %)
+3 (66.67%)
+Profit Trades (% gesamt)
+3 (75.00%)
+Loss Trades (% gesamtl)
+1 (25.00%)
+Grösster
+Profit Trade
+5241.31
+Loss Trade
+-120.00
+Durchschnitt
+Profit Trade
+2009.55
+Loss Trade
+-120.00
+Maximum
+aufeinanderfolgende Gewinne (Profit in Geld)
+3 (6028.64)
+Aufeinanderfolgende Verluste (Verlust in Geld)
+1 (-120.00)
+Maximal
+Aufeinanderfolgender Profit (Anzahl der Gewinne)
+6028.64 (3)
+Aufeinanderfolgende Verluste (Anzahl der Verluste)
+-120.00 (1)
+Durchschnitt
+aufeinanderfolgende Gewinne
+3
+aufeinanderfolgende Verluste
+1

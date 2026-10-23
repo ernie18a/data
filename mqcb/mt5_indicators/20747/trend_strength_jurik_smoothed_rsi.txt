@@ -1,0 +1,3 @@
+Trend strength assessment based on Jurik smoothed RSI.
+The purpose of the "trend strength" is to try to determine when the change of some other indicator is significant enough to make it a trend. Usually the "trend strength" indicator is using smoothed RSI.
+This version is using Jurik smoothed RSI. Since that type of smoothing is very responsive to values changes and still produces very smooth results, the produced RSI is a very good basis to be used in the trend strength indicator calculation and produces entry points without too much false signals.

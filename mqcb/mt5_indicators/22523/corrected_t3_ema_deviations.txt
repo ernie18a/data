@@ -1,0 +1,10 @@
+Origin of correcting algorithm  :
+Dr. Alexander Uhl invented a method that he used to filter the moving average and to check for signals. Originally it uses standard deviation as a measure to correct the averages values.
+This indicator :
+This indicator is using the modified "correcting" method. Instead of using standard deviation for calculation, it is using EMA deviation (originally published here :
+EMA deviation
+) which results in two things.
+the calculation of EMA deviation can be made to be much faster than the standard deviation and that results in more efficient code
+a bit surprisingly, this way of "correcting" produces less signals then when standard deviation is used. That is a result of EMA deviation being more responsive to price changes and then the correcting is less sensitive to whipsaws. In any case experimenting is advised before using it in live trading
+Usage :
+You can use the change of color as signals

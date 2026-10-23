@@ -1,0 +1,8 @@
+Theory :
+Reasons for applying min/max normalization on RSI were explained here :
+Normalized RSI
+. This version is adding some options that can help using the indicator for trading decisions : multiple choice of color changes (on outer levels cross, on level 50 cross or on slope change) and some visual aids that can help see the current state of the RSI on a glance. And it is made display all that in the main chart ...
+Usage :
+You can use color changes of the indicator as signals, or any other strategy based on RSI
+PS:
+The "big picture" example

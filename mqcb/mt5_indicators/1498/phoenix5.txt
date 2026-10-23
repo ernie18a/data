@@ -1,0 +1,9 @@
+The real author:
+fryk@tlen.pl
+Phoenix5 is Forex signal indicator which traditionally represents itself a set of pink and blue points. The indicator forms its values on the basis of an entire group of technical indicators.
+Pink point is a signal to sell, blue point is a signal to buy. It should be noted that there can be several consecutive single color points, respectively, you can either increase the position or reopen it if you take small profits. For the most common currency pairs, it is possible to use a specially and individually selected input parameters of the indicator, using the iPrefSettings input variable of the indicator.
+It is difficult to understand what guided the author of this indicator when he was writing the code, but it is logical to mirror the signals which it forms. If anybody is interested I made such replacement in the ContrPhoenix5 indicator!
+Fig.1 The Phoenix5 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1498

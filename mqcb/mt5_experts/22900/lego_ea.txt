@@ -1,0 +1,26 @@
+The author of the idea
+-
+Roman
+mq5 code author
+-
+barabashkakvn
+The Expert Advisor combines signals from several indicators:
+iCCI (Commodity Channel Index, CCI)
+iMA (Moving Average, MA)
+iStochastic (Stochastic Oscillator)
+iAC (Acceleration/Deceleration, Accelerator/Decelerator Oscillator, AC)
+iDeMarker (DeMarker, DeM)
+iAO (Awesome Oscillator, AO)
+or uses only one of the indicators.
+You can combine conditions: use entry signals from one indicator, while using exit signals from another. For example,
+CCI: use CCI to open
+is responsible for using CCI entry signals, while
+CCI: use CCI to close
+applies CCI indicator for closing. The principle is the same for other indicators.
+Lot size management
+If the
+Multiply a lot if the last deal was unprofitable
+ratio parameter is not equal to "1.0", while the previous position was closed with a loss, the lot of the loss-making position is increased by this ratio.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22900

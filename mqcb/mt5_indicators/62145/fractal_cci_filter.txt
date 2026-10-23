@@ -1,0 +1,41 @@
+Fractal with CCI Filter
+Description
+This indicator enhances the classic fractal indicator by adding a smart filter based on the Commodity Channel Index (CCI). While the standard fractal indicator generates many false signals, especially in sideways markets, this version only displays signals when the CCI confirms the strength of the movement, significantly increasing the signal success rate.
+Main Features
+CCI Smart Filter
+: Fractal signals are only displayed when the CCI reaches extreme levels, confirming the strength of the movement
+Timing accuracy
+: Uses the CCI value exactly on the signal candle, not on the confirmation candle
+Flexible configuration
+: CCI period and filtering threshold are fully configurable
+Clear visualisation
+: Red arrows above candles for sell signals, green arrows below for buy signals
+Works on all timeframes
+: Adapted to work correctly in both real mode and Strategy Tester
+How to Use
+Sell Signals
+: When a red arrow appears above the candle, it indicates a confirmed bullish fractal with CCI above the threshold.
+Buy Signals
+: When a green arrow appears below the candle, it indicates a confirmed bearish fractal with CCI below the negative threshold.
+Confirmation
+: For greater reliability, wait for the confirmation candle to close before entering the trade.
+Inputs
+-
+CCI_Period
+: CCI period (default: 7) - adjust according to your strategy
+-
+CCI_Threshold
+: CCI threshold for filtering fractals (default: 110) - increase for rarer and more reliable signals
+Usage Tips
+- For reversal operations: Use CCI_Threshold = 100-110
+- For trend trading: Combine with a long-term moving average
+- In very volatile markets: Increase CCI_Threshold to reduce false signals
+- In sideways markets: Decrease CCI_Period for greater sensitivity
+Observations
+- This indicator does not repaint - signals are confirmed after the necessary candles close
+- Signals are plotted exactly on the candle where the fractal occurs, with the CCI checked on the same candle
+- Based on the correct mathematical logic of fractal detection (5 candles for confirmation)
+This indicator is the result of collaborative work between Joy and Qwen, enhancing the traditional fractal approach with a statistically significant CCI filter.
+Translated from Portuguese by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/pt/code/62145

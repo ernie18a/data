@@ -1,0 +1,23 @@
+You can find a free version of this program on the MetaTrader Market at
+https://www.mql5.com/en/market/product/25154
+Chaos Trader Lite attempts to use aspects of chaos theory to place trades in the marketplace. This trader, in particular, draws upon theories made by Bill Williams. Every version of MetaTrader contains the Bill Williams indicators. I wondered why was he deemed so important as to have his own set of indicators added to MetaTrader with name attribution. Conducting research I found that Bill Williams wrote a book using chaos theory to trade the markets. The Bill Williams indicators are useful when trading using chaos theory.
+The Expert locates bearish and bullish divergence and initiates a trade at the possible beginning of a trend change, this is the first wise man. Next, it will attempt to add positions if the trade if going in the correct direction based upon the awesome oscillator, when the awesome indicator repeats three up bars for buys-stops or three down bars for sell-stops, this is the second wise man.
+The third wise man is based on fractals. When a fractal is formed a buy stop goes above it if it is a buy fractal and vice versa, supposedly during a trend there are moments where the trend stops for a moment and then recovers, this is designed to have you add to your positions at those recovery moments. Suggest adding fractal indicator along with alligator indicator.
+If at anytime it gets a notice that it is trading in the wrong direction it will close all the trades in the wrong direction and open one up in the direction it believes to be correct. The Expert Advisor has six parameters.
+magnitude = 10
+- This indicates the pips of distance you want to be from the mouth of the alligator.
+UseFirstWiseMan
+- If you want to take first wise man trades.
+UseSecondWiseMan
+- If you want to take the second wise man trades.
+UseThirdWiseMan
+- If you want to take the third wise man trades.
+lotSize
+- The size of the lots you want to trade with.
+magic
+- A unique identifier for this Expert adviser.
+"
+The market is a creature of chaos—A far from equilibrium soup simmering on the uneven flame of trader psychology.
+"
+Gregory-Williams, Justine. Trading Chaos: Maximize Profits with Proven Technical Techniques (A Marketplace Book) (Kindle Locations 591-592). Wiley. Kindle Edition.
+This is not a guarantee of any profits above is just a citation to the book I used to draw inspiration from for the creation of the Expert Advisor. This Expert Advisor is a proof of concept project and is not a money making endeavor, that's why it's free of charge.

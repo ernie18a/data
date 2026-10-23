@@ -1,0 +1,2 @@
+Another offshoot of the Bollinger Bands. The concept of post smoothing on the outer bands is to smooth the upper and lower band individually after the standard deviation calculation has taken place.
+This can provide a very smoothed upper and lower band. The smoothing of the upper band doesn't have to reflect a change on the lower band, and the smoothing on the lower band doesn't have to reflect a change on the upper band, in other words, the upper and lower bands can be smoothed individually.

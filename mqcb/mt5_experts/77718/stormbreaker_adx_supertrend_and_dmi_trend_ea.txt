@@ -1,0 +1,143 @@
+Stormbreaker ADX
+is a MetaTrader 5 Expert Advisor that combines Supertrend direction with ADX strength and the +DI/−DI directional relationship. It evaluates signals on completed candles, sizes positions from a fixed equity-risk budget, and places an ATR-based protective stop.
+The downloadable source is intended for study, testing and modification. The EA does not promise profits; test it with your broker's data and contract specifications before considering live use.
+Figure 1. The entry filters are evaluated in sequence at the start of a new signal-timeframe candle.
+1. Strategy overview
+The default signal timeframe is H4. On each new H4 bar, the EA reads the previous completed bar (shift 1), calculates a custom Supertrend from ATR, and reads ADX, +DI, −DI and ATR values. A trade is considered only when the Supertrend direction and directional movement agree and ADX meets the entry threshold.
+Component
+Default
+Purpose
+Signal timeframe
+H4
+Signal evaluation timeframe; entries are checked once per new bar.
+Supertrend
+ATR 10, factor 3.0
+Defines the current trend direction.
+ADX / DMI
+ADX 14; entry threshold 23
+Filters for trend strength and confirms direction using +DI and −DI.
+Exit strength threshold
+ADX below 18
+Closes a managed position when trend strength weakens below the exit level.
+Initial stop
+2 × ATR(10)
+Places the stop from the completed signal bar's close, then aligns it to broker price rules.
+Risk budget
+0.5% of current equity
+Calculates volume from the estimated loss between the current entry quote and stop.
+Take profit
+None
+There is no fixed take-profit target; exits are signal/strength based or by stop loss.
+2. Entry and exit rules
+Action
+Conditions
+Open a buy
+Buy entries enabled; Supertrend is bullish; ADX ≥ 23; +DI > −DI.
+Open a sell
+Sell entries enabled; Supertrend is bearish; ADX ≥ 23; −DI > +DI.
+Close an existing position
+ADX < 18, or Supertrend direction reverses against the position. An opposite qualifying signal also closes/reverses the managed position.
+The EA does not add to a same-direction position when it finds an existing position with the configured symbol and magic number. A stop-loss remains active independently of the signal exit.
+3. Risk-based volume calculation
+Before sending an order, Stormbreaker estimates the one-lot loss from the current Ask/Bid entry quote to the proposed stop using
+OrderCalcProfit
+. It divides the 0.5% equity risk budget by that estimated one-lot loss, then rounds the volume down to the broker's permitted volume step and applies the maximum-volume cap. It also checks available margin. If the minimum permitted lot would exceed the risk budget, or margin is insufficient, the EA skips the trade.
+double risk_cash = AccountInfoDouble(ACCOUNT_EQUITY) * 0.5 / 100.0; double one_lot_loss = MathAbs(one_lot_profit); double volume = MathFloor((risk_cash / one_lot_loss) / volume_step) * volume_step; volume = MathMin(volume, MaxVolume);
+Excerpt simplified for explanation.
+The full source includes checks for invalid prices, tick/volume alignment, broker stop distances and margin. Because the stop is derived from the previous candle close while sizing uses the current entry quote, slippage/gaps and execution costs can make the realized loss differ from 0.5%. This is a risk target, not a guaranteed maximum loss.
+Figure 2. Stop levels are ATR-based; the EA has no fixed profit target.
+4. Inputs and defaults
+Input
+Default
+Meaning
+SignalTimeframe
+PERIOD_H4
+Timeframe used for signals.
+SupertrendFactor
+3.0
+ATR multiplier used by Supertrend.
+SupertrendATRPeriod
+10
+ATR period for Supertrend and the initial stop.
+ADXPeriod
+14
+ADX/DMI calculation period.
+EntryADX
+23.0
+Minimum ADX for a new entry.
+ExitADX
+18.0
+ADX level below which an open position is closed.
+StopATRMultiple
+2.0
+ATR multiple used for the initial stop.
+MaxVolume
+100.0
+Upper bound on lots; actual symbol limits still apply.
+DeviationPoints
+20
+Maximum price deviation passed to the trade request, in points.
+EnableBuy / EnableSell
+true / true
+Enable or disable each direction.
+MagicNumber
+51003
+Identifier used to locate the EA's managed position.
+The 0.5% risk percentage is currently a fixed constant in the source code, not a user input.
+5. MQL5 signal code example
+The following excerpt shows the closed-bar entry conditions used by the EA:
+bool long_signal = EnableBuy && direction < 0 && adx >= EntryADX && plus_di > minus_di; bool short_signal = EnableSell && direction > 0 && adx >= EntryADX && minus_di > plus_di; if(long_signal) STOpenPosition(true, bar.close - StopATRMultiple * atr, 0.0, MagicNumber, "ST ADX long", MaxVolume, DeviationPoints); else if(short_signal) STOpenPosition(false, bar.close + StopATRMultiple * atr, 0.0, MagicNumber, "ST ADX short", MaxVolume, DeviationPoints); else if(position != 0 && (adx < ExitADX || (position > 0 && direction > 0) || (position < 0 && direction < 0))) STClosePosition(MagicNumber);
+In the full EA, these conditions run only after detecting a new signal-timeframe bar and successfully retrieving the previous closed bar and indicator values.
+6. Broker backtest snapshot
+The following figures are taken from the supplied MetaTrader 5 Strategy Tester reports for XAGUSD on H4. The initial deposits differ, so net return is shown alongside net profit. Tick-history quality also varies and is particularly limited for Fusion Markets.
+Broker
+Period end
+Initial deposit
+Net profit
+Net return
+Max equity DD
+Profit factor
+Sharpe
+Trades
+Real ticks
+IC Markets
+2026-09-23
+USD 1,000,000
+USD 154,482.51
+15.45%
+19.40%
+1.12
+0.50
+520
+32%
+BlackBull Markets
+2026-09-24
+USD 1,000,000
+USD 225,766.54
+22.58%
+5.00%
+1.45
+1.00
+196
+41%
+Fusion Markets
+2026-09-23
+USD 100,000
+USD 26,680.57
+26.68%
+8.97%
+1.26
+2.22
+374
+4%
+Figure 3. Broker-specific historical results from the supplied reports. Fusion's report used only 4% real ticks.
+Testing limitations:
+These are historical Strategy Tester results, not audited live performance. Reported periods end on slightly different dates; initial deposits and broker specifications differ. Modeling quality ranges from 4% to 41% real ticks. The numbers are not directly interchangeable and do not predict future results. Re-run tests with the intended broker, symbol specification, spread, commissions, swaps and tick data.
+7. Compatibility and practical use
+Platform: MetaTrader 5; source language: MQL5.
+Attach the EA to the chart of the symbol to trade; the signal timeframe is selected by SignalTimeframe .
+No external custom indicator files are required. The source uses the standard Trade\Trade.mqh library and built-in ATR/ADX data.
+Use a unique magic number for each EA instance. Avoid running other strategies or manual trades on the same symbol on netting accounts, where positions are aggregated.
+Test broker-specific minimum volume, tick size, stop-distance and margin requirements in Strategy Tester and on demo first.
+Risk notice:
+Automated trading involves substantial risk. A stop loss cannot guarantee the exit price in gaps or fast markets. Backtest, demo and historical results do not guarantee future outcomes. You are responsible for evaluating the EA and its settings before use.

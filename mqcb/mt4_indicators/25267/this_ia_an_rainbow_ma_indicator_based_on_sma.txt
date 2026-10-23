@@ -1,0 +1,1 @@
+This indicator uses various SMA to indicate a possible reversal point.

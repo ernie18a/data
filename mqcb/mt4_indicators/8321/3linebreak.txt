@@ -1,0 +1,4 @@
+An indicator that colors the bars of the bullish trend with the blue color and the bars of the bearish trend with the red color.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8321

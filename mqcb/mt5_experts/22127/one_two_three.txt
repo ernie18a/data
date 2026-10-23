@@ -1,0 +1,36 @@
+The author of the idea
+-
+Martes
+mq5 code author
+-
+barabashkakvn
+The EA applies iChaikin (Chaikin Oscillator, CHO) indicator to define the market state: flat or trend.
+Positions are opened only when a new bar appears (and only if there is an open signal), trailing works at each tick (the opportunity to move a stop loss level is checked at each tick).
+Flat definition principle
+The EA takes
+CHO: Number bars for flat
+bars and checks the condition: Chaikin Oscillator value should be within the range from
+"-"  CHO: Flat level
+to
+"+" CHO: Flat level
+on all used bars. Valid accuracy -
+Channels Flat or Open
+. Suppose that
+Channels Flat or Open
+is equal to 90%. If out of all bars, 90% or more are within the range from
+"-"  CHO: Flat level
+to
+"+" CHO: Flat level
+, there is a flat.
+Now, what should we do with all that data?
+In case of a flat, we simply wait for a new bar's arrival. Otherwise, check Chaikin Oscillator value on bar #0:
+if Chaikin Oscillator on bar #0 >=
+CHO: Open level
+=> BUY open signal
+if Chaikin Oscillator on bar #0 <=
+- CHO: Open level
+=> SELL open signal
+For EURUSD M5, the default values are written. The test result:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22127

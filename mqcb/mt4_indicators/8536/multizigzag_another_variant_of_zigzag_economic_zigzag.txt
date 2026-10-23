@@ -1,0 +1,40 @@
+It is based on the algorithm of the zigzag delivered together with MetaTrader 4 in 2005-2006.
+The algorithm is wonderful. It is the algorithm which is used in many custom indicators. Initially this algorithm was translated to MQL4 by Rosh. Many thanks to him for that. I would like to know who has invented this algorithm. If somenody knows, please write the name (or nickname) of the author in comments. Also I would like to know in which language it was previously written and in which trading platform it was used.
+The main disadvantages of the initial, 2005-2006, version:
+1) A big loading of the processor by the reason of the full recalculation of the zigzag on every tick. The low-power PCs virtually hanged during the intense movements at the market.
+2) The inacccurate drawing. The fractures of the zigzag just hanged down "in the air" without binding to the maximum (minimum) of the bar. But conceptually the zigzag must show the exact position of minimum (maximum) on the chart.
+3) The zigzag begins hovering if you try to scroll back the history and it is drawn without visual binding to the chart.
+This version of zigzag is relieved from all disadvantages listed above. Only the last three rays of the zigzag are recalculated. At that, the recalculation is performed only when the prices step out of the calculated part of the zero bar. I.e. when the minimum or maximum of the zero bar is zeroised, or when a new bar appears, or when the history is being uploaded.
+Each of three zigzags uses two buffers. One buffer is for the maximums and the other one is for minimums. This allows to output the maximum and the minimum on a single bar. There are two vacant buffers. Those who want can write up the code and insert the fourth specimen of the code. This can be a good lesson for the apprentice MQL4 programmers. Or you can use the vacant buffers for some other tasks, in case the zigzag will be inserted into the developed systems.
+The calculation and drawing of the zigzags from larger timeframes are implemented without using the icustom() function. For the automation purposes we can discard the indicator buffers. In this case we can calculate the zigzags for all timeframes simultaneously and also for any number of the symbols. If only there is enough ram memory. The realization of calculation without the icustom() function allows to perform, for example, the search of the patterns (Gartley or the others) not only on the current timeframes, but on any chosen timeframe and also on several timeframes simultaneously.
+Parameters
+.
+Most of the external parameters are the string variables.
+The parameters separated by commas are written in each string variable for each zigzag. The separator of the parameters is comma.
+The first digit is for the first zigzag, the second one - for second and the third is for third. Separated by commas.
+ExtDepth
+,
+ExtDeviation
+and
+ExtBackstep
+are the standard parameters for the zigzag.
+If you set
+ExtDepth=0
+, then the corresponding zigzag will not be displayed.
+ExtMaxBar
+- the number of the bars the zigzag will be calculated on.
+GrossPeriod
+- the periods of the charts specified in minutes the data will be taken from for the zigzag calculation. If you specify
+0
+the zigzag will be calculated on the current timeframe.
+You can specify the following values:
+0-1-5-15-30-60-240-1440-10080-43200
+.
+ExtReCalculate
+- the number of extremums of the zigzag beginning from 0 that are recalculated in the real time mode. It is used for the zigzags from the larger timeframes.
+It is recommended not to change this parameter.
+The zigzags are displayed from H1-H4-D1 on default. The zigzags will be displayed beginning from the 1 minute timeframe and finishing with the daily timeframe. Only one zigzag that is drawn by the data taken from the D1 timeframe will be displayed on the daily timeframe. Only the zigzags on the basis of the larger or current timeframes are drawn.
+The example in the picture: the zigzag from H1 is drawn with the Aqua color, H4 - with the Red and D1 - with the Yellow.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8536

@@ -1,0 +1,13 @@
+Larry Williams' Pro-Go
+oscillator is intended for daily charts and can be used to detect discrepancies between actions of professional players directed at raising/lowering rates and price.
+In general, if Professional line is below Public one, it is a buy signal.
+The indicator has three input parameters:
+Period
+- calculation period
+Overbought
+- overbought level
+Oversold
+- oversold level
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22091

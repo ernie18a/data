@@ -1,0 +1,24 @@
+William's Vix Fix Stochastic oscillator is calculated based on William's Vix Fix indicator
+There are five inputs:
+WVF period
+- William's Vix Fix calculation period
+%K period
+- stochastic %K line calculation period
+%D period
+- stochastic %D line calculation period
+Overbought
+- overbought level
+Oversold
+- oversold level
+Calculation:
+K = 100.0 * mins/maxes,
+D = SMA(K, %D period)
+where:
+mins = WVF - MinLow
+maxes = MaxHigh - MinLow
+MinLow, MaxHigh - minimum and maximum WVF values in the %K period range
+WVF = 100.0 * (MaxR-Low) / MaxR
+MaxR - maximum Close price in the WVF period range
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21424

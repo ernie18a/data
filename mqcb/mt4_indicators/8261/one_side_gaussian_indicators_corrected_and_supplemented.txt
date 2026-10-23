@@ -1,0 +1,15 @@
+Author:
+Mladen
+This is the continuation of One Side Gaussian topic.
+Here are my old two indicators rewritten, and also two new ones:
+1. OS Gaussian MA -- Moving Average that uses Gaussian smoothing.
+2. OS Gaussian Trend -- to be honest, I don't know how to use it, it was published in pack.
+The OneSideGaussianLibrary was rewritten, now it looks much prettier and more understandable.
+The function for smoothing arrays was added.
+A thousand thanks to Mladen for supporting and promoting this idea.
+You can view the picture
+here
+in comments.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8261

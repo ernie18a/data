@@ -1,0 +1,21 @@
+Introduction
+Since 2008 the most of the dealing centers began to work with the "floating" spreads. During the night the spreads are often wider. The wide spreads are appear during the news.
+The spread increasing can be sufficient, so in such cases some trading systems cannot be profitable. The stop level can be increased several times, it may cause the incorrect work of the Expert Advisors with fixed Stop Loss and Take Profit values.
+The Strategy Tester of MetaTrader 4 client terminal uses the last known values of spread, stop level and freeze level, the result is dependent on these values. The
+Strategy Tester of MetaTrader 5
+client terminal uses the historical spread values, the structure of historical data prices has the corresponding field.
+The spread_on_chart indicator shows the following values on the chart:
+spread (the difference between current Ask and Bid);
+stop level (the minimal distance from the current price to Stop Loss and Take Profit);
+freeze level (the minimal distance for orders modifying).
+It updates every tick.
+Input parameters:
+Corner - chart corner for output. By default - upper left corner is used;
+XMargin, YMargin - horizontal and vertical margins;
+Font, Color, Size - font name, font color and font size.
+File list:
+spread_on_chart.mq4 - (MetaTrader 4).
+spread_on_chart.mq5 - (MetaTrader 5).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/152

@@ -1,0 +1,17 @@
+Real author:
+Tushar Chande
+Aroon indicator was developed by Tushar S. Chande, CEO of the "Tuscarora Capital Management" company and the author of the books
+"The New Technical Trader: Boost Your Profit by Plugging into the Latest Indicators"
+and
+"Beyond Technical Analysis: How to Develop and Implement a Winning Trading System"
+in 1995 to determine trend direction and strength.
+Its main advantage is to allow a trader to determine the beginning of a new trend, or the end of an existing trend.
+Aroon indicator can be calculated using the following equations:
+Bullish indicator = [(N periods - N periods from the highest maximum / N periods] * 100
+Bearish indicator = [(N periods - N periods from the lowest minimum) / N periods] * 100
+Both equations indicate recent maximums and minimums. Higher indicator values show more recent maximums and minimums, whereas lower values show less recent maximums and minimums. Besides, Aroon indicator values oscillate between levels 0 and 100 where a higher value indicates a stronger trend and vice versa.
+Indicator moves around 30 and 70 key positions - movements higher than 70 indicate a strong trend, whereas movements lower than 30 indicate a weak trend.
+Movements between 30 and 70 indicate that the market is unstable. For example, if the bullish indicator is higher than level 70, whereas the bearish indicator is lower than level 30, the trend is definitely upward. Intersections between bullish and bearish indicators indicate confirmations, if they occur between the levels 30 and 70. For example, if the bullish indicator intersects the bearish one upwards, a upward trend is confirmed.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/388

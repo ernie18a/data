@@ -1,0 +1,9 @@
+Indicator Heiken_Ashi_Ma_T3.
+Parameters:
+extern int MaPeriod=10;extern int MaMetod =2;
+extern int Step=10;
+extern int CountBars=4000;
+extern bool UseT3=true;
+extern double b=0.88;
+extern bool Alerts=true;
+Heiken_Ashi_Ma_T3

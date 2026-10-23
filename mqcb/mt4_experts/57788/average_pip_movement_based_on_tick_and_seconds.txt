@@ -1,0 +1,2 @@
+This Expert Advisor (EA) analyzes market movement by calculating the average pip movement per tick and the average spread over a user-defined number of ticks ( MAX_TICKS ). It also evaluates the average pip movement and spread over a specified time interval ( CHECK_SECONDS ).
+The EA dynamically tracks price changes and spread values, printing the results in the terminal and displaying them on the chart using the Comment() function. This helps traders gauge market volatility and spread fluctuations in real time.

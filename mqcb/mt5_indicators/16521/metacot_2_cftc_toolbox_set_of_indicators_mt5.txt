@@ -1,0 +1,11 @@
+The publication contains the full set of MetaCOT ToolBox indicators for MetaTrader 5. The full documentation describing the use of this library is available on the page of the
+MetaCOT ToolBox for the MetaTrader 4
+set.
+The indicator operation requires an additional library
+MetaCOT CFTC ToolBox Demo MT5
+or its full-featured version
+MetaCOT CFTC ToolBox MT5
+. Also, these indicators are available as separate sets in the appropriate Market section.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16521

@@ -1,0 +1,7 @@
+An indicator of MA channel. It allows you to analyze price movements using the methods of
+A_Vlad
+.
+The essence of these methods is that the balance line, LB, works as "price attraction", if there are no external impacts, whereas the distant lines (38%, 62%, 100%) represent the support/resistance lines. The settings allow you to change the MA period and the channel width depending on the timeframe used and on the symbol volatility. By default, it is developed for H1. You can use this indicator as a TS to work by the method of "parry" from the channel borders.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8248

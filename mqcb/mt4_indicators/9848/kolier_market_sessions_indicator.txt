@@ -1,0 +1,12 @@
+Author:
+Kolier.Li
+KMSI is short for Kolier Market Sessions Indicator.
+It can be use to check time periods of market sessions.
+Recommendations:
+Check my indicator page to grab more information, like parameter settings:
+http://kolier.li/indicator/kmsi-kolier-market-sessions-indicator
+Project page:
+http://kolier.li/project/kolier-market-sessions-indi
+, submit issues or bugs report and get the new release versions.
+My Market Sessions research, advices for your settings:
+Market Session

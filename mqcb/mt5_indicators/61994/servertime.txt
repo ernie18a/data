@@ -1,0 +1,10 @@
+Key Features:
+Shows server time (not local time) for accurate market monitoring.
+Customizable text color and font size for seamless chart integration.
+Optional daily symbol change visualization (% change).
+Optimized for minimal CPU usage, ensuring smooth performance.
+Input Parameters:
+Show Daily Change (true/false)
+Font Size
+Text Color
+Ideal for traders needing reliable server time tracking with a clean, efficient design.

@@ -1,0 +1,7 @@
+I like MA's and i like the CCI indicator even more, I take momentum trades on divergences on the cci a lot. This indicator helps me to spot these divergenses.
+General Idea: If the price runs away from the accelerated MA it is safe to take a momentum trade.
+General Idea N2: If the ma follows the price we have a ranging period. So use ranging strategies or don't trade.
+Donations can be made here:
+PAYPAL
+All of our other products as well as a coding service can be found here:
+Forex Coding Service

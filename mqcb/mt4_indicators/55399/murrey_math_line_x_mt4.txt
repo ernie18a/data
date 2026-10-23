@@ -1,0 +1,62 @@
+Murrey Math Line X MetaTrader indicator
+— a pivot line indicator that will definitely help every trader who knows how to trade with
+support, resistance, and
+pivot lines. It displays 8 primary lines (with 5 more additional ones) on the main chart, helping you to find the best points to sell, buy, and exit your positions. The indicator can issue alerts when a candle closes after breaking any of the pivot lines. You can download this indicator for MT4 and MT5 platform.
+Input parameters
+Period
+(default = 64) — a period in bars or in other upper timeframe periods (set via the
+UpperTimeFrame
+input), on which the lines will be calculated. The lower the number the more up-to-date but less accurate calculations.
+UpperTimeframe
+(default = PERIOD_D1) — a basic period; if different from the current timeframe, the indicator will use
+Period
+×
+UpperTimeframe
+periods to calculate its lines. Otherwise, the indicator will use
+Period
+of the current chart bars to calculate its lines.
+StepBack
+(default = 0) — a shift back for calculating the lines (in the current bars or in the number of
+UpperTimeframe
+periods).
+LabelSide
+(default = Left) — the side of the screen to display the line labels. If you select
+Right
+, make sure, the chart is shifted to the left; otherwise, you won't be able to see the labels.
+[N]/8 Color
+— colors for the indicator lines.
+[N]/8 Width
+— the indicator lines' width.
+MarkColor
+(default = clrBlue) — the color for the last calculated bar's arrow.
+MarkNumber
+(default = 217) — the arrow code for the last calculated bar's arrow.
+FontFace
+(default = "Verdana") — the font face to use for display.
+FontSize
+(default = 10) — the font size to use for display.
+ObjectPrefix
+(default = "MML-") — prefix for chart objects for compatibility with other indicators.
+TriggerCandle
+(default = Previous) — the candle to issue alerts on:
+Previous
+— the most recently closed candle or
+Current
+— the yet unfinished candle.
+NativeAlerts
+(default = false) — if
+true
+, a native MetaTrader popup alert will be used when a signal appears. Not present in cTrader.
+EmailAlerts
+(default = false) — if
+true
+, an email message will be sent when a signal appears. Email should be properly configured in MetaTrader via
+Tools->Options->Email
+.
+NotificationAlerts
+(default = false) — if
+true
+, an email message will be sent when a signal appears. Notifications should be properly configured in MetaTrader via
+Tools->Options->Notifications
+.
+It is easy to use Murrey Math Line X. 0/8P and 8/8P lines are the ultimate resistance and support lines — they are very hard to break. 1/8P and 7/8P lines are weak support and resistance lines, but if the price stops near them, it will likely reverse and change direction. 2/8P and 6/8P lines are strong reverse points. 3/8P and 5/8P are the bottom and the top of the average trading range respectively; it is very likely that the price will either pierce this range fast or will remain inside it for a long time. 4/8P is a major support and resistance line; you can sell or buy when the price crosses it for a high-probability trade. The blue arrow marks the final calculated bar.

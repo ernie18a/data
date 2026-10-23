@@ -1,0 +1,9 @@
+Originally this indicator was developed for MetaTrader 4 by ANG3110 (it was originally posted here :
+https://www.mql5.com/en/code/7566
+)
+Here I would like to quote the original description :
+Unlike the traditional ADX indicator, where the ADX itself is plotted in absolute units and detection of the trend direction is hindered, this indicator clearly displays the positive and negative ADX half-waves (displayed as colored on the chart). And the DI+/- signals are displayed as their difference (gray).
+The method of using this indicator is the same as the traditional one.
+In addition, it displays the levels (dashed), above which the market is considered to be in a trend state. This level is usually set to approximately 20-25 percents, - somewhat depends on the time frame it is used on.
+In addition, apart of being MetaTrader 5 version, this version is deviating from the original in the fact that it allows you to chose any price(s) (out of the 22 types) for calculation — the original uses fixed high, low and close prices hard-coded in the indicator, since it seems to be a useful addition to this good indicator.
+As described, levels should be used to determine the trend (or, for counter trend traders, retracing into the "no trend zone" can be treated as a possible reversal signal/point

@@ -1,0 +1,4 @@
+Author:
+Luis Guilherme Damiani
+Indicator Damiani_volatmeter.
+Indicator Damiani_volatmeter

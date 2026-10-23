@@ -1,0 +1,4 @@
+Quantora Symbol Information Panel MT5 is an indicator that displays detailed symbol and market information directly on the chart. It does not open or manage trades and is intended for informational use.
+The tool shows live price data, spread, and market status along with key trading specifications such as contract size, lot limits, tick value, and margin details. All information is retrieved from the broker and updates in real time.
+It also includes swap values, trading mode, and basic account and symbol details, presented in a simple dashboard for quick access.
+Suitable for traders who want fast and clear access to symbol specifications without leaving the chart.

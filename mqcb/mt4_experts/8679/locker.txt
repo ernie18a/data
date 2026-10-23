@@ -1,0 +1,9 @@
+Everyone faces the threat of false indicator signals from time to time. What is that for?? The market never stands still, and it is enough to make several trades and the total balance will be positive.
+I present you the Anti-Loss program. Written by me in three hours.
+It can be attached to an empty chart and it will randomly place losses and brings them to profit.
+If your chart already has a Loss, throw it a lifebuoy. Tick the Spasenie and it will bring your equity above the balance as much as specified in the NeedProfit parameter. But you will also need some mental effort. How did you manage to get a Loss?? Did not see a beginning of a trend, or got in a candle of 300 points and then the price returned. No matter, flat or trend. Set the number of points for re-locking in the Step parameter. But mind the spread. The broker will take at least 2 points.
+No stops!!! Do not cut off the balance.
+Here you are. Absolutely free. Plug into your EA or attach an indicator. Do whatever you want with it.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8679

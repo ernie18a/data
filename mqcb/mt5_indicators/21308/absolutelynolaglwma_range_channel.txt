@@ -1,0 +1,7 @@
+A channel formed by two moving averages
+AbsolutelyNoLagLwma
+based on averaged High and Low timeseries Candlesticks beyond the channel are marked with the trend-related color. Candlesticks with the trend are colored brightly, and those against the trend are colored darkly.
+Fig 1. Indicator AbsolutelyNoLagLwma_Range_Channel
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21308

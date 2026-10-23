@@ -1,0 +1,29 @@
+Larry Williams' WILL VAL oscillator.
+It has six input parameters:
+Instrument
+- instrument name, relative to which the calculation is made
+First EMA period
+- first exponential smoothing period
+Second EMA period
+- second exponential smoothing period
+Period
+- indicator calculation period
+Overbought
+- overbought level
+Oversold
+- oversold level
+Calculation:
+WV = 100.0 * (Value - Min) / (Max-Min)
+where:
+Value = MA1-MA2
+MA1 - EMA(Price, First EMA period)
+MA2 - EMA(Price, Second EMA period)
+Max, Min - maximum and minimum 'Value' values in the Period range
+Price = Close(Current Instrument) / Close(Instrument)
+Keep in mind that the indicator needs to upload history data of a selected instrument during the first launch or when changing 'Instrument'. If the re-drawing does not occur quickly or the indicator is displayed incorrectly, simply switch the chart timeframe to accelerate the process and obtain a correct display.
+Fig. 1. Calculation relative to EURJPY
+Fig. 2. Calculation relative to XAUDUSD
+Fig. 3. Calculation relative to USDRUB
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22099

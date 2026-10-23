@@ -1,0 +1,32 @@
+The author of the idea
+:
+John Smith
+,
+the mq5 code author
+:
+barabashkakvn
+.
+The Expert Advisor trades using the Japanese
+Doji
+Candlestick pattern.
+The Doji candlestick has practically no body, it only has shadows. But this code provides the "Maximum Doji height" setting, in which you can set the height of the candlestick body.
+Only one open position is allowed. If the EA accidentally opens more than one position, all positions will be closed. The EA performs trading operations on a new bar (when a new bar emerges), and checks the previous three bars (skipping the zero bar). If a "doji" like bar is detected, a signal to open a position is generated.
+Input Parameters
+Lots
+- position volume;
+Stop Loss (in pips)
+- Stop Loss value;
+Take Profit (in pips)
+- Take Profit value;
+Start hour
+- trading start time;
+End hour
+- trading end time;
+Maximum Doji height
+- the maximum height of the Doji candlestick;
+magic number
+- Expert Advisor identifier.
+Example of testing on EURUSD, H1:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19603

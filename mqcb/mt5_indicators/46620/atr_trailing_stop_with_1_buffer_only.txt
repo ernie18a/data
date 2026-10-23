@@ -1,0 +1,10 @@
+This is an edit of the
+Mod_ATR_Trailing_Stop
+by
+Scriptor
+found here
+https://www.mql5.com/en/code/20423
+.
+It has 1 Buffer instead of 2 (1 Line instead of 2 Lines) . I was a fan of the original
+MT4-LevelStop-Reverse.v2
+that was coded originally by Bruce Hellstrom (brucehvn), which used 1 Buffer. This one is the closet I have got to that indicator on MT5.

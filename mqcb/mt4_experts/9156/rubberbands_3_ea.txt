@@ -1,0 +1,28 @@
+RUBBERBANDS_3 EA
+Version 1.0
+This EA is intended to be less prone to big drawdowns than former RUBBERBANDS EA and RUBBERBANDS_2 EA. Awaiting your comments and suggestions for improvement.
+The basic idea is the same as its predecessors, RUBBERBANDS EA and RUBBERBANDS_2 EA, it works in any timeframe for any currency pair, preferrably, EUR/USD, GBP/USD, and USD/CHF.
+It opens orders in both directions (BUY & SELL) at a time initially, then opens an additional order in the forward direction everytime the price goes up or down, i.e., opens an additional BUY order everytime the price goes up by multiples of "pipstep" above the initial BUY order, and opens an additional SELL order everytime the price goes down by multiples of "pipstep" below the initial SELL order (this is opposite to RUBBERBANDS_2 EA).
+When the price goes back from the lastly-placed order by "backstep" pips, it closes all the orders in the "forward" direction and opens a reverse order. At this time, there are only two orders left in the "backward" direction.
+It closes those two outstanding orders when the specified profit "sessionTP" (in dollars) is reached, which functions as TAKEPROFIT, or, if set so ("use_sessionSL"==true), when the specified loss "sessionSL" (in dollars) is reached, which functions as STOPLOSS.
+The opening of the initilal orders through the closure of all outstanding orders constitutes one "session".
+The external variable "maxcount" limits the number of orders per session.
+Use Strategy Tester to see how this EA performs.
+Preferred currency pairs: EUR/USD, GBP/USD, and USD/CHF.
+External variables are:
+Lots = 0.02 (number of lots for each order)
+maxcount = 10 (maximum number of orders allowed in one session)
+pipstep = 100 (pip distance to place additional BUY or SELL orders in "forward" direction)
+backstep = 20 (pip distance from the lastly-placed order to close all the orders in "forward" direction and place a reverse BUY or SELL order in "backward" direction)
+quiescenow = false (if true, quiesces this EA when the current session ends)
+donow = false (if true, opens orders immediately)
+stopnow = false (if true, stops this EA)
+closenow = false (if true, closes all outstanding orders)
+use_sessionTP = true (don't change this)
+sessionTP = 2000 (profit in dollars per lot to close all outstanding orders; functions as TAKEPROFIT)
+use_sessionSL = true (If true, uses "sessionSL" below)
+sessionSL = 4000 (loss in dollars per lot to close all outstanding orders; functions as STOPLOSS)
+The following three external variables are for restarting this EA after, say, the weekend, when there are outstanding orders. "inmax" and "imin" are displayed as "GLBmax" and "GLBmin" on the chart.
+useinvalues = false (set to true on restart)
+inmax = 0 (set former max on restart)
+inmin = 0 (set former min on restart)

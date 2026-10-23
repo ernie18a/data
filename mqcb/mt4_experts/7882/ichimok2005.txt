@@ -1,0 +1,9 @@
+Author: ForexProf
+Advisor ichimok2005. Uses indicator
+Ichimoku
+.
+------------------------------
+Parametr of testing:
+Symbol: EURUSD.
+Period: M5.
+Model: All tick.

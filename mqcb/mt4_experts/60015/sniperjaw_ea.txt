@@ -1,0 +1,2 @@
+SniperJaw EA is a one-trade-at-a-time robot that uses the Alligator indicator (Jaw, Teeth, Lips) to follow the trend.
+You can control the trade size with LotSize, choose to close trades on opposite signal with UseEntryToExit, or use TakeProfit and StopLoss in pips if set. Slippage is managed by Slippage, and trading can be turned on or off using TradeEnabled. Alligator settings like JawPeriod, JawShift, TeethPeriod, TeethShift, LipsPeriod, and LipsShift let you adjust how the indicator works.

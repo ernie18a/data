@@ -1,0 +1,11 @@
+Real author:
+rmm@nm.ru
+The indicator can be useful for traders who consider the market wave structure, as well as create trading systems based only on the market structure (without indicators). The idea of the indicator and the term "market inner structure" were first presented by Mikhail (Ptero).
+Upper extremums are calculated by the bars highs, while lower ones are calculated by the bars lows. Only one bar is considered on each side of the bar, on which the extremum is calculated. Extremums calculation logic is determined in ExistUp and ExistDn functions of the indicator code. Relevancy of the found extremum is determined in the process of extremums calculation, irrelevant extremums are not displayed.
+In case the terminal contains a rich history, history observation depth by the indicator must be limited by QuantityOfBars parameter to prevent excessive terminal load.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+24.02.2011.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/736

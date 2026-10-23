@@ -1,0 +1,7 @@
+ZigZag based on the
+RSICandleV2
+indicator candles.
+Fig.1. ZigZag_RSICandleV2 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16596

@@ -1,0 +1,15 @@
+Author:
+mapick
+I developed this EA to keep pictures of my orders, i.e. to publish or explain them, or to see if something strange happens... when I'm not in front of my MetaTrader
+The use is very simple, you launch the EA on the graph or on every graphs you operate, and it takes the pictures
+You can easily take the 2 functions
+takePics()
+and
+print()
+and include them in your EA to take the images every time it opens or closes an order, to check errors or for your recording
+In backtesting, the pics are saved in
+TESTER\FILES
+directory, in real or demo they're saved in
+EXPERTS\FILES
+27/02/2012:
+This is an update that DOESN'T PRINT MESSAGES on the graph and it counts only already open BUY and SELLS, not the STOP/LIMIT orders

@@ -1,0 +1,5 @@
+The Expert Advisor that moves the stop loss to breakeven after reaching certain profit.
+It provides a filter based on magic number and comment.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16137

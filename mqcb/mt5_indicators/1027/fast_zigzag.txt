@@ -1,0 +1,6 @@
+FastZZ is the easiest and fastest zigzag. It fully implements the
+IdealZZ
+"picture", and yet is several times faster and more cost efficient than the latter.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1027

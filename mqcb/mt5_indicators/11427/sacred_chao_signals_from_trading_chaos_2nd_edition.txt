@@ -1,0 +1,14 @@
+"The Sacred Chao symbolizes absolutely everything anyone need ever know about absolutely anything, and more! It even symbolizes everything not worth knowing, depicted by the empty space surrounding the Hodge-Podge."
+The indicator shows:
+An Alligator (Jaws, Teeth, Lips);
+Bullish/Bearish Divergent Bars (1st Wise Man) that are closing completely below/above the Alligator (countertrend);
+Bullish/Bearish Super AO Signal (2nd Wise Man), 3 same colored bars on the Awesome Oscillator (momentum);
+Bullish/Bearish Fractals (3rd Wise Man) that are above/below the Teethline (trend);
+Angulation Lines from Price crosses/peaks the Alligator to 1st Wise Man;
+For Experts the Angulation is stored as deviation in Points per Bar in a buffer but not shown;
+Trailing Lines based on highest high/lowest low on the last x bars;
+For signals and trailing there is added an ATR value, modified by a factor
+First published Version 0.2 contains them all and its working more or LESS. There are bugs, for example it runs in real charts but crashes on ArrayOutOfRange in Tester. Feel free to report, refinements will be done.
+If you have questions, please read the code first, its well commented.
+Atm there is not much errorcode, the user is responsible to set arguments that make sense.
+"Debugging? Klingons do not debug. Our software does not coddle the weak. Bugs are good for building character in the user."

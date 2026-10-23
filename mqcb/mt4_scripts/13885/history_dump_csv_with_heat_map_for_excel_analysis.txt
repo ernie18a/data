@@ -1,0 +1,65 @@
+Do you need to know at what times of the day you are winning or losing compared to other times or the day? This script creates a .CSV file of your order history so you can import it into Excel and analyse it.
+It extracts all order information. Date / time information in both native MetaTrader format (fields ending _MT) and Excel format.
+It also supports aggregate analysis by calculating a 'Heat map' day and time slot. Days are 0-6 and slots are 0-95.
+The heat map default is 4 slots per hour, i.e. 15 minutes, giving you 96 slots per 24 hours. This means trades within that same slot will have the same slot number. This can make your Excel analysis and creation of useful pivot tables a lot easier.
+The script saves the output file in the <terminal_data_folder>/MQL4/Files directory. It will also upload the file to your specified FTP server, if you have defined one in your terminal.
+Beware that if you have filtered your account history to, say, the last 3 months, then this is all the data that will be extracted. If you want ALL your history, then remove your history filter.
+A Little Documentation:
+All the available MT4 trading attributes are collected from the available history and output to the CSV file.
+In addition, some calculated values are output as well.  These are:
+Sequence Number.
+Used to keep the data in order or to re-sort it back into order.
+ServerCloseTime.
+This is Excel compatible version of the server datetime close value.
+ServerExpiration.
+This is Excel compatible version of the server datetime expiration value.
+ServerOpenTime.
+This is Excel compatible version of the server datetime open value.
+NetProfit.
+This is Profit less costs, i.e. NetProfit = Profit - Swap - Commission.
+Type.
+Transaction type, e.g. "OP_SELL", "OP_BUYSTOP" etc.  Better than a type number.
+PriceMove.
+Differential from OpenPrice to ClosePrice.
+Points.
+Points value for the trade, as per the broker and pair/Symbol.
+Pips.
+Points value for the trade, as per the broker and pair/Symbol.
+PotentialWinPips.
+Pips value of the TakeProfit level (if defined) to the Open level.  Typically positive values unless TP was moved to worse-than-entry level before the trade closed.
+PotentialLossPips.
+Pips value of the StopLoss level (if defined) to the Open level.  Typically negative values unless SL was moved to better-than-entry level before the trade closed.
+DurationMins.
+The number of minutes from the open time to the close time.  Hint: There are 1440 minutes in a day.
+HeatMapOpenDay.
+The day number from 0 to 6 of the transaction open.  0=Sunday.  Allows you to drill down by day of the week for opening a trade.
+HeatMapOpenSlot.
+The slot number from 0 to 95 of the transaction open.  0=midnight, each increment represents 15 minutes. Allows you to drill down by the quarter hour for opening a trade.
+HeatMapOpenHour.
+The hour number from 0 to 23 of the transaction open.  0=midnight, each increment represents 1 hour. Allows you to drill down by the hour of the day for opening a trade.
+HeatMapCloseDay.
+The day number from 0 to 6 of the transaction close.  0=Sunday.  Allows you to drill down by day of the week for closing a trade.
+HeatMapCloseSlot.
+The slot number from 0 to 95 of the transaction close.  0=midnight, each increment represents 15 minutes. Allows you to drill down by the quarter hour for closing a trade.
+HeatMapCloseHour.
+The hour number from 0 to 23 of the transaction close.  0=midnight, each increment represents 1 hour. Allows you to drill down by the hour of the day for closing a trade.
+Use the trading attributes and calculated values in your Excel pivot reports to help you better understand your trading profile and therefore learn ways to optimise it.
+The data is appropriate for 4 and 5 digit brokers and uses the correct point and digits values for each pair being analysed.
+Times are as per the broker's server, so take this into account when comparing data from brokers in different timezones.
+The script is designed to be self contained and not ask for confirmation.  If you need to customise it then there is a section below that identifes 4 most likely customisations you may want:
+string reportfilename=StringConcatenate("HistoryDumpCSV_",AccountID,".CSV");  // the FileOpen has the FILE_COMMON flag meaning it is saved to the Commong/Files folder.
+uchar DELIM='\t';  // Delimiter is '\t' tab.  Other options are ';' semicolon and ',' comma.  The '\t' delimiter is the default for Excel CSV imports.
+int SLOTSPERHOUR=4;  // This divides the trading time into 15 minute slots for aggregating data.  2=30 minutes, 3=20 minutes, 1=1hour slots.
+bool SendFileByFTP=true; // If not needed, set this to false.
+Adjust these to suit your needs.
+The script includes FTP functionality so that the report file generated is also sent by FTP to the configured directory on the remote FTP server.
+In my case, this is a central NAS drive that holds all my reporting data for all my demo accounts.  This allows me to run multiple MT4 terminals on any PC but collect the report data from a single place.
+Images:
+Drag the script onto any chart to initiate it. The script confirms the file generated:
+You can then locate the file and analyse as you require.
+If you want to use Excel and create pivot reports, then the text has to be converted to columns first:
+Converted to columns makes it usable in Excel:
+Pivot reports and graphs of your history are now possible:
+Use the Insert Pivot wizard:
+Select your desired data attributes to create any report:
+The full set of screen shots for the transformation of the .CSV file into an Excel pivot report is attached in the .zip file.

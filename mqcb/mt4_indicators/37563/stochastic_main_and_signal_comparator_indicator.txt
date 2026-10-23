@@ -1,0 +1,1 @@
+This indicator compares the main and signals line of the stochastic indicator and marks the sam eon the respective bars on chart.

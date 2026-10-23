@@ -1,0 +1,8 @@
+Author: Kim Igor V. aka KimIV
+Intraday Fibonacci levels.
+The indicator has been discussed
+here
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7414

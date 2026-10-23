@@ -1,0 +1,13 @@
+A set of target support/resistance levels for the predicted price movement.
+See also
+Murrey Math Lines (support and resistance)
+and
+Murrey Math FixPeriod
+.
+This indicator was first implemented in MQL4 and published in the
+Code Base at mql4.com
+on 14.02.2008.
+The Math-System indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1923

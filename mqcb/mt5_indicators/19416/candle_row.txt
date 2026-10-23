@@ -1,0 +1,27 @@
+The indicator tracks a continuous sequence of bars in one direction and marks these bars.
+The indicator has the Alert function to notify the user of N candles in a row in one direction.
+Author of the idea:
+Firetrade2013 Chirikov
+.
+mCandle_row
+- only in the main window.
+.
+sCandle_row
+- with a chart in the subwindow.
+.
+Input Parameters
+Font size arrow
+- font size;
+Bull arrow candle
+- color for the bullish direction;
+Bear arrow candle
+- color for the bearish direction;
+Cross arrow candle
+- color for Doji;
+Alert
+- enable/disable Alert;
+Count Candles
+- the number of candlesticks in a row to trigger Alert.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19416

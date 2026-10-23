@@ -1,0 +1,23 @@
+Oscillating indicator MACD OsmaX is a modification of the classical MACD.
+It has five adjustable parameters:
+Fast EMA period
+- fast EMA calculation period
+Slow EMA period
+- slow EMA calculation period
+Signal period
+- signal line calculation period
+OsmaX
+- OsMA factor
+Applied price
+- calculation price
+Calculations:
+MACD   = FastMA - SlowMA
+Signal = AvgMACD
+OsMA   =(MACD - Signal) * OsmaX
+where:
+FastMA - EMA(Applied price, Fast EMA period)
+SlowMA - EMA(Applied price, Slow EMA period)
+AvgMACD- EMA(MACD ,Signal period)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23536

@@ -1,0 +1,2 @@
+Author: Kalenzo
+Chaikin's Volatility (2 lines) indicator.

@@ -1,0 +1,24 @@
+Indicator Linda's Coil presents several methods of searching for "engulfed" candlesticks (Price Action).
+It has three input parameters:
+Period
+- search range;
+Method
+- search method:
+Engulfed
+- engulfed candlesticks only;
+Engulfed or Equal
+- either engulfed or equal candlesticks.
+Type
+- search type:
+Previous
+- comparing with the previous candlestick;
+First
+- comparing with the first candlestick within the search range.
+Search
+The indicator compares the current candlestick with the previous one (type Previous) or the first one (type First) within the search range (Period).
+If the current candlestick is less than (method Engulfed) or is less than or equal to (Engulfed or Equal) the previous one (i.e., it is engulfed by the previous one), then the indicator places a mark in the price chart.
+Fig.1. Comparing to the previous candlestick
+Fig.2. Comparing to the first candlestick within the range
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20802

@@ -1,0 +1,17 @@
+The Expert Advisor is rewritten from MQL4, the author is
+Serg_ASV
+, link to the source -
+https://www.mql5.com/ru/code/7464
+.
+How it works
+If the price moves 'Shift' points or more for one tick, a position is opened in the direction opposite to the movement of the price. As the position is profitable (at any minimum value), it closes.
+How it works means that Shift value is 3, spread is equal to 2.
+Parameters
+Lots - Position volume.
+Shift - Price change to open a position.
+Limit - Loss value in points to close a position.
+Note
+The Expert Advisor testing in the strategy tester is likely to be unreliable. It must be tested on a demo account.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1107

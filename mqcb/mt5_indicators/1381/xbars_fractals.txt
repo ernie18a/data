@@ -1,0 +1,12 @@
+It differs from fractals indicator in the following:
+allows drawing fractals with any number of bars on either side of the fractal;
+allows drawing the so-called asymmetric fractals by displaying different number of bars on the left and the right of the extremum.
+The fractal with sides 10 (left) and 5 (right):
+Recommendations:
+The indicator with a large parameter sides perfectly defines global minimum / maximum, which can be a significant support / resistance levels, as well as be one of the points ro draw trend lines (which, for example, was used in the indicator of
+automatic trend lines
+);
+Asymmetric parameters are good for filtering out the fractals which are unlikely to be local minimums / maximums. To make sure you can compare, for example, the parameters of (2, 2), which are identical to the standard fractals, and the parameters of (7, 2).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1381

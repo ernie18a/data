@@ -1,0 +1,1 @@
+A simple label that shows information like Ask and Bid, OHLC prices, volume, spread, remaining candle time, local & server time.

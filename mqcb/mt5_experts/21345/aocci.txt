@@ -1,0 +1,214 @@
+Idea by
+:
+Scriptor
+.
+MQL5 code by
+:
+barabashkakvn
+.
+The EA trades on the signals of indicators iCCI (Commodity Channel Index, CCI) and iAO (Awesome Oscillator, AO). It also considers the current Open prices from bar #0 through bar #5, the prices of bar #1 on D1, and the Close price of bar #1 on H1.
+Inputs
+Lots - position volume
+Stop Loss (in pips) - Stop Loss
+Take Profit (in pips) - Take Profit
+Trailing Stop (in pips) - trailing
+Trailing Step (in pips) - trailing step
+//--- CCI - parameters of indicator CCI
+CCI: averaging period
+CCI: type of price
+//---
+Check for too-big candlesticks (n "-" n-1) - protection against a too big candlestick (candlesticks N and N-1 are compared)
+Check for too-big candlesticks (n "-" n-2) - protection against a too big candlestick (candlesticks N and N-2)
+set to 1 if you want to get the cangle close 0 for current - initial bar number
+//---
+magic number
+Testing in the "All ticks" mode for all symbols in Market Watch:
+Symbol
+Pass
+Result
+Profit
+Expected Payoff
+Profit Factor
+Recovery Factor
+Sharpe Ratio
+Custom
+Equity DD %
+Trades
+USDCAD
+5
+3271.70
+271.70
+0.91
+1.16
+0.73
+0.05
+0
+11.13
+297
+USDCHF
+3
+3145.29
+145.29
+0.78
+1.10
+0.35
+0.04
+0
+13.84
+186
+GBPUSD
+2
+3015.10
+15.10
+0.05
+1.01
+0.02
+0.01
+0
+16.90
+308
+EURUSD
+0
+3012.18
+12.18
+0.05
+1.01
+0.04
+0.01
+0
+9.12
+263
+EURCAD
+9
+3008.58
+8.58
+0.02
+1.00
+0.02
+0.00
+0
+11.59
+382
+USDRUB
+12
+3000.00
+0.00
+0.00
+0.00
+0.00
+0
+0.00
+0
+NZDUSD
+13
+2989.06
+-10.94
+-0.06
+0.99
+-0.03
+0.00
+0
+12.47
+176
+USDJPY
+1
+2977.87
+-22.13
+-0.11
+0.99
+-0.06
+0.00
+0
+12.33
+195
+EURJPY
+8
+2867.50
+-132.50
+-0.44
+0.94
+-0.22
+-0.02
+0
+19.53
+301
+AUDUSD
+4
+2857.16
+-142.84
+-0.78
+0.91
+-0.24
+-0.03
+0
+17.20
+183
+EURCHF
+6
+2853.93
+-146.07
+-0.88
+0.90
+-0.39
+-0.03
+0
+12.12
+166
+GBPCHF
+10
+2725.23
+-274.77
+-0.97
+0.90
+-0.53
+-0.03
+0
+17.18
+283
+EURGBP
+7
+2637.06
+-362.94
+-2.59
+0.80
+-0.70
+-0.07
+0
+16.57
+140
+AUDJPY
+15
+2398.46
+-601.54
+-2.84
+0.71
+-0.78
+-0.12
+0
+24.90
+212
+GBPJPY
+14
+2338.56
+-661.44
+-1.75
+0.81
+-0.77
+-0.07
+0
+26.86
+377
+USDCNH
+11
+1401.68
+-1598.32
+-2.01
+0.37
+-1.00
+-0.37
+0
+53.28
+797
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21345

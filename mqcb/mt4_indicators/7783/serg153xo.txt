@@ -1,0 +1,5 @@
+Author: Serg153
+The indicator colors rising and falling candlesticks.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7783

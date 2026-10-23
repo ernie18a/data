@@ -1,0 +1,7 @@
+Basics :
+There are several versions of instantaneous trend line. The way it is used is varying from version to version, but some are relying to slope of the ITL for signals. That can produce too much signals
+This version :
+In this version we are using self adjusting levels for signals filtering. That way it is attempting to produce a clearer signal and to lessen the number of signals produced
+Usage :
+You can use the color changes as signals for entries or exits. Also some experimenting with the levels period is advised before using it for trading decisions
+PS: there are two display modes. Default is like the upper. For the sake of simple display (some like it that way better) you can chose this type of display too in the parameters (no filled zones - lines are still changing colors)

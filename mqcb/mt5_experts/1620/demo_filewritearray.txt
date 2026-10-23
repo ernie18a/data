@@ -1,0 +1,184 @@
+The Expert Advisor gets values of Bid and Ask prices on every tick and remembers them into the "prices" structure array. On every twentieth tick the Expert Advisor writes structure objects data into the file using the
+FileWriteArray
+() function. Data will be recorded in the binary file in subdirectory of the local terminal folder. The terminal local folder location can be obtained calling the
+TerminalInfoString
+() function.
+PrintFormat
+(
+"The path to the terminal local folder: %s\\Files\\"
+,
+TerminalInfoString
+(
+TERMINAL_DATA_PATH
+));
+When deleting the Expert Advisor from the chart, there is writing of not written data into the file after which the Expert Advisor terminates its work.
+Code:
+//--- input parameters
+input
+string
+InpFileName=
+"data.bin"
+;
+input
+string
+InpDirectoryName=
+"SomeFolder"
+;
+//+------------------------------------------------------------------+
+//| Structure for storing price data                                 |
+//+------------------------------------------------------------------+
+struct
+prices
+  {
+datetime
+date;
+// data
+double
+bid;
+// Bid price
+double
+ask;
+// Ask price
+};
+//--- global variables
+int
+count=
+0
+;
+int
+size=
+20
+;
+string
+path=InpDirectoryName+
+"//"
++InpFileName;
+prices arr[];
+//+------------------------------------------------------------------+
+//| Expert initialization function                                   |
+//+------------------------------------------------------------------+
+int
+OnInit
+()
+  {
+//--- allocate memory for the array
+ArrayResize
+(arr,size);
+//---
+return
+(
+INIT_SUCCEEDED
+);
+  }
+//+------------------------------------------------------------------+
+//| Expert deinitialization function                                 |
+//+------------------------------------------------------------------+
+void
+OnDeinit
+(
+const
+int
+reason)
+  {
+//--- write the remaining count strings if count<n
+WriteData(count);
+  }
+//+------------------------------------------------------------------+
+//| Expert tick function                                             |
+//+------------------------------------------------------------------+
+void
+OnTick
+()
+  {
+//--- save data to array
+arr[count].date=
+TimeCurrent
+();
+   arr[count].bid=
+SymbolInfoDouble
+(
+Symbol
+(),
+SYMBOL_BID
+);
+   arr[count].ask=
+SymbolInfoDouble
+(
+Symbol
+(),
+SYMBOL_ASK
+);
+//--- show current data
+Print
+(
+"Date = "
+,arr[count].date,
+" Bid = "
+,arr[count].bid,
+" Ask = "
+,arr[count].ask);
+//--- increase the counter
+count++;
+//--- if the array is filled, write data to the file and zero it out
+if
+(count==size)
+     {
+      WriteData(size);
+      count=
+0
+;
+     }
+  }
+//+------------------------------------------------------------------+
+//| Write n elements of the array to the file                        |
+//+------------------------------------------------------------------+
+void
+WriteData(
+const
+int
+n)
+  {
+//--- open the file
+ResetLastError
+();
+int
+handle=
+FileOpen
+(path,
+FILE_READ
+|
+FILE_WRITE
+|
+FILE_BIN
+);
+if
+(handle!=
+INVALID_HANDLE
+)
+     {
+//--- write array data to the end of the file
+FileSeek
+(handle,
+0
+,
+SEEK_END
+);
+FileWriteArray
+(handle,arr,
+0
+,n);
+//--- close the file
+FileClose
+(handle);
+     }
+else
+Print
+(
+"Failed to open the file, error "
+,
+GetLastError
+());
+  }
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1620

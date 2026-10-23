@@ -1,0 +1,16 @@
+A colored smoothed
+PWMA
+that displays the most recent value as a price label with the possibility to round the indicator levels up to a required number of digits. The number of digits to round is set in the input variable
+Digit
+:
+input
+uint
+Digit=2;
+//Number of digits to round to
+The indicator uses the SmoothAlgorithms.mqh library classes (copy it to <terminal_data_folder>\MQL5\Include). The detailed description of the classes is available in the article
+Averaging Price Series for Intermediate Calculations Without Using Additional Buffers
+.
+Fig. 1. The ColorXPWMA_Digit indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21669

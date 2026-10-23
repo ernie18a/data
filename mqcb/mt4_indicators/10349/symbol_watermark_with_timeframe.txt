@@ -1,0 +1,5 @@
+Description:
+Displays the current timeframe and symbol name in large font on the chart background. Useful when hopping between several charts with different symbols at the same time.
+Instructions:
+Choose the symbol you're interested in and display it in a chart window at the appropriate timeframe. Load the Watermark indicator and optionally choose font, size, colour, position etc.
+Additionally you may choose to add some custom text of your own, eg. web link, email address etc. in a tag field.

@@ -1,0 +1,20 @@
+The Expert Advisor is rewritten from MQL4, the author is
+fortrader
+, link to the source
+https://www.mql5.com/en/code/8006
+.
+How it works
+If the bar is formed with a size of a shade less than the lowest bar for a specified number of bars, the setting of two pending stop orders is performed. When one of the orders is triggered, the second is removed.
+Trade signals definition is delivered to the indicator. When the indicator has one period parameter, i.e. the number of bars on which the minimum bar size is determined. The green line shows the current bar size, the blue line is a minimum bar size, points are the signals of setting orders.
+The image 1 shows the performance of the Expert Advisor in the strategy tester's visual mode, the image 2 shows the results of the tester.
+Fig. 1. How the Expert Advisor works.
+Fig. 2. The results of work of the Expert Advisor for the last month (09.2012) at EURUSD M15.
+Parameters
+period - The period of the indicator.
+PendingLevel - The level of setting pending orders from High/Low of the previous bar.
+Lots - Lot.
+StopLoss - Stop Loss in points, 0 - without Stop Loss.
+TakeProfit - Take Profit in points, 0 - without Take Profit.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1163

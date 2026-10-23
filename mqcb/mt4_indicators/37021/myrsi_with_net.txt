@@ -1,0 +1,5 @@
+In December 2020 issue of TASC, John Ehlers published an indicator called MyRsi with NET (MyRsi with Noise Elimination Technology) in which he uses a sort of Kendall (auto)correlation to filter out signals
+The only deviation in this version is that we can use desired prices (instead of using fixed close price)
+Recommendations:
+you can use it as any other rsi
+you can combine the signals from rsi and net line (from visual inspection, it seems that net line tends to produce faster and cleaner signals)

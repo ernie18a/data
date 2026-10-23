@@ -1,0 +1,13 @@
+Real author:
+Andy Ismail
+This is an indicator for finding the strongest trend each day, suitable for intraday trading or a swing trading.
+How to use:
+RED BAR
+means Bearish Trend for the next candle;
+GREEN BAR
+means Bullish Trend for the next candle;
+ORANGE BAR
+means Sideways Trend for the next candle.
+Example:
+If we are using D1 timeframe, see the last BAR. If the bar is RED BAR, open short/sell for today.
+If we are using H1 timeframe, see the last BAR. If the bar is GREEN BAR, open long/buy until next hour.

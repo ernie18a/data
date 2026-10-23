@@ -1,0 +1,11 @@
+The indicator displays the balance and equity of the trade account.
+This indicator is especially useful when used in the strategy tester. It visualizes the balance and equity:
+To apply the indicator in the tester, it should be included in the tester template "tester.tpl". This how it is done:
+open any chart
+clear the chart of unnecessary indicators, objects and experts (preferably all)
+drag the "LifeHack Balance Equity" indicator to the chart
+then right click on the chart — "Templates" — "Save Template ..." — enter the name "tester.tpl".
+Now the "LifeHack Balance Equity" indicator will be built into the Tester chart.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16982

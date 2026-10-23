@@ -1,0 +1,19 @@
+The Expert Advisor searches for N identical candlesticks in a row. It buys on bullish candlesticks and sells on bearish ones. The CPositionInfo, CTrade and CSymbolInfo classes are used in the code.
+Version 1:
+N Candles
+Version 2:
+N Candles v2
+New in version 3:
+Inputs:
+N identical candles included in the desired series
+Lot
+Take Profit (pips)
+Stop Loss (pips)
+Trailing Stop ("0" -> not used)
+Trailing Step (used if trailing stop >0)
+Order magic
+Slippage
+Example of search with N=3:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18575

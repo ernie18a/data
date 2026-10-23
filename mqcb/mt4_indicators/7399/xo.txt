@@ -1,0 +1,5 @@
+Author: SHARIPOV AINUR
+The indicator without averaging of the data array, that is a Buy/Sell decision is made in one move.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7399

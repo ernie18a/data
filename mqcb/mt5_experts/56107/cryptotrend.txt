@@ -1,0 +1,25 @@
+1. advisor overview
+CryptoTrend 1.00
+is
+an automated EA built for BTC trading, optimised for 2024. It uses the following key components:
+Bollinger Indicator:
+Helps to identify market extremes. If the price goes beyond the bollinger lines given a certain threshold, an entry signal is generated.
+Filter by Order Block:
+The Expert Advisor finds a support (for longs) or resistance (for shorts) range based on historical data (the number of bars is set by the OB_Length
+parameter
+). This helps to refine the signal and reduce false entries.
+Self-learning mechanism:
+By analysing statistics (number of winning and losing trades), the TrendThreshold
+entry
+threshold is dynamically
+adjusted
+. Thus, the algorithm adapts to changing market conditions.
+Risk Management:
+Stop Loss (SL) and Take Profit (TP) levels are calculated based on the difference between the entry price and the support/resistance level with an aggressive risk:profit ratio.
+Project support:
+In the header of the Expert Advisor there is a link with the caption "Support the project, register!" leading to the
+Bybit
+page, which allows users to support the developer.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/56107

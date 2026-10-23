@@ -1,0 +1,14 @@
+The author of the idea
+is
+Maksim Zerkalov
+, and
+the author of the mq5 code
+is
+barabashkakvn
+.
+This simple system is based on the crossover of two MAs.
+Buying if the fast MA crosses the slow one upward. Selling if the fast MA crosses the slow one downward.
+Closing at an opposite signal.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18576

@@ -1,0 +1,2 @@
+Trend Envelopes indicator is calculated based on a % of price change. That % is then used to determine if there is a new trend or trend remains the same.
+This indicator is using only % deviation for calculation and that is the only parameter needed for calculation. It is internally using Close, High and Low price and in this version that can not be changed. Also, due to the nature of the indicator, it can be easily be used as a sort of support/resistance indicator.

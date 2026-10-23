@@ -1,0 +1,7 @@
+This is a variation of a digital filter using Hann windowing for filtering
+with "speed up" factor set to 0, it is the same as original filter
+any speed up factor > 0 makes it a bit more responsive
+The difference between the default (the green/red line) and the same period but with "speed up" factor set to 5
+Recommendations:
+Use it as any digital filter / average
+When using speed up factor, the greater the speed up factor the "faster" the filter will be but you might lose the smoothness. Some balance in this has to be found by experimenting with the speed up factor

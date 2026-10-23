@@ -1,0 +1,13 @@
+The indicator looks for bars without one or two wicks. DRAW_ARROW drawing style.
+Two indicator buffers are used - one signals the absence of an upper wick, while the second one informs of the absence of the lower wick. Both drawing styles apply the same label (
+Symbol code to draw Shadow
+parameter) colored differently. The label codes can be found here:
+MetaEditor - MQL5 Reference - search for "Wingdings"
+on the website:
+Wingdings
+Label shift is set by the
+Arrow shift
+parameter.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22246

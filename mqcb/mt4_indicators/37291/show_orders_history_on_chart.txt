@@ -1,0 +1,29 @@
+Show Orders History On Chart
+This is a Indicators to Show Orders History On Chart, Include Buy and Sell Orders, StopLoss and TakeProfit, Order Close, and Trend line.
+Setting:
+ShowHistoryOrders:
+Whether to show history orders
+ShowOpenOrders:
+Whether to show open orders
+ShowStopLosses:
+Whether to show order stoploss
+ShowTakeProfits:
+Whether to show order takeprofit
+BuyArrowColor:
+Order buy arrow color
+SellArrowColor:
+Order sell arrow color
+CloseArrowColor:
+Order close arrow color
+TakeProfitColor:
+Order takeprofit color
+StopLossColor:
+Order takeprofit color
+ProfitLineStyle:
+Profit order trend line style
+LossLineStyle:
+Loss order trend line style
+MagicNumber:
+Show
+the orders of the specified MagicNumber,
+All order set to 0

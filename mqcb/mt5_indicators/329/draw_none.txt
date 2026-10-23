@@ -1,0 +1,12 @@
+This is example of the indicator, that shows bars index in the "Data Window".
+The bar indexing is set as
+timeseries
+, it means that current uncompleted bar has index=0, the oldest bar has the highest index. Note that the indicator doesn't plot anything (
+DRAW_NONE
+), despite the fact that red color for the first graphic plot is defined.
+See also:
+The Drawing Styles in MQL5
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/329

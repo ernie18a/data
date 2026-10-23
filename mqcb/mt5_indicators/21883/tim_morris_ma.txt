@@ -1,0 +1,2 @@
+The Tim Morris moving average system was created in 2004 by Tim Morris. It is often known as the "TMMA" and traders use this system for scalping and short term trades.
+It seems to produce good signals for scalping in the M15 but further testing and experimenting with parameters is advised

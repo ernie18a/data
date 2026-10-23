@@ -1,0 +1,5 @@
+The code its not optimized, but, its self-explanatory on the var names used.
+the Hull Method can be enabled or disabled, as the graph the raw values for speed and acceleration
+Also, the values can be ploted on Absolute Values (all above Zero)
+to experiment with an usable oscillator, try to use for AVG_PERIOD the square of PERIOD (period*period)
+(9/6/2022 corrected a bug on the calc cicles)

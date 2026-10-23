@@ -1,0 +1,7 @@
+Description:
+In the indicator is the ability to set any timeframe, due to this you can see the stochastics of all periods of time. Added alert when entering the zone marked -30 and 30. When choosing TF necessarily accurately define the time in minutes, simply enter the period you are interested in and the indicator will show the most suitable.
+For example, typing indicator 1500 displays the weekly stochastics, and when you enter 55 - hour. The selected timeframe is shown in the upper left corner.
+Image:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9476

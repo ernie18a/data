@@ -1,0 +1,48 @@
+Random Trader EA
+A versatile Expert Advisor that implements a random trading strategy with advanced risk management features. This EA opens positions randomly while maintaining strict risk control through various customizable parameters.
+Key Features:
+- Random entry system for Buy/Sell positions
+- Flexible stop loss calculation (ATR-based or fixed pip distance)
+- Breakeven functionality with customizable activation distance
+- Smart margin management with option to use maximum available margin
+- Support for all symbol types (standard Forex pairs, JPY pairs, cryptocurrencies)
+- Proper pip value handling for different digit formats (2,3,4,5 digits)
+Input Parameters:
+1. Reward/Risk Ratio (reward_risk_ratio)
+Default: 2
+Description: Multiplier for take profit distance relative to stop loss distance
+Example: A value of 2 means take profit will be twice the stop loss distance
+2. Loss Calculation Method (loss)
+Options:
+- ATR (Average True Range based)
+- PIP (Fixed pip distance)
+Description: Determines how stop loss distance is calculated
+3. ATR Multiplier (loss_atr)
+Description: Multiplier for ATR value when calculating stop loss distance
+Only used when Loss Calculation Method is set to ATR
+4. Fixed Pip Distance (loss_pip)
+Description: Fixed number of pips for stop loss distance
+Only used when Loss Calculation Method is set to PIP
+5. Risk Percent Per Trade (risk_percent_per_trade)
+Description: Maximum risk per trade as a percentage of account balance
+Range: 0.1 to 100
+Example: A value of 1 means risking 1% of account balance per trade
+6. Use Breakeven (use_breakeven)
+Description: Enables/disables the breakeven feature
+When enabled, moves stop loss to entry price once position reaches specified profit
+7. Breakeven Distance (breakeven_distance)
+Description: Number of pips in profit required to activate breakeven
+Example: A value of 10 means stop loss moves to entry price when position is 10 pips in profit
+8. Use Maximum Margin (use_max_margin)
+Default: true
+Description: Enables/disables automatic lot size adjustment based on available margin
+When enabled, reduces position size to fit available margin if necessary
+Trading Logic:
+The EA opens positions randomly (50/50 chance for Buy or Sell) when no position is open. Position size is calculated based on the risk percentage and stop loss distance, ensuring consistent risk per trade. The EA includes built-in safety features like margin checking and proper lot size validation.
+Risk Management:
+- Dynamic position sizing based on account risk percentage
+- Automatic lot size adjustment for margin requirements
+- Breakeven feature to protect profits
+- 10% margin buffer for safety
+- Proper handling of broker's minimum/maximum lot sizes
+Note: Past performance does not guarantee future results. Always use proper risk management and test thoroughly on a demo account before live trading.

@@ -1,0 +1,5 @@
+EA
+This Expert Advisor is built to identify swing highs and lows on the H4 timeframe and then monitor the M15 chart for liquidity sweeps. When a sweep occurs—meaning price closes beyond a swing level while temporarily breaching it—the EA automatically places a buy or sell trade. It calculates lot size based on a fixed monetary risk, stop-loss distance, and tick value, ensuring consistent risk management. The system also annotates trades visually by drawing arrows on the chart, making it easier to track executed signals.
+The EA maintains arrays of swing highs and lows, dynamically updating them as new H4 candles confirm fresh swing points or as M15 sweeps invalidate existing ones. It uses helper functions to fetch candle data, manage arrays, and calculate lot sizes.
+GRAPICH EXAMPLE
+RESULTS (EUR/USD Range = 21, sl_points = 1500, RR=0.2)

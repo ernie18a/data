@@ -1,0 +1,15 @@
+The script allows to preview the indicator behavior on a real chart from the specified point with the minimum computation resources, both in the mode of manual control over the shift point, and in the automatic mode with tick generation delay.
+The script is designed for setting two shift parameters and the number of calculated data for an indicator, EA or another script via the global variables. It is also possible to automatically iterate over the data range from the initially set bar until the zero bar with a delay.
+Provided is an example of linear regression indicator in conjunction with the attached script. The indicator can perform calculations both independently and in conjunction with the script (presence of a running script).
+If used in conjunction with the script, the parameters required in indicator calculation (shift and the number of calculated data) are stored in the global variables (CE_Shift and CE_Count, respectively).
+The script has the ability to manage the indicator both in manual mode (set shift - positioning the linear regression object with the mouse) or in the automatic mode (set shift - positioning the linear regression object through setting the new coordinates with a shift of -1).
+The manual and automatic management mode is set using the _Emulated global variable:
+_Emulated=0 - manual mode
+_Emulated=1 automatic mode.
+Once the object reaches the zero bar in automatic mode, the script switches to manual control mode. The _PauseCount global variable sets the delay parameter for the next run of the indicator. The _Calculated global variable defines the readiness of the indicator to perform the next calculation. Once the calculation completes the indicator sets the flag _Calculated=true.
+If the edges of the linear regression object go beyond the chart screen, the chart is automatically moved to display the new selected range.
+The script operation is concluded with the deletion of all linear regression objects followed by a confirmation to unload.
+My thanks for the initial idea to Oleg Poddubny and his script Mover.mq4.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8710

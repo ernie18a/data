@@ -1,0 +1,37 @@
+Basing Candlesticks MetaTrader indicator
+— is an automatic indicator that detects and marks basing candles on the chart. A basing candle is a candle with body length less than 50% of its high-low range. The indicator highlights the basing candles using histogram lines (in MT4) or custom candles (in MT5) directly in the main chart of the platform. The percentage criterion can be changed via input parameters. You can also turn on alerts for when a new basing candle appears.
+Input parameters
+Percentage
+(default = 50) — percentage value to compare the ratio of the candle's body to its high-low range.
+TriggerCandle
+(default = 1) — candlestick number to check for alerts. "1" is the latest fully formed candlestick. "0" is the current candlestick, which hasn't yet finished forming.
+EnableNativeAlerts
+(default = false) — if
+true
+, MetaTrader's native pop-up alerts will be used on new basing candle appearance.
+EnableSoundAlerts
+(default = false) — if
+true
+, sound alerts will be used on new basing candle appearance.
+EnableEmailAlerts
+(default = false) — if
+true
+, MetaTrader's email alerts will be sent on new basing candle appearance. Email should be properly configured in MetaTrader via
+Tools->Options->Email
+.
+EnablePushAlerts
+(default = false) — if
+true
+, MetaTrader's push notification alerts will be sent to your device upon new basing candle appearance. Notifications should be properly configured in MetaTrader via
+Tools->Options->Notifications
+.
+AlertEmailSubject
+(default = "") — additional text for alert's email subject.
+AlertText
+(default = "") — additional text for alerts.
+SoundFileName
+(default = "alert.wav") — sound file name to play on alert if
+EnableSoundAlerts
+is set to
+true
+.

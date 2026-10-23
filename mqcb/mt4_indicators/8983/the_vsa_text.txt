@@ -1,0 +1,13 @@
+Author:
+chayutra sriboonruang
+The indicator is base on "volume spared analysis". It shows the vertical text to indicate
+upthrust,
+no demand bar,
+stopping volume,
+no supply bar
+reverse upthrust.
+The indicator should use together with any kind of volume indicator and the support and resistance indicator.
+The external input parameters
+SpreadPeriod : this is for calculating the average of spread, 20 as default
+VolumePeriod : this is for calculating the average of volume, 20 as default
+vsa text

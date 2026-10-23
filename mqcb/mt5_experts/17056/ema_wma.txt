@@ -1,0 +1,24 @@
+Author of the idea
+—
+Vladimir Khlystov
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Intersection of two iMA (MA).
+From the author of the idea:
+Users often ask to write a simple Expert Advisor.
+The presented EA does not claim to be able to save the deposit from "blowing". Its task is to verify theories.
+Here is one of them, hopefully, author of the idea will not mind:
+Use two lines — WMA 8 and EMA 28.
+When WMA crosses EMA from below — open upward position.
+When WMA crosses EMA from above — open downward position.
+Once the position is opened, set orders: Take Profit 50 points (from Open), Stop Loss 50 points (from Open + spread).
+Tips:
+Trade using a fixed deposit size — 10% with a leverage of (1:100).
+The system is not suitable for all currency pairs.
+If the trend reversed and WMA crossed EMA in the direction opposite to the opened position — open a position in the direction of the trend, while closing the previous one (of course, the old orders should be deleted and new ones should be placed).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17056

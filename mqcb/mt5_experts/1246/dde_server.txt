@@ -1,0 +1,13 @@
+Real author:
+RickD e2e-fx.net
+It would be too bad for this little tool to gather dust.
+Actually designed for MetaTrader 4 (MQL4), works excellent with small adjustments in MetaTader 5 (MQL5). It is a small MFC application (DDE server).
+All data that become available in MQL5 can be exported via this DDE interface (e.g. live data to Excel).
+MQL5 example
+(Expert Advisor):
+Export MQL5 live data every second with the help of the event handling function OnTimer().
+Name of a company that serves the account.
+Server time.
+Current Moving Average (EMA 21).
+Comments:
+MFC application (DDE server)  unzip and run.

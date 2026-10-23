@@ -1,0 +1,6 @@
+RSICloud
+indicator with background filling for overbought/oversold areas, as well as for the channel between them.
+Fig. 1. RSICloudBG indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22926

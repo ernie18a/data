@@ -1,0 +1,4 @@
+Theory :
+Schaff trend cycle, as defined and described by Dough Schaff, is a sort of double stochastic of a macd. Macd is calculated as em(fast) - ema(slow). Here is a version that replaces ema in the calculation with Hull average.
+Usage :
+The usual way Schaff trend cycle is used - color changes can be used for signals, or you can define some levels as triggers for signals

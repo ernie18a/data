@@ -1,0 +1,10 @@
+Real author:
+Khurram Mustafa
+The code is purely based on Relative Strength Indicator and the reason to amend is updating when the currency pair comes out from extreme oversold and overbought.
+It can be used on any timeframe, but I recommend to attach this indicator on high timeframes. I checked this all is good instead of repaint.
+I request if anyone will solve the repaint issue, I will be really thankful to him.
+When reading crossed overbought or oversold levels and returning from medium or extreme level, user will get a signal as a buy or sell
+arrow
+.
+Recommendations:
+Attached this indicator on higher timeframes such as H1 - H4 - D1 - Weekly - Monthly

@@ -1,0 +1,4 @@
+Description:
+This indicator shows all trades which belong to this instrument on the chart.
+The sample chart displays a successfull short trade and a lost long trade. If you move the mouse over the line, it shows details of the trade.
+Image:

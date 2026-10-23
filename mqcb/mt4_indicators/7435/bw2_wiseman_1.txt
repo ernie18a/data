@@ -1,0 +1,9 @@
+Author: wellx
+Based on the book by Bill Williams -
+Trading Chaos Second Edition
+Parameters:
+- updown - offset in points for the icons not to overlap
+- back - the number of past bars to consider (to detect the highest/lowest)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7435

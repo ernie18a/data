@@ -1,0 +1,2 @@
+Average Directional Movement Index with Standard Deviation.
+Image:

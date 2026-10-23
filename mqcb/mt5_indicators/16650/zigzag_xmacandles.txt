@@ -1,0 +1,8 @@
+ZigZag based on the
+XMACandles
+indicator candles. In some sense, this is a smoothed ZigZag!
+This indicator requires the XMACandles.ex5 compiled indicator file in <terminal_data_folder>\MQL5\Indicators for the ZigZag_XMACandles indicator correct operation.
+Fig.1. ZigZag_XMACandles indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16650

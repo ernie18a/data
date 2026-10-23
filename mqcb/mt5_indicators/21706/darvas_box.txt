@@ -1,0 +1,6 @@
+The Darvas Box indicator by Nicolas Darvas is a channel filter indicator.
+The indicator has no input parameters.
+Nicolas Darvas invested in stocks and traded the channel breakout (boxes determining the High and Low price areas over a period of time). A buy trade is performed when the volume increases and the channel is broken. Using this strategy, Nicolas Darvas earned two million out of 10 thousand of investments for a year and a half. Trading was conducted in a strongly bullish market.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21706

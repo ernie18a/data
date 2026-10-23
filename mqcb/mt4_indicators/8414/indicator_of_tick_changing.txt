@@ -1,0 +1,4 @@
+The indicator show the direction of the price changing using the Alert function, as well as the number of points the price changed by with the coming of a new tick, and the current price. You can change the value of the price changing in the setting of the indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8414

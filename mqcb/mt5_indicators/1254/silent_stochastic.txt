@@ -1,0 +1,13 @@
+The real author:
+Svinozavr
+Replacement of a standard Stochastic. It has the same parameters as the standard plus "sensitivity" parameter Sens in parameters window. It allows cutting off fluctuations below a certain level set in points. Thereby, the number of false signals is considerably reduced.
+The fact is that the standard Stochastic (
+by Layne
+) locates the current price between price highs and lows for the number of bars set by %K (Kperiod) parameter. And it does not matter, if extreme points differ from each other by 1 or 100 points. It will still indicate oversold/overbought values. Implementation of some limit allows cutting off oscillations that are inconsiderable for a trading system.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 19.10.2009.
+Fig.1 The ColorStochNR indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1254

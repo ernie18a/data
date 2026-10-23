@@ -1,0 +1,38 @@
+Description:
+Sometimes it is necessary to monitor several charts simultaneously to find correlations between changes in the rates of various currency pairs. This script allows traders to do that displaying several subcharts in a single chart window.
+The script has been developed to create charts for the Championship's Minutes at the
+Automated Trading Championship 2012
+.
+Therefore, it includes:
+Drawing graphical objects in a single window (using
+CChartObjectSubChart
+standard class).
+Changing graphical objects display settings (background color, scale, grid, scrolling, etc.).
+Graphical object display area shift (using
+ChartNavigate
+method, as well as
+CHART_FIXED_MAX
+and
+CHART_FIXED_MIN
+properties).
+Drawing a rectangle on a graphical object (
+OBJ_RECTANGLE
+object).
+Drawing horizontal lines of the average open prices of short and long positions (using
+OBJ_HLINE
+).
+Downloading data for the lines from the file (the text file with the data should be placed in
+terminal_data_folder\MQL5\Files)
+.
+CSubChartExtended
+class derived from
+CChartObjectSubChart
+has been developed for drawing subcharts. It is derived from
+CChartObject
+class - the basic class for working with graphical objects.
+After examining and slightly changing the code, you will be able to enable displaying several currency pair charts in a single window in the way that is convenient to you.
+Image:
+Drawing several charts in a single window
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1345

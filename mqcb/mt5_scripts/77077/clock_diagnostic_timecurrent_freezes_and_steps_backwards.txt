@@ -1,0 +1,14 @@
+ClockDiagnostic.mq5
+reads TimeCurrent() and TimeLocal() every few seconds for a fixed observation window and reports the two failure modes of the server clock: it
+freezes
+when no tick arrives, and it can
+step backwards
+after a symbol switch, a reconnection or a tick from another instrument.
+Inputs:
+InpSeconds = 60 (observation length), InpStep = 2 (interval between readings, seconds).
+The script prints
+both clocks and their initial difference in seconds and hours, a >>> STEP BACK line each time TimeCurrent() goes back, and a summary: readings taken, seconds advanced by each clock, the longest freeze observed and the number of step-backs, followed by a verdict for the window.
+Rule it documents:
+TimeLocal() for timestamps, dates, day changes and expiry; TimeCurrent() for session hours and comparison with market data.
+Limit:
+it measures only the window it runs in. With the market open and ticks arriving, a 60-second run may show no anomaly; run it with the market closed to see the freeze.

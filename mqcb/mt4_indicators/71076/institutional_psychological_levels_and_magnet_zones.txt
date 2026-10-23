@@ -1,0 +1,13 @@
+Financial institutions and algorithmic trade servers do not perceive the market like retail traders. High-frequency algorithms and institutional desks execute their primary block orders at "Round Numbers" (Psychological Levels), as these zones represent deep liquidity pools and natural areas of interest for central banks.
+The Institutional Psychological Levels indicator is a professional utility that maps these "Magnet Zones" on your MT4 chart. It replaces the default, messy terminal grid with a clean, institutional-grade structure that highlights where the real order flow is likely to react.
+Core Features
+Big Round Numbers (BRN):
+Automatically highlights the major 1000 and 500 point levels where institutional accumulation typically occurs.
+Psychological Magnet Logic:
+Price action tends to be attracted to these levels like a magnet. Spotting a rejection at a 000 level is a high-probability signal for a trend reversal.
+Adaptive Grid:
+Unlike the native MT4 grid, this indicator scales with the symbol's price, ensuring that the psychological levels are always relevant regardless of the asset (Forex, Gold, or Indices).
+Zero Lag & Performance:
+Written in optimized MQL4 to ensure zero overhead. It calculates only the visible range, keeping your terminal responsive during high-volatility news events.
+How to Trade
+Institutional traders use these levels as targets for Take Profits or as "Protective Zones" for Stop Losses. When price approaches a major 000 level with low volume, a reversal is imminent. Conversely, a breakout of a major level with high relative volume signals a massive institutional trend continuation.

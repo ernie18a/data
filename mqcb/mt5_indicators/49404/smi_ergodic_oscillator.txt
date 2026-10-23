@@ -1,0 +1,16 @@
+The SMI Ergodic Oscillator indicator displays the difference between the
+True Strength Index
+and its exponentially smoothed signal line.
+It has three adjustable parameters:
+Long Length
+- primary smoothing period for TSI calculation
+Short Length
+- secondary smoothing period for TSI calculation.
+Signal Line Length
+- period of signal line smoothing for SMI calculation.
+The ergodic oscillator gives the following signals related to the zero level crossing:
+Finding the oscillator line for a long time in the zone below zero and then crossing it from bottom to top indicates the possibility of opening a long position;
+Similarly, when the oscillator is above zero level for a long time and then crosses it from top to bottom, it indicates a favourable moment to open a short position.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/49404

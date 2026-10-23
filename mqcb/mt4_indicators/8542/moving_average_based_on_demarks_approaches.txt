@@ -1,0 +1,14 @@
+The drawing of the moving average is performed on the basis of Demark's method "Daily Range Projections".
+Indicator on a zero bar points at the future price change.
+Input Parameters:
+period - the period of averaging,
+ma_method - the method of averaging:
+0 - Simple moving average
+1 - Exponential moving average
+2 - Smoothed moving average
+3 - Linearly-weighted moving average
+Picture:
+You can develop some other indicators using this method.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8542

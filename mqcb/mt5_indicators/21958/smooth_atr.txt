@@ -1,0 +1,2 @@
+ATR (Average True Range) is calculated as an average of a True Range. The average that is used for that is the simple moving average. And that means that all the goods and the bad that are usually associated with simple moving average are built in into the ATR too.
+Here is a version that replaces the simple moving average part in the ATR calculation with JMA smoothing. That makes the ATR much smoother and much faster in response to quick market changes

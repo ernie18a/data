@@ -1,0 +1,10 @@
+Description:
+Grid is a money maker in weak market, while a disaster in trending market. Maybe you can consider close all positions at some time, and run it totally again at another time, just like a fisher.
+This is AIGrid System With Manual Control.
+I wrote this EA at 2009, now I share it with you, glad to know more forex experts.
+When executing, it's like this:
+Typical Grid Graph, when close all positions at some time, if you do not close them, it may become disaster when the trend is coming, like a fisher meet a storm in the sea:
+In Trending Market, you may use large grid size and make just long or just short:
+V0.02 added Close All with Equity increase/decrease control function, default 10% disabled;
+ECN Broker is already supported because all limit/stop orders;
+4/5 digit Broker is auto supported, default Gridsize = 20, means 20 point @ 4 digit broker, 200 point @ 5 digit Broker;

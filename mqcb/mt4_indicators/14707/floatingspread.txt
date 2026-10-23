@@ -1,0 +1,10 @@
+The indicator values are displayed only when new ticks appear. The indicator does not display history.
+Description of the indicator settings:
+Symbol_1 = "EURUSD"; — name of the first symbol to display.
+Symbol_2 = "GBPUSD"; — name of the second symbol to display.
+Symbol_3 = "USDCHF"; — name of the third symbol to display.
+Symbol_4 = "USDJPY"; — name of the fourth symbol to display.
+DrawBars = 130; — indicator display limitation, the number of bars. At = 0 displays on all available bars of the chart.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14707

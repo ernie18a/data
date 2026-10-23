@@ -1,0 +1,32 @@
+The indicator searches for custom patterns specified in settings, and displays them on a chart. The pattern must be set as a text code, in which:
+U is a bullish candlestick
+D is a bearish candlestick
+N is a candlestick of any type
+For example:
+If you write "UUD" in the indicator settings, the indicator will find and display all found "Bullish-Bullish-Bearish" candlestick patterns;
+If you write "UUD" in the indicator settings, the indicator will find and display all found "Bullish-any-Bearish" candlestick patterns;
+Patterns can only be specified using characters
+U
+,
+D
+and
+N
+or
+u
+,
+d
+and
+n
+.
+The indicator can display specified patterns as well as mirror-mapped (reverse) ones.
+It has two parameters:
+Pattern (U - up, N - nothing, D - down)
+- pattern as a sequence of candlesticks;
+Show reverse pattern
+- whether to display reverse patterns.
+Fig.1 Pattern "UND" (Bullish-any-Bearish).
+Fig.2 Pattern "UUD" (Bullish-Bullish-Bearish).
+Fig.3 Pattern "UUD" (Bullish-Bullish-Bearish) with the display of reverse patterns enabled.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20058

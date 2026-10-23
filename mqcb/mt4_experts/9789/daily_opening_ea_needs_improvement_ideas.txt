@@ -1,0 +1,14 @@
+Obviously looking for ideas to improve! Open to comments and code changes.
+Message me or reply with your ideas/comments.
+I'll implement them as fast as possible and get back to you with the results.
+The Idea:
+Using an assortment of indicators, we try to predict the general direction of the next day. In the current version, the indicators are CCI(50), RSI(21), and MACD(default). If it thinks the day will be bearish, it puts up a sell pending only; same with buy pending. It also uses adjustable lot sizes. You can specify what fraction of your current equity you want to risk, then it will calculate the appropriate lot size (max 10 for now) based on your allowable risk. For example, RiskPercentage = 0.01 = 1%. That means if you lose a trade, it will be about 1% of your previous equity. Well, that's the idea anyways. Who knows if it actually works properly. Also note: STOPLOSS AND TAKEPROFIT VARIABLES ARE BOTH IN POINTS - ADJUST PER BROKER. THE EA WAS WRITTEN FOR A 5 DIGIT BROKER.
+Disclaimer: this EA was developed by studying the many EAs already on this site, a good number of them using this same strategy. I don't take credit for the idea. I just want to help develop it!
+Current Results:
+Currently, the results aren't profitable. I've attached the reports from backtesting for the most recentish 1.5 years and for all my history data. Neither of these results were optimized. Just using the default values I setup at random.
+I think I found some time ago that a 2-5% risk percentage yielded the best results. This is an old EA that I've recently started to develop again so those old results are lost in my subconscious already. Anyways, this might prove interesting to some people - it helps confirm what you hear lots of traders saying about risking only 2% of your current equity.
+What We Need To Do:
+Increase the winning percentage (find better indicators?)
+Find optimal TP/SL pairings
+Find optimal pair to trade
+Clean da codez

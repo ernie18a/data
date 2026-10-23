@@ -1,0 +1,34 @@
+Author of the idea
+:
+Gusti Risyadi Noor
+,
+author of the mq5 code
+:
+barabashkakvn
+.
+Breakout of the daily bar at the distance of "Daily Break" points.
+Input Parameters
+Lots manual
+- enable/disable manual setting of lot value;
+Lots
+- position volume (manual input);
+Risk
+- position volume as percent of free margin;
+Stop Loss
+Take Profit
+Close by signal
+- reversing position opening direction;
+"Daily Break" Break point
+- the size of the breakout;
+"Daily Break" Last bar size min
+- the minimum bar size;
+"Daily Break" Last bar size max
+- the maximum bar size;
+"Daily Break" Trailing stop
+- trailing value;
+"Daily Break" Trailing step
+- trailing step value.
+The strategy works well on the H1 timeframe:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19498

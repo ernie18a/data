@@ -1,0 +1,7 @@
+Real author:
+Ramdass
+Semaphore signal indicator using NRTR algorithm and performing calculations by HIGH and LOW.
+Fig.1. NRTR_extr_Sign
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15254

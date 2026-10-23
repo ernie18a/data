@@ -1,0 +1,16 @@
+The custom NHNL_Divergence indicator (based on the
+NHNL
+indicator) draws the HL index line in a separate window and displays found divergences in the indicator window and on the price chart.
+The NHNL indicator is
+not required
+for the operation of NHNL_Divergence.
+The indicator has three input parameters:
+Period
+- the period for calculating High/Low indices of the NHNL indicator;
+Bullish color
+- the color of bullish signal arrows and lines;
+Bearish color
+- the color of bearish signal arrows and lines;
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20052

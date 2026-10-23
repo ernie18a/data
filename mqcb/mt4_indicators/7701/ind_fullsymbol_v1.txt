@@ -1,0 +1,8 @@
+The indicator shows the full symbol name on a chart:
+A list of full symbol names from several dealing centers is collected in the indicator. If the list does not contain a symbol, it will be shown in its usual abbreviated form.
+Settings:
+Color - font color;
+FontSize - font size;
+Corner - binding corner: 0 - upper left corner, 1 - upper right corner, 2 - lower left corner, 3 - lower right corner;
+X - X coordinate;
+Y - Y coordinate.

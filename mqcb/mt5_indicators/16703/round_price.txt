@@ -1,0 +1,1 @@
+A variation on the T3 theme that was made as a sort of envelopes using T3 for basic value (not some of the built in averages). It can be used in the same manner as any envelopes are used (remebering that the envelopes are calculated in points not pips).

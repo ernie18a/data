@@ -1,0 +1,103 @@
+The indicator displays the vertical time grid with eight hours step on a chart with intraday timeframe not exceeding H4. The indicator is also not displayed on H3.
+Indicator input parameters:
+//+----------------------------------------------+
+//|
+Indicator input parameters
+|
+//+----------------------------------------------+
+//---- general settings
+input
+string
+LinesSirname=
+"VGridLine_Intraday_X8"
+;
+// Line name
+input
+uint
+WeeklyTotal=
+4
+;
+// Number of weeks in history for indexing
+input
+uint
+FutureTotal=
+1
+;
+// Number of lines in future for indexing
+//---- settings for week bars
+input
+color
+Line_Color_W=Gold;
+// Week line color
+input
+STYLE Line_Style_W=SOLID_;
+// Week line style
+input
+ENUM_WIDTH Line_Width_W=w_1;
+// Week line width
+input
+bool
+SetBackground_W=
+true
+;
+// Week line background display
+input
+uint
+FutureTotal_W=
+1
+;
+// Number of lines in empty future history
+//---- settings for day bars
+input
+color
+Line_Color_D=Red;
+// Day line color
+input
+STYLE Line_Style_D=SOLID_;
+// Day line display style
+input
+ENUM_WIDTH Line_Width_D=w_1;
+// Day line width
+input
+bool
+SetBackground_D=
+true
+;
+// Day lines background display
+//---- settings for intraday bars (8 hours)
+input
+color
+Line_Color_D1=Lime;
+// 8 hours line color
+input
+STYLE Line_Style_D1=DASH_;
+// 8 hours line style
+input
+ENUM_WIDTH Line_Width_D1=w_1;
+// 8 hours line width
+input
+bool
+SetBackground_D1=
+true
+;
+// 8 hours line background display
+//---- settings for intraday bars (16 hours)
+input
+color
+Line_Color_D2=BlueViolet;
+// 16 hours line color
+input
+STYLE Line_Style_D2=DASH_;
+// 16 hours line style
+input
+ENUM_WIDTH Line_Width_D2=w_1;
+// 16 hours line width
+input
+bool
+SetBackground_D2=
+true
+;
+// 16 hours line background display
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/620

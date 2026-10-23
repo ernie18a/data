@@ -1,0 +1,5 @@
+Spread Monitor is a simple information indicator for MetaTrader 5.
+It displays the current spread in pips as a compact graphical panel with colour-coded indicators and a level bar.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/77413

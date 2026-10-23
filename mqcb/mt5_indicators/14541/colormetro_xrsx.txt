@@ -1,0 +1,10 @@
+Real author:
+TrendLaboratory Ltd.
+Indicator of the oscillator type, which displays its values based on the
+XRSX
+technical indicator. The XRSX indicator is represented by the blue color, the cloud color changes according to the trend direction. The lime color of the cloud is signal for buying, red-pink is for selling.
+The indicator requires XRSX.ex5 indicator file. Place it in <terminal_data_folder>\MQL5\Indicators.
+Figure 1. The ColorMETRO_XRSX indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14541

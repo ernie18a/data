@@ -1,0 +1,7 @@
+Indicator is based on calculation of two standard deviations and result is ratio between them.
+As single indicator it doesnt show direction of price, it only show high activity area. I recommend to combine it with other indicators or price action.
+Signal ideas:
+When indicator cross treshold line and slope change back down.
+When indicator cross treshold line up.
+When indicator cross treshold line down.
+When indicator is bellow treshold line its possible trending market.

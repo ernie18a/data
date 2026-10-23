@@ -1,0 +1,6 @@
+Quantora Multi-Timeframe RSI Dashboard MT5 is a multi-timeframe momentum analysis indicator for MetaTrader 5.
+It analyzes RSI across seven timeframes — from M1 to D1 — and classifies each one as overbought, bullish, neutral, bearish, or oversold. This makes it easy to see how momentum differs across short, medium, and higher timeframes without switching charts.
+All readings are combined into an average RSI and a clear overall momentum bias, giving a quick summary of market conditions.
+The dashboard also shows how many timeframes fall into each category, helping to understand whether momentum is aligned or mixed.
+RSI settings and levels can be adjusted to fit different strategies. The interface is clean, updates automatically, and works on all symbols and timeframes.
+This tool is designed for analysis only. It does not generate trading signals or manage trades.

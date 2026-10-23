@@ -1,0 +1,7 @@
+Shows the relative change of the current price from the price N/M bars ago.
+96/288 bars are used by default. For the 5-minute timeframe: 96 bars - the last 8 hours, 288 bars - the last day.
+You can use the deviation from the zero line in the positive or negative area.
+You can use the divergence of price extrema and extrema of the indicator lines.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1994

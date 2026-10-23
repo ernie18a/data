@@ -1,0 +1,7 @@
+Positive values ​​indicate a strong trend. TCF+ and TCF- values can not stay simultaneously higher than zero point, but both can have negative values that speaks of consolidation or lack of a trend.
+Recommendations:
+It is recommended to open long positions when the TCF+ becomes positive (the indicator has blue color and crosses the zero line bottom-up).
+It is recommended to open short positions when the TCF- becomes higher than zero (the indicator has red color and crosses the zero line bottom-up).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1275

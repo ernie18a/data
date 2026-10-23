@@ -1,0 +1,7 @@
+Author: Finware.ru Ltd
+The 3c_DM indicator.
+Drow_style = 0
+- graph drawing style: 0 - as a dotted line, other value - as a histogram
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7854

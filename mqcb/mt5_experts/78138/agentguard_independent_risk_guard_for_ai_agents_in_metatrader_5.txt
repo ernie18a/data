@@ -1,0 +1,3 @@
+AI agents (including MCP-connected agents since build 6060) trade at machine speed — and platform safety settings alone can't catch every mistake. AgentGuard watches every open position on a 5-second timer and enforces four hard limits: maximum total volume, maximum position count, mandatory stop-loss on every position, and a daily-loss circuit breaker that closes everything and latches until the next day.
+It works alongside any EA, manual trading, or AI agent — it doesn't care how a position was opened, only whether it violates a limit. Status panel, alerts on every intervention, monitor-only mode for safe calibration.
+Free. No DLLs. It manages risk — it never generates signals.

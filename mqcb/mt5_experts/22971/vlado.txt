@@ -1,0 +1,22 @@
+The author of the idea
+-
+Scriptor
+mq5 code author
+-
+barabashkakvn
+The EA applies
+WPR Custom
+custom indicator, which allows correct display of WPR levels (Value Level #1 and WPR: Value Level #2) during a visual test
+The EA only operates when a new bar appears. The EA opens only one position at a time, therefore it is able to work both on hedging and netting accounts. BUY trading signals are formed when the indicator on the
+Bar current
+bar is below the
+WPR: Value Level #2
+level; SELL signals when the indicator on the
+Bar current
+bar is above the
+WPR: Value Level #1
+level.
+BUY open signal is also SELL close one and vice versa.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22971

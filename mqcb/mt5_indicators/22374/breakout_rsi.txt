@@ -1,0 +1,31 @@
+Breakout RSI oscillator is based
+on the article "The Breakout Relative Strength Index" by Howard Wang in the magazine "Technical Analysis of Stocks & Commodities" (September 2015).
+The indicator has three input parameters:
+Period
+- calculation period
+Overbought
+- overbought level
+Oversold
+- oversold level
+Calculation:
+BRSI = 100.0 - 100.0 / (1.0+AvgP/AvgN)
+where:
+AvgP - SMA(P,Period)
+AvgN - SMA(N,Period)
+If BPower > PrevBPower
+P = Abs(BPower)
+otherwise
+P = 0
+If BPower < PrevBPower
+N = Abs(BPower)
+otherwise
+N = 0
+BPower = BPrice * BStrength * BVolume
+BPrice = (PrevOpen+Max+Min+Close)/4.0
+BStrength = (Close-PevOpen)/(Max-Min)
+BVolume = Volume + PrevVolume
+Max = Max(High,PrevHigh)
+Min = Min(Low, PrevLow)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22374

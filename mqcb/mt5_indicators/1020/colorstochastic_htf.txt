@@ -1,0 +1,7 @@
+Standard
+Stochastic oscillator
+displayed as a cloud that can be located by setting the indicator timeframe value different from the chart one.
+ColorStochastic_HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1020

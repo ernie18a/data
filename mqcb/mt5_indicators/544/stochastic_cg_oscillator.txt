@@ -1,0 +1,20 @@
+Real author:
+Witold Wozniak
+Stochastic CG Oscillator - is a
+Stochastic oscillator
+, the values of which are calculated based not on a price series, but on
+CG Oscillator
+indicator values.
+Standard
+Stochastic
+oscillator may not react on market cycles or volatility. It uses fixed calculations period and does not adjust to the constantly changing market cycle length. Stochastic CG Oscillator does not have such a drawback and it can be adjusted to the current market volatility.
+The indicator is inspired by John Ehlers' article
+"Using The Fisher Transform"
+published in November 2002 in the
+"Technical Analysis Of Stock & Commodities"
+magazine. The simplest trading system involving this indicator is completely equivalent to Stochastic oscillator or
+RSI
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/544

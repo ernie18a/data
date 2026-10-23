@@ -1,0 +1,13 @@
+Simple Expert Advisor based on the RSI indicator.
+The strategy is quite simple here:
+If the lower level of the RSI is crossed from bottom to top, a BUY deal is opened.
+If the upper level of the RSI is crossed from top to bottom, a SELL deal is opened.
+The lot size is fixed and is specified in the settings (Lot). It is also possible to set the required Stop Loss and Take Profit levels.
+Since the indicator may temporarily cross any of the levels (upper or lower) during the process of candlestick formation, the trade signal is checked at the closing of a candlestick, and consequently, the deal will be opened at the opening of the next candle. But the closing gets a bit more interesting — the deals are mainly closed when the opposite signal appears. Respectively, if buy deals are open, and a sell signal appears, then all the buy deals are closed and a single sell deal is opened.
+However, if any of the buy deals has a Stop Loss set and closing it would yield profit or would simply get it into the breakeven, then the deal will not be closed (swap is not taken into account here), the same will happen to the sell deals. This is very convenient for enabling the trailing stop, for which it is enough to set a value greater or equal to the minimum Stop Loss / Take Profit level in the corresponding setting of the Expert Advisor.
+Important!
+Of course, this is not a "switch on and forget" kind or robot, its purpose is more of researching the market and the RSI indicator.
+Feel free to address any adequate questions concerning the operation or improvement of this Expert Advisor to me, I will be glad to help!
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13809

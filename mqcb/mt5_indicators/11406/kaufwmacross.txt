@@ -1,0 +1,12 @@
+Real author:
+John Smith
+A semaphore signal indicator that uses crossing of a classical moving average with Kaufman's
+AMA
+indicator.
+The original indicator was developed in the MQL4 language and published in the
+CodeBase
+on 01.05.2008.
+Figure 1. The KaufWMAcross indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11406

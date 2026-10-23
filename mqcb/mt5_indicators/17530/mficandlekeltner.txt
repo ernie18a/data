@@ -1,0 +1,7 @@
+A Keltner Channel drawn relative to the average value of the
+MFI oscillators as a sequence of candlesticks
+.
+Fig1. The MFICandleKeltner indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17530

@@ -1,0 +1,11 @@
+It is based on a simple idea that with a sharp one-directional movement, the distance between the high and the low of the selected period should tend to the total of bar ranges of that period. The indicator is the ratio of one value to the second one, that is:
+RangeRatio = (max high - min low) / Sum(high[i] - low[i])
+The indicator is designed for higher timeframes (H4 and higher), works well with periods of 3-5 bars. Values ​​greater than 0.7 indicate that the movement does not have potential, so there will be either consolidation, rollback or reversal.
+Range Ratio with the period 3 on EURUSD H4:
+Tips:
+I do not advise to use the indicator with a period of more than 5, as it is designed for short-term systems, so the greater the value of the period - the less reliable is the signal.
+As seen in the figure above, the bars that are indicated by the arrows, are quite good exit points (important: I mean exit at the close of the candlestick).
+Example of use as a filter: if you receive a buy signal on the timeframe H1, but on the daily chart in an uptrend the value of RangeRatio is greater than 0.7 - it is recommended to ignore the signal. In other words, intending to enter the market, check the value of RangeRatio on a higher timeframe.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1748

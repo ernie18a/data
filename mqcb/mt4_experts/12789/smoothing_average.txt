@@ -1,0 +1,8 @@
+This EA is based on 1 moving average indicator, the exit and entry points are determined by a "smoothing factor"; a fixed amount of pips above or below the MA.
+It opens no more than 1 position at a time and has no stoploss, takeprofit or trailingstop, these may be subject to change in future versions.
+This has been uploaded for experimental purposes, it is a very unpolished EA and I don't recommend running this on a live account.
+Testing Results:
+The following chart is a test conducted over a 5 year period, using the same parameters it has also worked decently over a 10 year period (2005 to 2015).
+Standard settings are for the 1 hour chart on EURUSD, but can easily be optimized for any currency pair and timeframe.
+Long term goal is to make this EA profitable over a prolonged period of time, i.e 5 years or more with as little complexity as possible.
+Feedback is appreciated, enjoy.

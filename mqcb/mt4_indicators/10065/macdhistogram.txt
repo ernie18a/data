@@ -1,0 +1,2 @@
+Description:
+This is a normal MACD with Histogram. It's really simple coding but helpfull. I'm not testing on MT5 but i think it's ok with that. Let me know if you're tested.

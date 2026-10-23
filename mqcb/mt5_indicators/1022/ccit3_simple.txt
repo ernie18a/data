@@ -1,0 +1,7 @@
+The indicator is based on CCI and uses Tilson's ratio.
+The indicator has limitation on the number of calculated bars (Max_bars_calc=100000).
+EA_CCIT3
+Expert Advisor implements this indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1022

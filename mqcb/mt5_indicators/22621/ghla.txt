@@ -1,0 +1,27 @@
+Gann HiLo Activator indicator is a simple trend indicator with a colored line.
+It has one configurable parameter:
+Period
+- calculation period
+Calculation:
+If Direction < 0
+GHLA = AvgH
+Line color - red
+otherwise
+GHLA = AvgL
+Lien color - green
+where:
+If SW = 0
+Direction = PrevDirection
+otherwise
+Direction = SW
+If Close > AvgH
+SW = 1
+If Close < AvgL
+SW =-1
+otherwise
+SW = 0
+AvgH = SMA(High, Period)
+AvgL = SMA(Low, Period)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22621

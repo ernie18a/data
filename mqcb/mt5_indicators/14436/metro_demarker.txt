@@ -1,0 +1,7 @@
+Real author:
+igorad
+Indicator of the oscillator type, which displays its values based on the DeMarker technical indicator. The DeMarker indicator is represented by the purple color, the cloud color changes according to the trend direction. The blue color of the cloud is signal for buying, red is for selling.
+Figure 1. The METRO_DeMarker indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14436

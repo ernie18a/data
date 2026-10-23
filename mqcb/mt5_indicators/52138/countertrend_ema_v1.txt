@@ -1,0 +1,9 @@
+MT5 Alert Indicator
+Please add Ema moving averages 60/100/200 & Rsi period 10 levels 30/70 to your chart.
+This indicator alert on a trend reversal strategy were
+- ema 60 > 100&200
+- ema 100 < 200
+And the Rsi is below 30
+FOR BUY SIGNAL
+Use this strategy in confluence with a larger timeframe trend in the same direction.
+This strategy identifies great entry opportunities to enter an early trend.

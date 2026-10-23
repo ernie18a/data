@@ -1,0 +1,79 @@
+This indicator is based on
+DRAW_FILLING
+buffers.
+The input parameters are absent, the
+TimeTradeServer()
+,
+TimeGMT()
+functions are used.
+The unaccuracy in the trade session times is possible, the values are from the first site I have found :))
+It is possible to change its values in the block of constants, the GMT time is used.
+// Time constants are specified across Greenwich
+const
+int
+AsiaOpen=
+0
+;
+const
+int
+AsiaClose=
+9
+;
+const
+int
+AsiaOpenSummertime=
+1
+;
+// The Asian session shifts
+const
+int
+AsiaCloseSummertime=
+10
+;
+// after the time changes
+const
+int
+EuropaOpen=
+6
+;
+const
+int
+EuropaClose=
+15
+;
+const
+int
+AmericaOpen=
+13
+;
+const
+int
+AmericaClose=
+22
+;
+There is an opportunity to use the time changes to the summer time, at present time it's a primitive and realized with the function TimeDaylightSavings();
+//+--------------------------------------------------------------------+
+// Summertime determination is reserved for the future calculations
+//+--------------------------------------------------------------------+
+bool
+Summertime(datetime time)
+{
+if
+(TimeDaylightSavings()!=
+0
+)
+return
+(
+true
+);
+else
+return
+(
+false
+);
+}
+So, after the time change to the summer time, all of the history changes it's time and vice versa.
+The first version of the indicator has been published at MQL4
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/86

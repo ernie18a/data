@@ -1,0 +1,2 @@
+A stochastic indicator with a twist: it is calculating a stochastic, and then a stochastic of that stochastic.
+It is a variation of the well known double smoothed stochastic and as such it is filtering out a lot of false signals. For all the double smoothed stochastic versions, general rule of usage could be that they should be used on somewhat higher time frames — since it is a kind of a "trend" indicator, using it on very low time frames is not logical (having the very low time frames being almost nothing but noise)

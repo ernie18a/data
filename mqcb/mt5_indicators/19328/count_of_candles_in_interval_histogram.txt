@@ -1,0 +1,10 @@
+The indicator calculates bullish and bearish bars in the period from
+The number of the starting bar
+(the first bar on the right of the chart) till
+The number of the end bar
+(located on the left).
+The indicator with 'starting bar' (0) and 'end bar' (5):
+Possible application: three timeframes with the same settings:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19328

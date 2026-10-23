@@ -1,0 +1,5 @@
+Author: perky
+It is not recommended to open a position when the histogram is red. If all indicators give entry signals, the final check is done according to this indicator. The histogram must be green.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7298

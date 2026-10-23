@@ -1,0 +1,20 @@
+Total Power is a power indicator. It displays three lines: Bulls power, bears power, and total power.
+It has two adjustable parameters:
+Power period
+- power calculation period
+EMA period
+- moving average calculation period
+Calculations:
+BullPower = BullCount * 100 / Power period
+BearPower = BearCount * 100 / Power period
+TotalPower= Abs(BearCount - BullCount) * 100 / Power period
+where:
+If HighPW > MA
+BullCount = BullCount+1
+If LowPW < MA
+BearCount = BearCount+1
+HighPW, LowPW - High and Low prices within the range of Power period
+MA - EMA(Close, Period MA)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22986

@@ -1,0 +1,73 @@
+The indicator displays a horizontal price line. Its parameters are set when the indicator is launched by a trader. The line defines the signal trigger level. Its breakthrough activates signals accompanied by emails and push notifications.
+During the first launch, the line that sets the trigger level is colored gray and remains inactive.
+Fig. 1. PriceAlert_V2 indicator. Inactive price line
+When a trader changes the line position on the chart, it becomes active and changes its color to red.
+Fig. 2. PriceAlert_V2 indicator. Active price line
+As soon as the price reaches the trigger line, the indicator activates alerts or audio signals.
+Fig. 3. PriceAlert_V2 indicator. Activating an alert
+The indicator provides signals at each tick, during which the line remains broken till the signal limit is reached. The limit is specified by the AlertTotal external variable (number of signals) in the indicator settings. After that, the trigger line is colored gray and becomes inactive until moved to required levels by a trader with the corresponding color change.
+//+------------------------------------------------+
+//| Indicator inputs                               |
+//+------------------------------------------------+
+input
+string
+level_name=
+"Price_Level_1"
+;
+// Trigger level name
+input
+string
+level_comment=
+"trigger level"
+;
+// Trigger level comment
+input
+color
+active_level_color=Red;
+// Activated level color
+input
+color
+inactive_level_color=Gray;
+// Triggered level color
+input
+ENUM_LINE_STYLE
+level_style=
+STYLE_SOLID
+;
+// Trigger level style
+input
+ENUM_WIDTH level_width=w_3;
+// Trigger level width
+input
+bool
+AlertON=
+true
+;
+// Allow alerts
+input
+uint
+AlertTotal=
+3
+;
+// number of signals
+input
+bool
+EMailON=
+false
+;
+// Allow emails
+input
+bool
+PushON=
+false
+;
+// Allow push notifications
+input
+bool
+Deletelevel=
+true
+;
+// remove level settings when changing timeframe
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22586

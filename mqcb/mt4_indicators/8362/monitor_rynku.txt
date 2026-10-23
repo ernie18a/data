@@ -1,0 +1,17 @@
+Monitor rynku
+pokazuje w osobnym okienku terminala takie
+informacje
+jak:
+- notowany instrument,
+- aktualny SWAP dla pozycji LONG/SHORT,
+- aktualny SPREAD,
+- aktualny kurs Bid/Ask.
+The
+Monitor rynku
+shows in a special terminal window such
+information
+as:
+- selected symbol,
+- current SWAP for position LONG/SHORT,
+- current SPREAD,
+- current Bid/Ask rate.

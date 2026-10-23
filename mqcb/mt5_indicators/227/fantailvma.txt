@@ -1,0 +1,9 @@
+This is FantailVMA indicator, converted from MQL4.
+The indicator is a combination of
+Moving Average
+and
+Average True Range
+indicators. It shows trend movements.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/227

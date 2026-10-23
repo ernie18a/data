@@ -1,0 +1,7 @@
+Quantora Trading Cost Calculator MT5 is a utility for MetaTrader 5 that helps estimate the total cost of a trade before entering the market.
+It combines spread, commission, and swap into a single clear view, allowing traders to understand how much a position may cost in real conditions. The calculator uses live symbol data together with user-defined inputs such as lot size, trade direction, and commission per lot.
+The tool shows spread cost, commission cost, and swap impact based on the selected holding period, then calculates an estimated total cost in the account currency. It also compares this value to the account balance to show the cost as a percentage.
+A simple classification highlights whether the trading cost is low or high, helping traders quickly evaluate if a trade is efficient.
+The dashboard also includes basic symbol information such as tick size, tick value, and contract size, ensuring calculations adapt to different instruments and broker conditions.
+It works on all symbols and timeframes, updates automatically, and is designed for fast and practical use.
+This tool is for analysis only. It does not open trades or generate signals.

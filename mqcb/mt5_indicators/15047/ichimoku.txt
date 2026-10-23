@@ -1,0 +1,7 @@
+Real author:
+MetaQuotes Software Corp.
+The standard Ichimoku indicator, in which the distance between the Tenkan-sen and Kijun-sen lines is filled with a color histogram for for a better visual analysis.
+Fig.1. The Ichimoku indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15047

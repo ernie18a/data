@@ -1,0 +1,38 @@
+Detrended Price Oscillator (MetaTrader indicator)
+— a version of the price oscillator based on the difference between the current price and the simple moving average shifted by
+(Period / 2) + 1
+bars. Unlike the
+stochastic oscillator
+, this indicator aims to show the short-term trend changes (price waves inside the long-term trend). The indicator is displayed in the separate window of the chart. You can use this Detrended Price Oscillator (DPO) indicator in both MT4 and MT5 versions of the platform.
+Input parameters
+MA_Period
+(default = 14) — the period of the simple moving average used in the indicator.
+BarsToCount
+(default = 400) — for how many bars to calculate the indicator.
+EnableNativeAlerts
+(default = false) — if
+true
+, indicator will use MetaTrader's native pop-up alerts.
+EnableEmailAlerts
+(default = false) — if
+true
+, indicator will use MetaTrader's email alerts. Email should be properly configured in MetaTrader via
+Tools->Options->Email
+.
+EnablePushAlerts
+(default = false) — if
+true
+, indicator will use MetaTrader's push notification alerts. Notifications should be properly configured in MetaTrader via
+Tools->Options->Notifications
+.
+TriggerCandle
+(default = Previous) — the candle to issue alerts on:
+Previous
+— the most recently closed candle or
+Current
+— the yet unfinished candle.
+Strategy
+Trend changes are signaled by the cross of the indicator and the zero level. However, because the indicator is lagging, predicting such crosses can be a better technique. It is not quite a very accurate indicator for direct trading purposes, but it still can be used for short-term trend confirmation.
+Another possibility with the Detrended Price Oscillator is to use detect
+divergences
+with the price chart. As you can see on the chart below, the major trend reversal could be spotted by comparing the double top demonstrated by the price and the lower high on the DPO chart.

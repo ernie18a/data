@@ -1,0 +1,111 @@
+Author of the idea
+: Vladimir,
+mq5 code author
+:
+barabashkakvn
+.
+The Expert Advisor generates a signal to open a position if the price has crossed iMA (Moving Average, MA) and (what's more important) the specified number of minutes has passed since the opening of the bar.
+All Sell positions are closed before opening a Buy position, and all Buy positions are closed before opening Sell.
+Results of tests in the "Every Tick" mode for multiple symbols:
+Symbol
+Pass
+Result
+Profit
+Expected Payoff
+Profit Factor
+Recovery Factor
+Sharpe Ratio
+Custom
+Equity DD %
+Trades
+USDJPY
+1
+127383,44
+3789,75
+18,76
+1,26
+0,76
+0,10
+0
+82,80
+202
+EURUSD
+7
+67028,45
+2663,10
+11,84
+1,16
+0,48
+0,08
+0
+84,70
+225
+AUDCAD
+5
+19623,87
+1016,30
+4,89
+1,09
+0,43
+0,06
+0
+71,95
+208
+EURAUD
+3
+-178181,47
+-2038,52
+-185,32
+0,28
+-0,65
+-0,30
+0
+88,24
+11
+USDCAD
+6
+-11734,63
+-2724,33
+-42,57
+0,75
+-0,67
+-0,01
+0
+94,32
+64
+CADJPY
+4
+-26012,44
+-2775,03
+-115,63
+0,42
+-0,86
+-0,17
+0
+94,41
+24
+AUDNZD
+2
+-8300,29
+-2791,89
+-39,88
+0,49
+-0,78
+-0,16
+0
+94,50
+70
+GBPUSD
+0
+1,7977E+308
+-3287,60
+-30,16
+0,81
+-0,42
+-0,04
+0
+104,17
+109
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19512

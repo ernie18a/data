@@ -1,0 +1,21 @@
+MT5 image
+TradingView image
+This indicator replicates the
+MACD as
+displayed on TradingView,
+bringing its distinctive visual style natively into MT5.
+Key features:
+- 4-colour histogram: Dark Green (rising above zero), Light Green
+(falling above zero), Light Coral (rising towards zero), Red
+(falling below zero)
+- Signal line seeded with SMA — identical to Pine Script’s
+ta.ema() initialisation, ensuring bar-for-bar agreement
+with TradingView
+- Fully customisable inputs: Fast EMA, Slow EMA, Signal length,
+price source
+No DLL, no external dependencies. Plug and play.
+Also available for MetaTrader 4:
+https://www.mql5.com/en/code/74169
+Translated from Italian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/it/code/74050

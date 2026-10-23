@@ -1,0 +1,18 @@
+Real author
+: Bruce Hellstrom (brucehvn)
+The
+Psychological
+indicator implemented as a color histogram, featuring alerts, push and email notifications.
+Possible variants of alerts, Push and email notifications (Buy and Sell respectively):
+Breakout of the overbought zone
+Trend in the overbought zone
+Breakout of the indicator's midline - beginning of the Buy trend
+Continuation of the Buy trend outside the overbought area
+Continuation of the Sell trend outside the oversold area
+Breakout of the indicator's midline - beginning of the Sell trend
+Trend in the oversold zone
+Breakout of the oversold zone
+Fig. 1. The ColorPsychological indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18958

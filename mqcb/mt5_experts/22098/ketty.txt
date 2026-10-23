@@ -1,0 +1,50 @@
+The author of the idea
+-
+Andrey
+mq5 code author
+-
+barabashkakvn
+The EA works with pending Buy Stop and Sell Stop orders.
+The strategy applies the general view of British traders as
+well-known “stop level hunters”. This means that the initial movement at the opening of the London session may not always be true.
+The original rules for buying are as follows:
+After the beginning of the London session, wait for the price to reach a new range low, which is less than the Open price at least by the
+Channel breakthrough
+value (the range is a price movement between the Frankfurt and London openings).
+Then the pair reverses and hits the maximum.
+Set a buy pending order with the volume of
+Lots
+to
+Order price shift
+above the range high.
+Set stop loss (
+Stop Loss
+) and take profit (T
+ake Profit
+) immediately.
+Calculate the channel range strictly from
+Channel start hour
+::
+Channel start minute
+up to
+Channel end hour
+::
+Channel end time
+. Search for high and low within this range. Use the detected high and low as well as the dates
+Channel start hour
+::
+Channel start minute
+and
+Channel end hour
+::
+Channel end time
+to build a rectangle and visualize the channel:
+A pending order is placed within a time range from
+Placing order start time
+(hours) to
+Placing order end time
+(hours). If we go beyond the specified range, while there is a a non-activated pending order, remove it.
+GBPUSD, M15:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22098

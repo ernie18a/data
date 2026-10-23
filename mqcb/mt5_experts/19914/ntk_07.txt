@@ -1,0 +1,151 @@
+The author of the idea
+:
+Nikolay
+,
+the mq5 code author
+:
+barabashkakvn
+.
+The Expert Advisor manages Buy and Sell positions (applies Trailing Stop) and sets pending Buy Stop and Sell Stop orders.
+Parameters
+Fixed Lot
+- the pending order lot is not calculated, and a manually specified value is used instead (the
+Money management
+parameter should be set to
+Fixed Lot
+).
+Max total lots
+- the total volume of positions and pending orders (suppose we have BUY 0.03, BUY 0.04, SELL 0.09 and BUY STOP 0.05, then the total volume is 0.21);
+Max total Position
+- the maximum number of positions and pending orders (suppose we have BUY 0.03, BUY 0.04, SELL 0.09 and BUY STOP 0.05, then the total number is 4).
+Net step
+- pending orders are placed at a distance of
+Net step
+from the current price.
+Net step
+cannot be equal to "0".
+Take Profit
+- if
+Take Profit
+is set to "0", the parameter will be completely disabled, i.e. after triggering of a pending order, the Take Profit of the resulting position will always be equal to "0".
+Stop Loss
+- if
+Stop Loss
+is set to "0", the Stop Loss of the resulting position can be modified using one of the available trailing stop methods.
+The following limitation shall apply here:
+Stop Loss
+cannot be set to zero if the
+Money management
+parameter is other than
+Fixed Lot
+.
+If
+Stop loss
+is set to zero (
+Money management
+must always be equal to
+Fixed Lot
+) and only one
+Trailing Stop
+method is enabled, the trailing will act as the breakeven function: the first Stop Loss of a position will be set in the profitable zone.
+Lot increase rate
+- lot multiplier for the next position. The volume of each subsequent position is calculated as
+Lot increase rate
+* previous position volume.
+Position Trailing
+Multiple methods for modifying Stop Loss are implemented in the Expert Advisor (several trailing stop types).
+Trailing Stop
+can either be an independent trailing type (
+Trailing Stop
+is not equal to zero,
+Trailing at High and Low
+is set to false and
+Trailing at Moving Average
+is set to false) or be used (as a parameter) in one of trailing methods (
+Trailing at High and Low
+or
+Trailing at Moving Average
+). Thus,
+Trailing Stop
+cannot be set to zero.
+If you accidentally choose (in addition to
+Trailing Stop
+) two or more types of trailing, a warning message will pop up, and the EA will be unloaded from the chart.
+Trailing at High and Low prices
+At each iteration, the EA checks if the position is profitable:
+For a BUY position, the EA checks if placing a Stop Loss at bar #1 Low is possible: if the position is profitable at the bar #1 Low level, the Stop Loss will be set at bar #1 Low;
+For a SELL position, the EA checks if placing a Stop Loss at bar #1 High is possible: if the position is profitable at the bar #1 High level, the Stop Loss will be set at bar #1 High.
+Trailing at Moving Average
+At each iteration, the EA checks if the position is profitable.
+Once the profit distance in points form the Moving Average value at bar #0 becomes equal to or greater than
+Trailing Stop
++
+Trailing Step
+(in this EA,
+Trailing Step
+is hidden from the user and is always calculated as half of
+Trailing Stop
+), an automated command is generated to modify Stop Loss by a value of Moving Average at bar #0.
+Trailing Stop
+- classic trailing stop.
+At each iteration, the EA checks if the position is profitable.
+Once the profit in points becomes equal to or greater than
+Trailing Stop
++
+Trailing Step
+(in this EA,
+Trailing Step
+is hidden from the user and is always calculated as half of
+Trailing Stop
+), an automated command is generated to modify Stop Loss to a distance of
+Trailing Stop
+from the current price.
+If price moves increasing the position profit, Stop Loss automatically moves together with the price.
+Otherwise, the position is not modified. Thus, trading position's profit is fixed automatically.
+Money management
+- the volume of a position (or a pending order) can be calculated in one of three ways:
+Fixed Lot
+- a fixed value (set manually in the
+Fixed Lot
+parameter);
+Fixed Margin
+- as risk (the
+Risk in % for a deal
+parameter) per deal in percentage of free margin;
+Fixed Risk
+- as risk percent (
+Risk in % for a deal
+) per deal.
+Risk in % for a deal
+- risk percent per deal (only for "Fixed Margin" and "Fixed Risk)
+Min FreeMargin
+- minimum amount of free margin. If the free margin is less than
+Min FreeMargin
+, the EA does not place new pending orders and stops managing positions.
+Moving Average
+- parameters of the Moving Average indicator, which is used for
+Trailing at Moving Average
+.
+Hour start
+,
+Hour end
+- working time settings (the EA will work from
+Hour start
+till
+Hour end
+), only applies when there are no positions and pending orders.
+Period in bars
+- the number of bars to calculate the range for placing initial pending orders (when there are no open positions), the range between High and Low over the number of bars set in
+Period in bars
+. Two types of trading can be selected for the range (
+Type of trade
+). "1" and "2" are two identical values.
+Type of trade
+- trading type. This parameter only applies when there are no positions or pending orders. Two types are available:
+trade from edges of range
+- trading from the borders of the range;
+trade from the centre of range
+- trading from the center of the range, the center is calculated as (High + Low) / 2.0 +-1 points (four-digit quotes).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19914

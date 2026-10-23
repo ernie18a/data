@@ -1,0 +1,15 @@
+Real author:
+FX Sniper, KimIV
+Trend indicator of two colored lines. Color lines are defined by the trend.
+The color of the upper line is determined by the position of the price relative to the
+classical moving average
+. The color of the bottom line is determined by the position of the prices relative to
+LSMA
+.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 26.09.2007.
+Fig.1 Indicator i-GentorLSMAEMA_v02
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2203

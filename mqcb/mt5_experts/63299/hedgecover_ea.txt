@@ -1,0 +1,43 @@
+HedgeCover EA - Intelligent Position Protection System
+Overview:
+HedgeCover is a professional-grade hedging Expert Advisor designed to provide safe, controlled protection for losing positions. Unlike dangerous martingale systems, it implements intelligent risk management with multiple safety layers to prevent over-trading and account blowouts.
+Key Features:
+•
+One-Hedge-Per-Position
+- Each position is hedged only once, eliminating infinite looping
+•
+Magic Number Separation
+- Uses distinct magic numbers for main positions vs hedge positions to prevent hedging hedges
+•
+Configurable Loss Threshold
+- Set loss level in pips (30-100 recommended) before hedging triggers
+•
+Cooldown Protection
+- Minimum time between hedge trades (5-15 minutes recommended)
+•
+Max Hedges Limit
+- Absolute limit on total number of hedge positions
+•
+Margin Safety Checks
+- 80% free margin requirement prevents over-leverage
+•
+Symbol Filtering
+- Only hedges positions on the current chart symbol
+Risk Management:
+Prevents the "avalanche effect" that causes account wipeouts
+Implements professional risk controls rather than reckless doubling down
+Includes lot size validation and normalization
+Comprehensive logging and monitoring capabilities
+Recommended Settings:
+Main Magic: Your strategy's magic number
+Hedge Magic: Different value (e.g., 99999)
+Loss Threshold: 50 pips
+Lot Coefficient: 1.5x
+Max Hedges: 3
+Cooldown: 5 minutes
+License:
+MIT License - Free for community use, modification, and distribution
+Warning:
+Designed for demo testing and educational purposes. Use at your own risk. Always test thoroughly before considering live use.
+Ideal For:
+Traders looking for professional hedging capabilities without the risks of traditional martingale systems.

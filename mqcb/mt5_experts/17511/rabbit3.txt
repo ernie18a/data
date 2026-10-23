@@ -1,0 +1,13 @@
+Author of the idea
+—
+Peter
+,
+author of the mq5 code
+—
+barabashkakvn
+.
+The strategy uses two indicators Moving Average, MA with different periods, Commodity Channel Index, CCI and Williams’ Percent Range, %R.
+Launch the EA on timeframes higher than M30.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17511

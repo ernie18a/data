@@ -1,0 +1,186 @@
+SL+TP-CP PIP DIST INDI – v2 (Indicator)
+Function
+Calculates pip difference between
+Current price and SL
+& T
+P
+price.
+Places Text labels at SL & TP lines: Order Type, Ticket number, SL & TP price, Pip calculation and Pip label.
+Places Text labels at Order Execution (OE) lines: Order Type, Ticket number and OE price.
+Can be used with MT4 defaults and any other suitable MT4 application such as sangmane’s Easy Order script.
+Labels: Labels can be user defined - see hide options in Input Window
+User defined examples
+Sell-SL #260844327 * 1.04606 * 322.4 pps
+Sell-SL #260844327 * 3224 f-pps *
+#260844327 * 3224
+Sell-SL * 322.4
+1.04606 * 3224
+322.4
+BS-OE #260866924 * 1.02015
+* Non digit Symbols will default to pps regardless if f-pps (fractional pips - points / 3 & 5 digit pricing) is set to to [true].
+PIP CALCULATION TEST & CHECK: SL+TP-CP Pip Dist Indi
+1. Cross reference Tables with Chart and Terminal.
+2. Tables T-1 & T-2
+a) Terminal: Columns 0-2 are values taken from the Terminal at instant of screenshot - these values can be validated in the Terminal image that is included on the chart.
+b) Calculation: 3 is an excel calculation of the relevant values.
+c) Chart: Column 4 is the values as indicated on the chart.
+d) Check: Column 5 confirms a matching value.
+e) Current Bid and Ask at instant of screenshot can be located in column 9 of the Terminal.
+f) All Buy orders are calculated as follows:
+I. TP pip calculation = TP price – Bid price.
+II. SL pip calculation = Bid price - SL price.
+g) All Sell orders are calculated as follows:
+I. SL pip calculation = SL price – Ask price.
+II. TP pip calculation = Ask price – TP price.
+3. Column 9 of the Terminal indicates Ask price for Buy Limit and Buy Stop –when a future current Ask price equals the relevant Limit or Stop price the order will fill and register in the terminal as a Buy. Column 9 will then reflect a Bid price for the order as is the case of the Buy in line 1.
+4. Column 9 of the Terminal indicates Bid price for Sell Limit and Sell Stop – when a future current Bid price equals the relevant Limit or Stop price the order will fill and register in the terminal as a Sell. Column 9 will then reflect a Ask price for the order as is the case of the Sell in line 2.
+Notes
+1: SL+TP-CP Pip Dist Indi – v2 is not part of Easy Order, functions independent of the Easy Order and does not attach text to the Easy Order SL & TP lines but to the MT4 default SL and TP values.
+2. Easy Order is a FREE MT4 script and can be downloaded here -
+Easy Order
+Avoid time wasting repetitions - permanently change defaults - examples provided .
+If you have not edited before,
+i
+t is dead easy
+and saves time and tedious unnecessary repetitions.
+1.
+Open MT4, locate View at top left of Menu and click, then click Navigator.
+2.
+The Navigator window will have opened on the left or right of your screen.
+3.
+Locate Custom Indicators in the Navigator Window and if it is not expanded click the [+] to expand.
+4.
+Locate SL+TP-CP DIST INDI - v2, - highlight – and right click to reveal selection window.
+5.
+Click Modify on selection window.
+6.
+You will now be in the MetaEditor with SL+TP-CP PIP DIST INDI – v2 loaded in the MetaEditor.
+7.
+If any other indicators are loaded it would be best to unload them before beginning any editing - right click on the relevant tab and click close.
+8.
+You can now begin editing – follow instructions below.
+9. After every edit/modification run Compile and check for errors. An example can be found here -
+post 244
+Note:
+If you get stuck and can’t figure why it will not compile without error use the left undo arrow to take you back to a point when it did compile successfully. Compile and check for errors after every modification and you will be fine.
+Find this code which is immediate top when the code editor is accessed.
+// SL+TP-CP PIP DIST INDI - v2
+// USERS CAN PERMANENTLY CHANGE THE DEFAULT SETTINGS BY MODIFYING THE BELOW CODE - EXAMPLES PROVIDED.
+// * * * * * REMEBER TO COMPILE AND CHECK FOR ERRORS AFTER EVERY EDIT/MODIFICATION * * * * *
+extern
+string
+PIPS_or_FRACTIONAL_PIPS =
+"fractional pips = points / 3 & 5 digit pricing"
+;
+extern
+bool
+Fractional_Pips  =
+true
+;
+// edit examples: =
+false
+;
+extern
+string
+HIDE_OPTIONS;
+extern
+bool
+Hide_Order_Text =
+false
+; // edit example: =
+true
+;
+extern
+bool
+Hide_OrderTicket =
+false
+;
+extern
+bool
+Hide_SL_TP_Price =
+false
+;
+extern
+bool
+Hide_Pip_Text =
+false
+;
+extern
+bool
+Hide_SL =
+false
+;
+extern
+bool
+Hide_TP =
+false
+;
+extern
+bool
+Hide_Limit_and_Stop_Orders =
+false
+;
+extern
+bool
+Hide_OE_Price =
+false
+;
+extern
+bool
+Hide_OE =
+false
+;
+extern
+string
+COSMETICS;
+extern
+string
+L_neg_100___to___R_pos_20;
+// = "- - neg left / pos right + +";
+extern
+int
+Shift_Text_Left_or_Right =
+13
+;
+// edit example: =
+10
+;
+extern
+color  SL_Color =
+Magenta
+;
+// edit examples: =
+Red
+;
+extern
+color  TP_Color = LimeGreen;
+extern
+bool
+Use_OE_Color =
+false
+;
+extern
+color  OE_Color = Gold;
+extern
+int
+SL_TP_Font_Size =
+10
+;
+extern
+int
+OE_Font_Size =
+8
+;
+extern
+string
+FontName =
+"
+Arial
+"
+;
+// edit example: = "
+Verdana
+";
+// * * * * * DO NOT MODIFY BEYOND THIS POINT UNLESS YOU KNOW WHAT YOU ARE DOING * * * * *
+Disclaimer:
+All downloads and documentation offered, AS IS, as educational material.

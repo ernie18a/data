@@ -1,0 +1,2 @@
+Based on Patrick E. Lafferty TASC article: "The End Point Moving Average".
+This indicator uses the original formula described in the article with one deviation: it is made to be "faster" (i.e., to react to market changes in a faster mode than the original version).

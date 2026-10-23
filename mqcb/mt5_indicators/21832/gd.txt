@@ -1,0 +1,15 @@
+The Generalized DEMA moving average. Double exponential smoothing is applied to a price, taking into account the effect of the secondary smoothing.
+The indicator has three input parameters:
+Volume factor (in percent)
+- secondary smoothing effect factor, in percent
+Period
+- calculation period
+Applied price
+Calculation:
+GD = (1.0+Volume factor) * EMA1 - Volume factor * EMA2
+where:
+EMA2 - EMA(EMA1, Period)
+EMA1 - EMA(Applied price, Period)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21832

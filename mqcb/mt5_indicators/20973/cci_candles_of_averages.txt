@@ -1,0 +1,9 @@
+CCI indicator made as candles.
+Four different CCIs are calculated:
+CCI of smoothed High
+CCI of smoothed Low
+CCI of smoothed Open
+CCI of smoothed Close
+Those 4 values are then combined into a "candles" display of CCI. It can be used as usual CCI (using some significant levels) or you can check when the zero line is crossed by the candles in order to check for trend change signal.
+Using the prices smoothing makes the CCI values significantly smoother. If, by any case, you wish to turn the prices smoothing off, simply set the smoothing period to less than or equal to 1.
+For smoothing you can use one of the 4 basic types of averages: SMA, EMA, SMMA or LWMA. Regardless of the smoothing type, this version of CCI is still using the SMA (that is the usual way to calculate mean deviation when CCI is calculated).

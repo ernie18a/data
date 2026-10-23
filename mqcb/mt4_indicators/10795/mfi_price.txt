@@ -1,0 +1,18 @@
+Indicator Money Flow Index, MFI uses typical price for its creation. I used
+standard code
+of the indicator and just added possibility to select all types of
+applied prices
+.
+Input parameters:
+Applied_price:
+0 – close price,
+1 – open price,
+2 - high price,
+3 - low price,
+4 –median price, (high+low)/2,
+5 - typical price,, (high+low+close)/3,
+6 - weighted close price, (high+low+close+close)/4.
+Indicator MFI_price
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10795

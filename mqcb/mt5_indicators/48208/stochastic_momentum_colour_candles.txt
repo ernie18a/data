@@ -1,0 +1,19 @@
+Based on the Stochastic Momentum Indicator according to William Blau by Andrey F. Zelinsky
+https://www.mql5.com/en/code/370
+, I came up with the idea of not only showing the closing price but also finding out more about the development of the bars. The idea with the bars is not new either, the principle can be found here:
+https://www.mql5.com/en/code/13010
+Not much has changed, except that the calculation of the stochastic momentum has been carried out for all four buffers (OHLC).
+There are two formulas of the stochastic momentum with period q:
+StochMom(price,q) = price - 1/2 * [LL(q) + HH(q)]
+(the result is an absolute value of the price movement compared to the mean value)
+resp.
+StochMom(price,q) = (100 * price) / (1/2 *
+[LL(q) + HH(q)])
+(the result is a percentage value of the price movement when the mean value is 100%)
+These are both implemented and can be switched using InpFormula.
+The stochastic momentum indicates how far the closing price of the last bar has moved away from the average between the highest and lowest price of the last q bars. However, this calculation can be performed in exactly the same way for open, high and low.
+Stochastic momentum can be used in a similar way to normal momentum. Trends are indicated by the value remaining above or below the centre line for a longer period of time. Crossing the centre line can indicate a change in direction. After a longer trend in particular, crossing and then crossing back over the centre line can indicate a continuation of the trend. You can also query the colour buffer to find out the direction of the bar movement.
+Sometimes the movement of the current bar goes so far that the centre line shifts and the bar is displayed shifted (long bar in the image above). Whether this artefact is useful or not has yet to be tested.
+Translated from German by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/de/code/48208

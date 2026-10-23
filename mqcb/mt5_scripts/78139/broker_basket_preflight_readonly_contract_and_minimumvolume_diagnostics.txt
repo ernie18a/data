@@ -1,0 +1,32 @@
+Broker Basket Preflight
+An original standalone MetaTrader 5 script for checking a broker's multi-symbol configuration before developing or testing a portfolio EA. It reads exact symbols already selected in Market Watch and writes a diagnostic report to the Experts journal. The MQ5 source includes the MIT license and requires no external library, DLL or network request.
+Installation guide:
+the attached START-HERE.txt explains installation, all three inputs and units, journal labels and a recorded test summary in English and French.
+Usage
+Copy BrokerBasketPreflight.mq5 to MQL5/Scripts, open it in MetaEditor and compile with F7.
+Select each exact broker symbol in Market Watch and allow bid/ask quotes to arrive. Prefixes and suffixes are not guessed.
+Run the script on a separate chart. Leave InpSymbols empty for that chart's symbol, or enter a comma-separated basket using your broker's exact names.
+Read the SPEC, QUOTE, CALC, WARN, SKIP and SUMMARY lines in the Experts journal. Correct any name, data or specification issue and rerun.
+Inputs
+InpSymbols
+— empty by default; otherwise one to 64 comma-separated entries. Names are trimmed. Unknown, unselected, empty and duplicate entries are skipped independently so later valid entries can still be inspected.
+InpMaxQuoteAgeSeconds
+— default 120. Warns when the last quote is older than this threshold; 0 disables the stale-quote age threshold.
+InpMaxSpreadPoints
+— default 0, meaning disabled. An optional spread warning threshold in the broker's points, not pips or account currency.
+Outputs
+The report shows contract size, minimum/maximum/step volume, aggregate directional volume limit, point, tradable tick size, digits, stops/freeze distances, calculation and trading modes, execution mode and reported market-order filling policies. It checks volume and price grids, synchronization, quote time and spread. These fields follow the
+MQL5 symbol properties
+; the current bid/ask is read with
+SymbolInfoTick
+.
+For valid, grid-aligned quotes and minimum volume, the script estimates isolated BUY and SELL margin, the result of an upward and downward one-tick price move for each side, and the immediate spread-only result for each side. Amounts are labelled in the account currency.
+OrderCalcMargin
+and
+OrderCalcProfit
+failures are reported as warnings; an unavailable result is never substituted with a fabricated zero. Stale-quote calculations are identified as historical.
+Limitations
+The script submits no orders and manages no positions. It does not call APIs to change chart settings, Market Watch selections or terminal global variables. It reports no account identifier, balance or position list. Output is journal text only.
+Margin estimates ignore current positions and pending orders and are not an available-margin check. Price-move and spread calculations exclude commission, swap and slippage. The script does not validate daily history, indicator signals or trading-session opening times. A clean report does not prove that funds are sufficient or that the broker will accept an order. Custom symbols, stale quotes and missing currency-conversion data require separate review.
+Validation
+Verified on 7 October 2026: the standalone script compiled in MetaEditor with 0 errors and 0 warnings. An isolated MT5 Strategy Tester smoke test called the same diagnostic through a test-only EA wrapper on US500 with a simulated USD account. It inspected one valid symbol, skipped four invalid/duplicate/empty entries, and produced two margin estimates and six profit probes with zero warnings. Eighteen deterministic helper checks also passed. The wrapper is not part of this submission. This is a software smoke test, not validation of every broker, symbol or account currency.

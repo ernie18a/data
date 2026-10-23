@@ -1,0 +1,2 @@
+One more possible way to avoid RSI "flattening".
+This is sigmoidal normalized version of RSI. Additional JMA smoothing is used in order to produce smooth results.

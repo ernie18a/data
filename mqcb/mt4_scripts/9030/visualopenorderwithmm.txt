@@ -1,0 +1,8 @@
+Drag & Drop the script on chart, at position where the StopLoss should stay. A Parameter Window appear - there you can change the desired risk. 0.05 means that if the price hits your stoploss, your loss should be no more that 5% of your capital.
+If you don't want to see this window please find and delete the followed line in source code:
+#property show_inputs
+If you need a full control over openning of position, press Ctrl+O and check "Ask manual confirmation":
+Now after the dropping of the script you could manually confirm the prices:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9030

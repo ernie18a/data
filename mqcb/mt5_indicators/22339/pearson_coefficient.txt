@@ -1,0 +1,20 @@
+The definition:
+Pearson's correlation coefficient is the
+covariance
+of the two variables divided by the product of their
+standard deviations
+. The form of the definition involves a "product moment", that is, the mean (the first
+moment
+about the origin) of the product of the mean-adjusted random variables; hence the modifier
+product-moment
+in the name.More information you can find here :
+https://en.wikipedia.org/wiki/Pearson_correlation_coefficient
+This version:
+This version allows us to calculate the coefficient on the symbol itself as well as to calculate the correlation coefficient of two symbols.
+When "Second symbol" parameter is set to empty value, current chart symbol is used. In this case the "Lag" parameter must be set to some value greater than 0 otherwise the result will always be 0
+When "Second symbol" parameter is set to some valid symbol different than the current symbol chart, that symbol is used. In this case the "Lag" parameter should be set to 0  (to calculate the correlation corresponding bars) but you can introduce lag too, keeping in mind that the second symbol data is really lagged in that case
+Usage:
+As any correlation indicator - when the expected correlation is deviation, that can be used as a signal to take appropriate action (in correlation trading style)
+Example(s):
+Current symbol with 1 bar lag
+Foreign symbol with 0 bar lag

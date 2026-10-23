@@ -1,0 +1,6 @@
+Trading based on preset candlestick combinations (patterns), using Take Profit and Stop Loss.
+Candlesticks are marked as "1" (bullish) and "0" (bearish):
+The desired combination of candlesticks is selected from the drop-down list:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18066

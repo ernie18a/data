@@ -1,0 +1,2 @@
+Author: Tartan
+RoundPriceExp indicator.

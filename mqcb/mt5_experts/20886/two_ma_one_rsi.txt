@@ -1,0 +1,148 @@
+Idea by
+:
+Iurii Tokman
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+The EA trades on two indicators iMA (Moving Average, MA) and one iRSI (Relative Strength Index, RSI). Decision on trade signals is only made when a new bar appears, while positions are trailed and closed (in case of profit) at every tick.
+An unconventional solution was applied: The
+Slow
+indicator averaging period is calculated as the
+Fast
+averaging period multiplied by two, while the
+RSI
+averaging period is always equal to the
+Fast
+averaging period. This reduces the number of parameters in optimization.
+You can also optimize absolutely all signs "<" and ">" in the signals identification formula. To do so, its own
+variables
+(
+InpMoreLessBuy_1
+,
+InpMoreLessBuy_2
+,
+InpMoreLessBuy_3
+,
+InpMoreLessSell_1
+,
+InpMoreLessSell_2
+, and
+InpMoreLessSell_3
+) are introduced. With these variables, the formula is modified as follows:
+bool signal_buy=(!
+InpMoreLessBuy_1
+?  ArrayFast[1]
+<ArraySlow[1]:
+ArrayFast
+[1]>
+ArraySlow[1]) && 
+                   (
+InpMoreLessBuy_2
+?  ArrayFast[0]>ArraySlow[0]:  ArrayFast[0]
+<ArraySlow[0]) &&
+                   (
+InpMoreLessBuy_3
+?
+RSI
+>
+InpRSI_level_UP      :  RSI
+<InpRSI_level_UP);
+bool
+signal
+_sell=(
+InpMoreLessSell_1
+?
+ArrayFast
+[1]>
+ArraySlow[1]:  ArrayFast[1]
+<ArraySlow[1]) && 
+                    (!
+InpMoreLessSell_2
+?
+ArrayFast
+[0]<ArraySlow[0]:
+ArrayFast
+[0]>
+ArraySlow[0]) &&
+                    (!
+InpMoreLessSell_3
+?  RSI
+<InpRSI_level_DOWN    :
+RSI
+>
+InpRSI_level_DOWN);
+Input parameters
+Parameters of indicators Moving Average:
+Fast: av. period
+- Averaging period of Moving Average "Fast";
+Fast: horizontal shift
+- Horizontal shift of Moving Average "Fast";
+Fast: type of price
+- Price type of Moving Average "Fast";
+Slow: horizontal shift
+- Horizontal shift of Moving Average "Slow";
+Slow: type of price
+- Price type of Moving Average "Slow";
+Fast and Slow: smoothing type
+- Averaging type (a common parameter for "Fast" and "Slow").
+Parameters of indicator RSI and of its signals:
+RSI: type of price
+- Price type of indicator RSI;
+RSI: level UP
+- UP level of indicator RSI;
+RSI: level DOWN
+- DOWN level of indicator RSI.
+Trading parameters:
+Stop Loss
+- Stop Loss (if set to zero, the parameter will be disabled);
+Take Profit
+- Take Profit (if set to zero, the parameter will be disabled);
+Trailing Stop
+- Trailing (if set to zero, the parameter will be disabled);
+Trailing Step
+- trailing step;
+Lots
+- trading with a permanent lot size (parameter
+Lots
+is above zero and parameter
+Risk
+is equal to zero);
+Risk
+- lot size is calculated dynamically (parameter
+Risk
+is above zero and parameter
+Lots
+is equal to zero);
+Maximum number of positions in one direction
+- the maximum number in one direction (if set to zero, the parameter will be disabled);
+Close all positions when profit is achieved
+- Closing positions at reaching the profit (if set to zero, the parameter will be disabled);
+Close opposite positions
+- Closing opposite positions (if set to "false," the parameter will be disabled);
+magic number
+- unique identifier for the EA.
+As you can see, along with setting up the parameters of the indicators, this EA allows flexibly setting up (and disabling) Stop Loss, Take Profit, Trailing, the maximum number of positions opened in one direction, closing positions at gaining profit, and closing opposite positions. You can also manage the calculations of position volume: You can trade with a permanent lot size (
+Lots
+above zero and
+Risk
+equal to zero), or the lot size can be calculated dynamically (
+Risk
+above zero and
+Lots
+equal to zero).
+Recommendations on optimization
+In the "OHLC на M1" mode, select a symbol and timeframe M15. Disable (set to zero) Stop Loss, Take Profit, and Trailing and set the maximum number of positions in each direction to "1." Or copy to the MQL5\Profiles\Tester\ folder the
+Two MA one RSI M15 Start.set
+file that already contains the initial optimization parameters for M15.
+Select the type of optimization as "Fast (genetic algorithm)" and parameter "Balance max" to be optimized.
+For optimization, I recommend to involve
+MQL5 Cloud Network
+: For USDJPY over the year 2017, optimization in the cloud plus my quad-core laptop
+took
+2018.05.28 08:03:19.923 optimization done in 7 minutes 58 seconds
+and cost $0.08.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20886

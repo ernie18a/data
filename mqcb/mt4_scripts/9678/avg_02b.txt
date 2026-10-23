@@ -1,0 +1,2 @@
+This script is useful to traders, for whom it is important to know the average price movement over a certain number of days separately for each hour.
+Number of days given by the variable d (int d = 390;). The script is designed for TF = 1 hour.

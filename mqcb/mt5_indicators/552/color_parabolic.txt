@@ -1,0 +1,7 @@
+Parabolic SAR
+technical indicator has one major drawback.
+It is not noticeable enough on a chart containing other indicators. Therefore, its signals concerning a trend reversal may be missed.
+To improve this disadvantage large colored dots that appear during each trend reversal have been added. The indicator itself is made in two colors.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/552

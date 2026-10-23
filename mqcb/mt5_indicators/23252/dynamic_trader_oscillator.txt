@@ -1,0 +1,4 @@
+Theory:
+Robert Miner developed something that he named "Dynamic Trader Oscillator" (usually shortened as DTOSC). The indicator is actually a stochastic of RSI, but for the sake of those that are looking for the "DTOSC" the name is kept and is posted here as such.
+Usage:
+It is a stochastic of RSI (i.e. a sort of additional normalization of RSI values is performed via stochastic) with usual signal line added. You can use the color change of the "DTOSC" value as signal.

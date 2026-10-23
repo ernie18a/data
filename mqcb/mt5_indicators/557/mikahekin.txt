@@ -1,0 +1,7 @@
+Real author:
+Modified by: Ronald Verwer/ROVERCOM
+Mikahekin can be called a complete analytical block rather than just an indicator. Blue and magenta dots show trailing-stop levels for long and short positions, respectively.
+The color of bars shows a trend direction and their height indicates a trend power. Entry points are the moments when the bars change their color. When the color is changed from red to green, that is the time for opening long positions. When the color changes from green to red, that is the time for opening short positions.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/557

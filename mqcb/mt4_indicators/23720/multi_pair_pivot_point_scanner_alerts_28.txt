@@ -1,0 +1,28 @@
+MT5 Version-
+https://www.mql5.com/en/code/26881
+Scans multiple symbols looking for when the price crosses a pivot point or when xxPoints Near or bounce off pivot then it alerts the trader.
+Put Scanner On A Separate Chart Tab From Trading Strategy
+You Can Put Multiple Instances of Scanner On Same Chart Tab To Scan For More Time Frames Alert Conditions
+Delete the old updates and make sure your chart is using latest update on it and not the old buggy updates
+Symbols to scan needs to be in market watch or will get the error message "Can't find this symbol: AUDCAD, put symbols in Market Watch, Double Check Prefix/Suffix Settings"
+Pivot Point Types
+Standard (Floor)
+Fibonacci
+Woodie
+Camarilla
+All Pivot Point Timeframes
+More Features
+Toggle false/true for popup or mobile alerts
+Set alert wait interval between same alert message
+Time frames toggle false/true for daily/weekly/monthly pivot point cross alerts
+Set Symbol prefix and postfix (if none leave blank)
+Enable/Disable specified pivot point to be alerted
+Alert when xxPoints Near pivot point
+Bounced off pivot point alerts
+Option to scan symbols in Market Watch instead of list
+Bollinger Bands upper-lower filter alerts
+MT4 Email set up instructions -
+https://www.metatrader4.com/en/tradi...up/setup_email
+MT4 Notification set up instructions -
+https://www.metatrader4.com/en/tradi..._notifications
+Inputs/Alert Message example

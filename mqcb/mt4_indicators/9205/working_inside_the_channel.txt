@@ -1,0 +1,7 @@
+The system applies the internal channel from High and Low.
+It has been developed as early as 2001 and proven to be quite efficient.
+I work in both directions simultaneously with no additions. However, the choice is yours.
+If you have any questions, feel free to contact me.
+Dots - entering the market by orders.
+Lines - stop. We should start moving when the market entry price is crossed.
+The screenshot displays the operation of one trade.

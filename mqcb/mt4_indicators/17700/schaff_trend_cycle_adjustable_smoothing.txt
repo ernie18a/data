@@ -1,0 +1,2 @@
+Well known Schaff trend cycle is, no doubt, useful indicator.
+But it has some things that can be changed. One is that it has a fixed smoothing factor hard-coded in the formula itself. This version changes that and allows you to use variable smoothing for the cycle smoothing. In some cases that can help avoiding some false signals.

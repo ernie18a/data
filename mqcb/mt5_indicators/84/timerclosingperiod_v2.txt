@@ -1,0 +1,10 @@
+The updated version of the
+TimeClosingPeriod
+indicator.
+It may be useful for the traders, who trade at the new bar opening, it plots the time, remained to the current bar complete, if the period is less than H1, it also plots the time to hourly bar complete.
+At the last second it plays the sound file, specified in the input parameters. The sound signal can be disabled.
+The CTimer class has been rewritten, added new methods for sound and mouse control.
+The both files of the indicator should be placed in the same folder.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/84

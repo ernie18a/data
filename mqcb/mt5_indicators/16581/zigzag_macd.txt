@@ -1,0 +1,5 @@
+ZigZag based on MACD histogram.
+Fig.1. ZigZag_MACD indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16581

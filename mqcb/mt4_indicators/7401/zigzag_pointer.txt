@@ -1,0 +1,5 @@
+Author: Dr. Gaines
+The indicator is similar to ASCTrend, in my opinion it is even better. Works by the system: High - Low.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7401

@@ -1,0 +1,5 @@
+Multi_Lot_Scalper Expert Advisors.
+Test results:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9330

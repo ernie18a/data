@@ -1,0 +1,7 @@
+The CCIT3_Simple indicator modified.
+The indicator has a limitation on the number of calculated bars (Max_bars_calc=100000). This indicator underlies the
+EA_CCIT3
+Expert Advisor.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1023

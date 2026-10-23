@@ -1,0 +1,17 @@
+Theory :
+Sylvain Vervoort's article in May 2008 issue of TASC , "The Quest For Reliable Crossovers," describes a trading system based on three functions: the triple exponential moving average (TMA), the heikin-ashi close (haC), and the "typical price" (TypicalPrice). Vervoort's strategy trades the crossover of the typical price and heikin-ashi TMAs
+In order to make it easier to spot the trend changes, this version is made as a separate window tape indicator. It is showing the current trend state and it is indicating a sort of a "strength" of that trend
+Usage :
+You can use color changes as signals
+PS:
+The Vervoort's crossover indicator "counts" ion the lag of the heiken ashi "average: price, hence, if you re changing that some more experimenting with periods and different price types is advised. For the sake of being be to experiment the full set of heiken ashi prices is provided :
+Heiken ashi close
+Heiken ashi open
+Heiken ashi high
+Heiken ashi low
+Heiken ashi median
+Heiken ashi typical
+Heiken ashi weighted
+Heiken ashi average
+Heiken ashi median body
+Heiken ashi trend biased price

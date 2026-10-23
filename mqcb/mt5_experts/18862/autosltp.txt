@@ -1,0 +1,45 @@
+Author of the idea
+:
+Vladimir Khlystov
+,
+mq5 code author
+:
+barabashkakvn
+.
+This assistant tool sets Stop Loss and Take Profit for all open orders. Symbol settings, position type, Stop Loss and Take Profit are specified in an external file.
+Requirement for the configuration file
+The file should be saved as "AutoSLTP.txt" in [data folder]\MQL5\Files\AutoSLTP\AutoSLTP.txt
+The format of writing to the file
+A separate line is written for each symbol and position type. The format of entry:
+[symbol name]*[position type]*[stop loss]*[take profit]
+Parameters
+[symbol name]
+- is the name of the traded symbol;
+[position type]
+sets the type of position to be opened. It can be either "POSITION_TYPE_BUY" or "POSITION_TYPE_SELL".
+[stop loss]
+- Stop Loss. Set as integer values.
+[take profit]
+- Take Profit. Set as integer values.
+An example of the settings file
+AUDCAD*
+POSITION_TYPE_BUY
+*
+50
+*
+96
+AUDCAD*
+POSITION_TYPE_SELL
+*
+40
+*
+46
+USDJPY*
+POSITION_TYPE_SELL
+*
+80
+*
+38
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18862

@@ -1,0 +1,10 @@
+Combination of two very well known indicators (CCI and moving average) that estimates the direction strength of the current market trend.
+Averages that can be used are the basic 4 types (SMA, EMA, SMMA and LWMA).
+Compared to the
+CCI Squeeze
+indicator, this version is a standalone multi timeframe version (no other indicator is needed for its work).
+Timeframes supported are all the possible timeframes supported by MetaTrader 5 and it has 3 "special" timeframes:
+Next higher timeframe: first higher timeframe compared to active chart.
+Second higher timeframe: second higher timeframe compared to active chart.
+Third higher timeframe: third higher timeframe compared to active chart.
+If some of these 3 timeframes are used, then the timeframe is set automatically as you change the timeframe of the chart.

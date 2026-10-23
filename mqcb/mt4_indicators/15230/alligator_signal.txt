@@ -1,0 +1,12 @@
+Buy and Sell arrows for Alligator signals.
+Input parameters:
+InpJawPeriod — Jaws Period
+InpJawShift — Jaws Shift
+InpTeethPeriod — Teeth Period
+InpTeethShift — Teeth Shift
+InpLipsPeriod — Lips Period<
+InpLipsShift — Lips Shift
+InpMaPeriod — averaging period
+InpMaMethod — method of averaging of the Alligator lines
+InpAppliedPrice — type of price used for calculation of Alligator
+InpForceFilte — Force Filter Value

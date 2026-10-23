@@ -1,0 +1,16 @@
+Author of the idea
+—
+Alexander
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Search for movements without rollbacks (analysis of ticks).
+Idea of the algorithm: search for the moment when the price consistently increases/decreases for multiple ticks in a row ("" parameter) without rollbacks. It is compared with the price.
+m_symbol.
+Ask
+()
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17162

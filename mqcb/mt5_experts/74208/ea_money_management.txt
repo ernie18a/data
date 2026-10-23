@@ -1,0 +1,18 @@
+I needed an expert to test a particular trading idea. When selecting a signal for opening positions, I opted for the Foster–Stewart criterion. It indicates the direction and strength of the trend. The basic idea is that if a trend reaches a certain value, it will reverse direction. Different parameters of the criteria were used for opening buy and sell positions. This allows for the asymmetry of price movements upwards and downwards to be taken into account. For each type of position, three trends of varying durations were used: intraday, intra-week and intra-month. Stop-loss and take-profit levels are calculated automatically and depend on price levels. To reduce the burden on the deposit, a best-price filter is applied: buy/sell positions are opened only when the current opening price is below/above the opening prices of already open positions.
+Optimisation was carried out on EURUSD, H1 timeframe, from 1 January 2025 to 31 May 2026.
+Parameter selection was carried out separately for each signal. The following results were obtained for buy positions.
+Sell positions yielded the following results.
+Results for all strategies combined.
+Please note that the aim was not to create a consistently performing expert advisor. On the other hand, a thorough analysis of the trend criterion may allow for the generation of more or less accurate trading signals. Furthermore, the use of automatic calculation based on this criterion appears to be entirely justified.
+Expert advisor parameters:
+Slippage
+– permissible price slippage.
+PeriodBuy
+– the trend period for opening buy positions; the value must be at least 3.
+LevelBuy
+– the level at which a position is opened. The maximum permissible value is
+PeriodBuy-1.
+The parameters are the same for sell positions.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/74208

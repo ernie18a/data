@@ -1,0 +1,142 @@
+The "Heads or Tails" trading strategy belongs to the category of high-risk short-term trading approaches, used primarily in the stock market and the Forex market. Its name is derived from the randomness of decision-making, similar to tossing a coin ("heads" — buy the asset, "tails" — sell). This strategy is based exclusively on intuitive decisions or random signals and ignores fundamental market analysis factors.
+How does the strategy work?
+The strategy is structured as follows:
+Instrument Selection
+: The trader chooses a financial instrument (stock, currency, commodity).
+Decision Making
+: The decision to buy or sell is made randomly, for example, by tossing a coin or using another method to choose between two possible actions.
+Closing the Trade
+: The trade is closed automatically after a predetermined time or upon reaching a specific profit or loss level.
+This strategy does not require a deep understanding of market mechanisms and analytics, but it also does not imply a serious approach to risk management.
+Disadvantages of the strategy:
+High Level of Risk
+:
+Relying solely on luck significantly increases the probability of losses. The strategy ignores any objective indicators and recommendations, increasing the chances of capital loss.
+Lack of Risk Control
+:
+Since buying or selling occurs absolutely randomly, there is no possibility for rational capital management, risk assessment, or asset allocation.
+Impossibility of Long-Term Success
+:
+Even if individual trades are profitable due to luck, in the long term such a strategy is more likely to lead to significant losses.
+Short-Lived Results
+:
+Positive results are only possible under favorable market conditions and with a large number of small successful trades, which is extremely rare in practice.
+Application of the Strategy:
+The strategy is more suitable for novice traders who want to familiarize themselves with the principles of exchange platforms and try trading without deep knowledge of technical analysis. However, professionals use this strategy extremely rarely, preferring scientifically based approaches that account for price behavior, trading volume, and companies' fundamental indicators.
+For experienced investors, this strategy represents more of an experimental method for testing hypotheses, rather than a stable way to earn money.
+Thus, although the strategy is simple and accessible to every beginner, it carries significant risks and practically has no chance of generating sustainable income in the long term.
+Let's consider the main block of the random position opening signal:
+if
+((b + s) ==
+0
+)
+// If there are no active positions
+Here, the condition for the absence of open positions is checked. Variable b denotes the number of long ("buy") positions, variable s — short ("sell") positions. If the sum of both equals zero (b + s = 0), it means there is not a single open position.
+if
+(::
+MathRand
+() %
+2
+==
+0
+)
+// Random selection of the position opening direction
+Inside the condition block triggered previously, a random number is checked. The
+::MathRand()
+function generates a pseudo-random number from 0 to 32767 inclusive. Then this number is divided modulo by 2 (% 2) — if the remainder is 0, the next block is executed.
+// Send a buy order with the specified parameters
+ticket =
+OrderSend
+(
+Symbol
+(),OP_BUY,iStartLots,Ask,iSlippage,
+                  Ask - iStopLoss *
+_Point
+,
+// Stop-loss price (current Ask value minus SL distance)
+Ask + iTakeProfit *
+_Point
+,
+// Take-profit price (current Ask value plus TP distance)
+"VR Heads or Tails"
+,
+// Order comment
+iMagicNumber,
+0
+,
+clrBlue
+);
+// MagicNumber, expiration, blue arrow color
+// Check if the order was placed successfully
+if
+(ticket<
+0
+)
+Print
+(
+"OrderSend failed with an error #"
+,
+GetLastError
+());
+// Error message
+else
+Print
+(
+"The OrderSend function has been completed successfully"
+);
+// Success message
+return
+;
+If the random number is even (the remainder of division by 2 equals 0), the trading robot opens a long position (buy) with a volume of iLots. After successfully opening the position, the function execution is interrupted by the return operator.
+// Send a sell order with the specified parameters
+ticket =
+OrderSend
+(
+Symbol
+(),OP_SELL,iStartLots,Bid,iSlippage,
+                  Bid + iStopLoss *
+_Point
+,
+// Stop-loss price (current Bid value plus SL distance)
+Bid - iTakeProfit *
+_Point
+,
+// Take-profit price (current Bid value minus TP distance)
+"VR Heads or Tails"
+,
+// Order comment
+iMagicNumber,
+0
+,
+clrRed
+);
+// MagicNumber, expiration, red arrow color
+// Check if the order was placed successfully
+if
+(ticket<
+0
+)
+Print
+(
+"OrderSend failed with an error #"
+,
+GetLastError
+());
+// Error message
+else
+Print
+(
+"The OrderSend function has been completed successfully"
+);
+// Success message
+return
+;
+If the random number was odd (the remainder of division by 2 differed from zero), a short position (sell) with a volume of iLots is opened, and the further execution of the function is also terminated.
+Final logic of the fragment:
+The presence of the trader's open positions is checked.
+If there are no open positions, a random trade direction is chosen: either buy (long), or sell (short).
+An opened trade automatically stops the further operation of the function.
+Thus, this code is a simple example of an algorithm that makes the decision to open a market position randomly.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/68251

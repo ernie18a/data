@@ -1,0 +1,5 @@
+It is simply showing candles based on 4 averages : average of Open, Close, High and Low. 4 basic types of averages included (simply, smoothed, linearly-weightend, exponential).
+I recommend some experimenting with calculating periods.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16506

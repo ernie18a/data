@@ -1,0 +1,10 @@
+Theory :
+Welles Wilder was frequently using one "special" case of EMA (Exponential Moving Average) that is due to that fact (that he used it) sometimes called Wilder's EMA. The difference from EMA is the following :
+EMA formula = price today * K + EMA yesterday * (1-K) where K = 2 / (N+1)
+Wilder EMA formula = price today * K + EMA yesterday (1-K) where K =1/N
+Where N = the number of periods.
+One more property that is not visible from the above formulas is that the Wilder's EMA is equal (value wise) to Smoothed Moving Average (SMMA) even though the calculation is different.This version is adding double smoothing to Wilder's EMA in order to make it "faster" (it is more responsive to market prices than the original) and is still keeping very smooth values
+Usage :
+It can be used as any regular moving average
+PS:
+A comparison of DS Wilder's EMA (colored line) and SMMA (gray line)

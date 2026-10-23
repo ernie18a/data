@@ -1,0 +1,6 @@
+This script automatically sets the correct scale on any Fibonacci arcs attached to the chart.
+Before/After Applying Script
+Before
+After dropping script on chart
+Update:
+v 1.01: Made it work on downwards fibo arcs too.

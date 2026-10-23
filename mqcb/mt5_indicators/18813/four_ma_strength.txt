@@ -1,0 +1,7 @@
+Real author
+: David Honeywell
+The indicator displays trend power and direction based on four moving averages. Four value levels are used for the rising and falling trend. These value determine the trend strength.
+Fig. 1. The Four_MA_Strength indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18813

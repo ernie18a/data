@@ -1,0 +1,8 @@
+Velocity (which is often called a "smoother momentum" since it is much smoother than momentum without lagging at all) with an addition of 3 types of normalization:
+ATR normalization
+standard deviation without sample correction
+standard deviation with sample correction
+and no normalization (in order to have "clean" version too)
+Also, since velocity is (even when normalization is applied), not an indicator with fixed bounds, this indicator is using floating levels for what is usually called overbought and oversold levels (+ a floating "zero" line is added). Something that would look like a "fixed levels" is easily achieved if you use long floating levels period in which case those levels are quite similar to fixed levels.
+Indicator is having the usual set of prices and alerts (depending on the 3 type of coloring options) and is already a multi time frame version.
+Indicator can be used like any momentum indicator (in that case recommended coloring mode is to use either slope coloring or "zero" middle level crossing coloring) or it can be used as a "trending" indicator in which case it is better to use coloring on outer level cross, and longer calculation periods are advised in that case.

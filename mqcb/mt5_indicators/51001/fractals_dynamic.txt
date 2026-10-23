@@ -1,0 +1,4 @@
+In this fractal indicator you can set an arbitrary number of bars both to the left and to the right of the centre bar to allow you to build different types of fractals.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/51001

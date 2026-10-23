@@ -1,0 +1,9 @@
+This indicator shows the entry point coming after the reversal bar.
+I wanted to see a lot more of the entry point. So, I made this. Please use in combination with a filter (ADX, BSI, etc.).
+Display:
+blue/red mark — shows that the reversal has occurred;
+blue/red arrow — reversal bar;
+blue/red lines — shows the middle of the range, which was created after the reversal bar.
+Separate window is
+Bounce Strength Indicator(BSI)
+.

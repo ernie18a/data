@@ -1,0 +1,18 @@
+ROC with signal Moving Average oscillator indicator displays the
+Rate of Price Change
+and a signal line, which is calculated as a moving average of ROC data.
+It has three input parameters:
+ROC period
+- ROC calculation period
+Signal MA period
+- signal MA calculation period
+Signal MA method
+- signal MA calculation method
+Calculation:
+ROC = 100.0 * (Close - CloseP) / CloseP
+Signal = MA(ROC, Signal MA period, Signal MA method)
+where:
+CloseP = Close price as of ROC period bars ago
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23112

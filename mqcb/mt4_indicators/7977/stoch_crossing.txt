@@ -1,0 +1,4 @@
+Author:
+Robinson (jnrtrading)
+Indicator Stoch Crossing is a modification of EMA-Crossover_Signal based on Stochastic Oscillator.
+Indicator Stoch Crossing

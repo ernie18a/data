@@ -1,0 +1,5 @@
+Quantora Trading Clock MT5 is an indicator that displays global market times and trading session status directly on the chart. It does not open or manage trades and is intended for informational use.
+The tool shows multiple time references including broker server time, local time, and UTC, along with the current time in major financial centers such as Sydney, Tokyo, London, and New York. It also indicates whether each session is open or closed, helping you quickly understand which markets are active.
+It tracks how many major sessions are running at the same time and detects overlaps between trading centers. Session hours and UTC offsets can be adjusted, and daylight saving changes for key regions can be handled from the settings.
+All information is presented in a simple dashboard that updates in real time, making it easy to follow global market activity without switching between different tools.
+Suitable for traders who want a clear and practical overview of global trading sessions and market timing.

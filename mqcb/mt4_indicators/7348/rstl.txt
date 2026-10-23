@@ -1,0 +1,6 @@
+Author
+: Finware.ru Ltd
+Reference Slow Trend Line (RSTL) is a response of the SATL digital filter to the series of input prices with a delay equal to the Nyquist interval of 1/2F.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7348

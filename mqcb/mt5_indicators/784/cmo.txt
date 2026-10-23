@@ -1,0 +1,15 @@
+Real author:
+igorad2004
+In this version of
+Chande Momentum Oscillator
+the smoothed price is used for the calculations. It is allowed to improve the filter of trend direction.
+Chande Momentum Oscillator (CMO) was developed by Tushar Chande and is a technical indicator that attempts to capture the Momentum. Chande discussed this and many other indicators in his book
+"The New Technical Trader: Boost Your Profit by Plugging into the Latest Indicators"
+. Тhe range of CMO is from -100 to 100. The values +50 and -50 are assumed as ovebought and oversold states of the market.
+This indicator was first implemented in MQL4 and published in
+CodeBase at mql4.com
+20.02.2008.
+Chande Momentum Oscillator (CMO) indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/784

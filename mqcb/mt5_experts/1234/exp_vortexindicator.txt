@@ -1,0 +1,12 @@
+Trading system using the VortexIndicator indicator. A signal to perform a deal is formed at bar closing when the cloud color changes. Exit from the deals is performed either by a pending order, or if the cloud is of the opposite color to that of the open position.
+Place
+VortexIndicator.ex5
+compiled file to the terminal_data-folder\MQL5\Indicators.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Image:
+Fig. 1. The instances of history of deals in the chart.
+Testing results for 2011 at USDCHF H4:
+Fig. 2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1234

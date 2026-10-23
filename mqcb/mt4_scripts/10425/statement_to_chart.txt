@@ -1,0 +1,8 @@
+Just a simple script, that reads the HTML file a report, or detailed report, and draws a transaction from it on the chart, in standard form.
+Orders arrows will be drawn for the current tool. If the report contains trade on multiple instruments, you have to switch the chart itself.
+Trading instruments, which was trading will be printed out as a tip.
+External variables - name of the file, and mode erase its own graphics.
+The report file is first necessary to put in the \ terminal \ experts \ files \
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10425

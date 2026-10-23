@@ -1,0 +1,34 @@
+SNR Sentinel
+— Adaptive Support & Resistance Engine for MT5
+SNR Sentinel is an advanced, self-adjusting Support & Resistance indicator designed to track only the most relevant price levels in real time. Instead of cluttering the chart with outdated lines, SNR Sentinel continuously detects, validates, monitors, and replaces support and resistance levels based on confirmed price structure and breakout behavior. Built around strict left-right bar confirmation logic, the indicator identifies statistically valid swing highs and lows, projects them forward, and automatically shifts to the next meaningful level after a confirmed breakout.
+This makes SNR Sentinel an ideal companion for:
+Price-action traders
+Breakout and retest strategies
+Market structure and S/R-based decision systems
+Core Features
+1.
+Adaptive Nearest-Level Tracking
+Always displays the closest valid support and resistance relative to current price.
+Automatically updates when newer, more relevant levels appear
+2.
+Confirmation-Based S/R Detection
+Levels are validated using configurable left/right confirmation bars, filtering out weak or noisy swings.
+Ensures only structurally meaningful highs and lows are considered.
+3.
+Intelligent Breakout Handling
+A level is considered broken only after a candle close beyond it.
+Broken levels are visually marked and queued for replacement.
+The engine then scans historically for the next logical level price is likely to react to.
+4.
+Dynamic Forward Projection
+Active levels are continuously extended into the future.
+No ray objects — clean, controlled projections that update per bar.
+5.
+Minimalist & Chart-Friendly
+Exactly one support and one resistance at any time.
+No repainting, no clutter, no redundant levels.
+Best Use Cases
+Entry confluence for breakouts and pullbacks
+Identifying reaction zones for scalping and swing trading
+Market structure validation (HH / LL environments)
+Clean S/R framework for EAs and discretionary trading

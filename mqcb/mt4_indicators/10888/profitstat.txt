@@ -1,0 +1,1 @@
+Profitstat is a free indicator that scans your history and displays on the chart. The free version shows the number of trades and profit made on the current and previous day. The data is updated instantly as soon as a trade closes. Simply attach it to any chart and it gives the account data irrespective of the chart currency nor timeframe.

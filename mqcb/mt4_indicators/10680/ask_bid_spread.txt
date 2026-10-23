@@ -1,0 +1,7 @@
+The indicator shows spread-related values (spread, Bid + spread, Ask + spread, Ask + Bid + spread).
+Options:
+Spread;
+Bid + Spread;
+Ask + Spread;
+Ask + Bid + Spread.
+/

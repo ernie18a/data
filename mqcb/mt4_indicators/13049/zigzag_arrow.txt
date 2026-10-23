@@ -1,0 +1,4 @@
+ZigZag Arrow indicator is based on a built-in ZigZag indicator that replaces the Line Section with Arrow.
+Last Update (Update_01 ~ 2015-07-30)
+Added color options for arrow.
+Adjusted the position of the arrow for each timeframe.

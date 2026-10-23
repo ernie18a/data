@@ -1,0 +1,6 @@
+This indicator will draw ATR based stop loss calculation based on IgorAD,igorad2003@yahoo.co.uk ATRStops MQL4, with adjustable multiplier and ATR period. This indicator includes helper functions and example to run calculation via function call so the calculation logic can be placed in external include file. Work in any timeframe.
+Just rename to mq4 to use it in MT4. Feel free to improve, if needed.
+This indicator does not repaint.
+Parameters :
+Length, how many lookback periods to check bar price
+ATRperiod, the ATR period

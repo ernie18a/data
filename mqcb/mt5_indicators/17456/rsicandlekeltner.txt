@@ -1,0 +1,6 @@
+The RSI indicator in the candlestick form
+with the Keltner channel calculated relative to RSI averaging.
+Fig1. The RSICandleKeltner indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17456

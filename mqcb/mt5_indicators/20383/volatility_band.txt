@@ -1,0 +1,15 @@
+The Volatility Bands indicator is similar to the standard Bollinger Bands.
+It has four input parameters:
+Period Band
+- period for calculating the bands
+Period
+- period for smoothing the bands
+Deviation factor
+- affects the range of the bands. The lower the value, the wider the range
+Low band adjustment
+- adjustment of the lower band
+Fig.1. Default parameters
+Fig.2. Low band adjustment = 0.5
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20383

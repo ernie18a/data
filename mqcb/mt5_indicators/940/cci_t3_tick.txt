@@ -1,0 +1,5 @@
+The standard Commodity Channel Index indicator smoothed using Tillson's algorithm. This version features recalculation on every tick. The indicator is drawn real time. Proper operation of the smoothing algorithm requires the use of buffer variables for storing and retrieving smoothing coefficients after the closing of the bar.
+The calculation is not performed over the entire historical data but over a specified number of bars "MaxBars".
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/940

@@ -1,0 +1,15 @@
+The script calculates the average volatility of symbols according to the equation: the differences of the maximum and minimum values of the candles for the selected period in days (excluding weekends) are added, that is, only the quotation days are taken and then the motion sum is divided by quotation days.
+Day -
+average volatility within a specified period.
+DayMax -
+maximum volatility per day within a specified period.
+PerMax -
+maximum volatility on one candle.
+The script parameters:
+Day -
+number of days for calculation.
+WMA
+- if 'false', simple average; if 'true', weighted average.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22840

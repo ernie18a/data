@@ -1,0 +1,8 @@
+The drawing of the channel's borders was added to the standard ZigZag by MetaQuotes.
+I.e. all the upper and the lower peaks are joined by lines.
+The parameters are the same:
+(Depth is the minimum number of bars the second maximum (minimum) less (greater) than the previous by Deviation pips won't appear on, i.e. the ZigZag can always diverge but it can converge more than by Deviation (or completely converge) only after Depth of bars. Backstep is the minimum number of bars between maximums (minimums).)
+This indicator can help you to detect visually some price models.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8442

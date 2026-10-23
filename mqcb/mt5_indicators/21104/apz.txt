@@ -1,0 +1,20 @@
+Indicator APZ (Adaptive Price Zone) represents an adaptive price channel. The indicator was described in article "Trading With An Adaptive Price Zone" by Lee Leibfarth in "Stocks and Commodity" in September, 2006.
+It has four configurable parameters:
+Period
+- calculation period;
+Applied price
+- the calculation price;
+Method
+- calculation method;
+Width
+- channel width.
+Calculation:
+Up = MA1 + Width * MA2
+Dn = MA1 - Width * MA2
+where:
+MA1 = MA(Applied price, Period, Method)
+MA2 = MA(Range, Period, Method)
+Range = High-Low
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21104

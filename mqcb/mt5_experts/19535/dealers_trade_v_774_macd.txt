@@ -1,0 +1,51 @@
+Author of the idea
+:
+Alexander
+,
+author of the mq5 code
+:
+barabashkakvn
+.
+The EA trades using signals of the iMACD (Moving Average Convergence/Divergence, MACD) indicator. Lot is increased when the number of position grows (Martingale).
+The EA is recommended for use on the H4 and D1 timeframes.
+Position volume management:
+The initial lot can be specified manually;
+The initial lot can be calculated as the risk percent of free margin.
+You can also limit the following:
+The maximum number of open positions;
+The maximum lot.
+Protection of profit: if protection is allowed and the total profit of all positions is greater than the specified value, as well as the number of positions is greater than or equal to the protected amount, the most profitable position is closed. For example, we have a total profit of $52 and four open positions. The protected amount is set to "3". So we can close one position, thus trying to keep a minimum of three positions always open.
+Input Parameters
+Lots (if <= "0" -> use "Risk")
+- position volume (if <="0.0", lot will be calculated using the "Risk" parameter);
+Stop Loss (in pips)
+- Stop Loss value;
+Take Profit (in pips)
+- Take Profit value;
+Trailing Stop (in pips)
+- trailing value;
+Trailing Step (min value == 1)(in pips)
+- trailing step value;
+Risk in percent for a deal from a free margin
+- risk per trade as percent of free margin;
+Max open positions
+- the maximum number of open positions;
+Interval between positions
+- the distance between positions;
+Min profit. Close max profit position
+- minimum profit, at which the most profitable position will be closed;
+Account protection. If "true" -> close max profit position
+- protecting profit, at which the most profitable position will be closed;
+Number of open items if "Account protection" = "true"
+- the number of positions to protect;
+Reverse condition
+- reversing signals;
+MACD: fast ema period
+MACD: slow ema period
+Max volume of position
+- maximum allowed position volume;
+Lot coefficient
+- lot multiplier, the more open positions exist, the greater lot multiplier will be.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19535

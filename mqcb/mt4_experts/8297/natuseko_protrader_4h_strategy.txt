@@ -1,0 +1,29 @@
+Search for buy signal
+1.	The 13 periods exponential moving average (EMA) must cross bottom-up the EMA of 21 periods and the EMA of 55 periods on the price chart;
+2.	The Parabolic must be in the area below the price;
+3.	The RSI indicator must be above the 50 level and below the 65 level;
+4.	The MACD hystogram must be above the 3 period simple moving average (SMA) drawn by the values of the MACD;
+5.	The MACD hystogram and the 3 period SMA must be above the midline of the Bollinger envelope;
+6.	The stop-order is placed below the 55 period moving average by 10 points or at the value of the parabolic;
+7.	The first target for 50% of the position is closed when the RSI reaches the value above 65, or when the parabolic becomes above the price;
+8.	The remaining 50% are closed the RSI indicator reaches the value below 50.
+Search for sell signal
+9.	The 13 periods exponential moving average (EMA) must cross bottom-up the EMA of 21 periods and the EMA of 55 periods on the price chart;
+10.	The Parabolic must be in the area above the price;
+11.	The RSI indicator must be below the 50 level and bove the 35 level;
+12.	The MACD hystogram must be below the 3 period simple moving average (SMA) drawn by the values of the MACD;
+13.	The MACD hystogram and the 3 period SMA must be below the midline of the Bollinger envelope;
+14.	The stop-order is placed above the 55 period moving average by 10 points or at the value of the parabolic;
+15.	The first target for 50% of the position is closed when the RSI reaches the value below 35, or when the parabolic becomes below the price;
+16.	The remaining 50% are closed the RSI indicator reaches the value above 50.
+The strategy research results and the description of the external parameters are available in the 24-th issue of our journal:
+http://www.fortrader.ru/ftgate.php?id=0&num=68
+A more detailed description of the strategy is
+here
+.
+You can download the last version of the NatusekoProtrader4HStrategy EA and the detailed reports
+here
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8297

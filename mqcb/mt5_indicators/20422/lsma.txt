@@ -1,0 +1,15 @@
+A Moving Average calculated by the least squares method.
+The indicator has two input parameters:
+Period
+- calculation period;
+Applied price
+- price used for calculations.
+Calculation:
+LSMA[i]=Sum/L2
+where
+Sum[i] = (Period - N)*Price[i] + (Period - N - 1)*Price[i-1] + … + (1 - N)*Price[i-Period+1],
+N = (Period + 1)/3,
+L2 = Period*(Period + 1)/6
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20422

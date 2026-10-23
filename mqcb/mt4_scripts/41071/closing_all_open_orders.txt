@@ -1,0 +1,1 @@
+This Script Closed All Open Orders At Once (Except Pending Orders)

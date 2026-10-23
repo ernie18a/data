@@ -1,0 +1,5 @@
+After attaching of the indicator to the chart you will see a "Drag symbol here" message.
+If you drag some symbol from "Market Watch" window, it will change symbols on all other charts.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/326

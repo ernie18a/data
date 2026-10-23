@@ -1,0 +1,28 @@
+The second version of
+iSimpleClock
+. Now, the clocks are displayed via the "label" graphical object (
+OBJ_LABEL
+). It is possible to change a label color, font size, label location. Label's default location is at the lower right corner.
+IncGUI_v4.mqh library is required for the indicator operation. It can also be found in
+https://www.mql5.com/en/code/542
+.
+The library must be located in the MQL5\Include directory of the terminal data folder. Terminal data folder can be found the following way: select "Open Data Folder" in the
+"File"
+section of the main menu or select "Open" in the
+"Journal"
+tab context menu and go one level up in the emerged window.
+Parameters
+:
+FontSize
+- font size;
+FontColor
+- color;
+Corner
+- location corner;
+PosX
+- horizontal offset of the chart margin;
+PosY
+- vertical offset of the chart margin.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/602

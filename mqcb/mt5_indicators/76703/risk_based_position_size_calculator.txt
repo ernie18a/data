@@ -1,0 +1,37 @@
+Risk Based Position Size Calculator is a chart indicator for planning trade volume before execution. It creates draggable Entry and Stop lines, calculates the distance between them and displays a broker-safe position size for the selected account risk.
+The indicator does not open orders or manage existing positions.
+Risk can be defined as:
+• Percentage of account balance
+• Percentage of account equity
+• Fixed amount in the account currency
+The calculation uses the symbol’s trade tick size and loss tick value. A configurable round-turn commission estimate can also be included.
+The raw calculated volume is rounded down according to the broker’s volume step. This prevents upward rounding from exceeding the selected risk.
+The chart panel displays:
+• Buy or sell planning direction
+• Entry, stop and calculated target prices
+• Stop distance in points
+• Risk amount in account currency
+• Estimated risk for one lot
+• Raw calculated volume
+• Broker normalized volume
+• Configurable reward-to-risk ratio
+• Validation status
+Inputs
+InpRiskMode
+Selects percentage of balance, percentage of equity or fixed money risk.
+InpRiskValue
+Defines the selected percentage or fixed account-currency amount.
+InpInitialSLPoints
+Defines the initial distance between the Entry and Stop lines.
+InpRewardRisk
+Defines the reward-to-risk ratio used for the Target line.
+InpCommissionLot
+Optional estimated round-turn commission per lot.
+The remaining inputs control line colors, panel color, chart corner and panel position.
+How to use
+1. Compile RiskBasedPositionSizeCalculator.mq5 in MetaEditor.
+2. Place the indicator in the MQL5\Indicators directory.
+3. Attach it to the required chart.
+4. Drag the Entry and Stop lines to the planned prices.
+5. Read the normalized volume and validation status from the chart panel.
+The calculated position size is an estimate based on the current account and broker symbol data. Actual trade risk may differ because of slippage, gaps, commissions, swaps and broker side execution.

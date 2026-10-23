@@ -1,0 +1,86 @@
+In previous code I used the
+time
+to detect a new bar. This time let's use the
+bars count
+to detect a new bar. it's way
+lighter and faster
+than using the time method.
+Declare the variables in
+integer
+data type to store the bar counts.
+Assign the bars count for the
+"BarsTotal_OnInt"
+at the initialization.
+Use
+iBars();
+function to assign the bars count for the
+"BarsTotal_OnTick"
+variable at live chart. This variable is updated on
+every tick.
+Use
+comments
+and
+alerts
+to check the code accuracy.
+int
+BarsTotal_OnInt;
+int
+BarsTotal_OnTick;
+//+------------------------------------------------------------------+
+//| Expert initialization function                                   |
+//+------------------------------------------------------------------+
+int
+OnInit
+()
+  {  
+   BarsTotal_OnInt =
+iBars
+(
+NULL
+,
+PERIOD_CURRENT
+);
+// Asign the total bars at initialization
+return
+(
+INIT_SUCCEEDED
+);
+  }
+void
+OnTick
+()
+// OnTick Function
+{   
+   BarsTotal_OnTick =
+iBars
+(
+NULL
+,
+PERIOD_CURRENT
+);
+// Stores the latest amount
+if
+(BarsTotal_OnTick > BarsTotal_OnInt)
+// New bar has arrived
+{
+    BarsTotal_OnInt = BarsTotal_OnTick;
+// Updates the history.
+Alert
+(
+"New Bar has arrived"
+);
+Comment
+(
+"Bars Count in history -: "
+, BarsTotal_OnInt,
+"\n"
+,
+"Bars Count in Live -: "
+, BarsTotal_OnTick);
+
+     // Your Code goes here. --------------------------
+    
+    // You can update a "flag" / variable to use it on later too. 
+
+   }
+  }

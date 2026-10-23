@@ -1,0 +1,6 @@
+I see this web site https://www.best-metatrader-indicators.com/tether-line-indicator/
+Give some idea from it and write this Indicator.
+Draw Red Line means the market UP.
+Otherwise draw Blue Line means the market Down.
+Hope u use well.
+Enjoy it.

@@ -1,0 +1,75 @@
+The Spread Monitor is a professional statistical dashboard that evaluates the current market spread relative to its recent historical behavior. Instead of simply displaying the current spread, it determines whether the spread is unusually high, unusually low, or within its normal statistical range.
+It is designed to answer a critical execution question:
+"Is this a good moment to execute a trade?"
+rather than
+"Should I buy or sell?"
+Inputs
+InpPeriod
+Rolling statistical period.
+Determines how many recent bars are used to calculate:
+• Average spread
+• Standard deviation
+• Minimum spread
+• Maximum spread
+Recommended values:
+• Scalping: 10–25
+• Intraday: 30–60
+• Swing Trading: 80–200
+A larger value produces more stable statistics but slower adaptation.
+InpZScoreHigh
+Upper Z-Score threshold.
+When the current spread exceeds this statistical level, the indicator classifies the market as:
+TOXIC FLOW / HIGH RISK
+This usually occurs during:
+• Major economic news
+• Market open
+• Market close
+• Low liquidity periods
+• Broker spread expansion
+Trading during these conditions often results in higher execution costs and increased slippage.
+InpZScoreLow
+Lower Z-Score threshold.
+When the spread falls significantly below its historical average, the indicator displays:
+COMPRESSED (Optimal MM Entry)
+This indicates:
+• Excellent liquidity
+• Tight spreads
+• Low transaction costs
+Ideal conditions for:
+• Scalping
+• Market Making
+• Grid strategies
+• High-frequency execution
+• Automated trading systems
+InpTextSize
+Adjusts the dashboard font size.
+It has no impact on the statistical calculations.
+InpPanelColor
+Changes the dashboard appearance.
+Available themes:
+• Terminal Dark
+• Navy Executive
+• Charcoal Steel
+• Matte Black
+This setting is purely cosmetic.
+Dashboard Metrics
+Live Spread – Current transaction cost in points.
+Rolling Mean – Average spread over the selected statistical window.
+Relative Spread (%) – Current spread expressed as a percentage of its historical average.
+Standard Deviation – Measures spread stability. Lower values indicate a more stable broker.
+Z-Score – The most important statistical metric. It quantifies how abnormal the current spread is compared to recent history.
+Min / Max Window – Lowest and highest spread recorded within the analysis period.
+Instrument Asset – Displays the active trading symbol and timeframe.
+Market Regime – Indicates one of three execution environments:
+• COMPRESSED – Excellent liquidity and low execution costs.
+• NORMAL LIQUIDITY – Typical trading conditions.
+• TOXIC FLOW / HIGH RISK – Abnormally wide spreads and elevated execution risk.
+Real Trading Benefits
+The indicator serves as an execution quality filter rather than a directional trading system.
+It helps traders:
+• Avoid entering positions during expensive spread expansions.
+• Improve execution quality for scalping strategies.
+• Reduce slippage during volatile market conditions.
+• Filter automated trading systems based on execution costs.
+• Compare broker execution quality objectively using statistical measurements.
+By avoiding trades during statistically abnormal spread conditions, traders can lower transaction costs and potentially improve long-term strategy performance without changing their entry or exit logic.

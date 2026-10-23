@@ -1,0 +1,14 @@
+This EA is based on Forex Fraus (for M1) which was made by Dmitriy Zaytsev:
+Forex Fraus (for M1)
+.
+I added limitation of positions, multi-currency trading. This EA can trade five pairs together and set the maximum number of positions for each pair.
+Properties: Pair Symbol and max number of positions
+Caution:
+If the pair value is spelled wrong, this pair does not work.
+EURUSD, EURCHF, EURJPY, CHFJPY, EURAUD, these pairs are examples. I do not have any optimization.
+I used FXCM, when I tested this EA.
+If you use this EA, that's your self-responsibility.
+Additional Information:
+If you use XM.com Micro account, you have got to spell symbol of XM.com in value of pair, for example EURUSDmicro, EURCHFmicro.
+If Trailing Stop value is smaller than the stops level on points, Profit Trailing function doesn't work. In this case, you can see OrderModify error 130 in Journal.
+The stops level is different depending on currency, broker. You can check the stops level at the currency contract specification.

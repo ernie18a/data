@@ -1,0 +1,6 @@
+Theory :
+Parabolic SAR is calculated using high and low prices. This indicator allows you to :
+use any price (not just high and low)
+use average of the price (instead of using "raw" price)
+Usage :
+You can use it as any "regular" SAR. Interesting results can be achieved by using same price for high and low (as in the second example - close price used for both high and low)

@@ -1,0 +1,20 @@
+The Expert Advisor moves a position to a breakeven when a predefined profit is reached.
+//+----------------------------------------------+
+//| Expert Advisor input parameters              |
+//+----------------------------------------------+
+input
+uint
+ZeroFillingStop=
+500
+;
+//position profit in points
+input
+uint
+Deviation_=
+10
+;
+//max price deviation in points
+//+----------------------------------------------+
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16813

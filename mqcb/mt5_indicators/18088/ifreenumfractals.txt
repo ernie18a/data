@@ -1,0 +1,22 @@
+Real author
+:
+Artyom Trishkin
+The indicator finds fractals of any dimension.
+In the settings, you can set the number of bars to search on the left (
+The number of bars on the left
+) and on the right (
+The number of bars on the right
+) of the central fractal point.
+Version 2.0 features a fixed algorithm that searches for fractals and a possibility to set the size of the required upper and lower fractals separately.
+In version 3.0, the following fractal search methods were added:
+Accurate fractal
+Inaccurate fractal
+Two types of fractals that will be searched when choosing different search methods are shown in the figure:
+Fig1. Fractals
+This code was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 16.11.2016.
+Fig.2. The iFreeNumFractals indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18088

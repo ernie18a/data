@@ -1,0 +1,33 @@
+The Expert Advisor is based on analyzing iBullsPower and iBearsPower indicator readings on the first bar:
+//+------------------------------------------------------------------+
+//|  Calculate indicators' value                                     |
+//+------------------------------------------------------------------+
+void
+calculateIndicators()
+{
+bull = iBullsPowerGet(
+1
+);
+bear = iBearsPowerGet(
+1
+);
+Comment
+(
+"bull+bear= "
+,bull+bear);
+//b = 1 * Point() + iATRGet(1)*1.5;
+//s = 1 * Point() + iATRGet(1)*1.5;
+isBuying  = (bull+bear >
+0
+);
+isSelling = (bull+bear <
+0
+);
+isClosing =
+false
+;
+}
+Testing on EURUSD M5, deposit $100, 2016.06.01-2016.10.31, default parameters:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16741

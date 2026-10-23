@@ -1,0 +1,28 @@
+The Expert Advisor is rewritten from MQL4, the author is
+AntS
+, link to the source
+https://www.mql5.com/en/code/7891
+.
+How it works
+If the price rises, it is a buy, if it falls it is a sell. When loss, a lot must be increased. Price movement is determined by two bars with t1 and t2 shift (open prices), if the difference in prices is more than Delta_L (for a buy) and Delta_S (for a sell), then position opens.
+The image shows the performance of the Expert Advisor in the strategy tester's visual mode., Fig. 2 shows the results of the tester.
+Fig. 1. Deals in the Expert Advisor tester.
+Fig. 2. The results of work of the Expert Advisor for the last month (09.2012) at EURUSD M15.
+Parameters
+t1 - First bar shift.
+t2 - Second bar shift.
+Delta_L - Price difference of first and the second bars for a long (a buy).
+Delta_S - Price difference of first and the second bars for a short (a sell).
+TakeProfit_L - Take Profit in points of a long.
+StopLoss_L - Stop Loss in points of a long.
+TakeProfit_S - Take Profit in points of a short.
+StopLoss_L - Stop Loss in points of a short.
+Lots - Initial position volume when AutoLot=false.
+AutoLot - Proportional lot input.
+BigLotSize - Coefficient for multiplying the lot after a loss.
+OneMult - One multiplication of a lot. After a loss the lot is multiplied with the lot the Expert Advisor opens positions to profit. If false, then each new opening position is multiplied.
+TradeTime - Hour of entry to the trading market.
+MaxOpenTime - Maximum lifetime of the position (in hours).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1160

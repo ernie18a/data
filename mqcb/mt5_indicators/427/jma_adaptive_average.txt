@@ -1,0 +1,14 @@
+Using this indicator is the best way to smooth price curves with a minimum time lag.
+It differs from standard
+moving averages
+by better smoothing, higher sensibility and lesser time lag.
+JMA is a form of
+AMA
+(Adaptive Moving Average) and is one of the best price filters. JMA curve has good smoothing, minimum lag during strong price moves and minimum overtake after their end. Note that JMA indicator analyses fast trends. Therefore, it is not recommended to set big values for the JMALength_ parameter.
+Indicator is written in three variants that have absolutely similar operation principles. JJMA.mq5 indicator uses the CJJMA class of the SmoothAlgorithms.mqh library. The use of the class was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+JMA.mq5 and JMA_.mq5 indicators do not use any classes. The difference is that the second one can be applied to other indicators to get their JMA smoothing.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/427

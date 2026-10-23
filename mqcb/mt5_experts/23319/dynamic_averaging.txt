@@ -1,0 +1,47 @@
+Idea by
+-
+bird0
+mq5 code author
+-
+barabashkakvn
+The Expert Advisor uses the iStdDev indicator values from the sliding window over the "
+Sliding window size
+" days and calculates the average indicator value in this window. If the current iStdDev value is greater than the calculated average, it is a signal to prohibit trading.
+If there is no prohibition, check the Stochastic indicator:
+if
+(stochastic[
+0
+]<
+25.0
+&& stochastic[
+1
+]-stochastic[
+2
+]>
+0.0
+)
+      m_need_open_buy=
+true
+;
+if
+(stochastic[
+0
+]>
+75.0
+&& stochastic[
+1
+]-stochastic[
+2
+]<
+0.0
+)
+      m_need_open_sell=
+true
+;
+At the same time, the EA keeps track of the deals that were closed at a loss: as soon as such a losing trade is found, the EA increases the lot size for the next deal.
+Positions are closed once the total profit becomes equal to or more than 'Minimum profit'.
+ATTENTION: This is a high-risk strategy! After a seeming profit
+you can easily lose the entire deposit!
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23319

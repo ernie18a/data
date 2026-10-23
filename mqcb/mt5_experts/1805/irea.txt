@@ -1,0 +1,41 @@
+IREA is an automated trade algorithm based on the idea of that an unusual impact in price changes will be adjusted by an inverse movement (you can see this in many shocks).
+It works with the indicator
+InverseReaction
+(
+version 1.2
+) and trades on its signals (when the price changes exceeds some predefined limits, with the new bar, IREA will trade in inverse direction).
+Parameters:
+The following parameters are intended for the symbol "EURUSD" in daily timeframe and not optimised. You should change some of them according to the symbol/period which you want to work with.
+Stop loss:
+(1000 as default) Safety limit for loss in points;
+Take profit:
+(250 as default) Profit target in points;
+Trade volume:
+(1.0 as default) Lot value for the order;
+Affordable order slippage:
+(3 as default) acceptable instant deviation from the order price;
+Minimum bar size for signal:
+(300 points as default) 1st filtering parameter for the EA. An InverseReaction -mostly comes out after a shock in market. This parameter is the minimum bar size value which supposed to be a shock. You can try different values !! But it shouldn't be smaller than
+Take profit
+level !!
+Maximum bar size for signal:
+(2000 points as default) 2nd filtering parameter for the EA. There is a difference between small shocks and gamechangers (crashes, booms, interventions, etc.). And, even the original strategy is inspired by crashes, the EA is focused on smaller shocks. This parameter is supposed to determine a maximum size for shocks (at the lower picture, look to the date '10.07.2013' to see an example). You can try different values.
+Confidence coefficient:
+(Golden Ratio as default) Indicator's parameter. Do not change it unless you know exactly what you do. For more details please see
+indicators page
+;
+Moving average period:
+(3 as default) Indicator's parameter. Do not change it unless you know exactly what you do. For more details please see indicators page;
+Test Results:
+EURUSD, D1, Testing interval: 01.01.2012 - 01.08.2013, Leverage:
+1:100, I
+nitial deposit:10 000 USD.
+Tips
+Be sure that you have
+version 1.2 of InverseReaction
+indicator.
+Inverse Reaction strategy is very unstable right after big economic events (after possible game-changing behaviours in market). This can be seen from the test results. Look at the last loss at the picture below, it was a FED speech that affected all long-term expectations:
+So, it is advised not to implement this strategy after such news.
+This EA is created only to show how InverseReaction strategy can work alone in trading conditions. It is not an elegantly designed, intelligent EA and as it is told in Indicator's main page, the strategy is much more powerful while using with other technical analysis tools (see the indicator's page
+InverseReaction
+to see details). So it is advised not to use this EA in real trading with any condition.

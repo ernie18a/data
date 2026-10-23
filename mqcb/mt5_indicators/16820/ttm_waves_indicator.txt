@@ -1,0 +1,6 @@
+This is an combination of 3 separate indicators: TTM wave A, TTM wave B and TTM wave C. The only difference between the 3 is in the parameters and that is why I made just new version.
+The parameters for waves A,B and C are the following :
+TTM wave A : 8,13,25
+TTM wave B : 34,45,53
+TTM wave C : 50,60,60
+In this variable using gradient of colors.

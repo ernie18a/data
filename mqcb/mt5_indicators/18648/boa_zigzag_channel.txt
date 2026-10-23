@@ -1,0 +1,9 @@
+Real author
+: mandor
+A channel based on peaks and troughs of
+Boa_ZigZag
+.
+Fig. 1. The Boa_ZigZag_channel indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18648

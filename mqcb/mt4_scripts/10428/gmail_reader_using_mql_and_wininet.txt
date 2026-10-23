@@ -1,0 +1,10 @@
+Description:
+This script reads your unread GMail messages.
+Google provide read only access to GMail inbox via secured http protocol. Messages are displayed on chart.
+Script properties consist of:
+GMailUserName = "your_account@gmail.com";
+GMailPassword = "your_password";
+NumOfEntries = 5.
+The feed consist of maximum of 20 entries of unread messages.
+It is far easier writing code than writing description.. lol
+Feedback is appreciated :)

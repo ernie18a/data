@@ -1,0 +1,5 @@
+Author: Finware.ru Ltd
+The general concept of usage is also widely known - first using some indicators (STLM and SATL) the long-term trend is determined, then open a position once the "short-term" indicators turn in their direction. In principle, it is possible to work using them, if anyone finds them convenient - why not..
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7171

@@ -1,0 +1,6 @@
+Description:
+This indicator will help traders in calculating lot size by draggin horizontal lines (Risk Management and Money Management).
+Add horisontal line on your price graph and name it as "s" (like "starter"). This will add three horizontal lines (named: sl = StopLoss line, tp = TakeProfit line, order = OrderLine) with default parameters eg TakeProfit = 40p, StopLoss = 20p. You can drag this lines up and down. On left top corner you will see calculations of risks and money management.
+This indicator have only one parameter Risk percentage per one order. I use 2% of risk per order (this is also default parameter).
+All you need is "RECOMMENDED LOT SIZE" line where you can see calculated lot size for next order. NB! Calculations are made based on AccountDeposite
+Image:

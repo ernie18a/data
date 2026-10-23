@@ -1,0 +1,46 @@
+Example of using
+IndicatorSetDouble()
+function. This is an indicator that turns upside down the maximum and minimum values ​​of the indicator window and values ​​of levels, on which the horizontal lines are placed.
+The indicator is created in a separate window, and three horizontal lines on levels 25, 50 and 75 are also added in the same window:
+//--- display three horizontal levels in a separate indicator window
+#property
+indicator_level1
+25
+#property
+indicator_level2
+50
+#property
+indicator_level3
+75
+Then, a signature is placed in OnInit() function for each level:
+//--- set descriptions for the horizontal levels
+IndicatorSetString
+(
+INDICATOR_LEVELTEXT
+,
+0
+,
+"First Level (index 0)"
+);
+IndicatorSetString
+(
+INDICATOR_LEVELTEXT
+,
+1
+,
+"Second Level (index 1)"
+);
+IndicatorSetString
+(
+INDICATOR_LEVELTEXT
+,
+2
+,
+"Third Level (index 2)"
+);
+Arrived ticks are calculated during the indicator operation in
+tick_counter
+variable. The indicator window rendering changes each 10 ticks - the minimum value is changed from 0 to -100, while the maximum one - from 100 to 0. Thus, the indicator is "reversed".
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1762

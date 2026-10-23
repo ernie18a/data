@@ -1,0 +1,4 @@
+Theory :
+In a lot of cases it would help if we can see some oscillator on directly on chart, instead of seeing it in a separate window. There is a few methods for doing that. One is using a highest high / lowest low channel. This version is doing that and is displaying RSI (Relative Strength Index) directly on chart
+Usage :
+As any other RSI is used. Some additional options are added (like 3 coloring modes) in order to help the usage of the indicator

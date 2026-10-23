@@ -1,0 +1,8 @@
+Theory:
+BB stops is using Bollinger bands as a criteria for determining if the trend is changing as well as determining the trend direction. The usual way how it finds out the stop lines is by calculating a risk based on deviation. But, in many cases, one single proposed stop line is not enough.
+This version:
+It is calculating 3 stop lines immediately and proposes the one with the highest risk as the "ultimate" stop line. The two additional stop lines can be used as lower risk stops or as an early warning for market changes.
+Usage :
+You can use the color change as an indicator of current trend direction, and you can use any of the stop lines as stop loss for your orders.
+PS:
+The usual "big picture example":

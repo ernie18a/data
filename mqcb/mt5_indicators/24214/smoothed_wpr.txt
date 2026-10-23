@@ -1,0 +1,12 @@
+Theory :
+Williams %R
+, or just
+%R
+, is a technical analysis oscillator showing the current closing price in relation to the high and low of the past N days (for a given N). It was developed by a publisher and promoter of trading materials, Larry Williams. Its purpose is to tell whether a stock or commodity market is trading near the high or the low, or somewhere in between, of its recent trading range.
+%R = -100 x (highest high (period) - close) / (highest high (period) - lowest low (period))
+The oscillator is on a negative scale, from −100 (lowest) up to 0 (highest), obverse of the more common 0 to 100 scale found in many Technical Analysis oscillators. A value of −100 means the close today was the lowest low of the past N days, and 0 means today's close was the highest high of the past N days. (Although sometimes the %R is adjusted by adding 100.)
+One of the "issues" that WPR has is that it is a "nervous" indicator (it tends to change values so fast that using levels for signals will almost sure lead to massive false signals trap). There were few attempts to produce less signals with WPR but they were usually smoothing the result, thus adding a lag to the indicator. This version is using a different approach : it is using ema smoothed prices for calculations, producing much less signals that way (and a much smoother result) without adding too much lag
+Usage :
+You can use it as any other WPR
+PS:
+The "big picture" comparison - upper is the regular WPR, lower is this one

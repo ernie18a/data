@@ -1,0 +1,57 @@
+The idea put in a code, is simple - back and forth motion of the price in a bar. A little bit "mistery" with options also it is possible to relax...:)))
+Working bar -
+ControlPeriod
+, and the prices we take on opening
+NewBarInPeriod
+. I took EURUSD on H1.
+It is one of (many) ways of "extraction" of a profit - to be arranged under "the quoted device" DC. As doubtless plus of such
+approach the controllable risk serves in reasonable limits (to 20 %)
+. As important components of such tactics serve: uninterrupted communication with the server, sense of proportion, unconditional refinancing and the moment of timely change-over.
+I work with three Brokers and only at one of them expected results, BUT at this broker floating spread have turned out that for this strategy it is bad...
+P.S. The adviser with obvious control of opening of bars.
+The adviser
+is only a part
+(and
+a stripped-down
+functionality
+) of the entire
+system consisting of
+two advisers
+.
+1st to optimize the parameters;
+2nd for a real account.
+If you
+have questions
+or
+are interested in optimizing
+the system
+parameters
+adviser
+under
+your broker,
+please
+PM.
+Did the work
+on the bugs
+(
+introduced an additional
+filter)
+, brought
+to
+the test conditions
+to real
+MM
+: lot
+no more than
+5.0, the
+loading
+deposit
+no more than 15
+% (
+it was 50%
+):
+P.S.
+I have translated the interface in English.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10519

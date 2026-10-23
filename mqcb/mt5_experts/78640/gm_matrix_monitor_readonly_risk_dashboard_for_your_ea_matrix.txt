@@ -1,0 +1,26 @@
+GM Matrix Monitor is the read-only dashboard I run to keep an eye on a multi-EA account without opening the terminal every five minutes.
+Key features
+- Per-magic net P/L: every EA you list by magic number gets its own running result — closed deals plus open floating profit — in one column.
+- Account drawdown in real time: the panel reads current equity against your reference balance and shows the drawdown percentage, so you always know how close you are to the line.
+- Daily-loss breaker progress: it tracks realized losses since the start of the day and shows them against your daily-loss limit — the same idea as a $100 DL cap.
+- Freeze / liquidate proximity: set your two thresholds (e.g. -28% freeze, -30% liquidate) and the panel turns orange then red as you approach them.
+- Fully configurable: magic numbers and every threshold are inputs — point it at your own EAs, your own limits.
+- Read-only by design: it only reads account history and positions; it never sends, modifies or closes an order.
+How to use
+1. Attach the panel to any chart.
+2. Set InpMagics to the magic numbers of the EAs you want to watch (comma separated).
+3. Set InpBaseEquity (or leave 0 to use the current balance) as the drawdown reference.
+4. Set InpFreezePct, InpLiquidPct and InpDailyLoss to your risk limits.
+5. Read the panel: green is fine, orange means the freeze zone, red means the liquidation zone.
+6. Demo account first — always.
+Important notes
+- This is a monitoring tool. It reads data and shows it; it does not trade and cannot protect an account by itself.
+- Drawdown is measured against the reference equity you set; if that number is wrong, the percentage is wrong.
+- Per-EA regime (e.g. "volatile / calm tier") is internal to the EA and is not read here — this panel shows account-level risk, not strategy state.
+- No trading result is guaranteed in any way.
+---
+Need a custom tool?
+I build Expert Advisors, indicators and chart panels for MT4/MT5.
+Free tools are published here; custom work is quoted at a fixed price
+with a fixed delivery date.
+→ See my profile / send a private message.

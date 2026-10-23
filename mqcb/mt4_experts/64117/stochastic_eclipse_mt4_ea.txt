@@ -1,0 +1,34 @@
+Stochastic Eclipse EA
+is an MT4 Expert Advisor that trades using the
+Stochastic Oscillator
+. By identifying overbought and oversold conditions, it helps traders catch early reversals, ride strong momentum shifts, and filter false signals.
+Key Features & Parameters
+1. Stochastic Oscillator Integration
+Overbought/Oversold Levels
+– Default thresholds set to 80/20 for strong signal filtering.
+Customizable Inputs
+– Adjust %K, %D, and Slowing values to fit your strategy.
+Dual Thresholds
+– Enter trades only when Stochastic crosses upper or lower boundaries.
+Signal Confirmation
+– Choose immediate or delayed entry to avoid noise.
+2. Trade Management
+Lot Size Control
+– Default: 0.10 (adjustable for risk preference).
+Stop Loss & Take Profit
+– Defaults set to 100 pips each for balance between safety and reward.
+3. Performance Insights (Backtest: Jan–Sep 2025, GBPUSD, D1)
+Initial Deposit:
+$1000
+Net Profit:
+$411.40
+Profit Factor:
+1.45
+Win Rate:
+61.5%
+Max Consecutive Wins:
+9 trades
+Max Consecutive Losses:
+5 trades
+Relative Drawdown:
+49.20%

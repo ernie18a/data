@@ -1,0 +1,4 @@
+RSD Histogram is a versatile indicator on the market right now, this new indicator is by far the best on the market.
+This first version was completed in 2018, took out of the codebase so I can focus on its development.
+I am now done with developments; the final version is a subscription-based indicator.
+let me know if you want the final version, you can play around with the first version.

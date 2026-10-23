@@ -1,0 +1,6 @@
+Geometric moving average based on the (Open+High+Low+Close)/4 prices for the specified period.
+The indicator settings:
+GMA_Period — indicator period for calculating the geometric moving average.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16502

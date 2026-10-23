@@ -1,0 +1,4 @@
+Author:
+not specified
+Indicator Dolly_Trading Times _3. Shows working hours.
+Indicator dolly_trading times 3

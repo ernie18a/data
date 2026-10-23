@@ -1,0 +1,4 @@
+AMA Histogram is an indicator that shows the difference of a Close price and iAMA (Adaptive Moving Average, AMA) indicator value as a histogram.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21400

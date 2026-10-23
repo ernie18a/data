@@ -1,0 +1,3 @@
+The SMA is accelerated during a trend and slowed down during a sideways market, so as to avoid false signals. It's using the fractal dimension as computed by iliko [arcsin5@netscape.net] in his indicator called fractal_dimension.mq4, and makes use of it to smooth the SMA. I feel it is best used in combination with it, so I attached the file (though both indicators are independent and can be used alone).
+The theoretical details behind the logic of this indicator can be found on my blog: http://fractalfinance.blogspot.com/
+This indicator can then be used for bands trading, and I intend to develop a fractalised bollinger bands based on it in the next few weeks.

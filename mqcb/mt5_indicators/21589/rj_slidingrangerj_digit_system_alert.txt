@@ -1,0 +1,7 @@
+Rj_SlidingRangeRj_Digit_System
+indicator provides alerts, sends email and push notifications when the candles break through the indicator channel.
+Fig. 1. Rj_SlidingRangeRj_Digit_System_Alert indicator. Channel breakthrough on the first bar
+Fig. 2. Rj_SlidingRangeRj_Digit_System_Alert indicator. Activating an alert
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21589

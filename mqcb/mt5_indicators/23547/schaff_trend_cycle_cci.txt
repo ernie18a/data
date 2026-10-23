@@ -1,0 +1,2 @@
+The Schaff trend cycle that is using CCI instead of using MACD for calculation.
+You can use it the same way as any other version of Schaff trend cycle

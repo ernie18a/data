@@ -1,0 +1,4 @@
+Easy EA for closing positions with profit or loss. All positions of chart's symbol are counted separately.
+Settings:
+TPforSymbol — set profit amount to indicate when to close every positions for the symbol of the chart. Swap and commission are decreasing your profit.
+SLforSymbol — set SL amount to indicate SL for every positions for the symbol of the chart. Swap and commission are increasing your loss. SLforSyblol is always below/equal zero.

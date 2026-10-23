@@ -1,0 +1,147 @@
+Author of the idea
+—
+Collector
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Trades using the pending Sell Limit and Buy Limit orders. Removes all orders and closes positions at 23:59.
+Calculation of prices for pending orders:
+double
+temp_h=
+iHigh
+(
+1
+);
+double
+temp_l=
+iLow
+(
+1
+);
+double
+temp_c=
+iClose
+(
+1
+);
+double
+H4,L4;
+H4 = (((temp_h - temp_l)*
+1.1
+) /
+2.0
+) + temp_c;
+L4 = temp_c - ((temp_h - temp_l)*
+1.1
+) /
+2.0
+;
+//---
+if
+(db!=str1.day_of_week && s==
+0
+)
+{
+if
+(!m_trade.SellLimit(Lots,H4,
+Symbol
+(),
+H4+ExtStopLoss*
+Point
+(),
+H4-ExtTakeProfit*
+Point
+(),
+0
+,
+0
+,
+"H4"
+))
+GlobalVariableSet
+(
+"SELLLIMIT"
+,
+0
+);
+else
+{
+GlobalVariableSet
+(
+"SELLLIMIT"
+,
+1
+);
+GlobalVariableSet
+(
+"DateS"
+,str1.day_of_week);
+}
+}
+//----
+if
+(db!=str1.day_of_week && b==
+0
+)
+{
+if
+(!m_trade.BuyLimit(Lots,L4,
+Symbol
+(),
+L4-ExtStopLoss*
+Point
+(),
+L4+ExtTakeProfit*
+Point
+(),
+0
+,
+0
+,
+"L4"
+))
+GlobalVariableSet
+(
+"BUYLIMIT"
+,
+0
+);
+else
+{
+GlobalVariableSet
+(
+"BUYLIMIT"
+,
+1
+);
+GlobalVariableSet
+(
+"DateB"
+,str1.day_of_week);
+}
+}
+In this case, if there are pending orders or open positions at 23:59, the orders are deleted and the positions are closed:
+if
+(total_pos>
+0
+&& str1.hour==
+23
+&& str1.min==
+59
+)
+DeleteAllPositions();
+if
+(total_orders>
+0
+&& str1.hour==
+23
+&& str1.min==
+59
+)
+DeleteAllOrders();
+It is recommended to use it on H1:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16983

@@ -1,0 +1,13 @@
+Hi All,
+I made this indicator for myself and have found it so useful I thought I would share it.
+It is based on the standard MT4 Ichimoku Kinko Hyo indicator but I have designed it to track the RSI values instead in a sub window.
+You can use it as confirmation of other strategies, or if you are a dedicated Ichi user you can use it as a fantastic adjunct to your Ichi charts.
+The one thing I have noticed, and I have displayed in the charts below with a live trade I took, is the great signal that the GREEN Chinkou Span line gives to show tops n bottoms or a momentary consolidation in a trend.
+Another point that often yields a good move is when all three lines break through the clouds at once in either direction as per when I took the trade shown. Works well if you can see that pa has a little room to move (13 pip minimum) to resistance. Incidentally I closed the trade on the confirmed reject of the 70 rsi line as news was moments away and I ended up with a nice little pre-news range scalp.
+When putting on your chart, just change the last color to the color of your chart to float the clouds.
+UPDATE:
+NOTE: Version 2 is updated with an automatic shading system that matches the color of your chart automatically.
+Dll's need to be allowed for the automatic version. This saves you the trouble of matching the last color to that of your chart
+so that the clouds appear to float. Once loaded the auto color needs 1 tick to find your charts color.
+For more examples of indi's with auto color change you can pop over to my website.
+www.Brooky-Indicators.com

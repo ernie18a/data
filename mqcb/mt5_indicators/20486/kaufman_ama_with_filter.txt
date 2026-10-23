@@ -1,0 +1,5 @@
+Adaptive Moving Average (AMA) technical indicator is used for constructing a Moving Average with low sensitivity to price series noises and is characterized by the minimal lag for trend detection. This indicator was developed and described by Perry Kaufman in his book "Smarter Trading".
+The AMA is used as a replacement of ordinary Moving Averages and when it was presented in 1995, it was superior to previous attempts to create an intelligent Moving Average because it offered greater user control.
+In addition to the usual parameters that are controlling the way Kaufman AMA is calculated, this version has:
+Adjustable smoothing.
+Filter that can eliminate insignificant AMA changes.

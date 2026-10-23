@@ -1,0 +1,8 @@
+The number of bars used in the calculations can be changed using the
+barsToCount
+parameter. Updated every tick. It is based on
+http://codebase.mql4.com/en/code/7197
+Unlike the latter indicator, this one is plotted using a buffer.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7812

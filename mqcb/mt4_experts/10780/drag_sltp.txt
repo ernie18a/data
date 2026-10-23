@@ -1,0 +1,13 @@
+There are lots of implementations of this idea. Why new?
+Well, this EA uses absolutely new principle of object manipulation.
+The principle is based on true Drag'n'Drop, implemented at pure MQL without using any system DLLs
+So:
+All standard functionality available (see video for the details)
+The only modificatoin is performed after you have dropped the line (no multiple modifications)
+Confirmation mode
+Help text for current action
+Useful closing of the orders
+Ability to set stops automatically for new orders
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10780

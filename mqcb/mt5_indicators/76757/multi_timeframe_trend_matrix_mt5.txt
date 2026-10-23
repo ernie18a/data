@@ -1,0 +1,11 @@
+Multi Timeframe Trend Matrix provides a fast overview of trend direction from M5 to D1. Each timeframe is evaluated with fast and slow exponential moving averages, current price position and ADX strength.
+A green tile means price is above both averages, the fast average is above the slow average, and ADX meets the selected strength level. A red tile applies the opposite conditions. A neutral tile means the market does not currently meet either complete trend condition.
+The indicator creates and reuses its indicator handles during initialization. The panel is refreshed by timer, which keeps the chart responsive and avoids repeated handle creation on every tick.
+Main inputs
+1. Fast EMA Period sets the responsive moving average.
+2. Slow EMA Period sets the broader trend average.
+3. ADX Period controls the strength calculation.
+4. Minimum ADX defines the required trend strength.
+5. Use Closed Bar selects confirmed values from the previous candle.
+6. Panel settings control location, colors and refresh speed.
+The matrix is an analysis dashboard. It does not predict performance and does not place trades.

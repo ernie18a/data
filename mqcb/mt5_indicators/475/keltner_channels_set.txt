@@ -1,0 +1,34 @@
+This indicator uses considerably more than two Keltner Channels than the standard
+Keltner Channel
+indicator.
+The indicator shows overall picture of a financial asset behaviour in a more informative way. The indicator is built in two variants with different amount of levels for different application cases.
+The indicator is built with the use of universal smoothing with two averagings and a possibility to select each of these averagings from the dozen of possible variants:
+SMA
+- simple moving average;
+EMA
+- exponential moving average;
+SMMA
+- smoothed moving average;
+LWMA
+- linear weighted moving average;
+JJMA
+- JMA adaptive average;
+JurX
+- ultralinear smoothing;
+ParMA
+- parabolic smoothing;
+T3
+- Tillson's multiple exponential smoothing;
+VIDYA
+- smoothing with the use of Tushar Chande's algorithm;
+AMA
+- smoothing with the use of Perry Kaufman's algorithm.
+It should be noted that Phase1 and Phase2 parameters have completely different meaning for different smoothing algorithms. For JMA it is an external Phase variable changing from -100 to +100. For T3 it is a smoothing ratio multiplied by 100 for better visualization, for VIDYA it is a CMO oscillator period and for AMA it is a slow EMA period. For AMA fast EMA period is a fixed value and is equal to 2 by default. The ratio of raising to the power is also equal to 2 for AMA.
+The indicators use SmoothAlgorithms.mqh library classes (must be copied to the
+terminal_data_folder
+\MQL5\Include). The use of the classes was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/475

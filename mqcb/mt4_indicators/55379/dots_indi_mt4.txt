@@ -1,0 +1,20 @@
+Dots (MetaTrader indicator)
+is based on the 2006 indicator by
+TrendLaboratory
+. It displays the current trend direction by placing the dots on the main chart. The blue dots signal bullish trend and the red dots signal bearish trend. Although the indicator doesn't rely on any standard MetaTrader indicators, it uses a call to
+iMA()
+(moving average) to get the price values depending on the input price type used (Close, Open, High, Low, Typical, etc.) The calculation is based on the cosine of the angle of price change. Trader can modify several input parameters. The indicator is available both for MT4 and MT5 versions of the platform.
+Input parameters
+Length
+(default = 10) — the period of the indicator. The higher is the value the more it lags but less false signals appear.
+AppliedPrice
+(default = PRICE_CLOSE) — price type to use in calculations.
+Filter
+(default = 0) — particularly useful parameter to filter out spikes without adding lag.
+Deviation
+(default = 0) — shifts indicator display vertically.
+Shift
+(default = 0) — shifts indicator display horizontally.
+The recommended strategy is to wait for 2 dots of the same color and enter the trade with the trend. Unfortunately, it sometimes fails. Using one dot signal with Filter parameter set to something like the currency pair's
+spread x 3
+could be a better idea.

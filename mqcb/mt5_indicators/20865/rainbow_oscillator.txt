@@ -1,0 +1,4 @@
+Based on Mel Widner's Rainbow Average (that is similar to
+Guppy MMA
+), here is an oscillator version.
+The indicator is mainly intended to show the trend of the market. But, using the levels (that are dynamic - they depend on the market changes), you can use it to assess overbought and oversold conditions too.

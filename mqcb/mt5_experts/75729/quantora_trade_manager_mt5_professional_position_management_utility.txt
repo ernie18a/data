@@ -1,0 +1,4 @@
+Quantora Trade Manager MT5 is a utility for managing open trades with automated risk control. It does not generate signals or open positions, but helps handle existing trades more efficiently.
+The tool can automatically set stop loss and take profit levels if they are missing. It also manages trades as they move into profit, using break even and trailing stop features to help protect gains.
+It includes daily profit and loss limits to control overall account risk, along with support for both manual trades and positions opened by other expert advisors. A simple dashboard allows easy monitoring and control.
+Suitable for traders who want better control over risk without changing their trading strategy.

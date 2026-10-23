@@ -1,0 +1,36 @@
+Real author:
+Executer
+ExCandles-v2 indicator shows candlesticks combinations on a chart using the arrows. This indicator is the enhanced version of
+ExCandles
+.
+Indicator input parameters:
+ExPeriod - the number of bars used for a trend filtration;
+TrendFilter - filter operation on/off;
+how_bars - number of the bars, at which the calculation is performed (all bars in case of 0).
+UpSymbol - the index of the symbol pointing to an uptrend;
+DnSymbol - the index of the symbol pointing to a downtrend;
+VertShift - vertical shift of symbols from the candlesticks in points.
+Supported candlestick patterns:
+Shooting star
+Inverted hammer
+Hanging man
+Hammer
+Bearish Engulfing
+Bullish Engulfing
+Dark Cloud Cover
+Piercing Line
+Evening Star
+Morning Star
+Evening Doji Star
+Morning Doji Star
+In case someone wonders why almost all combinations are set as
+Bullish
+and
+Bearish Engulfing
+, I can say that this combinations are the most common ones, there is no any mistake here.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+15.01.2007.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/502

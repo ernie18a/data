@@ -1,0 +1,3 @@
+This script creates a history.csv in the experts/file directory. it exports your history into a .csv file which can be read by excel or similar. You can sort your trades and see easily how much a certain EA won or lost.
+You can read it with Excel or similar, sort by Magic Number or sort by Comment then sum up the Profit from a certain expert. It only exports buy and sell, not canceled orders or anything else.
+If the spread sheet in your language needs "," instead of "." for numbers, you can switch the WantKomma variable at the top of the script.

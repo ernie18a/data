@@ -1,0 +1,52 @@
+VR Smart Grid Lite
+Advisor is a simplified demo version of
+VR Smart Grid
+Advisor. The EA is presented in order to demonstrate a part of the source code, and to demonstrate an example of its work with partial closing of orders by take profit and closing of orders by fractional lot. The EA uses large volume orders to partially close other orders, with this approach, the breakeven and profit price is much closer to the current price than if you use all orders in the terminal or their full volumes. As a result, the probability of closing orders or reducing lots in the market increases by several times. Run the EA in the strategy tester in the visualization mode, and you will see how the EA works on the chart. VR Smart Grid Lite Advisor will be useful for both beginners and professionals in trading and programming.
+📲 Join the discussion in the group
+@telegram
+development news and updates
+@telegram
+VR Smart Grid Lite
+is a Lite version of the
+VR Smart Grid EA
+published in the market, it demonstrates a small part of the source code and a small part of one of the principles of reducing the position of orders against the trend.
+Work logic
+If the last candle was bullish, the EA will enter the market with a buy order. If the last candle is bearish, then the EA will enter the market with a sell order. In this case, the signal acts not only on the first order in the network, but also on all subsequent ones. This approach eliminates the opening of the network only after a specified distance. It turns out that the EA takes into account not only the distance set by the trader, but also the signal from the candles. In the case of a sharp price movement without a signal from the candles, no trade will be made. It is important to note that if there is a strong movement on the instrument (all candles are bearish), then the trade will be made on a bullish candle.
+Recommendations
+Do not use on real account without a clear understanding of the risks and consequences
+Integrate your strategy into the code
+Before using the EA in real conditions, test on demo accounts for at least 4 working weeks.
+Advantages
+EA works on any timeframe
+EA works with any instruments (Forex, Metalls, Stock, Cryptocurrencies, etc)
+Simple open source code
+EA has is able to integrate any trading strategy
+Detailed description of the code is provided in the video material
+EA works in the strategy tester, on demo and in real life (observe and take the risks into account)
+Automatically picks up your orders when you restart.
+Settings
+Take Profit (in pips) - take profit in pips;
+Start lot - start lot size;
+Type close orders - Closing orders by total take profit (Average) or Partial closing of orders (Part Close)
+Point order step (in pips) - step between orders;
+Minimum profit for close grid (in pips) - minimum profit when closing a series of orders;
+Magic Number - serial number of orders by which the EA distinguishes its orders;
+Slippage (in pips) - slippage size.
+Version 19.120
+Added:
+Setting that allows you to choose to Close orders by total take profit (Average) or select Partial closing of orders (Part Close) was added
+Optimized:
+Maximum lot limiting setting is optimized. Now to disable the use of the maximum lot limit it is enough to set the value of Maximum Lots to 0
+Links
+VR Smart Grid MT4 -
+https://www.mql5.com/en/market/product/28140/
+VR Smart Grid Lite MT4 -
+https://www.mql5.com/en/code/27439/
+VR Smart Grid MT5 -
+https://www.mql5.com/en/market/product/38626/
+VR Smart Grid Lite MT5 -
+https://www.mql5.com/en/code/27440/
+Blog RU
+https://www.mql5.com/ru/blogs/post/726568
+Blog EN
+https://www.mql5.com/en/blogs/post/726569

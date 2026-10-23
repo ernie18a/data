@@ -1,0 +1,6 @@
+The main idea is to consider that the change of a trend is not MA crossing, but the output prices of a flat zone. In other words, in flat (perhaps more appropriately be called "dead") zone, deals are not concluded, which can serve as a kind of filter to filter out false crossings of the Moving Average.
+Recommendations:
+Make sure that in the chart properties (F8) on "General" tab the check mark stands opposite to properties "Chart on top".
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1270

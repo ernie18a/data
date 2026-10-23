@@ -1,0 +1,71 @@
+Real Author:
+EarnForex
+3rd Generation XMA is the 3rd generation moving average. This is an advanced version of the standard moving average indicator (МА) that follows a fairly simple procedure to reduce the time lag based on the increase in the moving average period.
+The method was first described by Dr. Manfred Dürschner in his article "Gleitende Durchschnitte 3.0" (in German). This implementation uses λ = 2 resulting in more effective lag reduction. Higher λ increases the similarity with the classic moving average.
+Input parameters:
+//+-----------------------------------+
+//| Indicator input parameters        |
+//+-----------------------------------+
+input
+Smooth_Method XMA_Method=
+MODE_EMA
+;
+// Smoothing method
+input
+int
+XLength=
+50
+;
+// Smoothing depth
+input
+int
+XPhase=
+15
+;
+// Smoothing parameter
+input
+Applied_price_ IPC=
+PRICE_TYPICAL
+;
+// Price constant
+input
+int
+Shift=
+0
+;
+// Horizontal shift of the indicator in bars
+input
+int
+PriceShift=
+0
+;
+// Vertical shift of the indicator in points
+This indicator allows you to select averaging algorithms out of ten possible options:
+SMA
+- simple moving average;
+EMA
+- exponential moving average;
+SMMA
+- smoothed moving average;
+LWMA
+- linear weighted moving average;
+JJMA
+- adaptive JMA smoothing;
+JurX
+- ultralinear smoothing;
+ParMA
+- parabolic smoothing;
+T3
+- Tillson's multiple exponential smoothing;
+VIDYA
+- smoothing using the algorithm developed by Tushar Chande;
+AMA
+- smoothing using Perry Kaufman's algorithm.
+It should be noted that Phase parameters for different smoothing algorithms have completely different meaning. For JMA, it is an external Phase variable that varies from -100 to +100. For T3, it is a smoothing coefficient multiplied by 100 for better visualization. For VIDYA, it is a CMO oscillator period. And for AMA, it is a slow EMA period. These parameters do not affect the smoothing in other algorithms. For AMA, the fast EMA period is a fixed value and is equal to 2 by default. The powering coefficient for AMA is also fixed at 2.
+The indicator uses the SmoothAlgorithms.mqh library classes (to be copied to the terminal_data_directory\MQL5\Include). The use of the classes was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Fig.1 The 3rdGenXMA Indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1032

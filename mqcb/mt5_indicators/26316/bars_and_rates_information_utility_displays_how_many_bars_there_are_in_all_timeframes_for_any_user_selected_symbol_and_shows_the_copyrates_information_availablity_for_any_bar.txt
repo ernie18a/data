@@ -1,0 +1,16 @@
+This utility is not a trading information utility.  It will only have value for those getting bar information using the Bars (or iBars, as they are near equivalent) and the CopyRates functions over multiple timeframes.  Testing was mostly done using the "Basket Viewer" utility and clicking on each of the symbols in it's list to switch the chart symbols and see what was displayed.
+The utility allows the user to use the current chart symbol (default) or input any symbol in their market watch, and view the number of Bars reported for each chart timeframe by the Bars Function, and it shows the results of the CopyRates function for any valid Bar number input by the user.  The utility defaults to displaying the CopyRates information for the oldest bar in each timeframe.
+This is a twin indicator to
+https://www.mql5.com/en/code/26330
+, which gets its information about valid bars using the 'SeriesInfoInteger' function.  The SeriesInfoInteger function appears to be a 'better' way to get the bars information, but both report bars are available that CopyRates cannot get information for, at least as of the current version of the terminal.
+The below picture shows the typical startup of the indicator, a chart with many 4401 'Terminal Data not Available" errors, followed shortly by a display with fewer errors as the terminal initializes the data.  Scroll below to see a description of what the numbered controls do:
+The Controls:
+1)  "Rates and Bar" - Select and drag to move the display to a different location on the chart.
+2) This is the Bar Number input Box.  Enter a bar number to see if CopyRates information is available for that bar.
+3) "Symbol" - Click to toggle the Bar Number to the 'Oldest' default, or the last entered bar number.
+4) This is the Symbol input Box.  Input any symbol in your Market Watch to display for that symbol.
+5) Click the MN1 CopyRates information to toggle writing logs on and off.  When on, errors returned from Bars and CopyRates will be written to the logs.
+I recommend obtaining and  un-commenting
+// #include <errordescription.mqh>  // errordescription.mqh is found at: https://www.mql5.com/en/code/79
+and adding the ErrorDescription text back into the indicator.  I cannot submit the code with this include in the code.
+During my testing, Bars would report values greater than 100,000, but CopyRates never appears to get data for bar numbers greater than 99,999. The below picture shows the CopyRates 4401 error for bar 100,0000, and the success for bar 99,9999:

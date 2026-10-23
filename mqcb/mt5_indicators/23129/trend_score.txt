@@ -1,0 +1,23 @@
+Trend Score indicator by Tushar S. Chande was described in the article "Rating Trend Strength" in S&C magazine (September 1993).
+It displays both the power and direction of a trend.
+There are five inputs:
+Price method
+- applied prices
+Open/Close
+- current Open and Close
+Close/Close
+- past and current Close
+Period method
+- use the range in calculation
+Use period
+Do not use period
+Overbought
+- overbought level
+Oversold
+- oversold level
+Fig. 1. Period method = Use period
+Fig. 2. Period method =
+Do not use period
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23129

@@ -1,0 +1,7 @@
+Sometime we have to work with Custom Angles based trendline for price action analysis e.g. 45 degree angle is considered more important for up or down trend.
+This indicator will help you by drawing a trendline which will match your custom angle on last input number of bars
+First Right click on chart > Go to Properties > Common and Scale chart that you are comfortable with
+Select Indicator Settings and input your custom angle in degress e.g. 45
+You have two options - Set downline angle degree and set upline angle degree
+You can select previous number of bars to consider for calculation
+then this indicator will find two recent high and low for specified previous bars and plot a trendline that will follow your custom input angle

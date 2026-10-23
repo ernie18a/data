@@ -1,0 +1,9 @@
+The indicator shows recalculated ("broken") highs/lows of the
+standard ZigZag
+indicator.
+The indicator allows to estimate the quality of the standard ZigZag indicator. The broken extremums are marked with diamonds.
+Note:
+The calculations aren't optimized, at each new bar it calls the code of the standard ZigZag in mode "0-bar emulation".
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/116

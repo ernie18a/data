@@ -1,0 +1,1 @@
+This indicator will shows the time remaining of candle (any timeframe)

@@ -1,0 +1,22 @@
+Indicator Heikin-Ashi Open displays in a separate window the lines of opening and closing Heikin-Ashi candlesticks.
+Intersections of the indicator lines may be signals for opening/closing the positions. It can be used together with indicator
+haDifference
+.
+The indicator has no configurable options.
+Calculation:
+HAOpen = (PrevHAOpen + PrevHAClose) / 2.0
+HAClose = (Open + High + Low + Close) / 4.0
+where:
+HAClose
+- Heikin-Ashi candlestick closing price;
+HAOpen
+- Heikin-Ashi candlestick opening price;
+PrevHAClose
+- closing price of the previous Heikin-Ashi candlestick;
+PrevHAOpen
+- opening price of the previous Heikin-Ashi candlesticks.
+Fig 1. Indicator Heikin-Ashi Open
+Fig. 2. Indicator Heikin-Ashi Open in combination with Heikin-Ashi Difference
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21037

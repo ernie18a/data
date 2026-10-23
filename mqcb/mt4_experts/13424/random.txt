@@ -1,0 +1,5 @@
+The Random EA, which operates by the principle of a coin flip.
+Trading algorithm: the EA opens a market order by using a random number generator, or simply put, in a random direction.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13424

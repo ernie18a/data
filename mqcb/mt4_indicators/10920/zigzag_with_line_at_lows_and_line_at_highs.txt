@@ -1,0 +1,9 @@
+See Topic
+https://www.mql5.com/en/forum/144092
+and you can read why this was made.
+This version is the last I made to have in real time also on chart displaying correct way.
+Buffer 1   is normal ZigZag thick red line.
+Buffer 2   is HighMapBuffer thin green line as in normal ZigZag.
+Buffer 3   is LowMapBuffer thin yellow line as in normal ZigZag.
+Buffer 4   is Line connecting real ZigZag Highs Thick Magenta Line.
+Buffer 5   is Line connecting real ZigZag Lows Thick LightSkyBlue Line.

@@ -1,0 +1,9 @@
+This EA converts a chart to Renko Chart using the tick values. In fact, it does not perform any auto-trading, it just perform a conversion. Unlike the conventional approach, this EA generates the renko blocks from
+every tick
+, which could be the most precise method (IMO). In the conventional approach, only the high/low values are used for conversion. But the actual market condition has a significant amount of change in the total pips traveled. It doesn't update on a live chart. I'm trying to make it on my next revision. I've also developed a renko indicator (time-dependent), which can be used on a regular chart along with other indicators. Should any of you require it, please let me know so that I'll upload it.
+How to use:
+Like any other EA, open it in the strategy tester, choose the 'symbolname' and a small timeframe (M1 or M5). If you would need to convert within a time-period (eg: 2010-01-01 ~ 2016-01-31), choose those dates and "start". An ".
+hst
+" file will be generated in your MetaTrader 4 folder under "\Tester\Files" subdirectory. Copy this file to your MetaTrader 4 history folder. You may open this file from the menu: "File -> Open offline". The name of the generated file will normally be of the format "symbolname2.hst" (for example, "
+USDJPY2.hst
+"). Please remember that, since it currently generates blocks only through the strategy tester, it uses the simulated ticks that are supplied by the MetaTrader 4 historical data. The values will become "real" only when we use it on MetaTrader 5 or the live data, which is not yet ready.

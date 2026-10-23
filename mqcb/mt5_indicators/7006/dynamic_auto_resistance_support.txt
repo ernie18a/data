@@ -1,0 +1,6 @@
+This technical indicator detects constant price zones and draws resistance and support lines.
+It checks the market movement for any market and any time frame. If a bar is not abnormally large, the indicator checks back and searches for other bars within the same price zone.
+If enough candles are found, it draws lines on this level. The lines will continue till the next zone is identified.
+Input parameters:
+InpBacklook (5-xxxx) - Amount of candles to scan and detect other candles in the same range;
+InpAccurency (10.0 - 100.0) - Required candles in back look range to match requirements in percent.

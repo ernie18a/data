@@ -1,0 +1,24 @@
+Author:
+Kolier.Li
+SuperTrend.mq4 was created by Jason Robinson (jnrtrading) and published on
+http://www.forex-tsd.com/221493-post1.html
+Logic of
+SuperTrend.mq4:
+http://kolier.li/indicator/how-supertrend-mq4-works-logic-of-supertrend-indicator-created-by-jason-robinson-jnrtradin
+What's Kolier_SuperTrend_Indi
+Same logic, improvement implementation in code, can draw full chart and less resource consume.
+Extended. TrendMode=0 means original logic for trend line. TrendMode=1 means new logic for trend line.
+TrendMode=0
+TrendMode=1
+Parameters
+BarsToCount
+How many bars to draw trend line.
+TrendMode
+TrendMode=0 means original logic for trend line. TrendMode=1 means new logic for trend line.
+ATR_Period
+ATR Period settings.
+ATR_Multiplier
+In order to calculate upper and lower bands with ATR Range = Multiplier * ATR.
+Issues and Update
+Project Page:
+http://kolier.li/project/kolier-supertrend-indi

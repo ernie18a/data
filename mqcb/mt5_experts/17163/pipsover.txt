@@ -1,0 +1,16 @@
+Author of the idea
+—
+Yury Reshetov
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Pipsing Expert Advisor. It works based on the iChaikin (Chaikin Oscillator) and iMA (Moving Average, MA) indicators.
+It works on smaller timeframes.
+. Default settings are for AUDUSD M5.
+The strategy uses the Chaikin Oscillator and the 20-period Moving Average to attempt to determine the moment of potential trend reversal or rollbacks. To do that the EA first checks the Chaikin Oscillator, and if it exceeds a certain value, the price goes over the Moving Average and the previous candle reversed, then there is either a rollback or a reversal is present. So, the EA places an order in the direction specified by the previous candle. If a position was opened and there is a suspicion of a rollback in the direction opposite to the position, lock is by an opposite position. In this case a strong trend will hit one of the stops and will give an opportunity to earn a few extra pips.
+Why not use the RSI, for instance, to achieve the same goals? Because the RSI does not consider the market activity, and only considers ranges. The Chaikin oscillator, however, considers the volumes. During an uptrend the RSI will repeatedly indicate overbought state and during a downtrend - oversold state, i.e. it acts against the trend. As a result, if you attempt to use it to catch the reversal moment, there will be multiple false triggers in a row, before the trend actually reverses. In a ranging market, the RSI is always inferior to Chaikin.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17163

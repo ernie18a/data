@@ -1,0 +1,21 @@
+The Expert Advisor is rewritten from MQL4, the author is
+SAW
+, link to the source
+https://www.mql5.com/en/code/7904
+.
+How it works
+The Expert Advisor operates on signals of the T3MA-ALARM indicator.
+The image shows the performance of the Expert Advisor in the strategy tester's visual mode.
+Parameters
+Lots - Lot.
+StopLoss - Stop Loss in points, 0 - without Stop Loss.
+TakeProfit - Take Profit in points, 0 - without Take Profit.
+Shift - The bar on which the indicators are checked: 0 - forming bar, 1 - first formed bar.
+RevClose - Close a position by the opposite signal.
+MAPeriod - The period of MA.
+MAShift - Shift of MA.
+MAMethod - The method of MA.
+MAPrice - The price of MA.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1150

@@ -1,0 +1,2 @@
+Author: rewritten by CrazyChart.
+DiNapoli indicator.

@@ -1,0 +1,17 @@
+Add CCI indicator. Put the MA indicator directly on it. (Apply to Previous Indicator's Data)
+The EA works by the following algorithm:
+1. If the CCI line crosses the MA bottom-up then buy.
+2. If the CCI line crosses the MA from top downwards then sell.
+3. If the CCI crosses 100 from top downwards then close the BUY trade, if it crosses 100 bottom-up then close the SELL trade.
+Only one trade can be opened at a time.
+The EA was tested on EURUSD from the year 2001. The best parameters for H1:
+CCI_Per=31
+MA_Per=99
+CCI_close_Per=35
+TakeProfit=180
+StopLoss=420
+The report is attached.
+Help me with the optimization on the other symbols and timeframes. I think that the algorithm is not bad, but the realization leaves something to be desired. I propose you to work on it together. Write about your ideas and defects noticed, let's improve it...
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8425

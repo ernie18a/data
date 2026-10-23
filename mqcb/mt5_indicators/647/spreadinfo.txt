@@ -1,0 +1,78 @@
+SpreadInfo displays spread, its average value and their ratio in one of the chart corners. Font type, color and size can be customized in the input parameters.
+СMoving_Average class of the SmoothAlgorithms.mqh library is used for the indicator compilation. The use of the class was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+, as well as type_font and CFontName class from the
+GetFontName.mqh
+library
+.
+Indicator input parameters:
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+string
+SpName=
+"Spread"
+;
+// Spread name
+input
+string
+MaSpName=
+"MASpread"
+;
+// Average spread name
+input
+string
+RatioName=
+"Ratio"
+;
+// Spread and its average value ratio name
+input
+color
+TextColor1=Magenta;
+// Spread color
+input
+color
+TextColor2=Blue;
+// Average spread color
+input
+color
+TextColor3=Red;
+//
+Spread and its average value ratio color
+input
+int
+FontSize=
+15
+;
+// Font size
+input
+type_font FontType=Font14;
+// Font type
+input
+ENUM_BASE_CORNER
+WhatCorner=
+CORNER_RIGHT_UPPER
+;
+// Location corner
+input
+uint
+Y_=
+1
+;
+// Vertical location
+input
+uint
+X_=
+5
+;
+// Horizontal location
+input
+int
+period=
+100
+;
+// Spread smoothing period
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/647

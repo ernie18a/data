@@ -1,0 +1,216 @@
+MQL5 Wizard
+provides the automatic creation of Expert Advisors (see
+MQL5 Wizard: Creating Expert Advisors without Programming
+).
+The CSignalCandles class provides trade signals, based on reversal candlestick patterns. The strategy called
+"Signals based on reversal candlestick patterns"
+(when creating EA automatically in MQL5 Wizard).
+The idea of the system is to indentify the reversal patterns using the calculation of the composite candle. The reversal patterns is similar to the "Hammer" and "Hanging Man" patterns in Japanese candlestick analysis. But it uses the composite candle instead the single candle and doesn't need the small body of the composite candle to confirm the reversal.
+Input parameters:
+Range - maximal number of bars, used in the calculation of the composite candle.
+Minimum - minimal size of the composite candle (in conventional points).
+ShadowBig and ShadowSmall - shadows (in composite candle units).
+Limit, StopLoss and TakeProfit - open price, SL and TP levels, the values defined relative to the close price of the composite candle(composite candle units).
+Expiration - order expiration time (in bars), used in trading with pending orders (Limit!=0.0).
+The reversal candlestick patterns are determined as follows.
+It calculates the composite candle parameters starting from the recent completed bar (with index 1) to the number of bars, defined by Range input parameter. If the composite candle size is greater than value, specified by Minimum input parameter, it checks the reversal conditions of the composite candle by analysis of its shadows.
+The bears power is characterized by size of the upper shadow of the composite candle, the bulls power is characterized by size of the lower shadow.
+To confirm the reversal of the bearish trend (and start of the bullish) it is needed the following: the size of the lower shadow (bulls power) must be greater than value, defined by ShadowBig input parameter. The size of the upper shadow (bears power) must be less than value, defined by ShadowSmall input parameter.
+To confirm the reversal of the bullish trend (and start of the bearish) it is needed the following: the size of the upper shadow (bears power) must be greater than value, defined by ShadowBig input parameter. The size of the lower shadow (bulls power) must be less than value, defined by ShadowSmall input parameter.
+In addition to the reversal strategy, it's possible to use the breakdown strategies by specifying the negative value of Limit input parameter (see
+MQL5 Wizard - Trade Signals Based on Crossover of Two EMA with intraday time filter
+).
+Depending on Limit, three different ways of market entry are used:
+Limit>0. It will enter on back movement on the price, better than market price (The Buy Limit or Sell Limit pending orders will be placed depending on trade signal)
+Limit<0. It will enter in price movement direction (The Buy Stop or Sell Stop pending orders will be used depending on trade signal).
+Limit=0. It will trade using the market prices.
+This strategy is implemented in CSignalCandles class.
+Figure 1. Trade signals, based on reversal candlestick patterns
+Trade signals
+The trade signals are implemented in CSignalCandles class, there is a Candle() function, used for the analysis:
+int
+Candle(
+int
+ind);
+// Returns the positive/negative number depending on type of the composite candle
+// the returned value is the number of bars (candles) in the composite candle (starting from ind)
+Several candles (bar) can be used in construction of the composite candle. The minimal number of bars is defined by Range parameter. In some cases, the composite candle can be formed with candles, less than Range (when the size/shadows conditions are satisfied). The Candle function returns 0 if the composite candle cannot be formed.
+1. Open long position
+To open long position, the bullish composite candle is needed. The function checks it and return if the the composite candle is not formed yet or the composite candle is bearish. Overwise, it calculates the composite candle size (needed for calculation of price, SL and TP levels) and calculates the price levels for pending order.
+Note, that pending order type (Buy Limit or Buy Stop) is dependent on sign of Limit input parameter (if Limit=0 or |price-ask|<stops level, it will place market buy order, if Limit>0, it will place  the Buy Limit pending order, if Limit<0, the Buy Stop pending order will be placed).
+//+------------------------------------------------------------------+
+//|
+Checks conditions to open long position (buy)
+|
+//+------------------------------------------------------------------+
+bool
+CSignalCandles::CheckOpenLong(
+double
+& price,
+double
+& sl,
+double
+& tp,datetime& expiration)
+  {
+//--- check the fact of the bullish composite candle formation
+if
+(Candle(
+1
+)<=
+0
+)
+return
+(
+false
+);
+//--- get the size of the composite candle
+double
+size=m_high_composite-m_low_composite;
+//--- calculate the price of pending order
+price=m_symbol.NormalizePrice(m_symbol.Ask()-m_limit*size);
+//--- calculate Stop Loss price
+sl   =m_symbol.NormalizePrice(price-m_stop_loss*size);
+//--- calculate Take Profit price
+tp   =m_symbol.NormalizePrice(price+m_take_profit*size);
+//--- set order expiration time
+expiration+=m_expiration*PeriodSeconds(m_period);
+//--- the conditions are satisfied, return true
+return
+(
+true
+);
+  }
+2. Close long position
+If the bearish composite candle has formed, the long position is closed.
+//+------------------------------------------------------------------+
+//| Checks conditions to close long position                         |
+//+------------------------------------------------------------------+
+bool
+CSignalCandles::CheckCloseLong(
+double
+& price)
+  {
+//--- check the fact of the bearish composite candle formation
+if
+(Candle(
+1
+)>=
+0
+)
+return
+(
+false
+);
+//---
+price=
+0.0
+;
+//--- the conditions are satisfied, return true
+return
+(
+true
+);
+  }
+3. Open short position
+The bearish composite candle must be formed to open short position. If the composite candle isn't formed, or it's not bearish, return. Overwise we determine its size and calculate price levels of pending order
+(the order type depends on sign of the Limit input parameter, see "Open long position").
+//+------------------------------------------------------------------+
+//| Checks conditions to open short position (sell)                  |
+//+------------------------------------------------------------------+
+bool
+CSignalCandles::CheckOpenShort(
+double
+& price,
+double
+& sl,
+double
+& tp,datetime& expiration)
+  {
+//--- check the fact of the bearish composite candle formation
+if
+(Candle(
+1
+)>=
+0
+)
+return
+(
+false
+);
+//--- get the size of the composite candle
+double
+size=m_high_composite-m_low_composite;
+//--- calculate the price of pending order
+price=m_symbol.NormalizePrice(m_symbol.Bid()+m_limit*size);
+//--- calculate Stop Loss price
+sl   =m_symbol.NormalizePrice(price+m_stop_loss*size);
+//--- calculate Take Profit price
+tp   =m_symbol.NormalizePrice(price-m_take_profit*size);
+//--- set order expiration time
+expiration+=m_expiration*PeriodSeconds(m_period);
+//--- the conditions are satisfied, return true
+return
+(
+true
+);
+  }
+4. Close short position
+If the bullish composite candle has formed, the short position is closed.
+//+------------------------------------------------------------------+
+//| Checks conditions to close short position                        |
+//+------------------------------------------------------------------+
+bool
+CSignalCandles::CheckCloseShort(
+double
+& price)
+  {
+//--- check the fact of the bullish composite candle formation
+if
+(Candle(
+1
+)<=
+0
+)
+return
+(
+false
+);
+//---
+price=
+0.0
+;
+//--- the conditions are satisfied, return true
+return
+(
+true
+);
+  }
+Creating Expert Advisor using MQL5 Wizard
+To create a trading robot based on the strategy you need to choose the signal properties as "
+Signals based on reversal candlestick patterns
+" in "Creating Ready-Made Expert Advisors" option of
+MQL5 Wizard
+:
+Figure 2. Select "Signals based on reversal candlestick patterns in MQL5 Wizard
+The next you have to specify the needed
+trailing stop
+algorithm and
+money and risk management
+system. The code of Expert Advisor will be created automatically, you can compile it and test in
+Strategy Tester
+of MetaTrader 5 client terminal.
+Testing Results
+Let's consider backtesting of the Expert Advisor on historical data (EURUSD M15, testing period: 1.1.2010-05.01.2011, Range=3, Minimum=50, ShadowBig=0.5, ShadowSmall=0.2, Limit=0, StopLoss=2.0, TakeProfit=1.0, Expiration=4).
+In creation of Expert Advisor we used the fixed volume (
+Trading Fixed Lot
+, 0.1), Trailing Stop algorithm is not used (
+Trailing not used
+).
+Figure 3. Testing Results of the Expert Advisor with trading signals, based on reversal candlestick patterns
+Attachments:
+The SignalCandles.mqh with CSignalCandles class must be placed to terminal_data_folder\MQL5\Include\Expert\Signal folder.
+The expert_candles.mq5
+contains the code of the Expert Advisor, created using MQL5 Wizard.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/268

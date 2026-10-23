@@ -1,0 +1,41 @@
+Shortly:
+There is a large quantity of various Zigzags and the majority of it, with difficult algorithms, don't give required result. Besides the work principle and adjustment happens very hard to understand.
+I have decided to write my own Zigzag and accordingly named it by my name.))
+It is the Zigzag with a simple, clear and natural principle of work . It shows impulses and corrections which are important to you . Zigzag doesn't redraws since it only draws the impulses which are already exist .
+Options and work principle:
+extern
+double
+MinRatio=
+0.33
+;
+It means the relation of a new impulse to previous to which the Zigzag will react. I.e. the new line will be constructed only if current impulse is not less than 0.33 of previous.
+0.5 - not less than half
+0.75 - not less than three quarters etc.
+extern
+int
+MinPoints=
+20
+;
+The filter which cuts too small movements, i.e. market noise. Designates size of the minimum impulse for reaction, in points. I.e. the Zigzag doesn't react to an impulse, which less than MinPoints.
+extern
+int
+ForcePoints=
+50
+;
+This parameter allows to react to considerable recoils even if they less than MinRatio. For example, after sharp movements.
+If parameter MinPoints is established to more than ForcePoints, ForcePoints will be automatically raises to the same size.
+extern
+bool
+ByClose=False;
+The interesting parameter, allows to draw the Zigzag being guided by the Close-prices and ignoring market noise of High and Low.
+extern
+int
+History=
+5000
+;
+It's just the
+History
+. )
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10076

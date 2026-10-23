@@ -1,0 +1,15 @@
+ATR Trailing Stop (Pine Script port)
+A worked example of converting a TradingView Pine Script indicator to MQL5, kept in parity with a Python reference implementation.
+Rules (same in all three versions):
+- nLoss = ATR multiplier x SMA of true range over InpATRLength bars
+- The stop ratchets up under price while price stays above it, and down over price while price stays below it
+- The stop flips to the other side, and an arrow is drawn, when price closes through it
+Pine to MQL5/Python translation notes (the actual porting work):
+- ta.tr(true): the first bar has no previous close, so true range there is just high minus low
+- ta.sma(x, n): stays na until n bars exist (first valid value at bar n-1)
+- nz(stop[1], src): the previous stop, or the current price while the previous stop is still na
+- var float stop = na: state carried from bar to bar, translated to a persistent buffer in MQL5 and a running array in Python
+- ta.crossover / ta.crossunder: strictly false while either side is na, which matters for the first valid bar
+Repository (Pine source, Python port with a literal bar-by-bar reference implementation for cross-checking, and a parity test comparing both to the MQL5 output): github.com/RAo797bit/pine-python-mql5-conversion
+Compiles clean in MetaEditor with 0 errors, 0 warnings
+.

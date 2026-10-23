@@ -1,0 +1,27 @@
+The Expert Advisor is rather simple.
+at formation of the indicator signal on upper and lower boundaries of the range Buy-Stop and Sell-Stop orders will be set. At that Take Profit is specified in the input parameters, and Stop Loss is the opposite boundary of the range.
+if no order triggered and a new signal received, old orders will be removed and orders by the new signals will be set.
+when one of the orders triggered, the opposite order will be removed. The available position will be closed either by Stop Loss or by Take Profit (when there is a position, the indicator signals are not checked).
+Download and install
+Narrowest Range Signal
+to the MetaTrader 5\MQL5\Indicators folder.
+Parameters:
+Bars in Range
+- number of bars for calculation of the range (the current bar).
+Check Period
+- period of the minimum range detection.
+Order Indent from High / Low
+- at what distance in pips from the upper and lower boundaries of the range to set stop orders.
+MM Mode
+- money management mode. There are two variants: 1) fixed lot, 2) fixed percentage from free margin (in this case it is equivalent to a fixed percentage of the deposit)
+Volume (Lot or percent)
+- volume of order. Depending on the previous parameter it is either lot size, or percentage value.
+Testing results at EURUSD H4 since January, 2012 until now (March, 2013), deposit $10 000:
+1. Fixed lot (0.5):
+2. Fixed percentage (5%):
+Notes:
+Both tests are attached to the archive.
+This version of the Expert Advisor is more the validation of the idea, than the instrument for working on the real account. In other words, the Expert Advisor normally works in real time, but, for example, there is no checkings of "its" order or "alien" correctness of Take Profit and Stop Loss (supposed that you will work on large timeframes on which Stop Loss cannot be less than stop level and it won't make sense to set too small Take Profit).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1598

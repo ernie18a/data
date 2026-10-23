@@ -1,0 +1,41 @@
+Author of the idea
+—
+Collector
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Uses signals from the indicators: ATR, MACD.
+Block of getting the indicators:
+Range=iATRGet(
+1
+);
+rr=Range*LEVEL;
+Delta=iMACDGet(
+MAIN_LINE
+,
+0
+)-iMACDGet(
+SIGNAL_LINE
+,
+0
+);
+Delta1=iMACDGet(
+MAIN_LINE
+,
+1
+)-iMACDGet(
+SIGNAL_LINE
+,
+1
+);
+Open Buy if:
+if
+(Delta>rr && Delta1<rr)
+Open Sell if:
+if
+(Delta<-rr && Delta1>-rr)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17080

@@ -1,0 +1,31 @@
+IronHawk SMC Trade Zones M5 is a chart indicator designed to identify structured trading opportunities on closed M5 candles.
+The indicator combines confirmed swing points, liquidity sweeps, BOS and CHoCH events, displacement, Fair Value Gaps, Order Blocks, RSI, MACD and ATR-based risk measurements.
+It does not open, modify or close trades. Entry, Stop Loss, TP1 and TP2 are displayed as proposed levels for analysis and manual decision-making.
+Main features:
+• Closed-bar and non-repainting calculations
+• Bullish and bearish market-structure detection
+• Liquidity sweep, trend-continuation and momentum-reversal paths
+• Automatic selection between STOP and LIMIT entry proposals
+• ATR-based Stop Loss and target calculation
+• TP1 and TP2 visualization
+• Market regime and structural bias display
+• Setup states: ARMED, ACTIVE, TP, SL, EXPIRED, INVALIDATED and AMBIGUOUS
+• Five recent completed setups displayed with outcome colors
+• Clickable setup history that navigates directly to the original signal candle
+• Optional terminal, push and email alerts
+• Optional CSV audit journal
+Retail-frequency mode:
+Organic SMC setups always have priority. If fewer than two opportunities have appeared during a complete broker day, the indicator can add scheduled retail signals after 09:00 and 14:00 server time.
+These additional signals use a closed-bar majority vote from EMA 20/50, MACD and RSI. They are clearly identified as retail fallback setups and use configurable ATR-based risk levels.
+The daily count represents displayed opportunities. It does not guarantee that an entry will be triggered or that a setup will be profitable.
+Important settings:
+• HistoryBars controls the amount of M5 history scanned
+• MinimumDailySignals controls the daily retail-frequency objective
+• RetailFirstSignalHour and RetailSecondSignalHour use broker server time
+• RetailStopATR controls fallback Stop Loss distance
+• RetailTargetR controls the proposed TP2 risk multiple
+• MaximumDisplayedSetups controls the number of zones kept on the chart
+• RecentSetupCount controls the number of completed setups listed
+• Alert and CSV options are disabled or configurable from the indicator inputs
+The indicator must be attached to an M5 chart. Test it on a demo account before using its indications in real trading.
+Community feedback is welcome, especially regarding the possible addition of native MQL5 Economic Calendar warnings and news filters in a future version.

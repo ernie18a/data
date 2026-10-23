@@ -1,0 +1,10 @@
+Real author:
+Forex-TSD.com
+A trend indicator implemented in the form of NRTR.
+This indicator was first implemented in MQL4 and published in the
+Code Base at mql4.com
+on 20.02.2008.
+Fig. 1. The ChandelierStops_v1 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1888

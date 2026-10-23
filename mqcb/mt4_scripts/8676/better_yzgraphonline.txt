@@ -1,0 +1,11 @@
+Author:
+YURAZ based on a script by Igor Kim
+The script visualizes the deals on the chart in a convenient way. It has been used in the analytics when writing the article
+"Review of Participants by Yuriy Zaytsev (YuraZ)"
+.
+It is useful for analyzing the trading of an EA or a trader, investor can easily evaluate the trader's work.
+BETTER_YZGraphOnLine.MQ4 - for a black screen.
+BETTER_YZGraphOnLine_W.MQ4 - for a bright screen, no other differences.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8676

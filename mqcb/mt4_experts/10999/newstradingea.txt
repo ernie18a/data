@@ -1,0 +1,23 @@
+New Version: 1.2 !!! (after years....)
+Trading manually to catch news event were
+NOT recommended
+since you can't handle emotion. To open position on very volatile price market is impossible without involving emotion, not mention to watch the price running like roller coaster, that why you really need EA to handle this situation. Set the EA (better on VPS), do not watching it running on specified news event then check the result later. I created this EA for educational purposes only, its intended not for newbie or non professional traders. Users
+MUST do some intensive test
+using "strategy tester" to fit users needs and to confirm that this EA will works for you.
+Use only demo account or tiny lot and small leverage (on real account) to test this EA, I warn you that this EA will not suit for most of users. During our test this EA works well on strategy tester but need
+many tweaks
+to work on real account, so think it over before using in real account, you've been WARNED!!! Forex brokers knows that many traders try to catch big money on news events so they will set their system to take advantage of this, unless you use ECN/NDD or similar account, using this EA on certain news event will work against you because broker may do some tricks to fight against you.
+This EA will set BUY Stop and SELL Stop (pending order) on next opening candle then will delete one pending order after open BUY or SELL occur (OCO).
+This EA will follow candle movement for each tick to catch candle movement by setting BUY STOP and SELL STOP
+Use small time frame 1M-5M for this EA
+Users can set the EA options, there is clear explanations on each options, read carefully before apply
+Distance : pips distance for BUY/SELL stop from current open price
+Expiration: expire minutes after opening BUY/SELL stop if BUY/SELL event not hit
+EA runs base on server time, thus users MUST calculate time difference from your local time or time on
+http://www.forexfactory.com/calendar.php
+events time which usually set to match your local time.
+As usual use this EA as is, there is
+NO guarantee
+in any way, good luck!
+See the action :
+http://youtu.be/gMG12RsMKmo

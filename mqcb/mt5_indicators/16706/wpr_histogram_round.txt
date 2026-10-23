@@ -1,0 +1,16 @@
+Standard WPR oscillator implemented as a histogram rounding its values to the standard range:
+1 — no rounding;
+2 — all values from minus 100 to 0 divided by 2;
+5 — all values from minus 100 to 0 divided by 5;
+10 — all values from minus 100 to 0 divided by 10;
+20 — all values from minus 100 to 0 divided by 20;
+50 — 0, 50, 100.
+For all WPR values less than minus 50, rounding occurs to the lower side, while for all RSI values exceeding 50 — to the greater one.
+The following input is used for rounding in the indicator:
+input
+ENAM_ROUND_MODE Round=X10;
+// rounding level
+Fig.1. WPR_Histogram_Round
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16706

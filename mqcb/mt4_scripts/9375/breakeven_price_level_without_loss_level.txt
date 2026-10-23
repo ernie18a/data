@@ -1,0 +1,7 @@
+The script shows the price value, where total profit for all of the opened positions will have positive values (without loss level, or break-even price level).
+If you close all of the opened positions at this price, the total profit will be non-negative.
+This method is used in the expert, you can see trade results
+here
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9375

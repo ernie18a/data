@@ -1,0 +1,2 @@
+One more in the "need for speed" series - there was one BB stops macd already and this is a significantly faster version.
+But in order not to make it just faster, this version has multiple BB stops added to the display and even like that it is faster than the previous version

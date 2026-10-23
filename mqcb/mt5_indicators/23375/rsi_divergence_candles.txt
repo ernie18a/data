@@ -1,0 +1,9 @@
+Theory :
+This idea I found on the net. It was originally made by someone using "
+RicardoSantos
+" user name on one other trading platform forum. I liked the idea and the indicator is ported as is (there is no further explanation by "
+RicardoSantos
+" either, hence no further information here either, but I think that it is self explanatory once when you attach it to the chart)
+Usage :
+You can use the color changes as signals
+PS: one "big picture" example too

@@ -1,0 +1,2 @@
+Indicator for show some information about current currency
+http://forum.m-e-c.biz/t28630.html

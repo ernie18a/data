@@ -1,0 +1,55 @@
+The author of the idea
+-
+Sergey Efimenko
+mq5 code author
+-
+barabashkakvn
+Stop loss (
+Stop Loss
+) and take profit (
+Take Profit
+) initial setting if these properties are not set for the position. Trailing works only for profitable positions.
+If
+Only zero values
+is "true" - this means searching for positions having either stop loss, or take profit equal to zero. As soon as such a position is found:
+If this is a BUY position
+a stop loss is set: current price (
+Bid
+) minus stop loss
+a take profit is set: current price (
+Bid
+) plus take profit
+If this is a SELL position
+a stop loss is set: current price (
+Ask
+) plus stop loss
+a take profit is set: current price (
+Ask
+) minus take profit
+If the
+Only zero values
+parameter is "false", stop loss (
+Stop Loss
+) and take profit (
+Take Profit
+) parameters are disabled.
+The EA works for all positions on the current symbol - unique magic number is not considered.
+To see how it all works,
+uncomment the strings
+:
+ExtStopLoss    = InpStopLoss     * m_adjusted_point;
+   ExtTakeProfit  = InpTakeProfit   * m_adjusted_point;
+   ExtTrailingStop= InpTrailingStop * m_adjusted_point;
+   ExtTrailingStep= InpTrailingStep * m_adjusted_point;
+//m_trade.Buy(2.0);
+//m_trade.Sell(1.0);
+//---
+return
+(
+INIT_SUCCEEDED
+);
+  }
+and launch the EA in the strategy tester.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22001

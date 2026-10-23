@@ -1,0 +1,8 @@
+Hello.
+Perhaps you, like me, sometimes need to estimate the duration of the price movement and the difference of BUY and SELL volumes inside a price candlestick. At such moments, I think of a tick chart. There are various programs that gather ticks, but I did not find any easy to use and suitable for analysis.
+The presented indicator is based on the standard MQL4 period converter. This decision allowed to collect ticks to the standard history file and open the tick chart as an offline chart.
+The indicator also includes a block for updating the offline chart at every new tick.
+This results in a standard MetaTrader chart with the period of 1 tick. Therefore, all the features that exist in your terminal are available for such chart.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14714

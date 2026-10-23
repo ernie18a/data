@@ -1,0 +1,6 @@
+I suggest a classic version of the 3 mainpivot points:
+Daily
+Weekly
+Monthly
+Everyday the first (daily) is updated, while the second and the third are updated at the end of the candle weekly and monthly.
+It's possibile to set the lines colors and text color.

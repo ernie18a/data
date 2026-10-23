@@ -1,0 +1,5 @@
+Horizontal Grid Controller with KeyEvents
+L -> increase Grid points
+K - > Decrease Grid Points
+j - > Reset Grid Points to Default
+It also shows Comment on chart about actual grid points size.

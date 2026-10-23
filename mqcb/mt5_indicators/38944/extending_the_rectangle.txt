@@ -1,0 +1,7 @@
+The idea of the indicator
+Assistant indicator. As soon as a rectangle appears on the chart, the indicator draws two lines: along the upper and lower price of the rectangle.
+The name of the rectangle must start with "
+Watch for a rectangle whose name starts with ...
+"
+Rice. 1. Extending the Rectangle
+ATTENTION: if the indicator is removed from the chart, it DOES NOT DELETE the created lines!

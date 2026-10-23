@@ -1,0 +1,2 @@
+Author: Nick Bilak
+Adviser Vlado. Trade on values of indicator Williams' Percent Range (%R)

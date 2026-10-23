@@ -1,0 +1,6 @@
+This is a tool to calculate the lot size from a risk percentage and stop loss level.
+Click on the chart to set a virtual stop loss, and it will calculate the lot size for the risk percentage that is applied.
+Choose either buy or sell in the input section whether or not you intend to calculate the risk from the ask (for buy positions) or from the bid (for sell positions).
+Obviously - a long stop loss distance on higher timeframes will be more risk because the price is scaled by a larger number points on higher timeframes.
+It should work on all types of securities.
+The lot size is a direct calculation of the input risk percentage and the stop loss distance. The figure does not take into account the max tradeable lots on your account (based on your account size and leverage). You should use my max trade volume script if you want to know the upper limit for the lot size you are permitted to trade.

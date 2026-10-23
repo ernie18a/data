@@ -1,0 +1,21 @@
+Indicator Sgmar.
+Input Parameters.
+extern
+int
+Rsi
+=
+14
+;
+extern
+int
+Ma
+=
+8
+;
+extern
+int
+сbars
+=
+0
+;
+Sgmar

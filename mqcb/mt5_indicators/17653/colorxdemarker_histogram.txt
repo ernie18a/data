@@ -1,0 +1,15 @@
+The smoothed DeMark oscillator with the color indication of overbought/oversold level breakouts and of the histogram direction. Depending on the value of the indicator's input parameter:
+input
+ENUM_COLOR_MODE Mode=ENUM_LEVELS;
+//Breakout indication method
+There are two variants of histogram coloring:
+Breakout of overbought/oversold levels;
+Change of direction.
+For better histogram readability, the indicator is performed in zero relative symmetric form, and its values vary from -50 to +50.
+The indicator uses SmoothAlgorithms.mqh library classes (copy it to <terminal_data_folder>\MQL5\Include). The use of the classes was described in detail in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Fig1. Indicator ColorXDeMarker_Histogram
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17653

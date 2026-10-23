@@ -1,0 +1,5 @@
+The script modifies all orders (market and pending) on the symbol with specified Take Profit and Stop Loss.
+If the take profit or(and) stop loss is incorrect, then the value is not changed.
+Parameters
+Take Profit (price)
+Stop Loss (price)

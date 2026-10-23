@@ -1,0 +1,27 @@
+Elite e-Fibo Trader MT4
+Elite eFibo Trader is an Expert Advisor for Meta Trader 4. It is not a full auto ‘set and forget’ system – it is a tool for manually trading. It is automatic in execution, but you need to make a discretionary decision when to use it. It works if you have a bias in a currency, i.e. if you believe the dollar is going to go up or down. If you are right, it will increase your profits by maximizing your lot size while limiting your risk to only a few pips (you can set what your risk limit is).
+e-Fibo can be used for trending in both directions, but can be switched on or off for only buy or only sell.
+Take this example of the rise in EUR/USD:
+Simply buying the EUR/USD without using eFibo trader, you could gain 200+ pips from this move. With eFibo trader, you could gain as much as 2000+ pips, with only risking the spread. How is this possible? Simple mathematics – you increase your position as you are in the money, but you move your stop with the market so if it moves against you, you only lose your profit. The way to risk free trade is to trade with the profit only – that is the cornerstone of the eFibo Trader concept. Fibonacci is not new, it is used in Elliot Wave, in mathematics it is known as the
+Golden Ratio
+.  eFibo Trader is a tool to automatically execute this strategy, with no mistake (manual execution can lead to simple errors), on any MetaTrader broker. https://www.metaquotes.net/
+How to use
+eFibo buys/sells any pair using a Fibonacci money management system. The Fibo levels are defaults, they could in fact be changed to anything. The concept is this:
+If a currency is trending, you want to increase your position size as you are in the money. You increase your risk in correlation to the increase in your profit. On the downside, you want protection so you don’t get crushed on a large position.
+Example A: USD/CHF is going down. eFibo sells x lots at the first level (USD/CHF must go down by x pips to enter the first level). As the USD/CHF goes down, eFibo sells more and more according to fibo levels, 1,2,3,5,8… however you can tweak these manually to anything that suits.
+Settings:
+Open_Buy: When true, strategy will only buy
+Open_Sell: When true, strategy will only sell
+LevelDistance: Pips in between each new buy/sell order to be generated. If 20, new sell order to be generated every 20 pips
+StopLoss: Per trade stop loss. It is not only per trade stop, if stopped it will exit ALL existing positions.
+MoneyTakeProfit: Dollar value of profit to take, if $2,000 as in this screenshot, all positions will close when total trade profit (on all the trades) = or > than $2,000.
+Lots_Level_1: First level to buy/sell in lots. These values (all lot levels) can be change to ANYTHING but Fibo levels are default and recommended.
+eFibo is a money management trading system, it is NOT a signal system nor does it involve any indicators. It is a simple way to trade the markets in a trend to maximize profits.
+When to use eFibo trader:
+When there is a trend forming on any pair, in any direction, in any time frame
+When there is already a bias established in any given currency
+When NOT to use:
+In ranging markets
+When you don’t know what will happen
+To download eFibo trader and related tools such as this manual, please visit:
+www.eesfx.com - To open a demo or live account with an MT4 broker please visit www.eliteeservices.net and click open an account.

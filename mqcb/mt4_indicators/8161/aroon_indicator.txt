@@ -1,0 +1,5 @@
+AROON Indicator is great for reading trends, watch as the "Up Line" (Default color:Yellow) reaches 100 means a strong up trend, and watch for the "Down Line" (Default color:Dodger Blue) reaches 100 means a strong down trend. AROON Indicator watchs also as they crosses each other. It's great for signaling.
+Recomendation:
+interval: more than 30 minutes;
+period : 20.
+Please give it a comment and don't hesitate..please let me know if i could help you with some other indicator that you wish to know.

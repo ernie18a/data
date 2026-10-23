@@ -1,0 +1,16 @@
+This indicator is calculated the following way:
+LRMA[bar] = 3.0 * LWMA(Price[bar]) - 2.0 * SMA(Price[bar])
+where:
+LWMA() - linearly weighted smoothing;
+SMA() - simple smoothing;
+PRICE[] - price series value;
+bar - current bar index.
+This indicator clearly shows market trends dividing a price chart into two sectors.  If a price is above the indicator line, the trend is going upwards. If a price is below the indicator line, the trend is going downwards.
+The indicator uses the classes from the SmoothAlgorithms.mqh and IndicatorsAlgorithms.mqh libraries (they must be placed to the
+terminal_data_folder
+\MQL5\Include). The use of the classes was thoroughly descirbed in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/429

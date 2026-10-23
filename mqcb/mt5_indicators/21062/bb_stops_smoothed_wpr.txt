@@ -1,0 +1,8 @@
+BB Stops
+indicator of smoothed WPR.
+Smoothing types that can be applied to WPR are the usual 4 basic types of averages:
+SMA
+EMA
+SMMA
+LWMA
+To avoid WPR smoothing (in which case it becomes an original WPR) use smoothing periods that is less than or equal to 1.

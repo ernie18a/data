@@ -1,0 +1,16 @@
+The Recursive Trendline (RTL) indicator shows the trend as a recursive line.
+It has two parameters:
+Period
+- calculation period;
+Applied price
+- price used for calculations.
+Calculation formula:
+RTL[i] = (1 - Alpha)*RTL[i-1] + Alpha*(Price[i] + b0[i] - b0[i-1]),
+TOSC[i] = (RTL[i] - EMA(Period, Price))
+where
+Alpha = 2/(Period + 1)
+b0[i] = (1 - Alpha)*b0[i-1] + Price[i]
+Possible interpretation: if the line is below the price - Buy, if the line is above the price - Sell.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20271

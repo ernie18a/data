@@ -1,0 +1,5 @@
+This implementation was done more as a training material and an attempt to inspire developers of MetaTrader 5 to add such a tool to the set of standard MetaTrader 5 objects. It is not implemented in the form of a class, saving and passing parameters when changing the timeframe, no multichannel and smoothness implemented, continuation of the channel to the right of the last bar. A quality version can be done if this idea is in demand.
+The arc is drawn according to the formula:
+Price = a+b*n+c*n²
+where a, b, c are the coefficients, and n is the bar number.
+In fact, it is a polynomial of degree 2. Three points are sufficient to calculate the coefficients a, b, c.

@@ -1,0 +1,3 @@
+A variation of linear regression.
+Instead of showing just the liner regression value, the indicator is showing corresponding linear regression lines too to indicate what is the best linear regression fit (and trend) at the given time and price. That way, you can estimate based on two values: the linear regression itself and the rate of change of the linear regression value.
+PS: the indicator is using objects to draw the linear regression lines. If you wish to use more than one instance of the indicator, set the unique ID to unique value for each new instance, and that way multiple instances can be used on the same chart.

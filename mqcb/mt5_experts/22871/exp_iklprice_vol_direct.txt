@@ -1,0 +1,15 @@
+A trading system based on the signals of indicator
+i-KlPrice_Vol_Direct
+. Trading signals are formed when a bar closes if the histogram direction has changed (which is displayed by five-pointed stars changing their color).
+This Expert Advisor requires the compiled
+i-KlPrice_Vol_Direct.ex5
+indicator file in order to run. Place it to
+<terminal_data_folder>\MQL5\Indicators
+.
+Default Expert Advisor's input parameters have been used during the tests shown below.
+Fig1. Sample deals on the chart
+Test results for GBPJPY D1 over the year 2017:
+Fig. 2. Testing results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22871

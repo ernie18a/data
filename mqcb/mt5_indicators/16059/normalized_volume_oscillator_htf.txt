@@ -1,0 +1,14 @@
+The
+Normalized_Volume_Oscillator
+indicator with the timeframe selection option available in input parameters:
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Indicator chart period (timeframe)
+The indicator requires Normalized_Volume_Oscillator.mq5 indicator file. Place it in <terminal_data_folder>\MQL5\Indicators.
+Fig.1. The Normalized_Volume_Oscillator_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16059

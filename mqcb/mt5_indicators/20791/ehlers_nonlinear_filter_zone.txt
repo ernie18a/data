@@ -1,0 +1,4 @@
+This is the "zone" indicator using
+Ehlers Nonlinear Filter
+for calculation.
+"Zone" is calculated using High, Low and Median price in order to attempt to assess the trend of the current chart instrument. For that reason you shall see periods of "no trend" (i.e. parts of the middle line that will have gray color) - those are the periods when the slopes of the High and Low are not in the same phase. And with the High responsiveness of the Ehlers Filter, the zones seems to do a job that is usable in regular trading.

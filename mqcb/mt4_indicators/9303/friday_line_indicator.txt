@@ -1,0 +1,16 @@
+Author:
+Urain
+Indicator shows vertical lines at last week bar.
+Parameters:
+Counted_Bars
+- number of bars in the calculation, 0 means all bars.
+type_line
+- line type.
+Color
+- line color.
+Indicator runs once, to run again make reinitialization.
+It deletes only its own lines, the lines are names using the bar dates.
+Fig 1. Friday_Line Indicator shows weeks separated by vertical lines, EURUSD, H4
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9303

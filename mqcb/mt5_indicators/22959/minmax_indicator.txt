@@ -1,0 +1,4 @@
+Theory:
+It is based on a very simple idea: calculate the minimum and maximum of some price over desired period and then use those values for further trend estimation.
+This version:
+The indicator uses the described minimum and maximum to "construct" a generic value (minimum+maximum)/2 which is then used as a main trend estimator (the slope of it). The extreme bands / levels can be used as targets for stop losses or take profits (depending on your trading needs). Also those "bands" have their own coloring mode that can be used as well for short term trend estimation.

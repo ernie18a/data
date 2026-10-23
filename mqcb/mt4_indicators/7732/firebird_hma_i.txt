@@ -1,0 +1,2 @@
+Author: TraderSeven
+The indicator shows the channel.

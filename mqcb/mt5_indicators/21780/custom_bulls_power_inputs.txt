@@ -1,0 +1,64 @@
+Two settings have been added to input parameters: line color (
+Color
+) and line width (
+Width
+).
+Why are the line color (
+Color
+) and line width (
+Width
+) are provided as input parameters, whereas the line color and width in the standard indicator can be changed
+manually
+? If you test a strategy in the tester or if the indicator is added to a chart by an Expert Advisor (via
+ChartIndicatorAdd
+), Bulls Power is ALWAYS displayed with the default color and width:
+In my opinion, such a display is not convenient, so here is a custom indicator
+Custom Bulls Power Inputs
+(using
+iCustom
+), with the passing of parameters
+colors
+and
+widths
+//--- create handle of the indicator iBullsPower
+handle_iBullsPower=
+iCustom
+(m_symbol.Name(),
+Period
+(),
+"Custom Bulls Power Inputs"
+,
+                            InpMAPeriod,
+InpBullsColor
+,
+InpBullsWith
+);
+//--- if the handle is not created
+if
+(handle_iBullsPower==
+INVALID_HANDLE
+)
+     {
+//--- tell about the failure and output the error code
+PrintFormat
+(
+"Failed to create handle of the iBullsPower indicator for the symbol %s/%s, error code %d"
+,
+Symbol
+(),
+EnumToString
+(
+Period
+()),
+GetLastError
+());
+//--- the indicator is stopped early
+return
+(
+INIT_FAILED
+);
+     }
+This allows you to see a more beautiful indicator in the tester or on the terminal chart:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21780

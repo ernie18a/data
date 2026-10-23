@@ -1,0 +1,9 @@
+The FisherCGOscillator_Signal indicator shows information on the current trend using the values of the
+FisherCGOscillator
+indicator with a fixed timeframe.
+The source of a signals is the mutual arrangement of the main and signal lines of the indicator. If the main line is above the signal one, the color is blue and the trend is growing, if lower - the color is orange and the trend is falling. If the lines merge, the color is gray. Colored dots on lines appear when the bar of the corresponding timeframe changes.
+The indicator requires FisherCGOscillator.mq5 indicator file. Place it to terminal_folder\MQL5\Indicators.
+Figure 1. The FisherCGOscillator_Signal indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2264

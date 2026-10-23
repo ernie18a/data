@@ -1,0 +1,21 @@
+KDJ oscillator defines when it is necessary to search for market entry conditions.
+It has four inputs:
+Period
+- calculation period;
+KFactor
+- K line calculation ratio;
+DFactor
+- D line calculation ratio;
+Threshold
+- signal line.
+Calculation:
+K = KFactor * PrevK + DFactor * RSV
+D = KFactor * PrevD + DFactor * K
+J = 3.0*D - 2.0*K
+where:
+RSV = ((Close – Lowest Low) / (Highest high – Lowest low)) * 100
+Lowest Low, Highest High - the lowest and highest prices within the Period interval
+One of possible interpretations: J line crosses the Threshold level. Up - search the possibility for selling, down - search for the appropriate moment to buy.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21530

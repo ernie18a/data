@@ -1,0 +1,4 @@
+This code base is a simple function to check if current time lies within two specified times.
+Many times it is required by the Ea to enter trades between two specific time of the day only.
+This code takes two inputs, one is the start time and second is the end time.
+The code will check if the current time is in between start time and end time and will return accordingly.

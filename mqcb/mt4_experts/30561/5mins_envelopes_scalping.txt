@@ -1,0 +1,5 @@
+If the price above upper envelopes signal direction is open Down, if high price prev - upper envelopes prev and bid - uper envelopes current bigger than distance filter, expert advisor will open trades SELL. If the price below lower envelopes signal direction is Up, if lower envelopes prev - low price prev and lower envelopes - bid bigger than distance filter, expert advisor will open BUY.
+Please Backtest first, find best setting for your favorite pair, and test on demo first.
+Regards,
+i dont know how to upload image, but this backtest result
+https://prnt.sc/tx3qm3

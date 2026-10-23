@@ -1,0 +1,13 @@
+This is an interesting EA I coded to test out the market in the strategy tester with drag and drop objects.
+There are 4 objects you can drag and drop into the yellow basket.
+Make sure you double click the object so you can select it and then drag it onto the yellow box.
+Objects descriptions:
+Up Arrow: This is a buy.
+Down Arrow: This a sell.
+Red box: This is a Stop all orders.
+Blue box: This will create trend lines which you can also drag and drop.
+Double click objects to select.
+Drag and drop into yellow box to action
+Set your Stoploss and profit to what you prefer.
+Trendlines will automatically open an order if the price goes above or below the line.
+Good Luck

@@ -1,0 +1,25 @@
+OVERVIEW
+This program lists and shows information about calendar events between specified date range. If you click on an event it displays information about selected event.
+PARAMETERS
+Begin Date: beginning date.
+End Date: ending date.
+Currency Filter: only find events which affects this currency.
+Keyword Filter: only find events which contains this keyword.
+Importance Filter: only find events which has specified importance.
+INFORMATION
+Enter parameters and list events on main window.
+Click-on any event.
+Time:
+publishing date and time of event.
+Currency:
+currency that is affected by this event.
+Event:
+event code name.
+Impact:
+positive or negative impact on currency.
+Previous:
+previous value. it is 0 for non-numerical events for example FED chairman speaks.
+Forecast:
+forecast value.
+Actual:
+actual value. 0 for events in future.

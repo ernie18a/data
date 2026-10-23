@@ -1,0 +1,11 @@
+Real author:
+MetaQuotes
+The Accumulative Swing Index indicator is applied for accumulative swing index construction (Accumulative Swing Index - ASI) which represents cumulative total of swing index values.
+Accumulative index draws an "actual" market line revealing market relative strength and trend. Support and resistance lines, breakdown of which is interpreted as an indicator's signal, are drawn on the chart.
+This indicator was first implemented in MQL4 and published in
+CodeBase
+on February 7, 2007.
+Fig.1. ASI Indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/6974

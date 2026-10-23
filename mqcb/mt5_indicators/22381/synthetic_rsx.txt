@@ -1,0 +1,6 @@
+Basics :
+The indicator is very similar to synthetic RSI (originally published here :
+Synthetic RSI
+) except that this version is using RSX for calculation. Using the RSX instead of RSI makes it smoother, without adding lag and some false signals are eliminated that way
+Usage :
+Color change can be used as potential trend change signal

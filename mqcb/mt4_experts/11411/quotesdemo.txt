@@ -1,0 +1,9 @@
+The Expert Advisor shows the current values of World Stock Indices from
+Google Finance
+using
+WebRequest
+function. The quotes are updated every 10 seconds.
+For working with server you need to add "
+https://www.google.com/finance
+" to the list of the allowed URLs (Main menu->Tools->Options, "Expert Advisors" tab):
+Fig. 2. Realtime World Stock Indices from Google Finance

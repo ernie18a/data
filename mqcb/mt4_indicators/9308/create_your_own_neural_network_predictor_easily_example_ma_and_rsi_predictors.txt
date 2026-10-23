@@ -1,0 +1,24 @@
+Author:
+gpwr, posted on https://www.mql5.com/en/code/9002/
+I simply renamed a few vars in order to make the code easier to read, and created a new proxy function.
+All the credits must go to gpwr for his much excellent source.
+The BNN predictor posted by gpwr is a great indicator, but many traders were wondering how to use the source code in order to create predictors based on their own indicator.
+this question being left unanswered on all the neural network related sources, I've decided to answer it.
+With this modified version of the BNN Predictor, you will be able to create your own predictor, based on your own indicator.
+At the end of the code, you will find a function:
+double getValue(int i) {
+return(iMA(NULL,0,15,0,MODE_SMMA,PRICE_OPEN,i));
+}
+As presented, the indicator is a Moving Average predictor. Simply replace the Moving Average indicator by another indicator. You can even use iCustom() in order to get predictions on your own indicators.
+For example, if you want a RSI predictor:
+double getValue(int i) {
+return(iRSI(NULL,0,14,PRICE_OPEN,i));
+}
+Installation:
+BPNN.DLL must be copied to your experts/libraries/ folder.
+You must configure MT4 to allow DLL imports (Tools > options > Expert Advisors > Check "Allow DLL imports").
+MA Predictor and RSI predictor on EURUSD M30
+Recommendations:
+If you have questions about Neural network, please ask the original author, as I just modified the code in order to make it easier to create new indicators.
+If you have questions about how to adapt an indicator, then I can answer, as long as you ask in either English, French, Spanish or Portuguese. please, no Russian, Chinese or Italian as I don't speak those languages.
+The 2 examples MA and RSI are just examples. that's why they do not offer external variables to change their period or other options.

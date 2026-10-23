@@ -1,0 +1,33 @@
+Linear regression fits the following equation of a straight line to price data:
+y[x] = y0 + b*x
+where:
+x is a bar number (x=1..n);
+y[x] is the corresponding price (open, close, median etc);
+b is a proportionality coefficient
+y0 is a bias.
+The linear regression slope, given by this indicator, is equal to a normalized version of the coefficient b.
+The formula for b is:
+b = (n*Sxy - Sx*Sy)/(n*Sxx - Sx*Sx)
+where:
+Sx = Sum(x, x = 1..n)= n*(n + 1)/2;
+Sy = Sum(y[x], x = 1..n);
+Sxx = Sum(x*x, x = 1..n) = n*(n+1)*(2*n+1)/6;
+Sxy = Sum(x*y[x], x = 1..n);
+n is the period of LRS (input parameter Per).
+The denominator of b can be simplified to:
+n*Sxx - Sx*Sx = n*n*(n-1)*(n+1)/12
+Finally, the whole equation for b can be simplified to
+b = 6*(2*Sxy/(n + 1) - Sy)/n/(n - 1)
+The coefficient b is not normalized. It has to be normalized if we want LRS to have a roughly the same range for different currency pairs. It is convenient to normalize b by dividing it by either a
+simple moving average
+(SMA) or a linear
+weighted moving average
+(LWMA), which are given by:
+SMA = Sy/n
+LWMA = 2*Sxy/n/(n + 1)
+The corresponding versions of LRS are given by
+LRS_SMA = b/SMA = 6*(2*Sxy/Sy/(n + 1) - 1)/(n + 1)
+LRS_LWMA = b/LWMA = 6*(1 - (n + 1)*Sy/Sxy/2)/(n + 1)
+These two versions of normalization are almost indistinguishable. So, the
+SMA
+normalization was chosen for the indicator. Also, because of very small values of the LRS, the indicator values are calculated and plotted in parts per 100 thousand to fit roughly into the range of -100 to +100.

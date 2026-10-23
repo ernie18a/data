@@ -1,0 +1,64 @@
+Liquidity Sweep Detector
+The idea behind it
+Old swing highs and lows tend to accumulate resting stop-loss and breakout orders just beyond them — that cluster of orders is "liquidity," and price is frequently pushed just far enough past the level to trigger it before reversing back the other way. This indicator formalizes that pattern in two steps: first it identifies genuine fractal swing points (a high or low that is the extreme of its own local neighborhood on both sides), then it watches every closed bar afterward for a wick that pierces one of those levels by a meaningful amount and closes back on the other side — the signature of a sweep rather than a genuine breakout.
+Swing confirmation is inherently a few bars delayed by definition (a pivot can't be confirmed until enough bars exist on its right side to prove it was the local extreme), and sweep checks only run on bars that have fully closed, so nothing here repaints once drawn: a level, once confirmed, stays exactly where it was confirmed, and a sweep arrow, once plotted, stays exactly on the bar that triggered it.
+How to interpret it
+Level line
+(default gray, dashed) — a confirmed swing high or swing low, drawn from the bar it formed on. It extends live to the current bar while unswept.
+Upward arrow (default green)
+— a bullish sweep: price wicked below a swing low and closed back above it — a potential liquidity grab before a move up.
+Downward arrow (default red)
+— a bearish sweep: price wicked above a swing high and closed back below it — a potential liquidity grab before a move down.
+A line turning gray/frozen
+— that level has just been swept; its line stops extending exactly at the sweep bar instead of continuing forward, so old, already-swept levels are visually distinct from ones still "live."
+Price label
+(optional) — shows the exact level price next to each sweep arrow, so you don't need to hover over the line to read it.
+External variables (inputs)
+Input
+Default
+Purpose
+InpSwingLookback
+5
+Bars required on each side of a candidate bar for it to be confirmed as a swing high/low.
+InpMaxLevelsToTrack
+20
+Maximum number of levels kept on the chart at once; the single oldest tracked level is dropped whenever a new one exceeds this cap.
+InpMinWickPoints
+30
+Minimum wick distance beyond a level, in points, for a piercing candle to count as a genuine sweep.
+InpRequireCloseBackInside
+true
+When true, the candle must also close back on the level's original side; when false, any sufficiently deep wick counts.
+InpOneSweepPerLevel
+true
+When true, a level stops being checked after its first sweep; when false, the same level can produce multiple sweep signals over time.
+InpShowLevels
+true
+Draws the swing level lines themselves, not just the sweep arrows.
+InpExtendLevelsUntilSwept
+true
+When true, an unswept level's line keeps extending live to the current bar; when false, it stops after a fixed number of bars.
+InpLevelExtendBars
+50
+Fixed extension length (in bars), used only when InpExtendLevelsUntilSwept is false.
+InpLevelColor / InpSweptLevelColor
+Silver / Dim Gray
+Line color for a level before and after it has been swept.
+InpBullishSweepColor / InpBearishSweepColor
+Lime / Red
+Arrow and label color for bullish (swept low) vs. bearish (swept high) signals.
+InpShowLabels
+true
+Shows the exact level price next to each sweep arrow.
+InpArrowWidth
+2
+Width of the sweep arrow markers.
+Recommended use
+Works on any symbol and any timeframe; swing-based liquidity concepts apply the same way regardless of instrument, though — like any fractal-pivot method — a larger
+InpSwingLookback
+on a lower timeframe finds fewer, more significant levels, while a smaller value finds more, noisier ones. Because pivot confirmation requires bars on both sides, expect a delay of
+InpSwingLookback
+bars between a swing actually forming and its level appearing on the chart — this is a structural property of fractal detection, not a bug, and it's what keeps the indicator from repainting.
+A sweep is a pattern observation, not a trade signal on its own — it flags that liquidity was likely taken at a level and price rejected it, which many traders use as one confirmation among several rather than an automatic entry trigger. This indicator only reads price data and never places, modifies, or closes any order, so it is safe to run on any account type.
+All chart objects are created under a single internal name prefix and are fully removed via ObjectsDeleteAll() in OnDeinit() when the indicator is detached, so it leaves nothing behind on the chart.
+Fig. 1. A bullish sweep of a swing low and a bearish sweep of a swing high on XAUUSD M15. Rendered in black and white per the Code Base image guidelines (750×500 px).

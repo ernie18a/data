@@ -1,0 +1,8 @@
+INTRODUCTION:
+The story behind this indicator is really interesting. I've published last week a script called "Identify potential Trends/Range (Pivot Points)" and a huge number of MQL5(ers) contacted me to ask if it is possible to have it as an indicator. So I was glad that lot of people actually like my scripts and indicators so that is why I've decided to convert the script to this indicator.
+As a reminder, the purpose of this indicator is to help eyeball ranging market and trending market instead of doing all the work myself. It is true there are plenty of other indicators that help us eyeball these ranging/trending market and they work really well, but I like using Pivot Points.
+Do not forget to send you comments as well as rate these scripts. Happy trading!
+LIVE TRADING SESSION:
+You can check the following live trading sessions and see how I was using my Products in my trading
+Remark:
+you can consult the below video that will help you to install and test this indicator.

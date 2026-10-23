@@ -1,0 +1,4 @@
+Just sends notifications when:
+- MA3 crosses up or down MA20
+- MA3 crosses up MA150
+- MA20 crosses up MA150

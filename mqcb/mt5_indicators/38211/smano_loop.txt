@@ -1,0 +1,2 @@
+Simple moving average is calculated by adding prices for last n periods and then dividing that sum by the period. This addition is often done with help of a loop. This loop within a loop implementation is okay for single instances but as the algorithms grow and multiple calculations need to be made, it can cost time and cause latency. Even the finest examples I have seen on code base use loop initially.
+In this version, I am proposing a loop less method for calculating the Simple moving average.

@@ -1,0 +1,10 @@
+Real author:
+Alex Sidd (Executer)
+The ExMass indicator helps to evaluate market fluctuations.
+This indicator was first implemented in MQL4 and published in
+CodeBase
+on 22.12.2006.
+Figure 1. The ExMass indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/6988

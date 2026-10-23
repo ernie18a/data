@@ -1,0 +1,14 @@
+Author of the idea
+:
+Vladimir Pastushak
+MQL5 code author
+:
+barabashkakvn
+The EA works with positions of a symbol chart it is launched at. For example, if it is launched on USDJPY chart, the EA tracks all positions on USDJPY symbol. The unique EA identifier (magic) is not taken into account. Before any trading operation, the EA copies magic: thus, the position's magic does not change.
+EA features
+The EA tracks position's loss (control Stop Loss) and profit (control Take Profit), and can also apply trailing. The stop loss and take profit themselves are not set. Instead, the EA waits for a condition to close a position by market price when one of the stop levels is reached. During trailing, a stop loss level is set. To disable any parameter, set it to zero in the inputs.
+For checking in the tester
+If the EA is launched in the tester, an attempt is made in OnInit() to open a BUY position of 1.0 lot (without checking the result).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22609

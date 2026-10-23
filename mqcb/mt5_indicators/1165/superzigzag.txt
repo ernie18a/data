@@ -1,0 +1,18 @@
+The ZigZag indicator draws rays, thus showing "significant" movement.
+Mode parameter is the indicator work mode:
+0 - "significant movement" is set in points (parameter ImportantPoint)
+1 - "significant movement" is considered as a high-low for a certain period in the bars (parameter RangeBars) multiplied by the "substantial movement" (parameter RangeKoeff)
+Not redrawing, if the
+up
+ray occurred, then last
+down
+ray won't change its
+low
+extremum. And appeared
+up
+ray will update its
+high
+extremum.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1165

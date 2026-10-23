@@ -1,0 +1,28 @@
+The T3 Moving Average indicator was presented by Tim Tillson in "S&C Magazine" in January, 1998.
+It is a triple smoothed combination of DEMA (Double Exponential Moving Average)
+Advantages of T3:
+Lower lagging, the line is much smoother, provides early entry signals, generates less false signals.
+The indicator has three input parameters:
+Volume factor (in percent)
+- DEMA influence coefficient (*)
+Period
+- calculation period
+Applied price
+Calculation:
+T3 = (1+Volume factor) * EMA4 - Volume factor * EMA5
+where:
+EMA5 - EMA(EMA4, Period)
+EMA4 - EMA(GD2, Period)
+GD2  = (1+Volume factor) * EMA2 - Volume factor * EMA3
+EMA3 - EMA(EMA2, Period)
+EMA2 - EMA(GD, Period)
+GD   = (1+Volume factor) * EMA0 - Volume factor * EMA1
+EMA1 - EMA(EMA0, Period)
+EMA0 - EMA(Applied price, Period)
+* "Volume factor" (default is 70%) determines the share of DEMA to use.
+The factor ranges from 0, which makes it a simple EMA, to 100, which gives a full DEMA.
+0% - T3 - is only a triple EMA ( EMA(EMA(EMA)) )
+100% - T3 is a triple DEMA ( DEMA(DEMA(DEMA)) )
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21842

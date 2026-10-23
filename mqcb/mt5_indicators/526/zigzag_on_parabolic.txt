@@ -1,0 +1,15 @@
+Real author:
+EarnForex
+This indicator builds ZigZag based on the
+Parabolic SAR
+indicator. This is an advanced ZigZag version marking extreme values on a chart with less lag. The standard ZigZag looks for a new extreme value following the price percent deviation from a previous extreme value. This new indicator keeps track of a price crossing with Parabolic SAR.
+Input parameters:
+Step
+(default value = 0.02) — standard Parabolic SAR indicator parameter;
+Maximum
+(default value = 0.2) — another standard Parabolic SAR indicator parameter;
+ExtremumsShift
+(default value = true) — if true, extreme values are shown at their actual location; if false, extreme values are shown at the time points where the indicator locates them. It helps to improve working with extreme values.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/526

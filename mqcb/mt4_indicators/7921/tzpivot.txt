@@ -1,0 +1,4 @@
+Author:
+Shimodax
+Indicator TZ-Pivot. Gives the recommendation on a time interval. See in a code.
+Indicator TZ-Pivot

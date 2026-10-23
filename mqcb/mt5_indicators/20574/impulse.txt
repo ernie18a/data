@@ -1,0 +1,8 @@
+The indicator shows the number of points passed. The
+ENUM_MA_METHOD
+methods of averaging from enumeration are supported.
+Trading using the Impulse indicator is similar to that based on RSI: The indicator analysis consists in searching for divergences, at which the price reaches a new high, while Impulse does not manage to surpass its preceding highest level. This divergence is an indication of an impending reversal.
+If the Rindicator then turns down and falls below its most recent trough, then it is said to have completed a "failure swing." This failure swing is considered to confirm the impending reversal.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20574

@@ -1,0 +1,7 @@
+Author: YUBA
+It represents a standard MovingAverage indicator with the function of smoothing by the second-order Butterworth filter added. It is balanced so that if the same smoothing periods are selected the weight of the current count will correspond the weight in the Exponential Moving Average. In order to choose the Butterworth smoothing specify MA_Method=4.
+Picture:
+Butterworth Moving Average (blue) and Exponential Moving Average (red)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8538

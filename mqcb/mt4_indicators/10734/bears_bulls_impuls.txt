@@ -1,0 +1,3 @@
+Description:
+If the Green Line is crossing the Red Line bottom-up then someone could decided to go Long and vice versa
+Image:

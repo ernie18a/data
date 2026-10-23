@@ -1,0 +1,5 @@
+An improved version of the standard Moving Average indicator, now on the hourly timeframe, you can see moving averages of higher timeframes.
+The indicator is interesting because it has built-in protection against renaming.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10685

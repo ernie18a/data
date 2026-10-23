@@ -1,0 +1,14 @@
+Author of the idea
+—
+John Smith
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+The Expert Advisor is based on the intersection of two Moving Averages. Take Profit and Stop Loss levels are virtual. The parameters of the indicators are hard coded and cannot be adjusted.
+Timeframe M5, optimization based on "Balance + max Sharpe Ratio", testing period from 2017.01.01 to 2017.02.27. The testing result of all pairs with the default settings:
+Testing of all pairs with the default parameters, now on the M15 timeframe:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17741

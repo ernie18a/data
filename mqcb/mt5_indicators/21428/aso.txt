@@ -1,0 +1,28 @@
+Absolute Strength Oscillator trend-following indicator. Based on the forces of bulls and bears, the indicator displays the current market trend.
+There are five inputs:
+Period
+- calculation period
+Smoothing
+- smoothing period
+Mode
+- calculation mode
+RSI
+Stochastic
+Method
+- calculation method
+Applied price
+Calculation:
+BullsStrength = MA(AvgBulls, Smoothing, Method)
+BearsStrength = MA(AvgBears, Smoothing, Method)
+where:
+AvgBulls = MA(Bulls, Period, Method)
+AvgBears = MA(Bears, Period, Method)
+Bulls = Price - Min
+Bears = Max - Price
+Price - Applied price
+Min, Max - the highest and lowest prices within the Period interval
+Fig. 1. ASO mode of RSI
+Fig. 2. ASO mode of Stochastic
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21428

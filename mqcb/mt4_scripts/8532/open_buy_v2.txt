@@ -1,0 +1,13 @@
+Set the
+I
+nterest
+(from 0 to 100) - percentage of free margin allocated for opening a position. This determines the minimum lot allowed for trading, and the position is opened using a multiple of that value. When
+I
+nterest
+=0, the position will be opened with the minimum lot.
+ATTENTION! Currently the script correctly calculates the values only for the «correct» currency pairs of ***USD and USD*** (EURUSD, GBPUSD, USD
+CHF
+,...). For other pairs the calculation is performed «strictly by eye», however, just like in virtually all other scripts, indicators, experts…
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8532

@@ -1,0 +1,9 @@
+XigXag is a modification of the ZigZag indiactor. This is used in the Xtrader which can be found on the Market place. The input parameters are best described here:
+https://www.mql5.com/en/code/7796
+ExtDepth
+=12; Number of bars for the next high or low when calculating ExtDeviation.
+ExtDeviation
+=5; Number of pips higher or lower than previous high or low.
+ExtBackstep
+=3; Minimal amount of bars between highs and lows.
+Xtrader uses this indicator to generalize highs and lows for opening and closings positions at a loss.

@@ -1,0 +1,2 @@
+Draw a Rectangle on chart to plot custom grids based on points value on input
+Added option to use rectangle range to draw Grid if user wish to use it. Set mode to true or false, true = use rectangle range, false = use custom points

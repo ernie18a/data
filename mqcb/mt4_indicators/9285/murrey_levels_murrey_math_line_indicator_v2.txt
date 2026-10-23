@@ -1,0 +1,18 @@
+Authors:
+Vladislav Goshkov, Alex.Piech.FinGeR, Alexei Kharchenko
+The Murrey Levels are constructed depending on the price range of the current timeframe.
+The indicator has an opportunity to show levels from the selected extremum to the current price.
+Select blue arrow and drag it to the necessary bar.
+Also it can show time zones...
+Image:
+Editor's remark:
+Note that it's a mirror translation of the
+original Russian version
+.
+If you have any questions to the author, suggestions or comments, it's better to post them
+there
+.
+If you have found this code useful for trading or educational purposes, don't forget to thank author.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9285

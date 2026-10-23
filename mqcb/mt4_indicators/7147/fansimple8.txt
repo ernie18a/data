@@ -1,0 +1,5 @@
+Author: not specified
+The FanSimple displays the correctness of reversal of the moving averages fan on different timeframes. The indicator includes four moving averages with the values 5, 21, 55, 233, that are displayed on the chart. The top right corner of chart has 6 icons in the form of blue arrows up, red arrows down or gray rhombuses corresponding to the timeframes М1, М5, М15, Н1, Н4, D1.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7147

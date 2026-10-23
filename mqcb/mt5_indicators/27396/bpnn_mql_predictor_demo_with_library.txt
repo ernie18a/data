@@ -1,0 +1,14 @@
+This is not a real world indicator, but a simple demo of BPNN library, originally written in C++ and ported to MQL.
+The demo shows training and testing a neural network for timeseries prediction.
+Please find complete description of the neural network on the page of the original
+BPNN Predictor indicator
+, which uses DLL-library.
+In this implementation the library and the indicator can be built natively in MQL5.
+The source code can be compiled to a standalone ex5-library, which then should be imported to your MQL5-program. Or the source code can be included into your MQL5-program directly, hence the external library is not needed, because it's embedded into the program. The demo indicator can be built in both modes.
+The files attached:
+BPNN_MQL_IMPL.mqh - the source code with BPNN neural network (placed in MQL5/Include, should be included to your MQL-program to embed the library directly);
+BPNN_MQL.mqh - the header file of standalone library(placed in MQL5/Include, should be included to your MQL-program to bind with the external (standalone) BPNN_MQL.ex5 in MQL5/Libraries);
+BPNN_MQL.mq5 - the library main module (placed in MQL5/Libraries, should be compiled if you need to use the standalone library BPNN_MQL.ex5);
+BPNNMQLPredictorDemo.mq5 - the demo indicator (placed in MQL5/Indicator); can be compiled with embedded library if #include <BPNN_MQL_IMPL.mqh> is used, or can be compiled with standalone library if #include <BPNN_MQL.mqh> is used;
+BPNNMQLi45.mqh - a header with helper methods for MT4-style indicators;
+Include only one of the files: either BPNN_MQL_IMPL.mqh, or BPNN_MQL.mqh. Do not include both. If BPNN_MQL.mqh is included, make sure the library BPNN_MQL.mq5 is compiled beforehand.

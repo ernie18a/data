@@ -1,0 +1,5 @@
+Author: Profi_R
+An interesting indicator that plots the trading channel by fractals and adds a Fibonacci fan on top.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7426

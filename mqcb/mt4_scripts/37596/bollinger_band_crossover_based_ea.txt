@@ -1,0 +1,2 @@
+This is an EA based on Bollinger band crossover with prices.
+This also demonstrates how to ensure that lot size being used in within the limits set by a broker

@@ -1,0 +1,5 @@
+Author: scorpion
+The indicator plots a moving average with a Bollinger type envelope.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7355

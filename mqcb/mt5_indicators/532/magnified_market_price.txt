@@ -1,0 +1,55 @@
+Real author:
+Habeeb
+The indicator shows the current price in one of the chart corners.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+30.07.2008.
+Input parameters:
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+type_price PriceType=MODE_BID;
+// Displayed price type
+input
+bool
+CutPrice=
+false
+;
+// Last figure removal flag
+input
+bool
+ResetColors=
+true
+;
+// Colors reset flag
+input
+color
+UpPriceColor=Lime;
+// Rising price color
+input
+color
+PriceColor=Gray;
+// Unchanged price color
+input
+color
+DnPriceColor=Magenta;
+// Falling price color
+input
+int
+FontSize=
+24
+;
+// Font size
+input
+type_font FontType=Font7;
+// Font type
+input
+ENUM_BASE_CORNER
+WhatCorner=
+CORNER_LEFT_LOWER
+;
+// Location corner
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/532

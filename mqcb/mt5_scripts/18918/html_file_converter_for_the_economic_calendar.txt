@@ -1,0 +1,12 @@
+The script converts the news page downloaded from
+http://www.investing.com/economic-calendar
+to a CSV text file.
+The source page should be located in C:\Users\<username>\AppData\Roaming\MetaQuotes\Terminal\Common\Files.
+The format syntactic parsing of the source file is implemented in this script. The resulting file can be used in MQL4/5 Expert Advisors and indicators.
+This is a universal script (you can change the extension of the file LibreConver Lite v1.007.mq5 to .mq4) and it can be compiled both for MQL5 and for MQL4.
+The example contains source files downloaded from
+http://www.investing.com/economic-calendar
+(see the archive).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18918

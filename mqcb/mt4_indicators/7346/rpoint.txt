@@ -1,0 +1,6 @@
+Author:
+not specified
+This is a high-quality ZigZag based on HiLo.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7346

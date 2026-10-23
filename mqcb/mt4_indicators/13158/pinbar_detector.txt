@@ -1,0 +1,4 @@
+The Pinbar Detector tries to identify the pin bars and ,arks them with "smileys" below the bullish and above the bearish figures. This indicator uses only the price levels in its calculations, without any standard technical indicators. The configuration of pin bars determination can be changed by means of input parameters. Pinbar Detector can generate notification about the detection of pin bars both inside the platform and by e-mail.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13158

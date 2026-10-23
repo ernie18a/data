@@ -1,0 +1,11 @@
+s_WaveMarker_CreateNew
+- the script creates a group of graphical objects on the chart - text labels and lines for marking the Elliott waves. User only needs to move the text labels using the mouse after selecting them. The number of graphical object groups is not limited. To create a new group the script should be reattached to the chart - the script also provides the ability to move previously created objects. The script should be removed from the chart once the object movement is completed.
+s_WaveMarker_ChangeAll
+- the script provides the ability to move the objects created by the s_WaveMarker_CreateNew script without creating a new group of objects.
+s_WaveMarker_DeleteAll
+- removes all objects created by the s_WaveMarker_CreateNew script from the chart.
+s_WaveMarker_DeleteByIndex
+- removes the objects created by the s_WaveMarker_CreateNew script with the index specified in the property window of the script. The index of a group can be determined by the name of any object in the group - the index is specified in brackets in the name of the object.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7088

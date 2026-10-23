@@ -1,0 +1,15 @@
+The author of the idea
+:
+Scriptor
+MQL5 code author
+:
+barabashkakvn
+The EA searches for the minimum and maximum price for
+Channel
+bars starting with bar #1. If the Close price of bar #0 is less than the minimum price, open BUY position, if Close price of bar #0 exceeds the maximum price, open SELL.
+Take profit (
+Virtual Take Profit
+) is virtual here - positions are closed at the market price when reaching a virtual take profit.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22021

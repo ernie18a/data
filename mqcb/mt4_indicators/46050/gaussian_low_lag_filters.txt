@@ -1,0 +1,4 @@
+Gaussian and Other Low Lag Filters
+"The first objective of using smoothers is to eliminate or reduce the undesired high
+frequency components in the price data. Therefore, these smoothers are called low
+pass filters, and they all work by averaging in one way or another." - John Ehlers

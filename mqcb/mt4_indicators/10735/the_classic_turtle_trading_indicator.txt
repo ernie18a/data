@@ -1,0 +1,60 @@
+This trend following system was designed by
+Dennis Gartman
+and
+Bill Eckhart
+, and relies on breakouts of historical highs and lows to take and close trades: it is the complete opposite to the "buy low and sell high" approach. This trend following system was taught to a group of average and normal individuals, and almost everyone turned into a profitable trader.
+The main rule is
+"Trade an N-day breakout and take profits when an M-day high or low is breached (N must me above M)"
+. Examples:
+Buy a 10-day breakout and close the trade when price action reaches a 5-day low.
+Go short a 20-day breakout and close the trade when price action reaches a 10-day high.
+In this indicator, entry and exit signals are displayed as arrows and dots. Original system is:
+Go long on
+blue arrows
+Go short short on
+red arrows
+Exit long positions when a
+blue dot
+appears
+Exit short positions when a
+red dot
+appears
+This indicator should be used together with my other indicator:
+The Turtle Trading Channel
+, to represent the same period or the failsafe trading system. The important function about this indicator is that it actually checks if your last trade has been stopped out and gives further entry signals along the trend. So it is the perfect addition to the trading channel for a complete Turtle Trading approach.
+I have, however, altered a little bit the algorithm to get early entry signals and avoid random trend swings in highly volatile conditions. To do so, this indicator will only show a trend change when a bar actually closes above or below the current trendline -instead of just touching it like a normal stop-loss order would do-. The downside is that you can only detect trend changes when the last bar has already closed. Just in case, the strict version is also available.
+Both indicators implement trading alerts, enable or disable them at will depending on your trading setup.
+This is what your trading setup shoud look like using the channel and the classic indicator.
+Aditionally, this indicator also implements entry/exit alerts.
+Parameters:
+TradePeriod:
+Donchian channel period for trading signals
+StopPeriod:
+Donchian channel period for exit signals
+StrictEntry:
+Apply strict entry parameters like the Turtles did
+StrictExit:
+Apply strict exit parameters like the Turtles did
+StrictStop:
+Apply strict stop-loss like the turtled did
+Greedy:
+Do not exit a trade unless it is in profit or the SL is hit
+EvaluateStoploss:
+Check if we have been stopped out and show future signals
+ATRPeriod:
+ATRPeriod to set the stop-loss
+ATRStopNumber:
+N.Factor to calculate the stop-loss
+DisplayAlerts:
+You know...
+Recommendations:
+Please, refer to
+The Turtle Trading Channel
+indicator to read the full and original trading rules
+It can be used to get entry signals of the S1 system or indicate the S2 (failsafe) system
+Changelog:
+2012-06-12:
+Updated the indicator adding several strict options for entries, exits, stops and so on.
+Is the Turtle Trading System profitable?
+The performance of the Turtle Trading system has been always doubted. The following is an EURUSD (1995-2012) backtest trading all signals of this indicator -without filtering out any trade-, trading only after the current bar has closed, decreasing the exposure according to the original turtle rules, adding to positions and trailing the stop-loss using ATR*2.
+And finally, the same system with a 5% initial risk for each trade (maybe too much, but fun to watch)

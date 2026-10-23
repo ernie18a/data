@@ -1,0 +1,38 @@
+Real author:
+FX5
+The CCI oscillator with the boundaries of the overbought/oversold areas in the form of Bollinger Bands.
+Indicator input parameters:
+input
+uint
+Length=
+12
+;
+// CCI period
+input
+ENUM_APPLIED_PRICE
+CCIPrice=
+PRICE_MEDIAN
+;
+// Price type of CCI
+input
+double
+BandsDeviation=
+2.0
+;
+// Deviation
+input
+bool
+MA_Method=
+true
+;
+// Use smoothing for Bollinger Bands
+input
+int
+Shift=
+0
+;
+// Horizontal indicator shift in bars
+Fig.1. The FX5_SelfAdjustingCCI indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13665

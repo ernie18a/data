@@ -1,0 +1,8 @@
+Author: John Ehlers
+The operation of the indicator requires the files
+PriceSeries.mqh to be placed in the folder (directory): MetaTrader\experts\include\
+MAMA_NK.mq4, Heiken Ashi4.mq4 to be placed in the folder (directory): MetaTrader\indicators\
+The MAMA1_NK.mq4 is a complete analog of the MAMA_NK.mq4 indicator, but with absolutely useless pieces of software code and the unnecessary variables, in my opinion, removed from it! The MAMAXX_NK.mq4 is a greatly abridged version of the MAMA indicator, in which I left only the smoothing algorithm itself:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7646

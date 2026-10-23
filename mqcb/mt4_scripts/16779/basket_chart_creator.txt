@@ -1,0 +1,38 @@
+Real author:
+MetaQuotes Software Corp
+.,
+Khalil Abokwaik
+The script creates user defined basket of pairs as an offline MetaTrader 4 chart on the desired time frame, and continues to update the chart on new ticks until it is manually stopped.
+The basket chart can be used for analysis or even traded via an expert advisor.
+Basket price calculation is based on the
+Geometric Mean
+method.
+As long as it is meaningful to the trader, a basket can contain any type of instruments (currency pairs, stocks, metals, indexes ... etc).
+Weights can be applied to basket contents in order to normalize is price.
+Inputs:
+Basket_Name
+: Basket Chart Name (example : #COM#)
+Time_Frame
+: Time frame of the basket offline chart (example : H1)
+Pairs
+: Basket instruments separated by commas (example : AUDUSD,NZDUSD,USDCAD,EURAUD,EURNZD,EURCAD,GBPAUD,GBPNZD,GBPCAD)
+Pairs_DW
+: Directional Weights of basket instruments seperated by commas (example : +1 , +1 , -1 , -1 , -1 , -1 , -1 , -1 , -1).
++
+is used if the direction of the instrument is the same as the basket direction. The plus sign is optional
+-
+is used if the direction of the instrument is opposite to the basket direction
+weights can be fractions (0.25, 6.5 ... etc)
+Template_Name
+: Name of the template that you like to be automatically applied to the basket chart. (example : ADX)
+Sample Baskets:
+Commodity Currencies basket containing all pairs of AUD, NZD and CAD
+Precious Metals (Gold, Silver,
+Platinum, Palladium)
+Yen Index (USDJPY, GBPJPY, EURJPY ... )
+Technology Stocks (AAPL, IBM ...)
+About:
+Inputs:
+Recommendations:
+It is recommended to apply the script on M1 chart (any currency pair).
+The quality of the basket chart history is highly dependent on the history data quality of its instruments.

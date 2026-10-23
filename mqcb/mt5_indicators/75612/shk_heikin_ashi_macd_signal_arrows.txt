@@ -1,0 +1,17 @@
+SHK Heikin Ashi MACD Signal Arrows is a chart window indicator for MetaTrader 5. It calculates synthetic Heikin Ashi candle values and displays them on the main chart with configurable candle colors.
+The main purpose of the indicator is to make Heikin Ashi direction changes easier to inspect on a live chart while keeping signal calculation controlled by completed bars. By default, arrows are evaluated after a candle has closed, so a temporary color change on the forming candle is not treated as a final signal.
+Signal logic
+The indicator can mark buy and sell arrows after a confirmed Heikin Ashi color change. The number of confirmation candles is configurable. The indicator also includes an optional MACD histogram divergence filter. When this filter is enabled, a buy arrow requires a recent bullish regular divergence and a sell arrow requires a recent bearish regular divergence.
+Candle display modes
+The indicator can show standard Heikin Ashi coloring, trend based coloring, or momentum based coloring. The candle display can also be disabled if only arrows and marker buffers are required.
+Alerts
+Popup alerts, mobile push notifications, email alerts, and sound alerts can be enabled separately. A cooldown setting helps prevent repeated alerts from the same signal direction on every tick.
+Main inputs
+MaxBarsToCalculate controls how many recent bars are processed. ShowHeikinAshiCandles enables or disables the candle display. UseClosedBarsOnly keeps signal calculation on completed candles. ConfirmationCandles controls how many candles are required before a color change is confirmed.
+RequireMACDDivergenceConfirmation enables or disables the MACD divergence filter. MACDFastEMA, MACDSlowEMA, and MACDSignalEMA control the MACD histogram calculation. EnablePopupAlert, EnablePushAlert, EnableEmailAlert, and EnableSoundAlert control alert delivery.
+EA integration
+The indicator exposes readable buffers for use through iCustom. Separate buffers are used for candle data, candle color state, momentum circles, buy arrows, sell arrows, and visual spacing.
+Limitations
+This indicator does not open, close, or manage trades. It is a visual technical analysis tool only. Signals should be checked on a demo chart before being used in live trading decisions.
+The MACD filter implements regular bullish and bearish divergence only. Hidden divergence, multi symbol scanning, higher timeframe confirmation, and Expert Advisor order execution are outside this CodeBase version.
+No DLL, WebRequest, account lock, expiry, or external data feed is used.

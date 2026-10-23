@@ -1,0 +1,11 @@
+Author:
+Gopal Krishan Doda
+This is the modified version of Donchian channel indicator, popularly known as famous turtle indicator. I've modified it after removing 2 lines. The result is a single line, making a simple but one of the powerful indicator.
+Buy: When price closes above Doda-Donchian line
+Sell: When price closes below Doda-Donchian line
+Stop-loss: Few pips away from Doda-Donchian line.
+Works with any currency pair, CFD etc.
+Recommendations:
+Use higher time frame like H4. It works best there.
+It happens many times that price kisses Doda-Donchian line, so it may triggers your stop-loss. So, place your stop loss few pips above / below this line.
+Even if price moves above or below, that does not make any sense for change of signals. The candle MUST close above / below for confirmation.

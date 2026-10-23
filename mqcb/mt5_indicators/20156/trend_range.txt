@@ -1,0 +1,22 @@
+The oscillator indicator draws a histogram (with border levels at two moving averages on the indicator histogram) showing three market states: a trend, a moderate or fading trend and a flat.
+If the histogram bar (blue) is above the upper level (
+blue line
+), then there is a strong movement in the market;
+If the histogram bar (red) is between the upper and lower levels (between the
+blue
+and
+red
+lines), then there is either a moderate or fading trend;
+If the histogram bar (gray) is below the lower level (below the
+red
+line), then the market movement is weak and flat.
+The indicator has three input parameters:
+Period
+- calculation period;
+Method
+- smoothing method;
+Deviation
+- deviation for the calculation of threshold levels.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20156

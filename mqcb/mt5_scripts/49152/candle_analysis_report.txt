@@ -1,0 +1,14 @@
+This script is designed to perform candle analysis:
+Data Retrieval:
+The script retrieves the open, close, high, and low prices of candles for the financial instrument it is running on.
+Candle Categorization:
+It categorizes each candle as bullish, bearish, or neutral based on the relationship between its closing and opening prices.
+Amplitude Calculation:
+It calculates the amplitude of each candle (difference between high and low) and computes the average amplitudes for bullish and bearish candles.
+Identification of Significant Candles:
+It identifies the 5 most significant candles (highest amplitude) for both bullish and bearish candles.
+Report Generation:
+It creates a report that includes the number of bullish, bearish, and neutral candles, as well as the average amplitudes and most significant candles.
+Chart Comment:
+It displays the generated report as a comment on the chart of the financial instrument, allowing the user to easily visualize the analysis conducted.
+In summary, the script helps traders understand the distribution and range of candles in a specific period, which can be useful for making informed trading decisions such as determining the Take Profit or Stop Loss levels based on the timeframe or specific symbol.

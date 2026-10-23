@@ -1,0 +1,11 @@
+Real author:
+Ramdass
+The Random Walk Index indicator is used in situations where it is necessary to determine whether the market instrument is in a developing trend or performs random motion in a trading range.
+This indicator tries to do it by defining a trading range of the market instrument first. The next step is to calculate a series of RWI indices for a maximum of the analyzed period. The greatest movement of the index relative to RW is used as the current index. The market develops an uptrend, if RWI of highs > 1, while the downtrend is when RWI of lows > 1.
+This indicator was first implemented in MQL4 and published in
+CodeBase
+on 21.12.2006.
+Figure 1. The RWI indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/6990

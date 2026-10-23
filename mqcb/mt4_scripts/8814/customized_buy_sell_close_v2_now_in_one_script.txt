@@ -1,0 +1,19 @@
+Customized ard buy sell Close V2 in one script ..... Based on Customized Ard Buy Sell V 1
+https://www.mql5.com/en/code/8580
+.
+Features:
+it's have standard order code:
+Code 0 for closing Current
+Code 1 for Close then buying | so you don't have to manually close the last position -- Script will generate for you
+Code 2 for Close then selling |
+You can add other code as you like
+It,s have price Control for Interbank rate 0,
+Have own Buy Sell And Close Function that you can add to your expert advisor and you can customized it
+Have own Control for error #135 ++ Price changed and Err #129
+Function is easy to understand.
+Customized Ard Buy Sell Close
+Modified order and Risk management Cooming soon
+Please Comment if you have a question ...
+Best regard
+ardiansyah
+http://dailysignal.co.cc

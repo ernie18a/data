@@ -1,0 +1,1 @@
+The indicator consists in an RSI and Bollinger bands calculated on it, it also plots arrows when RSI value was out of Bands and came again in Bands.

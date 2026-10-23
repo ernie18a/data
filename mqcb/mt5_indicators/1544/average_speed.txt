@@ -1,0 +1,28 @@
+The indicator's output is calculated base on mathematical approach.
+Calculate Price Speed:
+Galileo defined speed as the distance covered per unit of time. (http://en.wikipedia.org/wiki/Speed)
+Equation:
+where v is speed, d is distance and t is time. In this indicator we will define d as distance between price series and t is in minute. We use minute instead of second because second is to fast while sometime we found no price movement for minutes. This could be annoying for some peoples.
+Calculate Average Speed of Price:
+Indicator calculate Average Speed using Arithmetical  Mean. (http://en.wikipedia.org/wiki/Average, http://en.wikipedia.org/wiki/Arithmetical_mean)
+Equation:
+If
+n
+numbers are given, each number denoted by
+ai
+, where
+i
+= 1, ...,
+n
+, the arithmetic mean is the [sum] of the
+ai's
+divided by
+n
+or
+in this indicator
+n
+is days,
+a
+is speed and
+AM
+is output of indicator buffer calculated in point/minute.

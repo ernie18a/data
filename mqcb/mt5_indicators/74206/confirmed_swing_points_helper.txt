@@ -1,0 +1,13 @@
+Confirmed Swing Points Helper is a small educational indicator for MetaTrader 5. It marks confirmed swing highs and swing lows directly on the chart, then labels the accepted pivots as HH, HL, LH or LL.
+The idea behind the code is intentionally simple. A swing high is accepted only when its high is greater than a configurable number of bars on both the left and the right side. A swing low is accepted only when its low is lower than the same number of surrounding bars. This makes the signal confirmed rather than predictive.
+Because the indicator waits for bars on the right side of the pivot, the markings appear with a natural delay. This is expected behavior for non-repainting swing logic and is useful when studying market structure after confirmation.
+The code keeps the last accepted high pivot and the last accepted low pivot. New high pivots are compared with the previous high and labeled as HH or LH. New low pivots are compared with the previous low and labeled as HL or LL.
+Inputs:
+InpDepth - number of bars used on each side of the pivot.
+InpMinDistancePoints - optional minimum distance between pivots of the same type.
+InpShowLabels - enables or disables the HH, HL, LH and LL text labels.
+InpHighColor - color used for swing high arrows and labels.
+InpLowColor - color used for swing low arrows and labels.
+InpFontSize - text size for labels.
+InpObjectPrefix - prefix used for chart object names.
+This is not a complete trading system and it does not generate buy or sell recommendations. It is intended as a clean starting point for developers who want to study confirmed swing logic, build structure tools, or compare internal and external market structure ideas in MQL5.

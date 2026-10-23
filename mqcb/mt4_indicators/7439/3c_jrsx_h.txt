@@ -1,0 +1,5 @@
+Author: Weld, Jurik Research
+The properties of this indicator are quite similar to the classic oscillators and exactly the same methods of technical analysis can be applied to it as to the RSI. Only through the use of more sophisticated smoothing algorithms it has less delay and smoother shape of the curve.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7439

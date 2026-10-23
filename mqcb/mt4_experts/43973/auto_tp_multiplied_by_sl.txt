@@ -1,0 +1,1 @@
+Th Expert will set the TP based on the SL manually set using the input multiplier. Using this you can set 2,3,4 etc times the SL set.

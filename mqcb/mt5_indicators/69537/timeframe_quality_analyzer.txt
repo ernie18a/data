@@ -1,0 +1,105 @@
+This indicator tests if a timeframe is tradeable by checking
+1. Signal-to-Noise Ratio (SNR)
+Fit a linear regression over a rolling window of N bars.
+Compute:
+Explained variance (trend component)
+Residual variance (noise component)
+SNR = Explained Variance / Residual Variance
+2. Autocorrelation (Memory Test)
+Compute autocorrelation of returns for lag=1 over rolling window.
+Display value.
+Color code:
+Green if > 0.1 (persistence)
+Red if near 0 (noise)
+3. Hurst Exponent (Fractal Memory)
+Interpret:
+H ≈ 0.5 → random walk
+H > 0.55 → trending
+H < 0.45 → mean reverting
+4. Volatility Clustering (Variance Stability)
+Display as oscillator between 0 and 1.
+5. Shannon Entropy (Randomness Test)
+Discretize returns into bins.
+Compute Shannon entropy:
+H = - Σ p(x) log(p(x))
+Normalize between 0 and 1.
+Higher entropy = more randomness.
+BEST INPUT SETTINGS
+A. Default Balanced (Recommended Start)
+InpWindow        =
+120
+InpEntropyBins   =
+25
+InpWeightSNR     =
+0.30
+InpWeightAC      =
+0.10
+InpWeightHurst   =
+0.25
+InpWeightDER     =
+0.20
+InpWeightEntropy =
+0.15
+Why:
+Larger window → reduces noise
+Higher SNR weight → trend detection
+Lower AC → autocorrelation is unstable
+B. Trend Following Mode (Best for Breakouts)
+InpWindow        =
+150
+InpEntropyBins   =
+30
+InpWeightSNR     =
+0.35
+InpWeightAC      =
+0.05
+InpWeightHurst   =
+0.30
+InpWeightDER     =
+0.20
+InpWeightEntropy =
+0.10
+Use when:
+Market trending strongly
+Trading breakout / momentum
+Focus:
+trend + persistence
+C. Scalping / Intraday Mode
+InpWindow        =
+80
+InpEntropyBins   =
+20
+InpWeightSNR     =
+0.20
+InpWeightAC      =
+0.20
+InpWeightHurst   =
+0.20
+InpWeightDER     =
+0.25
+InpWeightEntropy =
+0.15
+Use when:
+M1–M15 trading
+Need fast adaptation
+Focus:
+structure + efficiency
+D. Anti-Chop Filter Mode (VERY POWERFUL)
+InpWindow        =
+100
+InpEntropyBins   =
+25
+InpWeightSNR     =
+0.25
+InpWeightAC      =
+0.10
+InpWeightHurst   =
+0.20
+InpWeightDER     =
+0.15
+InpWeightEntropy =
+0.30
+Use when:
+You want to
+avoid bad market conditions
+High entropy weight = avoid noise

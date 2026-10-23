@@ -1,0 +1,92 @@
+The program-simulator for sharpening strategy, run of indicators and trainings of trading skills in general.
+The new version of the program is available!
+Trading Simulator 2
+(
+http://codebase.mql4.com/en/code/9220
+)
+I welcome!
+Has decided to please here you new programm
+.
+Download, use, train, turn out skills and intuition. Receive profit.
+And a rating to put do not forget - let others to now about...)
+The description:
+The program realizes an opportunity to conduct virtual trade on historical data. Thus probably to test manual strategy in a high-speed mode,
+really and safely (!)
+estimating a parity of profit and the loss and your own abilities.
+The program will help to feel really " fighting conditions ", with an opportunity of "scrolling" of events or pauses for decision-making or analysis of flights.
+Train, fighters!))
+Using:
+The
+expert
+should be placed in a folder
+experts
+(C: \Program Files\...\experts).
+It is required to start it in a tester of strategy with
+visualization
+.
+In the bottom of a window there will be text labels which will operate trade.
+For buying
+it is necessary
+to select
+(twice to click on a label)
+Buy
+to drag
+it a little from the bottom edge of a window and
+to release
+.
+The label will change
+color
+and the warrant with preset values
+Lot
+,
+Profit
+and Stop- loss
+will open
+.
+Near to a label there will be a value of profit/loss of that order.
+For closing the order the corresponding label should be drawn back to the bottom edge of a window.
+Lot
+,
+Profit
+and Stop- loss
+it is possible to change through property corresponding
+Label
+(to click twice and the right button to cause the menu).
+In the top corner of a window the information about balance and the general profit is displayed.
+It is possible to open simultaneously two opposite orders,
+so-called
+,
+lock
+.
+There is an opportunity to close
+a part
+of a position!
+It is necessary for this purpose:
+To put a tester on a pause.
+To change value of a label
+Lot
+to a part demanded for closing.
+To drag up a label of the
+order
+(
+Buy
+or
+Sell
+) to a bottom of a window.
+To resume a tester from a pause.
+The specified part of the
+order
+will be closed, and other part remains in trade,
+The label of the
+order
+(
+Buy
+or
+Sell
+) will jump aside back in the top active position.
+On management this expert is similar to other my indicator
+TAACH_Chanels
+http://codebase.mql4.com/ru/code/9150
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9185

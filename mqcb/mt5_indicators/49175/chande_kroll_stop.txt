@@ -1,0 +1,18 @@
+Chande Kroll Stop indicator is an indicator for determining the level of stop loss setting.
+It represents two lines on the price chart.
+The red line represents the stop level for a short position, while the green line represents the stop level for a long position.
+The
+line for long positions
+(blue) shows at what level a stop loss should be set for long positions. If the asset starts to fall and reaches the level of this line, it may be a signal to close purchases.
+The
+line for short positions
+(red), on the contrary, indicates the level at which short positions should be closed. If the price of an asset starts to rise and touches this line, it may be a signal to close sales.
+Chande Kroll Stop
+is calculated on the basis of the true range and therefore is positioned as an indicator independent of the instrument volatility.
+The indicator was first discussed and implemented in "The New Technical Trader" written by Tushar Chande and Stanely Kroll.
+Designed as a trend following indicator, the Chande Kroll Stop indicates stop levels for the trader by calculating the average true range of the market trend while taking into account any market volatility.
+The indicator calculation is based on the maximum and minimum price values for a certain period, and the standard deviation (ATR). These data allow the indicator to "feel" the market and adjust its values according to the current market situation.
+Market volatility plays a key role in the calculation of the indicator. At high volatility, the Chande Kroll Stop lines will be located further away from the current price, giving the investor more room for market fluctuations. At low volatility, on the contrary, the lines will be closer to the price, which allows to react faster to any changes.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/49175

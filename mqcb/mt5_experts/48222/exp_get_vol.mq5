@@ -1,0 +1,99 @@
+﻿//+------------------------------------------------------------------+
+//|                                                      ProjectName |
+//|                                      Copyright 2020, CompanyName |
+//|                                       http://www.companyname.net |
+//+------------------------------------------------------------------+
+input int stoploss_points = 100;//стоп-лосс в пунктах
+input double risk_percent_equity = 1;//риск в процентах от депозита
+//+------------------------------------------------------------------+
+ENUM_ORDER_TYPE order_type = ORDER_TYPE_BUY;
+double equity_open = {};
+double profit_expected = {};
+bool pos_open = false;
+//+------------------------------------------------------------------+
+void OnTick()
+  {
+   if(!pos_open)
+     {
+      MqlTradeRequest request;
+      MqlTradeCheckResult result_check;
+      MqlTradeResult result_trade;
+      ZeroMemory(request);
+      ZeroMemory(result_check);
+      ZeroMemory(result_trade);
+      double tick_size = SymbolInfoDouble(Symbol(), SYMBOL_TRADE_TICK_SIZE);
+      if(order_type == ORDER_TYPE_BUY)
+         order_type = ORDER_TYPE_SELL;
+      else
+         order_type = ORDER_TYPE_BUY;
+      if(order_type == ORDER_TYPE_BUY)
+        {
+         request.price = SymbolInfoDouble(Symbol(), SYMBOL_ASK);
+         request.type = ORDER_TYPE_BUY;
+         request.sl = request.price - tick_size * stoploss_points;
+         request.tp = request.price + tick_size * stoploss_points;
+        }
+      else
+        {
+         request.price = SymbolInfoDouble(Symbol(), SYMBOL_BID);
+         request.type = ORDER_TYPE_SELL;
+         request.sl = request.price + tick_size * stoploss_points;
+         request.tp = request.price - tick_size * stoploss_points;
+        }
+      double volume = GetVolByRisk(request.price, request.sl, risk_percent_equity);
+      request.action = TRADE_ACTION_DEAL;
+      request.symbol = Symbol();
+      request.volume = volume;
+      request.deviation = 5;
+      profit_expected = AccountInfoDouble(ACCOUNT_EQUITY) * risk_percent_equity / 100;
+      equity_open = AccountInfoDouble(ACCOUNT_EQUITY);
+      if(OrderCheck(request, result_check))
+        {
+         OrderSend(request, result_trade);
+         pos_open = true;
+        }
+     }
+  }
+//+------------------------------------------------------------------+
+void OnTradeTransaction(const MqlTradeTransaction& trans,
+                        const MqlTradeRequest& request,
+                        const MqlTradeResult& result)
+  {
+   if(trans.type == TRADE_TRANSACTION_DEAL_ADD)
+     {
+      HistoryDealSelect(trans.deal);
+      ENUM_DEAL_ENTRY deal_entry = (ENUM_DEAL_ENTRY)HistoryDealGetInteger(trans.deal, DEAL_ENTRY);
+      if(deal_entry == DEAL_ENTRY_OUT)
+        {
+         Print("==========");
+         Print("volume= ", trans.volume);
+         Print("equity_open= ", equity_open);
+         Print("equity_close= ", AccountInfoDouble(ACCOUNT_EQUITY));
+         Print("profit expected= +/- ", profit_expected);
+         Print("profit real= ", HistoryDealGetDouble(trans.deal, DEAL_PROFIT));
+         Print("==========");
+         pos_open = false;
+        }
+     }
+  }
+//+------------------------------------------------------------------+
+double GetVolByRisk(double price_open, double price_stoploss, double risk_percent_equity)
+  {
+   double volume = {};
+   double margin_risk = AccountInfoDouble(ACCOUNT_EQUITY) * risk_percent_equity / 100;
+   double tick_size = SymbolInfoDouble(Symbol(), SYMBOL_TRADE_TICK_SIZE);
+   double tick_value = SymbolInfoDouble(Symbol(), SYMBOL_TRADE_TICK_VALUE);
+   double min_lot = SymbolInfoDouble(Symbol(), SYMBOL_VOLUME_MIN);
+   double max_lot = SymbolInfoDouble(Symbol(), SYMBOL_VOLUME_MAX);
+   double lot_step = SymbolInfoDouble(Symbol(), SYMBOL_VOLUME_STEP);
+   double delta_stoploss = MathAbs(price_open - price_stoploss);
+   double margin_risk_1lot = delta_stoploss / tick_size * tick_value;
+   volume =  margin_risk / margin_risk_1lot;
+   volume = MathFloor(volume / lot_step) * min_lot;
+   if(volume == 0)
+      volume = min_lot;
+   if(volume > max_lot)
+      volume = max_lot;
+   return volume;
+  }
+//+------------------------------------------------------------------+

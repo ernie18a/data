@@ -1,0 +1,2 @@
+Indicator for draw line observed by the timing of certain (hour & minute of choice)
+http://forum.m-e-c.biz/t28670.html

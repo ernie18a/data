@@ -1,0 +1,12 @@
+Real author:
+tageiger, aka fxid10t@yahoo.com
+Two
+Standard Deviation
+channels automatically positioned on the chart.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 05.11.2007.
+Figure 1. Standard_Deviation_Channels
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2041

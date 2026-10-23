@@ -1,0 +1,10 @@
+This indicator gives you Buy or Sell signal. It uses Moving Averages, Parabolic SAR, Bollinger Bands and
+i-CAi
+(you have to install it)
+.
+You can set it up
+accurately.
+It gives only signal, not price.
+Both GG01 and GG01-101 gives the same signal at same set up (difference is only the display mode).
+Be careful, try it on demo at first before you start live trading!
+GG01 and GG01-101 indicators

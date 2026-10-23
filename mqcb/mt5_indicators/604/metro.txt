@@ -1,0 +1,11 @@
+Real author:
+igorad
+This oscillator displays its values considering RSI (
+Relative Strength Index
+) technical indicator. RSI indicator is displayed in orange, cloud color changes depending on a trend direction. Blue color is used for buy signal, while magenta color is used for sell signal.
+This indicator was first implemented in MQL4 and published in
+Code Base
+at mql4.com 18.10.2007.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/604

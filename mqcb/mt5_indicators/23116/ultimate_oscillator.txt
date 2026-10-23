@@ -1,0 +1,29 @@
+The Ultimate Oscillator indicator is based on three momentum indicators of different periods: week, two weeks and three weeks.
+It has five input parameters:
+First momentum period
+- first momentum calculation period
+Second momentum period
+- second momentum calculation period
+Third momentum period
+- third momentum calculation period
+Overbought
+- overbought level
+Oversold
+- oversold level
+Calculation:
+UltimateOsc = 100.0 * ((4.0*Avg1) + (2.0*Avg2) + Avg3) / (4+2+1)
+where:
+Avg1 = SumBP1 / SumTR1
+Avg2 = SumBP2 / SumTR2
+Avg3 = SumBP3 / SumTR3
+SumBP1 - BP sum over the First momentum period
+SumTR1 - TR sum over the First momentum period
+SumBP2 - BP sum over the Second momentum period
+SumTR2 - TR sum over the Second momentum period
+SumBP3 - BP sum over the Third momentum period
+SumTR3 - TR sum over the Third momentum period
+BP = Close - Minimum(Low, PrevClose)
+TR = Maximum(High, PrevClose) - Minimum(Low, PrevClose)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23116

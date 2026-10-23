@@ -1,0 +1,21 @@
+Author of the idea
+—
+Henadiy E. Batohov,
+author of the MQL5 code
+—
+barabashkakvn
+.
+From the author of the idea:
+This is my first simple EA from the
+"ATS based on Neural network"
+series. For those who are not familiar with neural networks, I recommend to read the article
+"How to Develop a Profitable Trading Strategy"
+The method of application and training a two-layer neural network has been perfectly described on the
+МTC Сombo
+page.
+Please also note that an "engine" or a "skeleton" of an ATS is presented here, the functionality of which can be extended. That is, you can use any other indicator or a group of indicators instead of MACD, additionally perform their optimization, etc.
+But most importantly - this is not a mutual exclusion of signals from the neural network and indicators (i.e. if the signal from the neural network is neutral, only then the indicators are used), but their combined application for analysis of a possibility to open positions.
+P.S. In my opinion, the best results are obtained on the H1 period for the major currency pairs.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17137

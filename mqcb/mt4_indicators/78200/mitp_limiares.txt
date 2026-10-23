@@ -1,0 +1,2 @@
+32 Indicators, signal is qtt number cross of buys & sells triggered as show superpassed a number assignment.
+26 Sell & 20 Buy:

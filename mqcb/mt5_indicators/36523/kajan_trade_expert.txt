@@ -1,0 +1,2 @@
+You can identify buy trend and sell trend with this indicator.
+This indicator based on stochastic oscillator.

@@ -1,0 +1,13 @@
+Real author:
+Vladimir Mametov
+Trend Arrows draws support/resistance lines as colored dots on a price chart.
+The symbol average price on a certain amount of data is used to calculate the indicator values.
+In case of a downward trend, the indicator draws only a resistance line (red dots), while in case of an upward trend, it plots only a support line (blue dots). If a symbol price approaches support/resistance level and does not break it through at the current bar, this is used as a buy/sell signal.
+An order is confirmed by the next dot, which either supports the current trend or signals the upcoming changes.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 10.05.2016.
+Fig.1. trend_arrows
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15538

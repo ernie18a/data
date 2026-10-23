@@ -1,0 +1,7 @@
+This is a re-write of the old Solar Winds indicator for MQ5.  There has recently been some 'excitement' about using this with other indicators for entry signals, and after a request to develop an indicator using it, I found that it was a classic re-painter - so I am contributing this code with an easy switch to allow seeing the indicator in re-paint versus non-repaint mode.
+I'm sure the mob will look at this and say its not worth much for trading... Please look at this as a relatively simple educational example on re-painting versus non-repainting as well as code examples for techniques for making indicators in MQ5.
+The Solar Winds indicator is a smoothed curve showing when the trend is long versus short.
+If you use this type of indicator for trading, you may also want to look up "Ehlers Fisher Transform" in the code base.
+You can change this indicator between re-painting and non-repainting mode with the user input:
+input ENUM_ON_OFF    NRP = ENUM_OFF;  // Non-Repainting (NPR) ON/OFF
+V1.02 adds choice for using Custom events or not and cleans up the plot definitions.

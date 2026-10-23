@@ -1,0 +1,16 @@
+The Indicator ZeroLag Stochs_true is an George C. Lane’s indicator Stochastic Oscillator (Stoch) with zero delay. The Indicator ZeroLag Stochs_true in contrast with standard Stochastic Oscillator gives the signals on several bars earlier, but divergences/convergence denominated more obviously.
+ZeroLAG Stochs_true calculates on formula:
+Fast%K(i) = 100*(Close(i) - MaxHigh(N)) / (MaxHigh(N) - MinLow(N));
+%K(i) = 2*MA(Fast%K(i), N) - MA(MA(Fast%K(i), N), N);
+%D(i) = 2*MA(%K(i), P) - MA(MA(%K(i), P), P);
+where:
+Fast%K(i) - fast %K of the current bar;
+Close(i) - close price of the current bar;
+MaxHigh(N) - maximum High for N preceding periods;
+MinLow(N) - minimum Low for N preceding periods;
+MA - moving average;
+N - the range of High/Low computation;
+P - smoothing period for %D(i).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10039

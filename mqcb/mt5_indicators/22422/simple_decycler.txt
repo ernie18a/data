@@ -1,0 +1,9 @@
+Simple Decycler indicator is created based on "Decyclers" article by John F. Ehlers in the magazine "Technical Analysis of Stocks & Commodities" (September 2015).
+It has two configurable parameters:
+HP period
+- high-frequency filter period
+Applied price
+The indicator sorts price high-frequency components discarding low-frequency direction components and quickly responding to the market situation. The indicator draws three lines. If a stock price is above the upper line, then it is considered to be in an uptrend, if the price is below the lower line, then it is considered to be in a downtrend. If the price is between these lines, the stock is not in a trend.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22422

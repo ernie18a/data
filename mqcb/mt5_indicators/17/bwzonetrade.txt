@@ -1,0 +1,16 @@
+The idea of this indicator has been proposed by Bill Williams in his book
+"New Trading Dimensions: How to Profit from Chaos in Stocks, Bonds and Commodities"
+.
+It shows the "fourth dimension" of the market - it paints the bar charts with different colors (green, grey and red) depending on the current market momentum (1st derivative) and price acceleration (2nd derivative), which calculated by
+Awesome Oscillator
+(AO) и
+Accelerator Oscillator
+(AC).
+BW-ZoneTrade indicator
+Calculation:
+if АС and АО are green, it means the green zone;
+if АС and АО are red, it means the red zone;
+if АС and АО have different colors, it means the grey zone.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17

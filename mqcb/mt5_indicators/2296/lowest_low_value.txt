@@ -1,0 +1,53 @@
+The indicator shows the minimum price for the period fixed in the input parameters of the indicator:
+//+------------------------------------------------+
+//| indicator input parameters                     |
+//+------------------------------------------------+
+input
+string
+level_name=
+"Price_LOWEST_LOW_VALUE_1"
+;
+// Level name
+input
+string
+level_comment=
+"Trigger level"
+;
+// A comment to the level
+input
+uint
+level_period=
+5
+;
+// Level search period
+input
+uint
+level_start=
+0
+;
+// The number of the starting bar
+input
+color
+level_color=
+clrRed
+;
+// Level color
+input
+ENUM_LINE_STYLE
+level_style=
+STYLE_SOLID
+;
+// The style of the trigger level
+input
+ENUM_WIDTH level_width=w_3;
+// The width of the trigger level
+input
+bool
+Deletelevel=
+true
+;
+// Deleting a level
+Figure 1. Indicator LOWEST_LOW_VALUE
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2296

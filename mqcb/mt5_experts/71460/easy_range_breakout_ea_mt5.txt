@@ -1,0 +1,7 @@
+The EA continuously manages the trading session by calculating the start, end, and closing times each day, resetting its variables, and preparing the range for breakout detection. During the defined range period, it collects minute‑based highs and lows, determines the maximum and minimum values, and updates a rectangle object on the chart to visually represent the consolidation zone.
+Once the range period ends, it checks the close of the most recent candle (different from the range end time) against the calculated boundaries, and if a breakout is detected, it automatically places a buy or sell order with a take‑profit equal to the size of the range and a stop at the opposite boundary.
+Example
+EURUSD 2026.01.01 - 2026.03.03
+Range Start Hour 5
+Range End Hour 11
+Trading End Hour 22

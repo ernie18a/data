@@ -1,0 +1,41 @@
+The panel is designed for learning, observation and quick market context. It does not open trades, close trades, manage positions or send trading signals. The values shown on the panel should be interpreted as informational market data only.
+The indicator reads data from standard MetaTrader 5 indicators and symbol information. It combines live spread, H1 ATR volatility, H1 EMA trend bias, H4 EMA trend filter, H1 RSI condition, daily range, session name and account type into one compact dashboard.
+Main Features:
+- On-chart XAUUSD information panel
+- Live spread display in points
+- H1 ATR volatility reading
+- H1 EMA trend bias
+- H4 EMA major trend filter
+- H1 RSI condition
+- Daily range display
+- Basic session label
+- Standard / cent account text detection
+- Three visual themes
+- No trade execution
+How To Use:
+Attach the indicator to an XAUUSD or Gold chart in MetaTrader 5. It can be viewed on any chart timeframe because the panel internally reads H1 and H4 data for trend, RSI and volatility context.
+Panel Interpretation:
+- Symbol shows whether the current chart appears to be XAUUSD or Gold.
+- Trend Bias compares H1 EMA values with the H4 trend EMA.
+- RSI Condition shows whether the H1 RSI is above 60, below 40 or neutral.
+- H1 ATR Volatility compares current ATR against the low and high ATR thresholds.
+- Live Spread shows current spread in points.
+- Daily Range shows the current D1 high-low range in points.
+- Session gives a simple time-based market session label.
+Input Parameters:
+- Dashboard title: text shown in the dashboard header.
+- Dashboard corner: chart corner where the panel is displayed.
+- X and Y position: pixel offset for panel placement.
+- Theme: visual color theme.
+- Refresh seconds: timer refresh interval.
+- ATR period: period used for H1 ATR reading.
+- Fast EMA period: fast H1 EMA used for trend bias.
+- Slow EMA period: slow H1 EMA used for trend bias.
+- Trend EMA period: H4 EMA used as a major trend filter.
+- RSI period: H1 RSI period.
+- Low ATR points: threshold for quiet volatility.
+- High ATR points: threshold for high volatility.
+- Spread warning points: spread level shown as a warning.
+- Show account info: show or hide account type text.
+Notes:
+This indicator is intended as a free educational chart utility. It is not financial advice, it does not predict future price movement and it does not execute trades.

@@ -1,0 +1,24 @@
+A trading system based on the signals of indicator
+XPeriodCandle
+. The signal to open a trade is formed when a bar is closing, if the trend direction changes, which is determined by the indicator candlesticks color.
+For the generated EA to operate correctly, the compiled
+XPeriodCandle.ex5
+indicator file must be in the
+<terminal_data_directory>\MQL5\Indicators
+folder.
+Note that the
+TradeAlgorithms.mqh
+library file allows using Expert Advisors with brokers who offer
+nonzero spread
+and the option of setting Stop Loss and Take Profit
+together with position opening
+. You can download more variants of the library at the following link:
+Trade Algorithms
+.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. Examples of deals on the chart
+Test results for GBP H4 over the year 2016:
+Fig. 2. Testing results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21119

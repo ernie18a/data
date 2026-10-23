@@ -1,0 +1,11 @@
+Author:
+konKop, wellx
+Indicator AMA Slope.
+The author applies the description
+here
+.
+PeriodAMA=9;
+Nfast=2;
+Nslow=30;
+G=2.0;
+Indicator Ama slope

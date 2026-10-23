@@ -1,0 +1,176 @@
+Author of the idea
+:
+Vladimir Pastushak
+,
+author of the mq5 code
+:
+barabashkakvn
+.
+The EA uses three iMAs (Moving Average, MA), one iStochastic (Stochastic Oscillator) and one iRSI (RSI, Relative Strength Index). Positions are opened by market, as well as Buy Stop and Sell Stop pending orders are placed.
+Input Parameters
+Main Settings
+- main trading settings:
+Lots (if <="0.0" -> use "Risk")
+- position volume; if the value is less than or equal to zero, lot will be calculated using the "Risk" parameter;
+Stop Loss (use only > 0)(in pips)
+- stop loss value;
+Take Profit (use only > 0) (in pips)
+- take profit value;
+Risk in percent for a deal
+- risk value;
+Lock
+- locking a trade;
+Building of a position
+- increasing position volume;
+Lot factor for pending orders
+- lot multiplier for pending orders;
+Breakeven (in pips)
+- breakeven level.
+MA fast
+- "fast" Moving Average parameters:
+Use MA fast;
+MA fast: averaging period;
+MA fast: horizontal shift;
+MA fast: smoothing type;
+MA fast: type of price.
+MA slow
+- "slow" Moving Average parameters:
+MA slow: averaging period;
+MA slow: horizontal shift;
+MA fast: smoothing type;
+MA fast: type of price.
+MA very slow
+- "very slow" Moving Average parameters:
+MA very slow: averaging period;
+MA very slow: horizontal shift;
+MA very slow: smoothing type;
+MA very slow: type of price.
+Stochastic Oscillator
+parameters:
+Use Stochastic Oscillator;
+Stochastic: K-period (number of bars for calculations);
+Stochastic: D-period (period of first smoothing);
+Stochastic: final smoothing;
+Stochastic: UP level;
+Stochastic: DOWN level.
+Relative Strength Index indicator
+parameters:
+Use RSI;
+RSI: averaging period;
+RSI: UP level;
+RSI: DOWN level;
+magic number.
+Default settings, tested on H1:
+Symbol
+Result
+Profit
+Expected Payoff
+Profit Factor
+Recovery Factor
+Sharpe Ratio
+Custom
+Equity DD %
+Trades
+USDCNH
+23724,79
+19,88
+1,42
+1,59
+0,47
+0,21
+0
+0,42
+14
+USDSEK
+8178,56
+18,55
+0,60
+1,22
+0,15
+0,10
+0
+1,23
+31
+USDRUB
+2566,29
+43,66
+8,73
+1,17
+0,11
+0,08
+0
+3,91
+5
+AUDUSD
+1982,34
+303,85
+14,47
+2,12
+0,56
+0,34
+0
+5,20
+21
+EURUSD
+1739,49
+433,81
+14,46
+2,53
+0,71
+0,37
+0
+6,00
+30
+USDJPY
+1608,89
+233,18
+8,64
+1,84
+0,36
+0,26
+0
+6,36
+27
+USDCAD
+1455,06
+341,62
+13,66
+2,61
+0,48
+0,43
+0
+7,11
+25
+NZDUSD
+1440,01
+149,61
+13,60
+2,04
+0,21
+0,31
+0
+7,05
+11
+USDCHF
+405,69
+-675,46
+-84,43
+0,15
+-0,29
+-0,40
+0
+22,98
+8
+GBPUSD
+124,08
+-3660,28
+-1830,14
+0,00
+-0,71
+-1,02
+0
+51,10
+2
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19541

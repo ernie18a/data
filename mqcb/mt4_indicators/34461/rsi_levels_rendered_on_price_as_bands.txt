@@ -1,0 +1,5 @@
+RSI levels rendered on price as bands
+The rsi 70 level line is green
+The rsi 50 level line is gray
+The rsi 30 level line is red
+Levels can be adjusted using Level_Adjust.

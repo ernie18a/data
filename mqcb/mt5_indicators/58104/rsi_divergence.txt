@@ -1,0 +1,9 @@
+this indicator is a fork of the indicator:
+Divergence DeMarker
+Criação deste Indicador:
+versão 1.00
+UPDATE TO VERSION 2.00
+also fixed a sequence alignment bug in buffer 3
+Translated from Portuguese by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/pt/code/58104

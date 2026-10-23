@@ -1,0 +1,18 @@
+Features
+GUI Buttons
+: "Close Buys" and "Close Sells" with customizable colors, positions, and text.
+Dynamic Visibility
+: Hides buttons when no positions exist (optional).
+Position Closure
+: Closes all buy/sell positions on button click; shows net profit (profit + swap + commission).
+Event Handling
+: Uses 100ms timer for updates and chart events for clicks.
+Profit Calculation
+: Computes net profit, including commission from trade history.
+Use Case
+Simplifies closing positions for traders on a specific symbol.
+Feedback
+If you have suggestions or encounter issues, please leave a comment on the MQL5 CodeBase page or
+contact me
+through the MQL5 community. Your feedback is valuable for improving this tool!
+Happy trading!

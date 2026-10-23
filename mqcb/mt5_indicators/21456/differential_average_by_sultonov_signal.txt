@@ -1,0 +1,11 @@
+Differential_Average_By_Sultonov_Signal indicator shows information on the current trend using the values of the
+Differential_Average_By_Sultonov
+indicator with a fixed timeframe.
+When receiving signals from the color cloud, the color is shown. Colored points appear on the lines when the bar of the relevant timeframe changes.
+The indicator requires compiled
+Differential_Average_By_Sultonov.ex5
+indicator in the <terminal_folder>\MQL5\Indicators.
+Fig. 1. Differential_Average_By_Sultonov_Signal indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21456

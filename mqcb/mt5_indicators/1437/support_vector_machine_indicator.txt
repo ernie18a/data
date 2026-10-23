@@ -1,0 +1,14 @@
+This indicator uses support vector machines to analyse indicator data and signal future trades. Buy trades are signalled by a green ‘up’ arrow with sell trades signalled by a red ‘down’ arrow.
+The process adopted by this indicator is as follows:
+Select what indicators are to be used as inputs for the support vector machine.
+Collect historical indicator and price data for the current symbol.
+Use this historical data to determine what trades would have been successful if they had been taken.
+Feed this data to the support vector machine and use it for training.
+Use the trained support vector machine to signal future trades.
+This indicator uses the Support Vector Machine Learning Library available from the metaquotes market place to achieve support vector machine functionality.
+When the custom indicator is first attached to the chart, it populates the chart with historical buy/sell trades that would have been successful. It is these data points that are used to train the support vector machine, then on any bar thereafter the indicator uses the model produced by the trained support vector machine to predict any future trades.
+This is a simple indicator used to demonstrate how support vector machines can assist in signalling trades. I recommend you optimize inputs used for the support vector machine to maximise your results. Some examples components you may wish to modify are:
+The number of inputs used (this can theoretically be from one to infinity)
+The indicator types (this can be any built-in/custom indicator)
+The offset in indicator data (this can be changed to allow passing in a snapshot of an indicator i.e. the past 5 bars)
+The number of Training Points to be used.

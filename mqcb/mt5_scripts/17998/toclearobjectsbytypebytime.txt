@@ -1,0 +1,22 @@
+The script removes old objects of the selected type from all charts, if the time coordinates of these objects are outside of the trigger level.
+//+-----------------------------------------------+
+//|  SCRIPT INPUT PARAMETERS                      |
+//+-----------------------------------------------+
+input
+ENUM_OBJECT
+OBJ_TYPE=-
+1
+;
+//The type of objects to delete
+input
+uint
+TimeLevel=
+10
+;
+//Trigger level in days
+So, the
+TimeLevel
+input determines the number of days back from the current one. Objects before that day will be deleted.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17998

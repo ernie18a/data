@@ -1,0 +1,16 @@
+"Average change price" displays the average change in the price value.
+It has three input parameters:
+Period
+- calculation period
+Method
+- calculation method
+Applied price
+- price used for calculations
+Calculation:
+Average change = AvgAC
+AC = Price - PrevPrice
+Price - Applied price
+AvgAC - MA(AC, Period, Method)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22989

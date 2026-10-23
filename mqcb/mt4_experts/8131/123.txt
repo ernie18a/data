@@ -1,0 +1,9 @@
+A realization of the method described at
+http://www.tradejuice.com/forex/forex-1-2-3-methode-mm.htm
+. The method implies a rather broad realization variability. Only one of possible versions is given here.
+For default values, it is recommended to start the program on a one-hour chart of EURJPY. On this chart, the profit/maximum drawdown ratio in Tester was 1914.56/384.06=4.985 for 2 years (from 07.05.2006 to 07.05.2008), and it was 769.69/301.81=2.55 for 1 year (from 07.05.2007 to 07.05.2008). The EA doesn't often make trades: for the year from 07.05.2007 to 07.05.2008 only 6 trades were made in Tester. I would be glad to be advised on improvements. I'd be also interested very much in other site users' experiences in elaboration of the EA to be launched with other currency pairs (not EURJPY).
+The EA file is 1-2-3_forCodeBase_v01.mq4. The only possibly unclear parameter is TrendRatio. It determines how many times the preceding trend must be longer than the newly appearing one.
+I use indicators RelDownTrLen_forCodeBase_v01.mq4 and RelUpTrLen_forCodeBase_v01.mq4 in this EA. The indicators are attached, as well.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8131

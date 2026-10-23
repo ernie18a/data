@@ -1,0 +1,8 @@
+The Expert Advisor is based on the Williams Percent Range indicator. It sells in the overbought zone and buys in the oversold zone.
+The Expert Advisor was created for the М1 timeframe of the EURUSD (five digits), but it can also be used for others, there is a Trailing Stop with adjustable start time and step. There is also an operation timer in the EA's settings listed as "time" (if value is "0" — off, if value is "1" — on). "starttime" — EA operation start time according to the time of the terminal, "stoptime" — finishes operation according to the time of the terminal.
+Closes positions using the Trailing Stop, unclosed positions are closed during the opposite deal.
+Part of the code is borrowed from the "ft_cci" EA from the FORTRADER.Ru magazine, the author is Yuri.
+The EA was tested on a demo account, results were good (the statement was not preserved). The EA was not checked on a tester (the prehistoric computer can not run it). A great request to anyone who tests, please put the chart in the comments. Thank you in advance.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13643

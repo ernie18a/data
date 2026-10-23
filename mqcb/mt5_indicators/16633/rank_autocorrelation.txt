@@ -1,0 +1,8 @@
+Rank (auto)correlation indicator that includes:
+Spearman rank correlation
+Pearson correlation
+It can also use 22 types of prices, and user has a choice of using floating levels or fixed levels (for determining the over-bought and over-sold levels).
+Both for Spearman and Pearson correlation the same rule applies. Correlation can range from 1 to -1 and they are usually referred to as:
+1 is perfect positive correlation — when the changes are exactly the same
+0 is the no correlation state
+-1 is the perfect negative correlation — when the changes are exactly the opposite

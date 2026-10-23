@@ -1,0 +1,15 @@
+Trading robot based on the theorem "
+On the presence of memory (aftereffects) in random sequences
+".
+Despite the complexity of the theorem itself, its conclusions are quite trivial. Therefore, the logic of making trading decisions in the robot is primitive: take two previous areas of historical data, from each of them subtract the difference of the prices at the start and at the end, and get two values. These values ​​are compared with each other. And depending on which is greater or less than the other, make the decision about the difference of prices in the area in the future.
+The settings of the Expert Advisor are quite simple, as only three of the input parameters are optimizable:
+sl — stop loss and trailing stop step size in points. In the above picture the parameters are set for 5 digits. All values must be reduced by 10 times in the columns Start, Step and Stop.
+p — size of the history data areas in bars for the technical analysis.
+random — quote randomness. If the quotes are not random, and therefore, the conditions of the theorem are not valid, then the trading signals are reversed.
+Notes:
+The input parameters specified in the code of the robot (by default), are not configured. Therefore, before launching the algo-trading, it is necessary to optimize them for each financial instrument on which the robot will trade.
+Reoptimization needs to be done once the algo-trading results will become unsatisfactory.
+It is not recommended to configure the robot to small timeframes. It will lose the money (already checked on the demo and the real cent accounts). The optimum timeframes are not less than H1.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14500

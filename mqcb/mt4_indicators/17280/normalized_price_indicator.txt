@@ -1,0 +1,2 @@
+By using this indicator you can see the normalized price of any chart! You can use this indicator to find the divergence in the market, or you can put the Normalized price of several currency pairs as you can see in the 3rd figure on one window as well (AUDUSD Blue, GBPUSD Red, GBPAUD Yellow) to do some 3d analysis!
+In the updated version I added Moving average to this oscillator, the parameters of this MA can be configured in the settings page. Also, you are able to Hide this Additional MA by setting DrawMA to false.

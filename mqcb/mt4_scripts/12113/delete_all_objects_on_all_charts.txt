@@ -1,0 +1,9 @@
+Script deletes all objects on all active charts.
+Simply drop script on any chart and it will iterate through all open charts and delete all objects.
+Script is useful for fast deleting objects from charts. Script will not delete objects drawn by indicators.
+Recommendations:
+Create keyboard hotkey for the script - right click on script name and then select "Set hotkey".
+Suggestions, remarks and voting:
+If you have any suggestion how this script can be improved, please add a comment here.
+I'm not offended with low marks, but please add a comment and let me know why you did not like this script.
+Thank you.

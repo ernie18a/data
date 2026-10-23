@@ -1,0 +1,1 @@
+Yang Zhang extension of Garman Klass Volatility as described in a document "Drift-Independent Volatility Estimation Based on High, Low, Open, and Close Prices" by Dennis Yang and Qiang Zhang

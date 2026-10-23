@@ -1,0 +1,5 @@
+Author: Profi_R
+The indicator implements the Gann principle in the form of a ZigZag.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7427

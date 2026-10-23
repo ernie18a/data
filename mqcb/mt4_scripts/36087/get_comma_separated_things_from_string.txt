@@ -1,0 +1,104 @@
+Custom Function To Get Comma Separated Things From String.
+This Custom Function Will Require a Integer Input
+1.) if You give -1 then it will give you number of things in String.
+2.) if You Give 0 Then 1st Thing String(Separated by Comma) Will Be The Output.
+Similarly,  if You Give 1 Then 2nd Thing String
+(Separated by Comma)
+Will Be The Output.
+Code :
+input
+string
+String =
+"1Aa@!,2Bb@!,3Cc@!,4Dd@!,5Ee@!,6Ff@!,7Gg@!,8Hh@!,9Ii@!"
+;
+//+------------------------------------------------------------------+
+//|Get Comma Separated Things From String                            |
+//+------------------------------------------------------------------+
+string
+Get_Comma_Separated_Things_From_String(
+int
+Position_Number_Or_Negative_1_For_Num_Of_Things)
+{
+string
+_Distances_ = String,To_Be_Added_To_Array =
+""
+,distances[
+9999
+];_Distances_ +=
+","
+;;
+ArrayResize
+(distances,
+StringLen
+(_Distances_)+
+11
+);
+int
+Count =
+0
+;
+for
+(
+int
+i=
+0
+; i<=
+StringLen
+(_Distances_); i++){
+if
+(StringGetChar(_Distances_,i)==
+44
+) Count++;}
+if
+(Position_Number_Or_Negative_1_For_Num_Of_Things==-
+1
+)
+return
+((
+string
+)Count);
+for
+(
+int
+i=
+0
+; i<
+StringLen
+(_Distances_); i++)
+  {
+if
+(StringGetChar(_Distances_,i)==
+44
+)
+    {
+for
+(
+int
+j=
+0
+; j<
+ArraySize
+(distances); j++){
+string
+no_need[
+1
+];
+if
+(distances[j]==no_need[
+0
+]) {distances[j]=To_Be_Added_To_Array;i++;
+break
+;}}
+     To_Be_Added_To_Array=
+""
+;
+    }
+int
+To_Be_Added_To_To_Be_Added_To_Array = StringGetChar(_Distances_,i);
+   To_Be_Added_To_Array +=
+CharToString
+(To_Be_Added_To_To_Be_Added_To_Array);
+  }
+return
+(distances[Position_Number_Or_Negative_1_For_Num_Of_Things]);
+}

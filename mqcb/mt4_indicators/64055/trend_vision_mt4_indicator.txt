@@ -1,0 +1,71 @@
+What Is Trend Vision?
+Trend Vision
+is a custom MT4 indicator that combines
+MACD momentum
+with
+Bollinger Bands volatility
+to give clear, reliable trading signals.
+MACD
+shows momentum shifts, divergence, and trend strength.
+Bollinger Bands
+measure volatility, expansion, and squeezes.
+By fusing these two, Trend Vision filters out false moves and highlights
+only the high-probability moments
+when both momentum and volatility agree.
+How It Works (Simple)
+MACD checks momentum
+(fast vs slow MA).
+Bollinger Band math measures volatility
+(moving average + standard deviation).
+When both conditions align, Trend Vision:
+Plots
+color changes
+and
+dots/lines
+.
+Sends an
+alert
+(if enabled).
+Shows the shift visually so you can act quickly.
+Key Features
+MACD + Bollinger Fusion
+→ double confirmation for signals.
+Visual Signals
+→ color change + arrows/dots on chart.
+Multi-Timeframe Use
+→ works from 1M scalping to weekly swings.
+Alert System
+→ on-screen, push, email, sound alerts.
+Filter Options
+→ choose stricter or more frequent signals.
+Performance Control
+→ limit bars calculated for speed.
+Input Parameters
+Calculation
+FastLen (default = 12)
+– Fast MA period for MACD.
+SlowLen (default = 26)
+– Slow MA period for MACD.
+Length (default = 10)
+– Period used for both MA and standard deviation in Bollinger math.
+barsCount (default = 400)
+– Maximum number of chart bars to process (higher = more history).
+StDv (default = 2.5)
+– Standard deviation multiplier (controls band width).
+Alerts
+EnableNativeAlerts (false)
+– Show MT4 pop-up alerts when a color change occurs.
+EnableSoundAlerts (false)
+– Play a sound on color change.
+SoundFileName ("alert.wav")
+– Sound file to play.
+EnableEmailAlerts (false)
+– Send email alerts (requires MT4 email setup).
+EnablePushAlerts (false)
+– Send push alerts to MT4 mobile (requires MT4 notifications setup).
+StricterAlerts (false)
+– Alerts only on first change
+above zero (bullish)
+or
+below zero (bearish)
+for cleaner signals.

@@ -1,0 +1,9 @@
+Real author:
+Nitin
+This indicator provides Buy/Sell arrows based on exit from the Overbought and Oversold zones in Stochastic Oscillator.
+A Buy arrow is printed when Stochastic oscillator exits from the Oversold Zone.
+A Sell arrow is printed when Stochastic oscillator exits from the Overbought Zone.
+Very good indicator to collect some quick pips in scalping.
+Signals can appear in non-alternate manner i.e. a buy signal can be printed after a previous buy and similarly a sell signal can be printed after a previous sell.
+Popup, Email and Push notifications alerts are included.
+Image:

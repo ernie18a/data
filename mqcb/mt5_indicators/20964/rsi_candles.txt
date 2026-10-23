@@ -1,0 +1,2 @@
+One possible way of normalizing prices into a known bound.
+This is a RSI of High, Low, Open and Close displayed as color candles in it's own sub-window. The interesting is that the prices are reflected in a very close manner to a known 0 to 100 range and that opens a lot of new possibilities.

@@ -1,0 +1,3 @@
+PEMA - Pentuple Exponential Moving Average.
+PEMA = QEMA + TEMA(y - QEMA)
+PEMA = 50, EURUSD D1

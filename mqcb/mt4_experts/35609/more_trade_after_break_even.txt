@@ -1,0 +1,102 @@
+The Masterpiece of this little EA is the Orders count function ,
+int
+OrdersCounter()
+  {
+int
+counter=
+0
+;
+//---
+for
+(
+int
+i=
+OrdersTotal
+()-
+1
+; i>=
+0
+; i--)
+if
+(
+OrderSelect
+(i,SELECT_BY_POS))
+if
+(OrderMagicNumber()==MagicNumber && OrderSymbol()==
+Symbol
+())
+// if order has been opened by this EA
+{
+//--- if break even has taken place
+/* For buys Only when the StopLoss is equal or above the Open Price NOTE This is implementetion is not
+   good if you are going to have Pending Orders Its only suitable for buy and sells only*/
+double
+XBreakeven = OrderType()==OP_BUY ? OrderStopLoss() >= OrderOpenPrice() : OrderStopLoss() <= OrderOpenPrice();
+if
+(!XBreakeven)
+//If only Break Even and trailing stop hasn't taken place'
+{
+               counter++;
+//count the Position
+}
+           }
+return
+counter;
+  }
+Where as we count Only the Orders that
+have NOT
+stoploss above or equal to its open price for buy and below its open price sell . I short we count all orders that have not been breakeven or trailing stop has not protected its opening price.
+double
+XBreakeven = OrderType()==OP_BUY ? OrderStopLoss() >= OrderOpenPrice() : OrderStopLoss() <= OrderOpenPrice();
+if
+(!XBreakeven)
+//If only Break Even and trailing stop hasn't taken place'
+Through that we make a counter that returns the value that we are going to use to limit our maximum position which in our case we have just set to 1 order at a time
+if
+(OrdersCounter()<MaximumOrders)
+So whenever the breakeven takes place this function will ignore counting it , which by then since we had only one position in this Example .. it will return zero and boom we open  another sale and the process continues
+Also this wouldn't be possible if I did not create a break even function ,
+void
+BreakEvenFunction()
+  {
+//---
+for
+(
+int
+i=
+OrdersTotal
+()-
+1
+; i>=
+0
+; i--)
+if
+(
+OrderSelect
+(i,SELECT_BY_POS))
+if
+(OrderMagicNumber()==MagicNumber && OrderSymbol()==
+Symbol
+())
+           {
+// for buy if Bid above Open Price + Breakeven pips Vice Versa for sells
+double
+xHybrid = OrderType()==OP_BUY ? (Bid>OrderOpenPrice()+BreakevenPips*
+_Point
+&& OrderStopLoss()<OrderOpenPrice()) : (Ask<OrderOpenPrice()-BreakevenPips*
+_Point
+&& OrderStopLoss()>OrderOpenPrice());
+/* For buys Only when the StopLoss is equal or above the Open Price Vice versa for sell */
+if
+(xHybrid)
+              {
+bool
+modfy = OrderModify(OrderTicket(),OrderOpenPrice(),OrderOpenPrice(),OrderTakeProfit(),
+0
+,
+clrNONE
+);
+              }
+           }
+  }
+Try it ??

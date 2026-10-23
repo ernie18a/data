@@ -1,0 +1,16 @@
+Oscillator TTF (Trend Trigger Factor) was developed as a method to identify market trends and reversals. It was described in the article by M.H. Pee Trend Trigger Factor in the Technical Analysis of Stocks and Commodities magazine in December, 2004.
+It has three configurable parameters:
+Period
+- calculation period;
+Overbought
+- overbought level;
+Oversold
+- oversold level.
+Calculations:
+TTF = 200 *(Max+Min - MaxL-MinL) / (Max+MaxL - Min-MinL)
+where:
+Max, Min - the highest and the lowest prices withing the Period+1
+MinL, MaxL - the highest and the lowest prices within the range from 2*Period+2 to Period+1.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21268

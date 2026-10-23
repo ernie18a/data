@@ -1,0 +1,21 @@
+The Flaw in Retail Support & Resistance
+Retail traders manually draw horizontal support and resistance lines based on visual memory and subjective bias, this manual approach is statistically invalid. Institutional algorithms do not care about a line you drew on a chart; they operate on volume density and liquidity clustering.
+Unsupervised Machine Learning (K-Means)
+To eliminate human bias, quantitative hedge funds use data science. The
+Institutional K-Means Liquidity Clusters
+indicator brings unsupervised machine learning directly into your MQL5 terminal.
+The algorithm processes hundreds of historical price points and mathematically groups them into distinct clusters of high density, the center of these clusters (the "Centroids") represents the exact price levels where liquidity is mathematically concentrated.
+Core Quantitative Architecture
+Mathematical Objectivity:
+Automatically finds the exact mean of execution clusters, plotting dynamic support and resistance levels that adapt to the shifting market regime.
+Zero External Dependencies:
+The classic K-Means algorithm was written natively in C++ (MQL5), meaning it executes complex machine learning arrays in microseconds without requiring slow Python bridges or external DLLs.
+Dynamic Re-clustering:
+The engine recalculates the centroids at the close of specific algorithmic intervals to ensure your liquidity map is always aligned with the most recent institutional order flow.
+Execution Protocol
+Attach the Engine:
+Deploy the indicator on structural timeframes (H1, H4, or D1) to map the macro liquidity clusters.
+Trade the Centroids:
+Wait for price action to re-test these machine-calculated levels. Since these lines represent maximum historical density, they act as massive magnetic zones for mean-reversion or high-probability breakout retests.
+Combine with Flow:
+Use this macro-map in conjunction with order flow indicators (like CVD or Z-Score) to snipe entries when the price hits a K-Means centroid.

@@ -1,0 +1,5 @@
+The first variant of the ZigZag indicator from the MetaTrader 4 standard client terminal set optimized by its operation rate. The indicator has the look it had before further amendments and also its code is optimized to increase its execution rate as much as possible.
+As for the date of this web page creation, the indicator works eight times faster than its standard variant included in the MetaTrader 5 client terminal. The indicator is presented in two code variants - single- and two-color ones.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/453

@@ -1,0 +1,78 @@
+PropFirmGuard
+enforces the two rules that end most prop firm evaluations: the daily loss limit and the maximum total drawdown. It watches account equity on every tick, and when a limit is about to be broken it closes every position, deletes every pending order and blocks new trades until the next daily reset. The expert opens no trades of its own: it is a protection layer, not a trading strategy, so it can run on a spare chart next to any other expert advisor or next to discretionary trading. Any symbol and timeframe will do, the chart is only a tick source.
+What it measures
+Daily loss
+- the distance between current equity and the equity recorded at the daily reset hour. Breaching it blocks trading until the next reset.
+Total drawdown
+- the distance between current equity and the highest equity reached since the guard started. Breaching it blocks trading for good.
+Safety buffer
+- subtracted from both limits, so the guard stops you before the broker or the prop firm does. With a 5% daily limit and a 0.5% buffer, the guard acts at 4.5%.
+Input parameters
+InpDailyLossPct
+- daily loss limit, % of day-start equity (default 5.0)
+InpTotalDdPct
+- total drawdown limit, % from the equity peak (default 10.0)
+InpBufferPct
+- safety buffer subtracted from both limits (default 0.5)
+InpResetHour
+- daily reset hour, server time 0-23 (default 0)
+How it watches
+The guard polls the account state itself instead of waiting to be notified by the trading logic. This means it also covers trades opened manually, from a phone, or by a different expert advisor running on the same account. Nothing has to call it when a position is opened.
+It keeps all of its state in memory and uses no global variables and no files, so its behaviour in the strategy tester is identical to its behaviour on a live chart. If the terminal restarts in the middle of a trading day, the daily baseline is re-anchored to the current equity, which never allows more loss than a fresh trading day would.
+Positions are closed one by one by ticket, so the code is correct on netting and on hedging accounts without any special case. Flattening is throttled to one pass every few seconds and never loops: if the broker refuses a close, the rejection is logged with its retcode and the ticket is retried on the next pass.
+Using the guard inside your own expert
+The whole guard lives in
+PropFirmGuard.mqh
+as the class CPropFirmGuard, so you can drop it into any expert advisor in three lines:
+#include
+"PropFirmGuard.mqh"
+CPropFirmGuard ExtGuard;
+int
+OnInit
+(
+void
+)
+{
+// daily %, total drawdown %, buffer %, reset hour
+if
+(!ExtGuard.Init(
+5.0
+,
+10.0
+,
+0.5
+,
+0
+))
+return
+(
+INIT_PARAMETERS_INCORRECT
+);
+return
+(
+INIT_SUCCEEDED
+);
+}
+void
+OnTick
+(
+void
+)
+{
+ExtGuard.Update();
+if
+(!ExtGuard.Allowed())
+return
+;
+// ... your trading logic here ...
+}
+An optional fifth argument to Init() is a magic number: pass one and the guard only closes the positions carrying it, leaving the rest of the account alone. The class also exposes DailyBreached(), TotalBreached(), DayStartEquity(), PeakEquity(), DailyLossNowPct(), TotalDdNowPct(), EffectiveDailyPct() and EffectiveTotalPct() for your own panels and logs.
+Testing it
+PropFirmGuardSelfTest.mq5
+is included as a harness, not as a strategy. It opens and closes a market position every bar, paying the spread each time, so the account bleeds at a predictable rate and the daily limit is always breached. Run it on XAUUSD M5 with a 500 deposit and a 1% daily limit: on every trading day of a one month test the log shows the loss crossing the limit, the guard flattening the account, and no further trades until the next daily reset.
+Everything the guard does is printed to the journal, so a breach is easy to audit afterwards:
+[PropFirmGuard] armed: daily 1.00% / total DD 50.00% / buffer 0.10% / reset hour 00:00 (effective 0.90% and 49.90%) [PropFirmGuard] New trading day (2026.07.15 01:00 server), baseline equity 500.00 [PropFirmGuard] DAILY LOSS limit hit: 0.93% >= 0.90% (day start 500.00, equity 495.36), flattening account
+Notes
+Equity is used rather than balance, so open floating losses count towards the limits, which is how prop firm rules are normally written.
+The daily reset hour is server time. Check your broker's server clock before assuming midnight matches your prop firm's daily cut-off.
+The guard protects an account, it does not make it profitable. Combine it with a strategy that has an edge.

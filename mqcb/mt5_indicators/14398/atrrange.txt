@@ -1,0 +1,12 @@
+Real author:
+raxxla
+The indicator, that determines the moments of the lowest volatility.
+For manual trading — wait for the signal on the hourly chart (red, blue or yellow marks) and place breakout orders in both directions.
+After a period of low volatility there is usually an impulse, which should be used. In 50% of cases the impulse is preceded by a false breakout in the opposite direction, therefore it is necessary to provide a possibility to revert after a stop triggers.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 06.05.2015.
+Figure 1. The AtrRange indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14398

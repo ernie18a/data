@@ -1,0 +1,10 @@
+Real author:
+Chandra100
+Normally if we attach an indicator, it will show the indicator for the current chart only.
+With this indicator you can choose the symbol for which you want to apply the indicator. You can add any number of times this indicator with different symbols as inputs.
+EURUSD and USDCHF have negative correlation.
+AUDUSD and NZDUSD have positive correlation.
+We can add two instances of this indicator for these two symbols and can monitor whether the correlation exists or not.
+In other way, we can add three instances of this indicator for 2 major pairs and one for its cross pair. Example: For EURUSD, GBPUSD and EURGBP.
+We can see on cross pair how the changes in major pairs affects its movement.
+Any_Pair_Stochastic indicator

@@ -1,0 +1,15 @@
+INTRODUCTION :
+This strategy is the well known set & forget with the ALERTING system. It is very useful on different trading scenarios. I urge you guys to always use trading tools that will make your live easier. So instead of watching the charts and the time and all day long, you can use this indicator that will watch the charts for you.
+HOW TO USE IT :
+You can check the following video that will
+show you 2 scenarios in which the alerting system is useful for the set & forget strategy.
+Scenario 1 : it will help you preparing your watching list.
+Scenario 2 : it will help you exiting your trades.
+PARAMETERS :
+This script has 2 inputs, which are
+The
+Higher Price
+: to set the higher level price.
+The
+Lower Price
+: to set the lowest level price.

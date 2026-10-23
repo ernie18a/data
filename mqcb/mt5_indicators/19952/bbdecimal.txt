@@ -1,0 +1,11 @@
+Common Bollinger Bands with the possibility to set the colors and styles of all lines.
+There are three adjustable parameters:
+Period
+- period
+Deviation
+- deviation
+Applied price
+- calculation price
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19952

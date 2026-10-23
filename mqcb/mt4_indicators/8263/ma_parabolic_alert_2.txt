@@ -1,0 +1,9 @@
+Indicator Parabolic with a signal.
+Parameters:
+MA =24; // Period MA
+MA_Mode =2; // 0=sma, 1=ema, 2=smma, 3=lwma
+MA_Price=0; // 0-CLOSE,1-OPEN,2-HIGH,3-LOW,4-MEDIAN,5-TYPICAL,6-WEIGHTED
+Step=0.02;
+Maximum=0.08;
+Alert_Sound=true;
+Ma_Parabolic_Alert_2

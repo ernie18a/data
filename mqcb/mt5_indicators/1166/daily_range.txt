@@ -1,0 +1,9 @@
+This indicator calculates and shows daily highest and lowest prices, displays them as two set of lines.
+It is a good example to show the usage of
+CopyTime()
+,
+CopyHigh()
+,
+CopyLow()
+functions and MqlDateTime data struct.
+This indicator can only be applied to lower time frames than daily, like H4, H1, M30, ...

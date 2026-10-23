@@ -1,0 +1,7 @@
+CCI indicator made as candles.
+Four different CCIs are calculated:
+CCI of High
+CCI of Low
+CCI of Open
+CCI of Close
+Those 4 values are then combined into a "candles" display of CCI. It can be used as usual CCI (using some significant levels) or you can check when the zero line is crossed by the candles in order to check for trend change signal.

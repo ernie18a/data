@@ -1,0 +1,10 @@
+Real author:
+tageiger
+A channel of the middle range of price change.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 25.09.2007.
+Figure 1. Indicator AvgRange
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2205

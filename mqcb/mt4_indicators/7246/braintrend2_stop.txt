@@ -1,0 +1,5 @@
+Author: Alejandro Galindo
+The indicator demonstrates the trend stops with multicolor dots. In order to distinguish the targets the BrainTrend2Stop uses Blue and Red dots.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7246

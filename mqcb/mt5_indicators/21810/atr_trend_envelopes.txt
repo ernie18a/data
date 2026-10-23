@@ -1,0 +1,4 @@
+Trend Envelopes
+indicator is calculated based on a % of price change. That % is then used to determine if there is a new trend or trend remains the same.
+This version is using ATR for the price change calculation instead.
+The reason why the ATR is used is the following - the % change works OK for middle term timeframes. But for short timeframes and long timeframes it tends to be either too slow or too fast. Here is a comparison of this indicator (upper) and the "classical" version (lower) on daily timeframe. It is obvious that the difference is big and that the "trend" should be redefined in the "classical" calculation.

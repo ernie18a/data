@@ -1,0 +1,32 @@
+Idea by
+:
+eesfx
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+You need trading in the opposite trend? When trading manually or using another EA, utility EES Hedger can instantly open opposite positions in a manner specified in its parameters. Moments of opening manually or by another EA are tracked in
+OnTradeTransaction
+.
+Instructions
+For instance, you use SAR to trade on GBPUSD, and SAR uses magic number 1234. Now you want to use EES Hedger together with SAR. Open another GBPUSD chart, i.e., use the same currency pair as that, on which SAR is trading. Here, it is important that the timeframe is the same as or lower than that used by SAR.
+Now, in the external variables of EES Hedger: Specify the SAR magic number in Original_EA_Magic; in our case, it is 1234. Then make sure that Advocate_EA_Magic differs from Original_EA_Magic. As soon as SAR opens a transaction, EES Hedger will open an opposite one. If you want to use EES Hedger for manual trading, just set Original_EA_Magic = 0.
+Program Parameters
+Lots
+- volume of position to be opened by "EES Hedger";
+Stop loss, per trade (in pips)
+- stop loss of position to be opened by "EES Hedger";
+Take profit amount, per trade (in pips)
+- take profit of position to be opened by "EES Hedger";
+Trailing Stop (in pips)
+- trailing of position opened by "EES Hedger";
+Trailing Step (in pips)
+- the trailing step of position opened by "EES Hedger";
+This is the magic number that your 1st EA uses where advocate EA will base its trades on
+- the magic number used by the first EA, on which the advocating EA will ground its trades;
+This is the advocate EAs own magic number please keep it unique to avoid conflict
+- the advocating EA's own magic number; please maintain its uniqueness to avoid collisions.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18494

@@ -1,0 +1,10 @@
+Real author:
+TraderSeven
+A semaphore signal indicator not using averages to determine signals.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 28.09.2007.
+Figure 1. The The_20's_v0.20 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2189

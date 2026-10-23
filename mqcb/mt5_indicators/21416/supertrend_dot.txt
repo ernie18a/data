@@ -1,0 +1,10 @@
+This is a modified version of the well-known Supervrend indicator by Olivier Seban - lines are replaced by dots allowing to display previously hidden one-bar change of direction.
+This is just another trend detector.
+The indicator has two input parameters:
+Period
+- calculation period
+Multiplier
+- ATR weight multiplier
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21416

@@ -1,0 +1,1 @@
+The Balance of Power (BOP) indicator was described by Igor Livshin and measures the strength of the bulls vs bears by assessing the ability of each to push price to an extreme level. The BOP oscillates between extremes of -1 and +1.

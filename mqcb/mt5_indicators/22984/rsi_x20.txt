@@ -1,0 +1,30 @@
+Real author:
+Ivan Kornilov
+Twenty
+RSI
+indicators in a single window.
+//+-----------------------------------+
+//| Indicator inputs                  |
+//+-----------------------------------+
+input
+uint
+StartRSIPeriod=
+5
+;
+// initial period
+input
+uint
+step =
+1
+;
+// period step
+input
+ENUM_APPLIED_PRICE
+RSIPrice=
+PRICE_CLOSE
+;
+// price
+Fig. 1. RSI_X20 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22984

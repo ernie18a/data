@@ -1,0 +1,2 @@
+Author: Ramdass - Conversion only
+Defines intensity and a direction of a trend.

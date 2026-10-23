@@ -1,0 +1,9 @@
+The script finds on the chart all OBJ_TREND (trendline) objects and moves the line to the specified date. It also aligns the prices of trend line beginning and end.
+Inputs:
+price shift
+— price shift
+new date
+— new date
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18176

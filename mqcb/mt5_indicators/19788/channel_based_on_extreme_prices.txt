@@ -1,0 +1,11 @@
+The indicator has only one adjustable parameter, which indicates how long the previous channel high and low borders should be shown.
+Length of levels
+- the length of channel borders.
+Fig.1 Channel length set to 1
+Fig.2 Channel length set to 2
+Fig.3 Channel length set to 3
+Fig.4 Channel length set to 4
+Fig.5 Channel length set to 5 (default)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19788

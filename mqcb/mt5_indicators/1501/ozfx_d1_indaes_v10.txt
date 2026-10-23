@@ -1,0 +1,16 @@
+Description:
+The system of three signal indicators in one window. Yellow line is a trigger trend indicator based on a simple Moving Average. The trend is defined on the price level in relation to Moving Average. If the indicator value is higher than zero it is the up trend, if lower than zero it is the down trend.
+Two more indicators are two histograms. One histogram has short bars (red and blue), the other has long bars (pink and green). Both histograms are drawn on a simultaneous use of the Accelerator and the Stochastic technical indicators. The histograms trigger signals to make deals. More optimal use of the histograms will be coincidence of the trend on trigger with the trend color on histograms.
+This indicator has only one input parameter to regulate the period of the trigger Moving Average.
+//+-----------------------------------+
+//|  INDICATOR INPUT PARAMETERS       |
+//+-----------------------------------+
+input
+uint
+SMA_Filter_Period=
+50
+;
+Fig.1 The OzFX_D1_IndAES_v1.0 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1501

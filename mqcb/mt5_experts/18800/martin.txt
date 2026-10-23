@@ -1,0 +1,37 @@
+Author of the idea
+—
+Vladimir Khlystov
+,
+mq5 code author
+—
+barabashkakvn
+.
+Description from the author of the idea:
+Description
+The Expert Advisor was created at the request of one of the forum participants.
+A comment by vvx080: The idea is to create a grid of stop orders, e.g. we first set two orders sell and buy; once one of the orders triggers the second one should be deleted. If the trade is unprofitable, after 10 points we open an opposite order with the doubled lot. If it is unprofitable again, after 20 points we open another opposite order twice as large as the previous one. If again the trade is negative, after 30 points we open an opposite order twice as large as the previous one, and so on.
+Under such conditions, there should be a lot of coincidence for the deposit to be completely lost. In case of a positive trade movement, we use a good trailing so that we could catch 300 profit points. No stop loss and take profit are used for orders, trades are closed at a common profit. This strategy is not afraid of trends or flat. During trend the total profit is trailed.
+Here is the preliminary calculation of lots and deposit:
+sell 0. 1 -10p = -1,
+buy 0. 2 -20p = -3
+sell 0. 4 -30p = -12
+buy 0. 8 -40p = -32
+sell 1. 6 -50p = -87
+buy 3. 2 -60p = -213
+sell 6. 4 -70p = -514
+buy 12. 8 -80p = -1194
+sell 25;6 -90p = - 2886
+I think a deposit of 3000 should be enough, but the strategy can hardly reach the 8th or 9th order. I might be wrong somewhere, but the idea is like that. The Expert Advisor will be more accurate.
+The EA uses a lot increase, but it cannot be called a pure martingale. Moreover, the EA does get out of flat, while many martingales cannot do.
+Please add your comments and ideas to improve the strategy. However, please do not post "martingale is bad" ideas without checking the EA at least on a demo and without understanding its operating principle.
+Expert Advisor parameters
+InpStep
+- step between positions.
+InpProfitClose
+- minimum profit, at which all positions will be closed.
+InpLot
+- position volume.
+Testing results on EURUSD:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18800

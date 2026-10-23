@@ -1,0 +1,6 @@
+Author:
+CrazyChart
+This indicator belongs to the oscillator group.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7202

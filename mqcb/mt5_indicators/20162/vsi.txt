@@ -1,0 +1,12 @@
+VSI - Volatility Switch Indicator. The indicator measures the current volatility with respect to historical data for the selected period. It allows to evaluate the market state. The range of the indicator values is normalized from 0 to 1.
+When the indicator value rises above 0.5, volatility in the market increases, and one can expect that the price movement will speed up and there will be sharp movements. When the indicator value drops below 0.5 after high values, volatility decreases, which can be considered a sign of trend formation.
+The indicator has three input parameters:
+Period
+- calculation period;
+Overbought
+- overbought level;
+Oversold
+- oversold level.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20162

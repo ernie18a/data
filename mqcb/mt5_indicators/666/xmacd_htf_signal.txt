@@ -1,0 +1,87 @@
+XMACD_HTF_Signal displays trend directions from three last bars of the
+XMACD
+indicator as three graphical objects, colors of which determine a trend direction.
+Indicator input parameters:
+A timeframe and a name of a financial asset used for the indicator calculation can be changed by the indicator appropriate input parameters. If Symbol_ (financial asset) input parameter is empty, the current chart symbol shall be used as a financial asset.
+All input parameters can be divided into two large groups:
+The information about the input parameters of XMACD indicator can be found in description of
+XMACD indicator
+;
+XMACD_HTF_Signal indicator input parameters that are necessary for the indicator visualization:
+//---- indicator display settings
+input
+string
+Symols_Sirname=
+"XMACD_Label_"
+;
+// Indicator labels name
+input
+color
+UpSymol_Color=Lime;
+// Growth symbol color
+input
+color
+DnSymol_Color=Red;
+// Downfall symbol color
+input
+color
+IndName_Color=DarkOrchid;
+// Indicator name color
+input
+uint
+Symols_Size=
+34
+;
+// Signal symbols size
+input
+uint
+Font_Size=
+15
+;
+// Indicator name font size
+input
+int
+X_3=
+120
+;
+// Horizontal shift of the name
+input
+int
+Y_3=
+10
+;
+// Vertical shift of the name
+input
+bool
+ShowIndName=
+true
+;
+// Indicator name display
+input
+ENUM_BASE_CORNER
+WhatCorner=
+CORNER_RIGHT_UPPER
+;
+// Location corner
+input
+uint
+X_=
+0
+;
+// Horizontal shift
+input
+uint
+Y_=
+0
+;
+// Vertical shift
+In case several XMACD_HTF_Signal indicators are to be used on one chart, each of them should have its own Symbols_Sirname (indicators labels names) string variable value.
+Place the
+XMACD
+indicator compiled file to the terminal_data_folder\MQL5\Indicators\.
+The indicators use SmoothAlgorithms.mqh library classes (must be copied to the terminal_data_folder\MQL5\Include). The use of the classes was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/666

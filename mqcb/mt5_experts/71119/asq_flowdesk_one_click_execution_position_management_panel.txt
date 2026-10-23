@@ -1,0 +1,75 @@
+Features
+One-click LONG / SHORT
+market execution
+Pending orders
+: Buy Limit, Sell Limit, Buy Stop, Sell Stop
+3 position sizing modes
+: manual lots, % of equity, or fixed cash risk
+Scaled exits
+with 3 take-profit targets (T1 / T2 / T3) — configurable close fractions
+4 trailing methods
+: disabled, fixed distance, ATR-adaptive, prior-bar structure
+Auto-breakeven
+: moves SL to entry + cushion after X points in profit
+Position management
+: Flatten All, Close Long, Close Short, Cancel Pendings, Lock Entry
+Live analytics panel
+: spread, positions, exposure, P&L, targets, trail status
+Installation
+Copy ASQ_FlowDesk.mq5 to your MQL5/Experts/ folder
+Compile in MetaEditor or restart MetaTrader 5
+Drag onto any chart and enable
+Allow Algo Trading
+The panel appears on-chart immediately
+How to Use
+Set your risk
+— Choose Sizing Method (% equity recommended), set Risk Percent (default 1%)
+Set exit levels
+— Stop Loss (200 pts), Target 1 (150 pts), Target 2 (300 pts), Target 3 (500 pts)
+Execute
+— Click
+LONG
+(green) or
+SHORT
+(red) for a market order
+Pending orders
+— Use the Buy/Sell Limit/Stop buttons for limit or stop entries
+Flatten
+— Click
+FLATTEN ALL
+to close all positions and pending orders at once
+Trail style and auto-breakeven work automatically once configured
+Key Parameters
+Parameter
+Default
+Description
+Sizing Method
+% of Equity
+Manual lots / % of equity / Fixed cash
+Risk Percent
+1.0%
+Percentage of equity risked per trade
+Stop Loss
+200 pts
+Default stop-loss distance in points
+Target 1 / 2 / 3
+150 / 300 / 500 pts
+Scaled take-profit levels
+T1 / T2 / T3 Close %
+40% / 30% / 100%
+Fraction of position closed at each target
+Trail Style
+ATR Adaptive
+Off / Fixed / ATR-based / Structure
+Trail ATR Length
+14 bars
+ATR lookback for adaptive trailing
+Trail ATR Scale
+1.5×
+ATR multiplier for trail distance
+Auto Breakeven
+On
+Triggers at 100 pts profit, 5 pts cushion
+Pending Gap
+100 pts
+Distance from current price for pending orders

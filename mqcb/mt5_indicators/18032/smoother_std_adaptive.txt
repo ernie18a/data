@@ -1,0 +1,8 @@
+Smoother (some know it as Jurik smoother) that is made adaptive using deviations.
+Deviations used for adapting in this version can have two "flavors":
+without sample correction (same as built in standard deviation)
+with sample correction
+Coloring is made using gradient colors, but you can have the usual coloring modes too.
+for single color line set the color steps to 1
+for two colors line (changing colors on a slope) set the color steps to 2
+any other higher number of steps makes a nice gradient coloring of the line

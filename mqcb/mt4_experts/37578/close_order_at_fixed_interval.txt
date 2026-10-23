@@ -1,0 +1,3 @@
+This EA demonstrates placing order and then modifying the orders to set SL and TP.
+Then, 30 seconds after the  opening the order the order is closed.
+This can be used in strategies where the lie of a trade is fixed and determined by a fixed duration.

@@ -1,0 +1,131 @@
+Reconstruction of positions — an example of working with a trading history on Hedge accounts.
+An example of the final output:
+position
+#
+0
+DEAL_ENTRY_IN
+, type
+DEAL_TYPE_BUY
+, price
+1.04552
+, Deal EURUSD, volume
+0.03
+,
+DEAL_POSITION_ID
+#
+119707903
+,
+profit
+0.00
+DEAL_ENTRY_OUT_BY
+, type
+DEAL_TYPE_SELL
+, price
+1.04562
+, Deal EURUSD, volume
+0.02
+,
+DEAL_POSITION_ID
+#
+119707903
+,
+profit
+0.20
+DEAL_ENTRY_OUT_BY
+, type
+DEAL_TYPE_SELL
+, price
+1.04534
+, Deal EURUSD, volume
+0.01
+,
+DEAL_POSITION_ID
+#
+119707903
+,
+profit -
+0.18
+position
+#
+1
+DEAL_ENTRY_IN
+, type
+DEAL_TYPE_SELL
+, price
+1.04562
+, Deal EURUSD, volume
+0.02
+,
+DEAL_POSITION_ID
+#
+119708383
+,
+profit
+0.00
+DEAL_ENTRY_OUT_BY
+, type
+DEAL_TYPE_BUY
+, price
+1.04552
+, Deal EURUSD, volume
+0.02
+,
+DEAL_POSITION_ID
+#
+119708383
+,
+profit
+0.00
+position
+#
+2
+DEAL_ENTRY_IN
+, type
+DEAL_TYPE_SELL
+, price
+1.04534
+, Deal EURUSD, volume
+0.05
+,
+DEAL_POSITION_ID
+#
+119708643
+,
+profit
+0.00
+DEAL_ENTRY_OUT_BY
+, type
+DEAL_TYPE_BUY
+, price
+1.04552
+, Deal EURUSD, volume
+0.01
+,
+DEAL_POSITION_ID
+#
+119708643
+,
+profit
+0.00
+DEAL_ENTRY_OUT
+, type
+DEAL_TYPE_BUY
+, price
+1.04524
+, Deal EURUSD, volume
+0.04
+,
+DEAL_POSITION_ID
+#
+119708643
+,
+profit
+0.40
+As can be seen, deals taken from the trading history are grouped into positions to which they relate. Grouping by parameter
+DEAL_POSITION_ID
+The ID of the position
+, which the deal opened, modified or closed. Each position has a unique ID that is assigned to all deals executed on the symbol during the position lifetime.
+long
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17261

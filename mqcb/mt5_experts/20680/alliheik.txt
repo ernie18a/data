@@ -1,0 +1,39 @@
+Idea by
+:
+josef strauss
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+The EA uses indicator
+Heiken Ashi Smoothed Oscillator
+:
+Exemplary signals "Open Buy" and "Open Sell":
+Signals for opening positions is only received when a new bar appears, while trailing the positions is checked at each tick.
+In this EA, the entire code relating to defining input parameters for Moving Average, to creating an indicator, and to receiving the indicator values is provided with comments - I decided not to completely remove this code: Perhaps, somebody would find a solution for applying it.
+Instead, the following parameters were added: Trailing, signal reverse, and closing the opposite position when a signal appears.
+Trailing
+Position trailing. When the
+Trailing Stop
+is set to zero, trailing will be disabled.
+Reverse
+Flag
+Reverse signal
+completely turns the value of the signal for opening a position.
+Closing the opposite position when a signal appears
+Flag
+Close the opposite position on a signal
+at the value of
+true
+:
+It allows opening SEVERAL positions;
+When the "Open Buy" signal is received, it will close Sell positions; when the "Open Sell" signal is received, it will close Buy positions.
+At the value of
+false
+, the EA will have ONLY ONE position in the market and, therefore, will not close the opposite position.
+Recommendations on Optimization
+Exemplary parameters, such as initial value, step, and final value, for symbols on H1:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20680

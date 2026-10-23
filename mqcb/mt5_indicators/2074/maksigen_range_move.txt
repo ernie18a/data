@@ -1,0 +1,10 @@
+Real author:
+MaksiGen
+Flat determining indicator. If the price is within the dotted channel, the market is flat.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 30.10.2007.
+Figure 1. Indicator MaksiGen_Range_Move
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2074

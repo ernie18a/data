@@ -1,0 +1,5 @@
+The trading algorithm for the Support Resistance Trader
+requires
+:
+(1) A minimum of the Standard Deviation indicator; (2) A breakthrough of the Support (for Sell) or Resistance (for Buy) lines by the SMA of the Low (for Sell) or High (for Buy) price .
+The ADX and Bollinger Bands indicator values are also used as additional trade entry filters. An open trade can be closed based on a trade signal reversal. The ZigZag indicator inline function is used for determining the length of the most recent ZigZag segment. This is used in support of computing the Support and Resistance values for beginning of the segment. This EA uses the H1 EURUSD chart and is tested from Jan 2010 thru June 2019.

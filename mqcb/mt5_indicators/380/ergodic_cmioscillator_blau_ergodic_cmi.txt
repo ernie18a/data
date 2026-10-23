@@ -1,0 +1,44 @@
+Author:
+Andrey N. Bolkonsky
+Ergodic CMI-Oscillator (based on
+Candlestick Momentum Index
+) is described by William Blau in the book
+"Momentum, Direction, and Divergence: Applying the Latest Momentum Indicators for Technical Analysis"
+.
+WilliamBlau.mqh must be placed in
+terminal_data_folder
+\MQL5\Include\
+Blau_CMI.mq5 must be placed in
+terminal_data_folder
+\MQL5\Indicators\
+Ergodic CMI-Oscillator by William Blau
+Calculation:
+The Ergodic CMI-Oscillator is defined as follows:
+Ergodic_CMI(price1,price2,q,r,s,u) = CMI(price1,price2,q,r,s,u)
+SignalLine(price1,pric2,q,r,s,u,ul) = EMA( Ergodic_CMI(price1,pric2,q,r,s,u) ,ul)
+where:
+Ergodic_CMI() - Ergodic - Candlestick Momentum Index CMI(price1,price2,q,r,s,u);
+SignalLine() - Signal Line - exponentially smoothed moving average EMA(ul), applied to Ergodic;
+ul - period of a signal line.
+Input parameters:
+graphic plot #0 - Ergodic (Candlestick Momentum Index):
+q - number of bars, used in calculation of Candlestick Momentum (by default q=1);
+r - period of the 1st EMA(r), applied to Candlestick Momentum (by default r=20);
+s - period of the 2nd EMA(s), applied to result of the 1st smoothing (by default s=5);
+u - period of the 3rd EMA(u), applied to result of the 2nd smoothing (by default u=3);
+graphic plot #1 - Signal Line:
+ul - period of the Signal Line - EMA(ul), applied to Ergodic (by default ul=3);
+AppliedPrice1 -
+price type
+(by default AppliedPrice1=PRICE_CLOSE);
+AppliedPrice2 -
+price type
+(by default AppliedPrice2=PRICE_OPEN).
+Notes:
+q>0;
+r>0, s>0, u>0. If r, s or u are equal to 1, smoothing is not used;
+ul>0. If ul=1, the signal and main lines are the same;
+Min. rates = (q-1+r+s+u+ul-4+1).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/380

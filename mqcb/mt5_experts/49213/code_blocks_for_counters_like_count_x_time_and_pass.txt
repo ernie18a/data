@@ -1,0 +1,203 @@
+01. Count "X" Times and then pass.
+Step 01
+- Created a variable for set the
+count limit.
+you can use it as an
+input parameter
+as well of optimization in your code.
+Step 02
+- Create another variable to store the counted limit (How many times it has been counted).
+Step 03
+- Once the
+Counter
+and your
+count
+limit is equals, that means it's time to pass the code block specified by you.
+Step 04 -
+Once the code passed, be sure to
+reset the counter
+as well. Otherwise, it will count for infinite (in this case).
+you can set filtering conditions to the Counter block as well. like, >> "
+IF this is true, then count once."
+input
+int
+count =
+50
+;
+// Set the counting limit as an input
+int
+Counter;
+// counter variable
+// Expert Initializing --------------------
+int
+OnInit
+()
+{
+return
+(
+INIT_SUCCEEDED
+);
+}
+// Expert DeInitializing -------------------
+void
+OnDeinit
+(
+const
+int
+reason)
+{
+
+}
+// Expert OnTick --------------------------
+void
+OnTick
+()
+{
+ Counter ++;
+// add 1 to the counter on each tick.
+Comment
+(
+"Current Count -:"
+, Counter);
+if
+(Counter == count)
+// Count "X" times and pass   | This block Executed only once per each count.
+{
+// Your code goes here......
+Alert
+(count,
+" Times counted"
+); 
+ Counter =
+0
+;
+// Reset the counter at the end of your code block. This is must.
+} 
+
+}
+// OnTick End  <<----------------------
+02. Pass "X" times and then Wait "X" times then pass.
+this method can be use as like wait and pass, pass and wait.
+Step 01
+- Created a variable for set the
+count limit
+and
+wait limit
+you can use them as an
+input parameters
+as well of optimization in your code.
+Step 02
+- Create another variable to store the counted limit & wait limits (How many times it has been counted and waited).
+Step 03
+- Once the
+Counter
+and your
+count
+limit is equals, that means it's time to pass the code block specified by you.
+Step 04 -
+Once the waiter and your count wait limit is equals, that means it's time to wait for a little.
+Step 04 -
+Once the waiting limit is reached, be sure to
+reset the counter and
+waiter
+as well. Otherwise, it will Seese to work (in this case).
+you can set
+filtering conditions
+to the Counter block and waiter blocks as well. like, >> "
+IF this is true, wait a bit"
+input
+int
+count =
+50
+;
+// Set the counting limit as an input
+input
+int
+wait =
+50
+;
+// Set the waiting limit as an input
+int
+Counter;
+// counter variable default value is "0"
+int
+Waiter;
+// Waiting variable default value is "0"
+// Expert Initializing --------------------
+int
+OnInit
+()
+  {
+return
+(
+INIT_SUCCEEDED
+);
+  }
+// Expert DeInitializing -------------------
+void
+OnDeinit
+(
+const
+int
+reason)
+  {
+
+  }
+// Expert OnTick --------------------------
+void
+OnTick
+()
+  {
+Comment
+(
+"Counted Ticks -: "
+, Counter,
+"\n"
+,
+"Waited Ticks -: "
+, Waiter);
+if
+(Counter < count)
+// Pass "X" times
+{
+      Counter++;
+// update the counter
+// Your code goes here.
+}
+else
+if
+(Waiter < wait)
+// Wait for "X" times
+{
+         Waiter++;
+// update the waiter
+// Your code goes here.
+}
+if
+(Waiter == wait)
+// Waiting Limit is reached
+{
+      Counter =
+0
+;
+// reset counter
+Waiter =
+0
+;
+// reset waiter
+}
+
+
+
+
+
+
+  }
+// OnTick End  <<----------------------
+//+------------------------------------------------------------------+
+Special -:
+You can code the
+"Pass X times and stop"
+by modifying the above code by
+removing the waiting code block.
+Then it will count for specific number and stop works until the counter is rested. You can reset it anywhere in your code if you create these variables in global scale. (global variables)

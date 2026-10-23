@@ -1,0 +1,15 @@
+Real author:
+goldenlion@ukr.net
+A simple trend indicator with calculation of rise and fall in Close prices. Calculation formula:
+i4_DRF_v2=100 * (Psum - NSum) / Period
+where:
+Psum — the number of candles per calculation period, which have a rise in price;
+Nsum — the number of candles per calculation period, which have a fall in price;
+Period — calculation period.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 09.03.2008.
+Fig1. The i4_DRF_v2 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16170

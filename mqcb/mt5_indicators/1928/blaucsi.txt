@@ -1,0 +1,7 @@
+Indicator
+Candle Stochastic Index
+from the book "Momentum, direction and divergence" by William Blau, implemented in the form of a color histogram.
+The BlauCSI indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1928

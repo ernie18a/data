@@ -1,0 +1,25 @@
+Slow Relative Strength Index was described in Stock&Commodities (July 2015).
+It has six input parameters:
+Period
+- calculation period
+Smoothing
+- smoothing period
+Applied price
+Overbought
+- overbought level
+Middle level
+- middle level
+Oversold
+- oversold level
+Calculation:
+SRSI = 50.0 * (1.0+ChgRatio)
+where:
+ChgRatio =NetChgAvg / TotChgAvg
+TotChgAvg = PrevTotChgAvg + SF * (Abs(Change) - PrevTotChgAvg)
+NetChgAvg = PrevNetChgAvg + SF * (Change - PrevNetChgAvg)
+Change= MA - PrevMA
+SF = 1.0 / Period
+MA - EMA(Applied price, Smoothing)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22511

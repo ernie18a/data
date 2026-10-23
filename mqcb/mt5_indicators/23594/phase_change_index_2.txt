@@ -1,0 +1,5 @@
+P.H.Pee has created a few indicators. In the series of those created by him there is a phase change index too
+This version deviates from the original though :
+it is inverted (the original shows values when the phase should change, and the is exactly the opposite of the trend)
+option to produce smoothed values added (which is probably what is needed more in the original version)
+Usage : you can use the color changes as signals

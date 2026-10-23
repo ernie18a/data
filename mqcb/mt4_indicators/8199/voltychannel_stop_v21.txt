@@ -1,0 +1,2 @@
+Another version of indicator VoltyChannel_Stop.
+VoltyChannel_Stop_v2.1

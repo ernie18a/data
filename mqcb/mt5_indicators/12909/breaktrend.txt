@@ -1,0 +1,12 @@
+Real author:
+Ramil Minniakhmetov
+The grid strategy is very popular, but has its own downsides. One of the main downsides is that using indicators you can enter the market in a wrong direction in the beginning of a strong trend and lose your deposit.
+The BreakTrend indicator solves this problem. It generates signals when the strong movement has already happened, and the turnover or pullback is possible. It measures the number of points the price passed for the specified number of bars.
+Settings are different for each currency pair and timeframe.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 28.04.2014.
+Fig.1. The BreakTrend indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12909

@@ -1,0 +1,6 @@
+Rainbow Multiple Moving Average (RMMA) MetaTrader indicator — is a very simple but visually informative indicator based on the standard moving average. It draws 66 rainbow-colored moving average lines of your preferred type and price directly in the main window of the chart. This indicator is available for both MT4 and MT5 versions of the trading platform.
+Input parameters
+MA_Type (default = MODE_EMA) — the type of rainbow moving average.
+MA_Price (default = PRICE_CLOSE) — the price type to use in the MA calculations.
+MA_Period_NN (default = Varies) — the periods of 66 moving averages.
+Example and strategy

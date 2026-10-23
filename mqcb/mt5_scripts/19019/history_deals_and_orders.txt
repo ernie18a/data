@@ -1,0 +1,47 @@
+The 'History Deals and Orders' script shows absolutely all properties of deals and orders from the trading history over a given time interval.
+Data can be displayed in the Experts tab of the terminal, as well as written to a text file (which is saved in [data folder]\MQL5\Files). If the data is to be written to a text file, the operation algorithm is as follows:
+At start, first the "
+InpFileName
+" file is deleted.
+Then the new "
+InpFileName
+" file is created.
+Data is written to the "
+InpFileName
+" file.
+In order to find and open the text file, do the following:
+Step 1: open the File menu -> "Open Data Folder".
+Step 2: in the Explorer that opens, go to the MQL5\Files folder.
+Example of a text file:
+Deal:
+|Ticket              |Order               |Time                |Time msc            |Type                |Entry               |Magic               |Reason              |Position ID        
+|144059549           |160789141           |2017.08.02 10:35:46 |1501670146218       |DEAL_TYPE_SELL      |DEAL_ENTRY_IN       |0                   |DEAL_REASON_CLIENT  |160789141          
+|Volume              |Price               |Commission          |Swap                |Profit              |Symbol              |Comment                                  |External ID        
+|0.01                |1.18265             |0.00                |0.00                |0.00                |EURUSD              |                                         |                   
+Order:
+|Ticket              |Time setup          |Type                |State               |Time expiration     |Time done           |Time setup msc      |Time done msc       |Type filling       
+|160789141           |2017.08.02 10:35:46 |ORDER_TYPE_SELL     |ORDER_STATE_FILLED  |2017.08.02 10:35:46 |2017.08.02 10:35:46 |1501670146217       |1501670146218       |ORDER_FILLING_FOK  
+|Type time           |Magic               |Reason              |Position id         |Position by id     
+|1970.01.01 00:00:00 |0                   |ORDER_REASON_CLIENT |160789141           |0                  
+|Volume initial      |Volume current      |Open price          |sl                  |tp                  |Price current       |Price stoplimit    
+|0.01                |0.00                |1.18265             |0.00000             |0.00000             |1.18265             |0.00000            
+|Symbol              |Comment                                  |Extarnal id        
+|EURUSD              |                                         |                   
+
+Deal:
+|Ticket              |Order               |Time                |Time msc            |Type                |Entry               |Magic               |Reason              |Position ID        
+|144059588           |160789184           |2017.08.02 10:35:55 |1501670155724       |DEAL_TYPE_BUY       |DEAL_ENTRY_OUT      |0                   |DEAL_REASON_CLIENT  |160789141          
+|Volume              |Price               |Commission          |Swap                |Profit              |Symbol              |Comment                                  |External ID        
+|0.01                |1.18276             |0.00                |0.00                |-0.09               |EURUSD              |                                         |                   
+Order:
+|Ticket              |Time setup          |Type                |State               |Time expiration     |Time done           |Time setup msc      |Time done msc       |Type filling       
+|160789184           |2017.08.02 10:35:55 |ORDER_TYPE_BUY      |ORDER_STATE_FILLED  |2017.08.02 10:35:55 |2017.08.02 10:35:55 |1501670155724       |1501670155724       |ORDER_FILLING_FOK  
+|Type time           |Magic               |Reason              |Position id         |Position by id     
+|1970.01.01 00:00:00 |0                   |ORDER_REASON_CLIENT |160789141           |0                  
+|Volume initial      |Volume current      |Open price          |sl                  |tp                  |Price current       |Price stoplimit    
+|0.01                |0.00                |1.18276             |0.00000             |0.00000             |1.18276             |0.00000            
+|Symbol              |Comment                                  |Extarnal id        
+|EURUSD              |                                         |
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19019

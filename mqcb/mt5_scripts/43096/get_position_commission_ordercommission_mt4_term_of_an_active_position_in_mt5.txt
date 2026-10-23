@@ -1,0 +1,7 @@
+Get commission of an active position in mt5 , its easy to use function.
+use function.
+double
+PositionCommission(
+ulong
+pTicket)
+This function will print all orders commission.

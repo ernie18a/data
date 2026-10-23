@@ -1,0 +1,19 @@
+Trend Regime Inspector for MetaTrader 5
+Open-source, non-trading indicator for examining whether market conditions are directional or choppy. It never opens, modifies, or closes positions.
+Additional chart examples
+What it displays
+Trend score:
+a signed -100 to +100 condition score.
+Efficiency %:
+Kaufman’s Efficiency Ratio, expressed as a percentage.
+ADX:
+the platform’s standard Average Directional Index.
+Calculation
+Trend score = direction × 100 × efficiency × min(1, ADX / 50).
+Direction is positive when price is above a rising moving average, negative when price is below a falling moving average, and neutral otherwise.
+How to read it
+Green histogram bars meet the positive score threshold. Red bars meet the negative threshold. Grey bars are neutral or mixed. This is a condition filter, not a forecast or a buy/sell recommendation.
+Inputs
+Moving-average period and method; ADX period; efficiency lookback; and strong-score threshold.
+Important
+This indicator has no trading functions and uses standard MQL5 indicators only. Historical observations do not guarantee future behaviour. Validate any use for your own symbol, timeframe, broker conditions, and risk limits.

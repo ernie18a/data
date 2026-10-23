@@ -1,0 +1,46 @@
+The
+Auto Trader
+Expert Advisor is designed for enabling/disabling the
+AutoTrading
+button of the MetaTrader 5 terminal. At the time specified in
+StartHour
+and
+StartMinute
+the EA enables the
+AutoTrading
+button, if it is released, and disables itif the time is greater than
+StopHour
+and
+StopMinute
+, as well as close all currently opened positions on the terminal.
+Parameters:
+input
+int
+StartHour   =
+9
+;
+// Trading start hour
+input
+int
+StartMinute =
+30
+;
+// Trading start minute
+input
+int
+StopHour    =
+23
+;
+// Trading end hour
+input
+int
+StopMinute  =
+30
+;
+// Trading end minute
+Fig.1. The EA on the chart
+Recommendations:
+Used for enabling and disabling all the experts running in the terminal and for closing all positions.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15679

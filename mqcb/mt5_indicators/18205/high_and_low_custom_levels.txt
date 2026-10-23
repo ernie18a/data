@@ -1,0 +1,2 @@
+High and Low. For levels, you can specify an offset. You can specify the interval (PERIOD_D1) on which to search for levels.
+Input parameter "count day":  if it is equal to "0" or "1" - this means the current day.

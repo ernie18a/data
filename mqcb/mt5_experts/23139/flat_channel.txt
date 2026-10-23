@@ -1,0 +1,23 @@
+Idea
+by
+JS_Sergey
+mq5 code author
+-
+barabashkakvn
+The Expert Advisor uses the
+Standard Deviation smoothing
+custom indicator, which is a smoothed
+Standard Deviation
+. Determine trend existence based on the indicator values on bars #0, #1, #2, #3 and #4:
+(StdDev #0 > StdDev #1)  && (StdDev #1 > StdDev #2)  && (StdDev #2 > StdDev #3)  && (StdDev #3 > StdDev #4) -> there is a trend
+It also determines flat within the "Minimum number of bars" bars. A flat zone is indicated by two lines:
+If there is no flat zone currently in the market, the EA does not place pending orders. Also, if there is no flat, appropriate lines are deleted from the chart. When any of the pending orders triggers, other pending orders are deleted, and trailing stop is further applied to positions.
+Stop Loss and Take Profit can be set both as constant or dynamic values. This depends on the
+Stop loss
+and
+Take Profit
+parameters. The lot value can also be either constant ("Enable the money management function" is set to "false") or dynamic. This depends on the number of trades closed by Stop Loss and Take Profit.
+EURUSD,M30:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23139

@@ -1,0 +1,231 @@
+The author of the idea
+:
+ef91
+(the beginning of the related discussion
+#62
+)
+MQL5 code author
+:
+Vladimir Karputov
+.
+The EA waits for a TP or SL to trigger, and then opens a position in the opposite direction. It checks if there is enough money before sending a trade request. OnTradeTransaction.
+For example, we have an open Buy position. Once TP or SL triggers, a new Sell position is opened. Then, after triggering of TP or SL, a new Buy position is opened.
+A deal closure is monitored in "
+OnTradeTransaction
+":
+//+------------------------------------------------------------------+
+//| TradeTransaction function                                        |
+//+------------------------------------------------------------------+
+void
+OnTradeTransaction
+(
+const
+MqlTradeTransaction
+&trans,
+const
+MqlTradeRequest
+&request,
+const
+MqlTradeResult
+&result)
+  {
+//--- get transaction type as enumeration value
+ENUM_TRADE_TRANSACTION_TYPE
+type=trans.type;
+//--- if transaction is result of addition of the transaction in history
+if
+(type==
+TRADE_TRANSACTION_DEAL_ADD
+)
+     {
+long
+deal_entry        =
+0
+;
+long
+deal_type         =
+0
+;
+string
+deal_symbol       =
+""
+;
+long
+deal_magic        =
+0
+;
+long
+deal_time         =
+0
+;
+if
+(
+HistoryDealSelect
+(trans.deal))
+        {
+         deal_entry=
+HistoryDealGetInteger
+(trans.deal,
+DEAL_ENTRY
+);
+         deal_type=
+HistoryDealGetInteger
+(trans.deal,
+DEAL_TYPE
+);
+         deal_symbol=
+HistoryDealGetString
+(trans.deal,
+DEAL_SYMBOL
+);
+         deal_magic=
+HistoryDealGetInteger
+(trans.deal,
+DEAL_MAGIC
+);
+         deal_time=
+HistoryDealGetInteger
+(trans.deal,
+DEAL_TIME
+);
+        }
+else
+return
+;
+if
+(deal_symbol==m_symbol.Name() && deal_magic==m_magic)
+        {
+if
+(deal_entry==
+DEAL_ENTRY_OUT
+)
+           {
+if
+(deal_type==
+DEAL_TYPE_BUY
+|| deal_type==
+DEAL_TYPE_SELL
+)
+              {
+if
+(deal_type==
+DEAL_TYPE_BUY
+)
+                  m_close_pos_type=
+POSITION_TYPE_SELL
+;
+else
+if
+(deal_type==
+DEAL_TYPE_SELL
+)
+                  m_close_pos_type=
+POSITION_TYPE_BUY
+;
+else
+return
+;
+               m_is_trade=
+true
+;
+              }
+           }
+else
+if
+(deal_entry==
+DEAL_ENTRY_IN
+)
+           {
+            m_is_trade=
+false
+;
+           }
+        }
+     }
+  }
+Check volume before OrderSend
+(consider the opening of a Buy position as an example):
+//+------------------------------------------------------------------+
+//| Open Buy position                                                |
+//+------------------------------------------------------------------+
+void
+OpenBuy(
+double
+sl,
+double
+tp)
+  {
+   sl=m_symbol.NormalizePrice(sl);
+   tp=m_symbol.NormalizePrice(tp);
+//--- check volume before OrderSend to avoid "not enough money" error (CTrade)
+double
+check_volume_lot=m_trade.CheckVolume(m_symbol.Name(),InpLots,m_symbol.
+Ask
+(),
+ORDER_TYPE_BUY
+);
+if
+(check_volume_lot!=
+0.0
+)
+     {
+if
+(check_volume_lot>=InpLots)
+{
+if
+(m_trade.Buy(InpLots,
+NULL
+,m_symbol.
+Ask
+(),sl,tp))
+           {
+if
+(m_trade.ResultDeal()==
+0
+)
+              {
+Print
+(
+"Buy -> false. Result Retcode: "
+,m_trade.ResultRetcode(),
+", description of result: "
+,m_trade.ResultRetcodeDescription());
+              }
+else
+{
+Print
+(
+"Buy -> true. Result Retcode: "
+,m_trade.ResultRetcode(),
+", description of result: "
+,m_trade.ResultRetcodeDescription());
+              }
+           }
+else
+{
+Print
+(
+"Buy -> false. Result Retcode: "
+,m_trade.ResultRetcode(),
+", description of result: "
+,m_trade.ResultRetcodeDescription());
+           }
+        }
+else
+{
+         m_is_trade=
+false
+;
+        }
+     }
+else
+{
+      m_is_trade=
+false
+;
+     }
+//---
+}
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18294

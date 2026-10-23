@@ -1,0 +1,22 @@
+Harmonic patterns are a class of chart patterns based on 5 price extrema and constraints on the relations and proportions between these. As these constraints and ratios are difficult to verify by visual estimation, computerized measuring tools are essential for trading harmonic patterns. This is the second version of the popular
+Harmonic Pattern Finder
+indicator to automatically find harmonic patterns. It has several improvements over the previous version, and is fast and easy to use:
+More than 50 new patterns.
+More appealing visualization and styling.
+A better matching algorithm allowing to find emerging patterns analytically.
+Display of potential reversal zone (P.R.Z.), pattern names, as well as point labeling.
+Several possibilities for ZigZag selection in the inputs.
+Installation:
+The Harmonic Pattern Finder uses a zigzag indicator in order to extract peaks and troughs, and cannot run without at least one zigzag indicator properly installed in the "Indicators/Downloads" directory. The used ZigZags are:
+Fast ZigZag
+Professional ZigZag
+(which requires the alexstal_outsidebar.mqh to be placed in the "Include" directory)
+Swingchart
+If you have already downloaded these zigzag indicators previously there should be no need to reinstall them, otherwise they are also included with this download.
+Fig. 1: End of the P.R.Z. shown as lines. This allows to assess the risk before trading.
+Fig. 2: Patterns can be filled, and emerging patterns shown. This allows to anticipate a trade opportunity in advance.
+Authors:
+This indicator is a joint work between
+Andre Enger
+and
+David Gadelha

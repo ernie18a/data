@@ -1,0 +1,6 @@
+Variation of the MA_Channels_FIBO indicator by an unknown author. The original version was flawed with redrawing.
+The problem of redrawing is solved in the ChannelsFIBO indicator. Also, the speed of the indicator value calculation is increased by several times.
+The idea of the indicator is to find the maximum offset of the price from the selected moving average in the specified interval. The found offset — 100% of the channel. On the basis of this offset the lines are calculated with percentages, selected by the user — up to four lines, inclusive.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14638

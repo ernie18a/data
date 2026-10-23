@@ -1,0 +1,4 @@
+This is very simple, power and easy to use Indicator
+It times Advanced_ADX signal with Bollinger chanel width.
+To Show you very power ADX signal
+You can change ADX Period and Bollinger Period.

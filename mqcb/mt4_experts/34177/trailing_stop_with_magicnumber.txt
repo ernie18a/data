@@ -1,0 +1,224 @@
+Trailing stop really supports our trading by shifting the stop loss to the profit area so that we can always automatically secure our trades.
+We will start the code by specifying the input trailing stop parameters
+input
+bool
+isTrailingStop =
+true
+;
+//Trailing Stop
+input
+int
+trailingStart  =
+15
+;
+//Trailing Start (pips)
+input
+int
+trailingStep   =
+5
+;
+//Trailing Step (pips)
+input
+int
+MagicNumber =
+0
+;
+//Magic Number
+Global Variable
+//Variabel Global
+double
+myPoint    =
+0.0
+;
+When we run this EA, the OnInit () function will be executed for the first time and in this function we will validate and initialize the input variables.
+int
+OnInit
+()
+  {
+if
+(isTrailingStop && trailingStart <=
+0
+){
+Alert
+(
+"Parameters incorrect"
+);
+return
+(
+INIT_PARAMETERS_INCORRECT
+);
+   }
+   
+   myPoint     = GetPipPoint(
+Symbol
+());
+return
+(
+INIT_SUCCEEDED
+);
+  }
+Every time a price movement (tick) occurs on the chart where this EA is paired, the OnTick () function will be executed. Inside the OnTick () function will call the setTrailingStop () function
+void
+OnTick
+()
+  {
+//---
+setTrailingStop(MagicNumber);
+   
+  }
+Function setTrailingStop()
+void
+setTrailingStop(
+int
+magicNumber=
+0
+){
+if
+(isTrailingStop==
+false
+)
+return
+;
+int
+tOrder =
+0
+;
+string
+pair =
+""
+;
+double
+sl =
+0.0
+, tp =
+0.0
+;
+   
+   pair =
+Symbol
+();
+   
+   tOrder =
+OrdersTotal
+();
+for
+(
+int
+i=tOrder-
+1
+; i>=
+0
+; i--){
+bool
+hrsSelect =
+OrderSelect
+(i, SELECT_BY_POS, MODE_TRADES);
+if
+(OrderMagicNumber() == magicNumber &&
+StringFind
+(OrderSymbol(), pair,
+0
+) ==
+0
+){
+if
+(OrderType() == OP_BUY){
+if
+( (Bid - (trailingStart * myPoint)) >= OrderOpenPrice()
+                  && (Bid - ((trailingStart+trailingStep) * myPoint) >= OrderStopLoss() )
+                )
+            {
+               sl =
+NormalizeDouble
+(Bid - (trailingStart * myPoint),
+Digits
+());
+if
+(!OrderModify(OrderTicket(), OrderOpenPrice(), sl, OrderTakeProfit(),
+0
+,
+clrBlue
+)){
+Print
+(
+"#"
+, OrderTicket(),
+" gagal update sl"
+);
+               }
+            }
+         }
+if
+(OrderType() == OP_SELL){
+if
+( (Ask + (trailingStart * myPoint)) <= OrderOpenPrice()
+                  && ( (Ask + ((trailingStart+trailingStep) * myPoint) <= OrderStopLoss() ) || OrderStopLoss() ==
+0.0
+)
+               )
+            {
+               sl =
+NormalizeDouble
+(Ask + (trailingStart * myPoint),
+Digits
+() );
+if
+(!OrderModify(OrderTicket(), OrderOpenPrice(), sl, OrderTakeProfit(),
+0
+,
+clrBlue
+)){
+Print
+(
+"#"
+, OrderTicket(),
+" gagal update sl"
+);
+               }
+            }
+         }
+      }
+//end if magicNumber
+}
+//end for
+}
+other standard functions required is GetPipPoint()
+// Fungsi GetPipPoint
+double
+GetPipPoint(
+string
+pair)
+{
+double
+point=
+0.0
+;
+int
+digits = (
+int
+) MarketInfo(pair, MODE_DIGITS);
+if
+(digits ==
+2
+|| digits==
+3
+) point=
+0.01
+;
+else
+if
+(digits==
+4
+|| digits==
+5
+) point=
+0.0001
+;
+return
+(point);
+}
+If you have any questions, please leave them in the comments or you can also join our group sharing (in Indonesian)
+t.me/codeMQL
+We also provide the SignalForex App
+You can support us by downloading and continue to use the SignalForex App to support your trading more profitably
+https://play.google.com/store/apps/details?id=com.autobotfx.signalforex

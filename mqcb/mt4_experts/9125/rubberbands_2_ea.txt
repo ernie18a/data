@@ -1,0 +1,34 @@
+RUBBERBANDS_2 EA
+Version 1.2
+DON'T USE THIS EA FOR LIVE TRADING. I don't want to see anybody lose his/her account. I just wanted to give you some new idea.
+- The external variable "quiescenow" has been added to quiesce this EA when the current session ends.
+-- The logic for the closure of all outstanding orders has been modified.
+-- Some external variables have been renamed to be more meaninghful:
+useequityprofitcut -> use_sessionTP
+dollareqprofitcut -> sessionTP
+useequitylosscut -> use_sessionSL
+dollareqlosscut -> sessionSL
+(The older version still works fine when used in a single currency pair and no other orders are outstanding in other currency pairs.)
+This EA is an enhanced version of the original RUBBERBANDS EA. Just like RUBBERBANDS EA, it works in any timeframe for any currency pair, including gold and silver. Its logic, again, is based on the fact that any price movement may accompany rebound ("Delapsus Resurgam") and the maxim of "Sell high, buy low".
+It opens orders in both directions (BUY & SELL) at a time initially, then opens an additional SELL order everytime the price goes up by multiples of "pipstep" above the initial SELL order, and opens an additional BUY order everytime the price goes down by multiples of "pipstep" below the initial BUY order.
+It closes all the outstanding orders when the specified profit "sessionTP" (in dollars) is reached, which functions as TAKEPROFIT, or, if set so ("use_sessionSL"==true), when the specified loss "sessionSL" (in dollars) is reached, which functions as STOPLOSS.
+The opening of the initilal orders through the closure of all outstanding orders constitutes one "session".
+The external variable "maxcount" limits the number of orders per session.
+Use Strategy Tester to see how this EA performs.
+Preferred currency pairs are four major pairs: EUR/USD, GBP/USD, USD/JPY, and USD/CHF. To avoid big drawdowns, smaller "sessionTP" may help.
+External variables are:
+Lots = 0.02 (number of lots for each order)
+maxcount = 10 (maximum number of orders allowed in one session)
+pipstep = 50 (pip distance to place additional BUY or SELL orders)
+quiescenow = false (if true, quiesces this EA when the current session ends)
+donow = false (if true, opens orders immediately)
+stopnow = false (if true, stops this EA)
+closenow = false (if true, closes all outstanding orders)
+use_sessionTP = true (don't change this)
+sessionTP = 1000 (profit in dollars per lot to close all outstanding orders; functions as TAKEPROFIT)
+use_sessionSL = false (If true, uses "sessionSL" below)
+sessionSL = 300 (loss in dollars per lot to close all outstanding orders; functions as STOPLOSS)
+The following three external variables are for restarting this EA after, say, the weekend, when there are outstanding orders. "inmax" and "imin" are displayed as "GLBmax" and "GLBmin" on the chart.
+useinvalues = false (set to true on restart)
+inmax = 0 (set former max on restart)
+inmin = 0 (set former min on restart)

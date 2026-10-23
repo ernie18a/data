@@ -1,0 +1,6 @@
+The Mass Index is intended for detection of trend turns based on changes in the bandwidth between the maximal and the minimal price. If the bandwidth expands, the Mass Index increases, if it narrows, the index decreases.
+The Mass Index was developed by Donald Dorsey. According to D. Dorsey, the most important signal from the Mass Index should be a special model constructed by the indicator and called 'reversal bulge'. The reversal bulge is formed when the 25-period mass index, first, exceeds 27 and then falls below 26.5. In this case, the price turn is very possible and, at that, independently on the general nature of the trend, i.e., on that whether prices move up, down or fluctuate within the trading range.
+To detect what exactly signal - to buy or to sell - is produced by the reversal bulge, 9-period exponential moving average of prices is frequently used. When a reversal bulge appears, you should buy if the moving average falls (шт reliance on a turn), and sell if it increases.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7059

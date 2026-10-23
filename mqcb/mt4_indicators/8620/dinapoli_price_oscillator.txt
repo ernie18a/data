@@ -1,0 +1,12 @@
+There is possibility to:
+choose amount of bars to calculate the formula
+choose type of average, which is used in counting
+choose price (open, close, high, low), which is used in counting
+choose shift of average
+calculate and display overbought and oversold levels (60% and 100%)
+Levels are counted using special formula, which is used standard deviation function. However levels are displayed correctly and results are the same as results received using manual methods. Level factors were specially selected and are the most suitable to use.
+Requirements:
+'Show object description' option must be enabled
+If two indicators have to be displayed in one window, DPO should be added as first
+DPO example
+I apologize for my bad English.

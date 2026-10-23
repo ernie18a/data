@@ -1,0 +1,4 @@
+All information about the current symbol (information from the CSymbolInfo class object is used) represented as a dialog panel. CSymbolInfo. CDialog.mqh. CListView.mqh
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18262

@@ -1,0 +1,7 @@
+An indicator that colors candlesticks going beyond channel
+Ozymandias
+Candlesticks beyond the channel are marked with the trend-related color. Candlesticks with the trend are colored brightly, and those against the trend are colored darkly.
+Fig 1. Indicator Ozymandias_System
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21347

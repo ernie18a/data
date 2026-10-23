@@ -1,0 +1,1 @@
+This is the T3 using standard deviations to make it adaptive and made with that "fancy" gradient colors. If you wish to turn the gradient colors off, simply set the starting and ending color to same value.

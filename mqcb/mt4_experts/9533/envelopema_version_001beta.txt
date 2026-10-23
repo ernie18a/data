@@ -1,0 +1,12 @@
+Hi folks,
+I've been learning and making EAs from 2 months, this one is my first reasonable and "almost-free of errors" robot. It only shorts (no long positions till now), when short positions are clearly good a long position version will be cloned and attached to the EA. It was made for 15-minute chart (M15) because there are no many sell stop positions executed to place it on higher periods (M30, H1+) and no lower periods because the spread becomes more significantly. Entry is made by sell stop pending orders placed whenever the Ask price and two moving averages are comprised by the low period envelope bands, this order stands for 1h15min. Exits when three different Parabolic SAR points are under the Ask price and there is a crossover of moving averages (signal moving average crosses fast moving average from down to up).
+S/L and T/P are configurable and optional. Obviously there are ways to turn this system a great winner using Martingale strategy but the main idea now is to improve only the sell signals. After this, we will attach risk management modules, better exit ways, etc. I hope you don't mind code is in Portuguese. Some explanations of input parameters are below:
+AguardaCompletarCandle: Wait for 15-minute chart bar is completed to take a decision (is equivalent to use "Open bar prices only" in tester)
+TP: Take Profit (in pips)
+SL: Stop Loss (in pips)
+PerEnv: Period of envelope
+sdEnv: Deviation of envelope
+PerMM: Period of signal exponential moving average
+PerMMl: Period of fast (slower than signal) exponential moving average
+other input parameters are explained in "input parameter" box in the tester and it's part of risk management, not about order placing.
+I hope you enjoy and whenever someone leave good idea(s) they will be implemented and be made available here.

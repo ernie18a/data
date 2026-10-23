@@ -1,0 +1,5 @@
+Ultimate oscillator offered by Larry Williams is a weighted average of values of three stochastic indicators defined on a short, medium and long periods.
+The length of periods is usually in the correlation 1:2:4 (doubling) or 1:2:3 (multiplicity). Periods should be chosen according to characteristics of a certain market. Recommended values are: 7-14-28 or 7-14-21.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7063

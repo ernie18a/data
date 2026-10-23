@@ -1,0 +1,49 @@
+Author of the idea
+:
+Vladimir Pastushak
+,
+author of the mq5 code
+:
+barabashkakvn
+.
+Many Expert Advisor have been created based on the idea of the martingale.
+This Expert Advisor allows testing classical martingale operating principles, as well as the anti-martingale technique.
+The Expert Advisor code is simple and well-commented.
+Trading principle with Martingale
+If closed by Take Profit → open the starting lot in the same direction;
+If closed by Stop Loss → open the increased lot in the opposite direction.
+Trading principle with Anti-Martingale
+If closed by Take Profit, open the increased lot in the same direction;
+If closed by Stop Loss, open the starting lot in the opposite direction.
+The idea of the Martingale system
+Trading starts with a preset minimum lot.
+If a trade is closed with a stop loss, further lot should be increased so that if a trade is closed with take profit, it would cover all previous stop losses in this series with a small additional profit. For example: 0,01-0,02-0,04-0,08-0,016-0,032-0,064 etc.
+If the sequence is observed, the profit can be equal to the profit of a trade with the minimum lot.
+If a trade is closed with take profit, the trader restarts with the minimum lot.
+The martingale system does not provide a trader with advantage, but only allows re-distributing the profit. The trader rarely fixes loss, but it can be large. Profit is taken often, but it is small.
+The idea of the Anti-Martingale system
+Unlike the martingale system, in which lot is increased in case of stop loss, the opposite idea is used in the anti-martingale system: lot is increased in case of profit.
+Trading begins with a minimum lot. If a trade is close with profit, the next trade lot is increased two or more times. In case of stop loss, the trader should return to the starting lot.
+When trading based on the anti-martingale system, you should clearly define lot increase limits, after which you should return to the initial lot. For example you can set a maximum of three lot increases in a row: 0.01, 0.02, 0.05.
+Input Parameters
+start position: Buy or Sell
+- the direction of the first position;
+type of trade: Martingale or AntiMartingale
+- trading type;
+set the base lot
+- initial position volume;
+set the value of stop loss
+;
+set the value of TakeProfit
+;
+set the value of the multiplier lots
+- position volume multiplier;
+set the value MagicNumber
+- Expert Advisor ID;
+all magic; true → all MagicNumber
+- enable/disable management of other magic numbers.
+Be careful when using this Expert Advisor. Here is a typical development of situation:
+and an unexpected fiasco:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19442

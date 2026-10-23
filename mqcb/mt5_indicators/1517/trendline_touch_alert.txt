@@ -1,0 +1,16 @@
+This indicator simply alerts and sends email every time the trend line touched by the price. You need to set the name of trendline and the direction of the cross.
+There are 3 directions:
+Up
+: The indicator alerts when the price touches/crosses the trend line from down/
+up
+.
+Down
+: The indicator alerts when the price touches/crosses the trend line from up/
+down
+.
+Both
+: The indicator alerts when the price touches/crosses the trend line from down/
+up
+and up/
+down.
+Fig.1 Price touches the trendline down.

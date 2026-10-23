@@ -1,0 +1,3 @@
+Color version of the
+XMA
+indicator.

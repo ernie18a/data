@@ -1,0 +1,3 @@
+It does what the name says. This indicator will plot the trade levels in MT4 history.
+You can select the history period you wish to view.
+Future version MIGHT have a trend line showing the price movement (this is solely based on demand) but for now, I think it is messy and shouldn't be on the chart.

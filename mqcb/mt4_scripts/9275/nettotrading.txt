@@ -1,0 +1,34 @@
+Description:
+The script allows to use MetaTrader4 as netting platform. It has some advantages compared with MetaTrader5.
+It shows the calculated total net positions, Balance and Equity.
+Bear in mind that
+the Equity and Balance values in MetaTrader4 are differ from the netting values.
+The script has two modes:
+1. AntiSwap = FALSE
+Example of Script execution (AntiSwap = FALSE)
+In this mode, you will pay
+Swap for the opposite positions. But you
+still have an opportunity to work with the several strategies on the specified instrument, including positions, opened manually
+. At present time MetaTrader5 has not such opportunity.
+2. AntiSwap = TRUE
+Example of Script execution (AntiSwap = TRUE)
+In this mode you will haven't any opposite positions, and the swap additional payment is absent.
+The weakness of this mode is that you cannot take into account the total net positions splitting, so the several strategies use (including positions, opened manually) is impossible.
+The script can be useful for traders, don't like to use the Locks (
+AntiSwap = TRUE
+). So, it's nothing like netting in MetaTrader4.
+Also it shows (
+AntiSwap = FALSE
+), that if the broker uses the Margin and Swaps for the total positions only, then
+MetaTrader4 is fully netting platform with powerful, simple and useful tools for the virutual positions.
+Editor's remark:
+Note that it's a mirror translation of the
+original Russian version
+.
+If you have any questions to the author, suggestions or comments, it's better to post them
+there
+.
+If you have found this code useful for trading or educational purposes, don't forget to thank author.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9275

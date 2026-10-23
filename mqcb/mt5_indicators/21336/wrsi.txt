@@ -1,0 +1,15 @@
+Oscillator Wilder's RSI is a normal RSI smoothed by Welles Wilder's moving average.
+It has four configurable parameters:
+Period
+- calculation period
+Applied price
+- calculation price
+Overbought
+- overbought level
+Oversold
+- oversold level
+In terms of calculations, Wilder's moving average is similar to a normal EMA:
+<span id="MathJax-Element-126-Frame" class="MathJax" tabindex="0" data-mathml="WWMA(n)=EMA(2n&#x2212;1)">WWMA(n) = EMA(2n−1)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21336

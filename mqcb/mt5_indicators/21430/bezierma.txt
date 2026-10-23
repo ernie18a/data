@@ -1,0 +1,16 @@
+Bezier-weighted Moving average.
+The indicator has three input parameters:
+Period
+- calculation period
+Sensitivity
+Applied price
+Calculation:
+BMA = SPC
+where:
+SPC - Sum(Price*Coeff) in the Period range
+Coeff = (Period! / (i! * (Period-i)!)) * Sensitivity^i * (1-Sensitivity)^(Period-i)
+Price - Applied price
+N! - factorial
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21430

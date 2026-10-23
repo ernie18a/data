@@ -1,0 +1,270 @@
+During the configured Asian session, the indicator continuously calculates the highest and lowest traded prices.
+While the session is active, the dashboard displays:
+SESSION FORMING
+After the Asian session ends, the range is fixed for that day. The dashboard then displays one of the following conditions:
+Range Intact
+— neither side has been broken.
+Bullish Breakout
+— price has broken above the Asian High.
+Bearish Breakout
+— price has broken below the Asian Low.
+Bullish Then Bearish
+— the high was broken first, followed by the low.
+Bearish Then Bullish
+— the low was broken first, followed by the high.
+Both Sides Broken
+— both range boundaries were broken.
+The breakout can be confirmed using either:
+Closed-candle confirmation
+A bullish breakout is confirmed only after a candle closes above the Asian High.
+A bearish breakout is confirmed only after a candle closes below the Asian Low.
+This method filters some temporary wick penetrations and false breakouts.
+Wick confirmation
+A bullish breakout is detected as soon as a candle’s high moves above the Asian High.
+A bearish breakout is detected as soon as a candle’s low moves below the Asian Low.
+This method detects breakouts earlier but produces more false signals.
+For most trading conditions,
+closed-candle confirmation is preferable
+.
+Suitable Markets
+The indicator can be used on intraday markets that trade during both the Asian session and the later European or US sessions.
+Forex
+It can help on:
+EURUSD
+GBPUSD
+USDJPY
+EURJPY
+GBPJPY
+AUDUSD
+NZDUSD
+USDCAD
+Pairs such as EURUSD and GBPUSD often form a relatively controlled Asian range before European-session volatility increases.
+JPY, AUD, and NZD pairs may already be active during the Asian session, so their range behaviour can differ from European currency pairs.
+Gold
+It can be used on:
+XAUUSD
+Gold frequently becomes more volatile during the London and New York sessions. The Asian range can therefore act as a useful intraday reference zone.
+However, XAUUSD can produce sharp false breakouts, especially around economic news. Closed-candle confirmation and controlled risk are important.
+Stock indices
+It can help on:
+GER40
+UK100
+US30
+NAS100
+SPX500
+For European indices, the Asian range may help identify positioning before the European cash-market open.
+For US indices, the Asian range can provide a broader overnight reference, but traders should also consider the pre-market and New York open.
+Cryptocurrency
+The indicator can technically be used on crypto symbols, but cryptocurrencies trade continuously and do not follow the same session structure as Forex or exchange-based indices.
+The Asian range may still provide a time-based reference, but breakout behaviour should be tested separately.
+Recommended Timeframes
+M15 — Recommended default
+M15 is the most balanced timeframe for this indicator.
+It usually provides:
+More reliable candle-close confirmation
+Less noise than M1 or M5
+Earlier entries than M30 or H1
+Clearer stop-loss placement
+Practical intraday trade frequency
+M5 — Faster entries
+M5 can be used for:
+Scalping
+Earlier breakout detection
+More precise entry timing
+Smaller technical stop-losses
+However, M5 produces more false breakouts and usually requires additional confirmation.
+M30 — Stronger confirmation
+M30 provides fewer but generally stronger breakout confirmations.
+It may be suitable for traders who prefer:
+Fewer trades
+Wider stops
+Larger intraday targets
+Reduced sensitivity to small price spikes
+M1
+M1 is generally too noisy for using the breakout alone. It is better used only for entry refinement after a breakout has already been confirmed on M5 or M15.
+Practical recommendation
+Use:
+M15 for the main breakout confirmation
+M5 for entry refinement
+H1 for the broader market direction
+How to Use the Indicator
+Step 1: Configure the session time
+The indicator uses the broker’s server time.
+The default session is:
+00:00–08:00 broker server time
+This does not necessarily correspond exactly to the geographical Asian session in UTC or your local time.
+Before trading, compare:
+Broker server time
+UTC time
+Desired Asian session time
+Then adjust the session inputs accordingly.
+Step 2: Wait for the session to complete
+Do not treat the High and Low as fixed while the dashboard shows:
+SESSION FORMING
+The levels can continue changing until the configured session ends.
+Step 3: Observe the post-session breakout
+After the session ends, wait for price to break either:
+Asian High
+Asian Low
+For more reliable confirmation, wait for a completed candle to close outside the range.
+Step 4: Avoid chasing an extended candle
+A large candle may close far beyond the Asian range. Entering immediately at the end of such a candle may produce poor risk-to-reward.
+A safer method is often to wait for:
+A retest of the broken level
+A small consolidation above or below the level
+A continuation candle
+Confirmation from the higher-timeframe trend
+Bullish Breakout Trade Example
+A bullish setup occurs when a completed candle closes above the Asian High.
+Entry methods
+Direct breakout entry
+Enter after the confirming candle closes above the Asian High.
+This provides an earlier entry but carries more false-breakout risk.
+Retest entry
+Wait for price to return toward the Asian High after the breakout.
+Enter when the former Asian High behaves as support and bullish rejection appears.
+A retest entry normally provides better risk-to-reward, but price may continue without returning to the level.
+Bullish Stop-Loss Placement
+Possible stop-loss methods include:
+Below the breakout candle
+Place the stop below the low of the bullish breakout candle.
+This is suitable when the breakout candle is not unusually large.
+Below the retest swing low
+For a retest entry, place the stop below the low formed during the retest.
+This is often the most structurally logical placement.
+Below the Asian High
+Place the stop a small distance below the Asian High after a successful retest.
+A buffer should be added for spread and normal market noise.
+Below the Asian Low
+This is a wider and more conservative stop.
+It may be appropriate for swing-style intraday positions, but the distance can be too large when the Asian range is wide.
+ATR-based stop
+Place the stop below the entry or market structure using an ATR multiple, such as:
+1.0 ATR
+1.5 ATR
+2.0 ATR
+The exact multiple should be tested for the symbol and timeframe.
+Bullish Take-Profit Placement
+Possible bullish targets include:
+One-times range projection
+Measure the Asian range:
+Asian High − Asian Low
+Project that distance upward from the Asian High.
+Example:
+Asian High: 4000
+Asian Low: 3990
+Range: 10
+First projected target: 4010
+Risk-to-reward target
+Use a predefined ratio such as:
+1:1.5
+1:2
+1:3
+For example, if the stop distance is 100 points, a 1:2 target is 200 points.
+Previous resistance
+Use nearby resistance from:
+Previous day’s high
+H1 swing high
+H4 resistance
+Weekly high
+Psychological round number
+Partial-profit method
+A practical method is:
+Close part of the position at 1R
+Move the stop to breakeven
+Hold the remaining position toward 2R or the projected range target
+Bearish Breakout Trade Example
+A bearish setup occurs when a completed candle closes below the Asian Low.
+Entry methods
+Direct breakout entry
+Enter after the confirming candle closes below the Asian Low.
+Retest entry
+Wait for price to return toward the Asian Low.
+Enter when the former Asian Low behaves as resistance and bearish rejection appears.
+Bearish Stop-Loss Placement
+Possible stop-loss methods include:
+Above the breakout candle
+Place the stop above the high of the bearish breakout candle.
+Above the retest swing high
+For a retest entry, place the stop above the high formed during the retest.
+Above the Asian Low
+Place the stop a small distance above the Asian Low after a confirmed bearish retest.
+Add a buffer for spread and market noise.
+Above the Asian High
+This is a wider structural stop, but it may be impractical if the Asian range is large.
+ATR-based stop
+Place the stop above the relevant market structure using an ATR-based distance.
+Bearish Take-Profit Placement
+Possible bearish targets include:
+One-times range projection
+Measure the Asian range and project it downward from the Asian Low.
+Example:
+Asian High: 4000
+Asian Low: 3990
+Range: 10
+First projected target: 3980
+Risk-to-reward target
+Use a predefined ratio such as 1:1.5 or 1:2.
+Previous support
+Potential targets include:
+Previous day’s low
+H1 swing low
+H4 support
+Weekly low
+Psychological round number
+Partial-profit method
+A practical bearish management method is:
+Take partial profit at 1R
+Move the stop to breakeven
+Hold the remaining position toward 2R or the range projection
+Recommended Confirmation Filters
+The indicator should not be used as a standalone guarantee of trade direction. A breakout becomes more meaningful when supported by additional context.
+Higher-timeframe trend
+For bullish trades, prefer conditions such as:
+H1 or H4 bullish structure
+Price above an important moving average
+Higher highs and higher lows
+Breakout aligned with the daily trend
+For bearish trades, prefer:
+H1 or H4 bearish structure
+Price below an important moving average
+Lower highs and lower lows
+Breakout aligned with the daily trend
+Breakout candle quality
+A stronger breakout candle generally has:
+A relatively large real body
+A close near the candle’s extreme
+Limited rejection wick
+Clear movement away from the range
+Increased volume or tick activity
+Retest confirmation
+For a bullish retest, look for:
+Bullish pin bar
+Bullish engulfing candle
+Higher low
+Rejection below the Asian High followed by a close above it
+For a bearish retest, look for:
+Bearish pin bar
+Bearish engulfing candle
+Lower high
+Rejection above the Asian Low followed by a close below it
+News filter
+Avoid opening a breakout trade immediately before major news such as:
+Interest-rate decisions
+Nonfarm Payrolls
+CPI releases
+Central-bank press conferences
+Employment reports
+Unexpected geopolitical announcements
+News can cause both sides of the Asian range to be broken within a short period.
+Situations to Avoid
+Avoid or reduce risk when:
+The Asian range is unusually wide.
+The breakout candle is excessively large.
+Price immediately returns inside the range.
+Both the Asian High and Low have already been broken.
+The breakout occurs directly into major support or resistance.
+The signal conflicts with the higher-timeframe trend.
+Spread is unusually high.
+Major economic news is approaching.
+Market liquidity is low or the broker is near rollover time.

@@ -1,0 +1,1 @@
+Variable Index Dynamic Average use an exponential smooting as a base of varying the speed or the trend each day. Which use a pivotal smoothing constant and varies the speed by using a factor base on the relative volatility to increase or decrease the constant. Volatility measure based on the standard deviation compared with a longer historic pattern.

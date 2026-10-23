@@ -1,0 +1,10 @@
+A channel using a non-smooth and steady approximation error, in which the
+exponential moving average with a variable smoothing factor
+is used as the midline.
+This indicator is compiled as both an MQL5 indicator and an MQL4 indicator, for which the extension of the indicator code should be changed for mq4, place the code in
+<terminal_data_directory MetaTrader4>\MQL4\Indicators
+, and compile it using the relevant code editor.
+Fig.1. Indicator EMAVFS_channel
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20706

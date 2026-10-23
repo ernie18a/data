@@ -1,0 +1,16 @@
+More experiments with the Simple ZigZag indicator. A small upgrade allows the indicator to find and mark the price consolidation areas with colored rectangles.
+The Simple ZigZag indicator is the development of an idea of automated visualization of technical analysis. We have started with a simple indicator
+Simple ZigZag
+that plots local Highs and Lows on a chart. Our task now is to learn to recognize different patterns of technical analysis using the above indicator.
+The proposed indicator searches for flat consolidation zones on a price chart.
+The number of highs/lows required for constructing a zone, the total number of analyzed zigzag points, and the accuracy of matching of extrema are defined by the three parameters of the indicator:
+Number of times the price touches the level.
+Number of ZZ points analyzed.
+High/low max. deviation around level.
+The fourth parameter - Typical retracement size - is inherited from the parent indicator (
+Simple ZigZag
+).
+The areas where several highs make up a line in the upper part of the zone are marked in red; the areas where several lows make up a line in the lower part of the zone are marked in blue. As for now, the indicator cannot be built into an Expert Advisor, because it doesn't have appropriate buffers for the area borders (expected later). We will further continue to complicate the recognized patters, and will adapt the indicator for use in automated trading systems.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15992

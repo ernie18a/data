@@ -1,0 +1,19 @@
+The indicator plots a channel based on two moving averages with different periods in the separate window.
+The change of the channel color shows the change of the trend.
+The
+DRAW_FILLING
+drawing style plots the filled area between the values of two indicator buffers. In fact, it plots two lines and fills the area between them with the specified color. The colors of the channel changed after N ticks. The N variable is defined as input parameter, it can be changed using the "Properties" window.
+Note that initial properties of the plot1 graphic plot (
+DRAW_FILLING
+) are defined using the #
+property
+preprocessor directive, further these properties changed randomly (
+OnCalculate()
+function).
+See also:
+The Drawing Styles in MQL5
+.
+Image:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/336

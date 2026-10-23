@@ -1,0 +1,8 @@
+This EA just showing a sample of Martingale Systems by Averaging Up or Averaging Down.
+It is not a ready to use or profitable EA. Default using TEMA Indicator as Entry Signals and ATR as Grid Steps for taking orders.
+Users can download and modify the source as needed.
+Regards.
+Update:
+- Fix Bug Errors on Trailing Functions.
+- Add function to Trail on Averaging Up.
+- Revised Indicator Codes.

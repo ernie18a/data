@@ -1,0 +1,8 @@
+Real author:
+Ramdass
+NRTR indicator based on HIGH and LOW. The indicator is always located at the same distance from the reached extreme price. For an uptrend, it is displayed below the chart; for the downtrend — above. The meaning of this distance is to filter small corrective movements counter to the main trend. A stronger movement counter to the main trend above the preset level (the size of the moving filter) signals the complete trend reversal.
+Like any other simplified approach, this indicator works well in trending market, but may fail in non-trend periods.
+Fig.1. NRTR_extr
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15244

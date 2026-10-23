@@ -1,0 +1,6 @@
+Author:
+transport_david
+The 4Period RSI Arrows indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7162

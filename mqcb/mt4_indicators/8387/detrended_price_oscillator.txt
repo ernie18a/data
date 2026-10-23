@@ -1,0 +1,6 @@
+Detrended Price Oscillator is calculated according to the following formula:
+DPO(i) = Close(i) - SMA(i, N)
+where N is the moving average period.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8387

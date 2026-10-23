@@ -1,0 +1,11 @@
+The indicator displays on a price chart fractals with any dimension of sides. A traditional fractal may have a dimension of 2x2, 3x3 etc. This indicator allows setting any dimension for each side of a fractal.
+It has two parameters:
+Number of bars on the left
+- the number of bars to the left of the central one;
+Number of bars on the right
+- the number of bars to the right of the central one.
+Fig.1 Fractals 4х2
+Fig.2 Fractals 8х4
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20120

@@ -1,0 +1,6 @@
+Probably, the biggest difficultiy for the programmers is the modification of the standard Parabolic indicator.
+This code doesn't make the errors when working together with the same second indicator located on the same chart. It works correctly in optimizer.
+Use this code as a basis for you further developments. Everything is simplified at most. The explanations are in the code.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8643

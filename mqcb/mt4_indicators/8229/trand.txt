@@ -1,0 +1,4 @@
+The Trand indicator can be used to enter/exit the market. The red line shows the directivity of the movement, the green one shows the trend. The growing green line shows that the movement is directional, the movement of the green line downward or sideward means the correction or the flat.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8229

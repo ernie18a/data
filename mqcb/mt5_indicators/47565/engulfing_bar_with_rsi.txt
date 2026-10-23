@@ -1,0 +1,1 @@
+Alerts on engulfing bar below or above rsi levels

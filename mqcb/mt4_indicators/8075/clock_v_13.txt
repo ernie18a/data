@@ -1,0 +1,5 @@
+Author: Jerome
+You can also set the color to be used for data output.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8075

@@ -1,0 +1,16 @@
+Volatility Stop
+is a technical indicator used to place effective stop losses. It allows to achieve a balance between making profit from deals and controlling risks in the market. The stop loss should be kept at a distance from the price that will allow you to control the risks, but it should be wide enough, giving the market room to fluctuate so that you don't exit the trade too early.
+The indicator has three adjustable parameters:
+Length
+- the calculation period of the ATR indicator to get the current volatility,
+Source
+- type of price from which the StopLoss level is postponed,
+Multiplier
+- volatility
+multiplier
+(ATR values), which allows to control the StopLoss distance from the Source price.
+These three parameters allow you to set the necessary distance by which the stop should be set away from the price.
+The Volatility Stop indicator helps to set effective stop losses to achieve a balance between getting profit from trades and controlling risk. The need to place a stop loss is important and should not be randomised. It helps to minimise risk. Keep in mind that using other indicators in addition to Volatility Stop will be helpful in achieving the overall goal of profit and risk management.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/49558

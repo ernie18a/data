@@ -1,0 +1,26 @@
+Track Cyclical oscillator displays percentage price change relative to its moving average.
+The indicator has nine adjustable parameters:
+Period
+- calculation period
+Method
+- calculation method
+Applied price
+Exceptional overbought
+- overbought area in the area of exceptional fluctuations
+Abnormal overbought
+- overbought area in the area of abnormal fluctuations
+Normal overbought
+- overbought area in the area of normal fluctuations
+Normal oversold
+- oversold area in the area of normal fluctuations
+Abnormal oversold
+- oversold area in the area of abnormal fluctuations
+Exceptional oversold
+- oversold area in the area of exceptional fluctuations
+Calculation:
+TC = 100.0 * (Applied price-MA) / MA
+where:
+MA - SMA(Applied price,Period,Method)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22436

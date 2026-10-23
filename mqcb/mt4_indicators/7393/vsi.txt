@@ -1,0 +1,5 @@
+Author: DriverDan
+The indicator that calculates the volume corresponding to MA per second (or period).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7393

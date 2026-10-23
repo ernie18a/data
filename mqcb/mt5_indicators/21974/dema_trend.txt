@@ -1,0 +1,2 @@
+This indicator is combining several indicators into one
+The trend (and the color) of the indicator is based on the slope of DEMA (Double Exponential Moving Average), but the displayed values are envelopes constructed using high and low prices and using the chosen average type (one of the 4 available types : SMA, EMA, SMMA or LWMA). That way you can check the direction of dema )for trend) as well as values of averages for a potential high/low envelope channel entry states of the price

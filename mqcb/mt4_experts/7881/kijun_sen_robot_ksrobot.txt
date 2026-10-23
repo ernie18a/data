@@ -1,0 +1,9 @@
+Author: Noam Koren
+Expert Advisor: Kijun Sen Robot.
+It uses the following indicators:
+Ichimoku
+,
+MA
+,
+SAR
+. It is optimized for the following currency pairs: GBPUSD and EURUSD with M30 period. You can view the full description in the code.

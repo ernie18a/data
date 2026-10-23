@@ -1,0 +1,4 @@
+Trailer+, as you can see from its name, was aimed at trailing of positions. Trailing is organized on fractals: If the EA doesn't find a fractal within the distance of 7 bars, for placing StopLoss, it trails the third candlestick's shadow. The TP option allows the EA to correct TP. Option DelAllOrders allows to delete all non-triggered stops available in the terminal at the moment. Option DelSelfOrders deletes a non-triggered stop order of the window where the EA is attached. The EA is developed for half-automated trading with maximum two stop orders. Once having launched the EA, place BuyStop and SellStop anywhere you like, without SL or TP. After that, two lines will appear on the orders prices. You can move orders by moving these lines. I also fixed some bugs. There is a wish to introduce order deleting by time. I will upload its new version as soon as it is ready.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8056

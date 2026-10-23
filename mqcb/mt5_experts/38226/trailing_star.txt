@@ -1,0 +1,10 @@
+Default Trailing Stop allow you to take a safe way to trade by ensure that if there is a reverse fluctuation you will be guaranteed profit.
+But sometime you want Trailing Stop to take effect when you have a good amount of profit.
+Because I you set Trailing Stop too soon. Spread may give you a loss rather than profit.
+And you don't have time to wait for a good oppotunity to set Trailing Stop.
+This is where Trailing Star come in.
+Trailing Star will activate Trailing Stop only meet below condition:
+1) If you set Price entry: Trailing Stop will start at that Price
+2) If you set Point entry: Trailing Stop will start at that changed Point
+More free tools can be found at:
+https://github.com/phamngocvinh/galaxy-trader

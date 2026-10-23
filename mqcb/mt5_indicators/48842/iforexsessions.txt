@@ -1,0 +1,57 @@
+Forex Sessions indicator
+Highlights the Forex Market Sessions
+The indicator assumes local "wall clock" trading hours of 8:00 AM - 5:00 PM in each Forex market, except in Sydney it is 7:00 AM - 4:00 PM or 9:00 AM - 6:00 PM.
+Features:
+Draw colored rectangles for the forex market sessions (Sydney, Tokyo, London, New York).
+Accurate session times on Forex pairs and gold charts (Forex pairs trading starts at 17:00 NY. Gold starts an hour later).
+The indicator respects the GMT offset + daylight savings for the broker's server, and also for the time zones.
+The indicator's time calculations are performed using
+TimeZoneInfo library
+Additional broker's clock (in the left lower corner) with some useful information:
+- server time
+- broker GMT offset
+- Time remaining till weekend (so you can close open trades or skip opening new ones before weekend).
+- The status of time synchronization of the local computer. A hint to check
+https://time.is/
+if pc time is not synchronized.
+Moving the mouse pointer on a chart bar while the 'Ctrl' key is pressed: the bar number and time (and corresponding times in major Forex markets) will be written to the chart window for debugging.
+Input parameters:
+Parameter: "Load XAUUSD symbol for estimation of the server's TZ/DST"
+By default, the indicator will search and load the XAUUSD symbol for estimation of server's timezone offset. XAUUSD can provide more reliable results (esp., for brokers that follow
+EU DST
+schedule) on weeks during US DST and EU DST schedules are out of sync (March and late October). Optionally, if your broker follows the US DST schedule, or no schedule at all, then using the chart symbol is also fine. Set this parameter to 'false' to use the current chart's symbol, instead of XAUUSD.
+To determine your broker's daylight (DST) schedule, you can use this script
+https://www.mql5.com/en/code/48650
+Note
+:
+As a side effect that XAUUSD starts an hour after Forex, dst switches will occur one hour later (only in the strategy tester, and not in normal mode).
+Bonus Feature:
+Moving the mouse pointer on a chart bar while the 'Ctrl' key is pressed
+the bar number # and its time (and corresponding times in major Forex markets) will be written to the chart window for debugging.
+Then, to delete the debug info from the chart, just click the mouse anywhere on the chart (without pressing the 'Ctrl' key).
+Other market session indicators:
+Market_Sessions
+i-Sessions
+Trading Sessions Open - Close
+Forex market sessions identification
+All of the above indicators (and nearly all other indicators on the codebase) use hardcoded fixed offsets for time zones and they do not consider the DST on the broker's server or time zones. Simply, this is inaccurate because the session times do change during the year, either due to 1) the broker switches its time zone to DST or 2) one or more of the major forex markets change its time zone's DST.
+NOTICE
+: The indicator was confirmed to work on the following list of brokers (having different trading schedules, GMT offsets and summer DST schedules):
+Admirals Markets
+FxPro
+RannForex
+EXNESS
+FXOpen
+IC Markets
+Octa Markets
+Tickmill
+XM Global
+The indicator should also work correctly on other brokers.
+Note about Compatibility with The Strategy Tester
+During testing in the strategy tester,
+TimeGMT()
+is always equal to
+TimeTradeServer()
+simulated server time.
+TimeZoneInfo library estimates the proper times in time zones based on the "true" GMT by analysis of H1 quotes history, and not based on the time returned by calling built-in TimeGMT function.
+If the input parameter "Load XAUUSD symbol for estimation of the server's TZ/DST" is set to TRUE: then dst switches can occur one hour later in the strategy tester.

@@ -1,0 +1,37 @@
+How it works
+- A slow Renko stream defines the current direction.
+- A fast Renko stream provides the entry trigger.
+- Both streams use classic two-brick reversal logic and are built internally from BID ticks.
+- A trade is allowed only when the fast and slow Renko directions agree.
+- The position is closed by a short price target, stop, opposite fast Renko reversal, or maximum holding time.
+- After an exit, a short Renko cooldown is applied before another entry.
+- Only one position on the symbol is allowed.
+- A simple spread filter blocks entries when the spread is too large relative to the fast brick.
+Default inputs
+Fast Brick Size = 21
+Slow Brick Size = 39
+Entry Run Bricks = 1
+Take Profit = 1.4 fast bricks
+Stop Loss = 2.1 fast bricks
+Maximum Hold = 200 minutes
+Cooldown = 3 fast bricks
+Maximum Spread Fraction = 0.57
+Lots = 0.01
+Example Strategy Tester run
+Broker: RoboForex-ECN
+Symbol: XAUUSD
+Host timeframe: M1
+Model: Every tick based on real ticks
+Period: 2026-05-01 to 2026-08-24
+Initial deposit: 10,000 USD
+Leverage: 1:500
+Lot: 0.01
+History quality: 100% real ticks
+Trades: 79
+Net result: +589.34 USD
+Profit Factor: 2.27
+Maximum equity drawdown: 118.64 USD (1.18%)
+Winning trades: 64.56%
+The example above is a historical demonstration. The default parameters were selected for this demonstration and are not evidence of a persistent trading edge, a recommendation, or a promise of future profitability.
+The chart timeframe is only a host. Renko construction is driven by incoming ticks, not by M1 bars.
+No external libraries, DLLs, indicators, custom symbols or offline Renko charts are required.

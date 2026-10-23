@@ -1,0 +1,3 @@
+Trend Envelopes
+indicator is calculated based on a % of price change. That % is then used to determine if there is a new trend or trend remains the same.
+This version is using Standard Deviation for the price change calculation instead, which makes it more self adjusting to the current timeframe and symbol market conditions.

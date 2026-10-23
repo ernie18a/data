@@ -1,0 +1,91 @@
+The author of the idea
+-
+Ilnaz
+mq5 code author
+-
+barabashkakvn
+The EA analyzes candles #1 and #2.
+Example of opening and closing for SELL
+Open conditions - there is no a single position on the market
+//--- buy
+if
+((rates[
+1
+].open>rates[
+2
+].open) && (rates[
+1
+].close<rates[
+2
+].close))
+        {
+double
+lot=TradeSizeOptimized();
+         OpenBuy(lot,
+0.0
+,
+0.0
+);
+return
+;
+        }
+//--- sell
+if
+((rates[
+1
+].open<rates[
+2
+].open) && (rates[
+1
+].close>rates[
+2
+].close))
+        {
+double
+lot=TradeSizeOptimized();
+         OpenSell(lot,
+0.0
+,
+0.0
+);
+return
+;
+        }
+If there is an open position, check the close condition
+if
+(rates[
+1
+].open<rates[
+2
+].open && (rates[
+1
+].close<rates[
+2
+].close))
+        {
+         ClosePositions(
+POSITION_TYPE_BUY
+);
+return
+;
+        }
+if
+(rates[
+1
+].open>rates[
+2
+].open && (rates[
+1
+].close>rates[
+2
+].close))
+        {
+         ClosePositions(
+POSITION_TYPE_SELL
+);
+return
+;
+        }
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23090

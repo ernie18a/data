@@ -1,0 +1,2 @@
+Virtual Profit Close
+With this expert adviser you can control an already existing open position (by another ea or a manual order) and close it by desired profit level virtually. Additionally a trailing stop can be used (not virtual!)

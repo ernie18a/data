@@ -1,0 +1,2 @@
+Simply displays active hours (definied by the user).
+Useful for visual backtesting.

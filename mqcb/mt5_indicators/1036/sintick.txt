@@ -1,0 +1,6 @@
+Real Author: Loopxor
+Description:
+The sine and tick indicator!!!
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1036

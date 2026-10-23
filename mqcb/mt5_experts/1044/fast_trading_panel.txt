@@ -1,0 +1,4 @@
+Extract TradePad.zip to a folder where you have MetaTrader 5 installed. For example, C:\Program Files\MetaTrader 5.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1044

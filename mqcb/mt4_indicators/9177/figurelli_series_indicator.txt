@@ -1,0 +1,3 @@
+Calculates multiple moving averages trend, looking for divergence, start of reversal and strong trends.
+Default configuration: 36 moving averages series trends compared each other. If indicator value is 36 or -36 indicates a strong rise/fall trend.
+You can also configure the distance between the moving averages, or interval (default=6).

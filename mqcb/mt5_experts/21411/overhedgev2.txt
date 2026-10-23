@@ -1,0 +1,48 @@
+The author of the idea
+-
+Scriptor
+.
+mq5 code author
+-
+barabashkakvn
+.
+Closing positions
+This EA sets the level of the total profit of all positions (opened by the EA) in points - "
+Total Profit Target
+" parameter. At the same time, there is a limitation: not a single PROFITABLE position may have profit LESS than "
+Minimal Profit Target
+". Thus, the minimum profit threshold in points for positions is set. This approach gives a more qualitative profitability graph than the standard approach of closing the position by profit expressed in money.
+Defining a trend
+Moving Average "
+Short
+" is
+ABOVE
+Moving Average "
+Long
+" on "
+Minimum distance between MA's to determine the trend
+" - upward trend
+Moving Average "
+Short
+" is
+BELOW
+Moving Average "
+Long
+" on "
+Minimum distance between MA's to determine the trend
+" - downward trend
+Inputs
+Start Lots - initial lot
+Base (Lot=Start Lots * MathPow(Base,Number of open positions)) - basis for exponentiation, used to calculate position volume
+Shutdown Grid - forced closing of all positions and EA operation stop
+Tunnel width (in pips)
+Total Profit Target (in pips)
+Minimal Profit Target (in pips)
+MA Short: averaging period
+MA Long: averaging period
+Minimum distance between MA's to determine the trend (in pips) - minimum distance between indicators for defining a trend
+magic number - unique EA identifier
+Test for EURUSD M5:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21411

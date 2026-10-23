@@ -1,0 +1,4 @@
+This indicator is using filtered prices for RSI (instead of using "raw" prices) and is using Discontinued Signal Line for trend assessment (instead of using slope or fixed levels).
+Price filtering prior to RSI calculation helps in making less false signals without adding significant lag.
+Discontinued Signal Lines are helping in making the significant levels a sort of dynamic levels - instead of using fixed levels, indicator is adjusting itself to market (and RSI) changes - thus making it a sort of an adaptive indicator (i.e. instead of adapting the RSI value, significant levels are adapted, and that effectively makes this indicator adaptive).
+PS: usual set of built in averages is supported for prices filtering. Setting the average period to 1 makes it equal to "regular" RSI.

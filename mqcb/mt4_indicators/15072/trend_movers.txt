@@ -1,0 +1,17 @@
+Real author:
+Khurram Mustafa
+The indicator shows the current possibilities to scalpers, trend lovers and beginners for getting buy, sell, or exit positions.
+Operation Principles
+In the parameters, traders will find some default settings, which are:
+Moving Average
+Relative Strength
+Commodities Channel
+Stochastics
+MACD
+ATR
+After finishing your settings, check out your trading chart. All will be available in one chart.
+Here you will find signal for buy or sell with calculated readings of the most brilliant indicators.
+I hope this will be much helpful for traders to take a step without using extra windows.
+Recommendations:
+Using it any chart with any symbol.
+I'm trying to keep this setting on my EA, will publish after success.

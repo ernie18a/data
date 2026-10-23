@@ -1,0 +1,14 @@
+VKW Bands modify uses the
+METRO
+indicator that should be placed in the ..\
+experts
+\
+indicators
+..... folder.
+The indicator shows where to place the pending orders.
+When the black line crosses the blue or red one and then
+turns away
+you should place an order.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8494

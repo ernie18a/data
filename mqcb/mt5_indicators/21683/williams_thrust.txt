@@ -1,0 +1,38 @@
+The signal and information indicator Williams Thrust is based on two Williams' Percent Range indicators with different periods and their average values.
+There are five inputs:
+First WPR period
+- first WPR calculation period;
+First MA period
+- first WPR averaging period;
+Second WPR period
+- second WPR calculation period;
+Second MA period
+- second WPR averaging period;
+MA method
+- averaging calculation method.
+Calculations:
+if
+FirstWPR > FirstMA
+and
+SecondWPR > SecondMA
+-
+a Buy signal
+.
+If
+FirstWPR < FirstMA
+and
+SecondWPR < SecondMA
+-
+a Sell signal
+.
+Otherwise -
+neutral value
+.
+where:
+FirstWPR = WPR(First WPR period)
+SecondWPR = WPR(Second WPR period)
+FirstMA = MA(FirstWPR, First MA period, MA method)
+SecondMA = MA(SecondWPR, Second MA period, MA method)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21683

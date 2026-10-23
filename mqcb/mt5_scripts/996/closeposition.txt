@@ -1,0 +1,32 @@
+ClosePosition script is designed for closing open positions with the volume depending on their size.
+Input parameters:
+//+----------------------------------------------+
+//| INPUT PARAMETERS OF THE SCRIPT               |
+//+----------------------------------------------+
+input
+double
+VOLUME=
+1.0
+;
+// The volume of the closed position in relation to the initial
+input
+int
+DEVIATION=
+10
+;
+// Price deviation
+input
+uint
+RTOTAL=
+4
+;
+// The number of repeats on unsuccessful transactions
+input
+uint
+SLEEPTIME=
+1
+;
+// Pause time in seconds between repeats
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/996

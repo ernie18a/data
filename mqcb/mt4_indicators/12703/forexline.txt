@@ -1,0 +1,12 @@
+ForexLine indicator provides signals for trade, white line (sell signal) and the blue line (buy signal).
+May be useful to fellow traders.
+Updates (26/03/2015): (update_01)
+Added Alerts (Messages, Email and Sound) to the indicator.
+Eliminate bugs due to the use of ArraySetAsSeries (true).
+Update (08/04/2015): (update_02)
+~ Eliminate bugs due to the use of LinearWeightedMAOnBuffer.
+~ Enhance the signal alerts.
+Updates (21/04/2015):
+(update_03)
+~ Improve signal formula, to make it more accurate.
+~ Simplify the text messages alerts.

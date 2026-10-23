@@ -1,0 +1,6 @@
+==============================================================================================
+Multi_BuyLimitOrder & Multi_BuyStopOrder upgrade:
+Fixed minor execution errors across different brokers and added detailed error descriptions.
+Allow to use magic number and order comments.
+Adjust slippage for specific instrument
+=============================================================================================

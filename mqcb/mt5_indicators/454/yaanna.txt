@@ -1,0 +1,14 @@
+Real author:
+Victor Chebotariov
+Yaanna is the simplest indicator of the overbought/oversold states.
+Application method:
+Yaanna is a confirmatory indicator that must be used for a main signal check.
+We should sell or close long positions when the indicator value is above 100.
+We should buy or close short positions when the indicator value is below 0.
+Similar to many other indicators, overbought/oversold position may show presence of a trend. But the market situation must also be considered.
+The code was published in
+Code Base
+26.03.2009.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/454

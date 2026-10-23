@@ -1,0 +1,10 @@
+I want to remind you that for you to see the maximum data history on the screen, you need to set unlimited in the settings "Max bar in chart"(Tools ->Options->Charts).
+The position of the mouse changes the parameters of the polar coordinate system:
+Changes in the start date of data output are set using the mouse position on the X axis (the maximum amount of data will be displayed when the mouse pointer is in the leftmost position)
+Changing the period of one loop is the position of the mouse pointer along the Y axis (the minimum period is the position at the very top)
+Click on the left mouse button to commit the changes.
+Pressing the "D" key toggles the chart between two modes:
+The size of the circle is formed from a fixed number of bars
+The size of the circle is a fixed time interval. If you use the minute chart, then one loop is a day (24 hours). 0 hours is the top, noon is the bottom.
+The color is responsible for the date. At the very bottom is given a color scale. By placing the mouse pointer on this scale, you can see the date.
+You can see the price by placing the mouse pointer on the chart.

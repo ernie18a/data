@@ -1,0 +1,14 @@
+The author of the idea
+:
+bobby
+,
+the MQ5 code author
+:
+barabashkakvn
+.
+The Expert Advisor determines the trend based on the last three formed bars.
+The trader can set time, during which the EA will analyze the previous three bars before that time, and determine whether there is an uptrend or a downward. Based on this, the EA will open a position in the opposite direction or in the trend direction (in the reversed mode). It can be used for news trading.
+Testing results on EURUSD, M30 in the "Every tick based on real ticks" mode:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20194

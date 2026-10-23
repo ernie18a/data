@@ -1,0 +1,10 @@
+Real author:
+fxfariz a.k.a warrior trader
+The indicator displays DiNapoli levels on the current chart using alerts.
+This indicator was first implemented in MQL4 and published in the
+Code Base at mql4.com
+on 01.04.2008.
+The DinapoliTarget_Malay indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1910

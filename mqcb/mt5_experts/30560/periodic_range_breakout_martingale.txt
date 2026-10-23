@@ -1,0 +1,6 @@
+OVERVIEW
+Taking the close price of a certain hour of a certain day of the week as a reference, if a user-specified percentage of the daily average price range is exceeded from this level, expert opens buy for upside movement or sell for downside movement. take-profit and stop-loss levels are determined by user-defined percentages of this range.
+MARTINGALE MONEY MANAGEMENT
+Probably, you all know martingale strategy which you've doubled volume for each loss. It is a very risky strategy unless you don't know how much you will consecutively lose. Besides, as long as you know how many steps you can lose at most, it is the fastest way to compensate your losses. In this expert, previous cumulative losses are also taken into account, and the losses are covered in the shortest way by adding them to the take-profit and stop loss levels of the next transaction.
+BACKTESTING (2019-2020) PARAMETERS: (1, 0, 1, 70, 200, 70, 0.1)
+WARNING: Author of this expert accepts no responsibility for any losses that may arise from the use of this expert, so use at your own risk!

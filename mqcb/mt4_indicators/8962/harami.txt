@@ -1,0 +1,8 @@
+Hi All,
+This is just a simple Harami bar finder... Do with it what you will...
+Found it useful on H1 charts and seems good for 80-100 pips per trade indication.
+Close on any reversal indication as seen in the middle of the image & follow with 100+ pips on the subsequent long.
+Keep stops fairly tight !
+Regards - TFDM.
+(I've updated the code - you no longer need to comment out the include)
+Harami Indicator - H1 / EURUSD

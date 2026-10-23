@@ -1,0 +1,5 @@
+The most common and essential modification of Bollinger bands. Displays the standard deviation in a separate window, without disturbing the trading psychologically.
+Bollinger Bands %b
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7165

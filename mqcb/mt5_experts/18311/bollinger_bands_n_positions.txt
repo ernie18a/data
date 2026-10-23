@@ -1,0 +1,19 @@
+The author of the idea
+:
+Fafar.forex
+(the beginning of the related discussion
+#103
+)
+MQL5 code author
+:
+Vladimir Karputov
+.
+Features
+Works on a new bar;
+The number of positions is not limited;
+If a BUY signal is received, all SELL positions are closed;
+If a SELL signal is received, all BUY positions are closed;
+Before opening an order, a check is performed if there are enough funds for a double lot.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18311

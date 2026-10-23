@@ -1,0 +1,9 @@
+Indicator
+Rj_SlidingRange
+made in the
+DRAW_FILLING
+style as a color background, which makes it more illustrative in many situations.
+Fig 1. Indicator Rj_SlidingRange_Cloud
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21245

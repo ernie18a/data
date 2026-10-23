@@ -1,0 +1,3 @@
+The idea of the indicator
+Visualize a bar where there was a crossover of two iMAs (MOving Average, MA). The indicator is displayed not in the main window, but in the mod-window.
+Rice. 1. Trading Volume Line

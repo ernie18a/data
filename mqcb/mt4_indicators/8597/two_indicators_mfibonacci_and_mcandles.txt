@@ -1,0 +1,14 @@
+Privately, I use the M15 period and these indicators display the H4 candlesticks status and H4, D1 Fibo levels on it. In addition I included the sound indication when the price approaches to one of the levels in it (I use the sound file with a flip).
+The overall view of the chart with the indicators is represented in the picture. The templates are attached.
+The indicators have the following settings:
+m-Fibonacci:
+TFbar - the Fibo period, standard timeframes in MT4 (60, 240, 1440, etc.);
+FileName - the sound file that should be played when the price approaches one of the levels;
+delta - the distance between the current price and Fibo that should be reached for the signal to play;
+Notice - the flag: if the sound file should be played.
+m-Candles:
+TFBars - the larger standard timeframe;
+NumberOfBars - the number of bars of the larger timeframe;
+ColorUp - the color of the bullish candlestick;
+ColorDown - the color of the bearish candlestick.
+Write your comments. My ICQ is 138-092-006

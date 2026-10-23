@@ -1,0 +1,4 @@
+Modified version of solar winds
+INPUTS:
+Period
+Smooth

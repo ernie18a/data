@@ -1,0 +1,21 @@
+Description:
+This EA is based on the indicator
+RSI_MA
+. EA designed for EURUSD, D1.
+Testing results:
+Symbol EURUSD (Euro vs. United States Dollar)
+Period: Daily (D1) 2010.01.04 00:00 - 2010.09.24 00:00 (2010.01.02 - 2010.09.25)
+Model: Every tick (the most precise method based on all available least timeframes)
+Bars in test: 1191 Ticks modelled: 1694427 Modelling quality: 90.00%
+Mismatched charts errors: 59
+Initial deposit: 10000.00
+Total net profit: 1991.46 Gross profit: 2992.70 Gross loss: -1001.24
+Profit factor: 2.99 Expected payoff:132.76
+Absolute drawdown:218.14 Maximal drawdown:782.92 (7.28%) Relative drawdown: 7.28% (782.92)
+Total trades:15 Short positions (won %) 7 (57.14%) Long positions (won %) 8 (25.00%)
+Profit trades (% of total) 6 (40.00%) Loss trades (% of total) : 9 (60.00%)
+Largest profit trade 999.00 loss trade -203.84
+Average profit trade 498.78 loss trade -111.25
+Maximum consecutive wins (profit in money) 3 (1692.11) consecutive losses (loss in money) 3 (-313.12)
+Maximal consecutive profit (count of wins) 1692.11 (3) consecutive loss (count of losses) -331.84 (2)
+Average consecutive wins 2 consecutive losses 2

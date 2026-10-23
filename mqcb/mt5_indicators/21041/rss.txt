@@ -1,0 +1,23 @@
+Ian Copsey's indicator RSS (Relative Spread Strength) was presented in Stocks & Commodities in October, 2006.
+The indicator has seven configurable parameters:
+Fast MA period
+- fast EMA period;
+Slow MA period
+- slow EMA period;
+RSI period
+- RSI calculation period;
+Smoothing period
+- smoothing period;
+Applied price
+- the calculation price;
+Overbought level
+- overbought level;
+Oversold level
+.
+Calculation:
+RSS = MA(RSI, Smoothing period)
+where:
+RSI = RSI(Fast EMA(Price) - Slow MA(Price))
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21041

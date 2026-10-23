@@ -1,0 +1,7 @@
+SMA_Channel indicator is Indicator based on 1 Moving Average(SMA) which will plot channel on chart. The Indicator use 2 plot styles where user can select 1 or 2 in settings. If PlotStyle 1 is used it will plot the channel as Line, if 2 is used it will plot as Bars.
+Example.
+Blue Bars below Candle = Up Trend
+Gold Bars above Candle = Down Trend
+Example:
+Blue line above Gold line = Up Trend
+Gold line above Blue line = Down Trend

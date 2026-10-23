@@ -1,0 +1,3 @@
+simple trail stop loss code example.
+it's not meant to use as it is. it's code sample for programmer reference only.
+nb: i just want to upload it to somewhere as a backup.

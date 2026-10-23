@@ -1,0 +1,51 @@
+The panel is written by "motives" of the CalculateProfit_EA Expert Advisor from the article
+"Limitations and Verifications in Expert Advisors"
+and is created not for opening/closing of the positions, but for the preliminary calculation of profit/loss and visualization of Stop Loss and Take Profit levels. The calculator contains:
+radio buttons of position type switching (
+Buy
+,
+Sell
+).
+The
+Reset
+reset button to set the parameters to their initial values ​​(the entry price is in the middle of the chart window, Buy position type, stop and profit from the entry price are at the same distance of 1/4 of the distance between the maximum and the minimum price of the window).
+input fields: the entry price (
+Entry
+), lot (
+Lot
+), loss in pips (
+Loss, pips
+), profit in pips (
+Profit, pips
+), loss in deposit currency (
+Loss, USD
+), profit in deposit currency (
+Profit, USD
+). Note: If the deposit is not in terms of dollars, but in other currency, only this currency will be displayed, for example "EUR".
+the lines of entry (orange), Stop Loss (red), Take Profit (green).
+Setup:
+You can download all files into Experts folder, but it is better to create a separate folder for them, for example, ...\MetaTrader 5\MQL5\Experts\ProfitLossCalculator
+Instructions:
+when changing the type of the deal, all parameters will be calculated.
+when entering / incrementing / decrementing lot value, profit and loss values will be calculated in money terms. In addition, minimum and maximum allowed values will be calculated in money terms.
+to change the entry point you can: move the entry line, change the price value in the properties of the line, add increment/decrement value in the Entry entry field.  At that loss and profit values will be calculated in pips and in money terms.
+to change Stop Loss or Take Profit level you can either move the corresponding line or change the value in line properties, or set / increment / decrement the value in the corresponding field. If the price of the line changed, value in pips and in money will be calculated. If value in pips changed, the line will move to the newly calculated level, and also the corresponding money parameter will be calculated. If the value in money changed, the value in pips and the line price level will be calculated.
+Thus, the panel will be useful also for those who place stops and targets by price levels and those who calculate stop levels from the available money loss in a single deal.
+Features:
+the panel is oriented only for the minimum and the maximum prices in the chart window. Hence the maximum allowed ranges of entry price values, profit / loss in pips and in money are set.
+the minimum allowed values in pips are equal to stop level value of the current symbol and the minimums of values in money are calculated on the basis of stop level.
+at attempt to enter the incorrect price value no changes will happen.
+when entering too large values in pips / money fields, the parameters will be equal to the maximum allowed values. When entering too small and also negative values, the parameters will be equal to the minimum allowed values.
+the line of entry can be located only between Stop Loss and Take Profit lines. At the attempt to move the line of entry beyond acceptable ranges, it will return its previous value.
+when changing timeframe or the chart symbol, although the synchronization checks with a 1 second interval are made, data in history may not succeed to load. If it happened, press the Reset button. You should also use Reset, if you change the chart scale or move the chart to the left / right.
+if you occasionally deleted the line, remove and set up the Expert Advisor again. The fact is that if you recover the lines, they will be drawn above the panel that causes some inconvenience. If you draw the lines on the background, the line prices won't be highlighted on the right side of the scale, that is extremely important to my point of view. Thus the decision to cancel the line recovery was accepted.
+Additionally:
+For the calculator based on the CSpinEdit standard library the CDoubleSpinEdit class was written which differs from the original in the following:
+allows you to set the double type values (and number of digits after a comma);
+admits not only incrementing / decrementing values, but the direct enter of the value to the field;
+allows you to specify increment / decrement value;
+all parameters can be set / changed using the SetParameters(double value, double min, double max, double step, int digits) method.
+Perhaps, it may be useful for someone.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1637

@@ -1,0 +1,6 @@
+Trend Envelopes
+with an option to chose smoothed/filtered price in calculation instead of using "raw" prices.
+The usage of filtered prices lessens the number of signals and, depending on your trading style, can be used to filter out undesired signals. To have unfiltered/non-smoothing values, simply set the the smoothing period to less than or equal to 1 and then, regardless of the smoothing type, there will be no smoothing/filtering. The filter for prices used in this version is the parabolic weighted moving average (description of it you can see here :
+Parabolic Weighted Moving Average
+) which is, due to its speed, suitable for filtering the prices
+Also, this version is made as a histogram (thus showing mainly the trend part only making it more suitable for "signaling systems")

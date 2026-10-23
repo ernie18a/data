@@ -1,0 +1,28 @@
+The Expert Advisor is rewritten from MQL4, the author
+ExpertTrader
+, link to the original -
+https://www.mql5.com/ru/code/8894
+.
+How it works
+GO is calculated using the following formula:
+GO=((C-O)+(H-O)+(L-O)+(C-L)+(C-H))*V;
+Where C, O, H, L - Moving Average value on Close, Open, High, Low prices. V - signal bar volume.
+If the value of GO is greater than 0, a buy order is opened, if less - the buy order is closed and a sell order is opened.
+The image shows the performance of the Expert Advisor in the strategy tester's visual mode.
+Parameters
+Lots - lot; when 0, the MaxrR parameter is used.
+MaximumRisk - Risk (default value Lots=0).
+Shift - Bar on which indicators are checked: 0 - forming bar, 1 - first formed bar.
+MAPeriod - MA period.
+MAShift - MA shift.
+MAMethod - MA method.
+VolVolume - Volume.
+OpenLevel - If the value of GO exceeds the level,  a buy order is opened; if it is less than -OpenLevel, a sell order is opened.
+CloseLevelDif - Difference between opening and closing level value should be set in positive value. Closing level must be equal or less than the opening level).
+ShowGO - Display GO value on chart comments.
+Note
+If OpenLevel has 0 value, bar volume value do not influence so OpenLevel and CloseLevelDif parameters are included. These parameters are absent in the source. External parameters have been included for Moving Average.
+...
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1106

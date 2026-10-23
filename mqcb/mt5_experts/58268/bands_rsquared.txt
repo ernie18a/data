@@ -1,0 +1,14 @@
+Good afternoon. The Expert Advisor is based on
+Bollinger Bands and Donchian Channel.
+Sell signal: The
+Donchian Channel
+is
+falling over the period, the opening price is above the upper boundary of
+the Bollinger, and the closing price is below.
+Buy signal: The Donchian Channel is rising over the period, the opening price is below the lower boundary of the Bollinger and the closing price is above.
+The deal is closed either by stop and take or when the Donchian channel is broken.
+There is also a function of R-square calculation in the code of the Expert Advisor.
+Here is the EURUSD test from 01/01/2020 to 01/04/2025
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/58268

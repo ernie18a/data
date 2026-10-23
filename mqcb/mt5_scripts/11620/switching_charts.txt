@@ -1,0 +1,6 @@
+The script switches all opened charts at a certain interval.
+Version 1.02:
+Now it is possible to bring on top only the charts of a certain symbol. For example, if you specify "EURUSD", the charts that have the "EURUSD" symbol will be displayed alternately. And if the symbol name is deleted in the input parameters, then all charts will be displayed alternately.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11620

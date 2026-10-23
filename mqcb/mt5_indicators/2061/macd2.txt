@@ -1,0 +1,10 @@
+The
+MACD
+indicator is in the form of a colored cloud and the difference between the MACD and the signal line in the form of a color histogram.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 31.10.2007.
+Figure 1. The MACD-2 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2061

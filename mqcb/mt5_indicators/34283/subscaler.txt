@@ -1,0 +1,15 @@
+This is a helper indicator which allows you to adjust vertical scale of a subwindow interactively (using keys), which is useful for zooming in and zooming out graphs of your favourite indicator placed in the same subwindow.
+SubScaler allows you to view graphs with larger level of detail, when some enormous candles force the terminal to squeeze the overall picture along the vertical axis. This is a rare problem, but if it occurs, MetaTrader does not provide a built-in mechanism to zoom in/out ad hoc.
+SubScaler does not have buffers and displays nothing on its own.
+SubScaler must be the 1-st indicator in the subwindow, that is it's added to the main window and initiates new subwindow creation. Your indicator (whose scale should be controlled by SubScaler) must be the next one, that is it's dropped to the empty subwindow with SubScaler.
+It's required to enable 'Inherit scale' option for your indicator!
+The example above demonstrates the option for standard Volumes indicator, but it works in the same way for others, including custom indicators.
+When both indicators are applied to a subwindow, use Up/Down arrow keys to scale up/down; hold Shift with the arrow keys to move up/down.
+Scaling up means that picture becomes larger (zoom in, can be clipped), whereas scaling down means that picture becomes smaller (zoom out).
+The chart must have keyboard focus for the keys to take effect.
+Input parameters
+Initial Maximum - upper bound of the data range at primary placement on a chart, +1000 by default;
+Initial Minimum - lower bound of the data range at primary placement on a chart , -1000 by default;
+Scale Factor - the step for the scale increase/decrease [0.01 ... 0.5], 0.1 by default;
+When a chart is restored at the terminal start-up or from a loaded template, the SubScaler picks up the scale from the previous
+state.

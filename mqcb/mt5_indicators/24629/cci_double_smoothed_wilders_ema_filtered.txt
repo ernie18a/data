@@ -1,0 +1,6 @@
+Theory :
+This CCI (Commodities Channel Index) indicator deviates from "regular" CCI in two main points :
+it is using standard deviations for calculations (instead of using mean absolute deviation)
+it is allowing us to use double smoothed Wilder's EMA for price filtering (and that way it filters out some false signals)
+Usage :
+You can use it as any regular CCI

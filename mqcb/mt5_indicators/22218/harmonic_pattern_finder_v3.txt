@@ -1,0 +1,42 @@
+Continuing on the in-demand software for automatically finding harmonic patterns, this is the third and most likely final version of the indicator known as the "Harmonic Pattern Finder". It addresses many of the issues found from the prior iterations, including bug fixes and other improvements. Furthermore, the code is extensively refactored such that it should be straightforward for other programmers to integrate their own custom extensions or create an EA based on the pattern matching algorithm.
+For those who do not know harmonic patterns – it is a method of technical analysis based on Fibonacci ratios in the markets and patterns made of these. Kind of like patterns such as triangles and double tops, but with precise measurements which makes computerized measuring tools especially appealing for trading these patterns. Currently, there are two earlier versions of this indicator in the codebase for MQL5 (V1:
+https://www.mql5.com/en/code/16435
+, V2:
+https://www.mql5.com/en/code/16852
+).
+Some highlights from this new one include:
+Efforts to reduce the amount of screen clutter through adjustable means of selecting what should be displayed.
+Double clicking any part of a pattern will now highlight it along with detailed analytical information like harmonic reversal ratios and temporal aspects.
+Multiple zigzag selection has been dropped in favor of a single embedded one identical to the ATR ZigZag (
+https://www.mql5.com/en/code/22214
+). This means that no one should face installation issues as long as all files are placed in the same folder.
+Collection of statistical information makes it possible to see how well a pattern has performed in the past.
+The ratios for "anti-patterns" should now be correct.
+So just go ahead and download it as its usage is pretty intuitive. It is recommended to use a black background or else you will need to set a visible color scheme in the indicator settings. For detailed technical information about the indicator continue reading after the image. For questions feel free to post in the forum or send a PM.
+Double clicking a pattern makes it stand out from the rest (purple) and shows detailed statistics, timing and PRZ information that can be useful for evaluating a trade.
+Screen clutter reduction
+Apart from the interactivity features, one can in the settings choose if the indicator should:
+Fill patterns visually or just show the line segments
+Show pattern descriptions. Enabled by default which causes the specific names and points of a pattern to be drawn.
+Show emerging patterns. This is enabled by default and shows the future projections necessary to anticipate a trade opportunity.
+Show old patterns. This is enabled, but causes the indicator to draw already completed patterns – which strictly speaking is not always necessary.
+Show "one-ahead" projections. Though disabled by default, enabling this option causes the indicator to become more responsive than the zigzag and projects patterns ahead of the current swing
+Draw soft projections. This is a mode of visualizing projected patterns that is minimally cluttering using colors that blend in to the background scheme.
+Show the comment box. This occupies the upper left of the chart and gives statistical information.
+Pattern filtration engine
+Different traders have different rules for determining whether or not a pattern is worth trading. Many theories exist, we shall not go through each of them here. The indicator adopts a "holistic" matching approach checking if each pattern ratio is within acceptable bounds set by a slack setting. However due to feedback from users, it is now possible to filter out patterns and projections where the potential reversal zone only consists of slack. A different, independent filtration method allows to filter out patterns that complete too early or too late based on measurements of the duration of the X-B segment compared to the B-D segment, or A-B to C-D for ABCD patterns.
+Does this not suit your needs? Well if you know how to code then it is possible to write custom "filtration" rules, as explained below.
+Statistical data
+Based on the history of the current instrument, the indicator will remember which and how often a pattern fails or succeeds to reverse in the PRZ. This information can be gleaned in the comment box, which shows messages such as "F. Bear. New Cypher Prob. 60.00 (6 S / 4 F)". The first letter merely asserts whether or not the pattern has recently been clicked (F.), failed (O.), succeeded (P.), or tested the PRZ (T.). Next comes the direction and pattern name, before the statistical reversal chance is shown, in this case 60%. This is calculated from the history which has 6 successes and 4 failures of the pattern, shown if double clicking it. But by all means, keep in mind that past performance does not necessarily predict future results :)
+Customizing the indicator
+As stated, the indicator is extensively refactored and takes into account MQL5's object oriented features such as classes and interfaces. The indicator now consists of multiple files and has the architecture shown in the following UML diagram.
+Do you want to create an EA? Well then you can implement an own "CHPFMatchProcessor", give it to the matching algorithm, and call it like the indicator currently does, which is to feed it the zigzag arrays and wait for responses. The matching algorithm will call the match-processor for each match found in the zigzag data, determining if a pattern is matched, overshot, or undershot (projected). This is what must be passed on to EA logic.
+Need custom filtration or observation rules? A filtration would be to for example ignore patterns where the RSI isn't right or the XA segment is too straight. Then it should be as easy as writing an implementation of the "CHPFFilter" interface and plug it into the list of filters; the current time and purity filters are explanatory. An observation rule would for example be to send a push message or sound an alert whenever a pattern is matched. This can be accomplished in a similar way by implementing the "CHPFObserver" interface.
+Authors:
+This indicator is a joint work between
+Andre Enger
+and
+David Gadelha
+Updates
+3.1: Corrected a syntax error for compatibility with MetaTrader build 1940 and above.
+3.2: The tooltip on the line from X to D should now display the most relevant ratio for the specific pattern.

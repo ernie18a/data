@@ -1,0 +1,10 @@
+The real author:
+Alexandr Serkov
+The indicator plots a fan of Moving Averages and calculates Acceleration/Deceleration for each of them. This gives the ability to see the attenuation of a trend and the moment of its change.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base on mql5.com
+on 18.12.2014.
+Fig.1. The dynamix indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13978

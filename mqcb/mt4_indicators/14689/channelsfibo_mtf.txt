@@ -1,0 +1,7 @@
+The multitimeframe version of the
+ChannelsFIBO
+indicator. Differs from the original version with the "Source data timeframe" parameter. As a result, the indicator will display the same situation regardless of the current chart period. For example, the current period — M15, and the "Source data timeframe" — "1 Hour":
+Limitation: the current period of the chart can not be higher than the value specified in the "Source data timeframe" parameter, as in this case multiple values of the same line of the channel will correspond to one bar. For example, if the "Source data timeframe" — "1 Hour", and the current chart period if H4 or higher, then the indicator simply will not display anything on the screen.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14689

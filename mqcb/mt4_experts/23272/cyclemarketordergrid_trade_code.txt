@@ -1,0 +1,19 @@
+Description:
+This Expert Advisor is for the grid trade.
+Market order is repeated in a single direction at fixed intervals.
+Examples
+For USDJPY:
+If you set maxPrice = 115, grid trade is executed In the range of 115 to 105 yen.
+For EURUSD:
+If you set maxPrice = 1.15, trap trade is executed In the range of 1.15 to 1.05 doller.
+The product works on any timeframe.
+Parameters:
+version - version of the module.
+magic - set magic number.
+entry - only buy 1,only sell -1.
+maxPrice - maxPrice should set the maximum price of the range.
+maxCnt - set the maximum number of positions.
+lots - set the number of lots. 0.01 means 1 000 currency.
+BreakEven - set the lowest profit, in pips.
+TrailingStop - set trailing stop, in pips.
+spanPips - set the interval, in pips.spanPips should set plus.

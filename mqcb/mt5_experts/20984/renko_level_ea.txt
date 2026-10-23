@@ -1,0 +1,14 @@
+The EA uses indicator
+Renko Level
+(the indicator must be in the MQL5\Indicators\MyInd\ folder)
+Inputs
+Lots (or "Lots">0 and "Risk"==0 or "Lots"==0 and "Risk">0) - constant lot size
+Risk (or "Lots">0 and "Risk"==0 or "Lots"==0 and "Risk">0) - lot size is calculated dynamically
+Size of block - "block" size
+Reverse - flagging the reverse of signals for opening positions
+Increase - flagging to incrase the positions
+magic number - the unique EA identifier
+An example for AUDUSD,M1:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20984

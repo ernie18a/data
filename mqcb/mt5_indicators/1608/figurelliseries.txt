@@ -1,0 +1,7 @@
+The real author:
+Rogerio Figurelli
+The indicator allows defining the trend direction. The indicator displays the trend strength in the form of histogram bars on the lower window. If bars are higher than the zero level, it speaks of the ascending trend in the market. If the bars are lower than the level, it is the descending trend.
+Fig.1 The FigurelliSeries indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1608

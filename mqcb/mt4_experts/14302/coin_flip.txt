@@ -1,0 +1,56 @@
+Expert Advisor with no custom indicator used, orders are opened pseudo-randomly. Equipped with a virtual trailing stop. After a loss the lot is increased by martingale with the specified parameters. Adapted for 4-5-digit quotes.
+The EA opens deals in Market Execution mode. Take Profit and Stop Loss are placed after order execution and modified in accordance with the EA settings.
+Parameters:
+Risk
+—
+automatic calculation of the lot for the first trade;
+Lot
+— trading lot, if Risk=0;
+Martingale
+—
+lot multiplication factor in case of a loss;
+MaxLot
+—
+maximum allowed lot
+;
+TakeProfit
+— Take profit
+;
+StopLoss
+— Stop Loss
+;
+MaxAttempts
+—
+the maximal number of attempts to open an order
+;
+Pause
+— pause between attempts
+;
+Slippage
+—
+maximum slippage
+;
+TrailingStart
+—
+number of points to start trailing;
+TrailingStop
+— step of Trailing Stop
+;
+Magic
+—
+magic number;
+Com
+—
+comment to trades;
+DrawInfo
+—
+display/hide information on the trading;
+Languages
+—
+language of the displayed trading data;
+TextColor
+—
+displayed data color.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14302

@@ -1,0 +1,37 @@
+An Advanced
+XaosExplorer
+indicator.
+Parameters:
+extern
+int
+Separation
+=
+15
+;
+extern
+int
+AlarmOn
+=
+false
+;
+extern
+int
+SHOW_SIGNALS
+=
+true
+;
+extern
+double
+indicator_lev1
+=
+1.0010
+;
+// I believe playing around with these constants
+extern
+double
+indicator_lev2
+=
+0.999
+;
+// can make patterns appear more vivid as well as unvivid.
+Xaos Explore Perky_Mod

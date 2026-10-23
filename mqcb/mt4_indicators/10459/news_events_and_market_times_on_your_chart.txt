@@ -1,0 +1,27 @@
+Description:
+The clock will display the different times, the open markets and market holiday and it will show you the news you select to see.
+Indicator displays News with a market clock.
+News events "http://www.dailyfx.com/files/"
+Market times found at "http://www.2011.worldmarkethours.com/Forex/index1024.htm"
+More info:
+/go?link=http://www.donnaforex.com/forum/index.php?topic=4339.0
+Image:
+Some sources I have used:
+This article Displaying a News Calendar written by Slobodov Gleb and to read at
+https://www.mql5.com/en/articles/1502
+shows a way how to get data displayed on the chart. The file contains the description of writing a simple and convenient indicator displaying in a working area the main economic events from external Internet resources.
+Another source I have used for this indicator is the indicator SimpleMarketInfo here to find
+http://codebase.mql4.com/en/code/10000
+made by born2trade (2010.11.25). It shows upcoming news events 1 hour before and 30 minutes after event. It also shows active sessions etc. It gives a look to all news events. Changes on this. I did wanna have the possibillity to choose the kind of news I like to see, and when local time isn't brokertime there was not the correct displaying vertical lines on the chart. And some other changes...
+Found the indicator Clockzv1_2 auto.mq4 (
+https://www.mql5.com/en/forum/109854
+) from "Jerome" This version made it possible for me to write down the coming DST times for the local markets also. ST/DST changes are unique to each timezone. To know when a market is open we have to know the right localtime...
+timezones
+/go?link=https://www.timeanddate.com/worldclock/
+markethours:
+/go?link=http://www.2011.worldmarkethours.com/Forex/index1024.htm
+Auckland/Sydney/Tokyo/Hong Kong/Europe/London/New York.
+Update 14 October 2011
+forex_news_market_clock_2.mq4
+Found a way to edit my post so by this I replace the old indicator with the improved newer version
+Hope it is for all working perfectly. Like to know how you think about it. It's the best way for me improve my programming

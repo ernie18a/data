@@ -1,0 +1,25 @@
+Volatility Stop indicator is a stop level by volatility
+based on the article "10 Selling Tips" by
+Thomas Bulkowski
+.
+It has two configurable parameters:
+Period
+- calculation period
+Multiplier
+- ratio of the line deviation from the price
+Calculation:
+VS = Multiplier * HiLoAvg / Close
+where:
+HiLoAvg = MAH - MAL
+MAH - SMA(High,Period)
+MAL - SMA(Low, Period)
+It can be used with the
+Volatility Stop Oscillator
+indicator.
+By default, the indicator line is displayed below the price (Multiplier = 2):
+To draw a line above the price, you should enter a negative coefficient value (Multiplier = -2):
+The indicator can also be used to create a volatility channel by applying two indicators with different Multiplier values to a chart.
+For example, you may use 0.618 for the lower line and -0.618 - for the upper one and trade when the lines of the obtained channel are broken.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22366

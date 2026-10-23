@@ -1,0 +1,50 @@
+The Expert Advisor is based on the channel indicator
+Price_Extreme_Indicator
+.
+The strategy is simple:
+If the close price of the candlestick specified in settings (1 by default) is above the upper channel border on the same bar, a long position is opened.
+If the close price is below the lower border, a short position is opened.
+Positions are opened on each new bar if the above conditions are met. If a buy signal emerges and there are open sell positions, such positions will be closed and a buy position will be opened. The opposite is true for sell signals.
+The Expert Advisor allows enabling/disabling long/short trades as well as reversing indicator signals to open sell instead of buy and vice versa. You can also set Stop Loss and Take Profit in points. If invalid Stop Loss and Take Profit values are specified, the EA will adjust the values to the minimum
+StopLevel
+allowed for the symbol.
+If the lot value is invalid, the EA will adjust it to a proper value. If the lot is too large, the EA will adjust it in order to be able to open a position. If there is no money for opening even the minimum lot, the signal will be skipped.
+Note that for a proper operation, the EA needs the compiled indicator file
+Price_Extreme_Indicator
+. Also note that the Expert Advisor is designed for training and strategy testing purposes.
+The EA has 11 configurable parameters:
+Experts magic number
+- unique number for the Expert Advisor to identify its positions;
+"Length of levels" of indicator
+- parameter of Price_Extreme_Indicator;
+Bar of signals
+- bar from which indicator signals will be used, default is 1;
+Long positions enabled
+- allow opening long positions;
+Short positions enabled
+- allow opening short positions;
+Reverse trade
+- enable or disable reversing of signals;
+Lots
+- position volume;
+Stop loss in points
+- stop loss value in points, set to 0 by default, i.e. not used;
+Take profit in points
+- take profit value in points, set to 0 by default, i.e. not used;
+Slippage price
+- allowable price slippage in points;
+Multiplier spread for stops
+- spread multiplier for calculating a correct distance for stop orders. For Stop Loss and Take Profit orders (as well as pending orders), there is a minimum allowed distance for placing such orders -
+StopLevel
+. I.e. Stop Loss and Take Profit (as well as pending orders) cannot be placed closer than this distance to the price. If
+StopLevel
+is zero, it does not mean its absence, it only means that
+StopLevel
+is floating. In this case, the minimum distance is usually equal to spread*, but sometimes even the double spread is not enough. So, this parameter allows specifying a custom multiplier for the spread used to calculate the minimum distance for placing stop orders.
+To check the strategy, testing with default settings was performed using data in the interval from 2017.01.02 to 2018.01.19. Unfortunately, in this mode (trading the channel breakout) the Expert Advisor loses the deposit at the very beginning of the testing period. Then testing was performed with reversing signals. The following results were obtained:
+Period M5, testing interval: 2017.01.02 - 2018.01.19
+All parameters are set to default except for the reverse (Reverse trade == "Yes")
+The testing graph shows that the EA is highly dependent on the market state (trend/flat). In this test, the EA traded inward from the channel borders. Stable profitable/losing areas are clearly visible. When trading inside the channel, the EA makes profit in flat zones. But as soon as the trend begins, trading inside the channel becomes unprofitable. So the strategy can be further developed: the EA should trade inside the channel during flat period and it should trade the channel breakout in trend direction during trend periods.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19818

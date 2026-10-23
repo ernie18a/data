@@ -1,0 +1,6 @@
+Theory :
+Often we have a need of normalizing some values into known bounds in order to use them in the "oscillator" mode (when we can have a sort of a clear state for a "trend"). One of the possible ways to do that is by using the zero mean method. This version of nonlinear Kalman filter is using a sort of zero mean normalization to make an oscillator out of the filter
+Usage :
+You can use the color change as signal. There are two possible color change modes :
+color change on zero cross
+color change on slope change

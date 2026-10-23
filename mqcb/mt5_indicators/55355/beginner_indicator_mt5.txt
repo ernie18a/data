@@ -1,0 +1,12 @@
+Beginner MetaTrader indicator
+— a very simple custom indicator that displays the local tops and bottoms on the chart with the red and blue dots near them. It analyzes the maximum and minimums on the certain period and then compares them to the range, in which the currency pair was trading, and if the top/bottom is significant enough, it marks it with the dot. This indicator redraws itself and thus should not be used for generating trading signals as the dots' positions may change. Both MT4 and MT5 versions of the indicator are available.
+Input parameters
+AllBars
+(default = 0) — the amount of bars to use for calculations (0 — all bars). There is no reason to change it.
+Otstup
+(default = 30) — the number of percents that are cut from the range before comparing maximums and minimums to determine their significance. The higher this number is the more frequent are the dots.
+Per
+(default = 9) — the period, on which the maximums and minimums are calculated at given moment. The higher is the number the fewer dots are drawn.
+It is very important to understand that this indicator cannot be used for actual trade signals. For example, you cannot sell when the red dot appears or buy when the blue one is drawn — you will end up losing. This indicator can only be used to quickly find the
+support and resistance levels
+if you trade some breakout system or to develop your own indicators.

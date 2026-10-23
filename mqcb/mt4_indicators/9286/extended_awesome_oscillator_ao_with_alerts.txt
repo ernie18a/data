@@ -1,0 +1,11 @@
+Author:
+I'm not the author of this script. This indicator is the improvement of the
+Awesome_Signal - Extended Awesome
+indicator. After my request the alert system development is made by the
+FxService.eu
+. Great thanks to the developer.
+This is probably the most advanced Awesome Oscillator (AO) availale with this features:
+1. Signal line
+2. Signal line shift
+3. Zero line crossover alert (both sound and message box)
+4. Signal line alert (both sound and message box)

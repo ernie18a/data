@@ -1,0 +1,230 @@
+Overview
+This Expert Advisor trades the
+Relative Moving Average (RMA)
+framework introduced by Dr. Daniel Alexandre Bloch in
+A Course on Systematic Trading with RMA
+. It implements all four of the paper's
+cross-strategies
+together with its
+Adaptive Crossover Exit
+, and every entry and exit is expressed in fractile space rather than in price.
+The premise is that a window of prices is more informative as a distribution than as an average. On each bar the RMA takes the trailing window of W closes, re-expresses them as returns about their own mean, and reports where the newest one ranks inside that distribution as a
+fractile
+in [0, 1]. The paper's aim is then to ride the oscillations of that rank between the distribution's extremes: long as it travels from the minimum toward the maximum, short as it reverses. Because a fractile is a rank rather than a distance, a threshold like 0.9 carries the same meaning on every symbol and in every volatility regime, which is what makes the rules portable.
+Note:
+this is not the "RMA" some charting platforms expose (Wilder's smoothing, an EMA variant). Despite the shared acronym it is a different object entirely.
+The EA owns no mathematics. All of it lives in the companion indicator
+RMA_Engine
+, which the EA loads through
+iCustom
+and reads with
+CopyBuffer
+on each closed bar. That split is deliberate and buys two properties worth having: the EA cannot disagree with the chart about what the fractile was on a given bar, because there is only one calculation; and the rules never touch an order, so they can be replayed over history by a script with no broker involved.
+How It Trades
+The four legs.
+The strategy rides traversals of the window's own distribution. Reaching an extreme
+arms
+a side, which is the paper's origination test, and the entry fires when the fractile subsequently crosses a quantile bin in the traversal's direction. The extreme is not the trigger; the crossing is, so an entry can fire anywhere along the traversal. The names describe the price movement, not the position:
+Long-cross-reverse.
+The fractile leaves the maximum and heads down toward the minimum. The EA rides that descent by going
+short
+.
+Short-cross-reverse.
+The mirror case. The fractile leaves the minimum and climbs toward the maximum, ridden
+long
+.
+Long-cross-revert.
+A descent that began at the maximum turns back up before reaching the minimum. The EA follows it back toward the maximum,
+long
+.
+Short-cross-revert.
+A climb that began at the minimum turns back down before reaching the maximum, followed back down,
+short
+.
+Between them the four cover both ways a partial move can resolve. Every open position belongs to one named leg, and the leg is what decides which exit test applies and what a reversal turns into, so the same fractile reading closes one position and holds another.
+The four legs on one distribution: reverse legs ride a full traversal from one extreme toward the other, revert legs are taken when a traversal turns back before reaching the far extreme.
+The adaptive exit.
+This is where the regime detector earns its place. The paper defines two base exits and then a third that chooses between them:
+Full Distribution Crossover.
+Assumes the traversal completes, so the exit of one side coincides with the entry of the other. A short taken from the maximum is closed only when the fractile actually reaches the minimum and turns up, and because that turn is itself the origination of a fresh trade the other way, the exit reverses directly into it.
+Extremum Revert Trigger.
+Assumes nothing about the far extreme. The position is closed on the first solid evidence that the move it was riding has stopped: a run of quantile-bin steps the wrong way, a crossing back through the median zone, or a single step large enough to speak for itself.
+Adaptive Crossover Exit.
+The paper's rule, and what the EA implements: the revert trigger during expansion and transition, where partial traversals are likely, switching to the full crossover once contraction is identified. The revert legs always use the revert trigger, in every regime.
+The run-length test is what keeps the revert trigger from firing on noise. A signed run of bin steps accumulates while the fractile keeps moving the same way and resets when the direction changes, so "two bins back up" means the move really has turned rather than merely paused.
+The safety exit.
+Above and before either strategy exit sits an adverse-movement check. A mean-reversion position is offside by construction for a while, so being offside cannot be the exit test; the real warning sign is being offside
+and
+watching the fractile keep stepping further offside. That is precisely what a low
+D_k
+reading on the wrong side of the median describes, and it is the one exit that ignores the minimum-profit setting entirely, because it is not trying to book a target but to stop feeding a trend that has already turned against the trade.
+When it fires on a loss it also blocks re-entry on that same side until the fractile crosses back over the median, so the strategy cannot immediately hand the market the same losing trade again. If the range is expanding at that moment, the EA takes the
+opposite
+side instead, on the reasoning that a mean-reversion signal which keeps failing is evidence of a trend rather than of a better price. Those two trend-follow legs are the only part of the system that is not symmetric.
+Recommended Setup
+Setting
+Recommended value
+Notes
+Symbol
+EURUSD
+The development and testing instrument. The fractile scale is self-normalising, so the rules carry to other symbols without recalibration, but the settings below have only been tested here.
+Chart timeframe
+H2
+The testing timeframe. The window is measured in bars, so a shorter timeframe with the same W simply describes a shorter stretch of market. Average holding time on H2 was roughly a day.
+Account type
+Netting or hedging
+The EA holds at most one position at a time and reverses by closing and reopening, so either account type works.
+Prerequisite
+RMA_Engine must be compiled
+Compile Indicators\RMA\RMA_Engine.mq5 before attaching the EA. Without the .ex5 present the iCustom call fails and the EA refuses to initialise with a message naming the file.
+History required
+W plus the regime lookback
+The EA stands still on any bar where the engine cannot yet answer, so a short history costs signals rather than producing wrong ones.
+Important:
+always test on a demo account first. The source paper's own Results section is left as future work, so it supplies a framework and its mechanics, not an empirical track record. Every performance figure below is from a single historical run of this implementation and is a starting point for your own testing, not a validated edge inherited from the research. Past performance does not guarantee future results.
+Key Features
+Faithful to the paper
+All four cross-strategies are implemented, the two reverse legs and the two revert legs, not a simplified pair.
+The Adaptive Crossover Exit switches between the Full Distribution Crossover and the Extremum Revert Trigger by regime, exactly as the paper specifies.
+The fractile is the paper's appendix definition, the plain empirical CDF of the window. Where the paper's prose and its appendix disagree, the appendix wins and the discrepancy is documented in the source rather than silently patched.
+One calculation, in one place
+Every number the rules read comes from RMA_Engine through CopyBuffer, so the chart and the trades cannot drift apart. There is no second implementation of the mathematics to keep in step.
+The rules live in a class that never calls OrderSend, reads a position, or prints. It is handed a ten-field bar structure and returns an instruction, which is what makes the strategy testable without a broker.
+Order placement, bookkeeping, and risk live in a separate class, kept apart from the rules for the same reason.
+Decisions on final data only
+Buffers are read from position 1, never 0. Bar zero is still forming and every rule is written about a bar whose close is final.
+A warmup bar, a gap in the history, or an engine that has not calculated yet all produce the same answer: no decision on this bar. Nothing is inferred from a missing reading.
+Whether the account was open is settled before anything acts on it, so a bar is either an exit bar or an entry bar, never both.
+Execution that survives a real broker
+A close-and-reverse asks the broker to flatten at the moment the opposite trade is due, and the broker does not always oblige on the first attempt. Refused closes are latched and retried on every tick until they fill, rather than dropped, and a reversal is never stacked on top of a position that is still running.
+The entry is booked against the price actually filled, not the price requested, so slippage does not leak into the pip figures that feed the exit rules and the optimisation score.
+Lot size is clamped to the symbol's minimum, maximum, and step.
+The open leg is persisted to global variables, so a position that outlives a terminal restart is picked back up as the trade it actually was rather than as an orphan.
+Operational controls
+Optional fixed stop loss and take profit in pips, an optional session filter that correctly handles a window running through midnight, and an optional end-of-session flatten. These are deployment controls rather than part of the framework: the paper concerns itself with the signal and leaves the risk envelope to the operator.
+An optional on-chart status block showing the current fractile, regime, and leg, with entry and exit markers, plus a verbose mode that journals every refusal and the reason for it. Both are off by default, so the EA trades silently.
+A custom optimisation criterion returning net pips weighted by the square root of the trade count and the win rate, so a run of four hundred trades outranks one of forty at the same net result without letting trade count dominate outright. Runs under ten trades score zero.
+Backtest Results
+A single run on
+EURUSD, H2
+, from 2025.05.01 to 2026.07.26, roughly fourteen months, on
+100% real ticks
+with a 10,000 USD deposit at 1:500.
+Metric
+Value
+Total net profit
+362.51 on a 10,000 deposit
+Total trades
+138
+Profit factor
+1.15
+Sharpe ratio
+0.82
+Maximal equity drawdown
+463.87 (4.52%)
+Profit trades
+46.38%
+Average win / average loss
+42.80 / -30.82
+Long / short win rate
+46.58% / 46.15%
+The win rate sits just under half, and the system stays profitable because the average win is larger than the average loss, which is the payoff profile of a mean-reversion strategy that lets its reversals run. Longs and shorts perform almost identically, as expected from a framework that is symmetric by construction.
+The run did not use the shipped defaults.
+Six inputs differed, and loading the EA as it ships will not reproduce these figures. The tested values were:
+InpRegimeLookback
+200 (default 20),
+InpRangeHistoryLookback
+400 (default 100),
+InpExitTargetUpper
+0.9 and
+InpExitTargetLower
+0.1 (both default 0.0, which selects the extremum logic instead of an outright fractile target),
+InpStopLossPips
+50 (default 0, no stop), and
+InpUseTimeFilter
+true with hours 01 to 23 (default off). Everything else was at its default.
+The equity curve over the test period: steady participation with shallow drawdowns rather than a single lucky run.
+The full Strategy Tester report for the run, showing the settings, the trade statistics, and the balance and equity curves.
+Installation and File Structure
+One Expert Advisor, one required indicator, one optional panel, and seven headers. The layout matters: the EA loads the engine by the relative path
+RMA\RMA_Engine
+and the headers are included as
+<RMA\...>
+, so each file must sit in its
+RMA
+subfolder. Compile the indicators before the EA.
+File
+Role
+Description
+Experts\RMA\RMA.mq5
+Orchestrator
+All inputs, the iCustom call, the per-bar read of engine state, and the order in which the signal engine, the trade manager, and the display run. Contains no strategy logic of its own.
+Indicators\RMA\RMA_Engine.mq5
+Required indicator
+Computes every RMA series and publishes nineteen buffers. The EA will not initialise without it.
+Indicators\RMA\RMA_Panel.mq5
+Optional panel
+Mirrors a group of engine buffers into a sub-window with its own scale, for the series that are unreadable on the engine's 0-to-1 axis. Display only.
+Include\RMA\RmaTypes.mqh
+Shared vocabulary
+The regime and cross-state enumerations and the buffer map. The one place the EA, the engine, and the panels agree.
+Include\RMA\RmaCore.mqh
+Numerical core
+The SMA, the RMA family, the normalised-return distribution, and the fractile function.
+Include\RMA\RegimeDetector.mqh
+Regime classification
+Expansion, contraction, and the two transition states, from the Relative Extremum Ratios corroborated by slope, z-score, and coefficient of variation. This is what selects the exit rule.
+Include\RMA\AdverseMonitor.mqh
+Directional consistency
+d_med_w, the median-centred fractile, and D_k, the upward share of its recent steps. Feeds the safety exit.
+Include\RMA\SignalEngine.mqh
+The rules
+Arming, the four entry legs, the three exits and the adaptive switch between them, the safety exit, the re-entry block, and the reversal. Takes a bar, returns an instruction, touches nothing else.
+Include\RMA\TradeManager.mqh
+Execution
+Order placement, lot clamping, stops and targets, position sync, the retried close, session controls, leg persistence, pip accounting, and the optimisation score.
+Include\RMA\RmaDisplay.mqh
+On-chart status
+The status block and the entry and exit markers. Labels are created once and updated in place, so there are no duplicate objects and no redraw flicker.
+Input Parameters
+Nine input groups. The first two are forwarded to the engine and change what it computes; the rest govern the rules, the orders, and the display.
+Group
+Key parameters
+Defaults
+Window
+InpWindowSize, InpSmoothingPeriod
+106 bars, 10
+Regime detection
+InpEpsilonLow, InpEpsilonHigh, InpSlopeThreshold, InpRegimeLookback, InpVariationRatioLow, InpZScoreExpansion, InpRangeHistoryLookback
+0.15, 3.0, 0.0001, 20, 0.1, 1.0, 100
+Adverse movement
+InpUseAdverseExit, InpAdverseLookback, InpAdverseThresholdDown, InpAdverseThresholdUp
+true, 10 bars, 0.3, 0.7
+Entries
+InpEntryUpperThreshold, InpEntryLowerThreshold, InpEntryMinDiff, InpCloseThreshold
+0.9, 0.1, 0.0 (any turn counts), 0.1
+Exits
+InpExitTargetUpper, InpExitTargetLower, InpExitProfitMinPips
+0.0, 0.0 (both zero selects the extremum logic), 0.0 (off)
+Trading
+InpLotSize, InpMagicNumber, InpTradeComment
+0.1 lot, 20251230, "RMA"
+Risk
+InpStopLossPips, InpTakeProfitPips, InpUseTimeFilter, InpStartHour, InpEndHour, InpEODClosePositions
+0 (none), 0 (none), false, 8, 20, false
+On the chart
+InpShowDisplay, InpAttachEngine, InpShowPanels, InpPanelAdverse, InpPanelRmaValues, InpShowRegimeBand, InpVerbose
+all off by default, so the EA trades silently
+Note:
+the two window inputs and the regime group are passed straight through to RMA_Engine, so changing them changes the series the rules read. If you also attach the engine to the chart by hand, give it the same values or the chart will describe a different window from the one being traded.
+Research Basis
+The implementation follows:
+Daniel Alexandre Bloch,
+A Course on Systematic Trading with RMA
+, available on
+SSRN
+.
+The paper contributes the framework and its mechanics: the fractile representation, the four cross-strategies, and the Adaptive Crossover Exit that selects between them by regime. It does not contribute a track record, since its Results section is left as future work in the version in hand. The value on offer is a strategy expressed on a scale that means the same thing on every instrument, and a foundation for your own testing on other symbols and timeframes or with the window calibrated per asset, as the paper intends.
+A companion article derives the mathematics, walks through the implementation of every module, and explains each of the four legs and the exit logic in detail:
+Bloch's Relative Moving Average (RMA) Framework Implementation In MQL5
+.

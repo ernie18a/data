@@ -1,0 +1,23 @@
+Key Reversal pattern is similar to
+Engulfing
+price action pattern and consists of three bars. Two of them are trend-following and the third (key) one should absorb the previous (second) one.
+The indicator implements a simplified pattern structure:
+Bullish Key Reversal - two bearish bars and one bullish bar (the third one). The third bar's Close price exceeds High of the previous (second) bar.
+Bearish Key Reversal - two bullish bars and one bearish bar (the third one). The third bar's Close price is lower than Low of the previous (second) bar.
+There are five inputs:
+Trend detection period
+- number of bars preceding the key one
+Use trend detection filter
+- consider bars before the key one (Yes/No)
+Show alerts
+(Yes/No)
+Send mails
+- send signals to an email (Yes/No)
+Send push-notifications
+- send push notifications to a mobile device (Yes/No)
+If
+Use trend detection filter
+is disabled, the pattern applies the key bar only.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23122

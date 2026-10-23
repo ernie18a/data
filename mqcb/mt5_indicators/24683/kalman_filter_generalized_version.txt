@@ -1,0 +1,7 @@
+Theory :
+This one was published long time ago using Kalman filter name (among other publications, you can check this one too :
+Kalman filter
+- a version for mt4). Kept the name and made it use what metatrader 5 can do now : being applied to another indicator data
+PS: the color of the indicator is nor based on the slope of the indicator, but on the internal "velocity" that is calculated in the process of calculating this indicator
+Usage :
+Apply it to price or any other indicator you wish to use and see what the  filter shows you. You can use color changes as signals

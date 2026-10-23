@@ -1,0 +1,18 @@
+Murreys Math Oscillator is a market direction oscillator with Murray levels.
+The indicator has three input parameters:
+Period
+- calculation period
+Multiplier
+- multiplier for adjusting levels to the current state of the oscillator chart
+Show levels
+- display Murray levels (Yes/No)
+Calculation:
+MMO = 2.0 * (Close-Mid)/Range
+where:
+Mid = Min+Multiplier * Range * 4.0
+Range = Max-Min
+Min,Max - the lowest and the highest prices in the Period range
+When the oscillator reaches the next Murray level, the column color changes to the one corresponding to that level.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22361

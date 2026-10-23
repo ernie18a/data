@@ -1,0 +1,5 @@
+Author: Igorad
+Trend filter. In short, the RSIFilter fails on strong fluctuations, but handles the trend good enough, but if it get improved a bit, it could be able to give clear answers.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7459

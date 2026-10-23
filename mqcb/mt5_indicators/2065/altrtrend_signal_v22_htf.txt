@@ -1,0 +1,14 @@
+The
+AltrTrend_Signal_v2.2
+indicator with the timeframe selection option available in input parameters.
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+//Indicator chart period
+The indicator requires the compiled indicator file AltrTrend_Signal_v22.mq5. Place it to the terminal_data_folder\MQL5\Indicators\.
+Figure 1. Indicator AltrTrend_Signal_v2_2_HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2065

@@ -1,0 +1,69 @@
+The Expert Advisor searches for N identical candlesticks in a row. It buys on bullish candlesticks and sells on bearish ones. The EA checks whether the account is netting or hedging. The
+CPositionInfo
+,
+CTrade
+,
+CSymbolInfo
+, and
+CAccountInfo
+trade classes are used in this code.
+Version 1
+N candles
+.
+Search example for N=3:
+Version 2
+N- candles v2
+.
+What's new in version 2: The "Take Profit", "Stop Loss", and "Trailing" parameters were introduced.
+Version 3
+N-_Candles_v3
+.
+What's new in version 3: The "Maximum amount of one-direction positions" parameter was introduced.
+Version 4:
+N-_Candles_v4
+.
+What's new in version 4: For netting accounts, the "maximum number of positions" parameter was replaced with the "maximum position volume" parameter.
+Version 5
+N- Candles v5
+.
+What's new in version 5: The "Working time" parameter was introduced.
+Version 6:
+N-_Candles_v6
+.
+What's new in version 6: The "Black sheep" parameter was introduced.
+What's new in version 7
+Closing positions at achieving the profit level equal to
+Closing of positions at achievement of the general profit
+was added.
+Inputs
+N identical candles which go in a row
+- number of identical candlesticks in a row;
+Lot
+- the volume of the position to be opened;
+Take Profit
+- Take Profit; if this value is "0", the parameter is not used;
+Stop Loss
+- Stop Loss; if this value is "0", the parameter is not used;
+Trailing Stop
+- Trailing Stop; if this value is "0", the parameter is not used;
+Trailing Step
+- trailing step; if this value is "0", the parameter is not used;
+Max positions certain direction (only for hedging)
+- the maximum number of one-direction positions (for hedging only);
+Max position volume (only for netting)
+- the maximum volume of open positions (for netting only);
+Use trade hours
+- enable/disable the "working time" parameter;
+Start hour
+- trading start hour;
+End hour
+- trading end hour;
+Closing of positions at achievement of the general profit
+- closing all positions at achieving the profit level (in money terms);
+magic number
+- the unique EA identifier;
+The type of closure at the meeting of the "black sheep"
+- the closing type for the "blacksheep."
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20500

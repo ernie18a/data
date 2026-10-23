@@ -1,0 +1,14 @@
+The
+Trigger_Line
+indicator with the timeframe selection option available in the input parameter:
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Indicator chart period (timeframe)
+The indicator requires Trigger_Line.mq5 indicator file. Place it in <terminal_data_folder>\MQL5\Indicators.
+Fig.1. Trigger_Line_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16614

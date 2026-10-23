@@ -1,0 +1,27 @@
+Identifies breaker blocks — when an order block gets broken by opposing price action, it flips polarity and becomes a high-probability zone from the opposite direction. A failed bullish OB becomes a bearish breaker block (resistance), and vice versa.
+Features:
+-
+Automatic order block detection as prerequisite
+-
+Tracks when OBs get broken (price closes through the zone)
+-
+Flips the broken OB into a breaker block with opposite color
+-
+Bullish breaker: former bearish OB broken upward — now support
+-
+Bearish breaker: former bullish OB broken downward — now resistance
+-
+Zone drawing with distinct visual style from regular OBs
+-
+Mitigation tracking: marks when price returns to test the breaker
+-
+Three modes for mitigated breakers: Remove, Fade, Keep
+-
+Configurable swing strength for underlying structure
+-
+Maximum breakers displayed
+-
+Alerts on new breaker formation and mitigation
+-
+Works on all timeframes
+Breaker blocks represent institutional position unwinding. When their OB fails, institutions flip direction — the breaker zone marks where they re-enter. Completes the SMC toolkit alongside BOS and Order Blocks.

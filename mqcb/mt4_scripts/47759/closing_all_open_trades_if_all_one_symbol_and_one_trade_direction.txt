@@ -1,0 +1,4 @@
+All open trades must be of same symbol and type, e.g. all GBPUSD and all BUY.
+This script will close out your position using one large trade to hedge your position
+then using CloseBy() function to close all trades against the one large trade until all
+trades are closed. There can be a maximum of 500 open trades.

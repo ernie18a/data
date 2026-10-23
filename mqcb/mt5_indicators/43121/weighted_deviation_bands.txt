@@ -1,0 +1,5 @@
+Variation of the Bollinger bands but it uses linear weighted average and weighted deviation (see the description of weighted deviation here :
+Weighted deviation
+)
+Recommendations:
+Use it as any Bollinger type indicator

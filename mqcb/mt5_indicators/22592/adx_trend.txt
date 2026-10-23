@@ -1,0 +1,35 @@
+ADX Trend signal indicator analyzes the values of three ADX indicators and sets signal pointers.
+There are seven configurable parameters:
+First ADX period
+- first ADX calculation period
+Second ADX period
+- second ADX calculation period
+Third ADX period
+- third ADX calculation period
+Lelel 1
+- first ADX threshold level
+Level 2
+- second ADX threshold level
+Applied price
+Signal point anchor
+- signal pointers' anchor point
+High/Low
+- by High/Low signal levels
+Open
+- by Open prices of signal colors
+Signal pointers are set if:
+ADX1_1 < ADX1_0 и ADX2_1 < ADX2_0 и ADX3_1 < ADX3_0 и ADX1_0 > Lelel 1 и ADX2_0 > Level 2
+If DMI > 0, bearish (red) signal pointer is set
+If DMI < 0, bullish (green) signal pointer is set
+where:
+ADX1_1, ADX1_0 - ADX(First ADX period, MAIN_LINE)  on bar 1 and 0
+ADX2_1, ADX2_0 - ADX(Second ADX period, MAIN_LINE) on bar 1 and 0
+ADX3_1, ADX3_0 - ADX(Third ADX period, MAIN_LINE) on bar 1 and 0
+DMI = PDI - MDI
+PDI = ADX(First ADX period, PLUSDI_LINE)
+MDI = ADX(First ADX period, MINUSDI_LINE)
+Fig. 1. ADX Trend, pointers to High/Low
+Fig. 2. ADX Trend, pointers to Open
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22592

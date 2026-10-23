@@ -1,0 +1,2 @@
+Combination of MAMA (MESA Adaptive Moving Average) and FAMA (Following Adaptive Moving Average) made as an oscillator.
+It can be used in a similar way as similar oscillators - indicating signals when the zero line is crossed.

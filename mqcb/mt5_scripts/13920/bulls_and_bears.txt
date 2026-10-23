@@ -1,0 +1,4 @@
+The script displays the number of bullish and bearish candlesticks, candlesticks with body less than spread size are not taken into account.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13920

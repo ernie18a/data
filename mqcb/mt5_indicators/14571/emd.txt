@@ -1,0 +1,7 @@
+Performs the Empirical Mode Decomposition for the current instrument.
+Uses the CEMD_2 library from the article "
+Introduction to the Empirical Mode Decomposition Method
+".
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14571

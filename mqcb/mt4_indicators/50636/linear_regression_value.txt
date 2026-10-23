@@ -1,0 +1,4 @@
+This is the metatrader 4 version of the linear regression value indicator
+Original metatrader 5 version (with detailed description) was posted here :
+Linear Regression Value
+please check the original post for more details

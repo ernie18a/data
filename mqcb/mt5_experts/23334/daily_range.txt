@@ -1,0 +1,41 @@
+Idea by:
+Scriptor
+mq5 code by:
+barabashkakvn
+The EA searches for a daily range. It uses objects OBJ_HLINE and OBJ_VLINE.
+A daily range within
+Sliding window size
+days (current bar #0 is not involved in calculations) can be calculated as Highest - Lowest or as a mean value by module Close #i - Close #i+1. Calculation mode is set in
+Daily range
+.
+The daily range is then used in the calculations of levels Stop Loss and Take Profit:
+SL = daily_range *
+Stop Loss Coefficient
+TP = daily_range *
+Take Profit
+Coefficient
+The daily range is calculated once a day (time
+Start hour
+::
+Start minute
+) and at the first launch of the EA.
+BUY signal:
+Price Ask >=
+Highest
+of the daily range +
+daily_range *
+Offset Coefficient
+SELL signal:
+Price Bid <=
+Lowest
+of the daily range -
+daily_range *
+Offset Coefficient
+Number of positions opened within the current day shall be limited by parameter
+Max Positions
+.
+Search for a daily range is visualized using two vertical lines (the limit the search range) and two horizontal lines (that show the lines of position opening signals) :
+-
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23334

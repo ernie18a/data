@@ -1,0 +1,20 @@
+Real author:
+Author of the idea —
+Collector
+, author of the MQL5 code —
+barabashkakvn
+.
+The Expert Advisor widely uses the following standard library classes:
+CPositionInfo
+,
+CTrade
+,
+CSymbolInfo
+and
+CAccountInfo
+. The uniform code for data acquisition from iMACD, iStochastic, iSAR and iMomentum indicators is used as well.
+DayTrading EA should be used on M5 charts with the default settings. Do not set a stop loss level.
+Test results (initial deposit 10 000, EURUSD, from 2016.01.01 to 2016.10.24):
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16686

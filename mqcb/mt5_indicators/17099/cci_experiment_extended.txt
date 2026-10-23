@@ -1,0 +1,19 @@
+CCI "experiment" with a few things added that can completely modify the way CCI is calculated.
+This version can be :
+adaptive (using VHF - vertical horizontal filter - for adapting)
+or "regular" CCI (no adapting).
+Prices can be filtered - using one of the 4 basic average types :
+simple moving average
+exponential moving average
+smoothed moving average
+linear weighted moving average
+or "raw" (when there is no price smoothing prior to cci calculation).
+There is a choice of :
+floating levels
+quantile levels
+or no levels
+Coloring can be chosen :
+based on outer levels
+based on middle level
+or based on cci slope
+Indicator is made multi time frame and with alerts (that are synchronized with colors change) already

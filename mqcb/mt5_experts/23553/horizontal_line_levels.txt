@@ -1,0 +1,12 @@
+Idea by:
+Scriptor
+mq5 code by:
+barabashkakvn
+The EA is a utility. It draws to horizontal lines (
+OBJ_HLINE
+). It checks once every
+Period
+minutes, whether the price has crossed one of the lines. If the price crosses the line, a sound alert will be given.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23553

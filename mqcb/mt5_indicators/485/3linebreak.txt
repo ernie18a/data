@@ -1,0 +1,6 @@
+Real author:
+Aborigen
+3LineBreak forex indicator is very easy-to-use. It paints the bars in blue for a bullish trend and in red for a bearish one.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/485

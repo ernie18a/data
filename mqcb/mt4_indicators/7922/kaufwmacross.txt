@@ -1,0 +1,6 @@
+Author:
+none
+Indicator KaufWMAcross. Works with indicator
+Kaufman
+.
+Indicator KaufWMAcross

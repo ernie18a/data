@@ -1,0 +1,22 @@
+TWR is calculated based on the color of the previous bar and the closing price of the current bar, ignoring the other price information, and actually redrawing the candle chart using the closing price.
+Color definition:
+Red indicates a rise.
+Green indicates a drop.
+Define the color of the first bar:
+Open > Close - Green; Open < Close - Red;
+Note (just to help understand, the actual code's index order is the opposite):
+Open[0] - the current opening price.
+Close[0] - the current closing price.
+Open[1] - the opening price of the previous bar.
+Close[1] - the closing price of the previous bar.
+The calculation principle is as follows:
+1.Upward trend:
+Figure 1: calculation principle of upward trend
+2.Down trend:
+Figure 2: calculation principle of down trend
+Classic turning signal of indicators:
+Figure 3: upward trend signal turn
+Figure 4: downtrend signal turn
+3.In fact, we can add EMA to filter the noise signal and improve the quality of the signal.
+If TWR give us the trend signal, and the bar closes above the EMA or under the EMA, then the trend will be true.
+Figure 5: example

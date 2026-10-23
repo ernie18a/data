@@ -1,0 +1,6 @@
+Background :
+The idea was found on one of the forums (used on another trading platform). But since the indicator was highly adjusted to one single instrument, this version is changed in almost everything except the basic idea : the basic idea is to calculate "momentum" of 5 averages and combine them into one single "synthetic" momentum.
+This version :
+It is using EMA (Exponential Moving Average) for synthetic momentum calculation and, in order to avoid fixed levels that would need to be adjusted to each and every symbol/instrument and each and every time frame and each and every periods combination, this version is using discontinued signal line for levels. That way the levels are self adjusting and are not depending on any of the mentioned
+Usage :
+You can use the color changes for entry or re-entry signals

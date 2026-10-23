@@ -1,0 +1,6 @@
+DirectCandlesCounter
+indicator in the form of candles. In case of successive appearance of several unidirectional candles in a row, the indicator paints the current candle in a color corresponding to the candles direction.
+Fig. 1. DirectCandlesCounter_Candle indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21390

@@ -1,0 +1,60 @@
+Do you want to place a Chart objects (
+OBJ_CHART
+) on the chart and use it as conventional chart? It's possible.
+The only thing you need is the handle of OBJ_CHART object. Using the
+Chart Operations
+you may add and delete indicators (
+ChartIndicatorAdd()
+and
+ChartIndicatorDelete()
+), set chart
+Period, Symbol
+etc.
+The EA_OBJPROP_CHART_ID Expert Advisor, does the following actions:
+Adds a
+PriceChannel
+indicator, included in the standard package of the client terminal (located in
+terminal_data_folder
+\MQL5\Indicators\Examples);
+Creates a subwindow using Subwindow indicator (copy Subwindow.mq5 to
+terminal_data_folder
+\MQL5\Indicators);
+Creates an object (in the subwindow) of OBJ_CHART type with chart symbol, but D1 and H4
+timeframes
+;
+For each object of OBJ_CHART type it adds a Price_Channel indicator with default parameters and changes background color.
+When delete from the chart, it deletes all the indicators created:
+//+------------------------------------------------------------------+
+//| Expert deinitialization function                                 |
+//+------------------------------------------------------------------+
+void
+OnDeinit
+(
+const
+int
+reason)
+  {
+//--- delete objects
+//  ObjectDelete(0,D1);
+//  ObjectDelete(0,H4);
+//--- delete subwindow
+ChartIndicatorDelete
+(
+0
+,subwindow_ID,
+"Subwindow"
+);
+//--- delete PriceChannel indicator from the main window
+//--- its short name with default parameters is "Price Channel(22)"
+ChartIndicatorDelete
+(
+0
+,
+0
+,
+"Price Channel(22)"
+);
+  }
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/359

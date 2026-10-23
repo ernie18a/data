@@ -1,0 +1,68 @@
+Idea by
+:
+Aleksandr
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+The EA is based on \MQL5\Experts\Examples\Moving Average\Moving Average.mq5 from standard delivery. What's new or changed:
+For each of the four signals (
+Buy Open
+,
+Buy Close
+,
+Sell Open
+, and
+Sell Close
+), there is now their own indicator Moving Average, for which parameters may be set, such as:
+period
+(averaging period),
+shift
+(horizontal shift of the indicator),
+method
+(averaging method), and
+price
+(type of prices, based on which the indicator is calculated);
+Flags
+Use Buy positions
+and
+Use Sell positions
+- enable opening BUY and SELL positions, respectively;
+Flag
+Consider Price Last Out
+- consider the price of the last closed trade. If the value is "true", then the new BUY position will be opened at a price equal to or lower than the price of the last transaction, while the new SELL position will be opened at a price equal to or higher than the price of the last closed transaction.
+Price of the last closed position is monitored on OnTradeTransaction. The EA keeps at most one position in the market, so it can be used on both netting and hedging accounts.
+Inputs
+Maximum Risk in percentage
+- highest risk, in percents;
+Descrease factor
+- decrease factor, in case of losing trades in trading history;
+ххх: period
+- averaging period (individual for each indicator);
+ххх:
+shift
+- horizontal shift (individual for each indicator);
+ххх: method
+- averaging method (individual for each indicator);
+ххх: price
+- price, at which the indicator is calculated (individual for each indicator);
+Use Buy positions
+- a flag enabling opening BUY positions;
+Use Sell positions
+- a flag enabling opening SELL positions;
+Consider Price Last Out
+- a flag to consider the price of the last closed trade;
+magic number
+- unique identifier for the EA.
+Default parameters, EURUSD M15, period from 2018.01.01 to 2018.05.03.
+Recommendations on optimizing on M15
+(Genetic) optimization can be performed in the "1 minute OHLC" tick generation mode. To start with, mark the parameters of
+period
+(Start 12, Step 1, Stop 30) and
+shift
+(Start 0, Step 1, Stop 6).
+Upon genetic optimization, go to the "Every tick" mode or the "Every tick based on real ticks" mode and run a single test for the pass selected.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20626

@@ -1,0 +1,16 @@
+This is a simple multi-frame indicator for those who prefer to see indicators of higher timeframes on the current chart.
+The basic indicator here is JMASlope.
+For the operation of a multi-frame indicator a basic indicator is obligatory.
+JMASlope is developed by TrendLaboratory Ltd. (Copyright © 2005, TrendLaboratory Ltd.).
+The basic indicator JMASlope detects peaks of price impulses and the divergence of such impulses. Besides, it indirectly detects the impulse strength by comparing previous peak sizes.
+I think,
+this indicator will be very useful for those who prefer scalping and swing trading.
+However, the use of the indicator alone on a current timeframe results in a lot of errors, because the indicator does not show the general state. For diminishing the number of such errors, the multi-frame indicator JMASlope_MTF has been created.
+If we attach to a chart both the basic and the multi-frame indicator, the current situation state becomes clear.
+The multi-time indicator will detect global impulses, while the basic indicator will detect the structure and parts of the global impulse.
+In such a case this set may be useful for those who analyze the market using Elliot Waves.
+P.S. This multi-frame indicator can be used almost with any basic indicator that has two input parameters of INTEGER type, even if the input parameters names do not coincide with the original. IMPORTANT: there must be only two such parameters, both of INTEGER type.
+In the input parameter INDICATOR, replace the indicator name by your indicator, set the necessary timeframe, the first and the second parameters. As a result you will get a histogram of your basic indicator on any timeframe.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7717

@@ -1,0 +1,14 @@
+Real author:
+RickD
+The StochCandles indicator. Colors the candles based on the Stochastic:
+Lime — Stochastic is in the overbought area;
+Teal — Stochastic is above the Signal line and outside the overbought and oversold areas;
+Purple — Stochastic is below the Signal line and outside the overbought and oversold areas;
+Magenta — Stochastic is in the oversold area.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 09.11.2008.
+Fig.1. The StodivCandle indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16035

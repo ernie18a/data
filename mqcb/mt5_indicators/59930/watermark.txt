@@ -1,0 +1,38 @@
+Key Features
+1.
+dynamic watermarking
+Automatically displays the
+current symbol
+(e.g. EURUSD) and the
+active timeframe
+(e.g. M15).
+Shows the
+description of the asset
+(such as "EURUSD - Euro vs US Dollar" or "XAUUSD - Gold").
+Fully visible on the chart without hindering visual analysis.
+2.
+responsive design
+Adjusts the font size in proportion to the screen resolution.
+Repositions centred elements even after the chart has been resized.
+Works in any MetaTrader 5 window size.
+3
+Simple customisation
+Watermark colour
+: Set with RGBA to adjust transparency and tone.
+Font size
+: Configurable via input parameter ( InputFontSize ).
+4
+. lightweight and efficient
+Does not use buffers or technical plots.
+Consumes few MT5 terminal resources.
+Clean and modular code, easy to integrate or adapt.
+5.
+full compatibility
+Currency pairs
+Indices
+Commodities (such as gold and silver)
+Futures contracts
+Stocks
+Translated from Portuguese by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/pt/code/59930

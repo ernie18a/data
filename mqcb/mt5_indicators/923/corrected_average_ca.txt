@@ -1,0 +1,11 @@
+Corrected Average indicator by A.Uhl
+(also known as the "Optimal Moving Average")
+.
+The strengths of the Corrected Average (CA) is that the current value of time series must exceed the current volatility-dependent threshold, so that the filter increases or falls, avoiding false signals if trend is in weak phase. - by Prof. A.Uhl -
+Updated Version 2.2 :
+I've added the
+Shift of indicator
+parameter
+(idea to use as a Support and Resistance)
+Exponential averaging
+bug fixed

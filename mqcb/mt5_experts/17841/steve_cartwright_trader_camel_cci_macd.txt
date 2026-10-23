@@ -1,0 +1,146 @@
+Author of the idea
+—
+John Smith
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+The Expert Advisor is configured to trade USDJPY on the H1 timeframe.
+The EA uses two Moving Averages, one MACD and one CCI. OnTradeTransaction is used to receive position opening time.
+All indicator values are used from the bar with index
+1
+.
+//--- Indicator Setup
+CAMELHIGHP1=iMAGet(handle_iMA_PRICE_HIGH,
+1
+);
+   CAMELLOWP1=iMAGet(handle_iMA_PRICE_LOW,
+1
+);
+//
+MACDSP1=iMACDGet(
+SIGNAL_LINE
+,
+1
+);
+   MACDSP2=iMACDGet(
+SIGNAL_LINE
+,
+2
+);
+//
+MACDHP1=iMACDGet(
+MAIN_LINE
+,
+1
+);
+   MACDHP2=iMACDGet(
+MAIN_LINE
+,
+2
+);
+//
+CCIP1=iCCIGet(
+1
+);
+The appropriate control is performed: whether a position has already been opened on the current bar, so there is no need to check all positions (because other Expert Advisors can be running on the same trading account).
+Position opening time is controlled in OnTradeTransaction. If position closure was recorded, the open time will be reset:
+//+------------------------------------------------------------------+
+//| TradeTransaction function                                        |
+//+------------------------------------------------------------------+
+void
+OnTradeTransaction
+(
+const
+MqlTradeTransaction
+&trans,
+const
+MqlTradeRequest
+&request,
+const
+MqlTradeResult
+&result)
+  {
+//--- get transaction type as enumeration value
+ENUM_TRADE_TRANSACTION_TYPE
+type=trans.type;
+//--- if transaction is result of addition of the transaction in history
+if
+(type==
+TRADE_TRANSACTION_DEAL_ADD
+)
+     {
+long
+deal_entry        =
+0
+;
+long
+deal_time         =
+0
+;
+string
+deal_symbol       =
+""
+;
+long
+deal_magic        =
+0
+;
+if
+(
+HistoryDealSelect
+(trans.deal))
+        {
+         deal_entry=
+HistoryDealGetInteger
+(trans.deal,
+DEAL_ENTRY
+);
+         deal_time=
+HistoryDealGetInteger
+(trans.deal,
+DEAL_TIME
+);
+         deal_symbol=
+HistoryDealGetString
+(trans.deal,
+DEAL_SYMBOL
+);
+         deal_magic=
+HistoryDealGetInteger
+(trans.deal,
+DEAL_MAGIC
+);
+        }
+else
+return
+;
+if
+(deal_symbol==m_symbol.Name() && deal_magic==m_magic)
+        {
+if
+(deal_entry==
+DEAL_ENTRY_OUT
+)
+           {
+            m_last_close_time=(
+datetime
+)deal_time;
+           }
+else
+if
+(deal_entry!=
+DEAL_ENTRY_OUT
+)
+           {
+            m_last_close_time=
+0
+;
+           }
+}
+     }
+  }
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17841

@@ -1,0 +1,11 @@
+The author of the idea
+-
+Andrey Kornishkin
+mq5 code author
+-
+barabashkakvn
+The EA opens only one position at a time, therefore it is able to work both on hedging and netting accounts. The EA only operates when a new bar appears. The robot focuses on iADX (Average Directional Movement Index, ADX) and iBands (Bollinger Bands, BB) indicators. In case of slippage, it tries to resend a trading order on the same bar.
+Test without optimization, standard parameters on EURUSD M30:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23029

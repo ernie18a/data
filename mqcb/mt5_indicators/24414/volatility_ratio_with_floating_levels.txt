@@ -1,0 +1,4 @@
+Theory :
+There is always a need to measure if the market is "quiet" or it is volatile. One of the possible way is to use standard deviations, but the issue is simple : we do not have some levels that could help us find out if the market is in a state of lower or higher volatility. This indicator is attempting to do that but not by using fixed levels but adding floating (adaptive) levels. That way you have possible more states (including the "neutral" state) that can be checked and used in trading decisions
+Usage :
+This is not a directional indicator. It should be used for volatility detection, not trend assessment - for that you have to use some other indicator and then check this one if the market volatility conditions are those that you expect

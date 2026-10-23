@@ -1,0 +1,14 @@
+Real author
+:
+LeMan
+The indicator shows the first, second and third quartiles of the sample.
+Quartiles
+is a set of quantiles for p=0.25, 0.5, 0.75. Their estimates (quartiles of the empirical distribution) are the values that divide a data sample into four groups containing (if possible) the same number of observations.
+When talking about quartiles we usually mean upper q3 and lower q1 quartiles; the second quartile is the median q2.
+Lower q1 quartile is the value, below which a quarter of data is located in an ordered set, while upper q3 quartile is a value, above which a quarter of data is located in an ordered set.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+23.09.2010.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/690

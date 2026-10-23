@@ -1,0 +1,64 @@
+It is statistically proved that the market very often reacts to changes in behavior on the "round levels" of price. Psychologically, a man is ready to change something reaching the round number. For example, start losing weight on Monday, quit smoking on the 20th, to close the deal at 1.6000.
+The RoundLevels indicator has been developed for this. It gives signals fixing "round levels" of price in all historical range of the price values of the selected currency pair.
+The indicator can give the following variants of the signals:
+Sound signal;
+Alert;
+Push-notification to the smartphone;
+The message to the email, mailbox.
+The following indicator parameters are available for a trader to control signals:
+//+-----------------------------------+
+//|  INPUT PARAMETERS OF THE INDICATOR|
+//+-----------------------------------+
+input
+bool
+On_Push =
+false
+;
+//push-notifications input
+input
+bool
+On_Email =
+false
+;
+//email input
+input
+bool
+On_Alert =
+true
+;
+//alert input
+input
+bool
+On_Play_Sound =
+false
+;
+//sound signal input
+input
+string
+NameFileSound =
+"expert.wav"
+;
+//the name for sound signal
+input
+string
+CommentSirName=
+"RoundPriceAlert: "
+;
+//the first part of the alert-comment
+input
+uint
+RoundDigits=
+3
+;
+//the number of zeros in the digits
+input
+uint
+SignalPause=
+5
+;
+//the interval in minutes between signals
+Image:
+Fig.1 The alert using the RoundPriceAlert indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1475

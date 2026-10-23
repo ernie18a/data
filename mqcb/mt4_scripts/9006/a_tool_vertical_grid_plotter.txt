@@ -1,0 +1,31 @@
+A Tool: Vertical Grid Plotter
+Modification: 70301
+Release Date: 2009.06.26
+Copyright (C) 2009, MetaQuotes Software Corp.
+https://www.metaquotes.net
+Copyright (C) 2009, Airat Safin
+https://www.mql5.com/en/users/ais
+Free Open Source Software
+Instructions
+1. A Tool: Vertical Grid Plotter is MQL4 program set for equidistant vertical time lines plotting.
+2. Program files:
+   1.1. "AIS7VGP.MQ4" is vertical grid plotter file;
+   1.2. "AIS7VGR.MQ4" is vertical grid remover file.
+3. Copy program files in "../experts/scripts" folder.
+4. Run MetaEditor and compile program files.
+5. Run "AIS7VGP" to plot vertical grid lines.
+6. Run "AIS7VGR" to delete vertical grid lines.
+7. Input parameters:
+   7.1. "aei.VGLeft"  defines left bound of the grid in 'yyyy.mm.dd hh:mm' format;
+   7.2. "aei.VGStep"  defines distance between vertical time lines in minutes;
+   7.3. "aei.VGRight" defines right bound of the grid in 'yyyy.mm.dd hh:mm' format;
+   7.4. "aei.VGColor" defines color of the grid;
+   7.5. "aei.VGStyle" defines style of the grid according to following code table:
+        7.5.1. "0" is solid line code,
+        7.5.2. "1" is dash line code,
+        7.5.3. "2" is dot line code,
+        7.5.4. "3" is dash-and-dot line code,
+        7.5.5. "4" is dash-and-double-dot line code;
+   7.6. "aei.VGBackground" defines background or foreground plotting:
+        7.6.1. "0" is foreground plotting code,
+        7.6.2. "1" is background plotting code.

@@ -1,0 +1,30 @@
+Author:
+Alexander, e-mail:
+marketadviser@rambler.ru
+The program has implemented as script. To install script, copy the file
+MarketBrowse.mq4
+to the folder:
+C:\Program Files\ - Client Terminal folder - \experts\scripts\
+After execution, script will request the client terminal parameters and save it to file.
+You can open the file with results (for example, from \experts\files\MarketBrowse_EURUSD.csv) using the programs like Notepad, Microsoft Office, OpenOffice.
+File contents
+1. ACCOUNT INFORMATION
+Name –
+Account number –
+Account company –
+Account server –
+…
+…
+…
+2. MARKET WATCH AND INFORMATION ABOUT FINANCIAL INSTRUMENTS
+3. INFORMATION ABOUT THE CLIENT TERMINAL
+4. CHECK FOR THE CLIENT TERMINAL OPTIONS
+Tips:
+The script is safe, after execution it ask you permission to execute, but if you are not sure,
+choose no. See source code for the details.
+To install the script, copy the file
+MarketBrowse.mq4
+to the folder C:\Program Files\ - Client Terminal folder - \experts\scripts\.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9299

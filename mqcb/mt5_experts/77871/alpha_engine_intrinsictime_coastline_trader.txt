@@ -1,0 +1,238 @@
+Overview
+Almost everything built in MetaTrader is clocked by the calendar. A bar closes every minute, every hour, every day, and indicators and Expert Advisors sample the market on that fixed grid. But the market does not know what a minute is. During a news release a hundred meaningful moves can happen inside one minute, while over a quiet session an hour carries almost no information. Sampling on the clock spends the same attention on both.
+Intrinsic time
+is the alternative formalised by the Olsen group in Zurich: let the price decide when time passes. Fix a threshold
+delta
+. The clock ticks only when the price reverses by delta from its last extreme, a
+directional change
+. After a change confirms, the price usually keeps running in the new direction for a while, and that continuation is the
+overshoot
+. The whole price path becomes an alternating sequence of directional-change and overshoot sections, which the papers call the
+coastline
+. A stormy hour and a sleepy hour are then measured in the same unit: events.
+A jagged price path resolved into directional-change (solid) and overshoot (dashed) sections at a fixed threshold. The intrinsic-time clock ticks only at the events.
+This Expert Advisor is a pure MQL5 port of the
+Alpha Engine
+, the counter-trending coastline trader Golub, Glattfelder and Olsen built on that clock. It opens against a move at an intrinsic event, adds to the position at the next event if the price keeps running against it (
+cascading
+), and closes the added pieces one by one at a profit as the price reverts (
+de-cascading
+). Because the pieces are only ever added in fixed increments, it is not a martingale. The decision core, the log-threshold runners and the information-theoretic liquidity indicator, is a line-for-line translation of the authors' reference Java. Only the order handling is adapted to the terminal.
+A long agent cascades (adds) as the price falls through successive intrinsic events, then de-cascades (trims at a profit) as the price recovers.
+Read this before judging the results.
+The paper reports that the Alpha Engine is profitable even on a random walk. Tested on 200 seeded random walks of a million ticks each, the reference engine booked a
+realised
+profit on every one of them, yet its
+total
+profit, open positions included, averaged zero. Trimming more often than adding reshapes the payoff into many small closed wins and occasional large open losses; it does not create an edge on its own. A rising balance line from this EA is therefore not evidence of an edge. Watch the equity.
+How It Trades
+The EA runs the ensemble the paper specifies:
+eight independent agents
+, one long-only and one short-only at each of four thresholds,
+0.25%, 0.5%, 1% and 1.5%
+. Each agent owns its orders and positions through its own magic number, so the agents never touch each other's trades.
+The whole lifecycle runs in
+limit orders on a hedging account
+, where each cascade step is naturally its own position. A long agent keeps a single buy-limit resting at the next downward intrinsic-event level, and each fill opens a position with a take-profit exactly delta above its entry. That take-profit is the de-cascade. As the price falls, the ladder of buy-limits fills; as it recovers, the take-profits trim it one by one. A short agent is the mirror image. The resting order is only re-placed when something changes (an intrinsic event, a tier switch, or a fill), so the EA does not churn orders on every tick.
+Two defences keep a pure contrarian from running away in a trend. The first is an
+inventory-driven skew
+: each agent advances three runners on every tick, and the current inventory decides which one drives the orders. As inventory builds, the adverse threshold widens relative to the favourable one, so the agent becomes reluctant to add and eager to trim. The second is
+fractional sizing
+: the unit that is added shrinks as the inventory grows.
+Inventory (units)
+Active runner
+Adverse : favourable threshold
+Unit added
+below 15
+Symmetric
+1 : 1 (delta each way)
+1
+15 to 30
+First skewed
+2 : 1 (1.5 delta against 0.75 delta)
+1/2
+30 and above
+Second skewed
+4 : 1 (2 delta against 0.5 delta)
+1/4
+On top of that, the unit is scaled by the
+liquidity indicator L
+, an information-theoretic gauge of how normal the recent price action is. It treats each intrinsic event as a symbol, averages the surprise (self-information) of the event sequence, standardises it, and maps it through the normal distribution function. L sits near 1 when the price behaves like a normal market and falls toward 0 when the trajectory is unusually one-sided. The add is kept whole at L of 0.5 or more, halved between 0.1 and 0.5, and cut to a tenth below 0.1. The indicator runs on its own wider overshoot threshold, 2.525729 times delta, the value the paper chooses to make L separate normal from abnormal action as sharply as possible.
+Abstract units become lots through the
+InpLotPerUnit
+input, and
+InpMaxUnits
+caps each agent's inventory. The cap is a piece of risk control the paper leaves out: once it is reached, the agent cancels its resting entry and adds nothing more, while the open take-profits keep working.
+Recommended Setup
+Setting
+Recommended value
+Notes
+Symbol
+EURUSD
+The development and test instrument, and the one the paper's scaling laws were verified on. The thresholds are relative (percent of price), so other liquid FX pairs work without rescaling.
+Timeframe
+Any
+The EA is driven tick by tick in intrinsic time, so the chart timeframe has no effect on its decisions.
+Account type
+Hedging
+Required. Each cascade step must be its own position, so on a netting account the EA prints a message and returns INIT_FAILED by design.
+Tester model
+Every tick based on real ticks
+Intrinsic events are defined on the tick stream, so bar-based models misrepresent both the events and the limit fills. The tester inherits the margin mode of the account you are logged into, so log into a hedging account before testing.
+InpLotPerUnit
+0.02 (shipped), up to 0.4
+With a 0.01-lot step, the half and quarter units and the liquidity haircut only survive as distinct sizes when a unit is around 0.4 lots. Below that, the smaller adds are raised to the minimum lot. The threshold skew lives in the runners and is unaffected.
+Important:
+removing the EA from the chart cancels its resting entry orders only. Open positions are left in place with their take-profits attached, so they keep unwinding on their own. Close them manually if you want the account flat.
+Backtest Results
+EURUSD, Every tick based on real ticks, 2 February to 31 July 2026, 10,000 starting deposit on a hedging account, shipped defaults (InpLotPerUnit = 0.02, InpMaxUnits = 30) with all eight agents enabled. The thresholds, sizing rules and take-profit are the paper's, not tuned to this symbol or period.
+The Strategy Tester report for the six-month EURUSD run.
+The run returned
++10.68%
+with a profit factor of
+2.21
+and a
+10.10%
+maximum equity drawdown over 318 positions. The net figure hides two very different streams, and splitting it by how each position closed is more instructive than the total:
+Component of the six-month result
+Amount
+294 positions closed at their take-profit
++1,934.14
+24 positions closed by the tester at the end of the run
+-823.55
+Commission charged on entries
+-42.14
+Net profit
++1,068.45
+Both closing lines already include swap, which came to -620.38, far more than commission. For a model that can hold a cascade for weeks, financing rather than the spread is the dominant cost. The 24 positions the tester closed are cascades that never recovered: in live trading they would still be open.
+The balance (blue) steps up as take-profits fire. The equity (green) carries the open cascades and meets the balance only when the tester closes them on the last day.
+This is one pair over one six-month window, so it shows a working mechanism, not a headline performance number. Any strategy that closes winners and holds losers produces a rising balance, which is why the equity line and the forced close are the parts worth studying.
+Input Parameters
+Parameter
+Default
+Description
+InpLotPerUnit
+0.02
+Lots per one abstract unit of the paper's sizing. Raise it toward 0.4 to keep the fractional sizing exact on a 0.01-lot symbol, or lower it to trade smaller.
+InpMaxUnits
+30
+Per-agent inventory cap, in units. Once reached, no new adds are placed and the open take-profits are left to unwind the position. The deepest skew tier engages only past 30 units, so at the default cap it is never reached.
+InpMagicBase
+990000
+Base magic number. The eight agents take InpMagicBase to InpMagicBase + 7, so change it if another EA on the account uses that range.
+InpTradeLong
+true
+Run the four long-only agents.
+InpTradeShort
+true
+Run the four short-only agents. With both enabled the ensemble is the paper's full symmetric setup.
+Using the Classes in Your Own Code
+One agent is a self-contained class,
+CAeLiveTrader
+. It knows nothing about the other agents, so an EA can run a single agent, a different set of thresholds, or several symbols by creating as many instances as it needs:
+#include
+<IntrinsicTime\AeLiveTrader.mqh>
+CAeLiveTrader agent;
+//--- in OnInit: a long-only agent at delta 0.5%, 0.02 lots per unit, 30-unit cap
+agent.Init(_Symbol,
+990100
+,
+1
+,
+0.005
+,
+0.02
+,
+30.0
+);
+//--- in OnTick
+MqlTick t;
+if
+(
+SymbolInfoTick
+(_Symbol,t))
+   agent.OnTickUpdate(t.bid,t.ask,t.time);
+//--- in OnDeinit: cancels the resting entry, positions keep their take-profits
+agent.Shutdown();
+The intrinsic-time runner is usable on its own too.
+CAeRunner
+takes separate up and down thresholds in log-price, returns an event code on every quote (plus or minus 1 for a directional change, plus or minus 2 for an overshoot step, 0 otherwise), and always knows the exact prices at which the next events would fire, which is what makes it a natural source of limit-order levels for other strategies:
+#include
+<IntrinsicTime\AeRunner.mqh>
+CAeRunner runner;
+runner.Init(
+0.005
+,
+0.005
+,
+0.005
+,
+0.005
+);
+// delta up/down, overshoot up/down
+int
+ev=runner.Run(AeTick(t.bid,t.ask,t.time));
+if
+(ev==AE_EVENT_DC_DOWN)
+Print
+(
+"downturn confirmed, next level below: "
+,runner.ExpectedLowerIE());
+The liquidity indicator,
+CAeLocalLiquidity
+, follows the same pattern: initialise it with a threshold, feed it every quote through
+Computation
+, and read the current value of L with
+Liq
+.
+Limitations
+Worth knowing before attaching it to anything but a demo account.
+There is no whole-position exit.
+The paper's reference trader closes an agent's entire position once its total return, realised plus open, reaches delta. The live agent does not reproduce it. A cascade that runs adverse and never recovers is halted by InpMaxUnits but not closed, and its take-profits stay resting. This is the single largest risk in the design, and the forced close in the backtest above is what it costs.
+Swap dominates the costs.
+Cascades can stay open for weeks, so overnight financing weighs far more than spread or commission. Check your broker's swap on both sides before running it.
+At the shipped lot size the sizing is simplified.
+At 0.02 lots per unit a full add is 0.02 lots and every smaller add is raised to the 0.01-lot minimum, so the paper's sizing ladder collapses to two steps. Raising InpLotPerUnit toward 0.4 restores it, at a much larger position size.
+Realised profit is not an edge.
+On a driftless random walk the engine's realised profit is always positive while its total profit is zero in expectation. One pair and one test window cannot establish an edge either way.
+The runners pause outside trading sessions.
+The EA returns early from OnTick when the symbol's session is closed, which keeps the journal clean and the backtest fast. It only matters on a feed that keeps quoting while trading is shut.
+File Structure
+One Expert Advisor and four headers. The headers are included as
+<IntrinsicTime\...>
+, so they must sit in an
+IntrinsicTime
+subfolder under Include.
+File
+Role
+Description
+Experts\IntrinsicTime\AlphaEngine.mq5
+The EA
+Enforces a hedging account, builds the eight-agent ensemble at the paper's four thresholds, gates on the trading session, and drives every agent with the latest quote.
+Include\IntrinsicTime\AeLiveTrader.mqh
+Live agent
+CAeLiveTrader, one coastline agent trading real limit orders: runner selection by inventory, fractional and liquidity sizing, lot normalisation, and the single resting entry with its de-cascade take-profit.
+Include\IntrinsicTime\AeRunner.mqh
+Intrinsic-time runner
+CAeRunner, the log-threshold directional-change runner with separate up and down thresholds, emitting directional-change and overshoot events and the price levels where the next ones would fire.
+Include\IntrinsicTime\AeLiquidity.mqh
+Liquidity indicator
+CAeLocalLiquidity, the information-theoretic indicator L that scales each add, with its own runner and the reference's normal distribution function.
+Include\IntrinsicTime\AeTypes.mqh
+Shared types
+The bid/ask tick structure and the intrinsic-event codes that the runner, the indicator and the agent all exchange.
+Research Basis
+The implementation follows:
+Anton Golub, James B. Glattfelder and Richard B. Olsen,
+The Alpha Engine: Designing an Automated Trading Algorithm
+, 2017, SSRN 2951348.
+James B. Glattfelder, Alexandre Dupuis and Richard B. Olsen,
+Patterns in high-frequency FX data: discovery of 12 empirical scaling laws
+, Quantitative Finance, 2011.
+The authors' reference Java implementation, available on
+GitHub
+. The port keeps its quirks rather than silently correcting them.
+This program is intended for educational purposes only. Trading carries a high level of risk, and past performance, especially on historical data, is not indicative of future results. Always test thoroughly on a demo account before risking real capital.
+A companion article builds the directional-change operator, reproduces the scaling laws on 17.8 million real EURUSD ticks against a volatility-matched random walk, walks through the Alpha Engine port class by class, and tests its random-walk profit claim:
+Intrinsic Time: From the Directional-Change Scaling Laws to the Alpha Engine
+.

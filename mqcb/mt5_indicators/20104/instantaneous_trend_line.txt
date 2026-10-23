@@ -1,0 +1,4 @@
+One of the series of indicators created by John Ehlres. According to Ehlers:
+Instantaneous trend Line:
+It works because it completely removes the dominant cycle from a smoothing average.
+For the mathematically inclined, the Fourier Transform of a rectangular window (formed by a simple average) is a Sin(X)/X distribution. The objective is to place the first null of this distribution exactly at the dominant cycle. For the intuitively inclined, what we are doing is taking a simple average over the full dominant cycle period. In such an average, there are as many sample points above the midpoint as below the midpoint with the result that the sum of all these sample points is zero.

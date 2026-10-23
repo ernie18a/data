@@ -1,0 +1,12 @@
+The real author
+: MIKHAIL
+Smoothed Ichimoku oscillator. This indicator was first implemented in MQL4 and published in the
+CodeBase
+on 29.03.2010.
+The indicator uses SmoothAlgorithms.mqh library classes (copy it to <terminal_data_folder>\MQL5\Include). The use of the classes was described in detail in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Fig1. The ICHI_OSC indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17643

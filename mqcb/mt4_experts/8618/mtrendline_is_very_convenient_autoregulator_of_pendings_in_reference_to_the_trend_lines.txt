@@ -1,0 +1,6 @@
+The usage is very simple, we draw the trend lines marking, place a pending order at random, for example at 100 points lower than the current price. Then we inspect the properties of the trend and copy TrendLine ####### (number) into the clipboard, then activate the EA and write the number of the pending order to the Ticker and paste from clipboard to the Trendline. Dist is the distance between the order and the pending order.
+If the EA is placed on H1 then the refreshing and moving of the pending order is performed every hour, if the timeframe is smaller then it is performed more often.
+If you have any questions you can find me here.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8618

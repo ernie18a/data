@@ -1,0 +1,4 @@
+Multi timeframe fractal indicator which shows the higher timeframe's fractal point on lower timeframes.
+Compatible with MT4 build 600 or later.
+The "Extend_Line" function draws a horizontal line from the previous fractal point until a candle closes it over.
+The "Show_Validation_Candle" option shows which candle is the point when the higher timeframe’s fractal is validated and the fractal point is appears.

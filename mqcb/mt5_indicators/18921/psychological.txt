@@ -1,0 +1,7 @@
+Real author
+: Bruce Hellstrom (brucehvn)
+A classic oscillator imported from the FXAccuCharts platform. It uses the same algorithm used on the original platform.
+Fig. 1. The Psychological indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18921

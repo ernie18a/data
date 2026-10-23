@@ -1,0 +1,11 @@
+An oscillator based on the difference of two smoothed, different-period Tenkan-Sen lines in form of a colored histogram.
+For the indicator to work, there must be indicator
+XMA_Ichimoku.ex5
+in the <terminal_data_directory>\MQL5\Indicators folder.
+The indicator uses the SmoothAlgorithms.mqh library classes (copy it to <terminal_data_folder>\MQL5\Include). The classes were described in detail in the
+Averaging Price Series for Intermediate Calculations Without Using Additional Buffers
+article.
+Fig.1. Indicator 2XMA_Ichimoku_Oscillator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20615

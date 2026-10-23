@@ -1,0 +1,37 @@
+Introduction:
+This will create an offline chart for the ticks of the symbol on which it is applied.
+Instructions:
+I have mentioned in the code lines, such as:
+// Please uncomment the include file
+//#include <WinUser32.mqh>
+or
+// Please uncomment the below lines after downloading the file
+//if(hwnd!=0)// && cur_time-last_time>=2)
+//  {
+//   PostMessageA(hwnd,WM_COMMAND,33324,0);
+//   last_time=cur_time;
+//  }
+Due to CodeBase policies, I cannot upload the file without it. Hence what you have to do is uncomment the lines as below:
+// Please uncomment the include file
+#include
+<WinUser32.mqh>
+// Please uncomment the below lines after downloading the file
+if
+(hwnd!=
+0
+)
+// && cur_time-last_time>=2)
+{
+   PostMessageA(hwnd,WM_COMMAND,
+33324
+,
+0
+);
+   last_time=cur_time;
+  }
+Then the code will work properly.
+Images:
+Where to find the symbol to open the chart:
+How does it looks:
+Conclusion:
+In this way you can have a very good study of the trade. Using the ticks you can get more knowledge of how the trade will go.

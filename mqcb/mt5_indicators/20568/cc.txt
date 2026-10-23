@@ -1,0 +1,14 @@
+John Ehlers Cyclic Component Oscillator.
+It has two input parameters:
+Period
+- calculation period;
+Applied price
+- price used for calculations.
+Calculations:
+Cyclic Component [i] = (HP[i] + 2*HP[i-1] + 2*HP[i-2] + HP[i-3])/6,
+where:
+HP[i] = (Price[i] - Price[i-1])*(1 + Alpha)/2 + 2*Alpha*HP[i-1],
+Alpha = (1 - sin(2*Pi/Period))/cos(2*Pi/Period)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20568

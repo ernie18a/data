@@ -1,0 +1,114 @@
+The «Madlen» lines are similar to the lines of support and resistance of horizontal or trend lines by their application. They have a good feature - there are no fallacious breaks through or activation, you can call them even the "true trend lines".
+The line begins its existence since it is drawn by a signal. If a line is being drawn bottom-up and is inclined by 45 degrees then it is the support. And if the line is being drawn from top downward and is inclined by 315 degrees then it is the resistance.
+The more interest there is to the support or resistance the more opposite interest will be to that same lines in future. Namely, the lines of support will turn to the lines of resistance and vice versa, resistance will turn to support. The closing of the candlestick's body beyond the region of the line or the opening of the body of the new candlestick beyond its region can serve as a signal to it. So the lines form the parallel trend channels the price moves within. Besides the channels, the different kinds of triangles are formed.
+Here you should pay attention to the middle of the triangle and at the time of its ending. The moving of the price inside the triangle gathers momentum and then exportation beyond its limits occurs. The triangles are formed with different colors of lines, and the channels are formed by one of the colors.
+Read more...
+Input Parameters:
+string
+str
+=
+"Madlen v5"
+;
+extern
+string
+__
+=
+"Signal delivery"
+;
+extern
+bool
+cfg_Signal
+=
+false
+;
+extern
+string
+_
+=
+"Parameters of drawing"
+;
+extern
+int
+cfg_Period
+=
+0
+;
+//D1
+extern
+int
+cfg_MaxBars
+=
+5
+;
+//number of candlesticks to be drawn
+extern
+bool
+cfg_Ray
+=
+true
+;
+//drawing by rays or not
+extern
+bool
+cfg_DrawLast
+=
+true
+;
+//drawing of next to the last candlestick.
+extern
+bool
+cfg_DrawFibo
+=
+true
+;
+//drawing of Fibo
+extern
+string
+_Session
+=
+"Settings of sessions drawing"
+;
+extern
+bool
+cfg_DrawSession
+=
+true
+;
+extern
+color
+cfg_SessionColor1
+=
+MediumTurquoise
+;
+//European
+extern
+color
+cfg_SessionColor2
+=
+Gainsboro
+;
+//American
+extern
+string
+_Risks
+=
+"Risks"
+;
+double
+cfg_RiskLots
+=
+0.1
+;
+extern
+double
+cfg_Risk
+=
+0.01
+;
+extern
+int
+cfg_RiskLevelPoint
+=
+25
+;
+Madlen_5_0

@@ -1,0 +1,11 @@
+This expert is a tool which helps every trader to see the historical results by magic number or orders' comment.
+Parameters
+MagicNumber
+- Here we put the orders' identifier ID we want to analyze.
+OrdersComm
+- Here we put the orders' comment we want to analyze.
+How use it
+Add file in "expert" folder.
+Attach expert on a chart with your settings (MagicNumber or OrdersComm).
+Update version 1.2 > Add option to calculate orders by 'magic number' or 'orders' comment' or 'ordres' symbol'.
+Update version 1.3 > Fixed a minor bug about ordres' comments.

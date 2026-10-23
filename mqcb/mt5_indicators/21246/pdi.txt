@@ -1,0 +1,9 @@
+PDI (Price Difference) is a simple signal indicator of the price difference between the previous and the current bars. It displays as signal marks the candlesticks, on which the previous Applied price is higher than the current one by the pre-defined Price difference. If the price difference is positive, the mark will be placed on the Low price of the current candlesticks. If it is negative - on the High price.
+The indicator has to configurable inputs:
+Price difference
+- price difference threshold;
+Applied price
+- price used for calculations.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21246

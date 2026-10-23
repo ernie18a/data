@@ -1,0 +1,13 @@
+Author: Yury V. Reshetov
+The Expert Advisor using artificial intelligence - a single-layer neural network. The "Perceptron" is used for identification of the quotes movement direction.
+Setting for the EA optimization for the financial instruments are available:
+Here
+...
+P.S.
+The version Right
+differs from the version in the
+ArtificialIntelligence
+in that it fixes a small bug which caused the ATS to "increase" the position in the same direction instead of reversing by the double, in cases when the covered orders were not closed in the opposite direction. In this version such mess does not happen. But it is still necessary to manually close the positions on the instruments, so they do not accumulate swaps (can be done once a day).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7650

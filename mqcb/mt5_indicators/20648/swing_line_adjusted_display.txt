@@ -1,0 +1,6 @@
+Ron Black's swing line indicator with adjusted display option.
+You can chose to:
+Display colored line.
+Display colored bars.
+Display colored candles.
+Let the indicator automatically decide based on the type of the chart that you are using.

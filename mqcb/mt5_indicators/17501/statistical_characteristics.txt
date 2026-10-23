@@ -1,0 +1,14 @@
+The indicator shows the statistical characteristics of bars:
+the mean value
+,
+variance
+,
+skewness
+and
+kurtosis
+.
+In this example four instances of the indicator with different statistical methods selected in settings are attached to a chart:
+The indicator only works on a new bar, no calculations are made inside the bar.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17501

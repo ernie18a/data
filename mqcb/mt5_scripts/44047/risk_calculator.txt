@@ -1,0 +1,1 @@
+Calculates the risk in the account currency for a given trading volume of the selected symbol at different time periods and publishes it in the journal in the Experts tab of Toolbox.

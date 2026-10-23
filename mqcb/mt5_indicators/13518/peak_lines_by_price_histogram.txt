@@ -1,0 +1,7 @@
+This indicator shows the support/resistance lines using price histogram. The indicator is not so heavy, the calculation was simplified.
+Display:
+Gold Line — peaks of a 1-day histogram.
+Red Line — peaks of a short term histogram.
+Magenta Line — peaks of a medium term histogram.
+Blue Line — peaks of a long term histogram.
+Settings:

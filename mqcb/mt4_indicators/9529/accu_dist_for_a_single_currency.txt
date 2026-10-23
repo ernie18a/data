@@ -1,0 +1,5 @@
+I think it is important to have an idea of a certain currency's Accumulation/Distribution level.
+In forex we deal with pairs, and that is how transactions are made, but in the real world there are currencies like USD bills, GBP bills and so on.
+I hope these indicators will be helpful to have an idea on the level of appreciation of a certain currency at a given time.
+I appreciate comments and critiques, so don't be shy...
+I give you five indicators for the main currencies : USD, GBP, EUR, JPY, and CHF. You will need historical data for ALL THE CURRENCY PAIRS made out of these currencies (example for the EUR you will need : EURUSD, EURJPY, EURCHF, EURGBP)

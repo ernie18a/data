@@ -1,0 +1,1 @@
+Same as macd but lower lag and smoother due gaussian filtration

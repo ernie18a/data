@@ -1,0 +1,49 @@
+In developing it, we were inspired by code
+TradingBoxing
+. However, the code below is only based on the idea, while absolutely all implementation is in MQL5 and on new trading classes.
+Trading panel has only one input parameter,
+magic number
+- the unique identifier for the EA.
+Appearance of the trading panel:
+To show the volumes (for positions and pending orders), standard class
+CSpinEdit
+was slightly modified and saved as
+CSpinEditDouble
+. Unfortunately, we did not manage to create it using inheritance, since we had to change the class members declared as "private."
+As you can see from the class name, it was created to display the double-type data. Therefore, we added method
+DisplayedDigits
+- defining the text display accuracy in the control.
+The text field in this control was made editable, too. For instance, it may be helpful when you have to enter a price or a volume that differ much from the value in the text field. For the text from the text field to be saved as a value, method
+EndEdit
+was added to class CSpinEditDouble:
+int
+m_digits;
+// displayed digits
+//---
+void
+EndEdit() { Value(
+StringToDouble
+(Text())); }
+public
+:
+                     CSpinEditDouble(
+void
+);
+This method memorizes the entered text as a value.
+Method
+EndEdit
+is called from the OnEvent class
+CSpinEditDouble
+:
+//+------------------------------------------------------------------+
+//| Common handler of chart events                                   |
+//+------------------------------------------------------------------+
+EVENT_MAP_BEGIN(CSpinEditDouble)
+  ON_EVENT(ON_CLICK,m_inc,OnClickInc)
+  ON_EVENT(ON_CLICK,m_dec,OnClickDec)
+ON_EVENT(ON_END_EDIT,m_edit,EndEdit)
+EVENT_MAP_END(CWndContainer)
+For trade orders to be processed as soon as possible (even on a very quiet market where ticks come in at large intervals), every click on the trading panel button will forcedly call internal handler CTradingBoxingDialog::OnTick().
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20860

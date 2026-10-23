@@ -1,0 +1,9 @@
+Author:
+Rosh
+This is an attempt to write a trend indicator based on the Kaufman's AMA. The
+Kaufman
+indicator available in the Code Base can be used as the "Kaufman2" custom indicator.
+When started the init() block performs the learning of the network at the interval from 200 to 300 bars (the weight coefficients are selected), then starting from the 300th bar to the zero bar, this network passes the calculated values, which can be compared with the standard. Of course, if the networks has indeed learned, then at the interval of 300-201 it will make least mistakes, but if it starts desperately lying when leaving that range (200-0 bar) - then it has "relearned" and it is necessary to reduce the number of input neurons or change the model.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7341

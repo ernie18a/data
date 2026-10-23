@@ -1,0 +1,44 @@
+Quantum XAUUSD Silver Trader
+Quantum XAUUSD Silver Trader is a multi-indicator Expert Advisor for Gold (XAUUSD) and Silver (XAGUSD) on MetaTrader 5.
+It combines
+RSI, ADX
+and
+moving average
+signals into a single weighted decision and applies separate parameter presets tuned for each metal, so the same logic adapts to the different volatility of Gold and Silver.
+Each entry is built from several components: RSI momentum, ADX trend strength, fast and slow moving average direction, and a market volatility filter. An adaptive weighting module adjusts how much each component contributes based on the results of recent closed trades, and a trade is only opened when the combined signal passes a configurable decision threshold.
+Risk management is built into the core. The EA places ATR-based stop loss and take profit levels, manages open trades with an adaptive ATR trailing stop, and protects the account with a daily drawdown limit, a total drawdown limit, a daily loss limit and a maximum position-size cap. A micro account mode keeps exposure low on small deposits.
+━━━
+KEY FEATURE
+S ━━━
+- Multi-indicator entry: RSI, ADX, fast/slow moving averages and a volatility filter combined into one weighted signal
+- Adaptive weighting that updates from recent closed-trade results
+- Separate presets auto-applied for XAUUSD and XAGUSD
+- ATR-based stop loss and take profit
+- Adaptive ATR trailing stop with configurable activation
+- Capital protection: daily and total drawdown limits, daily loss limit, position-size cap and an optional hard stop
+- Micro / cent account mode for small deposits
+- Custom tester criterion that scores backtests using a 70/30 in-sample / out-of-sample split
+━━━
+IDEAL FOR
+━━━
+The EA is designed with micro and cent accounts in mind, such as ProCent or cent accounts on brokers like RoboForex, Weltrade or Exness, where 0.01 cent lots keep exposure low while preserving the same logic. Default risk is conservative: 0.5% per trade on Gold and 0.3% on Silver. Recommended symbols are XAUUSD and XAGUSD, on the M15 timeframe and higher.
+━━━
+HOW TO USE
+━━━
+- Attach the EA to an XAUUSD or XAGUSD chart on M15 or higher. The matching preset loads automatically for each metal.
+- Keep the capital protection options enabled, especially on small accounts.
+- On small deposits, note that a very low position-size cap can block trades on Gold: a single Gold position needs more margin than a 2% cap allows. Raise the cap or use cent lots.
+- Test on a demo account first and optimize the inputs for your broker's spreads and symbol specifications before going live.
+- Do not run on a real account without understanding the risks involved.
+━━━ SETTINGS ━━━
+Money management: base risk and maximum risk per trade, position-size limit and cap, risk increase and decrease factors after wins and losses, maximum consecutive losses, micro account mode, micro risk correction, and the option to allow the minimum lot when margin is tight.
+Entry signal: analysis timeframe, decision threshold, adaptive learning window, RSI / ADX / ATR / fast MA / slow MA periods, volatility window, on/off switches and weights for the RSI, ADX, MA, volatility and state modules, and the volatility filter with its threshold.
+Stop loss and take profit: default ATR multiplier for stop loss, default ATR multiplier for take profit, and the minimum number of bars between trades.
+Trailing stop: enable switch, base and maximum ATR multipliers, activation profit in ATR, volatility sensitivity and state influence.
+Capital protection: enable equity protection, maximum daily and total drawdown, drawdown warning buffer, daily loss limit in percent and in absolute terms, ATR multiplier for the loss limit, position-size limit and cap, optional hard stop and its level.
+Symbol presets: a master switch that, when enabled, auto-applies the Gold (XAUUSD) and Silver (XAGUSD) preset groups for stop loss, take profit, risk, bars between trades, trailing multiplier and volatility threshold.
+Adaptive state engine (advanced): number of internal states and their decay, update and memory factors. These are experimental and can be left at their default values.
+Optimization: an optional auto-optimization pass in the Strategy Tester and the number of passes.
+━━━ DISCLAIMER ━━━
+This source code is provided as is for educational and research purposes. It is not financial advice or a guarantee of results. Always test on a demo account, optimize for your own conditions, and never trade with capital you cannot afford to lose.
+Open source — feel free to use, study, and modify this code in your own projects. If you find it useful, a rating helps other traders discover it, and any bug reports or suggestions in the comments are always welcome.

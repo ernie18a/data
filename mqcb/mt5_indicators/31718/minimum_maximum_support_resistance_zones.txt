@@ -1,0 +1,12 @@
+This indicator is as simple as it gets :
+it calculates
+a series
+of minimums over a certain period of bars
+it calculates
+a series
+of
+maximums over a certain period of bars
+then it uses such a minimum and maximum to get an average minimum to maximum state
+a combination of multiple such "levels" are showing a "trend" and a possible support or resistance zones
+Recommendations:
+Use it as any other support resistance indicator

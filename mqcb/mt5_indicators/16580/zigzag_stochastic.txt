@@ -1,0 +1,5 @@
+ZigZag based on Stochastic oscillator.
+Fig.1. ZigZag_Stochastic indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16580

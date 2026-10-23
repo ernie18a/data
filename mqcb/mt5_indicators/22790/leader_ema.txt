@@ -1,0 +1,8 @@
+Theory:
+Giorgos E. Siligardos, as a part of the leader of the MACD indicator, constructed a kind of a new moving average which we can call "leader EMA" (he calls it "a kind of a Zero lag EMA"). This is that new average as a standalone indicator.
+Usage:
+This indicator has 2 "coloring modes":
+color change on leader EMA slope change
+color change on leader EMA to "regular" EMA cross
+You can chose which mode you prefer better and then you can use color change as signal
+PS: example for the coloring mode when leader EMA crosses regular EMA

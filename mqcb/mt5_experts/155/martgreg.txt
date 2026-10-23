@@ -1,0 +1,18 @@
+The Expert Advisor uses two
+MACD
+indicators. The first MACD is used to find the deal entry, the second is used to determine the trend.
+The money management is based on the fixed part and martingale system with limited number of doubles.
+The libraries must be placed to the terminal_data_folder\MQL5\Include folder of the client terminal.
+Input parameters:
+DML- deposit size for minimal allowed lot for the account;
+Ud - number of doublings. It begans with 0 - no doublings;
+Stop - Stop Loss value in points;
+Tp - Take Profit value in points;
+Slipage - Slippage in points;
+MACD1Fast - Fast ЕМА for MACD, used to find the entry;
+MACD1Slow - Slow ЕМА;
+MACD2Fast - Fast ЕМА for MACD, used to determine the trend;
+MACD2Slow - Slow ЕМА.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/155

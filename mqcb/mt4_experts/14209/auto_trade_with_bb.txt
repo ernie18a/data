@@ -1,0 +1,18 @@
+Real author:
+Khurram Mustafa
+Based On : RSI , CCI , BB
+Time Frame : 1 HR
+Logic : If RSI CCI down with BB then sell, otherwise buy or wait
+Other Options:
+Selection of buy/sell
+Trading time selection
+Auto lot control
+One position at a time.
+Recommendations:
+Remember, in any case of loss I am not responsible.
+I recommend to set
+Auto Lot Option
+to false because of increase in lots.
+First test on
+demo account.
+Please teach if you want to teach me. Thank you with respect.

@@ -1,0 +1,44 @@
+Three independent trading systems using
+Skyscraper_Fix
+,
+ColorAML
+and
+X2MACandle
+indicators within a single EA with an ability to change the volume of a forthcoming trade depending on the results of the previous trades for this trading system. Trading signals are formed when a bar closes if a trend has changed (which is displayed by any of the three indicators changing its color). The EA is a further complication of the
+Exp_Skyscraper_Fix_ColorAML
+and
+Exp_Skyscraper_Fix_ColorAML_MMRec
+code by adding another trading system using the X2MACandle indicator.
+The EA inputs are divided into three groups A, B and C according to indicators applied in trading systems:
+A - Skyscraper_Fix;
+B - ColorAML;
+C - X2MACandle.
+Each trading system should be configured separately by disabling the remaining trading systems with the corresponding EA inputs:
+input
+bool
+A_BuyPosOpen=
+true
+;
+//A Permission to enter long positions
+input
+bool
+A_SellPosOpen=
+true
+;
+//A Permission to enter short positions
+For the generated EA to operate correctly, the compiled files of indicators
+Skyscraper_Fix.ex5
+,
+ColorAML.ex5
+and
+X2MACandle.ex5
+should be present in the
+<terminal_data_directory>\MQL5\Indicators
+.
+Default Expert Advisor's input parameters have been used during tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. Examples of trades on the chart
+Testing results for 2017 on EURJPY H6:
+Fig. 2. Test results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22391

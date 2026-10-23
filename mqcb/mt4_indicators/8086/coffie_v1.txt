@@ -1,0 +1,3 @@
+I think the basic use of this indicator can be to provide enter/exit signals like on the screen.
+Enter on cross of lines, exit when shortSeed will make high/low. But mabye someone can tweak the idea of use of it? Mabye other Seed values will be better?
+I will be grateful for any comments. A litle feedback, please.

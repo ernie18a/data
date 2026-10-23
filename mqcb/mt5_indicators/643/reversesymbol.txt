@@ -1,0 +1,33 @@
+The indicator allows to work with changing in real time and mirror reversed (1/X) trading instrument.
+Technical and custom indicators can be applied to that reversed trading instrument allowing to do that.
+Input parameters:
+//+-----------------------------------+
+//|  Indicator input parameters       |
+//+-----------------------------------+
+input
+color
+BidColor=Red;
+// Bid line color
+input
+ENUM_LINE_STYLE
+BidStyle=
+STYLE_SOLID
+;
+// Bid line style
+input
+int
+IndicatorDigits=
+3
+;
+// Indicator display accuracy format
+input
+double
+ratio=
+1.0
+// Compensation factor
+The last input parameter
+ratio
+is just a ratio, by which received candlestick parameters must be multiplied to let their values fit in normal perception range. For instance, it may be not so convenient to observe the price of a financial asset within the range of 0,001. If we multiply this value by 1000, then the final value and its changes can be analyzed more easily.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/643

@@ -1,0 +1,16 @@
+This indicator calculates the index of a given currency, using the USD index. The Close prices of six currency pairs are used to calculate the index.
+For example:
+EUR index is calculated as (EUR / USD) * USDX;
+CHF index is calculated as USDX / (USD / CHF).
+The indicator has one input parameter:
+Instrument
+- name of instrument, the index of which shall be calculated.
+It should be noted that six currency pairs are used for calculating the index, namely: EURUSD, USDJPY, GBPUSD, USDCAD, USDSEK, and USDCHF; and all the necessary history for those symbols must be additionally loaded to get a correct display. This will require some time. It means that, at the first running or switching the chart timeframe, the indicator will first load history and only then calculate and display the index for your desired currency.
+The indicator works on the charts of any currency pairs.
+Fig 1. Index EUR
+Fig. 2. Index RUB
+Fig. 3. Index SEK
+Fig. 4. Index USD
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21157

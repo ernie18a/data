@@ -1,0 +1,72 @@
+Adaptive Kalman Trend Filter with Regime Bands
+Adaptive Kalman Trend Filter with Regime Bands
+Short Description:
+A single-state Kalman filter that rescales its own process noise by Kaufman's Efficiency Ratio on every bar, tightening into price during trends and smoothing harder through chop, plotted with regime bands that expand and contract on the same read.
+Author:
+ADEDAYO GBADEBO
+The idea behind it
+A plain Kalman filter has one weakness that shows up on every chart sooner or later: the process noise (Q) and measurement noise (R) that control how fast the filter trusts new price data are fixed. Set Q low and the line stays smooth in chop but lags badly once a real trend starts. Set Q high and it tracks trends tightly but whipsaws in every ranging stretch. This indicator removes that trade-off by making Q
+adaptive
+: on each bar it computes Kaufman's
+Efficiency Ratio (ER)
+, the net directional move over a lookback divided by the sum of the bar-to-bar moves across that same window, and uses it to scale Q between a minimum and maximum multiplier. When ER is close to 1 (clean, directional price action) the filter's process noise rises toward its maximum, so the Kalman gain increases and the line hugs price closely. When ER is close to 0 (overlapping, directional-less bars) Q drops toward its minimum, the gain shrinks, and the line smooths through the noise instead of chasing it.
+The same Efficiency Ratio also drives the two
+regime bands
+plotted around the filter. Their width is the rolling standard deviation of the residual (price minus the Kalman line) multiplied by a user-set factor, and that factor is further scaled up as ER falls, so bands are naturally tighter in a trending regime and wider in a ranging one. Because the whole filter is a single recursive state carried bar to bar (no repainting, no lookahead), it works on any symbol and timeframe; it was built and tested primarily on
+EURUSD
+and
+GBPUSD
+on the
+H1 and H4 charts
+, where the swing between trending and ranging stretches is frequent enough for the adaptivity to matter.
+How to interpret it
+Kalman Line
+— the main trend estimate, plotted as a color-coded line directly on the chart. It turns one color while price is in a qualifying trending regime and moving up, a second color while trending down, and a third, neutral color whenever the Efficiency Ratio is below the regime threshold and the market is classified as ranging.
+Adaptive process noise
+— internally, the filter's Q is recalculated every bar as a linear blend between
+InpMinQMultiplier
+and
+InpMaxQMultiplier
+, weighted by the current Efficiency Ratio. This is what gives the line its low lag in trends without sacrificing smoothness in chop, unlike a fixed-parameter moving average.
+Upper / Lower Regime Bands
+— dotted lines that bracket the Kalman line at a distance proportional to recent residual volatility. Tight bands flag a low-noise, high-efficiency trend; bands that stay wide and roughly flat flag a choppy, mean-reverting stretch where the trend color should not be trusted for direction.
+Signal logic
+— a color flip on the Kalman line (gray-to-directional or directional-to-gray) only happens on a closed bar, so it does not repaint. A flip into a directional color while price is riding near the outer band suggests the trend regime is fresh; a flip into the neutral/ranging color after an extended run is an early cue that momentum is fading before price itself turns.
+Practical usage
+— trend-followers can treat a sustained directional color as the "stay in" signal and exit or tighten stops once the line turns neutral gray. Mean-reversion traders can do the opposite: favor fades toward the Kalman line specifically while the color is neutral and price is testing one of the outer bands, and stand aside once the line turns directional.
+External variables (inputs)
+Input
+Default
+Purpose
+InpPriceType
+PRICE_CLOSE
+Applied price fed into the Kalman filter.
+InpBaseProcessNoise
+0.005
+Base Kalman process noise (Q) before regime scaling.
+InpMeasurementNoise
+0.80
+Kalman measurement noise (R); higher values smooth the line further and slow the gain.
+InpMinQMultiplier
+0.5
+Lower bound applied to Q when the Efficiency Ratio is near zero (ranging).
+InpMaxQMultiplier
+5.0
+Upper bound applied to Q when the Efficiency Ratio is near one (trending).
+InpEfficiencyPeriod
+20
+Lookback window used to compute Kaufman's Efficiency Ratio.
+InpBandPeriod
+20
+Lookback window for the rolling residual standard deviation behind the bands.
+InpBandMultiplier
+1.5
+Base multiplier applied to residual volatility to set band distance from the line.
+InpRegimeThreshold
+0.40
+Efficiency Ratio cutoff above which the regime is classified as trending rather than ranging.
+Recommended use
+Load the indicator on a clean chart template with the line width bumped to 2 or 3 for visibility, and keep the default grayscale-friendly color set or swap in your own trend-up / trend-down / ranging colors. On H1–H4 charts, start with the default periods and only shorten
+InpEfficiencyPeriod
+if you trade a faster instrument that cycles between regimes more quickly. Pair the color state with a secondary confirmation, such as a break of the prior swing high or low, before treating a fresh directional flip as an entry, and treat two or three consecutive neutral-colored bars near a band as the strongest mean-reversion read the indicator gives. Because the filter never repaints closed-bar colors, it is also reasonable to backtest signal rules built directly on the buffer's color state.
+Fig. 1. The Kalman line switches from a dashed neutral read to a solid directional trend as the Efficiency Ratio crosses the regime threshold, while the dotted upper and lower bands contract during the high-efficiency trending stretch and widen again through the choppy segments on either side.

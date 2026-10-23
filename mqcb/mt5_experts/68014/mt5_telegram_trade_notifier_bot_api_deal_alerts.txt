@@ -1,0 +1,27 @@
+Overview
+TelegramTradeNotify is a lightweight MT5 utility EA that sends trade execution (deal) notifications to Telegram using Telegram Bot API (sendMessage).
+Key Features
+Sends alerts on executed deals (TRADE_TRANSACTION_DEAL_ADD)
+Optional filter: BUY/SELL only
+UTF-8 URL encoding (supports Vietnamese & emojis)
+Optional disable web page preview
+Simple inputs: Bot Token, Chat ID, timeout, prefix
+Setup
+Create a Telegram bot and get the bot token.
+Get your target chat id (user/group) or use @channelusername.
+In MetaTrader 5: Tools → Options → Expert Advisors
+Enable “Allow WebRequest for listed URL” and add:
+https://api.telegram.org
+Attach the EA to any chart and set:
+InpBotToken
+InpChatId
+Notes / Troubleshooting
+If WebRequest fails, check network/firewall/DNS and ensure the URL is allowed in MT5 options.
+Some networks/VPS may block Telegram; switching network or using a relay server can help.
+Inputs
+InpBotToken: Telegram bot token
+InpChatId: chat id or @channelusername
+InpSendTestOnInit: send a test message when EA starts
+InpNotifyBuySellOnly: notify only BUY/SELL deals
+InpTimeoutMs: WebRequest timeout
+InpMsgPrefix: message prefix

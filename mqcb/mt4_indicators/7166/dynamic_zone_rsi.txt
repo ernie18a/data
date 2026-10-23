@@ -1,0 +1,6 @@
+In classical literature, the relative strength index is described as the "price-following oscillator that ranges between 0 and 100, and signals the market sentiment to change the trend at high (close to 100%) or low (close to 0%) values of the RSI».
+Dynamic Zone RSI, with large smoothing.
+Dynamic Zone RSI
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7166

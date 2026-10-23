@@ -1,0 +1,3 @@
+Adaptive Moving Average (AMA) technical indicator is used for constructing a Moving Average with low sensitivity to price series' noises and is characterized by the minimal lag for trend detection. This indicator was developed and described by Perry Kaufman in his book "Smarter Trading".
+Maybe what is strange when Kaufman AMA is concerned, is that it is rarely used in indicators based on averages (like MACD).
+This indicator partially fills that gap: this is the MACD built exclusively using Kaufman AMA (even signal line is using that). That way this is a completely adaptive MACD (bearing in mind that Kaufman AMA is adaptive Moving Average).

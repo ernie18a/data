@@ -1,0 +1,8 @@
+The indicator draws candlesticks of a larger timeframe as color filled rectangles using
+DRAW_FILLING
+buffers.
+Depending on candlestick direction its body is painted in blue or pink, shadows are painted in lime or red.
+Fig.1 Indicator BackgroundСandle_HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2116

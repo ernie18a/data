@@ -1,0 +1,28 @@
+Author of the idea
+—
+Bluesky
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+The Expert Advisor opens a reverse position, additionally placing a grid of orders for reinforcement. Analysis of price changes is performed on a certain number of bars.
+This simple Expert Advisor waits for a strong price fluctuation of x pips in y bars ("
+Change in price
+" field is the value of price change, "
+CountBars
+" field is the number of bars; both parameters can be adjusted). After that it opens a reverse position with a grid of limit orders to reinforce it ("
+Grid
+" field can be adjusted).
+All positions are closed after reaching a certain result ("
+Amount
+" field can be adjusted). You can also configure the position to be closed like this: " if(getProfit()>=AccountBalance()/1000){CloseAll();}" if you wan your profit to be proportional to your balance.
+In reality, this is very risky, because you may endanger a large number of lots. Therefore, you can enable the "
+LockDown
+" option, which closes your positions after reaching a certain number of pips (recommended 400 = 40 pips). However, it is not recommended to use this EA in real conditions — it simply gives you the idea of how much money you can risk.
+The EA can be used on any chart and timeframe, but PLEASE optimize it first. The example here is for EURUSD M1, but I am sure that you can obtain more relevant results on EURJPY.
+Enjoy.
+David
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17012

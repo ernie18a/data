@@ -1,0 +1,53 @@
+Author:
+Andrey N. Bolkonsky
+The Moving Averages Convergence/Divergence Indicator by William Blau is described in the book
+Momentum, Direction, and Divergence: Applying the Latest Momentum Indicators for Technical Analysis"
+.
+The Moving Average Convergence/Divergence (MACD) technical Indicator is the difference between two
+exponentially smoothed moving averages (EMA)
+(fast EMA has period s and slow EMA has period r).
+The sign of MACD
+indicates the relative position of fast s-period EMA and slow r-period EMA. It's positive when EMA(s)>EMA(r) and negative if EMA(s)<EMA(r). The increase of the |MACD| (absolute value) indicates the divergence of moving averages, the decrease of of the |MACD| indicated the convergence of EMAs.
+WilliamBlau.mqh must be placed in
+terminal_data_folder
+\MQL5\Include\
+Blau_SM_Stochastic.mq5 must be placed in
+terminal_data_folder
+\MQL5\Indicators\
+Moving Averages Convergence/Divergence by William Blau.
+Calculation:
+Moving Averages Convergence/Divergence is calculated by formula:
+macd(price,r,s) = EMA(price,s) - EMA(price,r)
+s < r
+where:
+price - close price of the current period;
+EMA(price,r) - slow EMA with period r, applied to price;
+EMA(price,s) - fast EMA with period s, applied to price.
+The formula of MACD by William Blau looks as follows:
+MACD(price,r,s,u) = EMA( macd(price,r,s) ,u) = EMA( EMA(price,s)-EMA(price,r) ,u)
+s < r
+where:
+price - close price;
+EMA(price,r) - 1st smoothing - slow EMA, applied to price;
+EMA(price,s) - 2nd smoothingе - fast EMA, appled to price;
+macd(r,s)=EMA(price,s)-EMA(price,r) - moving averages convergence/divergence;
+EMA(macd(r,s),u) - 3rd smoothing (with period u), applied to MACD.
+Input parameters
+:
+r - period of the 1st EMA (slow), applied to price (by default r=20);
+s - period of the 2nd EMA (fast), applied to price (by default s=5)
+u - period of the 3rd EMA, applied to MACD (by default u=3);
+AppliedPrice -
+price type
+(by default AppliedPrice=
+PRICE_CLOSE
+).
+Note
+:
+r>1, s>1;
+s<r (according by William Blau, there isn't any checks in the code);
+u>0. If u=1, smoothing is not used;
+Min. rates =([max(r,s)]+u-2+1).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/375

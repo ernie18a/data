@@ -1,0 +1,8 @@
+There are six different type of active or closed  orders which is
+OP_BUY
+OP_SELL
+OP_BUYSTOP
+OP_SELLSTOP
+OP_BUYLIMIT
+OP_SELLLIMIT
+This script will find the count of active /closed orders based on the types

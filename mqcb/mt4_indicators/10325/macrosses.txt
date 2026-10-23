@@ -1,0 +1,23 @@
+Counts crosses off MAs, it shows % that all MAs are above slower MAs
+If MA crosses above another, the indicator rises
+If MA crosses under another, the indicator falls
+If the indicator rises to 100%, every MA is above MAs with higher period
+If the indicator falls to 0%, every MA is under MAs with higher period
+You set the maximal MA and the step between the MAs
+Parameters
+the Max MA - Maximal Moving Average
+.
+MAs Step - Step between MAs, optimal is Max MA/10.
+MA on MAs crosses - Moving average calculated on main line MAcrosses.
+MA method
+Applied to price
+Alert -
+if it is true alert will show up at every cross of alert Lines.
+Alert Line
+- can be Crosses(main line), or Average(MA on MAs crosses line).
+Alert Up Level -
+level at which show alert.
+Alert Down Level
+- level at which show alert.
+Can by used as a trend indicator with high values
+Can by used as an oscillator indicator with low values

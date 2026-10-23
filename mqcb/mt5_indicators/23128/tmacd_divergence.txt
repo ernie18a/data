@@ -1,0 +1,14 @@
+TMACD Divergence searches for
+Triangular Moving Average Convergence/Divergence
+oscillator divergences and displays them.
+The indicator has three input parameters:
+Fast MA period
+Slow MA period
+Applied price
+TMACD indicator signal line is not involved in the calculations
+Fig. 1. TMACD Divergence
+Fig. 2. TMACD Divergence +
+TMACD
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23128

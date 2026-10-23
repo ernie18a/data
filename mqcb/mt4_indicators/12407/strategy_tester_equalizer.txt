@@ -1,0 +1,15 @@
+The indicator allows to control the Strategy Tester speed.
+You can slow down or speed up the speed of Strategy Tester when set to 32.
+Speed
+: decrease speed (less or equal to zero)
+Skip Tick
+: increase speed (greater or equal to zero)
+Step
+: interval (greater or equal to one)
+Video:
+https://www.youtube.com/watch?v=Uh-y9dcopmI
+.
+Requirements:
+Checked '
+Allow DLL imports
+' before running the indicator.

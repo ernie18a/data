@@ -1,0 +1,7 @@
+The ZigZag based on the
+OsMACandle
+oscillator.
+Fig1. The ZigZag_OsMACandle indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16536

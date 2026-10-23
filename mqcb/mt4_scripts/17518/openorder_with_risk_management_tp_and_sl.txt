@@ -1,0 +1,7 @@
+This script is useful if you want to open an order using risk management rules and magic numbers, you can also set take profit and stop loss in distance from the current price.
+You will be able to:
+Specify a fixed position size OR
+Have the position size calculated depending on risk % and stop loss
+Specify a Stop Loss and Take Profit
+Specify a Magic Number
+Specify a Comment

@@ -1,0 +1,7 @@
+This indicator displays, in histogram form, the difference between either:
+a fast and slow moving average (MA_Power=true)
+main and signal lines of a MACD indicator (MACD_Power=true)
+main and signal lines of a stochastic indicator (Stochastic_Power=true)
+Only one option can be choosen (default is moving average) at any one time, although another indicator can be opened for another option.
+This indicator also displays average (strength) levels of difference values above and below the zero line. This feature can be disabled (Set_Levels=false).
+This indicator is meant to gauge the power/strength behind a price move.

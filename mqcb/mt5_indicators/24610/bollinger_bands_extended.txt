@@ -1,0 +1,6 @@
+Theory :
+Bollinger bands are calculated as :
+A Bollinger Band® is a technical analysis tool defined by a set of lines plotted two standard deviations (positively and negatively) away from a simple moving average (SMA) of the security's price, but can be adjusted to user preferences. Bollinger Bands® were developed and copyrighted by famous technical trader John Bollinger,
+The part that is using standard deviations is a part that can be interpreted differently. The standard deviation usually used is the standard deviation - this version adds an option to chose standard deviation of a sample too. Also, it is adding Bollinger bands zones as a sort of an early warning of a price entering a "breakout zone"
+Usage :
+It can be used as any regular Bollinger bands indicator

@@ -1,0 +1,12 @@
+Original author:
+GoldnMoney
+A modification of the popular
+Ozymandias
+indicator.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 6.10.2014.
+Fig. 1. The Ozymandias_v2 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12537

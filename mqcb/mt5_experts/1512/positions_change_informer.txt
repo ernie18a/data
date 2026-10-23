@@ -1,0 +1,27 @@
+The Expert Advisor doesn't generate the deals independently, but is a "helper" designed to control positions' state. This Expert Advisor is a kind of a simplified variation of the Expert Advisor described in the
+article about processing of the events
+, with the difference that the OnTradeTransaction() function is used and there is a processing of triggering of Stop Loss and Take Profit.
+It should be considered that the Expert Advisor can send email in
+correct corresponding configurations
+. If sending mail to the terminal is prohibited, the Expert Advisor will output alerts. There are a few important moments:
+modification and deleting orders is not processed, only opening, reversal and closing.
+triggering of Stop Loss and Take Profit is caught by the broker comments. But if the broker changed the default comments, only the information about closing a deal/position and a financial result in deposit currency will be displayed.
+to display messages in any other language, you should write a file with a translation. For details read
+here
+.
+a functional is easy to integrate in any exterior Expert Advisor (it is enough to copy parameters, the code in OnInit() function and a function).
+Set up:
+download the PositionsChangeInformer.mq5 Expert Advisor files to the folder "MetaTrader 5\MQL5\Experts".
+download the LanguagesEnum.mqh and Translator.mqh files to "MetaTrader 5\MQL5\Include" folder.
+extract the archive with the language file to "MetaTrader 5\MQL5\Files\Languages" folder.
+Parameters:
+Alert type
+- the type of alert when a trading deal arrives. Three variants are possible: Alert - the alert, Sound - triggering of the sound file and displaying the information about a deal in the journal, Email - sending the information about a deal to e-mail.
+Sound filename
+- the name of the sound file. It makes sense only if the previous parameter is equal to Sound. It can trigger any file in wav format which is located in MetaTrader 5\MQL5\Files folder. If there is no a file in the folder, the alert.wav file from MetaTrader 5\Sounds folder will be triggered.
+Languages
+- the language on which the generated messages will be translated. As only one language file for the Russian language is applied, there is a possibility to display messages in Russian and English (in case if not the Russian, but any other language will be selected).
+Here are the results in the journal (output language parameter was changing at the same time):
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1512

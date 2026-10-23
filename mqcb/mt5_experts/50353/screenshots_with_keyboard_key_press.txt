@@ -1,0 +1,2 @@
+After you attach this to the chart, you can take quick widescreen screenshots by pressing the 's' hotkey on the keyboard.
+The date is automatically appended to every screenshot image.

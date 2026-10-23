@@ -1,0 +1,17 @@
+The displayed values:
+Whole length of the candlestick
+(High - Low) - red solid line
+"Body" of the candlestick
+(for a bull candlestick = Close - Open) - green solid line
+Sum of "shadows"
+(for a bull candlestick = (High - Close) + (Open - Low) ) - blue solid line
+Upper "shadow"
+(for a bull candlestick = High - Close ) - blue dashed line
+Lower "shadow"
+(for a bull candlestick = Open - Low ) - blue dashed line
+Only the last
+DrawBars
+of the bars are drawn to save the resources.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7734

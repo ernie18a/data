@@ -1,0 +1,31 @@
+It's an expert to open and close orders on specific day and time.
+Expert open and close orders only with the same symbol it attached.
+Parameters
+Day Open Orders
+- Set day open orders.
+Hour Open Orders
+- Set hour open orders.
+Minute Open Orders
+- Set minutes open orders.
+Open Buy Orders
+- Select if open buy orders.
+Open Sell Orders
+- Select if open sell orders.
+Orders' Lot Size
+- Set lot size.
+Orders' Take Profit (0=Not Add Take Profit)
+- Take profit in pips.
+Orders' Stop Loss (0=Not Add Stop Loss)
+- Stop loss in pips.
+Orders' Handle Magic Number
+- Handle orders only with specific magic number.
+Day Close Orders
+- Set day to close orders.
+Hour Close Orders
+- Set hour to close orders.
+Minute Close Orders
+- Set minutes to close orders.
+Close Only Own Orders In Time
+- Select if close only orders are opened from expert.
+Close All Orders In Time
+- Select if close all opened order of account.

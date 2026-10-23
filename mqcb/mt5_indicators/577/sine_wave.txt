@@ -1,0 +1,14 @@
+Real author:
+Witold Wozniak
+Sine Wave indicator was developed in 1996 by the American analyst John Ehlers, who called it a "trend oscillator". It is based on the idea of the economical processes periodicity: the indicator detects this periodicity violations.
+The indicator acts in a completely opposite way comparing to the adaptive moving averages during a trend market: in case of a definite trend, both indicator lines (Lead Sine and Sine Wave) move parallel to each other and show the trend direction by their location relative to each other; in case of a flat, the Sine Wave indicator quickly reacts on the market swing movements. That is one of a few indicators that can be used both during a trend market and a flat and it shows accurate results in either case.
+The simplest way to automatize trading using the Sine Wave indicator is to create the automated trading system that can generate buy and sell signals in case of two lines crossing. Therefore, positions will be closed when these lines cross with different periods in the opposite direction.
+Two versions of this indicator are available. Original code version - Sinewave.mq5. Sinewave2.mq5 indicator provides a small filtration of chaotic oscillations of the Lead Sine line.
+Place the
+CyclePeriod
+indicator compiled file to the
+terminal_data_folder
+\MQL5\Indicators\.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/577

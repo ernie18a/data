@@ -1,0 +1,61 @@
+The problem is stated for this automated trading system (ATS) as follows:
+Let's consider we have a basic trading system - BTS. It is necessary to create and teach a neural network to make it do things that cannot be done with the BTS. This must result in creation of a trading system consisting of two combined and mutually complementary systems: BTS and NN (neural network).
+Or, the English of this is: There is no need to discover the continents again, they were all discovered. Why to teach somebody to run fast, if we have a car, or to fly, if we have a plane?
+Once we have a trend-following ATS, we just have to teach the neural network in countertrend strategy. This is necessary, because a system intended for trend-based trading cannot trade on sideways trends or recognize market setbacks or reversals. You can, of course, take two ATSes - a trend-following one and a countertrend one - and attach them to the same chart. On the other hand, you can teach a neural network to complement your existing trading system.
+For this purpose, we designed a two-layer neural network consisting of two perceptrons in the lower layer and one perceptron in the upper layer.
+The output of the neural network can be in one of these three states:
+Entering the market with a long position
+Entering the market with a short position
+Indeterminate state
+Actually, the third state is the state of passing control over to the BTS, whereas in the first two states the trade signals are given by the neural network.
+The teaching of the neural network is divided into three stages, each stage for teaching one perceptron. At any stage, the optimized BTS must be present for perceptrons to know what it can do.
+The separate teaching of perceptrons by a genetic algorithm is determined by the lack of this algorithm, namely: The amount of inputs searched in with the help of such algorithm is limited. However, each teaching stage is coherent and the neural network is not too large, so the whole optimization does not take too much time.
+The very first stage, preceding the teaching of an NN, consists in optimization of the BTS.
+In order not to lose ourselves, we will record the stage number in the input of the ATS identified as "pass". Identifiers of inputs corresponding with the stage number will and in the number equal to this stage number.
+Thus, let's start preparations for optimization and teaching the NN. Let's set the initial deposit as $1000000 (in order not to create an artificial margin call during optimization) and the input to be optimized as "Balance" in Expert Advisor properties on the tab of "Testing" in the Strategy Tester, and start genetic algorithm.
+Let's go to the "Inputs" tab of the EA's properties and specify the volume of positions to be opened by assigning the value 1 to the identifier "lots".
+Optimization will be performed according to the model: "Open prices only (fastest method to analyze the bar just completed, only for EAs that explicitly control bar opening)", since this method is available in the ATS algorithm.
+Stage 1 of optimization. Optimization of the BTS:
+Set the value 1 for the input "pass".
+We will optimize only inputs that correspond with the first stage, i.e., that end in 1. Thus, we check only these inputs for optimization, and uncheck all others.
+tp1 - TakeProfit of the BTS. It is optimized with the values within the range of 10 to 100, step 1
+sl1 - StopLoss of the BTS. It is optimized with the values within the range of 10 to 100, step 1
+p1 - period of CCI used in the BTS. It is optimized with the values within the range of 3 to 100, step 1
+Stage 2. Teaching the perceptron responsible for short positions:
+Set the value 2 (according to the stage number) for the input "pass".
+Uncheck the inputs checked for optimization in the previous stage. Just in case, save in a file the inputs obtained at the previous stage.
+Check the inputs for optimization according to our rule: their identifiers must end in 2:
+x12, x22, x32, x42 - weight numbers of the perceptron that recognizes short positions. It is optimized with the values within the range of 0 to 200, step 1
+tp2 - TakeProfit of positions opened by the perceptron. It is optimized with the values within the range of 10 to 100, step 1
+sl2 - StopLoss of positions opened by the perceptron. It is optimized with the values within the range of 10 to 100, step 1
+p2 - the period of the values of price difference to be analyzed by the perceptron. It is optimized with the values within the range of 3 to 100, step 1.
+Let's start teaching it using optimization with a genetic algorithm.
+Stage 3. Teaching the perceptron responsible for long positions:
+Set the value 3 (according to the stage number) for the input "pass".
+Uncheck the inputs checked for optimization in the previous stage. Just in case, save in a file the inputs obtained at the previous stage.
+Check the inputs for optimization according to our rule: their identifiers must end in 3:
+x13, x23, x33, x43 - weight numbers of the perceptron that recognizes long positions. It is optimized with the values within the range of 0 to 200, step 1.
+tp3 - TakeProfit of positions opened by the perceptron. It is optimized with the values within the range of 10 to 100, step 1
+sl3 - StopLoss of positions opened by the perceptron. It is optimized with the values within the range of 10 to 100, step 1
+p3 - the period of the values of price difference to be analyzed by the perceptron. It is optimized with the values within the range of 3 to 100, step 1.
+Let's start teaching it using optimization with a genetic algorithm.
+Stage 4 (final). Teaching the first layer, i.e., teaching the perceptron that is in the upper layer:
+Set the value 4 (according to the stage number) for the input "pass".
+Uncheck the inputs checked for optimization in the previous stage. Just in case, save in a file the inputs obtained at the previous stage.
+Check the inputs for optimization according to our rule: their identifiers must end in 4:
+x14, x24, x34, x44 - weight numbers of the perceptron of the first layer. It is optimized with the values within the range of 0 to 200, step 1.
+p4 - the period of the values of price difference to be analyzed by the perceptron. It is optimized with the values within the range of 3 to 100, step 1.
+Let's start teaching it using optimization with a genetic algorithm.
+That's all, the neural network has been taught.
+The ATS has one more non-optimizable input, mn - Magic Number. It is the identifier of positions for a trading system not to mix its orders with the orders opened manually or by other ATSes. The value of the magic number must be unique and not coincide with the magic numbers of positions that have not been opened by this specific Expert Advisor.
+P.S.
+The size of the initial deposit is found as the doubled absolute drawdown, i.e., we consider some safety resources for it.
+The EA given in the source codes is not optimized.
+If you need to replace the built-in BTS with the algorithm of another trading system, you must modify the contents of the function basicTradingSystem().
+In order not to enter the initial and the final values and the values of steps for optimization, you can take the ready file
+combo.set
+, place it in the folder \tester MT4, and upload to the EA's properties in Tester.
+Re-optimization of the EA is to be performed at a weekend, i.e., on Saturday or on Sunday, but only if the results of the preceding week were unprofitable. The presence of losses means that the market has changed, and the re-optimization is necessary. The presence of profits means that the ATS does not need any re-optimization and recognizes market patterns quite well.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7917

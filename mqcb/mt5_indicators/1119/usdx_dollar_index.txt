@@ -1,0 +1,14 @@
+USDX is an index which measures the dollar's value against a basket of six basic currencies: Euro (EUR), Yen (JPY), Pound sterling (GBP), Canadian dollar (CAD), Swedish krona (SEK) and Swiss franc (CHF).
+The index is calculated as a weighted geometric value of these currencies using the following formula:
+USDx=50,14348112*USDEUR^0,576*USDJPY^0,136*USDGBP^0,119*USDCAD^0,091*USDSEK^0,042*USDCHF^0,036
+where the power coefficients correspond to the weights of currencies in the basket:
+Euro — 57,6 %;
+Yen - 13.6%;
+Pound Sterling - 11.9%;
+Canadian dollar - 9.1%;
+Swedish Krona - 4.2%;
+Swiss franc - 3.6%;
+Before using activate EURUSD, USDJPY ,GBPUSD, USDCAD, USDSEK, USDCHF symbols in market survey and load the history according to symbols data.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1119

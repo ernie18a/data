@@ -1,0 +1,14 @@
+The Expert Advisor places a grid of orders in both directions five minutes before the specified time (news release time). Once the orders trigger the EA trails the Stop Loss order. Ten minutes after specified time the EA deletes the untriggered pending orders.
+EA Parameters:
+news_time — news release time.
+amount of deals — the amount of pending orders to be opened in each direction after a step.
+step between them — the step between the orders to be opened in one direction.
+distance from current price — the distance between the first order and the current price.
+trail sl (in pips) — the value of the Trailing Stop of the Stop Loss order, activated after the order is opened by market.
+take profit from order price — the value of the Take Profit order.
+tolerance for trail — tolerance for the Stop Loss order change during trailing. Required to decrease the amount of calls to the server.
+magic number — the unique magic number of the order grid.
+lot size — the size of the positions to be opened.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14200

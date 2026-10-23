@@ -1,0 +1,2 @@
+This free code manages to close all open positions complying with FIFO rules just by drag and drop into the chart, no matter if profit or loss.
+Must enable autotrading.

@@ -1,0 +1,8 @@
+Real author:
+dXerof
+This is a simple indicator showing pivot only:
+pivot H1;
+pivot H4;
+pivot Daily;
+pivot Weekly;
+pivot Monthly.

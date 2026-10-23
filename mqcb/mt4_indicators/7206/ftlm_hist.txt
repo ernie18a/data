@@ -1,0 +1,7 @@
+Author: Ramdass - Conversion only
+The FTLM hist indicator is one of many digital indicators that emerged after some of the articles by Vladimir Kravchuk. Here is a link to
+one
+of them.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7206

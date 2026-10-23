@@ -1,0 +1,19 @@
+The indicator shows the ratio between bullish and bearish candlesticks over the specified period.
+The indicator has three input parameters:
+Period
+- calculation period
+Smoothing period
+- the period of smoothing
+Method
+- the method of smoothing
+Calculation formula:
+Up Candle
+Up=close-open;
+Down =0;
+Down Candle
+Down=open-close;
+Up = 0;
+Ratio = Sum(Up) / Sum (Down);
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20330

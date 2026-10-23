@@ -1,0 +1,6 @@
+Theory :
+This is RSI with on-chart support / resistance levels displayed. The way how it is done is explained in more detail here :
+CCI With on-chart SR Levels
+Usage :
+You can use it as any regular RSI and you can use the color changes as signals
+The "big picture" example

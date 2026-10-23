@@ -1,0 +1,16 @@
+Individual Strategy Insights
+When a single account hosts multiple strategies, the core challenge is separating the performance of each one. Without magic numbers, you’d have to rely on partial or ambiguous details like trade comments or ticket ranges. Magic numbers offer a systematic, numeric tag that an EA applies automatically.
+Accurate Performance Tracking
+You can quickly pinpoint which system has a drawdown or which one is performing exceptionally. This knowledge supports faster decision-making—e.g., deciding to pause an underperforming robot or allocate more capital to a winning strategy.
+Simpler Analysis & Logging
+Rather than combing through logs or the history tab, you have a concise, single “panel” that aggregates each EA’s total closed profit, deal counts, and relevant comment fields. This helps with record-keeping, strategy optimization, and even client reporting if you manage accounts for others.
+Full Code Attached.
+Usage Tips
+Attach the Script/EA
+to any chart in MT5. After compilation, it will immediately display a table with each magic number.
+Check Chart Size
+: If your chart window is very narrow, part of the text may extend off-screen to the right. Widen the chart or lower the font size for better readability.
+Match Font
+: Courier New is recommended for column alignment, but you can change it in the code if you prefer a different look.
+Adjust Timings
+: By default, the script updates every 5 seconds. Modify EventSetTimer(5) if you want more frequent or less frequent refreshes.

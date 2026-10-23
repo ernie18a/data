@@ -1,0 +1,183 @@
+Universal Breakout Study
+is an Expert Advisor designed for researching and testing breakout trading strategies
+Strategy Description
+The EA builds a price range (
+Box
+) using a specified number of
+H1
+candles and, once the range is completed, places
+Buy Stop
+and
+Sell Stop
+pending orders outside the box boundaries.
+When a breakout occurs, the corresponding order is activated. After the position is opened, it can be managed using
+Stop Loss
+,
+Take Profit
+,
+Breakeven
+,
+Trailing Stop
+, and other trade management techniques.
+The range can be built for any trading session
+using GMT-adjusted time. This allows traders to research breakouts during the Asian, London, New York, or any custom trading session without modifying the source code.
+The EA supports multiple methods for calculating
+Stop Loss
+and
+Take Profit
+. Protective orders can be disabled, specified as fixed values, or calculated as a coefficient of the box size. Position size is calculated automatically based on the selected risk level.
+Available trade management features:
+Breakeven
+— move Stop Loss to breakeven.
+Trailing Stop
+— dynamic position management.
+Time Exit
+— close positions after a specified amount of time.
+Expiration
+— pending order lifetime control.
+Day-of-Week Filter
+— enable or disable trading on specific weekdays.
+Trading can be enabled or disabled separately for each weekday, making the EA suitable not only for breakout research but also for studying calendar-based market effects.
+The source code is fully open and can be used to develop custom breakout strategies, add new filters, and test trading hypotheses.
+Parameters
+Box Settings
+GMT
+— GMT offset used for session calculation and box construction.
+StartHourBox
+— Box start hour in GMT time.
+TotalBarBox
+— Number of H1 candles used to build the box.
+Example:
+StartHourBox = 8
+TotalBarBox = 24
+The EA will build a box using 24 hourly candles starting from 08:00 GMT.
+Open Settings
+Shift
+— Additional distance from the box boundary before placing pending orders.
+Expiration_Minute
+— Pending order expiration time in minutes.
+Value
+0
+disables order expiration.
+Example:
+Box High = 1.1000
+Shift = 10 points
+Buy Stop will be placed at 1.1010.
+StopLoss Settings
+StopLoss_Type
+— Stop Loss calculation method.
+Available modes:
+Null
+— Stop Loss disabled.
+Fixed
+— Fixed Stop Loss in points.
+Coefficient from Box
+— Stop Loss calculated as a fraction of the box size.
+StopLoss
+— Fixed Stop Loss value in points.
+k_StopLoss
+— Stop Loss coefficient relative to box size.
+Example:
+Box Size = 100 points
+k_StopLoss = 0.62
+Stop Loss = 62 points.
+TakeProfit Settings
+TakeProfit_Type
+— Take Profit calculation method.
+Available modes:
+Null
+— Take Profit disabled.
+Fixed
+— Fixed Take Profit in points.
+Coefficient from Box
+— Take Profit calculated as a fraction of the box size.
+TakeProfit
+— Fixed Take Profit value in points.
+k_TakeProfit
+— Take Profit coefficient relative to box size.
+Example:
+Box Size = 100 points
+k_TakeProfit = 0.30
+Take Profit = 30 points.
+Breakeven
+Paritet_Type
+— Enable or disable Breakeven.
+Paritet
+— Profit in points required before moving Stop Loss to breakeven.
+Pips
+— Additional profit locked after moving Stop Loss.
+Example:
+Paritet = 20
+Pips = 5
+After reaching 20 points of profit, Stop Loss will be moved to entry price +5 points.
+Classical Trailing Stop
+OnTraillingStop
+— Enable or disable Trailing Stop.
+TraillingStop
+— Distance between the current price and Stop Loss.
+TraillingStep
+— Minimum Stop Loss adjustment step.
+TraillingStart
+— Additional profit required before Trailing Stop activation.
+Example:
+TraillingStop = 20
+TraillingStart = 10
+The Trailing Stop will activate only after the position reaches 30 points of profit.
+At that moment, Stop Loss will be moved to lock in 10 points of profit. Afterward, the Stop Loss will continue trailing the price at a distance of 20 points.
+Time Exit
+Close_Type
+— Enable or disable time-based exit.
+Market_Minute
+— Maximum position lifetime in minutes.
+Close_Level
+— Minimum profit required before closing the position.
+Example:
+Market_Minute = 70
+Close_Level = 10
+If a trade remains open for more than 70 minutes and profit exceeds 10 points, the position will be closed.
+Trading Days
+Monday
+— Enable trading on Monday.
+Tuesday
+— Enable trading on Tuesday.
+Wednesday
+— Enable trading on Wednesday.
+Thursday
+— Enable trading on Thursday.
+Friday
+— Enable trading on Friday.
+This filter allows breakout behavior to be tested separately for different weekdays.
+Trade Settings
+RiskPercent
+— Risk per trade as a percentage of account balance.
+Important Notes
+The EA works exclusively on the H1 timeframe.
+The box is built using GMT-adjusted time, independent of the broker's server time.
+The box size is defined by the number of H1 candles, allowing any trading session or custom time interval to be researched.
+Buy Stop and Sell Stop orders are placed automatically once the box is completed.
+Pending orders can expire automatically using the Expiration_Minute parameter.
+Stop Loss and Take Profit can be disabled, specified as fixed values, or calculated as a coefficient of the box size.
+Breakeven, Trailing Stop, and Time Exit can be used independently or simultaneously.
+Trailing Stop activates only after profit reaches TraillingStop + TraillingStart. The first stop movement locks in at least TraillingStart points of profit.
+Time Exit only closes positions that have reached the specified profit level.
+Trading can be enabled or disabled individually for each weekday.
+Position size is calculated automatically based on the selected risk level.
+When risk-based position sizing is used, risk is calculated from the account balance at the moment the EA starts, not from the current balance or equity.
+The EA was created for researching breakout strategies and should not be considered a ready-to-trade system without additional validation and out-of-sample testing.
+Research Example
+As an example of how the Expert Advisor can be used, a complete range breakout strategy research study was conducted.
+The following components were analyzed sequentially:
+range formation parameters;
+Stop Loss and Take Profit settings;
+break-even management;
+trailing stop parameters;
+time-based exit filter;
+weekday filter.
+After selecting the most promising configurations, a final model was obtained and subsequently validated on a forward-testing period.
+The figures below show the optimization results and forward-test performance of one of the selected configurations.
+Optimization Results
+Forward-Test Results
+This example is provided for demonstration purposes only. It should not be interpreted as a recommendation to use any specific parameter set or as a guarantee of future performance.
+The goal is simply to illustrate how
+Universal Breakout Study
+can be used as a research tool for developing, testing, and validating trading ideas.

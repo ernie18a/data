@@ -1,0 +1,1 @@
+MACD, OsMA, AC, AO & RVI same time slope growing/falling is the signal.

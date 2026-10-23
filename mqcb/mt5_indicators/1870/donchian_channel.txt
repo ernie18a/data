@@ -1,0 +1,7 @@
+The real author:
+Richard Dawood Donchyan
+Donchian Channel is a volatility indicator based on the calculation of the current price range with the recent highest and lowest prices.
+Code is similar to
+Donchian Channels
+, but the middle line is not plotted.
+Donchian Channel indicator

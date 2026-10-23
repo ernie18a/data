@@ -1,0 +1,11 @@
+The indicator draws
+TriXCandle
+indicator candlesticks of a higher timeframe as color filled rectangles using
+DRAW_FILLING
+buffers.
+Depending on candlestick direction the candlestick body is painted in emerald green or purple, shadows are painted in light green or plum.
+This indicator requires the the compiled indicator file TriXCandle.mq5. Place it in <terminal_data_folder>\MQL5\Indicators\.
+Fig.1. The Background_TriXCandle_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14101

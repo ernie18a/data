@@ -1,0 +1,17 @@
+This is the modified version of
+Position in channel
+indicator.
+The indicator calculates the values, similar to
+"Williams Percent Range"
+for 5 different periods. The values are plotted as a histogram. The histogram forms different patterns at different stages of the trend.
+Input parameters:
+TMode – mode: 0 - fast, 1 - normal, 2 - slow;
+InpXCoord - the horizontal shift relative to the lower left corner;
+InpYCoord - the vertical shift relative to the lower left corner.
+Three sets of periods are used:
+Fast – 30, 15, 10, 8, 6;
+Normal – 60, 30, 20, 15, 12;
+Slow – 120, 60, 40, 30, 24.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/890

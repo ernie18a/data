@@ -1,0 +1,5 @@
+Signal indicator, which plots fast and slow moving averages and fills the areas formed by their intersection, in accordance with market conditions. Input parameters are the type of MA (simple, exponential, smoothed, linearly-weighted) and the periods of the fast and slow MA.
+The indicator is able to send alerts when the MA's cross (and therefore, when trend changes).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16495

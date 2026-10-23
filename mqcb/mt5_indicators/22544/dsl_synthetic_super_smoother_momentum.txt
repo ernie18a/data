@@ -1,0 +1,8 @@
+Background :
+This is a variation of DSL synthetic ema momentum indicator (originally published here :
+DSL syntetic ema momentum
+)
+This version :
+Instead of using EMA for momentum and DSL (Discontinued Signal Line) calculation, super smoother is used for both. That way it is a bit "faster" (since super smoother is reacting to market price changes faster than ema) and smoother (for obvious reasons)
+Usage :
+You can use the color changes for entry or re-entry signals

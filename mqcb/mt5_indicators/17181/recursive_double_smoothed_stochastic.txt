@@ -1,0 +1,20 @@
+Variation on the "double smoothed stochastic" theme.
+The name might be a bit misleading: it is not exactly the same in its calculation as the "double smoothed stochastic" (dss actually has 3 smoothing steps, this one really has 2 smoothing steps — so we might say that this is really double smoothed stochastic), and it adds what the original does not have. It can use prices for start and then each and every next step is using previous step result. The "depth" is limited to 15 simply for practical reasons.
+The indicator can use 4 types of averages for smoothing :
+simple moving average
+exponential moving average
+smoothed moving average
+linear weighted moving average
+It can calculate 3 type of levels :
+floating
+quantile
+fixed
+Colors change (and alerts) can be chosen  based on:
+on slope
+on outer levels cross
+on middle level cross
+And the usual: it is already multi time frame with the usual choice of prices (heiken ashi prices included)
+PS: double smoothed stochastic is for long time showing that, with the default parameters that were used by
+Walter
+Bressert
+, it works best on longer time frames. It specially tends to clearly show cycles on 1 hour chart, so, if you are new to it, start by using it on that time frame and then build your way to other time frames and ways of using it.

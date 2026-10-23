@@ -1,0 +1,7 @@
+Original author:
+TradeLikeaPro
+A semaphore signal indicator that uses an algorithm based on crossovers of two moving averages.
+Fig. 1. The ForexProfitBoost_2nbSign indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12713

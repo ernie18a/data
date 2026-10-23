@@ -1,0 +1,21 @@
+This indicator shows a brief information about current balance and positions of the chart.
+It is possible to change the font and two colors for the positive and the negative balance values.
+By default it uses green color for the positive and red color for the negative values.
+It uses 5 basic currency pairs:
+EURUSD
+,
+GBPUSD
+,
+USDCAD
+,
+USDCHF
+,
+USDJPY
+.
+Image:
+Fig 1. Indicator work example
+Contact me if you need additional options.
+It will be great to go further and write a broadcaster of balance and positions on the mobile phone using Bluetooth, maybe somebody has solved it?
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9329

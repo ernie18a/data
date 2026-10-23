@@ -1,0 +1,35 @@
+Oscillator Adaptable RSI, unlike standard RSI, allows you to select a method to calculate intermediate data that is calculated in standard RSI by the SMMA method only.
+It has five configurable parameters:
+Period
+- calculation period
+Method
+- intermediate data calculation method
+Applied price
+- calculation price
+Overbought
+- overbought level
+Oversold
+- oversold level
+Calculations:
+ARSI = 100.0-100.0/(1.0 + MA_Gain/MA_Loss)
+where:
+MAGain = MA(Gain, Period, Method)
+MALoss = MA(Loss, Period, Method)
+If diff > 0
+Gain = diff
+Otherwise
+Gain = 0
+If diff < 0
+Loss = -diff
+Otherwise
+Loss = 0
+diff = Price - PrevPrice
+Price = MA(Applied price, 1)
+In figures below, the Adaptable RSI is shown as compared to standard RSI:
+Fig 1. Period 14, method SMA
+Fig. 2. Period 14, method EMA
+Fig. 3. Period 14, method SSMA
+Fig. 4. Period 14, method LWMA
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21314

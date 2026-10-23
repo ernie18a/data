@@ -1,0 +1,9 @@
+The indicators are developed on the basis of WPR.
+There is nothing new under the sun.
+The first indicator. WPR with Bollinger.
+The second indicator. Just smoothed WPR.
+The third indicator. Multicurrency smoothed WPR. It allows to see the movement of the other symbols on the current chart.
+The fourth indicator. Multicurrency WPR. It allows to see the movement of the other symbols on the current chart.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8432

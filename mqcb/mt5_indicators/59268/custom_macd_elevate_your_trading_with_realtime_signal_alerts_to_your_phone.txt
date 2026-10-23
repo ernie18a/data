@@ -1,0 +1,60 @@
+Introduction
+The Custom MACD is an enhanced version of the classic MACD (Moving Average Convergence Divergence) indicator, a favorite among traders worldwide. Designed specifically for MetaTrader 5, Custom MACD not only retains the power of the traditional MACD in identifying trends and reversals but also introduces a game-changing feature: real-time signal alerts sent directly to your phone. With its open-source code and user-friendly interface, this indicator is ideal for both novice and experienced traders.
+How Custom MACD Works
+Custom MACD operates based on the standard MACD formula:
+MACD Line: The difference between the Fast EMA (default: 12) and Slow EMA (default: 26).
+Signal Line: The SMA of the MACD line (default: 9).
+Histogram: The difference between the MACD and Signal Line, making it easy to gauge market momentum.
+The indicator is visually displayed with:
+MACD Line in Dodger Blue.
+Signal Line in Orange.
+Histogram in Lime Green, highlighting trend strength.
+Key Differentiator: Phone Signal Alerts
+Unlike the default MACD indicator in MetaTrader 5, Custom MACD offers a unique feature that ensures you never miss a trading opportunity:
+Real-Time Alerts: When a Bullish Crossover (MACD crossing above the Signal Line, signaling a buy) or Bearish Crossover (MACD crossing below the Signal Line, signaling a sell) occurs, the indicator sends notifications directly to your phone via MetaTrader 5 (requires push notification setup in the MT5 app).
+Enhanced Trading Efficiency: With instant alerts, you can react swiftly to market movements, even when away from your trading desk.
+While the default MACD only provides on-chart data without automatic alerts, Custom MACD keeps you connected to the market, optimizing your trading strategy.
+Key Features
+Customizable Parameters:
+Fast EMA period (
+InpFastEMA
+, default: 12).
+Slow EMA period (
+InpSlowEMA
+, default: 26).
+Signal SMA period (
+InpSignalSMA
+, default: 9).
+Enable/disable alerts (
+ShowAlerts
+, default: true).
+Intuitive Interface: Optimized colors and line widths for easy signal identification across all timeframes.
+Open-Source Code: Easily modifiable to add features like signal arrows or integration with other indicators.
+High Performance: Optimized for smooth operation on MetaTrader 5, even with large datasets.
+Benefits for Traders
+Never Miss an Opportunity: Receive instant phone notifications for buy or sell signals, allowing quick action.
+Versatile for All Strategies: Whether you're a scalper, day trader, or swing trader, Custom MACD performs effectively across all currency pairs and timeframes.
+Improved Accuracy: Combine MACD signals with other tools (e.g., SMA, RSI) to confirm trends and reduce false signals.
+Community-Friendly: Designed for sharing on the MQL5 Code Base, enabling you to contribute to the global trading community.
+How to Use
+Installation:
+Download Custom MACD from the MQL5 Code Base.
+Compile the file in MetaEditor and drag the indicator onto a MetaTrader 5 chart.
+Set Up Push Notifications:
+In MetaTrader 5, go to Tools > Options > Notifications and configure push notifications to the MT5 mobile app.
+Ensure
+ShowAlerts
+is enabled in the indicator’s input parameters.
+Trading Strategy:
+Buy: When the MACD crosses above the Signal Line (Bullish Crossover) and the Histogram turns positive.
+Sell: When the MACD crosses below the Signal Line (Bearish Crossover) and the Histogram turns negative.
+Combine with support/resistance levels or other indicators for higher reliability.
+Why Choose Custom MACD?
+Custom MACD is more than just an indicator—it’s a powerful tool that keeps you in sync with the market at all times. The phone alert feature is a significant leap forward compared to the default MACD, saving you time and maximizing profits. With its open-source design and flexible customization, this indicator is perfect for traders looking to enhance their performance.
+Conclusion
+Download Custom MACD from the MQL5 Code Base today and experience the power of MACD with real-time alerts! If you have questions or want to customize additional features, leave a comment or contact me. Together, let’s take your trading to the next level!
+Author: Duy Van Nguy
+Contact:
+MQL5 Link
+Version: 1.00
+Updated: May 11, 2025

@@ -1,0 +1,1 @@
+The indicator displays Market Sessions. (Tokyo, London and New York. Sydney and Berlin not added).

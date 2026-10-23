@@ -1,0 +1,22 @@
+The Expert Advisor is rewritten from MQL4, the unknown author, published by
+Scriptor
+, link to the source -
+https://www.mql5.com/en/code/7599
+.
+How it works
+Green line - price difference with one of the line of
+Bollindger Bands®
+.
+Red line - sum of values of the BearsPower and BullsPower indicators multiplied by -1.
+The i_Trend indicator (the third window below) and indicators on the basis of which it is built: Bollinger bands, BearsPower and BullsPower
+Parameters
+Price - Price type used to calculate the difference of price and Bollinger Bands.
+BBPeriod - Period of Bollinger Bands.
+BBShift - Shift of Bollinger Bands.
+BBDeviation - Deviation of Bollinger Bands.
+BBPrice - Price of Bollinger Bands.
+BBLine - Used line of Bollinger Bands.
+BullsBearsPeriod - Period of Bulls Bears Power.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1115

@@ -1,0 +1,2 @@
+This indicator helps to move charts one by one to the the front, just like slide show, and make your hands free.
+Click the button to run it(ON), and click again to stop it(OFF).

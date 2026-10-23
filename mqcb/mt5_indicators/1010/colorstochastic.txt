@@ -1,0 +1,5 @@
+Standard Stochastic shown as a color histogram relative to level 50. Rising histogram bars above 50 are colored in green, while falling ones - in blue. Faling bars below 50 are colored in red, while rising ones - in magenta. If the histogram is above the signal line, the latter is colored in green indicating the rising market. If the histogram is below the signal line, the latter is colored in red indicating the falling market.
+ColorStochastic
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1010

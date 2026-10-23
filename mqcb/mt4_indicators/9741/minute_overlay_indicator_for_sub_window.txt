@@ -1,0 +1,20 @@
+Brooky Minute Overlay Indicator
+This indicator can be dragged over the top of any other sub window indicator.
+It will not upset their working in any way.
+The indicator will draw vertical lines every hour or any minute that you desire
+within the hour as long as a candle closes on that minute. That is you can see a 27 minute
+line on a minute chart but not on an M5. You will see a 10minute candle in an M5 chart and
+a M1 chart. Got the idea?. Most useful for people dealing with M1 and M5 charts.
+Stuff tends to happen just after candle closes whether they are 5, 15 or hour candles.
+I like to keep an eye on the hour lines because we all share the same hour candle but
+not the 4 hour candle and it is good to see where a stoch, macd or such might be at
+without looking at anything but the indicator.
+There are a few strategies that look at the 10 minute candle and such like. This could
+make it easier.
+Example chart shows a M1 chart with Hour, 10 minute, 30 minute and 45 minute lines.
+It is simple but more useful than it looks. You can change colours, heights, minutes etc.
+There are 4 lines that can be selected. If you only want eg: The hour ends and the 30 min,
+Just make the hour selection as minute 0 and the other 3 to 30, or if you want every 3 minutes
+on a M1 chart ??? Overlay a couple of the indicators onto your MAcd or whatever.
+Scroll your mouse over the line to see which minute line you are looking at.
+Enjoy.

@@ -1,0 +1,60 @@
+Materials on Regular Expressions
+The
+Regular Expressions for Traders
+article.
+The
+Regular Expressions in MQL4 for working with regular expressions
+library.
+Other Useful Materials
+Microsoft
+.NET Regular Expressions
+Microsoft
+.NET Regex Class Documentation
+Microsoft
+Regular Expressions - Quick Reference PDF
+Others:
+Using Regular Expressions with The Microsoft .NET Framework
+Most Useful CRegex Class Methods
+IsMatch()
+- Checks whether the regular expression finds a match in the input string.
+Matches()
+- Searches an input string for all occurrences of a regular expression and returns all the matches.
+Replace()
+- In a specified input string, replaces strings that match a regular expression pattern with a specified replacement string.
+Split()
+- Splits the subject string along regex matches, returning an array of strings. The array contains the text between the regex matches (i.e. split performs inverse match).
+How to use regular expressions in MQL4 programs
+#include
+<RegularExpressions\Regex.mqh>
+
+bool found = CRegex::
+IsMatch
+(
+"subject_text"
+,
+"regex_pattern"
+)
+CMatchCollection *matches = CRegex::
+Matches
+(
+"subject_text"
+,
+"regex_pattern"
+)
+string new_string = CRegex::
+Replace
+(
+"subject_text"
+,
+"regex_pattern"
+,
+"replacement"
+)
+string parts[];
+CRegex::
+Split
+(parts,
+"subject_text
+",
+"regex_pattern
+");

@@ -1,0 +1,12 @@
+The Smart Money Index (SMI) shows investors' mood and is based on intraday price patterns.
+Most traders (who are emotional and sensitive to news) overreact to the beginning of the trading day because of night news and economic data. Smart, experienced investors start trading after a while, while having the opportunity to evaluate the market.
+The indicator allows you to assess the effectiveness of the market in a few hours from the beginning of the trading day.
+It has two parameters:
+Open hour
+- the beginning of the trading day (after the opening of the day)
+Session length
+- the length of the measured trading session (after the beginning of the trading day)
+The indicator is designed for intraday operation.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20380

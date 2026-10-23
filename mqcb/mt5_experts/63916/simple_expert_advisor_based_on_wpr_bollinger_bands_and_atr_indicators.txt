@@ -1,0 +1,51 @@
+ExpWPRBB Expert Advisor implements a simple trading strategy based on the signals of two indicators: Williams' Percent Range (WPR) and Bollinger Bands (BB). A position is opened only when the signals of both indicators coincide:
+Buy
+: WPR exits the oversold zone and the bar opening price is below the average BB line.
+Sell
+: WPR is coming out of the overbought zone and the bar opening price is above the average BB line.
+The width of Bollinger Bands and ATR value are used to calculate Stop Loss and Take Profit levels. The Expert Advisor supports work only on hedging accounts. Additionally, it has a non-trading mode, where you can only put signal labels
+- to control signals in the visual mode of the strategy tester.
+Input parameters:
+WPR (Williams' Percent Range)
+InpPeriodWPR
+- WPR calculation period. Number of bars for calculating the indicator value;
+InpOverboughtWPR
+- WPR overbought level. The value above which it is considered that the market is overbought (usually from -20 to 0);
+InpOversoldWPR
+- WPR oversold level. The value below which the market is considered oversold (usually from -80 to -100).
+BB (Bollinger Bands)
+InpPeriodBB
+- Bollinger Bands calculation period. The number of bars for calculating the bands;
+InpDeviationBB
+- Deviation of Bollinger Bands. Standard deviation multiplier for calculating the width of the bands;
+InpShiftBB
+- Bollinger Bands
+Shift
+. Indicator shift relative to the current bar;
+InpPriceBB
+- Bollinger Bands calculation price. Type of price used for calculation.
+ATR (Average True Range)
+InpPeriodATR
+- ATR calculation period. The number of bars for calculating the average true range.
+Trading
+InpSignalsOnly
+- Do not trade, only set signal labels. If true, the Expert Advisor does not open trades, but only displays signals on the chart;
+InpVolume
+- Position volume. Lot size for opening a deal;
+InpDeviation
+- Slippage (in points). Maximum allowable price deviation when executing an order;
+InpMagic
+- Magic number. A unique identifier of EA positions for tracking them;
+InpStopLoss
+- Stop loss (in points). Stop loss level. 0 - is not set, -1 - is calculated as half of the Bollinger Bands width;
+InpTakeProfit
+- Take profit (in pips). Take Profit level. 0 - not set, -1 - calculated by ATR value;
+InpSLMltp
+- Multiplier of Stop loss size, if Stop loss == -1. Allows increasing or decreasing the automatically calculated Stop Loss;
+InpTPMltp
+- Multiplier of Take profit size, if Take profit == -1. Allows increasing or decreasing the automatically calculated Take Profit.
+The default values for the input parameters of the Expert Advisor are optimised for testing on the H4 chart period.
+Test result in "All ticks" mode for the last year on H4 with default parameters:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/63916

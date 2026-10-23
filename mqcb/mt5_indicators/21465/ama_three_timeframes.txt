@@ -1,0 +1,14 @@
+The indicator is displayed using three horizontal lines of iAMA (Adaptive Moving Average, AMA) indicator from three different timeframes. The settings allow you to select from three timeframes:
+HLine
+- display only as horizontal lines (
+OBJ_HLINE
+);
+Arrow
+- display only by right price labels (
+OBJ_ARROW_RIGHT_PRICE
+);
+HLine and Arrow
+- horizontal lines and right price labels are used simultaneously.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21465

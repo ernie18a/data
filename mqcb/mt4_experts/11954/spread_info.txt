@@ -1,0 +1,1 @@
+The Expert Advisor shows information about the current spread.

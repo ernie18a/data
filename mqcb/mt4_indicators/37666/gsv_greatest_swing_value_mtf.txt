@@ -1,0 +1,6 @@
+"Each day you have a buy swing and a sell swing from the open price. The direction of the close ± the open tells us which side won the battle.
+Adding up all the open to low swings [selling pressure] and open to high swings [buying pressure] for the past few days,
+shows the average of the amount of directional swings that have taken place. A swing from the open price that exceeds this average may be indicative of a signal."
+- Larry Williams  concept "greatest swing value (GSV)" from his book 'Long-term Secrets to Short-term Trading'.
+The indicator is MultiTimeFrame, so by default is set to Daily for interpolation on lower timeframes.
+You can apply Current timeframe in settings to recalculate by chart timeframe.

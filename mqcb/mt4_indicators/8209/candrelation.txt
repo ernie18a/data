@@ -1,0 +1,7 @@
+The blue line - a part of the total length of the candle
+The green line - a part of the upper shadow of the candle length
+The red line - a part of the lower shadow of the candle
+The future correlations between these lines, if the corresponding figures of japanese analysis are used, are represented on the pointed region.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8209

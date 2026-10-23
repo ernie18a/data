@@ -1,0 +1,10 @@
+Basics :
+RSX (Relative Strength Quality Index) indicator (originally developed Mark Jurik) is, due to its wide spread usage, well known and is widely used indicator. Sometimes it is used in a combination of some filtering method (mostly levels crossing) in order to avoid some of the false signals that RSX might produce in some market conditions. This is one more version that will attempt to address the issue by using two filters on this version of RSX
+This version :
+This version is using step chart as a filter to lessen the number of signals produced by RSX and (if possible) to make it easier and safer to use. The step size is to be entered as RSX % that you wish to be used as a filter for minimal RSX change that should be considered as a significant change. It also can use averages for price filtering prior to be used in stochastic calculation. That way the RSX can be "double filtered" (filtering the price prior to be used in RSX calculation and then using the step chart filter on the calculated RSX result). The averages that can be used in this version :
+simple moving average
+exponential moving average
+smoothed moving average
+linear weighted moving average
+Usage :
+You can use color change of the step bar as signals

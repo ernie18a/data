@@ -1,0 +1,9 @@
+Real author:
+Doda - I am really thankful to him
+This indicator is commenting always on behalf of EMA (Exponential Moving Average).
+I have amended this indicator with some calculations so the strategy of 3 Moving averages is used and also forecast for opening and closing orders.
+How to follow:
+If Comments Show: Go Long With Rates = Go With Buy
+If Comments Show: Go Short With Rates = Go With Short
+If Comments Show: Exit Short = Sell Times Out
+If Comments Show: Exit Buy = Buy Times Out

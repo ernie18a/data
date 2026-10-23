@@ -1,0 +1,3 @@
+Description:
+This indicator shows how the lines of Highs, Lows, Opens, and Closes can interact.
+Image:

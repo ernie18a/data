@@ -1,0 +1,32 @@
+The indicator Alternative Ichimoku was developed as an alternative to the famous indicator Ichimoku Kinko Hyo. To forecast prices, it is better to use on one timeframe both indicators - Ichimoku Kinko Hyo and Alternative Ichimoku, and you will get quite a precise forecast. The indicator was developed as a tool for working not with stocks, but with main currency pairs. Here are chart profiles for currency pairs, used by the author:
+Pair Time SSP SSK
+EURGBP 4H 44 38
+CADCHF 4H 62 52
+CADJPY 4H 48 36
+GBPUSD 4H 44 36
+GBPCHF 4H 34 29
+GBPJPY 4H 36 29
+EURUSD 4H 34 34
+EURCHF 4H 72 50
+EURJPY 4H 72 36
+USDCAD 4H 24 60
+USDCHF 4H 34 29
+USDJPY 4H 34 29
+The main difference from Ichimoku Kinko Hyo consists in shorter periods of the indicator calculation. This allows considering currencies' entering the cloud as an anticipatory signal, and not a categorical assertion of a pivot or trend end.
+Common Indicators' Values:
+The location of prices above or below the cloud indicates the existence of a trend. Entrance to the cloud is an anticipatory signal. Prices' passing inside the cloud is a flat.
+Difference of the Indicators:
+The alternative one does not have Kijun and Tenkan, but inside the cloud there is a stop-order line that shows the level to set necessary current stops. Crossing this line is considered a change in trading direction. For the calculation of stop-loss and take-profit levels, in the upper left corner we see the value of the current volatility - the size of the corridor, in which the current price changes. The volatility is calculated as a difference of a maximum for a doubled calculated period and a minimum for a doubled calculated period.
+The 26th of March 2007
+Added a new version of the indicator Alternative_Ichimoku_v06. The sixth version includes the amended displaying of the indicator line. Now the line does not hide candlesticks or bars, if the option "chart on top" is not enabled. New are parameters of currency rate changing for a "report period". This simplifies the process of an approximate estimation of stop orders when making a decision to open an order.
+The 9th of April, 2007.
+Added a new version of the indicator Alternative_Ichimoku_v07. The seventh version includes the possibility of an optional construction of a middle line in Ichimoku cloud. If you want to see it, change
+false
+into
+true
+. The crossing of the middle line and the stop-order line resembled to me the crossing of Kinjun and Tenkan. But four lines of different functionality in one indicator is too much. That is why the
+middle
+line is optional.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7070

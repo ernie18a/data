@@ -1,0 +1,10 @@
+Recursive Moving Average calls itself a number of times in order to reach the appropriate smoothing. For  instance DEMA and TEMA indicators are recursive exponential moving averages.  The goal is to remove the loop limit while still running fast. In addition a trigger line provides the trading signal.
+Parameters define:
+regular period
+number of iterations: the higher the smoother
+smoothing method: exponential or smoothing only in order to keep it fast
+optional drawing of an arrow at signal
+It sports two features_
+the trigger line: it  equals average sum of smoothing iterations, the crossing of both lines signals a trade
+Optional drawing of arrow at signal.
+As a rule of thumb, parameters should not overwhelm the chart with signals. This version handles open bar prices only.

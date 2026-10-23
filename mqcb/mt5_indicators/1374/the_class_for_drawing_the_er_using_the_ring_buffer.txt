@@ -1,0 +1,156 @@
+Description
+The CEROnRingBuffer class is designed to calculate the technical indicator Efficiency Ratio (ER) used in the Adaptive Moving Average
+(
+Adaptive Moving Average
+, AMA) using the algorithm of
+the ring buffer
+.
+Declaration
+class
+CEROnRingBuffer :
+public
+CArrayRing
+Title
+#include <IncOnRingBuffer\CEROnRingBuffer.mqh>
+File of the CEROnRingBuffer.mqh class must be placed in the IncOnRingBuffer folder that need to be established in MQL5\Include\. Two files with the examples used by the class from this folder are attached to the description. File with the class of
+the ring buffer
+also must be in this folder.
+Class methods
+//--- initialization method:
+bool
+Init(
+// if error it returns false, if successful - true
+int
+period        =
+34
+,
+// the period of calculation the ER
+int
+size_buffer   =
+256
+,
+// the size of the ring buffer, the number of stored data
+bool
+as_series     =
+false
+// true, if a timeseries, false - if a usual indexing of the input data
+);
+//--- the method of calculation based on a time series or indicator buffer:
+int
+MainOnArray(
+// returns the number of processed elements
+const
+int
+rates_total,
+// the size of the array array[]
+const
+int
+prev_calculated,
+// processed elements on the previous call
+const
+double
+&array[]
+// the array of the input values
+);
+//---
+//--- the method of calculation based on the separate series elements of the array
+double
+MainOnValue(
+// returns the ER value for the set element
+const
+int
+rates_total,
+// the size of the array
+const
+int
+prev_calculated,
+// processed elements of the array
+const
+int
+begin,
+// from where the significant data of the array starts
+const
+double
+value,
+// the element value of the array
+const
+int
+index
+// the element index
+);
+//--- the methods of access to the data:
+int
+BarsRequired();
+// Returns the necessary number of bars to draw the indicator
+string
+Name()
+// Returns the name of the indicator
+int
+Period()
+// Returns the period of ER calculation
+int
+Size();
+// Returns the size of the ring buffer
+To get the calculated data of the indicator from the ring buffer is possible as from the usual array. For example:
+//--- the class with the methods of calculation of the ER indicator:
+#include <IncOnRingBuffer\CEROnRingBuffer.mqh>
+CEROnRingBuffer er;
+
+...
+//+------------------------------------------------------------------+
+//| Custom indicator iteration function                              |
+//+------------------------------------------------------------------+
+int
+OnCalculate
+(
+const
+int
+rates_total,
+const
+int
+prev_calculated,
+const
+int
+begin,
+const
+double
+&price[]) 
+  {
+//--- calculation of the indicator based on price times series:
+er.MainOnArray(rates_total,prev_calculated,price);
+
+...
+//--- use data from the ring buffer "er",
+//    for example, copy data in the indicator buffers:
+for
+(
+int
+i=start;i<rates_total;i++)
+     {
+      ER_Buffer[i]   = er[rates_total-
+1
+-i];
+// indicator line
+}
+//--- return value of prev_calculated for next call:
+return
+(rates_total);
+  }
+Please note that indexing in the ring buffer is the same as in the
+time series
+.
+Examples
+The Test_ER_OnArrayRB.mq5 file calculates the indicator based on price time series. The MainOnArray() method application is demonstrated
+The Test_ER_OnValueRB.mq5 demonstrates the use of the MainOnValue() method. At first the ER indicator is calculated and drawn. Then on the basis of this indicator's ring buffer one more ER is drawn.
+The result of the work of the Test_ER_OnArrayRB.mq5 with the size of the ring buffer of 256 elements
+The results of the work of the Test_ER_OnValueRB.mq5 with the size of the ring buffer of 256 elements
+When writing code the developments of
+MetaQuotes Software Corp.
+,
+Integer
+and
+GODZILLA
+were used.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1374

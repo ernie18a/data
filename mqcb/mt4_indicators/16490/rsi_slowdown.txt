@@ -1,0 +1,26 @@
+The indicator is based on the idea that before the price and the indicator itself turn, the indicator rate slows down first and only then turns. As such, the areas are searched where the price begins to stagnate in the overbought or oversold zone of the fast RSI indicator.
+The indicator can mark these zones with both arrows and stripes on the chart (selected in the settings). It is also possible to disable the search for RSI decelerations in the settings – in this case, the indicator will show only exceeding the RSI levels specified in the settings: LevelMax and LevelMin.
+Version with arrows
+Version with lines
+Settings:
+RSI Period
+— RSI period
+Signal Level Max
+— overbought level where to search for deceleration.
+Signal Level Min
+— oversold level where to search for deceleration.
+Seek Slowdown
+— enable/disable search for decelerations.
+Bar
+— the bar we are searching for a signal: 1 means the already built one, 0 means the current one.
+Type graph
+— type of drawing: arrows or lines.
+Alerts
+— enable the sound alert for finding a signal.
+Buy Color
+— color of the arrows/lines to buy.
+Sell Color
+— color of the arrows/lines to sell.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16490

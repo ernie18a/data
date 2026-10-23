@@ -1,0 +1,24 @@
+The
+Doji Pattern Detector EA
+is designed to automatically detect the classic
+Doji candlestick pattern
+on any chart. A Doji pattern occurs when the open and close prices of a candle are very close to each other, signaling market indecision. This EA identifies Doji candles where the open and close prices are within a small range and positioned near the midpoint of the candle's high and low.
+Key Features:
+Doji Detection
+:
+The EA checks if the difference between the open and close prices is less than
+3 points
+.
+It also verifies that the open and close are near the midpoint of the candle’s range (with a 10% tolerance).
+Chart Marking
+:
+When a Doji is detected, a
+red arrow
+is drawn 5 points below the candle’s low.
+A label with the text
+"Doji"
+is placed 3 points below the arrow for easy identification.
+Alerts and Notifications
+:
+The EA generates an alert and displays a message when a Doji pattern is detected on the previous closed candle.
+This EA is a valuable tool for traders looking to incorporate Doji patterns into their trading strategies, providing a clear visual and audible indication of market indecision or potential reversals.

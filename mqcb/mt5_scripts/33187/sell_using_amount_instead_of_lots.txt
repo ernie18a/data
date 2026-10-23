@@ -1,0 +1,9 @@
+Open a sell position using the desired dollar amount instead of lots.
+To use, just drop it onto a chart and set inputs as needed.
+The script will then do the necessary lot calculation and open the trade.
+Inputs:
+FIXED_DEAL_AMOUNT: Fixed amount to use per trade e.g 100 to open a R100 deal
+USE_SL_ON_BUY: If true then a suitable stoploss will be used, else no stop is placed but can be placed manually after opening position
+One can also set a global variable '_Symbol+_MAX_SPREAD' to set max spread limit for each traded instrument.
+e.g For EURUSD the global variable would be: EURUSD_MAX_SPREAD
+e.g For Nasdaq 100 the global variable would be: Nasdaq 100_MAX_SPREAD

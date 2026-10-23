@@ -1,0 +1,19 @@
+This is the semaphore indicator with arrows based on BB and RSI.
+So very often, leaving the Bollinger Bands canal the price slows down and after that it returns into the canal. If the RSI line crosses the signal level of overbought or oversold, also the price slows down and often reverses the direction immediately. Using these two conditions, we have the signals of a supposed price reversal.
+It is able to track a canal breakout from within to the slowdown zone taking into account the RSI indicator, as well as conversely, from the slowdown zone into the canal with a confirmed RSI signal of the reversal. Any one of the signals (RSI or the slowdown zone) can be turned off. Also a sound alert appears if an arrow appears.
+Recommendation:
+Sometimes you’d  better wait until both signals appear, at first the signal of a canal breakout from within to the outside (the circle) and then wait for the signal of a price return into the canal (arrow) and only then can a position be opened.
+Settings:
+RSIPeriod — The RSI period.
+RSIUpLevel — The top signal level of RSI.
+RSIDownLevel — The low signal level of RSI.
+BBPeriod —  The Bollinger Bands period  .
+BBDeviation — The Bollinger Bands deviation (1 or 2)
+CrossInside — To show the signal of the price return into the canal.
+CrossOutside — To show the signal of the price going out of the canal.
+alerts — To turn on sound alert.
+ShowBB — Set it to “true” to display Bollinger Bands lines or “false” to hide.
+clrBB — The line color of Bollinger Bands.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16643

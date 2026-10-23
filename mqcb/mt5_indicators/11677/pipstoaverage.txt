@@ -1,0 +1,5 @@
+This indicator measures the (smoothed) distance in pips between the close and an exponential
+moving average
+.
+The first input, Period_Average, is the period of the exponential moving average. The indicator first computes an array containing the difference between this average and the corresponding close price. Then, it computes an smoothed moving average with period Period_PipsToAv (the second input) of this array.
+Here you can show an image with this indicator with parameters 200 and 7, as well as the 200-exponential moving average:

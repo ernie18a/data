@@ -1,0 +1,20 @@
+Purpose:
+The preliminary estimation of the motion patterns of different symbols.
+Parameter:
+MaxSpread - the symbols with the spread more than specified will not be used
+SymbolsFile - the name of the file with the list of symbols (must be in the experts/files folder)
+OutputFile - the name of the file for saving the results
+iPeriod - the number of bars to be used
+Usage:
+1. Save the symbols.set file that contain the list of symbols in the experts/files directory (press right mouse button on the Market Watch window -> Sets -> Save as).
+2. Launch the script on the chart of any symbol with necessary timeframe. The script by itself tries to upload the data by all symbols, but it is not always possible to upload the necesary amount within the specified iPeriod period from the first try, a repeated script launch may be needed.
+3. Look through the _[TimeFrame]_flateficiensy.txt file in the experts/files directory.
+Estimation exponents:
+1. Flat efficiency - the ratio between the price trajectory and its range.
+2. Sum of ticks - the number of price changes (the tick volume is summarized by all bars).
+3. Average size of the bar.
+4. Ratio between the average size of the bar and the spread.
+5. Standard deviation.
+6. Rating - the sum of serial places taken by the symbols when sorting by one of the 1-5 exponents.
+Note:
+The results of script working are in the Results.zip file.

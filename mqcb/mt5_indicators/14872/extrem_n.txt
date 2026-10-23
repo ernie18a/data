@@ -1,0 +1,11 @@
+Real author:
+Serkov Alexandr
+A plain and simple indicator. The indicator considers there is a downtrend, if the current low is lower than the low located N bars before.
+Conversely, there is an uptrend, if the current high is higher than the high N bars before. You can set the check depth in the properties. The indicator is good for finding rollbacks to use them as entry points.
+The indicator has originally been written in MQL4 and was first published in the
+Code Base
+on 09.09.2014.
+Fig.1. The Extrem_N indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14872

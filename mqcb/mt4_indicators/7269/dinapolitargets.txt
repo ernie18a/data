@@ -1,0 +1,5 @@
+Author: mishanya
+The operation logic is as follows: Once a local maximum\minimum has been determined several horizontal lines will be drawn. The white one is an entry point, the following lines in its direction are targets. Naturally, the first one is the most reachable.... Red line is a stop line.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7269

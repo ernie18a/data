@@ -1,0 +1,52 @@
+A trend strategy based on moving averages with colors as in a traffic light. The purpose of writing the EA — to test the strategy on history and pick working parameters.
+The strategy is composed of a single indicator —
+Moving Average
+with 5 different parameters:
+Red
+— period 120, method Simple, apply to Close;
+Yellow
+— period 55, method Simple, apply to Close;
+Green
+— period 5, method Exponential, apply to Close;
+Blue dotted
+— period 24, method Exponential, apply to High;
+Brown dotted
+— period 24, method Exponential, apply to Low.
+The Buy signal is formed when the moving averages align in order from top to bottom:
+Green
+–
+Yellow
+–
+Red
+.
+The Sell signal is formed when the indicators align in the reverse order:
+Red
+–
+Yellow
+–
+Green
+.
+The price is outside the corridor between the
+blue
+and the
+brown
+dotted moving averages.
+Sell Signal
+The EA opens signals according to the strategy. Take Profit and Stop Loss are set in the initial parameters. Deal can be opened in two modes: at the match of all the signals on the current candlestick or at the beginning of the next. Defined by the TimeOpenBar parameter. Deals are closed by Take Profit, Stop Loss or at the intersection of the green and the yellow moving averages. Closing of a deal at the intersection is defined by the CloseProfit parameter. The closing at the intersection of the green and the yellow moving averages itself may take place on the current candlestick or at the beginning of the next one, defined by the TimeCloseBar parameter.
+Setting the triggering of the event at the current candlestick or, after its closure, at the next candlestick, highly affects the quality of the test results, and is determined by the acceptance of the signals from the current positions of the moving averages or as if from history as a fact. Until the candlestick is closed the moving averages can be redrawn and produce false signals.
+The "Trading style" mode is defined by the StyleTrade parameter. Aggressive trading — opening a new deal according to the strategy after the price enters the corridor between the blue and the brown averages. Conservative trading — the price entered the corridor between the red and the yellow moving averages. Affects the amount of the positions opened by the EA. All parameters are turned on by numbers: 0 — the parameter is off, 1 — the parameter is on (can be any number except 0). It is done for the convenience of the EA testing in the strategy tester.
+The usual MM volume calculation depending on the selected risk is present.
+The detailed description of the Expert Advisor's settings and their effect on the test results is shown in the video.
+Recommended timeframe — H1. The EA shows positive dynamics on GBPUSD, EURUSD, EURGBP currency pairs on the current market on 2015.
+Test on the GBPUSD pair:
+Test on the EURGBP pair:
+The Expert Advisor may trade without Stop Loss and/or Take Profit with the CloseProfit parameter enabled, in that case up to 70% of the movement of the trend can be obtained. Test on the EURUSD pair without Take Profit and Stop Loss:
+Important:
+This is not a "switch on and forget, come back to switch off and forget again" kind of trading robot.
+Positions are opened — the price was in the corridor (the StyleTrade parameter) — got out of the corridor — signals matched — position opened.
+On some currency pairs or at a different market volatility level the EA may lose all the deposit.
+Improvements:
+Trailing Stop on moving average has been added in version m00013. The default period is set to 85, it can be changed in the trailing stop settings block. The smaller the period, the faster the deal goes into breakeven, although a large part of the trend gets lost. And vice-versa, large values allow to take almost all the trend.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13802

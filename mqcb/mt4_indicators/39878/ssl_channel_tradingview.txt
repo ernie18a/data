@@ -1,0 +1,2 @@
+2022.07.04 - added icustomonly.mq4 to show how to use it in icustom.
+Converted SSL Channel by MissTricky from TradingView to MQL4

@@ -1,0 +1,13 @@
+Part 1. Introduction to MQL5 and development environment
+The first book part entitled
+"Introduction to MQL5 and development environment"
+describes the basics of the MQL5 languages and development environment.
+One of the new features introduced in the MQL5 language compared to MQL4 (MetaTrader 4 language) is support for object-oriented programming (OOP), which makes it similar to C++. Although some OOP functions have already been transferred to MQL4 from MQL5, many users who are not familiar with programming may find OOP difficult.
+The purpose of this book is to make this approach understandable and accessible. The book serves as a supplement to the MQL5 reference, covering all aspects of MQL5 programming and explaining all processes in detail. Developers can choose between object-oriented and procedural programming styles, as well as combine both.
+Those who already have programming experience can skip the basics. C++ programmers will find it easier to master MQL5, but you should pay attention to language differences to avoid mistakes.
+Using MQL5, you can create different types of programs, such as indicators for graphical display of data, Expert Advisors for trading automation, scripts for one-time actions, and services for background tasks.
+A distinctive feature of MetaTrader 5 is the management of the entire trading system from the client terminal, in which MQL5 programs run and send trading commands to the trading server. MQL5 applications are not installed on the server.
+Part 1 explains how to edit, compile, and run programs, as well as covers various data types, variables, expressions, arrays, debugging, and output.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/45590

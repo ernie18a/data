@@ -1,0 +1,11 @@
+The indicator draws candlesticks of a larger timeframe as color filled rectangles using
+DRAW_FILLING
+buffers. Rectangles are color filled in accordance with the values of the
+ColorLaguerre
+indicator.
+Depending on trend direction the candlestick body is painted in red or green, shadows are painted in plum violet or lime.
+Place the ColorLaguerre.mq5 indicator compiled file to the terminal_data_folder\MQL5\Indicators\.
+Figure 1. Indicator BackgroundCandle_ColorLaguerre_HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2191

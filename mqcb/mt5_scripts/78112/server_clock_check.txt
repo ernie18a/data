@@ -1,0 +1,10 @@
+MetaTrader computes TimeTradeServer() and TimeLocal() from your computer's clock. If that clock drifts, every time-based rule in your EA drifts with it: pending orders with an expiry time expire early or late, session and news filters open and close at the wrong moment, and "close before the weekend" fires at the wrong second. The terminal shows no warning.
+I hit this on a live VPS: the Windows time service had stopped, the clock was 11 seconds slow, and limit orders meant to live 15 seconds were expiring after 4.
+This script measures the error directly. Each live tick carries the time the server stamped it with, to the millisecond. The script compares that stamp with your own clock at the moment the tick arrives, over 40 fresh ticks, and takes the smallest gap (a tick can never arrive before it was stamped), corrected by half the current ping.
+Run it on an active symbol while the market is open. It prints to the Experts log and on the chart:
+- OK, or WARNING with how many seconds your clock is AHEAD of or BEHIND the server
+- smallest and median lag, ping, and the server's time zone
+- on a warning, the Windows steps to fix it
+Inputs: symbol (empty = chart symbol) · number of ticks · timeout · warning threshold in seconds.
+It never opens, closes or modifies a trade. No DLLs.
+Accuracy is about ±0.2 s, which is plenty to catch the multi-second drift that breaks order expiry. On a quiet symbol or a closed market it says so instead of guessing.

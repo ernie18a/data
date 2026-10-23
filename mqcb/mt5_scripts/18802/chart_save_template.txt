@@ -1,0 +1,9 @@
+The script saves current chart settings to a template with the specified name.
+There is only one
+input parameter
+for the template name
+Name template
+. The name should be specified without the ".tpl" extension. E.g. tester:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18802

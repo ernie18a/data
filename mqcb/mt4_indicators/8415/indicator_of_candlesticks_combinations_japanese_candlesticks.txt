@@ -1,0 +1,24 @@
+The candlesticks combination were taken from the book "Japanese Candlesticks" by Nison.
+This indicator designates the following combination of candlesticks:
+- "hammer" or "hanged man", the code of the symbol is 108, the color is
+DimGray
+.
+- "bullish engulfing", the code of the symbol is 110, the color is
+Red
+. It designates the bullish trend.
+- "bearish engulfing", the code of the symbol is 110, the color is
+Lime
+. It designates the bearish trend.
+- "dark-cloud cover", the code of the symbol is 116, the color is
+Lime
+. It designates the bearish trend.
+- "cloud gap", the code of the symbol is 116, the color is
+Red
+. It designates the bullish trend.
+- "doji", the code of the symbol is 174, the color is Indigo . It is used coupled with the other combinations.
+For the convenience you can point the cursor on a symbol and wait a few of seconds, the pop-up window containing the name of the object will appear, it also contains the description of the candlesticks combination.
+Important! You should wait the strengthening or sustaining signals to appear when using the candlesticks combinations.
+For example: If the "hanged man" appears after a pronunced uptrend, it's confirmed by the open price of the next candlestick, composing the price break relatively to the close price of the "hanged man", etc.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8415

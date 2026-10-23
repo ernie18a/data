@@ -1,0 +1,13 @@
+Author of the idea
+—
+Yury Reshetov
+mq5 code author
+—
+barabashkakvn
+Obtaining trading signals.
+Indicators (iMA (Moving Average, MA), iMACD (Moving Average Convergence/Divergence, MACD), iStochastic (Stochastic Oscillator), iOsMA (Moving Average of Oscillator, OsMA) and iAO (Awesome Oscillator, AO)) are surveyed in a strict sequence: confirmation from all indicators is necessary for a positive signal. If the confirmation chain lacks confirmation even from a single indicator, the entire signal is sorted out.
+The EA works only when a new bar appears, so it can be optimized in the "OHLC" ticks generation mode.
+EURUSD, H1:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21937

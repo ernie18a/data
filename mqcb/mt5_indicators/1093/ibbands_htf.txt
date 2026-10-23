@@ -1,0 +1,9 @@
+Bollinger Bands
+drawn using
+DRAW_SECTION
+style is a usual mean to draw ZigZag.
+Time Frame on which it is calculated can be set in input parameters. That is why such an unusual style of drawing is used.
+Fig.1 Indicator iBBands_HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1093

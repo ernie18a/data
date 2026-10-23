@@ -1,0 +1,6 @@
+T3 ergodic candlestick oscillator by W. Blau is a momentum indicator. It is based on candlesticks and works with size and direction of the candlestick "body". Unlike other momentum indicators, Blau T3 ECO is not affected by the price gaps.
+The simplest way to use this indicator is determination of a trend based on location of lines below or above the zero. Another way is tracking the slope.
+Blau T3 ergodic candlestick implements new display types and styles.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16520

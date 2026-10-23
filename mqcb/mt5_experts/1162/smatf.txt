@@ -1,0 +1,27 @@
+The Expert Advisor is rewritten from MQL4, the author is
+zotkindm
+, link to the source
+https://www.mql5.com/en/code/8004
+.
+How it works
+The Expert Advisor analyses many
+Moving Averages
+from several timeframes (by 5 Moving Averages on 3 timeframes) and the
+AC
+indicators (total 2 on 2 timeframes). The power of the signal is calculated by the indicators state (high or low), the input signals can be performed on all signals or only by a high signal.
+The image 1 shows the performance of the Expert Advisor in the tester's visual mode, the image 2 shows the results of the tester.
+Fig. 1. Deals in the Expert Advisor tester.
+Fig. 2. The results of work of the Expert Advisor for the last month (09.2012) at EURUSD M15.
+Parameters
+TF1, TF2, TF3 - Timeframes.
+maTrendPeriodv_1, maTrendPeriodv_2, maTrendPeriodv_3, maTrendPeriodv_4, maTrendPeriodv_5 - The period of the Moving Average.
+Shift - The bar on which the indicators are checked: 0 - forming bar, 1 - first formed bar.
+OpenLevel - Open level is 0 or 1.
+CloseLevel - Close level is 0 or 1, 2 - off.
+Lots - Lot.
+StopLoss - Stop Loss in points, 0 - without Stop Loss.
+TakeProfit - Take Profit in points, 0 - without Take Profit.
+Trailing - Trailing stop level; when the value is 0, the trailing stop is disabled.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1162

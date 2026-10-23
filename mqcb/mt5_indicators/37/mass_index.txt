@@ -1,0 +1,19 @@
+The Mass Index is developed to catch the trend reversal points. The mass index was created by Donald Dorcy. In case the movement is considerable the Mass Index goes up, otherwise if it is slight the Mass Index goes down. The daily prices movements are used for this purpose.
+According to D.Dorcy, the most important mass index signal is a special model formed by the indicator. It is called "reversal bulge". It is formed when a 25-period mass index first rises above 27 and then falls below 26,5. In this case a turn of prices can take place, independently of the general trend (the prices may move up or down or fluctuate within a trade corridor).
+To find out which signal - for buy or for sell - the reverse bulge gives, people often use 9-period exponential moving average of prices. When a reverse bulge appears, you should buy if the
+moving average
+falls (in hope of a turn) and sell if it grows.
+Mass Index indicator
+Calculation:
+MI = SUM (EMA (HIGH - LOW, 9) / EMA (EMA (HIGH - LOW, 9), 9), N)
+where:
+SUM - means a sum;
+HIGH - the maximum price of the current bar;
+LOW - the minimum price of the current bar;
+EMA - the
+exponential moving average
+;
+N - the period of the indicator (the number of values added).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/37

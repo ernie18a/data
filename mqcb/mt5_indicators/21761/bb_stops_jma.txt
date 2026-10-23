@@ -1,0 +1,8 @@
+Well known
+BB Stops
+(Bollinger Bands Stops) indicator with some additions and further adapting to MetaTrader 5 usage.
+In this version JMA (Jurik Moving Average) is used for calculation.
+BB stops mostly can be used two ways:
+As "trending" indicator.
+As indicator to be used for stop loss targets.
+In either case, the "direction" of the current market estimation is displayed, and the target value (when the "direction" will be changed) is displayed in this version to help in decision making.

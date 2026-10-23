@@ -1,0 +1,5 @@
+This is the second version of the indicator. The first is
+here
+. In this indicator, an upper frequency filter for smoothing is applied. Buy when the line indicator line is blue and sell when it is red. Details can be found in the article "Stocks & Commodities V. 33:09", pp.12-15. The version for MetaTrader 4 here will not be presented. You can download versions for other source platforms through my Telegram channel. The link to the channel is in my
+profile
+. Do not forget to subscribe!

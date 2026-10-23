@@ -1,0 +1,40 @@
+Kijun Sen Candles Two Colors:
+Also available for MT5
+This Indicator draws different colored candles above and below a Kijun Sen (KS) line.
+The user is required to ensure that the Kijun Sen period on both the present Indicator and the user provided Kijun Sen match each other exactly.
+This indicator has been updated to automatically change the the chart to a Line Chart and set the Line Chart to color None before drawing the the Kijun Sen Candles.
+Steps 1 to 7 are therefore no longer necessary.
+Open a new chart.
+Change the chart price graphic to Line Chart - Press (Alt + 3) or locate 'Charts' on top menu and select 'Line Chart'. Make sure that 'Bar Chart' or 'Candlesticks' is
+not
+accidentally selected.
+Open the Chart Properties window - press (F8) or right click anywhere on the chart and select 'Properties'.
+Select the Colors tab.
+Select 'Line Chart:', now select the '▼' and change color to '
+None
+'. The chart should now have no graphical price displayed and is referred to as the blank chart.
+A template of the blank chart can be made for further use with other currency pairs or instruments.
+Attach Indicator Color Candles cross Kijun Sen to the blank chart.
+Kijun Sen Indicator
+: Predefined Kijun Sen Indicators of periods 21, 34, 50 and 100 are included in a zip file above.
+Image: 25-Sept-2013
+First vertical Line - London Open 08:00 (03:00 ET). Second vertical line - London 13:30 (08:30 ET - US News Release). Session Open V-Line
+Candle Accuracy:
+Although the standard chart price graphic is hidden it is not disabled and Open, High, Low and Close prices are available in MT4 Data Window (press Ctrl+D or View → Data Window). Accuracy of the Indicators Open, High, Low and Close can be checked against Open, High, Low and Close in MT4 Data Window. When cross-referencing the cursor point must be on the relevant colored candle:
+Interpretation of the the Data Windows:
+The hidden candle Open: 1318.6
+The hidden candle High: 1321.1
+The hidden candle Low: 1317.3
+The hidden candle Close: 1319.8
+The indicator candle H, L, O and C are listed in Columns R up, R dn, B up and B dn (Red up candle, Red down, Blue uo candle, Blue down candle).
+The hidden candle open is less than the close so the candle is a up candle. The indicator Red up candle in column 1 corresponds to the hidden up candle.
+R up L: 1317.3
+B up H: 1321.1
+R up O: 1318.6
+R up C: 1319.8
+All Inputs parameters and options can be changed and will save automatically. If after changing Inputs or Color parameters a Reset is used the Color Candles will display as Bars. To revert to Color Candles switch to a different timeframe and then back.
+Input and Parameters
+Candle_Kijun_Sen - 35;
+Candle_Shadow_Width - 1;
+Candle_Body_Width - 3;
+0 comments

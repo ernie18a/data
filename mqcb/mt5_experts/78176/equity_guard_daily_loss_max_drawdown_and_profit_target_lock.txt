@@ -1,0 +1,68 @@
+Equity Guard is a risk-management Expert Advisor for MetaTrader 5. It does not open trades. It watches the account equity and acts when one of your limits is reached:
+Daily loss limit
+: a percentage of the day-start base and/or a fixed amount in the account currency (the stricter one is used).
+Maximum drawdown
+: a percentage from the initial balance (static) or from the highest equity (trailing).
+Daily profit target
+(optional): locks in the profit of the day.
+Equity Guard panel on a EURUSD H4 chart (demo account, Algo Trading off)
+When a limit is hit, the EA closes the open positions, deletes the pending orders, sends an alert (and a push notification if enabled) and keeps closing any new trades until the next trading day (daily limits) or until you reset the saved state (maximum drawdown).
+Features
+Day-start base: balance, equity, or the higher of the two, as many prop firms use.
+The new trading day starts at any server hour.
+The state is kept in terminal global variables, so a terminal restart does not reset the day.
+When the EA starts during the day, the day-start balance is rebuilt from the deals closed today.
+Optional filters: one magic number, or the chart symbol only.
+Panel: status, equity, today's result, remaining daily loss, distance to the drawdown floor and the next reset time.
+The panel warns when Algo Trading is off, because the EA cannot close trades then.
+How to use
+Attach the EA to one chart of the account (any symbol, any timeframe) and turn on Algo Trading. Set the limits to match your rules and test on a demo account first.
+Inputs
+Input
+Default
+Meaning
+Max daily loss, % of day-start base
+4.0
+0 = off
+Max daily loss, account currency
+0
+0 = off
+Max overall drawdown, %
+8.0
+0 = off
+Drawdown measured
+From initial balance
+or from the highest equity (trailing)
+Initial balance
+0
+0 = balance when the EA first starts
+Daily profit target, %
+0
+0 = off
+Daily loss measured from
+Higher of balance and equity
+or balance, or equity
+New day starts at server hour
+0
+0-23
+Close open positions / Delete pending orders
+true / true
+action when a limit is hit
+Keep closing new trades until reset
+true
+keeps the account flat while locked
+Only this magic number
+-1
+-1 = all trades
+Only the chart symbol
+false
+Pop-up alert / Push notification
+true / false
+Panel settings
+corner, offsets, font size, colours
+Reset saved state on start
+false
+set to true once to clear a lock, then back to false
+Notes
+An EA can only act while the terminal is running and connected. For 24/5 protection, run it on a VPS.
+Positions are closed at market and can slip in fast markets, so set the limits slightly tighter than your hard rule.

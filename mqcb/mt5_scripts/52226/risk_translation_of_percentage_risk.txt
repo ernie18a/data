@@ -1,0 +1,4 @@
+A simple script to translate the monetary figure of a risk percentage (1% to 10%). The risk is calculated based on the account balance.
+It is a useful tool for manual traders as now you can quickly see what 1% risk means for the stop loss, or what X% reward should mean for the take profit.
+The figures will always update based on the current account balance, and you no longer have to base a stop loss or take profit on an arbitrary amount of money or points.
+The script will exit automatically after giving you enough time to see the information, and the chart will no longer be hidden after the script terminates.

@@ -1,0 +1,6 @@
+Net Volume indicator:
+Net volume can be used to show where buyers and sellers are putting the most money at any given point in time. Positive net volume can show that growth and buying pressure exceeds selling pressure. Negative net volume shows the opposite. Net volume is designed to measure the selling or buying pressure of an asset over a period of time within each period.
+In the indicator settings you can choose whether you want to use tick or real volume for calculation.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/49334

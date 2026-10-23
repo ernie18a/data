@@ -1,0 +1,4 @@
+The indicator looks for bars without wicks. Uses the drawing style DRAW_COLOR_HISTOGRAM. When the absence of one or two wicks is detected, a histogram bar of the corresponding color is drawn:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22239

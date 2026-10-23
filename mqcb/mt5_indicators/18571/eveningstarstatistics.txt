@@ -1,0 +1,10 @@
+The indicator shows the statistics of the "Evening Star" pattern.
+A visualization of the number of "EveningStar" patterns found on the current symbol and timeframe, in the specified time period. The CGraphic, CCurve and CAxis classes are used in the indicator.
+Useful links: the
+EveningStar
+indicator, the
+EveningStar
+Expert Advisor
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18571

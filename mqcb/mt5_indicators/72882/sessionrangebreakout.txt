@@ -1,0 +1,27 @@
+I wrote this indicator for myself – I’ve been trading gold on breakouts from the Asian trading range for over a year now. I’ve decided to share it for free; perhaps someone will find it useful.
+The idea is simple – gold trades within a range at night (during the Asian session), and when London opens, it shoots off in one direction. The indicator plots this range and shows where to enter.
+What it displays on the chart:
+- Blue rectangles – the zone where the price remained overnight (00:00–06:00)
+- Light blue horizontal lines – the boundaries of the range
+- Green dotted line – buy level (top of the range + buffer)
+- Red dotted line – sell level (bottom of the range – buffer)
+- Upward arrow – a breakout has occurred; you can buy
+- Downward arrow – a downward breakout has occurred; you can sell
+- Label showing the range width in pips
+Regarding settings:
+- Range start and end times – adjust to suit your server
+- Trading window – how long to wait for a breakout (default: until 10:00)
+- Breakout buffer – how many points above or below the boundary to count as a breakout
+- Alerts – sound and push notification to your phone when a breakout occurs
+How I trade:
+- I trade XAUUSD on the M15 timeframe
+- I wait for a range to form (after 06:00)
+- If the range is 300–2,000 points, it’s a normal day
+- I enter on a breakout (arrow)
+- Stop loss at the opposite boundary
+- Take profit at 1.5 times the range width
+- One trade per day maximum
+Works on any instrument, but works best on gold – that’s where this pattern is most consistent.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/72882

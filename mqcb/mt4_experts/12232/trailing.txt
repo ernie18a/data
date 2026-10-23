@@ -1,0 +1,1 @@
+The Expert Advisor can be used for Trailing and hidden Take Profit/Stop Loss.

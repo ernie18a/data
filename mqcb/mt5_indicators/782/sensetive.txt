@@ -1,0 +1,16 @@
+Real author:
+QuantifiEd
+The trend indicator that gives signals for performing deals. The indicator color depends on the market movement direction determined by the indicator position relative to the zero line. When the color changes from magenta to blue, that is a buy signal, when the color changes from blue to magenta, there is a sell signal.
+This indicator was first implemented in MQL4 and published in
+CodeBase at mql4.com
+11.02.2008.
+Input parameters:
+SPerioD
+- the period (100-200), the indicator line will give a lot of false signals in case of lower values (<100). The optimal value for H1 charts 160-180. For shorter ones - 100-160;
+SFactoR
+(from 1 to 10) - market line sensitivity to sharp (sometimes false) trend line turns, optimal value (5-7);
+ShiFt
+- shift relative to the zero line.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/782

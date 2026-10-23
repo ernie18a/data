@@ -1,0 +1,8 @@
+Well known BB Stops (Bollinger Bands Stops) indicator with some additions and further adapting to MetaTrader 5 usage.
+In this version you can chose the average type that should be used for calculation, deviation sample correction, and the usual things (like usual set of alerts and multi time frame options).
+BB stops mostly can be used two ways:
+as "trending" indicator;
+as indicator to be used for stop loss targets.
+In either case, the "direction" of the current market estimation is displayed, and the target value (when the "direction" will be changed) is displayed in this version — to help in decision making.
+The usual "big picture" view too:
+Parameters are adjusted for the common usage. Some parameters experimenting is advised in any case (to be able to adjust the indicator to trading styles, symbols or time frames and trading risks).

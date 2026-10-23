@@ -1,0 +1,13 @@
+VolMA draws a moving average, the period of which is calculated by RSI, which is based on tick volume data.
+The indicator has four input parameters:
+RSI Vol Period
+- the period of RSI calculated on volume data;
+MA Period
+- the period of the dynamic Moving Average;
+MA Method
+- Moving Average calculation method;
+Applied price
+- Moving Average calculation price.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19800

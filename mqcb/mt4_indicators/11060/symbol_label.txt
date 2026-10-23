@@ -1,0 +1,3 @@
+Draws label of chart symbol and period.
+Any text size, color and position on chart.
+Any non standard period up to 59 minutes for offline charts.

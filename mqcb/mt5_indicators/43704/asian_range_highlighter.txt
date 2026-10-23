@@ -1,0 +1,7 @@
+This a modified version of the i-session indicator by Igor Kim.
+original code: https://www.mql5.com/ru/code/7419
+Changes I added:
+1. Isolated only the Asian session.
+2. Allow users to modify settings such as Asian time in their local time, color of the boxes, and whether to fill boxes or not.
+3. Removed the names of the boxes.
+4. All drawings will disappear once indicator is removed from the chart.

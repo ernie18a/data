@@ -1,0 +1,32 @@
+Your statement tells you what you
+kept
+. It does not tell you what you
+had
+. This indicator reads your own closed trades from the account history and draws, for each one, the full range it travelled: the best unrealised profit it ever showed (maximum favourable excursion, MFE) and the worst unrealised loss it survived (maximum adverse excursion, MAE). For each trade it draws a vertical span from the worst point to the best point, an arrow at the entry and a line at the exit; a panel summarises the whole set.
+The gap between what a trade showed and what it paid is where two very common problems hide, and neither is visible in a balance curve: winners closing far below their best unrealised profit - the exit leaves money on the table; and losers whose worst excursion barely exceeded the stop - the stop sits inside the noise, and the trade was actually right.
+The number to look at is the capture ratio:
+of the profit a winning trade showed at its best, how much did you actually take home? A median of 90% says the exits are well placed. A median of 30% says the market kept offering and the exit kept refusing. The panel prints the medians for winners (MFE, MAE, capture) and losers (MAE), the number of trades, and the median number of bars per trade.
+Measurement limit, stated up front:
+excursions come from the high and low of the bars each trade spanned, on the timeframe the indicator runs on. The path inside a bar is unknown. Run it on a timeframe fine enough for your holding period - the panel reports the median bars per trade so you can see when the resolution is too coarse, and trades that fit inside a single bar are counted separately instead of quietly averaged in. Trades on symbols whose chart history is not available (an expired futures contract, for example) are reported as not measured, not as zeros.
+Inputs:
+InpDias
+(90) - days of history to read;
+InpSoEsteAtivo
+(true) - this chart's symbol only;
+InpCorGanho
+/
+InpCorPerda
+- colours for winners and losers;
+InpCorMFE
+- colour of the excursion span;
+InpLarguraSpan
+(1) - span line width;
+InpMostrarPainel
+(true) - show the summary panel;
+InpPainelX
+/
+InpPainelY
+(12 / 24) - panel position in pixels.
+Trades are grouped by position identifier, so positions built or unwound in parts are handled with a volume-weighted average price. Tested on a hedging demo account with 158 closed trades (47 measurable on the current contract, capture median 74%); netting accounts use the same grouping but were not tested at the time of publication. The companion script
+Trade Excursion Report
+writes the same numbers to a CSV, one line per trade. It predicts nothing: it measures trades that already happened, on your own account.

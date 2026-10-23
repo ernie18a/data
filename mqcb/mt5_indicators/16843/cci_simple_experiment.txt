@@ -1,0 +1,2 @@
+CCI experiment using adaptive calculation period.
+The difference is not too big, but can be significant. In the adaptive version some of the false signals were simply cleaned up.

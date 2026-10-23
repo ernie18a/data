@@ -1,0 +1,8 @@
+I liked the
+Volatility Stop
+indicator, so I made ZigZag based on it.
+The display of points from Volatility Stop can be disabled in the indicator settings.
+The indicator is recalculated at the opening of a new candle.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/50597

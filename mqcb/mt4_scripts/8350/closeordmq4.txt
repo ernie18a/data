@@ -1,0 +1,5 @@
+Author: Nikolay Efremov
+Description: It deletes a pending order or closes an opened order by your choice. You should just to drag the script to an order. The script will choose the nearest one and will close or delete it.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8350

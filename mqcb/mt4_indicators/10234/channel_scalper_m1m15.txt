@@ -1,0 +1,2 @@
+Indicator for scalping trading - Chanel scalper M1-M15.
+Easy Channel trading strategy, sell when price cross red up line and buy when cross down line.

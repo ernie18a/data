@@ -1,0 +1,23 @@
+This is a simple Expert Advisor with an implemented trailing stop.
+It has only two parameters:
+TrailingStop — the distance between the price and the Stop Loss level.
+TrailingStep — protection against to frequent modification of position.
+How TrailingStop works — the example of the Buy position:
+Originally the StopLoss of a position is equal to zero, we wait for the following condition to be met
+if
+(m_symbol.
+Bid
+()-ExtTrailingStop>m_position.PriceOpen())
+— i.e. when the Bid minus TrailingStop is greater than the position open price PriceOpen:
+StopLoss is moved to the PriceOpen level (position open price):
+now, when the position has StopLoss (i.e. when StopLoss is not equal to zero), wait for the following condition to be met:
+if
+(m_symbol.
+Bid
+()-ExtTrailingStop-ExtTrailingStep>m_position.StopLoss())
+— i.e. when the Bid minus TrailingStop minus TrailingStep is greater than the StopLoss price: So here we need to additionally check TrailingStep — this prevent position modification on every tick:
+StopLoss is then moved to Bid minus TrailingStop:
+Here is why we need a protection in the form of TrailingStep:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17263

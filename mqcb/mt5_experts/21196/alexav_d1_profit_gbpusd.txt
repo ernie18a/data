@@ -1,0 +1,45 @@
+Idea by
+:
+Scriptor
+.
+MQL5 code by
+:
+barabashkakvn
+.
+It opens four positions with different Take Profit levels. As soon as one of the positions is closed by Take Profit, the other positions will be moved to breakeven. This continues until all positions are closed by Take Profit.
+Inputs
+Lots
+- position volume
+Moving Average: averaging period
+- indicator "Moving Average": Averaging period
+RSI: averaging period
+- indicator "RSI": Averaging period
+ATR: averaging period
+- indicator "ATR": Averaging period
+Coefficient SL
+- Stop Loss calculation coefficient (the coefficient is multiplied by the value of indicator "ATR")
+Coefficient TP
+- Take Profit calculation coefficient (the coefficient is multiplied by the value of indicator "ATR")
+//--- RSI levels
+RSIUpperLimit
+- BUY positions can be opened within the interval from "RSIUpperLevel" to "RSIUpperLimit", "RSIUpperLevel" having to be above "RSIUpperLimit"
+RSIUpperLevel
+- BUY positions can be opened within the interval from "RSIUpperLevel" to "RSIUpperLimit", "RSIUpperLevel" having to be above "RSIUpperLimit"
+RSILowerLevel
+- SELL positions can be opened within the interval from "RSIUpperLimit" to "RSILowerLevel", "RSILowerLevel" having to be above "RSILowerLimit"
+RSILowerLimit
+- SELL positions can be opened within the interval from "RSIUpperLimit" to "RSILowerLevel", "RSILowerLevel" having to be above "RSILowerLimit"
+//--- MACD
+period for Fast average calculation
+period for Slow average calculation
+period for their difference averaging
+MacdDiffBuy
+- the minimum difference between bar 2 and bar 1 ((MathAbs(MACD_1)-MathAbs(MACD_2))/MathAbs(MACD_1)) to open BUY
+MacdDiffSell
+- minimum difference between bar 2 and bar 1 ((MathAbs(MACD_1)-MathAbs(MACD_2))/MathAbs(MACD_1)) to open SELL
+//---
+magic number - the unique EA identifier
+GBPUSD,H1:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21196

@@ -1,0 +1,23 @@
+Author
+:
+I'm not the autor of this script. The original
+ZoneTrade
+script
+http://codebase.mql4.com/en/code/8534
+is developed by the
+Duke3D
+. The Heiken Ashi version of the ZoneTrade script is developed by the
+brother3th
+. Thanks to the autors of their work.
+This script is based on this trading approach that integrates
+Acceleration/Deceleration Technical Indicator (AC)
+and
+Awesome Oscillator (AO)
+into the
+Heiken Ashi
+candlestick chart. In this way it is a lot easier to trade in the zone - the 4th dimension described by the Bill Williams in his book:
+New Trading Dimensions: How to Profit from Chaos in Stocks, Bonds, and Commodities (A Marketplace Book)
+Accoding to the developer of the ZoneTrade indicator it is working in this way:
+If the current bars of AC and AO are green, it shows that the zone is green.
+If the current bars of АС and АО red, it shows that the zone is red.
+If the bars of AC and AO are differently directed then the bar is colored grey (grey zone).

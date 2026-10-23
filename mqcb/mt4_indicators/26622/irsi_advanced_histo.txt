@@ -1,0 +1,3 @@
+The indicator is shown in a histogram the RSI up and downtrend uses a different way.
+You can set period of indicator and levels for trend.
+The feature that makes it stand out is that it displays the indicator on a bar chart.

@@ -1,0 +1,3 @@
+The idea of the indicator
+In the subwindow, show the filling of the areas between the two lines: the 'RSI' line and the 'RSI' line smoothed with 'MA'.
+Rice. 1. RSI_MAonRSI_Filling

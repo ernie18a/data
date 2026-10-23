@@ -1,0 +1,8 @@
+The Trend Magic indicator. It uses the
+Commodity Channel Index
+(period=50) and
+Average True Range
+(period=5) indicators for the calculations.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/284

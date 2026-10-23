@@ -1,0 +1,7 @@
+The
+AroonOscillator
+indicator implemented in the form of a color histogram.
+Fig.1. The AroonOscillator_Histogram indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19654

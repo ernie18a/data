@@ -1,0 +1,4 @@
+The EA suggests the optimal lot size depending on the deposit size. It is designed for manual trading with a stop loss of up to 40 points and the deposits from $20.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7893

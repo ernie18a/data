@@ -1,0 +1,20 @@
+Absolute strength of averages. It is upgraded to use the possible 18 types of averages in calculation. Signal lines are left in it since I think that it is very useful to see bulls and bears trends change. And signal lines do exactly that (an early warning of bulls and bears trend changes).
+Overall trend is still the cross of the main bulls and bears trend. Averages used in it are the usual ones:
+0 = SMA
+1 = EMA
+2 = Double smoothed EMA
+3 = Double EMA (DEMA)
+4 = Triple EMA (TEMA)
+5 = Smoothed MA
+6 = Linear weighted MA
+7 = Parabolic weighted MA
+8 = Alexander MA
+9 = Volume weighted MA
+10 = Hull MA
+11 = Triangular MA
+12 = Sine weighted MA
+13 = Linear regression
+14 = IE/2
+15 = NonLag MA
+16 = Zero lag EMA
+17 = Leader EMA

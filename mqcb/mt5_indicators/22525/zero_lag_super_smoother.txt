@@ -1,0 +1,6 @@
+Definition :
+Long time ago somebody made a DEMA (Double smoothed EMA) indicator and called it a zero lag EMA. Since then the zero lag name is used sometimes for that type of adjusting the average to have a lesser lag.
+This indicator :
+This indicator is using the DEMA method to produce a "zero lag" super smoother. Since super smoother already produces smooth results, the "zero lag" super smoother is smooth too, and as such, is having already quite a few signals filtered out
+Usage :
+You can use the color change as signals

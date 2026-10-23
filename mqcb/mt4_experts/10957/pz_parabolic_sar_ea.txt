@@ -1,0 +1,19 @@
+Author:
+The developer of this Expert Advisor is Arturo Lopez, founder of
+Point Zero Trading Solutions
+.
+The Parabolic Sar is one of the most popular basic trading strategies. It uses two Parabolic Sar with different periods to determine the direction of the trend and the exit level. The slow PSAR determines when to buy or sell, and the faster PSAR determines the exit level. It is a very good semi-automated trading tool for intraday trading.
+Features:
+Fully configurable Parabolic Sar
+(Step and Maximum)
+Works for ECN/Non-ECN brokers and 2-3-4-5 digit symbols
+ATR-Based initial Stop-loss
+(Default is ATR(30)*2.5)
+Optional ATR-Based Trailing-stop
+(Disabled by default)
+Money Management
+(Default risk is 2%)
+Optional Partial Closing of profitable trades
+Optional Break-even of profitable trades
+Trades are always closed on opposite signals
+Configurable trading hours

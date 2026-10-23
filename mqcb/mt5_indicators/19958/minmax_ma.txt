@@ -1,0 +1,12 @@
+The indicator draws a moving average line calculated based in the low and high prices over the given interval of bars.
+Calculation formula
+MinMaxMA[i] = (Min + Max)/2
+where Min, Max are the lowest and the highest prices in the range between (i-Period + 1) and (i).
+It has two parameters:
+Period
+- calculation period;
+Applied price
+- price used for calculations.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19958

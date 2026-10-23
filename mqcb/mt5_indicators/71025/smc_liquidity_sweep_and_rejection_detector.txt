@@ -1,0 +1,18 @@
+In the systemic environment of the financial markets, liquidity is the primary engine. Most retail traders place their stop losses exactly at obvious swing highs and lows, creating pools of liquidity that institutional algorithms target before a real move starts. This phenomenon is known as a "Liquidity Sweep" or "Stop Hunt."
+The SMC Liquidity Sweep Detector is a professional tool that monitors the market's microstructure to identify these events in real-time. It doesn't just look for price breaking a level; it specifically looks for a "Fakeout" or "Rejection" — where price breaches a previous structural high or low but fails to sustain the move, closing back inside the range.
+Technical Logic and Features:
+Precision Detection:
+Automatically identifies and labels liquidity raids above previous Swing Highs and below previous Swing Lows.
+Wick Rejection Filter:
+Only signals a sweep when the breach is made by a wick, followed by a strong price rejection.
+Non-Repainting:
+Logic is based on closed candles, ensuring visual signals stay fixed on the chart for objective backtesting.
+Modular Alerts:
+Includes terminal alerts to notify the trader the exact moment institutional liquidity has been cleared.
+Input Parameters:
+SwingLookback:
+Defines the number of candles to identify meaningful structural highs and lows.
+MinWickPercentage:
+The minimum percentage of the candle's total size that must be a wick to qualify as a valid rejection.
+Color Settings:
+Customizable colors for Bullish and Bearish sweeps to match any chart template.

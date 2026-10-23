@@ -1,0 +1,15 @@
+Double Top indicator detects and displays single and double tops and bottoms.
+The indicator has three input parameters:
+Minumum Height/Depth
+- minimum height/depth of a top/bottom in points
+Maximum distance between the
+twin tops/bottoms
+- maximum distance between tops/bottoms of a double top/bottom
+Maximum number of bars after the top/bottom
+- maximum number of bars between different tops/bottoms
+Single top/bottom is marked by a dot on a chart: the green dot indicates a top, while the red one shows a bottom
+The first (left) top/bottom of the double top/bottom is marked by a dot on a chart: the green dot indicates the top, while the red one shows the bottom
+The second (right) top/bottom of the double top/bottom is marked by a star: the green star indicates the top, while the red one shows the bottom
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22618

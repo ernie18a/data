@@ -1,0 +1,13 @@
+FVG Imbalance Marker Helper is a small educational indicator for MetaTrader 5. It marks simple bullish and bearish Fair Value Gaps directly on the chart using a compact three-candle rule.
+The logic is intentionally simple. A bullish FVG is detected when the third candle low remains above the first candle high. A bearish FVG is detected when the third candle high remains below the first candle low. The gap must also be larger than a configurable minimum size in points.
+Detected gaps are drawn as rectangles and extended a small number of bars to the right. This keeps the chart readable and makes it easier to study recent imbalance areas without turning the indicator into a full trading system.
+Inputs:
+InpLookbackBars - number of bars to scan.
+InpMinGapPoints - minimum gap size in points.
+InpExtendBars - how many bars the rectangle is extended to the right.
+InpHideFilledGaps - hide gaps after price later returns through the gap boundary.
+InpBullishColor - color for bullish gaps.
+InpBearishColor - color for bearish gaps.
+InpTransparency - rectangle transparency.
+InpObjectPrefix - prefix used for chart object names.
+This indicator does not generate buy or sell signals. It is only a visual helper and a clean starting point for developers who want to study how simple FVG detection can be implemented in MQL5.

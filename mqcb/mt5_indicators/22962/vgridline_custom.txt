@@ -1,0 +1,56 @@
+The indicator plots one vertical line per day in a specified moment of time.
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+string
+LinesSirname=
+"VLine_Grid_Custom_"
+;
+//line name
+input
+HOURS  LineHours=ENUM_HOUR_0;
+//Line setting line (hour)
+input
+MINUTS LineMinuts=ENUM_MINUT_0;
+//Line setting line (minute)
+input
+color
+Line_Color=
+clrMagenta
+;
+//line color
+input
+ENUM_LINE_STYLE
+Line_Style=
+STYLE_DASHDOTDOT
+;
+//line display style
+input
+ENUM_WIDTH Line_Width=w_1;
+//line width
+input
+bool
+SetBackground=
+true
+;
+//line background display
+input
+uint
+LinesTotal=
+10
+;
+//number of lines in history
+input
+uint
+FutureTotal=
+1
+;
+//number of lines in future empty history
+If several instances of the indicator with different parameters should be used for the chart layout, the
+LinesSirname
+parameter should be different for each indicator.
+Fig. 1. VGridLine_Custom indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22962

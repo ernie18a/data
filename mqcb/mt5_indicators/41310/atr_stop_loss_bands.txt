@@ -1,0 +1,11 @@
+This indicator is used for stop loss placements with ATR as reference and comes in two lines with equal distance from a moving average.
+The indicator can also be used for safety measuring of trade entries by using it as a price breakout filter, meaning if price moves too far from your baseline then price would be too directly volatile for a safe trade.
+The input settings are
+ATR period:
+ATR period, default at 14
+ATR factor:
+ATR factor, most used factor is 1.5
+MA period:
+Moving average period, 1 resembles price action
+MA method:
+Moving average method, choose from SMA, EMA, SMMA and LWMA

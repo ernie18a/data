@@ -1,0 +1,4 @@
+Ron Black's Swing Line indicator with only two states displayed:
+State up.
+State down.
+Since it is using only two states, it is suitable for simple usage from Expert Adviser(s).

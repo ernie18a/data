@@ -1,0 +1,6 @@
+Description:
+The technical indicator Mogalef Bands projects to the future the high, median and low levels of the most possible range by taking into account the market environment. This indicator can be applied straight away to any future, stock, index or currency you may be working in.
+Technical description:
+The indicator checks the values of linear regression values, compares those to extremes of the past deviation bands, and if a break-out in either direction happens, it adjusts the bands as the most probable range in which the price will range.
+Usage:
+It can be used as a target for breakouts or take profit/stop losses.

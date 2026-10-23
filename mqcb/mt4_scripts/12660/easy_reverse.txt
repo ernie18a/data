@@ -1,0 +1,5 @@
+The script reverses all the orders of the chart symbol.
+Inputs:
+double Reverse;
+with stoploss Reverse.
+If you don't want inputs erase "#property script_show_inputs" in the MetaEditor

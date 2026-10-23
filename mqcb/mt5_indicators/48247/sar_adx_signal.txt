@@ -1,0 +1,1 @@
+SAR ADX Signal with mobile notification, rewritten from MT4 version (source no longer found). This is a repaintable indicator, please be careful when using it.

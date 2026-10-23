@@ -1,0 +1,6 @@
+The rules are:
+if you have less than n-positions open the EA will do nothing.
+the moment you open the n-th position the EA will close all previous positions if their total PnL is positive.
+if you have greater(or equal) than n-positions it will close everything as soon as the total PnL is positive.
+The rules above guarantee that you won't grow a too large basket that cause risk to your capital. Also it will help you with saving profit every now and then.
+Note that the positions have to have same amount of risk(not necessarily lot size as the volatility could be different on different instruments).

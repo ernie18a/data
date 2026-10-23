@@ -1,0 +1,10 @@
+Description:
+This indicator is a new improved version of the original Brooky Psar Levels indicator.
+Additional levels have been added that were missing from the original and the psar settings are optimized for H1 and H4 in particular.
+The main goal of this indicator is to try and find confluence from previous psar switches and by plotting these levels find areas of potential reversal or re-evaluation
+of trades. It can be used to follow trends with trailing stops at previous levels on a smaller time-frame or the plotted psar, though the psar trail can often leave a lot on the table.
+It offers a simple yet effective method of plotting support and resistance levels based on a consistent logic so that you can use your favorite indicators against the levels to look for trades.
+It is beneficial to run the indicator on both H1 and H4 and make judgements based on both time-frames.
+The attached image is a good example how two confluent areas played their part in a big EurUsd short. Upon establishing the 2nd top level at 1.32909 there was a small retrace and then the drop.
+That retrace is quite typical behavior and it will generally break hard back into or reverse the trend. Enjoy.
+Image:

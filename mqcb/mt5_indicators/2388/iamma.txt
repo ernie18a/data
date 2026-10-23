@@ -1,0 +1,15 @@
+Real author:
+RickD
+An indicator of a moving average similar to
+EMA
+.
+Calculated as follows:
+AMMA[bar] = ((AMMAPeriod-1)*AMMA[bar+1] + Price[bar])/AMMAPeriod
+25-day Average Modified Moving Average works as a filter. It is recommended in "Commodity Futures Trading with Moving Averages".
+This indicator was first implemented in MQL4 and published in
+CodeBase
+on 07.08.2007.
+Figure 1. The i-AMMA indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2388

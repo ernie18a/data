@@ -1,0 +1,9 @@
+Scalper EA to low-spread Top-Tier ECN Brokers. To use on M1 Time-Frame and in a VPS with a maximum of 1 millisecond latency.
+Choosable Options:
+CashAccount
+: Money in Account that permisse continue to operate. (I recommend a maximum of 5% below the Initial Balance, rare then only trading on next end-of-week).
+minlots
+: The quantity of Minimum Lots to trade.
+Spread
+: at most of the time, Ask 120020.55 Bid 120000.05 (=2050), change the default 50.
+Cheer's

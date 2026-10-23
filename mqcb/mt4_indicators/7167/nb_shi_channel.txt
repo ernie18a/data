@@ -1,0 +1,6 @@
+Really useful channel indicator. It works just as good as human. At the same time, it is not prone to psychological problems.
+It will also be useful to those who are unable to manually plot channels (or able to, but lazy).
+NB_SHI_Channel
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7167

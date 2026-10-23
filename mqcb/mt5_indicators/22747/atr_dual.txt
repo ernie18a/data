@@ -1,0 +1,21 @@
+ATR Dual displays data from two indicators ATR with different averaging periods.
+Averaging periods are set in parameters
+ATR "Master" averaging period
+and
+ATR "Slave" averaging period
+.
+By default,
+ATR "Master" averaging period
+is 14 and displayed as a dotted line, while the
+ATR "Slave" averaging period
+is 1 and displayed as a histogram.
+How to interpret the indicator data at the current bar: If histogram
+"Slave"
+has started approaching the
+"Master"
+line, it means that the volatility on the current bar differs strongly from the mean value over
+ATR "Master" averaging period
+periods.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22747

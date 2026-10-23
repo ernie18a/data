@@ -1,0 +1,5 @@
+The indicator shows the information about indicator values and important levels.
+The idea was to keep the chart as clean as possible, but still get everything on one glance. You can take all indicators or just the ones you like. To hide the others set them to false.
+It is my first project, I hope you like it.
+Recommendations
+Works on curencies with 3 or 5 Digits. Update for CFDs and other stuff will be implemented soon.

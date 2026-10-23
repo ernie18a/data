@@ -1,0 +1,8 @@
+Actual author
+: OlegVS
+The indicator colors candlesticks depending on the trend direction.
+Candlesticks in the direction of the signal are bright; those against the direction are dark. Candlesticks in flat are not colored.
+Fig. 1. The AlterTrend indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21766

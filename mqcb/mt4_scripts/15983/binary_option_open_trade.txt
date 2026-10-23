@@ -1,0 +1,5 @@
+The script is designed for opening trades on binary options via the MetaTrader 4 terminal, if your broker supports this feature.
+The input parameters set the order type (Buy or Sell), investment size and expiration time of the option in minutes.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15983

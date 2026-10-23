@@ -1,0 +1,8 @@
+Key Features:
+Channel Length (n1):
+Default 10, adjusts sensitivity of price movements.
+Average Length (n2):
+Default 21, smooths the WT1 line for clearer signals.
+Cross Signals:
+Generates notifications when WT1 crosses WT2, indicating potential buy (upward cross) or sell (downward cross) opportunities.
+Ideal for traders seeking reliable trend-following and reversal signals across various timeframes and currency pairs.

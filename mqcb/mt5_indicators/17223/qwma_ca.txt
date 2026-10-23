@@ -1,0 +1,13 @@
+QWMA indicator — the "corrected" version (as described by dr. Andreas Uhl for simple average, but this time applied to qwma).
+"Correcting" is a process where the value of the average is checked for the significance (how big is it) of change. For that a standard deviation of a change is used and if the change is "not significant enough" then the change is ignored. because of that the average starts to have that "step like" value. But in any case, it should not be mixed with the step average type. The corrected average is different.
+The correction period can be used to have different types of calculations :
+If the "correction" period is set to < 0, then there is no correction made (in that case the value is exactly the same as original qwma)
+If the "correction" period is set to  0, then the "correction" period is the same as qma period
+If it is set to any other value, that period is used
+Also, the coloring is different here :
+in this indicator one of the values that is displayed is the original('non-corrected") qwma value. One of the color combinations is when the corrected average crosses the original qwma value.
+the others are expected coloring types :
+color (and alerts) on slope change
+color (and alerts) on outer levels cross
+color (and alerts) on middle level cross
+PS: some experimenting advised. defaults used are roughly used so that they correspond too "trending" usage, but with other settings, different types of usage of this indicator are possible to

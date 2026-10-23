@@ -1,0 +1,54 @@
+The author of the idea
+is
+Peter
+, and
+the author of the mq5 code
+is
+barabashkakvn
+.
+The trend is determined on the zero bar based on two Moving Averages (fast and slow). They also generate preliminary signals:
+if fast MA < slow MA
+//--- Buying AND Selling
+if
+(ema_fast<ema_slow)
+     {
+...
+sell=
+true
+;
+buy=
+false
+;
+     }
+i.e. it a signal
+to open a SELL position
+;
+if fast MA > slow MA
+if
+(ema_fast>ema_slow)
+     {
+...
+      sell=
+false
+;
+buy=
+true
+;
+}
+it is a signal
+to open a BUY position
+.
+Signals are confirmed using the WPR indicator (on the zero or first bar) and by comparing the values of the CCI indicator to the "
+CCI sell level
+" or "
+CCI buy level
+".
+Each profitable position is subject to the following check: Is its profit greater than the threshold value "
+Positive profit in the deposit currency
+"? If it is, the next position will be opened with the volume increased by "
+Volume step
+".
+Testing results on EURUSD:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18663

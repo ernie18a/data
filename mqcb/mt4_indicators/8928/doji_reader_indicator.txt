@@ -1,0 +1,38 @@
+Version 1
+1. Can read doji:
+a. may set minimal length of uptail
+b. may set minimal length of lowtail
+2. Can read gravestone doji:
+a. may set minimal length of uptail
+b. may set maximal length of lowtail
+3. Can read dragonfly doji:
+a. may set maximal length of uptail
+b. b. may set minimal length of lowtail
+4. An alarm can pop up when new candle appeared if desired
+Version 2
+AnAlert: add true if you want to alerted when new doji appeared
+ShowCandleBox: add true if you want to doji candle is appeared in a rectangle
+BoxColor: add favorite color to colored rectangle
+ShowStar: add true to show star above the candle
+StarColor: add favorite color to colored star
+StarWidth: add width size to adjust star width
+ShowText: add true to show doji's name
+FontColor: add favorite color to colored text
+FontSize: add size of font
+VerticalText: if true, text will show at vertical
+MyBrokerHas5Digits: add true if use 5 digis
+FindRegularDoji: if set to true, indicator will looking for it
+MinLengthOfUpTail: minimal size for length of upper tail
+MinLengthOfLoTail: minimal size for length of lower tail
+MaxLengthOfBody: maximal size for length of body
+FindDragonflyDoji: if set to true, indicator will looking for it
+MaxLengthOfUpTail1: maximal size for length of upper tail
+MinLengthOfLoTail1: minimal size for length of lower tail
+MaxLengthOfBody1: maximal size for length of body
+FindGravestoneDoji: if set to true, indicator will looking for it
+MinLengthOfUpTail2: minimal size for length of upper tail
+MaxLengthOfLoTail2: maximal size for length of lower tail
+MaxLengthOfBody2: maximal size for length of body
+Best regards,
+heartnet
+http://mqlprogramming.blogspot.com

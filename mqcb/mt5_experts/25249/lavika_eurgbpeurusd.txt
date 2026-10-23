@@ -1,0 +1,22 @@
+The Expert Advisor uses four iMA (Moving Average, MA) indicators from two timeframes. Two indicators with averaging periods 1 and 8 are created on the H1 timeframe and two indicators with averaging periods 1 and 8 are also created on the H4 timeframe.
+Trade management
+You can set Stop Loss, Take Profit and Trailing Stop in the Expert Advisor. Any of these parameters can be turned off (it is enough to set the value of the selected parameter to "0").
+Position Size Management (Lot Size)
+Lot can be either permanent (
+Money management
+set to
+Constant lot
+and ask a lot size
+of The of value for "Money management"
+) and dynamic - in the percentage of risk on the transaction (
+Money management
+set in the
+Risk in percent for a deal
+and set the percentage of risk
+The value for "Money management"
+).
+Recommended Pair (EURUSD/EURGBP/EURCHF)
+Additional
+Only one positions - you can only hold one position in the market.
+Reverse - reverse trading signals
+Close opposite - the closing of the opposite position (first the opposite position is closed and only then the position on the trading signal is opened)

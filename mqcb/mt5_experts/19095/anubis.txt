@@ -1,0 +1,86 @@
+The author of the idea
+:
+John Smith
+,
+the mq5 code author
+:
+barabashkakvn
+.
+The EA trades using the signals of the following indicators: iStdDev (two indicators), iMACD, iCCI, iATR.
+Indicators parameters:
+handle_iStdDev_20=
+iStdDev
+(m_symbol.Name(),
+PERIOD_H4
+,
+20
+,
+0
+,
+MODE_SMA
+,
+PRICE_CLOSE
+);
+   handle_iStdDev_30=
+iStdDev
+(m_symbol.Name(),
+PERIOD_H4
+,
+30
+,
+0
+,
+MODE_EMA
+,
+PRICE_CLOSE
+);
+   handle_iCCI
+=
+iCCI
+(m_symbol.Name(),
+PERIOD_H4
+,
+CCIPeriod,
+PRICE_CLOSE
+);
+   handle_iMACD
+=
+iMACD
+(m_symbol.Name(),
+PERIOD_M15
+,
+M_FastEMA,M_SlowEMA,M_Signal,
+PRICE_CLOSE
+);
+   handle_iATR
+=
+iATR
+(m_symbol.Name(),
+PERIOD_M15
+,
+12
+);
+As you can see, the timeframes of indicator are hard-coded, there are no input parameters for them.
+Also, data of bar open and close prices from timeframe M15 are used in the code:
+double
+iClose1
+=
+iClose
+(
+1
+,m_symbol.Name(),
+PERIOD_M15
+);
+double
+iOpen1
+=
+iOpen
+(
+1
+,m_symbol.Name(),
+PERIOD_M15
+);
+The Expert Advisor trails positions and moves them to breakeven if possible.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19095

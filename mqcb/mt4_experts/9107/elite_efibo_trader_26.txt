@@ -1,0 +1,11 @@
+This version of eFibo trader includes additional trend detection signals based on simple indicators (RSI and MA).
+Once the trend is detected, eFibo will enter orders based on a Fibonacci sequence (available as parameters).
+The following additions were added with this new version:
+Moving Average Cross Logic to determine if EA will buy or sell.
+Parameter 1: MA On/Off If off, module is off. If on, override the Open_Buy = false, Open_Sell = true, with the following logic:
+parameter 2: MA1-Slow default 65 parameter 3: MA2-Fast default 15
+If MA2 Crosses Under (starts below then goes over) MA1 then buy. (begin eFibo algorithm LONG) during this trade, if the lines reverse, i.e. MA2 Crosses Over MA1, then:
+If there is a profit in total on all trades, close all positions and wait for another cross (reset) if there is a loss, set a 15 pip trailing stop.
+If MA2 Crosses Over (starting above going under) MA1 then sell (begin eFibo algorithm SHORT) during this trade, if the lines reverse, i.e. MA2 Crosses Under MA1, then: if there is a profit in total on all trades, close all positions and wait for another cross (reset) if there is a loss, set a 15 pip trailing stop.
+parameter 4: RSI Filter on/off if off, module is off if on, Do not enter any new long trades if RSI is greater than RSI High Do not enter any new short trades if RSI is lower than 30.
+parameter 5: RSI period 14 default parameter 6: RSI High 70 default Parameter 7: RSI Low 30 default parameter 8: trailing level default 15 pips

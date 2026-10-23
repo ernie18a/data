@@ -1,0 +1,11 @@
+Average Modified Moving Average.
+It has two input parameters:
+Period
+- calculation period;
+Applied price
+- price used for calculations.
+Calculations:
+AMMA[i] = (AMMA[i-1]*(Period-2) + Price[i] + Price[i-1])/Period
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20692

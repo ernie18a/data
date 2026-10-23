@@ -1,0 +1,23 @@
+The indicator is a combination of the
+FATL
+digital filter and analogue
+JMA
+adaptive smoothing.
+The average is calculated the following way:
+JFATL[bar] = JMA(FATL(PRICE[bar]))
+where:
+FATL() -
+FATL
+digital filter value;
+JMA() -
+JMA
+adaptive smoothing algorithm;
+PRICE[] - price series value;
+bar - current bar index.
+Additional JMA smoothing is used to prevent the indicator activation at each occasional market move.
+ColorJFatl and JFatl indicators use the CJJMA class of the SmoothAlgorithms.mqh library. The use of the class was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Additional Buffers"
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/430

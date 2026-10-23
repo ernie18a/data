@@ -1,0 +1,10 @@
+The idea of the indicator
+The indicator was rewritten at the request from the forum (
+Does anyone have this simple volume indicator for MT5?
+)
+Rice. 1. Trading Volume Line
+Three modes can be set in the parameters:
+Close Ratio
+Open Ratio
+Body Ratio
+(the mode is displayed in the indicator window)

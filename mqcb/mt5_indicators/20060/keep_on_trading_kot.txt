@@ -1,0 +1,14 @@
+The KOT (Keep On Trading) indicator shows time for holding a position. For example, if we have an open buy position, the indicator draws a line below the price, which means you can keep the position open. As soon as the line begins to disappear, you can apply your preferable trailing method to move the stop order to the open price of the previous candlestick or to the price of the indicator line. If the indicator line starts to appear above the price and there is an open buy position, you should consider closing the position. The opposite is true for sell signals.
+The indicator has four input parameters:
+ATR period
+- ATR period for the indicator calculation;
+MA period
+- MA period for the indicator calculation;
+MA method
+- MA calculation method;
+Multiplier
+- multiplier.
+The multiplier sets the distance between the line and the price. The option is useful when trailing the stop order based on the indicator line.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20060

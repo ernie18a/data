@@ -1,0 +1,61 @@
+Author of the idea
+—
+Collector
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Inspired by topic
+Neural networks - where to start studying them
+(in Russian).
+WARNING: OPTIMIZATION IS REQUIRED!
+The world is changed. I feel it in the water. I feel it in the earth.
+I smell it in the air. Much that once was is lost...
+"The Lord of the Rings" by J. R. R. Tolkien
+The idea of ​​creating the Gandalf Expert Advisor inspired discussion on the forum
+Neural networks as they learn how to start?
+.
+The EA keeps open one BUY position and one SELL position (two independent positions)
+until the market closes them either by fixed TP or SL.
+It enters the market on the basis of a two-parameter exponential smoothing of a time series taking into account 2 parameters:
+1st parameter: location of price - S
+2nd parameter: trend slope - T
+Recurrence formulas are used in calculations:
+S[n]=w*y[n]+(1-w)*(S[n-1]+T[n-1])
+T[n]=t*(S[n]-S[n-1])+(1-t)*T[n-1]
+The predicted value is:
+y[n+1]=S[n]+T[n]
+For the source values of the 1st and 2nd parameter we can
+use the ratios from tejh linear regression formula -
+Useful functions from KimIV
+.
+__________________________________________________________________________________________
+Expert Advisor Inputs >
+For long positions:
+In_BUY=true; — allow long positions,
+Count_buy=24; — the number of history bars, on which the time series is smoothed (closed parameter)
+w_price=0.18; — price factor,
+w_trend=0.18; — trend factor,
+SL_buy=62; — Stop Loss level in pips,
+Risk_buy=0; — Risk level in % (depending on free margin).
+For short positions: variables In_SELL, Count_sell,
+m_price
+,
+m_trend,
+SL_sell,
+Risk_sell
+are similar to the above.
+__________________________________________________________________________________________
+Optimization is performed in two steps, on the fixed lot, i.e. when Risk_buy=0;and
+Risk_sell
+=0;
+Step 1 for long positions:
+In_BUY=true; In_SELL=false; Count_buy from 3 to 120, with a step of 1;
+w_price and  w_trend  from 0.05 to 0.6 with a step 0.01; SL_buy from 30 to 100, with a step 1.
+Step 2 for short positions:
+In_BUY=false; In_SELL=true; the rest is similar to the above.
+The Expert Advisor shows fascinating trading on vivid trend periods on H4 and D1 timeframes of EURUSD, but you should apply an additional filter using an indicator on higher timeframes when you want to enter the market.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17187

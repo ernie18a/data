@@ -1,0 +1,31 @@
+A script for showing the swap value on a financial instrument. The texts of positive and negative swaps are shown in different colors.
+I have been regularly using it for long. For some reasons, it has turned out to be more optimal for me as a script than as an indicator. I'm publishing it since I suppose it may be useful not only for me.
+Along with swap values, it displays on the chart:
+Name of the financial instrument. This may be helpful when the chart symbol changes subsequently.
+Date and time of when the values were defined. There can be that swap may changes sometimes, so it may be necessary to run such a script on the chart again.
+Inputs
+i_delete_text_only
+- if you choose
+true
+, then this script will only delete the text set before using the script, and it will not set a new one;
+i_color_plus
+- color for the text of a positive swap;
+i_color_minus
+- color for the text of a negative swap;
+i_font_size
+- font size;
+i_y
+- distance for the text along the
+y
+axis in pixels (referencing from the chart top).
+Note
+: Using this utility, if necessary, is combined with using another one (
+SD Swap
+), using which you can show the swap on the Expert Advisors tab either for all symbols or for the symbols selected in the Market Watch window. Utility SD Swap can also show the swap only for the symbols, where
+swap long
+or
+swap short
+is positive.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20681

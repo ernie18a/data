@@ -1,0 +1,7 @@
+Semaphore signal indicator based on the
+Chande_Kroll_Stop_v1
+indicator algorithm.
+Fig.1. The Chande_Kroll_Stop_v1_Sign indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13006

@@ -1,0 +1,10 @@
+The SignalsDemo EA shows operations of
+trading signal management functions
+.
+The EA shows information on available trading signals' features, allows to manage their copying settings, as well as subscribe to and unsubscribe from signal copying.
+Log in the terminal (enter your login and password in MQL5.community using Main Menu->Service->Settings, Community tab) and authorize changes of signal settings when the EA is launching:
+Fig. 1 Signal settings when the EA is launching
+Fig. 2. Trading signals management in MetaTrader 5. The SignalsDemo EA
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11408

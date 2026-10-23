@@ -1,0 +1,6 @@
+The classic CCI with the colored signal levels.
+For the moments of time, when the CCI indicator is in oversold and overbought zones, there are change of the indicator color corresponding to the trend direction.
+The growing trend colors the indicator in lettuce green, the falling into the red one.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1866

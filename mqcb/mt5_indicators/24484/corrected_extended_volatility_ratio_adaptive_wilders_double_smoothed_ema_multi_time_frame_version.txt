@@ -1,0 +1,9 @@
+Theory :
+The original (with detailed description) was posted here :
+Corrected Extended Wilder's Double Smoothed EMA
+. As it is described in the post, is is using volatility ratio for adapting the double smoothed Wilder's EMA. Adapting is making it more responsive to market changes and thus producing signals sooner (on average). This version is adding multi time frame to the indicator. Multi time frames are having, apart from all the standard multi time frames that can be used in metatrader 5, 3 additional "time frames" :
+first higher time frame (first time frame higher than the current chart time frame)
+second higher time frame (second time frame higher than the current chart time frame)
+third higher time frame (third time frame higher than the current chart time frame)
+Usage :
+You can use color changes as signals

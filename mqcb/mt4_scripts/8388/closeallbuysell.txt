@@ -1,0 +1,4 @@
+Only the active positions are closed, the pending positions are not affected.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8388

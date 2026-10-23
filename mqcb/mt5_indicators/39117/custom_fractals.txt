@@ -1,0 +1,6 @@
+How many bars to form a fractal?
+How many points away from the price should the arrows be drawn?
+Customize Wingdings character customizable via input parameter
+Arrow size customizable via input parameter
+It is basically the original Examples Fractals from MetaQuotes but with a few twists where you can access features to have more possibilities to organize fractals when using different instances of them. A Fractal marks a situation where a local extremum is surrounded byless extreme candles.
+It is supposed to be somewhat of a continuation sign when a fractal is broken because it marks a local hh or ll that is now run over by the market.

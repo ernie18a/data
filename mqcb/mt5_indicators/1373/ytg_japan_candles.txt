@@ -1,0 +1,19 @@
+The real author:
+Yuriy Tokman
+The candlesticks combinations are taken from the book by Elder "Japanese candlesticks".
+The given indicator displays the following candlestick combinations:
+Bullish hammer;
+Bullish engulfing;
+Bullish dark cloud cover;
+Dodge;
+Bearish cloud gap;
+Bearish dark cloud cover;
+Bearish engulfing;
+Bearish hammer.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 15.09.2008.
+Fig.1 The ytg_Japan_Candles indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1373

@@ -1,0 +1,4 @@
+One of the possible ways to estimate volatility
+This is the logarithmic Garman Klass volatility as described here :
+http://www.ivolatility.com/help/7.html
+PS: it is not a directional indicator. Do not use it to estimate direction of the market, but only to estimate volatility

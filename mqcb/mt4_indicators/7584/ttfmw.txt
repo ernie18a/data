@@ -1,0 +1,2 @@
+Author: MojoFX
+One more version of indicator TTF, draws points Buy and Sell.

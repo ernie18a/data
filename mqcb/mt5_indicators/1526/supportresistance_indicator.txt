@@ -1,0 +1,16 @@
+The real author:
+Tinytjan
+The channel is drawn using Gauss Transform. Input parameter sets the width of the window within which the indicator is calculated.
+input
+uint
+WindowSize=
+20
+;
+//the width of the window
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 29.02.2008.
+Fig.1 The Support-Resistance Indicator indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1526

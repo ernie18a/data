@@ -1,0 +1,28 @@
+Idea by:
+Scriptor
+Code mq5 by:
+barabashkakvn
+The EA works both on netting and hedging accounts. It places pending orders only when a new bar appears.
+What It Makes
+First, three parameters (
+Hour 1
+,
+Hour 2
+, and
+Hour 3
+) are compared to the current hour. If the current hour matches one of these parameters, placing pending orders is allowed.
+Maximum and minimum prices between bars #0 and #1 are defined. After that, the value of indicator iATR is added to the maximum price of bar #0. This is how the Buy stop price is obtained. Price for Sell stop is obtained by subtracting the value of indicator iATR on bar #0 from the minimum price.
+The volume can be set in two ways: by either using a fixed lot (set
+Money management
+to
+Constant lot
+) or in in risk % per trade (set
+Money management
+to
+Risk in percent for a deal
+).
+As soon as one of the pending orders is activated (defined in OnTradeTransaction: TRADE_TRANSACTION_DEAL_ADD transaction type – "adding a deal to history" is detected), all remaining pending orders are removed.
+Trailing is applied to positions.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22884

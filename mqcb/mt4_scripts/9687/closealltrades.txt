@@ -1,0 +1,13 @@
+Description:
+My first script, use for critical situation when something goes wrong and I want quickly close all trades.
+Repaired, so it closes first the opened trades and than the pending orders.
+CloseAllTrades - closes all opened and pending orders on all symbols;
+CloseAllTradesCurrent - closes all opened and pending orders on current chart;
+CloseAllTradesOpened - closes all opened orders on all symbols;
+CloseAllTradesOpenedCurrent - closes all opened orders on current chart;
+CloseAllTradesPending - closes all pending orders on all symbols;
+CloseAllTradesPendingCurrent - closes all pending orders on current chart;
+CloseAllTradesBuy - closes all opened buy orders on all symbols;
+CloseAllTradesBuyCurrent - closes all opened buy orders on current chart;
+CloseAllTradesSell - closes all opened sell orders on all symbols;
+CloseAllTradesSellCurrent - closes all opened sell orders on current chart.

@@ -1,0 +1,38 @@
+Author of the idea
+—
+Pavel Smirnov
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+The automated trading system
+Gazonokosilka (in Russian means "Lawnmower") can provide often little profits. Stop Loss and Take Profit parameters are set to tight values so that trades could be closed in case of small price movements. But the EA should not be scalping, the optimum scenario is one-two trades per day.
+Trading rules of the system:
+1. Enter at the roll back of the price movement
+2. Exit at Stop Loss or Take Profit
+Therefore we first need to determine the price action or momentum (a variety of options is available). Then wait for the rollback (various options) and enter the market.
+The EA is designed to test on EUR/USD H1 and allows experimenting with the underlying trading system. The EA analyzes price movement inside the bar, therefore testing should be performed in the "Every tick based on real ticks" mode. It is very important.
+The code is well commented and structured, so even a beginner can understand it.
+Expert Advisor's input parameters (external variables):
+magic
+— the magic number allowing the EA to work with its own positions.
+TakeProfit
+— take profit level in points. It is set for all positions during opening.
+Otkat
+— pullback value in points. When the price rolls back by this amount, the EA switches to the trade opening state.
+StopLoss
+— stop loss level in points. Set during position opening similar to TakeProfit.
+t1
+— the number of the bar used to determine price movement.
+t2
+— the number of the bar used to determine price movement.
+delta
+— the value used to determine the momentum.
+lot
+— Position size.
+active_trades
+— the maximum number of open trades at a time.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17231

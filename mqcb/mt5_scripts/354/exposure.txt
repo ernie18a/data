@@ -1,0 +1,5 @@
+I would like to present you the "Exposure". It allows you to calculate the summary assets of each currency.
+It's useful if there are many positions.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/354

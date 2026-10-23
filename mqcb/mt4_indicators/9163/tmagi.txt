@@ -1,0 +1,3 @@
+Author:
+Kurl
+TMAGi is an oscillator based on 3 Moving Averages. (tmagiq.mq4)

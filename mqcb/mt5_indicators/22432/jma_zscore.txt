@@ -1,0 +1,21 @@
+Theory :
+A
+z-score
+(aka, a
+standard score
+) indicates how many
+standard deviations
+an element is from the mean. A z-score can be calculated from the following formula.
+z = (X - μ) / σ
+where z is the z-score, X is the value of the element, μ is the population mean, and σ is the standard deviation.
+Here is how to interpret z-scores.
+A z-score less than 0 represents an element less than the mean.
+A z-score greater than 0 represents an element greater than the mean.
+A z-score equal to 0 represents an element equal to the mean.
+A z-score equal to 1 represents an element that is 1 standard deviation greater than the mean; a z-score equal to 2, 2 standard deviations greater than the mean; etc.
+A z-score equal to -1 represents an element that is 1 standard deviation less than the mean; a z-score equal to -2, 2 standard deviations less than the mean; etc.
+If the number of elements in the set is large, about 68% of the elements have a z-score between -1 and 1; about 95% have a z-score between -2 and 2; and about 99% have a z-score between -3 and 3.
+This version :
+It is using JMA (Jurik Moving Average) as the basis for Z-score calculation. If you set the JMA period to <= 1, you are going to get a "regular" Z-score (ie: "raw" price is going to be used in that case and the values are not going to be as smooth as when JMA is used for price pre-filtering, but that allows us to have both - "regular" and "JMA filtered" Z-score)
+Usage :
+You can use the color (the slope direction change) of the z-score as signals. Also you can use the zero line cross as signals too

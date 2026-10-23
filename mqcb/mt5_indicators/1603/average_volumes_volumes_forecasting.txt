@@ -1,0 +1,21 @@
+The indicator displays in a separate window
+"Tick
+Volume
+" or "
+Real
+Volume
+" volumes and their average value on history. The average value of volumes is used for drawing the forecast of their volumes value for the current and the following days.
+The average value of volumes is performed considering the day of the week, i.e. Monday volumes average with the previous Mondays' volumes, Tuesday with Tuesdays and so on.
+Set the number of averaging weeks and type of the displayed volumes in indicator input parameters. The number of the used averages can differ from the specified ones in parameters. If the terminal lack of data for the specified number of averaging weeks, for example, if insufficient value of the "
+Max
+bars
+in
+chart
+" terminal parameter set, then number of averages can be significantly less than the specified one.
+The real number of average weeks can be seen, if set the mouse pointer to the line of average values. In this case it will be specified in the tooltip how many weeks succeeded to use for averaging.
+Line of average values can be additionally processed by the median filter. It should also be considered that there is a risk to smooth some significant peak. Default median filter disabled.
+If quotes supplier during the whole time of averaging didn't change the parameters of algorithm, then it will be well seen, if the current volumes were significantly less or more than the average value. Such situation can be considered as decrease or increase of the market activity relative to average value.
+In addition to other things, when applying neural networks you can try to use for their learning not only the previous values, but also forecasted volume values.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1603

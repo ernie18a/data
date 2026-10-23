@@ -1,0 +1,5 @@
+It does not have signal line and it does not have the price. Instead it is calculating 4 MACD-values (of open, close, high and low) and constructs MACD from those 4 values as a candles. Color of the candles (and the "trend" that macd should show) depends on the macd of open and close (not on a slope or something similar).
+A deviation was made in the calculation: I decided to allow the 4 types of averages to be used (even though by definition of Gerald Appel the macd is calculated as ema(fast)-ema(slow)). So we can have a macd of sma, smma  and lwma too — all using same calculating periods.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16484

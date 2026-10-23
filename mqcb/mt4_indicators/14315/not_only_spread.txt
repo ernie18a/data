@@ -1,0 +1,22 @@
+Spread, its moving average (EMA), its maximum and minimum, and ticks per second (market speed) in the
+Comment
+.
+The version 1.01 is made with the normal average, instead of the moving average.
+input
+int
+digi=
+1
+;
+//digits format
+input
+int
+sec=
+30
+;
+//seconds to refresh
+input
+bool
+clear=
+false
+;
+//if true, clears comment after closing indicator

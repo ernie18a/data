@@ -1,0 +1,6 @@
+Weighted Moving Average with a minimal lag using a damping cosine wave as the line of weight coefficients.
+The indicator has two filters. They are static (in points) and dynamic (expressed as a decimal). They allow cutting the price noise giving a stepped shape to the Moving Average. Moreover, there is the possibility to highlight the trend direction by color.
+Also a built-in algorithm of drawing the indicator for the high timeframes is used.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1169

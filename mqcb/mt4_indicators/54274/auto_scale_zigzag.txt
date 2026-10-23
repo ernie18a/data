@@ -1,0 +1,8 @@
+ZigZag with automatic step size determination for changing the wave direction.
+In this version of the zigzag, there is only one configurable parameter - Scale.
+By default, the Scale parameter is set to 1.0, if you set its value to 0.5, the zigzag will be less sensitive, and if you set, say, Scale = 2.0, the sensitivity will increase and there will be more zigzag wave reversals.
+The point is that the price itself forms the step size for changing the wave direction. The user only sets the scale in which he wants to catch the zigzag extremes.
+Example Scale = 1.0:
+Example Scale = 0.5:
+Example Scale = 2.0:
+Example Scale = 1.0 / 0.5 / 2.0 together on one chart:

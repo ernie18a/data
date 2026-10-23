@@ -1,0 +1,10 @@
+Some of the average type indicators are, by their nature, suitable for being adaptive.
+One of them is DEMA (Double Exponential Moving Average). This version is using
+Jurik Volty
+for making the DEMA adaptive.
+PS: when comparing adaptive indicators with the non-adaptive versions, it always should be compared for long periods. The reason is simple: for short periods the difference is small and a lot of times it can not be noticed on a first sight. But here is a comparison of regular DEMA (
+gray line
+) and Jurik Volty Adaptive DEMA (
+colored
+line
+) - both period 50. It is obvious that adaptive DEMA is leading when compared to regular DEMA.

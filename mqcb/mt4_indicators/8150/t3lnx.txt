@@ -1,0 +1,14 @@
+Indicator T3.Lnx. It uses signals
+Heiken Ashi
+.
+For the indicator to work, you should place files T3Series.mqh and PriceSeries.mqh into directory MetaTrader\experts\include.
+Heiken Ashi#.mq4 should be placed in directory MetaTrader\indicators.
+Inputs:
+T3Period= 14; // averaging period of T3Bollinger Bands
+MA_method=0; // averaging method
+MA_Smooth=20; // smoothing depth of the obtained Moving Averages
+Bands_Smooth=20; // smoothing depth of the obtained Bollinger Bands
+Smooth_Curvature=100; // smoothing parameter ranging from -100 to +100; it affects the transition quality;
+Bands_Shift=0; // indicator's shift along the time axis
+Input_Price_Customs=0; // selecting prices the indicator is calculated on
+T3.Lnx

@@ -1,0 +1,15 @@
+An autoregressive (AR) (or linear prediction) model is given by:
+x[n] = -Sum(a[i]*x[n - i], i = 1..p)
+where:
+x[n] is the predicted value of a time series;
+x[n-p]..x[n-1] are known past values of the same series;
+a[1]..a[p] are the model coefficients, and p is the model order.
+The model coefficients a[1]..a[p] can be fitted to the past data by a variety of methods. This indicator uses the Burg method.
+The inputs of the indicator are:
+UseDiff - a boolean switch to use price differences instead of prices themselves
+Ncoef - number of model coefficients (model order)
+Nfut - number of future bars
+kPast - number of past bars in increments of Ncoef (must be >=1)
+The indicator plots two curves: the blue curve represents the model outputs during its fitting, the red curve shows predicted future prices.
+UseDiff=false:
+UseDiff=true:

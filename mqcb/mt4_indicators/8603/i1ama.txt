@@ -1,0 +1,5 @@
+Another attempt to adapt the moving average, the use of the indicator in such form has not been found yet.
+Smoothing can help with its practical application. PeriodMA - period from 1 to 9.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8603

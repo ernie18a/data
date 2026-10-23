@@ -1,0 +1,3 @@
+Linear Regression Value indicator itself is suitable to be applied to another indicator(s). Hence here is the version that can do that
+PS: for detailed description of the linear regression value check this post :
+Linear Regression Value

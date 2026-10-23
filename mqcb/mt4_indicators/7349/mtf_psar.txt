@@ -1,0 +1,6 @@
+Author: Keris2112
+The Parabolic SAR was also developed by Welles Wilder for use in trending markets. The author of this indicator recommended to identify the trend first, and only after that to use the PSAR for trading with the trend.
+The indicator places dots on the chart in the direction of the trend, which are used for following it. This system is often called a reversal system, and it is used for placing stops more often than for determining the trend direction.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7349

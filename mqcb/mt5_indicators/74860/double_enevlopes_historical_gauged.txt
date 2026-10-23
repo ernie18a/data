@@ -1,0 +1,25 @@
+At its core, this indicator executes a
+Volatility Breakout Strategy
+. By decoupling the two envelopes, it creates a tiered volatility map around the baseline moving average, hunting for moments when price violently escapes its normal resting range.
+Here is exactly how to interpret the logic for traditional trading decisions:
+1. The Entry (Momentum Ignition)
+The inner envelope (Envelope 1) acts as your "noise filter." In a quiet market, the price will ping-pong aimlessly inside this channel.
+Buy Trigger:
+You enter a long position when a candle closes
+above
+the upper band of the inner envelope, provided the previous candle closed inside or below it. This clean cross signals that upward momentum has suddenly overpowered the baseline average.
+Sell Trigger:
+You enter a short position when the candle closes
+below
+the lower band of the inner envelope, signaling a sudden downside momentum break.
+2. The Exit (Taking Profit)
+The outer envelope (Envelope 2) acts as your dynamic profit target.
+Because volatility expands outward during a breakout, the 2nd Envelope's higher deviation provides a realistic, mathematically derived target for where the sudden momentum spike is likely to exhaust itself. You exit the trade the moment price tags this outer band.
+3. The Risk Management (Stop Loss)
+The Stop Loss is pegged to the
+opposite
+band of the inner envelope from the previous candle (e.g., a Buy signal puts the SL at the previous bar's inner lower band).
+This is a dynamic, structural stop. It places your risk just outside the "normal noise" range. If the price falls back through the entire inner envelope and hits the opposite side, the breakout has definitively failed into a fake-out.
+The Ideal Market Environment
+This setup thrives in high-liquidity, high-volatility environments where momentum actually follows through. It generally performs exceptionally well on assets prone to heavy institutional trends, like GBPUSD or XAUUSD, particularly during the London or New York trading overlaps.
+Conversely, the kryptonite of this system is a low-volume, ranging market. If an asset is chopping sideways, the price will repeatedly poke outside the inner envelope just enough to trigger a signal, only to immediately reverse and hit your stop loss (known as whipsawing).

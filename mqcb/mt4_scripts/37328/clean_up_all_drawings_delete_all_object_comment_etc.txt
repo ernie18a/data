@@ -1,0 +1,11 @@
+The script is best use to clean up all drawings ( Delete All Object, Comment, horizontal line, vertical line, arrows etc) on current chart.
+Please feel free to modify based on your needs.
+Recommendations:
+Create keyboard hotkey for the script - right click on script name and then select "Set hotkey".
+Or drag and drop script on the chart.
+Warning:
+No user input required.
+This script will delete
+all
+object in the current chart.
+Make sure to test the script with simple "new" chart, before applying to your working chart.

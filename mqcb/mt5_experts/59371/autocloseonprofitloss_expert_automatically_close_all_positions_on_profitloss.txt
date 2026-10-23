@@ -1,0 +1,84 @@
+Introduction
+The AutoCloseOnProfitLoss Expert Advisor (EA) is a powerful automation tool for MetaTrader 5, designed to close all open positions when predefined profit or loss targets are reached. This EA is perfect for traders who want to manage risk and secure profits without manual intervention. Whether you're a scalper targeting quick gains or a long-term trader protecting capital, this EA offers a reliable, hands-free solution.
+Features
+Automated Position Closing
+: Automatically closes all open positions when the total profit or loss meets the specified threshold.
+Customizable Targets
+: Set profit and loss targets in your account currency (e.g., USD, EUR).
+Flexible Options
+: Independently enable or disable closing based on profit or loss.
+User Notifications
+: Displays alerts and logs in the terminal when positions are closed.
+Efficient and Lightweight
+: Runs continuously with minimal CPU usage, ideal for ongoing trade management.
+How It Works
+The EA monitors the total profit or loss of all open positions using the
+PositionGetDouble(POSITION_PROFIT)
+function in MetaTrader 5. It compares this value against the user-defined
+TargetProfit
+and
+MaxLoss
+thresholds. If either condition is met (and the corresponding feature is enabled), the EA closes all positions using market orders and notifies the user through alerts (if enabled) and terminal logs.
+Installation
+Download the
+AutoCloseOnProfitLoss.mq5
+file from the MQL5 CodeBase.
+Open MetaTrader 5 and go to
+File > Open Data Folder
+.
+Navigate to
+MQL5 > Experts
+and copy the
+.mq5
+file into this folder.
+Restart MetaTrader 5 or refresh the Navigator panel.
+Locate the EA in the Navigator under
+Expert Advisors
+, then drag it onto a chart to activate.
+Input Parameters
+TargetProfit
+(default: 100.0): The profit target in your account currency to close all positions.
+MaxLoss
+(default: -50.0): The maximum loss in your account currency (must be a negative value) to close all positions.
+EnableProfitClose
+(default: true): Enable or disable closing positions when the target profit is reached.
+EnableLossClose
+(default: true): Enable or disable closing positions when the maximum loss is reached.
+ShowAlerts
+(default: true): Enable or disable alerts in MetaTrader 5 when positions are closed.
+Usage
+Drag the
+AutoCloseOnProfitLoss
+EA onto any chart in MetaTrader 5.
+In the dialog box that appears, configure the input parameters:
+Set your desired
+TargetProfit
+and
+MaxLoss
+values.
+Enable or disable profit/loss closing as needed.
+Choose whether to display alerts.
+Click
+OK
+to start the EA.
+The EA will continuously monitor all open positions and close them if the specified conditions are met.
+Check the
+Experts
+or
+Journal
+tab in MetaTrader 5 for logs and results.
+Example
+Suppose you set
+TargetProfit = 100.0
+,
+MaxLoss = -50.0
+,
+EnableProfitClose = true
+, and
+EnableLossClose = true
+. If your open positions reach a total profit of $120, the EA will close all positions and display an alert: "All positions closed! Reason: Target profit reached: 120.00". If the total loss reaches -$60, the EA will close all positions with an alert: "All positions closed! Reason: Max loss reached: -60.00".
+Notes
+The EA requires open positions to take action; otherwise, it will log the current profit/loss and continue monitoring.
+Positions are closed using market orders, so slippage may occur depending on market conditions.
+Test the EA on a demo account first to ensure it suits your trading strategy.
+Unlike a script, this EA runs continuously until manually stopped or removed from the chart.

@@ -1,0 +1,27 @@
+Better Bollinger Band is a Bollinger Band with improved bands calculation.
+The October 1998 issue of Futures features the article "Better Bollinger Bands" by Dennis McNicholl, in which the author recommends improving BB by modifying:
+- center line equations
+- another equation for calculating the bands.
+These bands called DEnvelope
+with the proposed changes
+follow the price more accurately and respond to volatility changes faster.
+The indicator has two input parameters:
+Period
+- calculation period
+Deviation
+- deviation value
+Calculation:
+Central = ((2.0-Alpha) * MT - UT) / (1.0-Alpha)
+Top = Central + Deviation * DT2
+Bottom[i] = Central[i]-Deviation * DT2
+where:
+MT = Alpha * Median+(1.0-Alpha) * PrevMT
+UT = Alpha * MT+(1.0-Alpha) * PrevUT
+Median = (High+Low) / 2.0
+DT2 = ((2.0-Alpha) * MT2-UT2) / (1.0-Alpha)
+MT2 = Alpha * Abs(Median-Central) + (1.0-Alpha) * PrevMT2
+UT2 = Alpha * MT2+(1.0-Alpha) * PrevUT2
+Alpha = 2.0 / (1.0+Period)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22078

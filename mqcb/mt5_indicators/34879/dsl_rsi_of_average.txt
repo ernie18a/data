@@ -1,0 +1,6 @@
+People have been using RSI for a long time, and there were quite a few attempts to make it less "nervous" (RSI really does tend to change direction - slope - very quickly, and that makes it hard to use in some occasions. One of the best known versions that was attempting to deal with that issue is the Rsi(oma) : RSI of moving average. It turned out that filtering prices prior to be used in rsi calculation is helping and that such an indicator is becoming a very useful too for trading
+This version is doing all that Rsi of average does and is adding the discontinued signal lines to be used instead of some fixed levels as a criteria to enter or exit the trading position
+Recommendations:
+Use it in any way you used the regular Rsi(oma)
+If you wish to have it similar to fixed levels version, use long dsl period (like period 1000 - it shall not slow down the terminal regardless of the length used - upper example at the bellow example)
+To have it similar to "simple slope mode" (but just similar, you can use very short period : like period 2 - lower example at the bellow example)

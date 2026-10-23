@@ -1,0 +1,3 @@
+MACD is usually calculated with an addition of one signal line.
+That is a long used trading system and has it's merits. But that way is somewhat lacking when it comes to ranging markets (it can not detect false signals in ranging market).
+This version is using dsl (discontinued signal lines) and instead of using one signal line uses two. That way it sort of introduces levels as well as signal lines and, judging from tests, it seems to be better in avoiding false signals and it can be used in (short term) reversals detection. As usual, testing is advised before usage.

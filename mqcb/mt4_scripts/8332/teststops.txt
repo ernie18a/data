@@ -1,0 +1,6 @@
+The script shows the conditions of the correct and closest placing of the StopLoss and TakeProfit of the orders. The standard function
+MarketInfo
+is used for controlling the minimum indentation.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8332

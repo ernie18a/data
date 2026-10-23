@@ -1,0 +1,36 @@
+Description:
+The Expert Advisor draws 4 lines: "BUY LINE", "SELL LINE" и and two corresponding "CLOSE" lines.
+Your task is to move the lines to the prices you want to operate - to Buy, to Sell, or to Close.
+The orders are set and close at the moment then price crossing the line, for example for Buy case: if the Ask price crosses "Buy LINE", and for Sell case if the Bid price crosses "SELL LINE", the same is for "CLOSE" lines.
+Image:
+Here is a trade example at figure
+The total number of lines can be reduced using the lines
+DRAW_SELL
+- draw Sell line
+DRAW_BUY
+- draw Buy line
+DRAW_CLOSE1
+- draw Close1 line
+DRAW_CLOSE2
+- draw Close2 line
+There are some external variables:
+lot
+- lot size and
+order
+- maximal orders allowed. The CLOSE lines can be used for a trailing stop, just choose right angle.
+The Expert Advisor has been created using
+The signal lines with alert after crossing
+, you can find my other solutions
+here
+. Good Luck!
+Editor's remark:
+Note that it's a mirror translation of the
+original Russian version
+.
+If you have any questions to the author, suggestions or comments, it's better to post them
+there
+.
+If you have found this code useful for trading or educational purposes, don't forget to thank author.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9347

@@ -1,0 +1,7 @@
+ZigZag implementation using an ATR threshold for directional change, as well as a secondary trigger based on time.
+Variable input settings include changing:
+The multiplier of the ATR threshold
+Period for ATR calculation
+Minimum and maximum number of bars before allowing or forcing a direction change
+A setting for realtime processing of most current bar (can lead to redrawing)
+In effect, the zigzag captures swings in a balanced, dynamic, and adjustable manner making it excellent for zigzag based analyses and trading strategies.

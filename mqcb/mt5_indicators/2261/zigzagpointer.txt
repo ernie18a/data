@@ -1,0 +1,10 @@
+Real author:
+Dr. Gaines
+Another interpretation of the ZigZag indicator. Instead of a sawtooth broken line, tops are marked with colored dots in this indicator. It is natural that after such conversion the indicator is still redrawn.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 19.09.2007.
+Figure 1. The ZigZagPointer indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2261

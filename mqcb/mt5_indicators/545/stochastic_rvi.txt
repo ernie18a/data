@@ -1,0 +1,16 @@
+Real author:
+Witold Wozniak
+Stochastic RVI is a standard
+Stochastic Oscillator
+applied to the values of
+RVI
+(Relative Vigor Index) indicator instead of a price.
+Standard Stochastic oscillator is not so effective in marking the changes of market cycles or volatility. It uses a fixed period and does not fit into constantly changing market cycle length. Stochastic RVI indicator does not have such a problem and fits into the current market volatility.
+The indicator is inspired by John Ehlers' article
+"Using The Fisher Transform"
+published in November 2002 in the
+"Technical Analysis Of Stock & Commodities"
+magazine. The simplest trading system for this indicator is equivalent to the one used with Stochastic Oscillator or RVI: main/signal lines crossover, zero line breakout, enter and exit to the overbought and oversold areas, the indicator divergencies with a price chart.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/545

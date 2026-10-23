@@ -1,0 +1,1 @@
+Vary well known XO indicator seems to be missing in a simple form for metatrader 5. Here is a version that is simple to use and fairly fast in execution

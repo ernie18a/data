@@ -1,0 +1,10 @@
+Real author:
+Vladislav Goshkov
+Indicator of Murrey levels in indicator buffers with the added visual text information on those levels.
+The indicator uses the class of library
+GetFontName.mqh
+(should be copied to the terminal_data_folder\MQL5\Include).
+Fig. 1. Indicator Murrey_Math_Lv
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23401

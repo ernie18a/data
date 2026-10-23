@@ -1,0 +1,14 @@
+The
+FATL_SATL Balance
+indicator with the timeframe selection option available in the input parameters:
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+//Indicator chart period
+The indicator requires fatl-satl_balance.mq5 indicator file. Place it in terminal_data_folder\MQL5\Indicators.
+Fig. 1. The fatl-satl_balance_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12570

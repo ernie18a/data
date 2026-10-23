@@ -1,0 +1,16 @@
+Smoothed fast digital filter
+JSatl
+with color indication of movement direction, that displays the most recent value as a price label with the possibility to round the channel levels up to a required number of digits. The number of digits to round is set in the input variable
+Digit
+:
+input
+uint
+Digit=3;
+//Number of digits to round to
+The indicator uses the classes of SmoothAlgorithms.mqh library (copy it to <terminal_data_folder>\MQL5\Include). The use of the classes was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Fig1. The ColorJSatl_Digit indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16372

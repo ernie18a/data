@@ -1,0 +1,7 @@
+This indicator draws an ATR envelope surrounding price action and assists you in setting proper stoploss and take profit levels.
+The envelope can be drawn using median price if desired, resulting in a narrower envelope.
+Input parameters:
+CalculateOnBarClose
+decides if current unclosed bar is ignored
+UseMedianPrice
+decides if the median price is used to draw the envelope, instead of highs and lows.

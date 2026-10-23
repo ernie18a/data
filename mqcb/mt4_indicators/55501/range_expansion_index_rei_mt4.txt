@@ -1,0 +1,30 @@
+Range Expansion Index (MetaTrader indicator)
+— is a relative oscillator indicator that measures the pace of the price changes and signals overbought/oversold states if the price demonstrates weakness or strength. It was developed by Tom DeMark and explained in his book
+The New Science of Technical Analysis
+. The value of the indicator changes from -100 to +100. The REI is an enhanced oscillator because it tries to remain calm during the range trading and indicates signals only when the significant peaks or bottoms are spotted. You can download this indicator both for MT4 and MT5.
+Input parameters
+REI_Period
+(default = 8) — the period of the indicator. Increase the value for less but more precise signals. Decrease it for more but inaccurate signals. It is not recommended to change this parameter.
+EnableNativeAlerts
+(default = false) — if
+true
+, MetaTrader's native pop-up alerts will be used when the indicator crosses level 60 from above or level -60 from below.
+EnableEmailAlerts
+(default = false) — if
+true
+, MetaTrader's email alerts will be sent when the indicator crosses level 60 from above or level -60 from below. Email should be properly configured in MetaTrader via
+Tools->Options->Email
+.
+EnablePushAlerts
+(default = false) — if
+true
+, MetaTrader's push notification alerts will be sent to your device when the indicator crosses level 60 from above or level -60 from below. Notifications should be properly configured in MetaTrader via
+Tools->Options->Notifications
+.
+TriggerCandle
+(default = Previous) — the candle to issue alerts on:
+Previous
+— the most recently closed candle or
+Current
+— the yet unfinished candle.
+Tom DeMark suggested using the default period of 8. When the price goes above level 60 and the declines below it, the bearish signal is given. When the price goes below level -60 and then rises above it, the bullish signal is given. I find this indicator rather inaccurate (like all oscillators), but on the lower timeframes it can be quite useful.

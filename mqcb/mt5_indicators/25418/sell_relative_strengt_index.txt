@@ -1,0 +1,3 @@
+Sell Relative Strength Index (SRSI or “sell gravitation index”) by Howard Wand as featured in the February 2019 issue of TASC magazine.
+“Traders accumulate profits trade by trade, with the goal of maximizing profits. But selloffs happen and when they do, you see significant price drops that are fast. Here’s an indicator that uses the profit accumulation size to estimate subsequent selloff size.
+Green lines represent buy, red represents sell and yellow represents a balance between buy and sell signals on the SRSI.”

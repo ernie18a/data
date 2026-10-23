@@ -1,0 +1,10 @@
+Author:
+Isotope
+This indicator shows simple Registance and Support lines.
+Especially, it is effective in a range rate.
+Caution! " 2 lines are limited only the current bar! "
+When next bar will appear, it will be changed.
+You can use any timeframe.
+Recommendations:
+Especially, it is effective in a range rate.
+To the last, please use as a standard.

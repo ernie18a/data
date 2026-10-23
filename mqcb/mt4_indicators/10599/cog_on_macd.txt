@@ -1,0 +1,9 @@
+Description:
+This indicator follows on from the COG on Stochastic that was done previously and is available at
+http://codebase.mql4.com/en/code/10548
+The COG on MACD uses obviously the MACD values.
+Attributions for the base COG code need to go to:
+//| Original Code from NG3110@latchess.com
+//| Linuxser 2007 for TSD http://www.forex-tsd.com/
+The COG is fully optioned so that you can calculate and display it as you wish. If you want to see a video of it in use I have made one available at my site.
+Enjoy. Cheers Brooky

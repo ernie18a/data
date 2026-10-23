@@ -1,0 +1,6 @@
+Author:
+Adam Pogorzelski
+Strategy is based on simple rules. It can work on any currency pair. Best results are obtained with the lowest set TS. The strategy works with any broker, but works better with brokers who allow you to set the low TS.
+If the closing price of the previous candle was higher than the current - EA opens sell.
+If the closing price of the previous candle was lower than the current - EA will open buy.
+Out of the market with TP or TS.

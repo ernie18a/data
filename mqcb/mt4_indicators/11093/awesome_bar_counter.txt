@@ -1,0 +1,3 @@
+Author:
+Louis Christian Stoltz
+This indicator uses Awesome Oscillator to count the bars on each trend change and display it graphically. This is to see if you can find a trend change with the bars counted of each awesome color change.

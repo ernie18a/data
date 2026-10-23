@@ -1,0 +1,18 @@
+The Indicator DS_Stochastic presents an original Stochastic Oscillator (Stoch), in which aplying EMA smoothing.
+The Indicator Fast Stochastic is removed on graph in the manner of two lines %K and %D.
+The Formula of the calculation of the indicator Fast Stochastic is following:
+DIF1(i) = EMA(Close(i) - MaxHigh(N), S);
+DIF2(i) = EMA(MaxHigh(N) - MinLow(N), S);
+%K(i) = 100*DIF1(i) / DIF2(i);
+%D(i) = 100*EMA(DIF1(i), P) / EMA(DIF2(i), P);
+where:
+Close(i) - a price of the closing of the current bar;
+MaxHigh(N) - maximum High for N previous period;
+MinLow(N) - minimum Low for N previous period;
+EMA - exponential moving average;
+N - a length of the range of the calculation High/Low;
+S - a period of the smoothing for %K(i);
+P - a period of the smoothing for %D(i).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10054

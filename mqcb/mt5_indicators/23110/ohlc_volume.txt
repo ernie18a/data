@@ -1,0 +1,12 @@
+The OHLC Volume indicator divides volumes into two threads in accordance with Open/High/Low/Close of each bar.
+There are no input parameters.
+Calculation:
+StreamUP = Volume * UP_Coeff / (UP_Coeff+DN_Coeff)
+StreamDN = Volume * DN_Coeff / (UP_Coeff+DN_Coeff)
+where:
+UP_Coeff = High-Open
+DN_Coeff = Close-Low
+Volume - tick volume
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23110

@@ -1,0 +1,6 @@
+Description:
+This indicator use ADX period 14 to predict what the market now its trend if D+ above D- and its above the main line.
+I make its simple to see the ADX..just try and make rate hope youre trade gonna simple.
+use Timeframe 5 M to get faster confirmation...but other TF is fine too
+Moving average not included.
+Image:

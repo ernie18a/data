@@ -1,0 +1,1 @@
+Regression channel for long period, per variable is number of candle, deviation variable is a standard deviation.

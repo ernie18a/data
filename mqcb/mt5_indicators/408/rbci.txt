@@ -1,0 +1,23 @@
+Real author:
+Vladimir Kravchuk
+"New Adaptive Method of Following the Tendency and Market Cycles"
+Range Bound Channel Index (RBCI) is calculated by means of the channel (bandwidth) filter (CF).
+Channel filter simultaneously fulfills two functions: removes low frequent trend formed by low frequent components of the spectrum; removes high frequency noise formed by the high frequent components of the spectrum.
+The simplified formula for RBCI calculation has the following look:
+RBCI(bar) = FATL(bar) –SATL(bar)
+where:
+FATL(bar) -
+FATL
+digital filter;
+SATL(bar) -
+SATL
+digital filter.
+When RBCI approaches its local maximum the prices approach upper border of the trading channel and when RBCI approach its local minimum the prices approach the lower border of the trading corridor. Let’s mark main property of RBCI index. This is quasistationary (that is almost stationary) process bound by the frequency range both from above and below.
+RBCI filter coefficients
+The indicator uses the SmoothAlgorithms.mqh and IndicatorsAlgorithms.mqh classes. The use of the classes was thoroughly published in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+RBCI indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/408

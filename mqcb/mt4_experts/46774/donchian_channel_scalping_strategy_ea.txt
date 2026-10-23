@@ -1,0 +1,13 @@
+ATTENTION: Updated to version 2 with few more settings
+Lot size computation methods
+Possibility to enable different trailing stop strategies
+To be optimized for your specific needs, account and trading strategy.
+A Donchian Channel Strategy breakout EA. Best results at H1.
+Strategy and input parameters fully described in the video here below
+So far it can be used in many pairs. Actually I suggest the following:
+1. Run optimizations on as many pair as possible within the last 6 months
+2. Repeat the optimizations every month
+3. Attach all the profitable sets to the charts in order to maximize the profit and spread the risk
+At this time I'm using those sets on an
+account balance of 500€
+To run the optimizations I follow the approach shown on this video (let me know if you need me to create a more detailed or specific video)

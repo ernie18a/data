@@ -1,0 +1,3 @@
+Real author:
+dXerof
+This indicator draws support & resistance lines based on High and Low of a daily candle three days ago.

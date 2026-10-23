@@ -1,0 +1,532 @@
+This is a simple but very fast zigzag.
+No suspended or wrong peaks. Peaks retrieval has been time-optimized.
+Advantages:
+The most expensive function in calculations is iBarShift. It totally replaces all cycles needed for peaks retrieval. Therefore, it has been replaced by ArrayBSearch. It means that the indicator will be more efficient than its MQL4 equivalent;
+All necessary data for each bar is accessible not only in every moment but also available to EA for any moment in history;
+No suspended picks;
+Efficient method to find peaks without searching the indicator values;
+Very fast;
+Works correctly at history insertions and when switching timeframes;
+Perfect for use in EAs.
+Disadvantages
+:
+Memory requirements. ZigZag needs 2 buffers (one is not enough because of lags) for correct drawing, while 5 buffers are used here. In my opinion, this drawback is completely outshined by advantage #6. None of fast ZigZags can correctly process history insertions on two buffers.
+Additional lines are available. This is required to make the data visible to an Expert Advisor. These lines should never be visible.
+Principle:
+ZigZag is drawn by the channeling principle. The channel width can be defined in points (IdealZZ) or in percentage terms (IdealZZP)
+Peaks retrieval:
+input
+int
+ChannelWidth=
+100
+;
+#property indicator_chart_window
+datetime
+LastTime;
+int
+ZZHandle;
+//+------------------------------------------------------------------+
+//| Custom indicator initialization function                         |
+//+------------------------------------------------------------------+
+void
+OnInit
+()
+  {
+   LastTime =
+0
+;
+   ZZHandle =
+iCustom
+(
+_Symbol
+,
+Period
+(),
+"IdealZZ"
+, ChannelWidth);
+  }
+//+------------------------------------------------------------------+
+//| GetValue                                                         |
+//+------------------------------------------------------------------+
+bool
+GetValue(
+double
+dir,
+int
+bar,
+int
+prevBar,
+double
+&peak,
+int
+&peakBar,
+datetime
+&peakTime,
+const
+datetime
+&T[])
+  {
+if
+(dir<
+0
+)
+     {
+double
+t[
+1
+];
+if
+(
+0
+>=
+CopyBuffer
+(ZZHandle,
+2
+,bar,
+1
+,t))
+return
+false
+;
+int
+i=
+ArrayBsearch
+(T, (
+datetime
+)t[
+0
+]);
+if
+(i==prevBar)
+        {
+if
+(
+0
+>=
+CopyBuffer
+(ZZHandle,
+2
+,bar+
+1
+,
+1
+,t))
+return
+false
+;
+         i=
+ArrayBsearch
+(T,(
+datetime
+)t[
+0
+]);
+        }
+double
+v[
+1
+];
+if
+(
+0
+>=
+CopyBuffer
+(ZZHandle,
+1
+,i,
+1
+,v))
+return
+false
+;
+if
+(v[
+0
+]==
+EMPTY_VALUE
+)
+        {
+if
+(
+0
+>=
+CopyBuffer
+(ZZHandle,
+2
+,bar+
+1
+,
+1
+,t))
+return
+false
+;
+         i=
+ArrayBsearch
+(T,(
+datetime
+)t[
+0
+]);
+if
+(
+0
+>=
+CopyBuffer
+(ZZHandle,
+1
+,i,
+1
+,v))
+return
+false
+;
+        }
+
+      peak=v[
+0
+];
+      peakBar=i;
+      peakTime=(
+datetime
+)t[
+0
+];
+     }
+else
+if
+(dir>
+0
+)
+     {
+double
+t[
+1
+];
+if
+(
+0
+>=
+CopyBuffer
+(ZZHandle,
+3
+,bar,
+1
+,t))
+return
+false
+;
+int
+i=
+ArrayBsearch
+(T, (
+datetime
+)t[
+0
+]);
+if
+(i==prevBar)
+        {
+if
+(
+0
+>=
+CopyBuffer
+(ZZHandle,
+3
+,bar+
+1
+,
+1
+,t))
+return
+false
+;
+         i=
+ArrayBsearch
+(T,(
+datetime
+)t[
+0
+]);
+        }
+double
+v[
+1
+];
+if
+(
+0
+>=
+CopyBuffer
+(ZZHandle,
+0
+,i,
+1
+,v))
+return
+false
+;
+if
+(v[
+0
+]==
+EMPTY_VALUE
+)
+        {
+if
+(
+0
+>=
+CopyBuffer
+(ZZHandle,
+3
+,bar+
+1
+,
+1
+,t))
+return
+false
+;
+         i=
+ArrayBsearch
+(T,(
+datetime
+)t[
+0
+]);
+if
+(
+0
+>=
+CopyBuffer
+(ZZHandle,
+0
+,i,
+1
+,v))
+return
+false
+;
+        }
+
+      peak=v[
+0
+];
+      peakBar=i;
+      peakTime=(
+datetime
+)t[
+0
+];
+     }
+else
+{
+return
+(
+false
+);
+     }
+return
+(
+true
+);
+  }
+//+------------------------------------------------------------------+
+//| GetValue                                                         |
+//+------------------------------------------------------------------+
+void
+SetPt(
+string
+name,
+double
+price,
+datetime
+time)
+  {
+ObjectCreate
+(
+0
+,name,
+OBJ_ARROW
+,
+0
+,time,price);
+ObjectSetInteger
+(
+0
+,name,
+OBJPROP_ARROWCODE
+,
+108
+);
+ObjectSetDouble
+(
+0
+,name,
+OBJPROP_PRICE
+,price);
+ObjectSetInteger
+(
+0
+,name,
+OBJPROP_TIME
+,time);
+  }
+//+------------------------------------------------------------------+
+//| Custom indicator iteration function                              |
+//+------------------------------------------------------------------+
+int
+OnCalculate
+(
+const
+int
+rates_total,
+const
+int
+prev_calculated,
+const
+datetime
+&T[],
+const
+double
+&open[],
+const
+double
+&high[],
+const
+double
+&low[],
+const
+double
+&close[],
+const
+long
+&tick_volume[],
+const
+long
+&volume[],
+const
+int
+&spread[])
+  {
+if
+(LastTime==T[
+0
+])
+return
+(rates_total);
+   LastTime=T[
+0
+];
+ArraySetAsSeries
+(T,
+true
+);
+double
+dir_[
+1
+];
+if
+(
+0
+>=
+CopyBuffer
+(ZZHandle,
+4
+,
+1
+,
+1
+,dir_))
+return
+rates_total;
+double
+dir=dir_[
+0
+];
+double
+rdir=-dir;
+if
+(dir==
+EMPTY_VALUE
+)
+return
+(rates_total);
+double
+v1,v2,v3,v4,v5;
+int
+i1,i2,i3,i4,i5;
+datetime
+t1,t2,t3,t4,t5;
+if
+(
+      GetValue(dir,
+1
+,
+0
+,v1,i1,t1,T) && 
+      GetValue(rdir,i1,
+0
+,v2,i2,t2,T) && 
+      GetValue(dir,i2,i1,v3,i3,t3,T) && 
+      GetValue(rdir,i3,i2,v4,i4,t4,T) && 
+      GetValue(dir,i4,i3,v5,i5,t5,T)
+      )
+     {
+      SetPt(
+"1"
+,v1,t1);
+      SetPt(
+"2"
+,v2,t2);
+      SetPt(
+"3"
+,v3,t3);
+      SetPt(
+"4"
+,v4,t4);
+      SetPt(
+"5"
+,v5,t5);
+Print
+(v1,
+"   "
+,v2,
+"  "
+,v3,
+"  "
+,v4,
+" "
+,v5,
+" "
+,i1,
+"  "
+,i2,
+"  "
+,i3,
+" "
+,i4,
+" "
+,i5);
+     }
+else
+{
+Print
+(
+"Seems to be error available..."
+);
+     }
+return
+(rates_total);
+  }
+//+------------------------------------------------------------------+
+This example is an indicator that marks (one time per bar) first five peaks (including the current forming one).
+Attention! The code may work incorrectly, if zero bar mode is enabled
+Zero Bar Mode:
+The mode can be enabled in DrawZeroBar variable code. It is disabled by default. It is not recommended to enable it, especially if the indicator is used in an Expert Advisor.
+Enjoy using it. Please inform me of any revealed drawbacks.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/925

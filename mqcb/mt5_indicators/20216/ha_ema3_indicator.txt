@@ -1,0 +1,16 @@
+This indicator is a moving average built on Heiken Ashi candlesticks.
+It has two parameters:
+Period
+- calculation period;
+Method
+- calculation method.
+Calculation formulas:
+MA1 = MA(HA_Close),
+MA2 = MA(MA1),
+MA3 = MA(MA2)
+where:
+HA_Close[i] = ((Open[i] + High[i] + Low[i] + Close[i])/4 + HA_Open[i] + Max(High[i],HA_Open[i]) + Min(Low[i],HA_Open[i]))/4,
+HA_Open[i] = ((Open[i+1] + High[i+1] + Low[i+1] + Close[i+1])/4 + HA_Open[i+1])/2.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20216

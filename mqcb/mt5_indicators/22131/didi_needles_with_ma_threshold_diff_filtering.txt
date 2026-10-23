@@ -1,0 +1,11 @@
+The author of this strategy/indicator is the well known Brazilian technical analyst Odir Aguiar, who created the famous "Didi Needles", which consists of seeking for the crossover/junction of 3 Moving Averages of 3, 8 and 20 periods. To let the user to play with several variations, we opened up as User Inputs of this indicators: the Period, the Smoothing, and Price type of the MAs.
+There are several variations of Didi Needles (i.e. Didi Index, etc.) out there. This version of the indicator seeks for crossovers or junctions of those 3 Moving Averages, within the candle body, and all information is within the Chart itself (no subwindow).
+To also avoid firing up a signal on a weak trend, it was added to the indicator the ability to set a threshold considering the "inclination" of the "crossover". If the threshold is surpassed, a BUY/SELL signal is fired up in one of the 2 buffers (bufferBuy/bufferSell). You can check on the code that those signals are currently using the low[] and high[] values of the current candle. You can play with it using, let's say, Ask/Bid price in case if you are testing this in a pluggable EA.
+Since there are several markets - using points, prices, etc - the "inclination" calculation is just a percentage value of the difference between the 3MA and the 20MA. And, to discover what is the best threshold for the Symbol, it was added an additional buffer (bufferDiff) to enable the user, using the Data Window, to check with the mouse every candle and see the calculation live on the Chart/Data Window:
+So, for each Symbol the user can put the studied minimum threshold on the indicator input to filter out the BUY/SELL signals.
+Hope this indicator can help traders all over the world.
+As always, play a lot, using other parameters, timeframes, confirmation indicators, Price Action techniques, etc.
+Live Long and Prosper.
+;)
+=== UPDATE: Just updated the Title to better reflect the type of filtering. We plan to publish another version of Didi Needles with other type of filtering... ===
+=== UPDATE (Jan/2018) - v1.1 - corrected a little bug in the code (damn comma!)  Thanks @GuilhermeAdams ;) ===

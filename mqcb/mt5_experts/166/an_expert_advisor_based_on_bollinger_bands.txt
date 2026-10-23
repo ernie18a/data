@@ -1,0 +1,28 @@
+This Expert Advisor is based on Bollinger Bands. It uses trend-following strategy (DEMA) and
+Bollinger Bands ®
+indicator.
+It shows a stable profit in Strategy Tester during last 17 years (EURUSD M30).
+The Strategy:
+Open long position:
+DEМА is growing up and white (bull) candle crossed the Lower Bollinger Band from below to above.
+Open short position:
+DEМА is falling down and black (bear) candle crossed the Upper Bollinger Band from above to below.
+Close long position:
+Black candle crossed the Upper Bollinger Band from above to below.
+Close short position:
+White (bull) candle crossed the Lower Bollinger Band from below to above.
+Input parameters:
+bands_period -
+Bollinger Bands
+period;
+dema_period-
+DEMA
+period;
+bands_shift- Bands shift;
+deviation- Standard deviation;
+Lot - Trade volume (in lots).
+Recommendations:
+Use this Expert Advisor as a base of your own strategy only.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/166

@@ -1,0 +1,9 @@
+Draws two labels: High-Close and Low-Close range of the last closed candle left of the current candle
+Rewrite from original code
+OHLC Range
+by
+file45
+High: 1.19284 - Close: 1.19245 → HC 39 Points
+Low: 1.18669 -
+Close: 1.19245
+→ LC 576 Points

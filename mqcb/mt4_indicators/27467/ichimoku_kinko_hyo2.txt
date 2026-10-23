@@ -1,0 +1,51 @@
+Greetings to all. This is my rendition of what version 2 of the Ichimoku Kinko Hyo indicator should be. Primarily, it was rebuilt to suit mostly expert advisors trading multiple currencies at the same time but it can still be used by manual traders or single currency expert advisors just as the original version.
+Usage(updated 7.6.2020):
+double
+tenkan,kijun,chikou,spa,spb;
+//these are created empty but they will contain the request data at the specified shift.
+string kiv1;
+string kshape,ksentiment;
+
+int aMagicNumber=1234;
+//iIchimoku2(
+""
+,
+0
+,
+3
+,tenkan,kijun,chikou,spa,spb,kiv1,kshape,ksentiment,
+1
+);//OLD useage
+i
+Ichimoku2(
+""
+,
+0
+,
+3
+,tenkan,kijun,chikou,spa,spb,kiv1,kshape,ksentiment,a
+MagicNumber
+,
+1
+);//NEW
+//"" means current symbol, however you can specify a symbol e.g. 'EURUSD'.
+// 0 means current chart, however you can specify a chart period e.g. 240.
+// 3 is the period to use for calculating kumo implied volatility.
+//tenkan variable now contains the indicator value at the specified shift which is 1.
+//kijun variable now contains the indicator value at shift which is 1.
+//chikou variable now contains the indicator value at shift which is 1.
+//spa variable now contains the indicator value at shift which is 1.
+//spb variable now contains the indicator value at shift which is 1.
+//kiv1 variable now contains the kumo implied volatility at shift which is 1.
+//kshape variable now contains the description of the kumo's shape: flatop/flatbottom.
+//ksentiment variable now contains a description of the kumo's sentiment: bullish/bearish.
+The variables such as kijun,chikou... also contain their respective values at the specified shift as well. Remember to put "
+#include <Ichimoku2_Kinko_Hyo_Indicator.mqh>
+" at the top of your EA before using this function.
+Why?
+The original mql4 ichimoku indicator worked correctly and it will continue to do so for most us. I think it was built primarily with the manual trader in mind. Another situation I faced while rebuilding this was that any problem or inefficiency will be amplified when used on multiple currencies simultaneously. To remedy this, I modified the indicator to only run when it is necessary i.e. run only when a new bar is completed. The original version would run on every tick, which i think would consume unnecessary cpu cycles.
+When one reads ichimoku literature, frequently one will encounter a reference to the Kumo as "fat", "thick" or "thin". To an experienced ichimoku practioner, it is easy to describe a kumo as "fat" or "thin" because she knows what the usual kumo thickness is for a pair. For beginners, like myself, it is very difficult to describe a kumo because we don't know what to objectively compare it to. I think a solution for this problem would be to compare the kumo to itself over a specific period. This is the approach taken when writing the "
+GetKumoRelativeSize()
+" function.
+(Please see newer usage below)
+Enjoy.

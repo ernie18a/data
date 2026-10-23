@@ -1,0 +1,27 @@
+Author:
+Alex5757000
+Multi Moving Average - is an indicator which shows the information about 4 Moving Averages in a separate window.
+You can change the input parameters in the Indicator Properties window for any of the moving averages:
+Averaging Period (period).
+Averaging Method (ma_method).
+The price type used for calculation (applied_price).
+and many options for text labels:
+It has been created to "unload" the price chart (especially of the Moving Averages), but save the useful information.
+1. It shows the current state of the moving averages - rise or fall (using the different colors for boxes/arrow)
+2. It show the currrent state of the moving averages relative to the price (or Moving Average with period 1) - is it above or below (using the different colors for text labels)
+So, configuring the Moving Averages periods, it is possible to understand the market trend without using the moving averages on the price chart!
+Image:
+If you have questions to improve the indicator, please send
+me
+the private message.
+Editor's remark:
+Note that it's a mirror translation of the
+original Russian version
+.
+If you have any questions to the author, suggestions or comments, it's better to post them
+there
+.
+If you have found this code useful for trading or educational purposes, don't forget to thank author.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9402

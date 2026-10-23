@@ -1,0 +1,133 @@
+The Matrix Awakens:
+Welcome to the
+KCI Native Matrix Engine
+—a merciless, mathematically driven algorithmic behemoth built natively for MetaTrader 5. Engineered for High-Frequency Trading (HFT) environments, this EA strips away bloated standard libraries and operates directly at the server routing level.
+It does not merely guess the market direction; it calculates the kinetic energy of price action, builds a dynamic geometrical grid to trap volatility, and cross-subsidizes floating losses into a unified global profit sweep. From surgical sniper entries to massive recovery matrixes, every millisecond of execution is governed by pure, unadulterated math.
+The Symphony of Execution: How It Conquers the Market
+The engine orchestrates trades through a strict, three-phased lifecycle:
+Phase 1: Tactical Strike (Kinetic Sniper & Chain Execution)
+The EA continuously scans the market's kinetic equilibrium using an embedded Z-Score algorithm. It demands triple confirmation before firing: an MTF trend alignment, a zero-line crossover, and a steep
+Diagonal Kinetic Slope
+to filter out flat, sideways whipsaws. To maximize a running trend, it features
+Continuous Chain Entry
+, repeatedly reloading and firing as long as the momentum holds. However, an elite
+Over-Extension Filter (Rubber Band Effect)
+acts as a safety harness, instantly blocking new entries if the price has stretched too far from the equilibrium baseline, preventing catastrophic top/bottom buying.
+Phase 2: Adaptive Survival (The Grid & Hedge Matrix)
+When the market reverses, the EA transitions from a Sniper into a ruthless Grid Manager. It deploys
+Harmonic Geometrical Averaging
+and
+Smart Hedging
+. To cure the infamous MT5 "Lot Rounding Stagnation", it utilizes a
+Foolproof Lot Multiplier
+, ensuring volume geometrically scales up perfectly to create a gravitational pull on the Break-Even Point (BEP), no matter how poor the broker's decimal precision is.
+Phase 3: The Global Sweep (Unified Virtual VWAP Basket)
+The EA solves the "Stranded Mayor Problem" (where an initial small entry is left to die). It merges all Buy and Sell positions into a single
+Global Unified Basket
+. It calculates the true
+Net Monetary Gain
+—factoring in live profit, negative swaps, and parsing real-time deal history for exact commissions. The moment the combined net profit of the heavy grid layers successfully subsidizes the losing initial entry and hits the monetary target, it executes a flawless, simultaneous mass-close.
+Architectural Marvels: The Code Behind the Magic
+Here is a glimpse into the sophisticated core mechanics that power the engine:
+1. HFT-Level Native Routing
+code snippet :
+// Direct OrderSend routing for ultra-low latency
+MqlTradeRequest
+request = {};
+MqlTradeResult
+result  = {};
+request.action       =
+TRADE_ACTION_DEAL
+;
+request.type_filling = GetFillingMode();
+// FOK or IOC adaptation
+// ... mapping price, sl, tp, volume
+bool
+sent =
+OrderSend
+(request, result);
+2. Kinetic Diagonal Slope & Over-Extension Protection
+The engine calculates the slope of the mean price and measures the absolute distance to prevent buying at the peak of an exhausted trend.
+code snippet :
+// Kinetic Diagonal Momentum Validation
+bool
+momentum_up = (mean_slope_points >= InpMinTrendSlopePoints);
+// Over-Extension Protection (Rubber Band Filter)
+double
+distance_buy_points = (tick.ask - current_mean) /
+_Point
+;
+bool
+overextended_up = (distance_buy_points > InpMaxTrendDistancePoints);
+// Final Decision Engine
+if
+(trigger_up && is_uptrend && momentum_up && !overextended_up)
+return
+1
+;
+3. The Foolproof Lot Multiplier
+A mathematical brute-force solution to MT5's floating-point precision bugs, ensuring geometric progression never stagnates.
+code snippet :
+// Extracting base values
+double
+calculated = current_lot * InpLotMultiplier;
+// Injecting a micro-epsilon to defeat 1.499999 rounding errors
+double
+new_lot =
+MathRound
+((calculated + (step *
+0.0001
+)) / step) * step;
+// The Iron Rule: If multiplier > 1, the volume MUST escalate
+if
+(InpLotMultiplier >
+1.0
+&& new_lot <= current_lot)
+   new_lot = current_lot + step;
+4. Global Unified Recovery Basket
+Cross-subsidizing all open positions into a single monetary target, rescuing stranded initial entries using the heavy volume of the recovery grid.
+code snippet :
+// Sweeping all positions for True Net Profit
+double
+profit =
+PositionGetDouble
+(
+POSITION_PROFIT
+) +
+PositionGetDouble
+(
+POSITION_SWAP
+) + 
+                GetPositionCommission(ticket);
+// Native Deal History Parser
+global_net_profit += profit;
+// The Global Sweep Execution
+if
+(global_net_profit >= target_money_base) {
+// Execute Native Mass-Close of ALL magic number positions instantly
+Print
+(
+"GLOBAL BASKET SECURED: Mayor Entry Successfully Rescued!"
+);
+}
+The engine used in the EA KCI N-Matrix is:
+KCI Standard/custom (oscillator) [Publish] [engine for EA]
+KCI VR (Volatility Range)
+(Oscillator) [Publish] [engine for EA]
+KCI Trend (Chart Window) [Market] [engine for EA]
+KCI DX (Directional Matrix) (Oscillator) [Publish] [engine for EA]
+The engine used for monitoring and analyzing entries in the EA
+KCI N-Matrix is:
+KCI Candle (Chart Window) [Market]
+KCI Arrow(Chart Window) [Market]
+The following are pure test results, not as comparative material for use in live markets and direct trading, use of the code for direct trading is absolutely your own responsibility.
+Picture. 1
+Picture. 2
+picture. 3
+picture.4
+picture. 5
+Closing Statement
+The
+KCI Native Matrix Engine
+is a testament to what is possible when pure mathematical logic meets disciplined memory management. It is built not to predict the unpredictable, but to adapt, trap, and extract value from market chaos with cold, calculated precision.
+To my fellow developers: dissect it, stress-test it, break it, and rebuild it stronger. The code is yours. May your equity curves be sharp, and your drawdowns shallow. Happy coding!

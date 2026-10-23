@@ -1,0 +1,2 @@
+This script draws Fibonacci Expansion OBJ_EXPANSION with options to add your own custom values
+Add Custom values separated by commas and the script will draw fibonacci expansion levels with your custom value

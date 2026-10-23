@@ -1,0 +1,3 @@
+Description:
+The difference between Low and Close can be meaningful ? This is what this indicators is trying to show...
+Image:

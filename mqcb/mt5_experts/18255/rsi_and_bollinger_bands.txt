@@ -1,0 +1,17 @@
+Author of the idea
+—
+Anton
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+A trading strategy based on RSI and Bollinger Bands. Bollinger Bands is calculated using the RSI indicator handle. Trailing stop is determined using the SAR indicator (Parabolic SAR).
+RSI breaks the upper Bollinger Band.
+The price must be below the fractal level.
+A buy signal is generated when the price breaks through the fractal level.
+A position is trailed based on Parabolic values.
+Canceling a deal — if an order has not yet triggered, and RSI moved below the level of 30, a buy order should be deleted.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18255

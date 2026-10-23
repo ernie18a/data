@@ -1,0 +1,4 @@
+As a logical step to filter out more the possible false signals, this variation of
+Schaff TCD RSI
+is using RSX (which is a smoother RSI than the "regular" RSI) to produce a smoother result.
+The extremes (0 and 100) are reached faster for this variation of the indicator - when compared to the "regular" version. That is a result of how RSX is calculated. That might help in quick assessment of possible short term trend reversal(s)

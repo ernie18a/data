@@ -1,0 +1,69 @@
+This expert has extended features relative to the previous. Please examine the previous one before proceeding.
+Periodic Range Breakout 1.0
+[WARNING]
+The main purpose of this
+purely mechanical expert
+is to make use of statistical and analytical observations to gain insight into how markets work.
+Using it for trading could result in financial loss.
+[MAIN IDEA]
+At the beginning of the period, we'll take the current value of the time-dependent variable which in case ask price of an fx instrument as a reference.
+Then performing addition and subtraction on this value by user-specified range to obtain high and low breakout levels.
+If price breaks high level upward buy-stop or sell-limit order will get opened.
+If price breaks low level downward
+buy-limit or sell-stop order will get opened.
+Take-Profit and Stop-Loss levels are determined by taking specific portion of the range in pips.
+If trade ends with loss, it will get compensate it in the next trade if requested by user by incrementing volume or take-profit level as set.
+[MAIN FEATURES]
+PERIODICITY MODES
+Weekly:
+take close price of a specific hour of a day of week as reference.
+Daily:
+take close price of a specific hour of any day as reference.
+NonStop:
+take current price
+immediately
+as reference, if there isn't any trade opened.
+RANGE CALCULATION MODES
+ATR:
+user-specified percentage of ATR(20).
+Percent:
+user-specified percentage of current price.
+Fixed:
+constant user-specified pips.
+TRADE MODES
+Stop:
+if high breaks open buy, if low breaks open sell.
+Limit:
+if high breaks open sell, if low breaks open buy.
+Random:
+randomly select orders. doesn't work in tester mode.
+TRADE PARAMETERS
+Range Percentage:
+percentage of calculated range used to evaluate take-profit and stop-loss.
+Take-Profit Percentage:
+take-profit in pips as percentage of derived range.
+Stop-Loss Percentage:
+stop-loss in pips as percentage of derived range.
+LOT MANAGEMENT MODES
+Constant:
+never increment volume after loss.
+Linear:
+multiply volume by linearly incremented coefficients
+after loss.
+(1, 2, 3, 4, ...)
+Martingale:
+multiply volume by a number between 1 and 2
+after loss.
+Fibonacci:
+increment volume as fibonacci sequence
+after loss. (1, 1, 2, 3, 5, 8, ...)
+OTHER MONEY MANAGEMENT PARAMETERS
+Margin Percentage:
+how much of free margin will be used in trade initally or trade after winning trade.
+Lot Multiplier:
+multiplier used in martingale mode.
+Range Multiplier:
+multiplier used to increment take profit level after each loss. this was based on an assumption that previous loss increases the interval of success.
+[OBSERVATIONS]
+Profit and Loss counts are highly dependent on the selection of take-profit and stop-loss ratios. if these ratios converges counts are converges also and vice versa.
+Lower take-profit ratio relative to stop-loss increases chance of success in short term, but rare cases like consecutive losses greater than expected crashes equity. randomizing will reduce the probability of encountering these types of risk.

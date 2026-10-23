@@ -1,0 +1,22 @@
+Indicator of volumes. It displays a color histogram of relative volumes by day hours:
+Hour from 08 to 13 - color
+red
+Hour from 14 to 17 - color
+bright green
+Hour from 18 to 21 - color
+red
+Hour from 22 to 23 - color
+green
+Hour from 00 to 07 - color
+blue
+Volume of each hour is calculated as a ratio between the current volume to the mean volume value within the predefined range.
+The indicator has one input parameter:
+Period
+- calculation period
+Calculations:
+VLM = Volume/VolAvg
+where:
+VolAvg = SMA(Volume, Period)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21335

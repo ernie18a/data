@@ -1,0 +1,11 @@
+Author:
+Code: me.
+Idea: Richard Davoud Donchian -->
+https://en.wikipedia.org/wiki/Donchian_channel
+The upper line shows the highest high of
+n
+bars.
+The lower line shows the lowest low of
+n
+bars.
+Tested, yes. But not excessively. Use at your own risk. Feel free to modify or do whatever with it.

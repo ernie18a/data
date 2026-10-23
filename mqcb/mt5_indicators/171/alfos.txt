@@ -1,0 +1,14 @@
+It's an oscillator, similar to OsMA with
+Variable Index Dynamic Average
+.
+Input parameters:
+MA1 - Fast
+MA
+period;
+МА2 - Slow MA period;
+СМО1 - Fast MA СМО;
+СМО2 - Slow MA СМО;
+Signal - Signal MA period.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/171

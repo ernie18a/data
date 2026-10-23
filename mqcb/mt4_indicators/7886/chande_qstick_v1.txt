@@ -1,0 +1,5 @@
+Author: igorad
+Indicator QStick represents a simple n-period moving average for the difference of the close and open prices.
+QStick = MA(n, (Close - Open))
+,
+QStick can be used as a simple substitution or as the candlesticks determinant. The positive values of QStick denote the domination of the "white" candlesticks in the n-period interval, and the negative values of QStick denote the domination of the "black" candlesticks.

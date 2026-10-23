@@ -1,0 +1,4 @@
+The idea of the indicator
+Show on the chart 'Daily Change' for the last 'Number of bars':
+Rice. 1. Daily Change Text Alert
+When the specified limit is reached (on the current bar), it plays the sounds that are set in the 'Alerts' parameter group

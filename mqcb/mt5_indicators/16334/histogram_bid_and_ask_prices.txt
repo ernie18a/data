@@ -1,0 +1,19 @@
+The indicator plots a histogram of statistical distribution for the
+Bid
+and
+Ask
+prices. Diagram is cumulative.
+It is also possible to perform statistical analysis of additional pairs:
+High
+and
+Low
+;
+Open
+and
+Close
+.
+Tips:
+It is better to use smaller timeframes.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16334

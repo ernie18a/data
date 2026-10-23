@@ -1,0 +1,17 @@
+Session Open V-Line Indi
+This indicator is a modification of the i-session indicator.
+See here for original i-session indicator.
+This indicator has been expanded to show up to 6 vertical time lines
+- see Vertical Time Lines (MT4) -
+https://www.mql5.com/en/code/12266
+1. Draws a Vertical Line at Session Open - London/EuroZone, USA, Asia.
+2. Set required Session Times.
+3. Select Line Width.
+4. Set Line Style: 0 - Solid, 1- Dashed, 2 - Dotted line, 3 - Dash-and-dot, 4 - Double dotted dash-and-dot.
+5. Select Line Color.
+6. Hide Session Line/s not required.
+Note:
+Time Setting may require adjusting for Broker Time.
+eg:
+Broker Time 09:00 equivalent to 08:00 London Time - set indicator time to 09:00 for 08:00 London Open Session.
+Example

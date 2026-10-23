@@ -1,0 +1,8 @@
+The idea of the indicator
+The indicator shows signals ('Arrow' objects) of the 'Moving Average' indicator crossings. The peculiarity of the indicator: if there was an intersection of 'MAs' (on bar #0), and then the intersection disappeared, the signal remains on the chart
+Rice. 1. Alert Crossing Three MAs
+The indicator can give sound signals of several types:
+Sound
+Alert
+Email
+Push

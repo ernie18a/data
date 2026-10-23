@@ -1,0 +1,1 @@
+Very well known Heiken ashi indicator made to show only the essence : the "trend" of the Heiken ashi, and to show that as a simple to use histogram

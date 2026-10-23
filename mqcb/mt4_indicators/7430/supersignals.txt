@@ -1,0 +1,5 @@
+Author: Nick Bilak
+This indicator is very simple to use: red arrow - sell signal, blue arrow - buy signal. Exceeds its analogues, such as Hi-Lo, Trend and others, by several times. Works on any timeframe and with any currency pair.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7430

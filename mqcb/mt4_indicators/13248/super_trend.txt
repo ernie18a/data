@@ -1,0 +1,6 @@
+Real author:
+Jason Robinson
+The Super Trend indicator not only determines the trend direction, but also helps to detect the Elliott waves.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13248

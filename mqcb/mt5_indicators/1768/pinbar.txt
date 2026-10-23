@@ -1,0 +1,51 @@
+The indicator detects and visualizes one of the fundamental patterns of Price Action. On high timeframes (from 1 day to a month) the pin bar is a strong signal to enter the market in a direction opposite to the long shadow. The indicator is calculated only on complete bars.
+The input parameters are:
+input
+int
+MinBarSize=
+200
+;
+//Minimal bar range in points
+input
+int
+PriceOffset=
+50
+;
+//Shift of the open price and stop loss from the bar boundaries in points
+input
+double
+BarRatio=
+2.2
+;
+//Minimal ratio of the bar range to the body
+input
+double
+TailRatio=
+1.3
+;
+//Minimal ratio of a larger tail to the remaining part of the bar
+input
+bool
+UseBodyDirection=
+false
+;
+//Flag for checking the direction of the bar body. Bearish pin bar - bearish body, bullish bar - bullish body
+input
+bool
+UseCloseThirds=
+true
+;
+//Flag for checking the bar part in which it closed. For bearish bars - in the lower third of the bar,
+//for bullish bars - upper one
+input
+int
+ExtremumOfBars=
+10
+;
+//Checking the condition of location of the pin bar at the extreme relative to the specified number of previous bars
+Tips:
+The indicator contains two buffers. One of them stores values of the recommended price for opening a stop order (green points), the second one contains recommended values for stop loss (red points). The indicator is built into an Expert Advisor traditionally using the iCustom() function.
+In the figure some pin bars with suitable proportions are not indicated because of the value of the ExtremumOfBars parameter. By changing the parameters of recognition you can achieve the desired results.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1768

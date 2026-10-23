@@ -1,0 +1,62 @@
+Nikkei 225 Gap Continuation Expert Advisor
+The Nikkei 225 Gap Continuation EA is an educational Expert Advisor for MetaTrader 5. It studies the opening gap of the Nikkei 225 cash session and looks for continuation trades after an initial price range has formed. The strategy can process both bullish and bearish gaps and uses session VWAP as an additional confirmation filter.
+The program includes automatic position sizing, spread protection, partial profit-taking, break-even management and a time-based safety exit. It supports both netting and hedging accounts. All important decisions can be displayed on the chart and written to the Experts log for analysis.
+Strategy overview
+At the beginning of each trading day, the EA calculates the effective cash-session schedule. In automatic mode, Japan Standard Time is converted to the Darwinex server time, including the server daylight-saving adjustment. A manual server-time mode is also available for other brokers.
+The EA obtains the previous cash-session close and compares it with the current session open. If the absolute opening gap is smaller than the configured threshold, no setup is created. A bullish gap can enable a BUY setup, while a bearish gap can enable a SELL setup.
+After the session opens, the EA builds an opening range from one-minute bars. It also calculates the session VWAP using real volume when available and tick volume as a fallback. A setup is cancelled if more than half of the original opening gap is filled before an entry.
+Figure 1. Decision process used by the Expert Advisor.
+Entry conditions
+For a BUY trade, the session must open with a qualifying bullish gap. Price must then break above the opening-range high and remain above the current session VWAP. The stop-loss is placed below the opening-range low, including the optional stop buffer and the broker minimum stop distance.
+For a SELL trade, the session must open with a qualifying bearish gap. Price must break below the opening-range low and remain below VWAP. The stop-loss is placed above the opening-range high. Only one strategy entry is allowed per trading day.
+Bullish gap: BUY breakout above the opening range and VWAP.
+Bearish gap: SELL breakout below the opening range and VWAP.
+The gap must remain less than 50% filled before entry.
+The spread must pass both configured spread filters.
+The breakout must occur before the entry deadline.
+Figure 2. Example of a bearish gap-continuation setup with SELL entry and exit.
+Risk and position management
+By default, position size is calculated from account equity, the selected risk percentage and the price distance between entry and stop-loss. The EA calls OrderCalcProfit so that the estimated loss per lot is expressed in the account currency. This is useful for index CFDs whose tick value and quote currency can vary between brokers.
+A fixed lot size can be selected instead of risk-based sizing. The calculated volume is always rounded down to the broker volume step and checked against the minimum and maximum volume. If the broker minimum lot would exceed the allowed risk, the daily setup is cancelled.
+When price reaches the partial target, the EA closes the configured percentage of the position. It can then move the stop-loss to the entry price. The remaining position is managed toward the final R-multiple target or closed before the cash session ends.
+Main input groups
+Input group
+Purpose
+Cash session
+Session time mode, cash-session hours, opening-range duration, entry deadline and forced exit.
+BUY - bullish gaps
+Enables BUY setups and defines the minimum bullish opening gap.
+SELL - bearish gaps
+Enables SELL setups and defines the minimum bearish opening gap.
+Common signal filters
+Volume source, maximum spread, dynamic spread-to-stop filter and stop buffer.
+BUY risk / SELL risk
+Separate equity-risk settings and optional reduced risk for smaller bearish gaps.
+Volume and exits
+Fixed lots, maximum lots, partial close, R-multiple targets and break-even management.
+Execution
+Magic number, slippage, chart status and diagnostic log options.
+Code example: opening-gap calculation
+The opening gap is measured as a percentage of the previous cash-session close. The sign of the result determines whether the EA evaluates the BUY or SELL branch.
+g_gap_percent=(g_session_open_px/g_previous_close-1.0)*100.0; double minimum_gap=(g_gap_percent>0.0 ? InpMinimumBuyGapPercent : InpMinimumSellGapPercent); if(MathAbs(g_gap_percent)<minimum_gap) { g_cancelled=true; return(false); }
+Code example: breakout and VWAP confirmation
+The direction-specific entry filter requires price to break the appropriate side of the opening range while remaining on the correct side of VWAP.
+// BUY confirmation if(!(tick.bid>g_range_high && tick.bid>g_vwap)) return; // SELL confirmation if(!(tick.ask<g_range_low && tick.ask<g_vwap)) return;
+Code example: risk-based volume
+The requested monetary risk is divided by the estimated loss per lot. The result is then normalized to the symbol volume step and restricted by the optional maximum-lot setting.
+double risk_money=AccountInfoDouble(ACCOUNT_EQUITY)*risk_percent/100.0; if(OrderCalcProfit(order_type,_Symbol,1.0,entry,stop,calculated_profit)) loss_per_lot=MathAbs(calculated_profit); g_last_raw_volume=risk_money/loss_per_lot; if(InpMaxLots>0.0) g_last_raw_volume=MathMin(g_last_raw_volume,InpMaxLots); return(NormalizeVolumeDown(g_last_raw_volume));
+Installation and use
+Copy the MQ5 file to the MQL5\Experts directory.
+Open the file in MetaEditor, run Styler and compile it.
+Attach the EA to the broker symbol that represents the Nikkei 225 index.
+Use the M5 timeframe for the supplied default setup.
+Confirm the symbol contract specifications and cash-session hours.
+Select automatic JST conversion or configure server hours manually.
+Review the risk, volume, spread and exit parameters.
+Enable algorithmic trading and test the settings in the Strategy Tester.
+Broker and testing considerations
+Nikkei 225 symbol names, quote precision, tick values, minimum volume and trading sessions differ between brokers. The default automatic session conversion was designed for the Darwinex server schedule. Users of other brokers should verify the manual session settings before running a test.
+The EA prevents a new entry when another position already exists on the same symbol. It stores essential position-management data in terminal global variables so that partial-close and break-even management can be restored after reconnection or terminal restart.
+Historical tests are sensitive to data quality, spread assumptions, contract specifications and session definitions. Backtest results do not guarantee future performance. This source code is provided for educational and research purposes, and every user is responsible for validating it under their own trading conditions.
+Author
+Developed by Francesc Jordi Mallol Nolden. The source code is published as a complete educational example of a session-based opening-gap strategy for MetaTrader 5.

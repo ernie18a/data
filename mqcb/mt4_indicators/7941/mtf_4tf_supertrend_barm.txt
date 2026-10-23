@@ -1,0 +1,8 @@
+Author:
+Eli hayun
+Indicator MTF_4TF_Supertrend_BarM. Works together with
+SuperTrend
+and uses signals
+CCI
+.
+Indicator MTF_4TF_Supertrend_BarM

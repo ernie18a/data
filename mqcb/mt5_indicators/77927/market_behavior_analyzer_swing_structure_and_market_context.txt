@@ -1,0 +1,43 @@
+We present the
+Market Behavior Analyzer
+, an indicator built to turn raw price swings into a clearer and more structured view of market behavior.
+Rather than displaying swing points alone, the indicator follows the movement between them and classifies the developing structure using
+Higher High (HH), Higher Low (HL), Lower High (LH), and Lower Low (LL)
+labels. Each completed move is measured in
+pips
+,
+while additional information such as the number of bars required and retracement percentage helps provide context around how the structure developed.
+The indicator includes two interactive components. The
+Market Story
+panel provides a compact summary of the detected structure and whether the latest movement is being interpreted as an impulse or pullback. The
+Swing Inspector
+allows individual swing points to be selected directly from the chart to examine their price, classification, move length, duration, retracement, and neighboring swing relationships.
+Main inputs
+The
+Lookback & Swing
+settings control how much chart history is analyzed and how significant a price movement must be before it qualifies as a swing.
+InpLookbackCandles
+defines the historical analysis window, while
+InpDepth
+controls the number of surrounding candles used to confirm swing highs and lows.
+InpMinDistPoints
+can be used to filter swings that are too close together.
+The
+Visual
+settings allow the swing structure to be presented according to preference. Swing lines and labels can be enabled or disabled independently, while the font size and colors used for impulses, pullbacks, and swing lows can also be adjusted.
+The
+Market Story
+and
+Swing Inspector
+can each be enabled or disabled. Panel colors are configurable so the interface can be adapted to different chart themes without changing the underlying analysis.
+The Market Behavior Analyzer is intended as an
+analysis and visualization tool
+. It does not generate trading signals or make trading decisions. Instead, it provides a structured way to inspect how price has moved, how individual swings relate to one another, and how the resulting market structure is developing.
+Using the Indicator
+Attach the Market Behavior Analyzer to a chart and adjust the swing and visual settings as required. The detected market structure, swing classifications, and move measurements are displayed automatically. Click any marked swing point to open the Swing Inspector and examine its individual metrics, while the Market Story panel provides a broader view of the developing structure.
+The example below demonstrates the indicator in use and shows how to interact with the displayed swing structure.
+Fig. 1. Market Behavior Analyzer in use on the chart
+Further Reading
+This Codebase version provides the complete working indicator and a quick introduction to its main features. For a more detailed discussion of the design, market-structure logic, implementation decisions, limitations, and areas that can be improved or extended, refer to this article,
+Building a market behavior analyzer
+.

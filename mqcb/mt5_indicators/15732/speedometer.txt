@@ -1,0 +1,52 @@
+The indicator displays the tick speed, the path passed by the price and the passage time in milliseconds. The speed is displayed in points per second. If the speed is greater than specified in the settings, the indicator generates an alert, sends e-mail messages and notifications to mobile device.
+Parameters:
+input
+int
+FontSize     =
+12
+;
+// Font size
+input
+string
+FontName     =
+"Arial"
+;
+// Font name
+input
+color
+ClrWay       = Red;
+// Label color - price path in points
+input
+color
+ClrSpeed     = Yellow;
+// Label color - speed in points per second
+input
+color
+ClrTime      = White;
+// Label color - change of time in seconds
+input
+int
+SpeedSound   =
+20
+;
+// Notification of exceeding the speed
+input
+ENUM_BASE_CORNER
+Corner       =
+CORNER_RIGHT_UPPER
+;
+// Corner to display the information
+input
+bool
+AlertOn      =
+true
+;
+// Enable alerts
+Fig.1. Indicator alerts
+Fig.2. Information on the right
+Fig.3. Information on the left
+Recommendations:
+Use the indicator as a trading assistant.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15732

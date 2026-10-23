@@ -1,0 +1,3 @@
+Description:
+This indicator trys to indentify the dominanting power in the market.
+Image:

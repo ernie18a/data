@@ -1,0 +1,5 @@
+Description:
+The Next Generation of MA Mirror, completed with SignalSMA.
+ENTRY BUY after the Red Line Cross Up the Blue Line and EXIT BUY after the Gold line Cross Up the Red Line (above the Blue Line).
+For the opposite position : ENTRY SELL after the Red Line Cross Down.
+Image:

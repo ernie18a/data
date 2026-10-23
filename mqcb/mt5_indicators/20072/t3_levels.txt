@@ -1,0 +1,4 @@
+One of the natural ways to make the
+EMA levels
+smoother and faster if necessary, is to use T3 instead of EMA.
+T3 is very similar to EMA in calculating way and it makes it suitable for this way of calculation. As an extension of EMA levels it might prove to be useful but by all means do some experimenting in order to get the best results for specific symbol/timeframe combination.

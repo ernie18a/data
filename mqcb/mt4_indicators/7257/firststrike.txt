@@ -1,0 +1,5 @@
+Displays what was reached first - Low or High for the current bar.
+FirstStrike
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7257

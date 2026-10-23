@@ -1,0 +1,25 @@
+A list of implemented optimisation algorithms:
+ANS (across neighbourhood search)
+CLA (code lock algorithm)
+P_O_ES ((P+O) evolution strategies)
+CTA (Comet Tail Algorithm)
+SDSm (stochastic diffusion search M)
+ESG (evolution of social groups)
+SIA (simulated isotropic annealing)
+ACS (artificial cooperative search)
+TSEA (turtle shell evolution algorithm)
+DE (differential evolution)
+CRO (chemical reaction optimisation)
+BSA (bird swarm algorithm)
+(PO)ES ((PO) evolution strategies)
+BSO (brain storm optimisation)
+WOAm (wale optimisation algorithm M)
+AEFA (artificial electric field algorithm)
+ASBO (adaptive social behaviour optimization)
+COAm (cuckoo optimization algorithm M)
+Boids (boids algorithm)
+GWO (grey wolf optimiser)
+BGA (binary genetic algorithm)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/49355

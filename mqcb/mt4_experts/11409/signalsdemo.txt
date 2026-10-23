@@ -1,0 +1,10 @@
+The SignalsDemo Expert Advisor uses the
+trade signals
+functions.
+It shows the properties of the signals, available in client terminal, allows to modify the signal copy settings and subscribe or unsubscribe to the selected trade signal.
+For work of the Expert Advisor you must login to MQL5.community in client terminal (enter your login in MQL5.community using Main menu->Tools->Options, tab "Community") and allow modification of the Signals settings in Experts Advisor options:
+Fig. 1. Allow modification of Signals settings in Expert Advisor options
+Fig. 2. Trade signals control in MetaTrader 4. SignalsDemo Expert Advisor
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11409

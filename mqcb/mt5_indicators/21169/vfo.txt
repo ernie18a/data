@@ -1,0 +1,15 @@
+Indicator VFO (Volume Flow Oscillator) is based on standard indicator OBV (On Balance Volume). It was described in the Technical Analysis of Stocks & Commodities magazine in June, 2004.
+Its values above zero are bullish and indicate accumulating, while those below zero indicate distributing.
+Divergences between the price and the indicator values may indicate a forthcoming change in the trend.
+The indicator has four configured parameters:
+Period
+- calculation period;
+Dev Coefficient
+- standard deviation coefficient;
+Vol Coefficient
+- yesterday's volume impact factor;
+Smoothing period
+- smoothing period.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21169

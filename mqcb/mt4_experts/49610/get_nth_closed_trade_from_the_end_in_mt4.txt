@@ -1,0 +1,2 @@
+This EA will scan all closed trades in the history. And check which trade closed most recently. If we pass 0 , then it will fetch most recently closed trade, if we pass 1 then it will fetch the trade which closed before that and so on.
+We have symbol and magic number filter

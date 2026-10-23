@@ -1,0 +1,14 @@
+The panel shows:
+- up/down brick counts and percentages;
+- directional balance;
+- reversal rate;
+- average run length;
+- maximum run length;
+- current run direction and length;
+- bricks formed per hour;
+- average minutes per completed brick.
+Inputs:
+- Brick Size — fixed Renko brick size in price units.
+- Lookback Bricks — number of recent completed bricks used for statistics.
+The indicator uses the classic two-brick reversal rule and only completed Renko bricks. It does not create offline charts or custom symbols and requires no DLL or external indicator.
+This is an educational/statistical tool. It does not generate BUY/SELL signals and does not claim predictive value or future profitability.

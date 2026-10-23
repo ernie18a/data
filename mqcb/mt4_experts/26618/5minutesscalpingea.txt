@@ -1,0 +1,2 @@
+This expert is to help any user of the system to try some different settings of indicators easy and quickly.
+Expert need indicators to generate signals. Has the ability to use all of the indicators, or some of them.

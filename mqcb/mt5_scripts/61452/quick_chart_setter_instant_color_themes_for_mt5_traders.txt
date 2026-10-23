@@ -1,0 +1,9 @@
+Hello Traders, I hope y'all like this quick little script. The script is designed to make creating new charts a little quicker. Every time a new chart is created you will need to set your color theme. This annoyed me so I created this script to have three color themes. The color themes are easily edited to make this suit your needs. For me I have it set to green/red, Aqua/Pink, and Black/White. Find the color you want to change. The varible for colors will start with clr then the color. Repeat ths pattern with your choice. Example Below
+case PINK_AQUA:    //A Personal Favorite Color Design 
+         bullishColor = clrAqua;
+         bearishColor = clrHotPink;
+         backgroundColor = clrBlack;
+         gridColor = clrSlateGray;
+         textColor = clrWhite;
+         break;
+Now to use it. Make a new chart, drag the script to the chart,  pick your theme hit okay.

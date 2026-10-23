@@ -1,0 +1,37 @@
+"Breakthrough volatility" breakdown robot scalper. Opens positions at break of volatility of the previous period (week, day, 4H and so on). The difference from others is that it is not the High / Low of the previous period that is breaking through, but the volatility (in points). Often, transactions are closed in just a minute, which means that at the moment of a breakout, the price is very active. This is especially noticeable on the daily timeframe.
+// ---
+bool
+op_buy_sig()
+{
+if
+((((e_High() - e_Low()) > (e_High_1() - e_Low_1())) && ((e_High() - e_Low()) < ((e_High_1() - e_Low_1()) + (
+2
+*
+Point
+() * K_DIG)))) && (e_Close() > e_Open()))
+return
+true
+;
+// ---
+return
+false
+;
+}
+// ---
+bool
+op_sell_sig()
+{
+if
+((((e_High() - e_Low()) > (e_High_1() - e_Low_1())) && ((e_High() - e_Low()) < ((e_High_1() - e_Low_1()) + (
+2
+*
+Point
+() * K_DIG)))) && (e_Close() < e_Open()))
+return
+true
+;
+// ---
+return
+false
+;
+}

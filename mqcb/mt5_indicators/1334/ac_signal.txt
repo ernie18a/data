@@ -1,0 +1,39 @@
+Semaphore, signal indicator, based on the values ​​of the Accelerator of Bill Williams (Accelerator Oscillator). The signals occur when the accelerator changes its direction. When signals appear the indicator sends alerts, push-notifications and e-mail messages.
+Indicator input parameters:
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+string
+InfoComment=
+"AC_Signal "
+;
+//the first part of the message comment
+input
+uint
+SignalBar=
+1
+;
+//the bar number to receive a signal (0 - current bar)
+input
+uint
+AlertCount=
+0
+;
+//the number of sending alerts
+input
+bool
+push=
+true
+;
+//permission to send push-messages
+input
+bool
+email=
+false
+;
+//permission to send email messages
+Fig.1 The AC_Signal indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1334

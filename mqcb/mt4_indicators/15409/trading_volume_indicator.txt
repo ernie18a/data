@@ -1,0 +1,11 @@
+Trading Volume indicator shows the volume of buying and selling trades on the current bar or on average of specific number of last bars as you want . Both volumes are shown simultaneously with green and red colors for buying and selling trading volumes respectively.
+If You Tried
+Trading Volume Indicator
+Or
+Trading Vol Index
+From Market
+So I decided to share experience with all members of MQL5 Community and sharing the source code of my indicator to be a reference to everyone who wants to learn or modify this indicator.
+To know more about this indicator and how it works, you can get a full description about it from
+Trading Volume Indicator
+at Market and you can download the ex4 file for free.
+I am waiting for your replies and your opinions about it.

@@ -1,0 +1,29 @@
+This CalculateHistoryProfit script version 1.0 is designed to calculate profits for a specified period using a graphical panel loaded from the external library
+MtGuiController.dll
+. Main features:
+User can select date range, symbols and magic numbers through the graphical panel.
+The script counts the total profit and number of trades based on the selected filters (symbols, magic numbers).
+The results are displayed on the graphical panel including profit and number of trades.
+The script supports preset buttons for quick selection of dates (today, week, month, year).
+Suitable for traders who need to quickly evaluate the historical performance of trades by selected parameters.
+I made it for myself to make it easier to understand which Expert Advisors traded how (several Expert Advisors work on the same demo account, with a fixed lot). Later I want to add here the recalculation of the maximum drawdown for the reporting period...
+After installation, you need to manually remove the first line in the file Include\Snail000\CalculateHistoryProfit.mqh
+and unpack the library MtGuiController.dll in the Libraries folder...
+Many thanks to
+Vasiliy Sokolov
+for his implementation of the library described in the articles: https:
+//www.mql5
+.
+com/en/articles/6549
+as well as
+fxsaber
+for the hint how to load code with external library into CodeBase!
+The library was slightly modified by me, and I implemented the panel not as a separate library, but integrated it into the basic one.
+Link to the github where the source code of the library is:
+https://github.com/5nail000/MtGui_ProfitCalculator/
+Link to the library file MtGuiController.dll:
+https:
+//github.com/5nail000/MtGui_ProfitCalculator/raw/refs/heads/master/mql5/MtGuiController.dll
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/52528

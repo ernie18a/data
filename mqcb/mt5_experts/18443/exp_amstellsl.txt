@@ -1,0 +1,18 @@
+Author of the idea
+:
+Iurii Tokman
+.
+MQL5 code author
+:
+Vladimir Karputov
+.
+Trades without setting Take Profit and Stop Loss levels (these levels are calculated virtually).
+Buying
+:
+if there are no BUY positions
+if there are BUY positions, and the open price of the last position is higher than the current price by Distance.
+Selling
+: if opposite.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18443

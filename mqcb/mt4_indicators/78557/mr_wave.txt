@@ -1,0 +1,2 @@
+A stylish design view of the markets prices. Surf the trend!!
+p.s: Download the Mr.Wave.zip to put surfer.bmp in the Images folder.

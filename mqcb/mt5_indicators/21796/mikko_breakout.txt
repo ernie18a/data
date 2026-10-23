@@ -1,0 +1,6 @@
+The indicator is based on a breakout the of previous highest high or lowest low.
+You can choose a display type too:
+Display lines.
+Display bars.
+Display candles.
+Automatic (the indicator appearance depends on a chart display).

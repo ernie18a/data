@@ -1,0 +1,19 @@
+Oscillator Volatility Ratio2 is the second version of indicator
+Volatility Ratio
+.
+If the values exceed 2, the current trend reversal probability is high.
+It has three adjustable parameters:
+Period
+- calculation period
+Threshold
+- the threshold level
+Show alerts
+- show data on exceeding the threshold level
+Calculations:
+VR = TR / EMATR
+where:
+TR = Max(Max(High-Low, Abs(High-PrevClose)), Abs(PrevClose-Low))
+EMATR = EMA(TR, Period)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22786

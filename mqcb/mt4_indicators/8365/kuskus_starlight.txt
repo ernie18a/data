@@ -1,0 +1,13 @@
+Indicator Kuskus Starlight.
+Input Parameters:
+int
+LeftNum1
+=
+56
+;
+int
+LeftNum2
+=
+56
+;
+Kuskus Starlight

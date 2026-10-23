@@ -1,0 +1,6 @@
+The EA is based on the indicator
+TREND_alexcud v_2
+It works, but not as I would like it to work.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8004

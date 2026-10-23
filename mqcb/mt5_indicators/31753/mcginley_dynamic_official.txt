@@ -1,0 +1,12 @@
+The cause to make this :
+When almost all the descriptions of some indicator are something like this :
+The McGinley Dynamic indicator is a type of moving average that was designed to track the market better than existing moving average indicators. It is a technical indicator that improves upon moving average lines by adjusting for shifts in market speed....
+and so on ...
+then one starts to wonder what is in that indicator that makes it so "good". There is a significant confusion at how the available versions are calculated, and it seems, that as far as metatrader is concerned, the formula used is almost always the wrong formula. This version uses the original formula and one "improved" formula.
+The original version is, without going into too much details, regardless of the bombshell descriptions, "slower" than usual averages (ie: lagging more than the averages it is usually compared to - like EMA or SMA). One might argue that it is done intentionally (to follow the "trend") but that we shall leave to others. The fact is that in the meantime one "improved" formula has appeared that obviously had an intention to make the indicator values closer to the compared ones, and it makes close to EMA. This version can calculate both the original formula and the "improved" version. The original formula is :
+Comparison of the original formula to EMA and SMA (the gray lines)
+Comparison of the "improved" formula compared to those same EMA and SMA
+Usage :
+Use it as any other average indicator applied to prices
+Important :
+From the original formula it is obvious that the indicator has a fatal flaw : if there are 0 values in the series that it is applied to, then the indicator fails to produce meaningful result. If should be used only on data that never has 0 values

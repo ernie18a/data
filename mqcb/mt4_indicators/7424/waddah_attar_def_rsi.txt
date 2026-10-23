@@ -1,0 +1,2 @@
+When green line is more than zero level, the trend is UP.
+When green line is less than zero level, the trend is down.

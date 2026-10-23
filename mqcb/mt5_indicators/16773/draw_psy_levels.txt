@@ -1,0 +1,3 @@
+Real author
+: Im_hungry
+You need to specify max and min price, and the indicator draws equidistant horizontal lines.

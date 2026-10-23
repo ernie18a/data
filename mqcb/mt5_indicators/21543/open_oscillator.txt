@@ -1,0 +1,18 @@
+Open_Oscillator calculates Open price change dynamics for a specified period of time. It draws two lines - minimum and maximum Open prices for the range relative to the current values, as well as two signal lines.
+It has two configurable parameters:
+Period
+- calculation period;
+Signal period
+- signal lines smoothing period.
+Calculation:
+Low = MinPos - Open
+High = Open - MaxPos
+SignalLow = EMA(Low, Signal period)
+SignalHigh = EMA(High, Signal period)
+where:
+MinPos - lowest price within the Period range;
+MaxPos - highest price within the Period range.
+The location of the signal lines relative to each other indicates a trend, the crossings of the signal and the oscillator lines indicate the entry direction.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21543

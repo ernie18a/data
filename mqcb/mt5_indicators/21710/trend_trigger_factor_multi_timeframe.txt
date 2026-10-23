@@ -1,0 +1,10 @@
+Trend Trigger Factor was described by M.H. Pee in the Technical Analysis of Stocks and Commodities magazine in December, 2004.
+This version is adding T3 smoothing (to lessen false signals) and some extras in order to make the trend triggering state easier.
+Also, this version is made a standalone (no need for the
+Trend Trigger Factor
+indicator in order to work) multi timeframe indicator.
+In this version timeframes supported are all the possible timeframes supported by MetaTrader 5 and it has 3 "special" timeframes:
+Next higher timeframe: first higher timeframe compared to active chart.
+Second higher timeframe: second higher timeframe compared to active chart.
+Third higher timeframe: third higher timeframe compared to active chart.
+If some of these 3 timeframes are used, then the timeframe is set automatically as you change the timeframe of the chart.

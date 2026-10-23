@@ -1,0 +1,6 @@
+Real author:
+The code is based on Original Value Chart written by FxGeek.
+The Math is Same the original Value Chart, but this indicator display only value of close value chart and in a line indicator.
+Input parameters:
+Recommendations:
+Use less resource the computer when you use many charts with Value Chart.

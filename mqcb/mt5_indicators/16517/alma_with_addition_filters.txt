@@ -1,0 +1,7 @@
+The original ALMA (Arnaud Legoux Moving Average) indicator removes small price fluctuations and enhances the trend by applying a moving average twice. The gist of ALMA described on the
+author's website
+.
+This is the modified variation of indicator, with additional filters and floating levels.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16517

@@ -1,0 +1,6 @@
+Real author:
+MQL doc.
+Sometimes we open many chart windows with default setting. Usually we want the charts look as we like, such as to hide grid, using scale, hide OHLC, enable ask price, etc.
+This script can do it at once on multi charts. This simple script is based on MQL documentation and can be compiled and use also with MetaTrader 4 (please rename mq5 to mq4 first).
+You can also change the input value so you don't have to change it every time using the script.
+Input parameters:

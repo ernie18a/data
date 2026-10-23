@@ -1,0 +1,7 @@
+The real author:
+EarnForex
+The Easy Trend Visualizer indicator is a simple visualizer of trends. That is, it makes exactly what its name indicates. It shows where the trend starts and ends and where the trend is absent at all. It is based on the ADX standard indicators (Average Direction Movement Index). Colored arrows define moments of opening of positions, colored bars indicate a trend and gray horizontal lines fix places where there are no signals for deals.
+Fig.1 The Easy Trend Visualizer indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1604

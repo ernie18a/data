@@ -1,0 +1,7 @@
+This indicator displays the color of the Heiken Ashi candles and the rate of immediate change on an histogram, with a moving average that represents the average change. If Heiken Ashi bars suddenly change colors and the new bar is above the moving average, it is likely that the change was strong enough to continue for a while.
+The moving average can also used to detect range-bound markets and can be a good add-on to your trend following or short-term trading strategy.
+This indicator is a slight variation of
+Heiken Ashi Oscillator
+and depends on the original Heiken Ashi Indicator -attached-.
+Recommendations:
+Blend with your own trading strategy

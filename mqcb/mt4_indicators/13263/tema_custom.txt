@@ -1,0 +1,9 @@
+The Triple Exponential Moving Average (TEMA) technical indicator was developed by Patrick Malloy He published it in the Technical Analysis of Stocks & Commodities journal.
+This indicator can be used instead of the usual moving averages. Triple Exponential Moving Average (TEMA) is a combination of one exponential moving average, a double exponential moving average and a triple exponential moving average, which provides less delay than any of these three averages individually.
+In this implementation the indicator allows to customize the following parameters:
+MAPeriod - data averaging period;
+MAMethod - smoothing method;
+MAPrice - applied price to calculate the moving average (HIGH, LOW, MEDIAN etc.).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13263

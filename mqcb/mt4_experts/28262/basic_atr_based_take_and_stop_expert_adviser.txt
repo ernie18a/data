@@ -1,0 +1,1 @@
+With this template i'm demonstrating the use of Average True Range based take profit and stop loss levels. Take profit and stop loss levels are calculated using ATR factor multipliers.

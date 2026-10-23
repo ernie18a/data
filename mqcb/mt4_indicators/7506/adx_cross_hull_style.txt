@@ -1,0 +1,2 @@
+Author: not specified
+ADX Cross Hull Style indicator.

@@ -1,0 +1,74 @@
+Description:
+EA is based on 2 MA (High and Low). Long position will occur when Ask > MA(High) and Short position - when Bid < MA(Low) .
+This Expert Advisor is not a Holy Grail. You should optimize the input parameters for each Symbol and TF.
+Strategy Tester Report e_O nMA_004
+MT4 Live Server (Build 406)
+Symbol
+EURUSD (Euro vs. United States Dollar)
+Period
+15 Minutes (M15) 2011.11.28 00:00 - 2012.01.20 22:45 (2011.11.26 - 2012.01.21)
+Model
+Every tick (the most precise method based on all available least timeframes)
+Parameters
+maPeriod_1=7; maMethod_1=0; maAppPrice_1=2; maPeriod_2=5; maMethod_2=0; maAppPrice_2=3; Prof=25; TP=50; SL=550; UseMM=false; PercentMM=5; Lots=1;
+Bars in test
+4754
+Ticks modelled
+2675105
+Modelling quality
+90.00%
+Mismatched charts errors
+12
+Initial deposit
+10000.00
+Total net profit
+6252.53
+Gross profit
+6788.53
+Gross loss
+-536.00
+Profit factor
+12.67
+Expected payoff
+23.86
+Absolute drawdown
+524.50
+Maximal drawdown
+2505.00 (15.18%)
+Relative drawdown
+17.23% (2496.00)
+Total trades
+262
+Short positions (won %)
+128 (99.22%)
+Long positions (won %)
+134 (100.00%)
+Profit trades (% of total)
+261 (99.62%)
+Loss trades (% of total)
+1 (0.38%)
+Largest
+profit trade
+34.50
+loss trade
+-536.00
+Average
+profit trade
+26.01
+loss trade
+-536.00
+Maximum
+consecutive wins (profit in money)
+261 (6788.53)
+consecutive losses (loss in money)
+1 (-536.00)
+Maximal
+consecutive profit (count of wins)
+6788.53 (261)
+consecutive loss (count of losses)
+-536.00 (1)
+Average
+consecutive wins
+261
+consecutive losses
+1

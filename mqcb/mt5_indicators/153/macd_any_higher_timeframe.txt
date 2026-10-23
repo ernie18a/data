@@ -1,0 +1,5 @@
+This indicator is based on common
+MACD
+. Main idea is to allow trader to choose also timeframe of displayed indocator.
+Naturally you have the possibility to choose only current chart timeframe or any higher timeframe.
+It is not possible to display MACD with lower timeframe as current chart timeframe.

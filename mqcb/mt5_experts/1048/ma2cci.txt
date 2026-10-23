@@ -1,0 +1,29 @@
+This Expert Advisor is rewritten from MQL4 that was originally published here
+https://www.mql5.com/en/code/7746
+by its author
+George-on-Don
+.
+How It Works
+The entry point lies at the intersection of two
+МА
+s and a concurrent intersection of the zero line by
+CCI
+. The exit lies at the reverse intersection of two МАs. The image below shows the entry into a sell position, the signal bar marked by a vertical line and the exit at the reverse intersection of two MAs.
+Additionally, the Stop Loss is used at the value determined by the
+ATR
+indicator. The original version made use of ATR from the forming bar, whereas this Expert Advisor uses the first completed bar.
+If the trades are losing, the volume of new positions can be reduced in proportion to the number of losing trades. The more consecutive losing trades, the smaller the lot. If the trades are winning, the Expert Advisor keeps trading the initial lot size. The Initial lot can be constant or proportional to the available funds.
+Parameters
+FMa - fast MA period.
+SMa - slow МА period.
+PCCi - CCI period.
+pATR - ATR period for Stop Loss.
+Lots - order volume; when 0, the MaxR parameter is used;
+SndMl - sends messages by e-mail when the Expert Advisor opens and closes positions.
+DcF - lot reduction factor at losses. If the value is 0, the reduction is not carried out. The lower the value, the greater the lot reduction. If the lot cannot be reduced, the minimum lot is used.
+MaxR - maximum risk from 0-1 (share of free funds). It is effective when Lots value is 0.
+Note
+Simple MAs are used on the closing price. CCI is calculated on the closing price. Only indicator periods can be changed in the window of properties.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1048

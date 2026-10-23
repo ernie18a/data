@@ -1,0 +1,32 @@
+The system is described in more details at:
+http://www.unfx.ru/strategies_to_trade/strategies_39.php
+A detailed article devoted to the system testing and a link to reports are available in our magazine's issue of 05.05.2008:
+http://www.fortrader.ru/ftgate.php?id=0&num=37
+You can also discuss the system and make your suggestions on our forum at:
+http://fortrader.ru/forum/viewtopic.php?t=81
+Trading Strategy Algorithm:
+1. Open a one-hour chart for EURUSD, lots 0.1;
+2. Draw indicators: one Parabolic SAR and three Exponential Moving Averages with the periods of (10, 25, 50).
+Buying signal:
+EMA with the period of 10 intersects EMAs 25 and 50 from bottom to top, Parabolic SAR being below the price
+.
+Selling signal:
+EMA with the period of 10 intersects EMAs 25 and 50 from top to bottom
+,
+Parabolic SAR being above the price
+.
+Exiting Trades:
+1. By StopLoss;
+2. By TakeProfit
+;
+3. When the ЕМА10 line turns back (if there is a
+Buy position, then close in the point where
+ЕМА10 peak is formed, or trough - for Sell positions
+), provided the minimum profit is available. At the same time, the value of StopLoss and TakeProfit for buying and selling trades will be different.
+A back test of the above rules within the period 2007.01.11 по 2008.01.11 produced the following results (Open prices):
+Optimization of the parameters on the same period of time produced the following results of the EA working:
+A forward test outside the optimization area, an article devoted to the system testing, and a link to reports are available in our magazine's issue of 05.05.2008:
+http://www.fortrader.ru/ftgate.php?id=0&num=37
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8117

@@ -1,0 +1,6 @@
+Author:
+Tom Balfe
+Indicator ToR_1.20. The indicator shows development of a pair. The author describes the indicator in more details on the
+forum
+.
+Indicator ToR_1.20

@@ -1,0 +1,11 @@
+Real author:
+igorad
+StepMA made as the
+Nick Rypock Trailing Reverse
+(NRTR) indicator.
+Trading strategy:
+It is time to buy when the indicator line is changing its location and the green dot appears. We should keep our long positions, while the line is violet.
+It is time to sell when the red dot appears. We should keep our short positions, while the line is yellow.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/559

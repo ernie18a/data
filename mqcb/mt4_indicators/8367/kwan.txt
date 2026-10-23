@@ -1,0 +1,9 @@
+Indicator Kwan.
+Input Parameters:
+extern
+int
+Count_Bars
+=
+1000
+;
+Kwan

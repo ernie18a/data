@@ -1,0 +1,36 @@
+Candle Range Envelop indicator displays candle length, average length for a period and two envelopes forming minimum and maximum values channel as a color histogram.
+It has eight adjustable parameters:
+Range period
+- averaging range period
+Signal period
+- signal (central) line period
+Deviation period
+- deviation calculation period for calculating the channel
+Deviation multiplier
+- channel width
+Percent top envelope
+- upper envelope deviation percentage
+Percent bottom envelope
+- lower envelope deviation percentage
+Envelop method
+- envelope calculation method
+Deviation
+- standard deviation
+Percentage
+- percentage of the deviation set in the
+Percent top envelope
+and
+Percent bottom envelope
+parameters
+Price method
+- candle length calculation method
+High/Low
+- size of a candle with wicks
+Open/Close
+- candle body size
+Histogram columns corresponding to candles, the size of which is within the channel, are colored gray.
+Histogram columns corresponding to candles, the size of which exceeds the upper channel envelope, are colored green.
+Histogram columns corresponding to candles, the size of which is less than the lower channel envelope, are colored red.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22938

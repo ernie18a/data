@@ -1,0 +1,51 @@
+Equity Guard is an account-level risk manager that enforces your daily loss limit. When the daily loss reaches a configurable trigger, it closes every position and pending order and keeps the account flat until the next daily reset. It was designed with prop-firm daily drawdown rules in mind, but it works on any broker and any account.
+Equity Guard panel —
+ACTIVE state with live gauge and daily loss progress
+The EA works on any symbol and any timeframe, because it monitors the whole account rather than the chart it is attached to. Attach it to one chart per account only. The daily reset time is fully configurable and is interpreted in your broker's server time.
+Daily loss limit as percent of the day-start balance/equity or as a fixed amount — adapts to any account size and currency
+Lock trigger configurable as a percent of the limit, so the account locks before the hard limit is breached
+Flat enforcement: while locked, any position opened by other EAs is closed immediately
+Manual CLOSE ALL and LOCK/UNLOCK buttons with two-click confirmation against accidental clicks
+Modern draggable panel with live gauge, minimizable to a compact pill — position is remembered across restarts
+State persistence, hedging and netting accounts supported, automatic filling-mode detection, no DLLs required
+Lock triggered: all positions closed, account kept flat until the next daily reset
+At the configured reset time the EA captures a day-start reference (balance or equity, your choice). It then monitors account equity in real time using a one-second timer, incoming ticks and trade events. If the daily loss reaches the lock trigger, it flattens the account and locks. The lock releases automatically at the next daily reset, or manually via the UNLOCK button with a recovery hysteresis so it does not re-fire instantly.
+Input parameters — all limits, reset time and alerts are configurable
+Input
+Default
+Description
+Daily loss limit mode
+Percent
+Limit as % of day-start value or as fixed money
+Daily loss limit (% of day-start)
+5.0
+Used in percent mode
+Daily loss limit (money)
+500
+Used in money mode, in account currency
+Lock trigger (% of daily limit)
+80
+Loss level that fires the lock, as % of the limit
+Day-start reference
+Balance
+Balance or equity captured at reset time
+Keep account flat while locked
+true
+Closes anything opened by other EAs while locked
+Reset hour / minute
+0 / 0
+Daily reset moment, in broker server time
+Max deviation (points)
+30
+Slippage tolerance for closing orders
+Pop-up / Push / Sound alerts
+true / false / true
+Notifications on lock and on daily reset
+Initial X / Initial Y
+16 / 16
+Initial panel position — drag the header to move it
+Base font size
+11
+Scales all the panel text
+Minimized mode — compact pill with live status, draggable and clickable to restore
+This is a risk-management utility: it opens no trades and makes no profit claims. You bring your own strategy or EAs — Equity Guard simply makes sure that one bad day cannot take the whole account down with it.

@@ -1,0 +1,31 @@
+Description:
+Standard Bollinger Bands ® indicator is based on simple moving average. This
+Bollinger MA Price
+indicator is more elastic in input parameters. It will allow you to use other
+moving averages
+, standard spectrum of
+applied prices
+and to calculate upper and lower lines more precisely with deviation as a double value.
+This indicator is prepared based on
+Bollinger Bands, BB
+template. Several completed versions of
+Bollinger MA Price
+indicator are also prepared for those, who knows what moving average and price to use.
+Input parameters:
+MA_method:
+0 - Simple moving average,
+1 - Exponential moving average,
+2 - Smoothed moving average,
+3 - Linear weighted moving average.
+Applied_price:
+0 - close price,
+1 - open price,
+2 - high price,
+3 - low price,
+4 - median price,
+5 - typical price,
+6 - weighted close price.
+Bollinger MA Price indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10772

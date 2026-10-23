@@ -1,0 +1,72 @@
+Strategy Tester Report
+MA Reverse
+Alpari-Demo (Build 220)
+Symbol
+EURUSD (Euro vs US Dollar)
+Period
+1 Hour (H1) 2008.09.01 00:00 - 2008.10.31 22:00 (2008.09.01 - 2008.11.01)
+Model
+Control points (a very crude method the results must not be considered)
+Bars in test
+2071
+Ticks modelled
+27425
+Modelling quality
+n/a
+Missmathced charts errors
+8
+Initial deposit
+5000.00
+Total net profit
+8807.40
+Gross profit
+8807.40
+Gross loss
+0.00
+Profit factor
+Expected payoff
+284.11
+Absolute drawdown
+4083.00
+Maximum drawdown
+5226.40 (85.07%)
+Relative drawdown
+85.07% (5226.40)
+Total trades
+31
+Short positions (% won)
+9 (100.00%)
+Long positions (% won)
+22 (100.00%)
+Profit trades (% of total)
+31 (100.00%)
+Loss trades (% of total)
+0 (0.00%)
+Largest
+profit trade
+300.00
+loss trade
+0.00
+Average
+profit trade
+284.11
+loss trade
+0.00
+Maximum
+consecutive wins (profit in money)
+31 (8807.40)
+consecutive losses (loss in money)
+0 (0.00)
+Maximum
+consecutive profit (count of wins)
+8807.40 (31)
+consecutive loss (count of losses)
+0.00 (0)
+Average
+consecutive wins
+31
+consecutive losses
+0
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8587

@@ -1,0 +1,400 @@
+Advantages :
+The most expensive function is iBarShift which totally replaces all cycles in the code needed for peaks retrieval.
+All information needed to build ZZ for every bar is accessible not only in every moment but also for every extern code.
+No suspended peaks
+Efficient method to find peaks is available
+Very fast
+Works correct at history insertions and when switching TFs.
+Perfect for use in EA.
+Disadvantages :
+1. Memory requirements. This indicator uses 5 buffers instead of 2 (or even 1) in other similar implementations. But (imho) this is good price for advantages #6 and #7. None of fast ZigZags I have seen can process history insertions without full rebuild. Mine does it. Moreover it does it in efficient way
+2. Additional lines are available. This is required to make the data visible for any extern code. These lines should never be visible.
+Principle:
+The ZZ is drawn by the channeling principle.
+The channel width can be defined in Points (XLab_ZZ) or in Percent (XLab_ZZP)
+Peaks retrieval:
+extern
+int
+ChannelWidth =
+100
+;
+#property indicator_chart_window
+#property indicator_buffers
+1
+#property indicator_color1 Red
+#property indicator_width1
+3
+datetime
+LastTime;
+int
+init()
+{
+   LastTime =
+0
+;
+return
+(
+0
+);
+}
+bool
+GetValue(
+double
+dir,
+int
+bar,
+int
+prevBar,
+double
+& peak,
+int
+& peakBar,
+datetime
+& peakTime)
+{
+if
+(dir <
+0
+)
+   {
+datetime
+t =
+iCustom
+(
+Symbol
+(),
+0
+,
+"XLab_ZZ"
+, ChannelWidth,
+2
+, bar);
+int
+i =
+iBarShift
+(
+Symbol
+(),
+0
+, t);
+if
+(i == prevBar)
+      {
+         t =
+iCustom
+(
+Symbol
+(),
+0
+,
+"XLab_ZZ"
+, ChannelWidth,
+2
+, bar +
+1
+);
+         i =
+iBarShift
+(
+Symbol
+(),
+0
+, t);
+      }
+double
+v =
+iCustom
+(
+Symbol
+(),
+0
+,
+"XLab_ZZ"
+, ChannelWidth,
+1
+, i);
+if
+(v ==
+EMPTY_VALUE
+)
+      {
+         t =
+iCustom
+(
+Symbol
+(),
+0
+,
+"XLab_ZZ"
+, ChannelWidth,
+2
+, bar +
+1
+);
+         i =
+iBarShift
+(
+Symbol
+(),
+0
+, t);
+         v =
+iCustom
+(
+Symbol
+(),
+0
+,
+"XLab_ZZ"
+, ChannelWidth,
+1
+, i);
+      }
+      
+      peak = v;
+      peakBar = i;
+      peakTime = t;
+   }
+else
+if
+(dir >
+0
+)
+   {
+      t =
+iCustom
+(
+Symbol
+(),
+0
+,
+"XLab_ZZ"
+, ChannelWidth,
+3
+, bar);
+      i =
+iBarShift
+(
+Symbol
+(),
+0
+, t);
+if
+(i == prevBar)
+      {
+         t =
+iCustom
+(
+Symbol
+(),
+0
+,
+"XLab_ZZ"
+, ChannelWidth,
+3
+, bar +
+1
+);
+         i =
+iBarShift
+(
+Symbol
+(),
+0
+, t);
+      }
+
+      v =
+iCustom
+(
+Symbol
+(),
+0
+,
+"XLab_ZZ"
+, ChannelWidth,
+0
+, i);
+if
+(v ==
+EMPTY_VALUE
+)
+      {
+         t =
+iCustom
+(
+Symbol
+(),
+0
+,
+"XLab_ZZ"
+, ChannelWidth,
+3
+, bar +
+1
+);
+         i =
+iBarShift
+(
+Symbol
+(),
+0
+, t);
+         v =
+iCustom
+(
+Symbol
+(),
+0
+,
+"XLab_ZZ"
+, ChannelWidth,
+0
+, i);
+      }
+      
+      peak = v;
+      peakBar = i;
+      peakTime = t;
+   }
+else
+{
+return
+(false);
+   }
+return
+(true);
+}
+int
+start()
+{
+if
+(LastTime == Time[
+0
+])
+return
+(
+0
+);
+   LastTime = Time[
+0
+];
+double
+dir =
+iCustom
+(
+Symbol
+(),
+0
+,
+"XLab_ZZ"
+, ChannelWidth,
+4
+,
+1
+);
+double
+rdir = -dir;
+if
+(dir ==
+EMPTY_VALUE
+)
+return
+(
+0
+);
+double
+v1, v2, v3, v4, v5;
+int
+i1, i2, i3, i4, i5;
+datetime
+t1, t2, t3, t4, t5;
+   
+   GetValue(dir,
+1
+,
+0
+, v1, i1, t1);
+   GetValue(rdir, i1,
+0
+, v2, i2, t2);
+   GetValue(dir, i2, i1, v3, i3, t3);
+   GetValue(rdir, i3, i2, v4, i4, t4);
+   GetValue(dir, i4, i3, v5, i5, t5);
+
+   SetPt(
+"1"
+, v1, t1);
+   SetPt(
+"2"
+, v2, t2);
+   SetPt(
+"3"
+, v3, t3);
+   SetPt(
+"4"
+, v4, t4);
+   SetPt(
+"5"
+, v5, t5);
+Print
+(v1,
+"   "
+, v2,
+"  "
+, v3,
+"  "
+, v4,
+" "
+, v5,
+" "
+, i1,
+"  "
+, i2,
+"  "
+, i3,
+" "
+, i4,
+" "
+, i5);
+return
+(
+0
+);
+}
+void
+SetPt(
+string
+name,
+double
+price,
+datetime
+time)
+{
+ObjectCreate
+(name,
+OBJ_ARROW
+,
+0
+, time, price);
+ObjectSet
+(name,
+OBJPROP_ARROWCODE
+,
+108
+);
+ObjectSet
+(name, OBJPROP_PRICE1, price);
+ObjectSet
+(name, OBJPROP_TIME1, time);
+}
+This example is an indicator that marks (one time per bar) first five peaks (including current forming)
+Attention! This code can work incorrect if 0th Bar Mode is swiched on
+0th Bar Mode:
+Is set with DrawZeroBar variable. Off by default.
+It is not recommended to use this option, especially if the indicator is used in EA
+Enjoy using it ;) . Feel free to ask any questions.
+If any bugs found, please report me. Thank you.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10671

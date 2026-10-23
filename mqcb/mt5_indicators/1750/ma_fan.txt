@@ -1,0 +1,8 @@
+A fan of MA indicators, the period of which is defined by one of four types of progressions:
+arithmetic
+geometric
+Fibonacci numbers
+Leonardo numbers
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1750

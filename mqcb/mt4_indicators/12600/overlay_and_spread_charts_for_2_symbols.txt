@@ -1,0 +1,2 @@
+Main chart shows the overlay chart of 2 symbols - while subchart displays the price spread line with spreadfactor.
+For those keys affect the chart movement e.g. PgUp/PgDn, the indicators will automatically adjust the display and redraw.

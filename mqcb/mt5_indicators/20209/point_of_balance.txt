@@ -1,0 +1,2 @@
+From Walter Downs’ article "From Terms To Technical Tools" he introduces the Point of Balance Oscillator, two conditions to color bars and two system tests.
+The indicator shows current trend by showing a color of the current balance. The opposite color is not displayed as long as it does not become a trend (hence, lack of color, means the opposite trend is the prevailing)

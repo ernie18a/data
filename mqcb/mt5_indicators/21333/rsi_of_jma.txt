@@ -1,0 +1,2 @@
+There are several methods of making the RSI smoother (and showing less false signals). One is to filter / smooth the prices prior to be used in RSI calculation
+One of the methods for that, due to its high responsiveness to market changes and its smooth results, is the Jurik smoothing. This version of RSI is doing that producing a very nice smooth result wit much less false results

@@ -1,0 +1,33 @@
+Damiani Volatmeter - trend/flat determining algorithm.
+There are five inputs:
+Viscosity
+;
+Sedimentation
+;
+Threshold
+;
+Lag suppressor
+- whether to limit lagging (Yes/No);
+Applied price
+- price used for calculations.
+Calculations:
+If Lag suppressor:
+LineP = ATR_V / ATR_S + (LineP[1]-LineP[3]) / 2.0
+Else:
+LineP = ATR_V / ATR_S
+LineM = Threshold - StdDevV / StdDevS
+where:
+ATR_V - ATR(Viscosity)
+ATR_S - ATR(Sedimentation)
+StdDevV - StdDev(Viscosity)
+StdDevS - StdDev(Sedimentation)
+If the M line (
+red
+) is below the P line (
+green
+), there is a flat in the market. If above, there is a trend.
+Fig. 1. Damiani_Volatmeter + Lag suppressor
+Fig. 2. Damiani_Volatmeter without Lag suppressor
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21700

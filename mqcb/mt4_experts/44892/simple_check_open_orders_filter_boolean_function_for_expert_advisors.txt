@@ -1,0 +1,3 @@
+It is common for novice developers to face the challenge of making the Expert Advisor able to detect if there are open orders independently, without using the OrdersTotal() function, as this does not recognize if an order was opened by an EA or if it was opened manually, since it returns the total amount of open orders.
+With that in mind, I decided to share this very simple code. In it, I use the Comment() function as a way to demonstrate the Check_Open_Orders function in real time.
+The code is extensively explanatory with descriptive notes. I hope it is useful.

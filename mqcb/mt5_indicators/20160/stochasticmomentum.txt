@@ -1,0 +1,25 @@
+Two indicators in one: Momentum and Stochastic:
+If smoothing is applied, it is an Average Stochastic Momentum (ASM);
+If not, it is a Stochastic Momentum (SM).
+The indicator has eight configurable parameters:
+Period
+- period of Stochastic;
+Signal
+- period of the signal line;
+Method
+- signal line calculation method;
+Smooth
+- enable or disable smoothing (Yes/No);
+First MA period
+- the period for the calculation of the initial smoothing MA;
+First MA method
+- the method of the calculation of the initial smoothing MA;
+Second MA period
+- the period for the calculation of the second smoothing MA;
+Second MA method
+- the method of the calculation of the second smoothing MA.
+Fig.1 Average Stochastic Momentum (with smoothing)
+Fig.2 Stochastic Momentum (no smoothing)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20160

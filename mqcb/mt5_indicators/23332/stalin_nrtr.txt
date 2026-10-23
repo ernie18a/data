@@ -1,0 +1,9 @@
+Original author:
+Andrey Vassiliev (MoneyJinn)
+The
+Stalin
+indicator in the form of NRTR.
+Fig.1. The Stalin_NRTR indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23332

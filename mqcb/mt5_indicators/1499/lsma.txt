@@ -1,0 +1,10 @@
+The real author:
+mandor.
+A typical Moving Average which can use all methods of the technical analyses as the simple Moving Average. The advantage of this indicator in comparison with the classic Moving Averages perhaps can be distinguished only using it in the Expert Advisors.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 18.10.2007.
+Fig.1 The LSMA indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1499

@@ -1,0 +1,5 @@
+Theory :
+The indicator is based on Akram El Sherbini's article "Time Cycle Oscillators" published in IFTA journal 2018.
+The simple harmonic index (SHI) is based on the derivations of the simple harmonic equation
+Usage :
+The trading tactic used for the simple harmonic index is merely the centerline crossover. A buy signal is generated when the SHI line moves above the zero level to turn positive. The period of the bull cycle rises, leading to an increase in price displacement. A sell signal is generated when the SHI line crosses down the centerline to turn negative.

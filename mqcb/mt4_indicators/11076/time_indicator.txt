@@ -1,0 +1,3 @@
+Time indicator displays a broker time and local computer time on the chart. The display can be zoomed using the ZoomLevel setting and can also be horizontally repositioned using the DistanceFromTopLeft setting.
+Settings example:
+Display example:

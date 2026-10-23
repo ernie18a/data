@@ -1,0 +1,2 @@
+Probability levels based on ATR. "Probability" is calculated based on the projected Average True Range and previous period Close.
+Defaults are using daily period, but any time frame supported by MetaTrader 5 can be used.

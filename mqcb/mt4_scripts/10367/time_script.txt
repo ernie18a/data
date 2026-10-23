@@ -1,0 +1,2 @@
+Description:
+The script prints the week day and time.

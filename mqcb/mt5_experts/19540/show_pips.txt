@@ -1,0 +1,54 @@
+This information indicator allows you to always be aware of the current account status.
+The indicator displays the following data: profit in points, percentage and currency, spread of the current pair and the time until the bar close on the current timeframe.
+You can select one of the different info line location types:
+To the right of the price (follows the price);
+As a comment (in the upper left corner of the chart);
+In the selected corner of the screen.
+Data separator is also adjustable:
+|
+/
+\
+#
+The indicator is easy to use and very informative. You can turn off unnecessary information in the settings.
+Parameters
+Type of appearance
+- info line appearance type. There are three options:
+Follow the price
+- following a price;
+As comment
+- to be shown as a comment;
+In selected corner of the screen
+- to be shown in the selected chart corner.
+Graph corner for attachment
+- if the 'In selected corner of the screen' display type is selected, this parameter allows selecting the corner;
+Show profit?
+- enable/disable display of profit in the deposit currency;
+Show profit in percents?
+- enable/disable display of profit in the deposit currency;
+Show spread?
+- enable/disable display of the current spread;
+Show time to bar closure?
+- enable/disable display of time remaining until the close of the bar;
+Text color
+- the color of the text;
+Profit color
+- the color of the text when there is floating profit;
+Loss color
+- the color of the text when there is floating loss;
+Separator
+- line data separator. The parameter may have five values: "|", "/", ".", ''\", or "#";
+Y coordinate
+- Y coordinate (if "In selected corner of the screen" is selected as the appearance type);
+Indent in bars
+- indent from the current bar, in bars (if "Follow the price" is selected as the appearance type);
+Font size
+- text font size;
+Font
+- text font;
+The МetaТrader 4 version of the indicator can be downloaded
+here
+.
+Display examples
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19540

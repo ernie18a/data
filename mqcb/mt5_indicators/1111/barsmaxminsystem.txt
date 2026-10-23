@@ -1,0 +1,12 @@
+The indicator is created by the book of Larry Williams "Long-term secrets to short-term trading". But instead of identifying a trend by reversal points, there is added the trend Moving Average located on the zero line to define the direction of deals. For clarity the indicator is replaced to a separate window and the price is normalized by the trend MA. The meaning is in the following:
+МА trend is calculated and also МА drawn on high prices and МА drawn on low prices (the last two with a period of 3)
+trade only in the trend direction
+buy on МА drawn on low prices, close on МА drawn on high prices, sell on МА drawn on high prices, close on МА drawn on low prices.
+Recommendations:
+Buy on the Moving Average price (Low), but only if the trend MA (on zero line) is blue (Up Trend).
+Close a buy on the Moving Average price (High).
+Sell on the Moving Average price (High), but only if the trend MA (on zero line) is orange (Down Trend).
+Close a sell on the Moving Average price (Low).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1111

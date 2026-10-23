@@ -1,0 +1,4 @@
+Stochastic and RVI (Relative Vigor Index) - both indicators measure overbought and oversold area of the market movement.
+This indicator combines them both in one single indicator - Stochastic of Relative Vigor Index.
+It emphasizes the overbought and oversold regions.
+It produces relatively small number of signals hence enabling less false signals.

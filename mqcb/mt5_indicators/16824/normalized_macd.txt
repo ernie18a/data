@@ -1,0 +1,3 @@
+As useful as MACD is, it probably lacks one thing: bounds.
+MACD is an un-bound indicator and a lot of times we can not estimate if some kind of a minimum or a maximum is reached to decide if a trend is strong, weak or is starting to get exhausted. This version is an attempt to normalize MACD in known bounds that would allow us all the above described.
+As usual with gradients, if you wish only colors on slope, set the color steps to 2.

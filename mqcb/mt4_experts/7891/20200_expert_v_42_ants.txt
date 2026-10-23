@@ -1,0 +1,76 @@
+It is an original Expert Advisor by Pavel Smirnoy (
+http://www.autoforex.ru/lab/20_200_v3/20_200_v3.php
+) modified by a thorough optimization, adding automated lot size and lot enlargement for loss covering. Checked in reality, works the same as in a tester. It is recommended to be used with a deposit starting from $10000, with smaller deposit shows very little profitability. To be used only on EUR/USD H1 chart!!!!
+Strategy Tester Report
+20_200 expert_v4.2_AntS
+RealTrade-Real (Build 211)
+Symbol
+EURUSD (Euro vs US Dollar)
+Period
+H1 1999.01.08 19:00 - 2008.02.19 21:59 (1999.01.01 - 2008.12.25)
+Model
+By open price (only for EAs with explicit control of bar opening)
+Bars in test
+56830
+Ticks modelled
+113543
+Modelling quality
+n/a
+Mismatched charts errors
+0
+Initial deposit
+300.00
+Total net deposit
+550048.30
+Gross profit
+891364.97
+Gross loss
+-341316.66
+Profit factor
+2.61
+Expected payoff
+621.52
+Absolute drawdown
+2.40
+Maximal drawdown
+52378.80 (9.79%)
+Relative drawdown
+53.11% (1223.90)
+Total trades
+885
+Short positions (won %)
+350 (92.00%)
+Long positions (won %)
+535 (86.54%)
+Profit trades (% of total)
+785 (88.70%)
+Loss trades (% of total)
+100 (11.30%)
+Largest
+profit trade
+23400.00
+loss trade
+-26633.85
+Average
+profit trade
+1135.50
+loss trade
+-3413.17
+Maximum
+consecutive wins (profit in money)
+29 (9280.86)
+consecutive losses (profit in money)
+2 (-2413.50)
+Maximal
+consecutive profit (count of wins)
+104905.80 (24)
+consecutive loss (count of losses)
+-26633.85 (1)
+Average
+consecutive wins
+8
+consecutive losses
+1
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7891

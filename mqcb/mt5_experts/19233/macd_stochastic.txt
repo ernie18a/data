@@ -1,0 +1,308 @@
+The author of the idea
+:
+Firmin
+,
+the mq5 code author
+:
+barabashkakvn
+.
+The Expert Advisor uses two indicators, including
+iMACD
+(Moving Average Convergence/Divergence, MACD) and
+iStochastic
+(Stochastic Oscillator). No more than one position per bar can be opened. It uses three time intervals to determine entries.
+Input Parameters
+MACD: period for Fast average calculation
+- fast moving average period.
+MACD: period for Slow average calculation
+- slow moving average period.
+MACD: period for their difference averaging
+- the period for averaging the difference.
+Use Stochastic
+- enable/disable the use of Stochastic.
+Bars to check Stochastic
+- the number of bars for calculating the Stochastic signal.
+STO: K-period (number of bars for calculations)
+- K period (number of bars for calculations).
+STO: D-period (period of first smoothing)
+- D period (period for the primary smoothing).
+STO: final smoothing
+- final smoothing.
+STO: type of smoothing
+- type of smoothing.
+STO: stochastic calculation method
+- Stochastic calculation method.
+Lots
+- the volume of position to open.
+Stop Loss (in pips)
+- Stop Loss value.
+Take Profit (in pips)
+- Take Profit value.
+Trailing Stop (in pips)
+- trailing value.
+Trailing Step (in pips)
+- trailing step value.
+Max positions
+- the maximum number of positions.
+No Loss stop (in pips)
+- the minimum breakeven level.
+When set "No Loss stop" (in pips)
+- minimum distance from the price to set breakeven.
+Start period #1 (only hours and minutes are valid)
+- beginning of period #1.
+End period #1 (only hours and minutes are valid)
+- end of period #1.
+Start period #2 (only hours and minutes are valid)
+- beginning of period #2.
+End period #2 (only hours and minutes are valid)
+- end of period #2.
+Start period #3 (only hours and minutes are valid)
+- beginning of period #3.
+End period #3 (only hours and minutes are valid)
+- end of period #3.
+Testing results on all pairs from 2017.03.06 to 2017.10.08:
+Symbol
+Pass
+Result
+Profit
+Expected Payoff
+Profit Factor
+Recovery Factor
+Sharpe Ratio
+Custom
+Equity DD %
+Trades
+GBPJPY
+19
+11120,25
+1120,25
+28,01
+1,86
+2,96
+0,31
+0
+3,70
+40
+EURAUD
+13
+11070,28
+1070,28
+22,30
+1,84
+2,29
+0,31
+0
+4,64
+48
+CHFJPY
+11
+10819,40
+819,40
+16,39
+1,44
+1,11
+0,18
+0
+7,19
+50
+GBPCHF
+18
+10661,42
+661,42
+21,34
+1,54
+1,39
+0,22
+0
+4,60
+31
+EURJPY
+15
+10602,62
+602,62
+13,70
+1,35
+1,28
+0,14
+0
+4,61
+44
+NZDUSD
+0
+10540,46
+540,46
+16,89
+1,39
+1,03
+0,17
+0
+5,01
+32
+GBPUSD
+2
+10537,58
+537,58
+12,22
+1,27
+0,66
+0,13
+0
+7,62
+44
+AUDUSD
+6
+10316,09
+316,09
+7,53
+1,16
+0,57
+0,08
+0
+5,11
+42
+AUDNZD
+7
+10315,69
+315,69
+7,52
+1,24
+1,24
+0,11
+0
+2,51
+42
+AUDCAD
+8
+10047,39
+47,39
+1,16
+1,03
+0,08
+0,02
+0
+5,92
+41
+EURCHF
+14
+10040,68
+40,68
+1,45
+1,03
+0,08
+0,02
+0
+4,97
+28
+AUDCHF
+9
+10028,50
+28,50
+0,75
+1,00
+0,04
+0,12
+0
+6,72
+38
+EURNZD
+16
+9935,54
+-64,46
+-1,43
+0,96
+-0,07
+-0,02
+0
+9,14
+45
+AUDJPY
+10
+9927,16
+-72,84
+-1,92
+0,96
+-0,08
+-0,02
+0
+8,44
+38
+USDCHF
+3
+9901,90
+-98,10
+-3,16
+0,94
+-0,23
+-0,02
+0
+4,19
+31
+USDCAD
+5
+9752,49
+-247,51
+-6,69
+0,84
+-0,39
+-0,08
+0
+6,20
+37
+EURCAD
+17
+9635,41
+-364,59
+-8,89
+0,79
+-0,42
+-0,11
+0
+8,49
+41
+EURUSD
+1
+9573,66
+-426,34
+-13,32
+0,77
+-0,47
+-0,12
+0
+8,88
+32
+CADCHF
+20
+9006,63
+-993,37
+-25,47
+0,60
+-0,62
+-0,24
+0
+15,84
+39
+USDJPY
+4
+8729,71
+-1270,29
+-25,41
+0,54
+-0,80
+-0,29
+0
+15,85
+50
+EURGBP
+12
+7996,09
+-2003,91
+-50,10
+0,44
+-0,88
+-0,43
+0
+22,26
+40
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19233

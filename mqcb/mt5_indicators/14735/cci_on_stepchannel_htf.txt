@@ -1,0 +1,14 @@
+The
+CCI_On_StepChannel
+with the timeframe selection option available in the input parameters:
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Indicator chart period (timeframe)
+The indicator requires CCI_On_StepChannel.mq5 indicator file. Place it in <terminal_data_folder>\MQL5\Indicators.
+Figure 1. The CCI_On_StepChannel_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14735

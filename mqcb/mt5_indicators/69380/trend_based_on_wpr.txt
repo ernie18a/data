@@ -1,0 +1,2 @@
+This indicator uses the WPR as a basis to determine BUY / SELL. Initially, I looked at the trend in the form of Overbought and Oversold, but because it usually does not work out as desired, I set a -50 line on the wpr as the Pivot Point. But if you want to change it to Overbought and Oversold form, you can try it yourself according to your own comfort.
+Here I am sending another indicator that is the same as the previous indicator. In this indicator, I am just fixing the deletion of objects that failed to function in my first indicator.

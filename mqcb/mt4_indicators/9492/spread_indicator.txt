@@ -1,0 +1,7 @@
+The Spread Indicator
+Author:
+Credits for the indicator go to
+Meinmetatrader.de
+This indicator is a convenient tool to quickly throw a glance a the currency's current spread. Especially with non-fixed spread brokers, determining the current spread from looking a the 5-digits quotes can be exhausting.
+You can easily change the position, color and font size as with ordinary labels. Your changes won't get overriden!
+Screenshot

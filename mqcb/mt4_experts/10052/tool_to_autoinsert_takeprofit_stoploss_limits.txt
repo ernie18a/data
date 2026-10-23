@@ -1,0 +1,2 @@
+A tool to auto insert preset Take-Profit and Stop-Loss limits when an order is executed.
+Specially when doing scalping manually where you need quick setting of stop limits.

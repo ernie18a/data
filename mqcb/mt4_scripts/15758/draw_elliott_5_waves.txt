@@ -1,0 +1,5 @@
+Draw Elliott Waves (5 waves) manually.
+1. Navigator Window (Ctrl + N), execute this script (double click) on chart.
+2. It shows "0 1 2 3 4 5" (Blue) on the left of chart. Double click at number 0->5, then drag them to possible positions.
+3. Unselect all (right click at any number 0-5),
+4. Remove script to finish (right click on chart, choose Remove Script)

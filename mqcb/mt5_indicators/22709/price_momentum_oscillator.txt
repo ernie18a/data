@@ -1,0 +1,25 @@
+Indicator Price Momentum Oscillator.
+It is based on the
+double-smoothed
+rate of change (ROC).
+It has three adjustable parameters:
+Period one
+- primary smoothing period
+Period two
+- secondary smoothing period
+Signal period
+- signal line smoothing period
+Calculations:
+PMO = Smoothing2
+Signal = AvgPMO
+where:
+Smoothing1 = (Raw1 - PrevSmoothing1) * sm1+PrevSmoothing1
+Smoothing2 = (Raw2 - PrevSmoothing2) * sm2+PrevSmoothing2
+Raw1 = (((Close / PrevClose) * 100.0) - 100.0)
+Raw2 = 10.0 * Smoothing1
+sm1 =2.0/Period one
+sm2 = 2.0/Period two
+AvgPMO = EMA(PMO, Signal period)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22709

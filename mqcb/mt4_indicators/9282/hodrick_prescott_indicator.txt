@@ -1,0 +1,22 @@
+The Hodrick Prescott Filter (HPF) is a tool used to remove fluctuations from static economic series and for detrending. In dynamic series like FOREX quotes it will be constantly changing. The attached indicator is something like a Moving Average equivalent that shows the HPF value for a given bar so it won’t repaint.
+Some of the features are:
+It shows market trend based on selectable trend strength
+It can display(or not) HPF
+It displays up to 2 bands centered on “MA” or on HPF
+MTF support
+The inputs are:
+nobs: the number of HPF bars
+lambda: the dambing factor
+timeframe: the applied timeframe
+price: the price on which HPF is evaluated, same as iMA()
+delay: shows the “MA” by delaying (or advancing if negative) the HPF
+trend: selects the trend strength (how many consecutive HPF bars to check)
+future: shows HPF future bars
+bands: if >0 the number of bars for band calculation
+band#: the deviation for # band (if<0) then centered on HPF
+type#: the # band type -1=HPF 0=applied price 1=mean 2=extreme price 3=closest price 4=median 5=typical 6=weighted
+repaint: if true processes each tick
+points: if true plots up/downtrend as point on “MA”
+alerts: enable alerting
+audio: the filename of a .WAV file to be used for audio alers
+history: the number of history bars to process, 0=all history(takes time to load the indicator)

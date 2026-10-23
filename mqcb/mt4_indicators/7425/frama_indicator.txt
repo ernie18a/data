@@ -1,0 +1,6 @@
+The indicator is coded as described in
+Fractal Adaptive Moving Average
+by John Ehlers
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7425

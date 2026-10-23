@@ -1,0 +1,8 @@
+This indicator is used in
+AtrBreakGrid
+Expert Advisor and explains how it works.
+After low-volatility periods it is time for an impulse which should be used for the flat breakout strategy.
+EURUSD H1 shows the best results.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12944

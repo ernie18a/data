@@ -1,0 +1,47 @@
+The indicator of two unspecified time intervals.
+This is an intraday indicator showing the trading range within a trading day. Four time points are taken from the external parameters, the high and low points between each of the pairs are specified. These extreme points are shown in horizontal lines.
+The indicator is useful for testing both breakout and pullback strategies.
+The following parameters can be set in the indicator:
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+string
+Start1   =
+"03:00"
+;
+// origin of 1
+input
+string
+End1     =
+"08:00"
+;
+// end of 1
+input
+string
+Start2   =
+"12:00"
+;
+// origin of 2
+input
+string
+End2     =
+"17:00"
+;
+// end of 2
+input
+uint
+nDays =
+2
+;
+// number of counting days (0-all)
+input
+int
+Shift=
+0
+;
+// horizontal shift of the indicator in bars
+i-AnyRange2
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1015

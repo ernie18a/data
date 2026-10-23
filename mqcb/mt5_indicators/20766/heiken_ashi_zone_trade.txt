@@ -1,0 +1,5 @@
+Heiken Ashi Zone Trade indicator is based on 3 indicators:
+Heiken Ashi.
+Accelerator Oscillator.
+Awesome Oscillator.
+The combined states and values of the 3 are producing zones and trade signals.

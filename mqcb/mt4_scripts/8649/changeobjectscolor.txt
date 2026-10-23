@@ -1,0 +1,6 @@
+Author: Andrew Shelkovenko, SPb
+It allows to change the color of selected objects to specified one. It allows to select all objects or only objects of the set type and/or color.
+Based on the script CLEAR_CHART.mq4 by Aleksandr Pak, Almaty
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8649

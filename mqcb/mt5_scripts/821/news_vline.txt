@@ -1,0 +1,7 @@
+The script adds vertical lines on the chart at the news events.
+This script doesnt replace the calendar events, it just outine them using the vertical lines.
+The news description (event name and time) is added to the line tooltips. To see how does it work it is necessary to add news on the chart ("Calendar" tab in the Toolbox window).
+The lines width and color can be specified in the input parameters of the script.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/821

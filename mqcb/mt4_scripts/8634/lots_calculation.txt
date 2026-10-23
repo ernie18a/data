@@ -1,0 +1,4 @@
+The calculation of the amount of lots through the specified percentage of free assets.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8634

@@ -1,0 +1,5 @@
+To Check And Delete Chart Objects For MT5
+Check And Delete Chart Object Script
+Scans through the current chart for any available chart objects,
+Counts and delete them accordingly
+-And log the the names of the objects on the chart respectively.

@@ -1,0 +1,7 @@
+Several times, we share snapshot with the other person with some indicator attached on the chart.
+However there is no way to be fully sure from the chart snapshot itself whether the indicator attached on the chart is the same which we are expecting it to be.
+I case of an EA, when the EA is attached to a chart, the name of the EA is always visible on the chart in the top right corner by default.
+But no such thing is available for an indicator.
+So this code is very handy to get the name of the indicator and then we can show it as an object anywhere on the chart.
+This way, we can always be sure of the indicator which is attached on the chart.
+Also, at times, it can also be used to ensure that we are checking correct version of the indicator being analysed, if we include the version of the indicator in the name itself.

@@ -1,0 +1,3 @@
+This code help to decide fast what trades respects your ratio requirements.
+First Version: Red Line = StopLoss and green = TakeProfit. The calculations are made based in the bid value.
+Version 0.1 = we can decide if the open position is the bid value or specify the open level. Legend added.

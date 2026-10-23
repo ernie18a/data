@@ -1,0 +1,1 @@
+Simple indicator that shows when market is open.

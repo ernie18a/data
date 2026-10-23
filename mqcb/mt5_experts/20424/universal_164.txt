@@ -1,0 +1,103 @@
+The author of the idea
+:
+Scriptor
+The MQL5 code author
+:
+Vladimir Karputov
+.
+Universal trailing of positions and pending orders. The Expert Advisor can also open positions and place pending orders.
+The EX can:
+Trail stop levels for orders of any type (market and pending);
+Apply scalping techniques;
+Track the deposit increase by the required percent — once the value is reached, the EA can inform the user about that;
+Place pending orders, which are allowed by the user;
+Show Expert Advisor settings on the screen.
+The EA was originally designed as a universal trailing tool, while all other features have been added for convenience.
+Input Values
+For all opened manually, the magic number is \"0\"
+magic number
+- a unique identifier to be used by the EA;
+Lot
+- the lot value of a position or a pending order to be opened by the Expert Advisor.
+Pending Order Switches
+- flags for pending orders:
+Wait close position
+- waiting for a position to close ("true" - waiting for a position to close, "false" - waiting for a pending order to trigger);
+Allow/prohibit BUY STOP
+- the use of Buy Stop orders;
+Allow/prohibit SELL LIMIT
+- the use of Sell Limit orders;
+Allow/prohibit SELL STOP
+- the use of Sell Stop orders;
+Allow/prohibit BUY LIMIT
+- the use of Buy Limit orders.
+Position parameters
+Maximum number of positions of one type
+- the maximum number of positions of one type in the market;
+TakeProfit of positions
+- the take profit value;
+StopLoss of positions
+- the stop loss value;
+Trailing Stop of positions. "0" --> off
+- the trailing stop function;
+Trailing Step of positions
+- the trailing step value;
+Wait profit, "true" -> wait breakeven
+- first the EA waits for the breakeven level, and then applies the trailing function.
+Stop order parameters
+Distance from current price to Stop Order level
+- the distance between the current price and the Stop Order;
+TakeProfit Stop Orders
+- the take profit value for Stop Orders;
+StopLoss Stop Orders
+- the stop loss value for Stop Orders;
+Trailing Stop of a Stop Orders. "0" --> off and Trailing Step is not important
+- trailing function for Stop Orders;
+Trailing Step of a Stop Orders
+- the trailing step value for Stop Orders.
+Limit order parameters
+Distance from current price to Limit Order level
+- the distance between the current price and the Limit Order;
+TakeProfit Limit Orders
+- the take profit value for Limit Orders;
+StopLoss Limit Orders
+- the stop loss value for Limit Orders;
+Trailing Stop of a Limit Orders. "0" --> off and Trailing Step is not important
+- trailing function for Limit Orders;
+Trailing Step of a Limit Orders
+- the trailing step value for Limit Orders.
+Only for work on time
+- trading time settings
+Use time
+- enable operation in the specified time;
+Terminal hours of the deals
+- trading time (hours);
+Terminal minutes of the deals
+- trading time (minutes);
+Use open Buy on time
+- the flag for time-based opening of Buy positions;
+Use open Sell on time
+- the flag for time-based opening of Sell positions;
+Use pending Buy Stop on time
+- the flag for time-based placing of Buy Stop orders;
+Use pending Sell Limit on time
+- the flag for time-based placing of Sell Limit orders;
+Use pending Sell Stop on time
+- the flag for time-based placing of Sell Stop orders;
+Use pending Buy Limit on time
+- the flag for time-based placing of Buy Limit orders.
+Pipsing
+- enable the pipsing (scalping) strategy
+Pipsing profit
+- profit for the strategy.
+Global levels
+- profit and loss levels (%) (for information)
+To catch the increase/decrease of the deposit by NNN percent
+- tracking deposit levels;
+Global TakeProfit (given in percent)
+;
+Global StopLoss (given in percent)
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20424

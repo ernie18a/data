@@ -1,0 +1,9 @@
+The "Fractals at Close prices" indicator only uses Close prices in calculations. The indicator was used in the creation of the
+Fractals at Close prices EA
+.
+Comparison with standard fractals:
+Gray icons show standard fractals
+"Fractals at Close prices" is shown in green
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19820

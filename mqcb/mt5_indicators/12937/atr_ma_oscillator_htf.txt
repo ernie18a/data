@@ -1,0 +1,14 @@
+The
+ATR_MA_Oscillator
+indicator with the timeframe selection option available in the input parameters:
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Indicator chart period (timeframe)
+This indicator requires ATR_MA_Oscillator.mq5 indicator file. Place it in <terminal_data_folder>\MQL5\Indicators.
+Fig.1. The ATR_MA_Oscillator_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12937

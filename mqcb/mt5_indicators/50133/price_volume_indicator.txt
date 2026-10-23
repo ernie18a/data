@@ -1,0 +1,4 @@
+The idea is simple - and it is one variation of dividing price by volume. A simple moving average is taken as the price. I have not found any serious value of the sign for forecasting.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/50133

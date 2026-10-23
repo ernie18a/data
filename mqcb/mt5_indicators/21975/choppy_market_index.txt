@@ -1,0 +1,20 @@
+Choppy market index as described by Daniel Fernandez in August 2011 Trading Strategies magazine article "Tackling trending and ranging markets with CMI"
+The Choppy Market Index
+:
+The CMI is a simple indicator that gauges whether the  market has behaved in a choppy (non-directional) manner  or a trending (directional) manner. The indicator calculates  the difference between the most recent bar’s close and the  close  n  bars ago and then divides this value by the difference between the highest high and lowest low over these  n bars. This value is then multiplied by 100 to give us a nor - malized value between zero and 100:
+CMI    =  ((ABS(C[0]-C[n]))/(H[n]-L[n]))*100
+Where
+ABS =  absolute  value
+C[0]  =  most recent close
+C[n]  =  close n bars ago
+H[n]  =  highest high  of past n bars
+L[n]  =  lowest low of  past n bars
+Recommendations:
+Range strategy rules:
+1.  Enter a long when the 10-bar SMA of the 60-bar CMI is below 40 and the difference between the current bar’s close and the close 20 bars ago is negative.
+2.  Enter a short when the 10-bar SMA of the 60-bar CMI is below 40 and the difference between the current bar’s close and the close and the close 20 bars ago is positive.
+3.  Exit trades when the CMI moves above 50.
+Trend strategy rules
+1.  Enter a long when the 10-bar SMA of the 60-bar CMI is above 60 and the difference between the current bar’s close and the close 20 bars ago is positive.
+2.  Enter a short when the 10-bar SMA of the 60-bar CMI is above 60 and the difference between the current bar’s close and the close 20 bars ago is negative.
+3.  Exit trades when the CMI moves below 50.

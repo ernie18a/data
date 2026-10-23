@@ -1,0 +1,8 @@
+The script downloads the historical quotes data of a single timeframe for all symbols in the market watch. This is convenient to conduct more backtesting on a single timeframe that you usually work with.
+Also, to avoid errors that occur when working with symbols/timeframes which have insufficient quote history. An indicator or an expert running on that chart may encounter an error caused by the absence of history required for its calculation.
+The idea of emulating pressing "Home" button is inspired by the original
+s-Downloader
+script.
+Usage
+Launch the script on the target symbol and timeframe to download its historical data.
+When terminal is restarted later, historical data are automatically flushed to disk.

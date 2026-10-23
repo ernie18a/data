@@ -1,0 +1,26 @@
+Hi guys,
+I bring this strategy to you. I publish a simple version of the original strategy PRO that I uses on my real account.
+A version PRO is used for providing signals or in other hand will be ready for purchasing at the market. If you want to save time and money you can subscribe to follow the signal at Signal section. You can find it as Stufic Pro. Signal strategy will be periodically updated!
+Info:
+Variables, are described in the code. Lite version missing some advanced variables which making trading more stable but it can be applied to real account.
+Profit Factor can be 4.50 with more than 300 trades in some cases. But its necessary to spend a lot of time with advanced optimization - market, training, graph check and verification period!
+Recommendations:
+Optimal lot size is 0.1 or 0.2 for each 10.000 USD.
+It can be used for a lot of pair but remember to use training (optimalization period, min 12 months) and verification period (min 4 months).
+Latest updates:
+I was updated strategy source file and new settings for EURUSD. These screenshots are form backtesting:
+Optimization with Every Tick mode (above).
+Optimization results. See highlighted values. Specially drawdown is small. Every Tick mode ;-)
+(above)
+Chart with modeling quality 90% - Every Tick mode. Its better to know that more than 50% of optimization results were in uptrend (above)
+Values, which you can reach with attached set file.
+And what else!?!
+This is hardcore test and optimization of
+STUFIC PRO
+strategy which will be published soon at the market. What I want for me is small drawdown. It's necessary to hold the money in bad times and earn in better times. Never loose!
+STUFIC PRO with maximal 0.05 Lots. See the number of trades and profit factor 2.02 with maximal drawdown of 2388 USD.
+STUFIC PRO for XAUUSD will be available soon at the market! More info will be available at
+http://stufic.com
+and
+http://tomashruby.com
+(comming soon)

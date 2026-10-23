@@ -1,0 +1,33 @@
+INTRODUCTION:
+I want to share with you this story. When I started trading, I learnt the scalping strategy in a volatile market. I really loved scalping especially when I see the price is moving fast. However, scalping for a long period of time is exhausting to me especially in a volatile market; volatile market requires fast analysis, actions and reactions; that is why I always reach a point that I loss concentration, focus and I start making those really stupid mistakes.
+That is why I created this EA,
+that is based on the
+indicator Identify potential entries
+, that helped me to automatically identify these potential entries (based on the formation of candlesticks) instead of doing all the work myself and it will trade these potential entries for me. I know there are plenty of Metatraders who also suffer from this and that is why I would like to share this EA with you, hopefully it will be beneficial. Do not forget to send you comments as well as rate these scripts. Happy trading!
+You can check the below videos:
+How to compile this EA
+Back-testing this EA
+Do not forget to send you comments as well as rate these scripts. Happy trading!
+LIVE TRADING SESSION: How to properly trade small accounts
+You can check the following live trading session and see how I use my tools to trade small accounts
+PARAMETERS:
+This EA has 2 inputs
+1st input will allow you to specify if you want to identify potential entries on bullish or bearish trends (i.e. it is up to you to choose bullish trend or bearish trend).
+2nd input will allow you to specify the volume of all your trades.
+Remarks:
+This EA is a free version and it will only label HAM, IVH, SHS, HGM candlesticks
+* If you choose bullish trend, this EA will identify potential bullish entries based on the formation of these candlesticks:
+Bullish Hammer (HAM),
+Inverted Hammer (IVH),
+Bullish Engulfing (ENG),
+Bullish
+Harami (HAR),
+Morning start (MOS) and
+Bullish Building Momentum
+* If you choose bearish trend, this EA will identify potential bearish entries based on the formation of these candlesticks :
+Shooting Star (SHS),
+Hanging Man (HGM),
+Bearish Engulfing (ENG),
+Bearish Harami (HAR),
+Evening Start (EVS) and
+Bearish Building Momentum

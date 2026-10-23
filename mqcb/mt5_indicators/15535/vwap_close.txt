@@ -1,0 +1,13 @@
+Real author:
+STS
+VWAP Close is displayed directly on the price chart. The indicator defines liquidity points and average Close price weighted by volume. The calculation is performed during an entire trading session (intraday). Therefore, VWAP is mostly designed for intraday trading.
+The calculation requires a cumulative value of the volume multiplied by a typical price. The value is divided by a cumulative volume. The current price value relative to VWAP may point to a prevailing movement direction during the day: if the prices are below the indicator, the downward movement prevails; if the prices are above the indicator, the upward one is stronger. Since VWAP calculates the volume weighted price, its values will correspond to high-liquidity intervals. This feature allows defining potential activity points of major market participants.
+The indicator does not point directly to large orders in any direction. Instead, it displays a price level with a relatively high volume, which is a consequence of high liquidity the major players need to perform transactions.
+VWAP can also be used to assess a market entry level. A long order below the indicator may prove to be a good entry since it occurs below the average price level. A short order above the indicator values means selling above the average price level.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 10.05.2016.
+Fig.1. VWAP_Close
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15535

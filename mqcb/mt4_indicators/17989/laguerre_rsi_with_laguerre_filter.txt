@@ -1,0 +1,3 @@
+This is a Laguerre RSI with an addition of Laguerre filter signal line.
+So, it is a sort of "all Laguerre" indicator. As an addition, a "no trade zone" can be displayed (for cases of market ranging, when the trading should be avoided).
+One more deviation is added: The "speed". It can vary from 0 to 6. The smaller that "speed" the "slower" the Laguerre is. And vice versa. That can help in keeping the smoothness of the calculating but without adding significant lag. Some experimenting is advised for parameters for different symbols.

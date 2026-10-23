@@ -1,0 +1,239 @@
+It happens sometimes when you've been creating and EA and you haven't noticed a bug that causes too many positions if not orders to be opened . or maybe there was a trade execution code outside the If statement somewhere in the Ontick that Opens trade in  the background on MT5 while you are on Metaeditor
+It's boring trying to close too many orders and positions manually and it's time consuming. Lets Create the script that can close all of them.
+01: Instantiate the Libraries to use
+#include
+<Trade\Trade.mqh>
+//Instatiate Trades Execution Library
+#include
+<Trade\OrderInfo.mqh>
+//Instatiate Library for Orders Information
+#include
+<Trade\PositionInfo.mqh>
+//Instatiate Library for Positions Information
+//---
+CTrade         m_trade;
+// Trades Info and Executions library
+COrderInfo     m_order;
+//Library for Orders information
+CPositionInfo  m_position;
+// Library for all position features and information
+02: Our simple inputs
+input
+color
+OrdersColor =
+clrDodgerBlue
+;
+// Orders counter color on the chart
+input
+color
+PositionsColor =
+clrGreenYellow
+;
+//Positions counter color on the chart
+03: (OPTIONAL)
+Let's Draw Object on the chart to count the number of Positions and orders available to our trade section of MT5.
+ChartWrite(
+"Positions"
+,
+"Positions "
++ (
+string
+)
+PositionsTotal
+(),
+100
+,
+80
+,
+20
+,
+clrGreen
+);
+// write number of positions on the chart
+ChartWrite(
+"Orders"
+,
+"Orders "
++ (
+string
+)
+OrdersTotal
+(),
+100
+,
+50
+,
+20
+,
+clrDodgerBlue
+);
+//Write Number of Orders on the Chart
+04: Let Our Script deal with Positions First by closing them all
+for
+(
+int
+i =
+PositionsTotal
+() -
+1
+; i >=
+0
+; i--)
+// loop all Open Positions
+if
+(m_position.SelectByIndex(i))
+// select a position
+{
+            m_trade.PositionClose(m_position.Ticket());
+// then delete it --period
+Sleep
+(
+100
+);
+// Relax for 100 ms
+ChartWrite(
+"Positions"
+,
+"Positions "
++ (
+string
+)
+PositionsTotal
+(),
+100
+,
+80
+,
+20
+, PositionsColor);
+//Re write number of positions on the chart
+}
+05: Then Finish by Closing Our Orders
+for
+(
+int
+i =
+OrdersTotal
+() -
+1
+; i >=
+0
+; i--)
+// loop all orders available
+if
+(m_order.SelectByIndex(i))
+// select an order
+{
+            m_trade.OrderDelete(m_order.Ticket());
+// delete it --Period
+Sleep
+(
+100
+);
+// Relax for 100 ms
+ChartWrite(
+"Orders"
+,
+"Orders "
++ (
+string
+)
+OrdersTotal
+(),
+100
+,
+50
+,
+20
+, OrdersColor);
+//Re Write Number of Orders on the Chart
+}
+This is where our objects were initialized. To learn about objects read the documentation
+HERE
+void
+ChartWrite(
+string
+name,
+string
+comment,
+int
+x_distance,
+int
+y_distance,
+int
+FontSize,
+color
+clr)
+  {
+ObjectCreate
+(
+0
+, name,
+OBJ_LABEL
+,
+0
+,
+0
+,
+0
+);
+ObjectSetInteger
+(
+0
+, name,
+OBJPROP_CORNER
+,
+CORNER_LEFT_UPPER
+);
+ObjectSetInteger
+(
+0
+, name,
+OBJPROP_COLOR
+, clr);
+ObjectSetString
+(
+0
+, name,
+OBJPROP_TEXT
+, comment);
+ObjectSetInteger
+(
+0
+, name,
+OBJPROP_FONTSIZE
+, FontSize);
+ObjectSetString
+(
+0
+, name,
+OBJPROP_FONT
+,
+"Lucida Console"
+);
+ObjectSetInteger
+(
+0
+, name,
+OBJPROP_SELECTABLE
+,
+false
+);
+ObjectSetInteger
+(
+0
+, name,
+OBJPROP_XDISTANCE
+, x_distance);
+ObjectSetInteger
+(
+0
+, name,
+OBJPROP_YDISTANCE
+, y_distance);
+  }
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+This Script can help you close all
+Orders and Positions in the blink of an eye.

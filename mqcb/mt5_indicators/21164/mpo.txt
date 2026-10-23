@@ -1,0 +1,16 @@
+Indicator MPO (Midpoint Oscillator) displays price movement without its trend component around its centerpoint. It is displayed as two lines: Price movement line and signal line. Centerline (MidPoint) is zero level of the oscillator.
+The indicator has three configurable parameters:
+Period
+- price line calculation period;
+Smoothing period
+- signal line calculation period;
+Smoothing method
+- signal line smoothing method.
+Calculations:
+MidPoint = 100.0 * (2.0 * Close - Max-Min) / (Max-Min)
+Signal = MA(MidPoint,Smoothing period, Smoothing method)
+where:
+Max, Min - the highest and the lowest values within Period
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21164

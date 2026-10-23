@@ -1,0 +1,18 @@
+A trading system based on the signals of the
+ColorFisher_m11
+indicator. A signal to open a position is generated at the close of a bar if the color of the histogram has changed to blue or pink, i.e. when the oscillator has entered the overbought or oversold zone. The position closing signal is formed when the histogram color changes to opposite.
+This Expert Advisor requires the compiled indicator file ColorFisher_m11.ex5 in order to run. Add it to <terminal_data_folder>\MQL5\Indicators.
+Note that the TradeAlgorithms.mqh library file allows using Expert Advisors with brokers who offer
+nonzero spread
+and the option of setting Stop Loss and Take Profit
+during position opening
+. You can download more variants of the library at the following link:
+Trade Algorithms
+.
+Default input parameters of the Expert Advisor were used during the tests shown below. Stop Loss and Take Profit were not used during testing.
+Fig. 1. Examples of deals on the chart
+Testing results for 2015 at GBPUSD H4:
+Fig. 2. Testing results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18785

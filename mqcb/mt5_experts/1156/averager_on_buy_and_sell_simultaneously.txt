@@ -1,0 +1,9 @@
+The Expert Advisor operates on the principle of the Moving Average. Simultaneously in both directions. It calculates volume for BUY and SELL separately.
+It divides the volume received in accordance with the given "save percentage".
+Then it sends one order.
+This program does not use any indicators.
+The Expert Advisor is represented on Automated Trading Championship 2012
+https://championship.mql5.com/2012/en/users/IvanBG
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1156

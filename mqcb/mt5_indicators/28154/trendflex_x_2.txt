@@ -1,0 +1,4 @@
+Based on  :
+TrendFlex
+In “Reflex: A New Zero-Lag Indicator” in this issue, author John Ehlers introduces a new averaging indicator that he has designed with reducing lag in mind. According to the author, this new indicator can be used to generate signals in a more timely manner than other lagging calculations. This is a continuation of hist article and is the extended TrendFlex indicator (that differs from the "reflex") indicator.
+Some platforms are introducing different type of display and this version is doing that too : two "trendflex" values are displayed (instead of displaying the difference of the two), and this way it might be useful to "read" the values in a possible different way

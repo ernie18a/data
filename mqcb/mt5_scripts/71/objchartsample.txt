@@ -1,0 +1,5 @@
+The script ObjChartSample.mql5 illustrates control of chart properties using the classes from the
+Standard Library
+(
+CChart
+).

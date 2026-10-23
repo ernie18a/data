@@ -1,0 +1,65 @@
+This is a continuation of the source code elaboration “
+The template of Expert Advisor for working with news
+”. The functions included in this template use two news sources - Investing.com and Dailyfx.com. The template doesn’t use DLL.
+The Advisor can distinguish between weak, medium, and strong news, as well as apart for Non-farm Payrolls. There is the parameter of a time indentation for each news type, at a time when the script will give a signal about upcoming or past news.
+Using this template, you can also invert its work, and then the Advisor will work either only on the newlines or directly before the release of Non-farm Payrolls. If at one point there is a lot of news, then the Advisor takes into account the strongest.
+This version of the template provides a concrete example of how you can use it in your trading. This template already has a simple trading function ManageTrade (), which you can change and realize your desires. The logic of working in the template is simple - taking into account the settings, it checks the presence of news, if there is news then the trading is stopped within the time specified in the settings.
+For more trading functions visit the following URL:
+if
+(
+IsTradeAllowed
+() && trade)
+     {
+// No news and Trade Allowed
+ManageTrade();
+// Your trade functions
+}
+Attention! To work with this Expert Advisor you must add it to the trusted URL http://www.dailyfx.com/ and http://ec.forexprostools.com/
+Settings:
+SourceNews –
+Choose news source.
+LowNews –
+Activate weak news.
+LowIndentBefore –
+The indent before a weak news release.
+LowIndentAfter -
+The indent after a weak news release.
+MidleNews -
+Activate medium news.
+MidleIndentBefore -
+The indent before a medium news release.
+MidleIndentAfter -
+The indent after a medium news release.
+HighNews -
+Activate strong news.
+HighIndentBefore -
+The indent before a strong news release.
+HighIndentAfter -
+The indent after a strong news release.
+NFPNews -
+Activate news of Non-farm Payrolls.
+NFPIndentBefore -
+The indent before a news release of Non-farm Payrolls.
+NFPIndentAfter -
+The indent after a news release of Non-farm Payrolls.
+DrawNewsLines -
+Activate to show the news lines on the chart.
+LowColor –
+The color of weak news.
+MidleColor -
+The color of medium news.
+HighColor -
+The color of strong news.
+LineWidth –
+The line width.
+LineStyle -
+The line style.
+OnlySymbolNews -
+Set it to "true" to display news only for selected symbol or "false" to show all.
+Your Time Zone, GMT (for news) -
+Time zone (GMT).
+I want to remind again, this is a template that is designed to develop your own Advisor.
+If you can’t figure out how to insert required functions, please contact me, help is close.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19138

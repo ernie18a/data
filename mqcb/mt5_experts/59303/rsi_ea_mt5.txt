@@ -1,0 +1,28 @@
+Trading Strategy:
+RSI-based mean reversion strategy
+Configurable overbought (default 80) and oversold (default 20) thresholds
+Automatic signal detection on RSI crossing threshold levels
+Exits positions when opposite signal appears
+Risk Management:
+Fixed or percentage-based position sizing
+Risk calculation based on Balance, Equity, or Free Margin
+Configurable lot size limits (min/max)
+Maximum concurrent positions control
+Stop Loss & Take Profit:
+Fixed SL/TP in points
+Dynamic SL/TP based on ATR volatility
+Adjustable volatility multipliers for SL and TP
+Optional disable (set to 0)
+Advanced Features:
+Scale-Out
+: Partial profit taking at configurable volatility levels
+Session Filter
+: Trade only during specified hours (broker time)
+Volatility-based sizing
+: ATR-based dynamic position management
+Slippage and spread control
+Configuration:
+Magic number for multi-EA compatibility
+Custom trade comments
+Fully optimizable parameters
+Built-in optimization score (Profit/Drawdown ratio)

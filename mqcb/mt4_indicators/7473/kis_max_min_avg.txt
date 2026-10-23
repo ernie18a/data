@@ -1,0 +1,2 @@
+Author: KCBT
+The indicator showing channels.

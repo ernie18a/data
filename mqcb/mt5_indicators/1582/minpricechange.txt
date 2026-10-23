@@ -1,0 +1,21 @@
+It is based on the idea of flat and trend movements' alteration. In other words, MinPriceChange is another indicator which sends signals as the price moved for some time aside and either continuation, or reversal is expected. Algorithm for calculation is in the following:
+calculate the sum of price changes on each bar for the specified period , i.e. the sum of differences (close[i] - close[i-1]).
+if the sum of price changes calculated on the current bar is less than the minimum sum calculated on the previous bars, then consider it a signal of a passed flat and starting breakthrough of boundaries of the current flat.
+It should be noted that the idea of creation of the indicator is also "inspired" by the
+iVLT
+indicator. Well, perhaps, that is all what they have in common. It is a comparison of the current calculated value with the minimum value from the previously calculated ones. To my point of view, the idea is rather good and allows connecting not to any other values specified by the trader, but to a certain value determined by the market.
+Parameters:
+Changes Period
+- period for calculation of sum of price changes (on the current bar).
+Check Period
+- period for detecting the minimum sum of changes.
+Abs Change
+- if the parameter is true, we will summarize absolute values of changes, if false, we will summarize changes with the corresponding sign (+/-).
+Recommendations:
+It is not recommended to use the indicator on the small ("noise") frames.
+The indicator doesn't specify the direction, so two variants of use are available as the signal is formed:
+place stop orders at the boundaries of the signal range (i.e. above the maximum high and the minimum low of the last "Change Period" bars),
+use in pair with any trend indicator and place stop order only in the trend direction (if there was a breakthrough in the opposite direction, delete stop order).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1582

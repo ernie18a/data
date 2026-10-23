@@ -1,0 +1,11 @@
+Real author:
+Fedor Igumnov
+A combined indicator, built on the basis of two RSI oscillators.
+This indicator calculates the value of the RSI indicator with the RSIPeriodOriginal period and the value of RSI with the RSIPeriodRotated period. Then it turns RSIPeriodRotated 180 degrees relative to the level of 50 points (100-RSI). Finds the difference between the original value of the first indicator and the inverted value of the second one. Then it calculates the derivative of this difference.
+The colored cloud is formed from two RSI indicators.
+A gray histogram is the difference between the original value and the inverted value.
+An orange line is a derivative of the histogram (the rate of change of the difference between the original value and the inverted value).
+Figure 1. The RSIImproved indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1788

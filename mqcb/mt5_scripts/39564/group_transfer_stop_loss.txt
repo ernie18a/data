@@ -1,0 +1,4 @@
+Indicator
+Works on all positions on the current symbol. You set the stop loss price and the script moves the stop loss for all positions.
+Pic. 1. Group transfer Stop loss
+This is a very simple code - there are no protections or checks.

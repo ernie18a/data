@@ -1,0 +1,30 @@
+Recent High/Low Alert MetaTrader indicator
+— displays two bands of maximum and minimum levels across recent
+N
+candles. By default, the maximum band is displayed with a blue line; the minimum band is displayed with a yellow line. Additionally, it can invoke a popup alert, send an email alert, or issue a notification alert when the current price (Bid) breaks recent High or Low level. All alerts can be turned off. If you use the email alert feature, do not forget to set the email settings in your MetaTrader platform's options window. Same with push-notifications. The indicator is available for both MT4 and MT5.
+Input parameters
+N
+(default = 20) — period value for the recent High/Low levels.
+EnableNativeAlerts
+(default = false) — if
+true
+, a native MetaTrader popup alert will be used when price breaks above or below the High/Low bands.
+EnableEmailAlerts
+(default = false) — if
+true
+, an email message will be sent when price breaks above or below the High/Low bands. Email should be properly configured in MetaTrader via
+Tools->Options->Email
+.
+EnablePushAlerts
+(default = false) — if
+true
+, an email message will be sent when price breaks above or below the High/Low bands. Notifications should be properly configured in MetaTrader via
+Tools->Options->Notifications
+.
+TriggerCandle
+(default = Previous) — the candle to issue alerts on:
+Previous
+— the most recently closed candle or
+Current
+— the yet unfinished candle.
+This indicator can be used in a number of ways. Recent high or low level can be used as a kind of trailing stop-loss for exiting the positions. Such levels can also be used for entering new positions. Although it may not be strong as primary signals, the breach of the recent extreme level could be a confirmation of some other signal. Configurable notification options make it easier to react to those events.

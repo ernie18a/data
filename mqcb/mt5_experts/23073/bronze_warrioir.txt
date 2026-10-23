@@ -1,0 +1,74 @@
+The author of the idea
+-
+Scriptor
+mq5 code author
+-
+barabashkakvn
+The Expert Asvisor uses iCCI (Commodity Channel Index, CCI) and iWPR (Williams’ Percent Range, %R) indicators, as well as custom
+DayImpuls
+indicator. You can open opposite positions, therefore only hedging accounts are recommended.
+All three indicators have a common averaging interval -
+Averaging period for all indicators
+. For CCI, the level is set as a positive number
+CCI: positive, negative levels
+- in the code, it is compared both as +
+CCI: positive, negative levels
+, and as
+CCI: positive, negative levels:
+if
+(count_sells==
+0
+)
+if
+(custom[
+0
+]>Inp_DayImpuls_Level && custom[
+1
+]<custom[
+0
+] && wpr[
+0
+]>Inp_WPR_Level_UP && cci[
+0
+]>Inp_CCI_Level)
+           {
+            OpenPosition(InpLots,
+POSITION_TYPE_SELL
+);
+return
+;
+           }
+if
+(count_buys==
+0
+)
+if
+(custom[
+0
+]<Inp_DayImpuls_Level && custom[
+1
+]>custom[
+0
+] && wpr[
+0
+]<Inp_WPR_Level_DOWN && cci[
+0
+]<-Inp_CCI_Level)
+           {
+            OpenPosition(InpLots,
+POSITION_TYPE_BUY
+);
+return
+;
+           }
+WPR has two levels:
+WPR: level UP
+and
+WPR: level DOWN
+.
+DayImpuls custom indicator has a single level:
+DayImpuls: level
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23073

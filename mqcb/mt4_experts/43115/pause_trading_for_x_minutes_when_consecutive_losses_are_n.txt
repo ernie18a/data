@@ -1,0 +1,1 @@
+If all of a sudden consecutively some trades turned into losses we may require to pause the trading for sometime. Because it maybe either market choppiness or extreme volatility which is not favoring the conditions

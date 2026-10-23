@@ -1,0 +1,7 @@
+Displays the number of each bar - both, relative to the most current bar and in absolute terms from the beginning of the chart.
+The text above the candle describes the candles position relative to the current candle, while the text below the candle stands for its position measured from the beginning of the chart.
+Features
+Fast performance. It only creates objects where the user can see them and deletes it right away where he can't. This makes this indicator lightning fast.
+Script is very light and easy to modify. Feel free to change it according to your needs.
+Example from the right edge of the chart:
+This time from the beginning of the chart. Naturally, the absolute numbering starts with 0 here:

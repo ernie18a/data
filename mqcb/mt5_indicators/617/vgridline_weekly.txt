@@ -1,0 +1,42 @@
+The indicator creates the vertical time grid with one week step on a chart.
+Indicator input parameters:
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+string
+LinesSirname=
+"VLine_Grid_Weekly_"
+;
+// Line name
+input
+color
+Line_Color=Aqua;
+// Line color
+input
+STYLE Line_Style=SOLID_;
+// Line display style
+input
+ENUM_WIDTH Line_Width=w_1;
+// Line width
+input
+bool
+SetBackground=
+true
+;
+// Lines background display
+input
+uint
+LinesTotal=
+10
+;
+// Number of lines in history
+input
+uint
+FutureTotal=
+1
+;
+// Number of lines in empty future history
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/617

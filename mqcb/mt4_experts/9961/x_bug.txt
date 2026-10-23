@@ -1,0 +1,4 @@
+Opens orders using moving average crosses. The below chart is from 1/1/2010 to 2/11/2010 on eurusd. For the complete strategy tester report check the attached zip file.
+Visit
+www.forexyangu.com
+for more free forex resources !!!

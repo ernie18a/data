@@ -1,0 +1,20 @@
+EA Author:
+Juriy. ForTrader.ru
+Buy
+When the price breaks through the parabolic 0.02 & 0.2 we draw the Fibo lines between the closest minimum (before the break through of parabolic) and the maximum of the bar the break through occured at. In such a manner we obtain the level of the target at 161.8% and the level of entry at 50%. The Stop is placed at 2 pips below the last significant minimum.
+Sell
+When the price breaks through the parabolic 0.02 & 0.2 downwards we draw the Fibo lines between the closest significant maximum (before the break through of parabolic) and the minimum of the bar the break through occured at. In such a manner, we obtain the level of the target at 161.8% and the level of entry at 50%. The Stop is placed at 2 pips above the last significant maximum.
+Picture:
+Advices:
+The EA is intended to work at M15 EURUSD chart.
+Some functions that are used in the EA are described in my blog
+programmin in MQL4
+.
+The more detailed description of the strategy can be found on the
+forum
+and the investigation of the strategy can be read in the
+38-th issue of the journal
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8666

@@ -1,0 +1,5 @@
+Found this idea on anther forum and it seems to be usable. Hence here it is for metatrader 5 too. The super trend used is the one published here :
+Super Trend - Simple.
+You can find the exact description of what it does and how and how you can use the parameters for the super trend part. RSI has only one parameter in this indicator : the period.
+Usage :
+The usual way - you can use color changes for signals or you can set yourself some levels to trigger signals

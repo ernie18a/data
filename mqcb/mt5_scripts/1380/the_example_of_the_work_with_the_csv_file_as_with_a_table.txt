@@ -1,0 +1,20 @@
+The script demonstrates the work with the table in which the only detail is necessity to know the number of columns.
+news.txt should be converted to csv file with delimiter";", or any other file but in the same code.
+filehandle=
+FileOpen
+(
+"News.csv"
+,
+FILE_READ
+|
+FILE_CSV
+|
+FILE_ANSI
+,
+';'
+);
+Instead of ";" set this symbol.
+Such approach allows to work with each line separately, and the first column "Code" helps to know where the search value is in the table.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1380

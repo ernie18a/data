@@ -1,0 +1,18 @@
+Grid indicator. Final version. Improved
+according to suggestions.
+Increased the operation speed, correctly processes the missing bars. If the distance between the vertical lines is noticeably smaller, then the history is missing bars there.
+The idea is to replace the standard grid with a more convenient one for visual work.
+Recommended for visual work. Applications are numerous. Up to the creation of trading systems, as it allows to see certain regularities of the price behavior.
+The vertical line
+correspond to the start of an hour. Some have different colors.
+start of the week - red line,
+start of the day - blue line,
+start of the month - yellow vertical line.
+Horizontal line
+- placed on psychological (round) levels, like 1.3700, 13750, etc.
+blue - shape line
+gray - intermediate levels
+Optimized the code. Fixed the operation flaws. Introduced improvements by popular demand. The code contains detailed comments.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8684

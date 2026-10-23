@@ -1,0 +1,6 @@
+This indicator allows you to see the Moving Averages from different time frames on the same chart. It helps you to spot the dynamic levels of support and resistance. It uses a custom window with check boxes to show/hide the different Moving Averages without need to access the indicator settings window.
+Features
+Ability to show 3 moving averages for every available time frame.
+Easy to use window to show or hide the different moving averages.
+Example with the indicator showing the D1 and H4 moving averages:
+The settings windows lets you choose the settings for each of the moving averages:

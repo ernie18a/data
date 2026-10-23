@@ -1,0 +1,5 @@
+Description:
+The script make TakeProfit and StopLoss on price, where total profit for all of the opened positions will have non-negative.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9567

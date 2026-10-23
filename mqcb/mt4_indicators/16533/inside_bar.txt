@@ -1,0 +1,3 @@
+The indicator determines the inside bar and marks its High/Low. It is plotted based on the closed candles (does not redraw). The identified inside bar can be displayed on smaller periods. You may set a higher period (to search for the inside bar) and analyze on a smaller one.
+Indicator Parameters
+Period to find Inside Bar — the period to search for the inside bar. If a specific period is set, the search will be performed in that period.

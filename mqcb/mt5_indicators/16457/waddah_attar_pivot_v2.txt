@@ -1,0 +1,7 @@
+Real author:
+waddahattar@hotmail.com
+The indicator that displays tree pivots on one chart, with the ability to change their timeframes.
+Fig1. The Waddah_Attar_Pivot_V2 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16457

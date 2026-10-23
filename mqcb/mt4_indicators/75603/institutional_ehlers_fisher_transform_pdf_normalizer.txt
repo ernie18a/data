@@ -1,0 +1,34 @@
+Why I Built This DSP Engine
+Standard oscillators like RSI, Stochastic, or CCI always bothered me during strong trend expansions. When institutional volume enters the market, these indicators get pinned at their extreme boundaries (sitting at 90 or 10 for hours). They lose all dynamic sensitivity, triggering premature reversal signals that trap retail traders against powerful order flow.
+The core issue is statistical: standard technical indicators assume market prices naturally follow a normal bell curve. They don't. Price action is non-linear and chaotic.
+To fix this boundary-flattening problem, I implemented Digital Signal Processing (DSP) mathematics—specifically John F. Ehlers'
+Fisher Transform
+—to normalize price data directly inside MetaTrader 4.
+The Mathematics: PDF Normalization
+The
+Institutional Ehlers Fisher Transform
+alters the Probability Density Function (PDF) of price action. By converting raw price variations into a Gaussian Normal Distribution, the engine cleans up routine market noise around the zero baseline while expanding true statistical outliers into sharp, unmistakable vertical peaks.
+No Bounded Limits:
+Unlike RSI, the Fisher Transform is unbounded. Extreme moves don't get squished at an arbitrary "100" ceiling; they stretch proportional to actual momentum.
+Zero-Lag Sensitivity:
+Because the transform reshapes price geometry directly rather than averaging historical candles, turning points appear instantly without moving average phase-lag.
+Core Architecture & Inputs
+InpPeriod (Default = 10):
+The rolling DSP calculation window. A value of 10 balances fast execution speed with reliable signal noise filtration.
+Gaussian Normalization Engine:
+Normalizes median price into a
+$[-1, 1]$
+vector before feeding it into the continuous logarithmic transform function
+$y = 0.5 \cdot \ln\left(\frac{1+x}{1-x}\right)$
+.
+Strict MT4 Code Standard:
+Built with #property strict memory management and reverse-indexing loops to ensure near-zero CPU usage during high-volatility news spikes.
+Practical Execution Protocol
+Attach to Chart:
+Works exceptionally well on M15, H1, and H4 timeframes across major pairs and metals.
+Filter the Baseline:
+Ignore minor oscillations near the zero level.
+Wait for Extreme Spikes:
+Watch for the main Fisher line (Blue) to stretch far above or below the baseline into a sharp peak.
+Take the Entry:
+Execute your mean-reversion trade on the exact bar where the Blue line crosses back over the Red dotted trigger line.

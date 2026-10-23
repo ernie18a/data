@@ -1,0 +1,16 @@
+Real author:
+Witold Wozniak
+Fisher Cyber Cycle is an oscillator that modifies the
+Cyber Cycle
+custom indicator values using
+Inverse Fisher Transform
+.
+The indicator is inspired by John Ehlers' article
+"Using The Fisher Transform"
+published in November 2002 in the
+"Technical Analysis Of Stock & Commodities"
+magazine.
+Principles of working with the indicator are simple. We should buy when the indicator is crossing -0.7 level upwards or 0.7 level upwards, in case it has crossed -0.7 level upwards some time before. We should sell when the indicator is crossing level 0.7 downwards or -0.7 level downwards, in case it has crossed level 0.7 downwards some time before. The indicator crossings with its signal line can also be used.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/553

@@ -1,0 +1,4 @@
+In fact, there is nothing new, but the indicator generates a signal somewhat earlier than the Alligator (at similar values of MA periods in both indicators). On the higher timeframes the difference can be noticeable (in my opinion).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7814

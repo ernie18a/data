@@ -1,0 +1,4 @@
+Definition :
+John Ehlers’ “Super Smoother”, a 2-pole Butterworth filter combined with a 2-bar SMA that suppresses the Nyquist frequency
+Usage :
+You can use color changes as signals.

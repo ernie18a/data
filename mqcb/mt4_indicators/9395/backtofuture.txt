@@ -1,0 +1,18 @@
+Hello!
+The indicator Back In the Future draws forthcoming bars in a tester, in advance...
+The description:
+It works only in a tester, in a mode of visualisation and on timeframe not less 5M.
+Draws the specified range of the future bars in advance.
+I will remind that schedule shift to the right is regulated by a triangle in upper edge of the chart of the price - Chart shift.
+Sense of use
+: training and researches.
+For example, for testing of various kinds of a trawl together with my adviser the
+Trading Simulator 2
+, the analysis of "prophetical" qualities of various methods and indicators.
+Image:
+The Future parameter is a number of bars to show, and the GoldColor parameter draws the future bar with gold color (for the color schemes with black background).
+Well, it is a pity that so it is impossible in real!..
+However... I still will think over it!
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9395

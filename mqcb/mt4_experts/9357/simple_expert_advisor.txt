@@ -1,0 +1,24 @@
+Many people asks to post a simple expert advisor.
+The advisor is not designed to trade without losses. Its purpuse to check trade strategies.
+Here is the one of them:
+There are two WMA: WMA 8 and EMA 28.
+When WMA crosses EMA from below - it buys.
+When WMA crosses EMA from above - it sells.
+After position opening it sends 2 orders: Take-profit 50 points (from the open price), Stop-loss 50 points (open price + spread)
+Recommendations:
+Trade with fixed value of deposit (10%) and leverage (1:100)
+Do not use it for trade for all of the currency pairs
+If trend has reversed, and WMA crossed EMA in the direction opposite to the positions opened - open position in the trend direction, and close previous (of course, the old orders should be deleted and new sended).
+Image:
+Editor's remark:
+Note that it's a mirror translation of the
+original Russian version
+.
+If you have any questions to the author, suggestions or comments, it's better to post them
+there
+.
+If you have found this code useful for trading or educational purposes, don't forget to thank author.
+Good Luck!
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9357

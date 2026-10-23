@@ -1,0 +1,31 @@
+It isn't the original version of
+"Mover3MkII"
+Expert Advisor by Boris Odintsov, it's my viewpoint on deals of Automated Trading Championship 2010.
+To open positions it uses the signals of
+Moving Average
+and
+Stochastic
+indicators.
+EURUSD, M5, every tick, 5-15 lots.
+The strategy
+:
+Open long position:
+MA increases, Stochastic increases and located below the oversold level.
+Open short position:
+MA decreases, Stochastic decreases and located above the overbought level.
+Close positions:
+Stop Loss and Take Profit levels.
+Figure 1. Expert Advisor, tested in optimization period with best parameters.
+Figure 2. Expert Advisor, tested in post-optimization period.
+Input parameters:
+TakeProfit             =   0.007   -  Take Profit.
+StopLoss               =   0.0035 -  Stop Loss.
+MA_Period             =      76    - Moving Average period.
+Stoch_OverSold     =      30     - Stochastic oversold level.
+Stoch_OverBought  =      70    - Stochastic overbought level.
+Lot                        =   5-15    -  Lots to trade
+Recommendations:
+It's recommended to use this Expert Advisor as a base of your own strategy.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/275

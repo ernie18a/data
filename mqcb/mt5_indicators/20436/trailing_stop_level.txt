@@ -1,0 +1,28 @@
+The indicator displays possible StopLoss levels on the price chart. Levels are shown separately for Long and Short positions. The indicator is similar to
+Mod_ATR_Trailing_Stop
+, but has a different calculation basis - in percentage.
+It has one input parameter:
+Percent
+- the percentage value of the distance between the Stop line and the Close price.
+Calculation:
+If
+Close[i] > TSL[i-1]
+and
+Close[i-1] > TSL[i-1]
+TSL[i] = Max(TSL[i-1], Close[i]-loss)
+If
+Close[i] < TSL[i-1]
+and
+Close[i-1] < TSL[i-1]
+TSL[i] = Min(TSL[i-1], Close[i]+loss)
+If
+Close[i] > TSL[i-1]
+TSL[i] = Close[i] - loss
+If
+Close[i] < TSL[i-1]
+TSL[i] = Close[i] + loss
+where
+loss = Close[i]*Percent/100.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20436

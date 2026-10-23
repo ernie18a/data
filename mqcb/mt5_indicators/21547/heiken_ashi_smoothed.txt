@@ -1,0 +1,10 @@
+Heiken Ashi is a very well known indicator.
+One of the variations that is actually improving the indicator is the "smoothed" version. The logic behind the smoothed version is simple:
+Instead of using "raw" prices" for calculations, it's using smoothed/filtered/averaged prices instead.
+That usually filters out some false signals and makes it easier to use.
+This version can use some of the 4 basic types of averages for smoothing:
+Simple moving average (SMA).
+Exponential moving average (EMA).
+Smoothed moving average (SMMA).
+Linear weighted moving average (LWMA).
+Additionally you can use a "step" filter (in pips) to filter out value changes that are smaller than the desired threshold (if the step is set to <=0, then that filter is not used).

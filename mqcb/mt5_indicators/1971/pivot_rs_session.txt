@@ -1,0 +1,142 @@
+Real author:
+DVYU inc.
+The indicator shows Pivot levels and uses a special background color for the session, during which the levels were calculated.
+Indicator input parameters:
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+Hour   StartHour=H08;
+// Hour of session start
+input
+Min    StartMinute=M00;
+// Minute of session start
+input
+uint
+SessionTime=
+400
+;
+// Session time in minutes
+input
+color
+Color_Session =
+clrPlum
+;
+// Session color
+input
+color
+Color_Res =
+clrBlue
+;
+// Color of resistance
+input
+color
+Color_R30 =
+clrGreen
+;
+// Color of level R30
+input
+color
+Color_R20 =
+clrGreen
+;
+// Color of level R20
+input
+color
+Color_R10 =
+clrGreen
+;
+// Color of level R10
+input
+color
+Color_P=
+clrDarkOrchid
+;
+// Color of level P
+input
+color
+Color_S10 =
+clrRed
+;
+// Color of level S10
+input
+color
+Color_S20 =
+clrRed
+;
+// Color of level S20
+input
+color
+Color_S30 =
+clrRed
+;
+// Color of level S30
+input
+color
+Color_Sup =
+clrMagenta
+;
+// Color of support
+//---
+input
+STYLE  Style_Res = SOLID_;
+// Support line style
+input
+STYLE  Style_R30 = SOLID_;
+// Line style of level R30
+input
+STYLE  Style_R20 = SOLID_;
+// Line style of level R20
+input
+STYLE  Style_R10 = SOLID_;
+// Line style of level R10
+input
+STYLE    Style_P = DASH_;
+// Line style of level P
+input
+STYLE  Style_S10 = SOLID_;
+// Line style of level S10
+input
+STYLE  Style_S20 = SOLID_;
+// Line style of level S20
+input
+STYLE  Style_S30 = SOLID_;
+// Line style of level S30
+input
+STYLE  Style_Sup = SOLID_;
+// Resistance line style
+//---
+input
+Width  Width_Res = Width_2;
+// Width of resistance line
+input
+Width  Width_R30 = Width_1;
+// Line width of level R30
+input
+Width  Width_R20 = Width_2;
+// Line width of level R20
+input
+Width  Width_R10 = Width_3;
+// Line width of level R10
+input
+Width    Width_P = Width_1;
+// Line width of level P
+input
+Width  Width_S10 = Width_3;
+// Line width of level S10
+input
+Width  Width_S20 = Width_2;
+// Line width of level S20
+input
+Width  Width_S30 = Width_1;
+// Line width of level S30
+input
+Width  Width_Sup = Width_2;
+// Width of support line
+This indicator was first implemented in MQL4 and published in the
+Code Base at mql4.com
+on 30.01.2008.
+Indicator Pivot_RS_session
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1971

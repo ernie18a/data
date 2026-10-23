@@ -1,0 +1,30 @@
+Designed to trade using Heikin Ashi candles. By smoothing price action and filtering out market noise, this EA creates a clear map of market direction, allowing traders to catch strong trends, avoid false reversals, and manage trades with confidence.
+Key Features & Parameters
+1. Heikin Ashi Candle Integration
+Smoothed Trend Visualization
+– Removes random noise for cleaner signals.
+Bullish/Bearish Color Detection
+– EA trades only when clear Heikin Ashi trend shifts appear.
+Customizable Heikin Ashi Settings
+– Adjust smoothing to match your strategy.
+2. Smart Trade Management
+Close on Trend Flip
+– Exits trades instantly when candle colors reverse.
+Equity & Profit Controls
+– Close all trades when floating profit/loss hits your set threshold.
+Key Benefits of Using Heikin Ashi TrendMap EA
+✅
+Clear Trend Detection
+– Filters out choppy moves and false signals.
+✅
+Works on Any Pair & Timeframe
+– From scalping to swing trading.
+✅
+Hands-Free Automation
+– Executes entries and exits without hesitation.
+✅
+Emotion-Free Trading
+– Relies on Heikin Ashi rules, not human guesswork.
+✅
+Flexible Settings
+– Adaptable for aggressive or conservative strategies.

@@ -1,0 +1,7 @@
+The real author:
+KoliEr Li
+The breakthrough trend indicator. TrendMode input parameter allows creating four variants of displaying the indicator in the chart.
+Fig.1 The Kolier_SuperTrend indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1208

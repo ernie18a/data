@@ -1,0 +1,8 @@
+The signal line of the MACD (Moving Average Convergence/Divergence) indicator is often used as a momentum filter in auto trading algorithms.
+Enable buy logic only when the signal line is above the 0 level
+and
+the last "bar" of the signal line closes higher than the previous "bar" of the signal line (this inherently includes upward level crossovers).
+Enable sell logic only when the signal line is below the 0 level
+and
+the last "bar" of the signal line closes lower than the previous "bar" of the signal line (this inherently includes downward level crossovers).
+MACD_Signal_Line_color automatically detects when the conditions (above) are true, and colors the line green to filter-in longs, and red to filter-in shorts:

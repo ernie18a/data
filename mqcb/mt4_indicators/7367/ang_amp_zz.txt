@@ -1,0 +1,5 @@
+The Zig Zag indicator with a sound alert on appearance of a new line on the chart.
+ang_Amp_ZZ
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7367

@@ -1,0 +1,9 @@
+PriceAction indicator based on indicating Price Action candles. It indicates each candle type by different colored histogram bars.
+The length of each bar of the histogram indicates the power of Price Action candles.
+Templates:
+PinBar Up --------------> index0 ----> Lime;
+PinBar Down -----------> index1 ----> Red;
+Inside Bar UP ----------> index2 ----> Blue;
+Inside Bar Down -------> index3 ----> Orange;
+Engulfing Bar UP -------> index4 ----> DarkGreen;
+Engulfing Bar Down ----> index5 ----> LightCoral;

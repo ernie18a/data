@@ -1,0 +1,18 @@
+This is the final version of the indicator based on two forum branches:
+AMA Кауфмана от wellx
+Оптимизированный вариант адаптивной скользящей средней Кауфмана AMA от wellx
+Added an external parameter named AMA_Trend_Type that defines the choice of trend detecting method.
+AMA_Trend_Type is nonzero:
+The difference between the current value of AMA (AMA[0]) and the value of AMA on the preceding bar (AMA[1]) is measured.
+deltaAMA=AMA[0]-AMA[1]. The trend detection sensitivity is set in points as dK*Point.
+If deltaAMA>dK*Point, then this is the uptrend, a blue point will be put onto the AMA line (as shown in the figure below).
+If deltaAMA<dK*Point, then this is the downtrend, a red point will be put onto the AMA line.
+AMA_Trend_Type is equal to zero:
+The array of AMA values on the latest PeroidAMA bars is taken and standard deviation StdAMA is calculated.
+The trend detection sensitivity is set in standard deviations as dK*StdAMA.
+If deltaAMA>dK*StdAMA, then this is the uptrend, a blue point will be put onto the AMA line.
+If deltaAMA<dK*StdAMA, then this is the downtrend, a red point will be put onto the AMA line.
+The default value of the AMA_Trend_Type=1, the modification of the AMA is measured in points.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7385

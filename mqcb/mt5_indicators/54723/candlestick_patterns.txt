@@ -1,0 +1,5 @@
+This is a indicator displaying candlesticks patterns on a chart.
+You can choose among these patterns:
+@
+Conor Mcnamara
+Thanks for finding and fixing the error.

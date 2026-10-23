@@ -1,0 +1,3 @@
+ForexCandlestickPatterns with alert are forex indicators based on Japanese Candlestick Strategies
+by the legendary Japanese Munehisa Homma, which can help traders penetrate inside of financial markets.
+Hopefully useful for fellow traders.

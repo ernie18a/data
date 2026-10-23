@@ -1,0 +1,10 @@
+Indicator
+XXDPO
+represented as candles Candlesticks appear as a result of relevant price timeseries processed by the indicator algorithm. In many situations, such approach may be more informative for the purpose of analysis.
+The indicator uses the classes of library SmoothAlgorithms.mqh (to be copied to <terminal_data_folder>\MQL5\Include). The use of the classes is described in details in article
+Averaging Price Series for Intermediate Calculations without Using Additional Buffers
+.
+Fig. 1. Indicator XXDPO_Candle
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23490

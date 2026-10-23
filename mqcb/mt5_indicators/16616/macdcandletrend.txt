@@ -1,0 +1,7 @@
+This is a semaphore signal indicator using the colors of the
+MACDCandle
+indicator candles as trading signals.
+Fig.1. MACDCandleTrend indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16616

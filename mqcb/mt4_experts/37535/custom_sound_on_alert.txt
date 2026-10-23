@@ -1,0 +1,1 @@
+This code can be used to generate alert with custom sound on every new bar.

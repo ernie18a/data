@@ -1,0 +1,158 @@
+The indicator looks like this:
+Three types of graphical constructions were used for this visual effect:
+DRAW_HISTOGRAM2
+("Level UP");
+DRAW_LINE
+("CCI");
+DRAW_HISTOGRAM2
+("Level DOWN").
+Indicator Input
+Averaging period
+- indicator averaging period;
+Level UP
+- the UP level value;
+Level DOWN
+- the DOWN level value.
+The UP and DOWN levels will be immediately shown in the indicator sub-window:
+How to Access Indicator Data in an Expert Advisor
+The DRAW_HISTOGRAM2 style is based on two indicator buffers, that is why we see two Level UP values and two Level Down values in Data Window:
+These values correspond to indicator buffers from 0 to 4 inclusive.
+In the Expert Advisor, we
+create an indicator handle using
+iCustom
+:
+//--- input parameters
+input
+int
+Inp_CCI_ma_period =
+14
+;
+// Averaging period
+input
+double
+Inp_CCI_LevelUP   =
+90
+;
+// Level UP
+input
+double
+Inp_CCI_LevelDOWN =-
+90
+;
+// Level DOWN
+//---
+int
+handle_iCustom;
+// variable for storing the handle of the iCustom indicator
+//+------------------------------------------------------------------+
+//| Expert initialization function                                   |
+//+------------------------------------------------------------------+
+int
+OnInit
+()
+  {
+//--- create handle of the indicator iCCI
+handle_iCustom=
+iCustom
+(
+Symbol
+(),
+Period
+(),
+"CCI Color Levels"
+,Inp_CCI_ma_period,Inp_CCI_LevelUP,Inp_CCI_LevelDOWN);
+//--- if the handle is not created
+if
+(handle_iCustom==
+INVALID_HANDLE
+)
+     {
+//--- tell about the failure and output the error code
+PrintFormat
+(
+"Failed to create handle of the iCCI indicator for the symbol %s/%s, error code %d"
+,
+Symbol
+(),
+EnumToString
+(
+Period
+()),
+GetLastError
+());
+//--- the indicator is stopped early
+return
+(
+INIT_FAILED
+);
+     }
+//---
+return
+(
+INIT_SUCCEEDED
+);
+  }
+It is assumed here that the
+CCI Color Levels
+indicator is located in [data folder]\MQL5\Indicators\.
+How indicator values are obtained (only buffers 0, 2 and 4 are significant):
+//+------------------------------------------------------------------+
+//| Expert tick function                                             |
+//+------------------------------------------------------------------+
+void
+OnTick
+()
+  {
+//---
+double
+level_up   = iCustomGet(handle_iCustom,
+0
+,
+0
+);
+// buffer #0 -> BufferUpHigh
+double
+cci        = iCustomGet(handle_iCustom,
+2
+,
+0
+);
+// buffer #2 -> BufferCCI
+double
+level_down = iCustomGet(handle_iCustom,
+4
+,
+0
+);
+// buffer #4 -> BufferDownLow
+string
+text=
+"Lelev UP #0: "
++
+DoubleToString
+(level_up,
+2
+)+
+"\n"
++
+"CCI #0: "
++
+DoubleToString
+(cci,
+2
+)+
+"\n"
++
+"Lelev DOWN #0: "
++
+DoubleToString
+(level_down,
+2
+);
+Comment
+(text);
+  }
+In the above screenshot, the mouse points to a bar with index 0, "Data Window" with the indicator data is also shown, and EA's information about buffers 0, 2 and 4 is displayed on the chart.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19704

@@ -1,0 +1,4 @@
+Very often, especially in the non-intuitive timeframes (M15, M12, M30, H4, H8 ...) we want to know how much time is left before a candlestick closes. This can be done quickly - at a glance.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1722

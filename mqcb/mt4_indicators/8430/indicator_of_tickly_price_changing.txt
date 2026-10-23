@@ -1,0 +1,7 @@
+The indicator shows the number of the points the price changed by and the direction of price changing with the coming of a new tick. As distinct from its forerunner
+https://www.mql5.com/en/code/8414
+the information is displayed in the main window of the chart and the sound accompaniment of the tick coming was added.
+Indicator of Tickly Price Changing
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8430

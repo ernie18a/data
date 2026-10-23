@@ -1,0 +1,40 @@
+BB MACD MetaTrader indicator
+— is a basic MACD (Moving Average Convergence Divergence) indicator variation, which helps in detecting the trend change points and measuring the current trend's strength. The indicator is drawn in the separate window on the chart and consists of two lines (blue and red) and the dots, which can be either green or magenta. The change of the dots' color is a good signal provider, while the width of gap between the two lines indicates the strength of the current trend. This indicator is available for MT4 and MT5.
+Input parameters
+FastLen
+(default = 12) — the period of the fast moving average (the one with the lowest period), which is used in this indicator's dots calculations.
+SlowLen
+(default = 26) — the period of the slow moving average (the one with the highest period), which is used in this indicator's dots calculations.
+Length
+(default = 10) — the period of the moving average and the standard deviation indicators that are used in this indicator's lines calculations.
+barsCount
+(default = 400) — the maximum amount of bars on the chart to apply these calculations to.
+StDv
+(default = 2.5) — weight multiplier for the standard deviation indicator in its part in the calculations compared to the moving average.
+EnableNativeAlerts
+(default = false) — if
+true
+, MetaTrader's native pop-up alerts will be used on BB MACD color change.
+EnableSoundAlerts
+(default = false) — if
+true
+, sound alerts will be used on BB MACD color change.
+EnableEmailAlerts
+(default = false) — if
+true
+, MetaTrader's email alerts will be sent on BB MACD color change. Email should be properly configured in MetaTrader via
+Tools->Options->Email
+.
+EnablePushAlerts
+(default = false) — if
+true
+, MetaTrader's push notification alerts will be sent to your device upon BB MACD color change. Notifications should be properly configured in MetaTrader via
+Tools->Options->Notifications
+.
+SoundFileName
+(default = "alert.wav") — sound file name to play on alert if
+EnableSoundAlerts
+is set to
+true
+.
+As the chart example suggests, the signals to buy are when the magenta dots turn into the green ones and the signal to sell is when the green dots become magenta. Trading is better to be performed when both blue and red lines are rather wide.

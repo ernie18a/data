@@ -1,0 +1,2 @@
+Three T3s calculated: of high (upper line), close (middle line) and low (lower line).
+When upper 2 have the same slope (up or down) the color of the band between them also changes to show the trend of the upper two T3s combined. The same rule is applied for the lower band.

@@ -1,0 +1,8 @@
+Fractal Adaptive Moving Average Technical Indicator (FRAMA) was developed by John Ehlers. This indicator is constructed based on the algorithm of the
+Exponential Moving Average
+, in which the smoothing factor is calculated based on the current fractal dimension of the price series. The advantage of FRAMA is the possibility to follow strong trend movements and to sufficiently slow down at the moments of price consolidation.
+Using Fractal Adaptive Moving Average (FRAMA) for MACD calculation is somewhat difficult if some additional steps are not done. In this indicator an addition of smoothing is added to make the Fractal Adaptive MACD more to what we expect from MACD type indicators.
+Without smoothing it is "nervous" (too many signals) which is due to its adaptive nature (too fast a reaction when we expect a lag - which is the essential part of any MACD indicator - the "convergence/divergence" part of MACD can happen only if there is some reasonable lag).
+Super smoother
+is used in this case for smoothing (there might be some other choices too, but since we needed smoother result and minimal lag addition caused by smoothing, super smoother is a reasonable choice).
+Signal line in this indicator is a FRAMA too, which makes it an "all FRAMA MACD" indicator.

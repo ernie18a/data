@@ -1,0 +1,16 @@
+1.Overview
+The Double Bollinger Band Strategy makes use of two Bollinger Bands in order to filter entries and exits in the forex market.
+The strategy aims to enter Buy (Sell) trades when price crosses above (below) 3σ (2  standard deviation . The strategy also
+considers the 2σ (2 standard deviations) standard deviation level of the Bollinger Bands for making trade decisions.
+Default paramenters :
+2σ Bollinger Bands (20,2) : the simple moving average (20) and the number of standard deviations (2).
+3σ Bollinger Bands(20,3):  the simple moving average (20) and the number of standard deviations (3) .
+Input paramenters
+2. Long Entry
+Open a Buy order When these 2 conditions are met:
+- Condition1 : The Ask price crosses above the 3σ upper Bollinger Band (BB3UP).
+- Condition2: If condition1 is OK. Check if the current price is within the range of the 2σ upper Bollinger Band (BB2UP) and 2σ lower Bollinger Band (BB2LO).
+3. Sell entry
+Open a Sell order When these 2 conditions are met :
+- Condition 1: the Bid price crosses below the 3σ lower Bollinger Band (BB3LO).
+- Condition 2: if condition 1 is OK. Check if the current price is within the range of the 2σ lower Bollinger Band (BB2LO) and 2σ upper Bollinger Band (BB2UP).

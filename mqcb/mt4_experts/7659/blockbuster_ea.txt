@@ -1,0 +1,13 @@
+Author: Ron Thompson
+Here is the EdvardNN's
+opinion
+on this EA:
+"I ran it on the Alpari demo for 2 days, then 1 more day.
+It bites 3 points in a serious flat (works by Bollinger, opens in reverse during a short-term excess of the volatility, but if the impulse movement lasts for at least 14 points or more, there will be a serious loss)".
+Tested:
+Period: М5.
+Model: breakpoints.
+Symbol: EURUSD.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7659

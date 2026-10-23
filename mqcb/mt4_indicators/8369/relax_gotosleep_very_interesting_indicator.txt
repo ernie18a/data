@@ -1,0 +1,11 @@
+A very interesting indicator. It gives trading signals!!!
+It works on M1!
+A unique system of forecasting is based on the floating moving average!
+It is better if you launch it at the end of the working day...
+Attention!
+The trading signals should be checked with other indicators.
+Use it only on your demo accounts!
+Lucky trading to all!
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8369

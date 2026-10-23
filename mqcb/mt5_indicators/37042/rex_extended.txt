@@ -1,0 +1,6 @@
+Original rex indicator (with an explanation what and how it is done) was posted here :
+Rex indicator
+This version is extend with a sort of Donchian channels to detect possible overbought, oversold and ranging zones)
+Recommendations:
+you can use it the same way as any other rex indicator
+you can use the Donchian channels as possible OB,OS, ranging zones

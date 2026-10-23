@@ -1,0 +1,4 @@
+This indicator is the version of the indicator NRTR. Candlesticks are painted for the convenience of visual perception.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7224

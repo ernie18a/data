@@ -1,0 +1,4 @@
+The ColorBars Indicator paints bars with different colors depending on the volume changes. If the volume has increased, the color is green, overwise the color is red.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/59

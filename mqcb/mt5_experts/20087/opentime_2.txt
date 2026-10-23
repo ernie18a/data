@@ -1,0 +1,110 @@
+This EA is a further development of
+OpenTime
+version 1.
+What's new in version 2
+The EA now allows setting two time intervals, inside which positions can be opened;
+It also allows setting the days of the week when opening of positions is allowed;
+The following parameters can be specified independently for each time interval:
+Trading type: BUY or SELL
+Stop Loss
+Take Profit
+The same lot size and trailing function are used for the two intervals. The EA may have only one position in each time interval.
+A unique magic number is generated for each time interval. The magic number for interval #1 magic is specified
+in input parameters
+:
+input
+ushort
+InpTakeProfitTwo  =
+90
+;
+// TakeProfit time interval #2 (in pips)
+input
+string
+_____3_____=
+"Advisor Options"
+;
+input
+ulong
+m_magic=
+714479490
+;
+// MagicNumber time interval #1 (time interval #2 == MagicNumber+1)
+//---
+input
+ulong
+m_slippage=
+30
+;
+This magic number is saved in the internal
+m_magic_one
+variable, while the magic number of the interval #2 is saved in the internal
+m_magic_two
+variable, which is larger than
+m_magic_one
+by one:
+//+------------------------------------------------------------------+
+//---
+#define
+m_magic_one m_magic
+#define
+m_magic_two m_magic_one+
+1
+//---
+#include
+<Trade\PositionInfo.mqh>
+Input Parameters
+Positions closing options
+Use closing time interval #1
+- enable/disable closing by time for interval #1;
+Closing time interval #1 (ONLY hour:minute!)
+- time to close a position for the interval #1 (only hours and minutes are taken into account);
+Use closing time interval #2
+- enable/disable closing by time for interval #2;
+Closing time interval #2 (ONLY hour:minute!)
+- time to close a position for the interval #2 (only hours and minutes are taken into account);
+Trailing stop ("0" -> trailing OFF) (in pips)
+- trailing stop function, 0 means that the function is disabled;
+Trailing step (in pips)
+- trailing step value.
+Positions opening settings
+Trade on Monday
+- enabled/disable trading on Monday;
+Trade on Tuesday
+- enabled/disable trading on Tuesday;
+Trade on Wednesday
+- enabled/disable trading on Wednesday;
+Trade on Thursday
+- enabled/disable trading on Thursday;
+Trade on Friday
+- enabled/disable trading on Friday;
+Opening start time interval #1 (ONLY hour:minute!)
+- the beginning of the time interval #1 (only hours and minutes are taken into account);
+Opening end time interval #1 (ONLY hour:minute!)
+- the end of the time interval #1 (only hours and minutes are taken into account);
+Opening start time interval #2 (ONLY hour:minute!)
+- the beginning of the time interval #2 (only hours and minutes are taken into account);
+Opening end time interval #2 (ONLY hour:minute!)
+- the end of the time interval #2 (only hours and minutes are taken into account);
+Duration in seconds
+- the duration of an operation in seconds;
+Type of trade in time interval #1 ("true" -> BUY, "false" -> SELL)
+- trading type allowed in the interval #1: BUY or SELL;
+Type of trade in time interval #2 ("true" -> BUY, "false" -> SELL)
+- trading type allowed in the interval #2: BUY or SELL;
+Volume transaction
+- the volume of position to open;
+StopLoss time interval #1 (in pips)
+- Stop Loss for positions in the interval #1;
+TakeProfit time interval #1 (in pips)
+- Take Profit for positions in the interval #1;
+StopLoss time interval #2 (in pips)
+- Stop Loss for positions in the interval #2;
+TakeProfit time interval #2 (in pips)
+- Take Profit for positions in the interval #2.
+Expert Advisor Options
+MagicNumber time interval #1 (time interval #2 == MagicNumber+1)
+- the unique ID used for positions in the interval #1. The magic number for the interval #2 is greater by one.
+Testing results for EURUSD,M30:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20087

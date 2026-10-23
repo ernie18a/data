@@ -1,0 +1,7 @@
+Basics :
+BB stops, as it is in original, is based on simple moving average (that is the average that is used in Bollinger bands). Since then we had a couple of changes in that - in order to adjust the (already useful) indicator a bit more to get a possible better market response
+This version :
+We are using Hull moving average in this version instead of using the simple moving average. Also, the Hull average in this version allows the adjustment of the "speed" (which can be very usefull - see the last "big picture" example). Also, in this version multiple stops are calculated which can further help to assess the stops
+Usage :
+You can use it as any similar stops indicator
+The "big picture" example - since the Bollinger bands originates back in days when daily data was used for chart analysis, here is an example of this  indicator applied to daily chart, but with "speed" set to 1 (ie: it was slowed down a bit). As usual : take some time and do some tests in order to find optimal settings for your trading strategy prior to using it for trading decisions

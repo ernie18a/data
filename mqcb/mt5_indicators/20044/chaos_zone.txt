@@ -1,0 +1,7 @@
+Indicator that is a combination of two Bill Williams' indicators.
+Accelerator Oscillator.
+Awesome Oscillator.
+The way how it works is simple - but seems to be producing usable results:
+When both are sloping up, it indicates up.
+When both are sloping down, it indicates down.
+Otherwise it indicates neutral.

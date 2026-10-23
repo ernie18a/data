@@ -1,0 +1,15 @@
+Theory :
+John Ehlers describes what he calls the nonlinear Kalman filter in the following way :
+Take EMA of price (better, a 3 Pole filter).
+Take the difference (delta) between Price and its EMA.
+Take an EMA of delta (or a 3 Pole filter):
+Smoothing will help reduce whipsaws.
+Ideally, smoothing introduces no major trend mode lag because delta is detrended.
+Add the smoothed delta to EMA for a zero lag curve.
+Add 2*(smoothed delta) to EMA for a smoother predictive line.
+In order to add signals other than simple slope direction change, in this version you can chose 3 types of color changes :
+color change on slope
+color change on outer (floating) levels cross
+color change on middle (floating) level (sort of a "zero line") cross
+Usage :
+You can use the color changes as signals

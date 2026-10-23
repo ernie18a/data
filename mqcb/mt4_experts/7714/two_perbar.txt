@@ -1,0 +1,7 @@
+Author: Ron Thompson
+Adviser Two PerBar. One more unpretentious variant.
+------------------------------
+Parameters of testing
+Symbol: EURUSD.
+Period: Daily.
+Model: All tics.

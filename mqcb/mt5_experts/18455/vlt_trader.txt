@@ -1,0 +1,21 @@
+Author of the idea
+:
+Yuri
+.
+MQL5 code author
+:
+Vladimir Karputov
+.
+The trading system is based on volatility compression.
+An entry signal is generated when the market forms a smallest candlestick over a certain number of bars.
+Entry Signal Generation Rules
+- When a new candlestick emerges, "
+Count candles
+" bars are counted starting with the last one, and the lowest candlestick size (High - Low) is determined.
+- If the first bar is the smallest one, the following orders are placed:
+a pending BuyStop order: Bar 1 High price + 10 points
+a pending SellStop order: Bar 1 Low price + 10 points
+Before placing a pending BuyStop order, older BuyStop orders are deleted. The same is done for SellStop orders.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18455

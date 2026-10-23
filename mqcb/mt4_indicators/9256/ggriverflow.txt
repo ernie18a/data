@@ -1,0 +1,5 @@
+This indicator informs you about the
+depth of the trend
+.
+Useful on trending market.
+GG-RiverFlow

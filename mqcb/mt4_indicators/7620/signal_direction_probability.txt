@@ -1,0 +1,11 @@
+Description:
+This indicator determines the percent change between previous closing prices, for the lenght of the array, and draws the percent change signal in the indicator window. After the percent change is determined, correlation between the price signal, and percent change is calcualated and drawn(
+red line
+is the correlation and black line is percent change).
+In theory, if there is high correlation(greater than 0.7) between percent change and price signal, then the price signal should continue in the same direction. For example, if a price signal is moving upward, and the correlation(
+red line
+) between the price signal and price percent change is high, then the price should continue to keep moving in the same direction, which generates a buy signal. A sell signal is generated, if the correlation between the price signal and the percent change is high and the price signal is moving downward.
+Note: for the correlation(
+red line
+) to appear, the indicator needs to have at least two ticks. First tick, calculates percent change, the second tick, calculates correlation between price change and price signal.
+Image:

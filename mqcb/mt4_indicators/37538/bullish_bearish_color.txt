@@ -1,0 +1,1 @@
+This indicator draws coloured histograms to identify bullish and bearish bars. It has two separate colours for bullish and bearish bars/candles.

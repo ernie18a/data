@@ -1,0 +1,6 @@
+Description:
+This indicator will draw two trendlines on the chart upon which it is placed.
+The trendlines, which may be moved around, act as upper and lower alert levels. When the mid-price crosses either level the warning alert will be triggered.
+Instructions:
+Choose the symbol you're interested in and display it in a chart window at the appropriate timeframe. Load PriceAlert Indicator and optionally choose desired colour for each trendline. Reposition the trendlines to the level at which you wish to be notified should the mid-price get there.
+Remember to have your speakers on!

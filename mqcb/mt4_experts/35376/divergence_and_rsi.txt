@@ -1,0 +1,7 @@
+inputs 1 rsi is below value 30 when divergent   for buy/bullish divergence
+input 2 divergence settings buys
+input 3 lots and stop loss , target in pips. long trades.
+input 4 rsi is above 70 when divergent , for sell / bearish divergence
+input 5 divergence settings sells
+input 6 lots and stop loss, target in pips . short trades
+Macd Divergence . Only opens trades within oversold or overbought conditions of the RSI

@@ -1,0 +1,7 @@
+Actual author
+: KimIV
+An indicator of ranges of arbitrary time intervals with the extension of the interval generated within the specified session until the next session. The corridor extension is marked by dot-dash lines and background color change.
+Fig. 1 The i-AnyRangeCldTail indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21777

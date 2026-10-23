@@ -1,0 +1,18 @@
+Indicator Parabolic Moving Average is a moving average based on
+parabolic regression.
+It has a lesser delay than most other moving averages.
+The algorithm described in
+V.P.
+Dyakonov's
+Handbook of Basic language algorithms and programs
+for personal computers
+(Moscow, 1987) is used to calculate the moving average
+.
+It has two adjustable parameters:
+Period
+- MA calculation period
+Applied price
+- Moving Average calculation price
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22780

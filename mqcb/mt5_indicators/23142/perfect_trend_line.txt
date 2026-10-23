@@ -1,0 +1,4 @@
+Theory:
+It can be found under different names on the net (MetaTrader 4 version mostly though). It is based on highest high and lowest low of two different periods. Based on those values a trend is derived.
+Usage:
+You can use close changes as signals.

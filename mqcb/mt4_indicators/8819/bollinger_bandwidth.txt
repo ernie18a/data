@@ -1,0 +1,3 @@
+An investigation of the Bollinger band has shown that when the bandwidth (distance between the top and bottom bands) is below 4, the market is compressed and about to break out. When the bandwidth reaches 11, there is a strong wave for scalp trading.
+Between these numbers the currency pair is weak or compressed and has limited movement which might result in taking more losses than earnings. This indicator allows you to quickly see the value of the bandwidth and utilize it to your advantage. This is simply modified code of the original Bands.mq4 indicator.
+Tested on EUR/USD. You can change the maximum limit to a smaller size in the event you are on a smaller chart period like M1, by changing the max limit property.

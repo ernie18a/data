@@ -1,0 +1,9 @@
+Author: Coders Guru
+Adviser EMA 6.12. Uses indicator
+MA
+.
+------------------------------
+Parameters of testing
+Symbol: EURUSD.
+Period: Daily.
+Model: All tics.

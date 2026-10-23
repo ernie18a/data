@@ -1,0 +1,6 @@
+Real author:
+Senior Linux Hacker
+This indicator builds non-linear regression channel. Apart from building the channel for the current values of a price chart, this indicator also builds the channel for the assumed future price movement range.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/743

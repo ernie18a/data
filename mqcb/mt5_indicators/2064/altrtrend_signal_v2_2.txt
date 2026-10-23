@@ -1,0 +1,12 @@
+Real author:
+OlegVS, GOODMAN
+A semaphore arrow indicator that shows trend change time based on the
+ADX indicator
+.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 07.11.2006.
+Figure 1. Indicator AltrTrend_Signal_v2_2
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2064

@@ -1,0 +1,14 @@
+A trend indicator based on the difference between two moving averages. The market is considered to be in trend, if the difference between the MAs is greater than the trigger threshold:
+input
+uint
+DVLimit=
+70
+;
+// Trigger threshold in price chart points
+The indicator uses the SmoothAlgorithms.mqh library classes (copy it to <terminal_data_folder>\MQL5\Include). The detailed description of the classes is available in the article
+Averaging Price Series for Intermediate Calculations Without Using Additional Buffers
+.
+Fig. 1. he TrendManager indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21768

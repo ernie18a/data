@@ -1,0 +1,4 @@
+Author:
+Joe Chalhoub
+This custom indicator waits the price to reach specific zones and the custom indicator takes decisions for buying or selling.
+JoeChalhoub_BreakingZone

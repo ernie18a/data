@@ -1,0 +1,13 @@
+Sine Weighted Moving Average indicator is a sine-weighted moving average.
+It has two configurable parameters:
+Period
+- calculation period
+Applied price
+Calculation:
+SineWMA = Sum / Weight
+where:
+Sum= Price[i-N+1] * Sin(PI*(N)/(N+1)) + Price[i-N+2] * Sin(PI*(N-1)/(N+1)) + … + Price[i] * Sin(PI*1/(N+1))
+Weight = Sin(PI*(N)/(N+1)) + Sin(PI*(N-1)/(N+1)) + … + Sin(PI*1/(N+1))
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22509

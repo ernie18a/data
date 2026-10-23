@@ -1,0 +1,3 @@
+Two indicators are required:
+- TrainingChartGenerator.mq4 to be added to a chart where all bars are to be based on.
+- TrainingChartController.mq4 to be added to the training/controller chart, where the user can move forward, backward, or reset to the predefined date/time.

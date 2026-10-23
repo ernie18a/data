@@ -1,0 +1,11 @@
+Many prop firms close the account when the daily loss limit is touched. This indicator shows the numbers on the chart, so you do not have to calculate them.
+It shows:
+the balance at the start of the day (calculated from the account history),
+the equity level of the daily loss limit,
+the loss used so far, in money and as a percentage of the limit,
+the money left before the limit,
+optionally, the equity level of the maximum loss limit.
+The colour changes from green to orange to red as the limit gets closer. A popup alert appears once per day when the warning level is reached (80% by default).
+Inputs: daily loss limit in percent, maximum loss limit in percent, initial balance of the challenge, hour when your firm's day starts (server time), warning level, position of the panel.
+Notes: it reads the account only and never opens, closes or modifies a trade. Prop firms calculate the day differently (balance or equity, reset time). Set the day start hour to match your firm and use the values as a reference only.
+If you find it useful, a rating or a comment helps a lot. Other tools for prop firm traders are in my author profile.

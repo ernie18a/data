@@ -1,0 +1,16 @@
+Calculation
+The calculating method is deviation when compared to usual momentum calculation. Momentum is calculated as a sum of absolute differences of current price to the price 1 period ago and then compared to the ratio of current price to the price several (N) periods ago.
+ABS MOMENTUM = SUM(ABS(CLOSE(i)-CLOSE(i-1))
+MOMENTUM = CLOSE(i)>CLOSE(i-N) ? ABS MOMENTUM : - ABS MOMENTUM
+where:
+CLOSE(i) — is the closing price of the current bar;
+CLOSE(i-1) — is the closing bar price 1 periods ago.
+CLOSE(i-N) — is the closing bar price N periods ago.
+This version :
+The indicator can use filtered price for calculation now - that way, if the slope of the momentum is used for decisions the number of signals (and fake signals) is lessened significantly. The lag added is acceptable (that can easily be checked by comparing this version to the built in momentum using same period)
+For the above purpose the indicator can use one of the 4 averages types :
+simple moving average (SMA)
+exponential moving average (EMA)
+smoothed moving average (SMMA)
+linear weighted moving average (LWMA)
+PS: the "big picture" comparison of this momentum and the regular momentum and the comparison of the decision points

@@ -1,0 +1,9 @@
+The Buy/Sell signals of the indicator are based on crossover of two Moving Averages (MA) with different periods.
+The indicator has the following features:
+1. Filter, based on RSI (Relative Strength Index) indicator.
+2. Movement confirmation filter.
+3. Flat movement filter.
+The checks are based on the 1st bar (completed).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10333

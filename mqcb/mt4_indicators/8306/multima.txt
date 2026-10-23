@@ -1,0 +1,6 @@
+Hi all,
+the idea behin this multima is to show up to 3 MA from different timeframes in the one timeframe you use.
+For example in the picure we are in TF M5 but see also the MA for M1 and M15.
+MA_Periode is the value for the timeframe u want in Minutes, MA ist the Calculation Period for the ma......
+.. u are in M15 and want to see the 30 MA from M5 then enter in MA_Period_x 15 and in MAx 30:-)
+thank you for comments

@@ -1,0 +1,10 @@
+The indicator is developed in 1994 by Patrick Mulloy. The aim of the development was the reduction of the delay (lag) of the moving average value that is a disadvantage peculiar to the SMA.
+During the indicator calculation, the combimation of once and twice smoothed exponential moving avarages gives a less delay than the 12/26-period MACD based of the simple moving averages.
+Input Parameters:
+extern
+int
+PERIOD
+=
+12
+;
+Dema

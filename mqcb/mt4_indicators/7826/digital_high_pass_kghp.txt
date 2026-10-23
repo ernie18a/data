@@ -1,0 +1,2 @@
+Author: newdigital
+Digital High Pass (KGHP) indicator.

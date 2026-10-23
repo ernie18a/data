@@ -1,0 +1,6 @@
+I tested it only on EURUSD 1H from the January till the 15-th of September of this year. 24 trades were performed and there were no loss ones.
+It shows good enter signals even on 5M with the initial data of indicator equal to 50 (and with the greater parameters of SL and TP of the EA, correspondingly, for example 999, i.e. from the kickback from the peak to the kickback from the valley, etc.). The farther is the trader's business.
+The exit by the indicator often gives a negative result. It makes a trade by a kickback when launched for the first time (i.e. it can be late), so it is better to turn it on right after the peak or valley.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8431

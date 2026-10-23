@@ -1,0 +1,13 @@
+Gann Swing is similar to ZigZag. It allows detecting market patterns and is calculated using the Gann trend detection method.
+The indicator has no input parameters.
+Two consecutive Higher High of the last two candles indicate Upswing.
+Two consecutive lowering Lows of the last two candles indicate a downswing.
+If the next bar has a higher high and lower low (or same low) when compared to the previous bar, then the indicator line goes up connecting the high of the next bar.
+If the next bar has a lower or equal High and a lower Low as compared to the preceding bar, then the indicator line goes lower, joining the Low of the next bar.
+If the next bar is an inside bar (lower high and higher low), the bar is skipped before the next one appears.
+If the next bar is an external bar (a higher High and a lower Low), then the indicator line will connect to the High of the external bar, provided that the bar following the external bar is lower, OR the indicator line will connect to the Low of the external bar, provided that the bar following the external bar is higher.
+If the price has fixed above the previous peak, this means the likely start of an uptrend.
+If the price has fixed below the previous bottom, it means that a downtrend is likely to start.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22793

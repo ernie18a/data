@@ -1,0 +1,6 @@
+Doji candle histogram detector with alert & email notfication.
+This is an indicator for chart pattern detection, can detect DOJI candle and draw histogram, with alert message, works for all time frames.
+Features:
+Work for Anytime frame from M1 to MN;
+Can Enable or Disable MetaTrader 4 notification;
+Can Enable or Disable Email notification.

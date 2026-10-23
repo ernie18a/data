@@ -1,0 +1,39 @@
+The indicator plots a price grid of levels rounded up to several digits.
+Input parameters:
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+string
+SirName=
+"PriceGrid"
+;
+//The first part of the name of graphical objects
+input
+uint
+Digits_=
+2
+;
+//Number of digits to round
+input
+uint
+Total=
+20
+;
+//Number of blocks in the grid above or below the price
+input
+color
+Color_ =
+clrBlueViolet
+;
+//The color of the level
+input
+STYLE  Style_ = DASHDOTDOT_;
+//The style of the level lines
+input
+Width  Width_ = Width_1;
+//The width of the level lines
+Fig.1. The PriceGrid indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14916

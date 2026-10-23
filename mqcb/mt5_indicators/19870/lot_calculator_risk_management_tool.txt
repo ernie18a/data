@@ -1,0 +1,21 @@
+Most of professional traders state that their success is based on strict risk management.
+This simple tool is designed to show the correct lot size to trade with respect to the following basic risk management rules:
+Risk only a fixed percentage of the total money on the account (e.g. 1-2%).
+Risk is measured by distance in pips between order opening to and emergency stop loss.
+So, for example you have €2000 in your account, and you want to put an order on EURUSD with an emergency stop loss 191 pips from the order open value, what can be the correct lot size to trade?
+The formula is:
+F * R / (p * pv)
+, where:
+T - total account free margin.
+R - risk.
+p - pips between open order and stop loss.
+pv - pip value (in the same currency as the account main currency).
+The result, as you can see in following figure, is 0.02 lots.
+With €2000 available, risk is 165 pips, to risk the 2% you have to trade USDJPY no more than 0.03 lots.
+The indicator shows quantities already switched to the current account currency.
+In order to change the indicator parameters, simply access indicator properties:
+Parameters
+Stop loss distance from open order: pips number to risk.
+Free margin fraction to risk: a good value range is 0.01-0.02.
+Check to read the actual free margin of your balance, uncheck to specify a simulated balance: flag used to consider the true free margin or the simulated balance.
+Simulated balance: free margin value to simulate.

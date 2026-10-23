@@ -1,0 +1,1 @@
+Setup hour and minute for check current time and variable if current date is friday this function close all profit for currency pair

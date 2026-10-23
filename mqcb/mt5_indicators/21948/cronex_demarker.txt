@@ -1,0 +1,10 @@
+The author of the idea
+:
+Sergey Kazachenko
+MQL5 code author
+:
+barabashkakvn
+iDeMarker (DeMarker, DeM) indicator averaging using MovingAverages.mqh
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21948

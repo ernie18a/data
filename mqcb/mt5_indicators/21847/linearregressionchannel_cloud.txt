@@ -1,0 +1,7 @@
+Actual author
+: dimicr
+The linear regression channel, which saves its values ​​in the indicator buffers and fills the channel background with color.
+Fig. 1. The LinearRegressionChannel_Cloud indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21847

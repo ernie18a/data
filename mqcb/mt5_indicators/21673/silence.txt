@@ -1,0 +1,23 @@
+The Silence indicator displays aggressiveness (price change rate, the blue line) and volatility (the red line) in a separate window.
+The indicator has three input parameters:
+Period
+- calculation period;
+Interpolation
+- interpolation period;
+Applied price
+- price used for calculations.
+Calculations:
+Aggressiveness = InterpolationAggress
+Volatility = InterpolationVolatil
+where:
+InterpolationAggress = (0 - (MinAggress - BAggress) * -100.0 / (MinAggress-MaxAggress)))
+InterpolationVolatil = (0 - (MinVolatil - BVolatil) * -100.0 / (MinVolatil - MaxVolatil)))
+BAggress = B/Point
+BVolatil = Sqrt(dAmount)
+B = SMA(Abs(Applied price - PrevApplied price), Period)
+dAmount = Power(Applied price - SMA(Applied price, Period)) / Period
+MinAggress, MaxAggress - the maximum and minimum values of BAggress over the 'Interpolation' period;
+MinVolatil, MaxVolatil - the maximum and minimum values of BVolatil over the 'Interpolation' period.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21673

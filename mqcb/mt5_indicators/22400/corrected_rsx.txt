@@ -1,0 +1,6 @@
+Theory:
+Dr. Alexander Uhl invented a method that he used on to filter the moving average and to check for signals. Originally it was intended to be used on average only. But it turns out that it can be used on some other indicators too.
+This indicator:
+This indicator is using the "correcting" method and produces a corrected RSX (Relative Strength Quality Index). Even though the RSX is already smooth and the signals are not as much as in "regular" RSI, it seems that the "corrected" RSX can be used in trading.
+Usage:
+You can use the change of color as signals.

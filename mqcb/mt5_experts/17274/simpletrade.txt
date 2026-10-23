@@ -1,0 +1,114 @@
+The Expert Advisor compares open prices of the zero and third bar.
+Author of the idea
+is
+Oleksandr
+,
+author of the MQL5 code
+is
+barabashkakvn
+.
+Condition to open a Buy position:
+if
+(
+iOpen
+(
+0
+)>
+iOpen
+(
+3
+))
+- If the opening price of a zero bar is higher than the opening price of the third bar.
+Condition to open a Sell position:
+if
+(
+iOpen
+(
+0
+)<=
+iOpen
+(
+3
+))
+- If the opening price of a zero bar is less than or equal the opening price of the third bar.
+Position is closed by StopLoss or at the beginning of the next bar:
+Since the EA works at the moment of emergence of a new bar, it is equipped with several protection steps — so as to avoid missing a whole bar due to possible position opening errors.
+For example, if we cannot update the current prices, we should then reset the timer (static variable):
+//--- Since we work on a new bar, if refresh of current
+//--- prices fails, reset the timer
+if
+(!
+RefreshRates
+())
+{
+curTime=
+iTime
+(
+1
+);
+return
+;
+}
+Also we check the result of the trading operation:
+The
+Buy
+or
+Sell
+method must return true
+and the
+ResultDeal
+method should return a non-zero value
+if an error occurs, we reset the timer:
+if
+(
+iOpen
+(
+0
+)<=
+iOpen
+(
+3
+))
+{
+//--- Since we work on a new bar, if refresh of current
+//--- prices fails, reset the timer
+if
+(!
+RefreshRates
+())
+{
+curTime=
+iTime
+(
+1
+);
+return
+;
+}
+//--- Since we work on a new bar, if if a trade operation fails,
+//--- reset the timer
+if
+(m_trade.Sell(Lots,
+NULL
+,m_symbol.
+Bid
+(),m_symbol.
+Ask
+()+StopLoss*m_adjusted_point))
+if
+(m_trade.ResultDeal()!=
+0
+)
+return
+;
+curTime=
+iTime
+(
+1
+);
+return
+;
+}
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17274

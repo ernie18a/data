@@ -1,0 +1,41 @@
+Author:
+Andrey N. Bolkonsky
+The Composite High-Low Momentum is described by William Blau in the book
+"Momentum, Direction, and Divergence: Applying the Latest Momentum Indicators for Technical Analysis"
+.
+WilliamBlau.mqh must be placed in
+terminal_data_folder
+\MQL5\Include\
+Blau_HLM.mq5 must be placed in
+terminal_data_folder
+\MQL5\Indicators\
+Composite High-Low Momentum Indicator by William Blau
+Calculation:
+The Composite High/Low Momentum is calculated as follows:
+HLM(q) = HMU(q) - LMD(q)
+where:
+q - number of bars, used in calculation of Up Trend Momentum and Down Trend Momentum;
+HMU(q) - Up Trend Momentum (q bars);
+LMD(q) - Down Trend Momentum (q bars).
+The smoothed Composite High/Low Momentum is calculated as follows:
+HLM(q,r,s,u) = EMA(EMA(EMA( HLM(q) ,r),s),u) = EMA(EMA(EMA( HMU(q)-HMD(q) ,r),s),u)
+where:
+q - number of bars, used in the calculation of Up Trend Momentum and Down Trend Momentum;
+HMU(q) - Up Trend Momentum (q bars);
+LMD(q) - Down Trend Momentum (q bars);
+HLM(q)=HMU(q)-LMD(q) - Composite High/Low Momentum;
+EMA(HLM(q),r) - 1st smoothing - EMA(r), applied to the Composite High/Low Momentum;
+EMA(EMA(...,r),s) - 2nd smoothing - EMA(s), applied to result of the 1st smoothing;
+EMA(EMA(EMA(...,r),s),u) - 3rd smoothing - EMA(u), applied to result of the 2nd smoothing.
+Input parameters:
+q - number of bars, used in calculation of HLM (by default q=2);
+r - period of the 1st EMA, applied to HLM (by default r=20);
+s - period of the 2nd EMA, applied to result of the 1st smoothing (by default s=5);
+u - period of the 3rd EMA, applied to result of the 2nd smoothing (by default u=3).
+Note:
+q>0;
+r>0, s>0, u>0. If r, s or u are equal to 1, smoothing is not used;
+Min. rates = (q-1+r+s+u-3+1).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/382

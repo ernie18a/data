@@ -1,0 +1,7 @@
+Three
+SpearmanRankCorrelation
+indicators from different timeframes in a single window.
+Fig. 1. SpearmanRankCorrelation_3HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23137

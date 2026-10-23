@@ -1,0 +1,6 @@
+This Expert Advisor shows that you can make a profitable automated trading robot using technical analysis and not too many rules. Only prices (to determine Doji) and a single indicator (ATR) is used. No extra files or custom indicators are necessary.
+The EA is designed for the Daily time frame because technical analysis of candlesticks works best at higher time frames.
+The entry will consist of two STOP orders, one BUY and one SELL, around each Doji candle. A Doji is a simple Japanese candlestick pattern that shows market indecision. Initial stop losses (SL's) are set based upon volatility (ATR) from the high or low of the Doji candle.
+Risk adjustment is handled by a volatility based (ATR) trailing stop loss, and EXITs occur when the SL is hit. This type of risk adjustment fulfills the adage, "let your profits run."
+Input variables are described in the code. They include volatility factors (ATR) for setting the initial SL and size of trailing SL. Also, the period of the ATR is avaiable.
+You can watch, step-by-step, how this EA was built via YouTube videos. See the link in the code for details. A full transcript of each video is available in English.

@@ -1,0 +1,120 @@
+The CandleTrend_x10 indicator shows price movement from ten different timeframes. Downward movement paints the colored squares in red, upward movement — in green. The indicator uses the values of the last closed bars.
+Indicator input parameters:
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+ENUM_TIMEFRAMES
+TimeFrame0=
+PERIOD_H1
+;
+// Chart 1 period
+input
+ENUM_TIMEFRAMES
+TimeFrame1=
+PERIOD_H2
+;
+// Chart 2 period
+input
+ENUM_TIMEFRAMES
+TimeFrame2=
+PERIOD_H3
+;
+// Chart 3 period
+input
+ENUM_TIMEFRAMES
+TimeFrame3=
+PERIOD_H4
+;
+// Chart 4 period
+input
+ENUM_TIMEFRAMES
+TimeFrame4=
+PERIOD_H6
+;
+// Chart 5 period
+input
+ENUM_TIMEFRAMES
+TimeFrame5=
+PERIOD_H8
+;
+// Chart 6 period
+input
+ENUM_TIMEFRAMES
+TimeFrame6=
+PERIOD_H12
+;
+// Chart 7 period
+input
+ENUM_TIMEFRAMES
+TimeFrame7=
+PERIOD_D1
+;
+// Chart 8 period
+input
+ENUM_TIMEFRAMES
+TimeFrame8=
+PERIOD_W1
+;
+// Chart 9 period
+input
+ENUM_TIMEFRAMES
+TimeFrame9=
+PERIOD_MN1
+;
+// Chart 10 period
+input
+color
+CpColor=
+clrDarkOrchid
+;
+// Indicator name color
+input
+color
+UpColor=
+clrLimeGreen
+;
+// Upward movement color
+input
+color
+DnColor=
+clrRed
+;
+// Downward movement color
+input
+color
+ZrColor=
+clrGray
+;
+// No changes color
+input
+int
+FontSize=
+11
+;
+// Font size
+input
+type_font FontType=Font14;
+// Font type
+input
+ENUM_BASE_CORNER
+WhatCorner=
+CORNER_LEFT_LOWER
+;
+// Display corner
+input
+uint
+Y_=
+20
+;
+// Vertical coordinate
+input
+uint
+X_=
+5
+;
+// Horizontal coordinate
+Fig.1. The CandleTrend_x10 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12982

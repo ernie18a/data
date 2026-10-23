@@ -1,0 +1,2 @@
+Whatever your strategy, you need to know where are supports and resistances lines, eventually you will appreciate to be alerted if they are reached.
+This indicator rescan line each time you change the time scale of the chart and send you an optional alert if one is under a tunable limit.

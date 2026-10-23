@@ -1,0 +1,2 @@
+It is the double smoothed EMA. Its name resembles to double ema (DEMA), but is calculated differently than the DEMA (so it is a kind of "DEMA with a twist"). Double smooth ema is obviously much faster than EMA or DEMA and still remains smooth enough to my liking. As simple as it is, it seems to give some nice results.
+This is gradient version of double smoothed EMA indicator.

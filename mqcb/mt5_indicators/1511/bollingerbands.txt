@@ -1,0 +1,10 @@
+The BollingerBands
+©
+indicator is a derivative from the standard Bollinger Bands. When the indicator displays peaks, you should wait for the reversal.
+The formula for calculation of the indicator: BollingerBands [bar]=(close[bar]-UpperBB[bar])/(LowerBB[bar]-UpperBB[bar]).
+Fig.1 The BollingerBands
+©
+indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1511

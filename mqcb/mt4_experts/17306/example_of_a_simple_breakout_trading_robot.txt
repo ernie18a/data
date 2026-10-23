@@ -1,0 +1,28 @@
+Description:
+Just a very simple break-out trading example as seen on the Buy-Entry example image below.
+The Sell-Entry would be as revers of Buy-Entry image.
+By candles
+only
+with no indicator(s).
+Recommendations:
+Use
+only
+on
+Demo
+Account
+or
+Back-test.
+See
+more
+examples
+on
+the
+(
+candle
+breakout
+trading)
+by
+using
+internet
+searching
+engines.

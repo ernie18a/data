@@ -1,0 +1,10 @@
+The real author:
+Ilya Filatov
+Two lines are channel averages created by High and Low price values for different periods displayed as clouds. Two indicator buffers and two indicator lines are added into the 2MoHLC_ indicator for a visual drawing of the indicator.
+This indicator was first implemented in MQL4 and published in
+CodeBase on mql4.com
+on 24.06.2010.
+Fig.1 The 2MoHLC indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1153

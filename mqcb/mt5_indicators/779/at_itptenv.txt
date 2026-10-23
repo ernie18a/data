@@ -1,0 +1,8 @@
+This indicator builds curvelinear redrawing channel for each point of time. Therefore, it is meaningless to observe this channel's behaviour in history.
+At the moment when the bars were located near the current one, the channel looked completely different than some time later!
+This indicator was implemented in MQL4 and published in
+CodeBase at mql4.com
+29.01.2008.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/779

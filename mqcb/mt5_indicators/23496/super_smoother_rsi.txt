@@ -1,0 +1,6 @@
+Theory :
+The calculation of RSI is rather simple : we have to add the changes up and changes  down. From those sums, we can then calculate the RSI (Relative Strength Index). At that particular step Welles Wilder used what sometimes is called Wilders EM for smoother results, And that gives us space to [produce all sort of different RSIs by using different types of smoothing at the final step
+This version :
+It is using super smoother for RSI calculation. It produces results similar to RSX (that was inveted by Mark Jurik) but the differences are significant enough to have it as a separate type of RSI
+Usage :
+You can use it as any other RSI

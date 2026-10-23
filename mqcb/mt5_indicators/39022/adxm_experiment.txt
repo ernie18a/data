@@ -1,0 +1,11 @@
+There are a couple of versions of this indicator already existing in the code base. Some versions can be found at following links :
+ADXm smoothed
+ADXm Smoothed - MTF'
+VHF adaptive ADXm
+ADXm (vhf adaptive)
+ADXm
+As it can bee seen from the already published versions, one of the small (possible) issues of ADXm is the fact that it (in the times of ranging market) it tends to be "nervous". Some smoothed versions were made to address that, and this one can do that too but in an unexpected way : by applying ADXm calculation to itself, instead of using some conventional smoothing methods. The results seem to be usable, hence posting the indicator here
+Recommendations:
+you can use color changes as indication of momentum / trend change
+you can use zero line crosses in a same manner
+PS: when using the ADXm of ADXm (double) mode, the values are changed (slopes are not, but values are). In that case, if you are using levels as an indicator of trend change, adjust the levels to modified values

@@ -1,0 +1,9 @@
+Definition:
+"Juice" indicator is showing if the level of standard deviation is above or bellow some desired level and, that way, it is showing if we are in a times of increased or decreased volatility. The usual method of checking the level is using some fixed level. That method has some serious issues:
+the level is extremely arbitrary (ie: one has to invent that some level is significant)
+it varies from symbol to symbol
+it varies from time frame to time frame
+This version:
+It is using an average deviation (EMA deviation in this case) over desired period as a level instead of using fixed level. That way it does not depend on symbol or time frame, and is adjusting itself to the parameters settings.
+Usage:
+"Juice" is not a directional indicator - it does not show trend. It shows periods of increased (above the average) or decreased (bellow the average) volatility. And it should be used in such a manner: to determine periods of increased or decreased volatility.

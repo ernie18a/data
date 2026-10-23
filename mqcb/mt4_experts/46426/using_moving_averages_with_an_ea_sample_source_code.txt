@@ -1,0 +1,16 @@
+1. ENTRY RULE
+Long Entry: We will enter long positions on the Golden Cross.
+The value of the previous moving average is higher than the shorter-term moving average.
+The value of the moving average two periods ago is lower than the shorter-term moving average.
+The value of the moving average two periods ago is lower than the value of the previous short-term moving average.
+If these three conditions are met, we consider it a Golden Cross and enter a long position.
+Short Entry: We will enter short positions on the Dead Cross.
+The value of the previous moving average is lower than the shorter-term moving average.
+The value of the moving average two periods ago is higher than the shorter-term moving average.
+The value of the moving average two periods ago is higher than the value of the previous short-term moving average.
+If these three conditions are met, we consider it a Dead Cross and enter a short position.
+2. EXIT RULE
+Entry orders are managed only with stop loss orders and take profit limit orders.
+The stop loss point is set at a distance of Stoploss value from the mid-term MA.
+Take profit Limit orders are set at the same distance as stop orders but on the positive side, also serving fairness.
+3. BACKTEST RESULT

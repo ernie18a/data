@@ -1,0 +1,1 @@
+Use the average price to calculate the divergence rate. When the divergence rate is high, the market price may pull back. It is often used in stock trading indicators.

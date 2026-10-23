@@ -1,0 +1,9 @@
+The TrendMagic_Signal indicator shows information on the current trend using the values of the
+TrendMagic
+indicator with a fixed timeframe.
+The indicator displays the color of the line of the source TrendMagic indicator. Color diamonds on the line occur in the moment of bar changing to the corresponding time frame.
+The indicator requires TrendMagic.mq5 indicator file. Place it to terminal_folder\MQL5\Indicators.
+Figure 1. Indicator TrendMagic_Signal
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/6987

@@ -1,0 +1,7 @@
+Indicator
+FineTuningMA
+represented as candles. Candles are obtained by processing the relevant price timeseries by the algorithm of the indicator. In many cases, such approach may be more informative for analysis.
+Fig.1. Indicator FineTuningMACandle
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22685

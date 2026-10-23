@@ -1,0 +1,7 @@
+Author:
+Gopal Krishan Doda
+We all know how boring and frustrating is when we enter a market and after that it remains sideways i.e. with no clear trend. And above all, if the price goes opposite to your call. So, the solution is "Always enter the market in trending mode" and not in "range-bound mode". For that, I've coded this indicator based on ATR and STD. Shows clearly on bottom-left of screen the trend.
+Please note that this indicator ONLY shows whether the market is sideways or trending. It does NOT show whether the trend is UP or Down. For getting buy or sell signals, I recommend to use Doda-Donchian indicator.
+Recommendations:
+Works on anytime frame, but recommended on higher time frame like H4
+Can be used on all currency pairs and CFD's

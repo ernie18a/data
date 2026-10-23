@@ -1,0 +1,40 @@
+How to Work Instructions:
+1. Copy the moo.dll file to the
+libraries
+directory.
+2. Copy the symbols.txt file to the
+files
+directory.
+3. Copy the MultiOrders.ex4 file to the scripts directory (it is compiled for the 218 build in the archive).
+4. Launch the МТ4 terminal.
+5. Attach the
+MultiOrders
+to any chart.
+6. The window where you can choose what to place and where to place should appear.
+MultiOrders
+7. Choose the necessary symbol (currency)
+8. Choose the lot to be traded (
+positive - for buying
+,
+negative - for selling
+)
+9. Fill out the comment field if you need the order to have such comment.
+10. Press the corresponding button.
+What Happens Further:
+1. The script checks if the requested symbol (currency) is available in the terminal. If it is not the corresponding message should appear. A hint: the symbol must be in the market watch window.
+2. The script places the orders by the requested parameters on market prices. The slippage is zero on default, so on the volant market an order can be requoted, take this into the account. There is no checking and returning of the errors (trading) at this place in the script.
+Notes:
+You can write the most frequently used symbols (currencies) to the
+symbols.txt file
+.
+You can move between the fields of the "window" using the
+Tab
+button
+.
+If you changed your mind and don't want to place the orders press the
+Отмена (Cnacel)
+button.
+------------------
+You can download the updated version
+here
+.

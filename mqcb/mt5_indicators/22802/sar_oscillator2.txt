@@ -1,0 +1,21 @@
+SAR Oscillator 2 is a second version of
+SAR Oscillator
+.
+It has two adjustable parameters:
+SAR step
+- Parabolic SAR step
+SAR maximum
+- Parabolic SAR maximum
+Calculations:
+OscSAR = SAR - Сlose
+where
+SAR - Parabolic SAR(SAR step, SAR maximum)
+The histogram values above zero are bearish:
+When the histogram bar values rise, this indicates a fast downward movement, and the histogram bars are colored in orange.
+When the histogram bar values fall, this indicates a downward movement stop or a correction, and the histogram bars are colored in light-orange.
+The histogram values below zero are bullish:
+When the histogram bar values fall, this indicates a fast upward movement, and the histogram bars are colored in blue.
+When the histogram bar values rise, this indicates an upward movement stop or a correction, and the histogram bars are colored in light-blue.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22802

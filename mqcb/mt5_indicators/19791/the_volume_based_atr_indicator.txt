@@ -1,0 +1,15 @@
+Custom ATR. The indicator values are calculated based on the current day's High-Low and current day's High - previous day's Close or current day's Low - previous day's Close.
+There are three adjustable parameters:
+Period of indicator
+- indicator calculation period;
+Use volume
+- use volumes in calculations. If the parameter is set to "yes", then the current day's volume is added to the calculated minimum difference;
+Type of indicator
+- indicator drawing type, Line/Histogram.
+Fig.1 Line, no volume
+Fig.2 Histogram, no volume
+Fig.3 Line with the volume
+Fig.4 Histogram with the volume
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19791

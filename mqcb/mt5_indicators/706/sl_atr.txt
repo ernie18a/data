@@ -1,0 +1,7 @@
+Real author:
+Vladimir Hlystov
+The indicator creates areas of preferable stop-losses location for long and short positions at any time. That can be useful for trailing stop operation.
+Clouds borders consist of stop-loss high and low values for Buy and Sell positions.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/706

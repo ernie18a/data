@@ -1,0 +1,33 @@
+Prop Firm Guard protects challenge and funded accounts from the two rules that end most prop firm accounts: the daily loss limit and the maximum drawdown.
+It does not open trades. Attach it to any chart and keep trading as usual, manually or with other Expert Advisors. Prop Firm Guard checks your equity every second, and as soon as the limit is reached it:
+closes every open position on the account
+deletes every pending order
+closes any new trade opened while the limit is still hit (optional)
+shows an alert, and a push notification if enabled
+The block lasts until the next daily reset for the daily loss limit, and stays active for the maximum drawdown. Every action is written to the Experts log (limit reached, position closed, order deleted).
+Symbol and timeframe
+Any. Prop Firm Guard watches the whole account, not one symbol, so attach it to a single chart of any symbol and timeframe. Use only one copy per account.
+How the limits are measured
+Account size: the starting balance of your challenge (or 0 to use the current balance).
+Daily loss: measured from a reference taken at the start of each trading day, either the balance, or the higher of balance and equity (the rule used by many prop firms).
+Maximum drawdown: static (from the account size) or trailing (from the highest equity reached).
+Safety margin: lets the EA act a little before the real limit, to absorb slippage and spread.
+The state is saved, so the protection survives a restart of the terminal, a change of chart or a reconnection. The chart shows the current status, equity, daily loss used, drawdown used and the time of the next daily reset.
+Inputs
+Account size (0 = current balance)
+Max daily loss (%) - default 5
+Max total drawdown (%) - default 10
+Safety margin: act earlier by (%) - default 0
+Daily loss reference - balance, or higher of balance and equity
+Drawdown mode - static or trailing
+Reset hour (server time, 0-23) - check your prop firm's reset time
+Keep closing new trades while a limit is hit
+Warn when this % of a limit is used (0 = off) - default 80
+Send push notifications
+Reset saved state on start - use it only to clear a block during testing, keep it off in normal use
+Important
+Check the exact rules of your prop firm (limit values, daily reset time, balance or equity reference) and set the inputs accordingly. Rules differ between firms.
+Prop Firm Guard reacts to prices it receives. In fast markets, gaps or slippage, the final loss can be larger than the limit. Use the safety margin to act earlier.
+Keep the terminal running (or use a VPS): the protection only works while MetaTrader 5 is open and connected.
+Algo Trading must be enabled for the EA to close positions.
+This tool helps you respect risk limits. It does not guarantee that you will pass a challenge or keep a funded account.

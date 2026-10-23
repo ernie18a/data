@@ -1,0 +1,11 @@
+Shows low high from the last bar from other timeframe. Timeframe and Bar[x] can be changed
+correction
+resi = iHigh(Symbol(),
+PERIOD_M15
+, i);
+supi = iLow(Symbol(),
+PERIOD_M15
+, i);
+change
+resi = iHigh(Symbol(), tframe, i);
+supi = iLow(Symbol(), tframe, i);

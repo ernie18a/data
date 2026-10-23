@@ -1,0 +1,300 @@
+ApexVelocity EA v1.0 - Advanced Volatility Breakout System for XAUUSD
+ApexVelocity
+is a professional-grade Expert Advisor designed to capture explosive momentum in high-volatility instruments like XAUUSD (Gold). Moving away from rigid, hard-coded parameters, v1.0 introduces a robust, fully dynamic architecture that adapts to market conditions and broker specifications in real-time.
+This EA is not a "black box" grid or martingale system; it is a strict price-action and volatility-based breakout engine with built-in capital protection.
+Key Engineering Highlights:
+1. 100% Universal Digit Compatibility (ATR-Driven)
+One of the most common points of failure for XAUUSD EAs is the transition between 2-digit and 3-digit brokers (e.g., $1.00 vs. $1.000). ApexVelocity v2.0 solves this by eliminating fixed "points" entirely.
+Break-even padding, trailing stops, slippage tolerance, and breakout buffers are calculated dynamically using ATR Multipliers.
+This guarantees identical mathematical logic and execution across any broker, regardless of tick scale.
+2. Tick-Safe Risk Management Algorithm
+Instead of relying on standard lot calculators that can break when a broker's TickSize doesn't match their Point value, ApexVelocity utilizes a robust TickSize / TickValue ratio algorithm. This ensures your Risk % input accurately reflects your exact financial exposure in your account currency.
+3. "StopLevel" Validated Exit Logic
+Aggressive trailing stops often trigger ERR_INVALID_STOPS (Error 10016) when the market moves rapidly, as EAs attempt to modify SLs within the broker's restricted zone. ApexVelocity v1.0 includes strict SYMBOL_TRADE_STOPS_LEVEL validation for both its Break-Even and Trailing Stop modules, ensuring seamless order modification and zero rejected requests.
+4. Advanced Signal Engine with Session Filtering
+The entry logic requires multiple alignments before execution:
+Volume Acceleration:
+Current tick volume must exceed a dynamic average.
+//+------------------------------------------------------------------+
+//| 4. SIGNAL ENGINE - VOLATILITY EXPANSION                          |
+//+------------------------------------------------------------------+
+int
+GetVolumeAccelerationSignal(
+int
+shift)
+{
+int
+ratesCount = InpVolumePeriod +
+5
+;
+if
+(
+CopyRates
+(m_symbolName,
+PERIOD_CURRENT
+,
+0
+, ratesCount, m_rates) < ratesCount)
+return
+0
+;
+double
+atrBuffer[
+1
+], ma10Buffer[
+1
+], ma50Buffer[
+1
+], rsiBuffer[
+1
+];
+if
+(
+CopyBuffer
+(m_handleATR,
+0
+, shift,
+1
+, atrBuffer) <=
+0
+)
+return
+0
+;
+if
+(
+CopyBuffer
+(m_handleMA,
+0
+, shift,
+1
+, ma10Buffer) <=
+0
+)
+return
+0
+;
+if
+(
+CopyBuffer
+(m_handleMA50,
+0
+, shift,
+1
+, ma50Buffer) <=
+0
+)
+return
+0
+;
+if
+(
+CopyBuffer
+(m_handleRSI,
+0
+, shift,
+1
+, rsiBuffer) <=
+0
+)
+return
+0
+;
+double
+atr = atrBuffer[
+0
+];
+double
+ma50 = ma50Buffer[
+0
+];
+double
+rsi = rsiBuffer[
+0
+];
+double
+currentVolume = (
+double
+)m_rates[shift].tick_volume;
+double
+volumeSum =
+0
+;
+for
+(
+int
+i = shift +
+1
+; i <= shift + InpVolumePeriod; i++) {
+      volumeSum += (
+double
+)m_rates[i].tick_volume;
+   }
+double
+avgVolume = (InpVolumePeriod >
+0
+) ? volumeSum / InpVolumePeriod :
+1.0
+;
+if
+(currentVolume < avgVolume * InpAggrVolumeThreshold)
+return
+0
+;
+double
+open  = m_rates[shift].open;
+double
+close = m_rates[shift].close;
+double
+high  = m_rates[shift].high;
+double
+low   = m_rates[shift].low;
+double
+range = high - low;
+if
+(range ==
+0
+) range = m_point;
+double
+body =
+MathAbs
+(close - open);
+if
+((body / range) < InpMinBodyPercent)
+return
+0
+;
+if
+(range < atr * InpMinVolatilityATR)
+return
+0
+;
+bool
+trendUp   = (close > ma50);
+bool
+trendDown = (close < ma50);
+bool
+rsiOkBuy  = (rsi <
+70.0
+);
+bool
+rsiOkSell = (rsi >
+30.0
+);
+double
+highPrev = m_rates[shift +
+1
+].high;
+double
+lowPrev  = m_rates[shift +
+1
+].low;
+double
+buffer   = atr * InpBreakoutBufferATR;
+bool
+bullishBreakout = (close > highPrev + buffer) && (close > open);
+bool
+bearishBreakout = (close < lowPrev  - buffer) && (close < open);
+if
+(bullishBreakout && trendUp && rsiOkBuy && ConfirmHigherTF(
+1
+))
+return
+1
+;
+if
+(bearishBreakout && trendDown && rsiOkSell && ConfirmHigherTF(-
+1
+))
+return
+-
+1
+;
+return
+0
+;
+}
+Volatility Minimum:
+The candle's range must surpass a defined ATR threshold.
+Price Action:
+Requires a solid body-to-range ratio (eliminating weak dojis).
+Higher Timeframe (HTF) Alignment:
+Entries are cross-verified against the H1 MA-50 to ensure trades flow with the macro trend.
+//+------------------------------------------------------------------+
+//| Higher Timeframe Confirmation                                    |
+//+------------------------------------------------------------------+
+bool
+ConfirmHigherTF(
+int
+signal)
+{
+double
+h1Ma50[
+1
+];
+if
+(
+CopyBuffer
+(m_handleMA_HTF,
+0
+,
+0
+,
+1
+, h1Ma50) <=
+0
+)
+return
+true
+;
+MqlRates
+h1Rates[];
+ArraySetAsSeries
+(h1Rates,
+true
+);
+if
+(
+CopyRates
+(m_symbolName,
+PERIOD_H1
+,
+0
+,
+1
+, h1Rates) <
+1
+)
+return
+true
+;
+double
+h1Close = h1Rates[
+0
+].close;
+if
+(signal ==
+1
+)
+return
+(h1Close > h1Ma50[
+0
+]);
+if
+(signal == -
+1
+)
+return
+(h1Close < h1Ma50[
+0
+]);
+return
+true
+;
+}
+Session Control:
+Built-in time filters allow you to isolate trading strictly to high-liquidity overlaps (e.g., London and New York sessions), avoiding Asia-session "fakeouts."
+5. Multi-Layer Drawdown Protection
+Beyond standard stop losses, the EA monitors peak account equity. If a catastrophic event causes the drawdown to breach your defined maximum threshold, it acts as a global kill switch, closing all active positions immediately to protect capital.
+(Becktest TF M5 XAUUSD) :
+Report :

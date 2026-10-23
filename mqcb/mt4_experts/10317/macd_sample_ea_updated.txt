@@ -1,0 +1,2 @@
+The classic MT Sample EA updated for full/sub-pip accounts, also now handles ECN/STP brokers.
+Examples of setting trading hours, and added externals for StopLoss, MagicNumber and order comment.

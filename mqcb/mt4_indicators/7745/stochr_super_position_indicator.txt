@@ -1,0 +1,15 @@
+One more indicator form the series of Super Positions.
+The principle here is the same as in
+RSI DeMarker Super Position
+, but for other indicators - stochastic oscillator and %R.
+At the moment there is no correlation between different periods of basic indicators in the indicator (MAs of basic indicators on different period are not re-calculated). If it is interesting for anyone, I can add it into the code.
+Indicator lines:
+%R - Silver
+Stoch - DarkOrange
+SuperPosition - Black
+Fast MA - OrangeRed
+Slow MA - SteelBlue
+Divergence gistogram - SteelBlue
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7745

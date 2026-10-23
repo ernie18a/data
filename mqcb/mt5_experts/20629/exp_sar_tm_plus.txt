@@ -1,0 +1,29 @@
+A trading system based on indicator signals Parabolic Stop and Reverse system with the possibility to set a fixed position holding time. The signal is formed when a bar is closed, if the trend direction has changed. Once position holding time exceeds a preset fixed limit, the position will be closed immediately:
+input
+bool
+TimeTrade=
+true
+;
+//Enabling position exit by time
+input
+uint
+nTime=
+240
+;
+//Open position holding time in minutes
+Note that library file
+TradeAlgorithms.mqh
+is designed for using EAs with the brokers that offer a
+nonzero spread
+and a possibility to set Stop Loss and Take Profit
+simultaneously with opening
+a position. You can download the other versions of this library at
+Trade Algorithms
+.
+The EA default input parameters were used in tests below. Stop Loss and Take Profit were not used in testing.
+Fig. 1. Example trades on the chart
+Test results for AUDUSD H6 over the year 2016:
+Fig. 2. Testing results chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20629

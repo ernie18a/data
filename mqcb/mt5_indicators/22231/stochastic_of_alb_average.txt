@@ -1,0 +1,10 @@
+Stochastic that does not use "pure" price for calculation but uses adaptive lookback average filtered price for calculation
+Of price filtering for stochastic :
+The advantage of using the filtered (smoothed) price is that some of the false signals are filtered out at the source itself (by averaging the price) and it the is omitted (the false signal) in the stochastic calculation) too. Also, since the average is adaptive it implicitly makes the stochastic adaptive too
+ALB averages that can be used :
+simple moving average
+exponential moving average
+smoothed moving average
+linear weighted moving average
+Usage :
+Some experimenting with parameters is advised, but the usage of this stochastic is the usual : either use the slope or some significant levels crossing for signals

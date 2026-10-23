@@ -1,0 +1,8 @@
+Simple way to encode and decode using Base64.
+Use :
+To encode: Base64Encode(
+" Input Text"
+,Result Encrypt);
+To decode: Base64Decode(
+" Input Text"
+,Result Decrypt);

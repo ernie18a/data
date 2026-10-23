@@ -1,0 +1,7 @@
+Description:
+This EA will send an e-mail about your account details every xx minutes. It works fine for the 1st few e-mails. But later on, it will have mt4 - not enough mail space error ( some kind like that ). I need some experts here help enhance the code.
+You need to put this EA to a chart with a larger time frame than your xx minutes. Eg, if you set the EA to send e-mail to you every 15 minutes, then you shall put it in either 15 minutes chart or 30 minutes chart or any larger.
+Thanks
+** You need to make sure your mt4 e-mail setup is right and is able to send out e-mail. As far as I know and read from internet, many can't set gmail to be used in mt4.
+Here is example how to set the mt4 e-mail setup
+http://100k2.blogspot.com/2010/04/today-done-mt4-e-mail-setup.html

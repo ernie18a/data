@@ -1,0 +1,12 @@
+The Advance Trend Pressure indicator shows the trend direction and strength line. It can additionally show the bullish and bearish components of the trend.
+Trend is determined using Close-Open, High-Close and Open-Close price (for a bearish candlestick) and Open-Close, High-Open and Close-Low prices (for a bearish candlestick) - i.e. the indicator uses the size and direction of candlestick bodies and the size of their shadows.
+It has two parameters:
+Period
+- indicator calculation period;
+Show lines Up and Down
+- showing the lines of the bullish and bearish components.
+Fig.1 Trend direction and strength line.
+Fig.2 Trend direction and strength line with the lines of bullish and bearish components.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19879

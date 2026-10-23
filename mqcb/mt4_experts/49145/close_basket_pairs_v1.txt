@@ -1,0 +1,13 @@
+This MQL4 script is designed to close positions for a basket of currency pairs based on certain profit and loss thresholds. Here's a brief description:
+The script is called "CloseBasketPairs.mq4".
+It is copyrighted by MetaQuotes Software Corp. in 2024.
+It provides a link to the MetaQuotes website.
+The version of the script is 1.01.
+The script is authored by "
+persinaru@gmail.com
+".
+The script is licensed under the IP 2024 - free open source.
+The main purpose of the script is to close positions for a basket of currency pairs when certain profit or loss thresholds are met.
+It is a warning that the script should be used at your own risk, and the creator cannot be held responsible for any damage or loss.
+The script defines the pairs in the basket and their respective order types, along with profit and loss thresholds. It loops through all open positions and checks if they belong to the defined basket pairs. If a position meets the criteria (profit exceeding the profit threshold or loss exceeding the loss threshold), it closes the position.
+Finally, it provides functions for initialization, deinitialization, and handling tick events. The PrintStrategyInfo() function is used to print information about the strategy.

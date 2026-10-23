@@ -1,0 +1,10 @@
+Author: goldenlion@ukr.net
+i4 Pivot_v1 indicator.
+Formulas:
+P = (yesterday_high + yesterday_low + yesterday_close + yesterday_close) / 4;
+R1 = P + P - yesterday_low;
+S1 = P + P - yesterday_high;
+R2 = P + yesterday_high - yesterday_low;
+S2 = P - yesterday_high + yesterday_low;
+R3 = P + P - yesterday_low - yesterday_low + yesterday_high;
+S3 = P + P - yesterday_high - yesterday_high + yesterday_low;

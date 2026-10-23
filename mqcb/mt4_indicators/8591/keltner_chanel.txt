@@ -1,0 +1,24 @@
+The codebase contains the Keltner Channel indicator
+http
+://
+codebase
+.
+mql
+4.
+com
+/
+4150
+, but it doesn't conform the basic variant
+that is described here:
+http://www.forextimes.ru/article/a12177.htm
+the suggested indicator:
+-the base line is EMA20
+-the stripes lines +/- ATR (Average True Range)
+-the multiplier is 2.0
+Advices:
+The Keltner's idea is the creation of the floating lines of the support and resistance like Bollinger Bands.
+That is why the period of the base EMA is equal to 20.
+For the concrete charts you should pick up the coefficients of the stripes shifting. It is a fractional number.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8591

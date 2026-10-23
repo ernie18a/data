@@ -1,0 +1,17 @@
+The indicator was described by B. Williams as fourth dimension - Trading Zone:
+If the current bars of AC and AO are
+trending up
+, it shows that the zone is
+up
+.
+If the current bars of АС and АО
+down
+, it shows that the zone is
+down
+.
+If the bars of AC and AO are differently directed then the bar is colored
+grey
+.
+This version of
+Zone Trade
+indicator is made to show as histogram in separate window.

@@ -1,0 +1,30 @@
+Trend-based informational signal indicator Volatility Quality Index displays the sections of up/down trends.
+It has four adjustable parameters:
+Period
+- calculation period
+Method
+- calculation method
+Smoothing
+- smoothing period
+Filter
+- filter size
+Calculations:
+If VQ > 0
+The trend is up - a green signal pointer is placed
+Otherwise
+The trend is down - a red signal pointer is placed
+where:
+If (Abs(VQnew) < Filter
+VQ = PrevVQ
+Otherwise
+VQ = VQnew
+VQnew = Abs(((Close - C2) / Max + (Close - Open) / (High - Low)) * 0.5) * ((Close - C2 + (Close - Open)) * 0.5)
+Max = Maximum(High - Low, Maximum(High - C2, C2 - Low))
+Open = MA(Open, Period, Method)
+High = MA(High, Period, Method)
+Low = MA(Low, Period, Method)
+Close = MA(Close, Period, Method)
+C2 = Close Smoothing bars ago
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22699

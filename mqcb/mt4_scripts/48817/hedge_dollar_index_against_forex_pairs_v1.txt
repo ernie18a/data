@@ -1,0 +1,27 @@
+Hedge_Dollar_Index_Against_Forex_Pairs_V1.mq4 |
+Hedging DOLLAR.IDX/USD - USIDX
+Euro – 57.6%
+Japanese yen – 13.6%
+Great Britain pound – 11.9%
+Canadian dollar – 9.1%
+Swedish krona – 4.2%
+Swiss franc – 3.6%
+Buy USDIDX 100%       Value 100 point = 100$  Position size = 10000   10000 contracts Dukascopy = 100 TMGM
+Hedge 100% in Forex Pairs
+Buy EURUSD  –  57.6%  Value 1 pip = 57.6$   Position size = 576000  Lots 5.76
+Buy GBPUSD  –  11.9%  Value 1 pip = 11.9$   Position size = 119000  Lots 1.19
+Sell USDJPY –  13.6%  Value 1 pip = 13.6$   Position size = 206060  Lots 2.06
+Sell USDCAD –   9.1%  Value 1 pip =  9.1$   Position size = 123809  Lots 1.238
+Sell USDSEK –   4.2%  Value 1 pip =  4.2$   Position size = 444000  Lots 4.44
+Sell USDCHF –   3.6%  Value 1 pip =  3.6$   Position size =  32300  Lots 0.323
+Lot_Multiplier increases or decreases lot proportions. Example: x2 or x0.1
+Be aware of Dollar Index closing times when using this strategy!
+#property copyright     "Copyright 2024, MetaQuotes Ltd."
+#property link          "https://www.mql5.com"
+#property version       "1.01"
+#property description   "persinaru@gmail.com"
+#property description   "IP 2024 - free open source"
+#property description   "This Script Hedge Dollar index against its constitutive FOREX pairs."
+#property description   ""
+#property description   "WARNING: Use this software at your own risk."
+#property description   "The creator of this script cannot be held responsible for any damage or loss."

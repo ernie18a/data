@@ -1,0 +1,6 @@
+Quantora Market Status Dashboard MT5 is an indicator that provides a clear and structured overview of current market conditions directly on the chart. It does not open or manage trades and is designed purely for analysis.
+The tool combines multiple key metrics such as spread, volatility, volume activity, and daily range into a single interface. It helps you quickly understand how active the market is by showing real-time data along with simple classifications. You can see whether conditions are normal, quiet, or highly volatile without checking multiple indicators separately.
+It also tracks the current daily range and compares it with the average daily range, giving a quick view of how much movement has already taken place. This makes it easier to judge whether the market still has room to move or is already extended.
+In addition, the dashboard monitors major trading sessions including Sydney, Tokyo, London, and New York. It shows which sessions are currently active, detects overlaps, and provides a general view of global market activity throughout the day.
+All information is displayed in a clean and easy-to-read dashboard, allowing you to follow market conditions in real time without leaving the chart.
+Suitable for traders who want a more complete and practical overview of market activity in a single place.

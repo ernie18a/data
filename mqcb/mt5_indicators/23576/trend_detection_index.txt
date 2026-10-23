@@ -1,0 +1,6 @@
+Theory :
+Based on the "Are You in A Trend" article by M.H.Pee :
+The  trend detection index (TDI) is used to detect when a trend has begun and when it has come to an end. The TDI can be used as a stand-alone indicator or combined with others; it will perform well  in  detecting  the  beginning  of trends. However, this does not mean its signals are totally accurate. Protective stops as well as trailing stops† must be incorporated  to  produce  a  complete mechanical  system.  These  stops  are required  to  protect  against  large  losses  when  the  indicator generates  a  losing  trade.  The  T DI is  robust;  it  can  trade  a diverse  portfolio  of  markets  profitably  over  many  years, using the same parameters throughout.
+In this version we are adding smoothing option prior to using prices in the calculation. The lag added is small, hence the smoothing can help in filtering out some false signals
+Usage :
+You can use the color change as signal

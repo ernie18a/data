@@ -1,0 +1,20 @@
+Description:
+This EA is based on the strategy "Stop Hunting with the Big Players".
+It sends BuyStop and SellStop orders at the given Distance from the round price targets.
+To learn more about Stop Hunting:
+Stop Hunting Definition
+(investopedia.com)
+Stop Hunting with the Big Players
+(investopedia.com)
+Settings:
+Zeroes: the number of zeroes at the right of the price.
+Distance: how far from the round price target should the order be placed.
+The other settings are usual.
+How to use:
+Using the default settings the EA will be hunting stops in both directions, it can also be used side to side with another strategy to define whether to go Short or Long. Anyway I had good backtest results going both directions.
+Backtest
+This is 3 months backtest on AUDUSD M5 (Risk_percent=10; other settings default)
+This is one year backtest on EURUSD M5 (Risk_percent=40; other settings default)
+PS: Testing has been made in a virtual environment of Spread=0
+Regards
+MT-Coder

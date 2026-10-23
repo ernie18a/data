@@ -1,0 +1,20 @@
+This Expert Advisor is rewritten from MQL4 and was originally published here
+https://www.mql5.com/en/code/8079
+by its author
+Olek
+.
+How It Works
+The operation of the Expert Advisor is based on exponential (EMA) and linear weighted (LWMA)
+moving averages
+. A buy position opens when EMA is above LWMA, while both MA's are going upward. A sell position opens when EMA is below LWMA, while both MA's are going downward.
+When EMA gets lower than LWMA, a buy position is closed. When EMA gets higher than LWMA, a sell position is closed.
+The lot size for positions to be opened can be fixed or proportional to free margin. There is an additional function to reduce the lot size at losses - the more consecutive losing trades, the smaller the lot size.
+The image below shows the performance of the Expert Advisor in the strategy tester's visual mode.
+Parameters
+MovingPeriod - Smoothing period.
+MaximumRisk - Risk (it is used if Lots=0).
+Lots - Lot.
+DecreaseFactor - Lot reduction factor after losing trades. 0 - reduction disabled. The smaller the value, the greater the reduction. Where it is impossible to reduce the lot size, the minimum lot position is opened.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1076

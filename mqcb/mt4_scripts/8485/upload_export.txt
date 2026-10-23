@@ -1,0 +1,9 @@
+The UploadExport script is a universal program tool. It is developed to ease the working of the analyst and the trader with regard to the daily routine actions of wave analysis using the ELWAVE program.
+The script is curently in development. Now you have an intermidiate variant of the it. The end result is predicted to be the following: the script is in the almost fully automatical mode, it exports the history of quotes by specified tasks from MT4 and uploades it to ELWAVE for the further analysis.
+Then the analysis by the embedded algorithm is launched and at the end of the analysis its result may be printed or may be dispayed as an indicator interpretation on the chart of the corresponding symbol in MT4.
+Only the following functions are implemented in this modification of the script at the moment:
+The automatical export of the history of the quotes from MT4. If this function is launched the script cumpulsory spools and then exports the quotes of the specified symbols, timeframes and for the necessary depth of the history.
+The possibilty of creating the lists of the export and the schedule of the export. This fucnion is convenient for a big list of different symbols. For example, for the simultaneous analysis of the forex symbols and the stocks. The forex symbols work 24 hours a day and the stocks are traded only during the working time of the stock exchange. All of that can be set up in the script.
+A text or sound notification for the user that the export was performed successfully. It is very convenient and you can see what symbols are being exported at the bottom of MT4 terminal, at the "Experts" tab. And if you are not in front of the monitor you will hear the exporting process of different symbols if you enable this option.
+To set it up see the video below or the attached zip file.
+Upload Export

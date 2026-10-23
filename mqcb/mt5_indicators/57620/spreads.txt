@@ -1,0 +1,51 @@
+Spread is realised through the difference of quotes of two symbols. If symbols quotes move in reverse - the second symbol is put in reverse. In this case the spread is calculated through the sum of quotes.
+Only quotes of the second symbol of the spread are put in reverse. The names of variables are clear in meaning. It is obligatory to use the indicator when both symbols of the spread are traded - quoted according to the time of the beginning - end of trading sessions.
+Use of the indicator is possible when spread trading: for flat trading - increased - sell, decreased - buy. Variability in interpretation of indicator values is also possible. It is possible to trade
+lines - support and resistance levels and sloping lines from the spread chart after crossing them.
+The code is commented out in detail, to set the indicator on the first symbol of the spread, variables are used to bring to integers for easy viewing and analysis of levels and values of the indicator,
+in which we specify the number of decimal places as a multiplier, for example, if 5 decimal places are quoted, we set the value to 100000.
+Coefficient_to_an_integer1 = 100000;
+Coefficient_to_an_integer2 = 100000;
+input
+double
+Weighting_coefficients1 =
+1
+;
+// proportionality factor (position volume) of the first spread symbol
+input
+int
+Coefficient_to_an_integer1 =
+100000
+;
+// number of quotation marks Sym 1
+input
+string
+Symbol2 =
+"USDCAD"
+;
+//second spread symbol
+input
+bool
+Symbol2_Reverse =
+true
+;
+//inverse correlation
+input
+double
+Weighting_coefficients2 =
+1
+;
+// proportionality factor (position volume) of the first spread symbol
+input
+int
+Coefficient_to_an_integer2 =
+100000
+;
+// number of quotation marks Sym 2
+In fact, you can use many interpretations of the indicator values and breakdowns and bounces from levels for example - the variability is available, you can look and choose the most ideologically suitable variant for you.
+suitable variant.
+For example, you can use the trend interpretation of the spread quotes movement, for example, by seasonality.
+An example of using the classical interpretation of AUDUSD-USDCAD spread, trading in the range. It is also possible to overlay standard figures of technical analysis and technical indicators, for example, envelopes, on the spread chart for a clearer interpretation of its values.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/57620

@@ -1,0 +1,13 @@
+AIS3 Trading Robot Template
+Modification: 30001
+Release Date: 2009.03.26
+Copyright (C) 2009, MetaQuotes Software Corp.
+https://www.metaquotes.net
+Copyright (C) 2009, Airat Safin
+https://www.mql5.com/en/users/ais
+Free Open Source Software
+AIS3 Trading Robot Template: Features
+1. 100% ready for trading strategy integration
+2. Fast on-the-fly preset control
+3. Automatic risk management
+4. Monitoring function

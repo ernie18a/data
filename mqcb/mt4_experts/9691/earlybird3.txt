@@ -1,0 +1,2 @@
+Description:
+Early Range, Break with RSI-Filter, Hedging, TrailingSL/TP with Vola-Filter, DayTrading Start- and Endtime, autoClosing, all Comments and Alerts.

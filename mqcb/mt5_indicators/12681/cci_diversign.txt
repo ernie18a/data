@@ -1,0 +1,11 @@
+Original author:
+olegok83
+A semaphore signal indicator that uses divergence between two
+CCI
+oscillators based on extreme points of the last five bars.
+The signal is formed when there is divergence between two oscillators (fast and slow) and an appropriate candlestick combination, as shown below:
+Fig. 1. Signal generation algorithm
+Fig. 2. The CCI_DiverSign indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12681

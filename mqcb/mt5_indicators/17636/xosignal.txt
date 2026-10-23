@@ -1,0 +1,7 @@
+Real author
+: Sharipov Ainur
+A semaphore signal indicator. Its code does not contain averaging algorithms.
+Fig1. The XOSignal indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17636

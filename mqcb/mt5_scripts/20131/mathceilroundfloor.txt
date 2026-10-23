@@ -1,0 +1,277 @@
+An example of mathematical functions:
+MathCeil
+returns the nearest upper integer;
+MathRound
+rounds a number to the nearest integer;
+MathFloor
+returns the nearest lower integer.
+The code:
+//+------------------------------------------------------------------+
+//|                                           MathCeilRoundFloor.mq5 |
+//|                              Copyright © 2016, Vladimir Karputov |
+//|                                           http://wmua.ru/slesar/ |
+//+------------------------------------------------------------------+
+#property
+copyright
+"Copyright © 2016, Vladimir Karputov"
+#property
+link
+"http://wmua.ru/slesar/"
+#property
+description
+"MathCeil: Returns integer numeric value closest from above"
+#property
+description
+"MathRound: Rounds of a value to the nearest integer"
+#property
+description
+"MathFloor: Returns integer numeric value closest from below"
+#property
+description
+"MathCeil: Returns integer numeric value closest from above"
+#property
+description
+"MathRound: Rounds of a value to the nearest integer"
+#property
+description
+"MathFloor: Returns integer numeric value closest from below"
+#property
+version
+"1.003"
+//+------------------------------------------------------------------+
+//| Script program start function                                    |
+//+------------------------------------------------------------------+
+void
+OnStart
+()
+  {
+//---
+double
+price=
+1.01561
+;
+Print
+(
+"\n"
+,
+"Start price: "
+,
+DoubleToString
+(price,
+5
+));
+for
+(
+int
+i=
+0
+;i<
+10
+;i++)
+     {
+Print
+(
+"MathCeil("
+,
+DoubleToString
+(price,
+5
+),
+") ->  "
+,
+MathCeil
+(price));
+Print
+(
+"MathRound("
+,
+DoubleToString
+(price,
+5
+),
+") ->  "
+,
+MathRound
+(price));
+Print
+(
+"MathFloor("
+,
+DoubleToString
+(price,
+5
+),
+") ->  "
+,
+MathFloor
+(price));
+Print
+(
+""
+);
+price+=
+1.9
+;
+}
+  }
+Starting with
+"price" equal to 1.01561
+and then
+increase it by 1.9 in a loop
+.
+Result:
+Start price:
+1.01561
+MathCeil
+(
+1.01561
+) ->
+2.0
+MathRound
+(
+1.01561
+) ->
+1.0
+MathFloor
+(
+1.01561
+) ->
+1.0
+MathCeil
+(
+2.91561
+) ->
+3.0
+MathRound
+(
+2.91561
+) ->
+3.0
+MathFloor
+(
+2.91561
+) ->
+2.0
+MathCeil
+(
+4.81561
+) ->
+5.0
+MathRound
+(
+4.81561
+) ->
+5.0
+MathFloor
+(
+4.81561
+) ->
+4.0
+MathCeil
+(
+6.71561
+) ->
+7.0
+MathRound
+(
+6.71561
+) ->
+7.0
+MathFloor
+(
+6.71561
+) ->
+6.0
+MathCeil
+(
+8.61561
+) ->
+9.0
+MathRound
+(
+8.61561
+) ->
+9.0
+MathFloor
+(
+8.61561
+) ->
+8.0
+MathCeil
+(
+10.51561
+) ->
+11.0
+MathRound
+(
+10.51561
+) ->
+11.0
+MathFloor
+(
+10.51561
+) ->
+10.0
+MathCeil
+(
+12.41561
+) ->
+13.0
+MathRound
+(
+12.41561
+) ->
+12.0
+MathFloor
+(
+12.41561
+) ->
+12.0
+MathCeil
+(
+14.31561
+) ->
+15.0
+MathRound
+(
+14.31561
+) ->
+14.0
+MathFloor
+(
+14.31561
+) ->
+14.0
+MathCeil
+(
+16.21561
+) ->
+17.0
+MathRound
+(
+16.21561
+) ->
+16.0
+MathFloor
+(
+16.21561
+) ->
+16.0
+MathCeil
+(
+18.11561
+) ->
+19.0
+MathRound
+(
+18.11561
+) ->
+18.0
+MathFloor
+(
+18.11561
+) ->
+18.0
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20131

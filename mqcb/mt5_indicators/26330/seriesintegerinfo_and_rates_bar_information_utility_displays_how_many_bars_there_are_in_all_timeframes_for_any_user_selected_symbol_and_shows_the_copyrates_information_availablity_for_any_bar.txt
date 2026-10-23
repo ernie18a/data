@@ -1,0 +1,28 @@
+This utility is not a trading information utility.  It will only have value for those getting information on the Number of Bars that have terminal data.  This utility uses the functions
+SeriesIntegerInfo
+and
+CopyRates
+to obtain and display information about the availability of bar information from the terminal.
+The utility allows the user to use the current chart symbol (default) or input any symbol in their market watch, and creates a column with three items of information returned by the SeriesIntegerInfo function in each timeframe for the symbol.
+SERIES_SYNCHRONIZED
+, if the data in the terminal is synchronized (the indicator display's SYNC or UN_SYNC for the functions true or false).
+SERIES_BARS_COUNT
+, the Bars available in that time frame (including bar zero).
+SERIES_FIRSTDATE
+, the date of the oldest bar in that time frame.
+The utility also makes a 2nd column showing CopyRates information for any valid bar in each time frame (valid bars are based on the information returned from SeriesIntegerInfo).  The utility defaults to displaying the CopyRates information for the oldest bar in each timeframe (as indicated by SERIES_BARS_COUNT), but the user may input any valid bar number they desire.
+This is a twin indicator to
+https://www.mql5.com/en/code/26316
+, which gets its information about valid bars using the 'Bars' function.  The SeriesInfoInteger function appears to be a 'better' way to get the bars information, but both report bars are available that CopyRates cannot get information for, at least as of the current version of the terminal.
+The indicator display stabilizes as the terminal initializes data  for a few seconds, to a typical chart as shown below, as list with several 4401 'Terminal Data not Available" errors.  Scroll below to see a description of what the numbered controls do:
+The Controls:
+1)  "Rates and Bar" - Select and drag to move the display to a different location on the chart.
+2) This is the Bar Number input Box.  Enter a bar number to see if CopyRates information is available for that bar.
+3) "Symbol" - Click to toggle the Bar Number to the 'Oldest' default, or the last entered bar number.
+4) This is the Symbol input Box.  Input any symbol in your Market Watch to display for that symbol.
+5) Click the MN1 CopyRates information to toggle writing logs on and off.  When on, errors returned from Bars and CopyRates will be written to the logs.
+I recommend obtaining and  un-commenting
+// #include <errordescription.mqh>  // errordescription.mqh is found at: https://www.mql5.com/en/code/79
+and adding the ErrorDescription text back into the indicator.  I cannot submit the code with this include in the code.
+During my testing, SeriesIntegerInfo would report bar values greater than 100,000, but CopyRates never appears to get data for bar numbers greater than 99,999. The below picture shows the CopyRates 4401 error for bar 100,0000, and the success for bar 99,9999:
+Versions: M1 thru MN1 row identifiers left off in V1.00, fixed in V1.02.

@@ -1,0 +1,4 @@
+Made some changes compared to the originally indicator based on Linda Rashke's idea: original has only period 1 and it only uses ema for calculation.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16531

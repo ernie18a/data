@@ -1,0 +1,20 @@
+Power measure oscillator displays
+the ratio of the price change to volatility.
+It has one configurable parameter:
+Period
+- calculation period
+Calculation:
+The indicator calculates the percentage difference between the current and previous Close price:
+CC = 100.0*(Close - PrevClose) / PrevClose
+The percentage difference between High and Low prices is calculated as well:
+HL = 100.0 * (High - PrevLow) / PrevLow
+Power measure
+is calculated as a correlation ratio between these two flows:
+PM = Sum/Sqrt(SumCC2 * SumHL2)
+where:
+Sum = Sum((CC - SMA(CC, Period)) * (HL - SMA(HL, Period)), Period)
+SumCC2 = Sum((CC - SMA(CC, Period)) * (CC - SMA(CC, Period)), Period)
+SumHL2 = Sum((HL - SMA(HL, Period)) * (HL - SMA(HL, Period)), Period)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22090

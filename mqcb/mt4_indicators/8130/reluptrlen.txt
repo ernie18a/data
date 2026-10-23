@@ -1,0 +1,4 @@
+The indicator represents the ratio between the length (in bars) of the up-trend found by this indicator and the length of barsToProcess (of course, in bars, as well) of the entire range where the indicator is searching for an up-trend. When attaching it to the chart, you should fix the minimum of 0 and the maximum of 1. Immediately after it has been attached to the chart, the indicator shows only one value, which graphically looks as a not really noticeable point. As new bars become available, the indicator chart becomes more visible. To get acquainted with the indicator, you may attach it to a one-minute chart and eye its work for no less than several minutes.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8130

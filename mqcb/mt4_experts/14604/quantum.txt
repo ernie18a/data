@@ -1,0 +1,12 @@
+One of the implementation variants of the Quantum trading system.
+This implementation includes only the principle of awaiting the extreme price value withing the amount of bars specified by the trader from the original Quantum system:
+Red labels — local maximums, after which it is recommended to make short trades, and the blue ones — local minimums, after which it is recommended to make long trades.
+Improvement of the system is the filtration of the received signal using the Stochastic indicator. Confirmation of the price extremum is the exit of the main line of the Stochastic from the overbought or oversold areas.
+Thus, a significant portion of false alarms gets filtered out. However, there is some delay and hence, the opening price of the trade is deteriorated. However, the use of filtering outweighs these disadvantages.
+Stop Loss of the opened position is set beyond the last registered price extremum. Take Profit is not set by default, although the trader has the ability to specify its size in points from the opening price. The closure of the trade in profit is performed when the main line of the Stochastic exceeds the values, specified in the input parameters "Level to close Buy" and "Level to close Sell".
+The detailed review of the strategy and the results of its testing are given in the article
+The Quantum trading system
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14604

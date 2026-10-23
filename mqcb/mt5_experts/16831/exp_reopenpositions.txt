@@ -1,0 +1,52 @@
+The Expert Advisor increases the volume of an open position if profit in points from the last trade increases a threshold fixed in the EA inputs.
+The data on addings are stored in a string comment to a position in the following format:
+number of addings/last trade price/last trade volume
+.
+Trades are made when a new bar appears.
+//+----------------------------------------------+
+//| Input parameters of the EA indicator         |
+//+----------------------------------------------+
+input
+double
+MM=
+0.1
+;
+//Share of a deposit in an added deal
+input
+MarginMode MMMode=LOT;
+//lot value detection method
+input
+uint
+OldProfit=
+300
+;
+//profit of a previous trade in points for adding
+input
+uint
+PosTotal=
+10
+;
+//number of added trades
+input
+uint
+StopLoss_=
+1000
+;
+//stop loss in points
+input
+uint
+TakeProfit_=
+2000
+;
+//take profit in points
+input
+int
+Deviation_=
+10
+;
+//max price deviation in points
+//+----------------------------------------------+
+Fig. 1. Examples of trades on the chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16831

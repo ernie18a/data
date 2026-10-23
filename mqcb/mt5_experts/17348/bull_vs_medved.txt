@@ -1,0 +1,14 @@
+The Expert Advisor makes trading decisions based on simple candlestick combinations.
+It is designed for use on the H4 period.
+Author of the idea
+—
+Andrey
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Testing results on EUSUSD, H4, from 2015.01.11 to 2017.01.11, initial deposit 10000:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17348

@@ -1,0 +1,10 @@
+Author: Michal Rutka
+Adviser Donchain counter-channel system. Uses indicator
+Donchian Channels - Generalized version1
+.
+The description of work look in the code.
+------------------------
+Parameters of testing
+Symbol: EURUSD.
+Period: Daily.
+Model: All tics.

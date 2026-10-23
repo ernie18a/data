@@ -1,0 +1,11 @@
+OnChart Candle Countdown Clock works on all the time frames.
+Below are the parameters where you can choose your preferred settings on how it appears on your chart.
+How it displays on the chart. Very handy and takes no significant space.
+It is simple to install and use.
+FEATURES
+1. Font color: You can change the color of the clock text on the chart to your preferred color.
+2. Font size: Here also, you can change the text size to your preferred size on your chart as you like. No stress.
+3.Left-right Shift: This what you use to control the placement of the clock on your chart. This one helps to shift it to either left or right.
+4. Up--Down Shift: You can use this one to shift the clock up and down the chart depends on your preference.
+5. Candle clock placement: This will determine if you want it placed at any corner of the chart that you like.
+That is all it includes.

@@ -1,0 +1,5 @@
+A trend indicator based on the intersections of Parabolic Sar and a moving average. Sar is used as the main fast line of the indicator cloud, the MA is used as a slow signal line.
+Fig.1 ParabolicUsMoving indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17954

@@ -1,0 +1,68 @@
+The
+WebRequest
+function has two call options, the first option is used to send simple queries, the example of it is available in the
+QuotesDemo
+script.
+The second function option allows you to create queries of any type (GET, POST, HEAD, etc.)
+indicating your own
+set of headers. This options allows implementing flexible interaction with various Web services. This script is an example of how to post a message on the MQL5.com site.
+Warning:
+avoid sending too frequent automated requests to web sites, because most of sites block too frequent calls. The mql5.com site also has protection against too frequent requests, and an error in the code may lead to blocking of your account.
+When you start the script, enter your mql5.com login and password.
+#property
+description
+"Sample script posting a user message "
+#property
+description
+"on the wall on mql5.com"
+input
+string
+InpLogin
+=
+""
+;
+//Your MQL5.com account
+input
+string
+InpPassword
+=
+""
+;
+//Your account password
+input
+string
+InpFileName
+=
+"EURUSDM5.png"
+;
+//An image in folder MQL5/Files/
+input
+string
+InpFileType
+=
+"image/png"
+;
+//Correct mime type of the image
+You may use your own image name in the
+InpFileName
+parameter, do not forget to save the image file in the
+data_folder
+/MQL5/Files/ and in the
+InpFileType
+parameter set the correct
+MIME type
+.
+Thus, using WebRequest() you can arrange automatic posting of messages containing current market analysis and forecast of probable price actions.
+Note
+Please note that In the second version of the WebRequest() function, the following parameters passed by the user in the header are ignored, the following values are always used in them:
+"Accept-Language: en\r\n"
+"Accept-Charset: *,utf-8\r\n"
+"Connection: Keep-Alive\r\n"
+"Proxy-Connection: Keep-Alive\r\n"
+"Pragma: no-cache\r\n"
+"Cache-Control: no-cache\r\n"
+,
+The Host parameter is also ignored, its value is taken from the URL.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12296

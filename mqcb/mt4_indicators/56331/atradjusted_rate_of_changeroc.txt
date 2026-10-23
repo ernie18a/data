@@ -1,0 +1,18 @@
+This MQL4 indicator calculates and plots the
+Rate of Change (ROC)
+in two different ways:
+1. Percentage-Based ROC
+:
+This version expresses the price change as a percentage of the closing price
+n periods ago
+, making it useful for spotting momentum shifts across different symbols.
+2. ATR-Adjusted ROC
+:
+​
+This variation normalizes the ROC by dividing it by the
+Average True Range (ATR)
+over the different period. It helps compare momentum across different assets by accounting for volatility differences.
+The indicator allows traders to
+visualize price momentum
+with or without volatility adjustments, making it suitable for diverse trading strategies.
+Free and open-source.

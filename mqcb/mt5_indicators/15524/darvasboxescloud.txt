@@ -1,0 +1,7 @@
+Real author:
+MetaQuotes
+DarvasBoxes indicator with the background filling inside the channel.
+Fig.1. DarvasBoxesCloud
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15524

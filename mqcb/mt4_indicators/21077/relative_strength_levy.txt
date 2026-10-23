@@ -1,0 +1,10 @@
+Description:
+The concept of Relative Strength to Levy is based on the assumption that, securities which exhibited a large relative strength in the past will also develop relatively strongly in future, and conversely.
+It is compare on the performance of the past with the performance of last observation period.
+Calculation:
+Arithmetic mean of the candle closing price over the observation period.
+The result is plotted around the 1.0 mark.
+C is Close and MA is the Moving Average.
+Interpretation:
+If an instrument has an RSL of greater than 1, it is more likely than not, the instrument is more than weak in the past.
+Second interpretation of Levy is to first divide the standard deviations of the last 27 weekly closing prices. The intention of this method is to determine the volatility of the securities being observed.

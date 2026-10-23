@@ -1,0 +1,10 @@
+This indicator is a fork of the
+Divergence Awersome Ocilator
+indicator
+that
+can be downloaded via this link: https:
+//www.mql5.com/pt/code/56820
+Youtube Tutorial Assembling this Indicator:
+Translated from Portuguese by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/pt/code/57644

@@ -1,0 +1,12 @@
+Author:
+Kalenzo
+Indicator Squize_MA.
+External Variables:
+MaDifrential=5;
+Ma1Type =MODE_EMA;
+Ma1Price =PRICE_CLOSE;
+Ma1Period =5;
+Ma2Type =MODE_EMA;
+Ma2Price =PRICE_CLOSE;
+Ma2Period =20;
+Squize_MA

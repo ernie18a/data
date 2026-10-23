@@ -1,0 +1,7 @@
+A simple script to easily submit market or pending orders, without having to add or subtract decimals to find your stop loss, take profit, or trailing stop. With this script, you can place buy, sell, buy limit, sell limit, buy stop, or sell stop orders. After the script is executed, you will see a message either confirming your order or indicating that an error occurred.
+Inputs
+For market orders, simply input your take profit level (in pips), stop loss level (in pips), slippage, lot size, and order type (buy or sell). For pending orders (limit or stop), be sure to include the price at which you would like your broker to fill the order. You may also input a trailing stop (in pips), if desirable.
+Confirmation
+After executing the script, an alert message will confirm that the order was submitted successfully.
+Error Handling
+Should an error occur, an alert message will provide the associated error code and category.

@@ -1,0 +1,4 @@
+This expert is a tool to check broker execution and spread.
+Attach expert in any chart and wait to finish check.
+Expert sends a pending order (Buy Stop) away from the current price (100 pips) and then modifies it.
+When expert is removed from chart, pending orders expire and are deleted after 15 minutes.

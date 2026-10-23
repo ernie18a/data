@@ -1,0 +1,19 @@
+In equal period and grow of prices the average curve (MA and TEMA),
+drawn on close prices will be the same as the curve drawn on the open prices. When prices fall
+there is
+the opposite situation. The combination of two TEMA which are too detailed displaying the movement of prices and two МА not badly displaying the trend presence
+gives an interesting result.
+The indicator is displayed in a separate window as a histogram. Price movement is displayed by color:
+green is an increase, red is a falling. There is possibility to draw points of entering to the market by another color:
+blue is for Long positions, and yellow is for Short positions
+(should be commented in the text of the indicator).
+The indicator has delta value that allows to "cut" flat "noise",
+displaying it by gray color (in non-zero parameter value).
+Conclusion:
+The idea was to receive signals at one averaging period curves crossing
+with different types of prices (Open and Close), but the selection of the parameters in the tester for the Expert Advisor using this indicator
+different periods
+of averaging gave unexpectedly successful results.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1289

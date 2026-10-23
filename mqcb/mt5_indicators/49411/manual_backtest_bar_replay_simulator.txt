@@ -1,0 +1,4 @@
+A simple indicator code for learners which may also help you in manual backtest by just moving a vertical line to show hide bars.
+Add the indicator to chart and Add a Vertical Line object with name "VL" and it will start working as soon as you drag the VL Vertical Line
+You can move the line to left or right on chart and it will hide bars on right side
+You can also press CTRL button to move bars 1 shift to the right for easy backtest

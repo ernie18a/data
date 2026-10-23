@@ -1,0 +1,8 @@
+The Expert Advisor is a profit calculator on the opening position for price movement to a price level fixed in the chart. After attaching this Expert Advisor to the chart, a vertical price level appears on the chart. By moving the line, it is possible to get the Take Profit or Stop Loss value for the current market position directly on the chart. These values are valid for the price at that level.
+The indicator uses the class of library
+GetFontName.mqh
+(should be copied to the terminal_data_folder\MQL5\Include).
+Fig.1 The StopLevelCounter Expert Advisor
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1287

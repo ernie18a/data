@@ -1,0 +1,6 @@
+Author: not specified
+Adviser Pivotema3. Uses indicators:
+Heiken Ashi
+,
+Pivot
+.

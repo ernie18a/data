@@ -1,0 +1,83 @@
+In general, the idea is simple. As soon as the lines are grouped in a certain way, a signal is generated. Confirm using fractal, then as usual.
+All features can be disabled. That is, disable entry, exit by indicators, trailing, leave only the martingale, and you can thoughtlessly "mow the loot" before the arrival of Uncle Cole :))
+It shows good profit with drawdowns of 3-9% of the initial deposit during optimization with entries by Alligator and Fractal,trailing enabled and with martingale disabled.
+If necessary, it is possible to reduce the risks, limit the maximum lots, etc.
+Experiment yourselves - you will like it.
+A small favor for the developers: do not judge harshly, and modify it if you want it to work better. If possible, include a self-optimization. I tried to implement it as a script. It had optimized 3 (out of 9 required) parameters for an hour and a half.
+Optimized from September to today. Tested on one year.
+Strategy Tester Report
+on Alligator vol.1.1
+EGlobal-Real (Build 220)
+Symbol
+USDCHF (US Dollar vs Swiss Franc)
+Period
+1 Hour (H1) 2008.01.02 09:00 - 2008.12.17 23:00 (2008.01.01 - 2008.12.18)
+Model
+Every tick (the most accurate mode based on the shortest available time frames)
+Parameters
+MaxLot=0.5; koeff=1.3; risk=0.05; shirina1=0.001; shirina2=0.0003; Ruchnik=false; Vhod_Alligator=true; Vhod_Fractals=true; Vyhod_Alligator=false; OnlyOneOrder=true; EnableMartingail=false; Trailing=true; TP=0; SL=170; TrailingStop=65; profit=0; blue=-8; red=-1; green=3; Fractal_bars=9; visota_fractal=60; spred=10; Koleno=5; Zaderzhka=2000;
+Bars in test
+6965
+Ticks modelled
+2826122
+Modelling quality
+90.00%
+Mismatched chart errors
+9
+Initial deposit
+1000.00
+Net profit
+1473.15
+Gross profit
+4784.66
+Gross loss
+-3311.52
+Profit factor
+1.44
+Expected payoff
+13.15
+Absolute drawdown
+80.76
+Maximum drawdown
+654.80 (21.31%)
+Relative drawdown
+21.31% (654.80)
+Total trades
+112
+Short positions (won %)
+42 (85.71%)
+Long positions (won %)
+70 (72.86%)
+Profit trades (% of total)
+87 (77.68%)
+Loss Trades (% of total)
+25 (22.32%)
+Largest
+profit trade
+356.10
+loss trade
+-205.67
+Average
+profit trade
+55.00
+loss trade
+-132.46
+Maximum
+consecutive wins (profit in money)
+10 (149.62)
+consecutive losses (loss in money)
+2 (-394.37)
+Maximal
+consecutive profit (count of wins)
+784.21 (9)
+consecutive loss (count)
+-394.37 (2)
+Average
+consecutive wins
+60
+consecutive losses
+1
+Not the best option. But still works.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8628

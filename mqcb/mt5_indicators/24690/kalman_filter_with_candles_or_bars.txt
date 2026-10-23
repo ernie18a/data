@@ -1,0 +1,13 @@
+Theory :
+This one was published long time ago using Kalman filter name (among other publications, you can check this one too :
+Kalman filter
+- a version for mt4). Kept the name and made it multi time frame.Multi time frames are having, apart from all the standard multi time frames that can be used in metatrader 5, 3 additional "time frames" :
+first higher time frame (first time frame higher than the current chart time frame)
+second higher time frame (second time frame higher than the current chart time frame)
+third higher time frame (third time frame higher than the current chart time frame)
+Also, this version is adding colored bars or candles to the display in order to make it easier to assess the trend. The display is adjusted automatically.
+if your chart is set to display candles, the indicator will use colored candles
+if your chart is set to display bars or lines, the indicator will use colored bars
+PS: the color of the indicator is nor based on the slope of the indicator, but on the internal "velocity" that is calculated in the process of calculating this indicator
+Usage :
+You can use color changes as signals

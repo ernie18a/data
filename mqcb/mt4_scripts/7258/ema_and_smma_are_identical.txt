@@ -1,0 +1,12 @@
+This topic had been humorously mentioned by
+Rosh
+here:
+The "classic" system based on two MAs
+. And it surfaced once again here:
+https://www.mql5.com/ru/forum/51841
+.
+I managed to strictly prove the identity of the recurrent formulas of these indicators at a certain ratio of their periods, namely, at EMA_Period = 2 * SMMA_Period - 1. The proof details are hardly interesting for practitioners, however it is quite simple.
+The script is absolutely useless for trading, it simply dispels one little illusion. The differences in the behaviors of these MAs at the early stages are caused only by different initializations of these MAs and are not considered substantial. Run the script on the current chart and see the output file. The figure with these two moving averages is provided below. The blue is EMA(159), the red is SMMA(80). I deliberately show the initial part of the moving averages calculation, as well as choose a large period to show how quickly the difference between them disappears.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7258

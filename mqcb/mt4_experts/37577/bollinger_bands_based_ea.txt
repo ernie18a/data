@@ -1,0 +1,2 @@
+This EA is based on price crossing the lower and upper Bollinger bands.
+It also sets the SL and TP.

@@ -1,0 +1,17 @@
+Gann_Multi_Trend indicator defines a short, middle and long-term trends.
+It has four inputs:
+Short term period
+- short-term trends calculation period;
+Medium term period
+- mid-term trends calculation period;
+Long term period
+- long-term trends calculation period;
+Deviation
+(*).
+* Deviation is used to separate the lines of short, middle and long-term trends. It is a distance between the lines in points.
+Trend defining principle:
+If the current maximum is above the maximum value in the Period range, and the current minimum is above the minimum value in the Period range, then the trend is upward;
+If the current maximum is below the maximum value in the Period range, and the current minimum is below the minimum value in the Period range, then the trend is downward;
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21446

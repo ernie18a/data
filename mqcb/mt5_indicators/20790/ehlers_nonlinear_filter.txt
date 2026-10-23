@@ -1,0 +1,4 @@
+John Ehlers is known for making a lot of new tools for technical analysis. Here is one more.
+According to Ehlres:
+These filters provide extraordinary smoothing in sideways markets and aggressively follow major price movements with minimal lag.
+Even though he tends to over praise his work, we can agree with some of the statements he makes, and this indicator is by all means one of the useful tools in the code base collection that we are building here for all of the traders.

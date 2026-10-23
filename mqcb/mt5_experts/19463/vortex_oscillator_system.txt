@@ -1,0 +1,34 @@
+The author of the idea
+:
+Neil
+,
+the mq5 code author
+:
+barabashkakvn
+.
+A trading system based on the
+Vortex Oscillator
+signals.
+Attention! In order to provide conditions for the EA operation, you should add the compiled
+Vortex Oscillator
+file to [data folder]\MQL5\Indicators
+A Note from the Author:
+Vortex Oscillator is an Expert Advisor based on the Vortex Oscillator indicator, which is constructed as a difference between VI+ and VI- lines of the
+Vortex
+indicator. It is drawn as a histogram oscillating around the zero line.
+The system contains some properties which are not available in
+Vortex Indicator System
+. If you turn off all parameters, it will be a simple reversal trading system, which closes long positions upon sell signals and opens short ones, and vice versa.
+Parameters include the values of Stop Loss and Take Profit used for long and short positions respectively. A separate threshold parameter enables counting of Vortex Oscillator signals. When parameters are enabled, the system closes positions and does not open new ones until new trading signals appear.
+I have tested the code and I'm sure it works as intended. Nevertheless, this Expert Advisor does not pretend to be profitable. It is only a basis for further studies of the Vortex indicator as a trading tool. My preliminary tests showed that the EA
+is not profitable
+in its current form.
+DISCLAIMER
+: The Expert Advisor is provided "as is". The author does not guarantee that the EA will be effective in real trading.
+The EA is only given for educational purposes
+. Do not use it on real accounts until you adjust it to for your trading style and risk management.
+Backtest results on USDJPY:
+The following parameters were obtained:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19463

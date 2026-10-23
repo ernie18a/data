@@ -1,0 +1,25 @@
+Gain/Loss Info MetaTrader indicator
+— displays the gains and losses for all candles where the given threshold is surpassed. The values are calculated in points and percentage. The indicator can calculate gain/loss in two modes: plain candlestick Close and Open difference, and as difference between current Close and previous Close. You can set minimum change limits (for pips and percentage), change modes, and you can also control font color of the output numbers. The indicator is available for both MT4 and MT5.
+Input parameters
+PercentageLimit
+(default = 1.0) — minimum threshold for the change to be displayed; in percentage points.
+PointsLimit
+(default = 1000) — minimum threshold for the change to be displayed; in points.
+CloseToClose
+(default = true) — if
+true
+, the indicator will compare current Close to previous Close; if
+false
+, it will compare current Close to current Open.
+DisplayLossColor
+(default = clrRed) — color of the negative price change display.
+DisplayGainColor
+(default = clrGreen) — color of the positive price change display.
+MaxBars
+(default = 100) — maximum number of bars to calculate the indicator on. The higher is the number the more lagging indicator becomes.
+FontFace
+(default = "Verdana") — the font face to use for display.
+FontSize
+(default = 10) — the font size to use for display.
+ObjectPrefix
+(default = "GLI-") — prefix for chart objects for compatibility with other indicators.

@@ -1,0 +1,3 @@
+View current and historical trends of every timeframe in a single indicator window. The trend is determined by the two last moving averages of each timeframe; if the current moving average is above the previous moving average, the trend is bullish (green), otherwise, it is bearish (red). The default Moving Average period is set to 5, to identify short term trends.
+Recommendations:
+You can change the Moving Average configuration to fit your need.

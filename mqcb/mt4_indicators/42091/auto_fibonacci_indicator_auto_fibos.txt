@@ -1,0 +1,5 @@
+Going west going east trying to read the Fibonacci lines values or to find an Auto Fibonacci indicator in the MetaTrader! No Avail!
+One of my clients asked my for an Expert Advisor that uses the Fibonacci lines and automatically find the Higher High and Lower Low between 2 bars (Start bar to Current Bar).
+There's a lot of Fibonacci indicators out there but I decided to make my own indicator for you,
+Hope you Enjoy it!
+Coders' Guru

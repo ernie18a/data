@@ -1,0 +1,9 @@
+This Change Alert monitors barmenteros original indicator that compares four types of regression (linear, quadratic, logarithmic and exponential) and chooses the one that best fits the data analyzed.
+The idea is fast detect regression support and resistance breaks, to faster reaction and decision making.
+Changes are registered in Graph and Alert Panel as depicted above.
+Example: [***** LinReg=0.00024 ***** and LogReg --> LinReg] indicates that the best type of regression changed to LinReg, as shown in the Alert panel.
+Recommendations:
+If you use in low timeframes (like M1) or too many symbols changes can generate many Alerts.
+For more informations about the original indicator access
+https://www.mql5.com/en/code/352
+.

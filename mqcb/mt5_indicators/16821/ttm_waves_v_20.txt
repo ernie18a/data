@@ -1,0 +1,1 @@
+One more version that draws the parts when the slope is in accordance with trend (position compared to zero line). Blank areas are left on purpose: was curious how would it look like in that case and kind of like it.

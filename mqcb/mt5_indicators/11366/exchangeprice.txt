@@ -1,0 +1,10 @@
+Real author:
+papaklass
+The indicator displays change of a current price regarding the price countBarsS/countBarsL bars ago.
+This indicator was first implemented in MQL4 and published in
+CodeBase
+on November 12, 2013.
+Fig.1. ExchangePrice Indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11366

@@ -1,0 +1,8 @@
+Author:
+Massimiliano
+These are 3 very very simple scripts that simplify operation for scalpers.
+OrderBuy and OrderSell puts new Order. CloseAllPositive close all order in the window with profit>1pip.
+I found that are very useful if you config the Hotkey, for example i had configured ALT-Q for OrderBuy, ALT-A for OrderSell, ALT-W for CloseAllPositive.
+You can change values in the scripts as you prefer.
+Regards.
+There are problems with non integer lots, here a corrected version.

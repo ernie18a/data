@@ -1,0 +1,7 @@
+Trend Intensity Index as described by M.H.Pee in his article "Trend Intensity Index".
+To calculate a 30-day Trend Intensity Index (TII), follow these steps:
+Obtain the 60-day simple Moving Average by adding the Closes for the past 60 days and dividing the result by 60.
+Find the deviation of each of the recent 30 Closes from the 60-day Moving Average. The deviation is up if the Close is above the Moving Average, and down when the Close is below the average.
+Up deviation values are obtained by subtracting the Moving Average from the Close.
+Down deviations are calculated by subtracting the Close from the Moving Average.
+The TII allows you to find out what percentage of these deviations is up or down. For a 30-day TII, you should have 30 deviations from the 60-day Moving Average.

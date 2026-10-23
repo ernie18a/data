@@ -1,0 +1,1 @@
+higher confidence in candle implication rises with body to range percentage which shall be higher than or equal to 50%, therefore indicator colors these candles while leave other candles in default colors of chart

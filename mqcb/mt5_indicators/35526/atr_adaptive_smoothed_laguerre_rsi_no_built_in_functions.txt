@@ -1,0 +1,4 @@
+This version is the version of smoothed Laguerre RSI even further optimized by not using any built in function at all
+Recommendations:
+Use it in the same way as any other Laguerre RSI indicator
+Speed comparison can be done the usual way (using profiler)

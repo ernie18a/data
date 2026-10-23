@@ -1,0 +1,6 @@
+This indicator allows you to plan your financial balance. You also do not need to calculate the weekly or monthly trade volume to estimate the rebate which you will get from your IB. All of this you can immediately see on your chart. No need to bother anymore.
+This Daily Balance Sheet indicator is designed to complement the annual
+Balance Sheet
+indicator.
+Yellow color is Saturday color. In this tab, we can see the total of weekly trade, both volume, profit, loss and accumulation.
+Input Parameters:

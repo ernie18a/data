@@ -1,0 +1,2 @@
+extern int FrPeriod = 6; - 6 bars before and 6 bars after the current bar define the fractal
+extern int MaxBars = 500; - maximum number of bars for caclucalion

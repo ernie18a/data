@@ -1,0 +1,19 @@
+Real author
+: Aleksey Terentyev
+This is an implementation of the market cycle indicator described by Raghee Horner.
+"
+Wave
+is a simple market cycle indicator: a trio of exponential moving averages based on the Fibonacci number of 34. It provides me with a visual footprint of the market's trend, or lack of trend. It's better than trendlines, support and resistance for this specific purpose. It's not that trendlines, support and resistance are not effective but the fact is that these lines can be found in uptrending, downtrending, and sideways or range-bound markets, and by themselves they do not indicate the market's cycle."
+An excerpt from the book by R. Horner "Forex on Five Hours a Week: How to Make Money Trading on Your Own Time"
+The indicator principle is simple:
+Green bars represent the presence of an uptrend, which appears when a bar closes above ЕМА 34 (High).
+The absence of candles means consolidation, it appears when the bar closes within ЕМА 34 (High) and ЕМА 34 (Low).
+Pink candlesticks represent the presence of a downtrend, which appears when a bar closes below ЕМА 34 (Low).
+Signals are confirmed when three candles of the same color appear.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 30.05.2017.
+Fig. 1. The MASi_WaveHist indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18957

@@ -1,0 +1,36 @@
+Idea by
+:
+Scriptor
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+The EA trades by the Doji pattern:
+At the same time, you can set the candlestick body size in the "Size of a body of a candle (Open Close)" parameter.
+Operation algorithm
+The EA analyzes bar #2 and bar #1 when a new bar appears. If bar #2 is Doji, then the following signals are checked:
+close#1 > high#2 → signal for opening a BUY;
+close#1 < low#2 → signal for opening a SELL.
+Inputs
+Lots (if "0" → the parameter "Risk" will be used)
+- a lot value that is set manually. If you set to "0", then the parameter of "Risk" will work, i.e., risk in percents of free margin per a trade;
+Stop Loss (in pips)
+- Stop Loss; if you set it to "0", the parameter will be disabled;
+Take Profit (in pips)
+- Take Profit; if you set it to "0", the parameter will be disabled;
+Trailing Stop (in pips)
+- trailing, if you set it to "0", the parameter will be disabled;
+Trailing Step (in pips)
+- trailing step;
+Risk (if "0" → the parameter "Lots" will be used)
+- risk in percents of free margin per trade;
+Size of a candle (Open Close)
+- candlestick body size;
+magic number
+- unique identifier for the EA.
+If "Size of a candle" = 0, then there will be just a few trades (about 15-30) on H1 over the year, and profitability as follows:
+If you set this parameter to 1, then the number of trades will increase tenfold, and the profit will be distributed as follows:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20585

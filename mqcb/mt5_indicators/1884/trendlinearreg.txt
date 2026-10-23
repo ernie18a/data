@@ -1,0 +1,14 @@
+Real author:
+Sergej Solujanov
+A smooth non-normalized oscillator implemented in the form of a color histogram.
+How does trend change? How to select flat? How to trade? ... etc.
+If we assume that the trend of N bars is a straight line, we can calculate the parameters of this line. Equation of the line is y = bx + c. The line slope is characterized by the "b" coefficient. The indicator calculates this parameter by linear regression for every bar and displays it in a separate window. Color green shows that the value that is greater than the previous one, i.e. the angle increases, the red means just the opposite.
+In fact, in relation to charts, the "b" coefficient is derived from two factors - from the tangent of the angle line and the coefficient that characterizes the pair, so the scale of the indicator values ​​is different for different pairs.
+How to use the indicator? In my opinion, there are several options:
+Crossing the zero line;
+Touching the maximum value;
+If you set a certain area around the zero line as a flat, you can trade at the breakthrough of the zone.
+Fig. 1. The TrendLinearReg indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1884

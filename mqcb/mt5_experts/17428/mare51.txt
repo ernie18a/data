@@ -1,0 +1,60 @@
+Author of the idea
+—
+Collector
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+The MARE5.1 Expert Advisor is very easy to use. It uses the values of two Moving Averages (SMA) at the close of 0th, 2nd and 5th bar. The EA is configured to work on the M1 timeframe.
+Input Parameters:
+Lots — entry position volume
+TakeProfit
+— the Take Profit level
+StopLoss
+— the Stop Loss level
+MAFastPeriod
+— averaging period of the first Moving Average
+MASlowPeriod
+— averaging period of the second Moving Average
+MovingShift
+—
+MA shift (the same for both Moving Averages)
+HourTimeOpen and HourTimeClose — time (in hours), an interval inside which position opening is allowed
+The OnInit() block contains security time validation:
+if
+((HourTimeOpen<
+0
+|| HourTimeClose<
+0
+) || (HourTimeOpen>
+23
+|| HourTimeClose>
+23
+))
+{
+return
+(
+INIT_PARAMETERS_INCORRECT
+);
+}
+if
+(HourTimeOpen==HourTimeClose)
+{
+return
+(
+INIT_PARAMETERS_INCORRECT
+);
+}
+if
+(HourTimeOpen>HourTimeClose)
+{
+return
+(
+INIT_PARAMETERS_INCORRECT
+);
+}
+It means that time in hours cannot be less than "0" or greater than "23", overlapping is not allowed.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17428

@@ -1,0 +1,4 @@
+This indicator allows trader to calculate the proper lot size based on percentage risk and stop loss. The stop loss can be defined either using Average True Range ratio or Fixed size points.
+It has been developed to operate based on Points ( 10 Points = 1 Pip ) as to consistently usable with Currency pairs, Indices, Commodities and Stocks on MT5 platform.
+On EURUSD Currency pair H4 Chart
+On US500 Index H1 Chart

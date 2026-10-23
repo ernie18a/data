@@ -1,0 +1,11 @@
+RenkoLiveChart_v600 version 6 indicator converted from RenkoLiveChart_v600 version 6 Expert Advisor.
+The RenkoLiveChart_v600_indi is placed on a M1 chart and the Renko chart generated as an offline M7 * chart. See: File → Open Offline.On the the
+On the M1 chart ensure Auto Scroll & Chart Shift buttons are depressed or activated from Charts → Auto Scroll & Chart Shift.
+See Commons Tab image below.
+If markets are closed and the renko chart is not found in File → Open Offline try closing and opening the MT4 Terminal.
+If markets are open but ticks are slow and the Renko chart has not updated try changing the M1 chart to M5 and back to M1.
+Renko_Range_Detector indicator can be attached to the Renko offline chart for Renko boxsize verification. See: Below image - Renko Chart.
+* Or any user selected timeframe other than reserved timeframes (M1, M5, M15, M30, M60, H4, D1, MN).
+Research: Further information can be found on the internet and video sites.
+Common Tab
+Renko Chart

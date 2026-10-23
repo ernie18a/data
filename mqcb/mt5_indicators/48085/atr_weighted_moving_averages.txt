@@ -1,0 +1,4 @@
+This is an indicator to calculate 4 types of ATR Weighted moving averages.
+The calculations are based on pine script library "TAExt by TheBacktestGuy".
+Types included are:
+ATRWSMA, ATRWEMA, ATRWRMA, ATRWWMA

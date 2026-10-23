@@ -1,0 +1,24 @@
+If you can't watch your statistics and your game plan at all time, your emotions will take control and you will start taking ENTRIES such as revenge trade especially when you lose it. So that is why I wanted to keep an eye on my stats and my game plan at all time, in order to control my emotions.
+I came up with this indicator that will allows me to keep an eye on my statistics and my daily target.
+This indicator has three input that will allow you to specify:
+FontColor
+: the color of the font,
+Start Date
+: identify the range of date that you want to see its statistics. So you need to set a start date and the indicator will keep calculating your stat since this starting date till now.
+Daily Target in %:
+identify your daily target. For example, if you daily target is 2%, type 2
+As you can see in the image above
+Date Range
+: from Start Date till now
+Target
+: represent your daily target in % and will calculate it in amount over your account balance
+Expectancy
+:
+CLOSED POSITIONS (20)
+: 20 trades during this date range
+Net Profit
+: Net profit during this date range [total amount win / total amount lost]
+% win/loss
+: [total number of win / total number of loss]   [% win / % loss]
+Avg win
+/ loss: [Avg win / Avg loss]

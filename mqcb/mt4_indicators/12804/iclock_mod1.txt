@@ -1,0 +1,18 @@
+Real author:
+mladen
+The indicator is a second-by-second candle timer not dependent on incoming ticks.
+The indicator has three functions:
+The indicator will count-down the remaining candle time.
+At the open of a new candle the indicator has option to fire alert.
+If a candle open is late the indicator will count-up the late time until a candle is opened.
+Scalpers and short term traders require greater precision and attention with regards timing of opening and closing positions. Candle Timers assist these objectives.
+Added to original code:
+Convereted from MetaTrader 5 to MetaTrader 4.
+New candle alert.
+Label alert mode color. Off(green), On(pink), Sound only(blue)
+Font bold option.
+Tested on Broker Server times GMT +0, +1, +2 and -5;
+Note: A number of candle timers were run simultaneously for comparison. No candle timer indicator conflicts were found. However, if erratic operation is experienced remove all other candle timers.
+Recommendation:
+For initial testing sync PC Internet Time.
+If required, use search engine for instruction.

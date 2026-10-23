@@ -1,0 +1,5 @@
+Author: klot
+An attempt to combine ZigZag and ATR. And to use it for determining the trend phase.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7211

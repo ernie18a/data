@@ -1,0 +1,1 @@
+Easy script to help analyze specified symbol, it opens 8 new charts with different periods (M1, M5, M15, M30, H1, H4, Daily, Weekly) and applies a specified template "np" to the chart (to use create and save template np).

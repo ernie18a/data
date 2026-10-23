@@ -1,0 +1,7 @@
+Theory :
+Velocity is a smoother version of momentum. This one extends it a bot more :
+it is even smoother since it uses T3 for velocity calculation
+it is displaying the velocity as a "tape"
+it is adding heiken ashi prices to a set of available prices
+Usage :
+You can use it as any regular momentum type indicator

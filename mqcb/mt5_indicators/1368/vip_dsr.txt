@@ -1,0 +1,5 @@
+The Dynamic Support/Resistance indicator for MetaTrader automatically sets on any timeframe and serves for trading in the channel and the breakthrough channel.
+It is used in the VIP Synergy 3.0 automated trading system.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1368

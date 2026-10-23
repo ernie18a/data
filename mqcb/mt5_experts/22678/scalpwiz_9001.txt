@@ -1,0 +1,47 @@
+Idea by:
+Marc Boggs
+Code mq5 by:
+barabashkakvn
+The EA works on hedge accounts ONLY!
+In the EA, classes
+CPositionInfo
+,
+CTrade
+,
+CSymbolInfo
+,
+CAccountInfo
+,
+COrderInfo
+, and
+CArrayObj
+were used.
+Four levels, i.e., the spaces for placing pending orders, can be specified in input parameters. The sizes of the spaces follows the logic below:
+Level #0
+<
+Level #1
+<
+Level #2
+<
+Level #3
+The EA permanently monitors the situation, i.e., it works on each tick, as soon as the price breaks through one of the lines of indicator iBands (Bollinger Bands, BB) at the distance of
+Level #3
+. As soon as such breakthrough is found, pending orders will be placed. In the picture below, you can see a sample situation where the breakthrough of the upper line is found: Four Sell stop orders were placed
+Accordingly, as soon as the lower line is broken through, pending Buy stop orders will be placed.
+For each pending order,
+Pending Stop orders expiration time
+(in minutes) is set. You can specify both permanent and dynamic (in risk percents) lot sizes. Lot type is specified in
+Money management
+.
+Parameters, such as
+Stop Loss
+,
+Take Profit
+, and
+Trailing Stop
+, can be disabled. To do so, you just have to assign the value of 0.0 to the parameter.
+A sample start on EURUSD,H1
+and on USDJPY,H1
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22678

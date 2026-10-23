@@ -1,0 +1,41 @@
+Idea by
+:
+Scriptor
+MQL5 code author
+:
+barabashkakvn
+The Expert Advisor is based on the trend indicator iMA (Moving Average, MA) and the iMomentum oscillator (Momentum). It can work on every tick (
+Work on every tick
+= "
+true
+") and only at the new bar emergence time (
+work on every tick
+= "
+false
+").
+The
+work timeframe
+parameter means the timeframe, on which indicators are created and the bar close prices of which are used.
+For Buy and Sell positions, you can separately set Stop Loss (
+Stop Loss Buy
+,
+Stop Loss Sell
+) and Take Profit (
+Take Profit Buy,
+Take Profit Sell
+). If you want to disable any of these options, set the appropriate parameter to "0.0".
+Trading Signals
+If there are no open positions, then position opening signals can be checked:
+BUY opening signal: (Close of bar #0 > Moving Average on bar #0) AND (Momentum on bar #0 >100.0) AND (Close of bar #0 > Close of bar #1)
+SELL opening signal: (Close of bar #0 < Moving Average on bar #0) AND (Momentum on bar #0 <100.0) AND (Close of bar #0 < Close of bar #1)
+When there are open positions, the possibility of closing is checked:
+A signal to close BUY: (Momentum on bar #0 <100.0)
+A Signal to close SELL: (Momentum on bar #0 >100.0))
+The results of optimization of
+work on every tick
+and
+work timeframe
+for EURUSD are provided as default EA parameters. Results of EURUSD testing with default parameters:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21852

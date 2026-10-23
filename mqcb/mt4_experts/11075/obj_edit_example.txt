@@ -1,0 +1,9 @@
+Description:
+The Expert Advisor shows the details of working with OBJ_LABEL graphic object.
+It's written using MQL5 style, the graphic object properties (coordinates, corner, align) are controlled in OnChartEvent() event handler.
+Note: The Expert Advisor works with MetaTrader 4
+build 555 and higher
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11075

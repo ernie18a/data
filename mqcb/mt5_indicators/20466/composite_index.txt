@@ -1,0 +1,3 @@
+Constance Brown's description of Composite Index:
+The Composite Index was developed to solve the divergence failure problem in the RSI, but its ability to provide specific horizontal levels of support within the indicator adds to its value. The Composite Index takes the normalized formula of RSI and removes the normalization range restrictions. The formula for the Composite Index uses an embedded momentum calculation with a short-term RSI smoothed.
+This is the MetaTrader 5 version of that indicator made exactly as the original Composite Index is described and made.

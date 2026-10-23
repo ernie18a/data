@@ -1,0 +1,49 @@
+XAUUSD Spread Alert Utility MT5 is a simple educational indicator for MetaTrader 5. It displays the current broker spread directly on the chart and can notify the trader when the spread moves above selected warning or danger thresholds.
+The idea behind this tool is that spread is an important trading cost, especially on instruments such as XAUUSD where market conditions can change quickly around session opens, rollovers, news periods and low-liquidity moments. By watching spread directly on the chart, traders can learn how execution conditions change during different parts of the trading day.
+This utility is informational only. It does not open trades, close trades, manage positions or provide entry signals.
+Main Features:
+- On-chart XAUUSD spread monitor
+- Live spread display in points
+- Spread price display
+- Normal, warning and danger status labels
+- User-defined warning spread threshold
+- User-defined danger spread threshold
+- Popup alert option
+- Sound alert option
+- Push notification option
+- Email alert option
+- Alert cooldown to reduce repeated notifications
+- Manual spread test mode for Strategy Tester checking
+- Three visual themes
+- Developer name shown on chart
+- No trade execution
+How To Use:
+Attach the indicator to an XAUUSD or Gold chart in MetaTrader 5. The panel will display the current spread reported by the broker. If the spread is below the warning level, the panel shows a normal condition. If spread reaches or exceeds the warning level, the panel changes to warning status. If spread reaches or exceeds the danger level, the panel changes to danger status.
+Panel Interpretation:
+- Symbol shows whether the current chart appears to be XAUUSD or Gold.
+- Live Spread shows the broker-reported spread in points.
+- Spread Price converts the spread points into price distance.
+- Status shows NORMAL, WARNING or DANGER according to the configured thresholds.
+- Thresholds shows the warning and danger levels currently used by the indicator.
+- Last Alert shows the latest alert condition detected by the indicator. This is useful in Strategy Tester because terminal alert windows and notification channels may not behave the same way as they do on a live chart.
+Input Parameters:
+- Panel title: text shown in the panel header.
+- Panel corner: chart corner where the panel is displayed.
+- X and Y position: pixel offset for panel placement.
+- Theme: visual color theme.
+- Refresh seconds: timer refresh interval.
+- Warning spread points: spread level where warning status begins.
+- Danger spread points: spread level where danger status begins.
+- Alert cooldown seconds: minimum time between repeated alerts.
+- Popup alert: enable or disable terminal popup alerts.
+- Sound alert: enable or disable terminal sound alerts.
+- Sound file: sound file from the MetaTrader terminal Sounds folder.
+- Push notification: enable or disable mobile push alerts if configured in the terminal.
+- Email alert: enable or disable email alerts if configured in the terminal.
+- Show developer name: show or hide the developer name on the chart panel.
+- Tester manual mode: in Strategy Tester, use a manual spread value instead of broker-reported spread.
+- Tester spread points: manual spread value used when tester manual mode is enabled.
+Notes:
+This indicator is intended as a free educational spread monitoring utility. It is not financial advice, it does not predict future price movement and it does not execute trades.
+Contact us for any support:
+https://www.mql5.com/en/users/2rockworld/seller

@@ -1,0 +1,7 @@
+Indicator FIBO_S.
+TargetPeriod=34;
+FiboPeriod=17;
+ShowTarget=true;
+ShowFiboLines=false;
+ShowHighLow=false;
+FIBO_S

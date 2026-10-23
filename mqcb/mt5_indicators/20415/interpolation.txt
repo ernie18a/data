@@ -1,0 +1,13 @@
+The indicator draws on a price chart a line, constructed by the method of polynomial interpolation between two node lines.
+It has four input parameters:
+Length
+- the initial distance between two node lines (in bars);
+Power
+- the sensitivity parameter (the number of line calculation iterations);
+Applied price
+- the calculation price;
+Drawing style of node line
+- choose the style for the node lines.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20415

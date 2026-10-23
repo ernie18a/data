@@ -1,0 +1,21 @@
+Indicator Zero Lag Triple Exponential Moving Average.
+It has two configurable parameters:
+Period
+- calculation period;
+Applied price
+- price used for calculations.
+Calculations:
+ZLTEMA = TEMA1 + Diff
+where:
+Diff = TEMA1 - TEMA2
+TEMA2 = 3*(EMA4-EMA5)+EMA6
+EMA6 = EMA(EMA5, Period)
+EMA5 = EMA(EMA3, Period)
+EMA4 = EMA(TEMA1, Period)
+TEMA1 = 3*(EMA1-EMA2)+EMA3
+EMA3 = EMA(EMA2, Period)
+EMA2 = EMA(EMA1, Period)
+EMA1 = EMA(Applied price, Period)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21255

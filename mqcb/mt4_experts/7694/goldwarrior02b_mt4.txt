@@ -1,0 +1,13 @@
+Author: Nick Bilak
+Adviser GoldWarrior02b MT4. Uses indicators:
+DayImpuls
+,
+ZigZag
+и
+iCCI
+.
+--------------------------------
+Parameters of testing
+Symbol: EURUSD.
+Period: M5.
+Model: All tics.

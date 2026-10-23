@@ -1,0 +1,13 @@
+The author of the idea
+-
+Yuri
+mq5 code author
+-
+barabashkakvn
+The Expert Advisor uses Buy Stop and Sell Stop pending orders. The EA performs operations at the emergence of a new bar: if there are no positions, as well as no pending Stop orders, the EA places Buy Stop and Sell Stop at the "
+Indent
+" distance. If none of the orders triggers at the next bar, the EA deletes these pending orders and starts anew.
+Once any of the pending orders triggers, the remaining order will be deleted. Trailing stop will be applied to the open position. At the same time, the EA will place two additional pending Stop orders with a doubled lot.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23297

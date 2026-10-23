@@ -1,0 +1,1 @@
+Simplified version of Didi Index, with only the slow line inverted (to follow the trend direction). The code also has some minor optimizations in performance speed

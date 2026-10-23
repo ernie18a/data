@@ -1,0 +1,31 @@
+For the best understanding I'll give a table comparing logic of building:
+Renko
+Three Line Break
+Renko Line Break
+Box size
+All boxes are of the same size and equal to the specified value.
+Boxes have different size determined by the movement of the market.
+Boxes have different size, but no less than the specified value.
+Trend continuation (new box)
+New box (of the specified value) will be added, if the market growth (fall) is less than the specified value.
+New box will be added, if the closing price is higher than the maximum (lower than the minimum) of the current box series. Price movement size doesn't matter.
+A new box will be added, if the closing price is higher than the maximum (lower than the minimum) of the current box series no less than for the specified value.
+Trend reversal (new box)
+Reversal will be made, if the price is higher or lower than the last box on a value no less than the specified.
+Reversal will be made, if the closing price is higher or lower then the three previous lines, the size of the movement doesn't matter.
+Reversal will be made, if the closing price is higher (lower) than the last box on a value no less than the specified.
+Timeframe
+Theoretically, it can be drawn on any timeframe data, but to see the true (undisturbed) picture, you should draw renko on minute timeframe data (and ideally on every tick).
+It is drawn by the closing prices of the current timeframe.
+It is drawn by the closing prices of the current timeframe.
+Additional information:
+not to overload the schedule by too great number of graphical objects, the indicator is realized in the form of two lines representing the upper and the lower boundaries of boxes.
+an indicator buffer which contains the number of the current trend boxes on each bar is added. In a down trend buffer contains values of number of boxes with a minus sign.
+Parameters:
+Min Box Size
+- the minimum size of boxes in pips.
+Recommendations:
+this is a trend indicator and it can be used as an alternative for the trend definition instruments which use averaging.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1588

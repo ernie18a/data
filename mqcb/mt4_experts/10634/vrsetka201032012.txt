@@ -1,0 +1,11 @@
+This Expert Advisor is a modification of
+http://codebase.mql4.com/ru/code/10540
+to numerous requests to fix the bugs.
+Modifications:
+1 - Now Advisor works only with its own orders
+2 - Fixed Lots.
+I honestly did not think that anyone interested in this EA, but to the delight of so many people insisted, and I corrected the code. Enjoy.
+Image:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10634

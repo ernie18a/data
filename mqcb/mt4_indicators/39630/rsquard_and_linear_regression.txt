@@ -1,0 +1,9 @@
+Also, it can do some other things:
+Slope
+Slope in degrees
+Variance
+Std Deviation
+Mean
+"Fake Graphs"
+With this function (fake graphs) you can plot the actual data from a indicator. This is valuable when you are coding an EA and testing it on MT4, as the strategy tester does not show in real-time the actual graph from the indicators... Just fill the array with the actual N-values and call the procedure "Fake Graph" to plot it rigth on the main window
+(8/6/2022 - Correctd a bug on the graph generating cicle)

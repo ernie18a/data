@@ -1,0 +1,12 @@
+The PMF (Pivot Money Flow) indicator displays the direction and the reversal of money flows.
+It has two parameters:
+Applied price
+- the calculation price;
+Cumulative
+- apply cumulative calculation.
+If this option is disabled, only the current direction of money flows without taking into account past accumulation is shown.
+Fig.1 Cumulative calculation
+Fig.2 Current calculation
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20062

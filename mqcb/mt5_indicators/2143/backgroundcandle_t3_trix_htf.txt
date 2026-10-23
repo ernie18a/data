@@ -1,0 +1,11 @@
+The indicator draws candlesticks of a larger timeframe as color filled rectangles using
+DRAW_FILLING
+buffers.
+Rectangles are color filled in accordance with the direction of the
+T3_TRIX
+histogram or the colored cloud. Depending on trend direction the candlestick body is painted in blue or brown, shadows are painted in light blue or yellow.
+The indicator requires the compiled indicator file T3_TRIX.mq5 for operation. Place it to terminal_data_folder\MQL5\Indicators\.
+Figure 1. The BackgroundСandle_T3_TRIX_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2143

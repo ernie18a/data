@@ -1,0 +1,6 @@
+Shows upcoming news events 1 hour before and 30 minutes after event. Also shows active sessions etc. - Code is mix of code taken from 'Code base'
+Fixed issue with news download.
+Place MarketNewsLib.mq4 in experts\libraries
+Place MarketNewsLib.mqh in experts\include
+Place SimpleMarketInfo.mq4 in experts\indicators
+Please use indicator settings to change defaults to suit you. e.g set time_zone_gmt to -5 for NY, text colors etc.

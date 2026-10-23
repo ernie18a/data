@@ -1,0 +1,11 @@
+Real author:
+Portions from MetaTrader 5 Standard indicator package.
+The indicator shows the trend and allows to see a price range.
+It based on
+Adaptive Moving Average
+(AMA) and
+Bollinger Bands ®
+(BB) indicators.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/206

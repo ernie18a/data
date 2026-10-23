@@ -1,0 +1,15 @@
+Real author:
+Tor
+This is a modified Envelopes indicator for measuring the price deviation. It displays the upper and lower borders of the price deviation from МА calculated considering the average volatility of the symbol according to ATR indicator. The internal lavender-colored indicator channel stands for Envelopes, while the pale light green and pale pink borders are formed by ATR by deviation from the channel.
+The indicator uses the classes of SmoothAlgorithms.mqh library (copy it to
+<terminal_data_folder>
+\MQL5\Include). The use of the classes was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+The original indicator was developed in the MQL4 language and published in the
+CodeBase
+on 19.10.2016.
+Fig.1. EnvelopesATR_Cloud indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16873

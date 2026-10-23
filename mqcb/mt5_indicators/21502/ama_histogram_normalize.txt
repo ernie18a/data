@@ -1,0 +1,15 @@
+Version of the
+AMA Histogram
+indicator.
+Normalize iAMA indicator
+parameters is added. Two options are available for it:
+Digits()
+- data from iAMA are taken with usual accuracy;
+Digits()-1
+- more rough indicator data is taken.
+What are possible
+Digits()-1
+applications? For example, if you want to avoid small noise and catch only significant changes in the indicator values:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21502

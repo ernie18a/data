@@ -1,0 +1,14 @@
+The suggestions mentioned in the comments on the original page have been taken into account.
+1. Added coloring of the histogram bars relative to the previous bar.
+2. The FastEMABuffer and SlowEMABuffer values are multiplied by 100. The comment author claims that it facilitates the interpretation of the signals. Although it is already perfectly clear with bar coloring.
+Author:
+The original indicator has been posted by
+Collector
+.
+The full description can be found on the page of the
+original
+.
+ZeroLag MACD Colored (which is in a separate indicator window) :-)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8703

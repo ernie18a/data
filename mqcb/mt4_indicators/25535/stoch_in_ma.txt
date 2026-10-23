@@ -1,0 +1,14 @@
+STOCH in MA is an indicator which applies the stochastic changes to the iMA.
+It helps any trader to see the trend of pair.
+Parameters
+MA_Periods - iMA period.
+MA_Method - iMA method.
+K_Period - K line period.
+D_Period - D line period.
+Slowind - slowing.
+STOCH_MA_METHOD - averaging method for MA.
+PriceField - price (Low/High or Close/Close).
+STOCH_LevelUp - uptrend level.
+STOCH_LevelDn - downtrend level.
+BarsCount - how many bars will show the line.
+ReverseSignals - reverse an uptrend to downtrend signals.

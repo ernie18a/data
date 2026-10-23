@@ -1,0 +1,3 @@
+Few improvements from standart fractal:
+1. You can chouse size of fractal. Standart version use 2 as constant
+2. It does not draw fractals against the trend, which makes your chart much more informative

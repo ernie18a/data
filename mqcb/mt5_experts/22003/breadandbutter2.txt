@@ -1,0 +1,100 @@
+The author of the idea
+:
+Scriptor
+MQL5 code author
+:
+barabashkakvn
+The EA based on iADX (Average Directional Movement Index, ADX) and iAMA (Adaptive Moving Average, AMA) indicators. The EA only operates when a new bar appears. When receiving a trading signal, opposite positions are closed.
+The search for the best parameters for the symbol and the timeframe should be carried out in two ways:
+manual
+- editing
+"<" ">"
+characters in the signal equations:
+if
+(adx_0
+<
+adx_1 && ama_0
+>
+ama_1)
+     {
+      ClosePositions(
+POSITION_TYPE_SELL
+);
+double
+sl=(InpStopLoss==
+0
+)?
+0.0
+:m_symbol.
+Ask
+()-ExtStopLoss;
+if
+(sl>=m_symbol.
+Bid
+())
+// incident: the position isn't opened yet, and has to be already closed
+{
+         PrevBars=
+0
+;
+return
+;
+        }
+double
+tp=(InpTakeProfit==
+0
+)?
+0.0
+:m_symbol.
+Ask
+()+ExtTakeProfit;
+      OpenBuy(sl,tp);
+return
+;
+     }
+if
+(adx_0
+>
+adx_1 && ama_0
+<
+ama_1)
+     {
+      ClosePositions(
+POSITION_TYPE_BUY
+);
+double
+sl=(InpStopLoss==
+0
+)?
+0.0
+:m_symbol.
+Bid
+()+ExtStopLoss;
+if
+(sl<=m_symbol.
+Ask
+())
+// incident: the position isn't opened yet, and has to be already closed
+{
+         PrevBars=
+0
+;
+return
+;
+        }
+double
+tp=(InpTakeProfit==
+0
+)?
+0.0
+:m_symbol.
+Bid
+()-ExtTakeProfit;
+      OpenSell(sl,tp);
+return
+;
+     }
+automatic - selecting stop loss, take profit and AMA indicator horizontal shift:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22003

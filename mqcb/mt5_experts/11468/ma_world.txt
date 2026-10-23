@@ -1,0 +1,24 @@
+This Expert can run on all Symbols and Time Frames and uses the crossover of two Linear Moving Averages as Signal and an Exponential Moving Average as Trailing Stop.
+Use the Strategy Tester and build up your complete Trading System.
+Signal of the Expert is based on the crossover of two Linear Moving Averages (Fast MA 12, Slow MA 25).
+Deal Execution: Buy/Sell Limit Orders;
+Stop Loss: 95 pips;
+Take Profit: 670 pips;
+Trailing Stop: Exponential MA 92;
+Lot Sizing: 1% of free margin available.
+Optimization was made on the Symbol: EURAUD with H8 Time Frame (screenshots attached) also is possible to use the same parameters on the following symbols:
+USDCHF Time Frame H6;
+AUDCHF Time Frame H6;
+EURJPY Time Frame H12;
+CHFJPY Time Frame H12;
+GBPAUD Time Frame H12;
+SILVER Time Frame Daily.
+Leverage used 1:100
+Backtest Period: Jan 2011/May 2014
+With this expert you can build a complete trading system. You all need to play with backtest to find for each Symbol and Time Frame the best parameters.
+I just suggest to use Time Frames higher than H4.
+If you need more information regarding how to use backtest take a look to the articles
+Creating Custom Criteria of Optimization of Expert Advisors
+and
+Guide to Testing and Optimizing of Expert Advisors in MQL5
+.

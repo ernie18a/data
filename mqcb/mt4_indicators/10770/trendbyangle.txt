@@ -1,0 +1,3 @@
+Find the highest and lowest price in the specified period,
+then draw four 25~85-degree angle line for forecast price .
+Mr Yang @ 2012 & http://yangshu.net

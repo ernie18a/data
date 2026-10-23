@@ -1,0 +1,25 @@
+The awo Holidays EA reports the status of the next day: working day, day off or holiday.
+The holidays are read from the file 'holidays.csv' (must be placed to '\expert\files' and '\tester\files' folders) and are filtered by symbol,
+for example, in addition to the international holidays, only the British and the Japanese holidays will be displayed for GBP/JPY.
+The program informs about coming of the next day by two vertical lines:
+Solid line - start\end of a trading day (swap line)
+Dashed line - start\end of an astronomical day.
+Light blue color - the next
+calendar
+day is working day
+Blue color - the next
+calendar
+day is Saturday
+Orange color - the next
+calendar
+day is a holiday (see the comment)
+The comments display the statuses of the previous, current trading days and the next three calendar days.
+The EA works on all pairs and periods up to D1.
+I have the data only for 2007, the data was taken from here:
+http://alpari.org/ru/analytics/holidays.html
+. If anyone has other years in a similar data, please send them to a-wo@mail.ru, thank you in advance.
+This figure clearly shows spikes on Friday evening and on Monday morning.
+This is a draft for my robot, but I thought it might be useful to someone. There was an idea to write something similar to indicate the economic events and the trading session times.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7094

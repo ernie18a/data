@@ -1,0 +1,131 @@
+this is small script using external DLL "user32.dll".
+1. Import Dll and its functions
+#define
+WM_GETTEXTLENGTH
+0xE
+#define
+WM_GETTEXT
+0xD
+#import
+"user32.dll"
+int
+FindWindowW(
+string
+lpClassName,
+string
+lpWindowName);
+int
+FindWindowExW(
+int
+hWnd1,
+int
+hWnd2,
+string
+lpsz1,
+string
+lpsz2);
+int
+SendMessageA(
+int
+hwnd,
+int
+wMsg,
+int
+wParam,
+int
+lParam);
+int
+SendMessageA(
+int
+hwnd,
+int
+wMsg,
+int
+wParam,
+char
+&lParam[]);
+//Edit lParam to receive value return
+#import
+//+------
+2 Get Handle of Alert Dialog (parent window)
+using FindWindowW to specific parent window handle
+int
+Hwnd =
+0
+;
+//handle of parent window
+int
+CHwnd =
+0
+;
+//handle of textbox
+Hwnd = FindWindowW(
+"#32770"
+,
+"Alert"
+);
+//replace FindWindowA to FindWindowW for mql4
+3. Get Handle of Textbox (or label) in Dialog (child window)
+using FindWindowExW to specifit child window handle
+//Get handle of textbox in Dialog
+CHwnd = FindWindowExW(Hwnd,
+0
+,
+"Edit"
+,
+NULL
+);
+//Find All control have class name is "Edit"
+3. Get Content of message from textbox
+3.1 N
+eed to specify the length of the string:
+//Get content of Message in textbox
+//Get length of message string
+int
+textLength = SendMessageA(CHwnd, WM_GETTEXTLENGTH,
+0
+,
+0
+);
+3.2 Get content
+string
+contentMsg =
+""
+;
+char
+ch[
+540
+];
+for
+(
+int
+i =
+0
+; i <
+ArraySize
+(ch); i++) ch[i] =
+0x000
+;
+ArrayInitialize
+(ch,
+0x000
+);
+int
+length = SendMessageA(CHwnd, WM_GETTEXT, textLength +
+1
+, ch);
+for
+(
+int
+i =
+0
+; i < length; i++) contentMsg +=
+CharToString
+(ch[i]);
+Print
+(
+__FUNCTION__
+,
+"--> Content Message = "
++ contentMsg);
+Get more information for tutorial video:

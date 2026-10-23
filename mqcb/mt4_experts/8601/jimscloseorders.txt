@@ -1,0 +1,20 @@
+Hi Guys:
+Well this is my first Stab at MQL4 it is a mod so theres no credit due me, but this EA is an effective "OMG THE MARKET IS NOT DOING WHAT I WANT" Button. When Loaded onto any chart with Expet Advisors Disabled you can set up the EA to close
+ALL ORDERS, ONLY O
+rders with Positive Profit, or ONLY Orders With Negative Profit.
+IMPORTANT NOTES:
+1. THIS EA IS NON CHART SPECIFIC MEANING THAT IT WILL ACT UPON
+ALL OPEN ORDERS
+NOT JUST THE ONES ON THE CHART ITS LOADED.
+2. THIS EA IS KIND OF INTENDED FOR MANUAL TRADERS THAT LEAVE THE EA FUNCTION DISABLED WITH THE EA LOADED AND SET ONTO THE CHART, ELSE IF THE EA FUNCTION IS ENABLED AS SOON AS YOU OPEN AN ORDER IT WILL BE CLOSED BY THE EA GIVING THE SPREAD TO YOUR BROKER MAKING YOU INCREASINGLY FRUSTRATED AND.......... WELL-------BROKER LOL
+WHAT ID LIKE TO ADD OR SEE ADDED TO THIS EA:
+For anybody with spare time, ill be working on it as well in my learning curve, id like to add limits to the close orders of POS; ie...... Function will close all orders over "100"(Arbitrary Selectable number) pips profit
+kind of like a EA that blanket all open orders with a TP of a number that is set in the EAs options.
+Enjoy
+Please Post feedback here and/or Email Me
+Jedimedic77@gmail.com
+Good Luck Everyone, Happy Holidays, and Good Fortune
+Jim Malwitz
+--------------------------------
+"Sis Vis Pacum Parabellum"
+"Draco Dormiens Nunqueim Titilandus"

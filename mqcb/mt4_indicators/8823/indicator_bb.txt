@@ -1,0 +1,4 @@
+(Additional level of 50 added as requested.)
+%BB is indicator comes from Bollinger Bands.
+One of its use is to check the price is penetrate the upper/lower bands of Bollinger Bands.
+Enjoy!

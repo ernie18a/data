@@ -1,0 +1,13 @@
+Author:
+HajarWae
+The peak/bottom could show the top level of RSI. When rsi passed the top/bottom value it indicated a buy/sel signal.
+It can show the signal earlier but still need some filter, so this methode could be combined with others indicator as a filters.
+Red arrow is peak and Yellow arrow is bottom.
+I want to plot/draw rsi level based on peak/bottom possition. but i have a problem about the code to modify this indicator. need help to make it perfect.
+I want to plot all of the peak/bottom towards then we will get any level at the peak/bottom. and when rsi cross the peak/bottom line, the level will be terminated 1 candle after crossing.
+the calculating & plotting of others level will be continued until rsi cossing the level again.
+can any body help???
+please share....
+Recommendations:
+Use This RSI levels as a Signal
+Combine with others indicators as a filter

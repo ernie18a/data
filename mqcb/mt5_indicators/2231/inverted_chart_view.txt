@@ -1,0 +1,6 @@
+Most Trader have only a Long Feeling.
+With this Indicator the Chart is shown inverted to find better your short entry points.
+Usage:
+Drag the InvertedChart indicator to your Forex Chart;
+Drag the Bollinger Bands indicator to the inverted Chart;
+Make sure that the Source is from InvertedChart indicator and not from orignal Forex Price.

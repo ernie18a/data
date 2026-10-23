@@ -1,0 +1,7 @@
+For this script to run properly you must have the strategy tester window open.
+I made this for the purpose of creating a distributed automated optimization package.
+I was unsatisfied with the available automated optimization code because it necessitates modification of expert advisor code.
+This was created and tested on Windows 7 64 bit. It is possible that the #define statements need to be changed to point to the proper IDs for your operating system.
+I was unable to directly send a string to the date field because its control, SysDateTimePick32, is difficult to interface with MQL4.
+Instead I used a somewhat round-about method of parsing the control's text and sending UP, DOWN, LEFT, and RIGHT keystrokes to adjust the date.
+I posted this script because I found it very time consuming to find the necessary information to achieve this (especially for a Windows API newbie like myself). Hopefully this will help others.

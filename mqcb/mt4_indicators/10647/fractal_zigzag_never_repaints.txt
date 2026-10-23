@@ -1,0 +1,13 @@
+This indicator is very simple: it shows signals triggered using Fractals and the original ZigZag indicator without any further filtering.
+It does never -ever- repaint a past signal and therefore it useful to study the real behavior of the ZigZag -which does repaint- as a trading tool over time.
+You should complement signals with your own trading strategy or edit the source code to do it.
+As you can see, many signals are repainted by ZigZag indicator over time.
+It depends on original
+MetaQuotes ZigZag indicator
+-attached-.
+Recommendations:
+Do not trade this indicator by itself
+You can use this indicator template to filter zigzag signals with your trading strategy
+Features:
+Adjustable ZigZag parameters
+You decide wether to evaluate bar zero or not

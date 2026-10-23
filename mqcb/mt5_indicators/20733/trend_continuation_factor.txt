@@ -1,0 +1,4 @@
+Indicator based on M.H.Pee's article "Just How Long Will A Trend Go On? Trend Continuation Factor".
+Because trends are an important component of the market, it is imperative you can detect them. However, it's not enough to just identify a trend. It's also crucial to be able to tell the direction of the current trend.
+Although trends can make you the most money in the shortest time when you are in sync with them, they can also cause you to sustain heavy losses if your position is in the opposite direction. To avoid getting caught in such a situation, I created the Trend Continuation Factor (TCF), an indicator that identifies the trend and its direction.
+Some additions typical to MetaTrader 5 added (using a filled colored zones for easier trend change spotting) are used in this version of the indicator.

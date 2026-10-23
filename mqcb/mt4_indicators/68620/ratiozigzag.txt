@@ -1,0 +1,1 @@
+A modification of the ZigZag indicator, where the reversal moment is determined not by a fixed percentage, but by reaching a specified ratio of the current price to the last local extremum.

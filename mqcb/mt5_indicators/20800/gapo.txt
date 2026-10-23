@@ -1,0 +1,13 @@
+GAPO (Gopalakrishnan Range Index Oscillator) assesses quantitatively the volatility of an instrument, based on the trading range logarithm over an N-day period of time.
+It is computed during the specified time interval (5 days by default), using the price action only.
+It was developed by Jayanthi Gopalakrishnan to measure the dynamic nature of financial markets, based on works by Mandelbrot.
+It has one input parameter:
+Period
+- calculation period.
+Calculations:
+GAPO[i] = Log(Max-Min)/Log(Period)
+where:
+Max, Min are the highest and the lowest price within the specified interval (Period).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20800

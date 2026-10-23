@@ -1,0 +1,7 @@
+Real author:
+Jason Robinson
+The simplest arrow semaphore indicator having alerts at the newest close bar and providing the possibility to send signals to a mailbox. The indicator signals are based on the crossing of two moving averages.
+MA-Crossover_Alert
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/983

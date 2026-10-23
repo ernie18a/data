@@ -1,0 +1,3 @@
+Same double stochastic of RSI from
+here
+,  except that this version uses floating levels instead of fixed levels for OB/OS conditions.

@@ -1,0 +1,11 @@
+The indicator shows two components (bullish and bearish) of a Moving Average over a given period, in a separate window.
+The indicator has three input parameters:
+Period
+- period for calculating components
+Applied price
+- Moving Average calculation price
+Method
+- MA calculation method
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20381

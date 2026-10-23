@@ -1,0 +1,36 @@
+This script is a
+code reference
+designed to help MetaTrader 5 developers and users solve a common problem: the mismatch between the configured symbol names and the actual names provided by brokers.
+As a developer, I have faced this challenge when working on configurable Expert Advisors (EAs), especially those that handle multi-symbol strategies. It is common for users
+not to
+set the symbol names according to their broker's conventions, which results in the EAs not working correctly. For example, if "EURUSD" is specified in the EA settings, but the broker uses "EURUSD.i" or "EURUSD.m", the EA will not find the correct symbol and will not be able to trade.
+This code uses the
+Levenshtein distance algorithm
+to identify the symbol most similar to the one specified by the user among all those available in the Market Watch window.
+Although I am not an expert, this solution has proven to be effective in my personal experience and may be a useful tool for other developers.
+Main applications and uses:
+Integration into configurable EAs:
+This script is intended as a reference for integration into EAs or scripts that need to automatically adapt to broker symbol names.
+Adaptability for custom brokers:
+If a broker uses specific names for its symbols, this approach helps to map them correctly and avoid configuration errors.
+Configuration validation:
+This can be used as a validation tool during the development and testing phase to ensure that EAs are robust and adaptable.
+Education and learning:
+For those learning MQL5, this code shows how to work with arrays, strings and dynamic functions such as calculating distances between strings.
+Important warning:
+This code is based on my personal experience and is a solution that has worked for my projects. However:
+I am not an expert
+in MQL5, and this solution may not be the most efficient or suitable for all cases.
+There could be more advanced or specific approaches depending on the needs of each user or project.
+I invite users and developers to experiment with the code, adapt it to their own contexts and, if necessary, investigate other alternatives that may be more suitable.
+Practical example of integration:
+Suppose you have developed an EA that trades "EURUSD". In the user environment, the broker has this symbol as "EURUSD.i". By integrating this code into the EA:
+The user will be able to enter "EURUSD" as the base configuration.
+The code will automatically search Market Watch and map the correct symbol ("EURUSD.i").
+The EA will operate smoothly, eliminating the need for precise manual configurations.
+Conclusion:
+This script is not only useful for ensuring the functionality of EAs in different environments, but also serves as a starting point for developing more advanced solutions.
+While there are other ways to address this problem, I hope this implementation will be a valuable tool for other MetaTrader 5 developers and users.
+Translated from Spanish by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/es/code/54553

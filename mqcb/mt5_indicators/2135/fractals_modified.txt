@@ -1,0 +1,14 @@
+This indicator is a small modification of classical
+Fractals Indicator
+.
+You can choose the number or left/right bars to have a new top or bottom as well a shift parameter.
+In the following chart you can see the indicator with parameter values:
+leftbars=10;
+rightbars=10;
+shift=0.
+The parameter leftbars/rightbars indicates the necessary number of bars to the left/right to have either a bottom or a top. Instead, the last parameter, shift, can be choosed to be 0 to have a good visualization of the top/bottom levels.
+However, in order to use this indicator it should be convinient to choose it as maximum between leftbars and rightbars. It is in this moment when the top/bottom is created.
+In the following chart you can see the same as before with parameters:
+leftbars=10;
+rightbars=10;
+shift=10.

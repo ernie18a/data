@@ -1,0 +1,8 @@
+This advisor demonstrates an example of global variables usage. The task of the advisor: store the calculation result in a global variable and get the global variable value on new initialization.
+The global variable receives its compound name from text and magic number. A typical global variable name example: "main_id_1010458".
+The idea of the advisor: binding the name of a global variable to magic number. The advisor algorithm is the following:
+Start of the advisor: if the variable does not exist, it is created and assigned a calculated value; if the variable exists, its value is retrieved and stored in the variable.
+Deinitialization adviser: if the variable does not exist, it is created and assigned a calculated value; if the variable exists, it is assigned a new calculated value.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13871

@@ -1,0 +1,9 @@
+Real author
+: Andrey Mishustin
+The script calculates the maximum lot size that can be used to open a position using the entire free margin available on the deposit. The calculated value is displayed in the upper right chart corner for 10 seconds by default. This code was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 21.06.2012.
+Fig1. The MAX_LOT script on the chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18058

@@ -1,0 +1,46 @@
+Indicator
+BrainTrend2
+that generates alerts and sends e-mails and Push-messages when the indicator changes its color. Candlesticks with the trend are colored brightly, and those against the trend are colored darkly.
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+uint
+ATR_Period=
+7
+;
+input
+uint
+NumberofBar=
+1
+;
+// Bar number for the signal
+input
+bool
+SoundON=
+true
+;
+// Enable alerts
+input
+uint
+NumberofAlerts=
+2
+;
+// Number of alerts
+input
+bool
+EMailON=
+false
+;
+// Enable mailing the signal
+input
+bool
+PushON=
+false
+;
+// Enable sending the signal to mobile devices
+Fig.1. Indicator BrainTrend2_V2
+Fig.2. Alerting
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20838

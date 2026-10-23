@@ -1,0 +1,19 @@
+In my opinion, the method described by Sator has a right for the further continuation.
+The MUV% indicator calculates the current position between the maximum and minimum within the KPeriod period using the calling of the MUV.
+At that, there is a possibility to use both the difference between the current and the previous value of the MUV and its value itself.
+Parameters:
+MAPeriod = 14; the period of the MUV indicator;
+MUV KPeriod = 14; the period of calculation of the minimum and maximum;
+ShowDif = true; show the indicator by the difference;
+ShowMUV = true; show the indicator by the value;
+The MUV_Diff indicator is just the difference of the MUV values.
+Parameters:
+MAPeriod = 14; the period of the MUV indicator;
+SMA and EMA are used in both indicators.
+On the chart: the MUV with 0 and 1 methods.
+The next one is the MUV% with disabled ShowDif.
+Then comes the MUV% with disabled ShowMUV.
+And the last one is the MUV_Diff.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8549

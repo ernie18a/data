@@ -1,0 +1,12 @@
+The script demonstrates creation of almost the entire set of standard graphical objects in MetaTrader 5. It is intended for quick visual testing of the ObjectCreate() function and related methods of setting object properties, including coordinates, sizes, fonts, colours and additional parameters.
+After launching it on the active chart, the script automatically deletes the previously created object and creates a new instance of the graphical object type selected in the settings.
+The additionally created object is highlighted, which allows you to immediately adjust its reference points or location.
+Selection of any standard type via the InpObjectToCreate input parameter is supported (vertical/horizontal lines, channels, Gann and Fibonacci tools, Elliot waves, arbitrary graphical labels, GUI elements, etc.).
+A separate creation function is provided for each object with setting of all necessary attributes: timestamps, price levels, slope angles, directions, scales, texts, image files, sizes, colours and other properties.
+Auxiliary procedures SetObjectDatePrice() and SetObjectCoordinates() simplify work with coordinates in price/time and pixel spaces of the chart.
+The GetChartExtremums() and GetTime() functions provide automatic selection of time and price coordinates based on the visible part of the chart, which saves the user from manual data entry.
+The demo includes creation of user interface objects: buttons, input fields, graphical labels and texts, chart object, bitmaps, etc.
+The script is useful as a training example on working with graphical primitives and can serve as a basis for your own visualisation tools, marking up graphs or creating flexible user interfaces inside the terminal.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/65311

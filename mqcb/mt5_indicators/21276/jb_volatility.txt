@@ -1,0 +1,18 @@
+JB Volatility - market volatility oscillator marking its state in color.
+It has three configurable parameters:
+Period
+- calculation period;
+ATR period
+- ATR calculation period;
+Multiplier
+- ATR value multiplier.
+Interpretation
+Volatile uptrend
+: Close price is higher than the lowest price over the Period of bars + ATR (ATR period) * Multiplier.
+Volatile downtrend
+: Close price is lower than the highest price over the Period of bars + ATR (ATR period) * Multiplier.
+Low volatility
+: In any other case.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21276

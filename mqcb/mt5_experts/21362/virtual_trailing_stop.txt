@@ -1,0 +1,23 @@
+Idea by
+:
+Vladimir Khlystov
+.
+MQL5 code by
+:
+barabashkakvn
+.
+Virtual trailing can place stop loss and take profit, and trail the position in such a manner that stop orders are not visible to broker, i.e., they are not place with your dealing center, but on your PC; so nobody, except of your PC and yourself, can see your plans.
+Along with the invisibility, there is another very useful thing: Many brokers have very large spreads and the levels of placing stop orders, so now these levels cannot harm you, the EA just ignores them.
+As far as I can judge, everything is clear regarding stop loss and take profit. I'm going to describe trailing only.
+Trailing is managed with three variables:
+trailing length;
+minimum profit for starting;
+trailing step.
+Virtual stop loss follows the price at the distance equalling to the trailing length. Minimum profit is when to start placing the virtual stop loss. Trailing step is upon which interval we will move the virtual stop loss.
+Assume, we have set the values to 5, 2, and 3, respectively.
+As soon as the position profit reaches 7 points, the virtual stop loss will move by the position open price [;us 2 points of the minimum profit. Further, when the price goes 3 points in the profitable direction, the Stop Loss will be moved by 5 points to profit, and so on, following the price at a distance of 3 points. If the price rolls back to the stop level, the position will be closed.
+Trailing stops are shown as dashed lines.
+To understand the EA easier and faster, you can install it in the tester and see how it works there in the visualization mode:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21362

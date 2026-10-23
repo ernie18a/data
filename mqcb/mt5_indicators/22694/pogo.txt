@@ -1,0 +1,14 @@
+Oscillating indiator POGO displays the mean bar size over a given period.
+It has two adjustable parameters:
+Period
+- calculation period
+Method
+- calculation method
+Calculations:
+POGO = AvgRAW
+where:
+RAW = Open - Close
+AvgRAW = MA(RAW, Period, Method)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22694

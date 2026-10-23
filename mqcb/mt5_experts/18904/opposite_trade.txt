@@ -1,0 +1,109 @@
+Opening a position opposite to the closed one, with the same volume. It works for any symbol and any magic number.
+For example, we have an open AUDUSD BUY 0.01 position. Once this position is closed (e.g. we close it manually) the
+Opposite trade
+Expert Advisor will immediately open a new AUDUSD positions, this now a SELL position.
+The entire code is contained in the OnTradeTransaction function:
+//+------------------------------------------------------------------+
+//| TradeTransaction function                                        |
+//+------------------------------------------------------------------+
+void
+OnTradeTransaction
+(
+const
+MqlTradeTransaction
+&trans,
+const
+MqlTradeRequest
+&request,
+const
+MqlTradeResult
+&result)
+  {
+//--- get transaction type as enumeration value
+ENUM_TRADE_TRANSACTION_TYPE
+type=trans.type;
+//--- if transaction is result of addition of the transaction in history
+if
+(type==
+TRADE_TRANSACTION_DEAL_ADD
+)
+     {
+long
+deal_type         =-
+1
+;
+long
+deal_entry        =-
+1
+;
+double
+deal_volume       =
+0.0
+;
+string
+deal_symbol       =
+""
+;
+if
+(
+HistoryDealSelect
+(trans.deal))
+        {
+         deal_type         =
+HistoryDealGetInteger
+(trans.deal,
+DEAL_TYPE
+);
+         deal_entry        =
+HistoryDealGetInteger
+(trans.deal,
+DEAL_ENTRY
+);
+         deal_volume       =
+HistoryDealGetDouble
+(trans.deal,
+DEAL_VOLUME
+);
+         deal_symbol       =
+HistoryDealGetString
+(trans.deal,
+DEAL_SYMBOL
+);
+        }
+else
+return
+;
+if
+(deal_entry==
+DEAL_ENTRY_OUT
+)
+        {
+switch
+((
+int
+)deal_type)
+           {
+case
+DEAL_TYPE_BUY
+:
+               m_trade.Buy(deal_volume,deal_symbol);
+break
+;
+case
+DEAL_TYPE_SELL
+:
+               m_trade.Sell(deal_volume,deal_symbol);
+break
+;
+default
+:
+break
+;
+           }
+        }
+     }
+  }
+Here we wait for the position closing deal (DEAL_ENTRY_OUT). Once this deal appears, we check the deal position (if we close a BUY, this will be a Sell deal, and vice versa) and we open a new position.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18904

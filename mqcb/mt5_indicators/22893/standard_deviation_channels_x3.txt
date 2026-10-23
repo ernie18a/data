@@ -1,0 +1,46 @@
+Real author:
+Stajer59
+Three standard deviation channels using indicator buffers based on the number of bars defined in the indicator inputs.
+//+--------------------------------------------+
+//|  INDICATOR INPUT PARAMETERS                |
+//+--------------------------------------------+
+input
+uint
+N_=
+240
+;
+// number of candles for analysis
+input
+double
+StdDev1=
+1.0
+;
+// first channel deviation
+input
+double
+StdDev2=
+1.5
+;
+// second channel deviation
+input
+double
+StdDev3=
+2.0
+;
+// third channel deviation
+input
+int
+Shift=
+0
+;
+// horizontal shift of the indicator in bars
+input
+int
+PriceShift=
+0
+;
+// vertical shift of the indicator in points
+Fig1. Indicator Standard_Deviation_Channels_x3
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22893

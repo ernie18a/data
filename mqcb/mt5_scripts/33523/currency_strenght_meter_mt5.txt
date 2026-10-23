@@ -1,0 +1,10 @@
+INTRODUCTION :
+The currency strength meter is a trading tool that is used to identify trending and consolidating markets based on the percentage rate of change in price from one period to the next.
+Don't hesitate to send all your comments and I would appreciate rating this trading tool.
+HOW TO USE IT :
+You can check the following video that will explain how to
+define and see how a currency strength meter works.
+use this trading tool to identify trending and consolidating markets (the most important part)
+compile this trading tool in MT4 or MT5.
+You can also check the following video. It is about the Breakout Strength Meter
+SCREENSHOT :

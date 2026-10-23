@@ -1,0 +1,76 @@
+Simple Expert Advisor (more like a draft with an idea) that simultaneously opens two positions in different directions, provided that the stop loss of the losing position triggers 5 points earlier than the take profit of the profitable one. All the necessary parameters can be optimized.
+Testing Results:
+Strategy Tester Report
+Doubler
+Symbol
+EURJPY (Euro vs Japanese Yen)
+Period
+1 Minute (M1) 2008.10.28 13:25 - 2009.01.07 19:12 (2008.01.30 - 2009.12.30)
+Model
+Open prices only (fastest method to analyze the bar just completed, only for EAs that explicitly control bar opening)
+Parameters
+StopLoss=87; TakeProfit=133; lots=0.1; Ext1=5; Ext2=14; AutoLotChanging=false;
+Bars in test
+65643
+Ticks modelled
+129935
+Modelling quality
+n/a
+Mismatched chart errors
+0
+Initial deposit
+100000.00
+Net profit
+1014.70
+Gross profit
+20956.27
+Gross loss
+-19941.56
+Profit factor
+1.05
+Expected payoff
+3.04
+Absolute drawdown
+921.43
+Maximum drawdown
+1230.43 (1.23%)
+Relative drawdown
+1.23% (1230.43)
+Total trades
+334
+Short positions (won %)
+167 (37.72%)
+Long positions (won %)
+167 (44.31%)
+Profit trades (% of total)
+137 (41.02%)
+Loss Trades (% of total)
+197 (58.98%)
+Largest
+profit trade
+216.00
+loss trade
+-150.12
+Average
+profit trade
+152.97
+loss trade
+-101.23
+Maximum
+consecutive wins (profit in money)
+3 (479.32)
+consecutive losses (loss in money)
+7 (-668.63)
+Maximal
+consecutive profit (count of wins)
+479.32 (3)
+consecutive loss (count)
+-668.63 (7)
+Average
+consecutive wins
+1
+consecutive losses
+2
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8656

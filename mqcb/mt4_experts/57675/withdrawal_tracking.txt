@@ -1,0 +1,5 @@
+This is a piece of code to add to an existing Expert advisor to track withdrawals from your account where the EA is running. It helps the user to monitor his or her withdrawals from a particular account. Most of the EAs are hosted  on virtual private servers(VPS) to avoid resetting the parameters any time time frame or chart template is changed.
+Sometimes the lot size are set to increase and never decrease even at a loss in a hope to recover all loss  before further increase in lotsize.
+EAs increase lot sizes to recover losses but do not reduce them after withdrawals, as they cannot distinguish between a withdrawal and a loss.
+If is a loss, it continue to use the last known lotsize in a hope to recover. If it is a withdrawal, the EA has to reduce its lotsize to adapt to the new balance and work with it.
+This piece of code can be modified to do that aside monitoring the withdrawals

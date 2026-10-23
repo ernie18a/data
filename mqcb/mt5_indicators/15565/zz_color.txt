@@ -1,0 +1,7 @@
+Real author:
+MetaQuotes Software Corp.
+Simple and resource efficient ZigZag.
+Fig.1. ZZ_Color
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15565

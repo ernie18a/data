@@ -1,0 +1,4 @@
+The strategy
+go short when price hits n-lookback bars high targeting mean of n-lookback.
+go long when price hits n-lookback bars low targeting mean of n-lookback.
+This is a misleading simulation conducted on one-minute OHLC:

@@ -1,0 +1,20 @@
+Detection of a pattern "three Indians" on the basis of the ZigZag.
+About system :
+I will not give here the system description. It easily can be found in a network.
+"Three Indians" is a translation from Russian, probably, there is other name in English, write me it in comments please...))
+I will only remind that the system is rather critical to the general situation in the market. The pattern itself in a separation from a market situation is not a signal for trading.
+There are two basic methods:
+Trade on a trend - less risky method when a pattern crowns with itself the termination of correction of already developed trend, and gives a signal to its continuation:
+Trade on a turn, more risky method when a global change of the tendency is supposed, in this case waves of the patern should be more significant on the size in relation to a trend or its last wave:
+Options:
+The beginnings and the middle of lines are located on 1st and 2nd prospective Indians accordingly.
+extern int ExtDepth=10;//zigzag options
+extern int ExtDeviation=5;
+extern int ExtBackstep=3;
+extern double K_MinWave=0.6;//the minimum size of a wave from 1st Indian in relation to a wave of 2nd, to filter small waves
+extern int Depth=3;///depth of search of 1 Indian, accounting the filter, but is no more 10!
+And further history, colours and a thickness of lines...
+Result:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9623

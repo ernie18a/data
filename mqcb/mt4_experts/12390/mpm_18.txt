@@ -1,0 +1,5 @@
+Just another one of my EAs that made last year.
+This one uses a reverse strategy to make a bad trade good. Put on a 5m chart and you should see some nice stable profits.
+As with most of my EAs you will need to download the
+XigXag
+indicator.

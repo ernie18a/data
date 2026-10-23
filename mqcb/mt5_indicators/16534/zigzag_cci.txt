@@ -1,0 +1,5 @@
+The ZigZag based on the CCI oscillator.
+Fig1. The ZigZag_CCI indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16534

@@ -1,0 +1,3 @@
+The indicator shows the trend.
+Candlesticks are colored in four different colors according to the trend strength.
+It can be used as a code example for candlesticks colored in four different colors according to the trend strength.

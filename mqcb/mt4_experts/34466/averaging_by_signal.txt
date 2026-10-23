@@ -1,0 +1,14 @@
+This EA is made with an example of crossing MA as an entry signal.
+This EA was created for the purpose of learning MQL4 code.
+Every order that is opened will use a different magicnumber according to each pair. You can see how this EA manages different magicnumber.
+The
+ManageOrders()
+function will set the opening of new orders and averaging according to signal or without signal based only on the minimum distance between layers.
+The
+setTPSLMarti()
+function can set TP for 1 position or multiple orders at the same TP price.
+The
+setTrailingStop()
+function is used to set the trailing stop at 1 position of the initial order.
+for information and group sharing, please join
+t.me/codeMQL

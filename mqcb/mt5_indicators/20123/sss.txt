@@ -1,0 +1,17 @@
+SSS (Special Slow Stochastic) has an additional smoothed (slow) line based on the Stochastic signal line.
+It has six input parameters:
+%K period
+- the %K period of the standard Stochastic;
+%D period
+- the %D period of the standard Stochastic;
+Slowing
+- the slowing parameter of the standard Stochastic;
+Period Special Slow
+- the period of the additional smoothing line;
+Overbought
+- overbought level;
+Oversold
+- oversold level.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20123

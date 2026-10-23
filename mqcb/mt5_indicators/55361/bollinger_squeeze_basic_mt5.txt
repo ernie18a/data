@@ -1,0 +1,69 @@
+Bollinger Squeeze Basic MetaTrader indicator
+— is a complex indicator based on Momentum, Bollinger bands, and Keltner channel. The indicator is drawn in the separate window of the chart as a Momentum histogram and a range of dots when show the relationship between the current Bollinger bands and Keltner channel values. This indicator is available for both MT4 and MT5 versions of the trading platform.
+Bollinger Squeeze Basic is a part of the Not So Squeezy indicator system.
+Input parameters
+MaxBars
+(default = 300) — the maximum number of bars on the chart to apply the indicator to.
+BB_Period
+(default = 20) — the period for the Bollinger bands indicator.
+BB_Deviation
+(default = 2.0) — the Bollinger bands deviation parameter.
+Keltner_Period
+(default = 20) — the period for the Keltner channel indicator.
+Keltner_Factor
+(default = 1.5) — the Keltner channel multiplication factor.
+Momentum_Period
+(default = 12) — the period for the Momentum indicator.
+EnableNativeAlerts
+(default = false) — if
+true
+, MetaTrader's native pop-up alerts will be used on the BB/Keltner arrows' change of color.
+EnableEmailAlerts
+(default = false) — if
+true
+, MetaTrader's email alerts will be sent on the BB/Keltner arrows' change of color. Email should be properly configured in MetaTrader via
+Tools->Options->Email
+.
+EnablePushAlerts
+(default = false) — if
+true
+, MetaTrader's push notification alerts will be sent to your device upon the BB/Keltner arrows' change of color. Notifications should be properly configured in MetaTrader via
+Tools->Options->Notifications
+.
+TriggerCandle
+(default = Previous) — the candle to issue alerts on:
+Previous
+— the most recently closed candle or
+Current
+— the yet unfinished candle.
+The indicator uses the momentum to measure the trend's strength and direction:
+Rising momentum above the zero line (uptrend) is marked with
+darker green
+bars.
+Falling momentum above the zero line (also uptrend) is marked with
+lighter green
+bars.
+Rising momentum below the zero line (downtrend) is marked with
+darker red
+bars.
+Falling momentum below the zero line (also downtrend) is marked with
+lighter red
+bars.
+Additionally, Bollinger Squeeze Basic offers an interesting
+volatility
+measure built into the main histogram. The range of
+blue
+and
+red
+squares on the zero line indicate the current relationship between the Bollinger bands and the Keltner channel:
+If the squares are
+red
+, the Bollinger bands are outside the Keltner channel, which suggests that exchange rate is trending strongly.
+If the squares are
+blue
+, the Bollinger bands are inside the Keltner channel, which suggests a flat sideways market.
+The main idea behind this indicator is to establish trading ranges during the non-trending phase of the market (
+blue
+squares) to enter on a breakout and a switch to
+red
+squares (trending phase). The histogram will suggest how strong the current trend is and will tell you when to exit a trade on the trend's weakening.

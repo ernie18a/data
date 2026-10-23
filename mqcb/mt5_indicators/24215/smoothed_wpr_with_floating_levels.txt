@@ -1,0 +1,11 @@
+Theory :
+The way how this WPR is smoothed is described here :
+Smoothed WPR
+In order to enable simpler usage of that indicator, this version is adding floating levels. You can use, depending on those floating levels, 3 modes of color changes
+color change on outer levels cross
+color change on middle (sort of zero line) cross
+color change on slope change
+Usage :
+You can use color changes as signals
+PS:
+One "big picture" example. Some experimenting with the parameters is advised prior to using it in trading decisions

@@ -1,0 +1,18 @@
+Real author:
+Witold Wozniak
+The indicator is inspired by John Ehlers' article
+"Using The Fisher Transform"
+published in November 2002 in the
+"Technical Analysis Of Stock & Commodities"
+magazine.
+The indicator is based on the assumption that the price does not have Gaussian density but something similar can be created by normalizing the price and applying Fisher Transform. As a result, fluctuation tops will definitely show price reversals. The recommended period is equal to 10.
+Fisher indicator calculates minimum and maximum price levels in previous history, determines direction of a trend and forecasts its reversal. Fisher can be especially useful as a basic indicator trend in a trading system. Fisher positive value is a first buy signal, while negative value forms a sell signal. It is possible to find optimal period for maximums and minimums calculation (the only Fisher indicator parameter) to avoid false signals.
+Fisher (red) and Trigger (blue) lines crossings may also be used similar to
+Stochastic Oscillator
+signals.
+See also the article
+"Applying The Fisher Transform and Inverse Fisher Transform to Markets Analysis in MetaTrader 5"
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/537

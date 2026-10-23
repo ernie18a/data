@@ -1,0 +1,3 @@
+This indicator is designed to draw a standard deviation channel.
+MT5 provides a tool for standard deviation channel in the MetaTrader 5 menu (Insert -> Objects -> Channels -> StdDev Channel).
+Now this indicator is more convenient to use, and has the same effect.

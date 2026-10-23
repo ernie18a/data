@@ -1,0 +1,3 @@
+This only works for buy stops.
+If you find this helpful and may need the code for sell stops and other pending orders, let me know in the comment section and I'll cook one up in my free time.
+If you notice any bugs or errors, please let me know.

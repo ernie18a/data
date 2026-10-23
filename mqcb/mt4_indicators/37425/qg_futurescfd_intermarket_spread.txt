@@ -1,0 +1,8 @@
+The indicator can chart the spread between 2 instruments as a difference or as a ratio.
+Settings:
+Instrument1 -  Enter a string of first instrument exactly as mentioned by broker
+Instrument2 -  Enter a string of second instrument exactly as mentioned by broker
+Multiplier1 - A multiplying factor for first instrument
+Multiplier2 - A multiplying factor for second instrument
+ChartDifernce - A boolean which will chart difference between 2 instruments, set to false it will chart spread as a ratio
+The spread chart appears in a separate window and then basic indicators can be applied to it like shown in the pictures.

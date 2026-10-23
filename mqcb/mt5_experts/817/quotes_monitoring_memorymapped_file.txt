@@ -1,0 +1,18 @@
+This Expert Advisor is example of use of the
+Memory Mapping
+DLL for working with File Mapping functions.
+In this example the Expert Advisor create a virtual (memory-mapped) file and start to update the quotes on symbol.
+Using this way, Expert Advisors can exchange data (for example, quotes) using common memory-mapped file.
+The format of the memory-mapped file is the same as used in
+MetaTrader 4 Expert Advisor
+. It means that you can exchange quotes between
+МetaТrader 5
+and
+МetaТrader 4
+.
+The other data exchange can be organized using the similar way.
+The code has a lot of comments and logs.
+The MemMap32/64.dll library (see MemMap32/64.zip) must be placed to : terminal_data_folder\MQL5\Libraries
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/817

@@ -1,0 +1,1 @@
+This indicator To show the numerical values of RSI (Open, Close, High, Low)

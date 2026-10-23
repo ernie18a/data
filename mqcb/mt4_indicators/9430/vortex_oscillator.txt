@@ -1,0 +1,3 @@
+This version of the Vortex Indicator plots the difference between the VI+ and VI- lines as a histogram that oscillates around the zero line.
+Thanks to Michael Moses for the suggestion.
+Осциллятор Vortex

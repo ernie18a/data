@@ -1,0 +1,8 @@
+This indicator is a volatility filter based  on:
+A fast ATR (average true range),
+a middle ATR, and
+a slow ATR.
+The indicator does
+not
+predict directional bias of price.
+The indicator merely shows where volatility is sufficiently high enough (at the wave crests) for swing trading or alternatively, sufficiently low enough (below the wave crests) for range scalping.

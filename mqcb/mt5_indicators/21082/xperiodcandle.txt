@@ -1,0 +1,10 @@
+Synthetic Japanese candlesticks over the period predefined in the indicator settings, calculating on each bar and averaging the price timeseries used in the indicator.
+The indicator uses the
+SmoothAlgorithms.mqh
+library classes (copy it to terminal_data_directory\MQL5\Include), working with which was described in details published in article
+Averaging Price Series for Intermediate Calculations without Using Additional Buffers
+.
+Fig 1. Indicator XPeriodCandle
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21082

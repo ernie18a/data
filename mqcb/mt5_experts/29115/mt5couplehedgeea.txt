@@ -1,0 +1,6 @@
+It's a two (2) pairs correlation system to use 3 currencies to make 2 pairs to open hedge orders on those (like EURUSD/EURGBP).
+The expert starts opening four orders for each couple (2 plus and 2 minus) and wait to move prices in one direction to make a grid of orders.
+Can use a maximum of 5 currencies to make 10 pairs and make 30 couples.
+It is important the order of currencies is from the strongest to the weakest.
+Strongest... EUR/GBP/AUD/NZD/USD/CAD/CHF/JPY ...weakest.
+Canto inputs minimum of three currencies and a maximum of five.

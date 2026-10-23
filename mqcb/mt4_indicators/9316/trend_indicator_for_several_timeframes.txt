@@ -1,0 +1,16 @@
+Author:
+Vladimir Hlystov
+The indicator shows a trend table for a several timeframes in the bottom left corner of the chart.
+Often before the position opening the trader examines several timeframes to determine the current trend and to find the confirmations of his own intentions.
+This procedure may take a long time and always there is possibility for the mistake in the trend determination.
+I would like to suggest to use this indicator. It examines all of the timeframes using the different ways of trend determination and gives the general statement in the matrix form in the chart corner.
+There are 4 types for the trend determination are used:
+0 - on indicator of the offset
+1 - a price more or less average + offset
+2 - on MA 5/13/34 (when 5 above 13 and 34 - trend is upward, when 5 below 13 and 34 - trend is downward, if it between 13 and 34 - it's flat)
+3 - a way for the trend determination using MACD 5/34/5
+If you want to add your own method, please write me.
+Fig 1. The trend matrix for JPY
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9316

@@ -1,0 +1,52 @@
+The index is mainly based on the slope of EMA and MACD, and the following figure shows the principle of the indicator:
+Figure 1: How the index works
+The effect is as follows:
+Figure 2: Display of indicators
+Introduction of indicators:
+This index is mainly used to check whether the trading direction is correct:
+Red represents the rise, prohibits the sale, can buy or wait.
+Green stands for decline, no buying, selling or wait.
+Blue represents no trend, no prohibition.
+Trend: when the trend continues, the blue column appears, indicating the tendency is weaker, and the signal of trend reversal is given.
+Core code interpretation:
+if
+((macd_main_buffer[i]-macd_main_buffer[i-
+1
+])>
+0
+&& (ema_buffer[i]-ema_buffer[i-
+1
+])>
+0
+)
+        {
+         Power_buffer[i]=
+1
+;
+//rise signal
+color_buffer[i]=
+1
+;
+        }
+if
+((macd_main_buffer[i]-macd_main_buffer[i-
+1
+])<
+0
+&& (ema_buffer[i]-ema_buffer[i-
+1
+])<
+0
+)
+        {
+         Power_buffer[i]=-
+1
+;
+//drop signal
+color_buffer[i]=
+0
+;
+        }
+Translated from Chinese by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/zh/code/20598

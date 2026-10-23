@@ -1,0 +1,4 @@
+This is a conventional Aroon Oscillator, with most visual and simple interpretation.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16529

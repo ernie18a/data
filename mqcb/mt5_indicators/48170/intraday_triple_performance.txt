@@ -1,0 +1,8 @@
+input string pair1="EURUSD";//Cross 1
+input string pair2="EURGBP";//Cross 2
+input string pair3="GBPUSD";//Cross 3
+input int bars=5000;
+input string tm="00:00";// Start time in the format hours:minutes
+Translated from Italian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/it/code/48170

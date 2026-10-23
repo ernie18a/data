@@ -1,0 +1,31 @@
+Published by:
+FXWizard
+Description:
+The idea is based on breakthrough strategy.
+Trade rules :
+Find the maximal/minimal price values in the period from 14 to 16 hours (terminal time) and
+set
+pending orders for
+buy
+/sell at the maximal/minimal value
+.
+We set orders only if the distance between the maximum and minimum is not more than 50 points
+Take Profit is 30 points.
+Trailing Stop is 15 points.
+Stop Loss defined at the price level of the opposite deal. Unused
+orders are removed at the end of the day.
+Recommendations:
+See
+FORTRADER.RU maganize (№ 52) for the details
+.
+Editor's remark:
+Note that it's a mirror translation of the
+original Russian version
+.
+If you have any questions, suggestions or comments, it's better to post them
+there
+.
+If you have found this code useful for trading or educational purposes, don't forget to thank author.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9259

@@ -1,0 +1,15 @@
+A script tool for MQL4 programmers and script ZZ_DeleteFonts 0-0010 for deleting of objects after ZZ_CheckingFonts 0-0020 has worked.
+It allows to display the contents of any font with numbered elements.
+It distributes the font contents to fit the chart window.
+===============
+External Parameters:
+NameFont = "Wingdings"; font name.
+SizeFonte = 25; the size of font elements in the chart.
+DistFonte = 10; the distance between the font elements in the chart, in pixels.
+NumberFirstSymbol = 30; the lower limit of the element number.
+AmountSymbol = 255; the upper limit of the element number.
+ColorFont = Red; font element color in the chart.
+ColorNumber = Yellow; the color of element numbers.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7970

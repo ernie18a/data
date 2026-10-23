@@ -1,0 +1,104 @@
+How template works?
+This indicator provides a template to be used to plot divergences based on your desired
+oscillator
+.
+Depending on which oscillator you choose(whether it is CCI, RSI or even your custom indicator) you may modify this part of the code:
+/////////////////////////////////////////////
+//Load indicator data into indicator buffer
+//You can easily replace RSI with any indicator you like
+int
+BARS=
+MathMax
+(rates_total-IndicatorCounted()-pivots_period,
+1
+);
+for
+(
+int
+i=BARS;i>=
+0
+;i--)
+   {
+      indicatorBuffer[i]=
+iRSI
+(
+_Symbol
+,
+PERIOD_CURRENT
+,
+14
+,
+PRICE_CLOSE
+, i);
+}
+//End of load indicator section
+/////////////////////////////////////////////
+signal buffers
+This indicator has four different buffers as below to keep track of signals generated. There is a signal whenever the corresponding buffer hold non-empty value.
+SetIndexBuffer
+(
+3
+,bull_reg_divBuffer);
+SetIndexBuffer
+(
+4
+,bear_reg_divBuffer);
+SetIndexBuffer
+(
+5
+,bull_hid_divBuffer);
+SetIndexBuffer
+(
+6
+,bear_hid_divBuffer);
+inputs section
+input
+int
+pivots_period=
+5
+;
+//period to find indicator pivots
+input
+int
+alert_confirm_candles=
+1
+;
+//#candles for confirmation(0=disable alert)
+Finding
+pivot highs
+and
+pivot lows
+in
+indicatorBuffer
+depends on
+pivots_period
+input. The bigger you choose this value it will search larger swings for possible divergences.
+Another input is alert_confirm_candles which defines how many bars to wait for confirming a signal. Divergence indicators are mostly lagging and issue a lot of false signals. The bigger you choose this value it will wait more and the number of false signals reduce. It is a compromise whether you want on-time signals or you want confirmed ones.
+Normally you are not allowed to apply
+pivots_period
+< 2.
+Repaint issue
+Indicators that rely on pivot calculations has to wait as long as
+pivots_period
+to get a confirmation of the recent high/low. So this indicator needs to repaint signals as far as
+pivots_period
+back in time.
+BARS=
+MathMax
+(rates_total-IndicatorCounted()-pivots_period,
+pivots_period
+);
+for
+(
+int
+i=BARS;i>=
+0
+;i--)
+   {
+      PHBuffer[i]=pivothigh(indicatorBuffer, pivots_period, pivots_period, i);
+      PLBuffer[i]=pivotlow(indicatorBuffer, pivots_period, pivots_period, i);
+      bull_reg_divBuffer[i]=BullRegDiv(i);
+      bear_reg_divBuffer[i]=BearRegDiv(i);
+      bull_hid_divBuffer[i]=BullHidDiv(i);
+      bear_hid_divBuffer[i]=BearHidDiv(i);
+   }

@@ -1,0 +1,27 @@
+Key Features:
+Dynamic Flip Zones:
+Automatically converts broken Support into SBR and broken Resistance into RBS.
+Auto-Normalization:
+Adjusts zone width based on average volatility, preventing them from being too wide or too narrow.
+Anti-Flicker & Repaint Safety:
+Uses a confirmation delay to validate pivot points before drawing zones.
+Smart Alert System:
+Triggers notifications only when the price moves significantly away from a zone and returns for a retest, minimizing noise in ranging markets.
+⚙️ How It Works
+The indicator applies several logical filters behind the scenes to ensure zone relevance:
+Pivot Scanning (ZigZag Core):
+Identifies Swing Highs (potential Resistance) and Swing Lows (potential Support) using a ZigZag algorithm. A 'Confirm Bars' feature validates these extreme points to prevent repainting.
+Zone Formation & Normalization:
+Draws proportional rectangular zones instead of thin lines. Zone width is calculated against historical average price movements—shrinking overly wide zones and expanding narrow ones to maintain consistency.
+Breakout & Transition Logic (SBR/RBS):
+Monitors real-time candle closes. A close below a Support converts it into an SBR zone; a close above a Resistance turns it into an RBS zone. (Users can disable this if they prefer broken zones to be deleted).
+Distance Filter:
+Uses a "Min Move Away" parameter. The price must travel a certain multiplier away from a newly formed zone before it activates. Alerts will only trigger on a retest after this condition is met.
+Overlap Resolution:
+Cleans up clustered S/R areas using two modes:
+Most Extreme (Default)
+keeps the furthest zone where major liquidity/stop-losses usually reside, while
+Newest
+prioritizes the most recently formed zone.
+Dashboard (Market Bias):
+Continuously calculates the bullish vs. bearish momentum ratio based on recent ZigZag legs, providing an instant summary of whether the market is trending or choppy.

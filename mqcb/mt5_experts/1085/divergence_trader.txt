@@ -1,0 +1,33 @@
+This Expert Advisor developed by Ron Thompson is rewritten from MQL4 and was originally published here
+https://www.mql5.com/en/code/8379
+by
+Collector
+.
+How It Works
+The Expert Advisor employs two simple
+moving averages
+of opening prices. Calculations are made using values obtained from the current bar and the previous bar. If rearranged, the formula simply represents the difference between the fast MA and slow MA from the previous bar. The difference being above one level and below the other level suggests a buy signal. Conditions for a sell signal are the exact opposite of those for a buy signal.
+A trailing stop and breakeven can be set for an open position.
+The Expert Advisor features an additional function for closing all positions in the account when a certain profit or loss level is reached. The author probably had in mind the use of several Expert Advisors of that type in one account.
+The image below shows the performance of the Expert Advisor in the strategy tester's visual mode.
+Parameters
+Lots - Position volume.
+MultyOpen - Permission to add volume to a position.
+MaxVolume - Maximum position volume; it is checked if MultyOpen is used.
+StopLoss - Stop Loss in points.
+TakeProfit - Take Profit in points.
+Trailing - Trailing stop level; when the value is 0, the trailing stop is disabled.
+BreakEven - Profit level of a position expressed in points in order to move the Stop Loss to the breakeven level. If the value is 0, the function is disabled.
+Fast_Period - Fast МА period.
+Fast_Price - Fast МА price.
+Slow_Period - Slow МА period.
+Slow_Price - Slow МА price.
+DVBuySell - minimum divergence level for Buy, for Sell it is -DVBuySell.
+DVStayOut - minimum divergence level for Sell, for Buy it is -DVStayOut.
+BasketProfitON - Enables the function for closing all positions in the account when a certain profit level is reached.
+BasketProfit - Account profit at which all account positions will close (for all symbols).
+BasketLossON - Enables the function for closing all positions in the account when a certain loss level is reached.
+BasketLoss - Account loss at which all account positions will close (for all symbols).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1085

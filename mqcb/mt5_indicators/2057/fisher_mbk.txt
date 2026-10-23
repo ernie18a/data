@@ -1,0 +1,12 @@
+Real author:
+Matt Kennel
+Normalized oscillator that uses
+Fisher's transformation
+, drawn in the form of a color histogram.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 01.11.2007.
+Figure 1. Indicator Fisher_mbk
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2057

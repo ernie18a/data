@@ -1,0 +1,6 @@
+Some indicators are working equal for all calculation lengths some are not. One example that is not is RSI. Even though it is taken for granted that it oscillates in 0-100 range (so it is normalized already) and regardless of it's obvious usefulness, every serious study stresses not to use lengths > 10 for RSI.
+The "RSI problem" is simple: the longer the calculating period, the flatter the RSI becomes. Here is an example of a 50 period RSI:
+As it is obvious, it is hardly usable for anything in the original for such a long calculating periods. There were quite a few attempts to change that: Smoothed RSI (that partially avoids that trap, but it quickly loses the advantage over standard RSI), Inverse Fisher Transform of RSI (which also is flattened after some time - here is a comparison of RSI 50 and Inverse Fisher Transform of 50 RSI), and some more.
+This is one more way that it can possible be done. Here is the example of the same RSI from above but "normalized" to -50 to +50 range:
+Some of the issues that were observed are fixed and, the most important, "flattening" is not there any more.
+PS: some experimenting is advised (as usual when it comes to "experiments" like these).

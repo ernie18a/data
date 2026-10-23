@@ -1,0 +1,10 @@
+Algorithm for calculation:
+Find the highest and the lowest closing price for the stated period and check whether they located within the boundaries of the range specified.
+If point 1 is claimed, find the highest and the lowest price value for a period, add / subtract padding and draw the boundaries of the channel.
+If "Consider previous boundaries" parameter is true, previous channel boundaries will be considered, if there was such a channel on the previous bar.
+Recommendations:
+The indicator was created to determine the levels for placing stop orders on the breakthrough of a flat.
+It should be considered that if the distance between the closings on large timeframes will be too low, the indicator may not display anything because simply will not find appropriate situations.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1133

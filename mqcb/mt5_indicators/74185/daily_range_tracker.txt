@@ -1,0 +1,12 @@
+FoxWave Daily Range Tracker — Live Today's Range vs Average Daily Range
+FoxWave Daily Range Tracker
+by Fox Wave shows you, at a glance, how much of the symbol's typical daily movement has already happened today — helping you judge whether the day still has room to run or is already exhausted.
+Key features:
+Live Today's High and Low for the current chart symbol, updated continuously
+Today's Range automatically calculated in pips, with correct pip-size handling for both 3/5-digit and standard brokers, including JPY pairs
+Average Daily Range (ADR) calculated over a configurable lookback period (default 14 days) using only fully closed daily bars
+Visual "Range Used %" with a color-coded progress bar — green under 60%, yellow 60-90%, red above 90% — so you instantly know if the move is just getting started or already stretched
+Clean single-symbol panel, no setup required — just attach to any chart
+Fully customizable colors, panel position, and refresh rate
+Lightweight — minimal CPU usage, safe to run on every chart simultaneously
+Perfect for day traders and scalpers who want a fast read on whether a symbol still has range left to trade, or swing traders deciding whether a breakout has genuine room to extend.

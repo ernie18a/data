@@ -1,0 +1,8 @@
+The indicator uses the data from three Stochastic indicator to determine the potential entry points:
+slow (default period is 700);
+medium (default period is 120);
+fast (default period is 30).
+The signal (a corresponding arrow is drawn on the chart) is generated when all three indicators are in the overbought/oversold areas at the same time. The size of the areas for slow, medium and fast is (by default): 10; 10; 5 respectively. That is, at the area size of 10, the indicator generates a sell signal if the value of the Stochastic is greater than 90, buy signal — if less than 10.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14657

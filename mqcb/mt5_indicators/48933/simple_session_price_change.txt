@@ -1,0 +1,4 @@
+The simplest indicator showing on the current symbol the price change in % since the opening of the trading session. If the current price has gone up relative to the opening price of the trading session, the value is displayed positive, and if down, it is negative. The indicator is designed as an inscription in the lower right part of the price chart of the current symbol.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/48933

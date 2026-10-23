@@ -1,0 +1,5 @@
+EA will automatically detect multi trendlines added by users.
+By using new MQL4 function of
+OnChartEvent()
+, trendline movement/adjustment will be dynamically caputured as well.
+When the current price is below trendlines, EA will wait for upward breakout, and vice versa. Trade and popup/sound/email/mobile breakout alert options are all included at this EA, but trade option needs to be set "true" if needed. For currencies with 5 or 3 digits, targetprofit/stoploss/slippage will be automatically multiplied by 10.

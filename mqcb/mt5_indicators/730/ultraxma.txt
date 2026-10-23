@@ -1,0 +1,126 @@
+This indicator is based on the integral value of the trend from the fans of similar moving averages with an arithmetic progression of the smoothing period.
+Moving averages calculation algorithm is as follows. We have indicator input parameters as source data:
+StartLength - minimum initial value of the first signal line;
+Step - period change step;
+StepsTotal - number of period changes.
+Any period value from the multitude of the lines fan is calculated using arithmetic progression:
+XMAPeriod(Number) = StartLength + Number*Step
+where the value of Number variable ranges from zero to StepsTotal. Obtained values of the periods are added to the variables array and are used at each indicator tick to get the array of XMA moving averages fan values. Directions of the current trend for each of the smoothings are calculated and also the number of positive and negative trends for the whole array of moving averages fan values. The final number of positive and negative trends is smoothed in its turn and used as the indicator lines that form a color cloud displayed with the help of the
+DRAW_FILLING
+style class.
+A trend direction in this indicator is determined by the cloud color, while its power is determined by the cloud width. You can use the overbought (UpLevel) and oversold (DnLevel) levels that are set in percent value from the indicator maximum amplitude.
+Smoothing algorithms can be selected out of ten possible versions:
+SMA
+- simple moving average;
+EMA
+- exponential moving average;
+SMMA
+- smoothed moving average;
+LWMA
+- linear weighted moving average;
+JJMA
+- JMA adaptive average;
+JurX
+- ultralinear smoothing;
+ParMA
+- parabolic smoothing;
+T3
+- Tillson's multiple exponential smoothing;
+VIDYA
+- smoothing with the use of Tushar Chande's algorithm;
+AMA
+- smoothing with the use of Perry Kaufman's algorithm.
+It should be noted that Phase parameters for different smoothing algorithms have completely different meaning. For JMA it is an external Phase variable changing from -100 to +100. For T3 it is a smoothing ratio multiplied by 100 for better visualization, for VIDYA it is a CMO oscillator period and for AMA it is a slow EMA period. In other algorithms these parameters do not affect smoothing. For AMA fast EMA period is a fixed value and is equal to 2 by default. The ratio of raising to the power is also equal to 2 for AMA.
+The indicator uses SmoothAlgorithms.mqh library classes (must be copied to the terminal_data_folder\MQL5\Include). The use of the classes was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Indicator input parameters:
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+ENUM_APPLIED_PRICE
+Applied_price=
+PRICE_CLOSE
+;
+// Applied price
+//----
+input
+Smooth_Method W_Method=MODE_JJMA;
+// Smoothing method
+input
+int
+StartLength=
+3
+;
+// Initial smoothing period
+input
+int
+WPhase=
+100
+;
+// Smoothing parameter
+//----
+input
+uint
+Step=
+5
+;
+// Period change step
+input
+uint
+StepsTotal=
+10
+;
+// Number of period changes
+//----
+input
+Smooth_Method SmoothMethod=MODE_JJMA;
+// Smoothing method
+input
+int
+SmoothLength=
+3
+;
+// Smoothing depth
+input
+int
+SmoothPhase=
+100
+;
+// Smoothing parameter
+input
+Applied_price_ IPC=
+PRICE_CLOSE
+;
+// Applied price
+//----
+input
+uint
+UpLevel=
+80
+;
+// Overbought level
+input
+uint
+DnLevel=
+20
+;
+// Oversold level
+input
+color
+UpLevelsColor=Red;
+// Overbought level color
+input
+color
+DnLevelsColor=Red;
+// Oversold level color
+input
+STYLE Levelstyle=DASH_;
+// Levels style
+input
+WIDTH  LevelsWidth=Width_1;
+// Levels width
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/730

@@ -1,0 +1,9 @@
+The indicator plots a chart with bar-averaged prices. Any indicator can be applied to this chart.
+For example, the
+Moving Average
+and
+Bollinger Bands
+indicators, applied to the averaged price chart are presented below:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/189

@@ -1,0 +1,13 @@
+Author:
+I am not aware of other similar type of chart. However, please let me know if I am infringing on someone else work.
+I wanted to find out if there was useful information to be displayed from the London open to the New York Close.
+It is made of 3 candles per trading day:
+- London Open to New York Open
+- New York Open to London Close (Power hours)
+- London Close to New York Close
+I also added a "funny" number to offset the chart itself. See below. Any suggestions welcome.
+Recommendations:
+Works only on 1 hour timeframe
+Timeoffset variable is the offset (in hours) between GMT and your MT4 Broker's time
+SBnumber variable is a funny number used to offset the whole group of candlesticks. It gives sometime surprising results.
+Displays better on a line chart

@@ -1,0 +1,18 @@
+Fibo average shows the moving average calculated by bar prices with a shift from the current one by Fibo numbers. In addition, it also displays the second moving average calculated by data of the first Fibo MA.
+It has four inputs:
+MA period
+- averaging МА calculation period
+MA method
+- averaging МА calculation method
+FiboMA applied price
+Fibo count
+- number of Fibo numbers for calculating FiboMA
+Sample calculation:
+if the number of Fibo numbers (FiboCount) = 8, then
+FiboMA = (Price[i] + Price[i+1] + Price[i+1] + Price[i+2] + Price[i+3] + Price[i+5] + Price[i+8] + Price[i+13]) / FiboCount
+MA = MA(FiboMA, Period, Method)
+where:
+Price = FiboMA applied price
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21406

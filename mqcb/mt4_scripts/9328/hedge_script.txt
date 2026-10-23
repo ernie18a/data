@@ -1,0 +1,9 @@
+Author:
+Kevin Kurka (Kurkafund@yahoo.com)
+The script cycles through your open orders and asks which order/s you would like to Hedge.
+Once you select an order to hedge. The script calculates the best possible synthetic hedge for that position, based on the combination with the lowest transaction cost then places the orders in proportion to the position selected.
+For Example: if you elect to Hedge a 25 lot short USDJPY position; the script will open a 25 lot long EURJPY, and 27.73 short EURUSD position.
+Lite version works on demo accounts and live accounts with balances up to $1,000
+Conforms to CFTC and NFA "anti-hedging" regulations
+Recommendations:
+Only use this if you completely understand synthetic derivatives or triangular arbitrage.

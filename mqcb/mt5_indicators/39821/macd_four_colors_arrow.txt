@@ -1,0 +1,6 @@
+Description of the indicator
+Continuation of the '
+Four Colors
+' series - now the MACD indicator signals are displayed as 'Arrow' in the main window.
+For clarity, the "progenitor" is added to the graph:
+Pic. 1. MACD Four Colors Arrow

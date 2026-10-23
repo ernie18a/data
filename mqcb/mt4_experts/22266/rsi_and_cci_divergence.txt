@@ -1,0 +1,51 @@
+Rsi & Cci Divergence EA Trades when there is a divergence of "RSI" or "CCI" indicator  has Trailing Stop Loss &Take Profit works on all time frames major forex pairs and stocks NASDAQ.
+Try it on demo first.
+It is possible to activate Game Theory Protocol: Maximize Profits, Minimize Drawdowns,Smart Lot Sizing for Maximum Growth
+If you do not want to trade with increasing lot size when you lose  a trade set:"IncreaseFactor=0"
+It is possible to activate a hedge fund protocol for low drawdown
+Inputs
+==================Game Theory==========================
+Enable Game Theory Risk Management (values:true/false).
+Game Theory: Expected Win Rate (values:0.1-0.6).
+Game Theory: Reward/Risk Ratio (values: 1.5-3).
+Game Theory: Safety Multiplier (values:0.1-0.6).
+==================HEDGE FUND PROTOCOL==========================
+HEDGE FUND PROTOCOL -Enabale Draw dwon control (values:true/false).
+Close basket at +0.10% MIN_PROFIT_PERCENT (values:0.1-0.6).
+Close basket at -0.50% MAX_LOSS_PERCENT (values: 0.5-0.8).
+HEDGE FUND PROTOCOL_SLIPPAGE (values: 10-50).
+=================================================================
+Use_TP_In_Money- Use Take Profit In Money (values:true/false).
+TP_In_Money- Take Profit In Money   (values: 10-100).
+------------[Money Trailing Stop For Multiple Trades]----------------------
+Enable_Trailing-Enable_Trailing with money  (values:true/false).
+Take Profit In Money (in current currency) (values: 25-200).
+Stop Loss In Money(in current currency) (values: 1-20).
+Loss Index (values: 1.1-2).
+--------------------------------------------------------------------------------------
+CCI -  "CCI" indicator value (values:10-40).
+RSI - "RSI" indicator value(values:10-40).
+BarsToCount- Number of candles to wait for divergence (values: 10-100).
+Lots - Lots size (values: 0.01-1).
+Lots size Exponent  (values: 1.01-2).
+IncreaseFactor -how much to increase lots from total margin if you lose a trade (values: 0.001-0.1).
+Stop_Loss - Stop Loss (values: 30-500).  /set value 600 for  Multiple Trades
+MagicNumber - Magic number (values: 1-100000).
+TakeProfit - Take Profit (values: 50-200).  /set value 600 for  Multiple Trades
+FastMA - Fast Moving Average (values: 1-20).
+SlowMA - Slow Moving Average (values: 50-200).
+---------------------CONTROL DRAW DOWN-----------------------------
+UseEquityStop -  (values:true/false).
+TotalEquityRisk- (values: 0.01-20).
+-------------------------------------------------------------------------------
+Max_Trades(1-12).
+----------------IF YOU USE ONLY 1 TRADE:-----------------------
+//////////////////////////////////////////////////
+TrailingStop-set a value from 40 to 100 to activate trailing stop loss & take profit, "0" will not activate trailing stop loss.
+Enable "Break Even" -(values:true/false).
+When move "Break Even"- (values: 5-30).
+How much pips move- "Break Even" (values:5-30).
+-You should optimize this EA every few months and use the exact same  inputs from above .
+-You can use it as  hedging grid EA or a single trade EA.
+-How to perform back test:
+https://bit.ly/2CD7XWD

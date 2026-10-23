@@ -1,0 +1,10 @@
+Real author:
+rewritten by CrazyChart
+Semaphore arrow signal indicator based on the
+ForexOFFTrend
+oscillator.
+Signals are generated when there is a crossover of the main and the signal oscillator line.
+Fig.1. The ForexOFFTrendSign indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12873

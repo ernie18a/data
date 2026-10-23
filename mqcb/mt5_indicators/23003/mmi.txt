@@ -1,0 +1,11 @@
+Market Meanness Index indicator is a business activity index. It displays the market state - trend or random (chaotic).
+The indicator has three input parameters:
+Period
+- calculation period
+Random boundings
+- level, above which the market has no any obvious trend and is quite chaotic
+Trend
+- level, below which the market is subject to trends
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23003

@@ -1,0 +1,14 @@
+The Expert Advisor is based on
+EMA_RSI_VA
+indicator.
+Buy signal: upward crossover of the fast line, sell signal: downward crossover of the fast line.
+The EA has lot increasing option, which depends on the deposit/max.drawdown ratio.
+Testing result (EURUSD, H1):
+Without lot increasing option, every tick, from 2009 (1_eurusd_h1.set)
+With lot increasing option, every tick, from 2009. (2_eurusd_h1.set):
+Testing with 1.000$ initial deposit and lot=0.1 (3_eurusd_h1):
+When using of lot increasing option (use_Multpl = true) it's recommended to test it without lot increasing. The resulted maximum drawdown can be set to Max_drawdown input parameter
+Result: $600 000 with $10 000 initial deposit with lot=1.0.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/913

@@ -1,0 +1,8 @@
+Easy to use, just input your stoploss and take profit (in digits) and your lotsize. Both buy and sell are set to false. To enable either, set it to true.
+The script will not work if both are set to true or if both are set to false. After the script is lainched, you will be alerted if there is an error, or if the transaction is successful.
+This script will be particularly helpful if you are like me, and don't like subtracting decimals to find your stoploss or take profit, but you know exactly how many points you want to set for your sl and tp.
+Note:
+You have to attach the script to the particular chart you want to open a position for.
+ENJOY!!
+P.S. Im trying to add to version 2, an option to calculate the proper lotsize based on the percentage of the account and stoploss. Eg, if the risk is 2% and the stoploss is 50, how do we calculate it such that 50 pips will only be equal to 2%. I dont know the formular for that.
+Any help?

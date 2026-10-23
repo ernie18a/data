@@ -1,0 +1,2 @@
+Author: Alejandro Galindo
+The indicator showing a maximum and a minimum of pregoing day.

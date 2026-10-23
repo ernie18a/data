@@ -1,0 +1,4 @@
+Author:
+Codersguru
+Indicator EMA_Prediction.
+Indiactor EMA Prediction

@@ -1,0 +1,16 @@
+Trend identifier oscillator is a trend/flat identifier.
+There are five inputs:
+MA period
+- averaging МА period
+MA applied price
+- averaging МА calculation price
+Signal period
+- signal line period
+Deviation period
+- deviation calculation period
+Deviation factor
+One of the possible interpretation methods:
+If the signal line is inside the deviation corridor, then we can assume that the market is flat. If it is outside, the market is in a trend.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21417

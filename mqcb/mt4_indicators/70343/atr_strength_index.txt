@@ -1,0 +1,1 @@
+Average True Range input to the RSI formula adds direction to ATR.

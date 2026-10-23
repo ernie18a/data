@@ -1,0 +1,1 @@
+Add High and Low lines based on number of previous bars defined in input field

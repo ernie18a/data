@@ -1,0 +1,15 @@
+Real author:
+Powered byStep
+Chaikin Oscillator
+with the market flat state detection option. If the market is flat, the colored indicator cloud shrinks and is located in the 0 position, and a thick gray line appears.
+The criterion for determining this state is a shrunk Bollinger. The critical Bollinger shrink value is fixed by a half of its bandwidth and defined in the indicator input:
+input
+uint
+flat=
+100
+;
+// flat value in points
+Figure 1. The CHOWithFlat indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11321

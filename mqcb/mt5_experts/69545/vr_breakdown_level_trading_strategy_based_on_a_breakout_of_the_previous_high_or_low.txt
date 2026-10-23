@@ -1,0 +1,8 @@
+VR Breakdown Level
+- A simple trading strategy based on breaking previous High or Low levels. The period for calculating the levels is selected by the user in the trading robot's settings.
+Strategy Logic:
+At the start of a new trading period (selected by the user in the settings), the trading robot records the High and Low prices of the previous period. Then, if the price reaches one of these levels, a position is opened in the direction of that level. In other words, if the price rises and exceeds the previous High, the trading robot buys the financial instrument with a volume specified by the user in the settings. A Stop Loss and Take Profit are set for all open positions (as defined by the user in the settings). Positions are closed only by Stop Loss or Take Profit.
+A similar strategy can be implemented using pending orders such as BUY STOP and SELL STOP. The difference is that with pending orders, we need to delete the opposite pending order in a timely manner. Placing pending orders signals to the broker at which price levels we intend to enter the market. Using "internal" levels hides this information from the broker.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/69545

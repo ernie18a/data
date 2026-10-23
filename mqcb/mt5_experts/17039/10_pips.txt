@@ -1,0 +1,27 @@
+Author of the idea
+—
+Yuri
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Pipsing EA. Take Profit is set at 10 pips. Different Stop Loss and Take Profit levels are provided for Buy and Sell orders.
+The peculiarity of the strategy is the lack of indicators use.
+The algorithm of trading strategy:
+Open the Daily chart of the EURUSD pair, lots 0.1.
+When a new candle (bar) forms open two deals simultaneously (
+buy
+and
+sell
+) with take profit at 10 points
+.
+TrailingStop and StopLoss should be set at
+50 points.
+If one of the trades is closed, an additional position should be opened in the direction of the remaining one
+.
+Exit
+from trades should be performed by stop loss or take profit in all cases.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17039

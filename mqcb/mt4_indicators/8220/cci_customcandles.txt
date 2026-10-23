@@ -1,0 +1,6 @@
+The CCI CustomCandles indicator.
+CCI_Period =14;
+CCI_Price =0;
+Overbought =100;
+Oversold =-100;
+CCI CustomCandles

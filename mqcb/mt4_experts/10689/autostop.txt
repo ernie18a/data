@@ -1,0 +1,3 @@
+Autostop automatically sets a pre set take profit and stop loss on all orders that lack the selected stop(orders without sl/tp or both).
+This enables quicker opening of orders especially if you use a common take profit, stop loss or both for all orders of a current pair. You only need to open orders without having to calculate your stops and no matter how many orders you have opened the EA will set stops for you as long as you have attached the EA on the currency pairs chart.
+For pending orders the EA will wait until they open then it will set the stops using the distances you had set on the EA.

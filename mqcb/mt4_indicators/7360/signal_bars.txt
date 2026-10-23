@@ -1,0 +1,6 @@
+Author:
+Maloma
+This indicator shows the trend from the smaller timeframes up to H4.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7360

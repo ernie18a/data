@@ -1,0 +1,28 @@
+I used to suffer from unnecessary losses and/or cutting my profit short since I wasn't fast enough to modify my SL and/or TP. That is why I've wrote these scripts that will allow me to react fast when I must modify my Sl and/or TP especially when I have many open and/or pending trades. I know there are plenty of Metatraders who also suffer from this and that is why I would like to share these scripts with you, hopefully it will be beneficial.
+Do not forget to send you comments as well as rate these scripts. Happy trading!
+These 3 MQL5 scripts will help you to immediately react to your open positions and pending orders. Below is an example on how to modify the SL of 4 Buy limit orders in one step.
+SCT_EditSLTP_BuySellLimitOrders is the script that will help you modify the SL and/or TP all your
+Buy
+and/or
+Sell limit orders
+, below are the input values that you need to insert and the script will take care of everything.
+input double   SL_BuyLimitOrder;
+input double   TP_BuyLimitOrder;
+input double   SL_SellLimitOrder;
+input double   TP_SellLimitOrder;
+SCT_EditSLTP_BuySellStopOrders is the script that will help you modify the SL and/or TP all your
+Buy
+and/or
+Sell stop orders
+, below are the input values that you need to insert and the script will take care of everything.
+input double   SL_BuyStopOrder;
+input double   TP_BuyStopOrder;
+input double   SL_SellStopOrder;
+input double   TP_SellStopOrder;
+SCT_EditSLTP_BuySellPositions is the script that will help you modify the SL and/or TP all your
+Buy and/or Sell positions
+, below are the input values that you need to insert and the script will take care of everything.
+input double   SL_BuyPosition;
+input double   TP_BuyPosition;
+input double   SL_SellPosition;
+input double   TP_SellPosition;

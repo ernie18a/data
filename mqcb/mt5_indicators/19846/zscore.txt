@@ -1,0 +1,11 @@
+Standard score
+(z-score) is the number of standard deviations by which the observed or measured value differs from its mean value.
+Thus, the indicator displays the value of price deviation from its average value, represented by a simple moving average with a specified period and calculation price.
+The indicator has two input parameters:
+Period of calculation
+- calculation period;
+Applied price
+- price used for calculations.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19846

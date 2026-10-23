@@ -1,0 +1,23 @@
+The indicator finds candlesticks with a minimum or maximum shadow size. Limitation on the size of the candlestick body.
+Inputs:
+The candlestick body parameter
+The minimum size of the candlestick body
+Parameters of the upper shadow
+true -> display candlesticks based on the upper shadow
+The size of the upper shadow (as a percentage of the body)
+true -> minimum size, false -> maximum size
+Symbol code (32-255)
+Parameters of the lower shadows
+true -> display candlesticks based on the lower shadow
+The size of the lower shadow (as a percentage of the body)
+true -> minimum size, false -> maximum size
+Symbol code (32-255)
+The shift parameter
+The vertical shift of the arrows (0-255)
+An example of search based on the upper shadow, the size of the upper shadow is set as the MAXIMUM size. In other words, we are looking for the upper shadow, which does not exceed the specified MAX value:
+An Expert Advisor based on this indicator is available here:
+Candle shadow percent
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17939

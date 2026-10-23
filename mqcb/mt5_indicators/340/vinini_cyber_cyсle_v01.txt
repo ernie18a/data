@@ -1,0 +1,7 @@
+Real author:
+traderak20, based on
+VininI_Cyber Cycle(V2).mq4
+by
+Victor Nicolaev
+(2009)
+The indicator aims to identify cyclical movements of price.

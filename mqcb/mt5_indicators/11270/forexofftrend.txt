@@ -1,0 +1,10 @@
+Real author:
+Rewritten by CrazyChart
+The trend indicator drawn in the form of the colored cloud.
+This indicator was first implemented in MQL4 and published in
+CodeBase
+on March 8, 2006.
+Fig.1. ForexOFFTrend Indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11270

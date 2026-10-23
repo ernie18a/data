@@ -1,0 +1,14 @@
+Idea by:
+more
+mq5 code by:
+barabashkakvn
+An Expert Advisor based on two indicators: iFractals (Fractals) and iAlligator (Alligator).
+Considered is the latest (the "youngest") fractal only. Moreover, considered is only the fractal that is completely above (the condition for the upper fractal) or below (the condition for the lower fractal) Alligator. As soon as the price breaks through such a fractal, a trading signal will be received.
+Options available: Signal reverse (
+Reverse
+) and closing opposite positions (
+Close opposite
+).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23452

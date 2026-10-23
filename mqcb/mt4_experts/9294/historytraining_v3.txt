@@ -1,0 +1,22 @@
+The first two versions are in the  code base. This version adds the ability to set pending orders. 
+
+This program is created for training on historical data. Try it. It’s interesting. This requires to run the application training.exe, open Strategy tester, start testing of the attached expert adviser HistoryTrain.mql. Turn on visual mode and adjust the scroll speed of history. The adviser works with the DLL so it is necessary to allow the DLL in the "Tools" menu, "Options".
+Mark the next items:
+-Allow dll imports
+-Allow live trading
+And remove the check mark from the item
+-Confirm dll function call
+In the application window there are only 3 buttons: buy, sell, close. Look at the currency chart and carry out trading activities on historical data. At the same time look at the chart of profit.
+Unpack the archive to the root, then there will be a folder c: HistTraining in which there are 4 files: 
+1. HistoryTrain.mql 
+2. libSharedVarsDL Lv2.def 
+3. SharedVarsDLLv2 .dll 
+4. Training.exe 
+Copy HistoryTrain. mql to the folder with the experts advisers.
+ADDITION:
+In order to open an order simply enter the size of the position and then click Buy or Sell buttons. The deal will be in the list of orders. To close the deal, if it is the only one, just click Close. If the there are several orders in the list, then choose the one that you want to close, and then click Close button. 
+If you want to open the deal with SL and/or TP, check the boxes with TP and/or SL marks. Next, draw two horizontal lines in the chart window. The lines will change color. Then click Buy or Sell. The lines will be, respectively, SL and TP levels. 
+
+To open a pending order, check the box “Pending order” and draw a horizontal line. Next just click one of two buttons: “limit order” or “stop order”. 
+If you want to open a pending order with SL and/or TP you should put appropriate jackdaws. In that case you need to draw two or three Horizontal lines. They will change their color. Then just click the type of pending order to open it.
+Author’s site: www.brokcompare.com

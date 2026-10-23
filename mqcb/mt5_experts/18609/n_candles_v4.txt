@@ -1,0 +1,26 @@
+The Expert Advisor searches for N identical candlesticks in a row. It buys on bullish candlesticks and sells on bearish ones. The account type is taken into account, i.e. whether it is netting or hedging. The CPositionInfo, CTrade and CSymbolInfo classes are used in the code.
+Version 1:
+N Candles
+.
+Version 2:
+N Candles v2
+.
+Version 3:
+N Candles v3
+.
+New in version 4: on netting accounts, the "maximum position volume" parameter is used instead of "maximum number of items".
+Inputs
+N identical candles in a row.
+Lot.
+Take Profit (pips).
+Stop Loss (pips).
+Trailing Stop ("0" -> not used).
+Trailing Step (if trailing stop >0).
+Max positions certain direction (only for the hedging mode).
+Max position volume (only for the netting mode).
+Magic.
+Slippage.
+An example of EA operation on a netting account:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18609

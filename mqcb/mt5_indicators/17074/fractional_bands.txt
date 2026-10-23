@@ -1,0 +1,12 @@
+Real Author:
+jppoton@yahoo.com
+Fractional Bands modifies the price changes using the fractal Brownian motion, which takes into account the fractal dimension. This indicator differs from the classic Bollinger bands, which are based on Brownian motion by Wiener (special case of the fractal Brownian motion). It also uses various equations from the Fractal Bands indicator (https://www.mql5.com/en/code/8895). Despite the fact that these differences in greater degree correspond to the model from a mathematical point of view, they, however, do not make the indicator more interesting in terms of trading. Nevertheless, it may be useful when applied in combination with other indicators.
+More details in the
+author's blog
+The original indicator was developed in the MQL4 language and published in the
+CodeBase
+on 07.05.2009.
+Fig1. The Fractional_Bands indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17074

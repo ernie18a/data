@@ -1,0 +1,7 @@
+Description:
+Three combo uses ema 5 and 10, rsi 21 and adx 14 to give you buy or sell signals.
+When the three indicators give the same signal then the histogram will turn green for buy, or red for sell.
+Yellow means that the three indicators have not agreed on a position yet.
+The values of the the rsi, adx and ema can be changed to whatever you feel comfortable with. The height of the histogram is tied to the main adx line.
+Input parameters
+Color settings

@@ -1,0 +1,5 @@
+This indicator alerts on MANUALLY drawn trendline -
+MUST HAVE both lower and upper trend line drawn
+Alerts when price closes above upper trendline
+Alerts when price closes below lower trendline.
+Full Alerts - email push ECT

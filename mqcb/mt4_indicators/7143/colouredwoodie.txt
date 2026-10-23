@@ -1,0 +1,2 @@
+Author: thorr
+Coloured Woodie indicator.

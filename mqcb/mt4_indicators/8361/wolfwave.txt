@@ -1,0 +1,19 @@
+Indicator WolfWave. The code contains a fragmentary description.
+extern
+int
+ExtDepth
+=
+12
+;
+extern
+int
+ExtDeviation
+=
+3
+;
+extern
+int
+ExtBackstep
+=
+2
+;

@@ -1,0 +1,49 @@
+The author of the idea
+:
+JS_Sergey
+,
+the mq5 code author
+:
+barabashkakvn
+.
+The Flat Channel EA trades breakouts of the flat channel. When a flat channel is found or when the market slows down, the EA places a pending order expecting the channel breakout. The stop level is equal to two channel widths. The recommended pair is EURUSD with the M30 timeframe.
+Input Parameters
+Time work (true → on, false → off)
+- enable/disable time filter.
+Trade on Tuesday
+- allow/prohibit trading on Tuesdays.
+Trading on Wednesday
+- allow/prohibit trading on Wednesdays.
+Trading on Thursday
+- allow/prohibit trading on Thursdays.
+Start trading on Monday
+- time to start trading on Monday.
+Stop trading on Friday
+- time to stop trading on Friday.
+Money management
+- enable/disable automated money management.
+Risk in % for a deal from a free margin
+- risk percent per trade (if
+Money management
+= false).
+Lots
+- lot value.
+Life_time
+- pending order lifetime.
+magic
+- EA's magic number.
+StdDev averaging period
+- the averaging period of the StdDev indicator.
+Flet bars
+- the minimum number of bars for determining the flat.
+Canal min (in pips)
+- minimum channel size.
+Canal max (in pips)
+- maximum channel size.
+Breakeven
+- enable/disable the breakeven function.
+Fibo tral
+- the minimum distance from the current price for moving a position to breakeven.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19150

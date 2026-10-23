@@ -1,0 +1,11 @@
+The
+PrevDayLines.mq4
+script is a tool for MetaTrader 4 that automatically draws three critical price levels from the previous trading day on your chart. These levels include the highest price (Max), the lowest price (Min), and the average price (Avg), providing traders with a clear visual reference for key support and resistance points. The script is fully customizable, allowing you to adjust the color, thickness, and style of the lines to suit your preferences.
+Functionality:
+Automatic Drawing of Price Levels:
+The script calculates and draws horizontal lines on the chart representing the previous day's high, low, and average prices.
+Customizable Visuals:
+Users can easily customize the appearance of the lines by adjusting parameters such as color, width, and style (e.g., dotted, solid).
+Easy Integration:
+Simply run the script on any chart to instantly display the previous day's critical price levels, aiding in technical analysis and decision-making.
+This script is particularly useful for traders who rely on historical price levels to identify potential market turning points.

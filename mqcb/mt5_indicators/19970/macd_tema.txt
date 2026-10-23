@@ -1,0 +1,10 @@
+In an article "Smoothing Data With Less Lag" that was a continuation of his research for less lag signaling MACD, Patrick Mulloy decided to use TEMA (Triple Exponential Moving Average) instead of using EMA.
+Patrick Mulloy
+: Two opposing properties are always at work in the standard Moving Average smoothing used in technical analysis, increasing the Moving Average (MA) length to cull more random fluctuations but in so doing thereby increasing the lag between the MA and the data. In my first article, I discussed the industry standards, the Simple Moving Average (SMA, which is a straightforward moving mean of the data) and the faster-responding Exponential Moving Average (EMA). Both the SMA and the EMA smoothing indicators have the same lag in the steady state long term, which is:
+(1 - a)/a
+where a = 2/(w+1) and w is the Moving Average period. In terms of the MA period w, the lag is:
+(w-1)/2
+A new Exponential Moving Average called DEMA was introduced in the previous article, which eliminated this lag for the steady state. Now, here are two other Moving Averages. One is known as TEMA, which is an extension of the multiple smoothing technique using single, double and triple EMAs.
+MACD TEMA is even a bit more "faster" than
+MACD DEMA
+so, depending on the parameters, in scalping mode (short calculating periods) or trending mode (when longer periods are used. Never forget that MACD is primarily a momentum indicator and that it is the main goal of MACD.

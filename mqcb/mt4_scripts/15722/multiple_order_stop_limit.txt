@@ -1,0 +1,2 @@
+Description:
+this script to make multiple  pending order buy stop and sell stop that you want maybe 10 or 20 with target and stoploss

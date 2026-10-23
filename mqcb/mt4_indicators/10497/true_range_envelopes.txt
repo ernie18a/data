@@ -1,0 +1,4 @@
+Description:
+True Range Envelopes is based on the classical Envelopes indicator.
+Instead of input parameter "Deviation" I used the data from Average True Range indicator and then MaOnArray function for smoothing all lines.
+Image:

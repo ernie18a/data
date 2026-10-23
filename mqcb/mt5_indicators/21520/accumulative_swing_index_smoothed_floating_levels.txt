@@ -1,0 +1,4 @@
+In this version of
+Accumulative Swing Index Smoothed
+indicator we are introducing a sort of levels that can be used for trend assessment.
+Floating levels are used for that and that way the indicator is not depending on any kind of fixed levels, which makes the indicator a sort of an adaptive indicator. Some experimenting with the periods is recommended.

@@ -1,0 +1,5 @@
+Description:
+This indicator reflects the positive difference between the High and Low of the period.
+Sudden price changes may tell of change of direction for the trend.
+Enjoy!
+Image:

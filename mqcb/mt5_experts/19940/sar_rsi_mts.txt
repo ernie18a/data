@@ -1,0 +1,52 @@
+The author of the idea
+:
+Collector
+,
+the author of the MQL5 code
+:
+barabashkakvn
+.
+The rules of the trading system are as follows:
+A signal to open BUY
+: SAR on bar 1 is
+less
+than the Close of bar 0, SAR on bar 1 is
+less
+than SAR on bar 0, RSI on bar 0 is
+greater
+than 50.0;
+A signal to open SELL
+: SAR on bar 1 is
+greater
+than the Close of bar 0, SAR on bar 1 is
+greater
+than SAR on bar 0, RSI on bar 0 is
+less
+than 50.0;
+Lot is calculated automatically based on the risk value as a percentage of free margin.
+Condition to open a Sell position:
+Input Parameters
+Stop Loss (in pips)
+- Stop Loss value;
+Take Profit (in pips)
+- Take Profit value;
+Trailing Stop (in pips)
+- trailing value;
+Trailing Step (in pips)
+- trailing step value;
+Risk in percent for a deal from a free margin
+- risk per trade as percentage of free margin.
+Magic Number
+- unique identifier of the EA;
+SAR: price increment step - acceleration factor
+- SAR indicator parameter;
+SAR: maximum value of step
+- SAR indicator parameter;
+RSI: averaging period
+- RSI indicator parameter;
+RSI: type of price
+- RSI indicator parameter.
+Example for SAR RSI MTS 2017.06.08 - 2017.10.26 GBPUSD,M30:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19940

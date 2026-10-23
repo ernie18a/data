@@ -1,0 +1,58 @@
+Real Author:
+GurievEugen
+Two-Line MACD. This indicator is available by default in a great deal of trading platforms. But it cannot be found in Metatrader 5.
+This indicator was first implemented in MQL4 and published in at
+Code Base
+02.07.2012.
+The indicator uses classes of the SmoothAlgorithms.mqh library (to be copied into terminal_data_directory\MQL5\Include). A detailed description of the use of the classes was given in the article "
+Averaging Price Series for Intermediate Calculations Without Using Additional Buffers
+".
+Input parameters:
+//+-----------------------------------+
+//| Indicator input parameters        |
+//+-----------------------------------+
+input
+Smooth_Method XMA_Method=MODE_T3;
+// Histogram smoothing method
+input
+int
+Fast_XMA =
+12
+;
+// Fast moving average period
+input
+int
+Slow_XMA =
+26
+;
+// Slow moving average period
+input
+int
+XPhase=
+100
+;
+// Moving averages smoothing parameter
+input
+Smooth_Method Signal_Method=MODE_JJMA;
+// Signal line smoothing method
+input
+int
+Signal_XMA=
+9
+;
+// Signal line period
+input
+int
+Signal_Phase=
+100
+;
+// Signal line parameter
+input
+int
+AppliedPrice=PRICE_CLOSE_;
+// Price constant
+Illustration:
+Fig.1 GXMACD Indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/959

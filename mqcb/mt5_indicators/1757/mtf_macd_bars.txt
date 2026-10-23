@@ -1,0 +1,11 @@
+Real author:
+Kirk Sloan
+A semaphore signal indicator showing the MACD histogram calculated on the timeframe specified in the input parameters. Blue and pink bars correspond to the position of the histogram bars relative to the signal line. Above the signal line, a growing trend is colored blue, falling is pink.
+Red and green bars are used similarly with the following additional conditions: the growing trend with the histogram above zero - green bars, the falling trend below zero with the histogram below zero - red.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 11.04.2008.
+Figure 1. The MTF_MACD_Bars indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1757

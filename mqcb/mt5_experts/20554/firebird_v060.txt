@@ -1,0 +1,40 @@
+Idea by
+:
+Scriptor
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+The EA trades on the iMA (Moving Average, MA) indicator. At the same time, there is a parameter (defined in percents)
+Distance between "MA" and the price
+- the indicator indent from price. Before sending a trade order, it checks how much time has elapsed since opening the last position: If fewer than two periods (timeframes) have elapsed, then the position will not be opened.
+Inputs
+Lots
+- the size of the position to be opened;
+Stop Loss (in pips) (do not use "0")
+- Stop Loss; setting the value of "0" is prohibited;
+Take Profit (in pips) (do not use "0")
+- Take Profit; setting the value of "0" is prohibited;
+MA: averaging period
+- indicator averaging period;
+MA: horizontal shift
+- indicator horizontal shift;
+MA: smoothing type
+- the type of indicator averaging;
+MA: type of price
+- the type of indicator price;
+Distance between "MA" and the price (as a percentage)
+- indicator distance from price, in percents;
+Trade on Friday
+- enable trading on Friday;
+Step: distance between positions (in pips)
+- step between positions;
+Increase in a step depending on quantity of positions
+- scale up the step with the increse in the number of positions;
+magic number
+- unique identifier for the EA.
+A test sample for all symbols on H1 with the default parameters:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20554

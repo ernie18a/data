@@ -1,0 +1,47 @@
+Trading by
+i-Regr
+(Regression Channel):
+Regression Channel: Linear Regression Channel, Quadratic (Parabolic) Regression Channel, Cubic Regression Channel.
+Implemented the trend protection: if a previous day's D1 exceeds 1500 pips ("
+protection size D1 bar"
+input) – disable trading and close all open positions.
+Test period: 2016.01.01 — 2016.10.26, initial deposit — 10 000, timeframe — H1:
+In the below code, it is already assumed that
+i-Regr indicator is already in the \MQL5\Indicators\ folder
+:
+//+------------------------------------------------------------------+
+//| Expert initialization function                                   |
+//+------------------------------------------------------------------+
+int
+OnInit
+()
+{
+m_symbol.Name(
+Symbol
+());
+// sets symbol name
+m_trade.SetExpertMagicNumber(m_magic);
+// sets magic number
+//--- create handle of the indicator i-Regr
+handle_i_Regr=
+iCustom
+(
+Symbol
+(),
+Period
+(),
+"i-Regr"
+,
+Regr_kstd,
+Regr_degree,
+Regr_bars,
+Regr_shift
+);
+//--- if the handle is not created
+if
+(handle_i_Regr==
+INVALID_HANDLE
+)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16709

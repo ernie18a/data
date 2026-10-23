@@ -1,0 +1,25 @@
+this is my first try at creating an EA from ground up
+the EA only trails, so no automatic buy/sell
+***** PLEASE NOTE: the default values are adjusted for M1 time-frame, as is the easiest way i got for testing it's workings, but it works in all time-frames and currency pairs *****
+besides the MA parameters, it also got a few options for the trailing
+possibility of enforcing a maximum stop loss - for older orders that might exceed it
+number of bars behind to use in MA trail
+minimum distance from MA to trail
+minimum distance of current price to trail on positive and on negative profit
+possibility of not showing indicator line
+trail step
+the code probably can be optimized further
+feel free to post suggestions, changes to the code that can improve it, or any doubts about it's workings
+i have been trying to control the indicator`s appearance - line, color and style. any help will be welcome
+Update 1 (V1.1)
+file updated after consideration on how to treat preexisting orders that exceed max sl and the EA don`t have permission to close them
+Update 2 (V1.2)
+logic errors in the trail system
+added possibility of hiding/showing graphic line on chart
+Update 3 (V1.3)
+added trail step
+Update 3.1
+fixed some logic errors (yes i still keep finding them ^^)
+Update 4
+a lot of mistakes where identified and corrected, affecting some minor changes in the trail method
+coming soon: class library

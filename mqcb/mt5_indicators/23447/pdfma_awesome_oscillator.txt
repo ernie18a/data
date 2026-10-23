@@ -1,0 +1,6 @@
+Theory :
+Bill Williams's Awesome Oscillator Technical Indicator (AO) is a 34-period simple moving average, plotted through the bars midpoints (H+L)/2, which is subtracted from the 5-period simple moving average, built across the bars midpoints (H+L)/2. It shows us quite clearly what’s happening to the market driving force at the present moment.
+This version :
+It is using PdfMA (Probability Density Function weighted Moving Average) instead of using SMA (Simple Moving Average). It is deviation from the original Ao since in the AO there is no parameter that you can change, but in this you can change the variance part of the PdfMA calculation. That way you can get different values for the AO even without changing periods of calculation (the general rule of thumb is : the greater the variance, the smoother the result)
+Usage :
+You can use color changes (mainly on zero cross) for trend change signals

@@ -1,0 +1,36 @@
+Rolling Return Autocorrelation Regime Oscillator
+Author:
+Adeolu Gbadebo
+The idea behind it
+Most retail tools that use autocorrelation plot it the textbook way - correlation on the y-axis, lag on the x-axis, computed once over a fixed history. That's useful for a one-time diagnostic, but it doesn't tell you what the market is doing right now. This indicator flips the axes: it fixes the lag (usually 1) and instead tracks how that single autocorrelation reading evolves bar by bar, over a rolling window. The result behaves like a normal oscillator you'd read off the right edge of the chart, except what it's measuring is a genuine statistical property of returns rather than price momentum.
+The mechanics are straightforward. At each bar, the indicator pulls the last N return observations, pairs each one with its own value lagged by the configured number of bars, and runs a standard Pearson correlation between the two series. A positive reading means an up-return tends to be followed by another up-return at that lag - the statistical signature of a trending, momentum-driven stretch. A negative reading means an up-return tends to be followed by a down-return - the signature of a mean-reverting, choppy stretch. Because the window is finite, a raw correlation reading has genuine sampling noise even in a perfectly random market, so the indicator plots dynamically-computed significance bands at ±Z/√N - only readings that push past those bands are more likely to reflect a real regime than window-size noise.
+A raw per-bar reading on its own is jumpy, so a second, EMA-smoothed line rides on top of it. That smoothed line is the one worth watching for regime persistence; the raw dotted line is there mainly to show how much the underlying estimate is bouncing around bar to bar.
+How to interpret it
+Smoothed line pushing above the upper band: returns are showing statistically meaningful positive autocorrelation - trend-following approaches tend to have better odds here.
+Smoothed line pushing below the lower band: returns are showing statistically meaningful negative autocorrelation - fading extremes or range-trading tends to have better odds here.
+Smoothed line oscillating inside the bands: no reliable serial dependence at the chosen lag - treat the market as closer to random over that window, and lean more on other tools.
+A raw line that's swinging wildly while the smoothed line stays flat near zero is a reminder that the window is short relative to the noise - consider raising InpWindowSize .
+A sustained crossing from below zero to above zero (or vice versa) often lines up with a genuine shift from a ranging phase into a directional one, or the reverse - it's a regime-change flag, not a trade trigger by itself.
+Because the calculation works on returns, not price, the reading is comparable across symbols and timeframes with very different price scales.
+External variables (inputs)
+Input
+Default
+Purpose
+InpWindowSize
+50
+Number of return observations in the rolling window used for each autocorrelation estimate
+InpLag
+1
+Return lag correlated against (in bars); 1 captures bar-to-bar persistence, higher values capture slower cycles
+InpSmoothPeriod
+5
+EMA smoothing period applied to the raw autocorrelation reading
+InpConfidenceZ
+1.96
+Z-score used to compute the significance bands (1.96 approximates a 95% confidence level)
+InpUseLogReturns
+true
+Uses log returns when true; uses simple price differences when false
+Recommended use
+Start with the defaults on an hourly chart and watch how the smoothed line behaves around known trending versus choppy stretches you already recognize - that builds an intuitive feel for where the bands sit on your instrument before you rely on it. Shorter windows react faster to regime shifts but produce noisier raw readings and wider significance bands (since the band scales with 1/√N); longer windows are steadier but slower to flag a change. This indicator says nothing about direction, only about the character of recent price behavior, so it's best paired with a directional or level-based tool: use it to decide whether a breakout or a fade is the higher-probability approach right now, rather than as a standalone signal generator.
+Returns from a sliding window are correlated against their own lagged values every bar, producing a regime oscillator bounded by significance bands.

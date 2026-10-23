@@ -1,0 +1,27 @@
+Idea by
+:
+alex
+MQL5 code author
+:
+barabashkakvn
+Attention: The Expert Advisor is designed for testing in the MetaTrader 5 terminal, not for real trading!
+Strategy
+At the zero bar, it opens SELL #1 at a market price.
+If the price moves up, it opens a market position BUY #1 at a grid step distance from SELL #1.
+If the price moves higher, it opens a market position BUY #2 at a grid step distance from the previous BUY #1 position.
+If the price moves down below the BUY # position level, it opens SELL #2 at a grid step distance, and so on. A similar sequence applies for a downward movement.
+Input Parameters
+Buy trading: true = enabled, false = disabled;
+Sell trading: true = enabled, false = disabled;
+Whether to use the function of closing by equity: true, false;
+Whether to close by equity in drawdown: true, false;
+Position volume;
+Take Profit;
+Distance between positions (minimum);
+Equity increase percent to close loss-making positions;
+Equity fall percent to close loss-making positions;
+Number of loss-making positions to close upon equity growth;
+Number of loss-making positions to close upon equity fall.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21563

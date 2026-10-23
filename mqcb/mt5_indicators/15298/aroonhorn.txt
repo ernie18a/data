@@ -1,0 +1,13 @@
+Real author:
+tonyc2a
+Tushar Chand, a famous American engineer and a professional trader of Indian origin, became famous for his innovative ideas in the development of indicators and trading systems. His Aroon indicator is a very simple but useful tool that helps predicting the time the market changes from flat to trend and vice versa. Notably, Aroon is a Sanskrit word meaning "the early light of dawn", i.e. early signal.
+Aroon consists of the two lines - Aroon up (green), Aroon down (red line) - and a histogram at the side of the indicator. The number of time intervals since the appearance of maximum tops and bottoms on the chart is used in calculations. Therefore, the only important parameter that can be changed is the indicator calculation period. Initially, the indicator was used in long-term trading on daily timeframes and calculated its values based on two-week price fluctuations. Thus, the default number of periods is 14. When trading on lower timeframes, it is recommended to change the value to 25.
+In the current version, a colored cloud is used to indicate strong trend signals.
+As with any oscillator, key levels are to be placed on a chart. Upon crossing them, Aroon provides market entry signals. In this case, such key levels are 30, 50 and 70.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 09.09.2008.
+Fig.1. AroonHorn
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15298

@@ -1,0 +1,12 @@
+Two
+AdaptiveRVICloud
+indicators from different timeframes on one chart. The indicator of a larger timeframe is displayed as a color trend cloud, which determines trend. The second indicator of a smaller timeframe draws small colored dots, which show trend direction, and a large colored dot when trend reverses.
+The indicator requires compiled
+AdaptiveRVICloud.ex5
+and
+CyclePeriod.ex5
+indicator files. Add them to <terminal_data_folder>\MQL5\Indicators.
+Fig.1. The AdaptiveRVICloud_System_HTF indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19639

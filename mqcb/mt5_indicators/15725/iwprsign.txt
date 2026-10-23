@@ -1,0 +1,5 @@
+Semaphore arrow signal indicator based on the classic Williams’ Percent Range oscillator leaving the overbought and oversold areas.
+Fig.1. The iWPRSign indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15725

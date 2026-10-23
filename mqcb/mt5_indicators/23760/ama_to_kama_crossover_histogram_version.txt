@@ -1,0 +1,6 @@
+Theory :
+In “Adaptive Moving Averages” in this issue, author Vitali Apirine introduces an adaptive moving average (AMA) technique based on Perry Kaufman’s KAMA (Kaufman adaptive moving average). His update to the original KAMA allows the new method to account for the location of the close relative to the high–low range. The author describes a trading system that combines the AMA and KAMA, suggesting that the combination may reduce the number of whipsaws relative to using either moving average by itself.
+As a logical step there is a system that is combining the two indicators : this AMA and Perry Kaufman's KAMA. The signals produced that way are interesting and can be used as a sort of atrading system already
+This version is made to display only the current state of the estimated trend in the form of well known histogram in a separate window. That way you can keep the main chart clean if you prefer it that way
+Usage :
+You can use the color change of this indicator as signal

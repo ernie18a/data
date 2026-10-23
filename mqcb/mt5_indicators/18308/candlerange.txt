@@ -1,0 +1,8 @@
+Two histograms in one window, showing the maximum average price deviation in points from the initial value. The upper green histogram is the averaged difference between High and Open of a price series. The lower histogram shows the average difference between Low and Open of a price series. A bright color of the upper histogram indicates the growth of the candlestick High. Brighter color of the lower histogram means the decrease of the candlestick Low. Dark colors indicate the opposite.
+The indicator uses the SmoothAlgorithms.mqh library classes (copy it to <terminal_data_folder>\MQL5\Include). The detailed description of the classes is available in the article
+Averaging Price Series for Intermediate Calculations Without Using Additional Buffers
+.
+Fig. 1. The CandleRange indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18308

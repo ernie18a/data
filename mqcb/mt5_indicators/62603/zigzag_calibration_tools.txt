@@ -1,0 +1,54 @@
+Purpose
+This is not just a regular ZigZag.
+It has been designed as a
+precise visual reference tool
+to
+help
+balance
+or
+analyze
+other
+indicators, whether on the main chart or in sub-windows.
+It works
+only with confirmed ZigZag values
+, ensuring that the displayed points are fully reliable.
+Each detected move is enriched with key information:
+The
+periods
+defined
+by the ZigZag
+The
+exact price
+of
+the top or bottom
+The
+direction
+and
+movement
+The
+number of pips
+covered
+All this is displayed in a clear way and can be
+fully disabled
+via
+simple checkboxes in the settings.
+Main Features
+Custom ZigZag
+Adjustable colour, thickness, and style
+Option to turn ZigZag display on/off
+Visual Markers
+Colored vertical lines for each top and bottom
+Distinct colours for highs and lows
+Perfect alignment with the corresponding bars
+Dynamic Labels
+Price display + direction symbol (triangle ▲ or ▼)
+Number of pips between two ZigZag points
+Adjustable font size and color
+Smart positioning to avoid overlapping with price candles
+Full Control
+Boolean parameters to toggle ZigZag and labels independently
+Option to limit the number of analyzed bars for better performance
+Automatic removal of all indicator objects upon uninstall
+Translated from French by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/fr/code/62603

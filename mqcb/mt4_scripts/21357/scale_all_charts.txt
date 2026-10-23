@@ -1,0 +1,4 @@
+Two scripts are included for scaling all of the charts:
+"Scale Auto All" will set all of the open charts to automatic scaling.
+"Scale Fix All" will set all of the open charts to use fixed scaling. When switching to fixed scaling one option must be specified "Percent of current price", which causes the chart to scale to a height equal to that percent of the current price and center the current price vertically in view.
+Fixing the scale on 12 charts simultaneously saves me a lot of time compared to doing it manually, and since they're all showing the same vertical scale it's extremely easy to see which pairs are making the biggest moves.

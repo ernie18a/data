@@ -1,0 +1,13 @@
+This trend oscillator displays the dominant direction of Close prices of candlesticks over the specified period.
+It has two parameters:
+Period
+- period;
+Method
+- calculation method.
+Calculation:
+DC = MA(Diff)
+where
+Diff = Close - Open
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20441

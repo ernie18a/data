@@ -1,0 +1,2 @@
+This indicator for draw an Arrows for buy & sell, it's Depends on Cross 3 Moving Averages
+http://forum.m-e-c.biz/t29278.html

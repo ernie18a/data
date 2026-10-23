@@ -1,0 +1,8 @@
+Theory:
+Unlike the double smoothed stochastic itself (that was originally published here :
+Double Smoothed Stochastic
+), the "ratio" part of this version can be traced back to Walter Bressert - he uses it as an oscillator, but since that way of calculating (EMA(short)/EMA(long)) is known for long time before that, only the ratio is added to the indicator name.
+This version:
+Instead of using "raw" price, it is using the ratio of fast EMA / slow EMA of the price. The difference may seem small, but the results are quite different in some cases than when using "raw" prices, hence some experimenting with the ratio is advised.
+Usage:
+You can use the change of the color as signals.

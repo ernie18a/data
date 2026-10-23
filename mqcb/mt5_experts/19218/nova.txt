@@ -1,0 +1,54 @@
+The author of the idea
+:
+Vit
+,
+the mq5 code author
+:
+barabashkakvn
+.
+Input Parameters
+N-seconds ago
+- the number of seconds to record price movement.
+Step (in pips)
+- step value.
+Lots
+- position volume.
+Stop Loss (in pips)
+- Stop Loss value.
+Take Profit (in pips)
+- Take Profit value.
+Coefficient, if the stop-loss is triggered
+- lot increase ratio after the stop loss.
+The Expert Advisor analyzes the last '
+N-seconds ago
+' seconds and compares with the current price.
+The Expert Advisor monitors triggering of Stop Loss and Take Profit by using the excellent enumeration
+ENUM_DEAL_REASON
+:
+Identifier
+Description
+***
+DEAL_REASON_SL
+The deal was executed as a result of Stop Loss activation
+DEAL_REASON_TP
+The deal was executed as a result of Take Profit activation
+***
+If Stop Loss has triggered, the lot of the next position will be increased in accordance with the '
+Coefficient, if the stop-loss is triggered
+' parameter.
+Position Opening Rules
+BUY
+- bar #1 must be bullish (Close > Open) and the current price must be higher than the price '
+N-seconds ago
+' by '
+Step
+'.
+SELL
+- bar #1 must be bearish (Close < Open) and the current price must be lower than the price '
+N-seconds ago
+' by '
+Step
+'.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19218

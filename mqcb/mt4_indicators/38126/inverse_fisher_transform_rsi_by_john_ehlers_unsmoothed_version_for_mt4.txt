@@ -1,0 +1,2 @@
+Developed by John Ehlers, the RSI-based inverse Fisher Transform is used to help clearly define trigger points.
+The normal RSI indicator is calculated and adjusted so that the values are centered around zero. The inverse transform is then applied to these values.

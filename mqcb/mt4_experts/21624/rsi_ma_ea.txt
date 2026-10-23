@@ -1,0 +1,23 @@
+What I have is an EA working from 2000, but it is not optimized.
+The EA works by Moving Average trend and RSI signals at overbought & oversold areas. It doesn't have targets but instead closes with soonest profits, so it's purpose is to always win. The inputs include money management and indicator settings; the signals occur when the RSI is in overbought or oversold and price has moved above or below moving average price.
+V1 is tested and working on the following pairs & timeframes from
+2000.01.01 - 2018.06.30
+with
+tick data suite
+and
+500.00
+:
+EURUSD: D1 - H4 - H1 - M30 - M5 (spread of 4)
+GBPUSD: H1 - M30 - M5 (spread of 6)
+USDCHF: D1 - H1 (spread of 6)
+USDJPY: H4 - M30 - M15 (spread of 6)
+AUDUSD: H4 - M30 (spread of 5)
+USDCAD: D1, H4 - H1 - M30 (spread of 5)
+NZDUSD: D1 - H4 - M30 - M15 - M5 (spread of 6)
+GBPJPY: D1 - H4 - H1 - M30 - M15 - M5 - M1 (spread of 8)
+USDSGD: D1 - H4 - M15 (spread of 8)
+AUDCAD: D1 - H1 - M30 - M15 (spread of 8)
+Possibly more ..
+V1 tends to have trades open for extended periods of time and on higher timeframes especially.
+V2 manages volume and uses lots of margin so it means you need a high leverage to minimize drawdown.
+Be sure to use low spread & commission and test with the best data as always.

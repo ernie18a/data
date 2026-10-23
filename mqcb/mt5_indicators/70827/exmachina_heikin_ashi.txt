@@ -1,0 +1,55 @@
+ExMachina Heikin Ashi Enhanced v3.0
+— part of the ExMachina Trading Systems free Code Base collection. The most feature-complete free Heikin Ashi indicator on the MQL5 Code Base.
+Features
+Two draw modes
+: color-coded HA candles (OHLC with proper High/Low) or smoothed color line overlay
+Five smoothing methods
+: SMA, EMA, Double-Smoothed EMA (Vervoort-style DEMA), SMMA, and LWMA — all with configurable period
+Step filter
+: noise reduction in pips — ignores HA changes smaller than a configurable threshold (like mladen’s, but on top of 5 smoothing methods)
+Signal arrows
+: Wingdings arrows (▲/▼) plotted on chart at every color change — configurable arrow codes and offset
+Multi-Timeframe (MTF)
+: display higher-timeframe HA data mapped onto current chart
+Full HA calculation
+: proper recursive HA Open, High, Low, Close
+Consecutive bar counter
+: tracks streak of same-color bars in real time
+Strength meter
+: body-to-range ratio with visual bar (████░░░░░░) and percentage
+HA Delta
+: shows Close − Open difference with signed color
+Dashboard panel
+: 9 data rows — Trend, Smoothing, Step Filter, HA Close, HA Open, HA Delta, Consecutive, Strength %, Strength Bar
+4-channel alerts
+: popup, sound (custom file), push notification, and email on color change
+Fully customizable
+: 8 input groups, 30+ inputs — colors, dashboard position/fonts, arrow codes, everything configurable
+Clean chart management
+: all objects use the EXHA_ prefix for safe removal
+Architecture
+14 buffers (3 plots + 5 calculation buffers)
+DEMA uses dedicated dual-buffer approach (no fragile static variables)
+Modular: CalcStandard / CalcMTF / ApplySmoothing / ApplyStepFilter / AssignBar
+829 lines, zero external dependencies
+Input Groups
+General: draw mode, MTF timeframe
+Smoothing: method (None/SMA/EMA/DEMA/SMMA/LWMA), period
+Step Filter: threshold in pips
+Signal Arrows: on/off, bull/bear arrow codes, offset
+Colors: bull, bear, neutral
+Alerts: popup, sound, push, email, custom sound file
+Dashboard: position, font size, 4 color inputs
+Works on all symbols and all timeframes. No repaint on closed bars.
+Developed by
+ExMachina Trading Systems
+—
+Precision before profit.
+For professional trading tools, visit:
+https://www.mql5.com/en/users/williammukam
+Tags (comma-separated)
+heikin ashi,HA,smoothing,EMA,DEMA,SMMA,LWMA,Vervoort,step filter,MTF,multi-timeframe,signal arrows,trend,candles,overlay,color line,dashboard,strength,alerts,push,email,no repaint,free,forex,gold,XAUUSD
+Category
+Technical Indicators
+Subcategory
+Trend Indicators

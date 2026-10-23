@@ -1,0 +1,8 @@
+Real author
+: TrendLaboratory
+StepMA_3D_v3
+indicator fills the space between the medium and slow trend with color and paints the fast trend line depending on its location.
+Fig. 1. StepMA_3D_v3_Cloud
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21885

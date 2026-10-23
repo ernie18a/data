@@ -1,0 +1,1 @@
+The EA places automatically Stops and TakeProfit set by the user to opened orders . Stops and Tp are set in Points . The EA may be used on all currency pairs . It doesn't use a MagicNumber , just applies to Symbol .

@@ -1,0 +1,4 @@
+MonEx indicator is the Weighted Close (HLCC/4) candlestick bar combined with ZigZag indicator (Arrow).
+Last Update (Update_01 ~ 2015-07-30)
+Added option to display the arrow (True or False the arrow direction).
+Made minor changes to the candle formula.

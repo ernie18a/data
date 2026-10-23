@@ -1,0 +1,39 @@
+The indicator of expanding time zone corridors with eleven corridors, middle line and background color filling
+that features the ratio of changing the step of corridor borders expansion (by default, it is equal to half the golden ratio). A formed corridor is equal to four hours, while the corridor expansion is equal to sixteen hours.
+//+-----------------------------------------+
+//|  INDICATOR INPUT PARAMETERS             |
+//+-----------------------------------------+
+input
+uint
+LocalTimeZone=
+0
+;
+// start hour of the original corridor calculation
+input
+uint
+DestTimeZone=
+4
+;
+// corridor shift to the left in bars
+input
+uint
+PipsForEntryStep=
+50
+;
+// step of boundaries expansion of each formed corridor in points
+input
+double
+Kf=
+1.309
+;
+// step change ratio (by default, half the golden ratio)
+input
+int
+Shift=
+0
+;
+// Horizontal indicator shift in bars
+Fig. 1. Hans_Indicator_x22_Heo
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22051

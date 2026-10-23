@@ -1,0 +1,5 @@
+Indicator
+The indicator during 'N Bars' draws the minimum price of Low and the maximum price of High.
+Pic. 1. Channel N Bars
+Also, the indicator can build a channel at the following prices: 'Lowest' at the minimum of 'Close', and 'Highest' at the maximum of 'Open':
+Pic. 2. Channel N Bars

@@ -1,0 +1,9 @@
+Real author:
+Luis Damiani
+Semaphore signal indicator based on the
+3D_Oscilator
+indicator intersection algorithm.
+Figure 1. The 3D_OscilatorSign Indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14530

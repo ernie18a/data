@@ -1,0 +1,44 @@
+The script is developed for reversing open positions with fixed Stop Loss and Take Profit values in points from the current price and the volume depending on the reversed position. The size of a reversed position is limited by the half of the maximum allowable deal volume for the currency pair.
+Input parameters:
+//+----------------------------------------------+
+//| INPUT PARAMETERS OF THE SCRIPT               |
+//+----------------------------------------------+
+input
+double
+VOLUME=
+1.0
+;
+// The volume of the final position in relation to the initial
+input
+int
+DEVIATION=
+10
+;
+// Price deviation
+input
+int
+STOPLOSS=
+300
+;
+// Stop loss in points from the current price
+input
+int
+TAKEPROFIT=
+800
+;
+// Take profit in points from the current price
+input
+uint
+RTOTAL=
+4
+;
+// The number of repeats on unsuccessful transactions
+input
+uint
+SLEEPTIME=
+1
+;
+// Pause time in seconds between repeats
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/997

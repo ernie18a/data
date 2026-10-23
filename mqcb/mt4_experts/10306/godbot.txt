@@ -1,0 +1,12 @@
+GodBot is using Bollinger Bands together with DEMA, Moving Average and Candlesticks. It’s a modification of AM2’s EA. Best results on EURUSD timeframe M5. 
+Settings are optimized for EURUSD M5, but if you get better results, please post your settings. Feel free to post settings for other currencies.
+
+Have Fun!
+---------------------
+
+Update: GodBot V1.2.1 added (bugfix MAX_ORDERS )
+----
+Tiny update: GodBot V1.2 added
+----
+Update: OrderLib.mq4 V0.93 added (STOPLOSS calculation based on LOT and RISK) -> Replace the old file in libraries and recompile OrderLib.mq4 before Godbot_v1.2.mq4
+----

@@ -1,0 +1,6 @@
+Quantora Trade Statistics Dashboard MT5 is a trading performance analysis indicator for MetaTrader 5.
+It converts closed trade history into a simple, real-time dashboard, allowing traders to quickly evaluate their results without manually reviewing account history.
+The dashboard displays key metrics such as win rate, profit factor, net profit, average win/loss, reward-to-risk ratio, streaks, and BUY/SELL performance. Trading volume and current floating results are also included.
+Statistics can be viewed for today, this week, this month, or the full account history. Symbol filtering and optional Magic Number filtering make it suitable for analyzing specific strategies or Expert Advisors.
+The interface is clean and easy to read, updates automatically, and works on all timeframes with low resource usage.
+This indicator is designed for performance tracking and analysis only. It does not open or manage trades.

@@ -1,0 +1,4 @@
+It's a simple indicator which forms an alert when new bar comes. Input parameters provide the ability to generate text, sound alerts and e-mail notifications.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16493

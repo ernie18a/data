@@ -1,0 +1,6 @@
+Laguerre RSI with Laguerre filter...
+This version has several deviations in calculations.
+It allows to use "speed" for both Laguerre filter and Laguerre RSI
+"Speed" can vary from 0 to 6 - the higher the "speed" to "faster" the rsi or the filter are
+"no trade zone" added to the usual levels - no trade zone can be used in cases when market is in ranging mode as a warning not to trade
+As usual some experimenting with parameters is advised.

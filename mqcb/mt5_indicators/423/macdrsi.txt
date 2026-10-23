@@ -1,0 +1,17 @@
+Real author:
+Victor G. Lukashuck
+Relative Strength Index(RSI)
+indicator applied to
+Moving Average Convergence/Divergence (MACD)
+clearly shows the current price divergence.
+Short period reversals (1, 5, 15 min.) are also clearly seen. Crossover of MACD signal line and RSI is an additional signal for market entry, in this case the RSI line changes its color.
+The indicator uses the СMoving_Average class of the SmoothAlgorithms.mqh library. The use of this class is described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+This indicator was first implemented in MQL4 and published in
+Code Base
+08.09.2009.
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/423

@@ -1,0 +1,22 @@
+This MT5 Expert Advisor combines multi-timeframe candlestick pattern analysis with fundamental event filtering to execute trades with disciplined risk management. Key features:
+Core Strategy
+Price Action Focus: Relies solely on candlestick patterns (pin bars, engulfing, hammers/shooting stars) across three timeframes (M5, H1, H4) for trade signals.
+Multi-TF Confluence: Requires alignment between 5-minute triggers and higher-timeframe (H1/H4) trend structure.
+Risk Management
+1.5:1 Risk-Reward Ratio: Automatically calculates take-profit at 1.5x stop-loss distance.
+Margin Safeguards: Limits margin usage (<30% by default) and auto-adjusts position sizing.
+Dynamic Stops: Uses ATR volatility scaling or fixed pip distances for stop-loss placement.
+News Filter
+Pre-Event Shutdown: Closes all positions 2 hours before high-impact news events (GDP, NFP, CPI).
+Volatility Avoidance: Prevents new trades during scheduled high-risk periods.
+Operational Design
+5-Minute Execution: Triggers trades on M5 chart while respecting H1/H4 context.
+Session Limits: Only trades during peak liquidity hours (8 AM–5 PM server time).
+Strengths:
+Eliminates indicator lag through pure price action analysis
+Strict risk control via fixed RR ratio and margin caps
+Adaptive to both trending and ranging markets
+Ideal For:
+EURUSD and other liquid majors during active sessions
+Traders seeking systematic execution with event-risk protection
+This EA balances technical pattern recognition with macroeconomic awareness, prioritizing capital preservation while targeting consistent 1.5:1 reward scenarios.

@@ -1,0 +1,34 @@
+An automated trading system
+"Gazonokosilka" (Grass-Cutter) is called so, because the EA trading within this system should «cut cabbage» by small amounts, but frequently. So the parameters like StopLoss and TakeProfit should be chosen as not high, to close the trades, in cases of little price movements. However, the EA should not scalp, and its optimal number of trades is one or two per day.
+Trade rules of the «Gazonokosilka» system:
+1. Enter on the rollback of price movement
+2. Exit by StopLoss and TakeProfit
+In such a manner, firstly, it is necessary to detecet the pirce movement or impulse (many variants can be here). Then wait for the rollback of the price (also many variants) and enter the market.
+The EA is developed for testing on EUR/USD H1 and intended for experimenting with the «Gazonokosilka» trading system. Since the price movement is determined inside the bar when exeprt is working, the testing must be performed on the ALL TICKS model!!! This is very important.
+I represent you the whole code of the expert advisor written in MQL4. The code is well commented and structured, so even an apprentice trader will be able to understand it. You can find the more detailed description of the EA in the article
+Проект - "Газонокосилка". Советник "gazonkos".
+(Project - "Grass-cutter. EA ''gazonokos".) published on my website.
+Input parameters (external variables) of the EA:
+magic
+– magic number, the EA works only with its own orders using it.
+TakeProfit
+- TakeProfit level in points. It is specified for every order when opening them.
+Otkat
+- The value of the rollback in points. When the price rolls back by this value, the EA passes to the state of opening a trade.
+StopLoss
+- StopLoss level in points. Just the same as TakeProfit, it is specified when opening a position.
+t1
+– the number of the bar, that takes part in determining the price movenment.
+t2
+-
+the number of the bar, that takes part in determining the price movenment
+.
+delta
+– the value used when determining the impulse of the price movement.
+lot
+- The size of the position.
+active_trades
+- The maximum number of simultaneosuly opened orders.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8247

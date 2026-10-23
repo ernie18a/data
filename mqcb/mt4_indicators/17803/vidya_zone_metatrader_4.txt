@@ -1,0 +1,4 @@
+Vidya zone indicator using 3 prices for calculation : high, low and median.
+But, if the regular Vidya was used then the zone would have ‌errors due to different momentum for different prices at same bars. In order to solve that this version introduces a modified Vidya calculation that prevents that error and the Vidya zone is error free and produces logical results.
+The zone is mainly intended to use in a breakout mode ‌(ie: when the price is within the zone, that would be a no trading, or a warning zone, once when the price breaks out, consider entering the trades).
+‌

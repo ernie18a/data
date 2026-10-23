@@ -1,0 +1,10 @@
+Real author:
+Albert
+An indicator of trend strength. The ratio of the price of the current bar to the price of the previous bar is used as the initial data for the calculation.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 10.02.2008.
+Figure 1. The HVR indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1899

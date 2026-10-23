@@ -1,0 +1,4 @@
+The premise of this Bollinger Bands indicator is that the outer bands can be individually controlled via smoothing. Changing the smoothing period on the upper band does not have to reflect any change on the lower band, and likewise changing the smoothing period on lower band does not have to reflect any change on the upper band. The idea is to give you ultimate control of smoothing the outer bands.
+The PRE smoothed BB makes the standard deviation on separate MAs (and it's based on the original BB calculation).
+"Additive outer band smoothing" when set to true means that the smoothing period is added to the Bollinger Bands period that is set. When set to false, it uses its own period which is not related to the period value of the middle line.
+The pre band smoothing is quite simple, it is just adding an extra MA period on an outer band in the Bollinger Bands. It is your stereotypical Bollinger Bands but with added control.

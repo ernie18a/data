@@ -1,0 +1,15 @@
+Detrended Price Oscillator removes the trend effect of price movement. This simplifies the process of finding out cycles and overbought/oversold levels.
+Long-term cycles consist of several shorter cycles. Analyzing such short components helps to define crucial moments of the cycle's development. DPO gives a chance to eliminate the influence on prices of long-term cycles. To calculate DPO you should take a certain period. Remove cycles that are longer than the chosen period from price dynamics, and leave shorter cycles. Half of the cycle's length is used for smoothing. We recommend using a period of 21 or less.
+The bounds (overbought/oversold levels) come from the history of previous behavior of prices. It is recommended to stand in a long position if DPO first falls below the resale level and then gets above it. Crossing of the zero point from above followed by a rise above that level is also a signal for opening a long position. Everything is vice versa for short positions.
+Detrended Price Oscillator
+Calculation:
+DPO = CLOSE - SMA (CLOSE, (N / 2 + 1))
+where:
+SMA -
+simple moving average
+;
+CLOSE - the closing price;
+N - the period of the cycle (if N is equal 12, then DPO corresponds to the DiNapoli Detrend Oscillator).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/27

@@ -1,0 +1,98 @@
+The
+PROphet
+EA consists of 2 independent from each other linear perceptrons.
+Each of them divides the input attributes-candestickls shifting into 2 classes.
+Perceptron № 1 >
+class № 1 : BUY and class № 2: flat or SELL
+Perceptron № 2 >
+class № 1: SELL and class № 2: flat or BUY
+This is the feature of the EA -
+not putting only BUY or SELL classes into one perceptron !
+The optimization is performed for the last 12 weeks, at the weekend in two stages.
+S t a g e № 1:
+the daBUY=true and daSELL=false variables are set and only the weights are
+optimized x1,x2,x3,x4 from 1 to 200, and the preliminary stop-loss slb from 30 to 100, that is the end of the first stage.
+S t a g e № 2:
+the daBUY=false and daSELL=true variables are set and only the weights are
+optimized y1,y2,y3,y4 from 1 to 200, and the movable stop-loss sls from 30 to 100.
+Once the optimization is performed both variables daBUY and daSELL are set true.
+The obtained values are valid for the next (future) week.
+The adaptation of the parameters after every week passed is performed by the method described
+here
+.
+The results of the forward testing of a "common" week from 21-st of July 2008 to 26-th July 2008:
+Strategy Tester Report
+PROphet
+Symbol
+EURUSD (Euro vs US Dollar)
+Period
+5 Minutes (M5) 2008.07.21 00:00 - 2008.07.25 22:55 (2008.07.21 - 2008.07.26)
+Model
+Every tick (the most precise method based on all available least timeframes)
+Parameters
+daBUY=true; x1=9; x2=29; x3=94; x4=125; slb=68; daSELL=true; y1=61; y2=100; y3=117; y4=31; sls=72;
+Bars in test
+2420
+Ticks modelled
+46219
+Modelling quality
+90.00%
+Missmatched charts errors
+12
+Initial deposit
+1000.00
+Total net profit
+145.00
+Gross profit
+215.00
+Gross loss
+-70.00
+Profit factor
+3.07
+Expected payoff
+18.13
+Absolute drawdown
+61.00
+Maximum drawdown
+70.00 (6.11%)
+Relative drawdown
+6.11% (70.00)
+Total trades
+8
+Short positions (% won)
+5 (100.00%)
+Long positions (% won)
+3 (66.67%)
+Profit trades (% of total)
+7 (87.50%)
+Loss trades (% of total)
+1 (12.50%)
+Largest
+profit trade
+138.00
+loss trade
+-70.00
+Average
+profit trade
+30.71
+loss trade
+-70.00
+Maximum
+consecutive wins (profit in money)
+7 (215.00)
+consecutive losses (loss in money)
+1 (-70.00)
+Maximum
+consecutive profit (count of wins)
+215.00 (7)
+consecutive loss (count of losses)
+-70.00 (1)
+Average
+consecutive wins
+7
+consecutive losses
+1
+In this approach to the "prophesy" good hedging in the trading is possible and not only inside one day.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8595

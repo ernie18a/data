@@ -1,0 +1,46 @@
+Actual author
+: TrendLaboratory
+A trend indicator with three moving averages having different periods, using the
+Average True Range
+in calculations.
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+uint
+Length       =
+10
+;
+// ATR period
+input
+double
+Kv           =
+1.000001
+;
+// Sensitivity of the price change
+input
+ENUM_MA_MODE MA_Mode = MODE_SMA_;
+// ATR averaging method
+input
+int
+ShiftMIN     =
+0
+;
+// horizontal shift of the fast trend indicator, in bars
+input
+int
+ShiftMID     =
+0
+;
+// horizontal shift of the medium trend indicator, in bars
+input
+int
+ShiftMAX     =
+0
+;
+// horizontal shift of the slow trend indicator, in bars
+Green Moving Average is a fast trend indicator. The red and blue MAs determine a slow trend. If the blue line is above the red one, the trend is growing, otherwise it is falling.
+Fig. 1. The StepMA_3D_v3 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21846

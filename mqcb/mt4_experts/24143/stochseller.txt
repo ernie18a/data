@@ -1,0 +1,18 @@
+Expert optimized for
+EURCAD in 5min
+chart,using the stochastics for enter a
+SHORT ONLY
+positions.
+three stochastics
+used for an entry and
+ATR
+up to 8
+grid pending positions after the first position fails to close in profit
+pips
+averaging
+algorithm
+For better performance you can increase the profit
+from 23 pips to 35
+.
+Pls,let me know what do you think.
+I can optimize for any pair either for sell or buy positions.

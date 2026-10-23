@@ -1,0 +1,8 @@
+The RSI indicator implemented as a histogram with a designation of the overbought and oversold levels.
+Description of the indicator settings:
+InpRSIPeriod — Averaging period for the RSI calculation.
+OverboughtLevels — the upper level of the overbought zone.
+OversoldLevels — the lower level of the oversold zone.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14753

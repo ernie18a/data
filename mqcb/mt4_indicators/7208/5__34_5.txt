@@ -1,0 +1,6 @@
+Author:
+unknown
+The 5 34 5 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7208

@@ -1,0 +1,10 @@
+Version 141.121
+Trend defined by moving average (EMA) direction with chosen period on timeframes H1,H4,D1,W1,MN1.
+Green = Up-trend.
+Red = Down-trend.
+User can define following variables:
+MovingAveragePeriod,
+TextSize,
+UpperRightBorderVertical (vertical distance from main window upper right corner).
+Usage:
+Intraday trading on timeframes H1 and shorter.

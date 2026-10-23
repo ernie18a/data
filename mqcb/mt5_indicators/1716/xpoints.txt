@@ -1,0 +1,70 @@
+Real author:
+RedPlumSoft, Inc
+The indicator predicts the possible reversal points. The EURUSD chart show an interesting pattern - some time before the reversal, there are bars with the following features:
+rate = (High - Low) / MathAbs(Close - Open) is significantly greater than 1;
+the lowest point (Low) touches the bottom of the channel (possible price growth), or the highest point (High) touches the top of the channel (possible price fall)
+These bars are conventionally called X-points. The indicator finds X-points based on the xrate parameter:
+(rate >= xrate) && (High-Low) >= xsize && (Up-Dn)>= xminupdn
+To filter out false signals, the indicator analyzes the bar that follows the X-point for any price movement in the predicted direction, as well as the position of bar midpoints relative to the center of the channel and each other.
+Indicator input parameters:
+//+-----------------------------------------------+
+//|  INDICATOR INPUT PARAMETERS                   |
+//+-----------------------------------------------+
+input
+uint
+iper=
+3
+;
+// Channel construction period
+input
+double
+ixrate=
+1.5
+;
+// Minimal relation
+input
+uint
+ixsize=
+5
+;
+// Minimal bar height (High-Low) in points
+input
+uint
+ixslope=
+0
+;
+// Minimal increase of the next bar in points
+input
+uint
+ixminupdn=
+10
+;
+// Minimal channel width in points
+input
+Hour1  ixhour1=H09;
+// Minimal hour staring with which signals are allowed
+input
+Hour2  ixhour2=H_19;
+// Maximal hour up to which signals are allowed
+input
+uint
+ixindent=
+15
+;
+// Shift of the signal from the chart in points
+input
+int
+Shift=
+0
+;
+// Horizontal shift of the indicator in bars
+It is possible that the indicator may produce false signals. Therefore it is necessary to apply additional filtering using other indicators, or treat the indicator signals as a warning against hasty opening of positions that contradict the prediction.
+Added time filtering of signals. By default, the night signals are ignored.
+The testing revealed another interesting feature of the ixndent parameter - it can be used to accurately calculate the opening moment. For example, open short positions when the price is above the arrow and vice versa, which provides an approximation of the opening to the point of a local extremum.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 07.06.2008.
+Figure 1. The XPoints indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1716

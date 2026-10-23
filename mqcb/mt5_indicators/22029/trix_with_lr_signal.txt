@@ -1,0 +1,2 @@
+In his article: "Playing TRIX: The Triple Exponential Smoothing Oscillator" Joe Luisi argues that using the linear regression value as a signal line for a TRIX is better than using a slope.
+Without attempting to prove or disapprove is that is correct, here is the version that does that. The signals are not bad but some experimenting with parameters is advised.

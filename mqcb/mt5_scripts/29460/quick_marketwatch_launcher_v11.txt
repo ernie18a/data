@@ -1,0 +1,68 @@
+This is an updated and improved version, with an included updated of the license terms.
+The spread parameter has been coded as a list of section variables, with an option to open all symbols on the market-watch.
+Usage is still simple.
+//--- these are user input variables accessible from the terminal when launching the script
+input
+ENUM_TIMEFRAMES
+Time_frame =
+NULL
+;
+input
+spread Max_spread         = all_values;
+//--- this is the SymbolInfo object(comes with the standard package) for ease of use of symbol properties.
+CSymbolInfo m_symbol;
+We loop through the market-watch and check symbol properties(spread and availability on the market-watch) while checking the spread suitability through a function of type int maxSpread(), which  processes the user inputs.
+The loop:
+for
+(
+int
+i =
+0
+; i <
+SymbolsTotal
+(
+true
+); i++) {
+          Pair =
+SymbolName
+(i,
+true
+);
+if
+(Pair ==
+SymbolName
+(i,
+true
+)) {
+if
+(m_symbol.Name(Pair)) {
+//--- check spread propertiex
+int
+spread_limit = maxSpread(Max_spread);
+//---
+if
+(spread_limit == -
+1
+)
+ChartOpen
+(Pair, Time_frame);
+else
+if
+(m_symbol.Spread() < spread_limit)
+ChartOpen
+(Pair, Time_frame);
+               }
+          }
+//--- close the attached chart since another instance is opened.
+if
+(i ==
+0
+)
+ChartClose
+(
+0
+);
+     }
+Compile the file and launch it on any chart and select your preferred settings.
+Your continued use of this product will serve as a confirmation of your agreement to the GNU license terms.
+Enjoy your pips!

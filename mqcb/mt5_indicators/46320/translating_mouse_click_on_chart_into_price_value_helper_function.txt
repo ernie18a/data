@@ -1,0 +1,1 @@
+This is a helper function to allow you to translate the (x, y) pixel value to the price which you see on the Y-axis, using a click press with OnChartEvent.

@@ -1,0 +1,7 @@
+Author
+: Finware.ru Ltd
+Quote:
+It has a certain similarity in the calculation method with the Commodity Channel Index (CCI) by D. Lambert. Indeed, the CCI index is calculated as the normalized difference between the current price and its moving average, and the PCCI v as the difference between the daily closing price and its expected value represented by the FATL value. This results in a greater perfection of the PCCI compared to the CCI. The PCCI v index is the high-frequency component of the currency rate fluctuations, normalized to its standard deviation.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7342

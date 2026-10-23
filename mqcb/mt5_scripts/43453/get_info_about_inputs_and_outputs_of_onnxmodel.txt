@@ -1,0 +1,101 @@
+Create model
+from
+mnist.onnx with debug logs
+ONNX: Creating and
+using
+per session threadpools since use_per_session_threads_
+is
+true
+ONNX: Dynamic block
+base
+set
+to
+0
+ONNX: Initializing session.
+ONNX: Adding
+default
+CPU execution provider.
+ONNX: Removing initializer
+'Parameter6'
+. It
+is
+no longer used by any node.
+ONNX: Removing initializer
+'Parameter88'
+. It
+is
+no longer used by any node.
+ONNX: Total shared scalar initializer count:
+0
+ONNX: Removing initializer
+'Parameter193_reshape1_shape'
+. It
+is
+no longer used by any node.
+ONNX: Removing initializer
+'Parameter193'
+. It
+is
+no longer used by any node.
+ONNX: Total fused reshape node count:
+0
+ONNX: Total shared scalar initializer count:
+0
+ONNX: Total fused reshape node count:
+0
+ONNX: Removing initializer
+'Parameter5'
+. It
+is
+no longer used by any node.
+ONNX: Removing initializer
+'Parameter87'
+. It
+is
+no longer used by any node.
+ONNX: Use DeviceBasedPartition
+as
+default
+ONNX: Saving initialized tensors.
+ONNX: Done saving initialized tensors
+ONNX: Session successfully initialized.
+model has
+1
+input(s)
+0
+input name
+is
+Input3
+   type ONNX_TYPE_TENSOR
+   data type ONNX_DATA_TYPE_FLOAT
+   shape [
+1
+,
+1
+,
+28
+,
+28
+]
+   shape of input data can be reduced to [
+28
+,
+28
+]
+model has
+1
+output(s)
+0
+output name
+is
+Plus214_Output_0
+   type ONNX_TYPE_TENSOR
+   data type ONNX_DATA_TYPE_FLOAT
+   shape [
+1
+,
+10
+]
+   shape of output data can be reduced to [
+10
+]

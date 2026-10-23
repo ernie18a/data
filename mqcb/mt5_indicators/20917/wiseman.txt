@@ -1,0 +1,10 @@
+Real author
+: Pavel Kulko
+Wiseman is an indicator basically aimed at showing the candlestick, on which the trend has changed its direction.
+If color is pink, then the trend has changed for bearish; if it is green, then it has changed for bullish. A green bar is formed at the moment when the current High is above the preceding one and the price has closed below the middle of the candlestick range (High + Low) /2.
+Similarly, a pink bar appears where the current Low is below the preceding one, while the close price is above the middle of the candlestick range.
+The indicator is based on ideas of Bill Williams in one of his books. It is for reference only. Trading by this indicator only would not be profitable. It may be used as a signal indicator for a trend strategy.
+Fig.1. Indicator Wiseman
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20917

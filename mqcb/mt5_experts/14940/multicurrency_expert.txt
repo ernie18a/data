@@ -1,0 +1,14 @@
+The trading strategy implemented in this Expert Advisor was tested during the
+Championship
+in 2012.
+Fig. 1. The multi-currency EA at the ATC 2012.
+Upon launch, the Expert Advisor opens positions of all the specified currency pairs with the minimum volume. Once a position becomes losing, it is reversed. If a position is profitable, its volume is increased. Upon reaching the total profit or loss value specified in the parameters, all positions are closed.
+The following figure shows the Expert Advisor testing results.
+Fig. 2. Test results for February, 2016
+Recommendations:
+You can use as many currency pairs as you wish. You will only need to edit the EA code and add or delete pairs.
+Trade results will be more stable if you add a filter.
+Consider this EA as a basic template, to which you can add the functionality you need.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14940

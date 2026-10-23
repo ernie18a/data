@@ -1,0 +1,5 @@
+This is a pretty simple startegy that follows trend. Recommended time frame is D1.
+when close price brakes up the EMA build based on high prices given that RSI is above 55 - expert buys.
+when close price brakes down the EMA build based on low prices given that RSI is below 45 - expert sells.
+system closes previose trade if there is opposite signal
+system uses take profit and stop loss

@@ -1,0 +1,7 @@
+The indicator is calculated similar to WPR (
+Williams’ Percent Range
+). The only difference is that the price change interval (in points) instead of a period is set as an input parameter: the indicator period for each bar is selected so that the price interval for the period exceeds Range input parameter. Therefore, the input parameter's value should exceed the average bar height on the active timeframe.
+Indicator values range -50 ... +50.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/978

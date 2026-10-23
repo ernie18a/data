@@ -1,0 +1,7 @@
+A very usefull feature. You can adjust SL/TP by dragging the lines drawn by the EA. You see also how many pips you win/loose. Must have tool for manual traders..
+Of course you can still modify the SL/TP trough the MT4 OrderModify window and the MT4 trailing stop works too.
+As always if you find this usefull you can donate here:
+http://when-money-makes-money.com
+the paypal donation box is in the download section. every € helps us.
+This will be our last gift this year. Next year we start with a new website (this time its going to be a mutlilingual one), and lots of new tools.
+Happy Advent from my side.

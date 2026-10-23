@@ -1,0 +1,9 @@
+The main differences of the indicator from the standard indicator of fractals in the sense of B. Williams:
+1. There is a possibility of choosing the fractal's shoulder (i.e. the number of bars to the left and to the right that are necessary for forming the fractal on an middle bar). For example, if the shoulder (FractalBars parameter) is set to 3, then 7 candles are necessary to form a fractal.
+2. The horizontal lines are drawn from each formed fractal. These lines form so called "fractal" lines of support-resistance.
+As a small digression I want to add that the usage of it together not with the three MA indicators (classic be Williams) but with the wonderful
+DEMA
+indicator shows the good (at least approximally good) results.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8319

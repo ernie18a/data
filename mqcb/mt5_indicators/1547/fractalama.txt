@@ -1,0 +1,11 @@
+The real author:
+MrPip
+The fractal adaptive Moving Average by John Ehlers. Version 1.1 7/17/2006. The RPeriod indicator input parameter (length) will be forcibly equal to even number. Odd numbers of the parameter will be decreased to the following even number.
+The simplest appliance of this indicator is use of FractalAMA orange line and its purple signal line crossing.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 27.11.2008.
+Fig.1 The FractalAMA indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1547

@@ -1,0 +1,6 @@
+Theory :
+In the TASC January 2000 article by Joe Sharp, "More Responsive Moving Averages." the article describes a modified moving average that greatly diminishes the lag that is typically associated with moving averages. With the formula described in the article, the moving average line is more responsive to changes in the price action.
+Usage :
+It can be used as any other moving average
+PS:
+A must know - even though the math of the "Sharp modified moving average" is a bit different from the linear regression value calculation, the values are the same. So, this, in fact, is another way of calculating the linear regression value. It was published here in order to avoid some confusion caused by a "new type" of moving average

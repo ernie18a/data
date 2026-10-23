@@ -1,0 +1,17 @@
+The indicator plots the bars of the specified symbol in the separate window.
+The
+DRAW_BARS
+drawing style is used to plot the bars using the values of 4 indicator buffers with Open, High, Low and Close prices. The bars color and width changed after N ticks. The N variable is defined as input parameter, it can be changed using the "Properties" window.
+Note that initial properties of the plot1 graphic plot (
+DRAW_BARS
+) are defined using the #
+property
+preprocessor directive, further these properties changed randomly (
+OnCalculate()
+function).
+See also:
+The Drawing Styles in MQL5
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/337

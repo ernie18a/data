@@ -1,0 +1,12 @@
+Real author:
+Renato P. dos Santos
+Three indicators of the simplest linear combinations of differences between the fast and slow
+moving averages
+on the same chart.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 26.09.2007.
+Figure 1. Indicator iFXAnalyser
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2204

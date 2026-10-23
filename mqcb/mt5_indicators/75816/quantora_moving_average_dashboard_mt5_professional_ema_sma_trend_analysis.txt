@@ -1,0 +1,6 @@
+Quantora Moving Average Dashboard MT5 is a trend analysis indicator for MetaTrader 5 that brings multiple moving averages into one simple dashboard.
+It tracks EMA 20, 50, 100, 200 and SMA 50, 200, showing how price is positioned relative to these levels. This helps identify short, medium, and long-term trend structure at a glance.
+The indicator combines moving average alignment into a score and an overall market bias, making it easy to see whether conditions are bullish, bearish, or neutral.
+It also displays basic market data such as bid, ask, and spread, and updates automatically in real time.
+All periods can be adjusted to match different trading styles, and the indicator works on any symbol and timeframe.
+This tool is designed for analysis only. It does not open or manage trades.

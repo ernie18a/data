@@ -1,0 +1,4 @@
+This scripts demonstrate the capabilities of MQL4 for displaying some text information in a chart.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7960

@@ -1,0 +1,12 @@
+Description:
+The L1 filter enables extraction of piecewise-linear trends that preserve essential market structure while reducing price noise.
+The script shows the usage of L1 Trend Filter methods in MQL5 for float and double vectors on random walk simulated data.
+The applications in trading can be found in
+"Applying L1 Trend Filtering in MetaTrader 5"
+.
+All codes from the article are also available in the
+public project
+"MQL5\Shared Projects\
+L1Trend
+".
+Image:

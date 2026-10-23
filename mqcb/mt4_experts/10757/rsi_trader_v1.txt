@@ -1,0 +1,11 @@
+Description:
+RSI trader trades using rsi indicator suitable for long term and scalping strategies.
+The none straight forward settings are explained below:
+Applied Price - this is the applied price setting for RSI set 0 for close price, 1 for open price, 2 for high price, 3 for low price, 4 for median price, 5 for typical price and weighted close price.
+BuyPoint- If RSI crosses this point upwards a buy order will be sent.
+SellPoint- If RSI crosses this point downwards a sell order will be sent.
+CloseOnOpposite- If true if an opposite signal is given all trades that had been opened with the previous signal will be closed.
+NOTE:
+The EA is designed for 5 digit brokers since most major brokers are 5 digit nowadays.
+Its up to you to discover the optimum settings for your strategy the default settings have not been tested/optimized.
+If this EA helps you donate at our website.

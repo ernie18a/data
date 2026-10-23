@@ -1,0 +1,13 @@
+Real author:
+Alex Sidd (Executer)
+The ExTrendv2 indicator is a new version of the
+ExTrend
+indicator that draws fractal channels. The new version does not use the built-in indicator iFractals. Instead, it uses its own analysis, which is closer to the original definition of Bill Williams' fractals. In this regard, the number of "clean" fractals has significantly decreased, and the signals of breakthrough of fractal lines are now more significant.
+Also now the indicator produces Buy or Sell signals at a certain model of breakthrough of the fractal line.
+This indicator was first implemented in MQL4 and published in
+Code Base
+on 26.12.2006.
+Figure 1. The ExTrendV2 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/6982

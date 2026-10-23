@@ -1,0 +1,12 @@
+Description:
+Places One-Cancels-the-Other Order (OCO Order), One pip Limit Order and One Pip Stop Order on MetaTrader 4 (MT4) platform.
+Global variables:
+OCO_BUY_LIMIT - Buy Limit Price
+OCO_BUY_STOP - Buy Stop Price
+OCO_SELL_LIMIT - Sell Limit Price
+OCO_SELL_STOP - Sell Stop Price
+OCO_confirmation - After input Buy Limit Price, Buy Stop Price, Sell Limit Price or Sell Stop Price set OCO_confirmation = "1"
+OCO_lots - Lots
+OCO_oCO - if OCO_oCO = "1", One Canel Others
+OCO_sL_Pips - Stop Loss Pips
+OCO_tP_Pips -Take Profit Pips

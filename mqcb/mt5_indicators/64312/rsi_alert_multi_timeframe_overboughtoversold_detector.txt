@@ -1,0 +1,14 @@
+Features:
+Customizable RSI levels (default: 75 for overbought, 25 for oversold)
+Multi-timeframe support (M1 to MN1)
+Dual alert system: pop-up alerts and push notifications to MT5 mobile app
+Lightweight and efficient - monitors only the chart symbol
+No chart interference - runs silently in the background
+Parameters:
+TimeFrame: Select which timeframe to monitor RSI (default M15)
+RSI_HIGH: Upper threshold for overbought alert (default 75)
+RSI_LOW: Lower threshold for oversold alert (default 25)
+UseAlert: Enable/disable pop-up alerts
+UseNotification: Enable/disable mobile push notifications
+Usage:
+Attach to any chart and the indicator will alert you when RSI enters extreme zones, helping you catch potential reversal opportunities.

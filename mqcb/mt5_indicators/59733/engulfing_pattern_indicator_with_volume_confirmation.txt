@@ -1,0 +1,11 @@
+Description:
+This indicator identifies
+bullish and bearish engulfing candlestick patterns
+on the chart and optionally confirms them with volume. When the volume of the current candle exceeds that of the previous one, the pattern is considered stronger and more reliable. The user can choose whether or not to apply this volume confirmation filter.
+External Inputs:
+BullishArrowColor : Color of the arrow marking bullish engulfing patterns.
+BearishArrowColor : Color of the arrow marking bearish engulfing patterns.
+UseVolumeFilter : Enables or disables volume confirmation.
+How to Interpret:
+An arrow pointing upward below a candle indicates a bullish engulfing pattern, while a downward arrow above a candle indicates a bearish engulfing pattern. When volume confirmation is enabled, only engulfing patterns with increasing volume are shown.
+Illustration:

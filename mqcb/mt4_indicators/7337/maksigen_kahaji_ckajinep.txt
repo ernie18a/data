@@ -1,0 +1,5 @@
+Author: MaksiGen
+This indicator shows when to open and when to close by drawing 2 lines.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7337

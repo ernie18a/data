@@ -1,0 +1,9 @@
+Indicator based on Hull Moving Average.
+How it works
+It calculates the Hull Moving Average.
+Uses the slope of so calculated Hull Moving Average as a criteria for a trend.
+Depending on the display type chosen it then draws:
+colored line.
+colored bars.
+colored candles.
+Display type can be set to adjust automatically (depending on the chart type, the indicator will use the appropriate drawing style).

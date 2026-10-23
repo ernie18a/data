@@ -1,0 +1,7 @@
+The signal indicator based on the
+Aroon
+indicator values.
+Fig.1 The AroonSignal Indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1065

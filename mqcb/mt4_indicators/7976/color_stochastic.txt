@@ -1,0 +1,2 @@
+Author: mladen
+Color Stochastic indicator.

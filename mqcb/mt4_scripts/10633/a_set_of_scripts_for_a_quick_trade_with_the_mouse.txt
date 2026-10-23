@@ -1,0 +1,20 @@
+The purpose of these scripts is clear (see names), but to avoid confusion I will describe each separately.
+_OpenOrders Mouse
+- This script opens a market order at the current price. If you released the mouse button below the current price, it will be exposed to Sell, if higher, then Buy. You can either specify the stop levels or after expose them to other scripts.
+_LimitOrders Mouse
+- The script puts a limit order at a price where you threw the script. If you released the mouse button above the current price, it will be exposed SellLimit, if lower, the BuyLimit can immediately indicate the levels of stops or after expose them to other scripts.
+_StopOrders Mouse
+- The script puts a stop order at the price where you threw the script. If you released the mouse button below the current price, it will be exposed SellStop, if higher, the BuyStop. You can either specify the stop levels or after expose them to other scripts.
+_TP Mouse
+- The script puts the point in which you threw it, Take Profit orders to all, which can Take Profit at this point.
+_SL Mouse
+- The script puts the point in which you threw it, Stop Loss all orders for which the Stop Loss is possible at this point.
+_DeleteOrders
+- This script removes all pending orders
+_DeleteSL & TP
+- This script removes the Stop Loss and Take Profit orders.
+_CloseDeleteMouse
+- The script closes or removes (depending on the type of order) the order, the price which it is thrown. The price is determined with an accuracy of plus / minus slippage (set in parameters)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10633

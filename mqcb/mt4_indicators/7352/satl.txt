@@ -1,0 +1,8 @@
+Author
+: Finware.ru Ltd
+(Slow Adaptive Trend Line) – the «slow» adaptive trend line is calculated using a digital low-pass filter LPF-2. LPF-2 serves to eliminate the noises and market cycles with longer fluctuation periods. Read
+here
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7352

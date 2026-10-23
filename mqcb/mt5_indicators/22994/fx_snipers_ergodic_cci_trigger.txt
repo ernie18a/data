@@ -1,0 +1,32 @@
+Fx Sniper's Ergodic CCI Trigger is an ergodic CCI with triple smoothing, with a signal line.
+It has seven adjustable parameters:
+Period Q
+- Q smoothing period
+Period R
+- R smoothing period
+Period S
+- S smoothing period
+Trigger
+- signal line period
+Method
+- calculation method
+Overbought
+- overbought level
+Oversold
+- oversold level
+Calculations:
+ECCI = (500.0 * Var2c) / Var3
+Trigger = AvgECCI
+where:
+Var3 = MA(Var2b, Period S, Method)
+Var2c = MA(Var2, Period S, Method)
+Var2b = MA(Var2a, Period R, Method)
+Var2a = MA(AbsMom, Period Q, Method)
+Var2 = MA(Var1, Period R, Method)
+Var1 = MA(Mom, Period Q, Method)
+Mom = Close - PrevClose
+AbsMom = Abs(Mom)
+AvgECCI = MA(ECCI, Trigger, Method)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22994

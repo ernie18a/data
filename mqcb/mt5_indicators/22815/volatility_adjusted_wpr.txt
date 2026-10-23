@@ -1,0 +1,9 @@
+This is volatility adjusted WPR (Williams Percent Range). Volatility used for adjusting is the "simple volatility" (no need for it, it is already incorporated in the code of this indicator)
+There are 2 deviations compared to original WPR:
+in order to display histogram in a simple way (without usage of 2 extra buffers), the value of WPR is shifted by +50 (ie: up)
+smoothing is added (WPR is known for being "nervous" - this version can use low lag smoothing to smooth the results up. To turn the smoothing off, set the smoothing period to be less than or equal to 1)
+PS: an example why the smoothing seems to be necessary for WPR. 3 instances of WPR :
+top most - the smoothed volatility adjusted
+middle - volatility adjusted without smoothing
+lowest - "regular" WPR
+Which one would you use for trading decision on that chart?

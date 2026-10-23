@@ -1,0 +1,17 @@
+Idea by:
+Yury Reshetov
+mq5 code by:
+barabashkakvn
+The EA calculates everything independently, i.e., the direction and lot size for opening a position. The calculations are optimal, so that the EA will either quickly accumulate positive spreads and close with a profit, or, in case of anything going wrong, hold a trade until the drawdown recovers. Drwadowns happen and sometimes last long. The EA does not use any indicators and performs calculations based on the last 60-bar history.
+Initial deposit for default settings is $10,000
+Timeframe: M1
+Pairs should have a long-term positive correlation. The Expert Advisor cannot check whether the pairs are correlated positively.
+The pairs must have a common base currency for pips. It means, Pairs EURUSD and GBPUSD would suit, since pips are calculated in USD. GBPJPY and CHFJPY would be suitable, too, since pips are calculated in JPY. EURUSD and USDJPY cannot be used, since the pips for the first pair are in USD, while for the second one in JPY.
+You cannot place two different EAs with at least one of their currency pairs matching.
+In case of dafault settings, you can select six pairs that I found appropriatefor testing on a demo account:
+Launch the EA on NZDJPY and write AUDJPY in parameter seconds_instrument
+Launch the EA on GBPJPY and write CHFJPY in parameter seconds_instrument
+Launch the EA on EURUSD and write GBPUSD in parameter seconds_instrument
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23355

@@ -1,0 +1,41 @@
+Here is a brief, technical narration of the core logic driving your Expert Advisor. The architecture relies on an equity-based portfolio management model rather than traditional pip-based static targets.
+1. Entry Logic (Conditionals)
+The EA evaluates trading conditions on a per-bar basis, comparing the previous completed candle ( Close[1] ) and the current developing candle ( Open[0] ) against indicator buffers.
+Cycle 1 (Moving Average):
+Acts as a basic trend-following module.
+Buy:
+Triggers if Close[1] and Open[0] are both strictly
+above
+the MA line.
+Sell:
+Triggers if Close[1] and Open[0] are both strictly
+below
+the MA line.
+Cycles 2 & 3 (Envelopes):
+Acts as a breakout or momentum module.
+Buy:
+Triggers if Close[1] and Open[0] are both
+above
+the Upper Envelope band.
+Sell:
+Triggers if Close[1] and Open[0] are both
+below
+the Lower Envelope band.
+(Note: Cycle 3 is a direct clone of Cycle 2 logic, simply running on an independent magic number and deviation parameter).
+2. Take Profit (TP) and Stop Loss (SL) Logic
+Instead of sending hardcoded SL/TP price levels to the broker, this EA manages risk internally by monitoring
+floating equity
+.
+When a cycle initiates its first trade (e.g., Buycount == 0 ), the EA snapshots the current Account Equity and calculates two monetary thresholds:
+Target Price (TP):
+Initial Equity + (Initial Equity * target_percent / 100)
+Risk Price (SL):
+Initial Equity - (Initial Equity * risk_percent / 100)
+Execution:
+On every tick, custom functions ( MyAccountProfit_Buy / MyAccountProfit_Sell ) aggregate the floating profit, swap, and commission for all active positions tied to a specific Cycle's Magic Number. If Initial Equity + Floating Profit hits either the Target (TP) or Risk (SL) threshold, the EA triggers a routine to close all positions for that cycle and resets the cycle state.
+Codebase Anomaly Note: In your original Cycle 1 Buy logic, the target/risk math divides by 1000 instead of 100, which calculates a 0.1% target instead of 1%. Cycles 2, 3, and Cycle 1 Sells divide by 100.
+3. Execution & State Management
+Bar Lock:
+To prevent opening hundreds of trades on a single candle, the EA stores the Open[0] price into open_price . A new trade is only authorized if the current open price differs from the stored variable (ensuring one entry per bar).
+Alternation / Grid:
+Variables like c1_Buycycle and c1_sellcycle are used to toggle the availability of the opposing signal. For instance, successfully executing a Buy disables further independent Buys but primes the Sell cycle, suggesting a loosely structured hedging or reversal grid.

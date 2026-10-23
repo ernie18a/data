@@ -1,0 +1,169 @@
+This is a simple analytical (non-signal, one-time calculated) indicator that allows you to test the hypothesis that price timeseries represent a "random walk", specifically Gaussian "random walk". This can help to construct a parametric transformation of price increments into evenly distributed, more stable and predictable time series, at least in terms of volatility.
+As you may know, the distance that a "random walk" variable is expected to cover after N steps is estimated by its standard deviation multiplied by sqrt(N), or N^0.5.
+This indicator calculates statistics of "average" price change (per bar) for predefined subranges of bars. The "averaging" is performed over the distance (number of bars up to given N) taken to the power of F — a factor, which is enumerated from 0.1 to 1 with the step 0.1.
+All bars available on current chart are used for collecting statistics in sliding windows of up to N bars.
+Then the indicator finds most "regular" uniform distribution of the statistics among different F's, and displays a histogram for this factor (considered optimal), usually 0.5 or 0.6. Each column of the histogram is the "average" delta of points per bar for corresponding trade duration (number of bars), where "averaging" is made by N^F (when F=1 you'll get standard averaging).
+The indicator can use different methods for automatic detection of the "regularity" (flatness) of the statistical curve:
+minimum of variance;
+minimum of difference between triple M's (Mean, Median, Mode), as squared error;
+minimum of Gini coefficient;
+Knowing the optimal factor can be useful for:
+normalization of input data (price changes) for neural networks and other machine learning algorithms;
+estimation of sufficient number of bars for sampling into a single input vector for analisys in volatility trading systems;
+detection of symbols and/or timeframes with anomalities (non-standard F or singularity in the distribution curve);
+Inputs
+MaxDistance — maximal distance in bars (N) to use for collecting price range statistics, by default 200;
+Factor — exponent for "averaging" over distances, by default 0 - means autodetection, you can enter a custom value between 0.0 and 1.0 for estimation, for example, 0.525;
+Method — one of the methods of estimation of uniformity: variance, triple_M, Gini;
+MaxBars — a limit of bars to calculate statistics on, by default 0 - means all available bars;
+NB: if you use unlimited number or hundreds of thousands of bars on chart, the calculation may take some time — if this is a problem, consider limiting the number of bars to tens of thousands.
+Outputs
+The indicator shows a blue histogram of average price change per bar for each distance in the range of distances (1..Period) and for selected factor of uniformity.
+Also a continuously increasing number of bars (distance) is presented as the second histogram (orange), just for reference.
+A complete table of tested factors and corresponding metrics of current timeseries are printed in the log.
+XAGUSD.c D1, Max.Distance:
+500
+, Bars:
+2641
+Factor:
+0.4
+, Result: var(
+0.4
+) mmm(
+0.4
+) gini(
+0.4
+)*
+    [factor]  [mean] [variance] [skewness] [kurtosis] [median]  [mode] [mmmse]  [gini]
+[
+0
+]
+0.10000
+1.85217
+0.21976
+-
+0.87694
+0.07751
+1.95822
+2.30853
+0.33811
+0.13930
+[
+1
+]
+0.20000
+1.07575
+0.04083
+-
+1.12699
+0.96219
+1.12715
+1.25786
+0.13285
+0.10093
+[
+2
+]
+0.30000
+0.62887
+0.00525
+-
+1.54472
+3.00927
+0.64878
+0.68616
+0.04114
+0.05943
+[
+3
+]
+0.40000
+0.37043
+0.00021
+-
+2.90499
+13.36923
+0.37546
+0.37502
+0.00394
+0.01753
+[
+4
+]
+0.50000
+0.22015
+0.00028
+1.53459
+1.38333
+0.21532
+0.21461
+0.00426
+0.03779
+[
+5
+]
+0.60000
+0.13222
+0.00064
+1.98696
+4.05157
+0.12372
+0.10902
+0.01661
+0.09162
+[
+6
+]
+0.70000
+0.08041
+0.00072
+2.60714
+8.60950
+0.07122
+0.05862
+0.01551
+0.15135
+[
+7
+]
+0.80000
+0.04964
+0.00065
+3.39070
+15.85717
+0.04099
+0.03149
+0.01289
+0.21637
+[
+8
+]
+0.90000
+0.03119
+0.00054
+4.37643
+27.17457
+0.02359
+0.01692
+0.01018
+0.28652
+[
+9
+]
+1.00000
+0.02002
+0.00044
+5.57319
+43.86448
+0.01358
+0.00909
+0.00787
+0.36126
+Screenshots
+The following screenshots demonstrate the indicator on 3 timeframes: D1, H1, M1.
+Each chart contains 2 instances of the indicator:
+upper one is configured for F autodetection by Gini, and the found value (varied between 0.4 once, and 0.5 twice) is displayed in the title, marked by asterisk;
+lower one is configured for predefined F=0.6;
+2 indicators Uniformity Factor on XAGUSD,D1
+2 indicators Uniformity Factor on XAGUSD,H1
+2 indicators Uniformity Factor on XAGUSD,M1

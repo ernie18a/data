@@ -1,0 +1,5 @@
+Author: igorad
+Quite interesting method for plotting a channel. Despite the obvious plotting primitivism, it can be useful during the flat level analysis (for example, if you had no access to the terminal in a while, and it is necessary to assess the past events quickly).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7563

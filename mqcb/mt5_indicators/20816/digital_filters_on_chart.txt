@@ -1,0 +1,10 @@
+A set of 4 types of digital filters that naturally are placed on main chart.
+The supported digital filter types:
+FATL
+- Fast Adaptive Trend Line.
+SATL
+- Slow Adaptive Trend Line.
+RFTL
+- Reference Fast Trend Line.
+RSTL
+- Reference Slow Trend Line.

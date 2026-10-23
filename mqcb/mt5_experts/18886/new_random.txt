@@ -1,0 +1,18 @@
+Trading based on a random number generator or in one of the following sequences: BUY - SELL - BUY or SELL - BUY - SELL.
+At first glance it may seem that the sequences "BUY - SELL - BUY" and "SELL - BUY- SELL" are the same. But here the following interesting point is taken into account: does the type of the first opened position matter? By selecting
+Sequence BUY - SELL - BUY
+or
+Sequence SELL - BUY - SELL
+, we can check and compare the results of when the first position opened at the same time is BUY or SELL.
+Input Parameters
+Random type
+- the type of random position opening.
+Minimal lots count
+- minimum lot value (position volume).
+Stop Loss (in pips)
+- Stop Loss value.
+Take Profit (in pips)
+- Take Profit value.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18886

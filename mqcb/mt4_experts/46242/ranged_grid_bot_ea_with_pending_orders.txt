@@ -1,0 +1,15 @@
+UPDATE: v1.01
+Added magic number
+Added control on symbol (it can be now attached to different charts on the same account)
+Added time control for trading
+Added an option to forcibly close all the trades after the end hour
+The EA creates a grid of equally spaced pending limit orders taking into account:
+- The current price; sell-limit above / buy-limit below
+- The trading range; computed by using the weekly highs and lows
+The EA then manages the orders while they have been executed.
+The logic is:
+IF #EXECUTED ORDERS == 2
+OPEN NEW LIMIT AT THE PEN. PRICE
+IF #EXECUTED ORDERS > TOT - 2
+RESET THE LIMIT ORDERS TO RANGE
+- check the video for the full strategy

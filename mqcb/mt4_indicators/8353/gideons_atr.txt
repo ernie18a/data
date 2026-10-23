@@ -1,0 +1,15 @@
+Indicator Gideon's_ATR.
+Input Parameters:
+extern
+int
+atr_fast
+=
+5
+;
+extern
+int
+atr_slow
+=
+48
+;
+gideons_atr

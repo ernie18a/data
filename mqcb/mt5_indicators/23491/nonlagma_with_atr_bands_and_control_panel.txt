@@ -1,0 +1,30 @@
+The control dashboard has features as shown:
+Click "Trend Bar" to turn the indicator on or off.
+Drag and Drop "Non-Lag-MA" to reposition the information display.
+Clicking "Top Band" will display the 'alfa' array and weight variable of the nonLagMA.  This nothing but a curiosity display.
+Clicking anyplace on the chart selects the bar at that chart time to have its indicator values displayed.
+An option for defining the indicator buffers (and plots) is to separate the data from the code and feed the data for each buffer to a single code block.  Along with the data arrays, an enum is defined to access the arrays with a human readable index to the proper array entry.
+This data is then provided by a for  loop that accesses the arrays and provides the data to the Index setting functions - each of which only have to be entered once:
+for(IndicatorBufferIdx idx=0; idx<k_end_indi_idx; idx++){  // process each buffer using the buffer index enumeration
+Likewise, a structure is used to define an array of buffers that can be accessed using the same "IndicatorBufferIdx" enum values throughout the program:
+struct IndiStruct
+{
+double m_indi_buff[];
+} indi_array[k_end_indi_idx];  // create an indicator buffer for the number of defined indicator buffers
+like this: indi_array[k_ATR_up_idx].m_indi_buff[shift];
+Two classes are defined and used:
+class AlfaClass performs all the calculations for the nonLagMA values, with the alfa array values and weight value calculated only when the constructor is run.  Making multiple AlfaClass instances with differend period's passed to the constructor would readily support an indicator with multiple moving averages displayed.
+class InformationDisplayPanel implements all of the functions needed to display the information panel as well as the information panel's interactions with OnChartEvent processing.  It also uses an enumeration to access the data for the panel objects with human readable text in the code.
+The OnChartEvent function processes three different events,
+CHARTEVENT_CLICK to select a time (chart bar) for indicator data display.
+CHARTEVENT_OBJECT_CLICK to detect object clicks and enable turning the indicator on and off.
+CHARTEVENT_OBJECT_DRAG to enable moving the information panel.
+OnCalculate includes 6 function calls, each of which returns false if there is a failure in its processing and terminates the OnCalcualte function by returning the number of bars that have been previously successfully processed (the value in the static integer last_prev_calculated):
+SetCalcuateLimits sets the oldest bar that the indicator should process (starting_bar), as well as setting the number of bars to get data from the terminal from (in to_copy).  I moved the call for setting the terminal data handles function (HandlesSet) from the usual OnInit location, to be called from inside of SetCalculateLimits on it's first run to implement automatic re-tries if there were to be an error getting the handles.
+TerminalCalculationsAreComplete checks if the terminal has finished calcualting iMA and iATR data.  On startup, this function almost always returns an error, and the terminal automatically re-runs OnCalculate with a success on the 2nd try.  Check the Experts tab on the terminal for indicator error logs like this:
+"TerminalCalculationsAreComplete: Not all data of teh MA_handle is calculated (-1 bars calculated out of 66109). Error: 4806, Requested data not found, 1 times."
+PerformBufferCopies retrieves terminal data ( moving average and atr) for the indicator to use.
+the moving average from the terminal is a single bar moving average - its only purpose is to get the ENUM_APPLIED_PRICE value for each bar, PRICE_CLOSE by default.  The actual moving average is calculated by the indicator (default is 30 bars).
+RunTheIndicator performs the indicator calculations and subsequent display.  RunTheIndicator is also called from the OnChartEvent function when the indicator is turned off and back on to re-display the indicator.
+ShowBarStatistics - finally, the indicator's information panel is displayed.
+I have an MQL4 'twin' to this program that can be used to do a side-by-side comparison of the code blocks and functions that I'd be happy to provide to any one curious to see it.

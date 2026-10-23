@@ -1,0 +1,156 @@
+Description:
+Using 4 Stochastic + post-zigzag indicator(last post). The result is good!!! Profit trades (% of total --82.26%)
+Remember inserting Post-zigzag indicator first!!!
+This Set-up for USDJPY only and
+Point=0.00001:
+Setup 1: UseMinilot=true---> The result is stable
+Setup 2: UseMinilot=false---> Earn more loss more when you met big wave !! :D
+Strategy Tester Report
+Aver4Sto+Postzigzag
+FxPro.com-Real02 (Build 229)
+Setup 1
+Symbol
+USDJPY (US Dollar vs Japanese Yen)
+Period
+5 Minutes (M5) 2011.05.02 08:15 - 2011.08.19 23:55 (2011.05.01 - 2011.08.22)
+Model
+Every tick (the most precise method based on all available least timeframes)
+Parameters
+MoneyManagement=true;
+UseMinilot=true
+; Lots=0.1; MaximumRisk=0.1; MinLot=0.1; MyStopLoss=800; MyTakeProfit=0; Stopoutlevel=50; Nextopenposition=150; Delay=50; Closebyprofit=false; Maxiposition=5; Needprofit=500; Losscan=500; TimeFrameM1=false; TimeFrameM5=true; TimeFrameM15=true; TimeFrameM30=false; TimeFrameM60=false; TimeFrameM240=false;
+Bars in test
+23041
+Ticks modelled
+6079450
+Modelling quality
+43.98%
+Mismatched charts errors
+0
+Initial deposit
+500.00
+Total net profit
+4273.05
+Gross profit
+5467.34
+Gross loss
+-1194.30
+Profit factor
+4.58
+Expected payoff
+68.92
+Absolute drawdown
+88.51
+Maximal drawdown
+1525.04 (38.43%)
+Relative drawdown
+47.91% (446.61)
+Total trades
+62
+Short positions (won %)
+62 (80.65%)
+Long positions (won %)
+0 (0.00%)
+Profit trades (% of total)
+50 (80.65%)
+Loss trades (% of total)
+12 (19.35%)
+Largest
+profit trade
+773.76
+loss trade
+-402.02
+Average
+profit trade
+109.35
+loss trade
+-99.52
+Maximum
+consecutive wins (profit in money)
+11 (811.25)
+consecutive losses (loss in money)
+4 (-1008.40)
+Maximal
+consecutive profit (count of wins)
+1834.78 (7)
+consecutive loss (count of losses)
+-1008.40 (4)
+Average
+consecutive wins
+6
+consecutive losses
+2
+Setup 2:
+Symbol
+USDJPY (US Dollar vs Japanese Yen)
+Period
+5 Minutes (M5) 2011.05.02 08:15 - 2011.08.19 23:55 (2011.05.01 - 2011.08.22)
+Model
+Every tick (the most precise method based on all available least timeframes)
+Parameters
+MoneyManagement=true;
+UseMinilot=false
+; Lots=0.1; MaximumRisk=0.1; MinLot=0.1; MyStopLoss=800; MyTakeProfit=0; Stopoutlevel=50; Nextopenposition=150; Delay=50; Closebyprofit=false; Maxiposition=5; Needprofit=500; Losscan=500; TimeFrameM1=false; TimeFrameM5=true; TimeFrameM15=true; TimeFrameM30=false; TimeFrameM60=false; TimeFrameM240=false;
+Bars in test
+23041
+Ticks modelled
+6079450
+Modelling quality
+43.98%
+Mismatched charts errors
+0
+Initial deposit
+500.00
+Total net profit
+4875.37
+Gross profit
+12957.56
+Gross loss
+-8082.19
+Profit factor
+1.60
+Expected payoff
+78.64
+Absolute drawdown
+84.19
+Maximal drawdown
+8715.18 (89.00%)
+Relative drawdown
+89.00% (8715.18)
+Total trades
+62
+Short positions (won %)
+62 (82.26%)
+Long positions (won %)
+0 (0.00%)
+Profit trades (% of total)
+51 (82.26%)
+Loss trades (% of total)
+11 (17.74%)
+Largest
+profit trade
+1699.20
+loss trade
+-2421.25
+Average
+profit trade
+254.07
+loss trade
+-734.74
+Maximum
+consecutive wins (profit in money)
+11 (823.67)
+consecutive losses (loss in money)
+4 (-7668.13)
+Maximal
+consecutive profit (count of wins)
+5090.92 (9)
+consecutive loss (count of losses)
+-7668.13 (4)
+Average
+consecutive wins
+6
+consecutive losses
+2
+PS: Email to rockyhoangdn@gmail.com if you found mistake when testing on real account.
+All сomments are welcome!

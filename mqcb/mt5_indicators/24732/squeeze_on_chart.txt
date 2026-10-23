@@ -1,0 +1,3 @@
+Squeeze indicator (originally published here :
+Squeeze
+) made to display colored candles or bars (depending on the type of display you are using for your chart) on the main chart

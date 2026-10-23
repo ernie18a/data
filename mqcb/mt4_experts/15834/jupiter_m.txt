@@ -1,0 +1,6 @@
+The Jupiter M. grid EA uses the martingale feature, which can be disabled by setting the multiplier to 1, when placing a grid in both directions.
+certain functions are useful when the EA runs on multiple currency pairs. The main idea of the EA is not in accurate entries, but in flexible plotting of grids. The main inputs of the EA are described in the attached manual. Example of trades the appearance of the info panel are displayed in the figure.
+There is also a block of manual settings to interfere with the EA trading. Skillful management of these settings allows to decrease the probability of losing the deposit by an order of magnitude, depending on the trader's experience.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15834

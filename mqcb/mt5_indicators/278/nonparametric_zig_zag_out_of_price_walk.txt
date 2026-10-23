@@ -1,0 +1,7 @@
+Nonparametric zigzag. The monotonicity condition for the ascending segment of the zigzag: the High of any subsequent bar must not be lower than any Low of the ascending segment. Similarly, for the descending segments of the ZigZag.
+The ZigZag line (ZigZagLineBuffer) is plotted from the lowest High to the highest Low and vice versa. The "outer" extermums are marked with blue and red lines (HighBuffer and LowBuffer). The arrows ordering may be "wrong" (two consecutive red or two blue arrows may appear).
+The indicator doesn't repaint.
+I think that this ZigZag can be used to convert the chart into the segments for further analysis.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/278

@@ -1,0 +1,9 @@
+Have you ever wondered if your history files are complete or have gaps (i.e. data missing for some periods of time) ?
+This EA reports all the gaps in your history file for the symbol and timeframe selected.
+Instructions:
+Launch the EA in the strategy tester with 'Use date' checkbox unticked and 'Open prices only' modeling for the symbol and timeframe you want to check.
+The EA will print out all the history gaps in the log.
+Gaps over the weekend are ignored (provided that broker closes on Friday and reopens on Sunday), but possible gaps over festivities (e.g. Xmas) are reported.
+The only input parameter
+MinGapInBars
+can be used to filter out gaps shorter than a certain amount of bars, for instance to ignore tiny gaps due to lack of trades on the broker during periods with low liquidity.

@@ -1,0 +1,31 @@
+Idea by
+:
+Leonid Basis
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+The EA is debugged to work with EURUSD and on H1 only in the quietest hours (upon closing the American session and before opening the Asian one).
+Input parameters
+Take Profit
+- Take Profit;
+Trailing Stop
+- trailing;
+Trailing Step
+- trailing step;
+Difference Min
+- the minimum difference between the highest and the lowest price (within the last three bars);
+Difference Max
+- the maximum difference between the highest and the lowest price (within the last three bars);
+Open Hour
+- opening hour;
+Lots
+- lot size (if you set the lot size above zero, then the Risk parameter must be set to zero);
+Risk
+- risk (if you set the risk above zero, then the Lots parameter must be set to zero);
+magic number
+- unique identifier for the EA.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20815

@@ -1,0 +1,29 @@
+Oscillator Swing Shift displays the MA slope value exceeding the pre-defined threshold and the change in the moving average movement direction as a pulse-changing direction of the indicator histogram.
+It has four configurable parameters:
+Period
+- calculation period
+Method
+- calculation method
+Applied price
+- calculation price
+Threshold
+- MA slope value threshold
+Calculations:
+SS = 100.0 * (MA - Anchor) / Anchor
+where:
+If Slope > Threshold и PrevTrend < 1
+Anchor = MA
+Trend = 1
+Otherwise, if Slope < - Threshold и PrevTrend > 0
+Anchor = MA
+Trend = 0
+Otherwise
+Anchor = PrevAnchor
+Trend = PrevTrend
+Slope = (MA - PrevMA)*Point
+MA = MA(Applied price, Period, Method)
+Fig 1. Indicator Swing Shift with default settings
+Fig. 2. Swing Shift and a comparative MA with the same settings
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21330

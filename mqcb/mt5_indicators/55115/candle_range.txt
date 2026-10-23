@@ -1,0 +1,33 @@
+Candle Range MetaTrader indicator
+— is a very simple and lightweight indicator that displays the candle's range in pips on mouseover. In addition, to the High/Low range, it can optionally display the body size (Open/Close) for candles. Multiple display parameters are available to control how the indicator looks. This indicator is available for both MT4 and MT5 versions of the trading platform.
+Input parameters
+ShowBodySize
+(default = false) — if
+true
+, a candle's body size will also be shown.
+HavePipettes
+(default = false) — if
+true
+, the indicator will assume that the currency pair's quote contains pipettes and will show the pip ranges accordingly.
+TrueRange
+(default = false) — if
+true
+, the indicator will calculate true range (including the gap part) instead of the normal range.
+font_color
+(default = clrLightGray) — the color of the candle range indicator.
+font_size
+(default = 10) — the size of the candle range indicator.
+font_face
+(default = "Verdana") — the font of the candle range indicator.
+corner
+(default = CORNER_LEFT_UPPER) — the location for the candle range indicator on the chart.
+distance_x
+(default = 3) — the horizontal distance from the corner to the indicator.
+distance_y
+(default = 12) — the vertical distance from the corner to the indicator.
+DrawTextAsBackground
+(default = false) — if
+true
+, the text label with the candle range value will be drawn as background. It can be useful if you want to prevent the indicator from obscuring the chart.
+ObjectPrefix
+(default = "CR-") — the prefix for chart objects for compatibility with other indicators.

@@ -1,0 +1,25 @@
+Anchored Momentum indicator by Rudy Stefenel was first proposed in the "Technical analysis of Stocks and Commodities" magazine in 1998.
+There are seven configurable parameters:
+First MA period
+;
+First MA method
+;
+Second MA period
+;
+Second MA method
+;
+Applied price
+- moving average calculation price;
+Upper limit of the buffered zone
+;
+Lower limit of the buffered zone
+.
+Calculation:
+AMOM = 100.0 * MA1/MA2 - 1.0
+where:
+MA1 = MA(Applied price, First MA period, First MA method)
+MA2 = MA(Applied price, Second MA period, Second MA method)
+Interpretation: Entering towards the zero or buffer area line crossing. The buffer area serves for cutting off minor price fluctuations. It is also possible to track the divergences of the indicator and price charts.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21642

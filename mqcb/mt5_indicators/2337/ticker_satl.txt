@@ -1,0 +1,10 @@
+Real author:
+mandorr@gmail.com
+The indicator is drawn as a colored cloud between the lines of a slow digital filter and the price.
+This indicator was first implemented in MQL4 and published in
+CodeBase
+at mql4.com on 10.09.2007.
+Figure 1. The Ticker_SATL indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2337

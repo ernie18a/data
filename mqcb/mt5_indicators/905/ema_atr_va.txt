@@ -1,0 +1,13 @@
+Advaptive Exponential Moving Average - ATR Volatility Adjusted by Jose Silva.
+Input parameters:
+STDPeriod
+- Period of StdDev indicator;
+EMAPeriods
+- Period of EMA indicator;
+Sensitivity
+- Sensitivity from -100 to 100%;
+Price
+- Price.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/905

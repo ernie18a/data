@@ -1,0 +1,8 @@
+Description:
+Price Alert MetaTrader indicator plays sound alerts when the price reaches certain levels that are specified by the trader.
+There are three types of alerts:
+First one is used when the price rises above certain level (displayed with the green line on the chart),
+Second one is used when the price falls below certain level (displayed with the red line on the chart),
+Third one is used when the price reaches the certain level exactly (displayed with the yellow line).
+All alerts turn off when they are triggered and can be turned on again with the new values. If you use e-mail alert feature, don't forget to set the e-mail settings in your MetaTrader platform options window.
+This indicator can't be used as a trading system and it isn't generating any signals. You can use it whenever you wish to be notified of some new price levels. Then you can use the moment to do whatever you want with the market. You can set the input parameters to zero value if you don't want to use some of them.

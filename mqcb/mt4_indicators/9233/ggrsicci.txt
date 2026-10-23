@@ -1,0 +1,13 @@
+This indicator informs you about the
+trend
+and offers a good
+entry possibility
+.
+Not useful for exit signal.
+Ind_Period
+: period of the indicators (RSI and CCI).
+Avg_Period1
+and
+Avg_Period2
+: periods of the moving averages of the indicators.
+GG-RSI-CCI

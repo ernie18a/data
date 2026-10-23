@@ -1,0 +1,6 @@
+Author: hawt and PUMBA
+The DJ Lines belongs to the Pivot group. All similar indicators operate on the principle - «Based on the values of the previous day (days) it is possible to calculate a point, passing which would mean a change in the trend».
+This indicator attempted to emulate the DowJones levels.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7173

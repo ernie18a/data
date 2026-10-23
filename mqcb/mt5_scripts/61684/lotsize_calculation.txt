@@ -1,0 +1,15 @@
+This script calculates the correct lot size for both Forex and non-Forex instruments without adding any indicators to your chart.
+Choose
+RiskByPercent
+or
+RiskByAmount
+, enter your stop loss in pips (4-digit), and the script will automatically adjust for 5-digit brokers for forex pairs.
+For CDF/Commodities/ Indices/ stocks, enter the stoploss as required (pips=points)
+. The script also enforces broker minimum and maximum lot size limits.
+An alert displays the calculated lot size, risk amount, estimated loss amount, converted stop loss for forex pairs, tick size and tick value of the asset.
+==============================================================================================
+Update:
+Fixed an issue with non-Forex lot size calculations across different brokers.
+==============================================================================================
+Broker_1 stepsize= 0.01 for US30
+Broker_2 stepsize = 0.1 for US30

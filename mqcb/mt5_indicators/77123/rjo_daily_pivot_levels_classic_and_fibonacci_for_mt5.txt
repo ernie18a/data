@@ -1,0 +1,19 @@
+RJO Daily Pivot Levels
+is a lightweight Daily Pivot Points indicator for MetaTrader 5.
+The indicator calculates the current day's pivot levels using the High, Low and Close of the previous completed D1 candle.
+Features:
+Pivot Point (PP)
+Resistance levels R1, R2 and R3
+Support levels S1, S2 and S3
+Classic Pivot calculation
+Fibonacci Pivot calculation
+Works on all chart timeframes
+Individual levels can be enabled or disabled
+Customizable line colors, styles and widths
+Optional price labels
+Uses the previous completed daily candle
+Classic method:
+PP = (High + Low + Close) / 3
+Fibonacci method:
+Levels are calculated from PP using 0.382, 0.618 and 1.000 of the previous day's range.
+The indicator does not open or manage trades. It is intended as a simple support and resistance analysis tool.

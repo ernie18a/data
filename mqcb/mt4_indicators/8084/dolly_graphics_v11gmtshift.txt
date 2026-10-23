@@ -1,0 +1,8 @@
+Author:
+Mods and stuff by Linuxser for Forex-TSD
+Indicator Dolly_Graphics_v11-GMTShift. Shows various recommendations, in particular on purchase and sale in percentage terms, the current price...
+The description on each object, read in the code (in English).
+Discussion was conducted
+here
+.
+Indicator Dolly_Graphics_v11-GMTShift

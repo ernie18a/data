@@ -1,0 +1,2 @@
+This indicator for draw an Arrows for buy & sell, it's Depends on T3 Indicator
+http://forum.m-e-c.biz/t29283.html

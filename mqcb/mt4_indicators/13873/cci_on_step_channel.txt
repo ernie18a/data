@@ -1,0 +1,11 @@
+The classic CCI indicator uses Moving Average of Typical price. This version uses median line of the
+Step Channel
+indicator.
+This line will be created from the result of tug of war between [raising price] and [falling price].
+This chart shows the differences.
+Blue Line is Typical SMA(14),
+Pink Line is Volatility Step Channel(StdDev(1.0), Ma(3), Volatility(70)).
+Recommendations:
+Use 2 period CCI
+Fast period CCI
+Slow period CCI

@@ -1,0 +1,30 @@
+The Trend Risk indicator finds trendy parts of the price movement and indicates the trend presence by a value in the buffer.
+Can be used for flat trading - to disable trading when there is a possibility of price exiting the channel, in which trades are performed. During trend trading, the indicator can determine areas where the trend can be exhausted or it can slow down.
+It has two input parameters:
+Bands range
+- bands calculation range
+Deviation
+- the deviation value (the width of the allowed channel)
+Calculation:
+Top = SmoothPrice + SmoothRange * Deviation
+Bottom = SmoothPrice - SmoothRange * Deviation
+where:
+SmoothPrice = (PrevSmoothPrice * (Bands range-1) + Close) / Bands range
+SmoothRange = (PrevSmoothRange * (Bands range-1) + High-Low) / Bands range
+Signals:
+If Close > Top
+SignalBuffer = "Do not trade" = Top
+If Close < Bottom
+SignalBuffer = "Do not trade" = Bottom
+The indicator displays colored Japanese candlesticks in a separate window - bullish ones are
+green
+, bearish ones are
+red
+. If a candlestick closes outside the channel formed by the bands, the candlesticks are colored in
+gray
+, and a value corresponding to the value of the broken channel line is added to the indicator signal buffer, which allows to determine the breakout direction from Expert Advisors and to limit trading in this or that direction, in accordance with the trading system used.
+Fig. 1. Trading in the flat channel: Bands range = 12, Deviation = 1.8
+Fig. 2. Trend trading (limitation): Bands range = 23, Deviation = 6.0
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21844

@@ -1,0 +1,79 @@
+Author of the idea
+—
+Hazem
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Works based on two indicators: iCCI (Commodity Channel Index, CCI) and iMACD (Moving Average Convergence/Divergence, MACD). OnTradeTransaction().
+As the CCI and MACD indicators have different scales of measurement, a conversion ratio has been introduced:
+input
+int
+macd_coefficient=
+10000
+;
+// alignment of cci and macd
+The values are aligned here:
+void
+OnTick
+()
+{
+//---
+double
+cci=iCCIGet(back);
+double
+macd=iMACDGet(
+MAIN_LINE
+,back)*macd_coefficient;
+Comment
+(
+"cci: "
+,
+DoubleToString
+(cci,
+2
+),
+"\n"
+,
+"macd: "
+,
+DoubleToString
+(macd,
+Digits
+()+
+1
+),
+"\n"
+,
+"buyLevel: "
+,buyLevel);
+The clear information on the obtained values is displayed here right away - for visual inspection.
+Also, an interesting idea has been implemented — the EA (in the OnTradeTransaction() function) performs the summation of unprofitable and profitable trades (the "
+Number_of_losses
+" variable). If closed with a loss — "
+Number_of_losses
+" increases by "1"; if closed with profit, "
+Number_of_losses
+" decreases by "1". When opening a position, the lot is calculated as: if "
+Number_of_losses
+">"0" (this means that currently there are more positions closed with loss than with profit) increase the lot by the "
+increase
+" coefficient. If "
+Number_of_losses
+"<"0" (this means that currently there are more positions closed with profit than with loss) — the lot size is taken from the coefficient:
+if
+(Number_of_losses>
+0.0
+)
+ExtLot=InpLot*
+MathPow
+(
+2
+,increase);
+else
+ExtLot=InpLot;
+Testing results on EURUSD,M30 from 2016.06.09 to 2016.12.04, initial deposit - 3000:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17115

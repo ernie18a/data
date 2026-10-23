@@ -1,0 +1,15 @@
+An example of an Expert Advisor, which compares EURGBP to a synthetic equivalent and trades in the direction of a delay in quotes following an original logic (one-leg arbitrage). The delay is calculated for each currency pair: EURGBP, EURUSD, GBPUSD.
+input
+int
+spread=
+35
+;
+// Spread deviations in points (between synthetic and base pair)
+A deviation in points from a synthetic equivalent and the minimum time lag (how long the deviation lasts) are set for each pair.
+Now brokers offer high-quality and fast quoting, therefore this simple arbitrage has low (or zero) efficiency in real conditions. However, the original strategy can be used as an example to create your own strategies.
+Testing should be performed on
+real ticks
+. Check the screenshot for the example of settings.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15708

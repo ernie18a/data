@@ -1,0 +1,24 @@
+The author of the idea
+-
+Ilnaz
+mq5 code author
+-
+barabashkakvn
+The EA performs operation inside a bar (on every tick). The EA opens only one position at a time, therefore it is able to work both on hedging and netting accounts. Trailing is applied to a position - during the first modification, the position is moved to a guaranteed breakeven.
+Trading signals
+SELL open signal (if there is an open BUY position, close BUY and open SELL at once)
+main Stochastic line on bar #0 (the value of
+87.44
+in the figure) is below the Stochastic signal line on bar #0  (the value of
+91.78
+in the image)
+at least one of the Stochastic lines is above
+STO level UP
+(the value of
+80.00
+in the figure)
+For BUY, signals are opposite to SELL.
+EURUSD, H12, "Every tick based on real ticks" mode:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22274

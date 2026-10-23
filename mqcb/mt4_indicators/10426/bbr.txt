@@ -1,0 +1,6 @@
+Description:
+If price pierced upper or lower Bollinger Bands ®, RSI is overbought/oversold and moves back to 50 you'll get a signal.
+Of course some false too, but as always MM and tight sl is the key. Recommended timeframe is M5. Added some objects that you are able to prepare for a signal.
+RSI object gets orange when ob/os and changes to green or red when returns towards 50. BB object gets red or green when Bands were pierced.
+If there is a higher high/lower low after a sell/buy signal and there is no new signal, RSI should show a divergence and you know what that means ;)
+Happy pipping

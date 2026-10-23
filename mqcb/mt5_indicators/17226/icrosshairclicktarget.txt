@@ -1,0 +1,6 @@
+iCrosshairClickTarget indicator for MetaTrader 5 is an improved version of iCrosshair indicator for MetaTrader 4
+published in CodeBase
+on 2016.05.12
+Added 'click Target' and the trend line, with text of the 'number of bars between target and crosshair', and the difference in pips between price at target level and price at crosshair level.
+Update_1: 2016/12/21
+Update_2: 2021/11/21 ==> Add information to tooltips with Range High-Low.

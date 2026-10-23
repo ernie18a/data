@@ -1,0 +1,14 @@
+Real author:
+reza rahmad
+The indicator shows trade signals using combined
+Stohastic
+with breaking of High/Low by
+Moving Average
+.
+The idea is to combine trend and when to open the market using Stohastic 14,3,3 and price break Moving Average 5 shift 2 typical and
+ADX
+to see the trend. Moving average and ADX not included.
+If Stochastic up, and price break MA and trend is BUY nice to OP BUY
+If stochastic down and price break MA low and trend is SELL GOOD to OP SELL
+Works best for M1, M5 and M15 timeframes.
+If you have ideas, just tell me.

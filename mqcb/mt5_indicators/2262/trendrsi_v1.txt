@@ -1,0 +1,52 @@
+Real author:
+TrendLaboratory Ltd.
+The
+RSI
+oscillator with two signal lines.
+Indicator input parameters:
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+uint
+RSIPeriod=
+14
+;
+input
+ENUM_APPLIED_PRICE
+RSIPrice=
+PRICE_CLOSE
+;
+input
+uint
+FastMAPeriod=
+9
+;
+input
+ENUM_MA_METHOD
+FastMAType=
+MODE_EMA
+;
+input
+uint
+SlowMAPeriod=
+45
+;
+input
+ENUM_MA_METHOD
+SlowMAType=
+MODE_EMA
+;
+input
+int
+Shift=
+0
+;
+// Horizontal shift of the indicator in bars
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 18.09.2007.
+Figure 1. The TrendRSI_v1 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2262

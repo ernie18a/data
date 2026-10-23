@@ -1,0 +1,7 @@
+Real author
+: unknown
+It is a simple trend indicator with the color indication of active trend direction.
+Fig. 1. The ForceTrend indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18794

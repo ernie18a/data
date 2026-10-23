@@ -1,0 +1,26 @@
+Bollinger Bandwidth Delta oscillator displays a relative width of Bollinger Bands for a specified period of time.
+There are five inputs:
+BB period
+- Bollinger Bands calculation period
+BB deviation
+- Bollinger Bands deviation value
+Delta period
+- indicator calculation period
+Applied price
+Show data in percentage
+- display calculated correlation of the bands width in % (Yes/No)
+Calculation:
+In %:
+BBD = 100.0 * (Bandwidth-DeltaBandwidth) / DeltaBandwidth
+In points:
+BBD = (Bandwidth-DeltaBandwidth) / Points
+where:
+Bandwidth = 2.0 * BB deviation * StdDev/MA
+DeltaBandwidth - Bandwidth Delta value 'period' bars ago
+StdDev - Standard Deviation(Applied price,BB period)
+MA = SMA(Applied price,BB period)
+Fig. 1. Bollinger Bandwidth Delta in points
+Fig. 2. Bollinger Bandwidth Delta in %
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22342

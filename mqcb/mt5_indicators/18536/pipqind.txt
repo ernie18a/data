@@ -1,0 +1,10 @@
+Real author:
+emsjoflo
+Trend indicator.
+This indicator was first implemented in MQL4 and published in
+Code Base
+on 24.10.2007.
+Fig. 1. The PIPQind indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18536

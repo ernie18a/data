@@ -1,0 +1,39 @@
+Supertrend Indicator: ATR-Based Trend Following for MetaTrader 5
+The
+Supertrend
+indicator is a widely used trend-following tool built on the
+Average True Range (ATR)
+. It plots a dynamic support or resistance line directly on the price chart, switching between a green uptrend line and a red downtrend line whenever the market changes direction. Traders use this signal to stay on the right side of the trend without having to interpret complex oscillators or multi-panel setups.
+This implementation brings the full Supertrend logic into
+MetaTrader 5
+as a native custom indicator. It supports two ATR calculation methods: the standard
+iATR
+function built into the MQL5 library, and a manual Simple Moving Average of True Range for traders who prefer a smoother band. Both methods produce the same trailing band structure, where the upper and lower bands tighten or widen with volatility and lock in once price moves decisively away from them.
+When the trend flips from bearish to bullish, an
+upward arrow
+is drawn at the bar of the crossover. When it flips from bullish to bearish, a
+downward arrow
+appears. These buy and sell signals can be toggled on or off through the input settings, keeping the chart clean for traders who only need the trend line itself. The indicator is fully configurable through four input parameters: ATR period, ATR multiplier, calculation method, and signal visibility.
+Input Parameters
+Parameter
+Type
+Default
+Description
+ATRPeriod
+int
+10
+The lookback period used to calculate the Average True Range. A smaller value makes the bands more reactive to short-term volatility, while a larger value produces smoother, slower-moving bands.
+ATRMultiplier
+double
+3.0
+A multiplier applied to the ATR value to set the width of the upper and lower bands around the HL2 source price. Higher values create wider bands that produce fewer but more reliable signals, and lower values create tighter bands with more frequent trend flips.
+ChangeATRMethod
+bool
+true
+Selects the ATR calculation method. When set to true, the indicator uses the standard MQL5 iATR function. When set to false, it calculates a Simple Moving Average of True Range manually, which can produce slightly different band values on certain instruments.
+ShowSignals
+bool
+true
+Controls the visibility of buy and sell arrow signals on the chart. When set to true, a green upward arrow appears at bullish trend reversals and a red downward arrow appears at bearish trend reversals. Set to false to display only the trend lines without arrows.
+Note:
+This indicator is intended for trend identification and educational purposes. Always validate signals on a demo account before applying them to live trading. Past performance of any indicator does not guarantee future results.

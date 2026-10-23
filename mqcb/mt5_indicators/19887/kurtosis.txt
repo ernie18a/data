@@ -1,0 +1,14 @@
+A trend oscillator. It is calculated by the following formula:
+SMA(3) of EMA (66) of ( Momentum[period] - Momentum[period-1] )
+It has four configurable parameters:
+Period of momentum
+- momentum calculation period;
+Primary smoothing period
+- EMA smoothing period (66);
+Secondary smoothing period
+- SMA smoothing period (3);
+Applied price
+- price used for calculating the momentum.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19887

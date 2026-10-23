@@ -1,0 +1,47 @@
+The author of the idea
+-
+KLOPKA
+mq5 code author
+-
+barabashkakvn
+The EA only operates only when a new bar appears. It opens a position having the
+Lots
+volume and sets a stop loss (
+Stop Loss
+) and a take profit (
+Take Profit
+) immediately.
+It also allows checking iCCI (Commodity Channel Index, CCI), iStochastic (Stochastic Oscillator) and iMA (Moving Average, MA) indicators. The value levels are set for both oscillators: for CCI, this is
+CCI Level
+, while for STO, these are
+STO Level UP
+and
+STO Level DOWN
+, accordingly. MA is compared with Open or Close of the bar #1.
+Trading signals
+BUY:
+CCI
+#1 < "-"
+CCI Level
+AND
+STO
+#1 <
+STO Level DOWN
+AND Open #1 >
+MA
+#1
+SELL:
+CCI
+#1 >
+CCI Level
+AND
+STO
+#1 >
+STO Level UP
+AND Close #1 <
+MA
+#1
+M15 timeframe
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22138

@@ -1,0 +1,29 @@
+The
+ColorJ2JMA
+with additional trend strength indication using colored dots based on the standard deviation algorithm.
+If the standard deviation of the ColorJ2JMA indicator is between the dK1 and dK2 parameter values, then a small colored dot appears on the moving average. Its color corresponds to the current trend direction.
+input
+double
+dK1=
+1.5
+;
+// Square-law filter coefficient 1
+input
+double
+dK2=
+2.5
+;
+// Square-law filter coefficient 2
+If the standard deviation becomes higher than the dK2 input parameter value, then the dot size increases. Thus, we get 3 levels of trend strength indication.
+weak — no dots;
+medium — small colored dots;
+strong — big colored dots.
+The ColorJ2JMAStDev indicator uses the CJJMA class from SmoothAlgorithms.mqh library (copy it to
+<terminal_data_folder>
+\MQL5\Include). The use of the class was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Fig.1. The ColorJ2JMAStDev indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13830

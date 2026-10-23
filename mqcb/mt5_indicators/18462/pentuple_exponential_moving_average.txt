@@ -1,0 +1,13 @@
+Real author:
+Bruno Pio
+A moving average with the five-fold EMA averaging, with a real period and the possibility to shift the indicator horizontally or vertically.
+The indicator uses the CMoving_Average class from the SmoothAlgorithms.mqh library. The class is described in detail in the article
+Averaging Price Series for Intermediate Calculations Without Using Additional Buffers
+. The SmoothAlgorithms.zip archive contains the SmoothAlgorithms.mqh file for compiling the indicator in MQL4. In this case the extension of the indicator file should be changed to mq4, i.e. PEMA.mq4).
+This indicator was first implemented in MQL5 and published in the
+Code Base
+on 13.08.2012.
+Fig. 1. The PEMA indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18462

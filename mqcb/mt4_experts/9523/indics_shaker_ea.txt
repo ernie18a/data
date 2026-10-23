@@ -1,0 +1,3 @@
+Choose Buy or Sell depending on market condition.
+Optimization is necessary (my settings are for FxPro).Short how-to and set files are ziped.
+For 4 digits brokers cut off one zero from sl, tp ...

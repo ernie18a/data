@@ -1,0 +1,7 @@
+The QQE (Quantitative Qualitative Estimator) indicator consists of a smoothed Relative Strength Index (RSI) indicator and two volatility-based trailing levels (fast and slow).
+Compared to the original
+QQE
+indicator, this version instead of using trailing levels uses fixed levels to estimate overbought and oversold conditions. That makes it a bit easier to use.
+This version is also using
+RSX
+(a smoother RSI without a lag) in order to further purify the signals.

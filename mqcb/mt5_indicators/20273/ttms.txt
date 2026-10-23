@@ -1,0 +1,20 @@
+The Trade The Markets Squeeze indicator. The main idea is to trade only when Bollinger Bands are located within Keltner Bands and thus form trade zones.
+The indicator is drawn as a histogram with signal labels along the center line. It has seven configurable parameters:
+BB period
+- Bollinger Bands calculation period;
+BB deviation
+- Bollinger Bands deviation;
+Keltner period
+- Keltner Bands calculation period;
+Keltner smooth period
+- Keltner Bands smoothing period;
+Keltner smooth method
+- Keltner Bands smoothing method;
+Keltner deviation
+- Keltner Bands deviation;
+Signal label size
+- the size for signal labels.
+Interpretation: when the signal labels are colored, it means a trading zone is found. Trades should be performed in accordance with direction indicators, the moving average, the intersection of Bollinger Bands or MAs, etc.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20273

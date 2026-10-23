@@ -1,0 +1,14 @@
+Real author:
+wellx
+The indicator gives signals for market entry based on
+Accelerator Oscillator
+(see B. Williams' book "
+New
+Trading Dimensions
+").
+This indicator was first implemented in MQL4 and published in
+CodeBase at mql4.com
+02.10.2007.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/777

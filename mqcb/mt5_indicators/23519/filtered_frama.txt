@@ -1,0 +1,6 @@
+Theory :
+The original version of this indicator was posted with a detailed description here :
+Frama
+. In this version we are adding another feature that can be used in order to make the frama indicator easier to use : value filtering. That way we can determine the trend without an attempt to us the slope of the frama for that (which might cause a lot of false signals, especially if chosen price usage for fractal estimation method is used).
+Usage :
+You can use the color change as signals in this indicator. Some experimenting with the filter size and frama method calculations is advised

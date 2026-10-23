@@ -1,0 +1,9 @@
+The indicator draws candlesticks in a separate window in the form of a histogram from the zero line.
+It has two parameters:
+Bullish candle color
+- the color of bullish candlesticks;
+Bearish candle color
+- the color of bearish candlesticks.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19959

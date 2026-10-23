@@ -1,0 +1,2 @@
+Displays price levels for simulated trades, including the set Take Profit (TP) and Stop Loss (SL) values, for the selected trading direction. It also shows brief statistics, including an hourly breakdown for entry.
+The user sets the Take Profit (TP) and Stop Loss (SL) amounts as a percentage and specifies the trading direction: Buy or Sell.

@@ -1,0 +1,2 @@
+Three Moving Averages Convergence/Divergence - Indicator for MT4
+Hopefully useful for fellow traders.

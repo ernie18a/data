@@ -1,0 +1,4 @@
+The indicator shows the difference between the open price of the zero bar and the close price of the first bar in points at the top-left corner of the main window; also if the open price is below the close price then the "Down" mark is placed and the minus appears before the number. If the open price is equal to the close price then the "Flat" mark appears. And if the open price is above the close price then the "Up" mark appears.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8373

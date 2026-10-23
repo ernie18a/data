@@ -1,0 +1,7 @@
+The Indicator ang_Zad(C) helps to define the dominant trend.
+External variable:
+ki - a factor of the delay.
+The Blue line changes at incrementations of the trends. Red - when decrease.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10221

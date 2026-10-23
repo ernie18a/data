@@ -1,0 +1,13 @@
+Author of the idea
+-
+Vladimir Khlystov
+mq5 code author
+-
+barabashkakvn
+This is a simple Expert Advisor using two indicators: iMA (Moving Average, MA) and iMACD (Moving Average Convergence/Divergence, MACD). The EA opens only one position at a time, therefore it is able to work both on hedging and netting accounts.
+First, the indicator looks for a signal bar: when a new bar (#0) appears, check if MACD indicator in bar #1 crosses the zero line. A crossing means a signal bar has been found. Sample signal SELL bar:
+As soon as a signal bar is found, remember High and Low prices of a signal bar and wait till the price breaks through one of the prices. In case of a SELL bar: if the price breaks through Low, open SELL,
+if the price breaks through High, reset the SELL signal.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23040

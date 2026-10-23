@@ -1,0 +1,20 @@
+DNC Band Width oscillator displays the
+Donchian channel
+width in a separate window.
+The indicator has three input parameters:
+Period
+- calculation period
+Analyze current bar
+- consider the value of the current bar in calculations (Yes/No)
+Data in points
+- display the indicator data in points (Yes/No)
+Calculation:
+Width = Top - Bottom
+where:
+Top    = Max(High, Period)
+Bottom = Min(Low, Period)
+Fig. 1. DNC Band Width
+Fig. 2. DNC Band Width and Donchian channel
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22192

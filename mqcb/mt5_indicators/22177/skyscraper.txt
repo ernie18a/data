@@ -1,0 +1,31 @@
+Real author:
+TrendLaboratory
+A trend indicator of NRTR type with an additional middle line.
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+uint
+Length=
+10
+;
+// ATR period
+input
+double
+Kv=
+0.9
+;
+// Indicator sensitivity factor
+input
+double
+Percentage=
+0
+;
+// Middle line approaching the extreme lines
+input
+Method  HighLow=MODE_HighLow;
+// Indicator calculation by High/Low or Close
+Fig. 1. Skyscraper
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22177

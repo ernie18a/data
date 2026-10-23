@@ -1,0 +1,18 @@
+Real author
+: Tor
+The
+ThreeCandles
+indicator, which features alerts, sends emails and push notifications.
+The indicator analyzes candlestick charts and tries to find possible reversal points — patterns. Once a possible point is found, the indicator plays a sound alert and sends emails and notifications to a smartphone.
+Literally, the condition is as follows:
+If there is a growing candlestick followed by another growing candle, which does not go beyond the shadow of the previous candlestick, and the second candlestick is followed by a falling candlestick, the body of which exceeds the size of the previous growing candlestick, we assume that there will be a reversal toward the SELL direction.
+If there is a falling candlestick followed by another falling candle, which does not go beyond the shadow of the previous candlestick, the third candlestick should be rising and its body should exceed the body of the previous falling candlestick, we assume that there will be a reversal toward the BUY direction.
+In addition to analyzing candlesticks, the indicator also analyzes tick volumes — increase, decrease, as well as the size of the first candlestick. If the size of the first candlestick in the pattern exceeds the value in pips specified in the settings, then the volume analyzer is turned off.
+The indicator is presented as colored candlesticks. The color is bright if a candlestick goes in trend direction, and is pale if against the trend.
+This indicator was first implemented in MQL4 and published in the
+CodeBase
+on 04.10.2016.
+Fig1. The ThreeCandles indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17676

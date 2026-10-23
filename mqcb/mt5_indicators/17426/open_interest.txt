@@ -1,0 +1,16 @@
+The
+Open Interest
+indicator shows the parameter "Total volume of open positions -
+SYMBOL_SESSION_INTEREST
+".
+Explanation of indicator colors:
+If the indicator bar is
+blue
+, open interest has grown since the bar emergence, if
+red
+, open interest has decreased.
+A slight modification in the indicator:
+Now, after the first launch, if prev_calculate==0, the indicator will not re-initialize its indicator buffers. The result: for example, we run the indicator on a chart, the indicator worked for a while and then suddenly prev_calculate==0 is received (can be due to connection loss or history errors) - in this case, the indicator will not re-initialize its indicator buffers, but will continue normal operation.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17426

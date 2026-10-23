@@ -1,0 +1,9 @@
+The Exp_MaRsi-Trigger Expert Advisor realized the trading system based on the
+MaRsi-Trigger
+indicator of three states of the market. The signal is formed when a bar is closing if there is change in trend direction fixed by the indicator. In order to get trading signals to speed the work of the Expert Advisor, the MaRsi-Trigger indicator is not used in the Expert Advisor itself. For these purposes the code is implemented on the basis of the initial technical indicators and the ColorMaRsi-Trigger indicator is activated only for visualization when testing the trading system.
+Fig. 1. The instances of history of deals in the chart.
+Testing results for 2011 at USDCHF H4:
+Fig. 2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1129

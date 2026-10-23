@@ -1,0 +1,16 @@
+One of Larry Williams's trade recommendations /1/ is the accounting of the trade diapason of the previous day.
+It is a bit laborious to implement this recommendation with many symbols.
+The suggested script marks the calendar days with vertical and horozontal lines. It relocates the lines if launched repeatedly.
+Three colors of the lines are used: the color of time lines, the color of opening and the color of closing.
+The colors are set during the compilation. It is made for the convenience of script calling.
+1. Larry Williams. Long-Term Secrets to Short-Term Trading, Wiley, 1999.
+Advices:
+put the file to the
+exprerts
+/
+scripts folder
+, compile it. Call it from the Navigator window by double-click.
+On the picture: the colors of time lines and opening prices are similar, the color of closing price is purple.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8252

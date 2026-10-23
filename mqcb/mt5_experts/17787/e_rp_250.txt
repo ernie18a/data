@@ -1,0 +1,20 @@
+Author of the idea
+—
+avals8
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+An Expert Advisor based on the
+RPoint
+indicator. The chart layout in X-points reversal. A high-quality ZigZag based on HiLo.
+Fig.1 The RPoint indicator
+‌
+Results for the six months on the H3 timeframe with default settings on USDJPY:
+‌
+and on EURUSD:
+‌
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17787

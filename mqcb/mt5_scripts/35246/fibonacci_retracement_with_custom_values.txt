@@ -1,0 +1,2 @@
+This script draws Fibonacci Retracement OBJ_FIBO with options to add your own custom values
+Add Custom values seperated by commas and the script will draw fibonacci retracement levels with your custom value

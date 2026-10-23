@@ -1,0 +1,12 @@
+Real author:
+Inkov Evgeni
+Normalized version of the
+Begin_Trend_v01
+indicator. A red or green histogram appears when there are strong trends in the opposite direction, when the upper or lower line crosses the zero line.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 12.03.2014.
+Fig.1. The Begin_Trend_v02 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12917

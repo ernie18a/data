@@ -1,0 +1,3 @@
+Description:
+The InsideBars indicators can be used for trading with breakout Strategies.
+Image:

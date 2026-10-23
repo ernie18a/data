@@ -1,0 +1,6 @@
+ZigZag allowing to build
+Fibo fans
+on the last two ZigZags.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/607

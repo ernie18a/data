@@ -1,0 +1,3 @@
+Author:
+Tim Hyder aka Hiachiever
+Indicator TDI-With Alerts. The description look in a code.

@@ -1,0 +1,14 @@
+The
+PercentageCrossover
+indicator with the timeframe selection option available in the indicator input parameters:
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Indicator chart period (timeframe)
+To provide correct operation of the indicator, place the compiled PercentageCrossover.mq5 indicator file in terminal_data_folder\MQL5\Indicators.
+Fig. 1. Indicator PercentageCrossover_HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18316

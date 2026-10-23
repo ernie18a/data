@@ -1,0 +1,7 @@
+Author:
+IgorAD
+, modified by cja.
+Indicator MTF_HI_LOW_v1. The author puts the description
+here
+.
+Indicator MTF_HI_LOW_v1

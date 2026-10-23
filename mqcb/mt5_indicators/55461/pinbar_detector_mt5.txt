@@ -1,0 +1,39 @@
+Pinbar Detector
+is a MetaTrader indicator that tries to detect Pinbars (also known as "Pin-bar" or "Pin bar") and marks them by placing a "smiling face" symbol below the bullish Pinbars and above the bearish Pinbars. It is a pure price action indicator, which is not using any standard technical indicators in its code. The configuration of Pinbar detection can be done via the indicator's input parameters. Pinbar Detector can issue platform alerts and email alerts on detection. The indicator is available both for MT4 and MT5 versions of the trading platform.
+Input parameters
+CountBars
+(default = 0) — the maximum number of bars, on which to detect the pinbars. 0 = all.
+DisplayDistance
+(default = 5) — the distance from the candles to the pinbar "smiling face" symbols.
+UseAlerts
+(default = true) — tells the indicator to issue platform alert with sound on Pinbar detection.
+UseEmailAlerts
+(default = false) — tells the indicator to issue an email alert on Pinbar detection. Email should be properly configured in MetaTrader via
+Tools->Options->Email .
+UseNotificationAlerts
+(default = false) — tells the indicator to issue a push-notification alert on Pinbar detection. Notifications should be properly configured in MetaTrader via
+Tools->Options->Notifications .
+UseCustomSettings
+(default = false) — tells the indicator to use custom Pinbar detection parameters described below.
+CustomMaxNoseBodySize
+(default = 0.33) — maximum allowed body/length ratio for the Nose bar.
+CustomNoseBodyPosition
+(default = 0.4) — Nose body should be positioned in the top (bottom for bearish pattern) part of the Nose bar.
+CustomLeftEyeOppositeDirection
+(default = true) — tells the indicator that the Left Eye bar should be bearish for bullish Pinbar, and bullish for bearish Pinbar.
+CustomNoseSameDirection
+(default = true) — tells the indicator that the Nose bar should be of the same direction as the pattern itself.
+CustomNoseBodyInsideLeftEyeBody
+(default = false) — tells the indicator that the Nose body should be inside the Left Eye body.
+CustomLeftEyeMinBodySize
+(default = 0.1) — minimum size of the Left Eye body relative to the bar length.
+CustomNoseProtruding
+(default = 0.5) — minimum protrusion of the Nose bar relative to the bar length.
+CustomNoseBodyToLeftEyeBody
+(default = 1) — maximum size of the Nose body relative to the Left eye body.
+CustomNoseLengthToLeftEyeLength
+(default = 0) — minimum Nose length relative to the Left Eye length.
+CustomLeftEyeDepth
+(default = 0.2) — minimum depth of the Left Eye relative to its length. Depth is length of the part of the bar behind the Nose.
+CustomMinimumNoseLength
+(default = 1) — minimum nose candlestick length in points.

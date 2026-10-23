@@ -1,0 +1,5 @@
+It is the updated version of my Trendsignal indicator placed on codebase here
+http://codebase.mql4.com/en/code/10238
+.
+This version draws lines with respect to signals on chart so as to see the potential pips can be covered on chart, rest all things are same as previous version.
+Following on 1H - 4H chart can easily grab upto 50-100 pips with possible low risk/reward ratio, works on all currency pairs also on commodities.

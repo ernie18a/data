@@ -1,0 +1,16 @@
+The indicator's principle of operation is described in Bulashev's book Statistics of a Trader or
+here
+.
+Parameters Used
+extern int EMA_period=89; // EMA period
+extern int price_mode=0; // Priced used 0 - PRICE_CLOSE,
+// 1 - PRICE_OPEN,
+// 2 - PRICE_HIGH,
+// 3 - PRICE_LOW,
+// 4 - PRICE_MEDIAN,
+// 5 - PRICE_TYPICAL,
+// 6 - PRICE_WEIGHTED
+extern int mode_ema=0; // Error processing depth, maximum 6
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8205

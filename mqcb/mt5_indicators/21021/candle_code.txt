@@ -1,0 +1,44 @@
+Indicator Candle_Code displays in a separate window the "code" of candlesticks as lines built on the ratio of each candle's parameters. Each parameter of one candlestick has its weight within the general view of its candle:
+Candlestick body size;
+Upper candlestick shadow size;
+Lower candlestick shadow size;
+Candle direction;
+A gap between the adjacent candlesticks (the current one and the previous one).
+If the parameter weight exceeds the doubled average range, the value of its weight will be assigned to it; if it does not, then its weight in the general candle view will be its weight multiplied by the parameter range and divided by its doubled average range.
+Then, on the data calculated for each candle, a moving average (Weights Data) will be built that displays in the chart the data of all candlesticks available within the history (displaying this line is disabled by default). Then this line is smoothed to display the primary indicator line (Primary MA). The secondary indicator line (Secondary MA) is built by smoothing the primary one.
+The indicator has 10 input parameters:
+Body size weight
+- candlestick body weight;
+Upper shadow weight
+- upper candle shadow weight;
+Lower shadow weight
+- lower candle shadow weight;
+Candle direction weight
+- candle direction (bullish/bearish) weight;
+Gap weight
+- weight of the distance between the adjacent candles;
+Show weights data line
+- whether to display the line of the general calculated weight data of each candlestick or no (Yes/No);
+First MA period
+- period of calculating the first smoothing moving average to be calculated by the line of candlestick weights;
+First MA method
+- first moving average calculation method;
+Second MA period
+- period of calculating the second smoothing moving average to be calculated by the data of the first MA;
+Second MA method
+- second moving average calculation method.
+Exemplary calculations of the candlestick body weight:
+If Abs(Open-Close) >= Avg(Open-Close)
+BodySize = BodyWeight
+otherwise
+BodySize = BodyWeight * (Abs(Open-Close)) / Avg(Open-Close)
+where:
+Abs(Open-Close) = absolute size of the candlestick body
+Avg(Open-Close) = average size of the candlestick bodies over the period of history data
+BodyWeight = candlestick body weight defined in the parameters
+Fig 1. Default weights.
+Fig. 2. Candlestick direction weight = 512
+Figure 2. Default weights, Show data = Yes
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21021

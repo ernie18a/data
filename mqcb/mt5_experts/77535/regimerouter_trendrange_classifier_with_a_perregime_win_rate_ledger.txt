@@ -1,0 +1,174 @@
+RegimeRouter — trend/range classifier with a per-regime win rate ledger
+The problem
+A trend-following rule loses money in a range. A mean-reversion rule gets destroyed in a trend. Most EAs pick one and hope the market cooperates. The usual fix is a single ADX filter. ADX measures one thing, directional strength, and says nothing about whether returns are actually persistent or mean-reverting.
+How it classifies
+On every closed bar it measures three independent properties of the recent price series.
+ADX
+— classic directional strength.
+Hurst exponent
+— rescaled range (R/S) analysis of log returns. Above 0.5 the series is persistent. Below 0.5 it is anti-persistent. At 0.5 it is a random walk.
+Lag-1 autocorrelation
+— whether a move tends to be followed by another move the same way, or by a snap back.
+Each casts a vote. Plus one for trend, minus one for range, zero for undecided. The votes are summed. If the sum clears
+InpMinVotes
+in either direction the regime is TREND or RANGE. Otherwise it is NEUTRAL and the EA does not trade at all. If any one of the three cannot be computed it does not vote and the bar is NEUTRAL. Requiring agreement is the point. One indicator alone is a coin flip with extra steps.
+How it routes
+Regime
+Module
+TREND
+Break of the N-bar high or low, taken only in the direction the fast and slow EMA are already pointing.
+RANGE
+Fade a stretched z-score of price against its own moving average. Buy the low tail, sell the high tail.
+NEUTRAL
+Nothing.
+The ledger
+Every position is opened with a magic number of
+InpMagicBase
+plus the regime id, so the regime that produced a trade is stamped on the trade itself. On startup the EA walks the deal history, groups deals by position id, and rebuilds the record. It survives a restart and it survives being moved to another terminal.
+For each module it reports the raw win rate, the
+Wilson 95% lower bound
+, the
+breakeven win rate implied by that module's own average win and average loss
+, the profit factor, and a verdict.
+TREND 96 tr 38 W raw 39.6% wilson95 30.4% breakeven 34.2% PF 1.26 net +734.84 [UNPROVEN]
+The middle two numbers are the ones that matter. A 2R trend follower is profitable above roughly 34%. A 1R fade needs better than 50%. And a raw win rate from six trades is not evidence of anything. The verdict is simply whether the lower bound clears breakeven, which is the only version of "this module works" that survives a small sample.
+The A/B switch
+InpForceRegime
+disables the router and forces every trade through one module. Run the same symbol and the same period three times — AUTO, then ALWAYS_TREND, then ALWAYS_RANGE — and you get a direct measurement of whether the classifier is adding anything. The three readings are still logged in a forced run, so you can see how the forced module performed on the bars the router would have refused.
+Do that before trusting it. The routing idea is a hypothesis, not a result.
+Backtest
+H1 · 2026.01.01 to 2026.09.20 · 10 000 USD · Random delay enabled · all inputs at default. Two symbols, both shown.
+EURUSD H1
+Metric
+Value
+Total net profit
++900.42
+Gross profit / gross loss
+3 712.84 / 2 812.42
+Profit factor
+1.32
+Expected payoff
+9.00
+Recovery factor
+1.71
+Total trades
+100
+Maximal balance drawdown
+505.32 (4.56%)
+Maximal equity drawdown
+527.80 (4.76%)
+Module
+Trades
+Wins
+Raw
+Wilson 95% low
+Net
+TREND
+96
+38
+39.6%
+30.4%
++734.84
+RANGE
+4
+4
+100.0%
+51.0%
++165.58
+96 + 4 = 100 trades and +734.84 + 165.58 = +900.42, so the ledger reconciles exactly against the tester report.
+XAUUSD H1 — same EA, same settings, same period
+Metric
+Value
+Total net profit
+−1 554.11
+Final balance
+8 445.89
+Total trades
+85
+Module
+Trades
+Wins
+Raw
+Wilson 95% low
+Net
+TREND
+78
+26
+33.3%
+23.9%
+−1 576.33
+RANGE
+7
+4
+57.1%
+25.0%
++22.22
+78 + 7 = 85 trades and −1 576.33 + 22.22 = −1 554.11. This one loses money. I am publishing it next to the winner on purpose, because a listing that shows only the symbol that worked tells you nothing about the EA.
+What that result does and does not show
+Read this part before you use it.
+The TREND module is not proven on either symbol.
+On EURUSD its average win was 93.35 and its average loss 48.49, so it needed about 34.2% of trades to win just to break even. It won 39.6%. But the Wilson 95% lower bound on that win rate is 30.4%, which is below breakeven. At this sample size the result is consistent with no edge at all. On XAUUSD the same module read 33.3% raw and 23.9% at the lower bound, and it lost money. That is the same verdict in both cases: not enough evidence yet.
+It would take roughly 320 trades
+at the EURUSD win rate for the lower bound to clear breakeven. One symbol on H1 produced 100 in about nine months, so that is a portfolio problem, not a longer-backtest problem.
+The RANGE module is essentially untested.
+Four trades on EURUSD, seven on XAUUSD. The 100% win rate on EURUSD means nothing, which is exactly why the Wilson column exists.
+There is no out-of-sample test.
+One period, one timeframe, two symbols.
+Modelling was "Every tick", not real ticks.
+Exits are left to the broker's SL and TP, so the intrabar path matters. Re-run it on real ticks before drawing conclusions.
+I am publishing it because the measurement apparatus is the useful part, not because I have a validated edge to sell you. Run the A/B. If the router does not beat its own two modules on your symbol, that is worth knowing too.
+Execution notes
+Signals are evaluated on bar close, so this is built for M15 and higher.
+Positions open with no stops, then the stops are attached from the real fill price. A stop computed from a pre-trade snapshot can already be invalid by the time the order fills.
+If attaching the stops fails the position is closed immediately rather than left unprotected.
+Stop distances are clamped to the symbol's own stops level and freeze level.
+Exits belong to the broker's SL and TP. There is no manual timed force-close.
+Optional ATR trailing stop for trend trades, applied at most once per bar and never on the entry bar.
+One position at a time. On a netting account a second order on the same symbol merges into the existing position instead of becoming its own trade, which would silently corrupt the ledger.
+Risk-based lot sizing, a daily loss limit, a daily trade cap, a spread filter, a minimum take-profit-to-spread ratio, and an optional session filter.
+Main inputs
+Input
+Default
+What it does
+InpForceRegime
+Auto
+Force one module, to A/B the classifier
+InpMinVotes
+2
+Votes out of three needed to commit to a regime
+InpADXTrendLevel
+/
+InpADXRangeLevel
+25 / 20
+ADX vote thresholds
+InpHurstBars
+256
+Bars of returns behind the Hurst estimate
+InpHurstAdaptive
+off
+Judge Hurst against its own distribution instead of fixed levels
+InpAutoCorrThreshold
+0.05
+Autocorrelation must clear this to vote
+InpBreakoutBars
+20
+Trend module: N-bar high/low to break
+InpRangeZEntry
+2.0
+Range module: z-score at which to fade
+InpRiskPercent
+0.5
+Risk per trade, % of balance
+InpMagicBase
+772000
+Regime id is added to this
+Note on the Hurst threshold
+There is an input called
+InpHurstAdaptive , off by default.
+The textbook trend/range line for the Hurst exponent is 0.5. In practice that line is in the wrong place. The R/S estimator is biased upward on a finite sample, so a 256-bar estimate of an ordinary series lands well above 0.5. Measured on EURUSD H1 the readings averaged 0.568 and dropped below 0.45 only twice in 419 observations. Against a fixed 0.45 / 0.55 band that voter is not measuring anything. It is a near-permanent vote for TREND.
+Turning
+InpHurstAdaptive
+on drops the absolute scale and asks a relative question instead: is the series more persistent than this symbol has recently been? The last N readings are kept and the vote is cast on percentiles of that history rather than on 0.5.
+The cost of that is real. By construction the voter then votes RANGE on a fixed share of bars whatever the market is doing. So it is a switch, not a rewrite. It is off by default because the backtests above were run with it off, and I do not want the shipped default to be a setting I have no results for.
+No strategy is guaranteed to be profitable. This gives you a structure to test with the measurement built in. It does not give you an edge.
+— Ali Rajput

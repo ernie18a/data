@@ -1,0 +1,18 @@
+The indicator automatically calculates the Asian session (00:00-08:00 server time) high and low and visualizes them as horizontal levels on the chart. During the London session it monitors price action around these levels and produces buy/sell signals on confirmed breaks and retests.
+The indicator is intended for manual scalping of the London open. It draws the current session range, highlights breakouts and retests, and does not repaint signals on closed bars.
+Input parameters:
+SessionStartHour
+/
+SessionEndHour
+- customize the Asian session hours (default 00:00-08:00 server time);
+UseTrendFilter
+- require EMA trend confirmation before signals;
+UseVolumeFilter
+- skip low-volume moves;
+SignalMode
+- alerts, push notifications or arrows only;
+StopLevelPips
+/
+TakeLevelPips
+- trade management defaults.
+The indicator repaints nothing on closed bars and works on any symbol with M1, M5 or M15 timeframe.

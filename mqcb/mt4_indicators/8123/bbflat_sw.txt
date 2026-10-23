@@ -1,0 +1,10 @@
+Author:
+by Raff
+Indicator BBflat_sw.
+External Variables:
+period=9;
+shift=0;
+method=0;
+price=0;
+deviation=1.5;
+BBflat_sw

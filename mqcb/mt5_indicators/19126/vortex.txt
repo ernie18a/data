@@ -1,0 +1,13 @@
+The author of the idea
+:
+Neil
+,
+the mq5 code author
+:
+barabashkakvn
+.
+The indicator was described in the article "The Vortex Indicator" published in the January issue of "Technical Analysis of Stocks & Commodities" (2010).
+A detailed description of the indicator and the idea of trading based on it were described in the referenced article.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19126

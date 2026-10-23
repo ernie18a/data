@@ -1,0 +1,10 @@
+Real author:
+Newdigital
+A standard high-frequency filter.
+This indicator was first implemented in MQL4 and published in the
+Code Base at mql4.com
+on 05.02.2008.
+The KGHP indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1939

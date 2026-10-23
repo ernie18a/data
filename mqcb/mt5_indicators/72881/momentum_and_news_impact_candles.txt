@@ -1,0 +1,6 @@
+Providing a clearer view of market direction and price activity with candles that are painted by bullish momentum (green), bearish momentum (red), weak or no momentum (gray), and news impact/candle expansion (silver).
+Bullish momentum  = Green (0.0)
+Bearish momentum = Red (1.0)
+Weak momentum = Gray (2.0)
+News impact (candle expansion) = Silver (3.0)
+Default momentum period is 4 which finds sharp momentum changes

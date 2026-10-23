@@ -1,0 +1,13 @@
+Real author:
+Eng. Waddah Attar
+A trend indicator that uses the MACD values multiplied by the averaged price of the financial asset, made as a colored histogram.
+The indicator uses the classes of SmoothAlgorithms.mqh library (copy it to <terminal_data_folder>\MQL5\Include). The use of the classes was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+This indicator was first implemented in MQL4 and published in
+Code Base
+on 07.03.2007.
+Fig1. The Waddah_Attar_Trend indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16390

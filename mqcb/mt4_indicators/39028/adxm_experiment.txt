@@ -1,0 +1,5 @@
+Original metatrader 5 version was posted here :
+ADXm (experiment)
+. Not going to repeat details here too - just posting a metarader 4 version
+Recommendations:
+please read the details at metatrader 5 original link

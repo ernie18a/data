@@ -1,0 +1,9 @@
+A non-invasive candle time that can be positioned next to price or near a corner.
+Color, font, size and align (anchor) freely customizable.
+Input parameters:
+color lblColor=C'00,66,99';                                                // Color of the label
+int fontSize=8;                                                                 // Size of the label font
+ENUM_ANCHOR_POINT pAnchor = ANCHOR_LEFT_LOWER;  // Anchor of the label a sort of align
+bool nextToPriceOrAnchor = true;                                      // Position near the price close or to Corner
+ENUM_BASE_CORNER pCorner = CORNER_LEFT_LOWER;    // Corner position of the label
+string fontFamily = "Tahoma";                                           // Font family of the label

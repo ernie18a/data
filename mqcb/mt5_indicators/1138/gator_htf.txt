@@ -1,0 +1,8 @@
+Bill William's
+Gator Oscillator
+which is drawn on the high and displayed on the lower timeframe.
+Place the GatorCalc.mq5 indicator to the terminal_data_folder\MQL5\Indicators.
+Fig.1 The Gator_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1138

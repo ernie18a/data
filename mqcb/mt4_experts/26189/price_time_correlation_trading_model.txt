@@ -1,0 +1,8 @@
+The price-time correlation EA uses the value and direction of the price-time correlation as a basis for trade signals.
+Two trade strategies, Trend and Reversal, are available.
+In addition, four methods of computing the correlation value are provided:
+Pearson, Spearman, Kendall and Fechner methods.
+These methods are provided in the accompanying include file and are based on the MQL5 correlation indicators developed by A. Fedsov and provided with his article “Practical Application of Correlations in Trading”.
+The ADX and Bollinger Bands indicator values are used as additional trade entry filters along with time of day. An open trade can be closed based on a trade signal reversal.
+This EA uses the H1 EURUSD chart and is tested from Jan 2010 thru July 2019.
+This correlation based trading strategy is robust and works well across several currency pairs and over large time periods, as far back as 2004.

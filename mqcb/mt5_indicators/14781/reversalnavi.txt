@@ -1,0 +1,14 @@
+Real author:
+fxborg
+The indicator shows the entry point that follows the reversal bar.
+Display:
+blue/red mark - indicates that a reversal has occurred;
+blue/red arrow - reversal bar;
+blue/red line - shows the middle of the range, which was formed after the reversal bar.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 13.07.2015.
+Figure 1. The ReversalNavi indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14781

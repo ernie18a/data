@@ -1,0 +1,4 @@
+The number of days to colour can be set; you can change the two colours used.
+No_of_days_to_colour
+Colour1
+Colour2

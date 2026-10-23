@@ -1,0 +1,6 @@
+Syndicate Trader is coded from the basic VSA (Volume Spread Analysis) study by Wyckoff.
+EA will identify potential No Demand and No Supply strike zones and excecute buy or sell market orders (Instant execution).
+The robot will trail the profits. Extern parameters are available for different set files. I welcome any further input from proffessional VSA traders so that i can make this EA better. I believe it has got more potential than most of my previous EA's.
+EA will sell on No demand bars and won't buy. I am working on the trade logic for that, and I welcome any input from VSA traders.
+External parameters there for tweaking for optimum results. Attached is a test result for the last quarter last year 2014 (Sept 1st - Dec 31st).
+Test results:

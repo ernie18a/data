@@ -1,0 +1,2 @@
+MetaTrader 5 version of NonLag MA (not a conversion but a new one — it is a "pure non lag ma").
+It has all the stuff that MetaTrader allows : it is a non-repainting one, it can be applied to previous indicator data (so it can be applied to any data or any indicator you use) and it is fast. Code is reusable (nonlag MA is written as a function) which makes it suitable for use in any other code.

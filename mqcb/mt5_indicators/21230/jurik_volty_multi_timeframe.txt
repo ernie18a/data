@@ -1,0 +1,13 @@
+About Jurik smoothing there is one part that is less known: Jurik smoothing is adaptive indicator.
+It is using something that is sometimes refereed to Jurik Volty (a sort of market volatility) for that adapting. This is the indicator that is calculating and showing periods of elevated or lesser volatility volatility as a standalone indicator. Parameters are simple:
+Timeframe.
+Volatility period.
+Price.
+Compared to
+Jurik Volty
+, in this version timeframes supported are all the possible timeframes supported by MetaTrader 5 and it has 3 "special" timeframes:
+Next higher timeframe: first higher timeframe compared to active chart.
+Second higher timeframe: second higher timeframe compared to active chart.
+Third higher timeframe: third higher timeframe compared to active chart.
+If some of these 3 timeframes are used, then the timeframe is set automatically as you change the timeframe of the chart.
+PS: do not forget that the indicator is not directional. The color change is showing periods of elevated or lessened than average volatility - not the expected direction of market prices.

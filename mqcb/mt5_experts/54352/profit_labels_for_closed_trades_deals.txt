@@ -1,0 +1,5 @@
+A simple demonstration to show how it's possible to code profit and loss labels for the most recently closed deals.
+This EA will place dummy trades, so you can see how it looks in the strategy tester. The labels will only form on deals from now onwards (not on trade history).
+I coded a solution using the Canvas library, and also the standard library. There are two inputs which can give you the option between using Canvas vs. using text and rectangle objects from the standard library. Feel free to improve upon the code if you think there's yet again a better solution.
+Using canvas:
+Using standard objects:

@@ -1,0 +1,4 @@
+MACD, as it is in its original state, is an unbound indicator. We already introduced a couple of versions that are normalized in order to have predictable bounds. This versions extends that more : it is adding self adjusting signal line to it and that (implicitly) introduces neutral zones too
+Usage:
+You can use it as any other MACD or use the color changes as signals
+PS: the "big picture" example too

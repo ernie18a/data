@@ -1,0 +1,5 @@
+A variation of Deviation Stops (DevStops) indicator.
+Some are wrongly calling this version a
+Kase DevStops
+(which it is not - Kase DevStops indicator is calculated in a quite different way), but this version has its good points too and can be used in regular support/resistance mode.
+Additionally each DevStop value is colored according to the slope (trend) of the line - when all are aligned in the same direction, it can be treated as a confirmed trend change.

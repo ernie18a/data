@@ -1,0 +1,9 @@
+The indicator shows the position of the current price in a channel.
+First it determines the channel boundaries. The upper boundary is defined as the maximal value of High[], the lower boundary is determined from the minimal values of Low[]. If the current value of Close[0] is located in the middle of the channel, its value is equal to 0. The price position is determined relative to the upper (from 0 to 10) and lower (from 0 to -10) channel boundaries.
+Input parameters:
+Period - number of bars, used in calculation of the channel.
+X Coordinate - the horizontal shift relative to the lower right corner.
+Y Coordinate - the vertical shift relative to the lower right corner.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/194

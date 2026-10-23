@@ -1,0 +1,12 @@
+Real author:
+mishanya
+The indicator calculates forecast prices of the daily price range. It shows resistance and support levels of current day using the prices of the previous day. The formulae for calculation of price levels can be found in
+"The New Science of Technical Analysis"
+book by Thomas R. DeMark.
+The indicator was first implemented in MQL4 and published in
+CodeBase at mql4.com
+11.11.2008.
+DailyRange indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/783

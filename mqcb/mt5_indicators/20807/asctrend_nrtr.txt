@@ -1,0 +1,7 @@
+Indicator
+ASCtrend
+with the NRTR line of possible stop order locations.
+Fig.1. Indicator ASCtrend_NRTR
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20807

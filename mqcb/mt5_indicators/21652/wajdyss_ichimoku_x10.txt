@@ -1,0 +1,149 @@
+Indicator Wajdyss_Ichimoku_x10 shows the color of the
+Wajdyss_Ichimoku_Candle
+indicator candlesticks from ten different timeframes from the bar defined in the indicator input parameters. The trend continuation is shown as a square, while the trend change is shown as a circle.
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+ENUM_TIMEFRAMES
+TimeFrame0=
+PERIOD_H1
+;
+//chart 1 period
+input
+ENUM_TIMEFRAMES
+TimeFrame1=
+PERIOD_H2
+;
+//chart 2 period
+input
+ENUM_TIMEFRAMES
+TimeFrame2=
+PERIOD_H3
+;
+//chart 3 period
+input
+ENUM_TIMEFRAMES
+TimeFrame3=
+PERIOD_H4
+;
+//chart 4 period
+input
+ENUM_TIMEFRAMES
+TimeFrame4=
+PERIOD_H6
+;
+//chart 5 period
+input
+ENUM_TIMEFRAMES
+TimeFrame5=
+PERIOD_H8
+;
+//chart 6 period
+input
+ENUM_TIMEFRAMES
+TimeFrame6=
+PERIOD_H12
+;
+//chart 7 period
+input
+ENUM_TIMEFRAMES
+TimeFrame7=
+PERIOD_D1
+;
+//chart 8 period
+input
+ENUM_TIMEFRAMES
+TimeFrame8=
+PERIOD_W1
+;
+//chart 9 period
+input
+ENUM_TIMEFRAMES
+TimeFrame9=
+PERIOD_MN1
+;
+//chart 10 period
+input
+uint
+SignalBar=
+1
+;
+//Bar number to receive a signal (0 - current bar)
+//---- Parameters of wajdyss_Ichimoku
+input
+uint
+Kijun=
+26
+;
+//---- Indicator drawing parameters
+input
+color
+CpColor=
+clrBlueViolet
+;
+//indicator name color
+input
+color
+UpUpColor=
+clrDeepSkyBlue
+;
+//color of growing trend and growing candlestick
+input
+color
+UpDnColor=
+clrBlue
+;
+//color of growing trend and falling candlestick
+input
+color
+ZrColor=
+clrGray
+;
+//color without changes
+input
+color
+DnUpColor=
+clrBrown
+;
+//color of falling trend and growing candlestick
+input
+color
+DnDnColor=
+clrMagenta
+;
+//color of falling trend and falling candlestick
+input
+int
+FontSize=
+15
+;
+//font size
+input
+type_font FontType=Font14;
+//font type
+input
+ENUM_BASE_CORNER
+WhatCorner=
+CORNER_LEFT_LOWER
+;
+//location corner
+input
+uint
+Y_=
+20
+;
+//vertical location
+input
+uint
+X_=
+5
+;
+//horizontal location
+For the indicator to operate, the
+Wajdyss_Ichimoku_Candle.ex5
+indicator must be added to the <terminal_data_directory>\MQL5\Indicators folder.
+Fig. 1. wajdyss_Ichimoku_x10
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21652

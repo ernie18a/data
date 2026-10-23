@@ -1,0 +1,7 @@
+Theory:
+Ehlers' Fisher transform has a long history of being plain wrongly coded (as the famous "solar wind") or wrongly coded because of misinformation. Some fault is the fault of coders (like the "solar wind" case). But some is caused by John Ehlers himself. In his book he introduces one formula at page 7 when showing TS code, and only one page later, when showing EFS code, the formula is changed. The difference is that in the EFS formula he sets the initial highest high and lowest low values to high and low of the current bar and then he checks if the prices exceed those initial values, while in TS code that initial value assignment does not exist at all. The difference might not seem big, but it exists and the final result is different (sometimes significantly).
+This version:
+Allows you to chose between the two modes : mode without the high/lows of current bars included (default) and mode with those prices included.
+Usage:
+You can use the color change for signals.
+Comparison of the two modes - upper is the TS mode, lower is the EFS mode. In general the EFS mode (when current bar high and low are included in the calculation) tends to lag behind the TS mode.

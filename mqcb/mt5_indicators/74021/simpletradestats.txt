@@ -1,0 +1,45 @@
+Statistics on closed trades. The indicator displays trading results, filtered by magic number.
+Parameters:
+FilterCurrentMagic =
+true
+;
+// Filter by current Magic
+CurrentMagicNumber =
+0
+;
+// Magic number (0 = auto)
+ProfitColor =
+clrLime
+;
+// Profit colour
+LossColor   =
+clrRed
+;
+// Colour of losses
+NeutralColor =
+clrGray
+;
+// Neutral colour
+HistoryDays  =
+0
+;
+// Time period (0 = all time, 1 = today, 7 = week, 30 = month)
+VertOffset   =
+0
+;
+// Vertical offset
+FontSize     =
+10
+;
+// Font size
+FontName     =
+"Arial"
+;
+// Font name
+ShowDateTime =
+true
+;
+// Display date/time
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/74021

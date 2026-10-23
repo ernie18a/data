@@ -1,0 +1,8 @@
+Real author:
+Based on the code by Igor V. Kim aka KimIV. Improved the code at the request of many traders.
+This Expert Advisor calculates the profit or loss in the deposit currency of all the market orders opened on the current chart, at the desired price of the symbol. The calculations are performed using the horizontal line placed by the trader, with the "LP" name specified in the parameters.
+Create a line and rename it to "LP". When the line is moved, the profit/loss is recalculated, the profit/loss is shown for the price where the line is placed.
+If MagicNumber is specified, then only the orders with this magic will be considered in the calculation. At MagicNumber -1 any orders of the current symbol will be used for the calculation.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13330

@@ -1,0 +1,5 @@
+Real author:
+Nitin
+A Buy arrow is printed when a bullish Heiken Ashi candle get closed after a bearish candle.
+A Sell arrow is printed when a bearish Heiken Ashi candle get closed after a bullish candle.
+Signals can only appear in an alternate manner i.e. only a buy signal after sell and vice versa.

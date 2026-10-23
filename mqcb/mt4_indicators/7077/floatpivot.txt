@@ -1,0 +1,9 @@
+The substantial difference from the known indicators of probable channels is that it plots an estimated channel, and not the actual based on history. It is good for displaying the breakouts and rebounds. To improve the display, it incorporates a small smoothing by averaging the close price used in calculations. The indicator period depends on the used timeframe, but it is recommended not to lower it.
+Possible uses:
+Trading the rebound from the channel boundary or the reference center after a long movement of the price between the reference center and the upper of the lower boundary;
+Opening positions during breakouts of the outer boundaries of the channel.
+Currently, the possible operation modes are being checked.
+FloatPivot
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7077

@@ -1,0 +1,7 @@
+Author: HoggZilla
+The Avalanche_v1.0 Expert Advisor. More details can be read
+here
+, in English.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7651

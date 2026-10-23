@@ -1,0 +1,3 @@
+Clarity index is a purely volume based indicator which is constructed on basis of volume, range and positive/negative candle count. It reflects the strength of trend with respect to volume.
+Usage :
+You can use the zero line cross for trend confirmation.

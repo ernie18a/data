@@ -1,0 +1,3 @@
+Author: not specified
+J_TPO Velocity indicator. The modified version of the indicator
+J_TPO Clean

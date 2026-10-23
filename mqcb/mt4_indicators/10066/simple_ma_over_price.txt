@@ -1,0 +1,5 @@
+Simple Calculation of Price Changes over X Bars (Set to Alpha).
+But with only this will become a wild line.
+For this over the calculated line i put an fast MA (red) and slow MA (yellow) for more smooth lines and more clear signals on crosses of both MAs
+Recommendations:
+With some Filters (Volatility for Example) as Entry. Without good to use for Exit or set some StopLoss

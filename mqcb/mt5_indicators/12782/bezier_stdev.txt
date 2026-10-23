@@ -1,0 +1,16 @@
+Original author:
+Lizhniyk E
+The
+Bezier
+indicator with additional trend strength indication using colored dots based on the standard deviation algorithm.
+If the standard deviation of the Bezier indicator is higher than the dK input parameter value, then a colored dot appears on the moving average. Its color corresponds to the current trend direction.
+input
+double
+dK=
+2.0
+;
+// Square-law filter coefficient
+Fig. 1. The Bezier_StDev indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12782

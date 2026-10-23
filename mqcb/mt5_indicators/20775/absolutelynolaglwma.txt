@@ -1,0 +1,5 @@
+A moving average using double LWMA-averaging and implemented in color.
+Fig.1. Indicator AbsolutelyNoLagLWMA
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20775

@@ -1,0 +1,16 @@
+Price Alert plays sound alerts when the price reaches certain levels, specified by trader. It supports three types of signals: the first is used when the price rises above the specified level (shown as a green line on the chart); the second is used when the price falls below a certain level (red line on the chart); the third is used when the price reaches a strictly specified level (yellow line).
+All signals disabled after triggering and can be re-enabled with new levels. If you use the feature of sending the signal by email, do not forget to configure the SMPT server and to specify the email address in your MetaTrader platform options window.
+Input Parameters:
+SoundWhenPriceGoesAbove
+(default = 0.0) — if the price rises above this value, a signal is generated.
+SoundWhenPriceGoesBelow
+(default = 0.0) — if the price falls below this value, a signal is generated.
+SoundWhenPriceIsExactly
+(default = 0.0) — if the price reaches this exact value, a signal is generated.
+SendEmail
+(default = false) — if true and the correct email sending parameters in the MetaTrader platform options window are set, then the signal will be sent to the email address as well.
+Recommendations:
+This indicator can be used as a direct signal for action, since it does not generate signals to buy or sell. You can just use it when you need sound notification on reaching certain price levels. Then you can use the moment to work with the market. You can leave some input parameters at zero value to disable the corresponding signals.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13192

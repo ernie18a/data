@@ -1,0 +1,14 @@
+The indicator shows the current date, time, the current spread and stop levels.
+Parameters:
+Time
+- you can select local time or server time.
+Shift from the right edge
+-
+Shift from the right edge in pixels.
+TextColor
+-
+Text color
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1804

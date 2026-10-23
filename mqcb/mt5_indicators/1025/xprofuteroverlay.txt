@@ -1,0 +1,7 @@
+Real author:
+Unknown
+Everyone knows that it is impossible to forecast the future, especially on Forex market. But it does not prevent some developers from trying... XprofuterOverlay shows the line of possible price movement.
+XprofuterOverlay
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1025

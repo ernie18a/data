@@ -1,0 +1,16 @@
+Author of the idea
+—
+Piotr
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+This EA is based on fast DeMarker and Stochastic indicators. It has hidden Stop loss and Take profit levels. Stop loss is set by the system once the minimum Take profit is obtained.
+Recommendations:
+Maximum loss is 30 pips
+Maximum timeframe is M5
+EURUSD / GBPUSD
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17184

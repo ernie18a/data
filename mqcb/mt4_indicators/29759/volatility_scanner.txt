@@ -1,0 +1,21 @@
+Volatility Scanner
+in very raw form for number of currency pairs.
+Descritpion:
+Indicator shows volatility starting from actual candle on the right side (next to the symbol) to older candles left from actual.
+There are 2 numbers for each candle.
+Left number is body size/ average body size calculated of 100 previous candles.
+Right number is high-low size/ average high-low size calculated of 100 previous candles.
+Lower volatility is marked with color.
+Blue color means that body size is
+lower
+than 50% of average body and at the same time the high-low size is
+bigger
+than 50% of average high-low size.
+Red color means that body size is
+lower
+than 50% of average body and at the same time the high-low size is
+lower
+than 50% of average high-low size.
+You can change number of candles shown and size of the text.
+Usage:
+Can indicate uncertainty or possible swing points (doji bar) .

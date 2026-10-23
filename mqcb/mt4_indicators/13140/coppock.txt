@@ -1,0 +1,12 @@
+Real author:
+Edward Coppock
+Coppock is the implementation of the famous Coppock curve indicator, first established by Edward Coppock in 1962.
+This indicator shows long-term for buying or selling (originally only for buying) by measuring a 10-period weighed Moving Average of the sum of two rates of change (with periods of 14 and 11). It is the classic version. In this version, you can change the parameters of the basic indicators.
+Input Parameters:
+ROC1Period (default = 14) — period of first rate of change in the sum.
+ROC2Period (default = 11) — period of second rate of change in the sum.
+MAPeriod (default = 10) — period of Moving Average of the sum.
+MAType (default = 3 (WMA)) — method of the moving average of the sum. We recommend that you don't change these.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13140

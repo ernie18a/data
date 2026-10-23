@@ -1,0 +1,83 @@
+The
+"MQL5 Wizard MA RSI"
+Expert Advisor has been generated using the
+MQL5 Wizard
+based on the signals of the
+trend MA (Moving Average) indicator
+and of the
+RSI (Relative Strength Index) oscillator
+.
+The Expert Advisor only works at
+moment of new bar emergence
+:
+//--- inputs for expert
+input
+string
+Expert_Title         =
+"MQL5 Wizard MA RSI"
+;
+// Document name
+ulong
+Expert_MagicNumber   =
+26774
+;
+//
+bool
+Expert_EveryTick     =
+false
+;
+Входные параметры
+:
+Variable
+Value
+Disclaimer
+Signal threshold value to open [0...100]
+55
+A threshold value to
+open
+a position. It can take on values from 0 to 100.
+Signal threshold value to close [0...100]
+100
+A threshold value to
+close
+a position. It can take on values from 0 to 100.
+Price level to execute a deal
+0.0
+Distance from the current price. If 0 - open at the current price, if -xx - pending Stop orders will be placed, if +xx - pending Limit orders will be placed.
+Stop Loss level (in points)
+50.0
+The price level for Stop Loss
+Take Profit level (in points)
+50.0
+The price level for Take Profit
+Expiration of pending orders (in bars)
+4
+Pending order lifetime (in bars)
+Moving Average Period of averaging
+20
+MA — averaging period
+Moving Average Time shift
+3
+MA — horizontal shift of the indicator
+Moving Average Method of averaging
+MODE_SMA
+MA — type of smoothing
+Moving Average Prices series
+PRICE_CLOSE
+MA — price type
+Moving Average Weight [0...1.0]
+0.8
+Weight of MA signals
+Relative Strength Index Period of calculation
+3
+RSI — period of averaging
+Relative Strength Index Prices series
+PRICE_CLOSE
+RSI — price type
+Relative Strength Index Weight [0...1.0]
+0.5
+Weight of RSI signals
+Testing results on EURUSD, M15 from 2016.01.06 to 2017.01.27, initial deposit 3,000:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17489

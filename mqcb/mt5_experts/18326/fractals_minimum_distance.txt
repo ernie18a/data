@@ -1,0 +1,13 @@
+The EA trades based on the Fractals indicator
+. It only trades at the emergence of a new bar. Lot calculation: percentage of free margin. When an upward fractal is found, a Sell signal is generated and all Buy positions are closed. When a downward fractal is found, a Buy signal is generated and all Sell positions are closed.
+For optimization purposes.
+Two input parameters simplify configuration:
+Distance (in pips)
+and
+Signal bar
+Fractals minimum distance. The "Distance" parameter
+Signal bar
+— bar number (relative to the current one) on which the fractal is checked.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18326

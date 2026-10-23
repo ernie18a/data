@@ -1,0 +1,2 @@
+it detects six continuous rising bull candles or falling bear candles and mark an arrow
+In technical analysis trader usually break operations of reversal trading when six soldier occurs and halt it for a moment to avoid trapping in a breakout.

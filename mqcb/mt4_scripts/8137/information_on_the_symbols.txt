@@ -1,0 +1,5 @@
+The script outputs the information on symbols to a CSV file: swaps, spreads, stops, contracts. The set of symbols is stored in the siMS array. In order to create a custom set, it is necessary to reinitialize this array and recompile the script.
+The script has been developed to operatively track the changes in swaps.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8137

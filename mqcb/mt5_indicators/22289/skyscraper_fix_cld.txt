@@ -1,0 +1,8 @@
+Real author:
+TrendLaboratory
+Skyscraper_Fix
+indicator with the space between the average and NRTR lines filled with color displaying the area of possible stops.
+Fig. 1. Skyscraper_Fix_Cld
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22289

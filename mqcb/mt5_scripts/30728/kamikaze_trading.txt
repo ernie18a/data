@@ -1,0 +1,3 @@
+This script opens order with maximal amount of volume available with active chart symbol.
+Take Profit and Order Type is specified by user.
+There is no Stop-Loss. Trade will be open until account has been blown up.

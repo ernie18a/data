@@ -1,0 +1,14 @@
+The Point of Balance indicator.
+It is calculated by the following formula:
+BL =(MinH+MaxH)/2,
+BR =(MinL+MaxL)/2,
+POB =(BL+BR)/2,
+where
+MinH, MaxH - is the maximum and minimum of HIGH prices over the period;
+MinL, MaxL - is the maximum and minimum of LOW prices over the period.
+The indicator has one input parameter:
+Period
+- indicator calculation period.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20320

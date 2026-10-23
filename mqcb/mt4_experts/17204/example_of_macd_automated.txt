@@ -1,0 +1,10 @@
+It is a MetaTrader 4 code example of MACD automated Expert Advisor, with advanced money management function and trailing stop as well.
+The idea is:
+Filter as Multi Time Frame code example (Daily and 15 minutes charts).
+When the bigger timeframe is giving Buy (or Sell) signal/rule, then it will wait the confirmation of the lower timeframe to give the same signal/rule. Then the trade must be placed.
+Buy Rule: When the MACD histogram is > 0 on the daily time frame AND the same on the 15 minutes time frame.
+Sell Rule: When the MACD histogram is < 0 on the daily time frame AND the same on the 15 minutes time frame.
+Recommendations:
+Don't use it on the real account.
+It is only for educational purposes, not for strict trading.
+Take care!

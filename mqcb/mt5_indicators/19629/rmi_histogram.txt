@@ -1,0 +1,6 @@
+Relative Momentum Index implemented as a color histogram with an indication of overbought and oversold zones.
+RMI (Relative Momentum Index) was developed by Roger Altman and was first published in 1993 in the 'Technical Analysis of Stocks&Commodities' magazine. RMI is a stochastic, which can be used for improving the quality of Relative Strength Index (RSI). It generates signals when the price reaches the overbought or oversold zone.
+Fig.1. The RMI_Histogram indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19629

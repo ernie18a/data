@@ -1,0 +1,45 @@
+Indicator TrendManagerNT.
+Input Parameters:
+extern
+int
+TM_Period
+=
+7
+;
+extern
+int
+TM_Shift
+=
+2
+;
+extern
+int
+MinADX
+=
+22
+;
+extern
+int
+MinRisingADX
+=
+15
+;
+extern
+int
+MoveArrowFromCandleInPoints
+=
+10
+;
+extern
+double
+NTMinGap
+=
+5
+;
+extern
+bool
+risingADXoverrides
+=
+true
+;
+Trend ManagerNT

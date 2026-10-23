@@ -1,0 +1,7 @@
+This indicator shows Flag and Pennant patterns.
+This pattern is seen as the market potentially just taking a “breather” after a big move before continuing its primary trend.
+Trend detection uses linear regression, “breather” detection uses channel.
+Display:
+Blue lines — Flag;
+Green lines — Pennant.
+Settings:

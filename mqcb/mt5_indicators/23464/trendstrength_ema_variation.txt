@@ -1,0 +1,5 @@
+"Trend strength" version of EMA variation (originally published here :
+EMA variation
+along with detailed explanation). In these cases trend strength is used more like a filter than anything else, but the original calculation is kept, and the logic is the original logic of the "trend strength" family of indicators
+Usage :
+You can use the color change as signals

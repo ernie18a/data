@@ -1,0 +1,6 @@
+A simple extension to the CCI indicator using the iCCI function call. Now you have a shift parameter which will shift the plot by user defined bars.
+This is somewhat an educational code as it reveals how to apply a shift feature to any indicator based on shifting the buffer index.
+When you use [i - shift], you are effectively shifting the index in the buffer.
+Visually, it moves the plot from right to left. It is giving an after the fact representation of the signal...which may not be useful to most people, but can be useful in some trading systems.
+The "Test_CustomCCI" script shows how the indicator can be utilized with iCustom.
+Place both files in the Indicators/Examples folder and compile CCI_withShift before compiling the other file. They will both show as usable indicators in the software.

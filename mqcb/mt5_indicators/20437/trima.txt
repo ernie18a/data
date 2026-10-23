@@ -1,0 +1,14 @@
+Triangular Moving Average.
+Calculation:
+TriMA[i] = (MVA(i,N) + MVA(i-1,N) + … + MVA(i-N+1,N))/N
+where
+MVA(i,N) – a simple moving average (SMA),
+N=(Period+1)/2
+The indicator has two input parameters:
+Period
+- period;
+Applied price
+- price used for calculations.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20437

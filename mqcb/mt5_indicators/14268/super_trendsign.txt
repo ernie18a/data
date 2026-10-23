@@ -1,0 +1,9 @@
+Real author:
+Jason Robinson (jnrtrading)
+Semaphore signal indicator based on the
+Super_Trend
+indicator algorithm.
+Fig.1. The Super_TrendSign indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14268

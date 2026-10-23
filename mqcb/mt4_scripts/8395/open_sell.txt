@@ -1,0 +1,4 @@
+The Share is specified (from 0 to 1) - it is a part of free assets allocated for position opening. At the same time, the minimum lot that is admissible for trading is determined; and the position is opened with the value divisible by it. If you specify the Share=0, then the position will be opened with the minimum lot.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8395

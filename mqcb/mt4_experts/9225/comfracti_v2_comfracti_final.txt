@@ -1,0 +1,21 @@
+Update 2009.10.25
+Hi All:)
+Final version(well arranged) with no errors(I hope) is done.
+I added few easy to turn on/of filters for testing.
+This is not trend following ea and You should learn how it works.
+If You like add something or recoded -fell free to make this .
+Now my attention is focused on different idea .
+Regards
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Halou:)
+I have added TrailingStop with profitTrailing funktcion.In this case takeprofit should be bigger then trailingstop.
+If You like turn of Psar filter,simply set same parameters for sars1 & sars2.
+About optimization:
+Is posible to run optimization for all parameters at one time,but when first time we mark of sars and Trailing the results should have better profit factor.
+At this pictures I have markt boxes from forward time.
+First results without Trailing and Psar.
+Next results with Trailing and Psar.
+Optimization for 5 months takes 5 minutes.
+I wish Your Good Luck
+------------------------
+v2.1-Moneymanagement can be turn of  & fractional lots are allowed.  (Thanks Josep)

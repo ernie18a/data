@@ -1,0 +1,2 @@
+Author: Robert Hil
+Highs Lows Signal Alert indicator.

@@ -1,0 +1,15 @@
+Indicator Tom_Demark_Moving_Average is the moving average based on Demark's statements regarding trend identification.
+It has two configurable parameters:
+Trend period
+- a period to identify the trend;
+SMA period
+- calculation period.
+Operation algorithm
+Probable trend is identified first. If the current Low (bullish trend) or High (bearish trend) is higher (for Low) or lower (for High) of the previous Low or High within Trend period (12 bars by default), it means that the pressure by bears/bulls decreases and the up/down trend is probable;
+As long as condition 1 is met, the line of the up/down trend line of TD MA is drawn within four bars. If within four bars the price fixes the next minimum/maximum within Trend period, then TD MA will continue the next four bars;
+If the conditions for bullish or bearish trend are not met, a horizontal line is drawn in the color of the last trend line.
+TD MA = SMA(SMA period, PRICE_LOW) - for bullish trend;
+TD MA = SMA(SMA period, PRICE_HIGH) - for bearish trend.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21254

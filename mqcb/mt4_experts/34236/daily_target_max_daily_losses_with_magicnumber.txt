@@ -1,0 +1,4 @@
+Trading tools used by traders to make it easier for traders to control and a faster process to close order positions according to the profit target or daily loss limits.
+Calculation by adding up the total floating and closed orders that are pulled from the history data.
+If you have any questions or requests, please let me know or you can join the telegram group
+t.me/codeMQL

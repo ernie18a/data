@@ -1,0 +1,6 @@
+This expert advisor opens trades , for buys, sell are inverse.
+when the williams percent rises and the average directional index di+ di- crosses down
+closes trades when
+money flow index closes above level.
+stochastic changes its direction downwards
+All inputs are variable, includes lots and SL TP.

@@ -1,0 +1,2 @@
+Indicator that is similar to "raw" Stochastic and Williams Percent Range.
+Range Oscillator is an indicator that shows the relative position of median price in the highest high to lowest low range for desired period. It is bound to 0 - 100 range, hence those levels are the extreme levels. Usage should be similar to stochastic indicator.

@@ -1,0 +1,31 @@
+With this script, you can send a message from MetaTrader 4 to Telegram.
+Put the code in the Scripts directory.
+From the
+Main Menu-> Tools-> Options, tab Expert Advisors
+, add the following address in the
+Allow URLs
+section:
+https:
+//api.telegram.org
+In the code, customize the following variables:
+Get the token robot token from
+@BotFather
+and enter it in the following variable:
+string
+token =
+"xxxxxxxxxxxxxxx"
+;
+Get the recipient's chat ID from
+@userinfobot
+and enter it in the following variable:
+string
+chat_id =
+"xxxxx"
+;
+Enter the desired message in the following variable:
+string
+message =
+"Salam @JahanChart"
+;
+Be sure to either test on an external server that has no filtering problem, or if you are testing on your system, connect a filter breaker through which all network traffic passes. (Enabling MetaTrader internal proxy does not help)
+#Code #MetaTrader #Telegram #کد #متاتریدر #تلگرام

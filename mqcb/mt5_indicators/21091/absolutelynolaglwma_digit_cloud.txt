@@ -1,0 +1,7 @@
+The
+AbsolutelyNoLagLwma_Digit
+moving average which fills the chart space with a colored background. The moving average itself serves as the color separation line.
+Fig 1. Indicator AbsolutelyNoLagLwma_Digit_Cloud
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21091

@@ -1,0 +1,10 @@
+The
+RBVI
+indicator (Relative Broker Vigor Index) implemented as a colored histogram. Three histogram coloring variants are possible:
+Gray means the flat market;
+Blue indicates a moderate or slow trend in the market;
+Yellow indicates that there is a very strong trend in the market.
+Fig1. The RBVI_Histogram indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18203

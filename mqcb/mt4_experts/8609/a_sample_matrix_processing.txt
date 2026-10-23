@@ -1,0 +1,6 @@
+Hello
+This code expands MQL4 advantages in dynamic arrays operations.
+Synthetic two-dimensional dynamic arrays are used for matrix multiplication
+.
+Best regards
+Ais

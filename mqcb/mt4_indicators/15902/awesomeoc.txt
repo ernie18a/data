@@ -1,0 +1,9 @@
+Modification of the standard Awesome Oscillator by Bill Williams. Recommended timeframe - М15.
+It is more suitable for capturing small movements (abouts 100 points) on volatile pairs.
+Upper indicator — modified, lower — standard
+The addition lies in consideration of the current and the
+previous
+median average price. As it can be seen from the figure, consideration of two periods resulted in a more smoothed indicator graph, of course, except the nervous markets. During flats, it often clearly shows the opposite signal. That is, if, for example, entry was made during flat and indicator shows a buy signal, then it is worth considering selling.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15902

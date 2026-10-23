@@ -1,0 +1,7 @@
+The CDRVolatility indicator can be used as a guide for setting the S/L, T/P and T/S.  Within the chosen time window, for a net positive price gain, this indicator displays the largest upswing (convergent signal) and the largest downswing (divergent signal). For a net negative price change, the largest downswing becomes the convergent signal and the largest upswing is the divergent signal.
+Trading performance improves as the convergent and divergent curves spread apart. The divergent signal provides a lower limit for the Stop Loss (in pips). The convergent signal provides a guide to the Take Profit level and the overall range volatility.
+The user can choose the window size, the threshold (pips) for price movement (open to close across the window) and the period for averaging the indicator.
+Input Parameters:
+Fig.1. Convergent (Thick Line) and Divergent (Thin Line) Signals
+Recommendations:
+The price threshold should be set so that it is normally met across the selected window size for the selected timeframe. Suitable timeframes are H1, H4 and D1. For the H4 timeframe, a window size of 12 bars, a SMA period of 20 and a Delta Threshold of 20 or less works well.

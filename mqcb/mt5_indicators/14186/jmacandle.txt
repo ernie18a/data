@@ -1,0 +1,8 @@
+The
+JMA
+indicator implemented as a sequence of candlesticks.
+Candlesticks appear as a result of relevant price timeseries processed by the JMA algorithm. In many situations, such approach may be more informative for the purpose of analysis.
+Fig.1. The JMACandle indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14186

@@ -1,0 +1,9 @@
+Automatically draws Fibonacci retracement and extension levels based on the most recent ZigZag swing high and low. Updates dynamically as new swing points form.
+Features:
+Levels: 0%, 23.6%, 38.2%, 50%, 61.8%, 78.6%, 100%, 127.2%, 161.8%
+Each level individually toggleable
+Price labels at every level
+Optional ZigZag connector line
+Configurable ZigZag depth/deviation/backstep
+Performance optimized — recalculates on new bars only
+Fibonacci ratios are the foundation of harmonic pattern trading.

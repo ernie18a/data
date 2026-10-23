@@ -1,0 +1,10 @@
+Real author:
+nsi2000
+The indicator draws trend support and resistance lines.
+This indicator was first implemented in MQL4 and published in the
+Code Base at mql4.com
+on 28.03.2008.
+The TrendlinesDay indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1908

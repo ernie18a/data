@@ -1,0 +1,2 @@
+Indicator that is checking for intra-day channel values and breakouts of those channels.
+The time segment that is used for channel is specified by the parameters, and then it is used to check if the upper or lower limit is broken. It is strictly made to be used on intraday values.

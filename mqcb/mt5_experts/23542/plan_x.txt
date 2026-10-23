@@ -1,0 +1,55 @@
+Idea by:
+Scriptor
+mq5 code by:
+barabashkakvn
+ATTENTION: The EA is designed to work on hedge accounts only!
+The EA compares the difference between the Close price of bar #1 and the Close price of bar #
+Candle shift
+. If the value exceeds
+Channel height
+, a position will be opened. At the same time, the reverse of signals (
+Reverse
+) is considered:
+if
+(rates[
+1
+].close>rates[InpCandleShift].close+ExtChannelHeight)
+     {
+if
+(!InpReverse)
+         m_need_open_buy=
+true
+;
+else
+m_need_open_sell=
+true
+;
+     }
+if
+(rates[
+1
+].close<rates[InpCandleShift].close-ExtChannelHeight)
+     {
+if
+(!InpReverse)
+         m_need_open_sell=
+true
+;
+else
+m_need_open_buy=
+true
+;
+     }
+If time control (Use time control) is enabled, then trading signals will only be checked within the the predefined time interval (between
+Start hour
+and
+End hour
+). By the way, if the
+End hour
+value is set below the
+Start hour
+value, the time interval will go beyond the day.
+EURUSD, H1:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23542

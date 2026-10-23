@@ -1,0 +1,12 @@
+The channel indicator Center of Gravity Channel draws two channels - the deviation channel and the true range channel. In case of narrowing and intersection of the channels, the indicator draws marks on the central line (Center of Gravity)
+There are four input parameters:
+Period
+- calculation period
+Applied price
+Deviation multiplier
+- deviation channel multiplier (weight)
+ATR multiplier
+- true range channel multiplier (weight)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21824

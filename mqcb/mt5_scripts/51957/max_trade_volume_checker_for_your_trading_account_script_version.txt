@@ -1,0 +1,2 @@
+This is a script version of this: https://www.mql5.com/en/code/51877
+Dialogs aren't really used in scripts, but a small graphical panel of information was created to display the maximum lot size permitted. The max lot size is based on your account size and leverage, and this is calculated from the free margin. Some may not want to load an expert advisor to fetch the information if it can be fetched through a script.

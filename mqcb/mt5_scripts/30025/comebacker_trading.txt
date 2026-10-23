@@ -1,0 +1,12 @@
+Description
+in an assumption that prices have a tendency to visit previous highs/lows frequently in short-term, this script determines the highest and the lowest prices for last x bars, if highest is the last it opens buy order otherwise it opens sell order.
+default take-profit is highest for buy order, lowest for sell order. it can be expanded or shrinked by modifying additional profit input parameter. positive values for expansion, negative values for shrinking. be aware of limits.
+default stop-loss is determined by profit/loss ratio input parameter. take-profit range divided by this ratio gives stop-loss. 2 means half of take-profit range, thus 2:1 profit/loss ratio.
+Input Parameters
+Bar Count: number of past bars to evaluate highest and lowest prices. highest/lowest price in past 20 bars.
+Profit/Loss Ratio: stop-loss is calculated by dividing take-profit in pips by PL ratio. 2 means half of take-profit.
+Additional Profit: expand or shrink take-profit other than highest/lowest by offseting.
+Lots: lots.
+Warning
+script won't work correctly if you enter inputs out of limits.
+script won't work correctly if current price is highest or lowest of past bars.

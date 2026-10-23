@@ -1,0 +1,6 @@
+Theory:
+Range weighted exponential moving average (EMA) is, unlike the "regular" range weighted average (originally published here :
+Range Weighted Average
+) calculated in a different way. Even though the basis - the range weighting - is the same, the way how it is calculated is completely different. By definition this type of EMA is calculated as a ratio of EMA of price*weight / EMA of weight. And the results are very different and the two should be considered as completely different types of averages. The higher than EMA to price changes responsiveness when the ranges increase remains in this EMA too and in those cases this EMA is clearly leading the "regular" EMA.
+Usage:
+You can use it as any other average (including the usage of the color change as signals).

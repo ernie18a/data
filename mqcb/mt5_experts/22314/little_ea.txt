@@ -1,0 +1,22 @@
+The author of the idea
+-
+Musa Esmagambetov
+mq5 code author
+-
+barabashkakvn
+The EA only operates when a new bar appears. No stop loss, no take profit, no trailing. The only limitation is the number of open positions in each direction -
+Maximu
+m positions
+parameter.
+The EA compares iMA (Moving Average, MA) value on bar #0 and Open and Close prices on
+OHLC current bar
+.
+The size of the opened position can be either constant (
+Money management
+is equal to "Constant lot"), or dynamic (
+Money management
+is equal to "Risk in percent for a deal").
+For USDJPY M5, the best result:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22314

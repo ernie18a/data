@@ -1,0 +1,80 @@
+Personal Assistant The Next Generation is an improved version of
+Personal Assistant
+EA.
+New functionalities / improvements:
+Allows the user to set pending orders (Buy Stop, Sell Stop, Buy Limit, Sell Limit) with easy to use, interactive process.
+Allows the user to preset Stop Loss and/or Take Profit before the instant order is set with easy to use, interactive process (Stop Loss and Take Profit for pending orders are mandatory because of safety reasons).
+Displays % of capital lost for set Stop Loss and % of gain for set TP.
+Profit/Loss sum now includes commissions and swaps.
+EA is now completely unique for every instance of EA (you can run several
+Personal assistant The Next Generation
+without interference).
+Function to abort process of setting order.
+FIX: Stop Loss SUM and Take Profit SUM weren't calculated accurately, this is now fixed. If you have downloaded PA before and have this problem, please download it once more.
+Example of setting BUY STOP order - description of process:
+Personal Assistant The Next Generation
+is attached to chart and chart is in focus (selected).
+Push key 6 on your keyboard.
+Select entry price with a click of a left mouse button on chart (example: if you click at price level 1.0901, that will be the entry price).
+Select Stop Loss with a click of a left mouse button on chart.
+Select Take Profit with a click of a left mouse button on chart.
+If entry price, Stop Loss and Take Profit were set correctly, an order will be set, if not, then you will see an alert pop-up.
+This process is the same for all pending orders and similar for instant orders (depending on your user settings). Process can be aborted with a press of key 0 up to the moment when the last price level was selected.
+PA EA will also show you instructions on chart, to guide you. Instruction is set close to last bar on the chart and last price level. Text will update through the process and disappear after it.
+Example:
+Image shows display of PA EA on the chart:
+Personal assistant functions are:
+Display EA name and ID (to separate more than one Personal Assistant and to easily know which one is attached to the chart);
+Display Symbol and timeframe;
+Display leverage for account;
+Display lot volume value currently selected;
+Display tick value for lot volume value (in deposit currency);
+Display margin required for new order based on lot value currently selected;
+Display current spread;
+Display Profit/Loss sum for all orders opened by this EA, calculated in deposit currency (
+NEW: commissions and swaps included
+);
+Display number of orders currently active for this EA;
+Display Take Profit sum — if opened orders have set TP, then it displays average TP, if TP isn't set, then it displays 0, if TP is set for some orders and not for all, it will calculate average only for positions with TP set (
+NEW: number of orders with TP set and % of potential gain based on account balance
+);
+Display Stop Loss sum — if opened orders have set SL, then it displays average SL, if SL isn't set, then it displays 0, if SL is set for some orders and not for all, it will calculate average only for positions with SL set (
+NEW: number of orders with SL set and % of potential loss based on account balance
+);
+Open BUY position with a press of key number 1 with settings EA is currently set to (
+NEW: option to preset Stop Loss and Take Profit, user selectable option
+);
+Open SELL position with a press of key number 2 with settings EA is currently set to (
+NEW: option to preset Stop Loss and Take Profit, user selectable option
+);
+Close positions opened by this EA with a press of key number 3, ALERT: if conditions of market change rapidly it may not close all orders, so always check opened orders, or push 3 once more;
+Increase lot volume value with a press of key number 4 — hold button to quickly increase value (
+NEW: self-adjustable amount for different accounts
+);
+Decrease lot volume value with a press of key number 5 — hold button to quickly decrease value (
+NEW: self-adjustable amount for different accounts
+);
+NEW: Open BUY STOP position with a press of key number 6, with user selected price entry, Stop Loss and Take Profit;
+NEW: Open SELL STOP position with a press of key number 7, with user selected price entry, Stop Loss and Take Profit;
+NEW: Open BUY LIMIT position with a press of key number 8, with user selected price entry, Stop Loss and Take Profit;
+NEW: Open SELL LIMIT position with a press of key number 9, with user selected price entry, Stop Loss and Take Profit;
+NEW: Abort process of setting order with a press of key number 0;
+NEW: Control if Stop Loss, entry price and Take Profit are set correctly for selected action, it doesn't take into account provider enforced rules (example: minimum SL distance from entry price).
+User input variables:
+ID — Magic Number for your EA and for your orders opened by EA;
+NEW: Allows placement of pending orders —
+if set false, pending orders can't be set;
+NEW: Allows input of Stop Loss for active orders before execution
+— if set true, user will have to set Stop Loss for every instant order before it's executed;
+NEW: Allows input of Take Profit for active orders before execution
+— if set true, user will have to set Take Profit for every instant order before it's executed;
+Display_legend — Shows legend on the chart for buttons/commands (open long, open short, close orders, increase volume, decrease volume);
+LotSize — initial volume value;
+slippage — slippage for opening and closing orders;
+text_size — size of the text displayed on the chart;
+text_color — color of text displayed on the chart;
+right_edge_shift — position of text on the chart from the right edge of window in pixels;
+upper_edge_shift — position of text on the chart from the upper edge of window in pixels and position of row from the previous row.
+ATTENTION:
+Use with caution, it's your own responsibility if by accident you open unwanted orders! Make sure that you have the right chart selected when inputting commands.
+Alert me of potential problems, test it on DEMO first!

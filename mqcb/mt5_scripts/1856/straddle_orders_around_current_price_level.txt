@@ -1,0 +1,3 @@
+A script for creating straddle Buy/Sell stop orders.
+The idea would be that they expire after a certain time period and would straddle the current price action a certain number of points.
+If there is an existing open position, the position's stop loss would be set to 1 point less than the opposite order. If the script fail to set the position stop loss, the script would then just close the position and create the straddle orders.

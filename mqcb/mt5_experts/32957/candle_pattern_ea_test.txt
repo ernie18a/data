@@ -1,0 +1,5 @@
+This is a simple EA test code I made for adapting Candlepatterns.mqh found at https://www.mql5.com/en/code/291.
+It has also another desired translation inside: The news template found at https://www.mql5.com/en/code/19138.
+Although it is not totally translated to MT5 as I am using MT4orders.mqh. Remember you must add MT4orders.mqh inside your include folder.
+You can use it straight away as it works pretty nicely or you can add more indicators. Either way, enjoy.
+// CORRECTED. I have also hidden Hanging Man and Hammer because the slight variation may open new trades but you can use it if you uncomment the lines.

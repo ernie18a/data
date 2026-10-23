@@ -1,0 +1,7 @@
+The Heiken Ashi Oscillator shows the color of the Heiken Ashi Bars and measures inmediate and average change over time.
+It is very simple, Heiken Ashi bars are of whatever color the oscillator displays and you can see candlesticks without any visual uncomfort.
+The moving average can be used to measure the strength of reversals or find good entry points.
+Recommendations:
+Blend it with your own trading strategy
+Dependencies:
+Depends on Heiken Ashi (Attached)

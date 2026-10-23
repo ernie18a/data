@@ -1,0 +1,12 @@
+A signal indicator which points at the reverse bars based on Bill Williams' Profitunity system excluding the angulation relative to the
+Alligator
+indicator mouth.
+Green marker (bullish reversal bar) — buy signal.
+Red marker (bearish reversal bar) — sell signal.
+The indicator has originally been written in MQL4 and was first published in the
+Code Base
+on 26.05.2015.
+Fig.1. The DivergenceBar indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14895

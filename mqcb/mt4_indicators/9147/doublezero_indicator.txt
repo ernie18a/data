@@ -1,0 +1,16 @@
+Author:
+me.
+This indicator is really simple. It's there to visualize important psychological levels, also referred to as Double-Zeros. Most markets tend to behave strangely at psychological price levels like for example Gold at 1000$ or EURUSD at 1,4000.
+The indicator does only show the nearest psycholgical level of the
+current
+price (=if you scroll to the left, there's always just a single line).
+EDIT: improved version1: does also show past levels now.
+There's just one parameter:
+extern int relDigitPos=2; // position of the relevant digit.
+// example1: a setting of "2" in a market at the level of 1,2312 (taxed by 4 digits) makes the indicator visualize 1,2300
+// example2: a setting of "3" in a market at the level of 1,23125 (taxed by 5 digits) makes the indicator visualize 1,23100
+// example3: a setting of "1" in a market at the level of 1,23125 (taxed by 5 digits) makes the indicator visualize 1,20000
+// example4: a setting of "-1" in a market at the level of 123,15 (taxed by 2 digits) makes the indicator visualize 120,00
+Indicating 0,5800 as nearest psychological level
+It's tested, but not excessively. Use at your own risk. Feel free to modify or do whatever with it.
+Sometimes the best strategies are also the most simple ones...

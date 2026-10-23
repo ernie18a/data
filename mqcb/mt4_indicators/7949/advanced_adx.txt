@@ -1,0 +1,2 @@
+Author: Waddah Attar
+Advanced_ADX indicator.

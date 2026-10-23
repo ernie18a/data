@@ -1,0 +1,17 @@
+Renko charts were invented in Japan and were introduced to the Western world by Steve Nison, widely known as father of modern candlestick charting.
+1
+Renko charts ignore time and focus solely on price changes. Renko charts plot fixed price brick up or down in 45 degrees with one brick per vertical line. As vertical/horizontal axis cannot be fixed in MQL, Renko charts are recreated on an
+offline chart
+via MQL4 program (script/indicator/expert). You may find many of these Renko converters programs by searching on internet.
+Tipu Renko Live is modified version of Renko Charts that can be plotted on a normal live time frame without the use of the converter. The following additional features are added to this indicator.
+Brick on the top and at the bottom are modified, these maybe helpful in ranging markets.
+Choose plotting method, Close or High/Low.
+Choose type of plotting, Bricks, Arrows, or None.
+Introduced Signal Buffer, and Trend Buffer. These can be used for EA development.
+Enable Alerts (Mobile, On Screen, and Email).
+Its recommended to use smaller (e.g. M5) or a larger brick (e.g 100 pips) to see all the bricks.
+Reference
+1
+Nison, S. (1994).
+Beyond Candlesticks: New Japanese Charting Techniques Revealed.
+New York: Wiley.

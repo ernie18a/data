@@ -1,0 +1,4 @@
+Description:
+This simple EA sends hourly status e-mail and informed of the last closed order with some additional information.
+Please make sure that you have configured the MT4-client for mail delivery!
+Have fun ...

@@ -1,0 +1,8 @@
+This indicator is a modification of classical
+Awesome indicator
+.
+It computes the smoothed rate of change of two
+exponential means
+. More precisely, the indicator has 5 inputs: shortmean, mediummean and longmean stand for three exponential averages (by default 18, 40 and 200, respectively). The last two inputs indicate the exponential average for the rate of change between the shortmean-mediummean and mediummean-longmean.
+In the followng image you can show this indicator in a hourly chart of USDJPY with inputs 5, 34 and 200 for the exponential means and 12 and 18 for the means of the rates of change. You can compare the indicator with the classical Awesome indicator which has as inputs for the exponential averages 5 and 34.
+Awesome Modified indicator

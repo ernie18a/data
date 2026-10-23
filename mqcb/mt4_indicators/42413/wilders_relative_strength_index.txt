@@ -1,0 +1,13 @@
+This indicator implements the “
+Relative Strength Index (RSI)
+” developed by
+John Welles Wilder Jr.
+, as described in his book—
+New Concepts in Technical Trading Systems [1978]
+.
+This indicator uses a revised equation for computational efficiency, but with the same mathematical outcome.
+The code uses conditional compilation and will compile on both MQL4 and MQL5. Please note that all my
+CodeBase
+publications’ source code are now also available in “Public Projects” tab of
+MetaEditor
+under the name “FMIC”.

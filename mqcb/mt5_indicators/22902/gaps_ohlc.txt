@@ -1,0 +1,5 @@
+The indicator shows the gap size on the histogram. The gap is a rift between the current bar's Open price and Low/High of the previous bar.
+The tool is most efficient for symbols not traded round the clock, for example, stocks.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22902

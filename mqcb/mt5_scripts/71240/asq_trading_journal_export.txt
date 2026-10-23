@@ -1,0 +1,22 @@
+ASQ Trading Journal Export — Your Trades, Your Data, One Click
+AlgoSphere Quant — Precision before profit.
+ASQ Trading Journal Export is a script that exports your complete trade history to a clean CSV file in one click. Every closed trade is reconstructed from the deal history with full details: ticket, symbol, direction, open/close time, lots, open/close price, SL, TP, gross P/L, swap, commission, net P/L, duration in minutes, magic number, and comment.
+The CSV is ready to open in Excel, Google Sheets, or import into Python, R, or any analytics tool. At the bottom of the file you get a summary section with total trades, wins, losses, win rate, gross P/L, and net P/L.
+Features
+One-click execution — run the script, get your CSV instantly
+Full trade reconstruction from MT5 deal history
+Configurable date range (last N days or all history)
+Symbol filter and magic number filter
+Optional columns: swap, commission, duration, magic, comment
+Summary section with win/loss count, win rate, gross and net P/L
+Clean CSV format compatible with Excel, Sheets, Python, R
+Auto-generated filename with date stamp
+Output to MQL5/Files/ for easy access
+Parameters
+Export: filename, days back (0 = all), symbol filter, magic filter. Fields: include swap, commission, duration, magic, comment (each on/off).
+Installation
+Download ASQ_TradingJournalExport.mq5
+Place in MQL5/Scripts/
+Compile in MetaEditor
+Drag onto any chart — the export runs immediately
+MetaTrader 5, all brokers, all account types. Free and open-source.

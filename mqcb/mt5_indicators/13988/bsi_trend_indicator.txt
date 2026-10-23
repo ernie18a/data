@@ -1,0 +1,11 @@
+This indicator shows the condition of the trend using the
+BSI Indicator
+.
+It is drawn by combining the BSI value and LWMA.
+Display:
+blue — Up Trend;
+sky blue — Slightly Bullish;
+gray — No Trend;
+pink — Slightly Bearish;
+red — Down Trend.
+Separate window is BSI Indicator (version 2.4).

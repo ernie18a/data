@@ -1,0 +1,13 @@
+Expert Advisor that operates based on the AML indicator. There is a buy signal when a bar closes above the indicator line (while open below the line), and a sell signal when a bar closes below the indicator line (while open above the line).
+Tester report on all ticks for EURUSD starting from 2005 without the lot increase.
+With the lot increase (max. lot limit = 50.0)
+All Expert Advisor parameters (except for the indicator settings) are not used when 0. The Expert Advisor features a built-in function for setting the maximum allowable
+lot when exceeding your DC limit. The key features of the settings:
+SL/TP are set after opening a position.
+N_modify_sltp sets the number of times the sl/tp shall be set in case of a failed attempt.
+use_opposite reverses the position when the signal changes.
+Max_drawdown is the function for the lot increase relative to the given drawdown in the currency of the deposit. It should be set at the value no less than the max. equity drawdown.
+This Expert Advisor can be a great base for a stable and profitable trading robot.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1031

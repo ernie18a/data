@@ -1,0 +1,4 @@
+Theory :
+John Ehlers made one more indicator that was targeting the measuring of cycles / periods of the market. He called it "Dual differentiator". Without too much explanation, here it is. It is not a directional indicator. It shows us if the underlying market is in a changing mode (the values are falling) or trending mode (the values are rising)
+Usage :
+It can be used as a sort of a momentum indicator as well as a way of adapting other indicators

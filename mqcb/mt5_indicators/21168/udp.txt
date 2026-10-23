@@ -1,0 +1,21 @@
+Indicator UDP (Up/Down Percentage) displays the direction of candlesticks, i.e., up/down, as a percentage over the selected period.
+It has two configurable parameters:
+Period
+- calculation period;
+Applied price
+- price used for calculations.
+Calculations:
+UP = SMA(UpF, Period)
+DN = SMA(DnF, Period)
+where:
+If Price > PrevPrice:
+UpF = 1
+otherwise:
+UpF = 0
+If Price < PrevPrice:
+DnF = 1
+otherwise:
+DnF = 0
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21168

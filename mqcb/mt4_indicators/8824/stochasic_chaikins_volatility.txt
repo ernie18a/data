@@ -1,0 +1,3 @@
+Analyzing the behavior of Chaikin's Volatility index I was wondering how it should behave in a modified version, following J.Ehlers suggestions, applying a stochasticization process to it, so this is the result.
+Sure now it does not have much to do with the original one but it seems interesting and I would like to share it.
+Stochastic Chaikin's Volatility

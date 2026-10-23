@@ -1,0 +1,1 @@
+This MACD version would allow use more features that is not available on standard MQL5 MACD. I coded by copying the exact logic and features from the version on pinescript.

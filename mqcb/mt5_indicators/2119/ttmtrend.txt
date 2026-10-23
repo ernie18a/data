@@ -1,0 +1,11 @@
+Real author:
+Nick Bilak
+The indicator uses analysis of values of Heiken Ashi Open and Heiken Ashi Close for a selected period.
+If the trend and candlestick direction match, the color of the bar is light, if opposite, the bar is dark.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 09.10.2007.
+Figure 1. The TTM-Trend indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2119

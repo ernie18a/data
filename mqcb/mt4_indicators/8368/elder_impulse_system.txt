@@ -1,0 +1,9 @@
+Indicator Elder Impulse System.
+Input Parameters:
+extern
+int
+ShowBars
+=
+5000
+;
+Elder Impulse System

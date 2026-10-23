@@ -1,0 +1,12 @@
+Picture
+The parameters are the same with the Bollinger Bands plus I added smoothing.
+BandsPeriod - Period
+BandsShift - Shift
+BandsDeviations - Deviation from the main line
+Slow - Smoothing
+The indicator was developed on the basis of the book
+J. Bollinger. "Bollinger on Bollinger Bands"
+The indicator shows the difference between the upper and lower Bollinger Bands.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8451

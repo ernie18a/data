@@ -1,0 +1,9 @@
+This Indicator draws Green and Red Bars .
+Somtimes it does not draw Bars .
+That means no trade.
+Enter Buy when Tow Green Bars appears.
+Enter Sell when Tow Red Bars appears.
+you must use trailing stop and exit at closed Res or Sup.
+Enjoy.
+For More Explain (In Arabic)
+http://www.arabictrader.com/vb/t78714.html

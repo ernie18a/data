@@ -1,0 +1,4 @@
+An indicator for drawing all important Pivot Points including: "Classic", "Camarilla", "Woodie", "Floor", "Fibonacci", "Fibonacci_Retracement".
+You can choose different timeframes for pivot calculation.
+Customizable width, color and style.
+Compatible to have multiple pivots with different timeframes in one chart.

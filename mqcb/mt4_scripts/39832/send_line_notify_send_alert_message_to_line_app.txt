@@ -1,0 +1,5 @@
+This Script is the example of using function LineNotify that use to send message to LINE APP via Line Notify service
+As the function LineNotify use webrequest to send HTTP request so it can be used in EA or Script program only , can't use in Indicator program
+Watch some more examples on how to implement this function and how to modify it to send message along with stickers or images (image url)
+on this Youtube clip (Thai language / English Subtitle Available)
+https://www.RookieTraders.com/

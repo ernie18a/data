@@ -1,0 +1,2 @@
+Author: Robert Hill aka MrPip
+MultipleMA indicator.

@@ -1,0 +1,14 @@
+This is the "corrected" version of RSI. It can calculate the usual 7 types of RSI :
+Cuttler's RSI
+Ehlers' smoothed RSI
+Harris' RSI
+Rapid RSI
+RSI
+RSX
+Slow RSI
+You can turn the "correcting" on or off (using the "correction" period). Also, 4 types of color/trend/state changes are available. It is similar to step rsi but it should not be mixed with it. They are completely different indicators. A usual, you can turn the "correction" on and off and you can chose the criteria for "trend" or over bought / over sold finding out based on:
+on slope change
+on outer levels cross
+on middle level ("fake zero line") cross
+or on original rsi value cross (in which case rsi is used as a sort of a signal line)
+The usual parameters experimenting is advised. The above example on a larger scale:

@@ -1,0 +1,6 @@
+This is a Quadratic Regression MA as described by
+mathemat
+here
+https://www.mql5.com/ru/forum/106719/page29
+.
+It is a sort of a linear regression value variation, but faster in response to market changes.

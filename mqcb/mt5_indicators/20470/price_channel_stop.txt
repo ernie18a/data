@@ -1,0 +1,7 @@
+A new variation of a well known price channel indicator.
+The indicator shows the current estimated trend based on channel period and desired risk. It also shows two levels of values that can be used as a stop loss for orders opened based on this indicator (using the trend color change can be used as a signal for a new order opening as well as closing already opened orders).
+Depending on the style, one can decide to use a "safer" stop (further from the current price) of "more likely to be filled" (closer to the price) but that entirely depends on the trading style.
+This MetaTrader 5 version deviates a lot from MetaTrader 4 version(s) available in the look and feel, but also in the two levels displayed - the second (closer to the price) level should be used with care as it is highly experimental. In any case some parameters exploring is advised for different symbols and time frames.
+PS: some of the MetaTrader 4 versions can be found
+here
+.

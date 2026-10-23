@@ -1,0 +1,19 @@
+The script exports summary of closed trades selected between two dates grouped by each trading day. The resulting file is CSV that can be opened/imported with any spreadsheet software.
+To export summary for the entire trading history, keep
+Start date
+and
+End date
+at their default values.
+The CSV file is located at: Terminal > File > Open data folder > MQL5\Files\<Filename>
+The CSV file will be auto-opened with the associated Windows program (e.g., Microsoft Excel or Ron's CSV Editor).
+Following data columns are exported for each trading day:
+Date of the trading day
+Total trades
+Volumes
+Profits
+Swaps
+Commissions
+Net profits
+The CSV file can be opened with Microsoft Excel or better with
+Ron's CSV Editor
+.

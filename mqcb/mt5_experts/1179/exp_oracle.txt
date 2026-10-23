@@ -1,0 +1,11 @@
+The Exp_Oracle Expert Advisor is drawn on the basis of signals taken from the
+Oracle
+redrawing indicator. A signal to perform a deal is formed at bar closing if a zero level of the signal line of the indicator breakthroughs or the signal line changes the direction and also if there is crossing of the signal line and indicator (depending on the options selected in the input parameter Mode).
+Place Oracle.ex5 compiled file to the terminal_data_folder\MQL5\Indicators.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests. It should be noted that since the Oracle indicator redraws, the final chart obtained after testing the Expert Advisor, the deals and changes on the indicator lines will not match!
+Fig. 1. The instances of history of deals in the chart.
+Testing results for 2011 at UDSCHF H4:
+Fig. 2. Charts of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1179

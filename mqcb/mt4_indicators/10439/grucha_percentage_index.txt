@@ -1,0 +1,3 @@
+Author:
+Grzegorz Antosiewicz. gaa1@poczta.fm
+It finds the lowest/higest prices and generate signals by comparing the bulls and bears bars.

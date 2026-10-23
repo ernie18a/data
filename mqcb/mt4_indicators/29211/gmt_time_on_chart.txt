@@ -1,0 +1,3 @@
+Update 1 :16-05-2020
+The GMT Time on chart indicator is written for users who likes to see GMT Time on-screen.
+For convenience and modifications,This indicator code is written clearly and simple.

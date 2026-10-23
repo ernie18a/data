@@ -1,0 +1,32 @@
+The oscillator displays the "money flow pressure" chart. It is based on indicator
+Smart_Money_Pressure_Oscillator
+. Unlike in the original one, in this indicator its line is smoothed, a signal line is added, and the indicator chart is inverted for a more convenient comparison with the price chart.
+It has six input parameters:
+SM Period
+- SMP calculation period
+SM Smoothing period
+- SMP smoothing period
+SM Smoothing method
+- SMP smoothing method
+Signal line Smoothing period
+- signal line smoothing period
+Signal line Smoothing method
+- signal line smoothing method
+Graph inverse
+- switch for inverting the indicator chart (Yes/No)
+Calculation:
+SmSmartMoneyPressure = MA(SMP, SM Smoothing period, SM Smoothing method)
+Signal = MA(SmSmartMoneyPressure, Signal line Smoothing period, Signal line Smoothing method)
+where:
+SMP = Close[SM Period] - SM
+SM = SM[i+1] + Change
+where:
+If Volume > VolMA
+Change = Close[i] - Close[i+1]
+Otherwise
+Change = 0
+Volume = current volume
+VolMA = SMA(Volume, SM Period)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20937

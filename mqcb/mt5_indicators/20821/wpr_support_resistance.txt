@@ -1,0 +1,3 @@
+WPR (Williams Percent Range) based support/resistance.
+When WPR significant level (adjustable in parameters) is broken, then the indicator starts a new support or resistance on the main chart.
+Recommended usage is the same as for all the support/resistance indicators: as a levels break indicator or as a "classical" support/resistance indicator used for positions'/orders' stop losses and take profits.

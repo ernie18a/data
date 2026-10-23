@@ -1,0 +1,5 @@
+This script scans for open orders and sets a Stop Loss and Take Profit to all of the filtered orders.
+You can filter orders by:
+Magic Number
+Comment
+You will have to specify the Stop Loss and Take Profit in pips.

@@ -1,0 +1,11 @@
+The ZZ Fibo Trader Expert Advisor has been designed to illustrate the use of the
+Simple ZZ Fibo
+indicator in a simple trading system.
+The
+Simple ZZ Fibo
+has been specially designed for use in trading experts. Information on the price values corresponding to the plotted Fibonacci levels are stored to the indicator buffers (from 2 to 8), from where they can be copied to an expert.
+The EA opens a position after a reverse breakout of the top level, which is the simplest filter of false breakouts.
+To close positions, the EA uses the parabolic system of price trailing (SAR) by Wilder.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16027

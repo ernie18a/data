@@ -1,0 +1,4 @@
+Description:
+The script runs in background and writes the distance of pips from horizontal lines on the chart to the current market price.
+You can drag lines to see the distance.
+Image:

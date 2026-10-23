@@ -1,0 +1,42 @@
+Cumulative P&L Indicator
+OVERVIEW
+The Cumulative P&L Indicator displays your account's balance and equity evolution over time as two separate lines on a chart. It provides a visual representation of your trading performance by tracking both realized profits (balance) and unrealized profits (equity) throughout your trading history.
+FEATURES
+- Balance Line (Green): Shows the cumulative realized P&L from closed positions, including profit, swap, and commission
+- Equity Line (Blue): Shows total equity (balance + unrealized P&L from open positions)
+- Multi-Symbol Support: Accurately tracks positions across all symbols, not just the chart symbol
+- Historical Accuracy: Reconstructs portfolio state at each bar to show accurate historical equity curves
+- Swap Tracking: Includes overnight swap charges in calculations
+- Currency Conversion: Automatically handles profit calculations for instruments traded in different currencies
+HOW IT WORKS
+The indicator:
+1. Analyzes your complete trading history from account opening
+2. Calculates realized P&L at each bar from closed trades
+3. Tracks open positions and calculates unrealized P&L based on historical prices
+4. Combines both to show your equity curve evolution
+INSTALLATION
+1. Download the indicator file
+2. Place it in your MQL5/Indicators folder
+3. Compile in MetaEditor (F7)
+4. Attach to any chart
+USAGE
+Simply attach the indicator to any chart. It will automatically:
+- Display in a separate window below your main chart
+- Show two lines: Balance (green) and Equity (blue)
+- Update in real-time as your positions change
+TECHNICAL DETAILS
+- Indicator Type: Separate window indicator
+- Buffers: 2 (Balance and Equity)
+- Timeframe: Works on all timeframes
+- Symbols: Tracks all symbols in your account
+BENEFITS
+- Performance Visualization: See how your account has grown over time
+- Risk Assessment: Identify periods of drawdown by comparing equity to balance
+- Strategy Validation: Evaluate if your trading strategy is consistently profitable
+- Multi-Asset Tracking: Monitor performance across different instruments
+NOTES
+- The indicator shows cumulative values starting from your first trade
+- For best performance on accounts with extensive history, use higher timeframes (H1, D1)
+- The equity line includes current swap charges for open positions
+VERSION
+Current Version: 1.0

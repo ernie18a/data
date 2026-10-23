@@ -1,0 +1,68 @@
+ExMachina Smart Money Concepts v1.0
+— part of the ExMachina Trading Systems free Code Base collection. A complete Smart Money Concepts (ICT methodology) indicator for MetaTrader 5, built from scratch in native MQL5.
+Core Features
+Structure Detection (BOS / CHoCH)
+- Internal structure (short-term pivots, default length 5)
+- Swing structure (long-term pivots, default length 50)
+- Independent bull/bear filters: show All, BOS only, or CHoCH only
+- Confluence filter to remove insignificant internal breakouts
+- Dashed lines for internal, solid for swing — with labels at midpoint
+Order Blocks
+- Internal and Swing order blocks detected at structure breaks
+- Automatic detection of the extreme candle (supply/demand zone origin)
+- Configurable mitigation: by Close or by High/Low
+- Live rectangles extending to current bar, auto-removed on mitigation
+- Up to 100 OBs tracked internally, configurable display count (1-20)
+Fair Value Gaps (FVG)
+- Standard 3-candle gap detection (low[0] > high[2] or high[0] < low[2])
+- Auto threshold filter based on body percentage
+- Two-tone box display (top half + bottom half)
+- Automatic mitigation when price fills the gap
+- Configurable extend bars
+Equal Highs / Equal Lows (EQH/EQL)
+- ATR-based threshold detection
+- Dotted line connecting equal levels + label
+- Configurable sensitivity (0 to 0.5)
+Strong/Weak High/Low
+- Trailing swing extremes with live horizontal lines
+- Dynamic labels: “Strong High” / “Weak High” based on swing bias
+- Extends 20 bars into the future
+Premium / Discount / Equilibrium Zones
+- Three zones based on trailing swing range
+- Premium (top 5%), Equilibrium (middle 5%), Discount (bottom 5%)
+- Semi-transparent rectangle display
+Dashboard
+- Swing Bias, Internal Bias, Active OB count, Active FVG count, Last Signal
+- Full ExMachina steel theme (dark background, Consolas font, accent colors)
+Alerts
+- 4 channels: Popup, Sound, Push, Email
+- Fires on every BOS/CHoCH detection (internal and swing)
+Architecture
+4 custom structs (SPivot, SOrderBlock, SFairValueGap, STrailing)
+Object-based rendering (OBJ_TREND, OBJ_RECTANGLE, OBJ_TEXT)
+No external dependencies, no iCustom calls
+ATR(200) via iATR handle for volatility measurement
+1,334 lines, 53 inputs in 9 groups
+Inputs (9 groups)
+General: mode (Historical/Present), style (Colored/Monochrome), color candles
+Internal Structure: show, bull/bear filter, pivot length, confluence, colors
+Swing Structure: show, bull/bear filter, pivot length, swing points, strong/weak, colors
+Order Blocks: internal/swing on/off, max count, mitigation method, 4 color inputs
+Equal Highs/Lows: show, confirmation bars, threshold
+Fair Value Gaps: show, auto threshold, extend bars, colors
+Premium/Discount: show
+Alerts: popup, sound, push, email
+Dashboard: show, position, font size
+Works on all symbols and all timeframes. Original implementation — not a port.
+Developed by
+ExMachina Trading Systems
+—
+Precision before profit.
+For professional trading tools, visit:
+https://www.mql5.com/en/users/williammukam
+Tags (comma-separated)
+smart money concepts,SMC,ICT,BOS,CHoCH,order blocks,fair value gaps,FVG,equal highs,equal lows,EQH,EQL,premium,discount,structure,swing,internal,trend,dashboard,alerts,free,forex,gold,XAUUSD
+Category
+Technical Indicators
+Subcategory
+Trend Indicators

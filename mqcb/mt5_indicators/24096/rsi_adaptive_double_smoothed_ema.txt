@@ -1,0 +1,6 @@
+Theory :
+RSI adaptive EMA is known for quite some time (one version was published here :
+RSI Adaptive EMA
+). It is a responsive indicator but in some cases it is producing too much signals (slope changes) due to that responsiveness. This version is addressing that issue : double smoothed EMA is faster than the regular EMA and is smoother. This is the double smoothed version of RSI adaptive EMA and is faster and smoother version of the "regular" version
+Usage :
+You can use it as any other average

@@ -1,0 +1,15 @@
+John Ehlers Modeling The Market Indicator. The indicator line is the result of combining John Ehlers
+Cyclic Component
+and
+Instantaneous Trendline
+indicators.
+It has two input parameters:
+Period
+- calculation period;
+Applied price
+- price used for calculations.
+Calculations:
+Modeling the market = Instantaneous Trendline + Cyclic Component
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20677

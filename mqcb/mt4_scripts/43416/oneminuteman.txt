@@ -1,0 +1,1 @@
+the script requests the rates every 50ms, put the data into an array then traverses through finding highs and lows

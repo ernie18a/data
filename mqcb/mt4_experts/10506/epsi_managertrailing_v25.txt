@@ -1,0 +1,37 @@
+Description:
+The purpose of the Expert Advisor - support orders.
+First let's define "what orders?".
+Filtering can be performed by Magik
+(MG):
+> 0 - every; 0 - open manually; > 0 - open a specific advisor, then we can choose a list of symbols with whom to work EA
+(List_Symbols)
+(symbol put this through, "" without gaps, if you leave this option blank - Advisor will work with any
+symbol
+) and then put
+OnlyCurrentSymbol
+= false.
+Determine which orders will work Expert Advisor, further define its task by identifying with what "dimension" to it to work -
+ValueInCurrency
+(or currency deposits or a percentage of the depot), then:
+TrailProfit_ON
+- inclusion of trailing total profit;
+TakeProfit_ON
+- inclusion Take total profit;
+StopLoss_ON
+- the inclusion of foot total profit;
+PartClose_ON
+- a partial closure orders;
+N_Trailing
+- is trailing (only orders of the current symbol) to choose from 0 to 11 (
+library
+trailing).
+What else you need to consider when working with EA:
+if enabled Trailing profit and total profit value of the selected orders exceeded the threshold of this very trailing, then the partial closure orders, and "personal" trailing WILL NOT be!
+P.S.
+In the
+new version of
+the archive
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10506

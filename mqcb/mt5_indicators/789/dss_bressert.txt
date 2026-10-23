@@ -1,0 +1,28 @@
+Real author:
+Rosh
+The Double Smoothed Stochastics indicator was proposed by William Blau and Walter Bressert. The calculation of DSS values is similar to
+Stochastic
+indicator, the difference is the use of double exponentially smoothing.
+The interpretation of DSS values is the same as for
+Stochastic
+- the values above 80 indicates the overbought state of the market, the values below 20 indicates the oversold market state.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+08.08.2008.
+Calculation:
+where:
+Ln - the lowest price (n bars);
+Hn - the highest price (n bars);
+L
+Xn
+- the lowest value of Xn (n bars);
+H
+Xn
+- the highest value of Xn (n bars);
+EMA(r) -
+exponetially smoothed moving average
+(r-period).
+DSS Bressert indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/789

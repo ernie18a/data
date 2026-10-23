@@ -1,0 +1,7 @@
+Theory :
+This is an EMA (Exponential Moving Average) that is using Dual Differentiator (published here :
+Dual Differentiator
+) for adapting.
+Usage :
+It can be used as normal EMA, with a twist : the dual differentiator is a sort of "hard coded" to certain periods, hence changing the filter does not change the value of the dual differentiator too much. The mode that produces better results is using the minimal change value for adjusting (see the lower example). In any case some experimenting is strongly advised
+The comparison of the dual differentiator and dual differentiator adaptive ema when minimal change parameter is adjusted :

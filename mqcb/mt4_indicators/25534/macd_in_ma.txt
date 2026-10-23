@@ -1,0 +1,19 @@
+MACD in MA is an indicator to change color in iMA if iMACD is upper of zero (uptrend) or lower of zero (downtrend).
+It helps any trader to see the trend of pair.
+Parameters
+MA_Periods
+— Period for iMA.
+MA_Method
+— Method for iMA.
+MACD_FastEMA
+— Fast EMA for MACD.
+MACD_SlowEMA
+— Slow EMA for MACD.
+MACD_SignalSMA
+— SMA signal for MACD.
+MACD_ApliedPrice
+— Price used for MACD.
+BarsCount
+— How many bars will show the line.
+ReverseSignals
+— Reverse up trend to down trend signals.

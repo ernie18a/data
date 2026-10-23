@@ -1,0 +1,23 @@
+On the topic of Martingale was written numerous advisors .
+In this EA, you can check the classical principles of the martingale, as well as antimartingeyla .
+EA code as simple as possible and all uncommented .
+The principle of trade with Martingale:
+Received initial take profit opened lot in the same direction .
+Got a stop loss order with reverse opened a larger lot .
+Principle trading at AntiMartingale:
+Got take profit opened with a larger lot in the same direction
+Got a stop loss opened with an initial reverse Warrant lot
+The essence of the martingale system is as follows :
+Begins trading with some preselected minimum lot .
+After each stop loss trader should increase the lot so that in the case of take profit to recoup all past stop loss in this series, with a small income. ( For example 0,01-0,02-0,04-0,08-0,016-0,032 -0.064, etc) .
+Subject to the sequence of income trader at a profit will be equal to the profit with minimum lot.
+In case the trader should take profit back to the minimum lot .
+Using the Martingale system, the trader does not receive benefits, it just redistributes its profit . Trader receives the stop loss is rare, but a lot, and often profit, but gradually .
+The essence of Antimartingeyl is as follows :
+Unlike the Martingale system where item increases if the stop loss, the system Antimartingeyl contrary - Lot increases in the case of profit.
+Betting begins with the minimum lot . In the case of profit item increases in two or more times - in the case of stop loss trader returns to the original lot .
+When trading on the system Antimartingeyl necessary to clearly define the boundaries of the lot increase, after which the trader must return to the original lot .
+For example, after three increases ( 0,01,0,02,0,05 ) .
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11125

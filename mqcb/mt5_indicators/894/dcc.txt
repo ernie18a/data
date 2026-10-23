@@ -1,0 +1,6 @@
+The indicator plots the chart of the specified symbol in a separate window (based on
+https://www.mql5.com/en/code/349)
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/894

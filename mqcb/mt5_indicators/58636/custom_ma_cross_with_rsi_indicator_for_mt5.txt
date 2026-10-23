@@ -1,0 +1,18 @@
+The Custom MA Cross with RSI Indicator for MT5 is a versatile trading tool designed to help traders identify trend changes and filter entries using momentum. This indicator combines two moving averages (MA) with the Relative Strength Index (RSI), offering clear buy and sell signals.
+Features:
+- Customizable Moving Averages: Select the type (SMA, EMA, etc.), periods, and price source for each moving average.
+- Crossover Alerts: Receive visual and optional sound alerts when the fast MA crosses above or below the slow MA.
+- RSI Filter: Only shows signals when the RSI is above/below user-defined levels, helping you avoid false entries during weak trends.
+- On-Chart Signals: Buy/sell arrows appear directly on the chart at the crossover point when RSI conditions are met.
+- User-Friendly Settings: Simple input options suitable for both beginners and advanced traders.
+How It Works:
+1. The indicator tracks two moving averages.
+2. When the fast MA crosses above the slow MA and RSI is above the set level, a buy signal appears.
+3. When the fast MA crosses below the slow MA and RSI is below the set level, a sell signal appears.
+4. All signals are visible on the chart for easy reference.
+Benefits:
+- Enhances trend-following strategies.
+- Filters out weak or choppy market conditions.
+- Helps traders enter trades with greater confidence.
+Suitable for all timeframes and currency pairs on the MetaTrader 5 platform.
+You can customize with colors of your choice:

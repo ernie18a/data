@@ -1,0 +1,3 @@
+Automatic Update the chart you drag it to .
+action just like pressing home key, esc to exit,
+Please use this drag and drog!

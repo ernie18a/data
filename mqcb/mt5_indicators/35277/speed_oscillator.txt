@@ -1,0 +1,29 @@
+Description
+Measures current bar's Moving Average Speed, in relation to the average of # (averaging period) past bars.
+This oscillator can be visually described with
+Speed Indicator
+.
+Calculations
+CurrentBar's
+speed /
+Mean
+speed of past
+# bars
+AvgPosBuffer[i] = pos_sum/InpSPeriod;
+         AvgNegBuffer[i] = neg_sum/InpSPeriod;
+
+         if(ExtMABuffer[i] - ExtMABuffer[i-1]>0)
+         {
+            SO[i] = (ExtMABuffer[i]-ExtMABuffer[i-1]) / AvgPosBuffer[i];
+         }
+         else if(ExtMABuffer[i] - ExtMABuffer[i-1]<0)
+         {
+            SO[i] = -((ExtMABuffer[i]-ExtMABuffer[i-1]) / AvgNegBuffer[i]); 
+         }
+         else 
+         {
+            SO[i] = 0;
+         }
+Example
+Moving Average (9)
+Averaging Period (120)

@@ -1,0 +1,6 @@
+The Renko charting method is thought to have acquired its name from "renga" which is the Japanese word for bricks. Renko charts are similar to Three Line Break charts except that in a Renko chart, a line (or "brick" as they're called) is drawn in the direction of the prior move only if prices move by a minimum amount (i.e., the box size). The bricks are always equal in size. For example, in a 5-unit Renko chart, a 20-point rally is displayed as four, 5-unit tall Renko bricks.
+Renko charts were first brought to the United States by Steven Nison when he published his book, Beyond Candlesticks.
+Basic trend reversals are signaled with the emergence of a new red or blue brick. A new blue brick indicates the beginning of a new up-trend. A new red brick indicates the beginning of a new down-trend. Since the Renko chart is a trend following technique, there are times when Renko charts produce whipsaws, giving signals near the end of short-lived trends. However, the expectation with a trend following technique is that it allows you to ride the major portion of significant trends.
+Since a Renko chart isolates the underlying price trend by filtering out the minor price changes, Renko charts can also be very helpful when determining support and resistance levels.
+Parameters
+Porog - box size

@@ -1,0 +1,17 @@
+Idea by:
+alex
+mq5 code by:
+barabashkakvn
+An EA based on indicators iMA (Moving Average, MA) and iStdDev (Standard Deviation, StdDev)
+The EA has an interesting parameter to manage the number of positions:
+Number of positions in one direction
+- the highest number of positions currently opened in one direction.
+Moreover, the options are available: Reverse of trading signal (
+Reverse
+) and forcedly closing opposite positions (
+Close opposite
+) at receiving a trading signal.
+In the picture above, the optimization results are shown for the forward period at EURUSD, M5.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23487

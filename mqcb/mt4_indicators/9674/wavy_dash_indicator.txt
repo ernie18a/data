@@ -1,0 +1,131 @@
+Author:
+http://pipswanted.com
+Green lines mean - buy, red signalize sell. Indicator is based on Gann method.
+Here is the code:
+for
+(
+int
+i=
+Bars
+-Back;i>=
+0
+;i--)
+{
+if
+(Close[i]>
+iMA
+(
+Symbol
+(),
+0
+,Back,
+0
+,
+MODE_SMA
+,
+PRICE_HIGH
+,i))
+      {
+         one=
+1
+;
+      }
+else
+{
+if
+(Close[i]<
+iMA
+(
+Symbol
+(),
+0
+,Back,
+0
+,
+MODE_SMA
+,
+PRICE_LOW
+,i))
+            one=-
+1
+;
+else
+one=
+0
+;
+      }
+if
+(one!=
+0
+)
+      {
+         two=one;
+      }
+if
+(two==-
+1
+)
+      {
+double
+a =
+iMA
+(
+Symbol
+(),
+0
+,Back,
+0
+,
+MODE_EMA
+,
+PRICE_HIGH
+,i+
+1
+) - iClose(
+Symbol
+(),
+0
+,i+
+2
+);
+         red[i] = (iClose(
+Symbol
+(),
+0
+,i) - a); 
+      }
+else
+{
+double
+b = iClose(
+Symbol
+(),
+0
+,i+
+2
+) -
+iMA
+(
+Symbol
+(),
+0
+,Back,
+0
+,
+MODE_EMA
+,
+PRICE_LOW
+,i+
+1
+);
+         green[i] = (iClose(
+Symbol
+(),
+0
+,i) + b);
+      }
+}
+For more ideas and informations visit:
+http://pipswanted.com
+If you have any questions or problems with trading ask here
+http://tradersqa.com

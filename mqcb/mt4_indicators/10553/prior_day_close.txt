@@ -1,0 +1,4 @@
+Description:
+The indicator shows the yesterday market close european market or NYSE close price.
+Image:
+yesterday european close or NYse close price like 8.00 am futures opend,,9.00 am europan floor markets open 17.30 europan close and 22.00 pm futures like germany index futuredax close

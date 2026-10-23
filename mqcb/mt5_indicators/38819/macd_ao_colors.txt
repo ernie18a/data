@@ -1,0 +1,3 @@
+The idea of the indicator
+'MACD' indicator with the same color scheme as the 'Awesome Oscillator' indicator
+Rice. 1. MACD AO Colors

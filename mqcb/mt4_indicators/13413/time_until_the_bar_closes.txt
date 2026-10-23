@@ -1,0 +1,7 @@
+The indicator displays the server time and the time until the current candlestick ends on the М1-D1 timeframes.
+One parameter — list of timeframes separated by spaces. All the necessary timeframes are specified in minutes. An empty list means one current timeframe of the chart. There can be custom timeframes, not necessarily the same as the terminal's. I.e. it is possible to display the time until the end of a 3-minute, 6-hour candlestick, etc.
+Drag the blue clock to drag the indicator to anywhere on the screen. The red counters adjust to the clock automatically. To change the indicator font size, it is necessary to change the font size of the blue clock.
+The indicator works in "idle" mode on weekends. The code uses a timer, so that it does not depend on the quotes.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13413

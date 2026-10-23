@@ -1,0 +1,8 @@
+Description:
+This indicator uses Stochastic with periods 8,3,3 and RSI 3 cross RSI 13 and it use a confirmation trend macd cross zero.
+If both are crossing together then you will shall view the signal to open position so you just need to open position.
+kondisi masih bagus = condition still good
+overbought siap take profit = overbought,,dont op but take profit
+This is momentum-type indicator so you know how to buy or sell in the right time I hope.
+kuat = strong in indonesian language you can modify it
+Image:

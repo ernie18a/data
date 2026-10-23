@@ -1,0 +1,4 @@
+BBandsPsar
+is a custom hybrid indicator that combines a volatility framework (Bollinger Bands) with a trend-following mechanism (Parabolic SAR) into a single technical tool.
+By measuring the distance between the Parabolic SAR value and the candle's open or close, the indicator captures the alternating, trend-switching nature of the SAR. It then scales this gap using Bollinger Bands to plot the resulting values as a standardized histogram. This standardization provides a consistent, cross-asset threshold, making it easy to analyze different financial instruments under a unified scale.
+For maximum flexibility, BBandsPsar fully inherits the input parameters of both underlying indicators, allowing traders to fine-tune its sensitivity and behavior.

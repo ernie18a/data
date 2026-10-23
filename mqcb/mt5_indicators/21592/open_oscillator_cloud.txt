@@ -1,0 +1,9 @@
+Open_Oscillator
+indicator has the form of a colored cloud and has the ability to change the smoothing algorithm and display a trend direction by color.
+The indicator uses the classes of the SmoothAlgorithms.mqh, ibrary. Working with that class was described in details in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+Fig. 1. DEMA_Range_Channel_Alert indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21592

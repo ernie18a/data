@@ -1,0 +1,4 @@
+Author:
+Elliott_Trader.
+EA depend on distances for 9 orders opened with condition of Stoc 4H >80 sell & <20 buy
+Any developers can develop this EA are most welcomed, I recommend to add BB for close the orders (trend change).

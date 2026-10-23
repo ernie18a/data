@@ -1,0 +1,24 @@
+The indicator shows in a separate window, as a histogram, the candlestick sizes by two parameters:
+Difference between Open and Close;
+Difference between High and Low.
+You can also enable smoothing and display the averaged value of candlestick sizes.
+The indicator has four input parameters:
+Calculation type
+- type of calculations:
+Open/Close
+- difference between Open and Close;
+High/Low
+- difference between High and Low.
+Smoothing
+- smoothing switch (Yes/No);
+Period
+- averaging period;
+Method
+- smoothing method.
+Fig.1. Calculating Open/Close without smoothing
+Fig.2. Calculating High/Low without smoothing
+Fig.3. Calculating Open/Close with smoothing
+Fig.4. Calculating High/Low with smoothing
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20920

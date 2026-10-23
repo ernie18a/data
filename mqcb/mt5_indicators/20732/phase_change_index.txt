@@ -1,0 +1,4 @@
+Based on the M.H. Pee's TASC article "Phase Change Index".
+Prices at any time can be up, down, or unchanged. A period where market prices remain relatively unchanged is referred to as a consolidation. A period that witnesses relatively higher prices is referred to as an uptrend, while a period of relatively lower prices is called a downtrend.
+The Phase Change Index (PCI) is an indicator designed specifically to detect changes in market phases.
+This indicator is made as he describes it with one deviation: if we follow his formula to the letter then the "trend" is inverted to the actual market trend. Because of that an option to display inverted (and more logical) values is added.

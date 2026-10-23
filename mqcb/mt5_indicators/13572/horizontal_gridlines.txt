@@ -1,0 +1,14 @@
+This indicator creates static horizontal price lines at specific interval on the chart. These lines are very useful in price action trading.
+In order to use this indicator, add the indicator to the main chart and select appropriate number of lines and interval as per your requirements. You can also change the line color and styles as well.
+Settings:
+lines —
+number of lines on both side of current price;
+interval —
+space between grid lines;
+line_style —
+line style;
+line_width —
+width of grid lines;
+line_color —
+color of the grid lines.
+Example:

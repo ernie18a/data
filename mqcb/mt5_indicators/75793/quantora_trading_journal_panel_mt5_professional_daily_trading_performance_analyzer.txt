@@ -1,0 +1,5 @@
+Quantora Trading Journal Panel MT5 is an indicator that analyzes closed trades and presents trading performance in a clear dashboard. It does not open or manage trades and is designed for analysis.
+The tool converts account history into simple statistics such as total trades, win rate, gross profit, gross loss, net profit, average results, and profit factor. It helps you quickly evaluate performance without reviewing individual trades manually.
+You can analyze results for the current day or a selected date, with options to filter by symbol, magic number, or trade direction. The dashboard also shows current account data such as balance, equity, and floating profit or loss.
+All data updates automatically and is displayed in a clean interface for easy monitoring.
+Suitable for traders who want a simple and structured way to track and review trading performance.

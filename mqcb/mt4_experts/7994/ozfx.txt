@@ -1,0 +1,26 @@
+Author:
+OzFx
+System OzFx to gain the profit of 100-800+ pips.
+Security: EUR/JPY
+Timeframe: Daily
+Indicators used: Bill Willam’s Accelerator Oscillator (AC), Stoh
+Trading lot: 0.1
+System Rules
+1. Attach the following indicators to the chart of EUR/JPY:
+- Bill Willam’s Accelerator Oscillator (AC)
+- Stochastic Oscillator with the parameters of K=5 D=3 L=3
+2. Buying alert is generated when AC (green bar) meets zero mark from bottom to top while the fast line of Stochastic Oscillator is above 50.
+3. Selling alert is generated when AC (red bar) meets zero mark from top to bottom while the fast line of Stochastic Oscillator is below 50.
+4. When a trade is opened, five orders of the same volume will be opened simultaneously. For all orders, StopLoss is set for 100 points.
+5. TakeProfit is set for +50 points for the first order, +100 points for the second order, +150 points for the third order, and +200 points for the fourth order. The fifth order is closed only when an opposite alert appears.
+6. If the first order is closed with a profit, StopLoss for all other orders will be moved to the non-losing area.
+You can find more details about the system here:
+http://www.unfx.ru/strategies_to_trade/strategies_115.php
+A detailed report about testing of this system is available in our magazine's issue from 03.03.2008:
+http://fortrader.ru/downloads/redirect.php?dlid=2
+Results Obtained for the Strategy with Standard Settings: StopLoss=100, TakeProfit=50,100,150,200,Stochastic=5.
+Result Obtained for the Strategy with the Following Parameters
+: StopLoss=220, TakeProfit=80,160,240,320,Stochastic=46.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7994

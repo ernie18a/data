@@ -1,0 +1,15 @@
+Average True Range Bands indicator displays bands on the true average range.
+It has four inputs:
+ATR period
+- ATR calculation period
+Deviation
+- deviation (bands channel width)
+Calculating mode
+Close
+- by Close price
+High/Low
+- by High/Low prices
+Show deviation line
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22371

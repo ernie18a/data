@@ -1,0 +1,32 @@
+This code is following the idea of MA Profit, except that it is using a single Moving Average instead of the cross moving average system.
+Using only a single moving average speeds up optimization, it can check all moving averages between 10 and 1000 in nearly no time.
+Trading with single moving average gives three signals. Usually it works with large moving averages like 150 or even 500 or more.
+The curve is below the candles - buy
+The curve is above the candles - sell
+the curve is horizontal and many times crossing the candles - close positions and wait
+By switching the period everything is re-calculated, you can check if different time frames (minute, hour, day and so on) show the same signal. Usually a signal is stronger if displayed by by multiple time frames. Also you can switch to lower time frame in order to find an entry point into a long or short trade.
+The indicator draws 4 kinds of triangles
+Red with thick border: short trade with win
+Red with thin border: short trade lost
+Green with thick border: Long trade in win
+Green with thin border: Long trade lost
+If a new signal is available the indicator can display an alert or use voice output. In this case you need the speak.dll, for example from https://www.mql5.com/en/code/8621.
+The indicator dispays the status and the number for good and wrong signals in its status line.
+The optimization can be in two modes:
+Simulated trading. The best moving average is the one which gave the best profit
+Counting intersections between candles. The less time the curve and the candles hit each other the better the moving average is.
+Parameters: (look source code also)
+extern bool bOptimize=true; // True: Find the best single MA by optimizing (switch time frame to re-optimize)
+extern bool bOptimizeIntersect=true; // True: optimize for minimum intersections, otherwise optimize for max profit
+extern int PeriodMA=400; // If you do not want to optimize, you can define a period
+extern int Method=0; // Method for MA 0 = Simple, 1 = Expotential, 2 = Smoothed, 3 = Linear weighted
+extern bool DrawTringles=true; // Draws triangles for the simulated trading
+extern int MinMA=5; // Minimum test for optimizing
+extern int MaxMA=500; // Maximum test for optimizing
+extern int StepMA=1; // Step during optimizion, 1 tests every MA, 10 tests every 10th etc.
+extern int CountOptimize=300; // Number of candles for optimizing
+extern int RepaintBars=3000; // Number of candles on which we draw triangles and calculate the win/loss
+extern bool Alarm=true; // Make a visible alert on new signal
+extern bool bSpeak=true; // Speak the alert with gspeak
+Moving average trading gives some very good signal but also a lot of false signals. I am currently seeking more ideas of filtering the false signal in order to publish my moving average expert advisor.
+Plese use at your own risk!

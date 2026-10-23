@@ -1,0 +1,9 @@
+Theory :
+In “Recursive Median Filters” in March 2018 issue of TASC, author John Ehlers presents an approach for filtering out extreme price and volume data that can throw off typical averaging calculations. Ehlers goes on to present a novel oscillator using this technique, comparing its response to the well-known RSI. He notes that by being able to smooth the data with the least amount of lag, the recursive median oscillator may give the trader a better view of the bigger picture.
+Usage :
+Ehlers suggests usage as signals on zero line cross. This version instead adds floating levels and, implicitly, makes it an adaptive indicator. To reflect the additions, now you have a choice when to change colors of the indicator :
+change when the slope of RMO changes
+change when the RMO crosses outer floating levels (default)
+change when the RMO crosses the middle (dynamic "zero") level
+PS:
+Indicator is using default parameters as specified in the original. But you might want to experiment with that and using longer high pass periods seems to produce interesting results (as in the example)

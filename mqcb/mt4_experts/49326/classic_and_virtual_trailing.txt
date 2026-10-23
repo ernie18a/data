@@ -1,0 +1,4 @@
+Classic Trailing => Use Stop Loss to Trail and it does reflect in your broker server
+Virtual Trailing => Does not Trail using Stop Loss and it does not reflect in your broker server.
+Trailing Gap = A Gap from Bid/Ask Price
+Trailing Start = Distance from Order Entry Price (Order Open Price) to start trailing

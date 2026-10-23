@@ -1,0 +1,9 @@
+The Expert Advisor tracks positions of all symbols with all magic numbers. If a position has been open for "Waiting for seconds" and its profit has reached "Take Profit" points, the EA closes the position. If the profit has not reached "Take Profit" points, the EA moves the take profit level.
+Input Parameters
+Waiting for seconds
+- the number of seconds to hold a position after the opening time;
+Take Profit
+- the number of take profit points.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19394

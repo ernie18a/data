@@ -1,0 +1,2 @@
+Author: jpkfox
+EMA Angle Zero indicator.

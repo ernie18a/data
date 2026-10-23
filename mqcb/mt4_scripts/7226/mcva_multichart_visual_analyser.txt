@@ -1,0 +1,7 @@
+The script creates three "main" graphic objects: two vertical lines and a linear regression.
+When user moves any of the three objects, the "connected" objects are automatically repositioned on the chart.
+When the script is run on multiple charts, objects can be moved in any of them, the positioning of the "connected" objects is performed on all charts. The script does not depend on the timeframe
+The figure below shows the script operation with the pairs EURUSD (M5), GBPUSD (M15), USDCHF (H1)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7226

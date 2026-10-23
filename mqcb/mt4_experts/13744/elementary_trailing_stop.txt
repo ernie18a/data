@@ -1,0 +1,10 @@
+Elementary trailing stop able to distinguish its "own" orders among others by comment and/or Magic number. It also distinguishes the financial instrument that needs to be trailed.
+Hopefully it will be useful for someone.
+The arguments passed to the function:
+symbol — the symbol of the instrument that needs to be trailed (if empty is passed, current symbol is used).
+comment — the comment to the order (as an additional key for filtering among orders).
+magic — the magic number of the order (as a tool for filtering among orders).
+trail_p — the number of points to trail.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13744

@@ -1,0 +1,6 @@
+One more average/smoother that due to its fractional calculation period possibility can be used to be made adaptive.
+Some call it Jurik smooth some don't. Since it is not a Jurik MA left simply the name to be "smoother". The bigest difference is that this one is adaptive too unlike the similar ones that can be found floating on the net. In this one the adapting method used is a standard deviations method.
+It is a good filter, since unlike the JMA versions floating around the way it inherits values prevents it from repainting problem that almost all JMA versions have. It is probably not as responsive as the real JMA but in this new adaptive form, considering everything, it merits our attention.
+____________________
+To turn the adapting off, set the adapting period to 1.
+It seems that with longer periods the adapting gives better results but better to experiment a bit with it (lower example has adapting period set to 50 and calculating period set to 25).

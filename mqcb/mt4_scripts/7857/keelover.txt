@@ -1,0 +1,7 @@
+Author: Bookkeeper
+The script closes all open positions and opens new one with the difference of Buy and Sell lots.
+Attention
+: If the sum of the Buy and Sell lots are equal, all positions will simply be closed.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7857

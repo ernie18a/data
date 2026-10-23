@@ -1,0 +1,13 @@
+The indicator adds signal marks to a price chart when the
+CCI
+indicator crosses its zero line. If CCI crosses the zero line upwards, a dot is added below the candlestick, if downwards the dot is above the candlestick.
+The indicator has three input parameters:
+CCI period
+- CCI indicator parameter;
+CCI applied price
+- price used for CCI calculation;
+MA period
+- period of the moving average for the calculation of the distance from the candlestick's High or Low to placing signal marks.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20158

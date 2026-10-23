@@ -1,0 +1,14 @@
+Real author:
+A large portion of the code was copied from the
+7 MA v2
+by
+Mihail
+.
+Draws 5
+MA
+on the chart. Not only the smoothing method (SMA, SMMA, EMA, LWMA) and the period can be selected, but also the timeframe and the indicator horizontal offset.
+Tip:
+A favor, to be exact: I am merely learning programming and do not know much, but... if anyone has an idea about the improvement of the indicator, feel free to write. I would be interested in trying to implement your ideas!
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14146

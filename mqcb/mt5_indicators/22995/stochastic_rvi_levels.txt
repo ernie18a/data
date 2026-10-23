@@ -1,0 +1,6 @@
+Theory:
+Stochastic RVI was originally described by John Ehlers. in order to provide some signaling capabilities other than some fixed levels crossing, he used what is called a stochastic RVI trigger. That trigger is actually an "ema in disguise" - but which we can not control. Also, that trigger line tends to work OK for short tern but will produce far too much signals for an attempt to use the stochastic RVI in a longer term estimate.
+This version:
+Instead of using self adjusting levels instead of that trigger line. That introduces "neutral" state too and should help in filtering out some of the false signals.
+Usage:
+You can use the color change as a signal.

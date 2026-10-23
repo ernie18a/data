@@ -1,0 +1,6 @@
+There are 2 indicators and a template in the archive. Zigzag-fractals tracks and connects the upper and the lower fractals to each other. Fx-ao displays angulation. You can find the full description of the strategy at:
+www.fx-chaos.by.ru
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8052

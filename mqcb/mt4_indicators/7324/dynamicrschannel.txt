@@ -1,0 +1,8 @@
+The second indicator of the series of simple indicators without averaging.
+The meaning of the indicator is quite clear from its code. Instead of analyzing the period, a fixed channel in both sides of the indicator line has been added. Initially it included period analysis, but experiments have shown that in the indicator values are mainly formed at the channel borders.
+Use:
+first - we need to know the current trend at the older TFs. The most convenient way is to use the indicator on smaller timeframes with a small target. For example, for timeframe M5 the channel of 8 points works well. Enter a trade during correction one point above the main line of the indicator (to Sell) and one point below it (to Buy) with a target about 10 points, or one point beyond the channel. Better work with pending orders because small timeframe is used. Otherwise, you can be late sometimes. I have not tried it on the higher timeframes, as I am currently trying to create a program in such a way that it made 2-3 profitable positions with minimal risk every day. It is convenient to place the stop one point beyond the boundaries of the price channel (Donchian) with a period from 16 to 20.
+DynamicRS+Channel
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7324

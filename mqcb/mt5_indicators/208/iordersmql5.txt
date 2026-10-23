@@ -1,0 +1,31 @@
+The indicator shows deals history on the chart. The suggestions are welcome.
+The chart objects are clickable. The colors can be customized in input parameters of the indicator.
+Input parameters:
+Language
+Language
+- language for messages (in this version English and Russian languages are supported).
+Display settings
+ShowCurrentPostion
+- true - show additional info about the current position.
+CompactPositionInfo
+- true - show info about the profit only, false - show all info.
+ShowDealHistory
+- true - show deals history info.
+Additional settings
+StartTime
+- starting time to proceed.
+BuyColor
+- color of long deals.
+SellColor
+- color of short deals.
+InfoColor
+- color of additional info.
+FontSize
+- font size.
+Few figures to illustrate how does it looks:
+Figure 1. Show deals history
+If you click at any arrow, you can get more information. Click again to hide it.
+Figure 2. Show additional info
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/208

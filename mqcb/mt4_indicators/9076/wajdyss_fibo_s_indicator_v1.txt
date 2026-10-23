@@ -1,0 +1,1 @@
+This indicator for draw an Arrows for buy & sell, it's Depends on FIBO S Indicator

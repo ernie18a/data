@@ -1,0 +1,2 @@
+Author: Sfen
+The indicator which draws a structure of the market.

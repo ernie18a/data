@@ -1,0 +1,3 @@
+A well known "precision trend" indicator — made as a histogram version.
+Indicator is similar to some existing indicator, but there are some deviation which makes it justifiable to have it as a separate indicator. It tends to be a good indicator for trends. This version is the histogram version of the indicator coloring the histogram bars according to the current "precision trend" state.
+And here is how it correlates to the "regular" version:

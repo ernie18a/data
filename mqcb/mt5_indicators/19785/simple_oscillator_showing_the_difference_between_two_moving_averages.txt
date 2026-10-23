@@ -1,0 +1,13 @@
+A simple oscillator. Shows the difference between two exponential Moving Averages in the form of a colored histogram drawn in a separate window.
+There are three adjustable parameters:
+Period EMA
+- periods of moving averages;
+Shift of the second EMA
+- shift for the second EMA in bars (if 0, the value of 1 is used);
+Threshold
+- the threshold value. If the histogram bar value is greater than the specified value, the bar is green (default). It the bar is less than the threshold, it is shown in red. If it is within +/- Threshold, the bar is yellow.
+Fig.1 Default values.
+Fig.2 Threshold 50.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19785

@@ -1,0 +1,13 @@
+Author of idea
+—
+Iurii Tokman
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+All parameters of the Expert Advisor are calculated on the basis of a random number generator, including the position direction, Stop Loss and Take Profit. Lot is calculated based on the risk value as a percentage of free margin. Before opening a position, the possibility of opening is checked — protection against the "not enough money" error.
+The EA works on any timeframe.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17744

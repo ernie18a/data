@@ -1,0 +1,18 @@
+Four semaphore signal indicators based on stochastic oscillators with different periods on one price chart.
+Trend signals occur when the oscillators enter the oversold and overbought areas specified in the input parameters:
+input
+uint
+rsiUpperTrigger=
+62
+;
+// Overbought level
+input
+uint
+rsiLowerTrigger=
+38
+;
+// Oversold level
+Figure 1. Indicator X4Period_Stochastic_Arrows
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2240

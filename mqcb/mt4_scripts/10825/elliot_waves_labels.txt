@@ -1,0 +1,6 @@
+A simple tool to quickly get text characters on the chart to use for Elliot wave letter labels / numbers .
+How to use:
+It's a script so place it in scripts.
+When you need the text just drag and drop the script close to where you want to place the text. The text will appear on the next tick (or hit refresh) and you can then move each letter / number to where you want it .
+To make changes to the text open the script in the MetaEditor and make the changes. Should be pretty clear from the comments in the code what to do to make changes.
+If you want to keep multiple copies (i.e. one setup for numbers and one setup for letters) just save them back as additional scripts with unique names.

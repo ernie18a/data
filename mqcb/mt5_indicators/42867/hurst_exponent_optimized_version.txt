@@ -1,0 +1,6 @@
+Optimized version of the indicator originally published here :
+Hurst exponent
+.
+Recommendations:
+Please read the original description for details
+the code can be further optimized (by using faster logarithm approximation - that would cause some precision loss - for example and some other code changes), but the gains would not be as "dramatical" as this version is compared to the first version

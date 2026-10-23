@@ -1,0 +1,19 @@
+The indicator displays the Ask and Bid, which are taken from the real tick history. Also, it is possible to evaluate the spread changes by visually comparing the Ask and Bid.
+The 2016.10.07 02:06:03 date is set in the indicator by default. This allows to see the events of GBP decline on the GBPUSD symbol:
+As the indicator shows the Ask and Bid values, it is also possible to see what spread was.
+Input parameters
+:
+amount requested by ticks —
+the number of requested ticks.
+with a date query tics
+—
+the date to request ticks from.
+timer
+—
+timer (milliseconds) for updating the indicator, essentially the rate of showing the tick history.
+see how many bars
+—
+the number of visible ticks.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16553

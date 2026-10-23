@@ -1,0 +1,2 @@
+Author: TrendLaboratory Ltd
+StepMA Stoch KV1 indicator.

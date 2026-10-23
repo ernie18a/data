@@ -1,0 +1,1 @@
+Total closure of all positions (winners/losers). You can also select which are of a single instrument.

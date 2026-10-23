@@ -1,0 +1,3 @@
+Double ZigZag draws virtual Buy and Sell levels on the price chart.
+The TP and SL sizes are set in the settings and the indicator draws two ZigZags: one draws the extremes of the Buy price movement model, the second is similar to the Sell price movement model.
+The chart also displays horizontal lines of the last levels of each ZigZag.

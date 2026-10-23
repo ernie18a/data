@@ -1,0 +1,16 @@
+The file
+supertrend.tpl
+(first extract the ZIP) should be placed to the folder
+C:\Program files\Forex Broker\templates\
+Other
+*.mq4
+files should be placed to the folder
+C:\Program files\Forex Broker\experts\indicators\
+After loading it looks more or less like in
+the combined
+TEMPLATE_FOREX_PL.jpg
+file
+Everything should be OK
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8637

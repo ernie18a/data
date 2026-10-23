@@ -1,0 +1,5 @@
+Ultra Trend
+is an indicator that uses different period averages (usually it is JMA), checks their slopes and calculates the trend from those slopes.
+This version is using a "fast" (fast in response to market changes)
+Zero Lag MA
+for trend calculations.

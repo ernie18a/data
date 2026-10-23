@@ -1,0 +1,16 @@
+Advanced Fractal On MA signal indicator searches for fractals of the moving average line. The indicator uses two moving averages for searching upper and lower fractals.
+There are five inputs:
+MA period
+- moving averages period;
+MA method
+- moving average calculation method;
+Upper applied price
+- calculation price of the moving average where upper fractals are searched for;
+Lower applied price
+- calculation price of the moving average where lower fractals are searched for;
+Frames
+- range of bars where the fractal is searched for (at least 3 bars).
+When a fractal is found, the indicator marks it on the price chart and sets the arrow of a proposed entry direction on the current bar.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21641

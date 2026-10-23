@@ -1,0 +1,7 @@
+Author: mostashar15
+Advisor MostasHaR15 Pivot.
+------------------------------
+Parameters of testing
+Period: H1
+Symbol: EURUSD
+Model: All tick

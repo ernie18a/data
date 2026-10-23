@@ -1,0 +1,5 @@
+The multitimeframe version of Donchian channel.
+The Donchian channel is an indicator used in market trading developed by Richard Donchian. It is formed by taking the highest high and the lowest low of the last
+n
+periods. The area between the high and the low is the channel for the period chosen.
+The deviation from the classical highest high/lowest low channel is that Donchian channel is shifted by one period. That shift allows it to have signals (when either the upper or the lower band is broken by the close price it is considered to be a signal for long or short).

@@ -1,0 +1,2 @@
+Author: OfficeFX Group
+The indicator shows points BUY and SELL.

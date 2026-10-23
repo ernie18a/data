@@ -1,0 +1,1 @@
+The indicator shows computer time resolution. Normally it is about 15-16 ms. This is important, for example, to copy positions from other MetaTrader 4.

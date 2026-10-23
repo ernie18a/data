@@ -1,0 +1,11 @@
+The author of the idea
+Anton
+describes the EA as follows:
+This is the original Expert Advisor developed by Pavel Smirnov (
+http://www.autoforex.ru/lab/20_200_v3/20_200_v3.php
+) improved by means of very thorough optimization, adding the auto lot size and increasing a lot to cover losses. The minimum recommended deposit is $10 000. The potential profit is smaller on lesser deposits. Use it on EURUSD H1 only!
+Testing on EURUSD H1, from 2016.01.01 to 2016.10.26, deposit 10 000:
+Perhaps, it makes sense to optimize the EA parameters and check them on other timeframes.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16690

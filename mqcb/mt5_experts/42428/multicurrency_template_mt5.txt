@@ -1,0 +1,3 @@
+This EA is a Sample for Multicurrency system for Metatrader 5.
+Entry is just using a simple candle logic on D1.
+Hope this EA can be a help for others to learn.

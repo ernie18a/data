@@ -1,0 +1,15 @@
+Author of an idea:
+The original code has been published by
+Collector
+.
+The ZeroLag MACD indicator shows the histogram with color of the previous bar.
+The indicator is based on the MACD from MetaTrader 5 standard package. Added the filling and changed the formula of its calculation. I used the formula from the
+original code
+.
+The signal line has been removed. The original version is based on the
+Double Exponential Moving Average
+(DEMA).
+ZeroLag MACD
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/100

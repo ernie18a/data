@@ -1,0 +1,6 @@
+As described by Markos Katsanos and his article in the June 2018 edition of Technical Analysis of Stocks and Commodities magazine.
+Additional choice of what is used for penetration criteria (in original only close price is used, in this version you can chose to use high/low instead too). Also, instead of using only simple moving average for averaging, it can be done using one of the 4 averages types:
+Simple Moving Average
+Exponential Moving Average
+Smoothed Moving Average
+Linear Weighted Moving Average

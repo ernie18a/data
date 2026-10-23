@@ -1,0 +1,6 @@
+Author: Rosh
+The SMI indicator. Based on the
+"Momentum, Direction, and Divergence" book by Blau
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7203

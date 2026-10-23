@@ -1,0 +1,10 @@
+Real author:
+Keris2112
+A candlestick chart, all the Open prices of which are shifted to zero.
+This indicator was first implemented in MQL4 and published in
+CodeBase
+at mql4.com on 13.09.2007.
+Figure 1. The Linear_Price_Bar indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2327

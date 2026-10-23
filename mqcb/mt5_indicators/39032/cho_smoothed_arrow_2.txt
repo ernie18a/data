@@ -1,0 +1,6 @@
+The idea of the indicator
+Display 'Arrow' in the main window if two lines intersect: 'CHO' and 'Smoothed CHO'. Version 2 has more stringent signal checking: the 'BUY' signal can only form below the zero line, and the 'SELL' signal can only form above the zero line.
+Rice. 1. CHO Smoothed Arrow 2
+Please note that this is an oscillator and two strategies can be applied:
+* apply additional filter from trend indicator
+* gain position on each signal

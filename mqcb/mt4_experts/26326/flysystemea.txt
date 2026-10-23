@@ -1,0 +1,4 @@
+The expert place and manage pending orders. Runs perfectly on pairs with tight spread and low commission broker (commission plus spread equal or less than 1.0 pip).
+Choose a broker with zero stop level and fast execution to use the expert.
+The code is available for testing and studying.
+Version 5.5 working only with pending stop orders.

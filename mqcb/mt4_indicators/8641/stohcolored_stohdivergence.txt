@@ -1,0 +1,6 @@
+First of all you should attach the ind_StoColored_v1 file, then drag the
+DivPeakTroughSto_SW_v1 via the mouse to the same window
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8641

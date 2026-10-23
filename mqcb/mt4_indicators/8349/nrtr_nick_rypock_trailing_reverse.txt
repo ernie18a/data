@@ -1,0 +1,16 @@
+The gist of the NRTR is it is always at a distance from the reached price extermums - below the chart at rising trends and above the chart at descending trends. The following idea was pursued here: the small correcional movements against the main trend must be ignored, and the movement against the main tendency exceeding some level (the size of the moving filter K) signalize about the reverse of the tendency.
+The dynamic price channel is used for the calculation of NRTR. Only the prices the current trend contains take part in the calculations and the extremums that belong to the previous tendency are excluded. The indicator is always at the same distance (in percentage terms, in this case) from the extremums that the prices have reached (below the maximum peak for the current up-trend, above the minimum valley for the current down-trend).
+For the rising trends:
+NRTR = Highest(Close, period)*(1-(K/100)),
+For the descending trends:
+NRTR = Lowest(Close, period)*(1+(K/100)),
+where the first part of the expression is the highest/lowest price extremum that was reached in the period of the last crossing the indicator by the prices, K is the size of the moving filter in percentage terms the indicator stands from the reached extremums by.
+As well as any other simplified approach, this indicator works greatly on the trend sections of the market but it starts fooling on the non-trend ones.
+You can read more datailed information about the properties and varieties of this indicator in the article by Konstantin Kopyrkin:
+«
+Трендовый индикатор прорыва динамического ценового канала
+»
+(«Современный трейдинг» № 4, 2001 г.) (Trend indicator of breakthrough of the dynamic price channel, "Modern Trading", №4, 2001.)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8349

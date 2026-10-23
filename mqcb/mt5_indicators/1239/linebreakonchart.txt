@@ -1,0 +1,10 @@
+It is written by Steve Nison book "Beyond Candlesticks". Despite of the standard charts of the linear reversal it is drawn not on the separate but the main window over the current pair of the chart and considering timeframe. Besides, the extra parameter of the minimum size of the box (not considering reversal boxes) is added that makes this indicator similar but not identical to renko-charts.
+Since the boxes are drawn without using the indicator buffers, but are objects, in order not to overload the terminal the parameter of starting date for calculation of the indicator is added (the minimum date is 2001.01.01).
+Another detail is the added SeriesBuffer indicator buffer that holds the number of boxes on each bar in order to receive the given value in the Expert Advisors. When up trend the buffer value will be positive, when down trend it will be negative.
+Number of reversal lines = 3, the minimum box size = 0.
+2.  Number of reversal lines = 2, the minimum box size = 200 (pips).
+Recommendations:
+When using on М1 do not set the starting date for calculations to too early (optimum is a few months), when using on Н1 and higher timeframes, you can set the starting date for calculations to the minimum date value of the this indicator, i.e. start from 2001.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1239

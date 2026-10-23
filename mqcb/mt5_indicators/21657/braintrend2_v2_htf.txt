@@ -1,0 +1,17 @@
+The
+BrainTrend2_V2
+indicator with the ability to change the indicator timeframe using the input parameters:
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// The indicator chart period (timeframe)
+For the indicator to work, the
+BrainTrend2_V2.ex5
+indicator must be added to the <terminal_data_directory>\MQL5\Indicators folder.
+The indicator is provided with the alert function and can send push and email notifications from the BrainTrend2_V2 indicator.
+Fig. 1. The BrainTrend2_V2_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21657

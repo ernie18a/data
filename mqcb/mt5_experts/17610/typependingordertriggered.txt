@@ -1,0 +1,179 @@
+The Expert Advisor shows an example of how to solve the following problem
+: How to determine the moment when a pending order has triggered?
+How the expert advisor works: in the
+OnTradeTransaction
+() function, we wait for a transaction of type "
+TRADE_TRANSACTION_DEAL_ADD
+":
+TRADE_TRANSACTION_DEAL_ADD
+Adding a trade to history. It is performed as a result of order execution or an operation with the account balance
+Once we "catch" such a transaction, we immediately
+use the "bln_find_order" flag
+to search for an order and
+assign the order ticket to the "ul_find_order" variable
+:
+//+------------------------------------------------------------------+
+//| TradeTransaction function                                        |
+//+------------------------------------------------------------------+
+void
+OnTradeTransaction
+(
+const
+MqlTradeTransaction
+&trans,
+const
+MqlTradeRequest
+&request,
+const
+MqlTradeResult
+&result)
+  {
+//+------------------------------------------------------------------+
+//| TRADE_TRANSACTION_DEAL_*                                         |
+//| The following fields in MqlTradeTransaction structure            |
+//| are filled for trade transactions related to deals handling      |
+//| (TRADE_TRANSACTION_DEAL_ADD, TRADE_TRANSACTION_DEAL_UPDATE       |
+//| and TRADE_TRANSACTION_DEAL_DELETE):                              |
+//|  •deal - deal ticket;                                            |
+//|  •order - order ticket, based on which a deal has been performed;|
+//|  •symbol - deal symbol name;                                     |
+//|  •type - trade transaction type;                                 |
+//|  •deal_type - deal type;                                         |
+//|  •price - deal price;                                            |
+//|  •price_sl - Stop Loss price (filled, if specified in the order, |
+//|  •based on which a deal has been performed);                     |
+//|  •price_tp - Take Profit price (filled, if specified             |
+//|   in the order, based on which a deal has been performed);       |
+//|  •volume - deal volume in lots.                                  |
+//|  •position - the ticket of the position that was opened,         |
+//|   modified or closed as a result of deal execution.              |
+//|  •position_by - the ticket of the opposite position.             |
+//|   It is only filled for the out by deals                         |
+//|   (closing a position by an opposite one).                       |
+//+------------------------------------------------------------------+
+//--- get transaction type as enumeration value
+ENUM_TRADE_TRANSACTION_TYPE
+type=trans.type;
+//--- if transaction is result of addition of the transaction in history
+if
+(type==
+TRADE_TRANSACTION_DEAL_ADD
+)
+     {
+bln_find_order=
+true
+;
+// true -> you should look for a order
+ul_find_order=trans.order;
+}
+  }
+In OnTick(), we always check the state of the "bln_find_order" flag; as soon as the flag is equal to true, we start to search for the order.
+First we try to find the order by ticket
+If the attempt succeeds (which means that the order has already been written to history), we
+determine the order type
+. In order to access the property of an order from the trade history, use
+HistoryOrderGetInteger
+.
+//+------------------------------------------------------------------+
+//| Expert tick function                                             |
+//+------------------------------------------------------------------+
+void
+OnTick
+()
+  {
+//---
+if
+(bln_find_order)
+// true -> you should look for a order
+{
+static
+long
+counter=
+0
+;
+Print
+(
+"Attempt number "
+,counter);
+ResetLastError
+();
+if
+(
+HistoryOrderSelect
+(ul_find_order))
+{
+long
+type_order=
+HistoryOrderGetInteger
+(ul_find_order,
+ORDER_TYPE
+);
+if
+(type_order==
+ORDER_TYPE_BUY_LIMIT
+|| type_order==
+ORDER_TYPE_BUY_STOP
+||
+            type_order==
+ORDER_TYPE_SELL_LIMIT
+||type_order==
+ORDER_TYPE_SELL_STOP
+)
+           {
+Print
+(
+"The pending order "
+,ul_find_order,
+" is found! Type of order is "
+,
+EnumToString
+((
+ENUM_ORDER_TYPE
+)
+HistoryOrderGetInteger
+(ul_find_order,
+ORDER_TYPE
+)));
+            bln_find_order=
+false
+;
+// true -> you should look for a order
+counter=
+0
+;
+return
+;
+           }
+else
+{
+Print
+(
+"The order "
+,ul_find_order,
+" is not pending"
+);
+            bln_find_order=
+false
+;
+// true -> you should look for a order
+return
+;
+           }
+        }
+else
+{
+Print
+(
+"Order "
+,ul_find_order,
+" is not find, error#"
+,
+GetLastError
+());
+        }
+      counter++;
+     }
+  }
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17610

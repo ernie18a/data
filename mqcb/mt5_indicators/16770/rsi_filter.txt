@@ -1,0 +1,9 @@
+RSI that is intended to be used as a filter.
+It is checking states of RSI (comparing it to levels 30 and 70) and, depending on the breaks of those levels, 3 states of the indicator are plotted:
+upper — when there is a clear break above level 70 and when the state is inherited from the previos bar
+lower — when there is a clear break bellowe level 30 and when the state is inherited from the previos bar
+neutral — when the value is floating between the 40 to 60 values.
+This way, the values of RSI are filtered a bit more. Indicator can be applied to other indicators too, and some combinations seem to be interesting (applying this filter to momentum can be interesting, for example).
+PS:
+shorter period of RSI should be used (longer periods of RSI tend to break 30 and 70 levels in fewer occasions and that might limit it in usage — as it is always advised: regular RSI should be used with short periods — up to period 10 is a sort of consensus).
+This indicator can be used together with another indicators.

@@ -1,0 +1,79 @@
+At Bookkeeper's request, I've made an "egzpert advizor" based on his ZigAndZag published at:
+https://www.mql5.com/ru/code/8180
+. This EA is for the Tester or, at most, for demo trading, not for the real trading. Here are the results of testing from the beginning of this year:
+Strategy Tester Report
+ZigAndZag_trader
+Symbol
+GBPUSD (Great Britain Pound vs US Dollar)
+Period
+4 Hours (H4) 2008.01.02 08:00 - 2008.06.20 20:00 (2008.01.01 - 2008.06.23)
+Model
+Every tick (the most precise method based on all available least timeframes)
+Parameters
+Lots=0.1; ZZbar=1; Closebar=3; Maxord=1; Sl=0; Tp=0; magic=78977;
+Bars in test
+1737
+Ticks modelled
+2215268
+Modelling quality
+90.00%
+Missmatched charts errors
+0
+Initial deposit
+10000.00
+Total net profit
+855.09
+Gross profit
+3744.42
+Gross loss
+-2889.33
+Profit factor
+1.30
+Expected payoff
+8.38
+Absolute drawdown
+409.18
+Maximal drawdown
+477.52 (4.31%)
+Relative drawdown
+4.31% (477.52)
+Total trades
+102
+Short positions (% won)
+22 (27.27%)
+Long positions (% won)
+80 (55.00%)
+Profit trades (% of total)
+50 (49.02%)
+Loss trades (% of total)
+52 (50.98%)
+Largest
+profit trade
+231.71
+loss trade
+-195.29
+Average
+profit trade
+74.89
+loss trade
+-55.56
+Maximum
+consecutive wins (profit in money)
+5 (245.24)
+consecutive losses (loss in money)
+4 (-267.84)
+Maximum
+consecutive profit (count of wins)
+337.16 (3)
+consecutive loss (count of losses)
+-267.84 (4)
+Average
+consecutive wins
+2
+consecutive losses
+2
+The debates about this gem are
+here
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8211

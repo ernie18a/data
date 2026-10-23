@@ -1,0 +1,48 @@
+Left-Side Multi-Timeframe & Trade Setup Panel
+:
+Header
+: Live
+Symbol
+and real-time
+Bid Price
+in the same top row.
+Multi-TF Structure Section (
+M1
+,
+M5
+,
+M15
+,
+M30
+,
+H1
+)
+: Displays each timeframe's current structure status (
+BOS
+/
+Choch
+/
+Swing Formed
+) with exact breakout prices.
+Current Setup Details Section
+: Formatted
+vertically line-by-line
+(not crowded into a single line):
+Setup Status
+(Active or Completed)
+Direction
+(
+BUY
+or
+SELL
+)
+Entry Price
+Stop Loss Price
+with pip risk
+TP1 Price
+with 1:1 pip reward
+TP2 Price
+with 1:2 pip reward
+TP3 Price
+with 1:3 pip reward
+Net Pips Captured

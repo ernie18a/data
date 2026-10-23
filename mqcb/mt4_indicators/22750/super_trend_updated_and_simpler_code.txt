@@ -1,0 +1,3 @@
+This is just another version of the well known Super Trend indicator.
+The code is simplified but it has the same output on the chart screen.
+Dots are used instead of lines and  iCustom calls are easier to implement

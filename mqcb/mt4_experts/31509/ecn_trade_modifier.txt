@@ -1,0 +1,13 @@
+On ECN, ECN Zero and Pro MT4/MT5 accounts,
+preset
+stoploss/takeprofit price levels are not permitted.
+If a trader wishes to specify
+stoploss/takeprofit values
+for an order, the trader must modify the existing position after the order is opened.
+This EA helps traders save valuable time by ensuring that a new trade position is modified to specified
+stoploss/takeprofit values
+after it is opened.
+This is especially helpful for
+scalpers
+who want to avoid the hassle of manually editing trade positions every-time a buy/sell market order is taken on a financial instrument.
+Code contributed by Maduagwuna  L.

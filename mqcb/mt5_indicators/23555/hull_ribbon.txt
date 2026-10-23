@@ -1,0 +1,7 @@
+Theory :
+This "ribbon" indicator is using an Hull moving average variation indicator that was originally published (with some more explanation) here :
+Hull Variation
+This version :
+It is using the "speed" property of the Hull variation indicator to construct a ribbon. That makes a sort of two indicators crosses, even without changing the calculating period.
+Usage :
+As any crosses indicator.

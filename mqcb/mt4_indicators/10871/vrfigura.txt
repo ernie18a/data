@@ -1,0 +1,18 @@
+The indicator on the quadrangle patterns, designed to work on hourly timeframes.
+Indicator displays quadrangle figure, angles of which are
+Daily Open
+Daily High
+Daily Close
+Daily Low
+The essence of the system is visual determination of subsequent movement:
+If the latter figure has a narrowing and the narrowing is less than the base of the figure, it forecasts continuation of a trend (at least the size of the base)
+If the latter figure has an expansion and the expansion is greater than the base of the figure, it predict possible reversal (at least the size of the base)
+If the base and the end of the figure are visually equal, a correction is expected
+Narrowing 3 is less than base 1 == trend continuation is predicted
+Narrowing 4 is approximately equal to the base 2 == flat is predicted
+Narrowing 6 is greater than base 5 == change in the trend is predicted
+Narrowing 9 is greater than base 7 == change in the trend is predicted
+Narrowing 11 is greater than base 8 == change in the trend is predicted
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10871

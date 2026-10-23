@@ -1,0 +1,12 @@
+Author: Farhad Farshad
+The FarhadCrab1 EA. It has a lot of settings. It also uses a large number of indicators. Some of them:
+MA
+,
+Stochastic
+,
+Macd
+,
+RSI.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7699

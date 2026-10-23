@@ -1,0 +1,17 @@
+Author:
+OldZ
+This indicator draws the major four forex session:
+Sydney,
+Tokyo,
+London,
+New York.
+It is obvious that the market usually moves in a narrow range during Sydney and Tokyo session, and it ofen moves powerfully during London and New York session, so we have to take different strategies during different sessions. This indicator is designed to draw each session with color lines.
+It has 3 external input parameter:
+LocalGMT: it is the GMT offset of your local time zone.
+BrokerGMT: it is the GMT offset of the broker's MT4.
+ShowText: if true,it will show each session based on local time on the top left corner.
+The blue line represents Sydney session, the yellow represents Tokyo session, the green represents London session and the red represents New York session.
+The design idea is from
+http://www.forexmarkethours.com/
+Recommendations:
+advise using it on M5 time frame

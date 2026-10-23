@@ -1,0 +1,8 @@
+Based on the MQL4 code by Evgeny Trofimov
+https://www.mql5.com/ru/code/10007
+.
+The script calculates and shows on a chart breakeven levels separately for open BUY and SELL positions.
+If the number of position changes, restart the script.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20189

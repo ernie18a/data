@@ -1,0 +1,13 @@
+The indicator plots the smoothed value of the following experession:
+Out[i]=MathLog(Close[i]/Close[i+ExtPeriodAcc]),
+where ExtPeriodAcc is the accelerator period, defined by "Acc period" input parameter.
+The smoothing is carried out by four-pass
+EMA
+with period, specified in the "MA period" input parameter.
+Input parameters:
+Acc period – accelerator period;
+MA period – averaging period;
+N History - number of bars to plot.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/192

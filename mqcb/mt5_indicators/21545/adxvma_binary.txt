@@ -1,0 +1,3 @@
+ADXVMA
+indicator made as "binary".
+Having only two values (+1 for "trend" up and -1 for "trend" down) makes it suitable for usage from experts (where usually only two states are what we are interested in).

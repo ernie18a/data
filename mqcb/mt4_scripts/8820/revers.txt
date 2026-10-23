@@ -1,0 +1,4 @@
+Script Revers opens opposite positions with the doubled quantity of lots on the current tool.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8820

@@ -1,0 +1,26 @@
+Author of the idea
+—
+Glenn Bacon
+,
+author of the mq5 code
+—
+barabashkakvn
+.
+The Expert Advisor is based on moving averages crossing.
+Simple FX EA trades Forex automatically using the moving averages.
+The MAs feature customizable period, method and type. Order settings (lot size, slippage and magic number) can be changed as well. The EA trades on
+any pairs
+. The best results are shown on
+D1
+.
+The latest Simple FX version is simplefx2.mq4. It has the following changes:
+Added customizable s/l and t/p
+Fixed s/l and t/p code
+Now, the EA waits for the first MA crossing
+If an order reaches s/l or t/p, the EA waits for the next MA crossing
+Critical variables are saved to file automatically
+The EAa is very simple. When the short MA is above the long one, the trend is considered bullish. The EA closes sell orders (if any) and opens a buy one. When the short MA is below the long one, the trend is considered bearish. The EA closes its buy orders (if any) and opens a sell one. Thus, the EA remains on the market sliding over bullish and bearish trends.
+The Stop_Loss and Take_Profit variables are optional which means that their values can be left at zero without affecting the EA operation. If you want more control over the EA, you may change them. For example, if you set Take_Profit to 20, the EA will open positions with a take profit at 20 pips.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16877

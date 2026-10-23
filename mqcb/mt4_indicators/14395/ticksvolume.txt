@@ -1,0 +1,8 @@
+The indicator shows the price change in points and how many times there was a change for a selected period, unfortunately only from launch to stop.
+No input parameters.
+It can be used to determine the speed and/or acceleration of price changes. In the screenshot it can be seen that the Volume equals 44, the TickVolume indicator shows that the price increased in 27 ticks ("Tick up") and decreased in 17 ticks ("Tick down"). During this time, the price has increased by 53 points ("Pips up") and decreased by 9 points ("Pips down", in the fifth digit).
+Very important,
+all mathematical operations with the values of the indicator must be carried out in absolute values.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14395

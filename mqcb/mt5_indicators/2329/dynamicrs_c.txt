@@ -1,0 +1,11 @@
+Real author:
+Nick A. Zhilin
+A trend indicator of the series of indicators without averaging.
+Yellow color occurs when the trend changes. The growing trend colors the line in purple, and falling trend - in pink.
+This indicator was first implemented in MQL4 and published in
+CodeBase
+at mql4.com on 12.09.2007.
+Figure 1. The DynamicRS_C indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2329

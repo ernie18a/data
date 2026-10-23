@@ -1,0 +1,5 @@
+An indicator that divides the M1 period into H1.
+The indicator divides the M1 price chart by the vertical lines every hour.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8495

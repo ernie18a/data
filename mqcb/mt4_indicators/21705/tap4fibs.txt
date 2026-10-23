@@ -1,0 +1,28 @@
+Creates Fibonacci levels based on the ZigZag indicator. Tap the "X" or "Z" key to scroll through each swing in the ZigZag, to the right or to the left. It can measure multiple Fibs very quickly.
+Scroll with "X" to the right until the Fib is off-screen to hide it from the chart. Tap "Z" to bring it back.
+Once on the chart, the Fib can be selected and dragged, or extended to anywhere on the chart. It will remain until a scroll key is pressed or a new candle is added to the chart. Users can also open the Fibo Properties panel to add or delete levels on the fly.
+Multiple instances can be used by changing the input; "Fibo Name" for each instance.
+The indicator will Print key numbers when pressed, that can be found in the Terminal >> "Experts" tab. Enter the new key numbers into the settings; "Back Key" and "Forward Key" to choose your own keys for scroll right and left, for each instance of the indicator.
+There is a helpful ATR value in the upper left of the chart that can be turned on or off.
+Fibo Name - String value to name the Fibo object on the chart. Each instance requires a unique name.
+ZigZag Depth - Set the Depth of the ZigZag seach from the current candle.
+ZigZag Deviation - Set the Deviation for extreme highs and lows.
+ZigZag BackStep - Set the # of candles in the back step.
+ZigZag Swing - Set how many swings it will scroll through before returning to zero.
+Shift swing offset - Set how many swings to the left is the first swing to jump to. For use when you want 2 Fibs to scroll together.
+Line Color - Set the color of the Fibo trend line.
+Levels Color - Set the color of the Fibo levels.
+Ray - Choose
+true
+to extend Fibo levels to the Right edge of the chart.
+Level 1 thru 10 - Set the Fibo levels as percentages of the swing. Positive are Retracements, negative are Extensions.
+Show ATR Value - Choose
+true
+to show the ATR value as a comment at the top left of the chart.
+ATR Period - Set the timeframe period for the ATR calculation, in minutes. 1, 5, 15, 30, 60, 240, 1440, etc...
+ATR Shift - Set the # of candles shifted from the current candle, for the ATR calculation.
+Inputs
+First Swing
+Second Swing
+Third Swing
+, etc...

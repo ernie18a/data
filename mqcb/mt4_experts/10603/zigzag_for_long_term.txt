@@ -1,0 +1,16 @@
+Author:
+Danu Saputra
+This Robot has been generated using Molanis Strategy Builder ..This is not Promotion :D
+This Robot uses the default zigzag indicator from MetaTrader with a few changes (
+ExtDepth = 150
+, ExtDeviation = 5, and ExtBackStep = 3 )
+This Robot is very good
+FOR
+LONG TERM
+not for Short Term (Next Time I will Upload EA Zigzag for Short Time (Scalping)) God Willing :D
+If you are a "Day Trader" or "Scalper" is not suitable to use. This Robot uses 5000 pips durability of your money and uses the "Percentage of Risk" 20%
+for Example : your balance $ 1000 = 0,2 lot, balance $ 500 = 0,1 lot, Use Trailing Stop = 50, Maximum Order = 10. Use M15 for the Best Result
+Have A Great Day..
+Best Regards,
+Danu Saputra :)
+Back Test From Year 2000 until 2012

@@ -1,0 +1,15 @@
+Indicator Acceleration Bands - Price Headley's acceleration bands they are based on daily range.
+It has two configurable parameters:
+Period
+- calculation period
+Factor
+- bands widening factor
+Calculations:
+Top = SMA(Up, Period)
+Bottom = SMA(Dn, Period)
+where:
+Up = High * (1+2*(2000 * Factor *(High-Low) / (High+Low)))
+Dn = High * (1-2*(2000 * Factor *(High-Low) / (High+Low)))
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21337

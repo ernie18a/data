@@ -1,0 +1,9 @@
+The script has three independent functions for determining the current (nearest) FORTS futures.
+The short name of the futures, such as
+br
+, is specified in the script parameters.
+The script outputs the full name of the previous, current and the next futures.
+Using these functions, it is easy to create an Expert Advisor that will select the current futures and trade it, both in the strategy tester and on a real account.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19141

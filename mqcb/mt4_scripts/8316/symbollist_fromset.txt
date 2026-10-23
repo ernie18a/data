@@ -1,0 +1,16 @@
+The script exports the symbols from any *.set file located at the "
+MetaTrader 4 \experts\files\
+" folder into the csv file ("
+MetaTrader 4 \experts\files\SymbolList(ServerName).csv
+"). The name of the *.set file can be specified using the
+SetFile_name
+external variable (you shouldn't specify the extention in the name).
+The *.set file itself can be obtained using the context menu command "Sets -> Save as" ("Market Watch" window). Then you should move the file from the "
+MetaTrader 4\symbolsets\
+" directory to "
+MetaTrader 4 \experts\files\
+" directory.
+An example of the result:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8316

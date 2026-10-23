@@ -1,0 +1,8 @@
+Real author:
+William Kreider (madhatt30)
+This time is for the most part a Zero Lag, by that I mean there is no pausing during the countdown period.
+I'm devising additional code to account for no data when a new bar should have formed, but during the bar if there is no data coming in it will still count down. This has been achieved via a short algorithm that utilizes the current system time instead of the server time.
+Recommendations:
+This indicator works fine, but be sure that you are connected to the time server and synch your computers time.
+NOTE: as of right now those of you who are a day ahead of behind may run into some issues but I'm working on that as well.
+Please feel free to leave a comment or what you think about this indicator.

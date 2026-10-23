@@ -1,0 +1,14 @@
+The William Blau Trend Momentum indicator shows the William Blau trend momentum.
+It has one input parameter:
+Period
+- calculation period.
+Calculations:
+Trend Momentum[i] = (H - L)
+where:
+H = High[i] - High[i+Period],
+If (H<0) H=0,
+L = Low[i+Period] - Low[i],
+If (L<0) L=0
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20514

@@ -1,0 +1,14 @@
+The
+Zigzag2_R_Color
+indicator with the timeframe selection option in the input parameters and display of values as fractal labels:
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Indicator chart period (timeframe)
+To provide correct operation of the indicator, place the compiled Zigzag2_R_Color.mq5 indicator file in terminal_data_folder\MQL5\Indicators.
+Fig.1. Zigzag2_R_Color_Arrows_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16857

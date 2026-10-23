@@ -1,0 +1,30 @@
+This EA is a further development of the first
+EMA_WMA
+version.
+The position trailing function has been added in version 2.
+Use two lines — WMA 8 and EMA 28.
+When WMA crosses EMA from below — open upward position.
+When WMA crosses EMA from above — open downward position.
+Once the position is opened, set orders: Take Profit 50 points (from Open), Stop Loss 50 points (from Open + spread).
+Tips
+Trade using a fixed deposit size — 10% with a leverage of (1:100).
+The system is not suitable for all currency pairs.
+If the trend reversed and WMA crossed EMA in the direction opposite to the opened position — open a position in the direction of the trend, while closing the previous one (of course, the old orders should be deleted and new ones should be placed).
+Input Values
+EMA: averaging period
+- EMA parameter;
+WMA: averaging period
+- WMA parameter;
+StopLoss
+- stop loss value;
+TakeProfit
+- take profit value;
+Trailing Stop
+- trailing stop value;
+Trailing Step
+- trailing step value
+Risk
+- risk value used for position sizing.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20493

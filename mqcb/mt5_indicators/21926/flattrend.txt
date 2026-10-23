@@ -1,0 +1,13 @@
+The author of the idea
+:
+Scriptor
+MQL5 code author
+:
+barabashkakvn
+The indicator defines the market state: flat or trend.
+Interpretation of the histogram color buffers when setting "
+signal timeframe
+" PERIOD_CURRENT:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21926

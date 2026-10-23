@@ -1,0 +1,6 @@
+Description:
+The indicator shows the remaining candle time.
+Image:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11034

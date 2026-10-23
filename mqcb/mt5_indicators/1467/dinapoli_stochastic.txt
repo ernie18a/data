@@ -1,0 +1,9 @@
+The real author:
+LenIFCHIK
+The DiNapoli Stochastic indicator based on the traditional Lane stochastic provided by MetaTrader 5 software system. DiNapoli Stochastic demonstrates smoother indicators and therefore gives less false signals in comparison with the traditional oscillator. The indicator is written in accordance with the description given in the book by Joe Dinapoli "Trading With DiNapoli Levels".
+This oscillator smoothing method leads to filtering of the most "noise" component of the price movement.
+The DiNapoli Stochastic indicator can be used in the strategies oriented to a standard stochastic. However, the stronger smoothing can lead to loss of array of signals. It is recommended to apply any trend indicator for more efficient use of the indicator and its signals filtering.
+Fig.1 The DiNapoli Stochastic indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1467

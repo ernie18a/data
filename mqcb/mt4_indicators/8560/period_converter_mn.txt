@@ -1,0 +1,6 @@
+MT4 has some limitations concerining the displaying of the periods charts that are older than monthly.
+As far as some people wish to see the larger periods (for example, half-yearly or yearly), I developed the indicator that allows to do it.
+Period_Converter_MN
+How to Use:
+1. Attach only to the monthly chart (MN1) 2. The multipliers are - 2, 3, 4, 6, 123. The minutes files should be opened stand alone! I.e. if you set the multiplier = 12 then open the M12 and see there the yearly candlesticks.
+Of course, if you use some other converters that use the irregular minutes then you should be careful. :-)

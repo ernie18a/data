@@ -1,0 +1,22 @@
+Stochastic expansion oscillator is a stochastic oscillator with a non-conventional calculation and display.
+The indicator has three input parameters:
+%K period
+- K line calculation period
+Slowing
+- slowing calculation period
+Noise filter period
+- noise filter calculation period (signal line)
+Calculation:
+K = KB1+KB2
+Signal = SMA(K, Noise filter period)
+where:
+KB1 = AvgLow/AvgHigh
+KB2 = -AvgHigh/AvgLow
+AvgLow  = SMA(LowB, Slowing)
+AvgHigh = SMA(HighB,Slowing)
+LowB  = Close-Min
+HighB = Max-Close
+Min, Max - the lowest and the highest prices in the %K period range
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22112

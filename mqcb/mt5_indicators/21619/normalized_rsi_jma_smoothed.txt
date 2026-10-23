@@ -1,0 +1,4 @@
+Normalized RSI
+tends to be "nervous" (the direction of the RSI itself, and of the normalized RSI as a result is changing sometimes erratically).
+This version is adding JMA smoothing to it in order to make that volatility lesser and to attempt to make the slope of the RSI more usable without adding significant lag.
+PS: if the normalization period is set to <=1, then no normalization of the RSI is performed, and in that case you shall have a "simple" RSI.

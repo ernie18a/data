@@ -1,0 +1,11 @@
+The indicator draws candlesticks of a larger timeframe as color filled rectangles using
+DRAW_FILLING
+buffers. Rectangles are color filled according to the
+3LineBreak
+indicator values.
+Depending on the color of the 3LineBreak indicator relative to the zero line the candlestick body is painted in blue or deep pink, and shadows are painted in aquamarine or light pink.
+This indicator requires the the compiled indicator file 3LineBreak.mq5. Place it to <terminal_data_folder>\MQL5\Indicators\.
+Fig. 1. The BackgroundCandle_3LineBreak_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12684

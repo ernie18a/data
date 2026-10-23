@@ -1,0 +1,2 @@
+Usually we have one indicator showing bulls power and one showing bears power.
+Since they are not having the same ranges of values, they can not be just placed in the same window so that we have one all-in-one bulls and bears power window. This indicator makes this, and thanks to new styles of MetaTrader 5, it is not cluttered - actually it is easy to read the overall states of the two powers. That way we can have more spare space on our charts and still see more information than before.

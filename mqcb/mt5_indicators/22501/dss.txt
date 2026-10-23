@@ -1,0 +1,27 @@
+Double Smoothed Stochastic is a stochastic smoothed twice.
+There are five inputs:
+Period
+- calculation period
+EMA period
+- ЕМА ratio calculation period
+Signal period
+- signal line period
+Overbought
+- overbought level
+Oversold
+- oversold level
+Calculation:
+DSS = coeff * Mit+(1.0-Coeff) * PrevDSS
+Signal = EMA(DSS, Signal period)
+where:
+Coeff = 2.0 / (1.0+EMA period)
+Mit = Delta * 100.0 / (MaxRAW-MinRAW)
+Delta = RAW - Min
+MaxRAW, MinRAW - maximum and minimum RAW values in the Period range
+RAW = Coeff * MitHL+(1.0-Coeff) * PrevRAW
+MitHL = DeltaCL * 100.0 / (MaxH-MinL)
+DeltaCL = Close - MinL
+MaxH, MinL - High and Low prices in the Period range
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22501

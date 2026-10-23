@@ -1,0 +1,13 @@
+Description:
+Basic code for fast and handy Fibos and DiNapoli objectives (OP, COP, XOP) ploting on chart.
+Every Blue line is indicating averaged Fibo levels calculated from: .328, .500, .618 for corrisponding fractals specified by user.(lighter color is meaning nearest fractals (H/H, L/L).
+Fibo nodes averaged to eliminate to many lines ploted on chart.
+Red, Violet, Pink, Brown lines are indicating DiNapoli targets. (lighter lines for COP's, darker for XOP's)
+Happy trading.
+extern int FracsFromBar = 6; // this is number of bar from which indi calculates back fractals specified below，"0" means current bar.
+extern int FibFractals01 = 12; // first and nearest to bar specified before range for fractals (H/H,L/L for spec. nr of bars)
+extern int FibFractals02 = 22; // second range for fractals (H/H,L/L for spec. nr of bars)
+extern int FibFractals03 = 32; // third range
+extern int FibFractals04 = 45; // fourth, wider range
+extern bool CommentsOn = false; // short description on chart, leave it "false" if to chart is attached another indi with comments.
+Image:

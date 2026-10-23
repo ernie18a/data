@@ -1,0 +1,3 @@
+Author: TraderNeo
+System of intraday time trade.
+The full description see in the attached file.

@@ -1,0 +1,24 @@
+Description:
+The idea behind the InverseReaction indicator is that an unusual impact in price changes will be adjusted by an inverse reaction. You can see this in many examples like the Lehman Bros. case and in the Flash Crash or even in many daily little shocks (its not necessarily a boom or a crash).
+It consists of two main arrays. One shows the gap-free price changes and the other(s) shows the possible volatility limit(s) (confidence levels) for each bar. The signal comes out when the price change exceeds the possible volatility limits. Then you can expect an inverse reaction. See the image below (EURUSD, 1D).
+Input Parameters:
+Coefficient
+Coefficient for confidence levels
+.
+It is set with Golden Ratio as default.
+With the perfect conditions of normality, Golden Ratio gives us nearly 80% confidence levels (see the sourcecode for details).
+Optionally, you can do small changes (use values between 1 and 3). However, you should know: Higher values lead to higher probabilities but less signals, and the lower values may lead to more false signals.
+Period
+The period value for moving average. It is set with 3 as default. You can change it optionally, but you should know: Because of the memory is very short in such economic behaviors, higher values may lead to more false signals.
+If you are curious about further details of the calculation process, please see the notes about "dynamic confidence levels" in the source code.
+Tips:
+There is a newer version of the indicator, intended for better information and for better looking. It is attached with the old one at the top. A picture of it is shown below.
+This strategy can be useful alone (see the expert
+IREA
+to learn more). But if you like stronger signals, you should use it with complementary strategies like trend and momentum indicators. My favourites are 'Parabolic SAR' and 'Stochastic Oscillator'  (see the picture below).
+Daily EURUSD is my favourite, though you can adapt it to other periods (and symbols) by changing the parameters. See the picture below for an example.
+When it signals successively, the second one may be false, because of an increment in real volatility levels.
+There are some identical false signals characterised by low volatility levels.
+Please remember: Breaking news can change the signal quality. So follow the news and decide well.
+An example for the first three tips:
+In the picture, it's attached to GBPUSD, M30 chart. Parameters are: Confidence Coefficient = 2.0,  MA Period = 5. The dots represent the single tail confidence levels, and the yellow ones are level breaks (our signals). You can see the relation with 'Stochastic Oscillator' here: When the 'Stochastic Oscillator' reaches its limits, the following volatility breaks of price changes will be excessive and probably responded by Inverse Reactions.

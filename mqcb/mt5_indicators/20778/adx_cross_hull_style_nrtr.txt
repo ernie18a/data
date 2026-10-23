@@ -1,0 +1,5 @@
+An NRTR-type indicator using Average Directional Movement Index.
+Fig.1. Indicator ADX_Cross_Hull_Style_NRTR
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20778

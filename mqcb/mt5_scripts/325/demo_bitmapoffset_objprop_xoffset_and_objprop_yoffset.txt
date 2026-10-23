@@ -1,0 +1,25 @@
+This is an example of use of the
+OBJPROP_XOFFSET
+and
+OBJPROP_YOFFSET
+properties. See video:
+https://www.mql5.com/en/forum/3509/page1#comment_55145
+.
+This feature will allow you to use the image with a set of several images (like CSS-sprites used in web).
+Important:
+To use the OBJPROP_XOFFSET and OBJPROP_YOFFSET properties you must specify the size of the visible area using the
+OBJPROP_XSIZE and OBJPROP_YSIZE
+properties.
+To compile the script, unpack the file from the archive files.zip to the
+terminal_data_folder
+\MQL5\Files\.
+To launch the compiled version (Demo_BitmapOffset.ex5) of the script, download it and place to the
+terminal_data_folder
+\MQL5\Scripts\.
+Recommendations:
+The use of the
+resources
+allows to serve all the necessary objects in a single .EX5 file.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/325

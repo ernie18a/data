@@ -1,0 +1,13 @@
+If it is necessary to reinitialize an indicator, a user usually calls to the window of the indicator's properties in the the current chart window and presses "OK".
+In case there are a lot of indicators to be reinitialized on the screen, the manual reinitialization can take a long time.
+The suggested script is intended for automating the procedure of the indicator reinitialization. When it is run, the windows of properties are called sequentially by the list of indicators, and pressing "OK" is emulated. The window of the list is closed as soon as the working of the script is finished.
+Disadvantage:
+The called windows will flicker on the screen during the reinitialization.
+Note:
+You should allow function calls from the system DLL for script to work: Tools -> Options -> Expert Advisors -> Allow DLL imports. It may be necessary for slow computers to increase the latency period of the pop-up windows. To do it, find the '
+#define PAUSE
+100
+' entry and increase the value. You can completely remove this pause for fast computers, comment the Sleep() function in two places.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8370

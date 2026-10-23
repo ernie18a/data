@@ -1,0 +1,16 @@
+Author:
+Tinytjan aka TheXpert
+Author of Idea:
+Xadviser aka Versumus
+Описание:
+The ZZ is drawn by the channeling principle.
+The channels can also be drawn if necessary (they are drawn by default).
+It also displays some statistics - the ratio between the length of the section and that of the previous one, the length of the section (by length we mean the height in points from the lowest to the highest point).
+Figure:
+Notes:
+Sometimes the indicator's working is not quite understandable visually, it is because of the specifics of the drawing method.
+If you find any errors or inaccuracies, please comment on them here.
+If you have any suggestions about improvement, optimization, etc., please lay them out also here or send via e-mail.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8291

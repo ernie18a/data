@@ -1,0 +1,25 @@
+The indicator represents a moving average that resets its calculation period, as soon as the current standard deviation exceeds the previous one twice or more when the bar is closing.
+It is useful for detecting the trade direction.
+There are three adjustable parameters:
+Period
+- calculation period
+Barrier
+- if this barrier is exceeded, the period calculation is reset to the minimum
+Applied price
+- calculation price
+VolMA = SMA(Price, Length)
+where:
+Price = Applied price
+PrevPrice = previous Applied price
+If Abs(sDevNow) > Barrier
+Length = 1
+otherwise
+Length = PrevLength+1
+sDevNow = RAW / Price * sDev
+sDev = SQRT(VAR / Period)
+VAR = POW(RAW[Period] + RawAVG
+RAW = (Price - PrevPrice) / Price
+RawAVG = SMA(RAW, Period)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20994

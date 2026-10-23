@@ -1,0 +1,18 @@
+A trading system based on the signals of the
+LeManSignal
+indicator. A signal is formed at the close of a bar if a color point of the indicator has appeared.
+The Expert Advisor uses the compiled indicator file LeManSignal.ex5 for operation. Save it to <terminal_data_folder>\MQL5\Indicators.
+Note that the TradeAlgorithms.mqh library file allows using Expert Advisors with the brokers who offer
+nonzero spread
+and the option of setting Stop Loss and Take Profit
+during position opening
+. You can download more variants of the library at the following link:
+Trade Algorithms
+.
+Default Expert Advisor's input parameters have been used during tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. Examples of trades on the chart
+Testing results for 2015 at GBPUSD H4:
+Fig. 2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15219

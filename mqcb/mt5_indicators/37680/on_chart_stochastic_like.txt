@@ -1,0 +1,5 @@
+This is a sort of stochastic indicator on chart. If, defaults are used, then it calculates the same way as built-in stochastic that uses high/low prices. In this indicator you have choice of extended (non-standard) prices
+Comparison to "regular" stochastic :
+Recommendations:
+you can use it as any other stochastic
+color changes can be used as usual stochastic OB/OS signals

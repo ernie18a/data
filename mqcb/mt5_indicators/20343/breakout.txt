@@ -1,0 +1,25 @@
+The indicator shows on a chart High and Low levels over the specified time interval, which is set as hours and minutes of the period beginning and end.
+The indicator shows two zones: "period" and "area". When the price is in the period zone, the values of the High and Low levels are recalculated.
+The indicator allows setting:
+the hour and minute of the beginning of the "period" zone
+the hour and minute of the end of the "period" zone
+the hour and minute of the end of the "area"
+The "area" zone begins right after the end of the "period" zone
+It has five input parameters:
+"Period" Hour begin
+- the hour of the beginning of the period zone
+"Period" Minutes begin
+- the minute of the beginning of the period zone
+"Period" Hour end
+- the hour of the end of the period zone
+"Period" Minutes end
+- the minute of the end of the period zone
+"Area" Hour end
+- the hour of the end of the area zone
+"Area" Minutes end
+- the minute of the end of the area zone
+Fig.1. "Period" from 00:00 to 05:00, "Area" to 23:00 on the H1 chart
+Fig.2. "Period" from 00:00 to 05:00, "Area" to 23:00 on the M15 chart
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20343

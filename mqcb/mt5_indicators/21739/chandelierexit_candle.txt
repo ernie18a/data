@@ -1,0 +1,7 @@
+The
+Chandelier Exit
+indicator implemented as a sequence of candlesticks Candlesticks in the trend direction are light, those opposite to the trend direction are dark.
+Fig. 1. The ChandelierExit_Candle indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21739

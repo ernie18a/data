@@ -1,0 +1,9 @@
+Author:
+Me :)
+This code is based on some very simple technical indicators
+Please run this EA first from 12th jan till today as long.. then as long&short... then as short only. You will be surprised with the kind of profit it gives
+Recommendations:
+Tested on EURUSD
+15 min chart
+From 12th Jan 2011 till today
+It makes profits

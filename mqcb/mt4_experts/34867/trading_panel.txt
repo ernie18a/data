@@ -1,0 +1,2 @@
+I started to create a simple trading panel to switch between pairs and timeframes. and next version, I will add trading features and manage orders.
+We can minimize or move the panel.

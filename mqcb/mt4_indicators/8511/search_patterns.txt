@@ -1,0 +1,136 @@
+The indicator searches for the patterns, displays the end of the D and C points on the screen.
+Input Parameters:
+extern
+bool
+FuturePattern
+=
+false
+;
+/* true - searches for the patterns, i.e. you can try to play on the moving
+before the end of the pattern, for the "advanced" pattern users ;) */
+extern
+bool
+ExtSave
+=
+false
+;
+/* if true, then the drawings will be saved on the chart */
+extern
+int
+ExtDepth
+=
+0
+;
+/* parameter for ZZ,if 0, then the search for the patterns will be performed, otherwise the pattern (if there is)
+with the specified Depth parameter will be drawn */
+extern
+int
+ExtPoint
+=
+5
+;
+/* the number of zigzag points, if you specify more than 5, then the patterns will be displayed on the history */
+extern
+int
+minDepth
+=
+3
+;
+/* parameter for pattern searching */
+extern
+int
+maxDepth
+=
+50
+;
+/*
+parameter for pattern searching */
+extern
+double
+ExtDopusk
+=
+0.05
+;
+/* the parameters of the pattern will differ from each other not more than by the ExtDopusk value */
+extern
+double
+TimeDopusk
+=
+0.2
+;
+/*
+the parameters of the pattern by the time will differ from each other not more than
+by
+the ExtDopusk value
+*/
+extern
+bool
+Gartley
+=
+true
+;
+/* true - searches for Gartley patterns, false - doesn't */
+extern
+bool
+Pattern_50
+=
+true
+;
+/* true - searches for 5-0 pattern, false - doesn't */
+extern
+bool
+ABCD
+=
+true
+;
+/* true - searches for AB=CD pattern, false - doesn't */
+extern
+bool
+WolfWaves
+=
+false
+;
+/* true - searches for WW pattern, false - doesn't */
+extern
+bool
+SweetZoneStart
+=
+true
+;
+/* true - shows the SweetZone of the WW processing beginning the 5 point should be within, false - doesn't */
+extern
+bool
+SweetZoneEnd
+=
+true
+;
+/* true - shows the SweetZone of the WW the 6 point should be within, false - doesn't */
+extern
+color
+SZScolor
+=
+Blue
+;
+/* color for the SweetZoneStart */
+extern
+color
+SZEcolor
+=
+DarkGreen
+;
+/* color for the SweetZoneEnd */
+extern
+color
+ExtColorGartley
+=
+MidnightBlue
+;
+/* color for the Gartley patterns */
+extern
+color
+ExtColorRet
+=
+Lime
+;
+/* color of the retracements line */
+Search patterns

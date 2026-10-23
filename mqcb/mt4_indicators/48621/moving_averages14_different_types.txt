@@ -1,0 +1,10 @@
+Click here for
+MT5
+version.
+This is an indicator to calculate 14 types of moving averages based on close price.
+The calculations are mostly based on pine script libraries.
+Types included are:
+SMA, EMA, WMA, VWMA,
+RMA, DEMA, TEMA, ZLEMA,
+HMA, ALMA, LSMA,
+SWMA, SMMA, DONCHIAN

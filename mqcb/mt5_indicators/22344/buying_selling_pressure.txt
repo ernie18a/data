@@ -1,0 +1,38 @@
+Buying/Selling Pressure indicator displays the strength of buys and sells pressure.
+There are five inputs:
+Period
+- calculation period
+Smoothing period
+Smoothing method
+Pressure filter
+- pressure types filter
+Both pressures
+- display both pressure types
+Buying pressure
+- display buys pressure
+Selling pressure
+- display sells pressure
+Prevailing pressure
+- display prevailing pressure
+Smoothing filter
+Both
+- display both types
+Only unsmoothed
+- display only unsmoothed
+Only smoothed
+- display only smoothed
+Buys pressure:
+BP = High - Open
+Sells pressure:
+SP = Open - Low
+Prevailing pressure:
+If BP > SP, то PP = BP
+If SP > BP, то PP = SP
+Smoothed values:
+SBP = MA(BP,Smoothing period,Smoothing method)
+SSP = MA(SP,Smoothing period,Smoothing method)
+SPP = MA(PP,Smoothing period,Smoothing method)
+Various data display filters:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22344

@@ -1,0 +1,30 @@
+Author of the idea
+—
+Roman Yushkin
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+The "10 points on EURUSD" Forex strategy has countless many variations and is somewhat similar to the
+Session Breakout
+strategy, and it also is used by many professional traders. Therefore, good results can be obtained when combining it with a proper risk management.
+The essence of the "10 points on EURUSD" strategy is as follows:
+The High and Low breakout of the previous day are taken as the basis of the strategy. Most traders believe that if the High of the previous day is broken, the price will go up, and vice versa for the Low.
+Based on this, those two extremums are usually used as the stop loss levels.
+Therefore, if the Low of the previous day is broken, the stop losses will trigger, and due to this the price movement will continue for a certain number of points. Accordingly, the same rule applies to the High, but in the opposite direction.
+knowing these facts, we will make our profit: open a Buy trade at the breakout of the previous day's High and a Sell trade at the breakout of the previous day's Low.
+But since other traders use the same 2 points as the support and resistance levels, the price does not always move in the direction of the previous day's High and Low breakout. Accordingly, there is a need to use a fixed stop loss value.
+Note:
+Recommended currency pair:
+EURUSD
+Placed pending orders are valid from 00.00 GMT to 00.00 GMT of the next day.
+1. Place 2 pending orders at 00.00 GMT — one buy order (above the High of the previous day + spread) and one sell order (below the Low of the previous day - spread).
+2. Set take profit — 250 pips.
+3. Safety stop loss — 50 pips.
+4. Important peculiarity: consider ONLY the first intersection of High or Low during the trading day (i.e., if pending orders closed by stop loss or take profit, do not place any more orders that day)
+Tips:
+Recommended risk is 2-5% of the deposit per trade.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17178

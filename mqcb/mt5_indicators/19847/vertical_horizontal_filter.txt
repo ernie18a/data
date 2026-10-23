@@ -1,0 +1,9 @@
+The Vertical Horizontal Filter ("VHF") determines whether prices are in a trending phase or a congestion phase. The VHF was first presented by Adam White in an article published in the August, 1991 issue of Futures Magazine.
+Interpretation
+Probably the biggest problem in technical analysis is determining if prices are trending or are in a trading-range. The VHF indicator attempts to determine the "trendiness" of prices to help you decide which indicators to use.
+There are three major ways to interpret the VHF indicator:
+You can use the VHF values themselves to determine the degree that prices are trending. The higher the VHF, the higher the degree of trending and the more you should be using trend-following indicators.
+You can use the direction of the VHF to determine whether a trending or congestion phase is developing. A rising VHF indicates a developing trend; a falling VHF indicates that prices may be entering a congestion phase.
+You can use the VHF as a contrarian indicator. Expect congestion periods to follow high VHF values; expect prices to trend following low VHF values.
+Recommendations
+Accompany the VHF indicator with some "trending" in order to be able to determine if the trending indicator is indeed showing a trend or we are in a ranging phase.

@@ -1,0 +1,4 @@
+Candlestick Fitness concept is used in coding HFT Algos based on population optimization algorithms.
+This simple indicator hides those candles which are unfit e.g. body range (open-close of bear or close-open for bull) is not 75% of upper or lower wick range
+the percentage of body wick comparison 75% is set by default input parameter and customizable by users.
+Hiding unfit candles may help in further grouping and shuffle.

@@ -1,0 +1,184 @@
+MetaTrader 5 Strategy Tester allows to get statistical parameters of a trading system after each testing pass.
+Statistical parameters can be obtained using
+TesterStatistics()
+function, which is called inside
+OnTester()
+and
+OnDeinit()
+functions.
+With the introduction of functions for working with optimization results (
+FrameFirst()
+,
+FrameFilter()
+,
+FrameNext()
+,
+FrameInputs()
+and
+FrameAdd()
+), traders are now able to perform visual optimization. The necessary data now can be processed and displayed right during an Expert Advisor optimization or a mathematical problem solving.
+We will consider the details of the example of visualization of an Expert Advisor testing results during the optimization described in the article
+"Visualize a Strategy in the MetaTrader 5 Tester"
+.
+1. Visualization of balance dynamics during the optimization
+1.1. Downloading Files
+Moving Averages_With_Frames.mq5 Expert Advisor should be copied to the terminal_data_folder\MQL5\Experts.
+The following files are used for the Expert Advisor operation:
+FrameGenerator.mqh - CFrameGenerator class for displaying optimization results;
+SpecialChart.mqh - CSpecialChart class for drawing several balance charts;
+SimpleTable.mqh - CSimpleTable class is a simple table having two columns;
+ColorProgressBar.mqh - CСolorProgressBar class is a progress bar using two colors.
+They should be copied to the terminal_data_folder\MQL5\Include.
+Code Base programs can be downloaded automatically via MetaTrader 5 terminal (CodeBase tab of the "Toolbox" window). To do this, select "Download". All codes will be downloaded and placed in their folders.
+Fig. 1. Downloading CodeBase programs via MetaTrader 5 terminal
+1.2.
+Testing the Expert Advisor
+Moving Averages_With_Frames.mq5 Expert Advisor should be launched in the Strategy Tester.
+Test settings:
+Fig. 2. Moving Averages_With_Frames.mq5 test settings
+Optimization options:
+Fig. 3. Moving Averages_With_Frames.mq5 test settings
+During the optimization the Expert Advisor displays the balance dynamics and optimization pass statistical data:
+Fig. 4. Moving Averages_With_Frames.mq5 optimization
+Optimization process:
+1.3.
+The Expert Advisor Operation Principle
+Moving Averages_With_Frames.mq5 Expert Advisor is created based on Moving Averages.mq5 one included in the standard MetaTrader 5 terminal package (MQL5\Experts\Examples\Moving Average).
+The following code has been added for the results visualization:
+//--- connecting the code for working with optimization results
+#include <FrameGenerator.mqh>
+//--- frames generator
+CFrameGenerator fg;
+//+------------------------------------------------------------------+
+//| Tester function                                                  |
+//+------------------------------------------------------------------+
+double
+OnTester()
+  {
+//--- insert
+your optimization criterion calculation function
+here
+double
+TesterCritetia=
+MathAbs
+(
+TesterStatistics
+(
+STAT_SHARPE_RATIO
+)*
+TesterStatistics
+(
+STAT_PROFIT
+));
+   TesterCritetia=
+TesterStatistics
+(
+STAT_PROFIT
+)>
+0
+?TesterCritetia:(-TesterCritetia);
+//--- invoking after each test and submitting optimization criterion as a parameter
+fg.OnTester(TesterCritetia);
+//---
+return
+(TesterCritetia);
+  }
+//+------------------------------------------------------------------+
+//| TesterInit function                                              |
+//+------------------------------------------------------------------+
+void
+OnTesterInit()
+  {
+//--- preparing the chart for displaying several balance lines
+fg.OnTesterInit(
+3
+);
+// parameter sets the number of balance lines on the chart
+}
+//+------------------------------------------------------------------+
+//| TesterPass function                                              |
+//+------------------------------------------------------------------+
+void
+OnTesterPass()
+  {
+//--- handling obtained test results and displaying graphics
+fg.OnTesterPass();
+  }
+//+------------------------------------------------------------------+
+//| TesterDeinit function                                            |
+//+------------------------------------------------------------------+
+void
+OnTesterDeinit()
+  {
+//--- optimization end
+fg.OnTesterDeinit();
+  }
+//+------------------------------------------------------------------+
+//|  Chart events handling                                           |
+//+------------------------------------------------------------------+
+void
+OnChartEvent
+(
+const
+int
+id,
+const
+long
+&lparam,
+const
+double
+&dparam,
+const
+string
+&sparam)
+  {
+//--- launches frames display after the optimization end when clicking on the header
+fg.
+OnChartEvent
+(id,lparam,dparam,sparam,
+100
+);
+// 100 is a pause in ms between the shots
+}
+//+------------------------------------------------------------------+
+This code can be similarly used in any Expert Advisor.
+CFrameGenerator class is used for working with optimization results. The class contains the methods for handling the Strategy Tester events (
+OnTester()
+,
+OnTesterInit()
+,
+OnTesterPass()
+,
+OnTesterDeinit()
+) and the method for chart events (
+OnChartEvent()
+). Used graphical objects are prepared in OnTesterInit() method of CFrameGenerator class.
+OnTester() method of CFrameGenerator class is invoked on a test agent after each test pass. This method provides calculation of the balance curve dynamics based on trading results. Balance curve chart is a one-dimensional array, the length of which depends on the number of performed deals.
+Then,
+TesterStatistics()
+function is used to request statistical data (net profit, profit factor, recovery factor, number of trades, number of deals, maximum funds drawdown percentage, custom optimization criteria value) and a frame (test pass data array, in our case) is generated, which is sent to the terminal (from the test agent) using
+FrameAdd()
+function.
+Frames are received and handled in OnTesterPass() method of CFrameGenerator class. Frames read operation is performed by
+FrameNext()
+function. Request for the Expert Advisor input parameters, for which the frame has been generated, is performed using
+FrameInputs()
+function.
+After obtaining the data, it is displayed and updated using CSimpleTable, CColorProgressBar and CSpecialChart classes methods.
+It should be noted that OnTester() handling functions execution is performed
+on the test agent
+after another current optimization pass has been finished. This allows the use of
+MQL5 Cloud Network
+distributed network capacities to carry out complex mathematical calculations. To do this, place the calculation part to OnTester event handler.
+The example of using the optimization for accelerating mathematical calculations (continuous wavelet transformation of the
+Weierstrass function
+) is shown in the topic
+"Managing optimization processes in real time and transferring massive data from the agents to MetaTrader 5"
+.
+2. Examples of Working with CSimpleTable, CColorProgressBar and CSpecialChart Classes
+Attached Test_SimpleTable.mq5 and Test_CSpecialChart.mq5 scripts contain examples of working with CSimpleTable, CColorProgressBar and CSpecialChart classes. They should be copied to the terminal_data_folder\MQL5\Scripts.
+Fig. 5. Test_SimpleTable.mq5 script operation result
+Fig. 6. Test_CSpecialChart.mq5 script operation result
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/914

@@ -1,0 +1,56 @@
+The indicator determines the index of the direction of the bar at prices and gaps / breaks in them.
+It is a logical continuation of the
+ms-Candle
+indicator.
+Comparison of Open and Close prices often does not give a correct assessment of the direction of the candle.
+They can build, if the body is more than 2/3 of its size in other cases
+a different approach in assessing. The indicator implements the author's empirical approach to this problem.
+During the indicator calculation, some statistical characteristics are evaluated
+a number of quotations. The results described structure TCandlesStats. Boundary values are calculated
+the sizes of the minimum and maximum candles, as well as the approximate size of the "average" or
+"normal" candles. The assessment is carried out as the height of the candle and the height of its body.
+The calculation results are displayed in the terminal log. The calculation is performed on a fixed size
+data window and is repeated when passing at least 1/3 of its size.
+This ensures that the results are up to date at the time of calculation.
+The estimate of the gap in quotes (large gap) uses the size of the maximum candle from the statistical estimate.
+It would be more correct to use the price deviation channel and the Open price going beyond it.
+However, the correct definition of this channel is much more difficult.
+When calculating the indicator, TCandleInfo structure is calculated for each bar.
+The meaning of the fields in it is clear from the comments. The calculation is implemented in the form of macros.
+In the indicator window (Fig.1-2) shows information about the strength of the direction of the bars - the direction index.
+A positive indicator indicates the price movement up, a negative-down.
+The indicator is dimensionless, normalized relative to the stat of the maximum candle size estimation.
+The inclusion of an additional normalization (additional normalization parameter CI = true Fig.3-4) allows
+bring the index values to the interval -1..1. The larger the index, the more pronounced the price movement.
+The values of the module 1 large(0.6321 mode extra normalization) are talking about a strong impulse to the movement
+prices.
+Visually, each bar is described by two states of the histogram column:
+1. According to the index sign of the candle - exterior color (red / green)
+2. By relative with the value on the previous bar, the change in the index excluding the current sign
+bar (light green / light red).
+So for the candle up (index in the "+" zone) the column will be green. If this is relative
+the index grows, then the internal column will be painted in light green color, if it falls - light red.
+For a candle down the principle is similar. If the relative index change is 0, then the internal column
+not drawn and the color of the index becomes full - green or red.
+Candle index value can be smoothed with a small set of MA. This is done using this
+libraries
+(author Nikolay Kositsin). Two changes were made to it for use in MQL4.
+The modified SmoothAlgorithms45.mqh library should be placed in the Include folder of the terminal.
+Works in MT4 and in MT5.
+Yellow line is the MA of the values of CI, blue - MA from changes in CI (1 derivative).
+What is the difference from the ms-Candle indicator? What is the meaning of it?
+In certain situations, at a certain moment it is IMPORTANT to "see" that the direction of price movement is already
+beginning to change, but not only the fact of his change.
+For use in MT4, change the extension of file ms-candle-index to mq4, and paste MQL5\Include\SmoothAlgorithms45.mqh to
+folder MQL4\Include or download
+here
+.
+Changes in versions:
+1.00 The normalization was introduced in the directional estimation algorithm, the structure of TCandleInfo was expanded.
+1.01 Added input option to hide the histogram
+1.02 Additional normalization is performed by the square of the direction coefficients, which allows more densely fill
+the interval -1..1 without losing the proportion of CI to the stat evaluation of the quotes window.
+Added levels. Assessment I propose to discuss.
+1.03 corrected the description. Changed levels in each mode (normalization on/off) their own.
+Logically correspond to each other. Added simple info panel.
+Fixed the SmoothAlgorithms45. mqh code for compilation in the latest MT5 versions

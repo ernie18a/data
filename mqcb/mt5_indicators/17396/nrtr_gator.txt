@@ -1,0 +1,10 @@
+Real author
+Rosh
+The indicator is derived from the NRTR indicator. The new candlestick coloring provides a more convenient visualization.
+This indicator was first implemented in MQL4 and was published in
+CodeBase
+on 09.07.2007.
+Fig1. The NRTR_Gator indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17396

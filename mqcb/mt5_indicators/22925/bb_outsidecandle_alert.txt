@@ -1,0 +1,23 @@
+Bollinger Bands Outside Candle Alert signal indicator displays the price breaking through Bollinger Bands, places signal labels, paints a signal candle and activates a signal message.
+It has six input parameters:
+BB period
+- Bollinger Bands calculation period
+BB deviation
+- Bollinger Bands deviation value
+BB line breakdown method
+Opening inside, then closing outside
+- a signal candle is opened inside Bollinger Bands and closes outside
+Opening and closing outside
+- a signal candle is opened and closed outside Bollinger Bands
+Show bands
+- display Bollinger Bands (Yes/No)
+Show signal candles
+(Yes/No)
+Use alerts
+- display signal messages (Yes/No)
+If the "Show signal candles" is set to Yes, the candle that broke through Bollinger Bands is colored:
+Bullish candle - green
+Bearish candle - orange
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22925

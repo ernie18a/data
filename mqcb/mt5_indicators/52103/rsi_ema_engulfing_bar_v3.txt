@@ -1,0 +1,17 @@
+This MT5 alert is designed to identify potential buying opportunities based on several technical indicators and price action patterns. Here's how it works:
+Buy Conditions
+1. RSI Condition:
+The Relative Strength Index (RSI) for the current period is below a specified low threshold (RsiLow). This indicates oversold conditions.
+2. Candlestick Pattern:
+It checks for a specific candlestick pattern across three consecutive candles:
+- The current candle (1) closes higher than it opens (bullish)
+- The previous candle (2) closes lower than it opens (bearish)
+- The current candle's close is above the open of the previous candle
+- The current candle's close is below the high of the previous candle
+3. Moving Average Conditions:
+- The current candle's close is below the EMA (Exponential Moving Average)
+- A longer-term EMA (Shiftpast) is below a shorter-term EMA (Shiftnow), indicating a potential uptrend
+- Ability to change previous shift of the moving average rise and fall- numbers 5-6 for a buy 5 is above 6 , meaning 5 bars ago the ema ID5 was above ID6 - Change to 3-4 or 7-9 or 10-13
+4. Buy Signal:
+If all conditions are met, the alert generates a "Buy" signal with an up arrow at the low of the current candle.
+This alert is designed to identify potential bullish/bearish reversal setups. It looks for oversold conditions (low RSI) combined with a specific candlestick pattern that suggests buying pressure is starting to overcome selling pressure. The moving average conditions help confirm the overall trend direction.

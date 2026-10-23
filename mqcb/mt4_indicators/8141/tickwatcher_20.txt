@@ -1,0 +1,21 @@
+Another indicator showing recommendations for each currency pair and period.
+I have a little bit not enough places in the picture.
+A more detailed description is
+here
+.
+Options:
+string ="pairs and timeframes";
+string pairs ="EURUSD;EURJPY;GBPUSD;GBPJPY;USDCHF;USDCAD;USDJPY";
+string timeFrames ="M1;M5;M15;M30;H1;H4;D1;W1;MN";
+string ="levels";
+double AdxLevel1 =20.00;
+double AdxLevel2 =30.00;
+string ="colors";
+color ColorUp =ForestGreen;
+color ColorNeutral =Gray;
+color ColorDown =OrangeRed;
+color ColorPrice =LimeGreen;
+color ColorLabels =Gray;
+string ="other";
+bool ShowLegend =true;
+Tickwatcher 2.0

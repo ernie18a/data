@@ -1,0 +1,27 @@
+A MetaTrader 5 indicator of short-term, medium-term and log-term extreme points created based on the book of Larry Williams
+"Long-Term Secrets to Short-Term Trading"
+.
+Short-term highs
+are recorded on bars if:
+The bar high is greater than or equal to the high of the bar to the left and is greater than the bar high to the right.
+If IgnoreInsideBars = true: neighboring bars should not be inside. If they are inside bars, the bars that follow them should be analyzed. If IgnoreInsideBars = false: Inside bars are considered normal and are involved in the formation of extremes. See the difference in figures 1 and 2.
+Medium-term highs
+are recorded on bars if:
+A short-term high is on this bar;
+The nearest short-term highs to the left and and to the right are below the high of this bar.
+Long-term highs
+are recorded on bars if:
+A medium-term high is on this bar;
+Nearest medium-term highs to the left and and to the right are below the high of this bar.
+It's all vice versa for the lows.
+The indicator works only on complete bars.
+Fig. 1 An example with IgnoreInsideBars = true
+Fig. 2. An example with IgnoreInsideBars = false
+Usage:
+The indicator can be used to determine significant price levels, formalize extremes based trend detection, etc.
+A similar indicator for МetaТrader 4 is available:
+Corrected version of Extrema Indicator by L.Williams
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/11401

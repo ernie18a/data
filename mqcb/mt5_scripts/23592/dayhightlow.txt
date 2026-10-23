@@ -1,0 +1,6 @@
+A script for automatically drawing the levels of the intraday High/Low on the FORTS trading session
+If Night_Session=true, then the night High/Low levels are drawn additionally, provided that they are beyond the intraday ones.
+The color of levels can also be changed.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23592

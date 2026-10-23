@@ -1,0 +1,3 @@
+Author
+: MojoFX - Conversion only
+Indicator T3 RSI.

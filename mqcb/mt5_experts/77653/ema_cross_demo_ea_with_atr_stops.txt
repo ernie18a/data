@@ -1,0 +1,18 @@
+EMA Cross Demo EA (MetaTrader 5)
+A small, clearly-structured demo Expert Advisor built to show a reliable EA development method, not a trading edge.
+Logic (evaluated once per new bar, on CLOSED bars only - no repainting):
+- BUY signal: fast EMA crosses above slow EMA
+- SELL signal: fast EMA crosses below slow EMA
+- On an opposite signal the open position is closed and the new one opened on the next tick of the new bar
+Risk handling:
+- Stop-loss = entry minus/plus ATR x InpSLATRMult
+- Take-profit = stop distance x InpRewardRisk
+- Stop/TP levels are pushed out to the broker's minimum stop distance where needed
+- Lot size is normalized to the symbol's volume step, min and max
+- Entries are skipped when spread is wider than InpMaxSpreadPoints
+Works on both hedging and netting accounts (position lookup is done by magic number and symbol, not by netted position type).
+Inputs: fast/slow EMA period, ATR period, SL ATR multiplier, reward:risk, lot size, max spread in points, magic number, slippage in points.
+This is a deliverable example meant to show structure and method: closed-bar signals, a spread filter, lot normalization, and hedging/netting-safe position handling. It is not a trading recommendation. The attached equity chart is from a synthetic price series used only to exercise the code (gross P/L is positive, net P/L after commission is negative on this synthetic run) - it demonstrates the backtesting approach, not a profitable strategy.
+A Python reference implementation of the same signal and backtest logic (for parity testing) is available on request.
+Update: fixed a stop-distance issue where the ATR-based SL/TP could sit inside the broker's minimum stop distance on fast timeframes, causing order rejections. The distance is now floored at the stops/freeze level and checked against the correct closing-side price (Bid for a BUY, Ask for a SELL) instead of the entry price.
+Update 2: the EA now checks available margin with OrderCalcMargin() before sending an order, and skips (with a log line) instead of sending an order the account cannot afford. This avoids broker-level "not enough money" rejections on very small test balances.

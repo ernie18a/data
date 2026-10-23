@@ -1,0 +1,7 @@
+Bill William's accelerator (
+Accelerator Oscillator
+) which is drawn on the high and displayed on the low timeframe.
+Fig.1 The AC_HTF indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1131

@@ -1,0 +1,21 @@
+It is realized by the Trading System on a release from intraday time levels, which pay off on indicator Pivot.
+Trading:
+it is traded on hour timeframe;
+after 0 hours of current day, we count levels Pivot, Resist1, Resist2, Resist3, Support1, Support2, Support3;
+we make purchase after testing level Support (n) by hour candle (T-2) and closing of candle (T-1) above this level, and place stoploss on level Support(n1), takeprofit - on level Resist(n). Т - time of current hour;
+is used trailing for carry of a stoploss to a point of break-even;
+we make sale, on the contrary, when an hour candle (T-2) tests Resist(n) and the candle (T-1) is closed below the same level, and place stoploss on level Resist(n1), takeprofit - onSupport(n).
+I explain value of some entrance parameters:
+variable TgtProfit sets levels of stoplosses/takeprofits and can have values from 1 up to 5;
+if TgtProfit = 1, that a tested level (buy/sell) = Resist1/Support1, stoploss (byu/sell) = Resist2/Support2, takeprofit (buy/sell) = Suppor1/Resist1;
+if TgtProfit = 2, that a tested level (buy/sell) = Resist1/Support1, stoploss (buy/sell) = Resist2/Support2, takeprofit (buy/sell) = Support2/Resist2;
+if TgtProfit = 3, that a tested level (buy/sell) = Resist2/Support2, stoploss (buy/sell) = Resist3/Support3, takeprofit (buy/sell) = Support1/Resist1;
+if TgtProfit = 4, that a tested level (buy/sell) = Resist2/Support2, stoploss (buy/sell) = Resist3/Support3, takeprofit (buy/sell) = Support2/Resist2;
+if TgtProfi t= 5, that a tested level (buy/sell) = Resist2/Support2, stoploss (buy/sell) = Resist3/Support3, takeprofit (buy/sell) = Support3/Resist3;
+the variable isTradeDay defines, that as the open positions will be closed. If isTradeDay = true, the open warrants will be compulsorily closed on the termination of day, else warrants will be in the market yet will be closed on stoploss or takeprofit;
+at installation value of a variable isTrace = True in a broad gully the file is carried out record of the every possible debugging information for debugging the Trade Systems.
+.
+Results of testing: not all pairs at use of this approach on a release send on a positive level of profitableness. Basically positive profitableness has been reached at use trailing.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8068

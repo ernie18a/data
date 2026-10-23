@@ -1,0 +1,3 @@
+I just put an EMA Signal in the Schaff Trend (
+http://codebase.mql4.com/en/code/8348
+).

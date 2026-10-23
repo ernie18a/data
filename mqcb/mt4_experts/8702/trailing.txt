@@ -1,0 +1,7 @@
+Manages all orders in the terminal. If there is no required profit - it waits. Suitable both for manual trading and for expert advisors that lack trailing stop.
+If the required profit is reached, sets the drawdown. And trails by it. Drawdown is in percent. Suppose that the following parameters are set: minimum profit = 1000. Percentage is 20. Orders reach a profit of 1000. IF the profit falls to 800 - closes them. If the price moves further, for example, reaches 2000, the allowed drawdown will be 400. That is, the orders will be closed at a total profit of 1600. There is no fixed drawdown limit, as I do not find it useful to use absolute values.
+In theory, it is possible to set percentage = 0. It will act as a total take profit. It is possible to set percentage = 100, it will act as breakeven (do not forget, as some orders are being closed, others may become losing).
+Attention!! The EA works independently of the arrival of quotes, except the first one. To change the parameters in trading mode, change the chart and/or timeframe, it is necessary to disable the EA using the button! Also, it is necessary to check its status after each compilation.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8702

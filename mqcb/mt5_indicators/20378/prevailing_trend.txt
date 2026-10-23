@@ -1,0 +1,12 @@
+The Prevailing Trend oscillator shows the prevailing trend as two components - the bullish and the bearish one, which are represented as two indicator lines: Up for the bullish component and Down for the bearish one. If the bullish line is above the bearish one, the bullish trend prevails in the market, and vice versa.
+The indicator has two input parameters:
+Period
+- calculation period;
+Method
+- calculation method.
+Calculation:
+Up = the Moving Average of bullish candlesticks for the period
+Down = the Moving Average of bearish candlesticks for the period
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20378

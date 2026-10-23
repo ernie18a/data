@@ -1,0 +1,11 @@
+Traces the output of indicators by buffer. Output can be changed on the chart by moving the VL left or right.
+This can be useful when tracing the output of custom indicators, particularly of arrow indicators whose index empty value is not exactly known.
+Usage
+The indicator comes with two parameters. The first is the name of the indicator. The second is the number of buffers to trace. Make sure that the indicator being referenced is installed.
+As shown in the figure below, ind_tracer is used on BB. The starting position of the vertical line is set to 1, which is the last formed bar. Moving the line left or right will cause the referenced bar to change, and hence, the output.
+On the other hand, arrow indicators such as Fractals do not always fire a value. As shown below, the indicator sets the buffers to zero to hide them on the chart.
+However, this is not always the case. Some indicators may use EMPTY_VALUE or any other index value as set by the SetIndexEmptyValue() function.
+Limitations
+custom indicators only: for standard indicators, search for their counterparts in the codebase
+up to a maximum of one instance of ind_tracer on any given chart
+works only on default parameter values for any indicator

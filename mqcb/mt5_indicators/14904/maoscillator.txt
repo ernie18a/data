@@ -1,0 +1,15 @@
+Real author:
+Vitalie Postolache
+A simple oscillator based on the difference between values of two MAs either of different periods (Fast MA - Slow MA) or of the same one but with a "lag" of a few bars (set in the
+iPeriod
+variable).
+The indicator uses SmoothAlgorithms.mqh library classes (copy it to <terminal_data_folder>\MQL5\Include). The use of the classes was thoroughly described in the article
+"Averaging Price Series for Intermediate Calculations Without Using Additional Buffers"
+.
+The indicator has originally been written in MQL4 and was first published in the
+Code Base
+on 21.07.2014.
+Fig.1. Indicators MAOscillator and MAOscillatorHist
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14904

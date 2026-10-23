@@ -1,0 +1,27 @@
+Oscillator MACD Squeeze similar to
+Trade The Markets Squeeze
+, but based on MACD.
+The principal idea consists in trading only when Bollinger Bands are within Keltner Bands, forming trading zones.
+The indicator is represented by histogram MACD with signal labels along the center line and has nine input indicators:
+MACD Fast EMA period
+- fast EMA period to calculate MACD;
+MACD Slow EMA period
+- slow EMA period to calculate MACD;
+Bollinger Bands period
+- period to calculate Bollinger Bands;
+Bollinger Bands deviation
+- deviation of Bollinger Bands;
+Bollinger Bands MA method
+- method to calculate Bollinger Bands;
+Keltner period
+- period to calculate Keltner Bands;
+Keltner deviation
+- deviation of Keltner Bands;
+Keltner ATR period
+- ATR period to calculate Keltner Bands;
+Keltner MA method
+- method to calculate Keltner Bands.
+Interpretation: When signal labels are colored, it means that a trading zone has been found. In this case, trading is performed on the MACD included in the indicator, on other indicators of direction, moving average, crossing by the price the Bollinger Bands or МА, etc.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20859

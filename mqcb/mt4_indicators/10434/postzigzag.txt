@@ -1,0 +1,4 @@
+Description:
+You and I both known zigzag indicator, it's good indicator! But zigzag line can change depend on the price.
+It's not fixed at the time. The post-zigzag can count the moving of zigzag line. If see many continuous post on screen, It's will more signal for changing the trend of price.
+Image:

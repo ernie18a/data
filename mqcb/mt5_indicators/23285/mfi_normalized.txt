@@ -1,0 +1,23 @@
+John Bollinger MFI Money Flow Index), normalized.
+Bollinger Bands are used for calculating overbought/oversold zones.
+There are four input parameters:
+MFI period
+- MFI calculation period
+MFI applied volume
+- volume used for MFI calculation
+BB period
+- Bollinger Bands calculation period
+BB deviation
+- Bollinger Bands deviation
+Calculation:
+NormMFI = (MFI-BL) / (TL-BL)
+where:
+TL = BBands(MFI, BB period, BB deviation, UPPER_BAND)
+BL = BBands(MFI, BB period, BB deviation, LOWER_BAND)
+MFI - Money Flow Index(MFI period, MFI applied volume)
+BBands - UPPER_BAND and LOWER_BAND of Bollinger Bands
+Fig.1. MFI normalized
+Fig.2. MFI normalized + MFI
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23285

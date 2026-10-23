@@ -1,0 +1,21 @@
+A
+datetime
+in MQL5 is an integer: seconds since 1970. Server time - TimeCurrent(), bar times, deal times - is the broker's wall clock stored
+as if it were UTC
+. Export it to a CSV, read it in Python or a spreadsheet with a function that assumes "seconds since 1970 UTC", and every timestamp shifts by the server's UTC offset. On a UTC-3 broker that is three hours: the daily bar dated 00:00 reads as 21:00 of the previous day, and "yesterday's session" silently becomes "today's, half formed". That is exactly what happened to a morning report of mine before this script existed - and the parser never complained.
+The script prints the three clocks an MQL5 program can see and the offsets between them:
+TimeTradeServer()
+- the broker's wall clock, available even without ticks;
+TimeCurrent()
+- the stamp of the last tick, which freezes when no ticks arrive;
+TimeGMT()
+- real UTC, from the local PC clock;
+TimeLocal()
+- this PC's clock.
+It then reports server minus GMT, local minus GMT, server minus local, the tick lag (how far TimeCurrent sits behind the server clock), and this chart's last bar time in server time and in real UTC. Run it with the market closed and the tick lag alone tells the story: on a Saturday it showed 44,142 seconds - the last tick was Friday evening.
+Input:
+InpShowLastBar
+(true) - also print the current chart's last bar time in both server time and UTC. There are no other parameters; the script reads clocks and prints.
+The rule the script ends with:
+a server datetime is the broker's wall clock stored as if it were UTC. Export server timestamps as wall-clock text (yyyy-mm-dd hh:mm:ss), or export the epoch together with the offset printed here - and never let the consumer apply its own timezone to them. Feeding a raw server epoch to a "seconds since 1970 UTC" parser shifts every timestamp by the offset, and nothing warns you.
+This is a diagnostic, not a strategy. It predicts nothing and trades nothing: it measures the clocks in your terminal so that the numbers that leave it mean what you think they mean.

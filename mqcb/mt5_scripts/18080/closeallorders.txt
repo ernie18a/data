@@ -1,0 +1,26 @@
+The script deletes all pending orders on all symbols at a time.
+Script input parameters:
+//+----------------------------------------------+
+//| SCRIPT INPUT PARAMETERS                      |
+//+----------------------------------------------+
+input
+uint
+RTOTAL=
+4
+;
+// Number of attempts in case of unsuccessful trades
+input
+uint
+SLEEPTIME=
+1
+;
+// A pause between the attempts in seconds
+input
+uint
+Deviation_=
+10
+;
+// Price deviation
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18080

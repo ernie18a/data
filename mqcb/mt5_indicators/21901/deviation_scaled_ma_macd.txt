@@ -1,0 +1,2 @@
+Deviation scaled moving average was described in the “The Deviation-Scaled Moving Average.” article of July 2018 TASC
+Since it is actually a sort of EMA (Exponential Moving Average made adaptive using what Ehlers calls "deviation scaling") logical next step is to make a MACD of it too. Here is the MACD of deviation scaled MAs. Some experimenting is advised (short periods for DSMA fast and slow periods can produce some strange results, hence this MACD is using what was described in the article too : a cross of 40 and 100 period DSMA - which produces the MACD presented here)

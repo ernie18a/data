@@ -1,0 +1,16 @@
+Convert from b-clock.mq4. Original code at MQL4 can found at
+https://www.mql5.com/en/code/9124.
+This indicator measure time left before new candle appeared.  In the upper left corner, indicator show details of it in minutes and seconds by string but on the last candle it shows by digital clock style. It is very useful for traders that required open their position exactly when the new candle is coming.
+Core idea to get left time before new candle is coming:
+Left lime = (Open Time of Current Candle + Current Time Frame) - Current Time
+Input parameter:
+ShowComment
+: set to false to hide comment at left corner of chart.
+FontColor
+: select your desirable color at this parameter. This color is only used for text that is displayed on the right of incomplete candle.
+FontSize
+: set size of text that is displayed on the right of incomplete candle.
+FontName
+: set font name here, i.e "Arial" or "Arial Bold".
+Offset
+: determine how many pips above running price your text will be displayed.

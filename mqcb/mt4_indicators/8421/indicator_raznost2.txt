@@ -1,0 +1,7 @@
+The indicator shows the difference between the open price of the last bar and the close price of the previous bar.
+This version of the indicator is an adaptiation of the Raznost (
+https://www.mql5.com/en/code/8375
+) indicator, since the changes in its indications occur only after switching between chart periods, this disadvantage is fixed in this version.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8421

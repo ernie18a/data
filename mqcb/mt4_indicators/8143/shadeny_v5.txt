@@ -1,0 +1,1 @@
+Shades New York or other exchange while in session. SetImmediacyON parameter allows shading after first tick is received in the new session. Version 5 corrects incorrect start up time. Added new SERVER_TIME_ZONE and EXCHANGE_TIME_ZONE in the #define section. Finally learnt about GMT time!

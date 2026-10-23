@@ -1,0 +1,12 @@
+Theory :
+Indicator based on M.H.Pee's article "Just How Long Will A Trend Go On? Trend Continuation Factor".
+Because trends are an important component of the market, it is imperative you can detect them. However, it's not enough to just identify a trend. It's also crucial to be able to tell the direction of the current trend.
+Although trends can make you the most money in the shortest time when you are in sync with them, they can also cause you to sustain heavy losses if your position is in the opposite direction. To avoid getting caught in such a situation, I created the Trend Continuation Factor (TCF), an indicator that identifies the trend and its direction.
+But there are big differences compared to original too.
+price pre-smoothing (filtering) added in order to avoid multiple false signals
+the calculating method is changed in order to produce "directional" result (unlike the original, like this version
+Trend Continuation Factor
+for example). That produces results that are very different than the original, and probably easier to use in trading decisions
+Usage :
+You can use color changes as signals
+The usual "big picture" example :

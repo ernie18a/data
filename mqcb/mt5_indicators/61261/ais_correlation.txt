@@ -1,0 +1,12 @@
+The indicator shows the correlation of two currency pairs. It implements several approaches, which I found the most interesting.
+Indicator settings:
+SecSymbol
+- the second symbol by which the correlation is built;
+Type
+- correlation type
+iPeriod
+- indicator period.
+This indicator is designed for traders trading on several currency pairs. It allows you to evaluate the divergence-convergence of two symbols. And on the basis of this divergence you can make trading decisions.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/61261

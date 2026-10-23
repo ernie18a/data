@@ -1,0 +1,3 @@
+This tool is a visual aid which maps the correct trading session beside each hour on the 24-hour clock. It links the session name to the hour relating to your brokers server time, with your computers local time beside it.
+Depending on what time it is, the current active session (or session overlap) is written in yellow text.
+It may alleviate any confusion about which session is currently active, and which sessions are overlapping (relating to the server time).

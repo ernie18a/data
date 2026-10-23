@@ -1,0 +1,3 @@
+Description of the indicator
+The indicator displays the borders (High and Low) of the last three days on the chart. The current day (rectangle #0) updates its levels during the day
+Pic. 1. Three daily rectangles

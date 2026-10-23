@@ -1,0 +1,3 @@
+Arrow trends by iBearsPower and iBullsPower indicator for MT5.
+Hopefully useful for fellow traders.
+Update_01: 2019/07/31 ~ Added distance in input property from zero in pips.

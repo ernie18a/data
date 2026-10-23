@@ -1,0 +1,69 @@
+Intraday work is full of sentences like "the third candle after the open" or "it turned on bar seven". Counting them by hand on a five minute chart costs attention, and it goes wrong twice a year when the exchange and the broker server switch daylight saving on different dates. This indicator does the counting. It finds the cash open of the session you select, locates the first candle at or after that minute and writes a running number under every following candle of that day.
+The conversion runs from exchange local time to UTC to broker server time. Frankfurt and London switch on the last Sunday of March and October, New York on the second Sunday of March and the first Sunday of November, Tokyo never switches. The broker offset is read from the terminal and rounded to half hours, which covers every server time zone in use. The chart is never modified beyond the text objects the indicator creates and removes again when it is taken off.
+GER40 M5: numbering starts at the Frankfurt cash open, the dotted line marks the anchor
+What you see on the chart
+A number under every candle since the cash open, starting at one for the first candle of the session. Candles before the open stay unlabelled, so the night and the pre-open auction are visibly outside the count.
+A dotted vertical line at each session open in the visible range, switchable, so the anchor can be checked against the price action instead of being trusted.
+An info label in a chart corner with the session in use, the open in server time and the number of the newest candle. If the session was guessed from the symbol name the label says "auto", a guess is never presented as a setting.
+Labels are created for the visible range only and capped, so scrolling stays fast on long histories. On dense timeframes every N-th candle can be labelled instead of all of them.
+Session selection is automatic by default. The symbol name decides: British indices use London, continental European indices Frankfurt, US indices New York, the Japanese index Tokyo. Symbols outside those groups fall back to Frankfurt and are marked as a guess in the info label. Every automatic choice can be overridden, and the manual mode takes a plain server time such as 15:30 for anything the name detection does not know.
+US30 M5 with the New York anchor and the info label: open in server time and the number of the newest candle
+Input parameters
+Parameter
+Default
+Meaning
+InpSession
+Auto
+Session anchor: Auto, Frankfurt 09:00, London 08:00, New York 09:30, Tokyo 09:00 or Manual
+InpManualOpen
+09:00
+Open time in server time, format HH:MM, used by the Manual session
+InpLabelEvery
+1
+Label every N-th candle, 1 labels all, the first candle is always labelled
+InpMaxLabels
+500
+Upper limit of labels on the chart
+InpDaysBack
+10
+Only label the last N calendar days, 0 removes the limit
+InpLabelColor
+DimGray
+Colour of the numbers and of the info label
+InpFontSize
+7
+Font size of the numbers, the info label is two points larger
+InpLabelOffsetPct
+1.5
+Distance of the number below the low, in percent of the visible price range
+InpShowOpenLine
+true
+Draw the dotted line at each session open
+InpOpenLineColor
+Silver
+Colour of that line
+InpShowInfo
+true
+Show the info label
+InpInfoCorner
+left upper
+Corner for the info label
+InpInfoX
+10
+Info label X offset in pixels
+InpInfoY
+20
+Info label Y offset in pixels
+Symbol and timeframe
+The indicator is built for index CFDs and stock symbols that have a cash open: GER40, UK100, US30, NAS100, US500, JP225. Timeframes from M1 to H1 make sense, M5 and M15 are the usual choice for intraday work. On M1 set InpLabelEvery to 5 or 10, otherwise the numbers crowd each other. On Forex there is no cash open, so use the manual mode with a time that means something to you.
+Limitations
+The count follows calendar days. A session whose open falls before server midnight, which happens on far eastern server offsets with the Tokyo anchor, is numbered from the open on the same calendar day, not across it.
+Exchange holidays are not known to the indicator. On a day the exchange is closed but the CFD trades, the count starts anyway at the usual minute.
+In the strategy tester the terminal reports the simulated server time as GMT, so the broker offset comes out as zero and the anchors are treated as UTC. The numbering stays consistent, only the clock behind it shifts.
+Session detection reads the symbol name. Brokers with unusual naming land in the Frankfurt fallback, which the info label marks with "auto".
+The indicator is display only. It has no buffers, writes no files and sends no orders.
+Quick start
+Attach it to an index chart on M5 and leave every input at its default. The numbers appear under the candles of the current session.
+Check the dotted line against the open you expect. If the symbol is unknown to the name detection, pick the session yourself in InpSession.
+On M1 raise InpLabelEvery to 5, on long histories lower InpDaysBack.
+The code is a free companion of my prop firm utilities in the Market (PropGuardian, PropMirror, PropSizer). It runs on its own and needs nothing else.

@@ -1,0 +1,46 @@
+Support and Contribution
+If you find this indicator useful, you can show your support by giving a star to its
+GitHub repository
+and this post. You are more than welcome to comment below this post for
+reporting bugs,
+or suggesting any further improvements that you may find useful. You can do the same by opening an issue on the GitHub repository. You can also contribute to the source code by making a pull request on the GitHub repository.
+Installation
+Run MetaTrader and navigate to your MetaTrader data folder through the menu bar by selecting File -> Open Data Folder . Copy
+Fractal-Utilities.mqh,
+Fractal-STF.mq4
+and
+Fractal-MTF.mq4
+into
+MQL4\Indicators
+folder. The final step is to compile
+Fractal-STF.mq4
+and
+Fractal-MTF.mq4
+via
+MetaEditor
+to create
+Fractal-STF.ex4
+and
+Fractal-MTF.ex4
+, respectively. Now, you should be able to use the Fractal-STF and Fractal-MTF indicators within MetaTrader terminal. The only requirement for installation is to put
+all
+files into the same directory, which can be any subdirectory of
+MQL4\Indicators
+like
+MQL4\Indicators\Custom
+. Note that whenever you relocate the compiled files to another directory, you should recompile them in that directory to get them working.
+Terminology
+STF is an abbreviation for Single Timeframe. MTF is an abbreviation for Multi Timeframe. So, Fractal-STF is an indicator whose calculations only involves a single timeframe, while Fractal-MTF uses multiple timeframes for its calculations. Due to this fact, Fractal-STF is a little bit faster than Fractal-MTF as it has to do less computations. You can notice this fact while you want to switch between different timeframes. For the current version, the algorithm used for Fractal-MTF is not optimized and I try to improve it in future updates to gain better performance. If you find the delay in Fractal-MTF annoying and you do not use the multi timeframe feature too much, then it is wise to just use Fractal-STF.
+Description
+There is a built-in fractal indicator in MT4/MT5, whose origins goes back to the famous Bill Williams. The main purpose of this indicator is to identify a local extremum by comparing a candle's high/low with that of its neighboring candles to justify it as an up-fractal/down-fractal, a term coined by Williams instead of local maximum/minimum. Some other equivalent terms are swing high/low and top/bottom, which are used among traders interchangeably.
+This indicator has the following advantages over its built-in MT4/MT5  counterpart.
+1. Williams believed that like our middle finger, which is a fractal compared with its two neighboring ones, the radius of the comparison should be chosen as two, which is the default value for the built-in fractal indicator in MT4/MT5. In this indicator, the user can choose this neighborhood radius to his/her will. This has the benefit of distinguishing extrema of different degrees at the same time on the chart as shown in
+Figure 1
+.
+2. User can also choose the shape and size of symbols pointing to these extrema, enabling him/her to associate with extrema of each degree a unique symbol for better visualization.
+3. User can specify the vertical distance of the arrows from the high/low of the candles to avoid overlapping of symbols corresponding to extrema of different degrees.
+4. User can view higher timeframe fractals in a lower timeframe, making this a multi timeframe (MTF) indicator. For example, user can set the indicator timeframe as D1 and choose a radius of 2 for the fractals. Next, if user switches to M15 timeframe, Fractal-MTF marks those M15 bars whose high/low coincides with that of their corresponding fractals in D1 timeframe. Note that the indicator timeframe should be greater than or equal to the chart timeframe, which is attached to it. If the user chooses an indicator timeframe smaller than the chart timeframe, indicator returns an error in the terminal and stops.
+Figure 1
+. Fractals with neighborhood radius of 2 and 5.
+Figure 2.
+Inputs of the Fractal-MTF indicator.

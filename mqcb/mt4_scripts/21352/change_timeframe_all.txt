@@ -1,0 +1,1 @@
+This script will change the timeframe of all the opened charts. It has one setting for selecting the desired timeframe. This saves me a lot of time when doing multi timeframe analysis across 12 currency pairs simultaneously.

@@ -1,0 +1,20 @@
+To modify/delete/close a position/pending order you should:
+1) Get acquainted with this instruction =)
+2) !Specify default values!
+(they are below the description, they begin and end with the entry: //+----------------------------------------------+ )
+3) Allow the import of external experts
+Menu "Tools" -> "Options" -> "Expert Advisors" -> "Allow external experts imports" (it is necessary to describe an error that may occur while placing an order)
+4) Drag the script to the chart
+not far from the order/position that is to be modified.
+5) Move all the lines to the necesasry levels:
+- Open_Price_Line (white by default) - open price (ONLY FOR THE PENDING ORDERS)
+- Stop_Loss_Line (red) - Stop Loss level
+- Take_Profit_Line (green) - Take Profit level
+- Expiration_Line (yellow) - time of expiration (ONLY FOR THE PENDING ORDERS)
+To remove the Stop Loss/Take Profit/Expiration time just delete the corresponding line. To remove the pending order or close the position - delete the Open_Price_Line line.
+6) Press the "OK" button when everything is ready.
+To stop the script working at any time press the "
+Cancel" button.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7748

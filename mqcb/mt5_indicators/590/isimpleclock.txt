@@ -1,0 +1,8 @@
+This indicator shows the simple clock in comment.
+1 - Current time.
+2 - Time, elapsed from bar open.
+3 - Time to bar close.
+The indicator doen't work at W1 and MN1 timeframes.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/590

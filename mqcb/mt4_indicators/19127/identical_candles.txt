@@ -1,0 +1,41 @@
+This is the semaphore indicator of candles that highlights the candles on the chart, which have same direction like all candles for your chosen timeframes. For example, each of the rising candles (bullish) or each of the descending candles (bearish).
+All timeframes can be used, just turn on/off for each one. In additional to the arrows, indicator can beep to indicate the appearance of a new arrow on the displayed timeframe.
+There is possibility in the settings:
+The display of all extra arrows can be turned off except, for example, those that indicate a change of the signal direction, in other words, only the first arrow for each direction.
+You can specify where the candle is intended to give a signal (candle is equal zero or already formed). Keep in mind if you choose a zero candle, then the signal can be broken with an opposite signal, because the candle isn’t formed yet and is at the drawing stage.
+Attention! If you receive a signal from zero candle, check the indicator on the tester, because using historical data, you can get another result.
+Example. TF: M1, M5, M15 и shift = 1, Only signal change = true
+Indicator settings
+Alerts
+– To turn on/off the beep;
+Shift
+– The candle index to receive the signal: 0 – the current candle, 1 – the previous candle;
+Only signal change
+– To wipe out all extra the arrows on the chart, display the direction change only;
+TF M1
+– To include in the calculation the timeframe M1
+TF M5
+- To include in the calculation the timeframe M5
+TF M15
+- To include in the calculation the timeframe M15
+TF M30
+- To include in the calculation the timeframe M30
+TF H1
+- To include in the calculation the timeframe H1;
+TF H4
+- To include in the calculation the timeframe H4;
+TF D1
+- To include in the calculation the timeframe D1;
+TF W1
+- To include in the calculation the timeframe W1;
+TF MN
+- To include in the calculation the timeframe MN;
+Comments
+- To turn on/off comments;
+clrBUY
+– The color for Buy;
+clrSELL
+- The color for Sell.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19127

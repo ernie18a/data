@@ -1,0 +1,9 @@
+This oscillator is based on RSI with coloured overbought and oversold areas. The color scheme can be modified in the settings.
+Input parameters:
+the period for calculation of the oscillator
+applied price (standard set of 22 types)
+the upper and lower boundaries
+moment for color's change (on slope change, on outer levels cross, or on the middle line cross)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16507

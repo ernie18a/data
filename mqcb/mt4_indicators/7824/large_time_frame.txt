@@ -1,0 +1,2 @@
+Author: Miramaxx
+Indicator LargeTimeFrame. It draws the candlesticks of a larger timeframe on the chart.

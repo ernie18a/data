@@ -1,0 +1,11 @@
+This indicator shows MACD in the main chart.
+Inputs are the same as MACD.
+Input List:
+Sort by color
+FastEMA Default 12
+SlowEMA Default 26
+MACDSMA Default 9
+MACDChannels On XAGUSD
+Translated from Chinese by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/zh/code/13321

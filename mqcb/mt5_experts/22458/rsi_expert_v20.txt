@@ -1,0 +1,33 @@
+Author of the idea
+-
+Aleksey Cherbaev
+mq5 code author
+-
+barabashkakvn
+The EA only operates when a new bar appears. It always uses iRSI indicator, while using iMA indicators depends on the
+Trade on Moving Average
+parameter:
+MA trade: Off - Moving Average indicators are not used
+MA trade: Forward - usual comparison at the intersection of two Moving Averages (Fast and Slow)
+MA trade: Revers - signal reversal at the intersection of two Moving Averages (Fast and Slow)
+To disable a stop loss (
+Stop Loss
+), take profit (
+Take Profit
+) or trailing (
+Trailing Stop
+) simply pass "0.0" to the parameter.
+Lot size management
+The lot may be constant ("
+Money management
+" parameter is equal to "
+Constant lot
+") - or dynamic, in risk % per trade ("
+Money management
+" is equal to "
+Risk in percent for a deal
+").
+The EA can be launched on netting as well, though the result is unpredictable.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22458

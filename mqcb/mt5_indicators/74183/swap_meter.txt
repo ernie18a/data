@@ -1,0 +1,13 @@
+Swap Meter — Live Single-Symbol Sell/Buy Swap Monitor with Alerts
+Swap Meter
+displays the live SELL and BUY swap rates for your current chart symbol in a clean, color-coded panel — and instantly alerts you the moment your broker changes either rate.
+Key features:
+Live SELL and BUY swap values for the active chart symbol, refreshed continuously
+Color-coded display: positive swap in green, negative in red, zero in neutral gray — know at a glance whether holding overnight pays or costs you
+Built-in change-detection alerts: get notified the instant a swap rate is updated, with popup alert, terminal log, and/or mobile push notification — each independently toggleable
+Adjustable sensitivity threshold to filter out rounding noise
+Visual flash highlight on every detected change
+Fully customizable colors, panel position, and refresh rate
+Lightweight — runs continuously with minimal CPU usage
+Sharp, modern dark-panel design matching the FoxWave Spread Meter
+Ideal for carry traders, swing traders holding positions overnight, or anyone who wants to know immediately when their broker adjusts financing costs — without checking Market Watch manually.

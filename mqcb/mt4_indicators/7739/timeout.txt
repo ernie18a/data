@@ -1,0 +1,12 @@
+The indicator displays the time between sending a quote by the broker and receiving it by you: the current, maximal and minimal lag.
+ATTENTION! For the indicator to work properly, your system clock must be synchronized with the same server as the clock of your broker. Otherwise the usage of the indicator is meaningless.
+The indicator will show the time of quote passing between the server of your broker and your terminal. The problems with the connection will be noticed at once (if there are), and also the obligingness of the broker and many other stuff.
+If the indicator's value is 1-2 seconds, this can be the result of the connection quality and server's workload. But if the indicator shows >5 seconds - you need to pay attention to it (you can ask your broker's technical support, whether it is normal or not). That's not certainly the point, there can be a lot of causes. But at least you'll know that you receive the price by "n" seconds later than the others.
+The indicator can not be a subject or a reason to assert a claim to a broker, it just acts as the information source!
+External variables:
+GMT_shift - Time zone (GMT_shift = 3 for Moscow)
+DrawBars - The number of indicator's bars to be drawn (1 tick - 1 bar)
+and 4 colors just to be safe ;)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7739

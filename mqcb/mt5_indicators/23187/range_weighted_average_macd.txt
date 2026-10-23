@@ -1,0 +1,8 @@
+Theory:
+Strictly speaking MACD is a (as defined by Gerald Appel, who invented it) difference of fast and slow EMA and then a signal line (which is also EMA) is calculated for such a difference.
+This version:
+This indicator is not using EMA for MACD calculation but is using range weighted average (published here :
+Range Weighted Average
+with some more explanation) and is using range weighted average for signal line too (making it a sort of "all range weighted average" MACD).
+Usage:
+You can use it in all the usual ways how MACD indicators are used, Color changes added on MACD to signal line crosses and OSMA is displayed as a filled zone in order to facilitate the reading of the MACD.

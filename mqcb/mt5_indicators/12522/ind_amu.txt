@@ -1,0 +1,10 @@
+Original author:
+Yuriy Tokman (YTG)
+The indicator shows trend and side (flat) price movements.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 5.03.2012.
+Fig.1. The ind_aMU indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12522

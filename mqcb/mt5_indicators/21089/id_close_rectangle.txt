@@ -1,0 +1,47 @@
+An indicator utility for closing (reducing the right side of the length) the rectangles to some bars/candlesticks.
+Using it, you can do it in two clicks (instead of many actions, if you have to do this manually):
+One - on the button in the control panel of this utility;
+then another one - on the object in the chart, in the location, to which it must be reduced.
+This utility works with the objects located in the main chart and with those located in its separate windows.
+Inputs
+i_prefix_add_to_object_name
+- add prefix "cl" to the name of the object to be closed;
+i_prefix_add_to_object_text
+- add prefix "cl" to the description of the object to be closed;
+i_prefix_add_to_object_tooltip
+- add prefix "cl" to the tooltip of the object to be closed;
+i_alert_if_obj_inverted
+- if it is
+true
+, then use
+Alert
+to warn that you clicked on the object placed in the chart from right to left, not from left to right. By default,
+false
+(these messages to be put out through Print into the
+Experts
+terminal tab);;
+i_font_size
+- font size in the control panel;
+i_y_distance
+- placing the control panel along the
+y
+axis in pixels (referencing from the chart top);
+i_x_distance
+- placing the control panel along the
+x
+axis in pixels (referencing from the right chart edge);
+i_button_size_base
+- basic size to form the buttons of the indicator control panel.
+Note
+: If you want to reduce/close the right side of both rectangles (
+OBJ_RECTANGLE
+) and trendlines (
+OBJ_TREND
+), and/or arrowed lines (
+OBJ_ARROWED_LINE
+), then you can use utility
+ID_Close_Rectangle_TL_AL
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21089

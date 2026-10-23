@@ -1,0 +1,3 @@
+Schaff Trend RSI
+is a useful indicator, but if we follow the slope of the RSI as a signal, it might give us a bit too much signals.
+The solution seems obvious: since RSX is "a smoother RSI" without a lag, in this version RSX is calculated instead of RSI. That makes the slope much smoother and produces significantly less color (slope) changes.

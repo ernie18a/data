@@ -1,0 +1,8 @@
+The indicator is developed for trading by trend. Position is opened at the intersection of the lines. Steady convergence of the lines indicates a fading trend.
+The indicator joins Bears and Bulls Power indicators with one of them being turned upside down.
+Reference MA parameters can be changed.
+MQL4 version (in Russian):
+https://www.mql5.com/ru/code/10660
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1004

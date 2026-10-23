@@ -1,0 +1,9 @@
+The indicator shows the difference of arithmetic mean and geometric mean of the price.
+The price is calculated according to the formula:
+(O+H+L+C)/4
+, where О — bar Open price, Н — bar High price, L — bar Low price, С — bar Close price.
+The indicator settings:
+period — indicator period
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16146

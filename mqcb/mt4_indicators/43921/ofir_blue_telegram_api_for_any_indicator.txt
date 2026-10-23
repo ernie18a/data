@@ -1,0 +1,27 @@
+You have developed your own MT4/MT5 indicator ?
+For your personal usage
+For your clients
+Just add 3 lines of code to your MQL4/MQL5 file to:
+Connect your indicator to Telegram
+Send messages to Telegram
+Send signals to Telegram
+Trade signals from Telegram
+Add trading capabilities to your Indicator (open, close and manage positions
+Join an amazing eco-system ;)
+Just an indicator among many others (including yours)
+Can be attached to several charts (different pairs and timeframe)
+Detect several (maybe too many) trading opportunities per day
+No trading capabilites
+The challenge
+Notify me on trading opportunities : the signal
+Adapt the signal to my money management and trading hours
+Filter the signal
+Trade the signal quickly and safely
+Manage open positions
+Keep me informed on Telegram
+Add 3 lines of code into your indicator
+Include the file OfirBlueAPI.mqh. The purpose of this file is to connect your indicator with Ofir blue
+OnInit: Initialize Ofir Blue
+Where you usually draw the signal (Arrow for example), call Ofir Blue method to send it
+The result
+Integration with Ofir blue is free but still in beta-testing.

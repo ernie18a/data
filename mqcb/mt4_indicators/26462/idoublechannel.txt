@@ -1,0 +1,2 @@
+Indicator makes a channel using two moving averages.
+It is an indicator of technical analysis that aims to assist every trader in his manual trades.

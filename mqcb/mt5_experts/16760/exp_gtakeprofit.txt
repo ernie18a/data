@@ -1,0 +1,28 @@
+This Expert Advisor closes all positions if the total profit exceeds a predefined limit. In fact, this is a global take profit for all positions simultaneously.
+//+----------------------------------------------+
+//| Enumeration for profit calculation options   |
+//+----------------------------------------------+
+enum
+TakeMode
+{
+ENUM_PERCENT,
+//profit in percentage
+ENUM_CARRENCY
+//profit in the deposit currency
+};
+//+----------------------------------------------+
+//| Input parameters of the EA indicator         |
+//+----------------------------------------------+
+input
+TakeMode LMode=ENUM_PERCENT;
+//profit calculation method
+input
+double
+TakeProfit=
+100.0
+;
+//take profit
+//+----------------------------------------------+
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16760

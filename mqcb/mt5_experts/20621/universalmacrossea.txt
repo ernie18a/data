@@ -1,0 +1,26 @@
+Idea by
+:
+Scriptor
+MQL5 code by
+:
+Vladimir Karputov
+The EA trades on two Moving Average indicators and allows selecting the method of defining the position size: Manually (having set the
+Lots
+parameter to more than zero, and the
+Risk
+parameter to zero) or in the risk percentage of free margin per trade (having set the
+Risk
+parameter to more than zero and the
+Lots
+parameter to zero).
+Stop Loss, Take Profit, and Trailing can be enabled/disabled. You can trade within a limited time period (having set the
+Use Hour Trade
+parameter to "true" and defined the values of the
+Start Hour
+and
+End Hour
+parameters).
+The test results on H1 in the "Every Tick" mode from 2018.01.01 to 2018.05.01:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20621

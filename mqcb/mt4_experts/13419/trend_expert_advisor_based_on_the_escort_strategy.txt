@@ -1,0 +1,19 @@
+The Expert Advisor opens an order by the trading strategy, places a take profit and a stop loss It protects the position by moving the stop loss to breakeven, and maintains it with a trailing stop.
+The strategy uses the indicators of the MetaTrader 4 terminal: the moving averages of two periods, the MACD indicator and the CCI indicator. The parameters of the indicators are available in the EA settings. A detailed description of the strategy, the EA settings and the testing results are given in the video.
+Video:
+The EA settings are given for the GBP/USD pair. The archive contains .set files: optimized for 2015 (2015) and with universal parameters (univ).
+Test result with the optimized parameters for 2015:
+Test result with the universal parameters for 2015:
+The result of trading on the live cent account from 23.06.15 to 10.07.15 with the universal parameters:
+For the currency pairs with floating spread it is recommended to increase the size of stop loss by the amount of the average spread in the optimized settings.
+Recommendations:
+This trading strategy is not the "Grail" and there are losing trades. The EA keeps one open market order, and skips new signals by the strategy until it closes the order. The best results have been detected on the trending volatile pairs. This is not a fully-featured trading robot, and it can incorrectly open and maintain trades on some account types. It can lose the deposit during a change in the market volatility, during a prolonged flat and force majeur events.
+Versions:
+The unique number of the EA code revisions:
+m0002
+— the initial version, described in the video;
+m00021
+— the improved version, includes an additional filter for opening positions by the trading system on the permitted days of week and hours. The time is hours corresponds to the terminal time, this must considered in the initial settings. The EA displays the line with the current time and date and the line with the information if the trading is allowed or not as a table in the top left corner of the screen. The period from 6 to 20 hours is set by default. To allow trading during the whole day, set it from 0 to 23 hours. Days of the week are listed in the initial settings, to enable trading during the desired day, set "1", to disable - "0". By default, trading is allowed on all days of the week.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13419

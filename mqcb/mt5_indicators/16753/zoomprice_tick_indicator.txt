@@ -1,0 +1,50 @@
+This indicator allows you to see the necessary price movement details via the convenient scale setting interface.
+The indicator makes possible to view the necessary price movements from any "altitude".
+The indicator interface
+The left mouse button rewinds the price.
+Click SHIFT to enable scaling (move the mouse).
+If the cursor is on a normal price chart, clicking SHIFT displays history data located under the cursor. This simplifies the search for a necessary interval (move the mouse).
+The chart is an interactive object. It can be used for any purpose, for example, as part of an EA
+#include
+<fxsaber\ChartObjects\ChartObject_ZoomPrice.mqh>
+CHARTOBJECT_ZOOMPRICE ChartObject;
+void
+OnChartEvent
+(
+const
+int
+id,
+const
+long
+& lparam,
+const
+double
+& dparam,
+const
+string
+& sparam )
+{
+EVENTBASE::MyEvent(id, lparam, dparam, sparam);
+}
+void
+OnTimer
+(
+void
+)
+{
+EVENTBASE::MyEventTimer();
+}
+void
+OnTick
+(
+void
+)
+{
+EVENTBASE::MyEventTick();
+}
+The EA operation results screenshot displays that this is the graphical object with the manually adjustable parameters.
+The indicator is self-sufficient — do not use standard libraries.
+It is compiled for MetaTrader 4, though it shows nothing in it.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16753

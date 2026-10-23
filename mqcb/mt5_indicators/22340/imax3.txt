@@ -1,0 +1,32 @@
+Indicator - iMAX3 trend detector
+There are five inputs:
+Step
+- step size
+Auto step mode
+- step size auto selection (Yes/No)
+Use iMAX mode
+- use iMAX mode (Yes/No)
+Use HP mode
+- use HP mode (Yes/No)
+Use HPX mode
+- use HPX mode (Yes/No)
+Step size is a configurable parameter that affects sensitivity when defining a trend direction. It has rather small values varying from 0.01 on a monthly chart down to 0.0001 on a minute one. If Auto step mode = Yes, programmatically preset values ​​are used in the Step filter.
+Filter modes:
+iMAX
+mode is the most adaptive but least responsive one out of
+three available modes
+in term of a trend change detection rate.
+However, this is a good choice, especially in highly volatile markets.
+HP
+mode is the fastest and most adaptive trend detector. However, it is less resistant to price surges compared to iMAX.
+It provides a good trade-off between trend detection/filtering speed.
+HPX
+mode is the fastest trend detector, but since it is highly sensitive, it very quickly changes trends even in weakly volatile markets.
+Thus, it is probably not the best choice for determining the direction of a trend on lower timeframes, but it can be used on higher ones.
+Fig. 1. All three modes
+Fig. 2. iMAX mode
+Fig. 3. HP mode
+Fig. 4. HPX mode
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22340

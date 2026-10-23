@@ -1,0 +1,8 @@
+Basics:
+Laguerre filter was described by John Ehlers in the "Time Warp - without Space Travel" document. In its original version it did not use period parameter and that somewhat limited its usage in some versions.
+This version:
+With a version that uses period parameter it becomes possible to use the indicator in some "classical" adapting modes. This version is using the ATR (Average True Range) adapting method.
+Usage:
+You can use color changes as signals.
+PS:
+A "big picture" example with a comparison of the "regular" (gray line) and adaptive (colored line) of the Laguerre filter. As it is obvious, the adaptive is faster where it should be (in times of high volatility and in the times of cal changes, it remains as smooths as it should) and is leading the "regular" version in almost all the times.

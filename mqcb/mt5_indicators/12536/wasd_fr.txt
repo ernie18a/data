@@ -1,0 +1,10 @@
+Original author:
+WASD
+Fractals are generated using 3 previous bars (without redrawing because the current bar is not included in the calculation).
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 16.01.2015.
+Fig. 1. The WASD_FR indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12536

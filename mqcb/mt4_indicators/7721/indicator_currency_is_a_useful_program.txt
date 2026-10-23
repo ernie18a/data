@@ -1,0 +1,20 @@
+The indicator-informer Currency
+prints and writes into a file the following information:
+1. currency pair;
+2. the price of one lot in a deposit currency, i.e. value of margin when a position of 1-lot volume is opened for a chosen pair;
+3. maximal lot volume possible for this currency pair with a set percent of balance and spread taken into account (stick to Money Management).
+There are only two parameters in the indicator:
+All_Pairs
+true
+- information is shown for all currency pairs (28 pairs);
+false -
+information is shown for the current security.
+Procent
+- desired percentage of balance.
+The following tasks are solved:
+1. choosing the optimal currency pair in terms of costs;
+2. calculating margin and spread costs;
+3. stick to MM of your strategy.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7721

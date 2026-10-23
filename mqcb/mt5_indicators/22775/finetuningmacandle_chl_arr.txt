@@ -1,0 +1,80 @@
+FineTuningMACandle_Chl
+indicator replaces signal candles with signal flags, which are visually more convenient in most cases.
+//+----------------------------------------------+
+//|  INDICATOR INPUT PARAMETERS                  |
+//+----------------------------------------------+
+input
+uint
+FTMA=
+10
+;
+input
+double
+rank1=
+2
+;
+input
+double
+rank2=
+2
+;
+input
+double
+rank3=
+2
+;
+input
+double
+Shift1=
+1
+;
+input
+double
+Shift2=
+1
+;
+input
+double
+Shift3=
+1
+;
+input
+int
+PriceShift=
+0
+;
+// vertical shift of the indicator in points
+input
+uint
+Gap=
+10
+;
+//unconsidered gap in points
+input
+uint
+BBLength=
+10
+;
+// Bollinger period
+input
+double
+BandsDeviation=
+1.0
+;
+// deviation
+input
+uint
+ArraySymb=
+108
+;
+// Symbol for signal labels
+To replace the values of the last input, use the
+Wingdings font symbols
+table.
+The indicator uses the classes of library SmoothAlgorithms.mqh (to be copied to the <terminal_data_directory>\MQL5\Include folder). The use of the classes was described in detail in article
+Averaging Price Series for Intermediate Calculations without Using Additional Buffers
+.
+Fig1. FineTuningMACandle_Chl_Arr indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22775

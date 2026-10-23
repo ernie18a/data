@@ -1,0 +1,6 @@
+Its another averaging of moving averages.
+If shows green line, if buy signal only and red line in case of sell signal only.
+Nothing new, just more clearly.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9320

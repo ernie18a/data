@@ -1,0 +1,18 @@
+The idea of the indicator is a variation of
+iVLT
+. Algorithm for calculation is in the following:
+on each bar calculate the range for the set number of bars, i.e. the distance from the maximum high to the minimum low.
+if range calculated on the current bar is less than the minimum range calculated on the previous bars, it is a signal of the market compression.
+Parameters:
+Bars in Range
+- the number of bars for calculation of the range (the current bar).
+Check Period
+- the period of the minimum range definition.
+Recommendations:
+it is not recommended to use the indicator on the small ("noise") frames.
+the indicator doesn't specify the direction, so two variants of use are available as the signal is formed:
+place stop orders at the boundaries of the signal range,
+use in pair with any trend indicator and place stop order only in the trend direction (if there was a breakthrough in the opposite direction, delete stop order).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1558

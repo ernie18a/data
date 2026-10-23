@@ -1,0 +1,2 @@
+A countdown timer until next bar arrives. It is a script that can persist and also be removed from the chart.
+There were a few different developers that have already published such a code, although they published indicators, and this is a script version which neither uses iTime or OnTimer.

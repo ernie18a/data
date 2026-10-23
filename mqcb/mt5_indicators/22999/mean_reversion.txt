@@ -1,0 +1,17 @@
+Mean reversion is a channel indicator. It displays on the price chart a channel made up of three lines and a moving average
+It has two adjustable parameters:
+Range
+- channel calculation range
+MA period
+- period of Moving Average
+Calculations:
+Highest= Max
+Lowest = Min
+Median = (Max+Min) / 2
+MovAvg = SMA(Close, MA period)
+where:
+Max, Min - the minimum and maximum prices within the Range
+Once the channel reaches the extreme channel value, a position can be opened in the direction outlined by the moving average or towards the channel center. Thus, the indicator helps to make a position entry decision in counter trend strategies, in expect the price is expected to return to the average value.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22999

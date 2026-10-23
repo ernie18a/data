@@ -1,0 +1,6 @@
+Indicator based on "Automated Support And Resistance" article by Mel Widner published in TASC.
+Two oscillators are defined: the WSO (Widner Support Oscillator) and the WRO (Widner Resistance Oscillator).
+The WSO compares the current Close with the most recent six support levels. Values range from 0 to 100. WSO = 0 means that the Close is below all of the six support levels, and WSO = 100 means that the current Close is above all of the six support levels. Changes in WSO indicate changes in support, either breaking of an old level or establishing a new one. The WSO is defined as:
+WSO = 100(1 – (INT(S1/C) + INT(S2/C) + INT(S3/C) + INT(S4/C) + INT(S5/C) + INT(S6/C))/6)
+A similar discussion applies to the WRO. The WRO compares the current Close with the most recent six resistance levels. Values range from 0 to 100. WRO = 0 means that the Close is below all of the six resistance levels, and WRO = 100 means that the current Close is above all of the six resistance levels. Changes in WRO indicate changes in resistance, either breaking an old level or establishing a new one. The WRO is defined as follows:
+WRO = 100(1 – (INT(R1/C) + INT(R2/C) + INT(R3/C) + INT(R4/C) + INT(R5/C) + INT(R6/C))/6)

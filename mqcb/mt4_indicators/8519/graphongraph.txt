@@ -1,0 +1,22 @@
+Author:
+Fduch
+The indicator is intended for displaying the charts of two currency pairs in a single window.
+Input parameters:
+symbol
+- the name of the currency pair that is to be added to the main chart of the other currency pair.
+timeFrame
+- the TF of the currency piar that is to be added to the main chart of the other currency pair.
+price
+- the price used for drawing the chart of the currency pair that is to be added. It can take the following values:
+Open
+,
+Close,
+Median
+Picture:
+What I didn't succeed but wanted to add:
+I don't know how to draw a chart of the added currency pair using the bars and candlesticks. Drawing it with a line is simple:
+SetIndexStyle(0,DRAW_LINE);
+But how can I implement its drawing with the bars or candlesticks?
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8519

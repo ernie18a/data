@@ -1,0 +1,1 @@
+CLS (ClearScreen) delets all object drawn on the chart with key press "C"

@@ -1,0 +1,89 @@
+This is a Non-Directional Bias EA. This EA does not rely on any technical skillset such as indicators, price action, news calendar events, or candlestick patterns. It offers multiple trading strategies, risk management plans, and other customizable settings. This EA takes trades continuously and randomly, depending on the strategy you have chosen.
+Even though the EA works on randomness, it has still made profits with proper risk management settings.
+Variable
+Values
+Description
+Trading Strategy
+Hedge_Style, BuySell_Random, Buy_Sell, Auto_Swap, Buy_Order, Sell_Order
+Hedge_Style:
+Opens both Buy and Sell trades simultaneously.
+BuySell_Random:
+Randomly opens either a Buy or Sell trade at one time.
+Buy_Sell:
+Opens a trade based on the previously closed order type. If the last closed order was a Buy, it will open a Sell trade.
+Auto_Swap:
+Opens only Buy or Sell trades based on the positive swap charge direction, ignoring trades in the negative swap direction.
+Buy_Order:
+Opens only Buy trades.
+Sell_Order:
+Opens only Sell trades.
+New_Trade
+True/False
+True:
+EA can take trades.
+False:
+EA will not take any trades.
+Lot_Size
+Double Value
+Choose your desired lot size for each trade executed by the EA.
+StopLoss_Type
+Virtual_SL, Classic_SL
+Virtual SL:
+The EA will close the trade when your specified stop loss is reached, but the stop loss level will not be visible to the broker’s server (remains on your local PC).
+Classic SL:
+The EA will place a visible stop loss that reflects on the broker’s server.
+This feature is useful if your broker does not support hyperactive EAs, has a limit on modification quotas per day, or if you suspect your broker is hunting your stop loss.
+StopLoss
+Int Value
+Set your stop loss value in points/pips (the smallest price movement unit for your asset).
+Set Stop Loss to 0 to disable it
+TakeProfit_Type
+Virtual_TP, Classic_TP
+Virtual TP:
+The take profit level is not visible to the broker’s server.
+Classic TP:
+The take profit level is visible to the broker’s server.
+TakeProfit
+Int Value
+Set your take profit value in points/pips.
+Set Take Profit to 0 to disable it
+Trailing_Type
+Virtual_Trailing, Classic_Trailing
+Virtual Trailing:
+Stop loss modifications are kept on your local PC and are not reflected on the broker’s server.
+Classic Trailing:
+Stop loss modifications are updated directly on the broker’s server.
+This feature is useful if your broker does not support hyperactive EAs, has a limit on modification quotas per day, or if you suspect your broker is hunting your stop loss.
+Trailing_Start
+Int Value (Points/Pips)
+Specify the number of pips from the open trade price at which trailing should begin.
+Trailing_Gap
+Int Value (Points/Pips)
+Set the gap in pips between the current market price and the trailing stop loss.
+Set Trailing Gap to 0 to disable Trailing Operation.
+Risk_In_Money_Type
+FixedMoney, BalancePercentage
+Fixed Money:
+Closes all open trades when the negative floating reaches your specified amount.
+Balance Percentage:
+Automatically calculates based on your account balance and closes all trades once this limit is reached.
+Money_In_Risk
+Int Value
+If
+Risk_In_Money_Type
+is set to
+FixedMoney
+, enter the amount of money you can afford to lose. If it is set to
+BalancePercentage
+, the EA will automatically calculate the risk based on your account balance and close all trades when that limit is reached.
+Max_Spread
+Int Value (Points/Pips)
+Sets the maximum acceptable spread. If the current spread exceeds this value, the EA will not take a trade and will wait for the spread to return within the specified limit.
+Slippage
+Int Value (Points/Pips)
+Set the maximum allowed slippage for order execution.
+Note:
+If you are experiencing a malfunction or error in EA operation, remove
+#property strict
+from the EA code on line 6.
+Good Luck, Happy Trading!

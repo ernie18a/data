@@ -1,0 +1,5 @@
+A channel formed by two Double Exponential Moving Averages based on averaged High and Low timeseries. Candlesticks beyond the channel are marked with the trend-related color. Candlesticks with the trend are colored brightly, and those against the trend are colored darkly.
+Fig 1. Indicator DEMA_Range_Channel
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21364

@@ -1,0 +1,15 @@
+R-Squared shows the correlation with its linear regression line values close to 1.0 show perfect relation values close to 0.0 show poor relation.
+See Metastock Help.
+To determine if the trend is statistically significant for a given x-period linear regression line, plot the r-squared indicator and refer to the following table.  This table shows the values of r-squared required for a 95% confidence level at various time periods.  If the r-squared value is less than the critical values shown, you should assume that prices show no statistically significant trend.
+Number ofPeriods r-squaredCritical Value(95%confidence):
+5                 0.77
+10                0.40
+14                0.27
+20                0.20
+25                0.16
+30                0.13
+50                0.08
+60                0.06
+120               0.03
+You may even consider opening a short-term position opposite the prevailing trend when you observe r-squared rounding off at extreme levels.  For example, if the slope is positive and  r-squared is above 0.80 and begins to turn down, you may consider selling or opening a short position.
+There are numerous ways to use the linear regression outputs of r-squared and Slope in trading  systems.  For more detailed coverage, refer to the book The New Technical Trader by Tushar Chande  and Stanley Kroll.

@@ -1,0 +1,29 @@
+Improvement of the first version (
+MA MACD Position averaging
+). The EA features the trading signal reversal upon initial opening (when there are no positions). The reverse is managed via the
+Use reverse trade signal
+parameter.
+The EA only checks for a trading signal or an addition to the position when a new bar appears.
+The EA is based on indicators iMA (Moving Average, MA) and iMACD (Moving Average Convergence/Divergence, MACD). If a position has a loss exceeding
+Step lossing
+pips, open yet another position (in the loss-making position direction) with an increased lot (
+Lot coefficient
+is considered).
+The EA holds only one position or multiple positions of the same direction. The EA features two parameters:
+Indent price from MA
+and
+Ratio of MAIN to SIGNAL
+(both are displayed on the image below)
+Sample BUY signal: MACD indicator is below "0.0", the main line (MAIN) exceeds the signal line (SIGNAL) and the current price is higher than Moving Average. Two filters are added to this condition:
+Ratio of MAIN to SIGNAL
+Indent price from MA
+You can select a bar to be checked - on a zero (current) one or on bar #1. This is defined by the
+Bar Current
+parameter.
+EA operation
+The following data is collected on a new bar: Number of BUY and SELL positions and the most loss-making (according to the number of pips) BUY and SELL positions. If it turns out that there are both BUY and SELL positions at the same time, this is considered to be an error and ALL positions are closed. If the most loss-making position is found and it is unprofitable by more than
+Step lossing
+pips, then the parameters of this position (the ticket and the number of lots) are remembered.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22854

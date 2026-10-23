@@ -1,0 +1,49 @@
+New input parameter "line color" has been added.
+You probably noticed that if an Expert Advisor uses the Moving Average indicator data, then this indicator is displayed ONLY in red in the visual tester mode. If such an EA uses data of three Moving Averages, all three indicators are shown in red.
+So it is very difficult to distinguish between them.
+To solve the issue with the visual display of Moving Averages, the "line color" parameter was added in the strategy tester. Now, the Expert Advisor needs to access iCustom instead of iMA (example from the code
+Crossing of two iMA
+) :
+//--- create handle of the indicator iMA
+handle_iMA_First=
+iCustom
+(m_symbol.Name(),
+Period
+(),
+"Custom Moving Average Input Color"
+,
+                            InpMAPeriodFirst,InpMAShiftFirst,InpMAMethodFirst,InpMAFirstColor,
+PRICE_CLOSE
+);
+//handle_iMA_First=iMA(Symbol(),Period(),InpMAPeriodFirst,InpMAShiftFirst,InpMAMethodFirst,PRICE_CLOSE);
+//--- if the handle is not created
+if
+(handle_iMA_First==
+INVALID_HANDLE
+)
+     {
+//--- tell about the failure and output the error code
+PrintFormat
+(
+"Failed to create handle of the iMA indicator for the symbol %s/%s, error code %d"
+,
+Symbol
+(),
+EnumToString
+(
+Period
+()),
+GetLastError
+());
+//--- the indicator is stopped early
+return
+(
+INIT_FAILED
+);
+     }
+As seen in the
+Crossing of two iMA
+EA, Moving Averages are shown in different colors in the visual strategy tester:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19864

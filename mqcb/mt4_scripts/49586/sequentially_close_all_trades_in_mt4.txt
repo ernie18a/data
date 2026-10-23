@@ -1,0 +1,2 @@
+This simplae script will first sort the open tickets in asending order. Then it will try to close them sequentially. That means the first trade will be closed first then the 2nd one, then 3rd one . the process will continue till all the trades will be closed.
+As usual we have magic and symbol filter

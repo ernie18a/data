@@ -1,0 +1,10 @@
+Real author:
+Kim Igor V. aka KimIV
+A semaphore signal indicator forming signals when price gaps appear.
+This indicator was first implemented in MQL4 and published in the
+Code Base at mql4.com
+on 09.02.2008.
+The i-GAP indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1914

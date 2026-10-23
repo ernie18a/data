@@ -1,0 +1,80 @@
+Idea by
+:
+Scriptor
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+This strategy is based on analyzing the values of indicator iBands (Bollinger Bands, BB) at bar #0 relative to the close price of bar #0. Where the Close price of bar #0 is within indicator Bollinger Bands and there are no pending orders, place three Buy Stop and three Sell Stop orders with a step of
+Step between pending orders
+.
+At the same time you can set for each pair of orders your own Take Profit level (
+First Take Profit
+,
+Second Take Profit
+, and
+Third Take Profit
+). Stop Loss can be placed either by indicator Bollinger Bands or by indicator Moving Average - this will be the responsibility of parameter
+Stop loss trailing
+.
+The orders may be placed within the time interval from
+Hour start
+to
+Hour end
+. Each order is assigned with a life time equal to parameter
+Hour end
+: If, for instance,
+Hour end
+is 23, it means that all pending orders will be automatically deleted at 11 p.m. All pending orders will also be removed at each new bar - thus, at each new bar, orders Buy Stop and Sell Stop will be placed at the changed prices of indicator Bollinger Bands.
+You can enable trailing in the EA - for this purpose, parameter
+Trailing Stop
+must be greater than zero. You can also use the trailing feature to place a Stop Loss order to a breakeven. For this, you should select the
+StopLoss NONE
+value for parameter
+Stop loss type
+. At the same time, you should keep in mind that there will be hanging positions with losses. Therefore, you will have to close such positions manually.
+Input parameters
+Lots
+- pending order volume;
+Hour start
+- starting hour of the working time interval;
+Hour end
+- ending hour of the working time interval;
+Stop loss type
+- selecting the type of placing the Stop Loss, i.e., by Moving Average, by Bollinger Bands, or disable them at all;
+First Take Profit
+- Take Profit for the first pair of orders in the series;
+Second Take Profit
+- Take Profit for the second pair of orders in the series;
+Third Take Profit
+- Take Profit for the third pair of orders in the series;
+Trailing Stop
+- trailing;
+Trailing Step
+- trailing step;
+Step between pending orders
+- step between pending orders.
+magic number
+- unique identifier for the EA.
+Moving Average indicator parameters
+Moving Average: averaging period
+- averaging period;
+Moving Average: horizontal shift
+- horizontal shift of the indicator;
+Moving Average: smoothing type
+- type of the averaging method;
+Moving Average: type of price
+- the type of price to calculate the indicator;
+Bollinger Bands indicator parameters:
+Bands: period for average line calculation
+- average line calculation period;
+Bands: horizontal shift of the indicator
+- horizontal shift of the indicator;
+Bands: number of standard deviations
+- number of standard deviations;
+Bands: type of price
+- price type.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20752

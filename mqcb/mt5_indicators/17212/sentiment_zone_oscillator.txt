@@ -1,0 +1,14 @@
+Compared to the original sentiment zone oscillator, this version has several deviations.
+The original was described in the May 2012 issue of TASC, Walid Khalil in his article "Exploiting Extremes Sentiment Zone Oscillator" :
+The sentiment zone oscillator (SZO) is a leading contrary oscillator that measures the extreme emotions of a single market or share.
+It measures and defines both extremes, bullishness (overoptimism) and bearishness (overpessimism), that could lead to a change in sentiment, eventually changing the trend of the time frame under study.
+The SZO was devised on the belief that after several waves of rising prices, investors begin to get bullish on the stock with increasing confidence since the price has been rising for some time. The SZO measures that bullishness/bearishness and marks overbought/oversold levels.
+But, since the original sentiment zone oscillator is "too nervous", this version introduces several additions :
+original uses tema for calculation - this version allows 5 types of averages for that
+simple moving average
+exponential moving average
+smoothed moving average
+linear weighted moving average
+triple exponential moving average (tema)
+also, in this version, in order to filter the number of signals, you can use price filtering (using the same averages as for calculation). The price filtering has proved to be effective on this indicator and makes it much easier to use for any type of trading.
+If price smoothing is not used (price smoothing period set to <=1), then you shall get what is the original sentiment zone oscillator, but the recommendation is to use at least a mild price filtering in order to get any kind of usable signals.

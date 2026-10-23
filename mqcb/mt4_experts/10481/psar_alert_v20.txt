@@ -1,0 +1,1 @@
+Alerts you on every first parabolic SAR signal in a sequence. Check the settings tab for the EA for more details.

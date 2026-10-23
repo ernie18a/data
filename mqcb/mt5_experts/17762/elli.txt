@@ -1,0 +1,36 @@
+Author of idea
+—
+Iurii Tokman
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+The Expert Advisor is based on the ADX Wilder and Ichimoku Kinko Hyo indicators. Lot is calculated based on risk percentage of margin.
+Regarding the choice of the timeframe:
+The ADX indicator is provided with a separate setting "adx_timeframe". Its default value is PEROID_M1.
+The Ichimoku indicator does not have timeframe settings — the PERIOD_H1 timeframe is hard coded for it.
+Also, in the trend direction detecting module, the bar Close price of the PERIOD_H1 timeframe is used:
+double
+sb = iIchimokuGet(
+CHIKOUSPAN_LINE
+,
+0
+);
+double
+close=
+iClose
+(
+0
+,m_symbol.Name(),
+PERIOD_H1
+);
+double
+cf=
+MathAbs
+(ts-ks)/m_symbol.
+Point
+();
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17762

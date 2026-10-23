@@ -1,0 +1,1 @@
+cycle timeframes using hotkeys 'N','M' prev,next timeframe MT4,MT5

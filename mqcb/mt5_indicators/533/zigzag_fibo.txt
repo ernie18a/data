@@ -1,0 +1,86 @@
+MQL5 version of the conventional ZigZag indicator from the MetaTrader 4 client terminal allowing to set Fibo levels at two last extremums.
+Indicator input parameters:
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+int
+ExtDepth=
+12
+;
+input
+int
+ExtDeviation=
+5
+;
+input
+int
+ExtBackstep =
+3
+;
+//---- Fibo features at the last high
+input
+bool
+DynamicFiboFlag=
+true
+;
+// DynamicFibo display flag
+input
+color
+DynamicFibo_color=Blue;
+// DynamicFibo color
+input
+ENUM_LINE_STYLE
+DynamicFibo_style=
+STYLE_DASHDOTDOT
+;
+// DynamicFibo style
+input
+int
+DynamicFibo_width=
+1
+;
+// DynamicFibo line width
+input
+bool
+DynamicFibo_AsRay=
+true
+;
+// DynamicFibo ray
+//----
+Fibo features at the second to last high
+input
+bool
+StaticFiboFlag=
+true
+;
+// StaticFibo display flag
+input
+color
+StaticFibo_color=Red;
+//
+StaticFibo color
+input
+ENUM_LINE_STYLE
+StaticFibo_style=
+STYLE_DASH
+;
+//
+StaticFibo style
+input
+int
+StaticFibo_width=
+1
+;
+//
+StaticFibo line width
+input
+bool
+StaticFibo_AsRay=
+false
+;
+//
+StaticFibo ray
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/533

@@ -1,0 +1,6 @@
+The Clock indicator is placed 5 times on chart to show how you can use it on chart
+It is not possible to place two clocks on your chart having the same time....
+Although we have in Code_Base other clock indicators, it was still that in
+the Online Library of the MetaEditor I did not find a simple Clock-indicator like this inside
+Regards,
+Tjipke

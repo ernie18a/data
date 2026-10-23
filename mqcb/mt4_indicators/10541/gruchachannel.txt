@@ -1,0 +1,4 @@
+Author:
+Grzegorz Antosiewicz
+The indicator is similar to Bollinger Bands (this same idea), but it uses GruchaAvarage instead of MA for counting.
+Image:

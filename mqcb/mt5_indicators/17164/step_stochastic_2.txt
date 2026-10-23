@@ -1,0 +1,11 @@
+New version of non-repainting step stochastic indicator.
+It has been upgraded in multiple ways :
+code is completely rewritten and optimized
+step stochastic calculation is a function now (easily usable from any other code)
+indicator has alerts now
+indicator is multi time frame now
+indicator has an option to filter (smooth) prices using one of the 4 basic average type
+indicator has an option to use smoothed or regular atr for calculation
+indicator can use the set of 22 price types
+...
+By default the indicator is using a very mild price filtering, since it does not add lag to it this way and the false signals are significantly reduced.

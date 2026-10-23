@@ -1,0 +1,47 @@
+Idea by
+:
+Vyacheslav Barbakov
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+Trading in the price movement direction with pending Buy Stop and Sell Stop orders on the 5-minute timeframe.
+The cycle starts with placing pending orders with 0.01 lots (minimum lots) above the High and below the Low of the preceding candlestick by the value of
+Shift OHLC
+.
+The next Buy Stop / Sell Stop order can be placed above and below the Buy/Sell position (by the value of
+Shift of Positions
+), respectively.
+Upon reaching the
+Minimum Profit
+, all positions are removed.
+When fractals are broken through at the timeframe of 5 minutes and 60 minutes, you can place your orders with doubled and quadruplicated volumes (parameters
+Lot increase rate Fractals M5
+and
+Lot increase rate Fractals H1
+).
+Inputs
+Shift OHLC (in pips)
+;
+Minimum Profit
+- profit, at reaching which all positions are closed;
+Shift of Positions (in pips)
+- shifting up from High and down from Low;
+Lots buy
+- Buy volume;
+Lots sell
+- Sell volume;
+Lot increase rate Fractals M5 ("0" -> off)
+- lots increasing factor when the fractal is broken through on M5;
+Lot increase rate Fractals H1 ("0" -> off)
+- lots increasing factor when the fractal is broken through on H1;
+magic number
+- unique identifier for the EA.
+Stop Loss / Take Profit levels are not specified.
+Testing results on M5 in the "Every tick" mode from 2017.01.16 to 2018.05.01
+When using this strategy, you should note that there can be both relatively profitable periods:
+and completely losing ones:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20668

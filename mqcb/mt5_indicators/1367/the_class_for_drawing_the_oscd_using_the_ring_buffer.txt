@@ -1,0 +1,204 @@
+Description
+The COsMAOnRingBuffer class is designed to calculate the technical indicator Moving Average of Oscillator (
+Moving Average of Oscillator
+, OsMA) using the algorithm of
+the ring buffer
+.
+Declaration
+class
+COsMAOnRingBuffer :
+public
+CArrayRing
+Title
+#include <IncOnRingBuffer\COsMAOnRingBuffer.mqh>
+File of the COsMAOnRingBuffer.mqh class should be placed in the IncOnRingBuffer folder that need to be established in MQL5\Include\. Two files with the examples used by the class from this folder are attached to the description. File with
+the ring buffer
+,
+the MACD
+and
+Moving Average
+classes also should be in this folder.
+Class methods
+//--- initialization method:
+bool
+Init(
+// if error it returns false, if successful - true
+int
+fast_period   =
+12
+,
+// the period of fast Moving Average smoothing
+int
+slow_period   =
+26
+,
+// the period of slow Moving Average smoothing
+int
+signal_period =
+9
+,
+// the period of signal Moving Average smoothing
+ENUM_MA_METHOD
+fast_method   =
+MODE_EMA
+,
+// the method of fast Moving Average smoothing
+ENUM_MA_METHOD
+slow_method   =
+MODE_EMA
+,
+// the method of slow Moving Average smoothing
+ENUM_MA_METHOD
+signal_method =
+MODE_SMA
+,
+// the method of signal Moving Average smoothing
+int
+size_buffer   =
+256
+,
+// the size of the ring buffer, the number of stored data
+bool
+as_series     =
+false
+// true, if a time series, false if a usual indexing of the input data
+);
+//--- the method of calculation based on a time series or indicator buffer:
+int
+MainOnArray(
+// returns the number of processed elements
+const
+int
+rates_total,
+// the size of the array array[]
+const
+int
+prev_calculated,
+// processed elements on the previous call
+const
+double
+&array[]
+// the array of the input values
+);
+//--- the method of calculation based on the separate series elements of the array
+double
+MainOnValue(
+// returns the
+OsMA
+value for the set element
+const
+int
+rates_total,
+// the size of the array
+const
+int
+prev_calculated,
+// processed elements of the array
+const
+int
+begin,
+// from where the significant data of the array starts
+const
+double
+value,
+// significant elements of the array
+const
+int
+index
+// the element index
+);
+//--- the methods to access to data:
+int
+BarsRequired();
+// Returns the necessary number of bars for drawing the indicator
+string
+Name()
+// Returns the name of the indicator
+string
+FastMethod()
+// Returns the method of smoothing of the fast line in the form of the text line
+string
+SlowMethod()
+// Returns the method of smoothing of the slow line in the form of the text line
+string
+SignalMethod()
+// Returns the method of smoothong of the signal line in the form of the text line
+int
+FastPeriod()
+// Returns the period of smoothing of the fast line
+int
+SlowPeriod()
+// Returns the period of smoothing the slow line
+int
+SignalPeriod()
+// Returns the period smoothing of signal line
+int
+Size();
+// Returns the size of the ring buffer
+To get the calculated data of the indicator from the ring buffer is possible as from the usual array. For example:
+//--- the class with the methods of the indicator calculation
+OsMA
+:
+#include <IncOnRingBuffer\C
+OsMA
+OnRingBuffer.mqh>
+C
+OsMA
+OnRingBuffer osma;
+
+...
+//+------------------------------------------------------------------+
+//| Custom indicator iteration function                              |
+//+------------------------------------------------------------------+
+int
+OnCalculate
+(
+const
+int
+rates_total,
+const
+int
+prev_calculated,
+const
+int
+begin,
+const
+double
+&price[]) 
+  {
+//--- the calculation of the indicator based on a price time series:
+osma.MainOnArray(rates_total,prev_calculated,price);
+
+...
+//--- use the data from the "osma" ring buffers,
+//    copy the data in the indicator buffer:
+for
+(
+int
+i=start;i<rates_total;i++)
+      OsMABuffer[i]=osma[rates_total-
+1
+-i];
+// indicator histogram
+//--- return value of prev_calculated for next call:
+return
+(rates_total);
+  }
+Please note that indexing in the ring buffer is the same as in the
+time series
+.
+Examples
+The Test_OsMA_OnArrayRB.mq5 file calculates the indicator based on price time series. The MainOnArray() method application is demonstrated
+The Test_OsMA_OnValueRB.mq5 file demonstrates the use of the MainOnValue() method. At first the OsMA indicator is calculated and drawn. Then on the basis of this ring buffer of this indicator one more OsMA indicator is drawn.
+The result of the work of the Test_OsMA_OnArrayRB.mq5 with the size of the ring buffer of 256 elements.
+The result of the work of the Test_OsMA_OnValueRB.mq5 with the size of the ring buffer of 256 elements.
+When writing code the developments of
+MetaQuotes Software Corp.
+,
+Integer
+and
+GODZILLA
+were used.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1367

@@ -1,0 +1,9 @@
+The indicator MoR.
+RSI_Timeframe=0; //0=current chart,1=m1,5=m5,15=m15,30=m30,60=h1,240=h4,etc...
+RSI_Period=10;
+RSI_Applied_Price=0; //0=close, 1=open, 2=high, 3=low, 4=(high+low)/2, 5=(high+low+close)/3, 6=(high+low+close+close)/4
+MA1_Period=10;
+MA1_Method=1; // 0=SMA, 1=EMA, 2=SMMA, 3=LWMA
+MA2_Period=30;
+MA2_Method=1; // 0=SMA, 1=EMA, 2=SMMA, 3=LWMA
+MoR

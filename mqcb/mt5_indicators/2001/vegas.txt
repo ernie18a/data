@@ -1,0 +1,10 @@
+Real author:
+Mr.Bah
+Several of envelopes with fixed shifts.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 27.11.2007.
+Figure 1. The Vegas indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2001

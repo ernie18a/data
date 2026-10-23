@@ -1,0 +1,16 @@
+A simple indicator that allows fast plotting two channels of moving averages calculated by the High and Low prices.
+It has four input parameters:
+Fast MA period
+- fast MA period;
+Fast MA method
+- fast MA calculation method;
+Slow MA period
+- slow MA period;
+Slow MA method
+- slow MA calculation method.
+One channel is plotted as two moving averages with a specified period and calculation method, but at different prices: The top of the channel is MA by the High price, and the channel bottom is MA by the Low price. Fast MA channel is plotted with blue lines, and slow MA channel is plotted with red lines.
+Fig.1. Periods 21 and 34
+Fig.2. Periods 21 and 120
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20913

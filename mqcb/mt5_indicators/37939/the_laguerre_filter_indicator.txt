@@ -1,0 +1,5 @@
+The Laguerre Filter is a smoothing filter based on Laguerre polynomials. The indicator works by letting you know both the short-term and long-term trend.
+Buy when the indicator line is green and sell when it is red.
+The version for MetaTrader 4 will not be presented here. You can download it along with the source code through my Telegram channel. The link to the channel is in my
+profile
+. Don't forget to subscribe!

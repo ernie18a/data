@@ -1,0 +1,41 @@
+The Universal
+Moving Average
+, it allows to select any type of moving average, included in the
+MetaTrader 5
+client terminal:
+Simple
+;
+Exponential
+;
+Smoothed
+;
+Linear Weighted
+;
+AMA
+(Adaptive Moving Average);
+DEMA
+(Double Exponential Moving Average);
+FRAMA
+(Fractal Adaptive Moving Average);
+TEMA
+(Triple Exponential Moving Average);
+VIDYA
+(Variable Index DYnamic Average).
+Main parameters:
+MAMethod
+- MA type;
+MAPeriod
+- period;
+MAPrice
+- applied price.
+Additional parameters:
+AMAFast
+- period of fast EMA for AMA;
+AMASlow
+- period of slow EMA for AMA,;
+CMOPeriod
+- period of CMO for VIDYA (the order of Vidya parameters is changed compared with properties of Vidya indicator in the client terminal).
+The name of MA, its period, applied price and other parameters are shown in the popup help.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/139

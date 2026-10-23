@@ -1,0 +1,16 @@
+INTRODUCTION :
+This script was developed in order to help us detect if a chart is actually trending or going nowhere.
+This script will highlights all swing highs and all swing lows
+We only need to compile it and just add it to any chart you want.
+REMARK:
+I have used this script in my latest trading plan. As we all know a trading plan must answer the question of either you want to trade trending market or sideways market.
+You can check the below video that will tell us the 8 steps to build a robust trading plan in which one of the steps is to identify if the market is trending or no.
+TRADING PLAN :
+You can check the following video that will explain how to
+What are the
+8 steps to build a robust trading plan based on Fibonacci retracement
+.
+Most
+common mistakes that trades do
+.
+Applying the trading plan to search for Fibonacci entry points.

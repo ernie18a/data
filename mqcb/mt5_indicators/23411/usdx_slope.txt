@@ -1,0 +1,39 @@
+Indicator USDX vs Slope Direction Line is an information and signal indicator. It compares the line directions of two indicators,
+USDX
+and
+Slope Direction Line
+, and shows in a separate window the colored signal pointers, the color of which corresponds with the match/mismatch of the directions of Slope Direction Line and USDX.
+It has five adjustable parameters:
+SDL Period
+- Slope Direction Line calculation period
+SDL Method
+- Slope Direction Line calculation method
+SDL Applied price
+- Slope Direction Line calculation price
+USDX slope shift
+- shift between the two data points to identify the direction of the USDX line
+USDX reverce
+- chart reverse of USDX (Yes/No)
+If the lines of USDX and Slope Direction Line are directed upwards:
+the green signal pointer is set
+If the lines of USDX and Slope Direction Line are directed downwards:
+the red signal pointer is set
+In any other case, the gray signal pointer is placed.
+Slope Direction Line
+and
+USDX
+are not required to be in the terminal, since they are calculated by the indicator independently.
+Indicator USDX is calculated by Close prices
+Fig. 1. USDX vs Slope Direction Line, USDX reverce = Yes, chart scale = 2
+Fig. 2. USDX vs Slope Direction Line, USDX reverce = Yes, chart scale = 3
+Fig. 3. USDX vs Slope Direction Line +
+USDX +
+Slope Direction Line
+, USDX reverce = Yes, chart scale = 2
+Fig.4. USDX vs Slope Direction Line +
+USDX +
+Slope Direction Line
+, USDX reverce = Yes, chart scale = 3
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23411

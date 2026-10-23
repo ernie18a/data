@@ -1,0 +1,1 @@
+The indicator shows the distance between the open price and 3 different exponential moving averages (EMAs) in pips.

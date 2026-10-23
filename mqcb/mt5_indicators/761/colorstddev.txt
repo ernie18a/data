@@ -1,0 +1,47 @@
+This is the most visually convenient trend power indicator based on
+Standard Deviation
+data.
+The values of this indicator are shown in points and compared with MaxTrendLevel, MiddLeTrendLevel and FlatLevel levels that are indicator input parameters. Histogram bars can be colored in four colors depending on the comparison results. The values of these parameters must be set separately for each chart.
+Indicator input parameters:
+//+-----------------------------------+
+//| Indicator input parameters        |
+//+-----------------------------------+
+input
+int
+period =
+12
+;
+// Smoothing period
+input
+ENUM_MA_METHOD
+MA_Method=
+MODE_EMA
+;
+// Histogram smoothing method
+input
+ENUM_APPLIED_PRICE
+applied_price=
+PRICE_CLOSE
+;
+// Applied price
+input
+int
+MaxTrendLevel=
+100
+;
+// Maximum trend level
+input
+int
+MiddLeTrendLevel=
+40
+;
+// Middle trend level
+input
+int
+FlatLevel=
+10
+;
+// Flat level
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/761

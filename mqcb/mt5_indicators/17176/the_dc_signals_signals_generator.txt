@@ -1,0 +1,10 @@
+This is one of my first indicators, which is no longer in use. However, I decided to publish it — perhaps, it may be useful for someone. By the way, this indicator was had been used in my EA during the ATS Championship in 2008, and showed decent results. For MQL4 this code has been published in 2008.
+When considering the price charts together with the three indicators: DCOS (by DC2008), BullsPower and BearsPower, I have noticed a regularity: price reversal occurs at the same patterns on the indicators. This resulted in a signals indicator (generator), which shows the probable direction of the price movement. Signals are formed on the previous bar, and are colored, respectively: yellow — sell, blue — buy. At the same time, the red dots must be enclosed in a square, otherwise the signal is considered to be unconfirmed.
+Fig. 1. The "DC signals" signals generator
+Tips:
+Watch the indicator operation, and do not rush to open a position when a signal appears. The fact is that the signal can be canceled.
+Analyze signals on different timeframes. It is best to use H1, H4 and D1.
+It is recommended to use this generator in conjunction with the Fractals indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17176

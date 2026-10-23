@@ -1,0 +1,8 @@
+The
+Triple Exponential Moving Average
+(TEMA) indicator implemented as a sequence of candlesticks.
+Candlesticks appear as a result of relevant price timeseries processed by the Triple Exponential Moving Average algorithm. In many situations, such approach may be more informative for the purpose of analysis.
+Fig.1. The TEMACandle indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12823

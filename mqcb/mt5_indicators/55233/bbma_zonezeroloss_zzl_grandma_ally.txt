@@ -1,0 +1,11 @@
+Oma Ally is a Malaysian trader who developed the BBMA strategy, a method that combines Bollinger Bands and moving averages to identify potential market movements.
+This strategy has gained popularity in Malaysia, Indonesia and Brunei and is used by many traders in the forex community.
+The BBMA strategy includes several setups, including the "Reentry" setup, which aims to re-enter the market after a price correction in the direction of the main trend.
+This setup is used by traders to determine precise entry and exit points.
+The "Zero Loss Zone" is a concept within the BBMA strategy that aims to identify trading areas, e.g. for
+"re-entry" setups
+, where risk is minimised.
+By applying specific criteria, such as the presence of strong trend candles and the positioning of certain moving averages, traders try to take positions with minimal risk of loss.
+Translated from German by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/de/code/55233

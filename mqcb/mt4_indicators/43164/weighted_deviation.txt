@@ -1,0 +1,3 @@
+This weighted deviation is a sort of all linear weighted deviation. It uses linear weighting in all the steps calculated (which makes it different from the built in deviation in a case when linear weighted ma is used in the ma method). It is more responsive than the standard deviation
+Recommendations:
+Use it as any deviation indicator

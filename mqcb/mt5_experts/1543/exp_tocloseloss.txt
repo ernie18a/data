@@ -1,0 +1,6 @@
+The Expert Advisor to perform global Stop Loss on all open positions. It simply closes all positions, if current positions' losses increase the maximum fixed level in MaxLoss input parameter of the Expert Advisor.
+When the condition of exceeding losses is performed on all open positions, the Expert Advisor saves the information about this fact into terminal global variable and only after that on the basis of this information exits all open positions.
+Why so and not directly on the signal? The thing is that the process of closing positions requires several time and that is why it can be interrupted in real life due to any reason. In this situation the Expert Advisor closes positions in any situation by the fact of exceeding losses. As all positions are closed, terminal global variable will be deleted!
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1543

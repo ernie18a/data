@@ -1,0 +1,2 @@
+Stochastic of adaptive smoother. In this one instead of using "plain" smoother, standard deviations adaptive smoother is used for price filtering.
+Adapting is done using standard deviations in order to make the indicator react to price changes as quickly as it is possible. Filtered prices are adding to the false signals cleaning so, beause of that, we can consider this indicator to be a "trending" indicator.

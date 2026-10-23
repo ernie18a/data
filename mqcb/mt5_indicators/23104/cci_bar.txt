@@ -1,0 +1,19 @@
+CCI Bar signal indicator. The indicator displays the colored diagram of CCI indicator status relative to its oversold/overbought levels (above/below/upward crossing/downward crossing).
+There are five inputs:
+CCI period
+- CCI calculation period
+Overbought
+- overbought level
+Oversold
+- oversold level
+Buy entry level
+Sell entry level
+In case CCI value is within Overbought/Oversold levels
+If CCI values are increasing, blue signal pointers are set
+If CCI are falling, orange signal pointers are set
+If CCI value is beyond Overbought/Oversold levels, the gray signal pointers are set
+If Buy entry level is crossed upwards, the green signal pointer is placed
+If Sell entry level is crossed downwards, the red signal pointer is placed
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23104

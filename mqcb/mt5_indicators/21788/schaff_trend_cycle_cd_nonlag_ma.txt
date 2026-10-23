@@ -1,0 +1,2 @@
+Schaff Trend Cycle CD is usually calculated using Signal line of the MACD, meaning EMA (Exponential Moving Average) of the difference of two EMAs (Exponential Moving Averages).
+This version uses a much "faster" moving average than EMA (NonLag MA) for that calculation which make the resulting signal line of the MACD "faster" and thus the resulting Schaff Trend Cycle CD "faster" to to market changes.

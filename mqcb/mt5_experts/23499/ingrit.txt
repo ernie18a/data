@@ -1,0 +1,60 @@
+Idea by:
+Ingrit
+mq5 code by:
+barabashkakvn
+BUY opening condition.
+Bar #1 is bearish
+Difference between the High price of bar #14 and the Low price of bar #1 exceeds the value of parameter "Step"
+if
+(rates_m5[
+1
+].open>rates_m5[
+1
+].close)
+if
+((rates_m5[
+14
+].high-rates_m5[
+1
+].low)>ExtStep)
+        {
+if
+(!InpReverse)
+            m_need_open_buy=
+true
+;
+else
+m_need_open_sell=
+true
+;
+        }
+SELL opening condition.
+Bar #1 is bullish
+Difference between the High price of bar #14 and the Low price of bar #1 exceeds the value of parameter "Step"
+if
+(rates_m5[
+1
+].close>rates_m5[
+1
+].open)
+if
+((rates_m5[
+1
+].high-rates_m5[
+14
+].low)>ExtStep)
+        {
+if
+(!InpReverse)
+            m_need_open_sell=
+true
+;
+else
+m_need_open_buy=
+true
+;
+        }
+Testing at EURUSD, H1:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23499

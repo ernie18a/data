@@ -1,0 +1,7 @@
+This indicator implements the nonlinear smoothing algorithm of HiLo type. Its main difference from the classical algorithm is that it processes extrema of the initial time series. An example of the indicator operation is shown in the figure.
+The indicator has only one parameter:
+iPeriod
+- period of the indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/66029

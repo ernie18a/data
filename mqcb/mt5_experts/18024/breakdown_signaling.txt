@@ -1,0 +1,10 @@
+The Expert Advisor tracks the breakout of horizontal lines and generates a signal after the completion of the breaking candlestick.
+Operation Principles
+The Expert Advisor does not create any objects! It only tracks the state of existing horizontal lines;
+For the EA to start tracking the existing line, this line should have an appropriate prefix (make sure it is correctly set at the beginning of the name!);
+Line adding mode allows you to select whether to track all newly added lines or choose for each line separately;
+The Expert Advisor uses the following types of alerts: sound, popup, push-notifications and email notifications (two latter types require an appropriate configuration of the terminal);
+The Expert Advisor parameter allows you to delete/leave all tracked lines after removing the EA from the chart.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18024

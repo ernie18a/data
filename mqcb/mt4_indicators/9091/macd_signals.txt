@@ -1,0 +1,11 @@
+Signals are generated when extremums of MACD form one of two patterns described in the code.
+The most useful TFs for it are H1 and higher. Inicator signals show rather good results in tester without any upgrading, just some magic with parameters.
+I use it as trend filter. The drawdown is quite high, but the indicator does it's job.
+Here are results of these signals as they can be, order size is 1lot:
+EURUSD
+GBPUSD
+USDJPY
+Enjoy ;)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9091

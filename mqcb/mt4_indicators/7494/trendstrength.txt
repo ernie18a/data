@@ -1,0 +1,5 @@
+Author: Xaoc 2006
+The indicator used to determine the global trend.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7494

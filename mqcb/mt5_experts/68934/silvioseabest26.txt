@@ -1,0 +1,39 @@
+Core Trading Logic
+The EA employs a
+Mean Reversion
+approach, utilising price action boundaries and a Moving Average for trend orientation:
+Dynamic Price Zones:
+The EA continuously calculates the highest high and lowest low of the last 48 candles ( LookbackPeriod ) to identify key supply and demand levels.
+Entry Trigger:
+Trades are initiated when the price enters a predefined buffer zone ( ZoneBufferPips ). This allows for precise entries just before the market pivots at historical resistance or support.
+Momentum Confirmation:
+To filter out false breakouts, the RSI indicator must confirm the move:
+BUY:
+Price touches the lower zone + RSI < 40.
+SELL:
+Price touches the upper zone + RSI > 55 (an optimised threshold for maximum win rate).
+Risk Management & Trade Protection
+Dynamic Lot Sizing:
+Position sizes are automatically calculated based on account balance and a user-defined risk percentage ( RiskPercent ).
+Advanced Protection:
+Every trade is equipped with a fixed Stop Loss and Take Profit.
+Profit Locking:
+An integrated
+Break-Even
+function and a
+Trailing Stop
+work automatically to secure profits as the trade moves in your favour.
+Smart Exit:
+The system monitors overbought/oversold conditions and can close positions early if the RSI reaches extreme opposite values.
+Technical Features
+Live Dashboard:
+Essential data including current RSI, Spread, Risk, and the assigned
+Magic Number
+are displayed directly on the chart.
+Optimised Performance:
+Fully compatible with MT5 (Hedge/Netting accounts), zero compiler warnings, and detailed diagnostic logging in the experts' tab.
+User-Friendly Customisation:
+All parameters-including lookback periods, RSI thresholds, and pip values-are fully adjustable to suit different market conditions.
+Translated from German by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/de/code/68934

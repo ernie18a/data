@@ -1,0 +1,7 @@
+Real author:
+Nick A. Zhilin
+An indicator of the series of simple indicators without averaging.
+Figure 1. The DynamicRS indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2357

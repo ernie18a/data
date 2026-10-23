@@ -1,0 +1,11 @@
+Calculation is:
+----------------------
+Calculation is current close price minus the close price of the last N(default 30) period's defined X(default 60) upper quantile &
+current close price minus the close price of the last N(default 30) period's defined X(default 40) lower quantile.
+If both of these value(which are displayed in histograms) are above 0 then it is uptrend, vice versa for down trend, if one of them is > 0 and one of them is < 0, then it is ranging.
+-----------------------
+There is also a high low mode in the inputs, Calculation is current High price minus the close price of the last N(default 30) period's defined X(default 60) upper quantile & current Low price minus the close price of the last N(default 30) period's defined X(default 40) lower quantile.
+If both of these value(which are displayed in histograms) are above 0 then it is uptrend, vice versa for down trend, if one of them is > 0 and one of them is < 0, then it is ranging.
+This method filters more ranging bars but also produces more lag.
+-----------------------
+Green Block at the 0 level means uptrend, Orange Block at the 0 level means downtrend, Gray Block at the 0 level means Ranging.

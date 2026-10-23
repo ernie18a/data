@@ -1,0 +1,1 @@
+Checks if either upper or lower Wick range of a candlestick is greater than Body range of a candlestick and plot a wingding

@@ -1,0 +1,18 @@
+Integral Linear Regression Moving Average (ILRS MA).
+The indicator has two input parameters:
+Period
+- calculation period;
+Applied price
+- price used for calculations.
+Calculation:
+ILRS[i] = (N*Sum1 - Sum*Sumy)/(Sum*Sum - N*Sum2) + MVA(I,N)
+where
+Sum = N*(N-1)*0.5,
+Sum2 = N*(N-1)*(2*N-1)/6,
+Sum1 = 1*Price[i-1] + 2*Price[i-2] + … + (N-1)*Price[i-N+1],
+Sumy = Price[i] + Price[i-1] + … + Price[i-N+1],
+MVA(i,N) – a simple moving average (SMA),
+N - Period.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20443

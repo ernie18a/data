@@ -1,0 +1,5 @@
+The EA trades by custom ZigZag level. And it takes 1 trade at a time.
+Recommendations:
+Best on 5m chart.
+Suitable for any forex pair with low spread.
+Needs improvements, So not recommended for real money.

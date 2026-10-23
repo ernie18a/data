@@ -1,0 +1,7 @@
+This EA is a system that include 3 different strategies of volatility breakout. These strategy are the best free strategy found on the web about this type of trading.
+It works very well on
+EURUSD H1
+. Also good result with USDCHF, EURAUD, GBPJPY... try to bring this EA to a next level.
+Works with only closed prices, so you can backtest it with open prices, control points or every tick mode and you will get same results.
+Input parameters allow user to enable/disable single strategies. I suggest to don't use take profit (order will always be closed with indicators).
+Please, let me know, if you consider as a good thing to make a forward test of that strategy and maybe use it in a portfolio of different types of strategies.

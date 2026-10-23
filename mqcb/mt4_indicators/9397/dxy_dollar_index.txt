@@ -1,0 +1,9 @@
+Author:
+andydoc
+This indicator calculates and displays the Dollar Index and 2 definable moving averages. In order for it to work, the broker must provide prices for all the reference pairs, i.e. EURUSD, USDJPY, GBPUSD, USDCAD, USDSEK, USDCHF.
+The Dollar Index is well described here:
+ICE Dollar Index
+The indicator against 2 pairs, reading exactly the same.
+Recommendations:
+The periods for the moving averages can be changed - defaults are 20 and 40
+The indicator will work on any chart and on any period.

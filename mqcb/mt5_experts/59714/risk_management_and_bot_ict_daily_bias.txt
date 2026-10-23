@@ -1,0 +1,19 @@
+The Bias Ea expert advisor integrates a class to implement dynamic risk management that allows you to set daily, weekly and monthly maximum profit and loss limits. These values can be dynamically adjusted according to the percentage change of the account balance, facilitating adaptive performance control.
+The code includes the
+COcoOrder
+class, which facilitates the handling of OCO (One-Cancels-Other) orders, and a library called
+Array Functions
+with more than 50 functions for working with arrays, dates and simple mathematical operations.
+In addition, it contains three additional classes that help to handle equipment suspension, convert pixels to prices and candlesticks, and calculate the ATR (Average True Range) more accurately.
+The advisor uses the ICT Daily Bias method to define the direction of trades. Also included is the
+"Base Strategies"
+file, a base class for developing new trading strategies, and the
+Bias
+file, which allows the calculation of the current market's ict bias (bullish, bearish or revising) at different timeframes.
+Overall, the code offers a modular structure that combines risk management, order handling and technical analysis to facilitate the development and execution of automated strategies.
+Chart.
+Configurations
+Results
+Translated from Spanish by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/es/code/59714

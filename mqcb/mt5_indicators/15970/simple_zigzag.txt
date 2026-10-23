@@ -1,0 +1,18 @@
+Simplified version of the popular ZigZag indicator. The algorithm runs significantly faster, does not use intermediate calculation buffers, does not contain nested cycles and, therefore, does not redraw itself. The indicator only has one parameter to be configured, which is very important during optimization of expert advisors that use it as basis.
+Automation of many graphical constructions, including simple ones like channels, trends (higher highs / lower lows) or Fibo grids, requires defining a "refined movement", i.e. price passing from local minimum to local maximum and from local maximum to local minimum.
+This task is efficiently solved by ZigZag indicator included in the standard MetaTrader delivery set.
+However, conventional ZigZag has a number of drawbacks.
+In particular:
+ZigZag always repaints which is inconvenient when applying it in trading algorithms,
+the indicator algorithm includes several nested loops which can significantly slow down a ZigZag-based EA optimization,
+fine tuning of the indicator is performed using three parameters, which significantly lengthens the optimization process, and given the fact that changing one parameter changes the effect of others, the optimization process may not find a stable extremum at all.
+Having all this in mind, I have developed a much simpler algorithm of defining refined movements.
+The proposed algorithm
+does not contain embedded loops. All calculations are performed as soon as new price data becomes available,
+does not repaint itself (e.g., a detected reversal will not turn into something else over time),
+contains a single parameter — standard pass length (set to be different on different timeframes for more convenience).
+The indicator solves the task visually by highlighting local maximums and minimums and plotting refined passes between them.
+This tool allows you to develop a simple EA based on Fibo corrections. One of the provided screenshots displays clearly recognizable trend and correction movements which is critical for developing an EA using Fibo corrections.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/15970

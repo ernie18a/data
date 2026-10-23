@@ -1,0 +1,9 @@
+Oscillating indicator Simple slope is a simple price-trend oscillator. It is good at removing the trend-related component from price movements.
+It has one adjustable parameter:
+Period
+- calculation period
+Calculations:
+SS = (Close - Close[Period]) / Period
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22695

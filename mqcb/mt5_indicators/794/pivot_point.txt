@@ -1,0 +1,2 @@
+Classic Pivot Point indicator paints pivot point and three resistance and support levels for all data points.
+Calculation period: Day, Week, Month.

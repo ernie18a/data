@@ -1,0 +1,21 @@
+Fan CCI with Average line is a CCI fan in the form of an oscillator in a separate window with the average line.
+Oscillator values oscillate with the +1/-1 range
+There are seven configurable parameters:
+First CCI period
+- first CCI calculation period
+Applied price
+CCI count
+- number of CCIs in the fan
+Incremental method
+- method of incrementing CCI period values:
+Addition
+Multiplication
+Coefficient of increment
+- increment ratio
+Smoothing period
+- middle line smoothing period
+Smoothing method
+- middle line calculation method
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22502

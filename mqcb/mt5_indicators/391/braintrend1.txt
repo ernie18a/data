@@ -1,0 +1,10 @@
+BrainTrend1 is a market direction indicator.
+It indicates trend directions in colors. When a price changes or stays in an up-trend, the candlesticks are colored in blue. When a price changes or stands in a downtrend, the candlesticks are colored in red. In case a price changes its direction or a trend is unstable, the candlesticks are not colored.
+BrainTrend1 can be used at any timeframe. Its algorithm is based on the
+ATR
+and
+Stochastic Oscillator
+indicators. In this version the values of all algorithm variables are designed as the indicator's input parameters, so now it be used with custom settings.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/391

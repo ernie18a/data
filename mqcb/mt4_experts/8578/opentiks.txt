@@ -1,0 +1,76 @@
+The long position is opened if the open price of last 4 bars and their maximum value increase simulateneously. The selling is perfomed at the opposite conditions.
+Strategy Tester Report
+OpenTiks
+Alpari-Classic (Build 218)
+Symbol
+EURJPY (Euro vs Japanese Yen)
+Period
+1 Hour (H1) 2008.09.01 00:00 - 2008.11.17 23:00 (2008.09.01 - 2008.11.18)
+Model
+Every tick (the most precise method based on all available least timeframes)
+Parameters
+TrailingStop=30; StopLoss=0; Lots=0.1; magicnumber=777; PolLots=true; MaxOrders=0;
+Bars in test
+2334
+Ticks modelled
+1824694
+Modelling quality
+82.92%
+Missmathced charts errors
+40
+Initial deposit
+10000.00
+Total net profit
+5543.67
+Gross profit
+5659.70
+Gross loss
+-116.03
+Profit factor
+48.78
+Expected payoff
+37.46
+Absolute drawdown
+163.01
+Maximum drawdown
+913.99 (8.50%)
+Relative drawdown
+8.50% (913.99)
+Total trades
+148
+Short positions (% won)
+146 (99.32%)
+Long positions (% won)
+2 (100.00%)
+Profit trades (% of total)
+147 (99.32%)
+Loss trades (% of total)
+1 (0.68%)
+Largest
+profit trade
+268.34
+loss trade
+-116.03
+Average
+profit trade
+38.50
+loss trade
+-116.03
+Maximum
+consecutive wins (profit in money)
+147 (5659.70)
+consecutive losses (loss in money)
+1 (-116.03)
+Maximum
+consecutive profit (count of wins)
+5659.70 (147)
+consecutive loss (count of losses)
+-116.03 (1)
+Average
+consecutive wins
+147
+consecutive losses
+1
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8578

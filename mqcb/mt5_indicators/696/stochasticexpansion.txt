@@ -1,0 +1,8 @@
+Real author:
+Ivan Kornilov
+Good old stochastic oscillator. The difference from the standard
+Stochastic
+is that it shows overbought and oversold areas in a more visually convenient fashion. A sharp peak is a good signal for a trend reversal (or temporary consolidation).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/696

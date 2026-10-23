@@ -1,0 +1,3 @@
+Gaussian filter that works for orders (poles) higher than the usual 4 poles that was available (mathematical maximum after which the precision of calculation is order (poles) 15 — but the coeffitients for those levels are so high, that the precision loss actually means very little).
+Because of that, it is a sort of generalized Gaussian filter that can calculate arbitrary (order) pole Gaussian filter and which makes it a sort of a unique indicator.
+It is using the metatrader 5 option that allows us to apply it to other indicators too.

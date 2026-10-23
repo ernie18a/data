@@ -1,0 +1,19 @@
+A collection of scripts for closing various types of orders.
+closeall_comment - closes all orders based on a specific comment
+closeall_loss - closes all orders that whose profit/loss goes over a specific loss threshold value
+closeall_loss - closes all orders that whose profit/loss goes over a specific profit threshold value
+closeall_magic - closes all orders by order magic number
+closeall_market - closes all market orders
+closeall_pending - closes all pendingorders
+closeall_complete - contains all the features of the 6 scripts + option for closing for symbol
+Ignored Parameters
+When a parameter is ignored, the condition involving that parameter would automatically evaluate to true (as if it is not present on the script).
+Parameters of string type (order comment and order symbol) are ignored by the script when their value is either NULL or empty string.
+Parameters of real type (profit, loss, & magic) are ignored by the script when their value is -1.
+Using Exact Match
+In order to get an exact match, the parameter
+exact
+should be equal to true. When searching for an exact match, the script respects ignored parameters.
+When
+exact
+=false, however, the script would an close order if at least one criterion is satisfied. This means that the script should not have ignored parameters. Otherwise, all orders would evaluate to true (closing the order).

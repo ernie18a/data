@@ -1,0 +1,14 @@
+Trading multiple instruments across multiple timeframes (and multiple brokers) can results in the use of many different templates.
+Template testing generates additional templates.
+An immediate means of template identification is necessary to avoid confusion, trading inefficiency and possible trading mistakes.
+This simple indicator accomplishes the required.
+Template Name example:
+Key:
+IX = Indices
+FX = Forex
+C = Commodities
+X = No Alerts
+S = Sound Alert (end of candle alert)
+E = EMA
+W = WMA *
+* In this example the main indicator mapping the trend. Other indicators may exist on the char but not necessary to include in template name.

@@ -1,0 +1,35 @@
+A well-known "20/200 pips" Expert Advisor is now available in MQL5.
+The code is well commented.
+The trading rules are:
+At some moment we look at the price difference for a certain time. If the price difference is negative and greate than some specified bias, we sell, if it positive, we buy.
+It's named 20/200 pips" because it uses a fixed values of TakeProfit/StopLoss (20/200, 4-digit prices). For 5 digit prices the TP/SL ratio is 200/2000.
+The Expert Advisor is designed for EUR/USD 1H, but you can try it at other symbols.
+Note that code doesn't have any error processing rountines, so it cannot be used in real trading in its current form. The values of Expert Advisor parameters have been optimized for 1999-2006, so at present time the parameters aren't optimal. But even using the old parameters it's profitable in long term trading:
+The input parameters are (5-digit prices):
+TakeProfit=200;   // Take Profit in pips
+StopLoss=2000;   // Stop Loss in pips
+TradeTime=18;   // Trade time GMT
+t1=7;                  // First Bar index for Open price, for example Open[t1].
+t2=2;                  // Second Bar index for Open price, for example Open[t2].
+delta=70;            // Bias of Price Difference between the bars Open[t1] and Open[t2] for trading signals
+lot=0.1;              // Lot size
+For 4 digit prices the values should be changed to:
+TakeProfit=
+20
+;    // Take Profit in pips
+StopLoss=
+200
+;    // Stop Loss in pips
+TradeTime=18;   // Trade time GMT
+t1=7;                  // First Bar index for Open price, for example Open[t1].
+t2=2;                  // Second Bar index for Open price, for example Open[t2].
+delta=
+7
+;             // Bias of Price Difference between the bars Open[t1] and Open[t2] for trading signals
+lot=0.1;              // Lot size
+The information about this trading system, its history and improvement details you can find
+here
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/214

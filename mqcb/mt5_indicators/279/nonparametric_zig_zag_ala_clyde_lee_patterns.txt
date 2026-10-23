@@ -1,0 +1,7 @@
+The upward ZigZag segment starts when bullish (rising) patterns for High and Low has appeaed on the current bar. The same is for the downward ZigZag segments. The ZigZag line (ZigZagLineBuffer) is plotted starting from the beginning of the segment up to begining of the opposite segment.
+The number under the bar indicates the pattern index (P0..P4) of the "Low bars a-la Clyde Lee". The number above the bar (P5..P9) indicates the index of the a-la Clyde Lee High bars.
+The indicator doesn't repaint.
+I think that this ZigZag can be used to convert the chart into the segments for further analysis.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/279

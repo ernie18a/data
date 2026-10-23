@@ -1,0 +1,9 @@
+The script calculates the autocorrelation and partial autocorrelation functions and displays them on a graph.
+A brief comment on the input parameters:
+input int N =100; // here we specify the data window for calculation (the script easily counts 100 000 bars and more)
+input int K =16; // number of lags, for practical needs rarely count > 40 (the script easily counts up to 500).
+input int start_pos=0; // data window offset, zero means that data(N) is counted from the most recently loaded bar.
+input int duration=10; // duration of chart display in seconds
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/48572

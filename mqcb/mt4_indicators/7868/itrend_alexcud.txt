@@ -1,0 +1,8 @@
+The main idea of the indicator is taken from
+here
+TREND_alexcud v_2. mq4
+As far as the author's indicator didn't draw the arrows on the history and there was no possibility to estimate its trade signals this indicator was created, it draws the arrows in the main window of the chart.
+The settings are the same with the author's indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7868

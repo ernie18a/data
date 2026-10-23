@@ -1,0 +1,3 @@
+Author:
+nsi2000
+TrendlinesDay indicator.

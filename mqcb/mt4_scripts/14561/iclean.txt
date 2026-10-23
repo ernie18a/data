@@ -1,0 +1,2 @@
+Simple Script allows you to close, delete or remove Stop Loss and Take Profit values from all opened and pending orders.
+The script will Alert you in case it fails or play "ok" sound if success.

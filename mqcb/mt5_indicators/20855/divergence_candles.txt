@@ -1,0 +1,11 @@
+Signal indicator Divergence Candles shows in the price chart signal arrows for buying or selling at the divergences of candlesticks, according to the following conditions:
+Buy divergence:
+Low of the current candlestick < Low of the previous candlestick
+Close of the current candlestick >= Close of the previous candlestick
+Sell divergence:
+High of the current candlestick > High of the previous candlestick
+Close of the current candlestick <= Close of the previous candlestick
+The indicator has no input parameters.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20855

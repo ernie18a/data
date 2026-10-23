@@ -1,0 +1,51 @@
+input
+ushort
+InpStopLoss             =
+20
+;
+// Stop Loss
+input
+ushort
+InpTakeProfit           =
+10
+;
+// Take Profit
+input
+ushort
+InpTrailingStop         =
+0
+;
+// Trailing Stop
+input
+ushort
+InpTrailingStep         =
+1
+;
+// Trailing Step
+input
+double
+Ratio                    =
+1.6
+;
+// Ratio
+input
+double
+InpLots                 =
+0.0
+;
+// Lots
+input
+double
+Risk                    =
+3.0
+;
+// Risk %
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// Buy
+if
+((high-low)>(high1-low1)* Ratio && (close>open))
+// Sell
+if
+((high-low)>(high1-low1)* Ratio && (close<open))
+The optimal timeframe is 4H && Day. The idea of the adviser is extremely simple. The explosive effect of the current price is used (the reasons can be any). It is at this moment that the position is opened, in the direction of the impulse.
+This strategy allows you to effectively use the trailing stop to accompany the position. Stop Loss, place no more than 20 points.

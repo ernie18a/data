@@ -1,0 +1,4 @@
+Sometimes it appears that the exporting of not only the quotes is necessary, but also of some values of indicators on this quotes. This script is an example of how to write the quotes and values of the RSI custom indicator for 12 symbols on 4 timeframes to a dozen of files using a script. You can change the list of symbols and the period range if necessary, also you can replace the RSI indicator with another one, a custom or a standard, you can add by yourself the possibility of specifying the parameters of the displayed indicator, etc. There are no odd verifications, you can add them by yourself or control the presence of the requirements: quotes and indicators.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7716

@@ -1,0 +1,5 @@
+Author:
+Victor Chebotariov
+Indicator MTF_MAMy3. Works with indicator
+MAMy v.3
+Indicator MTF_MAMy3

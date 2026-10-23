@@ -1,0 +1,10 @@
+A further development of the first version
+Hans123_Trader
+.
+The Expert Advisor places pending Buy Stop and Sell Stop orders. To place an order, the EA searches for the highest and lowest price within the given range of bars (set to 80 in this code). Buy Stop orders are placed at the highest price, Sell Stop orders are placed at the lowest one.
+The lifetime of pending orders lasts until the end of the current day. Once any of the pending orders triggers, all other orders are deleted.
+Max pending orders
+parameter has been added in the second version - it allows setting the maximum number of pending orders.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20397

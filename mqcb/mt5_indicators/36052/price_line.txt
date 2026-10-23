@@ -1,0 +1,1 @@
+Shows moving Last Price on Bid Line, Daily percentage change and Time based on Input selection to the Price Line

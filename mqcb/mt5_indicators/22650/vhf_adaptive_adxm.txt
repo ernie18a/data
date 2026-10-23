@@ -1,0 +1,12 @@
+Basics:
+Originally this indicator was developed for MetaTrader 4 by ANG3110 (it was originally posted here :
+https://www.mql5.com/en/code/7566
+)
+From the original description:
+Unlike the traditional ADX indicator, where the ADX itself is plotted in absolute units and detection of the trend direction is hindered, this indicator clearly displays the positive and negative ADX half-waves (displayed as colored on the chart). And the DI+/- signals are displayed as their difference (gray).
+The method of using this indicator is the same as the traditional one.
+In addition, it displays the levels (dashed), above which the market is considered to be in a trend state. This level is usually set to approximately 20-25 percents, - somewhat depends on the time frame it is used on.
+This version:
+It is using VHF (Vertical Horizontal Filter) in order to make it adaptive. That way it is being faster in response to market changes and signals tend to happen faster then on the regular version.
+Usage:
+You can either use color changes as short term trend change signals, or 0 crosses as longer term trend assessment.

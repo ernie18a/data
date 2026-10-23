@@ -1,0 +1,11 @@
+The Exp_RMACD Expert Advisor drawn on the signals taken from the
+ColorRMACD
+histogram. A signal to perform a deal is formed at bar closing when there is breakthrough of the zero level of the RMACD histogram or the direction of the histogram or signal line are changed and there is also breakthrough in signal line histogram (depending on the options selected in Mode input parameter).
+Place ColorRMACD.ex5 and TRVI.ex5 compiled file to the terminal_data_folder\MQL5\Indicators.
+Default Expert Advisor's input parameters have been used during the tests shown below. Stop Loss and Take Profit have not been used during the tests.
+Fig. 1. The instances of history of deals in the chart.
+Testing results for 2011 at EURJPY H4:
+Fig. 2. Chart of testing results
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1207

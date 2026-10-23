@@ -1,0 +1,4 @@
+Description:
+This EA will not place any order. It will modify the order if profit is equal to or greater than minimum requirement and move SL to BreakEven.
+There are two files. First file for pairs having digits 4 or 5 and second file is for digits 2 or 3 i.e JPY pairs.
+Just set the minimum BreakEven pips.

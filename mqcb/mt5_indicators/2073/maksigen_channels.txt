@@ -1,0 +1,50 @@
+Real author:
+MaksiGen
+Indicator of price change range
+The indicator determines the width of the channel in accordance with the values ​​of the following input parameters:
+input
+Hour   StartHour1=H00;
+// Session start hour for the channel width
+input
+Min    StartMinute1=M00;
+// Session start minute for the channel width
+input
+Hour   EndHour1=H08;
+// Session end hour for the channel width
+input
+Min    EndMinute1=M15;
+// Session end minute for the channel width
+and then starts drawing it the intervals of two sessions:
+input
+Hour   StartHour2=H08;
+// Session 1 start hour
+input
+Min    StartMinute2=M15;
+// Session 1 start minute
+input
+Hour   EndHour2=H12;
+// Session 1 end hour
+input
+Min    EndMinute2=M30;
+// Session 1 end minute
+//----
+input
+Hour   StartHour3=H14;
+// Session 2 start hour
+input
+Min    StartMinute3=M00;
+// Session 2 start minute
+input
+Hour   EndHour3=H17;
+// Session 2 end hour
+input
+Min    EndMinute3=M30;
+// Session 2 end minute
+So the idea is to enter the market when the European market opens at the breakthrough of the Asian channel.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 30.10.2007.
+Figure 1. The MaksiGen indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2073

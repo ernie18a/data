@@ -1,0 +1,11 @@
+This is a stochastic inverse Fisher transform smoothed using the Rainbow Smoothing method.
+The indicator has three input parameters:
+Period
+- period;
+Slowing
+- slowing;
+Applied price
+- price used for calculations.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20503

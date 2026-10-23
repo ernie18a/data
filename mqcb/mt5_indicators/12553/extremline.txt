@@ -1,0 +1,11 @@
+Original author:
+Serkov Alexandr
+This is a plain and simple trend indicator. The indicator considers there is a downtrend, if the current minimum is lower than the minimum located N bars before.
+Conversely, there is an uptrend, if the current maximum is higher than the maximum located N bars before. You can set the check depth in the properties. The indicator is good for finding pullbacks to use them as entry points.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+on 9.09.2014.
+Fig. 1. The ExtremLine indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12553

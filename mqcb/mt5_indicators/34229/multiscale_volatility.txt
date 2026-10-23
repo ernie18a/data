@@ -1,0 +1,15 @@
+This indicator summarizes the volatility of multiple periods.
+the  periods used are 3, 4, 5, 6, 8, 10, and 13.
+Display:
+red bold line —  summarized the volatility.
+red line — volatility of lag 3.
+orange line — volatility of lag 4.
+gold line — volatility of lag 5.
+green line — volatility of lag 6.
+turquoise line — volatility of lag 8.
+sky blue line — volatility of lag 10.
+blue line — volatility of lag 13.
+Settings:
+smoothing period (default value = 14).
+Features:
+The difference is obvious when compared to the general lag 1 volatility.

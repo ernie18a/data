@@ -1,0 +1,6 @@
+A simple Moving Average with a variable (increasing) calculation period. The period is reset at the beginning of new calculation, when price and the MA intersect.
+The indicator has no configurable parameters.
+Signal labels are added to a chart when new MA period calculation starts.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20054

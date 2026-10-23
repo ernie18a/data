@@ -1,0 +1,6 @@
+Theory :
+There is always a need to measure if the market is "quiet" or it is volatile. One of the possible way is to use standard deviations, but the issue is simple : we do not have some levels that could help us find out if the market is in a state of lower or higher volatility. This indicator is attempting to do that :
+values above level 1 are indicating state of higher volatility
+values above level 1 are indicating state of lower volatility
+Usage :
+This is not a directional indicator. It should be used for volatility detection, not trend assessment - for that you have to use some other indicator and then check this one if the market volatility conditions are those that you expect

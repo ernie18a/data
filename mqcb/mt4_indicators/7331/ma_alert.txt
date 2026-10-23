@@ -1,0 +1,2 @@
+Author: Kalenzo
+MA Alert indicator.

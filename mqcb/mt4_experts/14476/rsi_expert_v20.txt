@@ -1,0 +1,39 @@
+The basic trading principle of the Expert Advisor has remained the same as in the previous version:
+https://www.mql5.com/en/code/13809
+.
+Added:
+the ability of more detailed customization of the indicators,
+martingale,
+calculation of the lot size depending on the balance,
+2 Moving Average indicators (Fast and Slow).
+Description of trading using the two Moving Averages. The EA has 3 trading modes using them:
+disabled
+— the EA does not use Moving Averages for trading;
+direct
+— if the Fast MA is above the Slow MA, then opening Buy orders is allowed, if the Fast MA is below the Slow MA, then opening Sell orders is allowed;
+reverse
+— if the Fast MA is above the Slow MA, then opening Sell orders is allowed, if the Fast MA is below the Slow MA, then opening Buy orders is allowed;
+Martingale:
+If, when there is a signal to open a trade, the previous trade in the same direction is at a loss, then its lot is doubled, in other words, if there is a signal to buy and the previous buy trade is at a loss, then the new trade will have its lot size doubled from the previous one.
+to enable this mode it is necessary to switch the
+Lot type
+to the
+MARTIN
+mode, the initial lot value is specified in the
+Lot
+parameter.
+Lot size as a percentage of the balance:
+the name speaks for itself — the lot size will vary depending on changes in the value of your balance;
+to enable this mode it is necessary to switch the
+Lot type
+to the
+Percent of balance
+mode, the required value is specified in the
+Lot size as a percentage of balance
+parameter, during that the
+Lot
+parameter value is not considered,
+if the lot size is calculated as lower than the minimum allowed, then the trade is not opened.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14476

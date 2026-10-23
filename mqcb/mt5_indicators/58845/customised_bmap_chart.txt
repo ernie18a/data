@@ -1,0 +1,5 @@
+This is a custom indicator for MetaTrader 5 whose sole purpose is to display a BMP image on the chart, centred on the screen. What is it for? It is used to display a static image (such as a logo, personal branding, chart message or reminder) directly on the trading chart, without affecting the analysis and market data.
+How does it work? It creates an OBJ_BITMAP_LABEL object to display an image (2.bmp) from the MQL5Images folder. It automatically calculates the centre of the chart and places the image there. It updates the position of the image on each new tick so that it is always centred, even if the window is resized.
+Translated from Spanish by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/es/code/58845

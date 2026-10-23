@@ -1,0 +1,6 @@
+R-Squared is the linear regression indicator. Despite the fact that the indicator looks like an oscillator it is necessary to understand that it calculates "reliability" of the current trend.
+The R-Squared indicator appeared in MetaTrader 4 from MetaStock. Thus you can find the main description of its work in this terminal. It should be noted that the higher the value of R-Squared indicator, the more likely that a new trend is statistically important. Depending on the period, critical power level of a trend decreases.
+Fig.1 The R-Squared_v1 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1494

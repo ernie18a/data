@@ -1,0 +1,40 @@
+Oscillator
+Choppiness Index
+is intended for assessing the market situation. It identifies three states:
+Trend
+Flat
+Instable consolidation
+This indicator is made as an oscillating histogram with the zero central point.
+The indicator informs on the market state with the different colors of the histogram bars:
+Trend is displayed in
+green
+Starting/ending trend is displayed in
+pale green
+Transition from trend to flat or from flat to trend is displayed in
+pale blue
+Flat is displayed in
+blue
+Instable consolidation is displayed in
+red
+Values below -11.8 indicates a trend in the market, while values above 11.8 indicate a flat. Values close to 50 indicate an instable consolidation.
+The lower the oscillator value is within the negative area, the more expressed the trend component is on the market.
+The indicator has four configured parameters:
+Period
+- calculation period
+Trend level
+- trend boundary level
+Choppiness level
+- flat boundary level
+Consolidation level
+- consolidation boundary level
+Calculations:
+CI = 100.0 * log10( SumATR / ( MaxHigh - MinLow)) / log10X - 50.0
+where:
+log10X = log10(Period)
+ATR = ATR(1)
+SumATR - sum of ATR over the Period
+MaxHigh - maximum High value within the Period
+MinLow- minimum Low value within the Period
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21340

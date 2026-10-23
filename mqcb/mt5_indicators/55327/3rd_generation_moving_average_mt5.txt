@@ -1,0 +1,7 @@
+3rd Generation Moving Average is an advanced version of the standard moving average (MA) indicator for MetaTrader. It implements a rather simple lag-reducing procedure based on the longer MA period. The method was first described by M. Duerschner in his article Gleitende Durchschnitte 3.0 (in German). The presented version uses λ = 2, which provides the best possible lag-reducing. Higher λ increases similarity with the classic moving average. The indicator is available for both MT4 and MT5. It does not require using any DLL.
+Input parameters
+MA_Period (default = 50) — a period of the 3rd generation moving average.
+MA_Sampling_Period (default = 220) — a sampling period of the 3rd generation moving average. Should be at least 4 times greater than MA_Period.
+MA_Method (default = MODE_EMA) — method of the moving average.
+MA_Applied_Price (default = PRICE_TYPICAL) — applied price for the moving average.
+As you see, the 3rd Generation MA (red line) offers slightly less lag than the conventional EMA (blue line) and reacts to the price changes faster. Unfortunately, it is still prone to lag and may produce false signals. You can use the 3rd Generation Moving Average Forex indicator the same as the standard moving average — to detect the current trend direction.

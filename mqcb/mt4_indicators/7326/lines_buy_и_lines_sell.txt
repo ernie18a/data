@@ -1,0 +1,5 @@
+Author: MetaQuotes Software Corp.
+LineSell places lines downwards, LineBuy - upwards. Set each step to 40pt in the properties. Simply, these indicators were originally created for the placing martingale steps. It was supposed to be able to place lines of different widths, hence the need to set the required number for each step separately.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7326

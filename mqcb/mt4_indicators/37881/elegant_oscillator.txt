@@ -1,0 +1,4 @@
+This is the metatrader 4 version of the metatrader 5 indicator originally posted here :
+elegant oscillator
+Recommendations:
+please use the same recommendations as in the original metatrader 5 description

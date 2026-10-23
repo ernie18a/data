@@ -1,0 +1,7 @@
+ACF (autocorrelation function) is often used while analyzing the
+time series
+. Its appearance and parameters allow you to find out what process is currently proceeding, and to identify the time series model.
+The following formula is used.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8295

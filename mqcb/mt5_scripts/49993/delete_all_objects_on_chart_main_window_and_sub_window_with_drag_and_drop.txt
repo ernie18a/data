@@ -1,0 +1,4 @@
+If there are objects cluttering the chart, sometimes you might want to start afresh without having to delete the entire chart and load another one.
+This means it may be efficient to drag a script onto the chart in order to clean it. Like a "clear" or "cls" but for objects.
+It should be placed in
+MQL5/Scripts

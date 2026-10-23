@@ -1,0 +1,6 @@
+Description:
+Often times I find my chart is too cluttered with indicators to see the price action, however I still need those reference points.
+My solution was to create an indicator which displays the current level of some of the MA's off to the side of the current candle.
+Works on all time-frames except Weekly and Monthly. Can show MA's from other time-frames on current chart i.e. Daily 10 EMA on 15 min chart. The indicator is attached, change it as you like. The code is commented well enough that I hope making changes should be fairly self-explanatory. (I have seen enough posts on here to know that everyone will probably want a different MA added - feel free to make you own changes.)
+NOTE: This is the "upgrade" version of the indicator I erroneously placed in the Forum under the same title. Adds ability to toggle MA's on/off from the properties window and further internal commenting.
+Image:

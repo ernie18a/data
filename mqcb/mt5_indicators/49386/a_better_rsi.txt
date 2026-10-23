@@ -1,0 +1,7 @@
+The relative strength index is an age old indicator, that possess incredible edge to this day. The problem though, is its susceptibility to noise from the markets, generating a lot of false signals.
+This indicator takes the concept of the RSI which is to read and display momentum and refines it to a point, where only true market moves are presented.
+The indicator should be used the same way you would use an RSI, look for divergences, trade on upward or downwards moves of the indicator or wait for oversold or overbought regions.
+Recommendations:
+Adjust the Signal Period and Rate of Change Period at your discretion.
+Back test extensively before going live.
+Manage risk appropriately.

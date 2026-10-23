@@ -1,0 +1,54 @@
+Many of us have often wanted to see in a visual way where a certain trading strategy has its flaws. And if we could see the objective trading statistics at the same time it would be really great.
+There is a backtester in MT4 but running a backtest in a visual mode for each change in the EA takes a lot of time. Also, its visual capabilities are quite limited. Then, you cannot test multi-currency strategies with it, at least not in an efficient way.
+I have tried to address all of these issues and the result is this open-source indicator for visually testing trading strategies. Of course it is not possible to make a completely universal indicator for all the purposes but the current framework can be easily modified and expanded for specific needs (like multi-currency).
+Special attention was put into
+spread management
+. The indicator takes spread into consideration in the same way as it is present in real trading and in the MT4 backtester. If you modify the indicator for your purposes you have to study the spread management in detail, otherwise you may see great strategy results on an M1 time frame, while in reality it would be a disaster. :-)
+As a demonstration of the strategy testing indicator I am adding a trading indicator with a simple trading strategy. The strategy rules are based on MA crosses with respect to price action (so that trades can be placed even before they actually cross, to remove the lag). Exit strategy is also present (using opposite signals and slow MA crossing in an opposite way), as well as stop loss handling is implemented via a modified Chandelier SL strategy. This indicator serves to provide a sample that could be extended for specific needs, but some people find it even good enough for their manual trading.
+The idea behind the whole system
+The indicator system is built in a modular way. First, we have to implement a trading strategy into a
+trading indicator
+, where two buffers are currently used for entry signals, two for exit signals and one for stop loss. A sample of such an indicator with full functionality is the attached
+StrategyIndi_1.0
+.
+We can then evaluate this strategy with a
+strategy testing indicator
+StrategySym_1.0
+. If we are not satisfied with the results, we just optimize the trading indicator and we can see the results of changes in real-time and objectively, via statistics.
+If we want later to implement an EA, it is very easy to do so, since by calling a custom trading indicator we get all the entry and exit signals, as well as SL values.
+How to use this system and adapt it to your own needs?
+To use the system as it is, you just copy both indicators to your MetaTrader\experts\indicators folder. Make sure you restart the terminal before using them so that they get compiled.
+There are certain settings you might want to modify, most are self-evident from their names so I will describe only the others:
+StrategyIndi parameters:
+ChandBars
+= 7
+number of bars for the Chandelier SL strategy
+ChandATRFact = 2.0
+factor to multiply the long-term ATR, to get the Chandelier distance
+RiskPercent
+= 2.0
+risk in percent of the free account balance for lot calculation according to the starting SL (this is used for manual trading information only)
+Offset = 10
+offset from bars on the chart for placing arrows, in 4-digit pips
+BarsBack = 2000
+number of bars to process, from the past
+AlertSound = "alert.wav"
+WAV file for sound alerts
+UseSoundAlert
+= true
+if we want sound alerts (for manual trading)
+UsePopupAlert = true
+if we want pop-up window alerts (for manual trading)
+WriteToLog = false
+if we want to write log details (for debugging)
+StrategySim parameters
+MaxLossAtSL = 200.0
+how much money (in account currency) we are ready to lose at each SL (for some it is more intuitive instead of percent, but is can be easily changed)
+BarsBack = 2000
+number of bars to process for the strategy evaluation
+WriteToLog = false
+if we want to write log details (for debugging)
+If you are adapting the system to your own needs you have to add to the StrategySym indicator all the parameters from your own StrategyIndi indicator – those that matter for the simulation. They are used later in the GetIndiSignals method and you just put fixed values for other parameters (like UseSoundAlert). Nothing else needs to be changed in the StrategySim, unless you want it for other purposes (like multi-currency strategies). In this case code comments and variable names will hopefully be helpful enough. If you need assistance we will be glad to help, just contact us at the web address below.
+So, with this system I would like to contribute to the objectivity in evaluating trading strategies (for manual systems or EAs) as the current marketing approaches are often very manipulative and as such they cause many beginners to lose their hard-earned money.
+Greetings, Robert
+For any comments, for MT4 programming or advising on the subject please contact me at robert [dot] leskovar [at] gmail [dot] com. The MQLTools website in the source code is not active anymore.

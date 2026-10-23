@@ -1,0 +1,46 @@
+Author:
+Emilio Reale is a trader that uses MT4 and other platforms. It uses IdleLib.dll downloadable in the libraries section of codebase (included for semplicity).
+A brief intro:
+https://www.youtube.com/watch?v=K1yATyPisjA
+With this script it is very easy to change objects with some useful keyboard shortcuts. Normally I draw lot of objects in the charts and have some trouble recognizing them so:
+this script change the size of the trend lines
+this script change the size of the horizontal lines
+this script change the size of the vertical lines
+this script is able to exclude some objects from processing
+this script print the market info
+this scrips draw automatically expansion objects from a particular line (line name _exp)
+if the line _exp is not drawn correctly this script exchange the direction of the line
+this script delete of a line of a particular type very quickly
+this script measure distances (swing) drawing a simple line (line name _lp)
+this scrptt contains it's own help
+to EXIT the script press the letter "X"
+this script changes colors of lines
+this script cycle colors of lines
+this script shortcuts the screenshot saving
+I use a script shortcut (alt s) to activate the script automattically in MT4 and I use the fuction select objects with single mouse click to accellerate the selection of the objects.
+keys (1 - 5) changes the size of the trendlines
+key (d) delete all line types
+key (t) changes type of objects to work on (trendlines, vertical lines, horizontal lines)
+key (e) draw from the line named _exp a fibo expansion object
+key (w) convert the expansion object back to a line
+key (o) delete all objects
+key (s) work on object selected and deselected ( I use the prefix _ tho identify objects)
+key (?) prints help
+key (p) prints the distance of a particular line wich name is _lp (used to calculate targets and stop loss)
+key (s) save a screenshot
+Image:
+help screen
+change color and size
+prints out the distance of the line _lp
+_exp to to draw expansion object
+expansion object drawn
+backconversion expansion in line (key w)
+... and more feel free to investigate by yourself :)
+Recommendations:
+Place the dll file in the experts\libraries directory
+Place the mq4 file in the experts\script directory
+Unfortunatly MT4 does not have a function to identify by code so I must use two kind of lines name the names beginning with an "_ " underscore and the normal name this workaround permits the code to work on some objects or not (key S) selected objects are without the _ prefix
+REMEMBER TO EXIT THE SCRIPT WITH THE X KEY WHEN THE WORK IS DONE!
+you can follow me on twitter @emiliostefano or find me on facebook as Emilio Reale.
+Feel yourself free to vote, comment, improve and ask infos.
+Regards!

@@ -1,0 +1,6 @@
+Quantora Multi-Timeframe MACD Dashboard MT5 is a multi-timeframe momentum and trend analysis indicator for MetaTrader 5.
+It analyzes MACD across seven timeframes — from M1 to D1 — and shows the main, signal, and histogram values for each one. Every timeframe is classified from strong bearish to strong bullish, giving a clear view of momentum conditions.
+All results are combined into a total momentum score and an overall MACD bias, making it easy to understand whether market direction is aligned or mixed across timeframes.
+The dashboard also tracks how many timeframes are bullish, bearish, or neutral, along with positive and negative histogram conditions.
+MACD settings can be adjusted to fit different trading styles. The interface is clean, updates automatically, and works on all symbols and timeframes.
+This tool is designed for analysis only. It does not generate trading signals or manage trades.

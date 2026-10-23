@@ -1,0 +1,22 @@
+Sometimes it's simple to forget the experts and their setting, especiallty in a case of the simultaneous use of a large number of experts.
+We have to open the expert properties for each chart. It's tiresome. Now I can easily see which advisor on the chart and even save the history.
+This script creates the file
+Expert List.htm
+in \experts\files folder. The same advisors are grouped into a single table with the following parameters: chart, period, trade allow option, etc.
+It can show up to 20 expert advisor parameters. If you need more - not problem, just increase the size of the
+param
+array - but remember that each additional parameter needs two array elements.
+P.S. I would like to thank for a very useful articles about file operations:
+Grouped File Operations
+File Operations via WinAPI
+Editor's remark:
+Note that it's a mirror translation of the
+original Russian version
+.
+If you have any questions to the author, suggestions or comments, it's better to post them
+there
+.
+If you have found this code useful for trading or educational purposes, don't forget to thank author.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9408

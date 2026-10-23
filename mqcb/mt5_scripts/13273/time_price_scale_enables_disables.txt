@@ -1,0 +1,8 @@
+The script controls the display of time and price scales for all open charts or only for one chart. It is useful for saving the screen space when displaying several tiled charts.
+If you display several charts in tiled mode, the time and price scales will take too much space:
+Here are the same charts with time and price scales hidden:
+This example only shows six charts. With more charts displayed, the script will save more space.
+Video:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13273

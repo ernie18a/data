@@ -1,0 +1,3 @@
+This indicator has an input field multiplication factor, where user can input any value to detect custom hammer or inverted hammer
+It will plot specified color from input
+Example : If multiplication factor is 1.25 then it will look for any hammer where shadow of a hammer is minimum 1.25x of body and vice versa for inverted hammer.

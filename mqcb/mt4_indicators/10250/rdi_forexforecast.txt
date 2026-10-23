@@ -1,0 +1,10 @@
+Author:
+RDI
+Description:
+This indicator forecast the future movement of highest and lowest prices depending on similar movement in the past by weighted mean. It calculates squares of difference between current bars and past bars to decide the similarity.
+External variables:
+BasePeriod --- Number of basement bars to forecast
+ForecastPeriod --- Bars to forecast
+Samples --- Period to check similarity to current movement
+BaseElements --- Number of elements to choose for forecasting
+Image:

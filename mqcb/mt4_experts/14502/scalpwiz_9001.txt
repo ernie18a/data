@@ -1,0 +1,6 @@
+Use on EURUSD M1. Values can be optimized for other pairs and I have had good success with NZDUSD and AUDUSD. I would not use this on a live account (yet), but it is a good example of how to trade on large spikes in price on the M1 charts.
+The EA looks at the size of the current bar and issues Buy/Buy Stop and Sell/Sell Stop if the bar exceeds the predetermined limits, of which, there are 4. Each limit has a multiplier associated with it. If the bar exceeds the Level1Pips value, it will apply the StengthLevel1Multiplier value and multiply the PercentRisk value supplied to the PercentPerchase function. You can set your PercentRisk is
+n
+% of your account balance, which is divided by the current Ask/Bid to get the lot size. You can keep your risk percentage low and the lot size will increase or decrease with your account balance.
+You may or may not use buy stops and sell stops. Buy stops and sell stops will expire after 10 minutes, by default. This value can be modified.
+At the moment, the EA issues far too many buy and sell commands. It's an easy fix, but I haven't gotten around to it.

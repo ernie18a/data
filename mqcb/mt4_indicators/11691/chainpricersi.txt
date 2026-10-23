@@ -1,0 +1,13 @@
+Forex indicator ChainPriceRSI is based on the
+RSI
+and
+MA
+indicators.
+Chain Price RSI is an indicator of Trend Lines Arrow with direction to open orders.
+How to use ChainPriceRSI indicator:
+Blue Arrow, Buy = when the Arrow below level 62;
+White Arrow, Sell = when Arrow above level 38;
+Sell, when Arrow Blue, touching or passing level of 80, the price will get back down;
+Buy, when Arrow Blue, touching or passing level of 20, the price will soon turn up;
+If Arrow passing trend line (red line), from bottom to top, the price must go up, and if the Arrow over the trend line, from top to bottom, the price must fall. In other words, must still follow the trend line (red line).
+Last update 20/03/2015: Eliminate some bugs that I have done in the use of facilities MovingAverages.mqh

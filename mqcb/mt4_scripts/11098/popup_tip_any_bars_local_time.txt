@@ -1,0 +1,7 @@
+Description:
+With warm help of WHRoeder, I finally finished this, many people wanted it for years. ----Manually draw a verticle line, this script will draw a text tip of the bar's LOCAL time. Move verticle line around, tip will change accordingly. Very simple code, no dll things.
+Recommendations:
+If anything goes wrong, check if there's 1 and only 1 verticle line in chart.
+Regarding timezone, you have to google and find out your broker's GMT time zone..... put it in extern ini....
+And remember a script will end if you close MT4 or switch chart's timeframe. Must re-attach.
+Any suggestion is appreciated... better name...bug...better code, I'll try, no garrenty.

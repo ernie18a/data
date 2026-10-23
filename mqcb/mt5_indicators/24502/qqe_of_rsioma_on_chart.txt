@@ -1,0 +1,4 @@
+Theory :
+QQE (Quantitative Qualitative Estimation) is usually calculated using RSI. This version is using Rsi(oma) (RSI Of Moving Average) instead and, as expected, the results are completely different than the original QQE. Also, this version is drawn directly on chart, and even like this the results seem to be OK
+Usage :
+You can use color change as signals

@@ -1,0 +1,3 @@
+ADXVMA — a special kind of moving average. It is using a sort of ADX values for determining the weights of average calculation which makes it unique in the world of averages.
+It tends to have extended periods of "flat" phases which makes it one of the few averages that can detect flat phases in the market, but it also can easily be used as a sort of support/resitance indicator too.
+It is using the usual extended set of 20 price types.

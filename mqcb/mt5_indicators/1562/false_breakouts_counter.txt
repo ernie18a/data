@@ -1,0 +1,12 @@
+The idea is rather simple. If high of the current bar is higher than high of the previous bar, and close of the current bar is lower than high of the previous bar, it is considered as a false breakthrough up. Correspondingly, if low of the current bar is lower than low of the previous bar and close of the current bar is higher than low of the previous bar, we have a false breakthrough down.
+There are situations when in one bar will be two false breakthroughs - if the bar is an external in relation to the previous bar, and its close is in the previous bar's range. The indicator displays:
+the number of false breakthroughs up (blue line).
+the number of false breakthroughs down (red line).
+the total number of false breakthroughs (orange line).
+The essence is that if, for example, on the last five bars were 3 (or more) false breakthroughs, then, most probably, the next breakthrough high or low (the previous bar) will be true.
+Recommendations:
+it is recommended to use the indicator not lower than Н4 period.
+as the indicator doesn't specify the direction of a potential breakthrough, we can use it either in combination with stop orders below/above the previous bar's extremums, or in combination with a trend indicator and place stop order for the breakthrough only in the trend direction.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1562

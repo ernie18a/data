@@ -1,0 +1,29 @@
+Real author:
+Unknown
+This is one of the most non-standard indicators. XprofuterDD presents an attempt to predict the future price behavior for a few bars ahead. The number of bars is specified by drawShift input parameters. Please keep in mind that the indicator is redrawn from the current one on the specified number of bars!
+Indicator input parameters:
+//+-----------------------------------+
+//| Input parameters of the indicator |
+//+-----------------------------------+
+input
+uint
+per       =
+14
+;
+// Period for signal
+input
+uint
+drawShift =
+14
+;
+// Forward shift
+input
+uint
+maPeriod  =
+34
+;
+// Moving average period
+XprofuterDD
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1024

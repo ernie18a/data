@@ -1,0 +1,22 @@
+Informational indicator. It displays a histogram in different colors, depending on the ratio between the candlestick prices and the moving average.
+There are three adjustable parameters:
+MA Period
+- MA calculation period;
+MA Method
+- Moving Average calculation method;
+Applied price
+- price used for calculations.
+Calculation:
+If Low > MA:
+MA > PrevMA = color 1
+MA < PrevMA = color 2
+If High < MA:
+MA < PrevMA = color 3
+MA > PrevMA = color 4
+Otherwise = color 5
+where:
+MA is the moving average with the Period, by Method, and at Applied price
+PrevMA - moving average on the previous bar
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21036

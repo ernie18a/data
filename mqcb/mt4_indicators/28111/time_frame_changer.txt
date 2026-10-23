@@ -1,0 +1,3 @@
+P
+The idea behind this code is to simplfy the Time frame change for all  opened charts. No external variable used, no calculations done.
+Have fun !

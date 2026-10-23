@@ -1,0 +1,5 @@
+Indicator is based on the "In The Volume Zone" article by Walid Khalil and David Steckler.
+An axiom of technical analysis states that with few exceptions, all technical indicators can be classified as either trending or oscillating (non-trending) in their design. This new indicator, the Volume Zone Oscillator (VZO), addresses both. In his book Technical Analysis Of The Financial Markets, John J. Murphy explains that using oscillators provides three benefits:
+Overbought and oversold conditions warn that price trend is overextended and vulnerable.
+Divergence between oscillator and price action shows hidden strength or weakness in the market, which is not apparent in the price action.
+The crossing of the zero line can give an important trading signal.

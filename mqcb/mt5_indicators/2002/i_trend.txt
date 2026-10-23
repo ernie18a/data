@@ -1,0 +1,9 @@
+The trend indicator drawn in the form of the colored cloud.
+The color of the cloud depends on the trend direction, and the width of the cloud shows strength of the trend.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base at mql4.com
+on 08.11.2007.
+Figure 1. Indicator i_Trend
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2002

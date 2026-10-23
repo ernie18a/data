@@ -1,0 +1,12 @@
+Financial regulators and agencies predict profit of funds. For this purpose they publish various ratings and charts.
+An individual can see only one chart - the agency's own quotes. So this chart outlines the "future" of Forex. And we are going to trade using this chart.
+An example (Moody's is ahead of Forex by 75 minutes):
+The figure shows that the robot builds two bars of 0.5 points and checks if the price goes outside of these bars. One the price goes outside of the bar, the robot logs the required time and opens a position at this time.
+Note: the duration of bars is 75 min, and they show the "future" of Forex.
+Settings
+In order to use the expert you need to set up the terminal: go to
+Tools > Options > Expert Advisors
+set the options as showed on this screenshot:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/12442

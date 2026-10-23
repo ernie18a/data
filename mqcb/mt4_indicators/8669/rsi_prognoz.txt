@@ -1,0 +1,12 @@
+Settings:
+start - start date for indicator calculation
+period - period of the predicted RSI
+pr_period - cluster size in bars
+progn - number of bars for the prediction
+err - error threshold for the cluster, at which the cluster is considered (form 0 to 100)
+glubina - depth to search for suitable clusters (0-entire array)
+exp - averaging mode of the prediction based on found clusters (0-simple moving average, 1 - linearly-weighted moving average)
+The idea was simple: take the history values of RSI over pr_period bars and see the indicator values after progn bars, i.e. obtain a set of indicator values and a pseudo-value of what this set resulted in, store everything to an array. Then iterate over the array at a specified glubina depth and see if there had been any similar situations (satisfying err error) in the past and what they had lead to. The obtained results are averaged using the exp method. This concludes the calculation of the prediction.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8669

@@ -1,0 +1,33 @@
+This Expert Advisor is rewritten from MQL4 and was originally published here
+https://www.mql5.com/en/code/8101
+by its author
+izhutov
+,.
+How It Works
+Three
+MA
+'s are used.
+Conditions for buying:
+The fast moving average crosses the middle moving average upwards. The fast MA is above the slow MA, the fast MA is above the slow MA from the previous bar, the fast MA on the previous bar is above the slow MA, the fast MA on the previous bar is above the slow MA from the previous bar. The middle MA is above the slow MA, the middle MA is above the slow MA from the previous bar, the middle MA on the previous bar is above the slow MA, the middle MA on the previous bar is above the slow MA from the previous bar.
+Conditions for selling:
+The conditions for selling and buying mirror each other. The fast moving average crosses the middle moving average downwards. The fast MA is below the slow MA, the fast MA is below the slow MA from the previous bar, the fast MA on the previous bar is below the slow MA, the fast MA on the previous bar is below the slow MA from the previous bar. The middle MA is below the slow MA, the middle MA is below the slow MA from the previous bar, the middle MA on the previous bar is below the slow MA, the middle MA on the previous bar is below the slow MA from the previous bar.
+The lot size for positions to be opened can be fixed or proportional to free margin. There is an additional function to reduce the lot size at losses - the more consecutive losing trades, the smaller the lot size. A trailing stop can be set for an open position.
+The image below shows the performance of the Expert Advisor in the strategy tester's visual mode.
+Parameters
+MaximumRisk - Risk (used if Lots=0).
+Lots - Lot.
+DecreaseFactor - Lot reduction factor after losing trades. 0 - reduction disabled. The smaller the value, the greater the reduction. Where it is impossible to reduce the lot size, the minimum lot position is opened.
+TakeProfit - Take Profit in points.
+StopLoss - Stop Loss in points.
+TrailingStop - Trailing Stop in points. If the value is 0, the Trailing stop function is disabled.
+FastPeriod - Fast МА period.
+FastShift - Fast МА shift.
+MiddlePeriod - Middle МА period.
+MiddleShift - Middle МА shift.
+SlowPeriod - Slow MA period.
+SlowShift - Slow МА shift.
+Note
+It is not recommended to set FastShift, MiddleShift, SlowShift values at less than 1. The Expert Advisor ckecks the indicators on the zero bar only when the new bar opens (it is not supposed to work on the zero (forming) bar). The original version does not have any external parameters of moving averages.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1079

@@ -1,0 +1,20 @@
+Instantaneous Trendline by J.Ehlers is calculated by the following formula:
+If i<=7:
+ITrend[i] = (Price[i] + 2*Price[i-1] + Price[i-2])/4
+If i>7:
+ITrend[i] = c1*Price[i] + c2*Price[i-1] - c3*Price[i-2] + c4*ITrend[i-1] - c5*ITrend[i-2]
+where
+c1 = Alpha - 0.25*Alpha*Alpha,
+c2 = 0.5*Alpha*Alpha,
+c3 = Alpha - 0.75*Alpha*Alpha,
+c4 = 2*(1 - Alpha),
+c5 = (1 - Alpha)*(1 - Alpha),
+Alpha = 2/(Period + 1)
+The indicator has two input parameters:
+Period
+- calculation period;
+Applied price
+- price used for calculations.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20421

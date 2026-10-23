@@ -1,0 +1,26 @@
+ForexDegrees is a Forex Indicator for MetaTrader 4 with Movement Alerts.
+This indicator will write value degrees of the lastest position of Price / MA / WPR / RSI / Stochastic at the current Timeframes, and the position degrees calculated from Highest and Lowest price on 100 bars.
+And when position and condition of trend status change, the indicator will give an alerts.
+On this indicator, you can select the position calculations degree that you want:
+see the indicator properties above
+As you know, the highest degree in the Chart (Main Chart or Sub-Window) is 90 degrees, and the lowest level on the chart (Main Chart or Sub-Window) is 270 degrees, and the middle is 0 degrees or 360 degrees.
+RSI 70, a value equal to 36 Degrees
+RSI 30, a value equal to 324 Degrees
+WPR 80 (WPR -20), a value equal to 54 Degrees
+WPR 20 (WPR -80) , a value equal to 306 Degrees
+Stochastic 80, a value equal to 54 Degrees
+Stochastic 20, a value equal to 306 Degrees
+You can only choose one of the calculations degrees available:
+Price
+or
+MA
+or
+WPR
+or
+RSI
+or
+Stochastic
+.
+If you choose the wrong, or choose two calculations degrees, then the indicator will automatically restore the default setting, which is Price Degrees.
+May be useful for fellow
+trader.

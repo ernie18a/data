@@ -1,0 +1,22 @@
+Real author:
+Vladimir Kravchuk
+"New Adaptive Method of Following the Tendency and Market Cycles"
+Fast Trend Line Momentum (FTLM) and Slow Trend Line Momentum (SLTM) indicators show the rate of price change, FATL and SATL are calculated the similar way as
+Momentum
+indicator:
+FTLM(bar) = FATL(bar) – RFTL(bar)
+STLM(bar) = SATL(bar) – RSTL(bar)
+where:
+FATL(bar) - FATL digital filter;
+RFTL(bar) - RFTL digital filter;
+SATL(bar) - SATL digital filter;
+RSTL(bar) - RSTL digital filter;
+Coefficients of FATL and RFTL digital filters
+<
+Coefficients of SATL and RSTL digital filters
+The main difference FTLM from the classic
+Momentum
+indicator is the following: it uses the close prices, processed by digital fiters instead of close prices itself. As a result, FTLM looks smoothed and regular, in contrast with classic Momentum technical indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/407

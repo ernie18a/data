@@ -1,0 +1,8 @@
+The CCI Expert is based on the CCI indicator and can be traded on every symbol in marketwatch.
+The expert is trading fixed position volume, and has a fixed StopLoss and TakeProfit.
+INPUTS:
+Volume Size
+StopLoss in Points
+TakeProfit in Points
+Max Spread in Points
+Expert ID

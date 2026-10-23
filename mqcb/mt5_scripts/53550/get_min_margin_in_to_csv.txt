@@ -1,0 +1,28 @@
+Description of Purpose:
+The script
+MinMargins.mq5
+is designed to help traders quickly calculate and document the
+minimum amount of money required
+to open a position with the smallest lot size for all symbols available in the Market Watch. This data is saved to a CSV file for easy review and analysis.
+Why You Might Need This Script:
+1.
+Capital Planning
+:
+- Determine the exact margin requirements for opening trades with minimal capital across different symbols, aiding in efficient fund allocation.
+2.
+Symbol Comparison
+:
+- Analyze and compare margin requirements for various symbols to choose those that align with your risk tolerance and trading strategy.
+3.
+Risk Management
+:
+- Understand the minimum financial exposure needed to trade different instruments, helping you avoid over-leveraging your account.
+4.
+Convenience
+:
+- Automate the tedious process of manually calculating and documenting margin requirements for multiple symbols.
+5.
+Portfolio Optimization
+:
+- Use the data to design a diversified trading portfolio by balancing symbols with low and high margin requirements.
+This script is especially useful for new traders, risk-conscious investors, or those managing multiple trading accounts who need quick access to margin and lot size data.

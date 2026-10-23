@@ -1,0 +1,11 @@
+What ideas is the code based on:
+Spread expansion and negative swaps can silently reduce a trader's profit, especially during high volatility news events or rollover hours. This lightweight information panel tracks key contract specifications in real-time directly on the active chart. It eliminates the need to constantly open the Market Watch properties tab.
+How indications can be interpreted:
+The text dashboard displays the current symbol name, real-time spread in points, and swap sizes for both long and short positions. It updates dynamically on every incoming tick or every second via a built-in timer mechanism.
+Description of external variables (Inputs):
+- InpTextColor: Allows full customization of the font color to match any light or dark chart theme.
+- InpFontSize: Adjusts the panel text size for high-resolution screens.
+- InpCorner: Lets you anchor the dashboard to any of the 4 corners of your chart screen.
+Recommended usage:
+- Symbol: Universal (Forex, Gold, Crypto).
+- Timeframe: Any chart period.

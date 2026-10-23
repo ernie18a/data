@@ -1,0 +1,5 @@
+Quantora Daily Profit Loss Monitor MT5 is an indicator that tracks daily trading performance in real time. It does not open or manage trades and is designed for monitoring and analysis.
+The tool analyzes the current broker trading day and shows closed profit, closed loss, net results, floating P/L, and total daily performance. It also displays daily return and basic trading statistics such as total trades, win rate, and trade outcomes.
+You can set a daily profit target and loss limit to compare current performance with your goals. Progress is shown clearly, along with simple status updates such as profitable, negative, target reached, or loss limit reached.
+Symbol and magic number filters are supported, allowing you to focus on specific trades or strategies. All information is presented in a clean dashboard that updates automatically.
+Suitable for traders who want a clear and structured view of daily performance and risk.

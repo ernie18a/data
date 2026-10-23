@@ -1,0 +1,5 @@
+Author: Daqnar
+Opening when moving against the trade for the period of 0-n1 by p1 points after moving towards the trade for the period of n1-n2 by p2 points. Closing by TP or SL. Optimization for GBPUSD M15 shows good results. The good thing is that the groups of similar parameters give similar results, much unlike the classic reoptimization, where a slight change in 1 parameter of any others leads to a drastic change in the operation. Also, the optimum parameters, selected for 1 parameter (for example, half a year), are normally suitable for the next period. The best MM according to the optimization of TP/SL - 2/1.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7615

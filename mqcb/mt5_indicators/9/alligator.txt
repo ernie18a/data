@@ -1,0 +1,29 @@
+Alligator
+Technical Indicator is a combination of Balance Lines (Moving Averages) that use fractal geometry and nonlinear dynamics
+(B. Williams: "New Trading Dimensions: How to Profit from Chaos in Stocks, Bonds and Commodities"
+).
+The Blue line (Alligator's Jaw)
+is the Balance Line for the timeframe that was used to build the chart (13-period Smoothed Moving Average, moved into the future by 8 bars);
+The Red Line (Alligator's Teeth)
+is the Balance Line for the value timeframe of one level lower (8-period Smoothed Moving Average, moved by 5 bars into the future);
+The Green Line (Alligator's Lips)
+is the Balance Line for the value timeframe, one more level lower (5-period Smoothed Moving Average, moved by 3 bars into the future).
+Lips, Teeth and Jaw of the Alligator show the interaction of different time periods. As clear trends can be seen only 15 to 30 per cent of the time, it is essential to follow them and refrain from working on markets that fluctuate only within certain price periods.
+When the Jaw, the Teeth and the Lips are closed or intertwined, it means the Alligator is going to sleep or is asleep already. As it sleeps, it gets hungrier and hungrier — the longer it will sleep, the hungrier it will wake up. The first thing it does after it wakes up is to open its mouth and yawn. Then the smell of food comes to its nostrils: flesh of a bull or flesh of a bear, and the Alligator starts to hunt it. Having eaten enough to feel quite full, the Alligator starts to lose the interest to the food/price (Balance Lines join together) - this is the time to fix the profit.
+Alligator indicator
+Calculation:
+MEDIAN PRICE = (HIGH + LOW) / 2
+ALLIGATOR'S JAW = SMMA (MEDIAN PRICE, 13, 8)
+ALLIGATOR'S TEETH = SMMA (MEDIAN PRICE, 8, 5)
+ALLIGATOR'S LIPS = SMMA (MEDIAN PRICE, 5, 3)
+where:
+MEDIAN PRICE - median price;
+HIGH - the highest price of the bar;
+LOW - the lowest price of the bar;
+SMMA (A, B, C) - Smoothed Moving Average. A parameter is for data to be smoothed, B is the smoothing period, C is shift to future. For example, SMMA (MEDIAN PRICE, 5, 3) means that the smoothed moving average will be calculated on the median price, smoothing period being equal to 5 bars and shift being 3;
+ALLIGATORS JAW - Alligator's jaws (blue line);
+ALLIGATORS TEETH - Alligator's teeth (red line);
+ALLIGATORS LIPS - Alligator's lips (green line).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9

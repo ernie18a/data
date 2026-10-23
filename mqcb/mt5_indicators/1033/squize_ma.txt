@@ -1,0 +1,8 @@
+Real Author:
+Kalenzo
+The Squize_MA indicator displays the intersection of two Moving Averages with different averaging periods.
+The chart also features conventional flat limits. A breakout suggests the presence of conditions for a steady trend.
+Fig.1 The Squize_MA Indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1033

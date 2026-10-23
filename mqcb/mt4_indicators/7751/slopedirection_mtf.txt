@@ -1,0 +1,15 @@
+It is a simple indicator that supplements the existing
+Slope Direction Line
+.
+It is on the basis of a multi-time indicator. That is why a basic indicator is necessary. It is attached below.
+You can find the information about the system here:
+http://forum.profiforex.ru/showthread.php?p=15982#post15982
+The system uses the method of 3 screens.
+Nowadays the 3-screen method is often substituted by MultiTime indicators. The same can be done in this indicator.
+Its settings are very simple.
+P.S. This MTF indicator can be used for the formation of multi-frame lines for any basic indicator.
+The settings of your basic indicator must be of the same type as in the MTF indicator. The settings name does not matter.
+In MTF indicator settings change the name into the name of your basic indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7751

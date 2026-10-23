@@ -1,0 +1,12 @@
+Real author:
+Jeff West
+Automatically draws Fibonacci retracements on chart.
+Added the following inputs:
+Fib Line Color
+Fib Line Style
+Fib Line Width
+The Fibonacci retracement automatic calculated position can be adjusted by dragging the top or bottom of the red diagonal line. If the chart period is changed, the Fibonacci retracement will revert to automatic calculation.
+Further research:
+Source 1
+Source 2
+Internet video sites

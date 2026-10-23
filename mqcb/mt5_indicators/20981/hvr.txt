@@ -1,0 +1,19 @@
+Oscillator Historical Volatility Ratio is a volatility indicator based on the "yesterday" / "today" price ratio
+It has four configurable parameters:
+First deviation period
+- first standard deviation calculation period
+Second deviation period
+- second standard deviation calculation period
+Applied price
+- calculation price
+Threshold
+- "low" volatility threshold
+Calculation:
+HVR = StdDev1 / StdDev2
+where:
+StdDev1(ST) - standard deviation with the First deviation period
+StdDev2(ST) - standard deviation with the Second deviation period
+ST = LOG(Price/PrevPrice)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20981

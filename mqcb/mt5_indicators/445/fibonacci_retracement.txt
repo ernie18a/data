@@ -1,0 +1,10 @@
+Real author:
+ggekko
+The indicator plots the Fibonacci retracement levels on the chart for a user-defined number of bars without having to draw the
+Fibonacci retracement object
+.
+The user specifies how many bars they want to use for the retracement and then the indicator keeps track of the highest highs and lowest lows and plots the levels accordingly.
+If a new high is more recent than a new low, then the indicator assumes it to be an uptrend and the levels show were the price might encounter support if it retraces. If a low is more recent than a high, then the indicator assumes it to be a downtrend and the lines show were the price might encounter resistance if it retraces.
+The original idea and code were published in the
+Code Base on mql4.com
+2011.04.11.

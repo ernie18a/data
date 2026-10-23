@@ -1,0 +1,4 @@
+This is a snippet of a larger code that is based on finding break of market structure.
+It identifies the most recent fractal price value and comments the result on the charts.
+It does not work for fractal lows for now.
+If you notice any bugs or you have suggestions, kindly let me know.

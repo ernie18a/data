@@ -1,0 +1,66 @@
+Author:
+Cheftrader*
+Description:
+A framework to build and test systems, which use stop-Orders to enter a position. Pending orders and postions are handled based on a daily system. The entry logik (STP-value calculation) can be easily changed in the mqh-file.
+Further features:
+- risk management, enable/disable trailing stop
+- money management, determine positions size depending on account profit
+- kill pending orders at a dedicated time (hour)
+- close positions after a dedicated duration since opening
+- filter methods to be used for optimization (e.g. trade results for different days of the week)
+- send significant equity changes via mail
+Recommendations:
+Optimize long and short parameters separatly (e.g. side=-1)
+Start with a simple idea: e.g. place sell-stop at yesterdays low (sample in mqh-file)
+Test and optimize with lotsize 0.1, without money- and risk management (maxLot=0.1). Advantage: Payoff in tester is scaled in pips
+Begin testing with automatic close of position after 1hour or another duration/live time of position (closetimeperiod = 3600)
+If your entry approach works, skip duration based close of position and optimize risk management parameters (SL, TP, SLslope)
+Test if your system is stable on dedicated days of the week: E.g. set dayfilter to 1 - only on mondays stp-entry orders are placed.
+Finally test money management (maxLot, PercentOfProfit)
+extern
+double
+SL           =
+8
+;
+// StopLoss in Basepoints: 1/10000 or 100/10000 = 1/100 for JPY
+extern
+double
+TP           =
+20.5
+;
+// TakeProfit in Basepoints
+extern
+double
+SLslope      =
+0.8
+;
+// Trailing stop uses only a part [e.g. 0.8] of the reached trade profit.
+// If > 1.0 trailing stops are deactivated
+extern
+int
+side            = -
+1
+;
+// LONG = 1, SHORT = -1, place orders in both directions: 0
+extern
+int
+PercentOfProfit =
+30
+;
+// Risk [in %] of already reached Profit in Account,
+// used to calculate position size
+extern
+double
+MaxLot       =
+10.0
+;
+// maximal lot for trading
+extern
+int
+dayfilter       =
+7
+;
+// place pending oders alldays = 7 or only on dayofweek 1 (monday)...5 (friday)
+* This EA was inspired by the work of RomanY
+https://www.mql5.com/en/users/romany
+http://codebase.mql4.com/en/code/9321

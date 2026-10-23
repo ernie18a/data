@@ -1,0 +1,8 @@
+Indicator SSL_channel_chart_alert.
+Parameters:
+Lb =10;
+alertsOn =false;
+alertsMessage=true;
+alertsSound =false;
+alertsEmail =false;
+SSL_channel_chart_alert

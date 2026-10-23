@@ -1,0 +1,14 @@
+In “
+Moving Average Bands
+” (part 1,
+TASC
+July 2021 issue) and “Moving Average Band Width” (part 2,
+TASC
+August 2021 issue), author
+Vitali Apirine
+explains how moving average bands can be used as a trend-following indicator by displaying the movement of a shorter-term moving average in relation to the movement of a longer-term moving average
+This is the "
+Moving Average Bands" indicator with only o
+ne change compared to the original  : you can chose the price (while in the original only close price is used)
+Recommendations:
+It can be used in a similar way as Bollinger bands

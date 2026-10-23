@@ -1,0 +1,4 @@
+Theory :
+Found this idea on the net. It was originally made for other trading platform by "capissiomo". The indicator is displaying Williams Percent Range (WPR) and is using same period CCI for confirmation - and that is displayed as a colored background indicating the "trend" of the CCI (when CCI is above 80, bellow -80 or in between). That way you can assess the trend based on two indicators states in this indicator
+Usage :
+You can use it for signals based on the values and colors

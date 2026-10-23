@@ -1,0 +1,16 @@
+The TS is implemented on the break through of the daily resistance/support levels that are calculated using the Pivot indicator.
+Trade rules:
+Trade on the hourly timeframe;
+Calculate Pivot, Resist1, Resist2, Resist3, Support1, Support2, Support3 levels after 00.00 am of the current day;
+Perform buying after closing of the hourly candle above the Pivot, at that the stop-loss is placed on the Support(n) level and take-profit - on the Resist(n) level;
+Use trailing to move the stop-loss at the lossless point;
+On the contrary, perform selling after closing of the hourly candle below the Pivot, stop-loss is placed on the Resist(n) level, take-profit - on the Support(n) level.
+I will describe the values of some input parameters:
+the TgtProfit variable specifies the stops and profits levels and must have the values: 1, 2 or 3;
+if TgtProfit=1, then stop-loss (buy/sell) = Resist1/Support1, and take-profit (buy/sell) = Support1/Resist1;
+if TgtProfit=2, then stop-loss (buy/sell) = Resist1/Support1, and take-profit (buy/sell) = Support2/Resist2;
+if TgtProfit=3, then stop-loss (buy/sell) = Resist2/Support2, and take-profit (buy/sell) = Support3/Resist3;
+the isTradeDay variable determines the way how the opened positions will be closed. If the isTradeDay = true, then the opened orders will be closed compulsory at the end of the day, otherwise the orders will be at the market until they're closed by the stop or profit;
+If you set the isTrace = True, then the debugging information of all kind will be written to the log file to debug TS further.
+Testing results: the profitableness level was not reached on every currency pair using this attitude of break through.
+The TS on the kickback from the same levels will be implemented in the next EA.

@@ -1,0 +1,176 @@
+Gold Breakout EA for XAUUSD H4: +90% in a 2020-2026 Backtest
+A Turtle-style breakout EA for gold. It buys when an H4 bar closes above the 20-bar high in an uptrend, with a 2 ATR stop and a 2R target. Backtested on XAUUSD from January 2020 to September 2026: +9,029.72 on 10,000 at 1% risk, profit factor 1.77, max drawdown 11.38%, 6 of 7 years profitable.
+Where it came from
+This EA is the trading version of my Breakout Exit Lab indicator. That indicator takes every Donchian breakout and scores it under three exits at once: an ATR trail, the Turtle exit channel and a fixed 2R target. On gold it made one thing clear. The breakouts had an edge, but which exit worked best changed from year to year.
+An indicator scorecard is not a real account, though. It counts overlapping trades, ignores swap and doesn't size positions. So I wrote the EA and tested it the way it would actually run: one position at a time, lots sized from the stop, swap included, random execution delay.
+How it trades
+On every new H4 bar it checks the bar that just closed. If that bar closed above the highest high of the previous 20 bars, and the bar before it did not, that is a breakout.
+The breakout only counts when the close is above the 200 EMA. Sell breakouts are switched off by default (the reason is further down).
+It buys at market. The order is sent without SL and TP, and the stops are attached to the real fill price right after. The stop is 2 x ATR(20) below the fill, and the target is 2R above it.
+If the stops can't be attached, the position is closed immediately, so it never runs without a stop.
+One position at a time. No grid, no martingale, no averaging down.
+Lots are sized with OrderCalcProfit() from the stop distance. I learned that the hard way on another gold EA: on MetaQuotes-Demo, SYMBOL_TRADE_TICK_VALUE for XAUUSD is 0.10 while the real value of a point is 1.00, and an EA that trusts it risks ten times what you asked for. The EA also skips a breakout when the spread is more than 10% of the stop, and it doesn't enter in the last 15 minutes before the trading session closes.
+Test settings
+Setting
+Value
+Symbol and timeframe
+XAUUSD H4
+Period
+2020.01.01 to 2026.09.20, one continuous run
+Server
+MetaQuotes-Demo
+Deposit and leverage
+10,000 USD, 1:100
+Risk
+1% of balance per trade
+Modelling
+Every tick generated from M1, random delay
+Costs
+Spread and swap included, no commission on this server
+Inputs
+All defaults
+Results
+Metric
+Value
+Net profit
++9,029.72 (balance 19,029.72)
+Trades
+198, all buys
+Win rate
+46.97% (93 won, 105 lost)
+Profit factor
+1.77
+Expected payoff
+45.60 per trade
+Average win / average loss
+223.51 / -111.97
+Largest loss
+-174.89 (an ordinary stop, 0.9% of the balance at the time)
+Max equity drawdown
+11.38% (1,277.78)
+Max balance drawdown
+10.88% (1,215.40)
+Recovery factor
+7.07
+Sharpe ratio
+2.25
+Max consecutive losses
+9 (-889.86)
+Swap paid
+-472.01 in total
+Average holding time
+about 71 hours (longest 459 hours)
+By calendar year, as a share of the balance at the start of each year:
+Year
+Trades
+Net
+Return
+2020
+33
++513.69
++5.1%
+2021
+20
+-305.26
+-2.9%
+2022
+24
++468.04
++4.6%
+2023
+30
++509.20
++4.8%
+2024
+32
++2,683.82
++24.0%
+2025
+40
++3,761.85
++27.1%
+2026 (to 20 Sep)
+19
++1,398.38
++7.9%
+The years add up exactly to the tester's net profit. I also ran 2026 on its own with real ticks (99% history quality): 15 trades, +579.70, profit factor 2.02, max drawdown 2.89%.
+Fig. 1. Balance, XAUUSD H4, 2020 to September 2026, default inputs
+Fig. 2. Return per calendar year from the same run
+Read this before you get excited
+Most of the money came from 2024 and 2025, when gold went up hard. From 2020 to 2023 the EA made between -2.9% and +5.1% a year. In other words, it does well when gold trends and treads water when it doesn't.
+About the buys-only default. With sells switched on, the same run made +5,231.80 (310 trades, profit factor 1.28, drawdown 14.31%). Inside that run the 194 buys made +7,312.19 and the 116 sells lost -2,080.39. Gold spent most of these six years going up, so selling breakouts cost money. Buys-only is a bet that gold's long-term trend stays up. The 200 EMA filter softens that bet: when gold trades below its 200 EMA, the EA simply stops buying instead of fighting the fall. If you think gold is turning down for good, switch InpAllowShort on, and expect the numbers above to look different.
+Nine losses in a row happened in this test, in mid-2021, and cost 889.86, about 8.2% of the balance at the time. A win rate near 47% with a 2R target means long flat stretches are normal. The 2020 to 2023 part of Fig. 1 shows what that feels like.
+Things I tested that are not the default
+All three exits were tested year by year with buys and sells and no trend filter, each year starting from 10,000. Total over the seven years:
+Exit
+Total
+Losing years
+A. ATR trail (3 ATR)
++2,554
+2
+B. Turtle 10-bar channel
++3,393
+3
+C. Fixed 2R target
++4,579
+3
+The fixed target won, and adding the 200 EMA filter to it raised the total to +4,777 while cutting the worst single-year drawdown from 13.98% to 10.21%. The same filter made exit B worse, so exits A and B stay available as inputs but they are not the default.
+I also ran the defaults on EURUSD H1, the pair MQL5 uses for its automatic check: it runs without errors (164 trades, profit factor 1.03, January 2025 to September 2026). It is not built for forex, and I don't trade it there.
+Inputs
+Input
+Default
+What it does
+InpEntryBars
+20
+Entry channel length in bars
+InpATRPeriod
+20
+ATR period
+InpStopATR
+2.0
+Stop distance, ATR multiples
+InpUseTrend
+true
+Only trade on the side of the 200 EMA
+InpTrendEMA
+200
+Trend EMA period
+InpAllowLong
+true
+Take buy breakouts
+InpAllowShort
+false
+Take sell breakouts
+InpExitMode
+C. Fixed target
+Exit method (A ATR trail, B Turtle channel, C fixed target)
+InpTargetR
+2.0
+Take profit for exit C, R multiples
+InpTrailATR
+3.0
+Trail distance for exit A, ATR multiples
+InpExitBars
+10
+Channel length for exit B
+InpRiskPercent
+1.0
+Risk per trade, % of balance
+InpMaxSpreadToRisk
+0.10
+Skip if the spread is more than this share of the stop
+InpSlippagePoints
+50
+Allowed slippage in points
+InpCloseFriday
+false
+Close the position before the weekend
+InpFridayHour
+20
+Friday server hour for that close
+InpMagic
+555001
+Magic number
+Before you run it
+Attach it to an XAUUSD H4 chart. Run it on a demo account for a while before you use real money, and check your broker's spread, swap and commission first. MetaQuotes-Demo charges no commission, so a broker that does will take a slice of the 45.60 average per trade. Weekend gaps can fill a stop far from where it was set. That didn't cause a big loss in this test: the largest loss, -174.89 in February 2026, was an ordinary stop at about 0.9% of the balance, which had grown to 18,922 by then. Everything above is one broker's data over one period, most of which was a gold bull market.
+Ali Rajput

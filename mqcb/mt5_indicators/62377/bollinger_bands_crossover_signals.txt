@@ -1,0 +1,95 @@
+Overview
+This custom indicator combines
+Bollinger Bands
+with clear
+Buy/Sell arrows
+on the chart.
+It automatically detects when the price
+crosses above the lower band
+or
+below the upper band
+and plots arrows accordingly.
+The goal is to help traders quickly identify
+potential reversal points
+at the edges of market volatility.
+How It Works
+The indicator calculates
+Bollinger Bands
+using the built-in iBands function.
+Buy Signal (Blue Arrow)
+→ when the price closes
+below the lower band
+on the previous candle, then closes
+above it
+on the next candle.
+Sell Signal (Red Arrow)
+→ when the price closes
+above the upper band
+on the previous candle, then closes
+below it
+on the next candle.
+Signals appear
+only once per direction
+until an opposite signal is triggered, avoiding repeated arrows in the same move.
+The
+Bollinger Bands
+can be displayed or hidden according to user preference.
+Indicator Features
+Clear Buy/Sell Arrows
+directly on the chart.
+Optional display
+of Upper, Middle, and Lower Bollinger Bands.
+Works on
+all symbols
+and
+timeframes
+.
+Uses
+non-repainting
+logic (signals are confirmed after candle close).
+Easy to customize parameters.
+Input Parameters
+Parameter
+Description
+BB_Period
+Number of bars used for Bollinger Bands calculation (default: 20).
+BB_Deviation
+Standard deviation multiplier for the bands (default: 2.0).
+BB_Price
+Applied price for Bollinger Bands (Close, Open, High, Low, etc.).
+Show_BBands
+If true , displays Bollinger Bands on the chart; if false , hides them.
+Usage Example
+Attach
+the indicator to your chart.
+Set
+BB_Period
+and
+BB_Deviation
+according to your trading style.
+Watch for
+blue arrows
+near the lower band (potential buys) and
+red arrows
+near the upper band (potential sells).
+Combine with other confirmations such as
+trend filters
+or
+candlestick patterns
+for higher accuracy.
+Trading Tips
+Works well in
+sideways or ranging markets
+where price often touches Bollinger Bands.
+In
+strong trending markets
+, consider using it with a trend filter (e.g., moving averages) to avoid counter-trend signals.
+Always test settings on your preferred symbol and timeframe.
+Screenshot
+📜 Disclaimer
+This indicator is a
+technical analysis tool
+and does not guarantee profits.
+Use it together with proper
+risk management
+and other trading strategies.

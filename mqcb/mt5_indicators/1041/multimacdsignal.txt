@@ -1,0 +1,8 @@
+MultiMACDSignal displays information on current trends using values of the six
+MACD
+indicators obtained from different time frames.
+Each of the MACD indicators corresponds to one of the six indicator lines. If the MACD histogram is above its signal line, the line is green, if it is bellow, the line is pink. Colored points appear on the lines when the bar of the relevant time frame is changing.
+Fig.1 The MultiMACDSignal Indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1041

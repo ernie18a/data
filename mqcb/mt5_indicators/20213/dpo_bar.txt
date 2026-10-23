@@ -1,0 +1,13 @@
+Detrended Price Oscillator Bar
+- this oscillator indicator eliminates the trend component of the price movement chart. This simplifies the process of determining price fluctuation cycles and overbought/oversold levels.
+Long cycles consist of several short cycles. Analysis of such short elements helps to determine the critical moments of the cycle. The indicator allows eliminating the influence of the price on visibility of long-term cycles.
+Calculation formula:
+DPO = Price - SMA (Price, N)
+The indicator has two input parameters:
+Period
+- MA calculation period;
+Method
+- MA calculation method.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20213

@@ -1,0 +1,2 @@
+Get all the Account and MarketInfo details for a currency pair at a glance.
+Drop this script on chart and get all the Account/Symbol details in a message box.

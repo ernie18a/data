@@ -1,0 +1,20 @@
+In institutional trading and ICT (Inner Circle Trader) methodologies, the opening price is the most critical reference point on the chart. Institutional algorithms use the True Daily, Weekly, and Monthly Open prices to engineer the "Power of 3" (PO3) cycle: Accumulation at the open, Manipulation below or above the open to trap retail traders, and Distribution in the true daily direction.
+The ICT True Open & PO3 Lines indicator is a precise, non-lagging utility that automatically calculates and draws these institutional reference points on your chart.
+Core Features
+The AMD Foundation:
+Visually separates the chart into premium (above open) and discount (below open) zones, showing exactly where retail manipulation happens.
+Multi-Timeframe Anchors:
+Displays Daily (Midnight), Weekly, and Monthly open lines simultaneously on your execution timeframes (M1, M5, M15).
+Ultra-Lightweight:
+Engineered for 0% CPU load. It uses native terminal timers to plot static horizontal lines for the current period, bypassing heavy historical calculations entirely.
+Clean Visuals:
+Keeps the chart professional. No cluttered text or lagging bands, just pure institutional price levels.
+Input Parameters
+Show_Daily_Open:
+Toggle the Daily Open line (Default: True).
+Show_Weekly_Open:
+Toggle the Weekly Open line (Default: True).
+Show_Monthly_Open:
+Toggle the Monthly Open line (Default: True).
+Color & Style Settings:
+Fully customizable colors and line styles (solid, dashed, dotted) to blend seamlessly with your trading template.

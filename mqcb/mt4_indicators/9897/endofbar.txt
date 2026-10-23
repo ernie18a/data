@@ -1,0 +1,2 @@
+This indicator gives You information about timeleft to end of the Current bar.
+If time left is less than seconds specified in param than red info is shown near the ClosePrice.

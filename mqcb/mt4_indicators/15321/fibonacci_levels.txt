@@ -1,0 +1,3 @@
+This is an indicator which draws Fibonacci levels as indicator indexes.
+As shown in picture, Fibonacci levels depend on the highest high and the lowest low and its succession of a specific number of bars that you entered in indicator's inputs.
+Notice that in the picture above indicator lines shifted by 3 bars you can modify shifting freely from inputs.

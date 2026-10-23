@@ -1,0 +1,5 @@
+Buy when the indicator line is green and sell when it turns red.
+The Fisher Transform indicator is an oscillator that helps to identify trend reversals and can be applied to any financial instrument. It was created by J.F. Ehlers and transforms prices into a Gaussian normal distribution. The oscillator moves above and below a zero line and has clear and sharp turning points, simplifying the identification of trend reversals. It is commonly used as part of a trading strategy that takes price action into account and usually is not the only tool a trader relies on.
+The version for MetaTrader 4 will not be presented here. You can download it along with the source code through my Telegram channel. The link to the channel is in my
+profile
+. Don't forget to subscribe!

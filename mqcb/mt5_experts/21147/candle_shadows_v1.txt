@@ -1,0 +1,42 @@
+Idea by
+:
+Vlad
+.
+MQL5 code by
+:
+barabashkakvn
+.
+The EA waits for the candlestick size to become higher than or equal to "
+Candle size minimum
+" within "
+The position can be opened within N minutes
+" minutes. At the same time, the "
+Length opposite shadow max
+" can also be considered (the lower shadow is considered for position Sell, while the upper shadow is considered for position Buy).
+A rule also works here: Only one position can be opened on the current bar. If the last position was closed by Stop Loss (trade DEAL_ENTRY_OUT having property DEAL_REASON_SL is intercepted in OnTradeTransaction) and there was a loss, then the next position is opened with a "
+Factor of reduction of lot at SL
+" times smaller lot size.
+There are two more interesting position-related parameters: "
+Position lives N bars"
+- position lifetime is set in bars, followed by closing the position forcedly, and "
+Close the profitable position on bar N
+" - closing a position on bar N, if such position is profitable.
+Oh, I nearly forgot to mention that a position could only be opened within a time interval limited by "
+Start hour
+" and "
+End hour
+", and position size mamangement:
+Position volume can be constant (parameter "
+Lots
+">0, and "
+Risk
+"==0)
+Position volume is dynamic (parameter "
+Lots
+"==0, and "
+Risk
+">0)
+Moroever, you can also disable Stop Loss and Take Profit levels and trailing.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21147

@@ -1,0 +1,81 @@
+The Moving Average expert for forming trade signals uses one moving average. Opening and closing of positions are performed when the moving average meets the price at the recently formed bar (bar index equals to 1). The lot size will be optimized according to a special algorithm.
+The expert advisor analyzes concurrence of the moving average and the market price chart. The checking is performed by the CheckForOpen() function. If the moving average meets the bar in such a way that the former is higher than Open price but lower than Close price, the BUY position will be opened. If the moving average meets the bar in such a way that the former is lower than Open price but higher than Close price, the SELL position will be opened.
+Money Management used in the expert is very simple, but effective: the control over each position volume is performed depending on the previous transactions results. This algorithm is implemented by the LotsOptimized() function. The basic lot size is calculated on basis of the maximum allowable risk:
+lot=NormalizeDouble(AccountFreeMargin()*MaximumRisk/1000.0,1);
+The MaximumRisk parameter displays the basic risk percentage for each transaction. It usually possesses a value between 0.01 (1%) and 1 (100%). For example, if free margin (AccountFreeMargin) equals to $20,500 and rules of capital management prescribe to use risk of 2%, the basic lot size will make 20500 * 0.02 / 1000 = 0.41. It is very important to control over the lot size accuracy and to normalize the result with the allowable values. Normally, fractional lots with step of 0.1 are allowed. A transaction having volume of 0.41 will not be performed. To normalize, the NormalizeDouble() function is used with accuracy up to 1 character after the point. This results in the basic lot of 0.4. The basic lot calculation on basis of free margin allows to increase in volumes of operation depending on trading successfulness, i.e., to trade with reinvesting. This is the basic mechanism with obligatory capital management for increasing of trading effeсtiveness.
+DecreaseFactor is the extent to which the lot size will be reduced after unprofitable trading. Normal values are 2,3,4,5. If the preceding transactions were unprofitable, the subsequent volumes will decrease by a factor of DecreaseFactor in order to wait through the unprofitable period. This is the main factor in the capital management algorithm. The idea is very simple: if trading is successfully increasing, the expert works with the basic lot making maximum profit. After the very first unprofitable transaction, the expert will "reduce the speed" until a new positive transaction is made. The algorithm allows to disable "speed reducing", for doing it, one has to specify DecreaseFactor = 0. The amount of the last successive unprofitable transactions is calculated in the trade history. The basic lot will be recalculated on this basis:
+if(losses>1) lot=NormalizeDouble(lot-lot*losses/DecreaseFactor,1);
+Thus, the algorithm allows to effectively reduce the risk occurring as a result of a series of unprofitable transactions.The lot size is obligatorily checked for the minimum allowable lot size at the end of the function because the previously made calculations can result in lot = 0:
+if(lot<0.1) lot=0.1;
+The expert is mainly intended for working with daily period, and in the testing mode - for doing at close prices. It will trade only at opening of a new bar, that is why the modes of every-tick modeling are not needed.
+Testing results are represented in the report.
+Strategy Tester Report
+Moving Average
+Symbol
+EURUSD (Euro vs US Dollar)
+Period
+1 Hour (H1)  2003.01.08 00:00 - 2003.11.25 00:00
+Model
+Every tick (based on all available least timeframes with fractal interpolation of every tick)
+Parameters
+Lots=0.1; MaximumRisk=0.01; DecreaseFactor=1; MovingPeriod=16; MovingShift=11;
+Bars in test
+19371
+Ticks modelled
+656918
+Modelling quality
+25.00%
+Initial deposit
+10000.00
+Total net profit
+1695.20
+Gross profit
+4293.20
+Gross loss
+-2598.00
+Profit factor
+1.65
+Expected payoff
+10.80
+Absolute drawdown
+40.35
+Maximal drawdown (%)
+318.50 (3.0%)
+Total trades
+157
+Short positions (won %)
+73 (26.03%)
+Long positions (won %)
+84 (32.14%)
+Profit trades (% of total)
+46 (29.30%)
+Loss trades (% of total)
+111 (70.70%)
+Largest
+profit trade
+262.55
+loss trade
+-91.00
+Average
+profit trade
+93.33
+loss trade
+-23.41
+Maximum
+consecutive wins (profit in money)
+2 (387.15)
+consecutive losses (loss in money)
+7 (-287.25)
+Maximal
+consecutive profit (count of wins)
+387.15 (2)
+consecutive loss (count of losses)
+-287.25 (7)
+Average
+consecutive wins
+1
+consecutive losses
+3
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7927

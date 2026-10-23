@@ -1,0 +1,2 @@
+Author: igorad
+Strategy pabloski, is realized in indicator StepRSI_v5.2.

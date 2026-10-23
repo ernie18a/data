@@ -1,0 +1,2 @@
+Author: mandorr
+The script pumps over all quotations.

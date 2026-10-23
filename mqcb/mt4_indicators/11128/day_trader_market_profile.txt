@@ -1,0 +1,23 @@
+Author:
+Bassam Faramawi.
+The indicator Simulates the full structure of the market profile system that described by "James Dalton" in his book "Mind Over Markets" for the market profile day trader including TPOs, POC, RL, VA and IB.
+It brings full system to the screen of MT4, as it in the Market profile service providers with the typical interface. It draw the TPOs as letters or blocks the way you want, detects the TPO value area(not the volume VA) of the percentage you detect (0.7 is the default) and shows the Point of control of the day and the Initial Balance plus the opening flag for all of a number of days.
+It allows to shift this parameters to next day (or number of days) to help you building the accurate vision of the current formative day. the ability to view the profile of the American, the Euro, the Asian sessions or the hole day session. it has also a pointer to detect the active TPO now.
+This Version works only on M30 Time Frame (don't try to switch to another Time Frame).
+Input parameters:
+Step : The step of point between each TPOs.
+NumberOfDays : Counts the current and last days you want to view their profiles.
+SessionHalfHours : Number of the half-hours in one session (default = 48 means the hole day).
+ViewTPOs : To view it or not.
+TPOs_as_Letters : If true view as letters ( if false view as blocks).
+ViewOpenFlag : View the open of the session.
+View_Pointer : View the pointer that point to the active TPo.
+ViewrangeLine : View range line of the day or session.
+rangeLine_Shift : The shift to next days or sessions.
+ViewInitialBalanceLine : View the initial Balance of the session
+ViewValueArea : View the TPo Value Area by two limit lines
+ValueArea_Shift : The shift to next days or sessions
+ViewPocLine : View the Point Of Control of the day or session
+PocLine_shift : The shift to next days or sessions
+ViewInformationText : Print the range, TPO Value Area and the Tick Volume of the session.
+For who asks about what the Market Profile do, see the strategy tester image (1000% Profit).

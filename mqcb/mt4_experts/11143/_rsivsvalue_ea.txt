@@ -1,0 +1,76 @@
+If the RSI is Below 50 - opens sell (closes buy)
+If RSI is Upper 50 - opens buy (closes sell)
+RSI - 14
+SL 100, TP 300, TS 0
+Strategy Tester Report
+RSI_Value_EA
+XM.COM-Demo (Build 509)
+Symbol
+EURUSD (Euro vs US Dollar)
+Okres
+4 Godziny (H4) 2013.06.03 00:00 - 2014.02.19 23:59 (2013.06.01 - 2014.02.20)
+Model
+Tylko ceny otwarcia (tylko dla Automatycznych Strategii które bezporednio kontrolujš otwarcie słupków)
+Parametry
+MagicNumber=10001; Lots=1; StopLoss=100; TakeProfit=300; TrailingStop=0; Slippage=3;
+Słupki w tecie
+2113
+Ticki użyte w modelu
+3223
+Jakoć modelowania
+n/a
+Błedy na wykresie
+0
+Depozyt poczštkowy
+10000.00
+Całkowity zysk netto
+6222.80
+Zysk brutto
+14860.70
+Strata brutto
+-8637.90
+Wskanik zysku
+1.72
+Przewidywany zysk
+132.40
+Największa strata bezwzględna
+0.00
+Maksymalna strata względna
+2565.40 (16.19%)
+Strata relatywna
+16.19% (2565.40)
+Iloć transakcji w sumie
+47
+Krótkie pozycje (zyskownych %)
+15 (13.33%)
+Długie pozycje (zyskownych %)
+32 (34.38%)
+Transakcje zyskowne (% wszystkich)
+13 (27.66%)
+Transakcje stratne (% wszystkich)
+34 (72.34%)
+Największa
+zyskowna transakcja
+2989.20
+stratna transakcja
+-848.00
+rednia
+zyskowna transakcja
+1143.13
+stratna transakcja
+-254.06
+Maksymalna
+iloć transakcji zyskownych pod rzšd (zysk w pln)
+2 (3059.20)
+iloć transakcji stratnych pod rzšd (straty w pln)
+13 (-2529.40)
+Największy
+nieprzerwany zysk (suma transkacji zyskownych)
+3059.20 (2)
+nieprzerwana strata (suma transkacji stratnych)
+-2529.40 (13)
+rednia
+iloć transakcji zyskownych pod rzšd
+1
+iloć transakcji stratnych pod rzšd
+4

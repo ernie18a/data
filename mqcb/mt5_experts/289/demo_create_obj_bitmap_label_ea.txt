@@ -1,0 +1,7 @@
+The graphic object of
+OBJ_BITMAP_LABEL
+allows to create the different buttons. To enable the change of its state, it's necessary to enable the "Disable selection" property.
+By default, the "Disable selection" property is enabled for all graphic objects, created in MQL5.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/289

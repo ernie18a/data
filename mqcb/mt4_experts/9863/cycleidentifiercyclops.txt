@@ -1,0 +1,4 @@
+The Cyclops follows the Cycleidentifier indicator, plus SMA and RSI for filter.
+It is taking a trade when the indi shows a bold two spike.
+The filter is suppose to confirm with that but the repaint of the spike seems to make this a Martingale effort.
+Image:

@@ -1,0 +1,328 @@
+Version 1.33 update - bug fixes.
+USDX Trader v1.33 — Synthetic Dollar Index chart and basket trading for MetaTrader 5
+Version 1.33
+· MetaTrader 5 · Any broker that offers the major USD pairs
+USDX Trader builds a
+synthetic US Dollar Index
+from the currency pairs already in your Market Watch, shows it on your chart as a normal symbol, and lets you
+buy or sell the index as a basket of the underlying pairs
+— with take-profit and stop-loss measured on the
+index itself
+, not on any single pair.
+It is made for traders whose broker
+does not offer a USDX / DXY symbol
+.
+Why this matters if your broker does not offer USDX
+The US Dollar Index is the standard yardstick for broad dollar strength. Many retail brokers do not list it at all, or list only a futures-based CFD with wide spreads, limited hours or contract rolls. Without it, traders often have to watch the index on a separate website and trade on another platform.
+Problem without a USDX symbol
+What USDX Trader does
+No dollar-strength chart inside MT5
+Creates a custom symbol with live prices and history, so all timeframes, indicators and drawing tools work on it
+You judge USD pairs one at a time (EURUSD, GBPUSD…) and mix in the other currency's news
+Shows one combined USD reading built from six or more pairs
+You can watch the dollar but cannot trade it as one position
+Opens and closes the whole basket with one click, sized by index weights
+SL and TP on one pair do not match your view of "the dollar"
+Virtual TP/SL are checked against the index level, and the whole basket closes together
+Broker symbol names differ ( EURUSD.m , EURUSDpro …)
+Finds the correct symbols automatically (or uses your suffix)
+Important:
+this is a
+replication
+of the index from spot pairs, not the official ICE data feed. Expect small differences from the published index (see Limitations).
+Key features
+Synthetic USDX on your chart.
+Attach the EA to any chart. It switches the chart to the synthetic symbol and switches back when you remove the EA.
+Preset dropdown.
+USDX, two broad-dollar baskets, an equal-weight basket, or your own custom combination.
+Basket trading.
+BUY / SELL / CLOSE from the on-chart panel. Leg sizes follow the index weights.
+Virtual TP and SL
+in index points. Set
+0 for no TP or no SL
+.
+TP/SL levels on the chart
+before entry (projected for BUY and SELL) and after entry (live lines).
+Adjustable size
+with + / − buttons and an editable field. A plan table shows each leg's lots before you trade.
+Minimum-lot protection.
+A leg below the broker's minimum lot is rounded up to the smallest allowed size, and you must confirm before the trade is placed.
+Last N bars rebuilt from real ticks
+of all legs for accurate highs and lows on the bars you see.
+Strategy Tester support
+with an optional automatic mode (see below).
+How the index is calculated
+The USDX preset uses the ICE US Dollar Index formula:
+USDX = 50.14348112 × EURUSD^-0.576 × USDJPY^0.136 × GBPUSD^-0.119 × USDCAD^0.091 × USDSEK^0.042 × USDCHF^0.036
+Pair
+Exponent
+Share of index
+Effect when the pair rises
+EURUSD
+-0.576
+57.6%
+USDX falls
+USDJPY
++0.136
+13.6%
+USDX rises
+GBPUSD
+-0.119
+11.9%
+USDX falls
+USDCAD
++0.091
+9.1%
+USDX rises
+USDSEK
++0.042
+4.2%
+USDX rises
+USDCHF
++0.036
+3.6%
+USDX rises
+Buying USDX
+= buy USDJPY, USDCAD, USDSEK, USDCHF and sell EURUSD, GBPUSD.
+Selling USDX
+is the reverse.
+The chart shows the index
+bid
+. Opening a long basket costs the index
+ask
+, built from the correct bid or ask of each leg, so spreads are included in entry and exit levels.
+Presets
+Preset
+Legs
+Notes
+USDX
+(default)
+6
+ICE Dollar Index formula and constant
+Broad USD – 9 legs
+9
+Bloomberg-style broad dollar basket (2026-27 weights) without KRW, INR, TWD, renormalised to 100%. Needs USDMXN, USDCNH and USDSGD
+Broad USD – 12 legs
+12
+Full broad-dollar weights. Many brokers do not offer all legs
+Equal-weight USD vs 6 majors
+6
+EUR, GBP, AUD, JPY, CHF, CAD at 1/6 each. Liquid, tight spreads
+Custom
+1–12
+Your own SYMBOL:weight list, geometric or linear formula
+The broad presets are
+approximations
+of published broad-dollar indices, not replicas. Their absolute level is scaled to read about 100 and has no official meaning.
+Custom example:
+EURUSD:1;GBPUSD:-1 with the geometric formula gives the EURGBP ratio.
+On-chart panel
+Control
+Function
+Quote line
+Live index bid / ask (green when rising, red when falling)
+Size − / field / +
+Basket size. Type a value or step it
+TP / SL fields
+Virtual levels in index points.
+0 = off.
+Editable while a basket is open
+BUY / SELL
+Open a basket (confirmation dialog first)
+CLOSE BASKET
+Close every leg of the basket
+Level lines
+BUY and SELL projected TP/SL before entry; entry, TP, SL after entry
+Plan / Open legs table
+Planned lots and rounding error per leg; after entry, lots and profit per leg
+− / + (title bar)
+Collapse or expand the panel
+Lot sizing
+For the geometric formula, each leg's exposure is weight × size × Basket unit in account currency and is converted to lots with the symbol's tick value. With the default basket unit of 100,000,
+size 1.0 ≈ 100,000 of exposure
+, and a 1% move in the index is worth about 1,000 in account currency.
+Small legs (SEK, CHF, SGD) need a larger size to stay accurate. If a leg's ideal volume is below the broker's minimum lot, the EA uses the minimum lot, shows the ideal and actual volumes and the percentage difference, and
+asks for your confirmation
+. The basket will then not match the target weights exactly.
+Strategy Tester and automatic mode
+Custom symbols cannot be created in the Strategy Tester, so in the tester the EA
+computes the index virtually
+from the leg symbols (it selects them automatically). In the tester there are no dialogs and no panel clicks, so an
+optional automatic mode
+is provided:
+Mode
+Behaviour
+Manual only
+Trades only from the panel buttons
+Auto in Strategy Tester only
+(default)
+Trades automatically in the tester; manual live
+Auto always
+Trades automatically live as well
+The automatic logic is a simple demonstration: fast/slow EMA crossover on closed index bars (default H1, 12/26). It takes a first position after the warm-up and reverses on each crossover, using the virtual TP/SL.
+It is not an optimised or recommended strategy.
+If a leg symbol is missing in the tester, the EA drops it and renormalises the remaining weights so the test can run.
+Inputs
+Instrument definition
+Input
+Default
+Description
+Combination preset
+USDX
+Dropdown of presets
+Symbol name for USDX preset
+USDX_SYNTH
+Name of the custom chart symbol
+Broker suffix
+(blank)
+Leave blank to auto-detect
+Custom preset only
+Input
+Default
+Description
+Legs
+EURUSD:1;GBPUSD:-1
+SYMBOL:weight separated by ; . Up to 12 legs
+Formula
+Geometric
+Geometric (product of powers) or linear (weighted sum)
+Geometric constant K
+1.0
+Scale only
+Symbol name / digits
+CUSTOM_SYNTH / 5
+Custom chart symbol
+Chart / history
+Input
+Default
+Description
+M1 bars of history
+20000
+History built from the legs' M1 data
+Rebuild last N bars from real ticks
+20
+0 = off
+Timeframe for the N bars
+Current
+Timeframe used to measure N
+Max ticks to download
+1,500,000
+Safety cap for large windows
+Store rebuilt ticks
+true
+Also writes ticks to the custom symbol
+Live update interval (ms)
+250
+How often the index is recalculated
+Trading
+Input
+Default
+Description
+Basket size
+0.50
+Starting size (editable on the panel)
+Size step
+0.10
+Step of the + / − buttons
+Basket unit
+100000
+Account-currency exposure per 1.0 size (geometric)
+Virtual TP / SL (index points)
+0.50 / 0.50
+0 = no TP / no SL
+Warn if leg rounding error exceeds (%)
+25
+Triggers the confirmation warning
+Always confirm
+true
+Confirmation dialog before every basket
+Magic number
+20250101
+Use a different one for each instrument
+Max slippage (points)
+20
+Deviation for market orders
+Automation
+Input
+Default
+Description
+Auto-trade mode
+Tester only
+See Strategy Tester section
+Index bar timeframe
+H1
+Bars used by the automatic logic
+Fast / slow EMA
+12 / 26
+Automatic logic periods
+Tester evaluation step (s)
+1
+How often the tester evaluates the index
+Panel / chart
+Input
+Default
+Description
+Show panel
+true
+Show projected TP/SL lines
+true
+Lines before entry
+Panel X / Y
+10 / 20
+Panel position
+Setup
+Add every leg of your chosen preset to
+Market Watch
+(right-click Market Watch → Symbols).
+Enable
+Algo Trading
+and allow trading in the EA's properties.
+Drag the EA onto any chart and choose the preset. The chart switches to the synthetic symbol.
+Check the plan table, set size, TP and SL, then use BUY / SELL.
+Run the EA on
+one chart per instrument
+, each with its own magic number.
+Limitations
+Not the official index.
+Values come from your broker's prices. Expect small differences from the published ICE index and from DX futures (feed, spread, futures basis, bid vs mid).
+High and low of older bars are approximations.
+Only the last N bars (default 20) are rebuilt from real ticks; older history is built from M1 bars.
+Multi-leg execution.
+Each leg pays spread, may be slippage-affected and carries its own swap. A leg that fails to open triggers a rollback of the other legs.
+Virtual TP/SL.
+Levels are checked by the EA while it is running. If the terminal is offline or the connection is lost,
+nothing closes the basket
+. There are no server-side SL/TP orders.
+Gaps and fast markets
+can fill beyond the TP/SL level.
+One basket at a time
+per magic number. On netting accounts, other positions in the same pairs will merge with the basket's legs.
+Small sizes
+distort the hedge ratio because of minimum lot sizes.
+The synthetic symbol is
+not tradable directly
+(trading on it is disabled); trades are placed on the underlying pairs.
+The automatic mode is a demonstration and is not optimised.
+Version history
+Version
+Changes
+1.30
+Strategy Tester support, virtual index in tester, optional automatic mode, margin pre-check
+1.20
+Preset dropdown, minimum-lot confirmation, TP/SL lines before and after entry, 0 = off
+1.10
+New panel, custom combinations, last N bars rebuilt from real ticks
+1.00
+Initial release
+Disclaimer
+Trading foreign exchange and leveraged products involves a high level of risk and may not be suitable for all investors. You can lose more than your initial deposit.
+This software is a tool and is provided "as is" without warranty of any kind. It does not constitute investment, financial, legal or tax advice, and nothing in this description is a recommendation to buy or sell any instrument.
+The synthetic index is calculated from your broker's prices and is
+not the official ICE US Dollar Index
+or any other published index. "USDX" and "ICE" are the property of their respective owners; "Bloomberg" and "BBDXY" are trademarks of Bloomberg. This product is not affiliated with, endorsed by or sponsored by ICE, Bloomberg or any index provider. Broad-dollar presets are approximations for convenience only.
+Virtual take-profit and stop-loss are managed by the program on your terminal and are
+not guaranteed
+to execute at the stated level, or at all if the terminal, the connection or the broker server is unavailable. Strategy Tester results, including those from the optional automatic mode, are hypothetical, depend on the quality of historical data and
+do not guarantee future performance
+. Past performance is not indicative of future results.
+Always test on a demo account first, trade only with money you can afford to lose, and make sure you understand the risks, the costs of trading several instruments at once, and your broker's terms before using this product on a live account.

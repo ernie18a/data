@@ -1,0 +1,10 @@
+The represented code identifies the bars that absent in the history ("holes" hereafter) and disruptions ("big holes"), defines their size, length and gap, works with all symbols. It is intended for intraday charts, so the timeframe is limited with the H4 period. Only the weekend days are considered (Saturday and Sunday - 48 hours) during the analysis, the other moments are counted as the holes or the disruptions. For your convenience while working with a chart the filter is implemented, there you can specify (these options can be found in the script properties):
+1. the number of absent bars, that will be ignored as the holes by the code, on the timeframes (M1,5,15,30);
+2. the number of absent bars (minimum value), that will be counted as a disruption by the code (20 bars by default). If these values are equal to 1 or 2, all the holes found will be counted as the disruptions by the code;
+3. the number of absent pips that will be ignored as a gap by the code.
+The represented code is launched as a script. For simplifying the code, the comments are given where it is possible, the results are outputted in the *.txt file.
+The code was created with the MT4 build 182.
+!!! If the history data was "agglutinated" or it was delivered by several brokers, then the result of the report can contain some inaccuracies in the part that is marked with the note (*** including weekend).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8039

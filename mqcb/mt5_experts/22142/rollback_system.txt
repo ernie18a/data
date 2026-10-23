@@ -1,0 +1,23 @@
+The author of the idea
+-
+Scriptor
+mq5 code author
+-
+barabashkakvn
+Defining the channel width (
+Channel Open Close
+) for a previous day. If the channel width is sufficient, then the amount of roll-back is determined (
+Rollback
+AND
+Channel Rollback
+). Drawing
+OBJ_RECTANGLE
+objects.
+The EA works on PERIOD_H1 timeframe - this parameter is registered within the code and is not included into the inputs. Disabled work on Monday abd Friday. If there are no positions, and the last known time of the trading server is from 00:00 to 00:03 - then you can check the channel and the roll-back.
+The channel width is calculated as a difference between Open of bar #24 and Close of bar #1.
+If the position opening condition is met, the channel is displayed as the
+OBJ_RECTANGLE
+object:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22142

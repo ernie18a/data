@@ -1,0 +1,45 @@
+[@Buy_Sell_Close] Manual trading EA for trading newbies, EA can be used in backtesting visual mode, EA can also be used in live trading.
+You can practice your own trading system in backtesting
+[@Buy_Sell_Close], manual operation of the EA, pause, or modify the speed of the review backtest, to facilitate the manual trading exercises
+Introduction：
+1
+,
+[Lots] button, after the input box, you can modify the number of lots
+2
+,
+[BUY] button, press the button will be placed above the number of lots of 1 more orders.
+3
+,
+[SELL] button, pressing the button will place one short order for the above lot size.
+4
+,
+[SL Modify TP]
+button,
+Above is to modify the Stop Loss and Take Profit, press the button, will modify all orders relative to the current price of the Stop Loss and Take Profit distance.
+5
+,
+[Close All Buy]
+button,
+press will close all Buy orders.
+6
+,
+[Close All Sell]
+button,
+press will close all open Sell orders.
+7
+,
+[Close All Orders]
+button,
+press will close all orders.
+8
+,
+the right side of the display has been opened orders and profits and other information.
+Parameter description:
+1, MM: automatically use the risk ratio to calculate the default lot size
+2, Risk, 0.2 for the balance of 10000 0.2 hands
+3, Lots, Fixed lots if MM is FLASE, will use this fixed number of lots
+4, SL, Stoploss: default is 250 micro-points
+5, TP, TakeProfit: default is
+500 micro-points
+Other parameters related to the UI
+You can practice your own trading system, thanks to everyone!!

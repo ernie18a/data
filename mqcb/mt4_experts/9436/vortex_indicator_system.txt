@@ -1,0 +1,11 @@
+In the article "The Vortex Indicator" published in the January 2010 issue of Technical Analysis of Stocks & Commodities, the authors offer a Trading Idea in the form of a basic reversal system with an entry filter: the filter is to buy or sell only on a breakout of the high or low of the bar creating the Vortex Indicator crossover. When VI+ crosses above VI-, that is a Buy setup, but you would not enter the trade unless the market broke above the high of the bar creating the crossover. Similarly, when VI- crosses above VI+, that is a Sell setup, but you would not enter the trade unless the market broke below the low of the bar creating the crossover.
+I have tested the code to be sure it works as I have intended, and does indeed seem to work. However, I do not present this Expert Advisor as one that will be profitable. It is presented only as a foundation for further exploration of the Vortex Indicator as a trading tool. My preliminary tests indicate that in its current form, it is NOT a profitable system.
+DISCLAIMER: This Expert Advisor is provided as-is, and NO representation is made that this system will be profitable in real trading with real money.
+It is provided solely for educational purposes
+. Do not use it to trade your real money account with real money unless and until you have tested it and adapted it to suit your risk tolerance and trading style.
+Important Note:
+You must have the
+Vortex Indicator
+in your ...experts\indicators directory for this Expert Advisor to work, as it uses the
+iCustom()
+function to pull the values of the Vortex Indicator.

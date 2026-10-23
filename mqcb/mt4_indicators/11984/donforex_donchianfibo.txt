@@ -1,0 +1,17 @@
+Classic
+Donchian-channel
+with
+Fibonacci
+retracement levels.
+Two classic tools in one!
+Adjustable parameters:
+Donchian_Period
+(Donchian-channel period)
+Ignore_Candle_Wicks
+(Set it to true if you want to use only candle bodies instead of candle wicks)
+Show_Prices
+(Displays the price values of Fibonacci levels)
+Other
+DonForex tools
+can be found on the
+MetaTrader 4 Market.

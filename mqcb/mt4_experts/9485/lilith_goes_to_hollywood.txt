@@ -1,0 +1,9 @@
+Second code from my side (you can find the other one under name of "Very Blondie System"). Similar idea, different approach.
+This time the EA gets two points and keeps on hedging between this two points. The size of the hedge is under the parameter "Anchor" (in the chart below I used 250 (5 digits)).
+The increase factor is decided by the "xFactor" parameter. The higher the riskier of course. I was good at 1.7-1.8.
+There is also an option to have it set manually which should give you higher precision in the entry (right now the entry is pretty much random, so big room for improvement).
+What I like from this EA is that in the wrong case you find yourseld with opposite positions open and you can still decide your trend and perform a manual intervention.
+Happy to hear your feedback.
+Kind Regards
+David
+Lilith

@@ -1,0 +1,7 @@
+Real author:
+Luis Guilherme Damiani
+Semaphore signal indicator using the trend filter algorithm based on moving averages.
+Fig.1. The Instantaneous_TrendFilterSign indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13824

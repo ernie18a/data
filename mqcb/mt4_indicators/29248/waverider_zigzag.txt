@@ -1,0 +1,6 @@
+the logic to find peak and bottoms explain:
+when  Low of candle(i) bigger than maximum of (Lips , Jaws , Teeth)  we get peak
+when High of candle(i) lower than minimum of (Lips , Jaws , Teeth)  we get bottom
+then we calculate highest high and lowest low to draw zigzag
+it is accurate for calculate fibo , harmonic pattern and find trend direction
+regards

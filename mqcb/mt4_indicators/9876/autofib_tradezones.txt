@@ -1,0 +1,8 @@
+AutoFib TradeZones
+This is a mod of
+AutoFibo
+by zenhop.
+Use it for range trading or breakouts as the image shows. Either use a period value for auto retracing or the Start and End lines to place it where you want. Colors are customizable.
+The signals were added to illustrate how to use it.
+More indicators at
+www.fxtools.info

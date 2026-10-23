@@ -1,0 +1,2 @@
+Refer to original MQL4 version for original discussion thread.
+https://www.mql5.com/en/code/23886

@@ -1,0 +1,2 @@
+Author: perky_z
+Indicator Price VSwma.

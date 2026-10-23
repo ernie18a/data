@@ -1,0 +1,2 @@
+Variation of the well known Bollinger Bands indicator.
+Instead of using SMA for the central value of the bands, T3 is used. Also, instead of using standard deviations for upper bands and lower bands, T3 deviation is used for that, producing much smoother and faster bands than the original Bollinger Bands.

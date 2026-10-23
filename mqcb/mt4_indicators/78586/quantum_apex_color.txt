@@ -1,0 +1,9 @@
+Algorithm by DeepSeek AI
+DeepSeek Quantum Apex Color - Technical Overview
+This indicator is the visual component of the DeepSeek Quantum Apex trading system. It is designed to filter out market noise and visually map the dominant trend directly on the chart using a high-performance logic engine.
+Core Logic & Methodology:
+Regime Filtering (ADX): To eliminate false entries in sideways markets, the algorithm calculates the ADX. It only engages in trend following when the ADX indicates sufficient directional strength (default > 20).
+Momentum & Exhaustion (RSI & Z-Score): The engine utilizes the RSI to determine momentum bias (>50 for Long, <50 for Short). It is cross-referenced with a Z-Score calculation (Standard Deviation of price from the Moving Average) to filter out statistical anomalies and premature entries.
+Technical Implementation Details:
+Zero Repaint History: Historical signals are calculated strictly on the closed bar (Bar 1), ensuring backtest integrity.
+Developed by DeepSeek AI.

@@ -1,0 +1,14 @@
+There are lots of materials about the indistinct systems, so specifically about the EA:
+1) The estimation is performed on the basis of values of five indicators (Gator, WPR, AC, DeMarker and RSI). The estimation is performed on the basis of trapezoidal membership functions.
+2) You can modify the ranking and the weight of the properties directly in the code.
+3) You can use not only the indicators specified above, but many other stuff (i.e. ones that you prefer to use), as the basis for the indistinct estimation (buy, sell, do nothing).
+On the whole, the EA code is intended for practical acquaintance with the techonlogy of indistinct estimation of the current situation on the market. So I recommend to use, and also modify, it, after theory studying. A. Nedosekin's material
+Osnovy teoryi nechetnoy ocenky
+(The basics of indistinct estimation theory) should be enough for the primary introduction (the technology is a bit different there, but the theory itself is decribed fully well).
+Advices:
+If you are going to implement your own criterions of estimation instead of five embedded indicators, I recommend to divide these criterions into the borders of indistinct estimations (array arGator[7] in the code, etc.).
+Do not try to overoptimize the parameters of memebership function (they are not taken out to the external varibles in the code), because it won't bring any significant effect, believe me, it's verified.
+Experiment - I think that the indistinct logic as a technology of decision making is without a rival. May be it will help somebody to win the championship.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8260

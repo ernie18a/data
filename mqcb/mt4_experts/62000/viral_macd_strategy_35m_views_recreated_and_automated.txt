@@ -1,0 +1,22 @@
+This Expert Advisor is based on a simple MACD strategy that combines multiple technical conditions. It is designed to test how well the strategy performs in real trading environments.
+Main Features
+Standard MACD crossover (buy if the mainline crosses above the signal line below zero and sell if the main line crosses below the signal line above zero) parameters are:
+• Fast EMA: 12
+• Slow EMA: 26
+• Signal line:
+200-period moving average for trend filtering. If the price is above the moving average, only buys are allowed, if the price is below the moving average only sells are allowed.
+The Strategy also uses price action: A touch of a support level is needed for a buy trade and for the sell condition, price has to go above the resistance. This is made possible with a custom Box.mq4 indicator, which is a custom indicator, that displays support and resistance levels. It's important to note, that support and resistance levels are subjective.
+The Risk Management of the strategy is the following. The Stop Loss is always placed above the MA for sell trades and below the MA for buy trades. The SL level will be calculated based on an input parameter called SLPointDistanceFromMA. The Take Profit of the trade is 1.5 times the SL of the trade.
+MACD and support/resistance signals do not need to happen at the same time. The SignalValidity input defines how many candles these conditions remain valid.
+Input Parameters
+Parameter
+Description
+SignalValidity
+(int)
+Number of candles a signal remains valid after appearing (default: 7)
+Lotsize
+(double)
+Trade volume for each order
+SLPointDistanceFromMA
+(int)
+Distance (in points) between the MA and the stop loss level

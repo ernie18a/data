@@ -1,0 +1,2 @@
+Another ZigZag trend indicator based on extremum points of SMA indicator. It connects high price at maximum points of SMA indicator to low price at minimum point. Uptrend lines are red and downtrend are blue in the main chart window. SMA Period is selective as an Input parameter.
+MA(44) Zigzag Trend

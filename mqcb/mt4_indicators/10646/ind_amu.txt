@@ -1,0 +1,19 @@
+The indicator specifies on trend and lateral movements of the price.
+The description of adjustments:
+period_fast - Period of averaging for calculation fast sliding average;
+period_slow - Period of averaging for calculation slow sliding average;
+ma_shift - Shift of the indicator concerning the price diagram;
+ma_method - Method of averaging.
+Can be any of meanings(importance) of methods sliding average (Moving Average)
+0 - (SMA) Simple sliding average.
+1 - (EMA) sliding average. SMMA
+2 - (SMMA) Smoothed sliding average. LWMA
+3 - (LWMA) Linearly - is weighed sliding average.
+applied_price - Used price. There can be any of price constants:
+0 - (CLOSE) the Price of closing.
+1 - (OPEN) the Price of opening.
+2 - (HIGH) a Ceiling price.
+3 - (LOW) a floor Price.
+4 - (MEDIAN) the Average price, (high+low) /2.
+5 - (TYPICAL) the Typical price, (high+low+close) /3.
+6 - (WEIGHTED) the Weighed price of closing, (high+low+close+close) /4.

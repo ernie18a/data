@@ -1,0 +1,5 @@
+The indicator highlights the value in "over Sold" and "over Bought" zones.
+in addition, arrow indicates the return of the value from the extreme zone.
+Indicator can be easily customized by the user including change of colors, with, levels and arrows.
+Combination with other market signals and analysis is necessary and provides more stable results.
+Alert is also available for user.

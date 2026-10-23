@@ -1,0 +1,2 @@
+PGO (Pretty Good Oscillator) is a very old indicator.
+This is a version with an addition of a possibility to use Timm Morris MA for smoothing the PGO values (which filters some of the false signals out). Usage of the indicator is the usual: check zero crosses for longer term trend direction change and slope changes for short term trend direction changes.

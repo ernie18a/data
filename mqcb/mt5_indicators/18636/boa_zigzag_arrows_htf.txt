@@ -1,0 +1,14 @@
+The
+Boa_ZigZag_Arrows
+indicator with the timeframe selection option available in the indicator input parameters:
+input
+ENUM_TIMEFRAMES
+TimeFrame=
+PERIOD_H4
+;
+// Indicator chart period (timeframe)
+The indicator requires the Boa_ZigZag_Arrows.mq5 indicator file. Place it to <terminal_data_folder>\MQL5\Indicators.
+Fig. 1. Indicator Boa_ZigZag_Arrows_HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18636

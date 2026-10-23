@@ -1,0 +1,7 @@
+Author: CandlesticksBW
+The indicator is based on CandlesticksBW. It colors the japanese candlesticks by B. Williams displaying the "black" and "white" candlesticks.
+The candle is dyed in the color of the coincident colors of the AO and AC hystograms in the indicator, otherwise the color of the candlestick is black.
+The possibility of differentiating the "black" and "white" candlesticks is added to author's indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7861

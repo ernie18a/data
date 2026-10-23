@@ -1,0 +1,6 @@
+The indicator draws Close - Open line for the
+averaging period
+in a separate window. The line passes double smoothing based on EMA algorithms.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23072

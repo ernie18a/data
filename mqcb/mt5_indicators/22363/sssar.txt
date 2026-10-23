@@ -1,0 +1,7 @@
+Single Stream SAR indicator is Parabolic SAR with separate buffers of upward and downward trend values.
+It has two configurable parameters:
+Step
+Maximum
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22363

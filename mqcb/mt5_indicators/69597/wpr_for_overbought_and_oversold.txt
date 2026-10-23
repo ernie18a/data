@@ -1,0 +1,2 @@
+Overbought and oversold indicators aim to determine where the price may experience a reversal. In the original wpr indicator, when we see the level -20, it is considered overbought. When the price reaches the overbought stage, a potential reversal downwards may occur, and we will take a sell position. Similarly, when oversold at the level -70, we may observe a reversal in direction for a buy position.
+If you like this indicator, I advise you to use it cautiously as I cannot guarantee your luck.

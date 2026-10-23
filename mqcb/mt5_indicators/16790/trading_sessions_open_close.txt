@@ -1,0 +1,1 @@
+This is a trading sessions indicator. There are orange — Asian, blue - European, and green — American sessions on the image. You can change colour scheme in the settings.

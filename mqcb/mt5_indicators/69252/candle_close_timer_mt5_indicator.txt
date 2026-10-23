@@ -1,0 +1,14 @@
+Candle Close Timer – MT5 Indicator
+The Candle Close Timer is a professional MetaTrader 5 indicator that shows the remaining time until the current candle closes.
+Features:
+Real-time countdown above the current candle.
+Fully customizable color and font size.
+Works on any symbol and timeframe.
+Lightweight, precise, and non-intrusive.
+Benefits:
+Helps traders enter and exit trades at the perfect moment.
+Improves scalping, day trading, and short-term strategies.
+Installation:
+Attach the indicator to any chart.
+Adjust the color and font size from the settings.
+A simple, effective, and essential tool for any serious trader looking to optimize timing and trading decisions.

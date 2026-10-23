@@ -1,0 +1,3 @@
+This is a Ehlers inverse fisher transform with an addition of choices of different rsi calculations that can be used. Rsi variations can be :
+RSI (Wilder's RSI)
+RSX (Cuttler's RSI)

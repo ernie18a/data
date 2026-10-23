@@ -1,0 +1,14 @@
+The indicator shows the "Evening Star" pattern:
+It provides flexible settings for the pattern.
+The "
+Gap
+" setup:
+The "
+Candle 2 type
+" setup:
+The "
+Candle sizes
+" setup:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18500

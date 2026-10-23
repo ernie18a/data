@@ -1,0 +1,33 @@
+I have developed this Expert Advisor as an automation example of a manuel trading system. You can find all details in the
+topic "Signal Systems"
+.
+AscTrend
+,
+NRTR Color Line
+and
+TrendStrengthv2
+indicators are needed for this Expert Advisor to work.
+Features:
+Only for current symbol and timeframe.
+Stoploss based on ASCTrend signal.
+No takeprofit, exit based on trailing stop.
+Money management not implemented (only fixed volume).
+Very basic error management.
+Known limitations:
+Don't work with ECN Broker (Market execution type)
+.
+Not intended to
+operate in conjunction
+with
+other
+Expert Advisors or
+manual
+trading
+.
+How to install:
+Download Expert Advisor and 3 indicators
+.
+Place indicators (Asctrend, NRTR Color Line and TrendStrength indicator) to indicators' folder (\MetaTrader 5\MQL5\Indicators).
+Place Expert Advisor
+to experts folder (\MetaTrader 5\MQL5\Experts).
+Compile indicators and Expert Advisor in MetaEditor, or restart Metatrader.

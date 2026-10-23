@@ -1,0 +1,1 @@
+Indicator that checks slopes of 5 (different period) Least Squares Moving Averages (LSMA or linear regression value) and adds them up to show overall trend.

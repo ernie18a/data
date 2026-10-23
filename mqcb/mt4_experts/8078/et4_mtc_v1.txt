@@ -1,0 +1,1 @@
+A universal template for MTS developing.

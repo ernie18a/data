@@ -1,0 +1,14 @@
+The DHLBO (Dynamic High/Low Band Overlay) indicator shows on the price chart two bands calculated based on the range Highs/Lows.
+It has two input parameters:
+Period
+;
+Expansion
+.
+Calculations:
+Up band = Min+(Max-Min)*Expansion
+Dn band = Max-(Max-Min)*Expansion
+where:
+Min, Max - the highest and lowest prices within the Period interval.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21714

@@ -1,0 +1,64 @@
+The Expert Advisor uses the indicator of thirty popular candlestick patterns:
+Patterns
+.
+Several trading types can be used for opening positions. Positions of the set type are opened for each pattern. Opening of positions can be enabled/disabled for each pattern separately or for a group of patterns: one-, two- and three-bar candlestick formations.
+The Expert Advisor is designed for working on hedging accounts. If you launch the EA on a netting account, a warning message will pop up and the EA will be unloaded.
+The
+indicator
+is not required for the EA operation, because calculations and search for patterns are implemented in a special class, which is connected to the EA and is located in the same folder.
+The EA allows setting stop loss and take profit in points, which will be the same for all positions. If invalid Stop Loss and Take Profit values are specified, the EA will adjust the values to the minimum
+StopLevel
+allowed for the symbol.
+The Expert Advisor will also adjust the lot in case an incorrect value is specified. If the lot is too large, the EA will adjust it in order to be able to open a position. If there is no money for opening even the minimum lot, the signal will be skipped.
+Please note that the Expert Advisor is designed for training purposes.
+The Expert Advisor has 75 configurable parameters. Here are the main 15 parameters:
+Enable One-bar patterns
+- allow using one-bar candlestick patterns;
+Enable Two-bar patterns
+- allow using two-bar candlestick patterns;
+Enable Three-bar patterns
+- allow using three-bar candlestick patterns;
+Maximum of pips distance between equal prices
+- the maximum distance between two compared prices (*);
+Draw Pattern and Descriptions
+- show patterns and their descriptions on the chart;
+Font size
+- the font size for pattern descriptions;
+Texts color
+- the text color for pattern descriptions;
+Font name
+- the font name for pattern descriptions;
+Experts magic number
+- the unique identifier of the EA's positions;
+Mode of opening positions
+- position opening mode (**);
+Lots
+- the volume of positions to open;
+Stop loss in points
+- the Stop Loss of a position in points, not used if 0;
+Take profit in points
+- the Take Profit of a position in points, not used if 0;
+Slippage of price
+- maximum allowable slippage when opening a position;
+Multiplier spread for stops
+- spread multiplier applied in the calculation of a proper distance for stop orders (***).
+The remaining 60 parameters are switches for patterns and position types, which should be opened according to these patterns.
+* The accuracy of comparison in the pattern search - prices are considered equal if the difference between them is less than this number of points.
+** The following six modes are available:
+Any position
+Always one position (swing)
+Only one Buy position
+Many Buy positions
+Only one Sell position
+Many Sell position
+*** For Stop Loss and Take Profit orders (as well as pending orders), there is a minimum allowed distance for placing such orders -
+StopLevel
+. I.e. Stop Loss and Take Profit (as well as pending orders) cannot be placed closer than this distance to the price. If
+StopLevel
+is zero, it does not mean its absence, it only means that
+StopLevel
+is floating. In this case, the minimum distance is usually equal to spread*, but sometimes even the double spread is not enough. So, this parameter allows specifying a custom multiplier for the spread used to calculate the minimum distance for placing stop orders.
+Mode of opening positions: Always one position, the "Outside" pattern opens Sell. Default values are used for other settings.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20074

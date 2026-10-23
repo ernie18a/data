@@ -1,0 +1,13 @@
+The script works on any symbol and timeframe.
+In order to start the script, drag onto the current chart. In the "General" tab of the script parameters window, flag the "Allow DLL imports" and unflag the "Confirm DLL function calls" parameter. In the "Inputs" tab set the parameters required for script operation and click OK.
+Input parameters: Kletka - size of a cell in points
+RazvorotKletka - the number of cells required for a reversal (The default values are for the EUR/USD pair with 5 decimal places in the quotes)
+Once the information the start up on the current chart appears, it is necessary to open an offline 2-minute chart on the current instrument in the following way. In the "File" menu select "Open Offline". In the appearing window, select the 2-minute offline chart on your instrument (for example, EURUSD,M2) and press the open button.
+Next, select the "Candlesticks" display mode for the opened chart.
+The chart is plotted based on the history data contained in the current working chart in accordance with the classic description of the "Tic Tac Toe" chart. Next, the chart is plotted based on the current quotes.
+The column height in points for each candle is specified in the "Volume" parameter, and the column end time is used as the time.
+For a more visual representation of the current quote, the last candle on the chart is displayed with a wick. The older candles are displayed without wicks.
+The chart display method is based on the script Period_Converter.mq4
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8719

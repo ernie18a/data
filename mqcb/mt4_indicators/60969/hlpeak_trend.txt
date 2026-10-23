@@ -1,0 +1,5 @@
+Composed of 3-MA (Weighted, High, Low) + ATR with same period.
+- Direction Up is set when Weighted MA crossed up with High MA.
+- Direction Down is set when Weighted MA crossed down with Low MA.
+- Multiplier for ATR as Channel Top and Bottom for Take Profit and dynamic Stop Loss.
+Created from 3-MA + ATR

@@ -1,0 +1,15 @@
+It calculates pips between Order Execution price and and Stoploss or/and Takeprofit price.
+Beginners study
+SL price to Order Execution price pip calculation.
+TP price to Order Execution price pip calculation.
+Pip calculation can be set to pips or fractional pips (20 pips / 200 fpips)*
+Order Tickets can be set to show or hide.
+[Show_SL] set to false hides all SL pip & ticket text.
+[Show_TP] set to false hides all TP pip & ticket text.
+SL & TP colors can be changed.
+Text size can be changed.
+Text can be positioned right or left of current price bar.**
+** If Chart-Shift is off SL & TP text may be off the right of the chart. To move text left, set Move_Text_L_or_R to a higher number.
+* Non digit Symbols will default to pips regardless if fpips is set to to [true].
+Easy Order script here -
+Easy Order

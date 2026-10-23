@@ -1,0 +1,11 @@
+Real author:
+RickD
+The WPRdivCandle indicator. Colors the candles based on the WPR oscillator:
+Aqua — WPR is in the overbought area;
+Dodger blue — WPR is above the -50 level and outside the overbought and oversold areas;
+Crimson — WPR is below the -50 level and outside the overbought and oversold areas;
+Gold — WPR is in the oversold area.
+Fig.1. The WPRdivCandle indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/16042

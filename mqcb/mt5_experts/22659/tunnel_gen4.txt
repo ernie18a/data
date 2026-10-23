@@ -1,0 +1,18 @@
+Idea by:
+Scriptor
+Code mq5 by:
+barabashkakvn
+The EA works on hedge accounts ONLY!
+It works on each tick.
+The EA works in a cyclic manner: The initial reference point is no open positions on the market. Trading starts with simultaneously opening opposite positions: BUY and SELL with the initial lot size of
+Start Lots
+. At the next step (as soon as the price passes the
+Step
+), we will open a double-lot-size position:
+If the price has passed the Step upwards, we will open Sell
+If the price has passed the Step downwards, we will open Buy
+If the price passes one more Step, we will close everything and get a profit or loss, depending on where the price has gone:
+This trading system is based on the assumption that the price would rather return than continue its trend.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22659

@@ -1,0 +1,33 @@
+Author of the idea
+:
+josef strauss
+MQL5 code author
+:
+barabashkakvn
+The EA considers iAMA (Adaptive Moving Average, AMA) and iRSI (Relative Strength Index, RSI) indicators when generating a trading signal. The signal itself is formed in two steps. Let's illustrate this using "Open Buy" signal as an example:
+Step 1: RSI should be less than level 30 (set in the
+RSI Level Down
+EA parameter). Step 2: Price should overcome AMA indicator.
+Step Length
+(distance in bars between Step 1 and 2) is introduced to find the optimal combination of the two indicators.
+Martingale
+In case of an incoming trading order, request profit for BUY abd SELL positions separately. In case of an incoming trading order:
+"Open Buy"
+if profit on BUY positions is less than 0.0, open two BUY positions
+otherwise, open one BUY position
+"Open Sell"
+if profit on SELL positions is less than 0.0, open two SELL positions
+otherwise, open one SELL position
+Managing funds
+For a change, I applied the following funds management system here:
+Profit limit for close all
+- when reaching a total profit for positions opened by the EA on the symbol, close all positions. In other words, we fix profit.
+Remember the trading account balance during the EA launch. As soon as the trading account's current balance exceeds the saved balance by
+Withdrawal
+- withdraw the
+Withdrawal
+sum and close all positions.
+EURUSD, M5:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21971

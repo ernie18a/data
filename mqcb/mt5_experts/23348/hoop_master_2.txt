@@ -1,0 +1,11 @@
+Idea by:
+Evgeniy Trofimov
+mq5 code by:
+barabashkakvn
+Evolution of the first version of
+Hoop master
+(working with pending Buy stop and Sell stop orders, Martingale).
+More formal control over the position and pending orders. Now, the volume of the pending order increases, only if Equity is below the preceding high price.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23348

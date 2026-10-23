@@ -1,0 +1,10 @@
+Description:
+The script (in the absence of communication) rescans the server, will make paging history, emulates the ticks for the indicators and experts.
+Occasionally the need arises:
+Rescan the server (when disconnected);
+Initiate a paging the history in the open chart;
+Emulate (in the absence their), the arrival of teak for the indicators and experts.
+These tasks perform this script. Emulating the arrival of a new tick may be necessary when there is no connection (for example, there is no connection to the Internet) to the server - if the wring button "advisers" on the terminal, check for the lack of communication will not be made.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10677

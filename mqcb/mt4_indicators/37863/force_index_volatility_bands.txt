@@ -1,0 +1,12 @@
+Force index, originally developed by
+Alexander Elder is an indicator used to gauge the buying and selling strength of an asset.
+Formula:-
+Force index(1)
+=
+(current price - previous price) x current volume
+Force index(13) =
+EMA(13) of Force index(1)
+This version:-
+Although it is conventionally used as a zero line cross indicator but this tool has other unrecognized qualities. It is capable of showing impulsive moves, breakouts and even reversal points on chart. This is done with the addition of volume/volatility bands. Some examples below
+Breakouts and impulsive moves
+Reversal points in a range market

@@ -1,0 +1,16 @@
+Real author:
+Mohsen khashei
+This is Bollinger Bands %b indicator for MetaTrader 5.
+It is all about the relationship between price and the Upper and Lower Bands. There are six basic relationships that can be
+quantified
+.
+In descending order from the Upper Band:
+%B Above 1 = Price is Above the Upper Band;
+%B Equal to 1 = Price is at the Upper Band;
+%B Above .50 = Price is Above the Middle Line;
+%B Below .50 = Price is Below the Middle Line;
+%B Equal to 0 = Price is at the Lower Band;
+%B Below 0 = Price is Below the Lower Band.
+Generally speaking .80 and .20 are also relevant levels:
+%B Above .80 = Price is Nearing the Upper Band;
+%B Below .20 = Price is Nearing the Lower Band.

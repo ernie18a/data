@@ -1,0 +1,305 @@
+MQL5 Wizard
+allows to create the code of Expert Advisors automatically. See
+Creating Ready-Made Expert Advisors in MQL5 Wizard
+for the details.
+Here we will consider the strategy based on price crossover with Moving Average indicator, confirmed by ADX indicator. The strategy called
+"
+Signals based on price crossover with MA confirmed by ADX
+"
+(when creating EA automatically in MQL5 Wizard).
+The trade signals:
+Buy: closing price of the last completed bar is higher than moving average, the moving average increases at the current and last completed bars.
+Sell: closing price of the last completed bar is lower than moving average, the moving average decreases at the current and last completed bars.
+To filter the false signal, it checks the trend power (ADX>ADXmin) and trend direction using the Directional Movement Indexes (DI+ and DI-).
+This strategy is implemented in CSignalADX_MA class (it must be placed to terminal_data_folder\MQL5\Include\Expert\Signal\SignalADX-MA.mqh).
+Figure 1. Trade signals based on price crossover with Moving Average, confirmed by ADX
+Trade Signals
+The trading strategy is implemented in CSignalADX_MA class, it has some protected methods to simplify access to indicators and price values:
+double
+PlusADX(
+int
+ind)
+// returns the value of DI+ line of the bar
+double
+MainADX(
+int
+ind)
+//
+returns the value of main line of the bar
+double
+MinusADX(
+int
+ind)
+//
+returns the value of DI- line of the bar
+double
+EMA(
+int
+ind)
+// returns the value of moving average of the bar
+double
+Close(
+int
+ind)
+// returns the value of closing price of the bar
+double
+StateADX(
+int
+ind)
+// returns the difference between the DI+ and DI- lines
+double
+StateEMA(
+int
+ind)
+// returns the positive value if EMA increases and negative if it decreases
+double
+StateClose(
+int
+ind)
+// returns the difference between the closing price and moving average
+The feature of this implementation is additional checking of trend presence (using the Directional Movement Indicator). It allows to filter false signals and check trading conditions using the values of the current (uncompleted) bar.
+1. Open long position
+Conditions to open long position:
+StateEMA(0)<0 и StateEMA(1)>0: moving average increases on the current and last completed bar;
+StateClose(1)>0: closing price of the last completed bar is higher than moving average;
+MainADX(0)>minimum_ADX: the ADX value of the current bar is greater than specified minimal value (for checking of trend presence);
+StateADX(0)>0: The DI+ is greater than DI- of the current bar.
+//+------------------------------------------------------------------+
+//| Checks conditions to open long position (buy)                    |
+//+------------------------------------------------------------------+
+bool
+CSignalADX_MA::CheckOpenLong(
+double
+& price,
+double
+& sl,
+double
+& tp,
+datetime
+& expiration)
+  {
+//--- condition 1: moving average increases on the current and last completed bars
+bool
+Buy_Condition_1=(StateEMA(
+0
+)>
+0
+&& StateEMA(
+1
+)>
+0
+);
+//--- condition 2: closing price of the last completed bar is higher than moving average
+bool
+Buy_Condition_2=(StateClose(
+1
+)>
+0
+);
+//--- condition 3: the ADX value of the current bar is greater than specified minimal value
+(trend threshold)
+bool
+Buy_Condition_3=(MainADX(
+0
+)>m_minimum_ADX);
+//--- condition 4: the value of DI+ is greater than DI- of the current bar
+bool
+Buy_Condition_4=(StateADX(
+0
+)>
+0
+);
+//---
+price=
+0.0
+;
+   sl   =m_symbol.Ask()-m_stop_loss*m_adjusted_point;
+   tp   =m_symbol.Ask()+m_take_profit*m_adjusted_point;
+//--- checking of all conditions
+return
+(Buy_Condition_1 && Buy_Condition_2 && Buy_Condition_3 && Buy_Condition_4);
+  }
+2. Close long position
+Conditions to close long position:
+StateEMA(0)<0 и StateEMA(1)<0: moving average decreases on the current and last completed bar;
+StateClose(1)<0: the closing price of the completed bar is lower than moving average;
+MainADX(0)>minimum_ADX: the ADX value of the current bar is greater than specified minimal value (for checking of trend presence);
+StateADX(0)<0: The DI- is greater than DI+ of the current bar.
+//+------------------------------------------------------------------+
+//| Checks conditions to close long position                         |
+//+------------------------------------------------------------------+
+bool
+CSignalADX_MA::CheckCloseLong(
+double
+& price)
+  {
+//--- condition 1: the moving average decreases on the current and last completed bars
+bool
+Sell_Condition_1=(StateEMA(
+0
+)<
+0
+&& StateEMA(
+1
+)<
+0
+);
+//--- condition 2: closing price of the completed bar is lower than moving average
+bool
+Sell_Condition_2=(StateClose(
+1
+)<
+0
+);
+//--- condition 3: the ADX value of the current bar is greater than specified minimal value (trend threshold)
+bool
+Sell_Condition_3=(MainADX(
+0
+)>m_minimum_ADX);
+//--- condition 4: the value of DI- is greater than DI- of the current bar
+bool
+Sell_Condition_4=(StateADX(
+0
+)<
+0
+);
+//---
+price=
+0.0
+;
+//--- checking of all conditions
+return
+(Sell_Condition_1 && Sell_Condition_2 && Sell_Condition_3 && Sell_Condition_4);
+  }
+3. Open short position
+The conditions to open short position are the same as long position closing conditions.
+//+------------------------------------------------------------------+
+//| Checks conditions to open short position (sell)                  |
+//+------------------------------------------------------------------+
+bool
+CSignalADX_MA::CheckOpenShort(
+double
+& price,
+double
+& sl,
+double
+& tp,
+datetime
+& expiration)
+  {
+//--- condition 1: the moving average decreases on the current and last completed bars
+bool
+Sell_Condition_1=(StateEMA(
+0
+)<
+0
+&& StateEMA(
+1
+)<
+0
+);
+//--- condition 2: closing price of the completed bar is lower than moving average
+bool
+Sell_Condition_2=(StateClose(
+1
+)<
+0
+);
+//--- condition 3: the ADX value of the current bar is greater than specified minimal value (trend threshold)
+bool
+Sell_Condition_3=(MainADX(
+0
+)>m_minimum_ADX);
+//--- condition 4: the value of DI- is greater than DI- of the current bar
+bool
+Sell_Condition_4=(StateADX(
+0
+)<
+0
+);
+//---
+price=
+0.0
+;
+   sl   =m_symbol.Bid()+m_stop_loss*m_adjusted_point;
+   tp   =m_symbol.Bid()-m_take_profit*m_adjusted_point;
+//--- checking of all conditions
+return
+(Sell_Condition_1 && Sell_Condition_2 && Sell_Condition_3 && Sell_Condition_4);
+  }
+4. Close short position
+The conditions to close short position are the same as long position opening conditions.
+//+------------------------------------------------------------------+
+//| Checks conditions to close short position                        |
+//+------------------------------------------------------------------+
+bool
+CSignalADX_MA::CheckCloseShort(
+double
+& price)
+  {
+//--- condition 1: moving average increases on the current and last completed bars
+bool
+Buy_Condition_1=(StateEMA(
+0
+)>
+0
+&& StateEMA(
+1
+)>
+0
+);
+//--- condition 2: closing price of the last completed bar is higher than moving average
+bool
+Buy_Condition_2=(StateClose(
+1
+)>
+0
+);
+//--- condition 3: the ADX value of the current bar is greater than specified minimal value (trend threshold)
+bool
+Buy_Condition_3=(MainADX(
+0
+)>m_minimum_ADX);
+//--- condition 4: the value of DI+ is greater than DI- of the current bar
+bool
+Buy_Condition_4=(StateADX(
+0
+)>
+0
+);
+//---
+price=
+0.0
+;
+//--- checking of all conditions
+return
+(Buy_Condition_1 && Buy_Condition_2 && Buy_Condition_3 && Buy_Condition_4);
+  }
+Creating Expert Advisor using MQL5 Wizard
+To create a trading robot based on the strategy you need to choose the signal properties as "
+Signals based on price crossover with MA confirmed by ADX
+" in "Creating Ready-Made Expert Advisors" option of
+MQL5 Wizard
+:
+Figure 2. Choose "Signals based on price crossover with MA confirmed by ADX" in MQL5 Wizard
+The next you have to specify the needed
+trailing stop
+algorithm and
+money and risk management
+system. The code of Expert Advisor will be created automatically, you can compile it and test in
+Strategy Tester
+of MetaTrader 5 client terminal.
+Testing Results
+Let's consider backtesting of the Expert Advisor on historical data (EURUSD H1, testing period: 1.1.2010-05.01.2011,  PeriodADX=33, MinimumADX=22, PeriodMA=39, StopLoss=400, TakeProfit=900).
+In creation of Expert Advisor we used the fixed volume (
+Trading Fixed Lot
+, 0.1), Trailing Stop algorithm is not used (
+Trailing not used
+).
+Figure 3. Historical backtesting results of the Expert Advisor, based on price crossover with MA confirmed by ADX
+Attachments:
+The SignalADX-MA.mqh with CSignalADX_MA class must be placed to terminal_data_folder\MQL5\Include\Expert\Signal\.
+The ma_crossover_adx.mq5 contains the code of the Expert Advisor, created using MQL5 Wizard.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/258

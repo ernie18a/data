@@ -1,0 +1,1 @@
+This EA will export the close data of X candles every Z seconds. The main use of this EA is to automatically update csv file and python can pick it up smoothly.

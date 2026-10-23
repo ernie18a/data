@@ -1,0 +1,60 @@
+A candlestick-based chart based on histograms
+Bear_Bulls_Power
+calculated on the Open, High, Low, and Close timeseries of the price chart. Growing candlesticks are made in green colors, while falling candlesticks are in red ones. Growing candlesticks, the close prices of which have grown as compared to the preceding candlesticks, are bright, while pale colors are used for falling close prices. Falling candlesticks with falling close prices are bright red, those with the growing ones are pale red.
+//+-----------------------------------+
+//|   INDICATOR INPUT PARAMETERS      |
+//+-----------------------------------+
+input
+Smooth_Method MA_Method1=MODE_SMA_;
+// Indicator smoothing method
+input
+uint
+Length1=
+12
+;
+// Indicator smoothing depth
+input
+int
+Phase1=
+15
+;
+// Indicator smoothing parameter,
+//---- for JJMA changing within the range of -100 ... +100, it influences the transition process quality;
+//---- It is the CMO period for VIDIA and the slow moving average period for AMA
+input
+Smooth_Method MA_Method2=MODE_JJMA;
+// Final indicator smoothing method
+input
+uint
+Length2 =
+5
+;
+// final indicator smoothing depth
+input
+int
+Phase2=
+15
+;
+// Final indicator smoothin parameter,
+//---- for JJMA changing within the range of -100 ... +100, it influences the transition process quality;
+//----It is the CMO period for VIDIA and the slow moving average period for AMA
+input
+uint
+Range=
+10
+;
+// maximum gap size between initial candlesticks, which is not displayed in the indicator
+input
+int
+Shift=
+0
+;
+// Horizontal indicator shift in bars
+//+-----------------------------------+
+The indicator uses the SmoothAlgorithms.mqh library classes. Working with them was described in details in article
+Averaging Price Series for Intermediate Calculations Without Using Additional Buffers
+.
+Fig 1. Bear_Bulls_Power_Candle
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21174

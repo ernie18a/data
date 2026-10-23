@@ -1,0 +1,13 @@
+The MT5 custom indicator, named 'wd.Range_BB,' is designed to display Bollinger Bands with customized colors and line styles on the chart and calculate the range bandwidth. The range bandwidth is the difference in pips between the upper and lower Bollinger Bands.
+Here's how the indicator works:
+Bollinger Bands Settings:
+These parameters allow users to customize the appearance and behavior of the Bollinger Bands. User can adjust the period, shift, deviation, and applied price for the Bollinger Bands, as well as the visual aspects such as color and line style.
+Place the 'range/bandwidth information' label in the specified Sub-Window:
+The Sub-Window input parameter specifies the sub-window number where the labels need to be placed.
+UpperBB-LowerBB distance information can be placed in the main chart or sub-window. User can also adjust label distances (X and Y-Position).
+To place labels in the main chart, simply input '0' in the 'Sub-Window placement' properties.
+To place them in a Sub-Window below, input ‘1 or 2 or 3, etc’.
+User need to attach indicator “wd.Multi_SubWindow”
+{wd.Multi_SubWindow.mq5 attached}
+.
+Overall, the 'wd.Range_BB' indicator displays the range bandwidth in a label, and the Bollinger Bands are plotted on the main chart. This indicator can help users visualize the flexibility and volatility of the market based on the width of the Bollinger Bands.

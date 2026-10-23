@@ -1,0 +1,4 @@
+Author:
+Last little modified by Iin Zulkarnain
+Shows when to sell and when to buy, but not all so is simple.
+Indicator iinwmarrows

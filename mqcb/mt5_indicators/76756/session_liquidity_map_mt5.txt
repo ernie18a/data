@@ -1,0 +1,11 @@
+Session Liquidity Map makes intraday market activity easier to read. It draws separate boxes for the Asia, London and New York sessions and marks the high and low created inside each selected period.
+All session times are entered in broker time, which keeps the settings clear and avoids hidden timezone assumptions. Each range can display its size in points, while the high and low levels can be extended beyond the session for later liquidity analysis.
+The indicator supports historical session boxes and updates the active session as new candles arrive. Colors, transparency, lookback days and extension length can be changed from the inputs.
+Main inputs
+1. Asian Start and Asian End define the Asia session.
+2. London Start and London End define the London session.
+3. New York Start and New York End define the New York session.
+4. Lookback Days controls the visible history.
+5. Show Range Text displays the range in points.
+6. Extend High Low projects the session boundaries forward.
+Use the trading server clock when setting the session times. The indicator does not convert local time or daylight saving time automatically.

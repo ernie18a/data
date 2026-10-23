@@ -1,0 +1,4 @@
+CCI (Commodity Channel Index) is normally calculated using Simple Moving Average and mean deviation based on that same Simple Moving Average.
+This version of CCI is changing that. Instead of using Simple Moving Average it uses EMA (Exponential Moving Average), and instead of using mean deviation it uses EMA deviation (originally published here
+EMA Deviation
+). That gives us a sort of a completely new CCI and the difference, when compared to original Donald Lambert calculation is significant in a lot of cases.

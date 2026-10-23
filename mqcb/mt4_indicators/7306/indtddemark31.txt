@@ -1,0 +1,16 @@
+Useful for those who use the DeMark TD lines in trading. It draws TD points, plots TD lines, calculates the current values of TD lines, calculates the targets.
+Ind-TD-DeMark-3-1
+Parameters:
+Commen
+- display comments in the top left corner;
+TD
+- display the TD points;
+TD_Line
+- display the TD lines;
+Horiz_Line
+- display the current value of the TD lines as a horizontal line;
+TakeProf
+- display targets;
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7306

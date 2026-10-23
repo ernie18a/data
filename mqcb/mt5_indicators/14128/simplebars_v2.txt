@@ -1,0 +1,11 @@
+Real author:
+Ivan Kornilov
+The indicator paints candlesticks depending on the minimums and maximums of the previous bars.
+In this version of the indicator all candlesticks, that are directed against the trend, are painted in yellow.
+Originally this indicator has been written in MQL4 and was first published in the
+Code Base
+at mql4.com on 25.04.2012.
+Fig.1. The SimpleBars_V2 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14128

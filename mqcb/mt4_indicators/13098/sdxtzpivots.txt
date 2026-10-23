@@ -1,0 +1,22 @@
+Real Author
+:
+Shimodax
+Calculation of pivot and similar levels based on time zones.
+If you want to modify the colors, please scroll down to line 200 and below (where it says "Calculate Levels") and change the colors. Valid color names can be obtained by placing the cursor on a color name (e.g. somewhere in the word "Orange" and pressing F1).
+Time Zone Inputs:
+LocalTimeZone
+— time zone for which MetaTrader 4 shows your local time, e.g. 1 or 2 for Europe (GMT+1 or GMT+2 for daylight savings time). Use zero for no adjustment. The MetaQuotes demo server uses GMT+2.
+DestTimeZone
+— time zone for the session from which to calculate the levels, e.g. 1 or 2 for the European session (without or with daylight savings time).
+Use zero for GMT.
+Example
+:
+If your MetaTrader server is located in the EST (Eastern Standard Time, GMT-5) zone and you want to calculate the levels for the London trading session (European time in summer GMT+1), then enter -5 for LocalTimeZone, 1 for DestTimeZone.
+Please understand that the LocalTimeZone setting depends on the time on your MetaTrader charts (for example the demo server from MetaQuotes is always located in CDT (+2) or CET (+1), no matter what the clock on your wall says.
+If in doubt, leave everything to zero.
+Tips:
+BarForLabels = number of bars from right, where lines labels will be shown.
+Comment for upper left corner: Range, Highs, Lows, Close - Yesterday, Today.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13098

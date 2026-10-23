@@ -1,0 +1,5 @@
+The idea of the EA was taken from the different versions of the Dealers_Trader (for which many thanks to the author), when the stochastic enters the overbought or oversold area, the first lot is opened, if the chart is reversed, then operate with one lot.
+I would like to hear your feedback, as this is my first experience in writing an EA, but if anyone wants to send me away, then please do so politely and correctly.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7286

@@ -1,0 +1,3 @@
+Sicker_EA_DIGITS - can working as scalper, can as day trading EA.
+Сopy ema_sticker to root indicator, copy sicker ea to root experts.
+Default working timeframe: m15 eurusd.

@@ -1,0 +1,11 @@
+The real author:
+Scratchman
+This trend indicator represented in the article "The Vortex Indicator" which had been in the January issue "Technical Analysis of Stocks & Commodities" (2010).
+A detailed description of the indicator and the idea of trading on it had been stated in the referenced article.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 04.01.2010.
+Fig.1 The VortexIndicator indicator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1228

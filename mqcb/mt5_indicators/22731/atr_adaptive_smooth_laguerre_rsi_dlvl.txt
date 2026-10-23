@@ -1,0 +1,7 @@
+Basics:
+The Laguerre RSI indicator created by John F. Ehlers is described in his book "Cybernetic Analysis for Stocks and Futures".
+This version:
+Instead of using fixed periods for Laguerre RSI calculation it is using ATR (average True Range) adapting method to adjust the calculation period. It makes the RSI more responsive in some periods (periods of high volatility), and smoother in order periods (periods of low volatility). Also this version adds an option to have smoothed values. The smoothing method used is adding minimal lag and does not affect too much the result, but helps in making less signals, which will reduce false signals as a result.
+Also this version is using dynamic levels instead of using fixed levels. At a first glance it seemed that Laguerre RSI is not a "good candidate" for dynamic levels way (dynamic levels are best performing when the changes are not sudden as they are in Laguerre RSI), but the produced result is good, and seems to be beating the fixed level approach, hence here it is.
+Usage:
+You can use it (in combination with adjustable levels) for signals when color of the Laguerre RSI changes.

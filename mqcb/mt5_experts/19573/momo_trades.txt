@@ -1,0 +1,51 @@
+Author of the idea
+:
+Rustamzhan Salidzhanov
+,
+mq5 code author
+:
+barabashkakvn
+.
+The trading idea: the iMACD (Moving Average Convergence/Divergence, MACD) Oscillator and the trend indicator iMA (Moving Average, MA). The initial signal to open a Buy position is the combination of MACD and MA:
+"MACD: bar from which we get the value" = 2, "Moving Average: bar from which we get the value" = 6.
+11 MACD values are copied to an array, copying starts with the index "MACD: bar from which we get the value". Then a search is performed in the filled array to find when MACD values change from negative to positive for the first time (in the above figure index #6 has negative values, index #5 is positive).
+The values of the MA indicator are also checked: the close price of bar "Moving Average: bar from which we get the value" must be greater than the MA value on the same bar by the value of "Price Shift between Close and Moving Average".
+Input Parameters
+Manual Lot: "true" -> use manual lot, "false" -> use risk percent
+- position volume selection type: manual or percent of free margin;
+Lots
+- lot value;
+Stop Loss
+(in pips) - stop loss value;
+Take Profit, if "0" we use "Breakeven"(in pips)
+- take profit value, if 0 - breakeven will be used instead;
+Trailing Stop, if we use "Breakeven" - we do not use trailing (in pips)
+- trailing stop function, it is disabled if breakeven is used;
+Trailing Step (in pips)
+- trailing step value;
+Breakeven (in pips)
+- breakeven value;
+Risk in percent for a deal from a free margin
+- risk per trade as percent of free margin.
+Price Shift between Close and Moving Average (in pips)
+;
+Close End Day
+- closing positions at the end of the day;
+Moving Average: period of ma
+- MA: averaging period;
+Moving Average: bar from which we get the value
+;
+MACD: period of fast ma
+- fast moving average period;
+MACD: period of slow ma
+- slow moving average period;
+MACD: period of averaging of difference
+- MACD: averaging period;
+MACD: bar from which we get the value
+;
+magic number
+- Expert Advisor identifier.
+Default settings are good for EURJPY, H1.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19573

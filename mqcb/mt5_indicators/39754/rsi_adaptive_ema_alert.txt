@@ -1,0 +1,9 @@
+Description of the indicator
+Several types of signals have been added to the
+RSI adaptive EMA
+custom indicator when the line color changes. The following types of signals are available:
+Sound
+Alert
+Send mail
+Send push notification
+Pic. 1. RSI adaptive EMA Alert

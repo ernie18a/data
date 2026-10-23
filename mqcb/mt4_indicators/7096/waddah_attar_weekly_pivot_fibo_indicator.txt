@@ -1,0 +1,2 @@
+This indicator Draw True Weekly Pivot Line and seven levels Up ( R1,R2,R3 ... )  and seven levels Down ( S1,S2,S3 ...) with back test. This indicator consists of tow indicators Waddah_Attar_Weekly_Pivot_Fibo_First.mq4 and Waddah_Attar_Weekly_Pivot_Fibo_Second.mq4
+I can't draw 15 lines in same indicator, so  I make tow indicators. Put the tow indicators on the chart to draw all the levels.

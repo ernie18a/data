@@ -1,0 +1,256 @@
+Almost every structure-based method starts with the same question:
+which highs and lows actually matter?
+Everything downstream — market structure, BOS and CHoCH, order blocks, liquidity levels — is built on top of that one answer, so the definition you pick decides what the rest of your analysis sees.
+There are several common ways to answer it. The best known is the
+3-candle pattern
+(the fractal): a candle whose high is above both neighbours is a swing high. It is symmetric, trivial to compute, and it is what most swing indicators use. Others widen the window to 5 or 7 candles, or filter candidates by a minimum move in points or ATR.
+This indicator uses a different definition — the
+pullback
+definition used in Trading Hub 3.0. Instead of asking whether a candle is taller than its neighbours, it asks whether
+price came back and rejected that candle
+. A high becomes a swing only once the market trades back through the low of the candle that made it. Nothing is decided by shape; everything is decided by what price does afterwards.
+The practical difference: a fractal describes geometry, while a pullback describes an event. Because a pullback is an event, it also tells you
+when
+the swing became valid — and that timestamp is what makes a non-repainting implementation possible.
+How the rule works
+The detector is never looking for both sides at once. It searches for
+one side at a time
+, and it holds exactly three pieces of information:
+State
+Meaning
+Direction
+which side is currently being searched for — a high or a low
+Tracked extreme
+the highest high (or lowest low) seen so far in the current leg
+Reference level
+the
+opposite
+edge of the candle that made that extreme
+The reference is the important part. When a candle sets a new highest high, that same candle also supplies the level that will later confirm it:
+its own low
+. Price must come back through that low for the high to count.
+Reading the figure:
+A
+— a leg opens. The tracked high and the reference low both come from one candle.
+B
+— every higher high replaces both values. The high is still provisional; nothing is drawn.
+C
+— a candle finally trades below the reference low.
+That
+is the pullback, and it confirms the tracked high as a swing high.
+D
+— the confirming candle immediately opens the search for a low, mirrored: track the lowest low, the reference is its high, a break above confirms it.
+Because confirming one side always flips the search to the other,
+swing highs and lows alternate automatically
+. There is no separate rule enforcing it and no comparison against earlier swings.
+The rules, candle by candle
+On every closed candle the detector asks two independent questions:
+did this candle make a new extreme?
+and
+did it break the reference?
+Four combinations are possible per direction.
+#
+Current trend
+Current candle
+Action 1
+Action 2
+1
+Looking for a
+HIGH
+Inside bar
+— no new high, reference low intact
+nothing
+nothing
+2
+Looking for a
+HIGH
+New high
+, reference low intact
+tracked high = this candle's high
+reference low = this candle's low
+3
+Looking for a
+HIGH
+Break
+— no new high, but trades below the reference low
+confirm the tracked high as a
+swing high
+flip to LOW: tracked low = this candle's low, reference high = this candle's high
+4
+Looking for a
+HIGH
+Outside bar
+— new high
+and
+breaks the reference low
+confirm
+this candle's own high
+as a swing high
+flip to LOW: tracked low = this candle's low, reference high = this candle's high
+5
+Looking for a
+LOW
+Inside bar
+— no new low, reference high intact
+nothing
+nothing
+6
+Looking for a
+LOW
+New low
+, reference high intact
+tracked low = this candle's low
+reference high = this candle's high
+7
+Looking for a
+LOW
+Break
+— no new low, but trades above the reference high
+confirm the tracked low as a
+swing low
+flip to HIGH: tracked high = this candle's high, reference low = this candle's low
+8
+Looking for a
+LOW
+Outside bar
+— new low
+and
+breaks the reference high
+confirm
+this candle's own low
+as a swing low
+flip to HIGH: tracked high = this candle's high, reference low = this candle's low
+Rows 1–4 and 5–8 are exact mirrors, which is why the whole engine is only a few dozen lines.
+The rare case: a candle that breaks both directions
+Rows 4 and 8 deserve their own explanation. Usually a candle either extends the leg or breaks the reference. An
+outside bar
+can do both at once — it makes a new high
+and
+trades below the reference low in the same candle.
+Both rules then claim it, and they contradict each other. Treating it as an extension throws away a real break; treating it as a break would confirm a high that this very candle has already exceeded.
+The resolution is to let the candle be the swing itself:
+Its
+own high
+is confirmed as the swing high — not the older tracked high, which it has just taken out.
+The
+same candle
+then opens the opposite leg: the tracked low becomes its low and the reference becomes its high.
+So one candle carries both a swing high and the start of the low leg. On the chart this shows up as a marker above
+and
+below the same bar, with a vertical leg between them — which is exactly what happened inside that candle.
+This is also why the legs are drawn as trend-line objects rather than a
+DRAW_SECTION
+buffer. A section plot stores one value per bar and could not hold two points on the same candle.
+It does not repaint
+The tracked extreme is
+provisional and is never drawn
+. A swing is written to the chart only on the candle that confirms it, and once written it is never moved, recoloured or removed. Only closed candles are evaluated; the forming candle is ignored entirely.
+The trade-off is honest and worth stating:
+confirmation lag
+. The newest swing appears only after the break that validates it. If you want a marker the instant a new high prints, this is the wrong tool — that marker would have to move later, which is repainting.
+Inputs
+Detection
+Input
+Default
+What it does
+Start by looking for
+Looking for a swing high
+Which side the very first leg searches for. It only affects the oldest bars on the chart; after the first confirmation the direction is driven entirely by the breaks. Leave it alone unless the first swing on your history looks wrong.
+Break confirmed by
+Wick
+Wick
+uses the candle's high/low — the literal Trading Hub rule, and the more sensitive setting.
+Close
+requires the candle to
+close
+through the reference, which ignores single-wick pokes and gives noticeably fewer, larger swings.
+How to choose:
+start with
+Wick
+. If you are working on M1–M15, or on a symbol with long noisy wicks such as gold or an index CFD, switch to
+Close
+— it removes most of the swings caused by a single spike without changing the logic anywhere else. A higher timeframe is the other way to get larger structure; the rule itself has no sensitivity or period setting to tune.
+Display
+Input
+Default
+What it does
+Draw the swing markers
+true
+Turns the arrows on or off. The buffers stay filled either way, so
+iCustom
+still returns every swing.
+Arrow code — swing high / low
+217
+/
+218
+Wingdings codes. Common alternatives:
+234
+/
+233
+,
+241
+/
+242
+,
+159
+for dots.
+Arrow distance from the bar
+10
+Gap in pixels between the candle and its arrow. Increase it on dense charts.
+Draw the legs between swings
+true
+The dotted zig-zag connecting consecutive swings. Turn it off if you already run a zig-zag.
+Leg colour / style / width
+silver, dotted, 1
+Appearance of the legs.
+Turning
+both
+markers and legs off leaves a purely computational instance — useful when an EA reads the buffers and you do not want anything on the chart.
+Alerts
+Input
+Default
+What it does
+Popup alert on a confirmed swing
+false
+Terminal popup when a swing is confirmed.
+Push notification on a confirmed swing
+false
+Push to the MetaQuotes ID set in Tools → Options → Notifications.
+Alerts fire only on live updates, never while the indicator loads history, and only once per swing.
+Using it from an EA
+Two buffers, both non-empty only on confirmed swings (empty value is
+0.0
+):
+Buffer
+Contents
+0
+price of a confirmed swing
+high
+1
+price of a confirmed swing
+low
+int
+h = iCustom(_Symbol, _Period,
+"SMC_Pullback"
+);
+double
+buf[];
+CopyBuffer(h,
+0
+,
+0
+,
+100
+, buf);
+// swing highs
+The detection engine lives in a single self-contained class,
+CPullbackDetector
+, with no chart or buffer dependencies — it takes the price arrays and reports confirmed swings, so it can be copied straight into an EA if you would rather not go through
+iCustom
+.
+What it deliberately does not do
+This indicator stops at the swing points. It does not label HH/HL/LH/LL, and it does not derive BOS, CHoCH, IDM, order blocks or liquidity levels. Those are separate steps that need a reliable set of swings first — which is exactly what this provides.
+The project is supported on MQL5 Algo Forge.
+You can find the code and next updates at below link.
+The repo is here:
+https://forge.mql5.io/SandroBegashvil/SMC-Pullback-CodeBase

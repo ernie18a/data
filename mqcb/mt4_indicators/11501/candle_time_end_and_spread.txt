@@ -1,0 +1,2 @@
+The indicator shows candle end time and current spread.
+I just submit, this is not my indi. I just download and share with you guys.

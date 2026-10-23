@@ -1,0 +1,5 @@
+Author: Matthew (Dr Chaos) Kennel
+This is a very simplistic method, one of the best in the signal processing and target tracking. Read more in the copyright section.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7456

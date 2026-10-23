@@ -1,0 +1,8 @@
+The simplest robot that buys and sells!
+It is based on the EA description on the
+forum
+:
+"The idea is to buy (say) some 0.01 lot at the current price. Once the price increases by (say) 46 points, the deal is closed (with a profit). Then repeat, etc. But if the price goes in the wrong direction (say) 31 points, the deal is closed (but with a loss). And a sell deal is then opened. After the price makes 46 points down, close with a profit or if goes 31 up, close with a negative result. And so on, the cycle is repeated "
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2200

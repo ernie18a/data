@@ -1,0 +1,74 @@
+Adaptive CCI - Dynamic Commodity Channel Index
+Overview
+The Adaptive CCI indicator revolutionises the traditional Commodity Channel Index by replacing fixed thresholds (100/-100) with dynamically adjusting upper and lower limits that adapt to the current market volatility. Instead of using arbitrary levels that work poorly across different assets and market conditions, this indicator automatically calculates optimal overbought and oversold levels based on the actual price behaviour.
+Key Features
+Dynamic Threshold Adjustment
+: Upper and lower limits automatically adapt to market volatility using Exponential Moving Average (EMA) of detected peaks and troughs
+Volatility-Based Smoothing
+: Adjusts responsiveness based on ATR (Average True Range), becoming more sensitive during high volatility and more stable during low volatility
+No More False Signals
+: Eliminates signals generated during sideways markets where traditional CCI would give false overbought/oversold readings
+Asset-Specific Calibration
+: Works optimally for any asset without manual threshold adjustments
+Strategy Tester Compatible
+: Functions correctly in both real-time trading and historical backtesting
+How It Works
+Peak/Trough Monitoring
+: Tracks CCI values between threshold crossings
+EMA-Based Adaptation
+: Uses Exponential Moving Average to smooth the dynamic thresholds
+Volatility Adjustment
+: Automatically modifies the EMA smoothing factor based on current market volatility
+Real-Time Updates
+: Thresholds continuously update as new price data arrives
+How to Use
+Overbought Condition
+: When CCI crosses above the dynamic upper limit (red line)
+Oversold Condition
+: When CCI crosses below the dynamic lower limit (green line)
+Reversal Signals
+: Look for price reversals when CCI exits the overbought/oversold zones
+Trend Confirmation
+: Use alongside price action for higher probability entries
+Inputs
+CCI_Period
+: CCI calculation period (default: 14) - increase for more smoothing
+BaseThreshold
+: Base threshold for peak/trough detection (default: 100)
+EMA_Smoothing
+: EMA smoothing factor (0.1-0.3, default: 0.2) - higher values react faster
+ATR_Period
+: ATR period for volatility measurement (default: 14)
+VolatilityFactor
+: Volatility adjustment factor (default: 0.5)
+Trading Strategies
+Reversal Trading
+: Enter long when price reverses upward after CCI crosses below dynamic lower limit
+Trend Following
+: Use as confirmation - only take trend trades when CCI is not in overbought/oversold territory
+Divergence Detection
+: Look for divergences between price and CCI with dynamic thresholds
+Multi-Timeframe Analysis
+: Apply on higher timeframe for trend direction, lower timeframe for entries
+Pro Tips
+- For **high
+volatility assets**
+(crypto, GBP pairs): Increase BaseThreshold to 110-120
+- For **low
+volatility assets**
+(major forex pairs): Decrease BaseThreshold to 90-100
+- Combine with
+price action
+for higher probability signals
+- Works best on H1 and higher timeframes but can be used on lower timeframes with adjusted parameters
+- The dynamic thresholds provide better signal quality than fixed levels during different market regimes
+Why It's Better Than Traditional CCI
+Traditional CCI uses fixed thresholds (100/-100) that work well in some markets but poorly in others. The Adaptive CCI solves this fundamental limitation by:
+- Automatically adjusting to each asset's unique volatility profile
+- Reducing false signals during sideways markets
+- Maintaining sensitivity during trending markets
+- Providing statistically relevant overbought/oversold levels
+This indicator is the result of extensive research and testing to create a more intelligent version of the classic CCI that actually adapts to changing market conditions rather than forcing markets to fit arbitrary thresholds.
+Translated from Portuguese by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/pt/code/62155

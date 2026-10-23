@@ -1,0 +1,4 @@
+Theory :
+In “The V-Trade, Part 6: Technical Analysis—Divergence Indicators” in the August 2018 issue of STOCKS & COMMODITIES, author Sylvain Vervoort introduces a modified version of the stochastic RSI, an indicator that was first introduced by Tushar Chande and Stanley Kroll. That indicator applies a stochastic calculation to an RSI value rather than a simple value, and Vervoort’s update provides additional smoothing.
+Usage :
+It can be used as any similar stochastic RSI indicator

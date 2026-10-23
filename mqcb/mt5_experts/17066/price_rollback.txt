@@ -1,0 +1,28 @@
+Idea by
+:
+Scriptor
+.
+MQL5 code by
+:
+Vladimir Karputov
+.
+A trading system that only trades on resverse and from Thursday to Friday only.
+Inputs
+Lots
+- position volume (lot size is set manually, trading with a constant lot size)
+Stop Loss
+(in pips) - stop loss value
+Take Profit
+(in pips) - take profit value
+Trailing Stop
+(in pips) - trailing
+Trailing Step
+(in pips) - trailing step
+Corridor
+- price band
+Day of week
+- day of the week
+Default inputs are AUDUSD, M5, and "Every tick based on real ticks":
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17066

@@ -1,0 +1,14 @@
+This simple indicator will change the timeframes of the current chart with keypress.
+I have added yet another functionality to it to fix/unfix chart scale as well as show/hide price scale.
+Hotkeys:
+1 = 1 minute
+2 = 5 minutes
+3 = 15 minutes
+4 = 30 minutes
+5 = 60 minutes (1 hour)
+6 = 240 minutes (4 hour)
+7 = 1440 minutes (daily)
+8 = 10080 minutes (weekly)
+9 = 43200 minutes (monthly)
+0 = Chart Scale Fix/Unfix
+p = Show/Hide Price Scale on the Right

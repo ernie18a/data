@@ -1,0 +1,7 @@
+simple engulfing pattern. to help with manual trading mainly.
+simple and made to be.
+inputs for bar max size
+min size
+stops and target in pips
+lot sizes
+only open one trade at a time.

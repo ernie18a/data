@@ -1,0 +1,5 @@
+It shows the levels: SPREAD and STOPLEVEL - the minimum allowed levels of the StopLoss/TakeProfit in points.
+It informs if these values are changed.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/8652

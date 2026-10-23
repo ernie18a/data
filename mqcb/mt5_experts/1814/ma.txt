@@ -1,0 +1,6 @@
+A very simple EA based on the crossover of two
+Moving Average
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1814

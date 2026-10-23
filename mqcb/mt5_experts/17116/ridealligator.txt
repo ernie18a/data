@@ -1,0 +1,14 @@
+Author of the idea
+—
+Warstein
+,
+author of the MQL5 code
+—
+barabashkakvn
+.
+Trading based on two indicators: iAlligator (Alligator).
+Positions are opened only if there are no other positions opened.
+Example of opening a Sell position:
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17116

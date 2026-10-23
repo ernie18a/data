@@ -1,0 +1,6 @@
+Real author:
+igorad
+The indicator generates market entry signals (shown as large colored dots) and draws the line of Stop Loss orders positioning using the lime color for long positions and the magenta color for short ones.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/417

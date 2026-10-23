@@ -1,0 +1,4 @@
+The TicksInMySQL expert advisor writes ticks directly into the mySQL data base.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7850

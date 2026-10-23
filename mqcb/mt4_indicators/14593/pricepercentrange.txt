@@ -1,0 +1,2 @@
+Price(%)Range is the indicator for the MetaTrader 4, which calculates the price movement based on percentage High (Highest) and Low (Lowest) price on 100 bars. The indicator will provide alerts when price changes direction.
+Update 1 (22/01/2016) : Added SwingBars and Vertical Line on the chart.

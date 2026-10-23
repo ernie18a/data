@@ -1,0 +1,6 @@
+Author: mandorr
+It is calculated as the difference between two simple moving averages: SMA(5) and SMA(34). Type of the chart: histogram with green and red colored bars.
+In the "Ticker Awesome Oscillator" indicator the buffer with the index 0 (№0 in the "Colors" tab) is the hidden line, it returns the value of the oscillator when called from an EA. The buffer with the index 1 (№1 in the "Colors" tab) shows the rising bars, it is equal to zero for the falling bars. The buffer with the index 2 (№2 in the "Colors" tab) shows the falling bars, it is equal to zero for the rising bars. The plotting of the histogram starts from the 35th tick.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7490

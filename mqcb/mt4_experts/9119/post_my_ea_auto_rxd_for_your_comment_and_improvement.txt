@@ -1,0 +1,14 @@
+After wrote many EAs of many strategies, I think maybe this one has more potential, I post it here for your testing, verifing, and tuning, wish you can find bugs or improvements and reply here.
+Different symbols may have different settings, the default setting is not suitable for live trading, maybe you can fine tune and optimize one good setting and post your set file and your test result.
+Any suggestion is appreciated.
+As an example, with some indicator combined setting, the GBPUSD 2009.1.1 to present 2009.8.14 got the result bellow.
+If you want to use AI mode, don't forget to optimize DayX - N days to test DaysX + M days, while not just DayX - N days to verify DayX - N days.
+Update 2012.07.01
+//+------------------------------------------------------------------+
+//|History:
+//|Ver 0.01 2008.10.01
+//|...................
+//|Ver 1.67 2012.07.01
+//| 1. Added USD index.
+//| 2. Changed all indicators' default status to be false
+//+------------------------------------------------------------------+

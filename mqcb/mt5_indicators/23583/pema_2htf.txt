@@ -1,0 +1,7 @@
+A colored cloud made of two
+PEMAs
+from different timeframes on a single chart.
+Fig. 1. Indicator PEMA_2HTF
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/23583

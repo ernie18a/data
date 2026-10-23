@@ -1,0 +1,7 @@
+Real author:
+Sergey Porphiryev
+The indicator draws three pairs of the Bollinger Bands with a default standard deviation rate of 2, 3 and 4, respectively.
+Modified to accept all Bollinger Bands parameters.
+The full description with images is in the original author's post
+here
+!

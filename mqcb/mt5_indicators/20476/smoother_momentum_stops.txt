@@ -1,0 +1,3 @@
+Momentum is usually used for trend or price change direction assessment.
+This indicator changes that in some way. The stops are calculated using the smoother momentum and the direction of the stops is determined based on the smoother momentum.
+Apart from direction of the trend, the stops levels are based on the value of the smoother momentum. The distance of the stop from the used average is calculated based on the value of the smoother momentum giving the stops more room when the market is very volatile and narrowing the stops in the ranging periods.

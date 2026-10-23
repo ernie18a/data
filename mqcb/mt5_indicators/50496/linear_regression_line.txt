@@ -1,0 +1,4 @@
+This indicator uses the calculating method described in details here :
+Linear Regression Value
+. Please check that post for more details
+The same function from the above link is used to calculate this linear regression line

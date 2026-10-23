@@ -1,0 +1,21 @@
+The real author:
+Sovpel Alexander
+The indicator gives Stop Loss value for open position on the basis of the
+XATR
+indicator.
+Thanks to the information about the current market volatility we can develop the adaptive Stop Loss.
+Average target and adaptive Stop Loss
+We can use the average trading range (Average True Range) for a certain period of time and multiply that value by some constant (factor) to determine how far away stop order can be arranged from our entry . The advantage of using Stop Loss based on the Average True Range is that it is highly adaptive to current market conditions. The distance from the point of the entry to the exit point will increase in the periods of the high market volatility and decrease in the periods of the low market volatility. Thus, the adaptive Stop Loss is an excellent way to manage risks in terms of changing market volatility.
+This indicator was first implemented in MQL4 and published in
+Code Base
+on 25.09.2009.
+The indicator uses SmoothAlgorithms.mqh library classes (must be copied to the terminal_data_folder\MQL5\Include). The use of the classes was thoroughly described in the article
+"Averaging price series for intermediate calculations without using additional buffers"
+.
+The indicator uses the class of library
+GetFontName.mqh
+(must be copied to the terminal_data_folder\MQL5\Include).
+Fig.1 The XATRStopLevel indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1262

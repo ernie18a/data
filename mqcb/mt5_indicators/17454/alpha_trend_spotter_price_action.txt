@@ -1,0 +1,48 @@
+Real author
+: Andy Ismail
+Semaphore signal indicator based on the price action strategy looking for the strongest intraday trend, which can notify about trend change by generating an alert, sending an email or a push notification to a mobile device.
+//+----------------------------------------------+
+//| Indicator input parameters                   |
+//+----------------------------------------------+
+input
+int
+iPeriod=
+3
+;
+input
+uint
+NumberofBar=
+1
+;
+//Bar number to generate a signal
+input
+bool
+SoundON=
+true
+;
+//Enable alert
+input
+uint
+NumberofAlerts=
+2
+;
+//Number of alerts
+input
+bool
+EMailON=
+false
+;
+//Enable notification about signal by an email
+input
+bool
+PushON=
+false
+;
+//Enable notification about signal by push
+This indicator was first implemented in MQL4 and was published in
+CodeBase
+on 04.01.2016.
+Fig1. The Alpha Trend Spotter Price_Action indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17454

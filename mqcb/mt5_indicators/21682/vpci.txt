@@ -1,0 +1,17 @@
+The VPCI (Volume Price Confirmation) indicator shows the relationship between the price and the volume.
+It has two input parameters:
+Slow MA period
+- slow MA period;
+Fast MA period
+- fast moving average period.
+Calculations:
+VPCI = VPC * VPR * VM
+where:
+VPC = VWMA(Slow MA period) - SMA(Slow MA period)
+VWMA = Sum(Close * Volume)
+SMA = Sum(Close)
+VPR = VWMA(Fast MA period) / SMA(Fast MA period)
+VM = (Sum(Volume, Fast MA period) * Slow MA period) / (Sum(Volume, Slow MA period) * Fast MA period)
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21682

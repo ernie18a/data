@@ -1,0 +1,9 @@
+The indicator finds Doji candlesticks and highlights them on the chart. Candlesticks with the trend are colored brightly, and those against the trend are colored darkly.
+The original indicator was developed in the MQL4 language and published in the
+CodeBase
+24.09.2007.
+Fig. 1. Doji_Arrows indicator. Red candle
+Fig. 2. Doji_Arrows indicator. Green candle
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21436

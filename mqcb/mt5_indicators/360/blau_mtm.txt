@@ -1,0 +1,18 @@
+Author:
+Andrey N. Bolkonsky
+Momentum Indicator by William Blau (see
+Momentum, Direction, and Divergence: Applying the Latest Momentum Indicators for Technical Analysis
+).
+In contrast with built-in standard
+iMomentum
+indicator, it calculates the absolute price change. In addition, it uses smoothing.
+Installation:
+WilliamBlau.mqh must be placed in
+terminal_data_folder
+\MQL5\Include\
+Blau_Mtm.mq5 must be placed in
+terminal_data_folder
+\MQL5\Indicators\
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/360

@@ -1,0 +1,28 @@
+Overview
+This indicator provides buy and sell signals based on the standard Stochastic Oscillator. It is designed to identify potential reversal points by monitoring crossovers that occur specifically within the overbought and oversold zones.
+How It Works (Core Logic)
+The indicator evaluates the Stochastic lines (K and D) and validates crossovers based on strict zone conditions:
+Buy Signal (Blue Arrow)
+:
+Triggered when the previous K or D line is at or below the Oversold level (default 20), followed by the K line crossing above the D line.
+Sell Signal (Red Arrow)
+:
+Triggered when the previous K or D line is at or above the Overbought level (default 80), followed by the K line crossing below the D line.
+Signal Filter
+:
+The indicator uses an alternating logic (anti-streak mechanism). It will only print one signal per direction consecutively (i.e., a Buy signal must be followed by a Sell signal, and vice versa) to prevent redundant arrows during continuous trends.
+Execution
+:
+All signals and alerts are processed strictly on closed bars. This ensures the indicator does not repaint or flicker during live price movements.
+Input Parameters
+Stochastic Settings
+:
+Standard parameters for the oscillator including K Period, D Period, Slowing, MA Method, and Price Field.
+Reversal Boundaries
+:
+Adjustable levels for Oversold (default 20.0) and Overbought (default 80.0) zones.
+Alert Settings
+:
+Option to enable or disable popup alerts. Alerts are triggered once per signal upon candle close.
+Usage Note
+Since this is a momentum reversal tool, it is recommended to use it alongside other technical analysis methods, such as higher timeframe trend filters, moving averages, or support/resistance levels, rather than relying on it as a standalone strategy.

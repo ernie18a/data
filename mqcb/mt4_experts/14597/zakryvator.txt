@@ -1,0 +1,24 @@
+The EA closes orders, opened in the terminal, when certain loss is reached by them in the account currency. Including the orders opened for all other pairs on which the adviser is not installed. It can be put on any currency pair and it will keep track of all open orders.
+It is possible to
+vary the loss by the volume of the order
+. For example, by default the maximum loss equals 4 (min_001_002=4) for orders with the volume of 0,01-0,02 lots (if the account is in dollars, then $4), and equals 30 (min_from1=30) at order volumes greater than 1 lot.
+Attention:
+possible slippage depending on the market conditions, as well as the broker!
+Input Parameters:
+min_001_002
+— The maximum loss per orders with volumes starting from 0,01 (inclusive) to 0,02 lots (inclusive);
+min_002_005
+— The maximum loss per orders with volumes starting from 0,02 (inclusive) to 0,05 lots (inclusive);
+min_005_01
+— The maximum loss per orders with volumes starting from 0,05 (inclusive) to 0,1 lots (inclusive);
+min_01_03
+— The maximum loss per orders with volumes starting from 0,1 (inclusive) to 0,3 lots (inclusive);
+min_03_05
+— The maximum loss per orders with volumes starting from 0,3 (inclusive) to 0,5 lots (inclusive);
+min_05_1
+— The maximum loss per orders with volumes starting from 0,5 (inclusive) to 1 lot (inclusive);
+min_from1
+— The maximum loss per orders with volumes greater than 1 lot;
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14597

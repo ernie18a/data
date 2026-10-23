@@ -1,0 +1,3 @@
+The ATR is a great tool. However, it cannot be used as a volatility indicator. I've bound it within 0 - 100% and compared it to the previous X days so a comparison can be made.
+Recommendations:
+For No Nonsense Forex followers, this has been created in attempt to incorporate the $EVZ chart into MT4. e.g. When the ATR(14) is at the bottom 25% compared to the past 800 days, instead of taking half profit off at the 1xATR mark, take the full profit off, as recommended by VP in the 'Dead Markets' episode.

@@ -1,0 +1,15 @@
+Exports the transaction history of the current trading account.
+The file is saved in the terminal folder
+MQL5/Files
+or in common folder for terminals
+Common/Files
+.
+The file name is generated automatically or set manually via script parameters.
+The history file can be used to simulate the same sequence of transactions on another trading server using the Simple History Receiver Expert Advisor or its open source version.
+Parameters:
+Name for file
+: Set name for file or leave it blank for auto-generating filename.
+Separators
+: Set separators for data parts in CSV-file (comma ',' or semicolon ';') and sign for decimal point (dot '.' or comma ',')
+Save file to Common Folder
+: If True, file will be saved into Common/Files folder

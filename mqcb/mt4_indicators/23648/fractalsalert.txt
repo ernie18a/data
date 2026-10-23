@@ -1,0 +1,3 @@
+FractalsAlert is base of the Indicator Fractals by MetaQuotes Software Corp. with alert and email alert and option to display trader info and signal.
+Hopefully useful for fellow traders.
+Update 2018-12-14: Update and fixed error, cause to delay alert.

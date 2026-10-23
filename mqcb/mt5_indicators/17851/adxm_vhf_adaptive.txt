@@ -1,0 +1,4 @@
+Version of ADXm that can be calculated using vhf (vertical/horizontal filter) for adapting the calculation period instead of having only fixed period.
+In order to see the effects of adapting, longer periods are advised ‌(shorter periods have very little benefit of any kind of adapting). That way on a longer periods it can "react" to sudden market volatility or it can keep to float in the direction of the trend if the vhf adapting "decides" so. In any case, some experimenting with parameters and usage is advised.
+‌
+‌

@@ -1,0 +1,3 @@
+T
+he Restoring Pull Indicator was created by John Ehlers (Stocks & Commodities V.11:10 (395-400)) and this was one of his earliest indicators that functions as a momentum indicator.
+Buy when the indicator line is green and sell when it is red.

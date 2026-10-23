@@ -1,0 +1,39 @@
+Author:
+Andrey N. Bolkonsky
+Ergodic DTI-Oscillator (based on
+Directional Trend Index
+) is described by William Blau in the book
+"Momentum, Direction, and Divergence: Applying the Latest Momentum Indicators for Technical Analysis"
+.
+WilliamBlau.mqh must be placed in
+terminal_data_folder
+\MQL5\Include\
+Blau_Ergodic_DTI.mq5 must be placed in
+terminal_data_folder
+\MQL5\Indicators\
+Ergodic DTI-Oscillator by William Blau
+Calculation:
+The Ergodic DTI-Oscillator is defined as follows:
+Ergodic_DTI(q,r,s,u) = DTI(q,r,s,u)
+SignalLine(q,r,s,u,ul) = EMA( Ergodic_DTI(q,r,s,u) ,ul)
+where:
+Ergodic_DTI() - Ergodic Line - Directional Trend Index DTI(q,r,s,u);
+SignalLine() - Signal Line - EMA(ul), applied to Ergodic Line;
+ul - smoothing period of a Signal Line.
+Input parameters
+:
+graphic plot #0 - Ergodic Line (Directional Trend Index тренда):
+q - number of bars, used in calculation of DTI (by default q=2);
+r - period of the 1st EMA, applied to DTI (by default r=20);
+s - period of the 2nd EMA, applied to result of the 1st smoothing (by default s=5);
+u - period of the 3rd EMA, applied to result of the 2nd smoothing (by default u=3);
+graphic plot #1 - Signal Line:
+ul - smoothing period of a Signal Line - EMA(ul), applied to Ergodic (by default ul=3);
+Notes:
+q>0;
+r>0, s>0, u>0. If  r, s or u are equal to 1, smoothing is not used;
+ul>0. If ul=1, the Signal Line and Ergodic Line are the same;
+Min. rates = (q-1+r+s+u+ul-4+1).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/385

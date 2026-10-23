@@ -1,0 +1,17 @@
+An oscillator using Fischer Transform of normalized prices.
+Normalizing price flows by Fischer Transform allows you to detect the peak oscillations of the indicator line, which indicate the trend resersal points.
+The indicator has two input parameters:
+Period
+- calculation period
+Applied price
+- calculation price
+Calculation:
+Fisher = 0.5*(Log((1+V) / (1-V)) + PrevFisher)
+Trigger = PrevFisher
+where:
+V = (2/3) * ((Price - MinPrice) / (MaxPrice - MinPrice) - 0.5 + PrevV)
+MinPrice, MaxPrice - the minimum and the maximum prices within the Period range Period
+Log - natural logarithm
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/20997

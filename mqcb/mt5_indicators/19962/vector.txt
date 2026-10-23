@@ -1,0 +1,14 @@
+The Vector indicator tracks the market state and generates relatively few false signals. Signals are formed when the zero line is crossed.
+The indicator has two oscillators - the fast and the slow one. The total of their values allows evaluating the mood of the market.
+If the fast (green) vector completely blocks the slow (red) one, this indicates the beginning of a new trend formation;
+If the slow (red) oscillator begins to prevail over the fast (green) one, this indicates a slowdown of the trend, which, however, may continue to fade for some time;
+The market inertia is represented by a slow oscillator, and the trends are represented by the fast one.
+The combined values of the two oscillators provide a picture of the market, which is sufficient for making a decision to buy/sell or to close existing positions.
+The indicator has two input parameters:
+Inertia osc color
+- the color of the inertia oscillator;
+Trend osc color
+- the color of the trend oscillator.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/19962

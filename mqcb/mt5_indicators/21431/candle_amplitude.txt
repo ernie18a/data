@@ -1,0 +1,23 @@
+Candle Amplitude oscillator displays the amplitude of candles in two modes:
+From High to Low
+From Open to Close
+If the current candle's selected amplitude exceeds the previous candle's one, the oscillator line is
+green
+.
+If the current candle's selected amplitude is lower than the previous candle's one, the oscillator line is
+red
+.
+There is also a signal line - the average value of the candles amplitude for a selected period.
+The indicator has two input parameters:
+Calculation mode
+High/Low
+- by High and Low prices
+Open/Close
+- by Open and Close prices
+Signal period
+- signal line period
+Fig. 1. Candle Amplitude, High/Low mode
+Fig. 2. Candle Amplitude, Open/Close mode
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/21431

@@ -1,0 +1,2 @@
+Woodies CCI is a momentum indicator that was developed by Ken Woods. It's based on a 14 period Commodity Channel Index (CCI). It's a fully unbounded oscillator with a base value of 0 and has no lower or upper limit.
+Some traders use the indicator to spot a number of tradable CCI patterns both with and against the trend, such as the zero line reject, the reverse divergence and the trendline break. The 200 level signals an extreme reading. The indicator is often used in combination with other signals.

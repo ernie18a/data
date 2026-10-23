@@ -1,0 +1,65 @@
+Author:
+Andrey N. Bolkonsky
+Candlestick Momentum Index (CMI, based on
+Candlestick Momentum Indicator
+) is described by William Blau in the book
+"Momentum, Direction, and Divergence: Applying the Latest Momentum Indicators for Technical Analysis"
+.
+WilliamBlau.mqh must be placed in
+terminal_data_folder
+\MQL5\Include\
+Blau_CMI.mq5 must be placed in
+terminal_data_folder
+\MQL5\Indicators\
+The values of Candlestick Momentum Indicator are normalized (by absolute values) and mapped into the [-100,+100] interval. Due to normalization, the positive values of CMI correspond the overbought states of the market, the negative values correspond to the oversold states of the market.
+Candlestick Momentum Index
+Calculation:
+The Candlestick Momentum Index is calculated by formula:
+100 * EMA(EMA(EMA( cmtm(price1,pric2,q) ,r),s),u)              100 * CMtm(price1,pric2,q,r,s,u)
+CMI(price1,price2,q,r,s,u) = –––––––––
+––
+––
+––
+––
+––
+––––––––––––––––––––––––– = ––––––––––––
+–––
+–––
+–––
+––
+–
+–––
+––
+––––––––––––
+EMA(EMA(EMA( |cmtm(price1,pric2,q)| ,r),s),u)         EMA(EMA(EMA( |cmtm(price1,pric2,q)| ,r),s),u)
+if EMA(EMA(EMA(|cmtm(price1,pric2,q)|,r),s),u)=0, then CMI(price1,price2,q,r,s,u)=0
+where:
+q - number of bars, used in calculation of Candlestick Momentum;
+price1 - close price;
+price2 - open price q bars ago;
+cmtm(price1,pric2,q)=price1-pric2[q-1] - Candlestick Momentum;
+|cmtm(price1,pric2,q)| - absolute value of Candlestick Momentum;
+CMtm(price,q,r,s,u) - Triple smoothed Candlestick Momentum;
+EMA(...,r) - 1st smoothing EMA(r), applied to:
+Candlestick Momentum;
+Absolute value of Candlestick Momentum;
+EMA(EMA(...,r),s) - 2nd smoothing - EMA(s), applied to result of the 1st smoothing;
+EMA(EMA(EMA(...,r),s),u) - 3rd smoothing - EMA(u), applied to result of the 2nd smoothing.
+Input parameters:
+q - number of bars, used in calculation of Candlestick Momentum (by default q=1);
+r - period of the 1st EMA, applied to Candlestick Momentum (by default r=20);
+s - period of the 2nd EMA, applied to result of the 1st smoothing (by default s=5);
+u - period of the 3rd EMA, applied to result of the 2nd smoothing (by default u=3);
+AppliedPrice1 -
+price type
+(by default AppliedPrice1=PRICE_CLOSE);
+AppliedPrice2 -
+price type
+(by default AppliedPrice2=PRICE_OPEN).
+Note:
+q>0;
+r>0, s>0, u>0. If r, s or u are equal to 1, the smoothing is not used;
+Min rates =(q-1+r+s+u-3+1).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/378

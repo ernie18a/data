@@ -1,0 +1,15 @@
+Real author:
+Forex-TSD.com
+An indicator of trend power with eight states. A growing trend is light blue and blue, the falling is red and yellow. Dark color indicates a strong trend, light color - a weak one.
+For the correct operation of the StepChoppy_v2 indicator, place the compiled files of
+StepRSI
+and
+StepMA_Line
+in folder terminal_data_directory\MQL5\Indicators.
+This indicator was first implemented in MQL4 and published in
+Code Base at mql4.com
+on 22.02.2008.
+Figure 1. The StepChoppy_v2 indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1882

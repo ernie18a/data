@@ -1,0 +1,8 @@
+The experimental trend indicator with alerts on the basis of price averaging.
+Mode - a mode of formation of a signal.
+StartBar - number of a bar from the trend beginning.
+Confirm - required confirmation movement in a signal direction (pips).
+Flat - distance from level of the previous signal in which limits new signals won't be formed (pips).
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/10499

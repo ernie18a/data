@@ -1,0 +1,6 @@
+The X2MA Moving Average turned to the oscillator using the normalization of its values in the range from 0 and to 100.
+For more visual perception the resulting indicator has been shifted down to the fifty values.
+Fig.1 The X2MA, X2MA_Osc and ColorX2MA_Osc indicators
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/1330

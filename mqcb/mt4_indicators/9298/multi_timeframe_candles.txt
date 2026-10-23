@@ -1,0 +1,6 @@
+Author:
+Julien Loutre
+I always wanted to see more details in the candles: At which point of the candle did it reach the High? When did it reach the low?
+This script generate candles from a higher timeframe on top of your actual chart.
+Example: See H1 candles on top of your M5 chart.
+H4 candles on top of a M15 chart (bottom), compared to an actual H4 chart (top)

@@ -1,0 +1,28 @@
+Real author:
+Andriy Moraru
+Shows current gain and loss for all candlesticks exceeding the specified threshold. Values are calculated in percentage and points.
+The indicator can calculate gain/loss in two modes: simple difference between Open and Close prices, difference between current Close and previous Close. The user can set minimum threshold (in points and percent), change the calculation mode and control the font color for displayed values.
+Input parameters:
+PercentageLimit
+(by default = 1.0) — threshold for displaying the change in percentage points.
+PipsLimit
+(by default = 1000) — threshold for displaying the change in broker points.
+CloseToClose
+(by default = true) — if
+true
+, the indicator will compare the current Close price with the previous Close price, if
+false
+— with the current Open price.
+DisplayLossColor
+(by default = Red) — color for negative changes (losses).
+DisplayGainColor
+(by default = Green) — color for positive changes (gains).
+DisplayDistance
+(by default = 100) — distance from the Maximum price of a candlestick to the displayed gain/loss value in broker points.
+MaxBars
+(by default = 100) — maximum number of bars to process. The higher this value, the slower the indicator will work.
+Tips:
+It is almost impossible to use this indicator for getting trade signals. It's mainly intended to simplify the market analysis and to make it easier to find certain bullish or bearish patterns. Of course, everyone can try to use abnormally big changes as signals to open or close positions.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13186

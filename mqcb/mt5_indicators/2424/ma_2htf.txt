@@ -1,0 +1,10 @@
+Real author:
+lukas1
+A colored cloud formed by two moving averages with different timeframes.
+This indicator was first implemented in MQL4 and published in
+CodeBase
+on February 9, 2007.
+Fig.1. lukas1 Indicator
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/2424

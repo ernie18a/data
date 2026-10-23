@@ -1,0 +1,10 @@
+EA is run say once every minute and writes the status of IsConnected, spread, stop and freeze level to a file.
+Parameters
+I_RecordPeriodInMinutes
+- In minutes, how often the spread etc. is recorded.
+I_InputSymbols
+- List of input symbols to monitor as a string, delimited by a semi-colon (;).
+I_BeginningOfLogFile
+- String used at the start of the log file name.
+It should be possible to import the data file into a spreadsheet for analysis using ';' as a delimiter.
+You may also need to edit the file so that it imports C_LOG.mqh correctly. I currently have this in the include directory, but it could go into other locations depending on your preference.

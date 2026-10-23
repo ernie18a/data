@@ -1,0 +1,6 @@
+Author:
+HomeSoft-Tartan Corp
+The indicator of the first price change derivative or simply trend speed and sign.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7363

@@ -1,0 +1,11 @@
+Author: Vladislav Goshkov (VG)
+Quote:
+The result - receive not only the Murray levels on which the pivot points are based, but also their current statistical significance...
+Discussions were held
+here
+and
+here
+.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/7480

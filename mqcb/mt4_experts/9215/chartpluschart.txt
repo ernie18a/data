@@ -1,0 +1,23 @@
+The program allows you to compare quotes of any two MetaTrader brokerage firms. This allows you to control their charts.
+Unpack the archive to the root, then there will be the folder c: / ChartPlusChart in which 5 files:
+Chart1.mq4 
+Chart2.mq4 
+libSharedVarsDL Lv2.def 
+SharedVarsDLLv2 . dll 
+ChartPlusChart.exe
+You will need two MetaTrader platforms of two different brokerage firms. In both open the same currency pairs and run Chart1.mq4 adviser in the first one, and Chart2.mq4 in the second one.
+
+The advisers work with the DLL so it is necessary to allow the DLL in the "Tools" menu, "Options".
+Mark the next item:
+-Allow dll imports
+And remove the check mark from the item
+-Confirm dll function call
+
+All files, except for advisers should be in c: / ChartPlusChart. 
+After starting advisers run ChartPlusChart.exe and see two graphs in one window.
+P.S.
+The latest version of HistoryTraining adviser (pending orders added) you can find at
+www.brokcompare.com
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/9215

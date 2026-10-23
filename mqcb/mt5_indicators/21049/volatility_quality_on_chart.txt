@@ -1,0 +1,7 @@
+Volatility Quality
+indicator made "on-chart".
+It can display values as:
+Bars
+Candles
+Lines
+When values are displayed as lines, then the average of Close is used for displayed line. The color is based on volatility quality and is not related to the slope of the line.

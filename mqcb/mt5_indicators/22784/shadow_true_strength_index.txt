@@ -1,0 +1,44 @@
+Shadow True Strength Index
+oscillator with two signal lines (TSI shadows).
+It has ten adjustable parameters:
+Price source
+- calculation price of the source data, on which TSI (*) is calculated
+Price source period
+- calculation period of the source data, on which TSI (*) is calculated
+First smoothing period
+- primary smoothing period
+Second smoothing period
+- secondary smoothing period
+First shadow period
+- first signal line calculation period
+First shadow method
+- first signal line calculation method
+Second shadow period
+- second signal line calculation period
+Second shadow method
+- second signal line calculation method
+Overbought
+- overbought level
+Oversold
+- oversold level
+Calculations:
+TSI = 100.0 * UDM2 / ADM2
+Shadow1 = MA(TSI, First shadow period, First shadow method)
+Shadow2 = MA(Shadow1, Second shadow period, Second shadow method)
+where:
+UDM2 = EMA(UDM1, Second smoothing period)
+ADM2 = EMA(ADM1, Second smoothing period)
+UDM1 = EMA(UDM, First smoothing period)
+ADM1 = EMA(ADM, First smoothing period)
+UDM = Close - PrevClose
+ADM = ABS(UDM)
+*
+Source data for TSI calculation:
+unlike indicator
+TSI
+calculated on the Close price, the calculations here are based on prices of the simple moving average (SMA) featuring both calculation prices and a timeframe. If SMA's Price source period is 1, the TSI line of the indicator fully coincides with the line of indicator
+TSI
+. In case of the high values of the Price source period, the TSI line is smoothed.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/22784
