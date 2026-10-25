@@ -1,0 +1,1 @@
+做空：datetime 的月份為 1 月 且 close < 前一根 close
