@@ -1,0 +1,1 @@
+datetime 月份為 1，且本根 close < 前一根 close 時，標示做空方向。
