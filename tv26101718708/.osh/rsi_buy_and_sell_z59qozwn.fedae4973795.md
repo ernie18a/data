@@ -1,0 +1,1 @@
+RSI(14) 以收盤價計算：change=close-前一根close；up=Wilder RMA(max(change,0),14)；down=Wilder RMA(max(-change,0),14)；RSI=100-100/(1+up/down)（down=0 時為100）。做多：RSI>70 時做多。做空：無。出場：RSI<30 時平掉所有持倉。

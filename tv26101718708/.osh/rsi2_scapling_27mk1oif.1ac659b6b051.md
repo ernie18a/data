@@ -1,0 +1,1 @@
+做多：收盤價 > close 的 200 根簡單移動平均，且 2 期 RSI < 5 時，以該根收盤價進場做多。RSI 算法：change = close - 前一根 close；up = max(change,0) 的 2 期 Wilder 平滑平均(RMA，alpha=1/2，以前 2 根 SMA 為初值)；down = -min(change,0) 的 2 期 RMA；down=0 時 RSI=100，up=0 時 RSI=0，其餘 RSI = 100 - 100/(1+up/down)。出場：持有多單時，收盤價 > close 的 5 根簡單移動平均，即平倉。無做空判斷。
