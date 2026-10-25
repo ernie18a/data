@@ -1,6 +1,0 @@
-【指標】effKey/effAtr/effChop 依週期：≤5分K或秒：1.0/7/1.3；6~60分：1.5/10/1.1；>60分到日內其餘及日線：2.0/14/1.0；週以上：2.5/20/0.9。xATR=ATR(effAtr)。volRatio=volume/SMA(volume,20)。er=|close-close[10]|/Σ10根|close-close[1]|（分母0則er=0）。chopMult=1+(1-er)*effChop。adaptiveMult：ATR(14)/SMA(ATR(14),50)<0.8取0.85，>1.2取1.15，否則1。assetMult（股票/CFD 1.0，加密1.5，外匯0.8，期貨1.2，指數/基金0.9，債券0.5）。dist=xATR*effKey*assetMult*adaptiveMult*clamp(volRatio,0.8,1.2)*chopMult。
-【追蹤線 stop】首根=close。若close>前stop且前一根close>前stop：stop=max(前stop,close-dist)；若close<前stop且前一根close<前stop：stop=min(前stop,close+dist)；否則（剛穿越）close>前stop則stop=close-dist，否則stop=close+dist。
-【做多】close上穿stop（前一根close<=前stop且本根close>stop），距上次任一方向訊號至少3根，且上一個訊號不是做多（多空必須交替）。
-【做空】close下穿stop，距上次訊號至少3根，且上一個訊號不是做空。
-【出場】持多單：進場價=訊號根close，ATR14為slATR，slMult依週期（≤5分1.0；6~60分1.3；其餘日內與日線1.8；週以上2.3）。多單R0=slATR*slMult+0.1*xATR，停損=進場價-R0；空單停損=進場價+R0。從進場後下一根起：多單low<=停損（容差0.51個最小跳動）即停損出場；空單high>=停損即出場。停利：多單high>=進場價+2*R0（空單low<=進場價-2*R0）出場（1R為第一目標）。出現反向做空/做多訊號時也出場並反向。若停損價落在進場價錯誤一側，改為進場價∓(1.5*xATR+0.1*xATR)。
-【可選過濾（預設關）】做多/做空額外需：ADX(14)>=15；Volume>=SMA(volume,20)*倍數；做多RSI(14)<70/做空RSI>30；做多close>HullMA(20)/做空close<HullMA；SuperTrend(ATR10,×3，hl2±3*ATR，趨勢上下轉換)做多需多頭/做空需空頭；Full Candle：做多low>stop、做空high<stop；多日內擺動：做多close>最近8根close最低*1.01、做空close<最高*0.99；高週期EMA9/21：做多EMA9>=EMA21、做空EMA9<=EMA21；連續N根close在stop同側。
