@@ -1,0 +1,1 @@
+做多：close > open 且 (close - low) / (high - low) 大於門檻。做空：close < open 且 (close - low) / (high - low) 小於門檻。
