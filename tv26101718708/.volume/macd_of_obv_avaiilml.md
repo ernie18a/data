@@ -1,0 +1,85 @@
+# MACD of OBV
+
+- url: https://www.tradingview.com/script/avAIiLmL-MACD-of-OBV/
+- type: strategy
+- pine_id: PUB;tqJ1DpRhOXrAy6YyNcgO9mgUiTSDvMqf
+- version: 1.0
+
+## Description
+
+Calculates trend of OBV with help of MACD indicator.
+
+## Source Code
+
+````pine
+//@version=3
+
+strategy(title = "MACD of OBV", overlay = false)
+
+//////////////////////// OBV ///////////////////////////
+
+src = close
+obv = cum(change(src) > 0 ? volume : change(src) < 0 ? -volume : 0*volume)
+
+
+//////////////////////// OBV   //////////////////////////
+
+//////////////// MACD OF OBV ////////////////////////////
+
+sourcemacd = obv 
+
+fastLength = input(12, minval=1), slowLength=input(26,minval=1)
+signalLength=input(9,minval=1)
+
+
+fastMA = ema(sourcemacd, fastLength)
+slowMA = ema(sourcemacd, slowLength)
+
+macd = fastMA - slowMA
+signal = ema(macd, signalLength)
+delta=macd-signal
+
+swap1 = delta>0?green:red
+
+plot(delta,color=swap1,style=columns,title='Histo',histbase=0,transp=20)
+p1 = plot(macd,color=blue,title='MACD Line')
+p2 = plot(signal,color=red,title='Signal')
+fill(p1, p2, color=blue)
+hline(0)
+
+
+
+
+/////////////////////////MACD OF OBV //////////////////////////
+
+
+// Conditions
+
+
+
+longCond = na
+sellCond = na
+longCond :=  crossover(delta,0)
+sellCond :=  crossunder(delta,0)
+
+
+
+
+monthfrom =input(6)
+monthuntil =input(12)
+dayfrom=input(1)
+dayuntil=input(31)
+
+
+
+if (  longCond    and  month>=monthfrom and month <=monthuntil and dayofmonth>=dayfrom and dayofmonth < dayuntil) 
+    strategy.entry("BUY", strategy.long, stop=close, oca_name="TREND", oca_type=strategy.oca.cancel, comment="BUY")
+    
+else
+    strategy.cancel(id="BUY")
+
+
+if ( sellCond   and month>=monthfrom and month <=monthuntil and dayofmonth>=dayfrom and dayofmonth < dayuntil ) 
+
+    strategy.close("BUY")
+````
