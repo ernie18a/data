@@ -1,0 +1,1 @@
+將標的代碼轉大寫後，依代碼配對波動率指數：SPX、SPY、US500、SPXUSD 或含 ES1! → VIX；NDX、QQQ、US100 或含 NQ1! → VXN；RUT、IWM、US2000 或含 RTY1! → RVX；DJI、DIA、US30 或含 YM1! → VXD。這些規則涵蓋指數與指數期貨標的，依代碼配對，不依商品類型判斷；沒有選擇權標的的分類或配對條件。

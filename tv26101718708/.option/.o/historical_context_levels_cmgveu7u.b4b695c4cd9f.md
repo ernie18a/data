@@ -1,0 +1,1 @@
+依圖表商品代碼判斷相容性：US500 接受代碼為 US500、SPX500、SPX500USD 或 SPX 的指數／CFD，或 CME 交易所、root 為 ES／MES 的期貨；AUS200 接受 AUS200、AUSTRALIA200CFD、AU200AUD 或 XJO 的指數／CFD，或 ASX、root AP 的期貨；UK100 接受 UK100、UK100GBP 或 UKX 的指數／CFD，或 ICEEUR、root Z 的期貨；VIX 接受代碼 VIX 的指數，或 CBOE、root VX 的期貨。指數與期貨可依同一商品家族視為相容；選擇權不符合任何條件。
