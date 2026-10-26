@@ -1,0 +1,259 @@
+1m_xau_cumulative_delta_volume_with_ob_breakouts_nh8sr0sl.b0c0c165bdbc.md	1	支撐區上下界＝已完成	none	level	none	sr_zone|session_range|atr	none	none	mixed	no
+1m_xau_cumulative_delta_volume_with_ob_breakouts_nh8sr0sl.b0c0c165bdbc.md	2	阻力區上下界＝已完成	none	level	none	sr_zone|session_range|atr	none	none	mixed	no
+1m_xau_cumulative_delta_volume_with_ob_breakouts_nh8sr0sl.b0c0c165bdbc.md	3	單根成交量差＝較低週	none	indicator	none	delta|volume	none	none	mixed	yes
+1m_xau_cumulative_delta_volume_with_ob_breakouts_nh8sr0sl.b0c0c165bdbc.md	4	近期成交量差＝單根成	none	indicator	none	delta	none	none	mixed	yes
+1m_xau_cumulative_delta_volume_with_ob_breakouts_nh8sr0sl.b0c0c165bdbc.md	5	時段資料已完成，且先	long	null	retest	sr_zone|session_range|delta	volume|cooldown	none	mixed	yes
+1m_xau_cumulative_delta_volume_with_ob_breakouts_nh8sr0sl.b0c0c165bdbc.md	6	時段資料已完成，且先	short	null	retest	sr_zone|session_range|delta	volume|cooldown	none	mixed	yes
+1m_xau_cumulative_delta_volume_with_ob_breakouts_nh8sr0sl.b0c0c165bdbc.md	7	多單，最低價低於等於	long	null	price_touch	none	none	stop_fixed|tp_fixed	mixed	no
+1m_xau_cumulative_delta_volume_with_ob_breakouts_nh8sr0sl.b0c0c165bdbc.md	8	空單，最高價高於等於	short	null	price_touch	none	none	stop_fixed|tp_fixed	mixed	no
+aphrodite_xdxpllf1.f789a86fe759.md	1	偽隨機常態值＝以逐棒	none	indicator	none	ma|stdev|other	none	none	unknown	no
+aphrodite_xdxpllf1.f789a86fe759.md	2	OHLC 質數旗標＝	none	state	none	other	none	none	unknown	no
+aphrodite_xdxpllf1.f789a86fe759.md	3	月份與日符合設定的進	long	null	compare	other	date_range	none	unknown	no
+aphrodite_xdxpllf1.f789a86fe759.md	4	任意持倉，當根開、高	both	null	compare	other	none	indicator_exit	unknown	no
+bb_strategy_final_naprawiona_uoug11ct.827cf1708569.md	1	固定波段停損價＝進場	both	risk	none	swing	none	stop_struct	mean_revert	no
+bb_strategy_final_naprawiona_uoug11ct.827cf1708569.md	2	最低價低於布林通道下	long	null	band_revert	bb	none	none	mean_revert	no
+bb_strategy_final_naprawiona_uoug11ct.827cf1708569.md	3	最高價高於布林通道上	short	null	band_revert	bb	none	none	mean_revert	no
+bb_strategy_final_naprawiona_uoug11ct.827cf1708569.md	4	多單，啟用手動停損且	long	null	price_touch	bb|swing	toggle	stop_fixed|stop_struct|tp_fixed|indicator_exit	mean_revert	no
+bb_strategy_final_naprawiona_uoug11ct.827cf1708569.md	5	空單，啟用手動停損且	short	null	price_touch	bb|swing	toggle	stop_fixed|stop_struct|tp_fixed|indicator_exit	mean_revert	no
+big_trend_catcher_quadgate_vcp_atr_trailing_swing_trade_srrb0tts.3aea9ce4f096.md	1	布林帶寬＝（上軌－下	none	indicator	none	bb	none	none	breakout	no
+big_trend_catcher_quadgate_vcp_atr_trailing_swing_trade_srrb0tts.3aea9ce4f096.md	2	平滑動能＝收盤價相對	none	indicator	none	roc|ma	none	none	breakout	no
+big_trend_catcher_quadgate_vcp_atr_trailing_swing_trade_srrb0tts.3aea9ce4f096.md	3	ATR 追蹤線＝取回	long	risk	none	atr|swing	none	trailing	breakout	no
+big_trend_catcher_quadgate_vcp_atr_trailing_swing_trade_srrb0tts.3aea9ce4f096.md	4	空倉，且（收盤價上穿	long	null	cross	ma|volume|bb|atr|roc	position|volume|volatility|trend_ma|cooldown	none	breakout	no
+big_trend_catcher_quadgate_vcp_atr_trailing_swing_trade_srrb0tts.3aea9ce4f096.md	5	多倉，收盤價低於 A	long	null	compare	atr|ma	none	trailing|indicator_exit	breakout	no
+breakout_trend_trading_strategy_v2_w5lhtjo4.d87444e1ab4b.md	1	趨勢突破＝收盤價與前	none	state	compare	atr	none	none	mixed	no
+breakout_trend_trading_strategy_v2_w5lhtjo4.d87444e1ab4b.md	2	趨勢量突破＝成交量大	none	state	compare	volume	none	none	mixed	no
+breakout_trend_trading_strategy_v2_w5lhtjo4.d87444e1ab4b.md	3	突破狀態＝收盤價上漲	both	state	compare	atr|volume	none	none	mixed	no
+breakout_trend_trading_strategy_v2_w5lhtjo4.d87444e1ab4b.md	4	目標通道＝突破狀態為	both	risk	none	atr	none	stop_atr|tp_atr	mixed	no
+breakout_trend_trading_strategy_v2_w5lhtjo4.d87444e1ab4b.md	5	新高條件＝較短回看期	both	state	compare	swing	none	none	mixed	no
+breakout_trend_trading_strategy_v2_w5lhtjo4.d87444e1ab4b.md	6	均線排列分數＝逐根累	none	score	compare	ma	none	none	mixed	no
+breakout_trend_trading_strategy_v2_w5lhtjo4.d87444e1ab4b.md	7	年度高點條件＝近年高	both	state	compare	swing	none	none	mixed	yes
+breakout_trend_trading_strategy_v2_w5lhtjo4.d87444e1ab4b.md	8	交易日期有效且年度高	long	null	breakout	swing|ma|supertrend|percentile|bb|atr|volume	date_range|htf|toggle|trend_ma	none	mixed	yes
+breakout_trend_trading_strategy_v2_w5lhtjo4.d87444e1ab4b.md	9	交易日期有效且年度低	short	null	breakout	swing|ma|supertrend|percentile|atr|volume	date_range|htf|toggle|trend_ma	none	mixed	yes
+breakout_trend_trading_strategy_v2_w5lhtjo4.d87444e1ab4b.md	10	多方，持倉停損價被觸	long	null	price_touch	atr|bb	toggle|date_range	stop_atr|indicator_exit	mixed	no
+breakout_trend_trading_strategy_v2_w5lhtjo4.d87444e1ab4b.md	11	空方，持倉停損價被觸	short	null	price_touch	atr	toggle|date_range	stop_atr|indicator_exit	mixed	no
+btfd_strategy_3min_qrwx46zq.092ea630ca2c.md	1	成交量高於成交量均線	long	null	compare	volume|rsi	volume	none	mean_revert	no
+btfd_strategy_3min_qrwx46zq.092ea630ca2c.md	2	多持倉，最高價達到進	long	null	price_touch	none	none	stop_fixed|tp_fixed|partial	mean_revert	no
+bucket_3_momentum_yi5au2ny.6889bf27f37b.md	1	RSI訊號線＝RSI	none	indicator	none	rsi|ma	none	none	trend	no
+bucket_3_momentum_yi5au2ny.6889bf27f37b.md	2	setup scor	long	score	none	rsi|ma|macd|adx	none	none	trend	no
+bucket_3_momentum_yi5au2ny.6889bf27f37b.md	3	停損價＝進場時較長回	long	risk	none	swing|atr	none	stop_struct	trend	no
+bucket_3_momentum_yi5au2ny.6889bf27f37b.md	4	移動停損價＝持倉以來	long	risk	none	atr|swing	none	trailing	trend	no
+bucket_3_momentum_yi5au2ny.6889bf27f37b.md	5	較高週期收盤價高於其	long	null	breakout	ma|rsi|adx|swing|atr|volume|candle	htf|trend_ma|osc_range|adx|candle_color|volume|position	none	trend	yes
+bucket_3_momentum_yi5au2ny.6889bf27f37b.md	6	多單，最低價不高於初	long	null	price_touch	ma|rsi|adx|atr|swing	none	stop_struct|trailing|indicator_exit	trend	no
+bullish_reversal_bar_strategy_skyrexio_3e33wake.3f2b573cdee2.md	1	反轉訊號K＝收盤價高	long	pattern	candle	candle|swing	none	none	reversal	no
+bullish_reversal_bar_strategy_skyrexio_3e33wake.3f2b573cdee2.md	2	鱷魚線＝中間價的長、	none	indicator	none	alligator|ma	none	none	reversal	no
+bullish_reversal_bar_strategy_skyrexio_3e33wake.3f2b573cdee2.md	3	AO＝中間價短期 S	none	indicator	none	ao	none	none	reversal	no
+bullish_reversal_bar_strategy_skyrexio_3e33wake.3f2b573cdee2.md	4	蹲伏狀態＝高低幅除以	none	state	compare	mfi|volume	none	none	reversal	no
+bullish_reversal_bar_strategy_skyrexio_3e33wake.3f2b573cdee2.md	5	趨勢狀態＝高點上穿高	both	state	breakout	alligator|swing	none	none	reversal	no
+bullish_reversal_bar_strategy_skyrexio_3e33wake.3f2b573cdee2.md	6	反轉訊號K成立，且其	long	null	candle	candle|alligator|ao|mfi|volume	toggle	none	reversal	no
+bullish_reversal_bar_strategy_skyrexio_3e33wake.3f2b573cdee2.md	7	多單，低點觸及進場訊	long	null	price_touch	candle|alligator|swing	none	stop_struct|indicator_exit	reversal	no
+concordance_execution_model_joat_zpklbja0.11178683fcfb.md	1	結構方向＝以擺動高低	both	state	breakout	structure|swing|atr	none	none	trend	no
+concordance_execution_model_joat_zpklbja0.11178683fcfb.md	2	ALMA 狀態＝各週	both	state	breakout	ma|stdev	none	none	trend	yes
+concordance_execution_model_joat_zpklbja0.11178683fcfb.md	3	成交壓力＝以收盤價在	none	indicator	none	volume|delta	none	none	trend	no
+concordance_execution_model_joat_zpklbja0.11178683fcfb.md	4	相對成交量＝成交量除	none	indicator	none	volume	none	none	trend	no
+concordance_execution_model_joat_zpklbja0.11178683fcfb.md	5	壓力分數＝由基準分數	both	score	compare	volume|delta|vwap	none	none	trend	no
+concordance_execution_model_joat_zpklbja0.11178683fcfb.md	6	動能狀態＝以收盤價作	both	state	compare	other|atr	none	none	trend	no
+concordance_execution_model_joat_zpklbja0.11178683fcfb.md	7	回歸方向與信心＝以較	both	state	compare	regression	none	none	trend	no
+concordance_execution_model_joat_zpklbja0.11178683fcfb.md	8	多空分數＝分別加權累	both	score	score	structure|ma|regression|other|volume	none	none	trend	yes
+concordance_execution_model_joat_zpklbja0.11178683fcfb.md	9	收盤 K 線確認且波	long	null	score	structure|ma|regression|volume|atr	volatility|cooldown|volume|position	none	trend	yes
+concordance_execution_model_joat_zpklbja0.11178683fcfb.md	10	收盤 K 線確認且波	short	null	score	structure|ma|regression|volume|atr	volatility|cooldown|volume|position	none	trend	yes
+concordance_execution_model_joat_zpklbja0.11178683fcfb.md	11	多方，最低價低於入場	long	null	price_touch	atr|structure	none	stop_atr|tp_atr|trailing|bars_held|indicator_exit	trend	no
+concordance_execution_model_joat_zpklbja0.11178683fcfb.md	12	空方，最高價高於入場	short	null	price_touch	atr|structure	none	stop_atr|tp_atr|trailing|bars_held|indicator_exit	trend	no
+dz_strategy_ict_17hd0ywl.fe119b59a84b.md	1	價格通道上軌與下軌＝	none	indicator	none	bb|ma|stdev	none	none	mean_revert	no
+dz_strategy_ict_17hd0ywl.fe119b59a84b.md	2	止損價＝進場均價 ×	long	risk	none	none	none	stop_fixed	mean_revert	no
+dz_strategy_ict_17hd0ywl.fe119b59a84b.md	3	位移後收盤價由下向上	long	null	band_revert	bb|volume	volume	none	mean_revert	no
+dz_strategy_ict_17hd0ywl.fe119b59a84b.md	4	位移後收盤價由上向下	short	null	band_revert	bb|volume	volume	none	mean_revert	no
+dz_strategy_ict_17hd0ywl.fe119b59a84b.md	5	多單，最低價 ≤ 止	long	null	price_touch	none	none	stop_fixed	mean_revert	no
+dz_strategy_ict_17hd0ywl.fe119b59a84b.md	6	空單，最高價 ≥ 止	short	null	price_touch	none	none	stop_fixed	mean_revert	no
+free_strategy_08_combo_of_01_and_02_es_spy_fe0nxce4.20dd88448b9f.md	1	OHLC均價＝（op	none	indicator	none	other	none	none	mean_revert	no
+free_strategy_08_combo_of_01_and_02_es_spy_fe0nxce4.20dd88448b9f.md	2	持倉根數＝持倉期間逐	none	other	time	none	none	bars_held	mean_revert	no
+free_strategy_08_combo_of_01_and_02_es_spy_fe0nxce4.20dd88448b9f.md	3	獲利收盤累計根數＝持	long	other	sequence	none	none	none	mean_revert	no
+free_strategy_08_combo_of_01_and_02_es_spy_fe0nxce4.20dd88448b9f.md	4	空倉且（收盤價低於長	long	null	compare	ma|volume|candle	position	none	mean_revert	no
+free_strategy_08_combo_of_01_and_02_es_spy_fe0nxce4.20dd88448b9f.md	5	做多，持倉根數減一不	long	null	time	none	none	bars_held	mean_revert	no
+goldencrossovercp5394_akf0t6mz.fbd6c62be2a0.md	1	短期 EMA、中期 	none	indicator	none	ma	none	none	trend	no
+goldencrossovercp5394_akf0t6mz.fbd6c62be2a0.md	2	成交量均線＝成交量的	none	indicator	none	volume	none	none	trend	no
+goldencrossovercp5394_akf0t6mz.fbd6c62be2a0.md	3	訊號 K 棒幅度百分	none	indicator	none	candle	none	none	trend	no
+goldencrossovercp5394_akf0t6mz.fbd6c62be2a0.md	4	多方停損價＝進場價－	long	risk	none	candle	none	stop_struct|stop_fixed	trend	no
+goldencrossovercp5394_akf0t6mz.fbd6c62be2a0.md	5	空方停損價＝進場價＋	short	risk	none	candle	none	stop_struct|stop_fixed	trend	no
+goldencrossovercp5394_akf0t6mz.fbd6c62be2a0.md	6	風報比＝訊號 K 棒	both	risk	compare	candle	none	tp_rr	trend	no
+goldencrossovercp5394_akf0t6mz.fbd6c62be2a0.md	7	多方停利價＝進場價＋	long	risk	none	none	none	tp_rr	trend	no
+goldencrossovercp5394_akf0t6mz.fbd6c62be2a0.md	8	空方停利價＝進場價－	short	risk	none	none	none	tp_rr	trend	no
+goldencrossovercp5394_akf0t6mz.fbd6c62be2a0.md	9	前一根短期 EMA 	long	null	cross	ma|volume	volume	none	trend	no
+goldencrossovercp5394_akf0t6mz.fbd6c62be2a0.md	10	前一根短期 EMA 	short	null	cross	ma|volume	volume	none	trend	no
+goldencrossovercp5394_akf0t6mz.fbd6c62be2a0.md	11	多單，最低價低於或等	long	null	price_touch	candle	none	stop_struct|tp_rr|time_exit	trend	no
+goldencrossovercp5394_akf0t6mz.fbd6c62be2a0.md	12	空單，最高價高於或等	short	null	price_touch	candle	none	stop_struct|tp_rr|time_exit	trend	no
+hidden_gaps_vsa_volume_d9rrdb4s.89d61800d1b8.md	1	成交量 < 成交量移	long	null	compare	volume	none	none	unknown	no
+hidden_gaps_vsa_volume_d9rrdb4s.89d61800d1b8.md	2	成交量 > 成交量移	short	null	compare	volume	none	none	unknown	no
+hybrid_breakout_vcpinspired_trend_hezsshjr.43181f015e48.md	1	波動區間百分位＝以較	none	indicator	none	swing|percentile	none	none	breakout	no
+hybrid_breakout_vcpinspired_trend_hezsshjr.43181f015e48.md	2	收盤區間幅度＝較短回	none	indicator	none	swing	none	none	breakout	no
+hybrid_breakout_vcpinspired_trend_hezsshjr.43181f015e48.md	3	止損價＝進場均價按設	long	risk	none	none	none	stop_fixed|tp_fixed|partial	breakout	no
+hybrid_breakout_vcpinspired_trend_hezsshjr.43181f015e48.md	4	收盤價高於短期均線，	long	null	breakout	ma|swing|percentile|volume	trend_ma|volatility|volume|date_range|position	none	breakout	no
+hybrid_breakout_vcpinspired_trend_hezsshjr.43181f015e48.md	5	多單，最低價觸及或低	long	null	price_touch	none	none	stop_fixed|tp_fixed|partial	breakout	no
+icone_buy_and_sell_with_smc_wq1dtwbw.031036edfee4.md	1	結構高低＝前一回看區	none	level	none	swing	none	none	mixed	no
+icone_buy_and_sell_with_smc_wq1dtwbw.031036edfee4.md	2	有效壓縮形態＝結構區	none	pattern	compare	swing|atr	none	none	mixed	no
+icone_buy_and_sell_with_smc_wq1dtwbw.031036edfee4.md	3	突破評分＝趨勢分＋動	both	score	score	rsi|volume|swing|structure|other	none	none	mixed	yes
+icone_buy_and_sell_with_smc_wq1dtwbw.031036edfee4.md	4	收盤突破有效壓縮區間	long	null	breakout	swing|atr|rsi|volume|candle	toggle|htf|volume|osc_range|candle_color	none	breakout	yes
+icone_buy_and_sell_with_smc_wq1dtwbw.031036edfee4.md	5	收盤跌破有效壓縮區間	short	null	breakout	swing|atr|rsi|volume|candle	toggle|htf|volume|osc_range|candle_color	none	breakout	yes
+icone_buy_and_sell_with_smc_wq1dtwbw.031036edfee4.md	6	突破後在有效期限內回	long	null	retest	swing|atr|candle	candle_color|toggle|htf	none	breakout	yes
+icone_buy_and_sell_with_smc_wq1dtwbw.031036edfee4.md	7	跌破後在有效期限內回	short	null	retest	swing|atr|candle	candle_color|toggle|htf	none	breakout	yes
+icone_buy_and_sell_with_smc_wq1dtwbw.031036edfee4.md	8	多方趨勢中，近期最低	long	null	retest	ma|rsi|candle|volume|swing	trend_ma|candle_color|toggle|osc_range|volume|htf	none	trend	yes
+icone_buy_and_sell_with_smc_wq1dtwbw.031036edfee4.md	9	空方趨勢中，近期最高	short	null	retest	ma|rsi|candle|volume|swing	trend_ma|candle_color|toggle|osc_range|volume|htf	none	trend	yes
+icone_buy_and_sell_with_smc_wq1dtwbw.031036edfee4.md	10	有效壓縮形態成立，最	long	null	sweep	swing|atr|candle	candle_color	none	reversal	no
+icone_buy_and_sell_with_smc_wq1dtwbw.031036edfee4.md	11	有效壓縮形態成立，最	short	null	sweep	swing|atr|candle	candle_color	none	reversal	no
+icone_buy_and_sell_with_smc_wq1dtwbw.031036edfee4.md	12	多單，觸及初始或更新	long	null	price_touch	atr	none	stop_struct|tp_rr|partial|breakeven|trailing	mixed	no
+icone_buy_and_sell_with_smc_wq1dtwbw.031036edfee4.md	13	空單，觸及初始或更新	short	null	price_touch	atr	none	stop_struct|tp_rr|partial|breakeven|trailing	mixed	no
+icone_buy_and_sell_with_smc_wq1dtwbw.031036edfee4.md	14	多單，持倉指引累積警	long	null	breakout	structure|swing|other	none	partial|indicator_exit|stop_struct	mixed	no
+icone_buy_and_sell_with_smc_wq1dtwbw.031036edfee4.md	15	空單，持倉指引累積警	short	null	breakout	structure|swing|other	none	partial|indicator_exit|stop_struct	mixed	no
+klinger_volume_oscillator_kvo_backtest_ur50w2we.a157307c17ff.md	1	KVO＝收盤典型價高	none	indicator	none	volume|ma|other	none	none	trend	no
+klinger_volume_oscillator_kvo_backtest_ur50w2we.a157307c17ff.md	2	觸發線＝KVO 的指	none	indicator	none	ma|other	none	none	trend	no
+klinger_volume_oscillator_kvo_backtest_ur50w2we.a157307c17ff.md	3	未反向設定時，KVO	long	null	compare	other|ma|volume	toggle	none	trend	no
+klinger_volume_oscillator_kvo_backtest_ur50w2we.a157307c17ff.md	4	未反向設定時，KVO	short	null	compare	other|ma|volume	toggle	none	trend	no
+masu_institutional_fibonacci_mtf_btt_byjop8yp.95ed17aefcab.md	1	較高週期趨勢＝較高週	both	state	compare	ma	none	none	mixed	yes
+masu_institutional_fibonacci_mtf_btt_byjop8yp.95ed17aefcab.md	2	均線帶方向＝依參數遞	both	state	compare	ma	none	none	mixed	no
+masu_institutional_fibonacci_mtf_btt_byjop8yp.95ed17aefcab.md	3	累積成交量差＝陽線成	both	state	divergence	delta|volume|ma	none	none	mixed	no
+masu_institutional_fibonacci_mtf_btt_byjop8yp.95ed17aefcab.md	4	日內 VWAP＝每日	none	indicator	none	vwap	none	none	mixed	no
+masu_institutional_fibonacci_mtf_btt_byjop8yp.95ed17aefcab.md	5	成交量比＝陽線成交量	none	indicator	none	delta|volume	none	none	mixed	no
+masu_institutional_fibonacci_mtf_btt_byjop8yp.95ed17aefcab.md	6	費波那契回撤位＝以最	none	level	none	fib|swing|atr	none	none	mixed	no
+masu_institutional_fibonacci_mtf_btt_byjop8yp.95ed17aefcab.md	7	回撤觸及＝低點（多方	both	state	price_touch	fib|atr	none	none	mixed	no
+masu_institutional_fibonacci_mtf_btt_byjop8yp.95ed17aefcab.md	8	回撤反轉＝影線占全幅	both	pattern	candle	candle|fib	none	none	mixed	no
+masu_institutional_fibonacci_mtf_btt_byjop8yp.95ed17aefcab.md	9	多空分數＝各自的較高	both	score	score	ma|delta|fib|adx	none	none	mixed	yes
+masu_institutional_fibonacci_mtf_btt_byjop8yp.95ed17aefcab.md	10	多空分數較空方高	long	null	score	ma|delta|fib|adx	none	none	mixed	yes
+masu_institutional_fibonacci_mtf_btt_byjop8yp.95ed17aefcab.md	11	空多分數較多方高	short	null	score	ma|delta|fib|adx	none	none	mixed	yes
+masu_institutional_fibonacci_mtf_btt_byjop8yp.95ed17aefcab.md	12	((ADX 高於門檻	long	null	cross	adx|ma|swing|bb|rsi|volume|delta|vwap|fib	adx|htf|trend_ma|volume|session	none	mixed	yes
+masu_institutional_fibonacci_mtf_btt_byjop8yp.95ed17aefcab.md	13	((ADX 高於門檻	short	null	cross	adx|ma|swing|bb|rsi|volume|delta|vwap|fib	adx|htf|trend_ma|volume|session	none	mixed	yes
+masu_institutional_fibonacci_mtf_btt_byjop8yp.95ed17aefcab.md	14	多方持倉，最低價低於	long	null	price_touch	atr	toggle	stop_atr|trailing|tp_atr	mixed	no
+masu_institutional_fibonacci_mtf_btt_byjop8yp.95ed17aefcab.md	15	空方持倉，最高價高於	short	null	price_touch	atr	toggle	stop_atr|trailing|tp_atr	mixed	no
+mean_reversion_strategy_by_kriswaters_30ajfvaa.59de91f5d47e.md	1	收盤變化率＝（當根收	none	indicator	none	roc	none	none	mean_revert	no
+mean_reversion_strategy_by_kriswaters_30ajfvaa.59de91f5d47e.md	2	收盤變化率均值＝收盤	none	indicator	none	roc|ma	none	none	mean_revert	no
+mean_reversion_strategy_by_kriswaters_30ajfvaa.59de91f5d47e.md	3	當根收盤變化率均值高	long	null	compare	roc|ma|volume	volume|position	none	mean_revert	no
+mean_reversion_strategy_by_kriswaters_30ajfvaa.59de91f5d47e.md	4	多單，當根收盤變化率	long	null	compare	roc|ma|volume	none	indicator_exit	mean_revert	no
+moving_average_crossover_strategy_ip667jzb.bf10fdd75d30.md	1	趨勢均線＝收盤價的長	none	indicator	none	ma	none	none	trend	no
+moving_average_crossover_strategy_ip667jzb.bf10fdd75d30.md	2	快速均線＝短期指數移	none	indicator	none	ma	none	none	trend	no
+moving_average_crossover_strategy_ip667jzb.bf10fdd75d30.md	3	慢速均線＝較長期簡單	none	indicator	none	ma	none	none	trend	no
+moving_average_crossover_strategy_ip667jzb.bf10fdd75d30.md	4	快速均線、慢速均線或	long	null	cross	ma|volume|atr|rsi	toggle|trend_ma|volume|volatility|osc_range	none	trend	no
+moving_average_crossover_strategy_ip667jzb.bf10fdd75d30.md	5	快速均線、慢速均線或	short	null	cross	ma|volume|atr|rsi	toggle|trend_ma|volume|volatility|osc_range	none	trend	no
+moving_average_crossover_strategy_ip667jzb.bf10fdd75d30.md	6	多頭，所選均線對向下	long	null	cross	ma|volume|atr|rsi	toggle|volume|volatility|osc_range	indicator_exit|stop_fixed|tp_fixed	trend	no
+moving_average_crossover_strategy_ip667jzb.bf10fdd75d30.md	7	空頭，所選均線對向上	short	null	cross	ma|volume|atr|rsi	toggle|volume|volatility|osc_range	indicator_exit|stop_fixed|tp_fixed	trend	no
+nasdaq_orb_strategy_strict_exec_rrr_20_fixed_ewkfvsvf.ed00e546bfa9.md	1	開盤區間高點＝初始開	none	level	none	session_range	none	none	breakout	no
+nasdaq_orb_strategy_strict_exec_rrr_20_fixed_ewkfvsvf.ed00e546bfa9.md	2	相對成交量＝當根成交	none	indicator	none	volume	none	none	breakout	no
+nasdaq_orb_strategy_strict_exec_rrr_20_fixed_ewkfvsvf.ed00e546bfa9.md	3	開盤區間已鎖定且處於	long	null	breakout	session_range|volume	session|position|volume	none	breakout	no
+nasdaq_orb_strategy_strict_exec_rrr_20_fixed_ewkfvsvf.ed00e546bfa9.md	4	開盤區間已鎖定且處於	short	null	breakout	session_range|volume	session|position|volume	none	breakout	no
+nasdaq_orb_strategy_strict_exec_rrr_20_fixed_ewkfvsvf.ed00e546bfa9.md	5	多單，當根最低價≤開	long	null	price_touch	session_range	none	stop_struct|tp_rr|time_exit	breakout	no
+nasdaq_orb_strategy_strict_exec_rrr_20_fixed_ewkfvsvf.ed00e546bfa9.md	6	空單，當根最高價≥開	short	null	price_touch	session_range	none	stop_struct|tp_rr|time_exit	breakout	no
+obvious_ma_strategy_1000x_trader_xlcrr2he.3778687a0cbb.md	1	OBV＝累加（收盤價	none	indicator	none	obv	none	none	trend	no
+obvious_ma_strategy_1000x_trader_xlcrr2he.3778687a0cbb.md	2	OBV 均線＝OBV	both	indicator	none	obv|ma	none	none	trend	no
+obvious_ma_strategy_1000x_trader_xlcrr2he.3778687a0cbb.md	3	允許做多且目前非多倉	long	null	cross	obv|ma	toggle|position	none	trend	no
+obvious_ma_strategy_1000x_trader_xlcrr2he.3778687a0cbb.md	4	允許做空且目前非空倉	short	null	cross	obv|ma	toggle|position	none	trend	no
+obvious_ma_strategy_1000x_trader_xlcrr2he.3778687a0cbb.md	5	多倉，OBV 由上向	long	null	cross	obv|ma	none	indicator_exit	trend	no
+obvious_ma_strategy_1000x_trader_xlcrr2he.3778687a0cbb.md	6	空倉，OBV 由下向	short	null	cross	obv|ma	none	indicator_exit	trend	no
+options_strategy_v13_mo5opy8n.b98034233801.md	1	開盤區間高低＝指定開	none	level	none	session_range	none	none	trend	no
+options_strategy_v13_mo5opy8n.b98034233801.md	2	短期 EMA 上穿長	long	null	cross	ma|rsi|volume|session_range	osc_range|volume|session|toggle	none	trend	no
+options_strategy_v13_mo5opy8n.b98034233801.md	3	短期 EMA 下穿長	short	null	cross	ma|rsi|volume|session_range	osc_range|volume|session|toggle	none	trend	no
+options_strategy_v13_mo5opy8n.b98034233801.md	4	多頭，價格 ≤ 進場	long	null	price_touch	atr|ma	none	stop_atr|tp_atr|indicator_exit|time_exit	trend	no
+options_strategy_v13_mo5opy8n.b98034233801.md	5	空頭，價格 ≥ 進場	short	null	price_touch	atr|ma	none	stop_atr|tp_atr|indicator_exit|time_exit	trend	no
+order_block_volumatic_fvg_strategy_pjh7wg3n.b462028dc878.md	1	缺口尺寸比＝以前一根	none	indicator	none	fvg|percentile	none	none	trend	no
+order_block_volumatic_fvg_strategy_pjh7wg3n.b462028dc878.md	2	多方缺口＝兩根前最高	both	pattern	compare	fvg	none	none	trend	no
+order_block_volumatic_fvg_strategy_pjh7wg3n.b462028dc878.md	3	缺口多空量占比＝缺口	both	indicator	none	fvg|delta|volume	none	none	trend	yes
+order_block_volumatic_fvg_strategy_pjh7wg3n.b462028dc878.md	4	持倉為空，且冷卻期已	long	null	retest	fvg|delta|volume	position|cooldown|volume|toggle|candle_color	none	trend	yes
+order_block_volumatic_fvg_strategy_pjh7wg3n.b462028dc878.md	5	持倉為空，且冷卻期已	short	null	retest	fvg|delta|volume	position|cooldown|volume|toggle|candle_color	none	trend	yes
+order_block_volumatic_fvg_strategy_pjh7wg3n.b462028dc878.md	6	多方持倉，價格達到入	long	null	price_touch	none	none	trailing|stop_fixed	trend	no
+order_block_volumatic_fvg_strategy_pjh7wg3n.b462028dc878.md	7	空方持倉，價格達到入	short	null	price_touch	none	none	trailing|stop_fixed	trend	no
+scalp_signal_bot_5_min_v301_1bmqagqi.011631bb250a.md	1	波段高低點＝可選用影	none	level	none	swing|candle	none	none	mixed	no
+scalp_signal_bot_5_min_v301_1bmqagqi.011631bb250a.md	2	低點掃掠＝目前低點低	none	state	sweep	swing	none	none	mixed	no
+scalp_signal_bot_5_min_v301_1bmqagqi.011631bb250a.md	3	高點掃掠＝目前高點高	none	state	sweep	swing	none	none	mixed	no
+scalp_signal_bot_5_min_v301_1bmqagqi.011631bb250a.md	4	掃掠緩衝＝平均真實波	none	indicator	none	atr	none	none	mixed	no
+scalp_signal_bot_5_min_v301_1bmqagqi.011631bb250a.md	5	相對成交量＝目前成交	none	indicator	none	volume	none	none	mixed	no
+scalp_signal_bot_5_min_v301_1bmqagqi.011631bb250a.md	6	收盤價高於最近波段高	long	null	sweep	swing|atr|ma|volume	toggle|trend_ma|cooldown|volume	none	mixed	no
+scalp_signal_bot_5_min_v301_1bmqagqi.011631bb250a.md	7	收盤價低於最近波段低	short	null	breakout	swing|ma|volume	toggle|trend_ma|cooldown|volume	none	mixed	no
+scalp_signal_bot_5_min_v301_1bmqagqi.011631bb250a.md	8	多單，收盤價不高於進	long	null	price_touch	none	none	stop_fixed|tp_fixed	mixed	no
+scalp_signal_bot_5_min_v301_1bmqagqi.011631bb250a.md	9	空單，收盤價不低於進	short	null	price_touch	none	none	stop_fixed|tp_fixed	mixed	no
+shanmugha_intraday_and_positional_for_selling_4r2zsx3v.1e9cc2a6d1ca.md	1	收盤價由下向上穿越前	long	null	breakout	swing|atr	position	none	breakout	no
+shanmugha_intraday_and_positional_for_selling_4r2zsx3v.1e9cc2a6d1ca.md	2	收盤價由上向下穿越前	short	null	breakout	swing|atr	position	none	breakout	no
+shanmugha_intraday_and_positional_for_selling_4r2zsx3v.1e9cc2a6d1ca.md	3	多倉，收盤價由上向下	long	null	breakout	swing	none	indicator_exit|stop_fixed	breakout	no
+shanmugha_intraday_and_positional_for_selling_4r2zsx3v.1e9cc2a6d1ca.md	4	空倉，收盤價由下向上	short	null	breakout	swing	none	indicator_exit|stop_fixed	breakout	no
+super_auto_breakout_day_trade_volatile_stocks_6kubkdf3.d52bc6e70226.md	1	上界與下界＝收盤價的	none	indicator	none	ma	none	none	breakout	no
+super_auto_breakout_day_trade_volatile_stocks_6kubkdf3.d52bc6e70226.md	2	波動資金流量＝典型價	none	indicator	none	volume|stdev|other	none	none	breakout	no
+super_auto_breakout_day_trade_volatile_stocks_6kubkdf3.d52bc6e70226.md	3	資金流量訊號＝波動資	none	indicator	none	ma|other	none	none	breakout	no
+super_auto_breakout_day_trade_volatile_stocks_6kubkdf3.d52bc6e70226.md	4	((交易時段內且三根	long	null	breakout	ma|volume|other|candle	session|trend_ma|cooldown|volume	none	breakout	no
+super_auto_breakout_day_trade_volatile_stocks_6kubkdf3.d52bc6e70226.md	5	多頭，收盤價低於下界	long	null	compare	ma|volume|other|candle	none	stop_fixed|tp_fixed|indicator_exit	breakout	no
+supertrend_regime_confluence_mpjnqadq.75bda671254f.md	1	ATR 比率＝ATR	none	indicator	none	atr|adx	none	none	trend	no
+supertrend_regime_confluence_mpjnqadq.75bda671254f.md	2	市場狀態＝ATR 比	none	state	compare	atr|adx	none	none	trend	no
+supertrend_regime_confluence_mpjnqadq.75bda671254f.md	3	趨勢帶與方向＝以 h	both	state	state_flip	supertrend|atr	none	none	trend	no
+supertrend_regime_confluence_mpjnqadq.75bda671254f.md	4	訊號分數＝將成交量／	both	score	score	volume|atr|ma|supertrend	none	none	trend	no
+supertrend_regime_confluence_mpjnqadq.75bda671254f.md	5	趨勢方向本根翻多且訊	long	null	state_flip	supertrend|ma|volume|atr|adx	trend_ma|volatility|volume|cooldown	none	trend	no
+supertrend_regime_confluence_mpjnqadq.75bda671254f.md	6	趨勢方向本根翻空且訊	short	null	state_flip	supertrend|ma|volume|atr|adx	trend_ma|volatility|volume|cooldown	none	trend	no
+supertrend_regime_confluence_mpjnqadq.75bda671254f.md	7	多頭，啟用 Supe	long	null	price_touch	supertrend|atr	toggle	indicator_exit|stop_atr|stop_fixed|trailing|tp_rr|tp_fixed	trend	no
+supertrend_regime_confluence_mpjnqadq.75bda671254f.md	8	空頭，啟用 Supe	short	null	price_touch	supertrend|atr	toggle	indicator_exit|stop_atr|stop_fixed|trailing|tp_rr|tp_fixed	trend	no
+sw_sve_stochasticvolemas_sergio_waldoke_gwlzhea5.ee889f04645c.md	1	隨機指標 D＝隨機指	none	indicator	none	stoch|ma	none	none	mixed	no
+sw_sve_stochasticvolemas_sergio_waldoke_gwlzhea5.ee889f04645c.md	2	中間區＝隨機指標值高	none	state	compare	stoch	none	none	mixed	no
+sw_sve_stochasticvolemas_sergio_waldoke_gwlzhea5.ee889f04645c.md	3	成交量均線＝成交量的	none	indicator	none	volume	none	none	mixed	no
+sw_sve_stochasticvolemas_sergio_waldoke_gwlzhea5.ee889f04645c.md	4	空倉且（（K、D 均	long	null	cross	stoch|ma|volume	position|osc_range|candle_color|volume	none	mixed	no
+sw_sve_stochasticvolemas_sergio_waldoke_gwlzhea5.ee889f04645c.md	5		short	null	none	none	none	none	unknown	no
+sw_sve_stochasticvolemas_sergio_waldoke_gwlzhea5.ee889f04645c.md	6	多頭，收盤價低於進場	long	null	cross	stoch|ma	none	stop_fixed|indicator_exit	mixed	no
+tick_strategy_j2vh9jlh.34ac5d95a491.md	1	連續上漲 tick 	none	indicator	sequence	other	none	none	trend	no
+tick_strategy_j2vh9jlh.34ac5d95a491.md	2	連續下跌 tick 	none	indicator	sequence	other	none	none	trend	no
+tick_strategy_j2vh9jlh.34ac5d95a491.md	3	收盤價高於開盤價且空	long	null	sequence	other|candle	position|candle_color|toggle	none	trend	no
+tick_strategy_j2vh9jlh.34ac5d95a491.md	4	收盤價低於開盤價且空	short	null	sequence	other|candle	position|candle_color|toggle	none	trend	no
+tick_strategy_j2vh9jlh.34ac5d95a491.md	5	多單，連續下跌 ti	long	null	sequence	other	toggle	indicator_exit	trend	no
+tick_strategy_j2vh9jlh.34ac5d95a491.md	6	空單，連續上漲 ti	short	null	sequence	other	toggle	indicator_exit	trend	no
+trendbreaker_pro_auto_trendline_break_strategy_with_momentum_2u7kkccg.a11dee46be65.md	1	下降阻力線＝連續兩個	none	level	none	swing|other	none	none	breakout	no
+trendbreaker_pro_auto_trendline_break_strategy_with_momentum_2u7kkccg.a11dee46be65.md	2	上升支撐線＝連續兩個	none	level	none	swing|other	none	none	breakout	no
+trendbreaker_pro_auto_trendline_break_strategy_with_momentum_2u7kkccg.a11dee46be65.md	3	平滑動能＝對「較短期	none	indicator	none	ma	none	none	breakout	no
+trendbreaker_pro_auto_trendline_break_strategy_with_momentum_2u7kkccg.a11dee46be65.md	4	初始風險距離＝進場價	both	risk	none	atr|swing	none	stop_atr|stop_struct	breakout	no
+trendbreaker_pro_auto_trendline_break_strategy_with_momentum_2u7kkccg.a11dee46be65.md	5	目標價＝進場價加上（	both	risk	none	none	none	tp_rr	breakout	no
+trendbreaker_pro_auto_trendline_break_strategy_with_momentum_2u7kkccg.a11dee46be65.md	6	動態止損＝初始止損；	both	risk	none	atr	none	breakeven|trailing	breakout	no
+trendbreaker_pro_auto_trendline_break_strategy_with_momentum_2u7kkccg.a11dee46be65.md	7	收盤價 > 未失效且	long	null	breakout	swing|other|atr|ma|adx|volume	toggle|trend_ma|adx|volume|position	none	breakout	no
+trendbreaker_pro_auto_trendline_break_strategy_with_momentum_2u7kkccg.a11dee46be65.md	8	收盤價 < 未失效且	short	null	breakout	swing|other|atr|ma|adx|volume	toggle|trend_ma|adx|volume|position	none	breakout	no
+trendbreaker_pro_auto_trendline_break_strategy_with_momentum_2u7kkccg.a11dee46be65.md	9	多單，最低價 ≤ 動	long	null	price_touch	atr	toggle	stop_atr|stop_struct|breakeven|trailing|tp_rr|bars_held	breakout	no
+trendbreaker_pro_auto_trendline_break_strategy_with_momentum_2u7kkccg.a11dee46be65.md	10	空單，最高價 ≥ 動	short	null	price_touch	atr	toggle	stop_atr|stop_struct|breakeven|trailing|tp_rr|bars_held	breakout	no
+universal_aggressive_trend_macd_v33_trailing_tp_uvospbfa.b7a8645fece6.md	1	MACD 線＝短期 	none	indicator	none	macd|ma	none	none	trend	no
+universal_aggressive_trend_macd_v33_trailing_tp_uvospbfa.b7a8645fece6.md	2	持倉報酬率＝多單時 	both	risk	none	none	none	trailing	trend	no
+universal_aggressive_trend_macd_v33_trailing_tp_uvospbfa.b7a8645fece6.md	3	多單緊急停損價＝進場	both	risk	none	atr	none	stop_atr	trend	no
+universal_aggressive_trend_macd_v33_trailing_tp_uvospbfa.b7a8645fece6.md	4	空倉且距上次進場已達	long	null	cross	macd|adx|volume|ma|swing	position|cooldown|adx|volume|trend_ma	none	trend	no
+universal_aggressive_trend_macd_v33_trailing_tp_uvospbfa.b7a8645fece6.md	5	空倉且距上次進場已達	short	null	cross	macd|adx|volume|ma|swing	position|cooldown|adx|volume|trend_ma	none	trend	no
+universal_aggressive_trend_macd_v33_trailing_tp_uvospbfa.b7a8645fece6.md	6	多單，持倉報酬率低於	long	null	price_touch	macd|atr	none	trailing|stop_atr|indicator_exit	trend	no
+universal_aggressive_trend_macd_v33_trailing_tp_uvospbfa.b7a8645fece6.md	7	空單，持倉報酬率低於	short	null	price_touch	macd|atr	none	trailing|stop_atr|indicator_exit	trend	no
+updn_volume_sentiment_strategy_6greiils.fbf131f89b19.md	1	成交量情緒振盪值＝將	none	indicator	none	delta|volume|ma	none	none	mean_revert	no
+updn_volume_sentiment_strategy_6greiils.fbf131f89b19.md	2	成交量情緒振盪值 ≤	long	null	compare	delta|volume	none	none	mean_revert	no
+updn_volume_sentiment_strategy_6greiils.fbf131f89b19.md	3	成交量情緒振盪值 ≥	short	null	compare	delta|volume	none	none	mean_revert	no
+updn_volume_sentiment_strategy_6greiils.fbf131f89b19.md	4	多單，最低價 ≤ 進	long	null	price_touch	none	none	stop_fixed|tp_rr	mean_revert	no
+updn_volume_sentiment_strategy_6greiils.fbf131f89b19.md	5	空單，最高價 ≥ 進	short	null	price_touch	none	none	stop_fixed|tp_rr	mean_revert	no
+volatility_breakout_system_fixed_risk_36zwwsma.168bbc2c7fc9.md	1	凱特納通道上下軌＝收	none	indicator	none	kc|ma|atr	none	none	breakout	no
+volatility_breakout_system_fixed_risk_36zwwsma.168bbc2c7fc9.md	2	收盤價由下向上穿越凱	long	null	breakout	kc|volume|ma|rsi|adx	volume|trend_ma|osc_range|adx	none	breakout	no
+volatility_breakout_system_fixed_risk_36zwwsma.168bbc2c7fc9.md	3	收盤價由上向下穿越凱	short	null	breakout	kc|volume|ma|rsi|adx	volume|trend_ma|osc_range|adx	none	breakout	no
+volatility_breakout_system_fixed_risk_36zwwsma.168bbc2c7fc9.md	4	多倉，最低價小於等於	long	null	price_touch	atr	none	stop_atr|breakeven|trailing	breakout	no
+volatility_breakout_system_fixed_risk_36zwwsma.168bbc2c7fc9.md	5	空倉，最高價大於等於	short	null	price_touch	atr	none	stop_atr|breakeven|trailing	breakout	no
+volume_spread_analysis_8mytijev.55f3095b26cf.md	1	平均成交量＝成交量的	none	indicator	none	volume	none	none	reversal	no
+volume_spread_analysis_8mytijev.55f3095b26cf.md	2	平均振幅＝（最高價－	none	indicator	none	candle	none	none	reversal	no
+volume_spread_analysis_8mytijev.55f3095b26cf.md	3	收盤位置＝（收盤價－	none	indicator	none	candle	none	none	reversal	no
+volume_spread_analysis_8mytijev.55f3095b26cf.md	4	前一根為反轉上衝訊號	long	null	candle	candle|volume	none	none	reversal	no
+volume_spread_analysis_8mytijev.55f3095b26cf.md	5	多單，本根為上衝假突	long	null	candle	candle|volume|other	none	indicator_exit	reversal	no
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	1	趨勢效率＝收盤價跨回	none	indicator	none	other	none	none	mixed	no
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	2	混沌度＝同期逐根真實	none	indicator	none	choppiness	none	none	mixed	no
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	3	方向指標＝以平滑真實	none	indicator	none	adx	none	none	mixed	no
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	4	市場狀態＝由趨勢效率	both	state	score	other|choppiness|percentile|adx	none	none	mixed	no
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	5	均線帶＝收盤價的多條	none	indicator	none	ma	none	none	mixed	no
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	6	壓力差＝買壓減賣壓；	none	indicator	none	delta|volume|candle	none	none	mixed	no
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	7	壓力指數＝壓力差的平	none	indicator	none	delta|volume|ma	none	none	mixed	no
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	8	分形效率＝以高低區間	none	indicator	none	other	none	none	mixed	no
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	9	分形動能＝以分形效率	none	indicator	none	other	none	none	mixed	no
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	10	價格流向＝短期收盤價	none	indicator	none	ma|atr	none	none	mixed	no
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	11	成交量激增＝成交量高	both	state	compare	volume|candle|atr	none	none	mixed	no
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	12	樞紐結構＝以左右對稱	both	state	breakout	structure|swing	none	none	mixed	no
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	13	多方分數＝六個類別旗	long	score	score	other|delta|ma|structure|adx|volume|candle|atr|swing	none	none	mixed	no
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	14	空方分數＝六個類別旗	short	score	score	other|delta|ma|structure|adx|volume|candle|atr|swing	none	none	mixed	no
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	15	多方分數達最低訊號強	long	null	score	other	position	none	mixed	no
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	16	空方分數達最低訊號強	short	null	score	other	position	none	mixed	no
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	17	多單，最低價觸及或跌	long	null	price_touch	atr	toggle	stop_atr|tp_atr|trailing	mixed	no
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	18	空單，最高價觸及或突	short	null	price_touch	atr	toggle	stop_atr|tp_atr|trailing	mixed	no
+vxd_cloud_edition_for_pythonbinancebots_aqyygujj.d9b7be29b9bd.md	1	平滑回歸線＝收盤價線	none	indicator	none	regression|ma	none	none	trend	no
+vxd_cloud_edition_for_pythonbinancebots_aqyygujj.d9b7be29b9bd.md	2	趨勢帶＝ATR通道或	none	indicator	none	atr|supertrend	none	none	trend	no
+vxd_cloud_edition_for_pythonbinancebots_aqyygujj.d9b7be29b9bd.md	3	雲界＝較短期收盤價E	none	indicator	none	ma|regression|atr|supertrend	none	none	trend	no
+vxd_cloud_edition_for_pythonbinancebots_aqyygujj.d9b7be29b9bd.md	4	Andean多空分量	both	indicator	none	other	none	none	trend	no
+vxd_cloud_edition_for_pythonbinancebots_aqyygujj.d9b7be29b9bd.md	5	雲線＝多方分量較大時	both	state	compare	other	none	none	trend	no
+vxd_cloud_edition_for_pythonbinancebots_aqyygujj.d9b7be29b9bd.md	6	雲方向＝雲線連續上升	both	state	sequence	other	none	none	trend	no
+vxd_cloud_edition_for_pythonbinancebots_aqyygujj.d9b7be29b9bd.md	7	啟用做多且持倉為空或	long	null	breakout	swing|ma|regression|other	toggle|position	none	trend	no
+vxd_cloud_edition_for_pythonbinancebots_aqyygujj.d9b7be29b9bd.md	8	啟用做空且持倉為空或	short	null	breakout	swing|ma|regression|other	toggle|position	none	trend	no
+vxd_cloud_edition_for_pythonbinancebots_aqyygujj.d9b7be29b9bd.md	9	空方，依所選模式，雲	short	null	state_flip	other|swing	toggle	indicator_exit	trend	no
+vxd_cloud_edition_for_pythonbinancebots_aqyygujj.d9b7be29b9bd.md	10	多方，依所選模式，雲	long	null	state_flip	other|swing	toggle	indicator_exit	trend	no
+vxd_cloud_edition_for_pythonbinancebots_aqyygujj.d9b7be29b9bd.md	11	多方，價格觸及停損或	long	null	price_touch	swing	none	stop_struct|partial|breakeven	trend	no
+vxd_cloud_edition_for_pythonbinancebots_aqyygujj.d9b7be29b9bd.md	12	空方，價格觸及停損或	short	null	price_touch	swing	none	stop_struct|partial|breakeven	trend	no
