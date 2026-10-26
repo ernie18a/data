@@ -1,0 +1,2 @@
+做多：OBV向上穿越OBV的EMA
+做空：OBV向下穿越OBV的EMA
