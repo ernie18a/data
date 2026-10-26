@@ -1,0 +1,7 @@
+【共用指標】mid=EMA(close,34)；rng=EMA(TR,88)；topIn/botIn=mid±1.5*rng；topOut/botOut=mid±3.5*rng；ATR14=RMA(TR,14)；EMA200=EMA(close,200)；趨勢強度=|EMA200-EMA200[50]|/ATR14。WT：ap=hlc3，esa=EMA(ap,10)，d=EMA(|ap-esa|,10)，ci=(ap-esa)/(0.015*d)，wt1=EMA(ci,21)，wt2=SMA(wt1,4)。超賣門檻=min(wt2近200根10%分位(線性內插),-20)，超買門檻=max(wt2近200根90%分位,20)。%B：dev=2*stdev(close,34)，pctB=(close-(mid-dev))/(2*dev)。
+
+【A 反轉】僅K棒收盤確認。做多：pctB由<=0上穿至>0(pctB[1]<=0且pctB>0)，且 (1)EMA200>EMA200[50]；(2)近5根wt2最低值<=超賣門檻，或近5根內wt1上穿wt2；(3)距上次反轉做多>5根；(4)本次pctB<0的整段期間，沒有任何一根low<=botOut（只觸及botIn或未觸及皆可）。做空鏡像：pctB由>=1下穿至<1，EMA200<EMA200[50]，近5根wt2最高值>=超買門檻或近5根內wt1下穿wt2，距上次反轉做空>5根，pctB>1期間沒有任何一根high>=topOut。進場價=close。停損：做多=pctB<0期間最低low(含當根)-0.5*ATR14；做空=pctB>1期間最高high+0.5*ATR14。出場：多單low<=停損、或high>=topIn(目標2；mid>進場價時mid為目標1)；空單high>=停損、或low<=botIn(目標2；mid<進場價時mid為目標1)。
+
+【B 趨勢回檔】僅K棒收盤確認，且該根不是A的訊號。做多：EMA200>EMA200[50]；趨勢強度>=1；近5根最低low<=mid；(low<=mid 或 close[1]<=mid[1])；close>mid；close>open；wt1>wt2；距上次回檔做多>10根。做空鏡像：EMA200<EMA200[50]；趨勢強度>=1；近5根最高high>=mid；(high>=mid 或 close[1]>=mid[1])；close<mid；close<open；wt1<wt2；距上次回檔做空>10根。進場價=close。停損：做多=近5根最低low-0.5*ATR14；做空=近5根最高high+0.5*ATR14。出場：多單low<=停損、或high>=topOut(目標2；topIn>進場價時topIn為目標1)；空單high>=停損、或low<=botOut(目標2；botIn<進場價時botIn為目標1)。
+
+【C 通道突破（僅做多）】b=EMA(close,20)，up=b+2*ATR14。某根收盤確認：close>up 且 close[1]<=up[1]，目前無持倉，且距上次進場>=20根 → 記下該根low為待用停損價。下一根若 open>前一根的up 且 待用停損價<open，則以該根open做多；風險R=max(open-待用停損價, 0.5*前一根ATR14)；停損=open-R。出場（依序）：low<=停損；該根收盤close<EMA20；持倉滿200根則以close出場。
