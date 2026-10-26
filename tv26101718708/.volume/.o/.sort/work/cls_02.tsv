@@ -1,0 +1,203 @@
+3c_qfl_mean_reversal_sdrm0bby.397d8bae5d15.md	1	NEW.02_level_fade	1	計算：支撐基準（放量確認的樞紐低點）
+3c_qfl_mean_reversal_sdrm0bby.397d8bae5d15.md	2	NEW.02_level_fade	1	計算：壓力基準（放量確認的樞紐高點）
+3c_qfl_mean_reversal_sdrm0bby.397d8bae5d15.md	3	NEW.02_level_fade	1	做多核心：收盤價低於支撐基準達設定跌幅
+3c_qfl_mean_reversal_sdrm0bby.397d8bae5d15.md	4	PM.DCA	2	做多加碼：最低價觸及下一安全單價
+3c_qfl_mean_reversal_sdrm0bby.397d8bae5d15.md	5	NEW.02_level_fade	1	做空核心：收盤價高於壓力基準達設定漲幅
+3c_qfl_mean_reversal_sdrm0bby.397d8bae5d15.md	6	PM.DCA	2	做空加碼：最高價觸及下一安全單價
+3c_qfl_mean_reversal_sdrm0bby.397d8bae5d15.md	7	NEW.02_level_fade|PM.DCA	1|2	出場：多倉均價止盈與首次進場價止損
+3c_qfl_mean_reversal_sdrm0bby.397d8bae5d15.md	8	NEW.02_level_fade|PM.DCA	1|2	出場：空倉均價止盈與首次進場價止損
+big_trend_catcher_quadgate_vcp_atr_trailing_swing_trade_srrb0tts.3aea9ce4f096.md	1	MA.CROSS|BRK.CHAN	1|2	計算：布林帶寬（壓縮濾網）
+big_trend_catcher_quadgate_vcp_atr_trailing_swing_trade_srrb0tts.3aea9ce4f096.md	2	MA.CROSS|BRK.CHAN	1|2	計算：平滑動能（動能濾網）
+big_trend_catcher_quadgate_vcp_atr_trailing_swing_trade_srrb0tts.3aea9ce4f096.md	3	MA.CROSS|BRK.CHAN|NEW.02_pyramid|PB.TOUCH	1|2|3|4	計算：ATR 追蹤線（濾網與出場）
+big_trend_catcher_quadgate_vcp_atr_trailing_swing_trade_srrb0tts.3aea9ce4f096.md	4	MA.CROSS|BRK.CHAN|NEW.02_pyramid|PB.TOUCH	1|2|3|4	做多：收盤上穿短 EMA／收盤突破前高／獲利達門檻加碼／觸及短 EMA 回檔加碼
+big_trend_catcher_quadgate_vcp_atr_trailing_swing_trade_srrb0tts.3aea9ce4f096.md	5	MA.CROSS|BRK.CHAN|NEW.02_pyramid|PB.TOUCH	1|2|3|4	出場：收盤跌破 ATR 追蹤線或下穿長期 EMA
+bonk_1h_long_volatility_strategy_9eae3a0b.bc79ef41cec1.md	1	OSC.LEVEL	1	做多核心：MACD 線高於零的狀態，附均線、波動、RSI、成交量濾網
+bonk_1h_long_volatility_strategy_9eae3a0b.bc79ef41cec1.md	2	OSC.LEVEL	1	出場：止盈、止損與 ATR 追蹤止損
+breakout_follow_trend_strategy_07xdq1rh.46158e7da919.md	1	BRK.CHAN	1	做多核心：收盤價高於布林上軌
+breakout_follow_trend_strategy_07xdq1rh.46158e7da919.md	2	BRK.CHAN	1	做空核心：收盤價低於布林下軌
+breakout_follow_trend_strategy_07xdq1rh.46158e7da919.md	3	BRK.CHAN	1	出場：多單 ATR 停損、風險報酬停利、部分停利、週末平倉
+breakout_follow_trend_strategy_07xdq1rh.46158e7da919.md	4	BRK.CHAN	1	出場：空單 ATR 停損、風險報酬停利、部分停利、週末平倉
+btfd_strategy_3min_qrwx46zq.092ea630ca2c.md	1	REV.EXTREME	1	做多核心：RSI 處於超賣且放量
+btfd_strategy_3min_qrwx46zq.092ea630ca2c.md	2	REV.EXTREME	1	出場：逐級獲利目標與百分比止損
+concordance_execution_model_joat_zpklbja0.11178683fcfb.md	1	CMP.SCORE	1	計算：結構方向（計分項）
+concordance_execution_model_joat_zpklbja0.11178683fcfb.md	2	CMP.SCORE	1	計算：ALMA 多週期投票（計分項）
+concordance_execution_model_joat_zpklbja0.11178683fcfb.md	3	CMP.SCORE	1	計算：成交壓力（計分項與濾網）
+concordance_execution_model_joat_zpklbja0.11178683fcfb.md	4	CMP.SCORE	1	計算：相對成交量（計分項與濾網）
+concordance_execution_model_joat_zpklbja0.11178683fcfb.md	5	CMP.SCORE	1	計算：壓力分數（計分項）
+concordance_execution_model_joat_zpklbja0.11178683fcfb.md	6	CMP.SCORE	1	計算：動能狀態（計分項）
+concordance_execution_model_joat_zpklbja0.11178683fcfb.md	7	CMP.SCORE	1	計算：回歸方向與信心（計分項）
+concordance_execution_model_joat_zpklbja0.11178683fcfb.md	8	CMP.SCORE	1	計算：多空分數
+concordance_execution_model_joat_zpklbja0.11178683fcfb.md	9	CMP.SCORE	1	做多核心：多方分數達門檻
+concordance_execution_model_joat_zpklbja0.11178683fcfb.md	10	CMP.SCORE	1	做空核心：空方分數達門檻
+concordance_execution_model_joat_zpklbja0.11178683fcfb.md	11	CMP.SCORE	1	出場：多方 ATR 停損停利、追蹤、時限、結構轉空或分數劣勢
+concordance_execution_model_joat_zpklbja0.11178683fcfb.md	12	CMP.SCORE	1	出場：空方 ATR 停損停利、追蹤、時限、結構轉多或分數劣勢
+delta_sma_1year_highlow_strategy_munqaayo.ee60505e0a06.md	1	OSC.ZERO	1	計算：K 棒方向成交量 Delta
+delta_sma_1year_highlow_strategy_munqaayo.ee60505e0a06.md	2	OSC.ZERO	1	計算：Delta SMA
+delta_sma_1year_highlow_strategy_munqaayo.ee60505e0a06.md	3	OSC.ZERO	1	計算：Delta SMA 回看區間高低點
+delta_sma_1year_highlow_strategy_munqaayo.ee60505e0a06.md	4	OSC.ZERO	1	做多核心：Delta SMA 上穿零（前提曾低於區間低點比例）
+delta_sma_1year_highlow_strategy_munqaayo.ee60505e0a06.md	5	OSC.ZERO	1	出場：Delta SMA 曾達區間高點比例後跌破出場比例
+gk1_long_only_daily_trend_strategy_max_4_positions_riskbased_s1hx2vza.66f4f2711213.md	1	MA.STATE	1	做多核心：短 SMA 高於長 SMA 且收盤高於長 SMA 的狀態
+gk1_long_only_daily_trend_strategy_max_4_positions_riskbased_s1hx2vza.66f4f2711213.md	2	MA.STATE	1	計算：持倉最高收盤減 ATR 移動停損
+gk1_long_only_daily_trend_strategy_max_4_positions_riskbased_s1hx2vza.66f4f2711213.md	3	MA.STATE	1	出場：觸及移動停損或短 SMA 低於長 SMA
+golden_triangle_strategy_yc0fpmus.cc5b757cc27f.md	1	PB.TOUCH	1	計算：移動平均線（回檔參考線）
+golden_triangle_strategy_yc0fpmus.cc5b757cc27f.md	2	PB.TOUCH	1	計算：樞紐 ATR 追蹤線趨勢方向（濾網）
+golden_triangle_strategy_yc0fpmus.cc5b757cc27f.md	3	PB.TOUCH	1	計算：百分比止損價
+golden_triangle_strategy_yc0fpmus.cc5b757cc27f.md	4	PB.TOUCH	1	做多核心：前數根在均線上、本根觸及均線的回檔，收盤上穿 VWAP 確認
+golden_triangle_strategy_yc0fpmus.cc5b757cc27f.md	5	PB.TOUCH	1	出場：獲利中 VWAP 下穿均線或跌破止損價
+liquidity_sweep_delta_absorption_pinegen_ai_ove4qqgh.74ac8a245295.md	1	LQ.SWEEP	1	計算：最近確認擺動高低點
+liquidity_sweep_delta_absorption_pinegen_ai_ove4qqgh.74ac8a245295.md	2	LQ.SWEEP	1	計算：收盤位置比例
+liquidity_sweep_delta_absorption_pinegen_ai_ove4qqgh.74ac8a245295.md	3	LQ.SWEEP	1	計算：下級別淨量差
+liquidity_sweep_delta_absorption_pinegen_ai_ove4qqgh.74ac8a245295.md	4	LQ.SWEEP	1	計算：多單止損止盈價
+liquidity_sweep_delta_absorption_pinegen_ai_ove4qqgh.74ac8a245295.md	5	LQ.SWEEP	1	計算：空單止損止盈價
+liquidity_sweep_delta_absorption_pinegen_ai_ove4qqgh.74ac8a245295.md	6	LQ.SWEEP	1	做多核心：最低價刺穿擺動低點後收回其上
+liquidity_sweep_delta_absorption_pinegen_ai_ove4qqgh.74ac8a245295.md	7	LQ.SWEEP	1	做空核心：最高價刺穿擺動高點後收回其下
+liquidity_sweep_delta_absorption_pinegen_ai_ove4qqgh.74ac8a245295.md	8	LQ.SWEEP	1	出場：多單止損止盈
+liquidity_sweep_delta_absorption_pinegen_ai_ove4qqgh.74ac8a245295.md	9	LQ.SWEEP	1	出場：空單止損止盈
+masu_fib_btt_update_kag9s2yl.2272deddde87.md	1	MA.CROSS|BRK.CHAN|REV.REENTRY|PB.TOUCH	1|2|3|4	計算：ATR 門檻波段高低點（波段方向前提與回撤位）
+masu_fib_btt_update_kag9s2yl.2272deddde87.md	2	PB.TOUCH	4	計算：斐波那契回撤位與觸及區
+masu_fib_btt_update_kag9s2yl.2272deddde87.md	3	PB.TOUCH	4	計算：上下影線比例
+masu_fib_btt_update_kag9s2yl.2272deddde87.md	4	CMP.SCORE	6	計算：累積成交量差（confluence 計數項）
+masu_fib_btt_update_kag9s2yl.2272deddde87.md	5	CMP.SCORE	6	計算：日內 VWAP（confluence 計數項）
+masu_fib_btt_update_kag9s2yl.2272deddde87.md	6	MA.CROSS|BRK.CHAN	1|2	計算：成交量尖峰
+masu_fib_btt_update_kag9s2yl.2272deddde87.md	7	MA.CROSS|BRK.CHAN|REV.REENTRY	1|2|3	計算：均線緞帶排列數
+masu_fib_btt_update_kag9s2yl.2272deddde87.md	8	MA.CROSS|BRK.CHAN|REV.REENTRY	1|2|3	做多：EMA 上穿／突破前高／布林下軌外 RSI 上穿超賣，共用高週期緞帶波段前提
+masu_fib_btt_update_kag9s2yl.2272deddde87.md	9	MA.CROSS|BRK.CHAN|REV.REENTRY	1|2|3	做空：EMA 下穿／跌破前低／布林上軌外 RSI 下穿超買，共用前提
+masu_fib_btt_update_kag9s2yl.2272deddde87.md	10	PB.TOUCH	4	做多核心：上升波段中觸及斐波那契回撤區
+masu_fib_btt_update_kag9s2yl.2272deddde87.md	11	PB.TOUCH	4	做空核心：下降波段中觸及斐波那契回撤區
+masu_fib_btt_update_kag9s2yl.2272deddde87.md	12	OSC.LEVEL	5	做多核心：RSI 高於超買區間下界且收陽
+masu_fib_btt_update_kag9s2yl.2272deddde87.md	13	OSC.LEVEL	5	做空核心：RSI 低於超賣區間上界且收陰
+masu_fib_btt_update_kag9s2yl.2272deddde87.md	14	CMP.SCORE	6	做多核心：多頭 confluence 計數多於空頭
+masu_fib_btt_update_kag9s2yl.2272deddde87.md	15	CMP.SCORE	6	做空核心：空頭 confluence 計數多於多頭
+masu_fib_btt_update_kag9s2yl.2272deddde87.md	16	MA.CROSS|BRK.CHAN|REV.REENTRY|PB.TOUCH|OSC.LEVEL|CMP.SCORE	1|2|3|4|5|6	出場：多頭 ATR 停損、ATR 追蹤或 ATR 停利
+masu_fib_btt_update_kag9s2yl.2272deddde87.md	17	MA.CROSS|BRK.CHAN|REV.REENTRY|PB.TOUCH|OSC.LEVEL|CMP.SCORE	1|2|3|4|5|6	出場：空頭 ATR 停損、ATR 追蹤或 ATR 停利
+maxxit_emav6_528_r0kp9mw4.4dcf7a78d310.md	1	MA.CROSS|PB.TOUCH	1|2	計算：快線 EMA
+maxxit_emav6_528_r0kp9mw4.4dcf7a78d310.md	2	MA.CROSS|MA.CROSS	1|3	計算：中線 EMA
+maxxit_emav6_528_r0kp9mw4.4dcf7a78d310.md	3	MA.CROSS|PB.TOUCH	1|2	計算：趨勢 EMA
+maxxit_emav6_528_r0kp9mw4.4dcf7a78d310.md	4	MA.CROSS|PB.TOUCH|MA.CROSS	1|2|3	做多：快線上穿中線／前根刺穿快線後收回的再進場／中線上穿長期 EMA
+maxxit_emav6_528_r0kp9mw4.4dcf7a78d310.md	5	MA.CROSS|PB.TOUCH|MA.CROSS	1|2|3	做空：快線下穿中線／前根刺穿快線後收回的再進場／中線下穿長期 EMA
+maxxit_emav6_528_r0kp9mw4.4dcf7a78d310.md	6	MA.CROSS|PB.TOUCH|MA.CROSS	1|2|3	出場：多單自適應停利或固定／追蹤停損
+maxxit_emav6_528_r0kp9mw4.4dcf7a78d310.md	7	MA.CROSS|PB.TOUCH|MA.CROSS	1|2|3	出場：空單自適應停利或固定／追蹤停損
+multiengine_strategy_green_optimized_candlestick_breakout_rlimxcae.4d5f91ff7ab5.md	1	BRK.CHAN	2	計算：前期阻力（回看最高價）
+multiengine_strategy_green_optimized_candlestick_breakout_rlimxcae.4d5f91ff7ab5.md	2	PB.TOUCH|BRK.CHAN	1|2	計算：回看最低價停損
+multiengine_strategy_green_optimized_candlestick_breakout_rlimxcae.4d5f91ff7ab5.md	3	PB.TOUCH|BRK.CHAN	1|2	計算：風險報酬停利
+multiengine_strategy_green_optimized_candlestick_breakout_rlimxcae.4d5f91ff7ab5.md	4	PB.TOUCH|BRK.CHAN	1|2	做多：觸及短 EMA 緩衝區收陽／收盤上穿前期阻力放量
+multiengine_strategy_green_optimized_candlestick_breakout_rlimxcae.4d5f91ff7ab5.md	5	PB.TOUCH|BRK.CHAN	1|2	出場：收盤低於長期 EMA 或觸及停損停利
+mystrategy20_l0f7fijk.712cdf09a57f.md	1	BRK.CHAN	1	做多核心：收盤上穿布林上軌（同根 Supertrend 翻多、MACD 上穿）
+mystrategy20_l0f7fijk.712cdf09a57f.md	2	BRK.CHAN	1	做空核心：收盤下穿布林下軌
+mystrategy20_l0f7fijk.712cdf09a57f.md	3	BRK.CHAN	1	出場：多單 ATR 停利停損、布林中軌追蹤、保本
+mystrategy20_l0f7fijk.712cdf09a57f.md	4	BRK.CHAN	1	出場：空單 ATR 停利停損、布林中軌追蹤、保本
+new_paradigm_master_scalper_optimized_dsnewnev.eeb4e4949150.md	1	REV.EXTREME	1	計算：預期波動幅度
+new_paradigm_master_scalper_optimized_dsnewnev.eeb4e4949150.md	2	REV.EXTREME	1	計算：VWAP 下方目標帶
+new_paradigm_master_scalper_optimized_dsnewnev.eeb4e4949150.md	3	REV.EXTREME	1	計算：VWAP 上方目標帶
+new_paradigm_master_scalper_optimized_dsnewnev.eeb4e4949150.md	4	REV.EXTREME	1	做多核心：最低價觸及下方目標帶且收陽
+new_paradigm_master_scalper_optimized_dsnewnev.eeb4e4949150.md	5	REV.EXTREME	1	做空核心：最高價觸及上方目標帶且收陰
+new_paradigm_master_scalper_optimized_dsnewnev.eeb4e4949150.md	6	REV.EXTREME	1	出場：多單固定距離停利停損
+new_paradigm_master_scalper_optimized_dsnewnev.eeb4e4949150.md	7	REV.EXTREME	1	出場：空單固定距離停利停損
+positive_volume_index_backtest_2owffjv3.2c7c30631a51.md	1	OSC.LEVEL|REV.EXTREME	1|2	計算：正量指數
+positive_volume_index_backtest_2owffjv3.2c7c30631a51.md	2	OSC.LEVEL|REV.EXTREME	1|2	做多：正量指數高於其 EMA（順勢）或反向設定下低於其 EMA
+positive_volume_index_backtest_2owffjv3.2c7c30631a51.md	3	OSC.LEVEL|REV.EXTREME	1|2	做空：正量指數低於其 EMA（順勢）或反向設定下高於其 EMA
+santosh_green_v22_final_ddjidvdn.8a5a2ff5bfba.md	1	MA.CROSS	1	做多核心：快 EMA 上穿慢 EMA
+santosh_green_v22_final_ddjidvdn.8a5a2ff5bfba.md	2	MA.CROSS	1	做空核心：快 EMA 下穿慢 EMA
+santosh_green_v22_final_ddjidvdn.8a5a2ff5bfba.md	3	MA.CROSS	1	出場：多方固定距離停利停損、ATR 追蹤、每日強制平倉
+santosh_green_v22_final_ddjidvdn.8a5a2ff5bfba.md	4	MA.CROSS	1	出場：空方固定距離停利停損、ATR 追蹤、每日強制平倉
+shanmugha_intraday_and_positional_for_selling_4r2zsx3v.1e9cc2a6d1ca.md	1	BRK.CHAN|NEW.02_pyramid	1|2	做多：收盤上穿長回看最高價／順向每推進 ATR 間距加碼
+shanmugha_intraday_and_positional_for_selling_4r2zsx3v.1e9cc2a6d1ca.md	2	BRK.CHAN|NEW.02_pyramid	1|2	做空：收盤下穿長回看最低價／順向每推進 ATR 間距加碼
+shanmugha_intraday_and_positional_for_selling_4r2zsx3v.1e9cc2a6d1ca.md	3	BRK.CHAN|NEW.02_pyramid	1|2	出場：多倉收盤下穿短回看最低價或停損
+shanmugha_intraday_and_positional_for_selling_4r2zsx3v.1e9cc2a6d1ca.md	4	BRK.CHAN|NEW.02_pyramid	1|2	出場：空倉收盤上穿短回看最高價或停損
+smhdualmomentum_roc_volume_trend_1qjn9uxq.ae6f149cea58.md	1	OSC.LEVEL	1	做多核心：ROC 高於正門檻且放量
+smhdualmomentum_roc_volume_trend_1qjn9uxq.ae6f149cea58.md	2	OSC.LEVEL	1	出場：ROC 低於零
+squeeze_breakout_using_bb_and_kc_v10bishnu103_eadmt5hj.23331b021d46.md	1	BRK.CHAN	1	計算：布林通道
+squeeze_breakout_using_bb_and_kc_v10bishnu103_eadmt5hj.23331b021d46.md	2	BRK.CHAN	1	計算：凱特納通道（壓縮判定）
+squeeze_breakout_using_bb_and_kc_v10bishnu103_eadmt5hj.23331b021d46.md	3	BRK.CHAN	1	做多核心：壓縮後收盤高於布林上軌
+squeeze_breakout_using_bb_and_kc_v10bishnu103_eadmt5hj.23331b021d46.md	4	BRK.CHAN	1	做空核心：壓縮後收盤低於布林下軌
+squeeze_breakout_using_bb_and_kc_v10bishnu103_eadmt5hj.23331b021d46.md	5	BRK.CHAN	1	出場：多單收盤下穿短期 EMA
+squeeze_breakout_using_bb_and_kc_v10bishnu103_eadmt5hj.23331b021d46.md	6	BRK.CHAN	1	出場：空單收盤上穿短期 EMA
+squeeze_breakout_using_bb_and_kc_v10bishnu103_eadmt5hj.23331b021d46.md	7	BRK.CHAN	1	出場：多單收盤低於進場時布林中軌
+squeeze_breakout_using_bb_and_kc_v10bishnu103_eadmt5hj.23331b021d46.md	8	BRK.CHAN	1	出場：空單收盤高於進場時布林中軌
+supertrend_regime_confluence_mpjnqadq.75bda671254f.md	1	TS.FLIP	1	計算：ATR 比率與 ADX
+supertrend_regime_confluence_mpjnqadq.75bda671254f.md	2	TS.FLIP	1	計算：市場狀態與適應乘數
+supertrend_regime_confluence_mpjnqadq.75bda671254f.md	3	TS.FLIP	1	計算：自適應 Supertrend 趨勢帶與方向
+supertrend_regime_confluence_mpjnqadq.75bda671254f.md	4	TS.FLIP	1	計算：訊號分數（濾網）
+supertrend_regime_confluence_mpjnqadq.75bda671254f.md	5	TS.FLIP	1	做多核心：趨勢方向本根翻多
+supertrend_regime_confluence_mpjnqadq.75bda671254f.md	6	TS.FLIP	1	做空核心：趨勢方向本根翻空
+supertrend_regime_confluence_mpjnqadq.75bda671254f.md	7	TS.FLIP	1	出場：多頭翻空、ATR／百分比／追蹤停損、風險報酬或百分比停利
+supertrend_regime_confluence_mpjnqadq.75bda671254f.md	8	TS.FLIP	1	出場：空頭翻多、ATR／百分比／追蹤停損、風險報酬或百分比停利
+supply_demand_zones_order_block_pro_fusion_auto_order_lq5zioga.58201a043787.md	1	SR.TOUCH	1	計算：強勢波段高低點需求供給位
+supply_demand_zones_order_block_pro_fusion_auto_order_lq5zioga.58201a043787.md	2	PAT.BAR	2	計算：相對價格變動
+supply_demand_zones_order_block_pro_fusion_auto_order_lq5zioga.58201a043787.md	3	PAT.BAR	2	計算：多空訂單區形態
+supply_demand_zones_order_block_pro_fusion_auto_order_lq5zioga.58201a043787.md	4	OSC.SIG	3	計算：平滑動能差與訊號線
+supply_demand_zones_order_block_pro_fusion_auto_order_lq5zioga.58201a043787.md	5	SR.TOUCH	1	做多核心：觸及或跌破需求位而收盤守在其上
+supply_demand_zones_order_block_pro_fusion_auto_order_lq5zioga.58201a043787.md	6	SR.TOUCH	1	做空核心：觸及或突破供給位而收盤守在其下
+supply_demand_zones_order_block_pro_fusion_auto_order_lq5zioga.58201a043787.md	7	PAT.BAR	2	做多核心：陰線後連續收陽且漲幅達門檻
+supply_demand_zones_order_block_pro_fusion_auto_order_lq5zioga.58201a043787.md	8	PAT.BAR	2	做空核心：陽線後連續收陰且跌幅達門檻
+supply_demand_zones_order_block_pro_fusion_auto_order_lq5zioga.58201a043787.md	9	OSC.SIG	3	做多核心：動能差上穿訊號線
+supply_demand_zones_order_block_pro_fusion_auto_order_lq5zioga.58201a043787.md	10	OSC.SIG	3	做空核心：動能差下穿訊號線
+supply_demand_zones_order_block_pro_fusion_auto_order_lq5zioga.58201a043787.md	11	SR.TOUCH|PAT.BAR|OSC.SIG	1|2|3	出場：多倉固定初始止損距離
+supply_demand_zones_order_block_pro_fusion_auto_order_lq5zioga.58201a043787.md	12	SR.TOUCH|PAT.BAR|OSC.SIG	1|2|3	出場：空倉固定初始止損距離
+swing_breakout_strategy_quantcore_sfnkkoyk.c4aad8fd5beb.md	1	BRK.CHAN	1	計算：前期區間最高收盤價
+swing_breakout_strategy_quantcore_sfnkkoyk.c4aad8fd5beb.md	2	BRK.CHAN	1	計算：ATR 追蹤停損
+swing_breakout_strategy_quantcore_sfnkkoyk.c4aad8fd5beb.md	3	BRK.CHAN	1	做多核心：收盤高於前期最高收盤價
+swing_breakout_strategy_quantcore_sfnkkoyk.c4aad8fd5beb.md	4	BRK.CHAN	1	出場：觸及 ATR 追蹤停損
+the_fahdi_method_owfifpgd.257ba01afd16.md	1	SW.BOS|LQ.SWEEP	1|2	計算：市場結構、延續突破與掃掠
+the_fahdi_method_owfifpgd.257ba01afd16.md	2	SW.BOS|LQ.SWEEP	1|2	計算：RSI 背離（濾網與出場）
+the_fahdi_method_owfifpgd.257ba01afd16.md	3	SW.BOS|LQ.SWEEP	1|2	計算：影線與實體（濾網與出場形態）
+the_fahdi_method_owfifpgd.257ba01afd16.md	4	SW.BOS|LQ.SWEEP	1|2	做多：多方延續突破／空方結構中多方掃掠，附共用濾網
+the_fahdi_method_owfifpgd.257ba01afd16.md	5	LQ.SWEEP	2	做多濾網：掃掠時下影線實體比
+the_fahdi_method_owfifpgd.257ba01afd16.md	6	SW.BOS|LQ.SWEEP	1|2	做空：空方延續突破／多方結構中空方掃掠，附共用濾網
+the_fahdi_method_owfifpgd.257ba01afd16.md	7	LQ.SWEEP	2	做空濾網：掃掠時上影線實體比
+the_fahdi_method_owfifpgd.257ba01afd16.md	8	SW.BOS|LQ.SWEEP	1|2	出場：多方 ATR 停損停利、結構反轉、分批止盈與保本
+the_fahdi_method_owfifpgd.257ba01afd16.md	9	SW.BOS|LQ.SWEEP	1|2	出場：空方 ATR 停損停利、結構反轉、分批止盈與保本
+the_fahdi_method_owfifpgd.257ba01afd16.md	10	SW.BOS|LQ.SWEEP	1|2	出場：多方多項出場訊號至少三項成立
+the_fahdi_method_owfifpgd.257ba01afd16.md	11	SW.BOS|LQ.SWEEP	1|2	出場：多方背離配反轉形態、RSI 極端或結構轉空
+the_fahdi_method_owfifpgd.257ba01afd16.md	12	SW.BOS|LQ.SWEEP	1|2	出場：多方 VWAP 超漲、背離、巨量下跌、射擊之星、跌破 VWAP、高週期轉空、MACD 柱轉負組合
+the_fahdi_method_owfifpgd.257ba01afd16.md	13	SW.BOS|LQ.SWEEP	1|2	出場：多方第一第二止盈位分批
+the_fahdi_method_owfifpgd.257ba01afd16.md	14	SW.BOS|LQ.SWEEP	1|2	出場：空方第一第二止盈位分批
+trendlock_multitimeframe_supertrend_donchian_breakout_fdeprmix.9b4d1ed313ce.md	1	BRK.CHAN	1	做多：收盤高於前回看期最低價（字面）且 Supertrend 多頭
+trendlock_multitimeframe_supertrend_donchian_breakout_fdeprmix.9b4d1ed313ce.md	2	BRK.CHAN	1	做空核心：收盤跌破前回看期最低價
+trendlock_multitimeframe_supertrend_donchian_breakout_fdeprmix.9b4d1ed313ce.md	3	BRK.CHAN	1	計算：ATR 止損止盈價
+trendlock_multitimeframe_supertrend_donchian_breakout_fdeprmix.9b4d1ed313ce.md	4	BRK.CHAN	1	出場：多單 ATR 止損止盈或 Supertrend 轉空
+trendlock_multitimeframe_supertrend_donchian_breakout_fdeprmix.9b4d1ed313ce.md	5	BRK.CHAN	1	出場：空單 ATR 止損止盈或 Supertrend 轉多
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	1	CMP.SCORE	1	計算：趨勢效率（狀態分數項）
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	2	CMP.SCORE	1	計算：混沌度（狀態分數項）
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	3	CMP.SCORE	1	計算：方向指標（計分項）
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	4	CMP.SCORE	1	計算：市場狀態（計分項）
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	5	CMP.SCORE	1	計算：均線帶（計分項）
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	6	CMP.SCORE	1	計算：買賣壓力差（計分項）
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	7	CMP.SCORE	1	計算：壓力指數（計分項）
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	8	CMP.SCORE	1	計算：分形效率（動能參數）
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	9	CMP.SCORE	1	計算：分形動能（計分項）
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	10	CMP.SCORE	1	計算：價格流向（計分項）
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	11	CMP.SCORE	1	計算：成交量激增與強陽陰線（計分項）
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	12	CMP.SCORE	1	計算：樞紐結構（計分項）
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	13	CMP.SCORE	1	計算：多方六類旗標分數
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	14	CMP.SCORE	1	計算：空方六類旗標分數
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	15	CMP.SCORE	1	做多核心：多方分數達最低訊號強度
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	16	CMP.SCORE	1	做空核心：空方分數達最低訊號強度
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	17	CMP.SCORE	1	出場：多單 ATR 停損、風險報酬停利、ATR 追蹤
+vortex_nexus_alpha_joat_hcxgamai.75d85c19cd03.md	18	CMP.SCORE	1	出場：空單 ATR 停損、風險報酬停利、ATR 追蹤
+vsa_with_absorption_proxy_for_holmes_and_bookmap_style_wpuat5a1.62b0f427334e.md	1	OSC.SIG	1	計算：方向量代理
+vsa_with_absorption_proxy_for_holmes_and_bookmap_style_wpuat5a1.62b0f427334e.md	2	OSC.SIG	1	做多核心：方向量代理上穿其均線，放量收陽
+vsa_with_absorption_proxy_for_holmes_and_bookmap_style_wpuat5a1.62b0f427334e.md	3	OSC.SIG	1	做空核心：方向量代理下穿其均線，放量收陰
+vsa_with_absorption_proxy_for_holmes_and_bookmap_style_wpuat5a1.62b0f427334e.md	4	OSC.SIG	1	出場：多單前根低點下調停損、風險報酬停利
+vsa_with_absorption_proxy_for_holmes_and_bookmap_style_wpuat5a1.62b0f427334e.md	5	OSC.SIG	1	出場：空單前根高點上調停損、風險報酬停利
+vwap_strategy_v5lj2zyc.ba4ebbb31104.md	1	PB.TOUCH|MA.CROSS|MA.CROSS|MA.CROSS	1|2|4|5	計算：NY 開盤錨定 VWAP
+vwap_strategy_v5lj2zyc.ba4ebbb31104.md	2	MA.CROSS	4	計算：跨時段錨定 VWAP
+vwap_strategy_v5lj2zyc.ba4ebbb31104.md	3	PB.TOUCH	1	做多核心：收復 VWAP 後觸及 VWAP 緩衝區且收盤守在其上
+vwap_strategy_v5lj2zyc.ba4ebbb31104.md	4	PB.TOUCH	1	做空核心：跌破 VWAP 後觸及 VWAP 緩衝區且收盤守在其下
+vwap_strategy_v5lj2zyc.ba4ebbb31104.md	5	MA.CROSS	2	做多核心：收盤上穿 VWAP 或連兩根收在其上
+vwap_strategy_v5lj2zyc.ba4ebbb31104.md	6	MA.CROSS	2	做空核心：收盤下穿 VWAP 或連兩根收在其下
+vwap_strategy_v5lj2zyc.ba4ebbb31104.md	7	MA.CROSS	3	做多核心：短 EMA 上穿長 EMA
+vwap_strategy_v5lj2zyc.ba4ebbb31104.md	8	MA.CROSS	3	做空核心：短 EMA 下穿長 EMA
+vwap_strategy_v5lj2zyc.ba4ebbb31104.md	9	MA.CROSS	4	做多核心：NY VWAP 上穿跨時段 VWAP
+vwap_strategy_v5lj2zyc.ba4ebbb31104.md	10	MA.CROSS	4	做空核心：NY VWAP 下穿跨時段 VWAP
+vwap_strategy_v5lj2zyc.ba4ebbb31104.md	11	MA.CROSS	5	做多核心：價格向上交叉 NY VWAP
+vwap_strategy_v5lj2zyc.ba4ebbb31104.md	12	MA.CROSS	5	做空核心：價格向下交叉 NY VWAP
+vwap_strategy_v5lj2zyc.ba4ebbb31104.md	13	PB.TOUCH|MA.CROSS|MA.CROSS|MA.CROSS|MA.CROSS	1|2|3|4|5	出場：多倉訊號棒低點停損或均價獲利限價
+vwap_strategy_v5lj2zyc.ba4ebbb31104.md	14	PB.TOUCH|MA.CROSS|MA.CROSS|MA.CROSS|MA.CROSS	1|2|3|4|5	出場：空倉訊號棒高點停損或均價獲利限價
+vwap_trend_strategy_intraday_kedararc_quant_xxsfnbvz.004fb75d1321.md	1	PB.TOUCH	3	計算：實體百分比
+vwap_trend_strategy_intraday_kedararc_quant_xxsfnbvz.004fb75d1321.md	2	MA.CROSS|PB.TOUCH|PB.TOUCH	1|2|3	做多：收盤上穿 VWAP／回踩 VWAP 後收上／觸及 VWAP 大實體收上
+vwap_trend_strategy_intraday_kedararc_quant_xxsfnbvz.004fb75d1321.md	3	MA.CROSS|PB.TOUCH|PB.TOUCH	1|2|3	做空：收盤下穿 VWAP／反彈 VWAP 後收下／觸及 VWAP 大實體收下
+vwap_trend_strategy_intraday_kedararc_quant_xxsfnbvz.004fb75d1321.md	4	MA.CROSS|PB.TOUCH|PB.TOUCH	1|2|3	出場：多頭收盤低於 VWAP 且短 EMA 低於長 EMA
+vwap_trend_strategy_intraday_kedararc_quant_xxsfnbvz.004fb75d1321.md	5	MA.CROSS|PB.TOUCH|PB.TOUCH	1|2|3	出場：空頭收盤高於 VWAP 且短 EMA 高於長 EMA
+vwap_trend_strategy_intraday_kedararc_quant_xxsfnbvz.004fb75d1321.md	6	MA.CROSS|PB.TOUCH|PB.TOUCH	1|2|3	出場：多頭 ATR 停損
+vwap_trend_strategy_intraday_kedararc_quant_xxsfnbvz.004fb75d1321.md	7	MA.CROSS|PB.TOUCH|PB.TOUCH	1|2|3	出場：空頭 ATR 停損

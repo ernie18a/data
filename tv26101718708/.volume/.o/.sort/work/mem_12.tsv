@@ -1,0 +1,43 @@
+apex_v2_joat_b4ewzcpj.b61bd091b550.md	1	CMP.EXHAUST	計算吸收、VWAP 偏離、支撐接近、背離、布林外加 RSI 超賣、均值偏離等多項訊號，多頭訊號數達合流門檻且多於空方即做多，空方對稱	F.score	X.reverse_signal|X.stop_pct|X.tp_pct|X.trailing_pct	計分項以反向超伸為主但混入合成偏差與零延遲均線趨勢分數兩項順勢項；為等權訊號計數而非加權，合流關閉時任一訊號即進場；停損停利距離計算未定義
+bollinger_bounce_reversal_strategy_visual_edition_30vzsmvl.8ee6c93900e5.md	1	REV.REENTRY	布林下軌越界後收盤收回即做多，上軌對稱做空	F.osc_dir|F.volume	X.stop_pct|X.tp_pct	以 MACD 線相對訊號線方向及成交量不低於均量為濾網；停損停利距離未明定
+cleantradequantumv72obfvgintegrated_jerceqwu.b217517d9fdc.md	1	CMP.SCORE	將量子方向、記憶、VWAP、RSI、MACD、EMA、ADX、成交量、高週期等順勢項加權為多空分數，多方分數與分差達門檻即做多，空方對稱	F.score|F.session|F.adx_di|F.cooldown|F.rearm|F.trend_ma|F.ma_stack|F.trail_side|F.flat|F.other	X.stop_atr|X.stop_swing|X.tp_multi|X.trailing_atr|X.reverse_signal	另以平衡／嚴格模式要求狙擊、集群、CISD、UT、KAMA、TMA 同向，並有錯誤冷卻與錯誤進場附近封鎖；狙擊觸發與 HFT 分數為並列的分數路徑
+code_a_terminal_core_x5m5zevx.2c4bfbfbe3cd.md	1	MA.CROSS	中期 EMA 上穿長期 EMA 即做多，短期下穿中期做空	F.candle_dir|F.extension|F.trail_side|F.osc_dir|F.rsi_band|F.slope|F.volume|F.rearm|F.other	X.candle_reversal|X.momentum_fade	須創高、開收高於前根、開或收等於最低價（無下影）、SAR 同側、波線差值與資金流、Hull 方向、趨勢分數上升；做空為短期穿中期非完全對稱
+code_a_terminal_core_x5m5zevx.2c4bfbfbe3cd.md	2	OSC.SIG	波動波線上穿其短期 SMA 訊號線（當根或兩根前）即做多，空方對稱	F.candle_dir|F.extension|F.trail_side|F.osc_dir|F.rsi_band|F.slope|F.volume|F.rearm|F.other	X.candle_reversal|X.momentum_fade	與 EMA 交叉路徑共用全部濾網；訊號線須依正負區位於上下帶值內
+coral_trend_pullback_strategy_tradeiq_kc6itas8.f4f13b91da41.md	1	PB.TOUCH	Coral 線上升且曾站穩其上後，收盤回檔跌破再重新上穿 Coral 即做多，空方對稱	F.date|F.slope|F.adx_di|F.osc_dir|F.other	X.stop_swing|X.tp_rr	參考線為六層串接平滑的 Coral 趨勢線；回檔以收盤跌破後再上穿呈現；確認可選 ADX/DI、多空強度或量能指標綠
+demo_gpt_day_trading_scalping_strategy_vifjz204.acbd4ba19477.md	1	PAT.BAR	前根與當根皆收陽且當根開盤高於前收盤即做多，只做多	F.volume	X.candle_reversal|X.other	形態為兩連陽加跳空開高；出場為對稱的兩連陰跳低形態，另於回測區間外平倉
+ema_cross_imb_kochan_style_na6e6cho.7a5ef6d7218b.md	1	PAT.BAR	三根 K 棒公平價值缺口（前根低點高於前三根高點）達最小缺口即做多，空方對稱	F.trend_ma|F.candle_dir|F.volume|F.session|F.flat	X.stop_pct|X.trailing_pct	要求短期 EMA 高於長期 EMA、前收盤高於前根短期 EMA、前根收陽且實體比例達門檻、前根放量並創兩根前新高
+ema_pullback_trend_continuation_strategy_with_volume_and_momentu_petyqh3b.7f817c61434d.md	1	PB.TOUCH	短期 EMA 高於長期 EMA 時，前根最低觸及或收在短期 EMA 下而當根收回其上即做多，空方對稱	F.volume|F.rsi_band|F.flat	X.stop_swing|X.tp_atr	參考線為短期 EMA；RSI 高於多方門檻；停損為回看最低減 ATR 緩衝
+enhanced_range_filter_strategy_with_atr_tpsl_zslzbel6.b84a73cc6d22.md	1	TS.FLIP	區間濾波器方向由空翻多（收盤高於濾波器且濾波器上升）即做多，空方對稱	F.volume|F.rsi_band|F.trend_ma|F.volatility	X.stop_atr|X.tp_atr	追蹤線為區間濾波器；量能倍率、RSI 未超買、短期 EMA 高於長期 EMA、區間波幅比不低於盤整門檻
+ftr_wma_obv_rsi_strategy_az2md904.153c2ed6b95a.md	1	OSC.LEVEL	標準化 RSI 高於買入門檻且 OBV 振盪值高於多頭門檻的狀態成立即做多，空方對稱	F.osc_dir|F.slope|F.date	X.momentum_fade|X.reverse_signal	另要求多週期 Fisher 全部高於前值、WMA 上升
+gaussian_mfi_bf_umqpuqrh.030bdb6f2099.md	1	OSC.LEVEL	Gaussian 濾波線一階差分為正（高於前值）的狀態即做多，空方對稱	F.volatility|F.osc_dir	X.stop_pct|X.tp_pct	核心為平滑價格線斜率符號；平滑 ROC 絕對值須超出閾值（不分方向）、MFI 須同向變動
+gold_ai_strategy_v20_5yqxo32h.d171d4d51ed0.md	1	MA.STATE	收盤高於長期 EMA 且短期 EMA 高於較長期 EMA 的狀態即做多，空方對稱	none	X.stop_atr|X.tp_atr|X.trailing_atr	單線位置加兩線排列，無其他濾網
+gold_ai_strategy_v20_5yqxo32h.d171d4d51ed0.md	2	CMP.SCORE	多頭分數達可調門檻即做多，空方對稱	none	X.stop_atr|X.tp_atr|X.trailing_atr	分數構成未明列，推定含布林帶收縮等項目
+gold_ai_strategy_v20_5yqxo32h.d171d4d51ed0.md	3	OSC.LEVEL	MACD 線高於訊號線的狀態即做多，空方對稱	none	X.stop_atr|X.tp_atr|X.trailing_atr	以 MACD 柱為正作狀態觸發
+gold_ai_strategy_v20_5yqxo32h.d171d4d51ed0.md	4	MA.CROSS	短期 EMA 上穿較長期 EMA 即做多，空方對稱	F.session|F.volume|F.score|F.trend_ma	X.stop_atr|X.tp_atr|X.trailing_atr	須分數達門檻、收盤高於長期 EMA、放量倍數與時段
+gold_ai_strategy_v20_5yqxo32h.d171d4d51ed0.md	5	OSC.SIG	MACD 線或隨機 %K 上穿其訊號線即做多，空方對稱	F.session|F.volume|F.score|F.trend_ma|F.rsi_band	X.stop_atr|X.tp_atr|X.trailing_atr	隨機交叉須 %K 低於上限；共用分數、長期 EMA、放量與時段濾網
+gold_ai_strategy_v20_5yqxo32h.d171d4d51ed0.md	6	REV.REENTRY	RSI 由下上穿高於超賣門檻的可調水平即做多，空方對稱	F.session|F.volume|F.score|F.trend_ma	X.stop_atr|X.tp_atr|X.trailing_atr	穿越水平為超賣門檻上方的可調值；共用分數、長期 EMA、放量與時段濾網
+hancock_filtered_volume_obv_osc_strategy_twdlcyvh.2b7ee9898903.md	1	BRK.CHAN	最高價突破前根慢速唐奇安上軌即做多，空方對稱	F.other|F.osc_dir	X.band_opposite|X.stop_pct	同時要求過濾 OBV（或其振盪值）突破自身慢速通道上軌且為正；停損距離未明定
+hidden_gaps_vsa_volume_d9rrdb4s.89d61800d1b8.md	1	NEW.12_vol_vs_avg	成交量低於均量即做多、高於均量即做空，不看價格方向	none	none	僅以無符號成交量相對均量的位置定多空方向
+liquidity_maxing_joat_zmdf0upt.5cf70314f684.md	1	SW.BOS	收盤價上穿最近確認樞紐高點（順勢破位或趨勢反轉）即做多，空方對稱	F.score|F.htf|F.flat	X.stop_atr|X.tp_rr	合流分數含趨勢 EMA、RSI 區間、MACD、量能、交易日、ATR 上升、高週期 EMA 等計分；收盤不低於高週期 EMA
+liquidity_maxing_joat_zmdf0upt.5cf70314f684.md	2	REV.REENTRY	多頭結構下最低價刺穿前期短回看最低後收盤收回其上（IDM）即做多，空方對稱	F.swing_dir|F.score|F.htf|F.flat	X.stop_atr|X.tp_rr	收回對象為滾動短回看極值；以樞紐突破所定結構趨勢為方向前提
+maa_ambe_lhrefutq.cb44a7b70c0a.md	1	OSC.LEVEL	RSI 高於上界的狀態即順勢做多，低於下界做空	F.trend_ma|F.adx_di|F.volume|F.session|F.daily_limit|F.flat	X.tp_pct|X.stop_pct	收盤須在長期 EMA 同側、ADX 高於趨勢門檻、放量、時段與當日次數上限
+nqmnq_ct_scalper_backtest_1kekmbb9.cebd6cfc1b72.md	1	CMP.EXHAUST	先跌且空頭超伸分數與反轉確認分數皆達門檻即做多，空方對稱	F.efficiency|F.prior_move|F.adx_di|F.volume|F.volatility|F.divergence	X.other	止損止盈價計算未定義；排除隱藏背離與持續性趨勢
+nqmnq_ct_scalper_backtest_1kekmbb9.cebd6cfc1b72.md	2	LQ.SWEEP	共同超伸前提下，價格刺穿前期區間低點後收盤收回其上即做多，空方對稱	F.score|F.efficiency|F.prior_move|F.adx_di|F.volume|F.volatility|F.divergence|F.wick	X.other	須影線、成交量、區間擴張達門檻並有正向成交流確認
+nqmnq_ct_scalper_backtest_1kekmbb9.cebd6cfc1b72.md	3	DIV.REG	共同超伸前提下，價格低於前波段低點而累積成交差額或 RSI 低點抬高即做多，空方對稱	F.score|F.efficiency|F.prior_move|F.adx_di|F.volume|F.volatility|F.divergence	X.other	背離比較對象為累積成交差額或 RSI；另須路徑確認分數
+nqmnq_ct_scalper_backtest_1kekmbb9.cebd6cfc1b72.md	4	SR.TOUCH	共同超伸前提下，高成交量區低點由上方回測後收盤守住即做多，空方對稱	F.score|F.efficiency|F.prior_move|F.adx_di|F.volume|F.volatility|F.divergence	X.other	價位為高成交量區邊界；另須路徑確認分數
+nqmnq_ct_scalper_backtest_1kekmbb9.cebd6cfc1b72.md	5	PAT.BAR	共同超伸前提下，放量且區間與實體偏小並收陽即做多，空方對稱	F.score|F.efficiency|F.prior_move|F.adx_di|F.volume|F.volatility|F.divergence	X.other	形態為放量小實體；另須路徑確認分數
+oscillating_ssl_channel_strategy_3m_5m_time_frames_g0zicqcz.49c421dac5ef.md	1	BRK.CHAN	SSL 為多頭狀態時，最高價由下上穿高點 SMA 通道上界即做多，空方對稱	F.trend_ma	X.trend_flip	通道為高點與低點 SMA；方向前提為收盤曾越過高點 SMA 的 SSL 狀態；以最高價觸及判突破
+pvsra_v5_ur1wikv7.8f6583f7089c.md	1	PAT.BAR	日線收盤在上界之上時，回看位置出現異常放量陰線即做多，空方對稱	F.htf|F.band_pos	X.stop_bar|X.tp_level	形態為單根異常放量逆向 K 棒；以日線 VWMA 標準差上界定趨勢；停損停利依該 K 棒高低加減緩衝
+pvsra_v5_ur1wikv7.8f6583f7089c.md	2	PAT.BAR	日線收盤在上界之上時，異常放量陽線在回看範圍內重複出現即做多，空方對稱	F.htf|F.band_pos	X.stop_pct|X.tp_pct	形態為多根同向異常放量 K 棒重複出現；停損停利為進場價加減緩衝
+real_strategy_dowfactormfirsidvogstrategy_upm8dzw4.e67301d35649.md	1	OSC.LEVEL	RSI（或量價 RSI）乘以道氏係數調整後高於其反向值即做多，空方對稱	none	X.reverse_signal	分數比較等價於 RSI 高於依多變量相關係數平移的中線；動能可選收盤 RSI 或成交量乘收盤 RSI
+sbrsimfi_with_volatility_version_10_suyavhgn.7c876a3ffff9.md	1	REV.REENTRY	MFI 由下向上穿越其布林下軌（自界外收回）即做多，空方對稱	none	none	通道建於 MFI 值域；無出場規則
+spy_59_ma_scalping_volume_time_filter_1dgkudgw.fae2c0222340.md	1	MA.CROSS	短期 SMA 上穿長期 SMA 即做多，空方對稱	F.volume|F.session	X.tp_pct|X.stop_pct	量須大於前一根成交量；限進場時段
+strategy_mythbusting_6_psarmasqzmomhvi_myn_wkb7jqzn.596195d0cfbc.md	1	TS.FLIP	PSAR 由多翻空轉為由空翻多即做多，空方對稱	F.trend_ma|F.ma_stack|F.osc_dir|F.adx_di|F.other	X.stop_pct|X.tp_pct	收盤高於兩均線且均線多頭排列、擠壓動能為正、ADX 高於門檻、HVI 量能柱為綠
+tick_marubozu_strategy_6zyud5zr.9089275abb9a.md	1	PAT.BAR	收陽且下影不超過 tick 尺度、實體不小於 tick 尺度的 Marubozu 即做多，空方對稱	F.volume	none	尺度以 tick 數換算；無出場規則
+tomukas_wave_vwap_dca_scalper_pro_xj5isxis.a0476e3fd526.md	1	OSC.SIG	空倉時波段動能線上穿其短期 SMA 訊號線即做多，空方對稱	F.session|F.flat|F.trend_ma|F.ma_stack|F.rsi_band|F.volume|F.osc_dir|F.near_level|F.candle_dir	X.tp_pct|X.stop_pct	須收盤高於長短 EMA、波動濾波線與 VWAP，RSI 高於中線、MACD 高於訊號、成交量節點上方或附近、收盤高於前根最高
+tomukas_wave_vwap_dca_scalper_pro_xj5isxis.a0476e3fd526.md	2	PM.DCA	持多未達最高加倉級時，收盤低於首次進場價減級距乘已加倉級數即加倉，空方對稱	none	X.tp_pct|X.stop_pct	加碼間距以首次進場價為基準按級數線性放大；停利停損以持倉均價計
+turks_tiered_unit_risk_kernel_strategy_worximlc.81cec64e646f.md	1	MA.STATE	空倉時收盤至少高於一條均線使目標權重大於零即做多，只做多	none	X.trailing_ma	位置以多條均線的 ATR 標準化距離截限平均並量化為階梯
+turks_tiered_unit_risk_kernel_strategy_worximlc.81cec64e646f.md	2	NEW.12_tier_weight	依收盤相對多條均線的標準化距離量化為階梯目標權重，權重升階即加倉、降階且收盤不低於核平滑線即減倉	none	X.trailing_ma|X.tp_multi	部位大小隨順勢位置分級調整；減倉另須收盤不低於高斯核平滑線
+twobar_fib_retrace_strategy_futures_np615sik.e19634843968.md	1	PB.TOUCH	前兩根收陽（或前收盤突破再前根高點）界定推動後，當根最低價回落至前根斐波那契中段至深端回撤區即做多，空方對稱	F.candle_dir|F.volume|F.trend_ma	X.stop_bar	推動以兩根 K 棒定義且實體占比達門檻、成交量遞增；收盤須在 VWAP 同側；僅有止損無停利
+ut_bot_alert_shah_eitzg4st.2f1782ed163b.md	1	TS.FLIP	收盤由下上穿 UT ATR 追蹤停損線即做多，空方對稱（可反手）	F.trend_ma|F.htf|F.adx_di|F.trail_side|F.volume|F.session|F.cooldown	X.stop_pct|X.tp_multi|X.breakeven|X.trailing_step	須 EMA 多頭且收盤高於長期 EMA、高週期 EMA 同向、ADX 達門檻、Supertrend 為多、放量
+weekend_hunter_ultimate_v62_1y4pnlsm.7eee725c51d1.md	1	CMP.SCORE	趨勢、動能、量能、背離與時段分數加權總和高於做多門檻即做多，低於做空門檻做空	F.htf|F.trend_ma|F.session|F.daily_limit|F.flat|F.other	X.stop_atr|X.tp_atr|X.trailing_pct|X.session_end|X.other	分數含週末時段加成；趨勢一致度須同向；閃崩與帳戶緊急停損時禁止進場並平倉
