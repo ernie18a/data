@@ -1,0 +1,5 @@
+spas_single_price_action_strategy_5xjpucrk.ab2b494664c0.md	1	PAT.BAR	CNT.STREAK	前段回看期 K 棒連續收陽（連續同向根數達回看長度）即順勢做多，當根創量為放量濾網，屬連續同向計數延續
+avgo_advanced_day_trading_strategy_2pkl0biu.390990f03e83.md	3	PAT.BAR	CNT.STREAK	觸發為連續多根收盤上升達設定根數的順勢計數，收盤高於短期 EMA 與 RSI 區間為濾網
+supertrend_trapping_candle_strategy_h61z9tna.27ce77f543c4.md	1	PAT.BAR	PB.BAR	SuperTrend 方向為構成前提，於上升趨勢中出現逆向收陰小振幅 K 棒即順勢做多，屬順勢中逆向 K 棒進場
+pro_investing_nasdaq_silver_bullet_strategy_1hr_grkaz4l6.d1dd5f9eca64.md	1	PAT.BAR	CNT.STREAK	連續陽線根數達門檻即順勢做多，為連續同向計數而非少數固定根數形態
+pvsra_v5_ur1wikv7.8f6583f7089c.md	1	PAT.BAR	PB.BAR	日線收盤位於上界之上為趨勢前提，出現異常放量陰線即順勢做多，屬順勢中逆向 K 棒進場

@@ -1,0 +1,5 @@
+swing_trading_manual_v1_btc_eth_sol_sasphwmm.3d31c4ac18f7.md	1	PB.TOUCH	PB.TOUCH.pullback_state	以收盤不高於短期 EMA 或布林中軌的回檔狀態進場，無觸及事件，屬順勢中回檔狀態結構
+stable_main_force_system_v6_7rqkecn2.7a9d5b2090d9.md	1	PB.TOUCH	PB.TOUCH.pullback_state	以收盤高於長均線且低於短均線的回檔狀態進場，無觸及事件，屬順勢中回檔狀態結構
+the_strategy_ichimoku_kinko_hyo_and_more_dqayjnzk.b1d784881f30.md	9	TS.FLIP	TS.STATE	只要求價格位於 SAR 或 Supertrend 之上的方向狀態，無翻轉事件
+supertrend_with_multiple_filter_strategy_qvqti4l2.601dd7631627.md	1	TS.FLIP	TS.STATE	核心為 Supertrend 上升方向狀態，其餘事件皆為可選啟用的濾網
+double_ai_super_trend_trading_strategy_presenttrading_hlzpt7it.e97ef60d8510.md	1	TS.FLIP	TS.STATE	兩組 Supertrend 同為多頭方向狀態加近鄰分類狀態，無翻轉事件

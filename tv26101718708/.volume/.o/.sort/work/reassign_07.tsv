@@ -1,0 +1,9 @@
+soxl_trend_surge_v302_profitonly_runner_9o8nw0mu.dd3c954cdcf4.md	1	MA.STATE	TS.STATE	EMA 位置與 Supertrend 多頭狀態並列，依狀態優先序 TS.STATE 先於 MA.STATE，EMA 降為 F.trend_ma。
+vj_mega_supertrend_for_intraday_9eagcvfe.e2a12a25ec8c.md	1	MA.STATE	PB.BAR	VWAP 上升且價格在 Supertrend 上方時以收陰逆向 K 棒做多，屬順勢中逆向 K 棒進場。
+multitf_ai_supertrend_with_adx_strategy_presenttrading_feoube91.215a4dd54e42.md	3	MA.STATE	TS.STATE	核心為兩組 Supertrend 方向皆多的追蹤線方向狀態，非一般均線位置。
+vj_hulk_smash_intra_g8jkiuxt.d2fc6597f004.md	1	MA.STATE	PB.BAR	以超級趨勢線定方向後要求當根收陰（逆向 K 棒）才做多，屬順勢中逆向 K 棒進場。
+ema_bands_leledc_bollinger_bands_trend_following_strategy_v2_rqclxyiw.142d1462a351.md	5	MA.STATE	NUL.ALWAYS	空倉即預設進場，慢速 EMA 位置僅為可選濾網，無判斷結構。
+es_1m_3m_momentum_signal_flip_exits_3cxvwaf3.c251be4bbe69.md	2	MA.STATE	OSC.LEVEL	僅由 EMA 位置與平滑 RSI 高於中線兩狀態構成，依狀態優先序 OSC.LEVEL 先於 MA.STATE。
+btc_v67_total_control_screener_klkroe7c.c90b40cf7cf5.md	3	MA.STATE	OSC.SLOPE	唯一條件為 HMA 現值高於前值的逐根斜率方向狀態，無價格相對均線位置或排列。
+trend_flow_strategy_z4kcougt.5f02790afa49.md	2	MA.STATE	PAT.DIR	陽線加收盤高於 EMA 兩狀態並列，依狀態優先序 PAT.DIR 先於 MA.STATE，與同類成員一致。
+3level_dca_buy_strategy_ayfehigq.4f43858c5b64.md	2	PM.DCA	PM.GRID	級距錨定滾動週期高點且不需既有持倉、每級只買一次，屬離散價位網格而非自最差進場價逆向加碼。

@@ -1,0 +1,57 @@
+## MA.CROSS 兩線交叉（順勢）
+- 核心邏輯：計算價格單位的快線（收盤價本身、Heikin-Ashi 收盤、短期均線、線性回歸值、Supertrend 線、平滑 VWAP）與平均類慢線（各類均線、錨定 VWAP、布林中軌、結構基準線、均線加斜率修正）→ 做多：快線由下向上穿越慢線的當根事件（含單根開收跨越、延遲確認、時窗內近期穿越、以預測交叉價提前觸發）→ 做空：對稱由上向下穿越；約一成成員只做多或只做空，少數做空改用另一組均線。
+- 可選濾網：
+  - F.volume：成交量高於均量倍數或前一根量，約 65 個成員。
+  - F.trend_ma：收盤或快線位於長期均線、VWAP、一目雲同側才可做該方向，約 55 個成員。
+  - F.rsi_band：RSI 位於中線同側、未超買超賣或指定區間，約 29 個成員。
+  - F.flat：須空倉或每段僅一次進場，約 28 個成員。
+  - F.session：限交易時段、新聞禁入或截止時點，約 26 個成員。
+  - F.adx_di：ADX 高於趨勢門檻或 +DI 大於 −DI，約 26 個成員。
+  - F.osc_dir：MACD 高於訊號線、CCI 高於零、CVD 或未平倉量符號同向，約 22 個成員。
+  - F.htf：較高週期 EMA、HMA、VWAP 或 RSI 同向，約 20 個成員。
+  - F.other：主訊號有效期、待確認訊號、均線測試次數、kNN 預測、權益保護等雜項，約 19 個成員。
+  - F.volatility：ATR、帶寬或短長 ATR 比高於門檻，約 14 個成員。
+  - F.cooldown：距上次進出場須隔指定根數，約 14 個成員。
+  - F.candle_dir：進場 K 棒收陽或創高，約 14 個成員。
+  - F.ma_stack：三條以上均線依序排列，約 13 個成員。
+  - F.slope：快慢線、VWAP 或長期均線斜率同向，約 12 個成員。
+  - F.score：多空資格分或成立項數達門檻，約 12 個成員。
+  - F.confirm：等 K 棒收定或以前一根條件確認，約 9 個成員。
+  - F.trail_side：價格位於 Supertrend、SAR、Chandelier 同側，約 7 個成員。
+  - F.daily_limit：當日交易次數或損益未達上限，約 7 個成員。
+  - F.extension：距均值或近期漲幅不超過上限，約 6 個成員。
+  - F.date：限回測日期區間，約 6 個成員。
+  - F.band_pos：價格相對布林中軌或下軌的位置，約 6 個成員。
+  - F.swing_dir：上升波段或即時低點高於結構低點，約 5 個成員。
+  - F.key_level：收盤高於確認擺動高點、POC 或回看新高，約 5 個成員。
+  - F.retest：穿越後時窗內回測慢線而收盤守住，約 4 個成員。
+  - F.wick、F.squeeze、F.rearm、F.min_rr、F.confirm_bar：下影線比例、壓縮狀態、訊號需先失效再觸發、報酬風險比門檻、收盤突破前根高低點確認，各約 3 個成員。
+  - F.efficiency、F.prior_move、F.osc_cross、F.near_level、F.min_risk、F.divergence：效率比、先前漲跌方向、WaveTrend 交叉、鄰近回撤位、最低停損距離、累積量差背離，各約 1 到 2 個成員。
+- 出場變體：
+  - X.stop_atr：進場價減 ATR 倍數停損，約 34 個成員。
+  - X.stop_pct：固定百分比或固定距離停損，約 30 個成員。
+  - X.tp_pct：固定百分比或固定距離停利，約 29 個成員。
+  - X.trend_flip：快慢線反向交叉或追蹤線轉向出場，約 25 個成員。
+  - X.trailing_atr：ATR 倍數移動停損，約 25 個成員。
+  - X.tp_atr：ATR 倍數停利，約 21 個成員。
+  - X.other：自適應距離、未定義止損、偏向失效、超出回測區間平倉等，約 19 個成員。
+  - X.trailing_ma：收盤跌破短期或長期均線出場，約 16 個成員。
+  - X.tp_rr：初始風險乘報酬比停利，約 13 個成員。
+  - X.reverse_signal：反向訊號出場或反手，約 13 個成員。
+  - X.time：持倉根數上限，約 12 個成員。
+  - X.indicator_cap：RSI 等過熱或自超買回落出場，約 11 個成員。
+  - 無出場規則：約 10 個成員。
+  - X.tp_multi：多段停利或分批減倉，約 10 個成員。
+  - X.trailing_pct：自持倉最高價回撤百分比出場，約 9 個成員。
+  - X.stop_bar：訊號 K 棒高低點停損，約 8 個成員。
+  - X.momentum_fade：動能或分數歸零出場，約 7 個成員。
+  - X.osc_cross、X.stop_level、X.session_end、X.min_hold、X.candle_reversal：振盪器反穿、VWAP 或帶線對側停損、時段結束平倉、最短持倉、反向 K 棒，各約 4 到 5 個成員。
+  - X.tp_level、X.stop_swing、X.breakeven、X.volume_spike、X.band_opposite、X.tp_mid、X.structure_break、X.sar：關鍵價位停利、擺動點停損、保本、爆量出場、通道對側、VWAP 回歸、反向結構突破、SAR，各約 1 到 3 個成員。
+- 群內常見小異：
+  - 快線角色：短期均線對中／長期均線，或收盤價本身穿越單一均線。
+  - 慢線種類：EMA／SMA／HMA／DEMA／TEMA 對 LSMA／T3／EVWMA／VWMA／零延遲 EMA／Kahlman-Hull。
+  - 慢線為 VWAP 類：日內、NY 開盤錨定、跨時段錨定 VWAP，或兩條不同錨定 VWAP 互穿。
+  - 慢線為衍生基準：布林中軌、線性回歸值、斐波那契價位 EMA、RSI 映射中線、高低中值基準線、效率比自適應基線、均線加斜率修正。
+  - 穿越判定寫法：前後兩根位置轉換、單根開收跨越、延遲位置確認、近 N 根內發生、影線穿越、短線同時穿越中長兩線。
+  - 交叉後附加：須回測慢線守住、須先反向假跌破再收回、須於有效期內再確認站上長短均線。
+  - 方向：多空對稱為主，部分只做多或只做空，少數多空使用不同均線對。
