@@ -1,2 +1,0 @@
-breakout_trend_trading_strategy_v2_w5lhtjo4.d87444e1ab4b.md	1	BRK.CHAN	PAT.BAR	觸發事件為收盤變動超過 ATR 倍數且放量的動能 K 棒成立，新高條件只是狀態，依事件優先歸 K 棒形態
-mu_21day_time_series_squeeze_strategy_itime0zm.f2b38b370e43.md	4	BRK.CHAN	BRK.SQZ	觸發為前根仍內縮、當根布林脫離肯特納的壓縮解除事件，收盤高於布林上軌僅定方向，屬壓縮釋放
