@@ -1,1 +1,0 @@
-將 Put/Call Options Ratio 視為選擇權依據；若策略對象是 NDX 或 SPX，視為指數對象。當依據與對象分屬不同類別時，判定符合。
