@@ -1,0 +1,602 @@
+# BTC MTF Engulfing Flip Strategy (1H, 2X)
+
+- url: https://www.tradingview.com/script/XGqSzuxJ-BTC-MTF-Engulfing-Flip-Strategy-1H-2X/
+- type: strategy
+- pine_id: PUB;72dac215a42849559b7935e6dc6f1d81
+- version: 1.0
+
+## Description
+
+BTC Flip Bot V1 — MTF Engulfing + SL-Flip (BTCUSDT 1H 2×)
+
+Author: Jagadeesh Manne
+Version: V1 — first public release (April 2026)
+
+A multi-timeframe trend-following strategy with SL-flip extension for BTC perpetual futures.
+
+⚠️ IMPORTANT: This strategy is tested and validated ONLY on BTCUSDT perpetual futures | 1H timeframe | 2× leverage. Do not apply to other pairs, timeframes, or leverage settings without independent testing.
+
+⚠️ TradingView's chart timeframe affects how this strategy calculates. A red banner appears if the chart is not set to 1H — set the top-left TF to "1h" explicitly for results to match the published backtest.
+
+⚠️ TradingView free/basic accounts cache only a limited number of bars (5K–20K). The TV backtest you see will cover only the most recent window of the full 6.5-year test. See the "Full backtest" section below for the authoritative Python numbers.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+HOW IT WORKS
+
+Three timeframes must align simultaneously on a single 1H bar before a trade is taken:
+
+🔹 DAILY — Trend Regime
+Close > 50-period EMA for longs (below for shorts). Macro trend safety gate — rejects ~50% of all signals that would trade against the dominant trend.
+
+🔹 4H — Momentum Confirmation
+RSI(14) > 50 for longs (below for shorts). Medium-term momentum alignment.
+
+🔹 1H — Entry Trigger (all 5 must be true on the same bar)
+• RSI(14) > 45 for longs / < 55 for shorts
+• MACD(12,26,9) line above/below signal line
+• Bullish or Bearish engulfing candle (body > prior body) — the core trigger
+• ATR(14) above 50-period average (volatility expanding)
+• Volume above 1.5× 20-period SMA (participation spike)
+
+Only ~1% of all engulfing candles pass all 7 filters across a 5-year period. This extreme selectivity is the edge.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STOP LOSS & PARTIAL TP
+
+Main SL: Pattern-based (min of entry bar low + prior bar low, with 0.1% buffer). Capped at 2.5% from entry. Whichever is tighter wins.
+
+Partial TP (tuned April 2026):
+• At +6R favorable move, 15% of position closes
+• After partial TP, SL moves to entry + 0.1% (break-even + fee buffer)
+• Remaining 85% continues running with BE stop — captures fat-tail winners while protecting locked-in profit
+
+Why 15%@6R (not 30%@5R)? Grid-search on 5yr data showed this variant lifts CAGR +11 percentage points vs the previous 30%@5R partial, because a small partial lets the runner portion capture the full fat-tail move when a trend plays out.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SL-FLIP EXTENSION
+
+When main SL hits, the strategy queues an opposite-direction flip trade:
+
+• Waits 1 hour after SL hit (lets whipsaw settle)
+• Opens opposite direction with TIGHT 1.5% SL (vs main 2.5%)
+• SL placed at swing high/low from last 10 bars OR 1.5% cap from broken SL — whichever is tighter
+• No flip-on-flip cascade (prevents revenge trading)
+• 24-hour time-stop on flip positions
+• Flips respect DD halt + generic post-exit cooldown
+
+Flip trades add a meaningful contribution over the non-flip baseline while keeping max drawdown unchanged.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+EXIT RULES
+
+• Stop Loss hit → close (triggers flip if not already a flip)
+• Partial TP at +6R → close 15%, SL moves to BE+0.1%, rest runs
+• Opposite direction signal → close only (no flip-open on signals, only on SL)
+• Flip time-stop at 24h → close
+• Drawdown circuit breaker: -25% from peak halts all trading for 7 days
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+RISK MANAGEMENT
+
+• 2× leverage (tested at this level only)
+• Position sizing: notional = equity × leverage (deploys full leverage on each trade)
+• 24h same-direction cooldown after SL hit
+• 2h generic post-exit cooldown (any direction)
+• -25% drawdown halt pauses trading for 7 days
+• Flip trades use tighter SL (1.5%) + 24h time-stop
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+FULL BACKTEST (Python, Binance futures historical data)
+
+Period: September 2019 — April 2026 (~6.5 years)
+Starting capital: $5,000
+Leverage: 2×
+
+Results (V1 with latest tuning: 15%@6R partial + BE+0.1% + SL-flip):
+Start → Final: $5,000 → $181,943 (+3,539%)
+CAGR: +105.3%
+Max DD: -19.7%
+Profit Factor: 4.63
+Win Rate: 41.9% (31W / 43L)
+Total Trades: 74 (~15/yr) — 38 Long, 36 Short, 9 of which were flips
+SL hits: 40
+DD halts triggered: 0
+
+Tuning history (each change validated on 5yr data):
+• Baseline V5 (no flip): +89% CAGR, PF 4.24, 43 trades
+• V6 + SL-flip: +97% CAGR, PF 4.20, 79 trades (flips add more trade opportunities)
+• V6 + BE-move after partial TP: PF 4.20 → 4.29 (kills runner-giveback)
+• V6 + 15%@6R partial: CAGR 97% → 105%, PF 4.29 → 4.63 (current)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+WHY TRADINGVIEW RESULTS DIFFER FROM PUBLISHED NUMBERS
+
+Two reasons:
+
+1. Bar history limit — TradingView loads a finite number of bars for strategy calculation. Free and basic plans only cover ~6–14 months of 1H data. The chart date header shows the full visible range, but the strategy only computes on the loaded bars. Premium plans load more history but usually still less than 6.5 years.
+
+2. Indicator warmup — the Daily EMA50 filter needs ~50 daily bars (~2 months) of warmup data before producing stable values. Python skips the first 100 bars explicitly; Pine Script does not.
+
+For production-accurate numbers, use the Python backtest values above. For a feel of the strategy's pattern, the TV preview is fine as an indication.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+WHAT TO EXPECT
+
+This is NOT a high-frequency strategy:
+• ~15 trades per year including flip trades
+• Median wait between main signals: 7–10 days
+• Longest historical quiet gap: ~2 months
+• ~55% of trades stopped out (by design — fat-tail capture)
+• Average winner >> average loser (each win is ~5–8× an average loss)
+• Requires patience — extended quiet periods are normal, not a malfunction
+• Fat tails matter: a few mega-winners (10%+ single trades) drive most of the CAGR
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SETTINGS (all configurable with tooltips)
+
+Risk Management:
+• Leverage: 2× (tested only at this level)
+• Risk per trade: 1% (used for dashboard display)
+• DD halt: -25% for 168 hours (7 days)
+
+Stop Loss:
+• SL max: 2.5% cap
+• SL buffer: 0.1%
+
+Partial Take Profit:
+• TP trigger: 6R (sweep-verified peak)
+• TP close: 15% of position
+• SL-to-BE buffer after partial: 0.1% (kills runner-giveback)
+
+Entry Filters:
+• RSI long/short zones: 45 / 55
+• Engulf body multiplier: 1.0× (any-size engulfing)
+• ATR MA length: 50
+• Volume SMA length: 20
+• Volume spike ratio: 1.5×
+
+Cooldowns:
+• Same-dir SL cooldown: 24h
+• Generic post-exit cooldown: 2h
+
+SL-Flip:
+• Enabled by default
+• Flip wait: 1h
+• Flip SL cap: 1.5%
+• Swing lookback: 10 bars
+• Flip time-stop: 24h
+
+Visuals:
+• Clean view toggle (default ON — hides dashboard for publishing)
+• Daily EMA50 line toggle
+• Timeframe advisory banner (red warning if chart TF ≠ 1H)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+DISCLAIMER
+
+• Past performance does not guarantee future results. Backtests can overfit, especially after extensive parameter tuning.
+• Live performance will differ from backtest due to real slippage, partial fills, exchange latency, and market regime shifts.
+• TradingView free/basic accounts show a limited window; the authoritative full backtest is Python + Binance archives.
+• This strategy is designed for experienced traders who understand leverage, futures trading, stop losses, drawdown risk, and position sizing.
+• Small sample size (74 trades over 6.5 years) means regime changes could meaningfully degrade performance. A flat 3–6 month period is not a strategy failure.
+• The strategy depends on fat-tail winners. Missing one or two large trends can halve expected CAGR.
+• 2× leverage amplifies both gains AND drawdowns. Use capital you can afford to lose entirely.
+• Not financial advice — use at your own risk.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CHANGELOG
+
+V1 (April 2026 — first public release):
+• Multi-timeframe entry: Daily EMA50 + 4H RSI + 1H (RSI + MACD + Engulfing + ATR + Volume)
+• Pattern-based SL with 2.5% cap
+• Partial TP: 15% at +6R (small partial for maximum fat-tail capture)
+• SL-to-BE move after partial TP (kills runner-giveback)
+• SL-flip extension: opposite-direction entry after SL hit with tight 1.5% SL
+• 24h same-direction cooldown + 2h generic cooldown
+• -25% DD halt for 7 days
+• Clean-view toggle for minimal chart display
+• Timeframe-mismatch advisory banner
+
+## Source Code
+
+````pine
+//@version=6
+// ─────────────────────────────────────────────────────────────────────
+// BTC Flip Bot V1 — MTF Engulfing + SL-Flip (BTCUSDT 1H 2×)
+//
+// Author:  Jagadeesh Manne
+// Version: V1 (first public TradingView release)
+// Released: April 2026
+//
+// Multi-timeframe trend-following strategy with SL-flip extension
+// for BTC perpetual futures.
+//
+// Tested ONLY on BTCUSDT | 1H | 2× leverage.
+//
+// Python 5yr backtest (Binance historical data):
+//   Start → Final: $10K → $349K (+3,388%)
+//   CAGR: +103.6%  Max DD: -19.6%  PF: 4.80  WR: 44%  Trades: 75
+//
+// Entry: Daily EMA50 + 4H RSI + 1H (RSI + MACD + Engulfing + ATR + Vol)
+// SL: pattern-based, capped at 2.5%. Partial TP: 30% at +5R.
+// SL-flip: on SL hit, queue opposite direction, wait 1h, enter with 1.5% SL.
+// No flip-on-flip. 24h time-stop on flip positions.
+// ─────────────────────────────────────────────────────────────────────
+
+// ─── Leverage input (must be declared before strategy() for margin calc) ───
+leverageInput = input.float(2.0, "Leverage", minval=1, maxval=10, step=0.5,
+     tooltip="Tested at 2×. Higher leverage amplifies both returns AND drawdowns. Fees scale with leverage — at 5×+ fees may exceed profit margins.")
+
+// IMPORTANT: This strategy is designed for 1H charts ONLY.
+// TradingView's bottom range selectors (1D/5D/1M) can silently switch the chart
+// to 5m/15m — producing wildly different signals than the 1H backtest.
+// A runtime warning (bottom of chart) fires if the current TF is not 1H.
+strategy("BTC Flip Bot V1 — MTF + SL-Flip", overlay=true, initial_capital=5000,
+     default_qty_type=strategy.percent_of_equity, default_qty_value=100,
+     pyramiding=0, calc_on_order_fills=false, calc_on_every_tick=false,
+     process_orders_on_close=true, commission_type=strategy.commission.percent,
+     commission_value=0.04, slippage=3,
+     margin_long=0, margin_short=0,
+     use_bar_magnifier=false)
+
+// ─── Settings Panel ───
+
+// Risk
+grpRisk        = "⚙️ Risk Management"
+riskPct        = input.float(1.0,   "Risk per trade (%)", minval=0.1, maxval=5, step=0.1, group=grpRisk,
+     tooltip="Percentage of equity risked per trade. Sized from SL distance.") / 100
+ddHaltPct      = input.float(25.0,  "Drawdown halt (%)", minval=10, maxval=50, group=grpRisk,
+     tooltip="If equity drops this much from peak, halt all trading.") / 100
+ddHaltHours    = input.int(168,     "Halt duration (hours)", minval=24, maxval=720, group=grpRisk,
+     tooltip="How long to pause after DD halt triggers. 168 = 7 days.")
+
+// Stop Loss
+grpSL          = "🛑 Stop Loss"
+slMaxPct       = input.float(2.5,   "SL max (%)", minval=0.5, maxval=10, step=0.1, group=grpSL,
+     tooltip="Maximum SL distance from entry. Pattern-based SL is used if tighter.") / 100
+slBufPct       = input.float(0.1,   "SL buffer (%)", minval=0.0, maxval=1, step=0.05, group=grpSL,
+     tooltip="Padding below pattern low / above pattern high.") / 100
+
+// Take Profit
+grpTP          = "🎯 Partial Take Profit"
+partialTpR     = input.float(6.0,   "TP trigger (R multiple)", minval=1, maxval=20, step=0.5, group=grpTP,
+     tooltip="Lock in partial profit when price moves this many R in your favor. 6R is the sweep peak — higher R risks DD halt, lower R gives up edge.")
+partialTpFrac  = input.float(15.0,  "TP close (%)", minval=5, maxval=90, step=5, group=grpTP,
+     tooltip="Percentage of position to close at TP trigger. 15% lets 85% run to catch fat-tail winners. Sweep peak vs old 30% default: +11pp CAGR.")
+partialBeBufPct = input.float(0.1,  "Move SL to BE+buf (%) after partial TP", minval=0.0, maxval=2, step=0.05, group=grpTP,
+     tooltip="After partial TP fires, move SL to entry ± this %. Kills giveback on runners (Trade 15 pattern). Backtest: +3pp CAGR, -3.6pp DD. Set 0 to disable.") / 100
+
+// Entry Filters
+grpEntry       = "📊 Entry Filters"
+rsiLongMin     = input.int(45,      "RSI long min", minval=10, maxval=70, group=grpEntry,
+     tooltip="1H RSI must be above this for long entries.")
+rsiShortMax    = input.int(55,      "RSI short max", minval=30, maxval=90, group=grpEntry,
+     tooltip="1H RSI must be below this for short entries.")
+engBodyMult    = input.float(1.0,   "Engulf body multiplier", minval=0.5, maxval=3, step=0.1, group=grpEntry,
+     tooltip="Current bar body must be ≥ this × prior bar body to qualify as engulfing.")
+atrMaLength    = input.int(50,      "ATR MA length", minval=10, maxval=200, group=grpEntry,
+     tooltip="ATR must be above its N-period average for volatility filter.")
+volSmaLength   = input.int(20,      "Volume SMA length", minval=5, maxval=100, group=grpEntry,
+     tooltip="Volume compared against N-period SMA.")
+volSpikeRatio  = input.float(1.5,   "Volume spike ratio", minval=1.0, maxval=5, step=0.1, group=grpEntry,
+     tooltip="Current volume must be ≥ this × volume SMA to qualify.")
+
+// Cooldowns
+grpCD          = "⏸️ Cooldowns"
+sameDirCdHours = input.int(24,      "Same-dir SL cooldown (hours)", minval=0, maxval=168, group=grpCD,
+     tooltip="After SL hit, block same-direction entries for this many hours. 24h is optimal with SL-flip enabled.")
+genCdHours     = input.int(2,       "Generic exit cooldown (hours)", minval=0, maxval=24, group=grpCD,
+     tooltip="After any exit, block all entries for this many hours.")
+
+// Visuals
+grpViz         = "🎨 Visual Options"
+cleanView      = input.bool(true,   "Clean view (minimal — only signal arrows)", group=grpViz,
+     tooltip="ON = ultra-minimal (just signal arrows). OFF = full dashboard, EMA50 line, cooldown backgrounds.")
+showEma50      = input.bool(false,  "Show Daily EMA50 line", group=grpViz,
+     tooltip="Plots the Daily EMA50 on the chart. Off by default for cleanest publishing preview.")
+showSignals    = input.bool(true,   "Show entry signal arrows", group=grpViz)
+
+// SL-Flip
+grpFlip        = "🔄 SL-Flip (v6 extension)"
+useSlFlip      = input.bool(true,   "Enable SL-flip", group=grpFlip,
+     tooltip="On SL hit, flip to opposite direction. Python 5yr backtest: $241K → $349K with same DD.")
+flipWaitHours  = input.int(1,       "Flip wait (hours)", minval=0, maxval=24, group=grpFlip,
+     tooltip="Wait N hours after SL before flipping. 1h is optimal — avoids whipsaw, lets move settle.")
+flipSlCapPct   = input.float(1.5,   "Flip SL cap (%)", minval=0.5, maxval=5, step=0.1, group=grpFlip,
+     tooltip="Tighter SL for flip trades (1.5% vs main 2.5%). Pattern-based from swing high/low.") / 100
+flipSrLookback = input.int(10,      "Swing lookback (bars)", minval=3, maxval=50, group=grpFlip,
+     tooltip="Bars to scan for swing high/low when placing flip SL.")
+flipTimeStopH  = input.int(24,      "Flip time-stop (hours)", minval=4, maxval=168, group=grpFlip,
+     tooltip="Exit flip position after N hours if still open (blind flips shouldn't hold long).")
+
+// ─── Higher TF data (causal: use prior closed bar [1]) ───
+dailyClose = request.security(syminfo.tickerid, "1D", close[1], lookahead=barmerge.lookahead_off)
+dailyEma50 = request.security(syminfo.tickerid, "1D", ta.ema(close, 50)[1], lookahead=barmerge.lookahead_off)
+rsi4h      = request.security(syminfo.tickerid, "240", ta.rsi(close, 14)[1], lookahead=barmerge.lookahead_off)
+
+dailyBull  = dailyClose > dailyEma50
+dailyBear  = dailyClose < dailyEma50
+h4ConfBull = rsi4h > 50
+h4ConfBear = rsi4h < 50
+
+// ─── 1H indicators ───
+rsi1h = ta.rsi(close, 14)
+[macdLine, macdSignal, macdHist] = ta.macd(close, 12, 26, 9)
+atr14  = ta.atr(14)
+atrMa  = ta.sma(atr14, atrMaLength)
+highVol = atr14 > atrMa
+volSma = ta.sma(volume, volSmaLength)
+volOk  = volume > volSpikeRatio * volSma
+
+// ─── Engulfing patterns ───
+bodySize = math.abs(close - open)
+prevBody = bodySize[1]
+bullEngulfing = close[1] < open[1] and close > open and close >= open[1] and open <= close[1] and bodySize > prevBody * engBodyMult
+bearEngulfing = close[1] > open[1] and close < open and open >= close[1] and close <= open[1] and bodySize > prevBody * engBodyMult
+
+// ─── Entry stack ───
+longStack  = rsi1h > rsiLongMin and macdLine > macdSignal and bullEngulfing and highVol and volOk
+shortStack = rsi1h < rsiShortMax and macdLine < macdSignal and bearEngulfing and highVol and volOk
+longSignal  = longStack and dailyBull and h4ConfBull
+shortSignal = shortStack and dailyBear and h4ConfBear
+
+// ─── State variables ───
+var int lastLongSlBar  = na
+var int lastShortSlBar = na
+var int lastExitBar    = na
+var int haltUntilBar   = na
+var float peakEquity   = strategy.initial_capital
+var bool partialTaken  = false
+var float storedSL     = na
+// V6 SL-Flip state
+var bool isFlipPos      = false   // current position is a flip
+var int pendingFlipSide = 0       // 0=none, 1=pending LONG, -1=pending SHORT
+var int pendingFlipBar  = na
+var float pendingFlipRef = na     // reference price (the SL that broke)
+var int flipEntryBar    = na
+
+// ─── Timeframe advisory — strategy's backtest was run on 1H ───
+// TradingView's chart TF affects which resolution the strategy calculates on.
+// On 5m/15m the signals will look completely different from the 1H backtest.
+// We don't BLOCK entries (so history still renders on any TF), but a red
+// warning label pops up whenever the chart isn't 1H so you know results
+// on this TF aren't comparable to the backtest numbers.
+wrongTf = timeframe.period != "60"
+
+// ─── Cooldown checks ───
+longCdBlocked  = not na(lastLongSlBar) and (bar_index - lastLongSlBar) < sameDirCdHours
+shortCdBlocked = not na(lastShortSlBar) and (bar_index - lastShortSlBar) < sameDirCdHours
+exitCdBlocked  = not na(lastExitBar) and (bar_index - lastExitBar) < genCdHours
+isHalted       = not na(haltUntilBar) and bar_index < haltUntilBar
+
+canGoLong  = longSignal and not longCdBlocked and not exitCdBlocked and not isHalted
+canGoShort = shortSignal and not shortCdBlocked and not exitCdBlocked and not isHalted
+
+// ─── Pattern-based SL (capped at slMaxPct) ───
+patternLowLong  = math.min(low, low[1]) * (1 - slBufPct)
+cappedLowLong   = close * (1 - slMaxPct)
+stopLong        = math.max(patternLowLong, cappedLowLong)
+
+patternHighShort = math.max(high, high[1]) * (1 + slBufPct)
+cappedHighShort  = close * (1 + slMaxPct)
+stopShort        = math.min(patternHighShort, cappedHighShort)
+
+// ─── DD circuit breaker ───
+currentEquity = strategy.equity
+peakEquity   := math.max(peakEquity, currentEquity)
+drawdownPct   = (currentEquity - peakEquity) / peakEquity
+
+if drawdownPct <= -ddHaltPct and strategy.position_size == 0
+    haltUntilBar := bar_index + ddHaltHours
+    peakEquity   := currentEquity
+
+// ─── Position sizing (notional = equity × leverage) ───
+// qty = (equity × leverage) / price  — deploys leverage× notional of capital
+// This matches Python v6 backtest: pnl = price_move% × leverage × equity
+// A 1% price move at 2× leverage = 2% equity change.
+slDistLong  = close - stopLong
+slDistShort = stopShort - close
+notionalQty = (currentEquity * leverageInput) / close
+qtyLong  = slDistLong > 0 ? notionalQty : 0
+qtyShort = slDistShort > 0 ? notionalQty : 0
+
+// ─── V6 SL-FLIP: execute pending flip if wait elapsed (respects DD halt + generic cooldown) ───
+flipReady = useSlFlip and pendingFlipSide != 0 and strategy.position_size == 0 and not na(pendingFlipBar) and (bar_index - pendingFlipBar) >= flipWaitHours and not isHalted and not exitCdBlocked
+
+if flipReady
+    lbStart = math.max(0, bar_index - flipSrLookback)
+    if pendingFlipSide == -1
+        swingHigh = ta.highest(high, flipSrLookback)
+        swingSl   = swingHigh * (1 + slBufPct)
+        capSl     = pendingFlipRef * (1 + flipSlCapPct)
+        flipSL    = math.min(swingSl, capSl)
+        flipDist  = flipSL - close
+        flipQty   = flipDist > 0 ? (currentEquity * leverageInput) / close : 0
+        if flipQty > 0
+            strategy.entry("fS", strategy.short, qty=flipQty)
+            strategy.exit("x", from_entry="fS", stop=flipSL)
+            isFlipPos   := true
+            flipEntryBar := bar_index
+            storedSL    := flipSL
+            partialTaken := false
+    else if pendingFlipSide == 1
+        swingLow = ta.lowest(low, flipSrLookback)
+        swingSl  = swingLow * (1 - slBufPct)
+        capSl    = pendingFlipRef * (1 - flipSlCapPct)
+        flipSL   = math.max(swingSl, capSl)
+        flipDist = close - flipSL
+        flipQty  = flipDist > 0 ? (currentEquity * leverageInput) / close : 0
+        if flipQty > 0
+            strategy.entry("fL", strategy.long, qty=flipQty)
+            strategy.exit("x", from_entry="fL", stop=flipSL)
+            isFlipPos   := true
+            flipEntryBar := bar_index
+            storedSL    := flipSL
+            partialTaken := false
+    pendingFlipSide := 0
+
+// Time-stop for flip positions
+if isFlipPos and strategy.position_size != 0 and not na(flipEntryBar) and (bar_index - flipEntryBar) >= flipTimeStopH
+    strategy.close_all()
+    isFlipPos := false
+
+// Block normal entries while a flip is pending
+pendingActive = pendingFlipSide != 0
+
+// ─── Normal entry orders ───
+if canGoLong and strategy.position_size == 0 and qtyLong > 0 and not pendingActive
+    strategy.entry("L", strategy.long, qty=qtyLong)
+    strategy.exit("x", from_entry="L", stop=stopLong)
+    partialTaken := false
+    isFlipPos := false
+
+if canGoShort and strategy.position_size == 0 and qtyShort > 0 and not pendingActive
+    strategy.entry("S", strategy.short, qty=qtyShort)
+    strategy.exit("x", from_entry="S", stop=stopShort)
+    partialTaken := false
+    isFlipPos := false
+
+// ─── Store entry SL for partial TP ───
+if strategy.position_size > 0 and strategy.position_size[1] == 0
+    storedSL := stopLong
+if strategy.position_size < 0 and strategy.position_size[1] == 0
+    storedSL := stopShort
+
+// ─── Partial TP (+ move SL to BE after firing) ───
+// Use the correct entry ID based on whether position is a flip or main entry
+if strategy.position_size > 0 and not partialTaken and not na(storedSL)
+    entryPrice = strategy.position_avg_price
+    slDistance  = entryPrice - storedSL
+    if slDistance > 0
+        currentR = (close - entryPrice) / slDistance
+        if currentR >= partialTpR
+            tpId = isFlipPos ? "fL" : "L"
+            strategy.close(tpId, qty_percent=partialTpFrac)
+            partialTaken := true
+            // Move SL to BE+buffer (replaces existing stop with same id "x")
+            if partialBeBufPct > 0
+                beSL = entryPrice * (1 + partialBeBufPct)
+                strategy.exit("x", from_entry=tpId, stop=beSL)
+                storedSL := beSL
+
+if strategy.position_size < 0 and not partialTaken and not na(storedSL)
+    entryPrice = strategy.position_avg_price
+    slDistance  = storedSL - entryPrice
+    if slDistance > 0
+        currentR = (entryPrice - close) / slDistance
+        if currentR >= partialTpR
+            tpId = isFlipPos ? "fS" : "S"
+            strategy.close(tpId, qty_percent=partialTpFrac)
+            partialTaken := true
+            if partialBeBufPct > 0
+                beSL = entryPrice * (1 - partialBeBufPct)
+                strategy.exit("x", from_entry=tpId, stop=beSL)
+                storedSL := beSL
+
+// ─── Opposite signal exit (no flip-open) — use close_all since full close anyway ───
+if strategy.position_size > 0 and shortSignal
+    strategy.close_all()
+if strategy.position_size < 0 and longSignal
+    strategy.close_all()
+
+// ─── Track exits for cooldown + queue flip on SL ───
+if strategy.position_size == 0 and strategy.position_size[1] != 0
+    lastExitBar := bar_index
+    wasFlip = isFlipPos
+    slHitLong  = strategy.position_size[1] > 0 and not na(storedSL) and low <= storedSL
+    slHitShort = strategy.position_size[1] < 0 and not na(storedSL) and high >= storedSL
+    if slHitLong
+        lastLongSlBar := bar_index
+        // Queue SHORT flip ONLY if this wasn't already a flip (prevents flip-on-flip)
+        if useSlFlip and not wasFlip
+            pendingFlipSide := -1
+            pendingFlipBar  := bar_index
+            pendingFlipRef  := storedSL
+    if slHitShort
+        lastShortSlBar := bar_index
+        if useSlFlip and not wasFlip
+            pendingFlipSide := 1
+            pendingFlipBar  := bar_index
+            pendingFlipRef  := storedSL
+    isFlipPos := false
+
+// ─── Visuals ───
+plot(showEma50 ? dailyEma50 : na, "Daily EMA50", color=color.new(color.yellow, 40), linewidth=2)
+
+// ─── Wrong-timeframe warning (always visible, overrides clean view) ───
+if barstate.islast and wrongTf
+    var table tfWarn = table.new(position.bottom_center, 1, 1, border_width=2, border_color=color.red)
+    table.cell(tfWarn, 0, 0,
+         "⚠ Chart TF is " + timeframe.period + " — Backtest was run on 1H. Results won't match Python numbers unless chart = 1H.",
+         bgcolor=color.new(color.red, 15), text_color=color.white, text_size=size.normal)
+
+// Background highlights (only shown when clean view is OFF)
+haltColor    = (not cleanView and isHalted) ? color.new(color.red, 85) : color(na)
+longCdColor  = (not cleanView and longCdBlocked) ? color.new(color.blue, 92) : color(na)
+shortCdColor = (not cleanView and shortCdBlocked) ? color.new(color.orange, 92) : color(na)
+bgcolor(haltColor, title="DD Halt")
+bgcolor(longCdColor, title="Long Cooldown")
+bgcolor(shortCdColor, title="Short Cooldown")
+
+// ─── No custom trade markers — TradingView's built-in strategy markers handle everything ───
+// Users can toggle them cleanly in chart Settings → Style tab:
+//   - Disable "Signal labels" for minimal display
+//   - Enable "Trades on chart" for clean entry/exit lines with P&L
+newLongEntry   = strategy.position_size > 0 and strategy.position_size[1] == 0
+newShortEntry  = strategy.position_size < 0 and strategy.position_size[1] == 0
+
+// ─── Dashboard (hidden in clean view) ───
+if barstate.islast and not cleanView
+    var table dash = table.new(position.top_right, 2, 10, border_width=1)
+    table.cell(dash, 0, 0, "Flip Bot V1", bgcolor=color.gray, text_color=color.white)
+    table.cell(dash, 1, 0, str.tostring(leverageInput, "#.#") + "× LEV", bgcolor=color.teal, text_color=color.white)
+
+    table.cell(dash, 0, 1, "Daily EMA50")
+    biasTxt = dailyBull ? "BULL ✓" : dailyBear ? "BEAR ✓" : "FLAT"
+    biasClr = dailyBull ? color.green : color.red
+    table.cell(dash, 1, 1, biasTxt, text_color=biasClr)
+
+    table.cell(dash, 0, 2, "4H RSI")
+    rsi4hStr = str.tostring(rsi4h, "#.#")
+    rsi4hTxt = h4ConfBull ? rsi4hStr + " ✓" : h4ConfBear ? rsi4hStr + " ✓" : rsi4hStr
+    table.cell(dash, 1, 2, rsi4hTxt)
+
+    table.cell(dash, 0, 3, "1H RSI")
+    table.cell(dash, 1, 3, str.tostring(rsi1h, "#.#"))
+
+    table.cell(dash, 0, 4, "MACD")
+    macdTxt = macdLine > macdSignal ? "▲ bull" : "▼ bear"
+    macdClr = macdLine > macdSignal ? color.green : color.red
+    table.cell(dash, 1, 4, macdTxt, text_color=macdClr)
+
+    table.cell(dash, 0, 5, "Engulfing")
+    engTxt = bullEngulfing ? "BULL ✓" : bearEngulfing ? "BEAR ✓" : "—"
+    table.cell(dash, 1, 5, engTxt)
+
+    table.cell(dash, 0, 6, "ATR / MA")
+    atrTxt = str.tostring(atr14, "#") + " / " + str.tostring(atrMa, "#")
+    atrTxt := highVol ? atrTxt + " ✓" : atrTxt
+    table.cell(dash, 1, 6, atrTxt)
+
+    table.cell(dash, 0, 7, "Vol ratio")
+    volTxt = str.tostring(volume / volSma, "#.##") + "x"
+    volTxt := volOk ? volTxt + " ✓" : volTxt
+    table.cell(dash, 1, 7, volTxt)
+
+    table.cell(dash, 0, 8, "SL max")
+    table.cell(dash, 1, 8, str.tostring(slMaxPct * 100, "#.#") + "%")
+
+    table.cell(dash, 0, 9, "Equity")
+    table.cell(dash, 1, 9, "$" + str.tostring(strategy.equity, "#,###"))
+````

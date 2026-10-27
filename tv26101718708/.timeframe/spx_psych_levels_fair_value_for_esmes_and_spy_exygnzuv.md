@@ -1,0 +1,1085 @@
+# SPX Psych Levels + Fair Value for ES/MES and SPY
+
+- url: https://www.tradingview.com/script/EXyGNzUV-SPX-Psych-Levels-Fair-Value-for-ES-MES-and-SPY/
+- type: indicator
+- pine_id: PUB;d60ecde38e9049de983fde4809ca7752
+- version: 1.0
+
+## Description
+
+[b]SPX Psych Levels + Fair Value for ES/MES and SPY[/b]
+This is the open-source successor to my protected "SPX Psych Levels for /ES Futures (Fair Value)". It adds SPY, 1h to 4h charts, free Treasury rates, previous-session levels and a configurable info table. The source is available under MPL 2.0 here and on GitHub (see my profile). Future updates will be published here.
+[b]What it does[/b]
+Traders watch round SPX levels (the 100s, 50s and 25s), but ES, MES and SPY never trade at exactly the index price. ES carries a fair-value basis (carry minus dividends) that shrinks toward expiry, and SPY trades near one tenth of SPX plus its own dividend and tracking basis. This script translates each SPX level through that basis, so "SPX 7700" is drawn where it really sits on your ES, MES or SPY chart. It also draws a cash-session ADR envelope.
+[b]How the projection works[/b]
+[list]
+[*]ES / MES: chart level = SPX level + fair-value basis.
+[*]SPY: chart level = SPX level / 10 + observed basis, where observed basis = SPY - SPX / 10.
+[/list]
+The observed basis only updates from chart and SPX bars with matching timestamps during the cash session, smoothed over 5 bars by default. Holiday forward-filled quotes cannot refresh it, and a stale basis re-syncs once when paired cash data returns.
+[b]Fair Value Mode (ES / MES)[/b]
+[list]
+[*][b]Observed[/b] (default): the live, paired ES minus SPX basis. Needs no rate data. It moves more than the model because it reflects real intraday basis changes.
+[*][b]Theoretical[/b]: a carry model using SPX, days to expiry, a Treasury rate plus a funding spread, and an estimated 1.2% dividend yield.
+[*][b]Blended[/b]: the model plus half of the observed gap (capped at 6 points before halving). Steadier than Observed.
+[/list]
+[b]Model Rate Source[/b] (Theoretical and Blended only)
+[list]
+[*][b]Treasury (free)[/b], default: TradingView's free US Treasury yields (US01MY, US03MY, US06MY, US01Y). The 3-month rate is 0.6 x IRX + 0.4 x US03M; IRX is a discount rate quoted x10, so it is converted to a bond-equivalent yield first.
+[*][b]FRED[/b]: DGS1MO / DGS3MO / DGS6MO / DGS1, if your account has access.
+[*][b]Fixed backup[/b]: no rate requests; a fixed curve marked "est".
+[/list]
+[b]Level Tracking[/b]
+[list]
+[*][b]Session Anchored[/b] (default): holds the basis captured at the session open (18:00 New York for futures, the first bar of the day for SPY), so levels stay put all session.
+[*][b]Live Basis[/b]: re-projects every bar with the latest observed basis.
+[/list]
+[b]The grid[/b]
+[list]
+[*]100- and 50-point levels are on by default; 25-point levels are optional.
+[*]Each session's grid is one evenly spaced ladder centred on a 100, with the same number of 100s on each side (9 lines at a normal ADR). A new session keeps the previous centre unless price opens more than 100 points away, so consecutive days line up.
+[*]Level Span Mode: Expected Move (ADR-14 by default; ADR-10, VIX, VIX1D or VIX9D) or Fixed Count.
+[*]Sessions to Show (default 3, up to 41): the current session plus earlier sessions, faded. Each session's lines run only from its own start to its end. TradingView allows 500 lines per script, so on very long lookbacks the oldest sessions drop first.
+[*]Re-centre Grid on Trend rebuilds the grid if price moves more than one 100 from the centre mid-session.
+[*]Optional margin-of-error zones around each level.
+[/list]
+[b]ADR envelope[/b]
+Each envelope is the instrument's own 09:30 New York (06:30 Pacific) cash open, plus and minus the average range of the prior 14 completed cash sessions (or 10). The current session is excluded, so the caps stay fixed for the day. ES / MES keep the latest valid envelope overnight; SPY shows it only during the cash session. It is a descriptive range reference, not a probability or a signal.
+[b]Info table[/b]
+Show or hide it, set its position and text size, and pick the rows you want. By default it shows only the fair value.
+[list]
+[*]Rows: Fair value / basis, SPX equivalent, nearest levels with distance, nearest 100s, day range vs ADR, ADR+ / ADR- prices, contract.
+[*]Model rows (ES / MES): model fair value, observed basis vs model, rate breakdown (Treasury + funding + seasonal), Treasury curve, days to expiry, dividend yield.
+[*]An amber Check row appears only when something needs attention: waiting for SPX data, a stale basis during cash hours, a pending resync, or an estimated model rate.
+[/list]
+[b]Supported charts[/b]
+[list]
+[*]Symbols: ES and MES (continuous and the active dated contract) and SPY. Other symbols show nothing by design.
+[*]Timeframes: intraday intervals that divide 30 minutes (1 to 30 minutes), plus 1h, 2h, 3h and 4h, which are calculated from completed 5-minute bars. Other timeframes show nothing and do not error.
+[/list]
+[b]Notes[/b]
+[list]
+[*]The levels are a map of where round SPX numbers sit, not signals.
+[*]The active dated ES contract is chosen by a calendar rule (third Friday of the expiry month minus 4 days).
+[*]On 1h to 4h charts, older history can be blank if TradingView has no 5-minute data that far back. ADR needs 10 or 14 completed cash sessions to warm up.
+[*]Fixed backup rates and the dividend yield are estimates, not market quotes.
+[/list]
+Thanks to PeterJarvis for suggesting the free IRX / US03M proxy for the 3-month rate.
+
+## Source Code
+
+````pine
+// This Pine Script(TM) code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// (c) 2025-2026 SpinTrades
+//@version=6
+// SPX Psychological Levels for ES/MES Futures and SPY
+// Version 16.11.0 (2026-09-26)
+//
+// WHAT IT DOES
+//  Projects round SPX levels (100s, 50s, optional 25s) onto ES/MES and SPY charts
+//  through each instrument's basis to the index, and draws a cash-session ADR
+//  envelope in the chart's own prices.
+//    ES/MES: chart level = SPX level + fair-value basis
+//    SPY:    chart level = SPX level / 10 + (SPY - SPX / 10)
+//
+// FAIR VALUE (ES/MES)
+//  Observed (default): smoothed ES - SPX basis from bars with matching open/close
+//  timestamps during the cash session. Needs no rate data.
+//  Theoretical: carry model (SPX x rate x days to expiry, less an estimated dividend
+//  yield). Blended: model plus half the observed deviation (deviation capped at 6).
+//  Model rates: free TVC Treasury yields by default (3M = 0.6 x IRX converted to a
+//  bond-equivalent yield + 0.4 x US03MY), optional FRED, or a fixed backup curve.
+//  SPY always uses its observed ETF basis, which carries dividend/expense/tracking.
+//
+// GRID
+//  Span scales with the expected daily range (ADR-14 by default; ADR-10 or VIX
+//  family selectable), or a fixed count per side. With 50s and 25s both enabled,
+//  the 25s fill every gap in the 50-grid. Session Anchored holds the basis captured
+//  at the session open (18:00 New York for futures, first bar of the day for SPY);
+//  Live Basis re-projects each bar.
+//
+// ADR ENVELOPE
+//  09:30 New York cash open +/- the mean high-low of the prior 14 (or 10) completed
+//  cash sessions, excluding today. ES/MES keep the last valid cash envelope overnight
+//  until a valid new one replaces it; SPY shows it only during the cash session.
+//  A descriptive range reference, not a probability or signal.
+//
+// SUPPORT
+//  Symbols: ES/MES (continuous or active dated contract) and SPY. Others draw nothing.
+//  Timeframes: intraday intervals dividing 30 minutes, plus 1h/2h/3h/4h, which are
+//  computed from completed 5-minute bars. Others draw nothing without an error.
+//
+// NOTES
+//  Levels mark where round SPX numbers sit on the chart; they do not predict a
+//  reaction there. ADR is built from the chart symbol's own bars with var
+//  accumulators (no stateful calls inside request.security) to avoid repainting.
+//  Version history: see the publication's release notes.
+
+indicator("SPX Psych Levels + Fair Value for ES/MES and SPY", shorttitle="SPX Psych Levels", overlay=true, dynamic_requests=true,
+          max_lines_count=500, max_boxes_count=500)
+
+// Hourly charts use completed 5-minute bars, not mismatched hourly ES/SPX bars.
+// All other non-aligned / higher intervals quietly remain unsupported.
+chart_seconds = timeframe.in_seconds()
+native_timeframe = timeframe.isintraday and not na(chart_seconds) and chart_seconds > 0 and chart_seconds <= 1800 and 1800 % chart_seconds == 0
+use_intrabar_data = timeframe.isintraday and (chart_seconds == 3600 or chart_seconds == 7200 or chart_seconds == 10800 or chart_seconds == 14400)
+timeframe_supported = native_timeframe or use_intrabar_data
+
+// === FAIR VALUE === (first in settings: it drives the projection)
+fv_mode = input.string("Observed", "Fair Value Mode", options=["Theoretical", "Observed", "Blended"], group="Fair Value",
+     tooltip="Observed = simultaneous ES-SPX basis (recommended). SPY always uses its observed SPY-SPX/10 basis; futures model modes do not apply to SPY.")
+rate_source = input.string("Treasury (free)", "Model Rate Source", options=["Treasury (free)", "FRED", "Fixed backup"], group="Fair Value",
+     tooltip="Rates used only by Theoretical/Blended futures modes. Treasury (free) = TradingView's free TVC yields US01MY/US03MY/US06MY/US01Y, with 3M = 0.6 x IRX (converted from discount to bond-equivalent) + 0.4 x US03MY. Any tenor outside 0-20% is treated as missing. FRED = DGS1MO/3MO/6MO/1 (may need economic-data access; switch away if a permission error appears). Fixed backup = no requests. Missing tenors use fixed backups (1M 4.22%, 3M 4.06%, 6M 3.95%, 1Y 3.85%), which are assumptions, not quotes, and Rate marks them est. Observed mode and SPY never request rates.")
+level_tracking = input.string("Session Anchored", "Level Tracking", options=["Session Anchored", "Live Basis"], group="Fair Value",
+     tooltip="Session Anchored = hold the session-open basis. After a closure, an anchor older than 20 hours refreshes once matching cash data resumes. Live Basis = re-project every bar using the latest observed basis (ES Observed mode or SPY).")
+basis_smooth = input.int(5, "Basis Smoothing (bars)", minval=1, maxval=60, group="Fair Value",
+     tooltip="Native chart bars on supported intervals through 30 minutes; completed 5-minute bars on 1h, 2h, 3h and 4h charts. Higher-timeframe output can update up to 5 minutes after a session event.")
+fv_adjustment = input.float(0, "Manual Adjustment (SPX pts)", minval=-20, maxval=20, step=0.25, group="Fair Value")
+
+// === LEVEL SELECTION ===
+span_mode = input.string("Expected Move", "Level Span Mode", options=["Expected Move", "Fixed Count"], group="Level Selection",
+     tooltip="Expected Move = draw each tier out to a multiple of the expected daily range (recommended). Fixed Count = a fixed number of levels each side regardless of volatility.")
+vol_src = input.string("ADR-14", "Volatility Source", options=["ADR-14", "ADR-10", "VIX", "VIX1D", "VIX9D"], group="Level Selection",
+     tooltip="ADR-14 / ADR-10 = mean high-low of the prior 14 / 10 completed cash sessions, excluding today, fixed for the session. VIX / VIX1D / VIX9D = implied expected move from the selected index. Falls back to VIX or ATR when the selection is unavailable.")
+adr_regime_scale = input.bool(true, "Widen Span in Quiet Regimes", group="Level Selection",
+     tooltip="Adds 25% to the span multiplier when ADR-14 sits in the bottom third of its own trailing year (up to 252 sessions), so quiet stretches do not draw an overly tight grid.")
+num_levels = input.int(3, "Fixed Count: Levels Each Side", minval=1, maxval=10, group="Level Selection",
+     tooltip="Only used when Level Span Mode = Fixed Count.")
+
+show_100_levels = input.bool(true, "Show 100-Point Levels", group="Level Selection")
+em_mult_100 = input.float(3.5, "    100-Point Span (when 50s hidden, x expected move)", minval=0.25, maxval=8, step=0.25, group="Level Selection",
+     tooltip="Used only when 50-point levels are hidden. With the 50s shown, the 100s always cover the 50-grid plus one 100-point level beyond each end.")
+show_50_levels = input.bool(true, "Show 50-Point Levels", group="Level Selection")
+em_mult_50 = input.float(2.0, "    50-Point Span (x ADR / expected move)", minval=0.25, maxval=8, step=0.25, group="Level Selection",
+     tooltip="How far the 50-point grid extends, as a multiple of the expected daily range. This is the main working grid; a wider setting avoids running out of levels on trend days.")
+show_25_levels = input.bool(false, "Show 25-Point Levels", group="Level Selection")
+em_mult_25 = input.float(0.75, "    25-Point Span (when 50s hidden, x expected move)", minval=0.25, maxval=8, step=0.25, group="Level Selection",
+     tooltip="When 50-point levels are shown, the 25s fill every gap across that grid's full range. This independent span applies only in Expected Move mode with the 50-point tier hidden.")
+sessions_to_show = input.int(3, "Sessions to Show", minval=1, maxval=41, group="Level Selection",
+     tooltip="How many session grids to draw, counting the current (or most recent) session. 1 = current session only; 3 = current plus the two before it, faded. Each session's lines run only from that session's start to its end. TradingView allows 500 lines per script, so on long lookbacks the oldest sessions are dropped first (about 50 sessions fit with 100s and 50s, about 25 with 25s or zones on).")
+history_sessions = sessions_to_show - 1
+auto_recenter = input.bool(true, "Re-centre Grid on Trend", group="Level Selection",
+     tooltip="Rebuild the grid if price trends more than one full 100-pt increment from the session-open centre.")
+
+// === ADR ENVELOPE ===
+// Anchored at the 09:30 RTH open, NOT the 18:00 session open the psych grid uses.
+// These are descriptive range references, separate from the projected SPX grid.
+// Futures retain their most recent valid cash reference overnight; SPY is cash-only.
+show_adr_caps = input.bool(true, "Show ADR Envelope", group="ADR Envelope",
+     tooltip="Cash-session opening price +/- the average range of prior completed cash sessions. ES/MES retain the last valid cash envelope overnight until a valid new cash envelope replaces it. SPY shows only during its cash session and clears on the closing update. Labels show ADR+ / ADR- and price only. Requires a captured 09:30 ET open and confirming cash data. Only ES/MES and SPY are supported.")
+adr_up_col = input.color(color.new(color.orange, 20), "ADR+", group="ADR Envelope",
+     tooltip="Cash-session opening price plus one average daily range. A descriptive reference, not a probability or trading signal.")
+adr_dn_col = input.color(color.new(color.teal, 20), "ADR-", group="ADR Envelope",
+     tooltip="Cash-session opening price minus one average daily range. A descriptive reference, not a probability or trading signal.")
+
+// === MARGIN OF ERROR ZONES ===
+show_zones = input.bool(false, "Show Margin of Error Zones", group="Margin of Error Zones")
+zone_half_width = input.float(5.0, "Zone Half-Width (pts)", minval=0.25, maxval=25, step=0.25, group="Margin of Error Zones",
+     tooltip="Half-width of the shaded band around each level, in SPX points (divided by 10 on SPY). Round levels are approximate reference areas, not exact prices.")
+zone_color_100 = input.color(color.new(color.blue, 85), "100-Point Zone Color", group="Margin of Error Zones")
+zone_color_50 = input.color(color.new(color.blue, 88), "50-Point Zone Color", group="Margin of Error Zones")
+zone_color_25 = input.color(color.new(color.blue, 92), "25-Point Zone Color", group="Margin of Error Zones")
+
+// === LINE STYLING (heavier lines for rounder levels) ===
+color_100 = input.color(color.blue, "100-Point Color", group="100-Point Line Style")
+style_100 = input.string("Solid", "100-Point Style", options=["Solid", "Dashed", "Dotted"], group="100-Point Line Style")
+width_100 = input.int(3, "100-Point Width", minval=1, maxval=4, group="100-Point Line Style")
+
+color_50 = input.color(color.new(color.blue, 15), "50-Point Color", group="50-Point Line Style")
+style_50 = input.string("Solid", "50-Point Style", options=["Solid", "Dashed", "Dotted"], group="50-Point Line Style")
+width_50 = input.int(2, "50-Point Width", minval=1, maxval=4, group="50-Point Line Style")
+
+color_25 = input.color(color.new(color.blue, 45), "25-Point Color", group="25-Point Line Style")
+style_25 = input.string("Dotted", "25-Point Style", options=["Solid", "Dashed", "Dotted"], group="25-Point Line Style")
+width_25 = input.int(1, "25-Point Width", minval=1, maxval=4, group="25-Point Line Style")
+
+// === INFO TABLE ROWS ===
+// Pick the rows you want. Untick every row to hide the table. A Check row is added
+// automatically whenever the basis or model rate cannot be trusted.
+tbl_on = input.bool(true, "Show Info Table", group="Info Table")
+tbl_pos_in = input.string("Bottom Right", "Table Position", options=["Top Left", "Top Center", "Top Right", "Middle Left", "Middle Right", "Bottom Left", "Bottom Center", "Bottom Right"], group="Info Table")
+tbl_size_in = input.string("Small", "Table Text Size", options=["Tiny", "Small", "Normal"], group="Info Table")
+tbl_fv = input.bool(true, "Fair Value / Basis", group="Info Table",
+     tooltip="ES/MES: fair value with its mode (plus rate, source and days to expiry in Theoretical/Blended). SPY: observed ETF basis.")
+tbl_spx = input.bool(false, "SPX Equivalent", group="Info Table",
+     tooltip="The SPX price the current chart price corresponds to.")
+tbl_next = input.bool(false, "Nearest Levels", group="Info Table",
+     tooltip="The nearest drawn level above and below, with distance in SPX points.")
+tbl_next100 = input.bool(false, "Nearest 100s", group="Info Table",
+     tooltip="The nearest 100-point levels above and below, with distance in SPX points.")
+tbl_day = input.bool(false, "Day Range / ADR", group="Info Table",
+     tooltip="Today's cash-session range against ADR, as a percentage. Shows the ADR alone outside cash hours.")
+tbl_adr = input.bool(false, "ADR+ / ADR- Prices", group="Info Table",
+     tooltip="The envelope prices and their distance from the current price, in chart prices.")
+tbl_contract = input.bool(false, "Contract", group="Info Table",
+     tooltip="The contract the levels are projected for (ES/MES) or the symbol (SPY).")
+// Model rows: the Theoretical/Blended calculation's inputs (ES/MES only). They also
+// work in Observed mode, to compare the observed basis against the carry model.
+tbl_m_model = input.bool(false, "Model Fair Value", group="Info Table: Model (ES/MES)",
+     tooltip="The carry model's fair value before any observed blending: SPX x rate x days/365 - SPX x dividend yield x days/365.")
+tbl_m_obs = input.bool(false, "Observed Basis vs Model", group="Info Table: Model (ES/MES)",
+     tooltip="The observed ES - SPX basis and how far it sits from the model. Blended mode adds half of this gap (capped at 6).")
+tbl_m_rate = input.bool(false, "Rate Breakdown", group="Info Table: Model (ES/MES)",
+     tooltip="Interpolated Treasury rate + funding spread + year-end/quarter-end seasonal premium = the model rate.")
+tbl_m_curve = input.bool(false, "Treasury Curve", group="Info Table: Model (ES/MES)",
+     tooltip="The 1M/3M/6M/1Y yields the model interpolates between. Values marked * are fixed estimates because the source had no valid quote.")
+tbl_m_days = input.bool(false, "Days to Expiry", group="Info Table: Model (ES/MES)",
+     tooltip="Calendar days to the contract's third-Friday expiry, as used by the model.")
+tbl_m_div = input.bool(false, "Dividend Yield", group="Info Table: Model (ES/MES)",
+     tooltip="The S&P 500 dividend yield the model subtracts. It is a fixed estimate (1.2%), not a live quote.")
+show_model_rows = tbl_m_model or tbl_m_obs or tbl_m_rate or tbl_m_curve or tbl_m_days or tbl_m_div
+show_info_table = tbl_on and (tbl_fv or tbl_spx or tbl_next or tbl_next100 or tbl_day or tbl_adr or tbl_contract or show_model_rows)
+tbl_pos = tbl_pos_in == "Top Left" ? position.top_left : tbl_pos_in == "Top Center" ? position.top_center : tbl_pos_in == "Top Right" ? position.top_right : tbl_pos_in == "Middle Left" ? position.middle_left : tbl_pos_in == "Middle Right" ? position.middle_right : tbl_pos_in == "Bottom Left" ? position.bottom_left : tbl_pos_in == "Bottom Center" ? position.bottom_center : position.bottom_right
+tbl_size = tbl_size_in == "Tiny" ? size.tiny : tbl_size_in == "Normal" ? size.normal : size.small
+
+// === STATE ===
+var float display_fair_value = na
+var float display_interest_rate = na
+var int display_days_to_expiry = 0
+var string display_contract = ""
+var float session_fair_value = na
+var float session_interest_rate = na
+var bool session_rate_estimated = false
+var int session_days_to_expiry = 0
+var float session_rf = na
+var float session_funding = na
+var float session_seasonal = na
+var float session_spx_model = na
+var float session_r1m = na
+var float session_r3m = na
+var float session_r6m = na
+var float session_r1y = na
+var string session_curve_est = ""
+var int session_expiry_time = na
+var float raw_model_fv = na
+var float obs_fv_stored = na
+var float bias_adj_stored = 0.0
+var int session_start_time = na
+var int session_basis_time = na
+var int display_basis_time = na
+var bool session_basis_pending = false
+var float grid_centre_spx = na
+var float ladder_centre = na
+var float session_em = na
+var int n100_drawn = 0
+var int n50_drawn = 0
+var float reach_100_drawn = na
+var int n25_drawn = 0
+var float session_adr = na
+var bool session_low_regime = false
+
+var array<line> lines_100 = array.new<line>()
+var array<line> lines_50 = array.new<line>()
+var array<line> lines_25 = array.new<line>()
+var array<box> zones_100 = array.new<box>()
+var array<box> zones_50 = array.new<box>()
+var array<box> zones_25 = array.new<box>()
+// Completed sessions' grids, oldest first, with one line/box count per session.
+var array<line> hist_lines = array.new<line>()
+var array<box> hist_zones = array.new<box>()
+var array<int> hist_line_counts = array.new<int>()
+var array<int> hist_zone_counts = array.new<int>()
+var array<float> spx_100 = array.new<float>()
+var array<float> spx_50 = array.new<float>()
+var array<float> spx_25 = array.new<float>()
+
+// === HELPERS ===
+// Use local calendar fields, not exchange daily bars or fixed 24-hour offsets.
+// Day arithmetic in timestamp() also handles month/year and DST boundaries.
+grid_session_bounds(ts, spy_chart) =>
+    tz = "America/New_York"
+    y = year(ts, tz)
+    m = month(ts, tz)
+    d = dayofmonth(ts, tz)
+    anchor_hour = spy_chart ? 0 : 18
+    anchor_day = d - (hour(ts, tz) < anchor_hour ? 1 : 0)
+    start_ts = timestamp(tz, y, m, anchor_day, anchor_hour, 0)
+    end_ts = timestamp(tz, y, m, anchor_day + 1, anchor_hour, 0)
+    [start_ts, end_ts]
+
+get_third_friday_timestamp(y_in, m_in) =>
+    first_day = timestamp(y_in, m_in, 1, 9, 30, 0)
+    first_dow = dayofweek(first_day)
+    days_to_friday = (dayofweek.friday - first_dow + 7) % 7
+    first_friday = first_day + days_to_friday * 86400000
+    first_friday + 14 * 86400000
+
+is_mult(v, m) =>
+    math.abs(v - math.round(v / m) * m) < 0.001
+
+days_to_quarter_end_from(ts) =>
+    y = year(ts)
+    m = month(ts)
+    qe_m = m <= 3 ? 3 : m <= 6 ? 6 : m <= 9 ? 9 : 12
+    qe_d = (qe_m == 6 or qe_m == 9) ? 30 : 31
+    math.max(0, math.floor((timestamp(y, qe_m, qe_d, 0, 0, 0) - ts) / 86400000))
+
+seasonal_bps_from_expiry(expiry_ts) =>
+    d = days_to_quarter_end_from(expiry_ts)
+    bps = d > 35 ? 0 : d > 30 ? 5 : d > 21 ? 10 : d > 14 ? 20 : d > 7 ? 30 : 45
+    month(expiry_ts) == 12 ? bps * 1.5 : bps
+
+// Fade past grids by 40% of the remaining opacity, not a flat +45: a flat step
+// pushed the default 25s (already 45) to 90, which made past 25s invisible.
+fade(c) =>
+    t = color.t(c)
+    color.new(c, math.min(100, t + (100 - t) * 0.4))
+
+// Move a tier's lines into history, clipped so they end where their session ended.
+archive_lines(src, end_time, faded) =>
+    int n = 0
+    while array.size(src) > 0
+        ln = array.shift(src)
+        if line.get_x2(ln) > end_time
+            line.set_x2(ln, end_time)
+        line.set_color(ln, faded)
+        array.push(hist_lines, ln)
+        n += 1
+    n
+
+archive_zones(src, end_time, faded) =>
+    int n = 0
+    while array.size(src) > 0
+        bx = array.shift(src)
+        if box.get_right(bx) > end_time
+            box.set_right(bx, end_time)
+        box.set_bgcolor(bx, faded)
+        array.push(hist_zones, bx)
+        n += 1
+    n
+
+drop_oldest_session() =>
+    int k = array.shift(hist_line_counts)
+    while k > 0
+        line.delete(array.shift(hist_lines))
+        k -= 1
+    int kb = array.shift(hist_zone_counts)
+    while kb > 0
+        box.delete(array.shift(hist_zones))
+        kb -= 1
+
+// Called when a new session's grid replaces the old one. Keeps at most
+// history_sessions completed grids and deletes the oldest beyond that.
+archive_grid(end_time) =>
+    nl = archive_lines(lines_100, end_time, fade(color_100)) + archive_lines(lines_50, end_time, fade(color_50)) + archive_lines(lines_25, end_time, fade(color_25))
+    nb = archive_zones(zones_100, end_time, fade(zone_color_100)) + archive_zones(zones_50, end_time, fade(zone_color_50)) + archive_zones(zones_25, end_time, fade(zone_color_25))
+    array.clear(spx_100)
+    array.clear(spx_50)
+    array.clear(spx_25)
+    if nl > 0 or nb > 0
+        array.push(hist_line_counts, nl)
+        array.push(hist_zone_counts, nb)
+    while array.size(hist_line_counts) > history_sessions
+        drop_oldest_session()
+
+// Past sessions give way to the live grid: if the total would near TradingView's
+// 500 line/box cap (which silently deletes the oldest drawings), drop the oldest
+// sessions first. The 10 spare lines cover the ADR envelope. This matters on long
+// lookbacks (up to 40 sessions).
+trim_history_to_budget() =>
+    live_lines = array.size(lines_100) + array.size(lines_50) + array.size(lines_25)
+    live_boxes = array.size(zones_100) + array.size(zones_50) + array.size(zones_25)
+    while array.size(hist_line_counts) > 0 and (array.size(hist_lines) + live_lines > 490 or array.size(hist_zones) + live_boxes > 490)
+        drop_oldest_session()
+
+clear_all_lines() =>
+    while array.size(lines_100) > 0
+        line.delete(array.pop(lines_100))
+    while array.size(lines_50) > 0
+        line.delete(array.pop(lines_50))
+    while array.size(lines_25) > 0
+        line.delete(array.pop(lines_25))
+    while array.size(zones_100) > 0
+        box.delete(array.pop(zones_100))
+    while array.size(zones_50) > 0
+        box.delete(array.pop(zones_50))
+    while array.size(zones_25) > 0
+        box.delete(array.pop(zones_25))
+    array.clear(spx_100)
+    array.clear(spx_50)
+    array.clear(spx_25)
+
+spx_to_chart(spx_level, basis) =>
+    syminfo.ticker == "SPY" ? spx_level / 10.0 + basis : spx_level + basis
+
+// Draws every multiple of increment inside [low_level, high_level] (both already
+// multiples of increment). Tiers share one centre, so each tier's range is symmetric.
+draw_psychological_levels(low_level, high_level, increment, basis, line_color, line_width, line_style_str, show_zone, zone_color, line_array, zone_array, spx_array, line_start, line_end) =>
+    line_style = line_style_str == "Dashed" ? line.style_dashed : line_style_str == "Dotted" ? line.style_dotted : line.style_solid
+    steps = high_level >= low_level ? int(math.round((high_level - low_level) / increment)) : -1
+    for i = 0 to (steps >= 0 ? steps : na)
+        spx_level = low_level + (i * increment)
+        skip_level = false
+        if increment == 50 and is_mult(spx_level, 100)
+            skip_level := true
+        if increment == 25 and is_mult(spx_level, 50)
+            skip_level := true
+        if not skip_level
+            chart_level = spx_to_chart(spx_level, basis)
+            chart_zone_half_width = syminfo.ticker == "SPY" ? zone_half_width / 10.0 : zone_half_width
+            array.push(line_array, line.new(line_start, chart_level, line_end, chart_level,
+                 xloc=xloc.bar_time, color=line_color, width=line_width, style=line_style))
+            array.push(spx_array, spx_level)
+            if show_zone
+                array.push(zone_array, box.new(line_start, chart_level + chart_zone_half_width, line_end, chart_level - chart_zone_half_width,
+                     xloc=xloc.bar_time, bgcolor=zone_color, border_color=color.new(color.black, 100)))
+
+retarget_levels(line_array, zone_array, spx_array, basis) =>
+    n = array.size(line_array)
+    has_zones = array.size(zone_array) == n
+    for i = 0 to (n > 0 ? n - 1 : na)
+        chart_level = spx_to_chart(array.get(spx_array, i), basis)
+        chart_zone_half_width = syminfo.ticker == "SPY" ? zone_half_width / 10.0 : zone_half_width
+        ln = array.get(line_array, i)
+        line.set_y1(ln, chart_level)
+        line.set_y2(ln, chart_level)
+        if has_zones
+            bx = array.get(zone_array, i)
+            box.set_top(bx, chart_level + chart_zone_half_width)
+            box.set_bottom(bx, chart_level - chart_zone_half_width)
+
+determine_active_contract(ct) =>
+    cy = year(ct)
+    r_h = get_third_friday_timestamp(cy, 3) - 4 * 86400000
+    r_m = get_third_friday_timestamp(cy, 6) - 4 * 86400000
+    r_u = get_third_friday_timestamp(cy, 9) - 4 * 86400000
+    r_z = get_third_friday_timestamp(cy, 12) - 4 * 86400000
+    code = ""
+    yr = cy
+    mv = 3
+    if ct >= r_z
+        code := "H"
+        yr := cy + 1
+        mv := 3
+    else if ct >= r_u
+        code := "Z"
+        mv := 12
+    else if ct >= r_m
+        code := "U"
+        mv := 9
+    else if ct >= r_h
+        code := "M"
+        mv := 6
+    else
+        code := "H"
+        mv := 3
+    [code, yr, mv]
+
+// === CONTRACT VALIDATION ===
+is_continuous = syminfo.ticker == "ES1!" or syminfo.ticker == "MES1!" or syminfo.ticker == "ES1" or syminfo.ticker == "MES1"
+[current_code, current_year, current_month_val] = determine_active_contract(time)
+is_current_contract = syminfo.ticker == "ES" + current_code + str.tostring(current_year) or syminfo.ticker == "MES" + current_code + str.tostring(current_year)
+is_spy = syminfo.ticker == "SPY"
+is_valid = timeframe_supported and (is_continuous or is_current_contract or is_spy)
+// A dated futures contract needs pre-roll cash history to have a full ADR when it
+// becomes active. Keep calculation eligibility separate from drawing eligibility.
+cash_calculation_supported = timeframe_supported and (is_spy or is_continuous or (syminfo.type == "futures" and (syminfo.root == "ES" or syminfo.root == "MES")))
+
+// === DATA ===
+[spx_live, spx_bar_time, spx_bar_close_time] = request.security("SP:SPX", timeframe.period, [close, time, time_close], gaps=barmerge.gaps_off, lookahead=barmerge.lookahead_off)
+// Daily tuples let replay choose only a value available by each sample's close.
+[spx_daily_current, spx_daily_end, spx_daily_previous] = request.security("SP:SPX", "D", [close, time_close, close[1]], lookahead=barmerge.lookahead_off)
+[chart_atr_current, chart_atr_end, chart_atr_previous] = request.security(syminfo.tickerid, "D", [ta.atr(14), time_close, ta.atr(14)[1]], lookahead=barmerge.lookahead_off)
+spx_daily_close = spx_daily_current
+chart_atr14 = chart_atr_current
+
+vix_sym = vol_src == "VIX1D" ? "CBOE:VIX1D" : vol_src == "VIX9D" ? "CBOE:VIX9D" : "CBOE:VIX"
+[vix_current, vix_end, vix_previous] = request.security(vix_sym, "D", [close, time_close, close[1]], ignore_invalid_symbol=true, lookahead=barmerge.lookahead_off)
+[vix_fallback_current, vix_fallback_end, vix_fallback_previous] = request.security("CBOE:VIX", "D", [close, time_close, close[1]], ignore_invalid_symbol=true, lookahead=barmerge.lookahead_off)
+vix_val = vix_current
+vix_fallback = vix_fallback_current
+
+// These feeds support the optional futures model, not the observed projection.
+// Keep calls directly inside this dynamic-request guard so Observed, SPY and
+// unsupported paths contact no rate feed at all. Choosing Fixed backup also covers
+// permission errors not suppressible by ignore_invalid_symbol.
+//
+// CBOE IRX is the 13-week bill DISCOUNT rate quoted x10 (40.7 = 4.07%). DGS3MO and
+// TVC:US03MY are bond-equivalent yields, so IRX is rescaled and converted before the
+// 0.6/0.4 blend; mixing raw discount and yield would bias the 3M leg ~10 bp low.
+irx_to_bey(raw) =>
+    float out = na
+    if not na(raw) and raw > 0
+        pct = raw > 20 ? raw / 10.0 : raw
+        d = pct / 100.0
+        out := 100.0 * 365.0 * d / (360.0 - 91.0 * d)
+    out
+
+// TVC:US01M/US03M/US06M are bill PRICES (~99); the ...MY symbols are yields. Reject
+// anything outside a plausible yield range so a price can never reach the model.
+valid_yield(x) =>
+    not na(x) and x > 0 and x < 20 ? x : na
+
+proxy_3m(irx_bey, us03m) =>
+    na(irx_bey) ? us03m : na(us03m) ? irx_bey : 0.6 * irx_bey + 0.4 * us03m
+
+float r1m = na
+float r3m = na
+float r6m = na
+float r1y = na
+float irx_raw = na
+float irx_alt = na
+float us03m = na
+if is_valid and not is_spy and fv_mode != "Observed" and rate_source != "Fixed backup"
+    if rate_source == "FRED"
+        r1m := request.security("FRED:DGS1MO", "D", close, ignore_invalid_symbol=true, lookahead=barmerge.lookahead_off)
+        r3m := request.security("FRED:DGS3MO", "D", close, ignore_invalid_symbol=true, lookahead=barmerge.lookahead_off)
+        r6m := request.security("FRED:DGS6MO", "D", close, ignore_invalid_symbol=true, lookahead=barmerge.lookahead_off)
+        r1y := request.security("FRED:DGS1", "D", close, ignore_invalid_symbol=true, lookahead=barmerge.lookahead_off)
+    else
+        r1m := request.security("TVC:US01MY", "D", close, ignore_invalid_symbol=true, lookahead=barmerge.lookahead_off)
+        us03m := request.security("TVC:US03MY", "D", close, ignore_invalid_symbol=true, lookahead=barmerge.lookahead_off)
+        irx_raw := request.security("CBOE:IRX", "D", close, ignore_invalid_symbol=true, lookahead=barmerge.lookahead_off)
+        irx_alt := request.security("CBOE:IRX.P", "D", close, ignore_invalid_symbol=true, lookahead=barmerge.lookahead_off)
+        r6m := request.security("TVC:US06MY", "D", close, ignore_invalid_symbol=true, lookahead=barmerge.lookahead_off)
+        r1y := request.security("TVC:US01Y", "D", close, ignore_invalid_symbol=true, lookahead=barmerge.lookahead_off)
+        r1m := valid_yield(r1m)
+        r6m := valid_yield(r6m)
+        r1y := valid_yield(r1y)
+        r3m := proxy_3m(irx_to_bey(na(irx_raw) ? irx_alt : irx_raw), valid_yield(us03m))
+
+// === SAMPLE STATE ===
+// Ordinary var state rolls back on every live parent-bar update. Replaying the
+// full batch reconstructs it once, without varip double-counting after reload.
+var float basis_ema = na
+var int basis_last_update = na
+var float rth_hi = na
+var float rth_lo = na
+var float rth_open_today = na
+var int rth_start_time = na
+var int rth_day = na
+var bool rth_pending = false
+var bool rth_has_spx = false
+var bool rth_full_start = false
+var int adr_anchor_time = na
+var array<float> adr_hist = array.new<float>()
+var line adr_up_ln = na
+var line adr_dn_ln = na
+var label adr_up_lb = na
+var label adr_dn_lb = na
+var int previous_grid_session = na
+var int last_processed_sample_time = na
+var float latest_spx = na
+var int latest_spx_time = na
+var int latest_spx_end = na
+int grid_session_id = na
+int grid_session_end = na
+bool new_grid_session = false
+bool in_cash = false
+bool spy_cash_closing = false
+bool basis_sample_valid = false
+bool rth_is_current = false
+observed_basis = basis_ema
+basis_is_fallback = na(basis_ema)
+
+adr_of(n) =>
+    sz = array.size(adr_hist)
+    float out = na
+    if sz >= n
+        s = 0.0
+        for i = sz - n to sz - 1
+            s += array.get(adr_hist, i)
+        out := s / n
+    out
+
+// ADR's own trailing-year tercile, used to widen the span in quiet regimes.
+adr_low_regime() =>
+    sz = array.size(adr_hist)
+    cur = adr_of(14)
+    bool out = false
+    if sz >= 60 and not na(cur)
+        below = 0
+        look = math.min(sz, 252)
+        for i = sz - look to sz - 1
+            if array.get(adr_hist, i) < cur
+                below += 1
+        out := below < look / 3.0
+    out
+
+// === INPUT BATCH ===
+// Native charts take one sample, preserving their existing live-bar behavior.
+sample_times = array.from(time)
+sample_ends = array.from(time_close)
+sample_opens = array.from(open)
+sample_highs = array.from(high)
+sample_lows = array.from(low)
+sample_closes = array.from(close)
+sample_market = array.from(session.ismarket)
+sample_last_regular = array.from(session.islastbar_regular)
+quote_times = array.from(spx_bar_time)
+quote_ends = array.from(spx_bar_close_time)
+quote_closes = array.from(spx_live)
+
+if use_intrabar_data and cash_calculation_supported
+    [ltf_times, ltf_ends, ltf_opens, ltf_highs, ltf_lows, ltf_closes, ltf_market, ltf_last_regular] = request.security_lower_tf(syminfo.tickerid, "5", [time, time_close, open, high, low, close, session.ismarket, session.islastbar_regular], calc_bars_count=100000)
+    [ltf_spx_times, ltf_spx_ends, ltf_spx_closes] = request.security_lower_tf("SP:SPX", "5", [time, time_close, close], calc_bars_count=100000)
+    sample_times := ltf_times
+    sample_ends := ltf_ends
+    sample_opens := ltf_opens
+    sample_highs := ltf_highs
+    sample_lows := ltf_lows
+    sample_closes := ltf_closes
+    sample_market := ltf_market
+    sample_last_regular := ltf_last_regular
+    quote_times := ltf_spx_times
+    quote_ends := ltf_spx_ends
+    quote_closes := ltf_spx_closes
+
+// Arrays may be empty in older history. Never substitute coarse OHLC for missing
+// intrabars, and never align ES overnight / SPX cash arrays by their indexes.
+int quote_index = 0
+if array.size(sample_times) > 0
+    for sample_index = 0 to array.size(sample_times) - 1
+        sample_time = array.get(sample_times, sample_index)
+        sample_time_close = array.get(sample_ends, sample_index)
+        // A confirmed parent proves its contained candles have closed, even if
+        // the feed's final tick and the wall clock differ by a few milliseconds.
+        if use_intrabar_data and (sample_time_close > time_close or (not barstate.isconfirmed and sample_time_close > timenow))
+            continue
+        sample_open = array.get(sample_opens, sample_index)
+        sample_high = array.get(sample_highs, sample_index)
+        sample_low = array.get(sample_lows, sample_index)
+        sample_close = array.get(sample_closes, sample_index)
+        is_sample_market = array.get(sample_market, sample_index)
+        is_sample_last_regular = array.get(sample_last_regular, sample_index)
+        sample_confirmed = use_intrabar_data ? true : barstate.isconfirmed
+        sample_minute = hour(sample_time, "America/New_York") * 60 + minute(sample_time, "America/New_York")
+        sample_weekday = dayofweek(sample_time, "America/New_York")
+        while quote_index < array.size(quote_times)
+            quote_time = array.get(quote_times, quote_index)
+            if na(quote_time) or quote_time > sample_time
+                break
+            latest_spx := array.get(quote_closes, quote_index)
+            latest_spx_time := quote_time
+            latest_spx_end := array.get(quote_ends, quote_index)
+            quote_index += 1
+        sample_spx = latest_spx
+
+        [sample_code, sample_year, sample_month] = determine_active_contract(sample_time)
+        current_code := sample_code
+        current_year := sample_year
+        current_month_val := sample_month
+        is_current_contract := syminfo.ticker == "ES" + current_code + str.tostring(current_year) or syminfo.ticker == "MES" + current_code + str.tostring(current_year)
+        is_valid := timeframe_supported and (is_continuous or is_current_contract or is_spy)
+        [sample_grid_id, sample_grid_end] = grid_session_bounds(sample_time, is_spy)
+        grid_session_id := sample_grid_id
+        grid_session_end := sample_grid_end
+        new_grid_session := na(previous_grid_session) or grid_session_id != previous_grid_session
+        previous_grid_session := grid_session_id
+        last_processed_sample_time := sample_time
+
+        if use_intrabar_data
+            spx_daily_close := spx_daily_end <= sample_time_close ? spx_daily_current : spx_daily_previous
+            chart_atr14 := chart_atr_end <= sample_time_close ? chart_atr_current : chart_atr_previous
+            vix_val := vix_end <= sample_time_close ? vix_current : vix_previous
+            vix_fallback := vix_fallback_end <= sample_time_close ? vix_fallback_current : vix_fallback_previous
+
+        // === OBSERVED BASIS (simultaneous samples, cash session only) ===
+        // On SPY respect the exchange session flags, including early-close afternoons.
+        in_cash := cash_calculation_supported and sample_minute >= 570 and sample_minute < 960 and sample_weekday >= dayofweek.monday and sample_weekday <= dayofweek.friday and (not is_spy or is_sample_market)
+        cash_close_time = timestamp("America/New_York", year(sample_time, "America/New_York"), month(sample_time, "America/New_York"), dayofmonth(sample_time, "America/New_York"), 16, 0)
+        // Clear on the closing update itself: an RTH-only chart has no later bar to do it.
+        // The exchange flag covers early closes; the clock is a normal-close fallback.
+        spy_cash_closing := is_spy and in_cash and sample_confirmed and (is_sample_last_regular or sample_time_close >= cash_close_time)
+        cash_day = timestamp("America/New_York", year(sample_time, "America/New_York"), month(sample_time, "America/New_York"), dayofmonth(sample_time, "America/New_York"), 0, 0)
+        // gaps_off may carry Friday's quote through a Monday cash holiday. Its timestamp
+        // travels with the price, so it can never pass this same-bar check on Monday.
+        basis_sample_valid := in_cash and not na(sample_spx) and sample_spx > 0 and not na(sample_close) and latest_spx_time == sample_time and latest_spx_end == sample_time_close
+        if basis_sample_valid
+            b = is_spy ? sample_close - sample_spx / 10.0 : sample_close - sample_spx
+            alpha = 2.0 / (basis_smooth + 1)
+            basis_was_stale = na(basis_last_update) or sample_time - basis_last_update > 20 * 60 * 60 * 1000
+            basis_ema := na(basis_ema) or basis_was_stale ? b : basis_ema + alpha * (b - basis_ema)
+            basis_last_update := latest_spx_time
+        // Unmatched daily closes are not an observed basis. Wait for a paired sample.
+        observed_basis := basis_ema
+        basis_is_fallback := na(basis_ema)
+
+        // === ADR (no-repaint var accumulator) ===
+        // Mean high-low of the prior N COMPLETED RTH
+        // sessions, excluding today, fixed for the session.
+        // Accumulate raw chart-symbol OHLC in chronological order. No ADR accumulator
+        // or other mutable session state runs inside a request context.
+        // Independent of today's developing RTH state, so futures can retain an old
+        // valid envelope while waiting for the new opening bar / paired cash quote.
+
+        // Finalize BEFORE resetting. SPY regular-hours charts have no out-of-session bar;
+        // on those charts the next cash date is the first opportunity to save the prior day.
+        rth_finish = rth_pending and (not in_cash or cash_day != rth_day)
+        if rth_finish
+            if rth_has_spx and rth_full_start and not na(rth_hi) and not na(rth_lo)
+                array.push(adr_hist, rth_hi - rth_lo)
+                if array.size(adr_hist) > 260
+                    array.shift(adr_hist)
+            rth_pending := false
+
+        rth_begin = in_cash and not rth_pending
+        if rth_begin
+            rth_hi := sample_high
+            rth_lo := sample_low
+            rth_open_today := sample_open
+            rth_start_time := sample_time
+            rth_day := cash_day
+            rth_pending := true
+            rth_has_spx := false
+            rth_full_start := sample_time == timestamp("America/New_York", year(sample_time, "America/New_York"), month(sample_time, "America/New_York"), dayofmonth(sample_time, "America/New_York"), 9, 30)
+        else if in_cash
+            rth_hi := math.max(nz(rth_hi, sample_high), sample_high)
+            rth_lo := math.min(nz(rth_lo, sample_low), sample_low)
+
+        if basis_sample_valid
+            rth_has_spx := true
+
+        // The futures grid rolls at 18:00 ET, before the calendar cash date changes.
+        // Neither yesterday's range nor a partial opening session describes today's RTH.
+        rth_is_current := rth_full_start and rth_has_spx and cash_day == rth_day and rth_start_time >= grid_session_id
+
+
+        // SPY is cash-only; futures retain their last valid cash reference across grid resets.
+        if not is_valid or not show_adr_caps or (is_spy and (not in_cash or spy_cash_closing or new_grid_session or rth_begin))
+            line.delete(adr_up_ln)
+            line.delete(adr_dn_ln)
+            label.delete(adr_up_lb)
+            label.delete(adr_dn_lb)
+            adr_up_ln := na
+            adr_dn_ln := na
+            adr_up_lb := na
+            adr_dn_lb := na
+            adr_anchor_time := na
+
+        // Draw once cash data confirms this RTH session, always using its captured 09:30 open.
+        // ADR uses only COMPLETED prior sessions; today's own range never feeds these caps.
+        if is_valid and in_cash and rth_is_current and not spy_cash_closing and show_adr_caps and (na(adr_anchor_time) or adr_anchor_time != rth_start_time)
+            a_env = vol_src == "ADR-10" ? adr_of(10) : adr_of(14)
+            if not na(a_env) and a_env > 0
+                line.delete(adr_up_ln)
+                line.delete(adr_dn_ln)
+                label.delete(adr_up_lb)
+                label.delete(adr_dn_lb)
+                adr_anchor_time := rth_start_time
+                t0 = adr_anchor_time
+                t1 = cash_close_time
+                up_y = rth_open_today + a_env
+                dn_y = rth_open_today - a_env
+                adr_up_ln := line.new(t0, up_y, t1, up_y, xloc=xloc.bar_time, color=adr_up_col,
+                     width=2, style=line.style_dashed)
+                adr_dn_ln := line.new(t0, dn_y, t1, dn_y, xloc=xloc.bar_time, color=adr_dn_col,
+                     width=2, style=line.style_dashed)
+                adr_up_lb := label.new(t1, up_y, "ADR+ " + str.tostring(up_y, format.mintick),
+                     xloc=xloc.bar_time, style=label.style_label_left, color=color.new(color.black, 100),
+                     textcolor=adr_up_col, size=size.small)
+                adr_dn_lb := label.new(t1, dn_y, "ADR- " + str.tostring(dn_y, format.mintick),
+                     xloc=xloc.bar_time, style=label.style_label_left, color=color.new(color.black, 100),
+                     textcolor=adr_dn_col, size=size.small)
+
+        // Extend retained futures caps without changing their prices or source date.
+        // On SPY's developing final cash bar, respect its actual (possibly early) close.
+        if not na(adr_anchor_time)
+            anchor_close = timestamp("America/New_York", year(adr_anchor_time, "America/New_York"), month(adr_anchor_time, "America/New_York"), dayofmonth(adr_anchor_time, "America/New_York"), 16, 0)
+            cap_end = is_spy ? (is_sample_last_regular ? sample_time_close : anchor_close) : math.max(anchor_close, sample_time_close)
+            line.set_x2(adr_up_ln, cap_end)
+            line.set_x2(adr_dn_ln, cap_end)
+            label.set_x(adr_up_lb, cap_end)
+            label.set_x(adr_dn_lb, cap_end)
+            label.set_text(adr_up_lb, "ADR+ " + str.tostring(line.get_y1(adr_up_ln), format.mintick))
+            label.set_text(adr_dn_lb, "ADR- " + str.tostring(line.get_y1(adr_dn_ln), format.mintick))
+
+        // === MAIN ===
+        if is_valid
+            display_contract := is_spy ? "SPY (SPX / 10)" : (str.contains(syminfo.ticker, "MES") ? "MES" : "ES") + current_code + str.tostring(current_year)
+            // Ordinary anchors stay fixed. A stale/missing anchor after a closure gets one
+            // cash-session resync, using current paired prices and starting a new grid here.
+            recover_basis = session_basis_pending and basis_sample_valid
+            newPeriod = new_grid_session or recover_basis
+
+            if newPeriod
+                expiry_time = get_third_friday_timestamp(current_year, current_month_val)
+                days_to_expiry = math.max(1, math.floor((expiry_time - sample_time) / 86400000) + 1)
+                r1m_safe = na(r1m) ? 4.22 : r1m
+                r3m_safe = na(r3m) ? 4.06 : r3m
+                r6m_safe = na(r6m) ? 3.95 : r6m
+                r1y_safe = na(r1y) ? 3.85 : r1y
+                T = math.max(1, days_to_expiry) / 365.0
+                rate_estimated = T <= 1.0/12.0 ? na(r1m) : T <= 0.25 ? (na(r1m) or na(r3m)) : T <= 0.5 ? (na(r3m) or na(r6m)) : (na(r6m) or na(r1y))
+                rf = T <= 1.0/12.0 ? r1m_safe : T <= 0.25 ? r1m_safe + (r3m_safe - r1m_safe) * ((T - 1.0/12.0) / (0.25 - 1.0/12.0)) : T <= 0.5 ? r3m_safe + (r6m_safe - r3m_safe) * ((T - 0.25) / (0.50 - 0.25)) : r6m_safe + (r1y_safe - r6m_safe) * ((T - 0.50) / (1.00 - 0.50))
+                funding = (T <= 0.25 ? 45 : T <= 0.5 ? 40 : 35) / 100.0
+                seasonal = days_to_expiry <= 35 ? seasonal_bps_from_expiry(expiry_time) / 100.0 : 0.0
+                base_rate = rf + funding
+                interest_rate = base_rate + seasonal
+                session_rf := rf
+                session_funding := funding
+                session_seasonal := seasonal
+                session_r1m := r1m_safe
+                session_r3m := r3m_safe
+                session_r6m := r6m_safe
+                session_r1y := r1y_safe
+                session_curve_est := (na(r1m) ? "1" : "") + (na(r3m) ? "3" : "") + (na(r6m) ? "6" : "") + (na(r1y) ? "Y" : "")
+                session_expiry_time := expiry_time
+                if interest_rate < 2.0
+                    interest_rate := 4.5
+                    rate_estimated := true
+                else if interest_rate > 10.0
+                    interest_rate := 5.5
+                    rate_estimated := true
+
+                if is_spy
+                    raw_model_fv := na
+                    obs_fv_stored := observed_basis
+                    bias_adj_stored := 0.0
+                    session_fair_value := observed_basis + fv_adjustment / 10.0
+                    session_interest_rate := na
+                    session_rate_estimated := false
+                    session_days_to_expiry := 0
+                else
+                    spx_for_model = na(spx_daily_close) ? sample_spx : spx_daily_close
+                    session_spx_model := spx_for_model
+                    fair_value = spx_for_model * (interest_rate/100) * (days_to_expiry/365) - spx_for_model * 0.012 * (days_to_expiry/365)
+                    raw_model_fv := fair_value
+                    obs_fv_stored := observed_basis
+
+                    if fv_mode == "Observed"
+                        fair_value := observed_basis
+                        bias_adj_stored := observed_basis - raw_model_fv
+                    else if fv_mode == "Blended"
+                        adj_bias = math.max(-6.0, math.min(6.0, observed_basis - fair_value))
+                        fair_value := fair_value + 0.50 * adj_bias
+                        bias_adj_stored := 0.50 * adj_bias
+                    else
+                        bias_adj_stored := 0.0
+
+                    fair_value := fair_value + fv_adjustment
+                    if na(fair_value) or fair_value < -50 or fair_value > 200
+                        fair_value := na(raw_model_fv) ? 15.0 : raw_model_fv
+
+                    session_fair_value := fair_value
+                    session_interest_rate := interest_rate
+                    session_rate_estimated := rate_estimated
+                    session_days_to_expiry := days_to_expiry
+                session_start_time := sample_time
+                uses_observed_basis = is_spy or fv_mode != "Theoretical"
+                session_basis_time := uses_observed_basis ? basis_last_update : na
+                session_basis_pending := level_tracking == "Session Anchored" and uses_observed_basis and (na(basis_last_update) or sample_time - basis_last_update > 20 * 60 * 60 * 1000)
+
+                // Session range estimator, fixed for the session.
+                spx_ref_em = na(spx_daily_close) ? sample_spx : spx_daily_close
+                v = na(vix_val) ? vix_fallback : vix_val
+                em_iv = (na(v) or v <= 0 or na(spx_ref_em)) ? na : spx_ref_em * (v / 100.0) / math.sqrt(252)
+                adr_val_chart = vol_src == "ADR-10" ? adr_of(10) : adr_of(14)
+                adr_val_spx = is_spy and not na(adr_val_chart) ? adr_val_chart * 10.0 : adr_val_chart
+
+                base_em = vol_src == "ADR-14" or vol_src == "ADR-10" ? adr_val_spx : em_iv
+                // Fall back down the chain rather than to a magic number: chosen source ->
+                // the other implied/ADR source -> ATR(14) -> a last-resort constant.
+                if na(base_em) or base_em <= 0
+                    base_em := na(adr_val_spx) or adr_val_spx <= 0 ? em_iv : adr_val_spx
+                if na(base_em) or base_em <= 0
+                    base_em := is_spy ? chart_atr14 * 10.0 : chart_atr14
+                if na(base_em) or base_em <= 0
+                    base_em := 60.0
+
+                session_adr := adr_val_chart
+                session_low_regime := adr_regime_scale and adr_low_regime()
+                session_em := session_low_regime ? base_em * 1.25 : base_em
+
+            active_basis = is_spy ? (level_tracking == "Live Basis" and not basis_is_fallback ? observed_basis + fv_adjustment / 10.0 : session_fair_value) : (level_tracking == "Live Basis" and fv_mode == "Observed" and not basis_is_fallback ? observed_basis + fv_adjustment : session_fair_value)
+            uses_live_basis = level_tracking == "Live Basis" and (is_spy or fv_mode == "Observed") and not basis_is_fallback
+            display_basis_time := uses_live_basis ? basis_last_update : session_basis_time
+            display_fair_value := active_basis
+            display_interest_rate := session_interest_rate
+            display_days_to_expiry := session_days_to_expiry
+
+            implied_spx_now = is_spy ? (sample_close - active_basis) * 10.0 : (na(active_basis) ? na : sample_close - active_basis)
+            drifted = auto_recenter and not na(grid_centre_spx) and not na(implied_spx_now) and math.abs(implied_spx_now - grid_centre_spx) > 100
+            rebuild = (newPeriod or drifted or na(grid_centre_spx)) and not na(active_basis) and not na(implied_spx_now)
+
+            if rebuild
+                // A new session keeps the finished grid as history; a mid-session
+                // recentre just replaces the current grid.
+                if newPeriod and history_sessions > 0 and not na(grid_centre_spx)
+                    archive_grid(sample_time)
+                clear_all_lines()
+                grid_centre_spx := implied_spx_now
+
+                em = na(session_em) or session_em <= 0 ? 60.0 : session_em
+                n100 = span_mode == "Fixed Count" ? num_levels : math.min(15, math.max(1, math.ceil(em_mult_100 * em / 100)))
+                n50 = span_mode == "Fixed Count" ? num_levels * 2 : math.min(20, math.max(1, math.ceil(em_mult_50 * em / 50)))
+                // Use the same centre AND endpoints as the 50-grid. Merely doubling its
+                // count around a separately rounded 25-centre can still omit an edge gap.
+                // n50 is capped at 20, so this draws at most 40 distinct quarter-levels.
+                n25 = show_50_levels ? n50 * 2 : (span_mode == "Fixed Count" ? num_levels * 4 : math.min(24, math.max(1, math.ceil(em_mult_25 * em / 25))))
+                base_level_50 = math.round(implied_spx_now / 50) * 50
+                base_level_25 = show_50_levels ? base_level_50 : math.round(implied_spx_now / 25) * 25
+
+                n100_drawn := n100
+                n50_drawn := n50
+                n25_drawn := n25
+
+                line_start_time = na(session_start_time) ? sample_time : session_start_time
+                line_end_time = grid_session_end
+
+                // With the 50s hidden, the 100s use their own span around the nearest 100.
+                float centre_100 = math.round(implied_spx_now / 100) * 100
+                float low_100 = math.ceil((centre_100 - n100 * 100) / 100) * 100
+                float high_100 = math.floor((centre_100 + n100 * 100) / 100) * 100
+                float grid_low = base_level_25 - n25 * 25
+                float grid_high = base_level_25 + n25 * 25
+                // The ladder is centred on a 100 and runs a whole number of 100s each side, so
+                // every session has the same shape (2k+1 hundreds with a 50 between each).
+                // A new session keeps the previous ladder's centre while price opens within one
+                // 100 of it, so an open that drifts across a 50 (7740 one day, 7760 the next)
+                // doesn't shift the whole ladder by 100. Otherwise, and on a mid-session
+                // re-centre, it snaps to the 100 nearest price. Fixed Count uses k = count.
+                if show_50_levels
+                    k100 = span_mode == "Fixed Count" ? num_levels : math.min(10, math.max(1, math.ceil((n50 * 50 + 50) / 100)))
+                    if newPeriod and not drifted and not na(ladder_centre) and math.abs(implied_spx_now - ladder_centre) <= 100
+                        centre_100 := ladder_centre
+                    ladder_centre := centre_100
+                    grid_centre_spx := centre_100
+                    low_100 := centre_100 - k100 * 100
+                    high_100 := centre_100 + k100 * 100
+                    grid_low := low_100
+                    grid_high := high_100
+                    n100_drawn := k100
+                    n50_drawn := k100 * 2
+                    n25_drawn := k100 * 4
+                reach_100_drawn := high_100 - centre_100
+                if show_100_levels
+                    draw_psychological_levels(low_100, high_100, 100, active_basis, color_100, width_100, style_100, show_zones, zone_color_100, lines_100, zones_100, spx_100, line_start_time, line_end_time)
+                if show_50_levels
+                    draw_psychological_levels(low_100, high_100, 50, active_basis, color_50, width_50, style_50, show_zones, zone_color_50, lines_50, zones_50, spx_50, line_start_time, line_end_time)
+                if show_25_levels
+                    draw_psychological_levels(grid_low, grid_high, 25, active_basis, color_25, width_25, style_25, show_zones, zone_color_25, lines_25, zones_25, spx_25, line_start_time, line_end_time)
+                trim_history_to_budget()
+
+            else if level_tracking == "Live Basis" and not na(active_basis)
+                retarget_levels(lines_100, zones_100, spx_100, active_basis)
+                retarget_levels(lines_50, zones_50, spx_50, active_basis)
+                retarget_levels(lines_25, zones_25, spx_25, active_basis)
+
+
+// A final 5-minute feed update can arrive after its parent closes. On SPY's
+// confirmed closing chart bar, still clear the envelope even if that last
+// intrabar is absent. This uses only close timing, never coarse chart OHLC.
+htf_spy_closing = use_intrabar_data and is_spy and barstate.isconfirmed and (session.islastbar_regular or (session.ismarket and hour(time_close, "America/New_York") == 16 and minute(time_close, "America/New_York") == 0))
+if htf_spy_closing
+    line.delete(adr_up_ln)
+    line.delete(adr_dn_ln)
+    label.delete(adr_up_lb)
+    label.delete(adr_dn_lb)
+    adr_up_ln := na
+    adr_dn_ln := na
+    adr_up_lb := na
+    adr_dn_lb := na
+    adr_anchor_time := na
+    spy_cash_closing := true
+
+// === INFO TABLE ===
+var table info_table = na
+var int info_rows_drawn = 0
+calculation_ready = not use_intrabar_data or not na(last_processed_sample_time)
+if is_valid and calculation_ready and show_info_table and na(info_table)
+    info_table := table.new(tbl_pos, 2, 16, bgcolor=color.new(color.black, 85),
+                           border_width=1, border_color=color.gray)
+else if (not is_valid or not calculation_ready or not show_info_table) and not na(info_table)
+    table.delete(info_table)
+    info_table := na
+// Nearest drawn level above/below a reference, across whichever tiers are drawn.
+nearest_in(levels, ref, above) =>
+    float best = na
+    if not na(ref)
+        for v in levels
+            if above ? v > ref : v < ref
+                best := na(best) ? v : above ? math.min(best, v) : math.max(best, v)
+    best
+
+closer(a, b, above) =>
+    na(a) ? b : na(b) ? a : above ? math.min(a, b) : math.max(a, b)
+
+level_pair_txt(up, dn, ref) =>
+    (na(up) ? "-" : "▲ " + str.tostring(up, "#") + " " + str.tostring(up - ref, "+#.0;-#.0")) + "  " +
+     (na(dn) ? "-" : "▼ " + str.tostring(dn, "#") + " " + str.tostring(dn - ref, "+#.0;-#.0"))
+
+if barstate.islast and show_info_table and is_valid and calculation_ready
+    table.clear(info_table, 0, 0, 1, 15)
+    // Trader-facing rows: the SPX price being traded, the nearest levels and how far
+    // they are (SPX points), and how much of the day's average range is used.
+    implied_now = na(display_fair_value) ? na : is_spy ? (close - display_fair_value) * 10.0 : close - display_fair_value
+    up_lvl = closer(closer(nearest_in(spx_100, implied_now, true), nearest_in(spx_50, implied_now, true), true), nearest_in(spx_25, implied_now, true), true)
+    dn_lvl = closer(closer(nearest_in(spx_100, implied_now, false), nearest_in(spx_50, implied_now, false), false), nearest_in(spx_25, implied_now, false), false)
+    day_rng = not in_cash or spy_cash_closing or not rth_is_current or na(rth_hi) or na(rth_lo) ? na : rth_hi - rth_lo
+    pct_adr = na(day_rng) or na(session_adr) or session_adr <= 0 ? na : day_rng / session_adr
+    range_txt = na(pct_adr) ? (na(session_adr) ? "-" : "ADR " + str.tostring(session_adr, format.mintick)) : str.tostring(day_rng, format.mintick) + " / " + str.tostring(session_adr, format.mintick) + " (" + str.tostring(pct_adr * 100, "#") + "%)"
+    // The basis is only worth a row when it cannot be trusted. It is intentionally
+    // held overnight and on weekends, so staleness only counts during cash hours.
+    basis_age_h = na(basis_last_update) ? na : (nz(last_processed_sample_time, time) - basis_last_update) / 3600000.0
+    model_est = not is_spy and fv_mode != "Observed" and session_rate_estimated
+    warn_txt = basis_is_fallback ? "Waiting for SPX" : session_basis_pending ? "Basis resync pending" : in_cash and not na(basis_age_h) and basis_age_h > 1 ? "Basis stale " + str.tostring(basis_age_h, "#") + "h" : model_est ? "Rate est " + str.tostring(display_interest_rate, "#.##") + "%" : ""
+
+    int row = 0
+    if tbl_fv
+        fv_color = is_spy ? color.aqua : fv_mode == "Theoretical" ? color.yellow : fv_mode == "Observed" ? color.orange : color.aqua
+        track_txt = level_tracking == "Live Basis" ? "live" : "anchored"
+        fv_txt = na(display_fair_value) ? "-" : is_spy ? str.tostring(display_fair_value, "#.###") + " ETF basis, " + track_txt : fv_mode == "Observed" ? str.tostring(display_fair_value, "#.##") + " Observed, " + track_txt : str.tostring(display_fair_value, "#.##") + " " + fv_mode + " @ " + str.tostring(display_interest_rate, "#.##") + "% " + (session_rate_estimated ? "est" : rate_source == "FRED" ? "FRED" : "TSY") + ", " + str.tostring(display_days_to_expiry) + "d"
+        table.cell(info_table, 0, row, is_spy ? "Basis" : "Fair value", text_color=color.white, text_size=tbl_size)
+        table.cell(info_table, 1, row, fv_txt, text_color=fv_color, text_size=tbl_size)
+        row += 1
+    if tbl_spx
+        table.cell(info_table, 0, row, "SPX ≈", text_color=color.white, text_size=tbl_size)
+        table.cell(info_table, 1, row, na(implied_now) ? "-" : str.tostring(implied_now, "#.0"), text_color=color.white, text_size=tbl_size)
+        row += 1
+    if tbl_next
+        table.cell(info_table, 0, row, "Next level", text_color=color.white, text_size=tbl_size)
+        table.cell(info_table, 1, row, level_pair_txt(up_lvl, dn_lvl, implied_now), text_color=color.white, text_size=tbl_size)
+        row += 1
+    if tbl_next100
+        table.cell(info_table, 0, row, "Next 100", text_color=color.white, text_size=tbl_size)
+        table.cell(info_table, 1, row, level_pair_txt(nearest_in(spx_100, implied_now, true), nearest_in(spx_100, implied_now, false), implied_now), text_color=color.white, text_size=tbl_size)
+        row += 1
+    if tbl_day
+        table.cell(info_table, 0, row, "Day / ADR", text_color=color.white, text_size=tbl_size)
+        table.cell(info_table, 1, row, range_txt, text_color=na(pct_adr) ? color.gray : color.white, text_size=tbl_size)
+        row += 1
+    if tbl_adr
+        adr_txt = na(adr_up_ln) or na(adr_dn_ln) ? "-" : str.tostring(line.get_y1(adr_up_ln), format.mintick) + " " + str.tostring(line.get_y1(adr_up_ln) - close, "+#.##;-#.##") + "  /  " + str.tostring(line.get_y1(adr_dn_ln), format.mintick) + " " + str.tostring(line.get_y1(adr_dn_ln) - close, "+#.##;-#.##")
+        table.cell(info_table, 0, row, "ADR+ / ADR-", text_color=color.white, text_size=tbl_size)
+        table.cell(info_table, 1, row, adr_txt, text_color=color.white, text_size=tbl_size)
+        row += 1
+    if tbl_contract
+        table.cell(info_table, 0, row, "Contract", text_color=color.white, text_size=tbl_size)
+        table.cell(info_table, 1, row, display_contract, text_color=color.white, text_size=tbl_size)
+        row += 1
+    if show_model_rows and not is_spy
+        mcol = color.silver
+        if tbl_m_model
+            table.cell(info_table, 0, row, "Model FV", text_color=color.white, text_size=tbl_size)
+            table.cell(info_table, 1, row, na(raw_model_fv) ? "-" : str.tostring(raw_model_fv, "#.##"), text_color=mcol, text_size=tbl_size)
+            row += 1
+        if tbl_m_obs
+            gap = na(obs_fv_stored) or na(raw_model_fv) ? na : obs_fv_stored - raw_model_fv
+            table.cell(info_table, 0, row, "Observed", text_color=color.white, text_size=tbl_size)
+            table.cell(info_table, 1, row, na(obs_fv_stored) ? "-" : str.tostring(obs_fv_stored, "#.##") + (na(gap) ? "" : " (" + str.tostring(gap, "+#.##;-#.##") + " vs model)"), text_color=mcol, text_size=tbl_size)
+            row += 1
+        if tbl_m_rate
+            src_txt = rate_source == "Fixed backup" ? "fixed" : rate_source == "FRED" ? "FRED" : "TSY"
+            table.cell(info_table, 0, row, "Rate", text_color=color.white, text_size=tbl_size)
+            table.cell(info_table, 1, row, na(session_rf) ? "-" : str.tostring(session_rf, "#.##") + "% " + src_txt + " + " + str.tostring(session_funding, "#.##") + " funding" + (session_seasonal != 0 ? " + " + str.tostring(session_seasonal, "#.##") + " seasonal" : "") + " = " + str.tostring(display_interest_rate, "#.##") + "%", text_color=mcol, text_size=tbl_size)
+            row += 1
+        if tbl_m_curve
+            est = session_curve_est
+            table.cell(info_table, 0, row, "Curve", text_color=color.white, text_size=tbl_size)
+            table.cell(info_table, 1, row, na(session_r1m) ? "-" : "1M " + str.tostring(session_r1m, "#.##") + (str.contains(est, "1") ? "*" : "") + "  3M " + str.tostring(session_r3m, "#.##") + (str.contains(est, "3") ? "*" : "") + "  6M " + str.tostring(session_r6m, "#.##") + (str.contains(est, "6") ? "*" : "") + "  1Y " + str.tostring(session_r1y, "#.##") + (str.contains(est, "Y") ? "*" : ""), text_color=mcol, text_size=tbl_size)
+            row += 1
+        if tbl_m_days
+            table.cell(info_table, 0, row, "Expiry", text_color=color.white, text_size=tbl_size)
+            table.cell(info_table, 1, row, na(session_expiry_time) ? "-" : str.tostring(display_days_to_expiry) + "d to " + str.format_time(session_expiry_time, "MMM d", "America/New_York"), text_color=mcol, text_size=tbl_size)
+            row += 1
+        if tbl_m_div
+            table.cell(info_table, 0, row, "Div yield", text_color=color.white, text_size=tbl_size)
+            table.cell(info_table, 1, row, "1.20% est (SPX " + (na(session_spx_model) ? "-" : str.tostring(session_spx_model, "#")) + ")", text_color=mcol, text_size=tbl_size)
+            row += 1
+    if warn_txt != ""
+        table.cell(info_table, 0, row, "Check", text_color=color.orange, text_size=tbl_size)
+        table.cell(info_table, 1, row, warn_txt, text_color=color.orange, text_size=tbl_size)
+        row += 1
+    info_rows_drawn := row
+````
