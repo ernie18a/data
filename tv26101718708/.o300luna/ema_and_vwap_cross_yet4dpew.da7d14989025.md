@@ -1,0 +1,1 @@
+以收盤價計算 25 期 EMA，並計算 VWAP。當 EMA 高於 VWAP 時做多，低於 VWAP 時做空；持有多單時 EMA 低於 VWAP 出場，持有空單時 EMA 高於 VWAP 出場。

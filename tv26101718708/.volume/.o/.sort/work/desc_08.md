@@ -1,0 +1,78 @@
+## REV.REENTRY 越界後收回（逆勢）
+- 核心邏輯：計算滾動通道邊界（布林帶、VWAP 標準差帶、回看最高／最低、均線加減 ATR 帶、前一回看區間高低）或振盪器超買超賣門檻（含建於振盪器值域的布林帶）→ 做多：前一根收在下界之下或當根最低價刺穿下界（含創回看新低的掃掠），當根收盤收回下界之上；或振盪器由超賣區向上穿回門檻 → 做空：對稱，上界越界後收回或振盪器自超買區下穿門檻；少數只做多或只做空，個別做空不對稱（改為上穿高門檻）。
+- 可選濾網：
+  - F.volume：成交量高於均量或倍數（少數反要求縮量），約 23 段。
+  - F.trend_ma：收盤相對長期均線、VWAP 或兩均線相對位置定可做方向，約 19 段。
+  - F.adx_di：ADX 低於門檻（盤整模式）或 DI 方向限制，約 18 段。
+  - F.flat：須空倉或每段一次，約 18 段。
+  - F.htf：較高週期趨勢或指標同向，約 13 段。
+  - F.band_pos：振盪器穿回時收盤仍須位於布林下軌外或通道指定位置，約 10 段。
+  - F.rsi_band：RSI、MFI 等須處於超賣或未超買區，約 10 段。
+  - F.session：限定交易時段，約 10 段。
+  - F.volatility：ATR、帶寬或相對波動高於門檻，約 9 段。
+  - F.score：多空計分或成立項數達門檻作前提，約 9 段。
+  - F.osc_dir：MACD、EWO 等輔助振盪器方向同向，約 9 段。
+  - F.ma_stack：多條均線排列或均線帶同向，約 8 段。
+  - F.close_pos、F.candle_dir：收回棒收盤位置強勢或收陽，各約 5 段。
+  - F.date：限定回測日期區間，約 5 段。
+  - F.swing_dir：擺動結構方向（樞紐突破定趨勢）一致，約 4 段。
+  - F.osc_cross：同根另有振盪器交叉確認（MACD、隨機 K、RSI 標準分數），約 4 段。
+  - F.cooldown：距前次進出場須隔根數，約 4 段。
+  - F.trail_side、F.squeeze：追蹤線同側、壓縮或非壓縮狀態，各約 3 段。
+  - 其他零星：F.slope、F.min_rr、F.key_level、F.extension、F.efficiency、F.daily_limit、F.confirm_bar、F.confirm、F.wick、F.rearm、F.prior_move、F.near_level、F.divergence，各 1 至 2 段。
+- 出場變體：
+  - X.stop_pct：固定百分比停損，約 17 段。
+  - X.stop_atr：ATR 倍數停損，約 15 段。
+  - X.tp_atr：ATR 倍數停利，約 14 段。
+  - X.tp_pct：固定百分比停利，約 10 段。
+  - X.trailing_atr：ATR 追蹤停損，約 9 段。
+  - X.time：持倉根數上限，約 6 段。
+  - X.tp_rr、X.tp_multi：風險倍數停利或多段停利，各約 5 段。
+  - X.indicator_cap：振盪器自超買回落或越過對側門檻出場，約 5 段。
+  - X.trailing_pct、X.stop_level：百分比追蹤或以掃掠極值、通道帶為停損，各約 4 段。
+  - X.band_opposite、X.tp_level、X.tp_mid：穿越對側軌、目標價位或回歸中軸／VWAP 停利，各約 2 至 3 段。
+  - X.trend_flip、X.trailing_ma、X.breakeven：趨勢反轉、均線追蹤、保本，各約 3 段。
+  - 零星：X.volume_spike、X.reverse_signal、X.structure_break、X.stop_bar、X.min_hold、X.candle_reversal，各 1 至 2 段。
+  - X.other：未定義的追蹤停損、災難停損、時間平倉等，約 10 段；無出場規則約 3 段。
+- 群內常見小異：
+  - 邊界種類：布林帶／錨定 VWAP 標準差帶／不含當根的回看最低價／均線加減 ATR 帶／前一回看區間高低（可加 ATR 緩衝）。
+  - 振盪器種類：RSI（可取 VWAP 來源或較高週期）／隨機／Williams %R／MFI／ROC／合成情緒或趨勢值／帶符號淨成交量（門檻為正負均量）。
+  - 門檻形式：固定超賣線／高於超賣線的可調水平／建於振盪器值域的布林帶或標準差帶（%B 自 0 下方收回）。
+  - 收回形式：前根收在界外當根收回／同根刺穿收回／短時窗內收回／收回須超過 ATR 或緩衝。
+  - 組合形式：收盤位於布林下軌外且 RSI 自超賣上穿（盤整模式）／價格收回配 RSI 超賣或振盪器穿越確認。
+
+## CMP.SCORE 順勢加權計分門檻
+- 核心邏輯：將多項以順勢為主的條件（均線位置與排列、振盪器方向、MACD、ADX／DI、追蹤線方向、VWAP、成交量、高週期、結構與掃掠、背離、K 棒形態等）依權重或成立項數加總為多、空分數（或單一有號分數、正規化平均）→ 做多：多方分數達門檻、高於空方分數、領先達差額，或分數由下而上越過門檻 → 做空：對稱（少數只做多或門檻不對稱）。
+- 可選濾網：
+  - F.session：限定交易時段，約 16 段。
+  - F.flat：須空倉或每段一次，約 15 段。
+  - F.trend_ma：收盤位於長期均線或上升 EMA／KAMA 同側，約 11 段。
+  - F.volume、F.volatility：放量、ATR 或波動狀態在範圍內，各約 8 段。
+  - F.cooldown：距前次訊號或出場須隔根數，約 7 段。
+  - F.adx_di：ADX 高於門檻或 DI 同向，約 7 段。
+  - F.htf：較高週期方向同向，約 6 段。
+  - F.slope、F.osc_dir、F.ma_stack：均線斜率、子分數或振盪器方向同號、均線排列，各約 5 段。
+  - F.score、F.rsi_band、F.rearm、F.daily_limit：另一組分數門檻、RSI 未極端、方向須先變化、每日次數上限，各約 4 段。
+  - F.confirm、F.band_pos：收定確認、非溢價或折價區位置，各約 3 段。
+  - 零星：F.min_rr、F.date、F.candle_dir、F.trail_side、F.swing_dir、F.prior_move、F.min_risk、F.extension、F.confirm_bar，各 1 至 2 段。
+  - F.other：回撤停手、閃崩禁入、硬性盤整封鎖、反向 EMA 交叉禁止等，約 9 段；無濾網約 13 段。
+- 出場變體：
+  - X.stop_atr：ATR 倍數停損，約 24 段。
+  - X.trailing_atr：ATR 追蹤停損，約 18 段。
+  - X.tp_atr：ATR 倍數停利，約 16 段。
+  - X.reverse_signal：對側分數達門檻或反向訊號出場，約 14 段。
+  - X.tp_rr：風險倍數停利，約 10 段。
+  - X.momentum_fade：分數或分差回落至出場門檻、壓力轉負，約 10 段。
+  - X.trend_flip：區間或趨勢狀態翻轉、跌破基線，約 9 段。
+  - X.tp_multi、X.time：多段停利、持倉根數上限，各約 8 段。
+  - X.stop_swing：擺動點停損，約 7 段。
+  - X.stop_pct、X.breakeven：固定百分比停損、保本，各約 5 段。
+  - X.session_end：離開時段平倉，約 4 段。
+  - 零星：X.trailing_pct、X.structure_break、X.candle_reversal、X.trailing_ma、X.tp_pct、X.stop_level、X.osc_cross、X.indicator_cap、X.trailing_swing、X.tp_level、X.sar、X.min_hold，各 1 至 3 段。
+  - X.other：止損止盈或追蹤算法未定義、ATR 暴增出場等，約 16 段；無出場規則約 3 段。
+- 群內常見小異：
+  - 計分方式：加權和／成立項數／多數決／各指標正規化平均／回看窗平均分數。
+  - 觸發比較：達固定門檻／多方高於空方／領先達差額／分層門檻配衝突上限／分數上穿門檻或其平滑線／方向由非多轉多。
+  - 計分項組成：傳統指標組（RSI、隨機、MACD、CCI、威廉相對中值）／SMC 結構組（BOS、掃掠、FVG、訂單區、折溢價）／量流組（累積成交量差、壓力、相對成交量）／含 K 棒反轉形態與超賣項的混合組（順勢項仍居多）。
+  - 門檻調整：依市場狀態、波動或保守／積極模式動態調整門檻。
+  - 用途：多數為進場，少數僅作早期訊號或 K 棒著色標示。

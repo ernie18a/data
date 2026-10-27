@@ -1,0 +1,15 @@
+combining_exponential_and_volume_weighting_backtest_c2avllx8.c16342b1be12.md	1	OSC.LEVEL	OSC.LEVEL.sig_state	核心為振盪器高於自身訊號線（柱狀差為正）的狀態，參考線為自身平滑線而非固定門檻
+dynamic_price_swing_5p0iogdg.79d520a59ab9.md	2	OSC.LEVEL	OSC.LEVEL.sig_state	核心為同一動能的快慢平滑線相對位置狀態（快線高於慢線），零軸僅作反側限制
+ergotic_macd_strategy_forked_from_hpotter_xr64hlgm.38dfb51960ee.md	1	OSC.LEVEL	OSC.LEVEL.sig_state	核心為振盪器高於自身訊號線（柱狀差為正）的狀態，參考線為自身平滑線而非固定門檻
+gaussian_mfi_bf_umqpuqrh.030bdb6f2099.md	1	OSC.LEVEL	OSC.SLOPE	核心為平滑線現值高於前值的斜率符號狀態，無固定門檻
+gold_ai_strategy_v20_5yqxo32h.d171d4d51ed0.md	3	OSC.LEVEL	OSC.LEVEL.sig_state	核心為振盪器高於自身訊號線（柱狀差為正）的狀態，參考線為自身平滑線而非固定門檻
+klinger_volume_oscillator_kvo_backtest_ur50w2we.a157307c17ff.md	1	OSC.LEVEL	OSC.LEVEL.sig_state	核心為 KVO 高於其觸發線的狀態，參考線為自身平滑線
+negative_volume_index_backtest_cyh4k6bo.41cc08edeb83.md	1	OSC.LEVEL	OSC.LEVEL.sig_state	核心為負量指數高於其 EMA 的狀態，參考線為自身平滑線
+positive_volume_index_backtest_2owffjv3.2c7c30631a51.md	1	OSC.LEVEL	OSC.LEVEL.sig_state	核心為正量指數高於其 EMA 的狀態，參考線為自身平滑線
+scalping_with_market_facilitation_1gv1bg3k.a867c8bac564.md	2	OSC.LEVEL	OSC.LEVEL.sig_state	核心為振盪器高於自身訊號線（柱狀差為正）的狀態，參考線為自身平滑線而非固定門檻
+stochastic_rsi_ohlc_strategy_qhg15fzh.7e4a3d208af4.md	1	OSC.LEVEL	OSC.SLOPE	核心為隨機 RSI 連續高於前值的斜率狀態，無固定門檻
+super_8_30m_btc_zfpzofwt.42a3e97777d1.md	1	OSC.LEVEL	OSC.LEVEL.sig_state	MACD 柱即 MACD 減訊號線，核心為振盪器高於自身訊號線的狀態
+temahmavwmacd_short_strategy_4h_3ngvfbiw.fd4e89f35c8a.md	1	OSC.LEVEL	OSC.LEVEL.sig_state	成交量加權 MACD 柱為差值減其訊號線，核心為振盪器低於自身訊號線的狀態
+volume_high_standard_deviation_stystem_sipkwygz.52a818113aff.md	1	OSC.LEVEL	OSC.SLOPE	核心為均線單根變化符號（現值高於前值）的斜率狀態
+saodisengxiaoyulianghua21_7ixgreax.4b0965f6521a.md	8	SW.BOS	SW.TLBRK	參考為擺動點依斜率延伸的斜向趨勢線，屬趨勢線突破
+vpa_ha_bdtl_strategy_qq9zwim5.9d8ef3e7f88c.md	1	SW.BOS	SW.TLBRK	參考為兩個遞降擺動高點連線的下降趨勢線，屬趨勢線突破

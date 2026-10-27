@@ -1,0 +1,2 @@
+orb_avwap_retest_strategy_qk2fnhob.10709a7c373e.md	1	BRK.ORB	PB.TOUCH	開盤區間突破僅界定趨勢方向，觸發為回檔觸及錨定 VWAP 後收回其上並收陽，回測對象非突破位本身，屬順勢回檔觸及參考線
+oscillating_market_case_study_n9bh0tbl.ed9d9237c807.md	8	OSC.SIG	OSC.SIG.fade	+DI 上穿 −DI 卻做空，進場方向與交叉方向相反（逆勢解讀），與本葉同向進場不同且無既有逆勢振盪器交叉葉

@@ -1,0 +1,140 @@
+## BRK.ORB 固定時段區間突破
+- 核心邏輯：計算特定時段（開盤首根或首段區間、紐約／倫敦／亞洲／Globex 時段、盤前、前一交易日高低、前一日樞紐位、時段固定的價值區 VAH／VAL、時段最低量 K 棒高低）的高低點，並在時段結束後固定 → 做多：收盤價由下向上越過區間高點（可加跳動、區間比例或 ATR 緩衝；少數以最高價觸及掛單突破，或於固定判斷時點檢查收盤是否高於區間高點）→ 做空：對稱，跌破區間低點；少數只做多。另有回測變體：首次突破後於時窗內回測區間高點（或突破形成的公平價值缺口）守住並收在其上才進場。
+- 可選濾網：
+  - F.volume：突破棒成交量高於均量或開盤區間均量倍數，約 24 段。
+  - F.session：僅在指定時段或截止時點前進場，約 17 段。
+  - F.daily_limit：每日（每方向）交易次數或日內虧損上限，約 17 段。
+  - F.flat：須空倉或每區間僅允許一次突破，約 16 段。
+  - F.trend_ma：收盤相對 EMA、VWAP 或時段 VWAP 定方向，約 15 段。
+  - F.range_width：區間幅度須介於 ATR 倍數上下限或不大於 ATR，約 11 段。
+  - F.retest：突破後須回測區間高點（或重測區）守住才進場，約 9 段。
+  - F.slope：EMA、VWAP 斜率同向，約 7 段。
+  - F.htf：較高週期 EMA 或日線長 EMA 同向，約 6 段。
+  - F.rsi_band：RSI 高於突破門檻、位於上下限內或未超買，約 6 段。
+  - F.adx_di：ADX 高於門檻，約 4 段。
+  - F.candle_dir：突破棒須收陽，約 4 段。
+  - F.key_level：須在前日收盤偏向、最近擺動低點等關鍵價位同側，約 4 段。
+  - F.volatility：ATR 不大於其均值倍數（低波動）或波幅門檻，約 3 段。
+  - F.extension：當根高低差或突破延伸幅度不超過上限，約 3 段。
+  - F.score／F.close_pos／F.date：方向分數門檻、區間或當根收盤位置門檻、日期區間，各約 2 段。
+  - F.confirm_bar／F.fvg／F.trail_side／F.band_pos／F.ma_stack／F.efficiency／F.osc_dir／F.cooldown：連續收盤越界根數、公平價值缺口進場位、SuperTrend 同向、VWAP 帶位置、均線排列、效率比、動能方向、冷卻期，各約 1 段。
+- 出場變體：
+  - X.stop_level：停損設於區間對側或區間中點，約 14 段。
+  - X.tp_rr：以停損距離乘風險報酬比停利，約 14 段。
+  - X.session_end：時段結束或截止時點平倉，約 12 段。
+  - X.breakeven：達一倍風險等門檻後停損移至進場價，約 11 段。
+  - X.stop_atr：進場價減 ATR 倍數停損，約 10 段。
+  - X.tp_level：以區間寬度投影、前方 HVN／POC 等價位停利，約 9 段。
+  - X.stop_swing：回看極值或樞紐點加緩衝停損，約 6 段。
+  - X.trailing_atr：ATR 移動停損，約 6 段。
+  - X.tp_atr：ATR 倍數停利，約 5 段。
+  - X.stop_bar：訊號棒高低點停損，約 4 段。
+  - X.tp_multi：區間幅度多段目標或分批停利，約 4 段。
+  - X.stop_pct／X.tp_pct／X.tp_mid：固定百分比停損停利、區間中點停利，各約 2 至 3 段。
+  - X.reverse_signal／X.time／X.trailing_ma：反向突破出場、持倉時限、跌破均線出場，各約 1 段。
+  - X.other：未定義計算的止損止盈或追蹤價、下一開盤區間出場，約 11 段。
+- 群內常見小異：
+  - 區間來源：開盤首根／首 N 分鐘、紐約／倫敦／亞洲／Globex 時段、盤前、前一交易日高低、前日樞紐位、時段固定價值區、時段最低量 K 棒。
+  - 觸發方式：收盤上穿、收盤由不高於轉為高於、最高價觸及（掛單）、固定時點收盤高於區間高點、連續收盤越界確認。
+  - 進場時點：直接突破／突破後回測區間高點守住／突破後回檔至公平價值缺口。
+  - 緩衝：無、跳動單位、區間比例、ATR 倍數。
+  - 方向：多空對稱或只做多。
+
+## DIV.REG 常規背離
+- 核心邏輯：比較兩個確認擺動點（樞紐）或兩個回看窗口中價格極值與振盪器（RSI、PPO、隨機、平滑 J、十餘種可選指標）或累積成交量差（CVD）的極值 → 做多：價格低點更低而振盪器低點更高（可在成立當根或後一根進場）→ 做空：對稱，價格高點更高而振盪器高點更低；少數只做多。另有以多指標背離成立數達門檻、或以價格與 OBV 回歸斜率符號連續相反判定方向不一致者。
+- 可選濾網：
+  - F.trend_ma：收盤位於趨勢 EMA、長期或高週期均線同側，約 5 段。
+  - F.volatility：ATR 百分位或短長比較門檻，約 4 段。
+  - F.volume：放量或量能短長比較，約 4 段。
+  - F.adx_di：ADX 高於門檻或 DI 方向，約 3 段。
+  - F.band_pos：前根收在布林下軌下、VWAP 帶或通道位置，約 3 段。
+  - F.osc_dir：振盪器或差額方向同向、指標高於其 EMA，約 3 段。
+  - F.flat：須空倉，約 3 段。
+  - F.divergence：反向背離數不得達門檻，約 2 段。
+  - F.rsi_band：RSI／MFI／CCI 區間限制，約 2 段。
+  - F.confirm_bar／F.close_pos：後續收盤越過 setup 中點確認、setup 棒收盤位置偏高，各約 1 段。
+  - F.retest／F.rearm／F.candle_dir：均線金叉後首次回檔觸及 EMA、每次交叉僅觸發一次、收陽，各約 1 段。
+  - F.score／F.efficiency／F.prior_move：超伸與路徑確認分數、效率比、先前下跌，各約 1 段。
+  - F.htf／F.extension／F.cooldown／F.daily_limit：高週期均線、Z 分數上限、冷卻期、風險停交易，各約 1 段。
+  - F.near_level／F.slope／F.trail_side：手動價格區間或斐波那契限制、斜率、SuperTrend 方向，各約 1 段。
+  - 無濾網：約 4 段。
+- 出場變體：
+  - X.stop_pct／X.tp_pct：固定百分比停損停利，各約 8 段。
+  - X.trailing_pct：持倉最高價回撤追蹤，約 3 段。
+  - X.time：持倉根數上限，約 3 段。
+  - X.stop_atr／X.tp_atr／X.tp_rr：ATR 停損停利或風險報酬比停利，各約 2 段。
+  - X.stop_swing／X.stop_bar：回看極值或 setup 棒停損，約 3 段。
+  - X.trailing_ma：連續收盤穿越趨勢均線出場，約 2 段。
+  - X.indicator_cap：指標過熱出場，約 2 段。
+  - X.divergence／X.reverse_signal／X.momentum_fade／X.osc_cross／X.trend_flip／X.band_opposite／X.trailing_atr／X.session_end：反向背離、反向訊號、動能反向、振盪器反穿、趨勢反轉、通道對側、ATR 追蹤、日終平倉，各約 1 段。
+  - X.other：差額連續反向、ATR 濾網失效等，約 4 段；僅標示訊號無出場約 1 段。
+- 群內常見小異：
+  - 背離對象：RSI／PPO／隨機／平滑 J／OBV／MFI 等可選振盪器，或累積成交量差（CVD、Delta）。
+  - 極值取法：左右回看確認樞紐、兩個相鄰同長回看窗口、短長兩回看窗口最低值、回歸斜率符號。
+  - 背離數量：單一指標或多指標背離計數達門檻。
+  - 進場時點：背離成立當根或後一根、確認窗口內收過 setup 中點。
+
+## OSC.SIG 振盪器穿越其訊號線
+- 核心邏輯：計算振盪器（MACD、RSI、隨機 %K、KDJ、CCI、OBV 及其變體、DI、ROC、量能柱差、方向量代理、合成動能或壓力分數等）與其平滑訊號線（EMA、SMA、線性回歸線）或另一同值域振盪器（%D、−DI、長期組、相對流指數）→ 做多：振盪器由下向上穿越訊號線（MACD 柱由非正轉正同屬此類；可允許於回看時窗內穿越或延遲一根確認）→ 做空：對稱，由上向下穿越；部分只做多，少數多空不對稱（做空改為狀態或另加條件）。
+- 可選濾網：
+  - F.rsi_band：RSI 低於門檻、位於多方區間、隨機或 J 位於低檔、MACD 於零下、前根 CCI 門檻，約 22 段。
+  - F.volume：放量或量高於均量，約 22 段。
+  - F.trend_ma：收盤相對 EMA、VWAP、布林中軌或基準線同側，約 20 段。
+  - F.flat：須空倉，約 12 段。
+  - F.adx_di：ADX 高於門檻或 DI 方向，約 10 段。
+  - F.osc_dir：輔助振盪器方向同向（MACD 柱為正、TRIX 斜率為正、MACD 高於訊號等），約 8 段。
+  - F.ma_stack：均線多頭排列，約 7 段。
+  - F.candle_dir：收陽或收盤高於前根最高，約 7 段。
+  - F.volatility：ATR 高於均值、波動濾網，約 6 段。
+  - F.score：多方分數或前提項數門檻，約 5 段。
+  - F.session／F.date：時段或日期區間限制，各約 5 段。
+  - F.trail_side：SuperTrend、HalfTrend 等追蹤線同向，約 5 段。
+  - F.cooldown：冷卻根數，約 4 段。
+  - F.htf：高週期 EMA／MACD／SMA 同向，約 4 段。
+  - F.slope：均線或階梯中線斜率同向，約 3 段。
+  - F.confirm／F.extension／F.rearm／F.squeeze：延遲確認、延伸上限、訊號再武裝、非擠壓或擠壓釋放，各約 2 段。
+  - F.band_pos／F.key_level／F.near_level／F.osc_cross／F.swing_dir：價值區位置、高於樞紐高點、成交量節點附近、輔助交叉、多頭結構，各約 1 段。
+  - F.other：主訊號有效期、震盪指數上限、制度狀態、平盤門檻、做空附加 EMA 交叉等，約 9 段。
+  - 無濾網：約 7 段。
+- 出場變體：
+  - X.stop_pct：固定百分比停損，約 15 段。
+  - X.osc_cross：振盪器反向穿越訊號線出場，約 13 段。
+  - X.trend_flip：均線死叉、追蹤線或基準線反轉出場，約 13 段。
+  - X.reverse_signal：反向訊號出場或反手，約 12 段。
+  - X.stop_atr：ATR 停損，約 12 段。
+  - X.tp_pct：固定百分比停利，約 10 段。
+  - X.momentum_fade：動能或分數歸零、連續反向區間，約 8 段。
+  - X.tp_atr：ATR 停利，約 8 段。
+  - X.trailing_atr／X.trailing_pct：ATR 追蹤或最高價回撤追蹤，各約 7 段。
+  - X.indicator_cap：振盪器過熱出場，約 6 段。
+  - X.tp_multi／X.tp_rr：多段目標、風險報酬比停利，各約 5 段。
+  - X.candle_reversal／X.time／X.trailing_ma：反向 K 棒、持倉時限、跌破均線，各約 3 段。
+  - X.breakeven／X.session_end／X.stop_bar：保本、時段結束、訊號棒停損，各約 2 段。
+  - X.sar／X.structure_break／X.stop_level／X.stop_swing／X.band_opposite：各約 1 段。
+  - X.other：未定義計算的停損來源或其他條件，約 8 段；無出場規則約 2 段。
+- 群內常見小異：
+  - 振盪器：MACD（含 OBV 的 MACD、成交量加權 MACD、VWAP 減 EVWMA 差值）／RSI／隨機 %K／KDJ／CCI／OBV（原值、ATR 加權、EMA 平滑）／ROC／量能柱差／方向量代理／合成動能或壓力分數。
+  - 訊號線：EMA／SMA／線性回歸估值／另一同值域線（%D、−DI、長期組、相對流指數、空方量 VWMA）。
+  - 表述：線穿訊號線／MACD 柱穿零。
+  - 穿越時點：當根、兩根內、回看時窗內、延遲一根確認。
+  - 方向：多空對稱、只做多、只做空或做空另加條件。
+
+## OSC.SIG.fade 振盪器穿越反向進場（逆勢）
+- 核心邏輯：計算兩條同值域振盪器（平滑正向 DI 與負向 DI）→ 做空：正向 DI 由下向上穿越負向 DI 的事件當根反向做空 → 做多：無，只做空；進場方向與交叉方向相反。
+- 可選濾網：
+  - F.osc_dir：ADX 短期斜率為正，約 1 段。
+  - F.rsi_band：平滑中期 ROC 低於零，約 1 段。
+- 出場變體：
+  - X.indicator_cap：Stoch RSI 的 K 或 D 進入超賣區出場，約 1 段。
+- 群內常見小異：
+  - 交叉線：平滑正向 DI 與負向 DI（目前僅此一種）。
+
+## VOL.CLIMAX 爆量逆趨勢
+- 核心邏輯：計算成交量均值與標準差，另以快慢 EMA 定趨勢 → 做多：成交量高於均量加標準差倍數且快 EMA 低於慢 EMA 即逆勢做多 → 做空：對稱，快 EMA 高於慢 EMA 時爆量做空。
+- 可選濾網：
+  - 無附加濾網，約 1 段。
+- 出場變體：
+  - X.trailing_atr：ATR 移動停損，約 1 段。
+  - X.trend_flip：均線趨勢反轉出場，約 1 段。
+- 群內常見小異：
+  - 量能極端以標準分數門檻定義；趨勢以快慢 EMA 相對位置定義。

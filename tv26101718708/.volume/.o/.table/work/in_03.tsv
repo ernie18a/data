@@ -1,0 +1,263 @@
+abcd_harmonic_pattern_strategy_bull_bear_6hngtvtm.6a84a8e4c16f.md	1	計算：轉折高點＝已確認K線由前一根收≥開轉為本根收<開時，取兩根較高的 high
+abcd_harmonic_pattern_strategy_bull_bear_6hngtvtm.6a84a8e4c16f.md	2	計算：轉折低點＝已確認K線由前一根收<開轉為本根收≥開時，取兩根較低的 low
+abcd_harmonic_pattern_strategy_bull_bear_6hngtvtm.6a84a8e4c16f.md	3	計算：BC回撤比＝轉折高低點間的距離 ÷ 前一段同向腿的距離；CD延伸比＝CD腿的距離 ÷ AB腿的距離
+abcd_harmonic_pattern_strategy_bull_bear_6hngtvtm.6a84a8e4c16f.md	4	做多：出現新轉折低點，最近兩個轉折高點依序降低且最近兩個轉折低點依序降低，BC回撤比在回撤區間內且CD延伸比在延伸區間內
+abcd_harmonic_pattern_strategy_bull_bear_6hngtvtm.6a84a8e4c16f.md	5	做空：出現新轉折高點，最近兩個轉折高點依序升高且最近兩個轉折低點依序升高，BC回撤比在回撤區間內且CD延伸比在延伸區間內
+abcd_harmonic_pattern_strategy_bull_bear_6hngtvtm.6a84a8e4c16f.md	6	出場：多倉，low觸及入場價下方的止損價；或未啟用追蹤停損時high觸及入場價上方的止盈價；或啟用追蹤停損且high觸及止盈啟動價後low觸及追蹤停損價；或獲利達門檻且持倉超過等待期並啟用獲利保護
+abcd_harmonic_pattern_strategy_bull_bear_6hngtvtm.6a84a8e4c16f.md	7	出場：空倉，high觸及入場價上方的止損價；或未啟用追蹤停損時low觸及入場價下方的止盈價；或啟用追蹤停損且low觸及止盈啟動價後high觸及追蹤停損價；或獲利達門檻且持倉超過等待期並啟用獲利保護
+advanced_outside_with_hma_and_klinger_forex_swing_strategy_v5vo0vnc.9f90ecad785e.md	1	計算：Klinger＝以 HLC3 變動方向決定正負的成交量，短期 EMA 減長期 EMA
+advanced_outside_with_hma_and_klinger_forex_swing_strategy_v5vo0vnc.9f90ecad785e.md	2	做多：high > 前一根 high 且 low < 前一根 low 且 close > open 且 Klinger > 0 且 HMA < close
+advanced_outside_with_hma_and_klinger_forex_swing_strategy_v5vo0vnc.9f90ecad785e.md	3	做空：high < 前一根 high 且 low > 前一根 low 且 close < open 且 Klinger < 0 且 HMA > close
+advanced_outside_with_hma_and_klinger_forex_swing_strategy_v5vo0vnc.9f90ecad785e.md	4	出場：多單，做空條件成立或 high ≥ 進場價＋close×多單停利比例或 low ≤ 進場價－close×多單停損比例
+advanced_outside_with_hma_and_klinger_forex_swing_strategy_v5vo0vnc.9f90ecad785e.md	5	出場：空單，做多條件成立或 low ≤ 進場價－close×空單停利比例或 high ≥ 進場價＋close×空單停損比例
+adx_dmi_trend_strategy_4aqd9gqq.dc010154493e.md	1	計算：量能門檻＝量能均值乘以倍率、手動門檻，或兩者較大值
+adx_dmi_trend_strategy_4aqd9gqq.dc010154493e.md	2	計算：ATR 移動支撐與阻力＝低點減去 ATR 倍數與高點加上 ATR 倍數；支撐只上移、阻力只下移，觸及支撐或阻力時分別重設為當根計算值
+adx_dmi_trend_strategy_4aqd9gqq.dc010154493e.md	3	做多：ADX 高於較早回看的 ADX 且高於門檻，DMI+ 高於 DMI-，datetime 位於回測起訖範圍內，未啟用均線過濾或 close 不低於均線，未啟用量能過濾或 volume 高於所選量能門檻
+adx_dmi_trend_strategy_4aqd9gqq.dc010154493e.md	4	做空：ADX 高於較早回看的 ADX 且高於門檻，DMI+ 低於 DMI-，datetime 位於回測起訖範圍內，未啟用均線過濾或 close 不高於均線，未啟用量能過濾或 volume 高於所選量能門檻，允許做空
+adx_dmi_trend_strategy_4aqd9gqq.dc010154493e.md	5	出場：多單，ADX 低於較近回看的 ADX，或啟用 ATR 移動停損且觸發價不高於移動支撐，或啟用 SAR 且觸發價不高於 SAR
+adx_dmi_trend_strategy_4aqd9gqq.dc010154493e.md	6	出場：空單，ADX 低於較近回看的 ADX，或啟用 ATR 移動停損且觸發價不低於移動阻力，或啟用 SAR 且觸發價不低於 SAR
+ai_supertrend_strategy_presenttrading_eatiyety.5756766d6934.md	1	計算：SuperTrend＝以成交量加權均線作中線，加減 ATR 倍數形成上下軌；上下軌依前值與前收盤價延續或更新，收盤價突破反向軌時切換方向
+ai_supertrend_strategy_presenttrading_eatiyety.5756766d6934.md	2	計算：KNN 加權分類＝以近回看資料的 SuperTrend 值作樣本，樣本標籤為加權收盤均線高於加權 SuperTrend 均線；依 SuperTrend 值與當前值的距離選最近鄰，以距離倒數加權標籤
+ai_supertrend_strategy_presenttrading_eatiyety.5756766d6934.md	3	做多：KNN 加權分類等於 1 且前一根 KNN 加權分類不等於 1，或 SuperTrend 方向由空轉多且 KNN 加權分類等於 1
+ai_supertrend_strategy_presenttrading_eatiyety.5756766d6934.md	4	做空：KNN 加權分類等於 0 且前一根 KNN 加權分類不等於 0，或 SuperTrend 方向由多轉空且 KNN 加權分類等於 0
+ai_supertrend_strategy_presenttrading_eatiyety.5756766d6934.md	5	出場：多倉，(SuperTrend 方向不為多或 KNN 加權分類不等於 1) 且最低價低於或等於 SuperTrend 下方 ATR 倍數停損價
+ai_supertrend_strategy_presenttrading_eatiyety.5756766d6934.md	6	出場：空倉，(SuperTrend 方向不為空或 KNN 加權分類不等於 0) 且最高價高於或等於 SuperTrend 上方 ATR 倍數停損價
+btc_mtf_engulfing_flip_pyramid_strategy_1h_2x_gouoysjs.2cda2f749ed3.md	1	計算：多頭停損＝當前與前一根最低價的較低值下調緩衝，與收盤價下方最大停損界線取較高者；空頭停損＝當前與前一根最高價的較高值上調緩衝，與收盤價上方最大停損界線取較低者
+btc_mtf_engulfing_flip_pyramid_strategy_1h_2x_gouoysjs.2cda2f749ed3.md	2	計算：R＝進場價至初始停損價的距離
+btc_mtf_engulfing_flip_pyramid_strategy_1h_2x_gouoysjs.2cda2f749ed3.md	3	做多：較高週期收盤價 > 該週期 EMA，較高週期 RSI > 中點，RSI > 多頭門檻，MACD 線 > 訊號線，當前為看漲吞噬（前根收跌、當前收漲、當前實體覆蓋前根實體且較大），ATR > ATR 的較長期均值，成交量 > 成交量較短期均值
+btc_mtf_engulfing_flip_pyramid_strategy_1h_2x_gouoysjs.2cda2f749ed3.md	4	做空：較高週期收盤價 < 該週期 EMA，較高週期 RSI < 中點，RSI < 空頭門檻，MACD 線 < 訊號線，當前為看跌吞噬（前根收漲、當前收跌、當前實體覆蓋前根實體且較大），ATR > ATR 的較長期均值，成交量 > 成交量較短期均值
+btc_mtf_engulfing_flip_pyramid_strategy_1h_2x_gouoysjs.2cda2f749ed3.md	5	做空：多頭停損觸發後，等待期滿且未處於停損冷卻、出場冷卻或暫停交易狀態
+btc_mtf_engulfing_flip_pyramid_strategy_1h_2x_gouoysjs.2cda2f749ed3.md	6	做多：空頭停損觸發後，等待期滿且未處於停損冷卻、出場冷卻或暫停交易狀態
+btc_mtf_engulfing_flip_pyramid_strategy_1h_2x_gouoysjs.2cda2f749ed3.md	7	出場：多頭，價格 ≤ 多頭停損價，或做空條件成立，或有利變動 ≥ R 的止盈門檻（平倉部分持倉）
+btc_mtf_engulfing_flip_pyramid_strategy_1h_2x_gouoysjs.2cda2f749ed3.md	8	出場：空頭，價格 ≥ 空頭停損價，或做多條件成立，或有利變動 ≥ R 的止盈門檻（平倉部分持倉）
+btc_pro_highwin_scalper_w_risk_jvblqdk3.b8e70e2c9d80.md	1	計算：趨勢快慢線＝較高週期收盤價的短期 EMA、長期 EMA
+btc_pro_highwin_scalper_w_risk_jvblqdk3.b8e70e2c9d80.md	2	做多：趨勢快線 > 趨勢慢線 且 ADX > 設定門檻 且 收盤價 > VWAP 且 收盤價 >= 慢速 EMA 且 收盤價 <= 快速 EMA 且 RSI 位於設定的較高區間 且 收盤價 > 開盤價 且 收盤價位於 K 線上半部 且 成交量 > 成交量移動平均 且（時段過濾未啟用或目前時段位於設定時段內）
+btc_pro_highwin_scalper_w_risk_jvblqdk3.b8e70e2c9d80.md	3	做空：趨勢快線 < 趨勢慢線 且 ADX > 設定門檻 且 收盤價 < VWAP 且 收盤價 <= 慢速 EMA 且 收盤價 >= 快速 EMA 且 RSI 位於設定的較低區間 且 收盤價 < 開盤價 且 收盤價位於 K 線下方設定比例內 且 成交量 > 成交量移動平均 且（時段過濾未啟用或目前時段位於設定時段內）
+btc_pro_highwin_scalper_w_risk_jvblqdk3.b8e70e2c9d80.md	4	出場：多，最低價 <= 進場均價 - ATR × 止損倍數 或 最高價 >= 進場均價 + ATR × 較近止盈倍數 或 最高價 >= 進場均價 + ATR × 較遠止盈倍數
+btc_pro_highwin_scalper_w_risk_jvblqdk3.b8e70e2c9d80.md	5	出場：空，最高價 >= 進場均價 + ATR × 止損倍數 或 最低價 <= 進場均價 - ATR × 較近止盈倍數 或 最低價 <= 進場均價 - ATR × 較遠止盈倍數
+candle_emotion_index_cei_strategy_mmtigbus.51ba51863057.md	1	計算：猶豫度＝回看期內十字線（實體／高低區間 < 十字線門檻）與紡錘線（十字線門檻 ≤ 實體／高低區間 < 紡錘線門檻）各自出現次數除以回看期後取平均；各形態計數逐根累加，並在每根計算時再除以回看期
+candle_emotion_index_cei_strategy_mmtigbus.51ba51863057.md	2	計算：恐懼度＝回看期內射擊之星（上影線／實體 > 門檻且下影線 < 實體）、吊人線（下影線／實體 > 門檻且上影線 < 實體）、看跌吞噬（當根收盤 < 前根開盤、當根開盤 > 前根收盤，且當根實體／前根實體 > 門檻）各自出現次數除以回看期後取平均；各形態計數逐根累加，並在每根計算時再除以回看期
+candle_emotion_index_cei_strategy_mmtigbus.51ba51863057.md	3	計算：貪婪度＝回看期內光頭光腳線（實體／高低區間 > 門檻）、錘子線（下影線／實體 > 門檻且上影線 < 實體）、看漲吞噬（當根收盤 > 前根開盤、當根開盤 < 前根收盤，且當根實體／前根實體 > 門檻）、三白兵（連續三根收盤均高於開盤，且收盤逐根上升）各自出現次數除以回看期後取平均；各形態計數逐根累加，並在每根計算時再除以回看期
+candle_emotion_index_cei_strategy_mmtigbus.51ba51863057.md	4	計算：情緒指數＝（猶豫度＋恐懼度＋貪婪度）／3
+candle_emotion_index_cei_strategy_mmtigbus.51ba51863057.md	5	做多：情緒指數由下向上穿越較低門檻，且空倉且冷卻計數 ≤ 0
+candle_emotion_index_cei_strategy_mmtigbus.51ba51863057.md	6	做空：情緒指數由下向上穿越較高門檻，且空倉且冷卻計數 ≤ 0
+candle_emotion_index_cei_strategy_mmtigbus.51ba51863057.md	7	出場：多單，收盤 > 開盤且成交量 > 與形態回看期相同回看期的成交量均線 × 成交量倍率，且收盤 > 進場價；或持倉根數 ≥ 最長持倉期且收盤 ≥ 進場價；或持倉根數 ≥ 虧損出場持倉期且收盤 < 進場價 ×（1－虧損比例）
+candle_emotion_index_cei_strategy_mmtigbus.51ba51863057.md	8	出場：空單，收盤 < 開盤且成交量 > 與形態回看期相同回看期的成交量均線 × 成交量倍率，且收盤 < 進場價；或持倉根數 ≥ 最長持倉期且收盤 ≤ 進場價；或持倉根數 ≥ 虧損出場持倉期且收盤 > 進場價 ×（1＋虧損比例）
+clean_vwap_zl_scalper_single_trigger_by_sandip_hx0mujm3.67cd9619eb88.md	1	計算：零延遲 EMA＝以來源價格加上其與回看期中點滯後值之差，計算 EMA
+clean_vwap_zl_scalper_single_trigger_by_sandip_hx0mujm3.67cd9619eb88.md	2	計算：VWAP 下方帶＝VWAP－典型價格標準差×帶寬係數；VWAP 上方帶＝VWAP＋典型價格標準差×帶寬係數
+clean_vwap_zl_scalper_single_trigger_by_sandip_hx0mujm3.67cd9619eb88.md	3	計算：多單止損價＝進場價－ATR×止損係數；多單止盈價＝進場價＋止損距離×風險報酬係數；空單止損價＝進場價＋ATR×止損係數；空單止盈價＝進場價－止損距離×風險報酬係數
+clean_vwap_zl_scalper_single_trigger_by_sandip_hx0mujm3.67cd9619eb88.md	4	做多：收盤價高於零延遲 EMA 且高於 VWAP，且最低價不高於 VWAP 或 VWAP 下方帶或零延遲 EMA，且收盤價高於開盤價且不低於前一根開盤價，且前次訊號不是做多
+clean_vwap_zl_scalper_single_trigger_by_sandip_hx0mujm3.67cd9619eb88.md	5	做空：收盤價低於零延遲 EMA 且低於 VWAP，且最高價不低於 VWAP 或 VWAP 上方帶或零延遲 EMA，且收盤價低於開盤價且不高於前一根開盤價，且前次訊號不是做空
+clean_vwap_zl_scalper_single_trigger_by_sandip_hx0mujm3.67cd9619eb88.md	6	出場：多單，最低價不高於多單止損價或最高價不低於多單止盈價或做空條件成立
+clean_vwap_zl_scalper_single_trigger_by_sandip_hx0mujm3.67cd9619eb88.md	7	出場：空單，最高價不低於空單止損價或最低價不高於空單止盈價或做多條件成立
+compression_breakout_system_97gxva5b.82ca374771dd.md	1	計算：布林帶寬百分位排名＝以收盤價的移動平均為基準，計算標準差倍數形成的上下軌寬度占基準的百分比，再對該寬度於較長回看期排序
+compression_breakout_system_97gxva5b.82ca374771dd.md	2	計算：出場價位＝較高者（進場價－進場時ATR×初始停損倍數，持倉後最高收盤價－當前ATR×追蹤倍數）
+compression_breakout_system_97gxva5b.82ca374771dd.md	3	做多：datetime在回測起始與結束日期之間，且近期回看期內曾有布林帶寬百分位排名低於壓縮門檻，且收盤價高於不含當根的回看期最高價，且成交量高於成交量移動平均，且收盤價高於較長期收盤價移動平均，且目前未持倉
+compression_breakout_system_97gxva5b.82ca374771dd.md	4	出場：多頭，datetime晚於回測結束日期或收盤價低於出場價位
+concordance_regime_synthesis_joat_dcjbbnzh.c59b14c0450d.md	1	計算：區間中心＝最近確認的波段高點與波段低點平均後平滑；上界與下界＝中心加減較長週期 ATR 倍數後平滑。收盤價上穿上界或下穿下界後，狀態於等待期滿且 K 棒確認時切換為多或空；初始狀態依收盤價相對中心決定。
+concordance_regime_synthesis_joat_dcjbbnzh.c59b14c0450d.md	2	計算：壓力＝收盤價與可選類型移動平均的差，除以較長回看期內該差值絕對值最大值後平滑；壓力訊號為其較短週期 EMA。
+concordance_regime_synthesis_joat_dcjbbnzh.c59b14c0450d.md	3	計算：參與軸＝回看區間依價格分箱，將各收盤價所在箱的成交量加總，取成交量最高箱的中心；軸偏離＝收盤價與參與軸之差除以 ATR。
+concordance_regime_synthesis_joat_dcjbbnzh.c59b14c0450d.md	4	計算：量差波＝陽線成交量與陰線成交量分別平滑後之差，除以平滑成交量，再平滑；量差斜率＝量差波與前一根的差。
+concordance_regime_synthesis_joat_dcjbbnzh.c59b14c0450d.md	5	計算：多方結構＝前根陽線實體達較短週期 ATR 倍數，或形成向上缺口；空方結構＝前根陰線實體達較短週期 ATR 倍數，或形成向下缺口。結構有效條件為相應結構出現在回看期內。
+concordance_regime_synthesis_joat_dcjbbnzh.c59b14c0450d.md	6	計算：多方分數＝區間多方狀態計雙倍分，並各加一分：收盤價在區間中心上方、中心偏離絕對值達門檻、壓力訊號為正、量差波為正、量差斜率非負、多方結構有效、收盤價高於參與軸、軸偏離為正、以及高週期偏多或高週期過濾關閉或無效。空方分數以相反條件計分。
+concordance_regime_synthesis_joat_dcjbbnzh.c59b14c0450d.md	7	計算：高週期偏多＝較短週期 EMA 高於較長週期 EMA，且前一根已確認高週期收盤價高於較長週期 EMA；偏空條件相反。
+concordance_regime_synthesis_joat_dcjbbnzh.c59b14c0450d.md	8	計算：多方止損＝入場價減 ATR 倍數與區間中心減 ATR 倍數兩者較低值；啟用追蹤時，以收盤價減 ATR 倍數更新止損且止損只上移。多方目標＝入場價加 ATR 倍數。空方止損與目標取相反方向；啟用追蹤時止損只下移。
+concordance_regime_synthesis_joat_dcjbbnzh.c59b14c0450d.md	9	做多：多方分數達門檻且多空分數差達多方優勢門檻，且允許交易時段、距上次進場已達冷卻期、持倉為空或空方。
+concordance_regime_synthesis_joat_dcjbbnzh.c59b14c0450d.md	10	做空：空方分數達門檻且多空分數差達空方優勢門檻，且允許交易時段、距上次進場已達冷卻期、持倉為空或多方。
+concordance_regime_synthesis_joat_dcjbbnzh.c59b14c0450d.md	11	出場：多方，區間狀態轉空或多空分數差不再偏多或壓力訊號為負或收盤價低於區間中心或最低價觸及止損或最高價觸及目標。
+concordance_regime_synthesis_joat_dcjbbnzh.c59b14c0450d.md	12	出場：空方，區間狀態轉多或多空分數差不再偏空或壓力訊號為正或收盤價高於區間中心或最高價觸及止損或最低價觸及目標。
+dskyz_dafe_ai_adaptive_regime_beginners_version_xlcstsp7.0568ccf427de.md	1	計算：多方型態分＝多方吞噬、錘形、早晨之星、刺透形態、雙底形態各自成立時的加權和；錘形與雙底的權重依市場狀態調整
+dskyz_dafe_ai_adaptive_regime_beginners_version_xlcstsp7.0568ccf427de.md	2	計算：空方型態分＝空方吞噬、射擊之星、黃昏之星、烏雲蓋頂、雙頂形態各自成立時的加權和；射擊之星與雙頂的權重依市場狀態調整
+dskyz_dafe_ai_adaptive_regime_beginners_version_xlcstsp7.0568ccf427de.md	3	計算：多方分＝多方型態分＋快均線高於慢均線的加權項＋RSI低於超賣界線的加權項＋MACD線高於訊號線的加權項＋ATR高於其長期均值倍數的加權項
+dskyz_dafe_ai_adaptive_regime_beginners_version_xlcstsp7.0568ccf427de.md	4	計算：空方分＝空方型態分＋快均線低於慢均線的加權項＋RSI高於超買界線的加權項＋MACD線低於訊號線的加權項＋ATR高於其長期均值倍數的加權項
+dskyz_dafe_ai_adaptive_regime_beginners_version_xlcstsp7.0568ccf427de.md	5	計算：多方型態＝相應多方K線型態成立，且低點接近較長回看期最低點，且成交量高於其均值倍數；雙底形態另要求當前低點低於前一根低點、前一根低點高於再前一根低點、再前一根低點低於更早一根低點，且當前收陽
+dskyz_dafe_ai_adaptive_regime_beginners_version_xlcstsp7.0568ccf427de.md	6	計算：空方型態＝相應空方K線型態成立，且高點接近較長回看期最高點，且成交量高於其均值倍數；雙頂形態另要求當前高點高於前一根高點、前一根高點低於再前一根高點、再前一根高點高於更早一根高點，且當前收陰
+dskyz_dafe_ai_adaptive_regime_beginners_version_xlcstsp7.0568ccf427de.md	7	計算：市場狀態＝趨勢狀態（ADX高於界線且快慢均線差距大於ATR倍數）、區間狀態（ADX低於界線且較長回看期高低區間相對價格幅度低於界線）、高波動狀態（布林帶寬高於其長期均值倍數且ATR高於其長期均值倍數）、低波動狀態（布林帶寬低於其長期均值比例且ATR低於其長期均值比例），否則為其他；依此順序取第一個成立狀態
+dskyz_dafe_ai_adaptive_regime_beginners_version_xlcstsp7.0568ccf427de.md	8	計算：回撤比例＝（歷史最高權益－當前權益）／歷史最高權益
+dskyz_dafe_ai_adaptive_regime_beginners_version_xlcstsp7.0568ccf427de.md	9	計算：多單初始止損＝進場時較短回看期最低低點－ATR倍數；多單止盈＝進場價＋兩倍止損距離
+dskyz_dafe_ai_adaptive_regime_beginners_version_xlcstsp7.0568ccf427de.md	10	計算：空單初始止損＝進場時較短回看期最高高點＋ATR倍數；空單止盈＝進場價－兩倍止損距離
+dskyz_dafe_ai_adaptive_regime_beginners_version_xlcstsp7.0568ccf427de.md	11	計算：多單移動止損＝取原止損與收盤價減ATR倍數的較大值；空單移動止損＝取原止損與收盤價加ATR倍數的較小值
+dskyz_dafe_ai_adaptive_regime_beginners_version_xlcstsp7.0568ccf427de.md	12	做多：多方分高於或等於門檻，且回撤比例不高於停手機制門檻，且持倉方向為空或無持倉
+dskyz_dafe_ai_adaptive_regime_beginners_version_xlcstsp7.0568ccf427de.md	13	做空：空方分高於或等於門檻，且回撤比例不高於停手機制門檻，且持倉方向為多或無持倉
+dskyz_dafe_ai_adaptive_regime_beginners_version_xlcstsp7.0568ccf427de.md	14	出場：多單，價格觸及初始止損或止盈；或收盤價高於止盈價的一半時，移動止損上移至收盤價減ATR倍數，價格觸及移動止損
+dskyz_dafe_ai_adaptive_regime_beginners_version_xlcstsp7.0568ccf427de.md	15	出場：空單，價格觸及初始止損或止盈；或收盤價低於止盈價的一半時，移動止損下移至收盤價加ATR倍數，價格觸及移動止損
+evwma_vwap_cross_strategy_quantnomad_qpigo8hs.c29b3d453a7a.md	1	計算：EVWMA＝以前一根 EVWMA 乘以前一回看期成交量總和、當根收盤價乘當根成交量後相加，再除以當根起算的回看期成交量總和
+evwma_vwap_cross_strategy_quantnomad_qpigo8hs.c29b3d453a7a.md	2	計算：平滑 VWAP＝VWAP 的指數移動平均
+evwma_vwap_cross_strategy_quantnomad_qpigo8hs.c29b3d453a7a.md	3	做多：平滑 VWAP 由下向上穿越 EVWMA
+evwma_vwap_cross_strategy_quantnomad_qpigo8hs.c29b3d453a7a.md	4	做空：平滑 VWAP 由上向下穿越 EVWMA
+eworsi_advanced_signals_strategy_exhaustion_filter_b7mqqwes.5647abc74598.md	1	計算：EWO＝以 hl2 計算的短期簡單移動平均減長期簡單移動平均
+eworsi_advanced_signals_strategy_exhaustion_filter_b7mqqwes.5647abc74598.md	2	計算：突破屏障＝前一根以前回看期內最高價
+eworsi_advanced_signals_strategy_exhaustion_filter_b7mqqwes.5647abc74598.md	3	計算：成交量確認＝成交量高於成交量移動平均乘以確認比例
+eworsi_advanced_signals_strategy_exhaustion_filter_b7mqqwes.5647abc74598.md	4	計算：超賣區狀態＝RSI 曾低於超賣門檻後維持為真，直到做多條件觸發後重設為假
+eworsi_advanced_signals_strategy_exhaustion_filter_b7mqqwes.5647abc74598.md	5	計算：前次訊號方向＝初始為中性，做多訊號觸發後記為多，做空訊號觸發後記為空
+eworsi_advanced_signals_strategy_exhaustion_filter_b7mqqwes.5647abc74598.md	6	做多：RSI 低於做多門檻且 EWO 高於前值且 EWO 低於零，或 RSI 向上穿越做多門檻且 MFI 高於做多資金流門檻且 EWO 高於前值且成交量確認且（收盤價高於突破屏障或超賣區狀態為真）且前次訊號方向不是多
+eworsi_advanced_signals_strategy_exhaustion_filter_b7mqqwes.5647abc74598.md	7	做空：RSI 高於做空門檻且 EWO 低於前值且 EWO 高於零，或 RSI 向下穿越做空門檻且 MFI 低於做空資金流門檻且 EWO 低於前值且成交量確認且前次訊號方向不是空
+forex_fire_emamarsi_strategy_qo1ycl2r.2dae71471896.md	1	計算：短期EMA、長期EMA＝收盤價的指數移動平均，短期回看期較短
+forex_fire_emamarsi_strategy_qo1ycl2r.2dae71471896.md	2	計算：移動平均線＝收盤價的可選類型移動平均
+forex_fire_emamarsi_strategy_qo1ycl2r.2dae71471896.md	3	計算：快速RSI、慢速RSI＝收盤價的相對強弱指標，快速回看期較短
+forex_fire_emamarsi_strategy_qo1ycl2r.2dae71471896.md	4	計算：成交量均線＝成交量的簡單移動平均
+forex_fire_emamarsi_strategy_qo1ycl2r.2dae71471896.md	5	計算：ATR＝真實波幅的平均
+forex_fire_emamarsi_strategy_qo1ycl2r.2dae71471896.md	6	計算：多頭停損價＝進場價下方的百分比價位；多頭停利價＝進場價上方的百分比價位；空頭停損價＝進場價上方的百分比價位；空頭停利價＝進場價下方的百分比價位
+forex_fire_emamarsi_strategy_qo1ycl2r.2dae71471896.md	7	計算：追蹤停損價＝價格朝持倉有利方向變動時，按百分比更新並只朝有利方向移動的價位
+forex_fire_emamarsi_strategy_qo1ycl2r.2dae71471896.md	8	做多：進場組短期EMA > 長期EMA 且收盤價 > 移動平均線 且快速RSI > 慢速RSI 且快速RSI > 多頭動能門檻 且成交量 > 成交量均線 且確認組短期EMA > 長期EMA 且收盤價 > 確認組移動平均線 且確認組慢速RSI > 多頭偏向門檻 且確認組快速RSI > 慢速RSI 且（短期EMA向上穿越長期EMA 或 收盤價向上穿越移動平均線）
+forex_fire_emamarsi_strategy_qo1ycl2r.2dae71471896.md	9	做空：進場組短期EMA < 長期EMA 且收盤價 < 移動平均線 且快速RSI < 慢速RSI 且快速RSI < 空頭動能門檻 且成交量 > 成交量均線 且確認組短期EMA < 長期EMA 且收盤價 < 確認組移動平均線 且確認組慢速RSI < 空頭偏向門檻 且確認組快速RSI < 慢速RSI 且（短期EMA向下穿越長期EMA 或 收盤價向下穿越移動平均線）
+forex_fire_emamarsi_strategy_qo1ycl2r.2dae71471896.md	10	出場：多頭，最低價 < 多頭停損價 或 最高價 > 多頭停利價 或 最低價 < 追蹤停損價 或 短期EMA < 長期EMA 或 快速RSI > 超買門檻 或 最低價 ≤ 收盤價－ATR倍數
+forex_fire_emamarsi_strategy_qo1ycl2r.2dae71471896.md	11	出場：空頭，最高價 > 空頭停損價 或 最低價 < 空頭停利價 或 最高價 > 追蹤停損價 或 短期EMA > 長期EMA 或 快速RSI < 超賣門檻 或 最高價 ≥ 收盤價＋ATR倍數
+gemini_quant_pro_final_uso9nai2.414a13fb9504.md	1	計算：短期 EMA＝收盤價的較短期指數移動平均；長期 EMA＝收盤價的較長期指數移動平均
+gemini_quant_pro_final_uso9nai2.414a13fb9504.md	2	計算：多單停損價＝進場訊號最低價下移百分比緩衝；空單停損價＝進場訊號最高價上移百分比緩衝；目標價＝進場價朝持倉方向移動停損距離乘目標風險報酬倍數
+gemini_quant_pro_final_uso9nai2.414a13fb9504.md	3	做多：持倉方向＝空倉且最低價≤短期 EMA且收盤價>短期 EMA且收盤價>長期 EMA且兩個較高週期收盤價均高於各自長期 EMA且成交量>成交量均線
+gemini_quant_pro_final_uso9nai2.414a13fb9504.md	4	做空：持倉方向＝空倉且最高價≥短期 EMA且收盤價<短期 EMA且收盤價<長期 EMA且兩個較高週期收盤價均低於各自長期 EMA且成交量>成交量均線
+gemini_quant_pro_final_uso9nai2.414a13fb9504.md	5	出場：多方持倉，最低價≤多單停損價或最高價≥目標價
+gemini_quant_pro_final_uso9nai2.414a13fb9504.md	6	出場：空方持倉，最高價≥空單停損價或最低價≤目標價
+golden_triangle_strategy_yc0fpmus.cc5b757cc27f.md	1	計算：移動平均線＝收盤價的簡單移動平均
+golden_triangle_strategy_yc0fpmus.cc5b757cc27f.md	2	計算：趨勢方向＝以樞紐高低點更新中心值；中心值上下加減 ATR 倍數形成軌道。前一根收盤高於前一根下軌時，上軌取本根上軌與前一根上軌較大者，否則重設；前一根收盤低於前一根上軌時，下軌取本根下軌與前一根下軌較小者，否則重設。本根收盤高於前一根下軌時為多頭，低於前一根上軌時為空頭，否則延續前值，初始為多頭
+golden_triangle_strategy_yc0fpmus.cc5b757cc27f.md	3	計算：止損價＝持倉平均進場價下方固定比例
+golden_triangle_strategy_yc0fpmus.cc5b757cc27f.md	4	做多：前連續多根K棒的最高價與最低價均高於移動平均線，且本根最高價高於、最低價低於移動平均線；往回搜尋最近一根最低價低於其移動平均線且收盤價高於其移動平均線的K棒，其索引大於一，且搜尋時未先遇到開盤價低於前一根移動平均線且最高價低於該根移動平均線；上述三角形條件已成立且尚未持倉；趨勢方向為多頭；收盤價由下向上穿越成交量加權平均價
+golden_triangle_strategy_yc0fpmus.cc5b757cc27f.md	5	出場：多頭，收盤價高於持倉平均進場價且成交量加權平均價由上向下穿越移動平均線，或收盤價由上向下穿越止損價
+growth_producer_i2okm8nf.be922d0d67cd.md	1	計算：相對波動指數＝收盤價的長期標準差；分別對收盤價變動為正時的標準差、非正時的零值，以及變動為負時的標準差、非負時的零值，各自以相同短期平滑期作指數移動平均，前者除以兩者之和再乘以百分比尺度
+growth_producer_i2okm8nf.be922d0d67cd.md	2	計算：資金流指數＝以典型價格（高、低、收盤價的平均）乘成交量，分別加總回看期內典型價格變動為正、為負的數值；以前者除以後者計算 100－100／（1＋比值）
+growth_producer_i2okm8nf.be922d0d67cd.md	3	做多：RSI（以收盤價 VWAP 為來源）由下向上穿越其超賣門檻，且 EMA 高於 SMA；或資金流指數由上向下穿越其下限，且 EMA 高於 SMA；並且目前無持倉或持有多倉，且相對波動指數高於門檻
+growth_producer_i2okm8nf.be922d0d67cd.md	4	做空：RSI（以收盤價 VWAP 為來源）由上向下穿越其超買門檻，且 EMA 低於 SMA；或資金流指數由下向上穿越其上限，且 EMA 低於 SMA；並且目前無持倉或持有空倉，且相對波動指數高於門檻
+growth_producer_i2okm8nf.be922d0d67cd.md	5	出場：多倉，RSI（以收盤價 VWAP 為來源）由上向下穿越其超買門檻，或最高價達到任一高於進場均價的止盈價，或最低價達到低於進場均價的止損價
+growth_producer_i2okm8nf.be922d0d67cd.md	6	出場：空倉，RSI（以收盤價 VWAP 為來源）由下向上穿越其超賣門檻，或最低價達到任一低於進場均價的止盈價，或最高價達到高於進場均價的止損價
+high_activity_penny_stock_strategy_v6_nfihxkxr.43de9e334149.md	1	計算：成交量均線＝成交量的短期簡單移動平均；趨勢均線＝收盤價的長期簡單移動平均
+high_activity_penny_stock_strategy_v6_nfihxkxr.43de9e334149.md	2	做多：Supertrend 方向由空頭轉為多頭，且成交量高於成交量均線乘以放量門檻，且收盤價高於趨勢均線
+high_activity_penny_stock_strategy_v6_nfihxkxr.43de9e334149.md	3	做空：Supertrend 方向由多頭轉為空頭，且成交量高於成交量均線乘以放量門檻，且收盤價低於趨勢均線
+high_activity_penny_stock_strategy_v6_nfihxkxr.43de9e334149.md	4	出場：多頭，最高價到達進場價上方的止盈價或最低價到達進場價下方的止損價或 Supertrend 轉為空頭
+high_activity_penny_stock_strategy_v6_nfihxkxr.43de9e334149.md	5	出場：空頭，最低價到達進場價下方的止盈價或最高價到達進場價上方的止損價或 Supertrend 轉為多頭
+hpt_strategy_qvxlqewr.907a618d243f.md	1	計算：趨勢分數＝將來源與各回看值逐一比較，相等或較高記為正一、較低記為負一，再累加
+hpt_strategy_qvxlqewr.907a618d243f.md	2	計算：波動緩衝＝較長回看期收盤價標準差的前一根值乘以可調倍數
+hpt_strategy_qvxlqewr.907a618d243f.md	3	做多：隨機指標D線向上穿越超賣閾值且K線>D線且前一根收盤價>前一根最高價與最低價的均值且趨勢條件不成立
+hpt_strategy_qvxlqewr.907a618d243f.md	4	做空：隨機指標D線向下穿越超買閾值且K線<D線且前一根收盤價>前一根最高價與最低價的均值且趨勢條件不成立
+hpt_strategy_qvxlqewr.907a618d243f.md	5	出場：多單，隨機指標D線向下穿越超買閾值且K線<D線
+hpt_strategy_qvxlqewr.907a618d243f.md	6	出場：空單，隨機指標D線向上穿越超賣閾值且K線>D線
+hpt_strategy_qvxlqewr.907a618d243f.md	7	做多：短期收盤價均線>長期收盤價均線且收盤價>短期收盤價均線且前一根收盤價>前一根最高價與最低價的均值且前一根開盤價<前一根最高價與最低價的均值且趨勢條件成立
+hpt_strategy_qvxlqewr.907a618d243f.md	8	做空：收盤價<短期收盤價均線且短期收盤價均線<長期收盤價均線且前一根收盤價<前一根最高價與最低價的均值且前一根開盤價>前一根最高價與最低價的均值且趨勢條件成立
+hpt_strategy_qvxlqewr.907a618d243f.md	9	出場：多單，收盤價<短期收盤價均線且短期收盤價均線<長期收盤價均線且前一根收盤價<前一根最高價與最低價的均值且前一根開盤價>前一根最高價與最低價的均值
+hpt_strategy_qvxlqewr.907a618d243f.md	10	出場：空單，短期收盤價均線>長期收盤價均線且收盤價>短期收盤價均線且前一根收盤價>前一根最高價與最低價的均值且前一根開盤價<前一根最高價與最低價的均值
+hpt_strategy_qvxlqewr.907a618d243f.md	11	做多：收盤價>較長回看期最高價所在柱距的前一根值加波動緩衝且成交量>較長回看期成交量均線乘以可調倍數
+hpt_strategy_qvxlqewr.907a618d243f.md	12	做空：收盤價<較長回看期最低價所在柱距的前一根值減波動緩衝且成交量>較長回看期成交量均線乘以可調倍數
+hpt_strategy_qvxlqewr.907a618d243f.md	13	出場：多單，自最近一次收盤價高於較長回看期最高價所在柱距加波動緩衝的條件成立後，經過固定柱數
+hpt_strategy_qvxlqewr.907a618d243f.md	14	出場：空單，自最近一次收盤價低於較長回看期最低價所在柱距減波動緩衝的條件成立後，經過固定柱數
+hpt_strategy_qvxlqewr.907a618d243f.md	15	出場：多單，最低價≤持倉均價×（1−止損比例）
+hpt_strategy_qvxlqewr.907a618d243f.md	16	出場：空單，最高價≥持倉均價×（1+止損比例）
+long_term_breakout_entry_25_trailing_stop_4a8rzxyy.76117ab59601.md	1	計算：前期最高收盤價＝前一根以前回看期內的最高收盤價
+long_term_breakout_entry_25_trailing_stop_4a8rzxyy.76117ab59601.md	2	計算：多頭移動停損價＝持倉期間收盤價乘以一減停損比例，與前一根移動停損價取較高者
+long_term_breakout_entry_25_trailing_stop_4a8rzxyy.76117ab59601.md	3	做多：收盤價由下向上穿越前期最高收盤價，且短期收盤均線乘以同期短期成交量均線大於門檻值
+long_term_breakout_entry_25_trailing_stop_4a8rzxyy.76117ab59601.md	4	出場：多方持倉，收盤價由上向下穿越長期收盤均線，或最低價小於等於多頭移動停損價
+mascript_oz9fy5ft.86d5bef8f866.md	1	計算：收盤價簡單移動平均＝四條均線的回看期由最短、次短、次長至最長排列
+mascript_oz9fy5ft.86d5bef8f866.md	2	計算：K棒實體高點＝max(open, close)
+mascript_oz9fy5ft.86d5bef8f866.md	3	計算：多單移動停損價＝持倉期間逐根取「K棒實體高點×（1－回撤比例）」與前一根停損價的較大值，空倉時重置
+mascript_oz9fy5ft.86d5bef8f866.md	4	做多：最短均線由下向上穿越次長均線，且 RSI 高於下限，且（次短均線不低於最長均線，或次長均線不低於最長均線）
+mascript_oz9fy5ft.86d5bef8f866.md	5	出場：多單，收盤價低於進場價乘以停損觸發比例
+mascript_oz9fy5ft.86d5bef8f866.md	6	出場：多單，最短均線由上向下穿越次長均線，且收盤價低於次短均線，且成交量不低於成交量移動平均
+mascript_oz9fy5ft.86d5bef8f866.md	7	出場：多單，K棒實體高點不低於進場價乘以獲利門檻，且收盤價不高於多單移動停損價
+masu_institutional_v45_7tyy4fl2.fe817da052de.md	1	計算：均線帶多頭計數＝較短至較長的八條收盤價移動平均線中，相鄰短線高於長線的組數；空頭計數反向計數
+masu_institutional_v45_7tyy4fl2.fe817da052de.md	2	計算：買賣量差累計＝每根上漲K線成交量減下跌K線成交量後的累計值
+masu_institutional_v45_7tyy4fl2.fe817da052de.md	3	計算：多頭訂單流＝買賣量差累計高於其均線且收盤價低於前一根、累計值高於前一根，或買入量與賣出量之比高於門檻；並且收盤價上穿成交量加權均價或高於成交量加權均價
+masu_institutional_v45_7tyy4fl2.fe817da052de.md	4	計算：空頭訂單流＝買賣量差累計低於其均線且收盤價高於前一根、累計值低於前一根，或買入量與賣出量之比低於門檻；並且收盤價下穿成交量加權均價或低於成交量加權均價
+masu_institutional_v45_7tyy4fl2.fe817da052de.md	5	計算：多頭結構訊號＝多頭訂單區（上漲K線收盤高於開盤、前一根下跌且收盤位於全長下方區段），或多頭缺口（本根最低價高於兩根前最高價且缺口大於波動幅度門檻），或低點流動性掃單（最低價低於前期最低價且收盤高於該前期最低價並收漲），或向上結構突破（收盤上穿最近確認的波段高點）
+masu_institutional_v45_7tyy4fl2.fe817da052de.md	6	計算：空頭結構訊號＝空頭訂單區（下跌K線收盤低於開盤、前一根上漲且收盤位於全長上方區段），或空頭缺口（本根最高價低於兩根前最低價且缺口大於波動幅度門檻），或高點流動性掃單（最高價高於前期最高價且收盤低於該前期最高價並收跌），或向下結構突破（收盤下穿最近確認的波段低點）
+masu_institutional_v45_7tyy4fl2.fe817da052de.md	7	計算：多頭訊號分數＝多週期快線高於慢線且該週期收盤高於快線、均線帶多頭、訂單流多頭或收盤高於成交量加權均價、結構訊號多頭、趨勢強度高於門檻，各條件各計一分
+masu_institutional_v45_7tyy4fl2.fe817da052de.md	8	計算：空頭訊號分數＝多週期快線低於慢線且該週期收盤低於快線、均線帶空頭、訂單流空頭或收盤低於成交量加權均價、結構訊號空頭、趨勢強度高於門檻，各條件各計一分
+masu_institutional_v45_7tyy4fl2.fe817da052de.md	9	做多：均線帶多頭計數達門檻，或多頭訂單流，或多頭結構訊號，或多頭訊號分數高於空頭訊號分數，或趨勢強度高於門檻且快線高於慢線、收盤高於長期均線、快線上穿慢線、成交量高於其均量乘數，或收盤高於前期最高價、成交量高於其均量乘數且收盤高於長期均線，或趨勢強度不高於門檻且收盤低於布林下軌、RSI低於超賣門檻且RSI上穿超賣門檻；並且多週期快線高於慢線且收盤高於快線、均線帶多頭、訂單流多頭或收盤高於成交量加權均價、結構訊號多頭、處於啟用的交易時段，且空倉
+masu_institutional_v45_7tyy4fl2.fe817da052de.md	10	做空：均線帶空頭計數達門檻，或空頭訂單流，或空頭結構訊號，或空頭訊號分數高於多頭訊號分數，或趨勢強度高於門檻且快線低於慢線、收盤低於長期均線、快線下穿慢線、成交量高於其均量乘數，或收盤低於前期最低價、成交量高於其均量乘數且收盤低於長期均線，或趨勢強度不高於門檻且收盤高於布林上軌、RSI高於超買門檻且RSI下穿超買門檻；並且多週期快線低於慢線且收盤低於快線、均線帶空頭、訂單流空頭或收盤低於成交量加權均價、結構訊號空頭、處於啟用的交易時段，且空倉
+masu_institutional_v45_7tyy4fl2.fe817da052de.md	11	出場：多頭，價格到達進場價下方以波動幅度計算的停損或追蹤停損；若停用追蹤停損，另於價格到達進場價上方以波動幅度計算的獲利目標
+masu_institutional_v45_7tyy4fl2.fe817da052de.md	12	出場：空頭，價格到達進場價上方以波動幅度計算的停損或追蹤停損；若停用追蹤停損，另於價格到達進場價下方以波動幅度計算的獲利目標
+masu_v72_nwelmbos_0cvvd49h.f3e6cdfaca26.md	1	計算：趨勢均線＝收盤價的短期與長期指數移動平均
+masu_v72_nwelmbos_0cvvd49h.f3e6cdfaca26.md	2	計算：趨勢強度＝平均方向指數（ADX）
+masu_v72_nwelmbos_0cvvd49h.f3e6cdfaca26.md	3	計算：布林通道＝收盤價的移動平均線上下加減標準差
+masu_v72_nwelmbos_0cvvd49h.f3e6cdfaca26.md	4	計算：核迴歸帶＝以高斯核對收盤價的回看資料加權平均，使用由窄至寬的多組帶寬
+masu_v72_nwelmbos_0cvvd49h.f3e6cdfaca26.md	5	計算：成交量放大＝當根成交量與其移動平均比較
+masu_v72_nwelmbos_0cvvd49h.f3e6cdfaca26.md	6	計算：成交量差＝累計（收陽線的成交量減收陰線的成交量），並計算其移動平均
+masu_v72_nwelmbos_0cvvd49h.f3e6cdfaca26.md	7	計算：日內成交量加權均價＝每個交易日重置後，典型價格（高、低、收盤價的平均）乘成交量之累計值除以累計成交量
+masu_v72_nwelmbos_0cvvd49h.f3e6cdfaca26.md	8	計算：樞軸高低點＝左右回看區間內的局部高點與低點
+masu_v72_nwelmbos_0cvvd49h.f3e6cdfaca26.md	9	計算：波動調整停損停利距離＝平均真實波幅乘以依波動高低及趨勢強弱分類的停損、停利係數；趨勢狀態使用 ADX 與其門檻比較，波動狀態使用 ATR 排名及布林通道寬度與其均值比較
+masu_v72_nwelmbos_0cvvd49h.f3e6cdfaca26.md	10	做多：趨勢強度高、短期均線上穿長期均線、收盤價高於長期趨勢均線且成交量放大，或收盤價高於前一根之前回看區間最高價、成交量放大且高於長期趨勢均線，或處於盤整、收盤價低於布林下軌、RSI 低於超賣門檻且 RSI 上穿超賣門檻；並且高週期短期 EMA 高於長期 EMA 且高週期收盤價高於短期 EMA，核迴歸帶符合多頭排列、鬆散排列門檻或帶寬擴張模式之一，訂單流過濾通過，智慧資金過濾通過，AI 阻擋條件未觸發，位於交易時段內，多頭加權共振分數達門檻，風險報酬比達門檻，ATR 相對交易成本達門檻，且權益保護未啟動
+masu_v72_nwelmbos_0cvvd49h.f3e6cdfaca26.md	11	做空：趨勢強度高、短期均線下穿長期均線、收盤價低於長期趨勢均線且成交量放大，或收盤價低於前一根之前回看區間最低價、成交量放大且低於長期趨勢均線，或處於盤整、收盤價高於布林上軌、RSI 高於超買門檻且 RSI 下穿超買門檻；並且高週期短期 EMA 低於長期 EMA 且高週期收盤價低於短期 EMA，核迴歸帶符合空頭排列、鬆散排列門檻或帶寬擴張模式之一，訂單流過濾通過，智慧資金過濾通過，AI 阻擋條件未觸發，位於交易時段內，空頭加權共振分數達門檻，風險報酬比達門檻，ATR 相對交易成本達門檻，且權益保護未啟動
+masu_v72_nwelmbos_0cvvd49h.f3e6cdfaca26.md	12	做多：收盤價上穿最近已確認的樞軸高點，且多頭加權共振分數達門檻、位於交易時段內、ATR 相對交易成本達門檻、權益保護未啟動
+masu_v72_nwelmbos_0cvvd49h.f3e6cdfaca26.md	13	做空：收盤價下穿最近已確認的樞軸低點，且空頭加權共振分數達門檻、位於交易時段內、ATR 相對交易成本達門檻、權益保護未啟動
+masu_v72_nwelmbos_0cvvd49h.f3e6cdfaca26.md	14	出場：多頭，價格觸及進場價減波動調整停損距離或進場價加波動調整停利距離，或獲利達停利距離的設定比例後觸及最高價回落 ATR 偏移距離的追蹤停損
+masu_v72_nwelmbos_0cvvd49h.f3e6cdfaca26.md	15	出場：空頭，價格觸及進場價加波動調整停損距離或進場價減波動調整停利距離，或獲利達停利距離的設定比例後觸及最低價反彈 ATR 偏移距離的追蹤停損
+new_paradigm_master_scalper_optimized_dsnewnev.eeb4e4949150.md	1	計算：預期波動幅度＝基準波動值×波動倍率
+new_paradigm_master_scalper_optimized_dsnewnev.eeb4e4949150.md	2	計算：下方目標＝VWAP－預期波動幅度×帶寬倍率
+new_paradigm_master_scalper_optimized_dsnewnev.eeb4e4949150.md	3	計算：上方目標＝VWAP＋預期波動幅度×帶寬倍率
+new_paradigm_master_scalper_optimized_dsnewnev.eeb4e4949150.md	4	做多：最低價≤下方目標×下界容差倍率，且收盤價＞開盤價，且成交量＞成交量簡單移動平均×放量門檻，且（啟用趨勢過濾時）收盤價＞長期指數移動平均，且位於設定的紐約交易時段
+new_paradigm_master_scalper_optimized_dsnewnev.eeb4e4949150.md	5	做空：最高價≥上方目標×上界容差倍率，且收盤價＜開盤價，且成交量＞成交量簡單移動平均×放量門檻，且（啟用趨勢過濾時）收盤價＜長期指數移動平均，且位於設定的紐約交易時段
+new_paradigm_master_scalper_optimized_dsnewnev.eeb4e4949150.md	6	出場：做多，最高價≥進場價＋獲利距離 或 最低價≤進場價－停損距離
+new_paradigm_master_scalper_optimized_dsnewnev.eeb4e4949150.md	7	出場：做空，最低價≤進場價－獲利距離 或 最高價≥進場價＋停損距離
+pro_investing_nasdaq_silver_bullet_strategy_1hr_grkaz4l6.d1dd5f9eca64.md	1	計算：連續陽線數＝連續滿足 close > open 的根數；遇到 close ≤ open 歸零
+pro_investing_nasdaq_silver_bullet_strategy_1hr_grkaz4l6.d1dd5f9eca64.md	2	計算：連續陰線數＝連續滿足 close < open 的根數；遇到 close ≥ open 歸零
+pro_investing_nasdaq_silver_bullet_strategy_1hr_grkaz4l6.d1dd5f9eca64.md	3	做多：datetime 落在設定交易時段內，連續陽線數 ≥ 設定門檻，close > EMA(close, 設定回看期)，持倉數量＝0
+pro_investing_nasdaq_silver_bullet_strategy_1hr_grkaz4l6.d1dd5f9eca64.md	4	做空：datetime 落在設定交易時段內，連續陰線數 ≥ 設定門檻，close < EMA(close, 設定回看期)，持倉數量＝0
+pro_investing_nasdaq_silver_bullet_strategy_1hr_grkaz4l6.d1dd5f9eca64.md	5	出場：多單，low ≤ 進場價 × (1 − 停損百分比) 或 high ≥ 進場價 × (1 + 停利百分比)
+pro_investing_nasdaq_silver_bullet_strategy_1hr_grkaz4l6.d1dd5f9eca64.md	6	出場：空單，high ≥ 進場價 × (1 + 停損百分比) 或 low ≤ 進場價 × (1 − 停利百分比)
+pro_investing_nasdaq_silver_bullet_strategy_1hr_grkaz4l6.d1dd5f9eca64.md	7	出場：多單或空單，datetime 不在設定交易時段內
+rsi_volume_macd_ema_combo_dasyjgiz.654e514010df.md	1	做多：MACD線大於訊號線且 RSI 大於上閾值且收盤價大於 EMA 且成交量大於成交量的移動平均
+rsi_volume_macd_ema_combo_dasyjgiz.654e514010df.md	2	做空：MACD線小於訊號線且 RSI 小於下閾值且收盤價小於 EMA 且成交量大於成交量的移動平均
+rsi_volume_macd_ema_combo_dasyjgiz.654e514010df.md	3	出場：多單，RSI 向下穿越中性線
+rsi_volume_macd_ema_combo_dasyjgiz.654e514010df.md	4	出場：空單，RSI 向上穿越中性線
+spy_59_ma_scalping_volume_time_filter_1dgkudgw.fae2c0222340.md	1	做多：短期 SMA 向上穿越長期 SMA 且 volume 大於前一根 volume 且 datetime 落在設定的進場時段內
+spy_59_ma_scalping_volume_time_filter_1dgkudgw.fae2c0222340.md	2	做空：短期 SMA 向下穿越長期 SMA 且 volume 大於前一根 volume 且 datetime 落在設定的進場時段內
+spy_59_ma_scalping_volume_time_filter_1dgkudgw.fae2c0222340.md	3	出場：做多持倉，high 大於等於進場價加獲利距離 或 low 小於等於進場價減停損距離
+spy_59_ma_scalping_volume_time_filter_1dgkudgw.fae2c0222340.md	4	出場：做空持倉，low 小於等於進場價減獲利距離 或 high 大於等於進場價加停損距離
+strategy_death_to_the_bear_cowm0rkz.0924e325982c.md	1	計算：趨勢值＝（收盤價 RSI＋成交量加權方向 RSI＋布林振盪值＋隨機指標／3）／2；布林振盪值以典型價加權收盤價的均線與標準差帶計算，隨機指標以收盤價在最高價與最低價區間的位置計算
+strategy_death_to_the_bear_cowm0rkz.0924e325982c.md	2	計算：回歸趨勢值＝以趨勢值對逐根序號做滾動線性回歸後，在當前序號上的估值
+strategy_death_to_the_bear_cowm0rkz.0924e325982c.md	3	計算：多空反轉計數＝收盤價高於較早收盤價時累加多方計數，低於時累加空方計數；觸發後各自歸零。主要反轉使用較長回看期及較高計數門檻，次要反轉使用較短回看期及較低計數門檻
+strategy_death_to_the_bear_cowm0rkz.0924e325982c.md	4	計算：ATR 移動停損＝依收盤價與 ATR 更新的追蹤停損線；收盤價連續位於線上時停損線只升不降，連續位於線下時只降不升，穿越時改用收盤價加減 ATR
+strategy_death_to_the_bear_cowm0rkz.0924e325982c.md	5	做多：主要或次要空方反轉計數超過各自門檻，且收盤價高於開盤價並觸及回看期最低價；或回歸趨勢值連續三根上升且不高於門檻；或趨勢值由下向上穿越門檻；或回歸趨勢值由上向下穿越趨勢值且兩者皆不高於門檻；或回歸趨勢值連續三根低於門檻、當前值高於前值且趨勢值不高於門檻；或回歸趨勢值或趨勢值在最近三根任一根不高於門檻且收盤價向上穿越 ATR 移動停損
+strategy_death_to_the_bear_cowm0rkz.0924e325982c.md	6	出場：多單，最低價≤停損價（首次獲利出場前為零，首次獲利出場後為持倉均價）或最高價≥持倉均價加上 ATR 獲利目標一或持倉均價加上 ATR 獲利目標二
+strategy_mythbusting_11_trendmagicsqzmomcdv_myn_gytr3nkt.0e60d3a08c93.md	1	計算：平滑蠟燭OHLC＝收盤為原始OHLC平均，開盤為前一根平滑開盤與收盤平均（首根取原始開盤與收盤平均），最高與最低分別取原始最高／最低及平滑開盤／收盤的最大／最小值
+strategy_mythbusting_11_trendmagicsqzmomcdv_myn_gytr3nkt.0e60d3a08c93.md	2	計算：趨勢線＝CCI非負時取前值與最低價減去平滑真實波幅均值乘波幅係數的較大值；CCI為負時取前值與最高價加上平滑真實波幅均值乘波幅係數的較小值
+strategy_mythbusting_11_trendmagicsqzmomcdv_myn_gytr3nkt.0e60d3a08c93.md	3	計算：動能柱＝對平滑收盤價減去「最高價與最低價回看區間中點」及「平滑收盤均值」的平均值作線性回歸
+strategy_mythbusting_11_trendmagicsqzmomcdv_myn_gytr3nkt.0e60d3a08c93.md	4	計算：累積量差蠟燭＝逐根以成交量乘以實體與上下影線加權比例計算正負量差（收盤不低於開盤記正，否則記負），累加成量差序列，再將其逐根累積值形成OHLC蠟燭並作Heikin-Ashi轉換
+strategy_mythbusting_11_trendmagicsqzmomcdv_myn_gytr3nkt.0e60d3a08c93.md	5	做多：CCI非負且平滑收盤價高於趨勢線加正向偏移，且反向條件在回看期內未成立，且動能柱大於零且反向條件在回看期內未成立，且累積量差蠟燭收盤不低於開盤且反向條件在回看期內未成立
+strategy_mythbusting_11_trendmagicsqzmomcdv_myn_gytr3nkt.0e60d3a08c93.md	6	做空：CCI為負且平滑收盤價低於趨勢線減正向偏移，且反向條件在回看期內未成立，且動能柱小於零且反向條件在回看期內未成立，且累積量差蠟燭收盤低於開盤且反向條件在回看期內未成立
+strategy_mythbusting_11_trendmagicsqzmomcdv_myn_gytr3nkt.0e60d3a08c93.md	7	做多：最低價由下向上穿越趨勢線
+strategy_mythbusting_11_trendmagicsqzmomcdv_myn_gytr3nkt.0e60d3a08c93.md	8	做空：最高價由上向下穿越趨勢線
+strategy_mythbusting_11_trendmagicsqzmomcdv_myn_gytr3nkt.0e60d3a08c93.md	9	出場：多倉，平滑收盤價低於進場價減去停損距離
+strategy_mythbusting_11_trendmagicsqzmomcdv_myn_gytr3nkt.0e60d3a08c93.md	10	出場：空倉，平滑收盤價高於進場價加上停損距離
+strategy_mythbusting_11_trendmagicsqzmomcdv_myn_gytr3nkt.0e60d3a08c93.md	11	出場：多倉，最高價達到進場價加上任一獲利目標距離
+strategy_mythbusting_11_trendmagicsqzmomcdv_myn_gytr3nkt.0e60d3a08c93.md	12	出場：空倉，最低價達到進場價減去任一獲利目標距離
+supertrend_trapping_candle_strategy_h61z9tna.27ce77f543c4.md	1	做多：SuperTrend 趨勢向上 且 收盤價小於開盤價 且（成交量大於前一根成交量 或（連續三根開盤價與收盤價逐根上升且成交量逐根下降）或（連續三根開盤價與收盤價逐根下降且成交量逐根下降））且 當根最高價與最低價之差小於收盤價乘以振幅門檻
+supertrend_trapping_candle_strategy_h61z9tna.27ce77f543c4.md	2	做空：SuperTrend 趨勢向下 且 收盤價大於開盤價 且（成交量大於前一根成交量 或（連續三根開盤價與收盤價逐根上升且成交量逐根下降）或（連續三根開盤價與收盤價逐根下降且成交量逐根下降））且 當根最高價與最低價之差小於收盤價乘以振幅門檻
+temahmavwmacd_short_strategy_4h_3ngvfbiw.fd4e89f35c8a.md	1	計算：成交量加權 MACD 柱＝（短期 EMA(close×volume)／EMA(volume)－長期 EMA(close×volume)／EMA(volume)）－其訊號線（對前述差值取 EMA）
+temahmavwmacd_short_strategy_4h_3ngvfbiw.fd4e89f35c8a.md	2	做空：成交量加權 MACD 柱 < 0 且 close < HMA 且短期 TEMA(hlc3) < 長期 TEMA(hlc3) 且 datetime 位於設定的回測區間內
+temahmavwmacd_short_strategy_4h_3ngvfbiw.fd4e89f35c8a.md	3	出場：空單，成交量加權 MACD 柱 > 0 或 close > HMA 或短期 TEMA(hlc3) 由不高於長期 TEMA(hlc3) 穿越至高於長期 TEMA(hlc3)
+temahmavwmacd_short_strategy_4h_3ngvfbiw.fd4e89f35c8a.md	4	出場：空單，價格相對進場價下跌達設定獲利比例或上漲達設定停損比例
+the_strategy_ichimoku_kinko_hyo_and_more_dqayjnzk.b1d784881f30.md	1	計算：轉換線＝近期高點與低點的中點；基準線＝較長回看期高點與低點的中點；先行帶A＝轉換線與基準線的中點；先行帶B＝更長回看期高點與低點的中點；雲帶上下界＝兩條先行帶向前位移後的較大值與較小值
+the_strategy_ichimoku_kinko_hyo_and_more_dqayjnzk.b1d784881f30.md	2	計算：三重指數均線變化＝對收盤價取對數後，連續三次以相同回看期計算指數移動平均，再計算其變化
+the_strategy_ichimoku_kinko_hyo_and_more_dqayjnzk.b1d784881f30.md	3	計算：加權多空分數＝將多組趨勢、動量、Ichimoku、方向指標及成交量指標的多空狀態分別編碼後加總；上行斜率狀態權重高於非上行狀態
+the_strategy_ichimoku_kinko_hyo_and_more_dqayjnzk.b1d784881f30.md	4	計算：Ichimoku 多空分數＝將轉換線與雲帶、延遲收盤價與過去價格及雲帶、價格與轉換線及基準線、轉換線與基準線、先行帶A與B、基準線與雲帶的相對位置分別編碼後加總
+the_strategy_ichimoku_kinko_hyo_and_more_dqayjnzk.b1d784881f30.md	5	計算：分段高低點趨勢線＝連接最近兩個確認的擺動高點或低點並延伸至當前
+the_strategy_ichimoku_kinko_hyo_and_more_dqayjnzk.b1d784881f30.md	6	計算：價格階梯＝價格高於前階梯加上間距或低於前階梯減去間距時更新為當前收盤價，否則沿用前值
+the_strategy_ichimoku_kinko_hyo_and_more_dqayjnzk.b1d784881f30.md	7	做多：符合任一已選進場條件：收盤價高於前一根高點；當前高點高於前一根高點；當前低點高於前一根低點；收盤價不為零；收盤價高於較長期簡單移動平均（以較早一根收盤價判斷）；較短期指數移動平均上穿較長期指數移動平均；三重指數均線變化由非上升轉為上升；加權移動平均線斜率由非上升轉為上升；ALMA斜率由非上升轉為上升；MACD線斜率由非上升轉為上升；MACD線高於訊號線；相對強弱指標高於中線；正方向指標高於負方向指標且ADX高於門檻；正方向指標上穿負方向指標且ADX高於門檻；正方向指標高於負方向指標且ADX介於兩方向指標之間；ADX開始上升且正方向指標高於負方向指標；價格高於拋物線轉向點或SuperTrend；價格高於基準線、雲帶上界或轉換線；轉換線高於基準線或雲帶上界；先行帶A高於先行帶B；當前收盤價高於前移比較的高點或雲帶上界；高點突破最近確認的擺動高點；價格突破分段高低點趨勢線；價格階梯下移（逆勢網格）或上移（順勢網格）；前一根為內包或外包形態且當前收盤價突破前一根高點；前一根為外包形態且當前高點再創高；前兩根為內包後，前一根為外包且當前高點突破前一根高點；下影線長於上影線且符合下影線反轉形態及擺動低點；三段低點依序抬高且當前高點突破前一根高點；Ichimoku 多空分數高於門檻；加權多空分數高於門檻
+the_strategy_ichimoku_kinko_hyo_and_more_dqayjnzk.b1d784881f30.md	8	做空：符合任一已選進場條件：收盤價低於前一根低點；當前低點低於前一根低點；當前高點低於前一根高點；收盤價不為零；收盤價低於較長期簡單移動平均（以較早一根收盤價判斷）；較短期指數移動平均下穿較長期指數移動平均；三重指數均線變化由非下降轉為下降；加權移動平均線斜率由非下降轉為下降；ALMA斜率由非下降轉為下降；MACD線斜率由非下降轉為下降；MACD線低於訊號線；相對強弱指標低於中線；負方向指標高於正方向指標且ADX高於門檻；負方向指標下穿正方向指標且ADX高於門檻；負方向指標高於正方向指標且ADX介於兩方向指標之間；ADX開始上升且負方向指標高於正方向指標；價格低於拋物線轉向點或SuperTrend；價格低於基準線、雲帶下界或轉換線；轉換線低於基準線或雲帶下界；先行帶A低於先行帶B；當前收盤價低於前移比較的低點或雲帶下界；低點跌破最近確認的擺動低點；價格跌破分段高低點趨勢線；價格階梯上移（逆勢網格）或下移（順勢網格）；前一根為內包或外包形態且當前收盤價跌破前一根低點；前一根為外包形態且當前低點再創低；前兩根為內包後，前一根為外包且當前低點跌破前一根低點；上影線長於下影線且符合上影線反轉形態及擺動高點；三段高點依序降低且當前低點跌破前一根低點；Ichimoku 多空分數低於門檻；加權多空分數低於門檻
+the_strategy_ichimoku_kinko_hyo_and_more_dqayjnzk.b1d784881f30.md	9	出場：多單，符合任一已選出場條件：收盤價低於開盤價；反轉擺動高點形態；當前低點低於前一根低點；MACD線下穿訊號線；相對強弱指標下穿中線；較短期指數移動平均下穿較長期指數移動平均；三重指數均線變化開始下降；加權移動平均線斜率開始下降；MACD線斜率開始下降；RSI隨機指標符合空方動能條件；價格向下穿越較長期簡單移動平均、拋物線轉向點、SuperTrend、基準線或雲帶下界；低點下穿最近確認的擺動低點；ADX下穿門檻；Ichimoku 多空分數轉為空方；當不允許雙向持倉時，任一做空進場條件成立；收盤價低於進場均價且跌幅大於ATR且價格階梯下移
+the_strategy_ichimoku_kinko_hyo_and_more_dqayjnzk.b1d784881f30.md	10	出場：空單，符合任一已選出場條件：收盤價高於開盤價；反轉擺動低點形態；當前高點高於前一根高點；MACD線上穿訊號線；相對強弱指標上穿中線；較短期指數移動平均上穿較長期指數移動平均；三重指數均線變化開始上升；加權移動平均線斜率開始上升；MACD線斜率開始上升；RSI隨機指標符合多方動能條件；價格向上穿越較長期簡單移動平均、拋物線轉向點、SuperTrend、基準線或雲帶上界；高點上穿最近確認的擺動高點；ADX下穿門檻；Ichimoku 多空分數轉為多方；當不允許雙向持倉時，任一做多進場條件成立；收盤價高於進場均價且漲幅大於ATR且價格階梯上移
+tlo_opening_box_retest_strategy_n6zdwigu.77b1aaf0c707.md	1	計算：開盤區間高低＝指定時段內最高價與最低價
+tlo_opening_box_retest_strategy_n6zdwigu.77b1aaf0c707.md	2	計算：相對成交量＝當根成交量 ÷ 成交量回看期平均值
+tlo_opening_box_retest_strategy_n6zdwigu.77b1aaf0c707.md	3	計算：開盤區間高度＝開盤區間高點 − 開盤區間低點
+tlo_opening_box_retest_strategy_n6zdwigu.77b1aaf0c707.md	4	做多：開盤區間結束後，收盤價由區間高點下方穿越至上方（突破緩衝可按 ATR 設定）；且本區間尚無突破；且若啟用趨勢過濾，收盤價高於 EMA 且 EMA 上升；且若啟用成交量過濾，相對成交量達到門檻；並且若為直接突破模式，符合上述突破即進場，若為回測確認模式，首次突破後於限定回看期內首次回測區間高點附近，且未進場，當根最低價觸及高點附近並收盤高於區間高點時進場
+tlo_opening_box_retest_strategy_n6zdwigu.77b1aaf0c707.md	5	做空：開盤區間結束後，收盤價由區間低點上方穿越至下方（突破緩衝可按 ATR 設定）；且本區間尚無突破；且若啟用趨勢過濾，收盤價低於 EMA 且 EMA 下降；且若啟用成交量過濾，相對成交量達到門檻；並且若為直接突破模式，符合上述突破即進場，若為回測確認模式，首次突破後於限定回看期內首次回測區間低點附近，且未進場，當根最高價觸及低點附近並收盤低於區間低點時進場
+tlo_opening_box_retest_strategy_n6zdwigu.77b1aaf0c707.md	6	出場：多頭，價格觸及保護停損；或（非下一開盤區間出場模式）價格觸及目標；或（下一開盤區間出場模式）新開盤區間開始
+tlo_opening_box_retest_strategy_n6zdwigu.77b1aaf0c707.md	7	出場：空頭，價格觸及保護停損；或（非下一開盤區間出場模式）價格觸及目標；或（下一開盤區間出場模式）新開盤區間開始
+tlo_opening_box_retest_strategy_n6zdwigu.77b1aaf0c707.md	8	出場：多頭，價格向有利方向移動達初始風險時，保護停損移至進場價
+tlo_opening_box_retest_strategy_n6zdwigu.77b1aaf0c707.md	9	出場：空頭，價格向有利方向移動達初始風險時，保護停損移至進場價
+vicious_trading_strategy_v10_apjuo4yi.2502b4a86036.md	1	計算：多空分數＝起始值＋各項多方條件成立數－各項空方條件成立數；條件涵蓋K線型態、均線趨勢與交叉、布林通道、SAR、Supertrend、趨勢追蹤、雲帶、RSI、均線回檔、Guppy與MACD；Supertrend由空翻多或由多翻空各加減兩分，其餘每項各加減一分
+vicious_trading_strategy_v10_apjuo4yi.2502b4a86036.md	2	計算：分數平滑線＝分數的指數移動平均
+vicious_trading_strategy_v10_apjuo4yi.2502b4a86036.md	3	計算：趨勢狀態＝收盤價高於基準線加標準差帶時轉多，低於基準線減標準差帶時轉空，否則延續前值；基準線與標準差可用本級或較高參考級資料計算
+vicious_trading_strategy_v10_apjuo4yi.2502b4a86036.md	4	計算：買區＝本級趨勢前根與參考趨勢前根皆為多，而本級轉空且參考趨勢仍為多；賣區＝本級趨勢前根與參考趨勢前根皆為空，而本級轉多且參考趨勢仍為空
+vicious_trading_strategy_v10_apjuo4yi.2502b4a86036.md	5	做多：多空分數上穿任一固定門檻，或上穿分數平滑線，或Supertrend由空翻多，或所選趨勢狀態由空翻多，或進入買區
+vicious_trading_strategy_v10_apjuo4yi.2502b4a86036.md	6	做空：未觸發以下任一禁止條件，且（多空分數低於固定門檻並下穿另一固定門檻，或Supertrend由多翻空，或所選趨勢狀態由多翻空，或進入賣區）；禁止條件為Supertrend由空翻多、所選趨勢狀態由空翻多、進入買區、短期指數均線大於或等於長期指數均線、短期指數均線大於長期指數均線且收盤價高於長期簡單均線並低於短期簡單均線且快速相對強弱值低於低檻
+vicious_trading_strategy_v10_apjuo4yi.2502b4a86036.md	7	出場：多方持倉，多空分數下穿固定門檻，或Supertrend由多翻空，或短期指數均線低於長期指數均線且收盤價低於長期簡單均線並高於短期簡單均線且快速相對強弱值高於高檻，或進入賣區
+vicious_trading_strategy_v10_apjuo4yi.2502b4a86036.md	8	出場：空方持倉，多空分數上穿固定門檻，或Supertrend由空翻多，或所選趨勢狀態由空翻多，或進入買區，或短期指數均線大於或等於長期指數均線，或短期指數均線大於長期指數均線且收盤價高於長期簡單均線並低於短期簡單均線且快速相對強弱值低於低檻，或多空分數上穿其平滑線
+vxma_bot_m54nptt2.199dba89151a.md	1	計算：Andean 多方線與空方線＝以開盤價、收盤價及其平方，分別遞迴平滑計算上方與下方包絡；多方線為下方平方均值減下方均值平方的平方根，空方線為上方平方均值減上方均值平方的平方根
+vxma_bot_m54nptt2.199dba89151a.md	2	計算：趨勢線＝若多方線大於空方線，取快速 EMA、平滑線性回歸值與延後的波動趨勢線三者最小值，並限制不下降；若空方線大於多方線，取三者最大值，並限制不上升；兩線相等時沿用前值
+vxma_bot_m54nptt2.199dba89151a.md	3	計算：波動趨勢線＝RSI 大於或等於中線時，取高價加上平均真實波幅乘數，並限制不下降；否則取低價減去平均真實波幅乘數，並限制不上升
+vxma_bot_m54nptt2.199dba89151a.md	4	做多：趨勢線連續上升且雲趨勢由非多方轉為多方，收盤價高於趨勢線，持倉量小於或等於零，位於回測時間範圍內，且多方再進場狀態允許
+vxma_bot_m54nptt2.199dba89151a.md	5	做空：趨勢線連續下降且雲趨勢由非空方轉為空方，收盤價低於趨勢線，持倉量大於或等於零，位於回測時間範圍內，且空方再進場狀態允許
+vxma_bot_m54nptt2.199dba89151a.md	6	出場：多方，雲趨勢轉為空方
+vxma_bot_m54nptt2.199dba89151a.md	7	出場：空方，雲趨勢轉為多方
+vxma_bot_m54nptt2.199dba89151a.md	8	出場：多方，啟用停利停損時，價格觸及以進場價減去最低 pivot 低點所得風險距離乘停利倍數後加至進場價的任一停利價，或觸及最低 pivot 低點停損價
+vxma_bot_m54nptt2.199dba89151a.md	9	出場：空方，啟用停利停損時，價格觸及以最高 pivot 高點減去進場價所得風險距離乘停利倍數後自進場價扣除的任一停利價，或觸及最高 pivot 高點停損價

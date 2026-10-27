@@ -1,0 +1,5 @@
+計算：確認擺動高／低＝某根K的 high／low 高於／低於其前後相同回看長度內各K的 high／low；結構位取最新確認擺動K的 close
+做多：C1收黑且C2的 low < C1的 low 且C2的 close > C1的 low，C3收紅且 close > C1的 low；其後、BOS前各根 close >= C1的 low；之後某根 close > 設置時最新確認擺動高K的 close 且 close >= open；緊接一根 close >= BOS K的(high+low)/2 且 close > open 且 abs(close-open) > (high-low)/2；BOS close > C2的 low
+做空：C1收紅且C2的 high > C1的 high 且C2的 close < C1的 high，C3收黑且 close < C1的 high；其後、BOS前各根 close <= C1的 high；之後某根 close < 設置時最新確認擺動低K的 close 且 close <= open；緊接一根 close <= BOS K的(high+low)/2 且 close < open 且 abs(close-open) > (high-low)/2；C2的 high > BOS close
+出場：多單，low <= C2的 low 或 high >= entry + (entry-C2的 low)；前者平倉，後者先平一半；已達前一目標後 high >= entry + (entry-C2的 low)×最終風險報酬倍數則平剩餘倉位；或新空單確認且新進場價 < 持倉進場價時以當根 close 平倉
+出場：空單，high >= C2的 high 或 low <= entry - (C2的 high-entry)；前者平倉，後者先平一半；已達前一目標後 low <= entry - (C2的 high-entry)×最終風險報酬倍數則平剩餘倉位；或新多單確認且新進場價 > 持倉進場價時以當根 close 平倉

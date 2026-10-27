@@ -1,0 +1,4 @@
+blackscholes_option_price_model_delta_hedge_strategy_zppadtt7.md
+max_pain_options_quantlabs_v5_balanced_vqeqomgf.md
+options_max_pain_calculator_backquant_vspwh0vn.md
+theta_decay_tracker_algochief_urmz0vqt.md

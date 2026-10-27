@@ -1,0 +1,95 @@
+## BRK.KEYBAR 事件棒衍生價位突破（順勢）
+- 核心邏輯：先以單根 K 棒特徵（放量收陰、放量小實體反向棒、收盤變動超過 ATR 倍數並放量的突破棒）篩出關鍵棒，取其高低點（或加當根波幅比例、減 ATR 倍數）設定價位並延續至下一根關鍵棒 → 做多：收盤價由下向上越過該價位（含越過反向突破棒的停止線，視為空方突破失效）→ 做空：對稱，跌破對應價位。
+- 可選濾網：
+  - F.candle_dir：進場 K 棒須收陽或收盤不低於前收與前開（約 3）。
+  - F.other：吸收棒群集數達門檻、ohlc4 百分位等未歸類條件（約 2）。
+  - F.retest：前一根回測關鍵價守住後再進場（約 1）。
+  - F.key_level／F.ma_stack／F.trail_side：年度高點、均線排列分數、均線型追蹤線方向同向（各約 1）。
+- 出場變體：
+  - X.other：逐根以前一根低（高）點停損或未定義的固定／追蹤停損（約 2）。
+  - X.stop_level：收盤穿越前一根下目標或停止線出場（約 1）。
+  - X.trailing_atr：ATR 棘輪移動停損（約 1）。
+  - X.tp_multi：分段目標（約 1）。
+  - X.reverse_signal：反向訊號平倉（約 1）。
+- 群內常見小異：關鍵棒定義（放量反向棒／放量小實體棒／ATR 倍數突破棒）；價位取高低點本身或加減波幅、ATR 偏移；是否要求回測守住。
+
+## LQ.SWEEP 關鍵價位掃蕩後收回（逆勢）
+- 核心邏輯：計算離散關鍵價位（最近確認擺動點、前日／前時段／亞洲盤／開盤區間高低、前期回看區間高低、價值區邊界、日樞紐位、三角形突破位）→ 做多：最低價刺穿低位（可要求達 ATR 幅度，或前一根收在其下）後於當根或允許時窗內收盤收回其上，常再以吞噬、收過前根高點、BOS 或 EMA 穿越確認 → 做空：對稱，刺穿高位後收回其下；少數只做多。
+- 可選濾網：
+  - F.volume：掃蕩棒或確認棒放量（約 17）。
+  - F.flat：須空倉或每段一次（約 11）。
+  - F.session：限定交易時段（約 10）。
+  - F.trend_ma：收盤相對 EMA／VWAP 同向（約 9）。
+  - F.other：EMA 穿越加 BOS 序列、市場狀態中性、結構方向等（約 8）。
+  - F.confirm_bar：吞噬、收過前根高點、次根收陽或收過掃蕩中點確認（約 7）。
+  - F.rsi_band：RSI 或 Laguerre RSI 超賣（約 6）。
+  - F.htf：較高週期 EMA 同向或鄰近高週期擺動點（約 6）。
+  - F.osc_dir：淨量差、差值指標、成交量加權動能同向（約 6）。
+  - F.volatility：區間擴張、掃幅大於 ATR 門檻（約 6）。
+  - F.daily_limit：當日次數或回撤上限（約 6）。
+  - F.score：多方資格分、信心分或超伸分數達門檻（約 5）。
+  - F.wick：下影線比例達門檻（約 4）。
+  - F.candle_dir：收陽或收盤高於前收（約 4）。
+  - F.adx_di：ADX 門檻或 DI 方向（約 4）。
+  - F.cooldown：同向冷卻期（約 4）。
+  - F.range_width：參考區間寬度上下限（約 3）。
+  - F.divergence：累積量差或跨市場背離（約 3）。
+  - F.confirm：K 棒收定（約 3）。
+  - 其餘零星：F.close_pos、F.extension、F.ma_stack、F.min_rr、F.prior_move、F.slope、F.band_pos（各約 2），F.key_level、F.near_level、F.pattern、F.retest、F.squeeze、F.min_risk、F.efficiency、F.date（各約 1）。
+- 出場變體：
+  - X.stop_atr：ATR 倍數停損（約 11）。
+  - X.trailing_atr：ATR 移動停損（約 10）。
+  - X.tp_rr：風險報酬比停利（約 8）。
+  - X.other：未定義目標或其他自訂出場（約 7）。
+  - X.stop_bar／X.stop_swing：訊號棒或擺動點加緩衝停損（各約 5）。
+  - X.breakeven：達進度後移至保本（約 5）。
+  - X.time：持倉根數上限（約 5）。
+  - X.trend_flip：偏向或趨勢失效出場（約 5）。
+  - X.stop_level／X.tp_level／X.tp_mid／X.tp_multi／X.tp_atr／X.stop_pct：區間對側、反向流動性位、區間中點或 POC、分批、ATR 停利、固定百分比停損（各約 4）。
+  - X.trailing_ma：收盤穿越快速 EMA 或 VWAP 出場（約 3）。
+  - X.session_end、X.structure_break、X.volume_spike、X.reverse_signal、X.momentum_fade：時段結束、反向結構突破、爆量、反向訊號、動能歸零（各約 2）。
+  - 無出場規則（約 2）。
+- 群內常見小異：關鍵價位來源（確認擺動點／時段區間高低／前期回看高低／價值區或樞紐位）；收回時窗（同根刺穿收回／前根收在外、當根收回／多根期限內收回）；確認方式（吞噬、收過前根高點、BOS、EMA 穿越、差值指標）；是否要求掃幅達 ATR 緩衝。
+
+## REV.EXTREME 超買超賣區狀態（逆勢）
+- 核心邏輯：計算振盪器（RSI、隨機 RSI、MFI、KDJ、CMO、ROC 均值、渦流線、正規化漲跌量比、量價 %B 差等）或價格通道（布林帶、VWAP 加減標準差／平均絕對偏差／ATR、均線加減 ATR、回看最高價回撤、回看最低價上方區、多均線平均偏離）→ 做多：振盪器低於超賣門檻（或剛向下穿入），或價格位於（接近、剛跌破）通道下界之下的狀態成立即逆勢做多；含價格剛向上越過回看高點當根即逆勢做空 → 做空：多數對稱（超買或位於上界之上），部分只做多或只做空。
+- 可選濾網：
+  - F.volume：放量或縮量（約 27）。
+  - F.flat：須空倉（約 18）。
+  - F.osc_dir：輔助振盪器回升或同向（約 14）。
+  - F.trend_ma：收盤相對長期均線同側或短長均線關係（約 14）。
+  - F.rsi_band：第二振盪器須位於指定區間（約 9）。
+  - F.session：限定時段（約 8）。
+  - F.volatility：ATR、帶寬高於門檻或在帶外（約 8）。
+  - F.candle_dir：收陽或收陰（反向 K 棒）要求（約 6）。
+  - F.cooldown：距上次進出場等待期（約 6）。
+  - F.other：交叉預判、泵升排除、量縮連收等（約 6）。
+  - F.adx_di：ADX 低於門檻（盤整）（約 5）。
+  - F.band_pos：價格位於通道特定位置（約 5）。
+  - F.osc_cross：隨機動能差上穿均線或 RSI 自超賣上穿確認（約 4）。
+  - F.date：日期區間（約 4）。
+  - F.divergence、F.prior_move、F.slope、F.efficiency、F.daily_limit：量能背離、先前下跌、斜率、效率比或 Choppiness、次數上限（各約 3）。
+  - F.extension、F.htf、F.squeeze、F.wick（各約 2），F.confirm_bar、F.key_level、F.range_width、F.swing_dir（各約 1）。
+  - 無濾網（約 8）。
+- 出場變體：
+  - X.stop_pct：固定百分比停損（約 29）。
+  - X.tp_pct：固定百分比或逐級百分比停利（約 25）。
+  - X.stop_atr：ATR 停損（約 15）。
+  - X.indicator_cap：振盪器達超買或自超買回落出場（約 13）。
+  - X.other：自訂出場（變化率回零軸、渦流線反轉、停損移至基準線等）（約 11）。
+  - X.tp_mid：回到 VWAP、中軌或均值基準停利（約 9）。
+  - X.reverse_signal：反向極端或反向訊號出場（約 8）。
+  - X.time：持倉時限（約 8）。
+  - X.trailing_atr：ATR 移動停損（約 8）。
+  - X.tp_atr：ATR 倍數停利（約 7）。
+  - X.momentum_fade、X.trailing_pct：動能轉弱、回撤追蹤（各約 6）。
+  - X.trend_flip：均線關係或基準轉向出場（約 5）。
+  - X.tp_multi、X.tp_rr（各約 4），X.band_opposite、X.breakeven、X.session_end（各約 3），X.osc_cross、X.stop_level（各約 2），其餘零星（約 1）。
+  - 無出場規則（約 2）。
+- 群內常見小異：極端衡量用振盪器（RSI／Stoch RSI／MFI／KDJ／多振盪器同時）或價格通道（布林／VWAP 帶／均線加減 ATR／回看高點回撤）；單一或多重同時極端；要求連續兩根或近期曾處極端；是否附回升確認（振盪器高於前值、收陽）；狀態成立或剛穿入極端區當根進場。
+
+## REV.EXTREME.line_fade 數值位於自身均線下方逆勢狀態
+- 核心邏輯：計算一條數值序列（價格、KVO、負量指數、正量指數）與其移動平均（EVWMA、觸發線、EMA）→ 做多：反向模式開啟時數值低於其平均線的狀態成立即逆勢做多（無偏移幅度、無極端門檻）→ 做空：對稱，數值高於其平均線即做空；同一檔另有順勢模式。
+- 可選濾網：無（約 4）。
+- 出場變體：無明列出場，以反向訊號自然翻倉（約 4）。
+- 群內常見小異：比較序列用價格／KVO／NVI／PVI；平均線用 EVWMA／EMA 觸發線；價格用前一根收盤或當根值。

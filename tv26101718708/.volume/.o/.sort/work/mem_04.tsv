@@ -1,0 +1,43 @@
+0_anchored_vwap_strategy_full_suite_v21_fnpinvdv.366b9c5e136f.md	1	MA.STATE	收盤價位於以隨機 RSI 轉折錨定的 VWAP 之上即做多，空對稱	F.trend_ma|F.volume|F.cooldown	X.band_opposite|X.stop_atr|X.tp_pct	參考線為隨機 RSI 超買超賣交叉錨定的高／低錨定 VWAP，多空用不同錨線
+absorption_pro_ulwwpkms.57c85514ffbb.md	1	CMP.EXHAUST	布林偏離、RSI、Delta、價值區、吸收、背離等多項分數加總，低分做多高分做空	F.trend_ma	X.reverse_signal|X.stop_pct|X.tp_pct	單一總分無獨立反轉確認分數；含高週期加權，門檻依收盤相對長期 EMA 切換
+adaptive_sr_reversal_rsi_divergence_dca_be_stop_5m_pfdze7mb.3bafd24c0a8d.md	1	SR.TOUCH	當根低點落入自適應前日區間低點觸及區而守在下界之上即做多，空對稱	F.daily_limit|F.session|F.volume|F.divergence|F.flat	X.tp_mid|X.stop_pct|X.breakeven|X.session_end	區間不足門檻時逐日擴大；要求有效期內 RSI 背離
+adaptive_sr_reversal_rsi_divergence_dca_be_stop_5m_pfdze7mb.3bafd24c0a8d.md	2	PM.DCA	已有持倉時價格自最差進場價逆向達間距即加碼	none	X.tp_pct|X.stop_pct|X.breakeven|X.session_end	加碼後目標改以首次進場價偏移，停損以最差進場價偏移
+apex_matrix_v4_strategy_martingale_dynamic_exit_qbwliwxe.c290a6d7c953.md	1	REV.REENTRY	最低價刺穿前期回看低界後收回其上即做多，空對稱	F.volume|F.wick	X.trailing_ma|X.stop_pct|X.tp_pct|X.other	量能異常或小實體吸收形態擇一；X.other 為災難／鎖定停損
+btc_scalper_t3_volume_filter_rkhoyhji.4cf04c397b49.md	1	MA.CROSS	收盤價穿越 T3 均線即同向進場	F.volume	X.tp_pct|X.stop_pct	慢線為 T3
+clean_vwap_zl_scalper_single_trigger_by_sandip_hx0mujm3.67cd9619eb88.md	1	PB.TOUCH	收盤在 ZLEMA 與 VWAP 之上時最低價回觸 VWAP、下帶或 ZLEMA 且收陽即做多，空對稱	F.trend_ma|F.candle_dir|F.rearm	X.stop_atr|X.tp_rr|X.reverse_signal	參考線為 VWAP、VWAP 標準差帶、零延遲 EMA
+combining_exponential_and_volume_weighting_backtest_iixissgv.29e33ba005c8.md	1	MA.STATE	前收盤高於指數平滑成交量加權均價即做多，空對稱	none	none	均線為 EMA 版 VWMA；比較對象為前一根收盤
+combining_exponential_and_volume_weighting_backtest_iixissgv.29e33ba005c8.md	2	REV.EXTREME	反向模式：前收盤低於指數平滑成交量加權均價即做多，空對稱	none	none	以均線本身為零寬邊界的逆勢位置狀態
+concordance_strategy_joat_cefipdwb.90ff2ce51504.md	1	CMP.SCORE	趨勢、流動性、OTE、共振、壓力、通道、成交量等加權多空分數達門檻即同向進場	F.confirm|F.session|F.htf|F.other	X.stop_swing|X.trailing_atr|X.breakeven|X.tp_multi|X.momentum_fade|X.time	另有軟門檻路徑需附加壓力、Sigma 訊號與共振數或成交量帳本；F.other 為高低週期回撤方向一致
+confluence_engine_strategy_joat_4w7xgwip.ac742bad03c9.md	1	MA.CROSS	線性回歸收盤值穿越其短期 SMA 即同向進場	F.trend_ma|F.htf|F.volume|F.rsi_band|F.volatility|F.score|F.confirm|F.flat|F.cooldown	X.tp_atr|X.stop_atr|X.time|X.trend_flip	快線為線性回歸值、慢線為其 SMA；共振分數作門檻濾網
+diy_custom_strategy_builder_zp_v1_strategy_8z6wbyw5.48c7f442aa91.md	1	TS.FLIP	主指標選範圍濾波器或 Supertrend／HalfTrend／唐奇安趨勢／吊燈／SSL／Hull／核迴歸／HA 震盪器顯示多方即做多	F.other|F.rearm	X.stop_pct|X.tp_pct|X.reverse_signal	訊號須在有效期根數內（近似翻轉事件）；F.other 為可選確認條件組
+diy_custom_strategy_builder_zp_v1_strategy_8z6wbyw5.48c7f442aa91.md	2	BRK.CHAN	主指標選回看區間高點突破或區間偵測上界突破即做多	F.other|F.rearm	X.stop_pct|X.tp_pct|X.reverse_signal	兩種滾動區間邊界；F.other 為可選確認條件與有效期
+diy_custom_strategy_builder_zp_v1_strategy_8z6wbyw5.48c7f442aa91.md	3	MA.CROSS	主指標選短期均線上穿長期均線即做多	F.other|F.rearm	X.stop_pct|X.tp_pct|X.reverse_signal	F.other 為可選確認條件與有效期
+diy_custom_strategy_builder_zp_v1_strategy_8z6wbyw5.48c7f442aa91.md	4	MA.STATE	主指標選均線依序排列或價格高於 VWAP／均線／雲帶與基準線即做多	F.other|F.rearm	X.stop_pct|X.tp_pct|X.reverse_signal	排列與位置兩類狀態；F.other 為可選確認條件與有效期
+diy_custom_strategy_builder_zp_v1_strategy_8z6wbyw5.48c7f442aa91.md	5	NEW.04_trendline_brk	主指標選價格突破下降趨勢線即做多，空對稱跌破上升趨勢線	F.other|F.rearm	X.stop_pct|X.tp_pct|X.reverse_signal	趨勢線計算未詳列；F.other 為可選確認條件與有效期
+diy_custom_strategy_builder_zp_v1_strategy_8z6wbyw5.48c7f442aa91.md	6	OSC.LEVEL	主指標選 RSI、MACD、隨機等十餘種振盪器顯示多方，或 +DI 強於 −DI 且 ADX 達門檻即做多	F.other|F.rearm	X.stop_pct|X.tp_pct|X.reverse_signal	各振盪器多方定義未詳列；F.other 為可選確認條件與有效期
+evwma_vwap_cross_strategy_quantnomad_qpigo8hs.c29b3d453a7a.md	1	MA.CROSS	平滑 VWAP 穿越 EVWMA 即同向進場	none	none	快線為 VWAP 的 EMA，慢線為 EVWMA
+gidras_rsi_or_mfi_strategy_v_01_fgo4fkwr.3aac73a5e3c8.md	1	REV.REENTRY	RSI 或 MFI 的布林 %B 自 0 下方收回 0 之上即做多，自 1 上方收回即做空	F.date	X.band_opposite|X.other	通道建於振盪器上；X.other 為交易結束時間平倉
+haeri_network_qvstezum.74a219bbca58.md	1	CMP.SCORE	數十項順勢與反轉指標條件依權重加總強弱方向分數，達門檻即同向進場	F.rearm|F.slope	X.reverse_signal|X.osc_cross	強分數需前方向非多或趨勢 EMA 上升；分數項含背離、超買超賣、吞噬等
+haeri_network_qvstezum.74a219bbca58.md	2	OSC.SIG	短期 CCI 或 RSI 上穿其 EMA 且前值低於負閾值即做多，空對稱	F.rsi_band|F.trail_side	X.reverse_signal|X.osc_cross	可要求 CCI 與 RSI 同時轉折且近期 HalfTrend 翻多，或前根 RSI 低位且 CCI 轉折
+hybrid_breakout_vcpinspired_trend_hezsshjr.43181f015e48.md	1	BRK.CHAN	最高價觸及前一根較短回看最高價即做多（VCP 型）	F.ma_stack|F.slope|F.squeeze|F.volume|F.date|F.flat	X.stop_pct|X.tp_multi	壓縮以波動區間百分位或收盤區間幅度判定；只做多
+infiten_slope_strategy_pzzu13q1.0e3ed9e02bac.md	1	OSC.SIG	耗竭值（價格相對長均偏離）上穿其均線即做多	F.trend_ma	X.osc_cross|X.trend_flip	只做多；振盪器為 HLC 和相對其 SMA 的偏離比；出場含 MACD 下穿與量能條件
+infiten_slope_strategy_pzzu13q1.0e3ed9e02bac.md	2	REV.EXTREME	RSI 低於超賣門檻即做多	none	X.osc_cross|X.trend_flip	只做多；與段1 共用出場
+kaufmans_efficiency_ratio_strategy_kl_wrhj1rjb.1add4d06773a.md	1	OSC.LEVEL	考夫曼效率比大於零即做多、小於零即做空	F.volatility|F.volume	X.trailing_atr|X.tp_multi|X.momentum_fade|X.other	波幅與量能濾網僅用於做空；X.other 為空單訊號失效且不虧損即出場
+klinger_volume_oscillator_kvo_backtest_ur50w2we.a157307c17ff.md	1	OSC.LEVEL	KVO 高於其觸發線即做多，低於即做空	none	none	門檻為振盪器自身訊號線（等同柱狀差值高於零的狀態）
+klinger_volume_oscillator_kvo_backtest_ur50w2we.a157307c17ff.md	2	REV.EXTREME	反向模式：KVO 低於觸發線即做多，高於即做空	none	none	流量振盪器的逆勢解讀
+luxalgo_smc_pro_ultimate_v6_4azlmpya.20e56a1df4f2.md	1	SW.BOS	收盤上穿內部或波段最近確認高樞紐即做多，空對稱	F.band_pos|F.fvg|F.divergence|F.flat	X.stop_swing|X.tp_rr|X.tp_level|X.tp_multi|X.trailing_atr|X.breakeven	區間濾網要求收盤低於區間中點（折價區）；缺口為近兩根看漲缺口；背離為單根 RSI 對價格背離
+market_leader_pro_v6_rsi_ema_njxdoumw.0c792ae04401.md	1	BRK.CHAN	收盤突破前一根回看最高價且同根 Supertrend 翻多即做多，空對稱	F.trend_ma|F.rsi_band|F.volume|F.trail_side	X.trend_flip|X.stop_pct|X.tp_pct	同根 Supertrend 方向翻轉作確認（記 F.trail_side）；RSI 高於門檻為順勢解讀
+multitf_ai_supertrend_with_adx_strategy_presenttrading_feoube91.215a4dd54e42.md	1	NEW.04_knn_flip	以趨勢線距離作 kNN 分類，分類結果轉為全多頭即做多，空對稱	none	X.trailing_atr	兩組不同回看期任一轉多即觸發
+multitf_ai_supertrend_with_adx_strategy_presenttrading_feoube91.215a4dd54e42.md	2	TS.FLIP	成交量加權均線加減 ATR 的棘輪趨勢線翻多且同組 kNN 分類為多即做多，空對稱	F.other	X.trailing_atr	追蹤線中線為 VWMA；F.other 為 kNN 分類同向
+multitf_ai_supertrend_with_adx_strategy_presenttrading_feoube91.215a4dd54e42.md	3	MA.STATE	兩組趨勢線方向皆多、兩組 kNN 皆多且 ADX 高於門檻、+DI>−DI 即做多，空對稱	F.adx_di|F.other	X.trailing_atr	核心為價格位於追蹤線多方側的狀態；F.other 為 kNN 分類同向
+nasdaq_orb_strategy_strict_exec_rrr_20_fixed_ewkfvsvf.ed00e546bfa9.md	1	BRK.ORB	收盤上穿開盤區間高點即做多，下穿低點即做空	F.session|F.daily_limit|F.flat|F.volume	X.stop_level|X.tp_rr|X.session_end	停損設於區間中點，目標以其距離乘風報比
+orb_breakout_strategy_with_vwap_and_volume_filters_wlsghpue.c7433f415757.md	1	BRK.ORB	價格觸及開盤區間高點（掛單突破）即做多，空對稱	F.session|F.flat|F.daily_limit|F.trend_ma|F.slope|F.volume|F.close_pos	X.other|X.breakeven|X.session_end	以觸價成交而非收盤突破；X.other 為未定義計算的止損止盈價
+orion_algo_strategy_v20_1qoqnmvn.e4f6e6a4619a.md	1	OSC.TURN	七項振盪器分量平均後 Hull 平滑的合成訊號由降轉升即做多，由升轉降即做空	none	X.tp_pct|X.momentum_fade	不要求負區；多單出場需達均價獲利比例且訊號轉降，空單無出場規則
+parallax_covenant_strategy_joat_pjuz1vms.eef5ade66989.md	1	OSC.SIG	共用制度、計分、高週期等前提下，壓力值上穿其訊號均線即做多，空對稱	F.score|F.htf|F.squeeze|F.swing_dir|F.trend_ma|F.other	X.stop_atr|X.trailing_atr|X.tp_rr|X.trend_flip|X.momentum_fade|X.time	前提含四項至少兩項、釋放或波幅或壓力偏多、多頭結構或高於基準線；F.other 為制度狀態
+parallax_covenant_strategy_joat_pjuz1vms.eef5ade66989.md	2	MA.CROSS	共用前提下收盤上穿 RSI 映射中線或結構基準線即做多，空對稱	F.score|F.htf|F.squeeze|F.swing_dir|F.trend_ma|F.other	X.stop_atr|X.trailing_atr|X.tp_rr|X.trend_flip|X.momentum_fade|X.time	慢線為高低中值平均的結構基準線或 RSI 映射到價格區間的中線
+powerhouse_swiftedge_ai_v210_strategy_xr8aijgp.63c6e559786d.md	1	OSC.LEVEL	單根價格變動率高於 ATR 調整動能門檻即做多，空對稱	F.htf|F.trend_ma|F.cooldown	X.tp_pct|X.stop_pct	另一分支為變動率介於預備門檻與動能門檻間且無趨勢濾網
+powerhouse_swiftedge_ai_v210_strategy_xr8aijgp.63c6e559786d.md	2	SW.BOS	最高價上穿已確認擺動高點且收陽即做多，空對稱	F.candle_dir	X.tp_pct|X.stop_pct	以最高價穿越而非收盤突破
+smb_magic_b85od95c.a46ef74148b1.md	1	BRK.CHAN	收盤突破前一根最高價即做多，跌破前一根最低價即做空	F.flat|F.volume|F.candle_dir|F.volatility|F.trend_ma	X.reverse_signal	通道為僅前一根高低；放量倍數與當根波幅門檻
+stable_main_force_system_v6_7rqkecn2.7a9d5b2090d9.md	1	PB.TOUCH	收盤在長均線之上而低於短均線（回檔）即做多	F.osc_dir|F.volume	X.stop_swing|X.tp_rr	以收盤低於短均線的狀態代替觸及事件；平滑 OBV 高於其均線或量縮擇一；只做多
+stable_main_force_system_v6_7rqkecn2.7a9d5b2090d9.md	2	BRK.CHAN	收盤突破前一根以前回看最高價即做多	F.volume|F.trend_ma|F.osc_dir|F.other	X.stop_swing|X.tp_rr	短均線高於長均線、OBV 同向；F.other 為風險距離大於零；只做多
+supertrend_with_multiple_filter_strategy_qvqti4l2.601dd7631627.md	1	TS.FLIP	Supertrend 上升方向與其他已啟用條件全部成立即做多，空對稱	F.trend_ma|F.osc_cross|F.osc_dir|F.confirm_bar|F.key_level|F.flat|F.other	X.stop_pct|X.tp_pct|X.trailing_pct|X.trailing_atr	所有條件為可啟用 AND，含 EMA 交叉、隨機收回、通道突破、蠟燭形態等事件；F.other 為其餘可選指標條件

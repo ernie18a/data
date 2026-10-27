@@ -1,0 +1,152 @@
+## NUL.ALWAYS 恆真進場
+- 核心邏輯：不計算任何判斷值 → 做多：以「收盤價不為零」之類恆真式作為進場條件，每根皆成立（受持倉狀態與出場約束）→ 做空：對稱，所選方向同樣恆真。
+- 可選濾網：
+  - 無：本群成員未附任何濾網（約 1）。
+- 出場變體：
+  - 反向 K 棒形態、結構破壞、振盪器穿越、趨勢翻轉、動能衰退、均線追蹤、SAR 追蹤、反向訊號等多種可選出場並列（約 1），出場實際承擔全部判斷。
+- 群內常見小異：
+  - 僅作為多模式策略中的「無條件」選項，無參數變化軸。
+
+## OSC.TURN 振盪器斜率轉折
+- 核心邏輯：計算振盪器（RSI 擬合導數、MACD 柱、Chaikin、TRIX、ROC、CMO、Coppock、隨機 RSI、多項振盪器合成值）→ 做多：振盪器於負區或低檔形成局部低點後轉升（前值下降、現值上升，或多回看期差值皆非負）→ 做空：對稱，正區或高檔局部高點後轉降；部分成員只做多。
+- 可選濾網：
+  - F.rsi_band：要求轉折時振盪器或另一振盪器處於低檔／超賣門檻內（約 5）。
+  - F.osc_dir：要求另一振盪器斜率同向或 MACD 與訊號線差距收斂（約 3）。
+  - F.volume：要求放量或量增（約 2）。
+  - F.volatility：要求波動度達門檻（約 1）。
+  - F.rearm：前一次許可旗標須先失效重置才可再進場（約 1）。
+  - 無濾網（約 2）。
+- 出場變體：
+  - X.momentum_fade：振盪器反向轉折或動能衰退出場（約 6）。
+  - X.indicator_cap：振盪器達超買或指定上限出場（約 4）。
+  - X.other：其他自訂出場條件（約 4）。
+  - X.tp_pct／X.stop_pct：固定百分比停利停損（約 3／2）。
+  - X.osc_cross：振盪器穿越訊號線或門檻出場（約 2）。
+  - X.tp_atr、X.tp_multi、X.breakeven：ATR 倍數分段停利並移至保本（約 1）。
+  - X.trailing_pct、X.time、X.session_end：收盤回撤追蹤、持倉時限、日終平倉（約 1）。
+- 群內常見小異：
+  - 振盪器種類：RSI 導數／MACD 柱／Chaikin／TRIX／ROC／CMO／Coppock／隨機 RSI／合成振盪器的線性回歸值。
+  - 轉折判定：單根前後值比較／多組回看期差值皆非負／連續數根上升／區間方向翻轉或樞紐後回升。
+  - 區域要求：須在負區或低檔／不要求區域。
+  - 平滑方式：Hull 平滑／EMA 平滑／不平滑。
+
+## PB.TOUCH 順勢回檔觸及參考線
+- 核心邏輯：先以均線位置或排列、均線斜率、較高週期方向、趨勢分數、擺動方向、追蹤線方向或推動 K 棒等界定趨勢 → 計算參考線或參考區（短中長期 EMA／SMA／HMA／ZLEMA、錨定或滾動 VWAP 及其標準差帶、自適應基線內通道、布林中軌或下軌、回看最低價通道下界、斐波那契或推動幅度回撤位、訂單區、公平價值缺口、確認擺動低點區、時段開盤與前日前週高低）→ 做多：上升趨勢中最低價回落觸及或刺穿參考線（或其 ATR／百分比容差區），且收盤守在參考線之上或次根收回 → 做空：對稱，下降趨勢中最高價反彈觸及參考線；部分成員只做多或只做空，部分成員僅於已持多倉時作加碼用。
+- 可選濾網：
+  - F.trend_ma：收盤位於長期均線或 VWAP 同側作趨勢前提（約 31）。
+  - F.volume：放量或量大於前根（約 28）。
+  - F.flat：限空倉或單一持倉方向（約 18）。
+  - F.candle_dir：觸及棒須收陽或收高於前收（約 17）。
+  - F.slope：趨勢均線或參考線斜率向上（約 16）。
+  - F.htf：較高週期 EMA 或趨勢同向（約 14）。
+  - F.other：VWAP 當日穿越次數上限、風險上限、曾突破區間上界、kNN 或其他自訂否決條件（約 14）。
+  - F.session：限定交易時段（約 13）。
+  - F.rsi_band：RSI 或隨機值高於多方門檻或位於區間內（約 12）。
+  - F.adx_di：ADX 高於門檻且 DI 同向（約 11）。
+  - F.confirm_bar：觸及後須收過前根高點、強勢實體或以訊號棒高點停損單確認（約 11）。
+  - F.score：趨勢、結構或確認項目分數達門檻（約 10）。
+  - F.ma_stack：多條 EMA 依序排列（約 9）。
+  - F.band_pos：收盤位於回看區間折價半部或深度折價區（約 6）。
+  - F.osc_dir：MACD、OBV、差值指標等方向同向（約 6）。
+  - F.extension：均線乖離或距離不得過度延伸（約 6）。
+  - F.volatility：波動度或通道寬度達門檻（約 6）。
+  - F.cooldown：兩次進場間冷卻根數（約 6）。
+  - F.confirm：其他同向確認條件須成立（約 5）。
+  - F.wick：下影線比例達門檻或上影線上限（約 5）。
+  - F.daily_limit：每日交易次數上限（約 4）。
+  - F.swing_dir：最近擺動方向為上行或擺動低點未連續下降（約 4）。
+  - F.osc_cross：同根要求 RSI 上穿觸發值、短 EMA 上穿長 EMA 或 MACD 上穿訊號線（約 3）。
+  - F.efficiency：效率比判定趨勢強度（約 3）。
+  - F.trail_side：ATR 或樞紐追蹤線方向為多（約 3）。
+  - F.rearm：突破前高後才重新允許進場（約 3）。
+  - F.date：回測日期範圍（約 3）。
+  - F.near_level：觸及位須鄰近關鍵價位（約 2）。
+  - F.min_risk、F.min_rr、F.close_pos、F.prior_move、F.pattern、F.squeeze、F.divergence：停損距離下限、最低報酬風險比、收盤位置、前段漲幅、推動 K 棒形態、非擠壓、近期無反向背離（各約 1）。
+- 出場變體：
+  - X.tp_rr：停損距離乘報酬風險比停利（約 19）。
+  - X.stop_atr：進場價減 ATR 倍數停損（約 13）。
+  - X.stop_pct：固定百分比停損（約 13）。
+  - X.trailing_atr：ATR 追蹤停損（約 13）。
+  - X.other：自訂出場（特定型態獲利回吐、未定義止損止盈價等）（約 12）。
+  - X.trend_flip：趨勢前提翻轉或收盤反穿參考線出場（約 10）。
+  - X.stop_bar：訊號 K 棒低點停損（約 8）。
+  - X.trailing_ma：收盤跌破短期均線或 VWAP 追蹤出場（約 8）。
+  - X.tp_pct／X.tp_atr：固定百分比或 ATR 倍數停利（約 8／8）。
+  - X.time：持倉根數上限（約 8）。
+  - X.reverse_signal：反向訊號出場或反手（約 7）。
+  - X.stop_swing：回看最低價或擺動低點停損（約 5）。
+  - X.tp_multi：多段分批停利（約 5）。
+  - X.breakeven：達門檻後停損移至保本（約 5）。
+  - X.trailing_pct：百分比追蹤停損（約 4）。
+  - X.momentum_fade：分數或動能歸零出場（約 2）。
+  - X.band_opposite、X.divergence、X.indicator_cap、X.min_hold、X.session_end、X.stop_level、X.structure_break、X.tp_level、X.trailing_step：觸及對側通道、反向背離、指標過熱、最短持有、日終平倉、關鍵價位停損、結構破壞、價位停利、階梯追蹤（各約 1）。
+- 群內常見小異：
+  - 參考物：短期 EMA／長期 EMA／SMA／HMA／ZLEMA／Coral 線／錨定或滾動 VWAP 及標準差帶／自適應基線內通道／布林中軌或下軌／回看最低價通道下界／斐波那契或推動幅度回撤位／訂單區／公平價值缺口／確認擺動低點區／時段開盤與前日前週高低。
+  - 趨勢前提：快慢均線位置／多線排列／均線斜率／較高週期同向／趨勢分數／擺動方向／追蹤線方向／兩根推動 K 棒／交叉後持續根數。
+  - 觸及判定：最低價觸及並收盤守住／前根刺穿當根收回／收盤跌破後再上穿／回看期內曾觸及／進入參考區（缺口、回撤區）。
+  - 容差：無／ATR 倍數／固定百分比或步幅區。
+  - 用途：一般進場／已持多倉時加碼。
+
+## PB.TOUCH.pullback_state 順勢中回檔狀態
+- 核心邏輯：計算長期趨勢參考（長期 EMA／SMA、日線 EMA 與 MACD 柱）與短期參考線（短期 EMA、短均線、布林中軌）→ 做多：收盤高於長期參考（上升趨勢）且收盤不高於短期參考線的回檔「狀態」成立即進場，不要求觸及或收回事件 → 不做空（只做多）。
+- 可選濾網：
+  - F.osc_dir：MACD 柱為正或線高於訊號線、平滑 OBV 高於其均線（約 2）。
+  - F.htf：趨勢前提取自日線收盤與 EMA、MACD 柱（約 1）。
+  - F.trend_ma：收盤高於短長期 EMA 作趨勢前提（約 1）。
+  - F.rsi_band：RSI 高於門檻（約 1）。
+  - F.volume：成交量低於均量（量縮）作替代條件（約 1）。
+- 出場變體：
+  - X.tp_rr：停損距離乘盈虧比停利（約 2）。
+  - X.stop_atr：進場收盤減 ATR 倍數停損（約 1）。
+  - X.stop_swing：回看期低點或長期均線減 ATR 緩衝停損（約 1）。
+- 群內常見小異：
+  - 短期參考線：短期 EMA／短均線／布林中軌。
+  - 趨勢前提：本週期長均線位置／日線雙 EMA 位置加 MACD 柱。
+  - 附加確認：OBV 方向或量縮擇一／RSI 門檻與 MACD 同向。
+
+## TS.FLIP 追蹤停損線方向翻轉
+- 核心邏輯：計算只隨方向單向推進、方向切換時跳至對側的追蹤線（Supertrend、成交量加權 Supertrend、自適應乘數 Supertrend、拋物線 SAR、Range Filter、UT Bot／ATR 移動停損、Chandelier、HalfTrend、Trend Magic、EMA 中心 ATR 棘輪帶、ATR 步進中線、Andean 方向棘輪線）→ 做多：追蹤線方向由空翻多（收盤或最低價上穿追蹤線，或主指標多頭條件於有效期根數內新成立）→ 做空：對稱，由多翻空；部分成員只做多。
+- 可選濾網：
+  - F.volume：放量倍數或量能指標為多（約 16）。
+  - F.trend_ma：收盤高於長期均線或快線高於慢線（約 12）。
+  - F.adx_di：ADX 高於門檻、DI 同向或非盤整狀態（約 10）。
+  - F.rsi_band：RSI 位於門檻內或未超買（約 9）。
+  - F.other：kNN 分類同向、可選確認條件組、延遲進場窗口、做空禁止條件（約 8）。
+  - F.date：回測日期範圍（約 8）。
+  - F.volatility：ATR、Damiani 波動或區間波幅達門檻（約 7）。
+  - F.trail_side：其餘追蹤線或 Supertrend 同為多（約 6）。
+  - F.session：限定交易時段（約 6）。
+  - F.ma_stack：多條 EMA 依序排列（約 5）。
+  - F.osc_dir：MACD、動能柱、擠壓動能同向（約 5）。
+  - F.flat：限空倉或單一持倉（約 5）。
+  - F.score：趨勢或訊號品質分數達門檻（約 4）。
+  - F.cooldown：進場冷卻根數（約 4）。
+  - F.htf：較高週期 EMA 或趨勢同向（約 3）。
+  - F.daily_limit：每日交易次數上限（約 3）。
+  - F.rearm：再進場狀態或延續交易許可（約 3）。
+  - F.band_pos：收盤相對布林中線或開盤位於回看區間下端（約 2）。
+  - F.confirm：翻轉須延遲確認或附加品質確認（約 2）。
+  - F.slope：追蹤線連續上升或 EMA 斜率（約 2）。
+  - F.squeeze、F.extension、F.candle_dir：未處於壓縮區、距基準線 ATR 上限、收陽限制（各約 1）。
+  - 無濾網（約 3）。
+- 出場變體：
+  - X.stop_atr：ATR 倍數停損（約 13）。
+  - X.stop_pct：固定百分比或點數停損（約 12）。
+  - X.trend_flip：追蹤線反向翻轉出場（約 8）。
+  - X.tp_rr：報酬風險比停利（約 8）。
+  - X.tp_multi：多段分批停利（約 8）。
+  - X.reverse_signal：反向訊號反手（約 7）。
+  - X.tp_pct：固定百分比停利（約 7）。
+  - X.tp_atr：ATR 倍數停利（約 6）。
+  - X.other：多空量比、每日損益限制、未定義追蹤演算法等（約 5）。
+  - X.stop_swing：回看高低點停損（約 4）。
+  - X.trailing_atr：ATR 或追蹤線外推移動停損（約 4）。
+  - X.breakeven：達門檻後移至保本（約 4）。
+  - X.trailing_pct／X.trailing_step：百分比或階梯追蹤（約 2／2）。
+  - X.session_end：日終平倉（約 2）。
+  - X.trailing_ma、X.momentum_fade、X.indicator_cap、X.min_hold、X.time：布林中線追蹤、動能衰退、指標過熱、最短持有、持倉上限（各約 1）。
+- 群內常見小異：
+  - 追蹤線種類：Supertrend／成交量加權 Supertrend（中線 VWMA）／自適應乘數 Supertrend／拋物線 SAR／Range Filter／UT Bot ATR 移動停損／Chandelier／HalfTrend／Trend Magic（CCI 定向）／EMA 中心 ATR 帶／ATR 步進中線／Andean 方向棘輪線。
+  - 中線來源：HL2／收盤／VWMA／EMA／回看高低中點。
+  - 翻轉判定：方向值改變當根／收盤穿越追蹤線／最低價穿越追蹤線／多頭條件於有效期根數內成立。
+  - 組數：單組／多組 Supertrend 任一翻轉而其餘同向。
