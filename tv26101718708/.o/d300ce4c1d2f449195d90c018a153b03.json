@@ -1,0 +1,1 @@
+{"framework":"計算：看跌擺動＝前一根K線的high高於再前一根K線的high，且前一根K線的close低於再前一根K線的high\n計算：看漲擺動＝前一根K線的low低於再前一根K線的low，且前一根K線的close高於再前一根K線的low\n做多：看漲擺動\n做空：看跌擺動"}

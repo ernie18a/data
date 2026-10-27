@@ -1,0 +1,1 @@
+{"note":"做多：close > open，且 IBS = (close - low) / (high - low) × 100 ≥ 69（若 high = low，IBS = 50）。做空：close < open，且 IBS ≤ 31。"}
