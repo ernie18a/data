@@ -1,0 +1,1 @@
+令 MA_t 為最近 12 根 close 的算術平均。做多：close_t > MA_t 且 close_{t-1} ≤ MA_{t-1}。出場：close_t < MA_t 且 close_{t-1} ≥ MA_{t-1}。
