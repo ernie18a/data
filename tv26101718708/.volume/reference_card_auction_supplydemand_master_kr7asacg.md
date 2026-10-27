@@ -1,0 +1,2283 @@
+# Reference Card Auction + Supply/Demand Master
+
+- url: https://www.tradingview.com/script/kr7ASacg-Reference-Card-Auction-Supply-Demand-Master/
+- type: indicator
+- pine_id: PUB;c85b060ff6164cf386763e0ae9b68ab6
+- version: 1.0
+
+## Description
+
+Find your trend and zones with this having trend boxes created and zones marked that tells you where the market is headed and where you can find potential trading areas.
+
+## Source Code
+
+````pine
+//@version=6
+indicator("Reference Card Auction + Supply/Demand Master", "RC Auction S/D Master", overlay=true, max_boxes_count=220, max_labels_count=420, max_lines_count=360)
+
+// Built from the two reference cards:
+// 1. HTF curve, 2. ITF trend, 3. LTF zone, 4. auction trigger, 5. risk logic.
+// TradingView cannot read the DOM or true order-flow absorption, so the auction
+// pieces are modeled with value rejection, zone sweeps, range acceptance, candle
+// close location, and relative volume.
+
+//==============================================================================
+// Inputs
+//==============================================================================
+groupQuick = "Quick Setup"
+purpose = input.string("Auto Chart", "Purpose / Timeframe Preset", options=["Auto Chart", "Custom", "Scalping", "Day Trading", "Hourly", "Daily", "Swing"], group=groupQuick)
+mode = input.string("Balanced", "Signal Mode", options=["Strict", "Balanced", "Early"], group=groupQuick)
+showZones = input.bool(true, "Show Supply/Demand Zones", group=groupQuick)
+showDashboard = input.bool(true, "Show Reference Card Dashboard", group=groupQuick)
+showSignals = input.bool(true, "Show Entry Labels", group=groupQuick)
+showWatchMarkers = input.bool(false, "Show WATCH Markers", group=groupQuick)
+
+groupContext = "1. HTF Curve + ITF Trend"
+curveTf = input.timeframe("240", "Custom HTF Curve Timeframe", group=groupContext)
+curveLookback = input.int(80, "HTF Curve Lookback", minval=20, group=groupContext)
+trendTf = input.timeframe("60", "Custom ITF Trend Timeframe", group=groupContext)
+fastLen = input.int(21, "ITF Fast EMA", minval=2, group=groupContext)
+slowLen = input.int(55, "ITF Slow EMA", minval=3, group=groupContext)
+showTrendBoxes = input.bool(true, "Show Trend Boxes", group=groupContext)
+showTrendLines = input.bool(true, "Show Trend Lines", group=groupContext)
+maxTrendBoxes = input.int(20, "Show Last Trend Boxes", minval=1, maxval=50, group=groupContext)
+showDevelopingTrendBox = input.bool(true, "Show Current Developing Trend Box", group=groupContext)
+trendStructureMode = input.string("Auto", "Trend Box / Line Structure", options=["Auto", "Manual"], group=groupContext)
+autoTrendSensitivity = input.string("Balanced", "Auto Trend Sensitivity", options=["Tight", "Balanced", "Wide"], group=groupContext)
+trendBoxSwingLen = input.int(5, "Manual Trend Box Swing Pivot Length", minval=2, maxval=30, group=groupContext)
+trendBoxFillTransparency = input.int(82, "Trend Box Fill Transparency", minval=50, maxval=95, group=groupContext)
+trendBoxBorderTransparency = input.int(0, "Trend Box Border Transparency", minval=0, maxval=90, group=groupContext)
+trendBoxAtrPadding = input.float(0.15, "Trend Box Wick Padding ATR", minval=0.0, maxval=2.0, step=0.05, group=groupContext)
+
+groupZones = "2. LTF Supply/Demand Zone"
+maxVisibleZones = input.int(10, "Show Last Active Zones Per Side", minval=1, maxval=20, group=groupZones)
+deleteBrokenZones = input.bool(true, "Remove Broken / Violated Zones", group=groupZones)
+showTouchedZones = input.bool(false, "Show Touched / Mitigated Zones", group=groupZones)
+showReactedZones = input.bool(true, "Show Reacted / Confirmed Zones", group=groupZones)
+keepHistoricalZones = input.bool(true, "Keep Far / Historical Zones", group=groupZones)
+historicalZoneSlots = input.int(16, "Historical Zone Storage Per Side", minval=6, maxval=30, group=groupZones)
+prioritizeTrueZones = input.bool(true, "Prioritize Highest-Truth Zones", group=groupZones)
+zoneCandleSource = input.string("Chart", "Zone Detection Candle Source", options=["Chart", "Regular", "Heikin Ashi"], group=groupZones)
+pivotLeft = input.int(3, "Zone Pre-Base Context Bars", minval=2, maxval=6, group=groupZones)
+pivotRight = input.int(3, "Zone Departure Scan Bars", minval=1, maxval=4, group=groupZones)
+atrLen = input.int(14, "ATR Length", minval=2, group=groupZones)
+baseMaxBars = input.int(6, "Max Base Candles", minval=1, maxval=12, group=groupZones)
+baseRangeAtr = input.float(1.15, "Base Candle Max ATR", minval=0.2, step=0.05, group=groupZones)
+departureAtr = input.float(1.0, "Clean Departure ATR", minval=0.25, step=0.05, group=groupZones)
+nearZoneAtr = input.float(0.45, "Near Zone Distance ATR", minval=0.05, step=0.05, group=groupZones)
+maxZoneAge = input.int(0, "Zone Expires After Bars (0 = Off)", minval=0, group=groupZones)
+zoneForwardBars = input.int(40, "Zone Forward Bars", minval=0, maxval=500, group=groupZones)
+useZoneVolumeProxy = input.bool(true, "Use Volume / Pressure Proxy", group=groupZones)
+zoneVolumeScoreWeight = input.float(0.45, "Volume / Pressure Score Weight", minval=0.0, maxval=2.0, step=0.05, group=groupZones)
+useZoneFootprintProxy = input.bool(true, "Use Footprint / Delta Proxy", group=groupZones)
+zoneFootprintScoreWeight = input.float(0.40, "Footprint / Delta Score Weight", minval=0.0, maxval=2.0, step=0.05, group=groupZones)
+zoneReactionConfirmBars = input.int(4, "Reaction Confirm Bars", minval=1, maxval=20, group=groupZones)
+zoneReactionConfirmAtr = input.float(0.35, "Reaction Confirm Move ATR", minval=0.05, maxval=3.0, step=0.05, group=groupZones)
+
+groupZoneVisuals = "2A. Zone DOM + Labels"
+showZoneDomProxy = input.bool(true, "Show Zone DOM Proxy", group=groupZoneVisuals)
+showZonePressureBubble = input.bool(true, "Show Zone Pressure Bubble", group=groupZoneVisuals)
+zoneDomVisualMode = input.string("Compact", "Zone DOM Visual Mode", options=["Compact", "Full"], group=groupZoneVisuals)
+zoneBubbleOffsetAtr = input.float(0.18, "Zone Bubble Offset ATR", minval=0.0, step=0.05, group=groupZoneVisuals)
+zoneStructureLabelSizeText = input.string("Normal", "Zone Structure Label Size", options=["Tiny", "Small", "Normal", "Large", "Huge"], group=groupZoneVisuals)
+zoneBubbleLabelSizeText = input.string("Large", "Zone Bubble Size", options=["Tiny", "Small", "Normal", "Large", "Huge"], group=groupZoneVisuals)
+
+groupZoneHeat = "2B. Synthetic Liquidity Heatmap"
+showSyntheticHeatmap = input.bool(true, "Show Synthetic Liquidity Heatmap", group=groupZoneHeat)
+syntheticHeatLookback = input.int(50, "Liquidity Lookback Bars", minval=10, maxval=500, group=groupZoneHeat)
+syntheticHeatBandCount = input.int(4, "Max Heat Zones Per Side", minval=2, maxval=6, group=groupZoneHeat)
+syntheticHeatBandAtr = input.float(0.32, "Heat Core Padding ATR", minval=0.05, maxval=2.0, step=0.05, group=groupZoneHeat)
+syntheticHeatStepAtr = input.float(0.38, "Heat Core Depth Weight", minval=0.05, maxval=2.0, step=0.05, group=groupZoneHeat)
+syntheticHeatForwardBars = input.int(18, "Heatmap Forward Bars", minval=3, maxval=120, group=groupZoneHeat)
+syntheticHeatZoneBoost = input.float(0.35, "Zone Boost Weight", minval=0.0, maxval=1.0, step=0.05, group=groupZoneHeat)
+
+groupAuction = "3. Auction Trigger"
+useVwap = input.bool(true, "Use VWAP Fair Value", group=groupAuction)
+valueLen = input.int(50, "Value Band Length", minval=10, group=groupAuction)
+valueMult = input.float(1.0, "Value Band Width", minval=0.2, step=0.05, group=groupAuction)
+rangeSession = input.session("0830-0845", "Opening / Initial Range", group=groupAuction)
+useRangeAcceptance = input.bool(true, "Use Breakout Acceptance", group=groupAuction)
+acceptBars = input.int(2, "Bars Holding Outside Range", minval=1, maxval=5, group=groupAuction)
+volLen = input.int(20, "Participation Volume Average", minval=2, group=groupAuction)
+volMult = input.float(1.05, "Participation Volume Mult", minval=0.2, step=0.05, group=groupAuction)
+closePower = input.float(0.60, "Rejection Close Strength", minval=0.50, maxval=0.95, step=0.05, group=groupAuction)
+
+groupRisk = "4. Risk + Score"
+minScore = input.float(7.0, "Minimum Trade Score", minval=1.0, maxval=10.0, step=0.5, group=groupRisk)
+proximalScore = input.float(8.5, "Proximal Entry Score", minval=1.0, maxval=10.0, step=0.5, group=groupRisk)
+minRr = input.float(3.0, "Preferred Minimum R:R", minval=0.5, step=0.25, group=groupRisk)
+stopBufferAtr = input.float(0.20, "Stop Buffer ATR", minval=0.0, step=0.05, group=groupRisk)
+
+groupFilters = "5. No Trade Filters"
+requireClosedCandle = input.bool(true, "Only Signal On Closed Candle", group=groupFilters)
+requireTrendAlignment = input.bool(true, "Block Counter-Trend Trades", group=groupFilters)
+requireStructureBreak = input.bool(true, "Require Reclaim / Structure Break", group=groupFilters)
+requireMatchingZone = input.bool(true, "Require Matching Supply/Demand Zone", group=groupFilters)
+avoidMiddleChop = input.bool(true, "Block Middle Chop Inside Value", group=groupFilters)
+blockOpposingZone = input.bool(true, "Block If Opposing Zone Too Close", group=groupFilters)
+opposingAtr = input.float(0.75, "Opposing Zone Distance ATR", minval=0.1, step=0.05, group=groupFilters)
+maxChaseAtr = input.float(2.0, "Block Oversized Chase Candle ATR", minval=0.5, step=0.1, group=groupFilters)
+
+//==============================================================================
+// Auto timeframe mapping
+//==============================================================================
+f_auto_curve_tf(float tfSeconds) =>
+    tfSeconds <= 60 ? "60" :
+     tfSeconds <= 300 ? "240" :
+     tfSeconds <= 900 ? "D" :
+     tfSeconds <= 3600 ? "W" :
+     tfSeconds <= 14400 ? "M" :
+     tfSeconds <= 86400 ? "3M" :
+     "12M"
+
+f_auto_trend_tf(float tfSeconds) =>
+    tfSeconds <= 60 ? "15" :
+     tfSeconds <= 300 ? "60" :
+     tfSeconds <= 900 ? "240" :
+     tfSeconds <= 3600 ? "D" :
+     tfSeconds <= 14400 ? "W" :
+     tfSeconds <= 86400 ? "M" :
+     "3M"
+
+f_auto_trend_swing_len(float tfSeconds, string sensitivity) =>
+    int baseLen = tfSeconds <= 60 ? 4 :
+     tfSeconds <= 300 ? 5 :
+     tfSeconds <= 900 ? 6 :
+     tfSeconds <= 3600 ? 7 :
+     tfSeconds <= 14400 ? 8 :
+     tfSeconds <= 86400 ? 10 :
+     tfSeconds <= 604800 ? 12 : 14
+    int adjust = sensitivity == "Tight" ? -1 : sensitivity == "Wide" ? 2 : 0
+    int(math.max(2, math.min(baseLen + adjust, 30)))
+
+f_auto_reversal_atr_mult(float tfSeconds, string sensitivity) =>
+    float baseMult = tfSeconds <= 60 ? 1.08 :
+     tfSeconds <= 180 ? 1.14 :
+     tfSeconds <= 300 ? 1.22 :
+     tfSeconds <= 900 ? 1.34 :
+     tfSeconds <= 1800 ? 1.46 :
+     tfSeconds <= 3600 ? 1.58 :
+     tfSeconds <= 14400 ? 1.82 :
+     tfSeconds <= 86400 ? 2.08 :
+     tfSeconds <= 604800 ? 2.45 : 2.90
+    float adjust = sensitivity == "Tight" ? -0.14 : sensitivity == "Wide" ? 0.22 : 0.0
+    math.max(0.35, baseMult + adjust)
+
+f_auto_min_leg_bars(float tfSeconds, string sensitivity) =>
+    int baseBars = tfSeconds <= 60 ? 3 :
+     tfSeconds <= 180 ? 3 :
+     tfSeconds <= 300 ? 4 :
+     tfSeconds <= 900 ? 4 :
+     tfSeconds <= 1800 ? 5 :
+     tfSeconds <= 3600 ? 5 :
+     tfSeconds <= 14400 ? 6 :
+     tfSeconds <= 86400 ? 6 :
+     7
+    int adjust = sensitivity == "Tight" ? -1 : sensitivity == "Wide" ? 1 : 0
+    int(math.max(2, math.min(baseBars + adjust, 12)))
+
+f_auto_min_leg_atr_mult(float tfSeconds, string sensitivity) =>
+    float baseMult = tfSeconds <= 60 ? 1.22 :
+     tfSeconds <= 180 ? 1.28 :
+     tfSeconds <= 300 ? 1.34 :
+     tfSeconds <= 900 ? 1.46 :
+     tfSeconds <= 1800 ? 1.56 :
+     tfSeconds <= 3600 ? 1.66 :
+     tfSeconds <= 14400 ? 1.82 :
+     tfSeconds <= 86400 ? 2.00 :
+     2.25
+    float adjust = sensitivity == "Tight" ? -0.10 : sensitivity == "Wide" ? 0.14 : 0.0
+    math.max(0.60, baseMult + adjust)
+
+//==============================================================================
+// Mode tuning
+//==============================================================================
+scoreNeed = mode == "Strict" ? minScore + 0.75 : mode == "Early" ? minScore - 0.75 : minScore
+volumeNeed = mode == "Strict" ? volMult * 1.15 : mode == "Early" ? volMult * 0.85 : volMult
+acceptNeed = mode == "Early" ? 1 : acceptBars
+chartTfSeconds = nz(timeframe.in_seconds(), 60)
+autoCurveTf = f_auto_curve_tf(chartTfSeconds)
+autoTrendTf = f_auto_trend_tf(chartTfSeconds)
+activeCurveTf = purpose == "Auto Chart" ? autoCurveTf : purpose == "Scalping" ? "60" : purpose == "Day Trading" ? "240" : purpose == "Hourly" ? "D" : purpose == "Daily" ? "W" : purpose == "Swing" ? "M" : curveTf
+activeTrendTf = purpose == "Auto Chart" ? autoTrendTf : purpose == "Scalping" ? "15" : purpose == "Day Trading" ? "60" : purpose == "Hourly" ? "240" : purpose == "Daily" ? "D" : purpose == "Swing" ? "W" : trendTf
+baseTrendBoxSwingLen = f_auto_trend_swing_len(chartTfSeconds, autoTrendSensitivity)
+baseTrendReversalAtrMult = f_auto_reversal_atr_mult(chartTfSeconds, autoTrendSensitivity)
+baseTrendMinLegBars = f_auto_min_leg_bars(chartTfSeconds, autoTrendSensitivity)
+baseTrendMinLegAtrMult = f_auto_min_leg_atr_mult(chartTfSeconds, autoTrendSensitivity)
+bool zoneUseChartCandles = zoneCandleSource == "Chart"
+bool zoneUseHaCandles = zoneCandleSource == "Heikin Ashi"
+string zoneDetectionTicker = zoneUseHaCandles ? ticker.heikinashi(syminfo.tickerid) : syminfo.tickerid
+float zoneCalcOpen = na
+float zoneCalcHigh = na
+float zoneCalcLow = na
+float zoneCalcClose = na
+if zoneUseChartCandles
+    zoneCalcOpen := open
+    zoneCalcHigh := high
+    zoneCalcLow := low
+    zoneCalcClose := close
+else
+    [zoneCalcOpen, zoneCalcHigh, zoneCalcLow, zoneCalcClose] = request.security(zoneDetectionTicker, timeframe.period, [open, high, low, close], barmerge.gaps_off, barmerge.lookahead_off)
+
+//==============================================================================
+// Helpers
+//==============================================================================
+f_clamp(float value, float lowLimit, float highLimit) =>
+    math.min(math.max(value, lowLimit), highLimit)
+
+f_label_size(string sizeText) =>
+    sizeText == "Tiny" ? size.tiny : sizeText == "Small" ? size.small : sizeText == "Large" ? size.large : sizeText == "Huge" ? size.huge : size.normal
+
+f_zone_base_stats(int startOffset, int baseBars, float maxCandleRange, float maxClusterRange) =>
+    bool valid = baseBars > 0
+    float baseHigh = na
+    float baseLow = na
+    float bodyHigh = na
+    float bodyLow = na
+    float decisionHigh = na
+    float decisionLow = na
+    float decisionBodyHigh = na
+    float decisionBodyLow = na
+    float totalBody = 0.0
+    float newestBodyMid = na
+    float oldestBodyMid = na
+    bool smoothZoneCandles = zoneCandleSource != "Regular"
+    int decisionBars = math.min(baseBars, smoothZoneCandles ? 2 : 3)
+    for i = 0 to 11
+        if i < baseBars
+            int idx = startOffset + i
+            float candleHigh = zoneCalcHigh[idx]
+            float candleLow = zoneCalcLow[idx]
+            float candleRange = candleHigh - candleLow
+            float candleBody = math.abs(zoneCalcClose[idx] - zoneCalcOpen[idx])
+            float candleBodyHigh = math.max(zoneCalcOpen[idx], zoneCalcClose[idx])
+            float candleBodyLow = math.min(zoneCalcOpen[idx], zoneCalcClose[idx])
+            float candleBodyMid = (zoneCalcOpen[idx] + zoneCalcClose[idx]) * 0.5
+            valid := valid and candleRange <= maxCandleRange
+            baseHigh := na(baseHigh) ? candleHigh : math.max(baseHigh, candleHigh)
+            baseLow := na(baseLow) ? candleLow : math.min(baseLow, candleLow)
+            bodyHigh := na(bodyHigh) ? candleBodyHigh : math.max(bodyHigh, candleBodyHigh)
+            bodyLow := na(bodyLow) ? candleBodyLow : math.min(bodyLow, candleBodyLow)
+            if i < decisionBars
+                decisionHigh := na(decisionHigh) ? candleHigh : math.max(decisionHigh, candleHigh)
+                decisionLow := na(decisionLow) ? candleLow : math.min(decisionLow, candleLow)
+                decisionBodyHigh := na(decisionBodyHigh) ? candleBodyHigh : math.max(decisionBodyHigh, candleBodyHigh)
+                decisionBodyLow := na(decisionBodyLow) ? candleBodyLow : math.min(decisionBodyLow, candleBodyLow)
+            totalBody += candleBody
+            newestBodyMid := i == 0 ? candleBodyMid : newestBodyMid
+            oldestBodyMid := i == baseBars - 1 ? candleBodyMid : oldestBodyMid
+    float clusterRange = not na(baseHigh) and not na(baseLow) ? baseHigh - baseLow : na
+    float bodySpan = not na(bodyHigh) and not na(bodyLow) ? bodyHigh - bodyLow : na
+    float netDrift = not na(newestBodyMid) and not na(oldestBodyMid) ? math.abs(newestBodyMid - oldestBodyMid) : na
+    float bodySpanLimit = smoothZoneCandles ? 0.94 : 0.85
+    float totalBodyLimit = smoothZoneCandles ? 0.98 : 0.80
+    float driftLimit = smoothZoneCandles ? 0.70 : 0.55
+    valid := valid and not na(clusterRange) and clusterRange <= maxClusterRange and not na(bodySpan) and bodySpan <= clusterRange * bodySpanLimit and totalBody <= maxClusterRange * math.max(totalBodyLimit, baseBars * 0.22) and not na(netDrift) and netDrift <= maxClusterRange * driftLimit
+    valid := valid and not na(decisionHigh) and not na(decisionLow) and not na(decisionBodyHigh) and not na(decisionBodyLow)
+    [valid, baseHigh, baseLow, bodyHigh, bodyLow, decisionHigh, decisionLow, decisionBodyHigh, decisionBodyLow, clusterRange, bodySpan, netDrift]
+
+f_zone_origin_stats(int startOffset, int originBars) =>
+    float originHigh = na
+    float originLow = na
+    float originBodyHigh = na
+    float originBodyLow = na
+    for i = 0 to 2
+        if i < originBars
+            int idx = startOffset + i
+            float candleHigh = zoneCalcHigh[idx]
+            float candleLow = zoneCalcLow[idx]
+            float candleBodyHigh = math.max(zoneCalcOpen[idx], zoneCalcClose[idx])
+            float candleBodyLow = math.min(zoneCalcOpen[idx], zoneCalcClose[idx])
+            originHigh := na(originHigh) ? candleHigh : math.max(originHigh, candleHigh)
+            originLow := na(originLow) ? candleLow : math.min(originLow, candleLow)
+            originBodyHigh := na(originBodyHigh) ? candleBodyHigh : math.max(originBodyHigh, candleBodyHigh)
+            originBodyLow := na(originBodyLow) ? candleBodyLow : math.min(originBodyLow, candleBodyLow)
+    float originRange = not na(originHigh) and not na(originLow) ? originHigh - originLow : na
+    float originBodySpan = not na(originBodyHigh) and not na(originBodyLow) ? originBodyHigh - originBodyLow : na
+    [originHigh, originLow, originBodyHigh, originBodyLow, originRange, originBodySpan]
+
+f_zone_departure_stats(int departureBars) =>
+    float moveHigh = na
+    float moveLow = na
+    float closeHigh = na
+    float closeLow = na
+    float maxRange = 0.0
+    float maxBody = 0.0
+    float oldestOpen = na
+    float newestClose = na
+    for i = 0 to 5
+        if i < departureBars
+            moveHigh := na(moveHigh) ? zoneCalcHigh[i] : math.max(moveHigh, zoneCalcHigh[i])
+            moveLow := na(moveLow) ? zoneCalcLow[i] : math.min(moveLow, zoneCalcLow[i])
+            closeHigh := na(closeHigh) ? zoneCalcClose[i] : math.max(closeHigh, zoneCalcClose[i])
+            closeLow := na(closeLow) ? zoneCalcClose[i] : math.min(closeLow, zoneCalcClose[i])
+            maxRange := math.max(maxRange, zoneCalcHigh[i] - zoneCalcLow[i])
+            maxBody := math.max(maxBody, math.abs(zoneCalcClose[i] - zoneCalcOpen[i]))
+            oldestOpen := i == departureBars - 1 ? zoneCalcOpen[i] : oldestOpen
+            newestClose := i == 0 ? zoneCalcClose[i] : newestClose
+    float netMove = not na(newestClose) and not na(oldestOpen) ? newestClose - oldestOpen : na
+    [moveHigh, moveLow, closeHigh, closeLow, maxRange, maxBody, netMove]
+
+// Pine cannot access the live DOM/order book, so this models it with chart-side
+// proxies: concentrated base volume plus directional departure pressure.
+f_zone_volume_proxy_stats(int baseStartOffset, int baseBars, int departureBars, float clusterRange, float baseAtr) =>
+    float baseVolume = 0.0
+    float baseRefVolume = 0.0
+    float baseSignedVolume = 0.0
+    float departureVolume = 0.0
+    float departureRefVolume = 0.0
+    float departureSignedVolume = 0.0
+    for i = 0 to 11
+        if i < baseBars
+            int idx = baseStartOffset + i
+            float candleRange = math.max(zoneCalcHigh[idx] - zoneCalcLow[idx], syminfo.mintick)
+            float candleBias = (zoneCalcClose[idx] - zoneCalcOpen[idx]) / candleRange
+            float refVolume = nz(ta.sma(volume, volLen)[idx], volume[idx])
+            baseVolume += volume[idx]
+            baseRefVolume += refVolume
+            baseSignedVolume += candleBias * volume[idx]
+    for i = 0 to 5
+        if i < departureBars
+            float candleRange = math.max(zoneCalcHigh[i] - zoneCalcLow[i], syminfo.mintick)
+            float candleBias = (zoneCalcClose[i] - zoneCalcOpen[i]) / candleRange
+            float refVolume = nz(ta.sma(volume, volLen)[i], volume[i])
+            departureVolume += volume[i]
+            departureRefVolume += refVolume
+            departureSignedVolume += candleBias * volume[i]
+    float baseVolRatio = baseRefVolume > 0 ? baseVolume / baseRefVolume : 1.0
+    float departureVolRatio = departureRefVolume > 0 ? departureVolume / departureRefVolume : 1.0
+    float basePressureBias = baseVolume > 0 ? baseSignedVolume / baseVolume : 0.0
+    float departurePressureBias = departureVolume > 0 ? departureSignedVolume / departureVolume : 0.0
+    float baseTightness = math.min(baseAtr / math.max(clusterRange, syminfo.mintick), 3.0)
+    float absorptionProxy = baseVolRatio * baseTightness
+    [baseVolRatio, departureVolRatio, basePressureBias, departurePressureBias, absorptionProxy]
+
+f_zone_delta_proxy_stats(bool isDemand, int baseStartOffset, int baseBars, int departureBars, float baseHigh, float baseLow, float clusterRange) =>
+    float baseDelta = 0.0
+    float departureDelta = 0.0
+    float totalVolume = 0.0
+    float absorptionSupport = 0.0
+    float departureSupport = 0.0
+    float opposingPressure = 0.0
+    for i = 0 to 11
+        if i < baseBars
+            int idx = baseStartOffset + i
+            float candleHigh = zoneCalcHigh[idx]
+            float candleLow = zoneCalcLow[idx]
+            float candleOpen = zoneCalcOpen[idx]
+            float candleClose = zoneCalcClose[idx]
+            float candleRange = math.max(candleHigh - candleLow, syminfo.mintick)
+            float closeLocation = (candleClose - candleLow) / candleRange
+            float bodyBias = (candleClose - candleOpen) / candleRange
+            float closeBias = (closeLocation - 0.5) * 2.0
+            float signedFrac = f_clamp(bodyBias * 0.60 + closeBias * 0.40, -1.0, 1.0)
+            float syntheticDelta = volume[idx] * signedFrac
+            baseDelta += syntheticDelta
+            totalVolume += volume[idx]
+            if isDemand
+                bool absorbedSell = syntheticDelta < 0 and candleClose > baseLow + clusterRange * 0.20
+                absorptionSupport += absorbedSell ? math.abs(syntheticDelta) : math.max(syntheticDelta, 0.0) * 0.15
+                opposingPressure += math.max(syntheticDelta, 0.0) * 0.20
+            else
+                bool absorbedBuy = syntheticDelta > 0 and candleClose < baseHigh - clusterRange * 0.20
+                absorptionSupport += absorbedBuy ? math.abs(syntheticDelta) : math.max(-syntheticDelta, 0.0) * 0.15
+                opposingPressure += math.max(-syntheticDelta, 0.0) * 0.20
+    for i = 0 to 5
+        if i < departureBars
+            float candleHigh = zoneCalcHigh[i]
+            float candleLow = zoneCalcLow[i]
+            float candleOpen = zoneCalcOpen[i]
+            float candleClose = zoneCalcClose[i]
+            float candleRange = math.max(candleHigh - candleLow, syminfo.mintick)
+            float closeLocation = (candleClose - candleLow) / candleRange
+            float bodyBias = (candleClose - candleOpen) / candleRange
+            float closeBias = (closeLocation - 0.5) * 2.0
+            float signedFrac = f_clamp(bodyBias * 0.55 + closeBias * 0.45, -1.0, 1.0)
+            float syntheticDelta = volume[i] * signedFrac
+            departureDelta += syntheticDelta
+            totalVolume += volume[i]
+            if isDemand
+                departureSupport += math.max(syntheticDelta, 0.0)
+                opposingPressure += math.max(-syntheticDelta, 0.0)
+            else
+                departureSupport += math.max(-syntheticDelta, 0.0)
+                opposingPressure += math.max(syntheticDelta, 0.0)
+    float totalDelta = baseDelta + departureDelta
+    float supportiveRatio = totalVolume > 0 ? (departureSupport + absorptionSupport * 0.45) / totalVolume : 0.0
+    float opposingRatio = totalVolume > 0 ? opposingPressure / totalVolume : 0.0
+    float deltaStrengthNorm = f_clamp((supportiveRatio - opposingRatio * 0.45) / 0.26, 0.0, 1.0)
+    float departureDeltaNorm = totalVolume > 0 ? f_clamp((departureSupport / totalVolume) / 0.22, 0.0, 1.0) : 0.0
+    float absorptionDeltaNorm = totalVolume > 0 ? f_clamp((absorptionSupport / totalVolume) / 0.16, 0.0, 1.0) : 0.0
+    [totalDelta, deltaStrengthNorm, departureDeltaNorm, absorptionDeltaNorm]
+
+// Pine cannot read real footprint or delta, so this approximates it with:
+// 1) where base volume clusters, 2) whether opposing pressure gets absorbed,
+// 3) wick/failed-break rejection in the base, and 4) how sponsored the departure is.
+f_zone_footprint_proxy_score(bool isDemand, int baseStartOffset, int baseBars, int departureBars, float baseHigh, float baseLow, float clusterRange) =>
+    float baseMid = baseLow + clusterRange * 0.5
+    float favoredHalfVolume = 0.0
+    float opposingHalfVolume = 0.0
+    float absorptionHits = 0.0
+    float wickRejectHits = 0.0
+    float failedBreakHits = 0.0
+    for i = 0 to 11
+        if i < baseBars
+            int idx = baseStartOffset + i
+            float candleHigh = zoneCalcHigh[idx]
+            float candleLow = zoneCalcLow[idx]
+            float candleOpen = zoneCalcOpen[idx]
+            float candleClose = zoneCalcClose[idx]
+            float candleRange = math.max(candleHigh - candleLow, syminfo.mintick)
+            float refVolume = nz(ta.sma(volume, volLen)[idx], volume[idx])
+            float volRatio = refVolume > 0 ? volume[idx] / refVolume : 1.0
+            float bias = (candleClose - candleOpen) / candleRange
+            float lowerOverlap = math.max(math.min(candleHigh, baseMid) - math.max(candleLow, baseLow), 0.0) / candleRange
+            float upperOverlap = math.max(math.min(candleHigh, baseHigh) - math.max(candleLow, baseMid), 0.0) / candleRange
+            float lowerWickPct = (math.min(candleOpen, candleClose) - candleLow) / candleRange
+            float upperWickPct = (candleHigh - math.max(candleOpen, candleClose)) / candleRange
+            favoredHalfVolume += volume[idx] * (isDemand ? lowerOverlap : upperOverlap)
+            opposingHalfVolume += volume[idx] * (isDemand ? upperOverlap : lowerOverlap)
+            if isDemand
+                absorptionHits += bias < -0.05 and candleClose > baseLow + clusterRange * 0.22 ? math.min((-bias) * volRatio, 1.5) : 0.0
+                wickRejectHits += lowerWickPct >= 0.28 and candleClose >= candleOpen ? math.min(volRatio * (0.70 + lowerWickPct), 1.6) : 0.0
+                failedBreakHits += candleLow < baseLow + clusterRange * 0.08 and candleClose > baseLow + clusterRange * 0.18 ? math.min(volRatio * 1.10, 1.7) : 0.0
+            else
+                absorptionHits += bias > 0.05 and candleClose < baseHigh - clusterRange * 0.22 ? math.min(bias * volRatio, 1.5) : 0.0
+                wickRejectHits += upperWickPct >= 0.28 and candleClose <= candleOpen ? math.min(volRatio * (0.70 + upperWickPct), 1.6) : 0.0
+                failedBreakHits += candleHigh > baseHigh - clusterRange * 0.08 and candleClose < baseHigh - clusterRange * 0.18 ? math.min(volRatio * 1.10, 1.7) : 0.0
+    float halfVolumeTotal = favoredHalfVolume + opposingHalfVolume
+    float clusterShare = halfVolumeTotal > 0 ? favoredHalfVolume / halfVolumeTotal : 0.5
+    float clusterScore = f_clamp((clusterShare - 0.48) / 0.24, 0.0, 1.0)
+    float absorptionScore = f_clamp(absorptionHits / math.max(baseBars * 0.65, 1.0), 0.0, 1.0) * 0.48 + f_clamp(wickRejectHits / math.max(baseBars * 0.55, 1.0), 0.0, 1.0) * 0.30 + f_clamp(failedBreakHits / math.max(baseBars * 0.45, 1.0), 0.0, 1.0) * 0.22
+    float departureSponsorRaw = 0.0
+    float departureImbalanceHits = 0.0
+    float departureLingerOverlap = 0.0
+    for i = 0 to 5
+        if i < departureBars
+            float candleHigh = zoneCalcHigh[i]
+            float candleLow = zoneCalcLow[i]
+            float candleOpen = zoneCalcOpen[i]
+            float candleClose = zoneCalcClose[i]
+            float candleRange = math.max(candleHigh - candleLow, syminfo.mintick)
+            float refVolume = nz(ta.sma(volume, volLen)[i], volume[i])
+            float volRatio = refVolume > 0 ? volume[i] / refVolume : 1.0
+            float bias = (candleClose - candleOpen) / candleRange
+            float closeLocation = (candleClose - candleLow) / candleRange
+            float directionalBias = isDemand ? math.max(bias, 0.0) : math.max(-bias, 0.0)
+            float closeStrength = isDemand ? f_clamp((closeLocation - 0.52) / 0.36, 0.0, 1.0) : f_clamp(((1.0 - closeLocation) - 0.52) / 0.36, 0.0, 1.0)
+            float overlap = math.max(math.min(candleHigh, baseHigh) - math.max(candleLow, baseLow), 0.0) / candleRange
+            departureSponsorRaw += directionalBias * 0.60 + f_clamp((volRatio - 0.90) / 0.80, 0.0, 1.0) * 0.25 + closeStrength * 0.15
+            departureImbalanceHits += directionalBias >= 0.35 and closeStrength >= 0.55 and volRatio >= 0.95 ? 1.0 : 0.0
+            departureLingerOverlap += overlap
+    float sponsorScore = f_clamp(departureSponsorRaw / math.max(departureBars, 1), 0.0, 1.0)
+    float imbalanceScore = f_clamp(departureImbalanceHits / math.max(math.min(departureBars, 3), 1), 0.0, 1.0)
+    float cleanLeaveScore = 1.0 - f_clamp(departureLingerOverlap / math.max(departureBars * 0.85, 1.0), 0.0, 1.0)
+    float footprintNorm = clusterScore * 0.28 + absorptionScore * 0.32 + sponsorScore * 0.24 + imbalanceScore * 0.10 + cleanLeaveScore * 0.06
+    [f_clamp(footprintNorm * 100.0, 0.0, 100.0), clusterScore * 100.0, absorptionScore * 100.0, sponsorScore * 100.0]
+
+f_zone_dom_score(float absorptionProxy, float departureVolRatio, float departurePressureBias, float basePressureBias, bool isDemand) =>
+    float directionalPressure = isDemand ? math.max(departurePressureBias, 0.0) : math.max(-departurePressureBias, 0.0)
+    float opposingBasePressure = isDemand ? math.max(-basePressureBias, 0.0) : math.max(basePressureBias, 0.0)
+    f_clamp((absorptionProxy - 0.80) * 38.0 + (departureVolRatio - 0.90) * 26.0 + directionalPressure * 62.0 + opposingBasePressure * 18.0, 0.0, 100.0)
+
+f_zone_rejection_score(bool isDemand, float domScore, float zoneStrength, float zoneTime, float zoneQuality, int zoneTests, bool zoneBroken, bool zoneReversal, bool zoneFresh, int trendBias, int curveBias, bool useValueContext, float closePrice, float currentValueHigh, float currentValueLow) =>
+    float domNorm = f_clamp(domScore / 100.0, 0.0, 1.0)
+    float strengthNorm = f_clamp(zoneStrength / 2.0, 0.0, 1.0)
+    float timeNorm = f_clamp(zoneTime, 0.0, 1.0)
+    float qualityNorm = f_clamp((zoneQuality + 0.25) / 3.5, 0.0, 1.0)
+    float freshnessNorm = zoneBroken ? 0.0 : zoneTests <= 0 ? 1.0 : zoneTests == 1 ? 0.65 : zoneTests == 2 ? 0.35 : 0.15
+    float trendAdj = isDemand ? trendBias == 1 ? 0.10 : trendBias == 0 ? 0.03 : -0.08 : trendBias == -1 ? 0.10 : trendBias == 0 ? 0.03 : -0.08
+    float curveAdj = isDemand ? curveBias == -1 ? 0.10 : curveBias == 0 ? 0.03 : -0.08 : curveBias == 1 ? 0.10 : curveBias == 0 ? 0.03 : -0.08
+    float valueAdj = 0.0
+    if useValueContext
+        valueAdj := isDemand ? closePrice <= currentValueLow ? 0.08 : closePrice <= currentValueHigh ? 0.02 : -0.05 : closePrice >= currentValueHigh ? 0.08 : closePrice >= currentValueLow ? 0.02 : -0.05
+    float patternAdj = zoneReversal ? 0.05 : 0.02
+    float stalePenalty = zoneFresh ? 0.0 : 0.06
+    float brokenPenalty = zoneBroken ? 0.35 : 0.0
+    f_clamp(domNorm * 0.30 + qualityNorm * 0.18 + strengthNorm * 0.15 + timeNorm * 0.08 + freshnessNorm * 0.12 + trendAdj + curveAdj + valueAdj + patternAdj - stalePenalty - brokenPenalty, 0.0, 1.0)
+
+f_zone_truth_score(bool isDemand, float zoneQuality, float zoneStrength, float zoneTime, int zoneTests, bool zoneBroken, bool zoneReversal, float zoneFootprint, float zoneDeltaValue, float zoneRejectionScore, int zoneBorn, int trendBias, int curveBias, float referenceVolume, int currentBar, bool keepHistory, int zoneScaleBars) =>
+    float refVolumeSafe = math.max(nz(referenceVolume, volume), 1.0)
+    float qualityNorm = f_clamp((zoneQuality + 0.25) / 4.0, 0.0, 1.0)
+    float strengthNorm = f_clamp(zoneStrength / 2.0, 0.0, 1.0)
+    float timeNorm = f_clamp(zoneTime, 0.0, 1.0)
+    float footprintNorm = f_clamp(zoneFootprint / 100.0, 0.0, 1.0)
+    float rejectionNorm = f_clamp(zoneRejectionScore, 0.0, 1.0)
+    float deltaNorm = f_clamp(math.abs(zoneDeltaValue) / math.max(refVolumeSafe * math.max(float(zoneScaleBars), 2.0), 1.0), 0.0, 1.4) / 1.4
+    float freshnessNorm = zoneBroken ? 0.0 : zoneTests <= 0 ? 1.0 : zoneTests == 1 ? 0.72 : zoneTests == 2 ? 0.42 : 0.14
+    float trendAdj = isDemand ? trendBias == 1 ? 0.08 : trendBias == 0 ? 0.02 : -0.05 : trendBias == -1 ? 0.08 : trendBias == 0 ? 0.02 : -0.05
+    float curveAdj = isDemand ? curveBias == -1 ? 0.07 : curveBias == 0 ? 0.02 : -0.04 : curveBias == 1 ? 0.07 : curveBias == 0 ? 0.02 : -0.04
+    float reversalAdj = zoneReversal ? 0.05 : 0.02
+    float zoneAgeBars = math.max(currentBar - zoneBorn, 0)
+    float agePenalty = keepHistory ? f_clamp(zoneAgeBars / 5000.0, 0.0, 1.0) * 0.04 : maxZoneAge > 0 ? f_clamp(zoneAgeBars / maxZoneAge, 0.0, 1.0) * 0.10 : 0.0
+    float brokenPenalty = zoneBroken ? 0.45 : 0.0
+    f_clamp(qualityNorm * 0.28 + rejectionNorm * 0.20 + footprintNorm * 0.14 + deltaNorm * 0.12 + strengthNorm * 0.10 + timeNorm * 0.06 + freshnessNorm * 0.12 + trendAdj + curveAdj + reversalAdj - agePenalty - brokenPenalty, 0.0, 1.8)
+
+f_signed_delta_text(float deltaValue) =>
+    string deltaPrefix = deltaValue > 0 ? "+" : deltaValue < 0 ? "-" : ""
+    deltaPrefix + str.tostring(int(math.round(math.abs(deltaValue))))
+
+f_zone_delta_color(float deltaValue) =>
+    deltaValue > 0 ? color.rgb(0, 214, 120) : deltaValue < 0 ? color.rgb(255, 96, 96) : color.rgb(230, 230, 230)
+
+f_zone_reaction_confirm(bool isDemand, float zoneTop, float zoneBottom, int lastTouchBar, int lastReactionTouchBar, float zoneQuality, float domScore, float atrValue, float candleRange) =>
+    float zoneWidth = math.max(zoneTop - zoneBottom, syminfo.mintick)
+    float qualityNorm = f_clamp((zoneQuality + 0.25) / 3.5, 0.0, 1.0)
+    float domNorm = f_clamp(domScore / 100.0, 0.0, 1.0)
+    float moveNeed = math.max(atrValue * zoneReactionConfirmAtr * (1.0 - qualityNorm * 0.18 - domNorm * 0.12), zoneWidth * 0.28, syminfo.mintick * 4)
+    float closePct = isDemand ? (close - low) / math.max(candleRange, syminfo.mintick) : (high - close) / math.max(candleRange, syminfo.mintick)
+    bool strongClose = closePct >= 0.58 and (isDemand ? close > open : close < open)
+    bool newTouchPending = not na(lastTouchBar) and (na(lastReactionTouchBar) or lastTouchBar > lastReactionTouchBar) and bar_index >= lastTouchBar and bar_index - lastTouchBar <= zoneReactionConfirmBars
+    bool sameBarReaction = not na(lastTouchBar) and lastTouchBar == bar_index and strongClose and (isDemand ? close >= zoneBottom + zoneWidth * 0.58 and (close > zoneTop or high >= zoneTop + moveNeed * 0.45) : close <= zoneBottom + zoneWidth * 0.42 and (close < zoneBottom or low <= zoneBottom - moveNeed * 0.45))
+    bool laterReaction = not na(lastTouchBar) and lastTouchBar < bar_index and strongClose and (isDemand ? high >= zoneTop + moveNeed and close >= zoneTop + moveNeed * 0.22 : low <= zoneBottom - moveNeed and close <= zoneBottom - moveNeed * 0.22)
+    newTouchPending and (sameBarReaction or laterReaction)
+
+f_zone_display_text(string zoneText, bool reacted, int reactionCount) =>
+    reacted ? zoneText + "\nREACT x" + str.tostring(reactionCount) : zoneText
+
+f_zone_bubble_text(bool compactMode, float rejectionScore, float deltaValue, int reactionCount) =>
+    int rejectionPct = int(math.round(f_clamp(rejectionScore, 0.0, 1.0) * 100.0))
+    string deltaText = f_signed_delta_text(deltaValue)
+    string reactionText = reactionCount > 0 ? compactMode ? "\nHit x" + str.tostring(reactionCount) : "\nReaction x" + str.tostring(reactionCount) : ""
+    compactMode ? "Delta " + deltaText + "\nRej " + str.tostring(rejectionPct) + "%" + reactionText : "Delta " + deltaText + "\nReject " + str.tostring(rejectionPct) + "%" + reactionText
+
+f_band_overlap_ratio(float bandTop, float bandBottom, float candleHigh, float candleLow) =>
+    float overlap = math.max(math.min(candleHigh, bandTop) - math.max(candleLow, bandBottom), 0.0)
+    overlap / math.max(candleHigh - candleLow, syminfo.mintick)
+
+f_synthetic_liquidity_score(bool isDemandBand, float bandTop, float bandBottom, int lookbackBars, int trendBias, int curveBias, bool useValueContext, float currentValueHigh, float currentValueLow) =>
+    int effectiveLookback = math.max(10, math.min(lookbackBars, 500))
+    float volumePresence = 0.0
+    float bandTouches = 0.0
+    float reversalHits = 0.0
+    float failedBreakHits = 0.0
+    float impulseHits = 0.0
+    for i = 0 to 499
+        if i < effectiveLookback
+            float overlapRatio = f_band_overlap_ratio(bandTop, bandBottom, high[i], low[i])
+            if overlapRatio > 0
+                float candleRange = math.max(high[i] - low[i], syminfo.mintick)
+                float lowerWickPct = (math.min(open[i], close[i]) - low[i]) / candleRange
+                float upperWickPct = (high[i] - math.max(open[i], close[i])) / candleRange
+                float bodyPct = math.abs(close[i] - open[i]) / candleRange
+                float refVolume = nz(ta.sma(volume, volLen)[i], volume[i])
+                float volRatio = refVolume > 0 ? volume[i] / refVolume : 1.0
+                float recencyWeight = 1.0 - (float(i) / float(effectiveLookback)) * 0.55
+                volumePresence += overlapRatio * volRatio * recencyWeight
+                bandTouches += overlapRatio * recencyWeight
+                impulseHits += overlapRatio * bodyPct * recencyWeight
+                if isDemandBand
+                    reversalHits += low[i] <= bandBottom and close[i] >= bandBottom and lowerWickPct >= 0.25 ? recencyWeight * (0.65 + overlapRatio * 0.35) : 0.0
+                    failedBreakHits += low[i] < bandBottom and close[i] > bandBottom ? recencyWeight * 1.15 : 0.0
+                else
+                    reversalHits += high[i] >= bandTop and close[i] <= bandTop and upperWickPct >= 0.25 ? recencyWeight * (0.65 + overlapRatio * 0.35) : 0.0
+                    failedBreakHits += high[i] > bandTop and close[i] < bandTop ? recencyWeight * 1.15 : 0.0
+    float volumeNorm = f_clamp(volumePresence / math.max(effectiveLookback * 0.12, 1.0), 0.0, 1.0)
+    float touchNorm = f_clamp(bandTouches / math.max(effectiveLookback * 0.10, 1.0), 0.0, 1.0)
+    float reversalNorm = f_clamp(reversalHits / math.max(effectiveLookback * 0.06, 1.0), 0.0, 1.0)
+    float failedBreakNorm = f_clamp(failedBreakHits / math.max(effectiveLookback * 0.05, 1.0), 0.0, 1.0)
+    float impulseNorm = f_clamp(impulseHits / math.max(effectiveLookback * 0.08, 1.0), 0.0, 1.0)
+    float trendAdj = isDemandBand ? trendBias == 1 ? 0.06 : trendBias == 0 ? 0.01 : -0.04 : trendBias == -1 ? 0.06 : trendBias == 0 ? 0.01 : -0.04
+    float curveAdj = isDemandBand ? curveBias == -1 ? 0.06 : curveBias == 0 ? 0.01 : -0.04 : curveBias == 1 ? 0.06 : curveBias == 0 ? 0.01 : -0.04
+    float valueAdj = 0.0
+    if useValueContext
+        valueAdj := isDemandBand ? bandTop <= currentValueLow ? 0.07 : bandBottom < currentValueHigh ? 0.03 : 0.0 : bandBottom >= currentValueHigh ? 0.07 : bandTop > currentValueLow ? 0.03 : 0.0
+    f_clamp(volumeNorm * 0.36 + touchNorm * 0.14 + reversalNorm * 0.22 + failedBreakNorm * 0.18 + impulseNorm * 0.10 + trendAdj + curveAdj + valueAdj, 0.0, 1.0)
+
+f_zone_incoming_bull(int baseStartOffset, int lookbackBars) =>
+    float recentClose = na
+    float olderClose = na
+    float recentOpen = na
+    int bullCount = 0
+    int bearCount = 0
+    for i = 1 to 8
+        if i <= lookbackBars
+            int idx = baseStartOffset + i
+            recentClose := i == 1 ? zoneCalcClose[idx] : recentClose
+            recentOpen := i == 1 ? zoneCalcOpen[idx] : recentOpen
+            olderClose := i == lookbackBars ? zoneCalcClose[idx] : olderClose
+            bullCount += zoneCalcClose[idx] > zoneCalcOpen[idx] ? 1 : 0
+            bearCount += zoneCalcClose[idx] < zoneCalcOpen[idx] ? 1 : 0
+    bool priceUp = not na(recentClose) and (na(olderClose) ? recentClose >= recentOpen : recentClose > olderClose or (recentClose == olderClose and bullCount >= bearCount))
+    priceUp
+
+f_zone_context_bounds(int baseStartOffset, int lookbackBars) =>
+    float contextHigh = na
+    float contextLow = na
+    for i = 1 to 8
+        if i <= lookbackBars
+            int idx = baseStartOffset + i
+            contextHigh := na(contextHigh) ? zoneCalcHigh[idx] : math.max(contextHigh, zoneCalcHigh[idx])
+            contextLow := na(contextLow) ? zoneCalcLow[idx] : math.min(contextLow, zoneCalcLow[idx])
+    [contextHigh, contextLow]
+
+f_hidden_pair_stats(int newerOffset, float maxPairRange) =>
+    int olderOffset = newerOffset + 1
+    float olderHigh = zoneCalcHigh[olderOffset]
+    float olderLow = zoneCalcLow[olderOffset]
+    float newerHigh = zoneCalcHigh[newerOffset]
+    float newerLow = zoneCalcLow[newerOffset]
+    float olderClose = zoneCalcClose[olderOffset]
+    float olderOpen = zoneCalcOpen[olderOffset]
+    float newerClose = zoneCalcClose[newerOffset]
+    float newerOpen = zoneCalcOpen[newerOffset]
+    bool olderBull = olderClose > olderOpen
+    bool olderBear = olderClose < olderOpen
+    bool newerBull = newerClose > newerOpen
+    bool newerBear = newerClose < newerOpen
+    bool insidePair = newerHigh <= olderHigh and newerLow >= olderLow
+    float pairHigh = math.max(olderHigh, newerHigh)
+    float pairLow = math.min(olderLow, newerLow)
+    float pairMid = (pairHigh + pairLow) * 0.5
+    float pairRange = pairHigh - pairLow
+    bool hiddenDemand = olderBear and newerBull and newerClose < olderHigh and not insidePair
+    bool hiddenSupply = olderBull and newerBear and newerClose > olderLow and not insidePair
+    bool valid = pairRange > syminfo.mintick and pairRange <= maxPairRange
+    [valid, hiddenDemand, hiddenSupply, pairHigh, pairLow, pairMid, pairRange]
+
+f_zone_overlap_or_near(float top1, float bottom1, float top2, float bottom2, float gapAllowance) =>
+    math.max(bottom1, bottom2) <= math.min(top1, top2) + gapAllowance
+
+f_zone_same_move_cluster(float top1, float bottom1, int born1, float top2, float bottom2, int born2, float gapAllowance, int bornAllowance) =>
+    f_zone_overlap_or_near(top1, bottom1, top2, bottom2, gapAllowance) and math.abs(born1 - born2) <= bornAllowance
+
+f_zone_label(bool isDemand, bool incomingBull) =>
+    isDemand ? incomingBull ? "RBR DEMAND" : "DBR DEMAND" : incomingBull ? "RBD SUPPLY" : "DBD SUPPLY"
+
+f_action_text(bool setup, bool watch, bool blocked) =>
+    setup ? "TRADE" : blocked ? "BLOCKED" : watch ? "WATCH" : "NO TRADE"
+
+f_bg(bool setup, bool watch, bool blocked) =>
+    setup ? color.rgb(0, 145, 70) : blocked ? color.rgb(91, 40, 47) : watch ? color.rgb(108, 83, 20) : color.rgb(31, 38, 46)
+
+f_segment_extremes(int recentOffset, int barsCount) =>
+    float segmentHigh = na
+    float segmentLow = na
+    for i = 0 to 499
+        if i < barsCount
+            int idx = recentOffset + i
+            segmentHigh := na(segmentHigh) ? high[idx] : math.max(segmentHigh, high[idx])
+            segmentLow := na(segmentLow) ? low[idx] : math.min(segmentLow, low[idx])
+    [segmentHigh, segmentLow]
+
+//==============================================================================
+// Context: curve, trend, fair value
+//==============================================================================
+atr = ta.atr(atrLen)
+barRange = math.max(high - low, syminfo.mintick)
+volAvg = ta.sma(volume, volLen)
+participation = volume >= volAvg * volumeNeed
+closedOk = not requireClosedCandle or barstate.isconfirmed
+trendStructureLookback = math.max(atrLen * 4, 20)
+trendAtrBaseline = ta.sma(atr, trendStructureLookback)
+trendRangeAvg = ta.sma(high - low, trendStructureLookback)
+trendBodyAvg = ta.sma(math.abs(close - open), trendStructureLookback)
+trendVolatilityRatio = trendAtrBaseline > 0 ? atr / trendAtrBaseline : 1.0
+trendNoiseRatio = trendBodyAvg > 0 ? trendRangeAvg / trendBodyAvg : 1.0
+trendVolatilityAdjust = trendVolatilityRatio >= 1.35 ? 2 : trendVolatilityRatio >= 1.10 ? 1 : trendVolatilityRatio <= 0.80 ? -1 : 0
+trendNoiseAdjust = trendNoiseRatio >= 2.40 ? 2 : trendNoiseRatio >= 1.75 ? 1 : trendNoiseRatio <= 1.20 ? -1 : 0
+activeTrendBoxSwingLen = trendStructureMode == "Auto" ? int(math.max(2, math.min(baseTrendBoxSwingLen + trendVolatilityAdjust + trendNoiseAdjust, 30))) : trendBoxSwingLen
+activeTrendReversalAtrMult = trendStructureMode == "Auto" ? math.max(0.35, math.min(baseTrendReversalAtrMult + trendVolatilityAdjust * 0.12 + trendNoiseAdjust * 0.15, 5.0)) : na
+activeTrendReversalAmount = trendStructureMode == "Auto" ? math.max(atr * activeTrendReversalAtrMult, syminfo.mintick * 6) : na
+activeTrendMinLegBars = trendStructureMode == "Auto" ? int(math.max(2, math.min(baseTrendMinLegBars + math.max(trendNoiseAdjust, 0), 12))) : na
+activeTrendMinLegAtrMult = trendStructureMode == "Auto" ? math.max(0.60, math.min(baseTrendMinLegAtrMult + trendVolatilityAdjust * 0.08 + trendNoiseAdjust * 0.10, 4.0)) : na
+activeTrendMinLegMove = trendStructureMode == "Auto" ? math.max(atr * activeTrendMinLegAtrMult * 0.80, activeTrendReversalAmount * 0.72) : na
+activeZoneDepartureBars = int(math.max(1, math.min(pivotRight + (chartTfSeconds <= 300 ? 2 : 1), 5)))
+activeZoneBaseBars = int(math.max(1, math.min(baseMaxBars, chartTfSeconds <= 300 ? 5 : chartTfSeconds <= 3600 ? 6 : 7)))
+activeZoneIncomingBars = int(math.max(2, math.min(pivotLeft + (chartTfSeconds <= 300 ? 1 : 0), chartTfSeconds <= 3600 ? 5 : 6)))
+activeZoneExcursionAtr = math.max(0.25, departureAtr * (chartTfSeconds <= 60 ? 0.84 : chartTfSeconds <= 300 ? 0.78 : chartTfSeconds <= 900 ? 0.72 : chartTfSeconds <= 3600 ? 0.66 : 0.60))
+activeZoneCloseAtr = math.max(0.08, activeZoneExcursionAtr * (chartTfSeconds <= 300 ? 0.28 : chartTfSeconds <= 3600 ? 0.22 : 0.18))
+activeZoneExplosiveRangeAtr = chartTfSeconds <= 300 ? 0.82 : chartTfSeconds <= 3600 ? 0.74 : 0.66
+activeZoneExplosiveBodyAtr = chartTfSeconds <= 300 ? 0.48 : chartTfSeconds <= 3600 ? 0.42 : 0.36
+activeZoneClusterAdd = chartTfSeconds <= 300 ? 0.25 : chartTfSeconds <= 3600 ? 0.32 : 0.40
+activeZoneLeaveTolAtr = chartTfSeconds <= 300 ? 0.20 : chartTfSeconds <= 3600 ? 0.17 : 0.15
+activeZoneSoftExcursionFrac = chartTfSeconds <= 300 ? 0.74 : chartTfSeconds <= 3600 ? 0.78 : 0.82
+activeZoneSoftCloseFrac = chartTfSeconds <= 300 ? 0.78 : chartTfSeconds <= 3600 ? 0.84 : 0.90
+activeZoneMinContinuationMath = chartTfSeconds <= 300 ? 0.47 : chartTfSeconds <= 3600 ? 0.50 : 0.53
+activeZoneMinReversalMath = chartTfSeconds <= 300 ? 0.52 : chartTfSeconds <= 3600 ? 0.55 : 0.58
+activeZoneVolumeConfirm = chartTfSeconds <= 300 ? 0.42 : chartTfSeconds <= 3600 ? 0.46 : 0.50
+baseSameSideZoneGapAtr = chartTfSeconds <= 300 ? 0.14 : chartTfSeconds <= 3600 ? 0.11 : 0.09
+sameSideZoneGapAtr = zoneCandleSource != "Regular" ? math.max(0.05, baseSameSideZoneGapAtr - 0.03) : baseSameSideZoneGapAtr
+sameSideZoneBornGap = int(zoneCandleSource != "Regular" ? math.max(3, activeZoneIncomingBars + activeZoneBaseBars + activeZoneDepartureBars) : activeZoneIncomingBars + activeZoneBaseBars + activeZoneDepartureBars + 2)
+zoneStorageCap = keepHistoricalZones ? math.max(maxVisibleZones, historicalZoneSlots) : maxVisibleZones
+zoneStructureLabelSize = f_label_size(zoneStructureLabelSizeText)
+zoneBubbleLabelSize = f_label_size(zoneBubbleLabelSizeText)
+zoneDomCompact = zoneDomVisualMode == "Compact"
+zoneSourceText = zoneCandleSource == "Chart" ? "Z:CHART" : zoneCandleSource == "Heikin Ashi" ? "Z:HA" : "Z:STD"
+trendStructureText = trendStructureMode == "Auto" ? "A" + str.tostring(activeTrendBoxSwingLen) + "/F" + str.tostring(activeTrendMinLegBars) : "P" + str.tostring(activeTrendBoxSwingLen)
+purposeText = purpose + " C:" + activeCurveTf + " T:" + activeTrendTf + " " + trendStructureText + " " + zoneSourceText
+
+htfHigh = request.security(syminfo.tickerid, activeCurveTf, ta.highest(high, curveLookback), barmerge.gaps_off, barmerge.lookahead_off)
+htfLow = request.security(syminfo.tickerid, activeCurveTf, ta.lowest(low, curveLookback), barmerge.gaps_off, barmerge.lookahead_off)
+curveRange = math.max(htfHigh - htfLow, syminfo.mintick)
+curvePos = f_clamp((close - htfLow) / curveRange, 0.0, 1.0)
+curveState = curvePos >= 0.66 ? 1 : curvePos <= 0.33 ? -1 : 0
+curveText = curveState == 1 ? "HIGH" : curveState == -1 ? "LOW" : "MIDDLE"
+
+trendFast = request.security(syminfo.tickerid, activeTrendTf, ta.ema(close, fastLen), barmerge.gaps_off, barmerge.lookahead_off)
+trendSlow = request.security(syminfo.tickerid, activeTrendTf, ta.ema(close, slowLen), barmerge.gaps_off, barmerge.lookahead_off)
+trendState = trendFast > trendSlow and trendFast > trendFast[1] ? 1 : trendFast < trendSlow and trendFast < trendFast[1] ? -1 : 0
+trendText = trendState == 1 ? "UP" : trendState == -1 ? "DOWN" : "SIDEWAYS"
+
+//==============================================================================
+// Trend boxes: swing-by-swing up/down segments like the reference cards
+//==============================================================================
+var box[] trendBoxes = array.new_box()
+var label[] trendLabels = array.new_label()
+var line[] trendSegmentLines = array.new_line()
+var int lastSwingIndex = na
+var float lastSwingPrice = na
+var int lastSwingType = 0
+var box developingTrendBox = na
+var label developingTrendLabel = na
+var line developingTrendLine = na
+
+if not showTrendBoxes and array.size(trendBoxes) > 0
+    for i = 0 to array.size(trendBoxes) - 1
+        box.delete(array.get(trendBoxes, i))
+        label.delete(array.get(trendLabels, i))
+    array.clear(trendBoxes)
+    array.clear(trendLabels)
+    if not na(developingTrendBox)
+        box.delete(developingTrendBox)
+        label.delete(developingTrendLabel)
+        developingTrendBox := na
+        developingTrendLabel := na
+
+if not showTrendLines and array.size(trendSegmentLines) > 0
+    for i = 0 to array.size(trendSegmentLines) - 1
+        line.delete(array.get(trendSegmentLines, i))
+    array.clear(trendSegmentLines)
+    if not na(developingTrendLine)
+        line.delete(developingTrendLine)
+        developingTrendLine := na
+
+int newSwingType = 0
+float newSwingPrice = na
+int newSwingIndex = na
+trendPivotHigh = ta.pivothigh(high, activeTrendBoxSwingLen, activeTrendBoxSwingLen)
+trendPivotLow = ta.pivotlow(low, activeTrendBoxSwingLen, activeTrendBoxSwingLen)
+newSwingType := not na(trendPivotHigh) ? 1 : not na(trendPivotLow) ? -1 : 0
+newSwingPrice := newSwingType == 1 ? trendPivotHigh : newSwingType == -1 ? trendPivotLow : na
+newSwingIndex := bar_index - activeTrendBoxSwingLen
+
+if (showTrendBoxes or showTrendLines) and newSwingType != 0
+    bool replaceSameHigh = lastSwingType == 1 and newSwingType == 1 and newSwingPrice > lastSwingPrice
+    bool replaceSameLow = lastSwingType == -1 and newSwingType == -1 and newSwingPrice < lastSwingPrice
+    if replaceSameHigh or replaceSameLow
+        bool upSegment = replaceSameHigh
+        if showTrendBoxes and array.size(trendBoxes) > 0
+            box lastSegmentBox = array.get(trendBoxes, array.size(trendBoxes) - 1)
+            label lastSegmentLabel = array.get(trendLabels, array.size(trendLabels) - 1)
+            int leftIndex = box.get_left(lastSegmentBox)
+            int segmentSpan = math.max(newSwingIndex - leftIndex + 1, 1)
+            int segmentRecentOffset = math.max(bar_index - newSwingIndex, 0)
+            [segmentHigh, segmentLow] = f_segment_extremes(segmentRecentOffset, segmentSpan)
+            float segmentAtr = nz(atr[activeTrendBoxSwingLen], atr)
+            float topPrice = nz(segmentHigh, math.max(lastSwingPrice, newSwingPrice)) + segmentAtr * trendBoxAtrPadding
+            float bottomPrice = nz(segmentLow, math.min(lastSwingPrice, newSwingPrice)) - segmentAtr * trendBoxAtrPadding
+            box.set_right(lastSegmentBox, newSwingIndex)
+            box.set_top(lastSegmentBox, topPrice)
+            box.set_bottom(lastSegmentBox, bottomPrice)
+            label.set_x(lastSegmentLabel, leftIndex)
+            label.set_y(lastSegmentLabel, upSegment ? bottomPrice : topPrice)
+        if showTrendLines and array.size(trendSegmentLines) > 0
+            line lastSegmentLine = array.get(trendSegmentLines, array.size(trendSegmentLines) - 1)
+            line.set_xy2(lastSegmentLine, newSwingIndex, newSwingPrice)
+        lastSwingIndex := newSwingIndex
+        lastSwingPrice := newSwingPrice
+        lastSwingType := newSwingType
+    else if na(lastSwingIndex)
+        lastSwingIndex := newSwingIndex
+        lastSwingPrice := newSwingPrice
+        lastSwingType := newSwingType
+    else if newSwingType != lastSwingType
+        int leftIndex = lastSwingIndex
+        int rightIndex = newSwingIndex
+        int segmentBars = rightIndex - leftIndex
+        int segmentSpan = segmentBars + 1
+        int segmentRecentOffset = bar_index - rightIndex
+        float segmentMove = math.abs(newSwingPrice - lastSwingPrice)
+        int requiredBars = trendStructureMode == "Auto" ? activeTrendMinLegBars : 1
+        float requiredMove = trendStructureMode == "Auto" ? activeTrendMinLegMove : 0.0
+        bool segmentOk = segmentBars >= requiredBars and segmentMove >= requiredMove
+        [segmentHigh, segmentLow] = f_segment_extremes(segmentRecentOffset, segmentSpan)
+        float segmentAtr = nz(atr[activeTrendBoxSwingLen], atr)
+        float topPrice = nz(segmentHigh, math.max(lastSwingPrice, newSwingPrice)) + segmentAtr * trendBoxAtrPadding
+        float bottomPrice = nz(segmentLow, math.min(lastSwingPrice, newSwingPrice)) - segmentAtr * trendBoxAtrPadding
+        bool upSegment = lastSwingType == -1 and newSwingType == 1
+        color segmentColor = upSegment ? color.rgb(0, 166, 79) : color.rgb(233, 31, 44)
+        string segmentText = upSegment ? "UP TREND BOX" : "DOWN TREND BOX"
+        if segmentOk
+            if showTrendBoxes
+                box segmentBox = box.new(leftIndex, topPrice, rightIndex, bottomPrice, bgcolor=color.new(segmentColor, trendBoxFillTransparency), border_color=color.new(segmentColor, trendBoxBorderTransparency), border_width=3)
+                label segmentLabel = label.new(leftIndex, upSegment ? bottomPrice : topPrice, segmentText, style=upSegment ? label.style_label_up : label.style_label_down, color=color.new(segmentColor, 0), textcolor=color.white, size=size.normal)
+                array.push(trendBoxes, segmentBox)
+                array.push(trendLabels, segmentLabel)
+                if array.size(trendBoxes) > maxTrendBoxes
+                    box oldSegmentBox = array.shift(trendBoxes)
+                    label oldSegmentLabel = array.shift(trendLabels)
+                    box.delete(oldSegmentBox)
+                    label.delete(oldSegmentLabel)
+            if showTrendLines
+                line segmentLine = line.new(leftIndex, lastSwingPrice, rightIndex, newSwingPrice, color=color.new(segmentColor, 0), width=3)
+                array.push(trendSegmentLines, segmentLine)
+                if array.size(trendSegmentLines) > maxTrendBoxes
+                    line oldSegmentLine = array.shift(trendSegmentLines)
+                    line.delete(oldSegmentLine)
+            lastSwingIndex := newSwingIndex
+            lastSwingPrice := newSwingPrice
+            lastSwingType := newSwingType
+
+if not na(lastSwingIndex) and bar_index > lastSwingIndex
+    bool developingUp = close >= lastSwingPrice
+    color developingColor = developingUp ? color.rgb(0, 166, 79) : color.rgb(233, 31, 44)
+    float developingTop = math.max(lastSwingPrice, ta.highest(high, math.min(bar_index - lastSwingIndex + 1, 500))) + atr * trendBoxAtrPadding
+    float developingBottom = math.min(lastSwingPrice, ta.lowest(low, math.min(bar_index - lastSwingIndex + 1, 500))) - atr * trendBoxAtrPadding
+    string developingText = developingUp ? "UP TREND BOX LIVE" : "DOWN TREND BOX LIVE"
+    if showTrendBoxes and showDevelopingTrendBox
+        if na(developingTrendBox)
+            developingTrendBox := box.new(lastSwingIndex, developingTop, bar_index, developingBottom, bgcolor=color.new(developingColor, trendBoxFillTransparency), border_color=color.new(developingColor, trendBoxBorderTransparency), border_width=2, border_style=line.style_dashed)
+            developingTrendLabel := label.new(lastSwingIndex, developingUp ? developingBottom : developingTop, developingText, style=developingUp ? label.style_label_up : label.style_label_down, color=color.new(developingColor, 0), textcolor=color.white, size=size.small)
+        else
+            box.set_left(developingTrendBox, lastSwingIndex)
+            box.set_right(developingTrendBox, bar_index)
+            box.set_top(developingTrendBox, developingTop)
+            box.set_bottom(developingTrendBox, developingBottom)
+            box.set_bgcolor(developingTrendBox, color.new(developingColor, trendBoxFillTransparency))
+            box.set_border_color(developingTrendBox, color.new(developingColor, trendBoxBorderTransparency))
+            label.set_x(developingTrendLabel, lastSwingIndex)
+            label.set_y(developingTrendLabel, developingUp ? developingBottom : developingTop)
+            label.set_text(developingTrendLabel, developingText)
+            label.set_color(developingTrendLabel, color.new(developingColor, 0))
+    else if not na(developingTrendBox)
+        box.delete(developingTrendBox)
+        label.delete(developingTrendLabel)
+        developingTrendBox := na
+        developingTrendLabel := na
+
+    if showTrendLines
+        if na(developingTrendLine)
+            developingTrendLine := line.new(lastSwingIndex, lastSwingPrice, bar_index, close, color=color.new(developingColor, 0), width=2, style=line.style_dashed)
+        else
+            line.set_xy1(developingTrendLine, lastSwingIndex, lastSwingPrice)
+            line.set_xy2(developingTrendLine, bar_index, close)
+            line.set_color(developingTrendLine, color.new(developingColor, 0))
+    else if not na(developingTrendLine)
+        line.delete(developingTrendLine)
+        developingTrendLine := na
+else
+    if not na(developingTrendBox)
+        box.delete(developingTrendBox)
+        label.delete(developingTrendLabel)
+        developingTrendBox := na
+        developingTrendLabel := na
+    if not na(developingTrendLine)
+        line.delete(developingTrendLine)
+        developingTrendLine := na
+
+vwap = ta.vwap(hlc3)
+valueDev = ta.stdev(close - vwap, valueLen)
+valueHigh = vwap + valueDev * valueMult
+valueLow = vwap - valueDev * valueMult
+
+plot(useVwap ? vwap : na, "Fair Value / VWAP", color=color.rgb(0, 98, 163), linewidth=2)
+plot(useVwap ? valueHigh : na, "Value High", color=color.new(color.rgb(0, 98, 163), 72))
+plot(useVwap ? valueLow : na, "Value Low", color=color.new(color.rgb(0, 98, 163), 72))
+
+//==============================================================================
+// Initial range and breakout acceptance
+//==============================================================================
+inRangeSession = not na(time(timeframe.period, rangeSession))
+newDay = ta.change(time("D")) != 0
+var float rangeHigh = na
+var float rangeLow = na
+var bool rangeReady = false
+
+if newDay
+    rangeHigh := na
+    rangeLow := na
+    rangeReady := false
+
+if useRangeAcceptance and inRangeSession
+    rangeHigh := na(rangeHigh) ? high : math.max(rangeHigh, high)
+    rangeLow := na(rangeLow) ? low : math.min(rangeLow, low)
+
+if useRangeAcceptance and not inRangeSession and inRangeSession[1]
+    rangeReady := true
+
+plot(useRangeAcceptance and rangeReady ? rangeHigh : na, "Initial Range High", color=color.new(color.green, 20), linewidth=2, style=plot.style_linebr)
+plot(useRangeAcceptance and rangeReady ? rangeLow : na, "Initial Range Low", color=color.new(color.red, 20), linewidth=2, style=plot.style_linebr)
+
+acceptedLongRange = useRangeAcceptance and rangeReady and not na(rangeHigh) and close > rangeHigh and ta.barssince(close <= rangeHigh) >= acceptNeed - 1 and participation
+acceptedShortRange = useRangeAcceptance and rangeReady and not na(rangeLow) and close < rangeLow and ta.barssince(close >= rangeLow) >= acceptNeed - 1 and participation
+
+//==============================================================================
+// Daily reaction zones removed
+//==============================================================================
+
+//==============================================================================
+// Supply and demand zones
+//==============================================================================
+var float demandTop = na
+var float demandBottom = na
+var int demandBorn = na
+var int demandTests = 0
+var float demandStrengthPts = 0.0
+var float demandTimePts = 0.0
+var string demandZoneText = ""
+var float[] demandTops = array.new_float()
+var float[] demandBottoms = array.new_float()
+var int[] demandBorns = array.new_int()
+var int[] demandActiveFromBars = array.new_int()
+var int[] demandTestCounts = array.new_int()
+var bool[] demandBrokenStates = array.new_bool()
+var float[] demandStrengthScores = array.new_float()
+var float[] demandTimeScores = array.new_float()
+var float[] demandQualityScores = array.new_float()
+var float[] demandDomScores = array.new_float()
+var float[] demandFootprintScores = array.new_float()
+var float[] demandDeltaValues = array.new_float()
+var float[] demandRejectionScores = array.new_float()
+var int[] demandLastTouchBars = array.new_int()
+var int[] demandReactionTouchBars = array.new_int()
+var int[] demandReactionCounts = array.new_int()
+var bool[] demandIsReversal = array.new_bool()
+var string[] demandTypes = array.new_string()
+var box[] demandBoxes = array.new_box()
+var label[] demandLabels = array.new_label()
+var line[] demandDomProxLines = array.new_line()
+var line[] demandDomMidLines = array.new_line()
+var line[] demandDomDistalLines = array.new_line()
+var label[] demandBubbleLabels = array.new_label()
+
+var float supplyTop = na
+var float supplyBottom = na
+var int supplyBorn = na
+var int supplyTests = 0
+var float supplyStrengthPts = 0.0
+var float supplyTimePts = 0.0
+var string supplyZoneText = ""
+var float[] supplyTops = array.new_float()
+var float[] supplyBottoms = array.new_float()
+var int[] supplyBorns = array.new_int()
+var int[] supplyActiveFromBars = array.new_int()
+var int[] supplyTestCounts = array.new_int()
+var bool[] supplyBrokenStates = array.new_bool()
+var float[] supplyStrengthScores = array.new_float()
+var float[] supplyTimeScores = array.new_float()
+var float[] supplyQualityScores = array.new_float()
+var float[] supplyDomScores = array.new_float()
+var float[] supplyFootprintScores = array.new_float()
+var float[] supplyDeltaValues = array.new_float()
+var float[] supplyRejectionScores = array.new_float()
+var int[] supplyLastTouchBars = array.new_int()
+var int[] supplyReactionTouchBars = array.new_int()
+var int[] supplyReactionCounts = array.new_int()
+var bool[] supplyIsReversal = array.new_bool()
+var string[] supplyTypes = array.new_string()
+var box[] supplyBoxes = array.new_box()
+var label[] supplyLabels = array.new_label()
+var line[] supplyDomProxLines = array.new_line()
+var line[] supplyDomMidLines = array.new_line()
+var line[] supplyDomDistalLines = array.new_line()
+var label[] supplyBubbleLabels = array.new_label()
+var box[] syntheticDemandHeatBoxes = array.new_box()
+var box[] syntheticSupplyHeatBoxes = array.new_box()
+
+bool[] patternFound = array.new_bool(4, false)
+float[] patternScores = array.new_float(4, 0.0)
+float[] patternTops = array.new_float(4, 0.0)
+float[] patternBottoms = array.new_float(4, 0.0)
+float[] patternStrengths = array.new_float(4, 0.0)
+float[] patternTimes = array.new_float(4, 0.0)
+float[] patternDomScores = array.new_float(4, 0.0)
+float[] patternFootprintScores = array.new_float(4, 0.0)
+float[] patternDeltaValues = array.new_float(4, 0.0)
+int[] patternBorns = array.new_int(4, 0)
+string[] patternTexts = array.new_string(4, "")
+bool[] patternReversals = array.new_bool(4, false)
+
+for departureBars = 1 to 5
+    if departureBars <= activeZoneDepartureBars
+        float baseAtr = atr[departureBars]
+        [departureHigh, departureLow, departureCloseHigh, departureCloseLow, departureRangeMax, departureBodyMax, departureNetMove] = f_zone_departure_stats(departureBars)
+        bool smoothZoneCandles = zoneCandleSource != "Regular"
+        bool explosiveDeparture = departureRangeMax >= baseAtr * activeZoneExplosiveRangeAtr or departureBodyMax >= baseAtr * activeZoneExplosiveBodyAtr
+        float departureBiasNeed = baseAtr * (smoothZoneCandles ? 0.02 : 0.04)
+        bool departureBull = not na(departureNetMove) and departureNetMove >= departureBiasNeed
+        bool departureBear = not na(departureNetMove) and departureNetMove <= -departureBiasNeed
+        float maxBaseCandleRange = baseAtr * baseRangeAtr
+        float maxBaseRange = baseAtr * (baseRangeAtr + activeZoneClusterAdd)
+        float departureExcursionNeed = math.max(baseAtr * activeZoneExcursionAtr * 0.72, syminfo.mintick * 4)
+        float departureCloseNeed = math.max(baseAtr * activeZoneCloseAtr * 0.70, syminfo.mintick)
+        for baseBars = 1 to 6
+            if baseBars <= activeZoneBaseBars
+                int baseNewestOffset = departureBars
+                int baseOldestOffset = departureBars + baseBars - 1
+                [baseValid, baseHigh, baseLow, bodyHigh, bodyLow, decisionHigh, decisionLow, decisionBodyHigh, decisionBodyLow, clusterRange, bodySpan, netDrift] = f_zone_base_stats(baseNewestOffset, baseBars, maxBaseCandleRange, maxBaseRange)
+                int originBars = math.min(baseBars, 2)
+                [originHigh, originLow, originBodyHigh, originBodyLow, originRange, originBodySpan] = f_zone_origin_stats(baseNewestOffset, originBars)
+                [singleOriginHigh, singleOriginLow, singleOriginBodyHigh, singleOriginBodyLow, singleOriginRange, singleOriginBodySpan] = f_zone_origin_stats(baseNewestOffset, 1)
+                int zoneBornIndex = bar_index - baseOldestOffset
+                bool incomingBull = f_zone_incoming_bull(baseOldestOffset, activeZoneIncomingBars)
+                bool incomingBear = not incomingBull
+                bool reversalOriginFallback = not baseValid and baseBars <= 3 and ((incomingBear and departureBull) or (incomingBull and departureBear)) and originBars > 0 and not na(originRange) and not na(singleOriginRange) and originRange <= maxBaseRange * (smoothZoneCandles ? 0.92 : 0.82) and singleOriginRange <= math.max(baseAtr * (smoothZoneCandles ? 1.18 : 1.05), syminfo.mintick * 3) and (explosiveDeparture or math.abs(nz(departureNetMove, 0.0)) >= departureBiasNeed * 8.0)
+                if reversalOriginFallback
+                    baseValid := true
+                    baseHigh := nz(originHigh, baseHigh)
+                    baseLow := nz(originLow, baseLow)
+                    bodyHigh := nz(originBodyHigh, bodyHigh)
+                    bodyLow := nz(originBodyLow, bodyLow)
+                    decisionHigh := nz(originHigh, decisionHigh)
+                    decisionLow := nz(originLow, decisionLow)
+                    decisionBodyHigh := nz(originBodyHigh, decisionBodyHigh)
+                    decisionBodyLow := nz(originBodyLow, decisionBodyLow)
+                    clusterRange := nz(originRange, clusterRange)
+                    bodySpan := nz(originBodySpan, bodySpan)
+                    netDrift := 0.0
+                if baseValid
+                    [contextHigh, contextLow] = f_zone_context_bounds(baseOldestOffset, activeZoneIncomingBars)
+                    [baseVolRatio, departureVolRatio, basePressureBias, departurePressureBias, absorptionProxy] = f_zone_volume_proxy_stats(baseNewestOffset, baseBars, departureBars, clusterRange, baseAtr)
+                    [demandFootprintScore, demandClusterFootprintScore, demandAbsorptionFootprintScore, demandSponsorFootprintScore] = f_zone_footprint_proxy_score(true, baseNewestOffset, baseBars, departureBars, baseHigh, baseLow, clusterRange)
+                    [supplyFootprintScore, supplyClusterFootprintScore, supplyAbsorptionFootprintScore, supplySponsorFootprintScore] = f_zone_footprint_proxy_score(false, baseNewestOffset, baseBars, departureBars, baseHigh, baseLow, clusterRange)
+                    [demandZoneDeltaValue, demandDeltaNorm, demandDepartureDeltaNorm, demandAbsorptionDeltaNorm] = f_zone_delta_proxy_stats(true, baseNewestOffset, baseBars, departureBars, baseHigh, baseLow, clusterRange)
+                    [supplyZoneDeltaValue, supplyDeltaNorm, supplyDepartureDeltaNorm, supplyAbsorptionDeltaNorm] = f_zone_delta_proxy_stats(false, baseNewestOffset, baseBars, departureBars, baseHigh, baseLow, clusterRange)
+                    [pairValid, hiddenDemandPair, hiddenSupplyPair, pairHigh, pairLow, pairMid, pairRange] = f_hidden_pair_stats(baseNewestOffset, maxBaseRange)
+                    float continuationBreakMin = math.max(syminfo.mintick, baseAtr * 0.03)
+                    float reversalBreakMin = math.max(syminfo.mintick, baseAtr * 0.05)
+                    bool demandContinuationBreak = na(contextHigh) ? departureCloseHigh >= decisionHigh + continuationBreakMin : departureCloseHigh >= contextHigh + continuationBreakMin
+                    bool demandReversalBreak = na(contextHigh) ? departureCloseHigh >= nz(originHigh, decisionHigh) + reversalBreakMin : departureCloseHigh >= contextHigh + reversalBreakMin
+                    bool supplyContinuationBreak = na(contextLow) ? departureCloseLow <= decisionLow - continuationBreakMin : departureCloseLow <= contextLow - continuationBreakMin
+                    bool supplyReversalBreak = na(contextLow) ? departureCloseLow <= nz(originLow, decisionLow) - reversalBreakMin : departureCloseLow <= contextLow - reversalBreakMin
+                    bool haPairDemand = zoneUseHaCandles and baseBars == 2 and pairValid and hiddenDemandPair
+                    bool haPairSupply = zoneUseHaCandles and baseBars == 2 and pairValid and hiddenSupplyPair
+                    float originTightNorm = not na(originRange) ? f_clamp(1.0 - originRange / math.max(clusterRange * 0.95, syminfo.mintick), 0.0, 1.0) : 0.0
+                    float singleOriginTightNorm = not na(singleOriginRange) ? f_clamp(1.0 - singleOriginRange / math.max(clusterRange * 0.90, syminfo.mintick), 0.0, 1.0) : 0.0
+                    bool demandUseSingleOrigin = incomingBear and not haPairDemand and baseBars <= 3 and not na(singleOriginRange) and singleOriginRange <= math.min(clusterRange * (smoothZoneCandles ? 0.72 : 0.62), math.max(baseAtr * (smoothZoneCandles ? 1.12 : 1.00), syminfo.mintick * 2)) and departureBull and departureCloseHigh >= nz(singleOriginBodyHigh, decisionBodyHigh) + departureCloseNeed * 0.55
+                    bool supplyUseSingleOrigin = incomingBull and not haPairSupply and baseBars <= 3 and not na(singleOriginRange) and singleOriginRange <= math.min(clusterRange * (smoothZoneCandles ? 0.72 : 0.62), math.max(baseAtr * (smoothZoneCandles ? 1.12 : 1.00), syminfo.mintick * 2)) and departureBear and departureCloseLow <= nz(singleOriginBodyLow, decisionBodyLow) - departureCloseNeed * 0.55
+                    bool demandUseOriginGeometry = incomingBear and not haPairDemand and originBars <= 2 and not na(originRange) and originRange <= clusterRange * (smoothZoneCandles ? 0.92 : 0.84)
+                    bool supplyUseOriginGeometry = incomingBull and not haPairSupply and originBars <= 2 and not na(originRange) and originRange <= clusterRange * (smoothZoneCandles ? 0.92 : 0.84)
+                    float demandTopCandidate = haPairDemand ? math.min(decisionBodyHigh, pairMid) : demandUseSingleOrigin ? nz(singleOriginBodyHigh, nz(originBodyHigh, decisionBodyHigh)) : demandUseOriginGeometry ? nz(originBodyHigh, decisionBodyHigh) : decisionBodyHigh
+                    float demandBottomCandidate = haPairDemand ? pairLow : demandUseSingleOrigin ? nz(singleOriginLow, nz(originLow, decisionLow)) : demandUseOriginGeometry ? nz(originLow, decisionLow) : decisionLow
+                    float supplyTopCandidate = haPairSupply ? pairHigh : supplyUseSingleOrigin ? nz(singleOriginHigh, nz(originHigh, decisionHigh)) : supplyUseOriginGeometry ? nz(originHigh, decisionHigh) : decisionHigh
+                    float supplyBottomCandidate = haPairSupply ? math.max(decisionBodyLow, pairMid) : supplyUseSingleOrigin ? nz(singleOriginBodyLow, nz(originBodyLow, decisionBodyLow)) : supplyUseOriginGeometry ? nz(originBodyLow, decisionBodyLow) : decisionBodyLow
+                    float demandZoneWidth = demandTopCandidate - demandBottomCandidate
+                    float supplyZoneWidth = supplyTopCandidate - supplyBottomCandidate
+                    bool demandGeometryOk = demandZoneWidth > syminfo.mintick
+                    bool supplyGeometryOk = supplyZoneWidth > syminfo.mintick
+                    float demandExcursion = departureHigh - demandTopCandidate
+                    float supplyExcursion = supplyBottomCandidate - departureLow
+                    float baseCompressionNorm = f_clamp(baseAtr / math.max(clusterRange, syminfo.mintick) / 1.35, 0.0, 1.0)
+                    float bodyCompressionNorm = f_clamp(1.0 - bodySpan / math.max(clusterRange * 0.92, syminfo.mintick), 0.0, 1.0)
+                    float driftNorm = f_clamp(1.0 - nz(netDrift, clusterRange) / math.max(clusterRange * 0.72, syminfo.mintick), 0.0, 1.0)
+                    float baseMathScore = baseCompressionNorm * 0.42 + bodyCompressionNorm * 0.24 + driftNorm * 0.34
+                    bool demandStrongClose = departureCloseHigh >= demandTopCandidate + departureCloseNeed
+                    bool supplyStrongClose = departureCloseLow <= supplyBottomCandidate - departureCloseNeed
+                    float leaveTolerance = baseAtr * activeZoneLeaveTolAtr * (smoothZoneCandles ? 1.35 : 1.0)
+                    float softExcursionFrac = smoothZoneCandles ? activeZoneSoftExcursionFrac * 0.90 : activeZoneSoftExcursionFrac
+                    float softCloseFrac = smoothZoneCandles ? activeZoneSoftCloseFrac * 0.90 : activeZoneSoftCloseFrac
+                    float reversalSweepAllowance = leaveTolerance * (smoothZoneCandles ? 1.85 : 1.45)
+                    bool demandSpringSweep = incomingBear and departureBull and departureLow >= demandBottomCandidate - reversalSweepAllowance and departureCloseHigh >= demandTopCandidate + departureCloseNeed * 0.55
+                    bool supplyUpthrustSweep = incomingBull and departureBear and departureHigh <= supplyTopCandidate + reversalSweepAllowance and departureCloseLow <= supplyBottomCandidate - departureCloseNeed * 0.55
+                    bool cleanDemandLeave = (departureLow >= demandBottomCandidate - leaveTolerance and (departureCloseHigh >= demandTopCandidate - departureCloseNeed * 0.25 or departureHigh >= demandTopCandidate + departureExcursionNeed * softExcursionFrac)) or demandSpringSweep
+                    bool cleanSupplyLeave = (departureHigh <= supplyTopCandidate + leaveTolerance and (departureCloseLow <= supplyBottomCandidate + departureCloseNeed * 0.25 or departureLow <= supplyBottomCandidate - departureExcursionNeed * softExcursionFrac)) or supplyUpthrustSweep
+                    float demandExcursionNorm = f_clamp(demandExcursion / math.max(departureExcursionNeed * softExcursionFrac, syminfo.mintick), 0.0, 1.0)
+                    float supplyExcursionNorm = f_clamp(supplyExcursion / math.max(departureExcursionNeed * softExcursionFrac, syminfo.mintick), 0.0, 1.0)
+                    float demandCloseNorm = f_clamp((departureCloseHigh - demandTopCandidate) / math.max(departureCloseNeed * softCloseFrac, syminfo.mintick), 0.0, 1.0)
+                    float supplyCloseNorm = f_clamp((supplyBottomCandidate - departureCloseLow) / math.max(departureCloseNeed * softCloseFrac, syminfo.mintick), 0.0, 1.0)
+                    float demandStructureNorm = demandReversalBreak ? 1.0 : demandSpringSweep ? 0.86 : demandContinuationBreak ? 0.72 : demandStrongClose ? 0.48 : 0.14
+                    float supplyStructureNorm = supplyReversalBreak ? 1.0 : supplyUpthrustSweep ? 0.86 : supplyContinuationBreak ? 0.72 : supplyStrongClose ? 0.48 : 0.14
+                    float demandVolumeNorm = not useZoneVolumeProxy ? 0.65 : f_clamp((absorptionProxy - 0.60) / 0.85, 0.0, 1.0) * 0.46 + f_clamp((departureVolRatio - 0.70) / 0.75, 0.0, 1.0) * 0.22 + f_clamp((departurePressureBias - 0.02) / 0.45, 0.0, 1.0) * 0.22 + f_clamp((-basePressureBias - 0.02) / 0.40, 0.0, 1.0) * 0.10
+                    float supplyVolumeNorm = not useZoneVolumeProxy ? 0.65 : f_clamp((absorptionProxy - 0.60) / 0.85, 0.0, 1.0) * 0.46 + f_clamp((departureVolRatio - 0.70) / 0.75, 0.0, 1.0) * 0.22 + f_clamp((-departurePressureBias - 0.02) / 0.45, 0.0, 1.0) * 0.22 + f_clamp((basePressureBias - 0.02) / 0.40, 0.0, 1.0) * 0.10
+                    float demandFootprintNorm = not useZoneFootprintProxy ? 0.65 : f_clamp(demandFootprintScore / 100.0, 0.0, 1.0) * 0.55 + demandDeltaNorm * 0.45
+                    float supplyFootprintNorm = not useZoneFootprintProxy ? 0.65 : f_clamp(supplyFootprintScore / 100.0, 0.0, 1.0) * 0.55 + supplyDeltaNorm * 0.45
+                    float decisionBaseBoost = baseBars <= 2 ? 0.08 : baseBars == 3 ? 0.03 : 0.0
+                    float haDecisionBoost = smoothZoneCandles and baseBars <= 2 ? 0.10 : smoothZoneCandles and baseBars == 3 ? 0.04 : 0.0
+                    float hiddenPairDemandBoost = haPairDemand ? 0.12 : 0.0
+                    float hiddenPairSupplyBoost = haPairSupply ? 0.12 : 0.0
+                    float reversalOriginDemandBoost = demandUseOriginGeometry ? 0.10 + originTightNorm * 0.10 : 0.0
+                    float reversalOriginSupplyBoost = supplyUseOriginGeometry ? 0.10 + originTightNorm * 0.10 : 0.0
+                    float singleOriginDemandBoost = demandUseSingleOrigin ? 0.14 + singleOriginTightNorm * 0.14 : 0.0
+                    float singleOriginSupplyBoost = supplyUseSingleOrigin ? 0.14 + singleOriginTightNorm * 0.14 : 0.0
+                    float sweepDemandBoost = demandSpringSweep ? 0.10 : 0.0
+                    float sweepSupplyBoost = supplyUpthrustSweep ? 0.10 : 0.0
+                    float demandMathScore = baseMathScore * 0.27 + demandExcursionNorm * 0.22 + demandCloseNorm * 0.15 + demandVolumeNorm * 0.13 + demandFootprintNorm * 0.13 + demandStructureNorm * 0.10 + decisionBaseBoost + haDecisionBoost + hiddenPairDemandBoost + reversalOriginDemandBoost + singleOriginDemandBoost + sweepDemandBoost
+                    float supplyMathScore = baseMathScore * 0.27 + supplyExcursionNorm * 0.22 + supplyCloseNorm * 0.15 + supplyVolumeNorm * 0.13 + supplyFootprintNorm * 0.13 + supplyStructureNorm * 0.10 + decisionBaseBoost + haDecisionBoost + hiddenPairSupplyBoost + reversalOriginSupplyBoost + singleOriginSupplyBoost + sweepSupplyBoost
+                    bool demandImpulseOk = demandExcursion >= departureExcursionNeed * 0.74 or demandStrongClose or explosiveDeparture
+                    bool supplyImpulseOk = supplyExcursion >= departureExcursionNeed * 0.74 or supplyStrongClose or explosiveDeparture
+                    float continuationMathNeed = math.max(0.20, smoothZoneCandles ? activeZoneMinContinuationMath - 0.06 : activeZoneMinContinuationMath)
+                    float reversalMathNeed = math.max(0.24, smoothZoneCandles ? activeZoneMinReversalMath - 0.08 : activeZoneMinReversalMath)
+                    bool demandDepartureQualified = demandGeometryOk and departureBull and cleanDemandLeave and demandImpulseOk and demandMathScore >= (incomingBull ? continuationMathNeed : reversalMathNeed)
+                    bool supplyDepartureQualified = supplyGeometryOk and departureBear and cleanSupplyLeave and supplyImpulseOk and supplyMathScore >= (incomingBull ? reversalMathNeed : continuationMathNeed)
+                    bool rbrCandidate = incomingBull and demandDepartureQualified
+                    bool dbrCandidate = incomingBear and demandDepartureQualified
+                    bool rbdCandidate = incomingBull and supplyDepartureQualified
+                    bool dbdCandidate = incomingBear and supplyDepartureQualified
+                    float demandDomScore = useZoneVolumeProxy ? f_zone_dom_score(absorptionProxy, departureVolRatio, departurePressureBias, basePressureBias, true) : 50.0
+                    float supplyDomScore = useZoneVolumeProxy ? f_zone_dom_score(absorptionProxy, departureVolRatio, departurePressureBias, basePressureBias, false) : 50.0
+                    bool demandVolumeConfirmed = not useZoneVolumeProxy or demandVolumeNorm >= activeZoneVolumeConfirm
+                    bool supplyVolumeConfirmed = not useZoneVolumeProxy or supplyVolumeNorm >= activeZoneVolumeConfirm
+                    float demandVolumeBoost = useZoneVolumeProxy ? (math.max(absorptionProxy - 1.0, 0.0) * 0.16 + math.max(departureVolRatio - 1.0, 0.0) * 0.16 + math.max(departurePressureBias, 0.0) * 0.60 + math.max(-basePressureBias, 0.0) * 0.10) * zoneVolumeScoreWeight : 0.0
+                    float supplyVolumeBoost = useZoneVolumeProxy ? (math.max(absorptionProxy - 1.0, 0.0) * 0.16 + math.max(departureVolRatio - 1.0, 0.0) * 0.16 + math.max(-departurePressureBias, 0.0) * 0.60 + math.max(basePressureBias, 0.0) * 0.10) * zoneVolumeScoreWeight : 0.0
+                    float demandFootprintBoost = useZoneFootprintProxy ? (demandFootprintNorm - 0.50) * 0.50 * zoneFootprintScoreWeight : 0.0
+                    float supplyFootprintBoost = useZoneFootprintProxy ? (supplyFootprintNorm - 0.50) * 0.50 * zoneFootprintScoreWeight : 0.0
+                    float demandDeltaBoost = useZoneFootprintProxy ? ((demandDeltaNorm - 0.45) * 0.34 + (demandDepartureDeltaNorm - 0.50) * 0.16 + (demandAbsorptionDeltaNorm - 0.35) * 0.10) * zoneFootprintScoreWeight : 0.0
+                    float supplyDeltaBoost = useZoneFootprintProxy ? ((supplyDeltaNorm - 0.45) * 0.34 + (supplyDepartureDeltaNorm - 0.50) * 0.16 + (supplyAbsorptionDeltaNorm - 0.35) * 0.10) * zoneFootprintScoreWeight : 0.0
+                    float demandVolumePenalty = useZoneVolumeProxy and not demandVolumeConfirmed ? 0.08 * zoneVolumeScoreWeight : 0.0
+                    float supplyVolumePenalty = useZoneVolumeProxy and not supplyVolumeConfirmed ? 0.08 * zoneVolumeScoreWeight : 0.0
+                    float demandFootprintPenalty = useZoneFootprintProxy and demandFootprintNorm < 0.40 ? (0.40 - demandFootprintNorm) * 0.18 * zoneFootprintScoreWeight : 0.0
+                    float supplyFootprintPenalty = useZoneFootprintProxy and supplyFootprintNorm < 0.40 ? (0.40 - supplyFootprintNorm) * 0.18 * zoneFootprintScoreWeight : 0.0
+                    float demandDeltaPenalty = useZoneFootprintProxy and demandDeltaNorm < 0.30 ? (0.30 - demandDeltaNorm) * 0.24 * zoneFootprintScoreWeight : 0.0
+                    float supplyDeltaPenalty = useZoneFootprintProxy and supplyDeltaNorm < 0.30 ? (0.30 - supplyDeltaNorm) * 0.24 * zoneFootprintScoreWeight : 0.0
+                    float baseWidthPenalty = math.max(clusterRange / math.max(baseAtr, syminfo.mintick) - 0.95, 0.0) * 0.18
+                    float baseBarsPenalty = math.max(baseBars - 3, 0) * 0.06 + math.max(departureBars - 3, 0) * 0.04
+                    float driftPenalty = not na(netDrift) ? netDrift / math.max(baseAtr, syminfo.mintick) * 0.10 : 0.0
+                    float basePenalty = baseWidthPenalty + baseBarsPenalty + driftPenalty
+                    float demandBasePenalty = basePenalty * (demandUseSingleOrigin ? 0.22 : (demandUseOriginGeometry or reversalOriginFallback) ? 0.58 : 1.0)
+                    float supplyBasePenalty = basePenalty * (supplyUseSingleOrigin ? 0.22 : (supplyUseOriginGeometry or reversalOriginFallback) ? 0.58 : 1.0)
+                    if rbrCandidate or dbrCandidate
+                        int demandPatternIndex = dbrCandidate ? 1 : 0
+                        bool demandReversal = demandPatternIndex == 1
+                        bool demandHighQuality = demandMathScore >= 0.70 and demandVolumeConfirmed
+                        bool demandOkayQuality = demandMathScore >= (demandReversal ? activeZoneMinReversalMath : activeZoneMinContinuationMath)
+                        float demandPatternBoost = dbrCandidate ? 0.32 : 0.18
+                        float demandStructureBoost = dbrCandidate ? (demandReversalBreak ? 0.24 : demandSpringSweep ? 0.16 : 0.0) : (demandContinuationBreak ? 0.14 : 0.0)
+                        float demandDepartureBoost = explosiveDeparture ? 0.14 : 0.0
+                        float demandScore = (math.max(demandExcursion, 0.0) + math.max(departureCloseHigh - demandTopCandidate, 0.0)) / math.max(baseAtr, syminfo.mintick) + demandPatternBoost + demandStructureBoost + demandDepartureBoost + (demandStrongClose ? 0.18 : 0.0) + demandVolumeBoost + demandFootprintBoost + demandDeltaBoost + demandMathScore * 0.65 + baseMathScore * 0.20 - demandVolumePenalty - demandFootprintPenalty - demandDeltaPenalty - demandBasePenalty
+                        if not array.get(patternFound, demandPatternIndex) or demandScore > array.get(patternScores, demandPatternIndex)
+                            array.set(patternFound, demandPatternIndex, true)
+                            array.set(patternScores, demandPatternIndex, demandScore)
+                            array.set(patternTops, demandPatternIndex, demandTopCandidate)
+                            array.set(patternBottoms, demandPatternIndex, demandBottomCandidate)
+                            array.set(patternBorns, demandPatternIndex, zoneBornIndex)
+                            array.set(patternStrengths, demandPatternIndex, demandHighQuality ? 2.0 : demandOkayQuality ? 1.0 : 0.5)
+                            array.set(patternTimes, demandPatternIndex, baseBars <= 2 ? 1.0 : baseBars <= 4 ? 0.5 : 0.0)
+                            array.set(patternDomScores, demandPatternIndex, demandDomScore)
+                            array.set(patternFootprintScores, demandPatternIndex, demandFootprintScore)
+                            array.set(patternDeltaValues, demandPatternIndex, demandZoneDeltaValue)
+                            array.set(patternTexts, demandPatternIndex, dbrCandidate ? "DBR DEMAND" : "RBR DEMAND")
+                            array.set(patternReversals, demandPatternIndex, demandReversal)
+                    if dbdCandidate or rbdCandidate
+                        int supplyPatternIndex = rbdCandidate ? 2 : 3
+                        bool supplyReversal = supplyPatternIndex == 2
+                        bool supplyHighQuality = supplyMathScore >= 0.70 and supplyVolumeConfirmed
+                        bool supplyOkayQuality = supplyMathScore >= (supplyReversal ? activeZoneMinReversalMath : activeZoneMinContinuationMath)
+                        float supplyPatternBoost = rbdCandidate ? 0.32 : 0.18
+                        float supplyStructureBoost = rbdCandidate ? (supplyReversalBreak ? 0.24 : supplyUpthrustSweep ? 0.16 : 0.0) : (supplyContinuationBreak ? 0.14 : 0.0)
+                        float supplyDepartureBoost = explosiveDeparture ? 0.14 : 0.0
+                        float supplyScore = (math.max(supplyExcursion, 0.0) + math.max(supplyBottomCandidate - departureCloseLow, 0.0)) / math.max(baseAtr, syminfo.mintick) + supplyPatternBoost + supplyStructureBoost + supplyDepartureBoost + (supplyStrongClose ? 0.18 : 0.0) + supplyVolumeBoost + supplyFootprintBoost + supplyDeltaBoost + supplyMathScore * 0.65 + baseMathScore * 0.20 - supplyVolumePenalty - supplyFootprintPenalty - supplyDeltaPenalty - supplyBasePenalty
+                        if not array.get(patternFound, supplyPatternIndex) or supplyScore > array.get(patternScores, supplyPatternIndex)
+                            array.set(patternFound, supplyPatternIndex, true)
+                            array.set(patternScores, supplyPatternIndex, supplyScore)
+                            array.set(patternTops, supplyPatternIndex, supplyTopCandidate)
+                            array.set(patternBottoms, supplyPatternIndex, supplyBottomCandidate)
+                            array.set(patternBorns, supplyPatternIndex, zoneBornIndex)
+                            array.set(patternStrengths, supplyPatternIndex, supplyHighQuality ? 2.0 : supplyOkayQuality ? 1.0 : 0.5)
+                            array.set(patternTimes, supplyPatternIndex, baseBars <= 2 ? 1.0 : baseBars <= 4 ? 0.5 : 0.0)
+                            array.set(patternDomScores, supplyPatternIndex, supplyDomScore)
+                            array.set(patternFootprintScores, supplyPatternIndex, supplyFootprintScore)
+                            array.set(patternDeltaValues, supplyPatternIndex, supplyZoneDeltaValue)
+                            array.set(patternTexts, supplyPatternIndex, rbdCandidate ? "RBD SUPPLY" : "DBD SUPPLY")
+                            array.set(patternReversals, supplyPatternIndex, supplyReversal)
+
+for patternIndex = 0 to 3
+    if array.get(patternFound, patternIndex)
+        bool candidateIsDemand = patternIndex <= 1
+        float candidateScore = array.get(patternScores, patternIndex)
+        float candidateTop = array.get(patternTops, patternIndex)
+        float candidateBottom = array.get(patternBottoms, patternIndex)
+        float candidateStrength = array.get(patternStrengths, patternIndex)
+        float candidateTime = array.get(patternTimes, patternIndex)
+        float candidateDomScore = array.get(patternDomScores, patternIndex)
+        float candidateFootprintScore = array.get(patternFootprintScores, patternIndex)
+        float candidateDeltaValue = array.get(patternDeltaValues, patternIndex)
+        int candidateBorn = array.get(patternBorns, patternIndex)
+        string candidateText = array.get(patternTexts, patternIndex)
+        bool candidateReversal = array.get(patternReversals, patternIndex)
+        if candidateIsDemand
+            bool demandExists = false
+            int demandBornCount = array.size(demandBorns)
+            if demandBornCount > 0
+                for i = 0 to demandBornCount - 1
+                    if array.get(demandBorns, i) == candidateBorn and array.get(demandTypes, i) == candidateText
+                        demandExists := true
+            if not demandExists
+                int demandReplaceIndex = na
+                float newDemandWidth = candidateTop - candidateBottom
+                if demandBornCount > 0
+                    for i = 0 to demandBornCount - 1
+                        float existingTop = array.get(demandTops, i)
+                        float existingBottom = array.get(demandBottoms, i)
+                        float existingWidth = existingTop - existingBottom
+                        int existingBorn = array.get(demandBorns, i)
+                        float demandGapAllowance = math.max(atr * sameSideZoneGapAtr, math.min(newDemandWidth, existingWidth) * 0.35)
+                        bool overlapDemand = f_zone_same_move_cluster(candidateTop, candidateBottom, candidateBorn, existingTop, existingBottom, existingBorn, demandGapAllowance, sameSideZoneBornGap)
+                        if overlapDemand
+                            float existingQuality = array.get(demandQualityScores, i)
+                            bool existingReversal = array.get(demandIsReversal, i)
+                            bool candidateEarlier = candidateBorn + 1 < existingBorn
+                            bool existingEarlier = existingBorn + 1 < candidateBorn
+                            bool muchTighterDemand = newDemandWidth <= existingWidth * 0.72
+                            bool originTighterDemand = candidateReversal and newDemandWidth <= existingWidth * 0.58
+                            bool materiallyBetterDemand = candidateScore > existingQuality + (zoneCandleSource != "Regular" ? 0.34 : 0.42)
+                            bool smoothDecisionUpgradeDemand = zoneCandleSource != "Regular" and muchTighterDemand and candidateScore >= existingQuality - 0.10
+                            bool replaceDemand = false
+                            if candidateEarlier
+                                replaceDemand := true
+                            else if existingEarlier
+                                replaceDemand := (materiallyBetterDemand and muchTighterDemand) or (candidateReversal and not existingReversal and candidateScore >= existingQuality - 0.08 and newDemandWidth < existingWidth * 0.92) or (originTighterDemand and candidateScore >= existingQuality - 0.18) or smoothDecisionUpgradeDemand
+                                if not replaceDemand
+                                    demandExists := true
+                            else
+                                replaceDemand := candidateScore > existingQuality + (zoneCandleSource != "Regular" ? 0.28 : 0.35) or (candidateScore >= existingQuality - 0.12 and newDemandWidth <= existingWidth * (zoneCandleSource != "Regular" ? 0.68 : 0.60)) or (originTighterDemand and candidateScore >= existingQuality - 0.18) or (math.abs(candidateScore - existingQuality) <= 0.16 and ((candidateReversal and not existingReversal) or newDemandWidth < existingWidth * 0.92))
+                            if replaceDemand
+                                if na(demandReplaceIndex) or existingBorn > array.get(demandBorns, demandReplaceIndex)
+                                    demandReplaceIndex := i
+                            else
+                                demandExists := true
+                if not demandExists
+                    if not na(demandReplaceIndex)
+                        array.set(demandTops, demandReplaceIndex, candidateTop)
+                        array.set(demandBottoms, demandReplaceIndex, candidateBottom)
+                        array.set(demandBorns, demandReplaceIndex, candidateBorn)
+                        array.set(demandActiveFromBars, demandReplaceIndex, bar_index + 1)
+                        array.set(demandTestCounts, demandReplaceIndex, 0)
+                        array.set(demandBrokenStates, demandReplaceIndex, false)
+                        array.set(demandStrengthScores, demandReplaceIndex, candidateStrength)
+                        array.set(demandTimeScores, demandReplaceIndex, candidateTime)
+                        array.set(demandQualityScores, demandReplaceIndex, candidateScore)
+                        array.set(demandDomScores, demandReplaceIndex, candidateDomScore)
+                        array.set(demandFootprintScores, demandReplaceIndex, candidateFootprintScore)
+                        array.set(demandDeltaValues, demandReplaceIndex, candidateDeltaValue)
+                        array.set(demandRejectionScores, demandReplaceIndex, 0.0)
+                        array.set(demandLastTouchBars, demandReplaceIndex, na)
+                        array.set(demandReactionTouchBars, demandReplaceIndex, na)
+                        array.set(demandReactionCounts, demandReplaceIndex, 0)
+                        array.set(demandIsReversal, demandReplaceIndex, candidateReversal)
+                        array.set(demandTypes, demandReplaceIndex, candidateText)
+                        box replaceDemandBox = array.get(demandBoxes, demandReplaceIndex)
+                        label replaceDemandLabel = array.get(demandLabels, demandReplaceIndex)
+                        line replaceDemandProxLine = array.get(demandDomProxLines, demandReplaceIndex)
+                        line replaceDemandMidLine = array.get(demandDomMidLines, demandReplaceIndex)
+                        line replaceDemandDistalLine = array.get(demandDomDistalLines, demandReplaceIndex)
+                        label replaceDemandBubble = array.get(demandBubbleLabels, demandReplaceIndex)
+                        float domScoreClamped = f_clamp(candidateDomScore, 0.0, 100.0)
+                        color candidateDeltaColor = f_zone_delta_color(candidateDeltaValue)
+                        float candidateDeltaIntensityScore = f_clamp(math.abs(candidateDeltaValue) / math.max(volAvg * math.max(float(activeZoneBaseBars + activeZoneDepartureBars), 2.0), 1.0) * 100.0, 0.0, 100.0)
+                        float domWidth = math.max(candidateTop - candidateBottom, syminfo.mintick)
+                        int zoneTextX = int(math.round((candidateBorn + bar_index + zoneForwardBars) * 0.5))
+                        float demandProxY = candidateTop - domWidth * 0.18
+                        float demandMidY = candidateBottom + domWidth * 0.50
+                        float demandDistalY = candidateBottom + domWidth * 0.18
+                        int proxWidth = domScoreClamped >= 75 ? 3 : domScoreClamped >= 40 ? 2 : 1
+                        int midWidth = domScoreClamped >= 60 ? 2 : 1
+                        int proxTrans = int(math.round(f_clamp(90.0 - domScoreClamped * 0.60, 18.0, 90.0)))
+                        int midTrans = int(math.round(f_clamp(95.0 - domScoreClamped * 0.45, 26.0, 95.0)))
+                        int distalTrans = int(math.round(f_clamp(98.0 - domScoreClamped * 0.30, 40.0, 98.0)))
+                        int bubbleTrans = int(math.round(f_clamp(92.0 - math.max(math.max(domScoreClamped, candidateFootprintScore), candidateDeltaIntensityScore) * 0.55, 10.0, 92.0)))
+                        box.set_left(replaceDemandBox, candidateBorn)
+                        box.set_right(replaceDemandBox, bar_index + zoneForwardBars)
+                        box.set_top(replaceDemandBox, candidateTop)
+                        box.set_bottom(replaceDemandBox, candidateBottom)
+                        box.set_bgcolor(replaceDemandBox, color.new(color.rgb(0, 166, 79), showZones ? 78 : 100))
+                        box.set_border_color(replaceDemandBox, color.new(color.rgb(0, 166, 79), showZones ? 0 : 100))
+                        label.set_x(replaceDemandLabel, candidateBorn)
+                        label.set_y(replaceDemandLabel, candidateTop)
+                        label.set_text(replaceDemandLabel, f_zone_display_text(candidateText, false, 0))
+                        label.set_size(replaceDemandLabel, zoneStructureLabelSize)
+                        label.set_color(replaceDemandLabel, color.new(color.rgb(0, 166, 79), showZones ? 0 : 100))
+                        label.set_textcolor(replaceDemandLabel, color.new(color.white, showZones ? 0 : 100))
+                        line.set_xy1(replaceDemandProxLine, candidateBorn, demandProxY)
+                        line.set_xy2(replaceDemandProxLine, bar_index + zoneForwardBars, demandProxY)
+                        line.set_color(replaceDemandProxLine, color.new(color.rgb(0, 255, 140), showZones and showZoneDomProxy ? proxTrans : 100))
+                        line.set_width(replaceDemandProxLine, proxWidth)
+                        line.set_xy1(replaceDemandMidLine, candidateBorn, demandMidY)
+                        line.set_xy2(replaceDemandMidLine, bar_index + zoneForwardBars, demandMidY)
+                        line.set_color(replaceDemandMidLine, color.new(color.rgb(0, 220, 150), showZones and showZoneDomProxy and not zoneDomCompact ? midTrans : 100))
+                        line.set_width(replaceDemandMidLine, midWidth)
+                        line.set_xy1(replaceDemandDistalLine, candidateBorn, demandDistalY)
+                        line.set_xy2(replaceDemandDistalLine, bar_index + zoneForwardBars, demandDistalY)
+                        line.set_color(replaceDemandDistalLine, color.new(color.rgb(0, 190, 160), showZones and showZoneDomProxy and not zoneDomCompact ? distalTrans : 100))
+                        line.set_width(replaceDemandDistalLine, 1)
+                        label.set_x(replaceDemandBubble, zoneTextX)
+                        label.set_y(replaceDemandBubble, demandMidY)
+                        label.set_style(replaceDemandBubble, label.style_none)
+                        label.set_text(replaceDemandBubble, f_zone_bubble_text(zoneDomCompact, 0.0, candidateDeltaValue, 0))
+                        label.set_size(replaceDemandBubble, zoneBubbleLabelSize)
+                        label.set_color(replaceDemandBubble, color.new(color.rgb(0, 166, 79), showZones and showZonePressureBubble ? bubbleTrans : 100))
+                        label.set_textcolor(replaceDemandBubble, color.new(candidateDeltaColor, showZones and showZonePressureBubble ? 0 : 100))
+                    else
+                        array.push(demandTops, candidateTop)
+                        array.push(demandBottoms, candidateBottom)
+                        array.push(demandBorns, candidateBorn)
+                        array.push(demandActiveFromBars, bar_index + 1)
+                        array.push(demandTestCounts, 0)
+                        array.push(demandBrokenStates, false)
+                        array.push(demandStrengthScores, candidateStrength)
+                        array.push(demandTimeScores, candidateTime)
+                        array.push(demandQualityScores, candidateScore)
+                        array.push(demandDomScores, candidateDomScore)
+                        array.push(demandFootprintScores, candidateFootprintScore)
+                        array.push(demandDeltaValues, candidateDeltaValue)
+                        array.push(demandRejectionScores, 0.0)
+                        array.push(demandLastTouchBars, na)
+                        array.push(demandReactionTouchBars, na)
+                        array.push(demandReactionCounts, 0)
+                        array.push(demandIsReversal, candidateReversal)
+                        array.push(demandTypes, candidateText)
+                        float domScoreClamped = f_clamp(candidateDomScore, 0.0, 100.0)
+                        color candidateDeltaColor = f_zone_delta_color(candidateDeltaValue)
+                        float candidateDeltaIntensityScore = f_clamp(math.abs(candidateDeltaValue) / math.max(volAvg * math.max(float(activeZoneBaseBars + activeZoneDepartureBars), 2.0), 1.0) * 100.0, 0.0, 100.0)
+                        float domWidth = math.max(candidateTop - candidateBottom, syminfo.mintick)
+                        int zoneTextX = int(math.round((candidateBorn + bar_index + zoneForwardBars) * 0.5))
+                        float demandProxY = candidateTop - domWidth * 0.18
+                        float demandMidY = candidateBottom + domWidth * 0.50
+                        float demandDistalY = candidateBottom + domWidth * 0.18
+                        int proxWidth = domScoreClamped >= 75 ? 3 : domScoreClamped >= 40 ? 2 : 1
+                        int midWidth = domScoreClamped >= 60 ? 2 : 1
+                        int proxTrans = int(math.round(f_clamp(90.0 - domScoreClamped * 0.60, 18.0, 90.0)))
+                        int midTrans = int(math.round(f_clamp(95.0 - domScoreClamped * 0.45, 26.0, 95.0)))
+                        int distalTrans = int(math.round(f_clamp(98.0 - domScoreClamped * 0.30, 40.0, 98.0)))
+                        int bubbleTrans = int(math.round(f_clamp(92.0 - math.max(math.max(domScoreClamped, candidateFootprintScore), candidateDeltaIntensityScore) * 0.55, 10.0, 92.0)))
+                        box newDemandBox = box.new(candidateBorn, candidateTop, bar_index + zoneForwardBars, candidateBottom, bgcolor=color.new(color.rgb(0, 166, 79), showZones ? 78 : 100), border_color=color.new(color.rgb(0, 166, 79), showZones ? 0 : 100))
+                        label newDemandLabel = label.new(candidateBorn, candidateTop, f_zone_display_text(candidateText, false, 0), style=label.style_label_down, color=color.new(color.rgb(0, 166, 79), showZones ? 0 : 100), textcolor=color.new(color.white, showZones ? 0 : 100), size=zoneStructureLabelSize)
+                        line newDemandProxLine = line.new(candidateBorn, demandProxY, bar_index + zoneForwardBars, demandProxY, color=color.new(color.rgb(0, 255, 140), showZones and showZoneDomProxy ? proxTrans : 100), width=proxWidth)
+                        line newDemandMidLine = line.new(candidateBorn, demandMidY, bar_index + zoneForwardBars, demandMidY, color=color.new(color.rgb(0, 220, 150), showZones and showZoneDomProxy and not zoneDomCompact ? midTrans : 100), width=midWidth)
+                        line newDemandDistalLine = line.new(candidateBorn, demandDistalY, bar_index + zoneForwardBars, demandDistalY, color=color.new(color.rgb(0, 190, 160), showZones and showZoneDomProxy and not zoneDomCompact ? distalTrans : 100), width=1)
+                        label newDemandBubble = label.new(zoneTextX, demandMidY, f_zone_bubble_text(zoneDomCompact, 0.0, candidateDeltaValue, 0), style=label.style_none, color=color.new(color.rgb(0, 166, 79), showZones and showZonePressureBubble ? bubbleTrans : 100), textcolor=color.new(candidateDeltaColor, showZones and showZonePressureBubble ? 0 : 100), size=zoneBubbleLabelSize)
+                        array.push(demandBoxes, newDemandBox)
+                        array.push(demandLabels, newDemandLabel)
+                        array.push(demandDomProxLines, newDemandProxLine)
+                        array.push(demandDomMidLines, newDemandMidLine)
+                        array.push(demandDomDistalLines, newDemandDistalLine)
+                        array.push(demandBubbleLabels, newDemandBubble)
+                        if array.size(demandBorns) > zoneStorageCap
+                            array.shift(demandTops)
+                            array.shift(demandBottoms)
+                            array.shift(demandBorns)
+                            array.shift(demandActiveFromBars)
+                            array.shift(demandTestCounts)
+                            array.shift(demandBrokenStates)
+                            array.shift(demandStrengthScores)
+                            array.shift(demandTimeScores)
+                            array.shift(demandQualityScores)
+                            array.shift(demandDomScores)
+                            array.shift(demandFootprintScores)
+                            array.shift(demandDeltaValues)
+                            array.shift(demandRejectionScores)
+                            array.shift(demandLastTouchBars)
+                            array.shift(demandReactionTouchBars)
+                            array.shift(demandReactionCounts)
+                            array.shift(demandIsReversal)
+                            array.shift(demandTypes)
+                            box oldDemandBox = array.shift(demandBoxes)
+                            label oldDemandLabel = array.shift(demandLabels)
+                            line oldDemandProxLine = array.shift(demandDomProxLines)
+                            line oldDemandMidLine = array.shift(demandDomMidLines)
+                            line oldDemandDistalLine = array.shift(demandDomDistalLines)
+                            label oldDemandBubble = array.shift(demandBubbleLabels)
+                            box.delete(oldDemandBox)
+                            label.delete(oldDemandLabel)
+                            line.delete(oldDemandProxLine)
+                            line.delete(oldDemandMidLine)
+                            line.delete(oldDemandDistalLine)
+                            label.delete(oldDemandBubble)
+        else
+            bool supplyExists = false
+            int supplyBornCount = array.size(supplyBorns)
+            if supplyBornCount > 0
+                for i = 0 to supplyBornCount - 1
+                    if array.get(supplyBorns, i) == candidateBorn and array.get(supplyTypes, i) == candidateText
+                        supplyExists := true
+            if not supplyExists
+                int supplyReplaceIndex = na
+                float newSupplyWidth = candidateTop - candidateBottom
+                if supplyBornCount > 0
+                    for i = 0 to supplyBornCount - 1
+                        float existingTop = array.get(supplyTops, i)
+                        float existingBottom = array.get(supplyBottoms, i)
+                        float existingWidth = existingTop - existingBottom
+                        int existingBorn = array.get(supplyBorns, i)
+                        float supplyGapAllowance = math.max(atr * sameSideZoneGapAtr, math.min(newSupplyWidth, existingWidth) * 0.35)
+                        bool overlapSupply = f_zone_same_move_cluster(candidateTop, candidateBottom, candidateBorn, existingTop, existingBottom, existingBorn, supplyGapAllowance, sameSideZoneBornGap)
+                        if overlapSupply
+                            float existingQuality = array.get(supplyQualityScores, i)
+                            bool existingReversal = array.get(supplyIsReversal, i)
+                            bool candidateEarlier = candidateBorn + 1 < existingBorn
+                            bool existingEarlier = existingBorn + 1 < candidateBorn
+                            bool muchTighterSupply = newSupplyWidth <= existingWidth * 0.72
+                            bool originTighterSupply = candidateReversal and newSupplyWidth <= existingWidth * 0.58
+                            bool materiallyBetterSupply = candidateScore > existingQuality + (zoneCandleSource != "Regular" ? 0.34 : 0.42)
+                            bool smoothDecisionUpgradeSupply = zoneCandleSource != "Regular" and muchTighterSupply and candidateScore >= existingQuality - 0.10
+                            bool replaceSupply = false
+                            if candidateEarlier
+                                replaceSupply := true
+                            else if existingEarlier
+                                replaceSupply := (materiallyBetterSupply and muchTighterSupply) or (candidateReversal and not existingReversal and candidateScore >= existingQuality - 0.08 and newSupplyWidth < existingWidth * 0.92) or (originTighterSupply and candidateScore >= existingQuality - 0.18) or smoothDecisionUpgradeSupply
+                                if not replaceSupply
+                                    supplyExists := true
+                            else
+                                replaceSupply := candidateScore > existingQuality + (zoneCandleSource != "Regular" ? 0.28 : 0.35) or (candidateScore >= existingQuality - 0.12 and newSupplyWidth <= existingWidth * (zoneCandleSource != "Regular" ? 0.68 : 0.60)) or (originTighterSupply and candidateScore >= existingQuality - 0.18) or (math.abs(candidateScore - existingQuality) <= 0.16 and ((candidateReversal and not existingReversal) or newSupplyWidth < existingWidth * 0.92))
+                            if replaceSupply
+                                if na(supplyReplaceIndex) or existingBorn > array.get(supplyBorns, supplyReplaceIndex)
+                                    supplyReplaceIndex := i
+                            else
+                                supplyExists := true
+                if not supplyExists
+                    if not na(supplyReplaceIndex)
+                        array.set(supplyTops, supplyReplaceIndex, candidateTop)
+                        array.set(supplyBottoms, supplyReplaceIndex, candidateBottom)
+                        array.set(supplyBorns, supplyReplaceIndex, candidateBorn)
+                        array.set(supplyActiveFromBars, supplyReplaceIndex, bar_index + 1)
+                        array.set(supplyTestCounts, supplyReplaceIndex, 0)
+                        array.set(supplyBrokenStates, supplyReplaceIndex, false)
+                        array.set(supplyStrengthScores, supplyReplaceIndex, candidateStrength)
+                        array.set(supplyTimeScores, supplyReplaceIndex, candidateTime)
+                        array.set(supplyQualityScores, supplyReplaceIndex, candidateScore)
+                        array.set(supplyDomScores, supplyReplaceIndex, candidateDomScore)
+                        array.set(supplyFootprintScores, supplyReplaceIndex, candidateFootprintScore)
+                        array.set(supplyDeltaValues, supplyReplaceIndex, candidateDeltaValue)
+                        array.set(supplyRejectionScores, supplyReplaceIndex, 0.0)
+                        array.set(supplyLastTouchBars, supplyReplaceIndex, na)
+                        array.set(supplyReactionTouchBars, supplyReplaceIndex, na)
+                        array.set(supplyReactionCounts, supplyReplaceIndex, 0)
+                        array.set(supplyIsReversal, supplyReplaceIndex, candidateReversal)
+                        array.set(supplyTypes, supplyReplaceIndex, candidateText)
+                        box replaceSupplyBox = array.get(supplyBoxes, supplyReplaceIndex)
+                        label replaceSupplyLabel = array.get(supplyLabels, supplyReplaceIndex)
+                        line replaceSupplyProxLine = array.get(supplyDomProxLines, supplyReplaceIndex)
+                        line replaceSupplyMidLine = array.get(supplyDomMidLines, supplyReplaceIndex)
+                        line replaceSupplyDistalLine = array.get(supplyDomDistalLines, supplyReplaceIndex)
+                        label replaceSupplyBubble = array.get(supplyBubbleLabels, supplyReplaceIndex)
+                        float domScoreClamped = f_clamp(candidateDomScore, 0.0, 100.0)
+                        color candidateDeltaColor = f_zone_delta_color(candidateDeltaValue)
+                        float candidateDeltaIntensityScore = f_clamp(math.abs(candidateDeltaValue) / math.max(volAvg * math.max(float(activeZoneBaseBars + activeZoneDepartureBars), 2.0), 1.0) * 100.0, 0.0, 100.0)
+                        float domWidth = math.max(candidateTop - candidateBottom, syminfo.mintick)
+                        int zoneTextX = int(math.round((candidateBorn + bar_index + zoneForwardBars) * 0.5))
+                        float supplyProxY = candidateBottom + domWidth * 0.18
+                        float supplyMidY = candidateBottom + domWidth * 0.50
+                        float supplyDistalY = candidateTop - domWidth * 0.18
+                        int proxWidth = domScoreClamped >= 75 ? 3 : domScoreClamped >= 40 ? 2 : 1
+                        int midWidth = domScoreClamped >= 60 ? 2 : 1
+                        int proxTrans = int(math.round(f_clamp(90.0 - domScoreClamped * 0.60, 18.0, 90.0)))
+                        int midTrans = int(math.round(f_clamp(95.0 - domScoreClamped * 0.45, 26.0, 95.0)))
+                        int distalTrans = int(math.round(f_clamp(98.0 - domScoreClamped * 0.30, 40.0, 98.0)))
+                        int bubbleTrans = int(math.round(f_clamp(92.0 - math.max(math.max(domScoreClamped, candidateFootprintScore), candidateDeltaIntensityScore) * 0.55, 10.0, 92.0)))
+                        box.set_left(replaceSupplyBox, candidateBorn)
+                        box.set_right(replaceSupplyBox, bar_index + zoneForwardBars)
+                        box.set_top(replaceSupplyBox, candidateTop)
+                        box.set_bottom(replaceSupplyBox, candidateBottom)
+                        box.set_bgcolor(replaceSupplyBox, color.new(color.rgb(233, 31, 44), showZones ? 78 : 100))
+                        box.set_border_color(replaceSupplyBox, color.new(color.rgb(233, 31, 44), showZones ? 0 : 100))
+                        label.set_x(replaceSupplyLabel, candidateBorn)
+                        label.set_y(replaceSupplyLabel, candidateBottom)
+                        label.set_text(replaceSupplyLabel, f_zone_display_text(candidateText, false, 0))
+                        label.set_size(replaceSupplyLabel, zoneStructureLabelSize)
+                        label.set_color(replaceSupplyLabel, color.new(color.rgb(233, 31, 44), showZones ? 0 : 100))
+                        label.set_textcolor(replaceSupplyLabel, color.new(color.white, showZones ? 0 : 100))
+                        line.set_xy1(replaceSupplyProxLine, candidateBorn, supplyProxY)
+                        line.set_xy2(replaceSupplyProxLine, bar_index + zoneForwardBars, supplyProxY)
+                        line.set_color(replaceSupplyProxLine, color.new(color.rgb(255, 96, 96), showZones and showZoneDomProxy ? proxTrans : 100))
+                        line.set_width(replaceSupplyProxLine, proxWidth)
+                        line.set_xy1(replaceSupplyMidLine, candidateBorn, supplyMidY)
+                        line.set_xy2(replaceSupplyMidLine, bar_index + zoneForwardBars, supplyMidY)
+                        line.set_color(replaceSupplyMidLine, color.new(color.rgb(255, 122, 96), showZones and showZoneDomProxy and not zoneDomCompact ? midTrans : 100))
+                        line.set_width(replaceSupplyMidLine, midWidth)
+                        line.set_xy1(replaceSupplyDistalLine, candidateBorn, supplyDistalY)
+                        line.set_xy2(replaceSupplyDistalLine, bar_index + zoneForwardBars, supplyDistalY)
+                        line.set_color(replaceSupplyDistalLine, color.new(color.rgb(255, 150, 96), showZones and showZoneDomProxy and not zoneDomCompact ? distalTrans : 100))
+                        line.set_width(replaceSupplyDistalLine, 1)
+                        label.set_x(replaceSupplyBubble, zoneTextX)
+                        label.set_y(replaceSupplyBubble, supplyMidY)
+                        label.set_style(replaceSupplyBubble, label.style_none)
+                        label.set_text(replaceSupplyBubble, f_zone_bubble_text(zoneDomCompact, 0.0, candidateDeltaValue, 0))
+                        label.set_size(replaceSupplyBubble, zoneBubbleLabelSize)
+                        label.set_color(replaceSupplyBubble, color.new(color.rgb(233, 31, 44), showZones and showZonePressureBubble ? bubbleTrans : 100))
+                        label.set_textcolor(replaceSupplyBubble, color.new(candidateDeltaColor, showZones and showZonePressureBubble ? 0 : 100))
+                    else
+                        array.push(supplyTops, candidateTop)
+                        array.push(supplyBottoms, candidateBottom)
+                        array.push(supplyBorns, candidateBorn)
+                        array.push(supplyActiveFromBars, bar_index + 1)
+                        array.push(supplyTestCounts, 0)
+                        array.push(supplyBrokenStates, false)
+                        array.push(supplyStrengthScores, candidateStrength)
+                        array.push(supplyTimeScores, candidateTime)
+                        array.push(supplyQualityScores, candidateScore)
+                        array.push(supplyDomScores, candidateDomScore)
+                        array.push(supplyFootprintScores, candidateFootprintScore)
+                        array.push(supplyDeltaValues, candidateDeltaValue)
+                        array.push(supplyRejectionScores, 0.0)
+                        array.push(supplyLastTouchBars, na)
+                        array.push(supplyReactionTouchBars, na)
+                        array.push(supplyReactionCounts, 0)
+                        array.push(supplyIsReversal, candidateReversal)
+                        array.push(supplyTypes, candidateText)
+                        float domScoreClamped = f_clamp(candidateDomScore, 0.0, 100.0)
+                        color candidateDeltaColor = f_zone_delta_color(candidateDeltaValue)
+                        float candidateDeltaIntensityScore = f_clamp(math.abs(candidateDeltaValue) / math.max(volAvg * math.max(float(activeZoneBaseBars + activeZoneDepartureBars), 2.0), 1.0) * 100.0, 0.0, 100.0)
+                        float domWidth = math.max(candidateTop - candidateBottom, syminfo.mintick)
+                        int zoneTextX = int(math.round((candidateBorn + bar_index + zoneForwardBars) * 0.5))
+                        float supplyProxY = candidateBottom + domWidth * 0.18
+                        float supplyMidY = candidateBottom + domWidth * 0.50
+                        float supplyDistalY = candidateTop - domWidth * 0.18
+                        int proxWidth = domScoreClamped >= 75 ? 3 : domScoreClamped >= 40 ? 2 : 1
+                        int midWidth = domScoreClamped >= 60 ? 2 : 1
+                        int proxTrans = int(math.round(f_clamp(90.0 - domScoreClamped * 0.60, 18.0, 90.0)))
+                        int midTrans = int(math.round(f_clamp(95.0 - domScoreClamped * 0.45, 26.0, 95.0)))
+                        int distalTrans = int(math.round(f_clamp(98.0 - domScoreClamped * 0.30, 40.0, 98.0)))
+                        int bubbleTrans = int(math.round(f_clamp(92.0 - math.max(math.max(domScoreClamped, candidateFootprintScore), candidateDeltaIntensityScore) * 0.55, 10.0, 92.0)))
+                        box newSupplyBox = box.new(candidateBorn, candidateTop, bar_index + zoneForwardBars, candidateBottom, bgcolor=color.new(color.rgb(233, 31, 44), showZones ? 78 : 100), border_color=color.new(color.rgb(233, 31, 44), showZones ? 0 : 100))
+                        label newSupplyLabel = label.new(candidateBorn, candidateBottom, f_zone_display_text(candidateText, false, 0), style=label.style_label_up, color=color.new(color.rgb(233, 31, 44), showZones ? 0 : 100), textcolor=color.new(color.white, showZones ? 0 : 100), size=zoneStructureLabelSize)
+                        line newSupplyProxLine = line.new(candidateBorn, supplyProxY, bar_index + zoneForwardBars, supplyProxY, color=color.new(color.rgb(255, 96, 96), showZones and showZoneDomProxy ? proxTrans : 100), width=proxWidth)
+                        line newSupplyMidLine = line.new(candidateBorn, supplyMidY, bar_index + zoneForwardBars, supplyMidY, color=color.new(color.rgb(255, 122, 96), showZones and showZoneDomProxy and not zoneDomCompact ? midTrans : 100), width=midWidth)
+                        line newSupplyDistalLine = line.new(candidateBorn, supplyDistalY, bar_index + zoneForwardBars, supplyDistalY, color=color.new(color.rgb(255, 150, 96), showZones and showZoneDomProxy and not zoneDomCompact ? distalTrans : 100), width=1)
+                        label newSupplyBubble = label.new(zoneTextX, supplyMidY, f_zone_bubble_text(zoneDomCompact, 0.0, candidateDeltaValue, 0), style=label.style_none, color=color.new(color.rgb(233, 31, 44), showZones and showZonePressureBubble ? bubbleTrans : 100), textcolor=color.new(candidateDeltaColor, showZones and showZonePressureBubble ? 0 : 100), size=zoneBubbleLabelSize)
+                        array.push(supplyBoxes, newSupplyBox)
+                        array.push(supplyLabels, newSupplyLabel)
+                        array.push(supplyDomProxLines, newSupplyProxLine)
+                        array.push(supplyDomMidLines, newSupplyMidLine)
+                        array.push(supplyDomDistalLines, newSupplyDistalLine)
+                        array.push(supplyBubbleLabels, newSupplyBubble)
+                        if array.size(supplyBorns) > zoneStorageCap
+                            array.shift(supplyTops)
+                            array.shift(supplyBottoms)
+                            array.shift(supplyBorns)
+                            array.shift(supplyActiveFromBars)
+                            array.shift(supplyTestCounts)
+                            array.shift(supplyBrokenStates)
+                            array.shift(supplyStrengthScores)
+                            array.shift(supplyTimeScores)
+                            array.shift(supplyQualityScores)
+                            array.shift(supplyDomScores)
+                            array.shift(supplyFootprintScores)
+                            array.shift(supplyDeltaValues)
+                            array.shift(supplyRejectionScores)
+                            array.shift(supplyLastTouchBars)
+                            array.shift(supplyReactionTouchBars)
+                            array.shift(supplyReactionCounts)
+                            array.shift(supplyIsReversal)
+                            array.shift(supplyTypes)
+                            box oldSupplyBox = array.shift(supplyBoxes)
+                            label oldSupplyLabel = array.shift(supplyLabels)
+                            line oldSupplyProxLine = array.shift(supplyDomProxLines)
+                            line oldSupplyMidLine = array.shift(supplyDomMidLines)
+                            line oldSupplyDistalLine = array.shift(supplyDomDistalLines)
+                            label oldSupplyBubble = array.shift(supplyBubbleLabels)
+                            box.delete(oldSupplyBox)
+                            label.delete(oldSupplyLabel)
+                            line.delete(oldSupplyProxLine)
+                            line.delete(oldSupplyMidLine)
+                            line.delete(oldSupplyDistalLine)
+                            label.delete(oldSupplyBubble)
+
+if array.size(demandBorns) > 0
+    for n = 0 to array.size(demandBorns) - 1
+        int i = array.size(demandBorns) - 1 - n
+        float zoneTop = array.get(demandTops, i)
+        float zoneBottom = array.get(demandBottoms, i)
+        float zoneWidth = math.max(zoneTop - zoneBottom, syminfo.mintick)
+        float demandCloseConsumedLevel = zoneBottom + zoneWidth * 0.45
+        float demandWickConsumedLevel = zoneBottom + zoneWidth * 0.22
+        int zoneBorn = array.get(demandBorns, i)
+        int activeFromBar = array.get(demandActiveFromBars, i)
+        bool zoneActive = bar_index >= activeFromBar
+        bool touchedNow = zoneActive and low <= zoneTop and high >= zoneBottom
+        bool consumedDemand = touchedNow and (close <= demandCloseConsumedLevel or low <= demandWickConsumedLevel)
+        bool brokenDemand = array.get(demandBrokenStates, i) or (zoneActive and (close < zoneBottom or consumedDemand))
+        if brokenDemand and not array.get(demandBrokenStates, i)
+            array.set(demandBrokenStates, i, true)
+        bool expiredDemand = not keepHistoricalZones and maxZoneAge > 0 and bar_index - zoneBorn > maxZoneAge
+        box demandMapBox = array.get(demandBoxes, i)
+        label demandMapLabel = array.get(demandLabels, i)
+        line demandMapProxLine = array.get(demandDomProxLines, i)
+        line demandMapMidLine = array.get(demandDomMidLines, i)
+        line demandMapDistalLine = array.get(demandDomDistalLines, i)
+        label demandBubbleLabel = array.get(demandBubbleLabels, i)
+        bool touchedPrev = zoneActive and low[1] <= zoneTop and high[1] >= zoneBottom
+        if touchedNow and not touchedPrev
+            array.set(demandTestCounts, i, array.get(demandTestCounts, i) + 1)
+        int lastTouchBar = array.get(demandLastTouchBars, i)
+        if touchedNow
+            lastTouchBar := bar_index
+            array.set(demandLastTouchBars, i, lastTouchBar)
+        int lastReactionTouchBar = array.get(demandReactionTouchBars, i)
+        int reactionCount = array.get(demandReactionCounts, i)
+        bool reactionConfirmedNow = not brokenDemand and f_zone_reaction_confirm(true, zoneTop, zoneBottom, lastTouchBar, lastReactionTouchBar, array.get(demandQualityScores, i), array.get(demandDomScores, i), atr, barRange)
+        if reactionConfirmedNow
+            array.set(demandReactionTouchBars, i, lastTouchBar)
+            reactionCount += 1
+            array.set(demandReactionCounts, i, reactionCount)
+        bool reactedDemand = reactionCount > 0
+        bool showReactedDemand = showReactedZones and reactedDemand
+        bool reactionPendingDemand = showReactedZones and not brokenDemand and not na(lastTouchBar) and (na(lastReactionTouchBar) or lastTouchBar > lastReactionTouchBar) and bar_index - lastTouchBar <= zoneReactionConfirmBars
+        bool touchedDemand = array.get(demandTestCounts, i) > 0
+        bool removeDemand = (deleteBrokenZones and brokenDemand) or expiredDemand or (not showTouchedZones and touchedDemand and not showReactedDemand and not reactionPendingDemand)
+        if removeDemand
+            box.delete(demandMapBox)
+            label.delete(demandMapLabel)
+            line.delete(demandMapProxLine)
+            line.delete(demandMapMidLine)
+            line.delete(demandMapDistalLine)
+            label.delete(demandBubbleLabel)
+            array.remove(demandTops, i)
+            array.remove(demandBottoms, i)
+            array.remove(demandBorns, i)
+            array.remove(demandActiveFromBars, i)
+            array.remove(demandTestCounts, i)
+            array.remove(demandBrokenStates, i)
+            array.remove(demandStrengthScores, i)
+            array.remove(demandTimeScores, i)
+            array.remove(demandQualityScores, i)
+            array.remove(demandDomScores, i)
+            array.remove(demandFootprintScores, i)
+            array.remove(demandDeltaValues, i)
+            array.remove(demandRejectionScores, i)
+            array.remove(demandLastTouchBars, i)
+            array.remove(demandReactionTouchBars, i)
+            array.remove(demandReactionCounts, i)
+            array.remove(demandIsReversal, i)
+            array.remove(demandTypes, i)
+            array.remove(demandBoxes, i)
+            array.remove(demandLabels, i)
+            array.remove(demandDomProxLines, i)
+            array.remove(demandDomMidLines, i)
+            array.remove(demandDomDistalLines, i)
+            array.remove(demandBubbleLabels, i)
+        else
+            bool showDemandState = showZones and (showTouchedZones or not touchedDemand or reactionPendingDemand or showReactedDemand) and (not brokenDemand or not deleteBrokenZones)
+            int demandFillTrans = brokenDemand ? 94 : showReactedDemand ? 72 : reactionPendingDemand ? 80 : touchedDemand ? 88 : 78
+            int demandBorderTrans = brokenDemand ? 72 : showReactedDemand ? 0 : reactionPendingDemand ? 10 : touchedDemand ? 35 : 0
+            int demandTextTrans = brokenDemand ? 55 : 0
+            float domScoreClamped = f_clamp(array.get(demandDomScores, i), 0.0, 100.0)
+            float footprintScoreClamped = f_clamp(array.get(demandFootprintScores, i), 0.0, 100.0)
+            float zoneDeltaValue = array.get(demandDeltaValues, i)
+            color zoneDeltaColor = f_zone_delta_color(zoneDeltaValue)
+            float deltaIntensityScore = f_clamp(math.abs(zoneDeltaValue) / math.max(volAvg * math.max(float(activeZoneBaseBars + activeZoneDepartureBars), 2.0), 1.0) * 100.0, 0.0, 100.0)
+            bool zoneFresh = keepHistoricalZones or maxZoneAge <= 0 or bar_index - zoneBorn <= maxZoneAge
+            float rejectionScore = f_zone_rejection_score(true, domScoreClamped, array.get(demandStrengthScores, i), array.get(demandTimeScores, i), array.get(demandQualityScores, i), array.get(demandTestCounts, i), brokenDemand, array.get(demandIsReversal, i), zoneFresh, trendState, curveState, useVwap, close, valueHigh, valueLow)
+            array.set(demandRejectionScores, i, rejectionScore)
+            float rejectionPct = rejectionScore * 100.0
+            float bubbleDisplayScore = math.max(math.max(domScoreClamped, rejectionPct), math.max(footprintScoreClamped, deltaIntensityScore))
+            float demandProxY = zoneTop - zoneWidth * 0.18
+            float demandMidY = zoneBottom + zoneWidth * 0.50
+            float demandDistalY = zoneBottom + zoneWidth * 0.18
+            int zoneTextX = int(math.round((zoneBorn + bar_index + zoneForwardBars) * 0.5))
+            int proxWidth = domScoreClamped >= 75 ? 3 : domScoreClamped >= 40 ? 2 : 1
+            int midWidth = domScoreClamped >= 60 ? 2 : 1
+            int stateTransAdd = brokenDemand ? 24 : showReactedDemand ? 0 : touchedDemand ? 12 : 0
+            int proxTrans = int(math.round(f_clamp(90.0 - domScoreClamped * 0.60 + stateTransAdd, 18.0, 98.0)))
+            int midTrans = int(math.round(f_clamp(95.0 - domScoreClamped * 0.45 + stateTransAdd, 26.0, 99.0)))
+            int distalTrans = int(math.round(f_clamp(98.0 - domScoreClamped * 0.30 + stateTransAdd, 40.0, 100.0)))
+            int bubbleTrans = int(math.round(f_clamp(92.0 - bubbleDisplayScore * 0.55 + stateTransAdd, 10.0, 100.0)))
+            box.set_right(demandMapBox, bar_index + zoneForwardBars)
+            box.set_bgcolor(demandMapBox, color.new(color.rgb(0, 166, 79), showDemandState ? demandFillTrans : 100))
+            box.set_border_color(demandMapBox, color.new(color.rgb(0, 166, 79), showDemandState ? demandBorderTrans : 100))
+            box.set_border_width(demandMapBox, showReactedDemand ? 3 : reactionPendingDemand ? 2 : 1)
+            label.set_x(demandMapLabel, zoneBorn)
+            label.set_y(demandMapLabel, zoneTop)
+            label.set_text(demandMapLabel, f_zone_display_text(array.get(demandTypes, i), showReactedDemand, reactionCount))
+            label.set_size(demandMapLabel, zoneStructureLabelSize)
+            label.set_color(demandMapLabel, color.new(color.rgb(0, 166, 79), showDemandState ? demandTextTrans : 100))
+            label.set_textcolor(demandMapLabel, color.new(color.white, showDemandState ? demandTextTrans : 100))
+            line.set_xy1(demandMapProxLine, zoneBorn, demandProxY)
+            line.set_xy2(demandMapProxLine, bar_index + zoneForwardBars, demandProxY)
+            line.set_color(demandMapProxLine, color.new(color.rgb(0, 255, 140), showDemandState and showZoneDomProxy ? proxTrans : 100))
+            line.set_width(demandMapProxLine, proxWidth)
+            line.set_xy1(demandMapMidLine, zoneBorn, demandMidY)
+            line.set_xy2(demandMapMidLine, bar_index + zoneForwardBars, demandMidY)
+            line.set_color(demandMapMidLine, color.new(color.rgb(0, 220, 150), showDemandState and showZoneDomProxy and not zoneDomCompact ? midTrans : 100))
+            line.set_width(demandMapMidLine, midWidth)
+            line.set_xy1(demandMapDistalLine, zoneBorn, demandDistalY)
+            line.set_xy2(demandMapDistalLine, bar_index + zoneForwardBars, demandDistalY)
+            line.set_color(demandMapDistalLine, color.new(color.rgb(0, 190, 160), showDemandState and showZoneDomProxy and not zoneDomCompact ? distalTrans : 100))
+            line.set_width(demandMapDistalLine, 1)
+            label.set_x(demandBubbleLabel, zoneTextX)
+            label.set_y(demandBubbleLabel, demandMidY)
+            label.set_style(demandBubbleLabel, label.style_none)
+            label.set_text(demandBubbleLabel, f_zone_bubble_text(zoneDomCompact, rejectionScore, zoneDeltaValue, showReactedDemand ? reactionCount : 0))
+            label.set_size(demandBubbleLabel, zoneBubbleLabelSize)
+            label.set_color(demandBubbleLabel, color.new(color.rgb(0, 166, 79), showDemandState and showZonePressureBubble ? bubbleTrans : 100))
+            label.set_textcolor(demandBubbleLabel, color.new(zoneDeltaColor, showDemandState and showZonePressureBubble ? 0 : 100))
+
+if array.size(supplyBorns) > 0
+    for n = 0 to array.size(supplyBorns) - 1
+        int i = array.size(supplyBorns) - 1 - n
+        float zoneTop = array.get(supplyTops, i)
+        float zoneBottom = array.get(supplyBottoms, i)
+        float zoneWidth = math.max(zoneTop - zoneBottom, syminfo.mintick)
+        float supplyCloseConsumedLevel = zoneTop - zoneWidth * 0.45
+        float supplyWickConsumedLevel = zoneTop - zoneWidth * 0.22
+        int zoneBorn = array.get(supplyBorns, i)
+        int activeFromBar = array.get(supplyActiveFromBars, i)
+        bool zoneActive = bar_index >= activeFromBar
+        bool touchedNow = zoneActive and high >= zoneBottom and low <= zoneTop
+        bool consumedSupply = touchedNow and (close >= supplyCloseConsumedLevel or high >= supplyWickConsumedLevel)
+        bool brokenSupply = array.get(supplyBrokenStates, i) or (zoneActive and (close > zoneTop or consumedSupply))
+        if brokenSupply and not array.get(supplyBrokenStates, i)
+            array.set(supplyBrokenStates, i, true)
+        bool expiredSupply = not keepHistoricalZones and maxZoneAge > 0 and bar_index - zoneBorn > maxZoneAge
+        box supplyMapBox = array.get(supplyBoxes, i)
+        label supplyMapLabel = array.get(supplyLabels, i)
+        line supplyMapProxLine = array.get(supplyDomProxLines, i)
+        line supplyMapMidLine = array.get(supplyDomMidLines, i)
+        line supplyMapDistalLine = array.get(supplyDomDistalLines, i)
+        label supplyBubbleLabel = array.get(supplyBubbleLabels, i)
+        bool touchedPrev = zoneActive and high[1] >= zoneBottom and low[1] <= zoneTop
+        if touchedNow and not touchedPrev
+            array.set(supplyTestCounts, i, array.get(supplyTestCounts, i) + 1)
+        int lastTouchBar = array.get(supplyLastTouchBars, i)
+        if touchedNow
+            lastTouchBar := bar_index
+            array.set(supplyLastTouchBars, i, lastTouchBar)
+        int lastReactionTouchBar = array.get(supplyReactionTouchBars, i)
+        int reactionCount = array.get(supplyReactionCounts, i)
+        bool reactionConfirmedNow = not brokenSupply and f_zone_reaction_confirm(false, zoneTop, zoneBottom, lastTouchBar, lastReactionTouchBar, array.get(supplyQualityScores, i), array.get(supplyDomScores, i), atr, barRange)
+        if reactionConfirmedNow
+            array.set(supplyReactionTouchBars, i, lastTouchBar)
+            reactionCount += 1
+            array.set(supplyReactionCounts, i, reactionCount)
+        bool reactedSupply = reactionCount > 0
+        bool showReactedSupply = showReactedZones and reactedSupply
+        bool reactionPendingSupply = showReactedZones and not brokenSupply and not na(lastTouchBar) and (na(lastReactionTouchBar) or lastTouchBar > lastReactionTouchBar) and bar_index - lastTouchBar <= zoneReactionConfirmBars
+        bool touchedSupply = array.get(supplyTestCounts, i) > 0
+        bool removeSupply = (deleteBrokenZones and brokenSupply) or expiredSupply or (not showTouchedZones and touchedSupply and not showReactedSupply and not reactionPendingSupply)
+        if removeSupply
+            box.delete(supplyMapBox)
+            label.delete(supplyMapLabel)
+            line.delete(supplyMapProxLine)
+            line.delete(supplyMapMidLine)
+            line.delete(supplyMapDistalLine)
+            label.delete(supplyBubbleLabel)
+            array.remove(supplyTops, i)
+            array.remove(supplyBottoms, i)
+            array.remove(supplyBorns, i)
+            array.remove(supplyActiveFromBars, i)
+            array.remove(supplyTestCounts, i)
+            array.remove(supplyBrokenStates, i)
+            array.remove(supplyStrengthScores, i)
+            array.remove(supplyTimeScores, i)
+            array.remove(supplyQualityScores, i)
+            array.remove(supplyDomScores, i)
+            array.remove(supplyFootprintScores, i)
+            array.remove(supplyDeltaValues, i)
+            array.remove(supplyRejectionScores, i)
+            array.remove(supplyLastTouchBars, i)
+            array.remove(supplyReactionTouchBars, i)
+            array.remove(supplyReactionCounts, i)
+            array.remove(supplyIsReversal, i)
+            array.remove(supplyTypes, i)
+            array.remove(supplyBoxes, i)
+            array.remove(supplyLabels, i)
+            array.remove(supplyDomProxLines, i)
+            array.remove(supplyDomMidLines, i)
+            array.remove(supplyDomDistalLines, i)
+            array.remove(supplyBubbleLabels, i)
+        else
+            bool showSupplyState = showZones and (showTouchedZones or not touchedSupply or reactionPendingSupply or showReactedSupply) and (not brokenSupply or not deleteBrokenZones)
+            int supplyFillTrans = brokenSupply ? 94 : showReactedSupply ? 72 : reactionPendingSupply ? 80 : touchedSupply ? 88 : 78
+            int supplyBorderTrans = brokenSupply ? 72 : showReactedSupply ? 0 : reactionPendingSupply ? 10 : touchedSupply ? 35 : 0
+            int supplyTextTrans = brokenSupply ? 55 : 0
+            float domScoreClamped = f_clamp(array.get(supplyDomScores, i), 0.0, 100.0)
+            float footprintScoreClamped = f_clamp(array.get(supplyFootprintScores, i), 0.0, 100.0)
+            float zoneDeltaValue = array.get(supplyDeltaValues, i)
+            color zoneDeltaColor = f_zone_delta_color(zoneDeltaValue)
+            float deltaIntensityScore = f_clamp(math.abs(zoneDeltaValue) / math.max(volAvg * math.max(float(activeZoneBaseBars + activeZoneDepartureBars), 2.0), 1.0) * 100.0, 0.0, 100.0)
+            bool zoneFresh = keepHistoricalZones or maxZoneAge <= 0 or bar_index - zoneBorn <= maxZoneAge
+            float rejectionScore = f_zone_rejection_score(false, domScoreClamped, array.get(supplyStrengthScores, i), array.get(supplyTimeScores, i), array.get(supplyQualityScores, i), array.get(supplyTestCounts, i), brokenSupply, array.get(supplyIsReversal, i), zoneFresh, trendState, curveState, useVwap, close, valueHigh, valueLow)
+            array.set(supplyRejectionScores, i, rejectionScore)
+            float rejectionPct = rejectionScore * 100.0
+            float bubbleDisplayScore = math.max(math.max(domScoreClamped, rejectionPct), math.max(footprintScoreClamped, deltaIntensityScore))
+            float supplyProxY = zoneBottom + zoneWidth * 0.18
+            float supplyMidY = zoneBottom + zoneWidth * 0.50
+            float supplyDistalY = zoneTop - zoneWidth * 0.18
+            int zoneTextX = int(math.round((zoneBorn + bar_index + zoneForwardBars) * 0.5))
+            int proxWidth = domScoreClamped >= 75 ? 3 : domScoreClamped >= 40 ? 2 : 1
+            int midWidth = domScoreClamped >= 60 ? 2 : 1
+            int stateTransAdd = brokenSupply ? 24 : showReactedSupply ? 0 : touchedSupply ? 12 : 0
+            int proxTrans = int(math.round(f_clamp(90.0 - domScoreClamped * 0.60 + stateTransAdd, 18.0, 98.0)))
+            int midTrans = int(math.round(f_clamp(95.0 - domScoreClamped * 0.45 + stateTransAdd, 26.0, 99.0)))
+            int distalTrans = int(math.round(f_clamp(98.0 - domScoreClamped * 0.30 + stateTransAdd, 40.0, 100.0)))
+            int bubbleTrans = int(math.round(f_clamp(92.0 - bubbleDisplayScore * 0.55 + stateTransAdd, 10.0, 100.0)))
+            box.set_right(supplyMapBox, bar_index + zoneForwardBars)
+            box.set_bgcolor(supplyMapBox, color.new(color.rgb(233, 31, 44), showSupplyState ? supplyFillTrans : 100))
+            box.set_border_color(supplyMapBox, color.new(color.rgb(233, 31, 44), showSupplyState ? supplyBorderTrans : 100))
+            box.set_border_width(supplyMapBox, showReactedSupply ? 3 : reactionPendingSupply ? 2 : 1)
+            label.set_x(supplyMapLabel, zoneBorn)
+            label.set_y(supplyMapLabel, zoneBottom)
+            label.set_text(supplyMapLabel, f_zone_display_text(array.get(supplyTypes, i), showReactedSupply, reactionCount))
+            label.set_size(supplyMapLabel, zoneStructureLabelSize)
+            label.set_color(supplyMapLabel, color.new(color.rgb(233, 31, 44), showSupplyState ? supplyTextTrans : 100))
+            label.set_textcolor(supplyMapLabel, color.new(color.white, showSupplyState ? supplyTextTrans : 100))
+            line.set_xy1(supplyMapProxLine, zoneBorn, supplyProxY)
+            line.set_xy2(supplyMapProxLine, bar_index + zoneForwardBars, supplyProxY)
+            line.set_color(supplyMapProxLine, color.new(color.rgb(255, 96, 96), showSupplyState and showZoneDomProxy ? proxTrans : 100))
+            line.set_width(supplyMapProxLine, proxWidth)
+            line.set_xy1(supplyMapMidLine, zoneBorn, supplyMidY)
+            line.set_xy2(supplyMapMidLine, bar_index + zoneForwardBars, supplyMidY)
+            line.set_color(supplyMapMidLine, color.new(color.rgb(255, 122, 96), showSupplyState and showZoneDomProxy and not zoneDomCompact ? midTrans : 100))
+            line.set_width(supplyMapMidLine, midWidth)
+            line.set_xy1(supplyMapDistalLine, zoneBorn, supplyDistalY)
+            line.set_xy2(supplyMapDistalLine, bar_index + zoneForwardBars, supplyDistalY)
+            line.set_color(supplyMapDistalLine, color.new(color.rgb(255, 150, 96), showSupplyState and showZoneDomProxy and not zoneDomCompact ? distalTrans : 100))
+            line.set_width(supplyMapDistalLine, 1)
+            label.set_x(supplyBubbleLabel, zoneTextX)
+            label.set_y(supplyBubbleLabel, supplyMidY)
+            label.set_style(supplyBubbleLabel, label.style_none)
+            label.set_text(supplyBubbleLabel, f_zone_bubble_text(zoneDomCompact, rejectionScore, zoneDeltaValue, showReactedSupply ? reactionCount : 0))
+            label.set_size(supplyBubbleLabel, zoneBubbleLabelSize)
+            label.set_color(supplyBubbleLabel, color.new(color.rgb(233, 31, 44), showSupplyState and showZonePressureBubble ? bubbleTrans : 100))
+            label.set_textcolor(supplyBubbleLabel, color.new(zoneDeltaColor, showSupplyState and showZonePressureBubble ? 0 : 100))
+
+int heatZoneSlots = math.max(1, math.min(maxVisibleZones, syntheticHeatBandCount))
+
+for i = 0 to 11
+    if array.size(syntheticDemandHeatBoxes) < heatZoneSlots
+        box newDemandHeatBox = box.new(bar_index, close, bar_index + zoneForwardBars, close, bgcolor=color.new(color.rgb(0, 166, 79), 100), border_color=color.new(color.rgb(0, 166, 79), 100), border_width=1)
+        array.push(syntheticDemandHeatBoxes, newDemandHeatBox)
+    if array.size(syntheticSupplyHeatBoxes) < heatZoneSlots
+        box newSupplyHeatBox = box.new(bar_index, close, bar_index + zoneForwardBars, close, bgcolor=color.new(color.rgb(233, 31, 44), 100), border_color=color.new(color.rgb(233, 31, 44), 100), border_width=1)
+        array.push(syntheticSupplyHeatBoxes, newSupplyHeatBox)
+
+for i = 0 to 11
+    if array.size(syntheticDemandHeatBoxes) > heatZoneSlots
+        box oldDemandHeatBox = array.pop(syntheticDemandHeatBoxes)
+        box.delete(oldDemandHeatBox)
+    if array.size(syntheticSupplyHeatBoxes) > heatZoneSlots
+        box oldSupplyHeatBox = array.pop(syntheticSupplyHeatBoxes)
+        box.delete(oldSupplyHeatBox)
+
+int demandHeatSlot = 0
+if array.size(demandBorns) > 0
+    for n = 0 to array.size(demandBorns) - 1
+        int i = array.size(demandBorns) - 1 - n
+        if demandHeatSlot < heatZoneSlots
+            float zoneTop = array.get(demandTops, i)
+            float zoneBottom = array.get(demandBottoms, i)
+            float zoneWidth = math.max(zoneTop - zoneBottom, syminfo.mintick)
+            bool zoneBroken = array.get(demandBrokenStates, i)
+            bool zoneTouched = array.get(demandTestCounts, i) > 0
+            bool zoneReacted = showReactedZones and array.get(demandReactionCounts, i) > 0
+            bool showDemandHeat = showSyntheticHeatmap and (showTouchedZones or not zoneTouched or zoneReacted) and (not zoneBroken or not deleteBrokenZones)
+            if showDemandHeat
+                float baseHeatScore = f_synthetic_liquidity_score(true, zoneTop, zoneBottom, syntheticHeatLookback, trendState, curveState, useVwap, valueHigh, valueLow)
+                float domNorm = f_clamp(array.get(demandDomScores, i) / 100.0, 0.0, 1.0)
+                float rejectNorm = f_clamp(array.get(demandRejectionScores, i), 0.0, 1.0)
+                float strengthNorm = f_clamp(array.get(demandStrengthScores, i) / 2.0, 0.0, 1.0)
+                float timeNorm = f_clamp(array.get(demandTimeScores, i), 0.0, 1.0)
+                float qualityNorm = f_clamp((array.get(demandQualityScores, i) + 0.25) / 3.5, 0.0, 1.0)
+                float freshNorm = array.get(demandTestCounts, i) <= 0 ? 1.0 : array.get(demandTestCounts, i) == 1 ? 0.65 : array.get(demandTestCounts, i) == 2 ? 0.35 : 0.15
+                float demandHeatScore = f_clamp(baseHeatScore * 0.42 + domNorm * 0.18 + rejectNorm * 0.18 + qualityNorm * 0.10 + strengthNorm * 0.07 + timeNorm * 0.03 + freshNorm * 0.02 + syntheticHeatZoneBoost * 0.12 + (array.get(demandIsReversal, i) ? 0.04 : 0.0), 0.0, 1.0)
+                float insetPad = math.min(zoneWidth * 0.12, math.max(atr * syntheticHeatBandAtr * 0.35, syminfo.mintick))
+                float depthFrac = f_clamp(0.24 + syntheticHeatStepAtr * 0.18 + demandHeatScore * 0.34, 0.24, 0.82)
+                float heatTop = zoneTop - insetPad * 0.25
+                float heatBottom = math.max(zoneBottom + insetPad, zoneTop - zoneWidth * depthFrac)
+                int heatRight = bar_index + math.min(zoneForwardBars, syntheticHeatForwardBars)
+                int heatFillTrans = int(math.round(f_clamp(96.0 - demandHeatScore * 72.0, 16.0, 96.0)))
+                int heatBorderTrans = int(math.round(f_clamp(99.0 - demandHeatScore * 48.0, 26.0, 99.0)))
+                box demandHeatBox = array.get(syntheticDemandHeatBoxes, demandHeatSlot)
+                box.set_left(demandHeatBox, array.get(demandBorns, i))
+                box.set_right(demandHeatBox, heatRight)
+                box.set_top(demandHeatBox, heatTop)
+                box.set_bottom(demandHeatBox, heatBottom)
+                box.set_bgcolor(demandHeatBox, color.new(color.rgb(0, 255, 153), heatFillTrans))
+                box.set_border_color(demandHeatBox, color.new(color.rgb(0, 255, 210), heatBorderTrans))
+                box.set_border_width(demandHeatBox, demandHeatScore >= 0.78 ? 2 : 1)
+                demandHeatSlot += 1
+
+for i = demandHeatSlot to 11
+    if i < array.size(syntheticDemandHeatBoxes)
+        box demandHeatBox = array.get(syntheticDemandHeatBoxes, i)
+        box.set_left(demandHeatBox, bar_index)
+        box.set_right(demandHeatBox, bar_index)
+        box.set_top(demandHeatBox, close)
+        box.set_bottom(demandHeatBox, close)
+        box.set_bgcolor(demandHeatBox, color.new(color.rgb(0, 255, 153), 100))
+        box.set_border_color(demandHeatBox, color.new(color.rgb(0, 255, 210), 100))
+
+int supplyHeatSlot = 0
+if array.size(supplyBorns) > 0
+    for n = 0 to array.size(supplyBorns) - 1
+        int i = array.size(supplyBorns) - 1 - n
+        if supplyHeatSlot < heatZoneSlots
+            float zoneTop = array.get(supplyTops, i)
+            float zoneBottom = array.get(supplyBottoms, i)
+            float zoneWidth = math.max(zoneTop - zoneBottom, syminfo.mintick)
+            bool zoneBroken = array.get(supplyBrokenStates, i)
+            bool zoneTouched = array.get(supplyTestCounts, i) > 0
+            bool zoneReacted = showReactedZones and array.get(supplyReactionCounts, i) > 0
+            bool showSupplyHeat = showSyntheticHeatmap and (showTouchedZones or not zoneTouched or zoneReacted) and (not zoneBroken or not deleteBrokenZones)
+            if showSupplyHeat
+                float baseHeatScore = f_synthetic_liquidity_score(false, zoneTop, zoneBottom, syntheticHeatLookback, trendState, curveState, useVwap, valueHigh, valueLow)
+                float domNorm = f_clamp(array.get(supplyDomScores, i) / 100.0, 0.0, 1.0)
+                float rejectNorm = f_clamp(array.get(supplyRejectionScores, i), 0.0, 1.0)
+                float strengthNorm = f_clamp(array.get(supplyStrengthScores, i) / 2.0, 0.0, 1.0)
+                float timeNorm = f_clamp(array.get(supplyTimeScores, i), 0.0, 1.0)
+                float qualityNorm = f_clamp((array.get(supplyQualityScores, i) + 0.25) / 3.5, 0.0, 1.0)
+                float freshNorm = array.get(supplyTestCounts, i) <= 0 ? 1.0 : array.get(supplyTestCounts, i) == 1 ? 0.65 : array.get(supplyTestCounts, i) == 2 ? 0.35 : 0.15
+                float supplyHeatScore = f_clamp(baseHeatScore * 0.42 + domNorm * 0.18 + rejectNorm * 0.18 + qualityNorm * 0.10 + strengthNorm * 0.07 + timeNorm * 0.03 + freshNorm * 0.02 + syntheticHeatZoneBoost * 0.12 + (array.get(supplyIsReversal, i) ? 0.04 : 0.0), 0.0, 1.0)
+                float insetPad = math.min(zoneWidth * 0.12, math.max(atr * syntheticHeatBandAtr * 0.35, syminfo.mintick))
+                float depthFrac = f_clamp(0.24 + syntheticHeatStepAtr * 0.18 + supplyHeatScore * 0.34, 0.24, 0.82)
+                float heatTop = math.min(zoneTop - insetPad, zoneBottom + zoneWidth * depthFrac)
+                float heatBottom = zoneBottom + insetPad * 0.25
+                int heatRight = bar_index + math.min(zoneForwardBars, syntheticHeatForwardBars)
+                int heatFillTrans = int(math.round(f_clamp(96.0 - supplyHeatScore * 72.0, 16.0, 96.0)))
+                int heatBorderTrans = int(math.round(f_clamp(99.0 - supplyHeatScore * 48.0, 26.0, 99.0)))
+                box supplyHeatBox = array.get(syntheticSupplyHeatBoxes, supplyHeatSlot)
+                box.set_left(supplyHeatBox, array.get(supplyBorns, i))
+                box.set_right(supplyHeatBox, heatRight)
+                box.set_top(supplyHeatBox, heatTop)
+                box.set_bottom(supplyHeatBox, heatBottom)
+                box.set_bgcolor(supplyHeatBox, color.new(color.rgb(255, 88, 88), heatFillTrans))
+                box.set_border_color(supplyHeatBox, color.new(color.rgb(255, 168, 96), heatBorderTrans))
+                box.set_border_width(supplyHeatBox, supplyHeatScore >= 0.78 ? 2 : 1)
+                supplyHeatSlot += 1
+
+for i = supplyHeatSlot to 11
+    if i < array.size(syntheticSupplyHeatBoxes)
+        box supplyHeatBox = array.get(syntheticSupplyHeatBoxes, i)
+        box.set_left(supplyHeatBox, bar_index)
+        box.set_right(supplyHeatBox, bar_index)
+        box.set_top(supplyHeatBox, close)
+        box.set_bottom(supplyHeatBox, close)
+        box.set_bgcolor(supplyHeatBox, color.new(color.rgb(255, 88, 88), 100))
+        box.set_border_color(supplyHeatBox, color.new(color.rgb(255, 168, 96), 100))
+
+demandTop := na
+demandBottom := na
+demandBorn := na
+demandTests := 0
+demandStrengthPts := 0.0
+demandTimePts := 0.0
+demandZoneText := ""
+float demandRejectionScore = 0.0
+float demandTruthScore = 0.0
+int demandReactionCount = 0
+
+int activeDemandIndex = na
+float activeDemandRank = na
+int activeDemandTier = 99
+if array.size(demandBorns) > 0
+    for i = 0 to array.size(demandBorns) - 1
+        float zoneTop = array.get(demandTops, i)
+        float zoneBottom = array.get(demandBottoms, i)
+        int zoneBorn = array.get(demandBorns, i)
+        float zoneWidth = zoneTop - zoneBottom
+        int zoneTests = array.get(demandTestCounts, i)
+        bool zoneBroken = array.get(demandBrokenStates, i)
+        bool zoneReacted = showReactedZones and array.get(demandReactionCounts, i) > 0
+        int zoneLastTouchBar = array.get(demandLastTouchBars, i)
+        int zoneLastReactionTouchBar = array.get(demandReactionTouchBars, i)
+        bool zonePendingReaction = showReactedZones and not zoneBroken and not na(zoneLastTouchBar) and (na(zoneLastReactionTouchBar) or zoneLastTouchBar > zoneLastReactionTouchBar) and bar_index - zoneLastTouchBar <= zoneReactionConfirmBars
+        bool zoneVisible = (showTouchedZones or zoneTests == 0 or zoneReacted or zonePendingReaction) and (not zoneBroken or not deleteBrokenZones)
+        if zoneVisible
+            int zoneTier = not zoneBroken and zoneTests == 0 ? 0 : not zoneBroken ? 1 : 2
+            float zoneQuality = array.get(demandQualityScores, i)
+            float zoneFootprint = array.get(demandFootprintScores, i)
+            float zoneDelta = array.get(demandDeltaValues, i)
+            float zoneReject = array.get(demandRejectionScores, i)
+            float zoneTruth = f_zone_truth_score(true, zoneQuality, array.get(demandStrengthScores, i), array.get(demandTimeScores, i), zoneTests, zoneBroken, array.get(demandIsReversal, i), zoneFootprint, zoneDelta, zoneReject, zoneBorn, trendState, curveState, volAvg, bar_index, keepHistoricalZones, activeZoneBaseBars + activeZoneDepartureBars)
+            float zoneDistance = close >= zoneBottom ? close > zoneTop ? close - zoneTop : 0.0 : zoneBottom - close
+            float distancePenalty = zoneDistance / math.max(atr, syminfo.mintick) * (prioritizeTrueZones ? 0.16 : 0.26)
+            float widthPenalty = zoneWidth / math.max(atr, syminfo.mintick) * 0.12
+            bool zoneInside = low <= zoneTop and high >= zoneBottom
+            bool zoneNear = close >= zoneBottom - atr * nearZoneAtr and close <= zoneTop + atr * nearZoneAtr
+            float rankBonus = (zoneInside ? 0.16 : zoneNear ? 0.10 : 0.0) + (array.get(demandIsReversal, i) ? 0.04 : 0.0)
+            float zoneRank = zoneTruth * (prioritizeTrueZones ? 1.20 : 0.92) + rankBonus - distancePenalty - widthPenalty
+            bool betterZone = zoneTier < activeDemandTier or (zoneTier == activeDemandTier and (na(activeDemandRank) or zoneRank > activeDemandRank))
+            if not betterZone and zoneTier == activeDemandTier and not na(activeDemandIndex) and math.abs(zoneRank - activeDemandRank) <= 0.02
+                betterZone := zoneBorn > array.get(demandBorns, activeDemandIndex)
+            if betterZone
+                activeDemandIndex := i
+                activeDemandRank := zoneRank
+                activeDemandTier := zoneTier
+
+if not na(activeDemandIndex)
+    demandTop := array.get(demandTops, activeDemandIndex)
+    demandBottom := array.get(demandBottoms, activeDemandIndex)
+    demandBorn := array.get(demandBorns, activeDemandIndex)
+    demandTests := array.get(demandTestCounts, activeDemandIndex)
+    demandStrengthPts := array.get(demandStrengthScores, activeDemandIndex)
+    demandTimePts := array.get(demandTimeScores, activeDemandIndex)
+    demandZoneText := array.get(demandTypes, activeDemandIndex)
+    demandRejectionScore := array.get(demandRejectionScores, activeDemandIndex)
+    demandTruthScore := f_zone_truth_score(true, array.get(demandQualityScores, activeDemandIndex), demandStrengthPts, demandTimePts, demandTests, array.get(demandBrokenStates, activeDemandIndex), array.get(demandIsReversal, activeDemandIndex), array.get(demandFootprintScores, activeDemandIndex), array.get(demandDeltaValues, activeDemandIndex), demandRejectionScore, demandBorn, trendState, curveState, volAvg, bar_index, keepHistoricalZones, activeZoneBaseBars + activeZoneDepartureBars)
+    demandReactionCount := array.get(demandReactionCounts, activeDemandIndex)
+
+supplyTop := na
+supplyBottom := na
+supplyBorn := na
+supplyTests := 0
+supplyStrengthPts := 0.0
+supplyTimePts := 0.0
+supplyZoneText := ""
+float supplyRejectionScore = 0.0
+float supplyTruthScore = 0.0
+int supplyReactionCount = 0
+
+int activeSupplyIndex = na
+float activeSupplyRank = na
+int activeSupplyTier = 99
+if array.size(supplyBorns) > 0
+    for i = 0 to array.size(supplyBorns) - 1
+        float zoneTop = array.get(supplyTops, i)
+        float zoneBottom = array.get(supplyBottoms, i)
+        int zoneBorn = array.get(supplyBorns, i)
+        float zoneWidth = zoneTop - zoneBottom
+        int zoneTests = array.get(supplyTestCounts, i)
+        bool zoneBroken = array.get(supplyBrokenStates, i)
+        bool zoneReacted = showReactedZones and array.get(supplyReactionCounts, i) > 0
+        int zoneLastTouchBar = array.get(supplyLastTouchBars, i)
+        int zoneLastReactionTouchBar = array.get(supplyReactionTouchBars, i)
+        bool zonePendingReaction = showReactedZones and not zoneBroken and not na(zoneLastTouchBar) and (na(zoneLastReactionTouchBar) or zoneLastTouchBar > zoneLastReactionTouchBar) and bar_index - zoneLastTouchBar <= zoneReactionConfirmBars
+        bool zoneVisible = (showTouchedZones or zoneTests == 0 or zoneReacted or zonePendingReaction) and (not zoneBroken or not deleteBrokenZones)
+        if zoneVisible
+            int zoneTier = not zoneBroken and zoneTests == 0 ? 0 : not zoneBroken ? 1 : 2
+            float zoneQuality = array.get(supplyQualityScores, i)
+            float zoneFootprint = array.get(supplyFootprintScores, i)
+            float zoneDelta = array.get(supplyDeltaValues, i)
+            float zoneReject = array.get(supplyRejectionScores, i)
+            float zoneTruth = f_zone_truth_score(false, zoneQuality, array.get(supplyStrengthScores, i), array.get(supplyTimeScores, i), zoneTests, zoneBroken, array.get(supplyIsReversal, i), zoneFootprint, zoneDelta, zoneReject, zoneBorn, trendState, curveState, volAvg, bar_index, keepHistoricalZones, activeZoneBaseBars + activeZoneDepartureBars)
+            float zoneDistance = close <= zoneTop ? close < zoneBottom ? zoneBottom - close : 0.0 : close - zoneTop
+            float distancePenalty = zoneDistance / math.max(atr, syminfo.mintick) * (prioritizeTrueZones ? 0.16 : 0.26)
+            float widthPenalty = zoneWidth / math.max(atr, syminfo.mintick) * 0.12
+            bool zoneInside = high >= zoneBottom and low <= zoneTop
+            bool zoneNear = close <= zoneTop + atr * nearZoneAtr and close >= zoneBottom - atr * nearZoneAtr
+            float rankBonus = (zoneInside ? 0.16 : zoneNear ? 0.10 : 0.0) + (array.get(supplyIsReversal, i) ? 0.04 : 0.0)
+            float zoneRank = zoneTruth * (prioritizeTrueZones ? 1.20 : 0.92) + rankBonus - distancePenalty - widthPenalty
+            bool betterZone = zoneTier < activeSupplyTier or (zoneTier == activeSupplyTier and (na(activeSupplyRank) or zoneRank > activeSupplyRank))
+            if not betterZone and zoneTier == activeSupplyTier and not na(activeSupplyIndex) and math.abs(zoneRank - activeSupplyRank) <= 0.02
+                betterZone := zoneBorn > array.get(supplyBorns, activeSupplyIndex)
+            if betterZone
+                activeSupplyIndex := i
+                activeSupplyRank := zoneRank
+                activeSupplyTier := zoneTier
+
+if not na(activeSupplyIndex)
+    supplyTop := array.get(supplyTops, activeSupplyIndex)
+    supplyBottom := array.get(supplyBottoms, activeSupplyIndex)
+    supplyBorn := array.get(supplyBorns, activeSupplyIndex)
+    supplyTests := array.get(supplyTestCounts, activeSupplyIndex)
+    supplyStrengthPts := array.get(supplyStrengthScores, activeSupplyIndex)
+    supplyTimePts := array.get(supplyTimeScores, activeSupplyIndex)
+    supplyZoneText := array.get(supplyTypes, activeSupplyIndex)
+    supplyRejectionScore := array.get(supplyRejectionScores, activeSupplyIndex)
+    supplyTruthScore := f_zone_truth_score(false, array.get(supplyQualityScores, activeSupplyIndex), supplyStrengthPts, supplyTimePts, supplyTests, array.get(supplyBrokenStates, activeSupplyIndex), array.get(supplyIsReversal, activeSupplyIndex), array.get(supplyFootprintScores, activeSupplyIndex), array.get(supplyDeltaValues, activeSupplyIndex), supplyRejectionScore, supplyBorn, trendState, curveState, volAvg, bar_index, keepHistoricalZones, activeZoneBaseBars + activeZoneDepartureBars)
+    supplyReactionCount := array.get(supplyReactionCounts, activeSupplyIndex)
+
+demandFresh = not na(demandBorn) and (keepHistoricalZones or maxZoneAge <= 0 or bar_index - demandBorn <= maxZoneAge)
+supplyFresh = not na(supplyBorn) and (keepHistoricalZones or maxZoneAge <= 0 or bar_index - supplyBorn <= maxZoneAge)
+inDemand = demandFresh and low <= demandTop and high >= demandBottom
+inSupply = supplyFresh and high >= supplyBottom and low <= supplyTop
+nearDemand = demandFresh and close >= demandBottom - atr * nearZoneAtr and close <= demandTop + atr * nearZoneAtr
+nearSupply = supplyFresh and close <= supplyTop + atr * nearZoneAtr and close >= supplyBottom - atr * nearZoneAtr
+
+//==============================================================================
+// Auction trigger: failed auction, reclaim, acceptance
+//==============================================================================
+closeHighQuality = (close - low) / barRange >= closePower
+closeLowQuality = (high - close) / barRange >= closePower
+
+failedLowValue = useVwap and low < valueLow and close > valueLow and closeHighQuality and participation
+failedHighValue = useVwap and high > valueHigh and close < valueHigh and closeLowQuality and participation
+failedDemandSweep = demandFresh and low < demandBottom and close > demandTop and closeHighQuality and participation
+failedSupplySweep = supplyFresh and high > supplyTop and close < supplyBottom and closeLowQuality and participation
+
+longAuction = failedDemandSweep or failedLowValue or acceptedLongRange
+shortAuction = failedSupplySweep or failedHighValue or acceptedShortRange
+longAuctionOk = failedDemandSweep or acceptedLongRange or (failedLowValue and (not requireMatchingZone or nearDemand))
+shortAuctionOk = failedSupplySweep or acceptedShortRange or (failedHighValue and (not requireMatchingZone or nearSupply))
+longTriggerText = failedDemandSweep ? "DEMAND SWEEP" : failedLowValue ? "FAILED LOW" : acceptedLongRange ? "RANGE ACCEPT" : "WAIT"
+shortTriggerText = failedSupplySweep ? "SUPPLY SWEEP" : failedHighValue ? "FAILED HIGH" : acceptedShortRange ? "RANGE ACCEPT" : "WAIT"
+
+//==============================================================================
+// Card score: 10 points
+//==============================================================================
+longFreshPts = demandFresh ? demandTests == 0 ? 2.0 : demandTests == 1 ? 1.0 : 0.0 : 0.0
+shortFreshPts = supplyFresh ? supplyTests == 0 ? 2.0 : supplyTests == 1 ? 1.0 : 0.0 : 0.0
+
+longTrendPts = trendState == 1 ? 2.0 : trendState == 0 ? 1.0 : 0.0
+shortTrendPts = trendState == -1 ? 2.0 : trendState == 0 ? 1.0 : 0.0
+
+longCurvePts = curveState == -1 ? 1.0 : curveState == 0 ? 0.5 : 0.0
+shortCurvePts = curveState == 1 ? 1.0 : curveState == 0 ? 0.5 : 0.0
+
+longStop = demandFresh ? demandBottom - atr * stopBufferAtr : low - atr * (1.0 + stopBufferAtr)
+shortStop = supplyFresh ? supplyTop + atr * stopBufferAtr : high + atr * (1.0 + stopBufferAtr)
+longRisk = math.max(close - longStop, syminfo.mintick)
+shortRisk = math.max(shortStop - close, syminfo.mintick)
+
+longTarget1 = useVwap and vwap > close ? vwap : close + longRisk * minRr
+shortTarget1 = useVwap and vwap < close ? vwap : close - shortRisk * minRr
+longTarget2 = supplyFresh and supplyBottom > close ? supplyBottom : htfHigh
+shortTarget2 = demandFresh and demandTop < close ? demandTop : htfLow
+longTarget = math.max(longTarget1, longTarget2 > close ? longTarget2 : longTarget1)
+shortTarget = math.min(shortTarget1, shortTarget2 < close ? shortTarget2 : shortTarget1)
+
+longRr = math.max(longTarget - close, 0.0) / longRisk
+shortRr = math.max(close - shortTarget, 0.0) / shortRisk
+longProfitPts = longRr >= 5.0 ? 2.0 : longRr >= minRr ? 1.0 : 0.0
+shortProfitPts = shortRr >= 5.0 ? 2.0 : shortRr >= minRr ? 1.0 : 0.0
+
+longReactionPts = 0.0
+shortReactionPts = 0.0
+longRejectionPts = demandFresh ? f_clamp((demandRejectionScore - 0.55) * 0.75, 0.0, 0.35) : 0.0
+shortRejectionPts = supplyFresh ? f_clamp((supplyRejectionScore - 0.55) * 0.75, 0.0, 0.35) : 0.0
+longScore = math.min(math.min(demandStrengthPts + longReactionPts, 2.0) + demandTimePts + longFreshPts + longTrendPts + longCurvePts + longProfitPts + longRejectionPts, 10.0)
+shortScore = math.min(math.min(supplyStrengthPts + shortReactionPts, 2.0) + supplyTimePts + shortFreshPts + shortTrendPts + shortCurvePts + shortProfitPts + shortRejectionPts, 10.0)
+
+longEntryType = longScore >= proximalScore ? "PROXIMAL OK" : longScore >= scoreNeed ? "CONFIRM ONLY" : "WATCH ONLY"
+shortEntryType = shortScore >= proximalScore ? "PROXIMAL OK" : shortScore >= scoreNeed ? "CONFIRM ONLY" : "WATCH ONLY"
+
+//==============================================================================
+// Decision matrix and no-trade filters
+//==============================================================================
+matrixLongOk = curveState != 1 and (nearDemand or failedLowValue or acceptedLongRange)
+matrixShortOk = curveState != -1 and (nearSupply or failedHighValue or acceptedShortRange)
+middleChop = avoidMiddleChop and curveState == 0 and useVwap and close < valueHigh and close > valueLow and not nearDemand and not nearSupply
+poorLongRr = longRr < minRr
+poorShortRr = shortRr < minRr
+noAcceptLong = not longAuction
+noAcceptShort = not shortAuction
+chase = barRange > atr * maxChaseAtr
+opposingSupplyClose = blockOpposingZone and (supplyFresh and supplyBottom > close and supplyBottom - close <= atr * opposingAtr)
+opposingDemandClose = blockOpposingZone and (demandFresh and demandTop < close and close - demandTop <= atr * opposingAtr)
+trendConflictLong = requireTrendAlignment and trendState == -1
+trendConflictShort = requireTrendAlignment and trendState == 1
+structureMissingLong = requireStructureBreak and close <= high[1]
+structureMissingShort = requireStructureBreak and close >= low[1]
+zoneMissingLong = requireMatchingZone and not nearDemand and not failedDemandSweep
+zoneMissingShort = requireMatchingZone and not nearSupply and not failedSupplySweep
+
+longWatch = longScore >= scoreNeed and matrixLongOk
+shortWatch = shortScore >= scoreNeed and matrixShortOk
+longBlocked = longWatch and (trendConflictLong or structureMissingLong or zoneMissingLong or middleChop or poorLongRr or noAcceptLong or not longAuctionOk or chase or opposingSupplyClose or not closedOk)
+shortBlocked = shortWatch and (trendConflictShort or structureMissingShort or zoneMissingShort or middleChop or poorShortRr or noAcceptShort or not shortAuctionOk or chase or opposingDemandClose or not closedOk)
+
+longSetup = longWatch and longAuctionOk and not longBlocked
+shortSetup = shortWatch and shortAuctionOk and not shortBlocked
+
+longBlockText = trendConflictLong ? "TREND DOWN" : structureMissingLong ? "NO RECLAIM" : zoneMissingLong ? "NO DEMAND" : middleChop ? "MIDDLE CHOP" : poorLongRr ? "POOR R:R" : noAcceptLong or not longAuctionOk ? "NO ACCEPT" : chase ? "CHASE" : opposingSupplyClose ? "SUPPLY AHEAD" : not closedOk ? "CANDLE OPEN" : "NONE"
+shortBlockText = trendConflictShort ? "TREND UP" : structureMissingShort ? "NO RECLAIM" : zoneMissingShort ? "NO SUPPLY" : middleChop ? "MIDDLE CHOP" : poorShortRr ? "POOR R:R" : noAcceptShort or not shortAuctionOk ? "NO ACCEPT" : chase ? "CHASE" : opposingDemandClose ? "DEMAND AHEAD" : not closedOk ? "CANDLE OPEN" : "NONE"
+
+//==============================================================================
+// Visual signals
+//==============================================================================
+plotshape(showSignals and longSetup, title="BUY Trade", style=shape.labelup, location=location.belowbar, color=color.rgb(0, 145, 70), textcolor=color.white, text="BUY")
+plotshape(showSignals and shortSetup, title="SELL Trade", style=shape.labeldown, location=location.abovebar, color=color.rgb(233, 31, 44), textcolor=color.white, text="SELL")
+plotshape(showSignals and showWatchMarkers and longWatch and not longSetup, title="BUY Watch", style=shape.triangleup, location=location.belowbar, color=color.new(color.green, 35), text="WATCH")
+plotshape(showSignals and showWatchMarkers and shortWatch and not shortSetup, title="SELL Watch", style=shape.triangledown, location=location.abovebar, color=color.new(color.red, 35), text="WATCH")
+
+if showSignals and longSetup
+    label.new(bar_index, low, "LONG\nScore " + str.tostring(longScore, "#.0") + "/10\n" + longEntryType + "\n" + longTriggerText + "\nR:R " + str.tostring(longRr, "#.0"), style=label.style_label_up, color=color.rgb(0, 145, 70), textcolor=color.white)
+
+if showSignals and shortSetup
+    label.new(bar_index, high, "SHORT\nScore " + str.tostring(shortScore, "#.0") + "/10\n" + shortEntryType + "\n" + shortTriggerText + "\nR:R " + str.tostring(shortRr, "#.0"), style=label.style_label_down, color=color.rgb(233, 31, 44), textcolor=color.white)
+
+//==============================================================================
+// Reference card dashboard
+//==============================================================================
+var table dash = table.new(position.top_right, 4, 15, border_width=1, frame_width=1, frame_color=color.rgb(45, 53, 60), border_color=color.rgb(45, 53, 60))
+
+f_cell(int c, int r, string cellText, color bg, color tc) =>
+    table.cell(dash, c, r, cellText, bgcolor=bg, text_color=tc, text_size=size.small)
+
+if showDashboard and barstate.islast
+    color header = color.rgb(15, 131, 199)
+    color dark = color.rgb(224, 232, 240)
+    color paper = color.rgb(16, 22, 29)
+    color softGreen = color.rgb(19, 67, 44)
+    color softRed = color.rgb(78, 31, 39)
+    color softBlue = color.rgb(18, 47, 67)
+    color muted = color.rgb(31, 38, 46)
+    color scoreOk = color.rgb(30, 82, 52)
+    color scoreBad = color.rgb(91, 40, 47)
+
+    f_cell(0, 0, "CARD STEP", header, color.white)
+    f_cell(1, 0, "READ", header, color.white)
+    f_cell(2, 0, "LONG", header, color.white)
+    f_cell(3, 0, "SHORT", header, color.white)
+
+    f_cell(0, 1, "1 HTF Curve", paper, dark)
+    f_cell(1, 1, curveText, softBlue, dark)
+    f_cell(2, 1, curveState == -1 ? "LONG" : curveState == 0 ? "IF R:R" : "NO ACTION", curveState == 1 ? scoreBad : softGreen, dark)
+    f_cell(3, 1, curveState == 1 ? "SHORT" : curveState == 0 ? "IF R:R" : "NO ACTION", curveState == -1 ? scoreBad : softRed, dark)
+
+    f_cell(0, 2, "2 ITF Trend", paper, dark)
+    f_cell(1, 2, trendText + " " + trendStructureText, softBlue, dark)
+    f_cell(2, 2, str.tostring(longTrendPts, "#.0") + "/2", trendState == 1 ? scoreOk : trendState == -1 ? scoreBad : muted, dark)
+    f_cell(3, 2, str.tostring(shortTrendPts, "#.0") + "/2", trendState == -1 ? scoreOk : trendState == 1 ? scoreBad : muted, dark)
+
+    f_cell(0, 3, "3 LTF Zone", paper, dark)
+    f_cell(1, 3, nearDemand ? demandZoneText : nearSupply ? supplyZoneText : "AWAY", paper, dark)
+    f_cell(2, 3, demandFresh ? "D " + str.tostring(demandTests) + " Rx" + str.tostring(demandReactionCount) + " T:" + str.tostring(demandTruthScore, "#.00") : "NO FRESH D", demandFresh ? softGreen : muted, dark)
+    f_cell(3, 3, supplyFresh ? "S " + str.tostring(supplyTests) + " Rx" + str.tostring(supplyReactionCount) + " T:" + str.tostring(supplyTruthScore, "#.00") : "NO FRESH S", supplyFresh ? softRed : muted, dark)
+
+    f_cell(0, 4, "4 Auction", paper, dark)
+    f_cell(1, 4, participation ? "VOL OK" : "LOW VOL", participation ? scoreOk : muted, dark)
+    f_cell(2, 4, longTriggerText, longAuction ? scoreOk : muted, dark)
+    f_cell(3, 4, shortTriggerText, shortAuction ? scoreOk : muted, dark)
+
+    f_cell(0, 5, "5 Risk Logic", paper, dark)
+    f_cell(1, 5, "Need " + str.tostring(minRr, "#.0") + "R", paper, dark)
+    f_cell(2, 5, str.tostring(longRr, "#.0") + "R", longRr >= minRr ? scoreOk : scoreBad, dark)
+    f_cell(3, 5, str.tostring(shortRr, "#.0") + "R", shortRr >= minRr ? scoreOk : scoreBad, dark)
+
+    f_cell(0, 6, "Zone Strength", paper, dark)
+    f_cell(1, 6, "0-2", paper, dark)
+    f_cell(2, 6, str.tostring(demandStrengthPts, "#.0"), demandStrengthPts >= 1.0 ? scoreOk : muted, dark)
+    f_cell(3, 6, str.tostring(supplyStrengthPts, "#.0"), supplyStrengthPts >= 1.0 ? scoreOk : muted, dark)
+
+    f_cell(0, 7, "Time At Zone", paper, dark)
+    f_cell(1, 7, "0-1", paper, dark)
+    f_cell(2, 7, str.tostring(demandTimePts, "#.0"), demandTimePts >= 0.5 ? scoreOk : muted, dark)
+    f_cell(3, 7, str.tostring(supplyTimePts, "#.0"), supplyTimePts >= 0.5 ? scoreOk : muted, dark)
+
+    f_cell(0, 8, "Freshness", paper, dark)
+    f_cell(1, 8, "0-2", paper, dark)
+    f_cell(2, 8, str.tostring(longFreshPts, "#.0"), longFreshPts >= 1.0 ? scoreOk : muted, dark)
+    f_cell(3, 8, str.tostring(shortFreshPts, "#.0"), shortFreshPts >= 1.0 ? scoreOk : muted, dark)
+
+    f_cell(0, 9, "Curve Location", paper, dark)
+    f_cell(1, 9, "0-1", paper, dark)
+    f_cell(2, 9, str.tostring(longCurvePts, "#.0"), longCurvePts > 0 ? scoreOk : scoreBad, dark)
+    f_cell(3, 9, str.tostring(shortCurvePts, "#.0"), shortCurvePts > 0 ? scoreOk : scoreBad, dark)
+
+    f_cell(0, 10, "Trend Context", paper, dark)
+    f_cell(1, 10, "0-2", paper, dark)
+    f_cell(2, 10, str.tostring(longTrendPts, "#.0"), longTrendPts > 0 ? scoreOk : scoreBad, dark)
+    f_cell(3, 10, str.tostring(shortTrendPts, "#.0"), shortTrendPts > 0 ? scoreOk : scoreBad, dark)
+
+    f_cell(0, 11, "Profit Zone", paper, dark)
+    f_cell(1, 11, "0-2", paper, dark)
+    f_cell(2, 11, str.tostring(longProfitPts, "#.0"), longProfitPts > 0 ? scoreOk : scoreBad, dark)
+    f_cell(3, 11, str.tostring(shortProfitPts, "#.0"), shortProfitPts > 0 ? scoreOk : scoreBad, dark)
+
+    f_cell(0, 12, "TOTAL", header, color.white)
+    f_cell(1, 12, "10 PT SCORE", header, color.white)
+    f_cell(2, 12, str.tostring(longScore, "#.0") + "/10 " + longEntryType, longScore >= scoreNeed ? scoreOk : muted, dark)
+    f_cell(3, 12, str.tostring(shortScore, "#.0") + "/10 " + shortEntryType, shortScore >= scoreNeed ? scoreOk : muted, dark)
+
+    f_cell(0, 13, "NO TRADE", paper, dark)
+    f_cell(1, 13, "FILTER", paper, dark)
+    f_cell(2, 13, longBlocked ? longBlockText : "CLEAR", longBlocked ? scoreBad : scoreOk, dark)
+    f_cell(3, 13, shortBlocked ? shortBlockText : "CLEAR", shortBlocked ? scoreBad : scoreOk, dark)
+
+    f_cell(0, 14, "ACTION", header, color.white)
+    f_cell(1, 14, purposeText + " " + mode, header, color.white)
+    f_cell(2, 14, f_action_text(longSetup, longWatch, longBlocked), f_bg(longSetup, longWatch, longBlocked), longSetup ? color.white : dark)
+    f_cell(3, 14, f_action_text(shortSetup, shortWatch, shortBlocked), f_bg(shortSetup, shortWatch, shortBlocked), shortSetup ? color.white : dark)
+
+//==============================================================================
+// Alerts
+//==============================================================================
+alertcondition(longSetup, "Reference Card BUY Trade", "BUY: reference-card score, location, auction trigger, and risk logic are aligned.")
+alertcondition(shortSetup, "Reference Card SELL Trade", "SELL: reference-card score, location, auction trigger, and risk logic are aligned.")
+alertcondition(longWatch and not longSetup, "Reference Card BUY Watch", "BUY watch: score/location are ready, but the card requires confirmation or a filter is blocking.")
+alertcondition(shortWatch and not shortSetup, "Reference Card SELL Watch", "SELL watch: score/location are ready, but the card requires confirmation or a filter is blocking.")
+alertcondition(failedLowValue or failedDemandSweep, "Bullish Failed Auction", "Bullish failed auction: lower prices failed and buyers reclaimed.")
+alertcondition(failedHighValue or failedSupplySweep, "Bearish Failed Auction", "Bearish failed auction: higher prices failed and sellers reclaimed.")
+alertcondition(acceptedLongRange, "Bullish Breakout Acceptance", "Breakout acceptance: price held above the initial range with participation.")
+alertcondition(acceptedShortRange, "Bearish Breakout Acceptance", "Breakout acceptance: price held below the initial range with participation.")
+````

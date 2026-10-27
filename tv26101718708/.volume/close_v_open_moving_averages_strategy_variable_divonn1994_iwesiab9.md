@@ -1,0 +1,241 @@
+# Close v Open Moving Averages Strategy (Variable) [divonn1994]
+
+- url: https://www.tradingview.com/script/IwESIAB9-Close-v-Open-Moving-Averages-Strategy-Variable-divonn1994/
+- type: strategy
+- pine_id: PUB;6ccb40d52bcf4e849373c91e9f5c3a52
+- version: 4.0
+
+## Description
+
+This is a simple moving average based strategy that works well with a few different coin pairings. It takes the moving average 'opening' price and plots it, then takes the moving average 'closing' price and plots it, and then decides to enter a 'long' position or exit it based on whether the two lines have crossed each other. The reasoning is that it 'enters' a position when the average closing price is increasing. This could indicate upwards momentum in prices in the future. It then exits the position when the average closing price is decreasing. This could indicate downwards momentum in prices in the future. This is only speculative, though, but sometimes it can be a very good indicator/strategy to predict future action.
+
+What I've found is that there are a lot of coins that respond very well when the appropriate combination of: 1) type of moving average is chosen (EMA, SMA, RMA, WMA or VWMA) & 2) number of previous bars averaged (typically 10 - 250 bars) are chosen.
+Depending on the coin.. each combination of MA and Number of Bars averaged can have completely different levels of success.
+
+Example of Usage:
+An example would be that the VWMA works well for BTCUSD (BitStamp), but it has different successfulness based on the time frame. For the 12 hour bar timeframe, with the 66 bar average with the VWMA I found the most success. The next best successful combo I've found is for the 1 Day bar timeframe with the 35 bar average with the VWMA.. They both have a moving average that records about a month, but each have a different successfulness. Below are a few pair combos I think are noticeable because of the net profit, but there are also have a lot of potential coins with different combos:
+It's interesting to see the strategy tester change as you change the settings. The below pairs are just some of the most interesting examples I've found, but there might be other combos I haven't even tried on different coin pairs..
+Some strategy settings:
+
+
+BTCUSD (BitStamp) 12 Hr Timeframe : 66 bars, VWMA=> 10,387x net profit
+BTCUSD (BitStamp) 1 Day Timeframe : 35 bars, VWMA=> 7,805x net profit
+BNBUSD (Binance) 12 Hr Timeframe : 27 bars, VWMA => 15,484x net profit
+ETHUSD (BitStamp) 16 Hr Timeframe : 60 bars, SMA => 5,498x net profit
+XRPUSD (BitStamp) 16 Hr Timeframe : 33 bars, SMA => 10,178x net profit
+
+I only chose these coin/combos because of their insane net profit factors. There are far more coins with lower net profits but more reliable trade histories.
+
+Also, usually when I want to see which of these strategies might work for a coin pairing I will check between the different Moving Average types, for example the EMA or the SMA, then I also check between the moving average lengths (the number of bars calculated) to see which is most profitable over time.
+
+Features:
+-You can choose your preferred moving average: SMA, EMA, WMA, RMA & VWMA. 
+-You can also adjust the previous number of calculated bars for each moving average.
+
+-I made the background color Green when you're currently in a long position and Red when not. I made it so you can see when you'd be actively in a trade or not. The Red and Green background colors can be toggled on/off in order to see other indicators more clearly overlayed in the chart, or if you prefer a cleaner look on your charts. 
+
+-I also have a plot of the Open moving average and Close moving average together. The Opening moving average is Purple, the Closing moving average is White. White on top is a sign of a potential upswing and purple on top is a sign of a potential downswing. I've made this also able to be toggled on/off.
+
+Please, comment interesting pairs below that you've found for everyone :) thank you!
+
+I will post more pairs with my favorite settings as well. I'll also be considering the quality of the trades.. for example: net profit, total trades, percent profitable, profit factor, trade window and max drawdown.
+
+*if anyone can figure out how to change the date range, I woul really appreciate the help. It confuses me -_- *
+
+## Source Code
+
+````pine
+//@version=6
+// Author: @divonn1994
+
+//======================================================================
+// Strategy Initialization
+//======================================================================
+initial_balance = 100
+strategy("Close v Open Moving Averages Strategy v4", 
+         shorttitle="Close v Open v4 Strategy", 
+         overlay=true, 
+         pyramiding=0, 
+         default_qty_value=100, 
+         default_qty_type=strategy.percent_of_equity, 
+         precision=7, 
+         currency=currency.USD, 
+         commission_value=0.1, 
+         commission_type=strategy.commission.percent, 
+         initial_capital=initial_balance)
+
+//======================================================================
+// User Inputs
+//======================================================================
+// Trade Settings
+useShorts = input.bool(false, "Enable Shorts", group="Trading Options")
+
+// Moving Average Settings
+bars   = input.int(241, "Moving average length (number of bars)", minval=1, group="Strategy")
+maType = input.string("SMA", "Moving Average type", options=["EMA", "DEMA", "TEMA", "ZLEMA", "SMA", "RMA", "TMA", "WMA", "VWMA", "ALMA", "HMA", "LSMA"], group="Strategy")
+
+// Display Options
+redBG              = input.bool(true, "Red Background Color On", group="Display")
+greenBG            = input.bool(true, "Green Background Color On", group="Display")
+showMA             = input.bool(true, "Moving Average Plot On", group="Display")
+showTradeConnector = input.bool(true, "Show Trade Connector Lines", group="Trade Connector")
+showHistogram      = input.bool(true, "Show MA Difference Histogram", group="Display")
+histTransparency   = input.int(40, "Histogram Transparency", minval=0, maxval=100, group="Display")
+
+// Date Range Settings
+startMonth = input.int(1, "Start Month (1-12, 0 for furthest date)", minval=0, maxval=12, group="Beginning of Strategy")
+startDate  = input.int(1, "Start Date (1-31, 0 for furthest date)", minval=0, maxval=31, group="Beginning of Strategy")
+startYear  = input.int(2011, "Start Year (2000-2100, 0 for furthest date)", minval=0, maxval=2100, group="Beginning of Strategy")
+
+endMonth   = input.int(0, "End Month (1-12, 0 for today's date)", minval=0, maxval=12, group="End of Strategy")
+endDate    = input.int(0, "End Date (1-31, 0 for today's date)", minval=0, maxval=31, group="End of Strategy")
+endYear    = input.int(0, "End Year (2000-2100, 0 for today's date)", minval=0, maxval=2100, group="End of Strategy")
+
+//======================================================================
+// Date Range Calculation
+//======================================================================
+startTs = (startYear != 0 and startMonth != 0 and startDate != 0) ? timestamp(syminfo.timezone, startYear, startMonth, startDate, 0, 0) : na
+endTs   = (endYear != 0 and endMonth != 0 and endDate != 0) ? timestamp(syminfo.timezone, endYear, endMonth, endDate, 0, 0) : na
+inDateRange = (na(startTs) or time >= startTs) and (na(endTs) or time < endTs)
+
+//======================================================================
+// Helper Functions
+//======================================================================
+
+// Custom TEMA function
+f_tema(src, len) =>
+    ema1 = ta.ema(src, len)
+    ema2 = ta.ema(ema1, len)
+    ema3 = ta.ema(ema2, len)
+    3 * ema1 - 3 * ema2 + ema3
+
+// Calculate moving average based on selected type.
+f_ma(source, length, maType) =>
+    result = 0.0
+    if maType == "EMA"
+        result := ta.ema(source, length)
+    else if maType == "SMA"
+        result := ta.sma(source, length)
+    else if maType == "RMA"
+        result := ta.rma(source, length)
+    else if maType == "WMA"
+        result := ta.wma(source, length)
+    else if maType == "VWMA"
+        result := ta.vwma(source, length)
+    else if maType == "ALMA"
+        result := ta.alma(source, length, 0.85, 6)
+    else if maType == "HMA"
+        result := ta.hma(source, length)
+    else if maType == "TEMA"
+        result := f_tema(source, length)
+    else if maType == "DEMA"
+        result := 2 * ta.ema(source, length) - ta.ema(ta.ema(source, length), length)
+    else if maType == "TMA"
+        result := ta.sma(ta.sma(source, length), length)
+    else if maType == "LSMA"
+        result := ta.linreg(source, length, 0)
+    else if maType == "ZLEMA"
+        // Calculate lag length as half the period.
+        lag = math.floor((length - 1) / 2)
+        // Adjust price by removing lag: price + (price - price[lag])
+        priceAdjusted = source + (source - source[lag])
+        result := ta.ema(priceAdjusted, length)
+    else
+        result := na
+    result
+
+// Draw trade connector line with trade type.
+f_drawTradeConnector(entryBar, entryPrice, exitBar, exitPrice, tradeType) =>
+    profitable = tradeType == "long" ? (exitPrice > entryPrice) : (exitPrice < entryPrice)
+    line.new(x1 = entryBar, y1 = entryPrice, x2 = exitBar, y2 = exitPrice, 
+             color = profitable ? color.green : color.red, width = 2)
+
+//======================================================================
+// Strategy Calculations
+//======================================================================
+openMA  = f_ma(open, bars, maType)
+closeMA = f_ma(close, bars, maType)
+maMomentum = closeMA >= openMA ? 1 : -1
+
+//======================================================================
+// Enter or Exit Positions
+//======================================================================
+if ta.crossover(maMomentum, 0)
+    if inDateRange
+        strategy.close("short", comment="Close Short")
+        strategy.entry("long", strategy.long, comment="Long")
+
+if ta.crossunder(maMomentum, 0)
+    if inDateRange
+        strategy.close("long", comment="Close Long")
+        if useShorts
+            strategy.entry("short", strategy.short, comment="Short")
+
+//======================================================================
+// Trade Connector Lines
+//======================================================================
+var float entryPrice = na
+var int   entryBar   = na
+var string entryTradeType = ""
+var float exitPrice = na
+
+tradeEvent = (strategy.position_size == 0 and strategy.position_size[1] != 0) or 
+             (strategy.position_size > 0 and strategy.position_size[1] < 0) or 
+             (strategy.position_size < 0 and strategy.position_size[1] > 0)
+
+if tradeEvent
+    if showTradeConnector and not na(entryBar)
+        exitPrice := open
+        f_drawTradeConnector(entryBar, entryPrice, bar_index, exitPrice, entryTradeType)
+    entryPrice := open
+    entryBar   := bar_index
+    entryTradeType := strategy.position_size > 0 ? "long" : "short"
+else if (strategy.position_size != 0 and strategy.position_size[1] == 0)
+    entryPrice := open
+    entryBar   := bar_index
+    entryTradeType := strategy.position_size > 0 ? "long" : "short"
+
+//======================================================================
+// Entry and Exit Markers
+//======================================================================
+longEntry  = (strategy.position_size > 0 and strategy.position_size[1] <= 0)
+longExit   = (strategy.position_size <= 0 and strategy.position_size[1] > 0)
+shortEntry = (strategy.position_size < 0 and strategy.position_size[1] >= 0)
+shortExit  = (strategy.position_size >= 0 and strategy.position_size[1] < 0)
+
+plotshape(longEntry, title="Long Entry", location=location.belowbar, color=color.green, style=shape.arrowup, size=size.tiny, text="LE")
+plotshape(longExit, title="Long Exit", location=location.abovebar, color=color.red, style=shape.arrowdown, size=size.tiny, text="LX")
+plotshape(shortEntry, title="Short Entry", location=location.abovebar, color=color.red, style=shape.arrowdown, size=size.tiny, text="SE")
+plotshape(shortExit, title="Short Exit", location=location.belowbar, color=color.green, style=shape.arrowup, size=size.tiny, text="SX")
+
+//======================================================================
+// Plot Strategy Behavior
+//======================================================================
+plot(showMA ? openMA : na, title="Fast MA", color=color.new(color.white, 0), linewidth=3, offset=1)
+plot(showMA ? closeMA : na, title="Slow MA", color=color.new(color.purple, 0), linewidth=2, offset=1)
+
+var color bgColorValue = na
+if inDateRange
+    if maMomentum > 0 and greenBG
+        bgColorValue := color.new(color.green, 75)
+    else if maMomentum <= 0 and redBG
+        bgColorValue := color.new(color.red, 75)
+    else
+        bgColorValue := na
+else
+    bgColorValue := na
+
+bgcolor(bgColorValue, offset=1)
+
+//======================================================================
+// Plot MA Difference Histogram
+//======================================================================
+diffFactor = input.float(120.0, "MA Difference Scale Factor", group="Display")
+maDiff = (closeMA - openMA) * diffFactor
+plot(showHistogram ? math.abs(maDiff) : na, 
+     title="Scaled MA Difference", 
+     color = maDiff >= 0 ? color.new(color.green, histTransparency) : color.new(color.red, histTransparency), 
+     style=plot.style_histogram, 
+     linewidth=2)
+hline(0, "Zero Difference", color=color.gray)
+````
