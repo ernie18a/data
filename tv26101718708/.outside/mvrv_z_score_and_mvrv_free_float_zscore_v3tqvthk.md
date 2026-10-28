@@ -1,0 +1,87 @@
+# MVRV Z Score and MVRV Free Float Z-Score
+
+- url: https://www.tradingview.com/script/v3TqVthK-MVRV-Z-Score-and-MVRV-Free-Float-Z-Score/
+- type: strategy
+- pine_id: PUB;ab2185bdda28459286663e37188b2643
+- version: 1.0
+
+## Description
+
+[b]IMPORTANT:[/b] This script needs as much historic data as possible. Please run it on [symbol="INDEX:BTCUSD"]INDEX:BTCUSD[/symbol], [symbol="BNC:BLX"]BNC:BLX[/symbol] or another chart of sufficient length.
+
+[b]MVRV[/b]
+The MVRV (Market Value to Realised Value Ratio) simply divides bitcoins market cap by bitcoins realized market cap. This was previously impossible on Tradingview but has now been made possible thanks to Coinmetrics providing us with the realized market cap data.
+In the free float version, the free float market cap is used instead of the regular market cap.
+
+[b]Z-Score[/b]
+The MVRV Z-score divides the difference between Market cap and realized market cap by the historic standard deviation of the market cap.
+Historically, this has been insanely accurate at detecting bitcoin tops and bottoms:
+A Z-Score above 7 means bitcoin is vastly overpriced and at a local top.
+A Z-Score below 0.1 means bitcoin is underpriced and at a local bottom.
+
+In the free float version, the free float market cap is used instead of the regular market cap.
+
+The Z-Score, also known as the standard score is hugely popular in a wide range of mathematical and statistical fields and is usually used to measure the number of standard deviations by which the value of a raw score is above or below the mean value of what is being observed or measured.
+
+[b]Credits[/b]
+MVRV Z Score initially created by aweandwonder
+MVRV initially created by Murad Mahmudov and David Puell
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © Powerscooter
+
+//@version=5
+strategy("MVRV Z Score and MVRV Free Float Z-Score",shorttitle = "MVRV Z Score",precision=2,default_qty_type = strategy.cash, default_qty_value = 100, initial_capital = 100)
+//Inputs
+Strategymode = input.bool(false,"Strategy Mode","Switches between indicator and strategy mode.")
+Calculation = input.string("Standard", "Calculation Method",options = ["Standard","Free Float"], tooltip = "The standard calculation uses the market cap while the free float version uses the free float market cap.")
+Source = input.string("Glassnode", "Market Cap Source",options = ["Glassnode","Coinmetrics"])
+Upper = input.float(7.0,"Upper Line",tooltip="Z-Score value above which a sell signal is given, standard is 7.")
+Lower = input.float(0.1,"Lower Line",tooltip="Z-Score value below which a buy signal is given, standard is 0.1.")
+//Query
+MC1 = request.security("GLASSNODE:BTC_MARKETCAP","D",close)
+MC2 = request.security("CRYPTOCAP:BTC","D",close)
+MCF = request.security("COINMETRICS:BTC_MARKETCAPFF","D",close)
+MCR = request.security("COINMETRICS:BTC_MARKETCAPREAL","D",close)
+//Initialize var
+var float MC = 0
+var MCA = array.new<float>()
+var float MVRV = 0
+var float Zscore = 0
+//Calculations
+if Source=="Glassnode"
+    MC := MC1
+else
+    MC := MC2
+array.push(MCA,MC)
+StdDevA = array.stdev(MCA)
+if Calculation=="Standard"
+    MVRV := MC/MCR
+if Calculation=="Free Float"
+    MVRV := MCF/MCR
+if Calculation=="Standard"  
+    Zscore := (MC-MCR)/StdDevA
+if Calculation=="Free Float"  
+    Zscore := (MCF-MCR)/StdDevA
+//Plotting
+MVRVplot = plot(MVRV, "MVRV", color=color.blue,transp=40)
+Zplot = plot(Zscore, "Z-score",color=color.yellow,linewidth = 2)
+UpperLine = Zscore>=Upper?Upper:na
+LowerLine = Zscore<=Lower?Lower:na
+//Lower and UpperLine are undefined when Zscore isn't close to them so they don't affect panel scaling.
+UpperPlot = plot(UpperLine, transp=100, trackprice = true, color=color.red, display=display.all-display.status_line)
+LowerPlot = plot(LowerLine, transp=100, trackprice = true, color=color.green, display=display.all-display.status_line)
+fill(plot1=Zplot,plot2=UpperPlot,color=color.red, transp=30)
+fill(plot1=Zplot,plot2=LowerPlot,color=color.green, transp=30)
+//Order Conditions
+Long = ta.crossunder(Zscore,Lower)
+TakeProfit = ta.crossover(Zscore,Upper)
+//Execution
+if Long and Strategymode
+    strategy.entry("Long",strategy.long)
+if TakeProfit and Strategymode
+    strategy.close("Long")
+````

@@ -1,0 +1,323 @@
+# Parabolic SAR Smart Filter [MarkitTick]
+
+- url: https://www.tradingview.com/script/FVatXBCi-Parabolic-SAR-Smart-Filter-MarkitTick/
+- type: indicator
+- pine_id: PUB;58a51d8319544ada8ba699b47ef05f93
+- version: 1.0
+
+## Description
+
+💡 The Parabolic SAR Smart Filter [MarkitTick] is a sophisticated trend-following tool designed to enhance the traditional Parabolic Stop and Reverse (SAR) indicator with modern algorithmic filters. While the standard SAR is a staple in technical analysis for identifying trend direction and potential reversal points, it is notorious for producing false signals in sideways or low-volatility markets. This script addresses those limitations by integrating multi-timeframe (MTF) alignment, liquidity sweep detection, and volatility-normalized momentum scoring. By combining these advanced concepts, the indicator provides a high-fidelity visual experience through its "3D Neon" rendering engine, while offering a robust backend for automated trading via JSON-ready webhooks.
+
+[b]● ✨ Originality and Utility[/b]
+
+The primary utility of this indicator lies in its ability to separate high-probability trend shifts from noise. Standard indicators often operate in a vacuum, ignoring the context of higher timeframes or the underlying liquidity structure of the market. The Smart Filter breaks this mold by introducing three critical layers of verification:
+
+[b]• Multi-Timeframe Trend Gating[/b]
+The script allows users to select a higher timeframe (HTF) as a trend filter. A signal is only considered valid if the local trend aligns with the HTF direction. This prevents traders from fighting the "big picture" momentum, which is a common pitfall in trend-following strategies.
+
+[b]• Liquidity Sweep Integration[/b]
+In modern market environments, institutional "stop hunts" or liquidity sweeps often precede genuine moves. This indicator identifies when a SAR flip occurs immediately after a sweep of local highs or lows, providing an additional layer of confidence that the reversal is backed by real capital movement rather than a minor price fluctuation.
+
+[b]• Neon Decay Visualization[/b]
+Unlike static indicators, the "3D Neon" engine visualizes the "age" of a trend. As a trend matures, the visual intensity of the SAR dots fades. This creates an intuitive psychological cue for the trader, signaling that a trend may be reaching exhaustion or that the risk/reward ratio for new entries is diminishing.
+
+[b]● 🔬 Methodology and Concepts[/b]
+
+The script is built upon several interconnected logical modules that process market data in real-time to generate actionable insights.
+
+[b]• SAR Logic and State Machine[/b]
+The core engine utilizes a standard Parabolic SAR calculation, but it is encapsulated within a custom "Signal Engine" type. This engine tracks not just the current price, but the entry price, risk distance, and direction flips. This state-persistent approach allows for precise calculations of risk-to-reward ratios immediately upon a trend reversal.
+
+[b]• Momentum Score Calculation[/b]
+The momentum score is a volatility-normalized metric. It is calculated by dividing the absolute distance between the current close and the SAR value by the Average True Range (ATR). This creates a "Sigma" style score that tells the trader how "extended" the price is relative to its average volatility. A high score suggests strong trend momentum, while a low score indicates a stagnant or consolidating market.
+
+[b]• Liquidity Sweep Logic[/b]
+The sweep detection module looks back over a user-defined window (Sweep Lookback). It checks if the current low (for a bullish flip) is lower than the previous period's low, or if the current high (for a bearish flip) is higher than the previous period's high. If a SAR flip occurs under these conditions, it is flagged as a "Sweep Signal," suggesting that the market has purged liquidity before reversing.
+
+[b]• Early Warning System[/b]
+To assist with trade management, the script calculates an "Early Warning" threshold. If the price returns to within 10% of the initial entry risk distance from the SAR dot, the script triggers a visual warning. This helps traders anticipate stops or adjust their trailing logic before a full reversal occurs.
+
+[b]● 🎨 Visual Guide[/b]
+
+The chart interface is designed for clarity and rapid data interpretation through color theory and geometric shapes.
+
+[b]• The 3D Neon SAR[/b]
+[list]
+[*]The SAR is rendered as a three-layered circle: Core, Inner Glow, and Outer Glow.
+[*]Neon Blue represents a Bullish trend, while Neon Orange/Amber represents a Bearish trend.
+[*]The transparency of these layers increases as the trend persists (Neon Decay), making the visuals "glow" brightly at the start of a move and fade as it ages.
+[/list]
+
+[b]• Neon Candles[/b]
+[list]
+[*]The script includes an optional "Neon Candles" mode. This colors the entire candle body and wick to match the current SAR trend direction.
+[*]This provides a cohesive visual experience and reduces the cognitive load required to identify the current market bias.
+[/list]
+
+[b]• Specialized Shapes and Labels[/b]
+[list]
+[*]Triangle Up/Down: Small yellow triangles appear on the SAR dots when the "Early Warning" system is active, signaling price proximity to the invalidation point.
+[*]Label Up/Down: Bright yellow labels appear below (for buys) or above (for sells) a bar when a "Liquidity Sweep" is detected at the moment of a trend flip.
+[/list]
+
+[b]• Dark-Mode Analytics Dashboard[/b]
+[list]
+[*]Located in the top-right corner, the dashboard provides a real-time summary.
+[*]Trend State: Displays "BULLISH" or "BEARISH" in high-contrast text.
+[*]Entry Trigger: The exact price where the most recent SAR flip occurred.
+[*]Target (TP) and Invalidation (SL): Dynamic price levels based on the configured Risk/Reward ratio.
+[*]Momentum Bar: A visual power bar (█░) that changes color based on the current momentum score (Green for High, Yellow for Medium, Gray for Low).
+[*]MTF Context: Displays "ALIGNED" or "DIVERGED" based on the higher timeframe status.
+[/list]
+
+[b]● 📖 How to Use[/b]
+
+Effective utilization of the Smart Filter involves combining the visual signals with the dashboard metrics to form a comprehensive trade thesis.
+
+[list=1]
+[*]Identify a Trend Flip: Wait for the Parabolic SAR dots to switch from above the price to below (Bullish) or vice versa (Bearish).
+[*]Verify MTF Alignment: Check the dashboard or the MTF Context label. High-probability trades occur when the current timeframe trend matches the Higher Timeframe trend.
+[*]Check for Liquidity Sweeps: Look for the yellow "Sweep" labels. A flip that occurs after a liquidity sweep is often more reliable as it indicates a "washout" of weak hands.
+[*]Assess Momentum: Before entering, ensure the Momentum Power Bar is at least yellow or green. Low momentum (gray) indicates a lack of conviction in the move.
+[*]Set Risk Management: Use the TP and SL levels provided in the dashboard. The Stop Loss is always placed at the SAR level, while the Take Profit is projected based on your preferred Risk/Reward ratio.
+[*]Monitor Early Warnings: If the yellow triangles appear on the SAR dots, be prepared for a potential exit or trend shift, as price is encroaching on the SAR invalidation zone.
+[/list]
+
+[b]● ⚙️ Inputs and Settings[/b]
+
+The indicator is highly customizable to fit various asset classes and trading styles.
+
+[b]• SAR Logic Group[/b]
+[list]
+[*]SAR Start/Increment/Maximum: Controls the sensitivity and "acceleration" of the Parabolic SAR. Lower values make the SAR more trailing and slower, while higher values make it more sensitive to price changes.
+[*]Risk/Reward Ratio: Determines the distance of the Take Profit level relative to the distance between the entry price and the SAR stop loss.
+[*]ATR Length: Adjusts the window for the volatility calculation used in the Momentum Score.
+[/list]
+
+[b]• Visuals — 3D Neon Group[/b]
+[list]
+[*]Neon Up/Down Colors: Allows full customization of the base and glow colors.
+[*]Neon Decay Duration: Sets how many bars it takes for the SAR dots to reach their maximum transparency. Longer durations keep the "glow" visible for longer trends.
+[*]Enable Bar Coloring: Toggles the neon-colored candle bodies.
+[/list]
+
+[b]• MTF Alignment Group[/b]
+[list]
+[*]Higher Timeframe: Select the timeframe used for the trend gate (e.g., if trading on the 15m, you might set this to 1H or 4H).
+[/list]
+
+[b]• Liquidity Sweep Group[/b]
+[list]
+[*]Sweep Lookback: The number of preceding bars checked to determine if the reversal occurred after a break of a significant high or low.
+[/list]
+
+[b]● 🔍 Deconstruction of the Underlying Scientific and Academic Framework[/b]
+
+The Parabolic SAR Smart Filter is grounded in several quantitative and behavioral finance theories.
+
+[b]• Volatility Normalization (ATR Theory)[/b]
+The integration of the Average True Range (ATR) to calculate momentum scores is based on the principle of volatility normalization. In financial mathematics, price movement is often "noisy." By dividing the price-to-SAR distance by the ATR, we essentially convert price distance into units of standard volatility. This allows for a more objective comparison of trend strength across different assets regardless of their nominal price or historical volatility.
+
+[b]• Market Microstructure and Liquidity Theory[/b]
+The liquidity sweep detection logic is an application of Market Microstructure theory, specifically the concept of "Informationless Trades." Large institutional participants often require significant liquidity to enter positions, which is frequently found at levels where retail stop-losses are clustered (just below recent lows or above recent highs). Identifying a "sweep" before a trend reversal aligns the indicator with the concept of "Smart Money" accumulation or distribution.
+
+[b]• Fractal Market Hypothesis (MTF Alignment)[/b]
+The use of multi-timeframe alignment is supported by the Fractal Market Hypothesis (FMH). FMH suggests that financial markets are fractal in nature and that trends on lower timeframes are nested within larger trends on higher timeframes. By requiring alignment between timeframes, the script seeks to capitalize on the "Self-Similarity" of market trends, increasing the probability that the local move is supported by a larger structural shift.
+
+[b]• Decay Functions and Time-Decay Bias[/b]
+The Neon Decay visualization applies a linear decay function to the trend's age. This is academically related to the concept of "Trend Maturity Bias," where the probability of a trend continuation decreases (and the variance of price increases) as the trend persists over time. Visualizing this decay provides a non-linear representation of risk that standard technical indicators lack.
+
+[b]⚠️ Disclaimer[/b]
+All provided scripts and indicators are strictly for educational exploration and must not be interpreted as financial advice or a recommendation to execute trades. I expressly disclaim all liability for any financial losses or damages that may result, directly or indirectly, from the reliance on or application of these tools. Market participation carries inherent risk where past performance never guarantees future returns, leaving all investment decisions and due diligence solely at your own discretion.
+
+## Source Code
+
+````pine
+// © MarkitTick
+// This work is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+// https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+//@version=6
+indicator("Parabolic SAR Smart Filter [MarkitTick]", overlay=true)
+
+// ============================================================================
+// ► INPUTS
+// ============================================================================
+float i_start    = input.float(0.02, "SAR Start",       step=0.01, group="SAR Logic")
+float i_inc      = input.float(0.02, "SAR Increment",    step=0.01, group="SAR Logic")
+float i_max      = input.float(0.2,  "SAR Maximum",      step=0.01, group="SAR Logic")
+float i_rr       = input.float(1.5,  "Risk/Reward Ratio", step=0.1, group="SAR Logic")
+int   i_atrLen   = input.int(14,     "ATR Length (Momentum)", minval=1, group="SAR Logic")
+
+color i_upBase   = input.color(color.rgb(0, 191, 255, 0),   "Neon Up  — Base",  group="Visuals — 3D Neon")
+color i_upGlow   = input.color(color.rgb(0, 191, 255, 60),  "Neon Up  — Glow",  group="Visuals — 3D Neon")
+color i_dnBase   = input.color(color.rgb(255, 102, 0, 0),   "Neon Down — Base", group="Visuals — 3D Neon")
+color i_dnGlow   = input.color(color.rgb(255, 102, 0, 60),  "Neon Down — Glow", group="Visuals — 3D Neon")
+bool  i_barCol   = input.bool(true,  "Enable Bar Coloring",  group="Visuals — 3D Neon")
+int   i_decayMax = input.int(50, "Neon Decay Duration (bars)", minval=10, maxval=500, tooltip="Number of bars from flip until the SAR dot reaches maximum fade.", group="Visuals — 3D Neon")
+
+color i_dashBg   = input.color(color.rgb(15, 15, 20, 10),  "Background", group="Dashboard")
+color i_dashTxt  = input.color(color.rgb(220, 220, 220, 0), "Text",       group="Dashboard")
+
+string i_htfTF   = input.timeframe("240", "Higher Timeframe", tooltip="The script requests this TF's SAR and uses it as a trend gate.", group="MTF Alignment")
+
+int i_sweepLB    = input.int(5, "Sweep Lookback (bars)", minval=2, maxval=20, tooltip="How many bars to look back when testing for a false break.", group="Liquidity Sweep")
+
+// ============================================================================
+// ► USER-DEFINED TYPES
+// ============================================================================
+type SignalEngine
+    int   direction
+    bool  isFlip
+    float entryPrice
+    float entryRiskDist
+
+type RiskManager
+    float stopLoss
+    float takeProfit
+
+// ============================================================================
+// ► CORE SAR & DIRECTION
+// ============================================================================
+float rawSar   = ta.sar(i_start, i_inc, i_max)
+bool  isBull   = close > rawSar
+int   dir      = isBull ? 1 : -1
+bool  isFlip   = na(dir[1]) ? false : dir != dir[1]
+
+// ============================================================================
+// ► [1] SAR MOMENTUM SCORE
+// ============================================================================
+float atrVal   = ta.atr(i_atrLen)
+float sarDist  = math.abs(close - rawSar)
+float momScore = atrVal > 0.0 ? sarDist / atrVal : 0.0
+
+// ============================================================================
+// ► [6] NEON DECAY — Trend Age
+// ============================================================================
+var int trendAge = 0
+trendAge        := isFlip ? 1 : trendAge + 1
+
+int   decTrans   = math.min(math.round(trendAge * 85.0 / i_decayMax), 85)
+color cCore      = isBull ? color.new(i_upBase, decTrans)                      : color.new(i_dnBase, decTrans)
+color cInner     = isBull ? color.new(i_upGlow, math.min(decTrans + 15, 90))   : color.new(i_dnGlow, math.min(decTrans + 15, 90))
+color cOuter     = isBull ? color.new(i_upGlow, math.min(decTrans + 55, 95))   : color.new(i_dnGlow, math.min(decTrans + 55, 95))
+
+// ============================================================================
+// ► STATE MACHINE — Signal Engine & Risk Manager
+// ============================================================================
+var SignalEngine eng = SignalEngine.new(0, false, na, na)
+var RiskManager  rm  = RiskManager.new(na, na)
+
+eng.direction := dir
+eng.isFlip    := isFlip
+
+if isFlip
+    float riskAmt      = math.abs(close - rawSar)
+    eng.entryPrice    := close
+    eng.entryRiskDist := riskAmt
+    rm.stopLoss       := rawSar
+    rm.takeProfit     := isBull ? close + riskAmt * i_rr : close - riskAmt * i_rr
+
+// ============================================================================
+// ► [2] MTF TREND ALIGNMENT (Smart Filter)
+// ============================================================================
+bool htfBull    = request.security(syminfo.tickerid, i_htfTF, close > ta.sar(i_start, i_inc, i_max), lookahead=barmerge.lookahead_off)
+bool mtfAligned = isBull == htfBull
+
+// ============================================================================
+// ► [3] LIQUIDITY SWEEP DETECTION
+// ============================================================================
+float curLo    = ta.lowest (low,  i_sweepLB)
+float curHi    = ta.highest(high, i_sweepLB)
+float priorLo  = ta.lowest (low [i_sweepLB], i_sweepLB)
+float priorHi  = ta.highest(high[i_sweepLB], i_sweepLB)
+
+bool isSweep   = (isFlip and isBull and curLo < priorLo) or (isFlip and not isBull and curHi > priorHi)
+
+// ============================================================================
+// ► [4] EARLY WARNING SYSTEM (Reversal Prediction)
+// ============================================================================
+bool earlyWarn = not na(eng.entryRiskDist) and eng.entryRiskDist > 0.0 and sarDist < eng.entryRiskDist * 0.10
+
+// ============================================================================
+// ► VISUAL RENDERING
+// ============================================================================
+plot(earlyWarn ? na : rawSar,  "SAR — Core",  style=plot.style_circles, linewidth=1, color=cCore)
+plot(rawSar,                    "SAR — Inner", style=plot.style_circles, linewidth=3, color=cInner)
+plot(rawSar,                    "SAR — Outer", style=plot.style_circles, linewidth=6, color=cOuter)
+
+color i_earlyWarnColor = input.color(color.rgb(255, 210, 0), title="Early Warning Color")
+color i_sweepColor     = input.color(color.rgb(255, 255, 0), title="Sweep Color")
+
+plotshape(earlyWarn and isBull ? rawSar : na, title="Early Warning Triangle Up", style=shape.triangleup, location=location.absolute, color=i_earlyWarnColor, size=size.tiny)
+plotshape(earlyWarn and not isBull ? rawSar : na, title="Early Warning Triangle Down", style=shape.triangledown, location=location.absolute, color=i_earlyWarnColor, size=size.tiny)
+
+plotshape(isSweep and isBull, title="Liquidity Sweep Label (Below)", style=shape.labelup, location=location.belowbar, color=i_sweepColor, size=size.small)
+plotshape(isSweep and not isBull, title="Liquidity Sweep Label (Above)", style=shape.labeldown, location=location.abovebar, color=i_sweepColor, size=size.small)
+
+color candleCol = i_barCol ? (isBull ? i_upBase : i_dnBase) : na
+plotcandle(open, high, low, close, title="Neon Candles", color=candleCol, wickcolor=candleCol, bordercolor=candleCol)
+
+// ============================================================================
+// ► ALERTS (MTF-filtered, JSON webhook-ready)
+// ============================================================================
+string payload = '{"action":"'   + (isBull ? "BUY" : "SELL")                    +
+                 '","symbol":"'  + syminfo.tickerid                             +
+                 '","entry":"'   + str.tostring(eng.entryPrice, format.mintick) +
+                 '","tp":"'      + str.tostring(rm.takeProfit,  format.mintick) +
+                 '","sl":"'      + str.tostring(rm.stopLoss,    format.mintick) +
+                 '","sweep":'    + str.tostring(isSweep)                        +
+                 ',"mtf_align":' + str.tostring(mtfAligned)                     + '}'
+
+if isFlip and mtfAligned
+    alert(payload, alert.freq_once_per_bar_close)
+
+// ============================================================================
+// ► DASHBOARD HELPER — Momentum Power Bar
+// ============================================================================
+f_momBar(float score) =>
+    int    n = math.min(math.round(score / 3.0 * 10.0), 10)
+    string s = ""
+    for i = 1 to 10
+        s += i <= n ? "█" : "░"
+    s
+
+f_momColor(float score) =>
+    score >= 2.5 ? color.rgb(0,   255, 120) : score >= 1.5 ? color.rgb(80,  255, 0) : score >= 0.8 ? color.rgb(200, 200, 0) : color.rgb(110, 110, 110)
+
+// ============================================================================
+// ► DARK-MODE ANALYTICS DASHBOARD 
+// ============================================================================
+var table dash = table.new(position.top_right, 2, 8, bgcolor=i_dashBg, border_width=1, border_color=color.gray)
+
+if barstate.islast
+    color hdrBg = color.rgb(30, 30, 45, 10)
+    table.cell(dash, 0, 0, "Metric", text_color=i_dashTxt, text_size=size.small, bgcolor=hdrBg)
+    table.cell(dash, 1, 0, "Value",  text_color=i_dashTxt, text_size=size.small, bgcolor=hdrBg)
+
+    table.cell(dash, 0, 1, "Trend State", text_color=i_dashTxt, text_size=size.small)
+    table.cell(dash, 1, 1, isBull ? "▲  BULLISH" : "▼  BEARISH", text_color = isBull ? i_upBase : i_dnBase, text_size=size.small)
+
+    table.cell(dash, 0, 2, "Entry Trigger", text_color=i_dashTxt, text_size=size.small)
+    table.cell(dash, 1, 2, str.tostring(eng.entryPrice, format.mintick), text_color=i_dashTxt, text_size=size.small)
+
+    table.cell(dash, 0, 3, "Target  (TP)", text_color=i_dashTxt, text_size=size.small)
+    table.cell(dash, 1, 3, str.tostring(rm.takeProfit, format.mintick), text_color=color.rgb(0, 255, 100), text_size=size.small)
+
+    table.cell(dash, 0, 4, "Invalidation (SL)", text_color=i_dashTxt, text_size=size.small)
+    table.cell(dash, 1, 4, str.tostring(rm.stopLoss, format.mintick), text_color=color.rgb(255, 60, 60), text_size=size.small)
+
+    table.cell(dash, 0, 5, "⚡ Momentum", text_color=i_dashTxt, text_size=size.small)
+    table.cell(dash, 1, 5, f_momBar(momScore), text_color=f_momColor(momScore), text_size=size.small)
+
+    string mtfLabel = mtfAligned ? "● ALIGNED  (" + i_htfTF + ")" : "○ DIVERGED (" + i_htfTF + ")"
+    color  mtfColor = mtfAligned ? color.rgb(0, 255, 120) : color.rgb(255, 80, 80)
+    table.cell(dash, 0, 6, "MTF Context", text_color=i_dashTxt, text_size=size.small)
+    table.cell(dash, 1, 6, mtfLabel, text_color=mtfColor, text_size=size.small)
+
+    string ewLabel = earlyWarn ? "⚠  NEAR SAR — Caution" : "✓  Zone Clear"
+    color  ewColor = earlyWarn ? color.rgb(255, 200, 0) : color.rgb(80, 200, 80)
+    table.cell(dash, 0, 7, "SAR Proximity", text_color=i_dashTxt, text_size=size.small)
+    table.cell(dash, 1, 7, ewLabel, text_color=ewColor, text_size=size.small)
+````

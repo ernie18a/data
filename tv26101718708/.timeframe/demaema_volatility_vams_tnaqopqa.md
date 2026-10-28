@@ -1,0 +1,106 @@
+# DEMA/EMA & VOLATILITY (VAMS)
+
+- url: https://www.tradingview.com/script/tnaqOPQa-DEMA-EMA-VOLATILITY-VAMS/
+- type: strategy
+- pine_id: PUB;9c7d7d502a144e579a2740a43f9fe0ad
+- version: 1.0
+
+## Description
+
+The biggest issue with momentum following strategies is over signaling during whipsaw periods. I created this strategy that measure momentum with DEMA (Fast Moving) and EMA (Slow moving). In order to mitigate over signaling during whipsaw periods I implemented the average true range percentage (ATRP) to measure realized volatility. If momentum is picking up while volatility is under a certain threshold it purchases the security. If momentum slows while volatility picks up it sells the security. Additionally, if momentum picks up, but volatility is high, it stays out of the security.  This follows the theory that  during sustained uptrends volatility will decrease, and during market corrections the volatility picks up. Following the old adage that  markets climb up the stairs, and fall out the window. Note that this strategy does repaint due to it entering and closing positions at the close of the bars. I forgot to mention how volatility is measured high vs low. If the ATRP is above the EMA of the ATRP the strategy interprets the volatility is increasing and does not enter the security & Vice Versa for selling (with momentum signal of MAs)
+
+This is just my first strategy, any feedback would be much appreciated.
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © Qorbanjf
+
+//@version=4
+strategy("ORIGIN DEMA/EMA & VOL LONG ONLY", shorttitle="ORIGIN DEMA/EMA & VOL LONG", overlay=true, initial_capital=10000, default_qty_value=10000)
+
+// DEMA
+length = input(10, minval=1, title="DEMA LENGTH")
+src = input(close, title="Source")
+e1 = ema(src, length)
+e2 = ema(e1, length)
+dema1 = 2 * e1 - e2
+plot(dema1, "DEMA", color=color.yellow)
+
+//EMA
+len = input(25, minval=1, title="EMA Length")
+srb = input(close, title="Source")
+offset = input(title="Offset", type=input.integer, defval=0, minval=-500, maxval=500)
+ema1 = ema(srb, len)
+plot(ema1, title="EMA", color=color.blue, offset=offset)
+
+
+// Inputs
+atrTimeFrame = input("D", title="ATR Timeframe", type=input.resolution)
+atrLookback = input(defval=14,title="ATR Lookback Period",type=input.integer)
+useMA = input(title = "Show Moving Average?", type = input.bool, defval = true)
+maType = input(defval="EMA", options=["EMA", "SMA"], title = "Moving Average Type")
+maLength = input(defval = 20, title = "Moving Average Period", minval = 1)
+//longLossPerc = input(title="Long Stop Loss (%)",
+    // type=input.float, minval=0.0, step=0.1, defval=1) * 0.01
+longTrailPerc = input(title="Trail stop loss (%)",
+     type=input.float, minval=0.0, step=0.1, defval=50) * 0.01
+longProfitPerc = input(title="Long Take Profit (%)",
+     type=input.float, minval=0.0, step=0.1, defval=3000) / 100
+
+// === INPUT BACKTEST RANGE ===
+FromMonth = input(defval = 1, title = "From Month", minval = 1, maxval = 12)
+FromDay   = input(defval = 1, title = "From Day", minval = 1, maxval = 31)
+FromYear  = input(defval = 2017, title = "From Year", minval = 2000)
+ToMonth   = input(defval = 1, title = "To Month", minval = 1, maxval = 12)
+ToDay     = input(defval = 1, title = "To Day", minval = 1, maxval = 31)
+ToYear    = input(defval = 9999, title = "To Year", minval = 2017)
+
+
+// ATR Logic // atrValue = atr(atrLookback) // atrp = (atrValue/close)*100 // plot(atrp, color=color.white, linewidth=2, transp = 30)
+
+atrValue = security(syminfo.tickerid, atrTimeFrame, atr(atrLookback))
+atrp = (atrValue/close)*100
+
+// Moving Average Logic
+ma(maType, src, length) =>
+    maType == "EMA" ? ema(src, length) : sma(src, length) //Ternary Operator (if maType equals EMA, then do ema calc, else do sma calc)
+maFilter = security(syminfo.tickerid, atrTimeFrame, ma(maType, atrp, maLength))
+
+// variables for enter position
+enterLong = crossover(dema1, ema1) and atrp < maFilter
+
+// variables for exit position
+sale = crossunder(dema1, ema1)
+
+// stop loss
+//longStopPrice  = strategy.position_avg_price * (1 - longLossPerc)
+
+// trail stop
+// Determine trail stop loss prices
+longStopTrail = 0.0
+
+longStopTrail := if (strategy.position_size > 0)
+    stopValue = close * (1 - longTrailPerc)
+    max(stopValue, longStopTrail[1])
+else
+    0
+//Take profit Percentage
+longExitPrice  = strategy.position_avg_price * (1 + longProfitPerc)
+
+//Enter trades when conditions are met
+strategy.entry(id="long",
+ long=strategy.long,
+ when=enterLong,
+ comment="long")
+
+//
+strategy.close("long", when = sale, comment = "Sell")
+//place exit orders (only executed after trades are active)
+
+strategy.exit(id="sell",
+ limit = longExitPrice,
+ stop = longStopTrail,
+ comment = "SL/TP")
+````

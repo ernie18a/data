@@ -1,0 +1,69 @@
+# High Beta RSI Reversal Model -Bhushan
+
+- url: https://www.tradingview.com/script/jJnqvv1t-High-Beta-RSI-Reversal-Model-Bhushan/
+- type: strategy
+- pine_id: PUB;a588d759483144339488dae170c9409a
+- version: 1.0
+
+## Description
+
+this statgy is  used for trading iusing RSI indicators , itrs working well please backtest it
+
+## Source Code
+
+````pine
+//@version=6
+strategy("High Beta RSI Reversal Model", 
+     overlay=true,
+     initial_capital=10000,
+     default_qty_type=strategy.percent_of_equity,
+     default_qty_value=10)
+
+rsiLength = input.int(14)
+lowerLevel = input.int(25)
+upperLevel = input.int(75)
+volLength = input.int(20)
+
+rsi = ta.rsi(close, rsiLength)
+volMA = ta.sma(volume, volLength)
+vwapValue = ta.vwap(close)
+
+// ===== LONG SETUP =====
+capitulation = rsi < lowerLevel and volume > volMA * 1.5
+bullConfirm = close > high[1]
+
+longCondition = capitulation and bullConfirm
+
+// ===== SHORT SETUP =====
+blowoff = rsi > upperLevel and volume > volMA * 1.5
+bearConfirm = close < low[1]
+
+shortCondition = blowoff and bearConfirm
+
+var float longStop = na
+var float shortStop = na
+
+if longCondition
+    strategy.entry("LONG", strategy.long)
+    longStop := low
+
+if shortCondition
+    strategy.entry("SHORT", strategy.short)
+    shortStop := high
+
+// ===== EXIT =====
+
+// Long target = VWAP
+if strategy.position_size > 0
+    if close >= vwapValue
+        strategy.close("LONG", comment="VWAP Target")
+    if close < longStop
+        strategy.close("LONG", comment="Stop Loss")
+
+// Short target = VWAP
+if strategy.position_size < 0
+    if close <= vwapValue
+        strategy.close("SHORT", comment="VWAP Target")
+    if close > shortStop
+        strategy.close("SHORT", comment="Stop Loss")
+````
