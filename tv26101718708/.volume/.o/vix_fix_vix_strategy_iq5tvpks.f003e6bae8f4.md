@@ -1,0 +1,19 @@
+Calculation: Downside volatility (WVF high component) = (highest close over its lookback − current low) / highest close over its lookback × 100
+Calculation: Upside volatility (WVF low component) = (lowest close over its lookback − current high) / lowest close over its lookback × 100
+Calculation: Combined volatility (WVF) = downside volatility + upside volatility
+Calculation: High-component threshold = selected moving average of downside volatility × its factor
+Calculation: Low-component threshold = selected moving average of upside volatility × its factor
+Calculation: Upper volatility band = SMA of combined volatility + standard-deviation multiplier × standard deviation of combined volatility
+Calculation: Lower volatility band = SMA of combined volatility − standard-deviation multiplier × standard deviation of combined volatility
+Calculation: Volatility range high = highest combined volatility over its lookback × its factor
+Calculation: Volatility range low = lowest combined volatility over its lookback × its factor
+Calculation: Entry price average = selected moving average of close × its factor
+Calculation: MACD = standard MACD of close, calculated on the selected other-timeframe bars using the bar still forming
+Long: (combined volatility crosses above the high-component threshold AND MACD < 0 OR combined volatility > high-component threshold AND combined volatility > 0 AND (combined volatility > upper volatility band OR combined volatility >= volatility range high)) AND close < buy stop level AND close < entry price average
+Short: (combined volatility crosses below the low-component threshold AND MACD > 0 OR combined volatility < low-component threshold AND combined volatility < 0 AND (combined volatility < lower volatility band OR combined volatility <= volatility range low)) AND close >= short-selling level
+Exit: long, combined volatility crosses below the low-component threshold AND MACD > 0 OR combined volatility < low-component threshold AND combined volatility < 0 AND (combined volatility < lower volatility band OR combined volatility <= volatility range low)
+Exit: short, combined volatility crosses above the high-component threshold AND MACD < 0 OR combined volatility > high-component threshold AND combined volatility > 0 AND (combined volatility > upper volatility band OR combined volatility >= volatility range high)
+Exit: long, low <= entry price × stop-loss factor
+Exit: short, high >= entry price × (2 − stop-loss factor)
+Exit: long, bars since entry >= fixed holding-period bar count
+Exit: short, bars since entry >= fixed holding-period bar count

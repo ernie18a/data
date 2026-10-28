@@ -1,0 +1,4 @@
+Calculation: For each grouped price row of the chart bar, allocated ask volume = sum of each constituent lower-timeframe bar's volume divided by its rounded minimum-tick range count, assigned to every row it spans when its close is above its open; allocated bid volume is computed the same way for bars closing below open, and split equally between ask and bid for bars closing equal to open. Use the lower-timeframe bars within the chart bar being evaluated, including the still-forming chart bar.
+Calculation: Total ask volume = sum of allocated ask volume across the chart bar's rows; total bid volume = sum of allocated bid volume across its rows.
+Long: Total ask volume > total bid volume OR allocated ask volume > allocated bid volume at any non-POC row.
+Short: Total ask volume >= total bid volume OR allocated bid volume > allocated ask volume at any non-POC row.

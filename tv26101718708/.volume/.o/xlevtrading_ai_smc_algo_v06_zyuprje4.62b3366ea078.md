@@ -1,0 +1,10 @@
+Long: An internal bullish CHoCH is accepted on its break bar during the selected signal session, with spike and tiny-range rejection passed and optional displacement confirmation passed; or, when follow-through is required, within the follow-through window a later close is above the CHoCH level plus an ATR buffer and at least the CHoCH close, during the selected session, with optional displacement confirmation passed
+Short: An internal bearish CHoCH is accepted on its break bar during the selected signal session, with spike and tiny-range rejection passed and optional displacement confirmation passed; or, when follow-through is required, within the follow-through window a later close is below the CHoCH level minus an ATR buffer and at most the CHoCH close, during the selected session, with optional displacement confirmation passed
+Long: Close crosses above an unbroken internal or swing pivot high
+Short: Close crosses below an unbroken internal or swing pivot low
+Calculation: Bullish fair value gap = on the first bar of a timeframe period, the current period low is above the high two bars before the last completed period, the last completed period close is above that earlier high, and its percentage close-over-open change exceeds twice the cumulative mean absolute percentage change of completed periods
+Calculation: Bearish fair value gap = on the first bar of a timeframe period, the current period high is below the low two bars before the last completed period, the last completed period close is below that earlier low, and its percentage open-over-close change exceeds twice the cumulative mean absolute percentage change of completed periods
+Long: Bullish fair value gap forms
+Short: Bearish fair value gap forms
+Long: Higher-timeframe bias is bearish and lower-timeframe internal structure bias is bearish, or higher-timeframe bias is bullish and lower-timeframe internal structure bias is not bullish
+Short: Higher-timeframe bias is bullish and lower-timeframe internal structure bias is bullish, or higher-timeframe bias is bearish and lower-timeframe internal structure bias is not bearish

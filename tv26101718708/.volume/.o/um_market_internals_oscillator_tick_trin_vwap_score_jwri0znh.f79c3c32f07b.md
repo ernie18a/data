@@ -1,0 +1,3 @@
+Calculation: Session VWAP = current-session volume-weighted average of HLC3, using the current chart bar; VWAP slope = its percentage change from the previous chart bar.
+Long: close is above session VWAP by more than the configured proximity threshold AND VWAP slope is rising or flat within the configured slope threshold
+Short: close is below session VWAP by more than the configured proximity threshold AND VWAP slope is falling or flat within the configured slope threshold

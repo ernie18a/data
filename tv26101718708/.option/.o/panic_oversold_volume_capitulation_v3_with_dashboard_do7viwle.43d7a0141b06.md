@@ -1,0 +1,1 @@
+Go long when the traded instrument is simultaneously oversold across two RSI periods and stochastic, has fallen substantially from its all-time high, and the external volatility index is elevated; require capitulation volume to exceed both its recent median and its recent average. No short or exit rule is defined.

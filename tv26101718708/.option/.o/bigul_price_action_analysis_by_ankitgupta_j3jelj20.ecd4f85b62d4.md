@@ -1,0 +1,1 @@
+For the traded instrument, compare the current prices of NIFTY and BANKNIFTY futures with each index’s daily central pivot range, calculated from the prior day’s high, low, and close. If both prices are above their respective ranges, take a long bias; if both are below, take a short bias; otherwise, wait. No exit condition is defined.

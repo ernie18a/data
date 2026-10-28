@@ -1,0 +1,7 @@
+Calculation: Modified HMA3 = WMA(3 × WMA(close, p/3) − WMA(close, p/2) − WMA(close, p), p), where p is half the HMA length
+Calculation: Sampled higher-timeframe close = the close of the first chart bar when the selected higher-timeframe interval begins, held until the next interval begins
+Calculation: Momentum oscillator = the negative EMA of the prior-bar difference between the RSI(1) of cumulative change in sampled higher-timeframe close × volume and its 10-period WMA
+Long: Shorter-period EMA > longer-period EMA AND (momentum oscillator crosses above zero OR chart-timeframe linear regression of close crosses above Modified HMA3 calculated on the selected timeframe using the prior close and shifted back one additional selected-timeframe bar); OR, while the latest entry signal is long, no long signal occurs and low crosses below the last long signal bar's open reduced by the stop-loss percentage
+Short: No long signal occurs, the latest entry signal is long, and high crosses above the last long signal bar's open increased by the higher take-profit percentage
+Exit: long, high reaches either of two take-profit levels above the position's average entry price OR low reaches the stop-loss level below it
+Exit: short, low reaches either of two take-profit levels below the position's average entry price OR high reaches the stop-loss level above it

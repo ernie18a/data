@@ -1,0 +1,3 @@
+Calculation: MEI = (RSI euphoria score + VWAP euphoria score + bullish candle score)/3 − (RSI panic score + VWAP panic score + bearish candle score)/3; RSI euphoria score = max(0, (RSI − 70)/30 × 100); RSI panic score = max(0, (30 − RSI)/30 × 100); VWAP euphoria score = 100 if close − VWAP > multiplier × ATR, otherwise 0; VWAP panic score = 100 if close − VWAP < −multiplier × ATR, otherwise 0; bullish candle score = percentage of lookback bars with close > open; bearish candle score = percentage of lookback bars with close < open. Use current chart bars and current bar values.
+Long: MEI < −50
+Short: MEI > 50

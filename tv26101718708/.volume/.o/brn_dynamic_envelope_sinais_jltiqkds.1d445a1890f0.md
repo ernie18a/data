@@ -1,0 +1,4 @@
+Calculation: Upper band = moving average of close + (moving average of high − moving average of close) × distance multiplier; all three averages use the same type and lookback
+Calculation: Lower band = moving average of close − (moving average of close − moving average of low) × distance multiplier; all three averages use the same type and lookback
+Long: Close crosses above the upper band, then on a later bar close crosses above the setup bar’s high OR open is above the setup bar’s high; the setup remains active until triggered or a lower-band cross occurs
+Short: Close crosses below the lower band, then on a later bar close crosses below the setup bar’s low OR open is below the setup bar’s low; the setup remains active until triggered or an upper-band cross occurs

@@ -1,0 +1,3 @@
+Calculation: combined trend heatmap = 8-bar trendline + current-bar candle pressure / 20-bar trendline + current-bar candle pressure, where each trendline = 100 × rising-pressure sum / (rising-pressure sum + falling-pressure sum); the 8-bar sums use volume × ohlc4, rising when ohlc4 increases and falling when it does not, and the 20-bar sums use volume × close, rising when close increases and falling when it does not; candle pressure = (2 × close − low − high) / (high − low), or 0 when high = low
+Long: combined trend heatmap ≤ 30
+Short: combined trend heatmap ≥ 80

@@ -1,0 +1,5 @@
+Calculation: Ribbon trend state = on the selected structure timeframe, either the fastest of six same-type moving averages of the selected price source is above the slowest (Ribbon Flip), or the fastest moving average is above its value on the prior structure-timeframe bar (Fastest MA Slope); the six moving averages use progressively longer lookbacks from fastest to slowest; use the current structure-timeframe bar, including while it is forming
+Long: Ribbon trend state is true on the current structure-timeframe bar AND false on the prior structure-timeframe bar
+Short: Ribbon trend state is false on the current structure-timeframe bar AND true on the prior structure-timeframe bar
+Exit: long, Ribbon trend state is false on the current structure-timeframe bar AND true on the prior structure-timeframe bar
+Exit: short, Ribbon trend state is true on the current structure-timeframe bar AND false on the prior structure-timeframe bar

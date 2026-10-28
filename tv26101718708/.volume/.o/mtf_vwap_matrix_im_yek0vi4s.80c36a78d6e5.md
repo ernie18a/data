@@ -1,0 +1,5 @@
+Calculation: Session, daily, weekly, monthly, and quarterly anchored VWAP = cumulative hlc3 × volume divided by cumulative volume since the start of the respective period; use the current forming period and exclude the first bar after each reset.
+Calculation: Bullish anchor count = number of enabled anchors whose close is above their VWAP.
+Calculation: Candle strength = weighted combination of candle body divided by range, volume relative to its moving average, and alignment of candle direction with the enabled anchors' bullish count.
+Long: Close > any enabled anchored VWAP OR bullish anchor count > half the number of enabled anchors OR close crosses above the selected primary VWAP OR bullish anchor count equals the number of enabled anchors and did not equal it on the previous bar OR candle strength ≥ the glow threshold AND close ≥ open.
+Short: Close < any enabled anchored VWAP OR bullish anchor count < half the number of enabled anchors OR close crosses below the selected primary VWAP OR bullish anchor count = 0 and was not 0 on the previous bar OR candle strength ≥ the glow threshold AND close < open.

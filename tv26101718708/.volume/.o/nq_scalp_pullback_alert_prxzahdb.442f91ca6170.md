@@ -1,0 +1,3 @@
+Calculation: Average volume = simple moving average of volume
+Long: close > session VWAP AND fast EMA > slow EMA AND low <= fast EMA AND high >= fast EMA AND close > fast EMA AND volume >= average volume AND within configured session window
+Short: close < session VWAP AND fast EMA < slow EMA AND low <= fast EMA AND high >= fast EMA AND close < fast EMA AND volume >= average volume AND within configured session window

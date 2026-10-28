@@ -1,0 +1,8 @@
+Calculation: Lower-wick rejection = the lower wick is greater than 40% of the bar’s high-low range
+Calculation: Bullish MACD histogram divergence = a confirmed pivot low where price is lower than at an earlier bar in the pivot lookback, the MACD histogram is higher than at that bar, and the histogram is below zero
+Calculation: Volume MACD line = shorter-lookback EMA(volume) − longer-lookback EMA(volume); volume MACD signal line = EMA of the volume MACD line
+Long: (position is flat AND (RSI is below its oversold threshold AND close is below the lower Bollinger Band AND (close > open OR lower-wick rejection) OR close is more than a threshold percentage below the longer-lookback SMA AND (close > open OR lower-wick rejection) OR bullish MACD histogram divergence AND MACD histogram > its prior-bar value)) OR (MACD line > MACD signal line AND CCI > its threshold AND close > the shorter-lookback SMA AND volume MACD line > volume MACD signal line)
+Exit: long Left-side position, shorter-lookback SMA < longer-lookback SMA AND (close < shorter-lookback SMA OR close >= longer-lookback SMA OR RSI on the prior bar > a threshold AND RSI crosses below its shorter-lookback SMA)
+Exit: long Left-side position, close < entry price − (ATR × a configurable multiple)
+Exit: long position, close < highest high since entry − (ATR × a configurable multiple)
+Exit: long position, close crosses below the shorter-lookback SMA AND MACD line < MACD signal line

@@ -1,0 +1,4 @@
+Long: shorter-lookback EMA > longer-lookback EMA AND close > shorter-lookback EMA AND RSI > long-side threshold AND close > highest high over the breakout lookback in prior completed bars AND volume > volume SMA × volume threshold
+Short: shorter-lookback EMA < longer-lookback EMA AND close < shorter-lookback EMA AND RSI < short-side threshold AND close < lowest low over the breakout lookback in prior completed bars AND volume > volume SMA × volume threshold
+Exit: Long, low <= close of the most recent bar with a long entry signal × (1 − stop-loss percentage) OR high >= close of the most recent bar with a long entry signal × (1 + take-profit percentage)
+Exit: Short, high >= close of the most recent bar with a short entry signal × (1 + stop-loss percentage) OR low <= close of the most recent bar with a short entry signal × (1 − take-profit percentage)

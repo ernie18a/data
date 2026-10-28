@@ -1,0 +1,4 @@
+Calculation: Member score = blend of (current source-bar close minus close from a shorter lookback, divided by ATR), (close minus session VWAP, divided by ATR), and (close minus EMA, divided by ATR); cap each component symmetrically at a common bound. Use the still-forming source-timeframe bar; calculate the EMA and ATR on that timeframe.
+Calculation: Basket score = weighted average of eligible member scores; use market-cap weights when valid same-currency share data is available for every eligible member, otherwise equal weights. Exclude duplicate members and members without fresh, aligned source data.
+Long: Basket score > positive threshold
+Short: Basket score < negative threshold

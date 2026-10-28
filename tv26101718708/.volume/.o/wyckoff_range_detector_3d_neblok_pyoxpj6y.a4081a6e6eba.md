@@ -1,0 +1,10 @@
+Calculation: Effort Z-score = (current effort − its moving average over the effort baseline lookback) / its standard deviation over that lookback; effort is volume when available, otherwise high − low
+Calculation: Confirmed pivot high/low = a high/low greater/less than the highs/lows of the configured number of bars on both sides; confirmed that many bars after the pivot
+Calculation: Active range = after a selling climax, the first confirmed pivot high at least the minimum range height above the climax low; after a buying climax, the first confirmed pivot low at least the minimum range height below the climax high. For distribution, mirror prices by multiplying by −1. The climax extreme may extend while awaiting the opposite pivot.
+Calculation: Range midline = (active range high + active range low) / 2
+Long: Active accumulation range AND a bar breaks below the range low and closes back above it within the reclaim window AND at least one secondary-test pivot low has formed since range confirmation
+Long: Active accumulation range AND no SOS has occurred AND no break is pending AND close > range high + breakout buffer × ATR AND (Effort Z-score ≥ minimum breakout effort Z-score OR high − low ≥ ATR)
+Long: Active accumulation range AND SOS occurred AND confirmed pivot low after the SOS bar ≥ range midline
+Short: Active distribution range AND a bar breaks above the range high and closes back below it within the reclaim window AND at least one secondary-test pivot high has formed since range confirmation
+Short: Active distribution range AND no SOW has occurred AND no break is pending AND close < range low − breakout buffer × ATR AND (Effort Z-score ≥ minimum breakout effort Z-score OR high − low ≥ ATR)
+Short: Active distribution range AND SOW occurred AND confirmed pivot high after the SOW bar ≤ range midline

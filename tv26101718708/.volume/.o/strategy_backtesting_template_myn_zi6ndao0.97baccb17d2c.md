@@ -1,0 +1,4 @@
+Long: RSI(10) crosses above 80 AND (EMA filter disabled OR selected EMA source > its EMA) AND (ADX filter disabled OR selected ADX > threshold) AND datetime is within the configured date range and optional time window AND trade direction permits long AND position side is not long
+Short: RSI(10) crosses below 20 AND (EMA filter disabled OR selected EMA source < its EMA) AND (ADX filter disabled OR selected ADX > threshold) AND datetime is within the configured date range and optional time window AND trade direction permits short AND position side is not short
+Exit: long, close < entry price × (1 − stop-loss percentage) OR RSI(100) crosses below 40 OR high reaches any configured take-profit percentage above entry price
+Exit: short, close > entry price × (1 + stop-loss percentage) OR RSI(100) crosses above 60 OR low reaches any configured take-profit percentage below entry price

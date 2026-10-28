@@ -1,0 +1,4 @@
+Calculation: OBV = cumulative volume added when close rises, subtracted when close falls, and unchanged when close is unchanged
+Calculation: MACD histogram of OBV = difference between the fast and slow EMAs of OBV, minus an EMA of that difference; the fast EMA uses a shorter lookback than the slow EMA
+Long: MACD histogram of OBV crosses above 0 AND datetime month is within the configured month range, inclusive, AND day of month is at least the configured start day and below the configured end day
+Exit: long, MACD histogram of OBV crosses below 0 AND datetime month is within the configured month range, inclusive, AND day of month is at least the configured start day and below the configured end day

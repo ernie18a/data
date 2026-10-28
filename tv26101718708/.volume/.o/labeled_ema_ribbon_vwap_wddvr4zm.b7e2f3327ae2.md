@@ -1,0 +1,2 @@
+Long: shorter-period EMA 1 >= longer-period EMA 2 OR shorter-period EMA 2 >= longer-period EMA 3 OR shorter-period EMA 3 >= longer-period EMA 4
+Short: shorter-period EMA 1 < longer-period EMA 2 OR shorter-period EMA 2 < longer-period EMA 3 OR shorter-period EMA 3 < longer-period EMA 4

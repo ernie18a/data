@@ -1,0 +1,4 @@
+Calculation: Most recent pivot high = the high at the center of a symmetric window that equals the window’s highest high, recognized after the window’s later bars have completed
+Calculation: Most recent pivot low = the low at the center of a symmetric window that equals the window’s lowest low, recognized after the window’s later bars have completed
+Long: Close crosses above the most recent pivot high OR (close is above the long-term EMA AND RSI is above its midpoint AND OBV is above its EMA AND close crosses above the short-term EMA)
+Short: Close crosses below the most recent pivot low OR (close is below the long-term EMA AND RSI is below its midpoint AND OBV is below its EMA AND close crosses below the short-term EMA)

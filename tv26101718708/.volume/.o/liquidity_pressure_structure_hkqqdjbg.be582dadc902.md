@@ -1,0 +1,5 @@
+Calculation: Latest confirmed swing high/low = the most recent pivot high/low, where a pivot is higher/lower than the same lookback of bars before and after it; use completed bars only
+Calculation: Pressure = EMA of ((2 × (close − low) / (high − low) − 1 + candle direction) / 2), where candle direction is 1 if close > open, −1 if close < open, and 0 otherwise
+Calculation: Volume expansion = current volume is at least a parameterized multiple of its moving average
+Long: (low < latest confirmed swing low AND close > latest confirmed swing low AND pressure > 0 AND close > open) OR (close > latest confirmed swing high AND pressure > 0 AND volume expansion), AND the preceding bar did not satisfy either long condition
+Short: (high > latest confirmed swing high AND close < latest confirmed swing high AND pressure < 0 AND close < open) OR (close < latest confirmed swing low AND pressure < 0 AND volume expansion), AND the preceding bar did not satisfy either short condition

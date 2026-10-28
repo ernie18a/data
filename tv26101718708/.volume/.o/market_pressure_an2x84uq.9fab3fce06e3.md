@@ -1,0 +1,6 @@
+Calculation: Normalized pressure = clamp(33.3 × (smoothed pressure − rolling mean) / rolling standard deviation, −100, 100); smoothed pressure is a double EMA of 35 × close location within the bar × capped relative volume / 3 + 25 × candle body / bar range + 25 × clamped close change / bar range × capped relative volume / 3 + 15 × trend bias. Trend bias is +1 above the trend EMA, −1 below it, and 0 inside its ATR-based dead zone.
+Calculation: Squeeze active = Bollinger Bands are inside Keltner Channels.
+Calculation: Squeeze fired = squeeze was active on the prior bar and is inactive on this bar.
+Calculation: Pressure growing = the absolute change in normalized pressure over a short lookback exceeds a threshold and normalized pressure is moving farther from zero.
+Long: (Squeeze active AND normalized pressure > positive confluence threshold) OR (Squeeze fired AND normalized pressure > positive confluence threshold) OR (NOT Squeeze active AND normalized pressure > positive neutral boundary) OR (Squeeze active AND Pressure growing AND normalized pressure > 0)
+Short: (Squeeze active AND normalized pressure < negative confluence threshold) OR (Squeeze fired AND normalized pressure < negative confluence threshold) OR (NOT Squeeze active AND normalized pressure < negative neutral boundary) OR (Squeeze active AND Pressure growing AND normalized pressure < 0)

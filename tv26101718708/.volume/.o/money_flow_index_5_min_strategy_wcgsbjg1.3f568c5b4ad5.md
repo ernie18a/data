@@ -1,0 +1,4 @@
+Long: previous bar’s Money Flow Index equals its overbought boundary AND close > open AND abs(close − open) > (high − low) × configured body-size threshold AND (trend filter disabled OR close > simple moving average of close)
+Short: previous bar’s Money Flow Index equals its oversold boundary AND close < open AND abs(close − open) > (high − low) × configured body-size threshold AND (short logic enabled) AND (trend filter disabled OR close <= simple moving average of close)
+Exit: long, low <= active stop-loss level OR high >= active take-profit level OR (timed exit enabled AND elapsed time since entry equals configured time limit)
+Exit: short, high >= active stop-loss level OR low <= active take-profit level OR (timed exit enabled AND elapsed time since entry equals configured time limit)

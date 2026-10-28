@@ -1,0 +1,3 @@
+Calculation: Inflow/Outflow Index = 100 − 100 / (1 + average inflow / average outflow), where inflow is volume × (close − open) when close > open, otherwise 0, and outflow is volume × (open − close) when close < open, otherwise 0; average each flow with an EMA using the same lookback; when average outflow is zero, use a very large ratio.
+Long: Inflow/Outflow Index > 50
+Short: Inflow/Outflow Index < 50

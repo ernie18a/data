@@ -1,0 +1,6 @@
+Calculation: Moving VWAP = rolling volume-weighted average of the selected price source over a lookback of bars aggregated to the selected calculation timeframe; use that timeframe’s bar still forming.
+Calculation: Standard deviation = square root of the rolling volume-weighted mean of squared source prices minus the square of the Moving VWAP, over the same lookback and timeframe; use that timeframe’s bar still forming.
+Calculation: Oscillator = source minus Moving VWAP in Distance mode, or that difference divided by standard deviation in Z-Score mode; use the selected calculation timeframe’s bar still forming.
+Calculation: Band 2 threshold = configured Band 2 level in Z-Score mode, or that level multiplied by standard deviation in Distance mode.
+Long: Oscillator >= 0 OR (current Oscillator > previous Oscillator AND previous Oscillator <= 0) OR (current Oscillator > current Band 2 threshold AND previous Oscillator <= previous Band 2 threshold)
+Short: Oscillator < 0 OR (current Oscillator < previous Oscillator AND previous Oscillator >= 0) OR (current Oscillator < negative current Band 2 threshold AND previous Oscillator >= negative previous Band 2 threshold)

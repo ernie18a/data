@@ -1,0 +1,6 @@
+Calculation: MIDAS VWAP = cumulative volume-weighted average of (high + low + close) / 3, reset at each configured anchor boundary and including the current bar
+Calculation: MIDAS standard deviation = square root of the nonnegative difference between the volume-weighted mean of squared (high + low + close) / 3 and the square of MIDAS VWAP, accumulated from the configured anchor boundary through the current bar
+Calculation: Z-score = (close − MIDAS VWAP) / MIDAS standard deviation, or 0 when standard deviation is 0
+Calculation: Order-flow score = weighted sum of candle body-to-range ratio, capped volume relative to its EMA, and directional close position within the bar's range
+Long: close crosses above MIDAS VWAP AND order-flow score ≥ configured threshold AND current bar is confirmed OR close > MIDAS VWAP + MIDAS standard deviation × configured sensitivity × configured outer Fibonacci multiplier OR Z-score > 0
+Short: close crosses below MIDAS VWAP AND order-flow score ≥ configured threshold AND current bar is confirmed OR close < MIDAS VWAP − MIDAS standard deviation × configured sensitivity × configured outer Fibonacci multiplier OR Z-score < 0

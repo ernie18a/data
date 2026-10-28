@@ -1,0 +1,14 @@
+Calculation: Bollinger Bands = an N-bar simple moving average of close, plus and minus K times the N-bar standard deviation of close
+Calculation: Keltner Channels = an M-bar simple moving average of close, plus and minus J times an M-bar average true range (or smoothed true range)
+Calculation: Squeeze = Bollinger Bands are strictly inside Keltner Channels
+Calculation: Squeeze volume delta = sum of volume for up-closing bars minus volume for down-closing bars during the current squeeze; up-closing means close > open, down-closing means close < open
+Calculation: Squeeze delta ratio = absolute squeeze volume delta divided by the sum of up-closing and down-closing volume during the squeeze
+Calculation: Higher-timeframe trend = close above the 50-bar simple moving average of close, using the last completed higher-timeframe bar
+Calculation: ADX = 14-period ADX using 14-period directional movement smoothing
+Calculation: Candle body percentage = 100 times absolute(close - open) divided by high - low, or 0 when high = low
+Calculation: Squeeze width = Bollinger upper band minus Bollinger lower band on the last squeeze bar
+Calculation: Expansion ratio = current Bollinger width divided by squeeze width
+Long: current bar is confirmed AND current bar is not in a squeeze AND previous bar was in a squeeze lasting at least the minimum number of bars AND current close > current upper Bollinger Band AND squeeze volume delta at the end of the squeeze > 0 AND (volume filter disabled OR squeeze delta ratio at the end of the squeeze >= minimum ratio) AND (higher-timeframe filter disabled OR higher-timeframe trend is true) AND (ADX filter disabled OR current ADX >= minimum) AND (body filter disabled OR current candle body percentage >= minimum) AND (expansion filter disabled OR current expansion ratio >= minimum)
+Short: current bar is confirmed AND current bar is not in a squeeze AND previous bar was in a squeeze lasting at least the minimum number of bars AND current close < current lower Bollinger Band AND squeeze volume delta at the end of the squeeze < 0 AND (volume filter disabled OR squeeze delta ratio at the end of the squeeze >= minimum ratio) AND (higher-timeframe filter disabled OR higher-timeframe trend is false) AND (ADX filter disabled OR current ADX >= minimum) AND (body filter disabled OR current candle body percentage >= minimum) AND (expansion filter disabled OR current expansion ratio >= minimum)
+Exit: long, short-entry condition OR current high >= entry price + squeeze width × third profit-target multiplier
+Exit: short, long-entry condition OR current low <= entry price - squeeze width × third profit-target multiplier

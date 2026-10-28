@@ -1,0 +1,9 @@
+Calculation: Confirmed swing high/low = latest pivot high/low with the configured number of bars on both sides; only use after the bars on both sides have completed.
+Calculation: Prior range high/low = highest high / lowest low over the configured lookback, excluding the current bar.
+Calculation: Break reference = broken swing high/low when the current bar breaks it; otherwise the prior range high/low.
+Calculation: Upper/lower wick fraction = upper/lower wick length divided by high − low; use 0 when high = low.
+Calculation: Body fraction = abs(close − open) divided by high − low; use 1 when high = low.
+Calculation: Relative volume = current volume / its moving average over the configured lookback.
+Calculation: Volume Z-score = (current volume − its moving average) / its standard deviation over the same lookback; use 0 when standard deviation = 0.
+Long: bar is closed AND ((low < confirmed swing low OR low < prior range low) AND close > break reference AND break reference − low >= ATR × configured minimum failed-break distance AND lower wick fraction >= configured minimum AND relative volume >= configured minimum AND volume Z-score >= configured minimum AND body fraction <= configured maximum) OR price retests an active bullish absorption zone (low <= zone top AND close > zone bottom)
+Short: bar is closed AND ((high > confirmed swing high OR high > prior range high) AND close < break reference AND high − break reference >= ATR × configured minimum failed-break distance AND upper wick fraction >= configured minimum AND relative volume >= configured minimum AND volume Z-score >= configured minimum AND body fraction <= configured maximum) OR price retests an active bearish absorption zone (high >= zone bottom AND close < zone top)

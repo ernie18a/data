@@ -1,0 +1,2 @@
+Long: close > current-timeframe VWAP AND close > each of the three configured higher-timeframe VWAPs, from shorter to longer, using the last completed bar AND shorter-period EMA crosses above longer-period EMA
+Short: close < current-timeframe VWAP AND close < each of the three configured higher-timeframe VWAPs, from shorter to longer, using the last completed bar AND shorter-period EMA crosses below longer-period EMA

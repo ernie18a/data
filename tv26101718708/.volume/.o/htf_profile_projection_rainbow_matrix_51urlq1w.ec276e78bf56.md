@@ -1,0 +1,3 @@
+Calculation: HTF profile bucket delta = for each price bucket in the still-forming configured higher-timeframe candle, sum each chart bar’s volume as positive when close > open, negative when close < open, and zero when close = open; distribute each bar’s signed volume evenly across the buckets spanned by its low–high range
+Long: still-forming higher-timeframe close >= open OR a profile bucket’s delta >= 0 and its absolute delta > the configured imbalance threshold
+Short: still-forming higher-timeframe close < open OR a profile bucket’s delta < 0 and its absolute delta > the configured imbalance threshold

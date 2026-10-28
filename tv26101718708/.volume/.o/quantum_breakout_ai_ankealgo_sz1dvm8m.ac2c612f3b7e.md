@@ -1,0 +1,8 @@
+Calculation: ATR = average true range over a configurable lookback
+Calculation: Consolidation zone = begin tracking when the highest high minus lowest low over the last 5 bars is less than ATR × the configurable range multiplier; initialize its boundaries to that window’s high and low and count 5 bars. On each confirmed bar, extend the boundaries to include its high and low and increment the count if the bar stays within the boundaries plus or minus 0.1 × ATR; otherwise reset tracking. When the count reaches the configurable minimum duration, mark the resulting zone live. Deactivate a live zone when price closes beyond its boundary, a later zone forms, or compression tracking ends after the minimum duration.
+Calculation: Stop loss = opposite zone boundary plus or minus ATR × the configurable stop multiplier; use below the lower boundary for a long and above the upper boundary for a short.
+Calculation: Take-profit levels = entry price plus or minus the entry-to-stop risk distance multiplied by each configured reward multiple; use the highest enabled level as the final target.
+Long: Confirmed bar AND a live zone AND close > zone upper boundary
+Short: Confirmed bar AND a live zone AND close < zone lower boundary
+Exit: Long, confirmed bar AND (low <= stop loss OR high >= final target OR a new zone forms after entry)
+Exit: Short, confirmed bar AND (high >= stop loss OR low <= final target OR a new zone forms after entry)

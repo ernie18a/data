@@ -1,0 +1,2 @@
+Long: close crosses above the latest confirmed pivot high AND at least two confirmed pivot lows exist
+Short: close crosses below the latest confirmed pivot low AND at least two confirmed pivot highs exist

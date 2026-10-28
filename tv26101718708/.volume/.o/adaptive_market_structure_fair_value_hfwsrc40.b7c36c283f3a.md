@@ -1,0 +1,2 @@
+Long: adaptive KAMA crosses above session VWAP AND within the selected VWAP session AND execution module enabled AND chart timeframe below the structure/execution handoff timeframe AND bar is confirmed
+Short: adaptive KAMA crosses below session VWAP AND within the selected VWAP session AND execution module enabled AND chart timeframe below the structure/execution handoff timeframe AND bar is confirmed

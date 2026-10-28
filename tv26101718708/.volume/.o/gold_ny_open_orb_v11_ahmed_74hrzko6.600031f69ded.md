@@ -1,0 +1,4 @@
+Calculation: Opening range high/low = highest high and lowest low, respectively, during weekday bars from 13:00 to 14:00 UTC; use the completed opening-range period.
+Calculation: OR range = opening range high − opening range low
+Long: On a weekday from 14:00 through 16:30 UTC, opening range is ready, OR range is within an ATR-based compression limit, ATR is within its longer-term average-based regime limit, no long has fired that day, close > opening range high, previous close <= opening range high, close > open, and volume > its average-based threshold
+Exit: Long, low <= entry price − OR range OR high >= entry price + OR range OR weekday time is 16:30 UTC

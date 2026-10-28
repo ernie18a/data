@@ -1,0 +1,37 @@
+Calculation: Average volume = rolling mean of volume over a shorter lookback
+Calculation: Average candle body = rolling mean of absolute close-open over a shorter lookback
+Calculation: ATR = average true range over a rolling lookback
+Calculation: Volume profile POC, VAH, VAL = distribute each bar’s volume across price bins in proportion to its range overlap; POC is the highest-volume bin and VAH/VAL bound the value area around it
+Calculation: Prior-day high and low = high and low of the last completed regular session
+Calculation: Overnight high and low = high and low of the last completed overnight session
+Calculation: Opening-range high and low = high and low of the initial regular-session range, available after that range completes
+Calculation: Absorption up = on a completed red or doji bar, body/range is very small and volume is an unusually large rolling-volume spike; absorption down uses a green bar with the same conditions
+Calculation: Trapped sellers = the prior completed bar is a large red, high-volume bar and the current completed bar closes above its open with a substantial body and above the prior open; trapped buyers is the inverse after a large green bar
+Calculation: Look-below-and-fail = near support, the completed bar makes a new rolling swing low by a meaningful wick and closes green above the prior swing low; look-above-and-fail is the inverse near resistance
+Calculation: Bullish volume divergence = a confirmed lower swing low has lower volume than the preceding swing low; bearish volume divergence = a confirmed higher swing high has lower volume than the preceding swing high
+Calculation: Value-area re-entry = using the prior completed session’s value area held fixed for the current session, price closes back inside after remaining outside for a minimum run and excursion; require a green bar for re-entry from below and a red bar for re-entry from above
+Calculation: Trend direction = bullish when the medium-term EMA is rising and close is above it, or close is above both a faster and medium-term EMA; bearish is the inverse
+Calculation: Value migration = compare three successive POCs sampled at regular intervals; higher requires both successive changes up, lower requires both down, otherwise stable
+Calculation: Key-level touch zone = a bar’s low or high is within an ATR-based band around VA edges or prior-day, overnight, or completed opening-range highs/lows; invalidate a level after price closes sufficiently far through it
+Long: Absorption up OR trapped sellers OR look-below-and-fail OR bullish volume divergence OR bullish value-area re-entry
+Short: Absorption down OR trapped buyers OR look-above-and-fail OR bearish volume divergence OR bearish value-area re-entry
+Long: Bullish exhaustion near a key level, when at least a configurable number of bearish-exhaustion checks align: shrinking bodies, declining volume, first bearish reversal bar after a rise, upper-wick rejection, absorption down, look-above-and-fail, or trapped buyers
+Short: Bearish exhaustion near a key level, when at least a configurable number of bullish-exhaustion checks align: shrinking bodies, declining volume, first bullish reversal bar after a decline, lower-wick rejection, absorption up, look-below-and-fail, or trapped sellers
+Long: Confluence marker when the bar is near a prior-day/overnight/opening-range level AND near POC/VAH/VAL AND has absorption AND has a trap; direction follows the bar’s direction
+Short: Confluence marker under the same four-way confluence when direction follows the bar’s direction
+Long: At a touched key level, an order-flow long signal occurs and the bar closes green; OR an order-flow long signal occurs green with close above VAL and within an ATR-based distance above it; require above-average volume, permitted trend/value-migration direction, entry cooldown, and the confirming prior-bar direction if a recent reversal warning applies
+Short: At a touched key level, an order-flow short signal occurs and the bar closes red; OR an order-flow short signal occurs red with close below VAH and within an ATR-based distance below it; require above-average volume, permitted trend/value-migration direction, entry cooldown, and the confirming prior-bar direction if a recent reversal warning applies
+Long: Set a pending confirmation after a green bar wicks below a touched long level and closes back above it, or after a bullish order-flow setup near VAL; then, before expiry or invalidation, enter on a later green close above the level and sufficiently above the tracked dip low, with elevated volume or an order-flow long signal, allowed direction, and cooldown satisfied
+Short: Set a pending confirmation after a red bar wicks above a touched short level and closes back below it, or after a bearish order-flow setup near VAH; then, before expiry or invalidation, enter on a later red close below the level and sufficiently below the tracked bounce high, with elevated volume or an order-flow short signal, allowed direction, and cooldown satisfied
+Long: After a completed-bar breakout above a tracked key level by more than an ATR-based distance, price holds above it for multiple bars, then retests its zone within a limited bar window; enter on a green close back above the level if the retest is not too deep, its volume and body remain bounded relative to the breakout bar, and volume confirmation or an order-flow long signal occurs; require allowed direction, cooldown, and no recent same-level retest
+Short: After a completed-bar breakout below a tracked key level by more than an ATR-based distance, price holds below it for multiple bars, then retests its zone within a limited bar window; enter on a red close back below the level if the retest is not too deep, its volume and body remain bounded relative to the breakout bar, and volume confirmation or an order-flow short signal occurs; require allowed direction, cooldown, and no recent same-level retest
+Long: Within the post-entry squeeze window after a short, close above its entry level by an ATR-based distance on a green, high-volume bar, after the minimum elapsed bars and partial cooldown, while the last entry side is short
+Short: Within the post-entry squeeze window after a long, close below its entry level by an ATR-based distance on a red, high-volume bar, after the minimum elapsed bars and partial cooldown, while the last entry side is long
+Long: When value migration is lower, allow longs only at extreme support; otherwise allow them subject to the trend filter or a touched long level
+Short: When value migration is higher, allow shorts only at extreme resistance; otherwise allow them subject to the trend filter or a touched short level
+Exit: Long, price reaches entry price plus 1.5 times initial risk (close half and move stop to breakeven)
+Exit: Short, price reaches entry price minus 1.5 times initial risk (close half and move stop to breakeven)
+Exit: Long, price reaches the nearest valid structural target above entry (close remaining position)
+Exit: Short, price reaches the nearest valid structural target below entry (close remaining position)
+Exit: Long, price falls below the pending long level by an ATR-based invalidation distance or the confirmation window expires
+Exit: Short, price rises above the pending short level by an ATR-based invalidation distance or the confirmation window expires

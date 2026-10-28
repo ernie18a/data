@@ -1,0 +1,5 @@
+Calculation: Bull breakout = current scan-timeframe close > highest high over the breakout lookback through the previous completed scan-timeframe bar AND current scan-timeframe volume > its volume moving average over the volume lookback × the high-volume multiplier
+Calculation: Bear breakout = current scan-timeframe close < lowest low over the breakout lookback through the previous completed scan-timeframe bar AND current scan-timeframe volume > its volume moving average over the volume lookback × the high-volume multiplier
+Calculation: Bias score = +2 when short-period EMA > intermediate-period EMA > long-period EMA, else −2 when short-period EMA < intermediate-period EMA < long-period EMA, else 0; add +1 when close > long-period EMA, else −1; add +1 when RSI is above its upper threshold, else −1 when below its lower threshold; add +2 for a bull breakout, else −2 for a bear breakout; add +1 for high volume
+Long: Bull breakout OR (NOT bear breakout AND bias score > 0)
+Short: Bear breakout OR (NOT bull breakout AND bias score < 0)

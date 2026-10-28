@@ -1,0 +1,4 @@
+Long: 9-period EMA crosses above 21-period EMA AND current-bar volume is at least the configured multiple of previous-bar volume AND the previous signal was not long
+Short: 9-period EMA crosses below 21-period EMA AND current-bar volume is at least the configured multiple of previous-bar volume AND the previous signal was not short
+Exit: long, 9-period EMA crosses below 21-period EMA AND current-bar volume is at least the configured multiple of previous-bar volume
+Exit: short, 9-period EMA crosses above 21-period EMA AND current-bar volume is at least the configured multiple of previous-bar volume

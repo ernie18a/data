@@ -1,0 +1,4 @@
+Long: Flat AND close crosses above the highest high of the preceding lookback bars AND volume > SMA(volume, lookback) × aggression multiplier AND close > current-session VWAP; enter when price reaches the signal bar’s high plus one minimum tick. OR Long position AND high ≥ entry price + scale-in distance
+Short: Flat AND close crosses below the lowest low of the preceding lookback bars AND volume > SMA(volume, lookback) × aggression multiplier AND close < current-session VWAP; enter when price reaches the signal bar’s low minus one minimum tick. OR Short position AND low ≤ entry price − scale-in distance
+Exit: Long position, low ≤ (entry price if the scale-in threshold has been reached, otherwise entry price − initial stop distance) OR high ≥ entry price + profit target distance
+Exit: Short position, high ≥ (entry price if the scale-in threshold has been reached, otherwise entry price + initial stop distance) OR low ≤ entry price − profit target distance

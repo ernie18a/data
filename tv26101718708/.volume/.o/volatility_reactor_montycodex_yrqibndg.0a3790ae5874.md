@@ -1,0 +1,3 @@
+Calculation: Directional pressure = EMA over the pressure-smoothing lookback of 100 × (0.35 × (close − open) / (high − low) + 0.25 × (2 × (close − low) / (high − low) − 1) + 0.30 × clamp((close − close[momentum lookback]) / (2.5 × ATR), −1, 1) + 0.10 × efficiency × sign(close − close[momentum lookback])); set the first two terms to 0 when high = low; efficiency = abs(close − close[efficiency lookback]) / sum(abs(close − previous close), efficiency lookback), or 0 when the sum is 0.
+Long: Directional pressure > minimum directional pressure
+Short: Directional pressure < −minimum directional pressure

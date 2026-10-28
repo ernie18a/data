@@ -1,0 +1,7 @@
+Calculation: Structural high = highest high over the structure lookback; initialize from that value and update it to the current lookback high on a close above the structural high or below the structural low
+Calculation: Structural low = lowest low over the structure lookback; initialize from that value and update it to the current lookback low on a close above the structural high or below the structural low
+Calculation: Stop = lowest low from the sweep through the signal bar, including bars after recovery
+Calculation: Entry = on the signal bar, either its high minus the signal-bar high-to-stop range times the fib retracement parameter, or the low of the first bar encountered scanning backward from the signal bar to the sweep where cumulative volume reaches the configured fraction of total volume in that interval
+Calculation: Target = entry + (entry − stop) × reward-to-risk parameter
+Long: low < structural low starts a setup and captures the structural high; after that, close > structural low; then close > captured structural high while the setup is active, no trade has been taken for it, and entry > stop
+Exit: long, low ≤ current stop OR high ≥ target; when break-even is enabled and high ≥ entry + (target − entry) × break-even trigger, set current stop to entry

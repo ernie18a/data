@@ -1,0 +1,16 @@
+Calculation: Estimated delta = volume × (2 × (close − low) / (high − low) − 1); use zero when high = low
+Calculation: Cumulative delta = running sum of estimated delta
+Calculation: Pressure = exponential moving average of estimated delta
+Calculation: Price and cumulative-delta slopes = change over the same lookback; divergence confirmation requires the condition to persist for the configured number of bars and volume to exceed its moving average
+Calculation: Volume average and spread average = simple moving averages of volume and high − low
+Calculation: Effort = volume / volume average; result = (high − low) / spread average
+Calculation: Absorption = effort exceeds its threshold and result is below its threshold
+Calculation: Climax = effort exceeds its threshold and result exceeds its threshold
+Calculation: Confirmed pivot high/low = pivot high/low using the configured lookback and one bar to the right for confirmation
+Calculation: Bullish/bearish structure break = close crosses above the latest confirmed pivot high / below the latest confirmed pivot low; confirmed break also requires cumulative delta change over the recent bars to have the same direction and volume to exceed its moving average
+Calculation: Bullish/bearish sweep = low pierces the latest confirmed pivot low and close reclaims it / high pierces the latest confirmed pivot high and close falls below it
+Calculation: Bullish/bearish fair value gap = current low above the high two bars earlier / current high below the low two bars earlier; qualifying gaps meet a score threshold based on gap size relative to ATR, prior-bar volume relative to its average, location relative to the equilibrium level, and proximity to a same-direction structure break
+Calculation: Equilibrium = midpoint of the high and low of the recent range, updated on a confirmed structure break
+Calculation: Bullish/bearish confluence score = capped sum of configured weights for bullish/bearish divergence, confirmed structure break, bullish/bearish change of character, absorption on the corresponding side of the EMA, volume-enhanced sweep, proximity to a qualifying same-direction fair value gap, discount/premium location, corresponding climax, and positive/negative pressure
+Long: bullish divergence confirmation OR bullish change of character OR confirmed bullish structure break OR absorption with close below the EMA OR bullish climax with close below the EMA and close below open OR bullish sweep OR qualifying bullish fair value gap OR bullish confluence score reaches its threshold with cooldown satisfied and within the recent-bar window OR bullish confluence score reaches the alert threshold with cooldown satisfied OR bullish change of character
+Short: bearish divergence confirmation OR bearish change of character OR confirmed bearish structure break OR absorption with close above the EMA OR bearish climax with close above the EMA and close above open OR bearish sweep OR qualifying bearish fair value gap OR bearish confluence score reaches its threshold with cooldown satisfied and within the recent-bar window OR bearish confluence score reaches the alert threshold with cooldown satisfied OR bearish change of character

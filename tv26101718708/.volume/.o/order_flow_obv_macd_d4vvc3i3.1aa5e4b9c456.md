@@ -1,0 +1,4 @@
+Calculation: T-channel direction = direction of the T-channel line’s change, retaining its prior direction when unchanged
+Calculation: Adaptive confidence = weighted average of bullish probabilities for MACD sign, T-channel direction, adjusted volume-flow sign, and footprint bias, minus 50; each weight is the rolling average of whether that component’s previous-bar direction matched the current bar’s close-to-close direction, counting neutral predictions or outcomes as 0.5
+Long: T-channel direction changes to positive OR adaptive confidence > 0
+Short: T-channel direction changes to negative OR adaptive confidence < 0

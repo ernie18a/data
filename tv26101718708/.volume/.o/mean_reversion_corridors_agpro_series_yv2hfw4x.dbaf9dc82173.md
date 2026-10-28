@@ -1,0 +1,6 @@
+Calculation: Center = selected EMA, VWMA, or Hull moving average of close
+Calculation: Width = (1 − blend) × ATR + blend × standard deviation of close; use ATR if width is unavailable or nonpositive
+Calculation: Inner and outer bounds = center ± width × their respective multipliers, with the outer multiplier greater than the inner multiplier
+Calculation: Trend slope = (selected center − its value trend-lookback bars earlier) ÷ trend-lookback ÷ ATR, calculated on the selected trend timeframe using lookahead off
+Long: Within 20 bars after crossing below the lower outer bound, close crosses above the lower inner bound AND trend slope is not below the negative strength threshold; OR close is above the upper outer bound AND trend slope is above the positive strength threshold, if that condition was false on the prior bar
+Short: Within 20 bars after crossing above the upper outer bound, close crosses below the upper inner bound AND trend slope is not above the positive strength threshold; OR close is below the lower outer bound AND trend slope is below the negative strength threshold, if that condition was false on the prior bar

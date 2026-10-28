@@ -1,0 +1,6 @@
+Calculation: RSI rate of change = current RSI − RSI from the specified lookback bars earlier
+Calculation: Prior N-bar RSI peak = highest RSI among the previous N bars, excluding the current bar
+Long: position side = flat AND current high > highest high of the previous N bars AND current volume > volume moving average × expansion multiplier AND fast EMA > slow EMA AND RSI rate of change > 0 AND RSI > confirmation level
+Short: position side = flat AND shorts enabled AND current high > highest high of the previous N bars AND current volume > volume moving average × expansion multiplier AND fast EMA ≤ slow EMA AND (RSI < prior N-bar RSI peak OR RSI rate of change < 0)
+Exit: long, current low ≤ entry price − current ATR × initial-stop multiplier OR current low reaches the ATR trailing stop, which activates after price rises by the ATR trail distance and follows the highest price since activation at that distance
+Exit: short, current high ≥ entry price + current ATR × initial-stop multiplier OR current high reaches the ATR trailing stop, which activates after price falls by the ATR trail distance and follows the lowest price since activation at that distance

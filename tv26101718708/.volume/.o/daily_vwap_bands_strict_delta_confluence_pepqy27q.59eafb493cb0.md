@@ -1,0 +1,5 @@
+Calculation: Daily VWAP = volume-weighted mean of close from the start of the current day through the current bar
+Calculation: Daily SD = square root of the volume-weighted mean of squared close minus squared Daily VWAP, from the start of the current day through the current bar
+Calculation: Cumulative delta = sum since the start of the current day of volume × (2 × (close − low) / (high − low) − 1); use zero when high equals low
+Long: low ≤ Daily VWAP − 2 × Daily SD AND close > Daily VWAP − 2 × Daily SD AND close > open AND Cumulative delta > 0 AND Cumulative delta ≥ previous-bar Cumulative delta AND previous-bar low > previous-bar (Daily VWAP − 2 × Daily SD)
+Short: high ≥ Daily VWAP + 2 × Daily SD AND close < Daily VWAP + 2 × Daily SD AND close < open AND Cumulative delta < 0 AND Cumulative delta ≤ previous-bar Cumulative delta AND previous-bar high < previous-bar (Daily VWAP + 2 × Daily SD)

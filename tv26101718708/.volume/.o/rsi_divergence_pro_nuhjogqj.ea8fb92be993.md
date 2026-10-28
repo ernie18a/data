@@ -1,0 +1,7 @@
+Calculation: RSI pivot low/high = local RSI low/high confirmed after the right-side lookback; use the price low/high on that pivot bar. Compare each pivot with the previous same-side pivot.
+Calculation: Pivot distance = bars between consecutive same-side RSI pivots; it must be within the minimum and maximum distance bounds.
+Long: At a confirmed RSI pivot low, pivot distance is within bounds AND (current price low < previous price low AND current RSI pivot > previous RSI pivot OR current price low > previous price low AND current RSI pivot < previous RSI pivot)
+Short: At a confirmed RSI pivot high, pivot distance is within bounds AND (current price high > previous price high AND current RSI pivot < previous RSI pivot OR current price high < previous price high AND current RSI pivot > previous RSI pivot)
+Calculation: ATR stop and target = entry price offset by stop-multiple and target-multiple times ATR, respectively; use ATR on the entry bar and keep the levels fixed.
+Exit: Long, on a later confirmed bar, open <= stop OR low <= stop OR open >= target OR high >= target OR the holding horizon is reached; check stop before target, and resolve expiry at close.
+Exit: Short, on a later confirmed bar, open >= stop OR high >= stop OR open <= target OR low <= target OR the holding horizon is reached; check stop before target, and resolve expiry at close.

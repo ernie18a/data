@@ -1,0 +1,1 @@
+Using daily closing prices for two reference assets, calculate their price difference and standardize it by subtracting its rolling mean and dividing by its rolling standard deviation. Enter long when the standardized spread exceeds a configurable positive threshold; enter short when it falls below the corresponding negative threshold. No separate exit condition is specified.

@@ -1,0 +1,2 @@
+Long: MACD line crosses above its signal line AND both are below zero AND the last signal was not long
+Short: MACD line crosses below its signal line AND both are above zero AND the last signal was not short

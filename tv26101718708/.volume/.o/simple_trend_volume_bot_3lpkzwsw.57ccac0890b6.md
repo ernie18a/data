@@ -1,0 +1,3 @@
+Calculation: trailing stop = recursively update from close and ATR: if current and previous close are both above the previous trailing stop, use the greater of that stop and close minus sensitivity × ATR; if both are below, use the lesser of that stop and close plus sensitivity × ATR; otherwise use close minus sensitivity × ATR when close is above the previous stop, and close plus sensitivity × ATR otherwise. Treat the initial previous stop as 0.
+Long: close crosses above trailing stop AND volume > SMA(volume)
+Short: close crosses below trailing stop AND volume > SMA(volume)

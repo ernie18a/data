@@ -1,0 +1,9 @@
+Calculation: Moving average A = selected moving-average type and source over its lookback on its selected timeframe bars, using the current bar (which may still be forming); its lookback is independent of B and C.
+Calculation: Moving average B = selected moving-average type and source over its lookback on its selected timeframe bars, using the current bar (which may still be forming); its lookback is independent of A and C.
+Calculation: Moving average C = selected moving-average type and source over its lookback on its selected timeframe bars, using the current bar (which may still be forming); its lookback is independent of A and B.
+Long: A is visible AND B is visible AND trading their cross is enabled AND A crosses above B (A > B now AND A <= B on the previous bar)
+Long: A is visible AND C is visible AND trading their cross is enabled AND A crosses above C (A > C now AND A <= C on the previous bar)
+Long: B is visible AND C is visible AND trading their cross is enabled AND B crosses above C (B > C now AND B <= C on the previous bar)
+Exit: long, A is visible AND B is visible AND trading their cross is enabled AND A crosses below B (A < B now AND A >= B on the previous bar)
+Exit: long, A is visible AND C is visible AND trading their cross is enabled AND A crosses below C (A < C now AND A >= C on the previous bar)
+Exit: long, B is visible AND C is visible AND trading their cross is enabled AND B crosses below C (B < C now AND B >= C on the previous bar)

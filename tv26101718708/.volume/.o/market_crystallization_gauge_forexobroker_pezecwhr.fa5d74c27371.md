@@ -1,0 +1,4 @@
+Calculation: Crystallization score = round(clamp(60 × corr(change(close), change(close)[1], correlation lookback) + 30, 0, 40) + clamp(1.5 × (ADX − 15) + 3 × (ADX − ADX[3]), 0, 35) + clamp(50 × (1.2 − return standard deviation over short lookback / its SMA over a longer baseline lookback), 0, 25)); use a ratio of 1 when the baseline is zero
+Long: Crystallization score >= 60 AND DI+ > DI- AND close > EMA(close, regime lookback)
+Long: Crystallization score crosses above its threshold AND DI+ > DI- AND close > EMA(close, regime lookback) AND volume > SMA(volume, volume lookback) AND bars since the last signal >= cooldown length AND bar is confirmed
+Short: Crystallization score crosses above its threshold AND DI- > DI+ AND close < EMA(close, regime lookback) AND volume > SMA(volume, volume lookback) AND bars since the last signal >= cooldown length AND bar is confirmed

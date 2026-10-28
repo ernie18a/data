@@ -1,0 +1,12 @@
+Calculation: ATR = Average True Range of chart bars
+Calculation: Resistance = descending line through the final edge of the convex hull of recent confirmed pivot highs; Support = ascending line through the final edge of the convex hull of recent confirmed pivot lows. Pivots use equal left and right lookbacks.
+Calculation: Upper channel boundary = Resistance minus the maximum distance of recent confirmed pivot lows below Resistance; lower channel boundary = Support plus the maximum distance of recent confirmed pivot highs above Support.
+Calculation: Volume tier = percentile rank of current bar volume among the chosen lookback of chart bars, classified as high, medium, or low by chosen thresholds.
+Calculation: Breakout displacement = current bar range is at least the chosen ATR multiple and absolute close-to-open distance is at least half the bar range.
+Calculation: Long stop = the lower of the broken resistance line (if line stops are selected) or the break-bar low, and entry price minus the chosen minimum ATR distance.
+Calculation: Short stop = the higher of the broken support line (if line stops are selected) or the break-bar high, and entry price plus the chosen minimum ATR distance.
+Calculation: Target distance = the smaller of the channel width or the chosen ATR fallback, and the chosen maximum ATR distance; target is entry price plus this distance for a long or minus it for a short.
+Long: Active, unbroken descending resistance line AND confirmed close above the line plus the chosen ATR break buffer AND breakout displacement AND (close − low) / bar range ≥ chosen anti-wick threshold AND selected volume tier is enabled AND any enabled external confirmation agrees AND any required anchored-VWAP direction agrees; enter at break close in breakout mode, or after a touch within the chosen ATR tolerance followed by a confirmed close above the line before invalidation or setup expiry in retest mode.
+Short: Active, unbroken ascending support line AND confirmed close below the line minus the chosen ATR break buffer AND breakout displacement AND (high − close) / bar range ≥ chosen anti-wick threshold AND selected volume tier is enabled AND any enabled external confirmation agrees AND any required anchored-VWAP direction agrees; enter at break close in breakout mode, or after a touch within the chosen ATR tolerance followed by a confirmed close below the line before invalidation or setup expiry in retest mode.
+Exit: long, high ≥ target OR low ≤ stop
+Exit: short, low ≤ target OR high ≥ stop

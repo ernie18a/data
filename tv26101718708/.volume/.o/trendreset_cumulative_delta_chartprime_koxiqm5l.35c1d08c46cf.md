@@ -1,0 +1,6 @@
+Calculation: Upper ATR band = EMA of close over a lookback + ATR over a lookback × multiplier; lower ATR band = EMA of close over a lookback − ATR over a lookback × multiplier
+Calculation: Trend-reset cumulative delta = cumulative sum of +volume when close > open and −volume otherwise; reset to the current bar’s delta when close crosses above the upper ATR band or below the lower ATR band, retaining the trend state between crossings
+Calculation: Delta z-score = (trend-reset cumulative delta − its simple moving average) / its standard deviation, using the same lookback for both
+Calculation: Confirmed delta pivot high/low = local high/low in trend-reset cumulative delta, using a longer lookback before the pivot than after it for confirmation
+Long: close > upper ATR band OR confirmed delta pivot low AND trend-reset cumulative delta at the pivot < 0 AND absolute delta z-score at the pivot ≥ threshold
+Short: close < lower ATR band OR confirmed delta pivot high AND trend-reset cumulative delta at the pivot > 0 AND absolute delta z-score at the pivot ≥ threshold

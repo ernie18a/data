@@ -1,0 +1,3 @@
+Calculation: Last confirmed swing high/low = most recent pivot high/low, each the highest high/lowest low over equal left and right lookbacks, available after the right lookback completes
+Long: bar is confirmed AND low < last confirmed swing low AND close > last confirmed swing low AND (min(open, close) - low) / abs(close - open) >= minimum wick-to-body ratio OR the next confirmed bar after a qualifying bullish sweep has close > open
+Short: bar is confirmed AND high > last confirmed swing high AND close < last confirmed swing high AND (high - max(open, close)) / abs(close - open) >= minimum wick-to-body ratio OR the next confirmed bar after a qualifying bearish sweep has close < open

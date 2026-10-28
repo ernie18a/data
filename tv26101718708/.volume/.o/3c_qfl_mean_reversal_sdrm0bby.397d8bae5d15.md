@@ -1,0 +1,8 @@
+Calculation: Confirmed support = latest low at the center of a five-bar pattern where its low is below the lows of the two older bars and the two newer bars, and its volume exceeds the volume simple moving average at that bar; calculate on the selected QFL timeframe using only its last completed bar.
+Calculation: Confirmed resistance = latest high at the center of a five-bar pattern where its high is above the highs of the two older bars and the two newer bars, and its volume exceeds the volume simple moving average at that bar; calculate on the selected QFL timeframe using only its last completed bar.
+Long: close < Confirmed support × (1 − configured entry deviation / 100) AND (maximum base age is disabled OR bars since Confirmed resistance last changed < maximum base age) AND (consecutive signals are allowed OR the prior bar did not qualify OR Confirmed support changed)
+Short: close > Confirmed resistance × (1 + configured entry deviation / 100) AND (maximum base age is disabled OR bars since Confirmed resistance last changed < maximum base age) AND (consecutive signals are allowed OR the prior bar did not qualify OR Confirmed resistance changed)
+Exit: long, high ≥ current average entry price × (1 + configured take-profit percentage / 100)
+Exit: short, low ≤ current average entry price × (1 − configured take-profit percentage / 100)
+Exit: long, stop loss is enabled AND stop-loss percentage exceeds the cumulative safety-order deviation AND low ≤ initial entry price × (1 − configured stop-loss percentage / 100)
+Exit: short, stop loss is enabled AND stop-loss percentage exceeds the cumulative safety-order deviation AND high ≥ initial entry price × (1 + configured stop-loss percentage / 100)

@@ -1,0 +1,1 @@
+During an enabled trading session, enter long when the candle closes up, Supertrend is bullish, the SSL channel crosses bullish, and MACD is above zero. Enter short when the candle closes down, Supertrend is bearish, the SSL channel crosses bearish, and MACD is below zero. Set a stop loss and profit target at fixed multiples of ATR from entry; exit when either is reached.

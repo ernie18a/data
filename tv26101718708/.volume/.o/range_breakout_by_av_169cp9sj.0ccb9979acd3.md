@@ -1,0 +1,9 @@
+Calculation: Recent range = highest high minus lowest low over the configurable lookback
+Calculation: Compression = recent range at or below its configurable rolling percentile threshold, or recent range divided by ATR below a configurable threshold, according to the selected detection mode
+Calculation: Active range = starts when compression is true and cooldown is zero; initialize its top and bottom to the recent highest high and lowest low, and expand them to include each contained bar's high and low until a breakout; track bars since start and consecutive closes beyond each buffered boundary
+Calculation: Breakout buffer = ATR × configurable buffer multiple
+Calculation: Volume confirmation = disabled, or current volume greater than its configurable multiple of its configurable moving average
+Calculation: Failed upper probe = while an active range exists, high above range top, close at or below range top, and upper wick divided by bar range at least the configurable wick ratio; upper wick is high minus the greater of open and close
+Calculation: Failed lower probe = while an active range exists, low below range bottom, close at or above range bottom, and lower wick divided by bar range at least the configurable wick ratio; lower wick is the lesser of open and close minus low
+Long: active range and bars since start at least the configurable minimum and consecutive closes above range top plus breakout buffer at least the configurable confirmation count and volume confirmation OR active range and a failed lower probe was armed on an earlier bar and current close is greater than previous close
+Short: active range and bars since start at least the configurable minimum and consecutive closes below range bottom minus breakout buffer at least the configurable confirmation count and volume confirmation OR active range and a failed upper probe was armed on an earlier bar and current close is less than previous close

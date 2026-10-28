@@ -1,0 +1,1 @@
+Use a broad market reference to filter the traded instrument’s strongest long entry: require the reference’s short-term average above its medium-term average and its price above its long-term average, alongside the instrument’s own bullish setup conditions. The script defines no short or exit decision.

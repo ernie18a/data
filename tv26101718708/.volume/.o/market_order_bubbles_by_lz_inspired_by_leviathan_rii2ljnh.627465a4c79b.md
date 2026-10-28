@@ -1,0 +1,6 @@
+Calculation: Estimated buy volume = volume × (close − low) / (high − low), or zero when high − low is zero or below the minimum range filter (ATR(14) × its multiplier)
+Calculation: Estimated sell volume = volume × (high − close) / (high − low), or zero when high − low is zero or below the minimum range filter (ATR(14) × its multiplier)
+Calculation: Buy price efficiency = (close − low) / (high − low)
+Calculation: Sell price efficiency = (high − close) / (high − low)
+Long: Estimated buy volume is at least its rolling-window lower percentile threshold AND buy price efficiency is at least the exhaustion cutoff OR estimated sell volume is at least its rolling-window lower percentile threshold AND sell price efficiency is below the exhaustion cutoff
+Short: Estimated sell volume is at least its rolling-window lower percentile threshold AND sell price efficiency is at least the exhaustion cutoff OR estimated buy volume is at least its rolling-window lower percentile threshold AND buy price efficiency is below the exhaustion cutoff

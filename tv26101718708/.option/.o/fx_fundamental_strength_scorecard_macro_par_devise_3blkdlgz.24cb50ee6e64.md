@@ -1,0 +1,1 @@
+For the currency pair, compare the base and quote currencies’ central bank rates, two-year yields, and ten-year yields. For each enabled metric with available data, record whether the base value is higher, lower, or equal. Go long if more metrics favor the base than the quote; go short if more favor the quote; otherwise remain neutral. The framework provides no exit condition.

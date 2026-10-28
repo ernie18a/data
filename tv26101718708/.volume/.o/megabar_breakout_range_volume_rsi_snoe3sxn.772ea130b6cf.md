@@ -1,0 +1,6 @@
+Long: close > open AND volume > simple moving average of volume × volume multiplier AND close − open > simple moving average of absolute close − open × range multiplier
+Long: close > open AND volume > simple moving average of volume × volume multiplier AND close − open > simple moving average of absolute close − open × range multiplier AND RSI moving average > long threshold AND (time filter disabled OR bar time is within 06:00–16:00 UTC)
+Short: close < open AND volume > simple moving average of volume × volume multiplier AND open − close > simple moving average of absolute close − open × range multiplier
+Short: close < open AND volume > simple moving average of volume × volume multiplier AND open − close > simple moving average of absolute close − open × range multiplier AND RSI moving average < short threshold AND (time filter disabled OR bar time is within 06:00–16:00 UTC)
+Exit: long, high ≥ entry price + take-profit distance OR low ≤ entry price − stop-loss distance
+Exit: short, low ≤ entry price − take-profit distance OR high ≥ entry price + stop-loss distance

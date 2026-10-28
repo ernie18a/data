@@ -1,0 +1,29 @@
+Calculation: Ichimoku Tenkan (short lookback) = midpoint of the highest high and lowest low over its lookback; Kijun (longer lookback) = same calculation over a longer lookback
+Calculation: Signal cloud = Ichimoku Senkou A and Senkou B from the chart bar shifted back by the displacement; cloud top/bottom = their maximum/minimum
+Calculation: ATR = average true range; RSI slope = RSI minus its value several bars earlier
+Calculation: Cloud gap in ATR = (cloud bottom − close) / ATR; cloud thickness in ATR = (cloud top − cloud bottom) / ATR
+Calculation: Compression in ATR = (highest high − lowest low over a short lookback) / ATR
+Calculation: Candle range in ATR = (high − low) / ATR; body fraction = abs(close − open) / (high − low); close position = (close − low) / (high − low); upper-wick fraction = (high − max(open, close)) / (high − low)
+Calculation: Impulse strength = body fraction × close position × candle range in ATR
+Calculation: Momentum composite = max(RSI slope, 0) + max(MACD histogram change over a short lookback, 0) + max(change in +DI minus −DI over a short lookback, 0)
+Calculation: Pressure = (max(RSI slope, minimum floor) × max(candle range in ATR, minimum floor)) / max(cloud gap in ATR × compression in ATR, minimum floor); pressure slope = pressure minus its value several bars earlier
+Calculation: Coil quality = compression in ATR / max(cloud gap in ATR, minimum floor)
+Calculation: Cloud travel potential = candle range in ATR / max(cloud thickness in ATR, minimum floor); cloud pierce fraction = fraction of cloud thickness reached by the high, or zero if high is below cloud bottom
+Calculation: Tenkan slope in ATR = change in Tenkan over a short lookback / ATR; Kijun gap in ATR = (Kijun − close) / ATR
+Calculation: Early cloud conversion = cloud pierce fraction exceeds a minimum or clean thrust; clean thrust = candle range in ATR, impulse strength, and close position exceed minimums while cloud gap in ATR is below a maximum
+Calculation: Strong candle rescue = close position, body size in ATR, and RSI slope exceed minimums while cloud gap in ATR is below a maximum
+Calculation: Rip quality = (violent cloud engagement or clean rip candle) and RSI slope and cloud proximity qualify, with sufficient pressure slope, ignition momentum, or strong candle rescue; violent cloud engagement and clean rip candle require strong cloud penetration or candle expansion and momentum
+Calculation: Rocket base = close below cloud bottom (or full candle below it when strict mode is enabled), positive cloud gap within a maximum, compression within a maximum, bullish candle, and minimum close position and body fraction
+Calculation: Pre-Rocket score = sum of distance, timing, momentum, candle, structure, and compression scores; each score increases in tiers as its condition improves, as defined by its distance-to-cloud, estimated-bars-to-cloud, momentum, candle, Tenkan, and compression thresholds
+Calculation: Bars to cloud = cloud gap in ATR / max((close − close several bars earlier) / ATR, minimum floor)
+Calculation: ATR support stop = lowest low over a lookback − average true range over a lookback × buffer; frozen support stop = lowest value of the prior support stops over the reclaim window
+Long: Pre-Rocket candidate conditions hold: price is below the cloud, cloud gap is above the Rocket maximum and within the pre-Rocket maximum, compression and bars to cloud are within pre-Rocket maxima, bullish candle with minimum close position and body fraction, RSI slope meets its minimum, and no pre-trap; and pre-Rocket score reaches the lowest displayed tier
+Long: Rocket base AND God Rocket conditions hold (displacement and structure quality, no thin-cloud overrun or shallow-engagement trap, and either all God thresholds hold or rip quality) AND cooldown has elapsed
+Long: Rocket base AND not God Rocket AND confirmed conditions hold (no confirmed traps, pressure and pressure slope, cloud proximity, candle expansion, RSI slope, impulse, and ignition momentum or cloud travel meet their thresholds) AND cooldown has elapsed
+Long: Rocket base AND not God or confirmed Rocket AND early conditions hold (no early traps, pressure, cloud proximity, range, cloud conversion or candle rescue, and momentum conditions meet their thresholds) AND cooldown has elapsed
+Long: Confirmed bar, flat, and valid positive risk AND ((a frozen support stop was broken within the reclaim window and close is above that stop and open, with filters passing) OR (close is above the ATR support stop within the maximum ATR distance, close exceeds open and prior close, and filters pass)); optional filters are close above a longer-lookback SMA and volume above its SMA
+Long: During an active Rocket campaign, a prior push reached its ATR threshold, reload is armed, close exceeds prior high and Tenkan, and RSI slope and impulse exceed re-entry thresholds
+Exit: long, low reaches or falls below the rising ATR-based angled stop created at Rocket entry
+Exit: long, low reaches or falls below the active ATR support stop; after the first and second profit-risk thresholds are reached, the active stop is respectively raised to entry or to the greater of entry and the highest ATR support stop since entry
+Exit: long, during an active Rocket campaign within its monitoring window, close falls below the Rocket stop or low falls below that stop while close is below the Rocket signal low
+Exit: long, during an active Rocket campaign after a qualifying push and before a stop break, either close position and upper-wick fraction indicate weak rejection, or close is below Tenkan and prior close

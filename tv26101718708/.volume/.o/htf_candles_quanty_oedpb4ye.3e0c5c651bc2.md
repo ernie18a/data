@@ -1,0 +1,2 @@
+Long: Last completed higher-timeframe candle close > the preceding completed higher-timeframe candle high
+Short: Last completed higher-timeframe candle close < the preceding completed higher-timeframe candle low

@@ -1,0 +1,2 @@
+Long: Outside a session, for that session’s most recently completed range, no breakout has occurred since its completion AND close > completed session high AND previous close <= completed session high
+Short: Outside a session, for that session’s most recently completed range, no breakout has occurred since its completion AND close < completed session low AND previous close >= completed session low

@@ -1,0 +1,3 @@
+Calculation: Confirmed pivot high/low = a high/low that is the highest/lowest over the configured number of bars on each side; available only after the bars on both sides have completed. Track six independently parameterized pivot streams, each with its own latest pivot levels, previously broken levels, and bias.
+Long: For any stream, its bias is down and the close crosses above its latest confirmed pivot high, whose level has not previously been broken in that stream.
+Short: For any stream, its bias is up and the close crosses below its latest confirmed pivot low, whose level has not previously been broken in that stream.

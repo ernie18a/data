@@ -1,0 +1,2 @@
+Long: (source is Change AND close > previous bar close) OR (source is Volume or True Range AND open < close)
+Short: (source is Change AND close <= previous bar close) OR (source is Volume or True Range AND open >= close)

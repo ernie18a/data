@@ -1,0 +1,3 @@
+Calculation: ATR-normalized pivot strength = the distance from the pivot price to the more extreme of its two adjacent highs (for a pivot high) or lows (for a pivot low), divided by ATR
+Long: Confirmed pivot low AND ATR-normalized pivot strength >= minimum threshold OR close > the top of an active resistance zone + ATR-based break buffer
+Short: Confirmed pivot high AND ATR-normalized pivot strength >= minimum threshold OR close < the bottom of an active support zone - ATR-based break buffer

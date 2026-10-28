@@ -1,0 +1,5 @@
+Calculation: Anchored VWAP = cumulative volume-weighted average of the selected price source since the active anchor. The anchor resets on the first bar or at the selected manual timestamp, session/week/month open, high-volume event (relative volume above a threshold, absolute close-open greater than 0.35 ATR, and minimum spacing from the prior anchor), or confirmed swing pivot with minimum spacing.
+Calculation: Relative volume = volume / moving average of volume over a configurable lookback.
+Calculation: Readiness score = round(clamp(35 + clamp((1 - min(|close - Anchored VWAP| / ATR, extension threshold) / max(extension threshold, 0.1)) × 25, 0, 25) + clamp(Relative volume × 14, 0, 22) + clamp(min(bars since anchor, 120) / 120 × 18, 0, 18), 0, 100)).
+Long: close crosses above Anchored VWAP + ATR × reclaim buffer AND Readiness score ≥ minimum ready score
+Short: close crosses below Anchored VWAP - ATR × reclaim buffer AND Readiness score ≥ minimum ready score

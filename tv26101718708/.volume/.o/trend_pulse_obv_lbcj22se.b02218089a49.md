@@ -1,0 +1,5 @@
+Calculation: Trend Pulse midline = selected source price, optionally pre-transformed as x + (x − x[lag]) with lag = integer((period − 1)/(2 × pole count)), passed through a cascade of pole-count EMAs; each EMA length = max(1, integer(2/alpha)), where beta = (1 − cos(2π/period))/(1.414^(2/pole count) − 1) and alpha = −beta + sqrt(beta² + 2 × beta)
+Calculation: Trend Pulse upper band = Trend Pulse midline + the same cascade applied to true range (optionally pre-transformed the same way) × range multiplier
+Calculation: Fixed stop price = signal-bar close at entry − ATR from the prior completed bar × stop multiplier
+Long: close > Trend Pulse upper band AND prior close ≤ prior Trend Pulse upper band AND (OBV > its EMA OR OBV filter disabled) AND (close > regime EMA OR regime filter disabled) AND time within the selected entry date range AND no position is open
+Exit: long, low ≤ fixed stop price OR (time within the selected date range AND (close < Trend Pulse midline OR close < regime EMA))

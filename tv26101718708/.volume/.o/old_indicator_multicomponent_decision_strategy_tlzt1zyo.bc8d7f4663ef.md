@@ -1,0 +1,13 @@
+Calculation: Trend is not falling = over the configured lookback, count each close[i] <= close[i+1] as lower and each close[i] > close[i+1] as higher; true when lower count <= higher count
+Calculation: RSI change = current RSI(close) minus prior-bar RSI; RSI uses the configured lookback
+Calculation: RSI direction = +1 when RSI change > threshold, -1 when RSI change < -threshold, otherwise 0
+Calculation: MACD histogram direction = +1 when histogram >= 0 and greater than its prior value, or when histogram < 0 and not less than its prior value; otherwise -1. Histogram uses fast and slow moving averages of close, with the signal moving average applied to their difference
+Calculation: Custom MACD direction = +1 when HLC3 is above its zero-lag EMA; otherwise -1. The zero-lag EMA uses HLC3; its length matches the smoothed high/low length. Smoothed high and low use the same length and recursively update from an initial SMA
+Calculation: Comparison-timeframe custom MACD direction = the custom MACD direction calculated from HLC3, high, and low on the comparison timeframe, using its last completed bar
+Calculation: Green and red counts = respectively count positive and negative votes among: close >= open (+1, otherwise -1); volume >= prior volume (+1, otherwise -1); comparison-timeframe custom MACD direction; MACD histogram direction; RSI direction (zero casts no vote); and current-timeframe custom MACD direction
+Calculation: Inconclusive count = 6 minus green count minus red count
+Calculation: Decision color = green if green count >= 4; else red if red count >= 4; else, when both counts equal 3, green if RSI change >= 1 and red otherwise; else yellow if green count = 3 and RSI direction = 0; else red if red count >= green count + inconclusive count; else green if green count >= red count + inconclusive count; else inconclusive. Change to orange if close equals prior close. If orange, change to green when prior close < prior open; otherwise change to red when prior custom MACD direction is positive and prior close > prior open
+Calculation: Strength = 100 * max(green count, red count) / 6
+Long: Current custom MACD direction is positive AND RSI change != 0 or trend is not falling AND decision color is green AND ((trend is not falling AND strength > 50) OR (trend is falling AND strength > 70 AND strength < 100))
+Short: Decision color is red OR trend is falling
+Exit: long, Short condition AND close >= the pending short-entry price

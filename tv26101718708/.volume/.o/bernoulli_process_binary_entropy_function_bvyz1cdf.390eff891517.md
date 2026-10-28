@@ -1,0 +1,5 @@
+Calculation: Close contribution = close divided by the rolling sum of close over the measurement lookback
+Calculation: Bernoulli information = rolling sum over the entropy lookback of p·log₂(p) − (1−p)·log₂(1−p), where p is the close contribution’s percentile rank over the averaging lookback, divided by 100 and clamped to (0, 1)
+Calculation: Information percentile rank = percentile rank of Bernoulli information over the averaging lookback
+Long: Information percentile rank < lower percentile cutoff AND absolute Bernoulli information > absolute information threshold AND Bernoulli information <= information threshold
+Short: Information percentile rank > upper percentile cutoff AND absolute Bernoulli information > absolute information threshold AND Bernoulli information >= information threshold

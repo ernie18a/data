@@ -1,0 +1,6 @@
+Calculation: Short-term moving average = simple moving average of close over a shorter lookback than the long-term moving average
+Calculation: Long-term moving average = simple moving average of close over a longer lookback than the short-term moving average
+Calculation: Relative volume = volume / simple moving average of volume
+Calculation: Percentage from short-term moving average = (close / short-term moving average − 1) × 100
+Calculation: Weekly RSI = RSI calculated from weekly bars using the still-forming weekly bar
+Long: close > long-term moving average AND short-term moving average > long-term moving average AND long-term moving average > its value at an earlier bar AND short-term moving average > its value at an earlier bar AND RSI is within a bounded pullback range AND weekly RSI is above a minimum threshold AND percentage from short-term moving average is within a bounded range AND close > short-term moving average AND relative volume is above a minimum threshold AND the previous bar did not meet all these conditions

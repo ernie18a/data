@@ -1,0 +1,9 @@
+Calculation: Regime score = weighted sum of signed evidence from close vs. SMA, normalized SMA slope, candle displacement, directional high relative volume, swing structure, recent BOS, recent CHoCH, ADX/DMI aligned with price vs. SMA, recent FVG, and active order block. Use one SMA lookback for its location and slope; normalize slope and displacement by ATR. Relative volume is volume divided by its SMA.
+Calculation: Swing structure = compare the latest two confirmed pivot highs and the latest two confirmed pivot lows; bullish when both rise, bearish when both fall. A BOS occurs when close crosses above the latest confirmed swing high or below the latest confirmed swing low, unless the break reverses the current structure direction, in which case it is a CHoCH. A BOS or CHoCH remains recent through the configured memory window.
+Calculation: Bullish FVG = current low > high two bars earlier; bearish FVG = current high < low two bars earlier. Each remains recent through its configured memory window.
+Calculation: Bullish order block = the most recent bearish candle within the search window before bullish displacement; it is active within its maximum age while close >= its low. Bearish order block = the most recent bullish candle within the search window before bearish displacement; it is active within its maximum age while close <= its high. Displacement is candle body divided by ATR.
+Calculation: Confirmed regime = raw regime (bull, strong bull, neutral, bear, or strong bear, classified by score thresholds) changes only after the same new raw regime persists for the configured confirmation bars.
+Long: confirmed regime is bullish or strong bullish
+Long: close crosses above the latest confirmed swing high
+Short: confirmed regime is bearish or strong bearish
+Short: close crosses below the latest confirmed swing low

@@ -1,0 +1,1 @@
+Using weekly COT data for the traded futures market, calculate the selected trader group’s net position and rank it within its recent historical range. Go long when the rank reaches the upper extreme, go short when it reaches the lower extreme, and otherwise take no position. Signal when the rank crosses into either extreme.

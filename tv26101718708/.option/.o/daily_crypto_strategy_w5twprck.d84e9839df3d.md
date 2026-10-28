@@ -1,0 +1,1 @@
+Enter long when the rolling correlation between the traded instrument’s price and CBOE VIX crosses below a negative threshold, subject to the configured date window.

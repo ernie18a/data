@@ -1,0 +1,4 @@
+Long: Long-entry moving average crosses above its longer-lookback moving average
+Short: Short-entry moving average crosses below its longer-lookback moving average
+Exit: Long, long-entry moving average crosses below its longer-lookback moving average OR (take-profit/stop-loss enabled AND high >= entry price × (1 + take-profit %) OR low <= entry price × (1 − stop-loss %)) OR (alternate exit enabled AND close < selected exit moving average)
+Exit: Short, short-entry moving average crosses above its longer-lookback moving average OR (take-profit/stop-loss enabled AND low <= entry price × (1 − take-profit %) OR high >= entry price × (1 + stop-loss %)) OR (alternate exit enabled AND close < selected exit moving average)

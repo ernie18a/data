@@ -1,0 +1,1 @@
+Using the external Bitcoin daily closing price, calculate its rolling log-price mean and standard deviation, then measure the current log price’s deviation from the mean in standard deviations. Go long on the traded instrument when this measure moves from at or below −2 to above −2; go short when it moves from at or above +2 to below +2. No exit decision is specified.

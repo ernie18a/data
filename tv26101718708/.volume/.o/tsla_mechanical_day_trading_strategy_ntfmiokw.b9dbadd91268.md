@@ -1,0 +1,4 @@
+Long: during NY regular trading hours, time >= 09:45 and time <= 15:45 AND ((bar open >= previous completed daily close × (1 + gap threshold) AND close > VWAP AND low <= VWAP) OR close < VWAP × (1 - VWAP deviation))
+Short: during NY regular trading hours, time >= 09:45 and time <= 15:45 AND ((bar open <= previous completed daily close × (1 - gap threshold) AND close < VWAP AND high >= VWAP) OR close > VWAP × (1 + VWAP deviation))
+Exit: long, low <= entry price × (1 - stop loss percentage) OR high >= entry price × (1 + take profit percentage) OR 15:55 <= time < 16:00
+Exit: short, high >= entry price × (1 + stop loss percentage) OR low <= entry price × (1 - take profit percentage) OR 15:55 <= time < 16:00

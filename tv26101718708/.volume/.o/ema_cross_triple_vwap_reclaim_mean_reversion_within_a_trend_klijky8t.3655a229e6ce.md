@@ -1,0 +1,5 @@
+Calculation: Chart-bar session VWAP = cumulative close × volume divided by cumulative volume for the session
+Long: fast EMA crosses above slow EMA AND higher-timeframe close > higher-timeframe EMA AND higher-timeframe close > higher-timeframe session VWAP AND lowest low over the lookback < chart-bar session VWAP AND close > chart-bar session VWAP
+Short: fast EMA crosses below slow EMA AND higher-timeframe close < higher-timeframe EMA AND higher-timeframe close < higher-timeframe session VWAP AND highest high over the lookback > chart-bar session VWAP AND close < chart-bar session VWAP
+Exit: long, low <= entry price - higher-timeframe ATR × stop multiplier OR high >= entry price + higher-timeframe ATR × stop multiplier × risk-reward ratio
+Exit: short, high >= entry price + higher-timeframe ATR × stop multiplier OR low <= entry price - higher-timeframe ATR × stop multiplier × risk-reward ratio

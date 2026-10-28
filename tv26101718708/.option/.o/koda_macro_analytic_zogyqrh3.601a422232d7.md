@@ -1,0 +1,1 @@
+For gold, compare the inverse of the 10-year real yield with its short-term average. Go long when it is above the average; go short when it is at or below the average.

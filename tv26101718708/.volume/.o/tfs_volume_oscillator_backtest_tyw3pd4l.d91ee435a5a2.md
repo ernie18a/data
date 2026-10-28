@@ -1,0 +1,3 @@
+Calculation: Volume oscillator = sum over the lookback of volume signed positive when close > open, negative when close < open, and zero when close = open, divided by the lookback
+Long: (reverse = false AND volume oscillator > upper band) OR (reverse = true AND volume oscillator < lower band) OR (lower band <= volume oscillator AND volume oscillator <= upper band AND ((reverse = false AND position side = long) OR (reverse = true AND position side = short)))
+Short: (reverse = false AND volume oscillator < lower band) OR (reverse = true AND volume oscillator > upper band) OR (lower band <= volume oscillator AND volume oscillator <= upper band AND ((reverse = false AND position side = short) OR (reverse = true AND position side = long)))

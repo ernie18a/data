@@ -1,0 +1,2 @@
+Long: current completed chart-timeframe bar low > high two bars earlier AND gap size >= configured minimum gap size relative to ATR at the preceding completed bar OR current bar low <= the proximal edge of an active bullish FVG for the first time after formation
+Short: current completed chart-timeframe bar high < low two bars earlier AND gap size >= configured minimum gap size relative to ATR at the preceding completed bar OR current bar high >= the proximal edge of an active bearish FVG for the first time after formation

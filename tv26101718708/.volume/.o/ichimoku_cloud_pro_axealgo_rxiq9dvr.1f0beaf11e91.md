@@ -1,0 +1,23 @@
+Long: Close crosses above the current cloud top after the previous close was below the current cloud bottom AND breakout score >= minimum score AND the breakout gap has elapsed AND the chop filter does not suppress it
+Short: Close crosses below the current cloud bottom after the previous close was above the current cloud top AND breakout score >= minimum score AND the breakout gap has elapsed AND the chop filter does not suppress it
+Long: Tenkan-sen crosses above Kijun-sen AND the TK-cross gap has elapsed
+Short: Tenkan-sen crosses below Kijun-sen AND the TK-cross gap has elapsed
+Long: Previous close > previous current cloud top AND Kijun-sen > current cloud top AND Kijun-sen slope is nonnegative AND Low <= Kijun-sen AND Low >= Kijun-sen − 0.75 ATR AND Close > Kijun-sen AND Close > Open AND the Kijun-bounce gap has elapsed
+Short: Previous close < previous current cloud bottom AND Kijun-sen < current cloud bottom AND Kijun-sen slope is nonpositive AND High >= Kijun-sen AND High <= Kijun-sen + 0.75 ATR AND Close < Kijun-sen AND Close < Open AND the Kijun-bounce gap has elapsed
+Long: Senkou Span A crosses above Senkou Span B AND the cloud-twist gap has elapsed AND the absolute change in the Span A–Span B gap over the last five bars >= ATR × minimum twist strength
+Short: Senkou Span A crosses below Senkou Span B AND the cloud-twist gap has elapsed AND the absolute change in the Span A–Span B gap over the last five bars >= ATR × minimum twist strength
+Long: Close > Tenkan-sen > Kijun-sen > current cloud top AND Chikou is clear above the reference candle high and cloud AND this bullish alignment was false on the previous bar AND the perfect-alignment gap has elapsed
+Short: Close < Tenkan-sen < Kijun-sen < current cloud bottom AND Chikou is clear below the reference candle low and cloud AND this bearish alignment was false on the previous bar AND the perfect-alignment gap has elapsed
+Long: Close > the reference candle high AND Close > reference cloud top AND Close > highest high in Chikou's open-air candle window AND Close > current cloud top AND the bullish open-air condition was false on the previous bar
+Short: Close < the reference candle low AND Close < reference cloud bottom AND Close < lowest low in Chikou's open-air candle window AND Close < current cloud bottom AND the bearish open-air condition was false on the previous bar
+Long: (Close − Kijun-sen) / ATR >= stretch threshold AND this condition was false on the previous bar
+Short: (Close − Kijun-sen) / ATR <= −stretch threshold AND this condition was false on the previous bar
+Long: A newly confirmed swing low C forms after swing high B and preceding swing low A AND A < C < B
+Short: A newly confirmed swing high C forms after swing low B and preceding swing high A AND A > C > B
+Calculation: Current cloud top/bottom = max/min of Senkou Span A and B values computed one displacement before the current bar
+Calculation: Chikou clear bullish = Close > High from displacement − 1 bars ago AND Close > cloud top from displacement − 1 bars ago; bearish = Close < Low from displacement − 1 bars ago AND Close < cloud bottom from displacement − 1 bars ago
+Calculation: Kijun-sen slope direction = compare Kijun-sen now with Kijun-sen three bars ago; rising/falling requires a difference greater than ATR × slope tolerance, otherwise flat
+Calculation: Breakout score = weighted checklist scaled to 100 over applicable weights: cloud thickness contributes up to its weight at thickness >= 2 ATR; Chikou contributes its weight when clear in breakout direction; Tenkan/Kijun contributes its weight when aligned; close margin contributes up to its weight at >= 0.5 ATR beyond the cloud; each valid higher timeframe contributes its share of the higher-timeframe weight when its regime agrees; volume contributes up to its weight at relative volume >= 1.5; RSI contributes up to its weight at RSI >= 65 for long or <= 35 for short; subtract the chop penalty when enabled and choppy
+Calculation: Choppy = at least two of ADX below its threshold, flat Kijun-sen slope, or cloud thickness < 0.5 ATR; suppression mode blocks breakouts when choppy
+Calculation: Bullish/ bearish higher-timeframe regime = on each of two higher timeframes, last completed bar closes above its cloud with Tenkan-sen > Kijun-sen / closes below its cloud with Tenkan-sen < Kijun-sen
+Calculation: Confirmed swing = a high/low pivot confirmed after the swing-size number of bars on each side; same-kind consecutive swings replace the latest only when more extreme

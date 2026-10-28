@@ -1,0 +1,3 @@
+Calculation: Net delta by price row = sum each lower-timeframe bar’s volume at the row containing its close, signed positive when close > open, negative when close < open, and zero when equal; aggregate over the configured session or rolling lookback. Use completed lower-timeframe bars, including the current lower-timeframe bar while it is forming in the developing profile.
+Long: Net delta by price row > 0
+Short: Net delta by price row < 0

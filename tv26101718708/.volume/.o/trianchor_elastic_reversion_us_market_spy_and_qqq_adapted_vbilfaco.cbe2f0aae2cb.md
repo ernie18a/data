@@ -1,0 +1,11 @@
+Calculation: Energy percentile = percentile rank over the base lookback of the sum of the squared ATR-normalized distances from close to daily, weekly, and monthly anchored VWAPs; each VWAP uses the current, still-forming anchor period.
+Calculation: Robust Z = (close − rolling median of close) / (1.4826 × rolling median of the absolute deviations from each bar’s rolling median of close).
+Calculation: Close position in range = (close − low) / max(high − low, minimum tick).
+Calculation: Breadth Z = average of the robust Z values for SPY, QQQ, and IWM, using current chart-timeframe bars.
+Calculation: Gap shock = absolute gap percentage from the previous chart bar’s close to the open on the first regular-session intraday bar, or on every bar for non-intraday data.
+Long: 10 bars ago, Energy percentile ≥ its trigger AND Robust Z ≤ −its entry magnitude AND Close position in range ≤ its gate AND (breadth gate disabled OR Breadth Z ≤ −its confirmation magnitude) AND Gap shock is below its limit.
+Short: Energy percentile ≥ its trigger AND Robust Z ≥ its entry magnitude AND Close position in range ≥ 1 − its gate AND (breadth gate disabled OR Breadth Z ≥ its confirmation magnitude) AND Gap shock is below its limit.
+Exit: long, Energy percentile ≥ its trigger AND Robust Z ≤ −its entry magnitude AND Close position in range ≤ its gate AND (breadth gate disabled OR Breadth Z ≤ −its confirmation magnitude) AND Gap shock is below its limit.
+Exit: long, Energy percentile ≥ its trigger AND Robust Z ≥ its entry magnitude AND Close position in range ≥ 1 − its gate AND (breadth gate disabled OR Breadth Z ≥ its confirmation magnitude) AND Gap shock is below its limit.
+Exit: short, Energy percentile ≥ its trigger AND Robust Z ≤ −its entry magnitude AND Close position in range ≤ its gate AND (breadth gate disabled OR Breadth Z ≤ −its confirmation magnitude) AND Gap shock is below its limit.
+Exit: short, if short brackets are enabled, high ≥ entry price + stop ATR multiple × current ATR OR low ≤ entry price − take-profit ATR multiple × current ATR.

@@ -1,0 +1,3 @@
+Calculation: estimated bar delta = volume × (2 × close position within the bar − 1), where close position = (close − low) / (high − low), or 0.5 when high = low
+Long: volume > 0 AND volume ≥ volume SMA × volume threshold AND (high − low) ≤ ATR × maximum range factor AND estimated bar delta ≤ −volume × minimum directional delta fraction
+Short: volume > 0 AND volume ≥ volume SMA × volume threshold AND (high − low) ≤ ATR × maximum range factor AND estimated bar delta ≥ volume × minimum directional delta fraction

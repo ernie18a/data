@@ -1,0 +1,7 @@
+Calculation: Session position = (latest session close − last completed 15-minute, 1-hour, or 4-hour bar low) / (that bar’s high − low); use the same formula with the session’s open, close, high, and low.
+Long: For any Asia, London, or New York session and any of the 15-minute, 1-hour, or 4-hour layers: session position ≥ 0.70 AND session close > session open; OR 0.55 ≤ session position < 0.70 AND session close > session open; OR session close > session open AND neither prior condition applies.
+Short: For any Asia, London, or New York session and any of the 15-minute, 1-hour, or 4-hour layers: session position ≤ 0.30 AND session close < session open; OR 0.30 < session position ≤ 0.45 AND session close < session open; OR session close < session open AND neither prior condition applies.
+Long: On the first confirmed bar in an Asia (00:00–09:00), London (07:00–16:00), or New York (12:00–21:00) session, exchange local time, whose close exceeds that session’s running high from earlier bars; at most once per direction per session per day.
+Short: On the first confirmed bar in an Asia (00:00–09:00), London (07:00–16:00), or New York (12:00–21:00) session, exchange local time, whose close is below that session’s running low from earlier bars; at most once per direction per session per day.
+Long: A confirmed pivot low, using equal left and right lookbacks.
+Short: A confirmed pivot high, using equal left and right lookbacks.

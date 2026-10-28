@@ -1,0 +1,8 @@
+Calculation: Fast and slow EMAs = exponential moving averages of close; fast lookback is shorter than slow lookback
+Calculation: EMA 200 = 200-period exponential moving average of close
+Calculation: RSI = relative strength index of close
+Calculation: Stochastic RSI K = smoothed stochastic of RSI; D = smoothed K
+Calculation: Bullish/bearish RSI divergence = at successive confirmed price pivot lows/highs (same left and right lookback), price makes a lower low/higher high while RSI makes a higher low/lower high
+Calculation: Average volume = average volume over the last 10 bars; volume-spread = volume × (high − low)
+Long: fast EMA > slow EMA OR close > EMA 200 OR RSI ≥ 50 OR close > current day's open OR close > prior week's psychological high OR Stochastic RSI K crosses above D while either K or D is below the middle band OR K crosses above D while either K or D is below the lower band OR K crosses above the lower band OR bullish RSI divergence OR close ≥ open AND (volume ≥ average volume × the lower vector threshold OR (volume < average volume × the higher vector threshold AND volume-spread is the highest of the last 10 bars))
+Short: fast EMA < slow EMA OR close < EMA 200 OR RSI < 50 OR close < current day's open OR close < prior week's psychological low OR Stochastic RSI K crosses below D while either K or D is above the middle band OR K crosses below D while either K or D is above the upper band OR K crosses below the upper band OR bearish RSI divergence OR close < open AND (volume ≥ average volume × the lower vector threshold OR (volume < average volume × the higher vector threshold AND volume-spread is the highest of the last 10 bars))

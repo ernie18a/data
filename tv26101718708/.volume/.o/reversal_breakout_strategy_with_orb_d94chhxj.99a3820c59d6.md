@@ -1,0 +1,7 @@
+Calculation: Opening-range high = highest high over the opening-range lookback when that range is captured; hold it fixed afterward. Opening-range low and average volume are calculated over the same lookback and held fixed afterward.
+Calculation: Long initial stop = lowest low over the stop lookback minus ATR times the stop multiplier. Short initial stop = highest high over the stop lookback plus ATR times the stop multiplier.
+Calculation: Long targets = signal-bar close plus the distance from signal-bar close to the long initial stop multiplied by each risk:reward target. Short targets = signal-bar close minus the distance from signal-bar close to the short initial stop multiplied by each risk:reward target.
+Long: (close crosses above SMA50 AND RSI is below the oversold threshold AND close < VWAP AND close > SMA200) OR (EMA9 crosses above EMA20 AND close > VWAP AND close > SMA200) OR (close crosses above opening-range high AND volume > opening-range average volume times the volume threshold)
+Short: (close crosses below SMA50 AND RSI is above the overbought threshold AND close > VWAP AND close < SMA200) OR (EMA9 crosses below EMA20 AND close < VWAP AND close < SMA200) OR (close crosses below opening-range low AND volume > opening-range average volume times the volume threshold)
+Exit: long, low <= active stop OR high >= first target OR high >= second target; after the first target fills, active stop = entry price
+Exit: short, high >= active stop OR low <= first target OR low <= second target; after the first target fills, active stop = entry price

@@ -1,0 +1,6 @@
+Calculation: Candle range = high - low
+Calculation: Candle body = |close - open|
+Calculation: Upper wick = high - max(open, close)
+Calculation: Lower wick = min(open, close) - low
+Long: Lower wick >= candle body × a wick-multiple threshold AND upper wick <= candle body AND close >= low + candle range × (1 - a body-position fraction) OR low < previous bar low AND close > previous bar high OR high > previous bar high AND low < previous bar low AND close > open AND close > (high + low) / 2 OR candle range > 0 AND candle body / candle range <= a small-body threshold AND close > previous bar close
+Short: Upper wick >= candle body × a wick-multiple threshold AND lower wick <= candle body AND close <= low + candle range × a body-position fraction OR high > previous bar high AND close < previous bar low OR high > previous bar high AND low < previous bar low AND close < open AND close < (high + low) / 2 OR candle range > 0 AND candle body / candle range <= a small-body threshold AND close < previous bar close

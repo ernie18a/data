@@ -1,0 +1,9 @@
+Calculation: EMA buffer = ATR × buffer multiplier, or EMA × buffer percent, according to selected buffer type
+Calculation: Upper buffer band = EMA + EMA buffer
+Calculation: Lower buffer band = EMA − EMA buffer
+Long: close > EMA AND MACD histogram crosses above 0 AND RSI > lower RSI threshold AND RSI < upper RSI threshold AND MFI < 50
+Short: close < EMA AND MACD histogram crosses below 0 AND RSI > 50 AND RSI < upper RSI threshold AND MFI > 50
+Long: long entries enabled AND position side is flat or short AND either anti-whipsaw is enabled AND close has remained above the upper buffer band for the confirmation-bar count AND the prior bar had not completed that confirmation AND the minimum bars since the last trade have elapsed, OR anti-whipsaw is disabled AND close crosses above EMA AND the minimum bars since the last trade have elapsed
+Short: short entries enabled AND position side is flat or long AND either anti-whipsaw is enabled AND close has remained below the lower buffer band for the confirmation-bar count AND the prior bar had not completed that confirmation AND the minimum bars since the last trade have elapsed, OR anti-whipsaw is disabled AND close crosses below EMA AND the minimum bars since the last trade have elapsed
+Exit: long, close confirms below the lower buffer band for the confirmation-bar count and the prior bar had not completed that confirmation, or anti-whipsaw is disabled and close crosses below EMA, or low ≤ entry price − ATR × stop multiplier
+Exit: short, sell condition above, or (entry price − close) ÷ ATR ≥ capitulation move threshold AND (RSI ≤ oversold RSI threshold OR smoothed stochastic %K ≤ oversold stochastic threshold) AND smoothed stochastic %K crosses above %D, or high ≥ entry price + ATR × stop multiplier, or low ≤ entry price − ATR × first take-profit ATR multiple, or low ≤ entry price − ATR × second take-profit ATR multiple

@@ -1,0 +1,5 @@
+Calculation: ComboMA = (ALMA(close, length, offset, sigma) + EMA(2 × EMA(close, length) − EMA(EMA(close, length), length), length)) / 2
+Long: ComboMA is higher than its previous value on each of the last N bars AND close > ComboMA AND RSI(volume, lookback) / 50 > threshold AND RSI(close, lookback) > 50 AND position is flat
+Short: ComboMA is lower than its previous value on each of the last N bars AND close < ComboMA AND RSI(volume, lookback) / 50 > threshold AND RSI(close, lookback) < 50 AND position is flat
+Exit: long, low ≤ entry price − stop multiple × ATR OR high ≥ entry price + target multiple × ATR OR close < ComboMA − trail multiple × ATR OR ComboMA < its previous value
+Exit: short, high ≥ entry price + stop multiple × ATR OR low ≤ entry price − target multiple × ATR OR close > ComboMA + trail multiple × ATR OR ComboMA > its previous value

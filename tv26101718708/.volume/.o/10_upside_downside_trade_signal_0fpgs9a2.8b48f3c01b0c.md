@@ -1,0 +1,4 @@
+Calculation: prior lookback high = highest high across the breakout lookback, excluding the current bar
+Calculation: prior lookback low = lowest low across the breakout lookback, excluding the current bar
+Long: close > fast EMA AND close > slow EMA AND fast EMA > slow EMA AND RSI >= bullish RSI minimum AND RSI < 75 AND close > prior lookback high AND MACD line > MACD signal line AND MACD histogram > 0 AND volume > average volume AND the full bullish confirmation was false on the previous bar
+Short: close < fast EMA AND close < slow EMA AND fast EMA < slow EMA AND RSI <= bearish RSI maximum AND RSI > 25 AND close < prior lookback low AND MACD line < MACD signal line AND MACD histogram < 0 AND volume > average volume AND the full bearish confirmation was false on the previous bar

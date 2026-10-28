@@ -1,0 +1,3 @@
+Calculation: Relative volume baseline = EMA across chart bars of the mean volume of lower-timeframe intrabars within each chart bar; use intrabars within the chart bar being evaluated, including the still-forming chart bar.
+Long: lower-timeframe intrabar close >= open AND (Relative mode: intrabar volume >= multiplier × relative volume baseline OR Absolute mode: intrabar volume >= minimum volume OR Top N mode: intrabar volume ranks among the N largest in the chart bar)
+Short: lower-timeframe intrabar close < open AND (Relative mode: intrabar volume >= multiplier × relative volume baseline OR Absolute mode: intrabar volume >= minimum volume OR Top N mode: intrabar volume ranks among the N largest in the chart bar)

@@ -1,0 +1,1 @@
+Rank sectors by a composite of relative strength versus the broad market, money flow, volume, trend, and price-volume behavior. Favor long positions in stocks from the strongest sectors and short positions in stocks from the weakest sectors. No exit rule is specified.

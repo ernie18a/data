@@ -1,0 +1,9 @@
+Calculation: Confirmed swing high = on a completed bar where the previous bar is bullish or doji and the current bar is bearish, use the current high if it is at least the previous high; otherwise use the previous high if the current high is at most the previous high.
+Calculation: Confirmed swing low = on a completed bar where the previous bar is bearish and the current bar is bullish or doji, use the current low if it is at most the previous low; otherwise use the previous low if the current low is at least the previous low.
+Calculation: Peak/trough = latest confirmed swing high/low; prior peak/trough = preceding confirmed swing high/low.
+Calculation: BC retracement ratio = 100 × (peak − trough) / (peak − trough immediately before the latest trough).
+Calculation: CD extension ratio = 100 × (peak − trough) / (peak immediately before the latest peak − trough).
+Long: A new confirmed swing low occurs AND latest trough < prior trough AND latest peak < prior peak AND BC retracement ratio is within the BC band AND CD extension ratio is within the CD band
+Short: A new confirmed swing high occurs AND latest peak > prior peak AND latest trough > prior trough AND BC retracement ratio is within the BC band AND CD extension ratio is within the CD band
+Exit: Long, price reaches the stop-loss level below entry OR (trailing enabled AND price reaches the take-profit activation level above entry AND then reaches the trailing stop below the best price since activation)
+Exit: Short, price reaches the stop-loss level above entry OR (trailing enabled AND price reaches the take-profit activation level below entry AND then reaches the trailing stop above the best price since activation)

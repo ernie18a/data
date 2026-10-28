@@ -1,0 +1,1 @@
+When flat, go long if the traded instrument closes below its open while a comparison instrument closes above its open on the same bar. Exit the long when the traded instrument closes above its previous bar’s high. No short entries.

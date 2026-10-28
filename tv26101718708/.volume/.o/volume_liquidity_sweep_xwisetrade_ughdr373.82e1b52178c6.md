@@ -1,0 +1,4 @@
+Calculation: Confirmed pivot high = a bar’s high is higher than the highs of the configured lookback bars on both sides; it is confirmed after the bars on its right complete.
+Calculation: Confirmed pivot low = a bar’s low is lower than the lows of the configured lookback bars on both sides; it is confirmed after the bars on its right complete.
+Long: Current bar’s low < most recently confirmed pivot low AND current bar’s close > that pivot low AND current bar’s volume > its moving average volume × the configured multiplier AND more than the configured cooldown bars have elapsed since the previous long signal
+Short: Current bar’s high > most recently confirmed pivot high AND current bar’s close < that pivot high AND current bar’s volume > its moving average volume × the configured multiplier AND more than the configured cooldown bars have elapsed since the previous short signal

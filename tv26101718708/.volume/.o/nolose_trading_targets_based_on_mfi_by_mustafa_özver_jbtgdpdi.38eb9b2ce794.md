@@ -1,0 +1,4 @@
+Calculation: RSI = RSI-style oscillator from price changes in hlc3’s weighted moving average and volume: multiply each price change by the weighted moving average of volume (use 1 when that average is not positive), separately Wilder-smooth positive and negative changes over the same lookback, then calculate 100 − 100 / (1 + smoothed gains / smoothed losses)
+Calculation: Rational = (hlc3’s weighted moving average − lowest low over twice the RSI lookback) / (highest high over twice the RSI lookback − lowest low over twice the RSI lookback)
+Long: RSI < oversold threshold AND RSI > previous RSI AND Rational < 0.4
+Short: RSI > 100 − oversold threshold AND RSI > previous RSI AND Rational > 0.6

@@ -1,0 +1,8 @@
+Calculation: Trend line = selected moving average of close; upper and lower channels = trend line ± EMA(true range, trend-line lookback) × channel multiplier
+Calculation: Locked trend state switches bullish when close is above the upper channel plus ATR buffer for the confirmation lookback and momentum support is present if required; switches bearish on the corresponding lower-channel condition and bearish momentum support if required; otherwise it retains its prior state
+Long: Locked trend state is bullish AND close > trend line AND distance from close to trend line / ATR ≤ maximum entry distance (if far-entry filter is enabled) AND the bar is confirmed (if close-confirmation filter is enabled) AND buy warning is present (if warning filter is enabled) AND previous signal direction is not long
+Short: Locked trend state is bearish AND close < trend line AND distance from close to trend line / ATR ≤ maximum entry distance (if far-entry filter is enabled) AND the bar is confirmed (if close-confirmation filter is enabled) AND sell warning is present (if warning filter is enabled) AND previous signal direction is not short
+Long: Volume > its moving average × volume multiplier AND close > open OR MACD line crosses above its signal line OR RSI > its strength threshold AND RSI > prior-bar RSI
+Short: Volume > its moving average × volume multiplier AND close < open OR MACD line crosses below its signal line OR RSI < its weakness threshold AND RSI < prior-bar RSI
+Exit: long, close < trend line OR sell warning OR close ≥ entry price + ATR × take-profit distance
+Exit: short, close > trend line OR buy warning OR close ≤ entry price − ATR × take-profit distance

@@ -1,0 +1,2 @@
+Long: RSI(close) < oversold threshold AND volume > simple moving average of volume × volume multiplier AND (no open position OR close < last entry price × (1 − minimum drop percentage)) AND open position count < maximum positions AND bars since last exit > cooldown for that exit type
+Exit: Long, high ≥ average entry price × (1 + take-profit percentage) OR low ≤ lowest entry price × (1 − stop-loss percentage)

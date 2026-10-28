@@ -1,0 +1,5 @@
+Calculation: Confirmed pivot high = the high from N bars ago is higher than the highs in the N bars before and after it, using the same N on both sides; detected after the N bars to its right complete
+Calculation: Confirmed pivot low = the low from N bars ago is lower than the lows in the N bars before and after it, using the same N on both sides; detected after the N bars to its right complete
+Calculation: Same-zone threshold = selected ATR multiple, percentage of current close, or fixed point distance
+Long: Confirmed pivot low exists AND (no prior accepted minor swing low OR absolute difference from the prior accepted minor swing low >= same-zone threshold)
+Short: Confirmed pivot high exists AND (no prior accepted minor swing high OR absolute difference from the prior accepted minor swing high >= same-zone threshold)

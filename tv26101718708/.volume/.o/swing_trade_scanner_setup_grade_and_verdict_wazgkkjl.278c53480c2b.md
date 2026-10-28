@@ -1,0 +1,2 @@
+Calculation: Four moving averages = the same selectable moving-average type of close, ordered from shortest to longest lookback
+Long: close > shortest-lookback moving average AND shortest-lookback moving average > second-shortest moving average AND second-shortest moving average > third-shortest moving average

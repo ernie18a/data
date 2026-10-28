@@ -1,0 +1,1 @@
+For the instrument being traded, use the selected reference ticker’s daily returns over the chosen lookback. Group returns by weekday and calculate each weekday’s average. On a given day, take a long bias if that weekday’s average return is zero or higher, and a short bias if it is negative. The indicator specifies no exit rule.

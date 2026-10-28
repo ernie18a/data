@@ -1,0 +1,8 @@
+Calculation: Daily VWAP = OHLC4 weighted by volume from the 18:00 New York futures-day reset through the current chart bar, including the current bar.
+Calculation: NY VWAP = OHLC4 weighted by volume from the current day’s 09:30 New York reset through the current chart bar; available only from 09:30 to before 16:00 New York time.
+Calculation: PD NY VWAP = OHLC4 weighted by volume from the prior NY session’s 09:30 New York anchor through the current chart bar; available only from 09:30 to before 16:00 New York time.
+Calculation: HOD VWAP = OHLC4 weighted by volume from the current futures day’s highest-high bar through the current chart bar; reset at 18:00 New York time.
+Calculation: LOD VWAP = OHLC4 weighted by volume from the current futures day’s lowest-low bar through the current chart bar; reset at 18:00 New York time.
+Calculation: Opening range high and low = highest high and lowest low, respectively, from chart bars starting at 09:30 through 09:45 New York time.
+Long: close > Daily VWAP OR (NY session and close > NY VWAP) OR (NY session and close > PD NY VWAP) OR close > HOD VWAP OR close > LOD VWAP OR close > opening range high OR at least four of close > NY VWAP, close > Daily VWAP, close > PD NY VWAP, close > LOD VWAP, close > HOD VWAP
+Short: close <= Daily VWAP OR (NY session and close <= NY VWAP) OR (NY session and close <= PD NY VWAP) OR close <= HOD VWAP OR close <= LOD VWAP OR close < opening range low OR at most one of close > NY VWAP, close > Daily VWAP, close > PD NY VWAP, close > LOD VWAP, close > HOD VWAP

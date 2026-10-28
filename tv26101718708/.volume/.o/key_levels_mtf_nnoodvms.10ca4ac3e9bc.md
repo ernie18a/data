@@ -1,0 +1,5 @@
+Calculation: Bias 0.618 = on the selected higher timeframe, highest high over the swing lookback minus 0.618 × (highest high minus lowest low); use the current timeframe bar as it becomes available, with historical values available at its close
+Calculation: ATR upper band = on the selected timeframe (chart timeframe if none is selected), SMA of close over the basis lookback plus ATR over the ATR lookback multiplied by a factor; use the current timeframe bar as it becomes available, with historical values available at its close
+Calculation: ATR lower band = on the selected timeframe (chart timeframe if none is selected), SMA of close over the basis lookback minus ATR over the ATR lookback multiplied by a factor; use the current timeframe bar as it becomes available, with historical values available at its close
+Long: close crosses above Bias 0.618 OR close crosses below ATR lower band
+Short: close crosses below Bias 0.618 OR close crosses above ATR upper band

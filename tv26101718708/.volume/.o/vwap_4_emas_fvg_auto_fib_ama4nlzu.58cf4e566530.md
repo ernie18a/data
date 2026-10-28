@@ -1,0 +1,2 @@
+Long: EMA of close with shorter lookback on its configured timeframe (chart timeframe if unset) > EMA of close with longer lookback on its configured timeframe (chart timeframe if unset) OR current low > high two bars ago AND current low − high two bars ago ≥ minimum FVG size
+Short: EMA of close with shorter lookback on its configured timeframe (chart timeframe if unset) < EMA of close with longer lookback on its configured timeframe (chart timeframe if unset) OR current high < low two bars ago AND low two bars ago − current high ≥ minimum FVG size

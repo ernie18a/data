@@ -1,0 +1,4 @@
+Calculation: Gap-height z-score = (current FVG height − rolling mean of positive FVG heights for the previous candle’s time of day) / their rolling standard deviation
+Calculation: Previous-volume z-score = (previous bar’s volume − rolling mean of volume for the previous candle’s time of day) / its rolling standard deviation
+Long: current bar is confirmed AND low > high two bars earlier AND (gap strictness is disabled OR (low − high two bars earlier) > 0 and gap-height z-score ≥ gap threshold) AND (volume strictness is disabled OR previous-volume z-score ≥ volume threshold)
+Short: current bar is confirmed AND high < low two bars earlier AND (gap strictness is disabled OR (low two bars earlier − high) > 0 and gap-height z-score ≥ gap threshold) AND (volume strictness is disabled OR previous-volume z-score ≥ volume threshold)

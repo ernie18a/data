@@ -1,0 +1,1 @@
+When independent macro or fundamental analysis gives a bullish bias for a major currency, rank the major currencies by their equal-weighted percentage change against the other majors over the chosen timeframe. Select the lowest-ranked currency as its counterpart, then go long the bullish currency and short the laggard. No exit rule is specified.

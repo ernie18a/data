@@ -1,0 +1,2 @@
+Long: close > any last completed 4-hour, daily, weekly, or monthly close, current-session POC, latest confirmed swing high, or latest confirmed swing low AND prior close <= that same level
+Short: close < any last completed 4-hour, daily, weekly, or monthly close, current-session POC, latest confirmed swing high, or latest confirmed swing low AND prior close >= that same level

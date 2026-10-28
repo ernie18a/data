@@ -1,0 +1,2 @@
+Long: VWMA > prior-bar VWMA AND RMA > prior-bar RMA AND SMA > prior-bar SMA AND WMA > prior-bar WMA AND EMA > prior-bar EMA
+Short: VWMA < prior-bar VWMA AND RMA < prior-bar RMA AND SMA < prior-bar SMA AND WMA < prior-bar WMA AND EMA < prior-bar EMA

@@ -1,0 +1,9 @@
+Calculation: Confirmed pivot low/high = a low/high with the configured number of bars on each side; available only after the right-side bars complete
+Calculation: Conviction score = 10 × the weighted average of seven factors, each clamped to [0,1]: RSI extreme (low: oversold reference minus RSI; high: RSI minus overbought reference), divergence (new lower low with higher RSI than prior pivot low; new higher high with lower RSI than prior pivot high), rejection wick fraction, volume divided by its moving-average baseline relative to the climax reference, absolute close z-score relative to its stretch reference, buying/selling pressure relative to 50%, and wick pierce beyond the corresponding Bollinger band relative to its ATR reference
+Calculation: Zone = confirmed pivot price ± half the configured ATR-based height when normalized; otherwise, the configured height extends inward from the pivot price. Lower and upper borders define the zone.
+Long: Confirmed pivot low and conviction score ≥ minimum conviction
+Long: Active buy-dip zone was swept when low < lower border − minimum sweep depth × ATR, then within the reclaim window close > the configured reclaim level (lower border, midpoint, or upper border)
+Short: Confirmed pivot high and conviction score ≥ minimum conviction
+Short: Active sell-rip zone was swept when high > upper border + minimum sweep depth × ATR, then within the reclaim window close < the configured reclaim level (upper border, midpoint, or lower border)
+Short: A swept buy-dip zone is accepted as broken when close < lower border − decisive-break ATR distance, or the reclaim window expires with close < lower border; the zone flips to sell-rip if breaker flipping is enabled
+Long: A swept sell-rip zone is accepted as broken when close > upper border + decisive-break ATR distance, or the reclaim window expires with close > upper border; the zone flips to buy-dip if breaker flipping is enabled

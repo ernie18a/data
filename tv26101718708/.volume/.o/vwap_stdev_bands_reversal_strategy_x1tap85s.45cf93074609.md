@@ -1,0 +1,9 @@
+Calculation: Session VWAP = sum(hl2 × volume) / sum(volume) from the start of the current daily session through the current bar.
+Calculation: Session standard deviation = sqrt(max(sum(volume × hl2²) / sum(volume) − Session VWAP², 0)) over the current daily session through the current bar.
+Calculation: Session eligible = bars since daily-session start ≥ warmup length AND (no previous session length is known OR cutoff length is zero OR bars since session start < previous completed session length − cutoff length).
+Calculation: Long arm = reset at each daily-session start; set when Session eligible and (low ≤ lower extreme band OR close < lower second band); expires when its age exceeds the arm-expiry length; cleared after a bullish candle closes above Session VWAP or after a long signal.
+Calculation: Short arm = reset at each daily-session start; set when Session eligible and (high ≥ upper extreme band OR close > upper second band); expires when its age exceeds the arm-expiry length; cleared after a bearish candle closes below Session VWAP or after a short signal.
+Long: Long arm is active AND close > open AND close ≤ Session VWAP AND (upper second band − close) / (close − lowest low over the swing lookback) ≥ minimum risk/reward, with positive risk.
+Short: Short arm is active AND close < open AND close ≥ Session VWAP AND (close − lower second band) / (highest high over the swing lookback − close) ≥ minimum risk/reward, with positive risk.
+Exit: long, low ≤ the lowest low over the swing lookback captured at entry signal OR high ≥ the upper second band captured at entry signal OR an eligible short signal occurs while opposite-signal reversal is enabled.
+Exit: short, high ≥ the highest high over the swing lookback captured at entry signal OR low ≤ the lower second band captured at entry signal OR an eligible long signal occurs while opposite-signal reversal is enabled.

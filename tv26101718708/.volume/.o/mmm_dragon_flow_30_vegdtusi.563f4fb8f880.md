@@ -1,0 +1,3 @@
+Calculation: Pivot = (high + low + close of the previous completed 09:30–16:00 America/New_York session) / 3
+Long: close > EMA(close, shorter lookback) AND EMA(close, shorter lookback) > EMA(close, longer lookback) AND close > Pivot AND abs(close - Pivot) > 0.10 * ATR
+Short: close < EMA(close, shorter lookback) AND EMA(close, shorter lookback) < EMA(close, longer lookback) AND close < Pivot AND abs(close - Pivot) > 0.10 * ATR

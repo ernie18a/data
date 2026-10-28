@@ -1,0 +1,6 @@
+Calculation: X1 and X2 = independently selected Stochastic, RSI, Z-score, MFI, volume, close minus EMA, or close minus SMA; use the same lookback for EMA and SMA features
+Calculation: Training label = for the selected target, 1 if close > open (green candle), or if high − open > open − low (bullish ATR), or if high − open > ATR OR open − low < ATR (ATR range breakout); otherwise 0
+Calculation: Each feature vote = 1 if, among its training samples whose feature value is within that feature’s tolerance of the current value, the count labeled 1 exceeds the count labeled 0; otherwise 0. Samples use the preceding bar’s feature values and their corresponding training labels. For X1, count only samples with feature value > 0; X2 has no such restriction.
+Calculation: Combined vote = 1 if the two feature votes’ combined count of matching samples labeled 1 exceeds the combined count labeled 0; otherwise 0
+Long: X1 vote = 1 OR X2 vote = 1 OR combined vote = 1
+Short: X1 vote = 0 OR X2 vote = 0 OR combined vote = 0

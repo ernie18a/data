@@ -1,0 +1,12 @@
+Calculation: H-infinity slope = change in the recursively updated adaptive close filter from the previous bar to the current bar.
+Calculation: Efficiency gate = squared correlation of close and bar index, smoothed by a 10-bar SMA; it turns on above its rolling mean plus a configurable standard-deviation multiple and turns off below 82% of that threshold.
+Calculation: Chop score = 1 − abs(close − close N bars ago) / sum of abs(close − prior close) over N bars; if the sum is zero, use 1.
+Calculation: Regime bias = 0 unless the efficiency gate is on and chop score is at or below its threshold; otherwise +1 when H-infinity slope is nonnegative, and −1 when negative.
+Calculation: Momentum = JMA-smoothed Laguerre RSI; Laguerre RSI is 100 × CU / (CU + CD), where CU and CD sum the positive upward and downward differences among four recursively calculated Laguerre stages of close; use 50 when the denominator is zero.
+Calculation: CVD = cumulative sum of volume on bars where close > open, minus volume where close < open, with zero delta when equal; CVD slope is the change in its EMA from the previous bar.
+Calculation: Volume ratio = current volume / 50-bar SMA of volume, using 1 as the denominator when that SMA is zero.
+Calculation: ZEMA-smoothed ATR = EMA(ATR, 21) + [EMA(ATR, 21) − EMA(EMA(ATR, 21), 21)].
+Long: flat AND regime bias = +1 AND momentum > bull threshold AND CVD slope > 0 AND volume ratio ≥ minimum ratio AND (session filter disabled OR current bar is within the configured session) AND configured cooldown bars have elapsed since the last exit.
+Short: flat AND regime bias = −1 AND momentum < bear threshold AND CVD slope < 0 AND volume ratio ≥ minimum ratio AND (session filter disabled OR current bar is within the configured session) AND configured cooldown bars have elapsed since the last exit.
+Exit: long, low ≤ entry price − ZEMA-smoothed ATR × configured stop multiplier OR high ≥ entry price + ZEMA-smoothed ATR × configured target multiplier OR regime bias ≤ 0 OR momentum < 45.
+Exit: short, high ≥ entry price + ZEMA-smoothed ATR × configured stop multiplier OR low ≤ entry price − ZEMA-smoothed ATR × configured target multiplier OR regime bias ≥ 0 OR momentum > 55.

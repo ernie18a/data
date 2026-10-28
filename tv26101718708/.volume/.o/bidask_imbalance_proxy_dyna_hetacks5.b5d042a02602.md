@@ -1,0 +1,4 @@
+Calculation: Volume-weighted imbalance = 100 × the sum over a lookback of volume × close-location value, divided by the sum of volume over that lookback; close-location value = 2 × (close − low) / (high − low) − 1, or −1 when high = low
+Calculation: Upper and lower thresholds = rolling upper and lower percentiles of volume-weighted imbalance over a percentile lookback
+Long: Volume-weighted imbalance > upper threshold AND close > simple moving average of close AND bars since last long signal ≥ cooldown
+Short: Volume-weighted imbalance < lower threshold AND close < simple moving average of close AND bars since last short signal ≥ cooldown

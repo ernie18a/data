@@ -1,0 +1,3 @@
+Calculation: trend score = count of these five true conditions: close > long-term EMA; short-term EMA > medium-term EMA; medium-term EMA > long-term EMA; RSI on the intermediate timeframe > 50; RSI on the longer timeframe > 50. The three EMA lookbacks increase from short-term to long-term. The RSI values use the intermediate and longer timeframe bars, with the longer timeframe above the intermediate; use the latest available values with lookahead off.
+Long: trend score >= 4
+Short: trend score <= 2

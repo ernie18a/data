@@ -1,0 +1,5 @@
+Calculation: Per-timeframe score = +1 if close is above the short-period EMA, −1 if below, or 0 if equal, plus +1 if RSI is above its EMA signal line, −1 if below, or 0 if equal; calculate on five bars aggregated from the input data, ordered from shortest to longest timeframe, using the latest completed bar on each timeframe (no lookahead).
+Calculation: Weighted score = score scale × the weighted mean of the five per-timeframe scores; timeframe weights and score scale are parameters.
+Calculation: Effective signal threshold = signal threshold × volume multiplier when the optional volume filter is enabled and volume is below its longer-lookback volume SMA; otherwise it equals the signal threshold.
+Long: weighted score > effective signal threshold AND previous chart bar's weighted score ≤ its effective signal threshold
+Short: weighted score < −effective signal threshold AND previous chart bar's weighted score ≥ −its effective signal threshold

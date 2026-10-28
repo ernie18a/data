@@ -1,0 +1,6 @@
+Calculation: Volume-weighted median = within a lookback of completed bars, sort closes by price and select the first close whose cumulative volume reaches at least half the total volume.
+Calculation: Histogram = (close − volume-weighted median) divided by the EMA of high − low; optionally smooth with a WMA.
+Calculation: Median oscillator = (volume-weighted median − its EMA with a longer lookback) divided by the EMA of high − low; optionally smooth with a WMA.
+Calculation: Oscillator signal = EMA of the median oscillator, using a shorter lookback than the longer EMA in the median oscillator.
+Long: Histogram crosses above zero OR median oscillator crosses above zero OR median oscillator crosses above its signal OR median oscillator crosses below the oversold threshold OR median oscillator crosses above the signal while it was below the signal on the previous bar.
+Short: Histogram crosses below zero OR median oscillator crosses below zero OR median oscillator crosses below its signal OR median oscillator crosses above the overbought threshold OR median oscillator crosses below the signal while it was at or above the signal on the previous bar.

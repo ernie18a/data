@@ -1,0 +1,3 @@
+Calculation: Volume Price Trend = cumulative sum of volume × percentage change in close
+Long: close > long-term EMA AND short-term EMA > longer-term EMA AND Volume Price Trend > its simple moving average AND low > previous bar low AND previous bar low < low two bars ago AND close crosses above the Keltner Channel midline AND current time is within a configured entry session
+Exit: Long, unrealized P&L >= configured profit target OR configured profit target reached halfway and unrealized P&L <= configured breakeven threshold OR unrealized P&L <= negative configured stop loss OR close crosses below the longer-term of the short-term EMAs

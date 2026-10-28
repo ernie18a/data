@@ -1,0 +1,6 @@
+Calculation: Daily pivot levels = using the last completed daily bar’s high (H), low (L), and close (C): P=(H+L+C)/3; R1=2P−L; S1=2P−H; R2=P+(H−L); S2=P−(H−L); R3=H+2(P−L); S3=L−2(H−P)
+Calculation: Entry-bar stop and target = for a long, stop is the entry signal bar’s low; for a short, stop is its high. Target is either the signal bar close adjusted by the configured percentage or the signal bar close plus/minus configured risk multiple, where risk is the distance from signal bar close to stop.
+Long: flat AND within the configured entry session AND close > VWAP AND close crosses above the configured pivot level(s) AND (Stochastic RSI K > D when the efficiency filter is enabled; K crosses above D otherwise)
+Short: flat AND within the configured entry session AND close < VWAP AND close crosses below the configured pivot level(s) AND (Stochastic RSI K < D when the efficiency filter is enabled; K crosses below D otherwise)
+Exit: long, low <= stop OR high >= target OR time >= configured end-of-day cutoff
+Exit: short, high >= stop OR low <= target OR time >= configured end-of-day cutoff

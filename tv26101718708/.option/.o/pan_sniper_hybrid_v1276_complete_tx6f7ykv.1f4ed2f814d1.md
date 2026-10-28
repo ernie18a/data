@@ -1,0 +1,1 @@
+On the traded instrument, compare confirmed swing pivots with those of BTCUSDT: signal long when the traded instrument makes a lower swing low while BTCUSDT makes a higher swing low; signal short when the traded instrument makes a higher swing high while BTCUSDT makes a lower swing high. No exit condition is defined.

@@ -1,0 +1,8 @@
+Calculation: Signed delta = sum of lower-timeframe intrabar volume, positive when intrabar close > open and negative when close < open; on ties, use the sign of close minus the prior intrabar close. Aggregate by delta-timeframe candle and use completed candles.
+Calculation: Average absolute delta = mean of absolute signed delta over the last N completed delta-timeframe candles, including the candle just completed.
+Long: On a completed delta-timeframe candle, prior completed candle's signed delta < 0 AND current signed delta > 0 AND current candle close − open <= flat-price tolerance.
+Long: On a completed delta-timeframe candle, current candle close − open < −flat-price tolerance AND current signed delta > 0 AND the bullish flip condition is false.
+Long: On a completed delta-timeframe candle, absolute current signed delta >= configurable multiple of average absolute delta AND absolute(current candle close − open) <= flat-price tolerance AND current signed delta < 0.
+Short: On a completed delta-timeframe candle, prior completed candle's signed delta > 0 AND current signed delta < 0 AND current candle close − open >= −flat-price tolerance.
+Short: On a completed delta-timeframe candle, current candle close − open > flat-price tolerance AND current signed delta < 0 AND the bearish flip condition is false.
+Short: On a completed delta-timeframe candle, absolute current signed delta >= configurable multiple of average absolute delta AND absolute(current candle close − open) <= flat-price tolerance AND current signed delta > 0.

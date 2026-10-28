@@ -1,0 +1,6 @@
+Calculation: Zero-cross series = negative EMA of the difference between the previous value of RSI(1) applied to the cumulative sum of changes in sampled higher-timeframe close multiplied by volume, and the previous WMA of that RSI. Sampled higher-timeframe close = chart close on the first chart bar of each selected higher-timeframe interval, carried forward.
+Calculation: Weighted-average series = WMA(WMA(close, p/3) × 3 − WMA(close, p/2) − WMA(close, p), p), where p is half the length; calculate on the selected higher timeframe and apply the configured bar shift. Use the higher-timeframe value available from completed bars.
+Long: Zero-cross series crosses above 0 OR chart-timeframe linear regression of close crosses above the weighted-average series
+Short: Chart-timeframe linear regression of close crosses below the weighted-average series
+Exit: Long, close reaches the entry price plus any configured take-profit percentage (four levels) OR close reaches the entry price minus the configured stop-loss percentage
+Exit: Short, close reaches the entry price minus any configured take-profit percentage (four levels) OR close reaches the entry price plus the configured stop-loss percentage

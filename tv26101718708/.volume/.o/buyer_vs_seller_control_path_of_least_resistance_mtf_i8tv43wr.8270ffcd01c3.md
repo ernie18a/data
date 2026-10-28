@@ -1,0 +1,15 @@
+Calculation: Signed-volume balance = rolling sum of signed volume divided by rolling sum of volume; signed volume is volume times (2 × estimated buy fraction − 1), optionally weighted by relative volume. Estimate buy fraction from the normal CDF of the close-to-close return standardized by its rolling standard deviation, or from the bar’s open/close positions within its high-low range.
+Calculation: Control score = weighted mean of fast signed-volume balance (weight 0.30), longer-window signed-volume balance (0.20), session VWAP location and slope (0.20), EMA stack and fast-EMA slope (0.20), and close-location-weighted volume pressure (0.10); omit disabled lenses and renormalize. Reduce its magnitude for absorption (strong control with little price progress or high-volume compression) and scale it by fitted price-impact R². Calculate separately on each configured timeframe, using the last completed bar when frozen, otherwise the forming bar.
+Calculation: Control strength = percentile rank of the absolute control score in that timeframe’s own recent history.
+Calculation: Path = strength-weighted mean of included timeframe control scores, mapped through a logistic function; reduce conviction for positive correlation among timeframe control series, low chart-timeframe Kaufman efficiency ratio, and extreme standardized-return turbulence. Path direction is up when the resulting up probability is at least 0.5, otherwise down; clarity is absolute directional conviction after those reductions.
+Calculation: VSA exhaustion = an upthrust, buy climax, or no-demand event at a high; or stopping volume, shakeout, sell climax, or no-supply event at a low.
+Long: On any timeframe, control score > 0 AND control strength >= neutral-band threshold.
+Short: On any timeframe, control score < 0 AND control strength >= neutral-band threshold.
+Long: Path clarity >= chop threshold AND path direction is up AND chart-timeframe control score > 0 AND chart-timeframe control strength >= neutral-band threshold, when this alignment was false on the previous bar and is true now.
+Short: Path clarity >= chop threshold AND path direction is down AND chart-timeframe control score < 0 AND chart-timeframe control strength >= neutral-band threshold, when this alignment was false on the previous bar and is true now.
+Long: Price < its value lookback bars ago AND chart-timeframe control score > its value lookback bars ago AND a VSA low exhaustion event AND chart-timeframe control has risen by more than the momentum threshold over its lookback.
+Short: Price > its value lookback bars ago AND chart-timeframe control score < its value lookback bars ago AND a VSA high exhaustion event AND chart-timeframe control has fallen by more than the momentum threshold over its lookback.
+Long: Chart-timeframe control score has risen by more than the momentum threshold over its lookback.
+Short: Chart-timeframe control score has fallen by more than the momentum threshold over its lookback.
+Long: Price closes above the opening-range high.
+Short: Price closes below the opening-range low.

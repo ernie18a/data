@@ -1,0 +1,3 @@
+Calculation: Market Facilitation Index = (high - low) / volume * 10000
+Long: (reverse is false AND Market Facilitation Index > buy threshold) OR (reverse is true AND Market Facilitation Index <= buy threshold AND Market Facilitation Index < sell threshold)
+Short: (reverse is false AND Market Facilitation Index <= buy threshold AND Market Facilitation Index < sell threshold) OR (reverse is true AND Market Facilitation Index > buy threshold)

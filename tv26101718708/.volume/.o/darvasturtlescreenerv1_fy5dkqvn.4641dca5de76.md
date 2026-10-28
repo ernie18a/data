@@ -1,0 +1,2 @@
+Calculation: Box top = the high of the most recent bar whose high exceeds the highs of the three bars immediately after it; retain the value until another such high is identified.
+Long: close > box top AND previous close <= previous box top AND volume > its moving average AND close = rolling highest close

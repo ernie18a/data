@@ -1,0 +1,5 @@
+Calculation: Candle fingerprint = for each of the last N bars, upper wick, lower wick, and absolute body as percentages of high-low range; direction is up when close ≥ open and down otherwise; volume ratio is volume divided by its moving average.
+Calculation: Sequence momentum = percentage change from the close N bars ago to the current close.
+Calculation: Historical matches = previously stored N-bar fingerprints with a resolved close at the configured horizon, matching every candle’s upper wick, lower wick, and body within their respective tolerances; matching every candle’s direction when strict direction is enabled, otherwise only the latest candle’s direction; and, when enabled, matching each candle’s volume ratio within its tolerance, sequence momentum within its tolerance, and trading session. Compare only completed bars.
+Long: historical match count ≥ minimum required AND count of matches whose horizon close > their stored sequence close > count of all other matches
+Short: historical match count ≥ minimum required AND count of matches whose horizon close > their stored sequence close < count of all other matches

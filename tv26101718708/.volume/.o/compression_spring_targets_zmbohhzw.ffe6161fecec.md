@@ -1,0 +1,7 @@
+Calculation: block range = high − low of each completed block on the selected block timeframe
+Calculation: block volume = sum of volume within each completed block on the selected block timeframe
+Calculation: range ratio = current completed block range / mean range of the previous N completed blocks
+Calculation: volume ratio = current completed block volume / mean volume of the previous N completed blocks
+Calculation: compression block = range ratio ≤ maximum compression range ratio AND volume ratio ≥ minimum compression volume ratio
+Long: an active spring has at least the minimum number of compression blocks, with no more than the maximum allowed consecutive non-compression gaps; breakout block close > spring high (or breakout block high > spring high in wick mode); range ratio ≥ minimum breakout range ratio; and, when breakout volume is required, volume ratio ≥ minimum breakout volume ratio
+Short: an active spring has at least the minimum number of compression blocks, with no more than the maximum allowed consecutive non-compression gaps; breakout block close < spring low (or breakout block low < spring low in wick mode); range ratio ≥ minimum breakout range ratio; and, when breakout volume is required, volume ratio ≥ minimum breakout volume ratio

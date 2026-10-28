@@ -1,0 +1,1 @@
+On each completed bar, calculate an RSI of the price difference between a higher-amplitude market and a reference market, optionally scaled by the reference price. Go long on the traded instrument when this RSI crosses above an upper threshold; go short when it crosses below a lower threshold. An opposite signal reverses the position; no separate exit rule is specified.

@@ -1,0 +1,4 @@
+Calculation: Buy pressure = sum over the pressure lookback of volume × (close − low) / (high − low), divided by half the summed volume; use 0.5 for the fraction when high = low, and 1 when the denominator is 0.
+Calculation: Sell pressure = sum over the pressure lookback of volume × (1 − (close − low) / (high − low)), divided by half the summed volume; use 0.5 for the fraction when high = low, and 1 when the denominator is 0.
+Long: Bar is confirmed AND buy pressure ≥ pressure threshold AND buy pressure > sell pressure AND the buy-pressure condition was false on the previous bar AND bars since the last buy zone > zone extension
+Short: Bar is confirmed AND sell pressure ≥ pressure threshold AND sell pressure > buy pressure AND the sell-pressure condition was false on the previous bar AND bars since the last sell zone > zone extension

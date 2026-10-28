@@ -1,0 +1,11 @@
+Calculation: Range high/low = highest high / lowest low over the range lookback, including the current bar
+Calculation: Control line = (range high + range low) / 2
+Calculation: Transfer band top/bottom = control line ± control-band width × ATR
+Calculation: Mature range = (range high − range low) / ATR is within the minimum and maximum range-height limits AND, over the range lookback, the sum of upper-edge and lower-edge touches is at least the minimum touch count; an upper-edge touch has high ≥ range high − edge tolerance × ATR, and a lower-edge touch has low ≤ range low + edge tolerance × ATR
+Calculation: Body ratio = abs(close − open) / (high − low)
+Calculation: Range health = rounded 0–100 score: 38% height balance + 34% touch score + 28% balance score; height balance is 55 × range-height/ATR ÷ minimum range-height/ATR below the minimum, 100 within the minimum and maximum, and max(0, 100 − 100 × (range-height/ATR − maximum range-height/ATR) ÷ maximum range-height/ATR) above the maximum; touch score is 100 × total edge touches ÷ (2 × minimum touch count), capped at 100; balance score is 100 − 70 × abs(close − control line) ÷ (range height/2), capped to 0–100
+Calculation: Transfer quality = rounded 0–100 score: 40% range health + 32% body score + 28% volume score; body score is 100 × body ratio ÷ minimum body ratio and volume score is 100 × (volume / average volume over the volume lookback) ÷ volume-confirm ratio, each capped at 100
+Long: Mature range AND close > transfer band top AND body ratio ≥ minimum body ratio AND prior active control side ≤ 0 AND transfer quality ≥ minimum transfer score − 12 OR mature range AND high ≥ range high − edge tolerance × ATR AND close > open AND close > range low + edge tolerance × ATR
+Short: Mature range AND close < transfer band bottom AND body ratio ≥ minimum body ratio AND prior active control side ≥ 0 AND transfer quality ≥ minimum transfer score − 12 OR mature range AND high ≥ range high − edge tolerance × ATR AND close < open AND close < range high − edge tolerance × ATR
+Exit: long, close < transfer band bottom − failure buffer × ATR
+Exit: short, close > transfer band top + failure buffer × ATR

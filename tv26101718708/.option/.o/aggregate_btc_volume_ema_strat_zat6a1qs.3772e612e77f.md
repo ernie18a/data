@@ -1,0 +1,1 @@
+Sum volume across the listed BTC markets on the chart timeframe. Exit any open position when this aggregate volume exceeds its selected short- or long-period moving average multiplied by a threshold. No outside-instrument data determines entries.

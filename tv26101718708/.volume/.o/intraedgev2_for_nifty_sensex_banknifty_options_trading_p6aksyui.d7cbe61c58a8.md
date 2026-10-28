@@ -1,0 +1,27 @@
+Calculation: Opening range high/low = highest high and lowest low during the configured opening-range window; use the completed range.
+Calculation: ATR = average true range over a lookback; breakout and retest buffers use the same ATR lookback.
+Calculation: Relative Momentum Index = Wilder averages of positive and negative close changes over the momentum lookback; calculate changes across the momentum-length bars.
+Calculation: Synthetic cumulative volume delta = cumulative volume × (2 × close − high − low) / (high − low); for zero-range bars, assign volume by close versus prior close.
+Calculation: Session VWAP = cumulative volume-weighted typical price for the current session.
+Calculation: Developing POC = price level with the greatest accumulated volume in the current session profile.
+Calculation: Completed 15-minute and 30-minute bars = aggregate the input bars; evaluate each sweep only when that higher-timeframe bar is complete.
+Long: After the opening range is complete, close is above its high and at least the configured fraction of the candle body is above that high, and the breakout score is at least its threshold.
+Long: After a qualifying upward opening-range break, price retests the range high within the ATR/range buffer and closes above the required level; emit the first and second retest signals separately.
+Long: Price crosses above session VWAP after the prior two closes were below it, with the required body confirmation and reclaim-quality score; OR, price retests VWAP from above after a reclaim and closes above it.
+Long: A lower-wick sweep pierces and closes back above any monitored level (prior-day low, opening-range low, prior close, prior-day VWAP, prior POC, or enabled ADR/weekly levels), with the required wick fraction; OR the equivalent sweep occurs on a completed 15-minute or 30-minute bar.
+Long: Before the opening range is set, the first qualifying lower-wick sweep pierces and closes back above prior-day high, prior-day low, prior-day VWAP, or prior-session POC.
+Long: A bullish synthetic-delta divergence occurs when price makes a lower low than five bars earlier, cumulative delta exceeds its value at the prior five-bar price-pivot low, and the close is in the candle's upper half.
+Long: A confirmed bullish RMI divergence occurs when price makes a lower low while RMI makes a higher low, the prior or current RMI low is oversold, and RMI slope turns upward.
+Long: A higher low forms near an opening-range level, VWAP, prior-day high/low, or prior-day VWAP, with the preceding bar's low lower than both adjacent lows; OR a W pattern forms from two such lows within the configured match and spacing bounds, with at least one required support or divergence confirmation.
+Long: Three consecutive completed 15-minute or 30-minute candles are bullish and each is nested inside the preceding candle, with each candle body smaller than its parent.
+Long: Price crosses above developing POC after the prior two closes were below it, with at least half the candle body above POC; OR, after that cross, price retests POC from above and closes above it.
+Short: After the opening range is complete, close is below its low and at least the configured fraction of the candle body is below that low, and the breakout score is at least its threshold.
+Short: After a qualifying downward opening-range break, price retests the range low within the ATR/range buffer and closes below the required level; emit the first and second retest signals separately.
+Short: Price crosses below session VWAP after the prior two closes were above it, with the required body confirmation and rejection-quality score; OR price retests VWAP from below after a rejection and closes below it.
+Short: An upper-wick sweep pierces and closes back below any monitored level (prior-day high, opening-range high, prior close, prior-day VWAP, prior POC, or enabled ADR/weekly levels), with the required wick fraction; OR the equivalent sweep occurs on a completed 15-minute or 30-minute bar.
+Short: Before the opening range is set, the first qualifying upper-wick sweep pierces and closes back below prior-day high, prior-day low, prior-day VWAP, or prior-session POC.
+Short: A bearish synthetic-delta divergence occurs when price makes a higher high than five bars earlier, cumulative delta is below its value at the prior five-bar price-pivot high, and the close is in the candle's lower half.
+Short: A confirmed bearish RMI divergence occurs when price makes a higher high while RMI makes a lower high, the prior or current RMI high is overbought, and RMI slope turns downward.
+Short: A lower high forms near an opening-range level, VWAP, prior-day high/low, or prior-day VWAP, with the preceding bar's high higher than both adjacent highs; OR an M pattern forms from two such highs within the configured match and spacing bounds, with at least one required resistance or divergence confirmation.
+Short: Three consecutive completed 15-minute or 30-minute candles are bearish and each is nested inside the preceding candle, with each candle body smaller than its parent.
+Short: Price crosses below developing POC after the prior two closes were above it, with at least half the candle body below POC; OR, after that cross, price retests POC from below and closes below it.

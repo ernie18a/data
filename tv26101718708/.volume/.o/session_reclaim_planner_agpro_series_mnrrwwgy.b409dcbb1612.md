@@ -1,0 +1,13 @@
+Calculation: Session high/low = highest high and lowest low during the configured reference session, used after that session completes.
+Calculation: ATR = current-chart-timeframe average true range; ATR used = max(ATR, current true range, minimum price tick).
+Calculation: Volume ratio = current volume / current-chart-timeframe simple moving average of volume; use 1 if the average is unavailable or nonpositive.
+Calculation: Sweep extreme = lowest low since a low-rail loss for a long reclaim, or highest high since a high-rail loss for a short reclaim.
+Calculation: Risk edge = for long, min(sweep extreme, session low − pocket size) − risk buffer; for short, max(sweep extreme, session high + pocket size) + risk buffer. Pocket size and risk buffer are ATR multiples.
+Calculation: Target = selected target model using the reclaimed rail, risk edge, opposite session rail, session range, and configured R multiple. The model may use the opposite rail, the R-multiple target, or the configured hybrid of those references.
+Calculation: Reclaim score = weighted 0–100 score of reclaim-close distance, accepted closes, volume ratio, target room relative to risk, and session-range fit; higher is better. Reclaim-close distance is measured in ATR, target room in risk units, and session range in ATR.
+Long: After the completed reference session, during the monitor session, a low-rail loss reaches the configured minimum ATR depth; within the configured reclaim window, a bar closes at least the configured ATR distance above the session low. The low rail is enabled, no plan or reclaim watch is active, and the reclaim score meets the configured alert threshold.
+Long: An active low-reclaim plan has accepted-close count at least the configured requirement and reclaim score at least the plan-review threshold.
+Short: After the completed reference session, during the monitor session, a high-rail loss reaches the configured minimum ATR depth; within the configured reclaim window, a bar closes at least the configured ATR distance below the session high. The high rail is enabled, no plan or reclaim watch is active, and the reclaim score meets the configured alert threshold.
+Short: An active high-reclaim plan has accepted-close count at least the configured requirement and reclaim score at least the plan-review threshold.
+Exit: long, close <= active risk edge or high >= active target.
+Exit: short, close >= active risk edge or low <= active target.

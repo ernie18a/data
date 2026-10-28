@@ -1,0 +1,3 @@
+Calculation: Price–SAR distance (%) = abs(close − Parabolic SAR) / close × 100
+Long: close > VWAP AND Parabolic SAR < low AND (ATR / close ≥ minimum ATR percentage when the ATR filter is enabled) AND (intraday mode OR Price–SAR distance (%) ≥ minimum distance in swing mode) AND (intraday mode OR the other long conditions have held for the configured consecutive bars in swing mode) AND no long position is open AND more than the configured cooldown bars have elapsed since the last exit AND the bar is confirmed
+Exit: long, close < VWAP for the configured consecutive bars in swing mode (one bar in intraday mode) AND the bar is confirmed

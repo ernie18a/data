@@ -1,0 +1,4 @@
+Calculation: Latest confirmed pivot low = the low of the latest bar lower than the lows of the configured number of bars before and after it
+Calculation: Latest confirmed pivot high = the high of the latest bar higher than the highs of the configured number of bars before and after it
+Long: low < latest confirmed pivot low AND close > latest confirmed pivot low AND (latest confirmed pivot low - low) / latest confirmed pivot low * 100 > minimum sweep percentage AND close > EMA(close) AND volume > simple moving average of volume over 20 bars * volume multiplier
+Short: high > latest confirmed pivot high AND close < latest confirmed pivot high AND (high - latest confirmed pivot high) / latest confirmed pivot high * 100 > minimum sweep percentage AND close < EMA(close) AND volume > simple moving average of volume over 20 bars * volume multiplier

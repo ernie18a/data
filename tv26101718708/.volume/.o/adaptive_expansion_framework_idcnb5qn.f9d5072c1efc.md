@@ -1,0 +1,4 @@
+Calculation: Upper regression channel = linear regression of close over a lookback + a width multiplier × standard deviation of close over the same lookback
+Calculation: Lower regression channel = linear regression of close over a lookback − a width multiplier × standard deviation of close over the same lookback
+Long: close > upper regression channel AND previous close ≤ previous upper regression channel AND true range > ATR × expansion threshold AND (volume confirmation is disabled OR volume is unavailable OR volume > its moving average × volume threshold)
+Short: close < lower regression channel AND previous close ≥ previous lower regression channel AND true range > ATR × expansion threshold AND (volume confirmation is disabled OR volume is unavailable OR volume > its moving average × volume threshold)

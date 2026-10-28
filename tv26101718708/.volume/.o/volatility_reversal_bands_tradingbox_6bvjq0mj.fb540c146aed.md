@@ -1,0 +1,5 @@
+Calculation: Trend basis = EMA of the selected moving average of the selected price source over the trend lookback, smoothed with a shorter EMA lookback
+Calculation: Upper reversal band = EMA of trend basis plus band sensitivity times the standard deviation of the selected price source over the same lookback as the trend moving average, using the same EMA smoothing lookback as the trend basis
+Calculation: Lower reversal band = EMA of trend basis minus band sensitivity times the standard deviation of the selected price source over the same lookback as the trend moving average, using the same EMA smoothing lookback as the trend basis
+Long: Previous bar low < previous bar lower reversal band AND previous bar close < previous bar open AND current bar close > current bar open
+Short: Previous bar high > previous bar upper reversal band AND previous bar close > previous bar open AND current bar close < current bar open

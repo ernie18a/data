@@ -1,0 +1,5 @@
+Calculation: Fast EMA = EMA of close with a shorter lookback than the slow EMA
+Calculation: Slow EMA = EMA of close with a longer lookback than the fast EMA
+Calculation: Pivot low/high = a bar whose low/high is the lowest/highest across equal lookback windows before and after it; detected after the following lookback bars complete
+Long: On the last completed bar, fast EMA > slow EMA AND fast EMA was <= slow EMA on the preceding bar AND the absolute EMA gap is at least a configurable fraction of ATR AND volume > a configurable multiplier × its simple moving average AND a pivot low was detected within twice the pivot lookback bars
+Short: On the last completed bar, fast EMA < slow EMA AND fast EMA was >= slow EMA on the preceding bar AND the absolute EMA gap is at least a configurable fraction of ATR AND volume > a configurable multiplier × its simple moving average AND a pivot high was detected within twice the pivot lookback bars

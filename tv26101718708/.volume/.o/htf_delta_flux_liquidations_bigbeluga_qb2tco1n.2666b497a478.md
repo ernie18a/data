@@ -1,0 +1,4 @@
+Calculation: Signed volume increment = volume if close > open, otherwise −volume
+Calculation: Cumulative volume delta = sum of signed volume increments across chart bars in the current forming higher-timeframe period
+Long: More than one earlier cumulative volume delta value exists in the current forming higher-timeframe period AND signed volume increment > 0 AND abs(signed volume increment) > standard deviation of those earlier cumulative volume delta values × threshold
+Short: More than one earlier cumulative volume delta value exists in the current forming higher-timeframe period AND signed volume increment < 0 AND abs(signed volume increment) > standard deviation of those earlier cumulative volume delta values × threshold

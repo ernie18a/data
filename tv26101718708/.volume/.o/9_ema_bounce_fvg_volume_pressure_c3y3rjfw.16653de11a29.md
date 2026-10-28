@@ -1,0 +1,1 @@
+Long: low is within the configured percentage tolerance of the EMA AND close > EMA AND close > open

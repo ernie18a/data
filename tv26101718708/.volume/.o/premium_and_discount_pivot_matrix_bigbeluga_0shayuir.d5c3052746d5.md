@@ -1,0 +1,5 @@
+Calculation: Channel resistance = highest confirmed pivot high among the most recently retained pivot highs; each pivot high is a bar whose high is the absolute maximum across the configured bars before and after it
+Calculation: Channel support = lowest confirmed pivot low among the most recently retained pivot lows; each pivot low is a bar whose low is the absolute minimum across the configured bars before and after it
+Calculation: Bar midpoint = (high + low) / 2
+Long: On a completed bar, bar midpoint crosses below the previous completed bar's channel support, and more than the configured cooldown interval has elapsed since the prior breakout
+Short: On a completed bar, bar midpoint crosses above the previous completed bar's channel resistance, and more than the configured cooldown interval has elapsed since the prior breakout

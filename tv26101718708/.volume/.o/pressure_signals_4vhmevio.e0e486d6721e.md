@@ -1,0 +1,4 @@
+Calculation: Buy Score = 0.4 × percentage of volume on bars with close ≥ open over the lookback + 0.2 × average lower-wick percentage over the same lookback + 0.2 × clipped momentum score + 0.2 × (100 − RSI); lower-wick percentage = 100 × (min(open, close) − low) / (high − low), or 50 when high = low; momentum score = clamp(10 × (100 × (close − close N bars ago) / close N bars ago + 5), 0, 100)
+Calculation: Sell Score = 100 − Buy Score
+Long: Buy Score ≥ buy threshold OR (fast EMA crosses above slow EMA AND RSI < overbought threshold AND (pressure filter disabled OR Buy Score ≥ buy threshold))
+Short: Sell Score ≥ sell threshold OR (fast EMA crosses below slow EMA AND RSI > oversold threshold AND (pressure filter disabled OR Sell Score ≥ sell threshold))

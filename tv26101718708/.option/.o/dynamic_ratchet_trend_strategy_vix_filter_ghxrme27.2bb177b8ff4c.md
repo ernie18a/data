@@ -1,0 +1,1 @@
+For the traded instrument, allow a long entry when its own trend or breakout rules signal long and the daily VIX is below the configured threshold. If daily VIX rises above that threshold while a position is open, exit immediately. The strategy does not use external data to signal a short.

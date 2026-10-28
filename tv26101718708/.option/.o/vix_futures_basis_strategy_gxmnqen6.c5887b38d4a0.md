@@ -1,0 +1,1 @@
+Compare the front-month and second-month VIX futures prices with the spot VIX index. Go long when both futures prices are above spot VIX; exit the long when both are below spot VIX. Otherwise, take no action.

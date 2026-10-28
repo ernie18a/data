@@ -1,0 +1,2 @@
+Long: VWMA of hl2 over the selected lookback is greater than each of its values over the short comparison lookback
+Exit: long, VWMA of hl2 over the selected lookback is less than or equal to at least one of its values over the short comparison lookback

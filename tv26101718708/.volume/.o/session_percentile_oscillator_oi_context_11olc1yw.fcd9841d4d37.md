@@ -1,0 +1,3 @@
+Calculation: Smoothed session percentile = configured smoothing of the percentile rank of the active session’s cumulative high-low range divided by ATR of the last completed daily bar, compared with completed historical ranges for the same session and weekday, each divided by the preceding completed daily ATR.
+Long: During an active configured session, close < the lowest close of the previous divergence lookback bars AND smoothed session percentile > the lowest smoothed session percentile of the previous same-length lookback.
+Short: During an active configured session, close > the highest close of the previous divergence lookback bars AND smoothed session percentile < the highest smoothed session percentile of the previous same-length lookback.

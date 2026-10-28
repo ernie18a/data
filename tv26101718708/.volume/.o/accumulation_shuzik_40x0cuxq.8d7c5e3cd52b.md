@@ -1,0 +1,5 @@
+Calculation: Bullish FVG = current low > low-lookback bar's high
+Calculation: Bearish FVG = current high < lookback bar's low
+Calculation: FVG chain = Start a chain on an FVG. Add a same-direction FVG if it occurs within the maximum bars since the previous FVG and the pullback from the chain's extreme is at most the maximum percentage of the chain's high-to-low range; update the chain's range and last-FVG bar. Otherwise finalize the chain and start a new one on the current FVG, if any. Without a new FVG, finalize an active chain when either limit is exceeded. For bullish chains, pullback is (chain high − current low) / chain range; for bearish chains, it is (current high − chain low) / chain range. A finalized chain qualifies when its high-to-low range meets the minimum impulse size and, if a prior qualifying chain exists with at least one intervening bar, at least one chain candle body extends beyond the intervening bars' high/low range in the chain's direction. Update the prior qualifying chain only when the finalized chain qualifies.
+Long: finalized bullish FVG chain qualifies
+Short: finalized bearish FVG chain qualifies

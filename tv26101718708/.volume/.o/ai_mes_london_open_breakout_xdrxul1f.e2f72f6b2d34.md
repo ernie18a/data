@@ -1,0 +1,12 @@
+Calculation: Pre-London range high = highest high from 02:30 through 02:59 ET; lock at 03:00 ET and use through the London session.
+Calculation: Pre-London range low = lowest low from 02:30 through 02:59 ET; lock at 03:00 ET and use through the London session.
+Calculation: Confirmed pivot high/low = bar high/low greater/less than the highs/lows of the chosen number of bars on both sides; becomes available after the bars on the right have completed.
+Calculation: 1-hour EMA = EMA of close on the 1-hour timeframe, using the last completed 1-hour bar.
+Calculation: Long stop = the lower of (last confirmed pivot low minus stop buffer) and (signal-bar close minus ATR times stop multiplier).
+Calculation: Short stop = the higher of (last confirmed pivot high plus stop buffer) and (signal-bar close plus ATR times stop multiplier).
+Calculation: Long target = signal-bar close plus (signal-bar close minus long stop) times reward-to-risk ratio.
+Calculation: Short target = signal-bar close minus (short stop minus signal-bar close) times reward-to-risk ratio.
+Long: time is 03:00–05:59 ET AND fewer than the allowed number of entries have occurred this London session AND position is flat AND ((pre-London range size meets the minimum AND close > pre-London range high AND previous close <= pre-London range high) OR (close > last confirmed pivot high AND previous close <= last confirmed pivot high)) AND RSI is at least its long threshold AND (volume filter is disabled OR volume > its moving average times the volume multiplier) AND (higher-timeframe filter is disabled OR close > 1-hour EMA).
+Short: time is 03:00–05:59 ET AND fewer than the allowed number of entries have occurred this London session AND position is flat AND ((pre-London range size meets the minimum AND close < pre-London range low AND previous close >= pre-London range low) OR (close < last confirmed pivot low AND previous close >= last confirmed pivot low)) AND RSI is at most its short threshold AND (volume filter is disabled OR volume > its moving average times the volume multiplier) AND (higher-timeframe filter is disabled OR close < 1-hour EMA).
+Exit: long, low <= stored long stop OR high >= stored long target OR London session ends at 06:00 ET.
+Exit: short, high >= stored short stop OR low <= stored short target OR London session ends at 06:00 ET.

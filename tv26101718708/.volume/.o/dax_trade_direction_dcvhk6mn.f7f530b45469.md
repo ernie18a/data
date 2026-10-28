@@ -1,0 +1,3 @@
+Calculation: Chop = (highest of short-term EMA, longer-term EMA, and VWAP minus lowest of short-term EMA, longer-term EMA, and VWAP) on the last completed bar < half the ATR on the last completed bar
+Long: Chop is false AND the close of each of the two most recent completed bars is above the short-term EMA on its corresponding bar AND the short-term EMA is not equal to the longer-term EMA on the last completed bar
+Short: Chop is false AND the close of each of the two most recent completed bars is below the short-term EMA on its corresponding bar AND the short-term EMA is not equal to the longer-term EMA on the last completed bar

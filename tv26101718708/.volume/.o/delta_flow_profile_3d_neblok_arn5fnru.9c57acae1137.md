@@ -1,0 +1,4 @@
+Calculation: Bar delta = estimated buy volume minus estimated sell volume; estimate from lower-timeframe bars by classifying each as buy/sell by close vs. open, using the previous lower-timeframe close to classify dojis (split volume equally if unchanged); when intrabar estimation is selected but data is unavailable, or bar-geometry estimation is selected, split chart-bar volume by close location within its high-low range (split equally if range is zero).
+Calculation: Delta z-score = (current bar delta − rolling mean bar delta) / rolling standard deviation of bar delta over the baseline lookback, including the current bar; use zero if standard deviation is zero.
+Long: Delta z-score ≥ configured spike threshold AND bar delta > 0
+Short: Delta z-score ≤ −configured spike threshold AND bar delta < 0

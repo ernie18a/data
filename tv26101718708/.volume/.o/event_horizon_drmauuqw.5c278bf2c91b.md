@@ -1,0 +1,16 @@
+Calculation: True range = max(high − low, abs(high − previous close), abs(low − previous close)); ATR = average true range over a lookback; fast ATR and slow ATR use shorter and longer lookbacks.
+Calculation: Volume ratio = volume / average volume over a lookback; volume trend = 5-bar average volume / 20-bar average volume.
+Calculation: Candle location value = (close − low) / max(high − low, minimum tick); body ratio = abs(close − open) / max(high − low, minimum tick); upper and lower wick = high − max(close, open) and min(close, open) − low.
+Calculation: Structure high and low = highest high and lowest low over a lookback; use their prior-bar values to test breaks. Break distance = distance beyond the broken level / ATR.
+Calculation: ATR expansion = ATR / ATR from 10 bars earlier; compression ratio = fast ATR / slow ATR; ATR percentile = percentile rank of ATR over 100 bars.
+Calculation: Trend slope = current linear regression of close over a lookback minus its value one bar earlier; ADX and positive/negative directional indicators = standard 14-period DMI values.
+Calculation: Volume confirmation = volume ratio > 1.15 when required, otherwise true.
+Calculation: Volatility breakout = true range > ATR × sensitivity multiplier AND (candle location value > 0.68 OR candle location value < 0.32) AND volume confirmation; direction is +1 for location > 0.68, −1 for location < 0.32, otherwise 0.
+Calculation: Structure break = (close > prior structure high OR close < prior structure low) AND break distance > 0.10 AND volume confirmation; direction is +1 for an upside break, −1 for a downside break, otherwise 0.
+Calculation: Volume shock = volume ratio > volume sensitivity multiplier AND (true range > 0.85 × ATR OR body ratio > 0.55); direction is +1 when close > open, −1 when close < open, otherwise 0.
+Calculation: Absorption reversal = volume ratio > 0.85 × volume sensitivity multiplier AND body ratio < 0.38 AND (upper wick > 0.42 × candle range OR lower wick > 0.42 × candle range); direction is +1 when lower wick > upper wick, otherwise −1.
+Calculation: Regime shift = (ATR expansion > 1.35 AND compression ratio from 3 bars earlier < 0.90) OR (ADX − ADX from 5 bars earlier > 6 AND true range > 0.90 × ATR); direction is +1 when close > close from 5 bars earlier, otherwise −1.
+Calculation: Event direction = sum of the five event-family directions above; if the sum is positive direction is +1, if negative direction is −1, otherwise use +1 when close > close from the pre-event lookback, −1 when close < that close, and 0 otherwise.
+Calculation: Event trigger = the selected event family is true, or, for composite mode, at least two event families are true. Selected event family is one of volatility breakout, structure break, volume shock, absorption reversal, or regime shift.
+Long: Event trigger AND current bar is confirmed AND sufficient history exists (bar index > pre-event lookback + projection horizon + 150) AND no event was triggered within the minimum event gap AND event direction > 0.
+Short: Event trigger AND current bar is confirmed AND sufficient history exists (bar index > pre-event lookback + projection horizon + 150) AND no event was triggered within the minimum event gap AND event direction < 0.

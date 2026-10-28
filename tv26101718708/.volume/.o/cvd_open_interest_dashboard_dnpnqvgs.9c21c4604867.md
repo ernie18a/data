@@ -1,0 +1,6 @@
+Calculation: Open-interest change = current OI bar close minus previous OI bar close, using the same timeframe as the price bars; current bar may still be forming
+Calculation: CVD direction = +1 if candle volume delta is greater than 1% of total volume, −1 if it is less than −1% of total volume, otherwise 0; candle volume delta is volume for a rising candle, negative volume for a falling candle, and 0 otherwise (or the sum of that calculation on lower-timeframe bars)
+Calculation: OI spike = absolute open-interest change greater than the moving average of absolute open-interest change
+Calculation: Smoothed price and OI = simple moving averages of close and OI, respectively; trend is rising or falling when the current average is greater or less than its previous value
+Long: (OI spike AND ((open-interest change > 0 AND CVD direction = +1) OR (open-interest change < 0 AND CVD direction = −1))) OR (smoothed price rising AND smoothed OI rising)
+Short: (OI spike AND ((open-interest change > 0 AND CVD direction = −1) OR (open-interest change < 0 AND CVD direction = +1))) OR (smoothed price falling AND smoothed OI rising)

@@ -1,0 +1,8 @@
+Calculation: Fast leading line = average of (midpoint of the highest and lowest rolling VWAPs over the shorter Tenkan lookback, and midpoint of the highest and lowest rolling VWAPs over the longer Kijun lookback); both lookbacks are shorter than their slow-line counterparts. Each rolling VWAP is the sum of typical price × volume divided by summed volume over its lookback; typical price = (high + low + close) / 3.
+Calculation: Slow leading line = same calculation as the fast leading line, using longer Tenkan and Kijun lookbacks.
+Calculation: Upper Bollinger Band = SMA of the average of the fast and slow leading lines over a lookback, plus a multiplier times their standard deviation over the same lookback.
+Calculation: TSV = rolling sum over a lookback of volume × (close − previous close).
+Calculation: TSV EMA = exponential moving average of TSV over a shorter lookback than the TSV lookback.
+Calculation: VIDYA = adaptive moving average of hl2, using alpha = 2/(lookback + 1) × absolute CMO; CMO = (sum of positive hl2 changes − sum of absolute negative hl2 changes) / (sum of positive hl2 changes + sum of absolute negative hl2 changes), over that lookback.
+Long: Fast leading line > its previous-bar value AND slow leading line > its previous-bar value AND close > upper Bollinger Band AND TSV > 0 AND TSV > TSV EMA AND (VIDYA filter disabled OR close > VIDYA) AND datetime is within the configured date range.
+Exit: Long, fast leading line < its previous-bar value AND slow leading line < its previous-bar value.

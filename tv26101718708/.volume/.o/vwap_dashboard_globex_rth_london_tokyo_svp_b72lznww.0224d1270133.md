@@ -1,0 +1,4 @@
+Calculation: Globex value area high/low = boundaries around the highest-volume price bucket, expanding toward the adjacent bucket with greater volume until the target share of volume is covered; allocate each bar’s volume to equal-width price buckets in proportion to overlap with its high-low range. Fix bucket bounds from the first bar’s midpoint ±10 times its range; reset the profile each UTC day.
+Calculation: Active-session value area high/low = the same value-area calculation, reset at each Tokyo, London, or RTH session open and accumulated only during that session.
+Long: close >= Globex VWAP OR (active session AND close >= active-session VWAP) OR close > Globex value area high OR (active session AND close > active-session value area high)
+Short: close < Globex VWAP OR (active session AND close < active-session VWAP) OR close < Globex value area low OR (active session AND close < active-session value area low)

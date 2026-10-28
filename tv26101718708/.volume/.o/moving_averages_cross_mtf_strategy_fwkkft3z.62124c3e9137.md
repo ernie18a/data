@@ -1,0 +1,7 @@
+Calculation: Moving average = selected moving-average type applied to its selected source over its lookback; use chart bars or the configured alternate timeframe’s last completed bar
+Calculation: Highest high since entering long = highest high from the long entry through the current bar
+Calculation: Lowest low since entering short = lowest low from the short entry through the current bar
+Long: Shorter-lookback moving average crosses above longer-lookback moving average
+Short: Shorter-lookback moving average crosses below longer-lookback moving average
+Exit: Long, take profit enabled AND close > entry price × (1 + configured take-profit rate) OR stop loss enabled AND close < entry price × (1 − configured stop-loss rate) OR trailing stop enabled AND low ≤ highest high since entering long × (1 − configured trailing-stop rate) AND highest high since entering long ≥ entry price × (1 + configured activation rate)
+Exit: Short, take profit enabled AND close < entry price × (1 − configured take-profit rate) OR stop loss enabled AND close > entry price × (1 + configured stop-loss rate) OR trailing stop enabled AND high ≥ lowest low since entering short × (1 + configured trailing-stop rate) AND lowest low since entering short ≤ entry price × (1 − configured activation rate)

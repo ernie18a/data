@@ -1,0 +1,4 @@
+Calculation: Active swing highs/lows = local highest high or lowest low over the swing-length bars on each side; register only after right-side confirmation, and retain until swept or older than the level-memory limit.
+Calculation: Sweep quality score = 1 point each for wick penetration beyond the level ≥ minimum ATR multiple, distance from sweep extreme to close ≥ minimum ATR multiple, (when volume confirmation is enabled) volume ≥ threshold × volume moving average, and close beyond the midpoint of the prior bar’s body in the reversal direction.
+Long: A bar’s highest-scoring sweep of an active swing high has high > level AND close < level AND sweep quality score ≥ 1.
+Short: A bar’s highest-scoring sweep of an active swing low has low < level AND close > level AND sweep quality score ≥ 1.

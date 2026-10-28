@@ -1,0 +1,1 @@
+Consider long opportunities when external market breadth is in a highlighted oversold zone and the normalized cumulative change in a credit spread is rising. Time entries using the traded instrument’s daily volatility-stop direction and price position, aligned with the weekly trend. No external-data rule specifies shorts or exits.

@@ -1,0 +1,2 @@
+Long: close > EMA(close) AND RSI(close) > 50 AND ((volume is missing OR volume <= 0 OR SMA(volume) <= 0) OR (volume > SMA(volume) AND close > open))
+Short: close < EMA(close) AND RSI(close) < 50 AND ((volume is missing OR volume <= 0 OR SMA(volume) <= 0) OR (volume > SMA(volume) AND close < open))

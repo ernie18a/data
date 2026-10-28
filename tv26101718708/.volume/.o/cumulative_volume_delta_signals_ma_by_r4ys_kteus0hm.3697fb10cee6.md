@@ -1,0 +1,4 @@
+Calculation: Net volume delta = sum the signed volume of lower-timeframe bars within the current chart bar; sign each bar positive when close > open, negative when close < open, otherwise positive when close > the prior lower-timeframe close, negative when close < it, and retain the prior sign when equal (initial sign positive)
+Calculation: Average absolute delta = simple moving average of the absolute net volume delta, including the current chart bar
+Long: Net volume delta >= 0 AND absolute net volume delta > average absolute delta × configured threshold multiple
+Short: Net volume delta < 0 AND absolute net volume delta > average absolute delta × configured threshold multiple

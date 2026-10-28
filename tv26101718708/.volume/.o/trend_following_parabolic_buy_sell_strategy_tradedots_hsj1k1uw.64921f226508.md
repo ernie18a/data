@@ -1,0 +1,5 @@
+Calculation: Moving average = selected simple, exponential, smoothed (RMA), weighted, or volume-weighted moving average of close; use separate lookbacks for the trendline and crossover averages, with the fast lookback shorter than the slow lookback.
+Long: flat position AND close > trendline AND fast moving average > slow moving average AND previous fast moving average <= previous slow moving average AND close > Parabolic SAR
+Short: flat position AND close < trendline AND slow moving average > fast moving average AND previous slow moving average <= previous fast moving average AND close <= Parabolic SAR
+Exit: Long, low <= trendline value recorded at entry OR high >= entry price + (entry price - trendline value recorded at entry) * risk/reward ratio
+Exit: Short, high >= trendline value recorded at entry OR low <= entry price - (trendline value recorded at entry - entry price) * risk/reward ratio

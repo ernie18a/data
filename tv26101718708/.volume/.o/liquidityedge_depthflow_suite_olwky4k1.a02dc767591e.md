@@ -1,0 +1,5 @@
+Calculation: Pivot high/low = a chart-bar high/low greater/less than the highs/lows of the same number of bars on each side; confirmed after the bars on the right have completed.
+Calculation: Lower-timeframe bull volume = sum of lower-timeframe volume within the current chart bar where close >= the preceding lower-timeframe close within that chart bar; classify its first lower-timeframe bar as bull. Lower-timeframe bear volume = sum of the remaining volume. Use lower-timeframe bars available within the current chart bar, which may still be forming.
+Calculation: Bull/bear volume ratio = the respective lower-timeframe volume divided by their combined volume, multiplied by 100. Total volume = combined lower-timeframe bull and bear volume.
+Long: Pivot low is confirmed AND no pivot high is confirmed on the same bar AND total volume >= minimum volume threshold AND bull volume ratio >= dominance threshold
+Short: Pivot high is confirmed AND total volume >= minimum volume threshold AND bear volume ratio >= dominance threshold

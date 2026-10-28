@@ -1,0 +1,4 @@
+Calculation: Ember ratio = sum of signed volume on small bars over a lookback, divided by total volume on those bars; small bars have range no greater than an ATR multiple, and signed volume is positive when close > open, negative when close < open, and zero when close = open.
+Calculation: Ember score = capped, rounded weighted composite of absolute ember ratio, directional ignition, and absolute EMA slope normalized by ATR.
+Long: Ember ratio > 0 AND high − low >= an ATR multiple AND close > open AND close > previous close AND close > bias EMA AND bias EMA has risen over a short lookback AND ember score >= a threshold AND the signal cooldown has elapsed AND the bar is confirmed.
+Short: Ember ratio < 0 AND high − low >= an ATR multiple AND close < open AND close < previous close AND close < bias EMA AND bias EMA has fallen over a short lookback AND ember score >= a threshold AND the signal cooldown has elapsed AND the bar is confirmed.

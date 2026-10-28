@@ -1,0 +1,12 @@
+Calculation: Chart fast EMA = EMA of close with a shorter lookback than the chart slow EMA
+Calculation: Chart slow EMA = EMA of close with a longer lookback than the chart fast EMA
+Calculation: Higher-timeframe EMA = EMA of close on the selected higher timeframe, using the last completed higher-timeframe bar
+Calculation: RSI = relative strength index of close
+Calculation: Session VWAP = volume-weighted average price of hlc3 for the current session
+Calculation: ATR ratio = ATR divided by the moving average of ATR over a longer lookback
+Calculation: Relative volume = volume divided by its moving average
+Calculation: EMA pullback zone = price range within a parameterized ATR-based tolerance of the chart fast EMA
+Calculation: Long score = count of passed conditions: chart bull trend (close above chart slow EMA and chart fast EMA above chart slow EMA); enabled higher-timeframe filter (last completed higher-timeframe close above its EMA); enabled VWAP filter (close above session VWAP); enabled RSI filter (RSI above its long threshold); close above chart fast EMA after the bar range intersects the EMA pullback zone; enabled rising fast EMA slope; enabled ATR ratio within its minimum and maximum; enabled relative volume above its minimum. Disabled filters pass.
+Calculation: Short score = count of passed conditions: chart bear trend (close below chart slow EMA and chart fast EMA below chart slow EMA); enabled higher-timeframe filter (last completed higher-timeframe close below its EMA); enabled VWAP filter (close below session VWAP); enabled RSI filter (RSI below its short threshold); close below chart fast EMA after the bar range intersects the EMA pullback zone; enabled falling fast EMA slope; enabled ATR ratio within its minimum and maximum; enabled relative volume above its minimum. Disabled filters pass.
+Long: bar is confirmed AND within the enabled trading session AND enough bars have passed since the previous signal AND long score meets the parameterized minimum AND chart bull trend AND bar range intersects the EMA pullback zone AND close above chart fast EMA AND (directional candle filter disabled OR close above open) AND no short signal on this bar
+Short: bar is confirmed AND within the enabled trading session AND enough bars have passed since the previous signal AND short score meets the parameterized minimum AND chart bear trend AND bar range intersects the EMA pullback zone AND close below chart fast EMA AND (directional candle filter disabled OR close below open) AND no long signal on this bar

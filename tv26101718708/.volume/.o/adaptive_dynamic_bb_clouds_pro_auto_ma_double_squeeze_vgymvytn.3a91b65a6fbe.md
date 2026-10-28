@@ -1,0 +1,3 @@
+Calculation: Adaptive upper/lower bands = adaptive basis ± standard deviation of close × base multiplier × smoothed dynamic width factor; choose VWMA basis when relative volume is high, otherwise EMA when trend strength is high, otherwise SMA. The dynamic width factor is a smoothed weighted average of magnitude factors for trend strength, relative volume, and RSI distance from its midpoint, weighted by those same measures.
+Long: Close crosses above the adaptive upper band
+Short: Close crosses below the adaptive lower band

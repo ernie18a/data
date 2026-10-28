@@ -1,0 +1,7 @@
+Calculation: Gap size % = max((current low - high two bars earlier) / current low, (low two bars earlier - current high) / current high) × 100, using only positive gap expressions
+Calculation: Gap size score = 100 × gap size % / the 100th percentile of gap size % over the preceding 1000 chart bars, capped at 100
+Calculation: Lower-timeframe buy volume share = sum of volume on lower-timeframe bars within the current chart bar where close > open, divided by the sum of volume on those bars where close > open or close < open; use 50% if the denominator is zero
+Calculation: Bullish zone strength score = integer part of the average of gap size score and lower-timeframe buy volume share
+Calculation: Bearish zone strength score = integer part of the average of gap size score and (100% - lower-timeframe buy volume share)
+Long: current close one bar earlier > current open one bar earlier AND current high < current low AND gap size score > the minimum gap-size cutoff AND bullish zone strength score >= minimum strength score
+Short: current close one bar earlier < current open one bar earlier AND low two bars earlier > current high AND gap size score > the minimum gap-size cutoff AND bearish zone strength score >= minimum strength score

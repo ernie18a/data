@@ -1,0 +1,2 @@
+Long: a double bottom, triple bottom, cup and handle, or inverse head and shoulders pattern is detected
+Short: a double top, triple top, inverted cup and handle, or head and shoulders pattern is detected

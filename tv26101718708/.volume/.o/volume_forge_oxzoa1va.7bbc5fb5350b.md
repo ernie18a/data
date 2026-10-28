@@ -1,0 +1,10 @@
+Calculation: Delta oscillator = EMA of the rolling sum of per-bar directional volume divided by rolling volume, times 100; per-bar directional volume = volume × (close − open) / (high − low), or 0 when high = low
+Calculation: Relative volume = current volume / simple moving average of volume
+Calculation: Money flow = 100 × rolling sum of [volume × ((close − low) − (high − close)) / (high − low)] / rolling volume; use 0 for the per-bar multiplier when high = low
+Calculation: Weis wave direction = track the running close extreme in the current direction; reverse direction when close retraces from that extreme by at least ATR × multiplier
+Calculation: Bullish divergence = a confirmed price pivot low is lower than the prior confirmed price pivot low, while the Delta oscillator at the current pivot is higher than at the prior pivot; pivot separation is 5–60 bars
+Calculation: Bearish divergence = a confirmed price pivot high is higher than the prior confirmed price pivot high, while the Delta oscillator at the current pivot is lower than at the prior pivot; pivot separation is 5–60 bars
+Calculation: Bull score = sum of the configured weights for each true condition: Delta oscillator > 0; Delta oscillator > its prior-bar value; close ≥ open and relative volume ≥ its medium threshold; money flow > 5; money flow > its prior-bar value; Weis wave direction up
+Calculation: Bear score = sum of the configured weights for each true condition: Delta oscillator < 0; Delta oscillator < its prior-bar value; close < open and relative volume ≥ its medium threshold; money flow < −5; money flow < its prior-bar value; Weis wave direction down
+Long: bullish divergence OR (close > open AND at least one Flow Confluence vote exists AND Bull score ≥ signal threshold)
+Short: bearish divergence OR (close < open AND at least one Flow Confluence vote exists AND Bear score ≥ signal threshold)

@@ -1,0 +1,4 @@
+Calculation: Support pool = confirmed swing-low price with a detection band centered on it; band height is configured as an ATR multiple or a percentage of price.
+Calculation: Resistance pool = confirmed swing-high price with a detection band centered on it; band height is configured as an ATR multiple or a percentage of price.
+Long: A support pool was swept when low < its lower band edge − minimum sweep depth × ATR, and within the reclaim window close > the configured reclaim level (upper edge, midpoint, or lower edge), with the reclaim alert enabled and (RSI filter disabled OR the lowest RSI in its extreme window ≤ oversold threshold)
+Short: A resistance pool was swept when high > its upper band edge + minimum sweep depth × ATR, and within the reclaim window close < the configured reclaim level (lower edge, midpoint, or upper edge), with the reclaim alert enabled and (RSI filter disabled OR the highest RSI in its extreme window ≥ overbought threshold)

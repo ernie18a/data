@@ -1,0 +1,9 @@
+Calculation: Current period running body high = highest max(open, close) since the current calculation period began, using chart bars through the previous bar
+Calculation: Current period running body low = lowest min(open, close) since the current calculation period began, using chart bars through the previous bar
+Calculation: Bars in period = number of chart bars in the last completed calculation period
+Long: Not the first bar of a calculation period AND bars since period start >= round(Bars in period / 2) AND low < Current period running body low AND min(open, close) >= Current period running body low
+Long: A confirmed swing low AND the pivot candle's lower wick > 50% of its high-low range
+Long: (close[2] < open[2] AND low[2] <= the current period running body low as of the bar before bar[2] AND low[1] < low[2] AND close[1] > low[2] AND close > open AND close > high[1]) OR (close[1] < open[1] AND low[1] <= the current period running body low as of the bar before bar[1] AND low >= low[1] AND close > open AND close > high[1]) OR (close[1] > open[1] AND high[1] >= the current period running body high as of the bar before bar[1] AND close > high[1])
+Short: Not the first bar of a calculation period AND bars since period start >= round(Bars in period / 2) AND high > Current period running body high AND max(open, close) <= Current period running body high
+Short: A confirmed swing high AND the pivot candle's upper wick > 50% of its high-low range
+Short: (close[2] > open[2] AND high[2] >= the current period running body high as of the bar before bar[2] AND high[1] > high[2] AND close[1] < high[2] AND close < open AND close < low[1]) OR (close[1] > open[1] AND high[1] >= the current period running body high as of the bar before bar[1] AND high <= high[1] AND close < open AND close < low[1]) OR (close[1] < open[1] AND low[1] <= the current period running body low as of the bar before bar[1] AND close < low[1])

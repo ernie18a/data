@@ -1,0 +1,6 @@
+Calculation: Prior liquidity high = highest high over the lookback, excluding the current bar
+Calculation: Prior liquidity low = lowest low over the lookback, excluding the current bar
+Calculation: Bullish score = sum of: low below prior liquidity low and close above it; bullish candle on that sweep; close above VWAP and fast EMA; volume above its average times the volume multiplier; fast EMA above slow EMA; bullish candle body larger than 0.4 ATR; close within 0.4 ATR of VWAP
+Calculation: Bearish score = sum of: high above prior liquidity high and close below it; bearish candle on that sweep; close below VWAP and fast EMA; volume above its average times the volume multiplier; fast EMA below slow EMA; bearish candle body larger than 0.4 ATR; close within 0.4 ATR of VWAP
+Long: low < prior liquidity low AND close > prior liquidity low OR low < prior liquidity low AND close > prior liquidity low AND close > open AND bullish score >= minimum score AND fast EMA > slow EMA AND confirmed bar AND bars since prior long signal > cooldown
+Short: high > prior liquidity high AND close < prior liquidity high OR high > prior liquidity high AND close < prior liquidity high AND close < open AND bearish score >= minimum score AND fast EMA < slow EMA AND confirmed bar AND bars since prior short signal > cooldown

@@ -1,0 +1,2 @@
+Long: Kaufman Adaptive Moving Average with the first, more responsive smoothing settings > Kaufman Adaptive Moving Average with the second smoothing settings AND shorter-lookback Fractal Adaptive Moving Average > longer-lookback Fractal Adaptive Moving Average
+Short: Kaufman Adaptive Moving Average with the first, more responsive smoothing settings < Kaufman Adaptive Moving Average with the second smoothing settings AND shorter-lookback Fractal Adaptive Moving Average < longer-lookback Fractal Adaptive Moving Average

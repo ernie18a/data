@@ -1,0 +1,3 @@
+Calculation: WRMV = 100 × the fraction of prior normalized-volatility values in the longer lookback that are less than or equal to the current value; normalized volatility = 2 × the short-lookback population standard deviation of close ÷ its short-lookback EMA
+Calculation: short-term average = simple moving average of WRMV
+Long: WRMV > its short-term average AND prior WRMV ≤ its prior short-term average

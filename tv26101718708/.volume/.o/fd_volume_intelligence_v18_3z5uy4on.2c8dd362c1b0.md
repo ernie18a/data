@@ -1,0 +1,4 @@
+Calculation: RVOL = current volume / moving average of volume over a configurable lookback
+Calculation: Candle body percentage = 100 × abs(close − open) / (high − low), or 0 when high = low
+Long: volume data is available AND (close >= previous close, or close >= open as configured) AND RVOL >= the configured minimum alert-strength threshold AND (candle body percentage >= the configured minimum OR RVOL >= the extreme-volume threshold and weak-body extreme alerts are enabled)
+Short: volume data is available AND (close < previous close, or close < open as configured) AND RVOL >= the configured minimum alert-strength threshold AND (candle body percentage >= the configured minimum OR RVOL >= the extreme-volume threshold and weak-body extreme alerts are enabled)

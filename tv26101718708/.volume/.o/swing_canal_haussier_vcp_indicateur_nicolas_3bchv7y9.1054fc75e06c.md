@@ -1,0 +1,9 @@
+Calculation: Rising parallel pivot channel = Draw rising lines through the two most recent confirmed pivot lows and, separately, the two most recent confirmed pivot highs; extrapolate both lines to the current bar. The lower line’s slope must be positive, both slopes must be positive, their absolute difference divided by the lower line’s slope must be within a tolerance, and the lower line must be below the upper line.
+Calculation: Near lower channel = The absolute distance from close to the lower channel line, as a percentage of close, is within a maximum percentage OR that distance is within a multiple of ATR.
+Calculation: Volume weak = Short-lookback volume SMA < longer-lookback volume SMA.
+Calculation: Volume decreasing = Current volume < previous bar’s volume OR short-lookback volume SMA < its previous-bar value.
+Calculation: ATR decreasing = ATR < its longer-lookback SMA AND ATR < its previous-bar value.
+Calculation: Contracting range = Short-lookback SMA of high − low < longer-lookback SMA of high − low AND current high − low < previous bar’s high − low.
+Calculation: Relative strength strong = Close divided by benchmark close > its 20-bar SMA AND that SMA > its value five bars earlier.
+Calculation: Signal score = Sum of weighted points for: market close above its long-term SMA, valid rising parallel pivot channel, near lower channel, RSI within a lower and upper bound, weak volume, decreasing volume, decreasing ATR, contracting range, and strong relative strength; cap the sum at 100.
+Long: Signal score >= minimum score AND market close > its long-term SMA AND valid rising parallel pivot channel AND near lower channel AND RSI > lower bound AND RSI < upper bound AND volume weak AND volume decreasing AND ATR decreasing AND relative strength strong AND close > open AND close > previous bar’s high AND earnings filter disabled OR days to next earnings > minimum days OR days to next earnings < 0

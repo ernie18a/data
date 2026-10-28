@@ -1,0 +1,10 @@
+Calculation: Analysis candle = last completed bar on the chart timeframe
+Calculation: 20-bar momentum = close / close 20 bars earlier − 1; calculate the same for the selected benchmark on the same timeframe
+Calculation: Similarity features = 20-bar momentum, RSI(14), ATR(14)/close, volume/SMA(volume,20), close/EMA(20)−1, position of close between the rolling 252-bar low and high, ADX(14,14), difference between symbol and benchmark 20-bar momentum, fraction of (close>EMA(20), EMA(20)>EMA(50), EMA(50)>EMA(200)) that are true, and EMA(20)/EMA(20) five bars earlier−1
+Calculation: Feature distance = min(1, absolute feature difference / scale); scales in feature order are 0.20, 1, 0.05, 2, 0.15, 1, 1, 0.20, 1, 0.10. Weighted mean distance uses weights 1.25, 1, 1, 0.75, 1.25, 0.75, 0.75, 1.25, 1, 1. Similarity = clamp((1 − weighted mean distance) × 100, 0, 100)
+Calculation: Accepted historical matches = rank prior same-timeframe bars with completed forward evaluation periods by similarity; retain matches meeting the minimum similarity and minimum spacing from already retained higher-ranked matches, up to the requested count
+Calculation: Target-first rate = percentage of accepted matches whose high reaches entry close × (1 + target percentage) before their low reaches entry close × (1 − stop percentage), over the forward period; if both occur in one bar, count stop first
+Calculation: Baseline target-first rate = same target-first percentage for regularly spaced prior same-timeframe bars, with spacing equal to the greater of the forward period and minimum match spacing
+Calculation: Median forward return = median across accepted matches of (close after the forward period / historical entry close − 1) × 100
+Long: accepted matches ≥ minimum matches for verdict AND valid baseline samples ≥ minimum baseline samples AND target-first rate − baseline target-first rate ≥ minimum baseline edge AND median forward return > 0
+Short: accepted matches ≥ minimum matches for verdict AND valid baseline samples ≥ minimum baseline samples AND target-first rate − baseline target-first rate ≤ −minimum baseline edge AND median forward return < 0

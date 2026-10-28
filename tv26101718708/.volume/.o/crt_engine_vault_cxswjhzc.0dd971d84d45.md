@@ -1,0 +1,12 @@
+Calculation: Bearish manipulation level = lowest body low across the consecutive bullish chart-timeframe candles ending at the high-sweep extreme candle and preceding it, up to the series lookback
+Calculation: Bullish manipulation level = highest body high across the consecutive nonbullish chart-timeframe candles ending at the low-sweep extreme candle and preceding it, up to the series lookback
+Long: Higher-timeframe candle closes after trading below the previous completed higher-timeframe candle’s low and closes back above it, with the bias filter not set to bearish
+Long: During a higher-timeframe candle, a chart-timeframe candle closes above the previous completed higher-timeframe low after price has traded below that low during the current higher-timeframe candle, with the bias filter not set to bearish
+Long: After a completed higher-timeframe low sweep, a chart-timeframe candle closes above the bullish manipulation level, with the bias filter not set to bearish
+Long: A higher-timeframe candle sweeps both the previous completed higher-timeframe high and low and closes above its open, with the bias filter not set to bearish
+Short: Higher-timeframe candle closes after trading above the previous completed higher-timeframe candle’s high and closes back below it, with the bias filter not set to bullish
+Short: During a higher-timeframe candle, a chart-timeframe candle closes below the previous completed higher-timeframe high after price has traded above that high during the current higher-timeframe candle, with the bias filter not set to bullish
+Short: After a completed higher-timeframe high sweep, a chart-timeframe candle closes below the bearish manipulation level, with the bias filter not set to bullish
+Short: A higher-timeframe candle sweeps both the previous completed higher-timeframe high and low and closes at or below its open, with the bias filter not set to bullish
+Exit: Long, while a completed higher-timeframe sweep has bullish bias, price trades below the swept range low or reaches the previous completed higher-timeframe high
+Exit: Short, while a completed higher-timeframe sweep has bearish bias, price trades above the swept range high or reaches the previous completed higher-timeframe low

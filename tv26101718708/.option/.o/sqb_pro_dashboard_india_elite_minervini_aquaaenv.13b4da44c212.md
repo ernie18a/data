@@ -1,0 +1,1 @@
+Enter long when the instrument is in a strong uptrend, breaking above its recent trading range on elevated volume, and sufficiently liquid, provided its one-year performance relative to the external benchmark rates strong. No short or exit decision is defined.

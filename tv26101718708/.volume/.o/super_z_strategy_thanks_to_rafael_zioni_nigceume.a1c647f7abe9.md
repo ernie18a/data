@@ -1,0 +1,7 @@
+Calculation: Higher-timeframe close, high, and low = values from the current, still-forming higher-timeframe bar (requested with lookahead on; historical bars therefore use that bar’s final values).
+Calculation: Upper trailing level = current higher-timeframe low − multiplier × chart-timeframe ATR; if the previous higher-timeframe close is above the prior upper trailing level, use the greater of this value and the prior upper trailing level.
+Calculation: Lower trailing level = current higher-timeframe high + multiplier × chart-timeframe ATR; if the previous higher-timeframe close is below the prior lower trailing level, use the lesser of this value and the prior lower trailing level.
+Calculation: Trend state = 1 if current higher-timeframe close is above the prior lower trailing level; otherwise −1 if it is below the prior upper trailing level; otherwise retain the prior state, initially 1.
+Calculation: SuperTrend line = upper trailing level when trend state is 1; otherwise lower trailing level.
+Long: Current higher-timeframe close > current SuperTrend line AND previous higher-timeframe close ≤ previous SuperTrend line.
+Short: Current higher-timeframe close < current SuperTrend line AND previous higher-timeframe close ≥ previous SuperTrend line.

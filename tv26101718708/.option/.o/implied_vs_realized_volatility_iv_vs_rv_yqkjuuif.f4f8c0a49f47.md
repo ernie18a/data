@@ -1,0 +1,1 @@
+Compare the matched implied-volatility index with the underlying’s realized volatility over the same horizon. When implied volatility is clearly higher, favor selling option premium; when it is lower, favor buying options or protection. When they are close, treat the premium as fair or thin and avoid initiating short-premium trades.

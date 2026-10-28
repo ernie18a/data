@@ -1,0 +1,6 @@
+Calculation: SuperTrend lines = ATR bands from hl2 ± factor × ATR; trail the lower band upward while prior close is above its prior value and trail the upper band downward while prior close is below its prior value, otherwise reset each to its current band; trend turns bullish when close exceeds the prior upper trail and bearish when close falls below the prior lower trail, otherwise retains its prior state; active line is the lower trail in bullish trend and upper trail in bearish trend, opposite line is the other trail; smooth the active line over a shorter lookback and the opposite line over a longer lookback
+Calculation: ROC movement filter = EMA of percentage close change over a lookback, measured against close from that many bars ago, with EMA lookback half as long; filter is true when EMA is above a positive threshold or below its negative
+Long: longer-smoothed opposite SuperTrend line > shorter-smoothed active SuperTrend line AND MFI > prior bar's MFI AND ROC movement filter is true
+Short: longer-smoothed opposite SuperTrend line < shorter-smoothed active SuperTrend line AND MFI < prior bar's MFI AND ROC movement filter is true
+Exit: long, low ≤ entry price × (1 − stop fraction)
+Exit: short, high ≥ entry price × (1 + stop fraction)

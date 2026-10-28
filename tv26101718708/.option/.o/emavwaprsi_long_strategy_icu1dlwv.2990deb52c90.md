@@ -1,0 +1,1 @@
+Go long when a faster EMA crosses above a slower EMA, the close is at or above VWAP and a longer-term EMA, and RSI is above its threshold and rising. Exit when the close falls below both VWAP and the longer-term EMA, or below the low of the candle immediately before entry.

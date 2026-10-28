@@ -1,0 +1,6 @@
+Calculation: Daily EMA(n) = n-period EMA of daily closes, using the last completed daily bar; n is 8, 21, 50, 100, or 200
+Calculation: Daily SMA(n) = n-period SMA of daily closes, using the last completed daily bar; n is 50, 100, or 200
+Calculation: Chart ATR(14) = 14-period ATR on chart-timeframe bars, using the last completed chart bar
+Calculation: MA tolerance = Chart ATR(14) × tolerance parameter
+Long: For any listed daily MA, (intraday mode AND ((low ≤ MA AND close > MA AND close > open) OR (previous chart-bar close ≤ MA AND close > MA))) OR (swing mode AND low ≤ MA + MA tolerance AND low ≥ MA − 2 × MA tolerance AND close > MA AND close > open) OR (low > MA AND (low − MA) / MA × 100 ≤ proximity parameter AND close > open AND no active entry condition for this MA in either direction)
+Short: For any listed daily MA, (intraday mode AND ((high ≥ MA AND close < MA AND close < open) OR (previous chart-bar close ≥ MA AND close < MA))) OR (swing mode AND high ≥ MA − MA tolerance AND high ≤ MA + 2 × MA tolerance AND close < MA AND close < open) OR (high < MA AND (MA − high) / MA × 100 ≤ proximity parameter AND close < open AND no active entry condition for this MA in either direction)

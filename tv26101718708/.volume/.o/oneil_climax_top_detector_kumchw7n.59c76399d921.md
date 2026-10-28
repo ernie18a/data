@@ -1,0 +1,3 @@
+Calculation: Percentage distance from SMA = (source − simple moving average of source) / simple moving average of source × 100
+Calculation: Runup percentage = (source − source from the runup lookback bars ago) / source from the runup lookback bars ago × 100
+Exit: long, percentage distance from SMA ≥ lower extension band AND runup percentage ≥ minimum runup AND volume ≥ highest volume over the volume record lookback

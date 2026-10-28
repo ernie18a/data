@@ -1,0 +1,4 @@
+Long: After a bar touches the lower Bollinger Band (low <= lower band) and closes at or above VWAP, enter at the next bar's open after a bullish bar (close > open) closes above the 20-period SMA and VWAP.
+Short: After a bar touches the upper Bollinger Band (high >= upper band) and closes at or below VWAP, enter below the 20-period SMA after a bearish bar (close < open) closes below the 20-period SMA and VWAP.
+Exit: Long, low <= the stop below the closer of the lower Bollinger Band and VWAP OR high >= the upper Bollinger Band.
+Exit: Short, high >= the stop above the upper Bollinger Band or VWAP OR low <= the lower Bollinger Band.

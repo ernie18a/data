@@ -1,0 +1,4 @@
+Calculation: volume breakout = current volume > the highest volume among the immediately preceding lookback bars
+Calculation: trailing stop = on a long signal, close minus ATR times a multiplier; while long, the greater of the previous trailing stop and current close minus current ATR times the multiplier; otherwise undefined
+Long: short-term EMA > long-term EMA AND close > short-term EMA AND close > long-term EMA AND RSI > minimum threshold AND RSI < ceiling threshold AND current RSI > previous bar RSI AND ADX > threshold AND current volume > the highest volume among the immediately preceding lookback bars
+Exit: long, close < trailing stop

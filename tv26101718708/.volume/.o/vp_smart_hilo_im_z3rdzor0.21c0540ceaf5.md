@@ -1,0 +1,6 @@
+Calculation: Adaptive HiLo length = rounded base length × (1 + (1 − ATR(14) / SMA(ATR(14), 50)) × adaptive factor), with a minimum of 3
+Calculation: Upper and lower HiLo bands = SMA(high, adaptive HiLo length) and SMA(low, adaptive HiLo length)
+Calculation: HiLo direction = bullish when close is above the upper band, bearish when close is below the lower band, and otherwise retains its previous state
+Calculation: Confirmed swing high/low = a high/low that is the highest/lowest within an equal, parameterized number of bars before and after it; becomes known after those bars complete
+Long: HiLo direction changes to bullish OR the latest confirmed swing high is higher than the preceding confirmed swing high OR the latest confirmed swing low is higher than the preceding confirmed swing low
+Short: HiLo direction changes to bearish OR the latest confirmed swing high is lower than the preceding confirmed swing high OR the latest confirmed swing low is lower than the preceding confirmed swing low

@@ -1,0 +1,1 @@
+Compare the traded instrument’s return with a chosen benchmark over a rolling period, optionally adjusting for benchmark sensitivity and a risk-free return. Go long when this relative alpha crosses above zero; go short when it crosses below zero. No exit rule is specified.

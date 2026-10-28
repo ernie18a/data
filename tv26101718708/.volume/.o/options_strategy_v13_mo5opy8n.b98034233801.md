@@ -1,0 +1,7 @@
+Calculation: Pending bullish EMA crossover = true after the short EMA crosses above the long EMA; remains true until used for a long entry or the short EMA crosses below the long EMA
+Calculation: Pending bearish EMA crossover = true after the short EMA crosses below the long EMA; remains true until used for a short entry or the short EMA crosses above the long EMA
+Calculation: Opening Range High/Low = highest high / lowest low during the 09:30–09:45 New York session
+Long: Pending bullish EMA crossover AND RSI >= long threshold AND volume >= its moving average AND outside blocked entry sessions AND (opening-range filter disabled OR close > Opening Range High)
+Short: Pending bearish EMA crossover AND RSI <= short threshold AND volume >= its moving average AND outside blocked entry sessions AND (opening-range filter disabled OR close < Opening Range Low)
+Exit: Long, low <= entry price - (ATR at entry × stop multiplier) OR high >= entry price + (ATR at entry × stop multiplier × take-profit/stop-loss ratio) OR short EMA < long EMA after previously being above it OR New York time is 15:55
+Exit: Short, high >= entry price + (ATR at entry × stop multiplier) OR low <= entry price - (ATR at entry × stop multiplier × take-profit/stop-loss ratio) OR short EMA > long EMA after previously being below it OR New York time is 15:55

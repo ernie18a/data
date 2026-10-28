@@ -1,0 +1,11 @@
+Calculation: ATR = average true range over a lookback.
+Calculation: Relative volume = current volume / simple moving average of volume over a lookback.
+Calculation: Range high/low = highest high / lowest low over a lookback, excluding the current bar.
+Calculation: Wick-to-body ratio = upper/lower wick divided by max(abs(close − open), minimum tick); upper wick = high − max(open, close), lower wick = min(open, close) − low.
+Calculation: Close location = (close − low) / max(high − low, minimum tick).
+Calculation: Rejection score = round(clamp(28×N(relative volume; 0.8×volume threshold, 2.15×volume threshold) + 24×N(wick-to-body ratio; wick threshold, 2.25×wick threshold) + 12×N(wick size/ATR; minimum wick/ATR, 3.5×minimum wick/ATR) + 16×L(edge distance/ATR; 0, 1.8×edge tolerance/ATR) + 18×close score/18 + 12×N(room/ATR; 0.4, room-guide distance/ATR), 0, 100)); N(x;a;b)=clamp((x−a)/(b−a)×100,0,100); L(x;a;b)=clamp((b−x)/(b−a)×100,0,100); long close score=clamp(close location×18,0,18), short close score=clamp((1−close location)×18,0,18); long room=range high−close, short room=close−range low; edge distance is the absolute distance from the relevant range edge to the rejection wick.
+Calculation: Risk edge = long rejection-bar low − ATR×risk buffer; short rejection-bar high + ATR×risk buffer.
+Long: lower wick is within ATR×edge tolerance of the prior range low AND relative volume ≥ adjusted volume threshold AND lower-wick-to-body ratio ≥ adjusted wick threshold AND lower wick ≥ ATR×minimum wick size AND close location ≥ required close location AND long rejection score ≥ minimum score AND (short event is not qualified OR long score ≥ short score) AND cooldown since the prior event has elapsed.
+Short: upper wick is within ATR×edge tolerance of the prior range high AND relative volume ≥ adjusted volume threshold AND upper-wick-to-body ratio ≥ adjusted wick threshold AND upper wick ≥ ATR×minimum wick size AND close location ≤ 1 − required close location AND short rejection score ≥ minimum score AND (long event is not qualified OR short score > long score) AND cooldown since the prior event has elapsed.
+Exit: Long, close < long risk edge.
+Exit: Short, close > short risk edge.

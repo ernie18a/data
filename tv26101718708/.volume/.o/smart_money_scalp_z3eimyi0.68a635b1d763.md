@@ -1,0 +1,2 @@
+Long: current close > latest confirmed fractal pivot high (if close-break mode); otherwise current high > latest confirmed fractal pivot high
+Short: current close < latest confirmed fractal pivot low (if close-break mode); otherwise current low < latest confirmed fractal pivot low

@@ -1,0 +1,4 @@
+Calculation: Normalized momentum = Let raw momentum be 100 × (shorter-period close EMA − longer-period close EMA) / longer-period close EMA; scale it to [-1, 1] using its rolling lowest and highest raw momentum over a lookback: 2 × (raw momentum − lowest) / (highest − lowest) − 1; use 0 when highest equals lowest
+Calculation: Momentum signal = EMA of normalized momentum
+Long: close > base EMA AND fast EMA > slow EMA AND normalized momentum > 0 AND normalized momentum > momentum signal AND normalized momentum < overbought threshold AND close > open AND volume >= simple moving average of volume × surge threshold
+Short: close < base EMA AND fast EMA < slow EMA AND normalized momentum < 0 AND normalized momentum < momentum signal AND normalized momentum > oversold threshold AND close < open AND volume >= simple moving average of volume × surge threshold

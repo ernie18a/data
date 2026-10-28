@@ -1,0 +1,7 @@
+Calculation: Active range = While inactive, start a range when the lookback highest high minus lowest low, divided by the lowest low, is above the minimum-width threshold and at or below the maximum-width limit, and each of the prior minimum-bars highs and lows lies within those lookback bounds. The maximum-width limit is either the configured percentage or 30 × ATR over the lookback divided by the lowest low, whichever is greater than the 3% floor. Freeze the bounds on activation; keep the range active until a bar closes above its high or below its low.
+Calculation: Discount EQ = range low + 1/8 × (range high − range low)
+Calculation: Premium EQ = range high − 1/8 × (range high − range low)
+Calculation: Buy retest state = While the range is active, advance from state 0 to 1 when close < Discount EQ; from 1 to 2 when close > Discount EQ; from 2 to 3 when low ≤ Discount EQ AND close > Discount EQ. Reset to 0 when a new range starts; do not advance after state 3.
+Calculation: Sell retest state = While the range is active, advance from state 0 to 1 when close > Premium EQ; from 1 to 2 when close < Premium EQ; from 2 to 3 when high ≥ Premium EQ AND close < Premium EQ. Reset to 0 when a new range starts; do not advance after state 3.
+Long: Active range AND (Buy retest state advances from 2 to 3 OR low < range low AND close > range low OR close > range high)
+Short: Active range AND (Sell retest state advances from 2 to 3 OR high > range high AND close < range high OR close < range low)

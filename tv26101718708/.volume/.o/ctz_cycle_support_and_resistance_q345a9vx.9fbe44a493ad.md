@@ -1,0 +1,3 @@
+Calculation: A/D = cumulative sum of volume × ((close − low) − (high − close)) / (high − low), using 0 when high = low; compare its values at confirmed price pivots.
+Long: At a confirmed pivot low, its price is lower than the previous confirmed pivot low AND its A/D value is higher than at that previous pivot low.
+Short: At a confirmed pivot high, its price is higher than the previous confirmed pivot high AND its A/D value is lower than at that previous pivot high.

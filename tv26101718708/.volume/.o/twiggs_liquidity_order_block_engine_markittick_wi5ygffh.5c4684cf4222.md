@@ -1,0 +1,7 @@
+Calculation: TMF = Divide the recursively smoothed money-flow volume by recursively smoothed volume, both using the same lookback and smoothing factor 1/lookback. For each bar, true high = max(high, previous close), true low = min(low, previous close), and money-flow volume = volume × (2 × (close − true low)/(true high − true low) − 1); use 0 when true range is 0. Initialize each smoother with its first input.
+Calculation: TMF signal = Recursively smooth TMF with a shorter lookback than the TMF lookback and smoothing factor 1/lookback; initialize with the first TMF value.
+Calculation: Active swing high = A high that is strictly greater than the highs of the same number of bars before and after it; retain the latest such level until broken.
+Calculation: Active swing low = A low that is strictly lower than the lows of the same number of bars before and after it; retain the latest such level until broken.
+Long: TMF crosses above 0 OR TMF crosses above TMF signal OR the close breaks above the active swing high OR TMF is greater than or equal to TMF signal.
+Short: TMF crosses below 0 OR TMF crosses below TMF signal OR the close breaks below the active swing low OR TMF is below TMF signal.
+Exit: long, TMF crosses below TMF signal AND TMF is above the overbought threshold.

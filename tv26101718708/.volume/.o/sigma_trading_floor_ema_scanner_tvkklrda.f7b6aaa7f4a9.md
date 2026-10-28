@@ -1,0 +1,3 @@
+Calculation: EMA distance = absolute difference between the shorter-period and longer-period EMAs of close, divided by close and multiplied by 100
+Long: EMA distance <= compression threshold AND close > both EMAs AND RSI > configured minimum AND volume > its moving average times volume multiplier AND high - low > ATR times range multiplier
+Short: EMA distance <= compression threshold AND close < both EMAs AND RSI < configured sell threshold AND volume > its moving average times volume multiplier AND high - low > ATR times range multiplier

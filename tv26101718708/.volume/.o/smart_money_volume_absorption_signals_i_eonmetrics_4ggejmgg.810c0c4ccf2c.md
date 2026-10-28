@@ -1,0 +1,9 @@
+Calculation: Close position = (close − low) / (high − low); use 0.5 when high = low
+Calculation: Volume percentile rank = percentile rank of volume over a lookback on the chart timeframe
+Calculation: Body percentile rank = percentile rank of absolute (close − open) over a lookback on the chart timeframe
+Calculation: Stop = long: absorption-bar low; short: absorption-bar high
+Calculation: Target 1 = long: entry price + target multiple × abs(entry price − stop); short: entry price − target multiple × abs(entry price − stop)
+Long: On a confirmed bar, start a setup if volume > 0 and volume percentile rank ≥ its threshold and close position ≥ 1 − its threshold and (trend filter off or close > chart-timeframe EMA); then, on a distinct following bar, close > open; then, on a distinct following bar, body percentile rank ≥ its threshold and close > open; then, on a later bar, low ≤ expansion-bar open and close > expansion-bar open; the setup has not been invalidated or expired and no position is open
+Short: On a confirmed bar, start a setup if volume > 0 and volume percentile rank ≥ its threshold and close position ≤ its threshold and (trend filter off or close < chart-timeframe EMA); then, on a distinct following bar, close < open; then, on a distinct following bar, body percentile rank ≥ its threshold and close < open; then, on a later bar, high ≥ expansion-bar open and close < expansion-bar open; the setup has not been invalidated or expired and no position is open
+Exit: long, low ≤ stop OR high ≥ target 1; if both are true on the same bar, exit at stop
+Exit: short, high ≥ stop OR low ≤ target 1; if both are true on the same bar, exit at stop

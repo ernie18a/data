@@ -1,0 +1,8 @@
+Calculation: HMA = WMA(2 × WMA(close, half-length) − WMA(close, length), square root of length); the fast HMA uses a shorter length than the slow HMA
+Long: Fast HMA crosses above slow HMA
+Short: Fast HMA crosses below slow HMA
+Long: Open < 9-period EMA AND Open < 21-period EMA AND Close > 9-period EMA AND Close > 21-period EMA; then, on a subsequent bar, a lower-timeframe close > setup-bar high before any lower-timeframe close < setup-bar low
+Short: Open > 9-period EMA AND Open > 21-period EMA AND Close < 9-period EMA AND Close < 21-period EMA; then, on a subsequent bar, a lower-timeframe close < setup-bar low before any lower-timeframe close > setup-bar high
+Long: Open < upper Bollinger Band AND Close > upper Bollinger Band; within the configured watch period, a later bar's low is within the configured percentage tolerance of the 9-period EMA while its close ≥ 9-period EMA, then a lower-timeframe close > retest-bar high before the configured watch period expires; cancel if a bar closes < 9-period EMA and a lower-timeframe close < that bar's low
+Short: Open > lower Bollinger Band AND Close < lower Bollinger Band; within the configured watch period, a bar's close ≥ setup-bar low AND its high is within the configured percentage tolerance of the 9-period EMA, then a lower-timeframe close < retest-bar low before the configured watch period expires; cancel if a bar closes > 9-period EMA and a lower-timeframe close > that bar's high
+Exit: 

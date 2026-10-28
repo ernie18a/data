@@ -1,0 +1,5 @@
+Calculation: Opening range high = highest high during the configured opening interval of the current trading day, accumulated from current-timeframe bars and fixed when the interval ends
+Calculation: Opening range low = lowest low during the configured opening interval of the current trading day, accumulated from current-timeframe bars and fixed when the interval ends
+Calculation: Volume average = simple moving average of volume over the configured lookback
+Long: current intraday time is after the opening interval AND the opening range is fixed AND (close > opening range high AND previous close <= opening range high OR high > opening range high AND previous high <= opening range high) AND (volume filter is disabled OR volume > volume average × configured multiplier) AND no earlier long signal occurred today
+Short: current intraday time is after the opening interval AND the opening range is fixed AND (close < opening range low AND previous close >= opening range low OR low < opening range low AND previous low >= opening range low) AND (volume filter is disabled OR volume > volume average × configured multiplier) AND no earlier short signal occurred today

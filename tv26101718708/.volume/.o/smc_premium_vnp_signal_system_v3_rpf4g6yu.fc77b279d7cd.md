@@ -1,0 +1,10 @@
+Calculation: HTF bias = short-term EMA > long-term EMA and current price > long-term EMA for bullish bias; reverse both comparisons for bearish bias, using the last completed higher-timeframe bar.
+Calculation: Confirmed swing high/low = most recent pivot high/low, confirmed after equal lookbacks on both sides; a new pivot is active until broken. Break price is the bar high/low for wick mode or close for body mode.
+Calculation: Long/short confidence = weighted points for, respectively, bullish/bearish trend, strong ADX, directional DI, RSI in its configured entry band, directional MACD, volume above its average, ATR above its average, an opposite-side swing sweep, a directional three-bar fair value gap, and a directional candle body exceeding an ATR-based threshold; compare each score with its configured gate.
+Calculation: Bullish/bearish trend = short-term EMA above/below intermediate-term EMA, close above/below long-term EMA, and matching HTF bias.
+Calculation: Long/short stop = close minus/plus the distance from close to the current low/high adjusted by adaptive ATR; adaptive ATR is RMA true range times the configured multiplier, adjusted higher for strong ADX and lower otherwise.
+Calculation: Active target = entry price plus/minus configured reward-to-risk multiple times stop distance times the selected target tier.
+Long: No open position AND break price > active confirmed swing high AND bullish confidence meets its gate AND bullish trend AND ADX exceeds its strength threshold.
+Short: No open position AND break price < active confirmed swing low AND bearish confidence meets its gate AND bearish trend AND ADX exceeds its strength threshold.
+Exit: Long, high >= active target OR (close-trigger mode ? close : low) <= long stop.
+Exit: Short, low <= active target OR (close-trigger mode ? close : high) >= short stop.

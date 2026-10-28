@@ -1,0 +1,5 @@
+Calculation: score = +1 for each true condition and −1 for each false condition: MACD line > signal line; stochastic %K > %D; momentum > 0; RSI > 50; Vortex + > Vortex −; +DI > −DI; MFI > 50; Fisher Transform > its signal line
+Long: score ≥ long-entry threshold AND Parabolic SAR < close AND RSI < long RSI limit AND not bankrupt AND current bar is later than cooldownBars after the most recent bar where ADX < ADX limit AND ATR > its longer-lookback SMA
+Short: score ≤ short-entry threshold AND Parabolic SAR > close AND RSI > short RSI limit AND not bankrupt AND current bar is later than cooldownBars after the most recent bar where ADX < ADX limit AND ATR > its longer-lookback SMA
+Exit: Long, score ≤ long-exit threshold OR Parabolic SAR > close
+Exit: Short, score ≥ short-exit threshold OR Parabolic SAR < close

@@ -1,0 +1,8 @@
+Calculation: Each moving-average center = (EMA(close, lookback) + SMA(close, same lookback)) / 2; use three lookbacks, with the second longer than the first and the third longer than the second
+Calculation: Short-lookback spread (%) = abs(EMA - SMA) / first center × 100
+Calculation: Second- and third-lookback distances (%) = abs(that lookback's center - first center) / first center × 100
+Calculation: Ribbon high/low = maximum/minimum of all six EMAs and SMAs
+Calculation: Body = abs(close - open); upper wick = high - max(close, open); lower wick = min(close, open) - low
+Calculation: Volume spike = current volume ≥ average of the previous N bars' volume × multiplier AND current volume ≥ minimum volume
+Long: All three moving-average tightness/distance percentages are at or below their respective thresholds on the current bar, and the most recent such bar is within the monitoring window, and current volume is a volume spike, and close > ribbon high, and close > open, and body ≥ upper wick × ratio, and the previous same-direction signal was more than the ignore interval ago
+Short: All three moving-average tightness/distance percentages are at or below their respective thresholds on the current bar, and the most recent such bar is within the monitoring window, and current volume is a volume spike, and close < ribbon low, and close < open, and body ≥ lower wick × ratio, and the previous same-direction signal was more than the ignore interval ago

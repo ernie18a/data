@@ -1,0 +1,3 @@
+Calculation: Volume ratio = sum(volume, shorter lookback) / (sum(volume, longer lookback) / (longer lookback / shorter lookback))
+Long: (Volume ratio is rising over its rising lookback OR Volume ratio crosses above threshold) AND close > close from the direction lookback bars ago AND datetime is within the configured test period
+Exit: Long, (Volume ratio is rising over its rising lookback OR Volume ratio crosses above threshold) AND close < close from the direction lookback bars ago OR Volume ratio is falling over its falling lookback OR (Volume ratio crosses above threshold 2 AND close < close from the direction lookback bars ago)

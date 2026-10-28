@@ -1,0 +1,9 @@
+Calculation: Heikin Ashi candles = close is (open + high + low + close) / 4; first open is (open + close) / 2, then open is the average of the previous Heikin Ashi open and close; high and low are the maximum and minimum of the source high/low and Heikin Ashi open/close.
+Calculation: Doji = Heikin Ashi body / total range <= configured maximum, and each wick >= body × configured wick multiplier.
+Calculation: No significant upper/lower wick = that wick / total Heikin Ashi range <= configured wick tolerance (a zero-range candle passes).
+Calculation: Long stop = signal-bar Heikin Ashi low; long target = signal-bar close + (signal-bar close − long stop) × configured risk/reward ratio.
+Calculation: Short stop = signal-bar Heikin Ashi high; short target = signal-bar close − (short stop − signal-bar close) × configured risk/reward ratio.
+Long: previous two Heikin Ashi candles are bearish and each has no significant upper wick AND current Heikin Ashi candle is a doji with total range greater than the previous candle's AND Supertrend is up AND ADX >= configured minimum AND selected bullish structure filter passes AND current bar is within the configured trading session and timezone AND (volume filter is disabled OR volume >= its configured-period EMA × configured multiplier) AND flat
+Short: previous two Heikin Ashi candles are bullish and each has no significant lower wick AND current Heikin Ashi candle is a doji with total range greater than the previous candle's AND Supertrend is down AND ADX >= configured minimum AND selected bearish structure filter passes AND current bar is within the configured trading session and timezone AND (volume filter is disabled OR volume >= its configured-period EMA × configured multiplier) AND flat
+Exit: long, low <= long stop OR high >= long target
+Exit: short, high >= short stop OR low <= short target

@@ -1,0 +1,4 @@
+Calculation: Weighted relative strength = 100 × (the stock’s weighted average of price-to-price ratios over four progressively longer lookbacks, with the shortest lookback weighted twice as much as each other lookback ÷ the equal-weighted average of the same weighted ratios for the benchmark) − 100
+Calculation: High-volume down-day count = number of bars in the rolling lookback where close < prior close, the percentage loss is at least the minimum loss, and volume > its moving average × the high-volume factor
+Long: Weighted relative strength crosses above 0 OR weighted relative strength crosses above the strong threshold OR (weighted relative strength ≥ the strong threshold AND high-volume down-day count ≤ the allowed maximum AND NOT (the allowed maximum > 0 AND high-volume down-day count = the allowed maximum))
+Short: Weighted relative strength crosses below 0

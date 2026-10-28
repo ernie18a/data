@@ -1,0 +1,6 @@
+Calculation: Box close range (%) = (highest close − lowest close) / lowest close × 100 over the previous box lookback bars
+Calculation: Minimum Bollinger Band width (%) = the minimum of (upper band − lower band) / close × 100 over the current bar and previous box lookback bars
+Calculation: EMA distance from box low (%) = absolute value of the previous bar’s EMA minus the lowest close over the previous box lookback bars, divided by that lowest close, × 100
+Calculation: Recent volume average = average volume over the previous half-box lookback bars; full volume average = average volume over the previous full box lookback bars
+Calculation: Higher lows = the lowest low over the previous half-box lookback bars is greater than the lowest low over the previous full box lookback bars
+Long: Box close range is between 0% and its maximum, inclusive AND minimum Bollinger Band width is below its maximum AND EMA distance from box low is below its maximum AND recent volume average is below full volume average AND OBV is greater than its value half a box lookback ago AND RSI is greater than its value half a box lookback ago AND higher lows hold AND the same conditions were not all true on the previous bar

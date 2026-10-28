@@ -1,0 +1,3 @@
+Calculation: Volume growth percentage = current bar volume × close divided by previous completed bar volume × close, multiplied by 100; calculate separately on 1-hour, 4-hour, and daily bars, using the current bar while it is forming
+Long: 1-hour volume growth percentage >= 100 OR 4-hour volume growth percentage >= 100 OR daily volume growth percentage >= 100
+Short: 1-hour volume growth percentage < 100 OR 4-hour volume growth percentage < 100 OR daily volume growth percentage < 100

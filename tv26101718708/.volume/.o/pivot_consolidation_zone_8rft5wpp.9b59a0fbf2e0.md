@@ -1,0 +1,9 @@
+Calculation: Zone ATR = ATR over a lookback; breakout margin = Zone ATR × minimum breakout size.
+Calculation: Confirmed pivot high/low = a local high/low confirmed by the same number of bars on both sides; the pivot candle's high-low range is its test range. A pivot is tested when a later bar overlaps that range; count each consecutive overlap run once.
+Calculation: Active zone = a tested confirmed pivot high above a tested confirmed pivot low, with pivot separation within the maximum distance, every close from the earlier pivot through the current bar within [pivot low − breakout margin, pivot high + breakout margin], and (if the ATR height cap is enabled) pivot high − pivot low within the configured multiple of Zone ATR. Zone top = pivot high; zone bottom = pivot low.
+Calculation: Zone buy volume and sell volume = accumulated volume for bars in the zone, weighted by the fraction of each candle's range inside the zone (or its full range if outside wicks are included); split each counted amount by (close − low)/(high − low) for buy and (high − close)/(high − low) for sell.
+Long: Active zone AND close > zone top + breakout margin AND (volume confirmation disabled OR zone buy volume >= zone sell volume).
+Short: Active zone AND close < zone bottom − breakout margin AND (volume confirmation disabled OR zone sell volume > zone buy volume).
+Calculation: TP/SL risk distance = either TP/SL ATR × its multiplier or entry price × configured stop percentage. For a long, stop = entry price − risk distance and targets = entry price + risk distance × each enabled reward ratio; for a short, stop = entry price + risk distance and targets = entry price − risk distance × each enabled reward ratio. TP/SL ATR uses a lookback independent of Zone ATR.
+Exit: Long, low <= stop OR (a target is enabled and high >= the farthest enabled target).
+Exit: Short, high >= stop OR (a target is enabled and low <= the farthest enabled target).

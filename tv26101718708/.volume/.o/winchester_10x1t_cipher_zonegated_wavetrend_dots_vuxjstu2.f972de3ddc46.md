@@ -1,0 +1,3 @@
+Calculation: WaveTrend fast line = EMA of the channel index, where the channel index is (HLC3 − EMA(HLC3, channel lookback)) / (0.015 × EMA(abs(HLC3 − EMA(HLC3, channel lookback)), same lookback); signal line = SMA(fast line, shorter lookback)
+Long: fast line > signal line AND previous fast line <= previous signal line AND signal line <= first oversold level
+Short: fast line < signal line AND previous fast line >= previous signal line AND signal line >= first overbought level

@@ -1,0 +1,7 @@
+Calculation: EP candle = a bar whose close is at least the required percentage above the previous bar’s close; use the latest such bar and keep it valid only up to the maximum age.
+Calculation: Relative outperformance = the instrument’s percentage return from the latest EP candle’s close to the current close minus the benchmark’s percentage return over the same bars.
+Calculation: Distance below rolling high = (highest high over the lookback − current close) / highest high over the lookback.
+Calculation: EMA cloud = close is no higher than EMA9 plus the cloud tolerance and no lower than EMA21 minus the cloud tolerance; require EMA9 > EMA21 > EMA50.
+Calculation: Teal bar = volume is at or below the dip-volume multiple of its moving average, and close is from 0% to the allowed maximum distance above EMA9.
+Calculation: Valid teal entry level = the high of the latest teal bar, while that bar is no older than the teal-bar lookback.
+Long: close > valid teal entry level AND current bar is not a teal bar AND a valid EP candle exists AND relative outperformance >= required minimum AND distance below rolling high <= allowed maximum AND EMA cloud holds AND volume <= dip-volume multiple × volume moving average

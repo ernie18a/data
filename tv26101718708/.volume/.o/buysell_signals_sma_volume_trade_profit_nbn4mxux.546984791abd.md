@@ -1,0 +1,2 @@
+Long: not in a position AND close > open AND close > longer-lookback close SMA AND (close - longer-lookback close SMA) / longer-lookback close SMA <= maximum allowed percentage above that SMA AND close > shorter-lookback close SMA AND volume > volume SMA
+Exit: long, previous close >= previous shorter-lookback close SMA AND close < shorter-lookback close SMA

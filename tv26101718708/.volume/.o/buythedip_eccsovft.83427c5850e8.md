@@ -1,0 +1,4 @@
+Calculation: Full bullish MA alignment = close > shortest moving average > each successively longer moving average > longest moving average, using the same configured moving-average type for all averages
+Calculation: Trailing stop = close − ATR × configured multiplier, ratcheted upward to at least its prior value while long
+Long: Full bullish MA alignment occurred within the configured lookback AND (close crosses above the lower Bollinger Band OR close crosses above the middle Bollinger Band) AND datetime is within the configured backtest date range
+Exit: long, (close crosses below the upper Bollinger Band AND signal exits are enabled) OR (low <= trailing stop AND trailing-stop exits are enabled)

@@ -1,0 +1,4 @@
+Calculation: Top anchored VWAP = cumulative sum of close × volume divided by cumulative volume, starting at the user-selected top anchor bar and including the current bar
+Calculation: Bottom anchored VWAP = cumulative sum of close × volume divided by cumulative volume, starting at the user-selected bottom anchor bar and including the current bar
+Short: after the top anchor bar, high ≥ Top anchored VWAP AND close < Top anchored VWAP AND close < previous bar’s Top anchored VWAP
+Long: after the bottom anchor bar, low ≤ Bottom anchored VWAP AND close > Bottom anchored VWAP AND close > previous bar’s Bottom anchored VWAP

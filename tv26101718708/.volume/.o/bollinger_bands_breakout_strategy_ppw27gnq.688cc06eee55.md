@@ -1,0 +1,4 @@
+Long: close > upper Bollinger Band AND close > trend SMA AND no long entry has occurred since the most recent bar where close < upper Bollinger Band
+Short: close < lower Bollinger Band AND close < trend SMA AND no short entry has occurred since the most recent bar where close > lower Bollinger Band
+Exit: long, bars held >= minimum bars before exit AND (high >= entry price + take-profit amount in ticks OR low <= entry price - stop-loss amount in ticks)
+Exit: short, bars held >= minimum bars before exit AND (low <= entry price - take-profit amount in ticks OR high >= entry price + stop-loss amount in ticks)

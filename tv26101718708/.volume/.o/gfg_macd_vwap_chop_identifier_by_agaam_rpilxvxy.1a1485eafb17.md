@@ -1,0 +1,7 @@
+Calculation: MACD, signal line, histogram, ATR, ADX, VWAP, and close = calculated on the selected MACD timeframe; use the current bar as it forms. In a backtest, aggregate these bars from the input data.
+Calculation: Normalized histogram, MACD, and slopes = absolute histogram, absolute MACD, and absolute one-bar change in MACD or signal line, respectively, divided by ATR.
+Calculation: Histogram flips = count over a shorter lookback of changes between consecutive nonzero histogram signs.
+Calculation: VWAP distance = absolute distance between close and VWAP divided by ATR; VWAP crosses = count over a shorter lookback of close crossing VWAP.
+Calculation: Chop score = count of enabled conditions: normalized histogram <= its compression threshold; normalized MACD <= its near-zero threshold; normalized MACD slope <= its flatness threshold; normalized signal-line slope <= its flatness threshold; histogram flips >= their limit; ADX < its weak-trend threshold; VWAP distance <= its chop threshold; VWAP distance > its chop threshold and <= its caution threshold; VWAP crosses >= their limit.
+Long: histogram >= 0 AND chop score < its CHOP threshold
+Short: histogram < 0 AND chop score < its CHOP threshold

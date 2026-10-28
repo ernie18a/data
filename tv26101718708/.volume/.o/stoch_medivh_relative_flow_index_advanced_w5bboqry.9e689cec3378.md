@@ -1,0 +1,7 @@
+Calculation: Stochastic %K = 3-bar SMA of the standard stochastic %K of close, high, and low over its lookback.
+Calculation: SMMRFI = capped-at-100 SMA of the mean of MRFI and inverse MRFI; MRFI = capped-at-100 ((MF / RSI(close)) × ((RSI(close) + MF) / 2)); inverse MRFI = (RSI(close) / MF) × ((RSI(close) + MF) / 2), capped at 100 when the uncapped MRFI exceeds 100; MF = RSI of the rolling positive money-flow sum and rolling negative money-flow sum, each over the same lookback, using typical price (high + low + close) / 3 and volume; RSI uses its standard calculation. All SMA and RSI lookbacks are parameters.
+Calculation: SMMRFI line = capped-at-100 SMA of MRFI over the same smoothing lookback as SMMRFI.
+Long: (Stochastic %K > SMMRFI AND prior Stochastic %K <= prior SMMRFI) OR (Stochastic %K <= 5 AND SMMRFI line < 15)
+Short: (Stochastic %K < SMMRFI AND prior Stochastic %K >= prior SMMRFI) OR (Stochastic %K >= 95 AND SMMRFI line > 85)
+Exit: Long, (low <= entry-signal-bar low − ATR(7) on that bar) OR (high >= 1.65 × entry-signal-bar close) OR (SMMRFI line > 80 AND Stochastic %K > 80)
+Exit: Short, (high >= entry-signal-bar high + ATR(7) on that bar) OR (low <= 0.85 × entry-signal-bar close) OR (SMMRFI line < 30 AND Stochastic %K < 30) OR (Stochastic %K <= 10)

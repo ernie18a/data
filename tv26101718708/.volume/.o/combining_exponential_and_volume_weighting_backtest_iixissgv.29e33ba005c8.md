@@ -1,0 +1,3 @@
+Calculation: Volume-weighted exponential average = EMA(close × volume, shared lookback) / EMA(volume, shared lookback), calculated through the current bar
+Long: (reverse is off AND volume-weighted exponential average < previous completed bar close) OR (reverse is on AND volume-weighted exponential average > previous completed bar close) OR (volume-weighted exponential average = previous completed bar close AND position side is long)
+Short: (reverse is off AND volume-weighted exponential average > previous completed bar close) OR (reverse is on AND volume-weighted exponential average < previous completed bar close) OR (volume-weighted exponential average = previous completed bar close AND position side is short)

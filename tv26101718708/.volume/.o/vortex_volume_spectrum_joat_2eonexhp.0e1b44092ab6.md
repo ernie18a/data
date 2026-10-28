@@ -1,0 +1,3 @@
+Calculation: Confirmed pivot high = a bar whose high is greater than the highs in equal-length windows before and after it; confirmed pivot low = a bar whose low is lower than the lows in equal-length windows before and after it. Both use the same lookback length.
+Long: A confirmed pivot low occurs after at least three lookback lengths of bars, and the current swing direction is not up.
+Short: A confirmed pivot high occurs after at least three lookback lengths of bars, and the current swing direction is not down.

@@ -1,0 +1,4 @@
+Long: Fast EMA > slow EMA AND (previous bar low <= previous fast EMA OR previous bar close < previous fast EMA) AND close > fast EMA AND volume > its short-term SMA AND RSI > its lower threshold AND position is flat
+Short: Fast EMA < slow EMA AND (previous bar high >= previous fast EMA OR previous bar close > previous fast EMA) AND close < fast EMA AND volume > its short-term SMA AND RSI < its upper threshold AND position is flat
+Exit: Long, low <= recent swing low minus an ATR-based buffer OR high >= signal-bar close plus an ATR-based target
+Exit: Short, high >= recent swing high plus an ATR-based buffer OR low <= signal-bar close minus an ATR-based target

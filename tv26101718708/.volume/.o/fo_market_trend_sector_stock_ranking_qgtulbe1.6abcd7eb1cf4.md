@@ -1,0 +1,3 @@
+Calculation: Trend score = +1 if close is above the shorter-period EMA, otherwise −1; +1 if the shorter-period EMA is above the longer-period EMA, otherwise −1; +1 if RSI is above its upper threshold, −1 if below its lower threshold, otherwise 0; +1 if Supertrend is up, otherwise −1; +1 if +DI is above −DI, otherwise −1. The shorter-period EMA has a shorter lookback than the longer-period EMA.
+Long: ADX is at or above the minimum trend-strength threshold AND trend score is at or above the bullish threshold
+Short: ADX is at or above the minimum trend-strength threshold AND trend score is at or below the bearish threshold

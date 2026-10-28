@@ -1,0 +1,8 @@
+Calculation: Bullish FVG = current low > high two bars earlier; zone bounds are current low (top) and that earlier high (bottom)
+Calculation: Bearish FVG = current high < low two bars earlier; zone bounds are that earlier low (top) and current high (bottom)
+Calculation: Gap percentage = gap size / reference price × 100; reference price is the earlier high for bullish gaps and earlier low for bearish gaps
+Calculation: FVG filters = gap percentage meets minimum; when enabled, gap size ≥ current-timeframe ATR × minimum multiplier, close > EMA for bullish or close < EMA for bearish, and volume > current-timeframe volume moving average × multiplier; require a confirmed current bar when confirmation is enabled
+Calculation: Mitigation level = configured 50% midpoint, proximal edge, or distal edge; for bullish zones these are midpoint, top, or bottom, and for bearish zones midpoint, bottom, or top
+Calculation: Tracked zone = an FVG retained until removed by configured mitigation or age rules, or displaced by the active-zone limit; inversion changes its direction once, and mitigation is counted once
+Long: bullish FVG forms and passes its filters OR an uninverted tracked bearish FVG is invalidated upward (configured close above its top or high above its top) OR an unmitigated tracked bullish zone has low ≤ mitigation level AND high ≥ bottom
+Short: bearish FVG forms and passes its filters OR an uninverted tracked bullish FVG is invalidated downward (configured close below its bottom or low below its bottom) OR an unmitigated tracked bearish zone has high ≥ mitigation level AND low ≤ top

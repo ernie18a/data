@@ -1,0 +1,9 @@
+Calculation: Money Flow Index = MFI of typical price (high + low + close)/3 weighted by volume.
+Calculation: Flow impulse = EMA of the MFI's one-bar change.
+Calculation: Flow volatility = standard deviation of the MFI's one-bar change over a longer lookback than the impulse smoothing.
+Long: MFI crosses above 60 AND MFI has remained above 50 for at least the mode-specific persistence requirement AND flow impulse > 0 AND the event-specific cooldown has elapsed AND volume is available and cumulative volume > 0 AND MFI and regime strength are available
+Long: MFI crosses above 20 AND flow impulse > 0 AND the event-specific cooldown has elapsed AND volume is available and cumulative volume > 0 AND MFI and regime strength are available
+Long: Flow impulse crosses above 0 AND the absolute two-bar change in flow impulse > the mode-specific threshold multiplier × half of flow volatility × the diamond threshold scale AND volume is available and cumulative volume > 0 AND MFI and regime strength are available
+Short: MFI crosses below 40 AND MFI has remained below 50 for at least the mode-specific persistence requirement AND flow impulse < 0 AND the event-specific cooldown has elapsed AND volume is available and cumulative volume > 0 AND MFI and regime strength are available
+Short: MFI crosses below 80 AND flow impulse < 0 AND the event-specific cooldown has elapsed AND volume is available and cumulative volume > 0 AND MFI and regime strength are available
+Short: Flow impulse crosses below 0 AND the absolute two-bar change in flow impulse > the mode-specific threshold multiplier × half of flow volatility × the diamond threshold scale AND volume is available and cumulative volume > 0 AND MFI and regime strength are available

@@ -1,0 +1,1 @@
+Compare the instrument’s market price with the value per share of its Bitcoin holdings, calculated from Bitcoin’s price and the company’s Bitcoin holdings per share. If the market price is below that value, go long the instrument; if above, favor Bitcoin instead.

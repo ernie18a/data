@@ -1,0 +1,5 @@
+Calculation: Session VWAP = sum(price source × volume) / sum(volume), reset at the start of each New York 09:30–16:00 session and accumulated from its current chart-timeframe bars, including the bar being evaluated; price source is configurable as open, high, low, close, hl2, hlc3, ohlc4, or hlcc4.
+Calculation: Session standard deviation = sqrt(sum(price source² × volume) / sum(volume) − Session VWAP²), accumulated over the same current session bars.
+Calculation: Deviation bands = Session VWAP ± Session standard deviation × the configurable multiplier for that band.
+Long: previous close ≤ previous Session VWAP AND current close > current Session VWAP OR previous close ≤ previous upper 2-deviation band AND current close > current upper 2-deviation band OR previous close ≤ previous upper 3-deviation band AND current close > current upper 3-deviation band
+Short: previous close ≥ previous Session VWAP AND current close < current Session VWAP OR previous close ≥ previous lower 2-deviation band AND current close < current lower 2-deviation band OR previous close ≥ previous lower 3-deviation band AND current close < current lower 3-deviation band

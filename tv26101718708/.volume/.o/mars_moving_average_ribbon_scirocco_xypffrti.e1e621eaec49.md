@@ -1,0 +1,3 @@
+Calculation: Selected master moving average = the configured moving average selected from four independently configured moving averages, each using its configured source, averaging method, lookback, and timeframe (chart timeframe by default); use the last completed bar of that timeframe.
+Long: Selected master moving average > its value on the previous chart bar
+Short: Selected master moving average < its value on the previous chart bar

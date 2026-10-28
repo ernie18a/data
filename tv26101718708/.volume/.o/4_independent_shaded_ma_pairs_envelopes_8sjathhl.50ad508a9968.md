@@ -1,0 +1,2 @@
+Long: first moving average of any pair > its second moving average; each is calculated from that pair’s configured source, type, length, and timeframe, using the timeframe bar still forming
+Short: first moving average of any pair <= its second moving average; each is calculated from that pair’s configured source, type, length, and timeframe, using the timeframe bar still forming

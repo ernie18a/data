@@ -1,0 +1,3 @@
+Calculation: Demand Index = EMA(D, smoothing length), where R = max(high, previous bar high) − min(low, previous bar low); V = the selected smoothing of R; P = 3 × close × (close − open) ÷ (open × V); on an up bar (close > open), BP = volume and SP = volume ÷ P, otherwise BP = volume ÷ P and SP = volume; D = SP ÷ BP if |BP| > |SP|, otherwise BP ÷ SP. If V is zero, use 1.
+Long: Demand Index > 0
+Short: Demand Index < 0

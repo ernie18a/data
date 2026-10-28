@@ -1,0 +1,7 @@
+Calculation: EMA intersection = the price where the faster and slower EMAs intersect, linearly interpolated between their values on the previous and current higher-timeframe bars
+Calculation: Stop = EMA intersection at entry
+Calculation: Target = entry price plus (entry price − Stop) × reward-to-risk ratio for a long position; entry price minus (Stop − entry price) × reward-to-risk ratio for a short position
+Long: faster EMA (shorter lookback) was less than or equal to slower EMA (longer lookback) on the previous completed higher-timeframe bar AND faster EMA is greater than slower EMA on the current completed higher-timeframe bar AND close > VWAP AND higher-timeframe ADX >= threshold AND absolute difference between the EMAs >= higher-timeframe ATR × minimum separation multiple AND Stop < close
+Short: faster EMA (shorter lookback) was greater than or equal to slower EMA (longer lookback) on the previous completed higher-timeframe bar AND faster EMA is less than slower EMA on the current completed higher-timeframe bar AND close < VWAP AND higher-timeframe ADX >= threshold AND absolute difference between the EMAs >= higher-timeframe ATR × minimum separation multiple AND Stop > close
+Exit: long, low <= Stop OR high >= Target
+Exit: short, high >= Stop OR low <= Target

@@ -1,0 +1,2 @@
+Calculation: ATR% multiple from moving average = [100 × (close − moving average of close) ÷ moving average of close] ÷ [100 × average true range ÷ close]
+Short: ATR% multiple from moving average ≥ the lowest enabled dot-level threshold

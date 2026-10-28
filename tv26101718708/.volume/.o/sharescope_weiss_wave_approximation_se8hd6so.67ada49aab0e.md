@@ -1,0 +1,6 @@
+Calculation: Up price = high when using candle extremes; otherwise close
+Calculation: Down price = low when using candle extremes; otherwise close
+Calculation: Reversal fraction = configured ZigZag percentage / 100
+Calculation: Wave state = initialize direction to 0, swing extreme and unconfirmed high and low to the first bar's close, up price and down price respectively; while direction is 0, update unconfirmed high to the highest up price and unconfirmed low to the lowest down price; while direction is 1, update swing extreme to the highest up price; while direction is -1, update swing extreme to the lowest down price. Set direction to 1 and swing extreme to up price on a long trigger; set direction to -1 and swing extreme to down price on a short trigger.
+Long: (wave direction = 0 AND up price >= unconfirmed low × (1 + reversal fraction)) OR (wave direction = -1 AND up price >= swing extreme × (1 + reversal fraction))
+Short: (wave direction = 0 AND down price <= unconfirmed high ÷ (1 + reversal fraction) when symmetric calculation is enabled, otherwise unconfirmed high × (1 - reversal fraction)) OR (wave direction = 1 AND down price <= swing extreme ÷ (1 + reversal fraction) when symmetric calculation is enabled, otherwise swing extreme × (1 - reversal fraction))

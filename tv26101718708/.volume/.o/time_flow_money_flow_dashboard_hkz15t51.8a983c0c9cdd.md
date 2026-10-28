@@ -1,0 +1,13 @@
+Calculation: Smoothed money flow = EMA(MFI of HLC3, money-flow lookback), minus 50
+Calculation: Bullish divergence = a confirmed pivot low is below the preceding pivot low while smoothed money flow at that pivot is above its value at the preceding pivot low
+Calculation: Bearish divergence = a confirmed pivot high is above the preceding pivot high while smoothed money flow at that pivot is below its value at the preceding pivot high
+Calculation: Active bullish divergence = bullish divergence occurred within the configured active-bar lookback and is at least as recent as bearish divergence
+Calculation: Active bearish divergence = bearish divergence occurred within the configured active-bar lookback and is more recent than bullish divergence
+Long: Smoothed money flow is greater than or equal to its prior value on a configured higher-timeframe bar (use the forming or last completed bar according to the closed-bar setting)
+Short: Smoothed money flow is less than its prior value on a configured higher-timeframe bar (use the forming or last completed bar according to the closed-bar setting)
+Long: Smoothed money flow is greater than or equal to its prior value on a configured higher-timeframe bar AND was less than its prior value on the preceding higher-timeframe bar (use the forming or last completed bar according to the closed-bar setting)
+Short: Smoothed money flow is less than its prior value on a configured higher-timeframe bar AND was greater than or equal to its prior value on the preceding higher-timeframe bar (use the forming or last completed bar according to the closed-bar setting)
+Long: Active bullish divergence on a configured higher-timeframe bar (use the forming or last completed bar according to the closed-bar setting)
+Short: Active bearish divergence on a configured higher-timeframe bar (use the forming or last completed bar according to the closed-bar setting)
+Long: Smoothed money flow is greater than or equal to its prior value on a configured higher-timeframe bar AND smoothed money flow is greater than or equal to its prior value on that higher timeframe divided by 16 AND the fast EMA crossed above the slow EMA within the configured recent-bar lookback on that lower timeframe
+Short: Smoothed money flow is less than its prior value on a configured higher-timeframe bar AND smoothed money flow is less than its prior value on that higher timeframe divided by 16 AND the fast EMA crossed below the slow EMA within the configured recent-bar lookback on that lower timeframe

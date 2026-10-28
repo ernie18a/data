@@ -1,0 +1,3 @@
+Calculation: Random Forest forecast return = the ensemble mean predicted percent change in close at the forecast horizon, from a multi-output random forest trained on historical feature rows and their forward percent returns; features are RSI, ATR as a percentage of close, CCI, volume divided by its moving average, close relative to its moving average, percentage momentum, Bollinger Band width as a percentage of its basis, and ADX. Training labels are (future close − row close) / row close × 100 at each forecast horizon; use only rows with completed future labels. Calculate current features using the current bar, which may still be forming.
+Long: Random Forest forecast return >= 0
+Short: Random Forest forecast return < 0

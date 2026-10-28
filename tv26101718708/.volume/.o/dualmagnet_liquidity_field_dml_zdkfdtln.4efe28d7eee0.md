@@ -1,0 +1,9 @@
+Calculation: Active liquidity candidates = confirmed pivot highs for upside and confirmed pivot lows for downside; retain only the configured number of recent candidates and remove candidates older than the age limit or swept by a close beyond the level by the configured ATR threshold; count a touch when the bar’s high (upside) or low (downside) is within the configured ATR tolerance of the level.
+Calculation: Magnet score = weighted sum of normalized factors for ATR-relative distance (exponential decay), pivot volume relative to rolling average volume, candidate age (exponential decay), touch count, and position in the rolling high-low range; score only upside candidates above close and downside candidates below close.
+Calculation: Best upside/downside magnet = the eligible candidate on that side with the highest magnet score.
+Calculation: Side tension = the best magnet score scaled to 0–100 against that side’s own rolling score range; tension is 0 when the range is flat.
+Calculation: Side qualifies = a best magnet exists and its tension meets the minimum probability threshold.
+Calculation: Upside/downside dominance = each side’s tension divided by the sum of both tensions, expressed as a percentage; when the sum is zero, each side is 50%.
+Calculation: Signal cooldown available = no prior signal, or bars since the last signal are at least the configured cooldown.
+Long: Both sides qualify AND upside dominance >= the configured dominance threshold AND downside dominance <= 100% minus that threshold AND signal cooldown available
+Short: Both sides qualify AND downside dominance >= the configured dominance threshold AND upside dominance <= 100% minus that threshold AND signal cooldown available

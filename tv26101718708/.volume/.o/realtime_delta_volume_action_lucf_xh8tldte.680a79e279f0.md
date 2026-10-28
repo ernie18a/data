@@ -1,0 +1,5 @@
+Calculation: Volume delta = sum of each realtime volume increment, signed positive when price rises from the prior update and negative when it falls; when price is unchanged, carry the last update’s sign
+Calculation: Point of control (POC) = volume-weighted average price of realtime updates in the current bar
+Calculation: Total ticks = count of realtime updates assigned a positive or negative price-change sign
+Long: bar closes above its open OR (bar closes at its open AND its close is above the previous bar’s close OR equals it and the previous bar was up) AND volume delta > 0 AND POC > previous bar’s POC AND total ticks > previous bar’s total ticks AND volume delta > previous bar’s volume delta AND previous bar’s volume delta > 0
+Short: bar closes below its open OR (bar closes at its open AND its close is below the previous bar’s close OR equals it and the previous bar was down) AND volume delta < 0 AND POC < previous bar’s POC AND total ticks > previous bar’s total ticks AND volume delta < previous bar’s volume delta AND previous bar’s volume delta < 0

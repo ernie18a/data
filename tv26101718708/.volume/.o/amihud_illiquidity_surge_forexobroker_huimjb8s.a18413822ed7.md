@@ -1,0 +1,3 @@
+Calculation: Amihud illiquidity z-score = (|close − previous close| / max(volume, 1) − its rolling simple moving average) / its rolling standard deviation
+Long: Amihud illiquidity z-score ≥ surge threshold AND close crosses above the EMA AND position side is flat or short AND cooldown has elapsed since the last signal
+Short: Amihud illiquidity z-score ≥ surge threshold AND close crosses below the EMA AND position side is flat or long AND cooldown has elapsed since the last signal

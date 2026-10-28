@@ -1,0 +1,3 @@
+Calculation: Fast, Medium, and Slow kernel estimates = Nadaraya–Watson kernel regressions of close using each line’s selected kernel family, phase offset, and filter; Fast has the shortest bandwidth, Medium an intermediate bandwidth, and Slow the longest.
+Long: Fast crosses above Slow OR Fast changes from not rising to rising OR Medium changes from not rising to rising OR Slow changes from not rising to rising OR Fast > Medium > Slow AND Medium is rising AND this condition was false on the previous bar
+Short: Fast crosses below Slow OR Fast changes from not falling to falling OR Medium changes from not falling to falling OR Slow changes from not falling to falling OR Fast < Medium < Slow AND Medium is falling AND this condition was false on the previous bar

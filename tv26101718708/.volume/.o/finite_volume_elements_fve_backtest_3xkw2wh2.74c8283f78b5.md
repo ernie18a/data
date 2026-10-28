@@ -1,0 +1,3 @@
+Calculation: Finite Volume Elements (FVE) = Previous FVE + 100 × (signed volume ÷ moving average of volume ÷ lookback), initialized at zero; signed volume is volume when close − hl2 + hlc3 − previous hlc3 is greater than the threshold, negative volume when it is less than the negative threshold, and zero otherwise; threshold is factor × close ÷ 100
+Long: (FVE > previous FVE AND FVE > FVE from two bars ago AND reverse is false) OR (FVE < previous FVE AND FVE < FVE from two bars ago AND reverse is true)
+Short: (FVE < previous FVE AND FVE < FVE from two bars ago AND reverse is false) OR (FVE > previous FVE AND FVE > FVE from two bars ago AND reverse is true)

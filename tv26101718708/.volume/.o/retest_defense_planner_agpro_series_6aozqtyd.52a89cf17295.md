@@ -1,0 +1,8 @@
+Calculation: Support shelf = the latest confirmed pivot low, where the pivot has the configured number of bars on each side; it remains eligible through the configured maximum age.
+Calculation: Resistance shelf = the latest confirmed pivot high, where the pivot has the configured number of bars on each side; it remains eligible through the configured maximum age.
+Calculation: Active defense side = the manually selected side, or in Auto mode: bullish if only an eligible support shelf exists; if both shelves exist, bullish when close is at or above the slow EMA or the shorter-lookback EMA is at or above the longer-lookback EMA and support distance is at most 1.35 times resistance distance; otherwise bullish when support distance is less than 0.80 times resistance distance. Use the corresponding eligible shelf for the selected side; no active plan exists without that shelf.
+Calculation: Defense zone = active shelf plus or minus ATR times the configured zone thickness and sensitivity multiplier; bullish uses the interval around the shelf, as does bearish.
+Long: active plan is bullish AND the current bar intersects the defense zone AND (the active shelf or side changed this bar OR the previous bar did not intersect the defense zone)
+Short: active plan is bearish AND the current bar intersects the defense zone AND (the active shelf or side changed this bar OR the previous bar did not intersect the defense zone)
+Exit: long, active bullish plan AND close < active shelf − ATR × configured risk-edge distance
+Exit: short, active bearish plan AND close > active shelf + ATR × configured risk-edge distance

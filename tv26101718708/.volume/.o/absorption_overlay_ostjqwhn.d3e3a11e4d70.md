@@ -1,0 +1,4 @@
+Calculation: Absorption z-score = (volume / (high - low) − rolling mean of volume / (high − low)) / rolling standard deviation of volume / (high − low), using the same normalization lookback for the mean and standard deviation
+Calculation: Smoothed absorption z-score = short-term simple moving average of the absorption z-score
+Long: Smoothed absorption z-score > absorption threshold AND close < simple moving average of close over the trend lookback AND close < close from the trend lookback bars ago
+Short: Smoothed absorption z-score > absorption threshold AND close > simple moving average of close over the trend lookback AND close > close from the trend lookback bars ago

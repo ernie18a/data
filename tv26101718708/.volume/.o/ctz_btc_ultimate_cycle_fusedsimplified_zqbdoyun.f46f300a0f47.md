@@ -1,0 +1,6 @@
+Calculation: Confirmed cycle low = a bar whose low is lower than the lows of the preceding and following N bars; confirm after the following N bars close. Use progressively longer N values for daily, intermediate, yearly, and four-year cycles, and require a minimum gap between successive lows of each cycle.
+Calculation: Cycle failure = a confirmed daily, intermediate, or yearly cycle low below the previous confirmed low of the same cycle.
+Calculation: Cycle progress = bars since the latest confirmed cycle low divided by the mean of the latest three completed intervals between lows of that cycle (two intervals for the four-year cycle).
+Long: A confirmed daily, intermediate, yearly, or four-year cycle low.
+Short: A cycle failure in the daily, intermediate, or yearly cycle.
+Exit: Long, close below the latest confirmed daily or intermediate cycle low OR cycle progress approaches 80–90% of the intermediate cycle length OR an intermediate cycle is due while translation is left or a smaller cycle has failed.

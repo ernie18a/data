@@ -1,0 +1,2 @@
+Short: The longer-lookback VWMA of the daily close crosses above the shorter-lookback HMA of the daily close, using completed daily bars.
+Exit: Short, the shorter-lookback EMA of the daily close crosses above the longer-lookback EMA of the daily close OR the shorter-lookback EMA of the daily close crosses above the long-lookback VWMA of the daily close, using completed daily bars.

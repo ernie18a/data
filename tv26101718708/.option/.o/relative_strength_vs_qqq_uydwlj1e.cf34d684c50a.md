@@ -1,0 +1,1 @@
+Compare the instrument’s price relative to QQQ with its long-term average. Go long when relative strength is above that average and short when it is below. No exit rule is defined.

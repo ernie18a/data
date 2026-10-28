@@ -1,0 +1,14 @@
+Calculation: Adaptive ATR = recursively smoothed true range, using smoothing factor 1 / adaptive ATR period
+Calculation: Adaptive SuperTrend bands = source ± adaptive ATR multiplier × adaptive ATR; carry the lower band forward as the maximum of its current value and prior value when the prior close is above the prior lower band, and carry the upper band forward as the minimum of its current value and prior value when the prior close is below the prior upper band
+Calculation: Adaptive periods and multipliers = adjust ATR period and SuperTrend multiplier using normalized absolute rate of change; adjust RSI period, MACD fast and slow periods, stop and take-profit multipliers, volume multiplier, and Bollinger deviation using efficiency ratio and normalized absolute rate of change
+Calculation: Efficiency ratio = absolute close change over the adaptive MACD slow period divided by the sum of absolute close changes over that period
+Calculation: Normalized absolute rate of change = absolute rate of change of close divided by its highest value over the adaptation window
+Calculation: Adaptive MACD = difference between fast and slow recursively smoothed close, with adaptive fast and slow periods; signal is recursively smoothed MACD using the signal period
+Calculation: Adaptive RSI = 100 − 100 / (1 + smoothed gains / smoothed losses), with gains and losses recursively smoothed using the adaptive RSI period
+Calculation: Bollinger midline = simple moving average of close over the Bollinger period
+Calculation: Adaptive Bollinger bands = Bollinger midline ± adaptive deviation × standard deviation of close over the Bollinger period
+Calculation: Adaptive minimum ATR threshold = half the 50-period Wilder moving average of 14-period ATR divided by close
+Long: current close > prior upper SuperTrend band AND prior trend was bearish AND current trend is bullish AND MACD crosses above its signal AND adaptive RSI > 50 AND close > Bollinger midline AND current ATR percentage > adaptive minimum ATR threshold
+Short: current close < prior lower SuperTrend band AND prior trend was bullish AND current trend is bearish AND MACD crosses below its signal AND adaptive RSI < 50 AND close < Bollinger midline AND current ATR percentage > adaptive minimum ATR threshold
+Exit: long, price reaches entry price − adaptive stop multiplier × ATR at entry OR entry price + adaptive first, second, or third take-profit multiplier × ATR at entry
+Exit: short, price reaches entry price + adaptive stop multiplier × ATR at entry OR entry price − adaptive first, second, or third take-profit multiplier × ATR at entry

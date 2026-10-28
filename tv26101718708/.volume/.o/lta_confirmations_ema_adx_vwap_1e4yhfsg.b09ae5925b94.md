@@ -1,0 +1,3 @@
+Calculation: Session VWAP = cumulative volume-weighted average of (high + low + close) / 3, reset at the start of each day
+Long: Fast EMA crosses above slow EMA OR close crosses above session VWAP OR (fast EMA crosses above slow EMA AND ADX >= threshold AND +DI > -DI)
+Short: Fast EMA crosses below slow EMA OR close crosses below session VWAP OR (fast EMA crosses below slow EMA AND ADX >= threshold AND -DI > +DI)

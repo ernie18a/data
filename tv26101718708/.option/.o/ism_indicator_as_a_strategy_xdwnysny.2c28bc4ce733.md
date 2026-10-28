@@ -1,0 +1,1 @@
+Use the monthly closing value of the ISM Manufacturing Index: when it is above the strategy’s signal threshold, enter long on the traded instrument; when it is below the threshold, exit the position.

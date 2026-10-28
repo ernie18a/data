@@ -1,0 +1,2 @@
+Long: shorter-lookback moving average of close > longer-lookback moving average of close AND previous shorter-lookback moving average of close <= previous longer-lookback moving average of close
+Short: shorter-lookback moving average of close < longer-lookback moving average of close AND previous shorter-lookback moving average of close >= previous longer-lookback moving average of close

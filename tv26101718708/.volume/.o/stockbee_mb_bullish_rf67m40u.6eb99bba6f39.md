@@ -1,0 +1,2 @@
+Calculation: Close position within candle = (close - open) / (high - open) * 100
+Long: volume > previous bar volume AND close > previous bar close * 1.04 AND close position within candle > 70 OR close > previous bar close + 0.90 AND close position within candle > 70 OR close / close four bars earlier > 1.2

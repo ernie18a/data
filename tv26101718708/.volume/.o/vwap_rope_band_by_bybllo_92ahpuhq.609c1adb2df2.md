@@ -1,0 +1,4 @@
+Calculation: Session VWAP = cumulative volume-weighted average of (high + low + close) / 3, resetting each session/day and including the current bar
+Calculation: Rope = initialize to the first close; each bar, update the prior rope toward the close by max(abs(close − prior rope) − threshold, 0), where threshold = rolling standard deviation of (close − Session VWAP) × a multiplier; use zero threshold when unavailable
+Long: close crosses above Rope OR Rope rises and its most recent prior nonzero movement was downward
+Short: close crosses below Rope OR Rope falls and its most recent prior nonzero movement was upward

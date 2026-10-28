@@ -1,0 +1,6 @@
+Calculation: Trend score = percentile rank among the previous lookback bars of (0.6 × efficiency ratio + 0.4 × |EMA − EMA 3 bars earlier| / (3 × ATR)); efficiency ratio = |close − close N bars earlier| / sum of absolute close-to-close changes over the last N bars. Use the same lookback for both scores; use a longer EMA length than the 3-bar slope interval.
+Calculation: Volatility score = average of the ATR percentile rank and Bollinger width percentile rank, each ranked among the previous lookback bars; Bollinger width = 4 × standard deviation of close / SMA of close. Use the same percentile lookback as for the trend score.
+Calculation: Raw regime = trending when trend score ≥ its threshold, otherwise ranging; volatile when volatility score ≥ its threshold, otherwise calm. This gives trending+volatile, trending+calm, ranging+volatile, or ranging+calm.
+Calculation: Confirmed regime = raw regime after it persists for the confirmation-bar count; until then retain the prior confirmed regime.
+Long: Confirmed regime is trending+volatile or trending+calm AND EMA > EMA 3 bars earlier.
+Short: Confirmed regime is trending+volatile or trending+calm AND EMA ≤ EMA 3 bars earlier.

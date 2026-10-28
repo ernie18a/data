@@ -1,0 +1,4 @@
+Calculation: Bullish FVG = current low > high two bars earlier, and the gap size meets the minimum ATR size filter; if the displacement filter is enabled, the middle bar’s range must exceed its ATR-based threshold
+Calculation: Bearish FVG = current high < low two bars earlier, and the gap size meets the minimum ATR size filter; if the displacement filter is enabled, the middle bar’s range must exceed its ATR-based threshold
+Long: A bearish FVG has closed above its top; on a later confirmed bar, it has not been retested or invalidated, and the bar’s low <= its top and its close >= its bottom
+Short: A bullish FVG has closed below its bottom; on a later confirmed bar, it has not been retested or invalidated, and the bar’s high >= its bottom and its close <= its top

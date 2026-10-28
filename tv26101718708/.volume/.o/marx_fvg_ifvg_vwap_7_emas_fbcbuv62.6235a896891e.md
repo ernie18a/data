@@ -1,0 +1,4 @@
+Calculation: Bullish fair value gap = current low > high two bars earlier, previous bar's close > that earlier high, and the gap as a fraction of that earlier high exceeds the configured threshold.
+Calculation: Bearish fair value gap = current high < low two bars earlier, previous bar's close < that earlier low, and the gap as a fraction of current high exceeds the configured threshold.
+Long: A bullish fair value gap forms OR an existing bearish fair value gap whose size exceeded the configured ATR multiple is inverted when the current candle body high exceeds its upper boundary.
+Short: A bearish fair value gap forms OR an existing bullish fair value gap whose size exceeded the configured ATR multiple is inverted when the current candle body low falls below its lower boundary.

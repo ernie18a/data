@@ -1,0 +1,6 @@
+Calculation: Shorter-lookback moving average = selected moving-average type applied to close on the selected source timeframe (chart timeframe or alternate timeframe), using the current source-timeframe bar, which may still be forming
+Calculation: Longer-lookback moving average = selected moving-average type applied to close on the selected source timeframe (chart timeframe or alternate timeframe), using the current source-timeframe bar, which may still be forming
+Long: second moving average enabled AND shorter-lookback moving average > longer-lookback moving average AND its previous chart-bar value <= the longer-lookback moving average's previous chart-bar value
+Short: second moving average enabled AND shorter-lookback moving average < longer-lookback moving average AND its previous chart-bar value >= the longer-lookback moving average's previous chart-bar value
+Exit: Long, second moving average enabled AND shorter-lookback moving average < longer-lookback moving average AND its previous chart-bar value >= the longer-lookback moving average's previous chart-bar value
+Exit: Short, second moving average enabled AND shorter-lookback moving average > longer-lookback moving average AND its previous chart-bar value <= the longer-lookback moving average's previous chart-bar value

@@ -1,0 +1,6 @@
+Calculation: Bullish SMC = current low equals the lowest low over a swing lookback including the current bar OR current volume exceeds its volume moving average by a multiplier OR current low is below the lowest low of the previous eight bars and current close is above current open
+Calculation: Bearish SMC = current high equals the highest high over a swing lookback including the current bar OR current volume exceeds its volume moving average by a multiplier OR current high is above the highest high of the previous eight bars and current close is below current open
+Calculation: Bullish RSI divergence = current low is below each of the previous two lows AND current RSI is above each of the previous two RSI values
+Calculation: Bearish RSI divergence = current high is above each of the previous two highs AND current RSI is below each of the previous two RSI values
+Long: RSI crosses above its oversold level AND MFI is at or below its oversold level AND volume is greater than its volume moving average multiplied by a threshold AND close is above a long-term EMA AND Bullish SMC AND Bullish RSI divergence
+Short: RSI crosses below its overbought level AND MFI is at or above its overbought level AND volume is greater than its volume moving average multiplied by a threshold AND close is below a long-term EMA AND Bearish SMC AND Bearish RSI divergence

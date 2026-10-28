@@ -1,0 +1,5 @@
+Calculation: Klinger Oscillator = EMA(signed volume, longer lookback) − EMA(signed volume, shorter lookback), where signed volume is volume if HLC3 is at least its value on the previous bar, otherwise negative volume
+Long: high > previous bar high AND low < previous bar low AND close > open AND Klinger Oscillator > 0 AND close > Hull moving average of close
+Short: high < previous bar high AND low > previous bar low AND close < open AND Klinger Oscillator < 0 AND close < Hull moving average of close
+Exit: Long, short condition OR close >= entry price + close × long take-profit percentage OR close <= entry price − close × long stop-loss percentage
+Exit: Short, long condition OR close <= entry price − close × short take-profit percentage OR close >= entry price + close × short stop-loss percentage

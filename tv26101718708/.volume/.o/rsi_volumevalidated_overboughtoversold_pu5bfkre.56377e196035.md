@@ -1,0 +1,3 @@
+Calculation: Cumulative volume in current RSI zone episode = sum of volume from the first bar RSI enters the overbought or oversold zone through the current bar; reset on each new zone entry
+Long: RSI of close <= oversold level AND cumulative volume in current RSI zone episode >= volume SMA * factor AND no earlier long signal in the current oversold episode
+Short: RSI of close >= overbought level AND cumulative volume in current RSI zone episode >= volume SMA * factor AND no earlier short signal in the current overbought episode

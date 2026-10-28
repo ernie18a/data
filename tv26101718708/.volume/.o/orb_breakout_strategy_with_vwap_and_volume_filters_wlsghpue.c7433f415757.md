@@ -1,0 +1,11 @@
+Calculation: Opening-range high/low = highest high and lowest low of the first N bars from each session start; fixed after the Nth bar completes
+Calculation: Session VWAP = cumulative sum of ((high + low + close) / 3 × volume) divided by cumulative volume from session start through the current bar
+Calculation: VWAP slope = current session VWAP − session VWAP N bars earlier
+Calculation: Close position = (close − low) / (high − low); use 0.5 when high = low
+Calculation: Long target and initial stop = entry + configured target distance and entry − configured stop distance, or entry + max(entry − entry-bar low, minimum risk) × configured reward multiple and entry-bar low, according to selected risk mode
+Calculation: Short target and initial stop = entry − configured target distance and entry + configured stop distance, or entry − max(entry-bar high − entry, minimum risk) × configured reward multiple and entry-bar high, according to selected risk mode
+Calculation: Breakeven trigger = entry plus (long target − entry) × configured fraction for longs, or entry minus (entry − short target) × configured fraction for shorts
+Long: high >= opening-range high AND previous bar was in session, opening range complete, position flat, daily trade count below limit, close below opening-range high, and (VWAP filter off OR (close > session VWAP AND VWAP slope > minimum slope)) AND (volume filter off OR volume >= minimum breakout volume) AND (candle filter off OR close position >= minimum candle strength)
+Short: low <= opening-range low AND previous bar was in session, opening range complete, position flat, daily trade count below limit, close above opening-range low, and (VWAP filter off OR (close < session VWAP AND VWAP slope < negative minimum slope)) AND (volume filter off OR volume >= minimum breakout volume) AND (candle filter off OR close position <= 1 − minimum candle strength)
+Exit: long, high >= long target OR low <= current long stop OR (current bar outside session AND previous bar in session); when high >= breakeven trigger, set current long stop to entry
+Exit: short, low <= short target OR high >= current short stop OR (current bar outside session AND previous bar in session); when low <= breakeven trigger, set current short stop to entry

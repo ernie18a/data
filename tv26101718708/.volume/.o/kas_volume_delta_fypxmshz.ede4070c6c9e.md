@@ -1,0 +1,3 @@
+Calculation: Volume delta = +volume when close > open, −volume when close < open, and +0.5 × volume when close = open and close ≥ (high + low) / 2, otherwise −0.5 × volume; optionally divide by its average volume.
+Long: Volume delta ≥ 0 OR volume delta crosses above 0 OR volume delta crosses above its simple moving average
+Short: Volume delta < 0 OR volume delta crosses below 0 OR volume delta crosses below its simple moving average

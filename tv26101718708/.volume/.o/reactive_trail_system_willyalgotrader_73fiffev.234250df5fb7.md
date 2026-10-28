@@ -1,0 +1,12 @@
+Calculation: Baseline = selected moving average of close: HMA, ALMA, KAMA, T3, VWMA (fall back to EMA when volume is unavailable), or EMA
+Calculation: Smoothed RSI = EMA of RSI(close, momentum lookback), using a separate smoothing lookback
+Calculation: Adaptive trail offset = selected volatility (ATR, standard deviation of close, or their average) × trail multiplier × (1 − adaptivity × min(|smoothed RSI − 50| / 50, 1) × 0.4)
+Calculation: Trail and regime = initialize bullish when close ≥ baseline, otherwise bearish; bullish trail is max(previous trail, baseline − offset) and flips bearish when close < that trail, resetting to baseline + offset; bearish trail is min(previous trail, baseline + offset) and flips bullish when close > that trail, resetting to baseline − offset
+Calculation: Higher-timeframe bias = last completed higher-timeframe close compared with its 50-period EMA
+Calculation: Long stop = selected ATR stop mode: entry − ATR × stop multiple, or min(signal-bar low − 0.25 × ATR, entry − 0.5 × ATR)
+Calculation: Short stop = selected ATR stop mode: entry + ATR × stop multiple, or max(signal-bar high + 0.25 × ATR, entry + 0.5 × ATR)
+Calculation: Targets = entry price ± distance from entry to stop × the selected target risk multiple, adding for long and subtracting for short
+Long: confirmed bearish-to-bullish regime flip after warm-up, with any enabled higher-timeframe filter requiring last completed higher-timeframe close > its 50-period EMA, any enabled volume filter requiring volume > 20-bar volume SMA × threshold (bypassed if volume is unavailable), and positive stop distance
+Short: confirmed bullish-to-bearish regime flip after warm-up, with any enabled higher-timeframe filter requiring last completed higher-timeframe close < its 50-period EMA, any enabled volume filter requiring volume > 20-bar volume SMA × threshold (bypassed if volume is unavailable), and positive stop distance
+Exit: long, on a confirmed bar after the entry bar, if high ≥ third target or an accepted short signal occurs, or if low ≤ effective stop and neither the first nor third target is touched on that bar; after the first target is touched, move the effective stop to entry when break-even is enabled
+Exit: short, on a confirmed bar after the entry bar, if low ≤ third target or an accepted long signal occurs, or if high ≥ effective stop and neither the first nor third target is touched on that bar; after the first target is touched, move the effective stop to entry when break-even is enabled

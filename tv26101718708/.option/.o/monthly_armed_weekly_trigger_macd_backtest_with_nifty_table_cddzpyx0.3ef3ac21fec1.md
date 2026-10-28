@@ -1,0 +1,1 @@
+While flat, enter long when the instrument’s monthly and weekly MACD lines are both above their signal lines, and a bullish MACD crossover has occurred on either timeframe. While long, exit when the weekly MACD line remains below its signal line for consecutive weekly bars and the instrument’s price is below its exit moving average. The strategy has no short-entry rule.

@@ -1,0 +1,5 @@
+Calculation: Rolling volume profile = over the configured lookback including the current bar, distribute each bar’s volume equally across price rows spanning its low-to-high range; rows span the window’s lowest low to highest high.
+Calculation: POC = midpoint of the highest-volume row. Value area high and low = boundaries reached by expanding from the POC row toward the adjacent row with more volume until the configured share of total volume is enclosed; ties expand upward.
+Calculation: Order flow = average of buy-volume percentage and acceptance-above percentage over the lookback. Buy-volume percentage = volume on bars with close ≥ open divided by total volume. Acceptance-above percentage = volume in rows above the POC row divided by volume in rows above and below it. Use 50% when either percentage’s denominator is zero.
+Long: (close < value area low AND order flow > 45%) OR (close > value area high AND order flow ≥ 55%)
+Short: (close < value area low AND order flow ≤ 45%) OR (close > value area high AND order flow < 55%)

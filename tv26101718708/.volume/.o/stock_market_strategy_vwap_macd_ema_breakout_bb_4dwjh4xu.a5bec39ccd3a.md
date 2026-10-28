@@ -1,0 +1,7 @@
+Calculation: MACD histogram = MACD line − MACD signal line; MACD line = shorter-lookback EMA(close) − longer-lookback EMA(close); MACD signal line = EMA of MACD line
+Long: bar time is within the configured entry session AND close > VWAP AND close > EMA(close) AND previous-bar MACD histogram > 0 AND current MACD histogram > previous-bar MACD histogram
+Long: bar time is within the configured entry session AND close > VWAP AND close > EMA(close) AND previous-bar MACD histogram > 0 AND current MACD histogram > previous-bar MACD histogram AND close > upper Bollinger Band AND ADX < its threshold
+Short: bar time is within the configured entry session AND close < VWAP AND close < EMA(close) AND previous-bar MACD histogram < 0 AND current MACD histogram < previous-bar MACD histogram
+Short: bar time is within the configured entry session AND close < VWAP AND close < EMA(close) AND previous-bar MACD histogram < 0 AND current MACD histogram < previous-bar MACD histogram AND close < lower Bollinger Band AND ADX > its threshold
+Exit: long, current close < current VWAP AND previous close ≥ previous VWAP OR bar time is outside the configured holding session
+Exit: short, current close > current VWAP AND previous close ≤ previous VWAP OR bar time is outside the configured holding session

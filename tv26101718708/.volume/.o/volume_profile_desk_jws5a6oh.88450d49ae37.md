@@ -1,0 +1,4 @@
+Calculation: Previous session POC = highest-volume price row in the profile of the last completed session-timeframe period.
+Calculation: Previous session VAH and VAL = upper and lower boundaries of the value area in the profile of the last completed session-timeframe period.
+Long: confirmed bar AND (previous close < previous session POC AND close > previous session POC OR previous close < previous session VAH AND close > previous session VAH OR previous close < previous session VAL AND close > previous session VAL)
+Short: confirmed bar AND (previous close > previous session POC AND close < previous session POC OR previous close > previous session VAH AND close < previous session VAH OR previous close > previous session VAL AND close < previous session VAL)

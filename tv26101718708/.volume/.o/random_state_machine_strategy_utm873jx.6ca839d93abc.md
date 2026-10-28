@@ -1,0 +1,4 @@
+Long: Random trigger is accepted as a state-machine transition AND close > selected moving average AND within the configured backtest date range
+Short: Random trigger is accepted as a state-machine transition AND close < selected moving average AND within the configured backtest date range
+Exit: long, high >= entry price + long risk points × long risk/reward ratio OR low <= entry price − long risk points OR bars since entry >= configured long hold bars OR previous close >= previous moving average AND close < moving average
+Exit: short, low <= entry price − short risk points × short risk/reward ratio OR high >= entry price + short risk points OR bars since entry >= configured short hold bars OR previous close <= previous moving average AND close > moving average

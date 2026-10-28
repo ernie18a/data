@@ -1,0 +1,11 @@
+Calculation: Opening range high = highest high of bars from 09:30 through 09:59 ET; lock after 10:00 ET
+Calculation: Opening range low = lowest low of bars from 09:30 through 09:59 ET; lock after 10:00 ET
+Calculation: Opening range size = opening range high - opening range low
+Calculation: ATR = average true range over a lookback
+Calculation: Volume average = simple moving average of volume over a lookback
+Long: opening range is locked AND opening range size is between the configured minimum and maximum ATR multiples AND after 10:00 ET and before the configured end-of-day time AND long has not fired this session AND position is flat AND current-session P&L is above the configured loss limit AND volume > volume average × configured volume multiplier AND (close > opening range high, or high > opening range high when close confirmation is disabled)
+Long: retest is enabled AND a long breakout is awaiting retest AND within the configured bar limit from that breakout AND position is flat AND close > opening range high AND low <= opening range high × configured retest tolerance
+Short: opening range is locked AND opening range size is between the configured minimum and maximum ATR multiples AND after 10:00 ET and before the configured end-of-day time AND short has not fired this session AND position is flat AND current-session P&L is above the configured loss limit AND volume > volume average × configured volume multiplier AND (close < opening range low, or low < opening range low when close confirmation is disabled)
+Short: retest is enabled AND a short breakout is awaiting retest AND within the configured bar limit from that breakout AND position is flat AND close < opening range low AND high >= opening range low × configured retest tolerance
+Exit: Long, low <= stop price OR (high >= first target and the first target has not been hit) OR (first target has been hit AND high >= second target) OR configured end-of-day time reached OR current-session P&L <= configured loss limit
+Exit: Short, high >= stop price OR (low <= first target and the first target has not been hit) OR (first target has been hit AND low <= second target) OR configured end-of-day time reached OR current-session P&L <= configured loss limit

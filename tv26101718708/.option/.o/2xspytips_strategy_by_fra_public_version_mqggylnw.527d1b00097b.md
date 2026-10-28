@@ -1,0 +1,1 @@
+At each monthly boundary, go long the traded instrument when both the S&P 500 and TIPS ETF close above their respective 200-period simple moving averages. No exit rule is defined.

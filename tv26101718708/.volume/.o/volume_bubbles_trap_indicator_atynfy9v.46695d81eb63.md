@@ -1,0 +1,7 @@
+Calculation: Effort = max(|LTF open − LTF close|, |LTF low − LTF close|, |LTF high − LTF close|) for each lower-timeframe bar within the current chart bar.
+Calculation: Weighted average volume = sum(volume × Effort) / sum(Effort) over prior lower-timeframe bars in the rolling history.
+Calculation: Bullish effort = an LTF bar is bullish when close > open, or when open = close and close > prior LTF close; its effort is bullish except when the high-to-close distance is largest. When close < open, or open = close and close < prior LTF close, its effort is bullish only when the low-to-close distance is largest. Ties use the first matching distance in body, low-to-close, high-to-close order.
+Calculation: Bearish effort = an LTF bar is bearish when its effort is not bullish.
+Long: bullish effort bubble of type 1, 2, or 3 OR cumulative volume-weighted effort delta > 0 OR a bearish type 1, 2, or 3 zone is trapped (after its creation and within the configured forward window, close ≥ zone top + Effort).
+Short: bearish effort bubble of type 1, 2, or 3 OR cumulative volume-weighted effort delta < 0 OR a bullish type 1, 2, or 3 zone is trapped (after its creation and within the configured forward window, close ≤ zone bottom − Effort).
+Exit: 

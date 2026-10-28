@@ -1,0 +1,3 @@
+Calculation: delta = buy-side volume minus sell-side volume within the chart bar, classifying each lower-timeframe bar’s volume by whether its close is above or below the preceding lower-timeframe close (split evenly if equal or no preceding close); if no lower-timeframe bars are available, split chart-bar volume by the close’s position within its range, or evenly if the range is zero. Use lower-timeframe bars within the current chart bar, including any still forming.
+Long: delta >= 0
+Short: delta < 0

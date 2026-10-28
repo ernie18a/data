@@ -1,0 +1,3 @@
+Calculation: Live fault levels = confirmed swing highs or lows requiring L bars on each side; merge same-side pivots within a configured ATR(100) distance, keeping the more extreme price. A level is live until ruptured or retired by configured age or distance limits.
+Long: For any live lower fault level, low < level AND close >= level AND the level has not already been swept; OR for any live upper fault level, close > level.
+Short: For any live upper fault level, high > level AND close <= level AND the level has not already been swept; OR for any live lower fault level, close < level.

@@ -1,0 +1,5 @@
+Calculation: Selected Fibonacci level = volume-weighted moving average of close over a lookback ± selected Fibonacci ratio × standard-deviation multiplier × standard deviation of close over the same lookback
+Long: previous close >= previous selected lower Fibonacci level AND current close < current selected lower Fibonacci level
+Short: previous close <= previous selected upper Fibonacci level AND current close > current selected upper Fibonacci level
+Exit: Long, close crosses the volume-weighted moving average in either direction OR a short-entry signal occurs and low reaches the selected lower Fibonacci level saved on that signal bar
+Exit: Short, close crosses the volume-weighted moving average in either direction OR a long-entry signal occurs and high reaches the selected upper Fibonacci level saved on that signal bar

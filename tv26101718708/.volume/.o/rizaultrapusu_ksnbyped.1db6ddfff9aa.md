@@ -1,0 +1,2 @@
+Long: short-period SMA > long-period SMA on current-chart bars OR on either configured other-timeframe series (each uses a shorter-period SMA and a longer-period SMA, using the bar still forming)
+Short: short-period SMA ≤ long-period SMA on current-chart bars OR on either configured other-timeframe series (each uses a shorter-period SMA and a longer-period SMA, using the bar still forming)

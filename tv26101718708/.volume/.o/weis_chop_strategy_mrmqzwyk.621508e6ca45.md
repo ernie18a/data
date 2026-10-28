@@ -1,0 +1,4 @@
+Calculation: Renko direction = direction of change in the Renko close; update the Renko close to the selected price when it exceeds the prior Renko close by one brick, or falls below it by one brick, otherwise keep it unchanged; carry the prior direction forward when unchanged
+Long: close > EMA(close) AND Renko direction is up AND Choppiness Index crosses below its upper threshold
+Short: close < EMA(close) AND Renko direction is down AND Choppiness Index crosses below its upper threshold
+Exit: long, short-entry condition OR high reaches the entry price plus the profit target OR low reaches the entry price minus the stop distance

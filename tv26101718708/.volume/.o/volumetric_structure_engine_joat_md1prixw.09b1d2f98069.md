@@ -1,0 +1,4 @@
+Calculation: Confirmed swing high = on the current bar, the previous bar’s high equals the highest high over the lookback ending on the previous bar, and the current high is lower than the highest high over the lookback ending on the current bar
+Calculation: Confirmed swing low = on the current bar, the previous bar’s low equals the lowest low over the lookback ending on the previous bar, and the current low is higher than the lowest low over the lookback ending on the current bar
+Long: confirmed swing high > previous confirmed swing high OR confirmed swing low > previous confirmed swing low OR close > most recent confirmed swing high while trend is bearish
+Short: confirmed swing high < previous confirmed swing high OR confirmed swing low < previous confirmed swing low OR close < most recent confirmed swing low while trend is bullish

@@ -1,0 +1,3 @@
+Calculation: short-, medium-, and long-term moving averages = simple or exponential moving averages of close with progressively longer lookbacks
+Calculation: average volume = simple moving average of volume
+Long: for at least the required number of consecutive completed bars immediately before this bar, close was below all three moving averages AND current close is above all three moving averages AND current volume is greater than average volume times a multiplier AND (if enabled) short-term moving average > medium-term moving average > long-term moving average AND (if enabled) close > open AND (if enabled) current low > high from two bars earlier

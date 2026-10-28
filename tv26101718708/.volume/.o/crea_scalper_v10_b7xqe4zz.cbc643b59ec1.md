@@ -1,0 +1,8 @@
+Long: fresh EMA-fast crossover above EMA-mid while EMA-mid > EMA-slow
+Long: bullish BOS label when current high > highest high of prior lookback bars
+Long: long score >= confirmation threshold AND not short score >= confirmation threshold AND bullish BOS gate AND not long exhaustion AND close <= VWAP + exhaustion deviation × VWAP standard deviation AND cooldown elapsed AND volatility ratio within bounds AND higher-timeframe EMA-fast > EMA-slow AND (long state is armed with bullish candle trigger OR fast path conditions)
+Short: fresh EMA-fast crossunder EMA-mid while EMA-mid < EMA-slow
+Short: bearish BOS label when current low < lowest low of prior lookback bars
+Short: short score >= confirmation threshold AND not long score >= confirmation threshold AND bearish BOS gate AND not short exhaustion AND close >= VWAP - exhaustion deviation × VWAP standard deviation AND cooldown elapsed AND volatility ratio within bounds AND higher-timeframe short filter passes AND (short state is armed with bearish candle trigger OR fast path conditions)
+Exit: long, low <= entry price - ATR × stop multiplier × score-based stop scale OR high >= entry price + ATR × stop multiplier × score-based stop scale × first target multiple × score-based target scale
+Exit: short, high >= entry price + ATR × stop multiplier × score-based stop scale OR low <= entry price - ATR × stop multiplier × score-based stop scale × first target multiple × score-based target scale

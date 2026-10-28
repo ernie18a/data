@@ -1,0 +1,12 @@
+Calculation: Active swing = rolling highest high and lowest low over a lookback until confirmed pivots update each anchor independently; a pivot is confirmed after the same number of bars on each side and, when volume validation is enabled, its volume must exceed the volume baseline multiplied by a threshold. Initially use the rolling anchors. Direction is down when the low anchor is later than the high anchor, forced up if close exceeds the high anchor and forced down if close falls below the low anchor; reverse orientation, if enabled, flips this direction.
+Calculation: Swing level at ratio r = low + r × (high − low) for a down swing; high − r × (high − low) for an up swing. Zero is the low for a down swing and the high for an up swing; full is the opposite endpoint.
+Calculation: OTE pocket = interval between swing levels at 0.618 and 0.786; pocket midpoint = swing level at 0.705.
+Calculation: HTF direction = direction of the previous completed higher-timeframe bar (close below open means down); HTF swing high and low = highest high and lowest low over a lookback of completed higher-timeframe bars, excluding the still-forming bar.
+Long: Up swing AND close within OTE pocket AND close >= pocket midpoint AND close > open AND (HTF direction agrees with swing direction if HTF alignment is required) AND (close >= EMA(close) if trend filter is enabled) AND (volume > SMA(volume) × threshold if volume sponsorship is required)
+Long: Up swing AND close crosses above pocket midpoint AND distance from close to OTE pocket <= ATR × response buffer AND (close >= EMA(close) if trend filter is enabled)
+Long: Up swing AND close > swing zero
+Short: Down swing AND close within OTE pocket AND close <= pocket midpoint AND close < open AND (HTF direction agrees with swing direction if HTF alignment is required) AND (close <= EMA(close) if trend filter is enabled) AND (volume > SMA(volume) × threshold if volume sponsorship is required)
+Short: Down swing AND close crosses below pocket midpoint AND distance from close to OTE pocket <= ATR × response buffer AND (close <= EMA(close) if trend filter is enabled)
+Short: Down swing AND close < swing zero
+Exit: Long, bar is confirmed AND close < swing full
+Exit: Short, bar is confirmed AND close > swing full

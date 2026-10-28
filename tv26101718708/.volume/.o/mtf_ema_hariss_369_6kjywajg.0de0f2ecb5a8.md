@@ -1,0 +1,4 @@
+Calculation: KAMA = Recursive moving average of close, initialized to close; each bar, add SC × (close − previous KAMA) to previous KAMA. SC = (ER × (2/(fast length + 1) − 2/(slow length + 1)) + 2/(slow length + 1))², where ER = abs(close − previous close) / sum of absolute close changes over the KAMA lookback; fast length is shorter than slow length.
+Calculation: Relative volume = current bar volume / 20-period SMA of volume.
+Long: Close > current-timeframe 20-period EMA AND current-timeframe 20-period EMA > EMA of the still-forming higher-timeframe bar's close AND close > KAMA AND relative volume > threshold AND KAMA > previous bar's KAMA
+Short: Close < current-timeframe 20-period EMA AND current-timeframe 20-period EMA < EMA of the still-forming higher-timeframe bar's close AND close < KAMA AND relative volume > threshold AND KAMA < previous bar's KAMA

@@ -1,0 +1,3 @@
+Calculation: Buy turnover percentage = 100 × Σ(volume × close × (close − low) / (high − low)) / Σ(volume × close), over the displayed stocks on the configured timeframe’s still-forming bars; when high = low, use a close-location fraction of 0.5
+Long: For any displayed stock or index, configured-timeframe current close > previous completed bar’s close OR buy turnover percentage ≥ the bullish-bias threshold
+Short: For any displayed stock or index, configured-timeframe current close < previous completed bar’s close OR buy turnover percentage ≤ the bearish-bias threshold

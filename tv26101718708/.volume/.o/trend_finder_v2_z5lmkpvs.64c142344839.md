@@ -1,0 +1,4 @@
+Calculation: Combined stochastic = sum of short-lookback and long-lookback stochastic %K values, each smoothed with a shorter simple moving average
+Calculation: Volume-weighted average = volume-weighted moving average of the combined stochastic
+Long: On the current bar, the combined stochastic and its volume-weighted average are both greater than their respective previous-bar values, AND on the previous bar they were not both greater than their respective previous-bar values and were not both less
+Exit: Long, On the current bar, the combined stochastic and its volume-weighted average are both less than their respective previous-bar values, AND on the previous bar they were not both greater than their respective previous-bar values and were not both less

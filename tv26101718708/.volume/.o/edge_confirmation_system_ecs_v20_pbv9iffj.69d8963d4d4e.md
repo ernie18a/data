@@ -1,0 +1,6 @@
+Calculation: normalized momentum = Normalize to [-1, 1] the percentage difference between a shorter-period and a longer-period close EMA, using the rolling lowest and highest values of that difference.
+Calculation: smoothed normalized momentum = EMA of normalized momentum using a shorter smoothing period.
+Long: close > base close EMA AND fast close EMA > slow close EMA (fast shorter than slow, slow shorter than base) AND normalized momentum > 0 AND normalized momentum > smoothed normalized momentum AND normalized momentum < overbought threshold AND close > open AND volume >= volume SMA * surge multiplier
+Short: close < base close EMA AND fast close EMA < slow close EMA (fast shorter than slow, slow shorter than base) AND normalized momentum < 0 AND normalized momentum < smoothed normalized momentum AND normalized momentum > oversold threshold AND close < open AND volume >= volume SMA * surge multiplier
+Exit: long, normalized momentum < 0 AND normalized momentum < smoothed normalized momentum OR normalized momentum >= overbought threshold AND normalized momentum < smoothed normalized momentum
+Exit: short, normalized momentum > 0 AND normalized momentum > smoothed normalized momentum OR normalized momentum <= oversold threshold AND normalized momentum > smoothed normalized momentum

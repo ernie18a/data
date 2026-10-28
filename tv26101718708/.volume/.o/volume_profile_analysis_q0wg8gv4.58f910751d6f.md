@@ -1,0 +1,5 @@
+Calculation: Buy volume = (bar volume + lower-timeframe volume delta) / 2; sell volume = (bar volume − lower-timeframe volume delta) / 2, using the current bar’s still-forming lower-timeframe data.
+Calculation: Large-order volume at each profile price level = volume from lookback bars whose total volume exceeds 1.5 times its volume moving average, distributed evenly across the profile levels intersecting each bar’s low-to-high range.
+Calculation: Large-order ratio at a profile price level = (large-order buy volume + large-order sell volume) / total buy and sell volume at that level.
+Long: Large-order ratio at a profile price level > the large-order threshold AND large-order buy volume at that level > large-order sell volume at that level.
+Short: Large-order ratio at a profile price level > the large-order threshold AND large-order sell volume at that level > large-order buy volume at that level.

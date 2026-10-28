@@ -1,0 +1,2 @@
+Short: sell-pressure state rises to WARNING or higher
+Exit: short, previous state was WARNING or higher AND close > fast EMA AND close > session VWAP AND sell-pressure score < warning threshold AND close is not below prior support

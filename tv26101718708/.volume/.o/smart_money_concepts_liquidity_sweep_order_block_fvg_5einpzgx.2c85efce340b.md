@@ -1,0 +1,14 @@
+Calculation: ATR = average true range; use the chart timeframe.
+Calculation: Liquidity pool = running mean of confirmed swing highs or lows clustered within an ATR-based tolerance; swing points require the same lookback before and after the pivot.
+Calculation: Sweep = a high above an unswept high pool followed by a close below it, or a low below an unswept low pool followed by a close above it.
+Calculation: Displacement = candle body size divided by ATR; bullish displacement closes above the open and bearish displacement closes below it, each meeting the configured threshold.
+Calculation: Bullish FVG = current low above the high two bars earlier by at least the configured ATR-based minimum, with bullish displacement. Bearish FVG is the reverse, with bearish displacement.
+Calculation: Bullish order block = the preceding candle is bearish and the current candle has bullish displacement; bearish order block = the preceding candle is bullish and the current candle has bearish displacement. Its zone spans the preceding candle's low to high.
+Calculation: Zone score = the weighted average, scaled to 0–100, of normalized displacement strength, relative volume, preceding sweep, FVG size, higher-timeframe alignment, premium/discount alignment, volume-profile location, and directional order flow. Use the last completed higher-timeframe bar; higher-timeframe EMA lookback is shorter than the chart's dealing-range lookback. Relative-volume and volume-profile calculations use chart-timeframe bars. True order flow signs lower-timeframe volume by each lower-timeframe candle's direction; if unavailable, use the chart candle's close-location proxy.
+Calculation: Long zone = bullish FVG or bullish order block. Short zone = bearish FVG or bearish order block.
+Calculation: Entry setup = first touch of a fresh, unspent zone after its formation, with score at or above the configured minimum; entry is the zone's top for long and bottom for short. Stop is beyond the opposite zone edge by an ATR-based buffer. Target is the nearest unswept opposing liquidity pool, or the configured fixed risk multiple if unavailable or using fixed-multiple mode; cap the risk multiple and require it to meet the configured minimum.
+Calculation: Bullish CVD divergence = current low is at or below the lookback low while cumulative delta is above its lookback low. Bearish CVD divergence = current high is at or above the lookback high while cumulative delta is below its lookback high.
+Long: A sell-side liquidity pool is swept OR a bullish zone forms OR bullish CVD divergence occurs OR a qualifying long entry setup is armed.
+Short: A buy-side liquidity pool is swept OR a bearish zone forms OR bearish CVD divergence occurs OR a qualifying short entry setup is armed.
+Exit: long, low <= stop OR high >= target.
+Exit: short, high >= stop OR low <= target.

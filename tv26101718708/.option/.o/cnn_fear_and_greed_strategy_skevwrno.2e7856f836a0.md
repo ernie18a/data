@@ -1,0 +1,1 @@
+Calculate a composite market sentiment score from external market data. Enter long when the score is below a fear threshold and crosses above its short-term moving average. Exit the long after a fixed number of bars. No short condition.

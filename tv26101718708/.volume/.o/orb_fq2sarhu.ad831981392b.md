@@ -1,0 +1,10 @@
+Calculation: Opening-range high/low = highest high and lowest low during the configured opening-range interval; use only after that interval is complete
+Calculation: Session high/low = highest high and lowest low since the active signal session began, including the current bar
+Calculation: Long pullback level = latest post-breakout swing high − (latest post-breakout swing high − session low) × selected retracement fraction
+Calculation: Short pullback level = latest post-breakout swing low + (session high − latest post-breakout swing low) × selected retracement fraction
+Calculation: Long stop level = long pullback level using the 78.6% retracement fraction − ATR × stop buffer
+Calculation: Short stop level = short pullback level using the 78.6% retracement fraction + ATR × stop buffer
+Long: During the active signal session after the opening range completes, close crosses above opening-range high; since that breakout, the latest swing high has been reached and a bar has low ≤ long pullback level; current close > long pullback level AND close > open; MACD line > signal line if enabled; volume > its moving average × volume multiplier if enabled; current body > its 10-bar average absolute body if enabled; no long signal has fired since this opening range
+Short: During the active signal session after the opening range completes, close crosses below opening-range low; since that breakout, the latest swing low has been reached and a bar has high ≥ short pullback level; current close < short pullback level AND close < open; MACD line < signal line if enabled; volume > its moving average × volume multiplier if enabled; current body > its 10-bar average absolute body if enabled; no short signal has fired since this opening range
+Exit: Long, high ≥ entry bar's swing high OR low ≤ long stop level
+Exit: Short, low ≤ entry bar's swing low OR high ≥ short stop level

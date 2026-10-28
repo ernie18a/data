@@ -1,0 +1,6 @@
+Calculation: Feature score = compression-weighted sum of (correlation-weighted ATR-normalized close minus its moving average, relative volume times candle direction, dual-timeframe bias, RSI deviation from neutral, and ROC volatility-normalized by its standard deviation) plus the uncompressed share of ATR-normalized price structure; clip the price structure and volume features to bounded ranges. Dual-timeframe bias adds one positive or negative half-unit for each higher-timeframe close above or below its EMA. Use the last completed bar of each higher timeframe. Volatility-ratio feature is not used in the score.
+Calculation: Correlation weight = rolling correlation of each included feature with the close-price change over the forward-label horizon.
+Calculation: KNN vote = mean of the labels for the K historical feature scores nearest to the current feature score by absolute distance; each label is positive, negative, or zero according to whether close at the label horizon is above, below, or equal to its earlier close. Retain at most the learning-window number of observations.
+Calculation: Probability = adaptive-EMA update of the sigmoid of the KNN vote, initialized at 0.5.
+Long: Probability crosses upward through the high-probability threshold.
+Short: Probability crosses downward through the low-probability threshold.

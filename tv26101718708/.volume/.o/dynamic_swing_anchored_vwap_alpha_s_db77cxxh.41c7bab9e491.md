@@ -1,0 +1,4 @@
+Calculation: Swing direction = bullish when the latest bar setting the rolling swing high occurred after the latest bar setting the rolling swing low; otherwise bearish.
+Calculation: Swing-anchored VWAP = volume-weighted HLC3, initialized at the latest swing low when direction flips bullish or latest swing high when it flips bearish, then updated by smoothing price-volume and volume sums with the same tracking factor.
+Long: Close > swing-anchored VWAP AND swing direction is bullish OR swing direction changes from bearish to bullish OR close crosses above swing-anchored VWAP
+Short: Close < swing-anchored VWAP AND swing direction is bearish OR swing direction changes from bullish to bearish OR close crosses below swing-anchored VWAP

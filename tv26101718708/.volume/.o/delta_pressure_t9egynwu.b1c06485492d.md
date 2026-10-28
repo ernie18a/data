@@ -1,0 +1,4 @@
+Calculation: Delta Pressure = volume-weighted average over a lookback of per-bar pressure, optionally smoothed; per-bar pressure is either (close − open) / (high − low) or 2 × (close − low) / (high − low) − 1, and is 0 when high = low
+Calculation: Higher-Timeframe Delta Pressure = the same calculation on aggregated higher-timeframe bars, using its own lookback and smoothing; use the last completed higher-timeframe bar when confirmed-bar mode is enabled, otherwise use the bar still forming
+Long: Delta Pressure ≥ 0 OR Higher-Timeframe Delta Pressure ≥ 0
+Short: Delta Pressure < 0 OR Higher-Timeframe Delta Pressure < 0

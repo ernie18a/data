@@ -1,0 +1,5 @@
+Calculation: Relative volume = previous bar volume / the simple moving average of volume, evaluated on the previous bar
+Calculation: Displacement body = absolute value of previous bar close minus previous bar open
+Calculation: Displacement body percentage = displacement body / (previous bar high - previous bar low)
+Long: current bar is confirmed AND current low > high from two bars earlier AND previous bar volume / previous-bar volume SMA >= minimum relative volume AND current low - high from two bars earlier >= current ATR * minimum gap-size multiple AND displacement body >= previous-bar ATR * minimum displacement-body multiple AND displacement body percentage >= minimum body percentage AND previous bar close > previous bar open
+Short: current bar is confirmed AND current high < low from two bars earlier AND previous bar volume / previous-bar volume SMA >= minimum relative volume AND low from two bars earlier - current high >= current ATR * minimum gap-size multiple AND displacement body >= previous-bar ATR * minimum displacement-body multiple AND displacement body percentage >= minimum body percentage AND previous bar close < previous bar open

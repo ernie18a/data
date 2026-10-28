@@ -1,0 +1,3 @@
+Calculation: High volume = current volume > its moving average × a multiplier
+Long: the short-term EMA crosses above the longer-term EMA AND close > the longest-term EMA OR short-term EMA > longer-term EMA AND close > longest-term EMA OR high volume AND close > open
+Short: the short-term EMA crosses below the longer-term EMA AND close < the longest-term EMA OR short-term EMA < longer-term EMA AND close < longest-term EMA OR high volume AND close < open

@@ -1,0 +1,1 @@
+For the traded instrument, go long on Monday when the calendar date falls between the 15th and 21st of the month. Exit on Friday when the calendar date falls between the 15th and 21st.

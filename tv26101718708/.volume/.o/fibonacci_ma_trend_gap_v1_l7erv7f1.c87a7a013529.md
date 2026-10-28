@@ -1,0 +1,5 @@
+Calculation: Fibonacci MA average = arithmetic mean of the selected moving average of close at each included Fibonacci length, all using the same moving average type
+Calculation: Oscillator = (close² − Fibonacci MA average²) / Fibonacci MA average²
+Calculation: Fast signal = shorter-lookback SMA of the oscillator; slow signal = longer-lookback SMA of the oscillator
+Long: fast signal > slow signal OR, at a confirmed oscillator pivot low, oscillator pivot is higher than the preceding oscillator pivot low AND corresponding price low is lower (regular bullish divergence) OR oscillator pivot is lower than the preceding oscillator pivot low AND corresponding price low is higher (hidden bullish divergence)
+Short: fast signal < slow signal OR, at a confirmed oscillator pivot high, oscillator pivot is lower than the preceding oscillator pivot high AND corresponding price high is higher (regular bearish divergence) OR oscillator pivot is higher than the preceding oscillator pivot high AND corresponding price high is lower (hidden bearish divergence)

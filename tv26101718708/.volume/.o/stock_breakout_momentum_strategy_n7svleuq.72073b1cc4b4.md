@@ -1,0 +1,6 @@
+Long: flat position AND confirmed bar close > highest high of the preceding breakout lookback bars AND close > longer-term SMA AND volume > shorter-term volume SMA × volume multiplier
+Short: flat position AND confirmed bar close < lowest low of the preceding breakout lookback bars AND close < longer-term SMA AND volume > shorter-term volume SMA × volume multiplier
+Calculation: ATR trailing stop = initialize at signal-bar open minus (signal-bar ATR × stop multiplier) for long, or plus it for short; on each position bar, update long stop to the greater of its prior value and close minus current ATR × stop multiplier, or short stop to the lesser of its prior value and close plus current ATR × stop multiplier
+Calculation: Fixed ATR profit target = signal-bar open plus signal-bar ATR × target multiplier for long, or minus it for short
+Exit: long, low <= ATR trailing stop OR high >= fixed ATR profit target OR bars since signal bar >= time-exit window
+Exit: short, high >= ATR trailing stop OR low <= fixed ATR profit target OR bars since signal bar >= time-exit window

@@ -1,0 +1,1 @@
+Compare the traded instrument’s close with a relevant market benchmark by tracking their price ratio and a smoothed average of that ratio. Go long when the ratio rises above its average while the benchmark is flat or falling. Short or exit when the ratio falls below its average while the benchmark is flat or rising.

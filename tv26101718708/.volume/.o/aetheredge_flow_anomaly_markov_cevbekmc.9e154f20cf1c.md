@@ -1,0 +1,5 @@
+Calculation: Anomaly event = Mahalanobis D² > threshold AND log(volume + 1) > its EWMA mean, where D² uses [log(volume + 1), abs(close − prior close) / ATR] and the prior-bar EWMA mean and covariance; initialize the mean to the first feature vector, variances to 1, and covariance to 0.
+Calculation: Return state = bucket the z-score of close − prior close using its SMA and standard deviation: strong down < −1.5; down < −0.5; flat ≤ 0.5; up ≤ 1.5; strong up > 1.5.
+Calculation: Expected-direction score = sum over the five next-state probabilities of (state index − 2) × probability, using transition counts conditioned on current anomaly status and current return state. Initialize all counts to 1; on each confirmed bar, decay all counts, then add 1 to the transition from the prior bar's state and anomaly status to the current state. Normalize the selected transition row to get probabilities.
+Long: bar is confirmed AND bar index > warmup AND Anomaly event AND Expected-direction score > threshold
+Short: bar is confirmed AND bar index > warmup AND Anomaly event AND Expected-direction score < −threshold

@@ -1,0 +1,3 @@
+Calculation: Signed candle pressure = 1 − 2 × triangular candle score; for high > low, clamp open and close to [low, high] as o and c, set r = high − low, and calculate score: if c = low, score = 1 − ((high − o)/r)² when o > low, otherwise 0; if c = high, score = ((o − low)/r)² when o < high, otherwise 1; otherwise score = 0 when o ≤ low, (o − low)²/[r(c − low)] when o ≤ c, 1 − (high − o)²/[r(high − c)] when o < high, otherwise 1. When high = low, score = 1 if close > open, 0 if close < open, otherwise 0.5.
+Long: EMA of signed candle pressure ≥ 0
+Short: EMA of signed candle pressure < 0

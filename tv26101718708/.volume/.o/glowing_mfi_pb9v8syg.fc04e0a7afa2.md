@@ -1,0 +1,5 @@
+Calculation: Confirmed MFI pivot low = an MFI low identified using configurable left and right lookbacks, confirmed after the right lookback; associate it with the price low at the pivot bar
+Calculation: Confirmed MFI pivot high = an MFI high identified using configurable left and right lookbacks, confirmed after the right lookback; associate it with the price high at the pivot bar
+Calculation: Pivot spacing = bars from the current pivot confirmation to one bar after the previous same-type pivot confirmation; compare with configurable minimum and maximum lookbacks
+Long: Confirmed MFI pivot low AND pivot spacing is within its configured range AND (current pivot price low < previous pivot price low AND current pivot MFI > previous pivot MFI OR current pivot price low > previous pivot price low AND current pivot MFI < previous pivot MFI)
+Short: Confirmed MFI pivot high AND pivot spacing is within its configured range AND (current pivot price high > previous pivot price high AND current pivot MFI < previous pivot MFI OR current pivot price high < previous pivot price high AND current pivot MFI > previous pivot MFI)

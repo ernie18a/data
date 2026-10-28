@@ -1,0 +1,4 @@
+Calculation: Per-bin +DI/-DI energy = sum each candle’s +DI/-DI multiplied by volume and (1 + abs(+DI − -DI)/(+DI + -DI)), divided evenly among the price bins crossed by that candle; use 0 for the imbalance fraction when +DI + -DI is 0. Use the current profile period, including its still-forming bar.
+Calculation: Per-bin average ADX = per-bin ADX energy divided by the number of candles touching that bin; per-bin ADX energy is accumulated like DI energy, using ADX in place of DI.
+Long: Per-bin average ADX >= the ADX threshold AND per-bin +DI energy > 1.2 × per-bin -DI energy
+Short: Per-bin average ADX >= the ADX threshold AND per-bin -DI energy > 1.2 × per-bin +DI energy

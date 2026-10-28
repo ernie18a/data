@@ -1,0 +1,4 @@
+Calculation: Confirmed swing high/low = a chart-timeframe pivot high/low confirmed after configurable bars on both sides; retain only the most recent configurable number per side.
+Calculation: Previous day/week high/low = high/low of the last completed daily/weekly bar.
+Long: For any active swing low, previous completed day low (intraday), or previous completed week low (intraday or daily), low < level and close >= level on the same closed bar or within the configurable sweep window after first crossing below it; (level − lowest low in the sweep window) / ATR(14) >= configurable minimum depth.
+Short: For any active swing high, previous completed day high (intraday), or previous completed week high (intraday or daily), high > level and close <= level on the same closed bar or within the configurable sweep window after first crossing above it; (highest high in the sweep window − level) / ATR(14) >= configurable minimum depth.

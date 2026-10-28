@@ -1,0 +1,6 @@
+Calculation: Drawdown = (rolling highest high over a longer lookback − close) / rolling highest high over that lookback
+Calculation: Rebound from recent low = (close − rolling lowest low over a shorter lookback) / rolling lowest low over that lookback
+Calculation: ATR ratio = shorter-lookback ATR / longer-lookback ATR
+Calculation: Volume ratio = shorter-lookback average volume / longer-lookback average volume
+Long: Drawdown ≥ minimum drawdown AND rebound from recent low ≤ maximum rebound AND (ATR ratio ≤ contraction threshold OR volume ratio ≤ dry-volume threshold; configurable to require both) 
+Long: Drawdown ≥ minimum drawdown AND rebound from recent low ≤ maximum rebound AND (ATR ratio ≤ contraction threshold OR volume ratio ≤ dry-volume threshold; configurable to require both) AND close crossed above its moving average within a recent window AND volume ≥ longer-lookback average volume × spike multiplier within a recent window AND close > open AND RSI crossed above its oversold threshold within a recent window

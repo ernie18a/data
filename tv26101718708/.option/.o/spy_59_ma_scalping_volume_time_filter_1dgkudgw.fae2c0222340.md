@@ -1,0 +1,1 @@
+During a specified morning session, go long when a short-period simple moving average crosses above a longer-period one and current volume exceeds the prior bar’s volume; go short on the reverse crossover under the same volume and time conditions. Exit each position with a fixed favorable price target or adverse price stop.

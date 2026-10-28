@@ -1,0 +1,3 @@
+Calculation: FVE = 100 × sum(volume × direction factor, lookback) / sum(volume, lookback), where direction factor is 1 if money flow > cutoff × close, −1 if money flow < −cutoff × close, otherwise 0; money flow = close − (high + low)/2 + typical price − prior-bar typical price; typical price = (high + low + close)/3; cutoff = intrabar coefficient × stdev(sma(ln(high) − ln(low), lookback), lookback) + interbar coefficient × stdev(sma(ln(typical price) − ln(prior-bar typical price), lookback), lookback). Use bars from the chart timeframe.
+Long: FVE > EMA(FVE)
+Short: FVE < EMA(FVE)

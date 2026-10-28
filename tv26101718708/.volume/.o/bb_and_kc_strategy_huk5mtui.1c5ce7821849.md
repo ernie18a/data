@@ -1,0 +1,4 @@
+Long: Keltner Channel upper band > Bollinger Band upper band AND previous Keltner Channel upper band <= previous Bollinger Band upper band AND volume > volume SMA
+Short: Keltner Channel lower band < Bollinger Band lower band AND previous Keltner Channel lower band >= previous Bollinger Band lower band AND volume > volume SMA
+Exit: long, bars since entry > exit-bar parameter OR (bars since entry > exit-bar parameter AND low <= entry price × (1 − stop-loss percentage / 100))
+Exit: short, bars since entry > exit-bar parameter OR (bars since entry > exit-bar parameter AND high >= entry price × (1 + stop-loss percentage / 100))

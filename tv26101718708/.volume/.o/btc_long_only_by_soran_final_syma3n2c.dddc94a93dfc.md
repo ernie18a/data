@@ -1,0 +1,2 @@
+Long: Previous completed bar low < lower Bollinger Band AND its RSI < oversold threshold AND position is flat OR (previous completed bar low < lower Bollinger Band AND its RSI < oversold threshold AND previous close > previous open AND previous volume > its volume moving average × volume multiplier AND position is flat)
+Exit: Long, low ≤ signal bar close × (1 − stop percentage) OR high ≥ upper Bollinger Band of the completed bar before the signal bar

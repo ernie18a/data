@@ -1,0 +1,4 @@
+Long: short moving average > long moving average AND previous bar short moving average <= previous bar long moving average
+Short: short moving average < long moving average AND previous bar short moving average >= previous bar long moving average
+Exit: long, take-profit percentage > 0 AND close >= entry price × (1 + take-profit percentage / 100) OR stop-loss percentage > 0 AND close <= entry price × (1 − stop-loss percentage / 100)
+Exit: short, take-profit percentage > 0 AND close <= entry price × (1 − take-profit percentage / 100) OR stop-loss percentage > 0 AND close >= entry price × (1 + stop-loss percentage / 100)

@@ -1,0 +1,2 @@
+Long: For any available completed previous-month or previous-week high, current high > level AND prior bar high <= level (wick-break mode), OR current close > level AND prior close <= level (close-break mode)
+Short: For any available completed previous-month or previous-week low, current low < level AND prior bar low >= level (wick-break mode), OR current close < level AND prior close >= level (close-break mode)

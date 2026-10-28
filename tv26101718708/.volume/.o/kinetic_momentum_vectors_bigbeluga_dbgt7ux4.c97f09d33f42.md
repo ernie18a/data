@@ -1,0 +1,3 @@
+Calculation: Normalized kinetic energy = (current volume × absolute change in close from the previous bar − lowest value over the lookback) ÷ (highest value over the lookback − lowest value over the lookback); use 0 if highest equals lowest
+Long: normalized kinetic energy ≥ spike threshold AND close > EMA(close) AND previous close > previous EMA(close) AND current bar is completed
+Short: normalized kinetic energy ≥ spike threshold AND close ≤ EMA(close) AND previous close ≤ previous EMA(close) AND current bar is completed

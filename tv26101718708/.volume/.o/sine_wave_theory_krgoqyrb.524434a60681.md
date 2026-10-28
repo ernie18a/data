@@ -1,0 +1,4 @@
+Calculation: bar-change wave count = start at 0 with direction +1; on each change in the still-forming higher-timeframe bar’s close-above-open state from the preceding higher-timeframe bar, add the direction; reverse direction when the count reaches either peak.
+Calculation: volume-state wave count = start at 0 with direction +1; on each change in the still-forming higher-timeframe bar’s volume-above-SMA state from the preceding higher-timeframe bar, add the direction; reverse direction when the count reaches either peak. The SMA uses a longer lookback than one bar.
+Long: bar-change wave count = negative peak OR volume-state wave count = negative peak
+Short: bar-change wave count = positive peak OR volume-state wave count = positive peak

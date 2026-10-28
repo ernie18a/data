@@ -1,0 +1,1 @@
+Use the Nasdaq-100’s weekly and monthly data to decide on the traded instrument: enter long when its weekly close crosses above its 10-month simple moving average and is above its 200-week exponential moving average. While long, exit when its monthly low crosses below 95% of its 10-month simple moving average. There is no short entry.

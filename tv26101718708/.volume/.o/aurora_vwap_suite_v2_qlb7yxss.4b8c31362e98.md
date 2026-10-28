@@ -1,0 +1,8 @@
+Calculation: Selected reference = configured daily, weekly, monthly, session, winner, engine, manual-anchor, or two-day extreme VWAP; use the current value, including the still-forming bar, and its identity key
+Calculation: Reference band = selected reference ± configured distance, where distance is a configured multiple of its price dispersion, ATR, or absolute price percentage
+Calculation: ATR tolerance = configured multiple of ATR
+Calculation: VWAP bias = mean of the available enabled votes: +1 when close is above a daily, winner, low-anchor, high-anchor, or weekly VWAP; −1 when below; and, for daily slope, +1 when daily VWAP is above its longer-lookback value within the same VWAP day, −1 when below
+Long: reference is available and continuous with the prior bar, its identity key is unchanged, and (close crosses above the selected reference OR low is within the ATR tolerance of the reference and close is above it plus the tolerance OR close crosses above the upper reference band with positive band width on both bars OR VWAP bias ≥ 0.20)
+Short: reference is available and continuous with the prior bar, its identity key is unchanged, and (close crosses below the selected reference OR high is within the ATR tolerance of the reference and close is below it minus the tolerance OR close crosses below the lower reference band with positive band width on both bars OR VWAP bias ≤ −0.20)
+Long: VWAP bias ≥ 0.60
+Short: VWAP bias ≤ −0.60

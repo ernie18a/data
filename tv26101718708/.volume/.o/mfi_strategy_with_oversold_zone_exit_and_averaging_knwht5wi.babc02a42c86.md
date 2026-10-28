@@ -1,0 +1,2 @@
+Long: MFI has been below the oversold threshold since its previous rise above it, AND current MFI > the oversold threshold
+Exit: long, low <= entry price * (1 - stop-loss percentage) OR high >= entry price * (1 + take-profit percentage)

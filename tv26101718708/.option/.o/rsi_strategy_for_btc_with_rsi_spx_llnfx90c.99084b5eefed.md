@@ -1,0 +1,1 @@
+On the hourly chart, calculate the 14-period RSI for the traded instrument and for the S&P 500. Go long when the traded instrument’s RSI crosses above the S&P 500’s RSI; go short when it crosses below.

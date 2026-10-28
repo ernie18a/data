@@ -1,0 +1,8 @@
+Calculation: Fast EMA = exponential moving average of close with a shorter lookback than the slow EMA; slow EMA has a shorter lookback than the trend EMA.
+Calculation: MACD line = fast EMA of close minus slow EMA of close; signal line = EMA of the MACD line. The MACD fast lookback is shorter than its slow lookback.
+Calculation: MACD histogram = MACD line − signal line.
+Calculation: Pullback = at least a minimum number of red candles (close < open) among the preceding lookback bars, excluding the current bar.
+Calculation: Consecutive red streak = number of immediately preceding consecutive bars with close < open; first green candle = streak meets the minimum red count AND current close > open.
+Long: close >= open AND ((fast EMA crosses above slow EMA AND (MACD line > signal line OR MACD line crosses above signal line) AND Pullback) OR (MACD line crosses above signal line AND fast EMA > slow EMA AND first green candle AND Pullback) OR (fast EMA crosses above slow EMA AND MACD line crosses above signal line)) AND (if enabled, close > VWAP) AND (if enabled, close > trend EMA)
+Long: NOT Strong Long AND close >= open AND first green candle AND (MACD line > signal line OR MACD histogram crosses above zero) AND Pullback AND (if enabled, close > VWAP) AND (if enabled, close > trend EMA)
+Long: NOT Strong Long AND NOT Medium Long AND MACD histogram crosses above zero AND Pullback AND (if enabled, close > VWAP) AND (if enabled, close > trend EMA)

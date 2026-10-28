@@ -1,0 +1,3 @@
+Calculation: Break level = VWAP from bars of an equal or higher timeframe, minus a percentage buffer; use completed higher-timeframe bars historically and the still-forming bar in realtime
+Calculation: Reclaim level = VWAP from bars of an equal or higher timeframe, plus a percentage buffer; use completed higher-timeframe bars historically and the still-forming bar in realtime
+Long: A low below the break level armed the setup within the maximum-bar window, counting the sweep bar, AND close > reclaim level AND (volume filter disabled OR volume > volume moving average × a multiplier) AND (daily signal limit disabled OR no earlier long signal today)

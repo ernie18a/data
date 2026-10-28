@@ -1,0 +1,4 @@
+Calculation: Cumulative volume delta = running sum of volume within the current day, adding volume when close > open and subtracting it otherwise; reset at each new day
+Calculation: Volume drying = shorter-lookback SMA(volume) < threshold × longer-lookback SMA(volume)
+Long: Cumulative volume delta crosses above its shorter-lookback EMA AND equals its highest value over that same lookback
+Exit: long, Cumulative volume delta ≥ its shorter-lookback EMA AND Volume drying AND (Cumulative volume delta < its highest value over that same lookback OR current bar's signed volume delta < previous bar's signed volume delta)

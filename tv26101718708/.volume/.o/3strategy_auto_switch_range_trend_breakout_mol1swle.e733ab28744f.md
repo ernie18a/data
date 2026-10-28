@@ -1,0 +1,4 @@
+Long: position side = flat AND ((ADX < threshold AND close > lower Bollinger Band AND close < upper Bollinger Band AND RSI < threshold AND close <= lower Bollinger Band × proximity factor AND volume > 20-bar volume SMA × volume factor) OR (ADX > threshold AND close > shorter EMA AND shorter EMA > longer EMA AND shorter EMA crosses above longer EMA AND RSI > 50 AND close > middle Bollinger Band) OR (volume > 20-bar volume SMA × volume factor AND close crosses above upper Bollinger Band AND ADX > threshold AND RSI > 50 AND previous close < previous upper Bollinger Band)
+Calculation: Long stop = entry price − ATR × stop multiple
+Calculation: Long target = entry price + (entry price − long stop) × reward/risk ratio
+Exit: long, low <= long stop OR high >= long target

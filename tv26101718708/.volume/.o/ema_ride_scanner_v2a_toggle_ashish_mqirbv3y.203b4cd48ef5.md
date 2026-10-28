@@ -1,0 +1,3 @@
+Calculation: ATR% = ATR divided by close, expressed as a percentage
+Calculation: Relative performance = stock percentage return minus benchmark percentage return over the same lookback
+Long: (Standard mode AND EMA(9) > EMA(21) > EMA(50) AND close is within the configured pullback zone above EMA(9) AND volume is at or below its moving average times the configured healthy-dip threshold) OR (Grinder mode AND EMA(9) > EMA(21) > EMA(50) AND (close is between EMA(9) and EMA(21) OR within the configured distance of EMA(9)) AND ATR% is at or below the configured ceiling AND consecutive closes above EMA(21) meet the configured minimum ride length AND relative performance meets the configured minimum)

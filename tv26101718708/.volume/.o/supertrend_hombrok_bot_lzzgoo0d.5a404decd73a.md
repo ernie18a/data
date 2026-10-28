@@ -1,0 +1,5 @@
+Calculation: Trend direction = start at +1; switch from −1 to +1 when close > trend-down line, and from +1 to −1 when close < trend-up line; otherwise retain the prior direction. Trend-up line = max(current HL2 − ATR × multiplier, previous raw upper band) if previous close > previous raw upper band, otherwise current HL2 − ATR × multiplier. Trend-down line = min(current HL2 + ATR × multiplier, previous raw lower band) if previous close < previous raw lower band, otherwise current HL2 + ATR × multiplier. Raw upper band = HL2 − ATR × multiplier; raw lower band = HL2 + ATR × multiplier.
+Long: trend direction = +1 AND volume > 20-bar SMA(volume) × volume factor AND abs(close − open) > ATR × body factor AND RSI < overbought threshold
+Short: trend direction = −1 AND volume > 20-bar SMA(volume) × volume factor AND abs(close − open) > ATR × body factor AND RSI > oversold threshold
+Exit: long, low ≤ entry-signal-bar close − entry-signal-bar ATR OR high ≥ entry-signal-bar close + entry-signal-bar ATR × risk/reward ratio
+Exit: short, high ≥ entry-signal-bar close + entry-signal-bar ATR OR low ≤ entry-signal-bar close − entry-signal-bar ATR × risk/reward ratio

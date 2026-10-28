@@ -1,0 +1,4 @@
+Calculation: Momentum = linear regression, over a lookback, of close minus the average of (rolling highest high + rolling lowest low)/2 and the rolling simple average of close
+Calculation: Squeeze = Bollinger Bands fully contained within any of three Keltner Channels using the same basis and true-range average, with progressively wider channel multipliers
+Long: Squeeze is off on the current bar and was on at least once in the previous 3 completed bars AND Momentum > 0 AND volume > its simple moving average × a surge multiplier AND close > the previous completed bar's upper Bollinger Band
+Short: Squeeze is off on the current bar and was on at least once in the previous 3 completed bars AND Momentum ≤ 0 AND volume > its simple moving average × a surge multiplier AND close < the previous completed bar's lower Bollinger Band

@@ -1,0 +1,1 @@
+Use BTC's weekly closing price as the signal for the traded instrument: enter long when it crosses above its 8-week simple moving average; exit the long when it crosses below. No short entry.

@@ -1,0 +1,8 @@
+Calculation: Delta = volume × (2 × close − high − low) ÷ (high − low); when high = low, Delta = 0
+Calculation: Average absolute Delta = moving average of absolute Delta over a configurable lookback
+Calculation: Delta change = current Delta − previous bar’s Delta
+Calculation: Average absolute Delta change = moving average of absolute bar-to-bar Delta changes over a configurable lookback
+Calculation: Average volume = moving average of volume over a configurable lookback
+Calculation: Volume eligible = volume filter is off OR volume ≥ average volume × minimum volume multiplier
+Long: current bar is complete AND Volume eligible AND (Delta > 0 AND |Delta| ÷ average absolute Delta ≥ spike threshold OR Delta > 0 AND |Delta| ÷ average absolute Delta ≥ extreme threshold OR Delta > 0 AND previous bar’s Delta > 0 AND Delta two bars ago > 0 AND Delta > previous bar’s Delta AND previous bar’s Delta > Delta two bars ago OR Delta change > 0 AND |Delta change| ÷ average absolute Delta change ≥ shock threshold OR previous bar’s Delta < 0 AND Delta > 0 AND Delta change > 0 AND |Delta change| ÷ average absolute Delta change ≥ flip threshold)
+Short: current bar is complete AND Volume eligible AND (Delta < 0 AND |Delta| ÷ average absolute Delta ≥ spike threshold OR Delta < 0 AND |Delta| ÷ average absolute Delta ≥ extreme threshold OR Delta < 0 AND previous bar’s Delta < 0 AND Delta two bars ago < 0 AND |Delta| > |previous bar’s Delta| AND |previous bar’s Delta| > |Delta two bars ago| OR Delta change < 0 AND |Delta change| ÷ average absolute Delta change ≥ shock threshold OR previous bar’s Delta > 0 AND Delta < 0 AND Delta change < 0 AND |Delta change| ÷ average absolute Delta change ≥ flip threshold)

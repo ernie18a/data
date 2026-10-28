@@ -1,0 +1,6 @@
+Calculation: Smoothed close = Gaussian-weighted mean of close over a centered window; confirm a local maximum or minimum only after the half-window lag, and place its level at the corresponding center bar’s high or low. Merge nearby extrema within an ATR-based tolerance into one level; only unbroken levels can break.
+Calculation: Stop distance = stop multiplier × ATR at entry; target distance = target R multiple × stop distance.
+Long: (close > an unbroken level + displacement × ATR AND previous close <= that level) OR (a prior upward break is not false or already retested AND its age is within the retest window AND abs(low - broken level) <= retest tolerance × ATR AND close > broken level)
+Short: (close < an unbroken level - displacement × ATR AND previous close >= that level) OR (a prior downward break is not false or already retested AND its age is within the retest window AND abs(high - broken level) <= retest tolerance × ATR AND close < broken level)
+Exit: Long, low <= entry price - stop distance OR high >= entry price + target distance OR bars since entry >= grading horizon; if stop and target are both reached on the same bar, exit at the stop
+Exit: Short, high >= entry price + stop distance OR low <= entry price - target distance OR bars since entry >= grading horizon; if stop and target are both reached on the same bar, exit at the stop

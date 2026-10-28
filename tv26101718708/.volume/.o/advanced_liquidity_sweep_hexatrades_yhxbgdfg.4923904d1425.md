@@ -1,0 +1,3 @@
+Calculation: Active swing liquidity levels = confirmed swing highs and lows, each formed when its bar’s high is the highest or its low is the lowest across the chosen lookback on both sides; confirm after the bars on the right complete, then keep the level active until swept. If tracking both sizes, the major lookback is longer than the minor lookback.
+Long: On a completed bar, low < an active swing-low level AND close > that level
+Short: On a completed bar, high > an active swing-high level AND close < that level

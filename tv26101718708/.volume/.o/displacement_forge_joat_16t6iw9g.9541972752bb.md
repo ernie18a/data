@@ -1,0 +1,7 @@
+Calculation: Price-change Z-score = (current close-to-close change − its rolling mean) / its rolling standard deviation; use 0 when standard deviation is 0
+Calculation: Bullish displacement = price-change Z-score above a positive threshold, close > open, close > the highest close in a shorter lookback of preceding bars, close > a longer-period EMA, and close > current-session VWAP
+Calculation: Bearish displacement = price-change Z-score below the negative threshold, close < open, close < the lowest close in a shorter lookback of preceding bars, close < a longer-period EMA, and close < current-session VWAP
+Calculation: Bullish order-block zone = high-low range of the most recent bearish candle within the displacement lookback when a bullish displacement occurs
+Calculation: Bearish order-block zone = high-low range of the most recent bullish candle within the displacement lookback when a bearish displacement occurs
+Long: bullish displacement OR a bullish order-block zone reaction where low is within the zone, close > open, close − low > 0.4 × zone height, and the body is not entirely above the zone
+Short: bearish displacement OR a bearish order-block zone reaction where high is within the zone, close < open, high − close > 0.4 × zone height, and the body is not entirely below the zone

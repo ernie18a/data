@@ -1,0 +1,5 @@
+Calculation: Relative volume = current completed bar's volume / rolling mean volume, including the current bar
+Calculation: Volume z-score = (current completed bar's volume − rolling mean volume) / rolling standard deviation of volume, including the current bar
+Calculation: Volume direction delta = if high > low, ((close − low) − (high − close)) / (high − low) when that numerator is nonzero; otherwise 0.5 if close > open, −0.5 if close < open, or 0; if high = low, 0
+Long: (relative volume >= its moderate threshold when relative-volume mode is selected, or volume z-score >= its moderate threshold when z-score mode is selected) AND (volume direction delta > 0 OR (volume direction delta = 0 AND close >= open))
+Short: (relative volume >= its moderate threshold when relative-volume mode is selected, or volume z-score >= its moderate threshold when z-score mode is selected) AND (volume direction delta < 0 OR (volume direction delta = 0 AND close < open))

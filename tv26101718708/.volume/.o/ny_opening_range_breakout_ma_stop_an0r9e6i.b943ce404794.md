@@ -1,0 +1,7 @@
+Calculation: Opening-range high = highest high of bars from 09:30 to 09:45 America/New_York on the current day; use after that window completes
+Calculation: Opening-range low = lowest low of bars from 09:30 to 09:45 America/New_York on the current day; use after that window completes
+Calculation: Moving average = selected SMA, EMA, WMA, or VWMA of the selected price source
+Long: Previous bar close > opening-range high AND current bar is before the entry cutoff AND no long breakout has occurred that day AND position is flat AND (MA-based take profit is disabled OR current close > moving average)
+Short: Previous bar close < opening-range low AND current bar is before the entry cutoff AND no short breakout has occurred that day AND position is flat AND (MA-based take profit is disabled OR current close < moving average)
+Exit: long, low <= opening-range low OR (fixed-risk-reward take profit is enabled AND high >= entry price + (entry price - opening-range low) × reward ratio) OR (MA-based take profit is enabled AND close < moving average)
+Exit: short, high >= opening-range high OR (fixed-risk-reward take profit is enabled AND low <= entry price - (opening-range high - entry price) × reward ratio) OR (MA-based take profit is enabled AND close > moving average)

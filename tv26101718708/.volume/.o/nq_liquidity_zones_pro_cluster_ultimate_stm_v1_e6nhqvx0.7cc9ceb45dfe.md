@@ -1,0 +1,5 @@
+Calculation: Relative volume = each multi-timeframe bar’s volume divided by the volume average over the selected volume lookback; use the zone lookback unless a separate volume lookback is selected.
+Calculation: Zone thickness = multi-timeframe ATR multiplied by the zone-width factor.
+Calculation: Liquidity zones = seed centers from the current multi-timeframe bar backward through the zone lookback; skip a seed within one zone thickness of an earlier seed. For each remaining center, aggregate bars whose HLC3 is within one zone thickness, optionally only regular-session bars. Retain zones meeting the minimum score, freshness, and average relative-volume thresholds. Score is summed relative volume when volume weighting is enabled, otherwise touch count. Use multi-timeframe bars including the bar still forming. Rank retained zones by score and use only the highest-ranked zones up to the display limit.
+Long: Current close >= center of a displayed liquidity zone.
+Short: Current close < center of a displayed liquidity zone.

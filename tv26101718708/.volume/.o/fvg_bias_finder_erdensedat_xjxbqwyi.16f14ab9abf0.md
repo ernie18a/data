@@ -1,0 +1,2 @@
+Long: current high is a confirmed pivot high OR the latest unbroken confirmed pivot high is broken (close > level when close-based breaks are enabled, otherwise high > level)
+Short: current low is a confirmed pivot low OR the latest unbroken confirmed pivot low is broken (close < level when close-based breaks are enabled, otherwise low < level)

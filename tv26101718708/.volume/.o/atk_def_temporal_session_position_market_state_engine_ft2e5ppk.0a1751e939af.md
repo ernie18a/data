@@ -1,0 +1,6 @@
+Calculation: Confirmed pivot low = a bar whose low is lower than the lows of the configured number of bars on both sides; confirm after the right-side bars complete. Confirmed pivot high is the corresponding higher-high condition. Both use the same left and right lookbacks.
+Calculation: Period position average = mean of available values of (current close − period low) / (period high − period low), using the last completed monthly, weekly, daily, 4-hour, and 1-hour bars.
+Calculation: Current volume ratio = current bar volume / its 20-bar simple moving average.
+Calculation: Session open and close = first open and latest close accumulated for each current-day Asian (00:00–09:00), London (07:00–16:00), and New York (12:00–21:00) session in exchange time; use only sessions with at least one bar.
+Long: confirmed pivot low OR (Asian session close > Asian session open) OR (London session close > London session open) OR (New York session close > New York session open) OR (period position average > 0.65 AND current volume ratio < 1.3)
+Short: confirmed pivot high OR (Asian session close < Asian session open) OR (London session close < London session open) OR (New York session close < New York session open) OR (period position average < 0.35 AND current volume ratio < 1.3)

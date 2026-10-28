@@ -1,0 +1,4 @@
+Long: close > highest close over the prior lookback bars, excluding the current bar AND volume >= volume multiple × 50-bar average volume AND close > shorter-lookback SMA AND close > longer-lookback SMA AND shorter-lookback SMA > longer-lookback SMA
+Long: close < highest close over the prior lookback bars, excluding the current bar AND (highest close over the prior lookback bars, excluding the current bar / close - 1) <= proximity threshold AND close > shorter-lookback SMA AND close > longer-lookback SMA AND shorter-lookback SMA > longer-lookback SMA
+Calculation: ATR trailing stop = the greater of the previous stop and the highest high since entry minus an ATR multiple; reset at entry
+Exit: long, low <= ATR trailing stop

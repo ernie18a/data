@@ -1,0 +1,3 @@
+Calculation: FVG strength (%) = round(100 × passed checks / 4), where the equal-weight checks are: gap size meets the smaller ATR-multiple threshold; gap size meets the larger ATR-multiple threshold; the previous bar’s range meets the ATR displacement threshold; and trend aligns (bullish: close > shorter-period EMA > longer-period EMA; bearish: close < shorter-period EMA < longer-period EMA). Bullish gap size = current low − high two bars ago; bearish gap size = low two bars ago − current high.
+Long: current low > high two bars ago AND bullish FVG strength meets the configured minimum AND its strength category is enabled
+Short: current high < low two bars ago AND bearish FVG strength meets the configured minimum AND its strength category is enabled

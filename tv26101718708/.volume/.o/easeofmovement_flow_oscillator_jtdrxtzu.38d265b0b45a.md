@@ -1,0 +1,5 @@
+Calculation: Ease-of-movement = midpoint change divided by volume per unit of price range, with volume scaled by its own longer average; smooth, robustly standardize using median and median absolute deviation, then adaptively soft-bound the result.
+Calculation: Confirmed bullish pivot divergence = price makes a lower confirmed swing low while standardized ease makes a higher low, with the pivots no farther apart than a maximum lookback.
+Calculation: Confirmed bearish pivot divergence = price makes a higher confirmed swing high while standardized ease makes a lower high, with the pivots no farther apart than a maximum lookback.
+Long: Volume exists AND (ease crosses above the positive confirmation band OR confirmed bullish pivot divergence)
+Short: Volume exists AND (ease crosses below the negative confirmation band OR confirmed bearish pivot divergence)

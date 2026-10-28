@@ -1,0 +1,6 @@
+Calculation: Relative strength = stock percentage change over a longer lookback divided by benchmark percentage change over the same lookback, using current daily bars
+Calculation: Score = weighted sum of conditions: daily close above the longer-term EMA, daily close above the still-longer-term EMA, RSI above its strength threshold, daily volume above its longer-lookback average, bullish EMA cross, and deep-reversal condition
+Calculation: Bullish EMA cross = current daily close above the longer-term EMA AND previous daily close below the current daily EMA
+Calculation: Deep-reversal condition = current daily close within a parameterized fraction of the still-longer-term EMA AND RSI above its threshold AND daily volume above its longer-lookback average
+Calculation: Bullish alignment = current daily close above VWAP AND above the upper boundary of the previous daily bar's central pivot range
+Long: bullish EMA cross OR deep-reversal condition, AND score at or above the selection threshold, AND relative strength above 1, AND bullish alignment

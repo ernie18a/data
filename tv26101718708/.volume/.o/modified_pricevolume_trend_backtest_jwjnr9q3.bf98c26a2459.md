@@ -1,0 +1,3 @@
+Calculation: Modified price-volume trend = cumulative sum of volume × percentage change in OHLC4 from the prior bar
+Long: (modified price-volume trend > its moving average AND reverse trading is off) OR (modified price-volume trend < its moving average AND reverse trading is on)
+Short: (modified price-volume trend < its moving average AND reverse trading is off) OR (modified price-volume trend > its moving average AND reverse trading is on)

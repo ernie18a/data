@@ -1,0 +1,5 @@
+Calculation: Fair value basis = selected OHLC-derived price source smoothed by the selected method and lookback, or anchored VWAP.
+Calculation: Threshold bands = fair value basis plus/minus the median ratios of highs and lows to the basis on bars whose ranges cross the basis, scaled by the selected threshold width.
+Calculation: Deviation bands = fair value basis plus/minus multiples of the median distance from the basis to confirmed local pivots in OHLC4 divided by the basis. Include upper pivots only when the bar low is above the upper threshold band, and lower pivots only when the bar high is below the lower threshold band; each successive band extends by the same median distance.
+Long: Any configured OHLC-derived source crosses below its selected deviation band.
+Short: Any configured OHLC-derived source crosses above its selected deviation band.

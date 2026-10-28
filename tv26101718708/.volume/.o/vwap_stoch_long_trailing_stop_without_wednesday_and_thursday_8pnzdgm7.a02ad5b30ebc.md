@@ -1,0 +1,3 @@
+Long: close < VWAP(close) AND 10-period Stochastic %K < 5 AND day of week is Sunday, Monday, Tuesday, Friday, or Saturday AND position is flat or short
+Calculation: Long trailing stop = while long, the greater of the previous bar’s stop and the current close multiplied by one minus the trailing percentage; reset when not long
+Exit: Long, current bar’s low <= the long trailing stop established at the previous bar’s close

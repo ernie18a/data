@@ -1,0 +1,14 @@
+Calculation: Anchored VWAP = volume-weighted mean of the selected source from the active rolling-window or swing anchor through the current bar; use equal weights when volume is missing or nonpositive. In dual-anchor mode, use the more recent swing anchor; if unavailable, use the rolling window.
+Calculation: Anchored standard deviation = square root of the volume-weighted mean of squared source prices minus the squared Anchored VWAP, over the same anchor window; use equal weights when volume is missing or nonpositive.
+Calculation: Normalized distance = (close − Anchored VWAP) / Anchored standard deviation; use 0 when standard deviation is zero.
+Calculation: Rising VWAP = current Anchored VWAP > Anchored VWAP from a longer lookback; falling VWAP = current Anchored VWAP < Anchored VWAP from that lookback.
+Calculation: Upper-band rejection = high reaches or exceeds Anchored VWAP + outer-band multiplier × Anchored standard deviation AND close is below that band.
+Calculation: Lower-band rejection = low reaches or falls below Anchored VWAP − outer-band multiplier × Anchored standard deviation AND close is above that band.
+Calculation: Bullish normalized-distance divergence = the latest confirmed pivot low is lower than the preceding confirmed pivot low AND its normalized distance is higher than at the preceding pivot low.
+Calculation: Bearish normalized-distance divergence = the latest confirmed pivot high is higher than the preceding confirmed pivot high AND its normalized distance is lower than at the preceding pivot high.
+Long: close crosses above Anchored VWAP AND (signal sensitivity is All OR signal sensitivity is Confirmed AND Rising VWAP) AND session filter passes
+Long: Lower-band rejection AND session filter passes AND (reversal confirmation is Rejection only OR reversal confirmation is Non-trending regime AND NOT (normalized distance < −inner-band multiplier AND Falling VWAP) OR reversal confirmation is Confirming tell AND a bullish normalized-distance divergence occurred within the configured confirmation window)
+Long: Bullish normalized-distance divergence
+Short: close crosses below Anchored VWAP AND (signal sensitivity is All OR signal sensitivity is Confirmed AND Falling VWAP) AND session filter passes
+Short: Upper-band rejection AND session filter passes AND (reversal confirmation is Rejection only OR reversal confirmation is Non-trending regime AND NOT (normalized distance > inner-band multiplier AND Rising VWAP) OR reversal confirmation is Confirming tell AND a bearish normalized-distance divergence occurred within the configured confirmation window)
+Short: Bearish normalized-distance divergence

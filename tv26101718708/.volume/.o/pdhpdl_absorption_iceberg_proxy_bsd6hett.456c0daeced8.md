@@ -1,0 +1,7 @@
+Calculation: Prior-day high/low = high/low of the last completed daily bar
+Calculation: Level-zone half-height = chart-timeframe ATR, frozen at the start of each day, multiplied by a configurable factor
+Calculation: Stop = prior-day low − level-zone half-height − ATR × stop buffer
+Calculation: Risk = entry price − stop
+Calculation: Target = entry price + risk × target multiple
+Long: On a regular-hours bar, the bar touches the prior-day-low zone AND ((volume > prior-bar average volume × threshold AND (small-body test enabled: high − low > 0 AND |close − open| ≤ (high − low) × body fraction; otherwise: high − low < prior-bar average range × threshold) AND absorption is restricted to prior-day zones) AND this is the first absorption hit at that level within the cluster gap OR this is a new prior-day-low-zone touch after the touch cluster gap and the bar is not an absorption bar); enter at the next regular-hours bar's open only if entry price − stop ≥ ATR × minimum-risk factor AND entry price ≤ prior-day low + ATR × maximum-chase factor
+Exit: long, low ≤ stop OR high ≥ target OR bars held ≥ timeout horizon (if both stop and target are reached on one bar, exit at stop; on timeout, exit at close)

@@ -1,0 +1,14 @@
+Calculation: Prior-day volume profile = distribute each completed day's intraday-bar volume uniformly across price bins in proportion to each bar's high-low overlap; for zero-range bars, assign volume to the containing bin.
+Calculation: POC = center of the bin with the greatest volume in the prior completed day's profile.
+Calculation: VAH and VAL = upper and lower edges of the contiguous bins around the POC that contain the configured value-area fraction of prior-day profile volume, expanding toward the adjacent bin with greater volume (ties expand upward).
+Calculation: Prior-day shape = P if (POC − prior-day low) / (prior-day high − prior-day low) is at or above the configured upper threshold; b if at or below the configured lower threshold; otherwise D.
+Calculation: Volume spike = configured volume multiplier is disabled, or current or previous bar volume exceeds its corresponding 20-bar average volume times that multiplier.
+Calculation: Consecutive closes beyond a value-area edge = count of consecutive current-day bar closes above prior-day VAH or below prior-day VAL; reset the respective count when a close is not beyond that edge.
+Long: Prior-day shape is P AND current-day open is at or above prior-day VAL AND previous bar low <= prior-day VAH AND previous bar close >= prior-day VAL AND current bar low >= previous bar low AND current bar close > current bar open AND current bar close >= prior-day POC.
+Short: Prior-day shape is P AND consecutive closes below prior-day VAL meet the configured acceptance count AND volume spike.
+Short: Prior-day shape is b AND current-day open is at or below prior-day VAH AND previous bar high >= prior-day VAL AND previous bar close <= prior-day VAH AND current bar high <= previous bar high AND current bar close < current bar open AND current bar close <= prior-day POC.
+Long: Prior-day shape is b AND consecutive closes above prior-day VAH meet the configured acceptance count AND volume spike.
+Short: Prior-day shape is D AND current-day open is between prior-day VAL and VAH, inclusive AND range fading is active AND the configured per-edge fade limit is not reached AND current bar high >= prior-day VAH AND current bar close < prior-day VAH.
+Long: Prior-day shape is D AND current-day open is between prior-day VAL and VAH, inclusive AND range fading is active AND the configured per-edge fade limit is not reached AND current bar low <= prior-day VAL AND current bar close > prior-day VAL.
+Exit: Long, high >= TP1 (partial exit; move stop to entry when enabled) OR high >= TP2 OR low <= current stop.
+Exit: Short, low <= TP1 (partial exit; move stop to entry when enabled) OR low <= TP2 OR high >= current stop.

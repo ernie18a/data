@@ -1,0 +1,1 @@
+At each monthly decision, compare the risky instrument’s return over a trailing lookback with zero and with the safe instrument’s return over the same period. Go long the risky instrument if its return is positive and exceeds the safe instrument’s; otherwise go long the safe instrument, closing the other long position. Never short.

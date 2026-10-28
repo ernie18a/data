@@ -1,0 +1,4 @@
+Calculation: confirmed price pivot low = low lower than every low in the equal-length lookback window before and after it; available when the following window completes
+Calculation: confirmed price pivot high = high higher than every high in the equal-length lookback window before and after it; available when the following window completes
+Long: RSI < its oversold level AND MFI < its oversold level OR a new confirmed price pivot low is lower than the preceding confirmed price pivot low AND (RSI at the new pivot is higher than RSI at the preceding pivot OR MFI at the new pivot is higher than MFI at the preceding pivot)
+Short: RSI > its overbought level AND MFI > its overbought level OR a new confirmed price pivot high is higher than the preceding confirmed price pivot high AND (RSI at the new pivot is lower than RSI at the preceding pivot OR MFI at the new pivot is lower than MFI at the preceding pivot)

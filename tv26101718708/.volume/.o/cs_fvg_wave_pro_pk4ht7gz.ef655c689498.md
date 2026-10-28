@@ -1,0 +1,3 @@
+Calculation: gap volume = divide the gap price range into bins; for each bin, sum volume from available lower-timeframe bars within the current chart bar whose close is within one bin width of the bin midpoint, then sum the bin volumes; if all bins have zero volume, use current chart-bar volume
+Long: current chart-bar low > high two chart bars earlier AND the gap size exceeds an ATR-scaled threshold AND (volume filter disabled OR gap volume > chart-timeframe moving average volume × volume multiplier)
+Short: current chart-bar high < low two chart bars earlier AND the gap size exceeds an ATR-scaled threshold AND (volume filter disabled OR gap volume > chart-timeframe moving average volume × volume multiplier)

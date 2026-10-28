@@ -1,0 +1,2 @@
+Long: On a lower-timeframe bar contained in the current chart bar, fast RSI (shorter lookback) crosses either way through slow RSI (longer lookback), and RSI is at or below the buy threshold and outside the inclusive hide range.
+Short: On a lower-timeframe bar contained in the current chart bar, fast RSI (shorter lookback) crosses either way through slow RSI (longer lookback), and RSI is at or above the sell threshold and outside the inclusive hide range.

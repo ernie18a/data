@@ -1,0 +1,2 @@
+Long: close > EMA(close) AND MACD histogram crosses above 0 AND RSI(close) > 20 AND RSI(close) < 50 AND MFI(hlc3) < 50
+Short: close < EMA(close) AND MACD histogram crosses below 0 AND RSI(close) > 50 AND RSI(close) < 80 AND MFI(hlc3) > 50

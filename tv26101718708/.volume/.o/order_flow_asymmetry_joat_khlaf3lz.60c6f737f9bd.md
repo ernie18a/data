@@ -1,0 +1,6 @@
+Calculation: Normalized volume-weighted momentum = cumulative sum of (close change × volume), normalized to -50..+50 using its rolling low and high over a longer lookback.
+Calculation: Imbalance score = clamp to [-100, 100] the decaying sum of each bar's (close - midpoint of high and low) / (high - low), divided by ATR and scaled; use zero for a zero-range bar.
+Long: ADX > trend threshold AND close > EMA(close, longer lookback) AND normalized volume-weighted momentum crosses above its positive threshold AND imbalance score > positive gate AND NOT (volume < its rolling mean - sigma × rolling standard deviation AND high - low > ATR) AND bars since either prior signal >= cooldown
+Short: ADX > trend threshold AND close < EMA(close, longer lookback) AND normalized volume-weighted momentum crosses below its negative threshold AND imbalance score < negative gate AND NOT (volume < its rolling mean - sigma × rolling standard deviation AND high - low > ATR) AND bars since either prior signal >= cooldown
+Exit: long, high >= entry price + ATR(14) at entry × take-profit multiple OR low <= entry price - ATR(14) at entry × stop-loss multiple
+Exit: short, low <= entry price - ATR(14) at entry × take-profit multiple OR high >= entry price + ATR(14) at entry × stop-loss multiple

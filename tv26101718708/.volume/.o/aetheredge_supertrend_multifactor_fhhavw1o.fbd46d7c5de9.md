@@ -1,0 +1,5 @@
+Calculation: SuperTrend = ATR-based bands around (high + low) / 2, using ATR times a multiplier; when dynamic multiplier is enabled, multiply the base multiplier by ATR / its longer-lookback SMA, clamped to [0.6, 1.6]. Upper band resets to the new upper band when it is lower than the prior upper band or prior close exceeded the prior upper band; otherwise it persists. Lower band resets to the new lower band when it is higher than the prior lower band or prior close fell below the prior lower band; otherwise it persists. Trend turns bullish when prior trend was bearish and close exceeds the prior upper band; it turns bearish when prior trend was bullish and close falls below the prior lower band.
+Long: current SuperTrend trend is bullish AND prior SuperTrend trend was bearish
+Short: current SuperTrend trend is bearish AND prior SuperTrend trend was bullish
+Exit: long, current SuperTrend trend is bearish OR low <= SuperTrend line - ATR buffer
+Exit: short, current SuperTrend trend is bullish OR high >= SuperTrend line + ATR buffer

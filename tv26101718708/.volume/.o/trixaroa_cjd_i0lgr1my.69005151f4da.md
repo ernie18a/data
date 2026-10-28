@@ -1,0 +1,4 @@
+Calculation: TRIX = 100 × (triple-smoothed EMA of close − EMA of the triple-smoothed EMA) ÷ EMA of the triple-smoothed EMA
+Calculation: Aroon Up = 100 × (lookback length − bars since the highest high in the lookback) ÷ lookback length; Aroon Down = 100 × (lookback length − bars since the lowest low in the lookback) ÷ lookback length
+Long: TRIX crosses above its EMA signal line AND Aroon Up crosses above Aroon Down
+Long: TRIX crosses above its EMA signal line AND Aroon Up crosses above Aroon Down AND (MACD line crosses above its signal line OR MACD histogram > 0) AND RSI > 50 AND close > EMA(50) AND OBV > EMA(OBV, 20) AND OBV is higher than each of its previous 3 bars AND ADX > its minimum threshold AND +DI > −DI

@@ -1,0 +1,5 @@
+Calculation: total score = sum of configured points for: fast EMA > mid EMA > slow EMA and close > VWAP; RSI within its configured bullish range; volume > 20-bar average volume × configured volume multiplier; ADX > configured trend threshold; ATR > its 20-bar average; close > prior bar high; and bullish 15-minute fast EMA > mid EMA. The score components and entry threshold are configurable.
+Long: fast EMA > mid EMA OR total score ≥ configured entry threshold AND bullish 15-minute fast EMA > mid EMA AND no prior long entry or bars since last long entry > configured cooldown
+Short: fast EMA ≤ mid EMA OR total score < configured entry threshold AND fast EMA < mid EMA AND close < VWAP AND RSI < configured bearish threshold AND bearish 15-minute fast EMA < mid EMA AND no prior short entry or bars since last short entry > configured cooldown
+Exit: long, close < fast EMA OR close < VWAP
+Exit: short, close > fast EMA OR close > VWAP

@@ -1,0 +1,9 @@
+Calculation: Pullback reference = VWAP or EMA of chart-timeframe closes, as selected
+Calculation: Long stop = lowest low over the configured lookback minus the configured buffer, or entry-bar close minus ATR times the configured multiplier, as selected
+Calculation: Short stop = highest high over the configured lookback plus the configured buffer, or entry-bar close plus ATR times the configured multiplier, as selected
+Calculation: Risk = entry close minus long stop for longs; short stop minus entry close for shorts
+Calculation: Target 2 = entry close plus risk times the configured R multiple for longs; entry close minus risk times the configured R multiple for shorts
+Long: bar is confirmed AND signal is flat AND time is within the configured session AND last completed higher-timeframe close > its EMA AND that EMA > its value on the preceding completed higher-timeframe bar AND (current low <= pullback reference OR prior bar low <= prior pullback reference) AND current close > pullback reference AND (close > open if the close-direction filter is enabled) AND risk > minimum tick
+Short: bar is confirmed AND signal is flat AND time is within the configured session AND last completed higher-timeframe close < its EMA AND that EMA < its value on the preceding completed higher-timeframe bar AND (current high >= pullback reference OR prior bar high >= prior pullback reference) AND current close < pullback reference AND (close < open if the close-direction filter is enabled) AND risk > minimum tick
+Exit: long, current low <= fixed long stop OR current high >= fixed long Target 2
+Exit: short, current high >= fixed short stop OR current low <= fixed short Target 2

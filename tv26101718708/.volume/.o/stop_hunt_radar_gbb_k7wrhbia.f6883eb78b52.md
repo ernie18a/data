@@ -1,0 +1,6 @@
+Calculation: Sell-side pool = level of a confirmed pivot low, merged with nearby armed pivot lows using a configurable tolerance; remains armed until resolved or timed out.
+Calculation: Buy-side pool = level of a confirmed pivot high, merged with nearby armed pivot highs using a configurable tolerance; remains armed until resolved or timed out.
+Calculation: Sell-side sweep = an armed sell-side pool whose low penetrates its level by at least a configurable ATR-scaled minimum and closes back above it, or whose close below the level is followed by a close above it within a configurable grace window; track the sweep until it resolves or its watch window expires.
+Calculation: Buy-side sweep = an armed buy-side pool whose high penetrates its level by at least a configurable ATR-scaled minimum and closes back below it, or whose close above the level is followed by a close below it within a configurable grace window; track the sweep until it resolves or its watch window expires.
+Long: A sell-side sweep is active AND close > its pool level + a configurable ATR-scaled reclaim threshold.
+Short: A buy-side sweep is active AND close < its pool level − a configurable ATR-scaled reclaim threshold.

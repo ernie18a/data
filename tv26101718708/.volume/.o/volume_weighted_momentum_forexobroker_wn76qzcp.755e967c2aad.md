@@ -1,0 +1,3 @@
+Calculation: Volume-weighted momentum = sum((close − close from the ROC lookback bars ago) × volume over the averaging window) / sum(volume over the same averaging window)
+Long: bar closes with volume-weighted momentum > 0 and close crosses above its EMA, OR volume-weighted momentum crosses above 0 in zero-cross-only mode; session is allowed; ATR ≤ 0 or |volume-weighted momentum| ≥ minimum magnitude × ATR; position is flat or short; cooldown has elapsed
+Short: bar closes with volume-weighted momentum < 0 and close crosses below its EMA, OR volume-weighted momentum crosses below 0 in zero-cross-only mode; session is allowed; ATR ≤ 0 or |volume-weighted momentum| ≥ minimum magnitude × ATR; position is flat or long; cooldown has elapsed

@@ -1,0 +1,4 @@
+Calculation: Average volume = simple moving average of current and preceding bar volumes over a configurable lookback
+Calculation: Close location = clamp((close − low) / (high − low), 0, 1); use 0 when high = low
+Long: volume / average volume ≥ extreme-volume ratio AND volume / average volume ≥ strong-volume ratio AND close location > 1.15 × (1 − close location); if average volume = 0, use 1 for volume / average volume
+Short: volume / average volume ≥ extreme-volume ratio AND volume / average volume ≥ strong-volume ratio AND (1 − close location) > 1.15 × close location; if average volume = 0, use 1 for volume / average volume

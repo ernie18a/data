@@ -1,0 +1,5 @@
+Calculation: ATR volatility band = rolling mean of ATR ± rolling standard deviation of ATR, using the same lookback as ATR
+Calculation: Drift = rolling mean of log(close / previous close) − 0.5 × (rolling standard deviation of log(close / previous close))²
+Calculation: Long trailing stop = running maximum since flat of (low − trailing-stop ATR × trailing-stop multiplier)
+Long: datetime is within the configured backtest interval AND (position is flat OR (position is long AND close > long trailing stop)) AND volume > relative-volume multiplier × simple moving average of volume AND ATR is above the lower ATR volatility band AND ATR is below the upper ATR volatility band AND (drift > previous bar’s drift OR drift filter is disabled)
+Exit: long, datetime is within the configured backtest interval AND low <= long trailing stop

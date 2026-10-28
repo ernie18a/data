@@ -1,0 +1,9 @@
+Calculation: Renko wave = consecutive same-direction Renko bars, ending when direction reverses; use completed waves for setup comparisons and the forming wave for reversal-box counts.
+Calculation: Wave volume = sum of volume across the Renko wave.
+Calculation: Wave result = absolute distance from the wave's starting price to its extreme.
+Long: Completed down-wave volume and result are each at least the material-change threshold lower than those of the previous completed down-wave, and its low is higher than that prior low
+Long: Completed down-wave volume is at least the material-change threshold higher than the previous completed down-wave, and either its result is at least the material-change threshold shorter or its result increase meets the climax-extension threshold
+Long: A selling-climax candidate is followed by an up-wave with at least the reversal-confirmation number of Renko bars, then a completed down-wave whose volume and result are each at least the material-change threshold lower than the candidate down-wave and whose low is higher than the candidate low
+Short: Completed up-wave volume and result are each at least the material-change threshold lower than those of the previous completed up-wave, and its high is lower than that prior high
+Short: Completed up-wave volume is at least the material-change threshold higher than the previous completed up-wave, and either its result is at least the material-change threshold shorter or its result increase meets the climax-extension threshold
+Short: A buying-climax candidate is followed by a down-wave with at least the reversal-confirmation number of Renko bars, then a completed up-wave whose volume and result are each at least the material-change threshold lower than the candidate up-wave and whose high is lower than the candidate high

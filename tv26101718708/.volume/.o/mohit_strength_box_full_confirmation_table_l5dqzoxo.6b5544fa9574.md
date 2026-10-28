@@ -1,0 +1,4 @@
+Calculation: Relative strength = ((stock close / benchmark close) / SMA(stock close / benchmark close) - 1) × 100, using current-timeframe current bars for both closes
+Calculation: Bullish count = number of true conditions among relative strength > 0, close above Supertrend, MACD line > MACD signal line, RSI > 50, close > fast EMA and fast EMA > slow EMA, and +DI > -DI
+Long: relative strength > 0 OR close above Supertrend OR MACD line > MACD signal line OR RSI > 50 OR close > fast EMA AND fast EMA > slow EMA OR +DI > -DI OR bullish count >= 4
+Short: relative strength <= 0 OR close below or equal to Supertrend OR MACD line <= MACD signal line OR RSI <= 50 OR close <= fast EMA OR fast EMA <= slow EMA OR +DI <= -DI OR bullish count < 4

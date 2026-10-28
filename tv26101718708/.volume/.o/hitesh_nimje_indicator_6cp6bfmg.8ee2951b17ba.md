@@ -1,0 +1,5 @@
+Calculation: Session trend value = for each configured session, ((weighted mean of session closes − simple mean of session closes) × (n+1)/2) ÷ (population standard deviation × sqrt(n²−1)/(2×sqrt(3))); weighted mean uses weights 1 through n, with the newest close weighted n. Use current chart bars; while a session forms use its bars so far, otherwise retain the most recent session value.
+Calculation: Session volume delta = within each configured session, sum volume where close ≥ open minus sum volume where close < open. Use current chart bars; while a session forms use its bars so far, otherwise retain the most recent session value.
+Calculation: Active-session volume delta = sum the session volume deltas for sessions active on the current chart bar; inactive sessions contribute zero.
+Long: Any configured session trend value > 0 OR any configured session volume delta > 0 OR active-session volume delta > 0
+Short: Any configured session trend value ≤ 0 OR any configured session volume delta < 0 OR active-session volume delta < 0

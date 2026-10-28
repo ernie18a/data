@@ -1,0 +1,3 @@
+Calculation: Selected price = close, open, high, low, (high + low + close) / 3, or (high + low) / 2
+Long: Short-term moving average of the selected price crosses above the long-term moving average of the same price, using the same moving average type and a shorter lookback for the short-term average
+Exit: Long, short-term moving average of the selected price crosses below the long-term moving average of the same price, using the same moving average type and a shorter lookback for the short-term average

@@ -1,0 +1,3 @@
+Calculation: Reversal amount = configured reversal threshold rounded to at least one tick and fixed when a wave starts; ATR sizing uses the previous completed daily bar on intraday charts, otherwise the previous completed chart-timeframe bar
+Long: On a confirmed bar, close is at least one reversal amount above the latest extreme close, and the current wave is not up
+Short: On a confirmed bar, close is at least one reversal amount below the latest extreme close, and the current wave is not down

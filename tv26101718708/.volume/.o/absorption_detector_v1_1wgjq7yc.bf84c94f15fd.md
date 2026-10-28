@@ -1,0 +1,4 @@
+Calculation: Smoothed absorption z-score = the current bar’s volume divided by its high-low range, with the range floored at the instrument’s minimum price increment; subtract the rolling mean of that ratio and divide by its rolling standard deviation (floored at 0.0001), then take a shorter rolling mean of the z-score.
+Calculation: Close-position delta = 2 × ((close − low) divided by the high-low range floored at the instrument’s minimum price increment) − 1.
+Long: Smoothed absorption z-score > absorption threshold AND close-position delta > 0.2
+Short: Smoothed absorption z-score > absorption threshold AND close-position delta < −0.2

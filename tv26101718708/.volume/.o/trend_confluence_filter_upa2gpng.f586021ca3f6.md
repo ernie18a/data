@@ -1,0 +1,4 @@
+Calculation: Upper of SMA 20 and session VWAP = the greater of SMA 20 and session VWAP
+Calculation: Lower of SMA 20 and session VWAP = the lesser of SMA 20 and session VWAP
+Long: SMA 20 > SMA 50 AND SMA 50 > SMA 200 AND low < Upper of SMA 20 and session VWAP AND close > Upper of SMA 20 and session VWAP AND close > open OR close crosses above session VWAP on a confirmed bar OR EMA 9 crosses above EMA 21 on a confirmed bar
+Short: SMA 20 < SMA 50 AND SMA 50 < SMA 200 AND high > Lower of SMA 20 and session VWAP AND close < Lower of SMA 20 and session VWAP AND close < open OR close crosses below session VWAP on a confirmed bar OR EMA 9 crosses below EMA 21 on a confirmed bar

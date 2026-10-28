@@ -1,0 +1,5 @@
+Calculation: Elliott Wave Oscillator = short-lookback simple moving average of (high + low) / 2 minus its longer-lookback simple moving average
+Calculation: Breakout barrier = highest high of the preceding lookback bars, excluding the current bar
+Calculation: Oversold flag = becomes true when RSI is below the exhaustion threshold; resets when the raw long-entry condition is true
+Long: (RSI < 40 AND Elliott Wave Oscillator > its prior-bar value AND Elliott Wave Oscillator < 0) OR (RSI crosses above 40 AND money flow index > 30 AND Elliott Wave Oscillator > its prior-bar value AND volume > 0.8 × its simple moving average AND (close > breakout barrier OR oversold flag) AND position side is not long)
+Short: (RSI > 60 AND Elliott Wave Oscillator < its prior-bar value AND Elliott Wave Oscillator > 0) OR (RSI crosses below 60 AND money flow index < 70 AND Elliott Wave Oscillator < its prior-bar value AND volume > 0.8 × its simple moving average AND position side is not short)

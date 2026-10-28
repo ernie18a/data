@@ -1,0 +1,1 @@
+Compare the traded instrument’s percentage return over a lookback with the benchmark’s return over the same period, smooth the difference, and compare it with a moving average of that difference. Go long when the relative-strength measure crosses above its average; go short when it crosses below. No exit rule is specified.

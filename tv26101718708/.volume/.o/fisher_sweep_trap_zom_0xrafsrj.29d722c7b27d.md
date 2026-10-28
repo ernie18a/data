@@ -1,0 +1,12 @@
+Calculation: Prior-bar Donchian high = highest high over the lookback, excluding the current bar; prior-bar Donchian low = lowest low over the lookback, excluding the current bar
+Calculation: Fisher = 0.5 × ln((1 + x) / (1 − x)) + 0.5 × prior Fisher, where x = clamp(0.66 × ((HL2 − lowest HL2) / max(highest HL2 − lowest HL2, minimum price increment) − 0.5) + 0.67 × prior x, −0.99, 0.99); highest and lowest HL2 use the Fisher lookback including the current bar, and both recursive series start at 0
+Calculation: Fisher bearish pressure = Fisher > 0.72 × extreme threshold OR (Fisher < prior Fisher AND prior Fisher > extreme threshold)
+Calculation: Fisher bullish pressure = Fisher < −0.72 × extreme threshold OR (Fisher > prior Fisher AND prior Fisher < −extreme threshold)
+Calculation: MFI bearish exhaustion = MFI > overbought threshold OR prior MFI > overbought threshold OR (prior MFI > overbought threshold − 4 AND MFI < prior MFI)
+Calculation: MFI bullish exhaustion = MFI < oversold threshold OR prior MFI < oversold threshold OR (prior MFI < oversold threshold + 4 AND MFI > prior MFI)
+Calculation: EMA bearish bias = close < EMA OR EMA < EMA from 3 bars earlier
+Calculation: EMA bullish bias = close > EMA OR EMA > EMA from 3 bars earlier
+Calculation: Short score = 1 for Fisher bearish pressure + 1 for MFI bearish exhaustion + 1 for EMA bearish bias when optional EMA scoring is enabled
+Calculation: Long score = 1 for Fisher bullish pressure + 1 for MFI bullish exhaustion + 1 for EMA bullish bias when optional EMA scoring is enabled
+Long: low < prior-bar Donchian low AND lower wick > ATR × wick threshold AND lower wick > body × 0.55 AND close > prior-bar Donchian low AND (long score < required score OR (long score ≥ required score AND current bar index − last confirmed signal bar index > cooldown bars OR no confirmed signal has occurred)); lower wick = min(open, close) − low, body = max(abs(close − open), minimum price increment); required score is the configured threshold for the selected signal mode
+Short: high > prior-bar Donchian high AND upper wick > ATR × wick threshold AND upper wick > body × 0.55 AND close < prior-bar Donchian high AND (short score < required score OR (short score ≥ required score AND current bar index − last confirmed signal bar index > cooldown bars OR no confirmed signal has occurred)); upper wick = high − max(open, close), body = max(abs(close − open), minimum price increment); required score is the configured threshold for the selected signal mode

@@ -1,0 +1,3 @@
+Calculation: Criteria score = count of true conditions: close > short-, medium-, and long-term simple moving averages of close; short-term moving average > medium-term > long-term moving average; long-term moving average has risen on each of the preceding bars across a longer lookback; close >= lowest low over a long lookback × (1 + threshold); close >= highest high over the same long lookback × (1 − threshold); estimated relative-strength rating >= threshold, where the rating is a bounded, rescaled close return over a shorter lookback; volume >= its longer-term simple moving average × threshold; close > close at both a longer and a shorter lookback.
+Long: Criteria score = 8
+Exit: long, Criteria score <= 3

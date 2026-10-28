@@ -1,0 +1,1 @@
+For a currency pair, subtract the quote currency’s government bond yield from the base currency’s yield. Go long when the faster average of this spread crosses above the slower average; go short when it crosses below. Treat the opposite crossover as an exit or reversal signal. The indicator also ranks currencies by the direction of these yield-spread trends across pairs.

@@ -1,0 +1,12 @@
+Calculation: Volatility = ATR over the ATR lookback, evaluated on the last completed chart bar; normalized volatility = Volatility / prior close; volatility regime = rank of normalized volatility against its rolling percentile thresholds.
+Calculation: Capped price move = the smaller of the absolute return between the two most recent completed closes and its rolling 95th-percentile cap.
+Calculation: Dynamic half-band = EMA of Volatility × (band multiplier + normalized volatility × ATR weight + capped price move × price-move weight); when volatility regimes are enabled, regime-specific scalars adjust these weights and the EMA smoothing length.
+Calculation: Candidate trendline = prior completed bar's midpoint (high + low)/2 plus or minus the dynamic half-band; initialize at the upper value, then on each bar use the lower value clamped to at least the previous trendline if the prior close exceeds the previous trendline, otherwise use the upper value clamped to at most the previous trendline.
+Calculation: Candidate direction = bullish when the prior close exceeds the previous trendline; otherwise bearish.
+Calculation: Blocking filter = any enabled condition is true: the absolute change between the two latest trendline values is below a volatility-scaled threshold; the absolute normalized OLS regression slope of the trendline is below its threshold; prior volume is at or below its moving average (regime-scaled when enabled); prior high-low range is at or below its rolling percentile threshold (regime-scaled when enabled); or trendline change in basis points is below its threshold.
+Calculation: Breakout override = enabled and the absolute change between the two latest completed closes exceeds a volatility-scaled threshold.
+Calculation: Filtered direction = candidate direction when no blocking filter applies or the breakout override applies; otherwise retain the previous filtered direction.
+Long: Current filtered direction is bullish AND previous filtered direction was bearish.
+Short: Current filtered direction is bearish AND previous filtered direction was bullish.
+Exit: long, current filtered direction is bearish AND previous filtered direction was bullish.
+Exit: short, current filtered direction is bullish AND previous filtered direction was bearish.

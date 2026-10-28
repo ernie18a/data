@@ -1,0 +1,3 @@
+Calculation: Session moving average = selected moving average of close over the lookback, evaluated on chart bars and used only during its named session
+Long: During an Asia, London, or New York session, before that session has recorded a breakout, close crosses above its session moving average when close confirmation is enabled, or high crosses above it otherwise
+Short: During an Asia, London, or New York session, before that session has recorded a breakout, close crosses below its session moving average when close confirmation is enabled, or low crosses below it otherwise

@@ -1,0 +1,11 @@
+Calculation: Pivot zones = Confirmed pivot highs form resistance candidates and confirmed pivot lows form support candidates, using the same configurable left and right pivot lengths. For each side, scan pivots in chronological order; group each unused seed with later unused pivots within ATR × cluster tolerance of the seed price, requiring minimum bar spacing from every group member. Keep groups meeting the minimum-touch count. Each pivot’s weight is (1 + 0.5 × pivot volume / volume moving average + 0.5 × rejection-wick length / ATR) / (1 + pivot age / decay scale). Zone center is the weighted mean pivot price; top and bottom are the center plus or minus an ATR-based pad. Rank zones by summed pivot weight and retain the configured number per side. Rebuild on each confirmed new pivot; exclude zones already recorded as broken. A zone is active while it has not died and meets the touch-count and valid-boundary requirements.
+Calculation: Live break = An active resistance zone dies when close > zone top; an active support zone dies when close < zone bottom. It is a live break only if the previous close was at or below the resistance top, or at or above the support bottom, respectively. Retain broken zones and their break bar for retests.
+Calculation: Signal cooldown = A zone can signal only if no recorded signal in the cooldown interval is within ATR × cluster tolerance of its center.
+Long: An active support zone is touched (low <= zone top), close >= zone bottom, close >= open, and signal cooldown passes.
+Short: An active resistance zone is touched (high >= zone bottom), close <= zone top, close <= open, and signal cooldown passes.
+Long: A previously live-broken resistance zone is retested within the configured retest window after its break (low <= zone top, close >= zone bottom, close >= open).
+Short: A previously live-broken support zone is retested within the configured retest window after its break (high >= zone bottom, close <= zone top, close <= open).
+Long: An active support zone is touched (low <= zone top) and close > zone bottom.
+Short: An active resistance zone is touched (high >= zone bottom) and close < zone top.
+Long: A live resistance break occurs (close > zone top and previous close <= zone top).
+Short: A live support break occurs (close < zone bottom and previous close >= zone bottom).

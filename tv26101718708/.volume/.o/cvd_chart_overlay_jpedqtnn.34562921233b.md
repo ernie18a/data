@@ -1,0 +1,3 @@
+Calculation: CVD = Cumulative signed volume from the selected reset boundary, using lower-timeframe bars within each chart bar: assign volume positive when close > open, negative when close < open; if close = open, use close vs. the prior lower-timeframe close, splitting volume equally when those closes are also equal. Reset at the selected session, day, week, or month boundary, or do not reset, according to the setting.
+Long: CVD >= 0
+Short: CVD < 0

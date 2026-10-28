@@ -1,0 +1,1 @@
+On any monitored timeframe, signal long when the traded instrument makes a lower confirmed pivot low while the comparison instrument’s pivot low is equal to or above its previous pivot low. Signal short when the traded instrument makes a higher confirmed pivot high while the comparison instrument’s pivot high is equal to or below its previous pivot high. No exit rule is defined.

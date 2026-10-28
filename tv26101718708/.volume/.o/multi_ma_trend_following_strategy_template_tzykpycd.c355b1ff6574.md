@@ -1,0 +1,4 @@
+Long: datetime is within the configured date range AND the selected trend line > its prior-bar value AND its prior-bar value <= its value two bars ago
+Short: datetime is within the configured date range AND the selected trend line < its prior-bar value AND its prior-bar value >= its value two bars ago
+Exit: long, datetime is outside the configured date range OR the selected trend line < its prior-bar value AND its prior-bar value >= its value two bars ago
+Exit: short, datetime is outside the configured date range OR the selected trend line > its prior-bar value AND its prior-bar value <= its value two bars ago

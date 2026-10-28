@@ -1,0 +1,1 @@
+Use the externally sourced security’s closing price as a signal for the traded instrument: go long when it crosses above a configurable threshold; go short when it crosses below that threshold.

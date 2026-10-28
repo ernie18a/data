@@ -1,0 +1,1 @@
+Go long when Bitcoin’s volatility measure, calculated from its rolling highest close and current low, rises, the Bitcoin 7-day volatility index rises, and Bitcoin’s close is above its exponential moving average. Exit the long when Bitcoin’s close falls below that moving average. No short signal.

@@ -1,0 +1,3 @@
+Calculation: Initial Balance high/low = highest high and lowest low during the opening period of the active session; use the completed opening period.
+Long: The current high crosses above the active session’s Initial Balance high AND the Initial Balance is established AND a session is active.
+Short: The current low crosses below the active session’s Initial Balance low AND the Initial Balance is established AND a session is active.

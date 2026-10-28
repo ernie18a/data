@@ -1,0 +1,8 @@
+Calculation: Confirmed swing low/high = a low/high strictly below/above every low/high in the symmetric pivot window; confirm only after the right-side window completes
+Calculation: Up fan = the four most recent confirmed swing lows; down fan = the four most recent confirmed swing highs. In either fan, the oldest is the origin and the next three are legs 1–3. Require strictly increasing pivot bars, origin age within the maximum fan lookback, and absolute origin-to-leg-1 price change as a percentage of origin price at least the minimum leg percentage. Project leg 3 from the origin using its price change divided by its bar distance.
+Calculation: Volume filter = current bar volume > its simple moving average over the volume lookback × volume multiplier
+Calculation: Higher-timeframe close = close of the last completed bar on the selected higher timeframe
+Long: Current fan is an up fan AND the last completed bar close > projected leg-3 value at that bar AND the preceding bar close <= projected leg-3 value at that bar AND volume filter passes if enabled AND last completed bar close > higher-timeframe close if enabled
+Short: Current fan is a down fan AND the last completed bar close < projected leg-3 value at that bar AND the preceding bar close >= projected leg-3 value at that bar AND volume filter passes if enabled AND last completed bar close < higher-timeframe close if enabled
+Exit: long position, short condition
+Exit: short position, long condition

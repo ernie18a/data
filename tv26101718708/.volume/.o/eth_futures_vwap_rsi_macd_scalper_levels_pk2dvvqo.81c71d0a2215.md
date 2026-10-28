@@ -1,0 +1,3 @@
+Calculation: Candle body fraction = |close − open| / (high − low), or 0 when high = low
+Long: close crosses above VWAP AND the short-term EMA is above the long-term EMA AND the short-term EMA is above VWAP AND RSI is at or above its threshold AND MACD histogram > 0 AND volume > its moving average AND close > open AND candle body fraction is at least its threshold AND close >= previous bar high AND position is flat or short
+Short: close crosses below VWAP AND the short-term EMA is below the long-term EMA AND the short-term EMA is below VWAP AND RSI is at or below its threshold AND MACD histogram < 0 AND volume > its moving average AND close < open AND candle body fraction is at least its threshold AND close <= previous bar low AND position is flat or long

@@ -1,0 +1,8 @@
+Calculation: Squeeze momentum = linear regression, at the current bar, of close minus the average of (the average of the lookback highest high and lowest low) and the lookback SMA of close.
+Calculation: Prior-bar midpoint = (prior high + prior low) / 2; prior-bar upper and lower levels = prior-bar midpoint plus or minus prior-bar high-low range divided by a parameter.
+Calculation: HVI green = close > prior-bar midpoint OR (current high-low range > its lookback SMA AND close > prior-bar upper level AND volume > its lookback SMA) OR (current high > prior high AND current range < one-third of its lookback SMA AND volume < its lookback SMA) OR (current low < prior low AND current range < one-third of its lookback SMA AND volume > its lookback SMA).
+Calculation: HVI red = (current high-low range > its lookback SMA AND close < prior-bar lower level AND volume > its lookback SMA) OR close < prior-bar midpoint.
+Long: Parabolic SAR is below close and was at or above prior close on the prior bar AND close is above both moving averages AND the shorter-period SMA is above the longer-period EMA AND squeeze momentum > 0 AND HVI green.
+Short: Parabolic SAR is at or above close and was below prior close on the prior bar AND close is below both moving averages AND the shorter-period SMA is below the longer-period EMA AND squeeze momentum < 0 AND HVI red.
+Exit: long, close < entry price × (1 − stop-loss percentage) OR high ≥ entry price × (1 + take-profit percentage).
+Exit: short, close > entry price × (1 + stop-loss percentage) OR low ≤ entry price × (1 − take-profit percentage).

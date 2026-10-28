@@ -1,0 +1,7 @@
+Calculation: Adaptive rails = rolling highest high and lowest low over the same adaptive lookback on chart bars
+Calculation: Equilibrium = rails’ lower value plus their range multiplied by the clamped, shifted average of the EMA and volume-weighted MA of normalized typical-price position
+Calculation: Trend = bullish after close crosses above the prior bar’s upper rail; bearish after close crosses below the prior bar’s lower rail; otherwise retain the prior trend
+Calculation: Reversal score = weighted combination of close pressure, rejection wick, directional body pressure, volume/range participation, momentum-state pressure, and rail position
+Calculation: Rejection = relevant wick is large, or candle body is large and directionally aligned, or close is in the relevant end of the bar’s range
+Long: trend is bearish AND no trend change AND close <= equilibrium AND close is near the lower rail AND (equilibrium turns up OR bullish rejection) AND bullish reversal score >= its threshold AND cooldown has elapsed AND (chop filter is disabled OR chop suppression is false)
+Short: trend is bullish AND no trend change AND close >= equilibrium AND close is near the upper rail AND (equilibrium turns down OR bearish rejection) AND bearish reversal score >= its threshold AND cooldown has elapsed AND (chop filter is disabled OR chop suppression is false)

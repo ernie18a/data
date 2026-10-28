@@ -1,0 +1,2 @@
+Long: each of the three immediately preceding bars closes at or above its open AND current volume is greater than the volume of every bar in the selected preceding volume lookback
+Short: each of the three immediately preceding bars closes at or below its open AND current volume is greater than the volume of every bar in the selected preceding volume lookback

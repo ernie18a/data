@@ -1,0 +1,2 @@
+Long: For a shown cloud on its configured timeframe class, the first selected moving average is greater than or equal to the second, and both selected slots are enabled for that timeframe class.
+Short: For a shown cloud on its configured timeframe class, the first selected moving average is less than the second, and both selected slots are enabled for that timeframe class.

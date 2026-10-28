@@ -1,0 +1,3 @@
+Calculation: Volume momentum = EMA((close − previous close) × volume, signal lookback) / population standard deviation of close over the volatility lookback; defined only when volume is available and nonnegative, the EMA is available, and standard deviation is greater than zero
+Long: Volume momentum ≥ 0 OR (volume momentum > threshold AND close > SMA(close, price-filter lookback))
+Short: Volume momentum < 0 OR (volume momentum < −threshold AND close < SMA(close, price-filter lookback))

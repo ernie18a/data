@@ -1,0 +1,9 @@
+Calculation: ATR = average true range over a configurable lookback
+Calculation: Volume average = rolling average of volume; compare each pivot bar's volume with the average on that bar to weight shelf strength
+Calculation: Shelf = confirmed pivot highs and lows (requiring the pivot-strength number of bars on each side), merged when within a configurable ATR multiple; shelf price is the touches-weighted mean, touches count merged pivots, and strength adds more for pivots whose volume meets a configurable multiple of its rolling average
+Calculation: Eligible shelf = shelf with at least the minimum touches and within the lookback window; remove weaker shelves after one-third of that window without reaching minimum touches. Strongest eligible shelf is the eligible shelf with greatest strength
+Calculation: Reaction buffer = ATR multiplied by a configurable sensitivity; shelf intersection = low <= shelf price + 0.25 × reaction buffer AND high >= shelf price − 0.25 × reaction buffer
+Long: strongest eligible shelf transitions to HELD (previous close > shelf price AND shelf intersection AND close >= shelf price + reaction buffer) OR RECLAIM (previous close < shelf price AND close > shelf price + reaction buffer AND shelf is reused); reaction tag cooldown has elapsed
+Short: strongest eligible shelf transitions to REJECT (previous close < shelf price AND shelf intersection AND close <= shelf price − reaction buffer) OR LOST (previous close > shelf price AND close < shelf price − reaction buffer OR previous close < shelf price AND close > shelf price + reaction buffer AND shelf is fresh); reaction tag cooldown has elapsed
+Exit: Long, close < entry price
+Exit: Short, close > entry price

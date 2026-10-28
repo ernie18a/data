@@ -1,0 +1,1 @@
+During the configured trading window, calculate RSI on the open price of the selected Bitfinex short-position instrument. Enter long on the traded instrument when that RSI crosses below a lower threshold; enter short when it crosses above an upper threshold. Exit a long or short if the traded instrument moves against its average entry price by the configured stop-loss percentage.

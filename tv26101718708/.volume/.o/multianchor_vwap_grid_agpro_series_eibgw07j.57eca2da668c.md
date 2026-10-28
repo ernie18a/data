@@ -1,0 +1,3 @@
+Calculation: Active anchor VWAPs = volume-weighted average of HLC3 since each enabled anchor reset: confirmed swing high/low pivots (equal left and right lookbacks; anchor at the pivot bar), start of the selected higher-timeframe period (including its forming bar), each new loaded-data all-time high, and session start; include only available anchors.
+Long: Close is above more active anchor VWAPs than below.
+Short: Close is below more active anchor VWAPs than above.

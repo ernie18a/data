@@ -1,0 +1,25 @@
+Calculation: Confirmed swing high/low = pivot high/low confirmed by equal left/right lookbacks; retain the two most recent confirmed highs and lows.
+Calculation: Bullish BOS = close crosses above the latest confirmed swing high; bearish BOS = close crosses below the latest confirmed swing low. Update structure state to up on bullish BOS and down on bearish BOS. Bullish CHoCH = bullish BOS when the prior state was down; bearish CHoCH = bearish BOS when the prior state was up.
+Calculation: Structural uptrend = latest swing high > prior swing high AND latest swing low > prior swing low; structural downtrend = latest swing high < prior swing high AND latest swing low < prior swing low.
+Calculation: Discount midpoint = (highest high and lowest low over the range lookback) / 2.
+Calculation: Normalized entropy = (rolling standard deviation of absolute log returns / rolling mean of absolute log returns, normalized between its rolling 200-bar low and high); compressed when below its threshold, expanding when above 1 minus that threshold.
+Calculation: Bull/bear phase score = count of conditions: close above/below fast EMA; fast EMA above/below the next EMA; that EMA above/below the next; that EMA above/below slow EMA. Phase locked when score >= 3 and close is above/below the second EMA.
+Calculation: Volume compressed = volume / volume SMA below its threshold. Volume surge = volume / volume SMA above its threshold AND volume > prior volume × 1.2. Bull/bear volume resonance = surge with bullish/bearish candle AND the minimum volume ratio over the prior five bars below the compression threshold.
+Calculation: Smart-money bull/bear candle = body / range above its threshold, bullish/bearish candle, close in the upper/lower 40% of its range, and volume above volume SMA.
+Calculation: Bull/bear velocity acceleration = (close minus close three bars ago) / ATR is positive/negative and strictly increasing/decreasing over the latest three values.
+Calculation: Bull/bear sweep = within the sweep-age window, low below the prior sweep-lookback lowest low / high above the prior sweep-lookback highest high, with current close back above/below that level and a bullish/bearish candle.
+Calculation: Weekly bias = fast EMA above/below slow EMA calculated from weekly bars, using only the last completed weekly bar in historical backtests.
+Calculation: Bullish order block = most recent bearish candle in the order-block lookback followed by a bullish candle whose body is at least the impulse threshold × ATR and whose volume is at least its volume SMA; valid while close is above that block's low. Bearish order block is the corresponding most recent bullish candle followed by a qualifying bearish impulse; valid while close is below that block's high.
+Calculation: Bullish FVG = current low > high two bars ago and bullish candle; bearish FVG = current high < low two bars ago and bearish candle. FVG-in-order-block = valid same-direction FVG whose near boundary lies within the valid same-direction order block.
+Calculation: Bullish order-block stop = valid bullish order-block low minus ATR × stop buffer; risk = close minus stop. Bullish risk in ATR = risk / ATR. TP1 and TP2 = close + risk × their respective R multiples.
+Calculation: Buy score = 1 each for compressed entropy, locked bull phase, compressed volume OR bullish volume resonance, smart-money bull candle, and bullish velocity acceleration; add 1 each for bullish sweep and bullish weekly bias, 2 for bullish CHoCH, and 1 for bullish FVG-in-order-block.
+Calculation: Exit score = 1 each for expanding entropy, locked bear phase, compressed volume OR bearish volume resonance, smart-money bear candle, and bearish velocity acceleration.
+Calculation: Effective buy threshold = minimum score minus 1 when bullish CHoCH is active and structural uptrend is not; otherwise minimum score; add 1 when choppiness is above the soft threshold but not the hard threshold. Choppiness = 100 × log10(sum of one-bar ATR over its lookback / high-low range over that lookback) / log10(lookback).
+Long: Bullish BOS.
+Long: Buy score crosses up to or above the effective buy threshold AND choppiness is not above the hard threshold AND (structural uptrend OR bullish CHoCH) AND close < discount midpoint AND valid bullish order-block risk / ATR is within the configured minimum and maximum (when geometry gate enabled) AND RSI is below its overbought threshold AND cooldown has elapsed since the prior signal AND no position is open.
+Short: Bearish BOS.
+Exit: Long, exit score >= 3 OR bearish CHoCH OR (close > discount midpoint AND smart-money bear candle).
+Exit: Long, low <= bullish order-block stop.
+Exit: Long, high >= TP1 (close 50%); after TP1, low <= entry price exits the remainder.
+Exit: Long, high >= TP2.
+Exit: Long, bars held >= time stop AND TP1 has not filled.

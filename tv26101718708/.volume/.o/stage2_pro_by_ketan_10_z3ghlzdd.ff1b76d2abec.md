@@ -1,0 +1,1 @@
+Long: Current weekly close > long-term weekly SMA AND current weekly close > current monthly SMA AND current monthly close > current monthly SMA AND current monthly RSI > threshold

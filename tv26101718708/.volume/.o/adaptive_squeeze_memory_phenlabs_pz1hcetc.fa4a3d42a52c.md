@@ -1,0 +1,9 @@
+Calculation: Bollinger Band width = (upper band − lower band) / absolute basis; basis is the moving average of close and bands are basis ± standard deviation of close times a multiplier.
+Calculation: Keltner Channel width = (upper channel − lower channel) / absolute midpoint; midpoint is the exponential moving average of hlc3 and channels are midpoint ± ATR times a multiplier.
+Calculation: Squeeze event = on a confirmed bar, Bollinger Band width is below Keltner Channel width and was not below it on the previous bar.
+Calculation: Similarity distance = weighted Euclidean distance between the current squeeze event and each prior squeeze event, using ATR / absolute close, RSI / 100, and volume / its moving average as features.
+Calculation: Matched events = the closest prior squeeze events by similarity distance that have at least 10 subsequent bars; use up to the configured match count.
+Calculation: 10-bar median return = nearest-rank median of matched events’ percentage returns from their squeeze-event close to the close 10 bars later.
+Calculation: Bullish probability = percentage of matched events whose 10-bar return is positive.
+Long: Squeeze event AND at least 3 matched events AND (10-bar median return > 0 OR bullish probability ≥ probability threshold) AND NOT (10-bar median return < −median-edge threshold AND bullish probability ≤ 100% − probability threshold)
+Short: Squeeze event AND at least 3 matched events AND ((10-bar median return < −median-edge threshold AND bullish probability ≤ 100% − probability threshold) OR (10-bar median return < 0 OR bullish probability ≤ 100% − probability threshold) AND NOT (10-bar median return > 0 OR bullish probability ≥ probability threshold))

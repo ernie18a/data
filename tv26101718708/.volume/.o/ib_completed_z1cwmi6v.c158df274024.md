@@ -1,0 +1,15 @@
+Calculation: IB high/low = highest high / lowest low during the opening-balance window, fixed when the window ends.
+Calculation: Trigger SMA = simple moving average of the configured source.
+Calculation: Higher-timeframe moving average = configured moving-average type and lookback applied to higher-timeframe closes; use the last completed higher-timeframe bar.
+Calculation: Previous week high/low = highest high / lowest low of the previous completed futures week.
+Calculation: Previous day high/low = highest high / lowest low of the previous completed futures day.
+Calculation: Premarket high/low = highest high / lowest low during the configured premarket window.
+Calculation: Overnight low = lowest low from the evening session start through the next morning cutoff.
+Calculation: Daily and 4-hour 9-period SMAs, and 100- and 200-period SMAs on weekly, daily, 4-hour, and 1-hour bars use the last completed bar of the named timeframe.
+Calculation: Long stop = latest confirmed pivot low after a confirmed pivot high above IB high, less configured offset; if unavailable, lowest low since long retest less offset.
+Calculation: Short stop = latest confirmed pivot high after a confirmed pivot low below IB low, plus configured offset; if unavailable, highest high since short retest plus offset.
+Calculation: R = absolute difference between entry price and initial stop.
+Long: IB window complete AND a prior bar had high > IB high AND a later bar had low <= IB high AND close < Trigger SMA AND a subsequent bar has close > IB high AND close > Trigger SMA AND before entry cutoff and flatten time AND no trade already taken this session AND allowed weekday AND (IB size filter disabled OR IB range in ticks <= configured maximum) AND (HTF filter disabled OR close > Higher-timeframe moving average) AND, for each enabled location filter, its level is below close AND (opposite-IB invalidation disabled OR no low < IB low since breakout).
+Short: IB window complete AND a prior bar had low < IB low AND a later bar had high >= IB low AND close > Trigger SMA AND a subsequent bar has close < IB low AND close < Trigger SMA AND before entry cutoff and flatten time AND no trade already taken this session AND allowed weekday AND (IB size filter disabled OR IB range in ticks <= configured maximum) AND (HTF filter disabled OR close < Higher-timeframe moving average) AND, for each enabled location filter, its level is above close AND (opposite-IB invalidation disabled OR no high > IB high since breakout).
+Exit: Long, low <= long stop OR high >= entry price + any configured 1R–5R target OR (break-even enabled AND high >= entry price + configured trigger R AND low <= entry price) OR flatten time reached.
+Exit: Short, high >= short stop OR low <= entry price - any configured 1R–5R target OR (break-even enabled AND low <= entry price - configured trigger R AND high >= entry price) OR flatten time reached.

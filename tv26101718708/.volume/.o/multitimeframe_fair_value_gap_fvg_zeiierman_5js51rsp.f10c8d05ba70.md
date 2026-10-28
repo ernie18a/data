@@ -1,0 +1,3 @@
+Calculation: Average candle body size = mean of absolute close-open differences across all selected-timeframe bars processed through the current, still-forming bar
+Long: On the selected-timeframe still-forming bar, low > high two bars earlier AND close > high two bars earlier AND the preceding bar did not satisfy both conditions AND absolute close-open difference >= average candle body size × sensitivity
+Short: On the selected-timeframe still-forming bar, high < low two bars earlier AND close < low two bars earlier AND the preceding bar did not satisfy both conditions AND absolute close-open difference >= average candle body size × sensitivity

@@ -1,0 +1,4 @@
+Calculation: Flow = on the selected flow timeframe, candle close location ((close − low) − (high − close)) / max(high − low, minimum tick), multiplied by volume, divided by the longer-lookback average volume (or zero if that average is zero), then smoothed with an EMA using a shorter lookback; use the current flow-timeframe bar, including while it is forming.
+Calculation: Flow momentum = current Flow − previous Flow on the flow timeframe.
+Long: Flow ≥ strong-flow threshold OR (Flow > −strong-flow threshold AND Flow < strong-flow threshold AND Flow momentum > 0)
+Short: Flow ≤ −strong-flow threshold OR (Flow > −strong-flow threshold AND Flow < strong-flow threshold AND Flow momentum ≤ 0)

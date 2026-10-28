@@ -1,0 +1,1 @@
+On each bar, compare the closes of the BTC short-position and long-position instruments. Enter long on the traded instrument when the short-position close crosses above the long-position close; enter short when it crosses below. No separate exit condition is specified.

@@ -1,0 +1,20 @@
+Calculation: Prior-day/week/month high and low = high/low of the last completed daily, weekly, and monthly bars.
+Calculation: Session VWAP = volume-weighted average of hlc3 since the current session began; VWAP slope compares current VWAP with VWAP at a shorter lookback.
+Calculation: Daily moving-average stack = configured shorter- and longer-lookback EMAs and SMAs of the last completed daily bars.
+Calculation: Monthly anchored VWAPs = volume-weighted average of hlc3 from the start of the current month, previous month, or two months prior through the current bar.
+Long: Close > one of the prior daily, weekly, or monthly highs AND the previous two closes were at or below that same high, with the previous close at or below it.
+Long: Close > one of the prior daily, weekly, or monthly lows AND the previous close was at or below that same low.
+Long: Price closed above one of the prior daily, weekly, or monthly highs on an earlier bar in the current session AND low <= that high AND close >= that high AND (close is not above every moving average in the daily moving-average stack OR the current session high was reached within the configured recency interval).
+Long: Price closed above one of the prior daily, weekly, or monthly lows on an earlier bar in the current session AND low <= that low AND close >= that low AND (close is not above every moving average in the daily moving-average stack OR the current session high was reached within the configured recency interval).
+Long: Current monthly anchored VWAP, previous-month anchored VWAP, or two-month-prior anchored VWAP was at or below the previous close AND low <= that VWAP AND close >= that VWAP, OR the previous close was below that VWAP AND close >= that VWAP; AND (close is not above every moving average in the daily moving-average stack OR the current session high was reached within the configured recency interval).
+Long: A prior daily, weekly, or monthly low was broken by a close below it after the previous close was at or above it within the configured sweep window AND close > a prior daily, weekly, or monthly low that the previous close was at or below.
+Long: The current session open was lost after price had closed above it AND the current and previous bars both closed above it.
+Long: Price had closed above the current session open, no close below it has occurred in the session, no wick below it has occurred in the session, and low is within the configured tolerance at or above the open AND close > open AND close > current session open.
+Long: Price had closed above the current session open, no close below it has occurred in the session, and low < current session open AND close > open AND close > current session open.
+Long: The configured number of immediately preceding bars closed strictly below session VWAP AND close > session VWAP AND close > open AND close < prior-day high.
+Long: The configured number of immediately preceding bars closed strictly above session VWAP AND low <= session VWAP times one plus the configured test tolerance AND close > session VWAP AND close > open.
+Long: For a prior weekly or monthly high or low, price closed above the level earlier in the current session, no close below it has occurred since, and either low tests the level from above without a prior wick below it and close > level and close > open, OR low < level and close > level and close > open.
+Short: High >= one of the prior daily, weekly, or monthly highs AND close < that same high AND the previous bar's high was below it.
+Short: Close < one of the prior daily, weekly, or monthly lows AND the previous close was at or above that same low.
+Short: A prior daily, weekly, or monthly high was closed above after a two-close confirmed break within the configured sweep window AND the current close is below that high while the previous close was above it.
+Short: The configured number of immediately preceding bars closed strictly above session VWAP AND close < session VWAP AND close < open AND close > prior-day low.

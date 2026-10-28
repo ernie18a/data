@@ -1,0 +1,4 @@
+Calculation: Heikin-Ashi close = (open + high + low + close) / 4
+Calculation: High volatility = square root of exponentially weighted average of squared log volume returns > its moving average + a standard deviation multiple × its standard deviation
+Long: Fast EMA of Heikin-Ashi close > slow EMA of Heikin-Ashi close OR fast EMA of Heikin-Ashi close on the previous completed bar > slow EMA of Heikin-Ashi close on the previous completed bar AND fast EMA of Heikin-Ashi close two bars ago <= slow EMA of Heikin-Ashi close two bars ago AND high volatility on the previous completed bar
+Short: Fast EMA of Heikin-Ashi close < slow EMA of Heikin-Ashi close OR fast EMA of Heikin-Ashi close on the previous completed bar < slow EMA of Heikin-Ashi close on the previous completed bar AND fast EMA of Heikin-Ashi close two bars ago >= slow EMA of Heikin-Ashi close two bars ago AND high volatility on the previous completed bar

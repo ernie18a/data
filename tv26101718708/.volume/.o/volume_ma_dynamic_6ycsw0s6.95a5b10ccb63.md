@@ -1,0 +1,2 @@
+Long: close >= previous bar close when previous-close coloring is selected, or close >= open when open-close coloring is selected
+Short: close < previous bar close when previous-close coloring is selected, or close < open when open-close coloring is selected

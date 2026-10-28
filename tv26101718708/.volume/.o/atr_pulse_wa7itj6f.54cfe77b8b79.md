@@ -1,0 +1,3 @@
+Calculation: ATR trailing stop = let d = ATR × sensitivity and p = previous stop; if current close and previous close are both above p, max(p, current close − d); if both are below p, min(p, current close + d); otherwise, current close − d when current close > p, else current close + d
+Long: current close > current ATR trailing stop AND previous close ≤ previous ATR trailing stop
+Short: current close < current ATR trailing stop AND previous close ≥ previous ATR trailing stop

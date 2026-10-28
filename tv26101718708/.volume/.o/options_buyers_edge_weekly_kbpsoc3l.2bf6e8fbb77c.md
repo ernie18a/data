@@ -1,0 +1,4 @@
+Calculation: Direction score = weighted combination of short-term price change normalized by ATR, longer-lookback change in futures basis normalized by ATR, skew-gated delta-weighted option buyer-pressure imbalance, and lower-timeframe volume imbalance. Futures basis is futures close minus underlying close; lower-timeframe volume imbalance is up-volume minus down-volume divided by total volume.
+Calculation: ATM IV proxy = ATM call and put closes summed, divided by underlying close times the square root of time to weekly expiry, with the standard ATM-straddle scaling factor.
+Long: Direction score crosses above its positive threshold AND ATM IV proxy is at or above its moving average
+Short: Direction score crosses below its negative threshold AND ATM IV proxy is at or above its moving average

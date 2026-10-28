@@ -1,0 +1,3 @@
+Calculation: Bull% = 100 × bullish volume / (bullish volume + bearish volume) over the shorter flow lookback; up candles contribute all volume to bullish volume, down candles all volume to bearish volume, and doji candles split volume equally
+Long: fast EMA > slow EMA AND Bull% > bullish flow threshold AND (fast EMA slope filter disabled OR fast EMA > its prior-bar value)
+Short: fast EMA < slow EMA AND Bull% < bearish flow threshold AND (fast EMA slope filter disabled OR fast EMA < its prior-bar value)

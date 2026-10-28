@@ -1,0 +1,6 @@
+Calculation: Net behavioural pressure = 100 × (demand − supply) / (demand + supply), using cohorts from the current-timeframe lookback including the current completed bar; each cohort cost is HLC3 and weight is volume × 0.5^(age / recency half-life). Demand sums weight × gain^(gain curvature) for costs below close; supply sums weight × loss aversion × loss^(loss curvature) for costs above close, where gain or loss is the absolute unrealized return from cohort cost to close.
+Calculation: Support and resistance nodes = centers of the strongest equal-width price bins below and above close, respectively. Bin range is the lowest low to highest high over the cohort lookback; each cohort contributes its recency-weighted volume to the bin containing its HLC3 cost.
+Long: Net behavioural pressure crosses above the positive pressure threshold.
+Long: Low ≤ support node + node proximity × ATR AND close > support node AND net behavioural pressure > positive pressure threshold AND at least the configured minimum signal gap has elapsed since the prior node signal.
+Short: Net behavioural pressure crosses below the negative pressure threshold.
+Short: High ≥ resistance node − node proximity × ATR AND close < resistance node AND net behavioural pressure < negative pressure threshold AND at least the configured minimum signal gap has elapsed since the prior node signal.

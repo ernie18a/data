@@ -1,0 +1,3 @@
+Calculation: Volume profile value area = For each bar in a rolling lookback including the current bar, distribute its volume across price rows in proportion to each row’s overlap with the bar’s high-low range; use the bar’s full volume if its range is smaller than one row. The profile spans the highest high to the lowest low. POC is the midpoint of the row with the most volume. Starting at POC, add adjacent rows in descending volume order until the selected rows contain the value-area percentage of total profile volume; VAH is the top boundary and VAL the bottom boundary of those rows.
+Long: close > VAH
+Short: close < VAL

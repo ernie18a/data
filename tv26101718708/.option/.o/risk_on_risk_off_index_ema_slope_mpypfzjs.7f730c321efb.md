@@ -1,0 +1,1 @@
+Use three external market series. Enter or maintain long exposure when each series closes above its short-term EMA, which is above its longer-term EMA. Exit or avoid new longs otherwise; show caution when the two broad-market series meet the condition but the small-cap series does not. No short-entry condition is defined.

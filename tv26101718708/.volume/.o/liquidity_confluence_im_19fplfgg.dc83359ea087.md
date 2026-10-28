@@ -1,0 +1,4 @@
+Calculation: Rolling volume profile = distribute each bar’s volume equally across the price rows spanned by its high and low over the lookback, including the current bar; POC is the midpoint of the highest-volume row, and VAH/VAL bound the contiguous rows around POC expanded toward the higher-volume adjacent row until the target volume is reached.
+Calculation: Confirmed swing high/low = a pivot high/low with the configured number of bars on each side; available after the bars on the right have completed.
+Long: Current low > high two bars ago AND the midpoint of current low and high two bars ago is between VAL and VAH OR current close > the latest confirmed swing high and has not already broken that swing high
+Short: Current high < low two bars ago AND the midpoint of current high and low two bars ago is between VAL and VAH OR current close < the latest confirmed swing low and has not already broken that swing low

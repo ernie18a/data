@@ -1,0 +1,4 @@
+Calculation: Anchored VWAP = cumulative sum of configured bar price source × bar volume divided by cumulative volume since the selected anchor reset; use 1 when volume is missing.
+Calculation: Volume-weighted standard deviation = square root of max(cumulative sum of source² × volume divided by cumulative volume − Anchored VWAP², 0), since the selected anchor reset.
+Long: number of bars since anchor >= configured warmup count AND (low <= Anchored VWAP − configured band multiplier × volume-weighted standard deviation OR close > Anchored VWAP AND previous close <= previous Anchored VWAP)
+Short: number of bars since anchor >= configured warmup count AND (high >= Anchored VWAP + configured band multiplier × volume-weighted standard deviation OR close < Anchored VWAP AND previous close >= previous Anchored VWAP)

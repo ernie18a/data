@@ -1,0 +1,6 @@
+Calculation: Long-term EMA direction = long-term EMA > 3-bar EMA of the long-term EMA series shifted back one bar
+Calculation: Short-term EMA direction = short-term EMA > 3-bar EMA of the short-term EMA series shifted back one bar
+Long: close > short-term EMA AND short-term EMA > long-term EMA AND long-term EMA direction AND short-term EMA direction AND RSI > 50 AND close > session VWAP AND ATR > 20-bar SMA of ATR AND bar time is within 09:30–11:30 GMT-5
+Short: close < short-term EMA AND short-term EMA < long-term EMA AND NOT long-term EMA direction AND NOT short-term EMA direction AND RSI < 50 AND close < session VWAP AND ATR > 20-bar SMA of ATR AND bar time is within 09:30–11:30 GMT-5
+Exit: long, bar count since entry >= time-exit threshold OR short-term EMA < long-term EMA AND NOT long-term EMA direction OR close > entry price + ATR-based break-even trigger OR price reaches the initial or trailing stop
+Exit: short, bar count since entry >= time-exit threshold OR short-term EMA > long-term EMA AND NOT short-term EMA direction OR close < entry price - ATR-based break-even trigger OR price reaches the initial or trailing stop

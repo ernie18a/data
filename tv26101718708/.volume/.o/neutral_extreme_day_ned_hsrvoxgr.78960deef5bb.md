@@ -1,0 +1,3 @@
+Calculation: Session VWAP = cumulative sum of (typical price × volume) divided by cumulative volume from the current day’s first bar through the current bar; typical price = (high + low + close) / 3
+Long: After the current day’s first two bars are complete, the low of a current or earlier bar is below the lower of those bars’ lows AND no current or earlier bar’s high is above the higher of those bars’ highs AND no signal has occurred yet today AND current close > session VWAP
+Short: After the current day’s first two bars are complete, the high of a current or earlier bar is above the higher of those bars’ highs AND no current or earlier bar’s low is below the lower of those bars’ lows AND no signal has occurred yet today AND current close < session VWAP

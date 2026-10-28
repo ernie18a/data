@@ -1,0 +1,4 @@
+Calculation: Net delta = sum lower-timeframe bar volume within the current chart bar, signed + for lower-timeframe close > open, − for close < open, and 0 for equal closes.
+Calculation: Activity tier = compare current chart-bar volume and absolute net delta with their rolling percentile thresholds over three lookbacks ordered short < medium < long; a tier qualifies when the configured number of lookbacks meet its threshold. Tiers are mutually exclusive: big, else medium, else small, with thresholds ordered small < medium < big. A tier is a cluster when the configured trigger is met by volume, delta, both, or either; use volume only when lower-timeframe data is unavailable.
+Long: Activity tier is a cluster AND close >= open AND (lower-timeframe data unavailable OR net delta > 0).
+Short: Activity tier is a cluster AND close < open AND (lower-timeframe data unavailable OR net delta < 0).

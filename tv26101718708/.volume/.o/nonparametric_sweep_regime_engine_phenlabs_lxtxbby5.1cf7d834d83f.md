@@ -1,0 +1,10 @@
+Calculation: Buy-side liquidity = latest confirmed swing high, where the high exceeds the highs of the preceding and following pivot-strength bars; it becomes confirmed after the following bars complete and stays active until raided or replaced by a newer confirmed swing high.
+Calculation: Sell-side liquidity = latest confirmed swing low, where the low is below the lows of the preceding and following pivot-strength bars; it becomes confirmed after the following bars complete and stays active until raided or replaced by a newer confirmed swing low.
+Calculation: Lower wick ratio = max(min(open, close) − low, 0) / max(high − low, minimum price increment).
+Calculation: Upper wick ratio = max(high − max(open, close), 0) / max(high − low, minimum price increment).
+Calculation: Bullish reclaim = max(close − low, 0) / max(high − low, minimum price increment) × 100.
+Calculation: Bearish reclaim = max(high − close, 0) / max(high − low, minimum price increment) × 100.
+Calculation: Sweep score = clamp(35% × volume percentile rank + 35% × directional wick-ratio percentile rank + 30% × directional reclaim, 0, 100); rank each input against its rolling lookback.
+Calculation: Trend-expansion rank = rolling percentile rank of abs(fast EMA of close − slow EMA of close) / ATR; the fast EMA uses a shorter lookback than the slow EMA.
+Long: active sell-side liquidity exists AND low < sell-side liquidity AND close > sell-side liquidity AND all ranks and ATR are available AND trend-expansion rank ≤ maximum trend rank AND close > open when the directional reclaim candle requirement is enabled AND volume percentile rank ≥ minimum volume rank AND bullish sweep score ≥ minimum score
+Short: active buy-side liquidity exists AND high > buy-side liquidity AND close < buy-side liquidity AND all ranks and ATR are available AND trend-expansion rank ≤ maximum trend rank AND close < open when the directional reclaim candle requirement is enabled AND volume percentile rank ≥ minimum volume rank AND bearish sweep score ≥ minimum score

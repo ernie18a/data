@@ -1,0 +1,3 @@
+Calculation: Opening Range High = highest high during the current day's opening-range window, using completed bars
+Calculation: Opening Range Average Volume = mean volume of bars in the current day's opening-range window
+Long: close > Opening Range High AND volume >= Opening Range Average Volume × volume multiplier AND close > VWAP AND bar time is within the session window after the opening range and before the session cutoff AND the previous bar did not meet all these conditions

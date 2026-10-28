@@ -1,0 +1,7 @@
+Calculation: Previous-day pivot = (previous completed daily high + previous completed daily low + previous completed daily close) / 3
+Calculation: CPR top and bottom = max and min of the previous-day pivot and (previous completed daily high + previous completed daily low) / 2 + 2 × (previous-day pivot − (previous completed daily high + previous completed daily low) / 2), respectively
+Calculation: R1 = 2 × previous-day pivot − previous completed daily low
+Calculation: S1 = 2 × previous-day pivot − previous completed daily high
+Calculation: CPR width percentage = (CPR top − CPR bottom) / close × 100
+Long: (CPR width percentage ≤ narrow CPR width AND close > CPR top AND close > R1 AND close > open AND close > EMA(close) AND close > EMA(close)) OR (CPR width percentage ≥ wide CPR width AND low ≤ CPR bottom AND close > CPR bottom AND close > open AND close > EMA(close)) OR (CPR width percentage ≤ narrow CPR width AND close > previous-day pivot AND close ≤ R1 AND close > EMA(close))
+Short: (CPR width percentage ≤ narrow CPR width AND close < CPR bottom AND close < S1 AND close < open AND close < EMA(close)) OR (CPR width percentage ≥ wide CPR width AND high ≥ CPR top AND close < CPR top AND close < open AND close < EMA(close)) OR (CPR width percentage ≤ narrow CPR width AND close < previous-day pivot AND close ≥ S1 AND close < EMA(close))

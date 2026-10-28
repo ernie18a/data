@@ -1,0 +1,9 @@
+Calculation: Bullish structure break = developing pressure-timeframe close > highest high of the configured lookback of preceding completed pressure-timeframe bars × (1 + configured minimum break percentage), with close > open
+Calculation: Bearish structure break = developing pressure-timeframe close < lowest low of the configured lookback of preceding completed pressure-timeframe bars × (1 − configured minimum break percentage), with close < open
+Calculation: Bullish candle control = high > low AND close > open AND (close − open) / (high − low) ≥ configured minimum body fraction AND (close − low) / (high − low) ≥ configured minimum close-location fraction, using the developing pressure-timeframe bar
+Calculation: Bearish candle control = high > low AND close < open AND (open − close) / (high − low) ≥ configured minimum body fraction AND (high − close) / (high − low) ≥ configured minimum close-location fraction, using the developing pressure-timeframe bar
+Calculation: Bullish VWAP alignment = developing pressure-timeframe close > open AND current chart-bar close > session VWAP calculated from chart-bar HLC3
+Calculation: Bearish VWAP alignment = developing pressure-timeframe close < open AND current chart-bar close < session VWAP calculated from chart-bar HLC3
+Calculation: Accelerating body = absolute body size of the developing pressure-timeframe bar > absolute body size of the preceding completed pressure-timeframe bar
+Long: Bullish structure break AND bullish candle control AND bullish VWAP alignment AND accelerating body AND at least one of these conditions was false on the immediately preceding chart bar
+Short: Bearish structure break AND bearish candle control AND bearish VWAP alignment AND accelerating body AND at least one of these conditions was false on the immediately preceding chart bar

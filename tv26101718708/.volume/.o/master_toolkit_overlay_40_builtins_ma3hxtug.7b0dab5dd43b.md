@@ -1,0 +1,2 @@
+Long: fast SMA crosses above slow SMA OR fast EMA crosses above slow EMA OR fast SMA crosses above slow EMA OR a two-left, two-right pivot low is confirmed
+Short: fast SMA crosses below slow SMA OR fast EMA crosses below slow EMA OR a two-left, two-right pivot high is confirmed

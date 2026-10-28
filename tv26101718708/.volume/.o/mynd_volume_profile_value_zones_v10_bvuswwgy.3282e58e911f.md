@@ -1,0 +1,6 @@
+Calculation: Rolling volume profile value area high and low = For each rolling lookback of current-timeframe bars, divide the range from the lowest low to the highest high into price bins; assign each bar’s full volume to the bin containing its selected price (typically HLC3); identify the bin with the greatest volume as the POC, then expand outward one bin at a time toward the side with more volume in the next bin until the target fraction of total volume is reached. Value Area High is the upper edge of the highest included bin; Value Area Low is the lower edge of the lowest included bin. Include the current bar; ties between next-bin volumes expand downward.
+Calculation: Volume confirmation threshold = simple moving average of volume over a configurable lookback multiplied by a configurable factor.
+Long: Close crosses above Rolling volume profile value area high AND volume is at least the Volume confirmation threshold
+Long: Close crosses above Rolling volume profile value area low
+Short: Close crosses below Rolling volume profile value area low AND volume is at least the Volume confirmation threshold
+Short: Close crosses below Rolling volume profile value area high

@@ -1,0 +1,4 @@
+Calculation: Top-7 contribution = sum over the seven components of (current price − reference price) / Dow divisor; reference price is either the current session’s opening price or previous completed daily close, according to the selected reference.
+Calculation: VWAP balance = 100 × (sum of reference-price weights for components above their current-session VWAP − sum of reference-price weights for components below it); each weight = reference price / sum of valid reference prices. Use current-session VWAP and current prices.
+Long: within the configured plot session AND at least two components have valid prices AND smoothed Top-7 contribution > 0 AND VWAP balance > 0
+Short: within the configured plot session AND at least two components have valid prices AND smoothed Top-7 contribution < 0 AND VWAP balance < 0

@@ -1,0 +1,6 @@
+Calculation: YTD AVWAP = volume-weighted average of HLC3 from the start of the current calendar year through the current bar
+Calculation: IPO AVWAP = volume-weighted average of HLC3 from the first available bar through the current bar
+Calculation: 52-week-low AVWAP = volume-weighted average of HLC3 from the most recent bar that made a rolling 252-bar low through the current bar
+Calculation: Touch band = AVWAP × configured touch sensitivity percentage
+Long: (low <= YTD AVWAP + its touch band AND high >= YTD AVWAP - its touch band AND close >= YTD AVWAP) OR (low <= IPO AVWAP + its touch band AND high >= IPO AVWAP - its touch band AND close >= IPO AVWAP) OR (low <= 52-week-low AVWAP + its touch band AND high >= 52-week-low AVWAP - its touch band AND close >= 52-week-low AVWAP)
+Short: (low <= YTD AVWAP + its touch band AND high >= YTD AVWAP - its touch band AND close < YTD AVWAP) OR (low <= IPO AVWAP + its touch band AND high >= IPO AVWAP - its touch band AND close < IPO AVWAP) OR (low <= 52-week-low AVWAP + its touch band AND high >= 52-week-low AVWAP - its touch band AND close < 52-week-low AVWAP)

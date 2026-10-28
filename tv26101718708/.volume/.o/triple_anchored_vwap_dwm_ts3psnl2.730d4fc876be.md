@@ -1,0 +1,5 @@
+Calculation: Daily anchored VWAP = cumulative sum of selected source × volume divided by cumulative volume since the start of the current day, including the bar still forming
+Calculation: Weekly anchored VWAP = cumulative sum of selected source × volume divided by cumulative volume since the start of the current week, including the bar still forming
+Calculation: Monthly anchored VWAP = cumulative sum of selected source × volume divided by cumulative volume since the start of the current month, including the bar still forming
+Long: (close > daily anchored VWAP AND previous close <= previous daily anchored VWAP) OR (close > weekly anchored VWAP AND previous close <= previous weekly anchored VWAP) OR (close > monthly anchored VWAP AND previous close <= previous monthly anchored VWAP)
+Short: (close < daily anchored VWAP AND previous close >= previous daily anchored VWAP) OR (close < weekly anchored VWAP AND previous close >= previous weekly anchored VWAP) OR (close < monthly anchored VWAP AND previous close >= previous monthly anchored VWAP)

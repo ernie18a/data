@@ -1,0 +1,28 @@
+Calculation: Trigger acceptance = trigger-level close beyond the trigger for the required consecutive bars, OR a close beyond the confirmation level with relative volume above its minimum and close location beyond its directional minimum
+Calculation: Relative volume = current bar volume / average volume over the selected lookback
+Calculation: Close location = (close - low) / (high - low)
+Calculation: Retest = trigger crossed within the retest window, then price reaches the trigger within an ATR-based tolerance and closes beyond it
+Calculation: Zone pullback = price intersects the mapped demand or supply zone within its validity window
+Calculation: Relative strength edge = current instrument’s return from the previous completed daily close minus its mapped benchmark’s return from the previous completed daily close
+Calculation: Breadth score = weighted sum of up-volume share, smoothed TICK, volatility-curve state, and volatility level, clamped to 0–100
+Calculation: EMA momentum = fast and slow execution EMAs are ordered in the trade direction, both slope in that direction, and either the directional cross is recent or price is beyond the structure fast EMA
+Calculation: RSI momentum = RSI is beyond the directional threshold and rising for longs or falling for shorts, unless already beyond the stronger directional threshold; reject longs at exhaustion and shorts at exhaustion
+Calculation: Cloud alignment = execution EMA pair is ordered in the trade direction with price beyond the pair; also require the structure pair and, when selected, the higher-timeframe pairs to align in that direction
+Calculation: Expected reward/risk = distance from trigger to first target / distance from trigger to invalidation
+Calculation: Operational integrity = availability score for market feeds, chart volume, and map freshness minus stale-feed and non-intraday penalties
+Calculation: Native surface = 0.55 × structural surface + 0.45 × hedge-pressure surface; structural surface weights price versus session VWAP, execution EMA spread, structure EMA spread, and relative strength; hedge-pressure surface weights breadth score, volatility-curve state, volatility level, and mapped market gates
+Calculation: Entry score = 0.18 × setup base score + 11 if trigger accepted + 11 if entry geometry passes + 9 if cloud gate passes + 8 if EMA momentum passes + 7 if RSI momentum passes + 10 if internals pass + 7 if VWAP passes + 10 if mapped market gate passes + 6 if relative-strength gate passes + 6 if relative-volume gate passes + 5 if expected reward/risk passes + 5 if no-chase passes + 5 if prior-period structure gate passes + 6 if native-surface gate passes + 4 if operational integrity passes; cap at 100
+Long: mapped long setup exists AND is not watch-only AND trigger accepted AND (retest OR demand-zone pullback OR relative volume exceeds expansion threshold with bullish close location OR confirmation acceptance) AND price above session VWAP when required AND long cloud alignment when required AND long EMA and RSI momentum when required AND bullish breadth gate passes AND mapped bullish market gate passes when required AND relative strength edge meets its minimum when required AND relative volume meets its minimum when required AND expected reward/risk meets its minimum when required AND price is within the maximum ATR chase distance above the trigger AND prior-period structure gate passes AND native surface meets its bullish threshold when required AND operational integrity meets its minimum AND map is fresh AND entry is within the allowed session and outside opening, macro, and no-new-entry windows AND no event remap is pending AND map is not broken AND entry score meets its threshold AND cooldown and per-session signal limits pass
+Short: mapped short setup exists AND is not watch-only AND trigger accepted AND (retest OR supply-zone failed reclaim OR relative volume exceeds expansion threshold with bearish close location OR confirmation acceptance) AND price below session VWAP when required AND short cloud alignment when required AND short EMA and RSI momentum when required AND bearish breadth gate passes AND mapped bearish market gate passes when required AND relative strength edge is at or below its negative minimum when required AND relative volume meets its minimum when required AND expected reward/risk meets its minimum when required AND price is within the maximum ATR chase distance below the trigger AND prior-period structure gate passes AND native surface meets its bearish threshold when required AND operational integrity meets its minimum AND map is fresh AND entry is within the allowed session and outside opening, macro, and no-new-entry windows AND no event remap is pending AND map is not broken AND entry score meets its threshold AND cooldown and per-session signal limits pass
+Long: if both long and short signals qualify, choose long when long score is greater than or equal to short score
+Short: if both long and short signals qualify, choose short only when short score is greater than long score
+Exit: long, high >= first target (take partial and move stop to entry)
+Exit: long, low <= mapped invalidation before first target
+Exit: long, high >= second target after first target (trail remainder)
+Exit: long, high >= third target after second target
+Exit: long, low <= entry on a bar after first target and before third target
+Exit: short, low <= first target (take partial and move stop to entry)
+Exit: short, high >= mapped invalidation before first target
+Exit: short, low <= second target after first target (trail remainder)
+Exit: short, low <= third target after second target
+Exit: short, high >= entry on a bar after first target and before third target

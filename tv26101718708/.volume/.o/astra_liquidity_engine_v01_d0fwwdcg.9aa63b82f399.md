@@ -1,0 +1,3 @@
+Calculation: Normalized energy = clamp(20 × EMA(short smoothing, 0.6 × (short-lookback RSI of HLC3 − 50) + 1.0 × (medium-lookback RSI of HLC3 − 50) + 1.4 × (long-lookback RSI of HLC3 − 50)) ÷ rolling standard deviation of that weighted sum, −100, 100); the RSI lookbacks increase from short to medium to long. Use the current higher-timeframe bar, which may still be forming.
+Long: normalized energy on the higher-timeframe bar > 0
+Short: normalized energy on the higher-timeframe bar < 0

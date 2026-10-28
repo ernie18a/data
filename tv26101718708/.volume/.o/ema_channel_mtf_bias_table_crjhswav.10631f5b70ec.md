@@ -1,0 +1,4 @@
+Calculation: Bullish trend = 9-period EMA of close > 21-period EMA of close AND close > VWAP, all calculated on each of three progressively shorter aggregated timeframes using the current bar (most recently completed bar historically)
+Calculation: Bearish trend = 9-period EMA of close < 21-period EMA of close AND close < VWAP, all calculated on each of three progressively shorter aggregated timeframes using the current bar (most recently completed bar historically)
+Long: close crosses above the 9-period EMA of high AND close > 20-period SMA of close AND bullish trend on all three progressively shorter timeframes
+Short: close crosses below the 9-period EMA of low AND close < 20-period SMA of close AND bearish trend on all three progressively shorter timeframes

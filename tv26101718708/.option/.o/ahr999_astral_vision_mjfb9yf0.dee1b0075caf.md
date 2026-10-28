@@ -1,0 +1,1 @@
+For Bitcoin, calculate the ratio of its current price to its recent geometric mean, and the ratio of its current price to an age-based power-law fair value estimate. Multiply the ratios; signal long when the result is below the chosen oversold threshold. No short or exit condition is specified.

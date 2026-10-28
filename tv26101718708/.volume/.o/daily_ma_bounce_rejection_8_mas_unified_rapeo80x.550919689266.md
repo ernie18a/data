@@ -1,0 +1,7 @@
+Calculation: EMA 8, EMA 21, EMA 50, EMA 100, EMA 200, SMA 50, SMA 100, and SMA 200 = each average of daily closes through the last completed daily bar
+Calculation: Chart ATR(14) = average true range over chart-timeframe bars, using the previous completed bar
+Long: For any of the eight daily moving averages, either low <= moving average and close > moving average and close > open, or low <= moving average + configurable multiple of Chart ATR(14) and low >= moving average - 2 × that band and close > moving average and close > open; AND close is above all eight daily moving averages
+Long: close > EMA 8 > EMA 21; at least the configurable minimum number of down-closes among the configurable number of prior chart bars (each down-close means that bar's close is below the preceding bar's close); close > open; close > previous bar's high; AND close is above all eight daily moving averages
+Long: For any of the eight daily moving averages, low > moving average and low is within a configurable percentage of the moving average and close > open
+Short: For any of the eight daily moving averages, either high >= moving average and close < moving average and close < open, or high >= moving average - configurable multiple of Chart ATR(14) and high <= moving average + 2 × that band and close < moving average and close < open
+Short: For any of the eight daily moving averages, high < moving average and high is within a configurable percentage of the moving average and close < open

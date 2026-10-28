@@ -1,0 +1,7 @@
+Calculation: Composite score = EMA of the weighted average of RSI, MACD-histogram score, EMA-distance score, volume-ratio score, and ATR-ratio score. Each normalized score is clamped to 0–100: signed inputs map 0 to 50 and their rolling maximum absolute value to 100 (negative values map below 50); ratio inputs map 1 to 50 and a ratio one unit above 1 to 100. The MACD histogram and EMA percentage distance use their rolling maximum absolute values. Volume ratio is volume / average volume; ATR ratio is ATR / average ATR.
+Calculation: Composite slope = current composite score minus prior-bar composite score.
+Calculation: Chop = ADX below its threshold AND composite score strictly between the bear-bias and bull-bias levels AND absolute composite slope at or below its threshold.
+Calculation: Bull stretch = composite score at or above the strong-bull threshold AND composite slope at or below zero AND RSI at or above its threshold AND normalized absolute EMA distance at or above its threshold.
+Calculation: Bear stretch = composite score at or below the strong-bear threshold AND composite slope at or above zero AND RSI at or below its threshold AND normalized absolute EMA distance at or above its threshold.
+Long: Composite score at or above the strong-bull threshold OR above the bull-bias level OR (at or above 50 AND NOT Chop AND NOT Bull stretch AND NOT Bear stretch)
+Short: Composite score at or below the strong-bear threshold OR below the bear-bias level OR (below 50 AND NOT Chop AND NOT Bull stretch AND NOT Bear stretch)

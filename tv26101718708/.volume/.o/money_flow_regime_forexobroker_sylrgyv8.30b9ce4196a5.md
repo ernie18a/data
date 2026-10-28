@@ -1,0 +1,5 @@
+Calculation: Accumulation/distribution line = prior line + volume × money-flow multiplier, where money-flow multiplier = ((close − low) − (high − close)) / (high − low), or 0 when high = low; initialize the line at 0.
+Calculation: Chaikin oscillator = shorter-period EMA of the accumulation/distribution line − longer-period EMA of the accumulation/distribution line.
+Calculation: Flow z-score = (Chaikin oscillator − its rolling mean) / its rolling standard deviation over the normalization window; use 0 when the standard deviation is 0.
+Long: flow z-score ≥ mild-band threshold AND (strong-only mode is disabled OR flow z-score ≥ strong-band threshold) AND close crosses above its reclaim EMA AND current position is not long AND cooldown has elapsed AND (session restriction is disabled OR bar time is within the configured session)
+Short: flow z-score ≤ −mild-band threshold AND (strong-only mode is disabled OR flow z-score ≤ −strong-band threshold) AND close crosses below its reclaim EMA AND current position is not short AND cooldown has elapsed AND (session restriction is disabled OR bar time is within the configured session)

@@ -1,0 +1,3 @@
+Calculation: Value Area High/Low = upper and lower edges of the smallest contiguous range of profile price bins around the highest-volume bin that contains the configured share of total volume; assign each bar’s volume to bins in proportion to the overlap of its high-low range. Build the profile from the current session or configured rolling lookback, including the current bar.
+Long: low <= Value Area Low
+Short: high >= Value Area High

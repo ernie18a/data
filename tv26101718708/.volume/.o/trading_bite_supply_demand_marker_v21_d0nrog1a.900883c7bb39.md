@@ -1,0 +1,2 @@
+Long: On the current analyzed-timeframe bar, close < open AND volume < volume of each of the prior two completed bars
+Short: On the current analyzed-timeframe bar, close > open AND volume < volume of each of the prior two completed bars

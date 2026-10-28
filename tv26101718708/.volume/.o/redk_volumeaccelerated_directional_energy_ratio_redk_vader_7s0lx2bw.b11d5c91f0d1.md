@@ -1,0 +1,4 @@
+Calculation: VADER signal = WMA(100 × [WMA(max(c, 0), energy_length, MA_type) − WMA(max(−c, 0), energy_length, MA_type)] / WMA(volume_acceleration, energy_length, MA_type), average_length), smoothing_length), where c = clamp((close − previous close) / ((highest high over 2 bars − lowest low over 2 bars) / 2), −1, 1) × volume_acceleration; volume_acceleration is the stochastic value of volume over its lookback divided by 100 in Relative mode, volume in Full mode, or 1 in None mode; replace undefined c with its last defined value.
+Long: VADER signal crosses above 0
+Short: VADER signal crosses below 0
+Exit: long, VADER signal crosses below 0

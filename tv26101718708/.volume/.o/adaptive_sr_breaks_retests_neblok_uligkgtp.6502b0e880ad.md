@@ -1,0 +1,10 @@
+Calculation: ATR = average true range of the chart bars.
+Calculation: Active resistance/support = price of the latest confirmed pivot high/low, using configurable left and right bar lookbacks; it becomes active on confirmation and remains active until broken or replaced by a newer pivot. Store its zone half-width as ATR × configurable zone-width factor at confirmation.
+Calculation: Break quality score = count of: participation test passed (volume / its longer-lookback average ≥ threshold when volume average is positive, otherwise bar range / ATR ≥ fallback threshold); candle body / range ≥ threshold and body points in the break direction; close distance beyond the level / ATR ≥ displacement threshold.
+Long: Close > active resistance + minimum close-through distance × ATR AND break quality score ≥ configurable minimum tier.
+Short: Close < active support − minimum close-through distance × ATR AND break quality score ≥ configurable minimum tier.
+Long: A broken support is retested within the configurable watch window after its break, low ≤ level + zone tolerance, and close < level; OR a live support is swept, low < level, close > level, and previous bar low ≥ level.
+Short: A broken resistance is retested within the configurable watch window after its break, high ≥ level − zone tolerance, and close > level; OR a live resistance is swept, high > level, close < level, and previous bar high ≤ level.
+Long: A broken support fails within the configurable watch window after its break, with close > level + zone tolerance.
+Short: A broken resistance fails within the configurable watch window after its break, with close < level − zone tolerance.
+Calculation: Zone tolerance = greater of the stored zone half-width and minimum tick size. Retest and failure conditions apply only on bars after the break and through the watch-window limit.

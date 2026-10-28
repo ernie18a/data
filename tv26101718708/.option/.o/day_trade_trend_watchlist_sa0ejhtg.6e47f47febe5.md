@@ -1,0 +1,1 @@
+For each watched instrument, track its high and low during the premarket session. After that session ends, signal long when its close is above the premarket high and short when its close is below the premarket low. The script defines no exit rule. Moving average alignment and breaks of the prior day's range are displayed or alerted as context, not specified as trade decisions.

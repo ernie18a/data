@@ -1,0 +1,7 @@
+Calculation: VPT-adjusted price = high + shadow when shadow > 0, otherwise low + shadow; shadow = (VPT − SMA(VPT, shorter lookback)) / standard deviation(VPT − SMA(VPT, shorter lookback), longer lookback) × standard deviation(high − low, longer lookback); VPT = cumulative sum of (close − open) × volume / (high − low)
+Calculation: SuperTrend line = EMA(VPT-adjusted price, long lookback) with ATR bands around it; trail the lower band upward while the previous close is above the prior lower band, trail the upper band downward while the previous close is below the prior upper band, and switch trend when close crosses the prior opposite band; use the lower band in an uptrend and upper band in a downtrend
+Calculation: VWAP regression channel = endpoint of the linear regression of VWAP over a lookback, plus or minus a multiplier times the standard deviation of VWAP over that same lookback
+Long: close crosses above SuperTrend line AND close > EMA(open, same long lookback) AND datetime is within the configured backtest date range
+Short: close crosses below SuperTrend line AND close < EMA(open, same long lookback) AND datetime is within the configured backtest date range
+Exit: long, close crosses below the upper VWAP regression channel
+Exit: short, close crosses above the lower VWAP regression channel

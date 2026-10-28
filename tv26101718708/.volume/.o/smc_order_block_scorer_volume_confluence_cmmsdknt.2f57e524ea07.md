@@ -1,0 +1,4 @@
+Calculation: Major swing pivot high/low = bar high/low that remains the highest/lowest over equal configurable lookback bars before and after it; use the latest confirmed pivot. Major lookback is longer than minor lookback.
+Calculation: Minor swing pivot high/low = bar high/low that remains the highest/lowest over equal configurable lookback bars before and after it; use the latest confirmed pivot.
+Long: close > latest unbroken major swing pivot high OR close > latest unbroken minor swing pivot high
+Short: close < latest unbroken major swing pivot low OR close < latest unbroken minor swing pivot low

@@ -1,0 +1,5 @@
+Calculation: Directional Pressure Score (DPS) = EMA of length L of clamp(0.45 × (close − open)/(high − low) + 0.25 × (close − (high + low)/2)/(high − low) + 0.20 × clamp(volume's 50-bar z-score/3, −1, 1) + 0.10 × clamp((open − previous close)/ATR(14), −1, 1), −1, 1); use 0 for a zero range, zero volume standard deviation, or nonpositive ATR. Use current-timeframe bars and the prior bar's close.
+Calculation: Route Continuity Index (RCI) = clamp(0.65 × fraction of the continuity lookback whose nonzero DPS sign matches current DPS sign + 0.35 × clamp(1 − 4 × standard deviation of DPS over that lookback, 0, 1), 0, 1).
+Calculation: Clean state = no magnitude-qualified DPS sign flip on this bar or the four preceding bars, AND ((|DPS| ≥ clean DPS threshold AND RCI ≥ clean RCI threshold) OR (RCI ≥ 0.75 AND |DPS| ≥ stalling DPS threshold)); a strict-filter setting raises both clean thresholds by the same configurable amount.
+Long: Clean state = true AND previous bar's Clean state = false AND DPS ≥ 0
+Short: Clean state = true AND previous bar's Clean state = false AND DPS < 0

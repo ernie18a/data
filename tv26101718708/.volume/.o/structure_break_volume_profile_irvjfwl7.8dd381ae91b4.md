@@ -1,0 +1,5 @@
+Calculation: Confirmed swing high = a bar’s high, confirmed after the same number of bars on each side have completed without a higher high
+Calculation: Confirmed swing low = a bar’s low, confirmed after the same number of bars on each side have completed without a lower low
+Calculation: Active CHoCH POC = center price of the highest-volume bin in the price range between the active structure’s highest and lowest confirmed pivots; build bins from bars between the earlier of those pivot bars and the bar before the latest CHoCH, allocating each bar’s volume to bins in proportion to its high-low overlap (use 1 when volume is missing or nonpositive)
+Long: latest confirmed swing high has not been broken and close > that high (or high > that high in wick-confirmation mode) OR latest CHoCH is bullish and low <= active CHoCH POC and high >= active CHoCH POC and the preceding bar did not touch that POC
+Short: latest confirmed swing low has not been broken and close < that low (or low < that low in wick-confirmation mode) OR latest CHoCH is bearish and low <= active CHoCH POC and high >= active CHoCH POC and the preceding bar did not touch that POC

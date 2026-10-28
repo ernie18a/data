@@ -1,0 +1,4 @@
+Calculation: Resistance level = latest confirmed pivot high, using equal lookback lengths on both sides
+Calculation: Support level = latest confirmed pivot low, using equal lookback lengths on both sides
+Long: Previous low < support level AND previous close < support level AND current close > support level AND current volume > simple moving average of volume × a multiplier AND current bar is on a weekday
+Short: Previous high > resistance level AND previous close > resistance level AND current close < resistance level AND current volume > simple moving average of volume × a multiplier AND current bar is on a weekday

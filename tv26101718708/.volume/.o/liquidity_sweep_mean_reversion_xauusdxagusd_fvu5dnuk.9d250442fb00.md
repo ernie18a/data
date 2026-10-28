@@ -1,0 +1,12 @@
+Calculation: Short/long liquidity highs/lows = rolling highest high/lowest low over shorter/longer lookbacks, from the last completed bar
+Calculation: Fast/slow SMMA = Wilder moving average of close over shorter/longer lookbacks
+Calculation: Anchored VWAP = volume-weighted average of typical price (high + low + close)/3, resetting at the selected session, week, or month boundary
+Calculation: Risk/reward ratio = absolute distance from close to opposing short-lookback liquidity level divided by absolute distance from close to stop level; long stop is the latest bullish sweep low adjusted down by the selected percentage buffer, short stop is the latest bearish sweep high adjusted up by that buffer
+Long: (low < prior short-lookback low AND close > prior short-lookback low) OR (low < prior long-lookback low AND close > prior long-lookback low)
+Short: (high > prior short-lookback high AND close < prior short-lookback high) OR (high > prior long-lookback high AND close < prior long-lookback high)
+Long: Bullish sweep within the following five bars AND close > last confirmed pivot high (pivot uses three bars on each side)
+Short: Bearish sweep within the following five bars AND close < last confirmed pivot low (pivot uses three bars on each side)
+Long: In selected strategy mode, either bullish sweep within five bars AND close above anchored VWAP AND in selected time window AND (fast SMMA crosses above slow SMMA OR close crosses above fast SMMA); or bullish sweep on this bar AND (sweep is unfiltered or close above anchored VWAP) AND in selected time window; or bullish sweep on this bar AND in selected time window; risk/reward ratio meets selected minimum
+Short: In selected strategy mode, either bearish sweep within five bars AND close below anchored VWAP AND in selected time window AND (fast SMMA crosses below slow SMMA OR close crosses below fast SMMA); or bearish sweep on this bar AND (sweep is unfiltered or close below anchored VWAP) AND in selected time window; or bearish sweep on this bar AND in selected time window; risk/reward ratio meets selected minimum
+Exit: Long, low <= frozen stop level OR high >= frozen short-lookback liquidity high target OR close crosses above fast SMMA (selected partial close)
+Exit: Short, high >= frozen stop level OR low <= frozen long-lookback liquidity low target OR close crosses below fast SMMA (selected partial close)

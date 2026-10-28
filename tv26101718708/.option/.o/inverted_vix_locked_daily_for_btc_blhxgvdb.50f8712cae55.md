@@ -1,0 +1,1 @@
+Use the daily VIX close to measure its position within its recent daily high-to-low range, with higher scores representing lower VIX. When this inverse score crosses above the configured panic threshold, go long the traded cryptocurrency. No short or exit decision is defined.

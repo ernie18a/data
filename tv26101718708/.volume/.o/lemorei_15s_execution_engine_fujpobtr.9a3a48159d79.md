@@ -1,0 +1,10 @@
+Calculation: Session VWAP = volume-weighted average of (high + low + close) / 3, accumulated from the start of the current trading day through the current bar
+Calculation: Bar volume delta = volume × ((close − low) − (high − close)) / (high − low); when high = low, use zero
+Calculation: Smoothed volume delta = EMA of bar volume delta
+Calculation: Cumulative volume delta = running sum of bar volume delta, reset at the start of each trading day
+Calculation: Long score = count of these conditions that are true: close > session VWAP; short EMA > longer EMA; short EMA > its value several bars earlier; smoothed volume delta > 0; cumulative volume delta > its value several bars earlier
+Calculation: Short score = count of the complementary conditions: close <= session VWAP; short EMA <= longer EMA; short EMA <= its value several bars earlier; smoothed volume delta <= 0; cumulative volume delta <= its value several bars earlier
+Calculation: Relative volume = current volume divided by its recent moving average
+Calculation: Delta peak = highest absolute smoothed volume delta over a recent lookback
+Long: Long score >= the configured signal threshold OR (long score = 5 AND relative volume >= the configured strong-volume threshold) OR (high >= the highest high over a recent lookback AND smoothed volume delta > 0 AND delta peak > 0 AND absolute smoothed volume delta < the configured fraction of delta peak AND smoothed volume delta < its value several bars earlier)
+Short: Short score >= the configured signal threshold OR (short score = 5 AND relative volume >= the configured strong-volume threshold) OR (low <= the lowest low over a recent lookback AND smoothed volume delta < 0 AND delta peak > 0 AND absolute smoothed volume delta < the configured fraction of delta peak AND smoothed volume delta > its value several bars earlier)

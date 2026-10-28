@@ -1,0 +1,1 @@
+Measure each currency’s strength relative to the broader currency basket. When both JPY and CHF are simultaneously extremely weak, go long non-JPY currency pairs. When both are simultaneously extremely strong, go short pairs quoted in JPY. Otherwise, take no directional action. The indicator provides no exit rule.

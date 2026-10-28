@@ -1,0 +1,1 @@
+Use a reference asset’s weekly and three-month closing prices. Go long when the weekly close is above the three-month close; go short when the three-month close is above the weekly close. No separate exit condition is defined.

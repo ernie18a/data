@@ -1,0 +1,2 @@
+Long: volume > 2.5 × SMA(volume, longer lookback) AND RSI <= oversold threshold
+Exit: long, low <= entry price × (1 − stop-loss percentage) OR high >= entry price × (1 + any of five ascending profit-target percentages)

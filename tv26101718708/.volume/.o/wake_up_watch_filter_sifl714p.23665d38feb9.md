@@ -1,0 +1,3 @@
+Calculation: Squeeze = Bollinger Bands are strictly inside Keltner Channels; both use the same simple moving average of close as their center, and the Keltner width is ATR times its multiplier
+Calculation: Volume percentile rank = current volume’s percentile rank over the current and preceding volume lookback bars
+Long: Squeeze AND volume percentile rank <= volume threshold AND (close >= 50-period EMA of close OR current 50-period EMA >= its previous-bar value) AND the preceding bar did not meet all three conditions

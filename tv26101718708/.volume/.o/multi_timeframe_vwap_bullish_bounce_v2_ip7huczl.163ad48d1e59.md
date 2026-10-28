@@ -1,0 +1,2 @@
+Calculation: Session VWAP = session-anchored VWAP of HLC3, calculated separately from bars aggregated to each of the two requested timeframes; use the current/forming timeframe bar value (historical values reflect completed bars).
+Long: For each requested timeframe, the lowest close across the previous N chart bars is greater than that timeframe’s VWAP on the previous chart bar AND the current chart bar’s low is at or below its current VWAP AND its close is above its current VWAP

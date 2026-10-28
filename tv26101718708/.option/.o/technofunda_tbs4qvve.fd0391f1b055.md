@@ -1,0 +1,1 @@
+Compare the instrument’s return with a benchmark over a rolling lookback. When the instrument’s volatility-stop trend is positive, classify it as long; mark stronger long tiers when it outperforms the benchmark by the configured thresholds. Benchmark performance does not trigger short or exit decisions.

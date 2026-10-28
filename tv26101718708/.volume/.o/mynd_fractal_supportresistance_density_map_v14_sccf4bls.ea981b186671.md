@@ -1,0 +1,3 @@
+Calculation: Top-N density zones = price bins scored when confirmed short-, medium-, or long-lookback swing highs or lows occur, with longer lookbacks contributing more; decay scores each bar, optionally weight contributions by pivot-bar volume relative to average volume, merge nearby bins, and select the highest-scoring bins. A zone spans its bin range plus a tolerance; a zone qualifies when its touch count meets the minimum.
+Long: A qualifying Top-N zone is exited above its center after entry from above (rejection) OR entered from below and exited above its center (breakthrough).
+Short: A qualifying Top-N zone is exited below its center after entry from below (rejection) OR entered from above and exited below its center (breakthrough).

@@ -1,0 +1,1 @@
+For the traded instrument, calculate a volatility risk premium from VIX minus realized volatility of SPY, smooth it, and compare it with its trailing historical distribution. Go long when the premium is statistically extreme on the low side and is rising; go short when it is statistically extreme on the high side and is falling. No exit rule is defined.

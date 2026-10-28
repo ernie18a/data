@@ -1,0 +1,6 @@
+Calculation: Resistance pivot = on each 1-hour bar, update to the high three bars earlier when high[3] > high[4] > high[5] AND high[2] < high[3] AND high[1] < high[2] AND volume[3] > the volume SMA at bar [3]; otherwise retain the prior value.
+Calculation: Support pivot = on each 1-hour bar, update to the low three bars earlier when low[3] < low[4] < low[5] AND low[2] > low[3] AND low[1] > low[2] AND volume[3] > the volume SMA at bar [3]; otherwise retain the prior value.
+Calculation: Resistance-zone level = for a new resistance pivot, the pivot candle's close if its close is at least its open, otherwise its open; otherwise retain the prior level.
+Calculation: Support-zone level = for a new support pivot, the pivot candle's open if its close is at least its open, otherwise its close; otherwise retain the prior level.
+Long: close crosses below the support-zone level AND position is flat or short AND datetime is within the configured date window.
+Exit: long, close crosses above the resistance-zone level AND datetime is within the configured date window.

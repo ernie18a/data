@@ -1,0 +1,3 @@
+Calculation: Average volume = simple moving average of volume over a lookback
+Calculation: Squeeze age = number of consecutive prior bars with close below all three moving averages
+Long: Current close > each of three moving averages with the same type (SMA or EMA) and progressively longer lookbacks AND current volume > average volume × a multiplier AND previous bar's squeeze age >= a minimum duration

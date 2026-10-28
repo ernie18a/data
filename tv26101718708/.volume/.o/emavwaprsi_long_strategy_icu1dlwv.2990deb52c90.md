@@ -1,0 +1,2 @@
+Long: EMA with shorter lookback crosses above EMA with longer lookback AND close >= VWAP AND close >= EMA with longer lookback AND RSI > threshold AND RSI > prior-bar RSI
+Exit: long, close < EMA AND close < VWAP OR close < low of the bar immediately before the entry bar

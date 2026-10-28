@@ -1,0 +1,1 @@
+Enter long when the external on-chain share of profitable wallets for the traded asset crosses above a configurable threshold. No exit rule is defined.

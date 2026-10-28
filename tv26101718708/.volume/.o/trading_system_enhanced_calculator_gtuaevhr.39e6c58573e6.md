@@ -1,0 +1,3 @@
+Calculation: 50-, 150-, and 200-day moving averages = the selected EMA or SMA of daily closes, using the same type for all three; use the daily bar still forming.
+Calculation: 52-week high = highest high over 252 daily bars; 52-week low = lowest low over 252 daily bars. Use the daily bar still forming.
+Long: close > 50-day moving average AND close > 150-day moving average AND close > 200-day moving average AND 50-day moving average > 150-day moving average AND 50-day moving average > 200-day moving average AND 200-day moving average > its value 22 daily bars earlier AND close > 0.75 × 52-week high AND close >= 1.25 × 52-week low

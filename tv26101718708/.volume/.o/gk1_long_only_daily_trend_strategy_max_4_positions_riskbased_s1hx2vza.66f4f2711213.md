@@ -1,0 +1,3 @@
+Calculation: highest close since entry = maximum close from the entry bar through the current bar
+Long: short-term SMA(close) > medium-term SMA(close) AND close > long-term SMA(close) AND long-term SMA(close) > prior-bar long-term SMA(close) AND volume > lower threshold × SMA(volume) AND volume < upper threshold × SMA(volume)
+Exit: long, low <= highest close since entry − ATR-based stop distance OR short-term SMA(close) < medium-term SMA(close)

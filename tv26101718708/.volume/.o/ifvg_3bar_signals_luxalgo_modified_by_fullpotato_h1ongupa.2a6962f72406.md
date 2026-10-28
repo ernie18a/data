@@ -1,0 +1,2 @@
+Long: low[3] > high[1] AND close[2] < low[3] AND close > low[3] AND low[3] - high[1] > ATR × width-filter AND volume >= previous-bar volume × volume-multiplier AND the previous bar's range overlaps at least one configured LVN zone
+Short: low[1] > high[3] AND close[2] > high[3] AND close < high[3] AND low[1] - high[3] > ATR × width-filter AND volume >= previous-bar volume × volume-multiplier AND the previous bar's range overlaps at least one configured LVN zone

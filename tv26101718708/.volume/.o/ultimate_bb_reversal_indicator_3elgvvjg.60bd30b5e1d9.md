@@ -1,0 +1,3 @@
+Calculation: Upper and lower Bollinger Bands = SMA(close, lookback) ± multiplier × standard deviation(close, lookback)
+Long: close > lower Bollinger Band for each of the last N bars AND close[N] <= lower Bollinger Band[N] AND RSI < oversold at least once from the current bar through N+2 bars ago AND volume > multiplier × volume SMA AND (RSI momentum turn is disabled OR RSI > RSI[1])
+Short: close < upper Bollinger Band for each of the last N bars AND close[N] >= upper Bollinger Band[N] AND RSI > overbought at least once from the current bar through N+2 bars ago AND volume > multiplier × volume SMA AND (RSI momentum turn is disabled OR RSI < RSI[1])

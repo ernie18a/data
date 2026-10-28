@@ -1,0 +1,3 @@
+Calculation: Order-block score = capped weighted sum of relative volume, session, displacement relative to ATR, freshness, candle-body-to-range ratio, FVG bonus, and OTE-confluence bonus; weights adapt to asset category
+Long: Confirmed pivot low AND order-block score ≥ minimum score OR close > latest unbroken confirmed pivot high using the internal or major structure lookback
+Short: Confirmed pivot high AND order-block score ≥ minimum score OR close < latest unbroken confirmed pivot low using the internal or major structure lookback

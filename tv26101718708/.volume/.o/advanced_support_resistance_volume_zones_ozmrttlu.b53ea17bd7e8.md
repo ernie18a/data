@@ -1,0 +1,7 @@
+Calculation: Price-action regime = explosive, active, quiet, or normal, based on current ATR percent relative to its longer-term average and directional efficiency over a shorter lookback; directional efficiency = absolute close change over the lookback / sum of absolute bar-to-bar close changes over the same lookback.
+Calculation: Adaptive average volume = volume simple moving average with a shorter lookback in explosive and active regimes than normal, and a longer lookback in quiet regime.
+Calculation: Volume-spike threshold = adaptive average volume × regime multiplier, with quiet < normal < active < explosive multipliers.
+Calculation: Zone merge distance = ATR percent × a multiplier, bounded by minimum and maximum distances.
+Calculation: Zone bounds = pivot price ± half the chart-timeframe-scaled fixed percentage thickness.
+Long: volume > volume-spike threshold AND low is the lowest low in the short rolling window AND no active zone is within the zone merge distance; OR an active resistance zone has close > its top; OR a confirmed swing low has no nearby active zone and no nearby active swing support line.
+Short: volume > volume-spike threshold AND high is the highest high in the short rolling window AND low is not the lowest low in that window AND no active zone is within the zone merge distance; OR an active support zone has close < its bottom; OR a confirmed swing high has no nearby active zone and no nearby active swing resistance line.

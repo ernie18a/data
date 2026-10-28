@@ -1,0 +1,5 @@
+Calculation: Candle body percentage = abs(close − open) / (high − low) × 100
+Calculation: Bullish engulfing = previous bar open > previous bar close AND current bar open ≤ current bar close AND current bar low < previous bar low AND current bar high > previous bar high
+Calculation: Bearish engulfing = previous bar open < previous bar close AND current bar open ≥ current bar close AND current bar low < previous bar low AND current bar high > previous bar high
+Long: close > shorter-lookback EMA(close) AND shorter-lookback EMA(close) > longer-lookback EMA(close) AND Bullish engulfing AND current and previous candle body percentages each exceed the configured minimum AND volume > previous bar volume × (1 + configured increase fraction) AND datetime is within the configured date range
+Exit: long, close < shorter-lookback EMA(close) AND shorter-lookback EMA(close) < longer-lookback EMA(close) OR Bearish engulfing, with datetime within the configured date range

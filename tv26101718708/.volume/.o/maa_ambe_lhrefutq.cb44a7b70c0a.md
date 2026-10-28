@@ -1,0 +1,4 @@
+Long: position side = flat AND datetime is within either configured trading session AND trades entered today < configured daily limit AND close > EMA(close, longer lookback) AND RSI(close, shorter lookback) > configured upper threshold AND ADX > configured threshold AND volume > SMA(volume, configured lookback)
+Short: position side = flat AND datetime is within either configured trading session AND trades entered today < configured daily limit AND close < EMA(close, longer lookback) AND RSI(close, shorter lookback) < configured lower threshold AND ADX > configured threshold AND volume > SMA(volume, configured lookback)
+Exit: long, high >= entry price + target distance OR low <= entry price - stop distance; target distance = stop distance
+Exit: short, low <= entry price - target distance OR high >= entry price + stop distance; target distance = stop distance

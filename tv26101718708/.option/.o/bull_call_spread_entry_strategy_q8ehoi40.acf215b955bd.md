@@ -1,0 +1,1 @@
+Enter long when the traded instrument’s bullish setup score reaches its configured threshold and a selected external market ticker’s daily percentage change is between configured upper and lower limits. Place a limit order at the signal bar’s close; cancel it if it does not fill by the next bar. Exit the position after the configured holding period on the designated weekday.

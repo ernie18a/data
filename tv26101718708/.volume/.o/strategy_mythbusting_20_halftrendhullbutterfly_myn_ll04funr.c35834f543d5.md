@@ -1,0 +1,10 @@
+Calculation: Hull Butterfly bullish event = Hull Butterfly green-column signal
+Calculation: Hull Butterfly bearish event = Hull Butterfly red-column signal
+Calculation: HalfTrend up arrow = HalfTrend buy signal
+Calculation: HalfTrend down arrow = HalfTrend sell signal
+Calculation: EMA = exponential moving average of the configured source over the configured lookback
+Calculation: ADX = configured ADX variant using the configured DI length and smoothing
+Long: HalfTrend up arrow AND bars since the most recent Hull Butterfly bullish event <= configured maximum AND (EMA filter disabled OR configured source > EMA) AND (ADX filter disabled OR ADX > configured threshold)
+Short: HalfTrend down arrow AND bars since the most recent Hull Butterfly bearish event <= configured maximum AND (EMA filter disabled OR configured source < EMA) AND (ADX filter disabled OR ADX > configured threshold)
+Exit: long, close < entry price × (1 − configured stop-loss percentage) OR close >= entry price × (1 + configured take-profit percentage)
+Exit: short, close > entry price × (1 + configured stop-loss percentage) OR close <= entry price × (1 − configured take-profit percentage)

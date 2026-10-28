@@ -1,0 +1,2 @@
+Long: Current bar time is after the configured event time minus the scan window and before the configured event time AND (volume >= 1.5 × the 10-bar average volume OR volume × (high − low) equals the highest volume × (high − low) over the last 10 bars) AND close > open
+Short: Current bar time is after the configured event time minus the scan window and before the configured event time AND (volume >= 1.5 × the 10-bar average volume OR volume × (high − low) equals the highest volume × (high − low) over the last 10 bars) AND close <= open

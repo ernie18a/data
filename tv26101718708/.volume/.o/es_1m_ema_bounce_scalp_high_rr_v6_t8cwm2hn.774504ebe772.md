@@ -1,0 +1,5 @@
+Long: flat position AND 09:30 ≤ New York bar time < 16:00 AND close[2] ≥ EMA[2] AND close[1] < EMA[1] AND close > EMA AND RSI > long threshold AND volume > volume SMA
+Short: flat position AND 09:30 ≤ New York bar time < 16:00 AND close[2] ≤ EMA[2] AND close[1] > EMA[1] AND close < EMA AND RSI < (100 − long threshold) AND volume > volume SMA
+Calculation: Trailing stop = highest high since trailing activation − trail offset for a long; lowest low since trailing activation + trail offset for a short
+Exit: Long, high ≥ entry price + partial distance OR low ≤ entry price − stop distance OR high ≥ entry price + target distance OR (close > entry price + partial distance AND low ≤ trailing stop)
+Exit: Short, low ≤ entry price − partial distance OR high ≥ entry price + stop distance OR low ≤ entry price − target distance OR (close < entry price − partial distance AND high ≥ trailing stop)

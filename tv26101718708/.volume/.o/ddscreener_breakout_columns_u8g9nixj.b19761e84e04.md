@@ -1,0 +1,6 @@
+Calculation: Bullish EMA clouds = close is above both the 5/12-period EMA cloud and the 34/50-period EMA cloud.
+Calculation: Bearish EMA clouds = close is below both the 5/12-period EMA cloud and the 34/50-period EMA cloud.
+Calculation: Volume spike = volume is at least a configured multiple of its simple moving average.
+Calculation: Daily/1-hour pivot resistance = latest confirmed pivot high on aggregated daily/1-hour bars, using left and right lookbacks.
+Long: Bullish EMA clouds OR close > the previous completed day's high OR close crosses above daily pivot resistance OR close crosses above 1-hour pivot resistance OR (close crosses above daily pivot resistance AND volume spike AND bullish EMA clouds) OR (close crosses above 1-hour pivot resistance AND volume spike AND bullish EMA clouds)
+Short: Bearish EMA clouds OR close < the previous completed day's low OR close crosses below daily pivot support OR close crosses below 1-hour pivot support OR (close crosses below daily pivot support AND volume spike AND bearish EMA clouds) OR (close crosses below 1-hour pivot support AND volume spike AND bearish EMA clouds)

@@ -1,0 +1,2 @@
+Long: close < lower Bollinger Band (shorter lookback) AND RSI > threshold OR close < lower Bollinger Band (longer lookback) AND RSI > threshold AND MFI < threshold
+Exit: long, close > upper Bollinger Band (shorter lookback) AND RSI > threshold OR close > upper Bollinger Band (longer lookback) AND RSI > threshold OR close > upper Bollinger Band (longer lookback) AND RSI > threshold AND MFI > threshold OR low <= entry price × (1 − stop-loss fraction) OR high >= entry price × (1 + take-profit fraction)

@@ -1,0 +1,7 @@
+Calculation: Oscillator = 100 × (shorter-lookback WMA of close − longer-lookback WMA of close) / ATR
+Calculation: σ1 = standard deviation of the oscillator over a lookback
+Calculation: BTC halving-cycle value = cosine of the elapsed-time phase of the BTC halving cycle
+Long: oscillator crosses above −σ1 AND bias-timeframe close > shorter-lookback EMA > longer-lookback EMA (using the still-forming bias-timeframe bar) AND RSI < overbought threshold AND MACD histogram >= its previous value AND CMF > −0.05 AND volume > 0.80 × its 20-bar average AND BTC halving-cycle value > −0.70
+Short: oscillator crosses below σ1 AND bias-timeframe close < shorter-lookback EMA < longer-lookback EMA (using the still-forming bias-timeframe bar) AND RSI > oversold threshold AND MACD histogram <= its previous value AND CMF < 0.05 AND volume > 0.80 × its 20-bar average AND BTC halving-cycle value < 0.70
+Exit: long, oscillator crosses below zero OR (RSI > overbought threshold AND RSI crosses below the overbought threshold AND bias-timeframe close < shorter-lookback EMA < longer-lookback EMA (using the still-forming bias-timeframe bar))
+Exit: short, oscillator crosses above zero OR (RSI < oversold threshold AND RSI crosses above the oversold threshold AND bias-timeframe close > shorter-lookback EMA > longer-lookback EMA (using the still-forming bias-timeframe bar))

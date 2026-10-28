@@ -1,0 +1,1 @@
+Enter long only when the broad-market benchmark is above its long-term moving average and the volatility index is below its threshold. Close any open position when the volatility index rises above that threshold.

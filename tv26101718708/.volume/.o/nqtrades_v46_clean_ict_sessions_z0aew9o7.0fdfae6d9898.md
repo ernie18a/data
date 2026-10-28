@@ -1,0 +1,3 @@
+Calculation: Signed-volume delta = volume × (close − open) ÷ (high − low), or 0 when high = low
+Long: EMA(close, shorter lookback) > EMA(close, longer lookback) AND low < lowest low over prior lookback bars AND close > open AND signed-volume delta > its EMA
+Short: EMA(close, shorter lookback) < EMA(close, longer lookback) AND high > highest high over prior lookback bars AND close < open AND signed-volume delta < its EMA

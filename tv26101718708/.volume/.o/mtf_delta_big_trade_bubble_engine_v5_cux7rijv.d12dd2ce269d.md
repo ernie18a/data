@@ -1,0 +1,10 @@
+Calculation: Lower-timeframe delta = sum over the lower-timeframe candles inside the current chart bar of [volume × (2 × close − high − low) / max(high − low, minimum tick)]; use the automatically selected lower timeframe, including the current chart bar while it is forming.
+Calculation: Delta pressure = 100 × lower-timeframe delta / total lower-timeframe volume, where total volume is the sum of those candles’ volumes.
+Calculation: Block delta, block volume, and block pressure = the latest chart bar’s lower-timeframe delta, total volume, and delta pressure, respectively, sampled every configured number of chart bars and held between updates.
+Calculation: Relative volume = block volume / the 50-bar simple moving average of block volume.
+Calculation: Cumulative delta = running sum of lower-timeframe delta across chart bars.
+Calculation: Bullish divergence = current low < low 10 chart bars ago AND current cumulative delta > cumulative delta 10 chart bars ago.
+Calculation: Bearish divergence = current high > high 10 chart bars ago AND current cumulative delta < cumulative delta 10 chart bars ago.
+Calculation: Buy trap reference = high of the latest chart bar with a big-buy signal; sell trap reference = low of the latest chart bar with a big-sell signal.
+Long: relative volume > big-volume threshold AND block pressure < −pressure threshold OR relative volume > 1.5 AND block pressure < −35 AND absolute(close − open) < 0.5 × 14-bar ATR OR bearish divergence OR current delta pressure < −70 AND current high − current low < 0.5 × 14-bar ATR OR sell trap reference exists AND low < sell trap reference AND close > sell trap reference
+Short: relative volume > big-volume threshold AND block pressure > pressure threshold OR relative volume > 1.5 AND block pressure > 35 AND absolute(close − open) < 0.5 × 14-bar ATR OR bullish divergence OR current delta pressure > 70 AND current high − current low < 0.5 × 14-bar ATR OR buy trap reference exists AND high > buy trap reference AND close < buy trap reference

@@ -1,0 +1,4 @@
+Calculation: Macro log-regression endpoints = fit a linear regression to the natural logs of close over the longer lookback; exponentiate the fitted values at the lookback start and current bar.
+Calculation: Short-term log-regression endpoints = fit a linear regression to the natural logs of close over the shorter lookback; exponentiate the fitted values at the lookback start and current bar.
+Long: Macro current-bar endpoint > macro lookback-start endpoint OR short-term current-bar endpoint > short-term lookback-start endpoint
+Short: Macro current-bar endpoint < macro lookback-start endpoint OR short-term current-bar endpoint < short-term lookback-start endpoint

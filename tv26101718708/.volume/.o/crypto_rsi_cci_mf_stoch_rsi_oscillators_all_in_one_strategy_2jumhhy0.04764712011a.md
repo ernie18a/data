@@ -1,0 +1,3 @@
+Calculation: MF = 100 − 100 / (1 + positive-flow sum / negative-flow sum), where positive-flow sum is the lookback sum of volume × HLC3 on bars whose HLC3 change is positive, and negative-flow sum is the lookback sum of volume × HLC3 on bars whose HLC3 change is negative
+Long: RSI > 50 AND MF > 50 AND CCI > 50 AND (Stochastic RSI K > 50 OR Stochastic RSI D > 50)
+Exit: long, RSI < 49 AND MF < 49 AND CCI < 0 AND (Stochastic RSI K < 50 OR Stochastic RSI D < 50)

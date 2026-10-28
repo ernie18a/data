@@ -1,0 +1,6 @@
+Calculation: Opening-range high/low = highest high / lowest low of current-session bars from the configured range start up to (but not including) the configured range end; usable after the range ends when high > low
+Calculation: Session-anchored VWAP = cumulative (high + low + close) / 3 × volume divided by cumulative volume, from the configured range start through the current bar
+Long: Opening range is ready AND before the last-entry time AND flat AND session trade limit permits AND (no breakout is recorded and close > opening-range high; OR a long breakout was recorded on an earlier bar and low <= session-anchored VWAP AND close > session-anchored VWAP AND close > open AND low > opening-range low)
+Short: Opening range is ready AND before the last-entry time AND flat AND session trade limit permits AND (no breakout is recorded and close < opening-range low; OR a short breakout was recorded on an earlier bar and high >= session-anchored VWAP AND close < session-anchored VWAP AND close < open AND high < opening-range high)
+Exit: long, low <= stop price OR high >= target price
+Exit: short, high >= stop price OR low <= target price

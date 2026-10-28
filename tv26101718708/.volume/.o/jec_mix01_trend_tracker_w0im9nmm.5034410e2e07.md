@@ -1,0 +1,5 @@
+Calculation: 5-minute trend line = Calculate ATR and EMA of close over the same lookback; form upper and lower bands at EMA ± multiplier × ATR. Set raw value to the lower band when close is above the upper band, to the upper band when close is below the lower band, otherwise keep the previous raw value (initially close). EMA-smooth the raw value using a longer lookback than the band lookback. Use the 5-minute bar still forming.
+Long: Position is not long AND bar is confirmed AND close > open AND close > 5-minute trend line AND close ≥ Parabolic SAR
+Short: Position is not short AND bar is confirmed AND close < open AND close ≤ 5-minute trend line AND close ≤ Parabolic SAR
+Exit: Long, bar is confirmed AND (close ≤ 5-minute trend line OR Parabolic SAR > close OR (Parabolic SAR < close differs from the prior bar))
+Exit: Short, bar is confirmed AND (close > 5-minute trend line OR Parabolic SAR < close OR (Parabolic SAR < close differs from the prior bar))

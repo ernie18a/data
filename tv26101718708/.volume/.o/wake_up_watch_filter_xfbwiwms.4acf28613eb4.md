@@ -1,0 +1,1 @@
+Long: Bollinger Bands are wholly inside Keltner Channels AND current volume’s percentile rank over its lookback is at or below its threshold AND (close is at or above the medium-term EMA OR the medium-term EMA is at or above its value on the previous bar) AND the same setup was false on the previous bar

@@ -1,0 +1,7 @@
+Calculation: Long-term SMA = simple moving average of close with a longer lookback than the short-term moving average.
+Calculation: Short-term moving average = configurable simple or exponential moving average of close.
+Calculation: Average volume = simple moving average of volume.
+Calculation: Bullish confirmation bar = close > open AND close > previous bar high AND volume >= average volume × configurable confirmation multiplier.
+Calculation: Prior breakout high = highest high over a configurable lookback, excluding the current bar.
+Calculation: Prior annual high = highest high over a configurable annual lookback, excluding the current bar.
+Long: (low <= long-term SMA × (1 + configurable touch tolerance) AND close > long-term SMA AND bullish confirmation bar) OR (low <= short-term moving average × (1 − configurable minimum dip) AND close > short-term moving average AND bullish confirmation bar AND (previous close < previous short-term moving average OR previous low < previous short-term moving average OR low <= short-term moving average × (1 − configurable minimum dip)) AND long-term SMA > its value at a prior configured lookback AND short-term moving average > its value at a shorter prior configured lookback) OR (close > prior breakout high AND close > open AND volume >= average volume × configurable breakout multiplier AND close >= prior annual high × configurable fraction).

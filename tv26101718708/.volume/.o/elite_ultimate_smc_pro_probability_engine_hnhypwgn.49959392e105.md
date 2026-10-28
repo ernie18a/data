@@ -1,0 +1,4 @@
+Calculation: Bullish score = 40 points if the close crosses above the latest confirmed pivot high, plus 20 if MFI is above its midpoint, plus 20 if smoothed Stochastic RSI is below 30, plus 20 if the shorter-period SMA of close is above the longer-period SMA of close; otherwise each condition adds 0
+Calculation: Bearish score = 40 points if the close crosses below the latest confirmed pivot low, plus 20 if MFI is below 55, plus 20 if smoothed Stochastic RSI is above 70, plus 20 if the shorter-period SMA of close is below the longer-period SMA of close; otherwise each condition adds 0
+Long: bar is confirmed AND bullish score >= score threshold
+Short: bar is confirmed AND bearish score >= score threshold

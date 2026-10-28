@@ -1,0 +1,4 @@
+Calculation: Delta = volume × (2 × close − high − low) ÷ (high − low), or 0 when high = low; calculated on selected higher-timeframe bars, including the forming bar in real time
+Calculation: Average close position = average of (close − low) ÷ (high − low) × 100 over the last N selected higher-timeframe bars; use 50 when high = low; includes the forming bar in real time
+Long: selected higher-timeframe Delta > 0 AND its HMA is rising OR selected higher-timeframe Delta > 0 AND close > close N higher-timeframe bars ago AND average close position > 60 OR selected higher-timeframe Delta > 0 AND close < close N higher-timeframe bars ago AND average close position > 60
+Short: selected higher-timeframe Delta < 0 AND its HMA is falling OR selected higher-timeframe Delta < 0 AND close < close N higher-timeframe bars ago AND average close position < 40 OR selected higher-timeframe Delta < 0 AND close > close N higher-timeframe bars ago AND average close position < 40

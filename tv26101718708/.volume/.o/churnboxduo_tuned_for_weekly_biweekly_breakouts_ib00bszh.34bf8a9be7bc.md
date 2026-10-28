@@ -1,0 +1,4 @@
+Calculation: Fast ALMA set = three ALMAs of close with short-, medium-, and long-term lookbacks, optionally each smoothed by another ALMA
+Calculation: Slow ALMA set = same construction, with all three lookbacks longer than the corresponding Fast lookbacks
+Long: (Fast set enabled AND open is below all three Fast ALMAs AND close is above all three Fast ALMAs AND no bullish or bearish engulf occurred in the preceding cooldown period) OR (Slow set enabled AND open is below all three Slow ALMAs AND close is above all three Slow ALMAs AND no bullish or bearish engulf occurred in the preceding cooldown period)
+Short: (Fast set enabled AND open is above all three Fast ALMAs AND close is below all three Fast ALMAs AND no bullish or bearish engulf occurred in the preceding cooldown period) OR (Slow set enabled AND open is above all three Slow ALMAs AND close is below all three Slow ALMAs AND no bullish or bearish engulf occurred in the preceding cooldown period)

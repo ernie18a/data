@@ -1,0 +1,5 @@
+Calculation: CPR upper/lower = maximum/minimum of the pivot range from the last completed daily bar; pivot = (high + low + close) / 3, BC = (high + low) / 2, TC = 2 × pivot − BC
+Calculation: Projected CPR width = absolute difference between BC and TC calculated from the still-forming daily bar; narrow when below its moving average
+Calculation: CPR danger = VIX-dependent CPR-width thresholds
+Long: close > CPR upper AND close > session VWAP AND 15-minute EMA(20) > EMA(50) on the still-forming 15-minute bar AND volume > its short-term moving average AND time is 09:00–11:30 AND CPR is not dangerous AND projected CPR is narrow AND close is outside CPR
+Short: close < CPR lower AND close < session VWAP AND 15-minute EMA(20) < EMA(50) on the still-forming 15-minute bar AND volume > its short-term moving average AND time is 09:00–11:30 AND CPR is not dangerous AND projected CPR is narrow AND close is outside CPR

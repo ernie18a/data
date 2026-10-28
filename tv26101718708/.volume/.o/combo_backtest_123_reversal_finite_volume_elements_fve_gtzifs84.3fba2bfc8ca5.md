@@ -1,0 +1,6 @@
+Calculation: Fast stochastic = lookback %K, (close − lowest low) / (highest high − lowest low) × 100, smoothed by a shorter lookback
+Calculation: Slow stochastic = fast stochastic smoothed by a longer lookback
+Calculation: FVE = cumulative sum of signed volume divided by its lookback SMA and lookback, then multiplied by 100; signed volume is volume if flow > threshold, negative volume if flow < −threshold, otherwise 0; threshold = factor × close / 100; flow = close − (high + low) / 2 + (high + low + close) / 3 − prior bar’s (high + low + close) / 3
+Long: close[2] < close[1] AND close > close[1] AND fast stochastic < slow stochastic AND fast stochastic > level AND FVE > FVE[1] AND FVE > FVE[2]
+Short: close[2] > close[1] AND close < close[1] AND fast stochastic > slow stochastic AND fast stochastic < level AND FVE < FVE[1] AND FVE < FVE[2]
+Exit: long or short, NOT (close[2] < close[1] AND close > close[1] AND fast stochastic < slow stochastic AND fast stochastic > level AND FVE > FVE[1] AND FVE > FVE[2]) AND NOT (close[2] > close[1] AND close < close[1] AND fast stochastic > slow stochastic AND fast stochastic < level AND FVE < FVE[1] AND FVE < FVE[2])

@@ -1,0 +1,7 @@
+Calculation: Chaikin Money Flow = sum over the lookback of ((2×close−low−high)/(high−low))×volume divided by sum of volume; use zero for the numerator term when close equals both high and low, or high equals low.
+Calculation: SSL channel state = set state to +1 when close is above the SMA of high, −1 when close is below the SMA of low, otherwise retain the prior state; SSL upper line is SMA of high when state is +1 and SMA of low otherwise; SSL lower line is SMA of low when state is +1 and SMA of high otherwise.
+Calculation: ROC momentum filter = absolute value of the EMA of close ROC exceeds half the threshold; close ROC is 100×(close−close from the ROC lookback bars earlier)/that earlier close, and its EMA length is half the ROC lookback.
+Long: (SSL upper line > SSL lower line AND ROC momentum filter) OR Chaikin Money Flow crosses above its upper threshold OR the most recent bar meeting a long condition becomes more recent than the most recent bar meeting a short condition
+Short: (SSL upper line < SSL lower line AND ROC momentum filter) OR Chaikin Money Flow crosses below its lower threshold OR the most recent bar meeting a short condition becomes more recent than the most recent bar meeting a long condition
+Exit: long, low <= 2% below average entry price OR low <= the stop set to close minus ATR×multiplier on the latest long-signal bar
+Exit: short, high >= 2% above average entry price OR high >= the stop set to close plus ATR×multiplier on the latest short-signal bar

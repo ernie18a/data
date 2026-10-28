@@ -1,0 +1,5 @@
+Calculation: bullish score = weighted sum of points for (EMA(shorter) > EMA(medium) > EMA(longer) AND close > VWAP), (RSI within the bullish range), (volume > its longer-lookback average × volume multiplier), (ADX above its threshold), (ATR > its longer-lookback average), (close > previous bar high), and (shorter EMA > medium EMA on the 15-minute timeframe, using the last completed bar)
+Long: position is flat AND bullish score >= entry threshold AND shorter EMA > medium EMA on the 15-minute timeframe, using the last completed bar AND the same-side signal cooldown has elapsed
+Short: position is flat AND shorter EMA < medium EMA AND close < VWAP AND RSI < bearish threshold AND shorter EMA < medium EMA on the 15-minute timeframe, using the last completed bar AND the same-side signal cooldown has elapsed
+Exit: long, close < shorter EMA OR close < VWAP
+Exit: short, close > shorter EMA OR close > VWAP

@@ -1,0 +1,9 @@
+Calculation: WaveTrend = compute WT1 by applying EMA to the channel index (source minus its EMA, divided by 0.015 times the EMA of its absolute deviation), then compute WT2 as a moving average of WT1; channel and average lookbacks are separate, and WT2 has a shorter smoothing lookback than WT1
+Calculation: Bullish WT divergence = at a confirmed oscillator pivot low, price makes a lower low than at the previous oscillator pivot low while WT2 makes a higher low
+Calculation: Bearish WT divergence = at a confirmed oscillator pivot high, price makes a higher high than at the previous oscillator pivot high while WT2 makes a lower high
+Calculation: Local trend = EMA of close on the selected higher timeframe, using the bar still forming
+Calculation: Global trend = SMA of close on the selected higher timeframe and BTC perpetual close on that timeframe; compare BTC close with SMA on the current and preceding higher-timeframe bars, using the current bar when confirmed and the last completed bar otherwise
+Long: flat AND close > Local trend AND (Global trend is bullish on the current or preceding bar) AND (Bullish WT divergence OR (WT2 at the preceding WT pivot low <= the lowest oversold level AND WT2 > that level AND bullish WT divergence AND RSI at that pivot < 30))
+Short: flat AND close < Local trend AND (Global trend is bearish on the current or preceding bar) AND Bearish WT divergence
+Exit: long, close >= entry price × (1 + take-profit percentage) OR close <= entry price × (1 − stop-loss percentage) OR price crosses below Local trend OR bars since the latest valid long setup exceed the cancellation period
+Exit: short, close <= entry price × (1 − take-profit percentage) OR close >= entry price × (1 + stop-loss percentage) OR price crosses above Local trend OR bars since the latest valid short setup exceed the cancellation period

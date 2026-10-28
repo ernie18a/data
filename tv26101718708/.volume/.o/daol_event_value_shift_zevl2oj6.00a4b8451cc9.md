@@ -1,0 +1,5 @@
+Calculation: Anchored VWAP = cumulative (HLC3 × volume) ÷ cumulative volume since the anchor; HLC3 = (high + low + close) ÷ 3. Reset at each exchange-day boundary or at the selected-time anchor, according to the anchor mode.
+Calculation: Price Distance = (close − current Anchored VWAP) ÷ ATR from the previous bar
+Calculation: Value Shift = (current Anchored VWAP − Anchored VWAP from the longer-lookback bar) ÷ ATR from the previous bar; both VWAP values must be within the same anchor period
+Long: Price Distance ≥ the minimum distance threshold AND Value Shift ≥ the meaningful-shift threshold for the configured number of consecutive closed bars
+Short: Price Distance ≤ −the minimum distance threshold AND Value Shift ≤ −the meaningful-shift threshold for the configured number of consecutive closed bars

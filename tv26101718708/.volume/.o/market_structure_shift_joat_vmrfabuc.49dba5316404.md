@@ -1,0 +1,8 @@
+Calculation: Swing pivots = confirmed symmetric pivot highs and lows using a longer lookback; update each level only when a new pivot is confirmed.
+Calculation: Internal pivots = confirmed symmetric pivot highs and lows using a shorter lookback than swing pivots; update each level only when a new pivot is confirmed.
+Calculation: Structure break = selected close or wick price (high for an upward break, low for a downward break) crossing the latest unbroken pivot level; classify as CHoCH when the prior state was opposite, otherwise BOS, then update the state and mark that level broken. Swing and internal layers maintain separate states.
+Long: Selected swing or internal break price > its latest unbroken pivot high, with BOS enabled and prior state ≥ neutral or CHoCH enabled and prior state bearish; no short signal occurs on the same bar.
+Short: Selected swing or internal break price < its latest unbroken pivot low, with BOS enabled and prior state ≤ neutral or CHoCH enabled and prior state bullish; no long signal occurs on the same bar.
+Calculation: Stop and target = from entry, use the protective swing low for a long or swing high for a short, falling back to the corresponding internal pivot if unavailable; place the stop beyond that level by an ATR buffer when valid, otherwise use an ATR-multiple stop. Clamp stop distance between ATR-based minimum and maximum risk; place target at the configured reward-to-risk multiple.
+Exit: Long, low ≤ stop or high ≥ target or bars since entry ≥ projection length.
+Exit: Short, high ≥ stop or low ≤ target or bars since entry ≥ projection length.

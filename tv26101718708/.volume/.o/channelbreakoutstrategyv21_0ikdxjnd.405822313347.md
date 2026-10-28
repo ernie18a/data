@@ -1,0 +1,9 @@
+Calculation: Channel high/low = highest high / lowest low over the configured lookback; both use the same lookback as the volume average and ATR.
+Calculation: Relative volume = volume ÷ SMA(volume, that lookback) × 100.
+Calculation: Trail distance = 3 × ATR over that lookback.
+Calculation: Long trailing stop = while flat, close − trail distance; on the first long bar, average entry price − trail distance; otherwise, if the highest close since entry ÷ average entry price ≥ 1.3, use that highest close multiplied by 0.9 when the ratio is below 1.4, 0.85 when it is 1.4–1.6, or 0.8 when it is above 1.6; otherwise raise the prior stop to close − trail distance only when that value and close both exceed their prior-bar values; else keep the prior stop. The highest close since entry resets on the first position bar and is thereafter the greater of the current close and its prior value.
+Calculation: Short trailing stop = while flat, close + trail distance; on the first short bar, average entry price + trail distance; otherwise lower the prior stop to close + trail distance only when that value and close are both below their prior-bar values; else keep the prior stop.
+Long: Longs enabled AND flat AND year > configured base year AND both trailing stops are defined AND relative volume ≥ configured threshold AND price reaches the channel high + 5 minimum ticks.
+Short: Shorts enabled AND flat AND year > configured base year AND both trailing stops are defined AND relative volume ≥ configured threshold AND price reaches the channel low − 5 minimum ticks.
+Exit: Long, low ≤ long trailing stop OR (open − close ≥ 2/3 × trail distance AND highest close since entry ÷ average entry price < 1.3).
+Exit: Short, high ≥ short trailing stop OR (close − open ≥ 2/3 × trail distance).

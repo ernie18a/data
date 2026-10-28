@@ -1,0 +1,6 @@
+Calculation: Momentum score = average of RSI, Stochastic Oscillator, and MFI on the selected timeframe; use the current bar while it is forming and the corresponding historical bars for past scores.
+Calculation: Similar historical case = a past momentum score whose absolute difference from the current momentum score is at most the similarity threshold; scan the configured lookback, excluding cases without the full configured forward horizon.
+Calculation: Historical outcome = for each similar case, compare its close plus/minus its ATR times the target multiplier against subsequent highs/lows for the configured horizon. Count an upside win if the upside target is hit first, a downside win if the downside target is hit first; count same-bar hits and no hits as neutral.
+Calculation: Bullish probability = upside wins divided by upside plus downside wins; bearish probability = downside wins divided by upside plus downside wins. Exclude neutral cases; both probabilities are unavailable when there are no upside or downside wins.
+Long: bullish probability > bearish probability AND upside wins + downside wins > 0
+Short: bearish probability > bullish probability AND upside wins + downside wins > 0

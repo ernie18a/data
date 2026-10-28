@@ -1,0 +1,1 @@
+Go long when the instrument closes within its defined buy zone, forms a bullish candle with a low above the prior candle’s low, and volume exceeds a threshold above its recent average, while the Nasdaq closes at or above its prior close. No short or exit logic is defined.

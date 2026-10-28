@@ -1,0 +1,3 @@
+Long: Close > current-session VWAP AND close > EMA(close) AND prior-bar MACD histogram > 0 AND two-bars-prior MACD histogram <= 0 AND current MACD histogram > prior-bar MACD histogram
+Short: Close < current-session VWAP AND close < EMA(close) AND prior-bar MACD histogram < 0 AND two-bars-prior MACD histogram >= 0 AND current MACD histogram < prior-bar MACD histogram
+Exit: Long, current MACD histogram < 0 AND prior-bar MACD histogram >= 0

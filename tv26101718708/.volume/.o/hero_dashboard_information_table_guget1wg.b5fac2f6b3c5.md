@@ -1,0 +1,3 @@
+Calculation: Hero Score = weighted points for close above VWAP, volume above its longer-lookback average by a threshold, close above the previous completed daily high or below its low, close above the current day's 09:15–09:30 opening-range high or below its low, and ATR above its longer-lookback average.
+Long: Hero Score >= high-score threshold AND close > EMA AND close > VWAP
+Short: Hero Score >= high-score threshold AND close < EMA AND close < VWAP

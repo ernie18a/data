@@ -1,0 +1,4 @@
+Calculation: Session VAH/VAL = Build a volume-at-price profile from bars in the current session through the current bar, including the bar still forming. Divide the session low-to-high range into configurable equal bins; assign each bar’s full volume to the bin containing its high-low midpoint. Start at the highest-volume bin, then add adjacent bins in descending volume order, choosing the higher-price bin on a tie, until the configurable value-area share of total volume is reached. VAH is the upper edge of the highest included bin; VAL is the lower edge of the lowest included bin.
+Calculation: Range VAH/VAL = Calculate the same profile and value-area boundaries from the configurable rolling lookback of bars through the current bar, including the bar still forming.
+Long: close > Session VAH AND close > Range VAH
+Short: close < Session VAL AND close < Range VAL

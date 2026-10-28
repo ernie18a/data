@@ -1,0 +1,5 @@
+Calculation: Bollinger Bands = simple moving average of close ± a multiplier of close’s standard deviation over the same lookback
+Long: no open position AND ADX < range threshold AND, within the touch lookback, low <= lower Bollinger Band AND close > lower Bollinger Band AND close < Bollinger basis AND RSI was below oversold threshold within the touch lookback AND RSI > prior-bar RSI AND RSI < recovery ceiling AND close > open AND close > (high + low) / 2 AND configured volume, session, and cooldown filters pass
+Short: no open position AND ADX < range threshold AND, within the touch lookback, high >= upper Bollinger Band AND close < upper Bollinger Band AND close > Bollinger basis AND RSI was above overbought threshold within the touch lookback AND RSI < prior-bar RSI AND RSI > recovery floor AND close < open AND close < (high + low) / 2 AND configured volume, session, and cooldown filters pass
+Exit: long, low <= entry price − ATR at entry × stop multiplier OR high >= entry price + ATR at entry × target multiplier
+Exit: short, high >= entry price + ATR at entry × stop multiplier OR low <= entry price − ATR at entry × target multiplier

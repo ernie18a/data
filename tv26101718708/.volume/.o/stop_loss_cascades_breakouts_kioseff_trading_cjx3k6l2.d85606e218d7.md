@@ -1,0 +1,7 @@
+Calculation: Directional volume = lower-timeframe volume multiplied by the sign of close minus the previous close; assign positive values to buy-side clusters and negative values to sell-side clusters.
+Calculation: Absorption-model buy-stop trigger = negative total bullish directional volume assigned to active swing-low clusters when price reaches their stop level; sell-stop trigger = positive total bearish directional volume assigned to active swing-high clusters when price reaches their stop level. Identify swing extremes using a reversal of twice ATR(14); place buy-side stop levels one quarter ATR(14) below swing lows and sell-side stop levels one quarter ATR(14) above swing highs.
+Calculation: Absorption-model buy threshold = 50-bar simple moving average of the 25th percentile of historical nonzero buy-stop trigger values; sell threshold = 50-bar simple moving average of the 75th percentile of historical nonzero sell-stop trigger values.
+Calculation: Volatility-model stop clusters = directional volume distributed across ATR-based stop levels using six trading horizons and three increasing ATR multiples; a cluster triggers when price crosses its level. Sum crossed buy-side cluster values as the buy-stop trigger and crossed sell-side cluster values as the sell-stop trigger.
+Calculation: Volatility-model thresholds = 50-bar simple moving averages of the corresponding buy-stop and sell-stop trigger values.
+Long: Buy-stop trigger ≤ buy threshold.
+Short: Sell-stop trigger ≥ sell threshold.

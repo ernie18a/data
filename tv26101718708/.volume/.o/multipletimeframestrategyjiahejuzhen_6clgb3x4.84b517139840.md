@@ -1,0 +1,9 @@
+Calculation: EMA compression = highest minus lowest of four EMAs with progressively longer lookbacks
+Calculation: Bollinger band width = 2 × standard deviation of close over the same lookback around its simple moving average
+Calculation: Tight = EMA compression < 0.95 × Bollinger band width
+Calculation: Long trailing drawdown = (highest close since entry − close) / highest close since entry × 100
+Calculation: Short trailing drawdown = (close − lowest close since entry) / lowest close since entry × 100
+Long: previous completed daily close > its EMA AND close > highest of the four EMAs AND Tight AND volume > its 25-bar average × volume factor AND close > open AND flat or short; OR flat AND bullish candle AND high > upper Bollinger band during the observation window after a long exit caused by EMA trend break; OR flat AND bullish candle AND high > upper Bollinger band; OR long-trend condition; OR close above highest of the four EMAs AND Tight; OR watch-long state
+Short: previous completed daily close < its EMA AND close < lowest of the four EMAs AND Tight AND volume > its 25-bar average × volume factor AND close < open AND flat or long; OR flat AND bearish candle AND low < lower Bollinger band during the observation window after a short exit caused by EMA trend break; OR flat AND bearish candle AND low < lower Bollinger band; OR short-trend condition; OR close below lowest of the four EMAs AND Tight; OR watch-short state
+Exit: long, profit from entry price ≥ take-profit threshold OR trailing stop is active and long trailing drawdown ≥ trailing-stop threshold OR shorter-lookback EMA < longer-lookback EMA
+Exit: short, profit from entry price ≥ take-profit threshold OR trailing stop is active and short trailing drawdown ≥ trailing-stop threshold OR shorter-lookback EMA > longer-lookback EMA

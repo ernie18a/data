@@ -1,0 +1,3 @@
+Calculation: Density = volume / (high - low)
+Long: volume > 0 AND low <= the lowest low of the preceding extreme lookback bars AND Density >= density factor × mean Density of the preceding density lookback bars AND high - low <= spread factor × mean (high - low) of the preceding spread lookback bars AND 100 × (close - low) / (high - low) >= close-position threshold
+Short: volume > 0 AND high >= the highest high of the preceding extreme lookback bars AND Density >= density factor × mean Density of the preceding density lookback bars AND high - low <= spread factor × mean (high - low) of the preceding spread lookback bars AND 100 × (high - close) / (high - low) >= close-position threshold

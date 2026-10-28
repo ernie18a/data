@@ -1,0 +1,8 @@
+Calculation: Daily, weekly, and monthly anchored VWAP = cumulative (typical price × volume) / cumulative volume, resetting at the start of each respective period; typical price = (high + low + close) / 3
+Calculation: ATR ratio = current ATR / simple moving average of ATR; the ATR lookback is shorter than the baseline lookback
+Calculation: Bias EMA slope = current bias EMA − bias EMA three bars earlier
+Calculation: Up-break count = number of enabled anchored VWAPs where current close > current VWAP + ATR × break margin and previous close ≤ previous VWAP + current ATR × break margin
+Calculation: Down-break count = number of enabled anchored VWAPs where current close < current VWAP − ATR × break margin and previous close ≥ previous VWAP − current ATR × break margin
+Calculation: Storm score = round(min(100, 25 × max(up-break count, down-break count) + min(max(ATR ratio − 1, 0) × 60, 30) + alignment score)); alignment score = 0 if no anchors are enabled, otherwise min(25 × abs(sum of enabled-anchor close-above/below-VWAP signs) / enabled-anchor count, 25), with each sign +1 above, −1 below, and 0 at its VWAP
+Long: Up-break count ≥ 2 AND ATR ratio > expansion threshold AND close > bias EMA AND bias EMA slope > 0 AND storm score ≥ score threshold AND bars since last signal ≥ cooldown parameter AND current bar is confirmed
+Short: Down-break count ≥ 2 AND ATR ratio > expansion threshold AND close < bias EMA AND bias EMA slope < 0 AND storm score ≥ score threshold AND bars since last signal ≥ cooldown parameter AND current bar is confirmed

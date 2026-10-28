@@ -1,0 +1,3 @@
+Long: volume > simple moving average of volume over the lookback period × volume multiplier AND absolute value of (close − close from the lookback period) > close from the lookback period × price multiplier AND daily VIX close < volatility threshold
+Exit: long, low ≤ entry price − stop-loss multiplier × standard deviation of close over the lookback period
+Exit: long, current bar index ≥ entry bar index + holding period

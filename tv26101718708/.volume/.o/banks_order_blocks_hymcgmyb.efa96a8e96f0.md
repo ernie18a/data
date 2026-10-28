@@ -1,0 +1,2 @@
+Long: A bullish order block exists AND (close > the latest confirmed pivot high OR high > the latest confirmed pivot high)
+Short: A bearish order block exists AND (close < the latest confirmed pivot low OR low < the latest confirmed pivot low)

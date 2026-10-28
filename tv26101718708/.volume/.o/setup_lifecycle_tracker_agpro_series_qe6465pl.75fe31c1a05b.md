@@ -1,0 +1,7 @@
+Calculation: Prior range high/low = highest high and lowest low over the setup lookback, excluding the current bar
+Calculation: Trigger rail = prior range high + ATR buffer for long setups; prior range low − ATR buffer for short setups
+Calculation: Invalidation rail = prior range low − ATR buffer for long setups; prior range high + ATR buffer for short setups
+Long: a new setup forms when the prior range is defined AND its width divided by ATR is within the maximum AND close is within the prior range expanded by the trigger buffer AND (close is at or above the slow EMA OR fast EMA is above the slow EMA) AND no setup is active or the prior setup is terminal and its restart cooldown has elapsed
+Long: an active, untriggered long setup triggers when close is above its trigger rail
+Short: a new setup forms when the prior range is defined AND its width divided by ATR is within the maximum AND close is within the prior range expanded by the trigger buffer AND (close is at or below the slow EMA OR fast EMA is below the slow EMA) AND no setup is active or the prior setup is terminal and its restart cooldown has elapsed
+Short: an active, untriggered short setup triggers when close is below its trigger rail

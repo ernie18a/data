@@ -1,0 +1,3 @@
+Calculation: Volume delta = sum intrabar volume as positive when the intrabar closes above its open, negative when below; on a doji, use the close versus the previous intrabar close, carrying forward the last polarity if unchanged (positive if no prior polarity exists).
+Long: Volume delta > 0 OR (CVD reset mode is trend changes AND the selected Supertrend changes to up OR Aroon up crosses above Aroon down OR Parabolic SAR crosses below close)
+Short: Volume delta < 0 OR (CVD reset mode is trend changes AND the selected Supertrend changes to down OR Aroon down crosses above Aroon up OR Parabolic SAR crosses above close)

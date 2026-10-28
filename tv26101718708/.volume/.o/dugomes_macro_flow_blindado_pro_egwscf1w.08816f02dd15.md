@@ -1,0 +1,5 @@
+Calculation: Macro line = chart-timeframe close from N bars ago × the average of the current chart-timeframe oil-close/current oil-close N bars ago ratio, gold-close/current gold-close N bars ago ratio, and the inverse of the current USD-index-close/USD-index-close N bars ago ratio
+Calculation: Buy absorption = buy-volume estimate > volume SMA × a multiplier AND close > (high + low) / 2, where buy-volume estimate = volume × ((close − low) + (high − open)) / (2 × (high − low)); estimate is 0 when high = low
+Calculation: Sell absorption = volume − buy-volume estimate > volume SMA × a multiplier AND close < (high + low) / 2
+Long: (close crosses above the macro line OR buy absorption) AND close > chart-timeframe EMA AND MFI > a threshold above 50
+Short: (close crosses below the macro line OR sell absorption) AND close < chart-timeframe EMA AND MFI < a threshold below 50

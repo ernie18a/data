@@ -1,0 +1,11 @@
+Calculation: Weekly stage = Persistent state initialized to Stage 1; on each current weekly bar, transition Stage 1→2 on an upside breakout with close above the stage moving average; Stage 2→3 if close is below the average and it is flattening, or on a downside breakdown with average slope nonpositive; otherwise Stage 2→4 on a downside breakdown, close below the average, and a declining slope run; Stage 3→4 on a downside breakdown or close below the average with a declining slope run, else Stage 3→2 on an upside breakout, close above the average, and a rising slope run; Stage 4→1 on close above the average, flattening, and no declining slope run. Stage is calculated from weekly bars, including the current forming bar.
+Calculation: Stage transition = Current weekly stage differs from its prior-bar value.
+Calculation: Stage moving average = Simple moving average of weekly closes over a configurable lookback; slope = current average minus prior average.
+Calculation: Flattening = The range of recent weekly average slopes is less than a small fraction of the average recent weekly high-low range.
+Calculation: Rising/declining slope run = Stage moving average slope is positive/negative on each bar in a consecutive run of weekly bars.
+Calculation: Upside breakout = Weekly close crosses above the prior value of the highest weekly high over a configurable lookback, weekly volume exceeds its moving average times a configurable multiplier, and close > open.
+Calculation: Downside breakdown = Weekly close crosses below the prior value of the lowest weekly low over a configurable lookback.
+Calculation: Base event = On an upside breakout after a minimum spacing of weekly bars, start Base 1 when the stage transitions to 2; while in Stage 2 with an existing base, increment the base count when the percentage rise from the last breakout close reaches a configurable threshold. Emit a base event for each increment.
+Calculation: Breakdown event = A downside breakdown or transition to Stage 4 occurs while the base count is positive.
+Long: Current weekly stage transitions to Stage 1 or Stage 2, OR a base event occurs.
+Short: Current weekly stage transitions to Stage 3 or Stage 4, OR a breakdown event occurs.

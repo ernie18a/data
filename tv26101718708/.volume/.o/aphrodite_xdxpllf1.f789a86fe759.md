@@ -1,0 +1,5 @@
+Calculation: Scaled OHLC value = each OHLC price multiplied by the scale factor selected from that price’s range.
+Calculation: Prime-like OHLC = a scaled OHLC value greater than 1 that has a nonzero remainder when divided by each integer from 2 through 9.
+Calculation: Absolute pseudo-random value = absolute value of a Box–Muller value with mean equal to the simple moving average of OHLC4 and deviation equal to its standard deviation, using the same lookback; its two inputs are pseudo-random values generated with range 1 and opposite configured seeds. Each pseudo-random value is the remainder after successively taking the remainder of 3.14159 times its prior value (or 1 initially) divided by bar index plus its seed, then by the range.
+Long: Absolute pseudo-random value < current bar low AND current month equals the configured month AND day of month = 3
+Exit: long, all current bar scaled OHLC values are prime-like AND NOT (absolute pseudo-random value < current bar low on this bar and the previous two bars AND current month equals the configured month AND day of month = 3)

@@ -1,0 +1,1 @@
+Go long the traded instrument when its relevant external benchmark has fallen materially over the lookback period while the instrument itself has held approximately steady or risen. No short or exit condition is defined.

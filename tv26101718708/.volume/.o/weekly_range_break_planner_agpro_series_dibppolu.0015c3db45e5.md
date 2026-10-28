@@ -1,0 +1,12 @@
+Calculation: Previous-week high/low = high and low of the last completed weekly bar
+Calculation: ATR = Wilder average true range on the chart timeframe
+Calculation: Valid range = previous-week high > previous-week low AND weekly range >= ATR × minimum range multiple
+Calculation: Break buffer = ATR × break-buffer multiple
+Calculation: Break context = starts on the first valid close beyond a buffered previous-week boundary; latches that boundary and direction until resolved, and resets at the start of each week
+Calculation: Retest shelf = latched boundary ± (ATR × shelf multiple); touched = current high >= shelf bottom AND current low <= shelf top; held = touched AND (long close >= boundary OR short close <= boundary)
+Calculation: Failed retest = long close < boundary − (ATR × invalidation multiple) OR short close > boundary + (ATR × invalidation multiple)
+Calculation: Break score = clamp(range-fit + close-distance + retest + time + volume + target-room, 0, 100), where range-fit = clamp(weekly range / (ATR × 4), 0, 1) × 16; close-distance = clamp((absolute close-to-boundary distance / ATR) / 1.4, 0, 1) × 24; retest = 22 if held, else 12 if touched, else 7; time = clamp(16 × (1 − bars since break / break-window bars), 0, 16); volume = clamp((current volume / its simple moving average over a configurable lookback) / 1.6, 0, 1) × 12 (or 9 when volume scoring is disabled); target-room = clamp((directional distance from close to first target / ATR) / 2, 0, 1) × 14. First target is the latched boundary ± (previous-week range × target multiple), in the break direction.
+Long: valid range AND ((no active break context AND close > previous-week high + break buffer) OR (active long break context AND not resolved AND break score >= ready threshold AND (held retest OR close-to-boundary distance / ATR >= 0.45) AND NOT failed retest))
+Short: valid range AND ((no active break context AND close < previous-week low − break buffer) OR (active short break context AND not resolved AND break score >= ready threshold AND (held retest OR close-to-boundary distance / ATR >= 0.45) AND NOT failed retest))
+Exit: long, active long break context AND not resolved AND (failed retest OR bars since break > break-window bars)
+Exit: short, active short break context AND not resolved AND (failed retest OR bars since break > break-window bars)

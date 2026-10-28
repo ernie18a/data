@@ -1,0 +1,7 @@
+Calculation: DSL = On the higher timeframe, smooth price at progressively longer lookbacks; calculate each shorter-versus-longer percentage momentum using an adjustable scale, combine the momentums with greater weight on shorter lookbacks, then apply a volume multiplier when current volume exceeds its moving average times a multiplier. Use the latest available higher-timeframe values with lookahead off.
+Calculation: DSL signal = Double EMA of DSL, using the shortest smoothing in strong trends, medium smoothing in weaker trends, and longest smoothing otherwise.
+Calculation: CVD = Cumulative signed volume, where signed volume is volume times (2 × close − high − low) / (high − low), or zero-range bars contribute zero; reset continuously or at the selected daily or weekly boundary. CVD signal = EMA of CVD.
+Long: position is not long AND (EMA(short) > EMA(medium) > EMA(long) AND CVD >= CVD signal AND DSL > DSL signal OR ADX is above its trend threshold AND (DSL crosses above zero OR DSL > 0 AND smoothed DSL change crosses above zero))
+Short: position is not short AND (EMA(short) < EMA(medium) < EMA(long) AND CVD < CVD signal AND DSL < DSL signal OR ADX is above its trend threshold AND (DSL crosses below zero OR DSL < 0 AND smoothed DSL change crosses below zero))
+Exit: long, EMA(short) <= EMA(medium) OR EMA(medium) <= EMA(long) OR DSL <= DSL signal
+Exit: short, EMA(short) >= EMA(medium) OR EMA(medium) >= EMA(long) OR DSL >= DSL signal

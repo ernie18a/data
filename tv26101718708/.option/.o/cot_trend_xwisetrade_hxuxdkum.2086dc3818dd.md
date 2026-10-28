@@ -1,0 +1,1 @@
+For the traded instrument, calculate the weekly noncommercial net position as long positions minus short positions. Compare it with the USD Index’s weekly noncommercial net position: signal long when the instrument’s net position is higher, short when lower, and neutral when equal. If either series is unavailable or the instrument has no supported COT market, produce no signal.

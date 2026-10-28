@@ -1,0 +1,11 @@
+Calculation: Participation change = percentage change in volume from the value one fast-reaction lookback ago
+Calculation: ATR shock = ATR divided by its longer context-lookback SMA of ATR as a percentage of close
+Calculation: Range shock = (high − low) as a percentage of close, divided by its longer context-lookback SMA
+Calculation: Stress score = clamp(0.28 × clamp(|participation change| / 10% × 100, 0, 100) + 0.18 × clamp(|EMA(3) of the change in participation change| / 1.8 × 100, 0, 100) + 0.24 × clamp((ATR shock − 0.80) / 1.25 × 100, 0, 100) + 0.18 × clamp((range shock − 0.85) / 1.40 × 100, 0, 100) + 0.12 × max(lower wick, upper wick) / (high − low) × 100, 0, 100)
+Calculation: Reset quality score = clamp(0.32 × clamp(max(−participation change, 0) / 8% × 100, 0, 100) + 0.22 × clamp((1.45 − ATR shock) / 0.85 × 100, 0, 100) + 0.28 × clamp(0.70 × max((close − low) / (high − low) × 100, (high − close) / (high − low) × 100) + 30 when |(close − slow EMA) / ATR| ≤ 1.20 or close > fast EMA, otherwise 0, 0, 100) + 0.18 × stability score, 0, 100); stability score = 20 when |(close − slow EMA) / ATR| > 1.60 and (ATR shock > 1.25 or range shock > 1.35), else 78 when ATR shock < 1.12 and range shock < 1.18, else 48
+Calculation: Reload risk score = clamp(max(participation change, 0) / 8% × 100 + 18 when close < fast EMA + 16 when ATR shock > 1.25 or range shock > 1.35, 0, 100)
+Calculation: Persistent condition = percentage of the current and preceding persistence-lookback bars on which the condition is true
+Long: data is ready AND participation change < 0 AND reset quality score ≥ quality threshold AND NOT (|(close − slow EMA) / ATR| > 1.60 AND (ATR shock > 1.25 OR range shock > 1.35)) AND clean-reset condition is true on at least 18% of the persistence lookback
+Short: data is ready AND stress score ≥ stress threshold AND NOT long condition AND NOT fragile-reset condition AND NOT reload-risk condition
+Short: data is ready AND participation change > 0 AND reload risk score ≥ 48 AND reset quality score < quality threshold AND NOT long condition
+Calculation: Fragile-reset condition = participation change < 0 AND reset quality score ≥ 0.62 × quality threshold AND reset quality score < quality threshold

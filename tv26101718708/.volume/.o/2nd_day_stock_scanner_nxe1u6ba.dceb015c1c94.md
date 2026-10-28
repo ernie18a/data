@@ -1,0 +1,5 @@
+Calculation: Daily percent change = (current daily close - previous completed daily close) / previous completed daily close × 100
+Calculation: Daily close location = (current daily close - current daily low) / (current daily high - current daily low) × 100; use 50 when the daily high equals the daily low
+Calculation: Relative volume = current daily volume / average volume of the prior N completed daily bars × 100
+Long: Daily percent change > 0 AND absolute daily percent change ≥ minimum move threshold AND daily close location ≥ 100% - range threshold AND relative volume > minimum RVOL threshold AND current daily true range > ATR of the prior completed daily bar
+Short: Daily percent change ≤ 0 AND absolute daily percent change ≥ minimum move threshold AND daily close location ≤ range threshold AND relative volume > minimum RVOL threshold AND current daily true range > ATR of the prior completed daily bar

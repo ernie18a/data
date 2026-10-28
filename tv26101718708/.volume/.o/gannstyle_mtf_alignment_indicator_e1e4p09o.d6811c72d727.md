@@ -1,0 +1,12 @@
+Calculation: Gann direction = persistent +1 when close breaks above the latest confirmed pivot high, or -1 when close breaks below the latest confirmed pivot low, only after the configured minimum bars since that pivot; otherwise retain the prior direction, initially 0. Confirm pivots using the configured lookback on both sides. Use confirmed current-timeframe bars for the current direction; use the last completed bar for each higher-timeframe direction.
+Calculation: Entry ATR = current-timeframe ATR on the confirmed signal bar.
+Calculation: Long TP1 = entry price + Entry ATR × TP1 multiple
+Calculation: Long TP3 = entry price + Entry ATR × TP3 multiple
+Calculation: Short TP1 = entry price - Entry ATR × TP1 multiple
+Calculation: Short TP3 = entry price - Entry ATR × TP3 multiple
+Calculation: Long stop = entry price - Entry ATR × stop multiple initially; when TP1 is reached, raise it to entry price, then after TP1 and before TP3, update it each bar to the greater of its prior value and close - current-timeframe ATR × trailing multiple.
+Calculation: Short stop = entry price + Entry ATR × stop multiple initially; when TP1 is reached, lower it to entry price, then after TP1 and before TP3, update it each bar to the lesser of its prior value and close + current-timeframe ATR × trailing multiple.
+Long: current-timeframe direction = +1 AND both higher-timeframe directions = +1 AND this bullish alignment was false on the prior bar AND the bar is confirmed AND the configured session filter passes AND the configured position splits are all positive and sum to 100% AND the configured cooldown bars have elapsed since the prior signal
+Short: current-timeframe direction = -1 AND both higher-timeframe directions = -1 AND this bearish alignment was false on the prior bar AND the bar is confirmed AND the configured session filter passes AND the configured position splits are all positive and sum to 100% AND the configured cooldown bars have elapsed since the prior signal
+Exit: long, high >= Long TP3 OR low <= Long stop OR current-timeframe direction != +1 OR either higher-timeframe direction != +1
+Exit: short, low <= Short TP3 OR high >= Short stop OR current-timeframe direction != -1 OR either higher-timeframe direction != -1

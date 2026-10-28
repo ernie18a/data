@@ -1,0 +1,1 @@
+For a DAX-linked instrument, compare each of seven major German stocks with its prior close. If at least five are up, take a long bias; if at least five are down, take a short bias. Otherwise, wait for confirmation. No exit rule is specified.

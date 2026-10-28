@@ -1,0 +1,4 @@
+Long: RSI < oversold threshold AND close > session VWAP calculated from (high + low + close) / 3 AND close > EMA AND current time is within the configured intraday session (or bars are not intraday) AND fewer than the configured maximum number of trades have been entered today AND no position is open
+Short: RSI > overbought threshold AND close < session VWAP calculated from (high + low + close) / 3 AND close < EMA AND current time is within the configured intraday session (or bars are not intraday) AND fewer than the configured maximum number of trades have been entered today AND no position is open
+Exit: long, low <= average entry price - ATR OR high >= average entry price + ATR
+Exit: short, high >= average entry price + ATR OR low <= average entry price - ATR

@@ -1,0 +1,6 @@
+Calculation: Bullish engulfing candle = close > open AND high >= previous bar high AND low <= previous bar low AND close > previous bar open
+Calculation: Bearish engulfing candle = close < open AND high >= previous bar high AND low <= previous bar low AND close < previous bar open
+Long: bullish engulfing candle AND volume > previous bar volume × volume threshold AND close > EMA(close, trend lookback) AND cooldown elapsed AND current bar time is 09:30–16:00 or 20:00–03:00 America/New_York AND position is flat AND bar is confirmed
+Short: bearish engulfing candle AND volume > previous bar volume × volume threshold AND close < EMA(close, trend lookback) AND cooldown elapsed AND current bar time is 09:30–16:00 or 20:00–03:00 America/New_York AND position is flat AND bar is confirmed
+Exit: Long, low <= entry price − stop distance OR high >= entry price + first target distance OR high >= entry price + second target distance OR (close >= entry price + stop distance AND a breakeven stop has been activated AND low <= entry price)
+Exit: Short, high >= entry price + stop distance OR low <= entry price − first target distance OR low <= entry price − second target distance OR (close <= entry price − stop distance AND a breakeven stop has been activated AND high >= entry price)

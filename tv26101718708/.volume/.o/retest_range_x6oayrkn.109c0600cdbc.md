@@ -1,0 +1,5 @@
+Calculation: Average candle body = simple moving average of |close − open| over a lookback, evaluated at each candle
+Calculation: Setup midpoint = midpoint of the highest high and lowest low of the three consecutive setup candles
+Calculation: Confirmed pivot high/low = highest high/lowest low in a centered window with p bars on each side, where p is half the odd-adjusted fractal lookback
+Long: A bearish candle 3 bars ago is followed by 3 bullish candles, each with body greater than the body multiplier times its corresponding average candle body, OR close crosses above the latest unbroken confirmed pivot high, OR an active bearish setup has not inverted and close > its setup midpoint
+Short: A bullish candle 3 bars ago is followed by 3 bearish candles, each with body greater than the body multiplier times its corresponding average candle body, OR close crosses below the latest unbroken confirmed pivot low, OR an active bullish setup has not inverted and close < its setup midpoint

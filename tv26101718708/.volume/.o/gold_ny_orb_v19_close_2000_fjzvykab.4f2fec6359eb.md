@@ -1,0 +1,5 @@
+Calculation: Opening range = highest high and lowest low of the current day’s bars during the opening-range session; range = high − low
+Calculation: ATR = average true range over a shorter lookback; ATR average = moving average of ATR over a longer lookback
+Calculation: Average volume = moving average of volume
+Long: On a weekday, after the configured start date, during the entry window and before a long has fired that day, close > opening-range high AND previous close ≤ opening-range high AND close > open AND volume > average volume × configured volume multiple AND opening range ≤ ATR × configured range multiple AND ATR ≤ ATR average × configured regime multiple
+Exit: Long, low ≤ entry price − opening-range range × configured stop multiple OR high ≥ entry price + opening-range range × configured target multiple OR current bar is at the session close

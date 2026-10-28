@@ -1,0 +1,4 @@
+Calculation: Feature values = RSI(close), rate of change of close, volume, and ATR/close × 100; z-score each over a shared rolling lookback as (value − mean) / standard deviation (use 0 when standard deviation is 0).
+Calculation: Bullish probability score = 100 × weighted mean of the outcomes of the K nearest previously labeled bars, where each label is 1 if its close at the prediction horizon was above its close at the feature bar, otherwise 0. Compare the current feature vector with each labeled feature vector using weighted Euclidean distance; weight each neighbor by 1/(1 + distance) when distance weighting is enabled, otherwise equally. Use only resolved labels, up to the rolling history limit.
+Long: Bullish probability score crosses above the bullish threshold AND the resolved-label count is at least the minimum sample size.
+Short: Bullish probability score crosses below the bearish threshold AND the resolved-label count is at least the minimum sample size.

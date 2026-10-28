@@ -1,0 +1,4 @@
+Calculation: Fib level = if close > the 200-bar SMA, the lowest low + 0.618 × (highest high − lowest low); otherwise, the highest high − 0.618 × (highest high − lowest low), using the current chart bars over the same lookback
+Calculation: Volume spike = volume > its 20-bar SMA × the volume multiplier
+Long: close > its 200-bar SMA AND low <= Fib level × (1 + the tolerance) AND close > open AND Volume spike AND current 1-hour close > its 200-bar SMA (using the 1-hour bar still forming)
+Short: close <= its 200-bar SMA AND high >= Fib level × (1 − the tolerance) AND close < open AND Volume spike AND current 1-hour close < its 200-bar SMA (using the 1-hour bar still forming)

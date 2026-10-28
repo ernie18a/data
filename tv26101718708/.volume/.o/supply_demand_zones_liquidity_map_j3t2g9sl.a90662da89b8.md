@@ -1,0 +1,7 @@
+Calculation: Demand zone = the high-to-low range of the immediately preceding consecutive base candles, each with range below a configured ATR fraction; created when the current bar is bullish, its range exceeds a configured ATR multiple, and its real-body-to-range ratio exceeds a configured threshold.
+Calculation: Supply zone = the high-to-low range of the immediately preceding consecutive base candles, each with range below a configured ATR fraction; created when the current bar is bearish, its range exceeds a configured ATR multiple, and its real-body-to-range ratio exceeds a configured threshold.
+Calculation: Equal-low formation = a newly confirmed pivot low within a configured ATR-scaled tolerance of the preceding confirmed pivot low; both pivots use the configured left/right lookback, and ATR is measured on the confirmation bar.
+Calculation: Equal-high formation = a newly confirmed pivot high within a configured ATR-scaled tolerance of the preceding confirmed pivot high; both pivots use the configured left/right lookback, and ATR is measured on the confirmation bar.
+Calculation: Prior-day high and low = high and low of the last completed daily bar.
+Long: A demand zone is created on this bar AND low <= its upper bound AND close >= its lower bound AND (low < prior-day low AND close > prior-day low OR equal-low formation).
+Short: A supply zone is created on this bar AND high >= its lower bound AND close <= its upper bound AND (high > prior-day high AND close < prior-day high OR equal-high formation).

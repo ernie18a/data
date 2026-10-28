@@ -1,0 +1,6 @@
+Calculation: Bearish source zone = high and low of the most recent bearish candle found from a confirmed pivot high back through the configured source-search window
+Calculation: Bullish source zone = high and low of the most recent bullish candle found from a confirmed pivot low back through the configured source-search window
+Long: confirmed bar close > bearish source-zone high + ATR × displacement threshold AND (volume confirmation disabled OR volume > volume moving average) OR an active bullish breaker is retested (bar low <= zone high AND bar high >= zone low) after the minimum retest spacing
+Short: confirmed bar close < bullish source-zone low − ATR × displacement threshold AND (volume confirmation disabled OR volume > volume moving average) OR an active bearish breaker is retested (bar low <= zone high AND bar high >= zone low) after the minimum retest spacing
+Exit: long, confirmed bar close < bullish breaker zone low − ATR × invalidation buffer
+Exit: short, confirmed bar close > bearish breaker zone high + ATR × invalidation buffer

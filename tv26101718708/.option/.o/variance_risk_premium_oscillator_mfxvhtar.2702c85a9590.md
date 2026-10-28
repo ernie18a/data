@@ -1,0 +1,1 @@
+Compute the gap between an external implied-volatility index and the traded instrument’s annualized realized volatility, then normalize the gap into a smoothed rolling standard-score. Go long when the score crosses upward out of the lower volatility-cheap zone; go short when it crosses downward out of the upper volatility-rich zone. No exit rule is specified.

@@ -1,0 +1,6 @@
+Calculation: Trend EMA = EMA of close with a longer lookback than the fast EMA
+Calculation: Fast EMA = EMA of close with a shorter lookback than the trend EMA
+Long: If session filter is enabled, bar is in the configured session AND close > trend EMA AND previous close < previous fast EMA AND close > fast EMA AND RSI >= configured long threshold AND (VWAP filter is disabled OR close >= VWAP)
+Short: If session filter is enabled, bar is in the configured session AND close < trend EMA AND previous close > previous fast EMA AND close < fast EMA AND RSI <= configured short threshold AND (VWAP filter is disabled OR close <= VWAP)
+Exit: Long, (trailing is disabled AND (low <= entry price - ATR × configured stop multiple OR high >= entry price + ATR × configured target multiple)) OR (trailing is enabled AND (high >= entry price + ATR × configured target multiple OR low <= active ATR trailing stop))
+Exit: Short, (trailing is disabled AND (high >= entry price + ATR × configured stop multiple OR low <= entry price - ATR × configured target multiple)) OR (trailing is enabled AND (low <= entry price - ATR × configured target multiple OR high >= active ATR trailing stop))

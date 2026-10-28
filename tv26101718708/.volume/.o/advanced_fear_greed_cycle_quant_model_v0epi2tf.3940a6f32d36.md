@@ -1,0 +1,5 @@
+Calculation: Fear Index = 0.4 × Volatility Fear + 0.6 × Flow Fear, where Volatility Fear is normalized ATR multiplied by 100 when close is below the short-term SMA, otherwise 0; Flow Fear = 100 × (0.35 × normalized volume + 0.45 × selling pressure + 0.20 × (1 − normalized OBV)). Normalize ATR, volume, and OBV using their minimum and maximum over the same rolling lookback in chart bars. Selling pressure = (high − close) / (high − low).
+Calculation: Normalized Extension = normalize the percentage distance of close from its long-term SMA to 0–100 using the minimum and maximum percentage distance over the same rolling lookback in chart bars. Use a shorter SMA on weekly chart bars and a longer SMA otherwise.
+Calculation: Greed Score = ((100 − Fear Index) + Normalized Extension) / 2.
+Long: Fear Index > accumulation threshold AND Normalized Extension < accumulation threshold
+Short: Greed Score > bubble threshold AND Normalized Extension > the same bubble threshold

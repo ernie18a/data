@@ -1,0 +1,8 @@
+Calculation: NY-session VWAP = cumulative volume-weighted average of HLC3 from the current 09:30–16:00 session
+Calculation: 18:00-anchored VWAP = cumulative volume-weighted average of HLC3 from the current 18:00–16:00 session
+Long: During 09:30–16:00, close crosses above NY-session VWAP OR 5-period EMA crosses above 13-period EMA OR NY-session VWAP crosses above 18:00-anchored VWAP
+Short: During 09:30–16:00, close crosses below NY-session VWAP OR 5-period EMA crosses below 13-period EMA OR NY-session VWAP crosses below 18:00-anchored VWAP
+Long: During 09:45–11:00, a hold candle occurs when close > NY-session VWAP, low <= NY-session VWAP + touch buffer, 5-period EMA > 8-period EMA > 13-period EMA, all three EMAs are rising, volume > prior-bar volume when volume confirmation is enabled, and a reclaim has occurred since the last two consecutive closes below NY-session VWAP; place a buy stop one tick above the hold candle high if risk to a stop below its low is within the maximum stop distance and VWAP cross count is below its limit
+Short: During 09:45–11:00, a hold candle occurs when close < NY-session VWAP, high >= NY-session VWAP - touch buffer, 5-period EMA < 8-period EMA < 13-period EMA, all three EMAs are falling, volume > prior-bar volume when volume confirmation is enabled, and a reclaim has occurred since the last two consecutive closes above NY-session VWAP; place a sell stop one tick below the hold candle low if risk to a stop above its high is within the maximum stop distance and VWAP cross count is below its limit
+Exit: Long, low <= hold candle low - stop buffer OR high >= entry price + profit target
+Exit: Short, high >= hold candle high + stop buffer OR low <= entry price - profit target

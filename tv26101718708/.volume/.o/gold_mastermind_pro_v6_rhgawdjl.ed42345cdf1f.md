@@ -1,0 +1,4 @@
+Long: EMA(50) > EMA(200) AND (|close − VWAP| ≤ VWAP tolerance OR |close − EMA(50)| ≤ 0.5 × ATR) AND RSI(14) > minimum long RSI AND position is flat AND no entry occurred within the cooldown lookback
+Short: EMA(50) < EMA(200) AND (|close − VWAP| ≤ VWAP tolerance OR |close − EMA(50)| ≤ 0.5 × ATR) AND RSI(14) < maximum short RSI AND position is flat AND no entry occurred within the cooldown lookback
+Exit: long, low ≤ entry price − ATR at entry × stop multiplier OR high ≥ entry price + ATR at entry × stop multiplier × reward multiplier
+Exit: short, high ≥ entry price + ATR at entry × stop multiplier OR low ≤ entry price − ATR at entry × stop multiplier × reward multiplier

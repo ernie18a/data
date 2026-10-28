@@ -1,0 +1,5 @@
+Calculation: Confirmed swing high/low = a high/low greater/less than the preceding left-lookback and following right-lookback bars, confirmed after the right-lookback bars complete.
+Calculation: Bullish/bearish fair value gap = current low > high two bars ago and previous close > that high / current high < low two bars ago and previous close < that low; gap boundaries are the two prices compared.
+Calculation: Demand/supply breakout = previous bar is bullish/bearish with body size at least a parameterized multiple of ATR; two or three bars ago there is a bearish/bullish candle, respectively. ATR is calculated on the chart timeframe and taken from the previous bar.
+Long: low <= an active confirmed swing low and close > that swing low OR bullish fair value gap forms OR close > the top of an active bearish fair value gap OR demand breakout forms without overlapping an active demand zone.
+Short: high >= an active confirmed swing high and close < that swing high OR bearish fair value gap forms OR close < the bottom of an active bullish fair value gap OR supply breakout forms without overlapping an active supply zone.

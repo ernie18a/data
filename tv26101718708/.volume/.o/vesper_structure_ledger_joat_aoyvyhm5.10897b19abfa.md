@@ -1,0 +1,4 @@
+Calculation: Confirmed swing high/low = the most recent pivot high/low, confirmed only after the configured right-side bars complete.
+Calculation: ATR = average true range over a configurable lookback.
+Long: On a confirmed bar, close crosses above the most recent confirmed swing high (previous close at or below it), OR low falls below the most recent confirmed swing low and close reclaims it, the swing is within a configurable lookback, and the low’s excursion below it is at least a configurable ATR multiple.
+Short: On a confirmed bar, close crosses below the most recent confirmed swing low (previous close at or above it), OR high rises above the most recent confirmed swing high and close falls back below it, the swing is within a configurable lookback, and the high’s excursion above it is at least a configurable ATR multiple.

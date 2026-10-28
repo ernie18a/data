@@ -1,0 +1,5 @@
+Calculation: For each of five independently configured parameter sets, upper/lower band = SMA(close, lookback) ± deviations × multiplier × standard deviation(close, lookback)
+Long: For any parameter set, close[displacement] crosses above its lower band AND current volume > its volume threshold × its SMA(volume, lookback)
+Short: For any parameter set, close[displacement] crosses below its upper band AND current volume > its volume threshold × its SMA(volume, lookback)
+Exit: long, low ≤ entry price × (1 − stop-loss ratio / (stop-loss ratio + profit ratio))
+Exit: short, high ≥ entry price × (1 − stop-loss ratio / (stop-loss ratio + profit ratio))

@@ -1,0 +1,18 @@
+Calculation: Confirmed pivot high/low = the latest high/low pivot confirmed using equal lookback lengths on both sides, from the current chart bars.
+Calculation: Opening-range high/low = the maximum high/minimum low during the configured opening session, available only after that session completes; use only the most recently completed range.
+Calculation: Relative volume = current volume / simple moving average of volume over a configurable lookback on the current chart bars.
+Calculation: Lower/upper wick share = (min(open, close) - low) / max(high - low, minimum price increment); (high - max(open, close)) / max(high - low, minimum price increment), respectively.
+Calculation: Session VWAP = session-anchored VWAP of (high + low + close) / 3 on the current chart bars.
+Calculation: VWAP deviation bands = session VWAP ± standard deviation of close minus session VWAP over a configurable lookback, multiplied by a configurable factor.
+Calculation: Delta pressure = EMA of [volume × ((close - low) - (high - close)) / max(high - low, minimum price increment) / max(simple moving average of volume, 1)] over a configurable lookback, multiplied by 100.
+Calculation: Trend = up when the shorter-lookback EMA of close exceeds the longer-lookback EMA; down when it is below.
+Calculation: Bullish/bearish sweep = current low below the latest confirmed pivot low / current high above the latest confirmed pivot high, respectively, and close back above / below that level; or, when opening-range tracking is enabled, the corresponding sweep and reclaim/rejection of the most recently completed opening-range low/high.
+Calculation: Sweep level = opening-range low/high when its sweep condition is met; otherwise the latest confirmed pivot low/high.
+Calculation: Sweep depth = clamp((bullish sweep level - low) / ATR, 0, maximum depth) / maximum depth for bullish sweeps; clamp((high - bearish sweep level) / ATR, 0, maximum depth) / maximum depth for bearish sweeps.
+Calculation: Relative-volume score = clamp((relative volume - baseline) / scaling factor, 0, 1).
+Calculation: VWAP score = for bullish setups, clamp((VWAP - low) / VWAP deviation, 0, 1) when close is below VWAP, otherwise a baseline score; for bearish setups, clamp((high - VWAP) / VWAP deviation, 0, 1) when close is above VWAP, otherwise a baseline score.
+Calculation: Delta flip = bullish when delta pressure exceeds its previous-bar value and a lower bound; bearish when it is below its previous-bar value and an upper bound.
+Calculation: Bullish/bearish trend score = higher for matching trend, lower for opposing trend, intermediate for neither.
+Calculation: Bullish/bearish setup score = weighted sum of the corresponding sweep-depth score, wick share, relative-volume score, VWAP score, delta-flip contribution, and trend score.
+Long: bullish sweep AND lower wick share ≥ minimum AND relative volume ≥ minimum AND (VWAP context disabled OR low ≤ lower VWAP band OR close > lower VWAP band OR close < VWAP) AND bullish setup score ≥ selected score threshold AND (no prior signal OR bars since the latest bullish or bearish signal > cooldown).
+Short: bearish sweep AND upper wick share ≥ minimum AND relative volume ≥ minimum AND (VWAP context disabled OR high ≥ upper VWAP band OR close < upper VWAP band OR close > VWAP) AND bearish setup score ≥ selected score threshold AND (no prior signal OR bars since the latest bullish or bearish signal > cooldown).

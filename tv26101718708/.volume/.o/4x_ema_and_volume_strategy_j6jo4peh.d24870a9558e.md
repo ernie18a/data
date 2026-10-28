@@ -1,0 +1,5 @@
+Calculation: Ease of Movement = simple moving average of [divisor × (current (high + low) / 2 − previous (high + low) / 2) × (high − low) / volume]
+Long: close > shortest-period EMA AND shortest-period EMA > next-shortest-period EMA AND next-shortest-period EMA > next-longest-period EMA AND next-longest-period EMA > longest-period EMA AND Ease of Movement > 0
+Long: shortest-period EMA crosses above next-shortest-period EMA AND shortest-period EMA crosses above next-longest-period EMA AND Ease of Movement > 0
+Exit: long, close < shortest-period EMA AND shortest-period EMA < next-shortest-period EMA AND next-shortest-period EMA < next-longest-period EMA AND next-longest-period EMA < longest-period EMA AND Ease of Movement < 0
+Exit: long, shortest-period EMA crosses below next-shortest-period EMA AND shortest-period EMA crosses below next-longest-period EMA AND Ease of Movement < 0

@@ -1,0 +1,3 @@
+Calculation: Range Filter = previous filter + current close above previous filter: max(previous filter, close − EMA(ATR(1), longer lookback) × range multiplier); otherwise min(previous filter, close + EMA(ATR(1), longer lookback) × range multiplier)
+Long: close > Range Filter AND previous close <= previous Range Filter AND close > EMA(close, longer lookback) AND volume >= SMA(volume, shorter lookback) AND last signal <= 0
+Short: close < Range Filter AND previous close >= previous Range Filter AND close < EMA(close, longer lookback) AND volume >= SMA(volume, shorter lookback) AND last signal >= 0

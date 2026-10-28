@@ -1,0 +1,1 @@
+Go long when Bitcoin’s market value is below its aggregate holder cost basis, or when its valuation score enters the low accumulation zone. The high valuation zone is only a caution signal; it does not specify a short or exit decision.

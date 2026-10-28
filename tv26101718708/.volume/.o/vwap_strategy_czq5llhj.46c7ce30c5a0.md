@@ -1,0 +1,6 @@
+Calculation: Session VWAP = volume-weighted average of HLC3 from the start of the current trading day through the current bar
+Calculation: Session standard deviation = volume-weighted population standard deviation of HLC3 from the start of the current trading day through the current bar
+Long: Position is flat AND long trades are allowed AND open < second lower deviation band AND close > second lower deviation band AND (close - low) / (high - low) >= minimum signal strength AND band width is not less than three ATRs
+Short: Position is flat AND short trades are allowed AND open > second upper deviation band AND close < second upper deviation band AND (high - close) / (high - low) >= minimum signal strength AND band width is not less than three ATRs
+Exit: Long, low <= signal bar low - stop buffer OR long exit rule is VWAP AND high >= session VWAP OR long exit rule is Deviation Band AND high >= session VWAP + configured target deviation × session standard deviation OR safety exit is enabled AND each of the last configured number of bars has close < open
+Exit: Short, high >= signal bar high + stop buffer OR short exit rule is VWAP AND low <= session VWAP OR short exit rule is Deviation Band AND low <= session VWAP - configured target deviation × session standard deviation OR safety exit is enabled AND each of the last configured number of bars has close > open

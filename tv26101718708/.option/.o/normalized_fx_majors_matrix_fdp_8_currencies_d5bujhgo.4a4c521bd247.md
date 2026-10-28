@@ -1,0 +1,1 @@
+Rank the eight currencies by their cumulative, equally weighted performance against the other currencies. For a currency pair, consider a long when its base currency ranks strongest and its quote currency ranks weakest. The indicator defines no short or exit condition.

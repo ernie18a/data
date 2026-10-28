@@ -1,0 +1,1 @@
+Long: close > longer-lookback EMA(close) AND close < shorter-lookback EMA(close) AND RSI(close) < dip threshold AND volume < fraction of its simple moving average AND close > previous close

@@ -1,0 +1,31 @@
+Calculation: ATR = average true range
+Calculation: Volume average = selected moving average of volume
+Calculation: Trend price breakout = absolute current-close change > ATR × trend target multiplier × (1 + trend value markup / 100), or (when enabled) bar range > 2 × ATR × trend target multiplier
+Calculation: Reversal price breakout = absolute current-close change > ATR × reversal target multiplier × (1 + reversal value markup / 100), or (when enabled) bar range > 2 × ATR × reversal target multiplier
+Calculation: High price breakout = absolute current-close change > ATR × high-breakout multiplier, or (when enabled) bar range > 2 × ATR × high-breakout multiplier
+Calculation: Trend volume breakout = volume > volume average × (1 + trend volume markup / 100), or volume is unavailable
+Calculation: Reversal volume breakout = volume > volume average × (1 + reversal volume markup / 100), or volume is unavailable
+Calculation: High volume breakout = available volume > volume average × high-volume multiplier
+Calculation: Bar state = bullish when close > prior close and ((SuperTrend direction is down and trend price and volume breakouts) or (SuperTrend direction is up and reversal price and volume breakouts) or high volume breakout or high price breakout); bearish when close < prior close and ((SuperTrend direction is up and trend price and volume breakouts) or (SuperTrend direction is down and reversal price and volume breakouts) or high volume breakout or high price breakout); otherwise neutral
+Calculation: Breakout range = maximum of high − low, absolute high − prior close, and absolute low − prior close
+Calculation: Up target = on bullish bar state, high + breakout range × (trend value markup when SuperTrend direction is down, otherwise reversal value markup) / 100; otherwise retain its prior value
+Calculation: Down target = on bearish bar state, low − breakout range × (trend value markup when SuperTrend direction is up, otherwise reversal value markup) / 100; otherwise retain its prior value
+Calculation: Bull stop line = on bullish bar state, low − ATR × stop factor; otherwise retain its prior value
+Calculation: Bear stop line = on bearish bar state, high + ATR × stop factor; otherwise retain its prior value
+Calculation: Last breakout direction = most recent non-neutral bar state
+Calculation: Long signal = (the selected SuperTrend-dependent price, high when direction is down and low otherwise, crosses above prior up target and (last breakout direction is bullish or reversal breakouts are ignored) and close > prior down target) or (selected price crosses above prior bear stop line and (last breakout direction is bearish or reversal breakouts are ignored)) or (bar state is bullish and selected price > prior up target)
+Calculation: Short signal = (the selected SuperTrend-dependent price, low when direction is up and high otherwise, crosses below prior down target and (last breakout direction is bearish or reversal breakouts are ignored) and close < prior up target) or (selected price crosses below prior bull stop line and (last breakout direction is bullish or reversal breakouts are ignored)) or (bar state is bearish and selected price < prior down target)
+Calculation: Long exit signal = (close when SuperTrend direction is down, otherwise low) crosses below prior down target or prior bull stop line
+Calculation: Short exit signal = (close when SuperTrend direction is up, otherwise high) crosses above prior up target or prior bear stop line
+Calculation: Yearly high/low filters = use high and low from the last completed 12-month bar; compare with those values 365 and 730 chart bars earlier. Long filter passes if yearly high is rising versus both available comparisons, or close exceeds the current yearly high (or the maximum of the available prior highs); short filter passes if yearly low is falling versus both available comparisons, or close is below the current yearly low (or the minimum of the available prior lows). Missing comparisons pass.
+Calculation: Moving-average alignment score = sum over seven comparisons: close > shortest MA, then each MA > the next longer MA, through the longest MA; each true comparison adds 1. If not strictly aligned, score is 0.5 when score > 5, −0.5 when score < 2, 0.25 when score > 3, otherwise −0.25 (when partial alignment is enabled)
+Calculation: Alignment total = sum of moving-average alignment scores over a lookback
+Calculation: Alignment rank = percent rank of OHLC4 over the same lookback
+Calculation: Custom SuperTrend direction = direction of a SuperTrend calculated on the selected moving average of OHLC4
+Calculation: Recent-high filter = highest high over the shorter lookback equals highest high over the longer lookback
+Calculation: Recent-low filter = lowest low over the shorter lookback equals lowest low over the longer lookback
+Calculation: Long and short trailing stops = ATR-based stop levels updated each bar using the stop or compound multiplier according to position side and bar state, with the source's prior-stop and close comparisons
+Long: bar state is bullish OR (long signal AND yearly high/low filter passes AND bar state is not bearish AND datetime is within the configured backtest date window AND ((recent-high filter AND alignment total > alignment threshold AND (custom SuperTrend direction is up or its check is disabled) AND alignment rank > 70) OR cumulative strategy net profit ≥ 0) AND (flat or close > short trailing stop) AND long entries are allowed)
+Short: bar state is bearish OR (short signal AND yearly high/low filter passes AND bar state is not bullish AND datetime is within the configured backtest date window AND ((recent-low filter AND alignment total < negative alignment threshold AND (custom SuperTrend direction is down or its check is disabled) AND alignment rank < 30) OR cumulative strategy net profit ≥ 0) AND (flat or close < long trailing stop) AND short entries are allowed)
+Exit: long, low ≤ long trailing stop OR (exit-on-signal is enabled AND long exit signal AND bar state is not bullish AND datetime is within the configured backtest date window)
+Exit: short, high ≥ short trailing stop OR (exit-on-signal is enabled AND short exit signal AND bar state is not bearish AND datetime is within the configured backtest date window)

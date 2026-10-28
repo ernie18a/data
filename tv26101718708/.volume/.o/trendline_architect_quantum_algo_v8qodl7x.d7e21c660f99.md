@@ -1,0 +1,9 @@
+Calculation: Confirmed swing high/low = a high/low pivot confirmed after the configured number of bars on its right has closed.
+Calculation: Candidate resistance/support line = straight line through consecutive confirmed swing highs/lows, respectively; accept only if anchor spacing is within configured limits and no close between the anchors violates the line beyond the ATR validity allowance. Reject near-duplicate active lines; when a side reaches its configured capacity, evict its line with the fewest touches, breaking ties by evicting the oldest. Expire lines after the configured age.
+Calculation: Line value = first anchor price + line slope × bars since first anchor.
+Calculation: Validated touch = support: low is within the configured ATR tolerance of the line and close is above it; resistance: high is within that tolerance and close is below it. Lines begin with two touches and become confirmed at the configured touch count.
+Calculation: Breakout grade = one base point plus one point for each of: volume z-score above its configured threshold, close penetration beyond the line in ATR units above its configured threshold, and candle body-to-range ratio above its configured threshold; map the total to grades C, B, or A.
+Long: Confirmed resistance line and close > line value + configured ATR breakout buffer AND breakout grade >= configured minimum grade.
+Short: Confirmed support line and close < line value - configured ATR breakout buffer AND breakout grade >= configured minimum grade.
+Long: Within the configured watch window after a resistance line breaks, low <= line value + configured ATR touch tolerance AND close > line value.
+Short: Within the configured watch window after a support line breaks, high >= line value - configured ATR touch tolerance AND close < line value.

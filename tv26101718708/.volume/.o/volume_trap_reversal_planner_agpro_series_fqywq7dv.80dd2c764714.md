@@ -1,0 +1,11 @@
+Calculation: Reference high/low = highest high / lowest low over the lookback of completed bars before the current bar.
+Calculation: Relative volume = current volume / moving average of volume over the baseline lookback.
+Calculation: ATR = average true range; use the greater of ATR, current true range, and minimum tick.
+Calculation: Candle body share = absolute(close − open) / (high − low); wick share = corresponding upper or lower wick / (high − low); close location = distance from the relevant candle extreme to close / (high − low).
+Calculation: Downside trap = low below reference low by the sweep buffer, close above reference low by the recovery buffer, lower wick share at least the sensitivity threshold, and relative volume at least the sensitivity-adjusted spike threshold. Upside trap is the inverse at the reference high.
+Calculation: Trap score = capped weighted normalized score from relative volume, relevant wick share, directional close location, sweep penetration in ATR units, and whether relative volume meets the spike threshold. Confirmation score = capped weighted normalized score from body share, directional close location, and follow-through from the trap reference in ATR units. Reversal score = trap score plus confirmation score, capped at 100.
+Calculation: Confirmation candle = within the confirmation window after a trap, a candle in the reversal direction whose body share, directional close location, and close beyond the trap candle's confirmation level plus the confirmation buffer meet their respective thresholds.
+Long: Confirmed downside trap and trap score at least the watch threshold and event spacing satisfied; OR downside probe with relative volume at least the spike threshold and downside trap score at least the watch threshold, when no new trap event occurs; OR active downside trap and confirmation candle.
+Short: Confirmed upside trap and trap score at least the watch threshold and event spacing satisfied; OR upside probe with relative volume at least the spike threshold and upside trap score at least the watch threshold, when no new trap event occurs; OR active upside trap and confirmation candle.
+Exit: Long, close below the active risk edge OR high reaches the active target.
+Exit: Short, close above the active risk edge OR low reaches the active target.

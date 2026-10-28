@@ -1,0 +1,6 @@
+Calculation: XTL value = (selected source − its selected moving average) divided by 0.015 times either the selected source’s mean absolute deviation over the same lookback, or the mean absolute deviation of the absolute difference between source and moving average over that lookback, according to the selected formula
+Long: XTL value > positive threshold
+Short: XTL value < negative threshold
+Long: Supertrend flips from bearish to bullish AND close > EMA89 × (1 + tolerance) AND NOT (last completed daily close < its EMA21 AND that EMA21 is below its value at the configured earlier daily bar)
+Long: Supertrend flips from bearish to bullish AND close > EMA89 × (1 + tolerance) AND NOT (last completed daily close < its EMA21 AND that EMA21 is below its value at the configured earlier daily bar) AND XTL value > positive threshold AND last completed 4-hour close > its EMA21 AND that EMA21 is at or above its value at the configured earlier 4-hour bar AND (4-hour RSI(14) > 50 OR > its value on the preceding 4-hour bar)
+Exit: long, Supertrend flips from bullish to bearish AND a valid long entry has occurred without a subsequent exit

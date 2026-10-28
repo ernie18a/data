@@ -1,0 +1,9 @@
+Calculation: Percentage distance = (close − VWAP) / VWAP × 100.
+Calculation: VWAP deviation bands = VWAP × (1 ± k × standard deviation of percentage distance over a lookback / 100), with k values ordered from smallest to largest.
+Calculation: Trend EMA = EMA of close over a lookback on the last completed bar of the trend timeframe.
+Calculation: Long stop = lowest low over a lookback when the position opens; thereafter, once high − entry price reaches the breakeven trigger, raise the stop to the greater of its prior value and entry price.
+Calculation: Short stop = highest high over a lookback when the position opens; thereafter, once entry price − low reaches the breakeven trigger, lower the stop to the lesser of its prior value and entry price.
+Long: (flat OR (long position AND close < entry price)) AND prior percentage distance < prior lower outer band AND current percentage distance ≥ current lower outer band AND within the selected trading session AND current standard deviation > the highest standard deviation over the preceding lookback, if the expansion filter is enabled AND close > trend EMA AND long entries enabled.
+Short: flat AND prior percentage distance > prior upper outer band AND current percentage distance ≤ current upper outer band AND within the selected trading session AND current standard deviation > the highest standard deviation over the preceding lookback, if the expansion filter is enabled AND close < trend EMA AND short entries enabled.
+Exit: long, low ≤ long stop OR low ≤ selected lower VWAP band or VWAP profit target.
+Exit: short, high ≥ short stop OR high ≥ selected upper VWAP band or VWAP profit target.

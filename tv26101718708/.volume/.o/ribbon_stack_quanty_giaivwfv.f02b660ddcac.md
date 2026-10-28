@@ -1,0 +1,3 @@
+Calculation: Eight-EMA ribbon = eight EMAs of close with geometrically spaced lengths from shortest to longest.
+Long: On a closed bar, the eight EMAs are strictly ordered shortest-length EMA > ... > longest-length EMA, and they were not so ordered on the previous bar.
+Short: On a closed bar, the eight EMAs are strictly ordered shortest-length EMA < ... < longest-length EMA, and they were not so ordered on the previous bar.

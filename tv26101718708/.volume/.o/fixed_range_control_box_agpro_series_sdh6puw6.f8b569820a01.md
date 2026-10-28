@@ -1,0 +1,5 @@
+Calculation: Active range = selected mode: last confirmed swing high and low; rolling highest high and lowest low; rolling highest high and lowest low when short ATR is below the configured ratio of longer ATR; or the high and low accumulated during the configured date window. Accept only ranges meeting the configured minimum width; replace only after the configured lifespan, or after the failed-range cooldown.
+Calculation: Control line = volume-weighted average of typical price ((high + low + close) / 3) over the active range; use the range midpoint if the result is too close to either edge.
+Calculation: Control-side source = close in strict mode; otherwise high when close > control line, and low when close <= control line. Count bars with source above or below the control line; reset the opposite count, and leave counts unchanged when source equals the line.
+Long: Above count >= configured confirmation bars AND close <= range high AND close >= range low
+Short: Below count >= configured confirmation bars AND close <= range high AND close >= range low

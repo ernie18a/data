@@ -1,0 +1,3 @@
+Calculation: FVG size score = 100 × gap size / the 100th-percentile gap size over the longer lookback, where gap size is (current low − high two bars ago) / current low × 100 if the previous close is above the previous open, otherwise (low two bars ago − current high) / current high × 100
+Long: high two bars ago < current low AND high two bars ago < previous high AND low two bars ago < current low AND FVG size score > minimum size threshold
+Short: low two bars ago > current high AND low two bars ago > previous low AND high two bars ago > current high AND FVG size score > minimum size threshold

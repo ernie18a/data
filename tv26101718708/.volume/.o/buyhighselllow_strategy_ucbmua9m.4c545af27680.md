@@ -1,0 +1,6 @@
+Calculation: Bullish moving-average alignment = close > the selected moving average at the shortest lookback > the selected moving average at each successively longer lookback; the averages use progressively longer lookbacks
+Calculation: New-high filter = rolling highest high over the shorter lookback equals rolling highest high over the longer lookback
+Calculation: Annual-high filter = using the last completed 12-month bar's high and that series' values 365 and 730 chart bars earlier: true if any required value is unavailable; otherwise true if the latest annual high exceeds both older values, or close exceeds the latest annual high (if the 365-bar value is unavailable), the greater of the latest and 365-bar values (if the 730-bar value is unavailable), or the greater of the latest and the lesser of the 365-bar and 730-bar values
+Calculation: Long ATR trailing stop = the greater of the prior stop and close minus ATR multiplied by its selected multiplier
+Long: close crosses above the previous bar's upper Donchian band AND (bullish moving-average alignment occurred within its lookback, if enabled) AND (shorter-lookback rolling highest high equals longer-lookback rolling highest high, if enabled) AND (annual-high filter passes, if enabled)
+Exit: long, low <= the selected exit stop (current lower Donchian band or long ATR trailing stop)

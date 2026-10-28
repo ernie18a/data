@@ -1,0 +1,7 @@
+Calculation: Fast moving average = configurable SMA or EMA of close with a shorter lookback than the slow moving average
+Calculation: Slow moving average = configurable SMA or EMA of close with a longer lookback than the fast moving average
+Calculation: Volume z-score = (volume − its moving average) / its standard deviation, using the same lookback for both
+Calculation: Projected crossover bars = distance between the moving averages divided by the absolute difference between their slopes; slopes use the same lookback
+Long: Fast moving average > slow moving average AND previous fast moving average ≤ previous slow moving average OR projected crossover is upward, averages are converging, and projected crossover bars are within both the alert lead window and projection horizon, and this condition was false on the prior bar OR fast moving average crosses above slow moving average AND volume z-score exceeds its threshold AND absolute fast moving average slope divided by ATR exceeds its threshold AND close > fast moving average
+Short: Fast moving average < slow moving average AND previous fast moving average ≥ previous slow moving average OR projected crossover is downward, averages are converging, and projected crossover bars are within both the alert lead window and projection horizon, and this condition was false on the prior bar OR fast moving average crosses below slow moving average AND volume z-score exceeds its threshold AND absolute fast moving average slope divided by ATR exceeds its threshold AND close < fast moving average
+Exit:

@@ -1,0 +1,1 @@
+For a qualified long setup, block entry when Bitcoin dominance is rising; for a qualified short setup, block entry when Bitcoin dominance is falling. When dominance is neutral or moves in the opposite direction, this filter permits the entry. Existing positions are not exited based on dominance.

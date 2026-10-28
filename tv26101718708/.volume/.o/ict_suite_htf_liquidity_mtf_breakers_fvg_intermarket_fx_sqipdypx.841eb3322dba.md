@@ -1,0 +1,4 @@
+Calculation: Confirmed swing high = a bar whose high is a pivot high using configurable left and right lookbacks, confirmed after the right lookback bars
+Calculation: Confirmed swing low = a bar whose low is a pivot low using configurable left and right lookbacks, confirmed after the right lookback bars
+Long: A newly confirmed swing low is lower than the preceding confirmed swing low, the latest confirmed swing high lies between those two swing lows, and within 250 bars after this setup the close > that swing high OR low > high two bars earlier OR an active bearish fair value gap is crossed by a close > its upper boundary
+Short: A newly confirmed swing high is higher than the preceding confirmed swing high, the latest confirmed swing low lies between those two swing highs, and within 250 bars after this setup the close < that swing low OR high < low two bars earlier OR an active bullish fair value gap is crossed by a close < its lower boundary

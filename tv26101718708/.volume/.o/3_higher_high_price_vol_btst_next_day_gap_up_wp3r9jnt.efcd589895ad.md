@@ -1,0 +1,3 @@
+Long: High > previous bar high > second previous bar high AND Volume > previous bar volume > second previous bar volume AND each of the current and previous two bars has volume above its own volume moving average AND each of those bars closes above its open AND current bar time is within the entry window
+Short: Low < previous bar low < second previous bar low AND Volume > previous bar volume > second previous bar volume AND each of the current and previous two bars has volume above its own volume moving average AND each of those bars closes below its open AND current bar time is within the entry window
+Exit: long or short, current bar time is within the exit window

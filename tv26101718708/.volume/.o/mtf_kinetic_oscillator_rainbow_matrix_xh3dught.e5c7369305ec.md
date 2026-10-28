@@ -1,0 +1,3 @@
+Calculation: Kinetic score = weighted average of five configured timeframe scores; each timeframe score averages RSI and a sigmoid-normalized Z-score of log price relative to its linear regression, using the bar high when close ≥ open and the bar low otherwise. Add a clamped Z-score of signed volume delta and a volume-climax adjustment, damp the distance from 50 during range compression, clamp to 0–100, then apply a short weighted moving average. Use each timeframe’s currently available bar (forming in real time, completed on historical bars).
+Long: Kinetic score < 50
+Short: Kinetic score ≥ 50

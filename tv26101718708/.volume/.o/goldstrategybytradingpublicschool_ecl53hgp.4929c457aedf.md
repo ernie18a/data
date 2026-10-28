@@ -1,0 +1,3 @@
+Calculation: Bollinger Bands = 200-period simple moving average of close, with upper and lower bands 2 standard deviations above and below the average
+Long: RSI(6) crosses above 50 AND close crosses above the lower Bollinger Band OR close crosses above the lower Bollinger Band AND the Bollinger basis is higher than on the previous bar
+Short: RSI(6) crosses below 50 AND close crosses below the upper Bollinger Band OR close crosses below the upper Bollinger Band AND the Bollinger basis is lower than on the previous bar

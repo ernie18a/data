@@ -1,0 +1,14 @@
+Calculation: Monthly green = last available monthly close > monthly EMA(21) AND monthly EMA(21) > monthly EMA(50); use the monthly bar still forming
+Calculation: Monthly early green = last available monthly close > monthly EMA(21) AND monthly RSI(14) > 48; use the monthly bar still forming
+Calculation: Weekly recovery = weekly RSI(14) > 40 AND weekly RSI(14) > its prior weekly value; use the weekly bar still forming
+Calculation: Weekly green = weekly close > weekly EMA(21) AND weekly RSI(14) > 50; use the weekly bar still forming
+Calculation: Weekly deep = weekly RSI(14) < 40; use the weekly bar still forming
+Calculation: Cycle position = 100 × (close − lowest low over the cycle lookback) / (highest high − lowest low over the cycle lookback)
+Calculation: Lower inner zone = lowest low over the zone lookback + 25% × (highest high − lowest low over the zone lookback)
+Calculation: Upper inner zone = lowest low over the zone lookback + 78% × (highest high − lowest low over the zone lookback)
+Calculation: Bottom score = min(100, 25 if cycle position < 35 + 20 if cycle position < 25 + 20 if weekly deep + 15 if weekly recovery + 10 if RSI(14) < 40 + 10 if close < lower inner zone; otherwise each term is 0)
+Calculation: Top score = min(100, 20 if cycle position > 70 + 25 if cycle position > 82 + 15 if RSI(14) > 68 + 20 if RSI(14) > 76 + 20 if close > upper inner zone; otherwise each term is 0)
+Calculation: Risk off = monthly close < monthly EMA(21) AND monthly EMA(21) < monthly EMA(50) AND NOT weekly recovery; use the monthly and weekly bars still forming
+Calculation: Trend = 1 if close > prior bar's trend upper band, −1 if close < prior bar's trend lower band, otherwise prior trend (initially 1); trend bands are EMA(close, trend length) ± ATR × sensitivity
+Long: (Monthly green OR monthly early green) AND bottom score ≥ 55 AND RSI(14) crosses above 40 OR (Monthly green OR monthly early green) AND weekly recovery AND close crosses above EMA(21) AND RSI(14) > 45 OR monthly green AND weekly green AND low ≤ EMA(21) AND close > EMA(21) AND RSI(14) < 62 AND close > open OR monthly green AND weekly green AND close > the prior bar's highest high over the breakout lookback AND RSI(14) < 72; only signal if more than the configured cooldown bars have elapsed since the prior long signal
+Exit: long, (top score ≥ 55 AND high > upper inner zone) OR (top score ≥ 75 AND RSI(14) > 72) OR (close crosses below EMA(21) AND top score ≥ 35) OR risk off OR (close crosses below EMA(50) AND trend = −1); only signal if more than the configured cooldown bars have elapsed since the prior exit signal

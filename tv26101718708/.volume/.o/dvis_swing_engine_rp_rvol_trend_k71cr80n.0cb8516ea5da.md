@@ -1,0 +1,6 @@
+Calculation: Relative Performance = 100 × ((stock close / stock close N RP-timeframe bars ago) / (benchmark close / benchmark close N RP-timeframe bars ago) − 1); use current RP-timeframe bars, which may still be forming
+Calculation: Earlier Relative Performance = same calculation shifted back by the RP momentum lookback; compare values using the same RP timeframe and lookbacks
+Calculation: Relative Volume = current bar volume / its moving average over a longer volume lookback
+Long: (close > open OR close > previous close, according to the selected bullish-candle definition) AND Relative Volume ≥ threshold
+Short: (close < open OR close < previous close, according to the selected bearish-candle definition) AND Relative Volume ≥ threshold
+Long: close > shorter-period EMA AND shorter-period EMA > longer-period EMA AND (if enabled, close > SMA) AND (if enabled, close > longer-period SMA) AND (if enabled, longer-period EMA > its prior-bar value) AND Relative Performance > minimum threshold AND Relative Performance > Earlier Relative Performance AND (close > open OR close > previous close, according to the selected bullish-candle definition) AND Relative Volume ≥ threshold AND the full condition was false on the prior bar

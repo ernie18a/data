@@ -1,0 +1,3 @@
+Calculation: Delta = sum of lower-timeframe volume within the last completed chart bar, counting volume as buying when close > open, selling when close < open, and half as each when close = open; buying volume minus selling volume
+Long: last completed chart bar close < open AND Delta > 0 AND chart-bar volume > 0 AND lower-timeframe data is available
+Short: last completed chart bar close > open AND Delta < 0 AND chart-bar volume > 0 AND lower-timeframe data is available

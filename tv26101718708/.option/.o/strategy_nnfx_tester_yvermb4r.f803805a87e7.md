@@ -1,0 +1,1 @@
+When the optional external volatility filter is enabled, allow new long or short entries only while the daily volatility-index reading is at or above its configured minimum; otherwise block new entries. This filter does not trigger exits.

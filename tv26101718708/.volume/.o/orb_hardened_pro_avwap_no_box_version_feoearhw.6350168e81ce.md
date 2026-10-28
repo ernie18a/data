@@ -1,0 +1,6 @@
+Calculation: Opening-range high = highest high from bars in the opening range, using only completed opening-range bars
+Calculation: Opening-range low = lowest low from bars in the opening range, using only completed opening-range bars
+Calculation: Session-anchored VWAP = cumulative ((high + low + close) / 3 × volume) / cumulative volume, reset at the session open and including the current session bar
+Calculation: Average volume = simple moving average of volume
+Long: Opening range is ready AND current close > opening-range high AND previous close <= opening-range high AND current close > session-anchored VWAP AND current volume > average volume × a multiplier AND NOT (current high > opening-range high AND current close < opening-range high)
+Short: Opening range is ready AND current close < opening-range low AND previous close >= opening-range low AND current close < session-anchored VWAP AND current volume > average volume × a multiplier AND NOT (current low < opening-range low AND current close > opening-range low)

@@ -1,0 +1,1 @@
+Long: close > minimum price threshold AND percentage change from the previous bar’s close >= minimum upward-move threshold AND volume >= minimum volume threshold AND (volume > previous bar’s volume when the volume-increase filter is enabled)

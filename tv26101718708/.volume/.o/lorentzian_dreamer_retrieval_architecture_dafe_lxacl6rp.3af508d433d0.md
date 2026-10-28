@@ -1,0 +1,8 @@
+Calculation: Bullish evidence = (Lorentzian prediction > 0.1 ? |Lorentzian prediction| × Lorentzian assurance : 0) + (delta ratio > 0.2 ? |delta ratio| × 0.8 : 0) + (dream residual > 0.1 ? |dream residual| × imagination confidence × 0.6 : 0) + (RCM state is bullish ? RCM integrity × 0.5 : 0); multiply by 1.3 when price is at a structural level
+Calculation: Bearish evidence = (Lorentzian prediction < -0.1 ? |Lorentzian prediction| × Lorentzian assurance : 0) + (delta ratio < -0.2 ? |delta ratio| × 0.8 : 0) + (dream residual < -0.1 ? |dream residual| × imagination confidence × 0.6 : 0) + (RCM state is bearish ? RCM integrity × 0.5 : 0); multiply by 1.3 when price is at a structural level
+Calculation: Confluence score = greater of bullish evidence and bearish evidence
+Calculation: Confluence component count = number of true conditions: |Lorentzian prediction| × Lorentzian assurance > 0.2; |delta ratio| > 0.2; price is at a structural level; RCM enabled and state is bullish or bearish; imagination confidence > 0.3 and |dream residual| > 0.15
+Calculation: Bullish conflict = Lorentzian prediction < -0.1 OR delta ratio < -0.2 OR RCM enabled and state is bearish
+Calculation: Bearish conflict = Lorentzian prediction > 0.1 OR delta ratio > 0.2 OR RCM enabled and state is bullish
+Long: Confluence score ≥ activation threshold AND confluence component count ≥ 2 AND (Lorentzian prediction > 0.1 OR delta ratio > 0.2 OR RCM enabled and state is bullish) AND NOT bullish conflict
+Short: Confluence score ≥ activation threshold AND confluence component count ≥ 2 AND (Lorentzian prediction < -0.1 OR delta ratio < -0.2 OR RCM enabled and state is bearish) AND NOT bearish conflict

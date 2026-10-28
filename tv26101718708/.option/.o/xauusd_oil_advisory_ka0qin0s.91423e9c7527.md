@@ -1,0 +1,1 @@
+For XAUUSD, when the external oil instrument’s price is above its fast, medium, and slow moving averages, those averages are ordered fast above medium above slow, and oil has risen by at least a threshold over a recent lookback, issue a short advisory on the first bar these conditions become true. The indicator does not define an entry confirmation, long signal, or exit rule.

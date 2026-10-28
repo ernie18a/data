@@ -1,0 +1,19 @@
+Calculation: EMA = exponential moving average of close over the trend lookback
+Calculation: RSI = relative strength index of close over its lookback
+Calculation: MACD histogram = MACD line minus signal line, using a faster and a slower lookback
+Calculation: Volume average = simple moving average of volume over its lookback
+Calculation: Confirmed pivot highs/lows = highs/lows that are extreme over equal left and right lookbacks; a pivot is known after the right lookback completes
+Calculation: Higher high/lower high = latest confirmed pivot high above/below the preceding confirmed pivot high
+Calculation: Higher low/lower low = latest confirmed pivot low above/below the preceding confirmed pivot low
+Calculation: Low sweep = current low below the preceding confirmed pivot low AND current close above that pivot low
+Calculation: High sweep = current high above the preceding confirmed pivot high AND current close below that pivot high
+Calculation: Equal highs/lows = latest and preceding confirmed pivot highs/lows differ by less than a proximity threshold relative to current close
+Calculation: Prior-bar breakout = current close above the highest high / below the lowest low over the preceding lookback bars, excluding the current bar
+Long: (Low sweep OR RSI above a lower threshold) AND MACD histogram rising AND volume at least a minimum fraction of volume average AND NOT equal highs
+Long: (Low sweep OR RSI above a lower threshold) AND MACD histogram rising AND volume at least a minimum fraction of volume average AND NOT equal highs AND RSI above a higher threshold AND MACD histogram rising AND (close above EMA OR Low sweep)
+Long: (Low sweep OR RSI above a lower threshold) AND MACD histogram rising AND volume at least a minimum fraction of volume average AND NOT equal highs AND RSI above a higher threshold AND MACD histogram rising AND (close above EMA OR Low sweep) AND close above EMA AND EMA rising AND volume above volume average AND (Higher high OR Higher low OR Prior-bar breakout above the highest high)
+Long: (Low sweep OR RSI above a lower threshold) AND MACD histogram rising AND volume at least a minimum fraction of volume average AND NOT equal highs AND RSI above a higher threshold AND MACD histogram rising AND (close above EMA OR Low sweep) AND close above EMA AND EMA rising AND volume above volume average AND (Higher high OR Higher low OR Prior-bar breakout above the highest high) AND volume above a stronger multiple of volume average AND RSI above an upper threshold AND MACD histogram above zero
+Short: (High sweep OR RSI below an upper threshold) AND MACD histogram falling AND volume at least a minimum fraction of volume average AND NOT equal lows
+Short: (High sweep OR RSI below an upper threshold) AND MACD histogram falling AND volume at least a minimum fraction of volume average AND NOT equal lows AND RSI below a lower threshold AND MACD histogram falling AND (close below EMA OR High sweep)
+Short: (High sweep OR RSI below an upper threshold) AND MACD histogram falling AND volume at least a minimum fraction of volume average AND NOT equal lows AND RSI below a lower threshold AND MACD histogram falling AND (close below EMA OR High sweep) AND close below EMA AND EMA falling AND volume above volume average AND (Lower low OR Lower high OR Prior-bar breakout below the lowest low)
+Short: (High sweep OR RSI below an upper threshold) AND MACD histogram falling AND volume at least a minimum fraction of volume average AND NOT equal lows AND RSI below a lower threshold AND MACD histogram falling AND (close below EMA OR High sweep) AND close below EMA AND EMA falling AND volume above volume average AND (Lower low OR Lower high OR Prior-bar breakout below the lowest low) AND volume above a stronger multiple of volume average AND RSI below a lower threshold AND MACD histogram below zero

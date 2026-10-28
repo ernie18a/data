@@ -1,0 +1,8 @@
+Calculation: K = Stochastic %K calculated from chart-bar close, high, and low over a lookback
+Calculation: D = Simple moving average of K over a shorter smoothing lookback
+Calculation: Fast EMA = EMA of close using a shorter lookback than Slow EMA
+Calculation: Slow EMA = EMA of close using a longer lookback than Fast EMA
+Calculation: Volume average = Simple moving average of volume
+Calculation: MiddleZoneSeen = K and D are each above 1.75 × the oversold threshold and below the overbought threshold on this bar, or the condition was true on an earlier bar since the last exit; reset on entry unless true on the entry bar, and reset on exit
+Long: Not already long AND within the configured date range AND (((K <= oversold threshold AND D <= oversold threshold AND K crosses above D AND K > prior K AND D > prior D) OR (K > prior K AND D > prior D AND K one bar ago crossed above D one bar ago)) AND close > open AND volume / Volume average >= configured minimum volume factor) OR (Not already long AND within the configured date range AND Fast EMA crosses above Slow EMA AND Fast EMA > prior Fast EMA AND Slow EMA > prior Slow EMA AND close > open)
+Exit: Long, Within the configured date range AND (MiddleZoneSeen OR close < entry price × (1 − configured stop-loss fraction)) AND (K <= oversold threshold AND D <= oversold threshold OR Fast EMA crosses below Slow EMA OR (K crosses below D AND prior K and prior D are each >= overbought threshold AND K <= overbought threshold AND K <= prior K AND D <= prior D))

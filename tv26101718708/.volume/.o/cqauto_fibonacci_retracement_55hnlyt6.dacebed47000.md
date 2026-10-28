@@ -1,0 +1,5 @@
+Calculation: Pivot high = a bar whose high is the highest in the configurable lookback window centered on that bar; pivot low = a bar whose low is the lowest in that window.
+Calculation: Pivot deviation = 100 × (candidate pivot price − previous pivot price) ÷ candidate pivot price.
+Calculation: Pivot threshold = ATR ÷ current close × 100 × configurable wave-size multiplier.
+Long: A pivot low is confirmed when its pivot deviation is less than −pivot threshold and the previous pivot was a high, or when the previous pivot was a low and this low is lower than the previous pivot low.
+Short: A pivot high is confirmed when its pivot deviation is greater than pivot threshold and the previous pivot was a low, or when the previous pivot was a high and this high is higher than the previous pivot high.

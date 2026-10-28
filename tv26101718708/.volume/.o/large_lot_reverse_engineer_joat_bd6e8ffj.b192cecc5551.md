@@ -1,0 +1,4 @@
+Calculation: Percentage return = (current close − previous close) / |previous close|
+Calculation: Residual Z-score = (smoothed volume − expected volume − rolling mean of the residual) / rolling standard deviation of the residual, where expected volume = rolling mean of smoothed volume × absolute percentage return / rolling mean of absolute percentage return; use the same lookback for these rolling calculations, including residual statistics.
+Long: On a completed bar, residual Z-score ≥ the positive block threshold AND percentage return > 0 AND the configured same-direction signal cooldown has elapsed.
+Short: On a completed bar, residual Z-score ≥ the positive block threshold AND percentage return < 0 AND the configured same-direction signal cooldown has elapsed.

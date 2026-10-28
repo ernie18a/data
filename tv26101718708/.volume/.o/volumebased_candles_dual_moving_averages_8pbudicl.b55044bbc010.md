@@ -1,0 +1,2 @@
+Long: close > fast moving average AND close > slow moving average OR fast moving average > slow moving average AND previous fast moving average <= previous slow moving average
+Short: close < fast moving average AND close < slow moving average OR fast moving average < slow moving average AND previous fast moving average >= previous slow moving average

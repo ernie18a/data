@@ -1,0 +1,7 @@
+Calculation: Candle delta = (close − open) / (high − low) × volume; use 0 when high = low
+Calculation: Cumulative volume delta = running sum of candle delta
+Calculation: Smoothed cumulative volume delta = EMA of cumulative volume delta
+Long: Long-term EMA 1 > long-term EMA 6 AND low <= long-term EMA 1 AND prior-bar low > prior-bar long-term EMA 1 AND (ATR filter disabled OR abs(close − long-term EMA 1) >= ATR × multiplier) AND (CVD filter disabled OR cumulative volume delta > smoothed cumulative volume delta) AND (RSI filter disabled OR RSI < overbought threshold) AND (cooldown disabled OR bars since prior long signal >= cooldown period)
+Short: Long-term EMA 1 < long-term EMA 6 AND high >= long-term EMA 1 AND prior-bar high < prior-bar long-term EMA 1 AND (ATR filter disabled OR abs(close − long-term EMA 1) >= ATR × multiplier) AND (CVD filter disabled OR cumulative volume delta < smoothed cumulative volume delta) AND (RSI filter disabled OR RSI > oversold threshold) AND (cooldown disabled OR bars since prior short signal >= cooldown period)
+Exit: Long, long-term EMA 1 > long-term EMA 6 AND high >= short-term EMA 1 AND prior-bar high < prior-bar short-term EMA 1
+Exit: Short, long-term EMA 1 < long-term EMA 6 AND low <= short-term EMA 1 AND prior-bar low > prior-bar short-term EMA 1

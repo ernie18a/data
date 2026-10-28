@@ -1,0 +1,9 @@
+Calculation: Average volume = simple moving average of volume over a lookback period.
+Calculation: Block impact = 0 unless volume exceeds average volume times a threshold; then it is positive for close > open and negative for close < open, with magnitude (volume / average volume) / normalization divisor, optionally multiplied by abs((close - open) / open) * 10.
+Calculation: Cumulative impact = prior cumulative impact * decay factor + current block impact.
+Calculation: High-volume buy/sell marking = volume exceeds average volume times a threshold, meets the optional minimum-volume filter, and the candle closes above/below its open; suppress it if an opposite marking occurred within the lookback period.
+Calculation: Bearish exhaustion = cumulative impact is below a negative extreme threshold, consecutive bars with cumulative impact <= 0 meet a minimum count, current (high - low) / ((high + low) / 2) * 100 is below a maximum, enough bars have passed since invalidation, and the first low has not been broken. Bullish exhaustion uses the corresponding positive threshold, consecutive bars with cumulative impact >= 0, and first high not broken.
+Long: Cumulative impact crosses above zero OR a high-volume buy marking occurs OR a prior bearish exhaustion is validated by current high exceeding the first bearish-exhaustion bar's high.
+Short: Cumulative impact crosses below zero OR a high-volume sell marking occurs OR a prior bullish exhaustion is validated by current low falling below the first bullish-exhaustion bar's low.
+Exit: long, cumulative impact < -signal threshold.
+Exit: short, cumulative impact > signal threshold.

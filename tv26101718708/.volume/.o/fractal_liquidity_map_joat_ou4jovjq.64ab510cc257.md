@@ -1,0 +1,4 @@
+Calculation: Fast Hann FIR = weighted average of current and preceding closes, weighted by 1 − cos(2πi/(length + 1)) for i from 1 to length, with the current close weighted at i = 1
+Calculation: Mid Hann FIR = Fast Hann FIR calculated with a longer length
+Long: On a confirmed bar with sweep signals enabled, low is below the lowest low of the preceding lookback bars by a configured fraction of the ATR-relative pool tolerance AND close is above that preceding lowest low; OR Fast Hann FIR crosses above Mid Hann FIR
+Short: On a confirmed bar with sweep signals enabled, high is above the highest high of the preceding lookback bars by a configured fraction of the ATR-relative pool tolerance AND close is below that preceding highest high; OR Fast Hann FIR crosses below Mid Hann FIR

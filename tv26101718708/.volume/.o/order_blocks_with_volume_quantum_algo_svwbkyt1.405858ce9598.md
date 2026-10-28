@@ -1,0 +1,6 @@
+Calculation: Confirmed swing high/low = a bar’s high/low that is higher/lower than the highs/lows of the configured number of bars on both sides; it becomes confirmed after the bars on its right have completed.
+Calculation: Bullish/bearish origin candle = the nearest preceding candle within the configured impulse lookback whose close is below/above its open, respectively.
+Calculation: Zone bounds = origin candle’s high and low, or its open and close, according to the configured zone range.
+Calculation: Volume strength = origin candle volume / average volume over the configured baseline ending at the origin candle.
+Long: On a confirmed bar, close > latest unbroken confirmed swing high AND a bullish origin candle exists AND, if enabled, zone height <= current ATR × configured maximum AND, if enabled, volume strength >= configured minimum AND zone does not overlap an active bullish zone.
+Short: On a confirmed bar, close < latest unbroken confirmed swing low AND a bearish origin candle exists AND, if enabled, zone height <= current ATR × configured maximum AND, if enabled, volume strength >= configured minimum AND zone does not overlap an active bearish zone.

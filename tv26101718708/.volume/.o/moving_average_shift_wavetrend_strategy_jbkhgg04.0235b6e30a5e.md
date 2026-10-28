@@ -1,0 +1,10 @@
+Calculation: selected moving average = moving average of (high + low) / 2 using the selected type
+Calculation: oscillator = 10-period Hull moving average of the change in ((high + low) / 2 − selected moving average) / 99th-percentile value of that difference over its rolling lookback; the change compares with the value one oscillator lookback earlier
+Calculation: long-term trend EMA = EMA of (high + low) / 2 with a longer lookback than the selected moving average
+Calculation: volatility threshold = median ATR over its rolling lookback
+Calculation: in-wave flag = true after either entry condition; reset to false when the oscillator crosses zero
+Calculation: highest/lowest since entry = highest high/lowest low since the current position opened
+Long: (high + low) / 2 >= selected moving average AND oscillator > 0 AND oscillator > its previous value AND long-term trend EMA > its previous value AND ATR > volatility threshold AND exchange-time hour >= session start AND exchange-time hour < session end AND in-wave flag is false
+Short: (high + low) / 2 < selected moving average AND oscillator < 0 AND oscillator < its previous value AND long-term trend EMA < its previous value AND ATR > volatility threshold AND exchange-time hour >= session start AND exchange-time hour < session end AND in-wave flag is false
+Exit: long, high >= entry price × take-profit factor OR low <= entry price × stop-loss factor OR oscillator < 0 AND oscillator < its previous value AND (high + low) / 2 < selected moving average OR close < highest high since entry × trailing factor
+Exit: short, low <= entry price × take-profit factor OR high >= entry price × stop-loss factor OR oscillator > 0 AND oscillator > its previous value AND (high + low) / 2 > selected moving average OR close > lowest low since entry × trailing factor

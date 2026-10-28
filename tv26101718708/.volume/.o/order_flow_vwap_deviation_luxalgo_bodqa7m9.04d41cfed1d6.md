@@ -1,0 +1,5 @@
+Calculation: Pivot high = a bar's high greater than the highs of the same lookback length of bars on both sides; Pivot low = a bar's low less than the lows of the same lookback length of bars on both sides. A pivot becomes confirmed after the right-side bars complete.
+Calculation: Average body size = simple moving average of abs(close − open) over a lookback; gap volatility is valid when the prior bar's body size exceeds this average times a threshold.
+Calculation: Bearish fair value gap = current high < low from two bars earlier, with valid gap volatility; its upper boundary is that earlier low. Bullish fair value gap = current low > high from two bars earlier, with valid gap volatility; its lower boundary is that earlier high.
+Long: A low reaches an untriggered confirmed pivot low and volume > 20-bar simple moving average of volume × a threshold OR close exceeds the upper boundary of an existing bearish fair value gap.
+Short: A high reaches an untriggered confirmed pivot high and volume > 20-bar simple moving average of volume × a threshold OR close falls below the lower boundary of an existing bullish fair value gap.

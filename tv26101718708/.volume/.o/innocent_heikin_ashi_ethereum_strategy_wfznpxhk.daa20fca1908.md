@@ -1,0 +1,7 @@
+Calculation: PVSRA candle color = volume-and-price-action classification into green, red, violet, or blue; green marks high buy volume and tick speed
+Calculation: Lowest low = lowest ETH low over a lookback
+Long: bar is confirmed AND PVSRA color is green AND open > EMA(50) AND a red PVSRA candle previously opened and closed below EMA(50) since the previous long entry AND at least one red PVSRA candle closed below EMA(50) since the previous long entry AND close != EMA(200) AND this bar is later than the previous long entry
+Exit: long, low <= lowest low OR high >= entry-signal close + (entry-signal close - lowest low) × risk/reward multiplier
+Exit: long, bar is confirmed AND this is the bar immediately after a long entry AND PVSRA color is red or violet
+Exit: long, bar is confirmed AND this is the bar immediately after a bar where PVSRA color was blue or green and its open was above EMA(200) and EMA(50) AND PVSRA color is red AND open > EMA(200) AND close > EMA(200) AND at least one green PVSRA candle has closed above EMA(200) since the previous sell signal
+Exit: long, bar is confirmed AND this is the bar immediately after a bar where PVSRA color was blue or green and its open was above EMA(200) and EMA(50) AND PVSRA color is green

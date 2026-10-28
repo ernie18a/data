@@ -1,0 +1,2 @@
+Long: Call option close > put option close AND previous call option close <= previous put option close
+Short: Put option close > call option close AND previous put option close <= previous call option close

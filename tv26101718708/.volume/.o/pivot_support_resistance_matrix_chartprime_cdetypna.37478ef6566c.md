@@ -1,0 +1,2 @@
+Long: close > an active resistance level created by a confirmed pivot high, with no unbroken support or resistance level within ATR × a multiplier when the pivot is confirmed
+Short: close < an active support level created by a confirmed pivot low, with no unbroken support or resistance level within ATR × a multiplier when the pivot is confirmed

@@ -1,0 +1,6 @@
+Calculation: 3-bar volume swing low = each of three consecutive bars has volume greater than the preceding bar’s volume and low below the preceding bar’s low
+Calculation: 3-bar volume swing high = each of three consecutive bars has volume greater than the preceding bar’s volume and high above the preceding bar’s high
+Calculation: Daily lowest swing low = the lowest low of the day’s volume swing low regions; a region’s low is its lowest low while its 3-bar volume swing low condition continues
+Calculation: Daily highest swing high = the highest high of the day’s volume swing high regions; a region’s high is its highest high while its 3-bar volume swing high condition continues
+Long: previous bar is a 3-bar volume swing low AND current bar is not a 3-bar volume swing low OR previous completed day’s daily highest swing high > the daily highest swing high from two completed days ago
+Short: previous bar is a 3-bar volume swing high AND current bar is not a 3-bar volume swing high OR previous completed day’s daily lowest swing low < the daily lowest swing low from two completed days ago

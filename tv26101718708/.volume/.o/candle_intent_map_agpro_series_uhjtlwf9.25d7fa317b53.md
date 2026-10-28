@@ -1,0 +1,8 @@
+Calculation: Body ratio = absolute(close - open) / max(high - low, minimum price increment)
+Calculation: Upper wick ratio = (high - max(open, close)) / max(high - low, minimum price increment)
+Calculation: Lower wick ratio = (min(open, close) - low) / max(high - low, minimum price increment)
+Calculation: Close location = (close - low) / max(high - low, minimum price increment)
+Calculation: Relative volume = clamp(current volume / moving average of volume over a lookback, 0, 2) × 50; use 1 when volume is unavailable and 50 when the average is zero
+Calculation: Current intent direction = +1 if bullish initiative or lower rejection; otherwise −1 if bearish initiative or upper rejection; otherwise +1 if close > open, −1 if close < open, or 0
+Long: (close > open AND Body ratio ≥ initiative body threshold AND Close location > 0.68 AND Relative volume > 38) OR (Lower wick ratio ≥ reaction wick threshold AND Close location > 0.58) OR (Current intent direction > 0 AND differs from the previous confirmed event's direction, which is nonzero, AND Relative volume > 42 AND Body ratio > indecision body threshold)
+Short: (close < open AND Body ratio ≥ initiative body threshold AND Close location < 0.32 AND Relative volume > 38) OR (Upper wick ratio ≥ reaction wick threshold AND Close location < 0.42) OR (Current intent direction < 0 AND differs from the previous confirmed event's direction, which is nonzero, AND Relative volume > 42 AND Body ratio > indecision body threshold)

@@ -1,0 +1,4 @@
+Calculation: Relative volume (RVOL) = current regular-session daily volume / average volume of prior completed regular-session daily bars.
+Calculation: RVOL Pace = during the live regular session, projected end-of-day volume / average volume of prior completed regular-session daily bars; project end-of-day volume by dividing current volume from completed 1-minute bars by the average prior-session fraction of final volume accumulated by the same minute. Use the same lookback for the pace calculation and RVOL benchmark. Outside the live regular session, RVOL Pace equals RVOL.
+Long: current daily close >= previous daily close AND (during the live regular session, RVOL Pace > 1; otherwise, RVOL > 1)
+Short: current daily close < previous daily close AND (during the live regular session, RVOL Pace > 1; otherwise, RVOL > 1)

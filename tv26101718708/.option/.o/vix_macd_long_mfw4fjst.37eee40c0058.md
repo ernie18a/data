@@ -1,0 +1,1 @@
+On the traded instrument, compute MACD from the VIX closing price at the same timeframe. Enter long when the MACD line crosses below its signal line; exit the long when it crosses above. No short entry.

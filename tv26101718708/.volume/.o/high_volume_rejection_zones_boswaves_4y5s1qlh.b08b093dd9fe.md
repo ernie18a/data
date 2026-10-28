@@ -1,0 +1,9 @@
+Calculation: Confirmed pivot high/low = a bar whose high/low is confirmed by configurable symmetric left- and right-side bar lookbacks; evaluate its other measurements on that pivot bar after confirmation
+Calculation: Pivot range = max(pivot-bar high − pivot-bar low, minimum price increment)
+Calculation: Upper/lower wick ratio = (pivot-bar high − max(open, close)) / pivot range; (min(open, close) − pivot-bar low) / pivot range
+Calculation: Close rejection distance = (pivot-bar high − close) / pivot range for a high; (close − pivot-bar low) / pivot range for a low
+Calculation: Pivot relative volume = pivot-bar volume / pivot-bar simple moving average of volume
+Calculation: Resistance top/support bottom = pivot high + / − pivot-bar ATR × configurable zone-width factor
+Long: Confirmed pivot low AND pivot relative volume ≥ configurable minimum AND lower wick ratio ≥ configurable minimum AND close rejection distance ≥ configurable minimum OR active, unbroken, unexpired support zone AND bar after zone creation AND support hold not already signaled AND low ≤ support pivot price AND close > support pivot price OR active, broken, unexpired resistance zone AND bar after its break AND resistance flip not already signaled AND low ≤ resistance top AND close > resistance top
+Short: Confirmed pivot high AND pivot relative volume ≥ configurable minimum AND upper wick ratio ≥ configurable minimum AND close rejection distance ≥ configurable minimum OR active, unbroken, unexpired resistance zone AND bar after zone creation AND resistance hold not already signaled AND high ≥ resistance pivot price AND close < resistance pivot price OR active, broken, unexpired support zone AND bar after its break AND support flip not already signaled AND high ≥ support bottom AND close < support bottom
+Exit:

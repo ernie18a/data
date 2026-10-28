@@ -1,0 +1,1 @@
+Go long when the instrument’s price relative to the benchmark crosses above its own recent average. Go short when that relative ratio crosses below its recent average.

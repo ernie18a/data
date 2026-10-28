@@ -1,0 +1,3 @@
+Calculation: Delta pressure = EMA of 100 × (rolling directional volume ÷ rolling total volume), using lower-timeframe bars grouped into flow-period buckets; directional volume is +volume when close > prior close, −volume when close < prior close, and 0 otherwise. Include the current forming bucket and the retained completed buckets.
+Long: Delta pressure > 0 while in session
+Short: Delta pressure < 0 while in session

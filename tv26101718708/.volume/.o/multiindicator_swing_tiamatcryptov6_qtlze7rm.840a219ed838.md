@@ -1,0 +1,6 @@
+Calculation: Custom ADX = +DI = 100 × SMA(+DM, L) / SMA(TR, L), −DI = 100 × SMA(−DM, L) / SMA(TR, L), ADX = SMA(100 × |+DI − −DI| / (+DI + −DI), L); TR = max(high − low, |high − previous close|, |low − previous close|), +DM = high > previous high ? max(high − previous high, 0) : 0, −DM = previous low > low ? max(previous low − low, 0) : 0; use zero DI when smoothed TR is zero and zero DX when +DI + −DI is zero
+Calculation: Liquidity delta = EMA(SMA(bid volume − ask volume, L) / SMA(volume, L), S); bid volume = close < open ? volume : volume × (high − close) / (high − low + ε), ask volume = close > open ? volume : volume × (close − low) / (high − low + ε), ε is a small positive constant
+Long: PSAR enabled implies close > PSAR AND Supertrend direction > 0 AND custom ADX > threshold AND liquidity delta > threshold
+Short: PSAR enabled implies close < PSAR AND Supertrend direction < 0 AND custom ADX > threshold AND liquidity delta < −threshold
+Exit: Long, low ≤ entry price × (1 − stop-loss percentage) OR high ≥ entry price × (1 + take-profit percentage)
+Exit: Short, high ≥ entry price × (1 + stop-loss percentage) OR low ≤ entry price × (1 − take-profit percentage)

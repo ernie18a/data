@@ -1,0 +1,1 @@
+Go long when the instrument enters an uptrend, its trading volume exceeds its usual level, and both the broad market index and its sector index are trending upward. Otherwise, this logic gives no long signal; it defines no short signal.

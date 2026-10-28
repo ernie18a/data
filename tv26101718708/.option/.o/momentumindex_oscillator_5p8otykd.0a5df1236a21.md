@@ -1,0 +1,1 @@
+For the traded instrument, consider a long entry when the broad-market advance-decline measure reaches extreme oversold territory and the broader market-phase indicator has formed a trough and turned upward; use the instrument’s own entry signal to confirm. No short or exit rule is specified.

@@ -1,0 +1,4 @@
+Calculation: ATR = 14-bar average true range
+Calculation: Breakout probability at a level = percentage of prior touches within the probability lookback that closed more than 0.2 ATR beyond the level in the approach direction; use 50% if untouched
+Long: Close is within 0.3 ATR above a Fibonacci level and its breakout probability is below 40%, OR close is within 0.5 ATR below a Fibonacci level and its breakout probability is at least 65%
+Short: Close is within 0.3 ATR below a Fibonacci level and its breakout probability is below 40%, OR close is within 0.5 ATR above a Fibonacci level and its breakout probability is at least 65%

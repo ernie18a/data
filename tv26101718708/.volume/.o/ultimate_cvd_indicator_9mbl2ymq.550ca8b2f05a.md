@@ -1,0 +1,3 @@
+Calculation: Cumulative volume delta = running sum of ((close − low) − (high − close)) ÷ (high − low) × volume, using zero contribution when high = low.
+Long: Consecutive confirmed pivot lows are separated by the configured minimum and maximum bar distance AND (current pivot low < previous pivot low AND current pivot CVD > previous pivot CVD OR current pivot low > previous pivot low AND current pivot CVD < previous pivot CVD)
+Short: Consecutive confirmed pivot highs are separated by the configured minimum and maximum bar distance AND (current pivot high > previous pivot high AND current pivot CVD < previous pivot CVD OR current pivot high < previous pivot high AND current pivot CVD > previous pivot CVD)

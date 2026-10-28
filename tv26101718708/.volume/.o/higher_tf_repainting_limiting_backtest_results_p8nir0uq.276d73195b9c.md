@@ -1,0 +1,2 @@
+Long: selected supertrend direction is -1 AND bar datetime is on or after the configured backtest start timestamp
+Short: selected supertrend direction is 1 AND bar datetime is on or after the configured backtest start timestamp

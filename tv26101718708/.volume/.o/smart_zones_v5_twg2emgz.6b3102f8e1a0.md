@@ -1,0 +1,2 @@
+Long: RSI >= bullish threshold OR current low - high two bars ago > minimum FVG size (ATR multiple) OR close > the upper Ichimoku cloud OR Tenkan crosses above Kijun OR close > high 26 bars ago OR bullish Ichimoku score >= 2 OR Ichimoku Span A > Span B
+Short: RSI <= bearish threshold OR low two bars ago - current high > minimum FVG size (ATR multiple) OR close < the lower Ichimoku cloud OR Tenkan crosses below Kijun OR close < low 26 bars ago OR bearish Ichimoku score >= 2 OR Ichimoku Span A <= Span B

@@ -1,0 +1,3 @@
+Calculation: Open interest flow sentiment = EMA(open-interest high + open-interest low − 2 × EMA(open-interest close, 13), smoothing); use the chart timeframe, except use daily bars for futures on intraday charts. Use the current higher-timeframe bar while it is forming and the last completed higher-timeframe bar otherwise.
+Long: Open interest flow sentiment > 0
+Short: Open interest flow sentiment < 0

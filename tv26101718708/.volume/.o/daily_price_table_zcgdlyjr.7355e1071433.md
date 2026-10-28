@@ -1,0 +1,2 @@
+Long: close of the current (possibly still-forming) daily bar > close of the immediately preceding completed daily bar
+Short: close of the current (possibly still-forming) daily bar < close of the immediately preceding completed daily bar

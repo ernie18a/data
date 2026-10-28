@@ -1,0 +1,5 @@
+Calculation: Opening-range high = highest high of bars from the first regular-session bar through the configured opening-range window; lock after the window ends
+Calculation: Opening-range low = lowest low of bars from the first regular-session bar through the configured opening-range window; lock after the window ends
+Calculation: Session VWAP = cumulative sum of (bar volume × configured source) divided by cumulative volume, reset at the first regular-session bar and including the current bar
+Long: opening range is locked AND close crosses above opening-range high AND close > session VWAP AND volume >= volume SMA × configured multiple AND no long signal has fired this session
+Short: opening range is locked AND close crosses below opening-range low AND close < session VWAP AND volume >= volume SMA × configured multiple AND no short signal has fired this session

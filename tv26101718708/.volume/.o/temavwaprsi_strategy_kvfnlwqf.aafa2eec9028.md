@@ -1,0 +1,8 @@
+Calculation: Session VWAP = session-cumulative volume-weighted average of typical price (high + low + close) / 3
+Calculation: EFI = EMA of (current close − previous close) × volume
+Calculation: Stop-loss price = entry price × (1 − stop-loss percentage)
+Calculation: Trailing activation price = entry price × (1 + activation percentage)
+Calculation: Trailing stop = highest high since activation − trailing offset
+Calculation: Take-profit price = average entry price × (1 + take-profit percentage)
+Long: (close crosses above VWAP OR fast TEMA crosses above slow TEMA OR RSI crosses above 30 OR (four bars ago was down and the last three bars are up, the prior bar's body is larger than the body two bars ago, and the current upper and lower wicks are each less than 10% of the current body) OR (close < VWAP AND RSI crosses above 30) OR (previous VWAP − current VWAP) / previous VWAP > 1%) AND, for the first five alternatives only, each enabled confirmation holds: OBV is rising over its configured lookback; EFI is rising over its configured lookback; RSI is rising over its configured lookback AND RSI < 60; VWAP is rising over its configured lookback
+Exit: long, low crosses below the stop-loss price OR low crosses below the trailing stop OR (take profit is enabled AND high crosses above the take-profit price AND high < trailing activation price) OR low crosses below the trailing activation price OR (open > trailing activation price AND close < trailing activation price)

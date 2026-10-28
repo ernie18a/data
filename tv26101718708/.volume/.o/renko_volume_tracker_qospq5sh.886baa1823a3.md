@@ -1,0 +1,3 @@
+Calculation: Renko trend = up when Renko close > its previous value; down when Renko close < its previous value; otherwise retain the previous trend (initially up).
+Long: The time-based candle is the earliest candle with the greatest volume in a chunk of N Renko close changes, and Renko trend on that candle is up.
+Short: The time-based candle is the earliest candle with the greatest volume in a chunk of N Renko close changes, and Renko trend on that candle is down.

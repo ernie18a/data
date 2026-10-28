@@ -1,0 +1,1 @@
+Compare the current candle directions of the instrument and its selected correlated markets, reversing direction for inverse-correlated markets. When any included pair closes in opposite directions, signal long if the instrument’s candle is bullish and short if it is bearish. No exit rule is defined.

@@ -1,0 +1,1 @@
+Compute the difference between the external long-position and short-position series, then compare it with a weighted moving average of that difference. Go long when the difference crosses above its average; go short when it crosses below. Each opposite signal reverses the position.

@@ -1,0 +1,3 @@
+Calculation: Session VAH and VAL = From bars in the last completed session, distribute each bar’s volume evenly across price buckets between its low and high; find the highest-volume bucket, then expand the contiguous value area from it by comparing the next two bucket volumes above and below, adding the side with greater volume (ties go above) until the configured share of session volume is reached; VAH and VAL are the upper and lower boundaries.
+Long: close < last completed session VAL AND close has been outside that session’s value area for less than 30 minutes
+Short: close > last completed session VAH AND close has been outside that session’s value area for less than 30 minutes

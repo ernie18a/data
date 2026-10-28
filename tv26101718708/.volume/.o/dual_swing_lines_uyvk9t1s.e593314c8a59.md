@@ -1,0 +1,6 @@
+Calculation: Slow swing high/low = confirmed pivot high/low using the longer lookback; use the latest confirmed slow swing level.
+Calculation: Fast swing high/low = confirmed pivot high/low using the shorter lookback.
+Calculation: Volume filter = current volume ≤ previous bar’s volume × a multiplier.
+Calculation: Bullish close filter = (close − low) ÷ (high − low) ≥ a threshold; bearish close filter = (high − close) ÷ (high − low) ≥ a threshold.
+Long: An active fast swing high formed after the first fast swing following a close above the latest slow swing high (with the prior close at or below it); current close > fast swing high, current bar is no later than its expiry, and the volume and bullish close filters pass. The fast swing high expires after the specified number of bars or when price first trades above it.
+Short: An active fast swing low formed after the first fast swing following a close below the latest slow swing low (with the prior close at or above it); current close < fast swing low, current bar is no later than its expiry, and the volume and bearish close filters pass. The fast swing low expires after the specified number of bars or when price first trades below it.

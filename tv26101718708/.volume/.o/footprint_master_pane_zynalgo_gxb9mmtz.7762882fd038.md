@@ -1,0 +1,5 @@
+Calculation: Grid step = configured manual tick size, or the previous completed chart bar’s ATR divided by the configured number of levels, rounded to the minimum tick and floored at one minimum tick.
+Calculation: Ask volume at a price level = sum of lower-timeframe bar volume assigned to that level when close > open, plus half the volume when close = open. Assign each bar by flooring its close divided by the grid step, offset by the current chart bar’s floored low/grid-step level, and clamping to the configured level range. Use lower-timeframe bars within the current chart bar, including any still forming.
+Calculation: Bid volume at a price level = sum of lower-timeframe bar volume assigned to that level when close < open, plus half the volume when close = open. Assign bars using the same grid as ask volume.
+Long: Ask volume at a price level > bid volume at that price level.
+Short: Bid volume at a price level > ask volume at that price level.

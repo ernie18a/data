@@ -1,0 +1,6 @@
+Calculation: Adjusted DEMA = DEMA(close, long lookback), constrained each bar to the lower or upper band formed by that DEMA ± ATR(shorter lookback) × adjustable factor; otherwise retain the prior adjusted DEMA.
+Calculation: Profit target distance = ATR(longer lookback than the band ATR) × adjustable factor.
+Long: Adjusted DEMA crosses above its value two chart bars earlier on a completed bar AND position size ≤ 0
+Short: Adjusted DEMA crosses below its value two chart bars earlier on a completed bar AND position size > 0
+Exit: Short, Adjusted DEMA crosses above its value two chart bars earlier on a completed bar OR low < entry price − profit target distance OR low < entry price − 2 × profit target distance OR low < entry price − 3 × profit target distance
+Exit: Long, Adjusted DEMA crosses below its value two chart bars earlier on a completed bar OR high > entry price + profit target distance OR high > entry price + 2 × profit target distance OR high > entry price + 3 × profit target distance

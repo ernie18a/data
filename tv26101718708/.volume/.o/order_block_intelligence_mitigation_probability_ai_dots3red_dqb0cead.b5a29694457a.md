@@ -1,0 +1,2 @@
+Long: close > open AND previous bar close < previous bar open AND close − open ≥ displacement-strength threshold × 14-bar ATR AND close > previous bar high
+Short: close < open AND previous bar close > previous bar open AND open − close ≥ displacement-strength threshold × 14-bar ATR AND close < previous bar low

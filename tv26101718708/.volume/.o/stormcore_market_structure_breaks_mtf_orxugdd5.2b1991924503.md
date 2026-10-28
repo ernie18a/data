@@ -1,0 +1,5 @@
+Calculation: Confirmed swing high/low = the high/low of a bar that is higher/lower than the highs/lows of the preceding and following swing-length bars on the same 1D, 1W, or 1M timeframe; use the latest confirmed pivot.
+Long: On any 1D, 1W, or 1M bar, close > latest confirmed swing high AND previous close <= that swing high AND (close - open) >= ATR × displacement factor AND volume > volume SMA × volume factor
+Long: On the current chart-timeframe bar, low < the latest confirmed 1D, 1W, or 1M swing low AND close >= that swing low AND NOT (previous chart-timeframe bar low < that same level AND close >= that same level)
+Short: On any 1D, 1W, or 1M bar, close < latest confirmed swing low AND previous close >= that swing low AND (open - close) >= ATR × displacement factor AND volume > volume SMA × volume factor
+Short: On the current chart-timeframe bar, high > the latest confirmed 1D, 1W, or 1M swing high AND close <= that swing high AND NOT (previous chart-timeframe bar high > that same level AND close <= that same level)

@@ -1,0 +1,13 @@
+Calculation: IB high/low = highest high/lowest low during the configured Initial Balance window, finalized when the window ends.
+Calculation: Prior-session POC/VAH/VAL = from the prior completed session’s volume profile, built from lower-timeframe bars by distributing each bar’s volume equally across the price bins it spans; POC is the highest-volume bin, and the value area expands contiguously from POC toward the larger adjacent bin volume until the configured percentage is reached.
+Calculation: Breakout buffer = configured multiple of the previous completed daily bar’s ATR; if ATR is unavailable, use the same multiple of the IB range.
+Calculation: Upper-breakout state = becomes active when close > IB high; resets when close < IB high − breakout buffer.
+Calculation: Lower-breakout state = becomes active when close < IB low; resets when close > IB low + breakout buffer.
+Calculation: Trend long stop = the higher of IB low and entry price minus a configured multiple of the previous completed daily bar’s ATR; if ATR is unavailable, use IB low. Trend long target = IB high + 0.5 × IB range.
+Calculation: Trend short stop = the lower of IB high and entry price plus a configured multiple of the previous completed daily bar’s ATR; if ATR is unavailable, use IB high. Trend short target = IB low − 0.5 × IB range.
+Calculation: Fade short stop = prior-session VAH plus a configured multiple of the previous completed daily bar’s ATR; if ATR is unavailable, use VAH plus 10% of the prior-session value-area width. Fade short target = prior-session POC.
+Calculation: Fade long stop = prior-session VAL minus a configured multiple of the previous completed daily bar’s ATR; if ATR is unavailable, use VAL minus 10% of the prior-session value-area width. Fade long target = prior-session POC.
+Long: IB complete AND ((upper-breakout state becomes active) OR (prior lower-breakout state is active AND close > IB low AND previous close ≤ IB low) OR (prior-session VAH/VAL/POC available AND fade-long trigger is armed AND low ≤ prior-session VAL AND close > prior-session VAL AND close < prior-session POC))
+Short: IB complete AND ((lower-breakout state becomes active) OR (prior upper-breakout state is active AND close < IB high AND previous close ≥ IB high) OR (prior-session VAH/VAL/POC available AND fade-short trigger is armed AND high ≥ prior-session VAH AND close < prior-session VAH AND close > prior-session POC))
+Exit: long, low ≤ applicable stop OR high ≥ applicable target
+Exit: short, high ≥ applicable stop OR low ≤ applicable target

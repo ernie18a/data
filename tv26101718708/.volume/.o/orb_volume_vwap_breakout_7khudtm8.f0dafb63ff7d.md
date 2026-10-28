@@ -1,0 +1,3 @@
+Calculation: Opening-range high = highest high from the start of the regular session through the opening-range window; fixed when the window is complete
+Calculation: Session VWAP = cumulative sum of (hlc3 × volume) divided by cumulative volume from the start of the current session, including the current bar
+Long: opening range is complete AND close > opening-range high AND volume > volume multiplier × volume SMA AND close > session VWAP AND the prior bar did not meet all these breakout conditions

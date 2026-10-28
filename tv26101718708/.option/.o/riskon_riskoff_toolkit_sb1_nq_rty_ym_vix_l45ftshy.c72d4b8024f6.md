@@ -1,0 +1,1 @@
+Go long when each of the three monitored equity index futures closes above its open and the volatility index falls from its previous close. Go short when all three futures close below their opens and the volatility index rises. Otherwise, take no directional action. No exit rule is defined.

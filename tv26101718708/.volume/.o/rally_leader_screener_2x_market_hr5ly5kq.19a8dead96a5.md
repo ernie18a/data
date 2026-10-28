@@ -1,0 +1,3 @@
+Calculation: Stock return = (current close − close N bars ago) / close N bars ago × 100
+Calculation: Benchmark return = (current benchmark close − benchmark close N bars ago) / benchmark close N bars ago × 100, using the same timeframe as the stock bars
+Long: (Benchmark return > 0 AND stock return ≥ leadership multiple × benchmark return OR benchmark return ≤ 0 AND stock return ≥ minimum return) AND close ≥ minimum price AND average volume ≥ minimum average volume AND close > trend SMA AND close > previous close

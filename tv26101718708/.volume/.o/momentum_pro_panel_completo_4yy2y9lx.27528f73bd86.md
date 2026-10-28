@@ -1,0 +1,2 @@
+Calculation: Momentum score = count of these conditions: close > long EMA; short EMA > long EMA; MACD line > MACD signal line; RSI > score threshold; volume > longer-lookback average volume
+Long: close > long EMA AND short EMA > long EMA AND benchmark close > benchmark long EMA AND momentum score >= mode-specific score threshold AND RSI > mode-specific RSI threshold

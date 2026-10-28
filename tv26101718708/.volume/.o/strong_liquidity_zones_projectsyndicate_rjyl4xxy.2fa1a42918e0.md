@@ -1,0 +1,9 @@
+Calculation: Wick rejection = candle range > 0, rejection wick / candle range > a configurable ratio, and candle closes opposite the wick (upper wick with close < open; lower wick with close > open)
+Calculation: Volume spike = volume > its 20-bar moving average × a configurable multiplier, candle closes in the spike direction, and its high (bearish) or low (bullish) equals the highest high or lowest low of the last 10 bars
+Calculation: Swing pivot = a high or low that is the extreme across equal configurable lookbacks on both sides; use only after the right-side bars have completed
+Calculation: Liquidity zones = same-side swing-pivot, wick-rejection, and volume-spike detections, grouped when within a configurable ATR-based tolerance; center each group by detection-strength-weighted price, set its band at a configurable ATR-based width around the center, and rank it using point count, detection-type diversity, average detection strength, and recency. Retain active zones until a close breaches the far band edge: below a bullish zone or above a bearish zone.
+Calculation: Expanding volume = volume exceeds its 20-bar moving average by a configurable multiplier
+Long: bullish wick rejection OR bullish volume spike OR swing pivot low OR (active bullish zone with rank ≥ 7 is tapped and the bar closes above its upper edge) OR (a weak/medium zone or breached strong/elite zone is a bearish zone and the bar closes above its upper edge on expanding volume)
+Short: bearish wick rejection OR bearish volume spike OR swing pivot high OR (active bearish zone with rank ≥ 7 is tapped and the bar closes below its lower edge) OR (a weak/medium zone or breached strong/elite zone is a bullish zone and the bar closes below its lower edge on expanding volume)
+Exit: long, close < the lower edge of the bullish zone used for entry
+Exit: short, close > the upper edge of the bearish zone used for entry

@@ -1,0 +1,4 @@
+Calculation: Active upper and lower structural liquidity pools = confirmed swing highs and lows on the chart timeframe from fast, medium, and slow lookbacks (slowest > medium > fastest); merge same-side levels within an ATR-based distance, updating the level by seed-weighted average, with larger seeds for slower lookbacks. Remove a pool when its close clears it by an ATR-based buffer or its age exceeds a maximum; if over capacity, remove the oldest. Pivots become available after their right-side confirmation bars.
+Calculation: Relative volume = current volume / moving average of volume over a longer lookback, capped at a maximum.
+Long: For any active lower pool, low < pool price − ATR-based penetration buffer AND close > pool price AND relative volume ≥ threshold
+Short: For any active upper pool, high > pool price + ATR-based penetration buffer AND close < pool price AND relative volume ≥ threshold

@@ -1,0 +1,3 @@
+Calculation: Coral trend = Apply six sequential recursive exponential smooths to its source, using α = 2 / (((n − 1) / 2 + 1) + 1) and β = 1 − α; then compute −d³e₆ + 3(d² + d³)e₅ − 3(2d² + d + d³)e₄ + (3d + 1 + d³ + 3d²)e₃, where e₁…e₆ are the successive smooths, n is the smoothing period, and d is the constant.
+Long: Either Coral trend instance is greater than its own previous-bar value.
+Short: Either Coral trend instance is less than its own previous-bar value.

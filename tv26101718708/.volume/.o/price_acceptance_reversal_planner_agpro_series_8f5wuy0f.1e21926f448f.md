@@ -1,0 +1,19 @@
+Calculation: Acceptance band = EMA(hlc3, anchor length) ± ATR(ATR length) × band-width parameter
+Calculation: Upper/lower prior acceptance = consecutive completed bars immediately before the current bar with close above the upper band / below the lower band; reset the count when the condition fails
+Calculation: Failure distance (ATR) = (upper band − close) / ATR for bearish reversal; (close − lower band) / ATR for bullish reversal
+Calculation: Candle body share = abs(close − open) / max(high − low, minimum tick); close location = (close − low) / max(high − low, minimum tick)
+Calculation: Volume ratio = volume / SMA(volume, volume lookback), or 1 when the volume average is not positive
+Calculation: Normalize high = clamp((value − weak threshold) / (strong threshold − weak threshold) × 100, 0, 100); normalize low = clamp((weak threshold − value) / (weak threshold − strong threshold) × 100, 0, 100)
+Calculation: Time score = normalize high(prior acceptance count, acceptance threshold, acceptance threshold + 9)
+Calculation: Close-failure score = normalize high(failure distance, failure-distance threshold, 0.95)
+Calculation: Close-location score = normalize high(1 − close location, close threshold − 0.14, 0.92) for bearish reversal; normalize high(close location, close threshold − 0.14, 0.92) for bullish reversal
+Calculation: Body score = normalize high(candle body share, 0.65 × body threshold, 0.74)
+Calculation: Direction score = 88 if close < open, else 58 if close < prior close, else 28 for bearish reversal; 88 if close > open, else 58 if close > prior close, else 28 for bullish reversal
+Calculation: Volume score = normalize high(volume ratio, 0.85, 1.75)
+Calculation: Room score = normalize high(target distance in ATR, 0.35, clean-room ATR threshold); target is the opposite band edge when beyond close, otherwise close ± ATR × target-fallback parameter
+Calculation: Risk score = peak-normalize risk distance in ATR around 0.95, with low/ideal/high points 0.22/0.95/3.20; risk distance uses the current low minus ATR buffer for bullish reversal and current high plus ATR buffer for bearish reversal
+Calculation: Peak-normalize = normalize high(value, low point, ideal point) when value ≤ ideal point; otherwise normalize low(value, ideal point, high point)
+Calculation: Reversal score = clamp(0.18 × time score + 0.22 × close-failure score + 0.13 × body score + 0.12 × direction score + 0.10 × volume score + 0.15 × room score + 0.10 × risk score, 0, 100)
+Calculation: Watch score = clamp(0.55 × time score + 0.20 × volume score + 0.25 × normalize high(abs(close − relevant band edge) / ATR, 0, 0.75), 0, 100)
+Long: confirmed bar AND (lower acceptance count = acceptance threshold AND watch score ≥ watch-score threshold OR prior lower acceptance count ≥ acceptance threshold AND close > band midpoint in strict confirmation mode, otherwise close > lower band + ATR × failure-distance threshold AND close location ≥ close threshold AND candle body share ≥ 0.70 × body threshold AND (confirmation mode is not Close + Volume or strict, or volume ratio ≥ 1.0 in Close + Volume mode or ≥ 1.10 in strict mode) AND reversal score ≥ minimum reversal-score threshold)
+Short: confirmed bar AND (upper acceptance count = acceptance threshold AND watch score ≥ watch-score threshold OR prior upper acceptance count ≥ acceptance threshold AND close < band midpoint in strict confirmation mode, otherwise close < upper band − ATR × failure-distance threshold AND close location ≤ 1 − close threshold AND candle body share ≥ 0.70 × body threshold AND (confirmation mode is not Close + Volume or strict, or volume ratio ≥ 1.0 in Close + Volume mode or ≥ 1.10 in strict mode) AND reversal score ≥ minimum reversal-score threshold)

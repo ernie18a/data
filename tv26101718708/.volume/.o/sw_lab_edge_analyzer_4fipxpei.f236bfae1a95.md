@@ -1,0 +1,3 @@
+Calculation: Z-score = (close − SMA(close, lookback)) / standard deviation of close over the same lookback
+Long: RSI crosses above oversold threshold OR shorter-period SMA crosses above longer-period SMA OR close > highest high of the prior lookback bars AND volume > volume SMA × confirmation multiplier OR Z-score < −threshold
+Short: RSI crosses below overbought threshold OR shorter-period SMA crosses below longer-period SMA OR close < lowest low of the prior lookback bars AND volume > volume SMA × confirmation multiplier OR Z-score > threshold

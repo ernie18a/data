@@ -1,0 +1,4 @@
+Calculation: Fast RSI-based MA = moving average of the close-based RSI using a shorter lookback than the slow RSI-based MA
+Calculation: Slow RSI-based MA = moving average of the close-based RSI using a longer lookback than the fast RSI-based MA
+Long: Fast RSI-based MA crosses above slow RSI-based MA OR both RSI-based MAs are above 50 OR, at a confirmed price pivot low, price makes a lower low while RSI makes a higher low than at the previous confirmed pivot low within the configured pivot range
+Short: Fast RSI-based MA crosses below slow RSI-based MA OR both RSI-based MAs are below 50 OR, at a confirmed price pivot high, price makes a higher high while RSI makes a lower high than at the previous confirmed pivot high within the configured pivot range

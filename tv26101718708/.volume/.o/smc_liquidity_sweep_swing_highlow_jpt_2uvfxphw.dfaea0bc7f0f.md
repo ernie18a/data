@@ -1,0 +1,14 @@
+Calculation: Confirmed swing high = a bar high greater than the highs of the preceding left-lookback bars and following right-lookback bars; available after the right-lookback bars complete. The latest confirmed level replaces the prior level.
+Calculation: Confirmed swing low = a bar low lower than the lows of the preceding left-lookback bars and following right-lookback bars; available after the right-lookback bars complete. The latest confirmed level replaces the prior level.
+Calculation: ATR = average true range of the current chart timeframe.
+Calculation: EMA = exponential moving average of close on the current chart timeframe.
+Calculation: Volume average = simple moving average of volume on the current chart timeframe.
+Calculation: Upper wick percentage = (high − max(open, close)) / max(high − low, minimum price increment) × 100.
+Calculation: Lower wick percentage = (min(open, close) − low) / max(high − low, minimum price increment) × 100.
+Calculation: Long stop = min(signal-bar low, entry price − ATR × stop multiplier); short stop = max(signal-bar high, entry price + ATR × stop multiplier).
+Calculation: Long risk = entry price − long stop; short risk = short stop − entry price.
+Calculation: Long third target = entry price + long risk × third risk/reward multiple; short third target = entry price − short risk × third risk/reward multiple.
+Long: current low < latest confirmed swing low − ATR × sweep buffer AND (close > latest confirmed swing low OR close-back filter disabled) AND (close > open AND lower wick percentage ≥ minimum wick percentage OR rejection-body filter disabled) AND (volume ≥ volume average × volume multiplier OR volume filter disabled) AND (close > EMA OR EMA filter disabled) AND latest swing low has not already been swept AND current bar is after the swing-low pivot bar AND no prior long or short signal exists OR bars since the prior long or short signal ≥ cooldown AND current bar is complete.
+Short: current high > latest confirmed swing high + ATR × sweep buffer AND (close < latest confirmed swing high OR close-back filter disabled) AND (close < open AND upper wick percentage ≥ minimum wick percentage OR rejection-body filter disabled) AND (volume ≥ volume average × volume multiplier OR volume filter disabled) AND (close < EMA OR EMA filter disabled) AND latest swing high has not already been swept AND current bar is after the swing-high pivot bar AND no prior long or short signal exists OR bars since the prior long or short signal ≥ cooldown AND current bar is complete.
+Exit: Long, low ≤ long stop OR high ≥ long third target.
+Exit: Short, high ≥ short stop OR low ≤ short third target.

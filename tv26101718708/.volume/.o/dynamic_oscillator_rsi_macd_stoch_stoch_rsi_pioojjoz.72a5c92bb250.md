@@ -1,0 +1,4 @@
+Calculation: RSI = Wilder RSI of close
+Calculation: Confirmed RSI pivot low/high = RSI local minimum/maximum with five bars on each side, known five bars after the pivot bar
+Long: At a confirmed RSI pivot low, its pivot-bar price low is lower than the previous RSI pivot-low price low AND its pivot-bar RSI is higher than the previous pivot-low RSI AND the pivot confirmations are 5–60 bars apart
+Short: At a confirmed RSI pivot high, its pivot-bar price high is higher than the previous RSI pivot-high price high AND its pivot-bar RSI is lower than the previous pivot-high RSI AND the pivot confirmations are 5–60 bars apart

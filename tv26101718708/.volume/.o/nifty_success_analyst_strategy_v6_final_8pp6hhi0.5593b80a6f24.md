@@ -1,0 +1,5 @@
+Calculation: Prior-day pivot = (high + low + close of the last completed daily bar) / 3
+Calculation: R1 = 2 × prior-day pivot − low of the last completed daily bar
+Calculation: S1 = 2 × prior-day pivot − high of the last completed daily bar
+Long: close > session VWAP AND close > EMA(close) AND close > open AND high − max(close, open) < abs(close − open) × wick threshold AND volume > SMA(volume) × volume-spike multiplier AND high of the last completed daily bar − close > resistance cushion AND R1 − close > resistance cushion AND close > high of the previous chart-timeframe bar
+Short: close < session VWAP AND close < EMA(close) AND close < open AND min(close, open) − low < abs(close − open) × wick threshold AND volume > SMA(volume) × volume-spike multiplier AND close − low of the last completed daily bar > support cushion AND close − S1 > support cushion AND close < low of the previous chart-timeframe bar

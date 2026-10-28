@@ -1,0 +1,2 @@
+Long: close > open AND abs(close − open) > ATR × displacement multiplier AND, on each of the next confirmation-bars bars, low ≥ origin-bar high − origin-bar ATR × zone-width multiplier
+Short: close < open AND abs(close − open) > ATR × displacement multiplier AND, on each of the next confirmation-bars bars, high ≤ origin-bar low + origin-bar ATR × zone-width multiplier

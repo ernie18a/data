@@ -1,0 +1,17 @@
+Calculation: Squeeze = Bollinger Bands are inside Keltner Channels (BB lower > KC lower AND BB upper < KC upper); a valid release follows a consecutive squeeze lasting at least the minimum duration
+Calculation: Breakout momentum = linear regression of close minus its short-term SMA; rising and above zero for long entries, falling and below zero for short entries
+Calculation: Candle body ratio = abs(close - open) / (high - low)
+Calculation: Daily ATR ratio = daily ATR / its longer-term daily average ATR, using the current daily bar (still forming)
+Calculation: Daily EMA distance = abs(close - daily EMA) / daily EMA, using the current daily bar (still forming)
+Long: valid squeeze released within the recent-release window AND close > upper Bollinger Band + ATR margin AND candle body ratio >= minimum AND breakout momentum > 0 AND breakout momentum > its prior value AND volume > its longer-term SMA AND RSI < its upper limit AND daily EMA distance <= maximum AND daily ATR ratio within its permitted range AND close > higher-timeframe EMA + higher-timeframe ATR buffer AND higher-timeframe EMA > its value at an earlier higher-timeframe bar AND ATR / close >= minimum AND cooldown after the prior exit has elapsed
+Short: valid squeeze released within the recent-release window AND close < lower Bollinger Band - ATR margin AND candle body ratio >= minimum AND breakout momentum < 0 AND breakout momentum < its prior value AND volume > its longer-term SMA AND RSI > its lower limit AND daily EMA distance <= maximum AND daily ATR ratio within its permitted range AND close < higher-timeframe EMA - higher-timeframe ATR buffer AND higher-timeframe EMA < its value at an earlier higher-timeframe bar AND ATR / close >= minimum AND cooldown after the prior exit has elapsed
+Exit: long, low <= active stop OR high >= take-profit level
+Exit: short, high >= active stop OR low <= take-profit level
+Exit: long, close - entry price >= entry ATR times breakeven activation threshold; thereafter exit if low <= the ratcheting stop, which is raised to at least entry price plus an entry-ATR offset
+Exit: short, entry price - close >= entry ATR times breakeven activation threshold; thereafter exit if high >= the ratcheting stop, which is lowered to at most entry price minus an entry-ATR offset
+Exit: long, after the partial take-profit fills, low <= the ratcheting trailing stop; the stop is the greatest of its prior value, close minus current ATR times the tighter trail distance, and the recent multi-bar low when runner mode is active
+Exit: short, after the partial take-profit fills, high >= the ratcheting trailing stop; the stop is the least of its prior value, close plus current ATR times the tighter trail distance, and the recent multi-bar high when runner mode is active
+Exit: long, bars in trade >= maximum duration AND partial take-profit has not filled
+Exit: short, bars in trade >= maximum duration AND partial take-profit has not filled
+Exit: long, bars in trade >= stagnation duration AND maximum favorable close-based excursion < entry ATR times minimum progress
+Exit: short, bars in trade >= stagnation duration AND maximum favorable close-based excursion < entry ATR times minimum progress

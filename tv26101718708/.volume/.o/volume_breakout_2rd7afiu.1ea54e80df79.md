@@ -1,0 +1,3 @@
+Calculation: adaptive volume average = simple moving average of volume using a lookback derived from the integer daily ATR as a percentage of daily close, with a minimum lookback of one bar; use ATR and close from the still-forming daily bar
+Long: close >= open AND volume >= the lower of the medium- and high-volume thresholds, each defined as its multiple of the adaptive volume average
+Short: close < open AND volume >= the lower of the medium- and high-volume thresholds, each defined as its multiple of the adaptive volume average

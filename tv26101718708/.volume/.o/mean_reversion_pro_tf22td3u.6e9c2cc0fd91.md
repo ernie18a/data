@@ -1,0 +1,9 @@
+Calculation: Reference mean = configured moving average of close using the selected MA type
+Calculation: Candidate thresholds = 15 configured distance levels in points, ATR multiples, or standard-deviation multiples; use the same selected mode for all levels
+Calculation: For each side and threshold, count an occurrence when a confirmed close first reaches that distance from the reference mean while no event for that side and threshold is active; count a return if a later confirmed close reaches or crosses the mean before timeout, otherwise discard the event at timeout
+Calculation: Win rate = returned occurrences / all occurrences; average MAE = sum of successful-event maximum adverse excursions / all occurrences; average MFE = sum of successful-event maximum favorable excursions / returned occurrences; expectancy = win rate × average MFE − (1 − win rate) × average MAE
+Calculation: Optimal threshold per side = qualifying candidate with greatest expectancy, requiring occurrence count ≥ configured minimum, win rate ≥ configured minimum, and expectancy > configured minimum
+Calculation: Current distance threshold = optimal threshold in points, or its configured multiple of current ATR or current standard deviation
+Long: Confirmed close is at or below reference mean − long optimal threshold AND enough history is available AND long optimal threshold exists AND all enabled filters pass AND the preceding bar did not have a long signal
+Short: Confirmed close is at or above reference mean + short optimal threshold AND enough history is available AND short optimal threshold exists AND all enabled filters pass AND the preceding bar did not have a short signal
+Exit: None

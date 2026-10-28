@@ -1,0 +1,3 @@
+Calculation: Opening range high/low = highest high and lowest low of the configured opening interval, using completed bars
+Long: Current bar is after the opening range completes AND previous close < opening range low AND current low < previous low AND current close > opening range low AND current volume > its simple moving average × a multiplier AND current volume > previous volume AND current close > previous high
+Short: Current bar is after the opening range completes AND previous close > opening range high AND current high > previous high AND current close < opening range high AND current volume > its simple moving average × a multiplier AND current volume > previous volume AND current close < previous low

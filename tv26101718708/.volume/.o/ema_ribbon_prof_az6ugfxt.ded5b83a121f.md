@@ -1,0 +1,6 @@
+Calculation: EMA ribbon bounds = maximum and minimum of eight EMAs of high, with staggered lengths from longest to shortest.
+Calculation: RSI 50 price level = close price corresponding to RSI 50, calculated from close-to-close gains and losses with the RSI lookback’s smoothing.
+Calculation: Latest high-volume candle midpoint = (high + low) / 2 for the most recent candle whose volume is the highest over a lookback, within the recent analysis window.
+Calculation: Price moving average = simple moving average of high.
+Long: High crosses above the EMA ribbon upper bound at the ribbon’s displayed offset OR open crosses above the latest high-volume candle midpoint OR RSI 50 price level < close OR shortest EMA in the ribbon >= longest EMA in the ribbon OR close >= price moving average.
+Short: High crosses below the EMA ribbon lower bound at the ribbon’s displayed offset OR open crosses below the latest high-volume candle midpoint OR RSI 50 price level >= close OR shortest EMA in the ribbon < longest EMA in the ribbon OR close < price moving average.

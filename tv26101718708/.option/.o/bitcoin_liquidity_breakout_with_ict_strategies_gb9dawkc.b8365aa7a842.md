@@ -1,0 +1,1 @@
+Exit the open long position when Bitcoin dominance rises above its threshold, if dominance data is available.

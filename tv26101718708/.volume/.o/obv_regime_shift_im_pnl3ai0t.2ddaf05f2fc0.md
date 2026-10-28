@@ -1,0 +1,8 @@
+Calculation: OBV = cumulative volume, adding volume when close rises from the prior bar and subtracting it when close falls; unchanged close adds zero
+Calculation: Normalized OBV = OBV expressed as a rolling z-score using the same lookback as the volume average
+Calculation: Fast line = HMA of Normalized OBV using a shorter length than the slow line
+Calculation: Slow line = DEMA of Normalized OBV using a longer length than the fast line
+Calculation: Slope differential = (fast line change over the slope window / window length) − (slow line change over the same window / window length)
+Calculation: Regime score = clamp to 0–100 a weighted combination of the z-score of the slope differential, the fast-minus-slow line distance, a neutral anchor, active divergence strength, and volume expansion adjusted by the sign of the fast-line slope
+Long: fast line > slow line OR regime score meets the bullish threshold for the required consecutive bars and the minimum bar gap since the previous shift has elapsed and the prior shift state is not bullish OR a confirmed price pivot low is lower than the previous valid pivot low while Normalized OBV's pivot low is higher than its previous valid pivot low and the slope differential is positive
+Short: fast line < slow line OR regime score meets the bearish threshold for the required consecutive bars and the minimum bar gap since the previous shift has elapsed and the prior shift state is not bearish OR a confirmed price pivot high is higher than the previous valid pivot high while Normalized OBV's pivot high is lower than its previous valid pivot high and the slope differential is negative

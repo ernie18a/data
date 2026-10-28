@@ -1,0 +1,1 @@
+Enter long at a designated UTC time each day; exit the position at a designated UTC time the following day.

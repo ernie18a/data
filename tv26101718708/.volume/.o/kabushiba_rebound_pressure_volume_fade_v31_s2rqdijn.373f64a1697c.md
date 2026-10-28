@@ -1,0 +1,3 @@
+Calculation: Rebound pressure = prior bar’s rebound pressure × a decay factor + a weighted event score; the event score is zero unless the current bar’s positive close−open body, divided by the recent high−low range and multiplied by 100, reaches a rebound-speed threshold, in which case add the corresponding threshold-specific bonus to that speed. Initialize pressure at zero.
+Calculation: Rebound-pressure average = simple moving average of rebound pressure.
+Long: Rebound pressure is at least the early-warning threshold AND rebound-pressure average is at least its prior-bar value OR rebound-pressure average is at least the main-warning threshold AND is greater than its prior-bar value.

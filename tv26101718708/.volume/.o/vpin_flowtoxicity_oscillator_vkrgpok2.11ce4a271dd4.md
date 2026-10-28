@@ -1,0 +1,4 @@
+Calculation: Buy fraction = selected Normal or Student-t cumulative distribution function of (close − previous close) divided by the rolling standard deviation of close-to-close changes.
+Calculation: VPIN = rolling percentile rank of flow imbalance: use the mean absolute buy/sell volume difference divided by mean volume over a rolling window; when equal-volume bucketing is enabled and buckets are available, use the rolling mean absolute buy/sell difference per bucket divided by the bucket target instead. Estimate buy and sell volume from lower-timeframe completed bars by summing volume where close > open or close < open, respectively; exclude doji volume and fall back to splitting chart-bar volume by the Buy fraction when lower-timeframe data is unavailable.
+Long: VPIN crosses above the toxic threshold AND Buy fraction ≥ 0.5
+Short: VPIN crosses above the toxic threshold AND Buy fraction < 0.5

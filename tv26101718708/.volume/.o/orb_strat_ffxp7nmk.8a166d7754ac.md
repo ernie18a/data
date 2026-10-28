@@ -1,0 +1,7 @@
+Calculation: Opening range high/low = highest high / lowest low during the configured opening interval beginning at 09:30 New York time; use only after the interval completes
+Calculation: Risk distance = configured fraction of entry price
+Calculation: Trailing distance = configured ATR multiple
+Long: Close crosses above opening range high AND within configured entry window AND opening range is complete AND flat AND daily trade limit not reached AND volume > its moving average AND ADX > its strength threshold AND close > both the long-term EMA and short-term EMA AND RSI < its overbought threshold
+Short: Close crosses below opening range low AND within configured entry window AND opening range is complete AND flat AND daily trade limit not reached AND volume > its moving average AND ADX > its strength threshold AND close < both the long-term EMA and short-term EMA AND RSI > its oversold threshold
+Exit: Long, low <= stop below entry by risk distance OR high >= target above entry by risk distance times configured reward/risk ratio OR trailing stop is hit after price advances by configured risk multiple, using the configured ATR multiple as trail distance OR during configured session exit window
+Exit: Short, high >= stop above entry by risk distance OR low <= target below entry by risk distance times configured reward/risk ratio OR trailing stop is hit after price declines by configured risk multiple, using the configured ATR multiple as trail distance OR during configured session exit window

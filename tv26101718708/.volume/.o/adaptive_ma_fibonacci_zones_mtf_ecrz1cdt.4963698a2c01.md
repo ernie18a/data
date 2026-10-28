@@ -1,0 +1,2 @@
+Long: Close of either selected higher-timeframe bar >= the selected moving average of that timeframe, using the same lookback length on both timeframes; each value is from the current higher-timeframe bar (forming in real time, confirmed at its close).
+Short: Close of either selected higher-timeframe bar < the selected moving average of that timeframe, using the same lookback length on both timeframes; each value is from the current higher-timeframe bar (forming in real time, confirmed at its close).

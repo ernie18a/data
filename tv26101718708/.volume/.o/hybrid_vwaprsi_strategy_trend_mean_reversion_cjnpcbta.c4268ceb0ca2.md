@@ -1,0 +1,5 @@
+Calculation: Anchored VWAP = cumulative ((high + low) / 2 × volume) divided by cumulative volume since the reset hour, including the current bar
+Long: latest available daily close > long-term daily SMA (daily bar may still be forming in realtime) AND close < anchored VWAP AND RSI < oversold threshold AND ATR / close > volatility threshold
+Short: latest available daily close < long-term daily SMA (daily bar may still be forming in realtime) AND close > anchored VWAP AND RSI > overbought threshold AND ATR / close > volatility threshold
+Exit: Long, after high reaches entry price + ATR-scaled activation distance in ticks, low <= highest high since activation − ATR-scaled trail offset in ticks
+Exit: Short, after low reaches entry price − ATR-scaled activation distance in ticks, high >= lowest low since activation + ATR-scaled trail offset in ticks

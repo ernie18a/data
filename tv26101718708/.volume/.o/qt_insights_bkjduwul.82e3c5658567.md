@@ -1,0 +1,4 @@
+Calculation: Candle direction = bullish when close > open and bearish when close < open; reverse these inequalities for an inverted asset.
+Calculation: Divergence between two assets = one has a bullish candle and the other a bearish candle.
+Long: Active asset has a bullish candle AND (Asset 2 is enabled AND divergence between active asset and Asset 2 OR Asset 3 is enabled AND divergence between active asset and Asset 3 OR Assets 2 and 3 are enabled AND divergence between them)
+Short: Active asset has a bearish candle AND (Asset 2 is enabled AND divergence between active asset and Asset 2 OR Asset 3 is enabled AND divergence between active asset and Asset 3 OR Assets 2 and 3 are enabled AND divergence between them)

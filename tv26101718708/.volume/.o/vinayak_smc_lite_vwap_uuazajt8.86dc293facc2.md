@@ -1,0 +1,5 @@
+Calculation: Confirmed swing high/low = high/low that is the highest/lowest across equal-length bars before and after it; confirmed after the bars after it complete.
+Calculation: Swing-label comparison = compare each new confirmed swing high/low with the preceding confirmed swing of the same kind.
+Calculation: Supply zone = from a confirmed swing high, extending from its high down by ATR times a buffer; demand zone = from a confirmed swing low, extending from its low up by ATR times a buffer. Keep a new zone only if its midpoint is farther than twice ATR from every existing zone midpoint. Remove a supply zone when close reaches or exceeds its top; remove a demand zone when close reaches or falls below its bottom.
+Long: A confirmed swing high is at least the preceding confirmed swing high (HH) OR a confirmed swing low is at least the preceding confirmed swing low (HL) OR close reaches or exceeds the top of an active supply zone.
+Short: A confirmed swing high is below the preceding confirmed swing high (LH) OR a confirmed swing low is below the preceding confirmed swing low (LL) OR close reaches or falls below the bottom of an active demand zone.

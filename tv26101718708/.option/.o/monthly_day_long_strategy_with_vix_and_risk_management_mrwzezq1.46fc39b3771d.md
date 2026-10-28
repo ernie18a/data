@@ -1,0 +1,1 @@
+On the specified calendar day each month, move the entry day to the following Monday if it falls on a weekend. If no position is open and the daily VIX reading is below a chosen threshold, enter long in the traded instrument. Exit after the chosen holding period, or earlier if the instrument reaches a chosen stop-loss or take-profit level relative to entry.

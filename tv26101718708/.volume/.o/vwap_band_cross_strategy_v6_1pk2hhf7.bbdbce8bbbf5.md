@@ -1,0 +1,7 @@
+Calculation: Upper band = VWAP + (standard deviation of the VWAP source over a lookback × multiplier)
+Calculation: Lower band = VWAP − (standard deviation of the VWAP source over the same lookback × multiplier)
+Calculation: SMMA confirmation average = EMA of close
+Long: Close crosses above VWAP OR close crosses above upper band OR close crosses above lower band; within the entry time window and on an enabled trading day; daily limits and trade-count limit permit entry; trade direction permits long; and each enabled confirmation holds (RSI below its oversold threshold; close above its EMA; MACD line above signal line and histogram above zero)
+Short: Close crosses below VWAP OR close crosses below lower band OR close crosses below upper band OR close crosses above VWAP; within the entry time window and on an enabled trading day; daily limits and trade-count limit permit entry; trade direction permits short; and each enabled confirmation holds (RSI above its overbought threshold; close below its EMA; MACD line below signal line and histogram below zero)
+Exit: Long, close crosses below VWAP OR close crosses below upper band OR close crosses above lower band OR low reaches the stop-loss level OR high reaches the take-profit level OR daily profit/loss limit is reached OR close-all time window begins
+Exit: Short, close crosses above VWAP OR close crosses below upper band OR close crosses above lower band OR high reaches the stop-loss level OR low reaches the take-profit level OR daily profit/loss limit is reached OR close-all time window begins

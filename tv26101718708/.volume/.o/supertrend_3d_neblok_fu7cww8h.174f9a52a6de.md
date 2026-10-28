@@ -1,0 +1,5 @@
+Calculation: SuperTrend = On each chart bar, calculate basic lower and upper bands as source − multiplier × ATR and source + multiplier × ATR. Ratchet the lower band upward to the greater of its basic value and prior lower band when the prior close is above the prior lower band; otherwise use the basic lower band. Ratchet the upper band downward to the lesser of its basic value and prior upper band when the prior close is below the prior upper band; otherwise use the basic upper band. Trend flips from bearish to bullish when the current high (wick trigger) or close (close trigger) is above the prior upper band, and from bullish to bearish when the current low (wick trigger) or close (close trigger) is below the prior lower band.
+Long: Prior trend is bearish AND current high (wick trigger) or close (close trigger) > prior upper band
+Short: Prior trend is bullish AND current low (wick trigger) or close (close trigger) < prior lower band
+Exit: Long, prior trend is bullish AND current low (wick trigger) or close (close trigger) < prior lower band
+Exit: Short, prior trend is bearish AND current high (wick trigger) or close (close trigger) > prior upper band

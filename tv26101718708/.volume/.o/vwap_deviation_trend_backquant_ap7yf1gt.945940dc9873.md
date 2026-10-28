@@ -1,0 +1,8 @@
+Calculation: VWAP = volume-weighted mean of the selected price source over the selected anchored or rolling window; if volume is unavailable, use its arithmetic mean.
+Calculation: Deviation width = the greater of volume-weighted standard deviation of the selected price source around VWAP times the deviation multiplier and ATR times its minimum-width multiplier, when the ATR floor is enabled; otherwise use the deviation-based width.
+Calculation: Upper and lower raw bands = VWAP plus and minus deviation width.
+Calculation: Upper trailing boundary = the lower of the current upper raw band and previous upper trailing boundary when the previous trigger was below that boundary; otherwise the current upper raw band. Lower trailing boundary = the higher of the current lower raw band and previous lower trailing boundary when the previous trigger was above that boundary; otherwise the current lower raw band. Trigger is close or the selected price source.
+Long: Trigger > upper trailing boundary AND current trend is not bullish [AND, if slope confirmation is enabled, current VWAP > VWAP at the shorter lookback].
+Short: Trigger < lower trailing boundary AND current trend is not bearish [AND, if slope confirmation is enabled, current VWAP < VWAP at the shorter lookback].
+Exit: Long, Trigger < lower trailing boundary AND current trend is not bearish [AND, if slope confirmation is enabled, current VWAP < VWAP at the shorter lookback].
+Exit: Short, Trigger > upper trailing boundary AND current trend is not bullish [AND, if slope confirmation is enabled, current VWAP > VWAP at the shorter lookback].

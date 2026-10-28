@@ -1,0 +1,10 @@
+Calculation: Core oscillator = (shorter-lookback weighted moving average of close − longer-lookback weighted moving average of close) / ATR
+Calculation: Oscillator band = standard deviation of the core oscillator over its configured lookback
+Calculation: Money flow = the moving average of ((close − low) − (high − close)) / max(high − low, a small positive value), weighted by volume, divided by the moving average of volume over the same lookback
+Calculation: Moving-average convergence divergence histogram = MACD line minus its signal line
+Calculation: Structural bias = close and the 50-period and 200-period EMAs on the current, still-forming 4-hour bar
+Calculation: Halving-cycle value = cosine of the phase of a four-year cycle anchored at April 2024, offset by one quarter-cycle
+Long: Core oscillator crosses above the negative oscillator band AND structural bias is bullish (4-hour close > 50-period EMA > 200-period EMA) AND RSI is below its configured overbought threshold AND MACD histogram is greater than or equal to its prior-bar value AND money flow is above its configured lower bound AND volume exceeds its moving average by the configured minimum ratio AND halving-cycle value is above its configured lower bound
+Short: Core oscillator crosses below the positive oscillator band AND structural bias is bearish (4-hour close < 50-period EMA < 200-period EMA) AND RSI is above its configured oversold threshold AND MACD histogram is less than or equal to its prior-bar value AND money flow is below its configured upper bound AND volume exceeds its moving average by the configured minimum ratio AND halving-cycle value is below its configured upper bound
+Exit: long, core oscillator crosses below zero OR (RSI crosses below its configured overbought threshold AND structural bias is bearish) OR short entry
+Exit: short, core oscillator crosses above zero OR (RSI crosses above its configured oversold threshold AND structural bias is bullish) OR long entry

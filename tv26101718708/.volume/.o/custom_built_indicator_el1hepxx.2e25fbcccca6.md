@@ -1,0 +1,8 @@
+Calculation: Baseline = selected source processed by the selected baseline: RMA for the RMA, SMA, EMA, DEMA, TEMA, WMA, or HMA options; ALMA, rolling median, rolling mode, or previous source for the corresponding options
+Calculation: Volatility = selected measure: average true range, rolling median true range, source standard deviation, mean absolute deviation from the rolling source mean, or mean absolute deviation from the rolling source median
+Calculation: Upper band = optionally smoothed (Baseline + Volatility × upper multiplier)
+Calculation: Lower band = optionally smoothed (Baseline − Volatility × lower multiplier)
+Long: (selected long condition: crossover source > Upper band OR crossover source > Baseline OR Baseline > previous Baseline) AND (confirmation disabled OR volume > previous volume OR Baseline > previous Baseline OR (previous selected long condition AND current selected long condition)) AND NOT (selected short condition AND its selected confirmation)
+Short: (selected short condition: crossunder source < Lower band OR crossunder source < Baseline OR Baseline < previous Baseline) AND (confirmation disabled OR volume < previous volume OR Baseline < previous Baseline OR (previous selected short condition AND current selected short condition))
+Exit: Long, selected short condition AND its selected confirmation
+Exit: Short, selected long condition AND its selected confirmation AND NOT (selected short condition AND its selected confirmation)

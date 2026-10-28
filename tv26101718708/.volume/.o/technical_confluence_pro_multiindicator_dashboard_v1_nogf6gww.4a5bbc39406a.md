@@ -1,0 +1,15 @@
+Calculation: EMA stack = fast, mid, slow, and long EMAs in descending or ascending order; the mid, slow, and long EMAs use progressively longer lookbacks
+Calculation: Stoch RSI = stochastic of RSI, with K and D each smoothed over 3 bars
+Calculation: MACD = 12/26-period EMA difference and its 9-period signal line
+Calculation: ADX and directional indicators = DMI with the same lookback for DI and ADX
+Calculation: OBV average = 21-period EMA of OBV
+Calculation: Volume average = 20-bar average volume
+Calculation: 60-minute MACD = MACD difference and signal line calculated on the 60-minute bar still forming
+Calculation: Squeeze momentum = linear regression of close minus the average of the midpoint of the recent high-low range and Bollinger Band midpoint; use the same lookback for Bollinger Bands, Keltner Channels, and the high-low range, with a separate momentum lookback
+Calculation: QQE trend = smoothed RSI compared with a trailing line that follows smoothed RSI by a factor times its smoothed absolute change
+Calculation: Kalman oscillator = difference of fast and slow EMAs of a gain-smoothed close; normalize over a longer lookback and compare its direction with the prior bar
+Calculation: Wave Trend = EMA-smoothed normalized deviation of hlc3, with a second EMA and a 4-bar SMA signal line
+Calculation: Timeframe EMA alignment = 21/50/200-period EMAs on the 1-hour, 12-hour, 1-week, 2-week, or 1-month bar still forming, in descending or ascending order
+Calculation: Confluence score = normalize the weighted sum of technical, advanced, and timeframe indicator scores to 0–100; EMA stack and Supertrend have weight 2, other technical and advanced indicators weight 1, 1-hour/12-hour/1-week alignments weight 2, and 2-week/1-month alignments weight 3
+Long: EMA stack is bullish OR Supertrend is bullish OR RSI exceeds its bullish threshold OR Stoch RSI K > D OR MACD line > signal line OR ADX exceeds its minimum and DI+ > DI- OR close > VWAP OR OBV > its EMA OR volume > its average times its multiplier OR 60-minute MACD difference > its signal line OR squeeze momentum > 0 and rising OR smoothed RSI > QQE trailing line OR normalized Kalman oscillator > 60 and rising OR Wave Trend > its signal line and below its overbought threshold OR any listed timeframe EMA alignment is bullish OR confluence score >= 58 OR confluence score >= buy threshold OR confluence score >= strong-buy threshold
+Short: EMA stack is bearish OR Supertrend is bearish OR RSI is below its bearish threshold OR Stoch RSI K <= D OR MACD line <= signal line OR ADX exceeds its minimum and DI- > DI+ OR close <= VWAP OR OBV <= its EMA OR volume <= its average times its multiplier OR 60-minute MACD difference <= its signal line OR squeeze momentum < 0 and falling OR smoothed RSI <= QQE trailing line OR normalized Kalman oscillator < 40 and falling OR Wave Trend < its signal line and above its oversold threshold OR any listed timeframe EMA alignment is bearish OR confluence score <= 42 OR confluence score <= sell threshold OR confluence score <= strong-sell threshold

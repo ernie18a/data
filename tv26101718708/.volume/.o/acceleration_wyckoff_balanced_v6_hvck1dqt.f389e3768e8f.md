@@ -1,0 +1,3 @@
+Calculation: Acceleration = (source − source[momentum lookback]) − (source[acceleration lookback] − source[acceleration lookback + momentum lookback]); source defaults to close
+Long: low = lowest low over spring lookback AND Acceleration > minimum acceleration threshold AND (volume < volume SMA × volume threshold, if volume confirmation is enabled)
+Short: high = highest high over spring lookback AND Acceleration < −minimum acceleration threshold

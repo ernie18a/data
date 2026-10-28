@@ -1,0 +1,7 @@
+Calculation: Confirmed pivot high/low = a high/low that is a pivot over equal lookbacks before and after it, available after the later lookback completes; retain the three most recent unbroken levels of each kind and remove a level when the close first breaks it.
+Calculation: Selected stop = for a long, the current bar’s low minus ATR, the selected lookback bar’s low, or the close minus a fixed tick distance; for a short, the current bar’s high plus ATR, the selected lookback bar’s high, or the close plus a fixed tick distance, according to the selected stop type. ATR = selected smoothing of true range over its lookback, multiplied by the selected ATR multiplier.
+Calculation: Target = entry price plus (for long) or minus (for short) the selected risk-reward multiple times the distance between entry price and selected stop.
+Long: Flat position AND close > at least one tracked confirmed pivot high AND (MA filter disabled OR close > selected moving average of close) AND (time filter disabled OR current bar’s closing time is within the configured session in London time) AND close > selected stop.
+Short: Flat position AND close < at least one tracked confirmed pivot low AND (MA filter disabled OR close < selected moving average of close) AND (time filter disabled OR current bar’s closing time is within the configured session in London time) AND selected stop > close.
+Exit: Long, low <= selected stop OR high >= target
+Exit: Short, high >= selected stop OR low <= target

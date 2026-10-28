@@ -1,0 +1,1 @@
+For the traded instrument, go long when its current low is below the prior bar’s low while either positively correlated comparison instrument’s low is above its own prior bar’s low. Go short when its current high is above the prior bar’s high while either comparison instrument’s high is below its own prior bar’s high. The two conditions are independent; no exit rule is specified.

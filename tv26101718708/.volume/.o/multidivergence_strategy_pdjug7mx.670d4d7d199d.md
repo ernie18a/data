@@ -1,0 +1,8 @@
+Calculation: Bullish divergence for an oscillator = the lowest low in the current lookback window is lower than the lowest low in the immediately preceding, equally long window, AND the oscillator’s lowest value in the current window is higher than its lowest value in the preceding window.
+Calculation: Bearish divergence for an oscillator = the highest high in the current lookback window is higher than the highest high in the immediately preceding, equally long window, AND the oscillator’s highest value in the current window is lower than its highest value in the preceding window.
+Calculation: Bullish divergence count = number of bullish divergences among MACD line, MACD histogram, RSI, stochastic %K, CCI, OBV, CMF, MFI, momentum, and MACD of VWMA(close).
+Calculation: Bearish divergence count = number of bearish divergences among MACD line, MACD histogram, RSI, stochastic %K, CCI, OBV, CMF, MFI, momentum, and MACD of VWMA(close).
+Long: bullish divergence count >= minimum bullish confirmations AND bearish divergence count < minimum bearish confirmations AND position side is not long
+Short: bearish divergence count >= minimum bearish confirmations AND bullish divergence count < minimum bullish confirmations AND position side is not short
+Exit: long, stop-loss percentage > 0 AND (low <= entry price × (1 − stop-loss percentage) OR (take-profit percentage > 0 AND high >= entry price × (1 + take-profit percentage)))
+Exit: short, stop-loss percentage > 0 AND (high >= entry price × (1 + stop-loss percentage) OR (take-profit percentage > 0 AND low <= entry price × (1 − take-profit percentage)))

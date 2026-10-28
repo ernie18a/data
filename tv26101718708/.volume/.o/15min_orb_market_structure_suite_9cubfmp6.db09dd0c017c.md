@@ -1,0 +1,5 @@
+Calculation: Most recent confirmed pivot high = the latest high greater than the highs of an equal lookback of preceding and following bars, confirmed after the following bars.
+Calculation: Most recent confirmed pivot low = the latest low lower than the lows of an equal lookback of preceding and following bars, confirmed after the following bars.
+Calculation: Smoothed Heikin-Ashi bullish = Heikin-Ashi close, calculated from exponentially smoothed open, high, low, and close, is greater than Heikin-Ashi open; initialize open as the average of smoothed open and close, then calculate each later open as the average of the preceding Heikin-Ashi open and close.
+Long: close crosses above the most recent confirmed pivot high OR the shorter-lookback simple moving average of close crosses above the longer-lookback simple moving average of close AND Smoothed Heikin-Ashi bullish
+Short: close crosses below the most recent confirmed pivot low OR the shorter-lookback simple moving average of close crosses below the longer-lookback simple moving average of close AND NOT Smoothed Heikin-Ashi bullish

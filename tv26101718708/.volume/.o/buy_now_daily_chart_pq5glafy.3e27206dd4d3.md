@@ -1,0 +1,4 @@
+Calculation: WaveTrend = EMA of ((HLC3 − EMA(HLC3)) / (0.015 × EMA(|HLC3 − EMA(HLC3)|))); its signal line is the SMA of WaveTrend
+Calculation: Low liquidity zone = close ≤ lowest low × (1 + zone size)
+Calculation: High liquidity zone = close ≥ highest high × (1 − zone size)
+Long: (EMA trigger enabled AND close crosses above its EMA) OR (EMA trigger disabled AND (WaveTrend crosses above its signal line OR volume > average volume × volume multiplier)) AND lowest RSI during the setup window ≤ RSI threshold AND WaveTrend crossed above its signal line within the setup window AND volume > average volume × volume multiplier AND (low liquidity zone OR high liquidity zone) AND no prior long signal, or bars since prior long signal > cooldown period

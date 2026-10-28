@@ -1,0 +1,2 @@
+Long: close > VWAP AND close > EMA AND Williams %R crosses above its lower threshold AND bar is within the configured session
+Short: close < VWAP AND close < EMA AND Williams %R crosses below its upper threshold AND bar is within the configured session

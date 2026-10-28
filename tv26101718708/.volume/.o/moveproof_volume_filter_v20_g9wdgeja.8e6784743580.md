@@ -1,0 +1,3 @@
+Calculation: Volume average = selected SMA, EMA, or RMA of capped volume, using the same lookback as the EMA used for the cap; each bar’s capped volume is the lesser of its volume and the cap multiplier times the prior bar’s EMA of volume.
+Long: close > highest high of the prior completed bars over the breakout lookback AND close > open AND (close - low) / (high - low) >= close-strength threshold (use 0.5 when high = low) AND volume >= volume average × strong-volume multiplier
+Short: close < lowest low of the prior completed bars over the breakout lookback AND close < open AND (high - close) / (high - low) >= close-strength threshold (use 0.5 when high = low) AND volume >= volume average × strong-volume multiplier

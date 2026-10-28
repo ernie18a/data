@@ -1,0 +1,4 @@
+Long: confidence ≥ minimum action confidence AND effective direction > 0
+Short: confidence ≥ minimum action confidence AND effective direction < 0
+Long: current low < the most recent confirmed pivot low from the prior sweep-lookback bars AND current close > that pivot low AND current close − current low ≥ (pivot low − current low) × (1 + reclaim fraction) AND volume > volume × long-lookback average × sweep-volume multiplier
+Short: current high > the most recent confirmed pivot high from the prior sweep-lookback bars AND current close < that pivot high AND current high − current close ≥ (current high − pivot high) × (1 + reclaim fraction) AND volume > volume × long-lookback average × sweep-volume multiplier

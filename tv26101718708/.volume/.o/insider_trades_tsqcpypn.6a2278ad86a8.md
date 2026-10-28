@@ -1,0 +1,4 @@
+Calculation: absolute price move percent = abs(close - open) / open * 100
+Calculation: volume spike = volume / moving average of volume over a lookback >= spike multiplier AND absolute price move percent >= minimum price move percent
+Long: configured deal is enabled AND deal quantity >= minimum deal quantity AND (volume spike requirement is disabled OR volume spike) AND (price move requirement is disabled OR absolute price move percent >= minimum price move percent) AND deal date year/month/day = bar date year/month/day AND deal type = Buy
+Short: configured deal is enabled AND deal quantity >= minimum deal quantity AND (volume spike requirement is disabled OR volume spike) AND (price move requirement is disabled OR absolute price move percent >= minimum price move percent) AND deal date year/month/day = bar date year/month/day AND (deal type = Sell OR deal type = Both)

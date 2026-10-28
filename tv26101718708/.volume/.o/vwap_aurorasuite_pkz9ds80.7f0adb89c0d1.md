@@ -1,0 +1,3 @@
+Calculation: Normalized sentiment = the average of available votes: +1 when close is above the current-day VWAP and −1 when below; +1 when current-day VWAP exceeds its value N chart bars earlier and −1 when below; +1 when close is above the VWAP of the higher-volume London or US session and −1 when below; +1 when close is above the two-day low AVWAP and −1 when below; +1 when close is above the two-day high AVWAP and −1 when below. Each reference contributes only when available; equality contributes 0, and available equal references still count in the average. VWAPs and AVWAPs use current, potentially forming bars.
+Long: normalized sentiment ≥ 0.20
+Short: normalized sentiment ≤ −0.20

@@ -1,0 +1,1 @@
+Close all open positions at the configured end-of-day cutoff.

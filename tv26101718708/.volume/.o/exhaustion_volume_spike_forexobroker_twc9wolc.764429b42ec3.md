@@ -1,0 +1,5 @@
+Calculation: Trend duration = number of bars since the EMA20/EMA50 trend direction last changed; reset to 0 when EMA20 crosses above or below EMA50, then increment each bar.
+Calculation: ADX peak = highest ADX since the EMA20/EMA50 trend direction last changed.
+Calculation: Momentum = close minus close N bars earlier; momentum average = SMA of momentum over the same N-bar lookback.
+Long: volume > volume SMA × spike multiplier AND trend duration > minimum bars AND ADX peak − ADX > decline threshold AND EMA20 < EMA50 AND momentum > momentum average AND more than cooldown bars since the previous long signal AND bar is closed
+Short: volume > volume SMA × spike multiplier AND trend duration > minimum bars AND ADX peak − ADX > decline threshold AND EMA20 > EMA50 AND momentum < momentum average AND more than cooldown bars since the previous short signal AND bar is closed

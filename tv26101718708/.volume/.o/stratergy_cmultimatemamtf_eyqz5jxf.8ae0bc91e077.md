@@ -1,0 +1,5 @@
+Calculation: Selected moving average = configured SMA, EMA, WMA, Hull, VWMA, RMA, or TEMA of close, calculated at the selected resolution (chart resolution or configured timeframe) using its current bar, including a still-forming bar.
+Long: Selected moving average one bar ago < selected moving average smoothe+1 bars ago AND selected moving average now >= selected moving average smoothe bars ago
+Short: Selected moving average one bar ago >= selected moving average smoothe+1 bars ago AND selected moving average now < selected moving average smoothe bars ago
+Exit: long, selected moving average one bar ago >= selected moving average smoothe+1 bars ago OR selected moving average now < selected moving average smoothe bars ago
+Exit: short, selected moving average one bar ago < selected moving average smoothe+1 bars ago OR selected moving average now >= selected moving average smoothe bars ago

@@ -1,0 +1,2 @@
+Long: flat AND close > SMA(close, long-term lookback) AND close > VWAP AND EMA(close, shorter lookback) > EMA(close, longer lookback) AND RSI > threshold AND volume > its moving average × multiplier AND close > highest high of preceding breakout lookback bars AND close > open AND close > previous bar high
+Exit: long, bars since entry >= minimum holding period AND close < VWAP AND close < SMA(close, long-term lookback) AND EMA(close, shorter lookback) < EMA(close, longer lookback) AND close < previous bar low AND previous close < low two bars ago AND RSI < threshold

@@ -1,0 +1,3 @@
+Calculation: Mansfield relative strength = close / benchmark close from the same-timeframe bar
+Long: close > Hull moving average AND Hull moving average > its value on the previous bar AND volume > its simple moving average × volume multiplier AND Mansfield relative strength > its simple moving average AND positive Vortex indicator > negative Vortex indicator AND ADX > trend threshold AND RSI > 50 AND CCI > 0
+Short: close < Hull moving average AND Hull moving average < its value on the previous bar AND volume > its simple moving average × volume multiplier AND Mansfield relative strength < its simple moving average AND negative Vortex indicator > positive Vortex indicator AND ADX > trend threshold AND RSI < 50 AND CCI < 0

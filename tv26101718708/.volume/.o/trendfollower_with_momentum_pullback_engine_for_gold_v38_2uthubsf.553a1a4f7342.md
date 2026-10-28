@@ -1,0 +1,9 @@
+Calculation: Current slope = (selected moving average − its value one bar earlier) / its value one bar earlier × 100
+Calculation: Bull trend = set true when current slope exceeds the positive impulse threshold and false when the close crosses below the moving average; otherwise retain its prior value. Bear trend = set true when current slope is below the negative impulse threshold and false when the close crosses above the moving average; otherwise retain its prior value. Apply the slope update before the close-cross reset on each bar.
+Calculation: Upper zone = moving average × (1 + zone width percentage / 100); lower zone = moving average × (1 − zone width percentage / 100); clearance distance = moving average × zone width percentage / 100 × clearance strictness
+Calculation: Zone cleared = initially true; set true when the bull trend is active and high exceeds the upper zone plus clearance distance, or when the bear trend is active and low falls below the lower zone minus clearance distance; set false after either entry signal; otherwise retain its prior value.
+Calculation: Can signal = current bar index − bar index of the last entry signal exceeds the minimum signal spacing
+Long: Previous bar had an active bull trend, low at or below the upper zone, close above the moving average, and zone cleared; AND current close is above the moving average; AND current slope exceeds the positive impulse threshold; AND can signal
+Short: Previous bar had an active bear trend, high at or above the lower zone, close below the moving average, and zone cleared; AND current close is below the moving average; AND current slope is below the negative impulse threshold; AND can signal
+Exit: Long, RSI crosses below the overbought level
+Exit: Short, RSI crosses above the oversold level

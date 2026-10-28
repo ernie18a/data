@@ -1,0 +1,4 @@
+Calculation: Stage 2 = close > 150-bar SMA and close > 200-bar SMA; 150-bar SMA > 200-bar SMA; 200-bar SMA > its value 20 bars earlier; 50-bar SMA > 150-bar SMA and 50-bar SMA > 200-bar SMA; close > 50-bar SMA; close is at least 25% above the lowest low of the last 252 bars; close is within 25% of the highest high of the last 252 bars; and relative strength rating >= 70, where relative strength rating = clamp(100 × (asset's 252-bar price return / benchmark's 252-bar price return) − 50, 0, 99)
+Calculation: Most recent pivot high = latest confirmed pivot high, where a pivot high is a bar whose high exceeds the highs of the preceding and following lookback-period bars
+Long: Stage 2 AND close > most recent pivot high AND previous bar's close <= most recent pivot high AND volume > its 50-bar average × volume surge multiplier
+Exit: long, close >= entry price × (1 + profit target)

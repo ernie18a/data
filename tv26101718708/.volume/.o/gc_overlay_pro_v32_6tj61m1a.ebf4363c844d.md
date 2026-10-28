@@ -1,0 +1,3 @@
+Calculation: Volume Z-score = (current volume − moving average of volume over the shorter lookback) / standard deviation of volume over the longer lookback; use 0 when the standard deviation is 0
+Long: (close > open OR (close = open AND low < open − (high − open))) AND Volume Z-score > the high-volume threshold
+Short: (close < open OR (close = open AND high − open >= open − low)) AND Volume Z-score > the high-volume threshold

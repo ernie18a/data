@@ -1,0 +1,5 @@
+Calculation: High/Low AVWAP = volume-weighted mean of high/low (or HLC3 if configured) from its active anchor; initialize at the first bar and replace with its developing candidate only after the required consecutive violations.
+Calculation: High/Low candidate AVWAP = volume-weighted mean of high/low (or HLC3 if configured) since the latest candidate reset; reset High when smoothed Stochastic RSI D is below its lower band or the current high exceeds the candidate high extreme; reset Low when D is above its upper band or the current low is below the candidate low extreme.
+Calculation: Smoothed Stochastic RSI D = SMA of K, where K is a configurable moving average of the stochastic of RSI calculated from HLC3; RSI, stochastic, K, and D use their respective lookbacks.
+Long: configured alert price (open or close) > High AVWAP OR configured violation source is above High AVWAP for the required consecutive bars.
+Short: configured alert price (open or close) < Low AVWAP OR configured violation source is below Low AVWAP for the required consecutive bars.

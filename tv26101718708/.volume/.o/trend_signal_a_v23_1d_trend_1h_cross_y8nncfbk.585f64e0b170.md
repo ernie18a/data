@@ -1,0 +1,4 @@
+Calculation: Smoothed Heikin-Ashi trend = 100 × (smoothed Heikin-Ashi close − smoothed Heikin-Ashi open) / (smoothed Heikin-Ashi high − smoothed Heikin-Ashi low), with the same configurable moving-average method and lookback applied to each Heikin-Ashi price.
+Calculation: Higher-timeframe bullishness = Heikin-Ashi close > Heikin-Ashi open on the last completed higher-timeframe bar.
+Long: Flat AND higher-timeframe bullishness AND current-timeframe smoothed Heikin-Ashi trend > 0 AND its prior bar value <= 0.
+Exit: long, current-timeframe smoothed Heikin-Ashi trend < 0 AND its prior bar value >= 0 OR low <= entry price − ATR at entry × stop multiplier.

@@ -1,0 +1,1 @@
+While holding a long position, compare the broad-market index’s weekly close with its moving average. If the index is below its average, tighten the trailing stop measured from the traded instrument’s highest high since entry; exit the long if the traded instrument closes below that stop. The index regime does not filter entries.

@@ -1,0 +1,4 @@
+Calculation: MA1 = selected SMA, EMA, WMA, Hull, VWMA, RMA, TEMA, or Tilson T3 of close over its lookback, on the current chart timeframe or selected alternate timeframe; for a higher alternate timeframe, use its last completed bar.
+Calculation: MA2 = independently selected SMA, EMA, WMA, Hull, VWMA, RMA, TEMA, or Tilson T3 of close over its lookback, on the same timeframe as MA1; for a higher alternate timeframe, use its last completed bar.
+Long: MA1 now >= MA1 n chart bars ago OR open < MA1 AND close > MA1 OR open < MA2 AND close > MA2
+Short: MA1 now < MA1 n chart bars ago OR open > MA1 AND close < MA1 OR open > MA2 AND close < MA2

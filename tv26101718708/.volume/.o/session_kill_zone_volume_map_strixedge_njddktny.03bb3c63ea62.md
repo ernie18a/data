@@ -1,0 +1,6 @@
+Calculation: Session opening range high/low = highest high and lowest low during the first configured N minutes of each London, New York, and Asia session; use only after that range is complete
+Calculation: Previous session high/low = highest high and lowest low of the most recently completed London, New York, or Asia session
+Long: During any session, its opening range is complete AND current close > its opening range high AND no earlier bar in that session closed above that high AND current volume > its volume SMA × confirmation multiplier
+Long: Current close > a previous session high AND previous close ≤ that high AND current volume > its volume SMA × confirmation multiplier
+Short: During any session, its opening range is complete AND current close < its opening range low AND no earlier bar in that session closed below that low AND current volume > its volume SMA × confirmation multiplier
+Short: Current close < a previous session low AND previous close ≥ that low AND current volume > its volume SMA × confirmation multiplier

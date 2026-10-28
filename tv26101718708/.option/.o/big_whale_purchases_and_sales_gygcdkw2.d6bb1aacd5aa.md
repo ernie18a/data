@@ -1,0 +1,1 @@
+Use daily changes in whale holdings for the selected blockchain. Go long when the change is positive and exceeds its upper statistical band; go short when it is negative and falls below its lower statistical band. No separate exit condition is defined.

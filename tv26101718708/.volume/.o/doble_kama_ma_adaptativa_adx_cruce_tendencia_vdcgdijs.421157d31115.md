@@ -1,0 +1,4 @@
+Calculation: Kaufman Adaptive Moving Average (KAMA) = recursively smoothed close, with smoothing coefficient equal to the square of a blend of fast and slow smoothing constants weighted by the efficiency ratio (absolute net close change over the lookback divided by the sum of absolute one-bar close changes); use a shorter lookback for the fast KAMA than the slow KAMA
+Calculation: Exponential moving average (EMA) = exponential moving average of close, with a longer lookback than both KAMAs
+Long: fast KAMA crosses above slow KAMA (fast KAMA is above slow KAMA now and was at or below it on the previous bar) AND fast KAMA and slow KAMA are above the EMA AND slow KAMA is rising AND ADX is above its minimum threshold
+Short: fast KAMA crosses below slow KAMA (fast KAMA is below slow KAMA now and was at or above it on the previous bar) AND fast KAMA and slow KAMA are below the EMA AND slow KAMA is falling AND ADX is above its minimum threshold

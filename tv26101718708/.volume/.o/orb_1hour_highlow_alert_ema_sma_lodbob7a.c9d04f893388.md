@@ -1,0 +1,3 @@
+Calculation: Opening-range high = highest high of the current day’s 09:15–10:15 Asia/Kolkata bars; use the completed bars after the range ends
+Calculation: Opening-hour average volume = mean volume of the current day’s 09:15–10:15 Asia/Kolkata bars; use the completed bars after the range ends
+Long: current close crosses above opening-range high AND current volume >= configured multiplier × opening-hour average volume AND close > VWAP AND the first-hour range has ended AND breakout is armed (initially armed; rearm after a close < opening-range high; disarm after a long signal)

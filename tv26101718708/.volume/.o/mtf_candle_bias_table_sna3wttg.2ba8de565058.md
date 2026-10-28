@@ -1,0 +1,6 @@
+Long: On any configured timeframe’s still-forming bar, high > the immediately prior completed bar’s high AND low >= that bar’s low
+Short: On any configured timeframe’s still-forming bar, low < the immediately prior completed bar’s low AND high <= that bar’s high
+Calculation: Bullish accuracy by 1H bar-start hour (8:00–15:00 ET) = fraction of that hour’s historical bullish biases followed by a bullish close (close >= open); bullish bias means the prior completed 1H bar’s high exceeded the high of the 1H bar before it, while its low did not fall below that bar’s low
+Calculation: Bearish accuracy by 1H bar-start hour (8:00–15:00 ET) = fraction of that hour’s historical bearish biases followed by a bearish close (close < open); bearish bias means the prior completed 1H bar’s low fell below the low of the 1H bar before it, while its high did not exceed that bar’s high
+Long: At 8:00–15:00 ET, that hour’s bullish accuracy exists AND (its bearish accuracy does not exist OR bullish accuracy >= bearish accuracy + the edge threshold)
+Short: At 8:00–15:00 ET, that hour’s bearish accuracy exists AND (its bullish accuracy does not exist OR bearish accuracy >= bullish accuracy + the edge threshold)

@@ -1,0 +1,7 @@
+Calculation: Prior highest high = highest high over the lookback bars before the current bar
+Calculation: Prior lowest low = lowest low over the lookback bars before the current bar
+Calculation: Candle body = absolute value of close minus open
+Calculation: Average body = simple moving average of candle body over the lookback bars, including the current bar
+Calculation: VWMA = volume-weighted moving average of close over its lookback bars
+Long: (high > prior highest high in wick mode OR close > prior highest high in close mode) AND candle body > average body × momentum multiplier AND (VWMA filter disabled OR close > VWMA in trend-following mode OR close < VWMA in mean-reversion mode) AND (cooldown disabled OR bars since the previous signal ≥ cooldown length) AND (alternation disabled OR previous signal was not long)
+Short: (low < prior lowest low in wick mode OR close < prior lowest low in close mode) AND candle body > average body × momentum multiplier AND (VWMA filter disabled OR close < VWMA in trend-following mode OR close > VWMA in mean-reversion mode) AND (cooldown disabled OR bars since the previous signal ≥ cooldown length) AND (alternation disabled OR previous signal was not short)

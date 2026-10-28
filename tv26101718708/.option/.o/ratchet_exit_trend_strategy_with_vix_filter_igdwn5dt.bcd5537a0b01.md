@@ -1,0 +1,1 @@
+Trade long only: allow the strategy’s long entry signals only when the external volatility index is below its configured threshold, unless the filter is disabled. If the index rises above the threshold while a position is open, exit the position immediately.

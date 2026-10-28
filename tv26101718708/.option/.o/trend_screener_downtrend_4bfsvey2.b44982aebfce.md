@@ -1,0 +1,1 @@
+For each screened instrument, signal short while its close is below its 388-period exponential moving average and the 55-, 144-, 388-, and 576-period exponential moving averages are in strictly descending order. No long or exit condition is defined.

@@ -1,0 +1,1 @@
+After a configurable calendar cutoff, enter short when the current candle closes below its open and opens above the previous close. Enter long when it closes above its open and opens below the previous close. No exit rule is specified.

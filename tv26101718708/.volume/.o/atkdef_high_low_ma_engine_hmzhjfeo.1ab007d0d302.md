@@ -1,0 +1,5 @@
+Calculation: Short, medium, and long moving averages = simple moving averages of close, with lookbacks ordered shortest to longest.
+Calculation: Momentum = current close / close at the momentum lookback earlier - 1.
+Calculation: Bull score = 3 if short MA > medium MA > long MA, plus 2 if short MA > its prior-bar value and medium MA > its prior-bar value, plus 2 if momentum > 0, plus 1 if current volume > its volume simple moving average, plus 2 if close > short MA.
+Long: short MA crosses above medium MA AND medium MA > long MA OR short MA > medium MA > long MA OR at least 3 of (short MA > its prior-bar value, medium MA > its prior-bar value, long MA > its prior-bar value, momentum > 0) OR bull score >= 7
+Short: short MA crosses below medium MA AND medium MA < long MA OR short MA < medium MA < long MA OR at least 3 of (short MA <= its prior-bar value, medium MA <= its prior-bar value, long MA <= its prior-bar value, momentum <= 0) OR bull score < 4

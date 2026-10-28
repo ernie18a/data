@@ -1,0 +1,3 @@
+Calculation: Smoothed absorption z-score = the simple moving average of (volume divided by max(high − low, minimum tick) minus its rolling mean, divided by its rolling standard deviation), smoothed over a shorter lookback than the mean and standard deviation lookback.
+Long: Smoothed absorption z-score > its threshold AND close < its context-length simple moving average AND close < close from the context-length lookback AND bars since the previous long signal ≥ the cooldown period
+Short: Smoothed absorption z-score > its threshold AND close > its context-length simple moving average AND close > close from the context-length lookback AND bars since the previous short signal ≥ the cooldown period

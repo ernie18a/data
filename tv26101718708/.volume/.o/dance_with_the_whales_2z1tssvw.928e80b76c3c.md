@@ -1,0 +1,8 @@
+Calculation: Volume Z-score = (signal-timeframe volume − its moving average) / its standard deviation over the same lookback
+Calculation: Close location value = (close − low) / (high − low); use 0.5 when high = low
+Calculation: Candle body fraction = absolute(close − open) / (high − low); use 0 when high = low
+Calculation: Quiet condition = current ATR / moving average of ATR is at or below a threshold
+Calculation: Exit vote count = number of true conditions among: close below the shorter-lookback VWMA by a percentage buffer; close location value at or below a threshold and close below the previous signal-timeframe low; previous volume Z-score at or above its threshold and current volume Z-score below zero; bearish candle with open at or above the previous close and close at or below the previous open
+Long: (quiet condition AND close above the highest high over a lookback excluding the current signal-timeframe bar AND volume Z-score at or above a threshold AND close location value at or above a threshold AND close above the shorter-lookback VWMA AND shorter-lookback VWMA above the longer-lookback VWMA) OR (volume Z-score at or above a threshold AND candle body fraction at or below a threshold AND close location value at or above a threshold AND close above the previous signal-timeframe high AND close above the shorter-lookback VWMA AND shorter-lookback VWMA above the longer-lookback VWMA)
+Exit: Long, exit vote count at or above a threshold
+Long and exit conditions use signal-timeframe bars, using the last completed bar when confirmation-only is enabled and the bar still forming otherwise. Exit applies only while long and after the entry bar. No short-entry decision.

@@ -1,0 +1,1 @@
+For SPY, go short when the dollar index and volatility index are each above their own trend averages while SPY is below its trend average. Go long when both external indexes are below their trend averages while SPY is above its trend average. Otherwise, make no directional decision.

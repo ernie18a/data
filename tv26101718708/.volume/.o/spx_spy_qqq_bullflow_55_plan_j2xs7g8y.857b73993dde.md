@@ -1,0 +1,2 @@
+Long: Close crosses above the bull trigger OR close crosses above the higher A-grade bull trigger
+Short: Close crosses below the bear warning level OR close crosses below the lower A-grade bear trigger

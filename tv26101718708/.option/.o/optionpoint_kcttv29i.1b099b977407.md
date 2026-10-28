@@ -1,0 +1,1 @@
+Short when the fast moving average crosses below the slow moving average, both averages have sufficiently negative slopes if slope filtering is enabled, and the market is within the trading session if session filtering is enabled. Exit the short when the fast average crosses above the slow average, or at the session end when forced closing is enabled.

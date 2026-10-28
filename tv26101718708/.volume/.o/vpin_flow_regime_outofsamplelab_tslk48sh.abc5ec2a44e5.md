@@ -1,0 +1,3 @@
+Calculation: Buy pressure = 50 × (1 + sum of signed volume imbalance over a rolling lookback / sum of volume over that lookback), where each bar’s signed volume imbalance is volume × (2 × buy fraction − 1), and buy fraction is the configured standard-normal or Student-t (0.25 degrees of freedom) CDF of (close − prior close) divided by the rolling standard deviation of close-to-close changes.
+Long: On confirmation of a pivot low, its low is below the prior confirmed pivot low and its buy pressure at the pivot bar is above the prior pivot’s buy pressure.
+Short: On confirmation of a pivot high, its high is above the prior confirmed pivot high and its buy pressure at the pivot bar is below the prior pivot’s buy pressure.

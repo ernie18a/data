@@ -1,0 +1,6 @@
+Calculation: Buy volume = Sum of lower-timeframe bar volume where close > open, plus half the volume where close = open
+Calculation: Sell volume = Sum of lower-timeframe bar volume where close < open, plus half the volume where close = open
+Calculation: Total volume = Buy volume + Sell volume
+Calculation: Average total volume = Moving average of total volume over a lookback
+Long: (Total volume > Average total volume × absorption volume multiplier AND Sell volume > Buy volume AND close − low > high − close AND close >= open) OR (Total volume > Average total volume × imbalance volume multiplier AND close > open AND Buy volume / (Sell volume if Sell volume > 0, otherwise 1) >= imbalance ratio threshold) OR (close = high AND Buy volume > 0 AND Sell volume > 0 AND Total volume > Average total volume × missed auction volume multiplier)
+Short: (Total volume > Average total volume × absorption volume multiplier AND Buy volume > Sell volume AND high − close > close − low AND close <= open) OR (Total volume > Average total volume × imbalance volume multiplier AND close < open AND Sell volume / (Buy volume if Buy volume > 0, otherwise 1) >= imbalance ratio threshold) OR (close = low AND Sell volume > 0 AND Buy volume > 0 AND Total volume > Average total volume × missed auction volume multiplier)

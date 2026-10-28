@@ -1,0 +1,1 @@
+Using Bitcoin’s daily close and on-chain realized market capitalization divided by circulating supply, calculate price relative to realized price. Go long when the ratio crosses up through 1.0 from below. Go short when it crosses down through 2.5 from above. No exit rule is specified.

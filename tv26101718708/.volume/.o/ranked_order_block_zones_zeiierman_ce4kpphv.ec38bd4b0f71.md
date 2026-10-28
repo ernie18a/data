@@ -1,0 +1,2 @@
+Long: previous candle closes below its open AND current candle closes above its open AND current candle body size ≥ ATR(14) × minimum flip-body threshold
+Short: previous candle closes above its open AND current candle closes below its open AND current candle body size ≥ ATR(14) × minimum flip-body threshold

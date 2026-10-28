@@ -1,0 +1,9 @@
+Calculation: EMA alignment score = +1 if the shorter-lookback EMA of close is greater than the longer-lookback EMA; -1 if less; otherwise 0
+Calculation: Price deviation score = +1 if (close - baseline EMA of close) / rolling standard deviation of close is below the negative deviation threshold; -1 if above the positive deviation threshold; otherwise 0
+Calculation: Volume pressure score = +1 if RSI of volume divided by 50 exceeds its threshold and close > open; -1 if it exceeds its threshold and close < open; otherwise 0
+Calculation: RSI momentum score = +1 if RSI of close is above 50 and its smoothed value is rising; -1 if RSI of close is below 50 and its smoothed value is falling; otherwise 0
+Calculation: Structural position score = +1 if close is above the midpoint of the rolling highest high and lowest low; -1 if below; otherwise 0
+Calculation: Volatility context score = +1 if the shorter-lookback ATR divided by the longer-lookback ATR is below the low threshold; -1 if above the high threshold; otherwise 0
+Calculation: Composite score = (EMA alignment score + price deviation score + volume pressure score + RSI momentum score + structural position score + volatility context score) / 6
+Long: on a completed bar, composite score > buy threshold AND previous completed bar's composite score <= buy threshold
+Short: on a completed bar, composite score < sell threshold AND previous completed bar's composite score >= sell threshold

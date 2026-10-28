@@ -1,0 +1,3 @@
+Calculation: detrended ATR = (short-term ATR − long-term ATR) / long-term ATR
+Long: detrended ATR > 0 AND previous bar's detrended ATR ≤ 0 AND close > EMA of close AND close > highest high of the prior pivot lookback bars (excluding current bar) AND volume > volume SMA AND bars since the previous signal ≥ cooldown
+Short: detrended ATR > 0 AND previous bar's detrended ATR ≤ 0 AND close < EMA of close AND close < lowest low of the prior pivot lookback bars (excluding current bar) AND volume > volume SMA AND bars since the previous signal ≥ cooldown

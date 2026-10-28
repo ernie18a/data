@@ -1,0 +1,2 @@
+Long: position is flat AND close < EMA(close) AND open > (open + high + low + close) / 4 AND volume <= previous bar's volume AND (close < min(previous bar's open, previous bar's close) OR close > max(previous bar's open, previous bar's close))
+Exit: Long, bars since entry - 1 >= maximum bars OR accumulated count of closes above entry price on bars where bars since entry > 1 >= maximum profit closes

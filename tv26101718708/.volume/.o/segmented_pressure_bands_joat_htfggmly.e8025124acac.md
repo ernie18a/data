@@ -1,0 +1,5 @@
+Calculation: Segmented regression bands = For each segment, fit an ordinary least-squares line to the configured price source over the segment’s bars, capped at the maximum lookback. At the minimum segment length, freeze the fitted slope, intercept, and root mean square residual. Thereafter project the basis as frozen intercept minus frozen slope times bars since freeze; upper and lower bands are basis plus and minus frozen residual deviation times the band multiplier.
+Long: On a completed bar, segment length is at least the minimum and at least one bar has elapsed since freeze, and close > upper segmented regression band
+Short: On a completed bar, segment length is at least the minimum and at least one bar has elapsed since freeze, and close < lower segmented regression band
+Exit: long, on a bar after entry, low <= entry price − stop distance OR high >= entry price + stop distance × furthest enabled take-profit reward/risk multiple
+Exit: short, on a bar after entry, high >= entry price + stop distance OR low <= entry price − stop distance × furthest enabled take-profit reward/risk multiple

@@ -1,0 +1,8 @@
+Calculation: SSL1 = selected moving average of highs and lows using the same type and lookback; direction becomes up when close is above the high average, down when close is below the low average, and otherwise retains its prior direction; SSL1 is the low average when direction is up and the high average when down.
+Calculation: CF moving average = selected moving average of close on the chart timeframe or configured timeframe; when using another timeframe, use its current value (forming in realtime, completed value on historical bars until that timeframe closes).
+Calculation: Long stop and targets = signal-bar close − ATR × configured stop multiplier; signal-bar close + ATR × each configured target multiplier. After target 1 is reached, move the stop to entry average price if enabled.
+Calculation: Short stop and targets = signal-bar close + ATR × configured stop multiplier; signal-bar close − ATR × each configured target multiplier. After target 1 is reached, move the stop to entry average price if enabled.
+Long: Within configured date range AND not already in long SSL state AND (before the first SSL entry, close crosses above SSL1; otherwise, close > SSL1) AND (CF filter disabled OR CF moving average >= its value at the configured smoothing lookback).
+Short: Within configured date range AND not already in short SSL state AND (before the first SSL entry, close crosses below SSL1; otherwise, close < SSL1) AND (CF filter disabled OR CF moving average < its value at the configured smoothing lookback).
+Exit: Long, low <= long stop OR high >= any long target OR short-entry condition.
+Exit: Short, high >= short stop OR low <= any short target OR long-entry condition.

@@ -1,0 +1,17 @@
+Calculation: Bull trend score = weighted points for fast EMA > slow EMA, close > macro EMA, fast EMA rising over its lookback, and slow EMA rising over its lookback; the fast/slow relationship has the greatest weight, followed by close/macro, then fast slope and slow slope.
+Calculation: Bear trend score = corresponding weighted points for fast EMA < slow EMA, close < macro EMA, and both EMAs falling over their lookbacks, with the same relative weights.
+Calculation: Bull momentum score = weighted points for RSI > its midline, MACD line > signal line, and MACD histogram > its prior-bar value; the three components have approximately equal weights.
+Calculation: Bear momentum score = weighted points for RSI < its midline, MACD line < signal line, and MACD histogram < its prior-bar value; the three components have approximately equal weights.
+Calculation: Bull volume score = weighted points for volume at least its configured multiple of its moving average on a bar with close > open, and volume > prior-bar volume on a bar with close > open; the spike condition has greater weight.
+Calculation: Bear volume score = corresponding weighted points for a volume spike or expanding volume on a bar with close < open; the spike condition has greater weight.
+Calculation: Confirmed pivot high/low = a high/low that is strictly higher/lower than every other high/low in a symmetric window around it; use only pivots confirmed by bars on both sides, and track the two latest of each.
+Calculation: Bull structure score = weighted points for the latest two pivot highs and lows being successively higher, and for a break of structure: prior-bar close above the latest confirmed pivot high while the last break direction is not bullish; the break condition has greater weight.
+Calculation: Bear structure score = corresponding weighted points for the latest two pivot highs and lows being successively lower, and prior-bar close below the latest confirmed pivot low while the last break direction is not bearish; the break condition has greater weight.
+Calculation: Bull score = weighted average of bull trend, momentum, volume, and structure scores using their configured leg weights normalized by their sum.
+Calculation: Bear score = weighted average of bear trend, momentum, volume, and structure scores using the same configured leg weights normalized by their sum.
+Calculation: Higher-timeframe trend check = close > slow EMA for long, or close < slow EMA for short, using the last completed bar of the selected timeframe, which is no lower than the chart timeframe.
+Calculation: Volatility check = current-bar ATR as a percentage of close >= configured minimum.
+Long: current bar is closed AND bull score >= medium threshold AND bull score - bear score >= minimum score gap AND (higher-timeframe trend filter is disabled OR higher-timeframe trend check is bullish) AND (volatility filter is disabled OR volatility check passes) AND no prior long signal exists OR bars since the last long signal >= configured minimum gap.
+Short: current bar is closed AND bear score >= medium threshold AND bear score - bull score >= minimum score gap AND (higher-timeframe trend filter is disabled OR higher-timeframe trend check is bearish) AND (volatility filter is disabled OR volatility check passes) AND no prior short signal exists OR bars since the last short signal >= configured minimum gap.
+Exit: short, Long condition
+Exit: long, Short condition

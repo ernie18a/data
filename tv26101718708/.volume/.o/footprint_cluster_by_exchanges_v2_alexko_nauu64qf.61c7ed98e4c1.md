@@ -1,0 +1,10 @@
+Calculation: Footprint POC = midpoint of the footprint price row with the greatest volume; footprint rows use a configurable ticks-per-row size.
+Calculation: Footprint delta = buyer-initiated volume − seller-initiated volume; footprint volume = buyer-initiated volume + seller-initiated volume.
+Calculation: Relative POC position = (footprint POC − bar low) / (bar high − bar low).
+Calculation: Delta strength = |footprint delta| / footprint volume × 100.
+Calculation: Anomaly metric = selected value among footprint volume, sum of enabled exchange volumes, and absolute footprint delta.
+Calculation: Anomaly baseline = selected average or maximum of the previous N anomaly-metric values, excluding the current bar; in cluster-only mode, use the previous N clusters of the same side.
+Long: bar is closed AND relative POC position ≤ cluster-zone fraction AND (delta confirmation disabled OR footprint delta > 0) AND (minimum delta strength disabled OR delta strength ≥ minimum) AND (minimum volume disabled OR footprint volume ≥ minimum) AND (minimum range disabled OR high − low ≥ ATR(14) × minimum-range fraction)
+Short: bar is closed AND relative POC position ≥ 1 − cluster-zone fraction AND (delta confirmation disabled OR footprint delta < 0) AND (minimum delta strength disabled OR delta strength ≥ minimum) AND (minimum volume disabled OR footprint volume ≥ minimum) AND (minimum range disabled OR high − low ≥ ATR(14) × minimum-range fraction)
+Long: anomaly detection enabled AND all-bars-by-volume mode AND bar is closed AND anomaly metric > 0 AND anomaly baseline > 0 AND anomaly metric ≥ anomaly baseline × (1 + excess threshold) AND (footprint delta ≥ 0, or close ≥ open when footprint delta is unavailable)
+Short: anomaly detection enabled AND all-bars-by-volume mode AND bar is closed AND anomaly metric > 0 AND anomaly baseline > 0 AND anomaly metric ≥ anomaly baseline × (1 + excess threshold) AND (footprint delta < 0, or close < open when footprint delta is unavailable)

@@ -1,0 +1,4 @@
+Calculation: Average daily range = average of high − low over a lookback that includes the current bar
+Calculation: Stop price = current low if (current high − current low) / entry price ≥ range-development threshold × (average daily range / current close × 100); otherwise entry price − stop-floor multiplier × (average daily range / current close × 100) × entry price / 100
+Calculation: Risk percentage = (entry price − stop price) / entry price × 100
+Long: previous close / the close before it ≤ prior-up threshold AND current high > current low AND (current close − current low) / (current high − current low) ≥ strong-close threshold AND current close − current open > previous close − previous open AND current close ≥ price floor AND current volume ≥ volume threshold AND risk percentage ≤ average daily range / current close × 100

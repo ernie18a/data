@@ -1,0 +1,3 @@
+Calculation: Weekly POC = Divide the price range of a week into 50 equal bins. Using lower-timeframe bars within the week, split each bar’s volume equally among the bins spanned by its low and high; the POC is the midpoint of the bin with the greatest accumulated volume. Use the current forming week’s bars for its POC and completed weeks’ bars for their POCs.
+Long: Close > a weekly POC
+Short: Close <= a weekly POC

@@ -1,0 +1,5 @@
+Calculation: Stochastic RSI K = on its calculation-timeframe bars, smooth the stochastic of RSI over the RSI lookback with the K smoothing lookback; use the last completed bar.
+Long: flat position AND long entries enabled AND within the configured backtest date interval AND short-term Supertrend is bullish AND long-term Supertrend is bullish AND Stochastic RSI K crossed above its lower threshold within the preceding configured lookback of chart bars, excluding the current bar
+Short: flat position AND short entries enabled AND within the configured backtest date interval AND short-term Supertrend is bearish AND long-term Supertrend is bearish AND Stochastic RSI K crossed below its upper threshold within the preceding configured lookback of chart bars, excluding the current bar
+Exit: long, chart-bar close < short-term Supertrend
+Exit: short, chart-bar close > short-term Supertrend

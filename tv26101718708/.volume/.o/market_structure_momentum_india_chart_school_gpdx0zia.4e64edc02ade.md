@@ -1,0 +1,4 @@
+Calculation: Major swing high/low = confirmed pivot high/low using a longer lookback than internal swings; available after the right-side lookback bars close
+Calculation: Internal swing high/low = confirmed pivot high/low using a shorter lookback than major swings; available after the right-side lookback bars close
+Long: close > latest unbroken major swing high OR (close > latest unbroken internal swing high AND latest internal swing high != latest major swing high)
+Short: close < latest unbroken major swing low OR (close < latest unbroken internal swing low AND latest internal swing low != latest major swing low)

@@ -1,0 +1,8 @@
+Calculation: RSI short = RSI with a shorter lookback than RSI long; calculate each on the specified bars using close.
+Calculation: Cycle zone = apply these ordered rules: 1 if RSI short > RSI long, MACD > signal, MACD < 0, and RSI short < 30; 2 if RSI short > RSI long, MACD > signal, and 30 ≤ RSI short < 50; 3 if RSI short > RSI long, MACD > signal, and 50 ≤ RSI short < 70; 4 if RSI short > RSI long, MACD > signal, and RSI short ≥ 70; 5 if RSI short < RSI long, MACD < signal, MACD > 0, and RSI short > 70; 6 if RSI short < RSI long, MACD < signal, and 50 ≤ RSI short < 70; 7 if RSI short < RSI long, MACD < signal, and 30 ≤ RSI short < 50; 8 if RSI short < RSI long, MACD < signal, and RSI short < 30; otherwise neutral. MACD and signal use the same standard MACD calculation.
+Long: Chart-timeframe cycle zone is 1–4 AND differs from the previous non-neutral chart-timeframe cycle zone AND direction-timeframe cycle zone is 1–4.
+Short: Chart-timeframe cycle zone is 5–8 AND differs from the previous non-neutral chart-timeframe cycle zone AND direction-timeframe cycle zone is 5–8.
+Long: Entry-timeframe RSI short crosses above RSI long AND entry-timeframe MACD crosses above its signal AND chart close > entry-timeframe VWAP.
+Short: Entry-timeframe RSI short crosses below RSI long AND entry-timeframe MACD crosses below its signal AND chart close < entry-timeframe VWAP.
+Exit: Long, exit-timeframe RSI short < RSI long AND exit-timeframe MACD crosses below its signal AND exit-timeframe RSI short < 50 AND exit-timeframe close < exit-timeframe VWAP.
+Calculation: For aggregated timeframes, use the last completed bar; use chart-timeframe bars for the setup zone and chart close. The direction, entry, and exit calculations use their respective aggregated bars.

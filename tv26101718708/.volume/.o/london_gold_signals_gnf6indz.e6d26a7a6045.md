@@ -1,0 +1,6 @@
+Calculation: Previous completed Asia-session high/low = maximum high/minimum low during the immediately preceding 18:00–02:00 ET Asia session
+Calculation: 8:30 ET high/low = high/low of the 08:30–08:31 ET bar, using that bar while it is still forming
+Calculation: Bullish votes = count of true conditions: close > previous completed Asia-session high; close > current-session VWAP; close is within an ATR-based threshold of the 8:30 ET low and not within that threshold of its high
+Calculation: Bearish votes = count of true conditions: close < previous completed Asia-session low; close < current-session VWAP; close is within an ATR-based threshold of the 8:30 ET high
+Long: close > previous completed Asia-session high OR close > current-session VWAP OR close is within an ATR-based threshold of the 8:30 ET low and not within that threshold of its high OR bullish votes > bearish votes
+Short: close < previous completed Asia-session low OR close < current-session VWAP OR close is within an ATR-based threshold of the 8:30 ET high OR bearish votes > bullish votes

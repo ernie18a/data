@@ -1,0 +1,2 @@
+Calculation: Close strength = 100 × (close − low) / (high − low), or 0 when high = low
+Long: Earnings actual is available on this bar or the previous bar AND gap percentage = 100 × (open − previous close) / previous close ≥ configured minimum gap percentage AND volume ≥ 20-bar simple moving average of volume × configured volume multiplier AND close > 200-bar simple moving average of close AND close strength ≥ configured minimum close strength AND no PEG trigger occurred within the previous bar

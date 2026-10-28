@@ -1,0 +1,4 @@
+Long: In crossover mode, close crosses above the main moving average; OR in full-candle-confirmation mode, after close crosses above it and before an opposite cross or invalid trend filter, open, high, low, and close are all above it; if enabled, main moving average > trend moving average, whose lookback is longer
+Short: In crossover mode, close crosses below the main moving average; OR in full-candle-confirmation mode, after close crosses below it and before an opposite cross or invalid trend filter, open, high, low, and close are all below it; if enabled, main moving average < trend moving average, whose lookback is longer
+Exit: Long, close crosses below the main moving average
+Exit: Short, close crosses above the main moving average

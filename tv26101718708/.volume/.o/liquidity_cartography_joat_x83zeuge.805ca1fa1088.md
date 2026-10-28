@@ -1,0 +1,9 @@
+Calculation: Prior-day high/low = high/low of the last completed daily bar
+Calculation: Prior-week high/low = high/low of the last completed weekly bar
+Calculation: Confirmed pivot high/low = a high/low with the same lookback on both sides; use the most recent confirmed pivot for structure breaks
+Calculation: Displacement = candle body larger than its moving average times a multiplier, or a gap (up: current low > previous high; down: current high < previous low)
+Calculation: Relative volume = current-bar volume divided by its moving average
+Long: On a completed bar, low < prior-day low AND close > prior-day low, OR low < prior-week low AND close > prior-week low
+Long: The most recent qualifying lower sweep is within its confirmation window AND close > the most recent confirmed pivot high AND previous close <= that pivot high AND (bullish displacement OR current close > current-timeframe EMA AND current close > higher-timeframe EMA from the last completed higher-timeframe bar) AND relative volume is above its threshold AND RSI is above its bullish threshold AND datetime is within the configured session
+Short: On a completed bar, high > prior-day high AND close < prior-day high, OR high > prior-week high AND close < prior-week high
+Short: The most recent qualifying upper sweep is within its confirmation window AND close < the most recent confirmed pivot low AND previous close >= that pivot low AND (bearish displacement OR current close < current-timeframe EMA AND current close < higher-timeframe EMA from the last completed higher-timeframe bar) AND relative volume is above its threshold AND RSI is below its bearish threshold AND datetime is within the configured session

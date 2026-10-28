@@ -1,0 +1,8 @@
+Calculation: Prior high/low = highest high / lowest low over the trigger lookback bars before the current bar
+Calculation: Trend slope = current trend EMA minus its value five bars earlier
+Calculation: Candle body in ATR = absolute(close − open) divided by ATR
+Calculation: Long risk shelf = lowest low over the trigger lookback bars before the trigger minus trigger-time ATR × risk buffer; short risk shelf = highest high over those bars plus trigger-time ATR × risk buffer
+Long: selected side is Long Context OR (selected side is Auto AND close ≥ trend EMA AND trend slope ≥ 0); no active setup AND trigger cooldown ready AND ((selected trigger model is Range Break AND close > prior high AND previous close ≤ prior high) OR (selected trigger model is Impulse Close AND close > open AND close > previous high AND candle body in ATR ≥ impulse threshold AND close ≥ trend EMA) OR (selected trigger model is Trend Reclaim AND close > trend EMA AND previous close ≤ previous trend EMA)
+Short: selected side is Short Context OR (selected side is Auto AND NOT (close ≥ trend EMA AND trend slope ≥ 0)); no active setup AND trigger cooldown ready AND ((selected trigger model is Range Break AND close < prior low AND previous close ≥ prior low) OR (selected trigger model is Impulse Close AND close < open AND close < previous low AND candle body in ATR ≥ impulse threshold AND close ≤ trend EMA) OR (selected trigger model is Trend Reclaim AND close < trend EMA AND previous close ≥ previous trend EMA)
+Exit: Long, low ≤ long risk shelf
+Exit: Short, high ≥ short risk shelf

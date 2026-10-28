@@ -1,0 +1,1 @@
+At each confirmed month-end, calculate the traded instrument’s regime from an external TIPS bond ETF: average its total returns over the prior 1, 3, 6, and 12 months. If the average is above zero, go long or remain long the risk asset; if it is zero or below, exit or switch to a defensive holding. Act when the regime changes.

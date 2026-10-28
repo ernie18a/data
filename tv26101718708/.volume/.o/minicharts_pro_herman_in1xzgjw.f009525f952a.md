@@ -1,0 +1,2 @@
+Long: On each configured mini-chart timeframe, using the two most recent completed bars, (newer high > older high AND newer low >= older low AND newer close > older high) OR (newer low < older low AND newer high <= older high AND newer close >= older low)
+Short: On each configured mini-chart timeframe, using the two most recent completed bars, (newer high > older high AND newer low >= older low AND newer close <= older high) OR (newer low < older low AND newer high <= older high AND newer close < older low)

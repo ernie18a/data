@@ -1,0 +1,1 @@
+Exit the iron condor when its selected mandatory exit time is reached.

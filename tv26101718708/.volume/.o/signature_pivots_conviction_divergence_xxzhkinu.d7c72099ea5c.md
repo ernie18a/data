@@ -1,0 +1,5 @@
+Calculation: On-balance volume = previous on-balance volume plus volume when close rises, minus volume when close falls, unchanged when close is unchanged
+Calculation: Confirmed swing high = a bar whose high is highest across N bars before and N bars after it; confirmed N bars later
+Calculation: Confirmed swing low = a bar whose low is lowest across N bars before and N bars after it; confirmed N bars later
+Long: confirmed swing low AND (no previous kept pivot OR its price is at least the configured minimum swing size in ATRs from the previous kept pivot) AND its price is lower than the previous kept swing low AND its on-balance volume is higher than on-balance volume at the previous kept swing low
+Short: confirmed swing high AND (no previous kept pivot OR its price is at least the configured minimum swing size in ATRs from the previous kept pivot) AND its price is higher than the previous kept swing high AND its on-balance volume is lower than on-balance volume at the previous kept swing high

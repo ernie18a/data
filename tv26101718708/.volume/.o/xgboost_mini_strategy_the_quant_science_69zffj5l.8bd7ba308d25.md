@@ -1,0 +1,4 @@
+Calculation: Bullish probability = probability of an upward move two bars later, predicted by an XGBoost binary classifier retrained every 50 bars after bar 300 on the 50 most recent labeled observations; its inputs are 14-period RSI divided by 100, percentage distance from the 50-period EMA, 5-period ROC divided by 10, 14-period ATR divided by close, volume divided by its 20-period SMA minus 1, and close’s position within the 14-bar high-low range (use 0.5 for a zero-width range)
+Calculation: Trailing stop = 90% of the highest high since entry, initialized at 90% of the entry price and never allowed to decrease
+Long: bullish probability > threshold AND close > 15-period SMA AND at least 301 bars have elapsed AND no position is open AND more than 1 bar has elapsed since the previous exit
+Exit: Long, (bullish probability < 1 − threshold AND close > entry price AND more than 3 bars have elapsed since entry) OR (low <= trailing stop, except on the entry bar)

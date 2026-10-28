@@ -1,0 +1,3 @@
+Calculation: Supertrend trend = use either the synthetic strategy OHLC or Nifty spot OHLC, according to the selected source; calculate ATR and basic bands as midpoint ± factor × ATR, where midpoint = (high + low) / 2; carry the upper band forward unless the new upper band is lower or the previous close is above the prior upper band, and carry the lower band forward unless the new lower band is higher or the previous close is below the prior lower band; trend switches from down to up when close > upper band and from up to down when close < lower band, otherwise it retains the previous trend
+Long: Supertrend trend changes from down to up
+Short: Supertrend trend changes from up to down

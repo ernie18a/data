@@ -1,0 +1,5 @@
+Calculation: Market-state vector = ATR-normalized distance from VWAP, trend efficiency (absolute net change divided by summed absolute changes), short-term ATR relative to longer-term ATR, volume relative to its moving average, and momentum; clamp each component to a bounded range.
+Calculation: Current node = the learned map node with the smallest Euclidean distance to the market-state vector. Train the map on each confirmed bar: move the winning node and nearby grid nodes toward the vector, with Gaussian weighting by grid distance and an annealing neighborhood radius and learning rate.
+Calculation: Node bias = exponentially smoothed, ATR-normalized forward return for bars assigned to that node; update each assignment after its forward-return horizon completes.
+Long: Current node bias > positive directional threshold
+Short: Current node bias < negative directional threshold

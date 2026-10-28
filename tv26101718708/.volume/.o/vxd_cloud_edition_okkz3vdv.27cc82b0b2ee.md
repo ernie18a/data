@@ -1,0 +1,7 @@
+Calculation: Confirmed pivot high/low = the latest high/low confirmed as a pivot using the same lookback bars before and after it.
+Calculation: Cloud high/low = the maximum/minimum of the fast EMA of close, the smoothed linear regression of close, and AlphaTrend from two bars earlier. AlphaTrend uses Supertrend in pivot entry modes and an RSI/ATR trail in Cloud-MA mode.
+Calculation: Cloud trend = bullish when Cloud-MA has risen for two bars, bearish when it has fallen for two bars; Cloud-MA trails the cloud low when Andean bull exceeds bear, trails the cloud high when Andean bear exceeds bull, and otherwise holds its prior value.
+Long: (close > confirmed pivot high AND close > cloud high) OR (close > confirmed pivot high AND close > cloud high AND smoothed linear regression has risen for two bars) OR (cloud trend is bullish AND close > cloud high)
+Short: (close < confirmed pivot low AND close < cloud low) OR (close < confirmed pivot low AND close < cloud low AND smoothed linear regression has fallen for two bars) OR (cloud trend is bearish AND close < cloud low)
+Exit: Long, (cloud trend changes to bearish) OR (close < cloud low AND close < confirmed pivot low)
+Exit: Short, (cloud trend changes to bullish) OR (close > cloud high AND close > confirmed pivot high)

@@ -1,0 +1,5 @@
+Calculation: ST pivot length = volatility-adjusted base length; MT pivot length = 3 × ST pivot length; LT pivot length = 3 × MT pivot length.
+Calculation: Confirmed pivot high/low = a high/low greater/less than the highs/lows of the same number of bars on both sides; confirmation occurs after the bars on the right have completed.
+Calculation: Pivot confidence = average structural scores of the k historical pivots nearest by the sum of absolute differences in relative ATR and relative volume; use 0.5 when history contains no more than k pivots. Relative ATR = ATR divided by its moving average; relative volume = volume divided by its moving average. Historical structural scores are 1.
+Long: confirmed ST, MT, or LT pivot high with pivot confidence ≥ confidence threshold OR close > active ST, MT, or LT structure high.
+Short: confirmed ST, MT, or LT pivot low with pivot confidence ≥ confidence threshold OR close < active ST, MT, or LT structure low.

@@ -1,0 +1,1 @@
+Go long when the instrument’s market price is about 10% below its synthetic NAV, calculated from the external uranium spot price and the trust’s uranium holdings per share.

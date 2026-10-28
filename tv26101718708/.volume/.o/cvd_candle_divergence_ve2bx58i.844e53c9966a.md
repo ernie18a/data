@@ -1,0 +1,3 @@
+Calculation: CVD candle = cumulative lower-timeframe signed volume within each session, resetting at the session boundary; volume is positive when the lower-timeframe close is above its open, negative when below, and for a doji follows the direction of its close versus the prior lower-timeframe close, retaining the prior direction if equal (initial direction positive). Its open is the cumulative value at the chart bar's start or session reset; its close is the value after that bar's lower-timeframe volumes.
+Long: close < open AND CVD candle close > CVD candle open
+Short: close > open AND CVD candle close < CVD candle open

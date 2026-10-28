@@ -1,0 +1,2 @@
+Long: current bar low < previous completed bar low AND current bar close > previous completed bar low AND current bar volume > SMA of volume × a multiplier
+Short: current bar high > previous completed bar high AND current bar close < previous completed bar high AND current bar volume > SMA of volume × a multiplier

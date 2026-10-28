@@ -1,0 +1,7 @@
+Calculation: Wave = SMA over the smoothing lookback of 100 × (ZLEMA(close) − lowest(low, stochastic lookback)) / (highest(high, stochastic lookback) − lowest(low, stochastic lookback)); ZLEMA(src, length) = EMA(2 × src − src lagged by floor((length − 1) / 2), length)
+Calculation: Money Flow = 100 × EMA(volume × (close − open) / (high − low), lookback) / EMA(volume, lookback)
+Calculation: Prior-bar average volume = SMA(volume, 20) ending on the previous bar
+Calculation: Bullish divergence = when a Wave pivot low is confirmed, its pivot-bar low is below the previous confirmed Wave pivot low's pivot-bar low, its Wave value is above that previous pivot's Wave value and below 50, and the two pivot bars are no more than the maximum pivot gap apart
+Calculation: Bearish divergence = when a Wave pivot high is confirmed, its pivot-bar high is above the previous confirmed Wave pivot high's pivot-bar high, its Wave value is below that previous pivot's Wave value and above 50, and the two pivot bars are no more than the maximum pivot gap apart
+Long: Wave > oversold level AND prior Wave ≤ oversold level AND Money Flow > 0 AND close > open OR Wave > 50 AND prior Wave ≤ 50 AND Money Flow > 0 AND volume / prior-bar average volume ≥ volume multiplier OR bullish divergence
+Short: Wave < overbought level AND prior Wave ≥ overbought level AND Money Flow ≤ 0 AND close < open OR Wave < 50 AND prior Wave ≥ 50 AND Money Flow ≤ 0 AND volume / prior-bar average volume ≥ volume multiplier OR bearish divergence

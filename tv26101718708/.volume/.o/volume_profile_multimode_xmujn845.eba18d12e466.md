@@ -1,0 +1,3 @@
+Calculation: Per-bin net volume delta = sum of lower-timeframe sub-bar volume signed positive when close > open, negative when close < open, and zero when equal, allocated to the profile’s price bins by the selected volume-distribution method; the profile includes bars through the current bar, including a forming bar when active, or only completed bars when finalized.
+Long: Per-bin net volume delta > 0
+Short: Per-bin net volume delta < 0

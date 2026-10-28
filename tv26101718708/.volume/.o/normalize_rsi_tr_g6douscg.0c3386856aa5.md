@@ -1,0 +1,3 @@
+Calculation: normalized RSI = subtract 50 from the close-based RSI, smooth it with a moving average, clip it symmetrically, min-max normalize over a lookback, exponentially smooth it, min-max normalize again over the same lookback, exponentially smooth again with the same factor, then subtract 50
+Long: normalized RSI crosses above the oversold level
+Short: normalized RSI crosses below the overbought level

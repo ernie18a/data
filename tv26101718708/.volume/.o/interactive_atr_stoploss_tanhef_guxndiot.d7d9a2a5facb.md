@@ -1,0 +1,7 @@
+Calculation: ATR bands = selected moving average of true range times a multiplier, added to the upper-band source for the upper band and subtracted from the lower-band source for the lower band
+Calculation: Trailing stop = for a long, the highest lower ATR band since the selected start bar; for a short, the lowest upper ATR band since the selected start bar
+Calculation: Profit target = either a selected fixed price or, for a long, the start-bar close plus a selected multiple of the distance from that close to the initial trailing stop; for a short, the start-bar close minus a selected multiple of the distance from that close to the initial trailing stop
+Exit: long, trailing is active AND (low < trailing stop when wick triggering is selected OR previous bar close < trailing stop when close triggering is selected)
+Exit: short, trailing is active AND (high > trailing stop when wick triggering is selected OR previous bar close > trailing stop when close triggering is selected)
+Exit: long, trailing is active AND profit target has not been hit before AND (high or low crosses the profit target when wick triggering is selected OR close crosses the profit target when close triggering is selected)
+Exit: short, trailing is active AND profit target has not been hit before AND (high or low crosses the profit target when wick triggering is selected OR close crosses the profit target when close triggering is selected)

@@ -1,0 +1,10 @@
+Calculation: Price slope = current linear-regression value of close over the divergence lookback minus its value one bar earlier
+Calculation: OBV = cumulative volume added when close rises, subtracted when close falls, and unchanged when close is unchanged
+Calculation: OBV slope = current linear-regression value of OBV over the same divergence lookback minus its value one bar earlier
+Calculation: Z-score = (close − its simple moving average) / its standard deviation, both over the same lookback
+Calculation: ATR percentile = selected percentile of ATR values in a rolling window; ATR uses a shorter lookback than that window
+Calculation: Higher-timeframe moving average = simple moving average of close on the higher timeframe, using its last completed bar
+Long: (price slope < 0 AND OBV slope > 0 AND close > the longer-lookback simple moving average AND the same conditions held on the prior bar AND cooldown passed) OR (the same divergence conditions AND cooldown passed AND ATR > its rolling-window percentile threshold AND within the US regular session AND daily-loss and rolling-drawdown kill switches inactive AND (z-score filter disabled OR |z-score| < threshold) AND close > higher-timeframe moving average AND not already long)
+Short: (price slope > 0 AND OBV slope < 0 AND close < the longer-lookback simple moving average AND the same conditions held on the prior bar AND cooldown passed) OR (the same divergence conditions AND cooldown passed AND ATR > its rolling-window percentile threshold AND within the US regular session AND daily-loss and rolling-drawdown kill switches inactive AND (z-score filter disabled OR |z-score| < threshold) AND close < higher-timeframe moving average AND not already short)
+Exit: long, low ≤ entry price − ATR × stop multiplier OR high ≥ entry price + ATR × profit multiplier OR bars since entry ≥ maximum OR ATR filter fails OR either kill switch activates
+Exit: short, high ≥ entry price + ATR × stop multiplier OR low ≤ entry price − ATR × profit multiplier OR bars since entry ≥ maximum OR ATR filter fails OR either kill switch activates

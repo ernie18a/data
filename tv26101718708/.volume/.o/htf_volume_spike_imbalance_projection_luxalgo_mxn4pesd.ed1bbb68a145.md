@@ -1,0 +1,4 @@
+Long: Current or last completed lower-timeframe bar within its higher-timeframe candle has volume > its lower-timeframe volume SMA × spike multiplier AND lower-timeframe close >= lower-timeframe open
+Short: Current or last completed lower-timeframe bar within its higher-timeframe candle has volume > its lower-timeframe volume SMA × spike multiplier AND lower-timeframe close < lower-timeframe open
+Long: At least 3 bullish volume spikes fall in the same price bin within the current forming or last completed higher-timeframe candle
+Short: At least 3 bearish volume spikes fall in the same price bin within the current forming or last completed higher-timeframe candle

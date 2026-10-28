@@ -1,0 +1,3 @@
+Calculation: Reversal threshold = configured point swing size when positive; otherwise configured ATR multiple × ATR
+Long: close >= lowest low since the prior confirmed swing + reversal threshold AND at least the configured minimum number of bars have elapsed since that swing
+Short: close <= highest high since the prior confirmed swing - reversal threshold AND at least the configured minimum number of bars have elapsed since that swing

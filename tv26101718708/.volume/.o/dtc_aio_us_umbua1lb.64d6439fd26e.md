@@ -1,0 +1,1 @@
+Long: On daily bars, close >= previous close * 1.05 AND volume >= configured minimum volume

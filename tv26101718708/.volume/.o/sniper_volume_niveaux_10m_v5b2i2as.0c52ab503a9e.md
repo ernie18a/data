@@ -1,0 +1,4 @@
+Calculation: Impulse range = (highest high over the lookback − lowest low over the lookback) / lowest low over the lookback
+Calculation: Average volume = simple moving average of volume
+Long: low = lowest low over the lookback AND Impulse range ≥ minimum impulse AND close > previous bar high AND volume > Average volume × volume multiplier AND close ≤ support + support proximity allowance
+Short: high = highest high over the lookback AND Impulse range ≥ minimum impulse AND close < previous bar low AND volume > Average volume × volume multiplier AND close ≥ resistance − resistance proximity allowance

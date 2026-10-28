@@ -1,0 +1,5 @@
+Calculation: Adaptive lookback = base lookback × long-term ATR / short-term ATR, bounded by the configured minimum and maximum
+Calculation: Regression center = least-squares linear regression of the price source over the adaptive lookback, evaluated at the current and preceding positions
+Calculation: Regression deviation = population standard deviation of the price source over the adaptive lookback
+Long: absolute difference between the regression center’s current and oldest values < regression deviation × flat-slope threshold AND previous close ≥ preceding regression center − regression deviation × signal-band multiplier AND current close < current regression center − regression deviation × signal-band multiplier
+Short: absolute difference between the regression center’s current and oldest values < regression deviation × flat-slope threshold AND previous close ≤ preceding regression center + regression deviation × signal-band multiplier AND current close > current regression center + regression deviation × signal-band multiplier

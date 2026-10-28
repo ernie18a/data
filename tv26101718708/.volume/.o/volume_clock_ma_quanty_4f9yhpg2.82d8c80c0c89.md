@@ -1,0 +1,3 @@
+Calculation: Volume Clock MA = volume-weighted average of the source price over a backward window containing a target volume equal to the window parameter times normal volume, where normal volume is the average volume of the preceding completed bars; include only the needed fraction of the oldest bar. Cap the window at the maximum-window parameter times the window parameter; if the target volume is not reached, use the volume-weighted average over the capped window. Use the current bar only after it is completed.
+Long: Close > Volume Clock MA AND previous close <= previous Volume Clock MA
+Short: Close < Volume Clock MA AND previous close >= previous Volume Clock MA

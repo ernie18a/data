@@ -1,0 +1,1 @@
+On the daily chart, enter a short position in the traded instrument when the benchmark’s long-window volume-weighted moving average crosses above its very-short-window Hull moving average. Exit the short when the benchmark’s short-window exponential moving average crosses above either its medium-window exponential moving average or its long-window volume-weighted moving average.

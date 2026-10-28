@@ -1,0 +1,1 @@
+When the market benchmark is above its own long-term moving average, go long the instrument if its long-term trend is rising, it recently showed strength above that trend, and its latest bar pulls back to the trend line within a volatility-based allowance before closing back above it. No exit decision is specified.

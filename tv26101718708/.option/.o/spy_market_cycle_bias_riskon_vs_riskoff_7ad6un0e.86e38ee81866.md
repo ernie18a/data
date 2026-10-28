@@ -1,0 +1,1 @@
+Use SPY’s daily trend as the market filter: go long the traded instrument when SPY’s 20-day EMA is above its 50-day EMA; when it is below, exit or avoid long positions and reduce risk. No short signal is specified.

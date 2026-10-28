@@ -1,0 +1,4 @@
+Calculation: CurrentRangePct = (highest high over the current N chart-timeframe bars, including the current bar − lowest low over those bars) / that lowest low
+Calculation: PriorRangePct = (highest high − lowest low over the immediately preceding N chart-timeframe bars) / that window’s lowest low
+Calculation: PriorVolumeAvg = average volume over M chart-timeframe bars ending N bars before the current bar
+Long: CurrentRangePct <= range threshold AND CurrentRangePct < PriorRangePct × squeeze factor AND average volume over the current M chart-timeframe bars < PriorVolumeAvg AND current close > highest high over the N chart-timeframe bars ending at the prior bar

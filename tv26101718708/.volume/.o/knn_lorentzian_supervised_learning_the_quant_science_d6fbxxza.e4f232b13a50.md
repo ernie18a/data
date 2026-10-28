@@ -1,0 +1,4 @@
+Calculation: Feature vector = min-max-normalized log return (close / prior close), close location value ((2 × close − high − low) / (high − low), or 0 when high = low), range width ((high − low) / close), and volume ratio (volume / prior volume)
+Calculation: k-NN signal = class with at least the configured confidence threshold among the k historical feature vectors nearest to the current vector by summed Lorentzian distance (sum of log(1 + absolute feature differences)); historical classes indicate whether price rose or fell over the target horizon
+Long: prior bar’s k-NN signal = +1 AND position side ≠ long
+Short: prior bar’s k-NN signal = −1 AND position side ≠ short

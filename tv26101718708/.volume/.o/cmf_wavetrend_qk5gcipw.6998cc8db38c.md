@@ -1,0 +1,8 @@
+Calculation: Chaikin Money Flow = sum of (volume-weighted close location within true range) divided by sum of volume weights over a lookback; true range uses the current high and low adjusted by the previous close, and volume weights may use a price factor and volume exponent
+Calculation: WaveTrend = first line is an EMA of the normalized difference between typical price and its EMA; second line is a shorter SMA of the first line
+Long: WaveTrend first line crosses above oversold level 1 AND WaveTrend first line > second line AND Chaikin Money Flow < long-entry threshold
+Short: WaveTrend first line crosses below overbought level 1 AND second line > first line AND Chaikin Money Flow > short-entry threshold
+Long: WaveTrend first line < oversold level 1 AND Chaikin Money Flow < a lower threshold AND WaveTrend first line > second line
+Short: (WaveTrend first line > overbought level 1 AND Chaikin Money Flow > a higher threshold) OR (WaveTrend first line > an upper extreme level AND second line > first line)
+Exit: long, Chaikin Money Flow from the previous bar crosses above the long-exit threshold OR price reaches the stop below the entry-signal bar open OR reaches the profit target above the entry-signal bar close
+Exit: short, Chaikin Money Flow from the previous bar crosses below the short-exit threshold OR price reaches the stop above the entry-signal bar open OR reaches the profit target below the entry-signal bar close

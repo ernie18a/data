@@ -1,0 +1,3 @@
+Calculation: Average volume = simple moving average of volume over a lookback
+Long: RSI is above the overbought level AND current volume is below average volume multiplied by a fraction AND current high is the highest high of the current and preceding lookback bars AND more than the cooldown period has passed since the previous long signal
+Short: RSI is below the oversold level AND current volume is below average volume multiplied by a fraction AND current low is the lowest low of the current and preceding lookback bars AND more than the cooldown period has passed since the previous short signal

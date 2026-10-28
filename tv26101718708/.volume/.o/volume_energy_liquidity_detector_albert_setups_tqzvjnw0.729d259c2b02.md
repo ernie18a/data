@@ -1,0 +1,4 @@
+Calculation: Last confirmed swing high = the high of the most recent bar whose high exceeds the highs of the swingLen bars before and after it; update only after the bars after it are complete.
+Calculation: Last confirmed swing low = the low of the most recent bar whose low is below the lows of the swingLen bars before and after it; update only after the bars after it are complete.
+Long: (low < last confirmed swing low AND close > last confirmed swing low AND close > open AND that swing low has not already been swept) OR (volume > simple moving average of volume over a lookback × a multiplier AND close > open)
+Short: (high > last confirmed swing high AND close < last confirmed swing high AND close < open AND that swing high has not already been swept) OR (volume > simple moving average of volume over a lookback × a multiplier AND close < open)

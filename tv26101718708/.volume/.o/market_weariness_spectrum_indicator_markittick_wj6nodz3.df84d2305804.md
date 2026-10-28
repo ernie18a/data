@@ -1,0 +1,6 @@
+Calculation: phantom volume = normalize(volume average over the lookback ÷ average absolute close-open over the lookback) to 0–100 using its rolling minimum and maximum over three lookbacks
+Calculation: directional hesitation = percentage of bars in the lookback whose absolute close-open is below the ATR times the hesitation threshold
+Calculation: effort density = normalize the lookback average of volume ÷ ATR to 0–100 using its rolling minimum and maximum over three lookbacks
+Calculation: weariness score = moving average of the weighted average of phantom volume, directional hesitation, and effort density, with weights normalized by their sum
+Long: weariness score two bars ago ≥ recovery threshold AND weariness score one bar ago < recovery threshold AND the maximum weariness score over the preceding confirmation window exceeds the critical exhaustion threshold
+Short: weariness score one bar ago < weariness score two bars ago AND weariness score two bars ago < weariness score three bars ago AND the maximum weariness score over the preceding confirmation window exceeds the critical exhaustion threshold AND weariness score one bar ago > recovery threshold AND more than the cooldown interval has elapsed since the last short signal

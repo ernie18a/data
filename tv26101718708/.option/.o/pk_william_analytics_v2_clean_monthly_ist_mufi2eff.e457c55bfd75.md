@@ -1,0 +1,1 @@
+Within the configured date range, enter long when a confirmed pivot low occurs, unless already long; enter short when a confirmed pivot high occurs, unless already short. Each opposite signal reverses the position and exits the prior one. Signal prices are the close at the pivot bar.

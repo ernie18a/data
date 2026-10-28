@@ -1,0 +1,4 @@
+Calculation: Momentum = linear regression, over a lookback, of close − (((highest high + lowest low) / 2 + simple moving average of close over the same lookback) / 2), using offset zero
+Calculation: Volume surge = close > open AND close > previous bar's high AND volume > a threshold multiple of its simple moving average
+Long: (close > long-term EMA AND Momentum > 0) OR ((close <= long-term EMA OR Momentum <= 0) AND (Volume surge OR (Momentum > 0 AND Momentum > previous bar's Momentum)))
+Short: close < long-term EMA AND NOT Volume surge AND NOT (Momentum > 0 AND Momentum > previous bar's Momentum)

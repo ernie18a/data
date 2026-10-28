@@ -1,0 +1,5 @@
+Calculation: Cumulative volume delta = running sum of lower-timeframe volume delta, reset at each anchor period; use the still-forming anchor period.
+Calculation: Price pivot low = a bar low lower than the lows of the specified number of bars on both sides; confirm it after the right-side bars have completed. Use the same left- and right-side lookbacks for price and CVD pivots.
+Calculation: Price pivot high = a bar high higher than the highs of the specified number of bars on both sides; confirm it after the right-side bars have completed. Use the same left- and right-side lookbacks for price and CVD pivots.
+Long: Current confirmed price pivot low < previous confirmed price pivot low AND current confirmed CVD pivot low > previous confirmed CVD pivot low AND current chart bar is closed.
+Short: Current confirmed price pivot high > previous confirmed price pivot high AND current confirmed CVD pivot high < previous confirmed CVD pivot high AND current chart bar is closed.

@@ -1,0 +1,4 @@
+Calculation: Latest unswept pivot low = the latest confirmed pivot low, where the pivot bar has the lowest low across equal lookbacks before and after it; clear it after a bullish sweep
+Calculation: Latest unswept pivot high = the latest confirmed pivot high, where the pivot bar has the highest high across equal lookbacks before and after it; clear it after a bearish sweep
+Long: low < latest unswept pivot low AND close > latest unswept pivot low OR low > high two bars ago AND previous close > previous open
+Short: high > latest unswept pivot high AND close < latest unswept pivot high OR high < low two bars ago AND previous close < previous open

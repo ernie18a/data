@@ -1,0 +1,5 @@
+Calculation: Opening-range high/low = highest high/lowest low during the initial session range, using its completed bars.
+Calculation: Session AVWAP = cumulative sum of (high + low + close) / 3 multiplied by volume, divided by cumulative volume from session start through its cutoff; reset each session and hold the last value afterward.
+Calculation: Close and volume moving averages use the same lookback.
+Long: opening range is complete AND close crosses above opening-range high AND close > session AVWAP AND close > close moving average AND close moving average > its prior-bar value AND volume > volume moving average × threshold AND NOT (high > opening-range high AND close < opening-range high)
+Short: opening range is complete AND close crosses below opening-range low AND close < session AVWAP AND close < close moving average AND close moving average < its prior-bar value AND volume > volume moving average × threshold AND NOT (low < opening-range low AND close > opening-range low)

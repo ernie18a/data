@@ -1,0 +1,3 @@
+Calculation: Period-anchored VWAP = cumulative typical price × volume divided by cumulative volume since the period began; typical price = (high + low + close) / 3. Use the current, still-forming period. For the weekly VWAP, calculate from 5-minute bars; for the monthly VWAP, from 15-minute bars; for the quarterly, half-year, and yearly VWAPs, from 60-minute bars. The daily VWAP uses chart-timeframe bars; the shorter intraday VWAPs use chart-timeframe bars.
+Long: Close >= any 5-minute, 15-minute, 30-minute, 1-hour, 2-hour, 4-hour, daily, weekly, monthly, quarterly, half-year, or yearly period-anchored VWAP
+Short: Close < any 5-minute, 15-minute, 30-minute, 1-hour, 2-hour, 4-hour, daily, weekly, monthly, quarterly, half-year, or yearly period-anchored VWAP

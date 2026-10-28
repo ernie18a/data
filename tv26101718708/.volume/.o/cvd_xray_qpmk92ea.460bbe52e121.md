@@ -1,0 +1,3 @@
+Calculation: CVD X-Ray histogram = Smooth the OHLCV-estimated buy-minus-sell delta with an EMA, normalize it by a longer EMA of its absolute value, and clamp it. Combine this normalized pressure with a double-smoothed momentum oscillator’s smoothed acceleration: weight pressure, add a boost when pressure and acceleration agree, and reduce it when they oppose. Apply the configured chop, ignition, sustain, exhaustion-decay, tail-cleanup, and reset adjustments, then smooth and clamp the result. Estimate delta using the selected directional, candle-anatomy, or hybrid method.
+Long: CVD X-Ray histogram ≥ bullish threshold AND CVD X-Ray histogram > its previous value
+Short: CVD X-Ray histogram ≤ bearish threshold AND CVD X-Ray histogram < its previous value

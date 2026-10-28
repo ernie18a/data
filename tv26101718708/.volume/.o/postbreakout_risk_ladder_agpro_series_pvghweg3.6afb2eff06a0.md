@@ -1,0 +1,7 @@
+Calculation: Base high = highest high of the preceding lookback bars, excluding the current bar
+Calculation: Base low = lowest low of the preceding lookback bars, excluding the current bar
+Calculation: Safe ATR = ATR, falling back to true range if unavailable, with a minimum of one tick
+Long: Base range is between the minimum and maximum allowed multiples of Safe ATR AND close > base high + break buffer × Safe ATR AND previous close ≤ base high + break buffer × Safe ATR AND absolute(close − open) / max(high − low, one tick) ≥ minimum body ratio AND volume / average volume over the relative-volume lookback ≥ minimum relative volume
+Short: Base range is between the minimum and maximum allowed multiples of Safe ATR AND close < base low − break buffer × Safe ATR AND previous close ≥ base low − break buffer × Safe ATR AND absolute(close − open) / max(high − low, one tick) ≥ minimum body ratio AND volume / average volume over the relative-volume lookback ≥ minimum relative volume
+Exit: Long, close < breakout edge − Safe ATR × (retest shelf multiple + invalidation buffer multiple) OR breakout age > maximum age
+Exit: Short, close > breakout edge + Safe ATR × (retest shelf multiple + invalidation buffer multiple) OR breakout age > maximum age

@@ -1,0 +1,6 @@
+Calculation: Buy volume = volume × (close − low) ÷ (high − low), or 0 when high = low
+Calculation: Sell volume = volume × (high − close) ÷ (high − low), or 0 when high = low
+Long: close > narrower upper Bollinger Band AND high > wider upper Bollinger Band AND buy volume > sell volume AND buy volume > longer-lookback average volume AND close > short-lookback SMA AND medium-lookback SMA > long-lookback SMA AND RSI < its upper threshold
+Short: close < narrower lower Bollinger Band AND close < wider lower Bollinger Band AND sell volume > buy volume AND sell volume > shorter-lookback average volume AND close < short-lookback SMA AND medium-lookback SMA crosses below long-lookback SMA
+Exit: Long, close > entry price by the fixed profit target OR close is within the largest specified trailing threshold below the current bar's high AND close > entry price by the minimum profit threshold OR open profit < 90% of entry price − close OR close < 90% of entry price
+Exit: Short, close < entry price by the fixed profit target

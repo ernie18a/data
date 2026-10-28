@@ -1,0 +1,13 @@
+Calculation: Smoothed Stochastic RSI = apply RSI to the configured price source, calculate the stochastic of that RSI, then smooth it with the configured moving average; D is the simple moving average of K.
+Calculation: High anchored VWAP = volume-weighted average of the configured VWAP price (high or HLC3) since the active high anchor. Reset the candidate high anchor to the current high and restart its candidate VWAP when D is below the lower band or the current high exceeds the candidate high. When the tracked high exceeds the candidate high, state is overbought, and K is below both D and the lower reversal level, set the tracked high to the candidate high and use the candidate VWAP as the active high VWAP. The tracked high updates to new highs and restarts its active VWAP when exceeded.
+Calculation: Low anchored VWAP = volume-weighted average of the configured VWAP price (low or HLC3) since the active low anchor. Reset the candidate low anchor to the current low and restart its candidate VWAP when D is above the upper band or the current low is below the candidate low. When the tracked low is below the candidate low, state is oversold, and K is above both D and the upper reversal level, set the tracked low to the candidate low and use the candidate VWAP as the active low VWAP. The tracked low updates to new lows and restarts its active VWAP when exceeded.
+Calculation: ATR = average true range over the configured lookback.
+Long: Alert price (configured open or close) > high anchored VWAP AND within the configured date range AND (trend filter disabled OR close > configured moving average of the specified timeframe's current bar) AND (volume filter disabled OR volume > volume simple moving average over the configured lookback × configured multiplier) AND cooldown inactive AND position flat or short.
+Short: Alert price (configured open or close) < low anchored VWAP AND within the configured date range AND shorts enabled AND (trend filter disabled OR close < configured moving average of the specified timeframe's current bar) AND (volume filter disabled OR volume > volume simple moving average over the configured lookback × configured multiplier) AND cooldown inactive AND position flat or long.
+Exit: Long, alert price < low anchored VWAP AND minimum hold disabled or minimum hold elapsed.
+Exit: Short, alert price > high anchored VWAP AND minimum hold disabled or minimum hold elapsed.
+Exit: Long, low ≤ entry close − ATR × configured multiplier.
+Exit: Short, high ≥ entry close + ATR × configured multiplier.
+Exit: Long, high ≥ average entry price × (1 + configured take-profit percentage).
+Exit: Short, low ≤ average entry price × (1 − configured take-profit percentage).
+Exit: Long or short, date range has ended.

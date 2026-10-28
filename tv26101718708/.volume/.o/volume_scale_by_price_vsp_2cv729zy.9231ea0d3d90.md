@@ -1,0 +1,2 @@
+Long: current chart-bar close > previous chart-bar close OR current selected-timeframe close > previous selected-timeframe close
+Short: current chart-bar close < previous chart-bar close OR current selected-timeframe close < previous selected-timeframe close

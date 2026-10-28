@@ -1,0 +1,11 @@
+Calculation: RSI(7) = 7-period relative strength index of close, calculated on the configured indicator timeframe’s still-forming bar
+Calculation: Technical rating = mean of (the mean moving-average rating and mean oscillator rating); each component rates its bullish conditions +1, bearish conditions −1, otherwise 0, using the TradingView Technical Ratings rules
+Calculation: Safety-order price = previous order price × (1 − deviation) for long or × (1 + deviation) for short; deviation grows geometrically from the initial price deviation by the safety-order step scale
+Calculation: Take-profit level = average position price × (1 + take-profit percentage) for long or × (1 − take-profit percentage) for short when based on total volume; otherwise use base-order price in place of average position price
+Calculation: Stop-loss level = base-order price × (1 − stop-loss percentage) for long or × (1 + stop-loss percentage) for short
+Long: no open trades AND (start condition is Start ASAP AND close > 0 OR start condition is RSI-7 AND RSI(7) < configured threshold OR start condition is TV presets AND Technical rating > configured strength bound)
+Long: long position AND low <= next safety-order price
+Short: no open trades AND (start condition is Start ASAP AND close > 0 OR start condition is RSI-7 AND RSI(7) > configured threshold OR start condition is TV presets AND Technical rating < −configured strength bound)
+Short: short position AND high >= next safety-order price
+Exit: long, low < stop-loss level AND stop-loss percentage > maximum safety-order deviation AND trailing take-profit is inactive OR take-profit percentage is zero AND high >= take-profit level OR trailing take-profit is enabled AND take-profit level has been reached AND low <= trailing extremum × (1 − trailing percentage)
+Exit: short, high > stop-loss level AND stop-loss percentage > maximum safety-order deviation AND trailing take-profit is inactive OR take-profit percentage is zero AND low <= take-profit level OR trailing take-profit is enabled AND take-profit level has been reached AND high >= trailing extremum × (1 + trailing percentage)

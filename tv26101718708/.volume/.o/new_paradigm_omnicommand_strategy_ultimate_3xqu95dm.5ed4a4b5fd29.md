@@ -1,0 +1,10 @@
+Calculation: Configured trend moving average = configured SMA or EMA of close
+Calculation: Hourly trend moving average = EMA of close on the last completed hourly bar
+Calculation: Daily expected move = current forming daily open × (last completed daily volatility-index close / 100) × √(1 / days per year)
+Calculation: Upper daily wall = current forming daily open + daily expected move
+Calculation: Lower daily wall = current forming daily open − daily expected move
+Calculation: ATR stop distance = the smaller of ATR × configured multiplier and the configured maximum stop distance
+Long: current close > current configured trend moving average AND previous close ≤ previous configured trend moving average AND current volume > its configured lookback average × configured multiplier AND current time is within the configured trading session when the time filter is enabled AND ADX > configured threshold when the ADX filter is enabled AND current close > hourly trend moving average AND RSI < configured upper threshold AND upper daily wall − current close > configured clearance threshold
+Short: current close < current configured trend moving average AND previous close ≥ previous configured trend moving average AND current volume > its configured lookback average × configured multiplier AND current time is within the configured trading session when the time filter is enabled AND ADX > configured threshold when the ADX filter is enabled AND current close < hourly trend moving average AND RSI > configured lower threshold AND current close − lower daily wall > configured clearance threshold
+Exit: Long, high ≥ entry price + configured take-profit distance OR low ≤ entry price − configured stop distance OR current time is outside the configured trading session when the time filter is enabled
+Exit: Short, low ≤ entry price − configured take-profit distance OR high ≥ entry price + configured stop distance OR current time is outside the configured trading session when the time filter is enabled

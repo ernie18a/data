@@ -1,0 +1,1 @@
+Compare the traded instrument’s return over a lookback period with an external index’s return over the same period. Go long when the instrument’s smoothed return is greater than the index’s smoothed return; exit the long when it is less. The strategy does not open short positions.

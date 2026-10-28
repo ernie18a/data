@@ -1,0 +1,3 @@
+Calculation: Positive and negative delta totals by price bucket = assign each chart bar’s lower-timeframe buy volume minus sell volume to the bucket containing its close, then sum positive values and absolute negative values separately across the lookback; divide the range from the lookback’s lowest low to highest high into equal buckets. Use lower-timeframe bars within each chart bar, including the still-forming bar when available, and include the current chart bar in the lookback.
+Long: Positive delta total at a price bucket >= negative delta total at the same bucket
+Short: Negative delta total at a price bucket > positive delta total at the same bucket

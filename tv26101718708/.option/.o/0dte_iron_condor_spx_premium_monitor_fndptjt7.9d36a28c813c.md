@@ -1,0 +1,1 @@
+For an open iron condor, monitor the combined premium of its put and call spreads. If the combined premium reaches or falls below the user’s stop-loss threshold, exit the position.

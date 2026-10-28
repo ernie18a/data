@@ -1,0 +1,1 @@
+Using the instrument’s Renko open and close, go long when the close crosses above the open and the date is in July–December of a year after 2018; go short when it crosses below under the same date condition. Attach a trailing stop to each position.

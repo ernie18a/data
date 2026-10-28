@@ -1,0 +1,6 @@
+Calculation: Money-flow RSI = RSI of the rolling sum of volume × HLC3 on bars where HLC3 rises and the rolling sum of volume × HLC3 on bars where HLC3 falls; both sums use the same lookback.
+Calculation: Smoothed money-flow RSI = EMA of money-flow RSI.
+Long: Smoothed money-flow RSI crosses below the oversold threshold AND datetime is within the configured backtest window.
+Short: Smoothed money-flow RSI crosses above the overbought threshold AND datetime is within the configured backtest window.
+Exit: Long, money-flow RSI on both the previous and current bar is above the long exit threshold OR low is at or below entry price / (1 + stop-loss percentage) OR, after high reaches entry price × (1 + take-profit percentage), low is at or below the highest high since activation minus the trail offset.
+Exit: Short, money-flow RSI on both the previous and current bar is below the short exit threshold OR high is at or above entry price × (1 + stop-loss percentage) OR, after low reaches entry price / (1 + take-profit percentage), high is at or above the lowest low since activation plus the trail offset.

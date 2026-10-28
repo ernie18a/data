@@ -1,0 +1,11 @@
+Calculation: Confirmed swing high/low = pivot high/low confirmed after the required left and right bars have completed
+Calculation: Bullish/bearish structure break = close crosses above the latest confirmed swing high / below the latest confirmed swing low
+Calculation: Bullish/bearish CHoCH = bullish/bearish structure break while the prior trend state is down/up; a bullish/bearish structure break sets the trend state up/down
+Calculation: Bullish/bearish order block = high and low of the nearest bearish/bullish candle in the preceding short lookback window when a bullish/bearish structure break occurs
+Calculation: Bullish/bearish sweep = low below the latest confirmed swing low and close above it / high above the latest confirmed swing high and close below it
+Calculation: Bullish/bearish order block retest = low at or below bullish order block high and close at or above its low minus half an ATR / high at or above bearish order block low and close at or below its high plus half an ATR
+Calculation: KNN features = RSI, volume divided by its longer-lookback average and capped at its maximum scale, and ADX scaled to its maximum scale
+Calculation: Historical outcome label = after the outcome lookahead, label a long episode as a win if its target was reached, otherwise as a loss if its stop was reached; label a short episode as a win if its target was reached, otherwise as a loss if its stop was reached; target is based on signal-bar low for long and signal-bar high for short, with stop distance equal to ATR times the stop multiplier and target distance equal to stop distance times the reward-to-risk ratio
+Calculation: KNN confidence = fraction of wins among the k stored episodes nearest to the current KNN features by summed log(1 + absolute feature differences); use only episodes whose outcome lookahead has elapsed and retain at most the configured history length
+Long: (bullish CHoCH OR bullish sweep) AND bullish order block retest AND at least k historical episodes are stored AND KNN confidence >= minimum confidence
+Short: (bearish CHoCH OR bearish sweep) AND bearish order block retest AND at least k historical episodes are stored AND KNN confidence >= minimum confidence

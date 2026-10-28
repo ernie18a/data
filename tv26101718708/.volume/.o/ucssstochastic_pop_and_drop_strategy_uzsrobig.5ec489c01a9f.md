@@ -1,0 +1,3 @@
+Calculation: Short-term smoothed stochastic = simple moving average of the stochastic oscillator; long-term smoothed stochastic = the same calculation with a longer stochastic lookback
+Long: short-term smoothed stochastic > its upper threshold AND its previous-bar value < that threshold AND long-term smoothed stochastic > its midpoint AND (ADX < its threshold if ADX confirmation is enabled) AND (volume > its moving average if volume confirmation is enabled)
+Short: short-term smoothed stochastic < its lower threshold AND its previous-bar value > that threshold AND long-term smoothed stochastic < its midpoint AND (ADX < its threshold if ADX confirmation is enabled) AND (volume > its moving average if volume confirmation is enabled)

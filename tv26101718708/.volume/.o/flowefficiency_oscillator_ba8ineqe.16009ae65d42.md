@@ -1,0 +1,6 @@
+Calculation: Net delta = sum of lower-timeframe volume × sign(change in lower-timeframe close from the prior lower-timeframe close) within the current chart bar; if their total volume is zero, use chart volume × sign(change in chart close from the prior chart close). Use lower-timeframe bars within the current chart bar, including bars still forming.
+Calculation: Total aggression = sum of lower-timeframe volume within the current chart bar; if zero, use chart volume.
+Calculation: Flow share = net delta / total aggression.
+Calculation: Cost percentile = percentile rank of the EMA-smoothed absolute net delta divided by max(tick travel, floor), where tick travel = max(floor, absolute change in chart close from the prior chart close divided by minimum tick). Use prior chart bars for the EMA and percentile lookback; the current chart bar may still be forming.
+Long: Cost percentile >= upper absorption threshold AND flow share <= negative one-sided-delta threshold
+Short: Cost percentile >= upper absorption threshold AND flow share >= one-sided-delta threshold

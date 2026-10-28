@@ -1,0 +1,3 @@
+Calculation: Finite Volume Element (FVE) = 100 × sum(volume × factor, lookback) / sum(volume, lookback), where factor is 1 if MF > cutoff × close, −1 if MF < −cutoff × close, and 0 otherwise; MF = close − (high + low)/2 + hlc3 − previous bar’s hlc3; cutoff = intra coefficient × stdev(sma(log(high) − log(low), lookback), lookback) + inter coefficient × stdev(sma(log(hlc3) − log(previous bar’s hlc3), lookback), lookback). Use the current bar and preceding bars in these same-timeframe calculations.
+Long: FVE > EMA(FVE) OR (FVE = EMA(FVE) AND the previous bar’s carried direction is long)
+Short: FVE < EMA(FVE) OR (FVE = EMA(FVE) AND the previous bar’s carried direction is short)

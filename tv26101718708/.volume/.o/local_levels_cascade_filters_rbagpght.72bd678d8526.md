@@ -1,0 +1,4 @@
+Calculation: Support/resistance level = the pivot low/high from the current timeframe, confirmed after the configured number of bars to its right; shift the pivot price upward by the configured percentage
+Calculation: Average volume = mean volume of the current and preceding 19 bars
+Long: On a confirmed bar, an enabled, unbroken resistance level is broken (close > level in close mode, otherwise high > level) AND its age in bars since confirmation meets the configured minimum (or no minimum is set) AND (volume filter is off OR volume on the pivot bar > average volume × configured multiplier)
+Short: On a confirmed bar, an enabled, unbroken support level is broken (close < level in close mode, otherwise low < level) AND its age in bars since confirmation meets the configured minimum (or no minimum is set) AND (volume filter is off OR volume on the pivot bar > average volume × configured multiplier)

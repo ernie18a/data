@@ -1,0 +1,4 @@
+Calculation: Swing high = highest high over the swing lookback
+Calculation: Swing low = lowest low over the swing lookback
+Long: close > EMA(longer lookback) AND EMA(shorter lookback) > EMA(longer lookback) AND ADX > trend-strength threshold AND low < previous bar’s swing low AND close > previous bar’s swing low AND volume > its simple moving average × volume multiplier AND RSI > upper threshold
+Short: close < EMA(longer lookback) AND EMA(shorter lookback) < EMA(longer lookback) AND ADX > trend-strength threshold AND high > previous bar’s swing high AND close < previous bar’s swing high AND volume > its simple moving average × volume multiplier AND RSI < lower threshold

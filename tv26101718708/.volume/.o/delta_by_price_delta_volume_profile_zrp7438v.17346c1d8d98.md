@@ -1,0 +1,3 @@
+Calculation: Price-bin delta = sum, over the selected profile window, of each parent bar’s net lower-timeframe volume delta divided evenly among the price bins touched by that bar’s high-low range; net delta adds lower-timeframe volume when close > open and subtracts it when close < open, ignoring equal closes. Use session bars, including the forming bar, or the configured number of last completed bars, according to the selected profile mode; include the available lower-timeframe bars for each parent bar.
+Long: Price-bin delta >= 0
+Short: Price-bin delta < 0

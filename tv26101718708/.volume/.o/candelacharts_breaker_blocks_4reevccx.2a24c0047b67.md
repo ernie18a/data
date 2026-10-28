@@ -1,0 +1,5 @@
+Calculation: Confirmed pivot high/low = a bar’s high/low that is higher/lower than the highs/lows of the same lookback on both sides.
+Calculation: Prior pivot low/high = the latest confirmed pivot low/high occurring before the pivot high/low being broken.
+Calculation: Lowest low/high since pivot high/low = the minimum low/maximum high from that pivot bar through the current bar.
+Long: close > an unbroken confirmed pivot high AND a prior pivot low exists AND the lowest low since the pivot high < the prior pivot low AND at least one bullish candle occurs from the pivot-high bar through the 20 bars before it
+Short: close < an unbroken confirmed pivot low AND a prior pivot high exists AND the highest high since the pivot low > the prior pivot high AND at least one bearish candle occurs from the pivot-low bar through the 20 bars before it

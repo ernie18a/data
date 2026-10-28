@@ -1,0 +1,8 @@
+Calculation: Reference pivot = most recent confirmed chart-timeframe pivot high or low; compare the current bar’s left-only pivot high or low with the corresponding high or low at the reference-pivot distance.
+Calculation: Qualifying divergence count = number of selected indicators among RSI, MACD, MACD histogram, momentum, CCI, OBV, smoothed stochastic, DI oscillator, VW-MACD, CMF, and MFI that meet the stated indicator comparison and, when enabled, have no cut-through of the straight line between their reference and current values.
+Calculation: Smoothed stochastic = 3-period SMA of the 14-period stochastic.
+Calculation: DI oscillator = 100 × 14-period RMA of (change in high + change in low) ÷ 14-period RMA of true range.
+Calculation: VW-MACD = shorter-lookback volume-weighted moving average of close − longer-lookback volume-weighted moving average of close.
+Calculation: Clear price path = every intervening close is at or below the straight line between the reference high and current pivot high, or at or above the straight line between the reference low and current pivot low, respectively.
+Long: Current left-only pivot low < reference low AND clear price path AND (qualifying divergence count with current indicator values > reference values >= minimum selected-indicator count OR qualifying divergence count with current indicator values < reference values >= minimum selected-indicator count).
+Short: Current left-only pivot high > reference high AND clear price path AND (qualifying divergence count with current indicator values < reference values >= minimum selected-indicator count OR qualifying divergence count with current indicator values > reference values >= minimum selected-indicator count).

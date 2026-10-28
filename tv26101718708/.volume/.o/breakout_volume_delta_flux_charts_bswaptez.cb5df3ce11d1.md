@@ -1,0 +1,5 @@
+Calculation: Swing high level = the high of a completed swing-timeframe bar that is strictly higher than the highs of the configured number of preceding and following completed swing-timeframe bars; create the level once the following bars are complete.
+Calculation: Swing low level = the low of a completed swing-timeframe bar that is strictly lower than the lows of the configured number of preceding and following completed swing-timeframe bars; create the level once the following bars are complete.
+Calculation: Bullish volume dominance = volume from lower-timeframe bars inside the current bar that close above their open, divided by the total volume from those bars that close above or below their open; if the total is zero, use 0.5. Bearish volume dominance = 1 − bullish volume dominance.
+Long: Current high > an unbroken swing high level in wick mode, or current close > that level in close mode, AND the volume filter is disabled or bullish volume dominance > its threshold.
+Short: Current low < an unbroken swing low level in wick mode, or current close < that level in close mode, AND the volume filter is disabled or bearish volume dominance > its threshold.

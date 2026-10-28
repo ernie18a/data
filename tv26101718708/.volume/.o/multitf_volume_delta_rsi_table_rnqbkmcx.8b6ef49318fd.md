@@ -1,0 +1,5 @@
+Calculation: Buy volume = volume × (close − low) / (high − low); if high = low, volume / 2. Use each timeframe’s last completed bar.
+Calculation: Sell volume = volume × (high − close) / (high − low); if high = low, volume / 2. Use each timeframe’s last completed bar.
+Calculation: Buy-volume share = buy volume / (buy volume + sell volume); if the denominator is zero, 0.5.
+Long: The number of enabled timeframes among 5m, 15m, 30m, 75m, 240m, daily, weekly, and monthly where buy-volume share ≥ the delta threshold AND RSI of close < the overbought level is at least the minimum bullish timeframe count, AND this condition was false on the previous bar.
+Short: The number of enabled timeframes among 5m, 15m, 30m, 75m, 240m, daily, weekly, and monthly where (buy-volume share ≤ 1 − the delta threshold AND RSI of close > the oversold level) AND NOT (buy-volume share ≥ the delta threshold AND RSI of close < the overbought level) is at least the minimum bearish timeframe count, AND this condition was false on the previous bar.

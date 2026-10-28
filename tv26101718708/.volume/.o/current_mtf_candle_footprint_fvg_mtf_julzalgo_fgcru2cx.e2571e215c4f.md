@@ -1,0 +1,2 @@
+Long: On a new FVG-timeframe bar, the low of the last completed FVG-timeframe bar > the high of the third-last completed FVG-timeframe bar AND the gap ≥ the configured minimum gap
+Short: On a new FVG-timeframe bar, the high of the last completed FVG-timeframe bar < the low of the third-last completed FVG-timeframe bar AND the gap ≥ the configured minimum gap

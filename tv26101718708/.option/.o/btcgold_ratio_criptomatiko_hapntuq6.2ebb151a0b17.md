@@ -1,0 +1,1 @@
+Long the traded instrument when the daily BTC-to-gold price ratio crosses above its EMA. No short or exit condition is defined.

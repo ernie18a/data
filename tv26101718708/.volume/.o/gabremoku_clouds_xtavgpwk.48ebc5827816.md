@@ -1,0 +1,8 @@
+Calculation: Equilibrium = rolling volume-weighted average of typical price, where typical price = (high + low + close) / 3
+Calculation: VWAS = rolling volume-weighted average of high − low, using the same lookback as Equilibrium
+Calculation: Bubble bands = Equilibrium ± VWAS × a multiplier
+Calculation: Bullish cloud direction = volume-weighted average typical price over a shorter lookback and a longer lookback, averaged together, is at least the midpoint of the highest and lowest typical prices over a still longer lookback
+Calculation: High volume = current volume / its rolling average over a shorter lookback is at least a threshold
+Calculation: Contraction = absolute change in Equilibrium over a lookback is less than VWAS × a threshold
+Long: low <= lower bubble band AND prior signal side is not long OR (low <= lower bubble band in touch mode OR low < lower bubble band AND close > lower bubble band AND close < Equilibrium in reentry mode) AND (contraction filter disabled OR contraction) AND (cloud direction filter disabled OR bullish cloud direction) AND no long bubble signal within the cooldown lookback
+Short: high >= upper bubble band AND prior signal side is not short OR (high >= upper bubble band in touch mode OR high > upper bubble band AND close < upper bubble band AND close > Equilibrium in reentry mode) AND (contraction filter disabled OR contraction) AND (cloud direction filter disabled OR cloud direction is bearish) AND no short bubble signal within the cooldown lookback

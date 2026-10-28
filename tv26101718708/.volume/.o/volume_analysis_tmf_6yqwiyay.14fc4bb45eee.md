@@ -1,0 +1,3 @@
+Calculation: Volume moving average = simple moving average of volume over a lookback
+Long: Close crosses above the top of an active zone within the early-breakout age threshold AND the zone came from the highest-volume candle in a consecutive run of candles whose volume exceeds the volume moving average multiplied by a threshold AND the zone has not already fired
+Short: Close crosses below the bottom of an active zone within the early-breakout age threshold AND the zone came from the highest-volume candle in a consecutive run of candles whose volume exceeds the volume moving average multiplied by a threshold AND the zone has not already fired

@@ -1,0 +1,6 @@
+Calculation: Range support and resistance = lowest low and highest high of the previous range-lookback bars, excluding the current bar.
+Calculation: Mature range = enough prior bars, at least the minimum number of closes within the range, and range height divided by ATR within the allowed width bounds.
+Calculation: Breakdown score = normalized weighted combination of range maturity, distance below support, bearish close quality, relative volume, retest status, and target room.
+Calculation: Failure risk = normalized weighted combination of proximity to support, lower-wick size, relative-volume weakness, support distance, and range immaturity.
+Short: Mature range AND no active breakdown AND close < range support − minimum breakdown distance in ATR units OR active breakdown AND close accepted below support AND breakdown score ≥ ready threshold AND failure risk ≤ maximum ready risk AND previous bar was not ready OR active breakdown AND high is within the retest band above support AND close < support AND close < open AND previous bar was not a retest rejection OR active breakdown AND distance below support ≥ follow-through threshold AND failure risk < failure-risk threshold AND previous bar was not in follow-through.
+Exit: short, active breakdown AND close > broken support + reclaim buffer in ATR units

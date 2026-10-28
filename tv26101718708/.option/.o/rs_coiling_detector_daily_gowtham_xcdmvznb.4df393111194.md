@@ -1,0 +1,1 @@
+Go long when the instrument’s relative strength versus its benchmark is contracting, has recently reached a strong daily RSI level, is not weakening, and the instrument is consolidating above its medium-term moving average, with relative strength inside the defined value zone. No short or exit condition is specified.

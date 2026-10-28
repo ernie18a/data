@@ -1,0 +1,1 @@
+Go long only when the broad-market benchmark is above its medium-term trend average and the traded instrument meets its selected momentum mode’s trend, momentum, and confirmation-score requirements. Exit or sell when the instrument’s shorter-term trend falls below its longer-term trend or its momentum weakens. The benchmark condition gates longs only; it does not affect exits.

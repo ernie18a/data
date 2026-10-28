@@ -1,0 +1,1 @@
+Compare confirmed, time-aligned swing pivots in the traded instrument with those in a correlated instrument. If their swing highs move in opposite directions, signal short; if their swing lows move in opposite directions, signal long. No exit rule is defined.

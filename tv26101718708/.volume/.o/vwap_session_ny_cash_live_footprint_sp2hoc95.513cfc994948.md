@@ -1,0 +1,3 @@
+Calculation: NY Cash VWAP = cumulative volume-weighted average of (high + low + close) / 3, reset at the New York cash-session open; use lower-timeframe bars when available, including the bar still forming.
+Long: The previous bar's close crossed above NY Cash VWAP AND the previous and current bars closed above their opens.
+Short: The previous bar's close crossed below NY Cash VWAP AND the previous and current bars closed below their opens.

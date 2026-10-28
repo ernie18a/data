@@ -1,0 +1,3 @@
+Calculation: Support and resistance zones = confirmed pivot lows and highs, respectively; each zone is centered on its pivot price with half-width equal to ATR at the pivot multiplied by a width parameter. Merge same-side zones if they overlap or their centers are within ATR at the pivot multiplied by a merge-distance parameter; merged bounds span both zones.
+Long: Confirmed bar high >= bottom of any support zone AND low <= its top OR close > top of any resistance zone AND previous close <= its top
+Short: Confirmed bar high >= bottom of any resistance zone AND low <= its top OR close < bottom of any support zone AND previous close >= its bottom

@@ -1,0 +1,1 @@
+For each sector ETF, go long when its current volume is elevated relative to its recent average, its price is rising, its daily move remains below the configured ATR exhaustion threshold, and its price is above its daily trend average. No short or exit condition is defined.

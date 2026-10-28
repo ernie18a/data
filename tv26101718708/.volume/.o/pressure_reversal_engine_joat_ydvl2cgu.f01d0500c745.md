@@ -1,0 +1,13 @@
+Calculation: Buy share = clamp(0.16 + 0.44×(close−low)/(high−low) + 0.22×abs(close−open)/(high−low) + 0.18×I(close≥open), 0.05, 0.95); use 0 when a ratio has a zero range.
+Calculation: Pressure = 2×buy share−1; bid pressure = pressure > pressure gate; ask pressure = pressure < −pressure gate.
+Calculation: Volume ratio = volume / 20-bar SMA(volume), or 1 when the average is not positive.
+Calculation: Demand absorption = ask pressure AND close > open AND lower wick > upper wick AND abs(close−open)/(high−low) < 0.38 AND volume ratio > 1.08.
+Calculation: Supply absorption = bid pressure AND close < open AND upper wick > lower wick AND abs(close−open)/(high−low) < 0.38 AND volume ratio > 1.08.
+Calculation: Bull mismatch = close > open AND ask pressure; bear mismatch = close < open AND bid pressure.
+Calculation: Pressure profile = over the rolling lookback including the current bar, divide the range from its lowest low to highest high into rows and assign each bar's volume to the row containing its hlc3, split by its buy share and remaining sell share. POC is the midpoint of the highest-volume row. VAL and VAH are the lower and upper edges of the contiguous rows accumulated outward from POC, taking the higher-volume adjacent row first, until the configured fraction of total volume is reached. Profile skew = (total buy volume−total sell volume)/total volume.
+Calculation: Swing high/low = latest confirmed pivot high/low, using the configured left and right pivot lookbacks.
+Calculation: Reclaim high = close > swing high AND prior close ≤ swing high AND bid pressure; reject high = high > swing high AND close < swing high AND ask pressure; reclaim low = close < swing low AND prior close ≥ swing low AND ask pressure; reject low = low < swing low AND close > swing low AND bid pressure.
+Long: bar is confirmed AND (trend filter disabled OR fast EMA > slow EMA) AND close > POC AND close > VAL AND (demand absorption OR reject low OR reclaim high) AND profile skew > −0.20 AND no long or short signal occurred within the configured cooldown bars.
+Short: bar is confirmed AND (trend filter disabled OR fast EMA < slow EMA) AND close < POC AND close < VAH AND (supply absorption OR reject high OR reclaim low) AND profile skew < 0.20 AND no long or short signal occurred within the configured cooldown bars.
+Exit: long, bar is confirmed AND (supply absorption OR bear mismatch OR close < fast EMA OR reject high)
+Exit: short, bar is confirmed AND (demand absorption OR bull mismatch OR close > fast EMA OR reject low)

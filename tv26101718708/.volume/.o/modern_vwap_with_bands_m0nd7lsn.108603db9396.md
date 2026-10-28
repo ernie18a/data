@@ -1,0 +1,7 @@
+Calculation: Anchored VWAP = volume-weighted average of HLC3 within the current daily anchor, HL2 within the current weekly anchor, or close within the current monthly anchor; use the current forming anchor period.
+Calculation: Upper/lower fifth deviation band = anchored VWAP ± the fifth configured deviation, calculated as either a multiple of current chart-bar ATR or a percentage of anchored VWAP.
+Calculation: Long/short stop = entry price minus/plus the configured stop percentage. Target = anchored VWAP at entry, held fixed, or entry price plus/minus the configured target percentage.
+Long: Previous close >= previous lower fifth deviation band AND close < lower fifth deviation band AND (outside-band filter disabled OR close < lower fifth deviation band × (1 − configured outside percentage)) AND (cool-off disabled OR the configured number of bars has passed since the most recent long or short signal)
+Short: Previous close <= previous upper fifth deviation band AND close > upper fifth deviation band AND (outside-band filter disabled OR close > upper fifth deviation band × (1 + configured outside percentage)) AND (cool-off disabled OR the configured number of bars has passed since the most recent long or short signal)
+Exit: Long, starting on the bar after entry, low <= long stop OR high >= long target
+Exit: Short, starting on the bar after entry, high >= short stop OR low <= short target

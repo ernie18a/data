@@ -1,0 +1,4 @@
+Long: flat AND close < long-term SMA AND close <= short-term SMA AND previous close > previous short-term SMA AND open > long-term EMA AND intermediate-term SMA < previous intermediate-term SMA OR flat AND close < short-term EMA AND open > (open + high + low + close) / 4 AND volume <= previous volume AND (close < min(previous open, previous close) OR close > max(previous open, previous close))
+Calculation: Bars in position = 0 while flat; otherwise previous value + 1
+Calculation: Profitable closes = 0 while flat; otherwise previous value + 1 when close > entry price and bars in position > 1; otherwise retain previous value
+Exit: long, bars in position - 1 >= maximum bars OR profitable closes >= maximum profitable closes

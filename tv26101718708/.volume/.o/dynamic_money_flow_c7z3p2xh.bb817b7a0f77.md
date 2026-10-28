@@ -1,0 +1,3 @@
+Calculation: DMF = Let V be volume raised to a configurable power; let α be either |close − previous close| / true range or a configurable fixed bias; let true high = max(high, previous close) and true low = min(low, previous close). Signed flow = [((close − true low) + (close − true high)) / true range] × (1 − α) × V + sign(close − previous close) × α × V. In Index mode, DMF = Wilder average of signed flow over a configurable period divided by Wilder average of V over that period. In Cumulative mode, DMF = cumulative signed flow.
+Long: In Index mode, DMF >= 0; OR in Cumulative mode, DMF >= its fast moving average
+Short: In Index mode, DMF < 0; OR in Cumulative mode, DMF < its fast moving average

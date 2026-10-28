@@ -1,0 +1,2 @@
+Long: On any of the six configured timeframes, EMA(9) > EMA(21) OR EMA(9) > its prior sampled value OR RSI(14) >= 50 OR chart close > that timeframe's VWAP OR chart close > that timeframe's EMA(50) OR that timeframe's volume > its 20-bar SMA multiplied by the volume multiplier
+Short: On any of the six configured timeframes, EMA(9) <= EMA(21) OR EMA(9) <= its prior sampled value OR RSI(14) < 50 OR chart close < that timeframe's VWAP OR chart close <= that timeframe's EMA(50) OR that timeframe's volume <= its 20-bar SMA multiplied by the volume multiplier

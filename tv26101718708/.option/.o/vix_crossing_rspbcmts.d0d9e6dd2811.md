@@ -1,0 +1,1 @@
+Go long when the VIX index crosses below its simple moving average and the Nasdaq-100 closes above its simple moving average. While long, exit if the VIX crosses above its simple moving average, the holding period exceeds a fixed bar limit, unrealized profit exceeds a fixed per-contract target, or unrealized loss exceeds a fixed per-contract limit. No short entries.

@@ -1,0 +1,1 @@
+Long: MACD line > MACD signal line AND close > VWAP AND close > previous bar high AND volume > volume moving average

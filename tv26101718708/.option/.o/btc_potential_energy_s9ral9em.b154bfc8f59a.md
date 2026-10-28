@@ -1,0 +1,1 @@
+For Bitcoin, compute Tether dominance’s deviation from its long-term moving average and rank that deviation against its rolling history. Signal long on the first bar when the rank is above a charge threshold and the deviation has declined for several consecutive bars. No short or exit rule is specified.

@@ -1,0 +1,3 @@
+Calculation: Structural swing level = the second-most-recent pivot in an alternating high/low sequence; a pivot is confirmed when price reverses from the current extreme by 2 × the 14-period ATR on the configured structure timeframe, using that timeframe’s bar as it forms.
+Long: previous close ≤ structural swing level AND close > structural swing level AND level has not already been marked as the latest structure event at that level
+Short: previous close > structural swing level AND close ≤ structural swing level AND level has not already been marked as the latest structure event at that level

@@ -1,0 +1,2 @@
+Calculation: Crash score = min(VIX / 40, 1) × 25 + (close < 200-bar SMA ? 20 : 0) + (RSI(14) < 50 ? (50 − RSI(14)) / 50 × 15 : 0) + (MACD(12,26,9) histogram < 0 ? 15 : 0) + min(volume / 20-bar SMA(volume) / 3, 1) × 10 + min(ATR(14) / 50-bar SMA(ATR(14)) / 2, 1) × 15
+Short: Crash score > 65

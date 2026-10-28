@@ -1,0 +1,4 @@
+Calculation: Tenkan = midpoint of the highest high and lowest low over a shorter lookback; Kijun = midpoint over a longer lookback; Span B = midpoint over a still longer lookback; Span A = average of Tenkan and Kijun. Use completed bars.
+Calculation: Cloud top/bottom at price = maximum/minimum of Span A and Span B from the bar `displacement − 1` bars ago. Use completed bars.
+Long: Tenkan crosses above Kijun OR close crosses above cloud top AND at least three of these are true: close > cloud top, Tenkan > Kijun, Span A > Span B, close > close from `displacement − 1` bars ago. Evaluate on bar close.
+Short: Tenkan crosses below Kijun OR close crosses below cloud bottom AND at least three of these are true: close < cloud bottom, Tenkan < Kijun, Span A < Span B, close < close from `displacement − 1` bars ago. Evaluate on bar close.

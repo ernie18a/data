@@ -1,0 +1,4 @@
+Calculation: Dynamic EFI = EMA over a shorter lookback of volume multiplied by adjusted directional range. Adjusted directional range = wick weight / 10 × (2 × close − (max(high, previous close) + min(low, previous close))) + (1 − wick weight / 10) × (close − previous close); optionally divide by max(current true range, epsilon), where current true range = max(high, previous close) − min(low, previous close), or by max(previous close, epsilon), according to the normalization setting.
+Calculation: Smoothed EFI = SMA of Dynamic EFI over a longer lookback.
+Long: Smoothed EFI > 0
+Short: Smoothed EFI ≤ 0

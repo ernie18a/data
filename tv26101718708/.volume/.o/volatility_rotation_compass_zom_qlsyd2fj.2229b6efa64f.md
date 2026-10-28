@@ -1,0 +1,3 @@
+Calculation: Compass = EMA of the clamped value of 100 × (positive Vortex Indicator − negative Vortex Indicator) × ((100 − Choppiness Index) / 50) × clamp(1 + 0.2 × volume z-score, 0.5, 2), where the value is clamped to [−100, 100]
+Long: Compass crosses above 18 AND Choppiness Index is lower than on the previous bar AND volume z-score > 0
+Short: Compass crosses below −18 AND Choppiness Index is lower than on the previous bar AND volume z-score > 0

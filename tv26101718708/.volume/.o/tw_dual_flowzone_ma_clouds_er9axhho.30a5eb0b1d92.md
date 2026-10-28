@@ -1,0 +1,4 @@
+Calculation: FlowZone short and long moving averages = configurable moving averages of close, with the short lookback shorter than the long lookback
+Calculation: Rising/falling = a moving average greater/less than its value a configurable slope lookback ago
+Long: FlowZone A or B short moving average crosses above its long moving average OR its short moving average is above its long moving average AND its short moving average is rising (and, if configured, its long moving average is rising)
+Short: FlowZone A or B short moving average crosses below its long moving average OR its short moving average is below its long moving average AND its short moving average is falling (and, if configured, its long moving average is falling)

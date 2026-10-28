@@ -1,0 +1,4 @@
+Long: low < previous completed day's low AND close > previous completed day's low AND close > VWAP AND close > EMA(close, long-term lookback) AND session filter passes (if enabled) AND no trade has been taken today (if one-trade-per-day limit is enabled) AND position is flat
+Short: high > previous completed day's high AND close < previous completed day's high AND close < VWAP AND close < EMA(close, long-term lookback) AND session filter passes (if enabled) AND no trade has been taken today (if one-trade-per-day limit is enabled) AND position is flat
+Exit: long, low <= entry price - ATR × stop-loss multiplier OR high >= entry price + ATR × take-profit multiplier
+Exit: short, high >= entry price + ATR × stop-loss multiplier OR low <= entry price - ATR × take-profit multiplier

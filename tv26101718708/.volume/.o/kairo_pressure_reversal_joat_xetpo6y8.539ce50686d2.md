@@ -1,0 +1,6 @@
+Calculation: Pressure tensor = smoothed candle pressure, where candle pressure is volume multiplied by a weighted sum of normalized close location, body direction and size, and wick balance, normalized by an EMA of its absolute value.
+Calculation: Pressure curve = second difference of the pressure tensor.
+Calculation: Stress composite = clamped weighted combination of ATR percentile rank, impulse score, and convexity score; impulse score combines absolute pressure tensor, range percentile rank, and directional certainty; convexity score combines absolute pressure curve and absolute pressure jerk; directional certainty is one minus normalized entropy of the positive and negative candle-pressure shares over a lookback.
+Calculation: Tensor bands = an EMA of close plus or minus an adaptive width based on ATR and stress composite; width is adjusted by the EMA of the pressure tensor, widening on the side indicated by its sign.
+Long: (pressure tensor > 0 AND stress composite >= shock threshold AND pressure curve > 0) OR (close < lower tensor band AND pressure curve > 0 AND stress composite >= reversion threshold)
+Short: (pressure tensor < 0 AND stress composite >= shock threshold AND pressure curve < 0) OR (close > upper tensor band AND pressure curve < 0 AND stress composite >= reversion threshold)

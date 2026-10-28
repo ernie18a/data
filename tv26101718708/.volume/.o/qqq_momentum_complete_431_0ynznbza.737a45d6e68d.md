@@ -1,0 +1,3 @@
+Calculation: Confirmed swing high/low = a wick high/low pivot using equal configurable lookbacks on both sides; known only after the right-side bars close. Track the latest high and low separately; each is eligible until broken once or older than a configurable maximum age.
+Long: On a completed chart bar, close crosses above the latest eligible confirmed swing high (previous close ≤ that level).
+Short: On a completed chart bar, close crosses below the latest eligible confirmed swing low (previous close ≥ that level).

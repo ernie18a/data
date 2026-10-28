@@ -1,0 +1,3 @@
+Calculation: Intraday VWAP bands = volume-weighted mean of the selected price source (HLC3, close, HL2, or OHLC4) and its volume-weighted standard deviation, accumulated from the selected intraday session anchor; upper and lower first bands are the mean plus or minus the standard deviation multiplied by the selected band parameter.
+Long: close > intraday upper first band
+Short: close < intraday lower first band

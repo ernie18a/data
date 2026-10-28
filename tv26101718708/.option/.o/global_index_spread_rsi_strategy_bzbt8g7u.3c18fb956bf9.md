@@ -1,0 +1,1 @@
+Calculate the percentage difference between the traded instrument’s closing price and a global benchmark’s closing price, then compute an RSI of that spread. Enter long when the spread RSI is below its oversold threshold. Exit the long position when it is above its overbought threshold. No short signal is specified.

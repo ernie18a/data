@@ -1,0 +1,4 @@
+Calculation: AlphaTrend = Let U = low − ATR × multiplier and D = high + ATR × multiplier, where ATR is the simple moving average of true range over the common lookback. Let M be RSI(close, common lookback) when no-volume mode is enabled, otherwise MFI(hlc3, common lookback). If M ≥ 50, AlphaTrend = max(U, prior AlphaTrend); otherwise AlphaTrend = min(D, prior AlphaTrend).
+Long: position size ≤ 0 AND AlphaTrend > its value two bars ago AND prior AlphaTrend ≤ its value two bars ago
+Short: position size ≥ 0 AND shorting enabled AND AlphaTrend < its value two bars ago AND prior AlphaTrend ≥ its value two bars ago
+Exit: long, shorting disabled AND AlphaTrend < its value two bars ago AND prior AlphaTrend ≥ its value two bars ago

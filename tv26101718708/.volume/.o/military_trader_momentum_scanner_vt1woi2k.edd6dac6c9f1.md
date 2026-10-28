@@ -1,0 +1,3 @@
+Calculation: VWAP = session cumulative volume-weighted average of (high + low + close) / 3 through the current bar
+Calculation: Previous intraday high = highest high through the prior bar of the current day, resetting at each new day
+Long: close > VWAP AND EMA(close, shorter lookback) > EMA(close, longer lookback) AND volume > SMA(volume, lookback) × multiplier AND high >= Previous intraday high AND close > open

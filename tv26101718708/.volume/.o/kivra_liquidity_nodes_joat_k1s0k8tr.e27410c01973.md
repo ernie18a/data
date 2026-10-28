@@ -1,0 +1,4 @@
+Calculation: POC = midpoint of the highest-volume price row in a rolling volume profile; allocate each bar’s volume to rows in proportion to price-range overlap, use bar-range size as a volume proxy when volume is unavailable, and smooth row volumes with a 1:2:1 weighted average of each row and its neighbors.
+Calculation: Bullish participation share = bullish volume divided by total volume across the profile rows; estimate each bar’s bullish share from candle direction and close location within its range, allocate participation by price-range overlap, then smooth row values with a 1:2:1 weighted average.
+Long: Confirmed close crosses above POC OR bullish participation share > bullish bias threshold
+Short: Confirmed close crosses below POC OR bullish participation share < bearish bias threshold
