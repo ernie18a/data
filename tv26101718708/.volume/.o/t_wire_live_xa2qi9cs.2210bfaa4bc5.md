@@ -1,2 +1,0 @@
-Long: Fast EMA of close (shorter lookback) > slow EMA of close (longer lookback) AND Supertrend is bullish AND NOT (on the previous bar, fast EMA > slow EMA AND Supertrend was bullish)
-Short: Fast EMA of close (shorter lookback) < slow EMA of close (longer lookback) AND Supertrend is bearish AND NOT (on the previous bar, fast EMA < slow EMA AND Supertrend was bearish)

@@ -1,3 +1,0 @@
-Calculation: Linear regression endpoint = least-squares linear regression of close over a lookback, evaluated at the current bar
-Long: (single-HMA mode AND HMA(close, lookback) >= its prior-bar value) OR (three-HMA mode AND fast HMA > mid HMA AND mid HMA > slow HMA) OR (linear regression endpoint >= its prior-bar value) OR (SuperTrend direction < 0)
-Short: (single-HMA mode AND HMA(close, lookback) < its prior-bar value) OR (three-HMA mode AND fast HMA < mid HMA AND mid HMA < slow HMA) OR (linear regression endpoint < its prior-bar value) OR (SuperTrend direction > 0)

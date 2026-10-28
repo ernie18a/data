@@ -1,5 +1,0 @@
-Calculation: CVD = cumulative sum of volume when close > open, minus volume when close < open; add zero when close = open
-Long: An EMA9 crossover above EMA20 has occurred since the latest crossover below, and no long signal has occurred since; low <= EMA9 OR low <= EMA20; ADX > threshold; low < the lowest low of the previous divergence lookback bars; CVD > the lowest CVD of the previous divergence lookback bars; close > open
-Short: An EMA9 crossover below EMA20 has occurred since the latest crossover above, and no short signal has occurred since; high >= EMA9 OR high >= EMA20; ADX > threshold; high > the highest high of the previous divergence lookback bars; CVD < the highest CVD of the previous divergence lookback bars; close < open
-Exit: Long, low <= the lowest low of the current and previous 4 bars OR high >= close at the long signal bar + (close at the long signal bar - the lowest low of the current and previous 4 bars) × reward/risk ratio
-Exit: Short, high >= the highest high of the current and previous 4 bars OR low <= close at the short signal bar - (the highest high of the current and previous 4 bars - close at the short signal bar) × reward/risk ratio

@@ -1,8 +1,0 @@
-Calculation: Supertrend = trend line calculated from hl2 and ATR using the standard trailing upper and lower bands; direction switches when close crosses the active band
-Calculation: Smoothed oscillator = selected moving average of (close − Supertrend) / (Supertrend factor × ATR), expressed as a percentage or raw ratio
-Calculation: Oscillator = smoothed oscillator clamped to [−100, 100] in percentage mode; in ratio mode, rescale it over a rolling lookback to [−3, 3]
-Calculation: Upper and lower signal levels = configured overbought and oversold levels in percentage mode; in ratio mode, each configured percentage level is multiplied by 3/100
-Long: ((Oscillator > lower signal level AND previous Oscillator ≤ previous lower signal level) OR (Oscillator > upper signal level AND previous Oscillator ≤ previous upper signal level)) AND last emitted level-cross signal was not long
-Long: Oscillator > previous Oscillator AND previous Oscillator ≤ the Oscillator two bars ago AND Oscillator < negative reversal threshold AND more than the cooldown interval has elapsed since the previous reversal signal
-Short: ((Oscillator < lower signal level AND previous Oscillator ≥ previous lower signal level) OR (Oscillator < upper signal level AND previous Oscillator ≥ previous upper signal level)) AND last emitted level-cross signal was not short
-Short: Oscillator < previous Oscillator AND previous Oscillator ≥ the Oscillator two bars ago AND Oscillator > reversal threshold AND more than the cooldown interval has elapsed since the previous reversal signal

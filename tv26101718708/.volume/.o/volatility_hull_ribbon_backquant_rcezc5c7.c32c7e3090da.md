@@ -1,3 +1,0 @@
-Calculation: VWHMA = volatility-weighted moving average of 2 × VWMA_TR(source, half the lookback) − VWMA_TR(source, full lookback), smoothed by VWMA_TR using the square root of the lookback; VWMA_TR(x, p) = sum from i=0 through p of x[i] × abs(True Range[i]) × (p+1−i), divided by the sum over the same bars of abs(True Range[i]) × (p+1−i)
-Long: VWHMA > VWHMA[1] AND VWHMA[1] <= VWHMA[2]
-Short: VWHMA < VWHMA[1] AND VWHMA[1] >= VWHMA[2]

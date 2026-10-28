@@ -1,1 +1,0 @@
-Consider the traded instrument for a long position when its price is above a rising long-term average and its performance relative to the broad-market ETF is above its own medium-term average. The indicator defines no short or exit decision.

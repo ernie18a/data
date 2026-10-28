@@ -1,5 +1,0 @@
-Calculation: ATR = average true range on the chart timeframe.
-Calculation: Support and resistance zones = bands formed by at least two confirmed swing lows or highs, respectively, whose prices are within an ATR-based clustering tolerance; extend a zone when later same-side swings fall within that tolerance, merge overlapping same-side zones, and flip a zone’s role when a completed candle closes beyond its far boundary. A zone’s current role, boundaries, and touch count include its post-flip history.
-Calculation: Zone confluence score = a touch-count score that increases with total touches, plus bonuses for alignment with a confirmed higher-timeframe swing, proximity to a psychological round number, and formation or retest on unusually high volume. Use the last completed higher-timeframe bar for swing alignment.
-Long: An active support zone has a high confluence score AND low <= zone top AND close > zone top AND close > open.
-Short: An active resistance zone has a high confluence score AND high >= zone bottom AND close < zone bottom AND close < open.

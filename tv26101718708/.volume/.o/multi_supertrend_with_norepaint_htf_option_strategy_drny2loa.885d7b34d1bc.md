@@ -1,4 +1,0 @@
-Long: Current-chart Supertrend direction is bullish AND higher-timeframe Supertrend direction is bullish AND this combined condition was false on the previous chart bar AND (VWAP filter is disabled OR close > VWAP)
-Short: Current-chart Supertrend direction is bearish AND higher-timeframe Supertrend direction is bearish AND this combined condition was false on the previous chart bar AND (VWAP filter is disabled OR close < VWAP)
-Exit: Long, current-chart Supertrend direction is not bullish OR higher-timeframe Supertrend direction is not bullish
-Exit: Short, current-chart Supertrend direction is not bearish OR higher-timeframe Supertrend direction is not bearish

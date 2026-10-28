@@ -1,7 +1,0 @@
-Calculation: Middle band = selected moving average of the selected price source over its lookback, on the selected candle type and resolution, using that resolution’s forming bar.
-Calculation: Deviation = selected ATR over its lookback or standard deviation of the selected price source over the middle-band lookback, on the selected candle type and resolution, using that resolution’s forming bar.
-Calculation: Upper band = smoothed (middle band + deviation × upper multiplier); lower band = smoothed (middle band − deviation × lower multiplier).
-Calculation: Percent B = (selected-candle close − lower band) / (upper band − lower band).
-Calculation: Band width = (upper band − lower band) / middle band.
-Long: Within the configured date window AND the configured entry predicates satisfy the selected Any, All, or minimum-count requirement. Predicates: close crosses above or below any band; close is above or below any band; band width crosses above or below, is above, or is below either configured threshold; Percent B crosses above or below either configured threshold.
-Exit: Long, outside the configured date window OR the configured exit predicates satisfy the selected Any, All, or minimum-count requirement (predicates as for entry) OR high ≥ entry price + current close × configured take-profit percentage / 100 OR low ≤ entry price − current close × configured stop-loss percentage / 100.

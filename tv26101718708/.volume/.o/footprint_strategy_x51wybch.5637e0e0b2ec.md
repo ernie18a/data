@@ -1,2 +1,0 @@
-Long: (buy-imbalanced footprint row count > sell-imbalanced footprint row count AND close < open AND the still-forming trend-timeframe close > its previous close) OR (footprint buy volume > footprint sell volume AND at least one buy stacked-imbalance line exists)
-Exit: long, high >= entry price × (1 + take-profit percentage) OR (stop loss enabled AND low <= entry price × (1 − stop-loss percentage))

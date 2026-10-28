@@ -1,2 +1,0 @@
-Long: A confirmed swing low forms (the pivot bar’s low is the lowest across swingLen bars before and after it) AND at least minZoneDist bars have passed since the previous accepted demand zone AND the pivot bar’s high − low ≥ ATR × minSwingATR
-Short: A confirmed swing high forms (the pivot bar’s high is the highest across swingLen bars before and after it) AND at least minZoneDist bars have passed since the previous accepted supply zone AND the pivot bar’s high − low ≥ ATR × minSwingATR

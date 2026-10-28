@@ -1,3 +1,0 @@
-Calculation: Market-structure state = confirmed pivot highs/lows define a trend extreme, a protective opposing swing level, and a continuation break level; trend flips when close crosses the protective level, and BOS confirms when close crosses the continuation level in the trend direction. Track highs/lows and levels on the chart timeframe; pivots become usable only after confirmation.
-Long: Market-structure trend is up OR a low sweep occurs (low <= protective level AND close >= protective level)
-Short: Market-structure trend is down OR a high sweep occurs (high >= protective level AND close <= protective level)

@@ -1,2 +1,0 @@
-Calculation: Relative strength score = ((close / close 55 bars ago) / (benchmark close / benchmark close 55 bars ago) - 1) × 100, using benchmark closes from the same timeframe
-Long: close > highest high of the previous 20 bars AND volume / 20-bar average volume > 1.5 AND close > 20-bar EMA AND 20-bar EMA > 50-bar SMA AND 50-bar SMA > 200-bar SMA AND relative strength score > 0

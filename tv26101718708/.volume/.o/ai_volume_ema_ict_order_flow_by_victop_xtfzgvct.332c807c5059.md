@@ -1,4 +1,0 @@
-Calculation: Long condition count = number true among (short-lookback EMA of close > medium-lookback EMA of close > long-lookback EMA of close; close > previous bar's rolling highest high; volume > a multiple of its rolling average AND close > open; close > previous bar's rolling highest high over a shorter lookback)
-Calculation: Short condition count = number true among (short-lookback EMA of close < medium-lookback EMA of close < long-lookback EMA of close; close < previous bar's rolling lowest low; volume > a multiple of its rolling average AND close < open; close < previous bar's rolling lowest low over a shorter lookback)
-Long: Long condition count >= 3
-Short: Short condition count >= 3

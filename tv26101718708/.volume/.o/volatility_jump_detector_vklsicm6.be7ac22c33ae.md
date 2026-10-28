@@ -1,5 +1,0 @@
-Calculation: Log return = ln(current close / previous close)
-Calculation: Robust volatility = square root of either (π/2 × the mean of adjacent absolute log-return products over the local window) or (π/(6 − 4√3 + π) × local-window/(local-window − 2) × the mean of squared medians of triples of adjacent absolute log returns); shift the window back one bar to exclude the current return
-Calculation: Jump threshold = either the configured fixed multiple of robust volatility or the Lee–Mykland threshold √(2 ln n) − (ln π + ln ln n)/(2√(2 ln n)) + q/√(2 ln n), where q = −ln(−ln(1 − α))
-Long: log return > 0 AND absolute log return / robust volatility > jump threshold AND session-gap suppression is disabled OR current bar is not the first regular-session bar
-Short: log return < 0 AND absolute log return / robust volatility > jump threshold AND session-gap suppression is disabled OR current bar is not the first regular-session bar

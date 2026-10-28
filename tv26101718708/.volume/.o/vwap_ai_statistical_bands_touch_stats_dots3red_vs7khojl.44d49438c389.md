@@ -1,5 +1,0 @@
-Calculation: Anchored VWAP = cumulative volume-weighted average of hlc3 since the selected session, week, month, or custom anchor; include the current bar.
-Calculation: VWAP standard deviation = square root of the volume-weighted mean of hlc3 squared minus the square of Anchored VWAP, accumulated over the same anchor period.
-Calculation: Upper/lower band = Anchored VWAP ± VWAP standard deviation × band multiplier; the shorter band uses a smaller multiplier than the longer band.
-Long: low ≤ lower short-term band + touch tolerance × ATR AND close > lower short-term band OR low ≤ lower long-term band + touch tolerance × ATR AND close > lower long-term band OR close > Anchored VWAP AND previous close ≤ previous Anchored VWAP
-Short: high ≥ upper short-term band − touch tolerance × ATR AND close < upper short-term band OR high ≥ upper long-term band − touch tolerance × ATR AND close < upper long-term band OR close < Anchored VWAP AND previous close ≥ previous Anchored VWAP

@@ -1,3 +1,0 @@
-Calculation: Active liquidity level = confirmed pivot high or low on 1H, 4H, or 1D bars, using N bars before and after the pivot; available after the N following bars complete. The 1H lookback is longer than the 4H lookback, which is longer than the 1D lookback. Use only timeframes equal to or higher than the chart timeframe.
-Long: An active pivot-low level is swept: low < level AND (close >= level when close-back is required).
-Short: An active pivot-high level is swept: high > level AND (close <= level when close-back is required).

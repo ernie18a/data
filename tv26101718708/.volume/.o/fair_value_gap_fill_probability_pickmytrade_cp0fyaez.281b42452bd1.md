@@ -1,6 +1,0 @@
-Calculation: Synthetic CVD = cumulative sum of volume × (2 × (close − low) / (high − low) − 1); use zero delta when high = low.
-Calculation: Normalized CVD momentum = z-score of the change in synthetic CVD over a lookback, using a rolling mean and standard deviation.
-Calculation: Gap touch fraction = fraction of recent prior bars whose close lies inclusively within the gap; exclude the current bar.
-Calculation: Fill probability = Gaussian Naive Bayes posterior for fill using normalized CVD momentum, gap size / ATR, and gap touch fraction. Train separate per-feature means and variances and class priors from prior gaps: a gap is a fill when a later bar’s range overlaps its zone, and a no-fill when it reaches its expiry without overlap. Calculate the posterior only after both classes meet the warmup sample requirement.
-Long: current bar is confirmed AND ATR > 0 AND high two bars ago < current low AND current low − high two bars ago ≥ minimum gap size × ATR AND fill probability ≥ high-probability threshold
-Short: current bar is confirmed AND ATR > 0 AND low two bars ago > current high AND low two bars ago − current high ≥ minimum gap size × ATR AND fill probability ≥ high-probability threshold

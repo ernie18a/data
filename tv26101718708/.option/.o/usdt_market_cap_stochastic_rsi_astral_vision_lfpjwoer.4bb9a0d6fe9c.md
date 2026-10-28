@@ -1,1 +1,0 @@
-Use the market capitalization of USDT as the external signal. Calculate its RSI, then a stochastic of that RSI and smooth the result. Hold long when the smoothed oscillator is at or above its midpoint and short when it is below; switch sides when it crosses the midpoint. No separate exit condition is defined.

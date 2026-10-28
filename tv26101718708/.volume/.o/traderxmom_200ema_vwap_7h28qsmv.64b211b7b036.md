@@ -1,5 +1,0 @@
-Calculation: Session VWAP = volume-weighted average of hlc3 ( (high + low + close) / 3 ), accumulated from the start of each trading session using the current session’s bars.
-Calculation: 1-minute EMA = EMA of close on 1-minute bars, using the latest completed bar. The 1-minute and 5-minute EMAs use the same lookback length.
-Calculation: 5-minute EMA = EMA of close on 5-minute bars, using the latest completed bar.
-Long: Close > Session VWAP AND Close > 5-minute EMA AND ((Low <= 1-minute EMA AND Close > 1-minute EMA) OR (Low <= 5-minute EMA AND Close > 5-minute EMA) OR (Low <= Session VWAP AND Close > Session VWAP)) AND (within the configured session if the session filter is enabled)
-Short: Close < Session VWAP AND Close < 5-minute EMA AND ((High >= 1-minute EMA AND Close < 1-minute EMA) OR (High >= 5-minute EMA AND Close < 5-minute EMA) OR (High >= Session VWAP AND Close < Session VWAP)) AND (within the configured session if the session filter is enabled)

@@ -1,1 +1,0 @@
-Compare confirmed swing pivots in the traded instrument with those in a correlated instrument. Go long when the traded instrument makes a lower swing low while the correlated instrument makes a higher swing low. Go short when the traded instrument makes a higher swing high while the correlated instrument makes a lower swing high. No exit rule is defined.

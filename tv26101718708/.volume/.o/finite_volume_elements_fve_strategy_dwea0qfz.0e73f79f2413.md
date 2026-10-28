@@ -1,3 +1,0 @@
-Calculation: FVE = Previous FVE + 100 × (signed volume ÷ volume SMA over the lookback period) ÷ lookback period; signed volume is volume when (close − (high + low)/2 + (high + low + close)/3 − previous bar’s (high + low + close)/3) > threshold, negative volume when it is < −threshold, otherwise 0; threshold = factor × close ÷ 100; initial previous FVE = 0
-Long: FVE > previous bar’s FVE AND FVE > FVE from two bars earlier
-Short: FVE < previous bar’s FVE AND FVE < FVE from two bars earlier

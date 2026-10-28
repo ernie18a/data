@@ -1,4 +1,0 @@
-Calculation: Core = VWMA of (2 × the volume-weighted average price of hl2 over the shortest lookback − the volume-weighted average price of hl2 over the intermediate lookback), over the longest lookback; the lookbacks are approximately one-quarter, one-half, and all of the longest lookback.
-Calculation: Trend average = recursive close average over the longest lookback, seeded with the simple moving average over that lookback.
-Long: Core ≤ close − ATR over the longest lookback × channel multiplier AND close > trend average AND prior signal state is not long.
-Short: Core ≥ close + ATR over the longest lookback × channel multiplier AND close < trend average AND prior signal state is not short.

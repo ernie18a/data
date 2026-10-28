@@ -1,2 +1,0 @@
-Long: previous bar close > previous bar open AND current bar close > current bar open AND current bar open > previous bar close AND current bar volume > moving average of volume
-Exit: long, previous bar close < previous bar open AND current bar close < current bar open AND current bar open < previous bar close AND current bar volume > moving average of volume OR datetime is before the configured start date OR datetime is after the configured end date

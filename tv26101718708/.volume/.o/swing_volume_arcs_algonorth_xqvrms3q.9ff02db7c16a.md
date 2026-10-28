@@ -1,2 +1,0 @@
-Long: A rising swing is confirmed when, after at least one swing has been confirmed, the bar makes no new high above the tracked extreme and closes at or below the tracked extreme minus the reversal distance × ATR
-Short: A falling swing is confirmed when, after at least one swing has been confirmed, the bar makes no new low below the tracked extreme and closes at or above the tracked extreme plus the reversal distance × ATR

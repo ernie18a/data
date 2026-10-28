@@ -1,5 +1,0 @@
-Calculation: Bullish reversal bar = close > (high + low) / 2 AND low = the lowest low over the current and six preceding bars
-Calculation: Market Facilitation Index = (high − low) / volume; squat bar = current MFI < prior-bar MFI AND current volume > prior-bar volume
-Calculation: Awesome Oscillator = short-lookback SMA of median price − longer-lookback SMA of median price; decreasing = current AO < prior-bar AO
-Long: bullish reversal bar AND its high is below each Williams Alligator Jaw, Teeth, and Lips line AND high breaks above the signal bar’s high (entry one tick above it) AND datetime is within the configured trading period AND (AO filter disabled OR AO is decreasing) AND (MFI filter disabled OR a squat bar occurs on the signal bar or either of the two preceding bars)
-Exit: long, low <= signal bar’s low OR low crosses below the latest confirmed down-fractal low while that level is below Williams Alligator Teeth and the trend state changes from bullish to bearish

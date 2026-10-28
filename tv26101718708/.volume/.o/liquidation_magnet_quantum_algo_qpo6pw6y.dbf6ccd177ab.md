@@ -1,3 +1,0 @@
-Calculation: Active liquidation pools = on each confirmed pivot high, create short-liquidation levels above it at enabled leverage-tier offsets; on each confirmed pivot low, create long-liquidation levels below it at those offsets. Weight each level by anchor volume (increased by positive rolling volume z-score); merge nearby same-side levels using a mass-weighted center, decay mass each confirmed bar, and remove swept or expired pools.
-Long: confirmed bar low <= an active long-liquidation pool level
-Short: confirmed bar high >= an active short-liquidation pool level

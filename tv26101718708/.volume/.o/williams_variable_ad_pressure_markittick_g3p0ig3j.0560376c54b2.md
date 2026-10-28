@@ -1,7 +1,0 @@
-Calculation: WVAD = selected smoothing of the rolling sum of ((close − open) / (high − low)) × volume, using 0 when high = low; smoothing may be none, SMA, EMA, RMA, two cascaded WMAs, three cascaded VWMAs, HMA, LLAMA (SMA plus the lookback slope × half the lookback), or the recursive Kalman filter described by its standard single-state update; use the selected smoothing lookback
-Calculation: Signal = SMA of WVAD
-Long: WVAD crosses above Signal on the two most recently completed bars AND (ADX filter disabled OR previous completed bar ADX ≥ threshold) AND (higher-timeframe filter disabled OR last completed higher-timeframe close > open)
-Short: WVAD crosses below Signal on the two most recently completed bars AND (ADX filter disabled OR previous completed bar ADX ≥ threshold) AND (higher-timeframe filter disabled OR last completed higher-timeframe close < open)
-Calculation: Risk distance = previous completed bar ATR × stop multiplier
-Exit: long, a Short condition occurs OR low ≤ entry price − Risk distance OR high ≥ entry price + Risk distance × third-target multiplier
-Exit: short, a Long condition occurs OR high ≥ entry price + Risk distance OR low ≤ entry price − Risk distance × third-target multiplier

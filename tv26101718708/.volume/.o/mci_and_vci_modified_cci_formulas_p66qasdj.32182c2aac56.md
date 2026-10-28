@@ -1,4 +1,0 @@
-Calculation: MCI = (1/d) × (close − EMA(close, n)) / ((|stdev(median*(EMA(close, n), n), b)| + |stdev(mean(EMA(close, n), n), b)|) / 2), where n is the smoothing length and b is the standard-deviation lookback.
-Calculation: VCI = (OBV − EMA(OBV, n)) / ((|stdev(median*(SMA(OBV, n), n), b)| + |stdev(mean(SMA(OBV, n), n), b)|) / 2) × (1/d), using the same n, b, and d as MCI. OBV cumulatively adds volume when ohlc4 rises from the prior bar, subtracts volume when it falls, and is unchanged when equal. mean is the n-bar arithmetic mean. median* starts at the current series value and, for each offset i from 0 through n inclusive, replaces the result with the current value if it is zero, otherwise with (result + series[i]) / 2.
-Long: MCI > 0 AND previous-bar MCI <= 0 AND VCI > MCI two bars ago
-Short: MCI < 0 AND previous-bar MCI >= 0 AND VCI < MCI two bars ago

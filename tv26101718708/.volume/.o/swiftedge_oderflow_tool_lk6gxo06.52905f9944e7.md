@@ -1,4 +1,0 @@
-Calculation: Bar delta = sum of lower-timeframe candle volumes, positive when lower-timeframe close >= open and negative otherwise; if unavailable, chart-bar volume is positive when chart close >= open and negative otherwise.
-Calculation: Cumulative delta = running sum of bar delta.
-Long: (Volume >= the lowest of the three rolling volume-percentile thresholds AND bar delta >= 0) OR (Volume >= a high rolling volume-percentile threshold AND high - low < ATR(14) × a range threshold AND bar delta >= 0) OR (close <= close N bars ago AND cumulative delta > cumulative delta N bars ago)
-Short: (Volume >= the lowest of the three rolling volume-percentile thresholds AND bar delta < 0) OR (Volume >= a high rolling volume-percentile threshold AND high - low < ATR(14) × a range threshold AND bar delta < 0) OR (close > close N bars ago AND cumulative delta <= cumulative delta N bars ago)

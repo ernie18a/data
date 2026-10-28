@@ -1,2 +1,0 @@
-Long: shorter-term EMA of close > medium-term EMA of close AND medium-term EMA of close > longer-term EMA of close
-Short: shorter-term EMA of close < medium-term EMA of close AND medium-term EMA of close < longer-term EMA of close

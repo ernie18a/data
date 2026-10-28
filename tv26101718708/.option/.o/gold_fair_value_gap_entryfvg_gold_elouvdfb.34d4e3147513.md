@@ -1,1 +1,0 @@
-Compare the instrument’s current gold price with a user-set fair value: go long when price is above fair value and short when it is below. For each position, exit at a stop-loss or take-profit level set as a percentage of the current price.

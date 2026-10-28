@@ -1,6 +1,0 @@
-Calculation: Delta = EMA of volume × (close − open) ÷ (high − low), using zero when high = low
-Calculation: Completed delta run = consecutive bars with delta ≥ 0 or delta < 0; on a sign flip, record its bar count, largest absolute delta, and average volume per bar
-Calculation: Recent delta range = highest absolute delta over a lookback
-Calculation: Volume baseline = average volume over a lookback
-Long: Delta flips from < 0 to ≥ 0 AND completed run bar count ≥ configured minimum AND completed run peak ≥ recent delta range × configured swing fraction AND completed run average volume ≥ volume baseline × configured volume fraction AND (RTH filter disabled OR current bar is in RTH) AND (bar-close wait disabled OR current bar is confirmed)
-Short: Delta flips from ≥ 0 to < 0 AND completed run bar count ≥ configured minimum AND completed run peak ≥ recent delta range × configured swing fraction AND completed run average volume ≥ volume baseline × configured volume fraction AND (RTH filter disabled OR current bar is in RTH) AND (bar-close wait disabled OR current bar is confirmed)

@@ -1,8 +1,0 @@
-Calculation: Plugged = either ATR(shorter lookback) > ATR(longer lookback), or HMA(RSI(volume, shorter lookback), shorter lookback) > threshold, according to the selected volatility or volume mode
-Calculation: Adaptive HMA = HMA(close, integer adaptive period); initialize the period to the average of its bounds, then on each bar decrease it by a factor when Plugged, bounded by the minimum, or increase it by that factor when not Plugged, bounded by the maximum
-Calculation: Minor adaptive HMA = same adaptive HMA calculation with shorter period bounds than the main Adaptive HMA
-Calculation: Slope angle = let dt = (Adaptive HMA from two bars ago − current Adaptive HMA) / close × scale, where scale = range parameter / (highest high − lowest low over the slope lookback) × lowest low over that lookback; angle = rounded degrees of arccos(1 / sqrt(1 + dt²)), negated when dt > 0
-Long: Slope angle ≥ flat threshold AND Plugged AND close > Adaptive HMA AND RSI(close) > 50 AND (prior bar slope angle < flat threshold OR prior bar not Plugged)
-Short: Slope angle ≤ −flat threshold AND Plugged AND close < Adaptive HMA AND RSI(close) < 50 AND (prior bar slope angle > −flat threshold OR prior bar not Plugged)
-Exit: long, Slope angle ≥ flat threshold AND not Plugged AND close < Minor adaptive HMA AND (prior bar slope angle < flat threshold OR prior bar Plugged)
-Exit: short, Slope angle ≤ −flat threshold AND not Plugged AND close > Minor adaptive HMA AND (prior bar slope angle > −flat threshold OR prior bar Plugged)

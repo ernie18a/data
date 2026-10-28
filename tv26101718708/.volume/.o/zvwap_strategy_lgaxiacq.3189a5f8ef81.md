@@ -1,1 +1,0 @@
-Calculation: ZVWAP = (close − volume-weighted mean of close over a lookback −? )

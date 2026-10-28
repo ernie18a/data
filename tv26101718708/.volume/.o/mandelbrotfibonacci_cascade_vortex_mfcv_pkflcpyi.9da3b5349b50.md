@@ -1,6 +1,0 @@
-Calculation: Hurst = clamp(log(R/S) / log(n/2), 0, 1), where n is the lookback, R is the range of cumulative deviations of close from its n-bar mean, and S is the n-bar standard deviation of close
-Calculation: Trend strength = 2 × abs(Hurst − 0.5)
-Calculation: Volatility expansion = ATR is greater than its longer-lookback average multiplied by a cascade-depth adjustment
-Calculation: Vortex(period) = close + sin(bar index × rotation speed / period) × ATR(period) × volume factor; the volume factor is either 1 or 1 + 0.5 × (volume / its longer-lookback average − 1)
-Long: more than the signal cooldown interval since the prior long signal AND ((Hurst > 0.65 AND volatility expansion) OR (Hurst < 0.35 AND RSI < 35) OR (trend strength > 0.4 AND Vortex(shorter period) > close AND Vortex(next longer period) > close AND RSI < 70))
-Short: more than the signal cooldown interval since the prior short signal AND ((Hurst > 0.6 AND close > SMA AND RSI > 65 AND Vortex(shorter period) < close AND Vortex(next longer period) < close) OR (Hurst < 0.4 AND close < SMA AND RSI < 35 AND Vortex(shorter period) > close AND Vortex(next longer period) > close) OR (volatility expansion AND trend strength > 0.6 AND abs(close − SMA) / SMA > 0.02))

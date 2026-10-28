@@ -1,6 +1,0 @@
-Calculation: Confirmed pivot high = pivot bar high is the highest high across the configured left bars before it and right bars after it; recognized after the right bars complete
-Calculation: Confirmed pivot low = pivot bar low is the lowest low across the configured left bars before it and right bars after it; recognized after the right bars complete
-Calculation: Volume average = simple moving average of volume over a configurable lookback, evaluated on each tested bar
-Calculation: Absorption candle = high > low AND abs(close - open) / (high - low) * 100 <= configurable body percentage AND volume > volume average * configurable absorption volume multiplier
-Long: confirmed pivot low AND pivot-bar volume > volume average at the pivot bar * configurable pivot volume multiplier AND (absorption candle on the pivot bar if exact-only is enabled, otherwise at least one absorption candle among the available completed bars within the configurable search range around the pivot)
-Short: confirmed pivot high AND pivot-bar volume > volume average at the pivot bar * configurable pivot volume multiplier AND (absorption candle on the pivot bar if exact-only is enabled, otherwise at least one absorption candle among the available completed bars within the configurable search range around the pivot)

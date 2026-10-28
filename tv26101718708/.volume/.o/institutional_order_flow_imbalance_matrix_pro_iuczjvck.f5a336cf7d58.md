@@ -1,3 +1,0 @@
-Calculation: ATR trailing direction and stop = Initialize direction as long and stop as close − ATR × multiplier. Each bar, if direction is long and close < prior stop, set direction to short and stop to close + ATR × multiplier; otherwise keep direction long and set stop to max(prior stop, close − ATR × multiplier). If direction is short and close > prior stop, set direction to long and stop to close − ATR × multiplier; otherwise keep direction short and set stop to min(prior stop, close + ATR × multiplier).
-Long: ATR trailing direction = long OR low > high two bars ago AND volume > 20-bar SMA(volume) × volume spike factor
-Short: ATR trailing direction = short OR high < low two bars ago AND volume > 20-bar SMA(volume) × volume spike factor

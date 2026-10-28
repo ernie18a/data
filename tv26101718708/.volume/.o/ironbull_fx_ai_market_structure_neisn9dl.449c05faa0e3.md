@@ -1,4 +1,0 @@
-Calculation: Adaptive pivot span = sensitivity-adjusted baseline scaled by the exponentially smoothed ratio of ATR to its longer simple average; medium-term span is longer than short-term, and long-term span is longer than medium-term.
-Calculation: Pivot confidence = 0.5 when there are no more than k previous pivots of the same side and term; otherwise the mean score of the k nearest previous pivots by Manhattan distance between normalized ATR and normalized volume features (all stored pivot scores equal 1).
-Long: Confirmed pivot high at any term AND pivot confidence >= confidence threshold OR close > the latest active valid pivot-high level of any term.
-Short: Confirmed pivot low at any term AND pivot confidence >= confidence threshold OR close < the latest active valid pivot-low level of any term.

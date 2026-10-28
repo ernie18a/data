@@ -1,8 +1,0 @@
-Calculation: Bullish FVG = on a completed bar, low > high two bars earlier; bearish FVG = high < low two bars earlier. Apply the configured minimum-size filter, if enabled.
-Calculation: 2x FVG = a same-direction FVG forms within the configured bar window and its zone does not overlap the tracked same-direction FVG cluster; overlapping zones expand the cluster, while an opposite-direction FVG resets it.
-Calculation: Confirmed swing high/low = a high/low greater/less than the highs/lows of the configured number of bars on both sides; use it as a break level only once the right-side bars have completed.
-Calculation: Structure break = on a completed bar, close (or high/low if wick confirmation is selected) crosses above/below the latest unbroken confirmed swing high/low. Track structural direction; classify a break against the prior direction as a change of character and otherwise as a break of structure.
-Calculation: Fast EMA = exponential moving average of close with a shorter lookback than the slow EMA; slow EMA = exponential moving average of close with a longer lookback.
-Calculation: PVSRA climax = volume is at least a configured multiple of its simple moving average, OR volume × (high − low) equals the highest such value over the configured lookback.
-Long: bullish FVG OR bullish 2x FVG OR bullish structure break OR fast EMA crosses above slow EMA OR PVSRA climax AND close > open
-Short: bearish FVG OR bearish 2x FVG OR bearish structure break OR fast EMA crosses below slow EMA OR PVSRA climax AND close <= open

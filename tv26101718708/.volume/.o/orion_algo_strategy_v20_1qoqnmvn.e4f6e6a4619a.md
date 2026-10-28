@@ -1,7 +1,0 @@
-Calculation: Orion signal = Hull moving average of the average of seven momentum measures: MACD histogram; Williams %R; Bollinger %B; RSI of close minus its simple moving average; RSI of positive directional movement minus negative directional movement; RSI of the volume-weighted price deviation; and RSI of the stochastic close position. Scale each measure by a common factor before averaging.
-Calculation: Signal slope = current Orion signal − previous Orion signal.
-Calculation: Prediction curve = a weighted blend of current Orion signal and 1.5 × Signal slope.
-Long: Orion signal > previous Orion signal AND previous Orion signal < signal two bars earlier OR Orion signal crosses above its one-bar lag OR Prediction curve > its previous value AND its previous value < its value two bars earlier OR a long position is not open AND Orion signal > its previous value AND previous Orion signal ≤ signal two bars earlier
-Long: A long position is open AND close ≤ entry price reduced by the drop percentage AND Orion signal > its previous value AND previous Orion signal ≤ signal two bars earlier
-Short: Orion signal crosses below its one-bar lag OR Orion signal < previous Orion signal AND previous Orion signal > signal two bars earlier OR Prediction curve < its previous value AND its previous value > its value two bars earlier
-Exit: long, close ≥ profit target AND Orion signal ≤ its previous value AND previous Orion signal ≥ signal two bars earlier

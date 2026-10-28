@@ -1,3 +1,0 @@
-Calculation: volume-adjusted normalized price deviation = [100 × (close − EMA(close, price lookback)) / EMA(close, price lookback)] / (stdev(close, volatility lookback), or 1 when that stdev is 0) × [1 + volume influence × (volume / max(SMA(volume, volume lookback), 1))^1.5 × sign(volume / max(SMA(volume, volume lookback), 1) − 1)]
-Long: volume-adjusted normalized price deviation ≥ 0
-Short: volume-adjusted normalized price deviation < 0

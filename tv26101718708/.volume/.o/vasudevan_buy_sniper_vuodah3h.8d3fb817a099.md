@@ -1,1 +1,0 @@
-Long: close > VWAP AND low <= VWAP AND RSI crosses above RSI level AND close > open

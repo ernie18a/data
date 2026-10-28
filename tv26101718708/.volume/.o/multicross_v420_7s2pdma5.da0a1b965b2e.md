@@ -1,1 +1,0 @@
-Long: Position is flat AND short-lookback Hull moving average > its value calculated from close two bars earlier AND long-lookback Hull moving average > its value calculated from close two bars earlier AND MACD with shorter fast and longer slow lookbacks > its signal line AND short-lookback Hull moving average < close-based VWMA AND EMA of TSI <??

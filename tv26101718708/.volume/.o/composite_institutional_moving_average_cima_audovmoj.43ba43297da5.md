@@ -1,3 +1,0 @@
-Calculation: CIMA = sum(close × W × volume) / sum(W × volume) over a lookback, where W = max(abs(14-bar volume-weighted average of (buy-volume proxy − sell-volume proxy)) × (volume/range ÷ 50-bar volume-weighted average of volume/range) × volume, 1); buy-volume proxy = volume × (close − low)/range, sell-volume proxy = volume × (high − close)/range. Range uses high − low with a positive floor. Use the current chart timeframe, or the configured higher timeframe’s still-forming bar when MTF is enabled.
-Long: close >= CIMA
-Short: close < CIMA

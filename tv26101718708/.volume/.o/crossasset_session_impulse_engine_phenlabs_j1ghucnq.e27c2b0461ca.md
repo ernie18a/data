@@ -1,6 +1,0 @@
-Calculation: Opening range high/low = highest high and lowest low of the first N bars in each configured session; freeze after N bars. Calculate separately for the chart and each enabled basket market, using the chart timeframe.
-Calculation: Basket votes = count of live enabled markets whose session opening-range break is in the chart signal direction; reverse that market’s vote when its invert setting is enabled.
-Long: configured session AND opening range locked AND chart bar completed AND ATR > 0 AND NOT already fired this session AND (first close above chart opening-range high OR armed long AND (no live basket markets OR bullish basket votes ≥ required minimum)) AND (relative-volume gate disabled OR volume unavailable OR volume / volume SMA ≥ minimum)
-Short: configured session AND opening range locked AND chart bar completed AND ATR > 0 AND NOT already fired this session AND (first close below chart opening-range low OR armed short AND (no live basket markets OR bearish basket votes ≥ required minimum)) AND (relative-volume gate disabled OR volume unavailable OR volume / volume SMA ≥ minimum)
-Exit: long, configured session AND chart bar completed AND close < chart opening-range low
-Exit: short, configured session AND chart bar completed AND close > chart opening-range high

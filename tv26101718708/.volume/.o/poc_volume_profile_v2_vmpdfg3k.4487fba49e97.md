@@ -1,5 +1,0 @@
-Calculation: Profile range = either all bars from the selected start date through the selected end date, or, in automatic mode, from the Nth most recent confirmed pivot high or low (both use the same pivot lookback) through the current bar; use the current bar while it is forming.
-Calculation: Volume-profile bins = divide the profile range from its lowest low to highest high into horizontal price bins; for each bar, allocate its volume to each bin in proportion to the overlap between the bin and the bar’s high-low range.
-Calculation: Profile peaks = bins whose volume is at least a minimum fraction of the maximum bin volume and is not less than either adjacent bin; group peaks closer than a minimum bin gap and retain the highest-volume peak in each group.
-Long: A profile peak’s upper price boundary < current close
-Short: A profile peak’s lower price boundary > current close

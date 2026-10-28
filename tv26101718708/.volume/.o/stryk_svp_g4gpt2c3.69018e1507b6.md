@@ -1,7 +1,0 @@
-Calculation: Profile POC = price bin with the greatest volume in the selected reference profile; the profile is built from bars in the configured session period.
-Calculation: Profile value area = contiguous price range expanded from the POC toward the higher-volume adjacent bin until it contains the configured share of profile volume; its upper and lower edges are VAH and VAL.
-Calculation: Bar delta = sum of lower-timeframe volume signed positive when that intrabar closes above its open and negative when it closes below its open.
-Calculation: HTF delta = sum of bar deltas in the selected higher-timeframe candle, including the candle still forming.
-Calculation: Session up-volume share = volume from rising lower-timeframe bars in the current session divided by total current-session volume.
-Long: close > reference VAH OR (reference VAL <= close AND close <= reference VAH AND close > reference POC) OR close > reference POC OR HTF delta > 0 OR bar delta > 0 OR session up-volume share > 0.5
-Short: close < reference VAL OR (reference VAL <= close AND close <= reference VAH AND close < reference POC) OR close < reference POC OR HTF delta < 0 OR bar delta < 0 OR session up-volume share < 0.5

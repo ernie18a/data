@@ -1,3 +1,0 @@
-Calculation: Active-period high and low = highest high and lowest low of chart bars since the selected ATR session or period began, with the bar time of each extreme.
-Long: Active-period high > active-period low AND (the low formed before the high OR (both formed on the same bar AND close >= (active-period high + active-period low) / 2))
-Short: Active-period high > active-period low AND (the high formed before the low OR (both formed on the same bar AND close < (active-period high + active-period low) / 2))

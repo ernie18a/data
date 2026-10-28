@@ -1,1 +1,0 @@
-For the traded instrument, go long when weighted growth in selected global money supplies (optionally blending in central bank net liquidity) exceeds the comparison market’s growth by the configured positive buy-zone threshold. The indicator defines no short or exit condition.

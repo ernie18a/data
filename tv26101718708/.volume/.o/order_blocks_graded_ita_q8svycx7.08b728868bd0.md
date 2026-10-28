@@ -1,3 +1,0 @@
-Calculation: Confirmed swing high/low = a pivot high/low with equal lookback bars on both sides; use the latest pivot only after its right-side bars have completed.
-Long: Close > latest confirmed swing high AND that swing high has not already been broken by a close since it was confirmed
-Short: Close < latest confirmed swing low AND that swing low has not already been broken by a close since it was confirmed

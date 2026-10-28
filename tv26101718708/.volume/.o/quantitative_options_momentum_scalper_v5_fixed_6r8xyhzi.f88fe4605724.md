@@ -1,9 +1,0 @@
-Calculation: Session VWAP = cumulative volume-weighted average of (high + low + close) / 3, reset at each new day
-Calculation: Stochastic RSI %K = RSI of close, normalized over its lookback and smoothed; %D = %K smoothed over a separate lookback
-Calculation: Squeeze = Bollinger Bands are inside the Keltner Channel; volatility expansion = NOT squeeze
-Calculation: Relative volume = current volume / its simple moving average; pass if current volume is zero, or relative volume meets its minimum threshold
-Calculation: Dynamic stop = On long entry, the lower of the entry bar low and prior bar low minus ATR times a multiplier; while long, update to the greater of the existing stop and prior bar low minus ATR times the multiplier. On short entry, the higher of the entry bar high and prior bar high plus ATR times a multiplier; while short, update to the lesser of the existing stop and prior bar high plus ATR times the multiplier. Use the entry bar low/high instead of the prior bar low/high when the wick-stop option is disabled.
-Long: flat or short AND close > session VWAP AND shorter-lookback EMA > longer-lookback EMA AND (momentum filter disabled OR (%K crosses above %D while %K is below its upper threshold, or, in directional-state mode, %K > %D while %K is below its upper threshold)) AND (squeeze filter disabled OR Bollinger Bands are not inside the Keltner Channel) AND (volume filter disabled OR relative volume passes)
-Short: flat or long AND close < session VWAP AND shorter-lookback EMA < longer-lookback EMA AND (momentum filter disabled OR (%K crosses below %D while %K is above its lower threshold, or, in directional-state mode, %K < %D while %K is above its lower threshold)) AND (squeeze filter disabled OR Bollinger Bands are not inside the Keltner Channel) AND (volume filter disabled OR relative volume passes)
-Exit: long, close < dynamic stop
-Exit: short, close > dynamic stop

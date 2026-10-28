@@ -1,5 +1,0 @@
-Calculation: Body-to-range ratio = absolute(close − open) / (high − low)
-Long: ((Bar 1 (two bars back) closes above its open AND Bar 2 (previous completed bar) closes above its open) OR (NOT (both bars close above their opens) AND Bar 2 closes above Bar 1 high)) AND both bars’ body-to-range ratios meet the minimum AND Bar 2 volume > Bar 1 volume AND current close > current VWAP AND current low is between Bar 2 high − 0.618 × (Bar 2 high − Bar 2 low) and Bar 2 high − 0.5 × (Bar 2 high − Bar 2 low), inclusive
-Short: ((Bar 1 (two bars back) closes below its open AND Bar 2 (previous completed bar) closes below its open) OR (NOT (both bars close below their opens) AND Bar 2 closes below Bar 1 low)) AND both bars’ body-to-range ratios meet the minimum AND Bar 2 volume > Bar 1 volume AND current close < current VWAP AND current high is between Bar 2 low + 0.5 × (Bar 2 high − Bar 2 low) and Bar 2 low + 0.618 × (Bar 2 high − Bar 2 low), inclusive
-Exit: Long, current low ≤ Bar 2 low − stop offset
-Exit: Short, current high ≥ Bar 2 high + stop offset

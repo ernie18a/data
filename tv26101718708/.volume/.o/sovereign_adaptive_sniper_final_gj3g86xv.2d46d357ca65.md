@@ -1,3 +1,0 @@
-Calculation: Opening-range high/low = highest high and lowest low during the configured opening zone, using completed bars
-Long: At the configured trigger time, the most recent prior in-window close above the opening-range high, and no signal has fired since the daily reset
-Short: At the configured trigger time, the most recent prior in-window close below the opening-range low, and no signal has fired since the daily reset

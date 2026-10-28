@@ -1,1 +1,0 @@
-Use Bitcoin network hash rate as the external signal. Go long when its short-term moving average crosses above its longer-term moving average; go short when it crosses below. In long-only mode, the downward cross exits the long; in short-only mode, the upward cross exits the short. In both-directions mode, each cross switches to the corresponding position.

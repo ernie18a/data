@@ -1,2 +1,0 @@
-Long: Current VWMA of (high + low)/2, using a longer lookback, is greater than its values on all bars in a shorter lookback
-Exit: long, current VWMA of (high + low)/2, using a longer lookback, is less than or equal to at least one of its values in a shorter lookback

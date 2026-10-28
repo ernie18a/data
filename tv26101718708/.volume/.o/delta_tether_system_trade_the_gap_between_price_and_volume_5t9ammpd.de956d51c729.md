@@ -1,9 +1,0 @@
-Calculation: Delta line = optionally smoothed least-squares regression intercept of close on bar index over a lookback; use the current bar and earlier bars
-Calculation: Tether = (close − delta line) / ATR
-Calculation: Tether rank = percentile rank of absolute tether over a longer lookback than the delta-line lookback
-Calculation: Stop = for mean reversion, delta line ± 3 ATR ± 0.3 ATR buffer (below for long, above for short); for trend following, delta line ± 0.3 ATR (below for long, above for short). After price moves at least 1 ATR in favor, trail the stop to the delta line, only tightening it
-Calculation: Target = entry price plus (long) or minus (short) the initial entry-to-stop distance multiplied by the mode's risk/reward multiple
-Long: (mean reversion mode AND tether < 0 AND tether rank ≥ threshold AND tether rank < previous bar's rank AND close < trend EMA) OR (trend following mode AND tether crosses above 0 AND tether rank < threshold AND close > trend EMA), AND volume > its moving average × surge multiplier, AND long cooldown ready, AND flat
-Short: (mean reversion mode AND tether > 0 AND tether rank ≥ threshold AND tether rank < previous bar's rank AND close > trend EMA) OR (trend following mode AND tether crosses below 0 AND tether rank < threshold AND close < trend EMA), AND volume > its moving average × surge multiplier, AND short cooldown ready, AND flat
-Exit: long, (mean reversion mode AND tether crosses above 0) OR (trend following mode AND tether crosses below 0) OR close ≤ stop OR close ≥ target
-Exit: short, (mean reversion mode AND tether crosses below 0) OR (trend following mode AND tether crosses above 0) OR close ≥ stop OR close ≤ target

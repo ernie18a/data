@@ -1,5 +1,0 @@
-Calculation: Buying volume = volume × u/(u+d), where u=max(close−low,0)/r and d=max(high−close,0)/r; r=high−low, except use 1 when high=low; use 0 when u+d=0
-Calculation: Selling volume = volume × d/(u+d), using the same u, d, and zero-sum rule as buying volume
-Calculation: Volume ribbon = moving average of buying volume − moving average of selling volume, using the same lookback and selected average type for both
-Long: (volume ≥ 2 × SMA(volume, same lookback as the buying and selling volume averages) AND buying volume > selling volume) OR (volume < 2 × SMA(volume, same lookback) AND volume ribbon ≥ 0)
-Short: (volume ≥ 2 × SMA(volume, same lookback as the buying and selling volume averages) AND buying volume ≤ selling volume) OR (volume < 2 × SMA(volume, same lookback) AND volume ribbon < 0)

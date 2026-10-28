@@ -1,2 +1,0 @@
-Long: A confirmed close pivot low (equal left/right lookback) is lower than the previous confirmed close pivot low AND OBV at the latest pivot is higher than OBV at the previous pivot
-Short: A confirmed close pivot high (equal left/right lookback) is higher than the previous confirmed close pivot high AND OBV at the latest pivot is lower than OBV at the previous pivot

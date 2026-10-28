@@ -1,1 +1,0 @@
-For a uranium-related traded instrument, compare the current uranium spot price with the long-term contract price for the current date. If spot is above the long-term price, exit; otherwise, no trade action is specified.

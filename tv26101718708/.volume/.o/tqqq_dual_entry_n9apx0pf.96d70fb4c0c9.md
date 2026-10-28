@@ -1,5 +1,0 @@
-Calculation: Long-term entry MA = configurable SMA or EMA of close
-Calculation: Exit MA = configurable SMA or EMA of close
-Long: (close is above the long-term entry MA and the number of bars since the most recent close below it meets the required time buffer, AND any enabled percentage buffer is met, AND this condition was false on the previous bar) OR (close is above a shorter-term EMA, volume exceeds its shorter-lookback volume SMA times a multiplier, the EMA is rising for the selected number of consecutive bars, AND this combined condition was false on the previous bar)
-Short: 
-Exit: Long, (low is at or below entry price reduced by the stop-loss percentage) OR (the position was entered by the long-term entry-MA rule, or an EMA-entry position has ever closed above the long-term entry MA, AND close is below the exit MA for the required consecutive bars, any enabled percentage buffer is met, AND this combined condition was false on the previous bar) OR (the position was entered by the EMA rule and has not yet closed above the long-term entry MA, AND close crosses below the shorter-term EMA)

@@ -1,6 +1,0 @@
-Calculation: Hammer = high − configured fraction × (high − low) < min(open, close); if next-candle confirmation is enabled, the following candle must close above its open.
-Calculation: Shooting star = low + configured fraction × (high − low) > max(open, close); if next-candle confirmation is enabled, the following candle must close below its open.
-Calculation: Type 2 up = high > previous high AND low ≥ previous low; Type 2 down = low < previous low AND high ≤ previous high.
-Calculation: Confirmed pivot high/low = swing high/low with the configured number of bars on each side; use the current bar’s close to detect breaks, or its high/low when high/low break mode is enabled.
-Long: Hammer OR (Type 2 down AND close > previous close) OR (low − high two bars ago > configured minimum gap AND low ≥ high two bars ago) OR (close > latest confirmed pivot high)
-Short: Shooting star OR (Type 2 up AND close < previous close) OR (low two bars ago − high > configured minimum gap AND low two bars ago ≥ high) OR (close < latest confirmed pivot low)

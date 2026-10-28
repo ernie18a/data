@@ -1,4 +1,0 @@
-Calculation: Adaptive swing length = clamp(round(ATR(14) / SMA(True Range, 50) * 5), 3, 10)
-Calculation: Historical swing power = min(20, min(10, swing price / ATR(14) at the swing) * min(5, volume at the swing / SMA(volume, 20) at the swing) * age weight), where age weight is 1 if the swing is no older than the lookback range and 0.5 otherwise; use the current bar's corresponding value when a swing-bar value is missing or nonpositive, and use a volume ratio of 1 if its average is nonpositive.
-Long: confirmed swing low using the adaptive swing length AND historical swing power >= power threshold
-Short: confirmed swing high using the adaptive swing length AND historical swing power >= power threshold

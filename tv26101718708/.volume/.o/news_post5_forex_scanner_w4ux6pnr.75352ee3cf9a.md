@@ -1,4 +1,0 @@
-Calculation: News move = close of the first bar closing at or after the configured post-news time on the event-data timeframe minus the open of the bar containing the configured news time
-Calculation: Score = capped sum of points for news-move magnitude relative to ATR, ATR above its longer-term average, directional continuation beyond the post-news close, close on the directional side of VWAP, close on the directional side of the Bollinger basis (with additional points when band width is expanding), and matching EMA trend on intermediate and higher timeframes; the EMA trend uses a shorter and a longer lookback on the intermediate timeframe, and a shorter and a longer lookback on the higher timeframe
-Long: News move > 0 AND event data available AND current time at or after post-news time AND Score >= configured display threshold
-Short: News move < 0 AND event data available AND current time at or after post-news time AND Score >= configured display threshold

@@ -1,3 +1,0 @@
-Calculation: kNN vote = At each fast/slow VWMA cross, store the prior cross’s ADX, MFI, and selected source value; label that prior cross +1 if the current cross’s source value is at least as high, otherwise −1. For the current ADX/MFI, find the k stored points with the smallest Euclidean distance, sum the labels of all points whose distance is no greater than the kth-smallest distance (including ties).
-Long: Fast VWMA crosses above slow VWMA AND (kNN filter is disabled OR kNN vote >= minimum difference)
-Short: Fast VWMA crosses below slow VWMA AND (kNN filter is disabled OR kNN vote <= −minimum difference)

@@ -1,3 +1,0 @@
-Calculation: Pressure = simple moving average of volume × (2 × (close − low) / (high − low) − 1), using 0 for the per-bar value when high = low; use the chart timeframe or, when a higher timeframe is selected, its last completed bar
-Long: Pressure > 0 AND previous Pressure ≤ 0 OR a confirmed Pressure pivot low exists divLookback bars ago AND that bar’s low < the lowest low in the preceding divLookback bars AND that bar’s volume > its volume moving average
-Short: a confirmed Pressure pivot high exists divLookback bars ago AND that bar’s high > the highest high in the preceding divLookback bars AND that bar’s volume > its volume moving average

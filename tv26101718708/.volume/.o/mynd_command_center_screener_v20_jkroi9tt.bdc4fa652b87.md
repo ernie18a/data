@@ -1,2 +1,0 @@
-Long: On the configured data timeframe’s current bar, close > fast EMA AND fast EMA > slow EMA; the fast EMA has a shorter lookback than the slow EMA.
-Short: On the configured data timeframe’s current bar, close < fast EMA AND fast EMA < slow EMA; the fast EMA has a shorter lookback than the slow EMA.

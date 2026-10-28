@@ -1,5 +1,0 @@
-Calculation: Signed volume = volume × sign(close − previous close), with sign equal to 1, 0, or −1 for positive, zero, or negative change
-Calculation: Kyle’s lambda = rolling covariance of close change and signed volume divided by rolling variance of signed volume
-Calculation: Liquidity health = tanh-squashed negative normalized value of smoothed Kyle’s lambda
-Long: A confirmed price low is lower than the previous confirmed price low and liquidity health at that pivot is higher than at the previous confirmed low, OR the price low is higher and liquidity health is lower; the prior pivot is within the maximum pivot gap
-Short: A confirmed price high is higher than the previous confirmed price high and liquidity health at that pivot is lower than at the previous confirmed high, OR the price high is lower and liquidity health is higher; the prior pivot is within the maximum pivot gap

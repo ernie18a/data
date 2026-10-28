@@ -1,5 +1,0 @@
-Calculation: Volume ratio = current bar volume divided by its moving average over the configured lookback, including the current bar
-Calculation: Effective spike threshold = configured spike threshold, optionally multiplied by volatility factor; volatility factor = current ATR as a percentage of close divided by its 50-bar moving average, clamped to 0.5–2.0
-Calculation: Buy-side direction = use the configured method: close > open (ties: close >= previous close), close > (high + low) / 2 (ties: close >= previous close), or close > previous close (ties: close >= open)
-Long: Volume ratio >= effective spike threshold AND buy-side direction OR buy-side big-trade streak count == configured momentum length
-Short: Volume ratio >= effective spike threshold AND NOT buy-side direction OR sell-side big-trade streak count == configured momentum length

@@ -1,1 +1,0 @@
-For each watched instrument, go long when its relative volume is elevated, its current candle is up, its price is above its daily trend average, and its daily range use remains below the exhaustion warning level. Flag a potential fade when relative volume is elevated and daily range use reaches the exhaustion level; the script does not itself confirm a short entry or exit.

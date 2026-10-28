@@ -1,5 +1,0 @@
-Calculation: Rating = average of votes from SMA, EMA, ALMA, SMMA, LSMA, VWMA, DEMA, HMA, KAMA, FRAMA, VIDYA, JMA, TEMA, ZLEMA, TRIMA, and T3, each evaluated at a range of lookbacks from shorter to longer, plus one Ichimoku vote when its inputs are available; each moving average vote is +1 when close is above the average, -1 when below, and 0 when equal. Ichimoku vote is +1 when conversion line > base line, lead 1 > lead 2, close > lead 1, close < base line, previous close < previous conversion line, and close > conversion line; -1 when conversion line < base line, lead 2 > lead 1, close < lead 2, close > base line, previous close > previous conversion line, and close < conversion line; otherwise 0. Ichimoku lines use Donchian midpoints over shorter conversion, intermediate base, and longer span lookbacks; lead 1 is the midpoint of conversion and base lines, and lead 2 is the longest-lookback midpoint. Use the indicator-timeframe bars, including the bar currently forming; include only available votes in the average.
-Long: Rating >= long threshold
-Short: Rating <= short threshold
-Exit: short, Rating >= long threshold
-Exit: long, Rating <= short threshold

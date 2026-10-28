@@ -1,2 +1,0 @@
-Long: True Range > SMA(True Range, lookback shared with volume SMA) × size multiplier AND volume > SMA(volume, same lookback) AND close > open AND short-term SMA(close) > medium-term SMA(close) > long-term SMA(close)
-Short: True Range > SMA(True Range, lookback shared with volume SMA) × size multiplier AND volume > SMA(volume, same lookback) AND close < open AND short-term SMA(close) < medium-term SMA(close) < long-term SMA(close)

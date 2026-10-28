@@ -1,3 +1,0 @@
-Calculation: normalized rolling price-weighted volume delta = EMA over a smoothing length of the rolling sum over a lookback length of [estimated volume delta × (1 + absolute percentage change in close over a momentum lookback)], divided by the rolling sum of volume over that lookback length, then multiplied by 100; estimated volume delta = volume × [(close − low) − (high − close)] / (high − low), or 0 when high = low
-Long: normalized rolling price-weighted volume delta >= 0
-Short: normalized rolling price-weighted volume delta < 0

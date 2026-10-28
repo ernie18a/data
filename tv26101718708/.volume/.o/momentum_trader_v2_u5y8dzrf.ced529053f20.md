@@ -1,6 +1,0 @@
-Calculation: Pivot levels = confirmed pivot highs and lows using configurable left- and right-bar lookbacks
-Calculation: Tolerance(level) = the greater of ATR times a configurable multiplier or level times a configurable percentage; use the selected tolerance method
-Calculation: Support and resistance = respectively, the nearest lower and upper pivot-cluster levels with at least the minimum number of closes within their tolerance during the scan lookback; merge pivot levels within tolerance by averaging them
-Calculation: Relative volume = current volume / its moving average over a configurable lookback
-Long: (close > resistance + Tolerance(resistance) AND previous close <= previous bar's resistance + its tolerance AND ADX >= its threshold AND relative volume >= its threshold AND short-period EMA > long-period EMA) OR (low <= support + Tolerance(support) AND close > support + Tolerance(support) AND close > open)
-Short: close < support - Tolerance(support) AND previous close >= previous bar's support - its tolerance AND relative volume >= its threshold

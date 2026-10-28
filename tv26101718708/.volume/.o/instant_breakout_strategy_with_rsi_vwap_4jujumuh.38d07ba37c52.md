@@ -1,7 +1,0 @@
-Calculation: Latest confirmed pivot high = the high of the most recent bar higher than the highs in the specified number of bars on both sides; it becomes available after the bars on its right complete.
-Calculation: Latest confirmed pivot low = the low of the most recent bar lower than the lows in the specified number of bars on both sides; it becomes available after the bars on its right complete.
-Calculation: Bar momentum = (current close − current bar open) / current bar open.
-Long: Current close crosses above the latest confirmed pivot high AND (filters are disabled OR current volume > its moving average × volume multiplier AND bar momentum > momentum threshold AND RSI > 50 AND current close > current session VWAP)
-Short: Current close crosses below the latest confirmed pivot low AND (filters are disabled OR current volume > its moving average × volume multiplier AND bar momentum < −momentum threshold AND RSI < 50 AND current close < current session VWAP)
-Exit: Long, current high >= breakout-bar close + breakout-bar ATR × take-profit multiplier OR current low <= breakout-bar close − breakout-bar ATR × stop-loss multiplier OR a short-entry condition occurs
-Exit: Short, current low <= breakout-bar close − breakout-bar ATR × take-profit multiplier OR current high >= breakout-bar close + breakout-bar ATR × stop-loss multiplier OR a long-entry condition occurs

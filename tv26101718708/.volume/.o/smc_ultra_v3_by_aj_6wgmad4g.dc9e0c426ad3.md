@@ -1,5 +1,0 @@
-Calculation: average body = average of absolute close−open over the lookback
-Calculation: estimated buy volume = volume if close > open, otherwise volume × (close−low) / max(high−low, 0.0001)
-Calculation: estimated sell volume = volume − estimated buy volume
-Long: close > open AND |close−open| ≥ strength multiplier × average body AND volume ≥ volume multiplier × average volume AND estimated buy volume > estimated sell volume OR lower wick > wick multiplier × |close−open| AND lower wick > upper wick OR low > high from two bars earlier
-Short: close < open AND |close−open| ≥ strength multiplier × average body AND volume ≥ volume multiplier × average volume AND estimated sell volume > estimated buy volume OR upper wick > wick multiplier × |close−open| AND upper wick > lower wick OR high < low from two bars earlier

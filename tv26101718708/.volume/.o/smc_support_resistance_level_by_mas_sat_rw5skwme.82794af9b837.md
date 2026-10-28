@@ -1,5 +1,0 @@
-Calculation: Confirmed swing pivot high/low = a candidate bar’s high/low that starts a new swing leg: compare its high/low with the preceding lookback bars; recognize the pivot after the leg changes. Maintain the latest high and low pivots and whether each has been crossed. Use a longer lookback for swing pivots than for internal pivots.
-Calculation: Resistance/support = latest pivot high/low confirmed using bars on both sides, carried forward, then delayed by one bar.
-Calculation: Volume oscillator = 100 × (short-lookback EMA(volume) − long-lookback EMA(volume)) / long-lookback EMA(volume), with the short lookback shorter than the long lookback.
-Long: Close crosses above resistance AND (open − low > close − open OR volume oscillator > threshold) OR close crosses above an unbroken swing pivot high OR close crosses above an unbroken internal pivot high AND internal pivot high differs from swing pivot high
-Short: Close crosses below support AND (open − close < high − open OR volume oscillator > threshold) OR close crosses below an unbroken swing pivot low OR close crosses below an unbroken internal pivot low AND internal pivot low differs from swing pivot low

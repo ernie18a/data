@@ -1,9 +1,0 @@
-Calculation: Relative volume = volume / moving average of volume over the same lookback
-Calculation: Setup trigger = setup-bar close + trigger buffer
-Calculation: Close location = (close - low) / (high - low); weak close when it is at or below a threshold, strong close when it is at or above a threshold
-Calculation: Giveback percentage = (high - close) / (high - low) × 100; heavy giveback when it is at or above a threshold
-Calculation: Very wide bar = high - low at or above an absolute range threshold; very wide range percentage = (high - low) / close × 100 at or above a percentage threshold
-Calculation: Current R = (close - entry price) / active risk; active risk is ATR times its multiplier when available, otherwise entry price minus (session low-of-day minus stop buffer)
-Calculation: Extended = close is at least a threshold percentage above the 9-period EMA or VWAP; capitulation risk = distance above both is at least their respective, higher exhaustion thresholds
-Long: After a setup bar with close > 9-period EMA AND close > VWAP AND relative volume >= setup threshold, within the maximum setup age, high >= setup-bar close + trigger buffer AND close > 9-period EMA AND close > VWAP AND relative volume >= entry threshold AND (increasing-volume filter disabled OR volume > prior bar volume); entry is at the trigger price
-Exit: Long, while in a position, close < 9-period EMA AND close < VWAP OR close < open AND weak close AND (close <= 9-period EMA OR close <= VWAP) OR bars since entry >= 1 AND close < open AND heavy giveback AND very wide bar OR bars since entry > 0 AND relative volume < 1 AND (close <= 9-period EMA OR close <= VWAP) OR (not stalling/weakness AND bars since entry >= 1 AND (capitulation risk OR (very wide bar AND very wide range percentage AND current R >= base-hit R threshold AND close > 9-period EMA AND close > VWAP) OR (current R >= base-hit R threshold AND strong close AND extended AND close > 9-period EMA AND close > VWAP))

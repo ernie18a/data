@@ -1,7 +1,0 @@
-Calculation: Scan span = highest high minus lowest low over the build lookback; scan high and low = those extrema.
-Calculation: Mean body efficiency = average of abs(close − open) / max(high − low, minimum tick) over the build lookback; directional balance = abs(sum of sign(close − open)) / build lookback.
-Calculation: Ledger becomes live after scan span / ATR <= compression ceiling, mean body efficiency <= body-efficiency ceiling, and directional balance <= balance ceiling for max(4, ceil(0.35 × build lookback)) consecutive confirmed bars. At activation, ledger high and low equal scan high and low; they stay fixed until breakout.
-Calculation: Build readiness = clamp(0.55 × compression score + 0.30 × balance score + 0.15 × (100 − 100 × previous-bar mean body efficiency), 0, 100), where compression score = 100 − clamp(100 × (scan span / ATR) / compression ceiling, 0, 100) and balance score = 100 × (1 − directional balance).
-Calculation: Build upper and lower levels = scan low + 0.75 × scan span and scan low + 0.25 × scan span.
-Long: Confirmed bar AND ((ledger live AND low < ledger low AND close > ledger low) OR (ledger live AND close > ledger high + breakout buffer × ATR) OR (ledger not live AND build readiness >= 18 AND close crosses above the build upper level))
-Short: Confirmed bar AND ((ledger live AND high > ledger high AND close < ledger high) OR (ledger live AND close < ledger low − breakout buffer × ATR) OR (ledger not live AND build readiness >= 18 AND close crosses below the build lower level))

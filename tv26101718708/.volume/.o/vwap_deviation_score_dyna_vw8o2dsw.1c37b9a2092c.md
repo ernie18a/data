@@ -1,5 +1,0 @@
-Calculation: Session z-score = EMA of (close − session VWAP) / session standard deviation, where session VWAP and standard deviation use cumulative HLC3 weighted by max(volume, 1), reset at session open.
-Long: On a confirmed in-session bar with at least the minimum session bars and valid standard deviation, prior smoothed z-score ≤ upper extreme threshold AND current smoothed z-score > upper extreme threshold.
-Short: On a confirmed in-session bar with at least the minimum session bars and valid standard deviation, prior smoothed z-score ≥ negative extreme threshold AND current smoothed z-score < negative extreme threshold.
-Exit: long, confirmed bar AND an extreme threshold was reached earlier in the current session since the last zero crossing AND prior smoothed z-score ≤ 0 AND current smoothed z-score > 0
-Exit: short, confirmed bar AND an extreme threshold was reached earlier in the current session since the last zero crossing AND prior smoothed z-score ≥ 0 AND current smoothed z-score < 0

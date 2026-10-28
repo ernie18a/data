@@ -1,2 +1,0 @@
-Long: On a newly completed higher-timeframe bar: current low > high two bars earlier AND previous close > high two bars earlier AND (if the high-probability filter is enabled, the gap is at least the configured minimum size AND previous-bar volume > volume two bars earlier)
-Short: On a newly completed higher-timeframe bar: current high < low two bars earlier AND previous close < low two bars earlier AND (if the high-probability filter is enabled, the gap is at least the configured minimum size AND previous-bar volume > volume two bars earlier)

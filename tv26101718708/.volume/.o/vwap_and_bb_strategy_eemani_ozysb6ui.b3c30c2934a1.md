@@ -1,2 +1,0 @@
-Long: (fast EMA > slow EMA AND close > open AND close > session VWAP AND close < upper Bollinger band AND close < lower Bollinger band on any of the previous 10 completed bars AND position is flat) OR (position is long AND close < entry price AND close > session VWAP)
-Exit: Long, (close > upper Bollinger band AND previous completed bar close <= its upper Bollinger band) OR close < entry price × (1 − stop-loss percentage / 100)

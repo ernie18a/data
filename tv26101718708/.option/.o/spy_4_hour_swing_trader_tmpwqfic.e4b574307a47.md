@@ -1,1 +1,0 @@
-While long, if the lagged VIX close exceeds its high-volatility threshold, exit when the traded instrument closes below both the entry price and its previous close; otherwise move the protective stop to the entry price. Close the long if a later close falls below that stop.

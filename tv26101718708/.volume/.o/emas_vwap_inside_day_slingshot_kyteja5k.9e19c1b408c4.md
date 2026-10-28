@@ -1,1 +1,0 @@
-Long: Current close > EMA of highs AND previous bar close < its EMA of highs AND close 2 bars ago < its EMA of highs AND close 3 bars ago < its EMA of highs

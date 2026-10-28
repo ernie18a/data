@@ -1,4 +1,0 @@
-Calculation: Transaction-size bucket = transaction dollar value is greater than the bucket’s lower threshold and less than its upper threshold; buckets use ascending thresholds, with the highest bucket having no upper threshold
-Calculation: Per-level delta = bullish transaction value minus bearish transaction value accumulated at each adaptive price level during the current session; classify lower-timeframe transactions by candle direction, or tick transactions by bid/ask and then price change from the previous tick; distribute lower-timeframe transaction value across the price levels touched by its low-to-high range
-Long: Per-level delta > 0
-Short: Per-level delta < 0

@@ -1,1 +1,0 @@
-Calculate an RSI from daily closing data for an external volatility index. Enter long on the traded instrument when that RSI crosses above its upper extreme, and enter short when it crosses below its lower extreme. Close either position after the minimum holding period has elapsed.

@@ -1,7 +1,0 @@
-Calculation: Fisher Transform = Apply to HL2 a rolling high/low normalization over its lookback, smooth recursively with coefficients 0.66 and 0.67, clamp the normalized value to ±0.999, then apply the recursive log Fisher transform with 0.5 weighting of the prior result. Use four lookbacks that are progressively longer multiples of the same base lookback.
-Calculation: Scaled RSI = (RSI of close − 50) / 10
-Calculation: OBV oscillator = Cumulative volume added when close rises, subtracted when close falls, and unchanged when close is flat, minus its EMA.
-Long: All four Fisher Transform values are rising AND Scaled RSI is above the buy threshold AND the close-based WMA is rising AND the OBV oscillator is above its bullish threshold AND time is after the configured start time AND the bar is confirmed
-Short: All four Fisher Transform values are falling AND Scaled RSI is below the sell threshold AND the close-based WMA is falling AND the OBV oscillator is below its bearish threshold AND time is after the configured start time AND the bar is confirmed
-Exit: long, All four Fisher Transform values are falling AND Scaled RSI is below the downside reversal threshold
-Exit: short, All four Fisher Transform values are rising AND Scaled RSI is above the upside reversal threshold

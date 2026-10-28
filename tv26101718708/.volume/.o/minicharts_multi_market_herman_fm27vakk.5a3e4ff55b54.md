@@ -1,4 +1,0 @@
-Calculation: Confirmed pivot high = a bar whose high is greater than or equal to the highs of the configured lookback number of bars on each side; use selected mini-chart timeframe bars, including the still-forming bar when present.
-Calculation: Confirmed pivot low = a bar whose low is less than or equal to the lows of the configured lookback number of bars on each side; use selected mini-chart timeframe bars, including the still-forming bar when present.
-Short: At two consecutive confirmed pivot highs, the selected market's high changes and the automatically paired comparison market's high on those same timeframe bars changes in opposite directions (the product of the two changes is < 0).
-Long: At two consecutive confirmed pivot lows, the selected market's low changes and the automatically paired comparison market's low on those same timeframe bars changes in opposite directions (the product of the two changes is < 0).

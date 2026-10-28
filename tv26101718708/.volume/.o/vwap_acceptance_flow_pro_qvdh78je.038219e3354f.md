@@ -1,6 +1,0 @@
-Calculation: Rolling VWAP = rolling sum(close × volume) / rolling sum(volume), using chart-timeframe bars.
-Calculation: Acceptance Flow = 0.40 × VWAP distance + 0.30 × EMA of the change in VWAP distance + 0.20 × signed acceptance duration / 10 + 0.10 × VWAP slope; VWAP distance = (close − Rolling VWAP) / ATR; signed acceptance duration increments when close > Rolling VWAP and decrements otherwise, capped at ±50; VWAP slope = (Rolling VWAP − its value 5 bars earlier) / ATR.
-Calculation: Chart Flow = short-lookback EMA of Acceptance Flow; X5 Flow = longer-lookback EMA of Acceptance Flow; X15 Flow = longest-lookback EMA of Acceptance Flow.
-Calculation: Flow Trigger = EMA of Chart Flow.
-Long: X15 Flow > 0 AND X5 Flow > 0 AND Chart Flow < 0 OR Chart Flow crosses above X5 Flow OR X15 Flow > 0 AND X5 Flow > 0 AND Chart Flow crosses above Flow Trigger AND Chart Flow > its value 1 bar earlier
-Short: X15 Flow < 0 AND X5 Flow < 0 AND Chart Flow > 0 OR Chart Flow crosses below X5 Flow OR X15 Flow < 0 AND X5 Flow < 0 AND Chart Flow crosses below Flow Trigger AND Chart Flow < its value 1 bar earlier

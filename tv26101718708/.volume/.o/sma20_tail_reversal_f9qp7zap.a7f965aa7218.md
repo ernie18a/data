@@ -1,1 +1,0 @@
-Long: volume > volume SMA AND close > open AND high - max(close, open) < abs(close - open) × wick ratio AND high < close SMA AND low < close SMA AND the most recent base signal was a long setup AND current low > that setup’s low

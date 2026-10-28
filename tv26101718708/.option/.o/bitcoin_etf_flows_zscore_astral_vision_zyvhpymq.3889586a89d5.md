@@ -1,1 +1,0 @@
-Use daily balance changes across the spot Bitcoin ETFs as external data. Standardize the combined flow against its rolling history and smooth the result. When the smoothed score is above the upper threshold, signal long on Bitcoin; when below the lower threshold, signal short. Between thresholds, the indicator gives no directional signal.

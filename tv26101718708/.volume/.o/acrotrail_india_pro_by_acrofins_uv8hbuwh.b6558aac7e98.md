@@ -1,8 +1,0 @@
-Calculation: Trail bands = EMA(close) ± ATR × configured multiplier; when adaptive volatility is enabled, multiply by a factor selected from the current ATR’s percentile rank over a longer lookback. Ratchet the active-side band so it only tightens; use the prior completed bar’s bands for direction changes.
-Calculation: Trend direction = +1 when close exceeds the prior upper band, −1 when close falls below the prior lower band, otherwise retain the prior direction.
-Calculation: Signal quality = configured weighted sum of higher-timeframe bias, volume confirmation, directional RSI momentum, market regime, and breakout strength; use the last completed higher-timeframe bar. Market regime combines normalized ADX, inverse choppiness, and close-price linear-regression R². Breakout strength is band-piercing distance divided by ATR, capped at three ATR. Adjust component weights according to configured instrument type, session context, volatility, and regime.
-Calculation: Initial stop distance = ATR × configured stop multiplier; targets = entry price ± stop distance × configured reward multiples, with signs reversed for short positions.
-Long: prior trend direction = −1 AND current trend direction = +1 AND bar is confirmed AND session gate passes AND signal quality ≥ configured minimum AND NOT (choppy regime is enabled as a skip condition).
-Short: prior trend direction = +1 AND current trend direction = −1 AND bar is confirmed AND session gate passes AND signal quality ≥ configured minimum AND NOT (choppy regime is enabled as a skip condition).
-Exit: Long, after the entry bar, low ≤ active stop OR high ≥ third target.
-Exit: Short, after the entry bar, high ≥ active stop OR low ≤ third target.

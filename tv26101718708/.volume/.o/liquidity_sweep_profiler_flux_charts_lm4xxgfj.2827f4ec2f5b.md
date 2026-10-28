@@ -1,6 +1,0 @@
-Calculation: Session high/low = running highest high and lowest low during each configured session in New York time; use the finalized range after the session ends
-Calculation: Previous day/week/month high and low = high and low of the last completed daily, weekly, or monthly bar
-Calculation: Swing high/low = chart-timeframe pivot high/low confirmed using the configured number of bars on each side
-Calculation: Equal high/low = a swing high/low within the configured ATR distance of any of the three most recent prior swing pivots on the same side; otherwise it is a standalone swing high/low
-Long: For any untaken low-side session, previous-period, swing-low, or equal-low level, low < level and close > level on the piercing bar or within the configured confirmation window after the first bar with low < level
-Short: For any untaken high-side session, previous-period, swing-high, or equal-high level, high > level and close < level on the piercing bar or within the configured confirmation window after the first bar with high > level

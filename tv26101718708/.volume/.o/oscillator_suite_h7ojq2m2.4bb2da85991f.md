@@ -1,2 +1,0 @@
-Long: selected oscillator is RSI, Stochastic %K, Stochastic RSI, Williams %R, CCI, TSI, Ultimate Oscillator, Chande Momentum (CMO), Connors RSI, Aroon Oscillator, Money Flow Index (MFI), or Balance of Power (BOP) AND selected oscillator < its oversold threshold
-Short: selected oscillator is RSI, Stochastic %K, Stochastic RSI, Williams %R, CCI, TSI, Ultimate Oscillator, Chande Momentum (CMO), Connors RSI, Aroon Oscillator, Money Flow Index (MFI), or Balance of Power (BOP) AND selected oscillator > its overbought threshold

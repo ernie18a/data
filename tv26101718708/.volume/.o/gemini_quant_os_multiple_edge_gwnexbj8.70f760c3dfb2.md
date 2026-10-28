@@ -1,4 +1,0 @@
-Calculation: Breakout ceiling = highest high over the lookback, excluding the current bar
-Calculation: Breakout floor = lowest low over the lookback, excluding the current bar
-Long: Close > breakout ceiling AND previous close <= previous breakout ceiling AND shorter-lookback EMA(close) > longer-lookback EMA(close) AND close > shorter-lookback EMA(close) on the higher-timeframe bar (current bar, which may still be forming) AND RSI is within the configured buy range AND volume > its 20-bar SMA × volume multiplier
-Short: Close < breakout floor AND previous close >= previous breakout floor AND shorter-lookback EMA(close) < longer-lookback EMA(close) AND close < shorter-lookback EMA(close) on the higher-timeframe bar (current bar, which may still be forming) AND RSI is within the configured sell range AND volume > its 20-bar SMA × volume multiplier

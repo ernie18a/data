@@ -1,7 +1,0 @@
-Calculation: Relative strength = EMA of the instrument’s close divided by the benchmark’s close, using the same timeframe’s current bar for both closes
-Calculation: Relative strength rising/falling = current relative-strength EMA is higher/lower than every value in the preceding trend lookback
-Long: fast moving average crosses above the slower moving average AND relative strength is rising AND RSI > oversold threshold AND RSI < overbought threshold AND (volume filter disabled OR volume >= volume multiplier × 20-bar average volume)
-Long: fast moving average > slower moving average AND current close > fast moving average AND previous completed bar’s close < its fast moving average AND relative strength is rising AND RSI < bounce RSI ceiling AND (volume filter disabled OR volume >= volume multiplier × 20-bar average volume)
-Short: fast moving average crosses below the slower moving average AND relative strength is falling AND RSI < 100 − oversold threshold AND (volume filter disabled OR volume >= volume multiplier × 20-bar average volume)
-Exit: long, fast moving average crosses below the slower moving average OR (relative strength is falling AND RSI > overbought threshold)
-Exit: short, fast moving average crosses above the slower moving average OR relative strength is rising

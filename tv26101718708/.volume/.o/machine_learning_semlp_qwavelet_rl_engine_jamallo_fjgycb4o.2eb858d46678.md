@@ -1,3 +1,0 @@
-Long: BUY Q-value is the highest of the BUY, SELL, and HOLD Q-values AND BUY Q-value > the Q-value of the previously selected action + confidence margin AND current position is not long
-Short: SELL Q-value is the highest of the BUY, SELL, and HOLD Q-values AND SELL Q-value > the Q-value of the previously selected action + confidence margin AND current position is not short
-Exit: long or short, HOLD is selected AND current position is not flat

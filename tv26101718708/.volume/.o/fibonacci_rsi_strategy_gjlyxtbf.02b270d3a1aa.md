@@ -1,9 +1,0 @@
-Calculation: Basis = volume-weighted moving average of typical price (high + low + close) / 3 over a lookback
-Calculation: Deviation = multiplier × standard deviation of typical price over the same lookback as Basis
-Calculation: Upper band = Basis + Deviation; lower band = Basis − Deviation
-Calculation: Upside target = Basis − configured level factor × Deviation; downside target = Basis + configured level factor × Deviation
-Calculation: Long exit target = Upside target captured on the bar the long position opens; short exit target = Downside target captured on the bar the short position opens
-Long: Low < lower band AND RSI of close crossed above the oversold threshold on the previous bar AND high < upside target AND higher-timeframe ADX on the last completed higher-timeframe bar < configured ADX maximum AND (UTC hour is within the configured session OR the time filter is disabled) AND (lunch filter is disabled OR UTC hour is outside the configured lunch interval)
-Short: High > upper band AND RSI of close crossed below the overbought threshold on the previous bar AND low > downside target AND higher-timeframe ADX on the last completed higher-timeframe bar < configured ADX maximum AND (UTC hour is within the configured session OR the time filter is disabled) AND (lunch filter is disabled OR UTC hour is outside the configured lunch interval)
-Exit: long, high > long exit target OR low ≤ entry price − current ATR × configured stop multiplier OR high ≥ entry price + current ATR × configured take-profit multiplier
-Exit: short, low < short exit target OR high ≥ entry price + current ATR × configured stop multiplier OR low ≤ entry price − current ATR × configured take-profit multiplier

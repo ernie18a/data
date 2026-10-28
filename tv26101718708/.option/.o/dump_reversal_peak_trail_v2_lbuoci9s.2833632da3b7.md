@@ -1,1 +1,0 @@
-For the traded instrument, allow a long entry only when Bitcoin’s hourly close is higher than it was four hourly bars earlier. Otherwise, block new long entries. The strategy does not use external-instrument data to trigger shorts or exits.

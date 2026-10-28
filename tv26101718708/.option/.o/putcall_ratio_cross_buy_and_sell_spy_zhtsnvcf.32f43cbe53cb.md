@@ -1,1 +1,0 @@
-Use the put/call ratio series as the signal: go long the traded instrument when its 50-period simple moving average crosses above its 200-period simple moving average, and go short when the 50-period average crosses below the 200-period average. Each opposite signal reverses the position.

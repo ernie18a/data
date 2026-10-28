@@ -1,4 +1,0 @@
-Calculation: Primary anchored VWAP = volume-weighted mean of HLC3 since the selected anchor, including the current bar. The anchor resets at session/day, week, or month open; a confirmed swing high or low (rebuilding from the pivot bar); a highest-volume bar in the lookback; or a sweep bar that wicks through the last confirmed swing level and closes back inside it, once per level.
-Calculation: Outer bands = primary anchored VWAP ± outer-band multiplier × square root of (volume-weighted mean of HLC3² since the same anchor − primary anchored VWAP²), including the current bar.
-Long: On a completed bar, low ≤ lower outer band AND close > lower outer band AND close < primary anchored VWAP AND the signal cooldown has elapsed since the previous rejection.
-Short: On a completed bar, high ≥ upper outer band AND close < upper outer band AND close > primary anchored VWAP AND the signal cooldown has elapsed since the previous rejection.

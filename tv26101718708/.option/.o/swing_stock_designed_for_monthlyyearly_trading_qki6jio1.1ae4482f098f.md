@@ -1,1 +1,0 @@
-Within the configured date window, go long when either real GDP or nominal GDP is higher than its previous reported value; go short when either is lower. A signal in the opposite direction reverses the position. Close all positions outside the date window.

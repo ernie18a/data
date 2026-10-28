@@ -1,5 +1,0 @@
-Calculation: Opening Range High/Low = highest high / lowest low of bars in the configured opening-range session; use only after that session ends.
-Calculation: Session Volume Z-Score = current bar volume minus the mean volume of prior confirmed bars in the current main session, divided by their population standard deviation; available after the configured minimum number of prior bars.
-Calculation: Relative Volume Ratio = current bar volume / simple moving average of volume over a configurable lookback.
-Long: Opening range is ready AND close crosses above Opening Range High OR (bar is confirmed AND bar is in the main session AND (Session Volume Z-Score >= the larger of its configured trigger and 3 OR Relative Volume Ratio >= the larger of its configured trigger and 3) AND (close > open OR (close = open AND close >= prior close)))
-Short: Opening range is ready AND close crosses below Opening Range Low OR (bar is confirmed AND bar is in the main session AND (Session Volume Z-Score >= the larger of its configured trigger and 3 OR Relative Volume Ratio >= the larger of its configured trigger and 3) AND (close < open OR (close = open AND close < prior close)))

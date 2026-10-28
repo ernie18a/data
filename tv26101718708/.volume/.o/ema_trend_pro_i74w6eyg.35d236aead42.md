@@ -1,4 +1,0 @@
-Calculation: Fast/slow MA = the same selected moving-average type applied to the selected source, using shorter/longer lookbacks, respectively.
-Calculation: HTF fast/slow MA = the same fast/slow MAs calculated on higher-timeframe bars with lookahead off; historical values use the last completed bar, while realtime values can use the bar still forming.
-Long: Fast MA > slow MA OR (fast MA crosses above slow MA AND (HTF filter disabled OR HTF fast MA > HTF slow MA) AND (ATR separation filter disabled OR abs(fast MA - slow MA) >= ATR × separation threshold))
-Short: Fast MA < slow MA OR (fast MA crosses below slow MA AND (HTF filter disabled OR HTF fast MA < HTF slow MA) AND (ATR separation filter disabled OR abs(fast MA - slow MA) >= ATR × separation threshold))

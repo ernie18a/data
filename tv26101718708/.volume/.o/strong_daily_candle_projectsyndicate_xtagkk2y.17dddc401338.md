@@ -1,7 +1,0 @@
-Calculation: Daily strength score = sum the scores for body/range ratio, directional close position within the range, range/ATR, opposite wick/body ratio, and volume/average volume; each receives a higher score at successively stronger thresholds. Bullish close position is (close−low)/range; bearish is (high−close)/range. The opposite wick is the upper wick for bullish bars and lower wick for bearish bars.
-Calculation: Entry price = configured choice of candle body midpoint, candle range midpoint, or close.
-Calculation: Stop price = signal bar low minus configured buffer for long positions; signal bar high plus configured buffer for short positions. Risk = absolute distance from entry to stop. Target 1 = entry plus risk times configured target multiple for longs, or minus it for shorts.
-Long: On a confirmed bar, close > open AND daily strength score meets the configured strength gate and minimum tier AND configured filters pass (if enabled: range meets the configured ATR multiple; opposite wick ≤ body; close > EMA). Enter on a later bar when low ≤ entry price.
-Short: On a confirmed bar, close < open AND daily strength score meets the configured strength gate and minimum tier AND configured filters pass (if enabled: range meets the configured ATR multiple; opposite wick ≤ body; close < EMA). Enter on a later bar when high ≥ entry price.
-Exit: long, low ≤ stop price OR high ≥ target 1.
-Exit: short, high ≥ stop price OR low ≤ target 1.

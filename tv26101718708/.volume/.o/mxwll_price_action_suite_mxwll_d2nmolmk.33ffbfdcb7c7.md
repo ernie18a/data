@@ -1,4 +1,0 @@
-Calculation: Swing high = a bar high strictly greater than every high in the following lookback bars; calculate internal and external swing highs with the external lookback longer than the internal lookback.
-Calculation: Swing low = a bar low strictly lower than every low in the following lookback bars; calculate internal and external swing lows with the external lookback longer than the internal lookback.
-Long: Previous close <= latest active internal swing high AND current close > latest active internal swing high OR previous close <= latest active external swing high AND current close > latest active external swing high
-Short: Previous close >= latest active internal swing low AND current close < latest active internal swing low OR previous close >= latest active external swing low AND current close < latest active external swing low

@@ -1,4 +1,0 @@
-Calculation: Prior volume average = mean volume of the preceding lookback bars on the same selected higher timeframe, excluding the candle being classified
-Calculation: Prior maximum spread-volume = maximum of (high − low) × volume over the preceding lookback bars on the same selected higher timeframe, excluding the candle being classified
-Long: On any selected higher-timeframe candle, including its current forming candle or completed candles, close >= open AND (volume >= prior volume average × elevated-volume threshold OR (spread-volume override enabled AND (high − low) × volume >= prior maximum spread-volume))
-Short: On any selected higher-timeframe candle, including its current forming candle or completed candles, close < open AND (volume >= prior volume average × elevated-volume threshold OR (spread-volume override enabled AND (high − low) × volume >= prior maximum spread-volume))

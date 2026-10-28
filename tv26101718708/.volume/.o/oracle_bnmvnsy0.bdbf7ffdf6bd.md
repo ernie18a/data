@@ -1,3 +1,0 @@
-Calculation: projected close = weighted quadratic regression of recent closes, extrapolated forward; optionally use the tested lookback with the highest R² and apply enabled damping, volume, EMA trend, RSI, support/resistance, and confidence adjustments
-Long: projected close > close AND (confidence display is disabled OR R² ≥ confidence threshold)
-Short: projected close < close AND (confidence display is disabled OR R² ≥ confidence threshold)

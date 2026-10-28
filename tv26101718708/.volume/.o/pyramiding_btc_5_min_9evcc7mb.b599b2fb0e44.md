@@ -1,3 +1,0 @@
-Calculation: b = HMA3 of close from one completed selected higher-timeframe bar earlier, shifted back by the configured number of higher-timeframe bars; HMA3 = WMA(3 × WMA(close, p/3) − WMA(close, p/2) − WMA(close, p), p), where p = half the configured period
-Long: current linear regression of close over the configured lookback > current b AND prior linear regression <= prior b AND (fast EMA(close) > slow EMA(close) OR trend filter disabled) AND datetime is within the configured date window AND open entries < configured pyramiding limit
-Exit: Long, high >= entry price + close × configured profit target percentage / 100 OR low <= entry price − close × configured loss percentage / 100

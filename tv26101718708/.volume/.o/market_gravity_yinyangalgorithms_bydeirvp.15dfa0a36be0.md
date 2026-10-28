@@ -1,4 +1,0 @@
-Calculation: Gravity Score = structural liquidity strength adjusted for ATR-normalized distance, age-based freshness, trend alignment, and market regime; rank eligible active or approaching pools separately above and below price by this score.
-Calculation: Net Gravity = 100 × (upper ranked pull − lower ranked pull) / (upper ranked pull + lower ranked pull), where each side’s pull sums its up to three highest Gravity Scores with decreasing weights by rank; use 0 when total pull is 0.
-Long: Net Gravity >= 0 AND an upper Primary Magnet exists
-Short: Net Gravity < 0 AND a lower Primary Magnet exists

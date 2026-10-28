@@ -1,8 +1,0 @@
-Calculation: Regime = ADX is at least its minimum threshold, with direction determined by the shorter-lookback EMA of close being above or below the longer-lookback EMA of close
-Calculation: Trap pressure = 100 × (bull pain − bear pain) / (bull pain + bear pain), or 0 if total pain is 0; during regular trading hours in New York, accumulate volume by price bin from completed lower-timeframe bars (use 1-minute bars on intraday chart timeframes above 1 minute, otherwise chart-timeframe bars), resetting at the session start. Estimate each bar’s buy volume as volume × (close − low)/(high − low), using 0.5 when high = low; assign the remainder to sell volume. Assign both to the bin nearest the bar’s HLC3, with bin size equal to a configurable number of minimum price ticks. Bull pain sums buy volume in bins above close × (bin price − close); bear pain sums sell volume in bins below close × (close − bin price).
-Long: ADX is at least its minimum threshold AND the shorter-lookback EMA of close is above the longer-lookback EMA of close
-Long: During regular trading hours in New York, trap pressure is at or below the negative trap threshold AND its previous-bar value was above that negative threshold
-Short: ADX is at least its minimum threshold AND the shorter-lookback EMA of close is below the longer-lookback EMA of close
-Short: During regular trading hours in New York, trap pressure is at or above the trap threshold AND its previous-bar value was below that threshold
-Exit: long, ADX is below its minimum threshold OR the shorter-lookback EMA of close is at or below the longer-lookback EMA of close
-Exit: short, ADX is below its minimum threshold OR the shorter-lookback EMA of close is at or above the longer-lookback EMA of close

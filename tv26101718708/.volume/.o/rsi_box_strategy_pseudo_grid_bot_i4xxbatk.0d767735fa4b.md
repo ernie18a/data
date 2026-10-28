@@ -1,6 +1,0 @@
-Calculation: Grid levels = top is the volume-weighted moving average of the highest source value over the RSI lookback, updated on each RSI cross below overbought; bottom is the volume-weighted moving average of the lowest source value over the RSI lookback, updated on each RSI cross above oversold; middle is their average; upper-middle and lower-middle are the averages of middle with top and bottom, respectively.
-Calculation: Long trigger line = after the source crosses upward through any grid level, take the closest of the five grid levels to the source and set the trigger line to the next higher level (bottom → lower-middle → middle → upper-middle → top); retain that line until the next upward grid-level crossing.
-Calculation: Short trigger line = after the source crosses downward through any grid level, take the closest of the five grid levels to the source and set the trigger line to the next lower level (top → upper-middle → middle → lower-middle → bottom); retain that line until the next downward grid-level crossing.
-Long: Source crosses above the long trigger line
-Short: Shorts are enabled AND source crosses below the short trigger line
-Exit: Long, source crosses below the short trigger line

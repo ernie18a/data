@@ -1,8 +1,0 @@
-Calculation: ATR = Wilder’s average true range on the chart bars.
-Calculation: Volume average = simple moving average of volume on the chart bars; use the previous bar’s volume and average for the volume filter.
-Calculation: Candidate top = the latest active bar that is the highest high among the lookback bars ending on the previous bar; its low is the top’s break level. Update it when a newer qualifying bar has a higher high; deactivate it after a break.
-Calculation: Candidate bottom = the latest active bar that is the lowest low among the lookback bars ending on the previous bar; its high is the bottom’s break level. Update it when a newer qualifying bar has a lower low; deactivate it after a break.
-Long: candidate bottom is active AND (close[1] > candidate bottom high + ATR × breakout buffer OR, when close confirmation is disabled, high[1] > candidate bottom high + ATR × breakout buffer) AND (volume filter disabled OR volume[1] > previous volume average × volume multiplier) AND (session filter disabled OR current bar is within the configured session) AND (no prior signal OR current bar index − last signal bar index ≥ minimum bars between signals).
-Short: candidate top is active AND (close[1] < candidate top low − ATR × breakout buffer OR, when close confirmation is disabled, low[1] < candidate top low − ATR × breakout buffer) AND (volume filter disabled OR volume[1] > previous volume average × volume multiplier) AND (session filter disabled OR current bar is within the configured session) AND (no prior signal OR current bar index − last signal bar index ≥ minimum bars between signals).
-Exit: long, short condition OR high ≥ target price.
-Exit: short, long condition OR low ≤ target price.

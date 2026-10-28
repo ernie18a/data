@@ -1,3 +1,0 @@
-Calculation: Volume delta = within each bar, sum each increase in cumulative volume multiplied by +1 when price rises since the prior update, −1 when it falls, and the prior nonzero direction when unchanged; reset each bar
-Long: (Volume delta > 0 AND previous bar’s volume delta > 0 AND Volume delta > previous bar’s volume delta AND NOT (close < open)) OR (Volume delta > threshold AND NOT (close < open)) OR (volume increase on an update > threshold AND price rises on that update)
-Short: (Volume delta < 0 AND previous bar’s volume delta < 0 AND Volume delta < previous bar’s volume delta AND NOT (close > open)) OR (Volume delta < −threshold AND NOT (close > open)) OR (volume increase on an update > threshold AND price falls on that update)

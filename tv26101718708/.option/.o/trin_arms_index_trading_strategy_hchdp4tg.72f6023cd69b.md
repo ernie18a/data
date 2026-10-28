@@ -1,1 +1,0 @@
-Go long when the daily market breadth index exceeds its rolling mean plus a volatility-based threshold. Exit the long when the traded instrument closes above its previous high, or when its price reaches a volatility-based stop below the average entry price. No short entry is specified.

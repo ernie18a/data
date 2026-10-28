@@ -1,5 +1,0 @@
-Calculation: Bollinger Band width percentile rank = percentile rank of (upper Bollinger Band − lower Bollinger Band) / middle Bollinger Band × 100 over a rolling lookback
-Calculation: ATR percentile rank = percentile rank of ATR over a rolling lookback
-Calculation: Regime = volatile if ATR percentile rank > volatility threshold OR Bollinger Band width percentile rank > volatility-width threshold; otherwise trending if ADX > trend threshold AND Bollinger Band width percentile rank > width threshold AND ATR percentile rank < volatility threshold; otherwise ranging
-Long: confirmed bar AND bars since prior long signal > cooldown AND volume > its moving average × volume multiplier AND ((regime = trending AND fast EMA crosses above slow EMA AND close > medium-term EMA) OR (regime = ranging AND close <= lower Bollinger Band AND RSI < oversold threshold))
-Short: confirmed bar AND bars since prior short signal > cooldown AND volume > its moving average × volume multiplier AND ((regime = trending AND fast EMA crosses below slow EMA AND close < medium-term EMA) OR (regime = ranging AND close >= upper Bollinger Band AND RSI > overbought threshold))

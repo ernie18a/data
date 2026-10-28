@@ -1,1 +1,0 @@
-Within the configured date range, go long when a confirmed swing low forms on the underlying, unless already long; go short when a confirmed swing high forms, unless already short. A signal takes effect at the close of the swing point, once confirmed. An opposite signal exits the current direction and reverses it.

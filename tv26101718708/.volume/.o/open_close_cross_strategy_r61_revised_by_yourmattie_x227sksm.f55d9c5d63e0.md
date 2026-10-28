@@ -1,3 +1,0 @@
-Calculation: Open/close moving averages = apply the same selected moving-average type and lookback separately to open and close prices; use chart bars or, when enabled, aggregated higher-timeframe bars using the bar still forming.
-Long: Current close-price moving average > current open-price moving average AND previous close-price moving average <= previous open-price moving average
-Short: Current close-price moving average < current open-price moving average AND previous close-price moving average >= previous open-price moving average

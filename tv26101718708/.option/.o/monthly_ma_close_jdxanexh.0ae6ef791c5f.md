@@ -1,1 +1,0 @@
-When configured to use a separate signal instrument, enter long on the traded instrument when the signal instrument’s last confirmed monthly close is above its moving average; close the long when that close is below the average. The average may be simple or exponential and uses the configured timeframe and lookback. The strategy does not open short positions.

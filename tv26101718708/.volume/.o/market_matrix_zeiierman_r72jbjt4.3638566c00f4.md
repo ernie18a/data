@@ -1,3 +1,0 @@
-Calculation: Confirmed swing anchor = On selected higher-timeframe bars, including the bar still forming, track a swing high when its high is the highest in the trailing swing lookback and a swing low when its low is the lowest. When the latest swing high/low ordering flips, confirm the intervening opposite pivot as the anchor; classify it against the previous confirmed anchor of the same type.
-Long: confirmed swing high > previous confirmed swing high (HH) OR confirmed swing low > previous confirmed swing low (HL)
-Short: confirmed swing high < previous confirmed swing high (LH) OR confirmed swing low < previous confirmed swing low (LL)

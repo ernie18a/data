@@ -1,6 +1,0 @@
-Calculation: Middle band = configured moving average of the configured price source on the selected candle type and resolution; use that resolution’s bar, including the bar still forming.
-Calculation: Deviation = configured ATR or standard deviation of the configured price source on the selected candle type and resolution; use that resolution’s bar, including the bar still forming.
-Calculation: Upper band = middle band + deviation × upper-band multiplier; lower band = middle band − deviation × lower-band multiplier.
-Calculation: Smoothed upper band = configured moving average of the upper band; smoothed lower band = configured moving average of the lower band.
-Long: close > middle band AND previous close <= previous middle band OR close > smoothed upper band AND previous close <= previous smoothed upper band OR close > smoothed lower band AND previous close <= previous smoothed lower band
-Short: close < middle band AND previous close >= previous middle band OR close < smoothed upper band AND previous close >= previous smoothed upper band OR close < smoothed lower band AND previous close >= previous smoothed lower band

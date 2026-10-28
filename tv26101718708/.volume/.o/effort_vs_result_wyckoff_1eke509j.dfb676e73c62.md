@@ -1,8 +1,0 @@
-Calculation: Effort z-score = (current volume − rolling mean volume) / rolling standard deviation of volume over the selected lookback; 0 if standard deviation is not positive.
-Calculation: Result = selected range (high − low), body (absolute close − open), or true range (maximum of high − low, absolute high − previous close, and absolute low − previous close).
-Calculation: Result z-score = (current result − rolling mean result) / rolling standard deviation of result over the same lookback as effort; 0 if standard deviation is not positive.
-Calculation: Divergence z-score = z-score of effort z-score minus result z-score, using the same lookback; 0 if its rolling standard deviation is not positive.
-Calculation: Absorption bar = in Score mode, divergence z-score ≥ threshold AND effort z-score > 0 AND result z-score < 0; in Strict mode, effort z-score ≥ threshold AND result z-score ≤ −threshold.
-Calculation: Developing zone = an absorption bar seeds a zone with its high and low and sets the latest absorption bar. On each following confirmed bar, first check for a close beyond the zone; if none, discard the zone when bars since the latest absorption exceed the maximum wait, otherwise expand its high and low to include the bar and update the latest absorption bar if it is an absorption bar. A breakout check is made before timeout and before expanding the zone with the current bar.
-Long: an active developing zone exists AND current close > its high
-Short: an active developing zone exists AND current close < its low

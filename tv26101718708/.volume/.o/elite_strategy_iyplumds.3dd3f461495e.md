@@ -1,4 +1,0 @@
-Calculation: Bullish timeframe count = number of the six configured timeframe bars whose close is above an EMA with the same lookback on each timeframe, using the current bar (still forming)
-Calculation: Bearish timeframe count = number of the six configured timeframe bars whose close is below an EMA with the same lookback on each timeframe, using the current bar (still forming)
-Long: Supertrend direction changes from bearish to bullish AND (multi-timeframe filter is disabled OR bullish timeframe count >= configured minimum) AND current time is within the configured trading session AND configured trade direction permits long
-Short: Supertrend direction changes from bullish to bearish AND (multi-timeframe filter is disabled OR bearish timeframe count >= configured minimum) AND current time is within the configured trading session AND configured trade direction permits short

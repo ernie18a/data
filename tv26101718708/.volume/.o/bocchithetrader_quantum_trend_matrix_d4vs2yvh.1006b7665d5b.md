@@ -1,4 +1,0 @@
-Calculation: RSI-based Fisher = EMA of 0.5 × ln((1 + x) / (1 − x)), where x = RSI / 100; use a shorter RSI lookback and a short EMA smoothing period.
-Calculation: Trend = close compared with its SMA; use the same SMA lookback for current, daily, and weekly trends.
-Long: Current close > current-bar SMA OR latest completed daily close > its SMA OR latest completed weekly close > its SMA OR MACD line > signal line OR RSI ≥ 50 OR stochastic %K > %D OR RSI-based Fisher > 0 OR MFI > 50 OR close < lower Bollinger Band OR +DI > −DI OR fast EMA crosses above slow EMA (fast EMA has the shorter lookback)
-Short: Current close ≤ current-bar SMA OR latest completed daily close ≤ its SMA OR latest completed weekly close ≤ its SMA OR MACD line ≤ signal line OR RSI < 50 OR stochastic %K ≤ %D OR RSI-based Fisher ≤ 0 OR MFI ≤ 50 OR close > upper Bollinger Band OR +DI ≤ −DI OR fast EMA crosses below slow EMA (fast EMA has the shorter lookback)

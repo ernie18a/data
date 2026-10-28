@@ -1,5 +1,0 @@
-Calculation: Heavy volume = current bar volume > a multiplier times the simple moving average of volume over a longer lookback ending on the current bar
-Calculation: Long breakout level = high of the most recent bar with heavy volume and close < open; retain that value until another such bar
-Calculation: Short breakout level = low of the most recent bar with heavy volume and close > open; retain that value until another such bar
-Long: (Heavy volume AND close < open) OR (Long breakout level > 0 AND previous bar close >= Long breakout level AND previous bar low <= Long breakout level AND current bar close >= previous bar close AND previous bar close >= previous bar open AND current bar close >= previous bar open)
-Short: (Heavy volume AND close > open) OR (Short breakout level > 0 AND previous bar close <= Short breakout level AND previous bar high >= Short breakout level AND current bar close <= previous bar close AND previous bar close <= previous bar open AND current bar close <= previous bar open)

@@ -1,3 +1,0 @@
-Calculation: Signed session strength = exponentially smoothed weighted average of normalized current-bar range relative to ATR, volume relative to its moving average, candle body relative to range, and absolute close-to-session-open displacement relative to ATR, multiplied by a weighted combination of current candle direction and close relative to session open. The session open is the first bar’s open in the active session.
-Long: Signed session strength > 0
-Short: Signed session strength < 0

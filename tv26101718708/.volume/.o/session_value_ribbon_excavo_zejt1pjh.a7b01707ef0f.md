@@ -1,4 +1,0 @@
-Calculation: Primary anchored mean = sum(price source × volume weight) / sum(volume weight) over the active anchor; the anchor is a rolling chart-bar window, resets at the chosen timeframe boundary, or starts at the chosen date. The price source and volume weight are configurable.
-Calculation: Mean slope = (current primary anchored mean − primary anchored mean from the lookback bars ago) / lookback.
-Long: Close crosses above the primary anchored mean OR mean slope > threshold × ATR / lookback, with ATR calculated over the lookback (minimum 5 bars) and the mean slope available.
-Short: Close crosses below the primary anchored mean OR mean slope < −threshold × ATR / lookback, with ATR calculated over the lookback (minimum 5 bars) and the mean slope available.

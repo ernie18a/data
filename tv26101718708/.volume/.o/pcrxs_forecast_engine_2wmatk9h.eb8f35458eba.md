@@ -1,7 +1,0 @@
-Calculation: Normalized WMA oscillator = 100 × (short-lookback WMA of close − longer-lookback WMA of close) / ATR
-Calculation: Oscillator standard deviation = standard deviation of the normalized WMA oscillator over a longer lookback
-Calculation: BTC halving cycle = cosine of (2π × elapsed time since April 2024 / four years − π/4)
-Long: normalized WMA oscillator crosses above − its standard deviation AND H4 close > H4 EMA(50) > H4 EMA(200) AND RSI < overbought threshold AND MACD histogram is nondecreasing AND Chaikin Money Flow > −0.05 AND volume > 0.8 × 20-bar average volume AND BTC halving cycle > −0.70
-Short: normalized WMA oscillator crosses below its standard deviation AND H4 close < H4 EMA(50) < H4 EMA(200) AND RSI > oversold threshold AND MACD histogram is nonincreasing AND Chaikin Money Flow < 0.05 AND volume > 0.8 × 20-bar average volume AND BTC halving cycle < 0.70
-Exit: Long, normalized WMA oscillator crosses below zero OR (RSI crosses below overbought threshold AND H4 close < H4 EMA(50) < H4 EMA(200)) OR Short condition
-Exit: Short, normalized WMA oscillator crosses above zero OR (RSI crosses above oversold threshold AND H4 close > H4 EMA(50) > H4 EMA(200)) OR Long condition

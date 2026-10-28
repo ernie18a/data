@@ -1,5 +1,0 @@
-Calculation: Configured moving average = apply one selected moving-average type and lookback to a series; use the same type for all series. The open and close averages use the same shorter lookback; the alternate open and close averages use a longer lookback on the same bars.
-Long: alternate close average crosses above alternate open average AND trade type permits long AND bar is within the configured test date range; OR alternate close average > alternate open average; OR shorter-lookback close average > alternate open average
-Short: alternate close average crosses below alternate open average AND trade type permits short AND bar is within the configured test date range; OR alternate close average <= alternate open average; OR shorter-lookback close average <= alternate open average
-Exit: long, short-entry condition AND trade type is LONG; OR low <= entry price − configured stop distance; OR high >= entry price + configured target distance
-Exit: short, long-entry condition AND trade type is SHORT; OR high >= entry price + configured stop distance; OR low <= entry price − configured target distance

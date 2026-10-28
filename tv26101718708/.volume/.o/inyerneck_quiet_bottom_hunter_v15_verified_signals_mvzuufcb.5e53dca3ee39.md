@@ -1,4 +1,0 @@
-Calculation: Percentage drop from rolling high = (close − highest high over the lookback) / highest high over the lookback × 100
-Calculation: Consecutive green-or-flat bar count = number of consecutive bars ending on the current bar where close ≥ open
-Long: Percentage drop from rolling high ≤ lower drop threshold AND percentage drop from rolling high ≥ upper drop threshold AND volume ≤ configured fraction of its rolling average AND RSI ≤ oversold threshold AND consecutive green-or-flat bar count ≥ configured streak length
-Exit: long, high ≥ entry price + configured profit distance OR low ≤ entry price − configured loss distance

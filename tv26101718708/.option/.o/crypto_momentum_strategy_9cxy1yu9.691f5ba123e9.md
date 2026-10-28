@@ -1,1 +1,0 @@
-Go long when the instrument’s momentum slope flips from negative to positive, its close is above a rising trend average, and the broader crypto market index is above its own rising trend average when that market filter is enabled. Exit the long when the momentum slope flips from positive to negative. No short entries.

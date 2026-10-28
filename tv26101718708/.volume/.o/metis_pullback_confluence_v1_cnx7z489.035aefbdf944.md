@@ -1,3 +1,0 @@
-Calculation: Percent distance from 50-period SMA = ((close / 50-period SMA) - 1) × 100
-Calculation: Relative volume = volume / average volume over a lookback
-Long: close > 200-period SMA AND 50-period SMA > 200-period SMA AND 200-period SMA > its value 10 bars ago AND 50-period SMA > its value 5 bars ago AND RSI is between its minimum and maximum inclusive AND percent distance from 50-period SMA is between its minimum and maximum inclusive AND relative volume ≥ its minimum AND NOT (the same conditions were all true on the previous bar)

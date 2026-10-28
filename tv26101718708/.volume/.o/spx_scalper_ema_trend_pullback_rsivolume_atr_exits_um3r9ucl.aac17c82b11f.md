@@ -1,4 +1,0 @@
-Long: During the regular session AND fast EMA > slow EMA AND (long-term EMA filter disabled OR close > long-term EMA) AND low <= fast EMA AND close > fast EMA AND RSI crosses above its long-entry threshold AND volume > its longer-lookback average multiplied by a volume factor
-Short: During the regular session AND fast EMA < slow EMA AND (long-term EMA filter disabled OR close < long-term EMA) AND high >= fast EMA AND close < fast EMA AND RSI crosses below its short-entry threshold AND volume > its longer-lookback average multiplied by a volume factor
-Exit: Long, low <= entry price - current ATR * stop multiple OR high >= entry price + current ATR * target multiple OR bars in trade >= time limit OR outside the regular session
-Exit: Short, high >= entry price + current ATR * stop multiple OR low <= entry price - current ATR * target multiple OR bars in trade >= time limit OR outside the regular session

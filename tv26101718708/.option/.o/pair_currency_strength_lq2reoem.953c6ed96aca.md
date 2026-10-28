@@ -1,1 +1,0 @@
-For the traded forex pair, calculate each currency’s return from its selected anchor using a basket of major currencies versus USD, then subtract the basket’s average return from each currency’s return. Optionally smooth the strengths. Go long when the base currency’s strength crosses above the quote currency’s strength; go short when it crosses below. No exit rule is specified.

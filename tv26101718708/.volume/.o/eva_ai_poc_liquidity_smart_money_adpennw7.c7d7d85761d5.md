@@ -1,3 +1,0 @@
-Calculation: Value Area High (VAH) and Value Area Low (VAL) = boundaries of the configured share of volume around the profile’s highest-volume price row; build the profile over the active profile range by allocating each bar’s volume across price rows in proportion to its high-low overlap, using lower-timeframe bars when available and chart bars otherwise; include the bar still forming.
-Long: current close > current VAH AND previous close <= previous VAH AND current bar is completed
-Short: current close < current VAL AND previous close >= previous VAL AND current bar is completed

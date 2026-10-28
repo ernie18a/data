@@ -1,8 +1,0 @@
-Calculation: Bull probability = average bull-class probability across random-forest classifier stumps trained on the most recent training-window samples; each sample uses the prior bar’s anchor oscillator, price/time correlation, and momentum divided by ATR, and is labeled by whether its close is higher than the next close. Each stump randomly selects a feature and keeps the best-Gini split among 10 randomly sampled feature values; its leaf probabilities are the training-sample bull fractions. Evaluate using current-bar features.
-Calculation: Effective threshold = base probability threshold plus an adaptive boost; when enabled, boost is min(abs(mean PnL of the most recent adaptation-window resolved trades) / 2, maximum boost) if that mean is negative, otherwise zero.
-Calculation: Bear probability = 1 − bull probability.
-Calculation: Target and stop = entry price ± target ATR multiple × ATR, with signs oriented to the position side; stop uses the opposite sign from target. ATR uses the current bar and the configured TP/SL ATR lookback.
-Long: Bull probability ≥ effective threshold AND bull probability was below the effective threshold on the prior bar AND enough bars have elapsed since the prior long signal AND (ADX filter disabled OR current ADX ≥ its threshold).
-Short: Bear probability ≥ effective threshold AND bear probability was below the effective threshold on the prior bar AND enough bars have elapsed since the prior short signal AND (ADX filter disabled OR current ADX ≥ its threshold).
-Exit: long, low ≤ stop OR high ≥ target OR bars since entry ≥ line-extension lookback.
-Exit: short, high ≥ stop OR low ≤ target OR bars since entry ≥ line-extension lookback.

@@ -1,5 +1,0 @@
-Calculation: Rolling range = highest high and lowest low over the range lookback; upper zone runs from the highest high down by the configured percentage of the range, and lower zone runs from the lowest low up by that percentage.
-Calculation: Upper VPMA = reset to close when close is inside the upper zone; otherwise, after initialization, update as the cumulative average of closes only after at least two bars since reset, and hold its value before then. Lower VPMA = same calculation, reset when close is inside the lower zone.
-Calculation: Short-term SMA = simple moving average of close.
-Long: Retest signals enabled AND close crosses below Lower VPMA AND short-term SMA is falling AND current Lower VPMA <= prior Lower VPMA AND bars since the most recent lower-zone reset are within the configured minimum and maximum.
-Short: Retest signals enabled AND close crosses above Upper VPMA AND short-term SMA is rising AND current Upper VPMA >= prior Upper VPMA AND bars since the most recent upper-zone reset are within the configured minimum and maximum.

@@ -1,9 +1,0 @@
-Calculation: Fast Stochastic = the simple moving average of (close − lowest low over its lookback) ÷ (highest high over its lookback − lowest low over its lookback) × 100
-Calculation: Slow Stochastic = the simple moving average of Fast Stochastic over a longer smoothing period
-Calculation: Volume Trend = volume × 100 when (high + low + close) ÷ 3 is greater than its previous-bar value; otherwise −volume × 100
-Calculation: Klinger Oscillator = the shorter-period exponential moving average of Volume Trend − the longer-period exponential moving average of Volume Trend
-Calculation: Klinger Trigger = the exponential moving average of the Klinger Oscillator
-Long: close[2] < close[1] AND close > close[1] AND Fast Stochastic < Slow Stochastic AND Fast Stochastic > Level AND Klinger Oscillator > Klinger Trigger
-Short: close[2] > close[1] AND close < close[1] AND Fast Stochastic > Slow Stochastic AND Fast Stochastic < Level AND Klinger Oscillator < Klinger Trigger
-Exit: Long, NOT (close[2] < close[1] AND close > close[1] AND Fast Stochastic < Slow Stochastic AND Fast Stochastic > Level AND Klinger Oscillator > Klinger Trigger) AND NOT (close[2] > close[1] AND close < close[1] AND Fast Stochastic > Slow Stochastic AND Fast Stochastic < Level AND Klinger Oscillator < Klinger Trigger)
-Exit: Short, NOT (close[2] < close[1] AND close > close[1] AND Fast Stochastic < Slow Stochastic AND Fast Stochastic > Level AND Klinger Oscillator > Klinger Trigger) AND NOT (close[2] > close[1] AND close < close[1] AND Fast Stochastic > Slow Stochastic AND Fast Stochastic < Level AND Klinger Oscillator < Klinger Trigger)

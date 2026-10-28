@@ -1,5 +1,0 @@
-Calculation: Confirmed pivot high = a high greater than the highs of the preceding and following equal-length lookbacks; confirmed pivot low = a low lower than the lows of those lookbacks. Use the selected timeframe’s last completed bar; calculate higher-timeframe pivots separately from the higher timeframe’s last completed bar.
-Calculation: Active resistance/support levels = the most recent confirmed pivot highs/lows, respectively, retained until broken or expired.
-Long: (low > high two bars earlier AND close of prior bar > open of prior bar AND low − high two bars earlier ≥ minimum gap size) OR (close > an active resistance level AND prior close ≤ that level AND volume confirmation is satisfied)
-Short: (high < low two bars earlier AND close of prior bar < open of prior bar AND low two bars earlier − high ≥ minimum gap size) OR (close < an active support level AND prior close ≥ that level AND volume confirmation is satisfied)
-Exit: 

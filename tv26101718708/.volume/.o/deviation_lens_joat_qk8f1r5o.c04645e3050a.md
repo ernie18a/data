@@ -1,6 +1,0 @@
-Calculation: Close Z-score = (close − rolling mean close) / rolling sample standard deviation of close
-Calculation: Projected Z-score = clamp the current Close Z-score plus its change from the prior bar multiplied by a momentum factor and projection length, to [−4, 4]
-Calculation: Volume contraction = volume / rolling mean volume
-Calculation: Z-score pivots = confirmed local highs and lows of the Close Z-score; compare their corresponding closes with up to five earlier pivots of the same kind within the configured minimum and maximum bar distance
-Long: Close Z-score ≤ −3 AND volume contraction < configured threshold OR Close Z-score < 0 AND projected Z-score > Close Z-score OR at a Z-score pivot low, close is lower than an earlier qualifying pivot low's close AND the Z-score is higher OR close is higher AND the Z-score is lower
-Short: Close Z-score ≥ 3 AND volume contraction < configured threshold OR Close Z-score > 0 AND projected Z-score < Close Z-score OR at a Z-score pivot high, close is higher than an earlier qualifying pivot high's close AND the Z-score is lower OR close is lower AND the Z-score is higher

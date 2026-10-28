@@ -1,4 +1,0 @@
-Calculation: Cumulative PVT = running sum of volume × (close − previous close) / previous close
-Calculation: Compressed EOM = sign of raw EOM × ln(1 + |raw EOM|), where raw EOM = change in (high + low) / 2 × true range / (close × volume), or 0 when true range or close × volume is 0
-Long: A confirmed pivot low in cumulative PVT is lower than the previous confirmed pivot low AND compressed EOM at the current pivot bar is higher than at the previous pivot bar AND the pivots are no more than the configured maximum bars apart; evaluate after the configured right-side pivot bars complete
-Short: A confirmed pivot high in cumulative PVT is higher than the previous confirmed pivot high AND compressed EOM at the current pivot bar is lower than at the previous pivot bar AND the pivots are no more than the configured maximum bars apart; evaluate after the configured right-side pivot bars complete

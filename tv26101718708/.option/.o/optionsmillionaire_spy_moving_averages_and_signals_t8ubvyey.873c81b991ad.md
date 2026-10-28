@@ -1,1 +1,0 @@
-Use the underlying SPY price: take a bullish position when its shorter-term moving average crosses above its longer-term moving average, and a bearish position when it crosses below. No explicit exit condition is defined.

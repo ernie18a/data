@@ -1,2 +1,0 @@
-Calculation: session VWAP = volume-weighted average of HLC3 from the current session start through the current bar
-Long: close > fast EMA AND fast EMA > slow EMA AND RSI > its midline AND ((close > highest high of the preceding breakout-lookback bars AND volume > volume SMA × volume multiplier) OR (low <= session VWAP AND close > session VWAP)

@@ -1,6 +1,0 @@
-Calculation: Bullish FVG = current low > high two bars ago AND previous bar close > previous bar open
-Calculation: Bearish FVG = current high < low two bars ago AND previous bar close < previous bar open
-Long: (Bullish FVG OR MACD line crosses above signal line AND RSI is below its lower threshold OR close > short-lookback SMA(close) AND volume > same-lookback SMA(volume) AND Bullish FVG) AND volume > same-lookback SMA(volume) AND ADX > its threshold AND position is flat
-Short: (Bearish FVG OR MACD line crosses below signal line AND RSI is above its upper threshold OR close < short-lookback SMA(close) AND volume > same-lookback SMA(volume) AND Bearish FVG) AND volume > same-lookback SMA(volume) AND ADX > its threshold AND position is flat
-Exit: long, low <= entry price - stop-loss distance OR (high has reached entry price + trailing activation distance AND low <= highest high since activation - trailing offset
-Exit: short, high >= entry price + stop-loss distance OR (low has reached entry price - trailing activation distance AND high >= lowest low since activation + trailing offset

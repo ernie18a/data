@@ -1,2 +1,0 @@
-Long: At a confirmed RSI pivot low, the price low at that pivot is lower than at the previous RSI pivot low AND RSI at the pivot is higher than at the previous RSI pivot low AND the previous RSI pivot low is within the configured prior-pivot lookback range
-Short: At a confirmed RSI pivot high, the price high at that pivot is higher than at the previous RSI pivot high AND RSI at the pivot is lower than at the previous RSI pivot high AND the previous RSI pivot high is within the configured prior-pivot lookback range

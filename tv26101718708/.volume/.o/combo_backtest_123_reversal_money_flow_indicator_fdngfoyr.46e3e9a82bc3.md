@@ -1,8 +1,0 @@
-Calculation: Fast stochastic = Length-period stochastic of close within the high-low range, smoothed by a shorter-or-equal moving average; slow stochastic = fast stochastic smoothed by a longer-or-equal moving average.
-Calculation: Money-flow oscillator = EMA of the longer rolling sum minus EMA of the shorter rolling sum, where each bar contributes (close − open) / (high − low) × volume when (high − low) × volume > 0, otherwise 0; the longer sum and EMA use the longer of Fast and Slow, and the shorter use the shorter.
-Long: close two bars ago < previous close AND current close > previous close AND fast stochastic < slow stochastic AND fast stochastic > Level
-Short: close two bars ago > previous close AND current close < previous close AND fast stochastic > slow stochastic AND fast stochastic < Level
-Long: (close two bars ago < previous close AND current close > previous close AND fast stochastic < slow stochastic AND fast stochastic > Level) AND money-flow oscillator > 0
-Short: (close two bars ago > previous close AND current close < previous close AND fast stochastic > slow stochastic AND fast stochastic < Level) AND money-flow oscillator < 0
-Exit: Long, NOT (Reversal signal is long AND money-flow oscillator > 0) AND NOT (Reversal signal is short AND money-flow oscillator < 0)
-Exit: Short, NOT (Reversal signal is long AND money-flow oscillator > 0) AND NOT (Reversal signal is short AND money-flow oscillator < 0)

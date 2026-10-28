@@ -1,4 +1,0 @@
-Calculation: Liquidity levels = volume-qualified confirmed pivot highs and lows from 4-hour, daily, and weekly bars, plus chart-timeframe pivot highs and lows clustered when at least the configured minimum count fall within the configured tolerance; merge nearby levels, keeping the higher-timeframe level, and retain the nearest configured number above and below the close.
-Calculation: Zone boundary = level × (1 ± half the configured zone width).
-Long: A liquidity level is at or below the close OR the low is below a pivot-low zone’s lower boundary and the lower of open and close is at or above that boundary, with the bar confirmed and the sellside-grab cooldown elapsed.
-Short: A liquidity level is above the close OR the high is above a pivot-high zone’s upper boundary and the higher of open and close is at or below that boundary, with the bar confirmed and the buyside-grab cooldown elapsed.

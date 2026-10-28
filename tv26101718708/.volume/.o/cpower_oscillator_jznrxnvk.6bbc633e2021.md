@@ -1,5 +1,0 @@
-Calculation: Smoothed C-Power line = ALMA-smoothed percentage of aggregate buy power in total buy and sell power over a lookback; buy/sell power is volume-weighted directional probability derived from price imbalance standardized by hybrid Garman–Klass/Yang–Zhang volatility, adjusted for volume and candle flow; values within a configurable deadzone around 50 are set to 50.
-Long: Smoothed C-Power line > 50
-Short: Smoothed C-Power line < 50
-Long: At a confirmed oscillator pivot low, the oscillator pivot is higher and the corresponding price low is lower than at an earlier oscillator pivot low within the configured minimum-to-maximum pivot spacing (regular bullish divergence), OR the oscillator pivot is lower and the corresponding price low is higher (hidden bullish divergence)
-Short: At a confirmed oscillator pivot high, the oscillator pivot is lower and the corresponding price high is higher than at an earlier oscillator pivot high within the configured minimum-to-maximum pivot spacing (regular bearish divergence), OR the oscillator pivot is higher and the corresponding price high is lower (hidden bearish divergence)

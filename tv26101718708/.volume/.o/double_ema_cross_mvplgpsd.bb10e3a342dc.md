@@ -1,2 +1,0 @@
-Long: datetime >= configured start date AND current shorter-lookback EMA(close) > current longer-lookback EMA(close) AND previous bar shorter-lookback EMA(close) <= previous bar longer-lookback EMA(close)
-Short: datetime >= configured start date AND current shorter-lookback EMA(close) < current longer-lookback EMA(close) AND previous bar shorter-lookback EMA(close) >= previous bar longer-lookback EMA(close)

@@ -1,4 +1,0 @@
-Calculation: VFI = smooth(sum(clamp(volume, 0, SMA(volume[1], length) × volume cutoff) signed by whether HLC3 − prior HLC3 exceeds ±(coefficient × stdev(log(HLC3 / prior HLC3), 30) × close), over length) / SMA(volume[1], length), smoothing period); use positive capped volume when the HLC3 change exceeds the positive cutoff, negative capped volume when it is below the negative cutoff, and zero otherwise
-Calculation: Stop-loss price = entry price × (1 − stop-loss percentage)
-Long: VFI crosses above buy line AND EMA(close, short-term length) >= EMA(close, long-term length)
-Exit: Long, VFI crosses below sell line AND (close > entry price OR close < stop-loss price)

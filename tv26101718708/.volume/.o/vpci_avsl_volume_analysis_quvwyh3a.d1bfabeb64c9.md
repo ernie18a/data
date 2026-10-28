@@ -1,7 +1,0 @@
-Calculation: VPCI per mille = 1000 × (long-lookback VWMA(close) − long-lookback SMA(close)) × (short-lookback VWMA(close) / short-lookback SMA(close)) × (short-lookback SMA(volume) / long-lookback SMA(volume)) / close; the long lookback is 5 times the short lookback.
-Calculation: VPCI Bollinger bands = a moving average of VPCI per mille plus or minus a standard-deviation multiple of VPCI per mille, using the same lookback.
-Calculation: AVSL buy line = moving average(low adjusted by a factor based on normalized VPCI and the short-to-long price-average ratio) minus standard deviation of that adjusted low multiplied by a deviation factor scaled by normalized VPCI. AVSL sell line = moving average(high adjusted by the same factor) plus standard deviation of that adjusted high multiplied by the same deviation factor. Both use a lookback adjusted by normalized VPCI.
-Long: VPCI per mille crosses above its lower Bollinger band after having been below that band since the previous V-bottom.
-Short: VPCI per mille crosses below its upper Bollinger band after having been above that band since the previous V-top.
-Exit: long, close crosses below the AVSL buy line.
-Exit: short, close crosses above the AVSL sell line.

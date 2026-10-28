@@ -1,2 +1,0 @@
-Long: The shorter EMA crosses above the longer EMA in either the short-term pair or the medium/very-long-term pair OR close > Parabolic SAR
-Short: The shorter EMA crosses below the longer EMA in either the short-term pair or the medium/very-long-term pair OR close < Parabolic SAR

@@ -1,6 +1,0 @@
-Calculation: Prior-bar Donchian lower channel = lowest low over the lookback bars, excluding the current bar
-Calculation: Risk ATR = average true range on the entry timeframe
-Long: Primary Supertrend is bullish AND (HTF Supertrend is bullish, if the HTF filter is enabled; same factor and ATR length as primary Supertrend, calculated on higher-timeframe bars using lookahead off) AND close > prior-bar Donchian lower channel AND (volume > its moving average × volume multiplier, if the volume filter is enabled)
-Short: Primary Supertrend is bearish AND (HTF Supertrend is bearish, if the HTF filter is enabled; same factor and ATR length as primary Supertrend, calculated on higher-timeframe bars using lookahead off) AND close < prior-bar Donchian lower channel AND (volume > its moving average × volume multiplier, if the volume filter is enabled)
-Exit: long, low <= entry price − risk ATR at entry × stop multiplier OR high >= entry price + risk ATR at entry × target multiplier OR primary Supertrend is bearish (if trend-flip exit is enabled)
-Exit: short, high >= entry price + risk ATR at entry × stop multiplier OR low <= entry price − risk ATR at entry × target multiplier OR primary Supertrend is bullish (if trend-flip exit is enabled)

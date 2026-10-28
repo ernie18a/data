@@ -1,7 +1,0 @@
-Calculation: Positive volume index = start at 100; when current volume exceeds previous volume, add (current close − previous close) / previous close × previous index; otherwise retain previous value
-Calculation: Negative volume index = start at 100; when current volume is below previous volume, add (current close − previous close) / previous close × previous index; otherwise retain previous value
-Calculation: Buy interest = sum over the index lookback of RSI(volume-flow period, negative volume index − its 255-bar EMA) / RSI(volume-flow period, positive volume index − its 255-bar EMA), divided by the highest value over the normalization lookback of the greater of the buy-interest and sell-interest sums
-Calculation: Sell interest = sum over the index lookback of (100 − RSI(volume-flow period, negative volume index − its 255-bar EMA)) / (100 − RSI(volume-flow period, positive volume index − its 255-bar EMA)), divided by the highest value over the normalization lookback of the greater of the buy-interest and sell-interest sums
-Calculation: Net index = (buy interest − sell interest) × 100
-Long: Net index > 0 OR close > latest stored swing high AND last structure-break direction is down or unset AND Net index > 0
-Short: Net index < 0 OR close < latest stored swing low AND last structure-break direction is up or unset AND Net index < 0

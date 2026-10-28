@@ -1,2 +1,0 @@
-Calculation: Average daily volume = mean daily volume over the configured lookback, using only completed daily bars
-Short: On a signal-timeframe bar after a bar whose high exceeded the earlier in-session high of day, close below the most recent such bar's close before another new high of day, AND average daily volume >= the configured minimum average daily volume, AND the bar is in regular session if the regular-session-only filter is enabled

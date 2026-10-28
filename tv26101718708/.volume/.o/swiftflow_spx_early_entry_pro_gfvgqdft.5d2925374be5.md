@@ -1,5 +1,0 @@
-Calculation: Bull score = number of true conditions: close > (high + low) / 2; close > Bollinger Band basis; CCI of close > positive threshold; OBV > its simple moving average; +DI > -DI
-Calculation: Bear score = number of true conditions: close < (high + low) / 2; close < Bollinger Band basis; CCI of close < negative threshold; OBV < its simple moving average; -DI > +DI
-Calculation: DMI = +DI, -DI, and ADX calculated using the same lookback and smoothing length
-Long: Bull score >= minimum score AND ADX >= threshold AND close > longer-period EMA AND shorter-period EMA > longer-period EMA AND (most recent signal is not long OR bars since most recent signal >= reset interval)
-Short: Bear score >= minimum score AND ADX >= threshold AND close < longer-period EMA AND shorter-period EMA < longer-period EMA AND (most recent signal is not short OR bars since most recent signal >= reset interval)

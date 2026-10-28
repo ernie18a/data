@@ -1,5 +1,0 @@
-Calculation: One-sided Gaussian Filter output = Fibonacci-weighted Gaussian smoothing of the selected price source, followed by a 2-pole Ehlers smoother
-Long: One-sided Gaussian Filter output crosses above its prior-bar value AND SuperTrend is bullish AND the configured lookback since the prior bearish Gaussian signal and bearish SuperTrend direction has elapsed
-Short: One-sided Gaussian Filter output crosses below its prior-bar value AND SuperTrend is bearish AND the configured lookback since the prior bullish Gaussian signal and bullish SuperTrend direction has elapsed
-Exit: long, One-sided Gaussian Filter output crosses below its prior-bar value OR close < entry price × (1 − configured stop-loss fraction) OR close reaches a configured take-profit percentage above entry price
-Exit: short, One-sided Gaussian Filter output crosses above its prior-bar value OR close > entry price × (1 + configured stop-loss fraction) OR close reaches a configured take-profit percentage below entry price

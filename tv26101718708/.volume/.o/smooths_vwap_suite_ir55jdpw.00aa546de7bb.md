@@ -1,7 +1,0 @@
-Calculation: Daily VWAP = volume-weighted average of HLC3 from the start of the current calendar day through the current bar.
-Calculation: Weekly VWAP = volume-weighted average of HLC3 from the start of the current week through the current bar.
-Calculation: Daily VWAP standard deviation = volume-weighted standard deviation of HLC3 from the start of the current calendar day through the current bar, measured around Daily VWAP.
-Calculation: Lower SD bands = Daily VWAP minus the smaller and larger signal band multipliers, respectively, times Daily VWAP standard deviation.
-Calculation: Upper SD bands = Daily VWAP plus the smaller and larger signal band multipliers, respectively, times Daily VWAP standard deviation.
-Long: More than the cooldown length of bars have elapsed since the last signal of either direction AND ((high > Daily VWAP AND low < Daily VWAP AND close > Daily VWAP AND EMA is rising AND close > Weekly VWAP) OR ((low <= the lower band with the smaller multiplier AND close > that band) OR (low <= the lower band with the larger multiplier AND close > that band)) AND EMA is rising AND close > Daily VWAP AND close > open)
-Short: More than the cooldown length of bars have elapsed since the last signal of either direction AND ((high > Daily VWAP AND low < Daily VWAP AND close < Daily VWAP AND EMA is falling AND close < Weekly VWAP) OR ((high >= the upper band with the smaller multiplier AND close < that band) OR (high >= the upper band with the larger multiplier AND close < that band)) AND EMA is falling AND close < Daily VWAP AND close < open)

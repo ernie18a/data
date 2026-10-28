@@ -1,6 +1,0 @@
-Calculation: A/D = cumulative sum of per-bar ((close - open) / (high - low)) × volume, using 0 when high = low.
-Calculation: Normalized A/D = rescale A/D using the rolling highest and lowest A/D over a lookback including the current bar: (A/D − midpoint) / (range / 2) × 100, where midpoint = (highest + lowest) / 2; use 0 when range = 0.
-Calculation: Fast and slow lines = EMA or SMA of normalized A/D; the fast line uses a shorter lookback than the slow line.
-Calculation: Bullish divergence = at a confirmed bilateral pivot low of the fast line, price low is below the prior pivot low and fast line is above its prior pivot low, with the prior pivot within a maximum bar distance. Bearish divergence = at a confirmed bilateral pivot high of the fast line, price high is above the prior pivot high and fast line is below its prior pivot high, with the prior pivot within a maximum bar distance. Confirm each pivot after the required bars to its right.
-Long: fast line >= slow line OR bullish divergence
-Short: fast line < slow line OR bearish divergence

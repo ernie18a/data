@@ -1,1 +1,0 @@
-Calculate the difference between the external market’s new highs and new lows. Enter long when this difference is positive and its faster moving average is above its slower moving average. Exit the long position when the difference is negative and its faster moving average is below its slower moving average.

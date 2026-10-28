@@ -1,3 +1,0 @@
-Calculation: VWMACD histogram = (shorter-lookback EMA(volume × close) / EMA(volume) − longer-lookback EMA(volume × close) / EMA(volume)) minus an EMA of that difference
-Short: VWMACD histogram < 0 AND close < HMA AND shorter-lookback TEMA of hlc3 < longer-lookback TEMA of hlc3 AND datetime >= configured start time AND datetime <= configured end time
-Exit: short, VWMACD histogram > 0 OR close > HMA OR shorter-lookback TEMA of hlc3 > longer-lookback TEMA of hlc3 OR low <= entry price − close × configured take-profit percentage OR high >= entry price + close × configured stop-loss percentage

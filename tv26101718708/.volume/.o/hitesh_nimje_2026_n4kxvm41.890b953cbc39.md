@@ -1,5 +1,0 @@
-Calculation: Session price trend statistic = for each configured session, after its first bar, let n be the number of bars so far in that session; SMA is the mean of their closes, WMA is the mean of their closes weighted 1 to n from oldest to newest, and stdev is the population standard deviation of those closes; statistic = ((WMA − SMA) × (n + 1) / 2) / (stdev × sqrt(n² − 1) / (2 × sqrt(3)))
-Calculation: Session delta = cumulative volume of session bars where close ≥ open minus cumulative volume of session bars where close < open
-Calculation: Active-session total delta = sum of session deltas for sessions active on the current bar
-Long: session price trend statistic > 0 OR session delta > 0 OR active-session total delta > 0
-Short: session price trend statistic ≤ 0 OR session delta < 0 OR active-session total delta < 0

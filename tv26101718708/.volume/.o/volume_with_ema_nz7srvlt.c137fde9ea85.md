@@ -1,1 +1,0 @@
-Long: volume > EMA(volume)

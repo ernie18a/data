@@ -1,8 +1,0 @@
-Calculation: Bullish FVG = the last completed higher-timeframe candle’s low is above the high from two candles earlier; gap zone is between those prices
-Calculation: Bearish FVG = the last completed higher-timeframe candle’s high is below the low from two candles earlier; gap zone is between those prices
-Calculation: Gap-size filter = gap height is at least a configurable minimum multiple of the ATR of that same timeframe, calculated on its last completed bar
-Calculation: Relative gap volume = average volume per price row inside the gap divided by average volume per row in a composite profile of chart bars from the current session and a configurable number of previous sessions; spread each bar’s volume evenly across the price rows it spans, and exclude the gap’s edge rows when it spans at least three rows
-Long: A bullish FVG forms on a completed timeframe bar AND it passes the gap-size filter AND (volume-profile filtering is off OR relative gap volume is at or below the configurable LVN threshold)
-Short: A bearish FVG forms on a completed timeframe bar AND it passes the gap-size filter AND (volume-profile filtering is off OR relative gap volume is at or below the configurable LVN threshold)
-Long: A bearish FVG previously qualified for inversion AND a later completed bar of that same timeframe closes above the gap’s top
-Short: A bullish FVG previously qualified for inversion AND a later completed bar of that same timeframe closes below the gap’s bottom

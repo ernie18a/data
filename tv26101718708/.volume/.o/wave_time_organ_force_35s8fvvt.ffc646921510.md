@@ -1,7 +1,0 @@
-Calculation: Raw organ pressure = EMA of the sum of four z-scores, all using the same lookback: (1) change in the EMA of close, (2) rate of change of close, (3) change in on-balance volume, and (4) change in ATR multiplied by +1 when close is above its EMA and −1 otherwise. Use separate parameter values for the trend EMA, momentum lookback, ATR, and direction EMA; then apply a base EMA smoothing.
-Calculation: Organ flow = EMA of raw organ pressure; organ signal = EMA of organ flow using the same smoothing length as organ flow.
-Calculation: Six timeframe organ values = raw organ pressure on each of six selected timeframes, using each timeframe’s last completed bar.
-Calculation: Bull layers = count of the six timeframe organ values above zero; bear layers = count below zero.
-Calculation: Timeframe force = EMA, using the organ-flow smoothing length, of the weighted sum of the six timeframe organ values (weights, from shortest to longest timeframe: 0.10, 0.13, 0.17, 0.18, 0.20, 0.22).
-Long: Organ flow crosses above organ signal AND organ flow > 0 AND timeframe force > 0 AND bull layers >= 4 OR timeframe force > 0 AND bull layers >= 4 OR bull layers = 6 OR organ flow > organ signal AND organ flow > 0
-Short: Organ flow crosses below organ signal AND organ flow < 0 AND timeframe force < 0 AND bear layers >= 4 OR timeframe force < 0 AND bear layers >= 4 OR bear layers = 6 OR organ flow < organ signal AND organ flow < 0

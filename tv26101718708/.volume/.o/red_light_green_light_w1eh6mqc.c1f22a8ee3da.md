@@ -1,2 +1,0 @@
-Long: close >= (1 + percentage threshold / 100) × previous bar close AND volume > previous bar volume AND low > lowest low over lookback ending on current bar AND previous bar low > lowest low over lookback ending on previous bar AND low two bars ago > lowest low over lookback ending two bars ago AND (low three bars ago > lowest low over lookback ending three bars ago OR close three bars ago > open three bars ago)
-Exit: long, close < open AND abs(close − open) >= ATR × multiplier, using ATR from the previous completed bar

@@ -1,3 +1,0 @@
-Calculation: 3-bar momentum = (close − close three bars earlier) / ATR14, calculated on chart-timeframe bars
-Long: On the latest completed source-timeframe bar, close > EMA50 AND EMA50 > its value three source bars earlier OR on a completed chart-timeframe bar, 3-bar momentum ≥ 0.15 AND the preceding bar’s 3-bar momentum ≤ 0
-Short: On the latest completed source-timeframe bar, close < EMA50 AND EMA50 < its value three source bars earlier OR on a completed chart-timeframe bar, 3-bar momentum ≤ −0.15 AND the preceding bar’s 3-bar momentum ≥ 0

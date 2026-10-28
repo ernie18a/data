@@ -1,3 +1,0 @@
-Calculation: New intraday low = signal-timeframe bar low < the lowest low of earlier eligible-session bars in the same day
-Calculation: Average daily volume = average volume over the configured lookback of completed daily bars
-Long: Eligible-session signal-timeframe bar close > close of the latest new intraday-low bar while its setup is armed (a newer low replaces the anchor, and the first later bar closing above the anchor consumes the setup) AND average daily volume >= configured minimum

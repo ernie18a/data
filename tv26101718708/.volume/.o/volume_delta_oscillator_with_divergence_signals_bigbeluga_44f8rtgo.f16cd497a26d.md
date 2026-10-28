@@ -1,4 +1,0 @@
-Calculation: Normalized delta = clamp((close >= open ? 1 : -1) × abs(close − open) / max(high − low, minimum tick) × volume / max(volume, 1) × 50, −50, 50)
-Calculation: Smoothed delta = EMA of normalized delta over a lookback, multiplied by 10 when range stabilization is disabled, or by 10 × (lookback + 1) / 15 when enabled
-Long: On confirmation of a smoothed-delta pivot low, its value is higher than the preceding smoothed-delta pivot low AND the price low at its pivot bar is lower than the price low at the preceding pivot bar
-Short: On confirmation of a smoothed-delta pivot high, its value is lower than the preceding smoothed-delta pivot high AND the price high at its pivot bar is higher than the price high at the preceding pivot bar

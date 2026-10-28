@@ -1,1 +1,0 @@
-Use the external 10-year Treasury yield’s current position within its recent high-low range. If it is above the upper portion of that range, exit the traded instrument; otherwise, go long or remain long.

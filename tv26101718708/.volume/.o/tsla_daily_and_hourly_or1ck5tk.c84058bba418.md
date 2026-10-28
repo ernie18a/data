@@ -1,4 +1,0 @@
-Calculation: BlueWave = EMA(fast, (RSI(close, lookback) + Stochastic(close, high, low, lookback)) / 2) − EMA(slow, the same average) + EMA(21, (hlc3 − EMA(10, hlc3)) / (0.015 × EMA(10, abs(hlc3 − EMA(10, hlc3))))) / 2; fast lookback is shorter than slow
-Calculation: Money flow = EMA(5, MFI(hlc3, lookback) − 50) × multiplier
-Long: flat position AND BlueWave > 0 AND BlueWave > its prior-bar value AND Money flow > 0 AND Money flow > its prior-bar value AND close > EMA(200) AND close > EMA(50) AND NOT (on the prior bar, BlueWave > 0 AND BlueWave > its prior-bar value AND Money flow > 0 AND Money flow > its prior-bar value AND close > EMA(200) AND close > EMA(50))
-Exit: long, low <= the structural stop set from the prior completed bar (lowest low over its stop lookback) OR close < EMA(50)

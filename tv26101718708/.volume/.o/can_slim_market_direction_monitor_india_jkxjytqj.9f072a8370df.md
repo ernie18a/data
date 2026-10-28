@@ -1,2 +1,0 @@
-Calculation: Rally-attempt day = during a correction (close below the 50-bar simple moving average OR close below 95% of the highest high over 50 bars), track the lowest low and reset the count to 0 whenever a lower low occurs; after that low, the first higher close starts day 1, then increment the count each bar; reset the count and clear the tracked low when the count exceeds 18
-Long: rally-attempt day is 4–13 AND close is at least 1.5% above the previous close AND volume is greater than the previous bar's volume

@@ -1,7 +1,0 @@
-Calculation: Confirmed swing high/low = A bar’s high/low is strictly above/below the highs/lows of the more recent swing-lookback bars; use the most recent unbroken swing of each type.
-Calculation: ATR = Average True Range on the order-block timeframe.
-Calculation: Opposing-candle zone = The nearest candle before the structure break that closes against the break direction; in series mode, include the consecutive older opposing candles, stopping at the first non-opposing candle. Zone top/bottom are the maximum high/minimum low of the included candles.
-Long: Detection method = Volumized AND close > most recent unbroken swing high AND the bar with the lowest low between that swing and the prior bar has zone height ≤ maximum ATR multiple.
-Long: Detection method = ICT AND close > most recent unbroken swing high AND absolute(open − close) ≥ displacement ATR multiple × ATR AND (FVG not required OR low > high two bars earlier) AND an opposing-candle zone exists AND zone height ≤ maximum ATR multiple.
-Short: Detection method = Volumized AND close < most recent unbroken swing low AND the bar with the highest high between that swing and the prior bar has zone height ≤ maximum ATR multiple.
-Short: Detection method = ICT AND close < most recent unbroken swing low AND absolute(open − close) ≥ displacement ATR multiple × ATR AND (FVG not required OR high < low two bars earlier) AND an opposing-candle zone exists AND zone height ≤ maximum ATR multiple.

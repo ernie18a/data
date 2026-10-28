@@ -1,4 +1,0 @@
-Calculation: Signal score = 2 points for volume/average-volume ratio above the high surge threshold, 1 above the lower surge threshold, otherwise 0; plus 2 points for close-to-prior-close percentage change above the high gap threshold, 1 above the lower gap threshold, otherwise 0; plus 1 point each when short-term EMA > long-term EMA, close > short-term EMA, Bollinger Band width is below the compression threshold, and 5-bar percentage momentum is above its positive threshold.
-Calculation: 5-bar percentage momentum = (close − close five bars ago) / close five bars ago × 100.
-Long: close > short-term EMA AND RSI < maximum RSI AND signal score >= minimum score
-Exit: Long, (close < short-term EMA AND 5-bar percentage momentum < negative fade threshold) OR low <= trailing stop (activated when high reaches entry price plus activation distance; stop follows the highest high since activation by the trailing offset)

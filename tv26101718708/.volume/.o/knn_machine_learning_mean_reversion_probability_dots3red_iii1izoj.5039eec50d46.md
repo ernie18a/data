@@ -1,7 +1,0 @@
-Calculation: Basis MA = moving average of close
-Calculation: Above/below reversion probability = Gaussian-weighted fraction of the K nearest historical feature matches labeled as reverting to the basis MA within the reversion window; calculate matches from five features—close’s percent distance from the basis MA, its position relative to the upper Bollinger Band, RSI deviation from 50, candle body-to-range ratio, and negative volume divided by its prior-bars moving average. Z-score each feature using its prior-bars rolling mean and standard deviation; measure match distance with the Minkowski metric. A historical bar is labeled for reversion from above/below if it closed above/below the basis MA and a later low/high touched the basis MA within the reversion window. Use the same feature, distance, and weighting settings for both probabilities.
-Calculation: Extension band = ATR × gate multiplier
-Short: above-basis reversion probability crosses above threshold AND close > basis MA AND close > basis MA + extension band AND the previous signal direction is neutral or long
-Long: below-basis reversion probability crosses above threshold AND close < basis MA AND close < basis MA − extension band AND the previous signal direction is neutral or short
-Exit: Long, close >= basis MA
-Exit: Short, close <= basis MA

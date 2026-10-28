@@ -1,7 +1,0 @@
-Calculation: Cumulative volume delta = cumulative sum of volume × (2 × close − high − low) / (high − low)
-Calculation: Price momentum = (close − close N bars ago) / close N bars ago; CVD momentum = (CVD − CVD N bars ago) / abs(CVD N bars ago)
-Calculation: Bull class = price momentum > 0 and CVD momentum > 0; bear class = both < 0; otherwise diverged
-Calculation: Classifier features = z-scores of CVD momentum, price momentum minus CVD momentum, and the linear-regression slope of CVD; use the same rolling normalization lookback for all three
-Calculation: Bull and bear posterior probabilities = online Gaussian Naive Bayes probabilities from those three features, with class means, standard deviations, and frequencies accumulated from prior bars labeled by their momentum classes
-Long: warmed up and bull posterior ≥ threshold and close > EMA(close, trend lookback) OR warmed up and bull posterior ≥ threshold and close > EMA(close, trend lookback) and CVD > prior bar CVD and this state was false on the prior bar and cooldown has elapsed and bar is confirmed
-Short: warmed up and bear posterior ≥ threshold and close < EMA(close, trend lookback) OR warmed up and bear posterior ≥ threshold and close < EMA(close, trend lookback) and CVD < prior bar CVD and this state was false on the prior bar and cooldown has elapsed and bar is confirmed

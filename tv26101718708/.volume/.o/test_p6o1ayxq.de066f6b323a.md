@@ -1,3 +1,0 @@
-Calculation: Relative volume = current bar volume divided by its moving average over a lookback
-Long: close > fast EMA AND fast EMA > slow EMA AND close > VWAP AND Supertrend direction > 0 AND relative volume > a threshold AND ATR > its moving average AND, on each of the three requested higher timeframes using the bar still forming, close > its EMA
-Short: close < fast EMA AND fast EMA < slow EMA AND close < VWAP AND Supertrend direction < 0 AND relative volume > a threshold AND ATR > its moving average AND, on each of the three requested higher timeframes using the bar still forming, close ≤ its EMA

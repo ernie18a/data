@@ -1,6 +1,0 @@
-Long: close crosses above the upper Keltner Channel AND close > EMA(50) AND close > EMA(200) AND ADX > threshold AND bar is confirmed AND time is within 09:30–15:15 America/New_York AND position is flat AND daily-loss and consecutive-loss limits are not halted
-Short: close crosses below the lower Keltner Channel AND close < EMA(50) AND close < EMA(200) AND ADX > threshold AND bar is confirmed AND time is within 09:30–15:15 America/New_York AND position is flat AND daily-loss and consecutive-loss limits are not halted
-Calculation: Long trailing stop = maximum of the previous stop and current low minus ATR times trailing multiplier; initialize at entry to entry-bar low minus ATR times initial-stop multiplier
-Calculation: Short trailing stop = minimum of the previous stop and current high plus ATR times trailing multiplier; initialize at entry to entry-bar high plus ATR times initial-stop multiplier
-Exit: long, confirmed bar low <= long trailing stop OR time is within 15:10–15:15 America/New_York
-Exit: short, confirmed bar high >= short trailing stop OR time is within 15:10–15:15 America/New_York

@@ -1,6 +1,0 @@
-Calculation: Highest session resistance = highest body high among the latest Asia, London, and New York session-start bars, where body high is max(open, close)
-Calculation: Lowest session support = lowest body low among the latest Asia, London, and New York session-start bars, where body low is min(open, close)
-Long: close > 20-period EMA AND 20-period EMA > 200-period EMA AND close > highest session resistance AND close > previous bar high AND close > open AND volume > 20-bar volume SMA multiplied by a configurable factor
-Long: close > 20-period EMA AND 20-period EMA > 200-period EMA AND low <= highest session resistance AND close > highest session resistance
-Short: close < 20-period EMA AND 20-period EMA < 200-period EMA AND close < lowest session support AND close < previous bar low AND close < open AND volume > 20-bar volume SMA multiplied by a configurable factor
-Short: close < 20-period EMA AND 20-period EMA < 200-period EMA AND high >= lowest session support AND close < lowest session support

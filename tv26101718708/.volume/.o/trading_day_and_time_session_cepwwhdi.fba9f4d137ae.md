@@ -1,3 +1,0 @@
-Calculation: Rising VWMA = the current volume-weighted moving average of (high + low) / 2 over a long lookback is greater than each of its values in the preceding short lookback
-Long: bar datetime is within the configured date range AND bar opening time is within the configured session in the configured UTC offset AND the bar's weekday is enabled AND Rising VWMA
-Exit: long, bar datetime is within the configured date range AND bar opening time is within the configured session in the configured UTC offset AND the bar's weekday is enabled AND NOT Rising VWMA

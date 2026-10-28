@@ -1,2 +1,0 @@
-Long: close > macro VAH AND today's open > yesterday's VAH AND close > yesterday's VAH AND close > open
-Short: close < macro VAL AND today's open < yesterday's VAL AND close < yesterday's VAL AND close < open

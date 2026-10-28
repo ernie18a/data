@@ -1,9 +1,0 @@
-Calculation: Volume-weighted fair value = rolling mean of hlc3 weighted by volume, using 1 when volume is missing or zero
-Calculation: Volume-weighted dispersion = square root of the rolling volume-weighted mean of hlc3 squared minus the square of volume-weighted fair value, using the same lookback and volume weights
-Calculation: Volume climax = current volume’s z-score against its rolling mean and standard deviation
-Calculation: Rejection wick = upper wick or lower wick as a fraction of the current bar’s high-low range
-Calculation: Close location = (close − low) / (high − low)
-Calculation: Volume layers = divide the highest-to-lowest price range in the lookback into equal-traded-volume layers, allocating each bar’s volume across the price bins it spans in proportion to range overlap
-Calculation: Layer strength = average of (a) a score based on how much thinner the layer is than the average layer and (b) its rank by thinness among all layers
-Long: confirmed bar AND (low is at least the stretch threshold below volume-weighted fair value in units of volume-weighted dispersion AND volume climax is at least its threshold AND lower rejection wick is at least its threshold AND close location ≥ 0.4 AND bars since prior long fade > cooldown OR current bar overlaps a layer meeting the strong-score threshold that is below close, or is in-play with close at or above its midpoint)
-Short: confirmed bar AND (high is at least the stretch threshold above volume-weighted fair value in units of volume-weighted dispersion AND volume climax is at least its threshold AND upper rejection wick is at least its threshold AND close location ≤ 0.6 AND bars since prior short fade > cooldown OR current bar overlaps a layer meeting the strong-score threshold that is above close, or is in-play with close below its midpoint)

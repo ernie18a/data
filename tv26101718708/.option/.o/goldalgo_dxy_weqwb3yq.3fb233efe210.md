@@ -1,1 +1,0 @@
-For gold, use the US Dollar Index as the external signal: when its close is above its trend EMA, favor short positions in gold; when below, favor long positions. Treat the signal as less reliable when the rolling gold–dollar correlation is greater than −0.3. No exit rule is specified.

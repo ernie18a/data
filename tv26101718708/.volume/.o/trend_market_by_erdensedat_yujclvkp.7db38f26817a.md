@@ -1,7 +1,0 @@
-Calculation: Latest confirmed pivot high = high at the center of the most recent odd-length bar window, higher than the highs of an equal number of bars on both sides; it is confirmed when those right-side bars have completed.
-Calculation: Latest confirmed pivot low = low at the center of the most recent odd-length bar window, lower than the lows of an equal number of bars on both sides; it is confirmed when those right-side bars have completed.
-Calculation: Take-profit levels = after an upward break, anchor at the broken pivot high and use the distance from the latest pivot low to that high; after a downward break, anchor at the broken pivot low and use the distance from that low to the latest pivot high. For target index n = 1, 2, 3, …, multiply the distance by (n−1)/2 + 0.618 when n is odd, or n/2 when n is even; add this to the anchor for an upward break and subtract it for a downward break.
-Long: close (or high, according to the body-break setting) > latest confirmed pivot high not previously broken OR a newly confirmed pivot low while market-structure direction is up
-Short: close (or low, according to the body-break setting) < latest confirmed pivot low not previously broken OR a newly confirmed pivot high while market-structure direction is down
-Exit: long, high >= the next unhit take-profit level
-Exit: short, low <= the next unhit take-profit level

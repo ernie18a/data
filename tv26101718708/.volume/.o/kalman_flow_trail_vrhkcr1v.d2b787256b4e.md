@@ -1,4 +1,0 @@
-Calculation: Adaptive Kalman flow trail = smooth close with fast and slow Kalman filters (fast has shorter lookback); derive bullish/bearish structure impulses from closes crossing confirmed pivot highs/lows, smooth impulse and its absolute value with the same lookback, and adapt trail smoothing from slower toward faster as impulse activity rises. Update the trail toward the fast Kalman estimate, add a structure-bias adjustment scaled by ATR and reduced when structure bias and fast-vs-slow Kalman direction disagree, then pull it toward the midpoint of the latest confirmed pivot high and low in proportion to structure activity.
-Calculation: Upper and lower trail boundaries = adaptive Kalman flow trail plus or minus ATR multiplied by a boundary-width parameter.
-Long: close > upper trail boundary AND trail slope is rising AND previous trail direction was bearish
-Short: close < lower trail boundary AND trail slope is falling AND previous trail direction was bullish

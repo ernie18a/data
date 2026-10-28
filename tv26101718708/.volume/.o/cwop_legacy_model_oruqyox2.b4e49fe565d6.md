@@ -1,3 +1,0 @@
-Calculation: candle range % = (high - low) / low * 100
-Calculation: candle body/range = abs(close - open) / (high - low), or 0 when high = low
-Long: candle range % >= 1 AND candle body/range >= 0.25 AND (low <= EMA AND high >= EMA) AND (low <= VWAP AND high >= VWAP), OR candle range % >= 1 AND candle body/range >= 0.25 AND EMA crosses above SMA; enter when at least 4 bars have elapsed since the most recent bar satisfying either condition

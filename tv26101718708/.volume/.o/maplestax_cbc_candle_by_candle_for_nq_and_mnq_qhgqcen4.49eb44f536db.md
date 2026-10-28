@@ -1,4 +1,0 @@
-Calculation: Chart-timeframe CBC state = bullish after a bar closes above the previous bar’s high; bearish after it closes below the previous bar’s low; otherwise retain the prior state.
-Calculation: Higher-timeframe CBC state = apply the same rule to aggregated higher-timeframe bars; use only completed bars.
-Long: Chart-timeframe close > previous bar high AND prior chart-timeframe CBC state is bearish OR last completed higher-timeframe CBC state is bullish AND its preceding completed state is bearish.
-Short: Chart-timeframe close < previous bar low AND prior chart-timeframe CBC state is bullish OR last completed higher-timeframe CBC state is bearish AND its preceding completed state is bullish.

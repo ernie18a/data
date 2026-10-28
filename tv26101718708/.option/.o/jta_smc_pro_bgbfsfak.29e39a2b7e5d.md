@@ -1,1 +1,0 @@
-For currency pairs, compare the base currency’s official policy rate with the quote currency’s. Go long when the base rate is higher and short when it is lower; treat equal or unavailable rates as neutral. No exit rule is defined.

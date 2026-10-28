@@ -1,7 +1,0 @@
-Calculation: Bollinger BandWidth = (upper Bollinger Band − lower Bollinger Band) / middle Bollinger Band × 100
-Calculation: Flat middle = absolute difference between the current middle band and its value N bars earlier ≤ ATR(14) × threshold
-Calculation: Squeeze = Flat middle AND BandWidth ≤ the lowest BandWidth over the lookback × (1 + threshold)
-Long: On a confirmed bar, close > upper Bollinger Band AND BandWidth > prior bar’s BandWidth AND an unused squeeze occurred on an earlier bar within the breakout window AND (if MFI confirmation is enabled) MFI > its level AND (if overlapping trades are disabled) no trade is open
-Short: On a confirmed bar, close < lower Bollinger Band AND BandWidth > prior bar’s BandWidth AND an unused squeeze occurred on an earlier bar within the breakout window AND (if MFI confirmation is enabled) MFI < its level AND (if overlapping trades are disabled) no trade is open
-Exit: Long, close < middle Bollinger Band (middle-line mode) OR low ≤ stop at the middle band value on entry OR high ≥ target at entry price plus the configured reward multiple of the entry-to-stop distance (fixed-target mode; check stop first if both are touched)
-Exit: Short, close > middle Bollinger Band (middle-line mode) OR high ≥ stop at the middle band value on entry OR low ≤ target at entry price minus the configured reward multiple of the entry-to-stop distance (fixed-target mode; check stop first if both are touched)

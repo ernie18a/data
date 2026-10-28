@@ -1,4 +1,0 @@
-Calculation: Up-side size = sum of volume or HLC3 × volume, according to the size setting, over retained lower-timeframe records classified as up, excluding the two oldest records
-Calculation: Down-side size = sum of volume or HLC3 × volume, according to the size setting, over retained lower-timeframe records classified as down, excluding the two oldest records
-Long: current lower-timeframe close > previous lower-timeframe close (the current bar may still be forming) OR Up-side size >= Down-side size
-Short: current lower-timeframe close < previous lower-timeframe close (the current bar may still be forming) OR Down-side size > Up-side size

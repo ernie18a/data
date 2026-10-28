@@ -1,1 +1,0 @@
-When the benchmark closes below its exponential moving average while the traded instrument closes above its own, go long. Exit when either condition stops holding. No short signal.

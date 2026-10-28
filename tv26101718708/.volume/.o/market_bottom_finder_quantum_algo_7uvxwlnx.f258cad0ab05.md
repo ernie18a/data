@@ -1,9 +1,0 @@
-Calculation: Fear gauge = (highest close over the fear lookback − current low) / highest close over the fear lookback × 100
-Calculation: Fear threshold = configured percentile of the fear gauge over its adaptive threshold window, including the current confirmed bar
-Calculation: Downward momentum = (current close − close from the momentum lookback bars ago) / current ATR
-Calculation: Upward stretch pressure = 1 − exp(− accumulated stretch / pressure scale), where stretch accumulates the amount by which close is more than one ATR below the long-term simple moving average and otherwise decays
-Calculation: Upward greed gauge = (current high − lowest close over the fear lookback) / lowest close over the fear lookback × 100
-Calculation: Greed threshold = configured percentile of the upward greed gauge over its adaptive threshold window, including the current confirmed bar
-Calculation: Downward stretch pressure = 1 − exp(− accumulated stretch / pressure scale), where stretch accumulates the amount by which close is more than one ATR above the long-term simple moving average and otherwise decays
-Long: current confirmed bar AND fear gauge >= fear threshold on the current or either of the prior two bars AND the lowest downward momentum over the recent momentum window <= negative minimum momentum AND current downward momentum > prior bar's downward momentum AND upward stretch pressure >= minimum pressure AND bars since the prior long or short signal >= cooldown
-Short: current confirmed bar AND top detection enabled AND upward greed gauge >= greed threshold AND the highest downward momentum over the recent momentum window >= minimum momentum AND current downward momentum < prior bar's downward momentum AND downward stretch pressure >= minimum pressure AND bars since the prior long or short signal >= cooldown

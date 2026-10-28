@@ -1,2 +1,0 @@
-Long: close crosses above its simple moving average OR close >= open AND (high + low) / 2 > previous bar high
-Short: close crosses below its simple moving average OR close < open AND (high + low) / 2 < previous bar low

@@ -1,3 +1,0 @@
-Calculation: Mutual information = over a rolling lookback, bin close-to-close changes as low (< −0.5 standard deviation), middle, or high (> 0.5 standard deviation), and volume as low (< 0.7 × average), middle, or high (> 1.3 × average); compute the sum of p(r,v) × ln(p(r,v) / (p(r) × p(v))) over the 3×3 joint bins.
-Long: mutual information >= threshold AND close > simple moving average AND close crosses above exponential moving average AND position side is not long AND cooldown has elapsed AND bar is confirmed
-Short: mutual information >= threshold AND close < simple moving average AND close crosses below exponential moving average AND position side is not short AND cooldown has elapsed AND bar is confirmed

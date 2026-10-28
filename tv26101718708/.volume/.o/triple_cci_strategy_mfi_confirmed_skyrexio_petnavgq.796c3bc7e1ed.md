@@ -1,3 +1,0 @@
-Calculation: Fast, middle, and slow CCI = CCI of (high + low + close) / 3, with successively longer lookbacks
-Long: Fast CCI crosses above 0 AND middle CCI > 0 AND slow CCI > 0 AND close > EMA AND MFI > 50 AND datetime is within the configured trading window
-Exit: long, low <= entry price − ATR × stop-loss multiplier OR (high has crossed above entry price + ATR × trailing activation multiplier since entry AND close < trailing EMA)

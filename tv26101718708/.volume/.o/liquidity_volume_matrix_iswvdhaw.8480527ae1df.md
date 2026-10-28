@@ -1,4 +1,0 @@
-Calculation: Confirmed swing high/low level = a local maximum/minimum of the selected price source (wicks or closes), confirmed after the same number of bars on each side; the level becomes active when confirmed.
-Calculation: Net volume = lower-timeframe volume delta when available; otherwise volume × (2 × close − high − low) / (high − low), or 0 when high = low.
-Long: At an active sell-side level, low < level AND close >= level AND volume >= its recent average × the volume-spike multiplier AND net volume > 0; on the following bar, close > the sweep bar’s high.
-Short: At an active buy-side level, high > level AND close <= level AND volume >= its recent average × the volume-spike multiplier AND net volume < 0; on the following bar, close < the sweep bar’s low.

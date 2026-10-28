@@ -1,4 +1,0 @@
-Calculation: Buy diagonal imbalance = a footprint row’s buy volume divided by the immediately lower row’s sell volume; if that sell volume is zero, use the capped ratio.
-Calculation: Sell diagonal imbalance = a footprint row’s sell volume divided by the immediately higher row’s buy volume; if that buy volume is zero, use the capped ratio.
-Long: On a completed bar, at least the minimum stack size of consecutive footprint rows each have a buy diagonal imbalance at or above the imbalance threshold.
-Short: On a completed bar, at least the minimum stack size of consecutive footprint rows each have a sell diagonal imbalance at or above the imbalance threshold.

@@ -1,1 +1,0 @@
-On each confirmed bar, compare the combined volume from the configured external exchanges with a rolling baseline of prior bars. If it meets or exceeds the baseline by the configured excess threshold, signal long when the instrument’s footprint delta is nonnegative and short when it is negative. No exit condition is defined.

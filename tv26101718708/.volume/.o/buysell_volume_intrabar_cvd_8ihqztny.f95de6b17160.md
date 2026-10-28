@@ -1,3 +1,0 @@
-Calculation: Cumulative buy volume = sum, since the selected reset point, of lower-timeframe bar volume when close > open, half the volume when close = open, and zero when close < open; use lower-timeframe bars within the current chart bar, including available bars while it is forming.
-Calculation: Cumulative sell volume = sum, since the selected reset point, of lower-timeframe bar volume when close < open, half the volume when close = open, and zero when close > open; use lower-timeframe bars within the current chart bar, including available bars while it is forming.
-Short: Current cumulative sell volume > current cumulative buy volume AND previous completed chart bar's cumulative sell volume <= its cumulative buy volume

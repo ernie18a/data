@@ -1,3 +1,0 @@
-Calculation: Price and volume coordinates = for each input series (previous completed bar close for price, volume for volume), apply a 2-pole Butterworth high-pass filter with a longer period, then a 2-pole SuperSmoother low-pass filter with a shorter period; divide the filtered value by its RMS, where RMS² starts at the first filtered value squared and thereafter equals 0.0242 × filtered value² + 0.9758 × prior RMS². Set filter outputs to zero for the first three bars.
-Long: Price coordinate > 0 AND volume coordinate > 0 OR Price coordinate < 0 AND volume coordinate < 0
-Short: Price coordinate > 0 AND volume coordinate < 0 OR Price coordinate < 0 AND volume coordinate > 0

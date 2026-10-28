@@ -1,1 +1,0 @@
-For Bitcoin, calculate the percentage difference between Coinbase’s price and Binance’s price. Go long when this premium crosses above zero; go short when it crosses below zero.

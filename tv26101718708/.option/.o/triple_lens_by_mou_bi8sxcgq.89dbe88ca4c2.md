@@ -1,1 +1,0 @@
-Go long when the instrument is above a rising long-term weekly average, shows net accumulation, and broad-market breadth has recently been weak but is recovering. Exit when the instrument enters a distribution phase or falls below its weekly average after an uptrend, or when breadth recently reached an overbought level and has since weakened. No short entry is defined.

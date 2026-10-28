@@ -1,4 +1,0 @@
-Calculation: Daily VWAP = cumulative sum of (bar hlc3 × volume) divided by cumulative volume, reset at each new day; use the current forming day.
-Calculation: Daily open = open of the first bar of the current day.
-Long: close > Daily VWAP AND close > Daily open AND NOT (previous bar close > previous bar Daily VWAP AND previous bar close > previous bar Daily open) AND current bar is not immediately after any signal
-Short: close < Daily VWAP AND close < Daily open AND NOT (previous bar close < previous bar Daily VWAP AND previous bar close < previous bar Daily open) AND current bar is not immediately after any signal

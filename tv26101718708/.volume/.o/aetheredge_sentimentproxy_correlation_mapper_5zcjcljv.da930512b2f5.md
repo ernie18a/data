@@ -1,3 +1,0 @@
-Calculation: Sentiment = EMA of the tanh output of an online-trained tanh neural network using volume anomaly, volatility, price velocity, wick asymmetry, and run-length as inputs; train it against clipped forward price change normalized by ATR.
-Long: confirmed bar within the training horizon AND (previous Sentiment ≤ 0 AND Sentiment > 0 AND Sentiment − previous Sentiment ≥ turn sensitivity OR Sentiment ≤ − extreme threshold AND previous Sentiment > − extreme threshold)
-Short: confirmed bar within the training horizon AND (previous Sentiment ≥ 0 AND Sentiment < 0 AND previous Sentiment − Sentiment ≥ turn sensitivity OR Sentiment ≥ extreme threshold AND previous Sentiment < extreme threshold)

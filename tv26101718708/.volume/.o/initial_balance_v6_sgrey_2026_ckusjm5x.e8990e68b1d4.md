@@ -1,5 +1,0 @@
-Calculation: Initial Balance High/Low = highest high and lowest low during the configured first-hour session window, using the completed window.
-Calculation: IB ATR = average true range of bars in the configured first-hour session window.
-Calculation: Range % ATR = (Initial Balance High − Initial Balance Low) ÷ ATR × 100; ATR uses the selected ATR timeframe, from its last completed bar when previous ATR is enabled, otherwise from the bar still forming.
-Long: Initial Balance window is complete AND close > Initial Balance High AND Range % ATR < exhaustion minimum AND IB ATR > low-volatility maximum AND Range % ATR ≤ breakout maximum
-Short: Initial Balance window is complete AND close < Initial Balance Low AND Range % ATR < exhaustion minimum AND IB ATR > low-volatility maximum AND Range % ATR ≤ breakout maximum

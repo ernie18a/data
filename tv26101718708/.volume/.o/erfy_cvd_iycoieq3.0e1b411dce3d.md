@@ -1,5 +1,0 @@
-Calculation: Estimated CVD = cumulative sum of candle delta, where candle delta = volume × ((close − low) − (high − close)) ÷ max(high − low, minimum tick); reset at each configured session start when session reset is enabled, otherwise continue cumulatively
-Calculation: Confirmed pivot low = a bar whose low is lower than the lows of the configured number of bars immediately before and after it; confirm after those following bars
-Calculation: Confirmed pivot high = a bar whose high is higher than the highs of the configured number of bars immediately before and after it; confirm after those following bars
-Long: current confirmed pivot low < previous confirmed pivot low AND Estimated CVD at current pivot low > Estimated CVD at previous pivot low
-Short: current confirmed pivot high > previous confirmed pivot high AND Estimated CVD at current pivot high < Estimated CVD at previous pivot high

@@ -1,7 +1,0 @@
-Calculation: Fast stochastic = SMA of the stochastic oscillator over a short lookback and smoothing period.
-Calculation: Slow stochastic = SMA of Fast stochastic over a longer smoothing period.
-Calculation: Reversal state = 1 when close[2] < close[1] AND close > close[1] AND Fast stochastic < Slow stochastic AND Fast stochastic > threshold; -1 when close[2] > close[1] AND close < close[1] AND Fast stochastic > Slow stochastic AND Fast stochastic < threshold; otherwise retain the previous state, initially 0.
-Calculation: Volume flow state = 1 when FVE > EMA(FVE); -1 when FVE < EMA(FVE); otherwise retain the previous state, initially 0. FVE = 100 × sum(volume × factor, lookback) / sum(volume, lookback), where factor is 1 when MF > cutoff × close, -1 when MF < -cutoff × close, and 0 otherwise; MF = close - HL2 + HLC3 - previous HLC3; cutoff = intra coefficient × stdev(SMA(ln(high) - ln(low), lookback), lookback) + inter coefficient × stdev(SMA(ln(HLC3) - ln(previous HLC3), lookback), lookback). The EMA uses its own lookback.
-Long: (reverse is off AND Reversal state = 1 AND Volume flow state = 1) OR (reverse is on AND Reversal state = -1 AND Volume flow state = -1)
-Short: (reverse is off AND Reversal state = -1 AND Volume flow state = -1) OR (reverse is on AND Reversal state = 1 AND Volume flow state = 1)
-Exit: long or short, NOT ((reverse is off AND Reversal state = Volume flow state AND Reversal state = 1 or -1) OR (reverse is on AND Reversal state = Volume flow state AND Reversal state = -1 or 1))

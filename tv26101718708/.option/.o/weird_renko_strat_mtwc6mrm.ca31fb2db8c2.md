@@ -1,1 +1,0 @@
-When the instrument’s Renko close rises from the prior value, enter long and close any short; when it falls, enter short and close any long. An optional inverse mode swaps the long and short actions.

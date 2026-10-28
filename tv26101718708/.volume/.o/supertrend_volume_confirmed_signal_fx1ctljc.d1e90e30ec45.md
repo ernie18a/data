@@ -1,2 +1,0 @@
-Long: Supertrend direction changes from downtrend to uptrend OR (at least one downtrend-to-uptrend Supertrend direction change occurred within the previous confirmation-window bars, excluding the current bar AND close >= open AND volume >= its moving average * volume multiplier)
-Short: Supertrend direction changes from uptrend to downtrend OR (at least one uptrend-to-downtrend Supertrend direction change occurred within the previous confirmation-window bars, excluding the current bar AND close < open AND volume >= its moving average * volume multiplier)

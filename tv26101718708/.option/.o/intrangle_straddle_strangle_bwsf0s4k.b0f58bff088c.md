@@ -1,1 +1,0 @@
-After the opening range is established, use the underlying index’s high and low to identify the nearest listed option strikes just outside that range, and use their midpoint as a reference level. When the index approaches that level, sell an at-the-money call and put, or sell the out-of-the-money call above the range and put below it. No exit rule is specified.

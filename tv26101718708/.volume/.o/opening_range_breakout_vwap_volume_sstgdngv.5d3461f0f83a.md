@@ -1,3 +1,0 @@
-Calculation: Opening-range high = highest high of bars in the session’s opening range
-Calculation: Opening-range average volume = total volume of bars in the session’s opening range / number of those bars
-Long: opening range is complete AND within the regular-session entry window after the opening range AND close > opening-range high AND volume >= opening-range average volume × volume multiplier AND close > session VWAP AND close >= (high + low) / 2

@@ -1,8 +1,0 @@
-Calculation: Anchored VWAP outer bands = volume-weighted mean of the configured source since the configured reset, plus or minus the configured multiple of its volume-weighted standard deviation.
-Calculation: EMA filter = EMA of hl2 on the configured timeframe, using its last completed bar.
-Calculation: Long protective stop = in ladder mode, the higher of entry price × (1 − stop-loss fraction) and the highest high since entry × (1 − trailing fraction) once that high exceeds entry price × (1 + trailing activation fraction); otherwise entry price × (1 − stop-loss fraction).
-Calculation: Short protective stop = in ladder mode, the lower of entry price × (1 + stop-loss fraction) and the lowest low since entry × (1 + trailing fraction) once that low falls below entry price × (1 − trailing activation fraction); otherwise entry price × (1 + stop-loss fraction).
-Long: position side is not short AND close > EMA filter AND bar time is outside the configured excluded session (when enabled) AND ADX < configured threshold AND low crosses below the lower VWAP outer band AND close > lower VWAP outer band.
-Short: position side is not long AND close < EMA filter AND bar time is outside the configured excluded session (when enabled) AND ADX < configured threshold AND high crosses above the upper VWAP outer band AND close < upper VWAP outer band.
-Exit: long, close crosses the long protective stop OR high > entry price × (1 + take-profit fraction) OR (early close enabled AND high crosses above the upper VWAP outer band).
-Exit: short, close crosses the short protective stop OR low > entry price × (1 − take-profit fraction) OR (early close enabled AND low crosses below the lower VWAP outer band).

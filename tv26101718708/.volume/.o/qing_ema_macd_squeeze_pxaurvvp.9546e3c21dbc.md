@@ -1,6 +1,0 @@
-Calculation: Higher-timeframe SMAs = short- and long-lookback simple moving averages of higher-timeframe closes, using the current higher-timeframe bar, which may still be forming.
-Calculation: ATR stop distance = Average True Range × stop multiplier.
-Long: MACD line crosses above its signal line AND position is flat AND no position has closed within the cooldown interval.
-Short: Shorts enabled AND close > 50-period EMA AND close > 200-period EMA AND 6-period EMA crosses below 12-period EMA AND MACD line crosses below its signal line AND position is flat AND no position has closed within the cooldown interval AND higher-timeframe filter disabled OR higher-timeframe short SMA < long SMA AND RSI < bearish threshold.
-Exit: Long, signal exit enabled AND short-lookback SMA crosses below long-lookback SMA OR signal exit disabled AND (low ≤ entry price − ATR stop distance OR high ≥ entry price + ATR stop distance × take-profit multiple).
-Exit: Short, signal exit enabled AND short-lookback SMA crosses above long-lookback SMA OR signal exit disabled AND (high ≥ entry price + ATR stop distance OR low ≤ entry price − ATR stop distance × take-profit multiple).

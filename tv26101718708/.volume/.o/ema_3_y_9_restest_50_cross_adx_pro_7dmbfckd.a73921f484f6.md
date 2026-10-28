@@ -1,8 +1,0 @@
-Calculation: EMA retest zone = bar range intersects a configurable percentage band around the trend EMA
-Calculation: strong bullish candle = close > open and candle body > a configurable fraction of the bar range; strong bearish candle = open > close and candle body > a configurable fraction of the bar range
-Calculation: counter-score = sum of configurable weights for failed trend, RSI, volume, ADX, EMA-zone, and breakout filters
-Calculation: prior swing high/low = rolling highest high/lowest low over a short lookback, taken from the last completed bar
-Long: position side is not long AND fast EMA crosses above signal EMA AND EMA retest zone AND close > trend EMA AND RSI > 50 AND volume exceeds a configurable multiple of its moving average AND (strong bullish candle OR close > fast EMA) AND close > prior bar high AND ADX > its minimum threshold
-Short: position side is not short AND fast EMA crosses below signal EMA AND EMA retest zone AND close < trend EMA AND RSI < 50 AND volume exceeds a configurable multiple of its moving average AND (strong bearish candle OR close < fast EMA) AND close < prior bar low AND ADX > its minimum threshold
-Exit: Long, close < prior swing low OR (counter-score >= cancellation threshold AND NOT (close > trend EMA AND ADX > a strong-momentum threshold))
-Exit: Short, close > prior swing high OR (counter-score >= cancellation threshold AND NOT (close < trend EMA AND ADX > a strong-momentum threshold))

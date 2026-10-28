@@ -1,8 +1,0 @@
-Calculation: Long RSI-VWAP = RSI of the close-based volume-weighted average price, using its long lookback
-Calculation: Short RSI-VWAP = RSI of the close-based volume-weighted average price, using its short lookback
-Calculation: Relative volatility index = 100 × upward EMA of close standard deviation ÷ (upward EMA + downward EMA); use the same standard-deviation lookback and EMA smoothing length for both
-Calculation: Money flow index = 100 − 100 ÷ (1 + sum(volume × hlc3 when hlc3 rises over the lookback) ÷ sum(volume × hlc3 when hlc3 falls over the lookback))
-Long: within the configured backtest date window AND (Long RSI-VWAP crosses above its oversold threshold OR Money flow index crosses below its lower threshold) AND EMA(close) > SMA(close) AND (flat position OR long position with relative volatility index above its benchmark)
-Short: within the configured backtest date window AND (Short RSI-VWAP crosses below its overbought threshold OR Money flow index crosses above its upper threshold) AND EMA(close) < SMA(close) AND (flat position OR short position with relative volatility index above its benchmark)
-Exit: long, within the configured backtest date window AND (Long RSI-VWAP crosses below its overbought threshold OR high reaches either configured take-profit level above the long entry price OR low reaches the configured stop level below the long entry price)
-Exit: short, within the configured backtest date window AND (Short RSI-VWAP crosses above its oversold threshold OR low reaches either configured take-profit level below the short entry price OR high reaches the configured stop level above the short entry price)

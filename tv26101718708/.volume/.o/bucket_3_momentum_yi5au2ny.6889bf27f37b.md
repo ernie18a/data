@@ -1,9 +1,0 @@
-Calculation: Relative-strength change = percentage change over the lookback in (chart close / benchmark close from the last completed benchmark bar)
-Calculation: Setup score = count of these conditions that are true: RSI is within a reset zone (lowest and highest RSI over the lookback both within a bounded range); RSI turns upward after falling or staying flat; RSI crosses above its SMA signal line; that signal line is flat or rising; MACD line crosses above its signal line or MACD histogram rises; positive DMI exceeds negative DMI or crossed above it within the current or two preceding bars; relative-strength change is positive
-Calculation: Swing low = lowest chart low over the pullback lookback
-Calculation: Initial stop = swing low minus an ATR-based buffer
-Calculation: Trailing stop = highest chart high since entry minus an ATR multiple, ratcheted upward only
-Long: no open position AND last completed weekly close > last completed weekly 30-period SMA AND that SMA is higher than its value four completed weekly bars earlier AND last completed weekly RSI >= its threshold AND chart close > chart-timeframe 50-period SMA AND that SMA >= its value at the flat-check lookback AND chart close > chart-timeframe 150-period SMA AND chart close > chart-timeframe 20-period EMA AND chart RSI >= its floor AND chart low is not at or below the prior bar's 20-bar lowest low AND NOT (negative DMI > positive DMI AND ADX is rising) AND chart close > prior bars' 5-bar highest high AND chart close > chart open AND chart close >= chart low + 0.65 × (chart high - chart low) AND chart close > chart-timeframe 20-period EMA AND (chart close - 20-period EMA) / ATR <= its limit AND setup score >= its threshold AND 20-bar average of chart close × volume >= its turnover floor
-Exit: long, chart low <= initial stop
-Exit: long, chart low <= trailing stop
-Exit: long, chart close < chart-timeframe 50-period SMA AND chart RSI < its threshold AND negative DMI > positive DMI

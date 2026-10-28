@@ -1,5 +1,0 @@
-Calculation: Tradition = average of (EMA((HLC3 − EMA(HLC3, master lookback)) / (0.025 × EMA(abs(HLC3 − EMA(HLC3, master lookback)), master lookback)), shorter lookback) + 50), volume-weighted money-flow RSI of HLC3, and RSI(HLC3); the money-flow and RSI lookbacks are shorter than the master lookback
-Calculation: Tradition average = simple moving average of Tradition over a shorter lookback
-Calculation: Tradition regression = linear regression of Tradition over a longer lookback
-Long: Tradition average < 20 OR (previous Tradition < 20 AND previous Tradition ≤ previous Tradition average AND previous Tradition ≤ previous Tradition regression AND Tradition > Tradition average AND Tradition > Tradition regression)
-Short: Tradition average > 80 OR (previous Tradition > 80 AND previous Tradition ≥ previous Tradition average AND previous Tradition ≥ previous Tradition regression AND Tradition < Tradition average AND Tradition < Tradition regression)

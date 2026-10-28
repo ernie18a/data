@@ -1,5 +1,0 @@
-Calculation: Higher-timeframe EMA = EMA of close on the higher timeframe, using the last completed higher-timeframe bar
-Long: short-term EMA > medium-term EMA AND medium-term EMA > long-term EMA AND close > longest-term EMA AND MACD line > MACD signal line AND RSI > upper threshold AND +DI > −DI AND ADX > minimum threshold AND volume > average volume AND close > higher-timeframe EMA
-Short: short-term EMA < medium-term EMA AND medium-term EMA < long-term EMA AND close < longest-term EMA AND MACD line < MACD signal line AND RSI < lower threshold AND −DI > +DI AND ADX > minimum threshold AND volume > average volume AND close < higher-timeframe EMA
-Exit: long, low <= close − ATR-based stop distance OR high >= close + ATR-based target distance
-Exit: short, high >= close + ATR-based stop distance OR low <= close − ATR-based target distance

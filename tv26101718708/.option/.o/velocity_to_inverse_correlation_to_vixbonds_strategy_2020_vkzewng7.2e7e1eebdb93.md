@@ -1,1 +1,0 @@
-For the traded asset, calculate rolling correlations with the VIX, high-yield bonds, and corporate bonds. Enter long when the correlation with either the VIX or high-yield bonds crosses below a negative threshold, or when the correlation with corporate bonds crosses below a positive threshold. Exit the long position at a fixed percentage stop loss or take profit.

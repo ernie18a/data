@@ -1,3 +1,0 @@
-Calculation: Moving average = selected SMA or EMA of close, using five lookbacks from shortest to longest
-Long: For any of the five lookbacks, close > moving average OR moving average change > 0 OR RSI(close) > 50 OR CCI(close) > 0 OR MFI > 50 OR Williams %R > -50; OR, on any of the four configured timeframes using its current forming bar, Williams %R > -50
-Short: For any of the five lookbacks, close <= moving average OR moving average change <= 0 OR RSI(close) <= 50 OR CCI(close) <= 0 OR MFI <= 50 OR Williams %R <= -50; OR, on any of the four configured timeframes using its current forming bar, Williams %R <= -50

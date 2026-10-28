@@ -1,3 +1,0 @@
-Calculation: Cumulative close-change volume = cumulative sum of volume × (close − previous close) / (high − low)
-Long: Cumulative close-change volume crosses above its EMA AND close > open AND cumulative close-change volume > its value on the previous bar
-Exit: Long, cumulative close-change volume crosses below its EMA AND close < open AND cumulative close-change volume < its value on the previous bar AND close < the previous bar’s low

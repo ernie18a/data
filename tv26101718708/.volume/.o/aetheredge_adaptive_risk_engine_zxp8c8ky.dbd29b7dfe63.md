@@ -1,2 +1,0 @@
-Long: fast EMA crosses above slow EMA when the EMA-cross trigger is selected OR current high exceeds the highest high of the prior N bars when the Donchian trigger is selected
-Short: fast EMA crosses below slow EMA when the EMA-cross trigger is selected OR current low falls below the lowest low of the prior N bars when the Donchian trigger is selected

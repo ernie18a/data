@@ -1,4 +1,0 @@
-Calculation: Current box volume = sum of in-session bar volume since the session start or the prior box completion; reset to zero outside the session and after each completion, with the completion bar's volume included before testing the threshold.
-Calculation: Current box opening price = open of the first bar at the session start or prior box completion.
-Long: Current bar is in the cash session AND current box volume >= the volume threshold AND current close > current box opening price
-Short: Current bar is in the cash session AND current box volume >= the volume threshold AND current close < current box opening price

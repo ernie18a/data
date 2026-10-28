@@ -1,5 +1,0 @@
-Calculation: minimum candle range = pip threshold × minimum price increment × 10
-Long: position is flat AND previous close < previous high AND current close ≥ previous high AND current volume > volume multiplier × previous volume AND current close > current open AND current high − current low > minimum candle range AND current close > EMA(close, lookback)
-Short: position is flat AND previous close > previous low AND current close ≤ previous low AND current volume > volume multiplier × previous volume AND current close < current open AND current high − current low > minimum candle range AND current close < EMA(close, lookback)
-Exit: long, previous close > previous low AND current close ≤ previous low AND current volume > volume multiplier × previous volume AND current close < current open AND current high − current low > minimum candle range AND current close < EMA(close, lookback)
-Exit: short, previous close < previous high AND current close ≥ previous high AND current volume > volume multiplier × previous volume AND current close > current open AND current high − current low > minimum candle range AND current close > EMA(close, lookback)

@@ -1,1 +1,0 @@
-Using higher-timeframe price data, go long when the current higher-timeframe bar’s high and low are both above the previous bar’s high and low. Go short when both are below. No separate exit condition is specified; an opposing entry reverses the position.

@@ -1,4 +1,0 @@
-Calculation: Negated EMA of the shorter-lookback smoothing of (the prior bar’s cumulative-volume RSI minus its prior long-lookback WMA). The RSI uses period 1 and is calculated on the cumulative sum of changes in a sampled higher-timeframe close multiplied by chart-bar volume. The sampled close takes the close of the first chart bar when a selected higher-timeframe interval begins and is held until the next interval begins.
-Calculation: HMA3 = WMA(3 × WMA(close, half-period / 3) − WMA(close, half-period / 2) − WMA(close, half-period), half-period), calculated on selected higher-timeframe bars and shifted by a configured number of those bars. Use completed higher-timeframe bars.
-Long: negated EMA crosses above 0 OR chart-bar linear regression of close crosses above HMA3
-Exit: long, high reaches entry price plus any of four configured profit percentages of entry price OR low reaches entry price minus the configured stop-loss percentage of entry price

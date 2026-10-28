@@ -1,9 +1,0 @@
-Calculation: Confirmed pivot low/high = a low/high that is a pivot using the same lookback length on both sides; use only after right-side confirmation.
-Calculation: Long/short break level = highest high/lowest low strictly between the preceding and current pivot bars.
-Calculation: Quality score = 25 for an active setup + 25 if a breakout has been seen + 20 for passing displacement (or 20 if disabled) + 15 for passing volume (or 15 if disabled) + 15 for passing higher-timeframe bias (or 15 if disabled). Displacement compares close with break level offset by ATR times its configured multiplier; volume compares volume with its moving average times its configured multiplier; bias compares the last completed higher-timeframe close with its EMA calculated on that completed bar.
-Long: selected setup has a confirmed pivot low above its preceding confirmed pivot low.
-Short: selected setup has a confirmed pivot high below its preceding confirmed pivot high.
-Long: active long setup is not invalidated (configured close or low is not below its current pivot low), and configured entry mode permits a breakout or retest, and either close crosses above the break level or a prior close-crossing above it since the current pivot is captured, or, after a breakout has been seen, a later bar has low <= break level and close > break level; if score gating is enabled, quality score >= configured minimum.
-Short: active short setup is not invalidated (configured close or high is not above its current pivot high), and configured entry mode permits a breakout or retest, and either close crosses below the break level or a prior close-crossing below it since the current pivot is captured, or, after a breakout has been seen, a later bar has high >= break level and close < break level; if score gating is enabled, quality score >= configured minimum.
-Exit: long, configured close or low < current pivot low.
-Exit: short, configured close or high > current pivot high.

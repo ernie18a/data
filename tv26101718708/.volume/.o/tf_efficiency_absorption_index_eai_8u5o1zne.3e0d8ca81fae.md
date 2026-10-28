@@ -1,9 +1,0 @@
-Calculation: Net progress = (current close − previous close) / ATR from the previous bar
-Calculation: Relative volume = current volume / median volume over the preceding lookback bars
-Calculation: Bar range in ATR = (current high − current low) / ATR from the previous bar
-Calculation: Rejection bias = 0.65 × ((lower wick − upper wick) / bar range) + 0.35 × ((2 × close − high − low) / bar range)
-Calculation: Prior approach in ATR = (previous close − close from the approach lookback bars before the previous bar) / ATR from the previous bar
-Calculation: Lower-edge test position = clamp((current low − lowest low over the preceding context lookback bars) / (highest high − lowest low over those bars), 0, 1)
-Calculation: Upper-edge test position = clamp((current high − lowest low over the preceding context lookback bars) / (highest high − lowest low over those bars), 0, 1)
-Long: On a completed bar, relative volume ≥ high-volume threshold AND absolute net progress ≤ limited-progress threshold AND bar range in ATR ≥ minimum-range threshold AND prior approach in ATR < −minimum-approach threshold AND lower-edge test position ≤ 1 − edge threshold AND rejection bias > rejection threshold AND more than the cooldown interval has elapsed since the prior long marker
-Short: On a completed bar, relative volume ≥ high-volume threshold AND absolute net progress ≤ limited-progress threshold AND bar range in ATR ≥ minimum-range threshold AND prior approach in ATR > minimum-approach threshold AND upper-edge test position ≥ edge threshold AND rejection bias < −rejection threshold AND more than the cooldown interval has elapsed since the prior short marker

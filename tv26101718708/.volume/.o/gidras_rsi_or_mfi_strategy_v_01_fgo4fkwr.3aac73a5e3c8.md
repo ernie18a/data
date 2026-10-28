@@ -1,7 +1,0 @@
-Calculation: oscillator = RSI(price source, lookback) in RSI mode; otherwise 100 − 100 / (1 + positive money flow / negative money flow), where positive money flow is the rolling sum of volume × price source when its change is positive, and negative money flow is the rolling sum of volume × price source when its change is negative; both use the lookback
-Calculation: bbr = (oscillator − (SMA(oscillator, band lookback) − multiplier × standard deviation(oscillator, band lookback))) / (2 × multiplier × standard deviation(oscillator, band lookback))
-Long: bbr >= 0 AND previous bar bbr < 0 AND datetime is after the configured start timestamp AND datetime is before the configured end timestamp
-Short: bbr <= 1 AND previous bar bbr > 1 AND datetime is after the configured start timestamp AND datetime is before the configured end timestamp
-Exit: short, bbr >= 0 AND previous bar bbr < 0 AND datetime is after the configured start timestamp AND datetime is before the configured end timestamp
-Exit: long, bbr <= 1 AND previous bar bbr > 1 AND datetime is after the configured start timestamp AND datetime is before the configured end timestamp
-Exit: long or short, datetime is after the configured end timestamp

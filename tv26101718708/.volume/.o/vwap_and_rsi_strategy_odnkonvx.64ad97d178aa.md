@@ -1,3 +1,0 @@
-Long: Short-term EMA > long-term EMA AND close > open AND close > session VWAP AND open > session VWAP AND RSI is below its buy threshold on any of the previous 10 completed bars AND position size < 1
-Long: Position is long for more than 2 bars AND close <= close on the first bar of the current long position AND RSI > RSI on the bar immediately before the first bar of the current long position AND close > open AND close > session VWAP
-Exit: Long, RSI crosses below its sell threshold OR close < average entry price × (1 − stop-loss percentage)

@@ -1,3 +1,0 @@
-Calculation: Volume moving average = simple moving average of volume over the same lookback used by the Bollinger Bands and rolling high/low extremes
-Long: low < lower Bollinger Band AND volume > volume moving average × volume multiplier AND RSI < oversold threshold AND low = rolling lowest low over that same lookback
-Short: high > upper Bollinger Band AND volume > volume moving average × volume multiplier AND RSI > overbought threshold AND high = rolling highest high over that same lookback

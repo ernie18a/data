@@ -1,7 +1,0 @@
-Calculation: RTI = EMA of 100 × (close − lowest low over a lookback) / (highest high over the same lookback − lowest low over the same lookback), using chart-timeframe bars.
-Calculation: RTI state = set to LONG when RTI > upper band, set to SHORT when RTI < lower band, otherwise retain its previous state; set to FLAT if the state is SHORT and close > its chart-timeframe EMA, or if the daily gate vetoes it. The daily gate vetoes when the RTI state is LONG and the previous completed daily AlphaTrend state is SHORT, or vice versa.
-Calculation: AlphaTrend state = on daily bars, compute ATR as the SMA of true range; compute momentum as MFI when the 20-bar volume SMA is positive, otherwise RSI. Set the AlphaTrend line initially to hl2; thereafter, when momentum ≥ 50, set it to the greater of its previous value and low − ATR × coefficient; otherwise set it to the lesser of its previous value and high + ATR × coefficient. Set its state to LONG on a crossover of the line above its value two bars earlier, SHORT on a crossunder, and otherwise retain its previous state. Use the last completed daily bar's state.
-Long: RTI state > 0 AND previous RTI state ≤ 0
-Short: RTI state < 0 AND previous RTI state ≥ 0
-Exit: long, RTI state = 0 AND previous RTI state ≠ 0
-Exit: short, RTI state = 0 AND previous RTI state ≠ 0

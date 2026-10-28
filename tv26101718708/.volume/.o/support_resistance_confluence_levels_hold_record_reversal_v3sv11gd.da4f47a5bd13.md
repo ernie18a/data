@@ -1,9 +1,0 @@
-Calculation: Candidate levels = confirmed chart-timeframe swing highs/lows (equal left/right lookbacks) and Gaussian-smoothed-close extrema (centered kernel, confirmed after its half-window), plus swings on the higher timeframe using its last completed bar and the previous completed daily and weekly highs/lows.
-Calculation: Merge candidates within an ATR-scaled tolerance into levels at their count-weighted mean price; each distinct method adds one voice. Add sticky confirming voices when a rolling close-volume profile bin has at least 70% of the maximum bin volume or the level is within half the merge tolerance of a round-number grid point.
-Calculation: Eligible levels = levels with at least the minimum voice count; watched levels = the nearest eligible levels above and below the current close.
-Calculation: A test starts when an armed watched level’s zone is entered after the previous close was outside it; a test from above resolves as held when close > zone top and broken when close < zone bottom, and a test from below resolves as held when close < zone bottom and broken when close > zone top. Ignore unresolved tests after the test timeout; re-arm only after price moves the re-arm distance beyond the zone.
-Calculation: Relative volume = current volume / moving average of volume; if volume is unavailable, use 1.
-Long: Watched eligible level tested from below and close < zone bottom (resistance breaks) OR tested from above and close > zone top (support rejection), with relative volume at least the signal threshold.
-Short: Watched eligible level tested from above and close < zone bottom (support breaks) OR tested from below and close < zone bottom? no. Resistance rejection is a test from below and close < zone bottom, with relative volume at least the signal threshold.
-Exit: Long, low <= stop OR high >= target OR bars since entry >= grading horizon.
-Exit: Short, high >= stop OR low <= target OR bars since entry >= grading horizon.

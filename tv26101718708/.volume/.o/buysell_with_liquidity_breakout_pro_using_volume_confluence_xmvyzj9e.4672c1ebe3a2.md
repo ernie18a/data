@@ -1,6 +1,0 @@
-Calculation: Confirmed swing high = a bar's high greater than the highs of the configured number of bars before and after it; available after the bars after it complete. Use the latest confirmed swing high.
-Calculation: Confirmed swing low = a bar's low lower than the lows of the configured number of bars before and after it; available after the bars after it complete. Use the latest confirmed swing low.
-Calculation: Average volume = simple moving average of volume over a lookback.
-Calculation: Breakout buffer = ATR times a multiplier when the ATR buffer is enabled; otherwise zero.
-Long: current close > latest confirmed swing high + current breakout buffer AND previous close <= latest confirmed swing high + current breakout buffer AND (volume filter disabled OR current volume > average volume × volume multiplier) AND this swing high has not already signaled
-Short: current close < latest confirmed swing low − current breakout buffer AND previous close >= latest confirmed swing low − current breakout buffer AND (volume filter disabled OR current volume > average volume × volume multiplier) AND this swing low has not already signaled

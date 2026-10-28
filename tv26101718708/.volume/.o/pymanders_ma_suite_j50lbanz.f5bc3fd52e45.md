@@ -1,2 +1,0 @@
-Long: Fast moving average > Slow moving average AND previous-bar fast moving average <= previous-bar slow moving average AND (trend filter disabled OR fast moving average > trend-filter moving average)
-Short: Fast moving average < Slow moving average AND previous-bar fast moving average >= previous-bar slow moving average AND (trend filter disabled OR fast moving average < trend-filter moving average)

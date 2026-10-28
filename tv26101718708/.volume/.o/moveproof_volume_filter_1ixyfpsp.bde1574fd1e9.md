@@ -1,8 +1,0 @@
-Calculation: Average volume = simple moving average of volume over a lookback period
-Calculation: Relative volume = current volume / average volume
-Calculation: Prior high = highest high over a lookback period, excluding the current bar
-Calculation: Prior low = lowest low over a lookback period, excluding the current bar
-Calculation: Bullish close strength = (close − low) / (high − low), or 0.5 when high = low
-Calculation: Bearish close strength = (high − close) / (high − low), or 0.5 when high = low
-Long: close > prior high AND close > open AND bullish close strength meets its required threshold AND relative volume meets its strong-volume threshold OR low < prior low AND close >= prior low AND (relative volume meets its weak-volume threshold OR bullish close strength is below its required threshold) OR close < prior low AND close < open AND bearish close strength meets its required threshold AND relative volume meets its strong-volume threshold
-Short: close < prior low AND close < open AND bearish close strength meets its required threshold AND relative volume meets its strong-volume threshold OR high > prior high AND close <= prior high AND (relative volume meets its weak-volume threshold OR bearish close strength is below its required threshold) OR close > prior high AND close > open AND bullish close strength meets its required threshold AND relative volume meets its strong-volume threshold

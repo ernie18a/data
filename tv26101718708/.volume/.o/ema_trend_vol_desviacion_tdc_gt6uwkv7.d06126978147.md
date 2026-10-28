@@ -1,2 +1,0 @@
-Long: open < EMA(close, longer lookback) AND close > EMA(close, longer lookback) AND volume > volume SMA(shorter lookback) × multiplier AND last signal direction is not long (reset to neutral when close crosses the EMA with volume at or below the threshold)
-Short: open > EMA(close, longer lookback) AND close < EMA(close, longer lookback) AND volume > volume SMA(shorter lookback) × multiplier AND last signal direction is not short (reset to neutral when close crosses the EMA with volume at or below the threshold)

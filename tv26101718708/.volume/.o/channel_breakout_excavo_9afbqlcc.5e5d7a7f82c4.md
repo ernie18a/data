@@ -1,4 +1,0 @@
-Calculation: Upper/lower channel boundaries = best-fit straight lines through confirmed swing highs/lows, respectively; each line has at least the required pivot touches, with no pivot above the upper line or below the lower line beyond the allowed ATR deviation. Use the lines with the most qualifying touches.
-Calculation: Eligible channel = both boundaries exist, current width is positive and within the ATR width limits, width has contracted from the earliest boundary start by at least the minimum convergence rate, and the previous close is inside both boundaries; when the volume contraction filter is enabled, average volume during the channel is below the pre-channel average by the required amount.
-Long: confirmed bar close > upper channel boundary AND eligible active channel
-Short: confirmed bar close < lower channel boundary AND eligible active channel

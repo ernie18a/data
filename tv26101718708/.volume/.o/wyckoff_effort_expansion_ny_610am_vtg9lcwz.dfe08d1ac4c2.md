@@ -1,1 +1,0 @@
-Long: current bar volume > highest volume of the preceding lookback bars AND current bar time in New York is >= 06:00 and < 10:00

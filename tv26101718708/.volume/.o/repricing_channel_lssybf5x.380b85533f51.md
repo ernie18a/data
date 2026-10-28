@@ -1,8 +1,0 @@
-Calculation: Block range = highest high minus lowest low within each completed block-timeframe bar
-Calculation: Block volume = sum of volume within each completed block-timeframe bar
-Calculation: Block efficiency = block range / block volume
-Calculation: Range ratio = completed block range / average block range over the preceding compare-lookback completed block-timeframe bars
-Calculation: Volume ratio = completed block volume / average block volume over the preceding compare-lookback completed block-timeframe bars
-Calculation: Efficiency ratio = completed block efficiency / average block efficiency over the preceding compare-lookback completed block-timeframe bars
-Long: At least the compare-lookback number of preceding completed blocks is available AND preceding average block range, volume, and efficiency are positive AND efficiency ratio >= minimum efficiency ratio AND range ratio >= minimum range ratio AND (volume cap is disabled OR volume ratio <= maximum volume ratio) AND completed block close >= completed block open
-Short: At least the compare-lookback number of preceding completed blocks is available AND preceding average block range, volume, and efficiency are positive AND efficiency ratio >= minimum efficiency ratio AND range ratio >= minimum range ratio AND (volume cap is disabled OR volume ratio <= maximum volume ratio) AND completed block close < completed block open

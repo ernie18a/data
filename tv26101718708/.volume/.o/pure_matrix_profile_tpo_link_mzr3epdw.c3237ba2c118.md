@@ -1,2 +1,0 @@
-Long: For each session profile, its final bar’s close >= its EMA; use the current session while it is forming and the last completed bar for earlier sessions
-Short: For each session profile, its final bar’s close < its EMA; use the current session while it is forming and the last completed bar for earlier sessions

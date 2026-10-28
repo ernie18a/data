@@ -1,6 +1,0 @@
-Calculation: Aroon Up = 100 × (lookback − bars since the highest high in the current bar and prior lookback bars) / lookback
-Calculation: Aroon Down = 100 × (lookback − bars since the lowest low in the current bar and prior lookback bars) / lookback
-Long: Aroon Up > overbought threshold AND Aroon Down < oversold threshold AND bullish trend state has just begun AND (filter is disabled OR short-lookback ATR > long-lookback ATR OR smoothed RSI of volume > volume threshold), with the selected filter mode determining which filter conditions apply
-Short: Aroon Up < oversold threshold AND Aroon Down > overbought threshold AND bearish trend state has just begun AND (filter is disabled OR short-lookback ATR > long-lookback ATR OR smoothed RSI of volume > volume threshold), with the selected filter mode determining which filter conditions apply
-Exit: long, short decision occurs OR bars since the current signal change equals the holding-period parameter and no signal change occurs on this bar
-Exit: short, long decision occurs OR bars since the current signal change equals the holding-period parameter and no signal change occurs on this bar

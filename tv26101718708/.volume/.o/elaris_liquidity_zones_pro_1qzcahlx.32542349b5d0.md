@@ -1,4 +1,0 @@
-Calculation: Buy-side liquidity zone = bounds around a confirmed swing low, using ATR at the pivot for padding; widen the bounds to include a matching equal low within the lookback and ATR tolerance. Keep only zones meeting the strength threshold and not overlapping or lying within 0.20 ATR of an active buy-side zone; remove oldest zones above the active-zone limit.
-Calculation: Sell-side liquidity zone = bounds around a confirmed swing high, using ATR at the pivot for padding; widen the bounds to include a matching equal high within the lookback and ATR tolerance. Keep only zones meeting the strength threshold and not overlapping or lying within 0.20 ATR of an active sell-side zone; remove oldest zones above the active-zone limit.
-Long: An active buy-side liquidity zone exists AND low < its bottom AND close > its bottom
-Short: An active sell-side liquidity zone exists AND high > its top AND close < its top

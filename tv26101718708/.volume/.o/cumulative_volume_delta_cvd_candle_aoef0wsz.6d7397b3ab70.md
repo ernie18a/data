@@ -1,3 +1,0 @@
-Calculation: CVD candle = At each reset boundary, set CVD open to 0; otherwise use the previous CVD close. Estimate bar delta as volume × ((close − low) − (high − close)) ÷ (high − low) when high > low; when high = low, use volume ÷ 2 if close > open, −volume ÷ 2 if close < open, and 0 otherwise. Set delta to 0 when its absolute value is below a threshold. CVD close = CVD open + delta; reset boundaries are determined by the selected session, day, week, month, or never setting.
-Long: CVD close >= CVD open
-Short: CVD close < CVD open

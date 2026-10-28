@@ -1,4 +1,0 @@
-Calculation: Session CVD = cumulative sum of each in-session bar’s volume × (2 × (close − low) / (high − low) − 1), reset to zero at each session open; contribution is zero when high = low.
-Calculation: CVD pivot high/low = a local maximum/minimum of active session CVD over the same configurable number of bars before and after the pivot, confirmed when the bars after it are complete.
-Long: For the two most recent confirmed CVD pivot lows in the same session, later price low < earlier price low AND later CVD pivot low > earlier CVD pivot low, OR later price low > earlier price low AND later CVD pivot low < earlier CVD pivot low.
-Short: For the two most recent confirmed CVD pivot highs in the same session, later price high > earlier price high AND later CVD pivot high < earlier CVD pivot high, OR later price high < earlier price high AND later CVD pivot high > earlier CVD pivot high.

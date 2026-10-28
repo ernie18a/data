@@ -1,3 +1,0 @@
-Calculation: One-bar percentage performance for each sector = (current selected-timeframe close − immediately preceding selected-timeframe close) / immediately preceding close × 100; the current bar may still be forming, and the preceding bar is completed.
-Long: Recommend stocks in the highest-performing and second-highest-performing sectors, ranked by one-bar percentage performance among the six sectors; ties follow the indicator’s sector order.
-Short: Recommend stocks in the lowest-performing and second-lowest-performing sectors, ranked by one-bar percentage performance among the six sectors; ties follow the indicator’s sector order.

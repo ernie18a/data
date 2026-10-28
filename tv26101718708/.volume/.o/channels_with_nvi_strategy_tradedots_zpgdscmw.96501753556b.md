@@ -1,4 +1,0 @@
-Calculation: Negative Volume Index = previous index multiplied by (1 + the close's percentage change) when current volume is below previous volume; otherwise unchanged, initialized at 1,000
-Calculation: Selected channel lower band = for Bollinger Bands, the source's simple moving average minus its standard deviation times the multiplier; for Keltner Channels, the source's exponential moving average minus the exponential moving average of true range times the multiplier
-Long: close < selected channel lower band AND Negative Volume Index > its exponential moving average
-Exit: Long, Negative Volume Index < its exponential moving average OR stop loss enabled AND close < entry price × (1 − stop loss percentage / 100) OR take profit enabled AND close > entry price × (1 + take profit percentage / 100)

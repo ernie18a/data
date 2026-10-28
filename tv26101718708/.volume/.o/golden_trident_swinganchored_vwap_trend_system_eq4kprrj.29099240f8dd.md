@@ -1,7 +1,0 @@
-Calculation: Swing direction = bullish when the latest bar that is the rolling highest high over the swing lookback is later than the latest bar that is the rolling lowest low over the same lookback; otherwise bearish.
-Calculation: EMA = exponential moving average of close.
-Calculation: Chop range = highest high minus lowest low over the same lookback used for ATR.
-Long: Swing direction is bullish AND (if enabled, close > EMA) AND (if enabled, Chop range > ATR × minimum-range factor) AND datetime is within the configured backtest date range AND the previous bar did not meet these long conditions AND position is flat or short.
-Short: Short entries are enabled AND Swing direction is bearish AND (if enabled, close < EMA) AND (if enabled, Chop range > ATR × minimum-range factor) AND datetime is within the configured backtest date range AND the previous bar did not meet these short conditions AND position is flat or long.
-Exit: Long, Swing direction is bearish OR low <= the fixed backstop set at entry to the entry-signal bar close minus ATR on that bar × backstop factor.
-Exit: Short, Swing direction is bullish OR high >= the fixed backstop set at entry to the entry-signal bar close plus ATR on that bar × backstop factor.

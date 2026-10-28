@@ -1,2 +1,0 @@
-Long: EMA(9) > EMA(21) AND EMA(21) > EMA(50)
-Short: EMA(9) < EMA(21) AND EMA(21) < EMA(50)

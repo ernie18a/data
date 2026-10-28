@@ -1,6 +1,0 @@
-Calculation: VWAP center and weighted deviation = using either a rolling window or the current session since its start, volume-weighted mean and standard deviation of (high + low) / 2.
-Calculation: Adaptive upper/lower bands = EMA of VWAP center ± weighted deviation × base band multiplier × volume expansion × ADX expansion; volume expansion increases with volume above its 20-bar average, and ADX expansion increases with ADX.
-Calculation: Wick-volume ratio = smoothed ratio of wick volume to total volume, where each lower-timeframe bar’s volume is split by the fraction of its range outside the current chart bar’s open-close body; use lower-timeframe bars within the current chart bar.
-Calculation: Wick intensity = clamp((wick-volume ratio − 0.55) / 0.45, 0, 1) × ADX intensity gate; the gate is 1 when ADX filtering is off, otherwise 1 when ADX meets the configured fraction of the strong-trend threshold and 0.45 otherwise.
-Long: low < adaptive lower band − configured extreme-zone offset × weighted deviation
-Short: high > adaptive upper band + configured extreme-zone offset × weighted deviation

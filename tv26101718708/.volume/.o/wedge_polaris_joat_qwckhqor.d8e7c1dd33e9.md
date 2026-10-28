@@ -1,8 +1,0 @@
-Calculation: active pattern channel = two converging boundary lines fitted to alternating zigzag highs and lows; each side is confirmed by three collinear pivots, the lines overlap by at least half the longer span, and the close is initially inside them. Pivots use equal left and right lookbacks; boundaries are projected to the current bar.
-Calculation: body Z-score = (current candle body length − 20-bar mean body length) / 20-bar standard deviation of body length.
-Calculation: strong break = body Z-score ≥ threshold AND (the 25th percentile of the candle body is above the upper boundary OR its 75th percentile is below the lower boundary).
-Calculation: target and stop levels = breakout close ± channel width × duration factor × target multiplier for targets 1 and 2; target 3 uses breakout close ± (channel width × duration factor × target multiplier + |clamped ATR Z-score| × ATR); stop uses breakout close ∓ channel width × stop multiplier. Use direction-appropriate signs. Duration factor = current pattern duration / mean duration of completed patterns, clamped to 0.5–2. ATR is 14-bar ATR; ATR Z-score compares it with its 50-bar mean and standard deviation, clamped to −1–2.
-Long: confirmed bar AND active pattern AND close > upper boundary AND (strong break OR close is outside the channel for a second consecutive bar).
-Short: confirmed bar AND active pattern AND close < lower boundary AND (strong break OR close is outside the channel for a second consecutive bar).
-Exit: long, high ≥ target 3 AND previous high < target 3 OR low ≤ stop AND previous low > stop.
-Exit: short, low ≤ target 3 AND previous low > target 3 OR high ≥ stop AND previous high < stop.

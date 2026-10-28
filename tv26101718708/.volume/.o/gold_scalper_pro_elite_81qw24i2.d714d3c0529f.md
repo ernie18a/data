@@ -1,2 +1,0 @@
-Long: close > EMA AND close > open AND volume > average volume × volume multiplier AND low ≤ rolling lowest low
-Short: close < EMA AND close < open AND volume > average volume × volume multiplier AND high ≥ rolling highest high

@@ -1,8 +1,0 @@
-Long: Close > moving average 1 > moving average 2 > ... > moving average 5 for the enabled moving averages; Supertrend turns bullish; RSI crosses above its lower band after being below it; Stochastic RSI %K crosses above %D (and, when restricted, %K is below its lower band); +DI crosses above −DI (and, for ADX-and-DI mode, ADX is above its threshold); or close crosses into the bullish Parabolic SAR state
-Short: Close < moving average 1 < moving average 2 < ... < moving average 5 for the enabled moving averages; Supertrend turns bearish; RSI crosses below its upper band after being above it; Stochastic RSI %K crosses below %D (and, when restricted, %K is above its upper band); −DI crosses above +DI (and, for ADX-and-DI mode, ADX is above its threshold); or close crosses into the bearish Parabolic SAR state
-Long: At least one indicator is enabled AND every enabled indicator's selected entry trigger or filter condition is true AND the date, time, session, and weekday filters allow the bar
-Short: At least one indicator is enabled AND every enabled indicator's selected entry trigger or filter condition is true AND the date, time, session, and weekday filters allow the bar
-Exit: Long, low <= stop price OR high >= take-profit price OR a short entry signal occurs while close-on-new-entry is enabled
-Exit: Short, high >= stop price OR low <= take-profit price OR a long entry signal occurs while close-on-new-entry is enabled
-Exit: Long, close <= trailing stop price, where the trailing stop is the greatest of its prior value and close minus the initial entry-to-stop distance
-Exit: Short, close >= trailing stop price, where the trailing stop is the least of its prior value and close plus the initial stop-to-entry distance

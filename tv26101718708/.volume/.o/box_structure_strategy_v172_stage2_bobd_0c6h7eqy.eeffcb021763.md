@@ -1,9 +1,0 @@
-Calculation: Box high/low = average of the newest confirmed pivot high/low in the lookback and the first older pivot of the same type within ATR × touch tolerance and at least the minimum bar gap; calculate highs and lows separately
-Calculation: Active box = freeze the first candidate box whose high exceeds its low, height is within the minimum and maximum ATR multiples, close is within 0.1 ATR of its bounds, and the share of closes within its bounds over the lookback meets the minimum
-Calculation: Breakout close position = (close − low) / (high − low); if high = low, use 0.5
-Calculation: Initial stop = selected stop mode: entry − ATR × volatility multiplier; or box low − ATR × structure multiplier; or box low × (1 − stop percentage); or box midpoint; default to the greater of the volatility and structure stops. The volatility multiplier is selected by entry ATR as a percentage of entry price, using increasing multipliers for increasing ATR percentage tiers
-Calculation: Risk = max(entry price − initial stop, ATR × minimum risk multiple)
-Calculation: First target = box high + box height × target multiple; second target = entry price + risk × target R multiple
-Calculation: Breakeven stop = entry price + risk × protection R multiple; runner stop = initial stop before first target is hit, breakeven stop after first target and before second target, then the greater of breakeven stop and the highest close since entry minus ATR × trailing multiple
-Long: active box AND confirmed bar AND close exceeds box high + ATR × breakout buffer for the required consecutive bars AND breakout close position meets the minimum AND position is flat AND risk > 0
-Exit: long, low <= initial stop OR high >= first target OR low <= (first target hit ? breakeven stop : initial stop) OR high >= second target OR low <= runner stop

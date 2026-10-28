@@ -1,3 +1,0 @@
-Calculation: Price-bin delta = sum the volume of each lower-timeframe bar within the current chart bar whose close is assigned to that bin, adding volume when its close exceeds its open and subtracting volume when its close is below its open; bins start at the current chart bar’s low and advance in equal percentage-of-low increments
-Long: At least one price-bin delta > 0
-Short: At least one price-bin delta < 0

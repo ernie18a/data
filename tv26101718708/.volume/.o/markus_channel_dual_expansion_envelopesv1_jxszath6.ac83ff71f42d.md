@@ -1,2 +1,0 @@
-Long: close crosses above the configured crossover target AND tension > threshold AND volume / SMA(volume, volume lookback) > 1
-Short: close crosses below the configured crossover target AND tension < -threshold AND volume / SMA(volume, volume lookback) > 1

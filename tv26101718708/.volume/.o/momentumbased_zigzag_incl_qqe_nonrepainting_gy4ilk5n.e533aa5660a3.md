@@ -1,7 +1,0 @@
-Calculation: Momentum up = MACD crosses above its signal line, or selected moving average has a local minimum on the prior bar and is rising now, or QQE trend changes from bearish to bullish; use the selected momentum method.
-Calculation: Momentum down = MACD crosses below its signal line, or selected moving average has a local maximum on the prior bar and is falling now, or QQE trend changes from bullish to bearish; use the selected momentum method.
-Calculation: Force-up = on a momentum-down bar, the prior bar's bars-since-momentum-up count is greater than or equal to its bars-since-RSI-above-overbought-threshold count.
-Calculation: Force-down = on a momentum-up bar, the prior bar's bars-since-momentum-down count is greater than or equal to its bars-since-RSI-below-oversold-threshold count.
-Calculation: QQE trend = smoothed RSI with volatility-based trailing bands; trend turns bullish when smoothed RSI crosses above the prior upper band or high crosses above the tracked impulse high, and turns bearish when smoothed RSI crosses below the prior lower band or low crosses below the tracked impulse low. Bands use the same RSI lookback and volatility smoothing, with volatility smoothing longer than RSI smoothing.
-Long: Momentum up AND NOT Force-down
-Short: Momentum down AND NOT Force-up

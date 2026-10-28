@@ -1,7 +1,0 @@
-Calculation: Long zone = the selected overlap of the three lookback zones bounded by 61.8% and 78.6% retracements from each lookback high toward its low; prefer the three-way overlap, then the overlap of lookbacks 1&2, 1&3, or 2&3, in that order; if none overlap, use lookback 1’s zone. An overlap exists only when its lower bound is below its upper bound.
-Calculation: Short zone = the selected overlap of the three lookback zones bounded by 23.6% and 38.2% retracements from each lookback high toward its low; use the same overlap preference and fallback as the long zone.
-Calculation: Point of control = midpoint of the highest-volume of 20 equal-price bins across the longest lookback range; each bin’s volume is the sum of volumes for bars whose high-low range intersects it. Use the lower bin on ties.
-Calculation: Entry = point of control if it lies within the corresponding zone; otherwise use the long zone’s lower bound or the short zone’s upper bound.
-Calculation: Risk/reward = the absolute distance from entry to the third take-profit level divided by the absolute distance from entry to the stop; round to one decimal. For long, the third target is the longest-lookback 23.6% retracement and the stop is entry times (1 − stop-buffer percentage). For short, the third target is the longest-lookback 78.6% retracement and the stop is entry times (1 + stop-buffer percentage).
-Long: close is within the long zone AND long risk/reward is at least the minimum.
-Short: close is within the short zone AND short risk/reward is at least the minimum.

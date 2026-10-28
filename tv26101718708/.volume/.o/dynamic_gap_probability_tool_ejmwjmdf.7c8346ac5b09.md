@@ -1,4 +1,0 @@
-Calculation: Rounded gap = round(abs((close − selected moving average) / selected moving average × 100))
-Calculation: Displayed green/red probabilities = from the rounded gap upward, accumulate occurrence counts for the current close’s side of the moving average until the minimum occurrence threshold is reached or buckets are exhausted; over the same buckets, pool counts of completed bars whose closes were above and below the moving average, respectively, and divide each count by their sum
-Long: Displayed green probability > displayed red probability
-Short: Displayed red probability > displayed green probability

@@ -1,4 +1,0 @@
-Calculation: Volume delta = estimated buying volume minus estimated selling volume; estimate buying volume by the close's position within the bar's high-low range (half of volume if high equals low), or assign all volume to buying when close is at or above open and otherwise to selling, according to the selected method
-Calculation: CVD = running sum of volume delta, reset at each day boundary in session mode
-Long: Volume delta >= 0 OR CVD >= 0 OR low < the lowest low of the preceding divergence lookback bars AND volume delta > the lowest volume delta of those bars AND volume delta < 0
-Short: Volume delta < 0 OR CVD < 0 OR high > the highest high of the preceding divergence lookback bars AND volume delta < the highest volume delta of those bars AND volume delta > 0

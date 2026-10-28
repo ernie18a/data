@@ -1,1 +1,0 @@
-Compare the traded instrument’s price performance with a selected external benchmark. Treat a new rolling high in relative strength as a long-side candidate and a new rolling low as a short-side candidate. In Mansfield mode, consider long setups only while relative strength is above zero. No exit rule is specified.

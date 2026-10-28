@@ -1,7 +1,0 @@
-Calculation: On each selected timeframe, use that timeframe’s current bar while it is forming and its last available bar otherwise.
-Calculation: Trend score = +1 for each of close > long-period EMA, close > short-period EMA, and close > Supertrend line; otherwise −1 for each. The long-period EMA lookback is longer than the short-period EMA lookback.
-Calculation: Participation score = sign(CMF) + CDV direction + OBV breakout state; total score = trend score + participation score.
-Calculation: CDV = cumulative volume, adding volume when close > prior close, subtracting it when close < prior close, and adding zero when equal. CDV direction = 0 when the absolute change in CDV is at most the neutral factor times the average absolute CDV change over the lookback; otherwise it is the sign of the CDV change.
-Calculation: OBV breakout state = +1 when OBV exceeds the highest OBV of the prior lookback bars, −1 when it is below the lowest OBV of the prior lookback bars, and 0 otherwise. OBV adds volume when close > prior close, subtracts it when close < prior close, and adds zero when equal.
-Long: On either selected timeframe, trend score ≥ 2 AND total score > 0.
-Short: On either selected timeframe, trend score ≤ −2 AND total score < 0.

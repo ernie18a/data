@@ -1,5 +1,0 @@
-Calculation: PMARP = 100 × the percentage of the prior lookback bars whose price-to-moving-average ratio is less than or equal to the current ratio; use the same moving-average type and length for all ratios.
-Long: Every moving average with a 5-to-90-bar lookback in 5-bar increments is above the 100-bar moving average and is nondecreasing, AND RSI is above its lookback threshold, AND the previous bar closed at or below its open; OR every such moving average is below the 100-bar moving average and is nondecreasing.
-Short: Every moving average with a 5-to-90-bar lookback in 5-bar increments is below the 100-bar moving average and is decreasing; OR every such moving average is above the 100-bar moving average and is decreasing.
-Exit: Long, PMARP is at or above its upper threshold AND every 5-to-90-bar moving average is below and decreasing relative to the 100-bar moving average, OR high reaches the entry-price profit target, OR low reaches the entry-price stop threshold.
-Exit: Short, PMARP is at or below its lower threshold, OR low reaches the entry-price profit target, OR high reaches the entry-price stop threshold.

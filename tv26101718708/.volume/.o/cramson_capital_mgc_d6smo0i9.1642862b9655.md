@@ -1,7 +1,0 @@
-Calculation: Value area high/low = boundaries of the contiguous volume-profile rows around the highest-volume row, expanding toward the higher-volume neighboring row until adding the next row would exceed the configured value-area fraction; distribute each opening-range bar’s volume among rows in proportion to price overlap.
-Calculation: Reversion target = far value-area boundary; reversion stop = entry price plus the target distance mirrored against the trade direction.
-Calculation: Breakout stop = opposite value-area boundary; breakout target = entry price plus the stop distance in the trade direction.
-Long: During the entry window, before any trade that session, if the first bar after the opening range opens below value area low, its close is above value area low AND below value area high; OR if that bar opens strictly inside the value area, a later close is below value area low.
-Short: During the entry window, before any trade that session, if the first bar after the opening range opens above value area high, its close is below value area high AND above value area low; OR if that bar opens strictly inside the value area, a later close is above value area high.
-Exit: Long, high >= target OR low <= stop OR bar open time >= configured time-close; if target and stop are both touched in one bar, exit at stop.
-Exit: Short, low <= target OR high >= stop OR bar open time >= configured time-close; if target and stop are both touched in one bar, exit at stop.

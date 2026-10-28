@@ -1,3 +1,0 @@
-Calculation: VAH and VAL = upper and lower bounds of the rolling composite value area, computed from the current chart timeframe’s most recent bars including the current bar: distribute each bar’s volume equally across the price bins from its low through its high, choose the highest-volume bin as the POC, then expand from the POC toward the adjacent bin with greater volume until the target volume percentage is covered.
-Long: close > VAH AND previous close <= VAH
-Short: close < VAL AND previous close >= VAL

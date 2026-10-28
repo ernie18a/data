@@ -1,2 +1,0 @@
-Long: close > open OR (close = open AND close >= previous bar close, falling back to open if unavailable)
-Short: close < open OR (close = open AND close < previous bar close, falling back to open if unavailable)

@@ -1,2 +1,0 @@
-Long: HMA(volume, lookback) > its prior-bar value AND HMA(close, same lookback) > its prior-bar value AND close > short-lookback SMA(close)
-Exit: long, HMA(volume, lookback) <= its prior-bar value OR HMA(close, same lookback) <= its prior-bar value OR close < short-lookback SMA(close)

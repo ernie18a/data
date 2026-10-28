@@ -1,1 +1,0 @@
-Use the issuer’s financial data to derive a Graham-based intrinsic-value threshold. Go long or add to the position when the instrument’s price is near or below that threshold. No short or exit rule is specified.

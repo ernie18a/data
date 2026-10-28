@@ -1,9 +1,0 @@
-Calculation: White candle = shorter-period EMA crosses longer-period EMA in either direction OR their absolute difference is below a tolerance
-Calculation: Setup high = highest high of the bar before the latest white candle, the white candle, and the bar after it
-Calculation: Setup low = lowest low of the bar before the latest white candle, the white candle, and the bar after it
-Calculation: Regular bullish RSI divergence = on a confirmed RSI pivot low, price low is below the preceding pivot low and RSI is above its preceding pivot-low RSI; the preceding pivot is within the configured bar range
-Calculation: Hidden bullish RSI divergence = on a confirmed RSI pivot low, price low is above the preceding pivot low and RSI is below its preceding pivot-low RSI; the preceding pivot is within the configured bar range
-Calculation: Regular bearish RSI divergence = on a confirmed RSI pivot high, price high is above the preceding pivot high and RSI is below its preceding pivot-high RSI; the preceding pivot is within the configured bar range
-Calculation: Hidden bearish RSI divergence = on a confirmed RSI pivot high, price high is below the preceding pivot high and RSI is above its preceding pivot-high RSI; the preceding pivot is within the configured bar range
-Long: high > Setup high AND a white candle has been detected AND shorter-period EMA > longer-period EMA AND the shorter-period EMA does not cross above the longer-period EMA on this bar AND no signal has already been given for this setup OR Regular bullish RSI divergence OR Hidden bullish RSI divergence
-Short: low < Setup low AND a white candle has been detected AND shorter-period EMA < longer-period EMA AND the shorter-period EMA does not cross below the longer-period EMA on this bar AND no signal has already been given for this setup OR Regular bearish RSI divergence OR Hidden bearish RSI divergence

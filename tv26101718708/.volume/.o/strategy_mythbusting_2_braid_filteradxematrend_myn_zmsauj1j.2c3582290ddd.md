@@ -1,5 +1,0 @@
-Calculation: Braid state = Compare three moving averages: one of close with the shortest lookback, one of open with an intermediate lookback, and one of close with the longest lookback. Green when the close-based short-lookback average is greater than the open-based average and the difference between the highest and lowest averages exceeds an ATR-scaled threshold; red when the open-based average is greater than the close-based short-lookback average and that difference exceeds the threshold.
-Long: hlc3 >= EMA(close) AND Braid state is green AND ADX > threshold AND ADX two bars ago + slope increment < ADX one bar ago AND ADX one bar ago + slope increment < current ADX
-Short: hlc3 < EMA(close) AND Braid state is red AND ADX > threshold AND ADX two bars ago + slope increment < ADX one bar ago AND ADX one bar ago + slope increment < current ADX
-Exit: long, close < entry price × (1 − configured stop-loss fraction) OR high >= any configured profit-target price above entry
-Exit: short, close > entry price × (1 + configured stop-loss fraction) OR low <= any configured profit-target price below entry

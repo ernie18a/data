@@ -1,3 +1,0 @@
-Calculation: Swing-anchored VWAP = cumulative sum of ((high + low + close) / 3 × volume) from a confirmed swing pivot bar through the current bar, divided by cumulative volume; detect swing highs and lows using the same left and right lookback.
-Long: Current bar low ≤ an active support-anchored swing VWAP ≤ current bar high, on chart-timeframe or enabled higher-timeframe bars.
-Short: Current bar low ≤ an active resistance-anchored swing VWAP ≤ current bar high, on chart-timeframe or enabled higher-timeframe bars.

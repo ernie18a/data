@@ -1,4 +1,0 @@
-Calculation: Opening 15-minute high = highest high from the first 15 minutes of the session, finalized when that period ends
-Calculation: Opening 15-minute low = lowest low from the first 15 minutes of the session, finalized when that period ends
-Long: After the opening 15-minute period, previous close < opening 15-minute low AND current close > opening 15-minute low AND (volume filter disabled OR volume > volume SMA × volume multiplier)
-Short: After the opening 15-minute period, previous close > opening 15-minute high AND current close < opening 15-minute high AND (volume filter disabled OR volume > volume SMA × volume multiplier)

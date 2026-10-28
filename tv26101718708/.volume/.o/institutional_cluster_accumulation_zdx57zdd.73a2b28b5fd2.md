@@ -1,2 +1,0 @@
-Calculation: Relative volume = volume divided by its simple moving average over a longer lookback
-Long: RSI of close was below the oversold threshold within a recent lookback AND volume > its simple moving average over a longer lookback AND close > previous bar's high AND close > open AND bars since the previous long signal >= minimum signal spacing

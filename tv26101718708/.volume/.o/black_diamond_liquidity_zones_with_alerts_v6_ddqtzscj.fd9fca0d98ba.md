@@ -1,4 +1,0 @@
-Calculation: Confirmed swing high/low = a local high/low confirmed after the specified number of bars to its right
-Calculation: Buy-side liquidity zones = zones centered on confirmed swing highs; sell-side liquidity zones = zones centered on confirmed swing lows. Each zone extends by an ATR-based half-width around its pivot price. Merge a new zone with existing same-side zones when its pivot is within an ATR-based distance of their midpoint, taking the union of their bounds. A buy-side zone remains active until high reaches its lower bound; a sell-side zone remains active until low reaches its upper bound.
-Long: high >= lower bound and low <= upper bound of any active buy-side liquidity zone
-Short: high >= lower bound and low <= upper bound of any active sell-side liquidity zone

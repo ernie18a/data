@@ -1,4 +1,0 @@
-Long: close < open AND Money Flow Index < oversold threshold AND Choppiness Index < trend threshold AND volume > previous bar volume AND bar is within the configured intraday session
-Short: close > open AND Money Flow Index > overbought threshold AND Choppiness Index < trend threshold AND volume > previous bar volume AND bar is within the configured intraday session
-Exit: Long, low <= entry price * (1 - long stop-loss percentage) OR high >= entry price * (1 + long take-profit percentage) OR bar is outside the configured intraday session
-Exit: Short, high >= entry price * (1 + short stop-loss percentage) OR low <= entry price * (1 - short take-profit percentage) OR bar is outside the configured intraday session

@@ -1,4 +1,0 @@
-Calculation: Keltner upper/lower bands = EMA(close, longer lookback) ± multiplier × ATR(shorter lookback)
-Calculation: Alligator jaw, teeth, and lips = offset SMMA of hl2, with jaw using the longest lookback and offset, teeth the middle, lips the shortest
-Long: close > Keltner upper band AND lips > teeth > jaw AND close > session VWAP AND RSI(close) > 50 AND below its overbought threshold AND MACD line > signal line AND MACD line > 0; at least the configured threshold of these five conditions is true AND the count exceeds the bearish count AND the previous signal was not long
-Short: close < Keltner lower band AND lips < teeth < jaw AND close < session VWAP AND RSI(close) < 50 AND above its oversold threshold AND MACD line < signal line AND MACD line < 0; at least the configured threshold of these five conditions is true AND the count exceeds the bullish count AND the previous signal was not short

@@ -1,2 +1,0 @@
-Long: shorter-lookback moving average on the current chart timeframe >= longer-lookback moving average on the current chart timeframe
-Short: shorter-lookback moving average on the current chart timeframe < longer-lookback moving average on the current chart timeframe

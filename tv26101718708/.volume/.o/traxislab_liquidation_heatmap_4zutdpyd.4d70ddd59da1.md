@@ -1,2 +1,0 @@
-Long: a cluster of at least 3 long-liquidation zones is below close and less than 1.5 ATR from close
-Short: a cluster of at least 3 short-liquidation zones is above close and less than 1.5 ATR from close

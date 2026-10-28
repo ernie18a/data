@@ -1,1 +1,0 @@
-Using confirmed daily closes, calculate the rolling z-score of the log ratio of the traded instrument to soybean oil. If the score exceeds the configured upper extreme, apply a short bias; if it falls below the lower extreme, apply a long bias. Otherwise, take no directional bias. This is context only: it defines no entries or exits.

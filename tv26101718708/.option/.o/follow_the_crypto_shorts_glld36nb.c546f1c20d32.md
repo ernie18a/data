@@ -1,1 +1,0 @@
-Go long on the traded instrument when the external instrument’s daily closing value crosses below its simple moving average. Exit the long when that value crosses above its moving average.

@@ -1,3 +1,0 @@
-Calculation: Altered OBV = cumulative volume signed +1 when (close < previous close AND open < close) OR close > previous close, and −1 otherwise
-Long: MACD of Altered OBV crosses above its signal line AND MACD of Altered OBV is higher than each of its previous two bars
-Short: MACD of Altered OBV is lower than its previous bar AND MACD of Altered OBV is below its signal line AND MACD of close is below its signal line AND low is lower than each of its previous two bars

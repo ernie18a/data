@@ -1,5 +1,0 @@
-Calculation: Momentum score = moving average of the weighted mean of three components: min(abs(close − open) / ATR, 3) / 3 × 100; min(volume / moving average(volume), 3) / 3 × 100; and min(Bollinger Band width / moving average(Bollinger Band width), 3) / 3 × 100. Bollinger Band width = (upper band − lower band) / basis; the bands use the same lookback. Component weights and averaging lengths are parameters.
-Calculation: Active threshold = either a fixed level or the rolling mean of the momentum score plus a parameterized multiple of its rolling standard deviation, clamped to 20–80.
-Calculation: Directional pressure = average over a recent lookback of (close − open) / ATR for each bar; bullish pressure requires it to exceed a positive threshold, bearish pressure requires it to be below the negative threshold.
-Long: Momentum score crosses above the active threshold AND close is above its short-period EMA AND directional pressure exceeds its positive threshold
-Short: Momentum score crosses above the active threshold AND close is below its short-period EMA AND directional pressure is below its negative threshold

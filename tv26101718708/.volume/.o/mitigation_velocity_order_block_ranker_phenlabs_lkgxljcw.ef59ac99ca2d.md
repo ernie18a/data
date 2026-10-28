@@ -1,2 +1,0 @@
-Long: a confirmed swing low (its low is below the lows of the same number of bars before and after it) has a down-close candle among the pivot candle and the 10 bars before it, and the resulting zone has not been mitigated
-Short: a confirmed swing high (its high is above the highs of the same number of bars before and after it) has an up-close candle among the pivot candle and the 10 bars before it, and the resulting zone has not been mitigated

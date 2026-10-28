@@ -1,7 +1,0 @@
-Calculation: Adaptive source = prior completed bars’ (high + low)/2, optionally smoothed by the selected adaptive filter (LLAMA efficiency-ratio average or recursive Kalman filter)
-Calculation: Trailing trend line = form bands around the adaptive source using a half-width equal to the EMA of ATR × [base width + ATR/previous close × ATR weight + capped 95th-percentile absolute close return × movement weight]; ratchet the lower band upward while the prior completed close is above the prior line, otherwise ratchet the upper band downward
-Calculation: Flat veto = any enabled condition: absolute prior trend-line change < ATR × flatness threshold; absolute short-lookback linear-regression slope of the trend line / ATR < slope threshold; prior volume ≤ its moving average; prior high-low range ≤ its historical percentile threshold; absolute prior trend-line change / prior close × 10,000 < minimum basis points; or prior ADX < ADX threshold; except when absolute change between the two prior completed closes > ATR × override multiple
-Long: trend direction changes from bearish to bullish (prior completed close > prior trend line) AND flat veto is false
-Short: trend direction changes from bullish to bearish (prior completed close ≤ prior trend line) AND flat veto is false
-Exit: long, bearish direction change
-Exit: short, bullish direction change

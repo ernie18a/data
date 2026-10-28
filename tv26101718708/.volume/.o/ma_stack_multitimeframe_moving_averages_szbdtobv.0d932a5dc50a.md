@@ -1,3 +1,0 @@
-Calculation: Moving average = selected moving-average type of the selected price source over its selected lookback; use chart bars for the chart timeframe and the last completed bar for a selected higher timeframe.
-Long: Any adjacent enabled pair has the shorter-lookback moving average > the longer-lookback moving average OR the shortest-lookback enabled moving average > every longer-lookback enabled moving average
-Short: Any adjacent enabled pair has the shorter-lookback moving average < the longer-lookback moving average OR the shortest-lookback enabled moving average < every longer-lookback enabled moving average

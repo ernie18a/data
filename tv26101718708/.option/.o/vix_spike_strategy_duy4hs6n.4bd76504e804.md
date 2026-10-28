@@ -1,1 +1,0 @@
-Go long the traded instrument when the external VIX index closes above its moving average by a chosen multiple of its standard deviation, both calculated over the same rolling lookback. Exit the long position after a chosen number of bars from entry. Do not open short positions.

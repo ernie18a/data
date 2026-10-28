@@ -1,2 +1,0 @@
-Long: short-term EMA crosses above VWAP AND short-term EMA > long-term EMA AND ADX >= configured minimum AND UTC time is within the configured session
-Short: short-term EMA crosses below VWAP AND short-term EMA < long-term EMA AND ADX >= configured minimum AND UTC time is within the configured session

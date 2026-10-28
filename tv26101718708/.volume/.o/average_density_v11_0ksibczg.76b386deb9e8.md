@@ -1,6 +1,0 @@
-Calculation: Squeeze = for short-, medium-, and long-lookback EMA/SMA pairs, let each center be their mean; abs(short EMA - short SMA) / short center × 100 <= short threshold AND abs(medium center - short center) / short center × 100 <= medium threshold AND abs(long center - short center) / short center × 100 <= long threshold
-Calculation: Recent squeeze = a Squeeze occurred on the current bar or within the previous N bars
-Calculation: Volume spike = current volume >= multiplier × mean volume of the previous N bars, excluding the current bar, AND current volume >= minimum volume
-Calculation: Ribbon high/low = maximum/minimum of the short-, medium-, and long-lookback EMAs and SMAs
-Long: Recent squeeze AND Volume spike AND close > Ribbon high AND close > open AND abs(close - open) >= ratio × (high - max(close, open)) AND bars since the previous long signal > ignore-bars
-Short: Recent squeeze AND Volume spike AND close < Ribbon low AND close < open AND abs(close - open) >= ratio × (min(close, open) - low) AND bars since the previous short signal > ignore-bars

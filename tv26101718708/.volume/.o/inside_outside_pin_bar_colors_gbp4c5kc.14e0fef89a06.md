@@ -1,4 +1,0 @@
-Long: low < lowest low over the prior pin-bar lookback bars AND close > previous bar low AND volume > previous bar volume AND min(open, close) - low > wick multiplier × abs(close - open) AND min(open, close) - low > opposite-wick multiplier × (high - max(open, close))
-Long: high > highest high over the prior outside-bar lookback bars AND low < lowest low over the prior outside-bar lookback bars AND close >= open
-Short: high > highest high over the prior pin-bar lookback bars AND close < previous bar high AND volume > previous bar volume AND high - max(open, close) > wick multiplier × abs(close - open) AND high - max(open, close) > opposite-wick multiplier × (min(open, close) - low)
-Short: high > highest high over the prior outside-bar lookback bars AND low < lowest low over the prior outside-bar lookback bars AND close < open

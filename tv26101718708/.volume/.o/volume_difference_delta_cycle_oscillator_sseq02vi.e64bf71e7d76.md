@@ -1,7 +1,0 @@
-Calculation: Volume delta %B = (EMA(normalized volume-difference delta, volume lookback) − lower band) / (upper band − lower band), where the bands are EMA ± multiplier × standard deviation of the normalized volume-difference delta over the volume lookback; volume-difference delta is the change in (cumulative signed volume by close direction − cumulative volume-weighted close return); normalize the delta using its running historical minimum and maximum to map it to [−1, 1], then apply EMA smoothing.
-Calculation: Price %B = (close − lower band) / (upper band − lower band), where the bands are SMA(close, price lookback) ± multiplier × standard deviation of close over the price lookback.
-Calculation: Histogram = apply three successive EMA smoothing steps to (Price %B − Volume delta %B).
-Long: datetime >= configured start datetime AND datetime < configured end datetime AND Histogram < oversold threshold
-Short: datetime >= configured start datetime AND datetime < configured end datetime AND Histogram > overbought threshold
-Exit: long, datetime >= configured start datetime AND datetime < configured end datetime AND Histogram > overbought threshold
-Exit: short, datetime >= configured start datetime AND datetime < configured end datetime AND Histogram < oversold threshold

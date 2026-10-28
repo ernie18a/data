@@ -1,7 +1,0 @@
-Calculation: Confirmed swing high/low = pivot high/low with the configured lookback on both sides; available only after the right-side bars complete.
-Calculation: Origin zone = after a structure break, the nearest qualifying opposite-color candle between the broken swing’s origin and the search limit; demand spans its low to the top of its body, supply spans the bottom of its body to its high. The zone is omitted if already invalidated or if an enabled origin-volume filter fails.
-Calculation: Bullish/bearish fair value gap = the third completed candle’s low is above the first candle’s high / the third candle’s high is below the first candle’s low; apply the configured minimum-width filters.
-Calculation: Session/prior-period high/low = the high/low of a completed session window or prior day, week, or month, aggregated from the backtest bars.
-Long: On the chart timeframe or an enabled higher timeframe, a completed close exceeds an unused confirmed swing high; OR a demand origin zone is created; OR a bullish fair value gap forms; OR a tracked high level breaks through, its retest holds, or a tracked low level is reclaimed or fails after breaking through.
-Short: On the chart timeframe or an enabled higher timeframe, a completed close falls below an unused confirmed swing low; OR a supply origin zone is created; OR a bearish fair value gap forms; OR a tracked low level breaks through, its retest holds, or a tracked high level is reclaimed or fails after breaking through.
-Exit:

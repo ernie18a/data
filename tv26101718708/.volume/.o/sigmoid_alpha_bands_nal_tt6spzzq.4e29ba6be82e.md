@@ -1,5 +1,0 @@
-Calculation: Adaptive EMA = initialize at source; on each bar update prior value + α × (source − prior value), where α = clamp(2/(L+1) × (0.5 + 1/(1 + exp(−feed))), 0.01, 1). Feed is the change over C bars in one selected series: RSI(source, M), ATR(M), EMA(volume, M), or source/EMA(source, M).
-Calculation: Adaptive volatility = adaptive EMA of selected raw volatility (standard deviation, ATR, mean absolute deviation, or median absolute deviation of source over V bars), using feed = change over C bars in raw volatility / EMA(raw volatility, V), and length V.
-Calculation: Upper and lower bands = adaptive EMA baseline ± selected band volatility × volatility multiple. With asymmetric bands enabled, derive separate volatility multipliers from adaptive EMA-smoothed squared positive and negative log returns, relative to their smoothed total variance; clamp each multiplier to within half the maximum asymmetry spread of the 180-bar SMA of their average. Multiply adaptive volatility by the respective multiplier, with a tick-size floor. With asymmetry disabled, use adaptive volatility for both bands.
-Long: close > upper band
-Short: close < lower band

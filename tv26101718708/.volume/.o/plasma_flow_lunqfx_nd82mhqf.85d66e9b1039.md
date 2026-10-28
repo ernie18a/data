@@ -1,8 +1,0 @@
-Calculation: Rolling VWAP = sum(hlc3 × volume) / sum(volume) over a lookback; weighted standard deviation = square root of sum(volume × (hlc3 − rolling VWAP)²) / sum(volume) over the same lookback.
-Calculation: Pressure = EMA of (hlc3 − rolling VWAP) / weighted standard deviation.
-Calculation: Inner and outer bands = rolling VWAP ± weighted standard deviation multiplied by the respective band-width parameter.
-Calculation: Turbulence index = 20-bar standard deviation of normalized VWAP velocity / 50-bar simple moving average of that standard deviation; normalized VWAP velocity = 8-bar EMA of the 3-bar rate of change of rolling VWAP divided by weighted standard deviation.
-Long: hlc3 crosses above the lower inner band AND pressure < −0.8 AND turbulence index < 0.8 AND (current or previous bar has a bullish pin bar or bullish engulfing pattern) AND cooldown since the prior signal has elapsed.
-Short: hlc3 crosses below the upper inner band AND pressure > 0.8 AND turbulence index < 0.8 AND (current or previous bar has a bearish pin bar or bearish engulfing pattern) AND cooldown since the prior signal has elapsed.
-Exit: long, turbulence index > 1.3 OR absolute pressure > 2.0 OR price reaches the lower outer band (swing stop) OR price reaches the upper inner band (scalp/day stop) OR price reaches the nearest VWAP band target (take 50% off).
-Exit: short, turbulence index > 1.3 OR absolute pressure > 2.0 OR price reaches the upper outer band (swing stop) OR price reaches the lower inner band (scalp/day stop) OR price reaches the nearest VWAP band target (take 50% off).

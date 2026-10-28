@@ -1,8 +1,0 @@
-Calculation: Per-timeframe trend score = clamp(weighted sum of EMA alignment, slow EMA slope normalized by ATR, smoothed RSI level and slope, close location relative to the fast/mid/slow EMA band, close relative to VWAP when available, and ATR volatility quality; calculate on each configured timeframe using its last completed bar.
-Calculation: Confluence score = clamp(weighted average of the per-timeframe scores, adjusted by the configured session factor and reduced when weighted average ATR volatility is low).
-Calculation: Higher-timeframe direction = bullish when its score exceeds the trend threshold, bearish when below the negative threshold, otherwise neutral; use the last completed higher-timeframe bars.
-Calculation: Bull regime = in the conservative preset, the main higher and highest timeframes are both bullish; in the aggressive preset, the main higher timeframe is bullish, the middle timeframe score is positive, and the shorter timeframe score is above the negative trend threshold; otherwise, the main higher timeframe is bullish, the middle timeframe score meets the trend threshold, and the next longer intraday timeframe score is above the negative trend threshold.
-Calculation: Bear regime = the mirrored bearish conditions for Bull regime.
-Calculation: Hard higher-timeframe conflict = conservative preset and the main higher and highest timeframe directions disagree.
-Long: Bull regime AND NOT hard higher-timeframe conflict
-Short: Bear regime AND NOT hard higher-timeframe conflict

@@ -1,1 +1,0 @@
-Use the volatility index’s daily close to estimate the traded index’s next-day move, and place symmetric upper and lower thresholds around the traded index’s prior daily close. Go long when the traded price crosses above the upper threshold; go short when it crosses below the lower threshold. No exit condition is specified.

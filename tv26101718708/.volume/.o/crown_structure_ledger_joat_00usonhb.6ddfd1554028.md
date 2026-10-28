@@ -1,4 +1,0 @@
-Calculation: Short, intermediate, and primary pivot-high/low rails = the latest confirmed pivot high/low for each tier, using progressively longer pivot lookbacks.
-Calculation: ATR corridor width = ATR multiplied by a configurable width factor and an adaptive volatility factor; the adaptive factor is the EMA of ATR divided by its same-length SMA, subject to a configurable lower bound. Intermediate and primary corridor widths are progressively wider than the short corridor.
-Long: Bar is confirmed AND (close > short pivot-high rail + short-tier corridor allowance OR close > intermediate pivot-high rail + intermediate-tier corridor allowance OR close > primary pivot-high rail + primary-tier corridor allowance)
-Short: Bar is confirmed AND (close < short pivot-low rail − short-tier corridor allowance OR close < intermediate pivot-low rail − intermediate-tier corridor allowance OR close < primary pivot-low rail − primary-tier corridor allowance)

@@ -1,1 +1,0 @@
-Set the upper and lower limits at the reference close plus and minus the ATM straddle. Exit or invalidate the session if the instrument closes beyond either limit. No long or short entry rule is specified.

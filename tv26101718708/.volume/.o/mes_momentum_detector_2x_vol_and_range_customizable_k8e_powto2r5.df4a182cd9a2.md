@@ -1,4 +1,0 @@
-Calculation: average candle range = simple moving average of high − low over the configured lookback, including the current bar
-Calculation: average volume = simple moving average of volume over the same lookback as average candle range, including the current bar
-Long: datetime is within a configured included session or all-hours override is enabled AND high − low > average candle range × configured range multiplier AND volume > average volume × configured volume multiplier AND (close − low) / (high − low) ≥ configured close-near-high threshold AND close > open
-Short: datetime is within a configured included session or all-hours override is enabled AND high − low > average candle range × configured range multiplier AND volume > average volume × configured volume multiplier AND (close − low) / (high − low) ≤ configured close-near-low threshold AND close < open

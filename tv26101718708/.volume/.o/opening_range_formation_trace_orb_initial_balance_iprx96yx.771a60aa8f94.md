@@ -1,3 +1,0 @@
-Calculation: Opening range high/low = highest sample high and lowest sample low during the configured session opening window, using completed samples
-Long: Opening range is complete and nonpartial AND within the configured post-range window AND the first accepted departure is above: the selected sample value (close or high) is greater than opening range high plus the configured fraction of opening range width for the configured number of consecutive samples
-Short: Opening range is complete and nonpartial AND within the configured post-range window AND the first accepted departure is below: the selected sample value (close or low) is less than opening range low minus the configured fraction of opening range width for the configured number of consecutive samples

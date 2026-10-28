@@ -1,3 +1,0 @@
-Calculation: MA separation (%) = (fast moving average − slow moving average) / slow moving average × 100
-Long: fast moving average > slow moving average AND MA separation (%) ≥ minimum separation AND (volume filter disabled OR current volume > 20-bar average volume) AND (structure filter disabled OR current high > high N bars ago AND current low > low N bars ago) AND bullish confirmed state was not active on the previous bar
-Short: fast moving average < slow moving average AND MA separation (%) ≤ −minimum separation AND (volume filter disabled OR current volume > 20-bar average volume) AND (structure filter disabled OR current high < high N bars ago AND current low < low N bars ago) AND bearish confirmed state was not active on the previous bar

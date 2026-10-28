@@ -1,3 +1,0 @@
-Calculation: Benchmark-relative strength score = 100 + 10 × (the enabled instrument’s weighted-average ratio to the four benchmarks, each multiplied by 100, minus its lookback SMA) / lookback standard deviation; use 100 if the standard deviation is zero or unavailable. Use the current chart-timeframe bar for instrument and benchmark sources.
-Long: Number of enabled instruments with benchmark-relative strength score ≥ 100 ≥ number with score < 100
-Short: Number of enabled instruments with benchmark-relative strength score < 100 > number with score ≥ 100

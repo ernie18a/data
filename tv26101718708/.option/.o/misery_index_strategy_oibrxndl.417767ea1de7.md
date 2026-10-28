@@ -1,1 +1,0 @@
-On each monthly update, combine the external inflation and unemployment rates into a misery measure. Go long the traded instrument when the measure is lower than its previous monthly value; go short when it is higher. An opposite-direction entry reverses the position; no separate exit condition is defined.

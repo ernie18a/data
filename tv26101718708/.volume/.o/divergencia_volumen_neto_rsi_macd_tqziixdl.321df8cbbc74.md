@@ -1,3 +1,0 @@
-Calculation: normalized close-in-range ratio = (2 × close − high − low) / (high − low); if high = low, use 0
-Long: close < open AND normalized close-in-range ratio > long threshold AND volume ≥ 20-bar SMA of volume × minimum volume multiplier AND RSI ≤ long threshold AND MACD histogram ≤ long threshold
-Short: close > open AND normalized close-in-range ratio < −short threshold AND volume ≥ 20-bar SMA of volume × minimum volume multiplier AND RSI ≥ short threshold AND MACD histogram ≥ short threshold

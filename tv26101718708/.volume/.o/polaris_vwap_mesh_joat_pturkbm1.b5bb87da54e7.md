@@ -1,7 +1,0 @@
-Calculation: Session VWAP = volume-weighted average of (high + low + close) / 3 from the first bar inside each session window through the current bar; use current chart bars.
-Calculation: Swing-high VWAP = volume-weighted average of (high + low + close) / 3 from the bar a swing high is confirmed through the current bar; use current chart bars.
-Calculation: Swing-low VWAP = volume-weighted average of (high + low + close) / 3 from the bar a swing low is confirmed through the current bar; use current chart bars.
-Calculation: Daily-reset VWAP = volume-weighted average of (high + low + close) / 3 from the first bar of each new day through the current bar; use current chart bars.
-Calculation: Above-anchor count = number of available anchored VWAPs below the current close.
-Long: Current close crosses above any available session, swing-high, swing-low, or daily-reset VWAP AND the current bar is confirmed or historical OR at least three available VWAPs are below the current close AND the prior bar was not in that bullish state AND the current bar is confirmed or historical.
-Short: Current close crosses below any available session, swing-high, swing-low, or daily-reset VWAP AND the current bar is confirmed or historical OR at most one available VWAP is below the current close, at least three VWAPs are available, the prior bar was not in that bearish state, and the current bar is confirmed or historical.

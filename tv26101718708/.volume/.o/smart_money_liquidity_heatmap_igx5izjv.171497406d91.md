@@ -1,3 +1,0 @@
-Calculation: Range midpoint = (highest high + lowest low) / 2 over a configurable lookback, including the current bar
-Long: (close > open AND close - open > ATR × configurable impulse multiplier AND close[1] < open[1]) OR (low > high[2] AND low - high[2] >= close × configurable minimum-gap percentage) OR (close < range midpoint)
-Short: (close < open AND open - close > ATR × configurable impulse multiplier AND close[1] > open[1]) OR (high < low[2] AND low[2] - high >= close × configurable minimum-gap percentage) OR (close > range midpoint)

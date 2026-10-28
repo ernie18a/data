@@ -1,2 +1,0 @@
-Long: current high equals the highest high over the lookback on the configured calculation timeframe
-Short: current low equals the lowest low over the lookback on the configured calculation timeframe AND current high does not equal the highest high over the lookback on that timeframe

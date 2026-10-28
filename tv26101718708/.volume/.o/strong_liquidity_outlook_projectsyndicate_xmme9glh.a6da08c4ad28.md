@@ -1,2 +1,0 @@
-Long: shorter-lookback EMA(close) > longer-lookback EMA(close) AND close > shorter-lookback EMA(close)
-Short: shorter-lookback EMA(close) < longer-lookback EMA(close) AND close < shorter-lookback EMA(close)

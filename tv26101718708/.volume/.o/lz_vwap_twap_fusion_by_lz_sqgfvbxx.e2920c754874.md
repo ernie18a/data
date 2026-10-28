@@ -1,5 +1,0 @@
-Calculation: VWAP = cumulative configured source price × volume divided by cumulative volume, using current chart bars including the current bar; reset at each day if daily reset is enabled, otherwise accumulate from the start of available data
-Calculation: TWAP = mean of configured source prices on current chart bars including the current bar; use the current day’s bars if daily reset is enabled, otherwise use a rolling simple mean
-Calculation: Fusion = VWAP and TWAP combined using configured weights normalized to sum to one; when adaptive weighting is enabled, adjust the VWAP and TWAP weights in opposite directions according to ATR relative to its longer-period average, cap the adjustment at the configured strength, then normalize
-Long: close > Fusion AND previous close <= previous Fusion AND Fusion > previous Fusion
-Short: close < Fusion AND previous close >= previous Fusion AND Fusion < previous Fusion

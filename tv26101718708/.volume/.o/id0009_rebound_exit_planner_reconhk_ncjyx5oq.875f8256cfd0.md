@@ -1,1 +1,0 @@
-Long: shorter-lookback EMA of close crosses above longer-lookback EMA of close AND close > longer-lookback EMA of close AND (RSI > 50 OR volume > its moving average)

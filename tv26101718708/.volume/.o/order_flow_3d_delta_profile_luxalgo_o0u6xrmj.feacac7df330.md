@@ -1,2 +1,0 @@
-Long: volume > average volume over the profile lookback bars (including the current bar) × multiplier AND close > open
-Short: volume > average volume over the profile lookback bars (including the current bar) × multiplier AND close < open

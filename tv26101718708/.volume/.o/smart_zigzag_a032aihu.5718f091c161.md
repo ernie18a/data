@@ -1,2 +1,0 @@
-Long: accumulated weighted buy-power share > 50% AND fast baseline > its value on the previous bar AND (higher-timeframe fast ALMA of candle centroids > longer-lookback ALMA of candle centroids, if the higher-timeframe filter is enabled)
-Short: accumulated weighted sell-power share > 50% AND fast baseline < its value on the previous bar AND (higher-timeframe fast ALMA of candle centroids < longer-lookback ALMA of candle centroids, if the higher-timeframe filter is enabled)

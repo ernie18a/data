@@ -1,3 +1,0 @@
-Calculation: Elder Force Index = EMA((close − previous close) × volume, smoothing period)
-Long: shorter-period EMA of close > VWAP + (ATR × multiplier) AND shorter-period EMA of close > longer-period EMA of close + (ATR × multiplier) AND smoothed Elder Force Index > 0
-Short: shorter-period EMA of close < VWAP − (ATR × multiplier) AND shorter-period EMA of close < longer-period EMA of close − (ATR × multiplier) AND smoothed Elder Force Index < 0

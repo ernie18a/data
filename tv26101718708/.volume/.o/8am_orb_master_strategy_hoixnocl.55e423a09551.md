@@ -1,6 +1,0 @@
-Calculation: ORB high = highest high from 8:00 to 8:15 a.m. New York time each day
-Calculation: ORB low = lowest low from 8:00 to 8:15 a.m. New York time each day
-Calculation: ORB midpoint = (ORB high + ORB low) / 2
-Calculation: Midpoint bounce zone = (ORB high - ORB low) × a parameter
-Long: ORB is complete AND current bar is outside the 8:00–8:15 a.m. New York window AND no earlier entry signal occurred that day AND (previous bar’s range contains the ORB midpoint OR previous bar’s low is within the midpoint bounce zone OR previous bar’s high is within the midpoint bounce zone) AND close > ORB midpoint AND close > open AND close > 200-bar EMA of close AND volume > 1.2 × 20-bar SMA of volume
-Short: ORB is complete AND current bar is outside the 8:00–8:15 a.m. New York window AND no earlier entry signal occurred that day AND (previous bar’s range contains the ORB midpoint OR previous bar’s low is within the midpoint bounce zone OR previous bar’s high is within the midpoint bounce zone) AND close < ORB midpoint AND close < open AND close < 200-bar EMA of close AND volume > 1.2 × 20-bar SMA of volume

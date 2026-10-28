@@ -1,3 +1,0 @@
-Calculation: Keltner upper/lower channel = EMA(close, lookback) ± ATR(same lookback) × multiplier
-Long: MACD line crosses above its signal line OR RSI crosses above 50 OR fast EMA crosses above EMA(13) OR fast EMA crosses above medium EMA OR close crosses above Keltner upper channel OR close crosses above VWAP
-Short: MACD line crosses below its signal line OR RSI crosses below 50 OR fast EMA crosses below EMA(13) OR fast EMA crosses below medium EMA OR close crosses below Keltner lower channel OR close crosses below VWAP

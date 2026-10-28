@@ -1,7 +1,0 @@
-Calculation: Efficiency Ratio = absolute change in close over N bars divided by the sum of absolute one-bar close changes over N bars
-Calculation: KAMA = previous KAMA + SC × (close − previous KAMA), where SC is the square of the interpolation between fast and slow smoothing constants using Efficiency Ratio; initialize KAMA at zero
-Calculation: Volume-Weighted RSI = 100 − 100 / (1 + average positive close change × volume / average absolute negative close change × volume), using simple averages over N bars; if the average negative value is zero, use 100
-Calculation: Bull score = count of: close > KAMA and KAMA > previous KAMA; Efficiency Ratio > previous Efficiency Ratio; Volume-Weighted RSI > its bullish threshold; close > open and absolute body > ATR × thrust multiplier
-Calculation: Bear score = count of: close < KAMA and KAMA < previous KAMA; Efficiency Ratio > previous Efficiency Ratio; Volume-Weighted RSI < its bearish threshold; close < open and absolute body > ATR × thrust multiplier
-Long: (Bull score ≥ threshold − 1 AND Bull score < threshold AND close > KAMA AND KAMA > previous KAMA) OR (Bull score ≥ threshold AND bars since previous bullish signal > cooldown)
-Short: (Bear score ≥ threshold − 1 AND Bear score < threshold AND close < KAMA AND KAMA < previous KAMA) OR (Bear score ≥ threshold AND bars since previous bearish signal > cooldown)

@@ -1,8 +1,0 @@
-Calculation: Session phase = active-session bar count modulo cycle length, divided by cycle length; harmonic blend = 0.62 × sin(2π × phase) + 0.38 × sin(4π × phase + π/4)
-Calculation: Phase pressure = clamp(100 × (current-session close position within current-session range − 0.5) + 12 × drift ATR + 22 × harmonic blend, −100, 100), where drift ATR = EMA(close − current-session VWAP, drift smoothing) / ATR
-Calculation: Orbit width = ATR × (0.75 + 0.55 × abs(harmonic blend) + 0.16 × abs(drift ATR)); orbit mean = current-session VWAP + 0.42 × harmonic blend × orbit width; upper and lower orbit = orbit mean ± orbit width
-Calculation: Anomaly rank = percentile rank of abs(log(close / prior close)) / SMA(abs(log return), anomaly memory), ranked over anomaly memory; use 50 if undefined
-Calculation: Entropy percentage = 100 × binary entropy of up-energy share and down-energy share, divided by ln(2); each energy is the lookback sum of positive close-open or open-close, respectively, multiplied by volume
-Calculation: Lattice score = clamp(0.38 × anomaly rank + 0.34 × abs(phase pressure) + 0.28 × (100 − entropy percentage), 0, 100)
-Long: bar is confirmed AND within the active session AND close > upper orbit AND phase pressure > 0 AND lattice score >= configured phase anomaly gate
-Short: bar is confirmed AND within the active session AND close < lower orbit AND phase pressure < 0 AND lattice score >= configured phase anomaly gate

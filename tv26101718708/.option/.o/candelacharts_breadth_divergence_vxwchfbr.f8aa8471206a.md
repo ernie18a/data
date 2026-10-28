@@ -1,1 +1,0 @@
-At each confirmed price pivot, compare the traded instrument’s pivot with the external symbol’s high or low at the same time. If price forms a higher pivot high while the external symbol forms a lower high, go short. If price forms a lower pivot low while the external symbol forms a higher low, go long. No exit rule is specified.

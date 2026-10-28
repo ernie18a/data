@@ -1,6 +1,0 @@
-Calculation: Opening Range High = highest high during the configurable opening window from the start of the regular session; fixed once the window is complete
-Calculation: Opening Range Low = lowest low during the configurable opening window from the start of the regular session; fixed once the window is complete
-Calculation: Volume moving average = simple moving average of volume over a configurable lookback
-Long: during the regular session after the opening range is complete, previous close <= previous Opening Range High AND close > Opening Range High AND (VWAP filter disabled OR close > VWAP) AND (volume filter disabled OR volume > Volume moving average × configurable multiplier)
-Short: during the regular session after the opening range is complete, previous close >= previous Opening Range Low AND close < Opening Range Low AND (VWAP filter disabled OR close < VWAP) AND (volume filter disabled OR volume > Volume moving average × configurable multiplier)
-Short: previous RSI <= configurable overbought threshold AND RSI > configurable overbought threshold

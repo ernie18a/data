@@ -1,5 +1,0 @@
-Calculation: First smoothed price series = OHLC4 passed through a 4-bar symmetrical weighted moving average, then volume-weighted, weighted, exponential, and Wilder moving averages, followed by five simple moving averages; each successive moving-average lookback is longer than the preceding one
-Calculation: Second smoothed price series = midpoint of the highest OHLC4 over a shorter lookback and lowest OHLC4 over a longer lookback, passed through volume-weighted, weighted, exponential, Wilder, and simple moving averages with successively longer lookbacks
-Long: First smoothed price series crosses above second smoothed price series AND datetime is on or after the configured start date
-Short: First smoothed price series crosses below second smoothed price series AND datetime is on or after the configured start date
-Exit: long, first smoothed price series crosses below second smoothed price series AND datetime is on or after the configured start date

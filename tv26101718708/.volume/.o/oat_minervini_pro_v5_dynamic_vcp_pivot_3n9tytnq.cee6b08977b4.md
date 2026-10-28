@@ -1,3 +1,0 @@
-Calculation: Dynamic pivot = the latest confirmed swing high within the base lookback, using configurable left- and right-bar confirmation; valid only while its age is within the configured maximum. If fallback pivots are enabled and no valid swing pivot exists, use the highest high over the configured fallback lookback, excluding the current bar.
-Calculation: Breakout-volume threshold = configured multiple of the moving average of volume over the configured lookback.
-Long: close > dynamic pivot AND previous close <= dynamic pivot AND volume >= breakout-volume threshold

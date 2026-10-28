@@ -1,8 +1,0 @@
-Calculation: Smoothed stochastic %K = selected moving average of the stochastic value over the %K smoothing period; %D = the same selected moving average of %K over the %D smoothing period
-Calculation: Normalized MACD histogram = (fast moving average of close − slow moving average of close − selected moving average of that difference over the signal period) / highest raw histogram over its lookback × 100 / normalization factor
-Calculation: Take-profit price = entry price × (1 + configured profit threshold)
-Calculation: Stop-loss price = entry price × (1 − configured profit threshold / configured profit-to-loss ratio)
-Long: %K crosses above %D AND %K is at or below the configured lower threshold OR at least two of (%K > %D AND %K > prior %K AND %D > prior %D; RSI > 50; normalized MACD histogram > 0 AND greater than its prior value) AND current bar time is within the configured trading date range
-Short: %K crosses below %D AND %K is at or above the configured upper threshold OR at least two of (%K < %D AND %K < prior %K AND %D < prior %D; RSI < 50; normalized MACD histogram < 0 AND less than its prior value) AND current bar time is within the configured trading date range
-Exit: Long, open >= take-profit price OR open <= stop-loss price OR high >= take-profit price OR low <= stop-loss price
-Exit: Short, open >= take-profit price OR open <= stop-loss price OR high >= take-profit price OR low <= stop-loss price

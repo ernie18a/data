@@ -1,3 +1,0 @@
-Calculation: 4-hour pivot high/low = a high/low that is more extreme than the highs/lows in the specified left and right lookbacks; confirmed after the right lookback completes
-Long: 4-hour pivot low is confirmed OR volume > 20-bar SMA(volume) × volume multiplier AND close > open AND close > prior bar high
-Short: 4-hour pivot high is confirmed OR volume > 20-bar SMA(volume) × volume multiplier AND close < open AND close < prior bar low

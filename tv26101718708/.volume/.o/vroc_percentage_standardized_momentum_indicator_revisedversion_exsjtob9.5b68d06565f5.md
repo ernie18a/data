@@ -1,3 +1,0 @@
-Calculation: Smoothed VROC = simple moving average of ((open − open n bars ago) / open n bars ago × 100 / n) × (volume / simple moving average of volume over a separate lookback)
-Calculation: Previous-high Smoothed VROC = Smoothed VROC on the most recent earlier bar whose high equaled its rolling lookback highest high
-Short: high ≥ prior bar’s rolling lookback highest high AND Smoothed VROC < Previous-high Smoothed VROC AND Smoothed VROC > 0

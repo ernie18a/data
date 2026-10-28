@@ -1,5 +1,0 @@
-Calculation: Buy-side liquidity level = high of a pivot high, confirmed after the configured number of bars on each side; active from confirmation until swept or, when clean-break retirement is enabled, a bar closes at or above it.
-Calculation: Sell-side liquidity level = low of a pivot low, confirmed after the configured number of bars on each side; active from confirmation until swept or, when clean-break retirement is enabled, a bar closes at or below it.
-Calculation: Average volume = simple moving average of volume over the configured lookback.
-Long: For at least one active sell-side liquidity level L, low < L AND close > L AND (volume filter disabled OR volume > average volume × configured multiplier)
-Short: For at least one active buy-side liquidity level L, high > L AND close < L AND (volume filter disabled OR volume > average volume × configured multiplier)

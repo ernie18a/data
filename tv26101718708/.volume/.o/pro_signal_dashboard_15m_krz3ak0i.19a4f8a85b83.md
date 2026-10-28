@@ -1,2 +1,0 @@
-Long: EMA(close, shorter lookback) > EMA(close, longer lookback) AND RSI > upper threshold AND (volume > SMA(volume) OR ATR > SMA(ATR)) AND within the configured trading session
-Short: EMA(close, shorter lookback) < EMA(close, longer lookback) AND RSI < lower threshold AND (volume > SMA(volume) OR ATR > SMA(ATR)) AND within the configured trading session

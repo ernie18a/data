@@ -1,3 +1,0 @@
-Calculation: Slot win rate = percentage of bars in the lookback whose percent change is positive, grouped by weekday in daily mode or by Thai local hour slot in hourly mode; include the current bar if it is still forming.
-Calculation: Slot average change = mean percent change over the lookback, grouped by the same slots; in daily mode percent change is (close − previous daily close) / previous daily close × 100, and in hourly mode it is (close − open) / open × 100; include the current bar if it is still forming.
-Long: the current weekday or Thai local hour slot is the first slot in the fixed slot order with the highest win rate among slots with positive average change, and that slot's win rate is at least 50%

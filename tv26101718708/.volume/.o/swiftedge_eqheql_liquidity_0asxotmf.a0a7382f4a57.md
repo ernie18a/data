@@ -1,4 +1,0 @@
-Calculation: Confirmed swing high/low = a high/low with the configured number of lower highs/higher lows on each side, known after the bars on the right have closed.
-Calculation: Equal-high/low zone = two or more confirmed swing highs/lows within the configured tolerance (ATR(14) multiple or percentage of price), separated by the configured minimum and maximum bars between touches; use the highest swing high or lowest swing low as the zone level. Add matching later swings as touches; keep only live zones, removing them when swept, broken, too old, or pruned to the configured maximum per side.
-Long: An intact equal-low zone exists AND low < its level AND close >= its level; OR an intact equal-high zone exists AND close > its level.
-Short: An intact equal-high zone exists AND high > its level AND close <= its level; OR an intact equal-low zone exists AND close < its level.

@@ -1,6 +1,0 @@
-Calculation: Non-parametric adaptive moving average = recursively update from the prior value using the current close weighted by the absolute difference between close VWAP and open VWAP, divided by high VWAP minus low VWAP; initialize with close
-Calculation: Volume adaptive upper and lower bands = recursively update each band using the selected price source (optionally its longer-lookback simple moving average) and the same lookback for the simple moving average of volume, then smooth each update with a simple moving average of that lookback; the lower band uses negative volume
-Long: Non-parametric adaptive moving average crosses above the volume adaptive upper band AND the previous signal was not long AND datetime is within the configured trading window
-Short: Non-parametric adaptive moving average crosses below the volume adaptive lower band AND the previous signal was not short AND datetime is within the configured trading window
-Exit: Long, low <= entry price minus the configured stop loss OR high >= entry price plus the configured take profit
-Exit: Short, high >= entry price plus the configured stop loss OR low <= entry price minus the configured take profit

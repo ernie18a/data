@@ -1,1 +1,0 @@
-On the first trading day of each month, rank the configured asset universe by each asset’s cumulative return over a medium-term lookback divided by its recent realized daily-return volatility. Hold the four highest-ranked assets long in equal weights until the next monthly rebalance; exit any holding that is no longer among the top four. Take no short positions.

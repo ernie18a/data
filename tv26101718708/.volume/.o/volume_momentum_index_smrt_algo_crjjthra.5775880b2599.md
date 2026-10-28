@@ -1,4 +1,0 @@
-Calculation: VMI = Apply two consecutive EMAs of length S to 100 × R / max(rolling maximum of |R| over N bars, 1e-7), where R = EMA(P × (1 + K × B), L), P = (close − close[n]) / max(EMA(|close − close[n]|, n), 1e-7), B = Q / (1 + |Q|), Q = D × volume / max(EMA(volume, n), 1e-7), and D = 1 if close > previous close, −1 if close < previous close, otherwise 0. All bars are from the current timeframe.
-Calculation: Signal = EMA(VMI, signal length).
-Long: Current VMI > current Signal AND previous VMI ≤ previous Signal AND current VMI < Oversold Level AND current Signal < Oversold Level
-Short: Current VMI < current Signal AND previous VMI ≥ previous Signal AND current VMI > Overbought Level AND current Signal > Overbought Level

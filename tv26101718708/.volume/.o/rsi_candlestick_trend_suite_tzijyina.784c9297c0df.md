@@ -1,6 +1,0 @@
-Calculation: RSI candle close = RSI of close over a lookback period
-Calculation: RSI candle open = RSI of the previous bar’s close over the same RSI lookback period
-Calculation: RSI candle high = max(RSI candle close, RSI candle open); RSI candle low = min(RSI candle close, RSI candle open)
-Calculation: RSI Supertrend trend = calculate true range from RSI candle high/low and the previous RSI candle close; smooth it with Wilder’s moving average over an ATR lookback; form basic upper/lower bands at the RSI candle midpoint plus/minus a factor times ATR. Final upper band = basic upper if it is below the previous final upper band or the previous RSI candle close is above the previous final upper band, otherwise the previous final upper band. Final lower band = basic lower if it is above the previous final lower band or the previous RSI candle close is below the previous final lower band, otherwise the previous final lower band. Trend changes from bullish to bearish when the RSI candle close is below the final lower band, and from bearish to bullish when it is above the final upper band; otherwise trend is unchanged. Initialize trend as bullish.
-Long: RSI Supertrend trend changes from bearish to bullish
-Short: RSI Supertrend trend changes from bullish to bearish

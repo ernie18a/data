@@ -1,1 +1,0 @@
-Go long when the instrument meets every Stage 2 trend criterion—including relative performance versus the broad-market benchmark—and its closing price crosses above the latest confirmed swing high on above-average volume. A volatility contraction with declining volume is a watch condition only. No short or exit signal is defined.

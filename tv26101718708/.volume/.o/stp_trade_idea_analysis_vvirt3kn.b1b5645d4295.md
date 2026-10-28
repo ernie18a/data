@@ -1,4 +1,0 @@
-Calculation: Last confirmed swing high = most recent pivot high, with the pivot confirmed by bars on both sides
-Calculation: Last confirmed swing low = most recent pivot low, with the pivot confirmed by bars on both sides
-Long: low < last confirmed swing low AND close > last confirmed swing low AND min(open, close) - low >= 14-bar ATR × wick threshold OR close > last confirmed swing high AND previous close <= last confirmed swing high
-Short: high > last confirmed swing high AND close < last confirmed swing high AND high - max(open, close) >= 14-bar ATR × wick threshold OR close < last confirmed swing low AND previous close >= last confirmed swing low

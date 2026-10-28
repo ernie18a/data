@@ -1,4 +1,0 @@
-Long: SuperTrend direction changes from positive to negative AND RSI < its threshold AND volume > its 20-bar simple moving average AND within the configured session and backtest lookback AND position size = 0 AND daily entry count < configured limit
-Short: SuperTrend direction changes from negative to positive AND RSI > its threshold AND volume > its 20-bar simple moving average AND within the configured session and backtest lookback AND position size = 0 AND daily entry count < configured limit
-Exit: Long, low <= entry price - configured stop distance OR (high since entry >= entry price + configured trailing activation distance AND low <= high since entry - configured trailing offset)
-Exit: Short, high >= entry price + configured stop distance OR (low since entry <= entry price - configured trailing activation distance AND high >= low since entry + configured trailing offset)

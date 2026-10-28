@@ -1,6 +1,0 @@
-Calculation: RSI pivot low = a local low in RSI, using left and right pivot lookbacks; confirmed after the right lookback
-Calculation: RSI pivot high = a local high in RSI, using left and right pivot lookbacks; confirmed after the right lookback
-Long: Current RSI pivot low > previous RSI pivot low AND current pivot-bar low < previous pivot-bar low AND the previous same-type pivot is within the configured minimum and maximum bar distance
-Long: Current RSI pivot low < previous RSI pivot low AND current pivot-bar low > previous pivot-bar low AND the previous same-type pivot is within the configured minimum and maximum bar distance
-Short: Current RSI pivot high < previous RSI pivot high AND current pivot-bar high > previous pivot-bar high AND the previous same-type pivot is within the configured minimum and maximum bar distance
-Short: Current RSI pivot high > previous RSI pivot high AND current pivot-bar high < previous pivot-bar high AND the previous same-type pivot is within the configured minimum and maximum bar distance

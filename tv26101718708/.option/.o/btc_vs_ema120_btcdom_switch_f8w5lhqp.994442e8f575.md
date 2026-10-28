@@ -1,1 +1,0 @@
-On each bar, use the previous bar’s BTC close and its exponential moving average. If the close is above the average, hold BTC; otherwise, hold the BTC dominance instrument. Apply the selected position to the current bar. Stay fully invested in one instrument at all times; do not short or go flat.

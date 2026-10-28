@@ -1,1 +1,0 @@
-On the selected higher timeframe, go long when its candle close crosses above its open, and go short when its close crosses below its open. Each signal reverses the existing position; no separate exit condition is defined.

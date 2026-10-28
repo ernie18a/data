@@ -1,3 +1,0 @@
-Calculation: Prior completed NY RTH VAH, VAL, POC, and VA midpoint = use 1-minute closes and volumes from that session, binned into equal price rows spanning its high to low; POC is the midpoint of the highest-volume row, and VAH/VAL bound rows expanded from POC until the configured share of total volume is reached, adding the larger adjacent row first (ties upward); VA midpoint is halfway between VAH and VAL.
-Long: On the first bar of the NY session, open > prior completed NY RTH VAH AND prior-session POC > prior-session VA midpoint
-Short: On the first bar of the NY session, open < prior completed NY RTH VAL AND prior-session POC < prior-session VA midpoint

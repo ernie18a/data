@@ -1,7 +1,0 @@
-Calculation: Swing points = alternating rolling highs and lows over a configurable lookback; update the current endpoint when a more extreme high or low occurs, and confirm decisions at bar close.
-Calculation: Pattern completion = a completed X-A-B-C-D, A-B-C-D, or classical formation whose pivot geometry satisfies an enabled harmonic or classical pattern-family rule; use the family’s configured ratio, symmetry, duration, size, and direction filters.
-Calculation: Entry level = D price shifted toward the trade direction by the configured fraction of the selected pattern leg; the selected leg is AD for configured families and CD otherwise.
-Long: bullish pattern completion AND entry trigger: high >= entry level for touch mode; close >= entry level for close-confirmation mode; or validation-zone touch AND bullish engulfing or pin-bar confirmation for candle mode.
-Short: bearish pattern completion AND entry trigger: low <= entry level for touch mode; close <= entry level for close-confirmation mode; or validation-zone touch AND bearish engulfing or pin-bar confirmation for candle mode.
-Exit: long, stop condition OR low <= target 2 OR configured completion at target 1; stop condition is close <= stop or low <= stop, as configured.
-Exit: short, stop condition OR high >= target 2 OR configured completion at target 1; stop condition is close >= stop or high >= stop, as configured.

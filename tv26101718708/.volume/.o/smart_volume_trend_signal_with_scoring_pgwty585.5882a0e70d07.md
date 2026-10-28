@@ -1,2 +1,0 @@
-Long: volume > 1.3 × 20-bar SMA(volume) AND close > highest high of the preceding 20 completed bars AND close > 50-period EMA(close) AND 14-period RSI(close) > RSI threshold AND more than the cooldown period has elapsed since the previous long signal
-Exit: long, (entry price − lowest low since entry) / entry price × 100 ≥ stop-loss percentage OR bars since entry ≥ trade duration

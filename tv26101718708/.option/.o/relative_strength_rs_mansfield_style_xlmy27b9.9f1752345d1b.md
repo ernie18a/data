@@ -1,1 +1,0 @@
-For the traded instrument, compare its price-to-benchmark price ratio with that ratio’s own recent average. Enter long when the normalized ratio crosses above its average (relative strength turns positive); exit or avoid the instrument when it crosses below. The logic gives no short entry.

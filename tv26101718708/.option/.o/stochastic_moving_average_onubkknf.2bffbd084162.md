@@ -1,1 +1,0 @@
-When the reference-market filter is enabled, allow a long entry only if the reference market’s close is above its EMA on the current or previous bar. Allow a short entry only if its close is below its EMA on the current or previous bar. Otherwise, block entries in that direction. exits use only the traded instrument’s price and volatility data.

@@ -1,5 +1,0 @@
-Calculation: Pivot high = a bar’s high is greater than the highs of the preceding and following pivot-strength bars; confirm after the following bars complete. Pivot low = a bar’s low is lower than the lows of the preceding and following pivot-strength bars; confirm after the following bars complete.
-Calculation: Liquidity zones = group pivots of the same direction when their prices are within the larger of 10 minimum ticks or the pivot price times the merge percentage; zone price is the pivot-volume-weighted average and zone power is the sum of pivot volumes.
-Calculation: Zone strength = zone power divided by the greatest zone power; retain up to the configured number of highest-power zones whose strength meets the minimum strength.
-Long: confirmed pivot-low zone is retained
-Short: confirmed pivot-high zone is retained

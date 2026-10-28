@@ -1,4 +1,0 @@
-Calculation: Candle close position = (close - low) / (high - low), or 0.5 when high = low
-Calculation: Fast pivot high (low) = a confirmed high (low) pivot with fastLen bars on each side
-Long: After a new session low, the first confirmed fast pivot high whose pivot bar is later than the new-low bar forms an active level; close > level + 2 × minimum tick AND volume > previous bar volume AND candle close position ≥ close-percent threshold AND current bar index ≤ pivot bar index + stop-bars AND high ≤ level on every intervening bar
-Short: After a new session high, the first confirmed fast pivot low whose pivot bar is later than the new-high bar forms an active level; close < level - 2 × minimum tick AND volume > previous bar volume AND candle close position ≤ 1 - close-percent threshold AND current bar index ≤ pivot bar index + stop-bars AND low ≥ level on every intervening bar

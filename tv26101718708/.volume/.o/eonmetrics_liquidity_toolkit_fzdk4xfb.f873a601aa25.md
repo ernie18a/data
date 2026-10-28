@@ -1,4 +1,0 @@
-Calculation: swing high/low = a bar whose high/low is higher/lower than the corresponding values in the swing-length bars before and after it; confirm after the following bars complete
-Calculation: average volume = simple moving average of volume over a lookback
-Long: an unswept swing low, previous completed day low, or previous completed week low has low <= its level AND close > its level AND volume > average volume × volume multiplier
-Short: an unswept swing high, previous completed day high, or previous completed week high has high >= its level AND close < its level AND volume > average volume × volume multiplier

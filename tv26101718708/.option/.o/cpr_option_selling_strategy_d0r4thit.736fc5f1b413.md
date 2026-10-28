@@ -1,1 +1,0 @@
-At the start of each eligible trading period, compare the chosen price from its opening bar with the central pivot range calculated from the prior period on a selected higher timeframe. If price is above the range, sell a put; if below, sell a call; if strictly inside, sell an iron condor. No exit rule is defined.

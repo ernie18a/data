@@ -1,3 +1,0 @@
-Calculation: Smoothed absorption score = SMA over a shorter lookback of the z-score of volume / max(high − low, minimum price increment), using its longer-lookback rolling mean and standard deviation.
-Long: Smoothed absorption score > absorption threshold AND close < SMA(close, trend context lookback) AND close < close from trend context lookback bars earlier AND current bar index − bar index of most recent prior long signal (initially 0) ≥ configured cooldown bars.
-Short: Smoothed absorption score > absorption threshold AND close > SMA(close, trend context lookback) AND close > close from trend context lookback bars earlier AND current bar index − bar index of most recent prior short signal (initially 0) ≥ configured cooldown bars.

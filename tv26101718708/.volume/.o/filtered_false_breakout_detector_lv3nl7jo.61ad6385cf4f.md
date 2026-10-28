@@ -1,2 +1,0 @@
-Long: low two bars ago <= the lowest low in the swing lookback bars before that bar AND low one bar ago < low two bars ago AND current close > low two bars ago AND volume one bar ago > volume two bars ago
-Short: high two bars ago >= the highest high in the swing lookback bars before that bar AND high one bar ago > high two bars ago AND current close < high two bars ago AND volume one bar ago > volume two bars ago

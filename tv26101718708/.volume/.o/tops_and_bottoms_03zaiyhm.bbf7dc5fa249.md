@@ -1,4 +1,0 @@
-Calculation: Pivot high = a high greater than the highs of the specified number of bars before and after it, confirmed after the bars after it are complete
-Calculation: Pivot low = a low lower than the lows of the specified number of bars before and after it, confirmed after the bars after it are complete
-Long: Pivot low AND RSI at the pivot bar <= oversold threshold AND (volume filter disabled OR volume at the pivot bar >= its moving average at the pivot bar * volume multiplier)
-Short: Pivot high AND RSI at the pivot bar >= overbought threshold AND (volume filter disabled OR volume at the pivot bar >= its moving average at the pivot bar * volume multiplier)

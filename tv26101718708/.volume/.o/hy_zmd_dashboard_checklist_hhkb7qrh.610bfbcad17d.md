@@ -1,4 +1,0 @@
-Calculation: Short-term EMA = exponential moving average of close over a shorter lookback than the long-term EMA, calculated from the current forming daily, 4-hour, or 1-hour bars
-Calculation: Long-term EMA = exponential moving average of close over a longer lookback than the short-term EMA, calculated from the current forming daily, 4-hour, or 1-hour bars
-Long: daily short-term EMA > daily long-term EMA AND 4-hour short-term EMA > 4-hour long-term EMA AND 1-hour short-term EMA > 1-hour long-term EMA
-Short: daily short-term EMA <= daily long-term EMA AND 4-hour short-term EMA <= 4-hour long-term EMA AND 1-hour short-term EMA <= 1-hour long-term EMA

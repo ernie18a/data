@@ -1,5 +1,0 @@
-Calculation: 60-bar SMA = simple moving average of close over 60 chart bars; use the current bar for the live SMA and the last completed bar at each interval boundary for the fixed interval target.
-Calculation: Historical probability above = weighted fraction of prior sampled SMA windows, with length equal to the rounded time remaining in the active interval, whose ending SMA is above the interval target; weight samples by recency and volume similarity, and by settlement-phase similarity when enabled.
-Calculation: Projected median SMA = weighted median of projections from the current SMA using the percent changes in prior sampled SMA windows over the rounded time remaining in the active interval; use the same weights as historical probability above.
-Long: Historical probability above > 50% OR projected median SMA > interval target
-Short: Historical probability above < 50% OR projected median SMA < interval target

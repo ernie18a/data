@@ -1,9 +1,0 @@
-Calculation: Trend-template score = count of these eight conditions: close > medium-term SMA and close > long-term SMA; medium-term SMA > long-term SMA; long-term SMA > its value at a prior, longer lookback; short-term SMA > both longer-term SMAs; close > short-term SMA; close >= 52-week low × (1 + minimum distance above low); close >= 52-week high × (1 − maximum distance below high); relative-strength rank >= its threshold. The short-, medium-, and long-term SMA lookbacks increase in that order.
-Calculation: Relative-strength rank = percentile rank over a 52-week lookback of the difference between the instrument's return and the benchmark's return over a shorter lookback.
-Calculation: Contraction depths = (highest high − lowest low) / highest high × 100, measured over the prior full base window, its half-length window, and its quarter-length window; each window excludes the current bar.
-Calculation: Base pivot = highest high over the prior full base window, excluding the current bar.
-Calculation: Base low = lowest low over the prior quarter-length window, excluding the current bar.
-Long: Position is flat AND trend-template score >= its threshold AND full-window contraction depth > half-window depth > quarter-window depth AND quarter-window depth <= its maximum AND prior 5-bar average volume <= prior 50-bar average volume × its maximum ratio AND close > base pivot AND close <= base pivot × (1 + maximum extension) AND current volume >= current 50-bar average volume × its minimum ratio
-Exit: long, low <= long stop price OR high >= long target price OR close < short-term SMA
-Calculation: Long stop price = the higher of the entry price reduced by the configured maximum stop percentage and the base low (optionally discounted by a configured percentage).
-Calculation: Long target price = entry price increased by the configured target percentage.

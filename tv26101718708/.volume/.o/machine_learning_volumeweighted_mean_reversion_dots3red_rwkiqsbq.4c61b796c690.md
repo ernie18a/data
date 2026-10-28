@@ -1,7 +1,0 @@
-Calculation: Volume-weighted kernel regression = weighted average of close over the lookback, using time-kernel weights (Gaussian, rational quadratic, or Epanechnikov) multiplied by the volume normalized to the peak volume in its normalization window, raised to a power and bounded below by a floor; use completed bars only, excluding the current bar.
-Calculation: Bands = regression ± a half-width selected from ATR × multiplier, standard deviation of close × multiplier, or regression × percentage offset.
-Calculation: Regression slope is rising when the current regression estimate is greater than the estimate one bar earlier.
-Long: In extension mode, close < lower band; OR, in reversion mode, close crosses above the lower band (current close > current lower band AND previous close ≤ previous lower band) AND (slope filter disabled OR regression slope is rising); AND bars since the previous signal ≥ minimum gap; AND the previous signal direction is short or neutral.
-Short: In extension mode, close > upper band; OR, in reversion mode, close crosses below the upper band (current close < current upper band AND previous close ≥ previous upper band) AND (slope filter disabled OR regression slope is falling); AND bars since the previous signal ≥ minimum gap; AND the previous signal direction is long or neutral.
-Exit: long, close ≥ regression.
-Exit: short, close ≤ regression.

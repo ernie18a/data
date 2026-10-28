@@ -1,5 +1,0 @@
-Calculation: Quartile levels = rolling highest high and lowest low over the same lookback, including the current bar; 0% = lowest low, 25% = lowest low + 25% of the range, 50% = lowest low + 50% of the range, 75% = lowest low + 75% of the range, 100% = highest high
-Calculation: Bar delta = sum of lower-timeframe volume within the current chart bar, positive when that lower-timeframe bar closes at or above its open and negative otherwise
-Calculation: Large inner bubble = absolute bar delta at or above its 90th percentile and chart-bar volume at or above its 97th percentile, using the same lookback
-Long: current bar's high-low range touches the 0% or 25% quartile AND bar delta > 0 AND large inner bubble
-Short: current bar's high-low range touches the 75% or 100% quartile AND bar delta < 0 AND large inner bubble

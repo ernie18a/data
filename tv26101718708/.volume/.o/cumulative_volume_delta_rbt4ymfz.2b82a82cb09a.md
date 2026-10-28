@@ -1,3 +1,0 @@
-Calculation: CVD = cumulative per-bar delta, resetting at each new day or continuing without reset; per-bar delta is either volume × (2 × close − high − low) ÷ (high − low) when high > low (otherwise 0), or +volume when close > open, −volume when close < open, and 0 otherwise, according to the selected delta method
-Long: At a confirmed close pivot low, close is lower than at the preceding confirmed close pivot low AND CVD at the current pivot is higher than CVD at the preceding pivot
-Short: At a confirmed close pivot high, close is higher than at the preceding confirmed close pivot high AND CVD at the current pivot is lower than CVD at the preceding pivot

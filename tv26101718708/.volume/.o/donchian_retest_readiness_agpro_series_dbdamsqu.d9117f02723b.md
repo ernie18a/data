@@ -1,8 +1,0 @@
-Calculation: Donchian high/low = highest high / lowest low over the lookback of completed bars before the current bar
-Calculation: ATR = average true range on the chart timeframe; capture its value on the breakout bar for the active retest
-Calculation: Retest pocket = broken edge ± captured ATR × pocket-width parameter
-Calculation: Retest score = weighted, normalized composite of wick support, close pressure beyond the broken edge, closeness to the edge, breakout impulse, relative volume (current volume / its longer-lookback average), and channel width relative to current ATR
-Long: channel width ≥ minimum-width parameter × current ATR AND (close > prior Donchian high + break-buffer parameter × current ATR AND previous close ≤ prior Donchian high OR an active bullish break is within its retest window, current bar overlaps the retest pocket, close ≥ broken edge + hold-buffer parameter × captured ATR, retest score ≥ minimum score, failure condition is false, and no ready signal has occurred for this break)
-Short: channel width ≥ minimum-width parameter × current ATR AND (close < prior Donchian low − break-buffer parameter × current ATR AND previous close ≥ prior Donchian low OR an active bearish break is within its retest window, current bar overlaps the retest pocket, close ≤ broken edge − hold-buffer parameter × captured ATR, retest score ≥ minimum score, failure condition is false, and no ready signal has occurred for this break)
-Exit: Long, an active bullish break is within its retest window and close < broken edge − failure-buffer parameter × captured ATR
-Exit: Short, an active bearish break is within its retest window and close > broken edge + failure-buffer parameter × captured ATR

@@ -1,1 +1,0 @@
-On each monthly evaluation, calculate a momentum score for each of two external assets by weighting its logarithmic returns over the prior 1, 3, 6, and 12 months and summing them. Enter a long position in the traded instrument when the first asset’s score is positive. Close that long position when the second asset’s score is negative. No short position is opened.

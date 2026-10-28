@@ -1,7 +1,0 @@
-Calculation: Sweep threshold = ATR × a multiplier, clamped between a minimum and maximum point distance
-Calculation: Support level = nearest to current close among the enabled, available opening range low (after the opening range completes), premarket low, and previous day low
-Calculation: Resistance level = nearest to current close among the enabled, available opening range high (after the opening range completes), premarket high, and previous day high
-Long: During the active session, low ≤ support level − sweep threshold AND close < support level starts a sweep; within the timeout after that sweep, close > swept support level AND close > open
-Long: During the active session, the previous bar had a bullish reclaim ready AND high > the previous reclaim candle high AND (volume ≥ its moving average × an elevated-volume threshold OR elevated volume is not required)
-Short: During the active session, high ≥ resistance level + sweep threshold AND close > resistance level starts a sweep; within the timeout after that sweep, close < swept resistance level AND close < open
-Short: During the active session, the previous bar had a bearish reclaim ready AND low < the previous reclaim candle low AND (volume ≥ its moving average × an elevated-volume threshold OR elevated volume is not required)

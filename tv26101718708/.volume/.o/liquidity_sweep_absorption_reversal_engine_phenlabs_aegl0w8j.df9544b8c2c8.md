@@ -1,7 +1,0 @@
-Calculation: Active buy-side pools = confirmed pivot highs, each requiring the same configurable number of bars on its left and right; retain up to the configured maximum most recent unswept levels, removing a level once a bar's high exceeds it.
-Calculation: Active sell-side pools = confirmed pivot lows, each requiring the same configurable number of bars on its left and right; retain up to the configured maximum most recent unswept levels, removing a level once a bar's low falls below it.
-Calculation: Nearest buy-side pool = lowest active buy-side pool above the current low.
-Calculation: Nearest sell-side pool = highest active sell-side pool below the current high.
-Calculation: Absorption = volume ≥ its configurable lookback simple moving average × configurable spike multiple AND abs(close − open) / (high − low) ≤ configurable maximum; use 0 for the ratio when high = low.
-Long: A nearest sell-side pool exists AND low < pool AND (selected trigger is close-back-inside AND close > pool OR selected trigger is ATR displacement AND close < pool − ATR × configurable multiple) AND (absorption filter is disabled OR Absorption)
-Short: A nearest buy-side pool exists AND high > pool AND (selected trigger is close-back-inside AND close < pool OR selected trigger is ATR displacement AND close > pool + ATR × configurable multiple) AND (absorption filter is disabled OR Absorption)

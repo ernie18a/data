@@ -1,2 +1,0 @@
-Long: Supertrend direction changes from bearish to bullish AND (multi-timeframe filter is disabled OR the bullish count across the six configured timeframes is at least the configured minimum) AND the bar is within the selected trading session AND trading direction is not short-only
-Short: Supertrend direction changes from bullish to bearish AND (multi-timeframe filter is disabled OR the bearish count across the six configured timeframes is at least the configured minimum) AND the bar is within the selected trading session AND trading direction is not long-only

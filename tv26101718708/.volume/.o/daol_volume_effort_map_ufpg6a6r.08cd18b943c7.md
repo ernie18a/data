@@ -1,5 +1,0 @@
-Calculation: Same-time relative volume = completed bar volume divided by the mean volume of bars opening at the same exchange-local clock time on prior observed calendar dates, excluding the current date; valid only with at least the minimum matching observations and a positive mean.
-Calculation: Net price progress = (completed bar close − previous bar close) / previous bar ATR.
-Calculation: Close location = (completed bar close − completed bar low) / (completed bar high − completed bar low); use 0.5 when the bar has zero range.
-Long: Same-time relative volume ≥ high-volume threshold AND net price progress ≥ directional-progress threshold AND close location ≥ upper-edge threshold AND required historical samples, positive volume baseline, valid nonnegative volume, previous close, and positive previous bar ATR are available.
-Short: Same-time relative volume ≥ high-volume threshold AND net price progress ≤ −directional-progress threshold AND close location ≤ lower-edge threshold AND required historical samples, positive volume baseline, valid nonnegative volume, previous close, and positive previous bar ATR are available.

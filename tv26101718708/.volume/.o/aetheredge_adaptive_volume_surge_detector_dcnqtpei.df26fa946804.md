@@ -1,5 +1,0 @@
-Calculation: Volume z-score = (current volume − rolling mean volume) / rolling standard deviation of volume.
-Calculation: Body/range ratio = abs(close − open) / (high − low).
-Calculation: Real-surge probability = sigmoid of a logistic regression with bias 1 and features clamp(volume z-score, −4, 4), clamp(abs(close − open) / ATR, −4, 4), clamp(2 × body/range ratio − 1, −1, 1), and clamp((close − previous close) / ATR, −4, 4). Initialize all weights to zero. For each surge candidate, store its features, direction, and close; after the specified horizon, label it 1 if its directional close-to-close move is at least the required ATR multiple, otherwise 0. Update each weight by subtracting the learning rate × (predicted probability − label) × its stored feature. Use the resulting probability for the current bar.
-Long: volume z-score ≥ surge threshold AND body/range ratio ≥ minimum ratio AND close > open AND (AI filter disabled OR real-surge probability ≥ probability threshold)
-Short: volume z-score ≥ surge threshold AND body/range ratio ≥ minimum ratio AND close < open AND (AI filter disabled OR real-surge probability ≥ probability threshold)

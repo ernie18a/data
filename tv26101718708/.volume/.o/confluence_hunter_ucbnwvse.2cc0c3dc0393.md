@@ -1,8 +1,0 @@
-Calculation: Bull count = number of bullish factors among: 9-period EMA > 21-period EMA > 50-period EMA > 200-period EMA; close > current-session VWAP; bullish liquidity sweep; smoothed order-flow delta > 0; close > current-session POC; RSI(14) > 55.
-Calculation: Bear count = number of bearish factors among: 9-period EMA < 21-period EMA < 50-period EMA < 200-period EMA; close < current-session VWAP; bearish liquidity sweep; smoothed order-flow delta < 0; close < current-session POC; RSI(14) < 45.
-Calculation: Bullish liquidity sweep = low below the most recently confirmed swing low and close above it, with lower wick at least 40% of bar range; the swing low is confirmed using bars on both sides.
-Calculation: Bearish liquidity sweep = high above the most recently confirmed swing high and close below it, with upper wick at least 40% of bar range; the swing high is confirmed using bars on both sides.
-Calculation: Smoothed order-flow delta = EMA of ((2 × ((close − low) / (high − low)) − 1) × volume), using 0.5 as the close-position fraction when high equals low.
-Calculation: Session POC = midpoint of the price bin with the greatest accumulated volume in the current daily session; distribute each bar’s volume equally among the bins its low-to-high range touches.
-Long: (bull count ≥ minimum confluence and bear count ≤ 1) OR bullish liquidity sweep OR (bar delta > 0 and absolute bar delta > 1.5 × EMA of absolute bar delta)
-Short: (bear count ≥ minimum confluence and bull count ≤ 1) OR bearish liquidity sweep OR (bar delta < 0 and absolute bar delta > 1.5 × EMA of absolute bar delta)

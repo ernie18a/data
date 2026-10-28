@@ -1,2 +1,0 @@
-Long: Current fast moving average of close > current slow moving average of close AND previous fast moving average of close <= previous slow moving average of close; the fast moving average uses a shorter lookback than the slow moving average
-Exit: Long, Current fast moving average of close < current slow moving average of close AND previous fast moving average of close >= previous slow moving average of close

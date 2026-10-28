@@ -1,1 +1,0 @@
-For the traded instrument, compare the current prices of NIFTY and BANKNIFTY with each index’s daily central pivot range, calculated from its previous day’s high, low, and close. Go long when both prices are above their respective ranges; go short when both are below. Otherwise, exit or remain flat.

@@ -1,8 +1,0 @@
-Calculation: Upper cloud = EMA(close) + one quarter of the standard deviation of close over the same lookback as the EMA
-Calculation: Lower cloud = EMA(close) - one quarter of the standard deviation of close over the same lookback as the EMA
-Calculation: Red-vector count = number of red PVSRA vector bars with close below the EMA since initialization or the last buy signal
-Calculation: Green-vector count = number of green PVSRA vector bars with open and close above the EMA since initialization or the last sell signal
-Long: confirmed bar AND green PVSRA vector AND open > EMA AND close > upper cloud AND, since initialization or the last buy signal, at least one red PVSRA vector bar had open and close below the EMA AND red-vector count >= configured buy accuracy
-Short: confirmed bar AND previous bar was a green PVSRA vector AND current bar is a red or violet PVSRA vector AND open > EMA AND close > upper cloud AND at least one green PVSRA vector bar has had open and close above the EMA AND green-vector count >= configured sell accuracy
-Exit: long, confirmed bar AND previous bar was a green PVSRA vector AND current bar is a red or violet PVSRA vector AND open > EMA AND close > upper cloud AND at least one green PVSRA vector bar has had open and close above the EMA AND green-vector count >= configured sell accuracy
-Exit: short, confirmed bar AND green PVSRA vector AND open > EMA AND close > upper cloud AND, since initialization or the last buy signal, at least one red PVSRA vector bar had open and close below the EMA AND red-vector count >= configured buy accuracy

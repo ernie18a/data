@@ -1,1 +1,0 @@
-On the traded index, use 30-minute or 1-hour bars. Go short when SPX500 makes a higher high than its prior bar while NAS100 does not make a higher high. Go long when SPX500 makes a lower low than its prior bar while NAS100 does not make a lower low. No exit condition is specified.

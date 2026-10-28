@@ -1,9 +1,0 @@
-Calculation: Filtered OBV = prior filtered OBV when volume is below |SMA(volume) − volume-filter multiplier × stdev(volume)|; otherwise prior filtered OBV + sign(close − prior close) × volume.
-Calculation: OBV oscillator = filtered OBV − its configured moving average when the oscillator is enabled; otherwise filtered OBV.
-Calculation: Slow and fast Donchian channels = highest highs and lowest lows over their respective lookbacks; the fast lookback is shorter than the slow lookback. Compare against the prior completed bar’s channel levels.
-Calculation: Long protective stop = entry price × (1 − stop-loss percentage ÷ leverage) until the post-entry highest high exceeds entry price × (1 + trail-threshold percentage ÷ leverage); then use highest high × (1 − trail percentage ÷ leverage), updating the high and stop on new highs.
-Calculation: Short protective stop = entry price × (1 + stop-loss percentage ÷ leverage) until the post-entry lowest low falls below entry price × (1 − trail-threshold percentage ÷ leverage); then use lowest low × (1 + trail percentage ÷ leverage), updating the low and stop on new lows.
-Long: high > prior slow Donchian upper price level AND OBV oscillator > prior slow Donchian upper OBV level AND (oscillator disabled OR OBV oscillator > 0)
-Short: low < prior slow Donchian lower price level AND OBV oscillator < prior slow Donchian lower OBV level AND (oscillator disabled OR OBV oscillator < 0)
-Exit: long, OBV oscillator < prior fast Donchian lower OBV level AND low < prior fast Donchian lower price level OR low ≤ long protective stop
-Exit: short, OBV oscillator > prior fast Donchian upper OBV level AND high > prior fast Donchian upper price level OR high ≥ short protective stop

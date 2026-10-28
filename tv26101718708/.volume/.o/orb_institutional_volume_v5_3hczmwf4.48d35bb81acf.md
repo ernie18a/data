@@ -1,4 +1,0 @@
-Calculation: Opening-range high = highest high of the current day’s bars in the configured opening-range session, including the current bar; retain it after the session ends.
-Calculation: Opening-range low = lowest low of the current day’s bars in the configured opening-range session, including the current bar; retain it after the session ends.
-Long: Current close > current opening-range high AND previous close ≤ previous opening-range high AND current volume > current volume simple moving average AND current volume simple moving average × volume multiplier
-Short: Current close < current opening-range low AND previous close ≥ previous opening-range low AND current volume > current volume simple moving average AND current volume simple moving average × volume multiplier

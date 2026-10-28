@@ -1,5 +1,0 @@
-Calculation: Relative-strength line = instrument close divided by the same-timeframe index close
-Calculation: Range = highest high minus lowest low over the lookback
-Calculation: ATR percentage = average true range divided by close, multiplied by 100
-Long: close > 150-bar SMA AND close > 200-bar SMA AND 150-bar SMA > 200-bar SMA AND 200-bar SMA > its value 20 bars earlier AND 50-bar SMA > 150-bar SMA AND 50-bar SMA > 200-bar SMA AND close > 50-bar SMA AND close >= highest high over 252 bars * 0.75 AND close >= lowest low over 252 bars * 1.3 AND relative-strength line > its 50-bar SMA AND relative-strength line > its value 20 bars earlier AND range over the shorter lookback < range over the longer lookback * 0.55 AND ATR percentage < its 50-bar SMA AND (close - 50-bar SMA) / 50-bar SMA * 100 <= maximum extension
-Long: close > highest high over the breakout lookback among prior bars AND volume > average volume over the volume lookback * volume multiplier AND all conditions in the preceding Long line

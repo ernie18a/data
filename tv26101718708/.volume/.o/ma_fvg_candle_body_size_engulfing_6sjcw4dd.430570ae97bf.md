@@ -1,2 +1,0 @@
-Long: (current chart bar open <= previous chart bar close AND current chart bar open < previous chart bar open AND current chart bar close > previous chart bar open) OR (current still-forming FVG-timeframe bar low > high two completed FVG-timeframe bars earlier)
-Short: (current chart bar open >= previous chart bar close AND current chart bar open > previous chart bar open AND current chart bar close < previous chart bar open) OR (current still-forming FVG-timeframe bar high < low two completed FVG-timeframe bars earlier)

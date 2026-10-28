@@ -1,7 +1,0 @@
-Calculation: Candle POC = midpoint of the equal-width price bin with the greatest estimated volume inside the current bar; allocate each source bar’s volume to bins in proportion to the overlap of its high–low range with each bin, using lower-timeframe bars within the current bar when enabled, otherwise the current bar itself
-Calculation: POC delta = sum, in the POC bin, of each source bar’s estimated buy volume minus estimated sell volume; estimated buy volume = volume × (close − low) / max(high − low, minimum tick), and estimated sell volume = volume × (high − close) / max(high − low, minimum tick)
-Calculation: Liquidity concentration = POC-bin volume / total estimated volume across the current bar’s bins × 100
-Calculation: Volume power = current bar volume / moving average of volume
-Calculation: Strong liquidity = liquidity concentration ≥ its minimum threshold AND volume power ≥ its minimum threshold
-Long: POC delta ≥ 0 AND volume power ≥ its minimum threshold AND (strong-only display filter is off OR strong liquidity) OR current bar’s high ≥ an untested prior strong bullish POC and its low ≤ that POC
-Short: POC delta < 0 AND volume power ≥ its minimum threshold AND (strong-only display filter is off OR strong liquidity) OR current bar’s high ≥ an untested prior strong bearish POC and its low ≤ that POC

@@ -1,8 +1,0 @@
-Calculation: Body high = max(open, close)
-Calculation: Body low = min(open, close)
-Calculation: Volume growth (%) = 100 × (volume − previous bar volume) / previous bar volume
-Calculation: Volume threshold = EMA(volume) + configured multiplier × standard deviation(volume), calculated over the same lookback and including the current bar
-Long: volume > 0 AND close >= open AND ((standard deviation(volume) > 0 AND volume >= the volume threshold using the lowest configured threshold multiplier) OR (previous bar volume > 0 AND volume growth > configured growth threshold))
-Long: A lower body fractal is confirmed on the current completed bar: the candidate bar (one or two bars earlier, according to the configured 3-bar or 5-bar length) has a body low lower than each bar on its right and lower than each bar on its left; left-side equality is allowed in Last Bar mode and disallowed in Strict mode
-Short: volume > 0 AND close < open AND ((standard deviation(volume) > 0 AND volume >= the volume threshold using the lowest configured threshold multiplier) OR (previous bar volume > 0 AND volume growth > configured growth threshold))
-Short: An upper body fractal is confirmed on the current completed bar: the candidate bar (one or two bars earlier, according to the configured 3-bar or 5-bar length) has a body high higher than each bar on its right and higher than each bar on its left; left-side equality is allowed in Last Bar mode and disallowed in Strict mode

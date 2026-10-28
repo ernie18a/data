@@ -1,4 +1,0 @@
-Long: (close crosses above Bollinger basis AND MACD line > signal line AND MACD histogram > 0 AND MACD histogram > prior bar’s histogram) OR (MACD line crosses above signal line AND close > Bollinger basis AND MACD histogram > 0), AND volume >= its average, AND close > open
-Calculation: Trend-end threshold = Bollinger basis minus an ATR-based buffer
-Long: no
-Exit: long, (highest high over a recent lookback >= prior bar’s upper Bollinger Band AND MACD histogram declines on successive bars AND close < open AND close <= prior close) OR (close < trend-end threshold AND close < open) OR (close > upper Bollinger Band AND MACD line > 0 AND MACD line > signal line multiplied by a factor greater than one)

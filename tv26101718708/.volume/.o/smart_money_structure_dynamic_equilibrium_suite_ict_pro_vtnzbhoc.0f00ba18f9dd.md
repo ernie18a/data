@@ -1,2 +1,0 @@
-Long: Fast moving average of close > slow moving average of close AND volume ≤ 20-bar simple moving average of volume × volume-spike multiplier
-Short: Fast moving average of close ≤ slow moving average of close AND volume ≤ 20-bar simple moving average of volume × volume-spike multiplier

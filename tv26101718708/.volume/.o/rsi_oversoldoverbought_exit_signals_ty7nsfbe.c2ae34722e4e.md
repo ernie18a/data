@@ -1,4 +1,0 @@
-Calculation: RSI = Wilder RSI of close, using average gains and losses over a lookback.
-Calculation: Confirmed pivot low/high = a low/high that is a local extreme over equal left and right lookbacks; detect it after the right lookback completes.
-Long: RSI crosses above the oversold level OR a confirmed price pivot low is lower than the previous price pivot low AND the corresponding RSI pivot low is higher than the previous RSI pivot low AND the previous pivot is within the configured minimum and maximum pivot-spacing bounds.
-Short: RSI crosses below the overbought level OR a confirmed price pivot high is higher than the previous price pivot high AND the corresponding RSI pivot high is lower than the previous RSI pivot high AND the previous pivot is within the configured minimum and maximum pivot-spacing bounds.

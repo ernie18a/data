@@ -1,4 +1,0 @@
-Calculation: Long score = number of true conditions: close > (high + low) / 2; close > Bollinger middle band; CCI > 80; OBV > its simple moving average; +DI > -DI
-Calculation: Short score = number of true conditions: close < (high + low) / 2; close < Bollinger middle band; CCI < -80; OBV < its simple moving average; -DI > +DI
-Long: Long score >= minimum score AND ADX >= threshold AND close > longer-term EMA AND shorter-term EMA > longer-term EMA AND (last signal direction is not long OR reset interval has elapsed)
-Short: Short score >= minimum score AND ADX >= threshold AND close < longer-term EMA AND shorter-term EMA < longer-term EMA AND (last signal direction is not short OR reset interval has elapsed)

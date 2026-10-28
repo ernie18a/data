@@ -1,1 +1,0 @@
-Long: open < previous bar low AND low >= open × (1 − p) AND high >= previous bar low × (1 + p)

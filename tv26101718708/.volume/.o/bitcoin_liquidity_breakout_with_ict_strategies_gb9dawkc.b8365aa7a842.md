@@ -1,2 +1,0 @@
-Long: volume > its simple moving average multiplied by a liquidity threshold AND RSI < its entry ceiling AND shorter-lookback simple moving average of close > longer-lookback simple moving average of close AND ATR > its simple moving average
-Exit: Long, shorter-lookback simple moving average of close crosses below longer-lookback simple moving average of close OR RSI > its exit threshold

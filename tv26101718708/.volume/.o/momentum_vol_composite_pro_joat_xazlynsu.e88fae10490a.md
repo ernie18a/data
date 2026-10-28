@@ -1,6 +1,0 @@
-Calculation: Composite = sum of the four factor Z-scores multiplied by their respective weights, divided by the sum of weights; factors are ROC of close, ATR, cumulative volume minus its EMA, and short EMA of close minus long EMA of close. Z-score each factor using its rolling mean and standard deviation; use the factor's own lookback for ROC and ATR, the volume-flow EMA length for volume flow, and the longer EMA length for EMA difference. Short EMA length is shorter than long EMA length.
-Calculation: Composite MA = EMA of Composite.
-Calculation: Composite MA slope = current Composite MA minus previous Composite MA.
-Calculation: Price slope = percentage change in close over the divergence lookback; Composite change = current Composite minus Composite at the divergence lookback.
-Long: Composite MA slope > 0 AND previous Composite MA slope <= 0 OR price slope < -epsilon AND Composite change > epsilon AND divergence cooldown has elapsed.
-Short: Composite MA slope < 0 AND previous Composite MA slope >= 0 OR price slope > epsilon AND Composite change < -epsilon AND divergence cooldown has elapsed.

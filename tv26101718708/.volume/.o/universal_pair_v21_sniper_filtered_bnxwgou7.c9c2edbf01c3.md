@@ -1,3 +1,0 @@
-Calculation: Session VWAP = cumulative sum of ((high + low + close) / 3 × volume) since the start of the current day, divided by cumulative volume since the start of the current day
-Long: close > Session VWAP AND MACD line > MACD signal line AND (paired inverse instrument’s current close < its current open OR its current close < its previous close) AND ABS(close − Session VWAP) > close × minimum-distance percentage
-Short: close < Session VWAP AND MACD line < MACD signal line AND (paired inverse instrument’s current close > its current open OR its current close > its previous close) AND ABS(close − Session VWAP) > close × minimum-distance percentage

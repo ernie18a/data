@@ -1,6 +1,0 @@
-Calculation: short EMA = exponential moving average of close with a shorter lookback than the long EMA
-Calculation: long EMA = exponential moving average of close with a longer lookback than the short EMA
-Long: during the regular session at bar close, close crosses above the long trigger OR close crosses above the confirmation level, AND close > VWAP, AND close > short EMA, AND short EMA >= long EMA, AND the signal cooldown has elapsed
-Short: during the regular session at bar close, close crosses below the short trigger OR close crosses below the confirmation level, AND close < VWAP, AND close < short EMA, AND short EMA <= long EMA, AND the signal cooldown has elapsed
-Exit: long, during the regular session, close < invalidation level OR close < hard invalidation level OR high reaches a target after the previous bar's high was below that target
-Exit: short, during the regular session, close > invalidation level OR close > hard invalidation level OR low reaches a target after the previous bar's low was above that target

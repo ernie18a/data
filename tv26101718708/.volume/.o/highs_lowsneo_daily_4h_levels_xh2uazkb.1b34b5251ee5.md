@@ -1,8 +1,0 @@
-Calculation: Prior daily high/low = high/low of the last completed daily bar.
-Calculation: Prior 4H high/low = high/low of the last completed 4-hour bar.
-Calculation: 1-minute RSI = RSI of 1-minute closes.
-Calculation: Break zone = configured interval after the most recent active prior daily or 4H high/low is reached, using high/low or close according to the mitigation setting.
-Long: In a support break zone AND no trade is active AND zone trade count is below its configured limit AND ((RSI mode is enabled AND 1-minute RSI crosses above the configured oversold level) OR (candle mode is enabled AND no sweep is pending AND current candle closes above the high of the first green candle in the current consecutive green run)). After a candle-mode long signal, wait for price to make a lower low than that green candle before another candle-mode signal.
-Short: In a resistance break zone AND no trade is active AND zone trade count is below its configured limit AND ((RSI mode is enabled AND 1-minute RSI crosses below the configured overbought level) OR (candle mode is enabled AND no sweep is pending AND current candle closes below the low of the first red candle in the current consecutive red run)). After a candle-mode short signal, wait for price to make a higher high than that red candle before another candle-mode signal.
-Exit: Long, low <= entry price reduced by the configured stop-loss percentage OR the break zone ends or a new break zone begins.
-Exit: Short, high >= entry price increased by the configured stop-loss percentage OR the break zone ends or a new break zone begins.

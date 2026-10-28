@@ -1,1 +1,0 @@
-Long: close > highest high over its lookback AND volume > average volume AND ATR > its moving average

@@ -1,8 +1,0 @@
-Calculation: Confirmed swing high/low = a high/low (or close, if close-based pivots are selected) that is the highest/lowest across the configured preceding lookback and confirmation bars; it becomes available after the confirmation bars complete.
-Calculation: Relative volume = pivot-bar volume divided by either its rolling average volume or the average volume at the same session offset on prior days.
-Calculation: Volume-validated pivot = confirmed swing high or low whose relative volume is at least the validation threshold.
-Calculation: Structure bias = bullish when each of the latest two swing highs and lows is higher than its predecessor; bearish when both are lower; otherwise neutral. Reset to neutral when no pivot has occurred within the staleness limit, or when close crosses beyond the latest swing against the bias.
-Calculation: Density bias = normalized volume density below the nearest support minus normalized volume density above the nearest resistance; if only one level is available, use the corresponding below-minus-above density around that level. Densities use recent bars, with volume distributed evenly across the price bins each bar spans and older bars optionally downweighted.
-Calculation: Comprehensive Gradient Score (CGS) = the weighted average of density bias, ATR-normalized price slope, smoothed slope acceleration, and close position within the bar rescaled from 0–1 to −1–1; clamp density, slope, and scaled acceleration to −1–1 before weighting, and smooth the result if configured.
-Long: volume-validated swing low OR structure bias is bullish OR density bias > 0 OR CGS > its neutral threshold
-Short: volume-validated swing high OR structure bias is bearish OR density bias < 0 OR CGS < − its neutral threshold

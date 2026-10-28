@@ -1,4 +1,0 @@
-Calculation: Active resistance zone = each confirmed pivot high with pivot-bar volume greater than its volume SMA multiplied by a configurable multiplier; zone spans from the pivot high to one configurable ATR multiple below it, using ATR when the pivot is confirmed. Keep only the latest configured number of zones per side; remove a zone from active levels when a confirmed close breaks through it.
-Calculation: Active support zone = each confirmed pivot low with pivot-bar volume greater than its volume SMA multiplied by a configurable multiplier; zone spans from the pivot low to one configurable ATR multiple above it, using ATR when the pivot is confirmed. Keep only the latest configured number of zones per side; remove a zone from active levels when a confirmed close breaks through it.
-Long: confirmed close > top of any active resistance zone
-Short: confirmed close < bottom of any active support zone

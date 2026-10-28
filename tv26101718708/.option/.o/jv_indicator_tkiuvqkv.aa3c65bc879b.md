@@ -1,1 +1,0 @@
-For either otherwise-qualified bullish or bearish setup, add one point to its score when the ES futures close is within a configurable percentage of either its prior-day high or low. This nondirectional confirmation can help the setup meet the configured minimum grade. When the benchmark filter is disabled, award the point unconditionally.

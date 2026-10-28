@@ -1,3 +1,0 @@
-Calculation: Opening-range high/low = highest high and lowest low of chart bars in the initial range-duration interval of the current parent-timeframe period, while that period is forming.
-Long: opening range is complete AND close > opening-range high AND previous close <= opening-range high AND (EMA filter disabled OR close > EMA) AND (volume filter disabled OR volume > volume SMA × multiplier)
-Short: opening range is complete AND close < opening-range low AND previous close >= opening-range low AND (EMA filter disabled OR close < EMA) AND (volume filter disabled OR volume > volume SMA × multiplier)

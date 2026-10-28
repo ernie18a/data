@@ -1,3 +1,0 @@
-Calculation: upward-breakout probability = sigmoid of a linear head over 32 linear filters on the latest 12 bars and 16 linear filters on 20 bars sampled every 10 bars across the latest 191 bars; normalize each OHLC value by subtracting current close and dividing by current ATR(14), and each volume by current SMA(volume, 20) then subtract 1
-Calculation: adaptive threshold = rolling 99.5th percentile of upward-breakout probabilities over the current and preceding 999 bars
-Long: upward-breakout probability > adaptive threshold (or fixed threshold when adaptive calibration is disabled)

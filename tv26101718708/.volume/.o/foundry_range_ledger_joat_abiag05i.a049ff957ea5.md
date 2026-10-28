@@ -1,7 +1,0 @@
-Calculation: ATR = average true range over a longer lookback on the chart timeframe
-Calculation: Confirmed pivot high/low = a high/low greater than the highs/lows in the same shorter lookback on both sides; use only after the right-side bars complete
-Calculation: Active supply zone = on each confirmed pivot high, set ceiling to the pivot high and floor to ceiling minus an ATR-scaled width; if the pivot is within an ATR-scaled tolerance of the prior pivot high, use their mean as the ceiling; replace the prior supply zone
-Calculation: Active demand zone = on each confirmed pivot low, set floor to the pivot low and ceiling to floor plus an ATR-scaled width; if the pivot is within an ATR-scaled tolerance of the prior pivot low, use their mean as the floor; replace the prior demand zone
-Calculation: Candle body quality = absolute(close − open) / max(high − low, minimum tick)
-Long: active supply zone AND current bar index − supply zone birth index ≥ minimum zone age AND bar is confirmed AND body quality ≥ minimum threshold when the quality filter is enabled AND close > supply ceiling in body-close mode (otherwise high > supply ceiling) OR released supply zone AND low ≤ supply ceiling AND close ≥ supply floor
-Short: active demand zone AND current bar index − demand zone birth index ≥ minimum zone age AND bar is confirmed AND body quality ≥ minimum threshold when the quality filter is enabled AND close < demand floor in body-close mode (otherwise low < demand floor) OR released demand zone AND high ≥ demand floor AND close ≤ demand ceiling

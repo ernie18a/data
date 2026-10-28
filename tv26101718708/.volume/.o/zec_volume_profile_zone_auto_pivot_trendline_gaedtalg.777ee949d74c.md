@@ -1,3 +1,0 @@
-Calculation: High-volume zone = over the current chart bars including the bar being evaluated, find the highest high and lowest low over a rolling lookback, divide that range into equal-width bins, assign each bar’s volume to the bin containing its close, and use the highest-volume bin’s lower and upper boundaries as zone low and zone high.
-Long: close crosses above high-volume zone high
-Short: close crosses below high-volume zone low

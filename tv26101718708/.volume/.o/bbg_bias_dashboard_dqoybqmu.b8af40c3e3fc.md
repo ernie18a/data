@@ -1,2 +1,0 @@
-Long: bias-timeframe close > EMA AND bias-timeframe close > VWAP AND setup-timeframe close > EMA AND setup-timeframe close > VWAP AND current close > current-timeframe VWAP
-Short: bias-timeframe close < EMA AND bias-timeframe close < VWAP AND setup-timeframe close < EMA AND setup-timeframe close < VWAP AND current close < current-timeframe VWAP

@@ -1,5 +1,0 @@
-Calculation: Same-session-slot volume Z-score = (current bar volume − prior expected volume for its elapsed-minute slot in the configured exchange session) ÷ max(prior volume standard deviation for that slot, a percentage floor of expected volume), capped at −5 to +5; update the slot statistics only after evaluating each completed in-session bar.
-Long: On a completed 1–30-minute in-session bar with a ready same-slot volume baseline and no active tracked breakout, close > highest high of the preceding range lookback AND previous close ≤ that upper rail AND (close − upper rail) ÷ ATR ≥ minimum breakout distance AND same-session-slot volume Z-score ≥ volume threshold.
-Short: On a completed 1–30-minute in-session bar with a ready same-slot volume baseline and no active tracked breakout, close < lowest low of the preceding range lookback AND previous close ≥ that lower rail AND (lower rail − close) ÷ ATR ≥ minimum breakout distance AND same-session-slot volume Z-score ≥ volume threshold.
-Exit: long, close ≤ the frozen upper breakout rail.
-Exit: short, close ≥ the frozen lower breakout rail.

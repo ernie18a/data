@@ -1,5 +1,0 @@
-Calculation: Volume SMA = simple moving average of volume over a configurable lookback, calculated separately on each selected timeframe.
-Calculation: Resistance fractal = a high three bars ago that is higher than the highs four and five bars ago, followed by lower highs two and one bars ago, with volume three bars ago greater than the Volume SMA three bars ago.
-Calculation: Support fractal = a low three bars ago that is lower than the lows four and five bars ago, followed by higher lows two and one bars ago, with volume three bars ago greater than the Volume SMA three bars ago.
-Long: A new Support fractal is confirmed on any selected timeframe OR the current close crosses above that timeframe's latest Resistance fractal level (previous close <= level and current close > level).
-Short: A new Resistance fractal is confirmed on any selected timeframe OR the current close crosses below that timeframe's latest Support fractal level (previous close >= level and current close < level).

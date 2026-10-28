@@ -1,5 +1,0 @@
-Calculation: Short, middle, and long moving averages = the selected SMA, EMA, WMA, VWMA, HMA, SMMA, or DEMA of close, or of OHLC4 from current Heikin-Ashi bars when that option is enabled; their lookbacks are respectively shortest, intermediate, and longest.
-Long: close > long moving average AND short moving average > middle moving average AND datetime is within the configured start and finish dates, inclusive
-Short: close < long moving average AND short moving average < middle moving average AND datetime is within the configured start and finish dates, inclusive
-Exit: Long, close < long moving average AND short moving average < middle moving average AND datetime is within the configured start and finish dates, inclusive
-Exit: Short, close > long moving average AND short moving average > middle moving average AND datetime is within the configured start and finish dates, inclusive

@@ -1,4 +1,0 @@
-Calculation: Squeeze = ATR(14) / longer-lookback ATR < threshold AND (Bollinger Band width < its own SMA × threshold OR ATR(14) < its own SMA × threshold); Bollinger Band width = (upper band − lower band) / max(middle band, minimum tick)
-Calculation: Squeeze zone high/low = highest high and lowest low across a consecutive qualifying squeeze run; create the zone only after the run ends, it meets the minimum duration, and the warmup period has passed
-Long: close > an active completed squeeze zone high AND abs(close − open) > ATR(14) × threshold AND volume > its SMA × 1.05 AND RSI < 72 AND bar is confirmed
-Short: close < an active completed squeeze zone low AND abs(close − open) > ATR(14) × threshold AND volume > its SMA × 1.05 AND RSI > 28 AND bar is confirmed

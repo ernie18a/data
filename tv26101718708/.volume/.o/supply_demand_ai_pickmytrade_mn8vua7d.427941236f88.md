@@ -1,4 +1,0 @@
-Calculation: Demand zone = a base of consecutive bars whose high–low range is below an ATR multiple, followed within a fixed bar window by an upward move from the base high of at least an ATR multiple; zone bounds are the base’s wick or body range, expanded symmetrically if below the minimum height.
-Calculation: Supply zone = a base of consecutive bars whose high–low range is below an ATR multiple, followed within a fixed bar window by a downward move from the base low of at least an ATR multiple; zone bounds are the base’s wick or body range, expanded symmetrically if below the minimum height.
-Long: On a confirmed bar, low <= a live demand zone’s top AND high >= its bottom AND no return to that zone is already open AND its return count is below the maximum.
-Short: On a confirmed bar, low <= a live supply zone’s top AND high >= its bottom AND no return to that zone is already open AND its return count is below the maximum.

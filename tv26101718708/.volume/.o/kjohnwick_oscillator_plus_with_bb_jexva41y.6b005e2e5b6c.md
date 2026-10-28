@@ -1,4 +1,0 @@
-Calculation: Smoothed RSI = HMA of RSI(close, longer lookback), using a shorter lookback for the HMA
-Calculation: Signal line = HMA of Smoothed RSI, using a shorter lookback than the Smoothed RSI HMA
-Long: Smoothed RSI crosses above Signal line OR (highest close over a lookback > highest close over the immediately preceding window of the same length AND highest Smoothed RSI over that lookback < highest Smoothed RSI over the immediately preceding window of the same length AND Smoothed RSI < 30)
-Short: Smoothed RSI crosses below Signal line OR (highest close over a lookback < highest close over the immediately preceding window of the same length AND highest Smoothed RSI over that lookback > highest Smoothed RSI over the immediately preceding window of the same length AND Smoothed RSI > 70)

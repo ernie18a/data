@@ -1,4 +1,0 @@
-Calculation: Confirmed swing high/low = a high/low that is the extreme over a symmetric lookback, confirmed after the same number of bars on the right
-Calculation: Trend baseline = DEMA of HLC3, optionally EMA-smoothed; trend ATR uses a longer lookback than breakout ATR
-Long: Close > trend baseline + trend ATR × flip threshold AND trend baseline rising AND prior trend bearish OR close > a swing low + breakout ATR × break buffer followed within the trap window by a close > that swing low OR an armed bear-trap zone is touched while trend is bullish
-Short: Close < trend baseline − trend ATR × flip threshold AND trend baseline falling AND prior trend bullish OR close < a swing high − breakout ATR × break buffer followed within the trap window by a close < that swing high OR an armed bull-trap zone is touched while trend is bearish

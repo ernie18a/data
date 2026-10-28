@@ -1,2 +1,0 @@
-Long: selected volume metric is high AND (close >= open if direction basis is Candle, or close >= previous close if direction basis is Daily change)
-Short: selected volume metric is high AND (close < open if direction basis is Candle, or close < previous close if direction basis is Daily change)

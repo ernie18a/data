@@ -1,4 +1,0 @@
-Calculation: For each of up to five triples of stored pivots, scanning newest to oldest, let p0 be newest, p1 the preceding, and p2 the oldest; swing A = abs(p1 - p2), swing B = abs(p0 - p1), and retracement ratio = swing B / swing A. A triple is eligible when swing A > ATR(14) × the minimum-swing-size multiplier and swing B > 0; use the first eligible triple whose ratio matches.
-Calculation: Harmonic ratio match = ratio is within the configured tolerance of any enabled level: 0.382, 0.500, 0.618, or 0.786.
-Long: A newly detected harmonic ratio match whose newest pivot is a low and preceding pivot is a high OR the same condition when volume > its volume SMA and the bar is confirmed and the shared minimum signal cooldown has elapsed
-Short: A newly detected harmonic ratio match whose newest pivot is not a low following a high OR the same condition when volume > its volume SMA and the bar is confirmed and the shared minimum signal cooldown has elapsed

@@ -1,4 +1,0 @@
-Calculation: Profile-bin total activity = sum of each bar’s volume allocated to a price bin in proportion to the overlap of its high-low range with the bin; use the full volume if the bar has zero range. Include bars from the current, still-forming anchor period and each last-completed anchor period.
-Calculation: Profile-bin bullish activity = profile-bin total activity calculated from only bars whose close > open, using the same allocation and periods.
-Long: Profile-bin bullish activity > profile-bin total activity − profile-bin bullish activity
-Short: Profile-bin bullish activity ≤ profile-bin total activity − profile-bin bullish activity

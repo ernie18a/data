@@ -1,1 +1,0 @@
-On each confirmed bar, calculate the external benchmark’s log return over the configured long-term lookback. If it is positive, hold long the traded instrument. If it is negative, hold short when shorting is enabled; otherwise exit to flat. If the return is zero or unavailable, exit to flat. Change positions when the resulting direction differs from the current position.

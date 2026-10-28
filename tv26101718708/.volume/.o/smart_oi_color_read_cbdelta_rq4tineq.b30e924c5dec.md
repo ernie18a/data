@@ -1,7 +1,0 @@
-Calculation: Aggregated open interest = sum of enabled exchanges’ open-interest candles on the chart timeframe; use the current bar’s open and close.
-Calculation: Bullish force = 2 when close > previous close, plus 1 when smoothed CVD rate of change > threshold, plus 1 when smoothed OBV rate of change > threshold. Bearish force = 2 when close < previous close, plus 1 when smoothed CVD rate of change < negative threshold, plus 1 when smoothed OBV rate of change < negative threshold. Use the same smoothing and rate-of-change lookbacks for OI, OBV, and CVD.
-Calculation: Mixed-state override = enabled and none of these states applies: elevated-volume/body short squeeze, OI increase with bullish force, OI increase with bearish force, OI decrease with bullish force, or OI decrease with bearish force.
-Long: Aggregated open-interest close > open AND (bullish force > bearish force OR (mixed-state override AND close > previous close))
-Short: Aggregated open-interest close > open AND (bearish force > bullish force OR (mixed-state override AND close < previous close))
-Exit: Long, aggregated open-interest close < open AND (bearish force > bullish force OR (mixed-state override AND close < previous close))
-Exit: Short, aggregated open-interest close < open AND (bullish force > bearish force OR (mixed-state override AND close > previous close))

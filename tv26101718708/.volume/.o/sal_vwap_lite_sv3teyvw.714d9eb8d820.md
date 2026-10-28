@@ -1,6 +1,0 @@
-Calculation: Higher-timeframe direction = close of the last completed higher-timeframe bar compared with that bar’s session VWAP, calculated from (high + low + close) / 3; bullish when close > VWAP, bearish otherwise
-Calculation: Middle-timeframe direction = close of the last completed middle-timeframe bar compared with that bar’s session VWAP, calculated from (high + low + close) / 3; bullish when close > VWAP, bearish otherwise
-Long: higher-timeframe direction is bullish AND (strict mode is off OR middle-timeframe direction is bullish) AND shorter-period SMA of close > longer-period SMA of close AND close > longer-period SMA of close AND close > current-timeframe session VWAP AND prior bar’s upper wick (high − max(open, close)) ≥ minimum wick size AND RSI > bullish threshold
-Short: higher-timeframe direction is bearish AND (strict mode is off OR middle-timeframe direction is bearish) AND shorter-period SMA of close < longer-period SMA of close AND close < longer-period SMA of close AND close < current-timeframe session VWAP AND prior bar’s lower wick (min(open, close) − low) ≥ minimum wick size AND RSI < bearish threshold
-Exit: long, high ≥ entry price + target distance OR low ≤ entry price − stop distance
-Exit: short, low ≤ entry price − target distance OR high ≥ entry price + stop distance

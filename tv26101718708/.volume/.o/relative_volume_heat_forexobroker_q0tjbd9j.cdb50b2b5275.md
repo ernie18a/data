@@ -1,3 +1,0 @@
-Calculation: RVOL z-score = (volume / SMA(volume, shorter lookback) − SMA(RVOL, longer lookback)) / standard deviation(RVOL, same longer lookback)
-Long: close > longer-lookback trend EMA AND close crosses above shorter-lookback reclaim EMA AND RVOL z-score ≥ hot threshold (or ≥ warm threshold when hot-only is disabled) AND session filter passes if enabled AND position is not long AND cooldown since previous signal has elapsed AND bar is confirmed
-Short: close < longer-lookback trend EMA AND close crosses below shorter-lookback reclaim EMA AND RVOL z-score ≥ hot threshold (or ≥ warm threshold when hot-only is disabled) AND session filter passes if enabled AND position is not short AND cooldown since previous signal has elapsed AND bar is confirmed

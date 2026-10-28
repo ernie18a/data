@@ -1,1 +1,0 @@
-At each month-end, compare the latest temporary-help-services employment reading with the prior month’s reading. If it rose and no position is held, go long the traded instrument. If it fell while long, exit. Do not open short positions; if the reading is unchanged, take no action.

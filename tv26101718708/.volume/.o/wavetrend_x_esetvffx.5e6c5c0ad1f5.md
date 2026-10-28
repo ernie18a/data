@@ -1,8 +1,0 @@
-Calculation: CI = (HLC3 − VWMA or EMA of HLC3 over the channel lookback) / standard deviation of HLC3 over the same lookback × 50
-Calculation: WT1 = 1-D Kalman filter of CI, initialized with WT1 = CI and covariance = 1; each bar, predicted covariance = prior covariance + Q, gain = predicted covariance / (predicted covariance + R), WT1 = prior WT1 + gain × (CI − prior WT1), and updated covariance = (1 − gain) × predicted covariance. When ATR adaptation is enabled, Q = base Q × clamp(ATR(14) / SMA(ATR(14), 50), 0.5, 3); otherwise Q = base Q.
-Calculation: WT2 = EMA of WT1 over the signal lookback.
-Calculation: WT1 rank = percentile rank of WT1 over the rank lookback.
-Calculation: Smoothed Hurst proxy = EMA( log₂(standard deviation of HLC3 over the full Hurst window / standard deviation over half that window), 10).
-Calculation: Smoothed entropy = EMA of Shannon entropy, normalized by log(8), of HLC3 bar-to-bar changes in the entropy window, binned into 8 equal-width bins spanning the window's minimum to maximum change.
-Long: Confirmed WT1 crossover above WT2 AND (entropy gate disabled OR smoothed entropy ≤ configured maximum) AND (Hurst gate disabled OR smoothed Hurst proxy > 0.5 + configured band OR smoothed Hurst proxy is within the neutral band OR (smoothed Hurst proxy < 0.5 − configured band AND WT1 rank < 30 OR WT1 rank > 70)) AND WT1 rank < 45
-Short: Confirmed WT1 crossover below WT2 AND (entropy gate disabled OR smoothed entropy ≤ configured maximum) AND (Hurst gate disabled OR smoothed Hurst proxy > 0.5 + configured band OR smoothed Hurst proxy is within the neutral band OR (smoothed Hurst proxy < 0.5 − configured band AND WT1 rank < 30 OR WT1 rank > 70)) AND WT1 rank > 55

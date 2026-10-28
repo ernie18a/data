@@ -1,2 +1,0 @@
-Long: On each 1-minute, 5-minute, 15-minute, 1-hour, 4-hour, daily, and weekly bar, close > any of the 20-, 50-, 100-, or 200-period moving averages calculated on that timeframe's current bar (which may still be forming).
-Short: On each 1-minute, 5-minute, 15-minute, 1-hour, 4-hour, daily, and weekly bar, close <= any of the 20-, 50-, 100-, or 200-period moving averages calculated on that timeframe's current bar (which may still be forming).

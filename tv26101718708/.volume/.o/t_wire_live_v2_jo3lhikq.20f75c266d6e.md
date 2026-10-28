@@ -1,2 +1,0 @@
-Long: Fast EMA > slow EMA AND Supertrend bullish AND (previous bar fast EMA ≤ slow EMA OR previous bar Supertrend bearish)
-Short: Fast EMA < slow EMA AND Supertrend bearish AND (previous bar fast EMA ≥ slow EMA OR previous bar Supertrend bullish)

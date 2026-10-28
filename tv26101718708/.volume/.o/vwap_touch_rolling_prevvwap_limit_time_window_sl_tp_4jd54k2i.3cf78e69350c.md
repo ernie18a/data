@@ -1,6 +1,0 @@
-Calculation: Session VWAP = cumulative sum of (high + low + close) / 3 multiplied by volume, divided by cumulative volume since the current session began.
-Calculation: Entry limit = Session VWAP on the previous completed bar.
-Long: Previous completed bar close > its Session VWAP AND current time is within the configured entry window AND position is flat AND force-flat time has not been reached AND the configured long re-entry rule is satisfied; place a limit order at Entry limit.
-Short: Previous completed bar close < its Session VWAP AND current time is within the configured entry window AND position is flat AND force-flat time has not been reached AND the configured short re-entry rule is satisfied; place a limit order at Entry limit.
-Exit: long, low <= entry price - configured stop distance OR high >= entry price + configured target distance OR force-flat time has been reached.
-Exit: short, high >= entry price + configured stop distance OR low <= entry price - configured target distance OR force-flat time has been reached.

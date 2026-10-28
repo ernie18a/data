@@ -1,3 +1,0 @@
-Calculation: Pivot-window volume delta = sum over the bars from the pivot window’s left edge through its right edge of volume × (2 × (close − low) / (high − low) − 1); when high = low, use +volume if close ≥ open, otherwise −volume
-Long: A confirmed pivot low AND its absolute pivot-window volume delta / the greatest absolute delta among active pivot levels × 100 ≥ the minimum delta percentage filter
-Short: A confirmed pivot high AND its absolute pivot-window volume delta / the greatest absolute delta among active pivot levels × 100 ≥ the minimum delta percentage filter

@@ -1,3 +1,0 @@
-Calculation: Footprint row delta = estimated buy volume minus estimated sell volume for a price row, summed from lower-timeframe bars within the current chart bar or the selected composite lookback. Estimate each lower-timeframe bar’s volume evenly across its price ticks; assign it to buy volume when close > open, sell volume when close < open, and split it equally when close = open.
-Long: Footprint row delta > 0
-Short: Footprint row delta < 0

@@ -1,4 +1,0 @@
-Calculation: Confirmed swing high = a bar whose high is higher than the highs of an equal number of bars before and after it
-Calculation: Confirmed swing low = a bar whose low is lower than the lows of an equal number of bars before and after it
-Long: a confirmed swing low is more than ATR × tolerance away from the last accepted swing low OR the current low is above the high two bars earlier and the gap is at least ATR × minimum gap size
-Short: a confirmed swing high is more than ATR × tolerance away from the last accepted swing high OR the current high is below the low two bars earlier and the gap is at least ATR × minimum gap size

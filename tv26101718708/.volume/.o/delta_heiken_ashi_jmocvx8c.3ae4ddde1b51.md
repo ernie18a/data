@@ -1,6 +1,0 @@
-Calculation: Heiken Ashi close = (open + high + low + close) / 4; Heiken Ashi open = (previous Heiken Ashi open + previous Heiken Ashi close) / 2, initialized to (open + close) / 2
-Calculation: Estimated delta = EMA of volume × (close − open) / (high − low); use 0 when high = low
-Calculation: Delta gap percentage = (estimated delta − SMA of estimated delta) / highest value of absolute (estimated delta − SMA of estimated delta) over 5 times the SMA lookback; use 0 when the highest value is 0
-Calculation: Momentum state = fading if estimated delta is contrary to Heiken Ashi direction or delta gap percentage is below −0.15 for a bullish Heiken Ashi bar or above 0.15 for a bearish Heiken Ashi bar; otherwise strong if delta gap percentage is above 0.15 for a bullish Heiken Ashi bar or below −0.15 for a bearish Heiken Ashi bar; otherwise moderate. Estimated delta is contrary when it is below 0 for a bullish Heiken Ashi bar or above 0 for a bearish Heiken Ashi bar.
-Long: Heiken Ashi close ≥ Heiken Ashi open AND previous momentum state is fading AND current momentum state is strong OR estimated delta > 0 AND previous estimated delta ≤ 0
-Short: Heiken Ashi close < Heiken Ashi open AND previous momentum state is fading AND current momentum state is strong OR estimated delta < 0 AND previous estimated delta ≥ 0

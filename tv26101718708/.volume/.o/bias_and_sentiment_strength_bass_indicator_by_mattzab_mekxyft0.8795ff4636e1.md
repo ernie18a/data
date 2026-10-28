@@ -1,3 +1,0 @@
-Calculation: Volume bias = 30-period volume-weighted moving average of hlc3 − 30-period simple moving average of hlc3
-Long: Volume bias > 0 AND (MACD histogram > 0 OR RSI histogram > 0 OR slow stochastic histogram > 0 OR Awesome Oscillator > 0 OR Alligator oscillator > 0)
-Short: MACD histogram < 0 OR RSI histogram < 0 OR slow stochastic histogram < 0 OR Awesome Oscillator < 0 OR Alligator oscillator < 0

@@ -1,4 +1,0 @@
-Calculation: buy score = number of true conditions among close > (high + low) / 2, close > Bollinger Band middle, CCI(close) > 80, OBV > moving average of OBV, and +DI > -DI
-Calculation: sell score = number of true conditions among close < (high + low) / 2, close < Bollinger Band middle, CCI(close) < -80, OBV < moving average of OBV, and -DI > +DI
-Long: buy score >= minimum score AND ADX >= threshold AND close > EMA(close, longer period) AND EMA(close, shorter period) > EMA(close, longer period) AND (last signal is not long OR bars since last signal >= reset interval)
-Short: sell score >= minimum score AND ADX >= threshold AND close < EMA(close, longer period) AND EMA(close, shorter period) < EMA(close, longer period) AND (last signal is not short OR bars since last signal >= reset interval)

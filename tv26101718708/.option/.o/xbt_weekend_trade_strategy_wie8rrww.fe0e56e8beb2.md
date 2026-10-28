@@ -1,1 +1,0 @@
-On Saturday and Sunday, compare the traded instrument’s price with the prior Friday’s GXBT close. When flat, go short if price is more than 4.5% above that benchmark, or go long if it is more than 4.5% below it.

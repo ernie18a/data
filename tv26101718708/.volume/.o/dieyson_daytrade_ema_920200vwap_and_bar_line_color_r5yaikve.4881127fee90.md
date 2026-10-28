@@ -1,2 +1,0 @@
-Long: longer-lookback EMA > its previous-bar value OR shorter-lookback EMA crosses above longer-lookback EMA
-Short: longer-lookback EMA < its previous-bar value OR shorter-lookback EMA < its previous-bar value OR shorter-lookback EMA crosses below longer-lookback EMA

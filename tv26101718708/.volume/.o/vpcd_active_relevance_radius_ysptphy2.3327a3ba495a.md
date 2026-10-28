@@ -1,4 +1,0 @@
-Calculation: pressure score = confidence-scaled weighted blend of normalized raw-volume concentration, normalized chip-distribution concentration when available, and normalized price-memory strength; each volume concentration combines node prominence and density, and the raw/chip blend includes their weaker component.
-Calculation: surviving pressure rails = profile-row midpoints whose pressure score meets the rail threshold, excluding any rail dominated by a same-side rail with an equal-or-higher score at an equal-or-shorter distance; retain the highest-scoring survivors up to the configured limit.
-Long: close > a surviving pressure rail AND previous close <= that rail
-Short: close < a surviving pressure rail AND previous close >= that rail

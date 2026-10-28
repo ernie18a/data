@@ -1,3 +1,0 @@
-Calculation: Ribbon moving averages = the same selected moving-average type applied to OHLC4 at progressively longer lookbacks
-Long: Current bar is confirmed AND current close is above every ribbon moving average AND the previous bar did not have its close above every ribbon moving average
-Short: Current bar is confirmed AND current close is below every ribbon moving average AND the previous bar did not have its close below every ribbon moving average

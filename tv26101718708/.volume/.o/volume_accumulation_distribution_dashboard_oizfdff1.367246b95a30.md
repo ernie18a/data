@@ -1,4 +1,0 @@
-Calculation: Clean up/down volume ratio = total volume on bars where close is above the previous bar’s close divided by total volume on bars where close is below the previous bar’s close, over the rolling window; exclude scheduled-event bars.
-Calculation: Upper and lower bands = exp(median and standard deviation of the log clean up/down volume ratio over a longer rolling lookback, respectively plus and minus a width times the standard deviation); use manual bands until the rolling values are available or when auto-calibration is disabled.
-Long: The regime changes to accumulation after the clean up/down volume ratio is at or above the upper band for the required number of consecutive confirmed, non-event bars.
-Short: The regime changes to distribution after the clean up/down volume ratio is at or below the lower band for the required number of consecutive confirmed, non-event bars.

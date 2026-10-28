@@ -1,5 +1,0 @@
-Calculation: Confirmed swing high/low = a bar whose high/low is higher/lower than the same configurable number of bars on both sides; use only after the bars on the right are complete.
-Calculation: Active buy-side/sell-side pool = a confirmed swing high/low not previously swept or closed through; its sweep boundary is the swing high/low.
-Calculation: Buy-volume share = buy volume divided by total volume on the chart bar, expressed as a percentage; estimate buy volume by summing volume from lower-timeframe up candles, or, if unavailable, weight chart-bar volume by (close − low) / (high − low). Sell-volume share = 100% − buy-volume share.
-Long: low < active sell-side pool boundary AND close >= that boundary AND buy-volume share >= configured reversal-side confirmation threshold
-Short: high > active buy-side pool boundary AND close <= that boundary AND sell-volume share >= configured reversal-side confirmation threshold

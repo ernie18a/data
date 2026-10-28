@@ -1,2 +1,0 @@
-Long: current low > high two bars earlier AND current low - high two bars earlier >= minimum gap AND the middle bar belongs to a configured session
-Short: current high < low two bars earlier AND low two bars earlier - current high >= minimum gap AND the middle bar belongs to a configured session

@@ -1,9 +1,0 @@
-Calculation: KVO = EMA(signed volume, shorter KVO length) − EMA(signed volume, longer KVO length), where signed volume = volume × 100 if HLC3 > prior HLC3, otherwise −volume × 100
-Calculation: Trigger = EMA(KVO, trigger length shorter than both KVO lengths)
-Calculation: Spread = KVO − Trigger
-Calculation: KVO standard deviation = standard deviation of KVO over the normalization lookback
-Calculation: Run-up gap = maximum prior Spread over the run-up lookback / KVO standard deviation × 100 for a short; −minimum prior Spread over that lookback / KVO standard deviation × 100 for a long (exclude the cross bar)
-Calculation: Cross strength = absolute change in Spread over the strength lookback / KVO standard deviation × 100
-Calculation: Donchian midline = (highest high + lowest low) / 2 over the Donchian lookback; midline change = current midline − midline at the slope lookback ago
-Long: KVO > Trigger AND prior KVO ≤ prior Trigger AND KVO < −zero-line threshold × KVO standard deviation AND run-up gap ≥ minimum run-up gap AND cross strength ≥ minimum cross strength AND midline change ≥ −flat tolerance; N confirmation bars after the cross, Spread > 0 on every bar from the cross through confirmation AND Spread ≥ minimum close-through margin × current KVO standard deviation AND close > open
-Short: KVO < Trigger AND prior KVO ≥ prior Trigger AND KVO > zero-line threshold × KVO standard deviation AND run-up gap ≥ minimum run-up gap AND cross strength ≥ minimum cross strength AND midline change ≤ flat tolerance; N confirmation bars after the cross, Spread < 0 on every bar from the cross through confirmation AND Spread ≤ −minimum close-through margin × current KVO standard deviation AND close < open

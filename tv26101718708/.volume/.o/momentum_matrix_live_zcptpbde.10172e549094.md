@@ -1,5 +1,0 @@
-Calculation: ATR-normalized moving-average angle = arctan((current moving average − moving average N bars ago) / (ATR × N)) in degrees, where N is the angle lookback.
-Calculation: MACD = faster EMA(close) − slower EMA(close).
-Calculation: MACD upper band = rolling mean of MACD over the band lookback + deviation multiplier × rolling standard deviation of MACD over that lookback.
-Long: current angle > previous-bar angle AND current angle > positive angle threshold AND MACD ≥ MACD upper band AND NOT (previous-bar angle > angle two bars ago AND previous-bar angle > positive angle threshold AND previous-bar MACD ≥ previous-bar MACD upper band)
-Short: current angle < previous-bar angle AND current angle < negative angle threshold AND MACD < MACD upper band AND NOT (previous-bar angle < angle two bars ago AND previous-bar angle < negative angle threshold AND previous-bar MACD < previous-bar MACD upper band)

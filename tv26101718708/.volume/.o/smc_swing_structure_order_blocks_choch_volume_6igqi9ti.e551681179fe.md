@@ -1,6 +1,0 @@
-Calculation: Confirmed swing pivot high = a high greater than the highs on both sides over the same lookback; confirm only after the right-side lookback bars have completed. Keep the latest confirmed pivot until replaced, and mark it crossed after a close above it.
-Calculation: Confirmed swing pivot low = a low lower than the lows on both sides over the same lookback; confirm only after the right-side lookback bars have completed. Keep the latest confirmed pivot until replaced, and mark it crossed after a close below it.
-Long: Close > latest confirmed swing pivot high not yet crossed
-Short: Close < latest confirmed swing pivot low not yet crossed
-Long: Low > high two bars earlier AND (minimum gap threshold is disabled OR low − high two bars earlier ≥ ATR × minimum gap threshold) AND (trend alignment filter is disabled OR latest swing break direction is bullish)
-Short: High < low two bars earlier AND (minimum gap threshold is disabled OR low two bars earlier − high ≥ ATR × minimum gap threshold) AND (trend alignment filter is disabled OR latest swing break direction is bearish)

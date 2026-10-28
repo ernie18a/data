@@ -1,1 +1,0 @@
-On a new bullish or bearish price breakout from the Ichimoku cloud, enter in that direction only when the signal meets the strength and conviction requirements and no veto applies. Veto the entry if an available volatility index is spiking or if available cross-asset momentum opposes the signal. Otherwise, hold the existing directional bias; remain flat inside the cloud.

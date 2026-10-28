@@ -1,5 +1,0 @@
-Calculation: Weekly moving average = selected SMA, EMA, HMA, RMA, VWMA, or WMA of high, low, or close, using the same lookback; use the last completed weekly bar.
-Long: Supertrend direction changes from downtrend to uptrend AND close > weekly high moving average when high/low-range mode is enabled, otherwise close > weekly close moving average AND datetime is within the configured entry window AND long entries are permitted by the direction setting.
-Short: Supertrend direction changes from uptrend to downtrend AND close < weekly low moving average when high/low-range mode is enabled, otherwise close < weekly close moving average AND datetime is within the configured entry window AND short entries are permitted by the direction setting.
-Exit: long, if close-based exit mode is enabled, Supertrend direction changes from uptrend to downtrend; otherwise low <= Supertrend line.
-Exit: short, if close-based exit mode is enabled, Supertrend direction changes from downtrend to uptrend; otherwise high >= Supertrend line.

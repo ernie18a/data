@@ -1,6 +1,0 @@
-Calculation: Buy volume = sum of lower-timeframe volume within the current chart bar when the selected source is greater than or equal to its previous lower-timeframe value
-Calculation: Sell volume = sum of lower-timeframe volume within the current chart bar when the selected source is less than its previous lower-timeframe value
-Calculation: Active buy volume = sum of lower-timeframe buy volume when that bar’s volume exceeds the previous lower-timeframe bar’s volume
-Calculation: Active sell volume = sum of lower-timeframe sell volume when that bar’s volume exceeds the previous lower-timeframe bar’s volume
-Long: Buy volume >= sell volume OR active buy volume >= active sell volume OR (buy volume + sell volume > 0 AND buy volume / (buy volume + sell volume) >= volume threshold) OR (active buy volume + active sell volume > 0 AND active buy volume / (active buy volume + active sell volume) >= active volume threshold)
-Short: Buy volume < sell volume OR active buy volume < active sell volume OR (buy volume + sell volume > 0 AND sell volume / (buy volume + sell volume) >= volume threshold) OR (active buy volume + active sell volume > 0 AND active sell volume / (active buy volume + active sell volume) >= active volume threshold)

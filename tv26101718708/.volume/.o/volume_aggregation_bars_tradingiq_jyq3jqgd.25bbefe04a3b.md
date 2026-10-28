@@ -1,3 +1,0 @@
-Calculation: Volume aggregation bar = accumulate volume (or dollar volume if selected) from selected lower-timeframe bars, or chart-timeframe bars if lower-timeframe data is disabled, until the selected threshold is reached; use the last price in the block as its close. The Auto threshold is the 90th percentile of chart-bar volume over the 500-bar lookback.
-Long: Close of the completed volume aggregation bar > close of the previous completed volume aggregation bar
-Short: Close of the completed volume aggregation bar <= close of the previous completed volume aggregation bar

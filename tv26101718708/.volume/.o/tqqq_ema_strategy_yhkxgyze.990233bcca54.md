@@ -1,4 +1,0 @@
-Long: fast EMA crosses above slow EMA AND ADX is at or above its threshold AND account equity > 0 AND position is flat
-Calculation: take-profit price = entry price × take-profit multiplier
-Calculation: trailing stop = maximum of the prior trailing stop (or entry price × initial-stop multiplier when first set) and the current stop level; current stop level is entry price × higher stop multiplier when close is at least the higher profit threshold above entry, entry price when close is at least the lower profit threshold above entry, and entry price × initial-stop multiplier otherwise
-Exit: long, high >= take-profit price OR low <= trailing stop

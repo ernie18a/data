@@ -1,1 +1,0 @@
-Calculation: SuperB trend = Let spread = (close - open) * volume / (high - low); vp = cumulative sum of spread; out = high + shadow when shadow > 0, otherwise low + shadow, where shadow = (vp - SMA(vp, shorter lookback) /? )

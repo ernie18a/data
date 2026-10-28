@@ -1,4 +1,0 @@
-Calculation: LMA = sum(close × volume × volatility) / sum(volume × volatility) over a lookback; volatility is true range, high-low range, or absolute close change. Calculate separately on 1H, 4H, daily, and weekly bars, using the last completed bar.
-Calculation: LMA slope = current LMA − previous LMA on the same timeframe.
-Long: 1H, 4H, daily, or weekly LMA slope > 0 OR close > the corresponding LMA OR the corresponding LMA slope > 0 and its prior value ≤ 0 OR 1H close > 1H LMA and 1H LMA slope > 0 OR 1H LMA slope > 0 OR 1H LMA < 4H LMA is false and 4H LMA < daily LMA is false and daily LMA < weekly LMA is false and (1H LMA > 4H LMA OR 4H LMA > daily LMA OR daily LMA > weekly LMA).
-Short: 1H, 4H, daily, or weekly LMA slope < 0 OR close < the corresponding LMA OR the corresponding LMA slope < 0 and its prior value ≥ 0 OR 1H close < 1H LMA and 1H LMA slope < 0 OR 1H LMA slope < 0 OR 1H LMA < 4H LMA OR 4H LMA < daily LMA OR daily LMA < weekly LMA.

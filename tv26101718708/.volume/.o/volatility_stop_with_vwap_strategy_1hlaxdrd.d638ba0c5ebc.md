@@ -1,6 +1,0 @@
-Calculation: Volatility stop = a close-based trailing stop offset by ATR: in an uptrend, trail the highest close since the last reversal minus ATR; in a downtrend, trail the lowest close since the last reversal plus ATR. The trend is up when close ≥ stop and down otherwise; on reversal, reset the extreme to close and the stop to close minus ATR for an uptrend or close plus ATR for a downtrend.
-Calculation: Entry level = 2 × entry close − entry volatility stop
-Long: close > volatility stop AND close > weekly VWAP (using the still-forming weekly bar) AND no open long position AND the prior bar did not meet the long condition
-Short: close < volatility stop AND close < weekly VWAP (using the still-forming weekly bar) AND no open short position AND the prior bar did not meet the short condition
-Exit: long, close crosses above entry level OR high crosses above entry level OR close crosses below entry level OR low crosses above entry level OR short condition
-Exit: short, close crosses below entry level OR low crosses below entry level OR close crosses above entry level OR high crosses above entry level OR long condition

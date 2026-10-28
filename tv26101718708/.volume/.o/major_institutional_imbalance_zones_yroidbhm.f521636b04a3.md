@@ -1,3 +1,0 @@
-Calculation: Average volume = simple moving average of volume over a lookback
-Long: low > high two bars ago AND low - high two bars ago > an ATR-scaled minimum gap threshold AND close > open AND close - open > an ATR-scaled displacement threshold AND volume > average volume
-Short: high < low two bars ago AND low two bars ago - high > an ATR-scaled minimum gap threshold AND close < open AND open - close > an ATR-scaled displacement threshold AND volume > average volume

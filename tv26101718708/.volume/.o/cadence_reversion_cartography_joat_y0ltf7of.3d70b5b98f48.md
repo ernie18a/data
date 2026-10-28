@@ -1,7 +1,0 @@
-Calculation: EMA envelope = EMA(close, channel length) ± standard deviation(close, channel length) × deviation multiplier
-Calculation: VWAP stretch bands = session anchored VWAP of hlc3 ± standard deviation(close − session anchored VWAP, channel length) × VWAP stretch multiplier
-Calculation: Bullish rejection candle = close > open, lower wick > body size × rejection ratio, and close > low + (high − low) × lower-close threshold
-Calculation: Bearish rejection candle = close < open, upper wick > body size × rejection ratio, and close < low + (high − low) × upper-close threshold
-Calculation: Volume impulse = volume ≥ SMA(volume, volume-average length) × volume-impulse multiplier
-Long: low < lower EMA envelope AND low < lower VWAP stretch band OR confirmed bar AND no signal within the configured cooldown AND low < lower EMA envelope AND low < lower VWAP stretch band AND close > lower EMA envelope AND (RSI filter disabled OR RSI ≤ oversold threshold) AND (volume filter disabled OR volume impulse) AND (rejection requirement disabled OR bullish rejection candle)
-Short: high > upper EMA envelope AND high > upper VWAP stretch band OR confirmed bar AND no signal within the configured cooldown AND high > upper EMA envelope AND high > upper VWAP stretch band AND close < upper EMA envelope AND (RSI filter disabled OR RSI ≥ overbought threshold) AND (volume filter disabled OR volume impulse) AND (rejection requirement disabled OR bearish rejection candle)

@@ -1,5 +1,0 @@
-Calculation: Breakout setup = close > the highest high of the preceding lookback bars AND volume > its moving average × a multiplier AND (previous-bar consolidation AND OBV > its moving average over the consolidation lookback, OR close > open × a move threshold)
-Calculation: Previous-bar consolidation = the high-low range over the lookback bars ending two bars ago, divided by the close two bars ago, is below a range threshold
-Calculation: Pending confirmation = set on a breakout setup, recording that bar’s high; clear when close < the current lowest low over the lookback bars or when confirmation occurs
-Long: Pending confirmation AND high > the recorded setup-bar high AND close >= the current lowest low over the lookback bars AND no new breakout setup
-Exit: Long, close crosses below the selected EMA or SMA trend line OR (close < open AND volume > its moving average × a multiplier) OR (close < open AND prior close > prior open AND close < prior low AND open > prior high) OR low <= the recorded consolidation low when the initial stop is enabled

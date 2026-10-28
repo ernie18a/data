@@ -1,2 +1,0 @@
-Long: Supertrend direction < 0 and prior Supertrend direction > 0 and no bullish flip occurred within the cooldown period OR a newly confirmed pivot high is higher than the prior confirmed pivot high OR a newly confirmed pivot low is higher than the prior confirmed pivot low
-Short: Supertrend direction > 0 and prior Supertrend direction < 0 and no bearish flip occurred within the cooldown period OR a newly confirmed pivot high is lower than the prior confirmed pivot high OR a newly confirmed pivot low is lower than the prior confirmed pivot low

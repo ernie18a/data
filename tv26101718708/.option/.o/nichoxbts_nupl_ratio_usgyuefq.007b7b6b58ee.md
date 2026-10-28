@@ -1,1 +1,0 @@
-Use Bitcoin market capitalization and realized capitalization, independent of the traded instrument, to calculate unrealized profit as their difference divided by market capitalization. Go long when the resulting percentage is below 25%. Exit the long when it reaches 25% or higher. The indicator gives no short entry rule.

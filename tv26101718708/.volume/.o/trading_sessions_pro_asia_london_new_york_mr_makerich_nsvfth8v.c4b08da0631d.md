@@ -1,6 +1,0 @@
-Calculation: Asia high/low = maximum high / minimum low of the last completed Asia session.
-Calculation: London high/low = maximum high / minimum low across the last completed London Pre-Open and London sessions.
-Long: During London Pre-Open or London, (current low < last completed Asia low AND current close > last completed Asia low) OR (previous bar low < last completed Asia low AND previous bar close < last completed Asia low AND current close > last completed Asia low)
-Long: During New York Pre-Open or New York, (current low < the applicable last completed London or Asia low AND current close > that low) OR (previous bar low < that low AND previous bar close < that low AND current close > that low)
-Short: During London Pre-Open or London, (current high > last completed Asia high AND current close < last completed Asia high) OR (previous bar high > last completed Asia high AND previous bar close > last completed Asia high AND current close < last completed Asia high)
-Short: During New York Pre-Open or New York, (current high > the applicable last completed London or Asia high AND current close < that high) OR (previous bar high > that high AND previous bar close > that high AND current close < that high)

@@ -1,4 +1,0 @@
-Calculation: Trend template = close above short-, medium-, and long-term simple moving averages; medium-term above long-term; short-term above medium-term; long-term average rising versus an earlier value; close above a threshold relative to the rolling low and near a threshold relative to the rolling high
-Calculation: Relative strength rating = rating based on the asset’s return relative to the benchmark’s return over the same trailing lookback
-Calculation: Breakout = close above the prior rolling highest high AND relative volume above its threshold AND average traded value above its threshold
-Long: Trend template AND Breakout AND relative strength rating at least the strong tier AND average traded value above its threshold

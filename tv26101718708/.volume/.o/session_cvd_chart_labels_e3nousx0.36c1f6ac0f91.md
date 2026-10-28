@@ -1,5 +1,0 @@
-Calculation: Bar delta = volume × (2 × (close − low) ÷ (high − low) − 1), or 0 when high = low.
-Calculation: Active session CVD = cumulative bar delta, reset at each configured UTC session start; use the active session’s CVD, selecting Asia before London before New York when sessions overlap.
-Calculation: Confirmed CVD pivot high/low = a pivot in active session CVD with equal left and right lookbacks; associate its price high/low and session with the pivot bar, and confirm it after the right lookback bars.
-Long: Current confirmed CVD pivot low is higher than the previous CVD pivot low in the same session AND its price low is lower than the previous pivot’s price low OR current confirmed CVD pivot low is lower than the previous CVD pivot low in the same session AND its price low is higher than the previous pivot’s price low.
-Short: Current confirmed CVD pivot high is lower than the previous CVD pivot high in the same session AND its price high is higher than the previous pivot’s price high OR current confirmed CVD pivot high is higher than the previous CVD pivot high in the same session AND its price high is lower than the previous pivot’s price high.

@@ -1,7 +1,0 @@
-Calculation: Trend score = weighted average of close above the shortest-lookback moving average, shortest-lookback moving average above the middle-lookback moving average, and middle-lookback moving average above the longest-lookback moving average; each comparison scores +1 when true and -1 otherwise.
-Calculation: Momentum score = RSI normalized around 50.
-Calculation: Acceleration score = +1 when the MACD histogram rises, otherwise -1.
-Calculation: Energy score = weighted average of signed-volume bias, ATR bias, and open-interest bias when available. Signed-volume bias is the candle direction when signed volume exceeds its EMA, otherwise 0; signed volume is volume positive on an up candle and negative on a down candle. ATR bias is +1 when ATR exceeds its EMA, otherwise -1. Open-interest bias is +1/-1 when open interest is above its SMA and the candle is up/down, and -0.5/+0.5 when open interest is at or below its SMA and the candle is up/down. Omit open-interest bias when unavailable.
-Calculation: Bias score = weighted average of trend, momentum, acceleration, and energy scores on each of six progressively longer timeframes, then weighted average of those six timeframe scores. Use each timeframe's bar still forming.
-Long: Bias score > 0 OR any displayed timeframe Bias score > 0
-Short: Bias score < 0 OR any displayed timeframe Bias score < 0

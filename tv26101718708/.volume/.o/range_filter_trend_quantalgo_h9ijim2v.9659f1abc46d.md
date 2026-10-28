@@ -1,6 +1,0 @@
-Calculation: Smoothed range = absolute bar-to-bar change in the selected price source, smoothed twice using the same moving-average type: first over a lookback, then over a longer lookback of roughly twice that length; multiply by a range multiplier.
-Calculation: Range filter = on each bar, move to the selected price source minus the smoothed range if that value is above the previous filter; otherwise move to the source plus the smoothed range if that value is below the previous filter; otherwise hold the previous filter. Use the source as the initial filter value.
-Long: On a confirmed bar, the range filter steps up AND the prior trend state is not bullish.
-Short: On a confirmed bar, the range filter steps down AND the prior trend state is not bearish.
-Exit: long, the range filter steps down OR neutral state is enabled AND the filter has stayed flat for at least the configured range-bars count.
-Exit: short, the range filter steps up OR neutral state is enabled AND the filter has stayed flat for at least the configured range-bars count.

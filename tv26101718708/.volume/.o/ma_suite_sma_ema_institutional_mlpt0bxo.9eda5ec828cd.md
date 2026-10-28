@@ -1,2 +1,0 @@
-Long: Shorter-lookback SMA crosses above longer-lookback SMA; both use the configured calculation timeframe and lookahead_off (an HTF value is used when that bar completes).
-Short: Shorter-lookback SMA crosses below longer-lookback SMA; both use the configured calculation timeframe and lookahead_off (an HTF value is used when that bar completes).

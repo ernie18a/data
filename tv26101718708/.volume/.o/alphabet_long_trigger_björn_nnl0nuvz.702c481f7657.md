@@ -1,2 +1,0 @@
-Calculation: Average volume = simple moving average of volume over a configurable lookback, including the current bar
-Long: close is between the lower and upper buy-zone bounds, inclusive AND close > open AND low > previous bar low AND volume > average volume × configurable volume factor AND current-timeframe Nasdaq close (current bar) >= previous completed Nasdaq close AND (current-timeframe Nasdaq close (current bar) − previous completed Nasdaq close) / previous completed Nasdaq close > configurable lower percentage limit

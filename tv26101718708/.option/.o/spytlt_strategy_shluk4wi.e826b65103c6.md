@@ -1,1 +1,0 @@
-Use the external instrument’s closing price and its simple moving average. Enter long on a crossover above the average, provided the signal occurs within the configured trading window. Exit all positions on a crossunder below the average. Make no short entries.

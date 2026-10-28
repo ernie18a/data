@@ -1,4 +1,0 @@
-Calculation: Daily 4-bar high = highest high of the previous four completed daily bars
-Calculation: Daily ATR percentage = daily ATR divided by daily close, multiplied by 100
-Calculation: Volume breakout threshold = volume EMA plus a multiplier of volume standard deviation, using the same lookback
-Long: At least one daily rate of change (longer, medium, or shorter lookback) exceeds its threshold AND daily ATR percentage exceeds its threshold AND (close exceeds a buffered EMA with one of progressively longer lookbacks OR close exceeds the buffered previous four completed daily bars' high) AND close > open AND volume > volume breakout threshold

@@ -1,1 +1,0 @@
-Go long when the traded instrument’s RSI exceeds its preset’s buy threshold and Bitcoin’s daily price is above its daily exponential moving average. Exit when the traded instrument’s price crosses below its weighted moving average in the smoother preset, or when its RSI falls below its sell threshold in the faster preset. Long-only.

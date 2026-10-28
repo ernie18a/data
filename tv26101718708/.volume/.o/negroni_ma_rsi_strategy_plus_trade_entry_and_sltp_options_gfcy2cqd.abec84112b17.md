@@ -1,9 +1,0 @@
-Calculation: Fast, trend, and slow moving averages = selected EMA, SMA, VWMA, or HMA; fast and trend use shorter lookbacks than slow
-Calculation: Fixed higher-timeframe moving average = selected EMA, SMA, VWMA, or HMA of the selected source on the last completed higher-timeframe bar
-Calculation: ATR = average true range over the selected lookback
-Calculation: Long stop/target = entry price minus/plus the selected ATR multiple, or entry price times (1 minus/plus the selected percentage)
-Calculation: Short stop/target = entry price plus/minus the selected ATR multiple, or entry price times (1 plus/minus the selected percentage)
-Long: (close crosses below fast moving average OR close crosses above fast moving average) AND trend moving average > slow moving average AND RSI > selected buy level AND close > fixed higher-timeframe moving average; OR (close crosses below fast moving average OR close crosses above fast moving average) AND fast moving average > trend moving average > slow moving average AND RSI > selected buy level AND close > fixed higher-timeframe moving average
-Short: (close crosses above fast moving average OR close crosses below fast moving average) AND trend moving average < slow moving average AND RSI < selected sell level AND close < fixed higher-timeframe moving average; OR (close crosses above fast moving average OR close crosses below fast moving average) AND fast moving average < trend moving average < slow moving average AND RSI < selected sell level AND close < fixed higher-timeframe moving average
-Exit: long, low crosses below fast moving average OR price reaches the configured long stop or target
-Exit: short, high crosses above fast moving average OR price reaches the configured short stop or target

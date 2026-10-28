@@ -1,7 +1,0 @@
-Calculation: Adapted close = close when smoothing is off; otherwise a recursive Kalman estimate (initialize estimate to first close and error to 1; each bar use q = 1/length, predicted error = prior error + q, gain = predicted error / (predicted error + 1), estimate = prior estimate + gain × (close − prior estimate), and error = (1 − gain) × predicted error), or SMA(close, length) + (close − close[length]) / 2 for LLAMA
-Calculation: Illiquidity stress z-score = (ln(1 + true range / safe volume) − rolling mean) / rolling standard deviation, using the same lookback for mean and standard deviation; safe volume is 1 when volume is zero or unavailable
-Calculation: Stop distance = ATR at entry × stop multiplier; risk unit = stop distance
-Long: previous completed bar's illiquidity stress z-score > stress threshold AND previous completed bar's adapted close < its EMA AND previous completed bar's close < open AND (ADX filter disabled OR previous completed bar's ADX >= threshold)
-Short: previous completed bar's illiquidity stress z-score > stress threshold AND previous completed bar's adapted close > its EMA AND previous completed bar's close > open AND (ADX filter disabled OR previous completed bar's ADX >= threshold)
-Exit: long, low <= entry price − stop distance OR high >= entry price + risk unit × third target R-multiple
-Exit: short, high >= entry price + stop distance OR low <= entry price − risk unit × third target R-multiple

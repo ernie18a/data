@@ -1,4 +1,0 @@
-Calculation: Strong volume = volume > previous bar volume OR (volume < previous bar volume AND previous bar volume < volume two bars ago AND close > previous bar close AND previous bar close > close two bars ago AND open > previous bar open AND previous bar open > open two bars ago) OR (volume < previous bar volume AND previous bar volume < volume two bars ago AND close < previous bar close AND previous bar close < close two bars ago AND open < previous bar open AND previous bar open < open two bars ago)
-Calculation: Small candle = high - low < close × candle-height parameter
-Long: SuperTrend indicates an uptrend AND close < open AND Strong volume AND Small candle
-Short: SuperTrend indicates a downtrend AND close > open AND Strong volume AND Small candle

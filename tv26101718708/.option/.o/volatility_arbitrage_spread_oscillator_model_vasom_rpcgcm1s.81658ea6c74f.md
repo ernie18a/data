@@ -1,1 +1,0 @@
-Calculate an RSI on the price spread between the front-month and second-month volatility futures. Go long the traded instrument when the spread RSI is below a lower threshold, and exit the long when it rises above an upper threshold. No short entry is specified.

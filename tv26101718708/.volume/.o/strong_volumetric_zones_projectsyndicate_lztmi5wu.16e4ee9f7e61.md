@@ -1,7 +1,0 @@
-Calculation: Relative volume = current bar volume / 20-bar average volume
-Calculation: Delta dominance = abs(buy volume − sell volume) / total volume, with intrabar volume classified as buy when the intrabar close is at or above its open, otherwise sell
-Calculation: Stacked imbalance = at least 3 consecutive price rows where buy volume exceeds the adjacent row’s sell volume by the configured ratio, or sell volume exceeds the adjacent row’s buy volume by that ratio
-Long: Delta dominance > 0.35 AND abs(close − open) < 0.30 × (high − low) AND Relative volume > 1.2 AND sell volume > buy volume OR NOT (Delta dominance > 0.35 AND abs(close − open) < 0.30 × (high − low) AND Relative volume > 1.2) AND Relative volume > 1.3 AND Delta dominance < 0.12 AND close ≤ low + 0.30 × (high − low) OR neither preceding condition AND Stacked imbalance is buy-sided
-Short: Delta dominance > 0.35 AND abs(close − open) < 0.30 × (high − low) AND Relative volume > 1.2 AND buy volume > sell volume OR NOT (Delta dominance > 0.35 AND abs(close − open) < 0.30 × (high − low) AND Relative volume > 1.2) AND Relative volume > 1.3 AND Delta dominance < 0.12 AND close ≥ high − 0.30 × (high − low) OR neither preceding condition AND Stacked imbalance is sell-sided
-Exit: Long, close below the bottom of the demand zone supporting the position
-Exit: Short, close above the top of the supply zone supporting the position

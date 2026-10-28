@@ -1,1 +1,0 @@
-Use Bitcoin’s daily SOPR, ranked by its historical percentile and smoothed. In extremes mode, go long when the smoothed percentile is below the lower extreme and short when it is above the upper extreme; otherwise take no directional action. In trend mode, go long when the short-term smoothed percentile is above the long-term smoothed percentile, and short when it is below.

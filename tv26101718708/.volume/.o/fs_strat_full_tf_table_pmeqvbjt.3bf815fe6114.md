@@ -1,4 +1,0 @@
-Calculation: Bullish alignment score = count of active timeframes among yearly, quarterly, monthly, weekly, daily, 130-minute, and four configured intraday timeframes whose current (possibly still-forming) bar has high > the previous completed bar’s high AND low >= the previous completed bar’s low
-Calculation: Bearish alignment score = count of active timeframes among yearly, quarterly, monthly, weekly, daily, 130-minute, and four configured intraday timeframes whose current (possibly still-forming) bar has high <= the previous completed bar’s high AND low < the previous completed bar’s low
-Long: Bullish alignment score >= configured minimum aligned-timeframe count
-Short: Bearish alignment score >= configured minimum aligned-timeframe count

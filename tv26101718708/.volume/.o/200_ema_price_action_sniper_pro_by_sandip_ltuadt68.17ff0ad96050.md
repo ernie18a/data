@@ -1,4 +1,0 @@
-Calculation: Bullish engulfing = current close > current open AND previous close < previous open AND current close > previous open AND current open < previous close
-Calculation: Bearish engulfing = current close < current open AND previous close > previous open AND current close < previous open AND current open > previous close
-Long: close > long-term EMA AND long-term EMA > its previous-bar value AND fast EMA crosses above slower EMA AND Bullish engulfing AND close > VWAP AND ATR > its simple moving average over the ATR lookback AND ADX > its minimum threshold AND absolute distance between fast and slower EMA is at least the chop threshold
-Short: close < long-term EMA AND long-term EMA < its previous-bar value AND fast EMA crosses below slower EMA AND Bearish engulfing AND close < VWAP AND ATR > its simple moving average over the ATR lookback AND ADX > its minimum threshold AND absolute distance between fast and slower EMA is at least the chop threshold

@@ -1,6 +1,0 @@
-Calculation: Baseline = double-smoothed EMA of close
-Calculation: Volatility bands = Baseline ± ATR × multiplier
-Calculation: Bullish anchored VWAP = VWAP of high[1], anchored at each qualifying high pivot during the bullish regime; restart from the latest anchor when that pivot is confirmed
-Calculation: Bearish anchored VWAP = VWAP of low[1], anchored at each qualifying low pivot during the bearish regime; restart from the latest anchor when that pivot is confirmed
-Long: bullish regime (set when close crosses above the upper volatility band; set bearish when close crosses below the lower volatility band, otherwise retain the prior regime) AND a bullish anchored VWAP is active AND close ≥ bullish anchored VWAP AND no high pivot is confirmed on this bar
-Short: bearish regime (set when close crosses below the lower volatility band; set bullish when close crosses above the upper volatility band, otherwise retain the prior regime) AND a bearish anchored VWAP is active AND close ≤ bearish anchored VWAP AND no low pivot is confirmed on this bar

@@ -1,9 +1,0 @@
-Calculation: Discount/premium midpoint = (highest high over the lookback + lowest low over the lookback) / 2, using current-chart bars
-Calculation: Bullish fair value gap = current low > high two bars earlier AND previous close > high two bars earlier; bearish fair value gap = current high < low two bars earlier AND previous close < low two bars earlier
-Calculation: Internal and swing pivot highs/lows = highs/lows that are the maximum/minimum within a centered window; use a shorter lookback for internal pivots and a longer lookback for swing pivots. Use the latest confirmed pivot of each kind.
-Long: position is flat AND close crosses above the latest internal pivot high OR the latest swing pivot high AND close < discount/premium midpoint AND a bullish fair value gap exists on this bar or the previous bar
-Short: position is flat AND close crosses below the latest internal pivot low OR the latest swing pivot low AND close > discount/premium midpoint AND a bearish fair value gap exists on this bar or the previous bar
-Calculation: Long initial stop = signal-bar low − ATR × stop multiplier; short initial stop = signal-bar high + ATR × stop multiplier. While positioned, long trailing stop = bar low − ATR × stop multiplier and short trailing stop = bar high + ATR × stop multiplier. Ratchet the long stop upward and the short stop downward; after the first profit target is reached, set the stop to entry price.
-Calculation: Long first profit target = signal close + (signal close − long initial stop) × reward/risk multiple; short first profit target = signal close − (short initial stop − signal close) × reward/risk multiple.
-Exit: Long, high >= first profit target OR low <= long stop
-Exit: Short, low <= first profit target OR high >= short stop

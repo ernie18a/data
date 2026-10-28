@@ -1,2 +1,0 @@
-Long: close >= previous chart bar close OR current daily close >= daily close approximately one month earlier (using the current, still-forming daily bar)
-Short: close < previous chart bar close OR current daily close < daily close approximately one month earlier (using the current, still-forming daily bar)

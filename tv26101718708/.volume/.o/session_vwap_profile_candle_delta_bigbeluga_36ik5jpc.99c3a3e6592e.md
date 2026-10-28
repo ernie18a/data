@@ -1,3 +1,0 @@
-Calculation: Session VWAP = volume-weighted mean of chart-bar closes since the start of the current session; session standard deviation = square root of the volume-weighted mean squared close minus squared Session VWAP; outer bands = Session VWAP plus/minus a configurable multiple of that standard deviation, using the current session including the current completed bar
-Long: current bar low < lower outer band AND current bar close > lower outer band AND at least the configured minimum number of bars have elapsed since the previous signal
-Short: current bar high > upper outer band AND current bar close < upper outer band AND at least the configured minimum number of bars have elapsed since the previous signal

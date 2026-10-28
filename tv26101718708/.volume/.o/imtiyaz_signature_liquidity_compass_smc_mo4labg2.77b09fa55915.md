@@ -1,3 +1,0 @@
-Calculation: Confirmed swing high/low = high/low that is the highest/lowest across the same number of bars before and after it; use only after the bars on both sides have completed.
-Long: close > latest confirmed swing high AND previous close <= that swing high OR low > high two bars earlier
-Short: close < latest confirmed swing low AND previous close >= that swing low OR high < low two bars earlier

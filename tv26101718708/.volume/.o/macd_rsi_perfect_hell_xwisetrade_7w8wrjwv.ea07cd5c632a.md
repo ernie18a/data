@@ -1,3 +1,0 @@
-Calculation: Average volume = simple moving average of volume over the volume lookback
-Long: MACD line crosses above its signal line AND RSI crosses above the oversold level AND volume is greater than average volume AND volume is greater than previous bar volume AND close is greater than close at the price lookback bars ago AND more than the cooldown interval has elapsed since the previous long marking
-Short: MACD line crosses below its signal line AND RSI crosses below the overbought level AND volume is greater than average volume AND volume is greater than previous bar volume AND close is less than close at the price lookback bars ago AND more than the cooldown interval has elapsed since the previous short marking

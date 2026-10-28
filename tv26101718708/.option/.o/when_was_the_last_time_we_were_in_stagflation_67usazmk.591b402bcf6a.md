@@ -1,1 +1,0 @@
-Enter a long position in the US dollar when monthly US inflation is above its threshold, the monthly 10-year Treasury interest rate is at or above its threshold, and monthly GDP growth is at or below its threshold. No short or exit condition is defined.

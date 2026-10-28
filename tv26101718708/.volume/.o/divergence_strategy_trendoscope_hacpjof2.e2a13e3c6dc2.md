@@ -1,4 +1,0 @@
-Calculation: Divergence = On a new three-pivot zigzag pattern, compare the latest pivot with the prior pivot of the same kind for both price and the selected oscillator. Regular divergence has opposing price and oscillator directions; hidden divergence has matching directions. Classify it using the selected trend method: prior-pivot zigzag trend, moving-average direction between the divergence pivots, or external trend signal. Keep only patterns whose price and oscillator divergence lines are not crossed by intervening bars.
-Long: Valid bullish regular or hidden divergence, permitted by the configured direction and divergence-type filters.
-Short: Valid bearish regular or hidden divergence, permitted by the configured direction and divergence-type filters.
-Exit: Long, close <= stop-loss or close >= take-profit; Short, close >= stop-loss or close <= take-profit.

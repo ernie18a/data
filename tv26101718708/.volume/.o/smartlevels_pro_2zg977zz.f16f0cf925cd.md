@@ -1,2 +1,0 @@
-Long: (close > session VWAP AND fast EMA > slow EMA) OR (close > session VWAP AND RSI > 50) OR (fast EMA > slow EMA AND RSI > 50)
-Short: (close <= session VWAP AND fast EMA <= slow EMA) OR (close <= session VWAP AND RSI <= 50) OR (fast EMA <= slow EMA AND RSI <= 50)

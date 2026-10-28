@@ -1,2 +1,0 @@
-Long: high crosses above the previous completed daily high AND close > EMA(close) AND Chaikin Money Flow > 0
-Short: low crosses below the previous completed daily low AND close < EMA(close) AND Chaikin Money Flow < 0

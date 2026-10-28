@@ -1,9 +1,0 @@
-Calculation: Normalized price slope = the percentage change over a configurable lookback in a configurable moving average of price, divided by an EMA of its absolute values over a configurable normalization lookback, then clamped to [-3, 3] and divided by 3.
-Calculation: Normalized volume slope = the percentage change over a configurable lookback in a configurable moving average of volume, divided by an EMA of its absolute values over a configurable normalization lookback, then clamped to [-3, 3] and divided by 3.
-Calculation: Confirmed price pivots = pivot highs and lows in high and low, confirmed after a configurable number of bars to the right; compare each pivot with the previous pivot of the same type.
-Calculation: Pivot volume = either volume on the pivot bar or the configurable-length SMA of volume on the pivot bar.
-Long: Normalized price slope >= strong-move threshold AND normalized volume slope >= high-volume threshold AND the condition was false on the previous bar
-Long: Normalized price slope > flat-price threshold AND normalized volume slope < 0 AND abs(normalized price slope) / (abs(normalized volume slope) + 0.20) >= efficient-move threshold AND the condition was false on the previous bar
-Long: A confirmed lower-low pivot has lower pivot volume than the previous confirmed low pivot, meets the configurable minimum price and volume differences, and is within the configurable maximum distance from that pivot
-Short: Normalized price slope <= -strong-move threshold AND normalized volume slope >= high-volume threshold AND the condition was false on the previous bar
-Short: A confirmed higher-high pivot has lower pivot volume than the previous confirmed high pivot, meets the configurable minimum price and volume differences, and is within the configurable maximum distance from that pivot

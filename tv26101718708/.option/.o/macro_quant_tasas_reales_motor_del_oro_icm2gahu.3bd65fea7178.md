@@ -1,1 +1,0 @@
-Using daily nominal 10-year government bond yields and expected 10-year inflation, estimate real yields as nominal yields minus expected inflation. For the traded gold instrument, take long positions when real yields are falling and short positions, or reduce long exposure, when they are rising. Treat negative real yields as a particularly bullish regime for gold.

@@ -1,6 +1,0 @@
-Calculation: Moving-average slope = the simple moving average of (selected moving average / that moving average from a longer lookback ago - 1), sampled from the last completed selected higher-timeframe bar
-Calculation: Momentum slope = the simple moving average of (selected momentum indicator / that indicator from a longer lookback ago - 1), sampled from the last completed selected higher-timeframe bar; momentum is RSI, CCI, or RSI of rate of change
-Calculation: Average range percentage = the simple moving average of ((1 - low / high) × 100) over chart-timeframe bars
-Calculation: Long-term SMA change = the chart-timeframe SMA of close from 3 bars ago minus that SMA from 1 bar ago
-Long: If average range percentage < minimum volatility, long-term SMA change < -low-volatility threshold; otherwise, moving-average slope > buy threshold AND momentum slope > buy threshold
-Short: If average range percentage < minimum volatility, long-term SMA change > low-volatility threshold; otherwise, moving-average slope < sell threshold AND momentum slope < sell threshold

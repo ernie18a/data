@@ -1,2 +1,0 @@
-Long: the selected moving average of alternate-timeframe close crosses above the selected moving average of alternate-timeframe open; use the same moving-average type and length for both, on the alternate-timeframe bar still forming
-Short: the selected moving average of alternate-timeframe close crosses below the selected moving average of alternate-timeframe open; use the same moving-average type and length for both, on the alternate-timeframe bar still forming

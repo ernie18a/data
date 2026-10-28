@@ -1,6 +1,0 @@
-Calculation: kNN prediction = Select the configured feature pair from RSI, CCI, ROC, or volume scaled to 0–99 by its rolling minimum and maximum; use the longer lookback for the first feature and the shorter lookback for the second, or average all four features at each lookback. Within the configured training date window, store each pair with label sign(previous close − current close). For each bar, scan stored samples in order and append a label whenever its Euclidean distance from the current pair exceeds the largest distance seen so far in that scan; retain the most recent floor(sqrt(K)) appended labels across bars, and sum them for the prediction.
-Calculation: Volatility filter = disabled, or ATR with the shorter lookback > ATR with the longer lookback.
-Long: kNN prediction > 0 AND volatility filter is satisfied AND previous signal is not long
-Short: kNN prediction < 0 AND volatility filter is satisfied AND previous signal is not short
-Exit: long position, kNN prediction ≤ 0 OR volatility filter is not satisfied
-Exit: short position, kNN prediction ≥ 0 OR volatility filter is not satisfied

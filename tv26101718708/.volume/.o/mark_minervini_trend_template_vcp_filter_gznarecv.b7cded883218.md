@@ -1,6 +1,0 @@
-Calculation: Mansfield relative strength = (close / its long-term SMA) / (benchmark close / its long-term SMA) - 1
-Calculation: Distance above rolling low = (close - rolling low) / rolling low
-Calculation: Distance below rolling high = (rolling high - close) / rolling high
-Calculation: Short-term range = rolling highest high minus rolling lowest low
-Calculation: Earlier long-term range = rolling highest high minus rolling lowest low, measured over the longer lookback ending before the short-term range
-Long: close > medium-term SMA AND close > long-term SMA AND medium-term SMA > long-term SMA AND long-term SMA is rising versus an earlier value AND short-term SMA > medium-term SMA AND short-term SMA > long-term SMA AND close > short-term SMA AND distance above rolling low >= required threshold AND distance below rolling high <= allowed threshold AND Mansfield relative strength > 0 AND (short-term range < a fraction of the earlier long-term range AND volume < a fraction of its medium-term SMA OR close crosses above the previous short-term rolling high AND volume > its medium-term SMA)

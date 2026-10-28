@@ -1,1 +1,0 @@
-Compare confirmed swing highs and lows on the traded instrument with those on a comparison instrument. Signal short when exactly one instrument makes a higher swing high than its prior swing high; signal long when exactly one makes a lower swing low than its prior swing low. Do not signal an exit.

@@ -1,5 +1,0 @@
-Calculation: Heikin-Ashi close = (open + high + low + close) / 4; Heikin-Ashi open = (prior Heikin-Ashi open + prior Heikin-Ashi close) / 2, seeded on the first bar with (open + close) / 2
-Calculation: Volume POC = close of a bar when its volume equals the highest volume in a rolling lookback; otherwise retain the previous POC
-Long: close crosses above chart-timeframe HMA AND Heikin-Ashi close > Heikin-Ashi open AND close > chart-timeframe Supertrend AND volume >= chart-timeframe volume SMA × its multiplier AND (close > Volume POC OR close > chart-timeframe EMA) AND chart-timeframe RSI < 70 AND chart-timeframe CCI > 0
-Short: chart-timeframe close crosses below the HMA calculated from the still-forming daily bar AND RSI calculated from the still-forming daily bar < 45
-Exit: long, close crosses below chart-timeframe Supertrend OR (close crosses below chart-timeframe HMA AND chart-timeframe RSI > 75)

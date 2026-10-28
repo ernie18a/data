@@ -1,5 +1,0 @@
-Calculation: Doji = open > close AND open < close × (1 + tolerance), OR open < close AND open > close × (1 − tolerance)
-Calculation: Morning Doji Star = two bars ago, abs(close − open) / (high − low) > 0.6 AND close < open; one bar ago, (open > close AND open < close × (1 + tolerance)) OR (open < close AND open > close × (1 − tolerance) AND close < close[2] + high[2] − low[2]); current bar, close > open AND close > close[2] + high[2] − low[2]
-Long: (Doji OR Morning Doji Star) AND close > EMA(close, 60) AND (max-loss filter disabled OR close − lowest low over stop lookback < close × max-loss percentage)
-Short: (Doji OR Morning Doji Star) AND close < EMA(close, 60)
-Exit: long, low <= lowest low over stop lookback OR high >= entry price × (1 + take-profit percentage) OR MFI(10) crosses above 90 OR (high reaches entry price plus trailing-threshold percentage of close AND low <= highest high since activation minus trailing-offset percentage of close)

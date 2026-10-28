@@ -1,2 +1,0 @@
-Long: datetime >= 2018-10-01 00:00 AND close > VWAP AND close > shorter-lookback EMA AND close > longer-lookback EMA
-Short: datetime >= 2018-10-01 00:00 AND close < VWAP AND close < shorter-lookback EMA

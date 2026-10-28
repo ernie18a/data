@@ -1,8 +1,0 @@
-Calculation: Supertrend trend = +1 when close crosses above the prior down channel and −1 when close crosses below the prior up channel; otherwise retain the prior trend. Channels use hl2 ± multiplier × ATR, with the upper channel carried forward as the maximum of its raw value and prior value when the prior close is above the prior upper channel, and the lower channel carried forward as the minimum of its raw value and prior value when the prior close is below the prior lower channel.
-Calculation: Long stop = long entry price × (1 − stop percentage); long target = long entry price × (1 + target percentage); short stop = short entry price × (1 + stop percentage); short target = short entry price × (1 − target percentage).
-Long: Supertrend trend changes from −1 to +1
-Short: Supertrend trend changes from +1 to −1
-Long: All of close > VWAP, close > VWMA, shorter-lookback EMA > longer-lookback EMA, Supertrend trend = +1, RSI > upper threshold, shorter-lookback EMA > longer-lookback EMA, ADX > threshold, volume > volume EMA, and datetime within the configured date window; the combined condition changes from false to true
-Short: All of close < VWAP, close < VWMA, close < longer-lookback EMA, Supertrend trend = −1, RSI < lower threshold, shorter-lookback EMA < longer-lookback EMA, ADX > threshold, volume > volume EMA, and datetime within the configured date window; the combined condition changes from false to true
-Exit: Long, low < long stop OR high > long target OR short-entry condition
-Exit: Short, high > short stop OR low < short target OR long-entry condition

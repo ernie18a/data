@@ -1,2 +1,0 @@
-Long: high > the previous bar’s highest high over the Turtle lookback OR the up-count since its last reset is 1–9 OR (close < close four bars ago AND the buy setup condition is true)
-Short: low < the previous bar’s lowest low over the Turtle lookback OR the down-count since its last reset is 1–9 OR (close > close four bars ago AND the sell setup condition is true)

@@ -1,3 +1,0 @@
-Calculation: Trend score = EMA-smoothed signed evidence. Compute log returns; average their fast and slow EMAs, with the fast lookback shorter than the slow. Divide that momentum by the square root of the long-lookback EMA of squared returns times the random-walk standard deviation implied by both EMA lengths. Map the absolute ratio through a soft saturating curve, multiply by volume support (the signed volume-weighted share of returns over the slow lookback, scaled by effective bar count; use equal weights if volume is unavailable), then smooth. Use completed bars.
-Long: Trend score > the indecision-band threshold
-Short: Trend score < −the indecision-band threshold

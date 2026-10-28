@@ -1,4 +1,0 @@
-Long: Current Hull moving average > previous-bar Hull moving average AND current Hull moving average < weighted moving average AND current Hull moving average > volume-weighted moving average AND position side = flat
-Short: Current Hull moving average < previous-bar Hull moving average AND current Hull moving average > weighted moving average AND current Hull moving average < volume-weighted moving average AND position side = flat
-Exit: Long, Current Hull moving average < previous-bar Hull moving average AND current Hull moving average > weighted moving average AND current Hull moving average < volume-weighted moving average
-Exit: Short, Current Hull moving average > previous-bar Hull moving average AND current Hull moving average < weighted moving average AND current Hull moving average > volume-weighted moving average

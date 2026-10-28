@@ -1,5 +1,0 @@
-Calculation: EMA = exponential moving average of close; use short-, medium-, and long-term lookbacks in increasing order
-Calculation: Resistance = latest confirmed pivot high, requiring the configured number of bars on both sides
-Calculation: Average volume = simple moving average of volume over a configurable lookback
-Long: (short-term EMA > medium-term EMA AND medium-term EMA > long-term EMA AND close > long-term EMA) OR (close[1] <= resistance AND close > resistance AND close > open AND short-term EMA > medium-term EMA AND medium-term EMA > long-term EMA AND close > long-term EMA AND volume > average volume × configurable multiplier) OR (close crosses above medium-term EMA AND close > long-term EMA AND volume > average volume × configurable multiplier AND NOT (close[1] <= resistance AND close > resistance AND close > open AND short-term EMA > medium-term EMA AND medium-term EMA > long-term EMA AND close > long-term EMA AND volume > average volume × configurable multiplier))
-Short: short-term EMA < medium-term EMA AND medium-term EMA < long-term EMA AND close < long-term EMA

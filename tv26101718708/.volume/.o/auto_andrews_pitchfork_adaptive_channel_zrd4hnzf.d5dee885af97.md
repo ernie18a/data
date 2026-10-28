@@ -1,3 +1,0 @@
-Calculation: Pitchfork upper and lower tines = from the latest three confirmed alternating swing pivots (a pivot must meet the configured minimum prominence), construct each of the Standard, Schiff, and Modified Schiff forks; choose the fork whose median has the smallest mean absolute deviation from closes since the first pivot. The median runs from the fork origin through the midpoint of pivots two and three; the upper and lower tines are parallel to it, offset by the larger and smaller residuals of pivots two and three from the median.
-Long: low <= lower tine AND close > lower tine
-Short: high >= upper tine AND close < upper tine

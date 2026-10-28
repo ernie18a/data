@@ -1,3 +1,0 @@
-Calculation: MA1–MA5 = independently configured SMA, EMA, WMA, RMA, HMA, VWMA, TEMA, KAMA, or JMA of a selected price source (open, high, low, close, hl2, hlc3, or ohlc4) over a configurable lookback, using each MA’s configured timeframe (chart timeframe if unset); use the current forming bar in real time and the last completed bar historically.
-Long: Close crosses above any enabled MA OR the fast MA crosses above the slow MA in any enabled MA-pair slot OR the selected fast MA crosses above the selected slow MA for the enabled Golden Cross marker.
-Short: Close crosses below any enabled MA OR the fast MA crosses below the slow MA in any enabled MA-pair slot OR the selected fast MA crosses below the selected slow MA for the enabled Death Cross marker.

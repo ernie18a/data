@@ -1,1 +1,0 @@
-When enabled, use the cash index’s prior close and ATR, adjusted into the traded instrument’s price space by the selected basis method, to set upper and lower trigger levels around the prior close. Go long when the traded instrument rises above the upper level; go short when it falls below the lower level. No exit rule is defined.

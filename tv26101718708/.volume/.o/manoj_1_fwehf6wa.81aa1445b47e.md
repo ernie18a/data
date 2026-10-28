@@ -1,4 +1,0 @@
-Long: open < EMA(high) AND close > EMA(high) AND (VWAP(close) <= close OR (VWAP(close) >= open AND VWAP(close) <= open + abs(close - open) * touch fraction)
-Short: open > EMA(low) AND close < EMA(low) AND (VWAP(close) >= close OR (VWAP(close) <= open AND VWAP(close) >= open - abs(close - open) * touch fraction)
-Exit: Long, low <= low of signal bar OR bars since entry >= exit interval OR (high since entry >= entry price + trailing activation distance AND low <= high since entry - trailing offset)
-Exit: Short, high >= high of signal bar OR bars since entry >= exit interval OR (low since entry <= entry price - trailing activation distance AND high >= low since entry + trailing offset)

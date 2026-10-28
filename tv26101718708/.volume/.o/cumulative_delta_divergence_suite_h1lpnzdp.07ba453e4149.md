@@ -1,7 +1,0 @@
-Calculation: Estimated delta = volume × (upper wick + lower wick + 2 × body) ÷ (2 × candle range), positive when close ≥ open and negative otherwise; cumulative delta is the running sum of estimated delta, optionally represented with Heikin-Ashi candles
-Long: At a confirmed price and cumulative-delta pivot low, price low < previous price pivot low AND cumulative-delta pivot low > previous cumulative-delta pivot low
-Long: At a confirmed price and cumulative-delta pivot low, price low > previous price pivot low AND cumulative-delta pivot low < previous cumulative-delta pivot low
-Long: Estimated delta < −average absolute estimated delta × threshold AND volume > average volume × threshold AND candle range ≤ average candle range × threshold AND candle body ÷ candle range ≤ threshold AND a qualifying bullish divergence occurred within the confluence lookback
-Short: At a confirmed price and cumulative-delta pivot high, price high > previous price pivot high AND cumulative-delta pivot high < previous cumulative-delta pivot high
-Short: At a confirmed price and cumulative-delta pivot high, price high < previous price pivot high AND cumulative-delta pivot high > previous cumulative-delta pivot high
-Short: Estimated delta > average absolute estimated delta × threshold AND volume > average volume × threshold AND candle range ≤ average candle range × threshold AND candle body ÷ candle range ≤ threshold AND a qualifying bearish divergence occurred within the confluence lookback

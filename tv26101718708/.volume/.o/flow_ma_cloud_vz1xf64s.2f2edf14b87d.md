@@ -1,6 +1,0 @@
-Calculation: Shorter-lookback moving average = configured SMA, EMA, WMA, RMA, VWMA, or HMA of close; its lookback is shorter than the longer-lookback moving average
-Calculation: Longer-lookback moving average = configured SMA, EMA, WMA, RMA, VWMA, or HMA of close; its lookback is longer than the shorter-lookback moving average
-Calculation: Bullish slope confirmation = shorter-lookback moving average > its value at the slope lookback bars ago; also require the longer-lookback moving average > its value at the slope lookback bars ago when both slopes are required
-Calculation: Bearish slope confirmation = shorter-lookback moving average < its value at the slope lookback bars ago; also require the longer-lookback moving average < its value at the slope lookback bars ago when both slopes are required
-Long: shorter-lookback moving average crosses above longer-lookback moving average OR (shorter-lookback moving average > longer-lookback moving average AND bullish slope confirmation)
-Short: shorter-lookback moving average crosses below longer-lookback moving average OR (shorter-lookback moving average < longer-lookback moving average AND bearish slope confirmation)

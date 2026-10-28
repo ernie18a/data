@@ -1,4 +1,0 @@
-Calculation: Volume percentile rank = current volume's percentile rank among the preceding 500 bars
-Calculation: Trend state and line = initialize bullish with line at high − ATR × multiplier; while bullish, flip bearish when close < the prior line and volume percentile rank > threshold, setting line to low + ATR × multiplier, otherwise set line to max(prior line, high − ATR × multiplier); while bearish, flip bullish when close > the prior line and volume percentile rank > threshold, setting line to high − ATR × multiplier, otherwise set line to min(prior line, low + ATR × multiplier)
-Long: prior trend state bearish AND current trend state bullish AND close > HMA
-Short: prior trend state bullish AND current trend state bearish AND close < HMA

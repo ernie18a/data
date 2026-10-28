@@ -1,8 +1,0 @@
-Calculation: Real Strength histogram = EMA of ROC(close) × max(volume / SMA(volume), floor) × max(ADX / reference level, floor)
-Calculation: Long peak = highest Real Strength histogram since long entry
-Calculation: Short peak = lowest Real Strength histogram since short entry
-Calculation: Bars held = number of bars since entry
-Long: Real Strength histogram > positive strength threshold AND Real Strength histogram > its previous-bar value AND ADX >= minimum ADX AND volume / SMA(volume) >= minimum volume ratio AND DI+ > DI− AND (trend filter disabled OR fast SMA(close) > slow SMA(close)) AND long re-entry lock inactive
-Short: Real Strength histogram < negative strength threshold AND Real Strength histogram < its previous-bar value AND ADX >= minimum ADX AND volume / SMA(volume) >= minimum volume ratio AND DI− > DI+ AND (trend filter disabled OR fast SMA(close) < slow SMA(close)) AND short re-entry lock inactive
-Exit: Long, low <= entry price × (1 − stop-loss fraction) OR (bars held >= minimum hold AND ((fast SMA(close) > slow SMA(close) AND Real Strength histogram <= −flip threshold) OR (fast SMA(close) <= slow SMA(close) AND Long peak > 0 AND Real Strength histogram < Long peak × (1 − peak-drop fraction))))
-Exit: Short, high >= entry price × (1 + stop-loss fraction) OR (bars held >= minimum hold AND ((fast SMA(close) < slow SMA(close) AND Real Strength histogram >= flip threshold) OR (fast SMA(close) >= slow SMA(close) AND Short peak < 0 AND Real Strength histogram > Short peak × (1 − peak-drop fraction))))

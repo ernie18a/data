@@ -1,1 +1,0 @@
-For a qualifying long setup on the traded instrument, optionally require Bitcoin’s close to be above its EMA for the highest entry tier. If this Bitcoin condition is enabled and fails, cap the signal at the next lower tier. The script does not use external data to trigger shorts or exits.

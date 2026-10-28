@@ -1,2 +1,0 @@
-Long: high > EMA(close) AND high > SMA(close) AND high > VWAP AND low < EMA(close) AND low < SMA(close) AND low < VWAP AND close > open
-Short: high > EMA(close) AND high > SMA(close) AND high > VWAP AND low < EMA(close) AND low < SMA(close) AND low < VWAP AND close < open

@@ -1,5 +1,0 @@
-Calculation: Cost basis = mean entry price of the open-position ledger; each completed bar adds its volume at HLC3 and proportionally rotates out existing positions according to volume divided by average volume times position memory.
-Calculation: Underwater share = ledger weight of entries above close divided by total open ledger weight.
-Calculation: Realized-loss volume = prior total ledger weight × fraction rotated out × prior underwater share.
-Long: close crosses above cost basis OR realized-loss volume exceeds its same-lookback mean plus sensitivity × standard deviation AND close < cost basis, with the capitulation cooldown elapsed
-Short: close crosses below cost basis OR underwater share ≤ the euphoria threshold AND volume > its moving average × turnover multiplier, with the euphoria cooldown elapsed

@@ -1,7 +1,0 @@
-Calculation: Relative volume = current volume / its longer-lookback moving average
-Calculation: Base depth = (highest high − lowest low) / highest high over a lookback
-Calculation: Relative ATR = ATR / close
-Calculation: Smoothed relative ATR = moving average of relative ATR over a longer lookback
-Long: On a confirmed bar, close > prior-bar rolling highest high excluding the current bar AND previous close <= that same resistance level AND close > base EMA AND base EMA > shorter-lookback long-term SMA AND shorter-lookback long-term SMA > longer-lookback long-term SMA AND longer-lookback long-term SMA > its value at an earlier bar AND (volume confirmation disabled OR relative volume >= its threshold) AND (contraction requirement disabled OR a qualifying contraction occurred within its prior-bar window); a qualifying contraction has base depth <= its threshold AND relative ATR < smoothed relative ATR × its threshold AND close > longer-lookback long-term SMA
-Long: On a confirmed bar, low <= fast EMA AND close > fast EMA AND close > open AND the long-trend conditions above hold AND a prior bar since the last pullback had low > fast EMA AND the minimum bar spacing since the last pullback has elapsed AND no breakout occurs on this bar
-Exit: long, on a confirmed bar close < base EMA AND previous close >= previous base EMA AND the signal cycle is active when linked exits are enabled

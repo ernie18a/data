@@ -1,2 +1,0 @@
-Long: close > close N bars earlier × (1 + impulse threshold) AND close > open AND previous close > previous open AND N-bars-earlier close < N-bars-earlier open
-Short: close < close N bars earlier × (1 − impulse threshold) AND close < open AND previous close < previous open AND N-bars-earlier close > N-bars-earlier open

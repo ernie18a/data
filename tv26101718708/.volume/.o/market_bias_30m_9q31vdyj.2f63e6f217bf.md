@@ -1,2 +1,0 @@
-Calculation: Resistance = most recent confirmed pivot high, where the pivot high is higher than the highs over equal lookbacks before and after it
-Long: Short-lookback EMA > medium-lookback EMA > long-lookback EMA, with successively longer lookbacks, AND close > long-lookback EMA AND previous bar close <= Resistance AND close > Resistance AND close > open AND volume > volume SMA × multiplier

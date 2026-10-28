@@ -1,3 +1,0 @@
-Calculation: Daily percentage change = (current daily close - previous completed daily close) / previous completed daily close * 100
-Calculation: Daily volume moving average = average daily volume over a lookback ending on the current daily bar
-Short: (daily percentage change <= -drop threshold AND current daily volume > previous completed daily volume) OR (current daily volume > previous completed daily volume AND current daily close <= current daily low + (current daily high - current daily low) * 0.5) OR (current daily volume > daily volume moving average AND daily percentage change < stalling threshold)

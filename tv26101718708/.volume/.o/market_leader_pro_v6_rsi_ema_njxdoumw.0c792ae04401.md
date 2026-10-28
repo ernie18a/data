@@ -1,4 +1,0 @@
-Long: close > EMA(close, long-term lookback) AND RSI(close) > threshold AND Supertrend changes from downtrend to uptrend AND close > highest high of the prior lookback bars AND volume > SMA(volume, lookback)
-Short: close < EMA(close, long-term lookback) AND RSI(close) < threshold AND Supertrend changes from uptrend to downtrend AND close < lowest low of the prior lookback bars AND volume > SMA(volume, lookback)
-Exit: long, Supertrend changes from uptrend to downtrend OR high >= entry price × (1 + take-profit percentage) OR low <= entry price × (1 − stop-loss percentage)
-Exit: short, Supertrend changes from downtrend to uptrend OR low <= entry price × (1 − take-profit percentage) OR high >= entry price × (1 + stop-loss percentage)

@@ -1,9 +1,0 @@
-Calculation: Session range high/low = highest high and lowest low of the current user-defined session; reset at each session open and update on each session bar
-Calculation: Trend state = initialize bullish if close > hl2, otherwise bearish; band = 1.1 × (sensitivity + 2) × ATR; bullish stop is the greater of hl2 − band and the prior bullish stop, bearish stop is the lesser of hl2 + band and the prior bearish stop; switch bearish to bullish when close exceeds the bearish stop, and bullish to bearish when close falls below the bullish stop
-Calculation: RMI = average of RSI(close, lookback) and MFI(typical price, same lookback)
-Long: outside the session AND no prior breakout this session AND close > session range high AND previous close ≤ previous session range high OR previous trend state bearish AND current close > bearish stop OR RMI crossed above its positive threshold AND RMI is above its negative threshold AND EMA(close, 5) is rising AND bullish RMI state was not already active
-Short: outside the session AND no prior breakdown this session AND close < session range low AND previous close ≥ previous session range low OR previous trend state bullish AND current close < bullish stop OR RMI is below its negative threshold AND EMA(close, 5) is falling AND bearish RMI state was not already active
-Exit: long, trend state is bullish AND high reaches entry price + trend band recorded on the entry flip (once per target)
-Exit: long, trend state is bullish AND high reaches entry price + 2.5 × trend band recorded on the entry flip (once per target)
-Exit: short, trend state is bearish AND low reaches entry price − trend band recorded on the entry flip (once per target)
-Exit: short, trend state is bearish AND low reaches entry price − 2.5 × trend band recorded on the entry flip (once per target)

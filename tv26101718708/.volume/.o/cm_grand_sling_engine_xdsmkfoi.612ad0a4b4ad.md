@@ -1,4 +1,0 @@
-Calculation: Fast rail = ratcheting ATR trend rail around linear regression of hl2 using a shorter lookback; bullish mode uses the lower band and ratchets upward, bearish mode uses the upper band and ratchets downward, switching modes when a confirmed close crosses the prior rail.
-Calculation: Slow rail = same construction as the fast rail, with a longer lookback; both rails use the same power-adjusted ATR multiplier.
-Long: Fast rail >= slow rail OR fast rail >= slow rail AND close < fast rail OR fast rail >= slow rail AND previous close < previous fast rail AND close > fast rail
-Short: Fast rail < slow rail OR fast rail < slow rail AND close > fast rail OR fast rail < slow rail AND previous close > previous fast rail AND close < fast rail

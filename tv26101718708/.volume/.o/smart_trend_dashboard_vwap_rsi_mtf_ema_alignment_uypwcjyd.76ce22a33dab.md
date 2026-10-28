@@ -1,5 +1,0 @@
-Calculation: RSI values = RSI of close on each of the four configured timeframes, using the same lookback; use each timeframe’s bar still forming.
-Calculation: EMA values = EMA of close on each of the four configured timeframes, using the same lookback; use each timeframe’s bar still forming.
-Calculation: Bullish alignment count = count of the eight conditions: each of the four RSI values >= 50 and chart close > its corresponding timeframe EMA.
-Long: (any configured timeframe RSI >= 50 AND chart close > its corresponding timeframe EMA) OR bullish alignment count >= 6 OR chart close > daily VWAP OR chart close > weekly VWAP
-Short: (any configured timeframe RSI < 50 AND chart close < its corresponding timeframe EMA) OR bullish alignment count <= 3 OR chart close < daily VWAP OR chart close < weekly VWAP

@@ -1,3 +1,0 @@
-Calculation: Cross-asset bias score = for each of three equity-index assets, add its EMA-envelope score (+5 if low > EMA(high), +3 if high > EMA(high) and low > EMA(low), -5 if high < EMA(low), -3 if high < EMA(high) and low < EMA(low), otherwise 0), its 200-EMA score (+2 if close > EMA(close), otherwise -2), and its VWAP score (+1 if close > VWAP, otherwise -1); for the volatility-index asset, add the EMA-envelope score and 200-EMA score with their signs inverted. Use the same EMA-envelope length across assets. Calculate these from the selected data-timeframe bars; use the current bar's values.
-Long: Cross-asset bias score >= 7.8
-Short: Cross-asset bias score < -7.8

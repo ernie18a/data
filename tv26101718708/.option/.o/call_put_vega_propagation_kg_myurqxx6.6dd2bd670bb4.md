@@ -1,1 +1,0 @@
-For the traded instrument, calculate call and put Vega momentum using its price and implied volatility inputs, using an external volatility index when available and manual volatility inputs otherwise. Go long when call Vega crosses above put Vega while call Vega is positive. Go short when put Vega crosses above call Vega while put Vega is positive. No exit rule is defined.

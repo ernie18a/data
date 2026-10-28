@@ -1,7 +1,0 @@
-Calculation: PDH, PDL, PDC = high, low, and close of the last completed day.
-Calculation: PWH, PWL = high and low of the last completed week.
-Calculation: W-open, M-open = open of the current week and month.
-Calculation: ORH, ORL = high and low during the first N minutes of the regular session, available after that range ends.
-Calculation: PMH, PML = high and low of the pre-market session, available after it ends.
-Long: At any active level, the last completed confirmation-timeframe close (using the chart timeframe if the confirmation timeframe is lower) is above the level's value on the prior chart bar, and the previous counted confirmation close was at or below that value; OR a regular-session bar has open and close at or above the level and low below it. Apply the regular-session filter (default on); for each level and direction, mark only the first break and first probe per session (default on). A break is marked on the first chart bar after the confirmation candle closes.
-Short: At any active level, the last completed confirmation-timeframe close (using the chart timeframe if the confirmation timeframe is lower) is below the level's value on the prior chart bar, and the previous counted confirmation close was at or above that value; OR a regular-session bar has open and close at or below the level and high above it. Apply the regular-session filter (default on); for each level and direction, mark only the first break and first probe per session (default on). A break is marked on the first chart bar after the confirmation candle closes.

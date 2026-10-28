@@ -1,6 +1,0 @@
-Calculation: BlueWave = linear regression of close minus the average of (the average of rolling highest high and rolling lowest low) and the rolling simple moving average of close
-Calculation: MFI = 3 × (100 × upper flow / (upper flow + lower flow) − 50), where upper flow is the rolling sum of volume × hlc3 on bars where hlc3 increased, and lower flow is the rolling sum of volume × hlc3 on bars where hlc3 decreased
-Long: BlueWave > 0 AND previous BlueWave <= 0 AND MFI > 0 AND datetime is within the configured date range
-Short: BlueWave < 0 AND previous BlueWave >= 0 AND MFI < 0 AND datetime is within the configured date range
-Exit: Long, BlueWave < 0 AND previous BlueWave >= 0 AND MFI < 0 OR low <= entry price − (entry-signal-bar close × configured stop-loss percentage) OR high >= entry price + (entry-signal-bar close × configured take-profit percentage)
-Exit: Short, BlueWave > 0 AND previous BlueWave <= 0 AND MFI > 0 OR high >= entry price + (entry-signal-bar close × configured stop-loss percentage) OR low <= entry price − (entry-signal-bar close × configured take-profit percentage)

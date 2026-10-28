@@ -1,3 +1,0 @@
-Calculation: Resistance segment = horizontal at the volume-weighted moving average of candle highs when its absolute change from the previous bar, as a percentage of its current value, is at most a threshold and the previous bar did not meet that condition; project it forward a set number of bars.
-Long: close crosses above an active resistance segment
-Short: high reaches or exceeds an active resistance segment AND close is below it

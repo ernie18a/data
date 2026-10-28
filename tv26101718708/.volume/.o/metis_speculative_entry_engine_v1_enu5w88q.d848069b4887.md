@@ -1,4 +1,0 @@
-Calculation: Smoothed RSI = RSI of close, optionally smoothed with an EMA, SMA, or RMA
-Calculation: RSI signal line = EMA, SMA, or RMA of smoothed RSI
-Calculation: Relative volume = volume divided by its moving average
-Long: Smoothed RSI crosses above the extreme-low level on a confirmed bar OR smoothed RSI crosses above the oversold level AND (trend filter disabled OR each enabled trend requirement passes: close above the shorter-term EMA, shorter-term EMA above the longer-term SMA, and/or shorter-term EMA above its value at an earlier bar) AND (weekly filter disabled OR RSI of the still-forming weekly bar is at least the weekly minimum) AND (volume filter disabled OR relative volume is at least its minimum) AND (signal confirmation disabled OR smoothed RSI > RSI signal line)

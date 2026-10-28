@@ -1,6 +1,0 @@
-Calculation: Session VWAP = session-anchored volume-weighted average of (high + low + close) / 3, calculated from 3-minute, 5-minute, and 10-minute bars; use the last completed bar on each timeframe (the prior 5-minute VWAP comparison uses the preceding completed 5-minute bar).
-Calculation: Hammer = bullish candle whose lower wick is at least 2 times its body, upper wick is at most half its body, and close is above the 3-minute VWAP.
-Calculation: Bullish engulfing = bullish candle whose body fully engulfs the prior bearish candle's body, with close above the 3-minute VWAP.
-Calculation: Bounce setup = fast EMA > medium EMA > slow EMA on the chart timeframe; each of the previous N chart bars had its lowest close above each of the three VWAPs (using the corresponding prior VWAP values); current low is at or below each VWAP; and current candle is a Hammer or Bullish engulfing.
-Calculation: Bounce setup = current volume >= its moving average × a multiplier; current or prior chart-bar RSI is within a configured low-to-high zone and current RSI > prior RSI; 5-minute close > its fast EMA; and current 5-minute VWAP > preceding 5-minute VWAP.
-Long: Bounce setup OR (Bounce setup on the prior chart bar AND current close > chart-timeframe fast EMA AND current close > each of the 3-minute, 5-minute, and 10-minute VWAPs).

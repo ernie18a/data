@@ -1,7 +1,0 @@
-Calculation: Nearest K-means zone = center nearest the current close among clusters of confirmed pivot highs/lows and sampled bar highs/lows over a lookback; include sampled closes if there are too few levels. Use current data and the zone level after its configured stabilization.
-Calculation: Candle body ratio = abs(close − open) / (high − low); upper wick ratio = (high − max(open, close)) / (high − low); lower wick ratio = (min(open, close) − low) / (high − low).
-Calculation: Dynamic zone distance = max(minimum near-zone percentage, 0.40 × ATR percentage), where ATR percentage = ATR / close. Use the current candle’s OHLC and the prior bar’s ATR percentage and high/low.
-Long: close > open AND body ratio > 0.50 AND open < nearest K-means zone AND close > nearest K-means zone
-Long: close > open AND lower wick ratio > 0.40 AND lower wick ratio > upper wick ratio AND lower wick ratio > 0.80 × body ratio AND (abs(low − nearest K-means zone) / close ≤ dynamic zone distance OR (low ≤ nearest K-means zone AND close > nearest K-means zone))
-Short: close < open AND body ratio > 0.50 AND open > nearest K-means zone AND close < nearest K-means zone
-Short: close < open AND upper wick ratio > 0.40 AND upper wick ratio > lower wick ratio AND upper wick ratio > 0.80 × body ratio AND (abs(high − nearest K-means zone) / close ≤ dynamic zone distance OR (high ≥ nearest K-means zone AND close < nearest K-means zone))

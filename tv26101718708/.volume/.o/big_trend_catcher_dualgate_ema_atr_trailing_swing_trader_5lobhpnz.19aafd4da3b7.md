@@ -1,4 +1,0 @@
-Calculation: Pending impulse = set when close crosses above the short-term EMA or open > previous bar high, provided volume > its moving average by a multiplier; clear when close crosses below the short-term EMA or the impulse exceeds its waiting period
-Calculation: ATR trailing floor = ratchet upward to the greater of its previous value and the rolling highest of high minus an ATR multiple when close > its previous value; otherwise set to low minus an ATR multiple
-Long: Pending impulse AND close > long-term EMA AND close > short-term EMA AND position is flat OR long position AND return from average entry price > threshold AND close > long-term EMA AND close > short-term EMA AND open trade count < cap OR low crosses below short-term EMA AND close > short-term EMA AND close > long-term EMA AND long position
-Exit: Long, close < ATR trailing floor OR close crosses below long-term EMA

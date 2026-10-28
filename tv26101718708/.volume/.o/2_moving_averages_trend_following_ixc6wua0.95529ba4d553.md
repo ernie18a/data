@@ -1,7 +1,0 @@
-Calculation: Daily PSAR = Parabolic SAR calculated from daily bars, using the current daily bar, which may still be forming
-Calculation: Long stop = entry price − ATR × long stop multiplier, with ATR from chart bars at entry
-Calculation: Short stop = entry price + ATR × short stop multiplier, with ATR from chart bars at entry
-Long: datetime is within the configured backtest window AND fast moving average (shorter lookback) > slow moving average (longer lookback) AND close > fast moving average AND (PSAR filter is disabled OR low > Daily PSAR)
-Short: datetime is within the configured backtest window AND fast moving average (shorter lookback) < slow moving average (longer lookback) AND close < fast moving average AND (PSAR filter is disabled OR high < Daily PSAR)
-Exit: long, datetime is outside the configured backtest window OR (datetime is within the configured backtest window AND fast moving average < slow moving average AND close < fast moving average) OR low ≤ Long stop
-Exit: short, datetime is outside the configured backtest window OR (datetime is within the configured backtest window AND fast moving average > slow moving average AND close > fast moving average) OR high ≥ Short stop

@@ -1,7 +1,0 @@
-Calculation: CVD = cumulative sum of volume when close ≥ open and negative volume otherwise
-Calculation: Price decline (%) = 100 × (prior price low − latest price low) / max(prior price low, positive epsilon)
-Calculation: CVD increase (%) = 100 × (latest CVD low − prior CVD low) / max(abs(prior CVD low), positive epsilon)
-Calculation: Price rise (%) = 100 × (latest price high − prior price high) / max(prior price high, positive epsilon)
-Calculation: CVD decrease (%) = 100 × (prior CVD high − latest CVD high) / max(abs(prior CVD high), positive epsilon)
-Long: On a confirmed bar, the latest confirmed price low pivot is below the prior one AND the latest confirmed CVD low pivot is above the prior one AND the latest price and CVD low pivot bars are within the alignment tolerance AND each pair of successive low pivots is separated by at least the minimum distance AND the prior price and CVD pivot bars are nonzero AND price decline (%) + CVD increase (%) ≥ minimum divergence strength
-Short: On a confirmed bar, the latest confirmed price high pivot is above the prior one AND the latest confirmed CVD high pivot is below the prior one AND the latest price and CVD high pivot bars are within the alignment tolerance AND each pair of successive high pivots is separated by at least the minimum distance AND the prior price and CVD pivot bars are nonzero AND price rise (%) + CVD decrease (%) ≥ minimum divergence strength

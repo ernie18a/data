@@ -1,8 +1,0 @@
-Calculation: Filtered high/low = raw high/low or each smoothed with the selected method and lookback; methods are SMA, EMA, RMA, double WMA, triple VWMA, HMA, LLAMA (SMA plus half the lookback times the per-bar change over the lookback), or recursive Kalman smoothing
-Calculation: Confirmed pivot high/low = filtered high/low from the pivot-depth bars-ago bar, strictly greater/less than every other filtered value in the window spanning that bar and the pivot-depth bars on each side
-Calculation: Zigzag points = append alternating confirmed pivots only when the distance from the last point is at least the active threshold (ATR times a multiplier or current close times a percentage); if a same-type pivot arrives, replace the last point only when it is a more extreme high/low
-Calculation: Bollinger basis = simple moving average of close
-Long: On a confirmed bar, the newest three zigzag points are low-high-low with C price > A price and C price < B price; this A-B-C point sequence is not already active; if the Bollinger confirmation filter is enabled, the prior completed close > prior completed Bollinger basis; if the ADX filter is enabled, ADX >= its threshold; signal is not locked
-Short: On a confirmed bar, the newest three zigzag points are high-low-high with C price < A price and C price > B price; this A-B-C point sequence is not already active; if the Bollinger confirmation filter is enabled, the prior completed close < prior completed Bollinger basis; if the ADX filter is enabled, ADX >= its threshold; signal is not locked
-Exit: long, prior completed close < active structure's A price
-Exit: short, prior completed close > active structure's A price

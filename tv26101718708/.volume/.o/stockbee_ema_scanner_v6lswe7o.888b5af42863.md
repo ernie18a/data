@@ -1,2 +1,0 @@
-Long: close > short-term EMA(close) > medium-term EMA(close) > long-term EMA(close) AND close > open × (1 + configured percentage) AND volume > longer-lookback SMA(volume) × configured multiple
-Long: close > short-term EMA(close) > medium-term EMA(close) > long-term EMA(close) AND close > open × (1 + configured percentage) AND volume > longer-lookback SMA(volume) × configured multiple

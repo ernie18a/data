@@ -1,1 +1,0 @@
-Use an external volatility index: calculate its change from the prior bar, then standardize that change against its rolling mean and standard deviation. When the standardized change exceeds a positive threshold and the traded instrument is flat, enter long. Close the position after a fixed number of bars, regardless of market conditions. Do not enter short.

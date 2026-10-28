@@ -1,1 +1,0 @@
-Use the prior confirmed close of a selected cryptocurrency market index from a higher timeframe and compare its RSI with the traded instrument’s RSI. When the index-to-instrument RSI ratio crosses above 1, enter long; when it crosses below 1, enter short, reversing the position if needed.

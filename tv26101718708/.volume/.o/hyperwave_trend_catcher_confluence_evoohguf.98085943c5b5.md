@@ -1,2 +1,0 @@
-Calculation: WaveTrend = EMA((HLC3 − EMA(HLC3, channel length)) / (0.015 × EMA(abs(HLC3 − EMA(HLC3, channel length)), channel length)), average length), where average length is longer than channel length
-Long: WaveTrend crosses above its crossing level AND close > simple moving average of high AND money flow index > its threshold

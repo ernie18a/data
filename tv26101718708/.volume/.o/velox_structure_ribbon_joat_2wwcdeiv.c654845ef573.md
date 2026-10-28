@@ -1,6 +1,0 @@
-Calculation: Slow SMEMA = SMA(EMA(close, slow baseline period), slow baseline period)
-Calculation: Volatility step = SMA(EMA(high − low, long range-smoothing period), long range-smoothing period)
-Calculation: First upper band = Slow SMEMA + Volatility step
-Calculation: First lower band = Slow SMEMA − Volatility step
-Long: bar is confirmed AND bar index ≥ max(3 × slow baseline period, long range-smoothing period + 50) AND (Slow SMEMA > its previous value AND close > First upper band AND RSI(close) ≥ RSI threshold AND (volume filter disabled OR volume unavailable OR volume > 20-bar SMA(volume) × volume multiplier) OR Slow SMEMA > its previous value AND its previous value ≤ the value before that AND bar is warmed)
-Short: bar is confirmed AND bar index ≥ max(3 × slow baseline period, long range-smoothing period + 50) AND (Slow SMEMA ≤ its previous value AND close < First lower band AND RSI(close) ≤ 100 − RSI threshold AND (volume filter disabled OR volume unavailable OR volume > 20-bar SMA(volume) × volume multiplier) OR Slow SMEMA < its previous value AND its previous value ≥ the value before that AND bar is warmed)

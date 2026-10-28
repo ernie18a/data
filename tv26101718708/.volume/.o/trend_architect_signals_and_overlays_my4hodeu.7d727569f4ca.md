@@ -1,9 +1,0 @@
-Calculation: Polynomial regression = fourth-degree least-squares fit of the latest lookback close values, evaluated at the current bar.
-Calculation: Alpha and Sigma trend rails = separate trailing rails around the polynomial regression, using average true range; the Alpha rail uses the shorter period.
-Calculation: Kaufman adaptive moving average (KAMA) = adaptive moving average using the ratio of net price change to summed absolute price changes over its lookback.
-Calculation: Trend efficiency = absolute close change over its lookback divided by the sum of absolute one-bar close changes over that lookback.
-Calculation: Fast KAMA slope = change in the fast KAMA over its slope lookback, divided by ATR.
-Calculation: Trend regime = bull when the required votes agree among bullish KAMA fan alignment, Hurst exponent above its threshold, and positive smoothed Trend Cloud acceleration with a rising base; bear uses bearish fan alignment, the same Hurst condition, and negative acceleration with a falling base. Fan alignment counts adjacent KAMAs in order from shorter to longer lookback.
-Long: Both trend rails are bullish now and were not both bullish on the previous bar; the last raw signal was not bullish; and either the ribbon is not bearishly adverse and the bar closes up with body/range at least the quality threshold, or a bullish ribbon crossover releases a pending signal within 4 bars, or a pending quality-filtered signal gets an up-close bar meeting the quality threshold within 3 bars.
-Short: Both trend rails are bearish now and were not both bearish on the previous bar; the last raw signal was not bearish; and either the ribbon is not bullishly adverse and the bar closes down with body/range at least the quality threshold, or a bearish ribbon crossunder releases a pending signal within 4 bars, or a pending quality-filtered signal gets a down-close bar meeting the quality threshold within 3 bars.
-Exit: No exit decision.

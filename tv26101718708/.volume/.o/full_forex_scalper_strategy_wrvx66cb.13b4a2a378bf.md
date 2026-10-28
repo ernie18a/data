@@ -1,8 +1,0 @@
-Calculation: MACD = EMA(close, shorter lookback) − EMA(close, longer lookback)
-Calculation: Fast stochastic = Stochastic(close, high, low, lookback)
-Calculation: Slow stochastic = SMA(Fast stochastic, longer lookback)
-Calculation: Stochastic RSI K = SMA(Stochastic(RSI(close, lookback), RSI(close, lookback), RSI(close, lookback), lookback), smoothing lookback)
-Long: MACD > previous MACD AND previous MACD > MACD from two bars ago AND shorter-lookback VWMA(close) < longer-lookback VWMA(close) AND Fast stochastic > Slow stochastic AND Stochastic RSI K < 30 AND (session filter disabled OR (date within configured range AND (London session OR New York session) AND custom session AND NOT secondary custom session))
-Short: MACD < previous MACD AND previous MACD < MACD from two bars ago AND shorter-lookback VWMA(close) > longer-lookback VWMA(close) AND Fast stochastic < Slow stochastic AND Stochastic RSI K > 70 AND (session filter disabled OR (date within configured range AND (London session OR New York session) AND custom session AND NOT secondary custom session))
-Exit: Long, high ≥ entry price + close × take-profit percentage OR low ≤ entry price − close × stop-loss percentage OR (session filter enabled AND NOT custom session)
-Exit: Short, low ≤ entry price − close × take-profit percentage OR high ≥ entry price + close × stop-loss percentage OR (session filter enabled AND NOT custom session)

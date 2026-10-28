@@ -1,1 +1,0 @@
-Use the prior close and current ATM straddle to set upper and lower expected-move boundaries. Exit any position if the index closes outside either boundary; there is no long or short entry rule.

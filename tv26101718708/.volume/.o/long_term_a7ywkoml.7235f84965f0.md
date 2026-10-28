@@ -1,4 +1,0 @@
-Calculation: relative strength = (close / close at the lookback bar ago) / (comparison-symbol close / its close at the same lookback bar ago) − 1
-Calculation: prior-period average close = arithmetic mean of the closes in the preceding lookback bars, excluding the current bar
-Long: close > fast EMA AND volume > volume-surge multiple × volume SMA OR close > slow EMA AND relative strength > 0 AND volume > volume-surge multiple × volume SMA AND close > highest high of prior lookback bars OR close > fastest EMA AND volume > stronger-surge multiple × volume SMA
-Exit: long, close < downside fraction × fast EMA OR close < downside fraction × prior bar close OR close > spike multiple × prior-period average close OR close < fastest EMA AND close < fast EMA

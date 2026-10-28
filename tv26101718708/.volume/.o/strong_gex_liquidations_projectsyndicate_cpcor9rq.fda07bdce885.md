@@ -1,5 +1,0 @@
-Calculation: Strong liquidation walls = for each bar where volume ≥ its moving average × spike multiplier, project the bar’s typical price ((high + low + close) / 3) to enabled leverage tiers, below for liquidated longs and above for liquidated shorts, using price × (1 ∓ maintenance factor / leverage). Bin projections and sum their size, acceleration, and recency weights; retain local power peaks subject to the minimum separation and strongest-beams limit, and normalize peak power to a 0–10 score relative to the strongest peak. A strong wall has a score ≥ the strength threshold. For each side, use the nearest strong wall relative to the current close.
-Long: nearest strong wall above close AND abs(close − wall) ≤ close × proximity percentage
-Long: previous close ≤ nearest strong wall above close AND close > that wall
-Short: nearest strong wall below close AND abs(close − wall) ≤ close × proximity percentage
-Short: previous close ≥ nearest strong wall below close AND close < that wall

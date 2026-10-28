@@ -1,4 +1,0 @@
-Calculation: Absolute volume score = (current volume − mean volume over a lookback including the current bar) / standard deviation of volume over the same lookback.
-Calculation: Volume acceleration score = (current volume − previous bar volume) / standard deviation of volume over the same lookback.
-Long: close > open AND (absolute mode is active and absolute volume score ≥ its high threshold OR acceleration mode is active and volume acceleration score ≥ its high threshold)
-Short: close < open AND (absolute mode is active and absolute volume score ≥ its high threshold OR acceleration mode is active and volume acceleration score ≥ its high threshold)

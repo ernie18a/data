@@ -1,2 +1,0 @@
-Long: close > short-term EMA > medium-term EMA > long-term EMA AND each EMA is higher than its previous-bar value
-Short: close < short-term EMA < medium-term EMA < long-term EMA AND each EMA is lower than its previous-bar value

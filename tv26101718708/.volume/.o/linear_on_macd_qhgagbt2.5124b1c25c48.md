@@ -1,6 +1,0 @@
-Calculation: Signed-volume cumulative = cumulative sum of volume multiplied by +1 when close is below the previous close and open is below close, or when close is above the previous close; otherwise multiply by −1.
-Calculation: Volume-based predicted price = intercept + slope × current volume, where intercept and slope come from ordinary least squares regression of close on volume over the lookback ending at the current bar.
-Calculation: Signed-volume MACD = moving average of signed-volume cumulative over a shorter lookback minus its moving average over a longer lookback; its signal is a moving average of that difference. Use the configured SMA or EMA types.
-Calculation: Risk threshold = volume-weighted moving average of volume-based predicted price over the regression lookback for the higher risk-tolerance setting; otherwise, volume-based predicted price.
-Long: close-price MACD line > its signal line AND signed-volume MACD > its signal line AND open < volume-based predicted price < close AND current volume-based predicted price > previous bar's volume-based predicted price
-Short: signed-volume MACD < previous bar's signed-volume MACD AND signed-volume MACD < its signal line AND close-price MACD line < its signal line AND close < risk threshold

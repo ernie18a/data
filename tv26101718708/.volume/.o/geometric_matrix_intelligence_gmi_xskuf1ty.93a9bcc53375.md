@@ -1,5 +1,0 @@
-Calculation: volatility trailing level = if close and previous close are both above the previous level, the greater of the previous level and close minus sensitivity × ATR; if both are below it, the lesser of the previous level and close plus sensitivity × ATR; otherwise, close minus sensitivity × ATR when close is above the previous level, or close plus sensitivity × ATR when close is below it
-Calculation: pivot high = center high of an odd-length window that is higher than the highs of the same number of bars on each side; confirmed after those right-side bars complete
-Calculation: pivot low = center low of an odd-length window that is lower than the lows of the same number of bars on each side; confirmed after those right-side bars complete
-Long: close crosses above volatility trailing level OR pivot high is confirmed OR close > latest unbroken pivot high
-Short: close crosses below volatility trailing level OR pivot low is confirmed OR close < latest unbroken pivot low

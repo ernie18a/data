@@ -1,4 +1,0 @@
-Calculation: RSI divergence = absolute value of (prior RSI − current RSI) / prior RSI exceeds the divergence threshold; prior RSI is from the longer lookback and current RSI uses the RSI lookback
-Long: RSI < oversold threshold AND RSI divergence AND volume > average volume over the longer lookback × volume spike factor AND close < both the shorter-lookback and longer-lookback simple moving averages
-Short: RSI > overbought threshold AND RSI divergence AND volume > average volume over the longer lookback × volume spike factor AND close > both the shorter-lookback and longer-lookback simple moving averages OR the long-term EMA trend is up (EMA 20 > EMA 30 > EMA 40 > EMA 50 AND EMA 50 ≥ EMA 100 ≥ EMA 200) AND 15-minute MACD < 15-minute MACD signal line AND chart-timeframe MACD crosses below its signal line
-Exit: short, close < EMA 200 AND chart-timeframe MACD crosses above its signal line

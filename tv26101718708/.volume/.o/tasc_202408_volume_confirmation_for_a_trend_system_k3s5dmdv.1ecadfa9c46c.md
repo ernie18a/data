@@ -1,4 +1,0 @@
-Calculation: Trend Thrust Indicator = Let fast and slow be volume-weighted moving averages of close, with fast using the shorter lookback. Let the volume multiple be (fast / slow)². The indicator is fast × volume multiple − slow / volume multiple; its signal is the simple moving average of the indicator.
-Calculation: Volume Price Confirmation Indicator = (long-lookback volume-weighted moving average of close − long-lookback simple moving average of close) × (short-lookback volume-weighted moving average of close / short-lookback simple moving average of close) × (short-lookback simple moving average of volume / long-lookback simple moving average of volume), with the short lookback shorter than the long lookback.
-Long: ADX > 30 AND Trend Thrust Indicator > its signal AND Volume Price Confirmation Indicator > 0
-Exit: long, Volume Price Confirmation Indicator < 0

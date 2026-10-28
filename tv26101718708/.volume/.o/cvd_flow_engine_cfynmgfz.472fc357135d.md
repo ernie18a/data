@@ -1,7 +1,0 @@
-Calculation: CVD balance = cumulative sum of lower-timeframe volume signed positive when that bar’s close is above its previous close, negative when below, and zero when equal
-Calculation: CVD change = current CVD balance minus previous CVD balance
-Calculation: CVD acceleration = current CVD change minus previous CVD change
-Calculation: Selected CVD series = configured choice of CVD balance, CVD change, or CVD acceleration
-Calculation: CVD EMA = EMA of the selected CVD series; normalized one-bar slope = (current EMA − previous EMA) / max(abs(previous EMA), 1) × 100
-Long: Selected CVD series > CVD EMA AND normalized one-bar slope > configured slope threshold AND selected CVD series > its value at the configured momentum lookback bars ago OR selected CVD series > CVD EMA AND normalized one-bar slope <= configured slope threshold OR latest confirmed price pivot low < preceding confirmed price pivot low AND selected CVD series at the latest pivot <comparison> preceding pivot value is higher
-Short: Selected CVD series < CVD EMA AND normalized one-bar slope < negative configured slope threshold AND selected CVD series < its value at the configured momentum lookback bars ago OR selected CVD series < CVD EMA AND normalized one-bar slope >= negative configured slope threshold OR latest confirmed price pivot high > preceding confirmed price pivot high AND selected CVD series at the latest pivot < preceding pivot value

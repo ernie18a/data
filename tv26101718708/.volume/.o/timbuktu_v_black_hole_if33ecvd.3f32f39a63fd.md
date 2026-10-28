@@ -1,2 +1,0 @@
-Long: close > EMA(close) AND close > highest high over the lookback of prior completed bars AND volume > short-term SMA(volume) multiplied by a threshold AND RSI > upper threshold
-Short: close < EMA(close) AND close < lowest low over the lookback of prior completed bars AND volume > short-term SMA(volume) multiplied by a threshold AND RSI < lower threshold

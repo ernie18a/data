@@ -1,2 +1,0 @@
-Long: Scalp composite > neutral deadband OR Intraday composite > neutral deadband OR Positional composite > neutral deadband
-Short: Scalp composite < −neutral deadband OR Intraday composite < −neutral deadband OR Positional composite < −neutral deadband

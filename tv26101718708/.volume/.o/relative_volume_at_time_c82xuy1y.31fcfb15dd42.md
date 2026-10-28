@@ -1,3 +1,0 @@
-Calculation: Breakout relative volume = volume from the first bar whose high reaches the pivot through the current bar, divided by the average volume over the corresponding window in prior completed sessions. On intraday charts, match each bar by time of day; on daily or higher charts, use current-session and prior-session intraday bars at the selected lower timeframe, with prior windows matched by bar index. Require at least five prior sessions for a valid value.
-Long: Pivot price > 0 AND current high >= pivot price AND no earlier bar in the current session had high >= pivot price
-Long: Pivot price > 0 AND current session has reached the pivot AND breakout relative volume >= minimum confirmation threshold

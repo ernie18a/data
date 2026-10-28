@@ -1,1 +1,0 @@
-Use the daily VIX as an external market signal. Enter long on the traded instrument when the prior bar’s VIX was at or above a panic threshold and the VIX crossed below its moving average on that prior bar. Exit the long according to the selected rule: after a set holding period, when VIX falls below a calm threshold, or when either condition occurs. No short entry is specified.

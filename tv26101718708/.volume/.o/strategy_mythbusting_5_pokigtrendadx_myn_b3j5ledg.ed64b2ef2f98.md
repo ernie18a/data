@@ -1,6 +1,0 @@
-Calculation: POKI direction = Track a synthetic close using a configurable Traditional Renko brick size: set it to the current close when the close is above the prior synthetic close plus one brick or below it minus one brick; otherwise keep the prior synthetic close. Direction is up or down when the synthetic close rises or falls, and otherwise carries forward.
-Calculation: G-Channel trend = Let src be OHLC4. Recursively calculate upper = max(src, prior upper) − (prior upper − prior lower)/length and lower = min(src, prior lower) + (prior upper − prior lower)/length. Define cross-up as prior lower < prior close and current lower > current close; cross-down as prior upper < prior close and current upper > current close. Trend is bullish when bars since cross-down ≤ bars since cross-up, otherwise bearish.
-Long: POKI direction crosses up AND G-Channel trend is bullish AND ADX > threshold
-Short: POKI direction crosses down AND G-Channel trend is bearish AND ADX > threshold
-Exit: Long, close < entry price × (1 − stop-loss fraction) OR high ≥ entry price × (1 + take-profit fraction)
-Exit: Short, close > entry price × (1 + stop-loss fraction) OR low ≤ entry price × (1 − take-profit fraction)

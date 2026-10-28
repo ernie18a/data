@@ -1,6 +1,0 @@
-Calculation: Session VWAP = cumulative (((high + low + close) / 3) × volume) ÷ cumulative volume, reset at the start of each 18:30–23:59 session (UTC+5)
-Calculation: Doji = abs(close − open) ≤ 0.1 × (high − low)
-Long: close[1] > open[1] AND close > open AND volume ≥ 1.5 × volume[1] AND low > Session VWAP AND NOT Doji AND time is 19:00–23:59 (UTC+5) AND configured weekday is enabled AND position size = 0 AND (closed trades today = 0 OR (closed trades today = 1 AND first closed trade today had a loss))
-Short: close[1] < open[1] AND close < open AND volume ≥ 1.5 × volume[1] AND high < Session VWAP AND NOT Doji AND time is 19:00–23:59 (UTC+5) AND configured weekday is enabled AND position size = 0 AND (closed trades today = 0 OR (closed trades today = 1 AND first closed trade today had a loss))
-Exit: long, low ≤ Session VWAP at entry OR high ≥ entry price + (entry price − Session VWAP at entry) × risk-reward ratio
-Exit: short, high ≥ Session VWAP at entry OR low ≤ entry price − (Session VWAP at entry − entry price) × risk-reward ratio

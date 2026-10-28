@@ -1,5 +1,0 @@
-Calculation: Anchored VWAP = cumulative volume-weighted HLC3 (high + low + close) / 3 from the start of the current selected higher-timeframe period, using chart bars; the period starts when a new higher-timeframe bar begins.
-Calculation: Volume-weighted standard deviation = square root of max(0, cumulative volume-weighted HLC3 squared / cumulative volume − anchored VWAP squared), accumulated from the same period start using chart bars.
-Calculation: Standard deviation bands = anchored VWAP plus or minus volume-weighted standard deviation times each of three independently selected multipliers.
-Long: Current low ≤ any standard deviation band AND previous bar low > that same band’s previous value AND the prior long signal was at least the selected cooldown number of chart bars ago.
-Short: Current high ≥ any standard deviation band AND previous bar high < that same band’s previous value AND the prior short signal was at least the selected cooldown number of chart bars ago.

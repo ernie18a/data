@@ -1,7 +1,0 @@
-Calculation: Squeeze momentum = linear regression (offset 0) of close minus the average of (the average of the highest high and lowest low, and the simple moving average of close), using the same lookback for all three windows.
-Calculation: Squeeze off = the Bollinger upper band is above the Keltner upper band AND the Bollinger lower band is below the Keltner lower band. Bollinger bands use a simple moving average of close and standard deviation of close; Keltner bands use a simple moving average of close and a simple moving average of true range.
-Calculation: Prior dark-blue-dot count = consecutive completed bars immediately preceding the current bar on which squeeze off is false; reset to zero when squeeze off is true.
-Long: Squeeze momentum > 0 AND squeeze momentum > its value on the previous bar AND squeeze off AND prior dark-blue-dot count >= the configured minimum AND close > the selected moving average.
-Short: Squeeze momentum <= 0 AND squeeze momentum < its value on the previous bar AND squeeze off AND prior dark-blue-dot count >= the configured minimum AND close < the selected moving average.
-Exit: Long, squeeze momentum > 0 AND squeeze momentum <= its value on the previous bar OR low <= entry price − ATR captured when the position opens × configured stop multiplier.
-Exit: Short, squeeze momentum <= 0 AND squeeze momentum >= its value on the previous bar OR high >= entry price + ATR captured when the position opens × configured stop multiplier.

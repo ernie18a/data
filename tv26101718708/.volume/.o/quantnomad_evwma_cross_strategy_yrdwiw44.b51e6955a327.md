@@ -1,4 +1,0 @@
-Calculation: Fast EVWMA = ((sum of volume over a shorter lookback − current volume) × previous Fast EVWMA + current volume × close) ÷ sum of volume over that lookback; use close as the previous value for initialization
-Calculation: Slow EVWMA = ((sum of volume over a longer lookback − current volume) × previous Slow EVWMA + current volume × close) ÷ sum of volume over that lookback; use close as the previous value for initialization
-Long: Fast EVWMA > Slow EVWMA AND previous bar Fast EVWMA ≤ previous bar Slow EVWMA
-Short: Fast EVWMA < Slow EVWMA AND previous bar Fast EVWMA ≥ previous bar Slow EVWMA

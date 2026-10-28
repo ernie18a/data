@@ -1,1 +1,0 @@
-Use the external market’s advancing-minus-declining issues to calculate a breadth oscillator, then cumulatively sum it into a breadth index. Calculate a smoothed stochastic %K of that index. After the configured start date, go long when %K crosses above its midpoint; close all positions when %K crosses below the midpoint. Do not open short positions.

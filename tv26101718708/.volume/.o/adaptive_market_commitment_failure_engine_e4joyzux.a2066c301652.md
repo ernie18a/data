@@ -1,2 +1,0 @@
-Long: a confirmed-bar transition into CONFIRMED, ESTABLISHED, STRESSED, RELEASED, or FAILED with episode direction up
-Short: a confirmed-bar transition into CONFIRMED, ESTABLISHED, STRESSED, RELEASED, or FAILED with episode direction down

@@ -1,4 +1,0 @@
-Calculation: 24-hour volume = rolling sum of volume over the preceding 24 hours from lower-timeframe bars selected according to the chart timeframe; use the current, still-forming bar for the current value.
-Calculation: Historical volume average = EMA, SMA, or WMA of 24-hour volume calculated from prior lower-timeframe bars, excluding the current bar.
-Long: Historical volume average > 0 AND current 24-hour volume > historical volume average × anomaly threshold AND close > open
-Short: Historical volume average > 0 AND current 24-hour volume > historical volume average × anomaly threshold AND close <= open

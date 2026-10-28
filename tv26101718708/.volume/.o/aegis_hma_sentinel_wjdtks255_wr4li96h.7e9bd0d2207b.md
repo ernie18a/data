@@ -1,4 +1,0 @@
-Long: close > HMA(close, shorter lookback) AND close crosses above the highest high of the previous five completed bars AND volume > 1.5 × average volume over the previous 10 completed bars AND absolute candle body > average absolute candle body over the previous 10 completed bars AND close > HMA(close, longer lookback) AND position side ≠ long
-Short: close ≤ HMA(close, shorter lookback) AND close crosses below the lowest low of the previous five completed bars AND volume > 1.5 × average volume over the previous 10 completed bars AND absolute candle body > average absolute candle body over the previous 10 completed bars AND close < HMA(close, longer lookback) AND position side ≠ short
-Exit: Long, high ≥ entry price + ATR at entry × target multiplier OR low ≤ entry-bar low − ATR at entry × stop-buffer multiplier
-Exit: Short, low ≤ entry price − ATR at entry × target multiplier OR high ≥ entry-bar high + ATR at entry × stop-buffer multiplier

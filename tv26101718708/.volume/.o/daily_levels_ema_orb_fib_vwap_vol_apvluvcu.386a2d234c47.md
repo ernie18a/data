@@ -1,7 +1,0 @@
-Calculation: Bullish hammer = close > open AND body > 0 AND lower wick >= 2 * body AND upper wick <= 0.5 * body, where body = abs(close - open), upper wick = high - max(open, close), and lower wick = min(open, close) - low
-Calculation: Shooting star = close < open AND body > 0 AND upper wick >= 2 * body AND lower wick <= 0.5 * body, using body and wick definitions above
-Calculation: Bullish engulfing = previous bar close < previous bar open AND close > open AND close > previous bar open AND open < previous bar close
-Calculation: Bearish engulfing = previous bar close > previous bar open AND close < open AND close < previous bar open AND open > previous bar close
-Calculation: Opening-range high/low = highest high / lowest low of bars in the current day's opening window beginning at 09:30 America/New_York and lasting the configured opening-range duration; use the completed range after that window ends
-Long: EMA with shorter lookback > EMA with longer lookback OR current high > opening-range high AND previous bar high <= opening-range high AND the opening window has ended OR bullish hammer OR bullish engulfing
-Short: EMA with shorter lookback <= EMA with longer lookback OR current low < opening-range low AND previous bar low >= opening-range low AND the opening window has ended OR shooting star OR bearish engulfing

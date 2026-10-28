@@ -1,6 +1,0 @@
-Calculation: Normalized RSI = take RSI(close) minus 50, smooth with a moving average, clip to a symmetric range, min-max normalize over a lookback, exponentially smooth, min-max normalize again over the same lookback, exponentially smooth again, then transform as (value - 50) × 2.
-Calculation: Normalized ROC = take ROC(close), smooth with a moving average, clip to a symmetric range, min-max normalize over a lookback, exponentially smooth, min-max normalize again over the same lookback, exponentially smooth again, then transform as (value - 50) × 2.
-Calculation: Normalized Sharpe = compute close-to-close returns; over a lookback, subtract the daily risk-free rate from the mean return and divide by the population standard deviation of returns plus a small constant. Clip to a symmetric range, min-max normalize over a lookback, exponentially smooth, min-max normalize again over the same lookback, exponentially smooth again, then transform as (value - 50) × 2.
-Calculation: Weighted score = weighted average of Normalized RSI, Normalized ROC, and Normalized Sharpe.
-Long: Weighted score ≤ lower threshold
-Exit: long, Weighted score ≥ upper threshold

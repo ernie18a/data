@@ -1,1 +1,0 @@
-Long: volume of the still-forming daily bar >= minimum daily-volume threshold AND current-bar volume >= 20-bar average volume * volume-spike multiplier AND volume of the still-forming 1-hour bar >= volume of the last completed 1-hour bar * volume-spike multiplier AND volume of the still-forming 1-hour bar >= minimum 1-hour-volume threshold AND close > open AND close > EMA20

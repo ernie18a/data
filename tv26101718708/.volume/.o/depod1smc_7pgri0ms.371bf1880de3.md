@@ -1,6 +1,0 @@
-Calculation: MACD histogram = MACD line minus signal line (12, 26, 9); bullish momentum means it is greater than its prior value, bearish momentum means it is less.
-Calculation: Phase low/high = lowest low / highest high over the phase lookback, including the EMA-break bar.
-Long: After RSI was below the oversold threshold and MACD histogram rose within the setup-memory window, the candle opened below and closed above the EMA; then, within the retest window and before invalidation or expiration, low <= break-bar EMA + tolerance and close > break-bar EMA; also, the signal cooldown has elapsed.
-Short: After RSI was above the overbought threshold and MACD histogram fell within the setup-memory window, the candle opened above and closed below the EMA; then, within the retest window and before invalidation or expiration, high >= break-bar EMA - tolerance and close < break-bar EMA; also, the signal cooldown has elapsed.
-Exit: Long, low <= phase low captured at the qualifying EMA break OR high >= entry price + abs(entry price - phase low) * reward/risk ratio OR holding bars >= maximum trade duration.
-Exit: Short, high >= phase high captured at the qualifying EMA break OR low <= entry price - abs(phase high - entry price) * reward/risk ratio OR holding bars >= maximum trade duration.

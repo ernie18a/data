@@ -1,2 +1,0 @@
-Long: datetime is within the configured date window AND (SMA(close, shorter lookback) crosses above VWMA(high, longer lookback) OR EMA(RSI(close, longer lookback), shorter lookback) crosses above the configured oversold level)
-Short: datetime is within the configured date window AND (VWMA(high, longer lookback) crosses above SMA(close, shorter lookback) OR EMA(RSI(close, longer lookback), shorter lookback) crosses above the configured overbought level)

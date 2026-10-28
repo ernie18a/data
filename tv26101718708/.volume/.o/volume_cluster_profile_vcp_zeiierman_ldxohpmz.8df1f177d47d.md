@@ -1,4 +1,0 @@
-Calculation: Current cluster center(s) = For the current rolling profile, divide the range from the lowest low to the highest high into equal price bins; add each bar’s volume to the bin containing its close. A center is a bin whose volume is at least that of each adjacent bin and greater than average bin volume; retain the strongest centers up to a maximum count. Use the current bar and prior bars in the lookback.
-Calculation: Last swing VA bounds = The price bounds of the highest enhanced-volume bin in the most recent completed swing segment; the segment profile uses close-binned volume and enhances bins by Gaussian-weighting the strongest local volume peaks.
-Long: (exactly one current cluster center AND close > that center) OR close > last swing VA upper bound
-Short: (exactly one current cluster center AND close < that center) OR close < last swing VA lower bound

@@ -1,4 +1,0 @@
-Long: fast EMA > medium EMA AND medium EMA > slow EMA AND close > fast EMA AND RSI > 50 AND RSI < overbought threshold AND volume > volume simple moving average × volume multiplier
-Short: fast EMA < medium EMA AND medium EMA < slow EMA AND close < fast EMA AND RSI < 50 AND RSI > oversold threshold AND volume > volume simple moving average × volume multiplier
-Exit: long, low ≤ entry price − ATR × stop multiplier OR high ≥ entry price + ATR × stop multiplier × first risk/reward ratio
-Exit: short, high ≥ entry price + ATR × stop multiplier OR low ≤ entry price − ATR × stop multiplier × first risk/reward ratio

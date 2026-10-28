@@ -1,5 +1,0 @@
-Calculation: Price bin = the midpoint of the price interval containing the lower-timeframe bar’s close, with interval width set by chart-timeframe ATR divided by the target rows per average candle, rounded to the nearest minimum tick and no smaller than one minimum tick.
-Calculation: Buy volume = summed lower-timeframe volume in the price bin for bars with close > open, plus half the volume for bars with close = open. Use bars within the current chart candle, including any still forming.
-Calculation: Sell volume = summed lower-timeframe volume in the price bin for bars with close < open, plus half the volume for bars with close = open. Use bars within the current chart candle, including any still forming.
-Long: Buy volume > Sell volume AND Buy volume + Sell volume >= minimum volume filter
-Short: Sell volume > Buy volume AND Buy volume + Sell volume >= minimum volume filter

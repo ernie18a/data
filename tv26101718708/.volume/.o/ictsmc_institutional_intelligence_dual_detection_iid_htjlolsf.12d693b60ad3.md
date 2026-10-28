@@ -1,3 +1,0 @@
-Long: Continuation score ≥ 15 and continuation direction is bullish OR reversal score ≥ 15 and reversal direction is bullish OR confirmed bullish BOS/CHoCH/MSS/BB retest OR bullish sweep-reclaim OR price enters swing-low proximity OR price enters OTE discount (21–38% of the active swing range) OR chart-timeframe phase changes to bullish expansion/continuation
-Short: Continuation score ≥ 15 and continuation direction is bearish OR reversal score ≥ 15 and reversal direction is bearish OR confirmed bearish BOS/CHoCH/MSS/BB retest OR bearish sweep-reclaim OR price enters swing-high proximity OR price enters OTE premium (62–79% of the active swing range) OR chart-timeframe phase changes to bearish expansion/continuation
-Exit: 

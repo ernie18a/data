@@ -1,3 +1,0 @@
-Calculation: Session-anchored VWAP = cumulative typical price × volume since session open divided by cumulative volume since session open, through the current bar.
-Long: Opening range is ready AND close crosses above opening-range high AND close > session-anchored VWAP AND close > SMA(close, L) AND SMA(close, L) > its previous value AND volume > K × SMA(volume, L) AND NOT (high > opening-range high AND close < opening-range high)
-Short: Opening range is ready AND close crosses below opening-range low AND close < session-anchored VWAP AND close < SMA(close, L) AND SMA(close, L) < its previous value AND volume > K × SMA(volume, L) AND NOT (low < opening-range low AND close > opening-range low)

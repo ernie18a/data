@@ -1,4 +1,0 @@
-Calculation: Short-, medium-, and long-term volume moving averages = rolling averages of volume with progressively longer lookbacks
-Calculation: Volume ratio = current bar volume divided by previous bar volume
-Long: (Volume is below all three volume moving averages on at least one of the last three bars AND no bearish bar with volume above any of the three moving averages occurred on either of the last two bars AND volume ratio is at least its threshold AND (close > open OR low > previous bar high AND open > close)) OR (volume ratio is at least its threshold AND close > open)
-Short: Volume ratio is at least its threshold AND low > previous bar high AND open > close

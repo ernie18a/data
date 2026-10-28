@@ -1,3 +1,0 @@
-Calculation: Fast and slow EVWMAs = recursively update the prior EVWMA by ((sum of volume over the lookback including the current bar − current-bar volume) × prior EVWMA + current-bar volume × close) / sum of volume over the lookback; initialize the prior EVWMA to close when unavailable. The fast lookback is shorter than the slow lookback.
-Long: Fast EVWMA crosses above slow EVWMA (current fast > current slow AND previous fast ≤ previous slow)
-Short: Fast EVWMA crosses below slow EVWMA (current fast < current slow AND previous fast ≥ previous slow)

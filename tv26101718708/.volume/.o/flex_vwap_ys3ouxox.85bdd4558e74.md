@@ -1,3 +1,0 @@
-Calculation: Flex VWAP = cumulative volume-weighted average of the selected price source since the current anchor; include the current bar and reset at each selected bar-cycle, confirmed swing pivot, volume threshold, or daily/session boundary. Use volume 1 when volume is zero or unavailable.
-Long: Previous close ≤ previous Flex VWAP AND current close > current Flex VWAP
-Short: Previous close ≥ previous Flex VWAP AND current close < current Flex VWAP

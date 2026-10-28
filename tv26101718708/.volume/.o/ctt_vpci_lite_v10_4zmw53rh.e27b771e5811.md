@@ -1,3 +1,0 @@
-Calculation: Session RVOL = current daily bar volume divided by the selected baseline: prior completed daily volume, or the average over a selected lookback of completed daily bars; during regular hours, adjust the average by the session U-shape factor.
-Long: close > previous completed daily close OR close >= open OR Session RVOL >= high-participation threshold OR 14-period RSI <= oversold threshold
-Short: close <= previous completed daily close OR close < open OR 14-period RSI >= overbought threshold

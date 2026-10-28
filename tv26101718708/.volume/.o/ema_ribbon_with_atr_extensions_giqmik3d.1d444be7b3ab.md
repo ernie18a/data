@@ -1,2 +1,0 @@
-Calculation: Daily ATR extension above 50-day MA = ((daily close − 50-day MA) / 50-day MA × 100) / (daily ATR / daily close × 100), using the daily bar still forming
-Long: On a 1-day chart, daily close > 50-day moving average of daily close AND daily ATR extension above 50-day MA > threshold

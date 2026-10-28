@@ -1,9 +1,0 @@
-Calculation: Relative volume = bar volume / moving average of volume over a shorter lookback
-Calculation: Pump score = max(percentage change from bar open to close, 0) × relative volume
-Calculation: Dump score = max(percentage change from bar open to close in the negative direction, 0) × relative volume
-Calculation: Hourly pump/dump scores = averages of the respective scores from completed hourly bars in the selected historical period, grouped by hour of day
-Calculation: Daily pump/dump scores = averages of the respective scores from completed daily bars in the selected historical period, grouped by weekday
-Calculation: Hourly pump/dump norms = mean absolute hourly pump/dump score across buckets with available values
-Calculation: Daily pump/dump norms = mean absolute daily pump/dump score across buckets with available values
-Long: On an hourly chart, the next hour's pump score > hourly pump norm × threshold AND (the next hour's dump score ≤ hourly dump norm × threshold OR the next hour's pump score ≥ its dump score) OR on a daily chart, the next weekday's pump score > daily pump norm × threshold AND (the next weekday's dump score ≤ daily dump norm × threshold OR the next weekday's pump score ≥ its dump score)
-Short: On an hourly chart, the next hour's dump score > hourly dump norm × threshold AND (the next hour's pump score ≤ hourly pump norm × threshold OR the next hour's dump score > its pump score) OR on a daily chart, the next weekday's dump score > daily dump norm × threshold AND (the next weekday's pump score ≤ daily pump norm × threshold OR the next weekday's dump score > its pump score)

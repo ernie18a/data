@@ -1,3 +1,0 @@
-Calculation: Order imbalance = rolling sum of ((2 × close − high − low) / (high − low) × volume) divided by rolling volume sum, using calculation-timeframe bars, including the bar still forming; use 0 for the close-location value when high equals low
-Long: Order imbalance > its positive threshold OR close ≥ anchored VWAP AND anchored VWAP ≥ its previous value
-Short: Order imbalance < its negative threshold OR close < anchored VWAP AND anchored VWAP < its previous value

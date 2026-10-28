@@ -1,1 +1,0 @@
-Use the signal instrument’s directional movement indicators to trade the selected instrument: go long when positive DI is below its low threshold while negative DI is above its high threshold; go short on the inverse condition. An opposite entry signal reverses the position.

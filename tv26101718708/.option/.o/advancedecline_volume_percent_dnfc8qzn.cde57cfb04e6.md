@@ -1,1 +1,0 @@
-Use the percentage change in net advancing volume—advancing volume minus declining volume—relative to their combined volume. Go long when it exceeds an upper threshold; go short when it falls below a lower threshold. Otherwise, keep the prior position.

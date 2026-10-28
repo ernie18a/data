@@ -1,5 +1,0 @@
-Calculation: Bar buying volume = volume × (close − low) / max(high − low, minimum price increment)
-Calculation: Bar selling volume = volume × (high − close) / max(high − low, minimum price increment)
-Calculation: Bin buying and selling volume = assign each chart-timeframe bar’s buying and selling volume to the equal-width price bin containing its close, using that bar’s rolling lookback low and high; accumulate by bin index and remove the contribution from the bar that falls outside the lookback window. Include the current bar.
-Long: For each bin, accumulated buying volume > accumulated selling volume AND accumulated buying volume + accumulated selling volume > 0
-Short: For each bin, accumulated buying volume <= accumulated selling volume AND accumulated buying volume + accumulated selling volume > 0

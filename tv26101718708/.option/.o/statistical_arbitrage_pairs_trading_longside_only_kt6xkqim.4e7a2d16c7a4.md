@@ -1,1 +1,0 @@
-For the traded instrument, calculate its rolling price z-score and subtract the paired instrument’s rolling price z-score. Standardize this spread using its rolling median and median absolute deviation. Enter or maintain a long position when the result is below a chosen negative threshold; exit the long position when the result reaches or exceeds zero. No short signal.

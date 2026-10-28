@@ -1,4 +1,0 @@
-Calculation: Confirmed swing high/low = chart-bar pivot high/low using the same configured number of bars on each side; use the latest confirmed pivot.
-Calculation: Price-change Z-score = current close-to-close change minus its rolling mean, divided by its rolling standard deviation, using the same lookback for both; use chart bars.
-Long: Previous close ≤ latest confirmed swing high AND current close > latest confirmed swing high AND price-change Z-score > its positive threshold
-Short: Previous close ≥ latest confirmed swing low AND current close < latest confirmed swing low AND price-change Z-score < its negative threshold

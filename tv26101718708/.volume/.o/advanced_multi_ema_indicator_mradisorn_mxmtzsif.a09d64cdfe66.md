@@ -1,3 +1,0 @@
-Calculation: Selected moving average = SMA, EMA, or volume-weighted moving average of close over a lookback period.
-Long: The shortest-period moving average crosses above the next-shortest-period moving average OR the next-shortest crosses above the next-longer OR the next-longer crosses above the longest-period moving average.
-Short: The shortest-period moving average crosses below the next-shortest-period moving average OR the next-shortest crosses below the next-longer OR the next-longer crosses below the longest-period moving average.

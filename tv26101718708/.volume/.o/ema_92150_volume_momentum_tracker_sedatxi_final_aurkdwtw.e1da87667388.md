@@ -1,3 +1,0 @@
-Calculation: Volume spike = volume > its moving average × a multiplier
-Long: close > EMA9 AND close > EMA21 AND close > EMA50 OR EMA9 > EMA21 AND EMA21 > EMA50 OR close crosses above EMA50 OR volume is above its moving average × a multiplier AND close > open
-Short: close < EMA9 AND close < EMA21 AND close < EMA50 OR EMA9 < EMA21 AND EMA21 < EMA50 OR close crosses below EMA50 OR volume is above its moving average × a multiplier AND close < open

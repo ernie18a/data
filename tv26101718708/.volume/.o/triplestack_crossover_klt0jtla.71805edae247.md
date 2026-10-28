@@ -1,2 +1,0 @@
-Long: On bar close, the shorter-period SMA is above each of the longer-period EMA, longer-period VWMA, and current-session VWAP, and on the previous bar it was at or below the highest of those three values.
-Short: On bar close, the shorter-period SMA is below each of the longer-period EMA, longer-period VWMA, and current-session VWAP, and on the previous bar it was at or above the lowest of those three values.

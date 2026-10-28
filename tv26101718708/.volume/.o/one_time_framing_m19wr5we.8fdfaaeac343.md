@@ -1,9 +1,0 @@
-Calculation: Inside bar = current high < previous bar high AND current low > previous bar low
-Calculation: Upward run qualifies = count of consecutive non-inside bars with a higher low, pausing on inside bars and resetting on any other bar, is at least the required run depth minus one
-Calculation: Downward run qualifies = count of consecutive non-inside bars with a lower high, pausing on inside bars and resetting on any other bar, is at least the required run depth minus one
-Calculation: Bullish inside-bar confirmation = within the expiry period after the latest inside bar, current close > that inside bar's high AND current low > previous bar low
-Calculation: Bearish inside-bar confirmation = within the expiry period after the latest inside bar, current close < that inside bar's low AND current high < previous bar high
-Long: Prior trend state is flat AND current bar is not an inside bar AND upward run qualifies OR prior trend state is not long AND bullish inside-bar confirmation OR prior trend state is long AND current bar is not an inside bar AND upward run qualifies AND neither of the first two long conditions applies
-Short: Prior trend state is flat AND current bar is not an inside bar AND downward run qualifies OR prior trend state is not short AND bearish inside-bar confirmation OR prior trend state is short AND current bar is not an inside bar AND downward run qualifies AND neither of the first two short conditions applies
-Exit: Long, prior trend state is long AND current bar is not an inside bar AND upward run does not qualify
-Exit: Short, prior trend state is short AND current bar is not an inside bar AND downward run does not qualify

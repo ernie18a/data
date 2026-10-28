@@ -1,1 +1,0 @@
-When the optional volatility filter is enabled, allow new long entries only if the recent squared deviations of hourly VIX highs from their long-term average have stayed below a threshold; otherwise block new entries. The filter does not trigger exits or short trades.

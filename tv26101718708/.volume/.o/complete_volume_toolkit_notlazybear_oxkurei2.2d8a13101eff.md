@@ -1,5 +1,0 @@
-Calculation: Volume delta = sum across the current chart bar’s completed lower-timeframe bars of volume × ((close − low) − (high − close)) / (high − low); for a zero-range bar use zero. If lower-timeframe data is unavailable, calculate from the chart bar instead.
-Calculation: Cluster density = the selected density score for current volume over the lookback window: Gaussian KDE density, current-bin frequency divided by window length, or the mean of those two scores.
-Calculation: Modal volume = midpoint of the most populated volume bin over the cluster lookback window.
-Long: cluster density was above its threshold for at least the 3 preceding bars AND current cluster density is at or below its threshold AND current volume is greater than 1.3 times the current-window mean volume AND current volume is above modal volume AND current volume delta is positive
-Short: cluster density was above its threshold for at least the 3 preceding bars AND current cluster density is at or below its threshold AND current volume is greater than 1.3 times the current-window mean volume AND current volume is above modal volume AND current volume delta is negative

@@ -1,3 +1,0 @@
-Calculation: 0.618 Bollinger bands = VWMA of (high + low + close) / 3 ± 0.618 × multiplier × standard deviation of (high + low + close) / 3, using the same lookback
-Long: EMA(close, shorter lookback) > EMA(close, longer lookback) AND (close < lower 0.618 Bollinger band OR low <= lower 0.618 Bollinger band)
-Exit: long, (previous close <= previous upper 0.618 Bollinger band AND close > upper 0.618 Bollinger band) OR close < entry price × (1 − stop-loss percentage)

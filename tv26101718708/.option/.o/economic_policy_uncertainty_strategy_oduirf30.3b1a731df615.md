@@ -1,1 +1,0 @@
-Use the daily economic policy uncertainty index as an external signal. Enter long in the traded instrument when a short-term moving average of the index crosses above a chosen threshold. Exit the long after a fixed number of bars; no short entry rule.

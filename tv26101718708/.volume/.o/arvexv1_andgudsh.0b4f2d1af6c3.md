@@ -1,2 +1,0 @@
-Long: close[1] > open[1] AND close < open AND volume > volume[1] AND low >= low[1] AND abs(close - open) > (high - low) * 0.10 AND (abs(close - open) > (high - low) * 0.30 OR ((close - low) < abs(close - open) * 2 AND (high - close) < abs(close - open) * 2)
-Short: close[1] < open[1] AND close > open AND volume > volume[1] AND high <= high[1] AND abs(close - open) > (high - low) * 0.10 AND (abs(close - open) > (high - low) * 0.30 OR ((close - low) < abs(close - open) * 2 AND (high - close) < abs(close - open) * 2)

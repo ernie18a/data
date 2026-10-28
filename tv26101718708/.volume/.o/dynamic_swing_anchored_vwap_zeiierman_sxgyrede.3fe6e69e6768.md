@@ -1,2 +1,0 @@
-Long: Most recent bar in the swing-period window with the highest high is later than the most recent bar with the lowest low, and on the previous bar it was not later
-Short: Most recent bar in the swing-period window with the lowest low is later than the most recent bar with the highest high, and on the previous bar it was not later

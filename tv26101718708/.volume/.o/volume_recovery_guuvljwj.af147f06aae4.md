@@ -1,2 +1,0 @@
-Long: close[3] > open[3] AND volume[2] < volume[3] AND volume[1] < volume[3] AND volume > volume[1] AND volume > volume[3] AND (same-color filter disabled OR close > open)
-Short: close[3] < open[3] AND volume[2] < volume[3] AND volume[1] < volume[3] AND volume > volume[1] AND volume > volume[3] AND (same-color filter disabled OR close < open)

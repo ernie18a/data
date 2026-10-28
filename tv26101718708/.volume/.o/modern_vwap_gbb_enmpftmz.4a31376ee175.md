@@ -1,8 +1,0 @@
-Calculation: Anchored VWAP = cumulative volume-weighted average of HLC3 from the selected session, week, month, or confirmed swing-pivot anchor, including the current bar; for a swing anchor, include the pivot bar and bars through confirmation.
-Calculation: Sigma = square root of the volume-weighted mean of HLC3 squared minus the square of Anchored VWAP, accumulated from the same anchor.
-Calculation: Two-sigma bands = Anchored VWAP ± 2 × Sigma.
-Calculation: Kaufman Efficiency Ratio = absolute change in close over the lookback divided by the sum of absolute close changes over that lookback.
-Calculation: Ranging = current Kaufman Efficiency Ratio is less than or equal to its trailing median; Trending = current Kaufman Efficiency Ratio is greater than its trailing median.
-Calculation: Long occupancy = at least 8 of the 10 closes preceding the current bar are above their respective Anchored VWAP values; short occupancy = at least 8 are below or equal to their respective Anchored VWAP values.
-Long: Ranging AND previous close < previous lower two-sigma band AND current close >= current lower two-sigma band AND current close <= current upper two-sigma band OR (Trending AND long occupancy AND, within 3 bars including the touch bar after a low <= Anchored VWAP, current close > Anchored VWAP)
-Short: Ranging AND previous close > previous upper two-sigma band AND current close <= current upper two-sigma band AND current close >= current lower two-sigma band OR (Trending AND short occupancy AND, within 3 bars including the touch bar after a high >= Anchored VWAP, current close < Anchored VWAP)

@@ -1,7 +1,0 @@
-Calculation: EMA slope (%) = (current EMA − EMA N bars ago) / EMA N bars ago × 100, using the same lookback for all five EMAs, whose lengths increase from fastest to slowest
-Calculation: Fan score = fastest EMA slope − slowest EMA slope
-Calculation: Stop distance = ATR × stop multiple
-Long: all five EMA slopes > 0 AND fastest EMA slope > next-fastest EMA slope > middle EMA slope > next-slowest EMA slope > slowest EMA slope AND fan score > entry threshold AND RSI > lower bound AND RSI < upper bound AND volume > its moving average × volume multiplier AND position is flat
-Short: all five EMA slopes < 0 AND fastest EMA slope < next-fastest EMA slope < middle EMA slope < next-slowest EMA slope < slowest EMA slope AND fan score < −entry threshold AND RSI < 100 − lower bound AND RSI > 100 − upper bound AND volume > its moving average × volume multiplier AND position is flat
-Exit: long, any adjacent pair in the five EMA slopes is no longer strictly descending from fastest to slowest OR fan score < compression threshold OR low ≤ entry price − stop distance OR high ≥ entry price + stop distance × take-profit R multiple
-Exit: short, any adjacent pair in the five EMA slopes is no longer strictly ascending from fastest to slowest OR fan score > −compression threshold OR high ≥ entry price + stop distance OR low ≤ entry price − stop distance × take-profit R multiple

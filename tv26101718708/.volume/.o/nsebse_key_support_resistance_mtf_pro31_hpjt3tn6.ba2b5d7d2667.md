@@ -1,3 +1,0 @@
-Calculation: Support/resistance level = a confirmed pivot low/high on each enabled timeframe, using the configured number of bars on both sides; levels of the same type within the configured ATR distance are merged. Use completed timeframe bars.
-Long: A valid support level is retested (low <= level AND close > level) OR a valid resistance level is broken (configured close or wick price > level AND, when enabled, volume >= average volume × configured threshold).
-Short: A valid resistance level is retested (high >= level AND close < level) OR a valid support level is broken (configured close or wick price < level AND, when enabled, volume >= average volume × configured threshold).

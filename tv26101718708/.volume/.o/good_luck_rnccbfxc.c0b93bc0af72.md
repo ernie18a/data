@@ -1,4 +1,0 @@
-Long: close > fast EMA AND previous close <= previous fast EMA AND fast EMA > slow EMA OR close > fast EMA AND fast EMA > previous fast EMA OR low > high two bars earlier OR current bar confirms a swing low using a longer lookback on each side
-Short: close < fast EMA AND previous close >= previous fast EMA AND fast EMA < slow EMA OR close < fast EMA AND fast EMA < previous fast EMA OR high < low two bars earlier OR current bar confirms a swing high using a longer lookback on each side
-Exit: long, close < slow EMA OR low <= entry price - ATR
-Exit: short, close > slow EMA OR high >= entry price + ATR

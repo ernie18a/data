@@ -1,2 +1,0 @@
-Long: short-period EMA crosses above long-period EMA on the chart timeframe OR short-period EMA > long-period EMA on any dashboard timeframe OR after a bullish crossover and before the first retest, low <= long-period EMA
-Short: short-period EMA crosses below long-period EMA on the chart timeframe OR short-period EMA < long-period EMA on any dashboard timeframe OR after a bearish crossover and before the first retest, high >= long-period EMA

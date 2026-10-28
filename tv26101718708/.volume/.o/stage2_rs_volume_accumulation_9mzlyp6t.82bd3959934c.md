@@ -1,2 +1,0 @@
-Calculation: Relative strength = close / benchmark close
-Long: monthly close > monthly 18-period SMA AND monthly 18-period SMA > its value on the prior monthly bar AND monthly RSI > its threshold AND relative strength > its lookback SMA AND relative strength rate of change over that same lookback > 0 AND current high > the highest high of prior bars over its lookback AND current low > the lowest low of prior bars over that same lookback

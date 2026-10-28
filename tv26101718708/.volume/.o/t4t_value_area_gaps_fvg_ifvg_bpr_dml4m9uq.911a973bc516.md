@@ -1,8 +1,0 @@
-Long: a bullish fair value gap forms when the current gap-timeframe bar’s low is above the high two bars earlier by at least the minimum gap size, and a selected previous-session value-area high, value-area low, point of control, previous-week value-area high, or previous-week value-area low lies inside the gap or within the alignment tolerance of its edge
-Short: a bearish fair value gap forms when the current gap-timeframe bar’s high is below the low two bars earlier by at least the minimum gap size, and a selected previous-session value-area high, value-area low, point of control, previous-week value-area high, or previous-week value-area low lies inside the gap or within the alignment tolerance of its edge
-Long: an aligned bullish fair value gap becomes an inverted fair value gap when a gap-timeframe bar closes below its lower edge
-Short: an aligned bearish fair value gap becomes an inverted fair value gap when a gap-timeframe bar closes above its upper edge
-Long: a new bullish fair value gap overlaps an opposing gap formed within the pairing window, creating an aligned balanced price range in the overlap
-Short: a new bearish fair value gap overlaps an opposing gap formed within the pairing window, creating an aligned balanced price range in the overlap
-Long: the first test of an aligned bullish fair value gap, inverted fair value gap, or balanced price range occurs when price reaches its upper edge
-Short: the first test of an aligned bearish fair value gap, inverted fair value gap, or balanced price range occurs when price reaches its lower edge

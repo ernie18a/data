@@ -1,3 +1,0 @@
-Calculation: Projection path = Let H and L be the highest high and lowest low over the same rolling lookback, and h and l their respective bars-since ages. Define R = H − L. Let A = H if h < l, otherwise L. Let B = H − R·p if l > h, otherwise L + R·p, where p is the projection fraction. Let C = B − (B − L)·p if l < h, otherwise B + (H − B)·p. Let D = H − 1.272·R if l > h, otherwise L + 1.272·R. The path is [A, B, C, D].
-Long: Any consecutive pair in the projection path has the later value > the prior value
-Short: Any consecutive pair in the projection path has the later value ≤ the prior value

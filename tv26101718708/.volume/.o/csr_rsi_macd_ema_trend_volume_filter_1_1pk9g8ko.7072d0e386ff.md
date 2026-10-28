@@ -1,2 +1,0 @@
-Long: MACD line crosses above its signal line AND RSI crosses below its oversold threshold AND close > EMA AND volume > volume SMA
-Short: MACD line crosses below its signal line AND RSI crosses above its overbought threshold AND close < EMA AND volume > volume SMA

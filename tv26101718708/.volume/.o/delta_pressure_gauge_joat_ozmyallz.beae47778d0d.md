@@ -1,6 +1,0 @@
-Calculation: Weighted bar delta = sign(close − open) × volume × |close − open| / (high − low), with zero delta when high = low
-Calculation: Delta wave = EMA of weighted bar delta, divided by the rolling maximum of its absolute value; EMA length is shorter than the signal smoothing length
-Calculation: Signal = SMA of the delta wave
-Calculation: Wave pivot low/high = a confirmed local low/high in the delta wave using left- and right-side lookbacks
-Long: Delta wave crosses above the signal OR delta wave crosses above zero OR delta wave > 0.10 AND delta wave > signal OR, at a confirmed wave pivot low, the wave pivot is higher than the previous wave pivot low AND the price low at that pivot is lower than the previous pivot low OR delta wave ≤ the lower extreme threshold
-Short: Delta wave crosses below the signal OR delta wave crosses below zero OR delta wave < −0.10 AND delta wave < signal OR, at a confirmed wave pivot high, the wave pivot is lower than the previous wave pivot high AND the price high at that pivot is higher than the previous pivot high OR delta wave ≥ the upper extreme threshold

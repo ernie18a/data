@@ -1,8 +1,0 @@
-Calculation: Pressure = weighted average of (100 − percentile rank of ATR), percentile rank of absolute return acceleration, and (100 − efficiency ratio × 100); include percentile ranks of absolute volatility-index minus forecast volatility and absolute basis momentum when those feeds are enabled, with weights renormalized for unavailable feeds
-Calculation: Efficiency ratio = absolute price change over the efficiency lookback / sum of absolute one-bar price changes over that lookback
-Calculation: Loaded = highest pressure percentile over the spring-memory lookback
-Calculation: Release size = max(0, min(1, ((high − low) / ATR − 0.8) / 1.2))
-Calculation: Up score = 2 if close exceeds the prior bar’s rolling trigger high, plus 1 if close is at least as close to high as to low, plus 1 if price change over the direction lookback is nonnegative
-Calculation: Down score = 2 if close is below the prior bar’s rolling trigger low, plus 1 if close is closer to low than high, plus 1 if price change over the direction lookback is negative
-Long: highest loaded pressure percentile over the spring-memory lookback ≥ the high-pressure threshold AND release size ≥ the release threshold AND the raw signal has persisted for the confirmation-bar count AND the minimum gap since the prior signal has elapsed AND Up score ≥ Down score AND all enabled filters pass
-Short: highest loaded pressure percentile over the spring-memory lookback ≥ the high-pressure threshold AND release size ≥ the release threshold AND the raw signal has persisted for the confirmation-bar count AND the minimum gap since the prior signal has elapsed AND Up score < Down score AND all enabled filters pass

@@ -1,1 +1,0 @@
-Go long on the traded instrument when the smoothed NASDAQ advance-decline breadth crosses above its signal average; go short or exit when it crosses below.

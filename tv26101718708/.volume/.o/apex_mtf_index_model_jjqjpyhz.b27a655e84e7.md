@@ -1,9 +1,0 @@
-Calculation: Monthly, weekly, and daily bias = +1 when the current bar’s close is above its EMA, −1 when below, and 0 when equal; use the still-forming bar for each timeframe, with the same EMA lookback as the chart timeframe.
-Calculation: Weighted bias = 5 × monthly bias + 4 × weekly bias + 3 × daily bias.
-Calculation: Bullish probability = (weighted bias + 12) / 24 × 100.
-Calculation: ORB high/low = the highest high/lowest low during the first configured ORB duration from the first bar of each day; use the accumulated range after that duration ends.
-Calculation: ATR expansion = ATR > its simple moving average over an equal lookback; both use the chart timeframe.
-Long: bullish probability > 60 AND within the configured New York session AND ATR expansion AND ((close > chart-timeframe EMA AND close > VWAP AND low <= chart-timeframe EMA) OR (ORB duration ended AND close > ORB high AND close > VWAP))
-Short: bullish probability < 40 AND within the configured New York session AND ATR expansion AND ((close < chart-timeframe EMA AND close < VWAP AND high >= chart-timeframe EMA) OR (ORB duration ended AND close < ORB low AND close < VWAP))
-Exit: long, low <= signal-bar low − signal-bar ATR OR high >= signal-bar close + 1.5 × (signal-bar close − signal-bar low + signal-bar ATR) OR high >= signal-bar close + runner-RR × (signal-bar close − signal-bar low + signal-bar ATR)
-Exit: short, high >= signal-bar high + signal-bar ATR OR low <= signal-bar close − 1.5 × (signal-bar high + signal-bar ATR − signal-bar close) OR low <= signal-bar close − runner-RR × (signal-bar high + signal-bar ATR − signal-bar close)

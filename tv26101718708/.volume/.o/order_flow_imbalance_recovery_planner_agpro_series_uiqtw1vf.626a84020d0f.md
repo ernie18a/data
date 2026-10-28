@@ -1,8 +1,0 @@
-Calculation: Relative volume = current volume divided by its simple moving average over a lookback.
-Calculation: Body ratio = absolute close-open divided by high-low.
-Calculation: Imbalance pocket = the displacement candle body, expanded symmetrically if needed to be at least a parameterized fraction of ATR wide; recovery rail = pocket midpoint.
-Calculation: Recovery score = a weighted score of the displacement seed (range/ATR, relative volume, and body ratio), recovery depth beyond the rail, directional rejection-wick fraction, current relative volume, and pocket freshness; cap component contributions and total score to their defined ranges.
-Long: close > open AND high-low >= ATR × minimum displacement multiple AND body ratio >= minimum body ratio AND relative volume >= minimum relative volume OR an active bullish pocket is tested AND the bar is not a ready recovery bar or a new displacement bar OR an active bullish pocket has a recent test AND close > recovery rail + ATR × recovery buffer AND recovery score >= minimum ready score.
-Short: close < open AND high-low >= ATR × minimum displacement multiple AND body ratio >= minimum body ratio AND relative volume >= minimum relative volume OR an active bearish pocket is tested AND the bar is not a ready recovery bar or a new displacement bar OR an active bearish pocket has a recent test AND close < recovery rail - ATR × recovery buffer AND recovery score >= minimum ready score.
-Exit: long, an active bullish pocket's close < pocket bottom - ATR × invalidation buffer OR its age exceeds the maximum pocket age.
-Exit: short, an active bearish pocket's close > pocket top + ATR × invalidation buffer OR its age exceeds the maximum pocket age.

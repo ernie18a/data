@@ -1,1 +1,0 @@
-Use directional movement indicators calculated on the signal instrument. Go long on the traded instrument when positive DI is below 10 and negative DI is above 40. Go short when negative DI is below 10 and positive DI is above 40. No exit condition is specified.

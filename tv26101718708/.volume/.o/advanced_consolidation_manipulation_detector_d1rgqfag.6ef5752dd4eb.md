@@ -1,2 +1,0 @@
-Long: low < lowest low of the previous pivot-lookback completed bars AND volume > its simple moving average over the longer of the two ATR lookbacks AND close > open
-Short: high > highest high of the previous pivot-lookback completed bars AND volume > its simple moving average over the longer of the two ATR lookbacks AND close < open

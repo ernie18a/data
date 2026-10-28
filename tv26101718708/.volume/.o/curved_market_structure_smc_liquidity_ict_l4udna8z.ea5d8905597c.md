@@ -1,5 +1,0 @@
-Calculation: Upper curve = double EMA of close, first with a longer lookback and then a shorter lookback, plus the EMA of close's standard deviation over the longer lookback multiplied by a volatility multiplier
-Calculation: Lower curve = double EMA of close, first with a longer lookback and then a shorter lookback, minus the EMA of close's standard deviation over the longer lookback multiplied by a volatility multiplier
-Calculation: Candle body ratio = absolute(close − open) / (high − low), or 0 when high equals low
-Long: (current low or previous bar's low <= the corresponding lower curve, RSI(14) > 45, close > open, and bars since the prior confirmed buy signal >= cooldown) OR (candle body ratio >= consolidation threshold and close > open) OR (close crosses above the latest confirmed swing high)
-Short: (current high or previous bar's high >= the corresponding upper curve, RSI(14) < 55, close < open, and bars since the prior confirmed sell signal >= cooldown) OR (candle body ratio >= consolidation threshold and close < open) OR (close crosses below the latest confirmed swing low)

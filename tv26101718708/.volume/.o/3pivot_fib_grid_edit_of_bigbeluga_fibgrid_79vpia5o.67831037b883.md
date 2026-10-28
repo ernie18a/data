@@ -1,5 +1,0 @@
-Calculation: Pivot source = trend moving average when detecting MA pivots; otherwise low and high, or close for both, according to the price pivot source setting
-Calculation: Confirmed pivot low = candidate pivot-source value is lower than the pivot-source values on each of the configured number of bars before and after it; confirm only when all following bars are complete
-Calculation: Confirmed pivot high = candidate pivot-source value is higher than the pivot-source values on each of the configured number of bars before and after it; confirm only when all following bars are complete
-Long: confirmed pivot low AND (MA pivots selected OR MA trend filter disabled OR close > trend moving average)
-Short: confirmed pivot high AND (MA pivots selected OR MA trend filter disabled OR close < trend moving average)

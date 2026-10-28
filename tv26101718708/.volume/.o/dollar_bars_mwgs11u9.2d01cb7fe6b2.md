@@ -1,4 +1,0 @@
-Calculation: Dollar bar = aggregate native bars until the sum of volume × selected notional price reaches a configured threshold; use only completed dollar bars for signals.
-Calculation: Exponential moving averages = EMA of the selected source on completed dollar bars; orange is shortest, blue is intermediate, gray is longest.
-Long: Dollar-bar close > selected EMA AND dollar-bar close <= its value on the preceding completed dollar bar OR blue EMA > gray EMA AND blue EMA on the preceding completed dollar bar <= gray EMA on the preceding completed dollar bar.
-Short: Dollar-bar close < selected EMA AND dollar-bar close >= its value on the preceding completed dollar bar OR blue EMA < gray EMA AND blue EMA on the preceding completed dollar bar >= gray EMA on the preceding completed dollar bar.

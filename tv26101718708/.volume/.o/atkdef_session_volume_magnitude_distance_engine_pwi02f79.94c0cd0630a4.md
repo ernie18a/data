@@ -1,2 +1,0 @@
-Long: Completed Asia session close >= its open OR completed Europe session close >= its open OR completed US session close >= its open
-Short: Completed Asia session close < its open OR completed Europe session close < its open OR completed US session close < its open

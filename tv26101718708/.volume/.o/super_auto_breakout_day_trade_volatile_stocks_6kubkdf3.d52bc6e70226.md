@@ -1,6 +1,0 @@
-Calculation: Upper band = SMA(close, lookback) × 1.014 when close ≤ threshold; otherwise SMA(close, lookback) + fixed offset
-Calculation: Lower band = SMA(close, lookback) × 0.985 when close ≤ threshold; otherwise SMA(close, lookback) − fixed offset
-Calculation: VFI = sum of signed volume flows over a lookback ÷ average volume from the prior bar; cap each bar’s volume at average volume × a volume cutoff, and count it positively when the change in typical price exceeds a volatility-scaled cutoff, negatively when it is below the negative cutoff, or as zero otherwise. Typical price = (high + low + close) ÷ 3; volatility = standard deviation of log changes in typical price.
-Calculation: VFI signal = EMA of VFI using a shorter lookback than the VFI lookback
-Long: (within configured trade session AND close 3 bars ago > Upper band 3 bars ago AND close > SMA(close, lookback) AND VFI 3 bars ago > 0 AND VFI > 0 AND VFI > VFI 5 bars ago AND more than 5 bars since the prior exit condition) OR close > open × 1.04
-Exit: Long, close < Lower band OR close > entry price × 1.1 OR close < entry price − fixed offset OR VFI < −3 OR VFI signal < −3 OR close < open × 0.94

@@ -1,9 +1,0 @@
-Calculation: Confirmation window = configured bar limit, or in automatic mode the median of recent bar gaps from an Aroon zero cross to subsequent agreement, bounded by the configured limits; until enough gaps exist, use about one quarter of the CMF lookback.
-Calculation: Stop distance = ATR × stop multiplier, using ATR on the signal bar.
-Calculation: Long targets = signal-bar close + stop distance × target multiples sorted nearest to farthest; short targets = signal-bar close − stop distance × target multiples sorted nearest to farthest.
-Long: Aroon Oscillator crosses above zero within the confirmation window AND current Aroon Oscillator > 0 AND current Chaikin Money Flow > flow buffer AND previous bar did not have both Aroon Oscillator > 0 and Chaikin Money Flow > flow buffer AND (higher-timeframe filter disabled OR Aroon Oscillator on the last completed higher-timeframe bar > 0) AND (trend-strength filter disabled OR previous chart bar ADX ≥ minimum)
-Short: Aroon Oscillator crosses below zero within the confirmation window AND current Aroon Oscillator < 0 AND current Chaikin Money Flow < −flow buffer AND previous bar did not have both Aroon Oscillator < 0 and Chaikin Money Flow < −flow buffer AND (higher-timeframe filter disabled OR Aroon Oscillator on the last completed higher-timeframe bar < 0) AND (trend-strength filter disabled OR previous chart bar ADX ≥ minimum)
-Exit: long, high ≥ first target OR high ≥ second target
-Exit: short, low ≤ first target OR low ≤ second target
-Exit: long, close < stop OR high ≥ third target OR a new long or short signal
-Exit: short, close > stop OR low ≤ third target OR a new long or short signal

@@ -1,3 +1,0 @@
-Calculation: Bullish candle count = number of the current and previous 4 bars where close > open
-Long: close > VWAP AND MACD line > MACD signal line AND EMA(9) > EMA(20) AND EMA(20) > EMA(50) AND bullish candle count >= 3 AND current bar is within the configured date range AND current bar is within the configured session
-Exit: long, high >= entry price + take-profit distance OR low <= entry price - stop-loss distance OR MACD line < MACD signal line

@@ -1,3 +1,0 @@
-Calculation: Confirmed swing high/low = a high/low pivot confirmed using equal lookback on both sides
-Long: Close > the latest unbroken confirmed swing high OR a low sweep of a confirmed swing low, completed Asian low, previous completed day low, or previous completed week low is followed within a configurable bar window (including the sweep bar) by a bullish candle whose body is at least a configurable multiple of ATR
-Short: Close < the latest unbroken confirmed swing low OR a high sweep of a confirmed swing high, completed Asian high, previous completed day high, or previous completed week high is followed within a configurable bar window (including the sweep bar) by a bearish candle whose body is at least a configurable multiple of ATR

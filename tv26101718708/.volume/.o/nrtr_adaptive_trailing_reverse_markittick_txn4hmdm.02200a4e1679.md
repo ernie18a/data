@@ -1,7 +1,0 @@
-Calculation: Adaptive source = close transformed by the selected smoothing filter, or close if no filter is selected; LLAMA = SMA(close, n) + ((close − close[n]) / n) × (n / 2)
-Calculation: NRTR offset = previous completed ATR × multiplier in ATR mode, or previous completed adaptive source × percentage in Percent mode. In an uptrend, track the highest prior completed adaptive source since the last flip and set NRTR to the greater of its previous level and that extreme minus the offset; flip down when the prior completed adaptive source is below NRTR. In a downtrend, track the lowest prior completed adaptive source since the last flip and set NRTR to the lesser of its previous level and that extreme plus the offset; flip up when the prior completed adaptive source is above NRTR.
-Calculation: TP3 = entry price + (absolute entry-to-NRTR-stop distance × configured TP3 multiple) for a long; entry price − that distance for a short.
-Long: prior trend was down AND prior completed adaptive source > downtrend NRTR AND (ADX filter disabled OR prior completed ADX ≥ threshold) AND long cooldown inactive
-Short: prior trend was up AND prior completed adaptive source < uptrend NRTR AND (ADX filter disabled OR prior completed ADX ≥ threshold) AND short cooldown inactive
-Exit: Long, low ≤ entry-time NRTR stop OR high ≥ TP3 OR Short decision
-Exit: Short, high ≥ entry-time NRTR stop OR low ≤ TP3 OR Long decision

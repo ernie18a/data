@@ -1,1 +1,0 @@
-For Bitcoin, normalize its recent return and the recent return of the growth-to-value ETF price ratio over the same rolling history, then average the two scores. Treat an average above its historical midpoint as a bullish regime and below it as bearish; the indicator specifies no entry, exit, or position sizing rules.

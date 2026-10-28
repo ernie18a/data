@@ -1,5 +1,0 @@
-Calculation: Intrabar buy volume = sum of lower-timeframe bar volume when its close is greater than or equal to the preceding lower-timeframe close; compare the first intrabar close with the previous chart bar close.
-Calculation: Intrabar sell volume = sum of lower-timeframe bar volume when its close is below the preceding lower-timeframe close; compare the first intrabar close with the previous chart bar close.
-Calculation: Profile-bin buy and sell volume = assign each chart bar’s intrabar buy and sell volume to the price bin containing its HL2, then sum across the lookback of last completed chart bars; derive the bins from the lookback HL2 range, or the high/low range if that setting is disabled.
-Long: Intrabar buy volume > intrabar sell volume OR a profile bin has buy volume > sell volume AND buy volume >= imbalance ratio × max(epsilon, sell volume), with nonzero bin volume.
-Short: Intrabar sell volume > intrabar buy volume OR a profile bin has sell volume > buy volume AND sell volume >= imbalance ratio × max(epsilon, buy volume), with nonzero bin volume.

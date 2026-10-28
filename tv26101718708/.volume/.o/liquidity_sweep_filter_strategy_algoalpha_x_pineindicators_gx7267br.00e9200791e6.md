@@ -1,9 +1,0 @@
-Calculation: Trend bands = center is the SMA of the EMA of the selected price source over length L; deviation is the EMA of absolute(close − center) over 3L bars, multiplied by multiplier M; upper = center + deviation; lower = center − deviation.
-Calculation: Trend state = persistent state set to +1 when close > upper, set to −1 when close < lower, otherwise unchanged; trend shifts are transitions from state ≤0 to >0 or from state ≥0 to <0.
-Calculation: Normalized volume = (volume − lowest volume over K bars) / (highest volume over K bars − lowest volume over K bars) × 100, where K is the integer part of L × M.
-Calculation: Bearish liquidity sweep = Track a candidate at high[1] when high[1] > high, high[2] < high[1], trend state <0, and high[1] < upper; store that bar's volume and normalized volume. Remove the candidate when high exceeds its level or upper falls below its level; on removal for a high break, add its stored values to the current bar's bearish sweep volume and normalized-volume sums.
-Calculation: Bullish liquidity sweep = Track a candidate at low[1] when low[1] < low, low[2] > low[1], trend state >0, and low[1] > lower; store that bar's volume and normalized volume. Remove the candidate when low falls below its level or lower rises above its level; on removal for a low break, add its stored values to the current bar's bullish sweep volume and normalized-volume sums.
-Long: trend state shifts from ≤0 to >0 OR bullish sweep volume >0 AND bullish sweep normalized-volume sum >0
-Short: trend state shifts from ≥0 to <0 OR bearish sweep volume >0 AND bearish sweep normalized-volume sum >0
-Exit: Long, trend state shifts from ≥0 to <0
-Exit: Short, trend state shifts from ≤0 to >0

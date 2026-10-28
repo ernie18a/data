@@ -1,2 +1,0 @@
-Long: Shorter-lookback EMA crosses above longer-lookback EMA on the selected crossover timeframe, using the last completed bar
-Short: Shorter-lookback EMA crosses below longer-lookback EMA on the selected crossover timeframe, using the last completed bar

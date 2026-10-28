@@ -1,2 +1,0 @@
-Long: short-term EMA(close) > long-term EMA(close) AND close > long-term SMA(close) AND volume > longer-lookback SMA(volume) × threshold AND abs(close − open) / (high − low) > threshold AND close > short-term EMA(close) AND close > open
-Short: short-term EMA(close) < long-term EMA(close) AND close < long-term SMA(close) AND volume > longer-lookback SMA(volume) × threshold AND abs(close − open) / (high − low) > threshold AND close < short-term EMA(close) AND close < open

@@ -1,1 +1,0 @@
-For the chart instrument, calculate an anchored VWAP from its price, weighted by the matching futures contract’s exchange volume; omit bars without futures volume. Favor long positions when price is above a rising VWAP. For mean-reversion trades, target the VWAP. Treat prices at the outer deviation bands as stretched and avoid momentum entries there.

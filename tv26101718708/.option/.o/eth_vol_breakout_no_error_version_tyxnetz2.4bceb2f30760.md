@@ -1,1 +1,0 @@
-When external ETH volatility is at or below its support threshold and the instrument has no open position, place a long stop above the recent range high and a short stop below the recent range low. Exit an open position with a trailing stop.

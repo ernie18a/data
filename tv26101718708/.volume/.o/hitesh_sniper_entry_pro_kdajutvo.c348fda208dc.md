@@ -1,7 +1,0 @@
-Calculation: Internal and swing pivot highs/lows = confirmed pivot highs/lows using the same lookback on both sides; the internal lookback is shorter than the swing lookback
-Calculation: Bullish structure break = close crosses above the latest pivot high, with at least two pivot lows recorded; bearish structure break = close crosses below the latest pivot low, with at least two pivot highs recorded
-Calculation: Bullish fair value gap = on a selected-timeframe bar change, its low is above the high two bars earlier; bearish fair value gap = its high is below the low two bars earlier
-Calculation: Accumulation pattern = alternating pivot lows and highs, with successively higher lows and lower highs; distribution pattern = alternating pivot highs and lows, with successively lower highs and higher lows
-Calculation: Equal highs/lows = two consecutive confirmed one-bar pivot highs/lows whose prices differ by no more than 0.1 × ATR(200)
-Long: bullish internal or swing structure break OR bullish fair value gap OR accumulation pattern OR equal lows OR bullish order block is created or touched
-Short: bearish internal or swing structure break OR bearish fair value gap OR distribution pattern OR equal highs OR bearish order block is created or touched

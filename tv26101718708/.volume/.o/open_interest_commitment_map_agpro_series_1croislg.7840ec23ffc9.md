@@ -1,7 +1,0 @@
-Calculation: Participation = EMA(volume, half the baseline lookback)
-Calculation: Participation change = percentage change in Participation over the change lookback
-Calculation: Participation z-score = (Participation change − EMA(Participation change, baseline lookback)) / standard deviation of Participation change over the normalization lookback
-Calculation: Price move (ATR) = (close − close from the price-move lookback bars ago) / ATR
-Calculation: Commitment score = clamp(0.34 × clamp(abs(Participation z-score) / 2.8 × 100, 0, 100) + 0.22 × clamp(abs(Participation change) / 5 × 100, 0, 100) + 0.18 × clamp(abs(Price move (ATR)) / 2.5 × 100, 0, 100) + 0.18 × active persistence + 0.08 × volume percentile rank over the normalization lookback, 0, 100); active persistence is the maximum, across long-build, short-build, absorption, and unwind raw conditions, of the percentage of bars meeting that raw condition in the persistence window
-Long: Participation z-score > commitment threshold AND Participation change > 0 AND Price move (ATR) > 0.25 AND fast EMA(close) > slow EMA(close) AND close > slow EMA(close) AND Commitment score ≥ minimum score
-Short: Participation z-score > commitment threshold AND Participation change > 0 AND Price move (ATR) < −0.25 AND fast EMA(close) < slow EMA(close) AND close < slow EMA(close) AND Commitment score ≥ minimum score

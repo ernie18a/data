@@ -1,4 +1,0 @@
-Calculation: ATR = simple moving average of true range over its lookback
-Calculation: AlphaTrend = if the selected momentum measure is at least 50, the greater of (low − ATR × multiplier) and the previous bar’s AlphaTrend; otherwise, the lesser of (high + ATR × multiplier) and the previous bar’s AlphaTrend. The selected momentum measure is RSI of the selected price source when volume data is disabled, otherwise MFI of (high + low + close) / 3. Treat the prior AlphaTrend as zero on the first bar.
-Long: AlphaTrend > its value two bars ago AND the previous bar’s AlphaTrend <= its value three bars ago
-Short: AlphaTrend < its value two bars ago AND the previous bar’s AlphaTrend >= its value three bars ago

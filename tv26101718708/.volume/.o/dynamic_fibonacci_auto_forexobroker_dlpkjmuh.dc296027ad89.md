@@ -1,5 +1,0 @@
-Calculation: Confirmed swing high/low = a pivot high/low confirmed after the required bars on both sides; use the latest confirmed swing high and swing low.
-Calculation: Swing trend = uptrend if the latest swing low occurred before the latest swing high; otherwise downtrend.
-Calculation: Golden Zone = the price interval between the 50% and 61.8% retracements of the latest swing range, measured down from the swing high in an uptrend and up from the swing low in a downtrend.
-Long: uptrend AND low <= Golden Zone upper bound AND high >= Golden Zone lower bound AND close > open AND close > (Golden Zone upper bound + Golden Zone lower bound) / 2 AND volume > volume SMA AND close > EMA AND at least the cooldown number of bars since the preceding signal AND bar is confirmed
-Short: downtrend AND low <= Golden Zone upper bound AND high >= Golden Zone lower bound AND close < open AND close < (Golden Zone upper bound + Golden Zone lower bound) / 2 AND volume > volume SMA AND close < EMA AND at least the cooldown number of bars since the preceding signal AND bar is confirmed

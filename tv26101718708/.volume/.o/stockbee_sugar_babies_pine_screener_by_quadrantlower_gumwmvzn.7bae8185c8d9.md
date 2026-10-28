@@ -1,2 +1,0 @@
-Long: current daily close >= previous completed daily close × (1 + price-change threshold) AND current daily volume > previous completed daily volume AND current daily volume >= volume threshold
-Short: current daily close <= previous completed daily close × (1 − price-change threshold) AND current daily volume > previous completed daily volume AND current daily volume >= volume threshold

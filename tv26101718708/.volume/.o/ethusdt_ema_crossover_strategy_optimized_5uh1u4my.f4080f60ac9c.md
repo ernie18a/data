@@ -1,2 +1,0 @@
-Long: EMA(close, short-term) crosses above EMA(close, medium-term) AND close > EMA(close, long-term) AND RSI > 30 AND ATR > its short-term SMA AND volume > its medium-term SMA
-Short: EMA(close, short-term) crosses below EMA(close, medium-term) AND close < EMA(close, long-term) AND RSI < 70 AND ATR > its short-term SMA AND volume > its medium-term SMA

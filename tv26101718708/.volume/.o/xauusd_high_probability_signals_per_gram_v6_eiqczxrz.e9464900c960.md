@@ -1,3 +1,0 @@
-Calculation: Signed-volume strength = clamp(100 × sum of signed volume delta over a configurable lookback / max(1, absolute value of that sum), -100, 100); signed volume delta is volume when close > open, negative volume when close < open, and 0 otherwise
-Long: close is within configured proximity of the nearest half-unit-per-gram price level AND signed-volume strength crosses above its configured threshold (current > threshold and previous <= threshold) AND volume > its 20-bar SMA × configured multiplier
-Short: close is within configured proximity of the nearest half-unit-per-gram price level AND signed-volume strength crosses below the negative configured threshold (current < -threshold and previous >= -threshold) AND volume > its 20-bar SMA × configured multiplier

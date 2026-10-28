@@ -1,4 +1,0 @@
-Calculation: Compressed candle = absolute close-open is less than half the high-low range AND the high-low range is less than a short-lookback Average True Range
-Calculation: Mature range = under the selected detection method, either consecutive compressed candles whose high and low boundaries expand to include each candle, or a fixed range seeded from the highest high and lowest low of the recent three bars that resets if price trades outside it; the range matures after the selected minimum bar count and then its boundaries are fixed
-Long: A mature range exists AND, under Close Break, the bar has closed above its high, OR, under Wick Break, the bar's high is above its high
-Short: A mature range exists AND the selected break condition is met below its low AND the selected break condition is not met above its high

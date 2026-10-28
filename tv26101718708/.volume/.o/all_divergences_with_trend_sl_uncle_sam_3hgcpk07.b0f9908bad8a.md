@@ -1,6 +1,0 @@
-Calculation: Bullish divergence = a selected indicator forms a lower low than at a confirmed price pivot low while price forms a higher low (hidden), or the indicator forms a higher low while price forms a lower low (regular); the two endpoints must be connected without an intervening bar crossing below either connecting line.
-Calculation: Bearish divergence = a selected indicator forms a higher high than at a confirmed price pivot high while price forms a lower high (hidden), or the indicator forms a lower high while price forms a higher high (regular); the two endpoints must be connected without an intervening bar crossing above either connecting line.
-Long: regular bullish divergence OR hidden bullish divergence AND close > moving average
-Short: regular bearish divergence OR hidden bearish divergence AND close < moving average
-Exit: long, close <= entry price minus the configured stop-loss percentage of entry price OR close >= entry price plus the configured take-profit percentage of entry price OR the configured number of consecutive closes are below the moving average
-Exit: short, close >= entry price plus the configured stop-loss percentage of entry price OR close <= entry price minus the configured take-profit percentage of entry price OR the configured number of consecutive closes are above the moving average

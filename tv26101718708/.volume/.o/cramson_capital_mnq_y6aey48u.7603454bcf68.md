@@ -1,8 +1,0 @@
-Calculation: Opening Range High/Low = highest high and lowest low during the session’s opening range, finalized when that range ends
-Calculation: Value Area High/Low and Point of Control = from bars in the opening range, distribute each bar’s volume across price rows in proportion to the overlap of its high-low range with each row; the Point of Control is the row with the most volume, and the value area expands from it toward the heavier adjacent row until the next row would exceed the configured share of total volume; the Value Area High/Low are its upper/lower edges
-Calculation: Long stop = Opening Range Low; short stop = Opening Range High
-Calculation: Long target = entry price + configured risk multiple × (entry price − long stop); short target = entry price − configured risk multiple × (short stop − entry price)
-Long: after a close above Opening Range High, then a later close between Value Area Low and Value Area High, close > Value Area High AND no intervening close < Opening Range Low AND bar open time <= configured entry cutoff
-Short: after a close below Opening Range Low, then a later close between Value Area Low and Value Area High, close < Value Area Low AND no intervening close > Opening Range High AND bar open time <= configured entry cutoff
-Exit: long, low <= long stop OR high >= long target OR bar open time >= configured time-close time
-Exit: short, high >= short stop OR low <= short target OR bar open time >= configured time-close time

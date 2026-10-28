@@ -1,1 +1,0 @@
-Calculate the price spread as the first correlated asset’s close minus the second’s. Go long the traded instrument when the spread falls below its rolling mean by a statistically significant volatility-scaled amount. Exit the long when the spread rises above its rolling mean. No short entry is defined.

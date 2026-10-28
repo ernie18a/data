@@ -1,4 +1,0 @@
-Calculation: Volume percentile threshold = linear-interpolated percentile of current-bar volume over each of the short, medium, and long lookbacks, using the tier’s percentile level.
-Calculation: Absolute-delta percentile threshold = linear-interpolated percentile of the absolute current-bar net volume delta over each of the short, medium, and long lookbacks, using the tier’s percentile level.
-Long: A volume cluster or absolute-delta cluster is detected under the selected detection method AND the selected classification method identifies the bar as Buy (candle close >= open; net delta > 0 when required and available).
-Short: A volume cluster or absolute-delta cluster is detected under the selected detection method AND the selected classification method identifies the bar as Sell (candle close < open; net delta < 0 when required and available).

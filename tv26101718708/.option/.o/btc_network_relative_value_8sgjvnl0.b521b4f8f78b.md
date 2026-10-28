@@ -1,1 +1,0 @@
-Compare the instrument’s price with a network-value proxy derived from external miner revenue, hashrate, and difficulty; smooth the log price-to-value ratio and calculate its rolling z-score. Go long or accumulate when the score is at or below −1, with strongest accumulation at or below −2. At or above +2, pause accumulation or exit/scale out. No short signal is defined.

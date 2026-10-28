@@ -1,1 +1,0 @@
-Compare each of seven large-cap technology stocks’ current daily prices with their prior daily closes. If at least five are higher, signal long bias for the index future; if at least five are lower, signal short bias; otherwise wait for confirmation. No exit rule is specified.

@@ -1,3 +1,0 @@
-Calculation: True Strength Index (TSI) = 100 × EMA(EMA(change(close), long lookback), short lookback) / EMA(EMA(abs(change(close)), long lookback), short lookback), using chart-timeframe closes; the long lookback is longer than the short lookback
-Long: selected moving average of close > selected moving average of open on the configured alternate timeframe AND TSI > its signal EMA on the chart timeframe
-Short: selected moving average of close < selected moving average of open on the configured alternate timeframe AND TSI < its signal EMA on the chart timeframe

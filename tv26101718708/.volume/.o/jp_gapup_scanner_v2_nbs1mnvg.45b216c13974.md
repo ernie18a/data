@@ -1,1 +1,0 @@
-Long: During the configured Tokyo scan window, at least the configured minimum number of these are true: relative volume (current volume / its moving average) meets its minimum; RSI is within its configured range; close > VWAP; close is within the configured fraction of the current day's high-to-low range; close > open; close > close from the configured number of earlier bars

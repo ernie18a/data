@@ -1,7 +1,0 @@
-Calculation: Session VWAP = cumulative (bar hlc3 × volume) / cumulative volume from the current session’s first bar through the current bar.
-Calculation: ATR(14) = 14-bar average true range.
-Calculation: 100% ladder levels = session open ± ladder base × 100% step; ladder base is the high-low range of the first configured session bars once complete, otherwise the current session high-low range. Use current session bars.
-Calculation: 100% ladder hit probability = (1 + completed prior sessions that touched that session’s 100% ladder level) / (2 + completed prior sessions sampled); use the capped rolling sample.
-Calculation: Session anomaly score = clamp((current session high-low) / ATR(14) / 1.75, 0, 2).
-Long: In session AND (close ≥ current session VWAP OR (session VWAP unavailable AND close > session open) OR (bar confirmed AND close > upside 100% ladder AND previous close ≤ upside 100% ladder AND upside 100% ladder hit probability ≥ continuation gate) OR (bar confirmed AND current high ≥ downside 150% ladder AND close > downside 125% ladder AND session anomaly score > 1)).
-Short: In session AND (close < current session VWAP OR (session VWAP unavailable AND close < session open) OR (bar confirmed AND close < downside 100% ladder AND previous close ≥ downside 100% ladder AND downside 100% ladder hit probability ≥ continuation gate) OR (bar confirmed AND current high ≥ upside 150% ladder AND close < upside 125% ladder AND session anomaly score > 1)).

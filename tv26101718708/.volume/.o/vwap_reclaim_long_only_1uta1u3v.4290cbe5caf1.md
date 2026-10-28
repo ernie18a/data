@@ -1,2 +1,0 @@
-Long: position is flat AND Supertrend direction < 0 AND close > VWAP AND MACD line > signal line AND MACD line > 0 AND RSI < threshold AND +DI > -DI AND time < entry cutoff
-Exit: long, close < VWAP OR MACD line < signal line OR Supertrend direction > 0

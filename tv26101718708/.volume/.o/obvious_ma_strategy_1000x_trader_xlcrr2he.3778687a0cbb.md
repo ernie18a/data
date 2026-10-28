@@ -1,9 +1,0 @@
-Calculation: OBV = cumulative volume, adding the bar’s volume when its close is greater than or equal to the previous bar’s close, and subtracting it when the close is lower.
-Calculation: Long-entry OBV moving average = simple moving average of OBV, with a shorter lookback than the long-exit OBV moving average.
-Calculation: Long-exit OBV moving average = simple moving average of OBV, with a longer lookback than the long-entry OBV moving average.
-Calculation: Short-entry OBV moving average = simple moving average of OBV, with a longer lookback than the short-exit OBV moving average.
-Calculation: Short-exit OBV moving average = simple moving average of OBV, with a shorter lookback than the short-entry OBV moving average.
-Long: Long direction selected AND position is flat or short AND current OBV > current long-entry OBV moving average AND previous OBV <= previous long-entry OBV moving average.
-Short: Short direction selected AND position is flat or long AND current OBV < current short-entry OBV moving average AND previous OBV >= previous short-entry OBV moving average.
-Exit: long, current OBV < current long-exit OBV moving average AND previous OBV >= previous long-exit OBV moving average.
-Exit: short, current OBV > current short-exit OBV moving average AND previous OBV <= previous short-exit OBV moving average.

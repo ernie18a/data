@@ -1,2 +1,0 @@
-Long: On the confirmed current bar, close[2] < low[3] AND close[1] > low[3] AND low <= low[3] AND close > low[3] AND volume[1] > volume[3]
-Short: On the confirmed current bar, close[2] > high[3] AND close[1] < high[3] AND high >= high[3] AND close < high[3] AND volume[1] > volume[3]

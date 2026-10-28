@@ -1,2 +1,0 @@
-Long: On the daily chart, shorter-lookback SMA of close > longer-lookback SMA of close OR shorter-lookback EMA of close > longer-lookback EMA of close OR SMA of close > EMA of close using the same lookback
-Short: On the daily chart, shorter-lookback SMA of close <= longer-lookback SMA of close OR shorter-lookback EMA of close <= longer-lookback EMA of close OR SMA of close <= EMA of close using the same lookback

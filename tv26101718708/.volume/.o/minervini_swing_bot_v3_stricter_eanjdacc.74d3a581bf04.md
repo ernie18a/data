@@ -1,8 +1,0 @@
-Calculation: Relative strength = instrument close / benchmark close; benchmark close and its 50-period SMA use the same-timeframe benchmark bar still forming.
-Calculation: Pivot high = highest high over the pivot lookback, excluding the current bar.
-Calculation: Breakout level = pivot high × (1 + breakout buffer).
-Calculation: Relative volume = volume / 50-period average volume.
-Calculation: ATR tightening = current ATR < ATR from the earlier VCP lookback bar.
-Calculation: Range tightening = current high-low range < average high-low range over the VCP lookback.
-Calculation: Volume drying = lowest volume over the VCP lookback < 50-period average volume × the drying threshold.
-Long: close > 150-period SMA AND close > 200-period SMA AND 150-period SMA > 200-period SMA AND 200-period SMA is rising over its lookback AND 50-period SMA > 150-period SMA AND close > 50-period SMA AND close >= rolling low × the low-distance threshold AND close >= rolling high × the high-proximity threshold AND relative strength > its 50-period SMA AND relative strength > its value at the earlier momentum lookback bar AND benchmark close > benchmark 50-period SMA AND close > breakout level AND previous close <= pivot high AND relative volume >= minimum relative-volume threshold AND ATR tightening AND range tightening AND volume drying AND percentage distance above the 50-period SMA <= maximum distance threshold

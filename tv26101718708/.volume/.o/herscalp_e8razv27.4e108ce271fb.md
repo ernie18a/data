@@ -1,6 +1,0 @@
-Calculation: Long confluence score = 2 × (fast EMA > middle EMA > slow EMA) + 2 × (fast EMA crosses above middle EMA) + 2 × (MACD histogram turns positive from zero or below) + 1 × (VWAP filter disabled or close > VWAP) + 1 × (RSI is within the long range) + 1 × (long pullback condition)
-Calculation: Short confluence score = 2 × (fast EMA < middle EMA < slow EMA) + 2 × (fast EMA crosses below middle EMA) + 2 × (MACD histogram turns negative from zero or above) + 1 × (VWAP filter disabled or close < VWAP) + 1 × (RSI is within the short range) + 1 × (short pullback condition)
-Calculation: Long pullback condition = fast EMA > middle EMA > slow EMA AND low is within the ATR-based tolerance of the middle EMA
-Calculation: Short pullback condition = fast EMA < middle EMA < slow EMA AND high is within the ATR-based tolerance of the middle EMA
-Long: Long confluence score >= minimum score AND long confluence score > short confluence score AND last direction is not long; reset last direction to neutral when neither score-qualified direction is true
-Short: Short confluence score >= minimum score AND short confluence score > long confluence score AND last direction is not short; reset last direction to neutral when neither score-qualified direction is true

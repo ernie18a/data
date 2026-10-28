@@ -1,7 +1,0 @@
-Calculation: Rolling VWAP = sum(hlc3 × volume) / sum(volume) over a rolling lookback
-Calculation: Adaptive structure step = fast ATR × structure multiplier × [0.5 + 1.5 / (1 + exp(−(4 × (fast ATR / slow ATR − 1) + 0.75 × clamp(z, −3, 3))))]; slow ATR uses four times the fast ATR length, and z = (fast ATR − SMA(fast ATR, four times the VWAP lookback)) / stdev(fast ATR, four times the VWAP lookback)
-Calculation: VWAP structure direction = initialize upper level to rolling VWAP, lower level to rolling VWAP minus adaptive step, and direction bullish; when rolling VWAP exceeds upper level plus one step, shift both levels upward by floor((rolling VWAP − upper level) / step) steps and set direction bullish; when rolling VWAP falls below lower level minus one step, shift both levels downward by floor((lower level − rolling VWAP) / step) steps and set direction bearish; otherwise retain levels and direction
-Calculation: Structure mean = midpoint of the active upper and lower structure levels
-Calculation: Reversal-anchored VWAP = cumulative(hlc3 × volume) / cumulative(volume), resetting both sums on each structure direction reversal
-Long: VWAP structure direction is bullish OR structure direction changes to bullish OR close crosses above reversal-anchored VWAP OR close crosses above structure mean
-Short: VWAP structure direction is bearish OR structure direction changes to bearish OR close crosses below reversal-anchored VWAP OR close crosses below structure mean

@@ -1,3 +1,0 @@
-Calculation: EMA periods = five progressively longer lookbacks; DEMA lookback is between the two longest EMA lookbacks
-Long: close > shortest-lookback EMA AND shortest-lookback EMA > second-shortest-lookback EMA AND second-shortest-lookback EMA > middle-lookback EMA AND middle-lookback EMA > second-longest-lookback EMA AND second-longest-lookback EMA > DEMA AND DEMA > longest-lookback EMA
-Short: close < shortest-lookback EMA AND shortest-lookback EMA < second-shortest-lookback EMA AND second-shortest-lookback EMA < middle-lookback EMA AND middle-lookback EMA < second-longest-lookback EMA AND second-longest-lookback EMA < DEMA AND DEMA < longest-lookback EMA

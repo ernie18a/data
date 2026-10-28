@@ -1,4 +1,0 @@
-Long: selected leading indicator is bullish AND every enabled long confirmation is true AND the consecutive bullish-leading run is within the signal-expiry limit AND (alternating signals are disabled OR the previous eligible signal was short)
-Short: selected leading indicator is bearish AND every enabled short confirmation is true AND every enabled shared filter passes AND the consecutive bearish-leading run is within the signal-expiry limit AND (alternating signals are disabled OR the previous eligible signal was long)
-Exit: long, low <= stop price OR high >= target price OR a qualifying short entry signal occurs
-Exit: short, high >= stop price OR low <= target price OR a qualifying long entry signal occurs

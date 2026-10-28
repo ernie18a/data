@@ -1,4 +1,0 @@
-Calculation: Scaled pressure = Recursively accumulated EMA of relative candle pressure, multiplied by 1.25 when the bar’s high-low range exceeds its EMA and otherwise by 1, then normalized by the longer-lookback maximum absolute boosted pressure.
-Calculation: Pressure acceleration = EMA of the change in scaled pressure from the previous bar.
-Long: Scaled pressure is below the negative exhaustion threshold AND pressure acceleration is above its previous-bar value AND above zero
-Short: Scaled pressure is above the exhaustion threshold AND pressure acceleration is below its previous-bar value AND below zero

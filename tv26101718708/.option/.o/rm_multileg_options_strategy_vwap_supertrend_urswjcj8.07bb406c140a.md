@@ -1,1 +1,0 @@
-When using the broad-market index as the signal source, calculate Supertrend bands from its high/low midpoint and compare its close with the trailing bands. Go long when the trend flips from bearish to bullish; go short or exit the long when it flips from bullish to bearish. No signal is defined while the trend remains unchanged.

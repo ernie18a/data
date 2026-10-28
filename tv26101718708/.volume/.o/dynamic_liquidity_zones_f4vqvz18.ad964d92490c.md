@@ -1,2 +1,0 @@
-Long: A newly confirmed pivot low is within the equality threshold of at least one of the 50 most recent prior confirmed pivot lows
-Short: A newly confirmed pivot high is within the equality threshold of at least one of the 50 most recent prior confirmed pivot highs

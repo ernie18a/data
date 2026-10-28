@@ -1,5 +1,0 @@
-Calculation: PPO = 100 × (shorter-lookback moving average of close − longer-lookback moving average of close) / longer-lookback moving average of close
-Calculation: Signal line = moving average of PPO
-Calculation: Histogram = PPO − signal line
-Long: Current PPO > current signal line AND previous PPO <= previous signal line AND current bar is closed AND (if enabled, PPO on the last completed higher-timeframe bar > 0) AND (if enabled, ADX >= its threshold) AND (if enabled, ATR >= its moving average × volatility multiplier) AND (if enabled, volume >= its moving average × volume multiplier) AND (if enabled, histogram is rising over the configured slope lookback)
-Short: Current PPO < current signal line AND previous PPO >= previous signal line AND current bar is closed AND (if enabled, PPO on the last completed higher-timeframe bar < 0) AND (if enabled, ADX >= its threshold) AND (if enabled, ATR >= its moving average × volatility multiplier) AND (if enabled, volume >= its moving average × volume multiplier) AND (if enabled, histogram is falling over the configured slope lookback)

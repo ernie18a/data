@@ -1,4 +1,0 @@
-Calculation: Average volume = moving average of volume over a lookback period
-Calculation: Average body size = moving average of absolute close minus open over a lookback period
-Calculation: Estimated net buying percentage = 100 × (2 × (close − low) / (high − low) − 1); use 0 when volume is zero, and use 0 when high equals low
-Long: (volume > average volume × volume-spike multiplier AND close > low + (high − low) × close-location threshold) OR (close > open AND absolute close − open > average body size × expansion multiplier AND volume > average volume × expansion-volume multiplier) OR ((low < previous completed year low AND close > previous completed year low) OR (low < previous completed month low AND close > previous completed month low)) AND (neither sweep condition is true OR estimated net buying percentage > minimum green-box net percentage)

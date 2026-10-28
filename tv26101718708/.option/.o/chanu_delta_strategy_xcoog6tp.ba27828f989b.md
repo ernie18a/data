@@ -1,1 +1,0 @@
-At each completed bar, calculate the difference between the selected price series for Bitcoin USD inverse futures and Bitcoin USDT linear futures. Enter long when this difference crosses above an upper threshold; enter short when it crosses below a lower threshold. Optionally close either position at a take-profit or stop-loss level measured as a percentage of its entry price.

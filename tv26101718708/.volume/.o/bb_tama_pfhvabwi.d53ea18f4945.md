@@ -1,2 +1,0 @@
-Long: EMA values are strictly descending as their lookback periods increase across six EMAs, from shortest to longest
-Short: EMA values are strictly ascending as their lookback periods increase across six EMAs, from shortest to longest

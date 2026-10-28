@@ -1,5 +1,0 @@
-Calculation: Confirmed pivot high/low = a bar whose high/low is the highest/lowest across the shared left and right pivot lookbacks; available after the right lookback bars close.
-Long: At a confirmed pivot low that starts a new low swing or is lower than the active low before a high swing forms, pivot low > previous completed swing low
-Long: At a confirmed pivot low that starts a new low swing or is lower than the active low before a high swing forms, pivot low < previous completed swing low AND RSI at pivot > RSI at previous completed swing low
-Short: At a confirmed pivot high that starts a new high swing or is higher than the active high before a low swing forms, pivot high < previous completed swing high
-Short: At a confirmed pivot high that starts a new high swing or is higher than the active high before a low swing forms, pivot high > previous completed swing high AND RSI at pivot < RSI at previous completed swing high

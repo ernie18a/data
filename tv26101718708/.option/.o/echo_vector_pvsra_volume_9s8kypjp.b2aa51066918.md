@@ -1,1 +1,0 @@
-When a confirmed price low is lower than the previous confirmed price low while the corresponding volume low from a separate reference feed is higher, go long. When a confirmed price high is higher than the previous confirmed price high while the corresponding reference-feed volume high is lower, go short. The indicator defines no exit rule.

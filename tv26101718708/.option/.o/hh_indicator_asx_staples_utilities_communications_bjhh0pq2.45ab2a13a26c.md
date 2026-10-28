@@ -1,1 +1,0 @@
-For each configured external stock, track the body top (the higher of open and close). Confirm a pivot high when a bar’s body top is at least as high as those of the three bars before and three bars after it, then retain that level. Signal long when the stock’s close crosses from at or below its latest confirmed pivot high to above it. No short or exit signal is defined.

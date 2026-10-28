@@ -1,2 +1,0 @@
-Long: close > close N bars earlier AND (volume > volume N bars earlier OR volume < volume N bars earlier)
-Short: close < close N bars earlier AND (volume > volume N bars earlier OR volume < volume N bars earlier)

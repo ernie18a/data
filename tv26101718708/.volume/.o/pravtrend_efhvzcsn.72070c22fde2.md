@@ -1,8 +1,0 @@
-Calculation: Bullish trend on a timeframe = shorter-lookback EMA is above longer-lookback EMA; calculate separately on the current daily, 4-hour, and 1-hour bars, which may still be forming.
-Calculation: Bearish trend on a timeframe = shorter-lookback EMA is below longer-lookback EMA; calculate separately on the current daily, 4-hour, and 1-hour bars, which may still be forming.
-Long: The 4-hour trend is bullish AND (the daily trend is bullish OR the 1-hour trend is bullish) AND close > VWAP AND the shorter-lookback EMA crosses above the longer-lookback EMA AND the session filter allows signals.
-Long: A long cycle is active AND close > VWAP AND low <= the longer-lookback EMA AND close > the longer-lookback EMA AND close > open AND the session filter allows signals. A long cycle starts on the first Long condition and ends when the shorter-lookback EMA crosses below the longer-lookback EMA.
-Long: The last completed 1-hour bar has close > open.
-Short: The 4-hour trend is bearish AND (the daily trend is bearish OR the 1-hour trend is bearish) AND close < VWAP AND the shorter-lookback EMA crosses below the longer-lookback EMA AND the session filter allows signals.
-Short: A short cycle is active AND close < VWAP AND high >= the longer-lookback EMA AND close < the longer-lookback EMA AND close < open AND the session filter allows signals. A short cycle starts on the first Short condition and ends when the shorter-lookback EMA crosses above the longer-lookback EMA.
-Short: The last completed 1-hour bar has close < open.

@@ -1,9 +1,0 @@
-Calculation: Relative volume = current volume / average volume over the lookback ending one bar earlier
-Calculation: Prior lookback high/low = highest high / lowest low over the lookback ending one bar earlier
-Calculation: Long score = 25 if relative volume meets its minimum, plus 25 if close is above VWAP, fast EMA, and slow EMA, fast EMA is above slow EMA, and the last completed higher-timeframe close is above its slow EMA, plus 20 if RSI is above its lower long threshold and below its upper long threshold, plus 20 if close is above the prior lookback high, plus 10 if close > open, (close − low)/(high − low) exceeds its threshold, and |close − open|/(high − low) exceeds its threshold; otherwise each component contributes 0
-Calculation: Short score = 25 if relative volume meets its minimum, plus 25 if close is below VWAP, fast EMA, and slow EMA, fast EMA is below slow EMA, and the last completed higher-timeframe close is below its slow EMA, plus 20 if RSI is below its upper short threshold and above its lower short threshold, plus 20 if close is below the prior lookback low, plus 10 if close < open, (close − low)/(high − low) is below its threshold, and |close − open|/(high − low) exceeds its threshold; otherwise each component contributes 0
-Calculation: Entry risk distance = ATR at entry × stop multiplier
-Long: within the configured trade session AND long score ≥ score threshold
-Short: within the configured trade session AND shorts are allowed AND short score ≥ score threshold
-Exit: long, low ≤ entry price − entry risk distance OR high ≥ entry price + entry risk distance × target multiple OR bars since entry ≥ maximum holding bars OR outside the configured trade session
-Exit: short, high ≥ entry price + entry risk distance OR low ≤ entry price − entry risk distance × target multiple OR bars since entry ≥ maximum holding bars OR outside the configured trade session

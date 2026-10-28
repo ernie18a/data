@@ -1,6 +1,0 @@
-Calculation: HTF pivot high = a bar whose high is higher than the highs of the same lookback number of bars on both sides, on M15, H1, H4, or Daily bars
-Calculation: HTF pivot low = a bar whose low is lower than the lows of the same lookback number of bars on both sides, on M15, H1, H4, or Daily bars
-Calculation: Local pivot high = a bar whose high is strictly higher than the highs of the same lookback number of bars on both sides
-Calculation: Local pivot low = a bar whose low is strictly lower than the lows of the same lookback number of bars on both sides
-Long: an active HTF pivot-low level is touched within the level tolerance, the level is below or equal to the previous bar's close, and a confirmed local pivot high forms after the sweep before price makes a lower low
-Short: an active HTF pivot-high level is touched within the level tolerance, the level is above or equal to the previous bar's close, and a confirmed local pivot low forms after the sweep before price makes a higher high

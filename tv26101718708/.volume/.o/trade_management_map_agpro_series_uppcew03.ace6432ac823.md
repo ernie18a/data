@@ -1,9 +1,0 @@
-Calculation: Safe ATR = max(Average True Range, current bar’s true range when ATR is unavailable, minimum price increment)
-Calculation: Slow EMA slope = slow EMA minus its value five bars earlier
-Calculation: Automatic direction = long when fast EMA > slow EMA and slow EMA slope is at least −0.05 × Safe ATR, provided the short trend condition is false; short when fast EMA < slow EMA and slope is at most 0.05 × Safe ATR, provided the long trend condition is false; otherwise long if close ≥ slow EMA, short otherwise
-Calculation: Long invalidation reference = the lower of the lowest low over the invalidation lookback (including the activation bar) and anchor price − 0.35 × 1.05 × Safe ATR, stored at activation
-Calculation: Short invalidation reference = the higher of the highest high over the invalidation lookback (including the activation bar) and anchor price + 0.35 × 1.05 × Safe ATR, stored at activation
-Long: bar is confirmed AND close > the highest high over the activation lookback excluding the current bar AND (selected side is Long Context, or Auto with automatic direction long) AND (confirmation is Close Only OR long trend holds, with volume confirmation additionally required when selected) AND no map is active OR the configured cooldown bars have elapsed since the last map activation
-Short: bar is confirmed AND close < the lowest low over the activation lookback excluding the current bar AND (selected side is Short Context, or Auto with automatic direction short) AND (confirmation is Close Only OR short trend holds, with volume confirmation additionally required when selected) AND no map is active OR the configured cooldown bars have elapsed since the last map activation
-Exit: Long, bar is confirmed AND close < the stored long invalidation reference
-Exit: Short, bar is confirmed AND close > the stored short invalidation reference

@@ -1,4 +1,0 @@
-Long: open < lower Bollinger Band AND close < lower Bollinger Band AND volume > its moving average times a threshold AND abs(upper wick + lower wick) / abs(close - open) <= a maximum wick-to-body threshold AND (if the trend filter is enabled, close > 200-period EMA)
-Short: open > upper Bollinger Band AND close > upper Bollinger Band AND volume > its moving average times a threshold AND abs(upper wick + lower wick) / abs(close - open) <= a maximum wick-to-body threshold AND (if the trend filter is enabled, close < 200-period EMA)
-Exit: long, low <= entry price reduced by a stop-loss percentage OR high >= the EMA 8, EMA 12, or EMA 26 value at entry
-Exit: short, high >= entry price increased by a stop-loss percentage OR low <= the EMA 8, EMA 12, or EMA 26 value at entry

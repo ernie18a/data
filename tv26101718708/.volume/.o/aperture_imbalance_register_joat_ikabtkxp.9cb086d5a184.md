@@ -1,5 +1,0 @@
-Calculation: Bullish gap sigma = (current low − high two bars ago) / max(rolling standard deviation of (low − high two bars ago), minimum tick)
-Calculation: Bearish gap sigma = (low two bars ago − current high) / max(rolling standard deviation of (low two bars ago − high), minimum tick)
-Calculation: Active bullish/bearish register count = number of unretired bullish/bearish gaps; a bullish register retires when current low is below its bottom or its mitigation reaches 100%, and a bearish register retires when current high is above its top or its mitigation reaches 100%; retain at most the configured maximum, removing the oldest first
-Long: On a completed bar, current low > high two bars ago AND previous bar high > high two bars ago AND bullish gap sigma > configured threshold OR active bullish register count > active bearish register count
-Short: On a completed bar, current high < low two bars ago AND previous bar low < low two bars ago AND bearish gap sigma > configured threshold OR active bearish register count > active bullish register count

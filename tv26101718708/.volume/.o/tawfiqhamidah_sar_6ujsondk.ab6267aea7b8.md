@@ -1,3 +1,0 @@
-Calculation: Buy pressure percentage = 100 × buy volume / (buy volume + sell volume + a small positive constant), where buy volume is the short-lookback EMA of volume × (close − low) / bar range, sell volume is the short-lookback EMA of volume × (high − close) / bar range, and bar range is 1 when high equals low
-Long: Close crosses above Parabolic SAR AND buy pressure percentage ≥ minimum strength threshold AND (trend filter disabled OR (ADX > strength threshold AND RSI < upper threshold))
-Short: Close crosses below Parabolic SAR AND (100 − buy pressure percentage) ≥ minimum strength threshold AND (trend filter disabled OR (ADX > strength threshold AND RSI > lower threshold))

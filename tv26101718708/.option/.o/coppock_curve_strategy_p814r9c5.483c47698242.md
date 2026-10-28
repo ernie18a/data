@@ -1,1 +1,0 @@
-Calculate a Coppock Curve from an external market index by taking the weighted moving average of the sum of its short- and long-period rates of change. After the strategy start date, enter or remain long in the traded instrument while the curve is above zero; close the long position when it is below zero. Do not open short positions.

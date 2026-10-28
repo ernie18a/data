@@ -1,5 +1,0 @@
-Calculation: VWAP standard-deviation bands = volume-weighted average price and its standard-deviation bands, reset at the selected anchor or session open
-Long: the long conditions are true now and were false on the previous bar AND previous-bar close and current developing POC are each between 0.75 and 1.25 standard deviations above previous-bar VWAP AND current developing VAH is between 1 and 1.5 standard deviations above previous-bar VWAP AND current bar dollar volume meets the minimum dollar-volume threshold
-Short: the short conditions are true now and were false on the previous bar AND previous-bar close and current developing POC are each between 0.75 and 1.25 standard deviations below previous-bar VWAP AND current developing VAL is between 1 and 1.5 standard deviations below previous-bar VWAP AND current bar dollar volume meets the minimum dollar-volume threshold
-Exit: long, low <= current VWAP - minimum price increment
-Exit: short, high >= current VWAP + minimum price increment

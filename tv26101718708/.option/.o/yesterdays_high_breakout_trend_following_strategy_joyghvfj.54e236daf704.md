@@ -1,1 +1,0 @@
-When the bar closes below the prior day's high, and an optional filter confirms that the close has risen enough from the previous daily close, place a long stop entry at the prior day's high adjusted by a configurable percentage gap. Exit the long at its profit target or stop loss; optionally use a trailing stop or exit when price crosses below a reference EMA. No short entries.

@@ -1,3 +1,0 @@
-Calculation: Strong candle = high > low AND abs(close - open) / (high - low) >= body-to-range threshold
-Long: close > VWAP AND fast EMA > medium EMA AND medium EMA > slow EMA AND RSI > bullish threshold AND MACD histogram > 0 AND Strong candle AND NOT (previous bar close > VWAP AND previous bar fast EMA > medium EMA AND previous bar medium EMA > slow EMA AND previous bar RSI > bullish threshold AND previous bar MACD histogram > 0)
-Short: close < VWAP AND fast EMA < medium EMA AND medium EMA < slow EMA AND RSI < bearish threshold AND MACD histogram < 0 AND Strong candle AND NOT (previous bar close < VWAP AND previous bar fast EMA < medium EMA AND previous bar medium EMA < slow EMA AND previous bar RSI < bearish threshold AND previous bar MACD histogram < 0)

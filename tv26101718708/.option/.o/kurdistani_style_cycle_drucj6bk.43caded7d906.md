@@ -1,1 +1,0 @@
-For Bitcoin, combine normalized MVRV, NUPL, and a price-range-based SOPR proxy, then subtract the composite’s long-term average to classify the cycle. Go long in the extreme-bear phase or when the indicator turns positive into early bull after a bear phase. Hold through bull; reduce or exit in overheated bull. No short entry is specified.

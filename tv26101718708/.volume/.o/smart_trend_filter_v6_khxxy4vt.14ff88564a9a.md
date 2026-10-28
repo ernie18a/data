@@ -1,2 +1,0 @@
-Long: fast EMA (shorter lookback) > slow EMA (longer lookback) AND previous fast EMA <= previous slow EMA AND RSI > buy threshold AND volume > volume SMA AND close > fast EMA
-Short: fast EMA (shorter lookback) < slow EMA (longer lookback) AND previous fast EMA >= previous slow EMA AND RSI < sell threshold AND volume > volume SMA AND close < fast EMA

@@ -1,3 +1,0 @@
-Calculation: Three Hull moving averages of (high + low + 2 × close) / 4, each on its configured timeframe; the first uses the shortest lookback, the second an intermediate lookback, and the third the longest. Use the current timeframe bar’s value, which may reflect a still-forming bar.
-Long: Any of the three moving averages at the configured label offset is greater than its value one bar earlier.
-Short: Any of the three moving averages at the configured label offset is less than its value one bar earlier.

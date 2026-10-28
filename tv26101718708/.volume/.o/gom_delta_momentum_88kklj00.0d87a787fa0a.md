@@ -1,3 +1,0 @@
-Calculation: Gom delta momentum = Sum lower-timeframe volume signed positive when its close is above the preceding lower-timeframe close, negative when below, and zero when equal; on the current chart bar, add this delta to the previous completed chart bar’s momentum when both are nonnegative or both are nonpositive, otherwise reset momentum to the current delta (initialize to the delta on the first bar)
-Long: Gom delta momentum >= 0
-Short: Gom delta momentum < 0

@@ -1,5 +1,0 @@
-Calculation: Bullish hammer = close > open AND open - low > 2 × abs(close - open) AND high - close < 2 × abs(close - open)
-Calculation: Bullish engulfing = close > open AND close > prior close AND open < prior open AND close > prior open
-Calculation: Momentum candle = close > open AND abs(close - open) > the short-term average of abs(close - open) AND close > high - 20% × (high - low)
-Long: EMA crosses above session VWAP on the current or a recent bar AND low is within the configured buffer of session VWAP AND close > session VWAP AND close > the previous completed daily bar's high AND (bullish hammer OR bullish engulfing OR momentum candle) AND bar is within the configured entry session
-Exit: Long, high reaches the configured take-profit level above entry price OR low reaches the configured stop level below session VWAP at entry OR bar time reaches the configured forced-close time

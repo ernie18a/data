@@ -1,3 +1,0 @@
-Long: close > long-term EMA AND Supertrend is bullish AND current bar is within the configured trading session AND volume > its shorter-term average AND normalized absolute distance between close and long-term EMA > configured buffer AND ATR > its shorter-term average AND bars since last exit > configured cooldown
-Exit: long, close >= entry price + configured ATR multiple × ATR AND bars held >= configured minimum
-Exit: long, after partial exit, high has reached the trailing-stop activation level AND low <= highest high since activation − configured ATR-based trailing distance

@@ -1,5 +1,0 @@
-Calculation: Custom MFI = RSI of the rolling sum of volume × HLC3 on rising HLC3 bars versus the rolling sum of volume × HLC3 on falling HLC3 bars
-Calculation: ATR = Wilder average of true range
-Long: (MACD crosses above its signal line OR (Custom MFI crosses above its lower threshold AND EMA of selected-timeframe close > SMA of selected-timeframe close)) AND RSI of selected-timeframe close < RSI threshold AND chart close > selected-timeframe close SMA filter AND EMA of selected-timeframe close > SMA of selected-timeframe close
-Exit: long, chart close < entry price − ATR multiplier × ATR OR chart high reaches the take-profit limit OR the trailing stop is activated and chart low reaches the trailing stop
-Calculation: Selected-timeframe values use the previous completed bar in realtime and the current bar otherwise. The trend EMA and SMA use the same lookback; MACD uses its fast and slow lookbacks, with the fast lookback shorter; the signal line uses its own smoothing lookback.

@@ -1,6 +1,0 @@
-Calculation: Swing high/low = a bar whose high/low is strictly greater/less than the highs/lows of the configured pivot lookback bars on both sides.
-Calculation: Bullish CISD level = open of the oldest candle in the contiguous bearish run immediately preceding the nearest bearish candle before a confirmed swing low; bearish CISD level = open of the oldest candle in the contiguous bullish run immediately preceding the nearest bullish candle before a confirmed swing high. The stretch size is the absolute difference between that level and the nearest candle's close; while pending, extend the stretch when a further opposing candle closes beyond its prior end close.
-Calculation: Confirmed bullish/bearish CISD = the corresponding swing and stretch pass the configured size filter, then a bar closes above/below the CISD level before the pending timeout. If the purge filter is enabled, also require a later low/high sweep of the corresponding pivot within the configured tolerance.
-Long: Confirmed bullish CISD on chart bars OR confirmed bullish CISD on the selected higher-timeframe bars OR confirmed bullish CISD on the selected-symbol bars.
-Short: Confirmed bearish CISD on chart bars OR confirmed bearish CISD on the selected higher-timeframe bars OR confirmed bearish CISD on the selected-symbol bars.
-Exit:

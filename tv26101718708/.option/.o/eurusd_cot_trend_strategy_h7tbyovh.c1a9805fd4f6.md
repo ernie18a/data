@@ -1,1 +1,0 @@
-Using the weekly COT report for the traded currency pair, compare speculative traders’ long positions with their short positions. Go long when longs exceed shorts; go short when shorts exceed longs. No separate exit condition is specified.

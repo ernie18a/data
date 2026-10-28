@@ -1,5 +1,0 @@
-Calculation: CLV = (2 × close − high − low) / (high − low), or 0 when high = low; smooth with a short-period simple moving average.
-Calculation: Flow Score = weighted average of smoothed CLV × 100, (RSI(close) − 50) × 2, and Chaikin Money Flow × 100, using a configurable weight for each component.
-Long: Flow Score crosses above the bullish threshold AND current volume is at or above its configured percentile over a recent window AND a confirmed pivot low occurred within the maximum pivot age AND RSI is below the overbought block level AND Flow Score was below zero at least once in the recent regime window.
-Short: Flow Score crosses below the bearish threshold AND current volume is at or above its configured percentile over a recent window AND a confirmed pivot high occurred within the maximum pivot age AND RSI is above the oversold block level AND Flow Score was above zero at least once in the recent regime window.
-Exit: long, Flow Score crosses below the bearish threshold AND RSI is above the oversold block level AND Flow Score was above zero at least once in the recent regime window.

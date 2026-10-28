@@ -1,4 +1,0 @@
-Calculation: EMA = exponential moving average of close; the short-term EMA has a shorter lookback than the medium-term EMA.
-Calculation: Anchored VWAP = volume-weighted average of typical price (high + low + close) / 3, reset at the selected session, week, or month boundary and including bars in the current, still-forming anchor period.
-Long: close > short-term EMA AND close > medium-term EMA AND close > anchored VWAP OR close crosses above anchored VWAP OR short-term EMA crosses above medium-term EMA
-Short: close <= short-term EMA AND close <= medium-term EMA AND close <= anchored VWAP OR close crosses below anchored VWAP OR short-term EMA crosses below medium-term EMA

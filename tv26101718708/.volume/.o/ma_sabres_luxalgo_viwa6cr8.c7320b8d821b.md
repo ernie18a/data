@@ -1,2 +1,0 @@
-Long: Moving average on the previous bar < each of its values in the preceding lookback bars AND current moving average > moving average on the previous bar
-Short: Moving average on the previous bar > each of its values in the preceding lookback bars AND current moving average < moving average on the previous bar

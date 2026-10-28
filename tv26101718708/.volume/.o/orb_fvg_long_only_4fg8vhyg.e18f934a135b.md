@@ -1,7 +1,0 @@
-Calculation: Opening range high = highest high during the configured opening-range period; use only after that period is complete
-Calculation: Opening range low = lowest low during the configured opening-range period; use only after that period is complete
-Calculation: Prior-day close position = (prior completed daily close − prior completed daily low) / (prior completed daily high − prior completed daily low)
-Calculation: Stop price = configured opening-range low, opening-range midpoint, or entry price minus configured ATR multiple
-Calculation: Target price = entry price + (entry price − stop price) × configured risk/reward multiple
-Long: current close > opening range high AND previous close <= opening range high AND opening range is complete AND current bar is within the configured trade window AND current close > current day's open AND current close > 20-period EMA of daily closes (current daily bar) AND prior-day close position >= configured trend threshold AND consecutive prior days with close in the configured low portion of their daily range < configured loss-streak limit AND no earlier long entry today AND (volume filter disabled OR current volume > configured multiple of the 20-bar average volume) AND (FVG filter disabled OR a bullish FVG formed within the configured lookback)
-Exit: Long, current low <= stop price OR current high >= target price at the configured first or second risk/reward multiple

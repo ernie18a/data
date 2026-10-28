@@ -1,3 +1,0 @@
-Calculation: Premarket high/low = highest high/lowest low of the current day's bars during the premarket session
-Long: 10-minute close > current day's premarket high AND premarket session has ended AND a premarket bar has been observed OR 10-minute close > short-term EMA > medium-term EMA > long-term EMA OR high of the still-forming daily bar > high of the last completed daily bar
-Short: 10-minute close < current day's premarket low AND premarket session has ended AND a premarket bar has been observed OR 10-minute close < short-term EMA < medium-term EMA < long-term EMA OR low of the still-forming daily bar < low of the last completed daily bar

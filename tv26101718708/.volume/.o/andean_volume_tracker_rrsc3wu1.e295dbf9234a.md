@@ -1,4 +1,0 @@
-Calculation: Andean bullish and bearish components = let α = 2 / (length + 1); recursively calculate U1 = max(close, open, previous U1 − (previous U1 − close) × α), U2 = max(close², open², previous U2 − (previous U2 − close²) × α), D1 = min(close, open, previous D1 + (close − previous D1) × α), and D2 = min(close², open², previous D2 + (close² − previous D2) × α), initializing each value to the current close or close² on the first bar; bullish component = √max(0, D2 − D1²), bearish component = √max(0, U2 − U1²)
-Calculation: High volume = volume > SMA(volume, lookback) × threshold
-Long: current bullish component > current bearish component AND previous bullish component ≤ previous bearish component AND high volume AND close ≥ open
-Short: current bearish component > current bullish component AND previous bearish component ≤ previous bullish component AND high volume AND close < open

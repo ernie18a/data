@@ -1,9 +1,0 @@
-Calculation: Bollinger basis = moving average of close; upper and lower Bollinger bands = basis plus or minus a configurable multiple of close’s standard deviation, using the same lookback as the basis
-Calculation: Deviation threshold = close’s standard deviation multiplied by a configurable factor, using the same lookback as the Bollinger basis
-Calculation: Premarket high = highest high of the current day’s premarket bars, including the forming bar while premarket is in progress; carried forward afterward
-Calculation: VFI = sum over a configurable lookback of signed, capped volume flow divided by the prior bar’s average volume over that lookback; sign each bar’s capped volume positive or negative when the change in typical price exceeds a volatility-based cutoff, otherwise zero. Cap volume using the average volume multiplied by a configurable factor. Typical price = (high + low + close) / 3; cutoff = configurable factor × standard deviation of log changes in typical price × close
-Calculation: VFI signal = EMA of VFI
-Calculation: Parabolic SAR = standard Parabolic SAR calculated from chart bars
-Calculation: Short SMA = moving average of close over a shorter lookback
-Long: Current 1-minute bar is within the trade session AND close[2] > premarket high AND (bars since (close crosses below lower Bollinger band OR VFI > upper threshold OR VFI signal > upper threshold OR (low < Parabolic SAR AND close < Short SMA)) > threshold OR (close > Bollinger basis AND close < Deviation threshold)) AND (close crosses above upper Bollinger band OR (close[3] > upper Bollinger band AND close > EMA(close) AND (VFI > zero OR VFI signal > zero) AND (VFI < upper threshold OR VFI signal < upper threshold))) AND close < close[4] × configurable cap AND close < close[3] × configurable cap
-Exit: Long, close crosses below lower Bollinger band OR VFI > upper threshold OR VFI signal > upper threshold OR (low < Parabolic SAR AND close < Short SMA)

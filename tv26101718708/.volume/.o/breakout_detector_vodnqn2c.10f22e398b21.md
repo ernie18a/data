@@ -1,5 +1,0 @@
-Calculation: Upper rail = EMA of highest high over the rail lookback plus ATR-based padding; padding is ATR multiplied by the base padding plus recent close standard deviation over the rail lookback divided by 10 × ATR.
-Calculation: Lower rail = EMA of lowest low over the rail lookback minus the same ATR-based padding.
-Calculation: Relative volume = current volume divided by the average volume of the previous 50 bars.
-Long: Close > previous completed bar’s upper rail AND close > open AND abs(close − open) >= minimum body multiple × previous completed bar’s ATR(14) AND relative volume >= minimum threshold AND no upper breakout is active (a prior breakout is cleared after a confirmed close within the previous upper and lower rails).
-Short: Close < previous completed bar’s lower rail AND close < open AND abs(close − open) >= minimum body multiple × previous completed bar’s ATR(14) AND relative volume >= minimum threshold AND no lower breakout is active (a prior breakout is cleared after a confirmed close within the previous upper and lower rails).

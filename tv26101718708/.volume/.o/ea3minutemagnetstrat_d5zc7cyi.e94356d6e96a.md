@@ -1,4 +1,0 @@
-Long: Current shorter-lookback VWMA > medium-lookback VWMA AND medium-lookback VWMA > longer-lookback VWMA AND current RSI < threshold AND (previous-bar shorter-lookback VWMA <= medium-lookback VWMA OR previous-bar medium-lookback VWMA <= longer-lookback VWMA OR previous-bar RSI >= threshold)
-Short: Current shorter-lookback VWMA < medium-lookback VWMA AND medium-lookback VWMA < longer-lookback VWMA AND current RSI > threshold AND (previous-bar shorter-lookback VWMA >= medium-lookback VWMA OR previous-bar medium-lookback VWMA >= longer-lookback VWMA OR previous-bar RSI <= threshold)
-Exit: long, long-entry condition from 3 bars earlier = true
-Exit: short, short-entry condition from 3 bars earlier = true

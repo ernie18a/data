@@ -1,3 +1,0 @@
-Calculation: Intrabar volume delta = sum of signed volume across the current chart bar’s lower-timeframe bars: assign +volume when close > open, −volume when close < open; for a doji, use close versus the previous intrabar close, and if unchanged, carry forward the last polarity.
-Long: Intrabar volume delta > 0 AND close < open OR Supertrend direction changes to up OR Aroon up crosses above Aroon down OR Parabolic SAR crosses below close
-Short: Intrabar volume delta < 0 AND close > open OR Supertrend direction changes to down OR Aroon down crosses above Aroon up OR Parabolic SAR crosses above close

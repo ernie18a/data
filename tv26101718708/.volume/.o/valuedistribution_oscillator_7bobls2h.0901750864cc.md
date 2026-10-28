@@ -1,4 +1,0 @@
-Calculation: Value-position oscillator = close mapped linearly to a decaying volume-by-price profile: POC = 0, value-area bounds = ±25, rolling high/low extremes = ±50, clipped to ±50; smooth the result with an EMA. Distribute each bar’s volume across price bins, weighting the open-close body more than the wicks; geometrically decay prior bin volumes and rebuild the profile over the lookback when close leaves its grid. The highest-volume bin is the POC; expand the value area from the POC toward the higher-volume adjacent bin until it contains the target share of volume.
-Calculation: Fade-turn value = 3-period EMA of the value-position oscillator.
-Long: Value-position oscillator ≤ −stretch threshold AND fade-turn value > its previous-bar value
-Short: Value-position oscillator ≥ stretch threshold AND fade-turn value < its previous-bar value

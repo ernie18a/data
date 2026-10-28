@@ -1,7 +1,0 @@
-Calculation: Prior-window highest high = maximum high over the lookback bars ending on the previous completed bar
-Calculation: Prior-window lowest low = minimum low over the lookback bars ending on the previous completed bar
-Calculation: Prior-window highest volume = maximum volume over the lookback bars ending on the previous completed bar
-Long: close > prior-window highest high AND volume > prior-window highest volume AND close > simple moving average of close AND position is flat
-Short: close < prior-window lowest low AND volume > prior-window highest volume AND close < simple moving average of close AND position is flat
-Exit: long, close < simple moving average of close AND previous close < current simple moving average of close AND close from two bars ago < current simple moving average of close AND close from three bars ago < current simple moving average of close AND close from four bars ago < current simple moving average of close
-Exit: short, close > simple moving average of close AND previous close > current simple moving average of close AND close from two bars ago > current simple moving average of close AND close from three bars ago > current simple moving average of close AND close from four bars ago > current simple moving average of close

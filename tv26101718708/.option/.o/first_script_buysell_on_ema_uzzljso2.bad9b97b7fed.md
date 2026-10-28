@@ -1,1 +1,0 @@
-Use the instrument’s external earnings schedule to exit any open position when an earnings report is within seven days.

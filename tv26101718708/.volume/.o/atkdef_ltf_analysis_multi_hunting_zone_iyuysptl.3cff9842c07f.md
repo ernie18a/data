@@ -1,7 +1,0 @@
-Calculation: Hunting-zone score = On the selected LTF current bar, locate the close within the range from the lowest low to highest high over a configurable lookback: 100 at or above 80% of the range; 66 at or above 60%; 33 at or above 40%; -33 at or above 20%; otherwise -66.
-Calculation: Liquidity-gap score = Divide current LTF volume by its longer-lookback average volume; divide the close-minus-EMA(21) distance by LTF ATR. In order, score 100 if volume ratio > 1.8 and normalized distance > 1.5; 66 if ratio > 1.4 and distance > 0.8; 0 if ratio > 1 and absolute distance < 0.8; -66 if ratio > 1.4 and distance < -0.8; otherwise -33. (The subsequent condition for score -100, ratio > 1.8 and distance < -1.5, is unreachable in this order.)
-Calculation: Liquidity-trend score = Clamp to [-100, 100] the sum of 50 times the change in LTF volume over a lookback divided by the shorter-lookback average LTF volume, and 50 times the change in LTF close over that lookback divided by LTF ATR. Map the result in order: > 60 to 100; > 30 to 66; > -10 to 0; > -40 to -66; otherwise -100.
-Calculation: Reversal score = Add 40 if LTF RSI is > 70 or < 30, 30 if LTF close is in the top or bottom 20% of its hunting range, and 30 if liquidity-gap score is > 66 or < -66. Map the sum in order: > 70 to 100; > 50 to 66; > 30 to 33; otherwise 0.
-Calculation: Final score = Clamp to [-100, 100] the average of hunting-zone score, liquidity-gap score, and liquidity-trend score, minus 30 times reversal score divided by 100.
-Long: Final score > 15
-Short: Final score <= -15

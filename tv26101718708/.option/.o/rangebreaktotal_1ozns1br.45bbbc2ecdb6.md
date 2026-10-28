@@ -1,1 +1,0 @@
-Go long when the total cryptocurrency market capitalization closes above its highest level over the preceding lookback window. Go short when it closes below its lowest level over that window. Allow the opposite signal to reverse the position.

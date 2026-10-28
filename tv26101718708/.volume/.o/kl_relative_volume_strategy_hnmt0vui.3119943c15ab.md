@@ -1,3 +1,0 @@
-Long: volume > moving average of volume over its lookback × relative-volume threshold AND 2 × ATR over its volatility lookback > 2 × standard deviation of close over its Bollinger lookback AND (min(open, close) − low) / (high − low) > lower-wick threshold
-Calculation: Long trailing stop = the highest value since entry of (low − ATR over the trailing-stop lookback × trailing-stop multiplier)
-Exit: long, low ≤ long trailing stop

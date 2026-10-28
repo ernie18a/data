@@ -1,5 +1,0 @@
-Calculation: Opening-range high/low = highest high and lowest low, respectively, of bars from the session open through the configured opening-range window; use only after that window is complete
-Long: close > opening-range high AND close > VWAP AND volume > volume SMA AND opening range is complete AND session filter passes (when enabled) AND daily trade count < limit AND position side is not long
-Short: close < opening-range low AND close < VWAP AND volume > volume SMA AND opening range is complete AND session filter passes (when enabled) AND daily trade count < limit AND position side is not short
-Exit: long, low <= entry price - stop multiple × ATR OR high >= entry price + target multiple × ATR OR trailing stop is hit (when enabled) OR bars since entry >= time limit (when enabled) OR outside the configured session (when session flattening is enabled)
-Exit: short, high >= entry price + stop multiple × ATR OR low <= entry price - target multiple × ATR OR trailing stop is hit (when enabled) OR bars since entry >= time limit (when enabled) OR outside the configured session (when session flattening is enabled)

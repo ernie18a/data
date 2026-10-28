@@ -1,4 +1,0 @@
-Calculation: Relative volume percentile = current volume’s percentile rank over a lookback; recent range position = 100 × (close − lowest low) / (highest high − lowest low) over a lookback; time of day = current intraday bar’s time within the day scaled to 0–100 (omit on daily or higher bars).
-Calculation: Exit context score = for the active SuperTrend direction, collect confirmed symmetric pivot highs from bullish runs or pivot lows from bearish runs, using each pivot bar’s axis readings. For each enabled axis, retain pivots whose bins match the current bar on every other enabled axis; score the current bin as 100 × its pivot count / the largest bin count. Take the arithmetic mean of the available axis scores.
-Exit: long, SuperTrend is bullish AND exit context score ≥ 99.999
-Exit: short, SuperTrend is bearish AND exit context score ≥ 99.999

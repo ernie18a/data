@@ -1,4 +1,0 @@
-Calculation: 1-minute average volume = average volume over the lookback of 1-minute bars, including the current bar as it forms
-Calculation: 1-minute average range = average of high − low over the lookback of 1-minute bars, including the current bar as it forms
-Long: current 1-minute volume ≥ 1-minute average volume × volume-spike threshold AND current 1-minute close > open AND NOT (current 1-minute volume ≥ 1-minute average volume × absorption-volume threshold AND current 1-minute high − low ≤ 1-minute average range × maximum-stall percentage)
-Short: current 1-minute volume ≥ 1-minute average volume × volume-spike threshold AND current 1-minute close < open AND NOT (current 1-minute volume ≥ 1-minute average volume × absorption-volume threshold AND current 1-minute high − low ≤ 1-minute average range × maximum-stall percentage)

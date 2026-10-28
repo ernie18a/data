@@ -1,5 +1,0 @@
-Calculation: Fast EMA, slow EMA, and trend EMA = EMAs of close, with fast lookback shorter than slow lookback and trend lookback longer than both
-Calculation: ATR average = simple moving average of ATR using the ATR lookback
-Calculation: Choppy = absolute difference between fast and slow EMA is less than 0.25 × ATR
-Long: close > trend EMA AND trend EMA > its previous-bar value AND fast EMA crosses above slow EMA AND close > open AND previous close < previous open AND close > previous open AND open < previous close AND close > session VWAP AND ATR > ATR average AND ADX > its minimum threshold AND NOT Choppy
-Short: close < trend EMA AND trend EMA < its previous-bar value AND fast EMA crosses below slow EMA AND close < open AND previous close > previous open AND close < previous open AND open > previous close AND close < session VWAP AND ATR > ATR average AND ADX > its minimum threshold AND NOT Choppy

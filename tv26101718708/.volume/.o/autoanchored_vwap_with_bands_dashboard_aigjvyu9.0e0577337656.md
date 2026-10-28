@@ -1,3 +1,0 @@
-Calculation: Anchored VWAP = volume-weighted mean of the selected OHLC price source from the anchor bar through the current bar; use equal weights if volume is unavailable. The anchor resets at the selected calendar boundary (Auto uses each day on intraday charts and each month otherwise; selectable boundaries are session/day, week, month, quarter, year, decade, and century), or at the most recent highest high, lowest low, or highest volume in the configured lookback, including the current bar.
-Long: selected OHLC price source > Anchored VWAP
-Short: selected OHLC price source < Anchored VWAP

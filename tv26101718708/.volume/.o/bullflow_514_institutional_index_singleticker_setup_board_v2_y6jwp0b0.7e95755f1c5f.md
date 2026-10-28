@@ -1,4 +1,0 @@
-Long: On a mapped long-enabled setup during the regular trading session, at bar close, close crosses above the long trigger level OR the confirmation level, AND close > VWAP AND the short-period EMA > close? Wait code long close > EMA9 and EMA9 >= EMA21. Correct. AND close > short-period EMA AND short-period EMA >= long-period EMA
-Short: On a mapped short-enabled setup during the regular trading session, at bar close, close crosses below the short trigger level OR the confirmation level, AND close < VWAP AND close < short-period EMA AND short-period EMA <= long-period EMA
-Exit: Long, during the regular trading session at bar close, close crosses below the invalidation level OR the hard invalidation level OR high crosses above any target level
-Exit: Short, during the regular trading session at bar close, close crosses above the invalidation level OR the hard invalidation level OR low crosses below any target level

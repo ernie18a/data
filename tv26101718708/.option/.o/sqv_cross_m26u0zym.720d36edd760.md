@@ -1,1 +1,0 @@
-Go long when SPY and QQQ each have their faster moving average above their slower moving average, with the slower average rising, while VIX has its slower average above its faster average and the slower average falling. No short condition is defined.

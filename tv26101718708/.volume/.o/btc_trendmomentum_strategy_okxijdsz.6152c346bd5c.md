@@ -1,6 +1,0 @@
-Calculation: Stochastic RSI %K = SMA of the stochastic value of RSI(close) over the stochastic lookback, smoothed over the %K lookback
-Calculation: Chaikin Money Flow = sum(volume × money flow multiplier) / sum(volume) over its lookback, where money flow multiplier = ((close − low) − (high − close)) / (high − low), or 0 when high = low
-Long: Chaikin Money Flow > its threshold AND prior %K ≤ oversold level AND current %K > oversold level AND (volatility filter disabled OR ATR > its moving average) AND datetime > configured start date AND close > EMA
-Short: Chaikin Money Flow < −its threshold AND prior %K ≥ overbought level AND current %K < overbought level AND (volatility filter disabled OR ATR > its moving average) AND datetime > configured start date
-Exit: long, Chaikin Money Flow < −its threshold AND prior %K ≥ overbought level AND current %K < overbought level AND (volatility filter disabled OR ATR > its moving average) AND datetime > configured start date
-Exit: short, Chaikin Money Flow > its threshold AND prior %K ≤ oversold level AND current %K > oversold level AND (volatility filter disabled OR ATR > its moving average) AND datetime > configured start date AND close > EMA
